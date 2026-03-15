@@ -28,6 +28,7 @@
           </div>
           <div id="authLoggedIn" class="auth-user" style="display:none;">
             <span id="userName" class="user-name"></span>
+            <button id="profileBtn" class="auth-btn auth-btn-small">Profile</button>
             <button id="logoutBtn" class="auth-btn auth-btn-small">Log Out</button>
           </div>
         </div>
@@ -90,6 +91,52 @@
       </div>
     </div>
 
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal-overlay" style="display:none;">
+      <div class="modal modal-profile">
+        <button class="modal-close" id="profileModalClose">&times;</button>
+        <h2>Your Profile</h2>
+        <p class="form-subtitle">Help Wayfinder give you better, personalized advice</p>
+        <div class="form-group">
+          <label for="profileAge">Age</label>
+          <input type="number" id="profileAge" placeholder="e.g. 17" min="13" max="99">
+        </div>
+        <div class="form-group">
+          <label for="profileGrade">Grade / Year</label>
+          <select id="profileGrade">
+            <option value="">Select...</option>
+            <option value="9th Grade">9th Grade</option>
+            <option value="10th Grade">10th Grade</option>
+            <option value="11th Grade">11th Grade</option>
+            <option value="12th Grade">12th Grade</option>
+            <option value="College Freshman">College Freshman</option>
+            <option value="College Sophomore">College Sophomore</option>
+            <option value="College Junior">College Junior</option>
+            <option value="College Senior">College Senior</option>
+            <option value="Graduate Student">Graduate Student</option>
+            <option value="Working Professional">Working Professional</option>
+            <option value="Career Changer">Career Changer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="profileClasses">Favorite Classes / Subjects</label>
+          <input type="text" id="profileClasses" placeholder="e.g. Math, Biology, Art, History">
+          <span class="form-hint">Separate with commas</span>
+        </div>
+        <div class="form-group">
+          <label for="profileCareerInterests">Career Interests</label>
+          <input type="text" id="profileCareerInterests" placeholder="e.g. Software Engineering, Medicine, Teaching">
+          <span class="form-hint">Separate with commas</span>
+        </div>
+        <div class="form-group">
+          <label for="profileAbout">Tell us about yourself</label>
+          <textarea id="profileAbout" rows="3" placeholder="Anything that helps us advise you better — your goals, what you're unsure about, your situation..." maxlength="500"></textarea>
+        </div>
+        <button id="profileSave" class="form-btn">Save Profile</button>
+        <p id="profileSaveMsg" class="profile-save-msg" style="display:none;"></p>
+      </div>
+    </div>
+
     <!-- Data Consent Banner (for non-logged-in users) -->
     <div id="consentBanner" class="consent-banner" style="display:none;">
       <p>Wayfinder stores conversations to improve advice quality. No personal data is shared. <a href="#" id="consentLearnMore">Learn more</a></p>
@@ -122,6 +169,15 @@
 
       <!-- Input Area -->
       <div class="input-area">
+        <!-- Engine Toggle -->
+        <div id="engineToggleRow" class="engine-toggle-row" style="display:none;">
+          <button id="engineToggle" class="engine-toggle" title="Activate Wayfinder Engine for a deep-dive answer">
+            <span class="engine-icon">⚡</span>
+            <span class="engine-label">Wayfinder Engine</span>
+            <span id="engineCount" class="engine-count">3 left today</span>
+          </button>
+          <span class="engine-hint">Deep analysis with full knowledge base</span>
+        </div>
         <div class="input-wrapper">
           <textarea
             id="userInput"

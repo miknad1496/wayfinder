@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { retrieveContext, formatContext } from './knowledge.js';
+import { retrieveContext, formatContext, getLiteBrainContext } from './knowledge.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,46 +29,93 @@ async function loadSystemPrompt() {
 }
 
 /**
- * Send a message to Claude with RAG context.
+ * Build user profile string for injection into the system prompt.
+ */
+function buildProfileString(sessionContext) {
+  if (!sessionContext || Object.keys(sessionContext).length === 0) return '';
+
+  const lines = [];
+  if (sessionContext.userName) lines.push(`Name: ${sessionContext.userName}`);
+  if (sessionContext.userType) lines.push(`Type: ${sessionContext.userType}`);
+  if (sessionContext.school) lines.push(`School: ${sessionContext.school}`);
+
+  // Expanded profile fields
+  const p = sessionContext.profile;
+  if (p) {
+    if (p.age) lines.push(`Age: ${p.age}`);
+    if (p.gradeLevel) lines.push(`Grade/Year: ${p.gradeLevel}`);
+    if (p.favoriteClasses && p.favoriteClasses.length > 0) {
+      lines.push(`Favorite Classes: ${p.favoriteClasses.join(', ')}`);
+    }
+    if (p.careerInterests && p.careerInterests.length > 0) {
+      lines.push(`Career Interests: ${p.careerInterests.join(', ')}`);
+    }
+    if (p.aboutMe) lines.push(`About: ${p.aboutMe}`);
+  }
+
+  if (sessionContext.interests && sessionContext.interests.length > 0) {
+    lines.push(`Interests: ${Array.isArray(sessionContext.interests) ? sessionContext.interests.join(', ') : sessionContext.interests}`);
+  }
+
+  if (lines.length === 0) return '';
+
+  return `\n\n═══════════════════════════════════════════
+CURRENT USER PROFILE
+═══════════════════════════════════════════
+${lines.join('\n')}`;
+}
+
+/**
+ * Send a message to Claude.
  *
  * @param {Array} conversationHistory - Array of {role, content} messages
  * @param {string} userMessage - The latest user message
  * @param {Object} sessionContext - User profile info (type, interests, etc.)
- * @returns {Object} { response, usage, retrievedSources }
+ * @param {Object} options - { useEngine: boolean }
+ * @returns {Object} { response, usage, retrievedSources, mode }
  */
-export async function chat(conversationHistory, userMessage, sessionContext = {}) {
+export async function chat(conversationHistory, userMessage, sessionContext = {}, options = {}) {
   const anthropic = getClient();
   const model = process.env.CLAUDE_MODEL || 'claude-sonnet-4-6';
+  const useEngine = options.useEngine || false;
 
-  // 1. Retrieve relevant knowledge (top 6 distilled chunks, hard-capped by formatContext)
-  const relevantChunks = await retrieveContext(userMessage, 6);
-  const contextStr = formatContext(relevantChunks);
+  let contextStr;
+  let relevantChunks = [];
 
-  // 2. Build system prompt with context
+  if (useEngine) {
+    // FULL ENGINE MODE: RAG retrieval across all 27 distilled files
+    relevantChunks = await retrieveContext(userMessage, 6);
+    contextStr = formatContext(relevantChunks);
+    console.log(`[Engine Mode] Retrieved ${relevantChunks.length} chunks for: "${userMessage.slice(0, 60)}..."`);
+  } else {
+    // STANDARD MODE: Just the condensed general brain (~2K tokens)
+    contextStr = await getLiteBrainContext();
+    console.log(`[Standard Mode] Using general brain for: "${userMessage.slice(0, 60)}..."`);
+  }
+
+  // Build system prompt with context
   let systemPrompt = await loadSystemPrompt();
   systemPrompt = systemPrompt.replace('{RETRIEVED_CONTEXT}', contextStr);
 
-  // Add session context if available
-  if (sessionContext && Object.keys(sessionContext).length > 0) {
-    systemPrompt += `\n\n═══════════════════════════════════════════
-CURRENT USER PROFILE
-═══════════════════════════════════════════
-${Object.entries(sessionContext)
-  .map(([key, val]) => `${key}: ${val}`)
-  .join('\n')}`;
+  // Add mode indicator
+  if (useEngine) {
+    systemPrompt += '\n\n[WAYFINDER ENGINE ACTIVE — You have access to deep, specific knowledge from BLS data, O*NET profiles, community insights, and distilled career intelligence. Provide detailed, data-rich answers with specific numbers, salary ranges, and growth projections.]';
   }
 
-  // 3. Build messages array
+  // Add user profile
+  systemPrompt += buildProfileString(sessionContext);
+
+  // Build messages array
   const messages = [
     ...conversationHistory,
     { role: 'user', content: userMessage }
   ];
 
-  // 4. Call Claude
+  // Call Claude
   try {
     const response = await anthropic.messages.create({
       model,
-      max_tokens: 1500,
+      max_tokens: useEngine ? 2000 : 1500,
       system: systemPrompt,
       messages
     });
@@ -77,6 +124,7 @@ ${Object.entries(sessionContext)
 
     return {
       response: assistantMessage,
+      mode: useEngine ? 'engine' : 'standard',
       usage: {
         inputTokens: response.usage.input_tokens,
         outputTokens: response.usage.output_tokens,

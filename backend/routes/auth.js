@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, loginUser, verifyToken, updateProfile, getUserSessions } from '../services/auth.js';
+import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage } from '../services/auth.js';
 
 const router = Router();
 
@@ -96,6 +96,13 @@ router.get('/sessions', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   const sessions = await getUserSessions(token);
   res.json({ sessions });
+});
+
+// GET /api/auth/engine-usage - Get Wayfinder Engine usage for today
+router.get('/engine-usage', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const usage = await getEngineUsage(token);
+  res.json(usage);
 });
 
 export default router;

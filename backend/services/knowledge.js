@@ -18,7 +18,9 @@ import { PATHS } from './storage.js';
  */
 
 let knowledgeCache = null;
+let liteBrainCache = null;
 let cacheTimestamp = 0;
+let liteCacheTimestamp = 0;
 const CACHE_TTL = 10 * 60 * 1000; // Refresh every 10 minutes
 
 // Max chars per chunk (~750 tokens)
@@ -180,10 +182,46 @@ async function loadKnowledge() {
   return allChunks;
 }
 
+// ─── Lite Brain (standard mode — general-brain.md only) ──────────
+
+async function loadLiteBrain() {
+  const now = Date.now();
+  if (liteBrainCache && (now - liteCacheTimestamp) < CACHE_TTL) {
+    return liteBrainCache;
+  }
+
+  console.log('Loading lite brain (general-brain.md)...');
+  const brainPath = join(PATHS.knowledgeBase, 'distilled', 'general-brain.md');
+  try {
+    const content = await fs.readFile(brainPath, 'utf-8');
+    liteBrainCache = content;
+    liteCacheTimestamp = now;
+    console.log(`  Lite brain loaded: ${content.length} chars`);
+  } catch (err) {
+    console.warn('  Could not load general-brain.md:', err.message);
+    liteBrainCache = '';
+  }
+
+  return liteBrainCache;
+}
+
+/**
+ * Get the condensed general brain content (no RAG, no scoring).
+ * Used for standard queries — cheap and fast.
+ */
+export async function getLiteBrainContext() {
+  const content = await loadLiteBrain();
+  if (!content) {
+    return '[General career knowledge — no specific knowledge base loaded.]';
+  }
+  return `--- WAYFINDER KNOWLEDGE BASE (condensed) ---\n${content}\n`;
+}
+
 // ─── Public API ───────────────────────────────────────────────────
 
 /**
  * Retrieve the most relevant knowledge chunks for a query.
+ * This is the FULL Wayfinder Engine — used for deep-dive queries.
  */
 export async function retrieveContext(query, topK = 6) {
   const chunks = await loadKnowledge();
@@ -229,4 +267,6 @@ export function formatContext(chunks) {
 export function invalidateCache() {
   knowledgeCache = null;
   cacheTimestamp = 0;
+  liteBrainCache = null;
+  liteCacheTimestamp = 0;
 }

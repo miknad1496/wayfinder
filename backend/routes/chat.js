@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat } from '../services/claude.js';
 import { saveSession, loadSession } from '../services/storage.js';
-import { verifyToken, linkSession } from '../services/auth.js';
+import { verifyToken, linkSession, useEngine, getEngineUsage } from '../services/auth.js';
 
 const router = Router();
 
@@ -17,7 +17,7 @@ async function getOptionalUser(req) {
 // POST /api/chat - Send a message
 router.post('/', async (req, res) => {
   try {
-    const { message, sessionId: existingSessionId } = req.body;
+    const { message, sessionId: existingSessionId, useWayfinderEngine } = req.body;
 
     if (!message || typeof message !== 'string' || message.trim().length === 0) {
       return res.status(400).json({ error: 'Message is required' });
@@ -29,6 +29,26 @@ router.post('/', async (req, res) => {
 
     // Check for authenticated user (optional)
     const auth = await getOptionalUser(req);
+
+    // Handle engine usage limits
+    let engineAllowed = false;
+    let engineRemaining = 0;
+
+    if (useWayfinderEngine && auth?.token) {
+      const result = await useEngine(auth.token);
+      if (!result.allowed) {
+        return res.status(429).json({
+          error: 'You\'ve used all 3 Wayfinder Engine queries for today. Try again tomorrow, or use standard mode.',
+          engineRemaining: 0
+        });
+      }
+      engineAllowed = true;
+      engineRemaining = result.remaining;
+    } else if (useWayfinderEngine && !auth?.token) {
+      return res.status(401).json({
+        error: 'Please log in to use the Wayfinder Engine.'
+      });
+    }
 
     // Load or create session
     const sessionId = existingSessionId || uuidv4();
@@ -62,7 +82,8 @@ router.post('/', async (req, res) => {
     const result = await chat(
       session.history,
       message.trim(),
-      session.context
+      session.context,
+      { useEngine: engineAllowed }
     );
 
     // Update session history (keep last 20 messages to manage context window)
@@ -87,12 +108,20 @@ router.post('/', async (req, res) => {
       linkSession(auth.token, sessionId).catch(() => {});
     }
 
+    // Get updated engine usage for response
+    let engineUsage = null;
+    if (auth?.token) {
+      engineUsage = await getEngineUsage(auth.token);
+    }
+
     res.json({
       sessionId,
       response: result.response,
       sources: result.retrievedSources,
       usage: result.usage,
-      messageCount: session.messageCount
+      mode: result.mode,
+      messageCount: session.messageCount,
+      engineRemaining: engineUsage?.remaining ?? null
     });
 
   } catch (err) {

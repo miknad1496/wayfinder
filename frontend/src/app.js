@@ -5,6 +5,8 @@
  * - Chat messaging with the backend API
  * - Session management (persists across page reloads)
  * - User authentication (login/signup)
+ * - User profile editing
+ * - Wayfinder Engine toggle (3 deep-dive queries/day)
  * - Feedback collection (thumbs up/down)
  * - Data consent tracking
  * - Auto-growing textarea
@@ -19,6 +21,8 @@ let authToken = localStorage.getItem('wayfinder_token') || null;
 let currentUser = null;
 let messageCount = 0;
 let isLoading = false;
+let engineActive = false;
+let engineRemaining = 0;
 
 // DOM elements
 const messagesEl = document.getElementById('messages');
@@ -35,10 +39,20 @@ const authLoggedIn = document.getElementById('authLoggedIn');
 const userNameEl = document.getElementById('userName');
 const consentBanner = document.getElementById('consentBanner');
 
+// Profile DOM elements
+const profileModal = document.getElementById('profileModal');
+
+// Engine DOM elements
+const engineToggleRow = document.getElementById('engineToggleRow');
+const engineToggle = document.getElementById('engineToggle');
+const engineCountEl = document.getElementById('engineCount');
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
   setupAuthListeners();
+  setupProfileListeners();
+  setupEngineListeners();
   checkAuth();
   checkConsent();
   inputEl.focus();
@@ -112,10 +126,17 @@ async function sendMessage() {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
 
+    const body = { message, sessionId };
+
+    // If engine is active, include the flag
+    if (engineActive) {
+      body.useWayfinderEngine = true;
+    }
+
     const response = await fetch(`${API_BASE}/chat`, {
       method: 'POST',
       headers,
-      body: JSON.stringify({ message, sessionId })
+      body: JSON.stringify(body)
     });
 
     if (!response.ok) {
@@ -130,15 +151,33 @@ async function sendMessage() {
     localStorage.setItem('wayfinder_session', sessionId);
     messageCount = data.messageCount;
 
+    // Update engine remaining count
+    if (data.engineRemaining !== null && data.engineRemaining !== undefined) {
+      engineRemaining = data.engineRemaining;
+      updateEngineUI();
+    }
+
     // Remove typing indicator
     typingEl.remove();
 
-    // Add assistant response
-    appendMessage('assistant', data.response, data.sources);
+    // Add assistant response with mode indicator
+    appendMessage('assistant', data.response, data.sources, data.mode);
+
+    // Deactivate engine after use
+    if (engineActive) {
+      engineActive = false;
+      engineToggle.classList.remove('active');
+    }
 
   } catch (err) {
     typingEl.remove();
     appendError(err.message);
+
+    // If engine limit reached, deactivate
+    if (engineActive) {
+      engineActive = false;
+      engineToggle.classList.remove('active');
+    }
   } finally {
     isLoading = false;
     sendBtn.disabled = false;
@@ -146,7 +185,7 @@ async function sendMessage() {
   }
 }
 
-function appendMessage(role, text, sources = []) {
+function appendMessage(role, text, sources = [], mode = null) {
   const messageEl = document.createElement('div');
   messageEl.className = `message ${role}`;
 
@@ -156,6 +195,14 @@ function appendMessage(role, text, sources = []) {
 
   const contentEl = document.createElement('div');
   contentEl.className = 'message-content';
+
+  // Add mode badge for assistant messages
+  if (role === 'assistant' && mode) {
+    const badge = document.createElement('div');
+    badge.className = `engine-badge ${mode}`;
+    badge.textContent = mode === 'engine' ? '⚡ Wayfinder Engine' : '💬 Standard';
+    contentEl.appendChild(badge);
+  }
 
   const textEl = document.createElement('div');
   textEl.className = 'message-text';
@@ -246,6 +293,152 @@ async function handleFeedback(btn) {
     });
   } catch (err) {
     console.warn('Failed to submit feedback:', err);
+  }
+}
+
+// ========================
+// Engine Toggle
+// ========================
+
+function setupEngineListeners() {
+  engineToggle.addEventListener('click', toggleEngine);
+}
+
+function toggleEngine() {
+  if (!authToken || !currentUser) {
+    alert('Please log in to use the Wayfinder Engine.');
+    return;
+  }
+
+  if (engineRemaining <= 0 && !engineActive) {
+    alert('You\'ve used all 3 Wayfinder Engine queries for today. Try again tomorrow!');
+    return;
+  }
+
+  engineActive = !engineActive;
+
+  if (engineActive) {
+    engineToggle.classList.add('active');
+  } else {
+    engineToggle.classList.remove('active');
+  }
+}
+
+function updateEngineUI() {
+  if (!currentUser) {
+    engineToggleRow.style.display = 'none';
+    return;
+  }
+
+  engineToggleRow.style.display = 'flex';
+  engineCountEl.textContent = `${engineRemaining} left today`;
+
+  if (engineRemaining <= 0) {
+    engineToggle.classList.add('disabled');
+    engineToggle.classList.remove('active');
+    engineActive = false;
+  } else {
+    engineToggle.classList.remove('disabled');
+  }
+}
+
+async function fetchEngineUsage() {
+  if (!authToken) return;
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/engine-usage`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      engineRemaining = data.remaining;
+      updateEngineUI();
+    }
+  } catch {
+    // Non-critical
+  }
+}
+
+// ========================
+// Profile Functions
+// ========================
+
+function setupProfileListeners() {
+  document.getElementById('profileBtn').addEventListener('click', openProfile);
+  document.getElementById('profileModalClose').addEventListener('click', closeProfile);
+  document.getElementById('profileSave').addEventListener('click', saveProfile);
+
+  profileModal.addEventListener('click', (e) => {
+    if (e.target === profileModal) closeProfile();
+  });
+}
+
+function openProfile() {
+  if (!currentUser) return;
+
+  // Populate fields from current user profile
+  const p = currentUser.profile || {};
+  document.getElementById('profileAge').value = p.age || '';
+  document.getElementById('profileGrade').value = p.gradeLevel || '';
+  document.getElementById('profileClasses').value = (p.favoriteClasses || []).join(', ');
+  document.getElementById('profileCareerInterests').value = (p.careerInterests || []).join(', ');
+  document.getElementById('profileAbout').value = p.aboutMe || '';
+
+  document.getElementById('profileSaveMsg').style.display = 'none';
+  profileModal.style.display = 'flex';
+}
+
+function closeProfile() {
+  profileModal.style.display = 'none';
+}
+
+async function saveProfile() {
+  const profile = {
+    age: document.getElementById('profileAge').value.trim(),
+    gradeLevel: document.getElementById('profileGrade').value,
+    favoriteClasses: document.getElementById('profileClasses').value
+      .split(',').map(s => s.trim()).filter(Boolean),
+    careerInterests: document.getElementById('profileCareerInterests').value
+      .split(',').map(s => s.trim()).filter(Boolean),
+    aboutMe: document.getElementById('profileAbout').value.trim()
+  };
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/profile`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ profile })
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      const msg = document.getElementById('profileSaveMsg');
+      msg.textContent = data.error;
+      msg.style.color = '#991b1b';
+      msg.style.display = 'block';
+      return;
+    }
+
+    // Update local user
+    currentUser = data.user;
+
+    const msg = document.getElementById('profileSaveMsg');
+    msg.textContent = 'Profile saved! Your responses will now be personalized.';
+    msg.style.color = '#059669';
+    msg.style.display = 'block';
+
+    // Auto-close after 1.5s
+    setTimeout(() => closeProfile(), 1500);
+
+  } catch (err) {
+    const msg = document.getElementById('profileSaveMsg');
+    msg.textContent = 'Failed to save. Please try again.';
+    msg.style.color = '#991b1b';
+    msg.style.display = 'block';
   }
 }
 
@@ -351,7 +544,10 @@ async function submitLogin() {
     authToken = data.token;
     currentUser = data.user;
     localStorage.setItem('wayfinder_token', authToken);
+    engineRemaining = currentUser.engineRemaining || 3;
     updateAuthUI();
+    updateEngineUI();
+    fetchEngineUsage();
     closeAuthModal();
 
     // Start a fresh session for logged-in user
@@ -404,7 +600,9 @@ async function submitSignup() {
     currentUser = data.user;
     localStorage.setItem('wayfinder_token', authToken);
     if (consent) localStorage.setItem('wayfinder_consent', 'true');
+    engineRemaining = 3;
     updateAuthUI();
+    updateEngineUI();
     closeAuthModal();
 
     // Start a fresh session for the new user
@@ -412,7 +610,7 @@ async function submitSignup() {
     localStorage.removeItem('wayfinder_session');
 
     // Add a personalized welcome message
-    appendMessage('assistant', `Welcome to Wayfinder, ${name}! Your account is all set up. I'll remember our conversations so we can build on them over time. What would you like to explore today?`);
+    appendMessage('assistant', `Welcome to Wayfinder, ${name}! Your account is all set up. I'll remember our conversations so we can build on them over time.\n\n**Tip:** Click your name to set up your profile — it helps me give you better advice. You also get **3 Wayfinder Engine queries per day** for deep-dive analysis with our full knowledge base.\n\nWhat would you like to explore today?`);
 
   } catch (err) {
     showAuthError('signupError', 'Connection error. Is the server running?');
@@ -423,9 +621,12 @@ function logout() {
   authToken = null;
   currentUser = null;
   sessionId = null;
+  engineActive = false;
+  engineRemaining = 0;
   localStorage.removeItem('wayfinder_token');
   localStorage.removeItem('wayfinder_session');
   updateAuthUI();
+  updateEngineUI();
 
   // Reload page for clean state
   location.reload();
@@ -445,12 +646,16 @@ async function checkAuth() {
     if (res.ok) {
       const data = await res.json();
       currentUser = data.user;
+      engineRemaining = currentUser.engineRemaining || 3;
       updateAuthUI();
+      updateEngineUI();
+      fetchEngineUsage();
     } else {
       // Token expired or invalid
       authToken = null;
       localStorage.removeItem('wayfinder_token');
       updateAuthUI();
+      updateEngineUI();
     }
   } catch {
     // Server might not be running yet, keep token
@@ -514,6 +719,10 @@ function renderMarkdown(text) {
   // Links
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
+  // Headings (## and ###)
+  html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
+  html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
+
   // Unordered lists
   html = html.replace(/^[-•]\s+(.+)$/gm, '<li>$1</li>');
   html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
@@ -523,6 +732,9 @@ function renderMarkdown(text) {
 
   // Blockquotes
   html = html.replace(/^>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
+
+  // Horizontal rules
+  html = html.replace(/^---$/gm, '<hr>');
 
   // Paragraphs
   html = html.replace(/\n\n/g, '</p><p>');
@@ -534,6 +746,9 @@ function renderMarkdown(text) {
   html = html.replace(/(<\/ul>)<\/p>/g, '$1');
   html = html.replace(/<p>(<pre>)/g, '$1');
   html = html.replace(/(<\/pre>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<h[34]>)/g, '$1');
+  html = html.replace(/(<\/h[34]>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<hr>)<\/p>/g, '$1');
 
   return html;
 }
