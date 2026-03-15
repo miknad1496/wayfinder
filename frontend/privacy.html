@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Wayfinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .header-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .header-content p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .back-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            background-color: #eff6ff;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .back-link:hover {
+            background-color: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .table-of-contents {
+            background-color: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .table-of-contents h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 8px;
+        }
+
+        .table-of-contents a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .table-of-contents a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .content {
+            line-height: 1.8;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+            padding-top: 32px;
+            scroll-margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #475569;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #475569;
+        }
+
+        strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .info-box {
+            background-color: #e0f2fe;
+            border-left: 4px solid #2563eb;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #0c4a6e;
+            font-size: 15px;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #7f1d1d;
+            font-size: 15px;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            padding-top: 32px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 24px;
+        }
+
+        .footer-content h3 {
+            margin-top: 0;
+        }
+
+        .footer-content p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-content a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .back-link {
+                margin-top: 16px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Privacy Policy</h1>
+                <p>Wayfinder - AI Career Advisor Platform</p>
+            </div>
+            <a href="/" class="back-link">← Back to Wayfinder</a>
+        </header>
+
+        <div class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#information-we-collect">Information We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Information</a></li>
+                <li><a href="#data-storage">Data Storage and Security</a></li>
+                <li><a href="#third-party">Third-Party Services</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#childrens-privacy">Children's Privacy</a></li>
+                <li><a href="#data-retention">Data Retention</a></li>
+                <li><a href="#policy-changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <section id="introduction">
+                <p><strong>Welcome to Wayfinder.</strong> Wayfinder is an AI-powered career advisor platform operated by Virtuous Capital Foundation, a 501(c)(3) nonprofit organization. We are committed to protecting your privacy and ensuring you have a positive experience on our platform.</p>
+
+                <p>This Privacy Policy explains what information we collect, how we use it, how we protect it, and your rights regarding your data. By accessing and using Wayfinder, you agree to the terms of this Privacy Policy. If you do not agree with our practices, please do not use our platform.</p>
+
+                <div class="info-box">
+                    <p><strong>Note:</strong> This Privacy Policy applies to users of all ages, with special considerations for users under 18. Please read this policy carefully and contact us if you have any questions.</p>
+                </div>
+            </section>
+
+            <section id="information-we-collect">
+                <h2>1. Information We Collect</h2>
+
+                <h3>Account Information</h3>
+                <p>When you create a Wayfinder account, we collect:</p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Email address</li>
+                    <li>Password (stored as a secure hash, never in plain text)</li>
+                    <li>Account creation date</li>
+                </ul>
+
+                <h3>Profile Information</h3>
+                <p>To provide you with personalized career advice, we collect:</p>
+                <ul>
+                    <li>Age or date of birth</li>
+                    <li>Current grade level or educational status</li>
+                    <li>Academic interests and strengths</li>
+                    <li>Extracurricular activities and hobbies</li>
+                    <li>Career goals and aspirations</li>
+                    <li>Geographic location (optional)</li>
+                </ul>
+
+                <h3>Conversation Data</h3>
+                <p>We collect and store:</p>
+                <ul>
+                    <li>All messages you send to Wayfinder's AI advisor</li>
+                    <li>All responses from our AI advisor</li>
+                    <li>Timestamps of your conversations</li>
+                    <li>Topics and subjects discussed</li>
+                </ul>
+
+                <h3>Usage Data</h3>
+                <p>We automatically collect information about how you use Wayfinder:</p>
+                <ul>
+                    <li>Queries and questions you submit</li>
+                    <li>Features you use and their frequency</li>
+                    <li>Time spent on the platform</li>
+                    <li>Content you save or bookmark</li>
+                    <li>Pages you visit within Wayfinder</li>
+                </ul>
+
+                <h3>Technical Data</h3>
+                <p>We collect technical information to improve our service:</p>
+                <ul>
+                    <li>Browser type and version</li>
+                    <li>Device type and operating system</li>
+                    <li>Internet Protocol (IP) address</li>
+                    <li>Referring website URL</li>
+                    <li>Pages visited and time spent</li>
+                    <li>Cookies and similar tracking technologies</li>
+                </ul>
+
+                <h3>Payment Information (if applicable)</h3>
+                <p>If you subscribe to a premium plan, we collect:</p>
+                <ul>
+                    <li>Billing name and address</li>
+                    <li>Payment method information (processed securely by Stripe)</li>
+                    <li>Transaction history</li>
+                </ul>
+                <p><strong>Note:</strong> Credit card numbers are never stored on our servers. Payment processing is handled securely by Stripe, our payment processor.</p>
+            </section>
+
+            <section id="how-we-use">
+                <h2>2. How We Use Your Information</h2>
+
+                <h3>Providing Career Guidance</h3>
+                <p>We use your profile information, interests, and goals to:</p>
+                <ul>
+                    <li>Provide personalized career advice tailored to your situation</li>
+                    <li>Suggest relevant majors, careers, and educational paths</li>
+                    <li>Answer questions about specific careers and industries</li>
+                    <li>Help you plan your academic and professional journey</li>
+                </ul>
+
+                <h3>Improving Our Services</h3>
+                <p>We use conversation data and usage analytics to:</p>
+                <ul>
+                    <li>Understand how students interact with career planning</li>
+                    <li>Improve the quality and relevance of AI responses</li>
+                    <li>Identify gaps in our knowledge base</li>
+                    <li>Develop new features that better serve your needs</li>
+                    <li>Enhance the overall user experience</li>
+                </ul>
+
+                <h3>Account Management</h3>
+                <p>We use your account information to:</p>
+                <ul>
+                    <li>Create and maintain your account</li>
+                    <li>Authenticate your login</li>
+                    <li>Send you service-related notifications</li>
+                    <li>Process subscription payments (if applicable)</li>
+                    <li>Respond to your support requests</li>
+                </ul>
+
+                <h3>Research and Nonprofit Mission</h3>
+                <p>As a 501(c)(3) nonprofit, we use anonymized and aggregated data to:</p>
+                <ul>
+                    <li>Conduct research on career interests and trends among students</li>
+                    <li>Better understand barriers to career planning</li>
+                    <li>Identify underserved student populations</li>
+                    <li>Publish insights to benefit the broader education community</li>
+                </ul>
+
+                <h3>Communications</h3>
+                <p>With your permission, we may send you:</p>
+                <ul>
+                    <li>Updates about new features and improvements</li>
+                    <li>Educational content related to career planning</li>
+                    <li>Important service announcements</li>
+                </ul>
+
+                <h3>Legal Compliance</h3>
+                <p>We may use your information when required by law or to protect our rights and the rights of other users.</p>
+            </section>
+
+            <section id="data-storage">
+                <h2>3. Data Storage and Security</h2>
+
+                <h3>Where Your Data is Stored</h3>
+                <p>Your data is securely stored on servers provided by Render, our hosting provider. These servers are located in secure data centers with industry-standard physical security measures.</p>
+
+                <h3>Password Security</h3>
+                <p>We take password security very seriously:</p>
+                <ul>
+                    <li>Passwords are never stored in plain text</li>
+                    <li>We use industry-standard hashing algorithms to encrypt passwords</li>
+                    <li>Even our administrators cannot access your password</li>
+                    <li>If you forget your password, we provide a secure reset process</li>
+                </ul>
+
+                <h3>Data Encryption</h3>
+                <p>We protect your data in multiple ways:</p>
+                <ul>
+                    <li><strong>In Transit:</strong> All data transmitted between your device and our servers is encrypted using SSL/TLS protocols (HTTPS)</li>
+                    <li><strong>At Rest:</strong> Sensitive data stored on our servers is encrypted using industry-standard encryption methods</li>
+                </ul>
+
+                <h3>Conversation Data</h3>
+                <p>Your conversation history with Wayfinder's AI advisor is stored securely on our servers. This data may be used to:</p>
+                <ul>
+                    <li>Maintain continuity in your conversations across sessions</li>
+                    <li>Improve the AI model's ability to provide better advice</li>
+                    <li>Allow you to review past conversations and advice</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>Important:</strong> While we implement strong security measures, no system is completely secure. If you become aware of a security breach, please contact us immediately at privacy@wayfinderai.org.</p>
+                </div>
+
+                <h3>Security Measures</h3>
+                <p>We implement multiple security measures to protect your information:</p>
+                <ul>
+                    <li>Regular security audits and penetration testing</li>
+                    <li>Firewalls and intrusion detection systems</li>
+                    <li>Access controls limiting who can view your data</li>
+                    <li>Regular software updates and security patches</li>
+                    <li>Employee training on data protection and privacy</li>
+                </ul>
+            </section>
+
+            <section id="third-party">
+                <h2>4. Third-Party Services</h2>
+
+                <h3>Claude AI (Anthropic)</h3>
+                <p><strong>Important:</strong> Wayfinder uses Claude AI, developed by Anthropic, to power our career advisor. When you send messages to Wayfinder, your messages are transmitted to Anthropic's API servers for processing. By using Wayfinder, you understand and consent to this data sharing.</p>
+                <ul>
+                    <li>Your conversation messages are sent to Anthropic's servers</li>
+                    <li>Anthropic may use your data according to their own privacy policy</li>
+                    <li>We recommend reviewing Anthropic's privacy policy: <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></li>
+                </ul>
+
+                <h3>Stripe (Payment Processing)</h3>
+                <p>If you subscribe to a premium plan, payment processing is handled by Stripe, Inc.</p>
+                <ul>
+                    <li>Stripe is PCI-DSS Level 1 certified</li>
+                    <li>Credit card information is never stored on Wayfinder's servers</li>
+                    <li>Stripe's Privacy Policy: <a href="https://stripe.com/privacy" target="_blank">stripe.com/privacy</a></li>
+                </ul>
+
+                <h3>Render (Hosting Provider)</h3>
+                <p>Wayfinder's infrastructure is hosted by Render, which provides secure cloud hosting services.</p>
+                <ul>
+                    <li>Render maintains industry-standard security and compliance standards</li>
+                    <li>Render's Privacy Policy: <a href="https://render.com/privacy" target="_blank">render.com/privacy</a></li>
+                </ul>
+
+                <h3>Google Fonts</h3>
+                <p>We use Google Fonts to improve the visual presentation of Wayfinder. Google may collect limited technical data when you access our site. For more information: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+
+                <h3>Third-Party Links</h3>
+                <p>Wayfinder may contain links to external websites and resources. We are not responsible for the privacy practices of external websites. We encourage you to review their privacy policies before sharing your information.</p>
+            </section>
+
+            <section id="your-rights">
+                <h2>5. Your Rights</h2>
+
+                <h3>Right to Access</h3>
+                <p>You have the right to access the personal information we hold about you. You can:</p>
+                <ul>
+                    <li>View your profile information by logging into your account</li>
+                    <li>Request a complete copy of your data by contacting us</li>
+                </ul>
+
+                <h3>Right to Correction</h3>
+                <p>You can update or correct your profile information at any time by logging into your account or contacting us.</p>
+
+                <h3>Right to Delete</h3>
+                <p>You have the right to delete your account and all associated data. To delete your account:</p>
+                <ul>
+                    <li>Log into your account and navigate to Settings</li>
+                    <li>Select "Delete Account"</li>
+                    <li>Confirm your decision</li>
+                    <li>Your data will be permanently deleted within 30 days</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Warning:</strong> Deleting your account is irreversible. Once deleted, you will not be able to recover your conversation history, saved recommendations, or other account data.</p>
+                </div>
+
+                <h3>Right to Opt-Out</h3>
+                <p>You can control how your data is used:</p>
+                <ul>
+                    <li>Opt out of having your conversation data used to improve Wayfinder</li>
+                    <li>Opt out of promotional emails and communications</li>
+                    <li>Manage these preferences in your account settings</li>
+                </ul>
+
+                <h3>Right to Data Portability</h3>
+                <p>You have the right to request your data in a portable format:</p>
+                <ul>
+                    <li>Request an export of your profile information</li>
+                    <li>Request an export of your conversation history</li>
+                    <li>Data will be provided in a standard, machine-readable format</li>
+                </ul>
+
+                <h3>How to Exercise Your Rights</h3>
+                <p>To exercise any of these rights, contact us at privacy@wayfinderai.org with your request and account details. We will respond within 30 days.</p>
+            </section>
+
+            <section id="childrens-privacy">
+                <h2>6. Children's Privacy (COPPA Compliance)</h2>
+
+                <h3>Age Requirements</h3>
+                <p>Wayfinder is intended for users ages 13 and older. To use Wayfinder, you must be at least 13 years old.</p>
+
+                <div class="info-box">
+                    <p><strong>Note:</strong> If a user is under 13, their parent or guardian must create the account on their behalf and provide verifiable consent.</p>
+                </div>
+
+                <h3>Special Protections for Users Under 18</h3>
+                <p>We provide special privacy protections for users under 18:</p>
+                <ul>
+                    <li>We collect only the minimum information necessary to provide our service</li>
+                    <li>We do not sell or share your information with third parties (except as described in this policy)</li>
+                    <li>We do not use your information for targeted advertising</li>
+                    <li>Parents and guardians have the right to access, correct, and delete their child's information</li>
+                    <li>We use appropriate security measures to protect young users' data</li>
+                </ul>
+
+                <h3>Parental Access</h3>
+                <p>If you are a parent or guardian of a Wayfinder user under 18, you have the right to:</p>
+                <ul>
+                    <li>Access your child's account information</li>
+                    <li>Request deletion of your child's data</li>
+                    <li>Opt your child out of data usage for improvement</li>
+                    <li>Contact us with questions about your child's privacy</li>
+                </ul>
+
+                <h3>Parental Consent</h3>
+                <p>For users under 13, we require verifiable parental consent. Parents should contact us at privacy@wayfinderai.org if:</p>
+                <ul>
+                    <li>They wish to withdraw consent</li>
+                    <li>They want to access their child's information</li>
+                    <li>They want to delete their child's account</li>
+                </ul>
+            </section>
+
+            <section id="data-retention">
+                <h2>7. Data Retention</h2>
+
+                <h3>Active Accounts</h3>
+                <p>As long as your account is active, we retain all your information:</p>
+                <ul>
+                    <li>Account information (name, email, profile)</li>
+                    <li>Conversation history and career planning data</li>
+                    <li>Usage analytics and preferences</li>
+                </ul>
+
+                <h3>Deleted Accounts</h3>
+                <p>When you delete your account:</p>
+                <ul>
+                    <li>Your data is marked for deletion immediately</li>
+                    <li>Complete deletion occurs within 30 days</li>
+                    <li>Backups containing your data are deleted within 90 days</li>
+                    <li>Anonymized, aggregated data may be retained for research purposes</li>
+                </ul>
+
+                <h3>Conversation History</h3>
+                <p>Your conversation history is retained to:</p>
+                <ul>
+                    <li>Allow you to review past advice and recommendations</li>
+                    <li>Improve the AI's ability to provide better guidance</li>
+                    <li>Provide continuity across sessions</li>
+                </ul>
+                <p>You can delete individual conversations or your entire conversation history at any time through your account settings.</p>
+
+                <h3>Legal Retention</h3>
+                <p>We may retain data longer than specified above if required by law or legal processes.</p>
+            </section>
+
+            <section id="policy-changes">
+                <h2>8. Changes to This Policy</h2>
+
+                <h3>Updates and Notifications</h3>
+                <p>Wayfinder may update this Privacy Policy from time to time to reflect:</p>
+                <ul>
+                    <li>Changes in our data practices</li>
+                    <li>New features or services</li>
+                    <li>Legal or regulatory requirements</li>
+                    <li>Industry best practices</li>
+                </ul>
+
+                <h3>How We Notify You</h3>
+                <p>When we make material changes to this policy, we will:</p>
+                <ul>
+                    <li>Update the "Last Updated" date at the bottom of this page</li>
+                    <li>Notify you via email to your registered email address</li>
+                    <li>Display a prominent notice on the Wayfinder platform</li>
+                    <li>Require your acceptance of the updated policy</li>
+                </ul>
+
+                <h3>Your Continued Use</h3>
+                <p>Your continued use of Wayfinder after changes become effective constitutes your acceptance of the updated Privacy Policy. If you disagree with any changes, you may delete your account.</p>
+            </section>
+
+            <section id="contact">
+                <h2>9. Contact Information</h2>
+
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:</p>
+
+                <div class="info-box">
+                    <h3 style="margin-top: 0;">Virtuous Capital Foundation</h3>
+                    <p><strong>Email:</strong> privacy@wayfinderai.org</p>
+                    <p><strong>Subject Line:</strong> Include "Privacy Request" or "Privacy Question"</p>
+                    <p><strong>Response Time:</strong> We aim to respond to all privacy inquiries within 30 days.</p>
+                </div>
+
+                <h3>Privacy Requests</h3>
+                <p>When submitting a privacy request, please include:</p>
+                <ul>
+                    <li>Your name and registered email address</li>
+                    <li>Your Wayfinder user ID (if applicable)</li>
+                    <li>A clear description of your request</li>
+                    <li>Any relevant account information</li>
+                </ul>
+
+                <h3>About Virtuous Capital Foundation</h3>
+                <p>Virtuous Capital Foundation is a 501(c)(3) nonprofit organization dedicated to supporting career planning and educational advancement for pre-college and college students. We are committed to protecting your privacy while advancing our mission to provide equitable access to career guidance.</p>
+            </section>
+
+            <footer>
+                <div class="footer-content">
+                    <h3>Privacy at Wayfinder</h3>
+                    <p>Your privacy and trust are important to us. We are committed to transparency and responsible data practices.</p>
+                    <p>Thank you for using Wayfinder to plan your career journey.</p>
+                </div>
+                <div class="last-updated">
+                    Last Updated: March 2026
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

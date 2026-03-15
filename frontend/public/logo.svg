@@ -1,0 +1,69 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Metallic gradient for main compass body -->
+    <linearGradient id="metallicGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6EDF3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9D1D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B949E;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Dark gradient for depth/shadow -->
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#30363D;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#30363D;stop-opacity:0.1" />
+    </linearGradient>
+
+    <!-- Blue accent gradient -->
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58A6FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82D6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Highlight gradient for shine -->
+    <radialGradient id="highlight" cx="35%" cy="35%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Outer circle ring (metallic) -->
+  <circle cx="20" cy="20" r="18" fill="url(#metallicGradient)" />
+
+  <!-- Shadow overlay for depth -->
+  <circle cx="20" cy="20" r="18" fill="url(#shadowGradient)" />
+
+  <!-- Highlight for metallic shine -->
+  <circle cx="20" cy="20" r="18" fill="url(#highlight)" />
+
+  <!-- Inner darker ring for definition -->
+  <circle cx="20" cy="20" r="16.5" fill="none" stroke="#30363D" stroke-width="0.5" opacity="0.5" />
+
+  <!-- Cardinal direction markers (stylized) -->
+  <!-- North needle (blue accent) -->
+  <path d="M 20 8 L 22 15 L 20 14.5 L 18 15 Z" fill="url(#blueAccent)" />
+
+  <!-- South counter weight (dark) -->
+  <path d="M 20 32 L 22 25 L 20 25.5 L 18 25 Z" fill="#30363D" opacity="0.7" />
+
+  <!-- East accent line -->
+  <line x1="32" y1="20" x2="25" y2="20" stroke="url(#blueAccent)" stroke-width="1.5" opacity="0.8" stroke-linecap="round" />
+
+  <!-- West accent line -->
+  <line x1="8" y1="20" x2="15" y2="20" stroke="#8B949E" stroke-width="1.5" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Center circle (metallic hub) -->
+  <circle cx="20" cy="20" r="4" fill="url(#metallicGradient)" />
+
+  <!-- Center hub shadow -->
+  <circle cx="20" cy="20" r="4" fill="url(#shadowGradient)" />
+
+  <!-- Center hub highlight -->
+  <circle cx="20" cy="20" r="4" fill="url(#highlight)" opacity="0.8" />
+
+  <!-- Decorative cross (subtle wayfinder marker) -->
+  <line x1="20" y1="19" x2="20" y2="21" stroke="#58A6FF" stroke-width="0.8" opacity="0.6" stroke-linecap="round" />
+  <line x1="19" y1="20" x2="21" y2="20" stroke="#58A6FF" stroke-width="0.8" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Subtle outer accent ring -->
+  <circle cx="20" cy="20" r="18" fill="none" stroke="#58A6FF" stroke-width="0.8" opacity="0.3" />
+</svg>

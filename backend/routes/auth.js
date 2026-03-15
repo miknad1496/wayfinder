@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage } from '../services/auth.js';
+import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats } from '../services/auth.js';
 
 const router = Router();
 
@@ -103,6 +103,45 @@ router.get('/engine-usage', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   const usage = await getEngineUsage(token);
   res.json(usage);
+});
+
+// DELETE /api/auth/account - Delete user account
+router.delete('/account', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const result = await deleteUser(token);
+
+  if (result.error) {
+    return res.status(400).json({ error: result.error });
+  }
+
+  res.json(result);
+});
+
+// PUT /api/auth/settings - Update user settings
+router.put('/settings', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const result = await updateSettings(token, req.body.settings || {});
+
+  if (result.error) {
+    return res.status(400).json({ error: result.error });
+  }
+
+  res.json(result);
+});
+
+// GET /api/auth/history - Get user's chat history
+router.get('/history', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const history = await getUserChatHistory(token);
+  res.json({ history });
+});
+
+// GET /api/auth/search - Search user's chats
+router.get('/search', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const query = req.query.q || '';
+  const results = await searchUserChats(token, query);
+  res.json({ results });
 });
 
 export default router;

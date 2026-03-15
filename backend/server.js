@@ -56,7 +56,16 @@ app.use('/api/auth', authRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
+  // Serve public assets (logo.svg, favicon.svg, etc.)
+  app.use(express.static(join(__dirname, '..', 'frontend', 'public')));
+  // Serve built frontend
   app.use(express.static(join(__dirname, '..', 'frontend', 'dist')));
+
+  // Privacy policy route
+  app.get('/privacy', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'privacy.html'));
+  });
+
   app.get('*', (req, res) => {
     // Don't serve index.html for API routes
     if (req.path.startsWith('/api')) {

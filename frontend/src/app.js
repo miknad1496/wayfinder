@@ -1,21 +1,22 @@
 /**
- * Wayfinder Chat Application
+ * Wayfinder Chat Application — v2
  *
- * Handles:
- * - Chat messaging with the backend API
- * - Session management (persists across page reloads)
- * - User authentication (login/signup)
- * - User profile editing
- * - Wayfinder Engine toggle (3 deep-dive queries/day)
- * - Feedback collection (thumbs up/down)
- * - Data consent tracking
- * - Auto-growing textarea
- * - Simple markdown rendering
+ * Claude AI-style interface with:
+ * - Collapsible sidebar with chat history
+ * - Search across chats
+ * - Copy/paste on messages
+ * - Settings (general, account, privacy)
+ * - Upgrade plans (Free, Premium, Pro)
+ * - Time-of-day greeting
+ * - Wayfinder Engine toggle
+ * - User profiles
  */
 
 const API_BASE = '/api';
 
+// ========================
 // State
+// ========================
 let sessionId = localStorage.getItem('wayfinder_session') || null;
 let authToken = localStorage.getItem('wayfinder_token') || null;
 let currentUser = null;
@@ -23,50 +24,258 @@ let messageCount = 0;
 let isLoading = false;
 let engineActive = false;
 let engineRemaining = 0;
+let chatHistoryCache = [];
+let currentChatId = null;
 
-// DOM elements
-const messagesEl = document.getElementById('messages');
-const inputEl = document.getElementById('userInput');
-const sendBtn = document.getElementById('sendBtn');
-const charCountEl = document.getElementById('charCount');
+// ========================
+// DOM References
+// ========================
+const $ = (id) => document.getElementById(id);
+const messagesEl = $('messages');
+const welcomeScreen = $('welcomeScreen');
+const inputEl = $('userInput');
+const sendBtn = $('sendBtn');
+const charCountEl = $('charCount');
+const sidebar = $('sidebar');
+const engineToggleRow = $('engineToggleRow');
+const engineToggle = $('engineToggle');
+const engineCountEl = $('engineCount');
 
-// Auth DOM elements
-const authModal = document.getElementById('authModal');
-const loginForm = document.getElementById('loginForm');
-const signupForm = document.getElementById('signupForm');
-const authLoggedOut = document.getElementById('authLoggedOut');
-const authLoggedIn = document.getElementById('authLoggedIn');
-const userNameEl = document.getElementById('userName');
-const consentBanner = document.getElementById('consentBanner');
-
-// Profile DOM elements
-const profileModal = document.getElementById('profileModal');
-
-// Engine DOM elements
-const engineToggleRow = document.getElementById('engineToggleRow');
-const engineToggle = document.getElementById('engineToggle');
-const engineCountEl = document.getElementById('engineCount');
-
+// ========================
 // Initialize
+// ========================
 document.addEventListener('DOMContentLoaded', () => {
-  setupEventListeners();
+  setupChatListeners();
+  setupSidebarListeners();
   setupAuthListeners();
   setupProfileListeners();
   setupEngineListeners();
+  setupSettingsListeners();
+  setupUpgradeListeners();
+  setupWelcomeChips();
+  updateGreeting();
   checkAuth();
   checkConsent();
   inputEl.focus();
 });
 
 // ========================
+// Greeting (time-of-day)
+// ========================
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = 'Good evening';
+  if (hour < 12) greeting = 'Good morning';
+  else if (hour < 17) greeting = 'Good afternoon';
+
+  const el = $('welcomeGreeting');
+  if (currentUser && currentUser.name) {
+    const displayName = currentUser.settings?.displayName || currentUser.name.split(' ')[0];
+    el.textContent = `${greeting}, ${displayName}`;
+  } else {
+    el.textContent = greeting;
+  }
+}
+
+// ========================
+// Welcome chips
+// ========================
+function setupWelcomeChips() {
+  welcomeScreen.addEventListener('click', (e) => {
+    const chip = e.target.closest('.welcome-chip');
+    if (chip) {
+      const msg = chip.dataset.message;
+      if (msg) {
+        inputEl.value = msg;
+        sendMessage();
+      }
+    }
+  });
+}
+
+// ========================
+// Sidebar
+// ========================
+function setupSidebarListeners() {
+  $('sidebarClose').addEventListener('click', () => sidebar.classList.add('collapsed'));
+  $('sidebarOpen').addEventListener('click', () => sidebar.classList.remove('collapsed'));
+  $('newChatBtn').addEventListener('click', startNewChat);
+
+  // Search
+  $('chatSearch').addEventListener('input', debounce(handleChatSearch, 300));
+
+  // Settings & upgrade from sidebar
+  $('sidebarSettings').addEventListener('click', openSettings);
+  $('sidebarUpgrade').addEventListener('click', openUpgrade);
+}
+
+function startNewChat() {
+  sessionId = null;
+  currentChatId = null;
+  localStorage.removeItem('wayfinder_session');
+  messagesEl.innerHTML = '';
+  messagesEl.style.display = 'none';
+  welcomeScreen.style.display = 'flex';
+  updateGreeting();
+  messageCount = 0;
+
+  // Deselect active history item
+  document.querySelectorAll('.history-item.active').forEach(el => el.classList.remove('active'));
+
+  inputEl.focus();
+}
+
+async function loadChatHistory() {
+  if (!authToken) {
+    showEmptyHistory();
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/history`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    chatHistoryCache = data.history || [];
+    renderChatHistory(chatHistoryCache);
+  } catch {
+    showEmptyHistory();
+  }
+}
+
+function renderChatHistory(items) {
+  const todayEl = $('historyToday');
+  const weekEl = $('historyWeek');
+  const olderEl = $('historyOlder');
+
+  todayEl.innerHTML = '';
+  weekEl.innerHTML = '';
+  olderEl.innerHTML = '';
+
+  if (!items || items.length === 0) {
+    showEmptyHistory();
+    return;
+  }
+
+  // Hide empty states
+  todayEl.parentElement.style.display = 'block';
+  weekEl.parentElement.style.display = 'block';
+  olderEl.parentElement.style.display = 'block';
+
+  const now = new Date();
+  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const weekAgo = new Date(todayStart.getTime() - 7 * 86400000);
+
+  let todayCount = 0, weekCount = 0, olderCount = 0;
+
+  items.forEach(chat => {
+    const date = new Date(chat.lastActive || chat.created);
+    const btn = document.createElement('button');
+    btn.className = 'history-item';
+    if (chat.id === currentChatId) btn.classList.add('active');
+    btn.textContent = chat.title || 'New conversation';
+    btn.addEventListener('click', () => loadChat(chat.id));
+
+    if (date >= todayStart) {
+      todayEl.appendChild(btn);
+      todayCount++;
+    } else if (date >= weekAgo) {
+      weekEl.appendChild(btn);
+      weekCount++;
+    } else {
+      olderEl.appendChild(btn);
+      olderCount++;
+    }
+  });
+
+  // Hide sections with no items
+  todayEl.parentElement.style.display = todayCount ? 'block' : 'none';
+  weekEl.parentElement.style.display = weekCount ? 'block' : 'none';
+  olderEl.parentElement.style.display = olderCount ? 'block' : 'none';
+}
+
+function showEmptyHistory() {
+  const todayEl = $('historyToday');
+  todayEl.innerHTML = '<div class="history-empty">No conversations yet</div>';
+  todayEl.parentElement.style.display = 'block';
+  $('historyWeek').parentElement.style.display = 'none';
+  $('historyOlder').parentElement.style.display = 'none';
+}
+
+async function loadChat(chatId) {
+  try {
+    const headers = {};
+    if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
+
+    const res = await fetch(`${API_BASE}/chat/history/${chatId}`, { headers });
+    if (!res.ok) throw new Error();
+
+    const data = await res.json();
+
+    // Set current session
+    sessionId = chatId;
+    currentChatId = chatId;
+    localStorage.setItem('wayfinder_session', chatId);
+    messageCount = data.messageCount || 0;
+
+    // Render messages
+    welcomeScreen.style.display = 'none';
+    messagesEl.style.display = 'block';
+    messagesEl.innerHTML = '';
+
+    if (data.messages) {
+      for (let i = 0; i < data.messages.length; i++) {
+        const msg = data.messages[i];
+        appendMessage(msg.role === 'user' ? 'user' : 'assistant', msg.content);
+      }
+    }
+
+    // Update active state in sidebar
+    document.querySelectorAll('.history-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.history-item').forEach(el => {
+      if (el.textContent === (chatHistoryCache.find(c => c.id === chatId)?.title || '')) {
+        el.classList.add('active');
+      }
+    });
+
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  } catch (err) {
+    console.warn('Failed to load chat:', err);
+  }
+}
+
+async function handleChatSearch(e) {
+  const query = e?.target?.value?.trim() || '';
+  if (!query) {
+    renderChatHistory(chatHistoryCache);
+    return;
+  }
+
+  if (!authToken) return;
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/search?q=${encodeURIComponent(query)}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    renderChatHistory(data.results || []);
+  } catch {
+    // Fall back to local filter
+    const filtered = chatHistoryCache.filter(c =>
+      (c.title || '').toLowerCase().includes(query.toLowerCase())
+    );
+    renderChatHistory(filtered);
+  }
+}
+
+// ========================
 // Chat Functions
 // ========================
-
-function setupEventListeners() {
-  // Send button
+function setupChatListeners() {
   sendBtn.addEventListener('click', sendMessage);
 
-  // Enter to send (Shift+Enter for newline)
   inputEl.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -74,29 +283,35 @@ function setupEventListeners() {
     }
   });
 
-  // Auto-grow textarea
   inputEl.addEventListener('input', () => {
     inputEl.style.height = 'auto';
     inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
-
-    // Character count
     const len = inputEl.value.length;
     charCountEl.textContent = len > 100 ? `${len}/5000` : '';
   });
 
-  // Quick action buttons (event delegation)
+  // Event delegation for message actions
   messagesEl.addEventListener('click', (e) => {
-    if (e.target.classList.contains('quick-btn')) {
-      const message = e.target.dataset.message;
-      if (message) {
-        inputEl.value = message;
-        sendMessage();
+    // Copy button
+    const copyBtn = e.target.closest('.copy-btn');
+    if (copyBtn) {
+      const messageEl = copyBtn.closest('.message');
+      const bodyEl = messageEl.querySelector('.message-body');
+      if (bodyEl) {
+        navigator.clipboard.writeText(bodyEl.innerText).then(() => {
+          copyBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        });
       }
     }
 
     // Feedback buttons
-    if (e.target.classList.contains('feedback-btn')) {
-      handleFeedback(e.target);
+    if (e.target.closest('.feedback-btn')) {
+      handleFeedback(e.target.closest('.feedback-btn'));
     }
   });
 }
@@ -105,33 +320,28 @@ async function sendMessage() {
   const message = inputEl.value.trim();
   if (!message || isLoading) return;
 
-  // Clear input
+  // Switch from welcome to chat view
+  if (welcomeScreen.style.display !== 'none') {
+    welcomeScreen.style.display = 'none';
+    messagesEl.style.display = 'block';
+  }
+
   inputEl.value = '';
   inputEl.style.height = 'auto';
   charCountEl.textContent = '';
 
-  // Add user message to chat
   appendMessage('user', message);
-
-  // Show typing indicator
   const typingEl = showTyping();
 
-  // Disable input
   isLoading = true;
   sendBtn.disabled = true;
 
   try {
     const headers = { 'Content-Type': 'application/json' };
-    if (authToken) {
-      headers['Authorization'] = `Bearer ${authToken}`;
-    }
+    if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
 
     const body = { message, sessionId };
-
-    // If engine is active, include the flag
-    if (engineActive) {
-      body.useWayfinderEngine = true;
-    }
+    if (engineActive) body.useWayfinderEngine = true;
 
     const response = await fetch(`${API_BASE}/chat`, {
       method: 'POST',
@@ -146,34 +356,30 @@ async function sendMessage() {
 
     const data = await response.json();
 
-    // Save session
     sessionId = data.sessionId;
+    currentChatId = data.sessionId;
     localStorage.setItem('wayfinder_session', sessionId);
     messageCount = data.messageCount;
 
-    // Update engine remaining count
     if (data.engineRemaining !== null && data.engineRemaining !== undefined) {
       engineRemaining = data.engineRemaining;
       updateEngineUI();
     }
 
-    // Remove typing indicator
     typingEl.remove();
-
-    // Add assistant response with mode indicator
     appendMessage('assistant', data.response, data.sources, data.mode);
 
-    // Deactivate engine after use
     if (engineActive) {
       engineActive = false;
       engineToggle.classList.remove('active');
     }
 
+    // Refresh chat history in sidebar
+    loadChatHistory();
+
   } catch (err) {
     typingEl.remove();
     appendError(err.message);
-
-    // If engine limit reached, deactivate
     if (engineActive) {
       engineActive = false;
       engineToggle.classList.remove('active');
@@ -187,94 +393,107 @@ async function sendMessage() {
 
 function appendMessage(role, text, sources = [], mode = null) {
   const messageEl = document.createElement('div');
-  messageEl.className = `message ${role}`;
+  messageEl.className = 'message';
 
-  const avatarEl = document.createElement('div');
-  avatarEl.className = 'message-avatar';
-  avatarEl.textContent = role === 'user' ? '👤' : '🧭';
+  const initial = currentUser ? (currentUser.name || 'U')[0].toUpperCase() : 'U';
 
-  const contentEl = document.createElement('div');
-  contentEl.className = 'message-content';
-
-  // Add mode badge for assistant messages
+  // Mode badge
+  let badgeHTML = '';
   if (role === 'assistant' && mode) {
-    const badge = document.createElement('div');
-    badge.className = `engine-badge ${mode}`;
-    badge.textContent = mode === 'engine' ? '⚡ Wayfinder Engine' : '💬 Standard';
-    contentEl.appendChild(badge);
+    const modeLabel = mode === 'engine' ? 'Wayfinder Engine' : 'Standard';
+    badgeHTML = `<div class="engine-badge ${mode}">${modeLabel}</div>`;
   }
 
-  const textEl = document.createElement('div');
-  textEl.className = 'message-text';
-  textEl.innerHTML = role === 'assistant' ? renderMarkdown(text) : escapeHtml(text);
+  // Header
+  const avatarHTML = role === 'user'
+    ? `<div class="message-avatar user-avatar">${initial}</div>`
+    : `<div class="message-avatar"><img src="/public/logo.svg" alt="Wayfinder"></div>`;
 
-  contentEl.appendChild(textEl);
+  const roleName = role === 'user'
+    ? (currentUser?.name || 'You')
+    : 'Wayfinder';
 
-  // Add sources if available
+  const headerHTML = `
+    <div class="message-header">
+      ${avatarHTML}
+      <span class="message-role">${escapeHtml(roleName)}</span>
+    </div>
+  `;
+
+  // Body
+  const bodyContent = role === 'assistant' ? renderMarkdown(text) : `<p>${escapeHtml(text)}</p>`;
+  const bodyHTML = `<div class="message-body">${bodyContent}</div>`;
+
+  // Sources
+  let sourcesHTML = '';
   if (sources && sources.length > 0) {
-    const sourcesEl = document.createElement('div');
-    sourcesEl.className = 'sources';
-    sourcesEl.innerHTML = 'Sources: ' + sources
-      .map(s => `<span>${escapeHtml(s.source.replace('.json', '').replace('.md', ''))}</span>`)
-      .join('');
-    contentEl.appendChild(sourcesEl);
+    sourcesHTML = `<div class="sources">Sources: ${sources
+      .map(s => `<span>${escapeHtml((s.source || '').replace('.json', '').replace('.md', ''))}</span>`)
+      .join('')}</div>`;
   }
 
-  // Add feedback buttons for assistant messages
+  // Copy button (for assistant messages)
+  let actionsHTML = '';
   if (role === 'assistant') {
-    const feedbackEl = document.createElement('div');
-    feedbackEl.className = 'feedback-row';
-    feedbackEl.innerHTML = `
-      <button class="feedback-btn" data-rating="1" data-index="${messageCount}">👍 Helpful</button>
-      <button class="feedback-btn" data-rating="-1" data-index="${messageCount}">👎 Not helpful</button>
+    actionsHTML = `
+      <div class="message-actions">
+        <button class="msg-action-btn copy-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          Copy
+        </button>
+      </div>
+      <div class="feedback-row">
+        <button class="feedback-btn" data-rating="1" data-index="${messageCount}">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          Helpful
+        </button>
+        <button class="feedback-btn" data-rating="-1" data-index="${messageCount}">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+          Not helpful
+        </button>
+      </div>
     `;
-    contentEl.appendChild(feedbackEl);
   }
 
-  messageEl.appendChild(avatarEl);
-  messageEl.appendChild(contentEl);
+  messageEl.innerHTML = headerHTML + badgeHTML + bodyHTML + sourcesHTML + actionsHTML;
   messagesEl.appendChild(messageEl);
-
-  // Scroll to bottom
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
 
 function appendError(message) {
-  const errorEl = document.createElement('div');
-  errorEl.className = 'error-message';
-  errorEl.textContent = `Something went wrong: ${message}. Please try again.`;
-  messagesEl.appendChild(errorEl);
+  const el = document.createElement('div');
+  el.className = 'error-message';
+  el.textContent = `Something went wrong: ${message}. Please try again.`;
+  messagesEl.appendChild(el);
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
 
 function showTyping() {
-  const messageEl = document.createElement('div');
-  messageEl.className = 'message assistant';
-  messageEl.innerHTML = `
-    <div class="message-avatar">🧭</div>
-    <div class="message-content">
-      <div class="message-text">
-        <div class="typing-indicator">
-          <span></span><span></span><span></span>
-        </div>
-      </div>
+  const el = document.createElement('div');
+  el.className = 'message';
+  el.innerHTML = `
+    <div class="message-header">
+      <div class="message-avatar"><img src="/public/logo.svg" alt="Wayfinder"></div>
+      <span class="message-role">Wayfinder</span>
     </div>
+    <div class="typing-indicator"><span></span><span></span><span></span></div>
   `;
-  messagesEl.appendChild(messageEl);
+  messagesEl.appendChild(el);
   messagesEl.scrollTop = messagesEl.scrollHeight;
-  return messageEl;
+  return el;
 }
 
 async function handleFeedback(btn) {
   const rating = parseInt(btn.dataset.rating);
   const index = parseInt(btn.dataset.index);
 
-  // Visual feedback
   const row = btn.parentElement;
   row.querySelectorAll('.feedback-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
 
-  // If negative, ask for comment
   let comment = null;
   if (rating === -1) {
     comment = prompt('What could be improved? (optional)');
@@ -284,12 +503,7 @@ async function handleFeedback(btn) {
     await fetch(`${API_BASE}/feedback`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        sessionId,
-        messageIndex: index,
-        rating,
-        comment
-      })
+      body: JSON.stringify({ sessionId, messageIndex: index, rating, comment })
     });
   } catch (err) {
     console.warn('Failed to submit feedback:', err);
@@ -299,7 +513,6 @@ async function handleFeedback(btn) {
 // ========================
 // Engine Toggle
 // ========================
-
 function setupEngineListeners() {
   engineToggle.addEventListener('click', toggleEngine);
 }
@@ -309,19 +522,12 @@ function toggleEngine() {
     alert('Please log in to use the Wayfinder Engine.');
     return;
   }
-
   if (engineRemaining <= 0 && !engineActive) {
-    alert('You\'ve used all 3 Wayfinder Engine queries for today. Try again tomorrow!');
+    alert('You\'ve used all your Engine queries for today. Upgrade your plan for more!');
     return;
   }
-
   engineActive = !engineActive;
-
-  if (engineActive) {
-    engineToggle.classList.add('active');
-  } else {
-    engineToggle.classList.remove('active');
-  }
+  engineToggle.classList.toggle('active', engineActive);
 }
 
 function updateEngineUI() {
@@ -329,10 +535,8 @@ function updateEngineUI() {
     engineToggleRow.style.display = 'none';
     return;
   }
-
   engineToggleRow.style.display = 'flex';
   engineCountEl.textContent = `${engineRemaining} left today`;
-
   if (engineRemaining <= 0) {
     engineToggle.classList.add('disabled');
     engineToggle.classList.remove('active');
@@ -344,7 +548,6 @@ function updateEngineUI() {
 
 async function fetchEngineUsage() {
   if (!authToken) return;
-
   try {
     const res = await fetch(`${API_BASE}/auth/engine-usage`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
@@ -354,177 +557,295 @@ async function fetchEngineUsage() {
       engineRemaining = data.remaining;
       updateEngineUI();
     }
-  } catch {
-    // Non-critical
-  }
+  } catch { /* non-critical */ }
 }
 
 // ========================
-// Profile Functions
+// Profile
 // ========================
-
 function setupProfileListeners() {
-  document.getElementById('profileBtn').addEventListener('click', openProfile);
-  document.getElementById('profileModalClose').addEventListener('click', closeProfile);
-  document.getElementById('profileSave').addEventListener('click', saveProfile);
-
-  profileModal.addEventListener('click', (e) => {
-    if (e.target === profileModal) closeProfile();
+  $('profileModalClose').addEventListener('click', () => $('profileModal').style.display = 'none');
+  $('profileSave').addEventListener('click', saveProfile);
+  $('profileModal').addEventListener('click', (e) => {
+    if (e.target === $('profileModal')) $('profileModal').style.display = 'none';
   });
 }
 
 function openProfile() {
   if (!currentUser) return;
-
-  // Populate fields from current user profile
   const p = currentUser.profile || {};
-  document.getElementById('profileAge').value = p.age || '';
-  document.getElementById('profileGrade').value = p.gradeLevel || '';
-  document.getElementById('profileClasses').value = (p.favoriteClasses || []).join(', ');
-  document.getElementById('profileCareerInterests').value = (p.careerInterests || []).join(', ');
-  document.getElementById('profileAbout').value = p.aboutMe || '';
-
-  document.getElementById('profileSaveMsg').style.display = 'none';
-  profileModal.style.display = 'flex';
-}
-
-function closeProfile() {
-  profileModal.style.display = 'none';
+  $('profileAge').value = p.age || '';
+  $('profileGrade').value = p.gradeLevel || '';
+  $('profileClasses').value = (p.favoriteClasses || []).join(', ');
+  $('profileCareerInterests').value = (p.careerInterests || []).join(', ');
+  $('profileAbout').value = p.aboutMe || '';
+  $('profileSaveMsg').style.display = 'none';
+  $('profileModal').style.display = 'flex';
 }
 
 async function saveProfile() {
   const profile = {
-    age: document.getElementById('profileAge').value.trim(),
-    gradeLevel: document.getElementById('profileGrade').value,
-    favoriteClasses: document.getElementById('profileClasses').value
-      .split(',').map(s => s.trim()).filter(Boolean),
-    careerInterests: document.getElementById('profileCareerInterests').value
-      .split(',').map(s => s.trim()).filter(Boolean),
-    aboutMe: document.getElementById('profileAbout').value.trim()
+    age: $('profileAge').value.trim(),
+    gradeLevel: $('profileGrade').value,
+    favoriteClasses: $('profileClasses').value.split(',').map(s => s.trim()).filter(Boolean),
+    careerInterests: $('profileCareerInterests').value.split(',').map(s => s.trim()).filter(Boolean),
+    aboutMe: $('profileAbout').value.trim()
   };
 
   try {
     const res = await fetch(`${API_BASE}/auth/profile`, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
       body: JSON.stringify({ profile })
     });
-
     const data = await res.json();
-
     if (data.error) {
-      const msg = document.getElementById('profileSaveMsg');
-      msg.textContent = data.error;
-      msg.style.color = '#991b1b';
-      msg.style.display = 'block';
+      showMsg('profileSaveMsg', data.error, '#991b1b');
       return;
     }
-
-    // Update local user
     currentUser = data.user;
-
-    const msg = document.getElementById('profileSaveMsg');
-    msg.textContent = 'Profile saved! Your responses will now be personalized.';
-    msg.style.color = '#059669';
-    msg.style.display = 'block';
-
-    // Auto-close after 1.5s
-    setTimeout(() => closeProfile(), 1500);
-
-  } catch (err) {
-    const msg = document.getElementById('profileSaveMsg');
-    msg.textContent = 'Failed to save. Please try again.';
-    msg.style.color = '#991b1b';
-    msg.style.display = 'block';
+    showMsg('profileSaveMsg', 'Profile saved!', '#059669');
+    setTimeout(() => $('profileModal').style.display = 'none', 1200);
+  } catch {
+    showMsg('profileSaveMsg', 'Failed to save.', '#991b1b');
   }
+}
+
+// ========================
+// Settings
+// ========================
+function setupSettingsListeners() {
+  $('settingsModalClose').addEventListener('click', () => $('settingsModal').style.display = 'none');
+  $('settingsModal').addEventListener('click', (e) => {
+    if (e.target === $('settingsModal')) $('settingsModal').style.display = 'none';
+  });
+
+  // Tabs
+  document.querySelectorAll('.settings-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      $(`settings${capitalize(tab.dataset.tab)}`).classList.add('active');
+    });
+  });
+
+  // General save
+  $('settingsSaveGeneral').addEventListener('click', saveGeneralSettings);
+
+  // Privacy save
+  $('settingsSavePrivacy').addEventListener('click', savePrivacySettings);
+
+  // Account actions
+  $('settingsLogout').addEventListener('click', logout);
+  $('settingsDeleteAccount').addEventListener('click', deleteAccount);
+  $('settingsUpgradeBtn').addEventListener('click', () => {
+    $('settingsModal').style.display = 'none';
+    openUpgrade();
+  });
+}
+
+function openSettings() {
+  if (!currentUser) {
+    openAuthModal('login');
+    return;
+  }
+
+  // Populate general tab
+  $('settingsDisplayName').value = currentUser.settings?.displayName || currentUser.name || '';
+  $('settingsEmail').value = currentUser.email || '';
+
+  // Populate privacy tab
+  $('settingsMemory').checked = currentUser.settings?.memory !== false;
+  $('settingsHelpImprove').checked = currentUser.settings?.helpImprove !== false;
+
+  // Populate account tab
+  const planNames = { free: 'Wayfinder Free', premium: 'Wayfinder Premium', pro: 'Wayfinder Pro' };
+  const planLimits = { free: 3, premium: 10, pro: 20 };
+  const plan = currentUser.plan || 'free';
+  $('currentPlanDisplay').innerHTML = `
+    <span class="plan-name">${planNames[plan]}</span>
+    <span class="plan-detail">${planLimits[plan]} Engine queries/day</span>
+  `;
+
+  // Reset to general tab
+  document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.settings-tab[data-tab="general"]').classList.add('active');
+  $('settingsGeneral').classList.add('active');
+
+  $('settingsModal').style.display = 'flex';
+}
+
+async function saveGeneralSettings() {
+  const displayName = $('settingsDisplayName').value.trim();
+  try {
+    const res = await fetch(`${API_BASE}/auth/settings`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      body: JSON.stringify({ settings: { displayName } })
+    });
+    const data = await res.json();
+    if (data.error) {
+      showMsg('settingsGeneralMsg', data.error, '#991b1b');
+      return;
+    }
+    currentUser = data.user;
+    updateGreeting();
+    updateAuthUI();
+    showMsg('settingsGeneralMsg', 'Settings saved!', '#059669');
+  } catch {
+    showMsg('settingsGeneralMsg', 'Failed to save.', '#991b1b');
+  }
+}
+
+async function savePrivacySettings() {
+  const memory = $('settingsMemory').checked;
+  const helpImprove = $('settingsHelpImprove').checked;
+  try {
+    const res = await fetch(`${API_BASE}/auth/settings`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      body: JSON.stringify({ settings: { memory, helpImprove } })
+    });
+    const data = await res.json();
+    if (data.error) {
+      showMsg('settingsPrivacyMsg', data.error, '#991b1b');
+      return;
+    }
+    currentUser = data.user;
+    showMsg('settingsPrivacyMsg', 'Privacy settings saved!', '#059669');
+  } catch {
+    showMsg('settingsPrivacyMsg', 'Failed to save.', '#991b1b');
+  }
+}
+
+async function deleteAccount() {
+  const confirmed = confirm('Are you sure you want to delete your account? All your data will be permanently removed. This cannot be undone.');
+  if (!confirmed) return;
+
+  const doubleConfirm = confirm('This is your final confirmation. Delete account and all data?');
+  if (!doubleConfirm) return;
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/account`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (res.ok) {
+      alert('Your account has been deleted.');
+      authToken = null;
+      currentUser = null;
+      sessionId = null;
+      localStorage.clear();
+      location.reload();
+    }
+  } catch {
+    alert('Failed to delete account. Please try again.');
+  }
+}
+
+// ========================
+// Upgrade / Plans
+// ========================
+function setupUpgradeListeners() {
+  $('upgradeModalClose').addEventListener('click', () => $('upgradeModal').style.display = 'none');
+  $('upgradeModal').addEventListener('click', (e) => {
+    if (e.target === $('upgradeModal')) $('upgradeModal').style.display = 'none';
+  });
+
+  $('planPremiumBtn').addEventListener('click', () => handlePlanUpgrade('premium'));
+  $('planProBtn').addEventListener('click', () => handlePlanUpgrade('pro'));
+}
+
+function openUpgrade() {
+  if (!currentUser) {
+    openAuthModal('signup');
+    return;
+  }
+
+  // Update button states based on current plan
+  const plan = currentUser.plan || 'free';
+  $('planFreeBtn').textContent = plan === 'free' ? 'Current Plan' : 'Free Plan';
+  $('planFreeBtn').className = plan === 'free' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+
+  $('planPremiumBtn').textContent = plan === 'premium' ? 'Current Plan' : 'Upgrade to Premium';
+  $('planPremiumBtn').className = plan === 'premium' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planPremiumBtn').disabled = plan === 'premium';
+
+  $('planProBtn').textContent = plan === 'pro' ? 'Current Plan' : 'Upgrade to Pro';
+  $('planProBtn').className = plan === 'pro' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planProBtn').disabled = plan === 'pro';
+
+  $('upgradeModal').style.display = 'flex';
+}
+
+async function handlePlanUpgrade(plan) {
+  // For now, show coming soon. Stripe integration will handle real payments.
+  alert(`Payment processing for ${plan.charAt(0).toUpperCase() + plan.slice(1)} plan coming soon! For now, contact support@wayfinderai.org to upgrade.`);
 }
 
 // ========================
 // Auth Functions
 // ========================
-
 function setupAuthListeners() {
-  // Open modals
-  document.getElementById('loginBtn').addEventListener('click', () => openAuthModal('login'));
-  document.getElementById('signupBtn').addEventListener('click', () => openAuthModal('signup'));
-  document.getElementById('modalClose').addEventListener('click', closeAuthModal);
-  document.getElementById('showSignup').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('signup'); });
-  document.getElementById('showLogin').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('login'); });
+  $('topLoginBtn').addEventListener('click', () => openAuthModal('login'));
+  $('topSignupBtn').addEventListener('click', () => openAuthModal('signup'));
+  $('modalClose').addEventListener('click', closeAuthModal);
+  $('showSignup').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('signup'); });
+  $('showLogin').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('login'); });
 
-  // Close modal on overlay click
-  authModal.addEventListener('click', (e) => {
-    if (e.target === authModal) closeAuthModal();
+  $('authModal').addEventListener('click', (e) => {
+    if (e.target === $('authModal')) closeAuthModal();
   });
 
-  // Submit forms
-  document.getElementById('loginSubmit').addEventListener('click', submitLogin);
-  document.getElementById('signupSubmit').addEventListener('click', submitSignup);
+  $('loginSubmit').addEventListener('click', submitLogin);
+  $('signupSubmit').addEventListener('click', submitSignup);
 
-  // Enter key on forms
-  document.getElementById('loginPassword').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') submitLogin();
+  $('loginPassword').addEventListener('keydown', (e) => { if (e.key === 'Enter') submitLogin(); });
+  $('signupPassword').addEventListener('keydown', (e) => { if (e.key === 'Enter') submitSignup(); });
+
+  // Avatar click opens settings
+  $('topbarAvatar').addEventListener('click', openSettings);
+
+  // Consent
+  $('consentAccept').addEventListener('click', () => {
+    localStorage.setItem('wayfinder_consent', 'true');
+    $('consentBanner').style.display = 'none';
   });
-  document.getElementById('signupPassword').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') submitSignup();
-  });
-
-  // Logout
-  document.getElementById('logoutBtn').addEventListener('click', logout);
-
-  // Consent banner
-  document.getElementById('consentAccept').addEventListener('click', acceptConsent);
-  document.getElementById('consentDismiss').addEventListener('click', dismissConsent);
-  document.getElementById('consentLearnMore').addEventListener('click', (e) => {
-    e.preventDefault();
-    alert('Wayfinder stores your conversations locally on this server to improve the quality of career advice over time. Your data is never shared with third parties or used for advertising. You can request deletion of your data at any time by contacting us.');
+  $('consentDismiss').addEventListener('click', () => {
+    $('consentBanner').style.display = 'none';
   });
 }
 
 function openAuthModal(mode) {
-  authModal.style.display = 'flex';
+  $('authModal').style.display = 'flex';
   switchAuthForm(mode);
 }
 
 function closeAuthModal() {
-  authModal.style.display = 'none';
-  clearAuthErrors();
+  $('authModal').style.display = 'none';
+  $('loginError').style.display = 'none';
+  $('signupError').style.display = 'none';
 }
 
 function switchAuthForm(mode) {
-  if (mode === 'login') {
-    loginForm.style.display = 'block';
-    signupForm.style.display = 'none';
-    document.getElementById('loginEmail').focus();
-  } else {
-    loginForm.style.display = 'none';
-    signupForm.style.display = 'block';
-    document.getElementById('signupName').focus();
-  }
-  clearAuthErrors();
-}
-
-function clearAuthErrors() {
-  document.getElementById('loginError').style.display = 'none';
-  document.getElementById('signupError').style.display = 'none';
+  $('loginForm').style.display = mode === 'login' ? 'block' : 'none';
+  $('signupForm').style.display = mode === 'signup' ? 'block' : 'none';
+  if (mode === 'login') $('loginEmail').focus();
+  else $('signupName').focus();
 }
 
 function showAuthError(formId, message) {
-  const el = document.getElementById(formId);
+  const el = $(formId);
   el.textContent = message;
   el.style.display = 'block';
 }
 
 async function submitLogin() {
-  const email = document.getElementById('loginEmail').value.trim();
-  const password = document.getElementById('loginPassword').value;
-
-  if (!email || !password) {
-    showAuthError('loginError', 'Please fill in both fields');
-    return;
-  }
+  const email = $('loginEmail').value.trim();
+  const password = $('loginPassword').value;
+  if (!email || !password) { showAuthError('loginError', 'Please fill in both fields'); return; }
 
   try {
     const res = await fetch(`${API_BASE}/auth/login`, {
@@ -532,54 +853,37 @@ async function submitLogin() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     });
-
     const data = await res.json();
+    if (data.error) { showAuthError('loginError', data.error); return; }
 
-    if (data.error) {
-      showAuthError('loginError', data.error);
-      return;
-    }
-
-    // Save token and update UI
     authToken = data.token;
     currentUser = data.user;
     localStorage.setItem('wayfinder_token', authToken);
     engineRemaining = currentUser.engineRemaining || 3;
     updateAuthUI();
     updateEngineUI();
+    updateGreeting();
     fetchEngineUsage();
+    loadChatHistory();
     closeAuthModal();
 
-    // Start a fresh session for logged-in user
     sessionId = null;
     localStorage.removeItem('wayfinder_session');
-
-  } catch (err) {
+  } catch {
     showAuthError('loginError', 'Connection error. Is the server running?');
   }
 }
 
 async function submitSignup() {
-  const name = document.getElementById('signupName').value.trim();
-  const email = document.getElementById('signupEmail').value.trim();
-  const password = document.getElementById('signupPassword').value;
-  const userType = document.getElementById('signupType').value;
-  const consent = document.getElementById('signupConsent').checked;
+  const name = $('signupName').value.trim();
+  const email = $('signupEmail').value.trim();
+  const password = $('signupPassword').value;
+  const userType = $('signupType').value;
+  const consent = $('signupConsent').checked;
 
-  if (!name || !email || !password) {
-    showAuthError('signupError', 'Please fill in all required fields');
-    return;
-  }
-
-  if (password.length < 6) {
-    showAuthError('signupError', 'Password must be at least 6 characters');
-    return;
-  }
-
-  if (!email.includes('@')) {
-    showAuthError('signupError', 'Please enter a valid email');
-    return;
-  }
+  if (!name || !email || !password) { showAuthError('signupError', 'Please fill in all required fields'); return; }
+  if (password.length < 6) { showAuthError('signupError', 'Password must be at least 6 characters'); return; }
+  if (!email.includes('@')) { showAuthError('signupError', 'Please enter a valid email'); return; }
 
   try {
     const res = await fetch(`${API_BASE}/auth/signup`, {
@@ -587,15 +891,9 @@ async function submitSignup() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password, name, userType, consentGiven: consent })
     });
-
     const data = await res.json();
+    if (data.error) { showAuthError('signupError', data.error); return; }
 
-    if (data.error) {
-      showAuthError('signupError', data.error);
-      return;
-    }
-
-    // Save token and update UI
     authToken = data.token;
     currentUser = data.user;
     localStorage.setItem('wayfinder_token', authToken);
@@ -603,16 +901,13 @@ async function submitSignup() {
     engineRemaining = 3;
     updateAuthUI();
     updateEngineUI();
+    updateGreeting();
+    loadChatHistory();
     closeAuthModal();
 
-    // Start a fresh session for the new user
     sessionId = null;
     localStorage.removeItem('wayfinder_session');
-
-    // Add a personalized welcome message
-    appendMessage('assistant', `Welcome to Wayfinder, ${name}! Your account is all set up. I'll remember our conversations so we can build on them over time.\n\n**Tip:** Click your name to set up your profile — it helps me give you better advice. You also get **3 Wayfinder Engine queries per day** for deep-dive analysis with our full knowledge base.\n\nWhat would you like to explore today?`);
-
-  } catch (err) {
+  } catch {
     showAuthError('signupError', 'Connection error. Is the server running?');
   }
 }
@@ -625,10 +920,6 @@ function logout() {
   engineRemaining = 0;
   localStorage.removeItem('wayfinder_token');
   localStorage.removeItem('wayfinder_session');
-  updateAuthUI();
-  updateEngineUI();
-
-  // Reload page for clean state
   location.reload();
 }
 
@@ -642,105 +933,89 @@ async function checkAuth() {
     const res = await fetch(`${API_BASE}/auth/me`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-
     if (res.ok) {
       const data = await res.json();
       currentUser = data.user;
       engineRemaining = currentUser.engineRemaining || 3;
       updateAuthUI();
       updateEngineUI();
+      updateGreeting();
       fetchEngineUsage();
+      loadChatHistory();
     } else {
-      // Token expired or invalid
       authToken = null;
       localStorage.removeItem('wayfinder_token');
       updateAuthUI();
       updateEngineUI();
     }
   } catch {
-    // Server might not be running yet, keep token
     updateAuthUI();
   }
 }
 
 function updateAuthUI() {
-  if (currentUser && authToken) {
-    authLoggedOut.style.display = 'none';
-    authLoggedIn.style.display = 'flex';
-    userNameEl.textContent = currentUser.name || currentUser.email;
-  } else {
-    authLoggedOut.style.display = 'flex';
-    authLoggedIn.style.display = 'none';
+  const isLoggedIn = currentUser && authToken;
+
+  $('topbarAuth').style.display = isLoggedIn ? 'none' : 'flex';
+  $('topbarUser').style.display = isLoggedIn ? 'flex' : 'none';
+
+  if (isLoggedIn) {
+    const initial = (currentUser.name || currentUser.email || 'U')[0].toUpperCase();
+    $('topbarAvatar').textContent = initial;
+
+    const displayName = currentUser.settings?.displayName || currentUser.name || 'Settings';
+    $('sidebarUserName').textContent = displayName;
   }
 }
-
-// ========================
-// Consent Functions
-// ========================
 
 function checkConsent() {
   const consent = localStorage.getItem('wayfinder_consent');
   if (!consent && !authToken) {
-    // Show banner after a brief delay
-    setTimeout(() => {
-      consentBanner.style.display = 'flex';
-    }, 3000);
+    setTimeout(() => { $('consentBanner').style.display = 'flex'; }, 3000);
   }
-}
-
-function acceptConsent() {
-  localStorage.setItem('wayfinder_consent', 'true');
-  consentBanner.style.display = 'none';
-}
-
-function dismissConsent() {
-  consentBanner.style.display = 'none';
 }
 
 // ========================
 // Markdown Renderer
 // ========================
-
 function renderMarkdown(text) {
   let html = escapeHtml(text);
 
   // Bold
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
   // Italic
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
   // Code blocks
   html = html.replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
-
   // Inline code
   html = html.replace(/`(.*?)`/g, '<code>$1</code>');
-
   // Links
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-
-  // Headings (## and ###)
+  // Headings
   html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
   html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
-
+  // Tables (pipe-delimited)
+  html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (match, headerRow, sepRow, bodyRows) => {
+    const headers = headerRow.split('|').filter(Boolean).map(h => `<th>${h.trim()}</th>`).join('');
+    const rows = bodyRows.trim().split('\n').map(row => {
+      const cells = row.split('|').filter(Boolean).map(c => `<td>${c.trim()}</td>`).join('');
+      return `<tr>${cells}</tr>`;
+    }).join('');
+    return `<table><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
+  });
   // Unordered lists
   html = html.replace(/^[-•]\s+(.+)$/gm, '<li>$1</li>');
   html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-
   // Numbered lists
   html = html.replace(/^\d+\.\s+(.+)$/gm, '<li>$1</li>');
-
   // Blockquotes
   html = html.replace(/^>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
-
   // Horizontal rules
   html = html.replace(/^---$/gm, '<hr>');
-
   // Paragraphs
   html = html.replace(/\n\n/g, '</p><p>');
   html = '<p>' + html + '</p>';
-
-  // Clean up empty paragraphs
+  // Clean up
   html = html.replace(/<p>\s*<\/p>/g, '');
   html = html.replace(/<p>(<ul>)/g, '$1');
   html = html.replace(/(<\/ul>)<\/p>/g, '$1');
@@ -749,6 +1024,8 @@ function renderMarkdown(text) {
   html = html.replace(/<p>(<h[34]>)/g, '$1');
   html = html.replace(/(<\/h[34]>)<\/p>/g, '$1');
   html = html.replace(/<p>(<hr>)<\/p>/g, '$1');
+  html = html.replace(/<p>(<table>)/g, '$1');
+  html = html.replace(/(<\/table>)<\/p>/g, '$1');
 
   return html;
 }
@@ -757,4 +1034,27 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// ========================
+// Utility
+// ========================
+function showMsg(id, text, color) {
+  const el = $(id);
+  el.textContent = text;
+  el.style.color = color;
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 3000);
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
 }

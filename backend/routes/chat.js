@@ -175,4 +175,28 @@ router.get('/session/:id', async (req, res) => {
   }
 });
 
+// GET /api/chat/history/:sessionId - Get full message history for a session
+router.get('/history/:sessionId', async (req, res) => {
+  try {
+    const auth = await getOptionalUser(req);
+    const session = await loadSession(req.params.sessionId);
+    if (!session) {
+      return res.status(404).json({ error: 'Session not found' });
+    }
+    // Verify user owns session if authenticated
+    if (auth?.user && session.userId && session.userId !== auth.user.id) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+    res.json({
+      id: session.id,
+      created: session.created,
+      lastActive: session.lastActive,
+      messages: session.history,
+      messageCount: session.messageCount
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load session history' });
+  }
+});
+
 export default router;

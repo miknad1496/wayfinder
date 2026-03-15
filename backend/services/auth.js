@@ -54,7 +54,7 @@ export async function createUser({ email, password, name, userType, school, inte
     id: randomBytes(8).toString('hex'),
     email: emailLower,
     name: name || '',
-    userType: userType || 'student', // student, pre-college, advisor
+    userType: userType || 'student', // student, pre-college, advisor, general
     school: school || '',
     interests: interests || [],
     passwordHash: hashedPassword,
@@ -70,6 +70,14 @@ export async function createUser({ email, password, name, userType, school, inte
       careerInterests: [],   // e.g. ['Software Engineering', 'Medicine']
       aboutMe: ''            // freeform description
     },
+    plan: 'free',           // free (3/day), premium (10/day), pro (20/day)
+    settings: {
+      displayName: name || '',
+      memory: true,         // whether wayfinder remembers conversations
+      helpImprove: true     // consent for using data to improve
+    },
+    stripeCustomerId: null,
+    planExpiresAt: null,
     engineUsesToday: 0,
     engineLastReset: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
     consentGiven: false,
@@ -233,7 +241,15 @@ export async function getUserSessions(token) {
 export async function getEngineUsage(token) {
   if (!token) return { usesToday: 0, remaining: 0 };
 
-  const MAX_ENGINE_USES = 3;
+  const getPlanLimit = (plan) => {
+    switch(plan) {
+      case 'pro': return 20;
+      case 'premium': return 10;
+      case 'free':
+      default: return 3;
+    }
+  };
+
   const today = new Date().toISOString().slice(0, 10);
 
   try {
@@ -242,6 +258,7 @@ export async function getEngineUsage(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        const MAX_ENGINE_USES = getPlanLimit(user.plan || 'free');
         // Reset if new day
         if (user.engineLastReset !== today) {
           user.engineUsesToday = 0;
@@ -256,9 +273,176 @@ export async function getEngineUsage(token) {
       }
     }
   } catch {
-    return { usesToday: 0, remaining: 0, max: MAX_ENGINE_USES };
+    return { usesToday: 0, remaining: 0, max: 3 };
   }
-  return { usesToday: 0, remaining: 0, max: MAX_ENGINE_USES };
+  return { usesToday: 0, remaining: 0, max: 3 };
+}
+
+/**
+ * Delete a user account.
+ */
+export async function deleteUser(token) {
+  if (!token) return { error: 'Not authenticated' };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        await fs.unlink(join(USERS_DIR, file));
+        return { success: true };
+      }
+    }
+  } catch (err) {
+    return { error: 'Failed to delete user' };
+  }
+
+  return { error: 'User not found' };
+}
+
+/**
+ * Update user settings.
+ */
+export async function updateSettings(token, settings) {
+  if (!token) return { error: 'Not authenticated' };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        // Update allowed settings fields
+        if (!user.settings) user.settings = {};
+        if (settings.displayName !== undefined) user.settings.displayName = settings.displayName;
+        if (settings.memory !== undefined) user.settings.memory = settings.memory;
+        if (settings.helpImprove !== undefined) user.settings.helpImprove = settings.helpImprove;
+
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return { success: true, user: sanitizeUser(user) };
+      }
+    }
+  } catch (err) {
+    return { error: 'Failed to update settings' };
+  }
+
+  return { error: 'User not found' };
+}
+
+/**
+ * Get user's chat history with session summaries.
+ */
+export async function getUserChatHistory(token) {
+  if (!token) return [];
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        const sessionHistory = [];
+        const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+
+        for (const sessionId of user.sessionHistory || []) {
+          try {
+            const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
+            const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
+            const session = JSON.parse(sessionRaw);
+
+            // Extract first user message as title (truncated to 50 chars)
+            let title = '';
+            if (session.history && session.history.length > 0) {
+              const firstUserMsg = session.history.find(msg => msg.role === 'user');
+              if (firstUserMsg) {
+                title = firstUserMsg.content.substring(0, 50);
+              }
+            }
+
+            sessionHistory.push({
+              id: session.id,
+              title: title || '(Empty session)',
+              created: session.created,
+              lastActive: session.lastActive,
+              messageCount: session.messageCount || 0
+            });
+          } catch {
+            // Skip sessions that can't be loaded
+          }
+        }
+
+        // Sort by lastActive descending
+        return sessionHistory.sort((a, b) => new Date(b.lastActive) - new Date(a.lastActive));
+      }
+    }
+  } catch {
+    return [];
+  }
+
+  return [];
+}
+
+/**
+ * Search user's chat history for a query string.
+ */
+export async function searchUserChats(token, query) {
+  if (!token || !query) return [];
+
+  const lowerQuery = query.toLowerCase();
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        const matchingSessions = [];
+        const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+
+        for (const sessionId of user.sessionHistory || []) {
+          try {
+            const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
+            const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
+            const session = JSON.parse(sessionRaw);
+
+            // Search through message content
+            let matchingSnippet = '';
+            if (session.history) {
+              for (const msg of session.history) {
+                if (msg.content.toLowerCase().includes(lowerQuery)) {
+                  // Get a snippet around the match
+                  const index = msg.content.toLowerCase().indexOf(lowerQuery);
+                  const start = Math.max(0, index - 30);
+                  const end = Math.min(msg.content.length, index + lowerQuery.length + 30);
+                  matchingSnippet = '...' + msg.content.substring(start, end) + '...';
+                  break;
+                }
+              }
+            }
+
+            if (matchingSnippet) {
+              matchingSessions.push({
+                id: session.id,
+                created: session.created,
+                lastActive: session.lastActive,
+                messageCount: session.messageCount || 0,
+                matchingSnippet
+              });
+            }
+          } catch {
+            // Skip sessions that can't be loaded
+          }
+        }
+
+        return matchingSessions;
+      }
+    }
+  } catch {
+    return [];
+  }
+
+  return [];
 }
 
 /**
@@ -267,7 +451,15 @@ export async function getEngineUsage(token) {
 export async function useEngine(token) {
   if (!token) return { allowed: false, remaining: 0 };
 
-  const MAX_ENGINE_USES = 3;
+  const getPlanLimit = (plan) => {
+    switch(plan) {
+      case 'pro': return 20;
+      case 'premium': return 10;
+      case 'free':
+      default: return 3;
+    }
+  };
+
   const today = new Date().toISOString().slice(0, 10);
 
   try {
@@ -276,6 +468,7 @@ export async function useEngine(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        const MAX_ENGINE_USES = getPlanLimit(user.plan || 'free');
         // Reset if new day
         if (user.engineLastReset !== today) {
           user.engineUsesToday = 0;
@@ -297,15 +490,26 @@ export async function useEngine(token) {
       }
     }
   } catch {
-    return { allowed: false, remaining: 0, max: MAX_ENGINE_USES };
+    return { allowed: false, remaining: 0, max: 3 };
   }
-  return { allowed: false, remaining: 0, max: MAX_ENGINE_USES };
+  return { allowed: false, remaining: 0, max: 3 };
 }
 
 // Remove sensitive fields before sending to client
 function sanitizeUser(user) {
   const today = new Date().toISOString().slice(0, 10);
   const usesToday = user.engineLastReset === today ? (user.engineUsesToday || 0) : 0;
+
+  const getPlanLimit = (plan) => {
+    switch(plan) {
+      case 'pro': return 20;
+      case 'premium': return 10;
+      case 'free':
+      default: return 3;
+    }
+  };
+
+  const planLimit = getPlanLimit(user.plan || 'free');
 
   return {
     id: user.id,
@@ -315,11 +519,14 @@ function sanitizeUser(user) {
     school: user.school,
     interests: user.interests,
     profile: user.profile,
+    plan: user.plan || 'free',
+    settings: user.settings,
+    stripeCustomerId: user.stripeCustomerId,
     consentGiven: user.consentGiven,
     createdAt: user.createdAt,
     lastLogin: user.lastLogin,
     sessionCount: (user.sessionHistory || []).length,
     engineUsesToday: usesToday,
-    engineRemaining: Math.max(0, 3 - usesToday)
+    engineRemaining: Math.max(0, planLimit - usesToday)
   };
 }
