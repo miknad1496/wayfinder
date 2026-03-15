@@ -1,0 +1,83 @@
+{
+  "unconventionalPaths": [
+    {
+      "insight": "Many successful tech workers don't have CS degrees",
+      "detail": "Community data consistently shows that bootcamp graduates, self-taught developers, and career changers from unrelated fields successfully enter and thrive in tech. The key factors are portfolio quality, networking, and continuous learning rather than pedigree.",
+      "sources": [
+        "r/cscareerquestions",
+        "HackerNews",
+        "r/learnprogramming"
+      ],
+      "confidence": "high"
+    },
+    {
+      "insight": "Trades careers are significantly undervalued in career counseling",
+      "detail": "Electricians, plumbers, and HVAC technicians consistently report strong earnings ($60K-$100K+), job security, no student debt, and high job satisfaction. The shortage of skilled tradespeople is creating premium wages.",
+      "sources": [
+        "r/electricians",
+        "r/plumbing",
+        "r/HVAC",
+        "BLS data"
+      ],
+      "confidence": "high"
+    },
+    {
+      "insight": "The 'passion' career advice is often counterproductive",
+      "detail": "Community wisdom increasingly points toward 'career capital' theory — build rare and valuable skills first, then leverage them into work you find meaningful. Starting with passion often leads to low-paying roles in oversaturated fields.",
+      "sources": [
+        "r/careerguidance",
+        "Cal Newport research",
+        "HackerNews discussions"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "salaryNegotiationInsights": [
+    {
+      "insight": "Most people leave 10-30% on the table by not negotiating",
+      "detail": "Across thousands of salary discussion threads, the community consensus is overwhelming: negotiate every offer. Even a simple 'Is there flexibility on the base salary?' consistently results in increases.",
+      "sources": [
+        "r/cscareerquestions",
+        "r/personalfinance",
+        "r/careerguidance"
+      ],
+      "confidence": "high"
+    },
+    {
+      "insight": "Job hopping every 2-3 years maximizes early-career earnings",
+      "detail": "Internal raises average 3-5% while job switches average 10-20%+ increases. This pattern is especially strong in tech and finance. After reaching senior levels, stability can become more valuable.",
+      "sources": [
+        "r/cscareerquestions",
+        "r/personalfinance",
+        "r/experienceddevs"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "industryRedFlags": [
+    {
+      "insight": "Certain industries consistently show burnout patterns",
+      "detail": "Healthcare (especially nursing), public accounting (Big 4), teaching, and early-career investment banking consistently report high burnout. Community advice often involves strategic entry and exit planning rather than avoidance.",
+      "sources": [
+        "r/nursing",
+        "r/accounting",
+        "r/teachers",
+        "r/financialcareers"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "educationROI": [
+    {
+      "insight": "Graduate school ROI varies enormously by field",
+      "detail": "MBA: high ROI only from top programs or with employer sponsorship. Law school: increasingly risky unless T14. Medical school: high earnings but delayed by 8-12 years. CS Masters: often unnecessary but can open doors to ML/AI roles. PhD: only if pursuing research/academia.",
+      "sources": [
+        "r/GradSchool",
+        "r/MBA",
+        "r/lawschool",
+        "r/medicine"
+      ],
+      "confidence": "medium-high"
+    }
+  ]
+}

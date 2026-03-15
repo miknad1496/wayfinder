@@ -54,11 +54,34 @@ export async function loadAllFeedback() {
   }
 }
 
-// Knowledge base file operations
+// Knowledge base file operations (includes subdirectories like distilled/)
 export async function listKnowledgeFiles() {
   try {
-    const files = await fs.readdir(PATHS.knowledgeBase);
-    return files.filter(f => f.endsWith('.md') || f.endsWith('.json') || f.endsWith('.txt'));
+    const results = [];
+    const topFiles = await fs.readdir(PATHS.knowledgeBase);
+
+    for (const entry of topFiles) {
+      const fullPath = join(PATHS.knowledgeBase, entry);
+      const stat = await fs.stat(fullPath);
+
+      if (stat.isFile() && (entry.endsWith('.md') || entry.endsWith('.json') || entry.endsWith('.txt'))) {
+        results.push(entry);
+      } else if (stat.isDirectory()) {
+        // Read subdirectories (e.g., distilled/)
+        try {
+          const subFiles = await fs.readdir(fullPath);
+          for (const sub of subFiles) {
+            if (sub.endsWith('.md') || sub.endsWith('.json') || sub.endsWith('.txt')) {
+              results.push(join(entry, sub));
+            }
+          }
+        } catch {
+          // skip unreadable subdirectories
+        }
+      }
+    }
+
+    return results;
   } catch {
     return [];
   }

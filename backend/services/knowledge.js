@@ -123,6 +123,27 @@ async function loadKnowledge() {
     }
   }
 
+  // Load distilled intelligence (Opus-generated insights)
+  try {
+    const distilledDir = join(PATHS.knowledgeBase, 'distilled');
+    const distilledFiles = await fs.readdir(distilledDir);
+    for (const file of distilledFiles.filter(f => f.endsWith('.md'))) {
+      try {
+        const content = await fs.readFile(join(distilledDir, file), 'utf-8');
+        const distilledChunks = parseDocument(content, `distilled/${file}`);
+        // Boost distilled content — it's higher quality than raw data
+        for (const chunk of distilledChunks) {
+          chunk.boostFactor = 2.0;
+        }
+        allChunks.push(...distilledChunks);
+      } catch (err) {
+        console.warn(`Failed to load distilled file ${file}:`, err.message);
+      }
+    }
+  } catch {
+    // distilled directory may not exist yet
+  }
+
   // Also load scraped data if available
   try {
     const scrapedFiles = await fs.readdir(PATHS.scraped);
@@ -170,7 +191,10 @@ export async function retrieveContext(query, topK = 5) {
   if (queryKeywords.length === 0) return [];
 
   const scored = chunks
-    .map(chunk => ({ ...chunk, score: scoreChunk(chunk, queryKeywords) }))
+    .map(chunk => ({
+      ...chunk,
+      score: scoreChunk(chunk, queryKeywords) * (chunk.boostFactor || 1.0)
+    }))
     .filter(chunk => chunk.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, topK);
