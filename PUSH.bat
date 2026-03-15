@@ -19,13 +19,12 @@ git add -A
 git commit -m "Wayfinder deployment" 2>nul
 echo.
 
-:: Set remote
-git remote add origin https://github.com/miknad1496/wayfinder.git 2>nul
-git remote set-url origin https://github.com/miknad1496/wayfinder.git
+:: Set remote with token authentication
+git remote remove origin 2>nul
+git remote add origin https://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@github.com/miknad1496/wayfinder.git
 git branch -M main
 
 echo  Pushing to GitHub...
-echo  (If a browser window opens, log in and authorize Git)
 echo.
 git push -u origin main
 echo.
@@ -33,7 +32,9 @@ echo.
 if errorlevel 1 (
     echo  Push failed. See error above.
 ) else (
-    echo  SUCCESS! Code is now on GitHub.
+    echo  ========================================
+    echo  SUCCESS! Code is now on GitHub!
+    echo  ========================================
     echo.
     echo  Next step: Deploy on Render
     echo  ===========================
