@@ -1,0 +1,37 @@
+{
+  "name": "wayfinder-career-advisor",
+  "version": "1.0.0",
+  "description": "AI-powered digital career advisor for pre-college and college students",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && node server.js",
+    "dev:frontend": "cd frontend && npx vite --port 3000",
+    "build": "cd frontend && npx vite build",
+    "scrape": "cd backend && node scrapers/run-all.js",
+    "scrape:bls": "cd backend && node scrapers/bls-scraper.js",
+    "scrape:onet": "cd backend && node scrapers/onet-scraper.js",
+    "scrape:nces": "cd backend && node scrapers/nces-scraper.js",
+    "scrape:usajobs": "cd backend && node scrapers/usajobs-scraper.js",
+    "scrape:certifications": "cd backend && node scrapers/certifications-scraper.js",
+    "ingest": "cd backend && node services/ingest.js",
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "cheerio": "^1.0.0",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.18.0",
+    "node-fetch": "^3.3.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

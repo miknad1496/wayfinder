@@ -1,0 +1,162 @@
+[
+  {
+    "major": "Computer Science",
+    "cipCode": "11",
+    "medianEarnings1yr": 75000,
+    "medianEarnings4yr": 105000,
+    "percentile25": 55000,
+    "percentile75": 130000
+  },
+  {
+    "major": "Engineering",
+    "cipCode": "14",
+    "medianEarnings1yr": 72000,
+    "medianEarnings4yr": 100000,
+    "percentile25": 58000,
+    "percentile75": 125000
+  },
+  {
+    "major": "Nursing",
+    "cipCode": "51.38",
+    "medianEarnings1yr": 60000,
+    "medianEarnings4yr": 75000,
+    "percentile25": 52000,
+    "percentile75": 90000
+  },
+  {
+    "major": "Finance",
+    "cipCode": "52.08",
+    "medianEarnings1yr": 58000,
+    "medianEarnings4yr": 90000,
+    "percentile25": 45000,
+    "percentile75": 115000
+  },
+  {
+    "major": "Accounting",
+    "cipCode": "52.03",
+    "medianEarnings1yr": 52000,
+    "medianEarnings4yr": 72000,
+    "percentile25": 42000,
+    "percentile75": 85000
+  },
+  {
+    "major": "Economics",
+    "cipCode": "45.06",
+    "medianEarnings1yr": 55000,
+    "medianEarnings4yr": 85000,
+    "percentile25": 40000,
+    "percentile75": 110000
+  },
+  {
+    "major": "Mathematics",
+    "cipCode": "27",
+    "medianEarnings1yr": 58000,
+    "medianEarnings4yr": 88000,
+    "percentile25": 45000,
+    "percentile75": 115000
+  },
+  {
+    "major": "Business Administration",
+    "cipCode": "52",
+    "medianEarnings1yr": 48000,
+    "medianEarnings4yr": 70000,
+    "percentile25": 35000,
+    "percentile75": 95000
+  },
+  {
+    "major": "Health Professions",
+    "cipCode": "51",
+    "medianEarnings1yr": 50000,
+    "medianEarnings4yr": 68000,
+    "percentile25": 38000,
+    "percentile75": 85000
+  },
+  {
+    "major": "Marketing",
+    "cipCode": "52.14",
+    "medianEarnings1yr": 45000,
+    "medianEarnings4yr": 68000,
+    "percentile25": 35000,
+    "percentile75": 90000
+  },
+  {
+    "major": "Information Technology",
+    "cipCode": "11.01",
+    "medianEarnings1yr": 60000,
+    "medianEarnings4yr": 85000,
+    "percentile25": 48000,
+    "percentile75": 110000
+  },
+  {
+    "major": "Political Science",
+    "cipCode": "45.10",
+    "medianEarnings1yr": 40000,
+    "medianEarnings4yr": 65000,
+    "percentile25": 32000,
+    "percentile75": 85000
+  },
+  {
+    "major": "Biological Sciences",
+    "cipCode": "26",
+    "medianEarnings1yr": 35000,
+    "medianEarnings4yr": 55000,
+    "percentile25": 28000,
+    "percentile75": 75000
+  },
+  {
+    "major": "Psychology",
+    "cipCode": "42",
+    "medianEarnings1yr": 33000,
+    "medianEarnings4yr": 48000,
+    "percentile25": 27000,
+    "percentile75": 62000
+  },
+  {
+    "major": "Communications",
+    "cipCode": "09",
+    "medianEarnings1yr": 38000,
+    "medianEarnings4yr": 55000,
+    "percentile25": 30000,
+    "percentile75": 72000
+  },
+  {
+    "major": "Education",
+    "cipCode": "13",
+    "medianEarnings1yr": 36000,
+    "medianEarnings4yr": 45000,
+    "percentile25": 32000,
+    "percentile75": 55000
+  },
+  {
+    "major": "Social Sciences",
+    "cipCode": "45",
+    "medianEarnings1yr": 37000,
+    "medianEarnings4yr": 58000,
+    "percentile25": 30000,
+    "percentile75": 75000
+  },
+  {
+    "major": "English Language & Literature",
+    "cipCode": "23",
+    "medianEarnings1yr": 32000,
+    "medianEarnings4yr": 48000,
+    "percentile25": 26000,
+    "percentile75": 65000
+  },
+  {
+    "major": "Visual & Performing Arts",
+    "cipCode": "50",
+    "medianEarnings1yr": 28000,
+    "medianEarnings4yr": 42000,
+    "percentile25": 22000,
+    "percentile75": 58000
+  },
+  {
+    "major": "Physical Sciences",
+    "cipCode": "40",
+    "medianEarnings1yr": 40000,
+    "medianEarnings4yr": 65000,
+    "percentile25": 32000,
+    "percentile75": 85000
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "title": "Government Career Pathways for Students",
+  "source": "USAJobs.gov / OPM Pathways Programs",
+  "lastUpdated": "2026-03-15T16:44:41.610Z",
+  "pathways": [
+    {
+      "program": "Pathways Internship Program",
+      "eligibility": "Currently enrolled students (high school through graduate school)",
+      "description": "Provides students in high schools, colleges, trade schools, and other qualifying educational institutions with paid work opportunities in federal agencies.",
+      "duration": "During enrollment period, may lead to permanent position",
+      "pay": "GS-2 to GS-7 depending on education level",
+      "howToApply": "Search \"Pathways Intern\" on usajobs.gov, must be currently enrolled"
+    },
+    {
+      "program": "Recent Graduates Program",
+      "eligibility": "Graduated within past 2 years (6 years for veterans)",
+      "description": "Full-time positions for recent graduates. Includes formal training, mentoring, and career development.",
+      "duration": "1 year with conversion to permanent position possible",
+      "pay": "GS-5 to GS-9 typically",
+      "howToApply": "Search \"Pathways Recent Graduates\" on usajobs.gov"
+    },
+    {
+      "program": "Presidential Management Fellows (PMF)",
+      "eligibility": "Graduate degree completed within past 2 years",
+      "description": "The most prestigious federal entry program. 2-year fellowship with rotational assignments, training, and mentorship.",
+      "duration": "2 years, converts to permanent GS-12/13",
+      "pay": "GS-9 to GS-12",
+      "howToApply": "Apply at pmf.gov during the annual open season (typically fall)"
+    }
+  ],
+  "generalGovCareers": [
+    {
+      "area": "Federal Pay Scale (GS)",
+      "details": "Entry-level college grads typically start at GS-5 ($33,693) or GS-7 ($41,637). With a master's, GS-9 ($50,748). Pay varies by locality. Within 3-5 years, most professionals reach GS-11 ($61,592) or GS-12 ($73,789). Senior positions: GS-13 ($87,758) to GS-15 ($128,078)."
+    },
+    {
+      "area": "Benefits",
+      "details": "Federal employees receive: health insurance (FEHB — government pays 70-75%), pension (FERS — defined benefit + TSP 401k with 5% match), 13-26 days annual leave per year, 13 sick days, 11 paid holidays, student loan repayment programs (up to $10,000/year), and job security."
+    },
+    {
+      "area": "Public Service Loan Forgiveness (PSLF)",
+      "details": "After 120 qualifying payments (10 years) while working for the government, remaining federal student loan balance is forgiven. This is a major financial benefit for graduates with high loan balances."
+    },
+    {
+      "area": "Security Clearances",
+      "details": "Some positions require clearances (Secret, Top Secret, TS/SCI). Having a clearance significantly increases career options and earning potential, especially in defense and intelligence. Clearance is granted by the employer, not something you apply for independently."
+    }
+  ],
+  "visaAndImmigration": [
+    {
+      "topic": "Federal Employment and Citizenship",
+      "details": "Most federal jobs require U.S. citizenship. Some agencies can hire non-citizens for hard-to-fill positions. Check individual job listings for requirements."
+    },
+    {
+      "topic": "OPT (Optional Practical Training)",
+      "details": "International students on F-1 visas get 12 months of work authorization after graduation. STEM majors get an additional 24-month extension (total 36 months). This is the primary path for international students to gain U.S. work experience."
+    },
+    {
+      "topic": "H-1B Visa",
+      "details": "Employer-sponsored work visa. Annual cap of 65,000 + 20,000 for U.S. master's holders. Highly competitive lottery system. STEM, healthcare, and tech companies are the most frequent sponsors."
+    },
+    {
+      "topic": "Industries Most Likely to Sponsor Visas",
+      "details": "Technology (Google, Amazon, Microsoft, Meta), consulting (Deloitte, McKinsey, BCG), finance (Goldman Sachs, JP Morgan), healthcare systems, and universities. Check myvisajobs.com for company-specific H-1B data."
+    }
+  ]
+}
