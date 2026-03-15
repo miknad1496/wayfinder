@@ -40,8 +40,8 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   const anthropic = getClient();
   const model = process.env.CLAUDE_MODEL || 'claude-sonnet-4-6';
 
-  // 1. Retrieve relevant knowledge
-  const relevantChunks = await retrieveContext(userMessage, 5);
+  // 1. Retrieve relevant knowledge (top 6 distilled chunks, hard-capped by formatContext)
+  const relevantChunks = await retrieveContext(userMessage, 6);
   const contextStr = formatContext(relevantChunks);
 
   // 2. Build system prompt with context

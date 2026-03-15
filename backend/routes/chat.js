@@ -71,8 +71,8 @@ router.post('/', async (req, res) => {
       { role: 'assistant', content: result.response }
     );
 
-    // Trim history if too long (keep system context fresh)
-    if (session.history.length > 40) {
+    // Trim history if too long (keep last 10 exchanges = 20 messages)
+    if (session.history.length > 20) {
       session.history = session.history.slice(-20);
     }
 
