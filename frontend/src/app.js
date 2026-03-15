@@ -407,7 +407,7 @@ function appendMessage(role, text, sources = [], mode = null) {
   // Header
   const avatarHTML = role === 'user'
     ? `<div class="message-avatar user-avatar">${initial}</div>`
-    : `<div class="message-avatar"><img src="/public/logo.svg" alt="Wayfinder"></div>`;
+    : `<div class="message-avatar"><img src="/logo.svg" alt="Wayfinder"></div>`;
 
   const roleName = role === 'user'
     ? (currentUser?.name || 'You')
@@ -476,7 +476,7 @@ function showTyping() {
   el.className = 'message';
   el.innerHTML = `
     <div class="message-header">
-      <div class="message-avatar"><img src="/public/logo.svg" alt="Wayfinder"></div>
+      <div class="message-avatar"><img src="/logo.svg" alt="Wayfinder"></div>
       <span class="message-role">Wayfinder</span>
     </div>
     <div class="typing-indicator"><span></span><span></span><span></span></div>
