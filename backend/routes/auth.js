@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats } from '../services/auth.js';
+import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage } from '../services/auth.js';
 
 const router = Router();
 
@@ -102,6 +102,13 @@ router.get('/sessions', async (req, res) => {
 router.get('/engine-usage', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   const usage = await getEngineUsage(token);
+  res.json(usage);
+});
+
+// GET /api/auth/token-usage - Get daily token usage
+router.get('/token-usage', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const usage = await checkTokenUsage(token);
   res.json(usage);
 });
 

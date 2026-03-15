@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat } from '../services/claude.js';
 import { saveSession, loadSession } from '../services/storage.js';
-import { verifyToken, linkSession, useEngine, getEngineUsage } from '../services/auth.js';
+import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage } from '../services/auth.js';
 
 const router = Router();
 
@@ -50,6 +50,21 @@ router.post('/', async (req, res) => {
       });
     }
 
+    // Check daily token limits for authenticated users
+    if (auth?.token) {
+      const tokenUsage = await checkTokenUsage(auth.token);
+      if (!tokenUsage.allowed) {
+        return res.status(429).json({
+          error: `You've hit your daily token limit. Your limit resets tomorrow. Upgrade your plan for more capacity.`,
+          tokenUsage: {
+            used: tokenUsage.tokensUsed,
+            limit: tokenUsage.limit,
+            remaining: 0
+          }
+        });
+      }
+    }
+
     // Load or create session
     const sessionId = existingSessionId || uuidv4();
     let session = await loadSession(sessionId);
@@ -86,6 +101,14 @@ router.post('/', async (req, res) => {
       { useEngine: engineAllowed }
     );
 
+    // Record token usage for authenticated users
+    if (auth?.token && result.usage) {
+      const totalTokens = (result.usage.inputTokens || 0) + (result.usage.outputTokens || 0);
+      if (totalTokens > 0) {
+        recordTokenUsage(auth.token, totalTokens).catch(() => {});
+      }
+    }
+
     // Update session history (keep last 20 messages to manage context window)
     session.history.push(
       { role: 'user', content: message.trim() },
@@ -108,10 +131,12 @@ router.post('/', async (req, res) => {
       linkSession(auth.token, sessionId).catch(() => {});
     }
 
-    // Get updated engine usage for response
+    // Get updated engine and token usage for response
     let engineUsage = null;
+    let tokenUsageInfo = null;
     if (auth?.token) {
       engineUsage = await getEngineUsage(auth.token);
+      tokenUsageInfo = await checkTokenUsage(auth.token);
     }
 
     res.json({
@@ -121,7 +146,12 @@ router.post('/', async (req, res) => {
       usage: result.usage,
       mode: result.mode,
       messageCount: session.messageCount,
-      engineRemaining: engineUsage?.remaining ?? null
+      engineRemaining: engineUsage?.remaining ?? null,
+      tokenUsage: tokenUsageInfo ? {
+        used: tokenUsageInfo.tokensUsed,
+        remaining: tokenUsageInfo.tokensRemaining,
+        limit: tokenUsageInfo.limit
+      } : null
     });
 
   } catch (err) {

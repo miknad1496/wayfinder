@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateGreeting();
   checkAuth();
   checkConsent();
+  checkUpgradeReturn();
   inputEl.focus();
 });
 
@@ -240,6 +241,7 @@ async function loadChat(chatId) {
     });
 
     messagesEl.scrollTop = messagesEl.scrollHeight;
+    closeSidebarOnMobile();
   } catch (err) {
     console.warn('Failed to load chat:', err);
   }
@@ -781,8 +783,40 @@ function openUpgrade() {
 }
 
 async function handlePlanUpgrade(plan) {
-  // For now, show coming soon. Stripe integration will handle real payments.
-  alert(`Payment processing for ${plan.charAt(0).toUpperCase() + plan.slice(1)} plan coming soon! For now, contact support@wayfinderai.org to upgrade.`);
+  try {
+    // Check if Stripe is configured
+    const statusRes = await fetch(`${API_BASE}/stripe/status`);
+    const statusData = await statusRes.json();
+
+    if (!statusData.configured) {
+      alert(`Stripe payments are being set up. Contact support@wayfinderai.org to upgrade to ${capitalize(plan)} in the meantime.`);
+      return;
+    }
+
+    // Create Stripe Checkout session
+    const res = await fetch(`${API_BASE}/stripe/create-checkout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ plan })
+    });
+
+    const data = await res.json();
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
+    if (data.url) {
+      // Redirect to Stripe Checkout
+      window.location.href = data.url;
+    }
+  } catch (err) {
+    alert('Unable to process upgrade right now. Please try again later.');
+    console.error('Upgrade error:', err);
+  }
 }
 
 // ========================
@@ -968,6 +1002,22 @@ function updateAuthUI() {
   }
 }
 
+function checkUpgradeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('upgrade') === 'success') {
+    const plan = params.get('plan') || 'premium';
+    setTimeout(() => {
+      alert(`Welcome to Wayfinder ${capitalize(plan)}! Your plan has been upgraded. Enjoy your additional Engine queries.`);
+    }, 1000);
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+    // Refresh user data to get new plan
+    checkAuth();
+  } else if (params.get('upgrade') === 'cancelled') {
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+}
+
 function checkConsent() {
   const consent = localStorage.getItem('wayfinder_consent');
   if (!consent && !authToken) {
@@ -1049,6 +1099,10 @@ function showMsg(id, text, color) {
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function closeSidebarOnMobile() {
+  if (window.innerWidth <= 768) sidebar.classList.add('collapsed');
 }
 
 function debounce(fn, delay) {

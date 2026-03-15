@@ -495,6 +495,153 @@ export async function useEngine(token) {
   return { allowed: false, remaining: 0, max: 3 };
 }
 
+/**
+ * Get daily token limit based on plan.
+ */
+function getDailyTokenLimit(plan) {
+  switch(plan) {
+    case 'pro': return 200000;
+    case 'premium': return 100000;
+    case 'free':
+    default: return 50000;
+  }
+}
+
+/**
+ * Check daily token usage. Returns { allowed, tokensUsed, tokensRemaining, limit }.
+ */
+export async function checkTokenUsage(token) {
+  if (!token) return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        if (user.tokenLastReset !== today) {
+          user.tokensUsedToday = 0;
+          user.tokenLastReset = today;
+          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        }
+
+        const limit = getDailyTokenLimit(user.plan || 'free');
+        const used = user.tokensUsedToday || 0;
+        return {
+          allowed: used < limit,
+          tokensUsed: used,
+          tokensRemaining: Math.max(0, limit - used),
+          limit
+        };
+      }
+    }
+  } catch {
+    return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
+  }
+  return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
+}
+
+/**
+ * Record token usage for today.
+ */
+export async function recordTokenUsage(token, tokensUsed) {
+  if (!token || !tokensUsed) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        if (user.tokenLastReset !== today) {
+          user.tokensUsedToday = 0;
+          user.tokenLastReset = today;
+        }
+        user.tokensUsedToday = (user.tokensUsedToday || 0) + tokensUsed;
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return;
+      }
+    }
+  } catch {
+    // Non-critical
+  }
+}
+
+/**
+ * Update user plan and Stripe-related fields.
+ */
+export async function updateUserPlan(token, fields) {
+  if (!token) return { error: 'Not authenticated' };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        if (fields.plan !== undefined) user.plan = fields.plan;
+        if (fields.stripeCustomerId !== undefined) user.stripeCustomerId = fields.stripeCustomerId;
+        if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
+
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return { success: true, user: sanitizeUser(user) };
+      }
+    }
+  } catch (err) {
+    return { error: 'Failed to update plan' };
+  }
+
+  return { error: 'User not found' };
+}
+
+/**
+ * Find a user by their Stripe Customer ID. Returns the raw user (with token).
+ */
+export async function findUserByStripeCustomerId(customerId) {
+  if (!customerId) return null;
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.stripeCustomerId === customerId) {
+        return user; // Returns full user with token
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+/**
+ * Find a full user record by token (unsanitized, for internal use).
+ */
+export async function findUserByToken(token) {
+  if (!token) return null;
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        return user; // Returns full user
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
 // Remove sensitive fields before sending to client
 function sanitizeUser(user) {
   const today = new Date().toISOString().slice(0, 10);
@@ -527,6 +674,11 @@ function sanitizeUser(user) {
     lastLogin: user.lastLogin,
     sessionCount: (user.sessionHistory || []).length,
     engineUsesToday: usesToday,
-    engineRemaining: Math.max(0, planLimit - usesToday)
+    engineRemaining: Math.max(0, planLimit - usesToday),
+    tokenUsage: {
+      used: user.tokenLastReset === today ? (user.tokensUsedToday || 0) : 0,
+      limit: getDailyTokenLimit(user.plan || 'free'),
+      remaining: Math.max(0, getDailyTokenLimit(user.plan || 'free') - (user.tokenLastReset === today ? (user.tokensUsedToday || 0) : 0))
+    }
   };
 }

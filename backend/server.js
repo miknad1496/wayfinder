@@ -7,6 +7,7 @@ import chatRoutes from './routes/chat.js';
 import feedbackRoutes from './routes/feedback.js';
 import adminRoutes from './routes/admin.js';
 import authRoutes from './routes/auth.js';
+import stripeRoutes from './routes/stripe.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
 
@@ -26,6 +27,8 @@ app.use(cors({
     : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true
 }));
+// Stripe webhook needs raw body for signature verification
+app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '1mb' }));
 
 // Request logging
@@ -53,6 +56,7 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/stripe', stripeRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
