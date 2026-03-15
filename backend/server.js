@@ -1,5 +1,8 @@
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import compression from 'compression';
+import rateLimit from 'express-rate-limit';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { config } from 'dotenv';
@@ -20,7 +23,50 @@ config({ path: join(__dirname, '..', '.env') });
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
+// Security headers
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", "https://api.stripe.com"],
+    }
+  },
+  crossOriginEmbedderPolicy: false // needed for Google Fonts
+}));
+
+// Compression
+app.use(compression());
+
+// Rate limiting
+const apiLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 30, // 30 requests per minute per IP for general API
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again in a moment.' }
+});
+
+const chatLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 15, // 15 chat messages per minute per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many messages. Please slow down and try again in a moment.' }
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // 10 login/signup attempts per 15 min per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many login attempts. Please try again in 15 minutes.' }
+});
+
+// CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
     ? (process.env.FRONTEND_URL || true) // true allows same-origin in production
@@ -51,11 +97,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Routes
-app.use('/api/chat', chatRoutes);
-app.use('/api/feedback', feedbackRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/auth', authRoutes);
+// Routes (with rate limiting)
+app.use('/api/chat', chatLimiter, chatRoutes);
+app.use('/api/feedback', apiLimiter, feedbackRoutes);
+app.use('/api/admin', apiLimiter, adminRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/stripe', stripeRoutes);
 
 // Serve frontend in production
@@ -65,9 +111,12 @@ if (process.env.NODE_ENV === 'production') {
   // Serve built frontend
   app.use(express.static(join(__dirname, '..', 'frontend', 'dist')));
 
-  // Privacy policy route
+  // Legal pages
   app.get('/privacy', (req, res) => {
     res.sendFile(join(__dirname, '..', 'frontend', 'privacy.html'));
+  });
+  app.get('/terms', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'terms.html'));
   });
 
   app.get('*', (req, res) => {
