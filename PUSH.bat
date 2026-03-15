@@ -24,6 +24,9 @@ git remote remove origin 2>nul
 git remote add origin https://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@github.com/miknad1496/wayfinder.git
 git branch -M main
 
+echo  Pulling latest from GitHub first...
+git pull --rebase origin main 2>nul
+echo.
 echo  Pushing to GitHub...
 echo.
 git push -u origin main
