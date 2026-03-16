@@ -39,11 +39,16 @@ function buildProfileString(sessionContext) {
   if (sessionContext.userType) lines.push(`Type: ${sessionContext.userType}`);
   if (sessionContext.school) lines.push(`School: ${sessionContext.school}`);
 
+  // Track indicator
+  if (sessionContext.track) lines.push(`Track: ${sessionContext.track}`);
+
   // Expanded profile fields
   const p = sessionContext.profile;
   if (p) {
     if (p.age) lines.push(`Age: ${p.age}`);
     if (p.gradeLevel) lines.push(`Grade/Year: ${p.gradeLevel}`);
+    if (p.childGrade) lines.push(`Child's Grade: ${p.childGrade}`);
+    if (p.targetSchools) lines.push(`Target Schools: ${p.targetSchools}`);
     if (p.favoriteClasses && p.favoriteClasses.length > 0) {
       lines.push(`Favorite Classes: ${p.favoriteClasses.join(', ')}`);
     }

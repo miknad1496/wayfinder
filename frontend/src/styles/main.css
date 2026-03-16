@@ -360,6 +360,21 @@ html, body {
 .welcome-chip svg { color: var(--text-secondary); flex-shrink: 0; }
 .welcome-chip:hover svg { color: var(--primary); }
 
+/* Highlighted chip (Parent / Family) */
+.welcome-chip-highlight {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12), var(--shadow-sm);
+}
+.welcome-chip-highlight svg { color: var(--primary); }
+.welcome-chip-highlight:hover {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15), var(--shadow-md);
+}
+
 /* =============================
    CHAT CONTAINER
    ============================= */

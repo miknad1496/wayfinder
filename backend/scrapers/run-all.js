@@ -28,12 +28,13 @@ import { runUSAJobsScraper } from './usajobs-scraper.js';
 import { runCertificationsScraper } from './certifications-scraper.js';
 import { runRedditScraper } from './reddit-scraper.js';
 import { runCommunityScraper } from './community-scraper.js';
+import { runAdmissionsScraper } from './admissions-scraper.js';
 
 async function runAll() {
   console.log('╔══════════════════════════════════════════════╗');
   console.log('║  Wayfinder Data Scraper Suite (Enhanced)      ║');
-  console.log('║  Gathering career data from 7+ sources        ║');
-  console.log('║  Government data + Community intelligence     ║');
+  console.log('║  Gathering career data from 8+ sources        ║');
+  console.log('║  Government + Community + Admissions data     ║');
   console.log('╚══════════════════════════════════════════════╝\n');
 
   const start = Date.now();
@@ -77,18 +78,25 @@ async function runAll() {
     console.error('O*NET scraper failed:', err.message);
   }
 
+  try {
+    console.log('\n6/8 College Admissions Intelligence...');
+    results.admissions = await runAdmissionsScraper();
+  } catch (err) {
+    console.error('Admissions scraper failed:', err.message);
+  }
+
   // === PHASE 2: Community Intelligence ===
   console.log('\n━━━ PHASE 2: Community Intelligence ━━━\n');
 
   try {
-    console.log('6/7 Reddit Career Communities...');
+    console.log('7/8 Reddit Career Communities...');
     results.reddit = await runRedditScraper();
   } catch (err) {
     console.error('Reddit scraper failed:', err.message);
   }
 
   try {
-    console.log('\n7/7 HackerNews & Community Discussions...');
+    console.log('\n8/8 HackerNews & Community Discussions...');
     results.community = await runCommunityScraper();
   } catch (err) {
     console.error('Community scraper failed:', err.message);
@@ -101,7 +109,7 @@ async function runAll() {
   console.log('╚══════════════════════════════════════════════╝');
   console.log(`\nTime: ${elapsed}s`);
   console.log(`Results saved to: backend/data/scraped/`);
-  console.log(`\nPhase 1 (Structured): BLS, O*NET, NCES, USAJobs, Certs`);
+  console.log(`\nPhase 1 (Structured): BLS, O*NET, NCES, USAJobs, Certs, Admissions`);
   console.log(`Phase 2 (Community): Reddit, HackerNews, Career Wisdom`);
   console.log(`\nNext steps:`);
   console.log(`  1. Upload scraped data to Claude for intelligence synthesis`);

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Wayfinder — More Than AI, Real Career Intelligence</title>
-    <meta name="description" content="Wayfinder isn't another chatbot. It's a purpose-built career intelligence platform powered by curated federal data and advanced AI.">
+    <title>Why Wayfinder — Real Career Intelligence & College Admissions Strategy</title>
+    <meta name="description" content="Wayfinder is a purpose-built career intelligence and college admissions strategy platform powered by curated federal data, admissions analytics, and advanced AI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -297,7 +297,7 @@
         /* ---- Audience ---- */
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 16px;
             margin-top: 40px;
         }
@@ -379,6 +379,7 @@
             .engine-section { padding: 32px 24px; }
             .engine-features { grid-template-columns: 1fr; }
             .audience-grid { grid-template-columns: 1fr 1fr; }
+            .problem-card[style*="grid-column"] { grid-column: auto; }
             .comp-header div, .comp-row div { padding: 12px 12px; font-size: 12px; }
             .nav-links a:not(.nav-cta) { display: none; }
         }
@@ -406,15 +407,15 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Invitation Only
     </div>
-    <h1>Career advice built on <span>real data</span>, not guesswork</h1>
-    <p>Wayfinder isn't another chatbot. It's a purpose-built career intelligence platform that combines curated federal data with AI to deliver guidance you can actually trust.</p>
+    <h1>Career &amp; college admissions advice built on <span>real data</span>, not guesswork</h1>
+    <p>Wayfinder isn't another chatbot. It's a purpose-built career and college admissions intelligence platform that combines curated federal data with AI to deliver guidance you can actually trust — the kind of strategic insight that private admissions consultants charge $5,000-$10,000+ for.</p>
 </div>
 
 <!-- ============ THE PROBLEM ============ -->
 <section>
     <div class="section-label">The Problem</div>
     <h2>Generic AI gets career advice dangerously wrong</h2>
-    <p>ChatGPT, Gemini, and Claude are brilliant general-purpose tools. But ask them about careers and you'll get confident-sounding answers based on outdated training data, internet noise, and zero accountability.</p>
+    <p>ChatGPT, Gemini, and Claude are brilliant general-purpose tools. But ask them about careers or college admissions and you'll get confident-sounding answers based on outdated training data, internet noise, and zero accountability.</p>
 
     <div class="problem-grid">
         <div class="problem-card">
@@ -444,6 +445,13 @@
             </div>
             <h3>Hallucinated credentials</h3>
             <p>Ask a general AI about certification paths and it'll invent programs that don't exist, or recommend outdated credentials that no longer carry weight in the industry.</p>
+        </div>
+        <div class="problem-card" style="grid-column: 1 / -1;">
+            <div class="icon red">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            </div>
+            <h3>$10K admissions consultants who Google for you</h3>
+            <p>Most expensive college admissions consulting programs assign a "coach" whose first move is telling your child to go research schools themselves. They provide broad, generic, often outdated advice that doesn't reflect the real strategic landscape — like which schools within a university have different acceptance rates, or how Early Decision can double your odds.</p>
         </div>
     </div>
 </section>
@@ -500,14 +508,29 @@
             <div class="generic no">Rarely / unreliably</div>
             <div class="wayfinder">Always</div>
         </div>
+        <div class="comp-row">
+            <div>College admissions strategy</div>
+            <div class="generic no">Generic tips</div>
+            <div class="wayfinder">School-specific intel &amp; ED rates</div>
+        </div>
+        <div class="comp-row">
+            <div>Acceptance rate analysis by school &amp; program</div>
+            <div class="generic no">Not available</div>
+            <div class="wayfinder">60+ universities, school-within-school data</div>
+        </div>
+        <div class="comp-row">
+            <div>Strategic entry paths (less competitive majors)</div>
+            <div class="generic no">Not available</div>
+            <div class="wayfinder">Curated insider intelligence</div>
+        </div>
     </div>
 </section>
 
 <!-- ============ DATA SOURCES ============ -->
 <section>
     <div class="section-label">The Knowledge Base</div>
-    <h2>Built on the world's most authoritative career data</h2>
-    <p>The Wayfinder Engine draws from billions of data points across federal databases, labor market intelligence, and educational datasets that general AI simply doesn't have access to in a structured, queryable form.</p>
+    <h2>Built on the world's most authoritative career &amp; admissions data</h2>
+    <p>The Wayfinder Engine draws from billions of data points across federal databases, labor market intelligence, educational datasets, and college admissions analytics that general AI simply doesn't have access to in a structured, queryable form.</p>
 
     <div class="data-grid">
         <div class="data-card">
@@ -539,6 +562,11 @@
             <span class="source-tag">Industry Intelligence</span>
             <h4>Labor Market Trends</h4>
             <p>Regional hiring patterns, emerging skill demands, industry disruption signals, and workforce development data.</p>
+        </div>
+        <div class="data-card" style="border-color: rgba(88, 166, 255, 0.3);">
+            <span class="source-tag">College Scorecard + Curated Intel</span>
+            <h4>Admissions Intelligence</h4>
+            <p>Acceptance rates, ED/EA advantages, school-within-school differentials, strategic entry paths, transfer rates, and financial aid insights for 60+ top universities.</p>
         </div>
     </div>
 </section>
@@ -586,11 +614,54 @@
     </div>
 </section>
 
+<!-- ============ COLLEGE ADMISSIONS ============ -->
+<section>
+    <div class="section-label">College Admissions Intelligence</div>
+    <h2>The strategic edge families actually need</h2>
+    <p>Most admissions consultants charge $5,000-$10,000+ and deliver generic advice. Wayfinder gives you school-specific strategic intelligence instantly.</p>
+
+    <div class="engine-section" style="border-color: rgba(63, 185, 80, 0.2); background: linear-gradient(135deg, rgba(63, 185, 80, 0.06) 0%, rgba(13, 17, 23, 0) 60%);">
+        <h3>What $10K consultants won't tell you — Wayfinder will.</h3>
+        <p>We don't just list acceptance rates. We surface the strategic intelligence that changes outcomes: which programs within a university are less competitive, how Early Decision can dramatically shift your odds, and which schools offer the best financial aid for your situation.</p>
+
+        <div class="engine-features">
+            <div class="engine-feat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                <div>
+                    <h4>School-within-school analysis</h4>
+                    <p>Cornell Hotel at 20% vs Arts & Sciences at 7%. We know the difference — and which entry points maximize your chances.</p>
+                </div>
+            </div>
+            <div class="engine-feat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                <div>
+                    <h4>Early Decision advantage data</h4>
+                    <p>Some schools fill 40-50% of their class through ED. We show you the real acceptance rate differentials.</p>
+                </div>
+            </div>
+            <div class="engine-feat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                <div>
+                    <h4>Financial aid intelligence</h4>
+                    <p>Many top schools cover full tuition under $75-100K income. We help you find the schools where elite education is actually affordable.</p>
+                </div>
+            </div>
+            <div class="engine-feat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                <div>
+                    <h4>Strategic school list building</h4>
+                    <p>Reach, target, and safety schools tailored to your child's profile — not cookie-cutter lists from a counselor who has 300 other students.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ============ WHO IT'S FOR ============ -->
 <section>
     <div class="section-label">Who It's For</div>
     <h2>Built for people making real decisions</h2>
-    <p>Wayfinder serves anyone at a career crossroads who needs more than platitudes and guesswork.</p>
+    <p>Whether you're planning a career, navigating college admissions, or helping your child find the right path — Wayfinder delivers the intelligence you need.</p>
 
     <div class="audience-grid">
         <div class="audience-card">
@@ -613,6 +684,11 @@
             <h4>Career Changers</h4>
             <p>Evaluating new fields with realistic salary expectations and skill gap analysis</p>
         </div>
+        <div class="audience-card" style="border-color: rgba(88, 166, 255, 0.4); background: linear-gradient(135deg, #161B22 0%, rgba(88, 166, 255, 0.06) 100%);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M3 7h2M19 7h2M12 2v2"/></svg>
+            <h4>Parents &amp; Families</h4>
+            <p>Strategic college admissions intelligence — school selection, ED strategy, acceptance rate analysis, and financial aid guidance</p>
+        </div>
     </div>
 </section>
 
@@ -620,7 +696,7 @@
 <div class="mission-block">
     <img src="/logo.svg" alt="Wayfinder">
     <h2>Built for impact, not profit</h2>
-    <p>Wayfinder is an initiative of the <strong>Virtuous Capital Foundation</strong>, a 501(c)(3) nonprofit. Every subscription directly funds the platform's development, data infrastructure, and mission to democratize access to high-quality career intelligence. We don't sell your data. We don't run ads. We exist to help people make better decisions about their futures.</p>
+    <p>Wayfinder is an initiative of the <strong>Virtuous Capital Foundation</strong>, a 501(c)(3) nonprofit. Every subscription directly funds the platform's development, data infrastructure, and mission to democratize access to high-quality career intelligence and college admissions strategy. We don't sell your data. We don't run ads. We exist to help people make better decisions about their futures.</p>
     <a href="/">Open Wayfinder</a>
 </div>
 
