@@ -915,8 +915,8 @@ async function submitLogin() {
 }
 
 async function submitSignup() {
-  // Must have validated invite code
-  if (!validatedInviteCode) {
+  // Invite method requires a validated code; paid method doesn't
+  if (signupMethod === 'invite' && !validatedInviteCode) {
     showAuthError('signupError', 'Please enter a valid invitation code first.');
     return;
   }
@@ -927,6 +927,13 @@ async function submitSignup() {
   const userType = $('signupType').value;
   const consent = $('signupConsent').checked;
 
+  // Get selected paid plan if using paid method
+  let selectedPlan = 'free';
+  if (signupMethod === 'paid') {
+    const planRadio = document.querySelector('input[name="signupPlan"]:checked');
+    selectedPlan = planRadio ? planRadio.value : 'premium';
+  }
+
   if (!name || !email || !password) { showAuthError('signupError', 'Please fill in all required fields'); return; }
   if (password.length < 6) { showAuthError('signupError', 'Password must be at least 6 characters'); return; }
   if (!email.includes('@')) { showAuthError('signupError', 'Please enter a valid email'); return; }
@@ -935,7 +942,12 @@ async function submitSignup() {
     const res = await fetch(`${API_BASE}/auth/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password, name, userType, consentGiven: consent, inviteCode: validatedInviteCode })
+      body: JSON.stringify({
+        email, password, name, userType,
+        consentGiven: consent,
+        inviteCode: validatedInviteCode || '',
+        selectedPlan
+      })
     });
     const data = await res.json();
     if (data.error) { showAuthError('signupError', data.error); return; }
@@ -954,6 +966,27 @@ async function submitSignup() {
 
     sessionId = null;
     localStorage.removeItem('wayfinder_session');
+
+    // If paid plan was selected, redirect to Stripe checkout immediately
+    if (data.selectedPlan && data.selectedPlan !== 'free') {
+      try {
+        const checkoutRes = await fetch(`${API_BASE}/stripe/create-checkout`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ plan: data.selectedPlan })
+        });
+        const checkoutData = await checkoutRes.json();
+        if (checkoutData.url) {
+          window.location.href = checkoutData.url;
+        }
+      } catch {
+        // Non-critical: user can upgrade later from settings
+        console.warn('Could not redirect to checkout, user can upgrade from settings');
+      }
+    }
   } catch {
     showAuthError('signupError', 'Connection error. Is the server running?');
   }
@@ -1109,6 +1142,9 @@ function escapeHtml(text) {
 // ========================
 // Invite System
 // ========================
+// Current signup method: 'invite' or 'paid'
+let signupMethod = 'invite';
+
 function setupInviteListeners() {
   // Invite code validation on signup form
   const inviteInput = $('signupInviteCode');
@@ -1116,6 +1152,39 @@ function setupInviteListeners() {
     inviteInput.addEventListener('input', debounce(validateInviteCode, 500));
     inviteInput.addEventListener('paste', () => setTimeout(() => validateInviteCode(), 100));
   }
+
+  // Signup method toggle (invite vs paid)
+  const methodBtns = document.querySelectorAll('.signup-method-btn');
+  methodBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      methodBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      signupMethod = btn.dataset.method;
+
+      const inviteSection = $('inviteCodeSection');
+      const paidSection = $('paidPlanSection');
+      const signupFields = $('signupFields');
+      const heading = $('signupHeading');
+      const subtitle = $('signupSubtitle');
+
+      if (signupMethod === 'paid') {
+        inviteSection.style.display = 'none';
+        paidSection.style.display = 'block';
+        signupFields.style.display = 'block';
+        heading.textContent = 'Join Wayfinder';
+        subtitle.textContent = 'Pick a plan and get started immediately.';
+      } else {
+        inviteSection.style.display = 'block';
+        paidSection.style.display = 'none';
+        heading.textContent = "You're Invited";
+        subtitle.textContent = 'Wayfinder is invite-only. Enter your code to join.';
+        // Only show fields if invite is validated
+        if (!validatedInviteCode) {
+          signupFields.style.display = 'none';
+        }
+      }
+    });
+  });
 
   // Welcome screen "join with invite" link
   const joinLink = $('welcomeJoinLink');
@@ -1241,8 +1310,18 @@ async function sendInvite() {
 
     const appUrl = window.location.origin;
     const inviteLink = `${appUrl}/?invite=${data.invite.code}`;
+    const inviterName = currentUser?.name || 'Someone';
 
-    showMsg('inviteSendMsg', `Invitation created! Share this link: ${inviteLink}`, '#059669');
+    // Build a shareable email message
+    const emailSubject = encodeURIComponent(`${inviterName} invited you to Wayfinder`);
+    const emailBody = encodeURIComponent(
+      `Hey!\n\n${inviterName} thinks you'd get a lot out of Wayfinder — it's an AI-powered career and college admissions advisor built on real labor market data, not generic advice.\n\nYour personal invite link:\n${inviteLink}\n\nThis link expires in 14 days, so don't wait too long.\n\nSee you on Wayfinder!`
+    );
+    const mailtoLink = `mailto:${data.invite.recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
+
+    showMsg('inviteSendMsg',
+      `Invitation created! <a href="${mailtoLink}" target="_blank" style="color:#2563eb;text-decoration:underline;">Send email</a> or copy link: <button class="invite-copy-link" style="margin-left:4px;" onclick="navigator.clipboard.writeText('${inviteLink}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>`,
+      '#059669');
     emailInput.value = '';
 
     // Update balance

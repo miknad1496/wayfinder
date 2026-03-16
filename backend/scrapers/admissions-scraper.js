@@ -140,6 +140,59 @@ async function fetchSchoolData(apiKey) {
   return schools;
 }
 
+async function fetchProgramData(apiKey) {
+  console.log('  Fetching program data from College Scorecard...');
+  const programData = [];
+
+  // Only fetch for first 30 schools to avoid rate limits
+  const schoolsToFetch = TARGET_SCHOOLS.slice(0, 30);
+
+  for (const schoolName of schoolsToFetch) {
+    try {
+      const url = `${API_BASE}/schools.json?` + new URLSearchParams({
+        'api_key': apiKey,
+        'school.name': schoolName,
+        'fields': 'school.name,latest.programs.cip_4_digit',
+        'per_page': '1'
+      });
+
+      const data = await fetchJSON(url);
+      if (data && data.results && data.results.length > 0) {
+        const school = data.results[0];
+        const schoolFullName = school['school.name'];
+        const programs = school['latest.programs.cip_4_digit'];
+
+        if (programs && Array.isArray(programs)) {
+          // Filter to bachelor's level (credential.level === 3) with earnings data
+          const filteredPrograms = programs
+            .filter(p => p['credential.level'] === 3 && p['earnings.median_earnings.latest.overall'])
+            .map(p => ({
+              name: p.title || 'Unknown',
+              cipCode: p.code || '',
+              medianEarnings: Math.round(p['earnings.median_earnings.latest.overall'] || 0),
+              medianDebt: Math.round(p['debt.median_debt.completers.overall'] || 0),
+              completions: p['counts.ipeds_awards2'] || 0
+            }));
+
+          if (filteredPrograms.length > 0) {
+            programData.push({
+              schoolName: schoolFullName,
+              data: filteredPrograms
+            });
+            console.log(`    ✓ ${schoolFullName} — ${filteredPrograms.length} programs`);
+          }
+        }
+      }
+
+      await sleep(500); // Rate limiting
+    } catch (err) {
+      console.log(`    ⚠ Program data not available for ${schoolName}`);
+    }
+  }
+
+  return programData;
+}
+
 function parseSchoolRecord(s) {
   return {
     name: s['school.name'],
@@ -190,7 +243,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '<1% transfer acceptance (~12 students/year)',
       financialAid: 'Need-blind admissions, no loans, families <$85K pay nothing. 55% of students receive need-based aid.',
       insiderTip: 'Harvard values intellectual vitality — demonstrate deep passion in one area rather than breadth. Z-list (gap year admission) is a real pathway for borderline admits.',
-      essayStrategy: 'Supplemental essay is optional but NEVER skip it. Focus on intellectual curiosity, not achievements.'
+      essayStrategy: 'Supplemental essay is optional but NEVER skip it. Focus on intellectual curiosity, not achievements.',
+      programs: {
+        totalMajors: 85,
+        popularMajors: ['Applied Mathematics', 'Computer Science', 'Economics', 'History', 'Biology'],
+        uniquePrograms: 'Joint concentrations common (e.g., Computer Science + Statistics). Biochemistry program highly regarded.',
+        curriculumHighlights: 'Distribution requirements in humanities, social sciences, natural sciences, and foreign languages. Junior/senior thesis available in many departments.',
+        preMedPath: 'Competitive pre-med environment. ~8-10% of students pre-med. Harvard Medical School on campus.',
+        preBusinessPath: 'No dedicated business school. Economics concentration is the standard path. Many students do consulting recruiting from Applied Math.',
+        engineeringPath: 'Applied Mathematics concentration; some cross-register at MIT. School of Engineering & Applied Sciences established 2007, relatively young program.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Harvard College (all undergrads)',
+            acceptanceRate: '3.4%',
+            notes: 'All undergraduates admitted through same application. Concentration (major) declared end of sophomore year.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'Harvard/MIT cross-registration permitted. Harvard is part of the Five College Consortium (includes MIT).',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Harvard emphasizes "intellectual vitality" — the willingness to engage deeply with ideas. Quirky, passionate students succeed; straightforward overachievers often get rejected.',
+        commonMistakes: 'Trying to appeal to the entire Harvard community. Admissions wants focus — deep expertise in one domain, not shallow breadth across many.',
+        hiddenGems: 'Harvard Crimson (student newspaper) and Hasty Pudding Club are cultural touchstones. The Institute of Politics internships are extremely competitive.',
+        redditWisdom: 'AOs consistently say: "We want students who will light our campus on fire." Passion and intellectual curiosity matter more than perfect stats.',
+        strategyTips: 'If waitlisted, reference specific academic programs/professors and demonstrate genuine passion for Harvard beyond prestige.',
+      },
     },
     {
       school: 'Yale University',
@@ -201,7 +283,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '<2% transfer acceptance (~25 students/year)',
       financialAid: 'Need-blind, no loans for any student. Families <$75K pay $0. All financial aid is grants.',
       insiderTip: 'Yale puts more weight on extracurricular passion and community involvement than any other Ivy. They want future leaders who care about social impact. Residential college system is central — show you value community.',
-      essayStrategy: 'Yale\'s short-answer essays ("Why Yale" + quirky prompts) are critical. Be specific about residential colleges, cultural houses, specific clubs. Show personality, not just achievements.'
+      essayStrategy: 'Yale\'s short-answer essays ("Why Yale" + quirky prompts) are critical. Be specific about residential colleges, cultural houses, specific clubs. Show personality, not just achievements.',
+      programs: {
+        totalMajors: 80,
+        popularMajors: ['Economics', 'Political Science', 'English', 'History', 'Computer Science'],
+        uniquePrograms: 'Directed Studies (freshman program) is selective, interdisciplinary program combining literature, philosophy, history.',
+        curriculumHighlights: '14-course major requirement. Residential college provides advising. Capstone projects required in many departments.',
+        preMedPath: 'Strong pre-med program. ~6% of students pre-med. Yale School of Medicine on campus.',
+        preBusinessPath: 'No undergraduate business school. Economics is standard path. Many students recruit for consulting/banking from Economics + Statistics.',
+        engineeringPath: 'Bachelor of Science in Engineering (B.S.E.). Applied Physics and Physics popular. Joint engineering concentrations available.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Yale College (all undergrads)',
+            acceptanceRate: '3.7%',
+            notes: 'All undergraduates admitted to Yale College. Assigned to one of 14 residential colleges upon admission.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'Yale/YSOA dual degree (music). Yale School of Art collaborative opportunities.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Yale explicitly values leadership, social impact, and "love of learning for its own sake." Essays about extracurricular contributions weigh heavily.',
+        commonMistakes: 'Being too focused on prestige. Yale wants students genuinely excited about the residential college system and specific opportunities.',
+        hiddenGems: 'The Berkeley College traditions and senior societies (Skull & Bones, Scroll & Key) are culturally significant. Overnight hosting programs let applicants visit residential colleges.',
+        redditWisdom: 'AOs emphasize: "We want leaders who care about their communities." Show genuine passion for making a difference, not just academics.',
+        strategyTips: 'Reference specific residential college traditions and how you\'ll contribute to Yale community, not just why Yale is prestigious.',
+      },
     },
     {
       school: 'Princeton University',
@@ -212,7 +323,41 @@ function getCuratedAdmissionsIntel() {
       transferRate: 'Historically 0 transfers accepted. Princeton recently resumed transfer admissions — ~1-2% acceptance.',
       financialAid: 'No loans for anyone. Families <$65K pay $0. One of the most generous aid programs in the nation.',
       insiderTip: 'Princeton values the undergraduate experience more than any Ivy — no grad students teaching. Senior thesis is mandatory. Show intellectual depth and willingness to engage in independent research.',
-      essayStrategy: 'Princeton\'s "graded written paper" requirement is unique — submit your best AP/IB paper. The extracurricular and intellectual curiosity essays should show depth, not breadth.'
+      essayStrategy: 'Princeton\'s "graded written paper" requirement is unique — submit your best AP/IB paper. The extracurricular and intellectual curiosity essays should show depth, not breadth.',
+      programs: {
+        totalMajors: 78,
+        popularMajors: ['Engineering', 'Economics', 'Computer Science', 'History', 'Physics'],
+        uniquePrograms: 'Proud of both AB (liberal arts) and BSE (engineering) parity. Physics is world-renowned. Princeton plasma physics lab is famous.',
+        curriculumHighlights: 'Rigorous distribution requirements. Senior thesis mandatory for all concentrations. Independent work courses throughout.',
+        preMedPath: 'Strong pre-med program. ~8% of students pre-med. Princeton does not have medical school (nearby Penn does).',
+        preBusinessPath: 'No business school. Economics concentration + additional coursework is standard. Finance programs through independent work.',
+        engineeringPath: 'Sc.B. (Bachelor of Science) in Engineering. More rigorous than A.B. engineering concentration. Highly selective within Princeton.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'AB (Arts/Liberal Arts)',
+            acceptanceRate: '3.0%',
+            notes: 'Traditional liberal arts degree. Requires senior thesis.'
+          },
+          {
+            name: 'BSE (Engineering)',
+            acceptanceRate: '5%',
+            notes: 'Bachelor of Science in Engineering. More specialized and rigorous than A.B. engineering.'
+          }
+        ],
+        internalTransfers: 'Possible between AB and BSE but difficult — separate admissions tracks from start.',
+        dualDegreePrograms: 'None officially. Can combine AB concentration with engineering coursework.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Princeton heavily rewards the "graded written paper" requirement. They genuinely want to see your intellectual depth on paper.',
+        commonMistakes: 'Assuming high stats guarantee admission. Princeton cares about fit with undergraduate experience — they admit few graduate-track researchers.',
+        hiddenGems: 'The senior thesis is actually a huge draw for research-minded students. Princeton internship programs (like Summer in Toulouse) are competitive but transformative.',
+        redditWisdom: 'AOs emphasize: "We want students excited about being undergraduates." Princeton\'s undergraduate focus is real.',
+        strategyTips: 'In essays, emphasize genuine intellectual curiosity and independent research interests. Reference specific Princeton programs.',
+      },
     },
     {
       school: 'Columbia University',
@@ -223,7 +368,46 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~5-7% via standard transfer. General Studies has ~25-30% acceptance for non-traditional students.',
       financialAid: 'Need-blind for US citizens. No parental contribution for families <$66K.',
       insiderTip: 'Columbia\'s General Studies is a legitimate pathway for students who took gap years, military, or non-traditional paths. The Core Curriculum is Columbia\'s defining feature — show genuine enthusiasm for it.',
-      essayStrategy: 'The "Why Columbia" essay must reference the Core Curriculum and NYC. Be specific about which classes, professors, or research opportunities excite you.'
+      essayStrategy: 'The "Why Columbia" essay must reference the Core Curriculum and NYC. Be specific about which classes, professors, or research opportunities excite you.',
+      programs: {
+        totalMajors: 95,
+        popularMajors: ['Economics', 'Political Science', 'Computer Science', 'English', 'Biology'],
+        uniquePrograms: 'Core Curriculum is mandatory for all Columbia College students — unique integrated humanities/social sciences sequence. SEAS has separate engineering curriculum.',
+        curriculumHighlights: 'Core Curriculum (Humanities, History, Literature, Contemporary Civilization, Art Humanities). Senior seminars required. Extensive NYC research opportunities.',
+        preMedPath: 'Strong pre-med track. ~7% of students pre-med. Columbia University Medical School on campus (Morningside Heights).',
+        preBusinessPath: 'No undergraduate business school. Economics is default path. Many consulting recruiters target economics concentrators.',
+        engineeringPath: 'SEAS (School of Engineering and Applied Science). Slightly higher acceptance than Columbia College. Strong in computer science and applied physics.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Columbia College',
+            acceptanceRate: '3.5%',
+            notes: 'Traditional liberal arts. All students take Core Curriculum (humanities, history, literature, contemporary civilization).'
+          },
+          {
+            name: 'SEAS (School of Engineering and Applied Science)',
+            acceptanceRate: '5-6%',
+            notes: 'Engineering school. Takes Core Curriculum courses alongside engineering sequence.'
+          },
+          {
+            name: 'School of General Studies',
+            acceptanceRate: '25-30%',
+            notes: 'Non-traditional pathway for gap year, military, older students. Takes Core Curriculum like Columbia College.'
+          }
+        ],
+        internalTransfers: 'Rare from CC to SEAS or vice versa. General Studies → Columbia College possible but uncommon.',
+        dualDegreePrograms: 'M&T (Management & Technology) with Wharton. Joint degrees with SIPA, School of the Arts.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Columbia applicants must show genuine passion for the Core Curriculum — not treating it as a barrier but as a feature.',
+        commonMistakes: 'Not understanding what Core Curriculum actually is. It\'s humanities-focused, not STEM — if you hate reading, Columbia may not be right.',
+        hiddenGems: 'Columbia General Studies is genuinely underutilized as a backdoor entry point. ~25-30% acceptance for non-traditional students is real.',
+        redditWisdom: 'AOs emphasize: "The Core Curriculum is what makes Columbia Columbia." Show genuine intellectual curiosity about interdisciplinary learning.',
+        strategyTips: 'Reference specific Core classes/authors that excite you. NYC location is important — show you\'ll use it for research/internships.',
+      },
     },
     {
       school: 'University of Pennsylvania',
@@ -234,7 +418,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~7-9% transfer acceptance (higher than most Ivies)',
       financialAid: 'Need-blind for US citizens. All-grant program (no loans in packages).',
       insiderTip: 'Penn values "why Penn specifically" — demonstrate knowledge of dual-degree programs, specific professors, research labs. The Huntsman/Vagelos/M&T programs are extremely competitive.',
-      essayStrategy: 'The "Why Penn" essay is critical. Reference specific programs, professors, or resources. Cross-school collaboration is a Penn differentiator — mention it.'
+      essayStrategy: 'The "Why Penn" essay is critical. Reference specific programs, professors, or resources. Cross-school collaboration is a Penn differentiator — mention it.',
+      programs: {
+        totalMajors: 120,
+        popularMajors: ['Finance', 'Accounting', 'Economics', 'Computer Science', 'Psychology'],
+        uniquePrograms: 'Wharton is one of the top undergraduate business schools in the US. Joseph Wharton School of Business is separate from liberal arts.',
+        curriculumHighlights: 'Cross-school registration common — take Wharton classes from CAS, SEAS classes from anywhere. Extensive undergraduate research opportunities.',
+        preMedPath: 'Strong pre-med program. ~6% of students pre-med. University of Pennsylvania School of Medicine on campus.',
+        preBusinessPath: 'Wharton School of Business — the crown jewel. Highly competitive to enter (~5%). Many CAS students do consulting/finance recruiting.',
+        engineeringPath: 'School of Engineering and Applied Science (SEAS). Strong CS and bioengineering programs. Can double-major with Wharton.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Wharton School of Business',
+            acceptanceRate: '5%',
+            notes: 'Elite business school. Can double-major with CAS or other schools.'
+          },
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '7%',
+            notes: 'Traditional liberal arts. Can double-major with Wharton or minor in business.'
+          },
+          {
+            name: 'School of Engineering (SEAS)',
+            acceptanceRate: '9%',
+            notes: 'Engineering school with strong CS/bioengineering.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '11%',
+            notes: 'Nursing program. Can double-degree with other schools.'
+          }
+        ],
+        internalTransfers: 'Possible but highly competitive. Easier to enter via less-competitive school then transfer.',
+        dualDegreePrograms: 'M&T (Management & Technology), Huntsman (International Studies + Business), Vagelos (Pre-med + Wharton), LSM (Life Sciences + Wharton).',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Penn is super strategic — many successful applicants apply to CAS and transfer to Wharton after proving themselves.',
+        commonMistakes: 'Only applying to Wharton if you\'re borderline. CAS is slightly more accessible and provides a legitimate path.',
+        hiddenGems: 'The dual-degree programs (M&T, Huntsman, Vagelos) are transformative but extremely competitive. The M&T essays require serious creativity.',
+        redditWisdom: 'AOs emphasize: "Be specific about which school you\'re applying to and why." Penn wants intentionality, not prestige-chasing.',
+        strategyTips: 'Apply ED to Penn if it\'s #1. For Wharton admits, emphasize business-specific interests. For CAS admits, talk about specific majors + cross-registration plans.',
+      },
     },
     {
       school: 'Brown University',
@@ -245,7 +473,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~5-8% transfer acceptance',
       financialAid: 'Need-blind for US citizens. Meets 100% of demonstrated need with no loans.',
       insiderTip: 'Brown\'s open curriculum is the defining feature — show you\'re a self-directed learner who thrives without structure. PLME applicants should apply separately. The Brown/RISD dual degree is a unique pathway for creative students.',
-      essayStrategy: 'Show intellectual independence. Brown wants students who will design their own education. Reference specific courses from Brown\'s unique offerings and explain WHY the open curriculum appeals to you specifically.'
+      essayStrategy: 'Show intellectual independence. Brown wants students who will design their own education. Reference specific courses from Brown\'s unique offerings and explain WHY the open curriculum appeals to you specifically.',
+      programs: {
+        totalMajors: 85,
+        popularMajors: ['Economics', 'Computer Science', 'Political Science', 'Biology', 'English'],
+        uniquePrograms: 'Open Curriculum — no core requirements or distribution requirements. Students design their own course of study.',
+        curriculumHighlights: 'Senior capstone/thesis required in most concentrations. ShopPeriod lets students try courses for 2 weeks before committing.',
+        preMedPath: 'Strong pre-med advising. ~20% of students are pre-med. No specific pre-med major — bio, chem, neuro all work.',
+        preBusinessPath: 'No undergraduate business school. Economics concentration is the common path. Many do finance recruiting from Econ/Applied Math.',
+        engineeringPath: 'Brown offers Sc.B. (bachelor of science) degrees — more rigorous than A.B. engineering concentration.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Brown College (all undergrads)',
+            acceptanceRate: '5.0%',
+            notes: 'All undergrads admitted to same college. Major declaration typically sophomore year.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'Brown/RISD dual degree (5 years). PLME 8-year BS/MD.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Brown is known for valuing "weirdness" and unconventional thinkers. The open curriculum essay is almost always the strongest differentiator — show you know what it means and why it fits you.',
+        commonMistakes: 'Applying because "no requirements sounds easy." Brown wants self-directed learners, not people avoiding work.',
+        hiddenGems: 'The Writing Center internship and Swearer Center for Public Service are underutilized resources that impress admissions when referenced.',
+        redditWisdom: 'AOs consistently emphasize: fit matters more than prestige. Show genuine love for Brown specifically.',
+        strategyTips: 'If waitlisted, write a strong LOCI (Letter of Continued Interest) referencing specific new achievements and why Brown remains #1.',
+      },
     },
     {
       school: 'Dartmouth College',
@@ -256,7 +513,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~2-3% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. Families <$65K pay $0.',
       insiderTip: 'Dartmouth values the outdoors, community, and the D-Plan (unique quarter system with off-campus terms). Demonstrate you want a small-school, close-knit experience. Greek life and outdoor culture are central.',
-      essayStrategy: 'The "Why Dartmouth" essay should reference the D-Plan, specific off-campus programs, and Dartmouth\'s intimate community. Rural setting is a feature, not a bug — embrace it.'
+      essayStrategy: 'The "Why Dartmouth" essay should reference the D-Plan, specific off-campus programs, and Dartmouth\'s intimate community. Rural setting is a feature, not a bug — embrace it.',
+      programs: {
+        totalMajors: 71,
+        popularMajors: ['Economics', 'Engineering', 'Computer Science', 'English', 'Biology'],
+        uniquePrograms: 'Thayer School of Engineering (five-course engineering major). Strong outdoor/environmental programs.',
+        curriculumHighlights: 'D-Plan (quarter system) allows off-campus terms, internships, research flexibility. Undergraduate seminars required.',
+        preMedPath: 'Strong pre-med program. ~10% of students pre-med. Hanover Medical School affiliated.',
+        preBusinessPath: 'No business school. Economics + Statistics combo common for consulting/finance recruiting.',
+        engineeringPath: 'Thayer School of Engineering. Five-course major (lighter than most schools). Can combine with other concentrations.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Dartmouth College (all undergrads)',
+            acceptanceRate: '6.2%',
+            notes: 'Single college with no separate schools. Thayer engineering is a modified major, not separate school.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'None formally. Can do off-campus terms at partner institutions through D-Plan.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Dartmouth cares deeply about fit with rural, outdoors-focused community. Applicants who ignore the D-Plan or rural location often get rejected despite strong stats.',
+        commonMistakes: 'Not understanding the D-Plan or treating rural location as a negative. For Dartmouth, isolation = feature, not bug.',
+        hiddenGems: 'The D-Plan flexibility for off-campus terms is incredible for internships/research. First-year trips (outdoor orientation) are legendary.',
+        redditWisdom: 'AOs emphasize: "We want students excited about our community." Dartmouth culture is strong and exclusive in a good way.',
+        strategyTips: 'Show genuine interest in outdoor activities or D-Plan flexibility. Reference specific outdoor clubs or off-campus programs.',
+      },
     },
     {
       school: 'Cornell University',
@@ -267,7 +553,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~15-18% transfer acceptance (highest Ivy — especially into CALS and Hotel)',
       financialAid: 'Need-blind for US. Strong aid but some loans in packages.',
       insiderTip: 'Cornell is the most strategic Ivy for admissions. Applying to CALS or Hotel dramatically increases odds. Internal transfers between colleges are possible but competitive. CALS applicants write about ag/environment even if planning to study something else.',
-      essayStrategy: 'Each college has its own essay — tailor completely. CALS essay about impact on NY state. Hotel essay about hospitality passion. Do NOT write generic "why Cornell."'
+      essayStrategy: 'Each college has its own essay — tailor completely. CALS essay about impact on NY state. Hotel essay about hospitality passion. Do NOT write generic "why Cornell."',
+      programs: {
+        totalMajors: 200,
+        popularMajors: ['Engineering', 'Economics', 'Agriculture', 'Computer Science', 'Hotel Management'],
+        uniquePrograms: 'Hotel School (only hotel program in Ivy League). ILR School (labor relations, unique program). CALS (Agriculture & Life Sciences).',
+        curriculumHighlights: 'Varies by college. Some colleges have GE requirements, others don\'t. Research opportunities across all colleges.',
+        preMedPath: '~8% pre-med. Strong pre-med track. Cornell directly affiliated with Weill Medical School.',
+        preBusinessPath: 'No business school. Economics + Engineering path common. Hotel School offers business-focused curriculum.',
+        engineeringPath: 'College of Engineering. One of the largest engineering programs in the country. Strong computer science.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '7%',
+            notes: 'Traditional liberal arts. Largest college. Most competitive acceptance rate.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '9%',
+            notes: 'One of the largest engineering programs in any university.'
+          },
+          {
+            name: 'College of Agriculture & Life Sciences (CALS)',
+            acceptanceRate: '11%',
+            notes: 'Unique agricultural/environmental focus. Lower acceptance rate than implied.'
+          },
+          {
+            name: 'School of Industrial & Labor Relations (ILR)',
+            acceptanceRate: '11%',
+            notes: 'Unique school. Only one like it in US. Genuine alternative pathway.'
+          },
+          {
+            name: 'School of Hotel Administration',
+            acceptanceRate: '18-22%',
+            notes: 'Only hotel school in Ivy League. Extremely strategic entry point.'
+          }
+        ],
+        internalTransfers: 'Possible between colleges but competitive. Easier to enter via CALS/Hotel then transfer.',
+        dualDegreePrograms: 'Cornell/SJU 3+2 (engineering + architecture). Various dual majors available.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Cornell is THE strategic Ivy. Apply to Hotel (~20%) or CALS (~11%) if borderline for Arts & Sciences (~7%). Internal transfers possible but not easy.',
+        commonMistakes: 'Applying only to CAS when you\'d get into Hotel or CALS with same application.',
+        hiddenGems: 'ILR School is genuinely unique and underappreciated. Hotel School is the back door to Ivy League. Both have strong post-grad outcomes.',
+        redditWisdom: 'AOs emphasize: "Choose the college that fits you best." They literally WANT students to use strategic college selection.',
+        strategyTips: 'Be strategic — Hotel/CALS have 2-3x higher acceptance. Tailor essays by college. Show genuine interest in that specific college\'s mission.',
+      },
     },
 
     // ==================== TOP PRIVATE (21) ====================
@@ -280,7 +615,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '<2% transfer acceptance',
       financialAid: 'No tuition for families earning <$100K/year. Free room & board for <$75K.',
       insiderTip: 'Stanford values "intellectual vitality" and quirkiness. Show genuine passion projects over polished resumes. The "roommate essay" is crucial.',
-      essayStrategy: 'Short answers matter as much as long essays. Be authentic and specific — admissions reads 20K+ applications.'
+      essayStrategy: 'Short answers matter as much as long essays. Be authentic and specific — admissions reads 20K+ applications.',
+      programs: {
+        totalMajors: 95,
+        popularMajors: ['Computer Science', 'Engineering', 'Economics', 'Biology', 'Physics'],
+        uniquePrograms: 'Design school pioneering design thinking. Symbolic Systems (CS + philosophy). Strong interdisciplinary options.',
+        curriculumHighlights: 'Flexible freshman year. GE requirements cover basics. Senior capstone varies by major. Internship culture strong.',
+        preMedPath: '~4% of students pre-med. No pre-med major — bio, chem, neuro all work. Strong research opportunities.',
+        preBusinessPath: 'No business school. Economics concentration + CS double major common for tech/finance. Stanford offers advanced business electives.',
+        engineeringPath: 'One of the best engineering programs in the world. Can declare any engineering major sophomore year.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Stanford University (single school)',
+            acceptanceRate: '3.7%',
+            notes: 'All undergraduates admitted to same school. Engineering major declared sophomore year, not at admission.'
+          }
+        ],
+        internalTransfers: 'N/A — single school',
+        dualDegreePrograms: 'None officially, but interdisciplinary majors common.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Stanford loves "intellectual vitality" and students building things outside the classroom. Passion projects > traditional achievements.',
+        commonMistakes: 'Sounding like everyone else. Stanford rejects many 4.0/1600 applicants. Quirky, creative, ambitious applicants succeed.',
+        hiddenGems: 'The "roommate essay" is often the strongest differentiator. Stanford wants to know who you are as a person.',
+        redditWisdom: 'AOs emphasize: "Build something. Start something." Entrepreneurial mindset matters even if not about business.',
+        strategyTips: 'Show intellectual curiosity and real-world impact of your work. Stanford wants builders and innovators.',
+      },
     },
     {
       school: 'MIT',
@@ -291,7 +655,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~3-4% transfer acceptance',
       financialAid: 'Need-blind for all (including international). Families <$75K pay nothing.',
       insiderTip: 'MIT wants builders and tinkerers. Competitive math/science olympiad credentials help but aren\'t sufficient — show projects you\'ve built. "Maker" mentality is key.',
-      essayStrategy: 'Focus on what you\'ve MADE or BUILT. Describe process, failures, iteration. Be precise and technical where appropriate.'
+      essayStrategy: 'Focus on what you\'ve MADE or BUILT. Describe process, failures, iteration. Be precise and technical where appropriate.',
+      programs: {
+        totalMajors: 34,
+        popularMajors: ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Physics', 'Mathematics'],
+        uniquePrograms: 'Media Lab (interdisciplinary tech/art research). System Design & Management. Urban Studies. Philosophy.',
+        curriculumHighlights: 'General Institute Requirements cover basics. Undergraduate Research Opportunities Program (UROP) is legendary. Hands-on learning culture.',
+        preMedPath: '~5% pre-med (rare). MIT students interested in medicine usually go biomedical engineering route instead.',
+        preBusinessPath: 'No business school. Sloan School is grad-only. Some undergrads do consulting/finance but less common than Stanford.',
+        engineeringPath: 'World\'s best engineering program. All 5 schools within MIT offer engineering-focused degrees.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'MIT (single admissions pool)',
+            acceptanceRate: '3.9%',
+            notes: 'No separate schools for admission. Choose major (course) at end of freshman year.'
+          }
+        ],
+        internalTransfers: 'N/A — students can change majors easily.',
+        dualDegreePrograms: 'Can double major without much extra time due to flexibility.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'MIT wants to see what you\'ve built or created. ISEF/Olympiad credentials help, but a student who built a robot in their garage might beat a perfect-score student.',
+        commonMistakes: 'Assuming high test scores alone get you in. MIT rejects many perfect-score applicants. Must show intellectual curiosity AND building/making.',
+        hiddenGems: 'UROP (Undergraduate Research Opportunities Program) is incredibly powerful — get involved first semester if possible.',
+        redditWisdom: 'AOs say: "Show us something you\'ve made." Even a small project matters if you describe learning deeply.',
+        strategyTips: 'In essays, focus on process, iteration, failures, and what you learned. MIT values learning mindset over perfection.',
+      },
     },
     {
       school: 'California Institute of Technology',
@@ -302,7 +695,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '<1% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. Average financial aid package covers most of cost.',
       insiderTip: 'Caltech is the most academically intense school in the nation. Show you LOVE math and science for their own sake. Research experience is almost expected. Only apply if you genuinely want a small, intensely academic STEM environment.',
-      essayStrategy: 'Show deep math/science curiosity. Describe research, experiments, or problems you\'ve worked on. Caltech wants to see you think like a scientist.'
+      essayStrategy: 'Show deep math/science curiosity. Describe research, experiments, or problems you\'ve worked on. Caltech wants to see you think like a scientist.',
+      programs: {
+        totalMajors: 28,
+        popularMajors: ['Physics', 'Engineering', 'Mathematics', 'Computer Science', 'Chemistry'],
+        uniquePrograms: 'Extremely specialized STEM programs. Physics program is world-renowned. Research-focused from day one.',
+        curriculumHighlights: 'Caltech core curriculum for all — heavy math/science requirements. Undergraduate research expected. Senior thesis required.',
+        preMedPath: 'Rare — maybe 1-2% pre-med. Caltech students interested in medicine usually go to grad school instead.',
+        preBusinessPath: 'Almost no undergrads pursue business from Caltech. Culture is research/science focused.',
+        engineeringPath: 'Excellent but very rigorous. All engineering students take same core curriculum.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Caltech (single pool, 230 students/year)',
+            acceptanceRate: '3.2%',
+            notes: 'Extraordinarily small. Single admissions pool. Choose division (engineering, physics, etc.) after arrival.'
+          }
+        ],
+        internalTransfers: 'N/A — everyone is STEM focused',
+        dualDegreePrograms: 'None — students often go to grad school instead.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Caltech wants to see you love math/science for its own sake, not for prestige. A student with a unique research project beats perfect scores without research.',
+        commonMistakes: 'Applying if you want business, liberal arts, or social sciences. Caltech is STEM-only and intensely academic.',
+        hiddenGems: 'The research opportunities start immediately. Freshman year you\'re working on real research projects.',
+        redditWisdom: 'AOs emphasize: "Only apply if you genuinely love pure science/math." Caltech is not for everyone, even smart kids.',
+        strategyTips: 'Show deep curiosity about a specific problem in physics, math, or engineering. Research experience is expected.',
+      },
     },
     {
       school: 'Duke University',
@@ -313,7 +735,41 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~5-6% transfer acceptance',
       financialAid: 'Need-blind for US citizens. Strong financial aid, all-grant for <$60K families.',
       insiderTip: 'Duke ED is one of the strongest advantages in elite admissions. Alumni legacy is significant. Demonstrated interest matters — visit campus, attend info sessions.',
-      essayStrategy: '"Why Duke" supplement is crucial. Reference specific programs like DukeEngage, Bass Connections, or Focus programs. Interdisciplinary themes resonate.'
+      essayStrategy: '"Why Duke" supplement is crucial. Reference specific programs like DukeEngage, Bass Connections, or Focus programs. Interdisciplinary themes resonate.',
+      programs: {
+        totalMajors: 120,
+        popularMajors: ['Engineering', 'Economics', 'Computer Science', 'Biology', 'Chemistry'],
+        uniquePrograms: 'Fuqua School of Business (undergrad business program). DukeEngage (service learning). Bass Connections (interdisciplinary research).',
+        curriculumHighlights: 'Bass Connections allow undergrads to work on faculty research. DukeEngage required for engagement. Interdisciplinary majors popular.',
+        preMedPath: 'Strong pre-med (~7% of students). Duke School of Medicine on campus. Medical school preferences given to Duke undergrads.',
+        preBusinessPath: 'No separate business school for undergrad (Fuqua is grad), but strong business-focused courses. Consulting recruiting strong.',
+        engineeringPath: 'Pratt School of Engineering — top-tier. Slightly higher acceptance than Trinity but still ~8%.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Trinity College of Arts & Sciences',
+            acceptanceRate: '5.5%',
+            notes: 'Traditional liberal arts college. Largest college at Duke.'
+          },
+          {
+            name: 'Pratt School of Engineering',
+            acceptanceRate: '8%',
+            notes: 'Top engineering school. Admits separately from Trinity.'
+          }
+        ],
+        internalTransfers: 'Possible but requires strong performance. Most enter the school they choose.',
+        dualDegreePrograms: 'Rare cross-school double degrees. Some students do Trinity + engineering minor.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Duke values legacy highly. ED acceptance is notably higher than RD — if Duke is your #1, ED can make a big difference.',
+        commonMistakes: 'Ignoring demonstrated interest. Duke explicitly cares about campus visits and info session attendance.',
+        hiddenGems: 'Bass Connections and DukeEngage are incredible differentiators if you mention them in essays.',
+        redditWisdom: 'AOs emphasize: "We want to see genuine interest in Duke, not just prestige." Mention specific programs/professors.',
+        strategyTips: 'Apply ED if Duke is #1. Show demonstrated interest. Reference DukeEngage or Bass Connections specifically.',
+      },
     },
     {
       school: 'University of Chicago',
@@ -324,7 +780,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~5-8% transfer acceptance',
       financialAid: 'Need-blind. Odyssey program: families <$60K pay $0. No loans in financial aid.',
       insiderTip: 'UChicago\'s "uncommon essay" prompts are legendary — they want intellectual weirdness and genuine curiosity. Students who love learning for its own sake thrive here. The Core is intense.',
-      essayStrategy: 'The extended essay is your chance to be intellectually playful. UChicago rewards creative, unconventional thinking. Don\'t play it safe. The "Why UChicago" should reference specific professors and the Core.'
+      essayStrategy: 'The extended essay is your chance to be intellectually playful. UChicago rewards creative, unconventional thinking. Don\'t play it safe. The "Why UChicago" should reference specific professors and the Core.',
+      programs: {
+        totalMajors: 99,
+        popularMajors: ['Economics', 'Physics', 'Computer Science', 'Biology', 'Mathematics'],
+        uniquePrograms: 'Core Curriculum is mandatory — great books approach to education. UChicago Economics is world-famous.',
+        curriculumHighlights: 'Core Curriculum (humanities, social sciences, natural sciences). Seminar-based learning. Independent work encouraged.',
+        preMedPath: 'Strong pre-med (~8% of students). UChicago Medicine on campus. Very competitive but well-supported.',
+        preBusinessPath: 'No business school. Economics concentration is default path. Booth is grad-only (but offers undergrad internships).',
+        engineeringPath: 'Physical Sciences program (not traditional engineering). Strong physics and computational backgrounds.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'University of Chicago College',
+            acceptanceRate: '5.2%',
+            notes: 'Single college. Core Curriculum is defining feature. All students take same required courses.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'UChicago/Argonne Lab dual degrees. Some interdisciplinary majors.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UChicago wants "weirdness" and intellectual curiosity. The uncommon essays are genuinely uncommon prompts that reward unconventional thinking.',
+        commonMistakes: 'Being too safe in essays. UChicago explicitly wants creative, quirky responses.',
+        hiddenGems: 'The Core Curriculum is intellectually transformative. If you mention specific professors, your chances improve significantly.',
+        redditWisdom: 'AOs emphasize: "Be yourself. Be weird. Tell us what makes you intellectually passionate." Standard essays fail here.',
+        strategyTips: 'Use the uncommon essay to show personality and intellectual curiosity. Reference specific professors or Core texts that excite you.',
+      },
     },
     {
       school: 'Northwestern University',
@@ -335,7 +820,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~12-15% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need.',
       insiderTip: 'Northwestern ED acceptance rate is roughly 3x the regular rate. Apply ED if Northwestern is your true #1. Medill and McCormick are good "strategic" choices for students on the edge.',
-      essayStrategy: '"Why Northwestern" should show genuine school knowledge. Mention the quarter system advantage, specific professors, student organizations.'
+      essayStrategy: '"Why Northwestern" should show genuine school knowledge. Mention the quarter system advantage, specific professors, student organizations.',
+      programs: {
+        totalMajors: 125,
+        popularMajors: ['Communications', 'Engineering', 'Economics', 'Psychology', 'Computer Science'],
+        uniquePrograms: 'Medill School of Journalism (undergrad journalism school). School of Communication (film, theater, speech). Quarter system.',
+        curriculumHighlights: 'Quarter system allows 5 academic sessions/year (compressed or with breaks). Flexibility for internships/study abroad. Cross-school registration.',
+        preMedPath: 'Strong pre-med (~7% of students). No med school on campus but Chicago-area resources.',
+        preBusinessPath: 'No undergrad business school (Kellogg is grad-only). Many do consulting/finance recruiting from Econ + Engineering.',
+        engineeringPath: 'McCormick School of Engineering. Well-regarded. Slightly higher acceptance than Weinberg.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Weinberg College of Arts & Sciences',
+            acceptanceRate: '7%',
+            notes: 'Largest college. Traditional liberal arts.'
+          },
+          {
+            name: 'McCormick School of Engineering',
+            acceptanceRate: '9%',
+            notes: 'Top engineering school. Admissions separate from Weinberg.'
+          },
+          {
+            name: 'Medill School of Journalism',
+            acceptanceRate: '12%',
+            notes: 'Undergrad journalism school — unique. Different admissions process and portfolio review.'
+          },
+          {
+            name: 'School of Communication',
+            acceptanceRate: '15%',
+            notes: 'Film, theater, speech programs. Audition/portfolio-based.'
+          }
+        ],
+        internalTransfers: 'Possible but difficult. Most students choose their school at admission and stay.',
+        dualDegreePrograms: 'Some students double major across schools. Medill/Engineering double degrees rare but possible.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Northwestern ED is incredibly powerful — roughly 3x higher acceptance than RD. Strategic school choice matters (Medill/McCormick > Weinberg by acceptance rate).',
+        commonMistakes: 'Only applying to Weinberg when Medill or McCormick might be accessible. Bad strategy.',
+        hiddenGems: 'The quarter system is amazing for internships and flexibility. Medill is one of the best journalism schools in the country.',
+        redditWisdom: 'AOs emphasize: "If Northwestern is your #1, ED is a game changer." The acceptance rate difference is real.',
+        strategyTips: 'Apply ED if Northwestern is #1. Consider strategic school selection (Medill has higher acceptance). Reference quarter system flexibility.',
+      },
     },
     {
       school: 'Johns Hopkins University',
@@ -346,7 +875,41 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~7-10% transfer acceptance',
       financialAid: 'Need-blind for US citizens. Hopkins Pledge: families <$60K pay $0.',
       insiderTip: 'JHU is the #1 research university by federal R&D spending. Highlight research interest in your application. Pre-med is strong but not the only path — they want diverse interests.',
-      essayStrategy: 'Show intellectual depth and research curiosity. Reference specific labs, professors, or research centers. JHU values collaboration across disciplines.'
+      essayStrategy: 'Show intellectual depth and research curiosity. Reference specific labs, professors, or research centers. JHU values collaboration across disciplines.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Biomedical Engineering', 'Computer Science', 'Pre-med Track', 'Physics', 'Psychology'],
+        uniquePrograms: 'Biomedical Engineering is world-leading. Engineering for Professionals allows dual study. Entrepreneurship focus.',
+        curriculumHighlights: 'Research expected for many majors. Undergraduate research opportunities abundant. Intersession options.',
+        preMedPath: 'Extremely strong (~18% of students pre-med). JHU School of Medicine on campus. Direct research opportunities.',
+        preBusinessPath: 'No business school. Economics + Engineering path common. Carey Business School is grad-only.',
+        engineeringPath: 'Whiting School of Engineering is world-renowned. Biomedical engineering especially strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Krieger School of Arts & Sciences',
+            acceptanceRate: '7%',
+            notes: 'Traditional liberal arts college.'
+          },
+          {
+            name: 'Whiting School of Engineering',
+            acceptanceRate: '9%',
+            notes: 'Top engineering school. Biomedical engineering is especially prestigious.'
+          }
+        ],
+        internalTransfers: 'Possible but students typically stay in their school.',
+        dualDegreePrograms: 'Rare. Some students do engineering + pre-med path.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'JHU is research-focused — having research experience or passion for a specific lab helps a lot. Pre-med pipeline is very strong but not the only path.',
+        commonMistakes: 'Assuming JHU is primarily pre-med. They want diverse interests in engineering, physics, and other fields too.',
+        hiddenGems: 'The undergraduate research opportunities are exceptional. Having a specific lab/professor you want to work with is a major advantage.',
+        redditWisdom: 'AOs emphasize: "We want curious researchers, not just pre-meds." Show genuine intellectual curiosity, not just medical school trajectory.',
+        strategyTips: 'Research specific professors or labs and mention them. Show intellectual depth. If pre-med, emphasize broader scientific interests too.',
+      },
     },
     {
       school: 'Rice University',
@@ -357,7 +920,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~10-12% transfer acceptance',
       financialAid: 'Rice Investment: families <$75K pay $0 tuition. <$140K pay $0 tuition + room/board. Exceptional value.',
       insiderTip: 'Rice is a best-kept secret for financial aid — the Rice Investment program is among the most generous in the nation. Residential college system means you should mention community in essays.',
-      essayStrategy: 'The "Why Rice" and "unconventional" essay are both important. Show personality and quirkiness — Rice culture values it.'
+      essayStrategy: 'The "Why Rice" and "unconventional" essay are both important. Show personality and quirkiness — Rice culture values it.',
+      programs: {
+        totalMajors: 130,
+        popularMajors: ['Engineering', 'Computer Science', 'Economics', 'Biology', 'Chemistry'],
+        uniquePrograms: 'Architecture program is top-tier (5-year B.Arch). Strong engineering pipeline. Shepherd School of Music',
+        curriculumHighlights: 'Residential college system provides strong community. 6-to-1 student-to-faculty ratio. Extensive undergraduate research.',
+        preMedPath: 'Strong pre-med program (~10% of students). Rice School of Medicine on campus (but grad-focused). Excellent pre-med advising.',
+        preBusinessPath: 'No undergraduate business school (Jones Graduate School is grad-only). Economics + Engineering path common.',
+        engineeringPath: 'Excellent engineering program. Architecture is particularly strong (5-year B.Arch degree).',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Rice University (single college)',
+            acceptanceRate: '7.7%',
+            notes: 'All undergraduates admitted to same college. Residential college system provides community structure.'
+          }
+        ],
+        internalTransfers: 'N/A — single college',
+        dualDegreePrograms: 'None. Some students do engineering + music double major.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Rice is under-the-radar — equally excellent as Duke/Northwestern but less competitive. Financial aid is world-class.',
+        commonMistakes: 'Not knowing about Rice Investment (free tuition/room & board for <$75K families). Treating Rice as a safety when it\'s genuinely excellent.',
+        hiddenGems: 'Residential colleges create tight-knit communities. The "unconventional" essay is a chance to show personality and fit.',
+        redditWisdom: 'AOs emphasize: "We want quirky, fun, community-focused students." Rice culture is tight-knit and collaborative.',
+        strategyTips: 'Reference specific residential college traditions or research opportunities. Show genuine interest in community.',
+      },
     },
     {
       school: 'Vanderbilt University',
@@ -368,7 +960,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~20-25% transfer acceptance',
       financialAid: 'Meets 100% demonstrated need. Opportunity Vanderbilt: no loans in any financial aid package.',
       insiderTip: 'Peabody College is a strategic entry point — Human & Organizational Development (HOD) is popular and opens doors to consulting/business careers while being less competitive to enter than A&S.',
-      essayStrategy: 'Show genuine interest in Nashville and Vanderbilt community. The "contribution" essay should be specific about what you\'ll add to campus.'
+      essayStrategy: 'Show genuine interest in Nashville and Vanderbilt community. The "contribution" essay should be specific about what you\'ll add to campus.',
+      programs: {
+        totalMajors: 140,
+        popularMajors: ['Engineering', 'Economics', 'Medicine/Pre-med', 'Business', 'Computer Science'],
+        uniquePrograms: 'Peabody College for Human Development (education/social sciences). Blair School of Music. Owen Graduate Business.',
+        curriculumHighlights: 'Strong research opportunities. Extensive internship partnerships in Nashville. Honor code culture.',
+        preMedPath: 'Strong pre-med program (~12% of students). Vanderbilt School of Medicine on campus. Pre-med advising is excellent.',
+        preBusinessPath: 'Owen Graduate School is grad-only. Owen Undergraduate Business program bridges to grad school. Economics common path.',
+        engineeringPath: 'Solid engineering program. Not top-tier but respected. Slightly higher acceptance than A&S.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '5%',
+            notes: 'Largest college. Most competitive.'
+          },
+          {
+            name: 'School of Engineering',
+            acceptanceRate: '8%',
+            notes: 'Solid engineering program.'
+          },
+          {
+            name: 'Peabody College for Human Development',
+            acceptanceRate: '13%',
+            notes: 'Education, human development, social sciences. Strategic entry point.'
+          },
+          {
+            name: 'Blair School of Music',
+            acceptanceRate: 'Audition-based',
+            notes: 'Music school. Audition required.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Strategic to choose right school from start.',
+        dualDegreePrograms: 'Some students double major across schools. Blair/A&S combinations possible.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Vanderbilt values community involvement and demonstrated interest in Nashville. ED advantage is significant.',
+        commonMistakes: 'Ignoring Peabody College as a strategic option. HOD major opens consulting/business doors while having higher acceptance.',
+        hiddenGems: 'Peabody College is genuinely underutilized. Human & Organizational Development (HOD) is a recruiting pipeline for consulting firms.',
+        redditWisdom: 'AOs emphasize: "We want students who will contribute to our community." Nashville location and community involvement matter.',
+        strategyTips: 'Show interest in Nashville. Consider Peabody/HOD as strategic choice if borderline. Apply ED if Vandy is #1.',
+      },
     },
     {
       school: 'Washington University in St Louis',
@@ -379,7 +1015,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~15-20% transfer acceptance',
       financialAid: 'Need-blind. Meets 100% need. WashU Pledge: families <$75K pay $0.',
       insiderTip: 'WashU has one of the largest ED advantages in the country — applying ED roughly triples your odds. Demonstrated interest is heavily tracked (visits, emails, info sessions). Show genuine WashU knowledge.',
-      essayStrategy: '"Why WashU" must be ultra-specific. Mention the Danforth campus, specific programs, research opportunities. WashU values collaborative, kind students.'
+      essayStrategy: '"Why WashU" must be ultra-specific. Mention the Danforth campus, specific programs, research opportunities. WashU values collaborative, kind students.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Engineering', 'Business Administration', 'Economics', 'Computer Science', 'Biology'],
+        uniquePrograms: 'Olin Business School (undergrad). McKelvey Engineering (strong). Sam Fox School of Design (architecture/design).',
+        curriculumHighlights: 'Extensive research opportunities. Collaborative culture. Semester abroad common. Service-learning emphasized.',
+        preMedPath: 'Strong pre-med program (~8% of students). Washington University School of Medicine on campus. Research opportunities abundant.',
+        preBusinessPath: 'Olin Business School — one of the top undergrad business schools. Strong recruiting for consulting/banking.',
+        engineeringPath: 'McKelvey School of Engineering. Well-regarded. Top-tier CS program.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '10%',
+            notes: 'Largest college. Traditional liberal arts.'
+          },
+          {
+            name: 'Olin Business School',
+            acceptanceRate: '12%',
+            notes: 'Top undergrad business school. Competitive recruiting for consulting/banking.'
+          },
+          {
+            name: 'McKelvey School of Engineering',
+            acceptanceRate: '15%',
+            notes: 'Strong engineering program, especially CS. Highest acceptance of main schools.'
+          },
+          {
+            name: 'Sam Fox School of Design',
+            acceptanceRate: '20%',
+            notes: 'Architecture, design, art. Portfolio-based admissions.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Strategic to choose right school from start.',
+        dualDegreePrograms: 'Olin/Engineering double degrees possible. Sam Fox/A&S combinations rare.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'WashU tracks demonstrated interest heavily. ED advantage is enormous (~28-32% vs 8% RD). Many borderline applicants get in via ED.',
+        commonMistakes: 'Not demonstrating interest (campus visits, info sessions, emails matter). Only applying to A&S when engineering might be strategic.',
+        hiddenGems: 'Sam Fox School has ~20% acceptance — legitimate strategic entry point for design/architecture students.',
+        redditWisdom: 'AOs emphasize: "Show us you\'re genuinely interested in WashU." Demonstrated interest is measurable and tracked.',
+        strategyTips: 'Apply ED if WashU is #1 — advantage is real. Show demonstrated interest (campus visits, emails). Consider strategic school selection.',
+      },
     },
     {
       school: 'Emory University',
@@ -390,7 +1070,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~20-25% transfer acceptance',
       financialAid: 'Meets 100% need. Emory Advantage: families <$50K pay $0 tuition.',
       insiderTip: 'Oxford College is the BEST strategic entry point — ~25-28% acceptance with guaranteed transfer to Emory main campus. Same Emory degree. Students also report stronger professor relationships at Oxford.',
-      essayStrategy: 'For Oxford specifically, show you value a small liberal arts experience. For Emory main, reference the Atlanta location and specific research opportunities.'
+      essayStrategy: 'For Oxford specifically, show you value a small liberal arts experience. For Emory main, reference the Atlanta location and specific research opportunities.',
+      programs: {
+        totalMajors: 160,
+        popularMajors: ['Business', 'Biology', 'Chemistry', 'Economics', 'Psychology'],
+        uniquePrograms: 'Goizueta Business School (undergrad). Pre-med is extremely competitive. Oxford College (2-year option).',
+        curriculumHighlights: 'Oxford provides intimate 2-year liberal arts experience then transfer to main campus. Atlanta location brings internship opportunities.',
+        preMedPath: 'Very strong pre-med (~15% of students, highest percentage of any research university). Emory School of Medicine on campus. Extremely competitive.',
+        preBusinessPath: 'Goizueta Business School — top undergrad business program. Strong recruiting for consulting/finance.',
+        engineeringPath: 'Limited engineering options. Physics-heavy instead.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Emory College of Arts & Sciences',
+            acceptanceRate: '10%',
+            notes: 'Main college for Emory campus. Traditional liberal arts.'
+          },
+          {
+            name: 'Oxford College of Emory University',
+            acceptanceRate: '25-28%',
+            notes: '2-year campus with guaranteed transfer to Emory main. Same Emory degree. Excellent strategic entry point.'
+          },
+          {
+            name: 'Goizueta Business School',
+            acceptanceRate: '15%',
+            notes: 'Top undergrad business school.'
+          },
+          {
+            name: 'Nell Hodgson Woodruff School of Nursing',
+            acceptanceRate: '18-20%',
+            notes: 'Nursing program. More accessible than main college.'
+          }
+        ],
+        internalTransfers: 'Oxford → Emory guaranteed. Otherwise possible but competitive.',
+        dualDegreePrograms: 'Goizueta/A&S double degrees possible.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Oxford College is genuinely the best kept secret in elite college admissions — 25-28% acceptance with guaranteed transfer and same Emory degree.',
+        commonMistakes: 'Not knowing about Oxford. Applying to main Emory when Oxford provides legitimate alternative pathway.',
+        hiddenGems: 'Oxford students often report stronger professor relationships and smaller class sizes (LAC experience) before transferring.',
+        redditWisdom: 'AOs emphasize: "Oxford is not a consolation prize." It\'s a legitimate pathway with real benefits (close-knit community, better professor access).',
+        strategyTips: 'Consider Oxford strategically if borderline for main Emory. Research shows Oxford graduates succeed equally well.',
+      },
     },
     {
       school: 'Georgetown University',
@@ -401,7 +1125,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~10-15% transfer acceptance',
       financialAid: 'Need-blind for US. Georgetown Pledge: meets 100% need.',
       insiderTip: 'Georgetown\'s School of Foreign Service is one of the most competitive sub-schools in the country. If interested in policy/international affairs, consider applying to the College instead and taking SFS courses. DC location is a huge asset for internships.',
-      essayStrategy: 'Georgetown values community, service, and Jesuit values (cura personalis — care for the whole person). Show intellectual depth and commitment to others.'
+      essayStrategy: 'Georgetown values community, service, and Jesuit values (cura personalis — care for the whole person). Show intellectual depth and commitment to others.',
+      programs: {
+        totalMajors: 110,
+        popularMajors: ['International Affairs', 'Economics', 'Business', 'Government', 'History'],
+        uniquePrograms: 'School of Foreign Service is world-renowned (but extremely selective). McDonough Business School. Jesuit education focus.',
+        curriculumHighlights: 'DC location provides unmatched internship opportunities in policy/government. Jesuit core curriculum emphasizes ethics and service.',
+        preMedPath: 'Moderate pre-med program (~5% of students). Georgetown School of Medicine on campus (grad-only).',
+        preBusinessPath: 'McDonough Business School — top undergrad business school. Strong consulting recruiting.',
+        engineeringPath: 'No engineering school. Physics/chemistry heavy science path.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Foreign Service (SFS)',
+            acceptanceRate: '8%',
+            notes: 'World-renowned. Extremely selective. International affairs focus.'
+          },
+          {
+            name: 'McDonough School of Business',
+            acceptanceRate: '10%',
+            notes: 'Top undergrad business school.'
+          },
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '14%',
+            notes: 'Largest college. More accessible than SFS.'
+          },
+          {
+            name: 'School of Nursing & Health Studies',
+            acceptanceRate: '18-20%',
+            notes: 'Nursing program. Most accessible school.'
+          }
+        ],
+        internalTransfers: 'Possible but difficult. Strategic to choose right school.',
+        dualDegreePrograms: 'McDonough/SFS combinations rare but possible.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Georgetown values service and Jesuit mission. Essays about faith, community, and service matter.',
+        commonMistakes: 'Only applying to SFS when College might be strategic. Ignoring Jesuit values in essays.',
+        hiddenGems: 'Nursing has ~18-20% acceptance — legitimate strategic entry. DC internship opportunities are incredible.',
+        redditWisdom: 'AOs emphasize: "Show us how you\'ll serve others and contribute to community." Jesuit values are genuinely important.',
+        strategyTips: 'Consider strategic school selection (College > SFS). Reference DC location and specific internship goals. Mention community service.',
+      },
     },
     {
       school: 'University of Notre Dame',
@@ -412,7 +1180,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~20-25% transfer acceptance',
       financialAid: 'Meets 100% demonstrated need. Strong merit scholarships.',
       insiderTip: 'Notre Dame is one of the few elite schools where religious identity can be an advantage. Catholic school background, community service, and alignment with ND\'s values all help. Legacy is very strong here.',
-      essayStrategy: 'Show alignment with Notre Dame\'s values — community, faith, service. Be genuine about why the culture appeals to you. The "Why Notre Dame" should be deeply personal.'
+      essayStrategy: 'Show alignment with Notre Dame\'s values — community, faith, service. Be genuine about why the culture appeals to you. The "Why Notre Dame" should be deeply personal.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Business', 'Engineering', 'Economics', 'Science', 'Pre-Law'],
+        uniquePrograms: 'Mendoza Business School (undergrad). Strong architecture program. Preprofessional programs (pre-law, pre-med).',
+        curriculumHighlights: 'Strong core curriculum with faith/values component. Residential college system. Service-learning emphasized.',
+        preMedPath: 'Moderate pre-med (~6% of students). No medical school on campus.',
+        preBusinessPath: 'Mendoza Business School — top undergrad business school. Strong consulting/finance recruiting.',
+        engineeringPath: 'Solid engineering program. Not top-tier but respected.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Mendoza College of Business',
+            acceptanceRate: '10%',
+            notes: 'Top undergrad business school.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '12%',
+            notes: 'Solid engineering program.'
+          },
+          {
+            name: 'College of Arts & Letters',
+            acceptanceRate: '14%',
+            notes: 'Largest college. More accessible than engineering/business.'
+          },
+          {
+            name: 'College of Science',
+            acceptanceRate: '14%',
+            notes: 'STEM-focused liberal arts college.'
+          },
+          {
+            name: 'School of Architecture',
+            acceptanceRate: '16%',
+            notes: 'Architecture program. Slightly more accessible than main schools.'
+          }
+        ],
+        internalTransfers: 'Possible but difficult. Strategic school choice matters.',
+        dualDegreePrograms: 'Rare. Most students stay in their school.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'Notre Dame values faith, service, and community alignment. Catholic school background is genuinely an advantage (not a disadvantage).',
+        commonMistakes: 'Trying to hide Catholic school background if you attended one. ND wants to see values alignment.',
+        hiddenGems: 'Residential college system creates tight-knit communities. Architecture program is overlooked but strong.',
+        redditWisdom: 'AOs emphasize: "We want to see genuine values alignment." Showing service-mindedness helps.',
+        strategyTips: 'If you have Catholic school background, highlight it. Show genuine interest in ND community/values. Architecture is strategic.',
+      },
     },
     {
       school: 'Carnegie Mellon University',
@@ -423,7 +1240,61 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~8-10% transfer acceptance',
       financialAid: 'Not need-blind. Aid can be limited compared to Ivies. Strong merit scholarships.',
       insiderTip: 'CMU CS is harder to get into than most Ivies (~5%). Dietrich College (H&SS) is much more accessible and you can still take CS courses and minor in CS. Cross-college collaboration is CMU\'s strength.',
-      essayStrategy: 'Be specific about WHY your chosen school within CMU. Show interdisciplinary interests — CMU values cross-pollination between arts, tech, and humanities.'
+      essayStrategy: 'Be specific about WHY your chosen school within CMU. Show interdisciplinary interests — CMU values cross-pollination between arts, tech, and humanities.',
+      programs: {
+        totalMajors: 140,
+        popularMajors: ['Computer Science', 'Engineering', 'Business Administration', 'Drama', 'Art'],
+        uniquePrograms: 'School of Computer Science (one of the top 3 in the US). Drama program (world-class). Art & Design schools.',
+        curriculumHighlights: 'Interdisciplinary culture. Cross-college collaboration. Extensive entrepreneurship programs.',
+        preMedPath: 'Rare pre-med path (~2% of students). Carnegie Mellon is STEM/tech/arts focused, not pre-med.',
+        preBusinessPath: 'Tepper Business School — top undergrad business school. Strong consulting recruiting.',
+        engineeringPath: 'Solid engineering program. Slightly less selective than CS, equally strong academically.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Computer Science (SCS)',
+            acceptanceRate: '5%',
+            notes: 'Top 3 CS program in the US. Extremely selective.'
+          },
+          {
+            name: 'School of Drama',
+            acceptanceRate: '6%',
+            notes: 'World-class drama program. Audition-based. Very selective.'
+          },
+          {
+            name: 'College of Fine Arts',
+            acceptanceRate: '8%',
+            notes: 'Art, design, music. Portfolio-based admissions.'
+          },
+          {
+            name: 'Carnegie Institute of Technology (Engineering)',
+            acceptanceRate: '12%',
+            notes: 'Solid engineering program.'
+          },
+          {
+            name: 'Tepper Business School',
+            acceptanceRate: '14%',
+            notes: 'Top undergrad business school.'
+          },
+          {
+            name: 'Dietrich College of Humanities and Social Sciences',
+            acceptanceRate: '18-20%',
+            notes: 'Most accessible school. Can still take CS courses and minor in CS.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Cross-college minor/double major common instead.',
+        dualDegreePrograms: 'Dietrich/SCS double degree possible. Drama/CS combinations rare but creative.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'CMU SCS is incredibly selective (~5% acceptance) — harder than most Ivies. Dietrich College is strategic alternative.',
+        commonMistakes: 'Only applying to SCS when Dietrich might be strategic. Not showing interdisciplinary interests.',
+        hiddenGems: 'Dietrich College allows CS minors — legitimate backdoor to CS curriculum. Drama is world-class.',
+        redditWisdom: 'AOs emphasize: "Show us why you fit this specific school." CMU is extremely school-specific.',
+        strategyTips: 'Consider Dietrich strategically if interested in CS. Show interdisciplinary interests. Be specific about school choice.',
+      },
     },
     {
       school: 'University of Southern California',
@@ -434,7 +1305,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~18-22% transfer acceptance (transfer-friendly for CA community colleges)',
       financialAid: 'Strong merit scholarships (Trustee, Presidential, Deans). Need-based aid meets most demonstrated need.',
       insiderTip: 'USC Film School is one of the most competitive programs in the world (~4%). Troy Camp and other service programs demonstrate USC\'s community values. The alumni network is one of the most powerful in the country.',
-      essayStrategy: 'Show passion for USC\'s specific offerings — not just LA. Reference the Trojan Family network, specific programs, and how you\'ll contribute to campus community.'
+      essayStrategy: 'Show passion for USC\'s specific offerings — not just LA. Reference the Trojan Family network, specific programs, and how you\'ll contribute to campus community.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Film/Television', 'Engineering', 'Business', 'Communications', 'Chemistry'],
+        uniquePrograms: 'School of Cinematic Arts (one of the top film schools in the world). Viterbi Engineering. Marshall Business. Annenberg School of Communications.',
+        curriculumHighlights: 'Rolling admissions (apply early advantage). LA location provides entertainment/tech internship hub. Hands-on learning in many programs.',
+        preMedPath: 'Limited pre-med program (~4% of students). Not a pre-med focused school.',
+        preBusinessPath: 'Marshall Business School — top undergrad business school. Strong consulting/finance recruiting.',
+        engineeringPath: 'Viterbi School of Engineering. Top-tier. Solid CS program.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Cinematic Arts',
+            acceptanceRate: '4%',
+            notes: 'Top film/television school in the US. Extremely selective. Portfolio/application-based.'
+          },
+          {
+            name: 'Viterbi School of Engineering',
+            acceptanceRate: '8-10%',
+            notes: 'Top engineering school. Separate admissions.'
+          },
+          {
+            name: 'Marshall School of Business',
+            acceptanceRate: '10%',
+            notes: 'Top undergrad business school.'
+          },
+          {
+            name: 'Dornsife College of Arts & Sciences',
+            acceptanceRate: '14%',
+            notes: 'Largest college. Traditional liberal arts.'
+          },
+          {
+            name: 'Annenberg School for Communication & Journalism',
+            acceptanceRate: '15%',
+            notes: 'Communications, journalism, public relations.'
+          }
+        ],
+        internalTransfers: 'Possible but difficult. Choose carefully at admission.',
+        dualDegreePrograms: 'Dornsife/Viterbi double degrees possible. Cinematic Arts/other schools rare.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Quora',
+        admissionsQuirks: 'USC uses rolling admissions (no ED/EA) — early application helps. Film School is incredibly selective (~4%).',
+        commonMistakes: 'Applying to Film School without genuine portfolio/experience. Not applying early in rolling admissions cycle.',
+        hiddenGems: 'Dornsife is more accessible (~14%) while still being excellent. The Trojan Family network is genuinely powerful post-grad.',
+        redditWisdom: 'AOs emphasize: "Apply early in rolling admissions cycle." Early applicants have better odds than late ones.',
+        strategyTips: 'Apply in September/October for better odds. Consider Dornsife strategically. Show genuine passion for specific USC programs.',
+      },
     },
     {
       school: 'Tufts University',
@@ -753,6 +1673,70 @@ function generateAdmissionsMarkdown(scorecardData, curatedIntel) {
     md += `**Financial Aid:** ${school.financialAid}\n\n`;
     md += `**Insider Tip:** ${school.insiderTip}\n\n`;
     md += `**Essay Strategy:** ${school.essayStrategy}\n\n`;
+
+    // Add programs section if available
+    if (school.programs) {
+      md += `#### Program Information\n\n`;
+      md += `**Total Majors:** ${school.programs.totalMajors || 'N/A'}\n\n`;
+      if (school.programs.popularMajors) {
+        md += `**Popular Majors:** ${Array.isArray(school.programs.popularMajors) ? school.programs.popularMajors.join(', ') : school.programs.popularMajors}\n\n`;
+      }
+      if (school.programs.uniquePrograms) {
+        md += `**Unique Programs:** ${school.programs.uniquePrograms}\n\n`;
+      }
+      if (school.programs.curriculumHighlights) {
+        md += `**Curriculum Highlights:** ${school.programs.curriculumHighlights}\n\n`;
+      }
+      if (school.programs.preMedPath) {
+        md += `**Pre-Med Path:** ${school.programs.preMedPath}\n\n`;
+      }
+      if (school.programs.preBusinessPath) {
+        md += `**Pre-Business Path:** ${school.programs.preBusinessPath}\n\n`;
+      }
+      if (school.programs.engineeringPath) {
+        md += `**Engineering Path:** ${school.programs.engineeringPath}\n\n`;
+      }
+    }
+
+    // Add school structure section if available
+    if (school.schoolStructure) {
+      md += `#### School Structure\n\n`;
+      md += `**Multiple Schools:** ${school.schoolStructure.hasMultipleSchools ? 'Yes' : 'No'}\n\n`;
+      if (school.schoolStructure.schools && school.schoolStructure.schools.length > 0) {
+        for (const subschool of school.schoolStructure.schools) {
+          md += `- **${subschool.name}** (${subschool.acceptanceRate || 'varies'}): ${subschool.notes}\n`;
+        }
+        md += `\n`;
+      }
+      if (school.schoolStructure.internalTransfers) {
+        md += `**Internal Transfers:** ${school.schoolStructure.internalTransfers}\n\n`;
+      }
+      if (school.schoolStructure.dualDegreePrograms) {
+        md += `**Dual Degree Programs:** ${school.schoolStructure.dualDegreePrograms}\n\n`;
+      }
+    }
+
+    // Add community intel section if available
+    if (school.communityIntel) {
+      md += `#### Application Insights from Student Communities\n\n`;
+      md += `**Source:** ${school.communityIntel.source || 'Various'}\n\n`;
+      if (school.communityIntel.admissionsQuirks) {
+        md += `**Admissions Quirks:** ${school.communityIntel.admissionsQuirks}\n\n`;
+      }
+      if (school.communityIntel.commonMistakes) {
+        md += `**Common Mistakes:** ${school.communityIntel.commonMistakes}\n\n`;
+      }
+      if (school.communityIntel.hiddenGems) {
+        md += `**Hidden Gems:** ${school.communityIntel.hiddenGems}\n\n`;
+      }
+      if (school.communityIntel.redditWisdom) {
+        md += `**Reddit Wisdom:** ${school.communityIntel.redditWisdom}\n\n`;
+      }
+      if (school.communityIntel.strategyTips) {
+        md += `**Strategy Tips:** ${school.communityIntel.strategyTips}\n\n`;
+      }
+    }
+
     md += `---\n\n`;
   }
 
@@ -858,11 +1842,26 @@ export async function runAdmissionsScraper() {
 
   // Try to fetch from College Scorecard API
   let scorecardData = [];
+  let programData = [];
   const apiKey = process.env.DATA_GOV_API_KEY;
 
   if (apiKey) {
     scorecardData = await fetchSchoolData(apiKey);
     console.log(`  ✓ ${scorecardData.length} schools from College Scorecard API`);
+
+    // Fetch program data for first 30 schools
+    programData = await fetchProgramData(apiKey);
+    console.log(`  ✓ ${programData.length} schools with program data`);
+
+    // Attach program data to scorecard profiles
+    if (programData.length > 0) {
+      for (const school of scorecardData) {
+        const programs = programData.find(p => p.schoolName === school.name);
+        if (programs) {
+          school.programs = programs.data;
+        }
+      }
+    }
   } else {
     console.log('  ⚠ No DATA_GOV_API_KEY — using curated data only');
     console.log('    Get a free key at: https://api.data.gov/signup/');
@@ -875,7 +1874,8 @@ export async function runAdmissionsScraper() {
     metadata: {
       scrapedAt: new Date().toISOString(),
       scorecardCount: scorecardData.length,
-      curatedCount: curatedIntel.length
+      curatedCount: curatedIntel.length,
+      programsCount: programData.length
     }
   });
 
@@ -884,9 +1884,10 @@ export async function runAdmissionsScraper() {
   await saveScrapedData('college-admissions.md', { content: markdown });
 
   console.log(`\n  Total: ${scorecardData.length} API profiles + ${curatedIntel.length} strategic profiles`);
+  console.log(`  Programs: ${programData.length} schools with College Scorecard program data`);
   console.log('  Saved: college-admissions.json, college-admissions.md');
 
-  return { scorecardData, curatedIntel };
+  return { scorecardData, curatedIntel, programData };
 }
 
 // Run if called directly

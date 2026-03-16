@@ -4,10 +4,10 @@ import { validateInvite, redeemInvite } from '../services/invites.js';
 
 const router = Router();
 
-// POST /api/auth/signup — requires valid invite code
+// POST /api/auth/signup — invite code required for free plan, optional for paid plans
 router.post('/signup', async (req, res) => {
   try {
-    const { email, password, name, userType, school, interests, consentGiven, inviteCode } = req.body;
+    const { email, password, name, userType, school, interests, consentGiven, inviteCode, selectedPlan } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -16,19 +16,24 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: 'Password must be at least 6 characters' });
     }
 
-    // Validate invite code
-    if (!inviteCode) {
-      return res.status(400).json({ error: 'An invitation code is required to join Wayfinder.' });
-    }
+    // Paid plans (premium/pro) can join without an invite code
+    const isPaidPlan = selectedPlan === 'premium' || selectedPlan === 'pro';
 
-    const inviteCheck = await validateInvite(inviteCode);
-    if (inviteCheck.error) {
-      return res.status(400).json({ error: inviteCheck.error });
-    }
+    if (!isPaidPlan) {
+      // Free plan requires a valid invite code
+      if (!inviteCode) {
+        return res.status(400).json({ error: 'An invitation code is required to join Wayfinder.' });
+      }
 
-    // If invite is email-locked, verify it matches
-    if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== email.toLowerCase().trim()) {
-      return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
+      const inviteCheck = await validateInvite(inviteCode);
+      if (inviteCheck.error) {
+        return res.status(400).json({ error: inviteCheck.error });
+      }
+
+      // If invite is email-locked, verify it matches
+      if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== email.toLowerCase().trim()) {
+        return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
+      }
     }
 
     const result = await createUser({ email, password, name, userType, school, interests });
@@ -37,15 +42,18 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: result.error });
     }
 
-    // Redeem the invite
-    await redeemInvite(inviteCode, result.user.id, email);
+    // Redeem the invite if one was provided
+    if (inviteCode) {
+      await redeemInvite(inviteCode, result.user.id, email);
+    }
 
     // If consent was given during signup, update the user record
     if (consentGiven && result.token) {
       await updateProfile(result.token, { consentGiven: true });
     }
 
-    res.json(result);
+    // Return result with selectedPlan so frontend can redirect to checkout
+    res.json({ ...result, selectedPlan: isPaidPlan ? selectedPlan : 'free' });
   } catch (err) {
     console.error('Signup error:', err);
     res.status(500).json({ error: 'Failed to create account' });

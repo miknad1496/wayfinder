@@ -375,6 +375,76 @@ html, body {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15), var(--shadow-md);
 }
 
+/* Signup method toggle */
+.signup-method-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+.signup-method-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.signup-method-btn.active {
+  background: var(--bg-white);
+  color: var(--primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.signup-method-btn:hover:not(.active) {
+  color: var(--text);
+}
+
+/* Paid plan options */
+.paid-plan-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.plan-option {
+  flex: 1;
+  cursor: pointer;
+}
+.plan-option input[type="radio"] {
+  display: none;
+}
+.plan-option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  text-align: center;
+}
+.plan-option-card strong {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.plan-option-card span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.plan-option input[type="radio"]:checked + .plan-option-card {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.plan-option:hover .plan-option-card {
+  border-color: var(--primary);
+}
+
 /* =============================
    CHAT CONTAINER
    ============================= */
