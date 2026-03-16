@@ -11,8 +11,10 @@ import feedbackRoutes from './routes/feedback.js';
 import adminRoutes from './routes/admin.js';
 import authRoutes from './routes/auth.js';
 import stripeRoutes from './routes/stripe.js';
+import inviteRoutes from './routes/invites.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
+import { ensureInvitesDir } from './services/invites.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -102,6 +104,7 @@ app.use('/api/chat', chatLimiter, chatRoutes);
 app.use('/api/feedback', apiLimiter, feedbackRoutes);
 app.use('/api/admin', apiLimiter, adminRoutes);
 app.use('/api/auth', authLimiter, authRoutes);
+app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
 
 // Serve frontend in production
@@ -117,6 +120,9 @@ if (process.env.NODE_ENV === 'production') {
   });
   app.get('/terms', (req, res) => {
     res.sendFile(join(__dirname, '..', 'frontend', 'terms.html'));
+  });
+  app.get('/why', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'why.html'));
   });
 
   app.get('*', (req, res) => {
@@ -141,6 +147,7 @@ app.use((err, req, res, next) => {
 async function start() {
   await ensureDirectories();
   await ensureUsersDir();
+  await ensureInvitesDir();
   app.listen(PORT, () => {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);

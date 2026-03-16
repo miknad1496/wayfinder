@@ -86,7 +86,7 @@
         <div class="topbar-right">
           <div id="topbarAuth" class="topbar-auth">
             <button id="topLoginBtn" class="topbar-btn">Log In</button>
-            <button id="topSignupBtn" class="topbar-btn topbar-btn-primary">Sign Up</button>
+            <button id="topSignupBtn" class="topbar-btn topbar-btn-primary">Join with Invite</button>
           </div>
           <div id="topbarUser" class="topbar-user" style="display:none;">
             <div id="topbarAvatar" class="topbar-avatar">D</div>
@@ -98,7 +98,8 @@
       <main class="chat-container">
         <!-- Welcome Screen (shown when no messages) -->
         <div id="welcomeScreen" class="welcome-screen">
-          <div class="welcome-content">
+          <!-- Logged-in welcome -->
+          <div id="welcomeLoggedIn" class="welcome-content" style="display:none;">
             <img src="/logo.svg" alt="Wayfinder" class="welcome-logo">
             <h2 id="welcomeGreeting" class="welcome-greeting">Good afternoon</h2>
             <p class="welcome-sub">How can I help with your career journey today?</p>
@@ -120,6 +121,39 @@
                 Career explorer
               </button>
             </div>
+          </div>
+
+          <!-- Splash/Landing for visitors (not logged in) -->
+          <div id="welcomeSplash" class="welcome-content splash-content">
+            <img src="/logo.svg" alt="Wayfinder" class="welcome-logo splash-logo">
+            <h1 class="splash-title">Wayfinder</h1>
+            <p class="splash-tagline">AI-powered career guidance for the next generation</p>
+            <div class="splash-divider"></div>
+            <div class="splash-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Invitation Only
+            </div>
+            <p class="splash-desc">Wayfinder is an exclusive, invite-only career advising platform powered by AI. We combine real-time data from the Bureau of Labor Statistics, O*NET, and NCES with advanced AI to deliver personalized career guidance.</p>
+            <div class="splash-features">
+              <div class="splash-feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
+                <span>Data-driven salary &amp; career insights</span>
+              </div>
+              <div class="splash-feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
+                <span>Personalized academic &amp; career planning</span>
+              </div>
+              <div class="splash-feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
+                <span>Certification &amp; professional development paths</span>
+              </div>
+            </div>
+            <div class="splash-actions">
+              <button id="splashJoinBtn" class="splash-btn splash-btn-primary">I Have an Invite Code</button>
+              <button id="splashLoginBtn" class="splash-btn splash-btn-secondary">Log In</button>
+            </div>
+            <p class="splash-learn-more"><a href="/why" target="_blank">Why Wayfinder? Learn what makes us different &rarr;</a></p>
+            <p class="splash-footer-note">A <strong>Virtuous Capital Foundation</strong> initiative &bull; <a href="/privacy" target="_blank">Privacy</a> &bull; <a href="/terms" target="_blank">Terms</a></p>
           </div>
         </div>
 
@@ -177,34 +211,46 @@
         </div>
 
         <div id="signupForm" class="auth-form" style="display:none;">
-          <h2>Create Your Account</h2>
-          <p class="form-subtitle">Start your personalized career journey</p>
+          <h2>You're Invited</h2>
+          <p class="form-subtitle">Wayfinder is invite-only. Enter your code to join.</p>
           <div class="form-group">
-            <label for="signupName">Name</label>
-            <input type="text" id="signupName" placeholder="Your name" autocomplete="name">
+            <label for="signupInviteCode">Invitation Code</label>
+            <div class="invite-code-input-row">
+              <input type="text" id="signupInviteCode" placeholder="WF-XXXXXX" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px;font-weight:600;">
+              <span id="inviteCodeStatus" class="invite-code-status"></span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="signupEmail">Email</label>
-            <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="signupPassword">Password</label>
-            <input type="password" id="signupPassword" placeholder="Choose a password (6+ characters)" autocomplete="new-password">
-          </div>
-          <div class="form-group">
-            <label for="signupType">I am a...</label>
-            <select id="signupType">
-              <option value="student">College Student</option>
-              <option value="pre-college">Pre-College / High School Student</option>
-              <option value="advisor">Advisor / Faculty</option>
-              <option value="general">Career Explorer / General</option>
-            </select>
-          </div>
-          <div class="form-group consent-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="signupConsent">
-              <span>I agree that my conversations may be used to improve Wayfinder's advice quality. No personal data is shared externally.</span>
-            </label>
+          <div id="signupFields" style="display:none;">
+            <div id="inviteWelcome" class="invite-welcome" style="display:none;">
+              <span id="inviteWelcomeText"></span>
+            </div>
+            <div class="form-group">
+              <label for="signupName">Name</label>
+              <input type="text" id="signupName" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" placeholder="Choose a password (6+ characters)" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+              <label for="signupType">I am a...</label>
+              <select id="signupType">
+                <option value="student">College Student</option>
+                <option value="pre-college">Pre-College / High School Student</option>
+                <option value="advisor">Advisor / Faculty</option>
+                <option value="general">Career Explorer / General</option>
+              </select>
+            </div>
+            <div class="form-group consent-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="signupConsent">
+                <span>I agree that my conversations may be used to improve Wayfinder's advice quality. No personal data is shared externally.</span>
+              </label>
+            </div>
           </div>
           <div id="signupError" class="form-error" style="display:none;"></div>
           <button id="signupSubmit" class="form-btn">Create Account</button>
@@ -267,6 +313,7 @@
 
         <div class="settings-tabs">
           <button class="settings-tab active" data-tab="general">General</button>
+          <button class="settings-tab" data-tab="invites">Invites</button>
           <button class="settings-tab" data-tab="account">Account</button>
           <button class="settings-tab" data-tab="privacy">Privacy</button>
         </div>
@@ -284,6 +331,32 @@
           </div>
           <button id="settingsSaveGeneral" class="form-btn">Save Changes</button>
           <p id="settingsGeneralMsg" class="profile-save-msg" style="display:none;"></p>
+        </div>
+
+        <!-- Invites Tab -->
+        <div id="settingsInvites" class="settings-panel">
+          <div class="settings-section">
+            <h3>Invite Someone to Wayfinder</h3>
+            <p class="settings-desc">Wayfinder is invite-only. Share access with people who would benefit from AI-powered career guidance.</p>
+            <div class="invite-balance-display">
+              <span id="inviteBalanceCount" class="invite-balance-count">3</span>
+              <span class="invite-balance-label">invitations remaining</span>
+            </div>
+            <div class="form-group" style="margin-top:12px;">
+              <label for="inviteEmailInput">Recipient's email</label>
+              <div class="invite-send-row">
+                <input type="email" id="inviteEmailInput" placeholder="friend@email.com" autocomplete="off">
+                <button id="inviteSendBtn" class="form-btn" style="white-space:nowrap;margin-top:0;">Send Invite</button>
+              </div>
+            </div>
+            <p id="inviteSendMsg" class="profile-save-msg" style="display:none;"></p>
+          </div>
+          <div class="settings-section">
+            <h3>Your Invitations</h3>
+            <div id="invitesList" class="invites-list">
+              <p class="settings-desc">No invitations sent yet.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Account Tab -->

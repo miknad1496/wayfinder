@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage } from '../services/auth.js';
+import { validateInvite, redeemInvite } from '../services/invites.js';
 
 const router = Router();
 
-// POST /api/auth/signup
+// POST /api/auth/signup — requires valid invite code
 router.post('/signup', async (req, res) => {
   try {
-    const { email, password, name, userType, school, interests, consentGiven } = req.body;
+    const { email, password, name, userType, school, interests, consentGiven, inviteCode } = req.body;
 
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -15,11 +16,29 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: 'Password must be at least 6 characters' });
     }
 
+    // Validate invite code
+    if (!inviteCode) {
+      return res.status(400).json({ error: 'An invitation code is required to join Wayfinder.' });
+    }
+
+    const inviteCheck = await validateInvite(inviteCode);
+    if (inviteCheck.error) {
+      return res.status(400).json({ error: inviteCheck.error });
+    }
+
+    // If invite is email-locked, verify it matches
+    if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== email.toLowerCase().trim()) {
+      return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
+    }
+
     const result = await createUser({ email, password, name, userType, school, interests });
 
     if (result.error) {
       return res.status(400).json({ error: result.error });
     }
+
+    // Redeem the invite
+    await redeemInvite(inviteCode, result.user.id, email);
 
     // If consent was given during signup, update the user record
     if (consentGiven && result.token) {

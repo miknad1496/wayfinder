@@ -1103,6 +1103,285 @@ html, body { overflow-x: hidden; }
   .footer-note { font-size: 10px; }
 }
 
+/* ========================
+   Splash / Landing Page
+   ======================== */
+.splash-content {
+  max-width: 560px;
+  text-align: center;
+}
+.splash-logo {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.3));
+}
+.splash-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #E6EDF3;
+  margin: 12px 0 4px;
+  letter-spacing: -1px;
+}
+.splash-tagline {
+  font-size: 18px;
+  color: #8B949E;
+  margin-bottom: 20px;
+}
+.splash-divider {
+  width: 60px;
+  height: 3px;
+  background: #58A6FF;
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+.splash-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  color: #58A6FF;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.splash-desc {
+  font-size: 15px;
+  color: #C9D1D9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.splash-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.splash-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #C9D1D9;
+}
+.splash-feature svg {
+  flex-shrink: 0;
+}
+.splash-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.splash-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+.splash-btn-primary {
+  background: #58A6FF;
+  color: #0D1117;
+}
+.splash-btn-primary:hover {
+  background: #79B8FF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+.splash-btn-secondary {
+  background: transparent;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+}
+.splash-btn-secondary:hover {
+  border-color: #58A6FF;
+  color: #58A6FF;
+}
+.splash-learn-more {
+  margin-bottom: 16px;
+}
+.splash-learn-more a {
+  color: #58A6FF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.splash-learn-more a:hover {
+  color: #79B8FF;
+  text-decoration: underline;
+}
+.splash-footer-note {
+  font-size: 12px;
+  color: #484F58;
+}
+.splash-footer-note a {
+  color: #484F58;
+  text-decoration: none;
+}
+.splash-footer-note a:hover {
+  color: #8B949E;
+}
+.splash-footer-note strong {
+  color: #6E7681;
+}
+
+/* ========================
+   Invite System
+   ======================== */
+
+/* Invite code input on signup */
+.invite-code-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.invite-code-input-row input {
+  flex: 1;
+}
+.invite-code-status {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: right;
+}
+.invite-code-status.checking { color: #8B949E; }
+.invite-code-status.valid { color: #3FB950; }
+.invite-code-status.invalid { color: #F85149; }
+
+/* Welcome message when invite validated */
+.invite-welcome {
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #58A6FF;
+}
+
+/* Welcome screen "invite only" note */
+.welcome-invite-note {
+  font-size: 13px;
+  color: #8B949E;
+  margin-top: 12px;
+}
+.welcome-invite-note a {
+  color: #58A6FF;
+  text-decoration: none;
+}
+.welcome-invite-note a:hover {
+  text-decoration: underline;
+}
+
+/* Invite balance in settings */
+.invite-balance-display {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 8px 0;
+}
+.invite-balance-count {
+  font-size: 36px;
+  font-weight: 700;
+  color: #58A6FF;
+  line-height: 1;
+}
+.invite-balance-label {
+  font-size: 14px;
+  color: #8B949E;
+}
+
+/* Send invite row */
+.invite-send-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.invite-send-row input {
+  flex: 1;
+}
+.invite-send-row .form-btn {
+  padding: 10px 20px;
+}
+
+/* Invites list */
+.invites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.invite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-secondary, #161B22);
+  border: 1px solid var(--border, #30363D);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.invite-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.invite-item-email {
+  color: #C9D1D9;
+  font-weight: 500;
+}
+.invite-item-code {
+  color: #8B949E;
+  font-size: 11px;
+  font-family: monospace;
+}
+.invite-item-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.invite-status {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+.invite-status-accepted {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3FB950;
+}
+.invite-status-pending {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58A6FF;
+}
+.invite-status-expired {
+  background: rgba(139, 148, 158, 0.15);
+  color: #8B949E;
+}
+.invite-copy-link {
+  background: none;
+  border: 1px solid #30363D;
+  color: #58A6FF;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.invite-copy-link:hover {
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #58A6FF;
+}
+
 /* Safe area support for notch phones */
 @supports (padding: env(safe-area-inset-bottom)) {
   .input-area {

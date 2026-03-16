@@ -26,6 +26,7 @@ let engineActive = false;
 let engineRemaining = 0;
 let chatHistoryCache = [];
 let currentChatId = null;
+let validatedInviteCode = null; // Stores validated invite code for signup
 
 // ========================
 // DOM References
@@ -52,9 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setupEngineListeners();
   setupSettingsListeners();
   setupUpgradeListeners();
+  setupInviteListeners();
   setupWelcomeChips();
   updateGreeting();
   checkAuth();
+  checkInviteCodeInURL();
   checkConsent();
   checkUpgradeReturn();
   inputEl.focus();
@@ -76,6 +79,7 @@ function updateGreeting() {
   } else {
     el.textContent = greeting;
   }
+  updateWelcomeView();
 }
 
 // ========================
@@ -629,6 +633,8 @@ function setupSettingsListeners() {
       document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       $(`settings${capitalize(tab.dataset.tab)}`).classList.add('active');
+      // Load invites when switching to invites tab
+      if (tab.dataset.tab === 'invites') loadInvitesList();
     });
   });
 
@@ -909,6 +915,12 @@ async function submitLogin() {
 }
 
 async function submitSignup() {
+  // Must have validated invite code
+  if (!validatedInviteCode) {
+    showAuthError('signupError', 'Please enter a valid invitation code first.');
+    return;
+  }
+
   const name = $('signupName').value.trim();
   const email = $('signupEmail').value.trim();
   const password = $('signupPassword').value;
@@ -923,7 +935,7 @@ async function submitSignup() {
     const res = await fetch(`${API_BASE}/auth/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password, name, userType, consentGiven: consent })
+      body: JSON.stringify({ email, password, name, userType, consentGiven: consent, inviteCode: validatedInviteCode })
     });
     const data = await res.json();
     if (data.error) { showAuthError('signupError', data.error); return; }
@@ -933,6 +945,7 @@ async function submitSignup() {
     localStorage.setItem('wayfinder_token', authToken);
     if (consent) localStorage.setItem('wayfinder_consent', 'true');
     engineRemaining = 3;
+    validatedInviteCode = null;
     updateAuthUI();
     updateEngineUI();
     updateGreeting();
@@ -993,6 +1006,11 @@ function updateAuthUI() {
   $('topbarAuth').style.display = isLoggedIn ? 'none' : 'flex';
   $('topbarUser').style.display = isLoggedIn ? 'flex' : 'none';
 
+  // Hide chat input and sidebar for non-logged-in visitors
+  const inputArea = document.querySelector('.input-area');
+  if (inputArea) inputArea.style.display = isLoggedIn ? 'block' : 'none';
+  if (sidebar) sidebar.style.display = isLoggedIn ? '' : 'none';
+
   if (isLoggedIn) {
     const initial = (currentUser.name || currentUser.email || 'U')[0].toUpperCase();
     $('topbarAvatar').textContent = initial;
@@ -1000,6 +1018,8 @@ function updateAuthUI() {
     const displayName = currentUser.settings?.displayName || currentUser.name || 'Settings';
     $('sidebarUserName').textContent = displayName;
   }
+
+  updateWelcomeView();
 }
 
 function checkUpgradeReturn() {
@@ -1084,6 +1104,223 @@ function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
+}
+
+// ========================
+// Invite System
+// ========================
+function setupInviteListeners() {
+  // Invite code validation on signup form
+  const inviteInput = $('signupInviteCode');
+  if (inviteInput) {
+    inviteInput.addEventListener('input', debounce(validateInviteCode, 500));
+    inviteInput.addEventListener('paste', () => setTimeout(() => validateInviteCode(), 100));
+  }
+
+  // Welcome screen "join with invite" link
+  const joinLink = $('welcomeJoinLink');
+  if (joinLink) {
+    joinLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openAuthModal('signup');
+    });
+  }
+
+  // Send invite button in settings
+  const invSendBtn = $('inviteSendBtn');
+  if (invSendBtn) {
+    invSendBtn.addEventListener('click', sendInvite);
+  }
+
+  // Splash page buttons
+  const splashJoin = $('splashJoinBtn');
+  if (splashJoin) splashJoin.addEventListener('click', () => openAuthModal('signup'));
+  const splashLogin = $('splashLoginBtn');
+  if (splashLogin) splashLogin.addEventListener('click', () => openAuthModal('login'));
+}
+
+async function validateInviteCode() {
+  const input = $('signupInviteCode');
+  const statusEl = $('inviteCodeStatus');
+  const fieldsEl = $('signupFields');
+  const code = input.value.trim().toUpperCase();
+
+  if (!code || code.length < 4) {
+    statusEl.textContent = '';
+    statusEl.className = 'invite-code-status';
+    fieldsEl.style.display = 'none';
+    validatedInviteCode = null;
+    return;
+  }
+
+  statusEl.textContent = 'Checking...';
+  statusEl.className = 'invite-code-status checking';
+
+  try {
+    const res = await fetch(`${API_BASE}/invites/validate/${encodeURIComponent(code)}`);
+    const data = await res.json();
+
+    if (data.valid) {
+      statusEl.textContent = '✓ Valid';
+      statusEl.className = 'invite-code-status valid';
+      fieldsEl.style.display = 'block';
+      validatedInviteCode = code;
+
+      // Show who invited them
+      if (data.invite.inviterName) {
+        const welcomeEl = $('inviteWelcome');
+        const textEl = $('inviteWelcomeText');
+        textEl.textContent = `Invited by ${data.invite.inviterName}`;
+        welcomeEl.style.display = 'block';
+      }
+
+      // Pre-fill email if invite was sent to a specific address
+      if (data.invite.recipientEmail) {
+        $('signupEmail').value = data.invite.recipientEmail;
+        $('signupEmail').readOnly = true;
+        $('signupEmail').style.opacity = '0.7';
+      } else {
+        $('signupEmail').readOnly = false;
+        $('signupEmail').style.opacity = '1';
+      }
+
+      // Focus the name field
+      $('signupName').focus();
+    } else {
+      statusEl.textContent = data.error || 'Invalid code';
+      statusEl.className = 'invite-code-status invalid';
+      fieldsEl.style.display = 'none';
+      validatedInviteCode = null;
+    }
+  } catch {
+    statusEl.textContent = 'Could not verify';
+    statusEl.className = 'invite-code-status invalid';
+    fieldsEl.style.display = 'none';
+    validatedInviteCode = null;
+  }
+}
+
+function checkInviteCodeInURL() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('invite');
+  if (code && !authToken) {
+    // Open signup modal with pre-filled invite code
+    openAuthModal('signup');
+    $('signupInviteCode').value = code.toUpperCase();
+    validateInviteCode();
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+}
+
+async function sendInvite() {
+  const emailInput = $('inviteEmailInput');
+  const email = emailInput.value.trim();
+
+  if (!email || !email.includes('@')) {
+    showMsg('inviteSendMsg', 'Please enter a valid email address.', '#991b1b');
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/invites/send`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      showMsg('inviteSendMsg', data.error, '#991b1b');
+      return;
+    }
+
+    const appUrl = window.location.origin;
+    const inviteLink = `${appUrl}/?invite=${data.invite.code}`;
+
+    showMsg('inviteSendMsg', `Invitation created! Share this link: ${inviteLink}`, '#059669');
+    emailInput.value = '';
+
+    // Update balance
+    $('inviteBalanceCount').textContent = data.remaining;
+
+    // Refresh invite list
+    loadInvitesList();
+  } catch {
+    showMsg('inviteSendMsg', 'Failed to send invitation.', '#991b1b');
+  }
+}
+
+async function loadInvitesList() {
+  if (!authToken) return;
+
+  try {
+    const res = await fetch(`${API_BASE}/invites/mine`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+
+    // Update balance
+    if (data.balance) {
+      $('inviteBalanceCount').textContent = data.balance.remaining;
+    }
+
+    // Render invites list
+    const listEl = $('invitesList');
+    if (!data.invites || data.invites.length === 0) {
+      listEl.innerHTML = '<p class="settings-desc">No invitations sent yet.</p>';
+      return;
+    }
+
+    const appUrl = window.location.origin;
+    listEl.innerHTML = data.invites.map(inv => {
+      let status = '';
+      let statusClass = '';
+      if (inv.redeemed) {
+        status = 'Accepted';
+        statusClass = 'invite-status-accepted';
+      } else if (inv.expired) {
+        status = 'Expired';
+        statusClass = 'invite-status-expired';
+      } else {
+        status = 'Pending';
+        statusClass = 'invite-status-pending';
+      }
+
+      const link = `${appUrl}/?invite=${inv.code}`;
+
+      return `
+        <div class="invite-item">
+          <div class="invite-item-info">
+            <span class="invite-item-email">${escapeHtml(inv.recipientEmail || 'Anyone')}</span>
+            <span class="invite-item-code">${inv.code}</span>
+          </div>
+          <div class="invite-item-right">
+            <span class="invite-status ${statusClass}">${status}</span>
+            ${!inv.redeemed && !inv.expired ? `<button class="invite-copy-link" onclick="navigator.clipboard.writeText('${link}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch {
+    // Non-critical
+  }
+}
+
+function updateWelcomeView() {
+  const splash = $('welcomeSplash');
+  const loggedIn = $('welcomeLoggedIn');
+  if (currentUser) {
+    if (splash) splash.style.display = 'none';
+    if (loggedIn) loggedIn.style.display = 'block';
+  } else {
+    if (splash) splash.style.display = 'block';
+    if (loggedIn) loggedIn.style.display = 'none';
+  }
 }
 
 // ========================
