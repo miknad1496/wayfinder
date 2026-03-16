@@ -6,6 +6,7 @@
 
 import { Router } from 'express';
 import { verifyToken, findUserByToken } from '../services/auth.js';
+import { sendInviteEmail } from '../services/email.js';
 import {
   createInvite,
   validateInvite,
@@ -37,6 +38,20 @@ router.post('/send', async (req, res) => {
 
     if (result.error) {
       return res.status(400).json({ error: result.error });
+    }
+
+    // Send the invitation email
+    const inviteLink = `https://wayfinderai.org/?invite=${result.invite.code}`;
+    const emailResult = await sendInviteEmail(
+      email,
+      user.name || 'Someone',
+      result.invite.code,
+      inviteLink
+    );
+
+    if (emailResult.error) {
+      console.warn('Email send failed:', emailResult.error);
+      // Don't fail the request; the invite was created successfully
     }
 
     res.json(result);

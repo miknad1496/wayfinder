@@ -1310,17 +1310,9 @@ async function sendInvite() {
 
     const appUrl = window.location.origin;
     const inviteLink = `${appUrl}/?invite=${data.invite.code}`;
-    const inviterName = currentUser?.name || 'Someone';
-
-    // Build a shareable email message
-    const emailSubject = encodeURIComponent(`${inviterName} invited you to Wayfinder`);
-    const emailBody = encodeURIComponent(
-      `Hey!\n\n${inviterName} thinks you'd get a lot out of Wayfinder — it's an AI-powered career and college admissions advisor built on real labor market data, not generic advice.\n\nYour personal invite link:\n${inviteLink}\n\nThis link expires in 14 days, so don't wait too long.\n\nSee you on Wayfinder!`
-    );
-    const mailtoLink = `mailto:${data.invite.recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
 
     showMsg('inviteSendMsg',
-      `Invitation created! <a href="${mailtoLink}" target="_blank" style="color:#2563eb;text-decoration:underline;">Send email</a> or copy link: <button class="invite-copy-link" style="margin-left:4px;" onclick="navigator.clipboard.writeText('${inviteLink}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>`,
+      `Invitation sent to ${data.invite.recipientEmail}! <button class="invite-copy-link" style="margin-left:4px;" onclick="navigator.clipboard.writeText('${inviteLink}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>`,
       '#059669');
     emailInput.value = '';
 

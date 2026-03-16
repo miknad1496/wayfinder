@@ -118,8 +118,12 @@ const CATEGORIES = {
       'target', 'reach', 'safety', 'waitlist', 'defer', 'transfer', 'common',
       'supplement', 'parent', 'child', 'kid', 'son', 'daughter', 'teenager', 'teen',
       'high', 'school', 'junior', 'senior', 'freshman', 'sophomore',
-      'pre-college', 'precollege', 'college', 'prep'],
-    rawCategories: ['raw_admissions', 'raw_nces']
+      'pre-college', 'precollege', 'college', 'prep',
+      'curriculum', 'course', 'courses', 'class', 'classes', 'prerequisite', 'prerequisites',
+      'credit', 'credits', 'requirement', 'requirements', 'catalog', 'syllabus',
+      'distribution', 'core', 'gen-ed', 'elective', 'electives', 'thesis',
+      'capstone', 'study', 'abroad', 'quarter', 'semester', 'faculty', 'professor'],
+    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum']
   },
   salary_negotiation: {
     files: ['framework-salary-negotiation.md', 'framework-job-offer-evaluation.md'],
@@ -186,6 +190,11 @@ const SPECIFICITY_SIGNALS = [
   'acceptance rate', 'admission rate', 'sat score', 'act score',
   'tuition', 'net price', 'financial aid at', 'scholarship at',
   'retention', 'graduation rate', 'early decision rate',
+  // Curriculum-specific asks
+  'curriculum', 'course', 'courses', 'class', 'classes', 'prerequisite',
+  'credit hours', 'credits', 'core requirement', 'distribution',
+  'gen ed', 'gen-ed', 'major requirement', 'minor in', 'thesis',
+  'capstone', 'study abroad', 'quarter system', 'semester',
   // Occupation-specific asks
   'tasks', 'duties', 'day-to-day', 'skills needed', 'education needed',
   'certification for', 'license for', 'outlook for', 'growth rate',
@@ -508,6 +517,93 @@ function parseAdmissionsData(records) {
   return chunks;
 }
 
+/**
+ * Parse curriculum data into retrieval chunks.
+ * Each school gets 2 chunks: core requirements + popular major requirements.
+ */
+function parseCurriculumData(data) {
+  const chunks = [];
+  if (!data || typeof data !== 'object') return chunks;
+
+  for (const [schoolName, info] of Object.entries(data)) {
+    if (!info) continue;
+
+    // CHUNK 1: Core requirements & academic structure
+    const coreLines = [
+      `# ${schoolName} — Curriculum & Academic Structure`,
+      ''
+    ];
+
+    if (info.coreRequirements) {
+      const cr = info.coreRequirements;
+      coreLines.push(`Core Curriculum: ${cr.description || 'N/A'}`);
+      if (cr.categories && cr.categories.length) {
+        for (const cat of cr.categories) {
+          coreLines.push(`  - ${cat.name}: ${cat.courses} course(s)${cat.examples ? ' (e.g., ' + cat.examples.join(', ') + ')' : ''}`);
+        }
+      }
+      if (cr.totalCoreCourses) coreLines.push(`Total core courses: ${cr.totalCoreCourses}`);
+      if (cr.writingRequirement) coreLines.push(`Writing: ${cr.writingRequirement}`);
+      if (cr.foreignLanguageRequirement) coreLines.push(`Foreign Language: ${cr.foreignLanguageRequirement}`);
+      if (cr.quantitativeRequirement) coreLines.push(`Quantitative: ${cr.quantitativeRequirement}`);
+    }
+
+    if (info.academicCalendar) coreLines.push(`Calendar: ${info.academicCalendar}`);
+    if (info.creditsToGraduate) coreLines.push(`Credits to graduate: ${info.creditsToGraduate}`);
+    if (info.averageCourseLoad) coreLines.push(`Average load: ${info.averageCourseLoad}`);
+    if (info.gradingSystem) coreLines.push(`Grading: ${info.gradingSystem}`);
+
+    if (info.uniqueAcademicFeatures && info.uniqueAcademicFeatures.length) {
+      coreLines.push(`Unique features: ${info.uniqueAcademicFeatures.join('; ')}`);
+    }
+    if (info.researchOpportunities) coreLines.push(`Research: ${info.researchOpportunities}`);
+    if (info.studyAbroad) coreLines.push(`Study abroad: ${info.studyAbroad}`);
+    if (info.notableFaculty && info.notableFaculty.length) {
+      coreLines.push(`Notable faculty: ${info.notableFaculty.join(', ')}`);
+    }
+
+    const coreText = coreLines.join('\n');
+    chunks.push({
+      source: 'curriculum-data.json',
+      title: `Curriculum Overview: ${schoolName}`,
+      content: coreText.slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords(schoolName + ' curriculum core requirements courses credits ' + coreText.slice(0, 600)),
+      boostFactor: 1.0,
+      isRawData: true
+    });
+
+    // CHUNK 2: Popular major requirements (detailed)
+    if (info.popularMajorRequirements && Object.keys(info.popularMajorRequirements).length) {
+      const majorLines = [`# ${schoolName} — Major Requirements Detail`, ''];
+
+      for (const [majorName, req] of Object.entries(info.popularMajorRequirements)) {
+        majorLines.push(`## ${majorName}`);
+        if (req.totalCourses) majorLines.push(`  Total courses: ${req.totalCourses}`);
+        if (req.prerequisites && req.prerequisites.length) majorLines.push(`  Prerequisites: ${req.prerequisites.join(', ')}`);
+        if (req.coreCourses && req.coreCourses.length) majorLines.push(`  Core courses: ${req.coreCourses.join(', ')}`);
+        if (req.electivesNeeded) majorLines.push(`  Electives: ${req.electivesNeeded}`);
+        if (req.seniorThesis) majorLines.push(`  Thesis/Capstone: ${req.seniorThesis}`);
+        if (req.typicalTimeline) majorLines.push(`  Timeline: ${req.typicalTimeline}`);
+        if (req.insiderTip) majorLines.push(`  Insider tip: ${req.insiderTip}`);
+        majorLines.push('');
+      }
+
+      const majorText = majorLines.join('\n');
+      chunks.push({
+        source: 'curriculum-majors.json',
+        title: `Major Requirements: ${schoolName}`,
+        content: majorText.slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(schoolName + ' major requirements courses prerequisites ' +
+          Object.keys(info.popularMajorRequirements).join(' ') + ' ' + majorText.slice(0, 600)),
+        boostFactor: 1.0,
+        isRawData: true
+      });
+    }
+  }
+
+  return chunks;
+}
+
 function parseRedditSalary(records) {
   // Only include highly-rated threads
   return records
@@ -804,6 +900,16 @@ async function buildRawDataIndex() {
   } else {
     index.raw_admissions = [];
     console.log('  raw_admissions: no data file found (run admissions scraper)');
+  }
+
+  // Curriculum data (course catalogs, major requirements, core curriculum)
+  const curriculum = await loadJsonFile('curriculum-data.json');
+  if (curriculum) {
+    index.raw_curriculum = parseCurriculumData(curriculum);
+    console.log(`  raw_curriculum: ${index.raw_curriculum.length} curriculum chunks`);
+  } else {
+    index.raw_curriculum = [];
+    console.log('  raw_curriculum: no data file found (run curriculum scraper)');
   }
 
   // Reddit salary discussions

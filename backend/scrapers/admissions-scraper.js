@@ -1365,7 +1365,46 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~10-15% transfer acceptance',
       financialAid: 'Need-blind for US. Meets 100% need.',
       insiderTip: 'Tufts ED gives roughly 3-4x the RD acceptance rate — massive advantage. The school highly values demonstrated interest and "Why Tufts" specificity. International relations and STEM are particularly strong.',
-      essayStrategy: 'Tufts\' supplemental essays are quirky and creative. Show personality and intellectual curiosity. The community engagement essay should highlight specific programs at Tufts.'
+      essayStrategy: 'Tufts\' supplemental essays are quirky and creative. Show personality and intellectual curiosity. The community engagement essay should highlight specific programs at Tufts.',
+      programs: {
+        totalMajors: 115,
+        popularMajors: ['International Relations', 'Engineering', 'Biology', 'Economics', 'Computer Science'],
+        uniquePrograms: 'Tufts is known for international relations and diplomatic studies. The Fletcher School of Law & Diplomacy (grad) influences undergrad curriculum. Strong STEM programs with research opportunities.',
+        curriculumHighlights: 'Tufts requires a combination of distribution requirements and deep study in major. Strong emphasis on global perspectives and international engagement.',
+        preMedPath: 'Moderate pre-med program (~8% of students). Pre-med track is rigorous but supported. Some hospital partnerships in Boston area.',
+        preBusinessPath: 'No dedicated business school. Students major in Economics or related fields. Strong consulting recruiting from major.',
+        engineeringPath: 'Strong engineering program. Civil, mechanical, electrical, biomedical, and computer engineering are particularly strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Arts & Sciences',
+            acceptanceRate: '10%',
+            notes: 'Largest school. Includes humanities, social sciences, natural sciences, mathematics.'
+          },
+          {
+            name: 'School of Engineering',
+            acceptanceRate: '11-12%',
+            notes: 'Strong engineering programs. Slightly more accessible than A&S.'
+          },
+          {
+            name: 'School of Museum of Fine Arts (combined degree)',
+            acceptanceRate: '15-18%',
+            notes: 'Collaborative program with museum. More accessible option.'
+          }
+        ],
+        internalTransfers: 'Possible between A&S and Engineering after first year if strong academic performance. Not encouraged as strategic pathway.',
+        dualDegreePrograms: 'SMFA combined program (A&S + Museum of Fine Arts diploma). Five-year program.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Tufts heavily emphasizes "demonstrated interest" and wants students who genuinely want to be there. The "Why Tufts" essay is critical — admissions officers can tell when you\'ve done your homework.',
+        commonMistakes: 'Generic "Why Tufts" essays that could apply to any school. Not researching specific programs, professors, or opportunities. Underestimating the power of ED at Tufts.',
+        hiddenGems: 'The SMFA combined degree is significantly more accessible (~15-18%) while still providing a full Tufts education. International relations courses without declaring IR as major. The quirky supplemental essays actually show personality better than traditional essays.',
+        redditWisdom: 'AOs say: "We want students who are genuinely excited about Tufts specifically, not just using us as a backup." Demonstrated interest (emails, visits, webinars) genuinely matters.',
+        strategyTips: 'Use ED if Tufts is your top choice — the acceptance boost is massive (~28-32% vs 7-8%). Research deeply and reference specific opportunities in your essays. Highlight global perspectives and intellectual curiosity.',
+      },
     },
     {
       school: 'New York University',
@@ -1376,7 +1415,66 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~25-30% transfer acceptance (very transfer-friendly)',
       financialAid: 'Not fully need-blind historically. Financial aid has been improving but can leave gaps. Merit scholarships available.',
       insiderTip: 'NYU Stern is harder to get into than most Ivies. Apply to CAS or Gallatin then take Stern courses if interested in business. NYU is very transfer-friendly — the 2+2 community college to CAS pathway works. The global sites (Abu Dhabi, Shanghai) have higher acceptance rates and full financial aid.',
-      essayStrategy: '"Why NYU" should reference specific programs AND how you\'ll use NYC. The city is your campus — show you\'ll take advantage of it. For Stern, demonstrate business passion beyond just wanting to make money.'
+      essayStrategy: '"Why NYU" should reference specific programs AND how you\'ll use NYC. The city is your campus — show you\'ll take advantage of it. For Stern, demonstrate business passion beyond just wanting to make money.',
+      programs: {
+        totalMajors: 210,
+        popularMajors: ['Business Administration', 'Finance', 'Accounting', 'Psychology', 'Drama'],
+        uniquePrograms: 'Stern Business School (top undergrad business program). Tisch School of the Arts (world-class drama, film, music). Gallatin School allows fully customized interdisciplinary majors.',
+        curriculumHighlights: 'NYU is highly specialized by school — curriculum varies dramatically. Stern has rigorous business core. Tisch emphasizes portfolio-based learning. Gallatin is radically open curriculum.',
+        preMedPath: 'Pre-med available through CAS, not emphasized. ~4% of students pre-med. NYC hospitals offer research opportunities.',
+        preBusinessPath: 'Stern Business School — one of the top undergrad programs. Extremely selective but legitimate direct admit program. Strong consulting/finance recruiting.',
+        engineeringPath: 'Tandon School of Engineering (Brooklyn). Solid engineering program with strong CS focus. More accessible than Stern.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Stern School of Business',
+            acceptanceRate: '5-7%',
+            notes: 'Top undergrad business school. Extremely selective. BBA degree.'
+          },
+          {
+            name: 'Tisch School of the Arts',
+            acceptanceRate: '15%',
+            notes: 'World-class drama, film, music programs. Audition/portfolio-based.'
+          },
+          {
+            name: 'College of Arts & Science (CAS)',
+            acceptanceRate: '12%',
+            notes: 'Largest school. Most flexible and accessible option.'
+          },
+          {
+            name: 'Tandon School of Engineering',
+            acceptanceRate: '18%',
+            notes: 'Engineering program in Brooklyn. More accessible than Stern.'
+          },
+          {
+            name: 'Gallatin School of Individualized Study',
+            acceptanceRate: '20%',
+            notes: 'Design your own major. Most accessible school. Unique curriculum freedom.'
+          },
+          {
+            name: 'Steinhardt School of Culture, Education, and Human Development',
+            acceptanceRate: '18%',
+            notes: 'Education, music therapy, performing arts education. More accessible.'
+          },
+          {
+            name: 'School of Liberal Studies',
+            acceptanceRate: '25%',
+            notes: 'Accelerated completion programs. Most accessible entry point.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Strategic to choose right school from start. Stern internal transfers are very difficult.',
+        dualDegreePrograms: 'Stern/CAS combinations possible. Tisch/other schools are challenging due to portfolio demands.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'NYU is known for having dramatically different acceptance rates by school — Stern (~5-7%) vs Liberal Studies (~25%). It\'s not one acceptance rate; it\'s highly school-specific. NYC location is a major draw and should be referenced.',
+        commonMistakes: 'Applying only to Stern without backup schools. Not understanding school-specific differences. Thinking you can easily transfer from one NYU school to another (very competitive).',
+        hiddenGems: 'Gallatin School allows you to design your own major and cross-register at other schools. Tandon engineering is legitimate and more accessible. The global sites (Abu Dhabi, Shanghai) have higher acceptance rates and full financial aid.',
+        redditWisdom: 'AOs emphasize: "Know which NYU school you\'re applying to and why." NYC location and specific school culture should feature prominently. Transfer-friendly reputation is real but internal transfers between prestigious schools are hard.',
+        strategyTips: 'Apply strategically to less competitive NYU schools if that\'s your true interest level. Don\'t bank on transferring from CAS to Stern. Reference NYC specifically and how you\'ll engage with it.',
+      },
     },
     {
       school: 'Tulane University',
@@ -1387,7 +1485,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~30-35% transfer acceptance',
       financialAid: 'Strong merit scholarships. Need-based aid meets most need but not always 100%.',
       insiderTip: 'Tulane tracks demonstrated interest HEAVILY. Visit campus, attend virtual sessions, email admissions. ED acceptance rate is roughly 3x RD. Community service is core to Tulane\'s identity.',
-      essayStrategy: 'The "Why Tulane" must be hyper-specific — mention New Orleans, service-learning, specific courses. Tulane can tell when you\'re using a generic "why X school" essay.'
+      essayStrategy: 'The "Why Tulane" must be hyper-specific — mention New Orleans, service-learning, specific courses. Tulane can tell when you\'re using a generic "why X school" essay.',
+      programs: {
+        totalMajors: 125,
+        popularMajors: ['Business Administration', 'Psychology', 'Biology', 'Economics', 'International Relations'],
+        uniquePrograms: 'Strong business program (Freeman School). Public health and medicine are distinctive strengths. Environmental studies with New Orleans focus. Service-learning integration throughout.',
+        curriculumHighlights: 'Core curriculum emphasizes New Orleans and social responsibility. Service-learning components in many courses. School of Continuing Studies allows community engagement.',
+        preMedPath: 'Moderate pre-med program (~8% of students). Tulane School of Medicine on campus attracts pre-med students. Research opportunities with medical school.',
+        preBusinessPath: 'Freeman School of Business — strong undergrad program. Consulting and finance recruiting presence.',
+        engineeringPath: 'Solid engineering program. Chemical, civil, mechanical engineering are strong. Smaller program than peer schools.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'A.B. Freeman School of Business',
+            acceptanceRate: '10%',
+            notes: 'Strong business program. BBA degree. Selective.'
+          },
+          {
+            name: 'School of Continuing Studies',
+            acceptanceRate: '12-13%',
+            notes: 'Same rigorous curriculum as day school. Evening and flexible options available.'
+          },
+          {
+            name: 'School of Liberal Arts',
+            acceptanceRate: '15%',
+            notes: 'Largest school. Humanities, social sciences, sciences.'
+          },
+          {
+            name: 'School of Science & Engineering',
+            acceptanceRate: '16%',
+            notes: 'STEM-focused. Solid engineering program.'
+          }
+        ],
+        internalTransfers: 'Possible but not common. Better to choose right school initially.',
+        dualDegreePrograms: 'Some dual degree programs with professional schools. Engineering/Business combinations possible.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Tulane HEAVILY tracks demonstrated interest. Campus visits, emails, webinar attendance all matter. ED acceptance is roughly 3x RD — one of the biggest ED advantages among non-Ivies.',
+        commonMistakes: 'Not demonstrating interest. Generic "Why Tulane" essays that don\'t mention New Orleans or service learning. Underestimating the power of ED.',
+        hiddenGems: 'The service-learning curriculum is genuinely distinctive and integrated throughout. New Orleans location provides unique internship opportunities. School of Continuing Studies is viable alternative pathway.',
+        redditWisdom: 'AOs say: "Show us you\'ve done your homework and genuinely care about Tulane." Demonstrated interest is real and tracked. The ED advantage is enormous.',
+        strategyTips: 'Use ED if Tulane is your top choice — acceptance rate jumps to 38-42%. Demonstrate interest early and often through visits, emails, webinars. Reference New Orleans specifically and service-learning opportunities in essays.',
+      },
     },
     {
       school: 'Northeastern University',
@@ -1398,7 +1540,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~20-25% transfer acceptance',
       financialAid: 'Not need-blind. Strong merit scholarships including Dean\'s and Excellence awards.',
       insiderTip: 'Northeastern\'s co-op program (6-month paid work experiences) is the main differentiator. Mention specific co-op employers or industries. Demonstrated interest is tracked and matters significantly.',
-      essayStrategy: 'Reference the co-op program specifically — which companies, what experiences you want. Show you understand experiential learning and why it appeals to you over traditional models.'
+      essayStrategy: 'Reference the co-op program specifically — which companies, what experiences you want. Show you understand experiential learning and why it appeals to you over traditional models.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Computer Science', 'Business Administration', 'Engineering', 'Biology', 'Economics'],
+        uniquePrograms: 'Co-op program is the main differentiator — 6-month paid work experiences integrated throughout. Khoury College of CS is top-tier. Strong engineering across disciplines.',
+        curriculumHighlights: 'Co-op integrated into 5-year curriculum for most students. Experiential learning is central to Northeastern\'s identity. Global co-op opportunities available.',
+        preMedPath: 'Moderate pre-med program (~6% of students). Co-op experience strengthens med school applications. Limited hospital partnerships but Boston location helps.',
+        preBusinessPath: 'D\'Amore-McKim Business School — solid undergrad program. Co-op opportunities with consulting firms and finance companies. Strong recruiting.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, chemical, civil, and biomedical. Co-op experiences with top engineering firms.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Khoury College of Computer Sciences',
+            acceptanceRate: '4-5%',
+            notes: 'Top-tier CS program. Extremely selective. Co-op with major tech companies.'
+          },
+          {
+            name: 'D\'Amore-McKim School of Business',
+            acceptanceRate: '7%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '8%',
+            notes: 'Strong across all engineering disciplines. ABET accredited.'
+          },
+          {
+            name: 'College of Social Sciences & Humanities',
+            acceptanceRate: '12%',
+            notes: 'Most accessible school. Still offers co-op programs.'
+          },
+          {
+            name: 'College of Science',
+            acceptanceRate: '10%',
+            notes: 'STEM-focused. Biology, chemistry, physics, mathematics.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Better to select right college from start.',
+        dualDegreePrograms: 'Co-op integrated into all programs. Dual degrees possible but less common.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Northeastern explicitly tracks demonstrated interest through their application tracking system. Attending info sessions, visiting campus, emailing AOs all get logged and reviewed.',
+        commonMistakes: 'Not demonstrating interest. Generic essays that don\'t mention co-op or experiential learning specifically. Not researching which companies/industries co-op with Northeastern.',
+        hiddenGems: 'The co-op program genuinely sets Northeastern apart — students graduate with 18+ months of real work experience. Global co-op options (Europe, Asia, etc.). Strong for pre-med given Boston location.',
+        redditWisdom: 'AOs emphasize: "Show us you understand what Northeastern is about — it\'s not a traditional college experience." The co-op is the differentiator and should be central to your essays.',
+        strategyTips: 'Mention specific companies or industries you\'d co-op with. Use ED if Northeastern is your top choice (acceptance jumps to 22-28%). Research and email admissions about your specific interests.',
+      },
     },
     {
       school: 'Case Western Reserve University',
@@ -1409,7 +1600,46 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~35-40% transfer acceptance',
       financialAid: 'Very generous merit scholarships — many students receive $25K+/year in merit. Need-based aid also available.',
       insiderTip: 'Case Western is a hidden gem for STEM students. Strong pre-med track with University Hospitals and Cleveland Clinic partnerships. Merit scholarships can make CWRU cheaper than state schools.',
-      essayStrategy: 'Show why Cleveland and CWRU\'s specific resources appeal to you. Reference research partnerships, the Think Forum, or specific interdisciplinary programs.'
+      essayStrategy: 'Show why Cleveland and CWRU\'s specific resources appeal to you. Reference research partnerships, the Think Forum, or specific interdisciplinary programs.',
+      programs: {
+        totalMajors: 110,
+        popularMajors: ['Engineering', 'Biology', 'Biochemistry', 'Psychology', 'Physics'],
+        uniquePrograms: 'Exceptional pre-med track with partnerships to Cleveland Clinic and University Hospitals. Strong engineering across disciplines. Excellent for interdisciplinary STEM. Case also unique for small school feel with strong research.',
+        curriculumHighlights: 'Undergraduate research heavily emphasized — many undergrads work in faculty labs. Engineering clinics and design projects. Pre-professional health advising is excellent. Flexible curriculum allows customization.',
+        preMedPath: 'Excellent pre-med program (~20% of students). Direct partnerships with Cleveland Clinic and University Hospitals for internships/research. Strong medical school placement.',
+        preBusinessPath: 'No dedicated business school. Students major in economics or management-focused programs. Some business courses available.',
+        engineeringPath: 'Strong engineering program across chemical, civil, mechanical, electrical, and biomedical. Excellent research and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Engineering',
+            acceptanceRate: '26-28%',
+            notes: 'Strong across all disciplines. Excellent research opportunities. Clinical partnerships.'
+          },
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '32-35%',
+            notes: 'Largest school. Includes sciences, mathematics, humanities, social sciences.'
+          },
+          {
+            name: 'College of Nursing',
+            acceptanceRate: '30-32%',
+            notes: 'Strong nursing program. ACEN accredited.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Generally feasible if maintaining good GPA.',
+        dualDegreePrograms: 'Engineering/Science dual degrees available. Pre-professional pathways integrated.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'CWRU offers very generous merit scholarships — many students get $20K+/year making it significantly cheaper than state schools. ED acceptance is 50-55% vs 30% regular.',
+        commonMistakes: 'Overlooking CWRU due to lower overall prestige. Not highlighting STEM interests strongly enough. Missing the merit scholarship opportunity.',
+        hiddenGems: 'The Cleveland Clinic partnership is genuinely valuable for pre-med students. Generous merit scholarships can make cost comparable to state schools. Small school size allows real undergraduate research experience.',
+        redditWisdom: 'AOs say: "CWRU students are passionate about STEM. Show us your intellectual curiosity and research interests." Merit scholarships are generous for early applicants.',
+        strategyTips: 'Apply early for best merit scholarships. Highlight STEM interests and research aspirations. If pre-med, reference Cleveland Clinic partnership specifically. Use ED if you\'re committed (acceptance jumps to 50-55%).',
+      },
     },
 
     // ==================== TOP PUBLIC / FLAGSHIP (18) ====================
@@ -1422,7 +1652,61 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~22-25% transfer acceptance — UCB is VERY transfer friendly (guaranteed TAG from CA community colleges for some majors)',
       financialAid: 'UC system strong financial aid for CA residents. Blue & Gold plan: families <$80K pay no tuition.',
       insiderTip: 'The transfer pathway from California community college is a genuine strategy. TAG (Transfer Admission Guarantee) exists for some UC campuses. Apply L&S then petition into competitive majors.',
-      essayStrategy: 'PIQs (Personal Insight Questions): choose 4 of 8 prompts. Be specific about overcoming adversity and contributing to community. UC readers spend 8-12 minutes per application.'
+      essayStrategy: 'PIQs (Personal Insight Questions): choose 4 of 8 prompts. Be specific about overcoming adversity and contributing to community. UC readers spend 8-12 minutes per application.',
+      programs: {
+        totalMajors: 180,
+        popularMajors: ['Electrical Engineering & Computer Science', 'Business Administration', 'Computer Science', 'Biology', 'Economics'],
+        uniquePrograms: 'EECS (Electrical Engineering & Computer Science) is top-tier (ranked #1). Haas School of Business is world-class. Strong across STEM and humanities. Cutting-edge research institution.',
+        curriculumHighlights: 'Strong general education requirements. Declare major after freshman/sophomore year. Exceptional research opportunities — all students can participate. World-class faculty across all disciplines.',
+        preMedPath: 'Good pre-med program (~8% of students). Strong pre-med advising. UCSF medical school partnerships. Excellent science curriculum.',
+        preBusinessPath: 'Haas School of Business — top undergrad program (requires separate application). Strong consulting/finance/tech recruiting.',
+        engineeringPath: 'EECS is ranked #1 nationally. Other engineering disciplines (mechanical, civil, chemical, biomedical) are also very strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'College of Engineering - EECS',
+            acceptanceRate: '4-6%',
+            notes: 'Ranked #1 nationally. Extremely selective. Direct admit.'
+          },
+          {
+            name: 'Haas School of Business',
+            acceptanceRate: '6%',
+            notes: 'Top undergrad business program. Requires separate application and admission by junior year.'
+          },
+          {
+            name: 'College of Engineering - Other Disciplines',
+            acceptanceRate: '10-12%',
+            notes: 'Mechanical, civil, chemical, biomedical engineering. Very strong.'
+          },
+          {
+            name: 'College of Letters & Science',
+            acceptanceRate: '14%',
+            notes: 'Largest college. Declare major later. Can petition into competitive majors.'
+          },
+          {
+            name: 'College of Environmental Design',
+            acceptanceRate: '18-20%',
+            notes: 'Architecture, landscape architecture, urban planning. More accessible.'
+          },
+          {
+            name: 'School of Social Welfare',
+            acceptanceRate: '20-22%',
+            notes: 'Most accessible school. Social work, public policy.'
+          }
+        ],
+        internalTransfers: 'Possible into Haas from L&S (competitive). Engineering internal transfers are also competitive but happen.',
+        dualDegreePrograms: 'Haas/Engineering combinations possible. Business/Engineering double degrees exist but rare.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UC system uses holistic review with Personal Insight Questions (PIQs). No ED/EA means apply broadly across UC system on single app. EECS is one of the hardest programs in US (~4-6%).',
+        commonMistakes: 'Applying only to Berkeley engineering when overall acceptance makes L&S seem viable. Not understanding college-specific acceptance rates. Missing TAG opportunity from CA community colleges.',
+        hiddenGems: 'Letters & Science admission (14%) is more accessible — declare major later and petition into competitive programs. Environmental Design is significantly more accessible (18-20%). CA community college → Berkeley TAG is a legitimate pathway.',
+        redditWisdom: 'AOs say: "PIQs should be thoughtful and specific. Show us who you are and how you\'ve overcome challenges." Berkeley values diversity of experience and intellectual curiosity.',
+        strategyTips: 'Apply to multiple UCs since single application. If interested in business/engineering, understand internal competition. Use TAG from CA community colleges if eligible. Apply L&S if borderline — declare major later.',
+      },
     },
     {
       school: 'University of California-Los Angeles',
@@ -1433,7 +1717,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~20-24% transfer acceptance — very transfer-friendly. TAG from CA community colleges.',
       financialAid: 'Blue & Gold: families <$80K pay no tuition. Strong aid for CA residents.',
       insiderTip: 'UCLA is the most applied-to university in America. Film/Theater/Music programs are extremely selective (audition-based). Apply to L&S for best odds. Transfer from community college is a very viable strategy.',
-      essayStrategy: 'Same PIQs as all UCs. Show cultural awareness, community involvement, and how you\'ve overcome challenges. UCLA values diversity of experience.'
+      essayStrategy: 'Same PIQs as all UCs. Show cultural awareness, community involvement, and how you\'ve overcome challenges. UCLA values diversity of experience.',
+      programs: {
+        totalMajors: 170,
+        popularMajors: ['Engineering', 'Computer Science', 'Business Economics', 'Psychology', 'Film & Television'],
+        uniquePrograms: 'World-class film, television, and theater programs (audition-based). Strong engineering and CS. Excellent humanities and social sciences. School of Nursing.',
+        curriculumHighlights: 'General Education requirements. Declare major by end of first year. Strong research opportunities. Outstanding faculty across disciplines. Los Angeles location provides entertainment/tech industry access.',
+        preMedPath: 'Moderate pre-med program (~7% of students). UCSF medical school partnerships. Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'No dedicated business school. Students major in Business Economics (within L&S). Strong accounting and finance courses. Some business consulting clubs.',
+        engineeringPath: 'Strong engineering across all disciplines. CS within engineering is very competitive. Good hands-on learning and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'School of Theater, Film & Television',
+            acceptanceRate: '4-6%',
+            notes: 'World-class programs. Audition/portfolio-based. Extremely selective.'
+          },
+          {
+            name: 'Henry Samueli School of Engineering',
+            acceptanceRate: '7-8%',
+            notes: 'Strong across all engineering disciplines.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '5-8%',
+            notes: 'Excellent nursing program. CCNE accredited.'
+          },
+          {
+            name: 'College of Letters & Science',
+            acceptanceRate: '12%',
+            notes: 'Largest school. All majors including sciences, humanities, social sciences, music.'
+          }
+        ],
+        internalTransfers: 'Possible but competitive. Better to apply to correct school initially.',
+        dualDegreePrograms: 'Engineering/Science combinations possible. Film + humanities combinations available.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UCLA is the most applied-to university in America. Film and theater programs are among the most selective in the world. Audition-based admissions are highly competitive. Rolling review means earlier applications have slight advantage.',
+        commonMistakes: 'Applying only to theater/film when audition acceptance is <5%. Not understanding college-specific rates. Thinking UCLA is easier than Berkeley (both are extremely selective).',
+        hiddenGems: 'L&S acceptance is 12% — more accessible path to UCLA education. Film/music minors are available through L&S. Entertainment industry access is extraordinary given LA location. TAG pathway available.',
+        redditWisdom: 'AOs emphasize: "Show us your specific passion and why UCLA is the right fit." LA location should be referenced. If film/theater interested, understand audition process.',
+        strategyTips: 'Apply to multiple UCs. If interested in film/theater, understand extremely high selectivity and audition requirements. L&S is more accessible entry point. Apply early (rolling review). Use TAG if eligible.',
+      },
     },
     {
       school: 'University of Michigan-Ann Arbor',
@@ -1444,7 +1772,61 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~35-40% transfer acceptance',
       financialAid: 'Go Blue Guarantee: families <$65K pay $0 for tuition, fees, housing.',
       insiderTip: 'Ross Business preferred admission is extremely competitive — apply LSA with business intent, then transfer to Ross sophomore year (higher acceptance). Michigan values demonstrated interest.',
-      essayStrategy: '"Why Michigan" essay is critical — be school-specific. Mention specific programs, research opportunities, campus culture.'
+      essayStrategy: '"Why Michigan" essay is critical — be school-specific. Mention specific programs, research opportunities, campus culture.',
+      programs: {
+        totalMajors: 275,
+        popularMajors: ['Business Administration', 'Engineering', 'Economics', 'Psychology', 'Computer Science'],
+        uniquePrograms: 'Ross School of Business (top undergrad program). Strong engineering across all disciplines. Exceptional research opportunities. School of Music (Thornton), School of Kinesiology.',
+        curriculumHighlights: 'General Education requirements. Optional writing major. Strong research opportunities across disciplines. Extensive professional clubs and societies. Ann Arbor cultural scene is exceptional.',
+        preMedPath: 'Good pre-med program (~8% of students). Strong pre-med advising. University of Michigan Medical School on campus (graduate). Excellent biology and chemistry curriculum.',
+        preBusinessPath: 'Ross School of Business — top undergrad business program. Direct admit is extremely competitive (~8%). Apply LSA then transfer to Ross sophomore year is common and often easier.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, civil, chemical, and computer. Equal-strength program nationally. Good research and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Ross School of Business',
+            acceptanceRate: '8%',
+            notes: 'Top undergrad business school. Extremely selective direct admit. Transfer from LSA sophomore year is more common/easier.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '18%',
+            notes: 'Strong across all engineering disciplines. Excellent research and internships.'
+          },
+          {
+            name: 'College of Literature, Science, and the Arts (LSA)',
+            acceptanceRate: '22%',
+            notes: 'Largest school. Most accessible. Can transfer to Ross or pursue business minor/courses.'
+          },
+          {
+            name: 'School of Music, Theatre & Dance',
+            acceptanceRate: '20-25%',
+            notes: 'Performing arts. Audition-based for performance tracks.'
+          },
+          {
+            name: 'School of Kinesiology',
+            acceptanceRate: '25-30%',
+            notes: 'Exercise science, physical education, sports management.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '30-35%',
+            notes: 'Nursing program. More accessible entry point.'
+          }
+        ],
+        internalTransfers: 'Ross transfer from LSA is possible but competitive (higher than direct admit). Engineering transfers more common. Between LSA and other schools generally feasible.',
+        dualDegreePrograms: 'Ross/Engineering combinations exist. LSA/Ross dual possible through careful course planning.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Michigan uses EA (non-binding) — acceptance rate jumps to ~32% for EA vs 15-18% regular. School-specific acceptance rates vary dramatically. Ross direct admit is one of the hardest admits nationally.',
+        commonMistakes: 'Only applying to Ross when direct admit rate is ~8%. Not using EA when it offers major advantage. Not demonstrating enough interest for out-of-state applicants.',
+        hiddenGems: 'LSA → Ross transfer is more accessible (many students take this route). Ann Arbor is exceptional for college experience — strong community, restaurants, cultural scene. Go Blue Guarantee (families <$65K get free tuition, fees, housing).',
+        redditWisdom: 'AOs emphasize: "Know what school/major you want and why." Michigan values demonstrated interest. "Go Blue Guarantee" is genuinely generous.',
+        strategyTips: 'Use EA — acceptance jumps to ~32% vs 15-18% regular. If Ross-interested, apply LSA and transfer sophomore year (many do this). Research specific programs. Reference Ann Arbor community and culture.',
+      },
     },
     {
       school: 'University of Virginia',
@@ -1455,7 +1837,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~30-35% transfer acceptance',
       financialAid: 'AccessUVA: families <$60K pay $0. Meets 100% demonstrated need.',
       insiderTip: 'McIntire Commerce is one of the top business programs nationally but extremely hard to get into directly. Apply A&S and transfer to McIntire sophomore year — more students go this route. ED is smart for out-of-state applicants.',
-      essayStrategy: 'Show love for UVA\'s traditions — the Honor Code, student self-governance, Lawn living. Reference specific programs and the Charlottesville community.'
+      essayStrategy: 'Show love for UVA\'s traditions — the Honor Code, student self-governance, Lawn living. Reference specific programs and the Charlottesville community.',
+      programs: {
+        totalMajors: 120,
+        popularMajors: ['Business Administration', 'Engineering', 'Biology', 'Economics', 'Psychology'],
+        uniquePrograms: 'McIntire School of Commerce is top-tier business school (nationally ranked). Strong engineering program. Liberal Arts offers flexibility and breadth. Honor Code is central to UVA identity.',
+        curriculumHighlights: 'Strong general education requirements. Student-run Honor Code is unique differentiator. Lawn living (first-year students get central campus housing). Strong research opportunities.',
+        preMedPath: 'Moderate pre-med program (~7% of students). UVA School of Medicine on campus (graduate). Strong pre-med advising. Excellent biology/chemistry programs.',
+        preBusinessPath: 'McIntire School of Commerce — top undergrad business school. Direct admit is extremely competitive (~8%). A&S → McIntire transfer sophomore year is more common and often easier.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, chemical, and systems engineering. Solid but not at absolute top-tier level.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'McIntire School of Commerce',
+            acceptanceRate: '8%',
+            notes: 'Top undergrad business school. Direct admit extremely competitive. Transfer from A&S sophomore year is more feasible.'
+          },
+          {
+            name: 'School of Engineering & Applied Science',
+            acceptanceRate: '15%',
+            notes: 'Strong engineering program. Mechanical, electrical, chemical, systems engineering.'
+          },
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '18%',
+            notes: 'Largest school. Most accessible. Can transfer to McIntire or take business courses.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '20%',
+            notes: 'Nursing program. ACEN accredited.'
+          },
+          {
+            name: 'Curry School of Education and Human Development',
+            acceptanceRate: '22%',
+            notes: 'Education programs. More accessible than business/engineering.'
+          }
+        ],
+        internalTransfers: 'A&S → McIntire transfer sophomore year is common and often more successful than direct admit. Engineering transfers feasible. Good internal transfer system.',
+        dualDegreePrograms: 'McIntire/A&S combinations possible. Engineering dual degrees available.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UVA culture and traditions (Honor Code, Lawn, student self-governance) matter. McIntire direct admit is ~8% — extremely competitive. ED acceptance jumps to ~28-32% vs 14-16% regular.',
+        commonMistakes: 'Only applying to McIntire when direct admit is nearly impossible. Not showing understanding/love for UVA traditions and culture. Underestimating ED advantage for out-of-state.',
+        hiddenGems: 'A&S → McIntire transfer is more accessible path. Curry School of Education is solid and more accessible. The Honor Code and student governance actually create unique community.',
+        redditWisdom: 'AOs emphasize: "Show us you understand and value UVA\'s traditions." The Honor Code, Lawn, and student self-governance genuinely matter. McIntire transfers are common and successful.',
+        strategyTips: 'Apply A&S if interested in business — transfer to McIntire sophomore year is more accessible. Use ED if UVA is top choice (~28-32% vs 14-16%). Reference Honor Code and UVA traditions specifically.',
+      },
     },
     {
       school: 'University of North Carolina at Chapel Hill',
@@ -1466,7 +1897,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~35-40% transfer acceptance',
       financialAid: 'Carolina Covenant: families <$62K pay $0 for tuition, fees, room, board. One of the most generous public school programs.',
       insiderTip: 'UNC is required by NC law to admit 82% in-state students. Out-of-state is ~12% acceptance. The Carolina Covenant is exceptional — fully covers low-income students. Apply to General College, then internal transfer to competitive programs.',
-      essayStrategy: 'Show North Carolina connections if applicable. The short-answer essays should demonstrate community involvement, intellectual curiosity, and why UNC\'s specific culture appeals to you.'
+      essayStrategy: 'Show North Carolina connections if applicable. The short-answer essays should demonstrate community involvement, intellectual curiosity, and why UNC\'s specific culture appeals to you.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Business Administration', 'Biology', 'Psychology', 'Economics', 'Computer Science'],
+        uniquePrograms: 'Kenan-Flagler Business School is top-tier (no direct admit for undergrads, apply sophomore year). Strong research opportunities. Hussman School of Journalism is excellent. Nursing program.',
+        curriculumHighlights: 'General College requires broad exploration. Declare major later. Strong emphasis on research and service. Carolina Covenant provides exceptional financial aid. First-year seminars build community.',
+        preMedPath: 'Good pre-med program (~7% of students). UNC School of Medicine on campus (graduate). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'Kenan-Flagler Business School — top undergrad program. NO direct admit to business — all students apply sophomore year from General College. Internal acceptance is ~20-25% of applicants.',
+        engineeringPath: 'Solid engineering program. Applied sciences and engineering options available.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'General College (all freshmen)',
+            acceptanceRate: '17%',
+            notes: 'All first-year students enter General College. Declare major sophomore year.'
+          },
+          {
+            name: 'Kenan-Flagler School of Business',
+            acceptanceRate: '20-25% (internal)',
+            notes: 'Top business school. NO direct admit for undergrads. All students apply sophomore year. Competitive internal application.'
+          },
+          {
+            name: 'Hussman School of Journalism',
+            acceptanceRate: '30% (internal)',
+            notes: 'Excellent journalism program. Internal transfer sophomore year.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '25-30%',
+            notes: 'Nursing program. Direct admit available for some applicants.'
+          }
+        ],
+        internalTransfers: 'Kenan-Flagler internal transfer is ~20-25% for business majors — competitive. Journalism internal transfer is ~30%. Good internal transfer system for other programs.',
+        dualDegreePrograms: 'Kenan-Flagler/other major combinations possible. Most students focus on single major.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UNC is required by NC law to admit 82% in-state. Out-of-state acceptance is ~12% (extremely competitive). NO direct admit to Kenan-Flagler — all business students apply sophomore year.',
+        commonMistakes: 'Out-of-state applicants underestimating selectivity (~12% acceptance). Expecting to directly admit to business (doesn\'t exist). Not knowing about internal transfer process.',
+        hiddenGems: 'Carolina Covenant is one of most generous public school financial aid programs (families <$62K pay $0). Kenan-Flagler internal transfer is ~20-25% (more accessible than other schools\' direct admits). Research opportunities exceptional.',
+        redditWisdom: 'AOs emphasize: "Show us why you\'re excited about UNC specifically." In-state vs out-of-state disparity is real — out-of-state must be strategic. "Carolina Covenant is genuinely generous."',
+        strategyTips: 'Out-of-state: treat UNC as reach school (~12% acceptance). In-state with EA can reach ~36%. Don\'t expect Kenan-Flagler direct admit — apply sophomore year (all do). Reference NC connections if applicable.',
+      },
     },
     {
       school: 'Georgia Institute of Technology-Main Campus',
@@ -1477,7 +1952,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~30-35% transfer acceptance',
       financialAid: 'HOPE scholarship covers tuition for GA students with 3.0+ GPA. Zell Miller for 3.7+.',
       insiderTip: 'CS at Georgia Tech is harder to get into than most Ivies. Apply for less competitive major then transfer — but GT internal transfers are also competitive for CS. In-state advantage is enormous.',
-      essayStrategy: 'Show quantitative/analytical thinking even for non-STEM majors. GT wants problem-solvers.'
+      essayStrategy: 'Show quantitative/analytical thinking even for non-STEM majors. GT wants problem-solvers.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Engineering Science', 'Business Administration'],
+        uniquePrograms: 'CS is one of the best in the nation (top 5). Engineering programs are world-class across all disciplines. Ivan Allen College (Liberal Arts/International Affairs) is strong. Strong business and management programs.',
+        curriculumHighlights: 'Core curriculum is rigorous with emphasis on math/physics. Extensive research opportunities. Atlanta location provides internship access. Entrepreneurship and innovation emphasized.',
+        preMedPath: 'Rare pre-med path (~3% of students). Georgia Tech is STEM/engineering focused, not pre-med oriented.',
+        preBusinessPath: 'Scheller College of Business offers business majors. Not top-tier business school but solid consulting recruiting.',
+        engineeringPath: 'World-class engineering across all disciplines. CS program is in College of Computing (separate). Exceptional research opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'College of Computing (Computer Science)',
+            acceptanceRate: '8-10%',
+            notes: 'Top 5 CS program nationally. Extremely selective. Separate from engineering.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '15-20%',
+            notes: 'World-class across all disciplines. Mechanical, electrical, chemical, civil, aerospace.'
+          },
+          {
+            name: 'Ivan Allen College (Liberal Arts & Sciences)',
+            acceptanceRate: '25-30%',
+            notes: 'International affairs, public policy, humanities. Most accessible school.'
+          },
+          {
+            name: 'Scheller College of Business',
+            acceptanceRate: '20-25%',
+            notes: 'Business administration and management. Consulting recruiting.'
+          }
+        ],
+        internalTransfers: 'Very competitive especially into CS. Internal transfers to engineering exist but challenging. Better to choose right school initially.',
+        dualDegreePrograms: 'Engineering/Science combinations possible. CS/Engineering dual degree available but rare.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Georgia Tech CS is harder to get into than most Ivies (~8-10%). In-state vs out-of-state disparity is significant. HOPE/Zell Miller scholarships make it free for GA residents who qualify.',
+        commonMistakes: 'Out-of-state applicants underestimating Georgia Tech selectivity. Expecting to transfer into CS after admitting for different major (very competitive).',
+        hiddenGems: 'Ivan Allen College (Liberal Arts) is 25-30% acceptance — more accessible GT education. HOPE/Zell Miller scholarships are extremely generous for GA residents. Atlanta tech ecosystem is powerful.',
+        redditWisdom: 'AOs emphasize: "Show us your quantitative thinking and problem-solving." Atlanta location matters. CS internal transfers are extremely competitive.',
+        strategyTips: 'Apply EA for advantage. If CS-interested but concerned about acceptance, consider different major (but internal transfer is also hard). Out-of-state: treat as reach school.',
+      },
     },
     {
       school: 'University of Texas at Austin',
@@ -1488,7 +2007,61 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~25-30% external transfer acceptance',
       financialAid: 'Strong for TX residents. Texas Advance Commitment: families <$65K pay $0.',
       insiderTip: 'UT CS is one of the hardest programs to enter in the nation (~6-8% direct admit). Apply to less competitive college then try internal transfer, but UT has been tightening these. Auto-admit doesn\'t guarantee your major.',
-      essayStrategy: 'Apply A topics show leadership and responsibility. Topic B should be unique personal story. UT values Texas connections and community impact.'
+      essayStrategy: 'Apply A topics show leadership and responsibility. Topic B should be unique personal story. UT values Texas connections and community impact.',
+      programs: {
+        totalMajors: 170,
+        popularMajors: ['Computer Science', 'Business Administration', 'Engineering', 'Biology', 'Economics'],
+        uniquePrograms: 'CS program is one of the best in nation (top 5). McCombs Business School is top-tier. Cockrell Engineering is excellent. Strong across sciences and liberal arts.',
+        curriculumHighlights: 'Flexible curriculum. Declare major after freshman year. Exceptional research opportunities. Austin tech/startup ecosystem. Student organizations are outstanding.',
+        preMedPath: 'Good pre-med program (~8% of students). UT Dell Medical School on campus (very new, opening 2016). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'McCombs Business School — top undergrad business program. Direct admit is extremely competitive (~15%). Apply to other school then internal transfer.',
+        engineeringPath: 'Cockrell School of Engineering is excellent. Strong across mechanical, electrical, civil, chemical, and computer engineering.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Computer Science (within Natural Sciences)',
+            acceptanceRate: '6-8%',
+            notes: 'Top 5 CS program. Extremely selective. Direct admit is nearly impossible for out-of-state.'
+          },
+          {
+            name: 'McCombs School of Business',
+            acceptanceRate: '15%',
+            notes: 'Top business program. Very selective. Direct admit.'
+          },
+          {
+            name: 'Cockrell School of Engineering',
+            acceptanceRate: '17%',
+            notes: 'Excellent engineering. Strong across all disciplines.'
+          },
+          {
+            name: 'College of Natural Sciences',
+            acceptanceRate: '20-25%',
+            notes: 'Biology, chemistry, physics, mathematics. Can declare CS after freshman year (competitive).'
+          },
+          {
+            name: 'College of Liberal Arts',
+            acceptanceRate: '40%',
+            notes: 'Largest college. Most accessible entry point. Can try internal transfer later.'
+          },
+          {
+            name: 'College of Communications',
+            acceptanceRate: '20%',
+            notes: 'Journalism, advertising, media studies. Solid program.'
+          }
+        ],
+        internalTransfers: 'CS and McCombs internal transfers are competitive and being tightened. Better to apply directly or choose accessible major/school from start.',
+        dualDegreePrograms: 'McCombs/Engineering combinations possible. Some dual degree pathways available.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UT CS is one of the hardest programs in the nation to get into (~6-8%). Auto-admit (top 6% TX class) doesn\'t guarantee your major. School-specific acceptance rates vary dramatically.',
+        commonMistakes: 'Expecting auto-admit guarantees CS/McCombs admission (it doesn\'t). Thinking internal transfer to CS is viable (it\'s not). Not understanding college-specific acceptance rates.',
+        hiddenGems: 'Natural Sciences (20-25%) → internal CS transfer is theoretically possible but being restricted. Texas Advance Commitment (families <$65K get free tuition) is generous. Austin tech ecosystem is exceptional.',
+        redditWisdom: 'AOs emphasize: "Know what school you\'re applying to." Auto-admit is real but doesn\'t lock in major. UT values Texas connections and leadership.',
+        strategyTips: 'If CS-interested but concerned about acceptance, apply to Natural Sciences (20-25%). Don\'t bank on internal transfer (being tightened). Highlight Texas connections. Use Texas Advance Commitment info.',
+      },
     },
     {
       school: 'University of Florida',
@@ -1499,7 +2072,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~40-45% transfer acceptance (2+2 pathway with FL state colleges)',
       financialAid: 'Bright Futures covers tuition for FL students with qualifying GPA/test scores. Machen Florida Opportunity: families <$65K pay $0.',
       insiderTip: 'UF has a strong 2+2 program with Florida state colleges — guaranteed admission if you meet requirements. Bright Futures scholarship makes UF essentially free for many FL students. Innovation Academy is a unique spring/summer admit pathway.',
-      essayStrategy: 'Show Gator spirit and specific program knowledge. UF values leadership, community service, and Florida connections.'
+      essayStrategy: 'Show Gator spirit and specific program knowledge. UF values leadership, community service, and Florida connections.',
+      programs: {
+        totalMajors: 140,
+        popularMajors: ['Business Administration', 'Engineering', 'Biology', 'Psychology', 'Computer Science'],
+        uniquePrograms: 'Strong engineering program. Warrington Business is solid. CLAS offers breadth. Journalism program is well-regarded. College of Health and Human Performance.',
+        curriculumHighlights: 'General Education requirements. Research opportunities available. Strong student life and traditions. Florida Bright Futures funding makes education affordable for FL students. Innovation Academy (spring/summer admits).',
+        preMedPath: 'Good pre-med program (~7% of students). UF College of Medicine on campus (graduate). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'Warrington College of Business — solid business program. Consulting recruiting. Not top-tier but strong regionally.',
+        engineeringPath: 'Solid engineering across mechanical, civil, electrical, and chemical engineering. Good research and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Warrington College of Business',
+            acceptanceRate: '15%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '18%',
+            notes: 'Strong engineering programs. ABET accredited.'
+          },
+          {
+            name: 'College of Journalism & Communications',
+            acceptanceRate: '22%',
+            notes: 'Well-regarded journalism/communications programs.'
+          },
+          {
+            name: 'College of Liberal Arts & Sciences (CLAS)',
+            acceptanceRate: '28%',
+            notes: 'Largest college. Most accessible entry point.'
+          },
+          {
+            name: 'College of Health & Human Performance',
+            acceptanceRate: '25-30%',
+            notes: 'Health sciences, exercise science, physical education.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Generally feasible with good GPA.',
+        dualDegreePrograms: 'Business/Engineering combinations possible. Some dual degree pathways.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UF is rolling admissions — apply early for advantage. Bright Futures scholarship makes it free/very cheap for FL students. 2+2 pathway with state colleges is a legitimate and often excellent strategy.',
+        commonMistakes: 'Out-of-state applicants underestimating that Bright Futures makes UF attractive for FL residents. Not understanding 2+2 community college pathway (often better deal).',
+        hiddenGems: 'The 2+2 pathway with Florida community colleges is genuinely strong — guaranteed admission and often leads to successful outcomes. Innovation Academy (spring/summer admits) is an unconventional but viable pathway. Bright Futures generosity.',
+        redditWisdom: 'AOs emphasize: "Show Gator spirit and specific program interests." Bright Futures is genuinely generous. Rolling admissions means early application helps.',
+        strategyTips: 'FL residents: apply early to maximize Bright Futures coverage. Consider 2+2 community college pathway if available — can be better financial/academic fit. Show leadership and community service.',
+      },
     },
     {
       school: 'University of Illinois Urbana-Champaign',
@@ -1510,7 +2132,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~45-50% transfer acceptance',
       financialAid: 'Illinois Commitment: families <$67K pay $0 tuition. Strong for IL residents.',
       insiderTip: 'UIUC CS is a top-5 program nationally and harder to get into than most Ivies (~6-8%). Apply to CS+X (interdisciplinary CS programs in LAS) for better odds — still access to CS courses. Apply LAS then try internal transfer to Grainger CS (very competitive).',
-      essayStrategy: 'For Grainger Engineering/CS, show strong STEM passion and specific projects. For LAS, show intellectual breadth. Mention specific programs, research opportunities, or student organizations.'
+      essayStrategy: 'For Grainger Engineering/CS, show strong STEM passion and specific projects. For LAS, show intellectual breadth. Mention specific programs, research opportunities, or student organizations.',
+      programs: {
+        totalMajors: 180,
+        popularMajors: ['Computer Science', 'Engineering', 'Business Administration', 'Psychology', 'Biology'],
+        uniquePrograms: 'CS program is top-5 nationally (one of best). Engineering is world-class across disciplines. Grainger School of Engineering is top-tier. Illinois Innovation Network.',
+        curriculumHighlights: 'Strong general education requirements. Declare major by end of first year. Exceptional research opportunities. Engineering/business emphasis throughout. Extensive student organizations.',
+        preMedPath: 'Moderate pre-med program (~6% of students). University of Illinois College of Medicine on campus (Urbana). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'Gies College of Business is solid. Not top-tier but strong consulting/finance recruiting.',
+        engineeringPath: 'Grainger School of Engineering is world-class. All engineering disciplines are excellent. Strong research and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Department of Computer Science (in Grainger)',
+            acceptanceRate: '6-8%',
+            notes: 'Top 5 CS program nationally. Extremely selective. Direct admit is nearly impossible.'
+          },
+          {
+            name: 'Grainger School of Engineering',
+            acceptanceRate: '20%',
+            notes: 'World-class engineering across all disciplines. ABET accredited.'
+          },
+          {
+            name: 'Gies College of Business',
+            acceptanceRate: '30%',
+            notes: 'Solid business program. AACSB accredited. Consulting recruiting.'
+          },
+          {
+            name: 'College of Liberal Arts & Sciences (LAS)',
+            acceptanceRate: '60%',
+            notes: 'Largest college. Most accessible. CS+X interdisciplinary options available.'
+          }
+        ],
+        internalTransfers: 'CS internal transfer is extremely competitive. Engineering transfers possible but challenging. LAS → other schools feasible.',
+        dualDegreePrograms: 'Engineering/Business dual degrees exist. CS+X programs allow CS depth with interdisciplinary focus.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UIUC CS is one of the hardest programs in the nation (~6-8%) — harder than most Ivies. Overall acceptance rate is 45% but school-specific rates vary dramatically.',
+        commonMistakes: 'Assuming 45% overall acceptance applies to CS (it\'s 6-8%). Not understanding school-specific selectivity. Expecting LAS → Grainger CS internal transfer (very competitive).',
+        hiddenGems: 'CS+X programs (interdisciplinary CS in LAS) offer better odds while still accessing CS curriculum. LAS (60%) is much more accessible entry point. Illinois Commitment covers tuition for IL residents <$67K.',
+        redditWisdom: 'AOs emphasize: "Know which school you\'re applying to." UIUC CS is world-class and extremely selective. LAS offers flexibility.',
+        strategyTips: 'If CS-interested, understand extreme selectivity (~6-8%). Consider CS+X in LAS for better odds. Apply EA for priority. Show STEM passion for engineering/CS programs.',
+      },
     },
     {
       school: 'University of Wisconsin-Madison',
@@ -1521,7 +2187,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~50-55% transfer acceptance',
       financialAid: 'Bucky\'s Tuition Promise: families <$60K pay $0 tuition for WI residents.',
       insiderTip: 'Apply to L&S then transfer to Business if that\'s your goal — direct admit to Business is competitive. UW-Madison is a massive research university with incredible resources. Strong for pre-med, engineering, and political science.',
-      essayStrategy: 'Show intellectual curiosity and how you\'ll take advantage of UW\'s breadth. Mention specific programs, the Wisconsin Idea, or research opportunities.'
+      essayStrategy: 'Show intellectual curiosity and how you\'ll take advantage of UW\'s breadth. Mention specific programs, the Wisconsin Idea, or research opportunities.',
+      programs: {
+        totalMajors: 200,
+        popularMajors: ['Business Administration', 'Engineering', 'Biology', 'Psychology', 'Computer Science'],
+        uniquePrograms: 'Strong engineering program. Wisconsin School of Business is solid. Excellent across sciences and liberal arts. "Wisconsin Idea" emphasizes research and service to society. Strong pre-med.',
+        curriculumHighlights: 'Flexible general education. Declare major by end of first year. Exceptional research opportunities. Campus beautiful on Lake Mendota. Strong student life traditions.',
+        preMedPath: 'Good pre-med program (~7% of students). UW School of Medicine on campus (graduate). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'Wisconsin School of Business — solid business program. Direct admit is competitive (~25%). L&S → business transfer is feasible alternative.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, civil, and chemical engineering. Good research opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Wisconsin School of Business',
+            acceptanceRate: '25%',
+            notes: 'Solid business program. Direct admit. AACSB accredited.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '35%',
+            notes: 'Strong across mechanical, electrical, civil, chemical engineering.'
+          },
+          {
+            name: 'College of Letters & Science',
+            acceptanceRate: '55%',
+            notes: 'Largest college. Most accessible. Can transfer to business or engineering with good GPA.'
+          },
+          {
+            name: 'School of Nursing',
+            acceptanceRate: '30%',
+            notes: 'Nursing program. ACEN accredited.'
+          }
+        ],
+        internalTransfers: 'L&S → Business transfer is possible but competitive. Engineering transfers available. Generally more feasible than at top universities.',
+        dualDegreePrograms: 'Business/Engineering combinations possible. Some dual degree pathways.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Wisconsin uses EA (Early Action) — acceptance jumps to ~60% vs ~49% regular. Direct admit to business is competitive (~25%) but less so than peer schools.',
+        commonMistakes: 'Not using EA when it offers significant advantage (~60% vs ~49%). Assuming 49% acceptance applies to business/engineering when rates vary.',
+        hiddenGems: 'Bucky\'s Tuition Promise (WI residents <$60K get free tuition). L&S → Business transfer is more accessible than direct admit. Madison is an exceptional college town.',
+        redditWisdom: 'AOs emphasize: "Show intellectual curiosity and how you\'ll engage with UW community." Wisconsin Idea matters. Madison\'s culture is unique.',
+        strategyTips: 'Use EA for advantage (~60% acceptance). If business-interested, apply L&S and transfer (more accessible than direct admit). WI residents: leverage Bucky\'s Tuition Promise.',
+      },
     },
     {
       school: 'Purdue University-Main Campus',
@@ -1532,7 +2242,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~50-55% transfer acceptance',
       financialAid: 'Purdue Promise: families <$60K pay $0 for tuition/fees. Frozen tuition since 2012.',
       insiderTip: 'Purdue CS/Engineering is dramatically harder than overall acceptance suggests. Apply to Exploratory Studies or Polytechnic then transfer if you don\'t get direct admit. Purdue has frozen tuition since 2012 — exceptional value.',
-      essayStrategy: 'For Engineering/CS, show passion for the specific field and reference Purdue\'s research strengths. Mention the tuition freeze and value proposition as evidence you\'ve done your research.'
+      essayStrategy: 'For Engineering/CS, show passion for the specific field and reference Purdue\'s research strengths. Mention the tuition freeze and value proposition as evidence you\'ve done your research.',
+      programs: {
+        totalMajors: 200,
+        popularMajors: ['Engineering', 'Computer Science', 'Business Administration', 'Biology', 'Agriculture'],
+        uniquePrograms: 'Strong engineering across all disciplines. CS program is excellent. Krannert Business School is solid. Agricultural engineering and agricultural sciences. Polytechnic Institute.',
+        curriculumHighlights: 'General Education requirements. Declare major in freshman or sophomore year. Strong research opportunities. Frozen tuition since 2012 (no increases). Innovation ecosystem.',
+        preMedPath: 'Moderate pre-med program (~6% of students). Purdue School of Pharmacy and Pharmaceutical Sciences on campus (graduate). Strong pre-med advising. Good biology curriculum.',
+        preBusinessPath: 'Krannert School of Business is solid. Business/Engineering combinations strong. Management/engineering dual tracks available.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, civil, chemical, and computer engineering. Research-focused. Good internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Department of Computer Science',
+            acceptanceRate: '18-22%',
+            notes: 'Strong CS program. More accessible than top-tier competitors.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '40%',
+            notes: 'Strong across all engineering disciplines. ABET accredited.'
+          },
+          {
+            name: 'Krannert School of Business',
+            acceptanceRate: '45%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'Polytechnic Institute',
+            acceptanceRate: '50-55%',
+            notes: 'More accessible engineering pathway. Can transition to main engineering with performance.'
+          },
+          {
+            name: 'College of Liberal Arts',
+            acceptanceRate: '70%',
+            notes: 'Most accessible entry point.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Liberal Arts → Engineering transfers feasible. Generally more accessible than peer universities.',
+        dualDegreePrograms: 'Engineering/Business dual degree programs available. Engineering management pathways.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Purdue CS/Engineering are much more selective (18-40%) than overall 53% acceptance suggests. Frozen tuition since 2012 is a major financial advantage.',
+        commonMistakes: 'Assuming 53% acceptance applies to engineering/CS (it doesn\'t). Not understanding frozen tuition advantage. Not using EA.',
+        hiddenGems: 'Purdue Promise covers tuition for families <$60K. Frozen tuition since 2012 is exceptional value long-term. Polytechnic Institute is accessible alternative to main engineering.',
+        redditWisdom: 'AOs emphasize: "Purdue is value-focused." Frozen tuition matters. Engineering students build strong networks.',
+        strategyTips: 'Use EA for advantage (~65% vs 53%). If engineering-interested but concerned, consider Polytechnic Institute. Highlight long-term value with frozen tuition.',
+      },
     },
     {
       school: 'University of Washington-Seattle Campus',
@@ -1543,7 +2302,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~50% transfer acceptance',
       financialAid: 'Husky Promise: families <$65K pay $0 for tuition (WA residents).',
       insiderTip: 'UW CS direct admission is among the hardest in the country (~8-10%). Most CS students get in through competitive major application after freshman year — but this is also very competitive. Apply to Informatics or pre-science then try for CS.',
-      essayStrategy: 'Short-answer format. Show connection to Pacific Northwest values, intellectual curiosity, and specific UW programs. Mention research opportunities and Seattle\'s tech ecosystem.'
+      essayStrategy: 'Short-answer format. Show connection to Pacific Northwest values, intellectual curiosity, and specific UW programs. Mention research opportunities and Seattle\'s tech ecosystem.',
+      programs: {
+        totalMajors: 160,
+        popularMajors: ['Computer Science', 'Engineering', 'Business Administration', 'Biology', 'Psychology'],
+        uniquePrograms: 'CS program is top-tier (top 10). Engineering is excellent. Foster School of Business is solid. Strong research focus. Seattle tech ecosystem.',
+        curriculumHighlights: 'General Education requirements. Declare major in freshman/sophomore year. Exceptional research opportunities. Access to tech companies (Google, Amazon, Microsoft). Strong internship market.',
+        preMedPath: 'Good pre-med program (~6% of students). UW School of Medicine on campus (graduate, primary care focus). Strong pre-med advising. Excellent biology curriculum.',
+        preBusinessPath: 'Foster School of Business — solid business program. CS + business combinations strong. Tech industry recruiting.',
+        engineeringPath: 'Strong engineering across mechanical, electrical, civil, and computer engineering. Seattle tech ecosystem provides internships.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Paul G. Allen School of Computer Science & Engineering',
+            acceptanceRate: '8-10%',
+            notes: 'Top 10 CS program. Extremely selective. Direct admit is nearly impossible.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '25%',
+            notes: 'Strong across all engineering disciplines.'
+          },
+          {
+            name: 'Foster School of Business',
+            acceptanceRate: '20%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'College of Arts & Sciences',
+            acceptanceRate: '55%',
+            notes: 'Largest college. Most accessible. Can apply for CS major sophomore year (competitive).'
+          }
+        ],
+        internalTransfers: 'CS major application sophomore year is competitive. Engineering transfers possible. A&S → other school feasible.',
+        dualDegreePrograms: 'Engineering/Business combinations possible. CS/Math dual tracks available.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'UW CS is among hardest admits in nation (~8-10%). Overall 48% acceptance is misleading — major-specific rates vary dramatically. Rolling admissions means early application helps.',
+        commonMistakes: 'Assuming 48% applies to CS/engineering (it doesn\'t). Expecting A&S → CS major application is viable (very competitive). Not applying early.',
+        hiddenGems: 'Husky Promise (WA residents <$65K get free tuition) is generous. Informatics major offers CS-adjacent path. Seattle tech ecosystem is extraordinary for internships/jobs.',
+        redditWisdom: 'AOs emphasize: "UW values service and community engagement." Seattle location matters. Tech ecosystem is huge advantage.',
+        strategyTips: 'Apply early (rolling admissions). If CS-interested, understand extreme selectivity. Consider Informatics major for better odds. WA residents: use Husky Promise.',
+      },
     },
     {
       school: 'Virginia Polytechnic Institute and State University',
@@ -1554,7 +2357,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~60% transfer acceptance',
       financialAid: 'Strong for VA residents. VT Guarantee for low-income families.',
       insiderTip: 'Virginia Tech Engineering is top-tier and much more competitive than the overall rate suggests. CS is also increasingly competitive. The Corps of Cadets is a unique differentiator. Strong agricultural and natural resource programs.',
-      essayStrategy: 'Show Hokie spirit. Reference Ut Prosim (That I May Serve) and specific programs. VT values community, service, and hands-on learning.'
+      essayStrategy: 'Show Hokie spirit. Reference Ut Prosim (That I May Serve) and specific programs. VT values community, service, and hands-on learning.',
+      programs: {
+        totalMajors: 140,
+        popularMajors: ['Engineering', 'Computer Science', 'Business Administration', 'Biology', 'Agriculture'],
+        uniquePrograms: 'Top-tier engineering program across all disciplines. CS program increasingly competitive. Strong agricultural sciences and natural resources. Corps of Cadets provides leadership development.',
+        curriculumHighlights: 'Strong core curriculum emphasis on service ("Ut Prosim — That I May Serve"). Declare major by sophomore year. Hands-on learning with research opportunities. Corps of Cadets optional leadership track.',
+        preMedPath: 'Moderate pre-med program (~6% of students). Virginia Tech Carilion School of Medicine on campus (graduate, integrated program). Good pre-med advising.',
+        preBusinessPath: 'Pamplin College of Business is solid. Not top-tier but good recruiting for consulting/finance.',
+        engineeringPath: 'Top-tier engineering across mechanical, electrical, civil, aerospace, and computer engineering. Strong research opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Department of Computer Science',
+            acceptanceRate: '30%',
+            notes: 'Increasingly competitive. Strong program.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '45%',
+            notes: 'Top-tier across all disciplines. ABET accredited.'
+          },
+          {
+            name: 'Pamplin College of Business',
+            acceptanceRate: '50%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'College of Liberal Arts & Human Sciences',
+            acceptanceRate: '65%',
+            notes: 'Largest college. Includes agriculture, natural resources.'
+          },
+          {
+            name: 'College of Agriculture & Life Sciences',
+            acceptanceRate: '70%',
+            notes: 'Agricultural sciences, forestry, natural resources. Most accessible.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Engineering transfers competitive. Liberal arts transfers more feasible.',
+        dualDegreePrograms: 'Engineering/Business combinations possible. Agricultural/environmental science dual tracks.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Virginia Tech engineering is much more selective (45%) than overall 57% acceptance suggests. Corps of Cadets provides unique military-style leadership development (optional). ED acceptance jumps to ~70-75% vs 50% regular.',
+        commonMistakes: 'Assuming 57% applies to engineering/CS. Not understanding Hokie/Ut Prosim culture matters. Overlooking Corps of Cadets as differentiator.',
+        hiddenGems: 'Corps of Cadets (optional) creates unique leadership development and tight community. Agricultural programs are overlooked but strong. Liberal Arts provides accessible entry with transfer options.',
+        redditWisdom: 'AOs emphasize: "We value Hokie spirit and community service." Ut Prosim and hands-on learning genuinely important. Corps provides unique experience.',
+        strategyTips: 'Use ED if VT is top choice (~70-75% vs 50%). Show Hokie spirit and service orientation. If engineering-interested, understand higher selectivity. Consider Corps of Cadets.',
+      },
     },
     {
       school: 'Texas A & M University-College Station',
@@ -1565,7 +2417,56 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~50-55% transfer acceptance',
       financialAid: 'Aggie Assurance: families <$60K pay $0 tuition. Strong for TX residents.',
       insiderTip: 'A&M Engineering is one of the largest in the nation and quality is high. Mays Business is competitive for direct admit. The Aggie Network is one of the most powerful alumni networks nationally. Corps of Cadets provides unique leadership development.',
-      essayStrategy: 'Show alignment with Aggie values — selfless service, integrity, respect, excellence. A&M cares deeply about tradition and community. Reference specific programs and the Core Values.'
+      essayStrategy: 'Show alignment with Aggie values — selfless service, integrity, respect, excellence. A&M cares deeply about tradition and community. Reference specific programs and the Core Values.',
+      programs: {
+        totalMajors: 150,
+        popularMajors: ['Engineering', 'Business Administration', 'Agriculture', 'Computer Science', 'Biology'],
+        uniquePrograms: 'One of largest engineering schools in nation. Strong across all disciplines. Mays Business School is solid. Agricultural engineering and sciences are distinctive. Corps of Cadets leadership program.',
+        curriculumHighlights: 'Strong core curriculum with Aggie values (selfless service, integrity, respect, excellence). Declare major by sophomore year. Hands-on learning. Corps of Cadets optional leadership development. Strong traditions.',
+        preMedPath: 'Moderate pre-med program (~6% of students). Texas A&M College of Medicine on campus (graduate). Strong pre-med advising. Good biology curriculum.',
+        preBusinessPath: 'Mays College of Business — solid business program. Direct admit competitive (~25%). Consulting and finance recruiting.',
+        engineeringPath: 'One of the largest engineering schools. Excellent across all disciplines. Strong research and internship opportunities.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Mays Business School',
+            acceptanceRate: '25%',
+            notes: 'Solid business program. Direct admit. AACSB accredited.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '35%',
+            notes: 'One of largest in nation. Strong across all disciplines. ABET accredited.'
+          },
+          {
+            name: 'Department of Computer Science',
+            acceptanceRate: '25-30%',
+            notes: 'Increasingly competitive. Good program.'
+          },
+          {
+            name: 'College of Liberal Arts',
+            acceptanceRate: '75%',
+            notes: 'Most accessible entry point.'
+          },
+          {
+            name: 'College of Agriculture & Life Sciences',
+            acceptanceRate: '70%',
+            notes: 'Agricultural engineering, sciences, natural resources. Strong programs.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Generally more feasible than peer universities.',
+        dualDegreePrograms: 'Engineering/Business combinations possible. Agricultural/environmental science dual tracks.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'A&M is known for strong traditions and values (Aggie Code). Corps of Cadets (optional) is unique differentiator. Aggie Network is one of most powerful alumni networks. Rolling admissions means apply early.',
+        commonMistakes: 'Not understanding A&M\'s strong cultural/values focus. Underestimating power of Aggie Network. Not emphasizing service/integrity in essays.',
+        hiddenGems: 'Aggie Assurance (families <$60K get free tuition). Corps of Cadets optional but creates tremendous value/network. Agricultural programs are excellent. Tradition and community are genuine assets.',
+        redditWisdom: 'AOs emphasize: "A&M values service, integrity, and tradition." Aggie Core Values genuinely matter. Whip Rule and traditions are real.',
+        strategyTips: 'Show Aggie values alignment (selfless service, integrity, respect, excellence). Reference specific programs and traditions. Consider Corps of Cadets for leadership development. TX residents: use Aggie Assurance.',
+      },
     },
     {
       school: 'North Carolina State University at Raleigh',
@@ -1576,7 +2477,51 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~50-55% transfer acceptance',
       financialAid: 'Pack Promise: families <$60K pay $0 tuition (NC residents).',
       insiderTip: 'NC State CS and Engineering are hidden gems — top programs at state school prices. The Research Triangle location provides incredible internship and job opportunities. Strong co-op programs.',
-      essayStrategy: 'Reference the Research Triangle, specific labs, and industry partnerships. Show you understand NC State\'s practical, applied approach to education.'
+      essayStrategy: 'Reference the Research Triangle, specific labs, and industry partnerships. Show you understand NC State\'s practical, applied approach to education.',
+      programs: {
+        totalMajors: 130,
+        popularMajors: ['Engineering', 'Computer Science', 'Business Administration', 'Biology', 'Psychology'],
+        uniquePrograms: 'Top-tier engineering program across all disciplines. Strong CS program. Poole College of Management is solid. Research Triangle location. Co-op programs integrated.',
+        curriculumHighlights: 'Strong general education. Declare major by sophomore year. Co-op programs in many majors. Research Triangle provides exceptional internship/career access. Student-focused culture.',
+        preMedPath: 'Moderate pre-med program (~6% of students). UNC School of Medicine and Duke School of Medicine nearby in Research Triangle. Good pre-med advising.',
+        preBusinessPath: 'Poole College of Management — solid business program. Research Triangle recruiting opportunities. AACSB accredited.',
+        engineeringPath: 'Top-tier engineering across mechanical, electrical, civil, aerospace, and chemical. Co-op programs. Strong internship/job market.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: true,
+        schools: [
+          {
+            name: 'Department of Computer Science',
+            acceptanceRate: '20%',
+            notes: 'Strong CS program. Top in region.'
+          },
+          {
+            name: 'College of Engineering',
+            acceptanceRate: '35%',
+            notes: 'Top-tier across all disciplines. ABET accredited.'
+          },
+          {
+            name: 'Poole College of Management',
+            acceptanceRate: '40%',
+            notes: 'Solid business program. AACSB accredited.'
+          },
+          {
+            name: 'College of Humanities & Social Sciences (CHASS)',
+            acceptanceRate: '60%',
+            notes: 'Most accessible entry point.'
+          }
+        ],
+        internalTransfers: 'Possible between schools. Generally more feasible than peer universities.',
+        dualDegreePrograms: 'Engineering/Business combinations possible. CS/Math dual tracks.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'NC State CS and Engineering are excellent but less selective than peer institutions. Research Triangle location is major advantage for internships/careers. Pack Promise generous for NC residents.',
+        commonMistakes: 'Overlooking NC State due to perceived lower prestige (programs are genuinely strong). Not leveraging Research Triangle connections.',
+        hiddenGems: 'Research Triangle (UNC, Duke, NC State) creates unmatched career opportunity. Co-op programs provide real work experience. Pack Promise (NC residents <$60K get free tuition).',
+        redditWisdom: 'AOs emphasize: "NC State values practical, applied learning." Research Triangle is huge advantage. Industry partnerships are exceptional.',
+        strategyTips: 'Use EA for advantage (~55% vs 47%). Reference Research Triangle location and internship opportunities. NC residents: leverage Pack Promise. Strong value proposition overall.',
+      },
     },
 
     // ==================== TOP LIBERAL ARTS (6) ====================
@@ -1589,7 +2534,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~3-5% transfer acceptance (very few spots)',
       financialAid: 'Need-blind, meets 100% need. Families <$75K pay $0.',
       insiderTip: 'Williams ED is extremely powerful — roughly 4-5x the RD rate. The tutorial system (2 students + 1 professor) is unique and should be mentioned. Smallest class sizes of any top college.',
-      essayStrategy: 'Show genuine love for learning and intellectual curiosity. Reference the tutorial system, Winter Study term, and specific professors. Williams values students who will contribute to a small, close-knit community.'
+      essayStrategy: 'Show genuine love for learning and intellectual curiosity. Reference the tutorial system, Winter Study term, and specific professors. Williams values students who will contribute to a small, close-knit community.',
+      programs: {
+        totalMajors: 45,
+        popularMajors: ['Economics', 'History', 'Mathematics', 'English', 'Biology'],
+        uniquePrograms: 'Tutorial system (unique to Williams — 2 students + 1 professor seminars). Winter Study term (one-month January term for specialized courses). Open curriculum (no core requirements). Exceptional faculty engagement.',
+        curriculumHighlights: 'Open curriculum — no requirements, students design education. Tutorial system emphasizes discussion/writing. Winter Study term offers specialized topics. Faculty accessibility is exceptional. Small class sizes (highest in nation).',
+        preMedPath: 'Strong pre-med program (~10-12% of students). Excellent biology and chemistry programs. Strong pre-med advising. Outstanding placement to medical schools.',
+        preBusinessPath: 'No dedicated business school. Economics major is strong preparation. Finance/economics pathway available.',
+        engineeringPath: 'No engineering school. Physics and mathematics are strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Williams College (single admissions)',
+            acceptanceRate: '9%',
+            notes: 'All students admitted to same college. No separate schools. ~550 students per class.'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. Open curriculum allows broad customization.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Williams ED is extraordinarily powerful (~30-35% vs 6% RD). Tutorial system is genuinely unique and differentiating. Winter Study term allows deep specialization.',
+        commonMistakes: 'Not using ED when advantage is massive. Not mentioning tutorial system/Winter Study in essays. Underestimating appeal of open curriculum.',
+        hiddenGems: 'Open curriculum means infinite customization and no distribution requirements (unlike most LACs). Tutorial system creates rare depth of faculty engagement. Winter Study allows pursuing niche interests.',
+        redditWisdom: 'AOs emphasize: "Show us you\'ll thrive in our academic culture." Tutorial system and open curriculum genuinely matter. Close-knit community is central.',
+        strategyTips: 'Use ED if Williams is top choice (~30-35% vs 6% RD). Reference tutorial system and Winter Study specifically. Show intellectual curiosity. Emphasize fit with close-knit community.',
+      },
     },
     {
       school: 'Amherst College',
@@ -1600,7 +2574,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~3-5% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. No loans in financial aid packages.',
       insiderTip: 'Amherst\'s open curriculum is a major draw — like Brown but at a small LAC. The Five College Consortium effectively gives you access to a university-scale course catalog. ED is a strong advantage.',
-      essayStrategy: 'Show intellectual independence and self-direction. Reference the open curriculum and how you\'d design your education. The Five College Consortium is a unique selling point to mention.'
+      essayStrategy: 'Show intellectual independence and self-direction. Reference the open curriculum and how you\'d design your education. The Five College Consortium is a unique selling point to mention.',
+      programs: {
+        totalMajors: 50,
+        popularMajors: ['Economics', 'English', 'History', 'Mathematics', 'Biology'],
+        uniquePrograms: 'Open curriculum (no core requirements — unique among top LACs). Five College Consortium allows courses at UMass, Smith, Hampshire, Mt. Holyoke. Exceptional faculty access.',
+        curriculumHighlights: 'Radical open curriculum — no requirements, no general education. Students design entire education. Five College Consortium provides university-scale course options. Small classes and exceptional faculty mentorship.',
+        preMedPath: 'Strong pre-med program (~12% of students). Excellent biology and chemistry. Strong pre-med advising and medical school placement.',
+        preBusinessPath: 'No dedicated business school. Economics major strong. Finance/economics pathway available.',
+        engineeringPath: 'No engineering school. Physics and mathematics strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Amherst College (single admissions)',
+            acceptanceRate: '7%',
+            notes: 'Single admissions pool. ~430 students per class. Five College Consortium access.'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. Open curriculum allows infinite customization.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Amherst open curriculum is genuinely radical — literally no requirements at all. Five College Consortium gives unmatched flexibility/breadth. ED advantage is significant (~25-30% vs 5% RD).',
+        commonMistakes: 'Underestimating appeal of open curriculum. Not mentioning Five College Consortium. Assuming LAC = less selective than Ivies (Amherst is peer to Ivies).',
+        hiddenGems: 'Open curriculum is rarer than you\'d think — Brown has requirements, most LACs require distribution. Five College Consortium effectively gives university-scale options. Class of ~430 means real access to faculty/community.',
+        redditWisdom: 'AOs emphasize: "Show intellectual self-direction." Open curriculum truly appeals to independent thinkers. Amherst values intellectual curiosity and community engagement.',
+        strategyTips: 'Use ED if Amherst is top choice (~25-30% vs 5% RD). Highlight open curriculum appeal in essays. Reference Five College options. Show intellectual independence.',
+      },
     },
     {
       school: 'Pomona College',
@@ -1611,7 +2614,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~2-4% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. One of the wealthiest LACs per student.',
       insiderTip: 'Pomona + the Claremont Consortium gives you a LAC experience with university-level resources and course options. Southern California location is underrated for internships and outdoor access. Extremely generous financial aid.',
-      essayStrategy: 'Reference the Consortium advantage, specific courses across the 5C schools, and California\'s unique environment. Show why a small school in Southern California is your ideal fit.'
+      essayStrategy: 'Reference the Consortium advantage, specific courses across the 5C schools, and California\'s unique environment. Show why a small school in Southern California is your ideal fit.',
+      programs: {
+        totalMajors: 46,
+        popularMajors: ['Economics', 'Biology', 'English', 'History', 'Mathematics'],
+        uniquePrograms: 'Claremont Consortium (5C) allows access to world-class courses at Harvey Mudd, CMC, Scripps, Pitzer, Pomona. Open curriculum (no core requirements). Exceptional faculty engagement.',
+        curriculumHighlights: 'Open curriculum with no requirements. Claremont Consortium gives university-scale course catalog (essentially 5 institutions). Small classes and outstanding faculty. Southern CA location for internships/research.',
+        preMedPath: 'Strong pre-med program (~12% of students). Excellent biology and chemistry. Strong pre-med advising. Consortium access to specialized science courses at Harvey Mudd.',
+        preBusinessPath: 'No dedicated business school. Economics major is strong. Consortium access to CMC business courses.',
+        engineeringPath: 'No engineering at Pomona but can take engineering courses at Harvey Mudd through Consortium.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Pomona College (single admissions)',
+            acceptanceRate: '7%',
+            notes: 'Single admissions pool. ~380 students per class. Claremont Consortium access (5C schools).'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. Open curriculum + Consortium provides extensive flexibility.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Pomona\'s Claremont Consortium is genuinely valuable — essentially 5 institutions for course selection. Open curriculum means no requirements. ED advantage is solid (~18-22% vs 5% RD).',
+        commonMistakes: 'Underestimating Consortium value. Not understanding Southern CA location advantages. Overlooking Pomona\'s financial aid generosity.',
+        hiddenGems: 'Claremont Consortium + open curriculum is unmatched combination — LAC community + university-scale resources. Harvey Mudd science/engineering courses accessible. SoCal location for internships/research.',
+        redditWisdom: 'AOs emphasize: "Show us you\'ll thrive in our collaborative community." Consortium truly matters. Southern CA environment is differentiating.',
+        strategyTips: 'Use ED if Pomona is top choice (~18-22% vs 5% RD). Reference Consortium specifically. Highlight SoCal location advantages. Show collaborative spirit.',
+      },
     },
     {
       school: 'Bowdoin College',
@@ -1622,7 +2654,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~3-5% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. No loans in financial aid.',
       insiderTip: 'Bowdoin was the original test-optional school (since 1969) — if your scores don\'t reflect your ability, Bowdoin is ideal. ED is very powerful here. The food is famously excellent. Maine location is a draw for outdoors-loving students.',
-      essayStrategy: 'Show you value community and the liberal arts. Reference Bowdoin\'s specific offerings and why Maine\'s environment appeals to you. Be authentic and personal.'
+      essayStrategy: 'Show you value community and the liberal arts. Reference Bowdoin\'s specific offerings and why Maine\'s environment appeals to you. Be authentic and personal.',
+      programs: {
+        totalMajors: 50,
+        popularMajors: ['Economics', 'English', 'History', 'Mathematics', 'Biology'],
+        uniquePrograms: 'Test-optional pioneer since 1969. Open curriculum (no core requirements). Exceptional food services (dining is famous). Outdoor emphasis (Maine location). Small residential community.',
+        curriculumHighlights: 'Open curriculum with no requirements. Maine location emphasizes outdoor learning/research. First-year seminars build community. Outstanding faculty access. Residential college experience.',
+        preMedPath: 'Strong pre-med program (~10-12% of students). Excellent biology and chemistry. Strong pre-med advising. Great pre-med placement.',
+        preBusinessPath: 'No dedicated business school. Economics major strong.',
+        engineeringPath: 'No engineering school. Physics and mathematics strong.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Bowdoin College (single admissions)',
+            acceptanceRate: '8.5%',
+            notes: 'Single admissions pool. ~500 students per class. Test-optional since 1969.'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. Open curriculum allows customization.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Bowdoin test-optional since 1969 (predecessor to modern test-optional movement). ED advantage very strong (~25-30% vs 5-6% RD). Food services genuinely legendary.',
+        commonMistakes: 'Not using ED when advantage is significant. Underestimating Maine location appeal. Assuming test scores must be submitted.',
+        hiddenGems: 'Test-optional pioneer — ideal for strong applicants with weak standardized test scores. Maine location creates tight community and outdoor culture. Dining services are genuinely top-notch.',
+        redditWisdom: 'AOs emphasize: "We value community and service." Test-optional is genuine (not performative). Maine culture matters.',
+        strategyTips: 'Use ED if Bowdoin is top choice (~25-30% vs 5-6% RD). Consider test-optional route if scores don\'t reflect ability. Highlight outdoor interests or Maine connection.',
+      },
     },
     {
       school: 'Swarthmore College',
@@ -1633,7 +2694,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~3-5% transfer acceptance',
       financialAid: 'Need-blind, meets 100% need. $0 family contribution for incomes <$60K.',
       insiderTip: 'Swarthmore is the most academically intense LAC — students call it "Swatties" for a reason. The Honors Program is unique in American higher education. Also one of the few LACs with an accredited engineering program. Tri-College Consortium with Haverford and Bryn Mawr.',
-      essayStrategy: 'Show intellectual depth and genuine academic passion. Reference the Honors Program, specific departments, and the Tri-College Consortium. Swarthmore values students who love learning deeply.'
+      essayStrategy: 'Show intellectual depth and genuine academic passion. Reference the Honors Program, specific departments, and the Tri-College Consortium. Swarthmore values students who love learning deeply.',
+      programs: {
+        totalMajors: 45,
+        popularMajors: ['Engineering', 'Biology', 'Economics', 'Chemistry', 'Mathematics'],
+        uniquePrograms: 'Honors Program (unique in American higher ed — small seminars with external examiners). ABET-accredited engineering (rare for LAC). Tri-College Consortium with Haverford/Bryn Mawr. Most academically intense LAC.',
+        curriculumHighlights: 'Honors seminars (junior/senior) with external examiners. Regular seminars junior/senior years. Exceptional research opportunities. Tri-College access. Most rigorous academics among LACs.',
+        preMedPath: 'Excellent pre-med program (~12-14% of students). Outstanding biology and chemistry. Strong pre-med advising and medical school placement. Most rigorous pre-med curriculum.',
+        preBusinessPath: 'No dedicated business school. Economics major strong.',
+        engineeringPath: 'Accredited engineering program (ABET). Civil, electrical, mechanical engineering. Unique strength for LAC.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Swarthmore College (single admissions)',
+            acceptanceRate: '7%',
+            notes: 'Single admissions pool. ~380 students per class. Tri-College Consortium access.'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. Open curriculum allows customization.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Swarthmore is academically most intense LAC. Honors Program is genuinely unique (external examiners). ABET engineering at LAC is rare. ED advantage strong (~22-28% vs 5% RD).',
+        commonMistakes: 'Underestimating academic rigor (Swarthmore is known for intensity). Not understanding Honors Program significance. Assuming all LACs are equally selective.',
+        hiddenGems: 'Honors Program with external examiners is unique intellectual experience. ABET engineering is rare at LAC level. Tri-College Consortium adds resources. Most rigorous LAC academics.',
+        redditWisdom: 'AOs emphasize: "Show genuine intellectual passion." Swarthmore values deep learning and intensity. Honors Program is differentiating.',
+        strategyTips: 'Use ED if Swarthmore is top choice (~22-28% vs 5% RD). Show intellectual depth and academic passion. Reference Honors Program. Understand academic intensity.',
+      },
     },
     {
       school: 'Wellesley College',
@@ -1644,7 +2734,36 @@ function getCuratedAdmissionsIntel() {
       transferRate: '~15-20% transfer acceptance (including Davis Degree program for non-traditional students)',
       financialAid: 'Need-blind for US, meets 100% need. Families <$60K pay $0.',
       insiderTip: 'Wellesley + MIT cross-registration is an incredibly powerful combination — LAC experience with access to MIT courses and research. Davis Scholars program for non-traditional students. Strong alumnae network (Hillary Clinton, Madeleine Albright).',
-      essayStrategy: 'Show why a women\'s college appeals to you specifically. Reference MIT cross-registration if STEM-interested. Wellesley values leadership, intellectual ambition, and community contribution.'
+      essayStrategy: 'Show why a women\'s college appeals to you specifically. Reference MIT cross-registration if STEM-interested. Wellesley values leadership, intellectual ambition, and community contribution.',
+      programs: {
+        totalMajors: 60,
+        popularMajors: ['Economics', 'Biology', 'Mathematics', 'English', 'Political Science'],
+        uniquePrograms: 'MIT cross-registration (take MIT courses while at Wellesley). All-women\'s college with strong alumnae network. Science programs enhanced by MIT access. Davis Degree program (non-traditional).',
+        curriculumHighlights: 'Open curriculum with some degree of choice. Exceptional science programs (enhanced by MIT access). First-year experiences. MIT courses accessible. Strong women\'s leadership emphasis.',
+        preMedPath: 'Excellent pre-med program (~12% of students). Strong biology and chemistry. MIT science courses available. Outstanding pre-med placement.',
+        preBusinessPath: 'No dedicated business school. Economics major strong. MIT Sloan courses accessible for interested students.',
+        engineeringPath: 'No engineering at Wellesley but can take engineering courses at MIT. MIT connection provides extraordinary STEM access.',
+      },
+      schoolStructure: {
+        hasMultipleSchools: false,
+        schools: [
+          {
+            name: 'Wellesley College (single admissions)',
+            acceptanceRate: '13%',
+            notes: 'Single admissions pool. ~600 students per class. MIT cross-registration available.'
+          }
+        ],
+        internalTransfers: 'No internal transfers — single admissions pool.',
+        dualDegreePrograms: 'No dual degrees. MIT cross-registration provides flexibility.',
+      },
+      communityIntel: {
+        source: 'r/ApplyingToCollege, College Confidential, Reddit',
+        admissionsQuirks: 'Wellesley + MIT cross-registration is genuinely powerful (LAC + world-class STEM access). Women\'s college identity is central to mission. Alumnae network is extraordinarily strong (Hillary, Madeleine Albright, etc.).',
+        commonMistakes: 'Assuming women\'s college is limiting (it\'s empowering and creates strong sisterhood). Underestimating MIT cross-registration value. Not understanding alumnae network strength.',
+        hiddenGems: 'MIT cross-registration is unmatched advantage — take courses at top engineering/CS school while getting LAC experience. Women\'s college creates leadership opportunities for women. Alumnae network is elite.',
+        redditWisdom: 'AOs emphasize: "Understand what it means to be part of a women\'s college." MIT access genuinely matters for STEM. Alumnae network matters.',
+        strategyTips: 'Use ED if Wellesley is top choice (~30-35% vs 10% RD). If STEM-interested, emphasize MIT cross-registration. Reference women\'s leadership and empowerment.',
+      },
     }
   ];
 }
