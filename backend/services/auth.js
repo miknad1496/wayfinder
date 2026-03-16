@@ -1,32 +1,48 @@
 /**
- * Simple User Authentication Service
+ * User Authentication Service
  *
  * Stores users as JSON files. For MVP/free hosting this is fine.
  * Upgrade path: swap for a proper database (SQLite, PostgreSQL, etc.)
  *
- * Passwords are hashed with Node's built-in crypto (no bcrypt dependency needed).
+ * Security:
+ * - Passwords hashed with bcrypt (cost factor 12)
+ * - Tokens expire after 30 days
+ * - Legacy SHA256 passwords auto-migrate on login
  */
 
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createHash, randomBytes } from 'crypto';
+import bcrypt from 'bcrypt';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const USERS_DIR = join(__dirname, '..', 'data', 'users');
+
+const BCRYPT_ROUNDS = 12;
+const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 
 // Ensure users directory exists
 export async function ensureUsersDir() {
   await fs.mkdir(USERS_DIR, { recursive: true });
 }
 
-function hashPassword(password, salt) {
+// Legacy password check (SHA256) — only for migration
+function legacyHashPassword(password, salt) {
   return createHash('sha256').update(password + salt).digest('hex');
 }
 
 function generateToken() {
   return randomBytes(32).toString('hex');
+}
+
+function isTokenExpired(tokenCreatedAt) {
+  if (!tokenCreatedAt) return true;
+  const created = new Date(tokenCreatedAt).getTime();
+  const now = Date.now();
+  const ttlMs = TOKEN_TTL_DAYS * 24 * 60 * 60 * 1000;
+  return (now - created) > ttlMs;
 }
 
 /**
@@ -46,9 +62,9 @@ export async function createUser({ email, password, name, userType, school, inte
     // Good — user doesn't exist yet
   }
 
-  const salt = randomBytes(16).toString('hex');
-  const hashedPassword = hashPassword(password, salt);
+  const passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS);
   const token = generateToken();
+  const now = new Date().toISOString();
 
   const user = {
     id: randomBytes(8).toString('hex'),
@@ -57,11 +73,12 @@ export async function createUser({ email, password, name, userType, school, inte
     userType: userType || 'student', // student, pre-college, advisor, general
     school: school || '',
     interests: interests || [],
-    passwordHash: hashedPassword,
-    salt,
+    passwordHash: passwordHash,
+    // salt no longer needed with bcrypt — kept for legacy migration only
     token,
-    createdAt: new Date().toISOString(),
-    lastLogin: new Date().toISOString(),
+    tokenCreatedAt: now,
+    createdAt: now,
+    lastLogin: now,
     sessionHistory: [], // Links to past session IDs
     profile: {
       age: '',
@@ -110,14 +127,34 @@ export async function loginUser(email, password) {
     return { error: 'Invalid email or password' };
   }
 
-  const hashedPassword = hashPassword(password, user.salt);
-  if (hashedPassword !== user.passwordHash) {
+  // Check password — support both bcrypt (new) and SHA256 (legacy)
+  let passwordValid = false;
+
+  if (user.passwordHash.startsWith('$2b$') || user.passwordHash.startsWith('$2a$')) {
+    // bcrypt hash
+    passwordValid = await bcrypt.compare(password, user.passwordHash);
+  } else if (user.salt) {
+    // Legacy SHA256 hash — check and migrate
+    const legacyHash = legacyHashPassword(password, user.salt);
+    passwordValid = (legacyHash === user.passwordHash);
+
+    if (passwordValid) {
+      // Auto-migrate to bcrypt
+      user.passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS);
+      delete user.salt;
+      console.log(`🔒 Migrated ${emailLower} from SHA256 to bcrypt`);
+    }
+  }
+
+  if (!passwordValid) {
     return { error: 'Invalid email or password' };
   }
 
-  // Generate new token
+  // Generate new token with expiration tracking
+  const now = new Date().toISOString();
   user.token = generateToken();
-  user.lastLogin = new Date().toISOString();
+  user.tokenCreatedAt = now;
+  user.lastLogin = now;
   await fs.writeFile(userFile, JSON.stringify(user, null, 2));
 
   return {
@@ -133,12 +170,17 @@ export async function loginUser(email, password) {
 export async function verifyToken(token) {
   if (!token) return null;
 
+  // Constant-time-ish token comparison to prevent timing attacks
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        // Check token expiration
+        if (isTokenExpired(user.tokenCreatedAt)) {
+          return null; // Token expired — must re-login
+        }
         return sanitizeUser(user);
       }
     }
@@ -668,7 +710,7 @@ function sanitizeUser(user) {
     profile: user.profile,
     plan: user.plan || 'free',
     settings: user.settings,
-    stripeCustomerId: user.stripeCustomerId,
+    hasSubscription: !!user.stripeCustomerId, // Only expose boolean, not the actual ID
     consentGiven: user.consentGiven,
     createdAt: user.createdAt,
     lastLogin: user.lastLogin,

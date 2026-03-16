@@ -1,8 +1,76 @@
 import { Router } from 'express';
 import Stripe from 'stripe';
+import rateLimit from 'express-rate-limit';
+import { promises as fs } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { verifyToken, updateUserPlan, findUserByStripeCustomerId, findUserByToken } from '../services/auth.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const router = Router();
+
+// ---- Rate limiters for payment endpoints ----
+const checkoutLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 5, // 5 checkout attempts per minute per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many checkout requests. Please wait a moment.' }
+});
+
+const portalLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests. Please wait a moment.' }
+});
+
+const webhookLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 60, // Stripe can send bursts of webhooks
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many webhook requests.' }
+});
+
+// ---- Idempotency: track processed webhook event IDs ----
+const processedEvents = new Set();
+const MAX_PROCESSED_EVENTS = 10000;
+
+function markEventProcessed(eventId) {
+  processedEvents.add(eventId);
+  // Prevent memory leak — trim oldest entries
+  if (processedEvents.size > MAX_PROCESSED_EVENTS) {
+    const entries = Array.from(processedEvents);
+    for (let i = 0; i < entries.length - MAX_PROCESSED_EVENTS / 2; i++) {
+      processedEvents.delete(entries[i]);
+    }
+  }
+}
+
+// ---- Audit logging for payment events ----
+const AUDIT_DIR = join(__dirname, '..', 'data', 'audit');
+
+async function auditLog(event, details) {
+  try {
+    await fs.mkdir(AUDIT_DIR, { recursive: true });
+    const entry = {
+      timestamp: new Date().toISOString(),
+      event,
+      ...details
+    };
+    const filename = `${new Date().toISOString().slice(0, 10)}-stripe.log`;
+    await fs.appendFile(
+      join(AUDIT_DIR, filename),
+      JSON.stringify(entry) + '\n'
+    );
+  } catch (err) {
+    console.error('Audit log write failed:', err.message);
+  }
+}
 
 // Initialize Stripe — requires STRIPE_SECRET_KEY in env
 function getStripe() {
@@ -21,7 +89,7 @@ const PRICE_IDS = {
  * POST /api/stripe/create-checkout
  * Creates a Stripe Checkout session for upgrading to premium or pro
  */
-router.post('/create-checkout', async (req, res) => {
+router.post('/create-checkout', checkoutLimiter, async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
     const user = await verifyToken(token);
@@ -85,7 +153,7 @@ router.post('/create-checkout', async (req, res) => {
  * POST /api/stripe/webhook
  * Handles Stripe webhooks for subscription events
  */
-router.post('/webhook', async (req, res) => {
+router.post('/webhook', webhookLimiter, async (req, res) => {
   const stripe = getStripe();
   const sig = req.headers['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -93,14 +161,47 @@ router.post('/webhook', async (req, res) => {
   let event;
   try {
     if (webhookSecret) {
+      // PRODUCTION: Verify webhook signature — this is critical
       event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
-    } else {
-      // In development without webhook signing
+    } else if (process.env.NODE_ENV !== 'production') {
+      // DEVELOPMENT ONLY: Allow unsigned events for local testing
+      console.warn('⚠️  Webhook signature verification SKIPPED (dev mode only)');
       event = JSON.parse(req.body.toString());
+    } else {
+      // PRODUCTION without webhook secret = REJECT
+      console.error('🚫 STRIPE_WEBHOOK_SECRET not set in production — rejecting webhook');
+      await auditLog('webhook_rejected', { reason: 'Missing webhook secret in production' });
+      return res.status(500).send('Webhook secret not configured');
     }
   } catch (err) {
     console.error('Webhook signature verification failed:', err.message);
+    await auditLog('webhook_sig_failed', { error: err.message, ip: req.ip });
     return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  // Idempotency check — prevent double-processing
+  if (event.id && processedEvents.has(event.id)) {
+    console.log(`ℹ️ Skipping already-processed event: ${event.id}`);
+    return res.json({ received: true, duplicate: true });
+  }
+
+  // Validate event structure
+  if (!event.type || !event.data?.object) {
+    await auditLog('webhook_malformed', { eventId: event.id });
+    return res.status(400).send('Malformed event');
+  }
+
+  // Only process events we expect
+  const ALLOWED_EVENTS = [
+    'checkout.session.completed',
+    'customer.subscription.updated',
+    'customer.subscription.deleted',
+    'invoice.payment_failed'
+  ];
+
+  if (!ALLOWED_EVENTS.includes(event.type)) {
+    // Silently acknowledge events we don't handle
+    return res.json({ received: true });
   }
 
   try {
@@ -108,18 +209,26 @@ router.post('/webhook', async (req, res) => {
       case 'checkout.session.completed': {
         const session = event.data.object;
         const plan = session.metadata?.plan;
-        const wayfinderId = session.metadata?.wayfinderId;
         const customerId = session.customer;
 
-        if (plan && customerId) {
+        // Validate plan value
+        if (!plan || !['premium', 'pro'].includes(plan)) {
+          await auditLog('webhook_invalid_plan', { plan, customerId, eventId: event.id });
+          break;
+        }
+
+        if (customerId) {
           const user = await findUserByStripeCustomerId(customerId);
           if (user) {
             await updateUserPlan(user.token, {
               plan: plan,
               stripeCustomerId: customerId,
-              planExpiresAt: null // subscription is ongoing
+              planExpiresAt: null
             });
+            await auditLog('plan_upgrade', { email: user.email, plan, customerId, eventId: event.id });
             console.log(`✅ User ${user.email} upgraded to ${plan}`);
+          } else {
+            await auditLog('webhook_user_not_found', { customerId, eventId: event.id });
           }
         }
         break;
@@ -131,22 +240,24 @@ router.post('/webhook', async (req, res) => {
 
         if (subscription.status === 'active') {
           const plan = subscription.metadata?.plan || 'premium';
+          if (!['premium', 'pro'].includes(plan)) break;
           const user = await findUserByStripeCustomerId(customerId);
           if (user) {
             await updateUserPlan(user.token, { plan });
+            await auditLog('subscription_updated', { email: user.email, plan, eventId: event.id });
           }
         }
         break;
       }
 
       case 'customer.subscription.deleted': {
-        // Subscription cancelled or expired — downgrade to free
         const subscription = event.data.object;
         const customerId = subscription.customer;
 
         const user = await findUserByStripeCustomerId(customerId);
         if (user) {
           await updateUserPlan(user.token, { plan: 'free', planExpiresAt: null });
+          await auditLog('plan_downgrade', { email: user.email, reason: 'subscription_deleted', eventId: event.id });
           console.log(`⬇️ User ${user.email} downgraded to free (subscription ended)`);
         }
         break;
@@ -158,18 +269,19 @@ router.post('/webhook', async (req, res) => {
 
         const user = await findUserByStripeCustomerId(customerId);
         if (user) {
+          await auditLog('payment_failed', { email: user.email, customerId, eventId: event.id });
           console.warn(`⚠️ Payment failed for ${user.email}`);
-          // Don't immediately downgrade — Stripe will retry
         }
         break;
       }
-
-      default:
-        // Unhandled event type
-        break;
     }
+
+    // Mark as processed (idempotency)
+    if (event.id) markEventProcessed(event.id);
+
   } catch (err) {
     console.error('Webhook processing error:', err);
+    await auditLog('webhook_error', { error: err.message, eventId: event.id });
   }
 
   res.json({ received: true });
@@ -179,7 +291,7 @@ router.post('/webhook', async (req, res) => {
  * POST /api/stripe/portal
  * Creates a Stripe Customer Portal session for managing subscription
  */
-router.post('/portal', async (req, res) => {
+router.post('/portal', portalLimiter, async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
     const fullUser = await findUserByToken(token);
