@@ -1399,8 +1399,12 @@ html, body { overflow-x: hidden; }
 }
 .invite-send-row input {
   flex: 1;
+  min-width: 0;
+  width: auto;
 }
 .invite-send-row .form-btn {
+  width: auto;
+  flex-shrink: 0;
   padding: 10px 20px;
 }
 
