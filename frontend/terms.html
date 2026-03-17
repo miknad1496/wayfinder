@@ -255,13 +255,16 @@
                 <li><a href="#account-registration">Account Registration</a></li>
                 <li><a href="#acceptable-use">Acceptable Use</a></li>
                 <li><a href="#subscription-plans">Subscription Plans & Payments</a></li>
+                <li><a href="#service-availability">Service Availability</a></li>
                 <li><a href="#intellectual-property">Intellectual Property</a></li>
                 <li><a href="#ai-disclaimer">AI Disclaimer</a></li>
                 <li><a href="#limitation-of-liability">Limitation of Liability</a></li>
                 <li><a href="#indemnification">Indemnification</a></li>
                 <li><a href="#dispute-resolution">Dispute Resolution</a></li>
+                <li><a href="#data-breach">Data Breach Notification</a></li>
                 <li><a href="#privacy">Privacy</a></li>
                 <li><a href="#termination">Termination</a></li>
+                <li><a href="#survival-clause">Survival Clause</a></li>
                 <li><a href="#changes-to-terms">Changes to Terms</a></li>
                 <li><a href="#governing-law">Governing Law</a></li>
                 <li><a href="#contact">Contact Information</a></li>
@@ -358,6 +361,15 @@
 
                 <h3>Monitoring and Enforcement</h3>
                 <p>Wayfinder reserves the right to monitor user activity for compliance with these Terms. We may remove content, suspend accounts, or terminate access to users who violate these Terms. We are not obligated to notify you before taking such action, though we will attempt to do so when feasible.</p>
+
+                <h3>Rate Limiting and Fair Use</h3>
+                <p>To ensure fair access and platform stability, Wayfinder enforces rate limits on API usage:</p>
+                <ul>
+                    <li><strong>Automated Access Prohibited:</strong> You may not use bots, scripts, or automated tools to access Wayfinder without explicit written permission</li>
+                    <li><strong>Rate Limits by Plan:</strong> Each subscription tier includes specified rate limits on queries and API calls. These limits are enforced to provide equitable access to all users</li>
+                    <li><strong>Abuse Detection:</strong> Wayfinder monitors for unusual patterns of access, including rapid-fire requests, bulk data extraction attempts, or other activities that exceed normal usage</li>
+                    <li><strong>Enforcement:</strong> Users who exceed rate limits or engage in abusive access patterns may face temporary rate limiting, service suspension, or permanent termination of their account</li>
+                </ul>
             </section>
 
             <section id="subscription-plans">
@@ -404,6 +416,44 @@
 
                 <h3>Failed Payments</h3>
                 <p>If a payment fails, Wayfinder will attempt to retry billing using the payment method on file. If payment ultimately fails, your account may be downgraded to the Free plan or suspended until payment is received. Repeated failed payments may result in account termination.</p>
+            </section>
+
+            <section id="service-availability">
+                <h2>5.1. Service Availability</h2>
+
+                <h3>Dependency on Third-Party Services</h3>
+                <p>Wayfinder relies on several third-party services to operate:</p>
+                <ul>
+                    <li><strong>Anthropic API:</strong> Claude AI processing and career guidance</li>
+                    <li><strong>Stripe:</strong> Payment processing and subscription management</li>
+                    <li><strong>Render:</strong> Infrastructure and hosting</li>
+                    <li><strong>Resend:</strong> Email delivery for notifications and reminders</li>
+                </ul>
+                <p>Service availability depends on the continued operation and reliability of these third-party providers.</p>
+
+                <h3>No Uptime Guarantee or SLA</h3>
+                <p>Wayfinder does not guarantee any specific level of service availability, uptime, or performance. We do not maintain a formal Service Level Agreement (SLA). The Service is provided on an "as-available" basis without guarantees of uninterrupted access.</p>
+
+                <h3>Service Interruptions</h3>
+                <p>Wayfinder may experience interruptions due to:</p>
+                <ul>
+                    <li>Scheduled maintenance and system updates</li>
+                    <li>Unscheduled maintenance necessary to address security issues or system failures</li>
+                    <li>Third-party service outages or failures beyond our control</li>
+                    <li>Network failures or infrastructure issues</li>
+                    <li>High traffic or resource constraints</li>
+                </ul>
+                <p>We will attempt to provide notice of scheduled maintenance, but emergency maintenance may occur without advance notice.</p>
+
+                <h3>Right to Modify or Discontinue</h3>
+                <p>Wayfinder reserves the right to:</p>
+                <ul>
+                    <li>Modify, suspend, or discontinue any feature or service at any time</li>
+                    <li>Change pricing, features, or functionality</li>
+                    <li>Impose usage limits or rate restrictions</li>
+                    <li>Discontinue the Service entirely</li>
+                </ul>
+                <p>While we will attempt to provide notice of material changes, we are not required to do so. Your continued use of Wayfinder constitutes acceptance of any modifications.</p>
             </section>
 
             <section id="intellectual-property">
@@ -480,6 +530,19 @@
 
                 <h3>No Warranties</h3>
                 <p>Wayfinder makes no warranties that the information provided is accurate, complete, current, or suitable for your purposes. The Service is provided "as-is" without warranties of any kind, express or implied.</p>
+
+                <h3>Essay Review Disclaimer</h3>
+                <div class="warning-box">
+                    <p><strong>IMPORTANT - ESSAY REVIEW LIMITATION:</strong> Essay reviews provided through Wayfinder are AI-generated suggestions and recommendations. They are NOT professional editing services, writing coaching, or admissions consulting.</p>
+                </div>
+                <ul>
+                    <li><strong>Not Professional Editing:</strong> Essay reviews are generated by Claude AI and do not constitute professional writing, editing, or admissions consulting services</li>
+                    <li><strong>No Guarantee of Admission:</strong> Wayfinder makes no guarantee, representation, or warranty that following essay review suggestions will result in college admission, improved essay scores, or any specific outcome</li>
+                    <li><strong>No Liability for Admissions Outcomes:</strong> Wayfinder is not liable for admissions decisions, rejections, or outcomes of any kind based on essays reviewed through our service</li>
+                    <li><strong>Third-Party AI Processing:</strong> Essays are processed by Anthropic's Claude AI. By submitting essays for review, you acknowledge and consent to this processing by a third-party AI system</li>
+                    <li><strong>Data Privacy for Essays:</strong> Essay content is handled according to our Privacy Policy and Anthropic's data practices. Please review both policies before submitting sensitive content</li>
+                    <li><strong>Human Review Recommended:</strong> We strongly recommend that you have your essays reviewed by human professionals, including teachers, counselors, or professional editors, before submission</li>
+                </ul>
             </section>
 
             <section id="limitation-of-liability">
@@ -533,8 +596,45 @@
                 <p>Notwithstanding the foregoing, either party may bring an individual claim in small claims court for claims under $10,000 if the claim qualifies for small claims court jurisdiction in the relevant jurisdiction.</p>
             </section>
 
+            <section id="data-breach">
+                <h2>11. Data Breach Notification</h2>
+
+                <h3>Breach Notification Commitment</h3>
+                <p>In the event of a confirmed data breach that compromises the confidentiality, integrity, or security of personal information, Wayfinder is committed to notifying affected users promptly. We will notify you as soon as reasonably practical, but in no case later than 72 hours after confirming the breach.</p>
+
+                <h3>Notification Methods</h3>
+                <p>Breach notifications will be provided through multiple channels to ensure you receive the information:</p>
+                <ul>
+                    <li><strong>Email Notification:</strong> We will send a detailed notification email to the email address associated with your Wayfinder account</li>
+                    <li><strong>In-App Notice:</strong> If you are logged into Wayfinder when we discover a breach, you will see an urgent in-app notification</li>
+                    <li><strong>Website Notice:</strong> A notice may be posted on the Wayfinder website and social media channels</li>
+                </ul>
+
+                <h3>Breach Notification Content</h3>
+                <p>Breach notifications will include the following information, to the extent known:</p>
+                <ul>
+                    <li>Description of what happened and the nature of the security incident</li>
+                    <li>Identification of what types of personal information were affected (e.g., names, email addresses, passwords, etc.)</li>
+                    <li>Steps you should take to protect yourself (e.g., change your password, monitor your accounts)</li>
+                    <li>Mitigation measures we have taken or are taking to prevent future breaches</li>
+                    <li>Contact information for questions and assistance</li>
+                </ul>
+
+                <h3>Your Responsibility</h3>
+                <p>Upon notification of a breach, you should:</p>
+                <ul>
+                    <li>Change your Wayfinder password immediately</li>
+                    <li>Monitor your accounts and financial information for suspicious activity</li>
+                    <li>Contact Wayfinder at privacy@wayfinderai.org if you have questions or concerns</li>
+                    <li>Review the detailed information provided in the breach notification</li>
+                </ul>
+
+                <h3>Law Enforcement Cooperation</h3>
+                <p>If we are required by law enforcement or legal process to delay notification of a breach, we will cooperate with such requests. Once the legal hold is lifted, we will promptly notify affected users.</p>
+            </section>
+
             <section id="privacy">
-                <h2>11. Privacy</h2>
+                <h2>12. Privacy</h2>
 
                 <p>Your use of Wayfinder is also governed by our Privacy Policy, which is incorporated by reference into these Terms. Please review our Privacy Policy at <a href="/privacy">/privacy</a> to understand our practices regarding the collection, use, and protection of your personal information.</p>
 
@@ -542,7 +642,7 @@
             </section>
 
             <section id="termination">
-                <h2>12. Termination</h2>
+                <h2>13. Termination</h2>
 
                 <h3>Termination by You</h3>
                 <p>You may terminate your account at any time by logging into your account and selecting "Delete Account." When you delete your account:</p>
@@ -576,8 +676,26 @@
                 <p>After your account is terminated, we will delete your personal data according to our Privacy Policy. However, we may retain anonymized or aggregated data for research and improvement purposes.</p>
             </section>
 
+            <section id="survival-clause">
+                <h2>14. Survival Clause</h2>
+
+                <h3>Survival of Terms Upon Termination</h3>
+                <p>Certain sections of these Terms of Service shall survive termination of your account or these Terms and shall continue to apply indefinitely:</p>
+                <ul>
+                    <li><strong>Limitation of Liability (Section 8):</strong> Your liability protections and limitations on damages continue after termination</li>
+                    <li><strong>Indemnification (Section 9):</strong> Your obligation to indemnify Wayfinder survives termination</li>
+                    <li><strong>Intellectual Property (Section 6):</strong> Wayfinder's intellectual property rights and your license restrictions survive termination</li>
+                    <li><strong>Dispute Resolution (Section 10):</strong> Binding arbitration and class action waiver apply to disputes arising before or after termination</li>
+                    <li><strong>Data Breach Notification (Section 11):</strong> Our obligations to notify you of breaches continue</li>
+                    <li><strong>Governing Law (Section 15):</strong> Washington State law governs these Terms after termination</li>
+                </ul>
+
+                <h3>Effect of Survival</h3>
+                <p>The survival of these provisions means that termination of your account does not relieve you or Wayfinder of obligations or liabilities that were incurred or accrued before termination. You remain bound by these provisions even after your account is deleted or access is terminated.</p>
+            </section>
+
             <section id="changes-to-terms">
-                <h2>13. Changes to Terms</h2>
+                <h2>15. Changes to Terms</h2>
 
                 <h3>Right to Modify</h3>
                 <p>Wayfinder reserves the right to modify these Terms at any time. Changes will be effective 30 days after they are posted to the Wayfinder website. For material changes, we will attempt to notify you via email to your registered email address.</p>
@@ -596,7 +714,7 @@
             </section>
 
             <section id="governing-law">
-                <h2>14. Governing Law</h2>
+                <h2>16. Governing Law</h2>
 
                 <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Washington, without regard to its conflict of law principles.</p>
 
@@ -604,7 +722,7 @@
             </section>
 
             <section id="contact">
-                <h2>15. Contact Information</h2>
+                <h2>17. Contact Information</h2>
 
                 <p>If you have questions, concerns, or disputes regarding these Terms of Service, please contact us:</p>
 
