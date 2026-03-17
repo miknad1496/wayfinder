@@ -3,7 +3,7 @@ services:
     name: wayfinder
     runtime: node
     plan: starter
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm run build && git checkout -- backend/data/scraped/
     startCommand: npm start
     envVars:
       - key: NODE_ENV

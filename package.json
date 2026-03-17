@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd backend && node server.js",
     "dev:frontend": "cd frontend && npx vite --port 3000",
-    "build": "cd frontend && npx vite build",
+    "build": "cd frontend && npx vite build && cd .. && git checkout -- backend/data/scraped/",
     "scrape": "cd backend && node scrapers/run-all.js",
     "scrape:bls": "cd backend && node scrapers/bls-scraper.js",
     "scrape:onet": "cd backend && node scrapers/onet-scraper.js",
