@@ -22,6 +22,8 @@ const USERS_DIR = join(__dirname, '..', 'data', 'users');
 
 const BCRYPT_ROUNDS = 12;
 const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
+const MAX_LOGIN_ATTEMPTS = 5;
+const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 
 // ─── Plan Configuration ──────────────────────────────────────────
 // Internal plan keys: free / pro / elite
@@ -31,10 +33,18 @@ const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 const PLAN_DISPLAY_NAMES = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
 
 // Admin emails — can switch plans to test tier behavior, always get elite limits
-const ADMIN_EMAILS = ['danielyungkim@hotmail.com'];
+// Load from env, fallback to hardcoded defaults
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'danielyungkim@hotmail.com')
+  .split(',')
+  .map(e => e.toLowerCase().trim())
+  .filter(Boolean);
 
 // VIP emails — always get elite-tier access (not admin, just full access)
-const VIP_EMAILS = ['mhrkim@yahoo.com'];
+// Load from env, fallback to hardcoded defaults
+const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com')
+  .split(',')
+  .map(e => e.toLowerCase().trim())
+  .filter(Boolean);
 const PLAN_LIMITS = {
   free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
   pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
@@ -106,6 +116,26 @@ function isTokenExpired(tokenCreatedAt) {
 }
 
 /**
+ * Validate password strength.
+ * Requirements: minimum 8 characters, at least one number and one letter
+ */
+function validatePasswordStrength(password) {
+  if (!password) {
+    return { valid: false, error: 'Password is required' };
+  }
+  if (password.length < 8) {
+    return { valid: false, error: 'Password must be at least 8 characters' };
+  }
+  if (!/[0-9]/.test(password)) {
+    return { valid: false, error: 'Password must contain at least one number' };
+  }
+  if (!/[a-zA-Z]/.test(password)) {
+    return { valid: false, error: 'Password must contain at least one letter' };
+  }
+  return { valid: true };
+}
+
+/**
  * Create a new user account.
  */
 export async function createUser({ email, password, name, userType, school, interests }) {
@@ -113,6 +143,12 @@ export async function createUser({ email, password, name, userType, school, inte
 
   const emailLower = email.toLowerCase().trim();
   const userFile = join(USERS_DIR, `${emailLower.replace(/[^a-z0-9]/g, '_')}.json`);
+
+  // Validate password strength
+  const passValidation = validatePasswordStrength(password);
+  if (!passValidation.valid) {
+    return { error: passValidation.error };
+  }
 
   // Check if user exists
   try {
@@ -139,6 +175,9 @@ export async function createUser({ email, password, name, userType, school, inte
     tokenCreatedAt: now,
     createdAt: now,
     lastLogin: now,
+    failedLoginAttempts: 0,
+    lastFailedLoginAt: null,
+    accountLockedUntil: null,
     sessionHistory: [], // Links to past session IDs
     profile: {
       age: '',
@@ -210,6 +249,20 @@ export async function loginUser(email, password) {
     return { error: 'Invalid email or password' };
   }
 
+  // Check if account is locked
+  if (user.accountLockedUntil) {
+    const lockUntil = new Date(user.accountLockedUntil).getTime();
+    const now = Date.now();
+    if (now < lockUntil) {
+      const minutesRemaining = Math.ceil((lockUntil - now) / 60000);
+      return { error: `Account is locked. Try again in ${minutesRemaining} minute(s).` };
+    } else {
+      // Unlock the account
+      user.accountLockedUntil = null;
+      user.failedLoginAttempts = 0;
+    }
+  }
+
   // Check password — support both bcrypt (new) and SHA256 (legacy)
   let passwordValid = false;
 
@@ -230,8 +283,23 @@ export async function loginUser(email, password) {
   }
 
   if (!passwordValid) {
+    // Track failed login attempt
+    user.failedLoginAttempts = (user.failedLoginAttempts || 0) + 1;
+    user.lastFailedLoginAt = new Date().toISOString();
+
+    // Lock account after MAX_LOGIN_ATTEMPTS failed attempts
+    if (user.failedLoginAttempts >= MAX_LOGIN_ATTEMPTS) {
+      user.accountLockedUntil = new Date(Date.now() + LOCKOUT_DURATION_MS).toISOString();
+      console.log(`🔒 Account locked for ${emailLower} after ${MAX_LOGIN_ATTEMPTS} failed attempts`);
+    }
+
+    await fs.writeFile(userFile, JSON.stringify(user, null, 2));
     return { error: 'Invalid email or password' };
   }
+
+  // Successful login — reset failed attempt counter
+  user.failedLoginAttempts = 0;
+  user.lastFailedLoginAt = null;
 
   // Generate new token with expiration tracking
   const now = new Date().toISOString();
@@ -245,6 +313,32 @@ export async function loginUser(email, password) {
     user: sanitizeUser(user),
     token: user.token
   };
+}
+
+/**
+ * Log out a user by invalidating their token.
+ */
+export async function logoutUser(token) {
+  if (!token) return { error: 'No token provided' };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const filePath = join(USERS_DIR, file);
+      const raw = await fs.readFile(filePath, 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        // Invalidate token by setting it to null
+        user.token = null;
+        user.tokenCreatedAt = null;
+        await fs.writeFile(filePath, JSON.stringify(user, null, 2));
+        return { success: true };
+      }
+    }
+    return { error: 'User not found' };
+  } catch (err) {
+    return { error: 'Failed to log out' };
+  }
 }
 
 /**

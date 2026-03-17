@@ -101,6 +101,14 @@ const authLimiter = rateLimit({
   message: { error: 'Too many login attempts. Please try again in 15 minutes.' }
 });
 
+const adminLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 5, // 5 requests per minute per IP for admin routes
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many admin requests. Please slow down.' }
+});
+
 // CORS — locked to specific origins, no wildcard fallback
 const ALLOWED_ORIGINS = process.env.NODE_ENV === 'production'
   ? [process.env.FRONTEND_URL || 'https://wayfinderai.org', 'https://www.wayfinderai.org']
@@ -119,7 +127,8 @@ app.use(cors({
 }));
 // Stripe webhook needs raw body for signature verification
 app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
-app.use(express.json({ limit: '1mb' }));
+// Strict request size validation: 100KB for non-webhook routes
+app.use(express.json({ limit: '100kb' }));
 
 // Request logging
 app.use((req, res, next) => {
@@ -144,7 +153,7 @@ app.get('/api/health', (req, res) => {
 // Routes (with rate limiting)
 app.use('/api/chat', chatLimiter, chatRoutes);
 app.use('/api/feedback', apiLimiter, feedbackRoutes);
-app.use('/api/admin', apiLimiter, adminRoutes);
+app.use('/api/admin', adminLimiter, adminRoutes);
 app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
@@ -181,6 +190,11 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(join(__dirname, '..', 'frontend', 'dist', 'index.html'));
   });
 }
+
+// 404 handler for undefined API routes (no stack trace leak)
+app.use('/api/*', (req, res) => {
+  res.status(404).json({ error: 'API endpoint not found' });
+});
 
 // Error handler
 app.use((err, req, res, next) => {

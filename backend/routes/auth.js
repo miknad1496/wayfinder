@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan } from '../services/auth.js';
+import { createUser, loginUser, logoutUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan } from '../services/auth.js';
 import { validateInvite, redeemInvite } from '../services/invites.js';
 
 const router = Router();
@@ -9,7 +9,10 @@ router.post('/signup', async (req, res) => {
   try {
     const { email, password, name, userType, school, interests, consentGiven, inviteCode } = req.body;
 
-    if (!email || !password) {
+    // Sanitize email: trim and lowercase
+    const sanitizedEmail = email ? email.toLowerCase().trim() : '';
+
+    if (!sanitizedEmail || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
     }
     if (password.length < 6) {
@@ -27,11 +30,11 @@ router.post('/signup', async (req, res) => {
     }
 
     // If invite is email-locked, verify it matches
-    if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== email.toLowerCase().trim()) {
+    if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== sanitizedEmail) {
       return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
     }
 
-    const result = await createUser({ email, password, name, userType, school, interests });
+    const result = await createUser({ email: sanitizedEmail, password, name, userType, school, interests });
 
     if (result.error) {
       return res.status(400).json({ error: result.error });
@@ -57,11 +60,14 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password) {
+    // Sanitize email: trim and lowercase
+    const sanitizedEmail = email ? email.toLowerCase().trim() : '';
+
+    if (!sanitizedEmail || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
     }
 
-    const result = await loginUser(email, password);
+    const result = await loginUser(sanitizedEmail, password);
 
     if (result.error) {
       return res.status(401).json({ error: result.error });
@@ -187,10 +193,28 @@ router.get('/history', async (req, res) => {
   }
 });
 
+// POST /api/auth/logout - Log out user and invalidate token
+router.post('/logout', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const result = await logoutUser(token);
+
+  if (result.error) {
+    return res.status(400).json({ error: result.error });
+  }
+
+  res.json({ success: true, message: 'Logged out successfully' });
+});
+
 // GET /api/auth/search - Search user's chats
 router.get('/search', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
-  const query = req.query.q || '';
+  const query = (req.query.q || '').trim();
+
+  // Validate query length (max 200 chars)
+  if (query.length > 200) {
+    return res.status(400).json({ error: 'Search query must be 200 characters or less' });
+  }
+
   const results = await searchUserChats(token, query);
   res.json({ results });
 });
