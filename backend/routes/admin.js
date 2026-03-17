@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { reloadPrompt } from '../services/claude.js';
 import { invalidateCache } from '../services/knowledge.js';
 import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
+import { getScheduleStatus, forceRunScraper } from '../services/scraper-scheduler.js';
 
 const router = Router();
 
@@ -62,6 +63,33 @@ router.get('/dashboard', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ error: 'Failed to load dashboard data' });
+  }
+});
+
+// ─── Scraper Scheduler Admin Endpoints ──────────────────────────
+
+// GET /api/admin/scrapers - Get all scraper schedule status
+router.get('/scrapers', async (req, res) => {
+  try {
+    const status = await getScheduleStatus();
+    res.json({ scrapers: status });
+  } catch (err) {
+    console.error('Scraper status error:', err);
+    res.status(500).json({ error: 'Failed to load scraper status' });
+  }
+});
+
+// POST /api/admin/scrapers/:key/run - Force-run a specific scraper
+router.post('/scrapers/:key/run', async (req, res) => {
+  try {
+    const result = await forceRunScraper(req.params.key);
+    if (result.error) {
+      return res.status(400).json(result);
+    }
+    res.json(result);
+  } catch (err) {
+    console.error('Force-run scraper error:', err);
+    res.status(500).json({ error: 'Failed to run scraper' });
   }
 });
 

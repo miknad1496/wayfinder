@@ -22,6 +22,7 @@ import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
 import { startScheduler } from './services/scheduler.js';
+import { startScraperScheduler } from './services/scraper-scheduler.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -203,6 +204,7 @@ async function start() {
     // Start reminder scheduler in production
     if (process.env.NODE_ENV === 'production') {
       startScheduler();
+      startScraperScheduler();
     }
   });
 }
