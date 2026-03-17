@@ -202,7 +202,7 @@ export async function validateInvite(code) {
  * Redeem an invite code during signup.
  * Marks the invite as used.
  */
-export async function redeemInvite(code, userId, userEmail) {
+export async function redeemInvite(code, userId, userEmail, userName) {
   await ensureInvitesDir();
 
   const cleanCode = code.toUpperCase().trim();
@@ -220,10 +220,12 @@ export async function redeemInvite(code, userId, userEmail) {
       return { error: 'This invitation has expired.' };
     }
 
-    // Mark as redeemed
+    // Mark as redeemed — store who joined and when
     invite.redeemedAt = new Date().toISOString();
     invite.redeemedBy = userId;
     invite.redeemedByEmail = userEmail;
+    // Also store the name for display in the inviter's invite list
+    invite.redeemedByName = userName || null;
 
     await fs.writeFile(filePath, JSON.stringify(invite, null, 2));
 
@@ -254,6 +256,8 @@ export async function getUserInvites(userId) {
           expiresAt: invite.expiresAt,
           redeemed: !!invite.redeemedAt,
           redeemedAt: invite.redeemedAt,
+          redeemedByName: invite.redeemedByName || null,
+          redeemedByEmail: invite.redeemedByEmail || null,
           expired: new Date(invite.expiresAt) < new Date() && !invite.redeemedAt
         });
       }

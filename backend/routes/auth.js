@@ -40,8 +40,8 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: result.error });
     }
 
-    // Redeem the invite
-    await redeemInvite(inviteCode, result.user.id, email);
+    // Redeem the invite (pass name so inviter can see who joined)
+    await redeemInvite(inviteCode, result.user.id, email, name);
 
     // If consent was given during signup, update the user record
     if (consentGiven && result.token) {
@@ -159,6 +159,40 @@ router.put('/settings', async (req, res) => {
   }
 
   res.json(result);
+});
+
+// POST /api/auth/admin/create — Create admin account (no invite needed)
+// Protected by ADMIN_SECRET header — for bootstrapping admin accounts
+router.post('/admin/create', async (req, res) => {
+  try {
+    const secret = req.headers['x-admin-secret'];
+    if (!secret || secret !== process.env.ADMIN_SECRET) {
+      return res.status(403).json({ error: 'Invalid admin secret.' });
+    }
+
+    const { email, password, name } = req.body;
+    if (!email || !password || !name) {
+      return res.status(400).json({ error: 'Email, password, and name are required.' });
+    }
+
+    const sanitizedEmail = email.toLowerCase().trim();
+
+    // Verify this email is in the ADMIN_EMAILS list
+    if (!isAdmin(sanitizedEmail)) {
+      return res.status(403).json({ error: 'This email is not in the ADMIN_EMAILS list. Add it to your Render env vars first.' });
+    }
+
+    const result = await createUser({ email: sanitizedEmail, password, name, userType: 'advisor' });
+
+    if (result.error) {
+      return res.status(400).json({ error: result.error });
+    }
+
+    res.json({ success: true, message: `Admin account created for ${sanitizedEmail}. You can now log in.` });
+  } catch (err) {
+    console.error('Admin create error:', err);
+    res.status(500).json({ error: 'Failed to create admin account' });
+  }
 });
 
 // PUT /api/auth/admin/plan - Admin-only: switch effective plan for testing

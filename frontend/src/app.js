@@ -1519,9 +1519,13 @@ async function loadInvitesList() {
     listEl.innerHTML = data.invites.map(inv => {
       let status = '';
       let statusClass = '';
+      let statusDetail = '';
       if (inv.redeemed) {
-        status = 'Accepted';
+        const who = inv.redeemedByName || inv.redeemedByEmail || '';
+        const when = inv.redeemedAt ? new Date(inv.redeemedAt).toLocaleDateString() : '';
+        status = 'Joined';
         statusClass = 'invite-status-accepted';
+        statusDetail = who ? `<span class="invite-redeemed-detail">${escapeHtml(who)}${when ? ' · ' + when : ''}</span>` : '';
       } else if (inv.expired) {
         status = 'Expired';
         statusClass = 'invite-status-expired';
@@ -1539,6 +1543,7 @@ async function loadInvitesList() {
           <div class="invite-item-info">
             <span class="invite-item-email">${escapeHtml(inv.recipientEmail || 'Anyone')}</span>
             <span class="invite-item-code">${inv.code}</span>
+            ${statusDetail}
           </div>
           <div class="invite-item-right">
             <span class="invite-status ${statusClass}">${status}</span>

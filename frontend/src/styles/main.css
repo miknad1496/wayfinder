@@ -1502,6 +1502,13 @@ html, body { overflow-x: hidden; }
   background: rgba(63, 185, 80, 0.15);
   color: #3FB950;
 }
+.invite-redeemed-detail {
+  display: block;
+  font-size: 11px;
+  color: #3FB950;
+  margin-top: 2px;
+  opacity: 0.85;
+}
 .invite-status-pending {
   background: rgba(88, 166, 255, 0.15);
   color: #58A6FF;
