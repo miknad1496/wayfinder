@@ -1247,7 +1247,7 @@ async function sendInvite() {
     const inviteLink = `${appUrl}/?invite=${data.invite.code}`;
 
     showMsg('inviteSendMsg',
-      `Invitation sent to ${data.invite.recipientEmail}! <button class="invite-copy-link" style="margin-left:4px;" onclick="navigator.clipboard.writeText('${inviteLink}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>`,
+      `Invitation sent to ${escapeHtml(data.invite.recipientEmail)}! <button class="invite-copy-link" data-copy-link="${escapeHtml(inviteLink)}" style="margin-left:4px;">Copy link</button>`,
       '#059669');
     emailInput.value = '';
 
@@ -1309,8 +1309,8 @@ async function loadInvitesList() {
           </div>
           <div class="invite-item-right">
             <span class="invite-status ${statusClass}">${status}</span>
-            ${!inv.redeemed && !inv.expired ? `<button class="invite-copy-link" onclick="navigator.clipboard.writeText('${link}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>` : ''}
-            ${canDelete ? `<button class="invite-delete-btn" onclick="deleteInvite('${inv.code}')" title="Delete invitation">✕</button>` : ''}
+            ${!inv.redeemed && !inv.expired ? `<button class="invite-copy-link" data-copy-link="${escapeHtml(link)}">Copy link</button>` : ''}
+            ${canDelete ? `<button class="invite-delete-btn" data-delete-code="${inv.code}" title="Delete invitation">✕</button>` : ''}
           </div>
         </div>
       `;
@@ -1320,11 +1320,31 @@ async function loadInvitesList() {
   }
 }
 
-// Make deleteInvite available globally for onclick handlers
-window.deleteInvite = async function(code) {
+// Event delegation for invite list actions (CSP-safe — no inline onclick)
+document.addEventListener('click', (e) => {
+  // Handle copy-link buttons
+  const copyBtn = e.target.closest('[data-copy-link]');
+  if (copyBtn) {
+    const link = copyBtn.dataset.copyLink;
+    navigator.clipboard.writeText(link).then(() => {
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => { copyBtn.textContent = 'Copy link'; }, 2000);
+    });
+    return;
+  }
+
+  // Handle delete-invite buttons
+  const deleteBtn = e.target.closest('[data-delete-code]');
+  if (deleteBtn) {
+    const code = deleteBtn.dataset.deleteCode;
+    handleDeleteInvite(code);
+    return;
+  }
+});
+
+async function handleDeleteInvite(code) {
   if (!authToken || !code) return;
 
-  // Confirm deletion
   const inviteEl = document.getElementById(`invite-${code}`);
   if (inviteEl) {
     inviteEl.style.opacity = '0.5';
@@ -1360,7 +1380,7 @@ window.deleteInvite = async function(code) {
     if (inviteEl) inviteEl.style.opacity = '1';
     showMsg('inviteSendMsg', 'Failed to delete invitation.', '#991b1b');
   }
-};
+}
 
 function updateWelcomeView() {
   const splash = $('welcomeSplash');
@@ -1379,10 +1399,10 @@ function updateWelcomeView() {
 // ========================
 function showMsg(id, text, color) {
   const el = $(id);
-  el.textContent = text;
+  el.innerHTML = text;
   el.style.color = color;
   el.style.display = 'block';
-  setTimeout(() => { el.style.display = 'none'; }, 3000);
+  setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
 
 function capitalize(str) {

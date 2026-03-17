@@ -131,7 +131,7 @@ router.delete('/:code', async (req, res) => {
       return res.status(401).json({ error: 'Not authenticated' });
     }
 
-    const result = await deleteInvite(req.params.code, user.id);
+    const result = await deleteInvite(req.params.code, user.id, user.email);
 
     if (result.error) {
       return res.status(400).json({ error: result.error });

@@ -113,7 +113,7 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
 
       <div class="footer">
         <p>Questions? Reply to this email or visit us at <a href="https://wayfinderai.org" style="color: #2563eb;">wayfinderai.org</a></p>
-        <p>© 2024 Wayfinder. All rights reserved.</p>
+        <p>© 2025 Wayfinder. All rights reserved.</p>
       </div>
     </div>
   </body>
@@ -138,7 +138,7 @@ See you on Wayfinder!
 
 ---
 Questions? Visit us at https://wayfinderai.org
-© 2024 Wayfinder. All rights reserved.
+© 2025 Wayfinder. All rights reserved.
 `;
 
     // Call Resend API
@@ -149,7 +149,7 @@ Questions? Visit us at https://wayfinderai.org
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: process.env.EMAIL_FROM || 'Wayfinder <onboarding@resend.dev>',
         to: recipientEmail,
         subject: `${inviterName} invited you to Wayfinder`,
         html: htmlBody,

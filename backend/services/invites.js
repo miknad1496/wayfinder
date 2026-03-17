@@ -269,7 +269,7 @@ export async function getUserInvites(userId) {
  * Delete an invite. Only the inviter can delete their own invites.
  * Cannot delete already-redeemed invites.
  */
-export async function deleteInvite(code, userId) {
+export async function deleteInvite(code, userId, userEmail) {
   await ensureInvitesDir();
 
   if (!code) return { error: 'Invite code is required.' };
@@ -281,8 +281,9 @@ export async function deleteInvite(code, userId) {
     const raw = await fs.readFile(filePath, 'utf-8');
     const invite = JSON.parse(raw);
 
-    // Only the inviter can delete their own invites
-    if (invite.inviterId !== userId) {
+    // Check ownership: inviter can delete their own, unlimited users can delete any
+    const isUnlimited = userEmail && UNLIMITED_INVITE_EMAILS.includes(userEmail.toLowerCase().trim());
+    if (invite.inviterId !== userId && !isUnlimited) {
       return { error: 'You can only delete your own invitations.' };
     }
 
