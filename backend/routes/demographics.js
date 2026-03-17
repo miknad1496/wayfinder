@@ -26,13 +26,16 @@ let demographicsCache = null;
 let cacheTimestamp = 0;
 const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
 
+// GitHub raw content URL for fallback when local files are missing (e.g. Render deploy)
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/scraped/ethnicity-demographics.json';
+
 async function loadDemographicsData() {
   const now = Date.now();
   if (demographicsCache && (now - cacheTimestamp) < CACHE_TTL) {
     return demographicsCache;
   }
 
-  // Try multiple path strategies for compatibility across environments
+  // Try multiple local path strategies for compatibility across environments
   const pathCandidates = [
     join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json'),
     join(process.cwd(), 'backend', 'data', 'scraped', 'ethnicity-demographics.json'),
@@ -44,14 +47,43 @@ async function loadDemographicsData() {
       const raw = await fs.readFile(filePath, 'utf8');
       demographicsCache = JSON.parse(raw);
       cacheTimestamp = now;
-      console.log(`[Demographics] Loaded from: ${filePath} (${demographicsCache.schools?.length || 0} schools)`);
+      console.log(`[Demographics] Loaded from local file: ${filePath} (${demographicsCache.schools?.length || 0} schools)`);
       return demographicsCache;
     } catch (err) {
-      console.log(`[Demographics] Path not found: ${filePath} (${err.code || err.message})`);
+      // Silently try next path
     }
   }
 
-  console.error('[Demographics] Failed to load from ALL paths. __dirname:', __dirname, 'cwd:', process.cwd());
+  // Fallback: fetch from GitHub raw content (handles Render deploy issues where
+  // local files get deleted during the build process and git checkout fails)
+  console.log('[Demographics] Local files not found, fetching from GitHub...');
+  try {
+    const response = await fetch(GITHUB_RAW_URL);
+    if (response.ok) {
+      const raw = await response.text();
+      demographicsCache = JSON.parse(raw);
+      cacheTimestamp = now;
+      console.log(`[Demographics] Loaded from GitHub (${demographicsCache.schools?.length || 0} schools)`);
+
+      // Try to save locally for future requests (best-effort, don't fail if write fails)
+      try {
+        const localPath = join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json');
+        await fs.mkdir(dirname(localPath), { recursive: true });
+        await fs.writeFile(localPath, raw, 'utf8');
+        console.log('[Demographics] Saved GitHub data to local cache:', localPath);
+      } catch (writeErr) {
+        console.log('[Demographics] Could not write local cache (read-only fs?):', writeErr.code);
+      }
+
+      return demographicsCache;
+    } else {
+      console.error(`[Demographics] GitHub fetch failed: ${response.status} ${response.statusText}`);
+    }
+  } catch (fetchErr) {
+    console.error('[Demographics] GitHub fetch error:', fetchErr.message);
+  }
+
+  console.error('[Demographics] Failed to load from ALL sources (local + GitHub). __dirname:', __dirname, 'cwd:', process.cwd());
   return null;
 }
 
@@ -122,7 +154,9 @@ router.get('/health', async (req, res) => {
     cwd: process.cwd(),
     paths: results,
     dataLoaded: data ? true : false,
-    schoolCount: data?.schools?.length || 0
+    schoolCount: data?.schools?.length || 0,
+    githubFallbackUrl: GITHUB_RAW_URL,
+    source: demographicsCache ? (results.some(r => r.exists) ? 'local' : 'github') : 'none'
   });
 });
 
