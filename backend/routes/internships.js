@@ -118,7 +118,7 @@ router.get('/search', async (req, res) => {
     // Access control
     if (hasFull) {
       res.json({
-        results: results.slice(0, 50),
+        results,
         total: results.length,
         _fullAccess: true
       });
@@ -128,7 +128,7 @@ router.get('/search', async (req, res) => {
         results: results.slice(0, 5).map(previewInternship),
         total: results.length,
         _fullAccess: false,
-        _previewMessage: `Showing 5 of ${results.length} internships. Upgrade to Elite for full access with application links.`
+        _previewMessage: `Showing 5 of ${results.length} internships. Upgrade to Consultant for full access with application links.`
       });
     }
   } catch (err) {

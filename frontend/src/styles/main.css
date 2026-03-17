@@ -2377,3 +2377,91 @@ html, body { overflow-x: hidden; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Binomial Product Path Selection ─────────────────────── */
+.welcome-path-select { margin-top: 24px; }
+.welcome-path-cards {
+  display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+}
+.welcome-path-card {
+  background: var(--card-bg); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 28px 24px; width: 260px;
+  cursor: pointer; transition: all 0.2s; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.welcome-path-card:hover {
+  border-color: var(--primary); box-shadow: 0 4px 20px rgba(37,99,235,0.12);
+  transform: translateY(-2px);
+}
+.welcome-path-card-highlight {
+  border-color: var(--primary); background: rgba(37,99,235,0.03);
+}
+.welcome-path-card h3 { font-size: 18px; font-weight: 600; color: var(--text); margin: 0; }
+.welcome-path-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.4; }
+.path-card-icon { color: var(--primary); margin-bottom: 4px; }
+.path-card-price {
+  font-size: 11px; color: var(--text-muted); background: var(--bg-secondary);
+  padding: 4px 10px; border-radius: 20px; margin-top: 4px;
+}
+.welcome-back-btn {
+  background: none; border: none; color: var(--text-secondary);
+  font-size: 13px; cursor: pointer; margin-top: 16px; padding: 6px 12px;
+}
+.welcome-back-btn:hover { color: var(--primary); }
+
+/* ─── Admin Tier Switcher ─────────────────────────────────── */
+.admin-tier-buttons { display: flex; gap: 8px; margin-top: 8px; }
+.admin-tier-btn {
+  flex: 1; padding: 8px 12px; border: 1.5px solid var(--border);
+  border-radius: 8px; background: var(--card-bg); color: var(--text);
+  cursor: pointer; font-size: 13px; transition: all 0.15s;
+}
+.admin-tier-btn:hover { border-color: var(--primary); background: rgba(37,99,235,0.05); }
+.admin-tier-btn.active {
+  border-color: var(--primary); background: var(--primary); color: #fff;
+}
+
+/* ─── Recommendation Bar ──────────────────────────────────── */
+.recommend-bar {
+  display: flex; align-items: center; gap: 8px; margin: 12px 0 8px;
+  padding: 10px 14px; background: rgba(37,99,235,0.04);
+  border: 1px solid rgba(37,99,235,0.12); border-radius: 10px;
+}
+.recommend-bar-text { font-size: 13px; color: var(--text-secondary); flex: 1; }
+.recommend-btn {
+  padding: 6px 14px; border-radius: 8px; border: 1px solid var(--primary);
+  background: var(--primary); color: #fff; font-size: 12px; cursor: pointer;
+  white-space: nowrap;
+}
+.recommend-btn:hover { background: var(--primary-dark); }
+
+/* ─── Tool Upgrade Teaser (for free users) ────────────────── */
+.tool-upgrade-teaser {
+  position: relative; margin-top: 12px; border-radius: 12px;
+  overflow: hidden; border: 1px solid rgba(37,99,235,0.15);
+}
+.tool-upgrade-blur {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg) 70%);
+  pointer-events: none; z-index: 1;
+}
+.tool-upgrade-content {
+  position: relative; z-index: 2; text-align: center;
+  padding: 32px 20px 24px; display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+}
+.tool-upgrade-content p { font-size: 14px; color: var(--text-secondary); margin: 0; }
+.tool-upgrade-content svg { color: var(--primary); }
+.tool-upgrade-btn {
+  margin-top: 8px; padding: 10px 24px; border-radius: 8px;
+  border: none; background: var(--primary); color: #fff;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: background 0.15s;
+}
+.tool-upgrade-btn:hover { background: var(--primary-dark); }
+
+@media (max-width: 600px) {
+  .welcome-path-cards { flex-direction: column; align-items: center; }
+  .welcome-path-card { width: 100%; max-width: 300px; }
+  .admin-tier-buttons { flex-direction: column; }
+}

@@ -136,28 +136,67 @@
           <div id="welcomeLoggedIn" class="welcome-content" style="display:none;">
             <img src="/logo.svg" alt="Wayfinder" class="welcome-logo">
             <h2 id="welcomeGreeting" class="welcome-greeting">Good afternoon</h2>
-            <p class="welcome-sub">How can I help with your career or college journey today?</p>
-            <div class="welcome-chips">
-              <button class="welcome-chip" data-message="I'm a high school student thinking about college and careers">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
-                Pre-college student
-              </button>
-              <button class="welcome-chip" data-message="I'm currently in college and exploring career options">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                College student
-              </button>
-              <button class="welcome-chip welcome-chip-highlight" data-message="I'm a parent helping my child with college admissions and planning. I want strategic advice on school selection, application strategy, and maximizing their chances.">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M2 11h2m18 0h2M12 2v1"/></svg>
-                Parent / Family
-              </button>
-              <button class="welcome-chip" data-message="I'm a college advisor looking for resources to help my students">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                Advisor / Faculty
-              </button>
-              <button class="welcome-chip" data-message="I'm exploring a career change and looking for guidance on new directions">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-                Career explorer
-              </button>
+            <p class="welcome-sub">What would you like help with today?</p>
+
+            <!-- Step 1: Product Path Selection -->
+            <div id="welcomePathSelect" class="welcome-path-select">
+              <div class="welcome-path-cards">
+                <button class="welcome-path-card" data-path="career">
+                  <div class="path-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                  </div>
+                  <h3>Career Intelligence</h3>
+                  <p>Salary data, career paths, certifications, job market insights</p>
+                  <span class="path-card-price">Free — $15 — $30/mo</span>
+                </button>
+                <button class="welcome-path-card welcome-path-card-highlight" data-path="admissions">
+                  <div class="path-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+                  </div>
+                  <h3>College Admissions</h3>
+                  <p>School strategy, application coaching, demographics, essays, timelines</p>
+                  <span class="path-card-price">Free — $25 — $50/mo</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: User Type (shown after path selection) -->
+            <div id="welcomeUserTypes" class="welcome-chips" style="display:none;">
+              <p id="welcomeUserTypeLabel" class="welcome-sub" style="margin-bottom:12px;"></p>
+
+              <!-- Career user types -->
+              <div id="careerUserTypes" style="display:none;">
+                <button class="welcome-chip" data-message="I'm a high school student exploring career options and thinking about what to study">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+                  High school student
+                </button>
+                <button class="welcome-chip" data-message="I'm currently in college and exploring career options, internships, and post-graduation paths">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                  College student
+                </button>
+                <button class="welcome-chip" data-message="I'm exploring a career change and looking for guidance on new directions, salary data, and growth fields">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+                  Career changer
+                </button>
+                <button class="welcome-chip" data-message="I'm a college advisor or career counselor looking for data-driven resources to help my students with career planning">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Advisor / Faculty
+                </button>
+              </div>
+
+              <!-- Admissions user types -->
+              <div id="admissionsUserTypes" style="display:none;">
+                <button class="welcome-chip welcome-chip-highlight" data-message="I'm a parent helping my child with college admissions and planning. I want strategic advice on school selection, application strategy, and maximizing their chances.">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M2 11h2m18 0h2M12 2v1"/></svg>
+                  Parent / Family
+                </button>
+                <button class="welcome-chip" data-message="I'm a student working on my college applications and want help with school selection, essays, and admissions strategy">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+                  Student Applicant
+                </button>
+              </div>
+
+              <button id="welcomeBackBtn" class="welcome-back-btn">&larr; Back to product selection</button>
             </div>
           </div>
 
@@ -415,6 +454,17 @@
               <span class="plan-detail">3 Engine queries/day</span>
             </div>
             <button id="settingsUpgradeBtn" class="form-btn form-btn-outline">Upgrade Plan</button>
+          </div>
+          <!-- Admin-only: Tier Testing -->
+          <div id="adminTierSection" class="settings-section" style="display:none;">
+            <h3>🔧 Admin: Test as Tier</h3>
+            <p class="settings-desc">Switch your effective plan to see how different tiers experience the product. Your admin access to all features is preserved on the server.</p>
+            <div class="admin-tier-buttons">
+              <button class="admin-tier-btn" data-plan="free">Free</button>
+              <button class="admin-tier-btn" data-plan="pro">Coach ($25)</button>
+              <button class="admin-tier-btn" data-plan="elite">Consultant ($50)</button>
+            </div>
+            <p id="adminTierMsg" class="profile-save-msg" style="display:none;"></p>
           </div>
           <div class="settings-section">
             <h3>Sign Out</h3>

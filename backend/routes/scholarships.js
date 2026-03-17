@@ -102,13 +102,13 @@ router.get('/search', async (req, res) => {
     }
 
     if (hasFull) {
-      res.json({ results: results.slice(0, 50), total: results.length, _fullAccess: true });
+      res.json({ results, total: results.length, _fullAccess: true });
     } else {
       res.json({
         results: results.slice(0, 3).map(previewScholarship),
         total: results.length,
         _fullAccess: false,
-        _previewMessage: `Showing 3 of ${results.length} scholarships. Upgrade to Elite for full access.`
+        _previewMessage: `Showing 3 of ${results.length} scholarships. Upgrade to Consultant for full access.`
       });
     }
   } catch (err) {

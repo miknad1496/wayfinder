@@ -89,6 +89,39 @@ function updateGreeting() {
 // ========================
 function setupWelcomeChips() {
   welcomeScreen.addEventListener('click', (e) => {
+    // Handle path card clicks (binomial selection)
+    const pathCard = e.target.closest('.welcome-path-card');
+    if (pathCard) {
+      const path = pathCard.dataset.path;
+      const pathSelect = $('welcomePathSelect');
+      const userTypes = $('welcomeUserTypes');
+      const label = $('welcomeUserTypeLabel');
+
+      pathSelect.style.display = 'none';
+      userTypes.style.display = '';
+
+      if (path === 'career') {
+        $('careerUserTypes').style.display = '';
+        $('admissionsUserTypes').style.display = 'none';
+        label.textContent = 'I\'m a...';
+      } else {
+        $('careerUserTypes').style.display = 'none';
+        $('admissionsUserTypes').style.display = '';
+        label.textContent = 'I\'m a...';
+      }
+      return;
+    }
+
+    // Handle back button
+    if (e.target.closest('#welcomeBackBtn')) {
+      $('welcomePathSelect').style.display = '';
+      $('welcomeUserTypes').style.display = 'none';
+      $('careerUserTypes').style.display = 'none';
+      $('admissionsUserTypes').style.display = 'none';
+      return;
+    }
+
+    // Handle user type chip clicks
     const chip = e.target.closest('.welcome-chip');
     if (chip) {
       const msg = chip.dataset.message;
@@ -690,6 +723,40 @@ function setupSettingsListeners() {
     $('settingsModal').style.display = 'none';
     openUpgrade();
   });
+
+  // Admin tier switcher
+  document.querySelectorAll('.admin-tier-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const plan = btn.dataset.plan;
+      const msg = $('adminTierMsg');
+      try {
+        const res = await fetch('/api/auth/admin/plan', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+          body: JSON.stringify({ plan })
+        });
+        const data = await res.json();
+        if (data.success) {
+          currentUser = data.user;
+          document.querySelectorAll('.admin-tier-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          msg.textContent = `Switched to ${plan} tier. Refresh to see full UI changes.`;
+          msg.style.display = 'block';
+          msg.style.color = '#10b981';
+          updateEngineUI();
+          updateGreeting();
+        } else {
+          msg.textContent = data.error || 'Failed to switch tier';
+          msg.style.display = 'block';
+          msg.style.color = '#ef4444';
+        }
+      } catch {
+        msg.textContent = 'Network error';
+        msg.style.display = 'block';
+        msg.style.color = '#ef4444';
+      }
+    });
+  });
 }
 
 function openSettings() {
@@ -707,13 +774,24 @@ function openSettings() {
   $('settingsHelpImprove').checked = currentUser.settings?.helpImprove !== false;
 
   // Populate account tab
-  const planNames = { free: 'Wayfinder Free', premium: 'Wayfinder Premium', pro: 'Wayfinder Pro' };
-  const planLimits = { free: 3, premium: 10, pro: 20 };
+  const planNames = { free: 'Career Explorer (Free)', pro: 'Coach ($25/mo)', elite: 'Consultant ($50/mo)', premium: 'Premium (Legacy)' };
+  const planLimits = { free: 3, pro: 20, elite: 40, premium: 10 };
   const plan = currentUser.plan || 'free';
   $('currentPlanDisplay').innerHTML = `
-    <span class="plan-name">${planNames[plan]}</span>
-    <span class="plan-detail">${planLimits[plan]} Engine queries/day</span>
+    <span class="plan-name">${planNames[plan] || plan}</span>
+    <span class="plan-detail">${planLimits[plan] || 3} Engine queries/day</span>
   `;
+
+  // Show admin tier section if admin
+  const adminSection = $('adminTierSection');
+  if (currentUser.isAdmin) {
+    adminSection.style.display = '';
+    document.querySelectorAll('.admin-tier-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.plan === plan);
+    });
+  } else {
+    adminSection.style.display = 'none';
+  }
 
   // Reset to general tab
   document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
@@ -2121,15 +2199,7 @@ function openInternships() {
   closeSidebarOnMobile();
   $('internshipsModal').style.display = 'flex';
 
-  const plan = userPlan();
-  if (plan === 'free') {
-    $('internshipsFilters').style.display = 'none';
-    $('internshipsResults').style.display = 'none';
-    $('internshipsLoading').style.display = 'none';
-    $('internshipsRequiresUpgrade').style.display = 'block';
-    return;
-  }
-
+  // Always show filters — free users see preview data as teaser
   $('internshipsRequiresUpgrade').style.display = 'none';
   $('internshipsFilters').style.display = 'flex';
   $('internshipsResults').style.display = 'block';
@@ -2169,15 +2239,6 @@ function openScholarships() {
   closeSidebarOnMobile();
   $('scholarshipsModal').style.display = 'flex';
 
-  const plan = userPlan();
-  if (plan === 'free') {
-    $('scholarshipsFilters').style.display = 'none';
-    $('scholarshipsResults').style.display = 'none';
-    $('scholarshipsLoading').style.display = 'none';
-    $('scholarshipsRequiresUpgrade').style.display = 'block';
-    return;
-  }
-
   $('scholarshipsRequiresUpgrade').style.display = 'none';
   $('scholarshipsFilters').style.display = 'flex';
   $('scholarshipsResults').style.display = 'block';
@@ -2213,15 +2274,6 @@ function openPrograms() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
   $('programsModal').style.display = 'flex';
-
-  const plan = userPlan();
-  if (plan === 'free') {
-    $('programsFilters').style.display = 'none';
-    $('programsResults').style.display = 'none';
-    $('programsLoading').style.display = 'none';
-    $('programsRequiresUpgrade').style.display = 'block';
-    return;
-  }
 
   $('programsRequiresUpgrade').style.display = 'none';
   $('programsFilters').style.display = 'flex';
@@ -2273,9 +2325,13 @@ function renderToolResults(containerId, results, fullAccess, previewMessage, typ
   }
 
   if (previewMessage && !fullAccess) {
-    html += `<div class="tool-preview-msg">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      ${escapeHtml(previewMessage)}
+    html += `<div class="tool-upgrade-teaser">
+      <div class="tool-upgrade-blur"></div>
+      <div class="tool-upgrade-content">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p>${escapeHtml(previewMessage)}</p>
+        <button onclick="openUpgrade()" class="tool-upgrade-btn">Unlock Full Access</button>
+      </div>
     </div>`;
   }
 
