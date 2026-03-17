@@ -12,6 +12,7 @@ import adminRoutes from './routes/admin.js';
 import authRoutes from './routes/auth.js';
 import stripeRoutes from './routes/stripe.js';
 import inviteRoutes from './routes/invites.js';
+import demographicsRoutes from './routes/demographics.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
@@ -140,6 +141,7 @@ app.use('/api/admin', apiLimiter, adminRoutes);
 app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
+app.use('/api/demographics', apiLimiter, demographicsRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {

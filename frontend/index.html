@@ -59,6 +59,10 @@
 
       <!-- Sidebar Footer -->
       <div class="sidebar-footer">
+        <button id="sidebarDemographics" class="sidebar-footer-btn demographics-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          <span>Demographics</span>
+        </button>
         <button id="sidebarUpgrade" class="sidebar-footer-btn upgrade-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           <span>Upgrade plan</span>
@@ -430,6 +434,61 @@
       </div>
     </div>
 
+    <!-- Demographics Tool Modal -->
+    <div id="demographicsModal" class="modal-overlay" style="display:none;">
+      <div class="modal modal-demographics">
+        <button class="modal-close" id="demographicsModalClose">&times;</button>
+        <div class="demographics-header">
+          <h2>School Demographics</h2>
+          <p class="form-subtitle">Race/ethnicity data by school and major — powered by IPEDS</p>
+        </div>
+
+        <!-- School Search -->
+        <div class="demographics-search-wrap">
+          <svg class="demographics-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="demographicsSearchInput" class="demographics-search" placeholder="Search for a school..." autocomplete="off">
+          <div id="demographicsSearchResults" class="demographics-search-results" style="display:none;"></div>
+        </div>
+
+        <!-- School Selector (quick picks) -->
+        <div class="demographics-quick-picks" id="demographicsQuickPicks">
+          <span class="demographics-label">Popular:</span>
+          <button class="demographics-chip" data-unitid="166027">Harvard</button>
+          <button class="demographics-chip" data-unitid="243744">Stanford</button>
+          <button class="demographics-chip" data-unitid="166683">MIT</button>
+          <button class="demographics-chip" data-unitid="110635">UC Berkeley</button>
+          <button class="demographics-chip" data-unitid="190415">Cornell</button>
+          <button class="demographics-chip" data-unitid="139959">Georgia Tech</button>
+          <button class="demographics-chip" data-unitid="170976">Michigan</button>
+          <button class="demographics-chip" data-unitid="130794">Yale</button>
+        </div>
+
+        <!-- Results Area -->
+        <div id="demographicsContent" class="demographics-content">
+          <div class="demographics-empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            <p>Select a school above to view demographic breakdowns</p>
+          </div>
+        </div>
+
+        <!-- Upgrade nudge (shown for free users after preview) -->
+        <div id="demographicsUpgradeNudge" class="demographics-upgrade-nudge" style="display:none;">
+          <div class="nudge-content">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <strong>Unlock full data</strong>
+              <p>Upgrade to Premium to see demographics for all majors and compare schools side-by-side.</p>
+            </div>
+            <button class="nudge-upgrade-btn" id="demographicsUpgradeBtn">Upgrade</button>
+          </div>
+        </div>
+
+        <div class="demographics-footer">
+          <span class="demographics-source">Source: IPEDS Completions Survey (NCES) — Bachelor's degrees</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Upgrade Modal -->
     <div id="upgradeModal" class="modal-overlay" style="display:none;">
       <div class="modal modal-upgrade">
@@ -447,6 +506,7 @@
             <ul class="plan-features">
               <li>Unlimited standard queries</li>
               <li>3 Engine deep-dives/day</li>
+              <li>Demographics preview (3 majors)</li>
               <li>Basic profile</li>
               <li>Chat history</li>
             </ul>
@@ -463,6 +523,8 @@
             <ul class="plan-features">
               <li>Unlimited standard queries</li>
               <li>10 Engine deep-dives/day</li>
+              <li>Full demographics data (all majors)</li>
+              <li>School comparison tool</li>
               <li>Full profile customization</li>
               <li>Chat history &amp; search</li>
               <li>Priority response times</li>
@@ -479,6 +541,8 @@
             <ul class="plan-features">
               <li>Unlimited standard queries</li>
               <li>20 Engine deep-dives/day</li>
+              <li>Full demographics data (all majors)</li>
+              <li>School comparison tool</li>
               <li>Full profile customization</li>
               <li>Chat history &amp; search</li>
               <li>Priority response times</li>

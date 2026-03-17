@@ -113,7 +113,11 @@ const CATEGORIES = {
       'admissions-school-selection-intelligence.md', 'admissions-parent-strategy-guide.md',
       'admissions-essay-intelligence.md', 'admissions-curriculum-synthesis.md',
       'admissions-data-synthesis.md', 'admissions-pre-highschool-planning.md',
-      'admissions-parent-adult-children.md'],
+      'admissions-parent-adult-children.md',
+      'admissions-ed-strategy-calibration.md',
+      'admissions-adversity-landscape-intelligence.md',
+      'admissions-diversity-school-profiling.md',
+      'admissions-extracurricular-differentiation-strategy.md'],
     triggers: ['admissions', 'admission', 'acceptance', 'accepted', 'apply', 'application',
       'essay', 'sat', 'act', 'gpa', 'extracurricular', 'recommendation', 'early',
       'decision', 'regular', 'ivy', 'league', 'harvard', 'yale', 'princeton', 'stanford',
@@ -127,8 +131,13 @@ const CATEGORIES = {
       'curriculum', 'course', 'courses', 'class', 'classes', 'prerequisite', 'prerequisites',
       'credit', 'credits', 'requirement', 'requirements', 'catalog', 'syllabus',
       'distribution', 'core', 'gen-ed', 'elective', 'electives', 'thesis',
-      'capstone', 'study', 'abroad', 'quarter', 'semester', 'faculty', 'professor'],
-    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools']
+      'capstone', 'study', 'abroad', 'quarter', 'semester', 'faculty', 'professor',
+      'adversity', 'landscape', 'diversity', 'first-gen', 'pell', 'questbridge',
+      'ed', 'early decision', 'ed2', 'binding', 'club', 'activity', 'activities',
+      'passion', 'project', 'business', 'startup', 'differentiate',
+      'ethnicity', 'ethnic', 'race', 'racial', 'demographics', 'demographic',
+      'asian', 'white', 'black', 'hispanic', 'latino', 'representation'],
+    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools', 'raw_ethnicity']
   },
   local_schools: {
     files: ['admissions-pre-highschool-planning.md'],
@@ -637,6 +646,50 @@ function parseCurriculumData(data) {
  *   publicHighSchools: {name: {...}}, publicMiddleSchools: {name: {...}},
  *   publicElementary: { "Group Name": [{...}] } }
  */
+function parseEthnicityData(data) {
+  const chunks = [];
+  if (!data || !data.schools) return chunks;
+
+  for (const school of data.schools) {
+    // School-level aggregate chunk
+    const agg = school.schoolAggregate;
+    if (agg && agg.percentages) {
+      const pct = agg.percentages;
+      const demoLine = Object.entries(pct)
+        .filter(([k]) => !['unknown', 'nonresident_alien'].includes(k))
+        .sort((a, b) => b[1] - a[1])
+        .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}%`)
+        .join(', ');
+
+      chunks.push({
+        text: `# ${school.school} — Ethnicity Demographics (${school.year})\nSchool-wide bachelor's completions: ${agg.demographics?.total || '?'} total\nBreakdown: ${demoLine}\nNonresident alien: ${pct.nonresident_alien || '?'}%`,
+        keywords: [school.school.toLowerCase(), 'ethnicity', 'demographics', 'race', 'diversity'],
+        boost: 1.0
+      });
+    }
+
+    // Top majors with demographic breakdown (limit to top 15 per school to control size)
+    const topMajors = (school.majors || []).slice(0, 15);
+    for (const major of topMajors) {
+      if (!major.percentages || !major.demographics?.total) continue;
+      const pct = major.percentages;
+      const demoLine = Object.entries(pct)
+        .filter(([k]) => !['unknown', 'nonresident_alien'].includes(k))
+        .sort((a, b) => b[1] - a[1])
+        .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}%`)
+        .join(', ');
+
+      chunks.push({
+        text: `# ${school.school} — ${major.majorName} — Ethnicity (${school.year})\nCompletions: ${major.demographics.total}\nBreakdown: ${demoLine}`,
+        keywords: [school.school.toLowerCase(), major.majorName.toLowerCase(), 'ethnicity', 'demographics', major.cipCode],
+        boost: 0.8
+      });
+    }
+  }
+
+  return chunks;
+}
+
 function parseLocalSchoolData(data) {
   const chunks = [];
   if (!data || typeof data !== 'object') return chunks;
@@ -1153,6 +1206,16 @@ async function buildRawDataIndex() {
     console.log('  raw_local_schools: no data file found (run local schools scraper)');
   }
 
+  // IPEDS Ethnicity demographics by school and major
+  const ethnicityData = await loadJsonFile('ethnicity-demographics.json');
+  if (ethnicityData && ethnicityData.schools) {
+    index.raw_ethnicity = parseEthnicityData(ethnicityData);
+    console.log(`  raw_ethnicity: ${index.raw_ethnicity.length} school-major demographic profiles`);
+  } else {
+    index.raw_ethnicity = [];
+    console.log('  raw_ethnicity: no data file found (run ethnicity demographics scraper)');
+  }
+
   // Reddit salary discussions
   const salaryThreads = await loadJsonFile('reddit-salary-discussions.json');
   if (salaryThreads) {
@@ -1278,9 +1341,10 @@ function detectBrainType(query) {
 
   // Strong signal(s) alone → admissions
   if (strongHits >= 1) return 'admissions';
-  // Multiple weak signals → probably admissions (e.g., "my daughter is a junior in high school")
-  if (weakHits >= 3) return 'admissions';
-  // 1-2 weak signals → cross-over territory, send both but career-primary
+  // 2+ weak signals → probably admissions (e.g., "my daughter is in high school")
+  // Lowered from 3 to 2 — queries like "my child is a sophomore" should route to admissions
+  if (weakHits >= 2) return 'admissions';
+  // 1 weak signal → cross-over territory, send both but career-primary
   if (weakHits >= 1) return 'both';
   // No admissions signals at all → pure career
   return 'career';

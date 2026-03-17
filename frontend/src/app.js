@@ -112,6 +112,7 @@ function setupSidebarListeners() {
   // Settings & upgrade from sidebar
   $('sidebarSettings').addEventListener('click', openSettings);
   $('sidebarUpgrade').addEventListener('click', openUpgrade);
+  $('sidebarDemographics').addEventListener('click', openDemographics);
 }
 
 function startNewChat() {
@@ -1415,6 +1416,206 @@ function updateWelcomeView() {
     if (splash) splash.style.display = 'block';
     if (loggedIn) loggedIn.style.display = 'none';
   }
+}
+
+// ========================
+// Demographics Tool
+// ========================
+
+const RACE_COLORS = {
+  white: '#3b82f6', asian: '#10b981', hispanic: '#f59e0b', black: '#8b5cf6',
+  two_or_more_races: '#ec4899', nonresident_alien: '#6366f1',
+  american_indian_alaska_native: '#14b8a6', native_hawaiian_pacific_islander: '#f97316', unknown: '#94a3b8'
+};
+const RACE_LABELS = {
+  white: 'White', asian: 'Asian', black: 'Black', hispanic: 'Hispanic',
+  two_or_more_races: 'Two+', nonresident_alien: 'International',
+  american_indian_alaska_native: 'AIAN', native_hawaiian_pacific_islander: 'NHPI', unknown: 'Unknown'
+};
+const RACE_ORDER = ['white', 'asian', 'hispanic', 'black', 'two_or_more_races', 'nonresident_alien', 'american_indian_alaska_native', 'native_hawaiian_pacific_islander', 'unknown'];
+
+let demographicsSchoolsCache = null;
+
+function openDemographics() {
+  if (!currentUser) {
+    openAuth('login');
+    return;
+  }
+  $('demographicsModal').style.display = 'flex';
+  closeSidebarOnMobile();
+  // Load school list if not cached
+  if (!demographicsSchoolsCache) loadDemographicsSchools();
+  initDemographicsListeners();
+}
+
+let demoListenersAttached = false;
+function initDemographicsListeners() {
+  if (demoListenersAttached) return;
+  demoListenersAttached = true;
+
+  $('demographicsModalClose').addEventListener('click', () => $('demographicsModal').style.display = 'none');
+  $('demographicsModal').addEventListener('click', (e) => {
+    if (e.target === $('demographicsModal')) $('demographicsModal').style.display = 'none';
+  });
+
+  // Search input
+  $('demographicsSearchInput').addEventListener('input', debounce(async function () {
+    const q = this.value.trim();
+    const resultsEl = $('demographicsSearchResults');
+    if (q.length < 2) { resultsEl.style.display = 'none'; return; }
+
+    try {
+      const res = await fetch(`/api/demographics/search?q=${encodeURIComponent(q)}`);
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        resultsEl.innerHTML = data.results.map(s =>
+          `<div class="demographics-search-item" data-unitid="${s.unitId}">
+            ${s.school}<span class="search-completions">${s.totalCompletions.toLocaleString()} graduates</span>
+          </div>`
+        ).join('');
+        resultsEl.style.display = 'block';
+      } else {
+        resultsEl.innerHTML = '<div class="demographics-search-item">No schools found</div>';
+        resultsEl.style.display = 'block';
+      }
+    } catch {
+      resultsEl.style.display = 'none';
+    }
+  }, 250));
+
+  // Search result click
+  $('demographicsSearchResults').addEventListener('click', (e) => {
+    const item = e.target.closest('.demographics-search-item');
+    if (item && item.dataset.unitid) {
+      loadSchoolDemographics(parseInt(item.dataset.unitid));
+      $('demographicsSearchResults').style.display = 'none';
+      $('demographicsSearchInput').value = item.textContent.trim().split(/\d/)[0].trim();
+    }
+  });
+
+  // Quick pick chips
+  $('demographicsQuickPicks').addEventListener('click', (e) => {
+    const chip = e.target.closest('.demographics-chip');
+    if (chip && chip.dataset.unitid) {
+      // Update active state
+      document.querySelectorAll('.demographics-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      loadSchoolDemographics(parseInt(chip.dataset.unitid));
+      $('demographicsSearchInput').value = chip.textContent.trim();
+    }
+  });
+
+  // Upgrade button in nudge
+  if ($('demographicsUpgradeBtn')) {
+    $('demographicsUpgradeBtn').addEventListener('click', () => {
+      $('demographicsModal').style.display = 'none';
+      openUpgrade();
+    });
+  }
+
+  // Close search results on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.demographics-search-wrap')) {
+      $('demographicsSearchResults').style.display = 'none';
+    }
+  });
+}
+
+async function loadDemographicsSchools() {
+  try {
+    const res = await fetch('/api/demographics/schools');
+    const data = await res.json();
+    demographicsSchoolsCache = data.schools || [];
+  } catch { demographicsSchoolsCache = []; }
+}
+
+async function loadSchoolDemographics(unitId) {
+  const contentEl = $('demographicsContent');
+  contentEl.innerHTML = '<div class="demographics-loading"><div class="spinner"></div>Loading demographics...</div>';
+
+  try {
+    const headers = {};
+    if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
+    const res = await fetch(`/api/demographics/school/${unitId}`, { headers });
+    const data = await res.json();
+
+    if (data.error) {
+      contentEl.innerHTML = `<div class="demographics-empty-state"><p>${data.error}</p></div>`;
+      return;
+    }
+
+    renderSchoolDemographics(data.school, data._fullAccess);
+
+    // Show/hide upgrade nudge
+    $('demographicsUpgradeNudge').style.display = data._fullAccess ? 'none' : 'block';
+
+  } catch (err) {
+    contentEl.innerHTML = `<div class="demographics-empty-state"><p>Failed to load demographics data.</p></div>`;
+  }
+}
+
+function renderSchoolDemographics(school, fullAccess) {
+  const contentEl = $('demographicsContent');
+  const agg = school.schoolAggregate;
+
+  let html = `<div class="demo-school-card">`;
+  html += `<div class="demo-school-name">${school.school}${school._preview ? '<span class="demo-preview-badge">Preview</span>' : ''}</div>`;
+  html += `<div class="demo-school-meta">${school.year} &middot; ${(agg?.demographics?.total || 0).toLocaleString()} bachelor's completions &middot; ${school.totalMajorsWithData} majors with data</div>`;
+
+  // Legend
+  html += `<div class="demo-legend">`;
+  for (const race of RACE_ORDER) {
+    if ((agg?.percentages?.[race] || 0) > 0.5) {
+      html += `<div class="demo-legend-item"><div class="demo-legend-swatch" style="background:${RACE_COLORS[race]}"></div>${RACE_LABELS[race]}</div>`;
+    }
+  }
+  html += `</div>`;
+
+  // School-wide bar chart
+  if (agg && agg.percentages) {
+    html += `<div class="demo-bar-chart">`;
+    for (const race of RACE_ORDER) {
+      const pct = agg.percentages[race] || 0;
+      if (pct < 0.3) continue; // Skip negligible
+      html += `<div class="demo-bar-row">
+        <span class="demo-bar-label">${RACE_LABELS[race]}</span>
+        <div class="demo-bar-track"><div class="demo-bar-fill ${race}" style="width:${pct}%"></div></div>
+        <span class="demo-bar-value">${pct}%</span>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+
+  // Majors breakdown
+  if (school.majors && school.majors.length > 0) {
+    const majorCount = school.majors.length;
+    const label = fullAccess ? `Demographics by Major (${majorCount})` : `Top Majors (${majorCount} of ${school.totalMajorsWithData})`;
+    html += `<div class="demo-majors-header">${label}</div>`;
+
+    for (const major of school.majors) {
+      html += `<div class="demo-major-row">
+        <div><div class="demo-major-name">${major.majorName}</div><div class="demo-major-total">${(major.demographics?.total || 0).toLocaleString()} graduates</div></div>
+        <div class="demo-major-bars">`;
+
+      if (major.percentages) {
+        for (const race of RACE_ORDER) {
+          const pct = major.percentages[race] || 0;
+          if (pct < 0.5) continue;
+          html += `<div class="demo-major-segment" style="width:${pct}%;background:${RACE_COLORS[race]}" data-tooltip="${RACE_LABELS[race]}: ${pct}%"></div>`;
+        }
+      }
+
+      html += `</div></div>`;
+    }
+
+    // Preview message
+    if (school._previewMessage) {
+      html += `<div style="text-align:center;padding:12px 0;color:#94a3b8;font-size:13px;">${school._previewMessage}</div>`;
+    }
+  }
+
+  html += `</div>`;
+  contentEl.innerHTML = html;
 }
 
 // ========================

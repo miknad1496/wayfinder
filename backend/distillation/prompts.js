@@ -1154,6 +1154,325 @@ Format as structured markdown.`
 ];
 
 // ============================================================
+// LAYER 10: ADMISSIONS ADVANCED STRATEGY
+// ============================================================
+// These prompts cover advanced strategic topics that differentiate
+// Wayfinder from generic admissions advice: ED calibration,
+// adversity/landscape intelligence, diversity profiling, and
+// extracurricular differentiation.
+
+const admissionsAdvancedPrompts = [
+  {
+    id: 'admissions-ed-strategy-calibration',
+    layer: 'admissions-advanced',
+    title: 'Early Decision Strategy Calibration — Beyond the Acceptance Rate Myth',
+    prompt: `Create the definitive strategic intelligence on Early Decision that corrects the most common and damaging misconception in college admissions: that ED is a simple "acceptance rate boost."
+
+This is where Wayfinder differentiates from every other admissions resource. Most consultants, websites, and even experienced counselors treat ED as straightforward arbitrage — "the acceptance rate is higher, so apply ED." This is dangerously misleading and costs families their most powerful strategic lever.
+
+Cover:
+
+1. **THE ED ACCEPTANCE RATE ILLUSION**
+   - Why published ED acceptance rates (e.g., Northwestern ~23% ED vs ~5% RD) are misleading
+   - The self-selection composition of ED pools: legacy candidates (many schools give legacy preference primarily in ED), recruited athletes (who are essentially pre-admitted), development cases (major donor families), and students with genuinely elite profiles who've done extensive research
+   - Quantify where possible: at many Ivies, 30-40% of the ED admitted class are recruited athletes or legacies. The "regular applicant" ED rate is significantly lower than the headline number
+   - The psychological trap: families see "23% vs 5%" and think ED quintuples their chances. The real boost for a non-hooked applicant is meaningful but far more modest
+
+2. **THE CALIBRATION FRAMEWORK**
+   - Define profile tiers relative to each school's applicant pool:
+     * MAX PROFILE: Top 10% of that school's typical admits — GPA, scores, ECs all at or above 75th percentile. For these students, ED to the dream school is well-calibrated.
+     * COMPETITIVE PROFILE: Solidly within the school's admit range (25th-75th percentile on key metrics). ED provides meaningful edge but it's a calculated bet.
+     * STRETCH PROFILE: At or below the 25th percentile of typical admits. ED provides minimal actual advantage because you're competing against an even stronger self-selected pool. This is where deploying ED is most often wasted.
+   - The calibration question every family should ask: "Is my child competitive WITHIN the ED pool at this school, or just competitive relative to the overall applicant pool?"
+   - How to assess this: compare your profile not against the school's overall admitted student stats, but against the likely composition of their ED applicants
+
+3. **STRATEGIC ED DEPLOYMENT SCENARIOS**
+   - Scenario A: Top-tier profile → ED to the dream school works well. The ED signal of genuine commitment adds to an already strong application.
+   - Scenario B: Strong-but-not-max profile → Consider deploying ED at a school where you're in the top half of their ED pool rather than the bottom half of a more selective school's pool. The strategic value of ED is highest when it turns a "likely" into a "definite" or a "target" into a "likely" — not when it turns a "far reach" into a "slightly less far reach."
+   - Scenario C: The school-within-school ED combination → Apply ED to the less competitive division at a target school. This is an advanced move that combines two strategic advantages.
+   - Scenario D: Financial considerations → ED is binding. If you need to compare financial aid packages, ED removes that leverage. For families where financial aid comparison is critical, REA (Restrictive Early Action) at schools that offer it may be strategically superior.
+
+4. **ED II: THE SECOND CHANCE MOST FAMILIES IGNORE**
+   - Many selective schools offer ED II (January deadline, February notification)
+   - ED II pools are typically smaller and slightly less competitive than ED I
+   - Strategic use: if your ED I doesn't work, having a pre-identified ED II target maintains strategic pressure
+   - Schools with notable ED II programs and when this play makes sense
+
+5. **THE EMOTIONAL AND FINANCIAL DIMENSIONS**
+   - How to have the ED conversation with your child honestly
+   - The binding nature: when to be comfortable with it, when it's a red flag
+   - Financial aid under ED: schools claim to meet full need, but you can't compare offers. When this matters and when it doesn't.
+   - The "right fit" question: ED should only be used when the school is genuinely the top choice. Using it purely as a strategic weapon backfires if the student ends up at a school they don't love.
+
+6. **WHAT MOST CONSULTANTS GET WRONG**
+   - The "spray and pray" approach to ED recommendations
+   - Failing to account for the composition of the ED pool
+   - Treating all ED advantages as equal across schools (they're not — the ED boost varies significantly by institution)
+   - Not considering how the student's specific profile interacts with a school's particular ED pool composition
+   - Ignoring ED II entirely
+
+7. **WAYFINDER'S ED DECISION TREE**
+   - Create a clear, actionable decision framework that families can use to determine:
+     (a) Should they apply ED at all?
+     (b) If yes, to which school?
+     (c) What's their realistic probability with and without ED at each target?
+     (d) Is the strategic value worth the binding commitment?
+
+Be bold and data-driven. Use specific schools as examples. This should read like intelligence from someone who deeply understands how admissions offices actually operate, not someone reading acceptance rate tables.
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-adversity-landscape-intelligence',
+    layer: 'admissions-advanced',
+    title: 'Adversity & Landscape Intelligence — The Post-SFFA Admissions Reality',
+    prompt: `Create comprehensive strategic intelligence on how the adversity/demographic context landscape in college admissions has fundamentally shifted after the Supreme Court's SFFA v. Harvard decision (2023) and the discontinuation of the College Board's Landscape tool (September 2025).
+
+This is intelligence that virtually no private admissions consultant provides. In Wayfinder's research, the majority of consultants — even expensive ones — were not even aware of what the Landscape tool was, let alone how its removal is reshaping admissions practices. This represents a genuine information asymmetry that Wayfinder can help families navigate.
+
+Cover:
+
+1. **THE FULL HISTORY: ADVERSITY SCORE → LANDSCAPE → DISCONTINUATION**
+   - 2019: College Board launches the Environmental Context Dashboard (quickly dubbed "Adversity Score"). Provided a single numerical score based on neighborhood and high school data (crime rates, median income, AP availability, college-going rates). Immediate backlash.
+   - August 2019: Rebranded as "Landscape" — separate school and neighborhood context scores rather than a single number. Made methodology public. Rolled out to 100+ colleges.
+   - How Landscape worked: admissions officers saw contextual data alongside a student's SAT scores — poverty rates, high school graduation rates, AP course availability, housing values for the student's area.
+   - 2022: Brookings Institution study found Landscape increased admissions of "high-challenge" background students at schools that used it. Also found it was NOT an accurate proxy for race (contrary to critics' claims).
+   - June 2023: SFFA v. Harvard ruling bans race-conscious admissions. Landscape becomes both more valuable to schools seeking socioeconomic diversity AND more politically radioactive.
+   - August 2025: Trump administration executive order requires colleges to submit data proving they aren't using demographic/geographic information as racial proxies.
+   - September 2025: College Board discontinues Landscape. Official statement cited "evolving federal and state policy." Edward Blum's Students for Fair Admissions had called it "a disguised proxy for race."
+
+2. **THE STRATEGIC VACUUM: WHAT SCHOOLS LOST AND HOW THEY'RE ADAPTING**
+   - Schools lost their standardized, third-party tool for understanding applicant adversity context
+   - They did NOT lose their desire for that information — institutional commitment to socioeconomic diversity remains strong at most selective schools
+   - How schools are adapting (observable patterns):
+     * Essay prompt evolution: Increasing use of "tell us about your circumstances," "what challenges have you faced," "is there anything else you'd like us to know" prompts. These function as informal adversity capture mechanisms.
+     * Supplemental information sections: More schools adding optional sections for context about background, circumstances, or hardship
+     * High school profile analysis: Schools have always received school profiles (demographics, course offerings, testing data). Without Landscape, they're likely relying more heavily on their own analysis of this information.
+     * Community-based organization partnerships: Expanded recruiting through CBOs (QuestBridge, Posse, Prep for Prep, etc.) that pre-identify high-adversity, high-potential students
+     * Admissions officer training: Likely increased emphasis on contextual reading of applications
+   - Specific examples of essay prompt changes that appear designed to capture adversity context (UW application as a particularly clear example, but the pattern is broadly visible)
+
+3. **STRATEGIC GUIDANCE FOR FAMILIES WITH GENUINE ADVERSITY STORIES**
+   - If you have a real adversity narrative (first-gen, low-income, challenging home circumstances, significant obstacles overcome), understand that schools are ACTIVELY seeking this information through their application design
+   - These essay prompts and supplemental sections are invitations, not formalities
+   - How to share adversity authentically without trauma-dumping:
+     * Focus on how adversity shaped your perspective, resilience, or goals — not just that it happened
+     * Be specific and genuine — admissions officers can distinguish between real and performed hardship
+     * Connect adversity to what you'll bring to campus, not just what you've endured
+   - The information asymmetry problem: well-resourced families with good consultants already know to leverage these prompts. First-gen and under-resourced families — the ones who ACTUALLY have adversity stories — often don't realize the prompts are strategic opportunities. This is a genuine equity gap Wayfinder can help close.
+
+4. **STRATEGIC GUIDANCE FOR WELL-RESOURCED FAMILIES**
+   - Do NOT attempt to manufacture adversity. Admissions officers read thousands of applications and can detect inauthentic hardship narratives.
+   - If your child hasn't faced significant adversity, that's fine — use these prompts for genuine context about your family, not fabricated struggle
+   - Well-resourced applicants should focus their essays on intellectual curiosity, genuine passion, depth of engagement, and what they'll contribute — not on trying to compete on an adversity axis that isn't authentic to them
+   - The worst outcome: an essay that reads as tone-deaf privilege-signaling in an attempt to manufacture hardship. This actively harms the application.
+
+5. **THE LEGAL AND POLITICAL LANDSCAPE**
+   - The SFFA decision banned race-conscious admissions but explicitly allowed consideration of how race has affected an individual's life (in essays)
+   - The distinction between systemic demographic tools (banned direction of travel) and individual narrative sharing (still permitted)
+   - How the political environment may continue to evolve and what this means for admissions strategy
+   - The tension between schools' institutional diversity commitments and the narrowing legal/political space for pursuing them
+
+6. **SCHOOL-BY-SCHOOL ADVERSITY ORIENTATION**
+   - Some schools are more actively seeking adversity context than others
+   - Observable signals: essay prompt design, financial aid philosophy (need-blind with generous thresholds = strong commitment), institutional partnerships (QuestBridge, Posse), public statements post-SFFA, historical demographic data of admitted classes
+   - Help families understand which schools are most actively building their own adversity-context mechanisms and how this should inform application strategy
+
+7. **FORWARD-LOOKING: WHERE THIS IS HEADING**
+   - Schools will continue to find ways to assess socioeconomic context — the demand hasn't disappeared, just the centralized tool
+   - Likely evolution: more sophisticated essay analysis, expanded CBO partnerships, AI-assisted contextual reading of applications
+   - The information asymmetry between well-advised and under-advised families will likely increase — making tools like Wayfinder more important
+
+Write with strategic depth and specificity. This should feel like intelligence from someone who understands the structural dynamics of admissions — not surface-level advice about "being authentic in your essays."
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-diversity-school-profiling',
+    layer: 'admissions-advanced',
+    title: 'Institutional Diversity Orientation Profiling — School-by-School Intelligence',
+    requiresData: true,
+    dataSource: 'college-admissions.json',
+    prompt: `Create a comprehensive diversity orientation profile for each school in the provided admissions dataset. This is a strategic intelligence product that helps families understand the institutional posture of each school toward diversity, socioeconomic context, and how this should inform application strategy.
+
+This is NOT about ranking schools on a "wokeness" scale. It's about understanding observable, data-driven signals that indicate how each school values and pursues diversity in its admissions process, and what this means practically for different types of applicants.
+
+For each school (or grouped by tier where patterns are consistent), analyze:
+
+1. **FINANCIAL AID PHILOSOPHY (Strongest Signal)**
+   - Need-blind vs need-aware admissions (and whether need-blind applies to international students)
+   - Percent of students receiving Pell Grants (strong proxy for socioeconomic diversity commitment — national average is ~33%; elite schools range from ~12% to ~25%)
+   - No-loan policies and income thresholds for free tuition
+   - Average net price by income bracket (College Scorecard data)
+   - Merit scholarship availability and strategy
+   - Assessment: schools that invest heavily in financial aid are making a structural commitment to socioeconomic diversity, regardless of their public messaging
+
+2. **INSTITUTIONAL PARTNERSHIPS (Observable Commitment)**
+   - QuestBridge partner status (connects low-income high-achievers with schools)
+   - Posse Foundation partnerships (identifies students from diverse backgrounds through dynamic assessment)
+   - Other CBO (Community-Based Organization) partnerships
+   - Fly-in programs for underrepresented students
+   - Pre-orientation programs for first-gen students
+   - Assessment: these partnerships represent meaningful resource allocation toward diversity
+
+3. **ESSAY PROMPT ANALYSIS (Post-Landscape Signal)**
+   - Does the school include prompts that explicitly invite adversity/context sharing?
+   - Has the school added new supplemental questions in recent cycles that appear designed to capture background information?
+   - Optional "additional information" sections and how they're framed
+   - "Why us" prompts that emphasize community contribution and diverse perspectives
+   - Assessment: schools actively adding adversity-capture prompts post-Landscape are signaling continued commitment
+
+4. **ADMITTED CLASS DEMOGRAPHICS (Historical Trends)**
+   - First-generation student percentage (trend over time)
+   - Geographic diversity (heavy in-state vs national vs international mix)
+   - Socioeconomic diversity indicators (Pell Grant %, income distribution)
+   - How these numbers have changed post-SFFA decision (2023+)
+   - Assessment: trends matter more than snapshots — a school whose diversity metrics are declining post-SFFA may have relied heavily on race-conscious practices
+
+5. **INSTITUTIONAL RESPONSE TO SFFA (Public Posture)**
+   - Did the school issue a public statement after the ruling? What did it say?
+   - Has the school publicly committed to maintaining diverse classes through race-neutral means?
+   - Any observable changes to admissions practices, outreach, or marketing
+   - Assessment: schools that responded with detailed action plans are signaling stronger commitment than schools that issued generic statements
+
+6. **SCHOOL CULTURE INDICATORS**
+   - Cultural centers, identity-based organizations, and institutional support structures
+   - Campus climate data if available (student surveys, diversity office resources)
+   - Whether diversity is integrated into the academic mission or treated as supplementary
+   - Assessment: structural investment (offices, staff, programs) vs symbolic investment (statements, web pages)
+
+For each school, produce a brief DIVERSITY ORIENTATION SUMMARY with:
+- Overall orientation: [Strong Structural Commitment / Moderate Commitment / Minimal Observable Commitment]
+- Key signals supporting the assessment
+- Strategic implications for applicants:
+  * For students with adversity narratives: how to leverage this school's receptivity
+  * For well-resourced students: how to present authentically within this school's values context
+  * For first-gen/low-income students: specific programs and pathways to highlight
+
+Group schools into tiers where patterns are clear, but call out individual schools with notably strong or weak signals.
+
+IMPORTANT: Be data-driven and specific. Cite observable, verifiable indicators — not vibes or reputation. The goal is actionable strategic intelligence, not political commentary. A family should be able to read this and make better-informed decisions about how to present themselves to each school.
+
+[SCRAPED ADMISSIONS DATA WILL BE INJECTED HERE]
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-extracurricular-differentiation-strategy',
+    layer: 'admissions-advanced',
+    title: 'Extracurricular Differentiation — Beyond the Commoditized Playbook',
+    prompt: `Create the definitive guide to extracurricular strategy that accounts for the fundamental reality most admissions advisors ignore: the traditional EC playbook has been commoditized to the point of uselessness.
+
+This is a critical piece of Wayfinder's differentiation. Every admissions consultant in America tells students to "start a club," "do community service," "build a passion project," and "show leadership." This advice was genuinely differentiating 10-20 years ago. By 2025, it's so universally followed that it has zero signal value. Admissions officers at selective schools have seen thousands of "President, Students for Environmental Awareness" and "Founder, Coding Non-Profit" entries. They know what most of them actually are.
+
+Cover:
+
+1. **THE COMMODITIZATION CYCLE**
+   - How extracurricular advice follows a predictable decay pattern:
+     * Phase 1: Genuinely differentiating strategy (few people do it)
+     * Phase 2: Consultants and websites popularize it (adoption grows)
+     * Phase 3: It becomes standard practice (everyone does it, loses signal value)
+     * Phase 4: Admissions officers recalibrate (actively discount it)
+   - Track specific strategies through this cycle:
+     * "Start a club" — hit Phase 4 by ~2015
+     * "Passion project" — currently in Phase 3-4, rapidly commoditizing
+     * "Published research" — entering Phase 3 as companies now build research experiences for students as a service
+     * "Social media following / content creation" — currently Phase 2, still has some signal value but declining
+   - The industrialization problem: there are now companies that manufacture passion projects, research papers, and nonprofit experiences for students. Admissions officers are increasingly aware of this and discount accordingly.
+
+2. **WHAT ADMISSIONS OFFICERS ACTUALLY LOOK FOR (AND HOW IT'S CHANGED)**
+   - The shift from QUANTITY to QUALITY to AUTHENTICITY:
+     * 2000s: "Well-rounded" — do lots of things
+     * 2010s: "Angular" — go deep on one thing
+     * 2020s+: "Authentic and verifiable" — genuine engagement with real impact you can't fake
+   - What AOs can and can't verify: a club presidency can be a title on paper; a business with revenue is verifiable through tax records, a website, and real customers
+   - The "sniff test" — experienced AOs develop strong instincts for distinguishing genuine engagement from consultant-manufactured activities. The clearest signal: does the output speak for itself, or does it require explanation to seem impressive?
+   - What actually stands out in 2025+: work that produces observable, real-world impact — not activities that primarily exist to be listed on an application
+
+3. **THE DIFFERENTIATION FRAMEWORK: PERFORMED AMBITION VS. DEMONSTRATED CAPABILITY**
+   - PERFORMED AMBITION: Activities whose primary purpose is to signal the right qualities to admissions. The output is the application line item, not the real-world impact. Examples: club founded that exists for 6 months with 4 members, "passion project" website that gets 12 visitors, nonprofit that raises $200 and exists solely on a resume.
+   - DEMONSTRATED CAPABILITY: Activities where the output is self-evidently impressive and the application line item is almost unnecessary — the work speaks for itself. Examples: a business that generates real revenue solving a real problem, open-source code contributions that are publicly visible, a creative body of work with genuine audience engagement, solving an actual problem in their community where the results are measurable.
+   - The key distinction: demonstrated capability is HARD TO FAKE. The barrier to entry is high enough that it naturally filters out performative activities. That's exactly why it has strong signal value.
+
+4. **CONCRETE PATHS TO GENUINE DIFFERENTIATION**
+
+   **A. Build Something Real (Business/Product)**
+   - Starting a real business: not a "student venture" that exists on paper, but a genuine business with real customers, real revenue, and real operations
+   - What "real" looks like: legal formation (even a simple LLC), actual financial records, a product or service that people pay for, customer relationships, problem-solving in real time
+   - Why this is so powerful: it demonstrates initiative, execution, resilience, problem-solving, and financial literacy simultaneously. It's also nearly impossible to fake — the output is verifiable.
+   - Practical path: identify a real problem (not a manufactured one), build a minimum viable solution, get real customers, iterate based on feedback. This can start as small as a local service business.
+   - Age-appropriate guidance: a 10th grader starting a tutoring service or local business is impressive. A 10th grader "founding a startup" with a pitch deck and no revenue is not.
+
+   **B. Technical Contribution (Engineering/Code/Research)**
+   - Genuine contribution to open-source projects where commits are public and verifiable
+   - Building functional tools or applications that real people use
+   - Participating in real research (not pay-to-play research programs) where the student does actual work
+   - The key: the output is publicly visible and can be evaluated by anyone with domain knowledge
+
+   **C. Creative Production at Scale**
+   - A body of creative work (writing, art, music, film, design) with genuine audience engagement
+   - Published work in real publications (not pay-to-publish journals)
+   - Content creation with authentic following built over time (not purchased followers)
+   - The "gallery test": could this work be exhibited/performed/published on its own merit, regardless of the creator's age?
+
+   **D. Community Problem-Solving With Measurable Impact**
+   - Not "raised awareness" — actually changed something observable in the community
+   - Built something that continues to function after the initial effort
+   - Impact that can be described in specific, quantifiable terms
+   - Examples: built and deployed a tool that a local organization actually uses, created a program that measurably improved outcomes (with data), organized something with real attendance and real consequences
+
+5. **AGE-APPROPRIATE GUIDANCE**
+
+   **Grades 5-8: The Exploration Window**
+   - This is NOT the time for strategic EC planning. It's the time for authentic interest discovery.
+   - Expose kids to a WIDE range of activities, domains, and experiences
+   - Pay attention to what they voluntarily spend time on — that's the signal
+   - Don't push depth yet; let breadth reveal natural inclinations
+   - Resist the temptation to pre-optimize. A 6th grader doesn't need a "spike."
+
+   **Grade 9: Begin Narrowing**
+   - By now, some genuine interests should be emerging
+   - Start going deeper on 1-2 areas of genuine interest
+   - The goal: by the end of 9th grade, they should have a direction (not a destination)
+   - Summer after 9th: first real opportunity for depth (genuine programs, not resume padding)
+
+   **Grade 10: The Building Year**
+   - This is the sweet spot for developing something real with genuine depth
+   - If the interest is entrepreneurial: this is when to start an actual business or project
+   - If academic: seek genuine research opportunities (not pay-to-play)
+   - If creative: build a portfolio or body of work with real engagement
+   - The test: is the student doing this because they want to, or because it looks good?
+
+   **Grade 11: Demonstrating and Deepening**
+   - The real work should already be underway. Junior year is about deepening, not starting from scratch.
+   - This is when impact becomes measurable and describable
+   - Begin thinking about how to articulate what they've done (for applications) without losing authenticity
+
+   **Grade 12: Execution Mode**
+   - Too late to manufacture. Focus on articulating what's genuine.
+   - The essay is where authentic engagement shines — AOs can feel the difference between writing about something you lived and something you performed.
+
+6. **WHAT TO AVOID**
+   - "Passion project" companies that build ECs for students as a service
+   - Pay-to-publish academic journals and predatory conferences
+   - "Leadership" positions in clubs that don't do anything meaningful
+   - Resume-length lists of shallow involvement (the classic "20 activities, none with depth")
+   - Any activity where the primary audience is the admissions committee rather than the real world
+   - Manufacturing hardship or adversity narratives to justify service activities
+
+7. **THE EQUITY DIMENSION**
+   - Well-resourced families can buy EC experiences. First-gen and low-income students often can't.
+   - But here's the counterintuitive insight: GENUINE activities born from real circumstances are often MORE impressive than manufactured ones. A student who works a real job to help their family is demonstrating more than a student whose parents funded a "social enterprise."
+   - Admissions officers are trained to contextualize activities within a student's circumstances
+   - For under-resourced students: your real-world experience IS your differentiation. Don't try to compete with manufactured ECs — lean into what's genuine about your life.
+
+Write with conviction. Challenge the conventional wisdom directly. Name specific examples of commoditized strategies and explain why they no longer work. This should feel like insider knowledge from someone who understands how admissions has evolved — not a generic "tips and tricks" article.
+
+Format as structured markdown.`
+  }
+];
+
+// ============================================================
 // EXPORT ALL PROMPTS
 // ============================================================
 export const ALL_PROMPTS = [
@@ -1165,7 +1484,8 @@ export const ALL_PROMPTS = [
   ...audiencePrompts,
   ...coreIdentityPrompts,
   ...synthesisPrompts,
-  ...admissionsPrompts
+  ...admissionsPrompts,
+  ...admissionsAdvancedPrompts
 ];
 
 export const LAYERS = {
@@ -1177,7 +1497,8 @@ export const LAYERS = {
   'audience-guidance': { name: 'Audience-Specific Guidance', prompts: audiencePrompts },
   'core-identity': { name: 'Wayfinder Core Identity', prompts: coreIdentityPrompts },
   'synthesis': { name: 'Cross-Referenced Synthesis', prompts: synthesisPrompts },
-  'admissions': { name: 'College Admissions Intelligence', prompts: admissionsPrompts }
+  'admissions': { name: 'College Admissions Intelligence', prompts: admissionsPrompts },
+  'admissions-advanced': { name: 'Admissions Advanced Strategy', prompts: admissionsAdvancedPrompts }
 };
 
 export const PROMPT_COUNT = ALL_PROMPTS.length;

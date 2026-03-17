@@ -1492,6 +1492,377 @@ html, body { overflow-x: hidden; }
   background: rgba(248, 81, 73, 0.1);
 }
 
+/* ─── Demographics Tool ──────────────────────────────── */
+
+.demographics-btn {
+  color: #8B949E !important;
+}
+.demographics-btn:hover {
+  color: #e6edf3 !important;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+.modal-demographics {
+  max-width: 720px;
+  width: 95%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.demographics-header {
+  margin-bottom: 16px;
+}
+.demographics-header h2 {
+  margin-bottom: 4px;
+}
+
+.demographics-search-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+.demographics-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+.demographics-search {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.demographics-search:focus {
+  border-color: var(--primary);
+}
+.demographics-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+.demographics-search-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light, #f1f5f9);
+  transition: background 0.1s;
+}
+.demographics-search-item:last-child { border-bottom: none; }
+.demographics-search-item:hover {
+  background: var(--primary-light, #dbeafe);
+}
+.demographics-search-item .search-completions {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-left: 8px;
+}
+
+.demographics-quick-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.demographics-label {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-right: 4px;
+}
+.demographics-chip {
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.demographics-chip:hover,
+.demographics-chip.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.demographics-content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 200px;
+  max-height: 50vh;
+  padding-right: 4px;
+}
+.demographics-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  color: #94a3b8;
+  gap: 12px;
+}
+.demographics-empty-state p {
+  font-size: 14px;
+}
+
+/* School Card */
+.demo-school-card {
+  margin-bottom: 16px;
+}
+.demo-school-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.demo-school-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+/* Bar chart */
+.demo-bar-chart {
+  margin-bottom: 16px;
+}
+.demo-bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+.demo-bar-label {
+  width: 80px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: right;
+  flex-shrink: 0;
+}
+.demo-bar-track {
+  flex: 1;
+  height: 22px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.demo-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  min-width: 2px;
+}
+.demo-bar-value {
+  width: 48px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* Ethnicity color palette */
+.demo-bar-fill.white { background: #3b82f6; }
+.demo-bar-fill.asian { background: #10b981; }
+.demo-bar-fill.hispanic { background: #f59e0b; }
+.demo-bar-fill.black { background: #8b5cf6; }
+.demo-bar-fill.two_or_more_races { background: #ec4899; }
+.demo-bar-fill.nonresident_alien { background: #6366f1; }
+.demo-bar-fill.american_indian_alaska_native { background: #14b8a6; }
+.demo-bar-fill.native_hawaiian_pacific_islander { background: #f97316; }
+.demo-bar-fill.unknown { background: #94a3b8; }
+
+/* Majors table */
+.demo-majors-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.demo-major-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: start;
+}
+.demo-major-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.demo-major-total {
+  font-size: 11px;
+  color: #94a3b8;
+}
+.demo-major-bars {
+  display: flex;
+  height: 18px;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 260px;
+  flex-shrink: 0;
+}
+.demo-major-segment {
+  height: 100%;
+  transition: width 0.3s ease;
+  min-width: 1px;
+  position: relative;
+}
+.demo-major-segment:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Legend */
+.demo-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+.demo-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.demo-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Upgrade nudge */
+.demographics-upgrade-nudge {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.nudge-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+}
+.nudge-content svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.nudge-content strong {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 2px;
+}
+.nudge-content p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.nudge-upgrade-btn {
+  padding: 8px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.nudge-upgrade-btn:hover {
+  background: var(--primary-dark);
+}
+
+.demographics-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+.demographics-source {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Preview badge */
+.demo-preview-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+/* Loading state */
+.demographics-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  color: #94a3b8;
+  gap: 8px;
+  font-size: 14px;
+}
+.demographics-loading .spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e2e8f0;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  .modal-demographics { max-width: 100%; width: 100%; max-height: 90vh; }
+  .demo-major-bars { width: 140px; }
+  .demo-bar-label { width: 60px; font-size: 11px; }
+  .demographics-quick-picks { gap: 4px; }
+}
+
 /* Safe area support for notch phones */
 @supports (padding: env(safe-area-inset-bottom)) {
   .input-area {

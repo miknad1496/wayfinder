@@ -29,6 +29,7 @@ import { runCertificationsScraper } from './certifications-scraper.js';
 import { runRedditScraper } from './reddit-scraper.js';
 import { runCommunityScraper } from './community-scraper.js';
 import { runAdmissionsScraper } from './admissions-scraper.js';
+import { scrapeEthnicityDemographics } from './ethnicity-demographics-scraper.js';
 
 async function runAll() {
   console.log('╔══════════════════════════════════════════════╗');
@@ -85,18 +86,28 @@ async function runAll() {
     console.error('Admissions scraper failed:', err.message);
   }
 
+  // === PHASE 1B: IPEDS Annual Data (run separately if needed) ===
+  // Note: Ethnicity demographics is a heavy, annual scraper.
+  // It's included in run-all but can also be run standalone via run-ethnicity.js
+  try {
+    console.log('\n7/9 IPEDS Ethnicity Demographics (annual)...');
+    results.ethnicity = await scrapeEthnicityDemographics();
+  } catch (err) {
+    console.error('Ethnicity demographics scraper failed:', err.message);
+  }
+
   // === PHASE 2: Community Intelligence ===
   console.log('\n━━━ PHASE 2: Community Intelligence ━━━\n');
 
   try {
-    console.log('7/8 Reddit Career Communities...');
+    console.log('8/9 Reddit Career Communities...');
     results.reddit = await runRedditScraper();
   } catch (err) {
     console.error('Reddit scraper failed:', err.message);
   }
 
   try {
-    console.log('\n8/8 HackerNews & Community Discussions...');
+    console.log('\n9/9 HackerNews & Community Discussions...');
     results.community = await runCommunityScraper();
   } catch (err) {
     console.error('Community scraper failed:', err.message);

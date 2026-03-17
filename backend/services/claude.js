@@ -70,12 +70,6 @@ You are producing a perception-reality gap analysis. Format your response with t
 6. CONTRARIAN PLAY: What's the strategic opportunity that most people are missing because they're following perception, not reality?
 7. WAYFINDER VERDICT: Our honest, data-backed take — with specific recommendations
 
-Examples of perception gaps to analyze:
-- "CS is the safest degree" (perception) vs. entry-level saturation + AI displacement (emerging reality)
-- "Ivy League guarantees success" (perception) vs. outcomes data showing diminishing returns past top 50 (reality)
-- "Trades are for people who can't do college" (perception) vs. $80-120K earnings with zero debt (reality)
-- "Follow your passion" (perception) vs. find what you're good at that the market will value in 4 years (reality)
-
 Be bold, honest, and data-driven. This is where Wayfinder's forward-looking philosophy shines.`
   }
 };
@@ -153,6 +147,9 @@ function buildProfileString(sessionContext) {
   // Track indicator
   if (sessionContext.track) lines.push(`Track: ${sessionContext.track}`);
 
+  // Values orientation
+  if (sessionContext.valuesOrientation) lines.push(`Values: ${sessionContext.valuesOrientation}`);
+
   // Expanded profile fields
   const p = sessionContext.profile;
   if (p) {
@@ -181,51 +178,100 @@ CURRENT USER PROFILE
 ${lines.join('\n')}`;
 }
 
-// ─── Conversation Depth Detection ────────────────────────────
+// ─── Signal-Driven Conversation Phase Detection ────────────────
 // Analyzes conversation history to determine what phase we're in
-// and how much context the user has already built up.
-// This drives: response length calibration, engine pull nudges,
-// and whether to proactively offer deeper analysis.
+// based on CONTEXT RICHNESS, not just exchange count.
+// A high-context opener should skip the warm-up phase entirely.
 
 function detectConversationPhase(conversationHistory, sessionContext) {
   const exchangeCount = conversationHistory.filter(m => m.role === 'user').length;
   const hasProfile = sessionContext && (sessionContext.userType || sessionContext.profile?.gradeLevel || sessionContext.profile?.careerInterests?.length);
   const hasTrack = sessionContext?.track;
+  const hasValues = sessionContext?.valuesOrientation;
 
   // Count how much context the user has shared (look at user message lengths)
   const totalUserChars = conversationHistory
     .filter(m => m.role === 'user')
     .reduce((sum, m) => sum + (m.content?.length || 0), 0);
 
-  // Phase 1: Context building — first few exchanges, still learning about user
-  if (exchangeCount <= 2 && !hasProfile) {
+  // ─── Context Richness Scoring ─────────────────────────────
+  // Instead of just counting exchanges, score how much useful context we have
+  let contextScore = 0;
+
+  // Profile completeness signals
+  if (hasProfile) contextScore += 2;
+  if (hasTrack) contextScore += 1;
+  if (hasValues) contextScore += 1;
+  if (sessionContext?.profile?.gradeLevel) contextScore += 1;
+  if (sessionContext?.profile?.targetSchools) contextScore += 1;
+  if (sessionContext?.profile?.careerInterests?.length) contextScore += 1;
+
+  // Message content richness — high-context openers should advance phase faster
+  const latestUserMsg = conversationHistory.filter(m => m.role === 'user').pop();
+  if (latestUserMsg) {
+    const msgLen = latestUserMsg.content?.length || 0;
+    // A detailed first message (200+ chars) suggests the user has context to share
+    if (msgLen > 300) contextScore += 2;
+    else if (msgLen > 150) contextScore += 1;
+
+    // Detect specific data points in the message (GPA, scores, school names, grade level)
+    const msg = latestUserMsg.content?.toLowerCase() || '';
+    const specificSignals = [
+      /\d+\.\d+\s*(gpa|weighted|unweighted)/,     // GPA mentioned
+      /\d{3,4}\s*(sat|act|score)/,                 // Test scores
+      /\b(9th|10th|11th|12th|junior|senior|freshman|sophomore)\s*(grade|grader)?\b/,  // Grade level
+      /\b(harvard|yale|princeton|stanford|mit|cornell|penn|columbia|duke|northwestern|caltech|uchicago|georgetown|vanderbilt|rice)\b/i,  // Named schools
+      /\b(pre-med|premed|engineering|computer science|business|nursing)\b/i,  // Specific fields
+      /\b(budget|afford|financial|cost|tuition|debt|loan)\b/i,  // Financial context
+    ];
+    for (const pattern of specificSignals) {
+      if (pattern.test(msg)) contextScore += 1;
+    }
+  }
+
+  // Exchange-based floor (still consider time in conversation)
+  if (exchangeCount >= 4) contextScore += 2;
+  else if (exchangeCount >= 2) contextScore += 1;
+
+  // Total user investment in the conversation
+  if (totalUserChars > 1000) contextScore += 1;
+  if (totalUserChars > 2500) contextScore += 1;
+
+  // ─── Phase Assignment Based on Context Score ───────────────
+  // Phase 1: Lean context (score 0-3) — still building understanding
+  // Phase 2: Moderate context (score 4-7) — have enough to get specific
+  // Phase 3: Rich context (score 8+) — ready for deep analysis
+
+  if (contextScore >= 8) {
     return {
-      phase: 1,
-      label: 'context_building',
-      suggestedMaxTokens: 800,
-      nudgeDeepAnalysis: false,
-      contextRichness: 'lean'
+      phase: 3,
+      label: 'deep_analysis',
+      suggestedMaxTokens: 2000,
+      nudgeDeepAnalysis: true,
+      contextRichness: 'rich',
+      contextScore
     };
   }
 
-  // Phase 2: Targeted exploration — have some context, can get specific
-  if (exchangeCount <= 6 || (exchangeCount <= 8 && !hasTrack)) {
+  if (contextScore >= 4) {
     return {
       phase: 2,
       label: 'targeted_exploration',
       suggestedMaxTokens: 1200,
-      nudgeDeepAnalysis: exchangeCount >= 4 && hasProfile,
-      contextRichness: 'moderate'
+      nudgeDeepAnalysis: contextScore >= 6,
+      contextRichness: 'moderate',
+      contextScore
     };
   }
 
-  // Phase 3: Deep analysis — earned through conversation depth
+  // Phase 1: Context building
   return {
-    phase: 3,
-    label: 'deep_analysis',
-    suggestedMaxTokens: 2000,
-    nudgeDeepAnalysis: true,
-    contextRichness: 'rich'
+    phase: 1,
+    label: 'context_building',
+    suggestedMaxTokens: 800,
+    nudgeDeepAnalysis: false,
+    contextRichness: 'lean',
+    contextScore
   };
 }
 
@@ -245,7 +291,7 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
 
   // Detect conversation depth — this influences token budget and context assembly
   const phase = detectConversationPhase(conversationHistory, sessionContext);
-  console.log(`[Conversation] Phase ${phase.phase} (${phase.label}), exchanges: ${conversationHistory.filter(m => m.role === 'user').length}`);
+  console.log(`[Conversation] Phase ${phase.phase} (${phase.label}), context score: ${phase.contextScore}, exchanges: ${conversationHistory.filter(m => m.role === 'user').length}`);
 
   let contextStr;
   let relevantChunks = [];
@@ -268,7 +314,7 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
 
   // Add mode indicator and analysis framework injection
   if (useEngine) {
-    systemPrompt += '\n\n[WAYFINDER ENGINE ACTIVE — You have access to deep, specific knowledge from BLS data, O*NET profiles, community insights, and distilled career intelligence. Provide detailed, data-rich answers with specific numbers, salary ranges, and growth projections.]';
+    systemPrompt += '\n\n[WAYFINDER ENGINE ACTIVE — You have access to Wayfinder\'s full proprietary advisory intelligence: deep domain-specific knowledge continuously refined across hundreds of career and admissions sub-verticals, multi-layer distilled reasoning from expert synthesis, and calibrated insights from industry professionals and real interaction patterns. Provide personalized, strategic analysis mapped to this user\'s specific situation. Use specific data points, projections, and nuanced recommendations. This is the $10K consultant moment — deliver maximum value.]';
 
     // Check if a structured analysis framework should be activated
     const framework = detectAnalysisFramework(userMessage);
@@ -284,11 +330,11 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // Add conversation phase guidance — tells Claude where we are in the arc
   // and how to calibrate response depth
   const phaseGuidance = {
-    1: '\n\n[CONVERSATION PHASE: CONTEXT BUILDING — This is an early exchange. Keep responses warm, concise (150-250 words), and end with a natural question to learn more about the user. Provide helpful directional guidance but save the deep data for later. Build rapport and understanding first.]',
-    2: '\n\n[CONVERSATION PHASE: TARGETED EXPLORATION — You have some context about this user. Provide data-specific responses (250-400 words) tailored to their situation. ' +
-      (phase.nudgeDeepAnalysis ? 'When relevant, offer to go deeper: "I can run a full analysis on this if helpful..." ' : '') +
-      'Reference what you know about them from earlier in the conversation.]',
-    3: '\n\n[CONVERSATION PHASE: DEEP ANALYSIS — This conversation has earned depth. Provide comprehensive, structured responses (400-600+ words) with specific data, projections, and personalized strategy. This is the $10K consultant moment — deliver maximum value.]'
+    1: '\n\n[CONVERSATION PHASE: CONTEXT BUILDING — Context is still lean. Keep responses warm, concise (150-250 words), and conversational. Include the Engine orientation naturally in your first response. Ask about their values orientation (ROI vs fulfillment). End with a natural question to learn more. Provide helpful directional guidance but save the deep analysis for later. Do NOT front-load statistics or data dumps — build rapport and understanding first.]',
+    2: '\n\n[CONVERSATION PHASE: TARGETED EXPLORATION — You have meaningful context about this user. Provide tailored guidance (250-400 words) calibrated to their situation and values. Reference what you know about them. ' +
+      (phase.nudgeDeepAnalysis ? 'When relevant, naturally suggest going deeper: "I can do a full strategic breakdown on this if you want to use an Engine call..." ' : '') +
+      'Use data to support your narrative when relevant, but keep it conversational — not data-dump style.]',
+    3: '\n\n[CONVERSATION PHASE: DEEP ANALYSIS — This conversation has earned depth. Provide comprehensive, structured responses (400-600+ words) with personalized analysis, specific data mapped to their profile, and strategic recommendations. Calibrate to their values orientation throughout. This is where Wayfinder\'s full intelligence shines.]'
   };
   systemPrompt += phaseGuidance[phase.phase] || '';
 
@@ -316,6 +362,7 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       response: assistantMessage,
       mode: useEngine ? 'engine' : 'standard',
       phase: phase.phase,
+      contextScore: phase.contextScore,
       usage: {
         inputTokens: response.usage.input_tokens,
         outputTokens: response.usage.output_tokens,

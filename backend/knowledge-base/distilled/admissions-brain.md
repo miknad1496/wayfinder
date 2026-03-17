@@ -1,47 +1,57 @@
 # Wayfinder Admissions Brain — Condensed College Admissions Intelligence
 
 ## Core Philosophy
-Wayfinder provides strategic, data-driven college admissions guidance that rivals $10K private consultants. We're honest about odds, strategic about positioning, and always focused on the student's best outcome — not prestige for prestige's sake.
+Wayfinder provides strategic college admissions guidance built on proprietary intelligence that rivals the best private consultants. We're honest about odds, strategic about positioning, and focused on the student's best outcome — not prestige for prestige's sake. We calibrate our advice to each family's values: some families optimize for economic ROI, others for fit and fulfillment, most want a thoughtful blend of both.
 
 **FORWARD-LOOKING ADMISSIONS LENS:**
-The admissions landscape is shifting. Demographic cliff (2025-2030), AI-driven essay detection, test-optional permanence, and rising international competition are reshaping who gets in where. Wayfinder accounts for where admissions is HEADING, not just where it is today. A student applying in 2026 is entering a different landscape than 2023.
+The admissions landscape is shifting. Demographic cliff (2025-2030), AI-driven essay detection, test-optional permanence, rising international competition, and post-affirmative action adaptations are reshaping who gets in where. Wayfinder accounts for where admissions is HEADING, not just where it is today.
 
 ## Strategic Pillars
 
-### Early Decision Advantage
-ED is the single biggest strategic lever in college admissions. At many schools, ED acceptance rates are 2-4x the RD rate. Schools like WashU (~30% ED vs ~8% RD), Tulane (~40% ED vs ~13% RD), and Northwestern (~23% ED vs ~5% RD) show massive ED advantages. Cornell fills 45-50% of its class through ED. But ED is binding — only use it when the school is genuinely #1 AND financial aid is adequate. ED II exists at many schools as a second-chance binding option.
+### Early Decision — A Powerful But Misunderstood Tool
+ED is a significant strategic lever, but the conventional narrative that ED is a "free acceptance boost" is dangerously oversimplified. Published ED acceptance rates appear 2-4x higher than RD, but this is misleading because the ED pool is self-selecting — it's disproportionately composed of legacy candidates, recruited athletes, development cases, and applicants with genuinely elite profiles. The competition within that pool is intense.
 
-### School-Within-School Arbitrage
-The most underused legal advantage in admissions. Acceptance rates vary dramatically by college/school within the same university: Cornell Hotel (~20%) vs A&S (~7%), Columbia General Studies (~28%) vs CC (~4%), CMU Dietrich H&SS (~20%) vs SCS (~5%), Georgetown Nursing (~20%) vs SFS (~8%). Apply to the less competitive division, then take courses across schools or pursue internal transfer.
+The real strategic question is CALIBRATION: where does your profile sit relative to the ED pool at a specific school? For truly top-tier profiles, deploying ED on a dream school works well. For competitive-but-not-max profiles, burning your one ED shot on a school where you're competing against the strongest applicants may be a poor use of your most powerful strategic lever. That same ED commitment at a school where you're competitive-to-strong within their pool could be the deciding factor.
+
+ED is binding and has financial implications — only use it when (1) the calibration math works, (2) you've confirmed financial aid adequacy via Net Price Calculator, and (3) the school is genuinely your top choice. ED II exists at many schools as a second-chance binding option.
+
+### School-Within-School Strategy
+One of the most underused legitimate advantages in admissions. Acceptance rates vary dramatically by college/school within the same university. Apply to the less competitive division at a target school, then take courses across schools or pursue internal transfer. This is a calibration play, not a loophole — you need genuine interest in the division you apply to.
 
 ### Transfer Pathways
-Genuine second chances: Cornell (~16% transfer), Vanderbilt (~22%), UF (~42%), community college → UC/CSU TAG programs. Oxford College → Emory main campus (guaranteed). NYU is very transfer-friendly (~28%). The 2+2 community college pathway is a legitimate strategy, not a consolation prize.
+Genuine second chances exist. Some schools are actively transfer-friendly with meaningful acceptance rates. The 2+2 community college pathway — particularly through structured programs like UC/CSU TAG — is a legitimate strategic play, not a consolation prize.
 
 ### Financial Aid as Strategy
-Top schools can be CHEAPER than state schools for families under $75-100K. Harvard, Yale, Princeton, Stanford, MIT — no tuition for families under $65-85K. Rice Investment: $0 for families under $140K. The "elite school is too expensive" assumption is often wrong. Use Net Price Calculators for every target school.
-
-## Key Data Points
-- 8 Ivies: 3-9% acceptance rates. REA/ED rates: 7-23%. ED fills 40-50% of classes at Penn, Columbia, Dartmouth.
-- Top 15 private: 5-12% overall. ED advantages of 2-4x are common.
-- Top public: 8-50% depending on in-state/out-of-state. Auto-admit policies at UT (top 6%), UCs vary.
-- Transfer: ranges from <1% (Caltech) to 45%+ (UF, UW, UIUC) — varies enormously.
-- Financial aid: ~70% of students at top privates receive aid. No-loan policies at all Ivies, Stanford, MIT, Rice, Vanderbilt.
+Top schools can be CHEAPER than state schools for families under certain income thresholds. Many elite institutions have no-loan policies and generous thresholds for free or reduced tuition. The "elite school is too expensive" assumption is frequently wrong. Net Price Calculators are the essential tool here.
 
 ## Decision Frameworks
 - **School List Building**: 2-3 reach, 3-4 target, 2-3 likely. Never be top-heavy. Every school on the list should be one you'd be genuinely happy attending. Include at least one financial safety.
-- **ED Decision**: Only ED if (1) it's your clear #1, (2) you've run the Net Price Calculator and can afford it, (3) the ED acceptance rate advantage is meaningful. Never ED purely for strategy if the school isn't your real first choice.
-- **Major Declaration Strategy**: At schools that admit by college/school (Cornell, Penn, CMU, Georgetown), major choice IS admissions strategy. At schools that admit to the university (Harvard, Yale, Brown), it barely matters. Know which type each target school is.
-- **Testing Strategy**: Test-optional is real but nuanced. Strong scores still help. Weak scores should not be sent. The "should I submit?" threshold: if your score is above the school's 25th percentile, submit it.
+- **ED Calibration**: Evaluate your profile strength relative to the ED pool at each target school. If you're competitive-to-strong within their applicant pool, ED gives you meaningful edge. If you're at the margin, consider deploying ED where calibration works in your favor rather than on the highest-prestige option.
+- **Major Declaration Strategy**: At schools that admit by college/school, major choice IS admissions strategy. At schools that admit to the university, it barely matters. Know which type each target school is.
+- **Testing Strategy**: Test-optional is real but nuanced. Strong scores still help. Weak scores should not be sent.
+
+## The Adversity & Diversity Landscape (Post-2025)
+The College Board's Landscape tool (Environmental Context Dashboard) was discontinued in September 2025 under pressure following the SFFA v. Harvard ruling and a Trump administration executive order. Schools that relied on Landscape for socioeconomic context about applicants lost their standardized tool but not their desire for that information.
+
+In response, many schools are increasingly using essay prompts and supplemental questions as informal adversity-capture mechanisms — "tell us about challenges you've faced," "is there anything else you'd like us to know about your circumstances." This shift means: if you have a genuine adversity story, understand that these prompts are an invitation, not a formality. If you're a well-resourced applicant, know that these prompts exist for a reason and do not attempt to manufacture hardship.
+
+Different schools have different orientations toward diversity and socioeconomic context. Understanding a school's posture — observable through their essay prompt structure, financial aid philosophy (need-blind vs need-aware), institutional partnerships, and admitted class demographics — helps families present themselves authentically within the context of what each school values.
+
+## Extracurricular Differentiation (For Younger Students)
+The traditional extracurricular playbook has been commoditized. "Start a club," "do community service," "build a passion project" — these strategies are so overdone they've lost differentiating power. "Passion projects" have been industrialized: companies build them for students as a service. Admissions officers increasingly see through manufactured initiatives.
+
+What differentiates now: genuine applied execution with verifiable results. Not "founded a nonprofit" but something where the output is self-evidently real — a business with actual customers and revenue, meaningful technical contribution to a project where the work is public, solving a real problem where impact is observable. The principle: demonstrated capability beats performed ambition.
+
+For younger students, the focus should be on identifying authentic interest and pursuing it with genuine depth, not on strategic activity stacking.
 
 ## Audience Notes
-- **Parents**: You are the strategic partner, not the applicant. Research financial aid, build the school list together, manage the emotional rollercoaster. Don't write or heavily edit essays. The investment is in the PROCESS, not the outcome at any single school.
-- **Pre-college students (juniors/seniors)**: Focus on what you can control: course rigor, essay authenticity, genuine demonstrated interest. The admissions process rewards depth over breadth — be excellent at a few things, not mediocre at twenty.
-- **Transfers**: You're evaluated differently — college GPA matters most. Show clear academic and personal growth since high school. Explain "why transfer" convincingly without badmouthing your current school.
+- **Parents**: You are the strategic partner, not the applicant. Research financial aid, build the school list together, manage the emotional process. Don't write or heavily edit essays. Understand your own values orientation — are you optimizing for ROI, for your child's fulfillment, or for a balance?
+- **Pre-college students**: Focus on what you can control: course rigor, essay authenticity, genuine depth in your interests. The admissions process rewards angular excellence — be genuinely excellent at a few things, not superficially involved in twenty.
+- **Transfers**: You're evaluated differently — college GPA matters most. Show clear growth since high school. Explain "why transfer" convincingly.
 
 ## Contrarian Insights
-- The "dream school" mentality is dangerous. The best school is the one that's the best FIT — academically, socially, financially, and geographically.
-- Prestige and career outcomes are less correlated than parents think. After the top ~50 schools, the difference in outcomes is driven by the student, not the institution.
-- "Well-rounded" applicants are the most common rejection type. Admissions wants "angular" — deep excellence in one area, not shallow breadth across many.
-- The Common App essay matters less than most think. Grades in rigorous courses are the single strongest predictor of admission.
-- The demographic cliff (2025-2030) will make many currently-competitive schools notably easier to enter. Only the top 20-30 schools will remain unaffected due to international demand.
-- Community college is a genuine strategic pathway, not a failure. The UC TAG program, guaranteed transfer agreements, and 2+2 programs make this a financially smart play.
+- The "dream school" mentality is dangerous. The best school is the best FIT — academically, socially, financially, and geographically.
+- Prestige and career outcomes are less correlated than parents think after the top ~50 schools. The student drives outcomes more than the institution.
+- "Well-rounded" applicants are the most common rejection type at selective schools. Angular depth beats shallow breadth.
+- The demographic cliff (2025-2030) will make many currently-competitive schools notably more accessible. Only the top 20-30 will be unaffected due to international demand.
+- Community college is a genuine strategic pathway with structured transfer programs that make it financially smart.
