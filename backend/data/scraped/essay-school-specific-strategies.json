@@ -1,0 +1,362 @@
+[
+  {
+    "id": "school-001",
+    "type": "school_specific",
+    "schools": ["Harvard"],
+    "insight": "Harvard prioritizes intellectual vitality: evidence of genuine, self-directed intellectual engagement beyond classroom",
+    "details": "Harvard admissions explicitly states they seek students who are 'intellectually alive.' This means evidence of pursuing intellectual questions for their own sake, not for grade or competition. Essays should demonstrate genuine curiosity: a question you've been sitting with, research you've done because you were genuinely interested, ideas you've explored. Harvard essays shouldn't be about achievement; they should be about thinking.",
+    "strategic_implication": "For Harvard essays, demonstrate intellectual vitality through specific examples: a topic you researched because you were curious, a question that led you down research rabbit holes, a book or idea that changed your thinking. Show the thinking process, not the conclusion. Harvard wants to see how your mind works.",
+    "prompt_types": ["why_school", "intellectual_curiosity", "personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-002",
+    "type": "school_specific",
+    "schools": ["Stanford"],
+    "insight": "Stanford emphasizes agency and impact: evidence that you take initiative and create change, not just respond to opportunities",
+    "details": "Stanford's admissions profile emphasizes 'leadership and impact.' This doesn't mean formal leadership positions; it means agency. Did you start something? Did you see a problem and take initiative to solve it? Did you create rather than just participate? Essays should show you as driver, not passenger. Stanford wants agents of change.",
+    "strategic_implication": "For Stanford essays, emphasize moments where you took initiative: started a project, taught yourself something, solved a problem, proposed a change. Focus on your agency and drive, not opportunities given to you. Answer: what would be different if you hadn't done this?",
+    "prompt_types": ["why_school", "why_stanford", "intellectual_curiosity", "personal_statement"]
+  },
+  {
+    "id": "school-003",
+    "type": "school_specific",
+    "schools": ["MIT"],
+    "insight": "MIT values problem-solving orientation and comfort with ambiguity: willingness to tackle unsolved problems iteratively",
+    "details": "MIT's mission is solving humanity's grand challenges. Essays should show you're comfortable with hard problems without clear answers. STEM students should emphasize debugging process and learning from failure more than final product. All students should show tolerance for ambiguity and iterative problem-solving. MIT wants people who think like engineers: test, fail, learn, iterate.",
+    "strategic_implication": "For MIT essays, emphasize how you approached problems, not just what you built. Describe failure and what you learned. Show comfort with not-knowing and iterative learning. Show curiosity about how things work. MIT wants to see your problem-solving process and your resilience with failure.",
+    "prompt_types": ["why_school", "problem_solving", "intellectual_curiosity", "personal_statement"]
+  },
+  {
+    "id": "school-004",
+    "type": "school_specific",
+    "schools": ["Yale"],
+    "insight": "Yale emphasizes community and connection: how you build relationships and contribute to collective learning",
+    "details": "Yale's identity centers on residential college system and community. Essays should show you're someone who builds relationships, contributes to community, and values collective learning. Yale isn't just about individual achievement; it's about being part of something. Essays should demonstrate you care about others' learning too, not just your own.",
+    "strategic_implication": "For Yale essays, emphasize community engagement: relationships you've built, how you've contributed to collective learning, what you give to group as well as what you take. Show you're collaborative, not just individually accomplished. Yale wants people who strengthen communities.",
+    "prompt_types": ["why_school", "community", "personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-005",
+    "type": "school_specific",
+    "schools": ["UChicago"],
+    "insight": "UChicago values intellectual playfulness and comfort with debate: ability to engage ideas seriously while maintaining humor and skepticism",
+    "details": "UChicago's culture is explicitly argumentative and playful. Essays respond to UChicago's famous essay prompts (historical hypotheticals, philosophical paradoxes). The school values students who can hold complex ideas, engage in debate passionately, and find humor in intellectual struggle. Essays should show you can take ideas seriously without taking yourself seriously.",
+    "strategic_implication": "For UChicago essays, embrace their unique prompts. Show intellectual playfulness, willingness to explore paradoxes, comfort with questions without clear answers. You can be funny. You can question premises. You can show doubt. UChicago culture rewards intellectual curiosity with attitude.",
+    "prompt_types": ["intellectual_curiosity", "supplemental", "personal_statement"]
+  },
+  {
+    "id": "school-006",
+    "type": "school_specific",
+    "schools": ["Columbia"],
+    "insight": "Columbia emphasizes engagement with diverse perspectives and urban learning: how you navigate complexity and engage with different ideas",
+    "details": "Columbia's NYC location and Core Curriculum emphasize engagement with ideas from diverse cultures and traditions. Essays should show you're curious about perspectives different from your own, that you've encountered ideas that challenged you, and that you're comfortable in complexity. Columbia wants students who are enriched by intellectual and cultural diversity.",
+    "strategic_implication": "For Columbia essays, show engagement with diverse perspectives: a time you encountered an idea that challenged you, how you've learned from different cultural traditions, why you're drawn to intellectual diversity. Show you're genuinely curious about how others think, not just about universal truths.",
+    "prompt_types": ["why_school", "intellectual_curiosity", "diversity", "personal_statement"]
+  },
+  {
+    "id": "school-007",
+    "type": "school_specific",
+    "schools": ["Princeton"],
+    "insight": "Princeton emphasizes service and contribution: how you'll use education to serve others and contribute to society",
+    "details": "Princeton's mission centers on service to country and world. Essays should show you're thinking about impact beyond yourself. This isn't charity tourism; it's genuine engagement with how your skills and learning will contribute. Princeton wants students who see education as preparation for meaningful contribution.",
+    "strategic_implication": "For Princeton essays, show thinking about service: what problems matter to you? How do you want to contribute? Why does education prepare you for this? Avoid generic 'I want to help people.' Show specific engagement with how you want to make impact.",
+    "prompt_types": ["why_school", "personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-008",
+    "type": "school_specific",
+    "schools": ["Brown"],
+    "insight": "Brown values flexibility and interdisciplinary curiosity: comfort with designing your own path and pursuing interests across disciplines",
+    "details": "Brown's Open Curriculum is central to its identity. Essays should show you're curious across disciplines, that you want to design your own path, that you're intellectually adventurous. Brown wants students who see education as self-directed learning, not curriculum-as-given. Show you'd use freedom responsibly.",
+    "strategic_implication": "For Brown essays, emphasize intellectual independence and interdisciplinary curiosity. Show you want to design your own path, that you're not waiting for permission to learn what interests you. Mention specific courses or programs that excite you. Show you understand what Open Curriculum means and why it appeals to you.",
+    "prompt_types": ["why_school", "intellectual_curiosity", "personal_statement"]
+  },
+  {
+    "id": "school-009",
+    "type": "prompt_strategy",
+    "schools": ["Harvard", "Stanford", "Yale", "Princeton", "Columbia", "UChicago", "MIT", "Brown", "Penn", "Duke"],
+    "insight": "Decoding 'Why Us' prompts: they're asking 50% about school, 50% about you and how you fit",
+    "details": "'Why do you want to attend this school?' is really asking 'What do you need that only this school provides AND why do you specifically fit here?' Weak essays answer 50-50: either all about school qualities (generic) or all about you (doesn't address school). Strong essays structure as: 'I need X (specific to school). This school uniquely offers X through program/professor/opportunity Y. I will use X in this specific way because of who I am.'",
+    "strategic_implication": "For any 'Why Us' essay: research specific programs, professors, or opportunities. Name them. Explain why YOU specifically need them based on your goals and interests. Connect your goals to what the school offers. Show you've done research and thought carefully about fit.",
+    "prompt_types": ["why_school"]
+  },
+  {
+    "id": "school-010",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Supplemental essays vs. personal statement serve different purposes and require different strategies",
+    "details": "Personal statement: demonstrates who you are, what matters to you, how you think. Global story. Supplementals: demonstrate specific fit with school, engagement with specific opportunities, responses to specific prompts. Supplementals are where you show fit and engagement. A strong personal statement that's generic works only if supplementals are excellent.",
+    "strategic_implication": "Personal statement: choose a moment or story that reveals who you are fundamentally. Supplementals: choose moments/interests that specifically connect to the school. Don't repeat personal statement in supplementals. Each essay should add new information about you or your fit.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-011",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Short answer strategies: extreme economy of language, immediate clarity, distinct voice",
+    "details": "Short answers (100-250 words) are harder than long essays because there's no room for development. Every word must earn its place. Structure is typically: hook (immediate engagement) → claim (what you're saying) → evidence (specific example) → implication (why it matters). This compressed structure is unforgiving.",
+    "strategic_implication": "For short answers: grab attention immediately (first sentence is critical), make your point clear and early, use specific example, show why it matters. Cut every non-essential word. Read aloud to catch rhythm problems. Your voice must be distinct in very little space.",
+    "prompt_types": ["supplemental"]
+  },
+  {
+    "id": "school-012",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "School culture alignment: essays should demonstrate you understand and value what the school values, not just that it's prestigious",
+    "details": "Top schools have distinct cultures. Harvard emphasizes intellectual vitality. Stanford emphasizes impact. Yale emphasizes community. MIT emphasizes problem-solving. Essays should show you understand and value the school's culture specifically. Generic 'your school is great' fails across the board. Specific alignment matters.",
+    "strategic_implication": "Research each school's mission and culture carefully. Name what attracts you about their specific approach. Show you've thought about why this school's values align with yours. This demonstrates genuine interest and helps admissions officers see you as a fit.",
+    "prompt_types": ["why_school", "supplemental"]
+  },
+  {
+    "id": "school-013",
+    "type": "recent_trend",
+    "schools": ["Harvard", "Columbia", "University of Pennsylvania", "Northwestern", "USC", "Notre Dame", "Johns Hopkins", "Yale", "Princeton", "Stanford", "MIT", "Duke", "Caltech", "University of Chicago", "Brown", "Dartmouth", "Rice", "Emory", "Cornell", "UCLA", "UC Berkeley", "University of Michigan", "Washington University", "Carnegie Mellon", "Vanderbilt"],
+    "insight": "Post-SFFA diversity changes: 43 of 65 elite schools added or modified diversity-related essay prompts after June 2023 Supreme Court ruling",
+    "details": "After SCOTUS struck down affirmative action (June 2023), schools shifted strategy. Can't ask about race directly, but can ask about 'perspectives you bring,' 'aspects of background,' 'how your community shaped you,' 'what you'd contribute to diversity.' These prompts are designed to understand identity, background, and perspective without naming protected categories. Students must understand the prompt is inviting them to discuss identity if relevant to their experience.",
+    "strategic_implication": "These prompts aren't asking you to pick an identity. They're asking what lived experiences shaped your perspective. You might write about: being first-generation, multilingual home, economic constraints, caregiving role, cultural tradition, immigration, disability, or other aspects of identity that affected your thinking. Focus on impact on perspective, not identity politics. Show how specific experiences expanded your view of the world.",
+    "prompt_types": ["diversity"]
+  },
+  {
+    "id": "school-014",
+    "type": "recent_trend",
+    "schools": ["all"],
+    "insight": "Test-optional weight shift: essays rose in relative importance after 2021 when SAT/ACT became optional",
+    "details": "Before 2020, test scores and GPA dominated. Post-2021, with 90%+ of students not submitting scores, essays became more important for assessing intellectual ability, writing quality, and thinking sophistication. At many selective schools, essays now carry ~25% of decision weight (vs. ~10-15% pre-2020). Admissions officers report this directly.",
+    "strategic_implication": "Essays matter more than ever. At selective schools, a weak essay can hurt otherwise strong applications. A strong essay can elevate borderline files. Don't minimize essay importance. Invest proportionally in essay quality.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-015",
+    "type": "recent_trend",
+    "schools": ["all"],
+    "insight": "Application volume impact: 10M+ first-time college applicants in 2024 means differentiation through specificity is critical",
+    "details": "Total application volume across US higher ed has increased 40% in five years. Top schools receive 30K-50K+ applications. Volume creates invisibility problem: generic essays blend together. Officers can't remember 100 essays about 'wanting to study science.' They remember the essay about a specific lab failure or a particular professor's research direction.",
+    "strategic_implication": "At high-volume schools, generic essays disappear. You must differentiate through specificity: specific names, specific experiences, specific details no one else would include. Make your essay impossible to forget through concrete, particular detail.",
+    "prompt_types": ["personal_statement", "supplemental", "why_school"]
+  },
+  {
+    "id": "school-016",
+    "type": "ai_detection",
+    "schools": ["all"],
+    "insight": "AI detection tool landscape is complex: 50+ tools exist with varying reliability and false positive rates of 30-40%",
+    "details": "Most selective schools have begun using some form of AI detection (Turnitin AI, GPTZero, Grammarly, proprietary tools). However: false positive rates are documented at 30-40%. Schools have committed to NOT making admission decisions based solely on detection without human review. Detection tools flag essays; humans evaluate. Most institutions are cautious about over-relying on AI detection because stakes are high.",
+    "strategic_implication": "Don't optimize for AI detection avoidance; that's counterproductive. Write authentically. If your essay is flagged, you'll have opportunity to explain. Real concern isn't detection; it's whether essay demonstrates your thinking. Heavy AI use weakens your application regardless of detection because the essay won't reflect your voice and thinking process.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-017",
+    "type": "ai_detection",
+    "schools": ["all"],
+    "insight": "AI detection reliability issues: legitimate human-written essays get flagged; sophisticated AI use evades detection",
+    "details": "Research shows: sophisticated AI use can evade detection tools. Simultaneously, legitimate student essays with complex vocabulary, varied sentence structure, or certain writing patterns trigger false positives. Detection tools are imperfect. Schools acknowledge this. Admissions officers understand that flags don't equal guilt.",
+    "strategic_implication": "Don't write poorly to 'pass' AI detection (counterproductive). Don't use AI to write essays expecting to evade detection (unreliable). Write authentically. If flagged, it's not automatic problem. Admissions offices understand detection limitations.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-018",
+    "type": "ai_detection",
+    "schools": ["all"],
+    "insight": "No selective school has reported making admission decisions solely based on AI detection; human review is required",
+    "details": "Statements from Admissions Forum, NACAC, and major selective schools confirm: AI detection is a tool for flagging potential concerns, not final judgment. If essay is flagged, human review ensues. Some students may be asked to explain. No school has reported rejecting student based purely on AI detection without additional context or human review.",
+    "strategic_implication": "AI detection matters less than essay quality and authenticity. If you write a strong, authentic essay and it gets flagged, you'll have chance to explain. If you write a weak essay using AI heavily, that's the problem—not detection.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-019",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Demonstrated interest through essays: matters most at schools where yield affects institutional metrics",
+    "details": "Large state universities (100K+ students) don't track demonstrated interest because yield doesn't affect rankings. Small LACs and private colleges track yield carefully; demonstrated interest through essays shows you'd actually enroll if admitted. Essays are primary way to show genuine interest.",
+    "strategic_implication": "At schools emphasizing fit (small LACs, private universities), show genuine engagement in 'Why Us' essays. Research specific professors, programs, traditions. Name them. Show you understand what makes this school unique. At large state schools, demonstrated interest matters less; focus on personal statement quality.",
+    "prompt_types": ["why_school", "supplemental"]
+  },
+  {
+    "id": "school-020",
+    "type": "school_type_variation",
+    "schools": ["all"],
+    "insight": "Transfer essay framework differs from freshman essays: emphasize academic goals, growth, and specific school fit",
+    "details": "Transfer essays should answer: Why are you leaving current school (not 'it's not selective enough' but 'it doesn't have the interdisciplinary program I need')? Why this specific target school? What have you learned from current college that shapes what you're seeking? Transfer essays require evidence of college-level learning and maturation.",
+    "strategic_implication": "For transfer essays: Show what you've gained from current school. Show specific growth or learning. Clearly articulate what target school offers that current school doesn't. Focus on forward trajectory, not backward blame. Show you've learned from mistakes and that transfer is strategic, not escape.",
+    "prompt_types": ["personal_statement", "why_school"]
+  },
+  {
+    "id": "school-021",
+    "type": "school_type_variation",
+    "schools": ["all"],
+    "insight": "Gap year applicant strategies: frame time as intentional learning, not recovery or escape",
+    "details": "Gap year essays should show intentional choice: 'I took a gap year to work in nonprofit X because I wanted to test my interest in social entrepreneurship.' Not: 'I needed time after a difficult junior year.' Frame gap year as developmental choice, not refuge from problems or recovery from failure.",
+    "strategic_implication": "Gap year students: emphasize what you learned, how you grew, how this clarified your direction. Show intention and agency. Show gap year strengthened your readiness for college, not that you needed escape. Connect learning to future goals.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-022",
+    "type": "school_type_variation",
+    "schools": ["all"],
+    "insight": "First-generation college student guidance: don't manufacture adversity; authenticity about navigation is most powerful",
+    "details": "First-gen student essays are strongest when authentic: navigating gaps between home and school culture, being resource broker for family, bringing different perspective to academic spaces. This is powerful even without economic hardship. Fabricated struggle or overselling adversity weakens first-gen essays.",
+    "strategic_implication": "First-gen students: write authentically about your experience. Maybe your parents couldn't guide college process because they didn't know US system. Maybe you brought skills or knowledge your school didn't initially recognize. Maybe you navigated cultural differences. Show genuine experience, not manufactured hardship.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-023",
+    "type": "school_type_variation",
+    "schools": ["all"],
+    "insight": "International student approach: assume officer has general world knowledge; don't over-explain cultural context",
+    "details": "International students sometimes over-explain ('In my country, the education system works differently because...'). While some context helps, excessive explanation signals you think reader is ignorant. Better approach: write your story; assume general world knowledge; only explain when directly relevant to understanding you.",
+    "strategic_implication": "International students: write from your experience. Include cultural context naturally (not as educational explanation). Focus on what shaped you, not on teaching reader about your country. You're introducing yourself, not giving cultural briefing.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-024",
+    "type": "school_type_variation",
+    "schools": ["MIT", "Caltech", "Carnegie Mellon", "Georgia Tech"],
+    "insight": "STEM school essay focus: problem-solving approach and learning from failure matter more than technical achievement",
+    "details": "STEM admissions value the thinking process: how did you approach ambiguous problems? What failed and what did that teach you? STEM essays should emphasize iterative problem-solving, comfort with failure, and learning from mistakes. Technical accomplishment matters less than demonstrated thinking process.",
+    "strategic_implication": "STEM essays: emphasize how you approached problems, what you learned from failure, how you iterated. Show your problem-solving process, not just final products. Show persistence through ambiguity. STEM schools want thinkers and builders, not just achievers.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-025",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Challenge/failure essay strategy: focus on response and learning, not sympathy-seeking",
+    "details": "Essays responding to 'describe a challenge' prompts frequently fail by seeking sympathy. Stronger essays show: specific challenge, concrete response/approach, specific learning about capability or perspective. Frame as growth story, not tragedy. What did you learn about yourself? What would you do differently?",
+    "strategic_implication": "Challenge essays: describe challenge clearly, but focus essay on your response. What specific approaches did you try? What did you learn about yourself? Frame as capability-building, not victimhood. Show agency in responding to challenge.",
+    "prompt_types": ["personal_statement", "challenge"]
+  },
+  {
+    "id": "school-026",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Activity/passion essay strategy: show specific learning and growth, not just passion statement",
+    "details": "Many students write 'I'm passionate about X.' Without evidence of evolution, learning, or specific impact. Stronger essays show: initial engagement, specific moment of deepened commitment or realization, concrete evidence of growth (learned specific skill, changed perspective, took new responsibility). Passion essays need narrative arc.",
+    "strategic_implication": "Activity essays: don't just declare passion. Show how engagement evolved. Show a moment when your interest deepened or shifted. Show what you learned or how you grew. Show specific contributions you made. Narrative arc beats passion declaration.",
+    "prompt_types": ["activity", "supplemental"]
+  },
+  {
+    "id": "school-027",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Intellectual curiosity essays: show the question, the exploration, and the uncertainty, not the conclusion",
+    "details": "Essays about intellectual interests should emphasize the wondering/questioning process. What question led you into research? What did you discover that surprised you? What don't you yet understand? Intellectual curiosity essays shouldn't conclude with definitive answer; they should show the thinking in progress.",
+    "strategic_implication": "Intellectual curiosity essays: choose a genuine question you've been exploring. Show how you approached it. Show what you've learned. It's fine to end with questions rather than answers. Admissions officers want to see your mind working, not your perfect conclusions.",
+    "prompt_types": ["intellectual_curiosity", "supplemental"]
+  },
+  {
+    "id": "school-028",
+    "type": "prompt_strategy",
+    "schools": ["Harvard", "Columbia", "Yale", "Princeton", "Stanford", "MIT", "UChicago", "Brown"],
+    "insight": "Personal identity/background essays: show complexity and agency, not essentialist identity",
+    "details": "Essays about identity should show critical thinking about identity, not assumption of inherited identity. 'I am X because I come from X' lacks agency. 'I was born into X tradition, and I've had to decide what I actually believe about it' shows agency and reflection. Show your relationship to your identity, not just your identity.",
+    "strategic_implication": "Identity essays: show the thinking behind your identity. What have you chosen to carry forward? What have you questioned? What tensions exist between inherited identity and personal belief? Show complexity and your role in deciding who you are.",
+    "prompt_types": ["personal_statement", "identity", "diversity"]
+  },
+  {
+    "id": "school-029",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Privilege essays require sophisticated self-awareness; most fail by being defensive or oblivious",
+    "details": "Essays where majority-group students examine privilege are highest-risk for backfiring. Require genuine insight ('I didn't realize most people didn't have this resource') not defensiveness ('It's fine that I had advantages'). Most privilege essays are better left unwritten; show growth in perspective through other essays instead.",
+    "strategic_implication": "Privilege essays: rarely write them unless you have genuine realization of something you didn't understand. If writing: show real insight, not defensiveness. Better: let other essays demonstrate growth in perspective. Don't center essays on examining your own privilege.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-030",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Additional information section: use for context that doesn't fit essays, not as essay dumping ground",
+    "details": "Additional information section (optional) is for necessary context: medical leave, family circumstances, school transitions, school-specific context. It's not another essay venue or place to put things that should be in main essays. Use sparingly and only for genuinely important context.",
+    "strategic_implication": "Additional information: use only when necessary. If something is essential to understanding you, put it in an essay, not buried here. If it's truly supplemental context that doesn't fit elsewhere, include it here. Keep it brief.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-031",
+    "type": "school_specific",
+    "schools": ["Harvard", "Yale", "Princeton", "Stanford", "Columbia", "MIT", "UChicago"],
+    "insight": "Narrative coherence across all essays: contradictions between essays raise red flags",
+    "details": "Officers read all essays for one student together. Personal statement says 'I value collaboration' but why-school essay shows no community engagement. Personal statement emphasizes intellectual curiosity but supplementals show surface engagement. Contradictions signal inauthenticity or carelessness.",
+    "strategic_implication": "Before submitting: read all essays together. Do they create coherent picture of who you are? Does each essay support themes from others? Fix contradictions. Each essay should add different information but maintain consistent narrative about your values and character.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-032",
+    "type": "recent_trend",
+    "schools": ["all"],
+    "insight": "Writing quality as proxy for intellectual capability in test-optional era: essays demonstrate ability to think and write clearly",
+    "details": "Without test scores, essays become primary assessment of intellectual ability and writing quality. Clear writing, logical thinking, and sophisticated ideas compensate for absent standardized measures. Poor writing at test-optional schools raises questions about academic readiness more than it would have when test scores were available.",
+    "strategic_implication": "If not submitting test scores: your essays must demonstrate strong writing and thinking. They're the primary proof of intellectual capability. Invest accordingly in essay quality, clarity, and sophistication of ideas.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-033",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Specificity as authenticity signal: essays with specific unrehearsed details are almost always student-written",
+    "details": "Specific details are hard to generate without real memory. An essay naming a specific friend, a specific conversation, a specific place with unrehearsed detail—these signal authenticity. Conversely, generic essays ('I've learned many important lessons') raise authenticity questions. Specificity is both quality marker and authenticity proof.",
+    "strategic_implication": "All essays: include specific, unrehearsed details. Names, dates, dialogue, sensory information. These details are authenticity proof and make essays memorable. Specificity outcompetes breadth every time.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-034",
+    "type": "school_type_variation",
+    "schools": ["LACs"],
+    "insight": "Liberal arts college essays emphasize demonstrated interest and engagement with specific opportunities more heavily",
+    "details": "Small LACs (1-2K undergrads) rely heavily on demonstrated interest because yield matters for rankings and because smaller enrollment numbers mean fit is critical. LAC essays should show genuine knowledge of school: named professors, specific courses, campus traditions. This specificity signals you'd actually attend.",
+    "strategic_implication": "LAC applicants: show genuine interest through specificity. Name professors doing research you're interested in. Find specific programs or courses. Mention campus traditions. Show you've researched deeply and would be engaged.",
+    "prompt_types": ["why_school", "supplemental"]
+  },
+  {
+    "id": "school-035",
+    "type": "school_type_variation",
+    "schools": ["State Universities"],
+    "insight": "Large state university essays: demonstrated interest matters less; focus on personal strength of essay matters more",
+    "details": "Large state schools (20K+ students) don't track demonstrated interest because yield is less consequential for rankings. Essays are evaluated primarily for writing quality and personal strength, not for fit signaling. Quality of essay matters more than demonstration of specific knowledge of school.",
+    "strategic_implication": "State university applicants: write a strong personal essay. Fit signaling through specific research is less important. Focus on essay quality, authenticity, and writing strength. Your personal narrative matters more than your knowledge of campus traditions.",
+    "prompt_types": ["personal_statement"]
+  },
+  {
+    "id": "school-036",
+    "type": "school_specific",
+    "schools": ["Harvard", "Yale", "Columbia"],
+    "insight": "Core curriculum vs. traditional curriculum approach affects essay strategy about intellectual breadth",
+    "details": "Schools with core/great books curriculum (Columbia, Chicago) value students drawn to breadth and synthesis. Schools with traditional curriculum (others) care less about breadth across disciplines. Core curriculum schools' essays should show interest in learning broadly across domains. Other schools' essays can focus on depth.",
+    "strategic_implication": "For core curriculum schools: show intellectual interest across disciplines. How have you learned outside your major field? Why does broad learning matter to you? For traditional curriculum schools: depth in your primary interest is sufficient.",
+    "prompt_types": ["intellectual_curiosity", "why_school"]
+  },
+  {
+    "id": "school-037",
+    "type": "recent_trend",
+    "schools": ["all"],
+    "insight": "Scoring rubric reality: most essays score 2-3 on 4-point scale; standing out requires moving to 4",
+    "details": "Most schools use 4-point rubrics: 4=exceptional, 3=good, 2=acceptable, 1=poor. Most competitive essays score 3 ('good, would like to admit student'). Scoring 4 ('exceptional, would advocate for student') requires going beyond good: exceptional specificity, remarkable voice, or profound insight.",
+    "strategic_implication": "Aiming for good essays gets you to 3. Standing out requires moving to 4: specific details no one else would include, voice so authentic it's striking, insight that reshapes how reader sees something. Good isn't enough at competitive schools.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-038",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Reading your essays aloud before submission: catches rhythm problems and voice inconsistencies better than silent reading",
+    "details": "Silent reading hides rhythm problems. Reading aloud reveals: awkward phrasing, choppy sentences, voice shifts. Audio also helps identify clichés and weak conclusions that look fine on page. Always read essays aloud (yourself and have someone else read to you).",
+    "strategic_implication": "Final step before submission: read all essays aloud. Listen for stumbling, choppy rhythm, voice inconsistency. Also have someone else read them to you. Your ear catches problems your eyes miss.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-039",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "Essay conclusion strength: weak conclusions undermine strong essays; endings matter as much as openings",
+    "details": "Many essays are strong through 75%, then conclude with cliché ('This taught me important lessons') or summary that adds nothing. Strongest conclusions either continue honest reflection without resolving prematurely, or end with specific implication for future action or thinking. Avoid moral-of-the-story conclusions.",
+    "strategic_implication": "Spend proportional time on conclusions. They're last thing reader remembers. Avoid clichés. End with honest reflection, unanswered question, or specific next-step thinking. Conclusion should be as specific and authentic as opening.",
+    "prompt_types": ["personal_statement", "supplemental"]
+  },
+  {
+    "id": "school-040",
+    "type": "prompt_strategy",
+    "schools": ["all"],
+    "insight": "650-word limit as creative constraint: forces you to choose most important elements and write with economy",
+    "details": "Common App's 650-word limit is generous constraint that forces clarity and focus. Can't tell whole life story; must choose one moment. Can't explain every context; must imply. This constraint forces better writing: more specific, more focused, more powerful.",
+    "strategic_implication": "Use 650-word limit creatively. It forces you to focus on what's most important. Aim for 600-700 words if every word serves purpose. Avoid padding to hit exact count. Write to say what needs saying; constraint creates better essays than unlimited space.",
+    "prompt_types": ["personal_statement"]
+  }
+]
