@@ -13,9 +13,15 @@ import authRoutes from './routes/auth.js';
 import stripeRoutes from './routes/stripe.js';
 import inviteRoutes from './routes/invites.js';
 import demographicsRoutes from './routes/demographics.js';
+import timelineRoutes from './routes/timeline.js';
+import essayRoutes from './routes/essays.js';
+import internshipRoutes from './routes/internships.js';
+import scholarshipRoutes from './routes/scholarships.js';
+import programRoutes from './routes/programs.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
+import { startScheduler } from './services/scheduler.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -128,7 +134,7 @@ app.use((req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
-    version: '1.0.0',
+    version: '2.0.0',
     model: process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
     timestamp: new Date().toISOString()
   });
@@ -142,6 +148,11 @@ app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/demographics', apiLimiter, demographicsRoutes);
+app.use('/api/timeline', apiLimiter, timelineRoutes);
+app.use('/api/essays', apiLimiter, essayRoutes);
+app.use('/api/internships', apiLimiter, internshipRoutes);
+app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
+app.use('/api/programs', apiLimiter, programRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
@@ -188,6 +199,11 @@ async function start() {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);
     console.log(`   Environment: ${process.env.NODE_ENV || 'development'}\n`);
+
+    // Start reminder scheduler in production
+    if (process.env.NODE_ENV === 'production') {
+      startScheduler();
+    }
   });
 }
 

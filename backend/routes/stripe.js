@@ -4,7 +4,7 @@ import rateLimit from 'express-rate-limit';
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { verifyToken, updateUserPlan, findUserByStripeCustomerId, findUserByToken } from '../services/auth.js';
+import { verifyToken, updateUserPlan, findUserByStripeCustomerId, findUserByToken, addEssayCredits } from '../services/auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -80,14 +80,30 @@ function getStripe() {
 }
 
 // Price IDs from Stripe Dashboard — set these in .env
-const PRICE_IDS = {
-  premium: process.env.STRIPE_PRICE_PREMIUM || null,
-  pro: process.env.STRIPE_PRICE_PRO || null
+// Subscription plans
+const PLAN_PRICE_IDS = {
+  pro: process.env.STRIPE_PRICE_PRO || null,
+  elite: process.env.STRIPE_PRICE_ELITE || null
 };
+
+// Essay review credit packs (one-time purchases)
+const ESSAY_PRICE_IDS = {
+  starter:  process.env.STRIPE_PRICE_ESSAY_5 || null,   // 5 reviews = $10
+  standard: process.env.STRIPE_PRICE_ESSAY_10 || null,   // 10 reviews = $15
+  bulk:     process.env.STRIPE_PRICE_ESSAY_20 || null,   // 20 reviews = $18
+};
+
+const ESSAY_PACK_SIZES = { starter: 5, standard: 10, bulk: 20 };
+
+// Legacy support: map old premium plan to pro
+function normalizePlan(plan) {
+  if (plan === 'premium') return 'pro';
+  return plan;
+}
 
 /**
  * POST /api/stripe/create-checkout
- * Creates a Stripe Checkout session for upgrading to premium or pro
+ * Creates a Stripe Checkout session for upgrading to pro or elite
  */
 router.post('/create-checkout', checkoutLimiter, async (req, res) => {
   try {
@@ -96,11 +112,11 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
     const { plan } = req.body;
-    if (!plan || !['premium', 'pro'].includes(plan)) {
-      return res.status(400).json({ error: 'Invalid plan' });
+    if (!plan || !['pro', 'elite'].includes(plan)) {
+      return res.status(400).json({ error: 'Invalid plan. Choose pro or elite.' });
     }
 
-    const priceId = PRICE_IDS[plan];
+    const priceId = PLAN_PRICE_IDS[plan];
     if (!priceId) {
       return res.status(500).json({ error: 'Stripe prices not configured. Contact support.' });
     }
@@ -118,7 +134,6 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
         metadata: { wayfinderId: user.id }
       });
       customerId = customer.id;
-      // Save Stripe customer ID to user
       await updateUserPlan(token, { stripeCustomerId: customerId });
     }
 
@@ -150,8 +165,71 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
 });
 
 /**
+ * POST /api/stripe/purchase-essays
+ * Creates a Stripe Checkout session for one-time essay credit purchase
+ */
+router.post('/purchase-essays', checkoutLimiter, async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+
+    // Essay reviewer requires pro or elite plan
+    if (!['pro', 'elite'].includes(user.plan)) {
+      return res.status(403).json({ error: 'Essay reviewer requires an Admissions Coach plan.' });
+    }
+
+    const { pack } = req.body;
+    if (!pack || !ESSAY_PRICE_IDS[pack]) {
+      return res.status(400).json({ error: 'Invalid pack. Choose starter (5/$10), standard (10/$15), or bulk (20/$18).' });
+    }
+
+    const priceId = ESSAY_PRICE_IDS[pack];
+    if (!priceId) {
+      return res.status(500).json({ error: 'Essay pricing not configured. Contact support.' });
+    }
+
+    const stripe = getStripe();
+
+    // Get or create Stripe customer
+    const fullUser = await findUserByToken(token);
+    let customerId = fullUser?.stripeCustomerId;
+
+    if (!customerId) {
+      const customer = await stripe.customers.create({
+        email: user.email,
+        name: user.name,
+        metadata: { wayfinderId: user.id }
+      });
+      customerId = customer.id;
+      await updateUserPlan(token, { stripeCustomerId: customerId });
+    }
+
+    const baseUrl = process.env.APP_URL || `${req.protocol}://${req.get('host')}`;
+    const session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      mode: 'payment',
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: `${baseUrl}?essay_purchase=success&pack=${pack}`,
+      cancel_url: `${baseUrl}?essay_purchase=cancelled`,
+      metadata: {
+        wayfinderId: user.id,
+        type: 'essay_credits',
+        pack: pack,
+        quantity: String(ESSAY_PACK_SIZES[pack])
+      }
+    });
+
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error('Essay purchase error:', err);
+    res.status(500).json({ error: 'Failed to create checkout session' });
+  }
+});
+
+/**
  * POST /api/stripe/webhook
- * Handles Stripe webhooks for subscription events
+ * Handles Stripe webhooks for subscription + one-time payment events
  */
 router.post('/webhook', webhookLimiter, async (req, res) => {
   const stripe = getStripe();
@@ -161,14 +239,11 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
   let event;
   try {
     if (webhookSecret) {
-      // PRODUCTION: Verify webhook signature — this is critical
       event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
     } else if (process.env.NODE_ENV !== 'production') {
-      // DEVELOPMENT ONLY: Allow unsigned events for local testing
       console.warn('⚠️  Webhook signature verification SKIPPED (dev mode only)');
       event = JSON.parse(req.body.toString());
     } else {
-      // PRODUCTION without webhook secret = REJECT
       console.error('🚫 STRIPE_WEBHOOK_SECRET not set in production — rejecting webhook');
       await auditLog('webhook_rejected', { reason: 'Missing webhook secret in production' });
       return res.status(500).send('Webhook secret not configured');
@@ -179,19 +254,17 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Idempotency check — prevent double-processing
+  // Idempotency check
   if (event.id && processedEvents.has(event.id)) {
     console.log(`ℹ️ Skipping already-processed event: ${event.id}`);
     return res.json({ received: true, duplicate: true });
   }
 
-  // Validate event structure
   if (!event.type || !event.data?.object) {
     await auditLog('webhook_malformed', { eventId: event.id });
     return res.status(400).send('Malformed event');
   }
 
-  // Only process events we expect
   const ALLOWED_EVENTS = [
     'checkout.session.completed',
     'customer.subscription.updated',
@@ -200,7 +273,6 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
   ];
 
   if (!ALLOWED_EVENTS.includes(event.type)) {
-    // Silently acknowledge events we don't handle
     return res.json({ received: true });
   }
 
@@ -208,11 +280,29 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
     switch (event.type) {
       case 'checkout.session.completed': {
         const session = event.data.object;
-        const plan = session.metadata?.plan;
         const customerId = session.customer;
 
-        // Validate plan value
-        if (!plan || !['premium', 'pro'].includes(plan)) {
+        // Check if this is an essay credit purchase (one-time payment)
+        if (session.metadata?.type === 'essay_credits') {
+          const pack = session.metadata.pack;
+          const quantity = parseInt(session.metadata.quantity) || ESSAY_PACK_SIZES[pack] || 0;
+          const paymentIntent = session.payment_intent;
+
+          if (customerId && quantity > 0) {
+            const result = await addEssayCredits(customerId, pack, quantity, paymentIntent);
+            if (result.success) {
+              await auditLog('essay_credits_added', {
+                customerId, pack, quantity, paymentIntent, eventId: event.id
+              });
+              console.log(`✅ Added ${quantity} essay credits for customer ${customerId}`);
+            }
+          }
+          break;
+        }
+
+        // Otherwise it's a subscription checkout
+        let plan = normalizePlan(session.metadata?.plan);
+        if (!plan || !['pro', 'elite'].includes(plan)) {
           await auditLog('webhook_invalid_plan', { plan, customerId, eventId: event.id });
           break;
         }
@@ -223,6 +313,7 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
             await updateUserPlan(user.token, {
               plan: plan,
               stripeCustomerId: customerId,
+              stripeSubscriptionId: session.subscription || null,
               planExpiresAt: null
             });
             await auditLog('plan_upgrade', { email: user.email, plan, customerId, eventId: event.id });
@@ -239,11 +330,11 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
         const customerId = subscription.customer;
 
         if (subscription.status === 'active') {
-          const plan = subscription.metadata?.plan || 'premium';
-          if (!['premium', 'pro'].includes(plan)) break;
+          let plan = normalizePlan(subscription.metadata?.plan);
+          if (!['pro', 'elite'].includes(plan)) break;
           const user = await findUserByStripeCustomerId(customerId);
           if (user) {
-            await updateUserPlan(user.token, { plan });
+            await updateUserPlan(user.token, { plan, stripeSubscriptionId: subscription.id });
             await auditLog('subscription_updated', { email: user.email, plan, eventId: event.id });
           }
         }
@@ -256,7 +347,7 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
 
         const user = await findUserByStripeCustomerId(customerId);
         if (user) {
-          await updateUserPlan(user.token, { plan: 'free', planExpiresAt: null });
+          await updateUserPlan(user.token, { plan: 'free', planExpiresAt: null, stripeSubscriptionId: null });
           await auditLog('plan_downgrade', { email: user.email, reason: 'subscription_deleted', eventId: event.id });
           console.log(`⬇️ User ${user.email} downgraded to free (subscription ended)`);
         }
@@ -276,7 +367,6 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
       }
     }
 
-    // Mark as processed (idempotency)
     if (event.id) markEventProcessed(event.id);
 
   } catch (err) {
@@ -321,8 +411,19 @@ router.post('/portal', portalLimiter, async (req, res) => {
  * Check if Stripe is configured (for frontend to show/hide payment buttons)
  */
 router.get('/status', (req, res) => {
-  const configured = !!(process.env.STRIPE_SECRET_KEY && PRICE_IDS.premium && PRICE_IDS.pro);
-  res.json({ configured });
+  const configured = !!(process.env.STRIPE_SECRET_KEY && (PLAN_PRICE_IDS.pro || PLAN_PRICE_IDS.elite));
+  res.json({
+    configured,
+    plans: {
+      pro: !!PLAN_PRICE_IDS.pro,
+      elite: !!PLAN_PRICE_IDS.elite,
+    },
+    essayPacks: {
+      starter: !!ESSAY_PRICE_IDS.starter,
+      standard: !!ESSAY_PRICE_IDS.standard,
+      bulk: !!ESSAY_PRICE_IDS.bulk,
+    }
+  });
 });
 
 export default router;

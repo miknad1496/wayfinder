@@ -23,6 +23,39 @@ const USERS_DIR = join(__dirname, '..', 'data', 'users');
 const BCRYPT_ROUNDS = 12;
 const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 
+// ─── Plan Configuration ──────────────────────────────────────────
+// Tiers: free → pro ($20/mo) → elite ($40/mo)
+const PLAN_LIMITS = {
+  free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
+  pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
+  elite: { enginePerDay: 40, dailyTokens: 500000,  monthlyTokens: 12000000, invites: 10 },
+};
+
+// Feature access control
+const FEATURE_ACCESS = {
+  demographics_full:    ['pro', 'elite'],
+  demographics_compare: ['elite'],
+  decision_dates:       ['pro', 'elite'],
+  admissions_timeline:  ['pro', 'elite'],
+  internships_preview:  ['pro'],
+  internships_full:     ['elite'],
+  scholarships_preview: ['pro'],
+  scholarships:         ['elite'],
+  programs_preview:     ['pro'],
+  programs:             ['elite'],
+  email_reminders:      ['pro', 'elite'],
+  email_full_reminders: ['elite'],
+  essay_reviewer:       ['pro', 'elite'],
+};
+
+export function getPlanLimits(plan) {
+  return PLAN_LIMITS[plan] || PLAN_LIMITS.free;
+}
+
+export function canAccess(plan, feature) {
+  return (FEATURE_ACCESS[feature] || []).includes(plan);
+}
+
 // Ensure users directory exists
 export async function ensureUsersDir() {
   await fs.mkdir(USERS_DIR, { recursive: true });
@@ -87,16 +120,39 @@ export async function createUser({ email, password, name, userType, school, inte
       careerInterests: [],   // e.g. ['Software Engineering', 'Medicine']
       aboutMe: ''            // freeform description
     },
-    plan: 'free',           // free (3/day), premium (10/day), pro (20/day)
+    plan: 'free',           // free | pro ($20/mo) | elite ($40/mo)
     settings: {
       displayName: name || '',
       memory: true,         // whether wayfinder remembers conversations
       helpImprove: true     // consent for using data to improve
     },
     stripeCustomerId: null,
+    stripeSubscriptionId: null,
     planExpiresAt: null,
     engineUsesToday: 0,
     engineLastReset: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
+    tokensUsedToday: 0,
+    tokenLastReset: new Date().toISOString().slice(0, 10),
+    tokensUsedMonth: 0,
+    tokenMonthReset: new Date().toISOString().slice(0, 7),  // YYYY-MM
+
+    // Essay reviewer credits (add-on purchase)
+    essayReviewsRemaining: 0,
+    essayReviewsPurchased: [],
+
+    // Admissions profile (for timeline + reminders)
+    admissionsProfile: {
+      graduationYear: null,
+      targetSchools: [],       // [{name, unitId, deadline, decisionType}]
+      intendedMajors: [],
+      state: null,             // Home state for internship filtering
+      reminderPreferences: {
+        email: true,
+        frequency: 'weekly',   // daily | weekly | monthly
+        types: ['deadlines', 'decisions', 'scholarships']
+      }
+    },
+
     consentGiven: false,
     consentTimestamp: null
   };
@@ -283,15 +339,6 @@ export async function getUserSessions(token) {
 export async function getEngineUsage(token) {
   if (!token) return { usesToday: 0, remaining: 0 };
 
-  const getPlanLimit = (plan) => {
-    switch(plan) {
-      case 'pro': return 20;
-      case 'premium': return 10;
-      case 'free':
-      default: return 3;
-    }
-  };
-
   const today = new Date().toISOString().slice(0, 10);
 
   try {
@@ -300,7 +347,7 @@ export async function getEngineUsage(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
-        const MAX_ENGINE_USES = getPlanLimit(user.plan || 'free');
+        const limits = getPlanLimits(user.plan || 'free');
         // Reset if new day
         if (user.engineLastReset !== today) {
           user.engineUsesToday = 0;
@@ -309,8 +356,8 @@ export async function getEngineUsage(token) {
         }
         return {
           usesToday: user.engineUsesToday || 0,
-          remaining: Math.max(0, MAX_ENGINE_USES - (user.engineUsesToday || 0)),
-          max: MAX_ENGINE_USES
+          remaining: Math.max(0, limits.enginePerDay - (user.engineUsesToday || 0)),
+          max: limits.enginePerDay
         };
       }
     }
@@ -493,15 +540,6 @@ export async function searchUserChats(token, query) {
 export async function useEngine(token) {
   if (!token) return { allowed: false, remaining: 0 };
 
-  const getPlanLimit = (plan) => {
-    switch(plan) {
-      case 'pro': return 20;
-      case 'premium': return 10;
-      case 'free':
-      default: return 3;
-    }
-  };
-
   const today = new Date().toISOString().slice(0, 10);
 
   try {
@@ -510,15 +548,15 @@ export async function useEngine(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
-        const MAX_ENGINE_USES = getPlanLimit(user.plan || 'free');
+        const limits = getPlanLimits(user.plan || 'free');
         // Reset if new day
         if (user.engineLastReset !== today) {
           user.engineUsesToday = 0;
           user.engineLastReset = today;
         }
 
-        if ((user.engineUsesToday || 0) >= MAX_ENGINE_USES) {
-          return { allowed: false, remaining: 0, max: MAX_ENGINE_USES };
+        if ((user.engineUsesToday || 0) >= limits.enginePerDay) {
+          return { allowed: false, remaining: 0, max: limits.enginePerDay };
         }
 
         user.engineUsesToday = (user.engineUsesToday || 0) + 1;
@@ -526,8 +564,8 @@ export async function useEngine(token) {
 
         return {
           allowed: true,
-          remaining: MAX_ENGINE_USES - user.engineUsesToday,
-          max: MAX_ENGINE_USES
+          remaining: limits.enginePerDay - user.engineUsesToday,
+          max: limits.enginePerDay
         };
       }
     }
@@ -538,24 +576,27 @@ export async function useEngine(token) {
 }
 
 /**
- * Get daily token limit based on plan.
+ * Get daily token limit based on plan (uses centralized PLAN_LIMITS).
  */
 function getDailyTokenLimit(plan) {
-  switch(plan) {
-    case 'pro': return 200000;
-    case 'premium': return 100000;
-    case 'free':
-    default: return 50000;
-  }
+  return (PLAN_LIMITS[plan] || PLAN_LIMITS.free).dailyTokens;
 }
 
 /**
- * Check daily token usage. Returns { allowed, tokensUsed, tokensRemaining, limit }.
+ * Get monthly token limit based on plan (null = unlimited/no monthly cap).
+ */
+function getMonthlyTokenLimit(plan) {
+  return (PLAN_LIMITS[plan] || PLAN_LIMITS.free).monthlyTokens;
+}
+
+/**
+ * Check daily + monthly token usage. Returns { allowed, tokensUsed, tokensRemaining, limit, monthly }.
  */
 export async function checkTokenUsage(token) {
   if (!token) return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
 
   const today = new Date().toISOString().slice(0, 10);
+  const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
     const files = await fs.readdir(USERS_DIR);
@@ -563,19 +604,45 @@ export async function checkTokenUsage(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        let dirty = false;
+
+        // Daily reset
         if (user.tokenLastReset !== today) {
           user.tokensUsedToday = 0;
           user.tokenLastReset = today;
+          dirty = true;
+        }
+
+        // Monthly reset
+        if (user.tokenMonthReset !== thisMonth) {
+          user.tokensUsedMonth = 0;
+          user.tokenMonthReset = thisMonth;
+          dirty = true;
+        }
+
+        if (dirty) {
           await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
         }
 
-        const limit = getDailyTokenLimit(user.plan || 'free');
-        const used = user.tokensUsedToday || 0;
+        const dailyLimit = getDailyTokenLimit(user.plan || 'free');
+        const monthlyLimit = getMonthlyTokenLimit(user.plan || 'free');
+        const dailyUsed = user.tokensUsedToday || 0;
+        const monthlyUsed = user.tokensUsedMonth || 0;
+
+        // Check both daily and monthly limits
+        const dailyOk = dailyUsed < dailyLimit;
+        const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
+
         return {
-          allowed: used < limit,
-          tokensUsed: used,
-          tokensRemaining: Math.max(0, limit - used),
-          limit
+          allowed: dailyOk && monthlyOk,
+          tokensUsed: dailyUsed,
+          tokensRemaining: Math.max(0, dailyLimit - dailyUsed),
+          limit: dailyLimit,
+          monthly: monthlyLimit ? {
+            used: monthlyUsed,
+            limit: monthlyLimit,
+            remaining: Math.max(0, monthlyLimit - monthlyUsed)
+          } : null
         };
       }
     }
@@ -592,6 +659,7 @@ export async function recordTokenUsage(token, tokensUsed) {
   if (!token || !tokensUsed) return;
 
   const today = new Date().toISOString().slice(0, 10);
+  const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
     const files = await fs.readdir(USERS_DIR);
@@ -599,11 +667,18 @@ export async function recordTokenUsage(token, tokensUsed) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        // Daily reset
         if (user.tokenLastReset !== today) {
           user.tokensUsedToday = 0;
           user.tokenLastReset = today;
         }
+        // Monthly reset
+        if (user.tokenMonthReset !== thisMonth) {
+          user.tokensUsedMonth = 0;
+          user.tokenMonthReset = thisMonth;
+        }
         user.tokensUsedToday = (user.tokensUsedToday || 0) + tokensUsed;
+        user.tokensUsedMonth = (user.tokensUsedMonth || 0) + tokensUsed;
         await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
         return;
       }
@@ -627,6 +702,7 @@ export async function updateUserPlan(token, fields) {
       if (user.token === token) {
         if (fields.plan !== undefined) user.plan = fields.plan;
         if (fields.stripeCustomerId !== undefined) user.stripeCustomerId = fields.stripeCustomerId;
+        if (fields.stripeSubscriptionId !== undefined) user.stripeSubscriptionId = fields.stripeSubscriptionId;
         if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
 
         await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
@@ -637,6 +713,87 @@ export async function updateUserPlan(token, fields) {
     return { error: 'Failed to update plan' };
   }
 
+  return { error: 'User not found' };
+}
+
+/**
+ * Add essay review credits to a user account.
+ */
+export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePaymentId) {
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.stripeCustomerId === stripeCustomerId) {
+        user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + quantity;
+        if (!user.essayReviewsPurchased) user.essayReviewsPurchased = [];
+        user.essayReviewsPurchased.push({
+          pack,
+          quantity,
+          purchasedAt: new Date().toISOString(),
+          stripePaymentId
+        });
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return { success: true, remaining: user.essayReviewsRemaining };
+      }
+    }
+  } catch (err) {
+    return { error: 'Failed to add essay credits' };
+  }
+  return { error: 'User not found' };
+}
+
+/**
+ * Use one essay review credit. Returns false if no credits remaining.
+ */
+export async function useEssayCredit(token) {
+  if (!token) return { allowed: false, remaining: 0 };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        const remaining = user.essayReviewsRemaining || 0;
+        if (remaining <= 0) {
+          return { allowed: false, remaining: 0 };
+        }
+        user.essayReviewsRemaining = remaining - 1;
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return { allowed: true, remaining: user.essayReviewsRemaining };
+      }
+    }
+  } catch {
+    return { allowed: false, remaining: 0 };
+  }
+  return { allowed: false, remaining: 0 };
+}
+
+/**
+ * Update user's admissions profile.
+ */
+export async function updateAdmissionsProfile(token, profile) {
+  if (!token) return { error: 'Not authenticated' };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        if (!user.admissionsProfile) {
+          user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
+        }
+        user.admissionsProfile = { ...user.admissionsProfile, ...profile };
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return { success: true, admissionsProfile: user.admissionsProfile };
+      }
+    }
+  } catch (err) {
+    return { error: 'Failed to update admissions profile' };
+  }
   return { error: 'User not found' };
 }
 
@@ -687,18 +844,10 @@ export async function findUserByToken(token) {
 // Remove sensitive fields before sending to client
 function sanitizeUser(user) {
   const today = new Date().toISOString().slice(0, 10);
+  const thisMonth = new Date().toISOString().slice(0, 7);
   const usesToday = user.engineLastReset === today ? (user.engineUsesToday || 0) : 0;
-
-  const getPlanLimit = (plan) => {
-    switch(plan) {
-      case 'pro': return 20;
-      case 'premium': return 10;
-      case 'free':
-      default: return 3;
-    }
-  };
-
-  const planLimit = getPlanLimit(user.plan || 'free');
+  const plan = user.plan || 'free';
+  const limits = getPlanLimits(plan);
 
   return {
     id: user.id,
@@ -708,19 +857,42 @@ function sanitizeUser(user) {
     school: user.school,
     interests: user.interests,
     profile: user.profile,
-    plan: user.plan || 'free',
+    plan,
     settings: user.settings,
-    hasSubscription: !!user.stripeCustomerId, // Only expose boolean, not the actual ID
+    hasSubscription: !!user.stripeCustomerId,
     consentGiven: user.consentGiven,
     createdAt: user.createdAt,
     lastLogin: user.lastLogin,
     sessionCount: (user.sessionHistory || []).length,
     engineUsesToday: usesToday,
-    engineRemaining: Math.max(0, planLimit - usesToday),
+    engineRemaining: Math.max(0, limits.enginePerDay - usesToday),
+    engineMax: limits.enginePerDay,
     tokenUsage: {
       used: user.tokenLastReset === today ? (user.tokensUsedToday || 0) : 0,
-      limit: getDailyTokenLimit(user.plan || 'free'),
-      remaining: Math.max(0, getDailyTokenLimit(user.plan || 'free') - (user.tokenLastReset === today ? (user.tokensUsedToday || 0) : 0))
+      limit: limits.dailyTokens,
+      remaining: Math.max(0, limits.dailyTokens - (user.tokenLastReset === today ? (user.tokensUsedToday || 0) : 0))
+    },
+    monthlyTokenUsage: limits.monthlyTokens ? {
+      used: user.tokenMonthReset === thisMonth ? (user.tokensUsedMonth || 0) : 0,
+      limit: limits.monthlyTokens,
+      remaining: Math.max(0, limits.monthlyTokens - (user.tokenMonthReset === thisMonth ? (user.tokensUsedMonth || 0) : 0))
+    } : null,
+    essayReviewsRemaining: user.essayReviewsRemaining || 0,
+    admissionsProfile: user.admissionsProfile || null,
+    // Feature access flags for frontend
+    features: {
+      demographicsFull: canAccess(plan, 'demographics_full'),
+      demographicsCompare: canAccess(plan, 'demographics_compare'),
+      decisionDates: canAccess(plan, 'decision_dates'),
+      admissionsTimeline: canAccess(plan, 'admissions_timeline'),
+      internshipsFull: canAccess(plan, 'internships_full'),
+      internshipsPreview: canAccess(plan, 'internships_preview'),
+      scholarships: canAccess(plan, 'scholarships'),
+      scholarshipsPreview: canAccess(plan, 'scholarships_preview'),
+      programs: canAccess(plan, 'programs'),
+      programsPreview: canAccess(plan, 'programs_preview'),
+      emailReminders: canAccess(plan, 'email_reminders'),
+      essayReviewer: canAccess(plan, 'essay_reviewer'),
     }
   };
 }
