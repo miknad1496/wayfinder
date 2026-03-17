@@ -106,7 +106,8 @@ async function getUserFromRequest(req) {
 // Helper: check if user has paid access
 function hasPaidAccess(user) {
   if (!user) return false;
-  return user.plan === 'premium' || user.plan === 'pro';
+  if (user.isAdmin) return true;
+  return user.plan === 'pro' || user.plan === 'elite';
 }
 
 // Helper: strip per-major data for free users (keep only school aggregate + top 3 majors preview)

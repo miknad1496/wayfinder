@@ -126,10 +126,32 @@ async function saveSchedule() {
 /**
  * Check if a scraper is due to run
  */
-function isDue(scraperKey) {
+async function isDue(scraperKey) {
   const scraper = SCRAPERS[scraperKey];
   const lastRun = schedule[scraperKey]?.lastRun;
-  if (!lastRun) return true; // Never run before
+
+  // If never run before, check if a data file already exists with good data.
+  // This prevents overwriting committed data on first deploy when APIs are unreachable.
+  if (!lastRun) {
+    const dataFiles = {
+      ethnicity: 'ethnicity-demographics.json',
+      nces: 'nces-college-scorecard.json',
+      admissions: 'admissions-data.json',
+    };
+    if (dataFiles[scraperKey]) {
+      try {
+        const filePath = join(SCRAPED_DIR, dataFiles[scraperKey]);
+        const stat = await fs.stat(filePath);
+        // If file exists and is substantial (>10KB), skip — data was committed to repo
+        if (stat.size > 10240) {
+          console.log(`[Scraper Scheduler] ${scraperKey}: data file exists (${(stat.size/1024).toFixed(0)}KB), skipping first-run`);
+          return false;
+        }
+      } catch { /* file doesn't exist, proceed */ }
+    }
+    return true; // Never run before and no existing data
+  }
+
   const elapsed = Date.now() - new Date(lastRun).getTime();
   return elapsed >= scraper.intervalMs;
 }
@@ -181,7 +203,7 @@ async function checkAndRun() {
   console.log(`[Scraper Scheduler] Checking scraper schedule...`);
 
   for (const [key, scraper] of Object.entries(SCRAPERS)) {
-    if (isDue(key)) {
+    if (await isDue(key)) {
       // Add random jitter (0-60min) to spread API calls
       const jitter = Math.floor(Math.random() * 60 * 60 * 1000);
       console.log(`[Scraper Scheduler] ${key} is due (${scraper.frequency}), running with ${Math.round(jitter/60000)}min jitter...`);
@@ -205,7 +227,7 @@ export async function startScraperScheduler() {
   console.log('[Scraper Scheduler] Schedule:');
   for (const [key, scraper] of Object.entries(SCRAPERS)) {
     const lastRun = schedule[key]?.lastRun || 'never';
-    const due = isDue(key) ? '(DUE)' : '';
+    const due = (await isDue(key)) ? '(DUE)' : '';
     console.log(`  ${scraper.frequency.padEnd(10)} | ${key.padEnd(16)} | last: ${lastRun} ${due}`);
   }
 
@@ -243,7 +265,7 @@ export async function getScheduleStatus() {
       lastRun: schedule[key]?.lastRun || null,
       status: schedule[key]?.status || 'never_run',
       lastError: schedule[key]?.errorMessage || null,
-      isDue: isDue(key)
+      isDue: await isDue(key)
     };
   }
   return status;

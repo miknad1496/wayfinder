@@ -698,6 +698,13 @@ export async function scrapeEthnicityDemographics(options = {}) {
   console.log('\n📊 Computing percentages and school-level aggregates...');
   const enrichedResults = enrichResults(rawResults);
 
+  // Guard: do NOT overwrite existing data with empty results
+  if (Object.keys(enrichedResults).length === 0) {
+    console.warn('\n⚠️  Scraper returned 0 schools — NOT overwriting existing data file.');
+    console.warn('   This usually means the API was unreachable. Data file left intact.');
+    return null;
+  }
+
   // Step 4: Build final output
   const output = {
     metadata: {
