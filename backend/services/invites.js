@@ -17,8 +17,20 @@ const __dirname = dirname(__filename);
 const INVITES_DIR = join(__dirname, '..', 'data', 'invites');
 const USERS_DIR = join(__dirname, '..', 'data', 'users');
 
-// How many invites each user gets
-const INVITES_PER_USER = 3;
+// How many invites each tier gets
+const INVITE_LIMITS = {
+  free: 1,
+  premium: 3,
+  pro: 5
+};
+
+// Default fallback
+const DEFAULT_INVITE_LIMIT = 1;
+
+// Admin emails with unlimited invites
+const UNLIMITED_INVITE_EMAILS = [
+  'danielyungkim@hotmail.com'
+];
 
 // Invite expiration: 14 days
 const INVITE_EXPIRY_DAYS = 14;
@@ -42,9 +54,16 @@ function generateInviteCode() {
 
 /**
  * Get how many invites a user has remaining.
+ * @param {string} userId
+ * @param {string} userEmail
+ * @param {string} userPlan - 'free', 'premium', or 'pro'
  */
-export async function getInviteBalance(userId) {
+export async function getInviteBalance(userId, userEmail, userPlan) {
   await ensureInvitesDir();
+
+  // Check if this user has unlimited invites
+  const isUnlimited = userEmail && UNLIMITED_INVITE_EMAILS.includes(userEmail.toLowerCase().trim());
+  const limit = INVITE_LIMITS[userPlan || 'free'] || DEFAULT_INVITE_LIMIT;
 
   try {
     const files = await fs.readdir(INVITES_DIR);
@@ -56,13 +75,21 @@ export async function getInviteBalance(userId) {
         sentCount++;
       }
     }
+
+    if (isUnlimited) {
+      return { total: 999, sent: sentCount, remaining: 999, unlimited: true };
+    }
+
     return {
-      total: INVITES_PER_USER,
+      total: limit,
       sent: sentCount,
-      remaining: Math.max(0, INVITES_PER_USER - sentCount)
+      remaining: Math.max(0, limit - sentCount)
     };
   } catch {
-    return { total: INVITES_PER_USER, sent: 0, remaining: INVITES_PER_USER };
+    if (isUnlimited) {
+      return { total: 999, sent: 0, remaining: 999, unlimited: true };
+    }
+    return { total: limit, sent: 0, remaining: limit };
   }
 }
 
@@ -70,11 +97,11 @@ export async function getInviteBalance(userId) {
  * Create a new invite from an authenticated user.
  * Returns the invite code and link.
  */
-export async function createInvite(inviterId, inviterName, inviterEmail, recipientEmail) {
+export async function createInvite(inviterId, inviterName, inviterEmail, recipientEmail, userPlan) {
   await ensureInvitesDir();
 
-  // Check balance
-  const balance = await getInviteBalance(inviterId);
+  // Check balance (pass email and plan for tier-based limits)
+  const balance = await getInviteBalance(inviterId, inviterEmail, userPlan);
   if (balance.remaining <= 0) {
     return { error: 'You have no invitations remaining.' };
   }
@@ -235,6 +262,41 @@ export async function getUserInvites(userId) {
     return invites.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   } catch {
     return [];
+  }
+}
+
+/**
+ * Delete an invite. Only the inviter can delete their own invites.
+ * Cannot delete already-redeemed invites.
+ */
+export async function deleteInvite(code, userId) {
+  await ensureInvitesDir();
+
+  if (!code) return { error: 'Invite code is required.' };
+
+  const cleanCode = code.toUpperCase().trim();
+
+  try {
+    const filePath = join(INVITES_DIR, `${cleanCode}.json`);
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const invite = JSON.parse(raw);
+
+    // Only the inviter can delete their own invites
+    if (invite.inviterId !== userId) {
+      return { error: 'You can only delete your own invitations.' };
+    }
+
+    // Cannot delete already-redeemed invites
+    if (invite.redeemedAt) {
+      return { error: 'Cannot delete an invitation that has already been accepted.' };
+    }
+
+    // Delete the invite file
+    await fs.unlink(filePath);
+
+    return { success: true, deletedCode: cleanCode };
+  } catch {
+    return { error: 'Invitation not found.' };
   }
 }
 

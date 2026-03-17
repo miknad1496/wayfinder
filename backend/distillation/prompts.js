@@ -709,6 +709,451 @@ Format as structured markdown.`,
 ];
 
 // ============================================================
+// LAYER 9: COLLEGE ADMISSIONS INTELLIGENCE
+// (Admissions is a co-equal pillar alongside career advising)
+// ============================================================
+const admissionsPrompts = [
+  {
+    id: 'admissions-strategic-playbook',
+    layer: 'admissions',
+    title: 'College Admissions Strategic Playbook',
+    prompt: `You are building the strategic intelligence core for Wayfinder's college admissions advisory system. This is NOT a generic admissions guide — this is the $10,000 private consultant playbook made accessible.
+
+Create comprehensive strategic intelligence covering:
+
+1. **THE ADMISSIONS GAME — HOW IT ACTUALLY WORKS**
+   - How admissions committees actually read applications (the 8-12 minute reality)
+   - Institutional priorities most families don't understand: yield management, class shaping, development cases, legacy
+   - The difference between "holistic review" marketing and actual selection mechanics
+   - How demonstrated interest is tracked and weighted (varies enormously by school)
+
+2. **EARLY DECISION / EARLY ACTION STRATEGY**
+   - The mathematical advantage: ED acceptance rates vs RD at the top 30 schools (with actual numbers)
+   - When ED is a smart play vs when it's a trap (financial aid implications)
+   - REA vs ED vs EA vs Rolling — how to build a strategic timeline
+   - The ED II second chance that most families don't know about
+   - How to choose your ED school: it's game theory, not just preference
+
+3. **SCHOOL-WITHIN-SCHOOL ARBITRAGE**
+   - The biggest legal advantage in college admissions: applying to less competitive divisions
+   - Specific examples: Cornell Hotel vs A&S, Columbia GS vs CC, Georgetown Nursing vs SFS, CMU Dietrich vs SCS
+   - Internal transfer strategies after enrollment
+   - When this strategy works and when it backfires
+
+4. **APPLICATION ARCHITECTURE**
+   - How to build a school list: the 2-3-2 reach/target/likely framework
+   - Common mistakes in list building (too top-heavy, no genuine safeties, geographic clustering)
+   - When to apply to 8 schools vs 15 vs 20+
+   - How to sequence supplemental essays for maximum efficiency
+
+5. **THE ESSAY HIERARCHY**
+   - What actually matters: grades in rigorous courses > test scores > essays > extracurriculars (with nuance by school type)
+   - The Common App essay: themes that work, themes that are overdone, structural approaches
+   - "Why X School" supplements: the specific-to-generic ratio and what admissions officers actually want
+   - The activity list: how to frame experiences for maximum impact
+
+6. **FINANCIAL AID AS STRATEGY**
+   - Need-blind vs need-aware: what this actually means for your chances
+   - Net Price Calculators: the tool families don't use enough
+   - The middle-income squeeze and how to navigate it
+   - Leveraging competing offers: when and how to negotiate
+   - Specific generous programs: QuestBridge, Posse, Gates, institutional programs
+   - The "elite schools are cheaper" paradox for families under $75-100K
+
+7. **TRANSFER PATHWAYS**
+   - The community college → elite university pipeline (specific programs that work)
+   - Which schools are genuinely transfer-friendly vs which only claim to be
+   - How to build a transfer application that works
+   - Gap year → reapplication strategy
+
+8. **FORWARD-LOOKING ADMISSIONS TRENDS (2025-2030)**
+   - Test-optional permanence: where it's staying, where it's reverting
+   - AI's impact on essays and how admissions committees are adapting
+   - Demographic cliff impact (2025-2030): which schools will get easier, which won't
+   - Rising international competition and how it affects domestic applicants
+   - The growing importance of demonstrated interest in a post-COVID world
+
+Be specific with numbers, school names, and strategies. This should be the kind of intelligence that families currently pay $5K-$10K to access.
+
+Format as structured markdown with clear headers.`
+  },
+  {
+    id: 'admissions-school-selection-intelligence',
+    layer: 'admissions',
+    title: 'School Selection Intelligence & Tier Analysis',
+    prompt: `Create a strategic school selection intelligence brief that helps families make informed decisions about WHERE to apply. This is the strategic layer that sits above raw admissions data.
+
+Cover:
+
+1. **SCHOOL TIER REALITY CHECK**
+   - The actual hierarchy (not just US News rankings) based on: outcomes, aid generosity, alumni network strength, career placement
+   - Why some "lower ranked" schools produce better outcomes for certain students
+   - The LAC advantage: why Williams/Amherst/Pomona can outperform Ivies for certain career paths
+   - Public university honors programs as an elite alternative (Barrett at ASU, Schreyer at Penn State, etc.)
+
+2. **MAJOR-SCHOOL FIT ANALYSIS**
+   - Schools where the major matters enormously for admissions (Cornell, Penn, CMU, Georgetown) vs where it doesn't (Harvard, Yale, Princeton)
+   - How to use major declaration strategically without being dishonest
+   - Pre-professional programs worth applying to directly: Wharton, Ross BBA, Stern, McIntire
+   - When to apply undeclared vs declared
+
+3. **GEOGRAPHIC STRATEGY**
+   - In-state advantages: auto-admit policies, tuition arbitrage, flagship university value
+   - Schools that heavily favor in-state (UNC, UVA, UT Austin, Cal/UCLA) vs those that don't
+   - Urban vs rural campus: what this actually means for career outcomes and internship access
+   - The "college town" experience vs the "city campus" experience
+
+4. **SCHOOL CULTURE FIT**
+   - Academic intensity spectrum: Caltech/Swarthmore/Chicago (intense) vs Brown/Stanford (flexible)
+   - Greek life dominance: where it matters, where it doesn't
+   - Research university vs teaching-focused: what this means for undergrads
+   - School spirit/athletics culture: Notre Dame, Michigan, Duke vs MIT, Chicago, Caltech
+   - Political and social climate: how to gauge this honestly
+
+5. **THE ROI CONVERSATION**
+   - Schools with the best financial aid (top 20 by generosity)
+   - Merit scholarship strategy: where your stats will get you money
+   - The "full price at a good school vs full ride at a lesser-known school" framework
+   - When state school is genuinely the best choice (not just the safe choice)
+   - Outcomes data by school: median earnings 10 years out, employment rates, grad school placement
+
+6. **EMERGING SCHOOLS TO WATCH (2025-2030)**
+   - Schools investing heavily in AI/tech programs
+   - Schools with improving financial aid packages
+   - Schools whose selectivity is increasing fastest
+   - Schools that are undervalued relative to their outcomes data
+
+Be data-driven and specific. Name schools, cite numbers, give actionable frameworks.
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-parent-strategy-guide',
+    layer: 'admissions',
+    title: 'Parent Strategic Intelligence Briefing',
+    prompt: `Create the definitive strategic intelligence briefing for PARENTS navigating college admissions. Parents are Wayfinder's most valuable audience for admissions — they're the decision-makers, the financial planners, and often the emotional anchors.
+
+Cover:
+
+1. **THE PARENT'S TIMELINE (by child's grade)**
+   - 9th grade: what to start thinking about (not stressing about)
+   - 10th grade: course selection strategy, early exploration
+   - 11th grade (critical year): testing strategy, school visits, summer programs, the "extracurricular spike"
+   - 12th grade fall: application execution, ED decisions, managing stress
+   - 12th grade spring: decision time, financial aid comparison, waitlist strategy
+   - For each: specific actions, common mistakes, what matters and what doesn't
+
+2. **HOW TO HELP WITHOUT HOVERING**
+   - The research parents should do (financial aid, school research, deadline tracking)
+   - The decisions that must be the student's (essay topics, school rankings, major choice)
+   - How helicopter parenting actually HURTS admissions outcomes
+   - When to push, when to back off, when to intervene
+
+3. **THE MONEY CONVERSATION**
+   - How to talk about budget honestly with your child
+   - The FAFSA/CSS Profile demystified
+   - How to compare financial aid packages apples-to-apples
+   - When borrowing makes sense vs when it doesn't
+   - The parent PLUS loan trap
+   - How much is too much to pay for college? (The $250K question)
+
+4. **MANAGING EXPECTATIONS**
+   - How to have the "reach school rejection" conversation before it happens
+   - Why the "best" school is rarely the most prestigious one
+   - The correlation between school prestige and career success is weaker than parents think
+   - How to celebrate likely/target school acceptances genuinely
+
+5. **THE STRATEGIC PARENT PLAYBOOK**
+   - How to build a balanced school list with your child
+   - The ED conversation: when to encourage it and when to advise against it
+   - How to evaluate demonstrated interest opportunities (campus visits, info sessions, alumni interviews)
+   - How to help with essays without writing them
+   - When to hire outside help (tutoring, essay review) and when it's a waste of money
+
+6. **RED FLAGS AND SCAMS**
+   - College admissions consultant red flags ($30K+ packages, guaranteed admission claims)
+   - "College prep" programs that don't actually help
+   - Test prep: what's worth the money and what isn't
+   - How to identify genuine opportunities vs resume padding
+
+7. **THE FORWARD-LOOKING LENS FOR PARENTS**
+   - Your child's career trajectory matters more than the school name — how to think about this
+   - The demographic cliff: how declining college-age population (2025-2030) changes the game
+   - AI and the future of education: what skills will matter when your child graduates in 2028-2032
+   - The gap year value: when it's strategic, not just delayed
+
+Write with warmth and strategic depth. Parents are investing their child's future AND their family's financial security. Treat this with the gravity it deserves.
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-essay-intelligence',
+    layer: 'admissions',
+    title: 'College Essay Strategic Intelligence',
+    prompt: `Create the definitive essay strategy guide for college applicants. This should be the kind of insight that top admissions consultants provide — not generic "be yourself" advice.
+
+Cover:
+
+1. **HOW ADMISSIONS OFFICERS ACTUALLY READ ESSAYS**
+   - The 3-5 minute reality: how to make an impact in limited reading time
+   - What AOs are actually evaluating (intellectual curiosity, self-awareness, writing ability, maturity)
+   - The difference between "interesting" and "impressive" — AOs want the former
+   - How essays are scored/rated at different institutions
+
+2. **THE COMMON APP PERSONAL STATEMENT**
+   - The 7 prompts: what each one is actually asking for (decoded)
+   - Themes that consistently work: intellectual obsession, meaningful failure, cultural bridge, quiet transformation
+   - Themes that are OVERDONE: sports injury comeback, mission trip epiphany, immigration narrative (unless truly unique), pandemic reflection
+   - Structural approaches: narrative arc, in medias res, thematic montage, reflective analysis
+   - The opening line: why it matters and 10 approaches that work
+
+3. **SUPPLEMENTAL ESSAY STRATEGY**
+   - "Why X School" — the formula: 40% specific academics, 30% community/culture, 30% personal connection
+   - How to research a school well enough to write a genuine supplement (beyond the website)
+   - The "activity elaboration" essay: how to go deep without just describing
+   - Short answer essays (100-250 words): how to be substantive in limited space
+   - School-specific quirky essays (UChicago, MIT, Stanford): how to stand out
+
+4. **THE ESSAY ECOSYSTEM**
+   - How to choose which essays to write first for maximum reuse
+   - The "core narrative" approach: build 3-4 themes that adapt across applications
+   - Time management: a realistic essay-writing timeline
+   - Revision strategy: how many drafts, who should read them, when to stop editing
+
+5. **WHAT DOESN'T WORK**
+   - The thesaurus essay (overwritten, inauthentic vocabulary)
+   - The resume essay (listing achievements instead of reflecting)
+   - The "I learned the real meaning of..." essay (preachy, predictable)
+   - The controversial opinion essay (almost always backfires)
+   - AI-generated essays: how AOs detect them, why they fail, the risks
+
+6. **VOICE AND AUTHENTICITY**
+   - How to write in your own voice (not your parent's, not your tutor's)
+   - The difference between vulnerability and trauma dumping
+   - How to be genuine without being naive
+   - Writing about privilege, wealth, or advantage without tone-deafness
+   - Writing about hardship without being exploitative
+
+7. **SCHOOL-SPECIFIC ESSAY INTELLIGENCE**
+   - Ivy League essay philosophy differences (Harvard: intellectual vitality, Yale: community, Princeton: academic depth)
+   - Common supplement patterns and how to decode what each school really wants
+   - How to handle the "Why this major" essay when you're not sure about your major
+
+Be specific, strategic, and practical. Include examples of approaches, not just principles.
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-curriculum-synthesis',
+    layer: 'admissions',
+    title: 'Curriculum & Academic Program Intelligence Synthesis',
+    requiresData: true,
+    dataSource: 'curriculum-data.json',
+    prompt: `I'm going to provide you with detailed curriculum data from 49 top universities — core requirements, popular major sequences, academic features, and program structures.
+
+Your job is to SYNTHESIZE this into strategic intelligence that helps students and parents make better decisions:
+
+1. **CURRICULUM PHILOSOPHY SPECTRUM**
+   - Map schools on a spectrum: rigid core (Columbia, Chicago, St. John's) → distribution requirements (most schools) → open curriculum (Brown, Amherst, Grinnell)
+   - What each philosophy means for the student experience and career preparation
+   - Which approach is best for which type of student
+
+2. **MAJOR REQUIREMENT COMPARISON**
+   - For the top 5 most popular majors (CS, Econ, Biology, Psychology, Engineering), compare requirements across schools
+   - Which schools have the most/least flexibility within the major?
+   - Where can you double major most easily? Where is it practically impossible?
+   - Pre-med requirements: how they vary by school and what this means strategically
+
+3. **HIDDEN ACADEMIC GEMS**
+   - Unique programs most students don't know about (Stanford's d.school, MIT's UROP, Princeton's thesis requirement, Brown/RISD dual degree)
+   - Cross-registration opportunities that effectively multiply course access
+   - Research opportunities for undergrads: which schools genuinely provide access vs which just claim to
+   - Study abroad programs that are genuinely transformative vs tourism with credit
+
+4. **ACADEMIC INTENSITY MAPPING**
+   - Grade inflation reality: where A's are easy (Harvard, Brown, Stanford) vs where they're earned (Caltech, MIT, Swarthmore)
+   - Course load expectations: credit hours, typical class sizes, professor accessibility
+   - How academic culture differs: collaborative (Brown, Rice) vs competitive (Hopkins pre-med, Chicago econ)
+
+5. **PROGRAM STRENGTH VS SCHOOL PRESTIGE**
+   - Schools where specific departments dramatically outperform the overall ranking (UIUC CS, UW-Madison biology, Georgia Tech engineering)
+   - When attending a "lower-ranked" school for a top program beats a "higher-ranked" school with a weaker department
+   - Emerging programs worth watching at schools investing heavily in new fields
+
+6. **THE FORWARD-LOOKING CURRICULUM LENS**
+   - Which schools are adding AI/ML courses fastest?
+   - Interdisciplinary programs that position students for 2028+ careers
+   - Schools where the curriculum is evolving vs schools stuck in traditional models
+   - How the rise of AI changes what curriculum features matter most
+
+[SCRAPED CURRICULUM DATA WILL BE INJECTED HERE]
+
+Format as structured markdown with clear actionable insights.`
+  },
+  {
+    id: 'admissions-data-synthesis',
+    layer: 'admissions',
+    title: 'Admissions Data Deep Interpretation',
+    requiresData: true,
+    dataSource: 'college-admissions.json',
+    prompt: `I'm going to provide you with detailed admissions data including acceptance rates, ED/EA advantages, school-within-school differentials, financial aid details, and strategic intelligence for 49 top universities.
+
+Your job is to INTERPRET this data into strategic admissions intelligence:
+
+1. **THE BIGGEST ED ADVANTAGES** — Rank the schools where ED provides the largest acceptance rate boost. Which schools are practically impossible to get into Regular Decision but feasible through ED?
+
+2. **SCHOOL-WITHIN-SCHOOL ARBITRAGE MAP** — For every school with multiple colleges/schools, map the acceptance rate differentials. Identify the top 10 most impactful strategic entry points (e.g., Cornell Hotel, Columbia GS, CMU Dietrich).
+
+3. **TRANSFER PATHWAY INTELLIGENCE** — Which schools are genuinely transfer-friendly? Rank by transfer acceptance rate and identify the best feeder pathways (community college programs, 2+2 arrangements, guaranteed transfer agreements).
+
+4. **FINANCIAL AID GENEROSITY RANKING** — Which schools are the most generous? The "no loans" schools, the income thresholds for free tuition, the best merit scholarship opportunities. Create an actionable comparison.
+
+5. **THE DEMOGRAPHIC CLIFF ANALYSIS** — Based on current selectivity trends, which schools will likely become more accessible 2025-2030 as the college-age population declines? Which schools are immune due to international demand?
+
+6. **CONTRARIAN ADMISSIONS INSIGHTS** — What does the data reveal that contradicts conventional admissions wisdom? Where are the genuine opportunities that most families miss?
+
+7. **THE COMMUNITY INTELLIGENCE LAYER** — What strategic insights from Reddit, College Confidential, and admissions forums add to the official data? Admissions quirks, hidden pathways, strategic tips that insiders know.
+
+Think like a strategic admissions consultant who charges $10K per family. What would you tell them that they can't find on any school's website?
+
+[SCRAPED ADMISSIONS DATA WILL BE INJECTED HERE]
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-pre-highschool-planning',
+    layer: 'admissions',
+    title: 'Pre-High School Strategic Planning for Parents (Grades 5-9)',
+    prompt: `Create the definitive pre-high school strategic planning guide for parents. This is the content NO ONE provides — not admissions consultants (who only engage from 10th/11th grade), not school counselors (who are stretched too thin), and not college prep websites (which focus on juniors/seniors).
+
+This is Wayfinder's contrarian, forward-thinking take on the EARLY years. Challenge conventional wisdom at every turn. Use data where it exists but don't be afraid to make strong, non-consensus arguments.
+
+Cover:
+
+1. **THE CONVENTIONAL WISDOM IS WRONG**
+   - "Start worrying about college in junior year" — why this is already too late for many families
+   - "Just let kids be kids" vs "strategic exposure" — where the real balance point is (it's not where most people think)
+   - The myth of the "naturally gifted" applicant — elite college admits are almost always the product of YEARS of intentional development, not sudden senior-year magic
+   - Why the "well-rounded" advice that school counselors give is outdated and counterproductive
+
+2. **GRADES 5-8: THE INVISIBLE FOUNDATION YEARS**
+   - Math acceleration: why the math track your child is on in 6th grade determines their options in high school (and therefore college). The pipeline: if they're not in pre-algebra by 7th grade, calculus in 12th becomes nearly impossible at many schools.
+   - Reading depth over breadth: why reading challenging books matters more than reading logs
+   - The extracurricular exploration window: grades 5-8 is when kids should TRY everything. By 9th grade, they need to be narrowing.
+   - Learning differences and early identification: ADHD, dyslexia, processing speed — catch them NOW, not in 10th grade when it's crisis mode
+   - The technology question: coding exposure, digital literacy, but also screen time reality. What actually matters vs what's marketing.
+   - Foreign language head start: why starting a language before high school creates a massive advantage
+
+3. **9TH GRADE: THE MOST IMPORTANT YEAR NO ONE TALKS ABOUT**
+   - 9th grade GPA counts. Many parents don't realize this until 11th grade. The GPA is cumulative from day one of high school.
+   - Course selection strategy: honors vs regular, which APs to plan toward, the 4-year course map
+   - The extracurricular "spike" begins here: depth over breadth. One or two things at a high level beats ten things at a surface level.
+   - Summer programs: which ones actually matter (RSI, MITES, Clark Scholars, Governor's Schools) vs which are resume padding
+   - The social media audit starts NOW: clean digital footprint
+
+4. **WHAT ACTUALLY PREDICTS ELITE ADMISSIONS (THE DATA)**
+   - Analyze what longitudinal data shows about early predictors of selective college admission
+   - Course rigor is the #1 predictor — not grades alone, not test scores, not extracurriculars
+   - The impact of school quality and course offerings (if your school doesn't offer 10+ APs, how to supplement)
+   - Socioeconomic factors: acknowledge them honestly, then provide strategies to mitigate
+   - First-generation families: what they don't know that affluent families take for granted
+
+5. **NON-CONSENSUS STRATEGIES**
+   - The "anti-resume" approach: why developing genuine intellectual passion beats strategic activity stacking
+   - Intellectual curiosity as a trainable skill, not an innate trait. How parents can cultivate it without killing it.
+   - The case for public school over expensive private school (when the ROI actually favors public)
+   - When to consider switching schools — and when switching is running from a solvable problem
+   - The gap year planted early: normalizing non-linear paths from middle school
+   - Mental health as an admissions strategy: a burned-out kid writes terrible essays. Sustainability matters.
+   - Why the "tiger parent" approach statistically produces worse college outcomes than strategic, supportive parenting
+
+6. **FORWARD-LOOKING: WHAT WILL MATTER IN 2028-2034**
+   - AI literacy will be as important as computer literacy was in 2010
+   - Interdisciplinary thinking will be rewarded more than single-track specialization
+   - The skills that will matter when today's 5th grader applies to college: adaptability, cross-cultural competence, ethical reasoning, systems thinking
+   - How the demographic cliff changes the calculus for today's elementary and middle schoolers
+
+7. **THE PARENT PLAYBOOK BY YEAR**
+   - Grade 5-6: specific actions, mindset shifts, what to start tracking
+   - Grade 7-8: specific actions, conversations to have, skills to develop
+   - Grade 9: the tactical playbook for the year that sets everything up
+   - Common mistakes at each stage and how to avoid them
+
+Be bold, specific, and non-consensus. This should feel like advice from a brilliant friend who happens to be an elite admissions strategist — not a cautious counselor reading from a playbook. Use data to challenge popular beliefs.
+
+Format as structured markdown.`
+  },
+  {
+    id: 'admissions-parent-adult-children',
+    layer: 'admissions',
+    title: 'Parent Playbook: Supporting Adult Children (Ages 20-30) — Career, Financial, & Strategic Guidance',
+    prompt: `Create a comprehensive strategic playbook for PARENTS of adult children in their 20s. This is a massively underserved audience — parents don't stop caring or investing when their kid turns 18, but the advice ecosystem completely abandons them.
+
+This should cover career support, financial strategy, tax optimization, and the evolving parent-child dynamic through the 20s decade. Be specific with numbers, strategies, and non-obvious insights.
+
+Cover:
+
+1. **THE NEW REALITY: PARENTING DOESN'T END AT 18**
+   - The economics: 52% of 18-29 year olds lived with parents in 2023. The "failure to launch" framing is wrong — this is a rational economic response.
+   - The financial entanglement: health insurance until 26, cosigned loans, shared phone plans, car insurance — the practical reality
+   - The emotional dynamic: how to support without enabling, advise without controlling
+   - When adult children are struggling (job loss, career confusion, mental health) — the parent's role
+
+2. **CAREER SUPPORT STRATEGIES FOR PARENTS OF 20-SOMETHINGS**
+   - How to help without hovering: the information/access/connection model
+   - Leveraging your professional network for your child's career (and when NOT to)
+   - The "safety net" effect: data shows that kids who know they have parental backup take better career risks (startups, career pivots, grad school)
+   - When to push ("you need to get a job") vs when to support ("take time to figure this out")
+   - Helping a child navigate a career crisis (layoff, wrong career choice, burnout)
+   - The graduate school question from the parent's perspective: when to fund it, when to decline
+
+3. **TAX & FINANCIAL STRATEGIES MOST FAMILIES MISS**
+   - **529 Plan flexibility**: unused 529 funds can now roll over to Roth IRA (SECURE 2.0 Act). Up to $35K lifetime. The account must have been open 15+ years. This is a game-changer for families who over-saved.
+   - **Gift tax strategy**: $18K/year per parent per child (2024). Married parents can give $36K/year tax-free. Fund a child's Roth IRA, first home down payment, or emergency fund.
+   - **Roth IRA for young adults**: If your child has earned income, fund their Roth IRA NOW. $7,000/year. The compounding from age 22 to 65 is extraordinary. A parent can gift the money; the child just needs the earned income.
+   - **Health insurance optimization**: Keep them on your plan until 26. After 26, help them evaluate ACA marketplace vs employer coverage vs health sharing ministries.
+   - **Student loan strategy**: PSLF (Public Service Loan Forgiveness) — if your child works in public sector/nonprofit, this wipes loans after 10 years of income-driven payments. SAVE plan for income-driven repayment.
+   - **First home assistance**: Gift money for a down payment (within gift tax limits). Consider whether buying a small property and having your child pay "rent" makes more financial sense than renting.
+   - **Trust and estate basics**: At what net worth should parents set up a trust? When to add adult children to investment accounts. Beneficiary designations on 401k/IRA — review annually.
+   - **Credit building for adult children**: Authorized user strategy (add child to your old credit card to build their credit history). Helping them understand credit utilization, age of accounts, etc.
+
+4. **WEALTH TRANSFER & GENERATIONAL STRATEGY**
+   - The intergenerational wealth conversation most families avoid having
+   - When and how to disclose family financial situation to adult children
+   - Annual gifting strategy to reduce estate tax exposure while helping kids NOW
+   - Setting up a family investment club or shared brokerage account for financial education
+   - Real estate as generational wealth: helping your child buy property early
+   - Life insurance as a wealth transfer tool (when it makes sense, when it's a scam)
+   - The "family bank" model: structured lending to children with clear terms
+
+5. **STAGE-SPECIFIC PLAYBOOKS**
+   - **Age 20-22 (college/early career)**: financial support guidelines, career exploration encouragement, the "first real job" transition
+   - **Age 23-25 (establishing)**: pulling back financial support gradually, mentoring on budgeting/investing, navigating the child's first career crisis
+   - **Age 26-30 (building)**: partnership dynamics (supporting but not controlling), helping with major life decisions (grad school, home purchase, career pivot, starting a business)
+
+6. **NON-CONSENSUS INSIGHTS**
+   - Why "cutting them off at 22" often HURTS long-term outcomes (the data on parental support and career risk-taking)
+   - The myth of "self-made": virtually every successful person had some form of family/institutional support. Strategic parental investment is not "spoiling" — it's creating optionality.
+   - When to say no: the line between investment and enabling. Specific criteria for evaluating requests.
+   - The career pivot in your child's late 20s is NORMAL, not a failure. Most people change careers 3-5 times.
+   - Mental health support costs money. A parent paying for therapy is one of the highest-ROI investments possible.
+
+7. **FORWARD-LOOKING: THE 2025-2035 ECONOMIC LANDSCAPE FOR YOUNG ADULTS**
+   - Housing affordability crisis: how parents can help navigate this
+   - Student debt landscape: current forgiveness programs, future trajectory
+   - The gig economy and non-traditional careers: when to be supportive vs concerned
+   - AI disruption and career resilience: which of your child's skills are durable?
+   - Remote work and geographic arbitrage: helping your child make location decisions
+
+Be specific with dollar amounts, tax figures, and actionable strategies. This should feel like advice from a family wealth advisor who also deeply understands career strategy and the modern young adult experience. Use current tax law (2024-2025) and financial data.
+
+IMPORTANT: Include appropriate caveats that tax and financial advice should be verified with a CPA/financial advisor, as rules change. But still be specific and actionable — don't hide behind disclaimers.
+
+Format as structured markdown.`
+  }
+];
+
+// ============================================================
 // EXPORT ALL PROMPTS
 // ============================================================
 export const ALL_PROMPTS = [
@@ -719,7 +1164,8 @@ export const ALL_PROMPTS = [
   ...playbookPrompts,
   ...audiencePrompts,
   ...coreIdentityPrompts,
-  ...synthesisPrompts
+  ...synthesisPrompts,
+  ...admissionsPrompts
 ];
 
 export const LAYERS = {
@@ -730,7 +1176,8 @@ export const LAYERS = {
   'playbooks': { name: 'Real-World Playbooks', prompts: playbookPrompts },
   'audience-guidance': { name: 'Audience-Specific Guidance', prompts: audiencePrompts },
   'core-identity': { name: 'Wayfinder Core Identity', prompts: coreIdentityPrompts },
-  'synthesis': { name: 'Cross-Referenced Synthesis', prompts: synthesisPrompts }
+  'synthesis': { name: 'Cross-Referenced Synthesis', prompts: synthesisPrompts },
+  'admissions': { name: 'College Admissions Intelligence', prompts: admissionsPrompts }
 };
 
 export const PROMPT_COUNT = ALL_PROMPTS.length;

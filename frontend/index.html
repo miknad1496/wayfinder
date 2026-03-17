@@ -222,39 +222,12 @@
           <h2 id="signupHeading">You're Invited</h2>
           <p id="signupSubtitle" class="form-subtitle">Wayfinder is invite-only. Enter your code to join.</p>
 
-          <!-- Join method toggle -->
-          <div id="signupMethodToggle" class="signup-method-toggle">
-            <button class="signup-method-btn active" data-method="invite" id="methodInviteBtn">I have an invite code</button>
-            <button class="signup-method-btn" data-method="paid" id="methodPaidBtn">Join with a paid plan</button>
-          </div>
-
           <!-- Invite code section -->
           <div id="inviteCodeSection" class="form-group">
             <label for="signupInviteCode">Invitation Code</label>
             <div class="invite-code-input-row">
               <input type="text" id="signupInviteCode" placeholder="WF-XXXXXX" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px;font-weight:600;">
               <span id="inviteCodeStatus" class="invite-code-status"></span>
-            </div>
-          </div>
-
-          <!-- Paid plan selector (hidden by default) -->
-          <div id="paidPlanSection" style="display:none;">
-            <p class="form-hint" style="margin-bottom:12px;color:#059669;">No invite needed — pick a plan and start immediately.</p>
-            <div class="paid-plan-options">
-              <label class="plan-option">
-                <input type="radio" name="signupPlan" value="premium" checked>
-                <div class="plan-option-card">
-                  <strong>Premium</strong>
-                  <span>10 Engine queries/day</span>
-                </div>
-              </label>
-              <label class="plan-option">
-                <input type="radio" name="signupPlan" value="pro">
-                <div class="plan-option-card">
-                  <strong>Pro</strong>
-                  <span>20 Engine queries/day</span>
-                </div>
-              </label>
             </div>
           </div>
 

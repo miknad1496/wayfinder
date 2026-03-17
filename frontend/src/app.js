@@ -915,8 +915,8 @@ async function submitLogin() {
 }
 
 async function submitSignup() {
-  // Invite method requires a validated code; paid method doesn't
-  if (signupMethod === 'invite' && !validatedInviteCode) {
+  // Always require a validated invite code
+  if (!validatedInviteCode) {
     showAuthError('signupError', 'Please enter a valid invitation code first.');
     return;
   }
@@ -926,13 +926,6 @@ async function submitSignup() {
   const password = $('signupPassword').value;
   const userType = $('signupType').value;
   const consent = $('signupConsent').checked;
-
-  // Get selected paid plan if using paid method
-  let selectedPlan = 'free';
-  if (signupMethod === 'paid') {
-    const planRadio = document.querySelector('input[name="signupPlan"]:checked');
-    selectedPlan = planRadio ? planRadio.value : 'premium';
-  }
 
   if (!name || !email || !password) { showAuthError('signupError', 'Please fill in all required fields'); return; }
   if (password.length < 6) { showAuthError('signupError', 'Password must be at least 6 characters'); return; }
@@ -945,8 +938,7 @@ async function submitSignup() {
       body: JSON.stringify({
         email, password, name, userType,
         consentGiven: consent,
-        inviteCode: validatedInviteCode || '',
-        selectedPlan
+        inviteCode: validatedInviteCode
       })
     });
     const data = await res.json();
@@ -966,27 +958,6 @@ async function submitSignup() {
 
     sessionId = null;
     localStorage.removeItem('wayfinder_session');
-
-    // If paid plan was selected, redirect to Stripe checkout immediately
-    if (data.selectedPlan && data.selectedPlan !== 'free') {
-      try {
-        const checkoutRes = await fetch(`${API_BASE}/stripe/create-checkout`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${authToken}`
-          },
-          body: JSON.stringify({ plan: data.selectedPlan })
-        });
-        const checkoutData = await checkoutRes.json();
-        if (checkoutData.url) {
-          window.location.href = checkoutData.url;
-        }
-      } catch {
-        // Non-critical: user can upgrade later from settings
-        console.warn('Could not redirect to checkout, user can upgrade from settings');
-      }
-    }
   } catch {
     showAuthError('signupError', 'Connection error. Is the server running?');
   }
@@ -1142,9 +1113,6 @@ function escapeHtml(text) {
 // ========================
 // Invite System
 // ========================
-// Current signup method: 'invite' or 'paid'
-let signupMethod = 'invite';
-
 function setupInviteListeners() {
   // Invite code validation on signup form
   const inviteInput = $('signupInviteCode');
@@ -1152,39 +1120,6 @@ function setupInviteListeners() {
     inviteInput.addEventListener('input', debounce(validateInviteCode, 500));
     inviteInput.addEventListener('paste', () => setTimeout(() => validateInviteCode(), 100));
   }
-
-  // Signup method toggle (invite vs paid)
-  const methodBtns = document.querySelectorAll('.signup-method-btn');
-  methodBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      methodBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      signupMethod = btn.dataset.method;
-
-      const inviteSection = $('inviteCodeSection');
-      const paidSection = $('paidPlanSection');
-      const signupFields = $('signupFields');
-      const heading = $('signupHeading');
-      const subtitle = $('signupSubtitle');
-
-      if (signupMethod === 'paid') {
-        inviteSection.style.display = 'none';
-        paidSection.style.display = 'block';
-        signupFields.style.display = 'block';
-        heading.textContent = 'Join Wayfinder';
-        subtitle.textContent = 'Pick a plan and get started immediately.';
-      } else {
-        inviteSection.style.display = 'block';
-        paidSection.style.display = 'none';
-        heading.textContent = "You're Invited";
-        subtitle.textContent = 'Wayfinder is invite-only. Enter your code to join.';
-        // Only show fields if invite is validated
-        if (!validatedInviteCode) {
-          signupFields.style.display = 'none';
-        }
-      }
-    });
-  });
 
   // Welcome screen "join with invite" link
   const joinLink = $('welcomeJoinLink');
@@ -1363,9 +1298,11 @@ async function loadInvitesList() {
       }
 
       const link = `${appUrl}/?invite=${inv.code}`;
+      // Show delete button for non-redeemed invites (pending or expired)
+      const canDelete = !inv.redeemed;
 
       return `
-        <div class="invite-item">
+        <div class="invite-item" id="invite-${inv.code}">
           <div class="invite-item-info">
             <span class="invite-item-email">${escapeHtml(inv.recipientEmail || 'Anyone')}</span>
             <span class="invite-item-code">${inv.code}</span>
@@ -1373,6 +1310,7 @@ async function loadInvitesList() {
           <div class="invite-item-right">
             <span class="invite-status ${statusClass}">${status}</span>
             ${!inv.redeemed && !inv.expired ? `<button class="invite-copy-link" onclick="navigator.clipboard.writeText('${link}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})">Copy link</button>` : ''}
+            ${canDelete ? `<button class="invite-delete-btn" onclick="deleteInvite('${inv.code}')" title="Delete invitation">✕</button>` : ''}
           </div>
         </div>
       `;
@@ -1381,6 +1319,48 @@ async function loadInvitesList() {
     // Non-critical
   }
 }
+
+// Make deleteInvite available globally for onclick handlers
+window.deleteInvite = async function(code) {
+  if (!authToken || !code) return;
+
+  // Confirm deletion
+  const inviteEl = document.getElementById(`invite-${code}`);
+  if (inviteEl) {
+    inviteEl.style.opacity = '0.5';
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/invites/${encodeURIComponent(code)}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+
+    if (data.error) {
+      if (inviteEl) inviteEl.style.opacity = '1';
+      showMsg('inviteSendMsg', data.error, '#991b1b');
+      return;
+    }
+
+    // Remove from DOM with fade animation
+    if (inviteEl) {
+      inviteEl.style.transition = 'opacity 0.3s, max-height 0.3s';
+      inviteEl.style.opacity = '0';
+      inviteEl.style.maxHeight = '0';
+      inviteEl.style.overflow = 'hidden';
+      setTimeout(() => inviteEl.remove(), 300);
+    }
+
+    showMsg('inviteSendMsg', 'Invitation deleted.', '#059669');
+
+    // Refresh balance and list
+    loadInvitesList();
+  } catch {
+    if (inviteEl) inviteEl.style.opacity = '1';
+    showMsg('inviteSendMsg', 'Failed to delete invitation.', '#991b1b');
+  }
+};
 
 function updateWelcomeView() {
   const splash = $('welcomeSplash');

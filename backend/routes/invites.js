@@ -12,6 +12,7 @@ import {
   validateInvite,
   getInviteBalance,
   getUserInvites,
+  deleteInvite,
   createAdminInvite
 } from '../services/invites.js';
 
@@ -34,7 +35,7 @@ router.post('/send', async (req, res) => {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
-    const result = await createInvite(user.id, user.name, user.email, email);
+    const result = await createInvite(user.id, user.name, user.email, email, user.plan || 'free');
 
     if (result.error) {
       return res.status(400).json({ error: result.error });
@@ -89,7 +90,7 @@ router.get('/balance', async (req, res) => {
       return res.status(401).json({ error: 'Not authenticated' });
     }
 
-    const balance = await getInviteBalance(user.id);
+    const balance = await getInviteBalance(user.id, user.email, user.plan || 'free');
     res.json(balance);
   } catch (err) {
     console.error('Invite balance error:', err);
@@ -110,11 +111,36 @@ router.get('/mine', async (req, res) => {
     }
 
     const invites = await getUserInvites(user.id);
-    const balance = await getInviteBalance(user.id);
+    const balance = await getInviteBalance(user.id, user.email, user.plan || 'free');
     res.json({ invites, balance });
   } catch (err) {
     console.error('Invite list error:', err);
     res.status(500).json({ error: 'Failed to get invitations.' });
+  }
+});
+
+/**
+ * DELETE /api/invites/:code — Delete an invite (authenticated, owner only)
+ */
+router.delete('/:code', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await findUserByToken(token);
+
+    if (!user) {
+      return res.status(401).json({ error: 'Not authenticated' });
+    }
+
+    const result = await deleteInvite(req.params.code, user.id);
+
+    if (result.error) {
+      return res.status(400).json({ error: result.error });
+    }
+
+    res.json(result);
+  } catch (err) {
+    console.error('Invite delete error:', err);
+    res.status(500).json({ error: 'Failed to delete invitation.' });
   }
 });
 

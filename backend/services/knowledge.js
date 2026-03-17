@@ -35,10 +35,11 @@ import { PATHS } from './storage.js';
 
 let categoryIndex = null;    // Map<category, chunk[]> — distilled + base
 let rawDataIndex = null;     // Map<category, chunk[]> — raw JSON parsed
-let liteBrainCache = null;
+let careerBrainCache = null;
+let admissionsBrainCache = null;
 let categoryTimestamp = 0;
 let rawDataTimestamp = 0;
-let liteCacheTimestamp = 0;
+let brainCacheTimestamp = 0;
 const CACHE_TTL = 10 * 60 * 1000;
 
 const MAX_CHUNK_CHARS = 3000;
@@ -108,7 +109,11 @@ const CATEGORIES = {
     rawCategories: ['raw_nces', 'raw_reddit_stories']
   },
   admissions: {
-    files: ['audience-high-school-undecided.md'],
+    files: ['audience-high-school-undecided.md', 'admissions-strategic-playbook.md',
+      'admissions-school-selection-intelligence.md', 'admissions-parent-strategy-guide.md',
+      'admissions-essay-intelligence.md', 'admissions-curriculum-synthesis.md',
+      'admissions-data-synthesis.md', 'admissions-pre-highschool-planning.md',
+      'admissions-parent-adult-children.md'],
     triggers: ['admissions', 'admission', 'acceptance', 'accepted', 'apply', 'application',
       'essay', 'sat', 'act', 'gpa', 'extracurricular', 'recommendation', 'early',
       'decision', 'regular', 'ivy', 'league', 'harvard', 'yale', 'princeton', 'stanford',
@@ -123,7 +128,28 @@ const CATEGORIES = {
       'credit', 'credits', 'requirement', 'requirements', 'catalog', 'syllabus',
       'distribution', 'core', 'gen-ed', 'elective', 'electives', 'thesis',
       'capstone', 'study', 'abroad', 'quarter', 'semester', 'faculty', 'professor'],
-    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum']
+    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools']
+  },
+  local_schools: {
+    files: ['admissions-pre-highschool-planning.md'],
+    triggers: ['lakeside', 'bush school', 'university prep', 'overlake', 'eastside prep',
+      'forest ridge', 'eastside catholic', 'bear creek', 'bellevue christian', 'northwest school',
+      'holy names', 'seattle academy', 'saas', 'epiphany', 'bertschi', 'charles wright',
+      'annie wright', 'seattle country day', 'kennedy catholic', 'bishop blanchet', 'odea',
+      'bellevue high', 'newport high', 'interlake high', 'sammamish high', 'mercer island',
+      'redmond high', 'woodinville', 'eastlake high', 'tesla stem', 'garfield high',
+      'roosevelt high', 'ballard high', 'ingraham', 'issaquah high', 'skyline high',
+      'liberty high', 'juanita high', 'lake washington high', 'bothell high',
+      'bellevue school', 'lake washington school', 'issaquah school', 'northshore',
+      'seattle public', 'elementary school', 'middle school', 'private school',
+      'odle', 'highland middle', 'chinook middle', 'tillicum', 'tyee middle',
+      'medina', 'clyde hill', 'yarrow point', 'hunts point', 'beaux arts',
+      'seattle', 'bellevue', 'kirkland', 'redmond', 'sammamish', 'issaquah',
+      'mercer island', 'renton', 'kent', 'federal way', 'tacoma', 'shoreline',
+      'edmonds', 'bothell', 'woodinville', 'kenmore', 'burien', 'tukwila',
+      'k-12', 'k-8', 'elementary', 'preschool', 'kindergarten', 'tuition',
+      'private school cost', 'public school', 'school district', 'school rating'],
+    rawCategories: ['raw_local_schools']
   },
   salary_negotiation: {
     files: ['framework-salary-negotiation.md', 'framework-job-offer-evaluation.md'],
@@ -144,7 +170,8 @@ const CATEGORIES = {
   },
   certifications: {
     files: ['roi-certifications.md'],
-    triggers: ['certification', 'certified', 'certificate', 'license', 'licensed', 'credential',
+    triggers: ['certification', 'certifications', 'certified', 'certificate', 'certificates',
+      'license', 'licensed', 'credential', 'credentials',
       'aws', 'azure', 'gcp', 'pmp', 'scrum', 'agile', 'comptia', 'cisco', 'ccna',
       'cissp', 'cfa', 'cpa', 'series', 'professional', 'development'],
     rawCategories: ['raw_certifications']
@@ -604,6 +631,104 @@ function parseCurriculumData(data) {
   return chunks;
 }
 
+/**
+ * Parse local school data into retrieval chunks.
+ * Data structure: { districts: {name: {...}}, privateSchools: {name: {...}},
+ *   publicHighSchools: {name: {...}}, publicMiddleSchools: {name: {...}},
+ *   publicElementary: { "Group Name": [{...}] } }
+ */
+function parseLocalSchoolData(data) {
+  const chunks = [];
+  if (!data || typeof data !== 'object') return chunks;
+
+  // Helper: flatten a school object into a text chunk
+  function schoolToChunk(name, school, label) {
+    const demographics = school.demographics || school.ethnicity;
+    const demoStr = demographics && typeof demographics === 'object'
+      ? Object.entries(demographics).map(([k, v]) => `${k}: ${v}`).join(', ')
+      : (typeof demographics === 'string' ? demographics : '');
+    const tuitionStr = school.tuition && typeof school.tuition === 'object'
+      ? Object.entries(school.tuition).map(([k, v]) => `${k}: ${v}`).join(', ')
+      : (typeof school.tuition === 'string' ? school.tuition : '');
+    const strengthsStr = Array.isArray(school.strengths) ? school.strengths.join('; ') : (school.strengths || '');
+    const weaknessesStr = Array.isArray(school.weaknesses) ? school.weaknesses.join('; ') : (school.weaknesses || '');
+    const programsStr = Array.isArray(school.keyPrograms) ? school.keyPrograms.join('; ')
+      : (Array.isArray(school.programs) ? school.programs.join('; ') : '');
+
+    const lines = [
+      `# ${name} (${label})`,
+      school.location ? `Location: ${school.location}` : '',
+      school.district ? `District: ${school.district}` : '',
+      school.grades || school.gradeLevels ? `Grades: ${school.grades || school.gradeLevels}` : '',
+      school.enrollment || school.totalEnrollment ? `Students: ${(school.enrollment || school.totalEnrollment).toLocaleString()}` : '',
+      tuitionStr ? `Tuition: ${tuitionStr}` : '',
+      school.acceptanceRate ? `Acceptance Rate: ${school.acceptanceRate}` : '',
+      school.studentTeacherRatio ? `Student-Teacher Ratio: ${school.studentTeacherRatio}` : '',
+      school.overallGraduationRate ? `Graduation Rate: ${school.overallGraduationRate}` : '',
+      school.perPupilSpending ? `Per-Pupil Spending: ${school.perPupilSpending}` : '',
+      school.stateRanking ? `State Ranking: ${school.stateRanking}` : '',
+      school.satScores || school.avgSAT ? `SAT: ${school.satScores || school.avgSAT}` : '',
+      school.actScores || school.avgACT ? `ACT: ${school.actScores || school.avgACT}` : '',
+      school.apCourses ? `AP Courses: ${school.apCourses}` : '',
+      school.collegeMatriculation ? `College Matriculation: ${school.collegeMatriculation}` : '',
+      school.testScores ? `Test Scores: ${school.testScores}` : '',
+      demoStr ? `Demographics: ${demoStr}` : '',
+      school.freeReducedLunchPercentage ? `Free/Reduced Lunch: ${school.freeReducedLunchPercentage}` : '',
+      programsStr ? `Programs: ${programsStr}` : '',
+      school.culture ? `Culture: ${school.culture}` : '',
+      school.reputation ? `Reputation: ${school.reputation}` : '',
+      strengthsStr ? `Strengths: ${strengthsStr}` : '',
+      weaknessesStr ? `Weaknesses: ${weaknessesStr}` : '',
+      school.insiderTip ? `Insider Tip: ${school.insiderTip}` : '',
+      school.notableAlumni ? `Notable Alumni: ${school.notableAlumni}` : '',
+      school.collegeReadiness ? `College Readiness: ${school.collegeReadiness}` : ''
+    ].filter(Boolean).join('\n');
+
+    return {
+      source: 'local-schools.json',
+      title: `${label}: ${name}`,
+      content: lines.slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords(name + ' ' + label + ' school ' + (school.location || '') + ' ' +
+        (school.district || '') + ' ' + lines.slice(0, 600)),
+      boostFactor: 0.9,
+      isRawData: true
+    };
+  }
+
+  // Parse districts (object with district names as keys)
+  if (data.districts && typeof data.districts === 'object') {
+    for (const [districtName, info] of Object.entries(data.districts)) {
+      chunks.push(schoolToChunk(districtName, info, 'School District'));
+    }
+  }
+
+  // Parse school sections (objects with school names as keys)
+  const schoolSections = [
+    { key: 'privateSchools', label: 'Private School' },
+    { key: 'publicHighSchools', label: 'Public High School' },
+    { key: 'publicMiddleSchools', label: 'Public Middle School' }
+  ];
+
+  for (const { key, label } of schoolSections) {
+    if (!data[key] || typeof data[key] !== 'object') continue;
+    for (const [schoolName, school] of Object.entries(data[key])) {
+      chunks.push(schoolToChunk(school.name || schoolName, school, label));
+    }
+  }
+
+  // Parse elementary schools (grouped by district — each value is an array)
+  if (data.publicElementary && typeof data.publicElementary === 'object') {
+    for (const [groupName, schools] of Object.entries(data.publicElementary)) {
+      if (!Array.isArray(schools)) continue;
+      for (const school of schools) {
+        chunks.push(schoolToChunk(school.name || 'Unknown', school, 'Elementary School'));
+      }
+    }
+  }
+
+  return chunks;
+}
+
 function parseRedditSalary(records) {
   // Only include highly-rated threads
   return records
@@ -701,49 +826,155 @@ function scoreChunk(chunk, queryKeywords) {
   return score;
 }
 
-// ─── STAGE 1: Category Router ────────────────────────────────────
+// ─── Query Intent Classification ──────────────────────────────
+// Classify the intent BEFORE routing so we can make smarter decisions
+// about what context to assemble. Not just "what topic" but "what kind
+// of question" — this determines breadth and depth.
 
-function routeQuery(queryKeywords) {
+const INTENT_PATTERNS = {
+  specific_lookup: {
+    signals: ['what is', 'tell me about', 'how much', 'what are the', 'acceptance rate',
+      'tuition at', 'sat score', 'salary for', 'requirements for', 'prerequisites for'],
+    namedEntityBoost: true
+  },
+  comparison: {
+    signals: ['compare', 'versus', 'vs', 'or', 'better', 'difference between',
+      'which is', 'should i choose', 'pros and cons', 'trade-off']
+  },
+  strategic: {
+    signals: ['plan', 'strategy', 'roadmap', 'timeline', 'steps', 'how do i',
+      'how should i', 'what should i', 'best approach', 'game plan', 'prepare']
+  },
+  financial: {
+    signals: ['worth', 'roi', 'cost', 'afford', 'investment', 'pay off', 'debt',
+      'salary', 'earn', 'income', 'money', 'financial', 'tuition', 'scholarship', 'aid']
+  },
+  exploratory: {
+    signals: ['what careers', 'what jobs', 'what options', 'interested in', 'thinking about',
+      'not sure', 'undecided', 'explore', 'possibilities', 'ideas', 'suggestions']
+  },
+  personal: {
+    signals: ['worried', 'stressed', 'anxious', 'pressure', 'scared', 'frustrated',
+      'confused', 'overwhelmed', 'lost', 'stuck', 'behind', 'too late', 'regret',
+      'parent', 'my child', 'my kid', 'my son', 'my daughter']
+  }
+};
+
+function classifyIntent(query) {
+  const lower = query.toLowerCase();
+  const intentScores = {};
+
+  for (const [intent, config] of Object.entries(INTENT_PATTERNS)) {
+    let score = 0;
+    for (const signal of config.signals) {
+      if (lower.includes(signal)) score += 2;
+    }
+    if (config.namedEntityBoost) {
+      const words = query.split(/\s+/);
+      for (let i = 1; i < words.length; i++) {
+        if (words[i].length > 2 && /^[A-Z]/.test(words[i]) && words[i] !== words[i].toUpperCase()) {
+          score += 1;
+        }
+      }
+    }
+    if (score > 0) intentScores[intent] = score;
+  }
+
+  const sorted = Object.entries(intentScores).sort((a, b) => b[1] - a[1]);
+  if (sorted.length === 0) return { primary: 'exploratory', secondary: null, all: {} };
+
+  return {
+    primary: sorted[0][0],
+    secondary: sorted.length > 1 ? sorted[1][0] : null,
+    all: Object.fromEntries(sorted)
+  };
+}
+
+// ─── STAGE 1: Category Router ────────────────────────────────────
+//
+// Redesigned to avoid "dumb dumps." Key principles:
+//   1. Specific triggers (school names, role titles) weighted 4x
+//   2. Ambiguous words ("school", "college") only 1x — won't drive routing alone
+//   3. A category needs at least 1 specific hit OR 3+ ambiguous co-occurrences
+//   4. Never falls back to ALL categories — uses data_synthesis as general fallback
+//   5. Gap between #1 and #2 score determines how many categories to include
+
+const AMBIGUOUS_TRIGGERS = new Set([
+  'school', 'college', 'university', 'degree', 'program', 'course',
+  'study', 'student', 'class', 'apply', 'application', 'career',
+  'field', 'industry', 'job', 'work', 'professional', 'senior',
+  'junior', 'first', 'level', 'experience', 'skills', 'start',
+  'education', 'training', 'prep', 'plan', 'future', 'high',
+  'public', 'private', 'state', 'community', 'online'
+]);
+
+function routeQuery(queryKeywords, intent) {
   const scores = {};
 
   for (const [catName, cat] of Object.entries(CATEGORIES)) {
     let catScore = 0;
+    let specificHits = 0;
+    let ambiguousHits = 0;
     const triggerSet = new Set(cat.triggers);
 
     for (const keyword of queryKeywords) {
       if (triggerSet.has(keyword)) {
-        catScore += 3;
-      }
-      for (const trigger of cat.triggers) {
-        if (trigger !== keyword && (trigger.includes(keyword) || keyword.includes(trigger))) {
+        if (AMBIGUOUS_TRIGGERS.has(keyword)) {
           catScore += 1;
+          ambiguousHits++;
+        } else {
+          catScore += 4; // specific triggers get heavy weight
+          specificHits++;
+        }
+      }
+      // Partial match only for non-ambiguous, min 4-char keywords
+      for (const trigger of cat.triggers) {
+        if (trigger !== keyword && !AMBIGUOUS_TRIGGERS.has(trigger) && !AMBIGUOUS_TRIGGERS.has(keyword)) {
+          if ((trigger.includes(keyword) || keyword.includes(trigger)) && Math.min(trigger.length, keyword.length) >= 4) {
+            catScore += 1;
+          }
         }
       }
     }
 
-    if (catScore > 0) {
-      scores[catName] = catScore;
+    // Gate: needs at least 1 specific hit OR 3+ ambiguous co-occurrences
+    if (specificHits >= 1 || ambiguousHits >= 3) {
+      scores[catName] = { total: catScore, specific: specificHits, ambiguous: ambiguousHits };
     }
   }
 
-  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const sorted = Object.entries(scores).sort((a, b) => b[1].total - a[1].total);
 
   if (sorted.length === 0) {
-    return { categories: Object.keys(CATEGORIES), routing: 'broad', scores: {} };
+    // Graceful fallback — NOT a dump of everything
+    return { categories: ['data_synthesis'], routing: 'fallback', scores: {} };
   }
 
-  const topScore = sorted[0][1];
-  const threshold = topScore * 0.3;
+  const topScore = sorted[0][1].total;
+  const topName = sorted[0][0];
+  const matched = [topName];
 
-  const matched = sorted
-    .filter(([, score]) => score >= threshold)
-    .slice(0, 4)
-    .map(([name]) => name);
+  // Intent-aware secondary category inclusion:
+  // - comparison/financial intents benefit from 2 categories
+  // - specific_lookup should stay narrow
+  // - exploratory can go slightly wider
+  const intentBreadth = (intent?.primary === 'comparison' || intent?.primary === 'financial') ? 0.4
+    : (intent?.primary === 'exploratory') ? 0.5
+    : 0.55; // specific_lookup, strategic, personal → stay narrow
+
+  for (let i = 1; i < sorted.length && i < 3; i++) {
+    const ratio = sorted[i][1].total / topScore;
+    if (ratio >= intentBreadth && sorted[i][1].specific >= 1) {
+      matched.push(sorted[i][0]);
+    } else if (ratio >= 0.75 && sorted[i][1].total >= 4) {
+      matched.push(sorted[i][0]);
+    }
+  }
 
   return {
     categories: matched,
-    routing: matched.length <= 2 ? 'targeted' : 'moderate',
-    scores: Object.fromEntries(sorted.slice(0, 6))
+    routing: matched.length === 1 ? 'targeted' : matched.length === 2 ? 'focused' : 'moderate',
+    scores: Object.fromEntries(sorted.slice(0, 6).map(([k, v]) => [k, v.total]))
   };
 }
 
@@ -912,6 +1143,16 @@ async function buildRawDataIndex() {
     console.log('  raw_curriculum: no data file found (run curriculum scraper)');
   }
 
+  // Local school data (Seattle/Bellevue metro — districts, private, public, middle, elementary)
+  const localSchools = await loadJsonFile('local-schools.json');
+  if (localSchools) {
+    index.raw_local_schools = parseLocalSchoolData(localSchools);
+    console.log(`  raw_local_schools: ${index.raw_local_schools.length} school profiles`);
+  } else {
+    index.raw_local_schools = [];
+    console.log('  raw_local_schools: no data file found (run local schools scraper)');
+  }
+
   // Reddit salary discussions
   const salaryThreads = await loadJsonFile('reddit-salary-discussions.json');
   if (salaryThreads) {
@@ -944,35 +1185,148 @@ async function buildRawDataIndex() {
   return index;
 }
 
-// ─── Lite Brain (standard mode) ──────────────────────────────────
+// ─── Dual Brain System (standard mode) ────────────────────────────
+//
+// Two separate brains: career-brain.md and admissions-brain.md
+// Quick keyword routing determines which brain to serve (or both in
+// rare cross-over queries). Saves ~50% tokens on every standard query.
 
-async function loadLiteBrain() {
+const ADMISSIONS_SIGNALS = [
+  'admissions', 'admission', 'acceptance', 'accepted', 'apply', 'application',
+  'essay', 'sat', 'act', 'gpa', 'extracurricular', 'recommendation',
+  'early', 'decision', 'ivy', 'league', 'harvard', 'yale', 'princeton',
+  'stanford', 'mit', 'columbia', 'penn', 'cornell', 'brown', 'dartmouth',
+  'duke', 'northwestern', 'caltech', 'uchicago', 'georgetown', 'vanderbilt',
+  'rice', 'emory', 'notre dame', 'usc', 'nyu', 'berkeley', 'ucla',
+  'target school', 'reach school', 'safety school', 'waitlist', 'defer',
+  'transfer', 'common app', 'supplement', 'parent', 'child', 'kid',
+  'son', 'daughter', 'teenager', 'high school', 'junior', 'senior',
+  'college', 'pre-college', 'college prep', 'college list', 'school list', 'university',
+  'curriculum', 'course', 'courses', 'prerequisite', 'credits',
+  'financial aid', 'fafsa', 'scholarship', 'tuition', 'net price',
+  'middle school', 'elementary', '9th grade', '10th grade', '11th grade', '12th grade',
+  'freshman year', 'sophomore year'
+];
+
+async function loadBrains() {
   const now = Date.now();
-  if (liteBrainCache && (now - liteCacheTimestamp) < CACHE_TTL) {
-    return liteBrainCache;
+  if (careerBrainCache && admissionsBrainCache && (now - brainCacheTimestamp) < CACHE_TTL) {
+    return;
   }
 
-  console.log('Loading lite brain (general-brain.md)...');
-  const brainPath = join(PATHS.knowledgeBase, 'distilled', 'general-brain.md');
+  console.log('Loading dual brains (career + admissions)...');
+  const distilledDir = join(PATHS.knowledgeBase, 'distilled');
+
   try {
-    const content = await fs.readFile(brainPath, 'utf-8');
-    liteBrainCache = content;
-    liteCacheTimestamp = now;
-    console.log(`  Lite brain loaded: ${content.length} chars`);
+    careerBrainCache = await fs.readFile(join(distilledDir, 'career-brain.md'), 'utf-8');
+    console.log(`  Career brain loaded: ${careerBrainCache.length} chars`);
   } catch (err) {
-    console.warn('  Could not load general-brain.md:', err.message);
-    liteBrainCache = '';
+    console.warn('  Could not load career-brain.md:', err.message);
+    // Fallback to general-brain.md
+    try {
+      careerBrainCache = await fs.readFile(join(distilledDir, 'general-brain.md'), 'utf-8');
+      console.log('  Fell back to general-brain.md');
+    } catch { careerBrainCache = ''; }
   }
 
-  return liteBrainCache;
+  try {
+    admissionsBrainCache = await fs.readFile(join(distilledDir, 'admissions-brain.md'), 'utf-8');
+    console.log(`  Admissions brain loaded: ${admissionsBrainCache.length} chars`);
+  } catch (err) {
+    console.warn('  Could not load admissions-brain.md:', err.message);
+    admissionsBrainCache = '';
+  }
+
+  brainCacheTimestamp = now;
 }
 
-export async function getLiteBrainContext() {
-  const content = await loadLiteBrain();
-  if (!content) {
-    return '[General career knowledge — no specific knowledge base loaded.]';
+// Strong admissions signals — these alone indicate admissions context
+const STRONG_ADMISSIONS = new Set([
+  'admissions', 'admission', 'acceptance', 'accepted', 'essay', 'sat', 'act',
+  'gpa', 'extracurricular', 'recommendation', 'early decision', 'ivy', 'league',
+  'waitlist', 'defer', 'common app', 'supplement', 'college prep', 'college list',
+  'financial aid', 'fafsa', 'scholarship', 'middle school', 'elementary',
+  'pre-college', 'precollege', 'lakeside', 'bush school', 'overlake',
+  // Named schools are unambiguous admissions signals
+  'harvard', 'yale', 'princeton', 'stanford', 'mit', 'columbia', 'penn',
+  'cornell', 'brown', 'dartmouth', 'duke', 'northwestern', 'caltech',
+  'uchicago', 'georgetown', 'vanderbilt', 'rice', 'emory', 'notre dame',
+  'usc', 'nyu', 'berkeley', 'ucla', 'umich', 'uva'
+]);
+
+// Weak admissions signals — need multiple OR paired with a strong signal
+const WEAK_ADMISSIONS = new Set([
+  'college', 'university', 'school', 'course', 'courses', 'curriculum',
+  'parent', 'child', 'kid', 'son', 'daughter', 'teenager', 'tuition',
+  'high school', 'junior', 'senior', 'freshman', 'sophomore',
+  'transfer', 'credits', 'prerequisite', 'apply', 'application'
+]);
+
+function detectBrainType(query) {
+  if (!query) return 'career';
+  const lower = query.toLowerCase();
+
+  let strongHits = 0;
+  let weakHits = 0;
+
+  for (const signal of STRONG_ADMISSIONS) {
+    if (lower.includes(signal)) strongHits++;
   }
-  return `--- WAYFINDER KNOWLEDGE BASE (condensed) ---\n${content}\n`;
+  for (const signal of WEAK_ADMISSIONS) {
+    if (lower.includes(signal)) weakHits++;
+  }
+
+  // Strong signal(s) alone → admissions
+  if (strongHits >= 1) return 'admissions';
+  // Multiple weak signals → probably admissions (e.g., "my daughter is a junior in high school")
+  if (weakHits >= 3) return 'admissions';
+  // 1-2 weak signals → cross-over territory, send both but career-primary
+  if (weakHits >= 1) return 'both';
+  // No admissions signals at all → pure career
+  return 'career';
+}
+
+export async function getLiteBrainContext(query) {
+  await loadBrains();
+
+  const brainType = detectBrainType(query);
+
+  if (brainType === 'admissions') {
+    if (!admissionsBrainCache) return '[Admissions knowledge — no brain loaded.]';
+    console.log(`  Brain routing: ADMISSIONS (${admissionsBrainCache.length} chars)`);
+    return `--- WAYFINDER ADMISSIONS INTELLIGENCE (condensed) ---\n${admissionsBrainCache}\n`;
+  }
+
+  if (brainType === 'both') {
+    // Smart merge: the primary brain is career (since "both" means weak admissions signal),
+    // but include relevant SECTIONS from admissions brain, not the whole thing.
+    // Split admissions brain into sections and only include ones with keyword overlap.
+    const queryKw = new Set(extractKeywords(query));
+    let admissionsContext = admissionsBrainCache || '';
+
+    if (admissionsContext && queryKw.size > 0) {
+      const sections = admissionsContext.split(/\n#{1,3}\s+/);
+      const relevantSections = sections.filter(section => {
+        const sectionKw = extractKeywords(section.slice(0, 500));
+        return sectionKw.some(kw => queryKw.has(kw));
+      });
+
+      if (relevantSections.length > 0 && relevantSections.length < sections.length) {
+        admissionsContext = relevantSections.join('\n\n');
+        console.log(`  Brain routing: BOTH — full career + ${relevantSections.length}/${sections.length} admissions sections (${admissionsContext.length} chars)`);
+      } else {
+        console.log(`  Brain routing: BOTH — full career + full admissions (${admissionsContext.length} chars)`);
+      }
+    }
+
+    const combined = [careerBrainCache, admissionsContext].filter(Boolean).join('\n\n---\n\n');
+    return `--- WAYFINDER KNOWLEDGE BASE (career + admissions context) ---\n${combined}\n`;
+  }
+
+  // Default: career
+  if (!careerBrainCache) return '[Career knowledge — no brain loaded.]';
+  console.log(`  Brain routing: CAREER (${careerBrainCache.length} chars)`);
+  return `--- WAYFINDER CAREER INTELLIGENCE (condensed) ---\n${careerBrainCache}\n`;
 }
 
 // ─── Public API ───────────────────────────────────────────────────
@@ -995,35 +1349,54 @@ export async function retrieveContext(query, topK = 6) {
 
   if (queryKeywords.length === 0) return [];
 
-  // STAGE 1: Route to categories
-  const routing = routeQuery(queryKeywords);
+  // STAGE 0: Classify intent — determines breadth, depth, and assembly strategy
+  const intent = classifyIntent(query);
+
+  // STAGE 1: Route to categories (intent-aware)
+  const routing = routeQuery(queryKeywords, intent);
 
   // STAGE 1.5: Should we drill into raw data?
+  // Intent-aware: specific_lookup and comparison intents lower the threshold
   const specificity = detectSpecificity(query);
+  const intentLowersThreshold = intent.primary === 'specific_lookup' || intent.primary === 'comparison';
+  const shouldDrill = specificity.isSpecific || (intentLowersThreshold && specificity.signals >= 1);
 
+  console.log(`  [Intent] ${intent.primary}${intent.secondary ? ' + ' + intent.secondary : ''}`);
   console.log(`  [Router] "${query.slice(0, 60)}..." → ${routing.routing} (${routing.categories.join(', ')})`);
-  console.log(`  [Specificity] ${specificity.level} (${specificity.signals} signals)${specificity.isSpecific ? ' → DRILLING INTO RAW DATA' : ''}`);
+  console.log(`  [Specificity] ${specificity.level} (${specificity.signals} signals)${shouldDrill ? ' → DRILLING INTO RAW DATA' : ''}`);
 
-  // STAGE 2: Gather candidate chunks
+  // STAGE 2: Assemble candidate chunks with PROGRESSIVE LOADING
+  // Start with matched category distilled chunks only. Only widen if needed.
   const candidateChunks = [];
 
-  // Always include distilled chunks from matched categories
+  // Primary: distilled chunks from matched categories
   for (const catName of routing.categories) {
     if (distilledIndex[catName]) {
       candidateChunks.push(...distilledIndex[catName]);
     }
   }
 
-  // Always include base
+  // Base knowledge: include SELECTIVELY, not as a dump.
+  // For targeted routing, score base chunks against query and only include
+  // ones that actually match. For fallback routing, include more base.
   if (distilledIndex._base) {
-    candidateChunks.push(...distilledIndex._base);
+    if (routing.routing === 'fallback') {
+      // Fallback: include base (this IS the general knowledge)
+      candidateChunks.push(...distilledIndex._base);
+    } else {
+      // Targeted/focused: only include base chunks that have keyword overlap
+      const baseRelevant = distilledIndex._base.filter(chunk => {
+        const chunkKeywords = new Set(chunk.keywords);
+        return queryKeywords.some(kw => chunkKeywords.has(kw));
+      });
+      candidateChunks.push(...baseRelevant);
+    }
   }
 
-  // If query is specific enough, tap into raw data reserve
-  if (specificity.isSpecific) {
+  // Raw data: only if query is specific enough (intent-aware threshold)
+  if (shouldDrill) {
     const rawIndex = await buildRawDataIndex();
 
-    // Determine which raw categories to pull from
     const rawCatsToSearch = new Set();
     for (const catName of routing.categories) {
       const cat = CATEGORIES[catName];
@@ -1052,11 +1425,18 @@ export async function retrieveContext(query, topK = 6) {
     return true;
   });
 
-  const totalAvailable = countAllChunks(distilledIndex) + (specificity.isSpecific ? countAllChunks(rawDataIndex || {}) : 0);
+  const totalAvailable = countAllChunks(distilledIndex) + (shouldDrill ? countAllChunks(rawDataIndex || {}) : 0);
   console.log(`  [Router] Searching ${uniqueChunks.length} of ${totalAvailable} total chunks`);
 
-  // Score and rank — allow more results for deep-dive queries
-  const effectiveTopK = specificity.level === 'deep' ? topK + 2 : topK;
+  // STAGE 3: Score, rank, and return — intent-aware topK
+  // Deep-dive and comparison queries get more results
+  // Targeted specific_lookup gets fewer but more precise results
+  let effectiveTopK = topK;
+  if (specificity.level === 'deep' || intent.primary === 'comparison') {
+    effectiveTopK = topK + 2;
+  } else if (intent.primary === 'specific_lookup' && routing.routing === 'targeted') {
+    effectiveTopK = Math.max(topK - 1, 3); // Tight and precise
+  }
 
   return uniqueChunks
     .map(chunk => ({
@@ -1100,6 +1480,7 @@ export function invalidateCache() {
   categoryTimestamp = 0;
   rawDataIndex = null;
   rawDataTimestamp = 0;
-  liteBrainCache = null;
-  liteCacheTimestamp = 0;
+  careerBrainCache = null;
+  admissionsBrainCache = null;
+  brainCacheTimestamp = 0;
 }

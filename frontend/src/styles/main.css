@@ -1475,6 +1475,22 @@ html, body { overflow-x: hidden; }
   background: rgba(88, 166, 255, 0.1);
   border-color: #58A6FF;
 }
+.invite-delete-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: #8B949E;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1;
+}
+.invite-delete-btn:hover {
+  color: #F85149;
+  border-color: #F85149;
+  background: rgba(248, 81, 73, 0.1);
+}
 
 /* Safe area support for notch phones */
 @supports (padding: env(safe-area-inset-bottom)) {
