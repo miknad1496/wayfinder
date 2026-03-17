@@ -1,0 +1,36 @@
+{
+  "title": "Holland RIASEC Interest Model (O*NET)",
+  "description": "O*NET uses the Holland Interest Profiler based on six interest types. Students can identify their top 2-3 types to find matching careers.",
+  "types": {
+    "Realistic": {
+      "description": "Practical, hands-on problem solving. Working with tools, machines, plants, or animals.",
+      "sampleCareers": "Engineering, agriculture, construction, environmental science, forensic science",
+      "collegeClue": "You enjoy lab work, building things, being outdoors, or hands-on projects"
+    },
+    "Investigative": {
+      "description": "Analytical thinking, research, and intellectual problem solving.",
+      "sampleCareers": "Data science, research, medicine, economics, psychology research",
+      "collegeClue": "You love asking \"why?\", enjoy research papers, and want to understand how things work"
+    },
+    "Artistic": {
+      "description": "Creative expression, innovation, and working in unstructured environments.",
+      "sampleCareers": "UX design, marketing creative, journalism, architecture, film production",
+      "collegeClue": "You gravitate toward creative projects, dislike rigid rules, and value self-expression"
+    },
+    "Social": {
+      "description": "Helping, teaching, counseling, and working with people.",
+      "sampleCareers": "Counseling, teaching, HR, social work, public health, nursing",
+      "collegeClue": "You volunteer, enjoy group work, and feel energized by helping others succeed"
+    },
+    "Enterprising": {
+      "description": "Leading, persuading, managing, and taking business risks.",
+      "sampleCareers": "Management consulting, sales, entrepreneurship, law, politics",
+      "collegeClue": "You lead clubs, enjoy debates, and think about starting businesses or organizations"
+    },
+    "Conventional": {
+      "description": "Organizing, managing data, and following established procedures.",
+      "sampleCareers": "Accounting, financial analysis, project management, database administration",
+      "collegeClue": "You like spreadsheets, planning, organizing events, and making systems more efficient"
+    }
+  }
+}

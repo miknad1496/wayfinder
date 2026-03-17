@@ -1,0 +1,629 @@
+[
+  {
+    "title": "Ask HN: Who is hiring right now?",
+    "date": "2020-03-23T16:13:49Z",
+    "url": "https://news.ycombinator.com/item?id=22665398",
+    "totalComments": 781,
+    "samplePostings": [
+      {
+        "text": "Let&#x27;s Support the Country: Who’s Hiring In The Coronavirus Economy.Zoom, 2,400-person video conferencing company has 235 open roles in sales, support, marketing, HR, Finance, engineeringhttps:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;alexandrasternlicht&#x2F;2020&#x2F;03&#x2F;20&#x2F;...Amazon is hiring 100,000 workers, Walmart is hiring 150,000 — here are the sectors adding jobs amid coronavirushttps:&#x2F;&#x2F;www.marketwatch.com&#x2F;story&#x2F;amazon-is-hiring-100000-wo...Domino&#x27;",
+        "author": "chimichangga"
+      },
+      {
+        "text": "CodeWeavers | St Paul, MN, USA | Full Time | REMOTE | Wine, 3D Graphics, and General Open Source Developers | C-language systems programminghttps:&#x2F;&#x2F;www.codeweavers.com&#x2F;about&#x2F;jobsCodeWeavers is hiring skilled C programmers to work on the open source Wine project and other related open source projects, including several 3D graphics projects (Vulkan, OpenGL, and Direct3D). CodeWeavers partnered with Valve Software to integrate Wine into the Steam for Linux client as a part of th",
+        "author": "coldpie"
+      },
+      {
+        "text": "ngrok | San Francisco &amp; Seattle | ONSITE | Full-time | https:&#x2F;&#x2F;ngrok.com&#x2F;I&#x27;m the Director of Engineering here at ngrok.Ngrok builds developer tools and infrastructure to bring secure, powerful network tunnels to individual developers and companies alike. Ngrok&#x27;s tools enable our customers to easily share local development environments, securely access remote devices, build and test webhook integrations, and much more.We&#x27;re looking for Backend &amp; Devops Engine",
+        "author": "epanastasi"
+      },
+      {
+        "text": "Mixin | REMOTE | Full Timehttps:&#x2F;&#x2F;github.com&#x2F;MixinNetworkSecure digital assets and messages on MixinWe build open source software that always put security, privacy and decentralization at first.",
+        "author": "vecio"
+      },
+      {
+        "text": "Boulder Care | Senior Product Manager | Portland OR | Full-time onsite (WFH currently due to covid) | https:&#x2F;&#x2F;boulder.careCome work for Boulder Care!Boulder Care is a digital health platform for treating opioid addiction. We are a well-funded VC-backed company with the opportunity to build a massive business. Our healthcare system spends billions of dollars combating the opioid epidemic.Opioid overdose is the leading cause of death for Americans under 50, but fewer than 10% of patients",
+        "author": "dminor"
+      },
+      {
+        "text": "Secfi | Software engineer(s) + Operations and Finance | Amsterdam, the Netherlands + San Francisco | EUR 50-150k + equity\nSecfi is a VC-backed fintech start-up that helps start-ups and employees better manage equity compensation. We do this by providing shareholders of private companies with liquidity so that they can exercise their options or access capital for personal use. We build technology products that help private company employees make the most of their equity and make more informed dec",
+        "author": "frederik_secfi"
+      },
+      {
+        "text": "Dave.com | Senior Full Stack &amp; Front end Engineers | Los Angeles, CA | &quot;Onsite&quot; only, relocation available | Full timeDave.com is building products banks won&#x27;t to improve our customers&#x27; financial lives. We&#x27;ve built a mobile app that predicts your &quot;lowest balance until payday&quot; and offers a zero-interest paycheck advance as an alternative to paying an overdraft fee. As the job market is disintegrating around us, Dave is uniquely positioned to help our custome",
+        "author": "dickfickling"
+      },
+      {
+        "text": "The Pacific Financial Group | DevOps Engineer | REMOTE (US based) | Full Time | tpfg.comThe Pacific Financial Group Inc. (‘TPFG’) is an innovative, fast growing investment advisory and WealthTech company with $3 Billion in assets under management.My remote team is adding a new DevOps engineer to rapidly expand the delivery of our new enterprise risk assessment and monitoring platform for financial advisors. This is a great opportunity for a mid-level engineer looking to gain experience from our ",
+        "author": "hbcondo714"
+      },
+      {
+        "text": "Sequoia Capital | Full Time | Platform Engineer | https:&#x2F;&#x2F;www.sequoiacap.comWe&#x27;re growing our technology team to shape the future of investing. Hiring right now for a Platform Engineer, an Application Engineer, and a Security Analyst. Our stack includes Ruby on Rails, Python, Javascript (Vue, React), Postgres, Spark&#x2F;Scala, Nginx, AWS &amp; Heroku. More info here: https:&#x2F;&#x2F;share.getcloudapp.com&#x2F;NQuZBdP2Menlo Park preferred. REMOTE can be considered as well.Please",
+        "author": "jacquesc"
+      },
+      {
+        "text": "McKinsey &amp; Company | Engineers and Data Scientists | NYC, Bay Area, Atlanta, Waltham | Full-time | Remote for nowMy team at McKinsey &amp; Company builds software tools for some of the biggest financial services firms in the world. We also do digital business building in real estate and other industries, as well as machine learning to solve real world challenges.We are hiring folks who want to work on interesting problems, in a professional environment.Your skills: application development, d",
+        "author": "jchrisa"
+      },
+      {
+        "text": "Duo Security | Ann Arbor MI, Austin TX, Remote | Full timeDuo is not slowing down its hiring during all of this.  With our focus on MFA and Zero Trust &#x2F; Beyond Corp, our products are positioned to help companies transition to remote.  We were recently acquired by Cisco who was named a leader in the &quot;2019 Forrester Zero Trust Platform Wave&quot;.I&#x27;m working in DevOps where our stack includes Python, Docker, Ansible, and AWS. I know our backend is written in Python. We also have iOS",
+        "author": "epage"
+      },
+      {
+        "text": "My group at MUFG Americas and UnionBank is looking for modern broadly skilled and security-minded engineers.REMOTE is fine in certain hub areas such as NYC, SF, LA, Charlotte, Tempe, Dallas, etc., where you&#x27;d be able to attend team meetings in person from time to time (most teams prefer at least weekly) after location-based work restarts.Excerpt from my profile here:We are building a platform supporting the pace of evolution of financial technology, to unlock new businesses and exceed comme",
+        "author": "Terretta"
+      },
+      {
+        "text": "CrazyGames | https:&#x2F;&#x2F;www.crazygames.com&#x2F; | Leuven, Belgium | REMOTE Product Engineer\nWith recent technologies such as WebGL and WebAssembly, the browser has become a powerful gaming platform. High-quality 3D graphics and near-native level performance are becoming possible without the need for downloads, apps, or platform-specific development. We are building the tools to allow game developers to use this opportunity.Our browser games platform is already reaching more than 15 milli",
+        "author": "mertens"
+      },
+      {
+        "text": "RepSpark | Software Developer - New Grad | Irvine, CA | Full-time | ONSITE (currently remote) | https:&#x2F;&#x2F;www.repspark.comRepSpark is a B2B e-commerce platform that provides one simple online platform for retail buyers to place wholesale orders and gives sales professionals the tools they need to sell intelligently.Our stack includes C#, ASP.NET, SQL Server, TypeScript, and React (https:&#x2F;&#x2F;stackshare.io&#x2F;repspark&#x2F;repspark).Essential duties and responsibilities:- Support",
+        "author": "repspark"
+      },
+      {
+        "text": "IPinfo.io | Content Strategy &#x2F; Marketing &#x2F; Creator | Remote | Part or Full timeIPinfo is an IP address information API and data provider. Our industry leading IP geolocation API handles over 20 billion API requests a month. We&#x27;re bootstrapped, profitable, and growing. We have a small fully distributed team spread across the globe, and we’re working on lots of exciting things!We&#x27;re looking for an exceptional and ambitious person to join our team and head up our content efforts",
+        "author": "coderholic"
+      },
+      {
+        "text": "Testim.io| Multiple Positions| SF, CA &#x2F; Tel Aviv | Full-time | ONSITE and Remote (dev jobs are mostly on site) | https:&#x2F;&#x2F;testim.ioTestim.io is hiring fullstack developers, devops engineers, sales engineers and for a bunch of other ( Testim.io ).We are a well funded startup based in SF, Tel Aviv and several other locations working on making E2E automation fun. We use AI&#x2F;ML to create stable tests and to stabilize them the more they run. You will be working with talented enginee",
+        "author": "inglor"
+      },
+      {
+        "text": "Quatico.com |Lead (React+Java), Fullstack, Backend (Java), Frontend (React), DevOps | Zurich, Switzerland | SALARY: 90k-130k CHF | ONSITE | Swiss or EU member-states passport-holders onlyWe currently are looking to hire one fullstack (React, Java) senior engineer, or team lead. We have a &quot;engineering over management&quot; culture where you find engineers both with formal computer science background and also ones, who are self-taught. Our CTO worked with Erich Gamma et al before.We are build",
+        "author": "s3nnyy"
+      },
+      {
+        "text": "TestDome | REMOTE | Full Time | Frontend Developer (Vue.js + ASP.NET Core) | https:&#x2F;&#x2F;www.testdome.comAt TestDome, we make it easy for companies to screen job applicants with work-sample tests. We are fully remote with a small and dedicated team based around the world. Some of our customers include eBay, PayPal, and Turkish Airlines.We are hiring an experienced frontend developer with some full stack experience. You will help transition our web app to modern best-practices. Salary up to",
+        "author": "chadyj"
+      },
+      {
+        "text": "Validere (YC S16) | Senior Software Engineers (Full-stack, Backend, Frontend) &amp; Data Engineers | Toronto, ON | Full timeHarvard born and Y-Combinator backed, we’re on a mission to transform the global energy industry. Our team comes from different places and brings different talents to the table, but we’re all here for the same reason: to solve complex challenges and make a profound impact with some of the brightest and kindest people we know.We are looking for both React and Elixir (or thos",
+        "author": "raja"
+      },
+      {
+        "text": "HackerRank | Bangalore, India | Fulltime | Senior&#x2F;Lead Devops Engineer, Lead SDET, Lead Backend Engineers | ONSITE | www.hackerrank.comHackerRank is a Y Combinator alumnus backed by tier one Silicon Valley VCs. We are a skills-based hiring platform that helps companies evaluate technical skills, better. We’re driving a new paradigm shift by eliminating resumes and creating opportunities for hundreds of thousands of programmers worldwide. We have a community of 5M+ developers and 1,000+ cust",
+        "author": "anilgulecha"
+      },
+      {
+        "text": "Just as a word of encouragement: I have done all my interviews for the past couple of months remotely (even though I am in Palo Alto!) and got an offer last week. That company currently plans more hiring over the next few months regardless of quarantine.  So don’t despair.",
+        "author": "gumby"
+      },
+      {
+        "text": "The Julia Lab (MIT) | DevOps Engineer (+ More) | Onsite or Remote | Full Time | https:&#x2F;&#x2F;julia.mit.edu&#x2F;The Julia Lab is a lab in MIT&#x27;s CSAIL which focuses on the development of software tooling for solving large-scale scientific problems. Named after it&#x27;s original result, the Julia programming language, the Julia Lab&#x27;s research ranges from scientific machine learning (SciML) [1] and differentiable programming [2] to large-scale heterogeneous parallel computing [3]. T",
+        "author": "ChrisRackauckas"
+      },
+      {
+        "text": "ObieCRE (YC S19) | Product Engineer | Chicago | Full-time | REMOTE currently, ideally ONSITE eventuallyWe&#x27;re looking for engineer #4 to help build our product, our team, and our company. A small pivot has led to great product-market fit, and we now have acres of green field that need coding.How we make money: If you own a building that leases to office or commercial tenants, you need insurance. This is true if the economy is growing or crumbling. And as a result of this mandatory nature, it",
+        "author": "evtothedev"
+      },
+      {
+        "text": "OneSignal | Full Stack and Backend Engineers | San Mateo, CA | Onsite | https:&#x2F;&#x2F;onesignal.comOneSignal helps developers simply implement re-engagement messages in their applications and websites, and we do it by taking care of a lot of the complexity on our side.Each day we deliver over 6 billion daily notifications (4x more than the number of emails SendGrid sent on their IPO), for nearly 1 million registered developers (More than Twilio on their IPO).We&#x27;ve observed a 10% to 20% ",
+        "author": "gdeglin"
+      },
+      {
+        "text": "Qualia | Full-Stack Software Engineers | San Francisco, CA | Onsite (remote during shelter-in-place) | Full-time, Salary + Options\nQualia (qualia.com) is a startup making web applications for real estate professionals. We just raised our series C and we&#x27;re growing! We&#x27;re looking for full-stack software engineers at all levels.Our engineering culture is collaborative and friendly, and we make beautiful products that our customers love to use. We&#x27;re looking for engineers who want to",
+        "author": "gsinkin"
+      },
+      {
+        "text": "Cytora | London, United Kingdom | Full Time | ONSITE (WFH currently due to covid) | Golang, JavaScript and Python | https:&#x2F;&#x2F;cytora.comI&#x27;m the CTO at Cytora, a small and experienced B2B product team laser focused on bringing technology to transform the commercial insurance industry.Using our API platform, insurers can underwrite more accurately and efficiently, and deliver fairer prices to their customers.Our engineering team are proud to be one of the best places to build data pro",
+        "author": "aeneaswiener"
+      },
+      {
+        "text": "Yieldstreet | NYC | Senior Software Engineer (Frontend, Mobile); Senior Test Engineer; DevOps EngineerWe&#x27;re building the world&#x27;s most robust alternative investment platform that&#x27;s disrupting the old-school wealth management industry. We believe that by using cutting-edge technology and data-driven decisions, we can close the gap and democratize wealth. We&#x27;re scaling quickly - we&#x27;ve raised $178M in funding to-date, and we&#x27;ve partnered up with BlackRock and Citi to he",
+        "author": "sreeys"
+      },
+      {
+        "text": "Doximity | San Francisco, CA | Full Time | REMOTE | Multiple RolesWe develop products to connect health care providers and keep them informed of the latest developments in the medical world.One of our products that&#x27;s gotten a lot of attention during the current pandemic is Dialer[0].  It allows providers to display their office number in the caller id when contacting patients from their own device, preventing their personal number from being shared without having to block it.We&#x27;re hiri",
+        "author": "kfoley"
+      },
+      {
+        "text": "Notion | Engineer, Designer, Sales, Marketing, PM, Support | SF | https:&#x2F;&#x2F;www.notion.so | Full-time Onsite== Intro ====================================Hey there, Notion founder here. At Notion, our goal to create the general purpose work tool for a post-file, post-MS Office world. My cofounder and I often joke that this was like the &quot;hot startup topic&quot; of the 90s. Unfortunately, tools for knowledge workers haven&#x27;t advanced much since then. The state of art is either Goog",
+        "author": "ivanzhao"
+      },
+      {
+        "text": "Sevendof | Front-End Engineer + Embedded Software Engineer + Flight Operations Manager | Trondheim, Norway | ONSITE, VISA, Full-time | https:&#x2F;&#x2F;www.sevendof.com&#x2F;Sevendof is a startup focused on building the drone infrastructure of the future. We seek to make drones available as a service to businesses for purposes such as inspection, mapping, and search and rescue. Sevendof will operate a network of long-range drones which are stationed in the field, enabling missions to be carried",
+        "author": "pveierland"
+      },
+      {
+        "text": "Fold | San Francisco, CA; Atlanta, GA | Software Engineer | ONSITE &amp; REMOTE | Full-time | $110k-140k with equity We are a cryptocurrency company backed by a number of well-known investors in the space.\nWe have opportunities across our flagship payment product, Fold [0] [1], working with Bitcoin Lightning Network technologies and working to get bitcoin in the hands of everyday people. We’d love to hear from any Docker + Kubernetes, Django, or React&#x2F;Native experts out there.Crypto, Python",
+        "author": "xur17"
+      },
+      {
+        "text": "ChargeLab | Team Lead | Toronto, ON | ONSITE (WFH for now) | FULL-TIMEChargeLab (https:&#x2F;&#x2F;www.chargelab.co&#x2F;) is the Android of EV charging: we make hardware-agnostic software for managing networks of EV chargers. I&#x27;m the founder &amp; CEO.We&#x27;re hiring a team lead to manage and scale up our existing team of 7 developers (local &amp; remote). You should be full-stack but most comfortable with back-end (Spring Boot, Java, Hibernate, jOOQ, AWS).Competitive salary + 1–5% equit",
+        "author": "z-cam"
+      },
+      {
+        "text": "MessageBird (YC S16) | Amsterdam, Netherlands | ONSITE (usually, not currently) | Full Time | https:&#x2F;&#x2F;messagebird.comMessageBird is a Y Combinator backed communications platform for SMS, Voice and Chat. Serving 15,000 customers globally, we connect businesses to 7 billion phones worldwide. Our purpose lies in revolutionising the way the world communicates.What we’ve achieved so far has only been made possible through our talented team of over 40 nationalities. With offices in Amsterdam",
+        "author": "m0dprobe"
+      },
+      {
+        "text": "comma.ai | engineers | San Diego | onsite | full-timeWe have an open source driving agent: https:&#x2F;&#x2F;github.com&#x2F;commaai&#x2F;openpilotUnlike most other companies in the self driving car space, we are profitable and have 1000s of daily active users. Search &quot;openpilot&quot; on YouTube to see some of them.We&#x27;re looking for a software engineer to develop openpilot, an ML Engineer &#x2F; Data Scientist, a Safety Engineer, an Infrastructure Engineer, and a Navigation Designer. H",
+        "author": "vivcomma"
+      },
+      {
+        "text": "Skydio | Redwood City, CA | Full-Time | Platform &#x2F; Backend &#x2F; Web &#x2F; Infrastructure &#x2F; DevOps Software Engineers | ONSITE (wfh for now)We are hiring (3 yrs min experience) engineers for the Platform Software team I lead at Skydio (we build self-flying camera drones, our second product, Skydio 2, sold out in a few hours last October: https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=imt2qZ7uw1s )Our team owns a wide variety of systems, including cloud and web software (APIs for flig",
+        "author": "roshanj"
+      },
+      {
+        "text": "Carta (formerly eShares) | ONSITE (WFH for now) | Full-time | https:&#x2F;&#x2F;carta.com | NYC - New York, NYCarta is building the network graph of asset ownership. We help 10k+ privately held companies and a growing number of public companies track who owns what. We&#x27;re a series E company and offer very competitive benefits packages (equity, free lunch, 401K, fully subsidized personal healthcare, transportation and cell phone allowances, etc).\nSpecifically, the Enterprise team creates prod",
+        "author": "balousek"
+      },
+      {
+        "text": "Dremio | Full Stack and System Engineers | Santa Clara, CA | Onsite (once shelter-in-place ends) | https:&#x2F;&#x2F;www.dremio.com&#x2F;We are looking for Full Stack and System engineers.  Our stack is Java and React and open source our core technologies (such as Apache Arrow).Dremio is the Data Lake Engine company. Our mission is to reshape the world of analytics to deliver on the promise of data with a fundamentally new architecture, purpose-built for the exploding trend towards cloud data la",
+        "author": "mosdl"
+      },
+      {
+        "text": "MBition | Embedded&#x2F;Backend&#x2F;App Software Engineers, Architects, Product Owners, DevOps, various roles | Berlin &amp; Stuttgart, Germany | Full-time | ONSITE (mobile office possible and currently used by everyone due to COVID-19), REMOTE for special cases possibleMBition is a 100% subsidiary of Mercedes-Benz RD. Traditionally focussing on infotainment software (in-car, smartphone apps, cloud backend), we are extending our focus to other domains in the car gradually, e.g. ADAS (advanced d",
+        "author": "waschl"
+      },
+      {
+        "text": "Canonical | www.canonical.com | Remote (work from home) | Full Time |  Engineer, Project Manager, Design&#x2F;UX, ProductCanonical and Ubuntu are at the forefront of cloud and IoT computing, helping customers master the challenge of operations on hybrid cloud, bare metal, and container-based systems.We’re recruiting people that love Linux, automation, operations, and are interested in cracking some of the world’s toughest problems at scale, with a twist: we’re bringing the scale economics and fl",
+        "author": "canonical-rec"
+      },
+      {
+        "text": "Alto Pharmacy | San Francisco, CA and Denver, CO | Software Engineer | Full Time - Onsite | https:&#x2F;&#x2F;www.alto.comAt Alto we are using technology to re-design and re-build the pharmacy from the ground up to offer better patient care and improve people&#x27;s lives. We recently announced our series D funding and our plans to expand nationwide. (https:&#x2F;&#x2F;markets.businessinsider.com&#x2F;news&#x2F;stocks&#x2F;alto-pharmac...)We believe that the status quo in the pharmacy industry i",
+        "author": "atoombs"
+      },
+      {
+        "text": "looking for a remote rails developer who does devops to work on the backend&#x2F;api&#x2F;infrastructure, must be able to work in US hours.  \nhttps:&#x2F;&#x2F;getcloudapp.com\nWe have lots of customers and growing fast. My contact info is in my profile.",
+        "author": "toisanji"
+      },
+      {
+        "text": "Superhuman | San FranciscoHelp us build the fastest email client in the world!iOS &#x2F; Backend &#x2F; Fullstack roles all available: https:&#x2F;&#x2F;superhuman.com&#x2F;jobs",
+        "author": "mikeklaas"
+      },
+      {
+        "text": "JW Player | Senior Android Engineer, Software Engineer, Solutions Engineer | New York (NYC), NY and California | ONSITE | Full-timeJW Player pioneered video on the web over a decade ago and continues to innovate as the world’s largest network-independent platform for video delivery and intelligence. Media companies including Fox, VICE, Business Insider, and Univision, in addition to hundreds of thousands of creators of all types and sizes, rely on JW Player to deliver and monetize their content ",
+        "author": "pgodzin"
+      },
+      {
+        "text": "SumUp | Berlin | (Mid&#x2F;Senior) Elixir Engineer | Onsite | Visa supportedWe are looking for a backend engineer in the Hardware tribe to help us maintain and improve our devices. Our mPOS and printers delegate a significant part of the payment logic to the backend, giving us the flexibility and development speed which our merchants require from us. As a backend engineer, you will support our team with delivering new features to one of those devices and maintaining existing ones - transaction f",
+        "author": "ggcampinho"
+      },
+      {
+        "text": "SINCHWe do messaging. We route billions of SMS and other kinds of messages every year.We&#x27;re a pretty international crowd, and we&#x27;ve helped lots of people relocate and helped with visas and things.  We&#x27;re even open to remote workers.A smattering of our techie jobs:USA:* Head of Platform Integrations | Seattle https:&#x2F;&#x2F;wrkbl.ink&#x2F;ggljiBJ* Technical Solution Architect | Seattle https:&#x2F;&#x2F;wrkbl.ink&#x2F;hUONDGM* Growth Marketing Lead | Seattle https:&#x2F;&#x2F;wr",
+        "author": "willvarfar"
+      },
+      {
+        "text": "Perry Street Software | New York, NY | Product Manager; Mobile Developer | Remote (WFH) | Full-TimeThe publisher of SCRUFF (www.scruff.com) and Jack&#x27;d (www.jackd.com), two of the worlds largest queer dating apps, is hiring for Product Manager and Mobile Developer (iOS or Android). Today we are 100% remote, though normally we run a distributed engineering team (1&#x2F;2 in NYC, 1&#x2F;2 remote). Our company connects millions of gay, bi, trans and queer people around the world every day. We a",
+        "author": "esilverberg2"
+      },
+      {
+        "text": "Narmi (Techstars NYC &#x27;17)| New York, NY (NYC) | ONSITE | https:&#x2F;&#x2F;www.narmi.comNarmi is helping reinvent banking in the United States. We create a more accessible and useful financial ecosystem by powering the online banking, mobile banking, account opening and open banking APIs for the 10,000 credit unions and community banks in the United States.You&#x27;ll be working on production software that has a real impact on the average American&#x27;s life everyday. Our software helps th",
+        "author": "HoyaSaxa"
+      },
+      {
+        "text": "Khan Academy | Mountain View, CA and REMOTE USA&#x2F;CANADA | Senior Backend &#x2F; Fullstack | https:&#x2F;&#x2F;khanacademy.org&#x2F;careersWe&#x27;re a non-profit with a mission to provide a free, world-class education to anyone, anywhere. It&#x27;s a big mission that we&#x27;re taking on step by step. While we want anyone to be able to get a great education independently, we&#x27;ve been focusing a lot on trying to help teachers working in their classrooms (and a lot of teachers and parents ",
+        "author": "dangoor"
+      },
+      {
+        "text": "Striim | Full Stack Engineer | Forward Deployed Engineer| San Francisco, CA | Full-timeAt Striim, we&#x27;re building a product that helps the world largest companies (banks, retailers, airlines, shipping&#x2F;logistics) operate mission-critical applications in the cloud.Our core technology is based on database change data capture, in-memory stream processing, and real-time data visualization in React.js.We&#x27;re a well-funded, post-Series B company with a large roster of Fortune 100 companies",
+        "author": "capkutay"
+      },
+      {
+        "text": "Bodyport | San Francisco, CA| Multiple roles: software, data, regulatory | Full-time | www.bodyport.comBodyport is a data-driven virtual clinic for the prevention and management of heart disease.Through novel sensors and biomarkers, we provide advanced cardiac monitoring and continuous care in every home.https:&#x2F;&#x2F;bodyport.com&#x2F;careers",
+        "author": "ccenten"
+      }
+    ],
+    "source": "HackerNews Who Is Hiring"
+  },
+  {
+    "title": "Ask HN: Who is hiring? (November 2016)",
+    "date": "2016-11-01T15:04:46Z",
+    "url": "https://news.ycombinator.com/item?id=12846216",
+    "totalComments": 1130,
+    "samplePostings": [
+      {
+        "text": "DroneSeed | Seattle | Full-Time | ONSITE | Software EngineerCome help us replant the world’s forests, VIA DRONES! We are building out a web app for internal operations and customer data portal.Looking for a full stack engineer who is up to date on modern web development.Apply at https:&#x2F;&#x2F;droneseed.co&#x2F;#jobs",
+        "author": "jeffprouty"
+      },
+      {
+        "text": "Senior Database Architect &#x2F; Administrator | Austin, TX | ONSITE | OwnLocal (YC W2010)http:&#x2F;&#x2F;www.ownlocal.com&#x2F;about&#x2F;jobs&#x2F;senior-database-administr...OwnLocal provides online marketing tools to small businesses through our partners. We work with some of the biggest media companies in the world to provide our tools to their customers.TL;DR: MySQL, PostreSQL, ElasticSearch, AWS RDS, schema design, DB optimization. We treat employees like humans and pay market rates. Thi",
+        "author": "driverdan"
+      },
+      {
+        "text": "PromptWorks - Philadelphia, PAOpen positions: Software Engineer and Senior Software EngineerAll positions ONSITE. Relocation assistance available.We are a development shop that focuses on software craftsmanship. Our calling is to help companies create amazing, intuitive web &amp; mobile applications, APIs, products, and services.Pair programming, continuous integration &amp; delivery, kaizen, and TDD&#x2F;BDD aren&#x27;t just ideas we pay lip service to, but core practices of our day-to-day work",
+        "author": "promptworks"
+      },
+      {
+        "text": "Lead&#x2F;Senior Java Engineer | Capital One UK | Nottingham, UK | Full-Time | ONSITE | Good Salary + PackageI&#x27;m looking for a brilliant Java engineer with AWS experience to take on a very senior technical role in my team. We&#x27;re a super versatile, cross-functional group of engineers who work on our integrations with third parties.Capital One is a pretty awesome place to work; nice balance of &quot;grown up&quot; company and fun startup. Good canteen, fun spaces, relaxed work environmen",
+        "author": "ErrantX"
+      },
+      {
+        "text": "theSkimm | Applications Engineer | New York, NY | Full-time | ONSITEtheSkimm is looking for a full-stack software engineer (2+ years full-time experience) to collaborate on the development of its primary applications. Although we&#x27;re best known for our daily newsletter, which has a list of over 4 million active subscribers, theSkimm&#x27;s mission has always been to enhance the lives of its audience across all of their routines and thus, across mediums. Earlier this year, we launched an iOS ",
+        "author": "z911empire"
+      },
+      {
+        "text": "Magic Leap | multiple positions | Dania Beach, FL; Mountain View, CA | Onsite | Full-Time; Intern | Visa (full time) | Computer Vision; Embedded; Machine Learning\nhttp:&#x2F;&#x2F;magicleap.com&#x2F;Magic Leap is an eclectic group of visionaries, rocket scientists, wizards, and gurus from the fields of film, robotics, visualization, software, computing, and user experience. We are growing quickly, and this is the time to get on board and play a role in shaping the way people will be interacting ",
+        "author": "leaper2"
+      },
+      {
+        "text": "ZeroCater - San Francisco - ONSITEhttps:&#x2F;&#x2F;zerocater.com&#x2F;careersHelp bring people and ideas together through food. Our engineers appreciate good design, whether it’s clean API or good UI. Enjoy working with Python or Ruby and have worked with Django or Rails.  Here are our technical roles we currently looking for:Full-Stack Engineers\nHead of ProductThe work we do is bringing tens of thousands of people together every day. Shared meals are a fundamental human experience. To us, food",
+        "author": "MattGreenburg"
+      },
+      {
+        "text": "Fieldbook | https:&#x2F;&#x2F;fieldbook.com | San Mateo, CA | Software Engineer, Lead Designer | Full time, Onsite, Visa OKFieldbook is a new information tool that combines the best of a spreadsheet and a database. We help business teams get their operations out of spreadsheets—from project tracking, to data collection, to content management systems.We&#x27;re pursuing a big vision to bring the power of relational modeling to non-technical end users. It&#x27;s an ambitious project with deep tech",
+        "author": "jasoncrawford"
+      },
+      {
+        "text": "Distil Networks | SF, DC (Arlington) NC (RDU), London, Stockholm | ONSITE (with a few exceptions) | We block bots on the internet.Hey folks - Distil Networks is a growing startup in the web application security industry. We build SaaS that blocks malicious bots, scrapers, and scripts from attacking our customer’s websites and APIs. This reduces fraud, content theft, spam, and helps eliminate lots of security issues. We have a global network that actively blocks web traffic based on human&#x2F; n",
+        "author": "gallamine"
+      },
+      {
+        "text": "NGP VAN - Washington, DC and Boston&#x2F;Somerville, MA* Software Engineer (DC)* IT Help Desk &#x2F; Systems Administrator I (Boston)NGP VAN is the world’s leading political technology firm, providing campaign and organizing technology to Democrats, progressives, and non-partisan organizations. We built the voter contact and volunteer management tools used by Obama for America. Nearly every State Democratic Party in the United States distributes our VoteBuilder tools to Democrats up and down the",
+        "author": "itsdrewmiller"
+      },
+      {
+        "text": "Step.com | New York, NY | ONSITE | http:&#x2F;&#x2F;www.step.comStep.com is an anonymous platform that lets software engineers and product managers find out what companies and experts think of them and would pay them. Step sends users feedback and compensation predictions, based on anonymized profile data and criteria provided to us by companies.We&#x27;re looking for an experienced software engineer to help us with the architecture of our systems, coding the frontend and backend, working on our",
+        "author": "stepny"
+      },
+      {
+        "text": "Street Contxt | Toronto, Ontario, Canada | http:&#x2F;&#x2F;streetcontxt.com&#x2F;careers | Full Time | On-SiteAt Street Contxt, we&#x27;re currently building the world&#x27;s first global information exchange for capital markets. Now, if you&#x27;re not currently working in the capital markets industry, you&#x27;re probably asking yourself what the means (the complexity of the problem we&#x27;re solving is not lost on us). Allow me to explain. We&#x27;re building an intelligent communications p",
+        "author": "LightsCamera"
+      },
+      {
+        "text": "DTU Biosustain | Software Engineer (Front-end&#x2F;UX&#x2F;Back-end&#x2F;Full-Stack Web) | VISA | ONSITE | Copenhagen, DenmarkHelp save our scientists from their own data:Our team is looking for one or more talented and enthusiastic software engineers to expand\nour scientific web platform supporting experimental and computational activities at our \ncenter just outside Copenhagen. The front-end consists of an integrated web UI with many \nindividual components. It is supported by a collection of s",
+        "author": "lyschoening"
+      },
+      {
+        "text": "Armour Comms | Developers &#x2F; Operations | London, UK | Salary range: £40-60k + options + bonus + biscuits | Onsite | Full-timeWe’re a team of security-minded developers creating real-time communications applications for enterprises, finance and governments. We’re looking for like-minded people to join us in a variety of roles:- We’ve got Android and iOS expertise and are looking to re-skin our apps for Windows Mobile and desktops, using C#, XAML, perhaps Electron,. as well as C++ for high pe",
+        "author": "armourman"
+      },
+      {
+        "text": "Instacart | Sr Full-stack Engineer, Sr Data Engineer, Data Scientist, Sr iOS&#x2F;Android Engineer | onsite in San Francisco | https:&#x2F;&#x2F;instacart.comInstacart (YC S12) is building the best way for people everywhere in the world to shop for groceries. Using your phone or the web, you can order groceries and have them delivered to your door in minutes. You can choose from a variety of local stores, as well as being able to mix items from multiple stores into one order.Every day, we solve ",
+        "author": "shiftb"
+      },
+      {
+        "text": "Wellframe | Healthcare | Boston, Ma | Onsite&#x2F;FulltimeAt Wellframe, we are building an intelligent care-management platform that allows health plans and care-delivery organizations to better manage large populations of complex patients. Because the most clinically complicated cases in a patient population tend to drive a majority of the costs, even seemingly small improvements in these patients’ well-being have dramatic benefits for the care provider. Wellframe focuses on improving patient h",
+        "author": "jtwarren"
+      },
+      {
+        "text": "Smartcar API | Frontend, Backend, Business Development | Mountain View | Onsite | https:&#x2F;&#x2F;smartcar.comWe&#x27;re a small team (8 people) making a big change in transportation. Technological additions to vehicles are kicking off a new era of better transportation which is affordable, greener, and safer. The automotive industry is undergoing the most disruptive changes since its inception. We believe the future of transportation is Autonomous, Electric, Shared and Connected. Smartcar is ",
+        "author": "sankethkatta"
+      },
+      {
+        "text": "Outcomes.com | Berkeley, CA | ONSITE | Technical Co-founder | Full-timeOutcomes.com is a digital health startup based out of Berkeley&#x27;s SkyDeck accelerator. We help healthcare providers close the feedback loop by routinely following up with their patients after major surgeries or treatments using patient-reported outcome surveys and other forms of digital check-ins. We process and visualize the data to help care teams deliver more personalized, proactive and value-driven care. We&#x27;re in",
+        "author": "packeted"
+      },
+      {
+        "text": "SUSE | Nuremberg (DE), Prague (CZ) or REMOTE | Full TimeLive Patching developer&quot;Live Patching&quot; is the Linux kernel infrastructure by which one can apply changes to a running kernel; this allows, for instance, to fix a security vulnerability with no downtime. For a more detailed introduction to live patching see the links [0][1][2] below. As a live patching developer you will extend and maintain our live patching tooling, both for kernel and userspace live patching. The main purpose of ",
+        "author": "gghh"
+      },
+      {
+        "text": "ŌURA Wellness Ring | Helsinki, Finland | full-time | ONSITE | http:&#x2F;&#x2F;www.ouraring.comŌURA is a beautiful smart ring that tracks your sleep, activity and recovery. ŌURA has one of the best sleep tracking technologies in consumer wearables.We are currently looking for talented software developers for 3 different positions:1. Python backend developer (AWS, Tornado)https:&#x2F;&#x2F;ouraring.com&#x2F;careers&#x2F;backend-developer-python&#x2F;2. Senior Android developerhttps:&#x2F;&#x2F;ou",
+        "author": "dirtyaura"
+      },
+      {
+        "text": "Endgame is delivering the next generation of Security Intelligence &amp; Analytics (SIA). Our core capabilities use data science and cutting-edge technology to give our federal and commercial customers real-time visibility across their digital domains, and our ecosystem of applications use that insight to solve a wide array of security problems. Endgame allows you to see what others can’t, and to take control of your connected world.Senior Back-end Engineer (DC or SF) https:&#x2F;&#x2F;app.jobvi",
+        "author": "brown4"
+      },
+      {
+        "text": "Redox Chemicals | Full Stack Web Developer | $80-120K | Burley, Idaho | Senior Full-stack Engineer | Full Time | Prefer onsite (consider remote for an amazing developer) | http:&#x2F;&#x2F;www.redoxchem.comRedox is a fast-growing company in the fertilizer industry with some amazing products that are helping revolutionize the industry. We are looking for some additional developers to help build both amazing sales force tools but also tools for the our customer base. The work environment is great ",
+        "author": "drc37"
+      },
+      {
+        "text": "Credit Karma | San Francisco | Full Time, OnsiteCredit Karma&#x27;s mission is to make financial progress possible for everyone. We have over 60 million US members and are a true mission-oriented business, a rare case where our incentives are aligned with our users - we succeed by helping our members attain financial progress.We&#x27;ve been growing rapidly over the past few years (hypergrowth) and are hiring across a wide range of positions. On the backend side, we are moving to Scala-based mic",
+        "author": "sshumaker"
+      },
+      {
+        "text": "GoCardless (YC S11) | London | DevOps, Data, Backend and Frontend Engineers | Onsite | Full-time &amp; Interns | Visa (FT only)GoCardless is building a payments network for the internet. Since 2011 we&#x27;ve been focused on simplifying Direct Debit for small and medium companies (who previously had no access to it) and we&#x27;re now expanding to serve the largest companies (think newspapers, utilities) and connect with existing payment systems in countries all over the world. We already suppor",
+        "author": "afarrell"
+      },
+      {
+        "text": "Inventables | Chicago, IL | ONSITEWe are hiring software engineers and designers. We make our own desktop CNC machines and write software for the whole stack, from machine firmware all the way through to the browser-based design app, Easel. Our main focus right now is (1) making new ways of designing in 3D and (2) making the feedback loop between design, simulation and carving faster. That means lots of unique technical and UI&#x2F;UX challenges.If you are interested in design interfaces, how&#x",
+        "author": "paulkaplan"
+      },
+      {
+        "text": "Reflect | Senior Software Engineers | Portland, OR | ONSITEWe’re looking to add experienced software engineers to our team to help build, scale, and manage our hosted and on-prem platforms. Engineers in these roles will help define much of the technical direction of Reflect. You’ll get to work with everyone on our small team and wear lots of different hats, both technical and non-technical.Reflect is considered infrastructure by our customers so service availability is extremely important to our",
+        "author": "bradhe"
+      },
+      {
+        "text": "Madwell | Brooklyn, NY | Fulltime | OnsiteAbout the position: In this role you will find creative ways to supercharge PHP and Wordpress environments, extending its functionality and transforming it into an engine capable of powering a limitless variety of CMS-driven websites. The work is varied and we have a fun team and office environment.Learn more about us: http:&#x2F;&#x2F;www.madwell.com&#x2F;Experience:\n* 3+ years of experience with strong knowledge of Wordpress development,\n* Deep knowled",
+        "author": "mcargian"
+      },
+      {
+        "text": "Teradata | Teradata Unity | San Diego, Toronto | Onsite | Full-TimeTeradata Unity is heading to the cloud, and we&#x27;re seeking good people to help us get there.  If you want to be part of a team that is driving change within Teradata and with our customers, this is it!We&#x27;re looking for skilled, passionate people who enjoy highly technical challenges and play well with others.  Tech stack includes- Python\n- C&#x2F;C++\n- Java\n- Node.js\n- Angular\n- AWS\n- Azure\n- Scrum\n- Linux\n- Test Automat",
+        "author": "albundy"
+      },
+      {
+        "text": "Deskbookers [https:&#x2F;&#x2F;www.deskbookers.com] | Amsterdam | Full Time | Onsite | VisaDeskbookers is a marketplace for workspaces and meeting rooms. Be part of a fast-growing startup in Europe. We have a fun, hardworking team that is focused on success. Lunch, fresh fruits, and coffee available daily, as well as Friday drinks and regular team events.Our product team is hiring:* Frontend Developer* UI&#x2F;Product DesignerOur stack comprises PHP, Node.js, PostgreSQL, React.JS (ES2015+) and i",
+        "author": "izolate"
+      },
+      {
+        "text": "Thinknum | New York | Backend Engineer | On-site - Full-time | VISA | $90k-$130k + equity=== Who We Are ===Thinknum is a Fintech company that organizes the Internet’s commercial activity into data models. Thinknum provides real time granular data (e.g., the average discount for Michael Kors handbags vs Coach handbags across retailers). We have hundreds of clients across major financial institutions and corporations. We&#x27;re a profitable company that is growing quickly.=== Who We Are Looking F",
+        "author": "jzhen"
+      },
+      {
+        "text": "Shift Technology | Paris, France and Singapore | FULL-TIME | ONSITE | Sysadmin, frontend and backend developersWe&#x27;re a start-up that provides a SaaS solution to insurers to automate fraud detection. We&#x27;ve raised €10m from Accel and other investors and already have clients in 7 countries.Our main challenges are making sense of a lot of heterogeneous data, analysing it accurately and efficiently and presenting the results to the user in an intuitive way.Tech: Windows, .NET (C#), SQL Serv",
+        "author": "shifttechnology"
+      },
+      {
+        "text": "Impraise (YC S14) - Amsterdam, The Netherlands - ONSITE - Frontend, Backend - http:&#x2F;&#x2F;impraise.comImpraise is a web &amp; mobile app for real-time feedback, recognition and coaching at work. We are fundamentally changing the way people share feedback and learn at work. We make it very easy for employees to give and receive feedback from colleagues. We also help managers to understand how to improve the performance of their teams. Ultimately, we help people develop their professional ski",
+        "author": "lynfogeek"
+      },
+      {
+        "text": "Courex - www.storeviva.com | VP Engineering | Singapore | Full&#x2F;Flexi-time&#x2F;Onsite# What the company doesCourex is a 7 year old ecommerce logistics company driven by technology. We help our customers manage their supply chain so they can focus on selling. We do the following\n - last mile delivery\n - warehousing\n - omnichannel integrationOur operations is driven by technology. Some interesting stuff\n - We run a hybrid crowd-sourced(uber style) + fixed fleet model.\n - We built an automated",
+        "author": "liangzan"
+      },
+      {
+        "text": "Boston, MA • ONSITE • Senior Node.js Engineer • Starry (starry.com)At Starry, we’re aiming to make Internet better for everyone with easy-to-use Wi-Fi products and a radical wireless Internet service.As a full-time Senior Node.js engineer, you would be responsible for the development of RESTful web services via Node.js as well as single-page web applications, in addition to building development tools, data aggregation &amp; processing pipelines, performance optimizations, internal applications, ",
+        "author": "kevincennis"
+      },
+      {
+        "text": "PlanGrid (YCW12) | San Francisco | Full-time, On-Site | Visa | https:&#x2F;&#x2F;www.plangrid.com&#x2F;We’re building software that is changing the construction industry (think GitHub for construction, but our ambitions are bigger). Our users love our app because it helps them build real things more efficiently.By joining our team you can influence product decisions and work on interesting technical challenges (our client apps work with GBs of data). Our engineering teams are small; whatever tea",
+        "author": "Ben-G"
+      },
+      {
+        "text": "Apple, Inc. | CupertinoApple’s Siri is looking for exceptional engineers, designers, and project managers well versed in machine learning, natural language, speech recognition, server automation, and&#x2F;or mobile software development. Siri is used on countless iOS, tvOS and watchOS devices and handles over a billion requests per week.If you’re passionate about systems administration, music, home automation, productivity or one of a variety of our open positions, you’ll be right at home!Apply o",
+        "author": "rwalker"
+      },
+      {
+        "text": "Staffjoy | https:&#x2F;&#x2F;www.staffjoy.com | San Francisco, CA | ONSITEStaffjoy helps businesses to create and share schedules with hourly workers. We were apart of the first Y Combinator Fellowship class last Fall, and now we are a 6-person team based in Fisherman&#x27;s Wharf.Our tech stack is primarily Go and React&#x2F;Flux. We run a pure microservice architecture on Kubernetes and heavily rely on tools like Protobuf, gRPC, and the Bazel build system. We ship quickly and often - we just r",
+        "author": "philip1209"
+      },
+      {
+        "text": "Top Hat | https:&#x2F;&#x2F;tophat.com | Toronto, ON, Canada | Full-timeTop Hat is hiring for a few roles: mobile dev (native iOS, Android), director of mobile, and full-stack web developer (Python, Django, Javascript, React.js, AWS, Ansible). Salary ranges based on experience from $80k to $120k.We&#x27;re a profitable (and valley VC funded by some of the best funds in the world) education startup that helps make class more interactive, fun and engaging. Top Hat helps professors make every lectu",
+        "author": "wahnfrieden"
+      },
+      {
+        "text": "Wag Labs, Inc. | https:&#x2F;&#x2F;wagwalking.com | Los Angeles, CA | Full Time | OnsiteWag is the fast-growing on-demand dog walking startup and we&#x27;re currently offering our dog walking service in 12 major cities in the US. Our HQ is conveniently located on the Sunset Strip (West Hollywood) and we&#x27;re backed by several top VCs.We&#x27;re looking for code&#x2F;technology agnostic Full Stack Engineers who, besides being an expert in 1 backend language (preferably PHP) and having experien",
+        "author": "melvinmt"
+      },
+      {
+        "text": "PassFort | Frontend Developer, UI &#x2F; UX Designer &amp; Mobile Developer | London, UK | Onsite | https:&#x2F;&#x2F;passfort.comPassFort is a young and ambitious start-up— you’ll join a team of 6! We’re a seed stage company (we raised £650k at the end of 2015), based in the centre of London, near Southwark tube station.We&#x27;re working to solve the problem of digital identity in regulated markets through new technology, great UX and simple solutions.We use react, es6, redux mocha, enzyme and",
+        "author": "ldabiralai"
+      },
+      {
+        "text": "Final (YC W15) | Oakland, CA | Full-time | ONSITE | https:&#x2F;&#x2F;getfinal.comHelp us build a credit card for the 21st century. We just launched and continue to grow out our talented team. It&#x27;s a unique opportunity to deal with a complex, scalable product that people interact with every day.Final is a YC and venture-backed company based in downtown Oakland, CA a few steps from the BART. We’re a small team of intellectually curious people trying to make waves in a big industry.We are loo",
+        "author": "cadr"
+      },
+      {
+        "text": "the Guardian (https:&#x2F;&#x2F;theguardian.com) | Software Engineers | Full-time | London, UK | ONSITEHello! We are Guardian Digital and we develop the website, the apps, and a variety of internal tools. We are looking for enthusiastic developers to join our web and iOS teams.The Guardian is committed to a Digital First strategy; we love proactive developers who want to influence and inform our feature development and technology choices. Ideally, you will be accustomed to pairing and mentoring ",
+        "author": "theGuardian"
+      },
+      {
+        "text": "DeltaProjects (http:&#x2F;&#x2F;deltaprojects.com&#x2F;) | Poland&#x2F;Europe, REMOTE | Software Engineering, Frontend and BackendDeltaProjects is looking for remote developers in Poland.We are looking for motivated developers for two roles:Frontend developers: We develop using Facebook Flow, React and usual front end tooling around JavaScript. Our legacy software is written in ObjectiveJ&#x2F;Cappucino so knowledge of these would be a plus, but is not mandatory. We have multiple web based appli",
+        "author": "deltaprojjobs"
+      },
+      {
+        "text": "Telemetricor LimitedA small end-to-end hardware&#x2F;software company building real-time sensors and data interfaces. Our current focus is on TelemetriCop (radio mesh-networked cameras for rural security) and TelemetriTrace (a retail loss prevention system).Our stack is primarily embedded C, PostgreSQL, and NodeJS, however there are a smattering of other languages where applicable.We are looking to hire for two new positions (our fourth and fifth employees):Machine Learning &#x2F; Data Scientist",
+        "author": "Normal_gaussian"
+      },
+      {
+        "text": "Momentum Machines | San Francisco, CA | ONSITE$140-$160k + equityWe&#x27;re hiring an applications software engineer! We&#x27;re a diverse yet like-minded group creating epic dining experiences via robotics and the cloud. The robots make gourmet hamburgers and our guests deserve unparalleled taste and delightful user experience. We design software that puts creative control at your fingertips.This is the right gig for you if you:+ Dig python because it’s an awesome language+ Know your way around",
+        "author": "elgeeko1"
+      },
+      {
+        "text": "Houston, TX | GoCo, Inc. | http:&#x2F;&#x2F;www.goco.io | OnsiteSoftware Developer - React.js, Redux, Relay, GraphQL, Ruby on RailsGoCo is growing rapidly and looking for awesome developers to join our team. Our tech stack is React.js, Redux and Relay in a Single Page App coupled with a GraphQL Server powered by Ruby on Rails. We&#x27;ve got a talented team and foster a fun, transparent and collaborative environment.== About the company ==GoCo was founded in 2015 by a group of serial tech founde",
+        "author": "jongbeau"
+      },
+      {
+        "text": "Hammer Lab | New York, NY (NYC) | Full-time, onsiteWe’re a team of software developers and data scientists working to understand and improve how the immune system battles cancer. We&#x27;re looking for (1) a senior machine learning specialist and (2) a senior development operations engineer.1. Both cancer and the immune system are complex collections of cells whose interactions are difficult to predict. If you have done research in a top deep learning lab and have built and deployed models used ",
+        "author": "ihodes"
+      },
+      {
+        "text": "PrepScholar | Boston, MA | Onsite | Full-time | Full Stack Engineer | $100,000-$180,000PrepScholar’s mission is to improve education at scale through technology. Our flagship product is an SAT&#x2F;ACT prep program that automatically learns the strengths and weaknesses of each student and creates an individualized learning program through machine learning. You can think of it as an automated tutor that provides a compelling learning experience at scale. We also have a large web presence with ove",
+        "author": "PrepScholar2"
+      },
+      {
+        "text": "pMD | San Francisco, CASoftware Engineer, and Sales Engineer https:&#x2F;&#x2F;www.pmd.com&#x2F;careers If you&#x27;re interested in health care, helping doctors&#x2F;nurses&#x2F;staff take better care of their patients and work on the forefront of new healthcare models and the tools they are beginning to need, come join us. We&#x27;re a profitable small company &lt; 30 people, with double digit annual growth, no VC, and we move very fast with no red-tape. Stack: iOS&#x2F;Android&#x2F;Java&#x2F;",
+        "author": "siavosh"
+      },
+      {
+        "text": "ICE Health Systems | Calgary, AB | Full Time, Onsite | http:&#x2F;&#x2F;icehealthsystems.com&#x2F;ICE Health Systems is a software company committed to developing innovative technologies for the healthcare community in order to improve the way healthcare is delivered.ICE Health Systems initially began as Patient Education software, and has since, expanded its suite of products to include a cloud based, electronic health record system, ICE 5, and an online learning and content management system, ",
+        "author": "owenconti"
+      }
+    ],
+    "source": "HackerNews Who Is Hiring"
+  },
+  {
+    "title": "Ask HN: Who is hiring? (February 2017)",
+    "date": "2017-02-01T16:00:39Z",
+    "url": "https://news.ycombinator.com/item?id=13541679",
+    "totalComments": 1222,
+    "samplePostings": [
+      {
+        "text": "Gambit Research Ltd (http:&#x2F;&#x2F;gambitresearch.com) | London, UK | ONSITE | Full timeAt Gambit we research and manage automated sports betting algorithms on behalf of our clients. Their algorithms run on our proprietary execution platform which interfaces with a large variety of bookmakers and exchanges, enabling access to the best prices and massive liquidity.Our distributed, concurrent system has a core written in Erlang, which interacts with a wide variety of Python processes across the",
+        "author": "superscalar"
+      },
+      {
+        "text": "Oden Technologies | https:&#x2F;&#x2F;oden.io | New York, NY | Full-time | OnsiteWe are an IoT startup creating a hardware &#x2F; software platform for Industry 4.0 factories [1]. We collect data from industrial machinery and analyze, aggregate and display it so that manufacturers can make more product with less material. There&#x27;s a lot of exciting things happening at the company and now is a great time to get into a small (8-person) team working working on a lofty mission that will revoluti",
+        "author": "hakanito"
+      },
+      {
+        "text": "MORSE Corp | Software engineer | Boston, Cambridge | ONSITE | www.morse-corp.com&#x2F;jobsMORSE is an employee owned company based in the technical hub of Kendall Square, Cambridge MA. We develop algorithms and software for operational systems, implementing leading edge technologies for robotics, autonomous air and undersea vehicles, and coordination of human teams.We are hiring for several positions, including:Full Stack Web DeveloperRobotics Software EngineerVision Navigation &amp; Estimation ",
+        "author": "spowers"
+      },
+      {
+        "text": "Aclaimant, Inc | Software Engineer, Clojure | US | Full-time, REMOTE, aclaimant.comAclaimant is looking to expand it&#x27;s development team. We&#x27;re a small team that is looking to grow significantly this year. We work remotely from the comfort of our own homes. Our current stack consists of Clojure for our servers and ClojureScript on our front end. If you&#x27;re interested in learning more, contact us at jobs@aclaimant.com",
+        "author": "jfriedman"
+      },
+      {
+        "text": "DTU Biosustain | Software Engineer (Web) | Copenhagen, Denmark | Full-time, ONSITE, VISA, http:&#x2F;&#x2F;biosustain.dtu.dkWe are seeking a developer to join our team developing a web platform that supports genetic engineering of microbial strains for sustainable chemical production at our center. We write services and UIs for storage, analysis and visualization of experimental data produced by our scientists.Our stack in no particular order: JavaScript, TypeScript, Angular, Angular-Material, P",
+        "author": "lyschoening"
+      },
+      {
+        "text": "Hologram | Chicago, IL | Full-time | http:&#x2F;&#x2F;boards.greenhouse.io&#x2F;hologramOur mission is to build the platform for creating connected products by tackling some of the hardest challenges at the intersections of hardware, connectivity, and software.At Hologram, we believe in you and your immediate squad members to know what&#x27;s best for our platform and enable you to make immediate customer-impacting decisions. You can see this in how we develop products and processes: Hologram pu",
+        "author": "Holo-hiring"
+      },
+      {
+        "text": "Nava | Washington DC &amp; San Francisco SF | DevOps&#x2F;Infrastructure&#x2F;Systems Engineers, Software&#x2F;Fullstack Engineers | Product and Project Managers | On-site - Full-time | $100k-$160k+ + equity + benefitsWe&#x27;re a small team of engineers, designers, and product builders that were brought in to help fix Healthcare.gov in the winter of 2013. Our revamped application is used by millions, converts 35% better, and halves the completion time.It turns out there’s a lot more to reimagin",
+        "author": "navahq"
+      },
+      {
+        "text": "As an FYI, I started a who is firing thread here: https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=13528301Please feel free to contribute if you know any companies involved in layoffs or want to find out who is conducting layoffs.",
+        "author": "who_is_firing"
+      },
+      {
+        "text": "Amazon | Edinburgh, UK | Full Stack Engineers - On-site Only | Relocation Assistance Available | Full Time | Visa Sponsorship availableAmazon development Centre (Scotland) is looking for experienced software developers with strong technical ability, a focus on the customer experience, great teamwork and communication skills, and a motivation to achieve results in a fast-paced environment.Our development centre in Edinburgh is responsible for devising and growing innovations for Amazon around the",
+        "author": "JonnyB_Amazon"
+      },
+      {
+        "text": "Solworks | Full-stack Developer Node.js | Leicester UK, Nottingham UK | ONSITE | Full timeWe: Are a small startup creating beautiful SaaS applications to help companies manage employee time and holiday in a simple and consistent manner.You: Are an enthusiastic developer who loves all things JavaScript, including its quirks, and wants to write modern, clean code. You are able to learn new things but also aren&#x27;t\nafraid to teach what you know.Using:* React* Sequelize* Semantic-UI* Hapi, Nginx*",
+        "author": "solworks"
+      },
+      {
+        "text": "Dispatch | http:&#x2F;&#x2F;dispatch.ai&#x2F; | San Francisco Bay Area, CA | Full-time, onsiteWe are Dispatch (dispatch.ai), a well-funded startup that is creating a platform for local delivery powered by a fleet of autonomous vehicles designed for sidewalks and pedestrian spaces.We&#x27;re bringing together a team with deep domain expertise in robotics, autonomous vehicles, and artificial intelligence. If you&#x27;re interested in joining us for work on this exciting technology and help create ",
+        "author": "dispatchai"
+      },
+      {
+        "text": "Viking Education | Course Mentor | Remote | Part Time | http:&#x2F;&#x2F;www.vikingcodeschool.comViking Code School is a 100% online development bootcamp driven by the mission of launching a million high-growth careers around the world regardless of a student’s location, prior experience or economic standing.Our mentor-led Flex Program pairs students with industry veterans who perform weekly code reviews as part of the learning process.  It is a great chance to pass on your knowledge without lea",
+        "author": "eriktrautman"
+      },
+      {
+        "text": "IBM Canada | Eclipse OMR Developer | Toronto, ON | Full-time, ONSITE | https:&#x2F;&#x2F;ibm.biz&#x2F;BdsBQDThe IBM Runtime Technologies team is looking to hire motivated software developers to join our mission to nurture an open source community around the Eclipse OMR toolkit for languageruntimes (https:&#x2F;&#x2F;www.eclipse.org&#x2F;omr).We develop the Just-In-Time compiler for various language runtimes (Java, JavaScript, Python, Ruby etc.) built on Eclipse OMR: https:&#x2F;&#x2F;github.com&",
+        "author": "dorrab"
+      },
+      {
+        "text": "Quividi | Python DevOps | Paris | REMOTE FULLTIME http:&#x2F;&#x2F;www.quividi.com&#x2F;jobs-python-devops&#x2F;Quividi, founded is 2006, has become the world leader in measuring attention in public places, by developing and commercializing a video analytics solution. Using image processing algorithms, our software is able to detect and label faces. The data is then stored and displayed in a back-office hosting billions of anonymous audience events.\nWe are looking for someone to join the Web &#x",
+        "author": "petmycat"
+      },
+      {
+        "text": "Viking Education | JavaScript Instructor | SF or Remote | http:&#x2F;&#x2F;www.vikingcodeschool.comViking Code School is a 100% online development bootcamp driven by the mission of launching a million high-growth careers around the world regardless of a student’s location, prior experience or economic standing.  Our core program is the only online 12-week Immersive where students only pay tuition when they get a job.We are looking for an experienced and opinionated full stack web developer who w",
+        "author": "eriktrautman"
+      },
+      {
+        "text": "ion interactive | Cambridge, MA | Full Time | ONSITE or REMOTEion interactive empowers marketing and design teams to produce data-driven, interactive experiences that engage, generate and profile higher quality leads.OPENINGSSite Reliability Engineer &#x2F; DevOps:  https:&#x2F;&#x2F;ioninteractive.bamboohr.com&#x2F;jobs&#x2F;view.php?id=29Product Designer: https:&#x2F;&#x2F;ioninteractive.bamboohr.com&#x2F;jobs&#x2F;view.php?id=28",
+        "author": "bcanzanella"
+      },
+      {
+        "text": "Aha! (http:&#x2F;&#x2F;www.aha.io) | Rails &amp; Front End Engineering | REMOTEAha! is looking for experienced Ruby on Rails, Javascript and front-end engineers to develop rich interactive experiences in React with a Rails backend. Aha! is the #1 tool for product managers to plan strategy and roadmaps.Aha! is profitable, you can work from anywhere in North America and we offer excellent benefits.We use our own product to manage our work (which is especially rewarding), we deploy continuously and",
+        "author": "legoman06"
+      },
+      {
+        "text": "Uken Games | http:&#x2F;&#x2F;uken.com | Toronto | Full time | OnsiteUken is looking for talented developers to help us build amazing mobile games. In particular, we have positions available for:Backend DevelopersHelp us scale our backend to enable a million concurrent players by creating the infrastructure and services (SOA) that underly all of our games. Primary tech is Rails and MySQL, but you&#x27;ll be working with many more such as Docker, Redis, NSQ, websockets, Hadoop, Spark and InfluxDB",
+        "author": "danielamc"
+      },
+      {
+        "text": "Powerley | Data Scientist, Android Developer, iOS Developer, NodeJS Engineer | Royal Oak, MI | Full-time | http:&#x2F;&#x2F;www.powerley.com&#x2F;Powerley is connecting the smart grid to the smart home and building the next generation of home energy management.Here are some of the things we do:- Real-time energy use visualization and personalized feedback- Energy signal disaggregation to understand of how individual appliances drive aggregate usage in the home- Home automation and control using ",
+        "author": "ellisv"
+      },
+      {
+        "text": "PromptWorks | Software Engineer | Philadelphia PA | ONSITE https:&#x2F;&#x2F;promptworks.com&#x2F;We are a development shop that focuses on software craftsmanship. Our calling is to help companies create amazing, intuitive web &amp; mobile applications, APIs, products, and services.Pair programming, continuous integration &amp; delivery, kaizen, and TDD&#x2F;BDD aren&#x27;t just ideas we pay lip service to, but core practices of our day-to-day work.We love polyglots. We use lots of Ruby, Python ",
+        "author": "di"
+      },
+      {
+        "text": "Distil Networks | SF, DC (Arlington) NC (RDU), London, Stockholm | ONSITE (with a few exceptions) | We block bots on the internet.Hey y&#x27;all - Distil Networks is a growing startup in the web application security industry. We build SaaS that blocks automated threats, like bots and scrapers, from attacking our customer’s websites and APIs. This reduces fraud, content theft, spam, and helps eliminate lots of security issues. We have a global network that actively blocks web traffic based on hum",
+        "author": "gallamine"
+      },
+      {
+        "text": "Curious Media | Boise, ID | Full Stack Software Engineer | Full-time, onsiteCurious Media is a interactive agency devoted to creating ridiculously fun experiences for children and adults alike. We create everything from kids movie websites to games, apps and connected toys. Our regular clients include Disney, Hasbro, Warner Bros., PBS Kids, Scholastic, Dreamworks and a host of other kid focused companies. http:&#x2F;&#x2F;www.curiousmedia.com\n We’ve been around since 2004 and have a team of 35. ",
+        "author": "curiousphil"
+      },
+      {
+        "text": "Amazon New Product Demand Forecasting | Seattle | Full-Time | On-Site ($130-$250+ depending on experience)Amazon&#x27;s New Product Demand Forecasting team is responsible for one of the most challenging problems in supply chain optimization: predicting sales for products that have no sales history. This is a uniquely creative space in Forecasting requiring our machine learning models to capture both the nuances of the global consumer marketplace as well as customer behavior on Amazon.Our team wo",
+        "author": "iamnafets"
+      },
+      {
+        "text": "PassFort | Front-End Engineer &amp; Mobile Engineer | London, UK | ONSITE | https:&#x2F;&#x2F;passfort.comPassFort is a young and ambitious start-up— you’ll join a team of 6! We’re a seed stage company (we raised £650k at the end of 2015), based in the centre of London, near Southwark tube station.We&#x27;re working to solve the problem of digital identity in regulated markets through new technology, great UX and simple solutions.We use react, es6, redux, mocha and enzyme.Salary: £40k - £55k wit",
+        "author": "ldabiralai"
+      },
+      {
+        "text": "Spiceworks | Austin | Full time | Onsite with relocation assistance availableSpiceworks helps millions of IT pros do their jobs with free tools and connect through our online community. Come help us transform IT. We are looking for the following:- Site Reliability Engineer- Security Engineer- Data Engineers and Scientists- DevOps Automation and Tools EngineerWe have an awesome culture with full benefits, an onsite gym, free drinks &amp; snacks (with breakfast tacos on Monday and bagels on Friday",
+        "author": "spicerex"
+      },
+      {
+        "text": "  AdGear - ONSITE - Backend Engineer (Erlang, C) - Montreal - FullTime\n  AdGear - ONSITE - Data Engineer (Scala, Java, Bash)- Montreal - FullTime\n  AdGear - ONSITE - Javascript Application Engineer (ES6, Knockout.js) - Montreal - FullTime\n  AdGear - ONSITE - Ruby Application Engineer (Ruby, Rust) - Montreal - FullTime\n  \nAdGear is a digital advertising technology company providing platforms and services for digital media innovators such as publishers, advertisers, and media agencies. We operate ",
+        "author": "lpgauth"
+      },
+      {
+        "text": "Haplo -- London, UK -- Full time, ONSITEWould you like to write high quality software, for users in universities who love your work?We&#x27;re looking for developers to join our team, especially those who are early on in their career. Here&#x27;s how we support your learning: http:&#x2F;&#x2F;www.haplo-services.com&#x2F;blog&#x2F;2017&#x2F;working-with-early-s...The Haplo platform is open source, and we&#x27;re working on open sourcing everything else we do: http:&#x2F;&#x2F;haplo.orgOn top of t",
+        "author": "bensummers"
+      },
+      {
+        "text": "FreeAgent, Edinburgh and REMOTE (UK-only)http:&#x2F;&#x2F;www.freeagent.comAt FreeAgent we help freelancers and micro-businesses be more successful by putting them in control of their company finances.We have built an award-winning online accounting product that offers full end-to-end compliance, from time tracking to tax return filing. We&#x27;re based in beautiful Edinburgh and we&#x27;re growing from strength to strength with over 55,000 paying customers and strong YoY growth. Our NPS is off ",
+        "author": "majogu"
+      },
+      {
+        "text": "PlanGrid (YCW12) | San Francisco | Full-time, On-Site | VisaWe’re building software that is changing the construction process (think GitHub for construction). Our users love our app because it helps them build real things more efficiently.\nBy joining our team you can influence product decisions and work on interesting technical challenges (our client apps work with GBs of blueprints and metadata). Our engineering teams are small; whatever team you work on, you&#x27;ll have a chance to have a big",
+        "author": "Ben-G"
+      },
+      {
+        "text": "Wellframe | Healthcare | Boston, Ma | Onsite&#x2F;Fulltime https:&#x2F;&#x2F;www.wellframe.comAt Wellframe, we are building an intelligent care-management platform that allows health plans and care-delivery organizations to better manage large populations of complex patients. Because the most clinically complicated cases in a patient population tend to drive a majority of the costs, even seemingly small improvements in these patients’ well-being have dramatic benefits for the care provider. Well",
+        "author": "nchuhoai"
+      },
+      {
+        "text": "Airtame (https:&#x2F;&#x2F;airtame.com) | Copenhagen, Denmark | Full-time, Onsite or RemoteAirtame is an early-stage startup in the heart of Copenhagen. Our wireless streaming solution helps people work better.We&#x27;re currently hiring:* Embedded Linux Engineer (https:&#x2F;&#x2F;airtame.com&#x2F;jobs&#x2F;embedded-linux-engineer)* Senior C&#x2F;C++ Software Engineer (https:&#x2F;&#x2F;airtame.com&#x2F;jobs&#x2F;senior-c-software-engineer)* Senior Full-Stack Engineer (https:&#x2F;&#x2F;airtame",
+        "author": "andrewzk"
+      },
+      {
+        "text": "Hey, a friendly reminder. I’m parsing the thread, all job offers added here are also available on the map onhttps:&#x2F;&#x2F;whoishiring.ioAlso I’ve started a small campaign to update thread format and make it more parser friendly for whoishiring.io and others (I know that at least few websites that do similar thing). Also you can read more about whoishiring.io in a recent “Show HN” (https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=13500701)Here is the format.  1) {company} | {job title} | {",
+        "author": "xando"
+      },
+      {
+        "text": "Spondool Ltd | Dublin, Ireland | ON SITE | Application Developer | C++\n* Minimum 5 years experience of C++ programming on a Linux platform* Strong proficiency in C++ with thorough knowledge of the standard library* Familiarity and experience with templating in C++• Experience in the design and implementation of highly performant, scalable, distributed and resilient systemsIt&#x27;s a small team, an interesting product and nice people.\nscandox@gmail.com",
+        "author": "scandox"
+      },
+      {
+        "text": "Tulip | https:&#x2F;&#x2F;tulip.co&#x2F;careers.html | Boston, MA | Full time, interns | OnsiteDo you want to help realize the next industrial revolution?\nTulip is transforming manufacturing processes by bringing the latest technological advances from the lab to the shop floor. We have multiple Fortune 500 customers and are already enabling production lines building the things you interact with everyday.Whereas most factories are still using state of the art technology from the mid 19th century,",
+        "author": "mglidden11"
+      },
+      {
+        "text": "Relayr | Berlin&#x2F;Munich, Germany  | ONSITE | Full timeWho we are? relayr is a well-funded and rapidly expanding start-up based in Berlin and Munich. We have an extremely international and very friendly team, who build and maintain a full IoT technology stack. We are shaping the IoT world and building the future! Let’s do it together!We are actively hiring for the following positions:NodeJS Developer &#x2F; Scala Developer&#x2F; QA Engineer&#x2F; DevOps&#x2F; Full Stack Developer&#x2F; UX UI ",
+        "author": "juulikene"
+      },
+      {
+        "text": "littleBits | Software Developer | NYC onsite | http:&#x2F;&#x2F;littlebits.cclittleBits is a company aiming to get the world inventing. We make an award-winning system of modular electronics. Our kits have been integrated heavily in STEAM education programs and we are dedicated members of the maker movement. We aim to teach kids of all ages about systems thinking, empathy, and curiosity.Our roots have been in hardware, but we are starting to rely more and more on software to enhance the system, ",
+        "author": "pdegnan"
+      },
+      {
+        "text": "Appuri, Seattle WA, http:&#x2F;&#x2F;www.appuri.com&#x2F;What we do: \nAppuri helps online businesses understand, diagnose and reduce customer churn. We provide a beautiful, end-to-end solution that makes it easy for our customers to tackle churn. By removing the need to hire data scientists or data engineers, we offer a very compelling price point. Very few products can bring Big Data and Machine Learning at the scale and price point with the results we offer. We serve both B2B and B2C customers",
+        "author": "Flammy"
+      },
+      {
+        "text": "Ontario Institute for Cancer Research | http:&#x2F;&#x2F;oicr.on.ca&#x2F; | Toronto | Full time | OnsiteWe are looking for a senior backend developer with strong Java skills to join our team working on the International Cancer Genome Consortium (ICGC). You&#x27;ll get to work on some really hard problems pushing data models and technologies to their limits. You&#x27;ll get to write modern code in Java 8, play with cool technologies like Elasticsearch and Spark, all while working on open source p",
+        "author": "Tsarbomb"
+      },
+      {
+        "text": "Apple, Inc. | CupertinoApple’s Siri is looking for exceptional engineers, designers, and project managers well versed in machine learning, natural language, speech recognition, server automation, and&#x2F;or mobile software development. Siri is used on countless iOS, tvOS and watchOS devices and handles over a billion requests per week.If you’re passionate about media, home automation, automated testing, building tools, or one of a variety of our open positions, you’ll be right at home!Apply onl",
+        "author": "rwalker"
+      },
+      {
+        "text": "PrepScholar | Boston, MA | Onsite | Full-time | Product Manager | $100,000-$200,000PrepScholar is hiring Product Managers!PrepScholar’s mission is to improve education at scale through technology. Our flagship product is an SAT&#x2F;ACT prep program that automatically learns the strengths and weaknesses of each student and creates an individualized learning program through machine learning. You can think of it as an automated tutor that provides a compelling learning experience at scale. We also",
+        "author": "PrepScholar2"
+      },
+      {
+        "text": "BrightWork | https:&#x2F;&#x2F;brightwork.io | Portland, OR | Full time | OnsiteBrightWork is a serverless API micro services platform making it easier for Developers and Teams to build their applications faster using the skills they already have. They write a small amount of javascript to a manifest and they can have a RESTful API up and running within minutes. This enables the Developer to focus on their frontend without having to worry about infrastructure in a serverless environment. The pla",
+        "author": "josh_carterPDX"
+      },
+      {
+        "text": "M Science | Data Scientist, Core Infrastructure Engineer, PM Role| Portland, OR : NYC | ONSITEWe’re data-driven explorers, discovering invaluable insights and data about markets and consumers each and every day. Our insights fuel the growth engine inside of the world’s top corporations and financial institutions. We bring together advanced access to data, curious minds and cutting-edge technology. M Science is shaping the future of data and analysis.We are looking specifically to build out our d",
+        "author": "mscience-pdx"
+      },
+      {
+        "text": "CyVerse | DevOps Engineer | Tucson, AZhttps:&#x2F;&#x2F;uacareers.com&#x2F;postings&#x2F;9869CyVerse is an NSF-funded project building cloud platforms for biosciences research. As a DevOps Engineer on the Core Services team, you&#x27;ll work with me to build and manage the systems that run Atmosphere (http:&#x2F;&#x2F;www.cyverse.org&#x2F;atmosphere) -- think &quot;virtual Linux workstations for research scientists&quot;. Some technologies you&#x27;ll work with are GNU+Linux, OpenStack, Ansible,",
+        "author": "chrismartin"
+      },
+      {
+        "text": "eShares | Palo Alto, San Francisco, Seattle | Engineering &amp; technical roles | Full time | OnsiteeShares is the platform and network for tracking and managing private asset ownership. Many of the companies you see on this page use eShares to manage their equity. We&#x27;re looking for a wide range of people to join us.* Full stack engineers (Python, Django, APIs, PostgreSQL, AWS, React)* Front end engineer (Javascript, ES6, React, APIs)* Dev-ops (AWS, Ansible, Jenkins, - or - what are we miss",
+        "author": "erichurkman"
+      },
+      {
+        "text": "Sun Nuclear Corp | Melbourne, FL | ONSITE (Madison, WI also an option)Looking for a full-stack software engineer working with: C#, JavaScript (currently using knockout), Entity Framework, MS SQL Server, HTML&#x2F;CSS. The product is a SPA for the medical industry. Great work life balance, and every engineer is empowered to make technical decisions to improve the product and tech stack.Interview process: phone call with technical questions, then one on-site interview (~2 hours).https:&#x2F;&#x2F;",
+        "author": "ohitsdom"
+      },
+      {
+        "text": "Uber | Transportation &amp; Software | San Francisco, CA | OnsiteAt Uber, we&#x27;re building the future of transportation.My team is hiring two senior, standalone mobile engineers (iOS, Android) for Uber Beacon (https:&#x2F;&#x2F;newsroom.uber.com&#x2F;beacon&#x2F;) a BLE hardware device that functions together with the rider and driver apps. The ideal applicant would have extensive consumer-facing mobile experience, as well as experience with Bluetooth-enabled devices. Unfortunately this posit",
+        "author": "ngoel36"
+      },
+      {
+        "text": "Arachnys | senior and junior engineers | London (UK) or NYC (USA) | On-siteArachnys makes software to help banks manage know-your-customer checks and anti-money laundering (KYC&#x2F;AML). It&#x27;s what&#x27;s perhaps most broken about banks - the FT recently said that they are spending $270B&#x2F;year on compliance! - and we&#x27;re helping to fix it. Our customers are tier-1 financial institutions and large multinationals.At the moment we&#x27;re looking for generalist engineers of any experie",
+        "author": "dbuxton"
+      },
+      {
+        "text": "Airtable | Software Engineer | San Francisco | Onsite, full-time, https:&#x2F;&#x2F;airtable.comAirtable is a collaborative real-time database. Our mission is to expand human productivity by letting people create tools to organize their world. Unlike single-purpose apps, we think of Airtable as a toolkit of building blocks that people can repurpose to create their own applications. Our product roadmap is filled with interesting enhancements and additions to this toolkit that will push the bounda",
+        "author": "kasrak"
+      },
+      {
+        "text": "Spotify | Security Engineer | NYC onsite (relocation available)The Spotify Security team is looking for talented guys and gals to join our group based in NYC.\nWe do a wide variety of things, from reviewing our cryptography to incident response to appsec, so you&#x27;ll do great if you&#x27;re a generalist, but it wouldn&#x27;t hurt to have a concentration. You&#x27;ll be working closely with other engineering teams helping them solve security problems at scale, and innovating on security platfor",
+        "author": "jgspotify"
+      },
+      {
+        "text": "Pivotal | Worldwide | Engineers, Designers, Product Managers, Pre&#x2F;Post-Sales Engineers, Ops, Sales, Admin | ONSITEPivotal&#x27;s goal is to transform the way the world builds software.We mean it.We value aptitude over alma mater, empathy over a list of APIs. It doesn&#x27;t matter whether your resumé says PHP or PhD: if you&#x27;re smart, empathetic and know some stuff, we want to work with you.We have many offices worldwide including SF, NYC, Toronto, London, Palo Alto (pivotal.io&#x2F;loc",
+        "author": "jacques_chester"
+      }
+    ],
+    "source": "HackerNews Who Is Hiring"
+  }
+]

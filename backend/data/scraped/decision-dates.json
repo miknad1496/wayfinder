@@ -1,0 +1,2105 @@
+{
+  "metadata": {
+    "source": "College websites and historical admissions data",
+    "description": "Estimated admissions decision notification dates for the 2025-2026 cycle",
+    "lastUpdated": "2026-03-17",
+    "cycle": "2025-2026 (Class of 2030)",
+    "note": "Dates are approximate based on historical patterns. Actual dates may vary by a few days each year. All dates reference when online portals update, not mailed letters.",
+    "totalSchools": 99
+  },
+  "schools": [
+    {
+      "school": "Harvard University",
+      "unitId": 166027,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Restrictive Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Harvard uses Restrictive Early Action (REA), not ED. REA notifications typically mid-December. RD decisions historically around late March/early April. Class of 2030 RD expected ~March 28."
+    },
+    {
+      "school": "Yale University",
+      "unitId": 130794,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Single-Choice Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Yale uses Single-Choice Early Action (SCEA). EA notifications mid-December. RD typically late March/early April. Admitted students reply by May 1."
+    },
+    {
+      "school": "Columbia University",
+      "unitId": 190150,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Princeton University",
+      "unitId": 186131,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Single-Choice Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Princeton uses Single-Choice Early Action (SCEA). Notifications mid-December. RD decisions late March. Princeton has no binding early option."
+    },
+    {
+      "school": "Cornell University",
+      "unitId": 190415,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II for some colleges. RD decisions typically late March/early April. Decisions may vary by college within Cornell."
+    },
+    {
+      "school": "University of Pennsylvania",
+      "unitId": 215062,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Penn does not offer ED II or EA. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Brown University",
+      "unitId": 217156,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Brown does not offer ED II or EA. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Dartmouth College",
+      "unitId": 182670,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Dartmouth does not offer ED II or EA. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Stanford University",
+      "unitId": 243744,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Restrictive Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Stanford uses Restrictive Early Action (REA). REA notifications mid-December. RD decisions typically late March/early April (~April 1)."
+    },
+    {
+      "school": "Massachusetts Institute of Technology",
+      "unitId": 166683,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "MIT uses Early Action (non-restrictive). EA decisions mid-December (~Dec 14). RD decisions mid-March (~March 14, Pi Day tradition)."
+    },
+    {
+      "school": "University of Chicago",
+      "unitId": 144050,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UChicago offers ED I (Dec), ED II (Feb), and EA (mid-Jan). RD decisions late March. One of few elite schools with both EA and ED."
+    },
+    {
+      "school": "University of Notre Dame",
+      "unitId": 152080,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Restrictive Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Notre Dame uses Restrictive Early Action (REA). REA decisions mid-December. RD decisions typically late March."
+    },
+    {
+      "school": "Northwestern University",
+      "unitId": 147767,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Northwestern does not offer EA or ED II. RD decisions typically late March (~March 25-28)."
+    },
+    {
+      "school": "Duke University",
+      "unitId": 152651,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Duke does not offer ED II or EA. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Johns Hopkins University",
+      "unitId": 162928,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March."
+    },
+    {
+      "school": "Rice University",
+      "unitId": 227757,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. Rice does not offer ED II or EA. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Vanderbilt University",
+      "unitId": 221999,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March."
+    },
+    {
+      "school": "Emory University",
+      "unitId": 139755,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Georgetown University",
+      "unitId": 131469,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Georgetown uses Early Action (non-restrictive). EA decisions typically mid-December. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Washington University in St. Louis",
+      "unitId": 179867,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March."
+    },
+    {
+      "school": "Carnegie Mellon University",
+      "unitId": 211440,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December (~Dec 15). ED II decisions mid-February. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Tulane University",
+      "unitId": 160755,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. EA decisions mid-January. ED II decisions mid-February. RD decisions late March. Known for generous merit aid."
+    },
+    {
+      "school": "University of Southern California",
+      "unitId": 123961,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "USC does not offer EA or ED. All decisions are Regular Decision, typically released late March (~March 25). Scholarship notifications follow."
+    },
+    {
+      "school": "New York University",
+      "unitId": 193900,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Boston University",
+      "unitId": 164988,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March."
+    },
+    {
+      "school": "Northeastern University",
+      "unitId": 167358,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-February",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. EA decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "Tufts University",
+      "unitId": 168148,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Southern Methodist University",
+      "unitId": 228459,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. EA decisions mid-January. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Pepperdine University",
+      "unitId": 121150,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-January. RD decisions typically late March/early April."
+    },
+    {
+      "school": "Brandeis University",
+      "unitId": 165015,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions typically late March."
+    },
+    {
+      "school": "Fordham University",
+      "unitId": 191241,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late December",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late December. RD decisions typically late March. Rolling thereafter."
+    },
+    {
+      "school": "George Washington University",
+      "unitId": 131159,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "University of Miami",
+      "unitId": 135726,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Late November",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions as early as late November. EA decisions late January. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Santa Clara University",
+      "unitId": 122931,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. EA decisions mid-January. RD decisions late March."
+    },
+    {
+      "school": "Villanova University",
+      "unitId": 216597,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. EA decisions mid-January. RD decisions late March/early April."
+    },
+    {
+      "school": "Stevens Institute of Technology",
+      "unitId": 186867,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I mid-December. EA mid-January. ED II mid-February. RD late March."
+    },
+    {
+      "school": "Lehigh University",
+      "unitId": 213543,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Drexel University",
+      "unitId": 212054,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-January. RD decisions late March. Rolling admissions available."
+    },
+    {
+      "school": "Rensselaer Polytechnic Institute",
+      "unitId": 194824,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I mid-December. ED II mid-February. RD late March."
+    },
+    {
+      "school": "Case Western Reserve University",
+      "unitId": 132903,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I mid-December. EA late January. ED II mid-February. RD late March."
+    },
+    {
+      "school": "University of Rochester",
+      "unitId": 195030,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I mid-December. ED II mid-February. RD late March."
+    },
+    {
+      "school": "University of California, Berkeley",
+      "unitId": 110635,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UC Berkeley releases decisions in late March (~March 25-28). UC system uses a single application with no EA/ED options."
+    },
+    {
+      "school": "University of California, Los Angeles",
+      "unitId": 110662,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UCLA releases decisions in late March (~March 20-25). UC system uses a single application. Historically one of the first UCs to release."
+    },
+    {
+      "school": "UC Davis",
+      "unitId": 110644,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UC Davis releases decisions mid-March (~March 10-15). Often among the first UC campuses to release decisions."
+    },
+    {
+      "school": "UC Irvine",
+      "unitId": 110653,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UC Irvine releases decisions mid-to-late March. UC system application."
+    },
+    {
+      "school": "UC San Diego",
+      "unitId": 110680,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UCSD releases decisions mid-March (~March 12-18). UC system application."
+    },
+    {
+      "school": "UC Santa Barbara",
+      "unitId": 110705,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UCSB releases decisions mid-March. UC system application."
+    },
+    {
+      "school": "University of Minnesota",
+      "unitId": 174066,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late January",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UMN uses rolling admissions with priority deadline. Most decisions out by late January for fall applicants."
+    },
+    {
+      "school": "University of Michigan",
+      "unitId": 170976,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions typically late January/early February. RD decisions late March/early April. EA is highly competitive."
+    },
+    {
+      "school": "University of Virginia",
+      "unitId": 234076,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January/early February. RD decisions late March/early April."
+    },
+    {
+      "school": "University of Illinois Urbana-Champaign",
+      "unitId": 145637,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January/early February. RD decisions late February/early March. Engineering and CS are particularly competitive."
+    },
+    {
+      "school": "University of North Carolina at Chapel Hill",
+      "unitId": 199120,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January. RD decisions late March. Strong in-state preference."
+    },
+    {
+      "school": "University of Texas at Austin",
+      "unitId": 228778,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-February",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "Varies",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-February. Priority deadline decisions by late February. Rolling after that. Auto-admit for top 6% of Texas high schools."
+    },
+    {
+      "school": "University of Georgia",
+      "unitId": 139940,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-November",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions as early as mid-November. RD decisions late February/early March. Georgia has one of the earliest EA notification dates."
+    },
+    {
+      "school": "University of Washington",
+      "unitId": 236948,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UW Seattle releases decisions mid-March (~March 1-15). Single application deadline in November. No EA/ED options."
+    },
+    {
+      "school": "University of Wisconsin-Madison",
+      "unitId": 240444,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January. RD decisions on rolling basis through late March."
+    },
+    {
+      "school": "University of Florida",
+      "unitId": 134130,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UF releases decisions in mid-February. Single deadline, no EA/ED. Known for being one of the earliest to release."
+    },
+    {
+      "school": "Florida State University",
+      "unitId": 134097,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "FSU releases decisions starting mid-February on a rolling basis."
+    },
+    {
+      "school": "Arizona State University",
+      "unitId": 104151,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "Rolling",
+          "notification": "Rolling (typically 2-4 weeks after application)",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ASU uses rolling admissions. Most students hear within 2-4 weeks of applying. Very accessible admissions process."
+    },
+    {
+      "school": "Purdue University",
+      "unitId": 243780,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-January. RD decisions late February/early March. Engineering is particularly competitive."
+    },
+    {
+      "school": "Ohio State University",
+      "unitId": 204796,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January. RD decisions late February. Rolling thereafter."
+    },
+    {
+      "school": "Penn State University",
+      "unitId": 214777,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "Rolling",
+          "notification": "Rolling (typically 2-4 weeks after application)",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Penn State uses rolling admissions. Decisions typically within 4-6 weeks of completed application."
+    },
+    {
+      "school": "Rutgers University-New Brunswick",
+      "unitId": 186380,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late January",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Rutgers releases decisions starting late January on a rolling basis through March."
+    },
+    {
+      "school": "Stony Brook University",
+      "unitId": 196097,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Decisions released on rolling basis, most by late February/early March."
+    },
+    {
+      "school": "University of Maryland",
+      "unitId": 163286,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January. RD decisions late March/early April."
+    },
+    {
+      "school": "University of Connecticut",
+      "unitId": 129020,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "UConn releases decisions on a rolling basis, most by late February."
+    },
+    {
+      "school": "University of Colorado Boulder",
+      "unitId": 126614,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-January. RD decisions late February. Rolling thereafter."
+    },
+    {
+      "school": "University of Iowa",
+      "unitId": 153658,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "Rolling",
+          "notification": "Rolling (typically 2-4 weeks after application)",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "University of Iowa uses rolling admissions. Most decisions within 2-3 weeks."
+    },
+    {
+      "school": "University of Oregon",
+      "unitId": 209551,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-December. RD decisions late February/early March."
+    },
+    {
+      "school": "Indiana University Bloomington",
+      "unitId": 151351,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "Rolling",
+          "notification": "Rolling (typically 2-4 weeks after application)",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "IU Bloomington uses rolling admissions with priority consideration deadline. Decisions typically within 3-4 weeks."
+    },
+    {
+      "school": "North Carolina State University",
+      "unitId": 199193,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Late January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions late January. RD decisions late March."
+    },
+    {
+      "school": "Texas A&M University",
+      "unitId": 228723,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late January",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Most decisions released by late January for priority applicants. Rolling admissions available."
+    },
+    {
+      "school": "UMass Amherst",
+      "unitId": 166629,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-December. RD decisions late February/early March."
+    },
+    {
+      "school": "University of Pittsburgh",
+      "unitId": 215293,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "Rolling",
+          "notification": "Rolling (typically 2-4 weeks after application)",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Pitt uses rolling admissions. Decisions typically within 3-4 weeks of completed application."
+    },
+    {
+      "school": "Georgia Institute of Technology",
+      "unitId": 139959,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-January",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-January (~Jan 14-18). RD decisions mid-March. Engineering-heavy admits may come in waves."
+    },
+    {
+      "school": "Clemson University",
+      "unitId": 217882,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "Most decisions by mid-February. Priority deadline in December."
+    },
+    {
+      "school": "Virginia Tech",
+      "unitId": 233921,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. RD decisions late March/early April."
+    },
+    {
+      "school": "William & Mary",
+      "unitId": 231624,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyAction": {
+          "type": "Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-February",
+          "restrictive": false,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. EA decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "Boston College",
+      "unitId": 164924,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyAction": {
+          "type": "Restrictive Early Action",
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "restrictive": true,
+          "binding": false
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "EA decisions mid-December. RD decisions late March/early April. EA is Restrictive."
+    },
+    {
+      "school": "Williams College",
+      "unitId": 168342,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. RD decisions late March/early April."
+    },
+    {
+      "school": "Amherst College",
+      "unitId": 164465,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED decisions mid-December. RD decisions late March/early April."
+    },
+    {
+      "school": "Swarthmore College",
+      "unitId": 216010,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Wellesley College",
+      "unitId": 168218,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "Bowdoin College",
+      "unitId": 161004,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Pomona College",
+      "unitId": 119678,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "Claremont McKenna College",
+      "unitId": 112260,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Harvey Mudd College",
+      "unitId": 115409,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "Carleton College",
+      "unitId": 173258,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Middlebury College",
+      "unitId": 218742,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Colgate University",
+      "unitId": 190099,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Hamilton College",
+      "unitId": 191515,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Davidson College",
+      "unitId": 198385,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Grinnell College",
+      "unitId": 153384,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Haverford College",
+      "unitId": 213367,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Colby College",
+      "unitId": 161086,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Bates College",
+      "unitId": 161200,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Wesleyan University",
+      "unitId": 130226,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    },
+    {
+      "school": "Wake Forest University",
+      "unitId": 199847,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March/early April."
+    },
+    {
+      "school": "University of Richmond",
+      "unitId": 233374,
+      "cycle": "2025-2026",
+      "decisionDates": {
+        "earlyDecisionI": {
+          "deadline": "November 1, 2025",
+          "notification": "Mid-December",
+          "binding": true
+        },
+        "earlyDecisionII": {
+          "deadline": "January 1, 2026",
+          "notification": "Mid-February",
+          "binding": true
+        },
+        "regularDecision": {
+          "deadline": "January 1, 2026",
+          "notification": "Late March",
+          "binding": false
+        }
+      },
+      "commitmentDeadline": "May 1, 2026",
+      "notes": "ED I decisions mid-December. ED II decisions mid-February. RD decisions late March."
+    }
+  ]
+}

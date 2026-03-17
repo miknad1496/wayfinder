@@ -1,0 +1,1506 @@
+[
+  {
+    "title": "Ask HN: Career advice for people not on engineering tracks?",
+    "url": "https://news.ycombinator.com/item?id=19116138",
+    "hnUrl": "https://news.ycombinator.com/item?id=19116138",
+    "points": 21,
+    "numComments": 10,
+    "author": "farjobffindhow",
+    "created": "2019-02-08T16:55:51Z",
+    "source": "HackerNews",
+    "query": "career advice software engineer"
+  },
+  {
+    "title": "Ask HN: How do I crawl out of the \"Senior Engineer\" hole?",
+    "url": "https://news.ycombinator.com/item?id=1907792",
+    "hnUrl": "https://news.ycombinator.com/item?id=1907792",
+    "points": 96,
+    "numComments": 54,
+    "author": "throwaway_boy",
+    "created": "2010-11-15T20:53:19Z",
+    "source": "HackerNews",
+    "query": "career advice software engineer",
+    "topComments": [
+      {
+        "text": "If you want to get leadership experience, you will need to take on a role that requires it. To get that role, you will have to ask for it. The minimum requirement for leadership is the ability to get things that you want.",
+        "author": "gauthr",
+        "hasReplies": false
+      },
+      {
+        "text": "You don't want to be a manager, but you want to move up from Senior Developer?  Directors and CTOs generally are (largely) managers.  A big part of their job is sales (selling product vision to the engineering team, selling engineering realities to executives, selling jobs to prospective hires, etc).  Do you want that role?The organizational pyramid is just that.  Not every senior dev moves up (or should move up if happiness is a priority).  You shouldn't look to your peers to tell you what's next for your career.  How do you want to spend your time at work compared to how you're spending it now?  Do you want harder technical problems?  More product design work?  Something else?  You've already expressed that you don't want to manage folks, which closes off a lot of paths.",
+        "author": "webwright",
+        "hasReplies": true
+      },
+      {
+        "text": "In an organization that doesn't have a defined career path for engineers (which is to say, most organizations), you need to take responsibility for yourself if you want it. If you're on a team of engineers and nobody is leading, then step up.Help newer engineers learn skills, help interview people, help run meetings, and instigate new projects. Cook up a new product or feature, and champion it. If it goes well, you'll be the de-facto tech lead.Of course, you might just be at a very flat organization where nobody reports to an engineer. In many companies there is no formal idea of a tech lead - you report to somebody who used to be an engineer, but is now a manager.",
+        "author": "apike",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Isn't keeping up with tech for your career same as “timing the market”?",
+    "url": "https://news.ycombinator.com/item?id=29207795",
+    "hnUrl": "https://news.ycombinator.com/item?id=29207795",
+    "points": 35,
+    "numComments": 32,
+    "author": "amazonavocado",
+    "created": "2021-11-13T06:01:23Z",
+    "source": "HackerNews",
+    "query": "career advice software engineer",
+    "topComments": [
+      {
+        "text": "No, as the need to learn new things is going to be inevitable. Even if you have been a Java dev forever (and that language will last your career), I know a couple Java programmers who took months and months to find work in this market as they didn&#x27;t keep up with the latest in Java.Keeping up with the latest tech is more properly compared to  diversification. You are not abandoning your old skills, but you are adding some new ones that have a good chance of being valuable in the future. You may end up learning something worthless, but as long as what you learn is mainstream, there are probably jobs for it.",
+        "author": "MattGaiser",
+        "hasReplies": false
+      },
+      {
+        "text": "You have to &quot;invest&quot; in a low risk one that pays the bills. Then go for things that are medium risk, high returns.Many people go in at the peak of hype where it&#x27;s &quot;overpriced&quot; and lose out. Even if it&#x27;s a good stack, you won&#x27;t be as good as the people who have years of experience in it now. It&#x27;s too late.Just go for things that actually excite you. For me, it&#x27;s GPT-3 today. It&#x27;s too early for job openings, but mature and impactful enough that it feels like a secret weapon. I adopted Kotlin before Google officially did, because it was cutting down lines of code by half.No matter how boring you are, there should be things that actually excite you as an expert, and those are the only ones worth investing in early. Since you already browse HN, you shouldn&#x27;t worry about missing out on them.",
+        "author": "muzani",
+        "hasReplies": true
+      },
+      {
+        "text": "I don’t think that’s an apt analogy. You have very little to loose by taking a few hours to spin up some new tool and see what it’s about. Even if you don’t use it, you know what it’s about and could if you wanted&#x2F;needed. You don’t loose your investment in PHP by doing so. In fact sometimes new tech could inform your existing knowledge.I do think there is wisdom in not immediately using every new thing in production, but that’s different from wanting to stick to one language and never try anything new.",
+        "author": "shireboy",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: How do you build up your first career close to age 40?",
+    "url": "https://news.ycombinator.com/item?id=24047007",
+    "hnUrl": "https://news.ycombinator.com/item?id=24047007",
+    "points": 43,
+    "numComments": 30,
+    "author": "zboox",
+    "created": "2020-08-04T05:44:11Z",
+    "source": "HackerNews",
+    "query": "career advice software engineer",
+    "topComments": [
+      {
+        "text": "You have several years of software development experience. If that&#x27;s true, you aren&#x27;t really starting your career now, you&#x27;re just looking for a more stable position. I think that the distinction is important especially in interviews because without it you might be underselling yourself.",
+        "author": "s1t5",
+        "hasReplies": true
+      },
+      {
+        "text": "You did not follow the typical path and that&#x27;s fine. Own it. As a hiring manager, I would want to talk to an engineer who had diverse experience and insight into a variety of businesses. Is there a particular engineering area you want to build a career around?I&#x27;m not sure a bootcamp is necessary but I would suggest whatever intensive interview training you think you need to get into a good tech company. Working at a bigger one is a solid way to bootstrap a professional network.",
+        "author": "trevett",
+        "hasReplies": false
+      },
+      {
+        "text": "My company is fully remote. When I interview people, I don’t know how old they are, nor do I care. I look at their job history as it relates to their ability to perform the job for which they are applying. If you were applying for an associate or junior developer position, your lack of experience wouldn’t really matter. I would worry that your bouncing around reflects that you can’t be counted on to stick it out for more than a year.To change my mind, during the interview, when I ask, you would need to explain what is different about your approach now. Not just that you want to be different, but what you are doing&#x2F;thinking differently. If you gave a decent answer and everything else lined up, I would take the chance.So, my suggestion is look for small start ups. Their hiring practices aren’t as rigid.",
+        "author": "Hnrobert42",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: any advice for someone changing career to become a software engineer?",
+    "url": "https://news.ycombinator.com/item?id=7565803",
+    "hnUrl": "https://news.ycombinator.com/item?id=7565803",
+    "points": 26,
+    "numComments": 48,
+    "author": "tbassetto",
+    "created": "2014-04-10T13:23:58Z",
+    "source": "HackerNews",
+    "query": "career advice software engineer",
+    "topComments": [
+      {
+        "text": "If he is serious of continuing developing software for many years and not just jump ship because the pay is good now, learning the basics of CS is my recommendation. There are a few coursera courses on intro to CS (I think using Python) that will be very valuable. Learning about how a computer works, how algorithms work, etc are very valuable (I&#x27;m not saying to know the exact O notation of 50 sorting algorithms, but the general idea of how they work)If he just wants to make more money but doesn&#x27;t care much about programming&#x2F;developing software, just tell him to go to one of those Rails&#x2F;iOS&#x2F;etc bootcamps for a month or two.",
+        "author": "BSousa",
+        "hasReplies": true
+      },
+      {
+        "text": "Regardless of what language&#x2F;platform he chooses your friend really needs to have a passion for this if he is to adequately self tech him self. By a show of hands, how many got into software development for the pay? I should see very few hands. Most of us are here because the idea of building something from scratch and seeing it to fruition was very appealing.Whenever someone comes to me about getting into programming. I tell them they should think of an idea they think is awesome and start building it.",
+        "author": "systematical",
+        "hasReplies": true
+      },
+      {
+        "text": "In a similar situation but I&#x27;ve used HTML&#x2F;CSS extensively in the past with some PHP experience. My plan is to take some time off this summer and study Python full-time while working to build an idea. Hopefully that will get the ball rolling and I&#x27;ll figure out what to do from there.",
+        "author": "molsongolden",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Tell HN: From bartending to managing cloud infrastructure",
+    "url": "https://news.ycombinator.com/item?id=34460997",
+    "hnUrl": "https://news.ycombinator.com/item?id=34460997",
+    "points": 221,
+    "numComments": 78,
+    "author": "pksebben",
+    "created": "2023-01-20T22:30:39Z",
+    "source": "HackerNews",
+    "query": "career change into tech",
+    "topComments": [
+      {
+        "text": "What are some of the common skills? Things that you learned as a bartender that give you an advantage in the new job?",
+        "author": "andrei_says_",
+        "hasReplies": true
+      },
+      {
+        "text": "Nice, always love seeing fellow bartenders turned software. I had a totally different, arguably more [cliche and less well-written story](https:&#x2F;&#x2F;www.helloim.dev&#x2F;blog&#x2F;posts&#x2F;Bartender-Perspective-On-...) and am always rambling on about the weird ways bartending prepped me.",
+        "author": "devblessed",
+        "hasReplies": true
+      },
+      {
+        "text": "I don&#x27;t have any questions, but a comment.Your story isn&#x27;t too different from the struggles many feel when they do it the traditional way and get a bachelor&#x27;s degree in their early 20s, or whatever age they do it at. This is very relatable. Thanks for sharing.",
+        "author": "sublinear",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Charge Robotics (YC S21) - Robots that build solar farms",
+    "url": "https://news.ycombinator.com/item?id=30780455",
+    "hnUrl": "https://news.ycombinator.com/item?id=30780455",
+    "points": 169,
+    "numComments": 81,
+    "author": "justicz",
+    "created": "2022-03-23T16:47:44Z",
+    "source": "HackerNews",
+    "query": "career change into tech",
+    "topComments": [
+      {
+        "text": "Hey guys! I&#x27;m so excited to see your launch HN! We chatted about your who&#x27;s hiring thread middle of last year when you were in stealth mode. I still think this is such an epic idea, very happy to see you succeeding.Can&#x27;t wait to see what comes next!",
+        "author": "bckr",
+        "hasReplies": true
+      },
+      {
+        "text": "Since you say it&#x27;s a risk averse sector. Do you think you will need to do the entire process (building the solar farm) or do you expect that companies that build solar farms will hire your robots for part of the process? Or are you aiming for an acquisition?",
+        "author": "cinntaile",
+        "hasReplies": true
+      },
+      {
+        "text": "Automation + Solar two of my favourite things, honestly! Congrats on getting this far.Have you considered, or have views on, the scope for using telerobotics in this field as a step to full automation? Point being the qualified labour could be anywhere in the world for a particular job and the data generated from that could be used towards the drive for full automation.",
+        "author": "monkeydust",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Release (YC W20) – Staging environments made easy",
+    "url": "https://news.ycombinator.com/item?id=22486031",
+    "hnUrl": "https://news.ycombinator.com/item?id=22486031",
+    "points": 150,
+    "numComments": 63,
+    "author": "tommy_mcclung",
+    "created": "2020-03-04T18:00:07Z",
+    "source": "HackerNews",
+    "query": "career change into tech",
+    "topComments": [
+      {
+        "text": "I work at mostly early stage startup and setting up ONE staging environment is always the default option. Sooner rather than later, we&#x27;d run into broken staging, botched demo, etc... and waste countless hour debating on how to make it better. Ephemeral environment based on PR came up often as the ideal solution but wasn&#x27;t implemented because it&#x27;s not easyUsing release at my company now and I wish they existed 5 years ago",
+        "author": "webmons",
+        "hasReplies": false
+      },
+      {
+        "text": "I think that&#x27;ll be pretty useful for a lot of companies but I&#x27;m not sure whether going with container count as limit will work.Staging is where the software is tested as a whole before the production and in many cases it&#x27;s more than a few containers. I&#x27;d not pay $500 for &quot;Up to 5 containers&#x2F;env&quot; to set up a staging environment for my app that consists of many microservices deployed on Kubernetes. My two cents; change the pricing model. It&#x27;s not only expensive but also container count is not that helpful. Number of environments is a good proxy for the value I get but I don&#x27;t want to be punished just because of my number of containers; cpu + memory could be more acceptable.",
+        "author": "monus",
+        "hasReplies": true
+      },
+      {
+        "text": "What is this with &quot;Launch vs. Show&quot; thing by YC incubatees lately? Is it typical &quot;us vs. them&quot; thinking or does YC also promote these projects on HN over others to let them appear on the frontpage much more easily?",
+        "author": "marvindanig",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Unemployed almost a year after graduating MIT – a rant",
+    "url": "https://news.ycombinator.com/item?id=46615137",
+    "hnUrl": "https://news.ycombinator.com/item?id=46615137",
+    "points": 81,
+    "numComments": 70,
+    "author": "TimGubth",
+    "created": "2026-01-14T12:10:03Z",
+    "source": "HackerNews",
+    "query": "career change into tech",
+    "topComments": [
+      {
+        "text": "Software engineering is a great skill to have and can help you in your own business. But it is a terrible career in its own.Look into a trade. Technically-inclined like electricity, industrial automation, and so on.",
+        "author": "Nextgrid",
+        "hasReplies": false
+      },
+      {
+        "text": "You are not a failure. Don’t blame yourself for the circumstances in the industry. You accomplished a lot by completing your degree. Perhaps you could consider looking for work outside the US. Have you tried searching for a job in Europe?",
+        "author": "jvdsf",
+        "hasReplies": false
+      },
+      {
+        "text": "Just build a startup.EDIT: Building a startup gets you experience, connections and the grit that comes with actually building something. Being employee #440,670 does not; the end game is promotion or getting laid off. Just telling you how it is.Unless you want to be in research (which the school does matter) instead of applying for jobs, just build a startup instead which gets you the experience you are looking for.",
+        "author": "rvz",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Plea HN: perfectionism is ruining my life",
+    "url": "https://news.ycombinator.com/item?id=2882206",
+    "hnUrl": "https://news.ycombinator.com/item?id=2882206",
+    "points": 37,
+    "numComments": 16,
+    "author": "introuble",
+    "created": "2011-08-13T22:55:35Z",
+    "source": "HackerNews",
+    "query": "career change into tech"
+  },
+  {
+    "title": "Ask HN: Is a computer science degree worth it or should I learn on my own?",
+    "url": "https://news.ycombinator.com/item?id=17992147",
+    "hnUrl": "https://news.ycombinator.com/item?id=17992147",
+    "points": 54,
+    "numComments": 94,
+    "author": "cloudblare",
+    "created": "2018-09-15T00:21:12Z",
+    "source": "HackerNews",
+    "query": "is computer science degree worth it",
+    "topComments": [
+      {
+        "text": "If you are paying for it in loans&#x2F;cash, be very very careful about where you go and how motivated you are.If it&#x27;s mostly subsidized at little cost to you, probably worth it",
+        "author": "anoncoward111",
+        "hasReplies": false
+      },
+      {
+        "text": "No one can answer this for you.If you want the fastest path to get a $50,000 -$90,000 job - you may want to consider self study. There are jobs in every city that could fit for this.If you want a career path and want to work on high level engineering, then go to college. You will need the basics and a network.If you are asking and not sure, you should most likely go to school.",
+        "author": "gamechangr",
+        "hasReplies": false
+      },
+      {
+        "text": "Depends on a lot of factors, age, savings, debt, etc...Recently had to make this choice for myself as a 24 year old.Reach out to me if you want to discuss it further and I may be able to provide some insight.",
+        "author": "leesec",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN:  What is the advantage of a formal CS degree for an entrepreneur?",
+    "url": "https://news.ycombinator.com/item?id=1273906",
+    "hnUrl": "https://news.ycombinator.com/item?id=1273906",
+    "points": 23,
+    "numComments": 11,
+    "author": "porter",
+    "created": "2010-04-17T22:54:01Z",
+    "source": "HackerNews",
+    "query": "is computer science degree worth it"
+  },
+  {
+    "title": "I love coding, and I am 40. Can I still become a developer – and is it worth it?",
+    "url": "https://news.ycombinator.com/item?id=14127879",
+    "hnUrl": "https://news.ycombinator.com/item?id=14127879",
+    "points": 34,
+    "numComments": 20,
+    "author": "fthiella",
+    "created": "2017-04-16T22:18:44Z",
+    "source": "HackerNews",
+    "query": "is computer science degree worth it"
+  },
+  {
+    "title": "Ask HN: Is Rails really dying?",
+    "url": "https://news.ycombinator.com/item?id=9292513",
+    "hnUrl": "https://news.ycombinator.com/item?id=9292513",
+    "points": 22,
+    "numComments": 22,
+    "author": "abdelhadikhiati",
+    "created": "2015-03-30T20:51:19Z",
+    "source": "HackerNews",
+    "query": "is computer science degree worth it",
+    "topComments": [
+      {
+        "text": "I don&#x27;t necessarily think that its dying. There was a certain hype around Ruby on Rails for a while, and that hype seems to be on a decline. But by no means does that mean that it isn&#x27;t being used widely on the web.As with any framework, once you get really familiar with how it works, you&#x27;ll enjoy the benefits. If you learn it well enough, you&#x27;ll be able to take some of the concepts&#x2F;philosophy from Rails and apply them elsewhere.",
+        "author": "happycry",
+        "hasReplies": false
+      },
+      {
+        "text": "http:&#x2F;&#x2F;harmful.cat-v.org&#x2F;software&#x2F;ruby&#x2F;rails&#x2F;is-a-ghetto",
+        "author": "userisuser",
+        "hasReplies": true
+      },
+      {
+        "text": "&gt; i saw that its job market is decliningNot really.&gt; is it worth my time to learn for employment opportunityYes, if you&#x27;re interested.&gt; what is the hottest things right now in development job marketYou really can&#x27;t go wrong with JavaScript in general.  Its a requirement for UI development on web apps, and it can also be used for many other things.",
+        "author": "noodle",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Wasted $45,000 on a CS Degree to end up learning from YouTube",
+    "url": "https://news.ycombinator.com/item?id=29145641",
+    "hnUrl": "https://news.ycombinator.com/item?id=29145641",
+    "points": 52,
+    "numComments": 32,
+    "author": "codingcall",
+    "created": "2021-11-08T02:28:51Z",
+    "source": "HackerNews",
+    "query": "is computer science degree worth it",
+    "topComments": [
+      {
+        "text": "You just went to the wrong school.\nA small local 2 year cheap college here is exactly the opposite experience. Students come back and visit after they leave and get jobs and tell us how valuable just 2 years were. There are ton of shit schools and a few great ones for CS.",
+        "author": "sqwrell",
+        "hasReplies": true
+      },
+      {
+        "text": "&gt; My goal was to start my own programming career and try to make money online like everyone else.It&#x27;s not why you should study theroretical computer science imho (I did to understand computers, any job is a side effect of that core goal for me). Youtube videos are ofc a better cost&#x2F;gain ratio: even if you&#x27;re shit, you paid nothing and you can trial and error your way slowly at low cost in small gigs.I also dont think you should pay 45k for an education that mostly benefit society and taxpayers (my MSc was financed by taxes like for everyone else in my country), but apparently you just wanted to make money online so there s sort of zero incentive for you or for taxpayers to pay for that.You learned a tough lesson in investment 101, next time prepare the return on investment with hard knowledge rather than fairy tales.",
+        "author": "secondaryacct",
+        "hasReplies": true
+      },
+      {
+        "text": "I find a lot of masters students who didn&#x27;t study computer science as an undergrad are woefully unprepared for the realities of the job. A lot of masters programs (even from top-tier schools like UPenn) seem to split students into groups frequently. If everyone knows how to program already, great, but there is a lot of benefit to new programs in doing stuff like `printf(&quot;hello world&quot;)` that won&#x27;t ever get covered in a masters program. Put simply, a masters program is not the place you want to learn programming basics.When you get a masters, you need a good idea of what you want to achieve. &quot;Breaking into the software industry&quot; isn&#x27;t concrete enough, but even with that goal, I&#x27;m sure your masters has helped get you past resume screening. If you don&#x27;t have a specific, advanced topic you&#x27;d like to tackle during your masters, you&#x27;re going to waste a lot of time and money.",
+        "author": "rp1",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "My favorite tech salary negotiation tip (that recruiters love, too)",
+    "url": "https://code.likeagirl.io/my-favorite-tech-salary-negotiation-tip-that-recruiters-love-too-f8898b2cc680",
+    "hnUrl": "https://news.ycombinator.com/item?id=15679031",
+    "points": 22,
+    "numComments": 9,
+    "author": "CodeLikeAGirl",
+    "created": "2017-11-12T00:41:21Z",
+    "source": "HackerNews",
+    "query": "salary negotiation tips"
+  },
+  {
+    "title": "Ask HN: Salary negotiation?",
+    "url": "https://news.ycombinator.com/item?id=32778166",
+    "hnUrl": "https://news.ycombinator.com/item?id=32778166",
+    "points": 31,
+    "numComments": 31,
+    "author": "Dimidium-07",
+    "created": "2022-09-09T12:11:25Z",
+    "source": "HackerNews",
+    "query": "salary negotiation tips",
+    "topComments": [
+      {
+        "text": "If it is a large company they have pay bands that limit their flexibility. I would start by negotiating level and research those pay bands. Might be easier to negotiate a one time payment or something that a deviation from their pay structure.",
+        "author": "derekja",
+        "hasReplies": true
+      },
+      {
+        "text": "Negotiations boil down to &quot;are you actually willing to walk away if you don&#x27;t get X&quot;. Power goes to the most willing to walk.",
+        "author": "blamestross",
+        "hasReplies": true
+      },
+      {
+        "text": "I have no experience of your situation but I think you should perhaps start by negotiating your level and title as an employee as part of the acquisition. I suppose that what&#x27;s achievable is correlated to the size of your startup.Whether you join as, say, Director or VP will have a direct consequential impact on your salary (you&#x27;ll automatically fall within different compensation bands) but also on your standing within the company.",
+        "author": "mytailorisrich",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: My company is participating in discriminatory pay practices",
+    "url": "https://news.ycombinator.com/item?id=8228371",
+    "hnUrl": "https://news.ycombinator.com/item?id=8228371",
+    "points": 34,
+    "numComments": 37,
+    "author": "codergal",
+    "created": "2014-08-26T17:23:41Z",
+    "source": "HackerNews",
+    "query": "salary negotiation tips",
+    "topComments": [
+      {
+        "text": "How certain are you this happening? Have you talked to the cofounders? I&#x27;m not suggesting its not happening, and its certainly a lawsuit if it is the case but be damn sure that they are doing it before you take any legal action&#x2F;go open with it. It would destroy you along with them if you take it to the public and you are wrong. If you can without a reasonable doubt say that they are, and have evidence that isn&#x27;t based on negotiations or bonuses, then by all means sue them in court: you are owed money. This is a really hard case to prove though because the burden of proof is on your and thus you must be able to prove via emails from the founders&#x2F;HR or recorded chats (concrete admissible evidence) of them saying to discriminate against people or its just slander. If you slander or libel them without proof, you will get sued and you will lose. It will also damage your reputation and future career prospects. Just because your salaries are lower doesn&#x27;t mean there i",
+        "author": "kirinan",
+        "hasReplies": true
+      },
+      {
+        "text": "If you&#x27;re quitting - I don&#x27;t really see the point of reporting anything. I would however, make sure that your current co-workers that are being discriminated against know it&#x27;s happening (if it&#x27;s happening). You may consider the fact that there may not be any discrimination going on at all...can you prove that some employees are making less than their male counterparts based solely on sex and not actual merit, contract negotiation, or earned bonuses? (I know I have been in more than one situation where I was making more not because I&#x27;m male - but simply because I asked for more)",
+        "author": "aepearson",
+        "hasReplies": true
+      },
+      {
+        "text": "Is the person you are trying to negotiate with non-western by any chance? Bringing in the costs to the discussion is quite a common negotiation tactic for some cultures. I&#x27;ve seen Indians, Arabs and a few other Middle Eastern cultures doing that.",
+        "author": "hcho",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Telling people you're a self taught developer in YouTube is a big business now",
+    "url": "https://news.ycombinator.com/item?id=33465386",
+    "hnUrl": "https://news.ycombinator.com/item?id=33465386",
+    "points": 29,
+    "numComments": 67,
+    "author": "Hippoly",
+    "created": "2022-11-04T12:20:42Z",
+    "source": "HackerNews",
+    "query": "bootcamp vs degree",
+    "topComments": [
+      {
+        "text": "The only lesson that can be taken from here is marketing.The business model is easy: &quot;Yes, you can, no need to go to University!&quot; followed by insane promise &quot;40 days of anything&quot; and in the end people blame themselves for not being able to cope with it. At this point they sell you another insane yes, you can do it program.Learning is sometimes hard. I know quite a couple of Computer Science graduates who do not know html&#x2F;css and have a not to fun time learning it.",
+        "author": "_the_inflator",
+        "hasReplies": true
+      },
+      {
+        "text": "I&#x27;m self taught and have teached many others. I highly recommend exercism.org over books, videos, or classes.",
+        "author": "ericalexander0",
+        "hasReplies": false
+      },
+      {
+        "text": "I&#x27;m self taught, spent 4 months entirely on my own going through freeCodeCamp and The Odin Project. My tip - only do it if you enjoy it, there&#x27;s plenty other professions out there with a better ROI on time invested.",
+        "author": "meowtastic",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Any other self taught devs terrified of interviewing these days?",
+    "url": "https://news.ycombinator.com/item?id=31371387",
+    "hnUrl": "https://news.ycombinator.com/item?id=31371387",
+    "points": 195,
+    "numComments": 214,
+    "author": "ramesh31",
+    "created": "2022-05-13T19:05:45Z",
+    "source": "HackerNews",
+    "query": "bootcamp vs degree",
+    "topComments": [
+      {
+        "text": "Considering how many candidates are out there who have B.S., M.S., or even Ph.D. degrees in Computer Science, but can&#x27;t even manage to write FizzBuzz, I think your fears are a bit overstated IF you are actually reasonably competent and are capable of showing it.Anyway, in my experience degrees are more about simply getting past the first-level HR filter than anything, and don&#x27;t get you hire per-se. And with 10+ years of experience, you&#x27;ll get past the first-level HR filter just as easily, so really it comes down to demonstrated competence. Can you show&#x2F;convince (an) interviewer(s) that you are competent? If you can, you&#x27;ll be fine.",
+        "author": "mindcrime",
+        "hasReplies": true
+      },
+      {
+        "text": "Why do you think it’s hopeless? Having a CS degree is just one attribute a candidate brings. I’d personally value 10 years without that 5 with but there are so many other factors to consider in candidates.",
+        "author": "aaronrobinson",
+        "hasReplies": false
+      },
+      {
+        "text": "I&#x27;m not terrified of interviewing. I just think it&#x27;s an even bigger pain in the ass than dating. The older I get the less patience I have for people who need me to sell myself to them as if I were a commodity and not a human being.I don&#x27;t think you need to be a feminist to say &quot;WE ARE NOT THINGS&quot;.I am not a resource.I am not &quot;human capital&quot;.I&#x27;m a man who happens to need to work for a living. Deal with me as such or not at all.",
+        "author": "EddieDante",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Show HN: My book for programmers called “Junior to Senior” was published today",
+    "url": "https://www.holloway.com/b/junior-to-senior",
+    "hnUrl": "https://news.ycombinator.com/item?id=33164377",
+    "points": 183,
+    "numComments": 38,
+    "author": "dglass",
+    "created": "2022-10-11T15:18:44Z",
+    "source": "HackerNews",
+    "query": "bootcamp vs degree",
+    "topComments": [
+      {
+        "text": "Congratulations on the book! I think we need more books like this.\nRecently on YT, I have been watching more and more videos on the subject. Most of them target beginners (which is fine) but few talk about what comes next. So your book is very welcome.",
+        "author": "ArcMex",
+        "hasReplies": true
+      },
+      {
+        "text": "Congrats! I wrote my own book on a similar topic (link to site in my profile) and I can say without question it was one of my top 5 proudest professional moments. Books are a big deal.And we need more on this topic to help more developers get better at building software faster. (The tech is part of that, but so is the communication.)So, again, congrats!",
+        "author": "mooreds",
+        "hasReplies": true
+      },
+      {
+        "text": "Holloway seems to support downloads but this book doesn&#x27;t have that option. Is that intentional?",
+        "author": "gtirloni",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: How do you scale salary for part-time work?",
+    "url": "https://news.ycombinator.com/item?id=20736347",
+    "hnUrl": "https://news.ycombinator.com/item?id=20736347",
+    "points": 102,
+    "numComments": 84,
+    "author": "stepbeek",
+    "created": "2019-08-19T09:53:49Z",
+    "source": "HackerNews",
+    "query": "remote work career impact",
+    "topComments": [
+      {
+        "text": "”we&#x27;re wondering if cutting the salary in half is actually what we want to do”Sounds like a good plan IMHO.By the way, lots of kudos to you for allowing your employees to work part-time! As a dad who stays at home half-time and works half-time, I think it’s great with companies who recognise that this is a very good benefit to offer.",
+        "author": "cpach",
+        "hasReplies": false
+      },
+      {
+        "text": "My company (Big4) has 2 versions of part-time.If &gt;=50% time, you get full benefits, and salary&#x2F;bonus&#x2F;stock is pro-rated at whatever percentage you work. Due to the way the stock vests for part-time, I&#x27;ve heard this ends up being ~10% more pay cut than time cut (80% time == ~70% pay).&lt;50% you lose a lot of the core benefits (healthcare, 401k, etc.), but I doubt anyone really does this except people who are basically retired.But +1, big fan of companies that support part-time. I think most companies view it as a benefit basically like parental leave, etc., so it&#x27;s a way of recruiting&#x2F;retaining talent and are willing to eat some of the fixed cost.",
+        "author": "dylandavidson",
+        "hasReplies": false
+      },
+      {
+        "text": "You might also ask yourself if a person working half the time is half as productive. There is evidence to support the idea that a person working a bit less per week can actually maintain the same weekly output: https:&#x2F;&#x2F;4dayweek.comIn any case, I run a job board and newsletter for companies and job candidates who want flexible working hours: https:&#x2F;&#x2F;30hourjobs.comPlease feel free (as in free beer!) to post jobs on the job board! And if you&#x27;re interested in being featured in the newsletter as well please feel free to email me at nick@30hourjobs.com.",
+        "author": "nbrempel",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Manara (YC W21) – Connect Middle East engineers with global companies",
+    "url": "https://news.ycombinator.com/item?id=25849054",
+    "hnUrl": "https://news.ycombinator.com/item?id=25849054",
+    "points": 202,
+    "numComments": 104,
+    "author": "laila90",
+    "created": "2021-01-20T17:21:47Z",
+    "source": "HackerNews",
+    "query": "remote work career impact",
+    "topComments": [
+      {
+        "text": "I love this because it empowers people in the MENA region to establish financial security and grow their careers at global tech companies. This will hopefully unlock resources for the much-needed entrepreneurship growth in the region",
+        "author": "itin",
+        "hasReplies": true
+      },
+      {
+        "text": "Hi, Laila. Congratulations on the launch. I&#x27;ll share this (Algiers, Algeria).One of the problems people here have is getting paid from companies abroad. I think it would be good to conduct interviews with people who may be having the same problem, and either offer a solution or explain it on the website. Many people work as freelancers, and the way they get their money is Herculean.Also, many, especially here, neither are Arab nor identify as such [native population and ethnicity before 7th century invasions]. Many also do not share the language or other common attributes. Therefore, if you&#x27;re not ethnicity based, but based on the &quot;region&quot;, I guess North Africa, and Middle East are the terms that would work better.Again, congratulations. There a lot of very talented people in these countries who will not work abroad for different reasons. Staying not to leave family behind is a very, very, common reason. Making remote work easier for them, whether positions or ease ",
+        "author": "Jugurtha",
+        "hasReplies": true
+      },
+      {
+        "text": "Hey Laila,Congratulations on the launch. Your story is great and I love the premise. I myself am the Founder, CEO + CTO of a medical education company working on revolutionizing the future of meded-tech in MENA, so in the near future I&#x27;ll be looking into hiring from your platform.Be well and good luck!Azib",
+        "author": "maz1b",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Quell (YC S20) – Immersive gaming and combat workout",
+    "url": "https://news.ycombinator.com/item?id=24210098",
+    "hnUrl": "https://news.ycombinator.com/item?id=24210098",
+    "points": 170,
+    "numComments": 134,
+    "author": "douglaspaul",
+    "created": "2020-08-19T13:24:57Z",
+    "source": "HackerNews",
+    "query": "remote work career impact",
+    "topComments": [
+      {
+        "text": "So not the existing, moderately popular VR game called Quell?https:&#x2F;&#x2F;store.steampowered.com&#x2F;app&#x2F;534230&#x2F;Quell_4D&#x2F;",
+        "author": "andybak",
+        "hasReplies": true
+      },
+      {
+        "text": "Looks good, good luck with it!I know for me I&#x27;d get pretty bored with doing just one thing (here, boxing, Peloton bike riding, etc.), even if the online &quot;experience&quot; varies things.Also, while it&#x27;s good for burning calories, it&#x27;s just hitting (har!) one set of muscles.  I&#x27;m doing a broad range of exercises through a streaming video service, including various weights&#x2F;resistance training, and a yoga&#x2F;tai-chi&#x2F;pilates class that&#x27;s really improved my balance.So, for me, variety is something to shoot for.Congratulations on the successful kickstarter!",
+        "author": "chris_st",
+        "hasReplies": true
+      },
+      {
+        "text": "Yes yes yes! Super excited for this, but... Make sure you get the balance between game and fitness program right. I tried the zombie run audio program a few years ago and didn&#x27;t like it, it was just a regular fitness class but they would make zombie noises and yell at you to run harder bEcAuSe ThE zOmBiEs ArE cOmInG.I want to play a game that has a side-effect of a fitness program. I&#x27;m not looking for a cut beach bod, I&#x27;m just looking to get mobile and get my heart rate up; I want a slightly more involved Wii Sports.If it gets too fitness-y, I&#x27;m just going to pursue a proper fitness program and not waste my time with kitschy and campy video game facades.",
+        "author": "jbob2000",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Dear undergraduate hacker",
+    "url": "https://news.ycombinator.com/item?id=6577860",
+    "hnUrl": "https://news.ycombinator.com/item?id=6577860",
+    "points": 63,
+    "numComments": 31,
+    "author": "koof",
+    "created": "2013-10-19T21:14:17Z",
+    "source": "HackerNews",
+    "query": "career advice for new graduates",
+    "topComments": [
+      {
+        "text": "I&#x27;m sorry to hear you had this struggle to identify with what you like, but you seem like you&#x27;ve worked it out to some degree. It sounds like you just didn&#x27;t enjoy CS and got stuck in the field. That&#x27;s fine, but it&#x27;s not indicative of the field as a whole. If you hate something fundamentally, you find everything about it wrong in your mind.With that being said, a lot of your remarks about bad parts of the industry are subjective at best, and just seem like an artifact of the situation you were in. I love CS, and do it as a hobby, and have not had anywhere near the same kind of experience you have had. I had a contemplative period like this as well, but figured out that we do the things we&#x27;re interested in and enjoy whether we realize it or not. If you do something as a hobby, chances are you like doing that thing.In any case, good luck on your quest to do something you enjoy better!",
+        "author": "mileszim",
+        "hasReplies": true
+      },
+      {
+        "text": "Computer science seems like the dominant choice for me when faced with a decision mostly based on ignorance, in the terminology of decision theory. (It&#x27;s at least as good as any other option and is better in at least some areas.) I enjoy the benefits of more course freedom than engineering and relatively good job prospects. If it turns out that I despise coding for a job, I can change directions via grad school as I&#x27;ll be taking more mathematics courses than the minimum requirements; moreover, it may be the case that I would&#x27;ve hated doing X for a job for most X, but it&#x27;s not practical to actually try most X before arriving at a more definite conclusion.",
+        "author": "khyryk",
+        "hasReplies": false
+      },
+      {
+        "text": "Interesting thoughts. As a professional software engineer (~7 years working) I disagree on a few points.&gt; Nobody cares that you work at a prestigious tech company that gives you ~cool benefits~.If you&#x27;re taking a job to impress other people, you&#x27;re doing it wrong. The only people that really care about where you&#x27;ve worked are future employers.&gt; These projects were frighteningly representative of what work-life is.Fairly true, except in the workplace you can count on other people to be marginally competent. In some cases the code is great, and in some cases it&#x27;s awful. But in the vast majority of cases what counts is not whether it&#x27;s &quot;good&quot; or not, but whether it works.&gt; There is little intellectual satisfaction to be had from contorting bytes.Maybe you&#x27;re referring to something else, but I find the process of constructing something functional to be immensely satisfying.&gt; Learning new programming languages is extremely fun at first but",
+        "author": "cecilpl",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Getting back to the tech industry after a three-year break",
+    "url": "https://news.ycombinator.com/item?id=10885621",
+    "hnUrl": "https://news.ycombinator.com/item?id=10885621",
+    "points": 44,
+    "numComments": 29,
+    "author": "spiked55",
+    "created": "2016-01-12T04:52:52Z",
+    "source": "HackerNews",
+    "query": "career advice for new graduates",
+    "topComments": [
+      {
+        "text": "Does she have a github account with some examples of personal projects she works on? Does she go to networking events or meetups to expand her professional network, or could she maybe contact previous colleagues to ask for tips on upcoming openings?I&#x27;m not in the states, so I don&#x27;t know what the employment environment is like on the ground, but from what I know in general getting a job depends on who you know and what others know about you. In other words; getting employed via the traditional vanilla job application route is going to be tough. Especially for immigrants.She needs to go out and meet people, work her personal network, and have some cool and interesting projects to hook people&#x27;s attention with.",
+        "author": "RikNieu",
+        "hasReplies": false
+      },
+      {
+        "text": "All in all, she’s probably applied to 100+ companies over the last 6 months, but she hasn’t received a single call back.Your wife should consider sending in an unsolicited resume to be a no-op and, instead, start meeting people who either a) are hiring managers or b) can refer her to hiring managers.Her goal in achieving connection with the hiring manager is to secure  a coffee date or other informal conversation.  Her goal for this conversation is qualifying the company, impressing the hiring manager, and convincing the hiring manager to either invite her formal application or respond positively when she suggests moving to a formal application.This is one of the huge knowledge gaps in the engineering community regarding getting jobs.  Unsolicited applications are not how most people get hired.  This is particularly true of smaller employers.",
+        "author": "patio11",
+        "hasReplies": true
+      },
+      {
+        "text": "Job hunting can be very difficult.  A lot depends on the types of companies and positions she is applying for.It is easier to get a job with the skills and experience you already have and then try to migrate to newer skills.  So maybe going for Java &amp; Python jobs without relevant experience is an issue.Whilst education is important experience is far more pertinent in hiring.  As is the personality factors revealed during interviews or even in the covering letters.  100+ applications suggests that there are issues.  The trick is to find out where they might be.  Getting some professional advice might be necessary.",
+        "author": "CyberFonic",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Senior people, how did your career evolve?",
+    "url": "https://news.ycombinator.com/item?id=45888409",
+    "hnUrl": "https://news.ycombinator.com/item?id=45888409",
+    "points": 96,
+    "numComments": 52,
+    "author": "Seb-C",
+    "created": "2025-11-11T15:30:33Z",
+    "source": "HackerNews",
+    "query": "switching careers at 30",
+    "topComments": [
+      {
+        "text": "I&#x27;m nowhere near as senior as you (12 years). But I&#x27;ve reflected on this a lot recently. I love the technology and feeling like I&#x27;m building things, but staying hands on will always limit your scope. Taking the management path improves your scope but the work is - well - just less fun than programming.My answer right now is to try and build more things myself. Small apps, CLIs, retro games. Not libraries or much OSS stuff so much as actual &quot;products&quot; that give me creative control and concrete outputs. It&#x27;s hard to make the time though.Outside of my career I&#x27;m also trying to cultivate other works, like my YouTube channel and my writing. Creating a video that 250k people enjoy is at least as meaningful to me as crushing my OKRsWe are all mortal beings: there will inevitably be more things to do than time to do it, and it&#x27;s easier to ruminate on options than commit to something that feels &quot;suboptimal&quot;.To give an example of that. I spent a ",
+        "author": "jbreckmckye",
+        "hasReplies": true
+      },
+      {
+        "text": "&gt; have pretty-much mastered all areas and layers of the stack (infra and cloud, databases, backend, network, front-end and even a bit of mobile...)Congratulations!!\nYou could try consultancy, training others, writing books&#x2F; blogs.",
+        "author": "amtamt",
+        "hasReplies": false
+      },
+      {
+        "text": "I started in development because I had websites I made and ran but didn&#x27;t profit and had expenses.There I learnt to be a sysadmin and went to MSP support.As a sysadmin I relied on networks more and more and became a netadmin and that evolved to network engineer then architect.I worked in startups and kept evolving until I looked down on those &quot;professionals&quot; that stayed dependent specialist.  The back and forth to just identify an issue was all lazy waste to me.Now I&#x27;m studying electrical engineering because there&#x27;s lots of opportunity to scale tech but not enough supply of trade professionals that support the fundamentals.I also wanted a role that didn&#x27;t require several specialist to concur simple decisions of my daily job.Tech is full of specialist that lack a general understanding of the principles they interact with.  I needed to avoid being dependent on their approval for any matter",
+        "author": "itsamario",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: What happens to older developers?",
+    "url": "https://news.ycombinator.com/item?id=7372997",
+    "hnUrl": "https://news.ycombinator.com/item?id=7372997",
+    "points": 554,
+    "numComments": 358,
+    "author": "JeffJenkins",
+    "created": "2014-03-10T14:18:08Z",
+    "source": "HackerNews",
+    "query": "switching careers at 30",
+    "topComments": [
+      {
+        "text": "I&#x27;m older than you and I&#x27;ve been looking for a new developer role recently. The main problem I see is that there haven&#x27;t really been &quot;old web developers&quot; in the past - I&#x27;ve got about 15 years experience which is pretty much as much as it&#x27;s possible to have in the web industry. People with more experience tend to be &quot;software engineers who wrote web things&quot; rather than &quot;web developers&quot; per se. Employers have expectations that web people are young people and as such building web software is something that you can only really do at the start of your career. The assumption is that if you have a lot of experience you&#x27;ll quickly get bored and move on. Consequently it&#x27;s getting a lot harder to find a job. I suspect that once we pass 40 we&#x27;ll all have little choice but to move in to a more business analyst or management style role, or go freelance, until the industry is mature enough that age isn&#x27;t something that works ",
+        "author": "onion2k",
+        "hasReplies": true
+      },
+      {
+        "text": "I was doing dev at a large utility company in my early 20s.  I was only doing it a few years (~4 or 5) when the tech stack was completely overhauled and it required me to re-learn the new stack.  I started to transition across (in my own time, at my own expense) and then the company decided to outsource the majority of the work and take on the outsourcer&#x27;s stack.  This left me with the choice to re-learn again within a very short time frame, or make a change.I figured it was a sector in constant skills cycle and decided to get out of the rat race.By my late 20s I was a business analyst - having the tech&#x2F;dev background really helped.Now, I work in security.  the tech&#x2F;dev&#x2F;business background is invaluable.In short, generalism seems to be the path (in terms of skillset), whereas you can specialise in terms of career direction).",
+        "author": "herghost",
+        "hasReplies": true
+      },
+      {
+        "text": "I honestly don&#x27;t understand this, I&#x27;m sure there is ageism, but when I&#x27;m reading resumes and interviewing I love the more experienced developers!  The few times I&#x27;ve seen a solid 10 years experience résumé followed up by a solid phone screen it has been a feeding frenzy. So much so that my company usually can&#x27;t even move fast enough to get an offer in the ring :(On the other hand, it&#x27;s really obvious when someone has 10 years of experience staying invisible and just hanging on.  Those are the ones that get ignored in my experience, and for good reason.",
+        "author": "jhspaybar",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Software Engineer hitting 40: what's next?",
+    "url": "https://news.ycombinator.com/item?id=29360119",
+    "hnUrl": "https://news.ycombinator.com/item?id=29360119",
+    "points": 442,
+    "numComments": 349,
+    "author": "man-next-door",
+    "created": "2021-11-27T13:48:48Z",
+    "source": "HackerNews",
+    "query": "switching careers at 30",
+    "topComments": [
+      {
+        "text": "I became a teacher in software engineering when I was 46. \nIn our country there have been and still are lots of vacancies for technical teachers.\nI find it very fullfilling to work with young persons (students) and it is easy to keep up to date with new software eng. techniques because you are in an environment with som many technical persons (colleagues, students, workfield)",
+        "author": "m4rc3lv",
+        "hasReplies": true
+      },
+      {
+        "text": "IC duties beyond senior are pretty arbitrary at most companies, you might be worrying about it too much honestly. Principal seems to be a terminal position for people who have 1) been consistently productive 2) been at the company a million years. These people were typically already doing more “strategic” architectural implementation&#x2F;design work anyway.Last year I went from Staff to Senior taking another job. I make 30k more and do essentially the same thing. If you want more money just optimize for that and stop caring about title imo",
+        "author": "pram",
+        "hasReplies": true
+      },
+      {
+        "text": "I&#x27;m 39 and in the USA. I&#x27;ve had similar experience to yours.I&#x27;m considering targeting the C suite given my social, communication, and strategy skills. I would be a little sad to give up coding, but since I do plenty of coding in my free time, I don&#x27;t think it would matter much.",
+        "author": "bovermyer",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Is the industry saturated with data scientists already?",
+    "url": "https://news.ycombinator.com/item?id=34099847",
+    "hnUrl": "https://news.ycombinator.com/item?id=34099847",
+    "points": 49,
+    "numComments": 36,
+    "author": "legobridge",
+    "created": "2022-12-22T22:38:11Z",
+    "source": "HackerNews",
+    "query": "data science career path",
+    "topComments": [
+      {
+        "text": "&gt; Is the industry saturated with data scientists already?\nNo :)&gt; Did all the talk of data science being the &quot;sexiest&quot; job cause the market to become saturated\nNo :)&gt; is it still a viable career path?\nYesSource:a) I Co-run the Data Science Weekly newsletter.b) I was a mod of https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;datascience&#x2F; from 15k to 30k members and people were asking that about 5 to 6 years ago. The sub now has ~829k members and that question still comes up.&gt; The number of opportunities also seem to be dwindling\nThe reason for this is that initial it was &quot;data science&quot;, then it was &quot;data science and machine learning researcher&quot;, then it was &quot;data science and data engineerings and machine learning researcher&quot;, then it was &quot;ai, data scientists, machine learning researcher, machine learning engineering, data engineer, nlp&quot;, etc.  So the jobs have multiplied but so have the position titles as well. So while you co",
+        "author": "sebg",
+        "hasReplies": true
+      },
+      {
+        "text": "To be blunt, the market is saturated with people who call themselves “data scientists” but are actually just reasonably skilled software engineers with at best a college sophomore level understanding of math&#x2F;stats.On the other hand, the market is nowhere near saturation for people with both advanced software engineering and math&#x2F;stats skills (i.e. PhD-level).",
+        "author": "MontyCarloHall",
+        "hasReplies": true
+      },
+      {
+        "text": "I think it&#x27;s less a case of saturation and more a case of companies realizing that most data scientists don&#x27;t actually deliver value commensurate to the salaries they were asking. Most companies simply don&#x27;t have enough data, or don&#x27;t have hygienic enough data, or don&#x27;t have the engineering heft to build a reliable data pipeline, so the data scientists often find themselves set up to fail. I&#x27;ve seen that happen a few times.But, it&#x27;s not like the fundamentals of the field are wrong. Predictive modeling is still really useful. It&#x27;s just larger firms are the only ones capable of realizing that value.",
+        "author": "ffssffss",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: I feel so shallow and dumb when I see what other smart people are doing",
+    "url": "https://news.ycombinator.com/item?id=29281468",
+    "hnUrl": "https://news.ycombinator.com/item?id=29281468",
+    "points": 534,
+    "numComments": 336,
+    "author": "cdahmedeh",
+    "created": "2021-11-19T19:51:25Z",
+    "source": "HackerNews",
+    "query": "data science career path",
+    "topComments": [
+      {
+        "text": "I mean everyone is unaccomplished compared to chris sawyer for roller coaster tycoon :)Most software projects are forgotten pretty quickly though, so if you&#x27;re looking for a longer impact on life in general, consider the community you live in. plant a tree. clean a highway. Software dev is ephemeral, and most software rockstars aren&#x27;t even known outside a small circle.",
+        "author": "pgruenbacher",
+        "hasReplies": false
+      },
+      {
+        "text": "&gt; What really impressed me however was the origins of the first two titles: written by one man in assembly languageyou arent alone, i think that is an impressive and time consuming feat.OP, youre in a much better place now skillwise then back at 17, sounds like youre unchallenged at work and maybe burnt out. Take some time off to contemplate what youd like to do, open all the possibilities that interest you. Remember you arent starting over, you have a relevant skillset already. Maybe build some personal projects of any kind, to remind yourself how fun building things can be and your motivation may return.that plus ensure youre getting daily exercise and sleeping well. Motivation follows those almost automatically at times for me. If i feel fulfilled, i have more energy",
+        "author": "penjelly",
+        "hasReplies": false
+      },
+      {
+        "text": "This is called Imposter Syndrome. I had the same thing when I first got into a company where I was working with seriously smart and talented people.- https:&#x2F;&#x2F;www.verywellmind.com&#x2F;imposter-syndrome-and-social-an...- https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Impostor_syndrome- https:&#x2F;&#x2F;www.psychologytoday.com&#x2F;us&#x2F;basics&#x2F;imposter-syndromeLong story short: If you&#x27;re hitting your goals and getting paid, don&#x27;t sweat the extracurriculars.",
+        "author": "yuppie_scum",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: I am a full stack developer, where do I start learning for AI",
+    "url": "https://news.ycombinator.com/item?id=35543774",
+    "hnUrl": "https://news.ycombinator.com/item?id=35543774",
+    "points": 74,
+    "numComments": 51,
+    "author": "FullStackDev1",
+    "created": "2023-04-12T17:50:08Z",
+    "source": "HackerNews",
+    "query": "data science career path",
+    "topComments": [
+      {
+        "text": "Nobody really cares about doing real AI to find the solution to a difficult problem, all they care about is generating &#x27;research&#x27; that supports a pre-determined conclusion.If you want to do real AI, I think having a foundation in physics (electricity and magnetism) is a good start, as well as quantum computers and quantum physics. Personally I think neural nets are a dead end, I think the industry is moving in the wrong direction  I&#x27;d stay away from Kaggle, I think it&#x27;s a waste of time. Just decide what domain that you want to solve and focus on that, don&#x27;t just follow the industry cause most of the people are brain-dead",
+        "author": "ihatepython",
+        "hasReplies": true
+      },
+      {
+        "text": "https:&#x2F;&#x2F;fast.ai is hands down the best resource for learning more about deep learning as a normal software person.",
+        "author": "jakedahn",
+        "hasReplies": true
+      },
+      {
+        "text": "karpathy&#x27;s Zero to Hero series (https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLAqhIrjkxbuWI23v9cThs...) has been the best time investment I have made, not only for learning about AI, but maybe ever.Prerequisites: Python, and understanding derivatives",
+        "author": "jekude",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Unemployed. What on earth should I do with my life?",
+    "url": "https://news.ycombinator.com/item?id=22707657",
+    "hnUrl": "https://news.ycombinator.com/item?id=22707657",
+    "points": 92,
+    "numComments": 61,
+    "author": "confused-c",
+    "created": "2020-03-27T22:58:04Z",
+    "source": "HackerNews",
+    "query": "data science career path",
+    "topComments": [
+      {
+        "text": "Sorry to hear about all this. Could you please post your resume online and provide a link to it so we can all view rather than emailing you? Thanks.",
+        "author": "hbcondo714",
+        "hasReplies": true
+      },
+      {
+        "text": "Have you ever considered technical writing? If you&#x27;re a good writer with CS&#x2F;engineering, you&#x27;d have a definite leg up over other applicants (even if you don&#x27;t have direct tech writing experience). I&#x27;m a tech writer (English + CS background) and I love my job. I know quite a few tech writers who dabble in docs-related automation&#x2F;process improvement projects.",
+        "author": "minnca",
+        "hasReplies": true
+      },
+      {
+        "text": "Don&#x27;t mess around in the US for peanuts if you can speak&#x2F;read&#x2F;write Mandarin and English. Head to Shenzhen without delay. If you happen to be white, then you&#x27;re worth your weight in gold. If you can do technical things, then you&#x27;re a magician too. Furthermore, you could even sell yourself as a manual proofreader&#x2F;editor&#x2F;translator as well.Relocate your abilities where they can be best utilized and compensated where things are designed, engineered and&#x2F;or manufactured.",
+        "author": "anonsubmit2671",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Thinking of a Cybersecurity Career?",
+    "url": "https://krebsonsecurity.com/2020/07/thinking-of-a-cybersecurity-career-read-this/",
+    "hnUrl": "https://news.ycombinator.com/item?id=23945620",
+    "points": 133,
+    "numComments": 121,
+    "author": "zdw",
+    "created": "2020-07-24T23:45:31Z",
+    "source": "HackerNews",
+    "query": "cybersecurity career",
+    "topComments": [
+      {
+        "text": "That&#x27;s surprising to someone not in CyberSec that so few can do basic tasks of their job. \nI wonder how they declare the bar for basic or not.",
+        "author": "cyberbanjo",
+        "hasReplies": true
+      },
+      {
+        "text": "Seems like a good place to copy&#x2F;paste one of my comments from a different thread.Disclaimer: I&#x27;m not particularly good at this, so whatever comments I make are well intentioned but may be of varying accuracy....Online sources:* OWASP.org is a good place to find info. If you look something up, there&#x27;s a good chance you will find it here.* https:&#x2F;&#x2F;owasp.org&#x2F;www-project-web-security-testing-guide&#x2F; Thanks to redis_mic for this one, I didn&#x27;t know it existed until today.* overthewire.org Similar to HTS, but you don&#x27;t need an account. The subject matter covered is also slightly different.* https:&#x2F;&#x2F;0x00sec.org&#x2F; A forum dedicated to security. There&#x27;s a lot of script kiddies, but also some gold.* https:&#x2F;&#x2F;www.hackerone.com&#x2F; What better way to learn then practice on live targets? That being said, I would do some of the others first....I do a lot of learning through reading, so books:* Network Security Assessment by Chr",
+        "author": "Shared404",
+        "hasReplies": false
+      },
+      {
+        "text": "Very interesting article, but at the same time it depicts a very sad truth...[Disclaimer:  also not a certified security professional, but I do follow the topic and practice it hands-on from time-to-time...]However I think there are multiple (sometimes non-overlapping) types of cyber-security professionals &#x2F; roles:* the policy maker &#x2F; enforcer -- which is what some companies want, and what the most well known people out there (including Schneier, Krebs, etc.) are blogging and speaking about;  (to put it metaphorically they are the ones in charge of designing an IT &quot;hygiene&quot;, and making sure everyone &quot;washes their hands&quot; properly;)  :)* the operations security -- which should make sure systems and networks are well locked down, patches properly installed, watches out for suspicious activity, and if he is capable enough tries to check the boundaries and limits the firms security;  this is another role most companies want, what some courses train for, and wha",
+        "author": "ciprian_craciun",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: What is the best way into a cybersecurity career in 2019?",
+    "url": "https://news.ycombinator.com/item?id=20892086",
+    "hnUrl": "https://news.ycombinator.com/item?id=20892086",
+    "points": 40,
+    "numComments": 14,
+    "author": "horstgrand",
+    "created": "2019-09-06T01:00:36Z",
+    "source": "HackerNews",
+    "query": "cybersecurity career"
+  },
+  {
+    "title": "Cybersecurity as a socially conscious career choice for young hackers",
+    "url": "http://www.forbes.com/sites/jmaureenhenderson/2013/09/30/selling-cybersecurity-as-a-sexy-and-socially-conscious-career-choice-for-young-hackers/?",
+    "hnUrl": "https://news.ycombinator.com/item?id=6471405",
+    "points": 35,
+    "numComments": 21,
+    "author": "trevorstarick",
+    "created": "2013-09-30T18:40:16Z",
+    "source": "HackerNews",
+    "query": "cybersecurity career",
+    "topComments": [
+      {
+        "text": "Nothing new here, except for a big ad for cyberaces (dot) org.The lesson: most kids who crack systems as a self-declared white hat will be punished, some will get lucky with job offers (that they never seem to accept at the end of the day - humm).Like the elders were advising 10-20 years ago: don&#x27;t bother with trying to play by the rules.  Start your own consulting firm or just keep it to yourself.",
+        "author": "epoxyhockey",
+        "hasReplies": false
+      },
+      {
+        "text": "Hamad was expelled not for finding the vulnerability, but for running Nessus against the system after he reported the vulnerability, allegedly as a means of checking to see if it had been fixed.Young Hamad shouldn&#x27;t have done that, and would be fired from any job in cybersecurity for doing the same thing against a client&#x27;s network without authorization.",
+        "author": "diminoten",
+        "hasReplies": true
+      },
+      {
+        "text": "If you’re good, you have nowhere to practice right now except the open internet, where it’s a federal crime.Not quite true. Many massive sites offer rewards for finding vulnerabilities. Be sure you comply with their terms of service while doing so.",
+        "author": "wglb",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: How can I realistically change careers?",
+    "url": "https://news.ycombinator.com/item?id=42735767",
+    "hnUrl": "https://news.ycombinator.com/item?id=42735767",
+    "points": 184,
+    "numComments": 164,
+    "author": "throw101010101",
+    "created": "2025-01-17T09:41:10Z",
+    "source": "HackerNews",
+    "query": "cybersecurity career",
+    "topComments": [
+      {
+        "text": "Back in the early 90&#x27;s when I was 35 years old I hated my job but I had family commitments and mortgage to attend to.I had always enjoyed reading psychology books and decided to attend night college and train as a counsellor.For the first 2 years this was 1 evening of 3 hours each week, then 2 evenings each week for the final 2 years until I qualified as a therapeutic counsellor. I worked full time in my regular job during this period.Once I had qualifed I realised I had absolutely no experience working in the care sector so I worked as a full time volunteer in the substance misuse field for a whole year gaining the experience and knowledge to allow me to get a paid job in the field. During this period the company provided an extensive traning package. I was after all giving my free time.I also enroled in a psychotherapy masters degree. Now qualified as a counsellor I had all the core knowledge in place. The masters degree was one weekend each month for 2 years, so very doable.Aft",
+        "author": "reify",
+        "hasReplies": true
+      },
+      {
+        "text": "I transitioned to security after working in development.  I didn&#x27;t have to reset back to being on the helpdesk, but any career reset probably won&#x27;t have you enter at the same level you were at before.  I went from being chief technical architect type roles in development to being a security architect.For me, the transition also took a number of years.  I did a Masters degree in security, and started to get more experience in security in my non security role.  Then I found a small software company willing to give me a chance as their security guy.  I guess for me it took about 4 to 5 years to really complete the transition.",
+        "author": "MattPalmer1086",
+        "hasReplies": true
+      },
+      {
+        "text": "&gt; I’ve spent almost two decades in digital-focused roles ... I&#x27;ve often thought about cybersecurity as something I&#x27;d like to specialise inBecause to me, cybersecurity reads like &quot;more digital&quot; than &quot;strategy, user research&quot;, not less, I&#x27;m not sure if I know enough about the poster&#x27;s motives to help.But what I can suggest is that the late Ross Andersons&#x27; book Security Engineering is a great starting point to get into system security.BTW, I have enormous respect for people who are transitioning between professional areas, and while it consumes energy it probably will be the source of more energy, best of success for everyone!",
+        "author": "jll29",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Career change from general java dev to cyber security/machine learning",
+    "url": "https://news.ycombinator.com/item?id=14180524",
+    "hnUrl": "https://news.ycombinator.com/item?id=14180524",
+    "points": 39,
+    "numComments": 14,
+    "author": "gdfer",
+    "created": "2017-04-23T21:19:58Z",
+    "source": "HackerNews",
+    "query": "cybersecurity career"
+  },
+  {
+    "title": "Ask HN: Career paths taken after being an engineer",
+    "url": "https://news.ycombinator.com/item?id=18048350",
+    "hnUrl": "https://news.ycombinator.com/item?id=18048350",
+    "points": 26,
+    "numComments": 8,
+    "author": "dadoge",
+    "created": "2018-09-22T22:32:49Z",
+    "source": "HackerNews",
+    "query": "product manager career path"
+  },
+  {
+    "title": "Launch HN: Lago (YC S21) – Open-source usage-based billing",
+    "url": "https://news.ycombinator.com/item?id=34773442",
+    "hnUrl": "https://news.ycombinator.com/item?id=34773442",
+    "points": 442,
+    "numComments": 141,
+    "author": "Rafsark",
+    "created": "2023-02-13T14:01:29Z",
+    "source": "HackerNews",
+    "query": "product manager career path",
+    "topComments": [
+      {
+        "text": "Congrats on the launch, definitely an interesting product and really interesting space. But...didn&#x27;t you guys launch a while ago? Is there something specific you&#x27;re launching now?&gt;&gt; The tech stack we use to build Lago (YC S21), the open source billing API (https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32438355)&gt;&gt; Lago: The Open Source Stripe Billing Alternative (https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32438355)&gt;&gt;Lago: The Open Source Stripe Billing Alternative(https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=31638797)&gt;&gt;Show HN: 6 Steps to build a usage-based billing system with Lago (YC S21)(https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=32765162)&gt;&gt; Show HN: Lago: Open-source metering and usage-based billing (https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33505229)",
+        "author": "rabidonrails",
+        "hasReplies": true
+      },
+      {
+        "text": "I think this is going to be&#x2F;already is a crowded space.  SaaS companies are feeling the burn of layoffs due to per-seat pricing, so metered billing seems like a good alternative.  Unfortunately, as a SaaS consumer, I despise it, as it&#x27;s meant to be obtuse and hard to estimate, plus I have yet to see any SaaS&#x2F;IaaS offer real spend controls like stopping the service.",
+        "author": "candiddevmike",
+        "hasReplies": true
+      },
+      {
+        "text": "In years 2000&#x2F;2001, as the dot-com implosion was happening, I worked for a company where we did patent disclosures (I spent a long time talking to a patent lawyer) discussing in depth ideas for billing systems, including a vendor &#x2F; distributor &#x2F; consumer model (where any entity could be any one or a combination of those w.r.t. a product), data structures, data-collection frameworks, billing &quot;metrics&quot;, passthrough-billing-with-a-cut, differential pricing, resale of combined products, etc.  These were turned into patent applications that perhaps merited becoming full-blown patents, or perhaps not.  Given the recent rash of companies doing this (e.g., https:&#x2F;&#x2F;www.monetize360.com&#x2F;), I think they were patentable ideas 20+ years ago.  The referenced applications should give some prior art coverage for many patent issues one might run into.Of course, the vendor&#x2F;distributor&#x2F;consumer model can become vendor-many-clients through simplication, sam",
+        "author": "nwatson",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Taro (YC S22): Private career growth community for software engineers",
+    "url": "https://news.ycombinator.com/item?id=32358038",
+    "hnUrl": "https://news.ycombinator.com/item?id=32358038",
+    "points": 107,
+    "numComments": 77,
+    "author": "rpandey1234",
+    "created": "2022-08-05T16:04:23Z",
+    "source": "HackerNews",
+    "query": "product manager career path",
+    "topComments": [
+      {
+        "text": "I know nobody wants to do the &quot;software engineers vs engineers&quot; debate again, but even if we are going come down on the &quot;programmers are software engineers&quot; side of that debate, a site which exclusively serves software engineers shouldn&#x27;t advertise itself as for engineers generally. I was excited to see what EE&#x27;s would be chit-chatting about. :(As a suggestion -- it might make sense to put a link to your demo page right near the top of your main &#x27;jointaro&#x27; site somewhere, it did a good job of showing what the value proposition is.",
+        "author": "bee_rider",
+        "hasReplies": true
+      },
+      {
+        "text": "very cool product - congrats!do you ever wonder if similar to the college application process, trying to &quot;gamify&quot; the promotion process doesn&#x27;t actually lead to a competitive company?to be more clear, do you think that by training people to think of trying to get promoted as something they need to learn, rather than come by naturally, we&#x27;re teaching people to follow XYZ funnel in order to attain ABC goal, at the expense of promoting people naturally?the reason i mention the college application process is because it&#x27;s clear that&#x27;s what that accomplishes today, as someone who recently went through it. there&#x27;s a set of predefined formulas that can get you into an elite school, and they become more and more limited in scope as you become more and more limited demographic-wise, so everyone &quot;learns&quot; from prep academies, consultantnts, etc.,  the _exact_ right way to structure your application to get in.i still feel like i&#x27;m not clear, so i&#x",
+        "author": "raunak",
+        "hasReplies": true
+      },
+      {
+        "text": "Excited to see Taro on the front page of HN. I’m just finishing up my first internship at a Big Tech Co and the advice and discussions I’ve seen from Rahul&#x2F;Alex were extremely valuable in helping me perform well.I feel somewhat connected to the product in a weird way in that I went through the non profit Codepaths interview prep summer course which is where I heard about Rahul and seems to solve a somewhat similar pain point in that outside of the interview prep piece it allowed me to make connections and receive mentorship from experienced engineers that was incredibly valuableAnother company that I love that scratched that same itch was Hackpack. They charge a monthly membership fee and it&#x27;s centered around interview prep but the main value I got from being part of the program was deep connections and mentorship with experienced engineers.I have some small user feedback with a sample size of 1. I love the content that you guys create and consume the majority of the blogs&#x",
+        "author": "jeffwiederkehr",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask NH: Where to go from Front end Development?",
+    "url": "https://news.ycombinator.com/item?id=26386518",
+    "hnUrl": "https://news.ycombinator.com/item?id=26386518",
+    "points": 33,
+    "numComments": 17,
+    "author": "holdon",
+    "created": "2021-03-08T15:08:47Z",
+    "source": "HackerNews",
+    "query": "product manager career path"
+  },
+  {
+    "title": "Ask HN: Career path for developers",
+    "url": "https://news.ycombinator.com/item?id=570589",
+    "hnUrl": "https://news.ycombinator.com/item?id=570589",
+    "points": 22,
+    "numComments": 17,
+    "author": "hunterjrj",
+    "created": "2009-04-20T12:59:02Z",
+    "source": "HackerNews",
+    "query": "product manager career path"
+  },
+  {
+    "title": "Ask HN: Career paths when you've been disillusioned by the software dev process?",
+    "url": "https://news.ycombinator.com/item?id=31043717",
+    "hnUrl": "https://news.ycombinator.com/item?id=31043717",
+    "points": 34,
+    "numComments": 32,
+    "author": "Trasmatta",
+    "created": "2022-04-15T18:20:02Z",
+    "source": "HackerNews",
+    "query": "burnout career change",
+    "topComments": [
+      {
+        "text": "I&#x27;m 25 years in and have the same problem. I feel like I could have written this. I have a side project (which has a software component but doesn&#x27;t require that), but it&#x27;s not monetizable yet. Like you, I still have to sell my skills in the marketplace -- one that has changed dramatically since I entered, and in all the ways you pointed out.Software development used to be fun, and many parts of it still are. But a sad new dev culture has taken over which I think hurts both developers and the products we create. This leads to junky software that no one likes.I wonder how much of it is due to the VC-backed philosophy of &quot;selling to the next greater fool.&quot; As long as a company is just waiting to sell out to the next round of investors, the folks at the top have little incentive to make a great product or a great work environment. After all, those things are not counted in company valuations.In the enormous list of job postings on HN this month, I can see many comp",
+        "author": "dtagames",
+        "hasReplies": true
+      },
+      {
+        "text": "Have you looked into working at a non-agile company?I thought working in waterfall projects would suck, but I think it is a large part of why my current job doesn&#x27;t require much interaction and why most of my colleagues have a calm air around them.",
+        "author": "roeles",
+        "hasReplies": true
+      },
+      {
+        "text": "I created an account just so that I could comment.I&#x27;m not a dev although perhaps in a few years hope to pivot to the field in some capacity. I do however work closely with devs, product, etc and i&#x27;m n the engineering space. Having said that, perhaps you could use this as an opportunity to solve this problem. What does that look like? Writing a book on the matter to help others since you do have a lot of experience and could possibly partner up with others in the field in the same kind of situation, creating a course, an app (there are endless amounts that focus on mental health and wellbeing but how many that are more focused on those in engineering disciplines?).I have dealt with depression and an anxiety disorder in the past. I have helped some friends and family members learn to cope and overcome as well. By no means am I an expert but I do have some insight that I share with anyone willing to listen so that they can better maneuver around it rather than avoid it entirely ",
+        "author": "hancholo",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Recovery from burnout, what did you do?",
+    "url": "https://news.ycombinator.com/item?id=27588027",
+    "hnUrl": "https://news.ycombinator.com/item?id=27588027",
+    "points": 23,
+    "numComments": 8,
+    "author": "dirtybirdnj",
+    "created": "2021-06-22T04:36:09Z",
+    "source": "HackerNews",
+    "query": "burnout career change"
+  },
+  {
+    "title": "Ask HN: Burning Out",
+    "url": "https://news.ycombinator.com/item?id=21661054",
+    "hnUrl": "https://news.ycombinator.com/item?id=21661054",
+    "points": 278,
+    "numComments": 152,
+    "author": "burning_out_101",
+    "created": "2019-11-29T00:23:38Z",
+    "source": "HackerNews",
+    "query": "burnout career change",
+    "topComments": [
+      {
+        "text": "Many things that you describe could be fixed - nitpicking, non-technical people getting frustrated with bugs, poor feedback, burnout, feeling like you cannot work with a team lead.... those things happen, and can be fixed, with effort.But is this team worth that effort? If you have been working at this for &quot;a few years&quot;, and the company is still early stage, that is a bad sign. If the founders and team lead cannot solve the problems, that is a bad sign. If you created a solution that can make millions, but it isn&#x27;t doing so, then the team doesn&#x27;t know what to do with it. Another bad sign.But those bad signs could also be poor interpretations of events, distorted by your own burnout.My advice is to really think about whether you respect this team enough to work through problems with them. Are your complaints really about them, or just reflections of your own frustrations?And then, depending on that answer, either sit down and tell them your frustrations and ask them ",
+        "author": "codingdave",
+        "hasReplies": true
+      },
+      {
+        "text": "I&#x27;ve been the founders in this situation. Go to the founders. It sounds like they tried to hire a Bad Guy TM to get things &quot;under control&quot; and that person is now too controlling now that context has been built and people have leveled up. Your feelings and frustrations are valid. If they are good founders, they&#x27;ll deal with this person. If not, leave.",
+        "author": "rogerkirkness",
+        "hasReplies": false
+      },
+      {
+        "text": "I&#x27;ve heard of people in this situation. I&#x27;ve also been the manager on the same level to someone who did this.Going to the founders should solve your problem, but be prepared to deal with the guilt if the team lead is fired.Usually the founders have no idea what&#x27;s going on until you tell them. We had a project manager who used to lie to their team, which caused the team to protest. But we didn&#x27;t know they were protesting because of the project manager.",
+        "author": "muzani",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Feeling burned out at an early stage in my career",
+    "url": "https://news.ycombinator.com/item?id=31580723",
+    "hnUrl": "https://news.ycombinator.com/item?id=31580723",
+    "points": 122,
+    "numComments": 72,
+    "author": "athrowawayacc",
+    "created": "2022-06-01T12:15:24Z",
+    "source": "HackerNews",
+    "query": "burnout career change",
+    "topComments": [
+      {
+        "text": "&gt; I am wrestling with this feeling of guilt that I can&#x27;t get motivated like I used to. I&#x27;ve tried doing the things with tech I love -- like working on my website -- but lose energy quickly.Your free time activities shouldn’t be similar to your work time activities. That’s a recipe for burnout. Get away from the computer! Go outside, go to the gym, go to a social event. If you sit in front of screens all day for work and then sit in front of screens all evening after work, you’re going to feel unmotivated and burned out. You must get out and do different things. More than you’re already doing.Second: Learn to pace yourself. It’s not realistic to expect to be motivated by every task forever the same way you were at first when it was new and exciting. The tough truth is that you need to learn how to structure your days as work, which often means doing things that are uninteresting or not naturally motivating. You shouldn’t be doing these tasks for 12 hours per day and crushin",
+        "author": "PragmaticPulp",
+        "hasReplies": true
+      },
+      {
+        "text": "Two basic questions:1) Do you practice a sport regularly?If you don&#x27;t, that&#x27;s almost certainly taking a huge toll on your mental health. Start practicing and check again in a month.2) Are you sleeping properly?You need from 7-9 hours of good sleep every night.Turn off screens at 8 PM.Go to bed early, you need to be asleep by 10 PM at most.Avoid junk food, sugar, etc especially hours before going to bed.",
+        "author": "rmbyrro",
+        "hasReplies": true
+      },
+      {
+        "text": "Your job is not to be Elon Musk and change the world. You work because you are feeding your self, putting salt on the table and keeping the electricity bills paid. So it is important to realize this, and not set expectations to oneself way to high. Just deliver and go home.",
+        "author": "unixhero",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Is it unprofessional to leave a new job where everything is a mess?",
+    "url": "https://news.ycombinator.com/item?id=29064692",
+    "hnUrl": "https://news.ycombinator.com/item?id=29064692",
+    "points": 242,
+    "numComments": 281,
+    "author": "itistricky",
+    "created": "2021-11-01T09:50:57Z",
+    "source": "HackerNews",
+    "query": "burnout career change",
+    "topComments": [
+      {
+        "text": "If you don&#x27;t like the culture and work it is not wrong to leave it soon and join a better place. But you can&#x27;t know if the new place will not have other type of problems. You can&#x27;t find out in interviews if new company too will have dysfunctional way of working. Nobody shares such things in interviews. If you have friends in other companies then it is the best way to learn how culture is in those companies.",
+        "author": "wfsch",
+        "hasReplies": false
+      },
+      {
+        "text": "Have you raised your perspective on their problems with your manager?If they don&#x27;t care, leaving is not unreasonable (although the 6 months might seem like a ding on your resume).  But usually, people know.  Whether they know and just want to keep turning up and take the money without rocking the boat, or want to rescue it but don&#x27;t know how.",
+        "author": "fivelessminutes",
+        "hasReplies": true
+      },
+      {
+        "text": "No, it happens more often than you think.  Just make sure you have another job offer in-hand before doing so.",
+        "author": "nowherebeen",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: FOMO by working in startups only vs. Big companies",
+    "url": "https://news.ycombinator.com/item?id=30115078",
+    "hnUrl": "https://news.ycombinator.com/item?id=30115078",
+    "points": 77,
+    "numComments": 90,
+    "author": "NalNezumi",
+    "created": "2022-01-28T14:36:04Z",
+    "source": "HackerNews",
+    "query": "trades vs college degree",
+    "topComments": [
+      {
+        "text": "Oh you are not missing anything great at bigger companies. There is no “right way” there either. But I think you have to experience both sides yourself to understand. I can predict the future: you will go work for a big company someday and then go back to a startup.",
+        "author": "andrewfromx",
+        "hasReplies": false
+      },
+      {
+        "text": "&gt; I&#x27;ve now worked for about 3-4 years, so still a junior, but mostly at startups (and in my 3rd one).Your issue here is really tenure\n, there’s a lot of software engineering fields for which you won’t know anything after a year in the role.",
+        "author": "thatfrenchguy",
+        "hasReplies": false
+      },
+      {
+        "text": "I&#x27;ve worked at small and mega enterprise. I will pick small&#x2F;medium over big anyday for how to do things the &#x27;right&#x27; way. Enterprise doesn&#x27;t care about the right way so much, too many policies and politics get in the way. Similarly you can also get a very &#x27;just get it out the door&#x27; attitude at some very small companies.However you can also find small&#x2F;medium companies that understand that they need to ship, but also understand how to properly run things. There is a much greater chance of that happening at a small&#x2F;medium company than any big company.",
+        "author": "quaffapint",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Would doing a coding bootcamp be a horrible idea?",
+    "url": "https://news.ycombinator.com/item?id=39188657",
+    "hnUrl": "https://news.ycombinator.com/item?id=39188657",
+    "points": 26,
+    "numComments": 48,
+    "author": "Throwawayh89",
+    "created": "2024-01-30T11:02:58Z",
+    "source": "HackerNews",
+    "query": "AI impact on careers",
+    "topComments": [
+      {
+        "text": "I feel that the main value of bootcamps is the networking aspect, meeting folk that could help you get into the industry. So in that respect it’s hard to replicate from a fresh state. I would recommend that you try to learn a language on your own anyway, though, if you’re interested. Python is a good choice.I’ll also say that programming is more a mindset than anything. Willingness to learn, try things, fail, and grow. Languages themselves are also tools more than things to dedicate your life to, so pick the one that works best for your problem if it makes sense. So in that respect the wall you mention is perhaps more one the media has built up.",
+        "author": "nusl",
+        "hasReplies": false
+      },
+      {
+        "text": "&gt; I’m entering unemployed with about 6-12 months of living expenses in the bank depending how deep into savings I dug.If the goal is to finish a bootcamp and land your first developer job in that timeframe, yes, it&#x27;s a horrible idea with a very high probability of failure.If you don&#x27;t have expectations of landing a job and you can afford the time and money and you&#x27;ve picked a reputable bootcamp, then it&#x27;s probably fine.",
+        "author": "sk11001",
+        "hasReplies": true
+      },
+      {
+        "text": "I used to teach at a boot camp and it can be really good if you choose the right one. In person full time showed the best results vs online and part time. You can do all the same learning on your own but the bootcamp accelerates the learning and a good one will also help you with a job with networking and interview prep.",
+        "author": "cyberpanther",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: Career change at 22",
+    "url": "https://news.ycombinator.com/item?id=15730308",
+    "hnUrl": "https://news.ycombinator.com/item?id=15730308",
+    "points": 44,
+    "numComments": 61,
+    "author": "nativelukas",
+    "created": "2017-11-18T19:41:46Z",
+    "source": "HackerNews",
+    "query": "best certifications for career change",
+    "topComments": [
+      {
+        "text": "Wow, you seem almost a clone of me. Major reason why I can&#x27;t change is, that I didn&#x27;t study well enough in high school to make it in med school, which bothers me, and I&#x27;m a little older. You&#x27;re 22, I&#x27;d say go for it. What can you lose? You&#x27;ve already opened a road, and it will stay open even if you choose to change your mind back",
+        "author": "asdojasdosadsa",
+        "hasReplies": false
+      },
+      {
+        "text": "Your description of your career sounds very different from my career in software development - I don&#x27;t touch the web, things are methodical, I spend most of my time communicating instead of coding, etc. Why don&#x27;t you explore other specialties of your current career first?",
+        "author": "geofft",
+        "hasReplies": false
+      },
+      {
+        "text": "&gt;What I am thinkin about is career change to medicine.If your true passion is health care, all the prelude about programmers becoming blue-collar or how they look awkward is irrelevant and just muddles the decision process.If you want to use forums for feedback on your question, go to the pre-med and medical school forums.  Also ask working doctors if they&#x27;re happy with their career decision.  Is their motivation and disposition similar to yours? Is filling out endless insurance paperwork for reimbursements overwhelming their desire to practice medicine?  Is private practice or hospital staff better?   Etc. etc.",
+        "author": "jasode",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Elite MBAs are no Longer Relevant",
+    "url": "https://news.ycombinator.com/item?id=28798440",
+    "hnUrl": "https://news.ycombinator.com/item?id=28798440",
+    "points": 87,
+    "numComments": 77,
+    "author": "digitcatphd",
+    "created": "2021-10-08T12:29:36Z",
+    "source": "HackerNews",
+    "query": "MBA worth it",
+    "topComments": [
+      {
+        "text": "Can you provide some evidence for your theory? For example, compare the ratio of compensation for MBAs to experienced non-MBAs over time. Over the timespan of your theory, does the MBA premium % decrease, increase, or stay the same?(Pay isn’t always a great proxy for relevance, but it is for MBAs and employers.)",
+        "author": "troydavis",
+        "hasReplies": true
+      },
+      {
+        "text": "Purely anecdotal but folks I know who paused careers or did part-time programs to get MBAs ended up with the same jobs as before. One in particular went to a top 3 program and explicitly regretted it because his peer ended up being promoted to an executive level just by staying in their job those two years.",
+        "author": "tootie",
+        "hasReplies": true
+      },
+      {
+        "text": "I like to say that an MBA are the things you learn along the way about business -- and those things are most efficient to learn &quot;on the job&quot; with a good mentor and some reading -- not in academia.",
+        "author": "outside1234",
+        "hasReplies": false
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: MBA if I want to run a business one day?",
+    "url": "https://news.ycombinator.com/item?id=32266359",
+    "hnUrl": "https://news.ycombinator.com/item?id=32266359",
+    "points": 26,
+    "numComments": 38,
+    "author": "volkk",
+    "created": "2022-07-28T16:13:55Z",
+    "source": "HackerNews",
+    "query": "MBA worth it",
+    "topComments": [
+      {
+        "text": "Nobody I know running a business has an MBA. The one or two people I do know with an MBA are reviled by their staff and doing a mediocre job.Take this as anecdotal feedback but an MBA really isn’t necessary, and can potentially work against you.you would do well to spend a few months &#x2F; years working in a small &#x2F; medium business. The hands on experience is 1000x more valuable than anything you’ll learn in an MBA program.",
+        "author": "sn0w_crash",
+        "hasReplies": false
+      },
+      {
+        "text": "I have an MBA.My opinion: MBAs teach you how to be middle managers.But it could still be useful for exposing you in a structured way AND exposing you to potential cofounders.",
+        "author": "ckluis",
+        "hasReplies": false
+      },
+      {
+        "text": "I have a joke that I use all the time. &quot;I don&#x27;t do MBA. I hire MBAs&quot;. If you want to run a business, MBA nas nothing to do with it. Go start a business and while you try to run it, you will learn things that will be your MBA.Running the business IS the MBA. Nothing else.MBA degrees are nice to get in consulting or other areas with top employers. Perhaps you will meet a few great people as well if you go to the top ones. But that&#x27;s it.If you want to entrepreneur, entrepreneur. Everything else is just feel good stuff.PS: I run a business for 8+ years with no MBA. I do have a Bachelors in CS but that&#x27;s it. Not even a Masters in anything.",
+        "author": "codegeek",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Launch HN: Palus Finance (YC W26): Better yields on idle cash for startups, SMBs",
+    "url": "https://news.ycombinator.com/item?id=47278980",
+    "hnUrl": "https://news.ycombinator.com/item?id=47278980",
+    "points": 62,
+    "numComments": 92,
+    "author": "sam_palus",
+    "created": "2026-03-06T18:26:21Z",
+    "source": "HackerNews",
+    "query": "MBA worth it",
+    "topComments": [
+      {
+        "text": "This would be a really nice product to start ups outside the US tech belt. Hubris of treading water in longterm a-series SUs elsewhere, this could be a viable solution if accessible.",
+        "author": "_hugerobots_",
+        "hasReplies": true
+      },
+      {
+        "text": "I spent time looking into this a couple years ago as a startup founder with this problem. We are in the finance space so I saw how bad the treasury options were with our bank, given their fee cut versus plain T-bonds at the time. I looked into which brokerages allowed us to setup self-directed accounts (many banks don&#x27;t offer that for businesses at all). I found the &quot;correct&quot; approach. But then there would be more paperwork and back and forth to set up that new account, then manage transferring money around when we needed it, logging into a different system. On a ski trip a friend in finance told me &quot;you&#x27;re being dumb, if your bank offers you a treasury plan with a one click button, even if it&#x27;s not perfect, click that button now!&quot; So I did.Then, the benefit of saving 1-2% extra versus spending my time trying to actually running the business and doing things with our money in the real world, has meant I have never looked back. 1-2% on millions of doll",
+        "author": "mushufasa",
+        "hasReplies": true
+      },
+      {
+        "text": "Is this available for Non Profits?I&#x27;ve had an easy time setting up treasury accounts with Rho &amp; Mercury for 2 co&#x27;s, but the latter gave me a no-go on an account for a non profit.",
+        "author": "hahahacorn",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: How did you take your freelance web development biz to the next level?",
+    "url": "https://news.ycombinator.com/item?id=7175352",
+    "hnUrl": "https://news.ycombinator.com/item?id=7175352",
+    "points": 21,
+    "numComments": 7,
+    "author": "EMRo",
+    "created": "2014-02-04T03:38:43Z",
+    "source": "HackerNews",
+    "query": "freelance vs full time"
+  },
+  {
+    "title": "Show HN: I made an all-in-one desktop app with a no-BS approach to get work done",
+    "url": "https://news.ycombinator.com/item?id=37914672",
+    "hnUrl": "https://news.ycombinator.com/item?id=37914672",
+    "points": 206,
+    "numComments": 154,
+    "author": "daniel_sushil",
+    "created": "2023-10-17T13:25:34Z",
+    "source": "HackerNews",
+    "query": "freelance vs full time",
+    "topComments": [
+      {
+        "text": "Some side benefits that come with the app: Since even the most popular desktop apps have a web version, like Slack, Teams, Outlook, etc., you can completely move away from all your desktop apps and your browser and get work done all in one system. It is truly refreshing and eliminates tons of friction in your flow. The advantage of using tools like Slack inside Floutwork is that any link you click on within Slack won&#x27;t bounce you to your browser full of tabs; it will just open as a tab within the Slack app within Floutwork. PWAs that are installed on your OS taskbar as apps have this major flaw — they still bounce you to your browser whenever you click on a link. So, accessing any web app or PWA within Floutwork offers a seamless experience.My previous post: I posted about this product at the beginning of the year, but it was still very rudimentary and I didn&#x27;t give any background on my post. I received a lot of feedback from the HN community and implemented some much-discuss",
+        "author": "daniel_sushil",
+        "hasReplies": false
+      },
+      {
+        "text": "As someone who hates disjointed online services, I&#x27;m intrigued, but the subscription pricing suggests to me there&#x27;s some server-side component to this (sync perhaps?) that I&#x27;m missing. What is the subscription fee paying for? And if there is a server-side component, I&#x27;m very wary of wrapping it around services that contain a hell of a lot of confidential information.",
+        "author": "drcongo",
+        "hasReplies": true
+      },
+      {
+        "text": "Feel free to not answer this just curious as a developer.- native or wrapper eg. Electron&#x2F;Tauri- what is your opinion of app adoption vs. web app- what tool did you use to design? figma&#x2F;paper?I&#x27;m concerned about the name, fl out or flout (openly disregard?) didn&#x27;t know that was a word huh.Pricing might need to be broken out more eg. $5 seems too cheap.",
+        "author": "ge96",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Work Life balance slows careers",
+    "url": "https://www.pathtostaff.com/p/work-life-balance-slows-careers-e9",
+    "hnUrl": "https://news.ycombinator.com/item?id=44638397",
+    "points": 69,
+    "numComments": 116,
+    "author": "elza_1111",
+    "created": "2025-07-21T18:07:40Z",
+    "source": "HackerNews",
+    "query": "work life balance careers",
+    "topComments": [
+      {
+        "text": "Side note: After 10 years living in Europe, I moved back to my home country and started looking for remote jobs in the US. It&#x27;s wild what the US calls “quality of life”. In Europe, I had 6 weeks of vacation per year (from basically day 1) in the US, it’s 2 weeks! In Europe, unlimited sick leave is standard (with varying coverage by insurance); meanwhile, a US company bragging about being a “best place to work” was proudly offering 3 sick days per year! Absolutely crazy.",
+        "author": "kwanbix",
+        "hasReplies": true
+      },
+      {
+        "text": "Slows careers, but I guess &quot;what&#x27;s the point&quot; of rushing through your career? \nYou&#x27;ll likely earn more money, at increased levels of stress, and while giving up on other things life has to offer.I kind of resonated with the author when I was in my twenties, when I was really focused on work and gave up a lot of &#x27;leasure&#x27; time to do so. Nowadays, I think a healthy balance is actually needed to live a full life.Today I&#x27;m a Staff-level IC in my early thirties, and to be honest I sometimes think it would have been nice to linger a bit longer in the other IC levels, to get some more actual programming done versus time spent in meetings &amp; playing a certain amount of politics :)And as the years go on, I feel that I&#x27;m shifting my WLB more and more to the &quot;life&quot; side of the equation.",
+        "author": "Insanity",
+        "hasReplies": true
+      },
+      {
+        "text": "Unless you have the magic ticket, a career is a 30-40 year journey.  Better to take it with others than going it alone, as you’ll need other people when your cachet fades in the second half.  Looking back, I recommend working to live over living to work.  And remember, if you don’t separate yourself from your work you’ll have no “you” when you dial back or become unnecessary or undesirable.And it’s prudent to do “desired things” throughout your life, as your knees might not last or people you want to do things with might not be there.  There’s a risk in deferring things until tomorrow as tomorrow might be as you wish it to be.",
+        "author": "jleyank",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Jeff Bezos: Work-Life Balance Is 'Debilitating Phrase'",
+    "url": "https://www.businessinsider.com/jeff-bezos-work-life-balance-debilitating-phrase-career-circle-2021-7",
+    "hnUrl": "https://news.ycombinator.com/item?id=27721195",
+    "points": 42,
+    "numComments": 58,
+    "author": "hassanahmad",
+    "created": "2021-07-03T12:33:42Z",
+    "source": "HackerNews",
+    "query": "work life balance careers",
+    "topComments": [
+      {
+        "text": "&gt; Bezos said his new hires should stop trying to find &quot;balance&quot; within their professional and personal lives since that implies a strict trade-off between the two. Instead, Bezos envisions a more holistic relationship between work and life outside the office.If those are his views it certainly doesn&#x27;t reflect in Amazon&#x27;s actions. For example why did Amazon first try to get everyone back in the office? It was only after a backlash they allowed for a meager 2 days of work from home.",
+        "author": "jsiepkes",
+        "hasReplies": false
+      },
+      {
+        "text": "Easy to say when you’re there’s no stack ranking for your position. He’s created a super competitive culture that makes his working habits impossible for anyone else at Amazon.",
+        "author": "kleinsch",
+        "hasReplies": false
+      },
+      {
+        "text": "It&#x27;s much easier talk about integrating life and work and shun compartmentalization of work when you see much more direct returns from the output of your work&#x2F;not work, rather than having a fixed salary.",
+        "author": "bsharitt",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Things Hiring Managers Wish You Knew",
+    "url": "http://finance.yahoo.com/career-work/article/109835/21-things-hiring-managers-wish-you-knew?mod=career-worklife_balance",
+    "hnUrl": "https://news.ycombinator.com/item?id=1446369",
+    "points": 22,
+    "numComments": 32,
+    "author": "edw519",
+    "created": "2010-06-20T12:25:04Z",
+    "source": "HackerNews",
+    "query": "work life balance careers",
+    "topComments": [
+      {
+        "text": "Should be \"Things Hiring Managers Wish You Would Do Because It Would Make Their Jobs Easier, But Many Of Which May Hurt Your Chances Relative To People Who Don't Do Them.\"",
+        "author": "brazzy",
+        "hasReplies": true
+      },
+      {
+        "text": "A very good set of recommendations.  Here's a few of the less usual ones:\"You should address being overqualified in your cover letter.\"\"We may check references beyond your list.\"Some of us actually care about candidates.\"For the latter the author decries firms that don't respond to candidates they pass over.  He's right that it's inexcusable and that a few do care enough.  Unfortunately it's very few, but there are some.",
+        "author": "hga",
+        "hasReplies": false
+      },
+      {
+        "text": "A couple disagreements:We'd like a thank-you note right away.Honestly, this level of formality would drive me bonkers and I would be more likely to think of the candidate as an overachiever typeReference-checkers can call anyone you've worked for or who might know you, even if they aren't on the list you provideThis just seems rude and invasive.  I'm all for due diligence but if you don't want to be stalked by your candidates, don't stalk them backAnd I want to emphasize this one, as someone who has had multiple candidates come in over a half an hour early in the last month:You can be too early to the interview.Really.  If you're that early, go for a walk. Find a coffee shop. Anything but interrupting the pre-arranged schedule and making everyone in the office uncomfortable while you sit in the waiting area that no one ever uses.",
+        "author": "jbarciauskas",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Young Doctors Want Work-Life Balance. Older Doctors Say That's Not the Job",
+    "url": "https://www.wsj.com/lifestyle/careers/young-doctors-want-work-life-balance-older-doctors-say-thats-not-the-job-6cb37d48",
+    "hnUrl": "https://news.ycombinator.com/item?id=42034707",
+    "points": 38,
+    "numComments": 48,
+    "author": "JumpCrisscross",
+    "created": "2024-11-03T17:56:53Z",
+    "source": "HackerNews",
+    "query": "work life balance careers",
+    "topComments": [
+      {
+        "text": "One use of an AI tool potentially would be to try to correlate the angle that a publication would benefit from by pushing a particular viewpoint. In other words, I want to read not the article, but what WSJ gets from it. That’ll tell me if the article is worth reading at all more than a summary of it.",
+        "author": "stonethrowaway",
+        "hasReplies": true
+      },
+      {
+        "text": "I mean, it _could_ be the job. But a lot of older doctors feel like the younger generation needs to go through the same struggles and hardships they did. This reminds me of something I occasionally see in my parenting of my kids - the desire I have for my kids to do things that validate _my own_ childhood experience.",
+        "author": "daniel-thompson",
+        "hasReplies": true
+      },
+      {
+        "text": "I have two nieces who are Canadian but have completed medical school in Australia. They are currently in the equivalent of internship, heading for residency.They work 40-hour weeks (compared to 60-90 in Canada), and are paid overtime when they go over. Their salaries are $100,000&#x2F;year+ (equivalent to USD $66,000) which seems to be fine for them and more than they would receive in Canada.The post-medical-school phase seems to go on longer (minimum 5 years) than in Canada, which may account for some of the difference.",
+        "author": "gramie",
+        "hasReplies": true
+      }
+    ]
+  },
+  {
+    "title": "Ask HN: How to optimize your career for happiness?",
+    "url": "https://news.ycombinator.com/item?id=29614095",
+    "hnUrl": "https://news.ycombinator.com/item?id=29614095",
+    "points": 423,
+    "numComments": 321,
+    "author": "__all__",
+    "created": "2021-12-19T14:15:24Z",
+    "source": "HackerNews",
+    "query": "work life balance careers",
+    "topComments": [
+      {
+        "text": "I have given advice just for this case here: https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=25509941So far it is working out pretty well for me. To be quite honest, you don&#x27;t have to have passion for your job to perform well enough in accord with your salary and incentives. I&#x27;d say even more, overworking oneself is a &quot;grave sin&quot; against your future.One&#x27;s time and intelligence are better spent optimizing one&#x27;s family size (in upwards direction) and health.&gt; I thought I was already doing that but looks like I&#x27;ve been doing something wrong with my professional career, and there is a path more equilibrated and focused on happiness I should follow.In addition to my advice, I recommend you to read this thread https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29581125Several things should be pretty evident by this point:1. Software engineering sub-niches are grossly different in pay&#x2F;effort ratio, overtime expectations and ageism prevalence2. O",
+        "author": "sinenomine",
+        "hasReplies": true
+      },
+      {
+        "text": "I&#x27;ve optimized for different things at different parts of my career. I&#x27;ve made FAANG level salaries working 7 days a week as a consultant. It was horrible.I&#x27;m currently making a little less than you but working 20 hour weeks. It&#x27;s amazing, and I spend the rest of my time usually working on side projects I hope to monetize one day. Since September I&#x27;ve just been traveling with my wife.I&#x27;m very happy doing that. So my suggestion is find part time work even if it means a pay cut off you want to optimize for personal satisfaction.",
+        "author": "eloff",
+        "hasReplies": true
+      },
+      {
+        "text": "I would suggest reading ‘so good they can’t ignore you’ very inspiring about building a career that makes you happy.Basically look for\n- autonomy\n- meaningful goal\n- good coworkers",
+        "author": "whiddershins",
+        "hasReplies": false
+      }
+    ]
+  }
+]
