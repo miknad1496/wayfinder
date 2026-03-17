@@ -1919,6 +1919,8 @@ function userPlan() {
 }
 
 function canAccess(feature) {
+  // Admin always has full access
+  if (currentUser?.isAdmin) return true;
   const plan = userPlan();
   const access = {
     admissions_timeline: ['pro', 'elite'],

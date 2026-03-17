@@ -193,8 +193,8 @@ router.post('/purchase-essays', checkoutLimiter, async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    // Essay reviewer requires pro or elite plan
-    if (!['pro', 'elite'].includes(user.plan)) {
+    // Essay reviewer requires pro or elite plan (admins bypass)
+    if (!user.isAdmin && !['pro', 'elite'].includes(user.plan)) {
       return res.status(403).json({ error: 'Essay reviewer requires an Admissions Coach plan.' });
     }
 

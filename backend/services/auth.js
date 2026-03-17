@@ -877,6 +877,10 @@ export async function useEssayCredit(token) {
       const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
       const user = JSON.parse(raw);
       if (user.token === token) {
+        // Admins and VIPs get unlimited credits — never deduct
+        if (isAdmin(user.email) || isVIP(user.email)) {
+          return { allowed: true, remaining: 999 };
+        }
         const remaining = user.essayReviewsRemaining || 0;
         if (remaining <= 0) {
           return { allowed: false, remaining: 0 };
