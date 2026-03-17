@@ -130,9 +130,19 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
 
     const stripe = getStripe();
 
-    // Get or create Stripe customer
+    // Get or create Stripe customer (with stale ID recovery)
     const fullUser = await findUserByToken(token);
     let customerId = fullUser?.stripeCustomerId;
+
+    if (customerId) {
+      // Verify the stored customer still exists in Stripe (handles test→live mode switch)
+      try {
+        await stripe.customers.retrieve(customerId);
+      } catch (verifyErr) {
+        console.warn(`Stale Stripe customer ID ${customerId} - creating new customer`);
+        customerId = null;
+      }
+    }
 
     if (!customerId) {
       const customer = await stripe.customers.create({
@@ -200,9 +210,18 @@ router.post('/purchase-essays', checkoutLimiter, async (req, res) => {
 
     const stripe = getStripe();
 
-    // Get or create Stripe customer
+    // Get or create Stripe customer (with stale ID recovery)
     const fullUser = await findUserByToken(token);
     let customerId = fullUser?.stripeCustomerId;
+
+    if (customerId) {
+      try {
+        await stripe.customers.retrieve(customerId);
+      } catch (verifyErr) {
+        console.warn(`Stale Stripe customer ID ${customerId} - creating new customer`);
+        customerId = null;
+      }
+    }
 
     if (!customerId) {
       const customer = await stripe.customers.create({
