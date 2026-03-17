@@ -1136,6 +1136,29 @@ function setupInviteListeners() {
     invSendBtn.addEventListener('click', sendInvite);
   }
 
+  // Event delegation for invite actions (delete, copy link) — attached to settings modal
+  // This is CSP-safe: no inline onclick needed
+  const settingsModal = $('settingsModal');
+  if (settingsModal) {
+    settingsModal.addEventListener('click', (e) => {
+      const deleteBtn = e.target.closest('[data-delete-code]');
+      if (deleteBtn) {
+        e.stopPropagation(); // Don't close modal
+        handleDeleteInvite(deleteBtn.dataset.deleteCode);
+        return;
+      }
+      const copyBtn = e.target.closest('[data-copy-link]');
+      if (copyBtn) {
+        e.stopPropagation(); // Don't close modal
+        navigator.clipboard.writeText(copyBtn.dataset.copyLink).then(() => {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy link'; }, 2000);
+        });
+        return;
+      }
+    });
+  }
+
   // Splash page buttons
   const splashJoin = $('splashJoinBtn');
   if (splashJoin) splashJoin.addEventListener('click', () => openAuthModal('signup'));
