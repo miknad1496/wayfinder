@@ -42,7 +42,7 @@ router.get('/credits', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    if (!canAccess(user.plan, 'essay_reviewer')) {
+    if (!canAccess(user, 'essay_reviewer')) {
       return res.json({
         credits: 0,
         available: false,
@@ -72,7 +72,7 @@ router.post('/review', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    if (!canAccess(user.plan, 'essay_reviewer')) {
+    if (!canAccess(user, 'essay_reviewer')) {
       return res.status(403).json({
         error: 'Essay reviewer requires an Admissions Coach Pro or Elite plan.',
         _requiresUpgrade: true

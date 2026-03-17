@@ -73,8 +73,8 @@ router.get('/search', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    const hasFull = canAccess(user.plan, 'scholarships');
-    const hasPreview = canAccess(user.plan, 'scholarships_preview') || hasFull;
+    const hasFull = canAccess(user, 'scholarships');
+    const hasPreview = canAccess(user, 'scholarships_preview') || hasFull;
 
     if (!hasPreview) {
       return res.status(403).json({
@@ -134,7 +134,7 @@ router.get('/featured', async (req, res) => {
       .sort((a, b) => (b.amount?.max || 0) - (a.amount?.max || 0))
       .slice(0, 10);
 
-    const hasFull = user && canAccess(user.plan, 'scholarships');
+    const hasFull = user && canAccess(user, 'scholarships');
     res.json({
       featured: hasFull ? featured : featured.slice(0, 3).map(previewScholarship),
       _fullAccess: hasFull || false

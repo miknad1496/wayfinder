@@ -81,8 +81,8 @@ router.get('/search', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    const hasFull = canAccess(user.plan, 'internships_full');
-    const hasPreview = canAccess(user.plan, 'internships_preview') || hasFull;
+    const hasFull = canAccess(user, 'internships_full');
+    const hasPreview = canAccess(user, 'internships_preview') || hasFull;
 
     if (!hasPreview) {
       return res.status(403).json({
@@ -156,7 +156,7 @@ router.get('/featured', async (req, res) => {
       .sort((a, b) => a.deadline.localeCompare(b.deadline))
       .slice(0, 10);
 
-    const hasFull = canAccess(user.plan, 'internships_full');
+    const hasFull = canAccess(user, 'internships_full');
     res.json({
       featured: hasFull ? featured : featured.slice(0, 3).map(previewInternship),
       _fullAccess: hasFull

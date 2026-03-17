@@ -87,7 +87,7 @@ router.post('/profile', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    if (!canAccess(user.plan, 'admissions_timeline')) {
+    if (!canAccess(user, 'admissions_timeline')) {
       return res.status(403).json({
         error: 'Admissions Timeline requires Pro or Elite plan.',
         _requiresUpgrade: true
@@ -122,7 +122,7 @@ router.get('/profile', async (req, res) => {
 
     res.json({
       admissionsProfile: user.admissionsProfile || null,
-      hasAccess: canAccess(user.plan, 'admissions_timeline')
+      hasAccess: canAccess(user, 'admissions_timeline')
     });
   } catch (err) {
     console.error('Timeline profile fetch error:', err);
@@ -137,7 +137,7 @@ router.get('/events', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    if (!canAccess(user.plan, 'admissions_timeline')) {
+    if (!canAccess(user, 'admissions_timeline')) {
       return res.status(403).json({
         error: 'Admissions Timeline requires Pro or Elite plan.',
         _requiresUpgrade: true
@@ -226,7 +226,7 @@ router.get('/upcoming', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    if (!canAccess(user.plan, 'admissions_timeline')) {
+    if (!canAccess(user, 'admissions_timeline')) {
       return res.json({ events: [], hasAccess: false });
     }
 

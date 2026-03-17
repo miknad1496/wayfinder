@@ -76,8 +76,8 @@ router.get('/search', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    const hasFull = canAccess(user.plan, 'programs');
-    const hasPreview = canAccess(user.plan, 'programs_preview') || hasFull;
+    const hasFull = canAccess(user, 'programs');
+    const hasPreview = canAccess(user, 'programs_preview') || hasFull;
 
     if (!hasPreview) {
       return res.status(403).json({
@@ -139,7 +139,7 @@ router.get('/featured', async (req, res) => {
       .filter(p => p.admissionsImpact === 'very_high' || p.admissionsImpact === 'high')
       .slice(0, 10);
 
-    const hasFull = user && canAccess(user.plan, 'programs');
+    const hasFull = user && canAccess(user, 'programs');
     res.json({
       featured: hasFull ? featured : featured.slice(0, 3).map(previewProgram),
       _fullAccess: hasFull || false
@@ -166,7 +166,7 @@ router.get('/non-traditional', async (req, res) => {
       p.tags?.some(t => ['startup', 'apprenticeship', 'gap-year', 'open-source', 'entrepreneurship'].includes(t))
     );
 
-    const hasFull = canAccess(user.plan, 'programs');
+    const hasFull = canAccess(user, 'programs');
     res.json({
       programs: hasFull ? nonTrad : nonTrad.slice(0, 3).map(previewProgram),
       total: nonTrad.length,
