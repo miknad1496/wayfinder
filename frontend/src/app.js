@@ -1,13 +1,14 @@
 /**
- * Wayfinder Chat Application — v2
+ * Wayfinder Chat Application — v2.0
  *
  * Claude AI-style interface with:
- * - Collapsible sidebar with chat history
+ * - Collapsible sidebar with chat history + tool buttons
  * - Search across chats
  * - Copy/paste on messages
  * - Settings (general, account, privacy)
- * - Upgrade plans (Free, Premium, Pro)
- * - Time-of-day greeting
+ * - Upgrade plans: Free / Pro ($25) / Elite ($50)
+ * - Admissions tools: Timeline, Essay Reviewer, Internships, Scholarships, Programs
+ * - Essay credits add-on
  * - Wayfinder Engine toggle
  * - User profiles
  */
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSettingsListeners();
   setupUpgradeListeners();
   setupInviteListeners();
+  setupToolListeners();
   setupWelcomeChips();
   updateGreeting();
   checkAuth();
@@ -576,6 +578,17 @@ function updateEngineUI() {
   } else {
     engineToggle.classList.remove('disabled');
   }
+  // Show Opus 4.6 badge for paid tiers
+  const modelBadge = $('engineModelBadge');
+  if (modelBadge) {
+    const plan = userPlan();
+    if (plan === 'pro' || plan === 'elite') {
+      modelBadge.style.display = 'inline-flex';
+      modelBadge.textContent = 'Opus 4.6';
+    } else {
+      modelBadge.style.display = 'none';
+    }
+  }
 }
 
 async function fetchEngineUsage() {
@@ -782,14 +795,23 @@ async function deleteAccount() {
 // ========================
 // Upgrade / Plans
 // ========================
+// Plan display names — backend uses pro/elite internally
+const PLAN_DISPLAY = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
+
 function setupUpgradeListeners() {
   $('upgradeModalClose').addEventListener('click', () => $('upgradeModal').style.display = 'none');
   $('upgradeModal').addEventListener('click', (e) => {
     if (e.target === $('upgradeModal')) $('upgradeModal').style.display = 'none';
   });
 
-  $('planPremiumBtn').addEventListener('click', () => handlePlanUpgrade('premium'));
-  $('planProBtn').addEventListener('click', () => handlePlanUpgrade('pro'));
+  // Backend still expects 'pro'/'elite' — the display name is different
+  $('planCoachBtn').addEventListener('click', () => handlePlanUpgrade('pro'));
+  $('planConsultantBtn').addEventListener('click', () => handlePlanUpgrade('elite'));
+
+  // Essay credit packs
+  $('essayPack5Btn').addEventListener('click', () => handleEssayPurchase('starter'));
+  $('essayPack10Btn').addEventListener('click', () => handleEssayPurchase('standard'));
+  $('essayPack20Btn').addEventListener('click', () => handleEssayPurchase('bulk'));
 }
 
 function openUpgrade() {
@@ -798,20 +820,40 @@ function openUpgrade() {
     return;
   }
 
-  // Update button states based on current plan
-  const plan = currentUser.plan || 'free';
+  // Normalize legacy plans
+  const plan = normalizePlan(currentUser.plan || 'free');
+
+  // Free button
   $('planFreeBtn').textContent = plan === 'free' ? 'Current Plan' : 'Free Plan';
   $('planFreeBtn').className = plan === 'free' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
 
-  $('planPremiumBtn').textContent = plan === 'premium' ? 'Current Plan' : 'Upgrade to Premium';
-  $('planPremiumBtn').className = plan === 'premium' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
-  $('planPremiumBtn').disabled = plan === 'premium';
+  // Coach button (backend: pro)
+  const isCoachOrHigher = plan === 'pro' || plan === 'elite';
+  $('planCoachBtn').textContent = plan === 'pro' ? 'Current Plan' : (plan === 'elite' ? 'Included' : 'Upgrade to Coach');
+  $('planCoachBtn').className = isCoachOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planCoachBtn').disabled = isCoachOrHigher;
 
-  $('planProBtn').textContent = plan === 'pro' ? 'Current Plan' : 'Upgrade to Pro';
-  $('planProBtn').className = plan === 'pro' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
-  $('planProBtn').disabled = plan === 'pro';
+  // Consultant button (backend: elite)
+  $('planConsultantBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade to Consultant';
+  $('planConsultantBtn').className = plan === 'elite' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planConsultantBtn').disabled = plan === 'elite';
+
+  // Essay credits visibility — available for Coach (pro) and Consultant (elite)
+  const essaySection = document.querySelector('.essay-addon-section');
+  if (essaySection) {
+    essaySection.style.display = (plan === 'pro' || plan === 'elite') ? 'block' : 'none';
+  }
 
   $('upgradeModal').style.display = 'flex';
+}
+
+function normalizePlan(plan) {
+  if (plan === 'premium') return 'pro'; // Legacy migration
+  return plan || 'free';
+}
+
+function planDisplayName(plan) {
+  return PLAN_DISPLAY[normalizePlan(plan)] || 'Career Explorer';
 }
 
 async function handlePlanUpgrade(plan) {
@@ -848,6 +890,31 @@ async function handlePlanUpgrade(plan) {
   } catch (err) {
     alert('Unable to process upgrade right now. Please try again later.');
     console.error('Upgrade error:', err);
+  }
+}
+
+async function handleEssayPurchase(pack) {
+  try {
+    const statusRes = await fetch(`${API_BASE}/stripe/status`);
+    const statusData = await statusRes.json();
+    if (!statusData.configured) {
+      alert('Payments are being set up. Contact support@wayfinderai.org.');
+      return;
+    }
+
+    const res = await fetch(`${API_BASE}/stripe/purchase-essays`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ pack })
+    });
+    const data = await res.json();
+    if (data.error) { alert(data.error); return; }
+    if (data.url) window.location.href = data.url;
+  } catch {
+    alert('Unable to process purchase right now.');
   }
 }
 
@@ -1055,9 +1122,10 @@ function updateAuthUI() {
 function checkUpgradeReturn() {
   const params = new URLSearchParams(window.location.search);
   if (params.get('upgrade') === 'success') {
-    const plan = params.get('plan') || 'premium';
+    const plan = normalizePlan(params.get('plan') || 'pro');
+    const displayName = planDisplayName(plan);
     setTimeout(() => {
-      alert(`Welcome to Wayfinder ${capitalize(plan)}! Your plan has been upgraded. Enjoy your additional Engine queries.`);
+      alert(`Welcome to Wayfinder ${displayName}! Your plan has been upgraded. Enjoy your new tools and features.`);
     }, 1000);
     // Clean URL
     window.history.replaceState({}, '', window.location.pathname);
@@ -1463,7 +1531,7 @@ let demographicsSchoolsCache = null;
 
 function openDemographics() {
   if (!currentUser) {
-    openAuth('login');
+    openAuthModal('login');
     return;
   }
   $('demographicsModal').style.display = 'flex';
@@ -1668,4 +1736,566 @@ function debounce(fn, delay) {
     clearTimeout(timer);
     timer = setTimeout(() => fn.apply(this, args), delay);
   };
+}
+
+// ========================
+// Tool Listeners (v2)
+// ========================
+function setupToolListeners() {
+  // Sidebar tool buttons
+  $('sidebarTimeline').addEventListener('click', openTimeline);
+  $('sidebarEssays').addEventListener('click', openEssays);
+  $('sidebarInternships').addEventListener('click', openInternships);
+  $('sidebarScholarships').addEventListener('click', openScholarships);
+  $('sidebarPrograms').addEventListener('click', openPrograms);
+
+  // Modal close handlers
+  setupModalClose('timelineModal', 'timelineModalClose');
+  setupModalClose('essaysModal', 'essaysModalClose');
+  setupModalClose('internshipsModal', 'internshipsModalClose');
+  setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
+  setupModalClose('programsModal', 'programsModalClose');
+
+  // Upgrade gate buttons
+  const upgradeGateBtns = ['timelineUpgradeBtn', 'essaysUpgradeBtn', 'internshipsUpgradeBtn', 'scholarshipsUpgradeBtn', 'programsUpgradeBtn'];
+  for (const id of upgradeGateBtns) {
+    const el = $(id);
+    if (el) el.addEventListener('click', () => {
+      document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+      openUpgrade();
+    });
+  }
+
+  // Timeline
+  if ($('timelineSaveProfile')) $('timelineSaveProfile').addEventListener('click', saveTimelineProfile);
+
+  // Essays
+  if ($('essaySubmitBtn')) $('essaySubmitBtn').addEventListener('click', submitEssayReview);
+  if ($('essayBuyMoreBtn')) $('essayBuyMoreBtn').addEventListener('click', () => {
+    $('essaysModal').style.display = 'none';
+    openUpgrade();
+  });
+  if ($('essayText')) {
+    $('essayText').addEventListener('input', () => {
+      $('essayCharCount').textContent = `${$('essayText').value.length} / 15,000 characters`;
+    });
+  }
+
+  // Internships search
+  if ($('internshipSearchBtn')) $('internshipSearchBtn').addEventListener('click', searchInternships);
+
+  // Scholarships search
+  if ($('scholarshipSearchBtn')) $('scholarshipSearchBtn').addEventListener('click', searchScholarships);
+
+  // Programs search
+  if ($('programSearchBtn')) $('programSearchBtn').addEventListener('click', searchPrograms);
+}
+
+function setupModalClose(modalId, closeId) {
+  $(closeId).addEventListener('click', () => $(modalId).style.display = 'none');
+  $(modalId).addEventListener('click', (e) => {
+    if (e.target === $(modalId)) $(modalId).style.display = 'none';
+  });
+}
+
+function userPlan() {
+  return normalizePlan(currentUser?.plan);
+}
+
+function canAccess(feature) {
+  const plan = userPlan();
+  const access = {
+    admissions_timeline: ['pro', 'elite'],
+    essay_reviewer: ['pro', 'elite'],
+    internships_preview: ['pro'],
+    internships_full: ['elite'],
+    scholarships_preview: ['pro'],
+    scholarships: ['elite'],
+    programs_preview: ['pro'],
+    programs: ['elite'],
+  };
+  return (access[feature] || []).includes(plan);
+}
+
+// ========================
+// Timeline Tool
+// ========================
+function openTimeline() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('timelineModal').style.display = 'flex';
+
+  if (!canAccess('admissions_timeline')) {
+    $('timelineSetup').style.display = 'none';
+    $('timelineContent').style.display = 'none';
+    $('timelineLoading').style.display = 'none';
+    $('timelineRequiresUpgrade').style.display = 'block';
+    return;
+  }
+
+  $('timelineRequiresUpgrade').style.display = 'none';
+  loadTimelineProfile();
+}
+
+async function loadTimelineProfile() {
+  $('timelineLoading').style.display = 'flex';
+  $('timelineSetup').style.display = 'none';
+  $('timelineContent').style.display = 'none';
+
+  try {
+    const res = await fetch(`${API_BASE}/timeline/profile`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+
+    if (data.profile?.graduationYear) {
+      // Has profile, load events
+      loadTimelineEvents();
+    } else {
+      $('timelineLoading').style.display = 'none';
+      $('timelineSetup').style.display = 'block';
+    }
+  } catch {
+    $('timelineLoading').style.display = 'none';
+    $('timelineSetup').style.display = 'block';
+  }
+}
+
+async function saveTimelineProfile() {
+  const gradYear = $('timelineGradYear').value;
+  const schoolsRaw = $('timelineSchools').value;
+  const majorsRaw = $('timelineMajors').value;
+  const state = $('timelineState').value.trim().toUpperCase();
+
+  if (!gradYear) { showMsg('timelineSetupMsg', 'Please select a graduation year.', '#991b1b'); return; }
+
+  const targetSchools = schoolsRaw.split(',').map(s => s.trim()).filter(Boolean).map(name => ({ name }));
+  const intendedMajors = majorsRaw.split(',').map(m => m.trim()).filter(Boolean);
+
+  try {
+    const res = await fetch(`${API_BASE}/timeline/profile`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      body: JSON.stringify({ graduationYear: parseInt(gradYear), targetSchools, intendedMajors, state })
+    });
+    const data = await res.json();
+    if (data.error) { showMsg('timelineSetupMsg', data.error, '#991b1b'); return; }
+
+    showMsg('timelineSetupMsg', 'Profile saved!', '#059669');
+    loadTimelineEvents();
+  } catch {
+    showMsg('timelineSetupMsg', 'Failed to save profile.', '#991b1b');
+  }
+}
+
+async function loadTimelineEvents() {
+  $('timelineLoading').style.display = 'flex';
+  $('timelineSetup').style.display = 'none';
+  $('timelineContent').style.display = 'none';
+
+  try {
+    const [eventsRes, upcomingRes] = await Promise.all([
+      fetch(`${API_BASE}/timeline/events`, { headers: { 'Authorization': `Bearer ${authToken}` } }),
+      fetch(`${API_BASE}/timeline/upcoming`, { headers: { 'Authorization': `Bearer ${authToken}` } })
+    ]);
+    const eventsData = await eventsRes.json();
+    const upcomingData = await upcomingRes.json();
+
+    $('timelineLoading').style.display = 'none';
+    $('timelineContent').style.display = 'block';
+
+    renderTimelineUpcoming(upcomingData.events || []);
+    renderTimelineEvents(eventsData.events || []);
+  } catch {
+    $('timelineLoading').style.display = 'none';
+    $('timelineContent').style.display = 'block';
+    $('timelineEvents').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load timeline events.</p>';
+  }
+}
+
+function renderTimelineUpcoming(events) {
+  const el = $('timelineUpcoming');
+  if (!events.length) { el.innerHTML = '<p style="color:#94a3b8;padding:12px;">No upcoming events in the next 14 days.</p>'; return; }
+
+  el.innerHTML = `<div class="upcoming-header">Coming Up</div>` +
+    events.map(e => {
+      const urgencyClass = e.daysUntil <= 1 ? 'urgent' : (e.daysUntil <= 3 ? 'soon' : '');
+      return `<div class="upcoming-item ${urgencyClass}">
+        <div class="upcoming-date">${e.date}</div>
+        <div class="upcoming-label">${escapeHtml(e.label)}</div>
+        <div class="upcoming-days">${e.daysUntil === 0 ? 'Today' : `${e.daysUntil}d`}</div>
+      </div>`;
+    }).join('');
+}
+
+function renderTimelineEvents(events) {
+  const el = $('timelineEvents');
+  if (!events.length) { el.innerHTML = '<p style="color:#94a3b8;text-align:center;">No timeline events yet. Set up your profile to get started.</p>'; return; }
+
+  // Group by month
+  const grouped = {};
+  for (const e of events) {
+    const month = e.date ? e.date.slice(0, 7) : 'undated';
+    if (!grouped[month]) grouped[month] = [];
+    grouped[month].push(e);
+  }
+
+  let html = '';
+  for (const [month, items] of Object.entries(grouped)) {
+    const monthLabel = month === 'undated' ? 'Ongoing' : new Date(month + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+    html += `<div class="timeline-month">
+      <div class="timeline-month-label">${monthLabel}</div>
+      ${items.map(e => `<div class="timeline-event ${e.category || ''}">
+        <div class="timeline-event-dot"></div>
+        <div class="timeline-event-body">
+          <div class="timeline-event-label">${escapeHtml(e.label)}</div>
+          <div class="timeline-event-date">${e.date || ''} ${e.source ? `&middot; ${e.source}` : ''}</div>
+        </div>
+      </div>`).join('')}
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+// ========================
+// Essay Reviewer Tool
+// ========================
+function openEssays() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('essaysModal').style.display = 'flex';
+
+  // Always show the essay form so free users can see what it does
+  $('essaysContent').style.display = 'block';
+
+  if (!canAccess('essay_reviewer')) {
+    // Free users see the form but can't submit — show upgrade nudge below
+    $('essaySubmitBtn').disabled = true;
+    $('essaySubmitBtn').textContent = 'Upgrade to Coach for Essay Reviews';
+    $('essayCreditsBar').style.display = 'none';
+    $('essaysRequiresUpgrade').style.display = 'block';
+  } else {
+    $('essaySubmitBtn').disabled = false;
+    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+    $('essayCreditsBar').style.display = 'flex';
+    $('essaysRequiresUpgrade').style.display = 'none';
+    loadEssayCredits();
+  }
+}
+
+async function loadEssayCredits() {
+  try {
+    const res = await fetch(`${API_BASE}/essays/credits`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    $('essayCreditsCount').textContent = `${data.remaining || 0} reviews remaining`;
+    $('essaySubmitBtn').disabled = (data.remaining || 0) === 0;
+  } catch {}
+}
+
+async function submitEssayReview() {
+  const essayText = $('essayText').value.trim();
+  const essayType = $('essayType').value;
+  const targetSchool = $('essayTargetSchool').value.trim();
+  const prompt = $('essayPrompt').value.trim();
+
+  if (essayText.length < 50) { showMsg('essaySubmitMsg', 'Essay must be at least 50 characters.', '#991b1b'); return; }
+
+  $('essaySubmitBtn').disabled = true;
+  $('essaySubmitBtn').textContent = 'Reviewing...';
+  $('essayReviewResult').style.display = 'none';
+
+  try {
+    const res = await fetch(`${API_BASE}/essays/review`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      body: JSON.stringify({ essayText, essayType, targetSchool, prompt })
+    });
+    const data = await res.json();
+
+    if (data.error) {
+      showMsg('essaySubmitMsg', data.error, '#991b1b');
+      $('essaySubmitBtn').disabled = false;
+      $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+      return;
+    }
+
+    // Show result
+    renderEssayReview(data.review);
+    loadEssayCredits();
+    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+    $('essaySubmitBtn').disabled = false;
+  } catch {
+    showMsg('essaySubmitMsg', 'Failed to submit essay.', '#991b1b');
+    $('essaySubmitBtn').disabled = false;
+    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+  }
+}
+
+function renderEssayReview(review) {
+  const el = $('essayReviewResult');
+  const r = review;
+  const scoreClass = r.overallScore >= 8 ? 'score-high' : (r.overallScore >= 5 ? 'score-mid' : 'score-low');
+
+  let html = `<div class="essay-result-card">
+    <div class="essay-score ${scoreClass}">
+      <div class="essay-score-num">${r.overallScore}</div>
+      <div class="essay-score-label">out of 10</div>
+    </div>`;
+
+  if (r.voiceAssessment) {
+    html += `<div class="essay-voice">
+      <span class="voice-badge ${r.voiceAssessment.authentic ? 'authentic' : 'concern'}">
+        ${r.voiceAssessment.authentic ? 'Authentic voice' : 'Voice concerns'}
+      </span>
+      ${r.voiceAssessment.sounds_like_teenager !== undefined ? `<span class="voice-badge ${r.voiceAssessment.sounds_like_teenager ? 'authentic' : 'concern'}">
+        ${r.voiceAssessment.sounds_like_teenager ? 'Age-appropriate' : 'Sounds too polished'}
+      </span>` : ''}
+    </div>`;
+  }
+
+  if (r.strengths?.length) {
+    html += `<div class="essay-section"><h4>Strengths</h4><ul>${r.strengths.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ul></div>`;
+  }
+
+  if (r.improvements?.length) {
+    html += `<div class="essay-section"><h4>Areas for Improvement</h4><ul>${r.improvements.map(i =>
+      `<li><strong>${escapeHtml(i.area || '')}</strong>: ${escapeHtml(i.suggestion || i)}</li>`
+    ).join('')}</ul></div>`;
+  }
+
+  if (r.structure) {
+    html += `<div class="essay-section"><h4>Structure</h4><p>${escapeHtml(typeof r.structure === 'string' ? r.structure : JSON.stringify(r.structure))}</p></div>`;
+  }
+
+  html += `</div>`;
+  el.innerHTML = html;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ========================
+// Internships Tool
+// ========================
+function openInternships() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('internshipsModal').style.display = 'flex';
+
+  const plan = userPlan();
+  if (plan === 'free') {
+    $('internshipsFilters').style.display = 'none';
+    $('internshipsResults').style.display = 'none';
+    $('internshipsLoading').style.display = 'none';
+    $('internshipsRequiresUpgrade').style.display = 'block';
+    return;
+  }
+
+  $('internshipsRequiresUpgrade').style.display = 'none';
+  $('internshipsFilters').style.display = 'flex';
+  $('internshipsResults').style.display = 'block';
+
+  // Load featured on open
+  searchInternships();
+}
+
+async function searchInternships() {
+  $('internshipsLoading').style.display = 'flex';
+  $('internshipsResults').innerHTML = '';
+
+  const params = new URLSearchParams();
+  if ($('internshipState').value) params.set('state', $('internshipState').value);
+  if ($('internshipField').value) params.set('field', $('internshipField').value);
+  if ($('internshipCost').value === 'paid') params.set('paid', 'true');
+  if ($('internshipSearch').value.trim()) params.set('q', $('internshipSearch').value.trim());
+
+  try {
+    const res = await fetch(`${API_BASE}/internships/search?${params}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    $('internshipsLoading').style.display = 'none';
+    renderToolResults('internshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'internship');
+  } catch {
+    $('internshipsLoading').style.display = 'none';
+    $('internshipsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load internships.</p>';
+  }
+}
+
+// ========================
+// Scholarships Tool
+// ========================
+function openScholarships() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('scholarshipsModal').style.display = 'flex';
+
+  const plan = userPlan();
+  if (plan === 'free') {
+    $('scholarshipsFilters').style.display = 'none';
+    $('scholarshipsResults').style.display = 'none';
+    $('scholarshipsLoading').style.display = 'none';
+    $('scholarshipsRequiresUpgrade').style.display = 'block';
+    return;
+  }
+
+  $('scholarshipsRequiresUpgrade').style.display = 'none';
+  $('scholarshipsFilters').style.display = 'flex';
+  $('scholarshipsResults').style.display = 'block';
+  searchScholarships();
+}
+
+async function searchScholarships() {
+  $('scholarshipsLoading').style.display = 'flex';
+  $('scholarshipsResults').innerHTML = '';
+
+  const params = new URLSearchParams();
+  if ($('scholarshipCategory').value) params.set('category', $('scholarshipCategory').value);
+  if ($('scholarshipState').value) params.set('state', $('scholarshipState').value);
+  if ($('scholarshipSearch').value.trim()) params.set('q', $('scholarshipSearch').value.trim());
+
+  try {
+    const res = await fetch(`${API_BASE}/scholarships/search?${params}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    $('scholarshipsLoading').style.display = 'none';
+    renderToolResults('scholarshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'scholarship');
+  } catch {
+    $('scholarshipsLoading').style.display = 'none';
+    $('scholarshipsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load scholarships.</p>';
+  }
+}
+
+// ========================
+// Programs Tool
+// ========================
+function openPrograms() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('programsModal').style.display = 'flex';
+
+  const plan = userPlan();
+  if (plan === 'free') {
+    $('programsFilters').style.display = 'none';
+    $('programsResults').style.display = 'none';
+    $('programsLoading').style.display = 'none';
+    $('programsRequiresUpgrade').style.display = 'block';
+    return;
+  }
+
+  $('programsRequiresUpgrade').style.display = 'none';
+  $('programsFilters').style.display = 'flex';
+  $('programsResults').style.display = 'block';
+  searchPrograms();
+}
+
+async function searchPrograms() {
+  $('programsLoading').style.display = 'flex';
+  $('programsResults').innerHTML = '';
+
+  const params = new URLSearchParams();
+  if ($('programCategory').value) params.set('category', $('programCategory').value);
+  if ($('programCost').value) params.set('cost', $('programCost').value);
+  if ($('programSelectivity').value) params.set('selectivity', $('programSelectivity').value);
+  if ($('programSearch').value.trim()) params.set('q', $('programSearch').value.trim());
+
+  try {
+    const res = await fetch(`${API_BASE}/programs/search?${params}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    $('programsLoading').style.display = 'none';
+    renderToolResults('programsResults', data.results || [], data._fullAccess, data._previewMessage, 'program');
+  } catch {
+    $('programsLoading').style.display = 'none';
+    $('programsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load programs.</p>';
+  }
+}
+
+// ========================
+// Shared Tool Results Renderer
+// ========================
+function renderToolResults(containerId, results, fullAccess, previewMessage, type) {
+  const el = $(containerId);
+
+  if (!results.length) {
+    el.innerHTML = `<div class="tool-empty">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <p>No ${type}s found matching your filters. Try broadening your search.</p>
+    </div>`;
+    return;
+  }
+
+  let html = `<div class="tool-result-count">${results.length} result${results.length !== 1 ? 's' : ''}${!fullAccess ? ' (preview)' : ''}</div>`;
+
+  for (const item of results) {
+    html += renderToolCard(item, type, fullAccess);
+  }
+
+  if (previewMessage && !fullAccess) {
+    html += `<div class="tool-preview-msg">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      ${escapeHtml(previewMessage)}
+    </div>`;
+  }
+
+  el.innerHTML = html;
+}
+
+function renderToolCard(item, type, fullAccess) {
+  const isPreview = item._preview;
+
+  if (type === 'internship') {
+    return `<div class="tool-card ${isPreview ? 'preview' : ''}">
+      <div class="tool-card-header">
+        <h4>${escapeHtml(item.title || item.name || 'Internship')}</h4>
+        ${item.paid ? '<span class="tool-tag paid">Paid</span>' : ''}
+        ${item.field ? `<span class="tool-tag">${escapeHtml(item.field)}</span>` : ''}
+      </div>
+      <div class="tool-card-meta">
+        ${item.company ? `<span>${escapeHtml(item.company)}</span>` : ''}
+        ${item.location?.state ? `<span>${item.location.state}</span>` : ''}
+        ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
+      </div>
+      ${item.description && !isPreview ? `<p class="tool-card-desc">${escapeHtml(item.description.slice(0, 200))}${item.description.length > 200 ? '...' : ''}</p>` : ''}
+      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
+    </div>`;
+  }
+
+  if (type === 'scholarship') {
+    const amountStr = item.amount?.max ? `Up to $${item.amount.max.toLocaleString()}` : (item.amount || 'Varies');
+    return `<div class="tool-card ${isPreview ? 'preview' : ''}">
+      <div class="tool-card-header">
+        <h4>${escapeHtml(item.name || 'Scholarship')}</h4>
+        <span class="tool-tag amount">${typeof amountStr === 'string' ? escapeHtml(amountStr) : amountStr}</span>
+      </div>
+      <div class="tool-card-meta">
+        ${item.provider ? `<span>${escapeHtml(item.provider)}</span>` : ''}
+        ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
+        ${item.competitiveness ? `<span>${capitalize(item.competitiveness)}</span>` : ''}
+      </div>
+      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Apply</a>` : ''}
+    </div>`;
+  }
+
+  if (type === 'program') {
+    return `<div class="tool-card ${isPreview ? 'preview' : ''}">
+      <div class="tool-card-header">
+        <h4>${escapeHtml(item.name || 'Program')}</h4>
+        ${item.admissionsImpact ? `<span class="tool-tag impact-${item.admissionsImpact}">${capitalize(item.admissionsImpact.replace('_', ' '))}</span>` : ''}
+        ${item.selectivity ? `<span class="tool-tag">${capitalize(item.selectivity.replace('_', ' '))}</span>` : ''}
+      </div>
+      <div class="tool-card-meta">
+        ${item.provider ? `<span>${escapeHtml(item.provider)}</span>` : ''}
+        ${item.category ? `<span>${capitalize(item.category)}</span>` : ''}
+        ${item.cost?.type === 'free' || item.cost?.amount === 0 ? '<span class="tool-tag free">Free</span>' : ''}
+        ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
+      </div>
+      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
+    </div>`;
+  }
+
+  return '';
 }

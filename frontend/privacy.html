@@ -256,6 +256,8 @@
                 <li><a href="#third-party">Third-Party Services</a></li>
                 <li><a href="#your-rights">Your Rights</a></li>
                 <li><a href="#childrens-privacy">Children's Privacy</a></li>
+                <li><a href="#ccpa-rights">California Privacy Rights (CCPA)</a></li>
+                <li><a href="#international-users">International Users</a></li>
                 <li><a href="#data-retention">Data Retention</a></li>
                 <li><a href="#policy-changes">Changes to This Policy</a></li>
                 <li><a href="#contact">Contact Information</a></li>
@@ -296,6 +298,16 @@
                     <li>Geographic location (optional)</li>
                 </ul>
 
+                <h3>Admissions Profile Data</h3>
+                <p>To help you with college admissions planning, we collect:</p>
+                <ul>
+                    <li>Graduation year and target schools</li>
+                    <li>Intended majors and academic interests</li>
+                    <li>State/location for regional opportunities</li>
+                    <li>ED/EA/RD strategy preferences</li>
+                    <li>Reminder preferences for deadlines</li>
+                </ul>
+
                 <h3>Conversation Data</h3>
                 <p>We collect and store:</p>
                 <ul>
@@ -303,6 +315,16 @@
                     <li>All responses from our AI advisor</li>
                     <li>Timestamps of your conversations</li>
                     <li>Topics and subjects discussed</li>
+                </ul>
+
+                <h3>Essay Content</h3>
+                <p>For our essay review service, we collect:</p>
+                <ul>
+                    <li>Essays submitted for AI review</li>
+                    <li>Essay type, target school, and prompt provided</li>
+                    <li>AI-generated review scores and feedback</li>
+                    <li>Essay review history and timestamps</li>
+                    <li><strong>Note:</strong> Essay content is processed by Anthropic's Claude AI and is subject to their data handling practices</li>
                 </ul>
 
                 <h3>Usage Data</h3>
@@ -334,6 +356,15 @@
                     <li>Transaction history</li>
                 </ul>
                 <p><strong>Note:</strong> Credit card numbers are never stored on our servers. Payment processing is handled securely by Stripe, our payment processor.</p>
+
+                <h3>Cookies and Tracking</h3>
+                <p>Wayfinder uses the following technologies to enhance your experience:</p>
+                <ul>
+                    <li>Wayfinder uses essential cookies for authentication and session management</li>
+                    <li>We use localStorage to persist your login session and UI preferences</li>
+                    <li>We do not use third-party advertising cookies</li>
+                    <li>We do not engage in cross-site tracking</li>
+                </ul>
             </section>
 
             <section id="how-we-use">
@@ -377,6 +408,24 @@
                     <li>Publish insights to benefit the broader education community</li>
                 </ul>
 
+                <h3>Essay Review Processing</h3>
+                <p>We use essay content to provide AI-powered review services:</p>
+                <ul>
+                    <li>We use essay content to generate AI-powered reviews and scores</li>
+                    <li>Essay content is transmitted to Anthropic's Claude AI for analysis</li>
+                    <li>Reviews are stored in your account for future reference</li>
+                    <li>Aggregated, anonymized essay data may be used to improve our review quality</li>
+                    <li>We do not share your essay content with any third party other than our AI processing provider (Anthropic)</li>
+                </ul>
+
+                <h3>Deadline Reminders and Notifications</h3>
+                <p>We use your admissions profile to keep you on track:</p>
+                <ul>
+                    <li>We use your admissions profile to generate personalized deadline reminders</li>
+                    <li>We send email notifications for upcoming decision dates, application deadlines, and scholarship deadlines</li>
+                    <li>You can manage reminder preferences in your account settings</li>
+                </ul>
+
                 <h3>Communications</h3>
                 <p>With your permission, we may send you:</p>
                 <ul>
@@ -393,7 +442,12 @@
                 <h2>3. Data Storage and Security</h2>
 
                 <h3>Where Your Data is Stored</h3>
-                <p>Your data is securely stored on servers provided by Render, our hosting provider. These servers are located in secure data centers with industry-standard physical security measures.</p>
+                <p>Your data is securely stored on servers provided by Render, our hosting provider. These servers are located in secure data centers with industry-standard physical security measures. This includes:</p>
+                <ul>
+                    <li>Essay reviews stored as JSON files on our servers</li>
+                    <li>Reminder deduplication data to prevent duplicate notifications</li>
+                    <li>Admissions profile data used for timeline generation</li>
+                </ul>
 
                 <h3>Password Security</h3>
                 <p>We take password security very seriously:</p>
@@ -446,11 +500,20 @@
                 </ul>
 
                 <h3>Stripe (Payment Processing)</h3>
-                <p>If you subscribe to a premium plan, payment processing is handled by Stripe, Inc.</p>
+                <p>If you subscribe to a premium plan or purchase essay credits, payment processing is handled by Stripe, Inc.</p>
                 <ul>
                     <li>Stripe is PCI-DSS Level 1 certified</li>
+                    <li>Stripe processes both recurring subscription payments and one-time essay credit purchases</li>
                     <li>Credit card information is never stored on Wayfinder's servers</li>
                     <li>Stripe's Privacy Policy: <a href="https://stripe.com/privacy" target="_blank">stripe.com/privacy</a></li>
+                </ul>
+
+                <h3>Resend (Email Service)</h3>
+                <p>Wayfinder uses Resend for transactional and reminder emails.</p>
+                <ul>
+                    <li>This includes invitation emails, deadline reminders, decision date alerts, and essay review notifications</li>
+                    <li>Resend processes your email address and name for delivery</li>
+                    <li>Resend's Privacy Policy: <a href="https://resend.com/legal/privacy-policy" target="_blank">https://resend.com/legal/privacy-policy</a></li>
                 </ul>
 
                 <h3>Render (Hosting Provider)</h3>
@@ -551,8 +614,43 @@
                 </ul>
             </section>
 
+            <section id="ccpa-rights">
+                <h2>7. California Privacy Rights (CCPA)</h2>
+
+                <h3>Your CCPA Rights</h3>
+                <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
+
+                <h3>Right to Know</h3>
+                <p>You have the right to know what personal information is collected and how it is used.</p>
+
+                <h3>Right to Delete</h3>
+                <p>You have the right to request deletion of personal information we hold about you.</p>
+
+                <h3>Right to Opt-Out</h3>
+                <p>You have the right to opt-out of the sale of personal information. <strong>Note: Wayfinder does not sell personal information.</strong></p>
+
+                <h3>Right to Non-Discrimination</h3>
+                <p>You have the right to non-discrimination for exercising your privacy rights. We will not discriminate against you for exercising your CCPA rights.</p>
+
+                <h3>How to Exercise Your CCPA Rights</h3>
+                <p>To exercise your CCPA rights, contact us at privacy@wayfinderai.org with the subject line "CCPA Request". We will respond within 45 days as required by California law.</p>
+            </section>
+
+            <section id="international-users">
+                <h2>8. International Users</h2>
+
+                <h3>Data Transfer and Processing</h3>
+                <p>Wayfinder is operated from the United States. Please be aware of the following:</p>
+                <ul>
+                    <li>If you access Wayfinder from outside the United States, your data will be transferred to and processed in the United States</li>
+                    <li>By using Wayfinder, you consent to this transfer and processing of your data in the United States</li>
+                    <li>We comply with applicable data protection laws in your jurisdiction</li>
+                    <li>EU and EEA users should be aware that United States data protection standards may differ from those in your country</li>
+                </ul>
+            </section>
+
             <section id="data-retention">
-                <h2>7. Data Retention</h2>
+                <h2>9. Data Retention</h2>
 
                 <h3>Active Accounts</h3>
                 <p>As long as your account is active, we retain all your information:</p>
@@ -585,7 +683,7 @@
             </section>
 
             <section id="policy-changes">
-                <h2>8. Changes to This Policy</h2>
+                <h2>10. Changes to This Policy</h2>
 
                 <h3>Updates and Notifications</h3>
                 <p>Wayfinder may update this Privacy Policy from time to time to reflect:</p>
@@ -610,7 +708,7 @@
             </section>
 
             <section id="contact">
-                <h2>9. Contact Information</h2>
+                <h2>11. Contact Information</h2>
 
                 <p>If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:</p>
 

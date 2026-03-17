@@ -24,7 +24,11 @@ const BCRYPT_ROUNDS = 12;
 const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 
 // ─── Plan Configuration ──────────────────────────────────────────
-// Tiers: free → pro ($25/mo) → elite ($50/mo)
+// Internal plan keys: free / pro / elite
+// Display names: Career Explorer / Coach ($25/mo) / Consultant ($50/mo)
+// Free: Sonnet (selective lite brain context)
+// Coach/Consultant engine pulls: Opus if CLAUDE_MODEL_ENGINE is set
+const PLAN_DISPLAY_NAMES = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
 const PLAN_LIMITS = {
   free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
   pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
@@ -858,6 +862,7 @@ function sanitizeUser(user) {
     interests: user.interests,
     profile: user.profile,
     plan,
+    planDisplayName: PLAN_DISPLAY_NAMES[plan] || 'Career Explorer',
     settings: user.settings,
     hasSubscription: !!user.stripeCustomerId,
     consentGiven: user.consentGiven,

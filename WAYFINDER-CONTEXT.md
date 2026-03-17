@@ -274,7 +274,8 @@ wayfinder/
 ## Environment Variables (on Render)
 
 - `ANTHROPIC_API_KEY` — Claude API key
-- `CLAUDE_MODEL` — `claude-sonnet-4-6` (for chat)
+- `CLAUDE_MODEL` — `claude-sonnet-4-6` (for standard chat)
+- `CLAUDE_MODEL_ENGINE` — `claude-opus-4-6` (for paid-tier Engine pulls and essay reviews)
 - `NODE_ENV` — `production`
 - `RESEND_API_KEY` — Email sending
 - `STRIPE_SECRET_KEY` — Stripe (test mode)

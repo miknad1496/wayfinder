@@ -327,8 +327,17 @@ function detectConversationPhase(conversationHistory, sessionContext) {
  */
 export async function chat(conversationHistory, userMessage, sessionContext = {}, options = {}) {
   const anthropic = getClient();
-  const model = process.env.CLAUDE_MODEL || 'claude-sonnet-4-6';
   const useEngine = options.useEngine || false;
+
+  // Tiered model strategy:
+  // - Free users (standard mode): Sonnet — efficient, selective context from lite brain
+  // - Paid engine pulls (Coach/Consultant): Opus — comprehensive analysis with full RAG
+  //   Falls back to Sonnet if CLAUDE_MODEL_ENGINE is not set
+  const standardModel = process.env.CLAUDE_MODEL || 'claude-sonnet-4-6';
+  const engineModel = useEngine
+    ? (process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-sonnet-4-6')
+    : standardModel;
+  const model = useEngine ? engineModel : standardModel;
 
   // Detect conversation depth — this influences token budget and context assembly
   const phase = detectConversationPhase(conversationHistory, sessionContext);

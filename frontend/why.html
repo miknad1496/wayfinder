@@ -317,6 +317,143 @@
         }
         .audience-card p { font-size: 13px; color: #8B949E; }
 
+        /* ---- Tools Grid (Admissions Toolkit) ---- */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .tool-card {
+            background: #161B22;
+            border: 1px solid #30363D;
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+        .tool-card:hover {
+            border-color: #58A6FF;
+            background: rgba(88, 166, 255, 0.02);
+        }
+        .tool-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #E6EDF3;
+            margin-bottom: 12px;
+        }
+        .tool-card p {
+            font-size: 14px;
+            color: #8B949E;
+            line-height: 1.6;
+        }
+        .tool-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tool-card li {
+            font-size: 14px;
+            color: #8B949E;
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .tool-card li:before {
+            content: "→";
+            color: #58A6FF;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* ---- Pricing ---- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .plan-card {
+            background: #161B22;
+            border: 1px solid #30363D;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .plan-card.featured {
+            border-color: #58A6FF;
+            background: rgba(88, 166, 255, 0.05);
+        }
+        .plan-card:hover {
+            border-color: #58A6FF;
+        }
+        .plan-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #E6EDF3;
+            margin-bottom: 8px;
+        }
+        .plan-card .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #58A6FF;
+            margin-bottom: 4px;
+        }
+        .plan-card .period {
+            font-size: 13px;
+            color: #8B949E;
+            margin-bottom: 24px;
+        }
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .plan-card li {
+            font-size: 13px;
+            color: #8B949E;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .plan-card li:last-child {
+            border-bottom: none;
+        }
+        .plan-card li:before {
+            content: "✓";
+            color: #3FB950;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .plan-card .cta {
+            display: inline-block;
+            background: #58A6FF;
+            color: #0D1117;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .plan-card .cta:hover {
+            background: #79B8FF;
+            transform: translateY(-1px);
+        }
+        .plan-card.free .cta {
+            background: rgba(88, 166, 255, 0.15);
+            color: #58A6FF;
+        }
+        .plan-card.free .cta:hover {
+            background: rgba(88, 166, 255, 0.25);
+        }
+
         /* ---- Mission ---- */
         .mission-block {
             text-align: center;
@@ -376,6 +513,8 @@
             section h2 { font-size: 28px; }
             .problem-grid { grid-template-columns: 1fr; }
             .data-grid { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
             .engine-section { padding: 32px 24px; }
             .engine-features { grid-template-columns: 1fr; }
             .audience-grid { grid-template-columns: 1fr 1fr; }
@@ -430,7 +569,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
             </div>
             <h3>Cookie-cutter school lists</h3>
-            <p>Traditional consultants build "reach/target/safety" lists from the same playbook for every student. They don't know that Cornell Hotel admits at 20% while Arts &amp; Sciences admits at 7% — or that Northeastern's ED rate is 3x the regular rate.</p>
+            <p>Traditional consultants build "reach/target/safety" lists from the same playbook for every student. Acceptance rates can vary significantly between programs at the same university, and ED/EA strategies can meaningfully shift your odds — nuances that a one-size-fits-all approach often misses.</p>
         </div>
         <div class="problem-card">
             <div class="icon red">
@@ -528,6 +667,31 @@
             <div class="generic">Free (no specialized data)</div>
             <div class="wayfinder">Fraction of consultant fees</div>
         </div>
+        <div class="comp-row">
+            <div>Personalized admissions timeline</div>
+            <div class="generic no">No</div>
+            <div class="wayfinder">ED/EA/RD calendar with reminders</div>
+        </div>
+        <div class="comp-row">
+            <div>Essay review with scoring</div>
+            <div class="generic no">No</div>
+            <div class="wayfinder">AI-scored 1-10 with voice analysis</div>
+        </div>
+        <div class="comp-row">
+            <div>Curated internship database</div>
+            <div class="generic no">Not available</div>
+            <div class="wayfinder">By state, field, and interest</div>
+        </div>
+        <div class="comp-row">
+            <div>Scholarship matching</div>
+            <div class="generic no">Not available</div>
+            <div class="wayfinder">Curated with deadline tracking</div>
+        </div>
+        <div class="comp-row">
+            <div>Programs &amp; activities database</div>
+            <div class="generic no">Not available</div>
+            <div class="wayfinder">Leadership, research, summer programs</div>
+        </div>
     </div>
 </section>
 
@@ -582,6 +746,21 @@
             <span class="source-tag">Community Intelligence</span>
             <h4>Real Career Stories &amp; Insights</h4>
             <p>Curated first-person accounts from professionals across industries — the unvarnished truth about what careers actually look like day-to-day.</p>
+        </div>
+        <div class="data-card" style="border-color: rgba(248, 166, 0, 0.3);">
+            <span class="source-tag">Curated Multi-Source</span>
+            <h4>Internships Database</h4>
+            <p>Curated internship opportunities across WA, CA, TX, MI, NY, OR and national programs. Searchable by field, state, paid/unpaid, and student interest.</p>
+        </div>
+        <div class="data-card" style="border-color: rgba(248, 166, 0, 0.3);">
+            <span class="source-tag">Curated Multi-Source</span>
+            <h4>Scholarships Database</h4>
+            <p>Merit-based, need-based, STEM, minority, athletic, and community service scholarships with amounts, deadlines, and eligibility filters.</p>
+        </div>
+        <div class="data-card" style="border-color: rgba(248, 166, 0, 0.3);">
+            <span class="source-tag">Curated Multi-Source</span>
+            <h4>Programs &amp; Activities</h4>
+            <p>Leadership programs, research opportunities, summer programs, and non-traditional paths including apprenticeships and gap year programs.</p>
         </div>
     </div>
 </section>
@@ -644,14 +823,14 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
                 <div>
                     <h4>School-within-school analysis</h4>
-                    <p>Cornell Hotel at 20% vs Arts &amp; Sciences at 7%. We know the difference — and which entry points maximize your chances at your target school.</p>
+                    <p>Acceptance rates can vary dramatically between colleges and programs within the same university. We help identify the entry points that best align with your strengths and goals.</p>
                 </div>
             </div>
             <div class="engine-feat">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
                 <div>
-                    <h4>Decision date intelligence</h4>
-                    <p>Know exactly when ED I, ED II, EA, and RD decisions come out for 99 schools. Plan your timeline around real dates, not anxiety.</p>
+                    <h4>ED &amp; EA holistic strategy</h4>
+                    <p>Plan your Early Decision, Early Action, and Regular Decision strategy with real timelines for 99 schools. We help you build a holistic application calendar around data, not anxiety.</p>
                 </div>
             </div>
             <div class="engine-feat">
@@ -664,8 +843,8 @@
             <div class="engine-feat">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FB950" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
                 <div>
-                    <h4>ED strategy calibration</h4>
-                    <p>Some schools fill 40-50% of their class through Early Decision. We quantify the actual ED advantage at each school so you can make the binding commitment with data, not hope.</p>
+                    <h4>Holistic application planning</h4>
+                    <p>ED, EA, REA, rolling — each school has a different strategy landscape. We help you understand how each application round fits into a cohesive plan tailored to your school list and profile.</p>
                 </div>
             </div>
             <div class="engine-feat">
@@ -682,6 +861,61 @@
                     <p>Reach, target, and safety schools tailored to your child's specific profile — not a cookie-cutter list from a counselor managing 300 other students.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ YOUR ADMISSIONS TOOLKIT ============ -->
+<section>
+    <div class="section-label">Your Admissions Toolkit</div>
+    <h2>Purpose-built tools for every step of the process</h2>
+    <p>Beyond intelligence, Wayfinder gives you tools designed for the specific challenges students and families face.</p>
+
+    <div class="tools-grid">
+        <div class="tool-card">
+            <h3>Admissions Timeline</h3>
+            <p>Personalized calendar with ED, EA, RD deadlines. Key milestones based on your graduation year and target schools. Reminder system for upcoming deadlines.</p>
+            <ul>
+                <li>Automatic deadline tracking</li>
+                <li>Custom milestone reminders</li>
+                <li>Decision notification windows</li>
+            </ul>
+        </div>
+        <div class="tool-card">
+            <h3>Essay Reviewer</h3>
+            <p>AI-powered essay scoring from 1-10. Strengths, improvement areas, voice authenticity assessment. Supports Common App, supplementals, why-school, diversity, and more.</p>
+            <ul>
+                <li>Detailed scoring & feedback</li>
+                <li>Voice authenticity analysis</li>
+                <li>Support for all essay types</li>
+            </ul>
+        </div>
+        <div class="tool-card">
+            <h3>Internships Database</h3>
+            <p>Browse by state, field, paid/unpaid. Preview access for Coach, full access for Consultant tier.</p>
+            <ul>
+                <li>Multi-state opportunities</li>
+                <li>Field & interest filtering</li>
+                <li>Paid & unpaid options</li>
+            </ul>
+        </div>
+        <div class="tool-card">
+            <h3>Scholarships Database</h3>
+            <p>Filter by category, state, GPA, financial need. Deadline tracking. Full access for Consultant tier.</p>
+            <ul>
+                <li>Merit, need-based, & specialty</li>
+                <li>Deadline tracking built-in</li>
+                <li>Eligibility filtering</li>
+            </ul>
+        </div>
+        <div class="tool-card">
+            <h3>Programs &amp; Activities</h3>
+            <p>Leadership, research, summer programs. Filter by selectivity and cost. Non-traditional paths included.</p>
+            <ul>
+                <li>Leadership programs</li>
+                <li>Research & summer programs</li>
+                <li>Gap year & apprenticeships</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -721,11 +955,88 @@
     </div>
 </section>
 
+<!-- ============ PRICING ============ -->
+<section>
+    <div class="section-label">Pricing</div>
+    <h2>Tiers for every stage of the journey</h2>
+    <p>Start free. Upgrade when you need more. No lock-in, cancel anytime.</p>
+    <p style="font-size: 13px; color: #c084fc; margin-top: 8px;">Paid tiers are powered by Anthropic's latest Claude Opus 4.6 — the most capable AI model available.</p>
+
+    <div class="pricing-grid">
+        <div class="plan-card free">
+            <h3>Career Explorer</h3>
+            <p class="price">Free</p>
+            <p class="period">Always free</p>
+            <ul>
+                <li>Unlimited chat</li>
+                <li>3 engine pulls/day</li>
+                <li>Demographics preview</li>
+                <li>1 invite</li>
+            </ul>
+            <a href="/" class="cta">Get Started</a>
+        </div>
+        <div class="plan-card">
+            <h3>Coach</h3>
+            <p class="price">$25</p>
+            <p class="period">per month</p>
+            <ul>
+                <li style="color: #c084fc; font-weight: 600;">⚡ Max Opus 4.6 engine pulls</li>
+                <li>20 engine pulls/day</li>
+                <li>Full demographics</li>
+                <li>Admissions timeline</li>
+                <li>Internships preview</li>
+                <li>Scholarships/programs preview</li>
+                <li>Decision date reminders</li>
+                <li>Essay reviewer add-on</li>
+                <li>ED &amp; EA holistic strategy</li>
+                <li>5 invites</li>
+            </ul>
+            <a href="/" class="cta">Start Trial</a>
+        </div>
+        <div class="plan-card featured">
+            <h3>Consultant</h3>
+            <p class="price">$50</p>
+            <p class="period">per month</p>
+            <ul>
+                <li style="color: #c084fc; font-weight: 600;">⚡ Max Opus 4.6 engine pulls</li>
+                <li>40 engine pulls/day</li>
+                <li>Full demographics + comparison</li>
+                <li>Full admissions timeline</li>
+                <li>Full internships/scholarships/programs</li>
+                <li>All reminders enabled</li>
+                <li>Essay reviewer add-on</li>
+                <li>Advanced ED &amp; EA strategy</li>
+                <li>10 invites</li>
+            </ul>
+            <a href="/" class="cta">Start Trial</a>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 28px; background: #161B22; border: 1px solid #30363D; border-radius: 12px; text-align: center;">
+        <h4 style="font-size: 15px; font-weight: 700; color: #E6EDF3; margin-bottom: 12px;">Essay Credits Add-on</h4>
+        <p style="font-size: 14px; color: #8B949E; margin-bottom: 16px;">Add essay reviews to any tier</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 120px;">
+                <div style="font-weight: 600; color: #E6EDF3; margin-bottom: 4px;">5 Credits</div>
+                <div style="font-size: 13px; color: #8B949E;">$10</div>
+            </div>
+            <div style="flex: 1; min-width: 120px;">
+                <div style="font-weight: 600; color: #E6EDF3; margin-bottom: 4px;">10 Credits</div>
+                <div style="font-size: 13px; color: #8B949E;">$15</div>
+            </div>
+            <div style="flex: 1; min-width: 120px;">
+                <div style="font-weight: 600; color: #E6EDF3; margin-bottom: 4px;">20 Credits</div>
+                <div style="font-size: 13px; color: #8B949E;">$18</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ============ MISSION / CTA ============ -->
 <div class="mission-block">
     <img src="/logo.svg" alt="Wayfinder">
-    <h2>Built for impact, not profit</h2>
-    <p>Wayfinder is an initiative of the <strong>Virtuous Capital Foundation</strong>, a 501(c)(3) nonprofit. Every subscription directly funds the platform's development and data infrastructure. The strategic intelligence that wealthy families access through $10K consultants should be available to every family — that's our mission. We don't sell your data. We don't run ads. We exist to level the playing field.</p>
+    <h2>Mission-driven. Sustainably funded.</h2>
+    <p>Wayfinder is an initiative of the <strong>Virtuous Capital Foundation</strong>, a 501(c)(3) nonprofit. We offer a free tier to ensure access, and sustainable pricing for students and families who can afford it. Every subscription directly funds platform development, data infrastructure, and continuous improvement. This hybrid model—free access for those who need it, paid tiers for those who can contribute—lets us sustain our mission without venture capital pressure. We don't sell your data. We don't run ads. We exist to level the playing field.</p>
     <a href="/">Open Wayfinder</a>
 </div>
 
