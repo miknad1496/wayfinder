@@ -259,6 +259,8 @@
                 <li><a href="#childrens-privacy">Children's Privacy</a></li>
                 <li><a href="#ccpa-rights">California Privacy Rights (CCPA)</a></li>
                 <li><a href="#international-users">International Users</a></li>
+                <li><a href="#gdpr-rights">GDPR Rights (European Users)</a></li>
+                <li><a href="#automated-decisions">Automated Decision-Making</a></li>
                 <li><a href="#data-retention">Data Retention</a></li>
                 <li><a href="#policy-changes">Changes to This Policy</a></li>
                 <li><a href="#contact">Contact Information</a></li>
@@ -463,7 +465,7 @@
                 <p>We protect your data in multiple ways:</p>
                 <ul>
                     <li><strong>In Transit:</strong> All data transmitted between your device and our servers is encrypted using SSL/TLS protocols (HTTPS)</li>
-                    <li><strong>At Rest:</strong> Sensitive data stored on our servers is encrypted using industry-standard encryption methods</li>
+                    <li><strong>At Rest:</strong> Passwords are hashed using bcrypt. Sensitive data stored on our servers benefits from infrastructure-level encryption provided by our hosting provider (Render). We are continuously working to enhance at-rest encryption for all stored data as the platform evolves.</li>
                 </ul>
 
                 <h3>Conversation Data</h3>
@@ -538,6 +540,7 @@
                     <li><strong>Conversation Data Improvement:</strong> By default, Wayfinder conversation data may be used for model improvement purposes. However, you can opt-out of this data usage in your Settings</li>
                     <li><strong>Opting Out:</strong> If you opt-out of conversation data being used for Wayfinder model improvement, Anthropic will not use your data for this purpose. Opting out does not affect your access to the core Wayfinder service</li>
                     <li><strong>Privacy Policy:</strong> We recommend reviewing Anthropic's privacy policy to understand their practices: <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></li>
+                    <li><strong>Data Retention by Anthropic:</strong> Anthropic may retain API inputs and outputs for a limited period for safety and abuse prevention purposes, in accordance with their data retention policies. Wayfinder uses Anthropic's commercial API, which provides that data submitted via the API is not used to train Anthropic's models unless the customer explicitly opts in.</li>
                 </ul>
 
                 <h3>Stripe (Payment Processing)</h3>
@@ -715,8 +718,59 @@
                 </ul>
             </section>
 
+            <section id="gdpr-rights">
+                <h2>9. GDPR Rights (European Users)</h2>
+
+                <h3>Applicability</h3>
+                <p>If you are located in the European Union (EU), European Economic Area (EEA), or the United Kingdom (UK), you have additional rights under the General Data Protection Regulation (GDPR) and equivalent UK data protection laws. This section supplements the rights described elsewhere in this Privacy Policy.</p>
+
+                <h3>Legal Basis for Processing</h3>
+                <p>We process your personal data on the following legal bases:</p>
+                <ul>
+                    <li><strong>Consent:</strong> Where you have given us explicit consent to process your data for specific purposes (e.g., using your conversation data to improve Wayfinder). You may withdraw consent at any time without affecting the lawfulness of processing performed before withdrawal.</li>
+                    <li><strong>Contract Performance:</strong> Where processing is necessary to provide you the Wayfinder service you have signed up for, including account management, career guidance delivery, and subscription management.</li>
+                    <li><strong>Legitimate Interest:</strong> Where processing is necessary for our legitimate interests (e.g., service improvement, fraud prevention, platform security) and these interests are not overridden by your data protection rights.</li>
+                    <li><strong>Legal Obligation:</strong> Where we are required to process data to comply with applicable laws or regulations.</li>
+                </ul>
+
+                <h3>Your GDPR Rights</h3>
+                <p>In addition to the rights described in Section 5, EU/EEA/UK users have the following specific rights:</p>
+                <ul>
+                    <li><strong>Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data in certain circumstances, such as when you contest the accuracy of data or object to processing.</li>
+                    <li><strong>Right to Object:</strong> You have the right to object to processing of your personal data based on legitimate interests. Upon receiving an objection, we will cease processing unless we can demonstrate compelling legitimate grounds that override your interests.</li>
+                    <li><strong>Right Not to Be Subject to Automated Decision-Making:</strong> You have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. See the Automated Decision-Making section below for more detail.</li>
+                    <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with a supervisory authority in your country of residence if you believe our processing of your personal data violates applicable data protection law.</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent, you may withdraw consent at any time via your account settings or by contacting us. Withdrawal does not affect the lawfulness of processing conducted prior to withdrawal.</li>
+                </ul>
+
+                <h3>Data Protection Contact</h3>
+                <p>For GDPR-related inquiries, requests, or complaints, please contact our data protection team at <strong>privacy@wayfinderai.org</strong> with the subject line "GDPR Request". We will respond to all GDPR requests within 30 days. If we need additional time (up to 60 additional days for complex requests), we will inform you within the initial 30-day period.</p>
+
+                <h3>International Transfers and Safeguards</h3>
+                <p>Your data is transferred to and processed in the United States. To provide appropriate safeguards for these transfers, we rely on Standard Contractual Clauses (SCCs) approved by the European Commission. You may request a copy of the applicable SCCs by contacting us at privacy@wayfinderai.org.</p>
+            </section>
+
+            <section id="automated-decisions">
+                <h2>10. Automated Decision-Making</h2>
+
+                <h3>How We Use Automated Processing</h3>
+                <p>Wayfinder uses AI-powered automated processing in the following ways:</p>
+                <ul>
+                    <li><strong>Career Guidance:</strong> Claude AI generates personalized career advice based on your profile and conversation history. This is informational only and does not produce legally binding or similarly significant effects.</li>
+                    <li><strong>Essay Review Scoring:</strong> Essays are scored by AI using automated criteria. Scores are advisory and informational; they are not used for any admissions decisions and have no binding effect.</li>
+                    <li><strong>Usage Limits:</strong> Your subscription plan determines automated rate limits and feature access. This is based on your selected plan tier, not profiling.</li>
+                    <li><strong>Account Lockout:</strong> Repeated failed login attempts trigger automated temporary lockouts for security purposes.</li>
+                </ul>
+
+                <h3>No Solely Automated Decisions with Legal Effect</h3>
+                <p>Wayfinder does not make decisions based solely on automated processing that produce legal effects or similarly significant effects concerning you. All AI-generated outputs (career advice, essay scores, admissions strategy suggestions) are informational and advisory only. No automated decision by Wayfinder will affect your legal rights, financial standing, or access to services beyond the scope of the Wayfinder platform itself.</p>
+
+                <h3>Your Right to Human Review</h3>
+                <p>You have the right to request human review of any automated output. If you believe an automated decision has adversely affected you, contact us at support@wayfinderai.org and we will arrange for a human review of the matter.</p>
+            </section>
+
             <section id="data-retention">
-                <h2>9. Data Retention</h2>
+                <h2>11. Data Retention</h2>
 
                 <h3>Data Anonymization Definition</h3>
                 <p>Throughout this Privacy Policy, we reference anonymized or aggregated data. We define anonymization as:</p>
@@ -766,7 +820,7 @@
             </section>
 
             <section id="policy-changes">
-                <h2>10. Changes to This Policy</h2>
+                <h2>12. Changes to This Policy</h2>
 
                 <h3>Updates and Notifications</h3>
                 <p>Wayfinder may update this Privacy Policy from time to time to reflect:</p>
@@ -791,7 +845,7 @@
             </section>
 
             <section id="contact">
-                <h2>11. Contact Information</h2>
+                <h2>13. Contact Information</h2>
 
                 <p>If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:</p>
 
