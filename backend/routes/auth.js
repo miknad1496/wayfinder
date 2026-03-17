@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage } from '../services/auth.js';
+import { createUser, loginUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan } from '../services/auth.js';
 import { validateInvite, redeemInvite } from '../services/invites.js';
 
 const router = Router();
@@ -152,6 +152,23 @@ router.put('/settings', async (req, res) => {
     return res.status(400).json({ error: result.error });
   }
 
+  res.json(result);
+});
+
+// PUT /api/auth/admin/plan - Admin-only: switch effective plan for testing
+router.put('/admin/plan', async (req, res) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const user = await verifyToken(token);
+  if (!user) return res.status(401).json({ error: 'Not authenticated' });
+  if (!user.isAdmin) return res.status(403).json({ error: 'Admin only' });
+
+  const { plan } = req.body;
+  if (!['free', 'pro', 'elite'].includes(plan)) {
+    return res.status(400).json({ error: 'Invalid plan. Must be free, pro, or elite.' });
+  }
+
+  const result = await setUserPlan(token, plan);
+  if (result.error) return res.status(400).json({ error: result.error });
   res.json(result);
 });
 

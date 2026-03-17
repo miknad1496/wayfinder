@@ -29,6 +29,12 @@ const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 // Free: Sonnet (selective lite brain context)
 // Coach/Consultant engine pulls: Opus if CLAUDE_MODEL_ENGINE is set
 const PLAN_DISPLAY_NAMES = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
+
+// Admin emails — can switch plans to test tier behavior, always get elite limits
+const ADMIN_EMAILS = ['danielyungkim@hotmail.com'];
+
+// VIP emails — always get elite-tier access (not admin, just full access)
+const VIP_EMAILS = ['mhrkim@yahoo.com'];
 const PLAN_LIMITS = {
   free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
   pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
@@ -56,8 +62,25 @@ export function getPlanLimits(plan) {
   return PLAN_LIMITS[plan] || PLAN_LIMITS.free;
 }
 
-export function canAccess(plan, feature) {
-  return (FEATURE_ACCESS[feature] || []).includes(plan);
+// canAccess(plan, feature) or canAccess(plan, feature, email)
+// Admin/VIP emails always get access regardless of plan
+export function canAccess(planOrUser, feature, email = null) {
+  // Support passing a sanitized user object (has .plan, .isAdmin, .email)
+  if (planOrUser && typeof planOrUser === 'object') {
+    if (planOrUser.isAdmin || isVIP(planOrUser.email)) return true;
+    return (FEATURE_ACCESS[feature] || []).includes(planOrUser.plan || 'free');
+  }
+  // String plan + optional email
+  if (email && (ADMIN_EMAILS.includes(email.toLowerCase()) || VIP_EMAILS.includes(email.toLowerCase()))) return true;
+  return (FEATURE_ACCESS[feature] || []).includes(planOrUser);
+}
+
+export function isAdmin(email) {
+  return email && ADMIN_EMAILS.includes(email.toLowerCase());
+}
+
+export function isVIP(email) {
+  return email && VIP_EMAILS.includes(email.toLowerCase());
 }
 
 // Ensure users directory exists
@@ -846,12 +869,39 @@ export async function findUserByToken(token) {
 }
 
 // Remove sensitive fields before sending to client
+// Admin-only: set user's plan for testing tier behavior
+export async function setUserPlan(token, newPlan) {
+  if (!token) return { error: 'No token' };
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const filePath = join(USERS_DIR, file);
+      const raw = await fs.readFile(filePath, 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        if (!isAdmin(user.email)) return { error: 'Admin only' };
+        user.plan = newPlan;
+        await fs.writeFile(filePath, JSON.stringify(user, null, 2), 'utf-8');
+        return { success: true, user: sanitizeUser(user) };
+      }
+    }
+    return { error: 'User not found' };
+  } catch (err) {
+    return { error: err.message };
+  }
+}
+
 function sanitizeUser(user) {
   const today = new Date().toISOString().slice(0, 10);
   const thisMonth = new Date().toISOString().slice(0, 7);
   const usesToday = user.engineLastReset === today ? (user.engineUsesToday || 0) : 0;
-  const plan = user.plan || 'free';
-  const limits = getPlanLimits(plan);
+  const admin = isAdmin(user.email);
+  const vip = isVIP(user.email);
+  // Admins: use their set plan for feature flags (so they can test tier UX)
+  // but always get elite-level limits (engine pulls, tokens)
+  // VIPs: always treated as elite (full access, no admin powers)
+  const plan = vip ? 'elite' : (user.plan || 'free');
+  const limits = (admin || vip) ? getPlanLimits('elite') : getPlanLimits(plan);
 
   return {
     id: user.id,
@@ -882,9 +932,12 @@ function sanitizeUser(user) {
       limit: limits.monthlyTokens,
       remaining: Math.max(0, limits.monthlyTokens - (user.tokenMonthReset === thisMonth ? (user.tokensUsedMonth || 0) : 0))
     } : null,
-    essayReviewsRemaining: user.essayReviewsRemaining || 0,
+    essayReviewsRemaining: (admin || vip) ? 999 : (user.essayReviewsRemaining || 0),
     admissionsProfile: user.admissionsProfile || null,
+    isAdmin: admin,
     // Feature access flags for frontend
+    // Admins: features follow their SET plan so they can test tier UX
+    // (admins still get elite limits for engine/tokens above)
     features: {
       demographicsFull: canAccess(plan, 'demographics_full'),
       demographicsCompare: canAccess(plan, 'demographics_compare'),

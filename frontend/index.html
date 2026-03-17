@@ -528,13 +528,78 @@
       <div class="modal modal-upgrade">
         <button class="modal-close" id="upgradeModalClose">&times;</button>
         <h2>Choose Your Plan</h2>
-        <p class="form-subtitle">Unlock the full Admissions experience with Coach or Consultant</p>
 
-        <div class="plans-grid">
-          <!-- Free Plan -->
+        <!-- Pathway Toggle -->
+        <div class="pathway-toggle">
+          <button class="pathway-btn active" id="pathwayCareerBtn" data-path="career">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Career Intelligence
+          </button>
+          <button class="pathway-btn" id="pathwayAdmissionsBtn" data-path="admissions">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+            College Admissions
+          </button>
+        </div>
+
+        <!-- Career Plans -->
+        <div id="careerPlans" class="plans-grid">
           <div class="plan-card" data-plan="free">
             <div class="plan-header">
-              <h3>Career Explorer</h3>
+              <h3>Explorer</h3>
+              <div class="plan-price">$0<span>/month</span></div>
+            </div>
+            <ul class="plan-features">
+              <li>Unlimited standard queries</li>
+              <li>3 Engine deep-dives/day</li>
+              <li>Salary &amp; career data</li>
+              <li>Basic profile &amp; chat history</li>
+              <li>1 invitation</li>
+            </ul>
+            <button class="plan-btn plan-btn-current" id="planFreeBtn">Current Plan</button>
+          </div>
+
+          <div class="plan-card plan-card-featured" data-plan="career-pro">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-header">
+              <h3>Career Pro</h3>
+              <div class="plan-price">$15<span>/month</span></div>
+            </div>
+            <ul class="plan-features">
+              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
+              <li>20 Engine deep-dives/day</li>
+              <li>Full salary &amp; labor market data</li>
+              <li>Career path mapping</li>
+              <li>Certification guidance</li>
+              <li>Industry trend analysis</li>
+              <li>5 invitations</li>
+            </ul>
+            <button class="plan-btn plan-btn-upgrade" id="planCareerProBtn">Upgrade — $15/mo</button>
+          </div>
+
+          <div class="plan-card plan-card-elite" data-plan="career-elite">
+            <div class="plan-badge plan-badge-elite">Full Access</div>
+            <div class="plan-header">
+              <h3>Career Elite</h3>
+              <div class="plan-price">$30<span>/month</span></div>
+            </div>
+            <ul class="plan-features">
+              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
+              <li>40 Engine deep-dives/day</li>
+              <li>Everything in Pro</li>
+              <li>Internships database</li>
+              <li>Advanced career comparison</li>
+              <li>Professional development plan</li>
+              <li>10 invitations</li>
+            </ul>
+            <button class="plan-btn plan-btn-upgrade" id="planCareerEliteBtn">Upgrade — $30/mo</button>
+          </div>
+        </div>
+
+        <!-- Admissions Plans -->
+        <div id="admissionsPlans" class="plans-grid" style="display:none;">
+          <div class="plan-card" data-plan="free">
+            <div class="plan-header">
+              <h3>Explorer</h3>
               <div class="plan-price">$0<span>/month</span></div>
             </div>
             <ul class="plan-features">
@@ -544,10 +609,9 @@
               <li>Basic profile &amp; chat history</li>
               <li>1 invitation</li>
             </ul>
-            <button class="plan-btn plan-btn-current" id="planFreeBtn">Current Plan</button>
+            <button class="plan-btn plan-btn-current">Current Plan</button>
           </div>
 
-          <!-- Coach Plan (Admissions Coach) -->
           <div class="plan-card plan-card-featured" data-plan="coach">
             <div class="plan-badge">Most Popular</div>
             <div class="plan-header">
@@ -566,10 +630,9 @@
               <li>ED &amp; EA holistic strategy</li>
               <li>5 invitations</li>
             </ul>
-            <button class="plan-btn plan-btn-upgrade" id="planCoachBtn">Upgrade to Coach</button>
+            <button class="plan-btn plan-btn-upgrade" id="planCoachBtn">Upgrade — $25/mo</button>
           </div>
 
-          <!-- Consultant Plan -->
           <div class="plan-card plan-card-elite" data-plan="consultant">
             <div class="plan-badge plan-badge-elite">Full Access</div>
             <div class="plan-header">
@@ -589,12 +652,12 @@
               <li>Advanced ED &amp; EA holistic strategy</li>
               <li>10 invitations</li>
             </ul>
-            <button class="plan-btn plan-btn-upgrade" id="planConsultantBtn">Upgrade to Consultant</button>
+            <button class="plan-btn plan-btn-upgrade" id="planConsultantBtn">Upgrade — $50/mo</button>
           </div>
         </div>
 
-        <!-- Essay Credits Add-on -->
-        <div class="essay-addon-section">
+        <!-- Essay Credits Add-on (shown for admissions path) -->
+        <div id="essayAddonSection" class="essay-addon-section" style="display:none;">
           <h3>Essay Reviewer Credits</h3>
           <p class="form-subtitle">AI-powered essay reviews scored 1-10 with detailed feedback. Available for Coach &amp; Consultant.</p>
           <div class="essay-packs-grid">

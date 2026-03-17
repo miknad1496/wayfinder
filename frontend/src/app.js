@@ -796,7 +796,8 @@ async function deleteAccount() {
 // Upgrade / Plans
 // ========================
 // Plan display names — backend uses pro/elite internally
-const PLAN_DISPLAY = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
+const PLAN_DISPLAY = { free: 'Explorer', pro: 'Coach', elite: 'Consultant' };
+let currentPathway = 'career'; // 'career' or 'admissions'
 
 function setupUpgradeListeners() {
   $('upgradeModalClose').addEventListener('click', () => $('upgradeModal').style.display = 'none');
@@ -804,9 +805,17 @@ function setupUpgradeListeners() {
     if (e.target === $('upgradeModal')) $('upgradeModal').style.display = 'none';
   });
 
-  // Backend still expects 'pro'/'elite' — the display name is different
-  $('planCoachBtn').addEventListener('click', () => handlePlanUpgrade('pro'));
-  $('planConsultantBtn').addEventListener('click', () => handlePlanUpgrade('elite'));
+  // Pathway toggle
+  $('pathwayCareerBtn').addEventListener('click', () => switchPathway('career'));
+  $('pathwayAdmissionsBtn').addEventListener('click', () => switchPathway('admissions'));
+
+  // Career plans — backend uses same 'pro'/'elite' keys with product context
+  $('planCareerProBtn').addEventListener('click', () => handlePlanUpgrade('pro', 'career'));
+  $('planCareerEliteBtn').addEventListener('click', () => handlePlanUpgrade('elite', 'career'));
+
+  // Admissions plans
+  $('planCoachBtn').addEventListener('click', () => handlePlanUpgrade('pro', 'admissions'));
+  $('planConsultantBtn').addEventListener('click', () => handlePlanUpgrade('elite', 'admissions'));
 
   // Essay credit packs
   $('essayPack5Btn').addEventListener('click', () => handleEssayPurchase('starter'));
@@ -814,34 +823,63 @@ function setupUpgradeListeners() {
   $('essayPack20Btn').addEventListener('click', () => handleEssayPurchase('bulk'));
 }
 
-function openUpgrade() {
+function switchPathway(path) {
+  currentPathway = path;
+  $('pathwayCareerBtn').classList.toggle('active', path === 'career');
+  $('pathwayAdmissionsBtn').classList.toggle('active', path === 'admissions');
+  $('careerPlans').style.display = path === 'career' ? 'grid' : 'none';
+  $('admissionsPlans').style.display = path === 'admissions' ? 'grid' : 'none';
+  $('essayAddonSection').style.display = path === 'admissions' ? 'block' : 'none';
+}
+
+function openUpgrade(pathway) {
   if (!currentUser) {
     openAuthModal('signup');
     return;
   }
 
+  // Auto-detect pathway from user type or use passed value
+  if (pathway) {
+    switchPathway(pathway);
+  } else {
+    // Default: admissions for pre-college/parent, career for others
+    const ut = currentUser.userType || '';
+    const defaultPath = (ut.includes('parent') || ut.includes('pre-college') || ut.includes('high school'))
+      ? 'admissions' : currentPathway;
+    switchPathway(defaultPath);
+  }
+
   // Normalize legacy plans
   const plan = normalizePlan(currentUser.plan || 'free');
 
-  // Free button
+  // Free buttons
   $('planFreeBtn').textContent = plan === 'free' ? 'Current Plan' : 'Free Plan';
   $('planFreeBtn').className = plan === 'free' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
 
-  // Coach button (backend: pro)
-  const isCoachOrHigher = plan === 'pro' || plan === 'elite';
-  $('planCoachBtn').textContent = plan === 'pro' ? 'Current Plan' : (plan === 'elite' ? 'Included' : 'Upgrade to Coach');
-  $('planCoachBtn').className = isCoachOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
-  $('planCoachBtn').disabled = isCoachOrHigher;
+  // Career Pro button
+  const isProOrHigher = plan === 'pro' || plan === 'elite';
+  $('planCareerProBtn').textContent = isProOrHigher ? 'Current Plan' : 'Upgrade — $15/mo';
+  $('planCareerProBtn').className = isProOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planCareerProBtn').disabled = isProOrHigher;
 
-  // Consultant button (backend: elite)
-  $('planConsultantBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade to Consultant';
+  // Career Elite button
+  $('planCareerEliteBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade — $30/mo';
+  $('planCareerEliteBtn').className = plan === 'elite' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planCareerEliteBtn').disabled = plan === 'elite';
+
+  // Coach button (admissions)
+  $('planCoachBtn').textContent = plan === 'pro' ? 'Current Plan' : (plan === 'elite' ? 'Included' : 'Upgrade — $25/mo');
+  $('planCoachBtn').className = isProOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
+  $('planCoachBtn').disabled = isProOrHigher;
+
+  // Consultant button (admissions)
+  $('planConsultantBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade — $50/mo';
   $('planConsultantBtn').className = plan === 'elite' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
   $('planConsultantBtn').disabled = plan === 'elite';
 
-  // Essay credits visibility — available for Coach (pro) and Consultant (elite)
-  const essaySection = document.querySelector('.essay-addon-section');
-  if (essaySection) {
-    essaySection.style.display = (plan === 'pro' || plan === 'elite') ? 'block' : 'none';
+  // Essay credits visibility — available for Coach/Consultant
+  if (currentPathway === 'admissions') {
+    $('essayAddonSection').style.display = (plan === 'pro' || plan === 'elite') ? 'block' : 'none';
   }
 
   $('upgradeModal').style.display = 'flex';
@@ -856,25 +894,25 @@ function planDisplayName(plan) {
   return PLAN_DISPLAY[normalizePlan(plan)] || 'Career Explorer';
 }
 
-async function handlePlanUpgrade(plan) {
+async function handlePlanUpgrade(plan, product = 'admissions') {
   try {
     // Check if Stripe is configured
     const statusRes = await fetch(`${API_BASE}/stripe/status`);
     const statusData = await statusRes.json();
 
     if (!statusData.configured) {
-      alert(`Stripe payments are being set up. Contact support@wayfinderai.org to upgrade to ${capitalize(plan)} in the meantime.`);
+      alert(`Stripe payments are being set up. Contact support@wayfinderai.org to upgrade in the meantime.`);
       return;
     }
 
-    // Create Stripe Checkout session
+    // Create Stripe Checkout session — pass product context for pricing
     const res = await fetch(`${API_BASE}/stripe/create-checkout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`
       },
-      body: JSON.stringify({ plan })
+      body: JSON.stringify({ plan, product })
     });
 
     const data = await res.json();

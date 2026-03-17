@@ -80,10 +80,15 @@ function getStripe() {
 }
 
 // Price IDs from Stripe Dashboard — set these in .env
-// Subscription plans
+// Admissions subscription plans (Coach $25/mo, Consultant $50/mo)
 const PLAN_PRICE_IDS = {
   pro: process.env.STRIPE_PRICE_PRO || null,
   elite: process.env.STRIPE_PRICE_ELITE || null
+};
+// Career subscription plans (Career Pro $15/mo, Career Elite $30/mo)
+const CAREER_PRICE_IDS = {
+  pro: process.env.STRIPE_PRICE_CAREER_PRO || null,
+  elite: process.env.STRIPE_PRICE_CAREER_ELITE || null
 };
 
 // Essay review credit packs (one-time purchases)
@@ -111,12 +116,14 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    const { plan } = req.body;
+    const { plan, product } = req.body;
     if (!plan || !['pro', 'elite'].includes(plan)) {
       return res.status(400).json({ error: 'Invalid plan. Choose pro or elite.' });
     }
 
-    const priceId = PLAN_PRICE_IDS[plan];
+    // Select price based on product line (career vs admissions)
+    const priceMap = (product === 'career') ? CAREER_PRICE_IDS : PLAN_PRICE_IDS;
+    const priceId = priceMap[plan];
     if (!priceId) {
       return res.status(500).json({ error: 'Stripe prices not configured. Contact support.' });
     }
@@ -147,12 +154,14 @@ router.post('/create-checkout', checkoutLimiter, async (req, res) => {
       cancel_url: `${baseUrl}?upgrade=cancelled`,
       metadata: {
         wayfinderId: user.id,
-        plan: plan
+        plan: plan,
+        product: product || 'admissions'
       },
       subscription_data: {
         metadata: {
           wayfinderId: user.id,
-          plan: plan
+          plan: plan,
+          product: product || 'admissions'
         }
       }
     });
