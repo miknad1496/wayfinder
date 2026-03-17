@@ -24,7 +24,7 @@ const BCRYPT_ROUNDS = 12;
 const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 
 // ─── Plan Configuration ──────────────────────────────────────────
-// Tiers: free → pro ($20/mo) → elite ($40/mo)
+// Tiers: free → pro ($25/mo) → elite ($50/mo)
 const PLAN_LIMITS = {
   free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
   pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
@@ -120,7 +120,7 @@ export async function createUser({ email, password, name, userType, school, inte
       careerInterests: [],   // e.g. ['Software Engineering', 'Medicine']
       aboutMe: ''            // freeform description
     },
-    plan: 'free',           // free | pro ($20/mo) | elite ($40/mo)
+    plan: 'free',           // free | pro ($25/mo) | elite ($50/mo)
     settings: {
       displayName: name || '',
       memory: true,         // whether wayfinder remembers conversations

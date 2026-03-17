@@ -4,7 +4,7 @@
 
 Two distinct products under one roof:
 
-| | **Career Explorer** (Free) | **Admissions Coach Pro** ($20/mo) | **Admissions Coach Elite** ($40/mo) |
+| | **Career Explorer** (Free) | **Admissions Coach Pro** ($25/mo) | **Admissions Coach Elite** ($50/mo) |
 |---|---|---|---|
 | **Identity** | General career/college Q&A | Your personal admissions strategist | Full consultant replacement |
 | **Engine pulls** | 3/day | 20/day | 40/day |
@@ -107,8 +107,8 @@ function canAccess(plan, feature) {
 ### 1.3 Stripe Products
 
 Need to create in Stripe Dashboard:
-- **Product: Admissions Coach Pro** → Price: $20/month recurring
-- **Product: Admissions Coach Elite** → Price: $40/month recurring
+- **Product: Admissions Coach Pro** → Price: $25/month recurring
+- **Product: Admissions Coach Elite** → Price: $50/month recurring
 - **Product: Essay Review - Starter** → Price: $10 one-time
 - **Product: Essay Review - Standard** → Price: $15 one-time
 - **Product: Essay Review - Bulk** → Price: $18 one-time
