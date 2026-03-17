@@ -158,8 +158,16 @@ router.put('/settings', async (req, res) => {
 // GET /api/auth/history - Get user's chat history
 router.get('/history', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
-  const history = await getUserChatHistory(token);
-  res.json({ history });
+  if (!token) {
+    return res.status(401).json({ error: 'No auth token provided', history: [] });
+  }
+  try {
+    const history = await getUserChatHistory(token);
+    res.json({ history });
+  } catch (err) {
+    console.error('[Auth/History] Error loading history:', err.message);
+    res.status(500).json({ error: 'Failed to load history', history: [] });
+  }
 });
 
 // GET /api/auth/search - Search user's chats

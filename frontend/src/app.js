@@ -131,7 +131,7 @@ function startNewChat() {
   inputEl.focus();
 }
 
-async function loadChatHistory() {
+async function loadChatHistory(retryCount = 0) {
   if (!authToken) {
     showEmptyHistory();
     return;
@@ -141,12 +141,37 @@ async function loadChatHistory() {
     const res = await fetch(`${API_BASE}/auth/history`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    if (!res.ok) throw new Error();
+
+    if (res.status === 401) {
+      // Token expired — don't show empty, just skip (auth check will handle)
+      console.warn('[History] Token expired, skipping history load');
+      return;
+    }
+
+    if (!res.ok) {
+      // Server error — retry up to 2 times with backoff
+      if (retryCount < 2) {
+        console.warn(`[History] Server error ${res.status}, retrying (${retryCount + 1}/2)...`);
+        setTimeout(() => loadChatHistory(retryCount + 1), 1000 * (retryCount + 1));
+        return;
+      }
+      throw new Error(`Server error: ${res.status}`);
+    }
+
     const data = await res.json();
     chatHistoryCache = data.history || [];
     renderChatHistory(chatHistoryCache);
-  } catch {
-    showEmptyHistory();
+  } catch (err) {
+    console.warn('[History] Failed to load chat history:', err);
+    // Only show empty if we had no cached data — preserve existing view if available
+    if (chatHistoryCache.length > 0) {
+      renderChatHistory(chatHistoryCache);
+    } else if (retryCount < 2) {
+      // Network error — retry
+      setTimeout(() => loadChatHistory(retryCount + 1), 1500 * (retryCount + 1));
+    } else {
+      showEmptyHistory();
+    }
   }
 }
 

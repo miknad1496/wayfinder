@@ -85,7 +85,7 @@ const BACHELORS_AWARD_LEVEL = 5;
 // ============================================================
 
 const TARGET_SCHOOLS = {
-  // Ivy League
+  // Ivy League (8)
   166027: 'Harvard University',
   130794: 'Yale University',
   186131: 'Princeton University',
@@ -95,7 +95,7 @@ const TARGET_SCHOOLS = {
   182670: 'Dartmouth College',
   190415: 'Cornell University',
 
-  // Top Private
+  // Top Private (20)
   243744: 'Stanford University',
   166683: 'Massachusetts Institute of Technology',
   110404: 'California Institute of Technology',
@@ -117,7 +117,24 @@ const TARGET_SCHOOLS = {
   167358: 'Northeastern University',
   132903: 'Case Western Reserve University',
 
-  // Top Public / Flagship State
+  // More Top Private (15)
+  164924: 'Boston College',
+  164988: 'Boston University',
+  199847: 'Wake Forest University',
+  213543: 'Lehigh University',
+  165015: 'Brandeis University',
+  216597: 'Villanova University',
+  195030: 'University of Rochester',
+  194824: 'Rensselaer Polytechnic Institute',
+  131159: 'George Washington University',
+  121150: 'Pepperdine University',
+  135726: 'University of Miami',
+  228459: 'Southern Methodist University',
+  191241: 'Fordham University',
+  233374: 'University of Richmond',
+  122931: 'Santa Clara University',
+
+  // Top Public / Flagship State (15)
   110635: 'University of California-Berkeley',
   110662: 'University of California-Los Angeles',
   170976: 'University of Michigan-Ann Arbor',
@@ -134,23 +151,58 @@ const TARGET_SCHOOLS = {
   228723: 'Texas A&M University',
   199193: 'North Carolina State University',
 
-  // Elite Liberal Arts
-  236939: 'Williams College',    // Actually 168342
-  164924: 'Amherst College',     // Actually 164465
-  // Corrected IDs below — these are the actual IPEDS UNITIDs
-  // Note: If lookup fails for any school, the scraper will attempt
-  // to resolve via College Scorecard API name search
+  // More Top Public (15)
+  204796: 'Ohio State University',
+  214777: 'Penn State University',
+  163286: 'University of Maryland',
+  186380: 'Rutgers University-New Brunswick',
+  110680: 'UC San Diego',
+  110644: 'UC Davis',
+  110653: 'UC Irvine',
+  110705: 'UC Santa Barbara',
+  139940: 'University of Georgia',
+  174066: 'University of Minnesota',
+  217882: 'Clemson University',
+  215293: 'University of Pittsburgh',
+  151351: 'Indiana University Bloomington',
+  126614: 'University of Colorado Boulder',
+  129020: 'University of Connecticut',
+
+  // Elite Liberal Arts (18)
+  168342: 'Williams College',
+  164465: 'Amherst College',
+  119678: 'Pomona College',
+  161004: 'Bowdoin College',
+  216010: 'Swarthmore College',
+  168218: 'Wellesley College',
+  218742: 'Middlebury College',
+  173258: 'Carleton College',
+  112260: 'Claremont McKenna College',
+  115409: 'Harvey Mudd College',
+  161086: 'Colby College',
+  191515: 'Hamilton College',
+  130226: 'Wesleyan University',
+  213367: 'Haverford College',
+  198385: 'Davidson College',
+  153384: 'Grinnell College',
+  190099: 'Colgate University',
+  161200: 'Bates College',
+
+  // Rising / Popular (9)
+  231624: 'William & Mary',
+  134097: 'Florida State University',
+  196097: 'Stony Brook University',
+  166629: 'UMass Amherst',
+  153658: 'University of Iowa',
+  104151: 'Arizona State University',
+  212054: 'Drexel University',
+  186867: 'Stevens Institute of Technology',
+  209551: 'University of Oregon',
 };
 
-// Some UNITIDs may need verification — this lookup function resolves by name
-const SCHOOL_NAMES_FOR_LOOKUP = [
-  'Williams College',
-  'Amherst College',
-  'Pomona College',
-  'Bowdoin College',
-  'Swarthmore College',
-  'Wellesley College'
-];
+// All 100 UNITIDs are now explicitly mapped above.
+// If expanding beyond 100, add names here for API-based resolution.
+const SCHOOL_NAMES_FOR_LOOKUP = [];
 
 // ============================================================
 // UNITID RESOLVER — uses College Scorecard API to find UNITIDs

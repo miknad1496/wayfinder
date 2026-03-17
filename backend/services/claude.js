@@ -178,6 +178,47 @@ CURRENT USER PROFILE
 ${lines.join('\n')}`;
 }
 
+// ─── Temporal Awareness ────────────────────────────────────────
+// Injects current date and admissions cycle stage so the brain
+// gives time-appropriate advice automatically.
+
+function buildTemporalContext() {
+  const now = new Date();
+  const month = now.getMonth() + 1; // 1-12
+  const day = now.getDate();
+  const year = now.getFullYear();
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dateStr = `${monthNames[month-1]} ${day}, ${year}`;
+
+  // Determine admissions cycle stage
+  let cycleStage = '';
+  if (month >= 1 && month <= 3) {
+    // Jan-Mar: Decision season — most RD decisions come March-April
+    cycleStage = `DECISION SEASON. Regular Decision applications are submitted. Most RD notifications arrive mid-March through early April. ED II results typically come in February. For 12th graders: applications are DONE — this is the waiting period. Do NOT ask about application strategy, essay writing, or ED decisions for seniors. Instead focus on: what decisions they're waiting on, how to evaluate offers when they arrive, financial aid comparison, deposit deadlines (typically May 1), and emotional support during the wait. For 11th graders: this is prime time to start building their school list and planning summer activities. For 10th graders and younger: long-horizon strategic planning.`;
+  } else if (month >= 4 && month <= 5) {
+    // Apr-May: Decisions are in, commitment deadline
+    cycleStage = `COMMITMENT SEASON. Most admissions decisions are in. National commitment deadline is May 1. For 12th graders: focus on comparing offers, financial aid packages, admitted student events, and making the final decision. Waitlist strategy if applicable. For 11th graders: junior year is wrapping up — standardized testing, school list development, summer planning are key.`;
+  } else if (month >= 6 && month <= 8) {
+    // Jun-Aug: Summer — orientation, rising seniors prep
+    cycleStage = `SUMMER PREPARATION. For incoming college freshmen: orientation, housing, course registration. For rising 12th graders: this is the critical summer for finalizing school lists, drafting essays (Common App opens Aug 1), and preparing applications. ED strategy decisions should be made by end of summer. For rising 11th graders: summer programs, test prep, extracurricular depth-building.`;
+  } else if (month >= 9 && month <= 10) {
+    // Sep-Oct: Application season begins
+    cycleStage = `APPLICATION SEASON. Early Decision / Early Action deadlines are typically November 1-15. For 12th graders: applications are being finalized and submitted. Essay polishing, supplemental essays, recommendation letters. This is crunch time. For 11th graders: PSAT in October, start exploring schools.`;
+  } else if (month >= 11 && month <= 12) {
+    // Nov-Dec: ED submitted, RD prep
+    cycleStage = `EARLY ROUND RESULTS & RD PREP. EA/ED applications are submitted (Nov 1-15 deadlines passed). ED results typically arrive mid-December. For 12th graders: if ED is submitted, focus on Regular Decision apps (Jan 1-15 deadlines). If deferred from ED, strategize for RD round. For 11th graders: start thinking about summer plans and initial school research.`;
+  }
+
+  return `\n\n═══════════════════════════════════════════
+TEMPORAL CONTEXT (CRITICAL — USE THIS)
+═══════════════════════════════════════════
+Today's date: ${dateStr}
+Academic year: ${month >= 7 ? year : year - 1}-${month >= 7 ? year + 1 : year}
+Admissions cycle stage: ${cycleStage}
+
+IMPORTANT: Calibrate ALL advice to the current date and cycle stage. A 12th grader in March has already submitted all applications — do not suggest application strategies. A parent asking about their senior in April should be guided on decision-making, not application prep. Always be aware of where we are in the calendar.`;
+}
+
 // ─── Signal-Driven Conversation Phase Detection ────────────────
 // Analyzes conversation history to determine what phase we're in
 // based on CONTEXT RICHNESS, not just exchange count.
@@ -311,6 +352,13 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // Build system prompt with context
   let systemPrompt = await loadSystemPrompt();
   systemPrompt = systemPrompt.replace('{RETRIEVED_CONTEXT}', contextStr);
+
+  // ─── TEMPORAL AWARENESS ─────────────────────────────────────────
+  // Inject current date and admissions cycle stage so the brain
+  // gives time-appropriate advice (e.g., don't ask a 12th grader
+  // in March about ED strategy — apps are submitted, we're waiting
+  // on decisions).
+  systemPrompt += buildTemporalContext();
 
   // Add mode indicator and analysis framework injection
   if (useEngine) {

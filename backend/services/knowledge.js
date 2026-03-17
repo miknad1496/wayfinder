@@ -37,9 +37,12 @@ let categoryIndex = null;    // Map<category, chunk[]> — distilled + base
 let rawDataIndex = null;     // Map<category, chunk[]> — raw JSON parsed
 let careerBrainCache = null;
 let admissionsBrainCache = null;
+let decisionDatesCache = null;   // Lightweight decision dates for standard mode
+let demographicsSummaryCache = null; // Lightweight demographics for standard mode
 let categoryTimestamp = 0;
 let rawDataTimestamp = 0;
 let brainCacheTimestamp = 0;
+let lightDataTimestamp = 0;
 const CACHE_TTL = 10 * 60 * 1000;
 
 const MAX_CHUNK_CHARS = 3000;
@@ -136,8 +139,10 @@ const CATEGORIES = {
       'ed', 'early decision', 'ed2', 'binding', 'club', 'activity', 'activities',
       'passion', 'project', 'business', 'startup', 'differentiate',
       'ethnicity', 'ethnic', 'race', 'racial', 'demographics', 'demographic',
-      'asian', 'white', 'black', 'hispanic', 'latino', 'representation'],
-    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools', 'raw_ethnicity']
+      'asian', 'white', 'black', 'hispanic', 'latino', 'representation',
+      'notification', 'hear', 'hearing', 'waiting', 'results', 'released', 'ivy day',
+      'decision date', 'decision dates', 'when will', 'when do'],
+    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools', 'raw_ethnicity', 'raw_decision_dates']
   },
   local_schools: {
     files: ['admissions-pre-highschool-planning.md'],
@@ -690,6 +695,28 @@ function parseEthnicityData(data) {
   return chunks;
 }
 
+function parseDecisionDatesData(data) {
+  const chunks = [];
+  if (!data || !data.schools) return chunks;
+
+  for (const school of data.schools) {
+    const dates = school.decisionDates || {};
+    const parts = [];
+    if (dates.earlyDecisionI) parts.push(`ED I notification: ${dates.earlyDecisionI.notification} (deadline: ${dates.earlyDecisionI.deadline}, binding)`);
+    if (dates.earlyDecisionII) parts.push(`ED II notification: ${dates.earlyDecisionII.notification} (deadline: ${dates.earlyDecisionII.deadline}, binding)`);
+    if (dates.earlyAction) parts.push(`${dates.earlyAction.type} notification: ${dates.earlyAction.notification} (deadline: ${dates.earlyAction.deadline}${dates.earlyAction.restrictive ? ', restrictive' : ''})`);
+    if (dates.regularDecision) parts.push(`RD notification: ${dates.regularDecision.notification} (deadline: ${dates.regularDecision.deadline})`);
+
+    chunks.push({
+      text: `# ${school.school} — Admissions Decision Dates (${school.cycle})\n${parts.join('\n')}\nCommitment deadline: ${school.commitmentDeadline}\n${school.notes}`,
+      keywords: [school.school.toLowerCase(), 'decision', 'decisions', 'notification', 'hear back', 'results', 'when', 'dates', 'deadline'],
+      boost: 0.9
+    });
+  }
+
+  return chunks;
+}
+
 function parseLocalSchoolData(data) {
   const chunks = [];
   if (!data || typeof data !== 'object') return chunks;
@@ -1216,6 +1243,16 @@ async function buildRawDataIndex() {
     console.log('  raw_ethnicity: no data file found (run ethnicity demographics scraper)');
   }
 
+  // Admissions decision dates
+  const decisionData = await loadJsonFile('decision-dates.json');
+  if (decisionData && decisionData.schools) {
+    index.raw_decision_dates = parseDecisionDatesData(decisionData);
+    console.log(`  raw_decision_dates: ${index.raw_decision_dates.length} school decision profiles`);
+  } else {
+    index.raw_decision_dates = [];
+    console.log('  raw_decision_dates: no data file found');
+  }
+
   // Reddit salary discussions
   const salaryThreads = await loadJsonFile('reddit-salary-discussions.json');
   if (salaryThreads) {
@@ -1307,9 +1344,11 @@ async function loadBrains() {
 const STRONG_ADMISSIONS = new Set([
   'admissions', 'admission', 'acceptance', 'accepted', 'essay', 'sat', 'act',
   'gpa', 'extracurricular', 'recommendation', 'early decision', 'ivy', 'league',
-  'waitlist', 'defer', 'common app', 'supplement', 'college prep', 'college list',
+  'waitlist', 'defer', 'deferred', 'common app', 'supplement', 'college prep', 'college list',
   'financial aid', 'fafsa', 'scholarship', 'middle school', 'elementary',
   'pre-college', 'precollege', 'lakeside', 'bush school', 'overlake',
+  'decision date', 'decision dates', 'hear back', 'hearing back', 'notification',
+  'when will i hear', 'when do i hear', 'results come out', 'ivy day',
   // Named schools are unambiguous admissions signals
   'harvard', 'yale', 'princeton', 'stanford', 'mit', 'columbia', 'penn',
   'cornell', 'brown', 'dartmouth', 'duke', 'northwestern', 'caltech',
@@ -1350,21 +1389,189 @@ function detectBrainType(query) {
   return 'career';
 }
 
+// ─── Lightweight Data Access for Standard Mode ──────────────────────
+// These load compact summaries from scraped data so the standard brain
+// can reference demographics and decision dates without a full engine pull.
+
+async function loadLightData() {
+  const now = Date.now();
+  if (decisionDatesCache && demographicsSummaryCache && (now - lightDataTimestamp) < CACHE_TTL) {
+    return;
+  }
+
+  // Load decision dates
+  try {
+    const raw = await fs.readFile(join(PATHS.scraped, 'decision-dates.json'), 'utf-8');
+    const data = JSON.parse(raw);
+    // Build a compact lookup: school name → dates summary
+    decisionDatesCache = {};
+    for (const school of (data.schools || [])) {
+      const dates = school.decisionDates || {};
+      const parts = [];
+      if (dates.earlyDecisionI) parts.push(`ED I: ${dates.earlyDecisionI.notification}`);
+      if (dates.earlyDecisionII) parts.push(`ED II: ${dates.earlyDecisionII.notification}`);
+      if (dates.earlyAction) parts.push(`EA: ${dates.earlyAction.notification} (${dates.earlyAction.type})`);
+      if (dates.regularDecision) parts.push(`RD: ${dates.regularDecision.notification}`);
+      decisionDatesCache[school.school.toLowerCase()] = {
+        name: school.school,
+        unitId: school.unitId,
+        dates: parts.join(' | '),
+        notes: school.notes,
+        commitmentDeadline: school.commitmentDeadline
+      };
+    }
+    console.log(`[LightData] Decision dates loaded: ${Object.keys(decisionDatesCache).length} schools`);
+  } catch (err) {
+    console.warn('[LightData] Decision dates not available:', err.message);
+    decisionDatesCache = {};
+  }
+
+  // Load demographics summary (just school-level aggregates, no per-major)
+  try {
+    const raw = await fs.readFile(join(PATHS.scraped, 'ethnicity-demographics.json'), 'utf-8');
+    const data = JSON.parse(raw);
+    demographicsSummaryCache = {};
+    for (const school of (data.schools || [])) {
+      const agg = school.schoolAggregate;
+      if (!agg || !agg.percentages) continue;
+      const pct = agg.percentages;
+      // Build a compact string: "White 45%, Asian 22%, Hispanic 15%, Black 8%, ..."
+      const breakdown = Object.entries(pct)
+        .filter(([k, v]) => v > 0 && k !== 'unknown')
+        .sort((a, b) => b[1] - a[1])
+        .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}%`)
+        .join(', ');
+      demographicsSummaryCache[school.school.toLowerCase()] = {
+        name: school.school,
+        unitId: school.unitId,
+        total: agg.demographics?.total || 0,
+        breakdown,
+        totalMajors: school.totalMajorsWithData
+      };
+    }
+    console.log(`[LightData] Demographics summaries loaded: ${Object.keys(demographicsSummaryCache).length} schools`);
+  } catch (err) {
+    console.warn('[LightData] Demographics not available:', err.message);
+    demographicsSummaryCache = {};
+  }
+
+  lightDataTimestamp = now;
+}
+
+/**
+ * Detect if a query mentions specific schools and pull relevant light data.
+ * Returns a compact context string to append to brain context in standard mode.
+ */
+async function getLightDataContext(query) {
+  await loadLightData();
+
+  if (!query) return '';
+  const lower = query.toLowerCase();
+
+  // Detect if query is about decision dates / when decisions come out
+  const hasDecisionSignal = /\b(decision|decisions|hear back|hearing back|when will|when do|notification|result|results|release|admit|admitted|wait|waiting|march|april|deferred|defer|accepted)\b/i.test(lower);
+  const hasCollegeSignal = /\b(college|school|university|admissions|admission|apply|applied|application)\b/i.test(lower);
+
+  // Detect if query is about demographics / diversity
+  const wantsDemographics = /\b(demographic|demographics|diversity|diverse|ethnicity|ethnic|race|racial|representation|asian|white|black|hispanic|latino|breakdown|composition)\b/i.test(lower);
+
+  // Find which schools are mentioned
+  const mentionedSchools = [];
+  const allSchoolNames = new Set([
+    ...Object.keys(decisionDatesCache || {}),
+    ...Object.keys(demographicsSummaryCache || {})
+  ]);
+
+  for (const schoolName of allSchoolNames) {
+    // Match on school name or common abbreviation
+    const words = schoolName.split(/\s+/);
+    // Try full name match
+    if (lower.includes(schoolName)) {
+      mentionedSchools.push(schoolName);
+      continue;
+    }
+    // Try partial match (e.g., "northwestern" matches "northwestern university")
+    for (const word of words) {
+      if (word.length > 4 && lower.includes(word) && !['university', 'college', 'institute', 'technology'].includes(word)) {
+        mentionedSchools.push(schoolName);
+        break;
+      }
+    }
+  }
+
+  const contextParts = [];
+
+  // Decision dates trigger: either (decision signal + college signal) or (decision signal + specific school mentioned)
+  const wantsDecisionDates = hasDecisionSignal && (hasCollegeSignal || mentionedSchools.length > 0);
+
+  // If asking about decisions and schools are mentioned, inject decision dates
+  if (wantsDecisionDates && mentionedSchools.length > 0 && decisionDatesCache) {
+    const dateParts = [];
+    for (const school of mentionedSchools.slice(0, 8)) {
+      const info = decisionDatesCache[school];
+      if (info) {
+        dateParts.push(`${info.name}: ${info.dates}. ${info.notes}`);
+      }
+    }
+    if (dateParts.length > 0) {
+      contextParts.push(`\n--- DECISION DATE REFERENCE ---\n${dateParts.join('\n')}\nCommitment deadline: May 1, 2026`);
+    }
+  }
+
+  // If asking generally about decisions (no specific school), give a helpful overview
+  if (wantsDecisionDates && mentionedSchools.length === 0 && decisionDatesCache) {
+    contextParts.push(`\n--- DECISION TIMELINE OVERVIEW (2025-2026 cycle) ---
+You have access to detailed decision date data for 99 colleges. Key patterns:
+- ED I notifications: Mid-December (most schools ~Dec 15)
+- EA notifications: Mid-December to late January (varies widely)
+- ED II notifications: Mid-February (most schools ~Feb 15)
+- UC system: Mid-to-late March (Davis/UCSD first ~Mar 10-15, Berkeley/UCLA ~Mar 25-28)
+- Ivy Day: Late March (typically ~March 28)
+- Most RD decisions: Late March to early April
+- National commitment deadline: May 1, 2026
+If the user mentions a specific school, reference the exact dates. Direct users wanting comprehensive date lookups to the Demographics tool in the sidebar.`);
+  }
+
+  // If asking about demographics and schools are mentioned, inject summaries
+  if (wantsDemographics && mentionedSchools.length > 0 && demographicsSummaryCache) {
+    const demoParts = [];
+    for (const school of mentionedSchools.slice(0, 5)) {
+      const info = demographicsSummaryCache[school];
+      if (info) {
+        demoParts.push(`${info.name} (${info.total.toLocaleString()} total completions, ${info.totalMajors} majors with data): ${info.breakdown}`);
+      }
+    }
+    if (demoParts.length > 0) {
+      contextParts.push(`\n--- DEMOGRAPHICS REFERENCE ---\n${demoParts.join('\n')}\nFor detailed per-major breakdowns, direct users to the Demographics tool in the sidebar.`);
+    }
+  }
+
+  if (contextParts.length > 0) {
+    console.log(`[LightData] Injecting ${contextParts.length} data context(s) for standard mode`);
+  }
+
+  return contextParts.join('\n');
+}
+
 export async function getLiteBrainContext(query) {
   await loadBrains();
 
   const brainType = detectBrainType(query);
 
-  if (brainType === 'admissions') {
-    if (!admissionsBrainCache) return '[Admissions knowledge — no brain loaded.]';
-    console.log(`  Brain routing: ADMISSIONS (${admissionsBrainCache.length} chars)`);
-    return `--- WAYFINDER ADMISSIONS INTELLIGENCE (condensed) ---\n${admissionsBrainCache}\n`;
-  }
+  // Get lightweight data context (decision dates, demographics) if query warrants it
+  const lightData = await getLightDataContext(query);
 
-  if (brainType === 'both') {
+  let brainContext;
+
+  if (brainType === 'admissions') {
+    if (!admissionsBrainCache) brainContext = '[Admissions knowledge — no brain loaded.]';
+    else {
+      console.log(`  Brain routing: ADMISSIONS (${admissionsBrainCache.length} chars)`);
+      brainContext = `--- WAYFINDER ADMISSIONS INTELLIGENCE (condensed) ---\n${admissionsBrainCache}\n`;
+    }
+  } else if (brainType === 'both') {
     // Smart merge: the primary brain is career (since "both" means weak admissions signal),
     // but include relevant SECTIONS from admissions brain, not the whole thing.
-    // Split admissions brain into sections and only include ones with keyword overlap.
     const queryKw = new Set(extractKeywords(query));
     let admissionsContext = admissionsBrainCache || '';
 
@@ -1384,13 +1591,22 @@ export async function getLiteBrainContext(query) {
     }
 
     const combined = [careerBrainCache, admissionsContext].filter(Boolean).join('\n\n---\n\n');
-    return `--- WAYFINDER KNOWLEDGE BASE (career + admissions context) ---\n${combined}\n`;
+    brainContext = `--- WAYFINDER KNOWLEDGE BASE (career + admissions context) ---\n${combined}\n`;
+  } else {
+    // Default: career
+    if (!careerBrainCache) brainContext = '[Career knowledge — no brain loaded.]';
+    else {
+      console.log(`  Brain routing: CAREER (${careerBrainCache.length} chars)`);
+      brainContext = `--- WAYFINDER CAREER INTELLIGENCE (condensed) ---\n${careerBrainCache}\n`;
+    }
   }
 
-  // Default: career
-  if (!careerBrainCache) return '[Career knowledge — no brain loaded.]';
-  console.log(`  Brain routing: CAREER (${careerBrainCache.length} chars)`);
-  return `--- WAYFINDER CAREER INTELLIGENCE (condensed) ---\n${careerBrainCache}\n`;
+  // Append lightweight data if relevant (decision dates, demographics)
+  if (lightData) {
+    brainContext += lightData;
+  }
+
+  return brainContext;
 }
 
 // ─── Public API ───────────────────────────────────────────────────
