@@ -32,16 +32,27 @@ async function loadDemographicsData() {
     return demographicsCache;
   }
 
-  const filePath = join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json');
-  try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    demographicsCache = JSON.parse(raw);
-    cacheTimestamp = now;
-    return demographicsCache;
-  } catch (err) {
-    console.error('Failed to load demographics data:', err.message);
-    return null;
+  // Try multiple path strategies for compatibility across environments
+  const pathCandidates = [
+    join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json'),
+    join(process.cwd(), 'backend', 'data', 'scraped', 'ethnicity-demographics.json'),
+    join(process.cwd(), 'data', 'scraped', 'ethnicity-demographics.json'),
+  ];
+
+  for (const filePath of pathCandidates) {
+    try {
+      const raw = await fs.readFile(filePath, 'utf8');
+      demographicsCache = JSON.parse(raw);
+      cacheTimestamp = now;
+      console.log(`[Demographics] Loaded from: ${filePath} (${demographicsCache.schools?.length || 0} schools)`);
+      return demographicsCache;
+    } catch (err) {
+      console.log(`[Demographics] Path not found: ${filePath} (${err.code || err.message})`);
+    }
   }
+
+  console.error('[Demographics] Failed to load from ALL paths. __dirname:', __dirname, 'cwd:', process.cwd());
+  return null;
 }
 
 // Helper: extract user from token (returns null if not authenticated or free)
@@ -85,6 +96,35 @@ function stripForFreeUser(schoolData) {
     _previewMessage: `Showing 3 of ${schoolData.totalMajorsWithData} majors. Upgrade to Premium for full demographic data across all majors.`
   };
 }
+
+// ─── GET /api/demographics/health ─────────────────────────────
+// Debug endpoint to check if data file is accessible
+router.get('/health', async (req, res) => {
+  const pathCandidates = [
+    join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json'),
+    join(process.cwd(), 'backend', 'data', 'scraped', 'ethnicity-demographics.json'),
+    join(process.cwd(), 'data', 'scraped', 'ethnicity-demographics.json'),
+  ];
+
+  const results = [];
+  for (const p of pathCandidates) {
+    try {
+      const stat = await fs.stat(p);
+      results.push({ path: p, exists: true, size: stat.size });
+    } catch (err) {
+      results.push({ path: p, exists: false, error: err.code });
+    }
+  }
+
+  const data = await loadDemographicsData();
+  res.json({
+    __dirname,
+    cwd: process.cwd(),
+    paths: results,
+    dataLoaded: data ? true : false,
+    schoolCount: data?.schools?.length || 0
+  });
+});
 
 // ─── GET /api/demographics/schools ─────────────────────────────
 // Returns list of all schools with basic info (no auth required)

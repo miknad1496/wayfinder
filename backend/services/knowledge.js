@@ -1,6 +1,10 @@
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import { PATHS } from './storage.js';
+import {
+  buildInvertedIndex, scoreBM25, analyzeQuery,
+  assembleContext, SemanticCache
+} from './retrieval.js';
 
 /**
  * Wayfinder Knowledge Retrieval Engine v3 — Intelligent Indexed Retrieval
@@ -39,6 +43,9 @@ let careerBrainCache = null;
 let admissionsBrainCache = null;
 let decisionDatesCache = null;   // Lightweight decision dates for standard mode
 let demographicsSummaryCache = null; // Lightweight demographics for standard mode
+let bm25Index = null;            // BM25 inverted index for engine mode
+let bm25IndexTimestamp = 0;
+const semanticCache = new SemanticCache(150, 5 * 60 * 1000); // 150 entries, 5min TTL
 let categoryTimestamp = 0;
 let rawDataTimestamp = 0;
 let brainCacheTimestamp = 0;
@@ -1611,60 +1618,208 @@ export async function getLiteBrainContext(query) {
 
 // ─── Public API ───────────────────────────────────────────────────
 
+// OLD retrieveContext removed — replaced by BM25-powered retrieveContext() below
+// Legacy keyword-based retrieval is preserved as retrieveContextLegacy() for fallback
+
+function countAllChunks(index) {
+  let total = 0;
+  for (const chunks of Object.values(index)) {
+    total += chunks.length;
+  }
+  return total;
+}
+
+// ─── BM25-Powered Retrieval (v2) ─────────────────────────────────
+//
+// This replaces the keyword-based category routing with BM25 scoring.
+// Key advantages:
+//   - Scales to any database size (always retrieves top-K, O(1) in DB size)
+//   - Scores individual chunks, not categories — more precise matching
+//   - Entity detection boosts known school/career names automatically
+//   - Semantic cache avoids re-scoring for similar queries
+//   - Adaptive budget adjusts topK and token spend based on query complexity
+
 /**
- * Retrieve the most relevant knowledge chunks for a query.
+ * Build or return the cached BM25 inverted index over all knowledge chunks.
+ * Combines distilled (Layer 1), base (Layer 2), and raw (Layer 3) into
+ * a single flat index that BM25 can score against.
+ */
+async function buildBM25Index() {
+  const now = Date.now();
+  if (bm25Index && (now - bm25IndexTimestamp) < CACHE_TTL) {
+    return bm25Index;
+  }
+
+  console.log('[BM25] Building unified inverted index...');
+
+  // Load both category (distilled + base) and raw data indexes
+  const catIndex = await buildCategoryIndex();
+  const rawIndex = await buildRawDataIndex();
+
+  // Flatten all chunks into a single array with layer tags
+  const allChunks = [];
+
+  // Layer 1: Distilled intelligence (highest quality, boosted)
+  for (const [catName, chunks] of Object.entries(catIndex)) {
+    if (catName === '_base') continue;
+    for (const chunk of chunks) {
+      allChunks.push({
+        ...chunk,
+        layer: 'distilled',
+        boostFactor: chunk.boostFactor || 2.0,
+        text: chunk.content || chunk.text || '',
+        keywords: chunk.keywords || []
+      });
+    }
+  }
+
+  // Layer 2: Base knowledge
+  if (catIndex._base) {
+    for (const chunk of catIndex._base) {
+      allChunks.push({
+        ...chunk,
+        layer: 'base',
+        boostFactor: chunk.boostFactor || 1.0,
+        text: chunk.content || chunk.text || '',
+        keywords: chunk.keywords || []
+      });
+    }
+  }
+
+  // Layer 3: Raw data reserve
+  for (const [catName, chunks] of Object.entries(rawIndex)) {
+    for (const chunk of chunks) {
+      allChunks.push({
+        ...chunk,
+        layer: 'raw',
+        boostFactor: chunk.boost || 0.8,
+        text: chunk.text || chunk.content || '',
+        keywords: chunk.keywords || []
+      });
+    }
+  }
+
+  console.log(`[BM25] Total chunks to index: ${allChunks.length} (distilled + base + raw)`);
+
+  bm25Index = buildInvertedIndex(allChunks);
+  bm25IndexTimestamp = now;
+
+  // Clear semantic cache when index rebuilds
+  semanticCache.clear();
+
+  return bm25Index;
+}
+
+/**
+ * BM25-powered retrieval — the new engine mode pipeline.
  *
- * Three-stage pipeline:
- *   Stage 1:   Category routing (zero cost)
- *   Stage 1.5: Specificity detection — should we access raw data?
- *   Stage 2:   Targeted retrieval from matched layers
+ * Replaces the old retrieveContext() with:
+ *   1. Query analysis (intent + entity + complexity)
+ *   2. Semantic cache check
+ *   3. BM25 scoring against the unified index
+ *   4. Adaptive topK based on query complexity
+ *   5. Context assembly with deduplication
  *
  * @param {string} query - The user's question
- * @param {number} topK - Max chunks to return
+ * @param {number} topK - Max chunks to return (overridden by query analysis)
  * @returns {Array} Scored, sorted chunks
  */
+export async function retrieveContextV2(query, topK = 6) {
+  if (!query || query.trim().length === 0) return [];
+
+  // Step 1: Analyze the query
+  const analysis = analyzeQuery(query);
+  console.log(`  [BM25] Query: "${query.slice(0, 60)}..."`);
+  console.log(`  [BM25] Intent: ${analysis.intent} | Domain: ${analysis.domain} | Complexity: ${analysis.complexity}`);
+  console.log(`  [BM25] Entities: ${analysis.entities.map(e => `${e.type}:${e.value}`).join(', ') || 'none'}`);
+  console.log(`  [BM25] TopK: ${analysis.suggestedTopK} | NeedsRaw: ${analysis.needsRawData}`);
+
+  // Step 2: Check semantic cache
+  const cached = semanticCache.get(query);
+  if (cached) {
+    console.log(`  [BM25] Cache HIT (${semanticCache.stats().hitRate} hit rate)`);
+    return cached;
+  }
+
+  // Step 3: Build/get the BM25 index
+  const index = await buildBM25Index();
+
+  // Step 4: Score via BM25
+  const effectiveTopK = Math.max(analysis.suggestedTopK, topK);
+  const layerBoosts = analysis.needsRawData
+    ? { distilled: 1.5, base: 1.0, raw: 1.2 }    // Boost raw when we need specifics
+    : { distilled: 2.0, base: 1.0, raw: 0.5 };    // Suppress raw for general queries
+
+  const ranked = scoreBM25(query, index, {
+    topK: effectiveTopK,
+    entityBoostFactor: 2.5,
+    layerBoosts
+  });
+
+  console.log(`  [BM25] Scored ${index.totalDocs} chunks, returning top ${ranked.length}`);
+  if (ranked.length > 0) {
+    console.log(`  [BM25] Top score: ${ranked[0].score} (${ranked[0].chunk.source || 'unknown'})`);
+    console.log(`  [BM25] Layers: ${ranked.map(r => r.chunk.layer).join(', ')}`);
+  }
+
+  // Step 5: Convert to the format expected by formatContext()
+  const results = ranked.map(r => ({
+    ...r.chunk,
+    score: r.score,
+    content: r.chunk.text || r.chunk.content || '',
+    title: r.chunk.title || r.chunk.source || 'Knowledge',
+    source: r.chunk.source || 'wayfinder-kb'
+  }));
+
+  // Cache the results
+  semanticCache.set(query, results);
+
+  return results;
+}
+
+/**
+ * Retrieve the most relevant knowledge chunks for a query.
+ * Now uses BM25 scoring (v2) instead of keyword-based routing.
+ *
+ * Falls back to the old keyword-based system if BM25 index fails to build.
+ */
 export async function retrieveContext(query, topK = 6) {
+  try {
+    return await retrieveContextV2(query, topK);
+  } catch (err) {
+    console.error('[BM25] Retrieval failed, falling back to keyword routing:', err.message);
+    return await retrieveContextLegacy(query, topK);
+  }
+}
+
+/**
+ * Legacy keyword-based retrieval (v1) — kept as fallback.
+ * This is the old retrieveContext() before BM25 was added.
+ */
+async function retrieveContextLegacy(query, topK = 6) {
   const distilledIndex = await buildCategoryIndex();
   const queryKeywords = extractKeywords(query);
 
   if (queryKeywords.length === 0) return [];
 
-  // STAGE 0: Classify intent — determines breadth, depth, and assembly strategy
   const intent = classifyIntent(query);
-
-  // STAGE 1: Route to categories (intent-aware)
   const routing = routeQuery(queryKeywords, intent);
-
-  // STAGE 1.5: Should we drill into raw data?
-  // Intent-aware: specific_lookup and comparison intents lower the threshold
   const specificity = detectSpecificity(query);
   const intentLowersThreshold = intent.primary === 'specific_lookup' || intent.primary === 'comparison';
   const shouldDrill = specificity.isSpecific || (intentLowersThreshold && specificity.signals >= 1);
 
-  console.log(`  [Intent] ${intent.primary}${intent.secondary ? ' + ' + intent.secondary : ''}`);
-  console.log(`  [Router] "${query.slice(0, 60)}..." → ${routing.routing} (${routing.categories.join(', ')})`);
-  console.log(`  [Specificity] ${specificity.level} (${specificity.signals} signals)${shouldDrill ? ' → DRILLING INTO RAW DATA' : ''}`);
+  console.log(`  [Legacy] "${query.slice(0, 60)}..." → ${routing.routing} (${routing.categories.join(', ')})`);
 
-  // STAGE 2: Assemble candidate chunks with PROGRESSIVE LOADING
-  // Start with matched category distilled chunks only. Only widen if needed.
   const candidateChunks = [];
 
-  // Primary: distilled chunks from matched categories
   for (const catName of routing.categories) {
-    if (distilledIndex[catName]) {
-      candidateChunks.push(...distilledIndex[catName]);
-    }
+    if (distilledIndex[catName]) candidateChunks.push(...distilledIndex[catName]);
   }
 
-  // Base knowledge: include SELECTIVELY, not as a dump.
-  // For targeted routing, score base chunks against query and only include
-  // ones that actually match. For fallback routing, include more base.
   if (distilledIndex._base) {
     if (routing.routing === 'fallback') {
-      // Fallback: include base (this IS the general knowledge)
       candidateChunks.push(...distilledIndex._base);
     } else {
-      // Targeted/focused: only include base chunks that have keyword overlap
       const baseRelevant = distilledIndex._base.filter(chunk => {
         const chunkKeywords = new Set(chunk.keywords);
         return queryKeywords.some(kw => chunkKeywords.has(kw));
@@ -1673,30 +1828,20 @@ export async function retrieveContext(query, topK = 6) {
     }
   }
 
-  // Raw data: only if query is specific enough (intent-aware threshold)
   if (shouldDrill) {
-    const rawIndex = await buildRawDataIndex();
-
+    const rawIdx = await buildRawDataIndex();
     const rawCatsToSearch = new Set();
     for (const catName of routing.categories) {
       const cat = CATEGORIES[catName];
       if (cat?.rawCategories) {
-        for (const rc of cat.rawCategories) {
-          rawCatsToSearch.add(rc);
-        }
+        for (const rc of cat.rawCategories) rawCatsToSearch.add(rc);
       }
     }
-
     for (const rawCat of rawCatsToSearch) {
-      if (rawIndex[rawCat]) {
-        candidateChunks.push(...rawIndex[rawCat]);
-      }
+      if (rawIdx[rawCat]) candidateChunks.push(...rawIdx[rawCat]);
     }
-
-    console.log(`  [Raw Data] Tapped: ${[...rawCatsToSearch].join(', ')}`);
   }
 
-  // Deduplicate
   const seen = new Set();
   const uniqueChunks = candidateChunks.filter(chunk => {
     const key = `${chunk.source}:${chunk.title}`;
@@ -1705,35 +1850,11 @@ export async function retrieveContext(query, topK = 6) {
     return true;
   });
 
-  const totalAvailable = countAllChunks(distilledIndex) + (shouldDrill ? countAllChunks(rawDataIndex || {}) : 0);
-  console.log(`  [Router] Searching ${uniqueChunks.length} of ${totalAvailable} total chunks`);
-
-  // STAGE 3: Score, rank, and return — intent-aware topK
-  // Deep-dive and comparison queries get more results
-  // Targeted specific_lookup gets fewer but more precise results
-  let effectiveTopK = topK;
-  if (specificity.level === 'deep' || intent.primary === 'comparison') {
-    effectiveTopK = topK + 2;
-  } else if (intent.primary === 'specific_lookup' && routing.routing === 'targeted') {
-    effectiveTopK = Math.max(topK - 1, 3); // Tight and precise
-  }
-
   return uniqueChunks
-    .map(chunk => ({
-      ...chunk,
-      score: scoreChunk(chunk, queryKeywords) * (chunk.boostFactor || 1.0)
-    }))
+    .map(chunk => ({ ...chunk, score: scoreChunk(chunk, queryKeywords) * (chunk.boostFactor || 1.0) }))
     .filter(chunk => chunk.score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, effectiveTopK);
-}
-
-function countAllChunks(index) {
-  let total = 0;
-  for (const chunks of Object.values(index)) {
-    total += chunks.length;
-  }
-  return total;
+    .slice(0, topK);
 }
 
 export function formatContext(chunks) {
@@ -1745,7 +1866,7 @@ export function formatContext(chunks) {
   const entries = [];
 
   for (const chunk of chunks) {
-    const rawTag = chunk.isRawData ? ' [RAW DATA]' : '';
+    const rawTag = chunk.isRawData || chunk.layer === 'raw' ? ' [RAW DATA]' : '';
     const entry = `--- SOURCE ${entries.length + 1}: ${chunk.source}${rawTag} ---\nTOPIC: ${chunk.title}\n${chunk.content}\n`;
     if (totalChars + entry.length > MAX_TOTAL_CONTEXT_CHARS) break;
     totalChars += entry.length;
@@ -1763,4 +1884,7 @@ export function invalidateCache() {
   careerBrainCache = null;
   admissionsBrainCache = null;
   brainCacheTimestamp = 0;
+  bm25Index = null;
+  bm25IndexTimestamp = 0;
+  semanticCache.clear();
 }
