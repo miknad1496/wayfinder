@@ -28,7 +28,7 @@ Consumption-based, not subscription:
 |------|---------|-------|------------|
 | Starter | 5 | $10 | $2.00 |
 | Standard | 10 | $15 | $1.50 |
-| Bulk | 20 | $18 | $0.90 |
+| Bulk | 20 | $20 | $1.00 |
 
 ---
 
@@ -111,7 +111,7 @@ Need to create in Stripe Dashboard:
 - **Product: Admissions Coach Elite** → Price: $50/month recurring
 - **Product: Essay Review - Starter** → Price: $10 one-time
 - **Product: Essay Review - Standard** → Price: $15 one-time
-- **Product: Essay Review - Bulk** → Price: $18 one-time
+- **Product: Essay Review - Bulk** → Price: $20 one-time
 
 Env vars to add:
 ```

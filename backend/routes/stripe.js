@@ -190,7 +190,7 @@ router.post('/purchase-essays', checkoutLimiter, async (req, res) => {
 
     const { pack } = req.body;
     if (!pack || !ESSAY_PRICE_IDS[pack]) {
-      return res.status(400).json({ error: 'Invalid pack. Choose starter (5/$10), standard (10/$15), or bulk (20/$18).' });
+      return res.status(400).json({ error: 'Invalid pack. Choose starter (5/$10), standard (10/$15), or bulk (20/$20).' });
     }
 
     const priceId = ESSAY_PRICE_IDS[pack];
