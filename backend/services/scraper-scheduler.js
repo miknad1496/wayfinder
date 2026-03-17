@@ -79,20 +79,21 @@ const SCRAPERS = {
     description: 'College admissions profiles'
   },
 
-  // Quarterly scrapers — slow-changing government/institutional data
+  // Annual scrapers — slow-changing government/institutional data
+  // These run at most once per year; use admin force-run endpoint to trigger manually
   nces: {
-    frequency: 'quarterly',
-    intervalMs: 90 * 24 * 60 * 60 * 1000,
+    frequency: 'annual',
+    intervalMs: 365 * 24 * 60 * 60 * 1000,
     module: '../scrapers/nces-scraper.js',
     fn: 'runNCESScraper',
     description: 'NCES College Scorecard'
   },
   ethnicity: {
-    frequency: 'quarterly',
-    intervalMs: 90 * 24 * 60 * 60 * 1000,
+    frequency: 'annual',
+    intervalMs: 365 * 24 * 60 * 60 * 1000,
     module: '../scrapers/ethnicity-demographics-scraper.js',
     fn: 'scrapeEthnicityDemographics',
-    description: 'IPEDS ethnicity demographics'
+    description: 'IPEDS ethnicity demographics (run manually when new IPEDS data releases)'
   }
 };
 
