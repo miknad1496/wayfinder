@@ -96,8 +96,8 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
       </div>
 
       <div class="content">
-        <p><strong>${inviterName}</strong> invited you to Wayfinder — an invite-only AI advisor that combines deep career intelligence with college admissions strategy.</p>
-        <p style="color: #555; font-size: 14px; line-height: 1.7;">Wayfinder is powered by Claude Opus and trained on structured data from the Bureau of Labor Statistics, O*NET, NCES College Scorecard, and insights distilled from admissions officers, career counselors, and hiring professionals. It's not a chatbot with opinions — it's a reasoning engine backed by real data.</p>
+        <p><strong>${inviterName}</strong> invited you to Wayfinder — an invite-only platform delivering college admissions intelligence and career strategy through domain-specific AI.</p>
+        <p style="color: #555; font-size: 14px; line-height: 1.7;">Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The reasoning engine is Claude Opus. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.</p>
       </div>
 
       <div class="invite-section">
@@ -121,9 +121,9 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
     // Prepare the plain text fallback
     const textBody = `You've been invited to Wayfinder
 
-${inviterName} invited you to Wayfinder — an invite-only AI advisor that combines deep career intelligence with college admissions strategy.
+${inviterName} invited you to Wayfinder — an invite-only platform delivering college admissions intelligence and career strategy through domain-specific AI.
 
-Wayfinder is powered by Claude Opus and trained on structured data from the Bureau of Labor Statistics, O*NET, NCES College Scorecard, and insights distilled from admissions officers, career counselors, and hiring professionals. It's not a chatbot with opinions — it's a reasoning engine backed by real data.
+Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The reasoning engine is Claude Opus. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.
 
 Accept your invitation: ${inviteLink}
 
