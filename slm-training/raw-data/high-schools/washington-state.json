@@ -1,0 +1,1624 @@
+{
+  "state": "Washington",
+  "generated_date": "2026-03-18",
+  "schools": [
+    {
+      "name": "Lakeside School",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 620,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.68,
+        "ib_program": false,
+        "average_sat": 1510,
+        "average_act": 34,
+        "student_teacher_ratio": "8:1",
+        "college_counselors": 4
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.98,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 45},
+          {"school": "Stanford University", "estimated_annual": 22},
+          {"school": "Harvard University", "estimated_annual": 18},
+          {"school": "Yale University", "estimated_annual": 12},
+          {"school": "MIT", "estimated_annual": 14},
+          {"school": "Northwestern University", "estimated_annual": 10}
+        ],
+        "ivy_plus_rate": 0.32
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Science Olympiad", "Robotics", "Computer Science Club"],
+        "athletics_highlights": ["Rowing (state champions)", "Basketball", "Soccer", "Cross Country"],
+        "arts_programs": ["Theater", "Orchestra", "Choir", "Visual Arts"],
+        "stem_programs": ["Computer Science Academy", "Engineering Design", "Robotics Team (First Robotics)"]
+      },
+      "culture": {
+        "description": "Lakeside is Washington's most prestigious independent school with rigorous academics and a strong collaborative culture. Known for exceptional STEM programs and competitive college placement. The school emphasizes intellectual curiosity, ethics, and community service.",
+        "strengths": ["Top-tier academics", "Outstanding STEM and CS programs", "Elite college placement", "World-class faculty", "Financial aid available despite high cost"],
+        "known_for": "Bill Gates and other tech industry leaders are alumni. Computer science and robotics excellence."
+      },
+      "tuition": 42000,
+      "financial_aid_available": true,
+      "niche_grade": "A+",
+      "wa_insight": "Lakeside sends ~32% of graduates to Ivy+ schools and ~98% to four-year colleges. The CS and robotics programs are nationally recognized with consistent FIRST Robotics success. However, the $42K tuition and highly selective admissions (15% acceptance) make it a reach for most families. Strong financial aid available (average aid $22K). Feeder patterns show strong alignment with Stanford, Harvard, MIT, and University of Washington."
+    },
+    {
+      "name": "The Bush School",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 475,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 15,
+        "ap_participation_rate": 0.65,
+        "ib_program": false,
+        "average_sat": 1480,
+        "average_act": 33,
+        "student_teacher_ratio": "9:1",
+        "college_counselors": 3
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.97,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 35},
+          {"school": "Harvard University", "estimated_annual": 8},
+          {"school": "Yale University", "estimated_annual": 6},
+          {"school": "Whitman College", "estimated_annual": 12},
+          {"school": "Northwestern University", "estimated_annual": 7}
+        ],
+        "ivy_plus_rate": 0.22
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Sustainability Club", "Global Initiative"],
+        "athletics_highlights": ["Basketball", "Soccer", "Cross Country", "Track and Field"],
+        "arts_programs": ["Theater", "Visual Arts", "Music ensembles"],
+        "stem_programs": ["Science labs", "Environmental Science concentration"]
+      },
+      "culture": {
+        "description": "Bush School emphasizes global citizenship, environmental stewardship, and personalized learning. Smaller than Lakeside with more individualized attention. Known for strong advisory system and international perspectives.",
+        "strengths": ["Personalized education", "Global focus", "Environmental programs", "Close student-faculty relationships"],
+        "known_for": "Progressive education philosophy. Strong international and environmental focus."
+      },
+      "tuition": 38500,
+      "financial_aid_available": true,
+      "niche_grade": "A",
+      "wa_insight": "Bush sends ~22% to Ivy+ schools with strong placement at University of Washington (35+/year). The school's strength lies in developing global citizens and critical thinkers rather than pure test-score competition. International travel and environmental programs are standout features. Slightly less selective than Lakeside but comparable in rigor. Good financial aid program (average aid $18K)."
+    },
+    {
+      "name": "Seattle Academy of Arts and Sciences (SAAS)",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 640,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.62,
+        "ib_program": false,
+        "average_sat": 1470,
+        "average_act": 33,
+        "student_teacher_ratio": "9:1",
+        "college_counselors": 3
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.96,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 50},
+          {"school": "Reed College", "estimated_annual": 15},
+          {"school": "Whitman College", "estimated_annual": 12},
+          {"school": "Stanford University", "estimated_annual": 8}
+        ],
+        "ivy_plus_rate": 0.18
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Arts focus (music, theater, visual arts)", "Debate", "Model UN"],
+        "athletics_highlights": ["Soccer", "Cross Country", "Swimming", "Basketball"],
+        "arts_programs": ["Award-winning theater program", "Orchestra", "Jazz band", "Visual arts studio"],
+        "stem_programs": ["STEM offerings", "Science labs"]
+      },
+      "culture": {
+        "description": "SAAS balances rigorous academics with exceptional arts programming. The school attracts creative, intellectually curious students. Strong sense of community and collaboration between arts and sciences.",
+        "strengths": ["Arts and academics integration", "Award-winning performing arts", "Creative culture", "College preparation"],
+        "known_for": "Strong arts and theater programs. Well-rounded college prep."
+      },
+      "tuition": 37500,
+      "financial_aid_available": true,
+      "niche_grade": "A",
+      "wa_insight": "SAAS graduates strong college placement (96% four-year) with particular strength at UW (50+/year), Reed, and Whitman. The integrated arts-academics approach attracts students seeking non-traditional college prep. Less STEM-focused than Lakeside but excellent for students balancing creative and intellectual pursuits. Financial aid available (average $19K). Known for developing well-rounded individuals."
+    },
+    {
+      "name": "Northwest School",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 420,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.58,
+        "ib_program": false,
+        "average_sat": 1440,
+        "average_act": 32,
+        "student_teacher_ratio": "10:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.95,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 28},
+          {"school": "Whitman College", "estimated_annual": 10},
+          {"school": "Colorado College", "estimated_annual": 8},
+          {"school": "Wesleyan University", "estimated_annual": 6}
+        ],
+        "ivy_plus_rate": 0.15
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Project-based learning", "Community service", "Outdoor education"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Theater", "Visual arts"],
+        "stem_programs": ["Project-based STEM", "Environmental science"]
+      },
+      "culture": {
+        "description": "Northwest School emphasizes experiential learning, student agency, and outdoor education. Smallest of Seattle's elite privates with tight-knit community. Progressive pedagogy with focus on real-world problem solving.",
+        "strengths": ["Experiential learning", "Outdoor education", "Student-centered approach", "Community engagement"],
+        "known_for": "Innovative project-based curriculum. Outdoor education and hiking trips."
+      },
+      "tuition": 36500,
+      "financial_aid_available": true,
+      "niche_grade": "A-",
+      "wa_insight": "Northwest School serves highly motivated learners seeking alternative to traditional prep school format. College placement strong (95% four-year) with emphasis on liberal arts schools. Less aggressive Ivy+ push than Lakeside but appeals to independent thinkers. Project-based curriculum develops critical thinking and collaboration. Good fit for outdoors-oriented, creative students. Financial aid available."
+    },
+    {
+      "name": "University Prep",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 380,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 12,
+        "ap_participation_rate": 0.55,
+        "ib_program": false,
+        "average_sat": 1420,
+        "average_act": 31,
+        "student_teacher_ratio": "10:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.94,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 25},
+          {"school": "Whitman College", "estimated_annual": 8},
+          {"school": "Colorado College", "estimated_annual": 6}
+        ],
+        "ivy_plus_rate": 0.12
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Community service", "Debate", "Arts"],
+        "athletics_highlights": ["Soccer", "Basketball", "Rowing"],
+        "arts_programs": ["Music", "Theater", "Visual arts"],
+        "stem_programs": ["Science and math emphasis"]
+      },
+      "culture": {
+        "description": "University Prep is an independent, progressive school emphasizing intellectual growth and community values. Highly selective with collaborative learning environment.",
+        "strengths": ["Progressive education", "College prep", "Community values", "Small class sizes"],
+        "known_for": "Rigorous academics with progressive pedagogy."
+      },
+      "tuition": 35500,
+      "financial_aid_available": true,
+      "niche_grade": "A-",
+      "wa_insight": "University Prep offers strong college preparation in an independent school setting. College placement solid (94% four-year) with primary feeder to UW and liberal arts schools. Slightly less selective than Lakeside/Bush but comparable academics. Good option for families seeking smaller private school experience. Financial aid available (average $16K)."
+    },
+    {
+      "name": "O'Dea High School",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 710,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 13,
+        "ap_participation_rate": 0.45,
+        "ib_program": false,
+        "average_sat": 1280,
+        "average_act": 28,
+        "student_teacher_ratio": "12:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.88,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 60},
+          {"school": "Seattle University", "estimated_annual": 35},
+          {"school": "Gonzaga University", "estimated_annual": 28}
+        ],
+        "ivy_plus_rate": 0.08
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Athletics"],
+        "athletics_highlights": ["Football", "Basketball (state champions 2019)", "Baseball", "Soccer"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["STEM offerings"]
+      },
+      "culture": {
+        "description": "O'Dea is a Catholic, boys-only high school with strong athletic traditions and community service emphasis. Rigorous college prep with formative Catholic values.",
+        "strengths": ["Strong athletics", "Catholic values", "Community service", "College preparation"],
+        "known_for": "Catholic education. Strong football and basketball programs. Male-only environment."
+      },
+      "tuition": 18500,
+      "financial_aid_available": true,
+      "niche_grade": "B+",
+      "wa_insight": "O'Dea provides strong Catholic education with solid college placement (88% four-year) at significantly lower cost than elite privates ($18.5K vs $37K+). Strong athletic programs and male-only environment appeal to specific families. Primary feeder to UW, Seattle U, and Gonzaga. Good financial aid available. Excellent value proposition for Catholic families seeking rigorous academics and character development."
+    },
+    {
+      "name": "Bishop Blanchet High School",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA", "district": "Independent"},
+      "enrollment": 520,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 12,
+        "ap_participation_rate": 0.42,
+        "ib_program": false,
+        "average_sat": 1260,
+        "average_act": 27,
+        "student_teacher_ratio": "13:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.86,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 40},
+          {"school": "Seattle University", "estimated_annual": 25},
+          {"school": "Gonzaga University", "estimated_annual": 20}
+        ],
+        "ivy_plus_rate": 0.06
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Service clubs", "Arts"],
+        "athletics_highlights": ["Basketball", "Volleyball", "Soccer", "Baseball"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["Science and tech courses"]
+      },
+      "culture": {
+        "description": "Bishop Blanchet is a Catholic, coed high school with strong academics and faith-based education. Emphasis on character development and community service.",
+        "strengths": ["Catholic values", "Community service", "College prep", "Affordable tuition"],
+        "known_for": "Catholic coed education. Community service programs."
+      },
+      "tuition": 17500,
+      "financial_aid_available": true,
+      "niche_grade": "B",
+      "wa_insight": "Bishop Blanchet offers Catholic education at reasonable cost ($17.5K) with solid college placement (86% four-year). Coed alternative to O'Dea with similar values emphasis. Primary feeders to UW, Seattle U, Gonzaga. Good financial aid availability. Strong community service and religious formation programs appeal to families valuing faith-based education."
+    },
+    {
+      "name": "Annie Wright Schools",
+      "type": "private",
+      "location": {"city": "Tacoma", "state": "WA", "district": "Independent"},
+      "enrollment": 560,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.52,
+        "ib_program": false,
+        "average_sat": 1360,
+        "average_act": 30,
+        "student_teacher_ratio": "11:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.92,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 35},
+          {"school": "University of Puget Sound", "estimated_annual": 18},
+          {"school": "Pacific Lutheran University", "estimated_annual": 15},
+          {"school": "Lewis and Clark College", "estimated_annual": 12}
+        ],
+        "ivy_plus_rate": 0.12
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Debate", "Global service"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country", "Volleyball"],
+        "arts_programs": ["Theater", "Visual arts", "Music"],
+        "stem_programs": ["STEM labs", "Science focus"]
+      },
+      "culture": {
+        "description": "Annie Wright is Washington's oldest girls' school (founded 1884) with strong academics and a global perspective. Community-oriented with rigorous college preparation.",
+        "strengths": ["Historic girls' school", "Global perspective", "College prep", "Athletic programs"],
+        "known_for": "Girls' school with 140+ year tradition. Strong academics and service learning."
+      },
+      "tuition": 29500,
+      "financial_aid_available": true,
+      "niche_grade": "B+",
+      "wa_insight": "Annie Wright provides all-girls education with solid college placement (92% four-year) at moderate cost ($29.5K). Strong regional reputation in Puget Sound area with good feeding to UW, UPS, and PLU. Global perspective and service learning are differentiators. Less selective than Seattle elite privates but excellent value. Good financial aid (average $13K)."
+    },
+    {
+      "name": "Charles Wright Academy",
+      "type": "private",
+      "location": {"city": "Tacoma", "state": "WA", "district": "Independent"},
+      "enrollment": 620,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 15,
+        "ap_participation_rate": 0.55,
+        "ib_program": false,
+        "average_sat": 1380,
+        "average_act": 31,
+        "student_teacher_ratio": "10:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.94,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 40},
+          {"school": "University of Puget Sound", "estimated_annual": 20},
+          {"school": "Pacific Lutheran University", "estimated_annual": 16},
+          {"school": "Stanford University", "estimated_annual": 8}
+        ],
+        "ivy_plus_rate": 0.14
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Service learning"],
+        "athletics_highlights": ["Soccer", "Basketball", "Tennis", "Cross Country"],
+        "arts_programs": ["Theater", "Art studio", "Music ensembles"],
+        "stem_programs": ["Science labs", "Engineering focus"]
+      },
+      "culture": {
+        "description": "Charles Wright Academy offers rigorous, progressive independent school education with strong college preparation. Emphasis on critical thinking and global engagement.",
+        "strengths": ["Rigorous academics", "College prep", "Global perspective", "Progressive pedagogy"],
+        "known_for": "Strong academics and college placement. Progressive independent school."
+      },
+      "tuition": 32000,
+      "financial_aid_available": true,
+      "niche_grade": "A-",
+      "wa_insight": "Charles Wright Academy offers strong academics and college placement (94% four-year) at $32K tuition. Comparable to Seattle elite privates but in Tacoma location. Strong feeder to UW (40+/year) with solid placement at regional and selective national colleges. Good financial aid program (average $15K). Excellent option for Tacoma-area families seeking top-tier independent school."
+    },
+    {
+      "name": "Forest Ridge School of the Sacred Heart",
+      "type": "private",
+      "location": {"city": "Bellevue", "state": "WA", "district": "Independent"},
+      "enrollment": 480,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.50,
+        "ib_program": false,
+        "average_sat": 1350,
+        "average_act": 30,
+        "student_teacher_ratio": "10:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.93,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 32},
+          {"school": "University of Puget Sound", "estimated_annual": 14},
+          {"school": "Santa Clara University", "estimated_annual": 10},
+          {"school": "Whitman College", "estimated_annual": 9}
+        ],
+        "ivy_plus_rate": 0.11
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Debate", "Service clubs"],
+        "athletics_highlights": ["Soccer", "Basketball", "Tennis", "Volleyball"],
+        "arts_programs": ["Theater", "Visual arts", "Music"],
+        "stem_programs": ["Science labs", "STEM courses"]
+      },
+      "culture": {
+        "description": "Forest Ridge is an all-girls Jesuit school emphasizing academic excellence and faith development. Strong community values and college preparation.",
+        "strengths": ["Jesuit education", "All-girls environment", "College prep", "Community service"],
+        "known_for": "Girls' Jesuit school. Strong academics and faith values."
+      },
+      "tuition": 28500,
+      "financial_aid_available": true,
+      "niche_grade": "B+",
+      "wa_insight": "Forest Ridge provides girls' education within Jesuit tradition at $28.5K tuition. Solid college placement (93% four-year) with primary feeders to UW and Pacific Northwest colleges. Good option for girls seeking Jesuit education without sacrificing academics. Strong financial aid available (average $12K). Regional reputation strong in Bellevue/Eastside area."
+    },
+    {
+      "name": "Eastside Preparatory School",
+      "type": "private",
+      "location": {"city": "Kirkland", "state": "WA", "district": "Independent"},
+      "enrollment": 420,
+      "grades": "6-12",
+      "academics": {
+        "ap_courses_offered": 13,
+        "ap_participation_rate": 0.48,
+        "ib_program": false,
+        "average_sat": 1340,
+        "average_act": 30,
+        "student_teacher_ratio": "11:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.92,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 30},
+          {"school": "University of Puget Sound", "estimated_annual": 12},
+          {"school": "Whitman College", "estimated_annual": 10},
+          {"school": "Reed College", "estimated_annual": 8}
+        ],
+        "ivy_plus_rate": 0.10
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Community service"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Theater", "Visual arts", "Music"],
+        "stem_programs": ["Science and tech courses"]
+      },
+      "culture": {
+        "description": "Eastside Prep is an independent school emphasizing critical thinking and personalized education. Intimate community with strong college preparation.",
+        "strengths": ["Independent education", "Critical thinking", "College prep", "Small classes"],
+        "known_for": "Independent school with progressive approach."
+      },
+      "tuition": 30500,
+      "financial_aid_available": true,
+      "niche_grade": "B+",
+      "wa_insight": "Eastside Prep offers independent school education on Eastside at $30.5K tuition. Solid college placement (92% four-year) with focus on critical thinking and personalized learning. Primary feeder to UW and liberal arts schools. Good alternative to Lakeside for students seeking smaller, more intimate independent school. Financial aid available (average $14K)."
+    },
+    {
+      "name": "Bellevue Christian School",
+      "type": "private",
+      "location": {"city": "Bellevue", "state": "WA", "district": "Independent"},
+      "enrollment": 920,
+      "grades": "K-12",
+      "academics": {
+        "ap_courses_offered": 12,
+        "ap_participation_rate": 0.40,
+        "ib_program": false,
+        "average_sat": 1280,
+        "average_act": 28,
+        "student_teacher_ratio": "12:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.85,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 50},
+          {"school": "Gonzaga University", "estimated_annual": 25},
+          {"school": "Seattle Pacific University", "estimated_annual": 20}
+        ],
+        "ivy_plus_rate": 0.07
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Christian service", "Athletics", "Arts"],
+        "athletics_highlights": ["Basketball", "Soccer", "Cross Country", "Volleyball"],
+        "arts_programs": ["Music", "Theater", "Visual arts"],
+        "stem_programs": ["Science courses"]
+      },
+      "culture": {
+        "description": "Bellevue Christian is a Christian school emphasizing faith development alongside academics. Strong community and character development focus.",
+        "strengths": ["Christian education", "Character development", "Community", "Affordable for private school"],
+        "known_for": "Christian K-12 school. Community values and character development."
+      },
+      "tuition": 16500,
+      "financial_aid_available": true,
+      "niche_grade": "B",
+      "wa_insight": "Bellevue Christian offers Christian education K-12 at moderate cost ($16.5K). Solid college placement (85% four-year) with primary feeders to UW, Gonzaga, and SPU. Larger than elite privates, providing more affordable Christian education option. Good financial aid availability. Particularly strong appeal for Christian families on Eastside."
+    },
+    {
+      "name": "Mercer Island High School",
+      "type": "public",
+      "location": {"city": "Mercer Island", "state": "WA", "district": "Mercer Island School District"},
+      "enrollment": 1680,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 28,
+        "ap_participation_rate": 0.72,
+        "ib_program": false,
+        "average_sat": 1450,
+        "average_act": 33,
+        "student_teacher_ratio": "14:1",
+        "college_counselors": 3
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.97,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 150},
+          {"school": "Stanford University", "estimated_annual": 35},
+          {"school": "Harvard University", "estimated_annual": 15},
+          {"school": "Yale University", "estimated_annual": 12},
+          {"school": "MIT", "estimated_annual": 12}
+        ],
+        "ivy_plus_rate": 0.25
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Science Olympiad", "Robotics"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country", "Swimming"],
+        "arts_programs": ["Theater", "Orchestra", "Choir", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Engineering", "Robotics"]
+      },
+      "culture": {
+        "description": "Mercer Island is Washington's most selective public high school, serving an affluent island community. World-class academics with exceptional college placement. Competitive but collaborative environment.",
+        "strengths": ["Top academics", "Elite college placement", "Exceptional facilities", "Strong STEM programs", "High community engagement"],
+        "known_for": "Washington's most selective public school. Exceptional academics and college placement."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A+",
+      "wa_insight": "Mercer Island is Washington's premier public high school with results approaching private school outcomes. 97% four-year college rate, 25% Ivy+ acceptance. SAT average 1450 is exceptionally high for public school. Serves affluent island community (~median family income $180K+). Not a magnet/lottery school—enrollment determined by residence. Primary feeder to UW (150+/year), Stanford, Harvard, MIT. For families outside Mercer Island, this demonstrates what selective public schools can achieve. AP participation (72%) and course offerings (28) are elite-level."
+    },
+    {
+      "name": "Bellevue High School",
+      "type": "public",
+      "location": {"city": "Bellevue", "state": "WA", "district": "Bellevue School District"},
+      "enrollment": 2100,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 25,
+        "ap_participation_rate": 0.65,
+        "ib_program": false,
+        "average_sat": 1380,
+        "average_act": 31,
+        "student_teacher_ratio": "15:1",
+        "college_counselors": 3
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.94,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 200},
+          {"school": "Washington State University", "estimated_annual": 80},
+          {"school": "University of Puget Sound", "estimated_annual": 45},
+          {"school": "Stanford University", "estimated_annual": 20}
+        ],
+        "ivy_plus_rate": 0.12
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Science Olympiad", "Robotics", "Programming clubs"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country", "Swimming"],
+        "arts_programs": ["Theater", "Orchestra", "Band", "Choir", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Engineering", "STEM Academy", "Robotics"]
+      },
+      "culture": {
+        "description": "Bellevue High is a premier Washington public school serving an affluent Eastside community. Rigorous academics with strong STEM focus. Diverse, high-achieving student body.",
+        "strengths": ["Strong academics", "STEM emphasis", "Diverse student body", "College preparation", "Well-resourced"],
+        "known_for": "Top public school in Bellevue. Strong academics and college placement."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A",
+      "wa_insight": "Bellevue High is Washington's second-best public school after Mercer Island, with 94% four-year college rate and 12% Ivy+ acceptance. SAT average 1380 is exceptional for public school. Serves affluent community but receives students from across Bellevue SD. 25 AP courses and 65% participation demonstrate rigorous curriculum. Primary feeder to UW (200+/year). STEM Academy within school is standout program. Less selective than Mercer Island but significantly stronger than average Washington public school."
+    },
+    {
+      "name": "Interlake High School",
+      "type": "public",
+      "location": {"city": "Bellevue", "state": "WA", "district": "Bellevue School District"},
+      "enrollment": 1850,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 22,
+        "ap_participation_rate": 0.58,
+        "ib_program": false,
+        "average_sat": 1340,
+        "average_act": 30,
+        "student_teacher_ratio": "15:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.91,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 160},
+          {"school": "Washington State University", "estimated_annual": 70},
+          {"school": "University of Puget Sound", "estimated_annual": 35},
+          {"school": "Pacific Lutheran University", "estimated_annual": 28}
+        ],
+        "ivy_plus_rate": 0.09
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "STEM clubs", "Robotics"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country", "Volleyball"],
+        "arts_programs": ["Theater", "Orchestra", "Band", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Engineering", "Science labs"]
+      },
+      "culture": {
+        "description": "Interlake High serves the northern Bellevue area with strong academics and college preparation. Similar caliber to Bellevue High but with slightly different community character.",
+        "strengths": ["Strong academics", "College prep", "STEM focus", "Well-resourced school"],
+        "known_for": "Strong public school in Bellevue area. Solid academics and college placement."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Interlake is Bellevue SD's second high school, offering comparable academics to Bellevue High with 91% four-year college rate and 9% Ivy+ acceptance. SAT average 1340 remains very strong for public school. Primary feeder to UW (160+/year) and WSU. Very competitive college prep environment with strong STEM offerings. Slightly less selective than Bellevue High but essentially equivalent in rigor. Good option for Bellevue SD north-side students."
+    },
+    {
+      "name": "Newport High School",
+      "type": "public",
+      "location": {"city": "Bellevue", "state": "WA", "district": "Bellevue School District"},
+      "enrollment": 1950,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 21,
+        "ap_participation_rate": 0.55,
+        "ib_program": false,
+        "average_sat": 1320,
+        "average_act": 29,
+        "student_teacher_ratio": "15:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.89,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 150},
+          {"school": "Washington State University", "estimated_annual": 65},
+          {"school": "University of Puget Sound", "estimated_annual": 32},
+          {"school": "Pacific Lutheran University", "estimated_annual": 25}
+        ],
+        "ivy_plus_rate": 0.08
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "STEM clubs", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Science labs"]
+      },
+      "culture": {
+        "description": "Newport High is the third Bellevue SD high school, serving southeast Bellevue. Strong academics with slightly broader student demographic than Bellevue or Interlake.",
+        "strengths": ["Strong academics", "College prep", "Diverse student body", "Athletic programs"],
+        "known_for": "Third Bellevue SD high school. Solid academics and college preparation."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Newport is Bellevue SD's third high school with 89% four-year college rate (still exceptional for public school) and 8% Ivy+ acceptance. SAT average 1320 remains very strong. Primary feeder to UW (150+/year). Slightly broader demographics than Bellevue High, making it marginally less selective. Still elite public school relative to Washington state average. Excellent college prep environment."
+    },
+    {
+      "name": "Sammamish High School",
+      "type": "public",
+      "location": {"city": "Sammamish", "state": "WA", "district": "Lake Washington School District"},
+      "enrollment": 1650,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 20,
+        "ap_participation_rate": 0.52,
+        "ib_program": false,
+        "average_sat": 1300,
+        "average_act": 29,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.88,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 140},
+          {"school": "Washington State University", "estimated_annual": 60},
+          {"school": "University of Puget Sound", "estimated_annual": 28},
+          {"school": "Pacific Lutheran University", "estimated_annual": 22}
+        ],
+        "ivy_plus_rate": 0.07
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "STEM clubs", "Debate"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Orchestra", "Choir", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "STEM programs"]
+      },
+      "culture": {
+        "description": "Sammamish High serves an affluent Eastside community with strong academics and college focus. Similar to Bellevue schools but in Lake Washington SD.",
+        "strengths": ["Strong academics", "College prep", "STEM focus", "Affluent community"],
+        "known_for": "Strong public school in affluent Sammamish area."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Sammamish High is Lake Washington SD's flagship, serving affluent Sammamish community with 88% four-year college rate. SAT average 1300 is very strong. Primary feeder to UW (140+/year). Comparable to Bellevue schools but slightly lower selectivity. Strong STEM programs including robotics. Excellent option for college-focused families in Sammamish area."
+    },
+    {
+      "name": "Skyline High School",
+      "type": "public",
+      "location": {"city": "Sammamish", "state": "WA", "district": "Lake Washington School District"},
+      "enrollment": 1750,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.48,
+        "ib_program": false,
+        "average_sat": 1280,
+        "average_act": 28,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.86,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 130},
+          {"school": "Washington State University", "estimated_annual": 55},
+          {"school": "University of Puget Sound", "estimated_annual": 25}
+        ],
+        "ivy_plus_rate": 0.06
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Robotics", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Swimming"],
+        "arts_programs": ["Band", "Choir", "Visual arts"],
+        "stem_programs": ["STEM courses", "Engineering"]
+      },
+      "culture": {
+        "description": "Skyline High is Lake Washington SD's second high school with solid academics. Serves south Sammamish and surrounding areas.",
+        "strengths": ["Strong academics", "College prep", "Diverse programs", "Good resources"],
+        "known_for": "Second Lake Washington SD high school. Solid academics and college prep."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Skyline is Lake Washington SD's second high school with 86% four-year college rate. SAT average 1280 is strong. Primary feeder to UW (130+/year). Slightly less selective than Sammamish High but still excellent public school. Strong STEM focus with robotics programs. Good college prep environment for Sammamish/Redmond area students."
+    },
+    {
+      "name": "Tesla STEM High School",
+      "type": "public",
+      "location": {"city": "Redmond", "state": "WA", "district": "Redmond School District"},
+      "enrollment": 700,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.62,
+        "ib_program": false,
+        "average_sat": 1380,
+        "average_act": 31,
+        "student_teacher_ratio": "14:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.92,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 90},
+          {"school": "Washington State University", "estimated_annual": 35},
+          {"school": "Stanford University", "estimated_annual": 12},
+          {"school": "MIT", "estimated_annual": 8}
+        ],
+        "ivy_plus_rate": 0.10
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "Science Olympiad", "Engineering clubs", "Coding clubs"],
+        "athletics_highlights": ["Soccer", "Basketball", "Tennis"],
+        "arts_programs": ["Limited arts focus (STEM-focused)"],
+        "stem_programs": ["Engineering", "Computer Science", "Robotics (FIRST)", "Biomedical sciences"]
+      },
+      "culture": {
+        "description": "Tesla STEM High School is a selective STEM-focused magnet school within Redmond SD. Attracts top STEM students from across district with rigorous engineering-focused curriculum.",
+        "strengths": ["STEM specialization", "Engineering focus", "Top students", "College prep"],
+        "known_for": "STEM magnet school. Engineering and robotics excellence."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A",
+      "wa_insight": "Tesla STEM is a selective magnet school (not residence-based) with 92% four-year college rate and 10% Ivy+ acceptance. SAT average 1380 is excellent—comparable to Bellevue High despite being public magnet. Extremely strong in STEM with exceptional FIRST Robotics program. Strong feeder to UW, Stanford, MIT for STEM majors. Access via application/lottery, not residence. Excellent option for STEM-focused students across Redmond SD and surrounding areas."
+    },
+    {
+      "name": "Redmond High School",
+      "type": "public",
+      "location": {"city": "Redmond", "state": "WA", "district": "Redmond School District"},
+      "enrollment": 1850,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 19,
+        "ap_participation_rate": 0.50,
+        "ib_program": false,
+        "average_sat": 1300,
+        "average_act": 29,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.87,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 140},
+          {"school": "Washington State University", "estimated_annual": 55},
+          {"school": "University of Puget Sound", "estimated_annual": 25}
+        ],
+        "ivy_plus_rate": 0.07
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "STEM clubs", "Debate", "Model UN"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Engineering", "Robotics"]
+      },
+      "culture": {
+        "description": "Redmond High is the traditional high school serving Redmond, known for strong academics and diverse programs. Good balance of academics, arts, and athletics.",
+        "strengths": ["Strong academics", "Diverse programs", "College prep", "Tech hub location"],
+        "known_for": "Flagship Redmond High School. Solid academics and diverse programs."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Redmond High is Redmond SD's traditional comprehensive high school (vs. Tesla STEM magnet). 87% four-year college rate with SAT average 1300. Primary feeder to UW (140+/year). Strong tech company presence in Redmond creates STEM-oriented culture. Not as selective as Tesla STEM but still very strong academics. Good option for Redmond families seeking comprehensive college prep without specialized STEM focus."
+    },
+    {
+      "name": "Issaquah High School",
+      "type": "public",
+      "location": {"city": "Issaquah", "state": "WA", "district": "Issaquah School District"},
+      "enrollment": 1900,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 21,
+        "ap_participation_rate": 0.55,
+        "ib_program": false,
+        "average_sat": 1320,
+        "average_act": 29,
+        "student_teacher_ratio": "15:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.89,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 150},
+          {"school": "Washington State University", "estimated_annual": 60},
+          {"school": "University of Puget Sound", "estimated_annual": 30}
+        ],
+        "ivy_plus_rate": 0.08
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "Science Olympiad", "Model UN", "Debate"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Orchestra", "Band", "Choir", "Theater"],
+        "stem_programs": ["AP Computer Science", "Engineering", "Robotics"]
+      },
+      "culture": {
+        "description": "Issaquah High is the flagship school serving the Issaquah area with strong academics and comprehensive programs. Serves affluent, highly educated community.",
+        "strengths": ["Strong academics", "College prep", "STEM focus", "Comprehensive programs"],
+        "known_for": "Flagship Issaquah High School. Strong academics and college placement."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Issaquah High is Issaquah SD's primary high school with 89% four-year college rate. SAT average 1320 indicates strong academics. Primary feeder to UW (150+/year). Serves highly educated, affluent Southeast King County area. Strong STEM with robotics programs. Excellent college prep environment. Comparable to Bellevue schools in rigor and college placement."
+    },
+    {
+      "name": "Liberty High School",
+      "type": "public",
+      "location": {"city": "Issaquah", "state": "WA", "district": "Issaquah School District"},
+      "enrollment": 1800,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 19,
+        "ap_participation_rate": 0.50,
+        "ib_program": false,
+        "average_sat": 1300,
+        "average_act": 29,
+        "student_teacher_ratio": "15:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.86,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 130},
+          {"school": "Washington State University", "estimated_annual": 55},
+          {"school": "University of Puget Sound", "estimated_annual": 28}
+        ],
+        "ivy_plus_rate": 0.07
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "STEM clubs", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["AP Computer Science", "STEM programs"]
+      },
+      "culture": {
+        "description": "Liberty High is Issaquah SD's second high school with solid academics and comprehensive programming. Serves same affluent area as Issaquah High.",
+        "strengths": ["Strong academics", "College prep", "Comprehensive programs"],
+        "known_for": "Second Issaquah SD high school. Solid academics and college prep."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Liberty is Issaquah SD's second high school with 86% four-year college rate. SAT average 1300 remains very strong. Primary feeder to UW (130+/year). Slightly less selective than Issaquah High but still excellent public school. Strong STEM offerings. Good option for Issaquah area families seeking comprehensive college prep."
+    },
+    {
+      "name": "North Creek High School",
+      "type": "public",
+      "location": {"city": "Bothell", "state": "WA", "district": "Lake Washington School District"},
+      "enrollment": 1600,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.47,
+        "ib_program": false,
+        "average_sat": 1280,
+        "average_act": 28,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.85,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 120},
+          {"school": "Washington State University", "estimated_annual": 50},
+          {"school": "University of Puget Sound", "estimated_annual": 22}
+        ],
+        "ivy_plus_rate": 0.06
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "STEM clubs", "Community service"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Visual arts"],
+        "stem_programs": ["STEM programs", "Engineering"]
+      },
+      "culture": {
+        "description": "North Creek High is Lake Washington SD's third high school, serving Bothell area. Strong academics with comprehensive programs.",
+        "strengths": ["Strong academics", "College prep", "Diverse programs"],
+        "known_for": "Third Lake Washington SD high school. Solid academics and college prep."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "North Creek is Lake Washington SD's newest (2015) and third high school with 85% four-year college rate. SAT average 1280 is good. Primary feeder to UW (120+/year). Strong STEM programs including robotics. Serves Bothell and northeast Eastside. Good college prep environment, slightly less selective than Sammamish/Skyline."
+    },
+    {
+      "name": "Woodinville High School",
+      "type": "public",
+      "location": {"city": "Woodinville", "state": "WA", "district": "Lake Washington School District"},
+      "enrollment": 1750,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.46,
+        "ib_program": false,
+        "average_sat": 1270,
+        "average_act": 28,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.83,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 125},
+          {"school": "Washington State University", "estimated_annual": 50},
+          {"school": "Pacific Lutheran University", "estimated_annual": 20}
+        ],
+        "ivy_plus_rate": 0.05
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Woodinville High is Lake Washington SD's traditional high school serving Woodinville area. Solid academics with balanced programs.",
+        "strengths": ["Strong academics", "College prep", "Comprehensive programs", "Community focus"],
+        "known_for": "Woodinville High School. Solid academics and community programs."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "Woodinville High is the original Lake Washington SD high school with 83% four-year college rate. SAT average 1270 is solid. Primary feeder to UW (125+/year). Serves Woodinville and surrounding areas. Good college prep environment with balanced academics and arts. Slightly less selective than Sammamish/Skyline but still very strong public school."
+    },
+    {
+      "name": "Garfield High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1620,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.48,
+        "ib_program": false,
+        "average_sat": 1260,
+        "average_act": 27,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.82,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 120},
+          {"school": "Washington State University", "estimated_annual": 45},
+          {"school": "Pacific Lutheran University", "estimated_annual": 18}
+        ],
+        "ivy_plus_rate": 0.06
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Science Olympiad", "Robotics", "Model UN", "Debate"],
+        "athletics_highlights": ["Basketball", "Soccer", "Track and Field"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "STEM programs", "Robotics"]
+      },
+      "culture": {
+        "description": "Garfield High is Seattle's flagship public high school, known for diverse student body and strong academics. Located in Capitol Hill with urban culture.",
+        "strengths": ["Strong academics", "Diverse student body", "STEM focus", "College prep"],
+        "known_for": "Seattle's top public school. Strong academics and diversity."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Garfield is Seattle Public Schools' strongest high school with 82% four-year college rate (lower than Eastside schools due to broader demographics). SAT average 1260 still very solid for Seattle. Primary feeder to UW (120+/year). Strong robotics and STEM programs with FIRST Robotics team. More diverse student body than Eastside schools. Competitive magnet-style program without formal lottery. Access via school choice within SPS."
+    },
+    {
+      "name": "Roosevelt High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1750,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.42,
+        "ib_program": false,
+        "average_sat": 1240,
+        "average_act": 27,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.79,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 110},
+          {"school": "Washington State University", "estimated_annual": 42},
+          {"school": "Pacific Lutheran University", "estimated_annual": 16}
+        ],
+        "ivy_plus_rate": 0.05
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Debate", "Model UN", "Community service"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Roosevelt High is a neighborhood school in north Seattle with solid academics and community engagement. Diverse student body reflective of north Seattle.",
+        "strengths": ["Solid academics", "Community engagement", "Diverse programs"],
+        "known_for": "North Seattle high school. Solid academics and community focus."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "Roosevelt is north Seattle's main high school with 79% four-year college rate. SAT average 1240 is solid. Primary feeder to UW (110+/year). Serves diverse north Seattle community. Good college prep environment with strong community engagement. Access via residence in SPS attendance area. Less selective than Garfield but solid academics."
+    },
+    {
+      "name": "Ballard High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1580,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 15,
+        "ap_participation_rate": 0.38,
+        "ib_program": false,
+        "average_sat": 1220,
+        "average_act": 26,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.76,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 95},
+          {"school": "Washington State University", "estimated_annual": 38},
+          {"school": "Pacific Lutheran University", "estimated_annual": 14}
+        ],
+        "ivy_plus_rate": 0.04
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Community service", "Arts focus"],
+        "athletics_highlights": ["Soccer", "Basketball", "Baseball", "Volleyball"],
+        "arts_programs": ["Band", "Choir", "Theater", "Strong visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Ballard High serves northwest Seattle with strong arts focus and community engagement. Known for vibrant school culture and student activism.",
+        "strengths": ["Strong arts programs", "Community engagement", "Diverse student body", "Student activism"],
+        "known_for": "Northwest Seattle school. Strong arts and community focus."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B",
+      "wa_insight": "Ballard serves northwest Seattle with 76% four-year college rate. SAT average 1220. Primary feeder to UW (95+/year). Stronger arts focus than Garfield. Diverse student body reflective of Ballard neighborhood. Good college prep for students in that attendance area. Less academically selective than Eastside schools but strong community culture."
+    },
+    {
+      "name": "Ingraham International High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1420,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.35,
+        "ib_program": false,
+        "average_sat": 1210,
+        "average_act": 26,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.74,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 85},
+          {"school": "Washington State University", "estimated_annual": 35},
+          {"school": "Pacific Lutheran University", "estimated_annual": 12}
+        ],
+        "ivy_plus_rate": 0.03
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Debate", "International service"],
+        "athletics_highlights": ["Soccer", "Basketball"],
+        "arts_programs": ["Band", "Visual arts", "International focus"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Ingraham is SPS's designated International High School with focus on global engagement and ESL support. Serves international and immigrant students.",
+        "strengths": ["International focus", "ESL programs", "Global perspective", "Diverse student body"],
+        "known_for": "International High School. Global focus and strong ESL support."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B",
+      "wa_insight": "Ingraham is Seattle's International High School with 74% four-year college rate. Strong ESL and international programs. Primary feeder to UW (85+/year). Serves immigrant and international students with tailored support. Lower SAT average (1210) reflects ESL population and socioeconomic diversity. Excellent for international families seeking supportive college prep environment. Access via application."
+    },
+    {
+      "name": "Lincoln High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1650,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 13,
+        "ap_participation_rate": 0.32,
+        "ib_program": false,
+        "average_sat": 1150,
+        "average_act": 25,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 1
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.68,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 70},
+          {"school": "Washington State University", "estimated_annual": 30},
+          {"school": "Seattle Community College", "estimated_annual": 35}
+        ],
+        "ivy_plus_rate": 0.02
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Community service", "Arts"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Volleyball"],
+        "arts_programs": ["Band", "Visual arts", "Theater"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Lincoln High is a neighborhood school serving central Seattle. Diverse student body with strong community engagement.",
+        "strengths": ["Community engagement", "Diverse student body", "Arts programs"],
+        "known_for": "Central Seattle neighborhood school."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B-",
+      "wa_insight": "Lincoln serves central Seattle with 68% four-year college rate. SAT average 1150 lower due to socioeconomic and demographic factors. Primary feeder to UW (70+/year) and community colleges. Less college-focused than Garfield/Roosevelt but important school in SPS portfolio. Strong community engagement and arts programs."
+    },
+    {
+      "name": "Nathan Hale High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1700,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 12,
+        "ap_participation_rate": 0.28,
+        "ib_program": false,
+        "average_sat": 1140,
+        "average_act": 24,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 1
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.65,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 65},
+          {"school": "Washington State University", "estimated_annual": 28},
+          {"school": "Seattle Community College", "estimated_annual": 40}
+        ],
+        "ivy_plus_rate": 0.02
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Community service", "Athletics"],
+        "athletics_highlights": ["Football", "Basketball", "Soccer"],
+        "arts_programs": ["Band", "Visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Nathan Hale is an east Seattle neighborhood school. Diverse student body with growing college focus.",
+        "strengths": ["Community engagement", "Diverse student body"],
+        "known_for": "East Seattle neighborhood school."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "C+",
+      "wa_insight": "Nathan Hale serves east Seattle with 65% four-year college rate. SAT average 1140. Primary feeder to UW (65+/year) and community colleges. Lower test scores reflect socioeconomic factors. Developing stronger college prep culture. Important school in SPS community serving under-resourced area."
+    },
+    {
+      "name": "Rainier Beach High School",
+      "type": "public",
+      "location": {"city": "Seattle", "state": "WA", "district": "Seattle Public Schools"},
+      "enrollment": 1380,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 10,
+        "ap_participation_rate": 0.22,
+        "ib_program": false,
+        "average_sat": 1100,
+        "average_act": 23,
+        "student_teacher_ratio": "18:1",
+        "college_counselors": 1
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.58,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 50},
+          {"school": "Washington State University", "estimated_annual": 20},
+          {"school": "Seattle Community College", "estimated_annual": 45}
+        ],
+        "ivy_plus_rate": 0.01
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Community service", "Athletics"],
+        "athletics_highlights": ["Soccer", "Basketball", "Football"],
+        "arts_programs": ["Band", "Visual arts"],
+        "stem_programs": ["Basic STEM courses"]
+      },
+      "culture": {
+        "description": "Rainier Beach serves south Seattle with high diversity and strong community focus. Increasingly focused on college readiness.",
+        "strengths": ["Diversity", "Community engagement", "College readiness initiatives"],
+        "known_for": "South Seattle school. Strong diversity and community focus."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "C",
+      "wa_insight": "Rainier Beach serves south Seattle with 58% four-year college rate (significant portion attending community college first). SAT average 1100. High diversity and low-income population. Increasing college prep focus. Feeder to UW (50+/year) and Seattle Community College. Important school in SPS serving highest-need community."
+    },
+    {
+      "name": "Camas High School",
+      "type": "public",
+      "location": {"city": "Camas", "state": "WA", "district": "Camas-Washougal School District"},
+      "enrollment": 1950,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 17,
+        "ap_participation_rate": 0.45,
+        "ib_program": false,
+        "average_sat": 1290,
+        "average_act": 29,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.87,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 110},
+          {"school": "Washington State University", "estimated_annual": 65},
+          {"school": "Oregon State University", "estimated_annual": 35}
+        ],
+        "ivy_plus_rate": 0.06
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Robotics", "STEM clubs", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater", "Visual arts"],
+        "stem_programs": ["AP Computer Science", "Engineering", "Robotics"]
+      },
+      "culture": {
+        "description": "Camas High is one of Washington's best suburban public schools, serving affluent community east of Portland metro area. Strong academics and STEM focus.",
+        "strengths": ["Strong academics", "STEM focus", "Robotics excellence", "College prep"],
+        "known_for": "Top suburban Washington school. Exceptional academics and robotics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A",
+      "wa_insight": "Camas High is among Washington's strongest public schools with 87% four-year college rate and 6% Ivy+ acceptance. SAT average 1290 is exceptional for public school. Strong FIRST Robotics program nationally recognized. Primary feeder to UW (110+/year) and WSU. Serves affluent Camas community. Comparable to Bellevue/Eastside schools in academic quality. Excellent value for families in Vancouver WA/Camas area seeking top academics."
+    },
+    {
+      "name": "Puyallup High School",
+      "type": "public",
+      "location": {"city": "Puyallup", "state": "WA", "district": "Puyallup-Sumner-White River School District"},
+      "enrollment": 1800,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 15,
+        "ap_participation_rate": 0.38,
+        "ib_program": false,
+        "average_sat": 1210,
+        "average_act": 27,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.78,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 95},
+          {"school": "Washington State University", "estimated_annual": 55},
+          {"school": "Pacific Lutheran University", "estimated_annual": 22}
+        ],
+        "ivy_plus_rate": 0.04
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Community service", "Athletics"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Puyallup High is the flagship school in Puyallup area with solid academics and strong community traditions. Known for vibrant student culture.",
+        "strengths": ["Solid academics", "Community tradition", "College prep"],
+        "known_for": "Puyallup flagship school. Strong school spirit and academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "Puyallup High is Puyallup SD's main school with 78% four-year college rate. SAT average 1210 is solid. Primary feeder to UW (95+/year). Serves Puyallup Valley area with strong community engagement. Good college prep environment with athletics and student culture. Less selective than Eastside schools but solid comprehensive high school."
+    },
+    {
+      "name": "Stadium High School",
+      "type": "public",
+      "location": {"city": "Tacoma", "state": "WA", "district": "Tacoma School District"},
+      "enrollment": 1750,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.42,
+        "ib_program": false,
+        "average_sat": 1240,
+        "average_act": 28,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.80,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 105},
+          {"school": "Washington State University", "estimated_annual": 50},
+          {"school": "University of Puget Sound", "estimated_annual": 25}
+        ],
+        "ivy_plus_rate": 0.05
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Debate", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Orchestra", "Choir", "Theater"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Stadium High School is Tacoma's most selective public school, known for historic Gothic-style building and rigorous academics. Strong college focus.",
+        "strengths": ["Strong academics", "Historic campus", "College prep", "Arts programs"],
+        "known_for": "Tacoma's top public school. Beautiful historic campus and strong academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Stadium High is Tacoma's flagship with 80% four-year college rate and SAT average 1240. Famous for distinctive historic Gothic architecture. Primary feeder to UW (105+/year) and other Washington colleges. Strong arts and academics. Access via school choice/residence in TSD. Comparable academics to Garfield in Seattle, serving similar college-prep function in Tacoma."
+    },
+    {
+      "name": "Olympia High School",
+      "type": "public",
+      "location": {"city": "Olympia", "state": "WA", "district": "Olympia School District"},
+      "enrollment": 1600,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.35,
+        "ib_program": false,
+        "average_sat": 1200,
+        "average_act": 26,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 1
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.75,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 85},
+          {"school": "Washington State University", "estimated_annual": 45},
+          {"school": "Evergreen State College", "estimated_annual": 25}
+        ],
+        "ivy_plus_rate": 0.03
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Community service", "Arts"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater", "Strong visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Olympia High is the state capital's flagship school with solid academics and strong arts programs. Diverse student body.",
+        "strengths": ["Arts programs", "College prep", "Community engagement"],
+        "known_for": "Olympia's top high school. Strong arts focus."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B",
+      "wa_insight": "Olympia High is Olympia SD's main school with 75% four-year college rate. SAT average 1200. Primary feeder to UW (85+/year), WSU, and Evergreen State. Serves state capital with solid college prep. Strong arts tradition. Good option for Olympia area families."
+    },
+    {
+      "name": "Mead High School",
+      "type": "public",
+      "location": {"city": "Spokane", "state": "WA", "district": "Spokane School District"},
+      "enrollment": 1850,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.40,
+        "ib_program": false,
+        "average_sat": 1240,
+        "average_act": 28,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.79,
+        "top_matriculations": [
+          {"school": "Washington State University", "estimated_annual": 120},
+          {"school": "University of Washington", "estimated_annual": 70},
+          {"school": "Gonzaga University", "estimated_annual": 35}
+        ],
+        "ivy_plus_rate": 0.04
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Debate", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Mead High is one of Spokane's best public schools, serving north Spokane area. Strong academics with balanced programs.",
+        "strengths": ["Strong academics", "College prep", "Balanced programs"],
+        "known_for": "North Spokane's top high school. Solid academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Mead High is Spokane's most selective public school with 79% four-year college rate. SAT average 1240. Primary feeder to WSU (120+/year) and UW. Strong college prep environment. Serves affluent north Spokane area. Comparable academics to Bellevue High. Access via residence or school choice in SSD. Excellent option for Spokane families."
+    },
+    {
+      "name": "Lewis and Clark High School",
+      "type": "public",
+      "location": {"city": "Spokane", "state": "WA", "district": "Spokane School District"},
+      "enrollment": 1700,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 14,
+        "ap_participation_rate": 0.35,
+        "ib_program": false,
+        "average_sat": 1200,
+        "average_act": 27,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 1
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.74,
+        "top_matriculations": [
+          {"school": "Washington State University", "estimated_annual": 95},
+          {"school": "University of Washington", "estimated_annual": 55},
+          {"school": "Gonzaga University", "estimated_annual": 28}
+        ],
+        "ivy_plus_rate": 0.03
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Model UN", "Community service"],
+        "athletics_highlights": ["Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Visual arts"],
+        "stem_programs": ["STEM courses"]
+      },
+      "culture": {
+        "description": "Lewis and Clark High is central Spokane's traditional high school with solid academics and community engagement.",
+        "strengths": ["Solid academics", "Community engagement"],
+        "known_for": "Central Spokane high school. Solid academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "Lewis and Clark is Spokane's second high school with 74% four-year college rate. SAT average 1200. Primary feeder to WSU (95+/year) and UW. Serves central Spokane with solid college prep. Less selective than Mead but good academics."
+    },
+    {
+      "name": "Hanford High School",
+      "type": "public",
+      "location": {"city": "Richland", "state": "WA", "district": "Richland School District"},
+      "enrollment": 1950,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 18,
+        "ap_participation_rate": 0.48,
+        "ib_program": false,
+        "average_sat": 1310,
+        "average_act": 29,
+        "student_teacher_ratio": "16:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.88,
+        "top_matriculations": [
+          {"school": "Washington State University", "estimated_annual": 130},
+          {"school": "University of Washington", "estimated_annual": 85},
+          {"school": "University of Puget Sound", "estimated_annual": 28}
+        ],
+        "ivy_plus_rate": 0.07
+      },
+      "extracurriculars": {
+        "notable_clubs": ["Science Olympiad", "STEM clubs", "Robotics", "Debate"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["Strong STEM focus", "Engineering", "Robotics"]
+      },
+      "culture": {
+        "description": "Hanford High is eastern Washington's strongest public school, serving Richland area. Exceptional academics with strong STEM emphasis due to nuclear legacy.",
+        "strengths": ["Strong academics", "STEM excellence", "Robotics", "College prep"],
+        "known_for": "Eastern Washington's top public school. Exceptional STEM programs."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A",
+      "wa_insight": "Hanford High is eastern Washington's flagship with 88% four-year college rate and SAT average 1310—exceptional for public school. Strong STEM tradition due to Tri-Cities nuclear heritage. Science Olympiad and robotics excellence. Primary feeder to WSU (130+/year) and UW. Comparable to Bellevue High academically. One of Washington state's strongest public schools outside Puget Sound region."
+    },
+    {
+      "name": "Kamiak High School",
+      "type": "public",
+      "location": {"city": "Mukilteo", "state": "WA", "district": "Edmonds School District"},
+      "enrollment": 1700,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 16,
+        "ap_participation_rate": 0.42,
+        "ib_program": false,
+        "average_sat": 1260,
+        "average_act": 28,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.82,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 110},
+          {"school": "Washington State University", "estimated_annual": 50},
+          {"school": "University of Puget Sound", "estimated_annual": 20}
+        ],
+        "ivy_plus_rate": 0.05
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Robotics", "Model UN"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball", "Cross Country"],
+        "arts_programs": ["Band", "Choir", "Theater"],
+        "stem_programs": ["AP Computer Science", "Robotics"]
+      },
+      "culture": {
+        "description": "Kamiak High is Edmonds SD's flagship serving Mukilteo area. Strong academics with good STEM programs.",
+        "strengths": ["Strong academics", "STEM focus", "College prep"],
+        "known_for": "Edmonds area's top high school. Solid academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "A-",
+      "wa_insight": "Kamiak High is Edmonds SD's main school with 82% four-year college rate. SAT average 1260 is very strong. Primary feeder to UW (110+/year). Serves affluent Mukilteo/Edmonds area. Strong college prep with robotics programs. Comparable to Garfield in Seattle. Good option for north King County families."
+    },
+    {
+      "name": "Glacier Peak High School",
+      "type": "public",
+      "location": {"city": "Snohomish", "state": "WA", "district": "Snohomish School District"},
+      "enrollment": 1800,
+      "grades": "9-12",
+      "academics": {
+        "ap_courses_offered": 15,
+        "ap_participation_rate": 0.40,
+        "ib_program": false,
+        "average_sat": 1240,
+        "average_act": 27,
+        "student_teacher_ratio": "17:1",
+        "college_counselors": 2
+      },
+      "college_placement": {
+        "four_year_college_rate": 0.80,
+        "top_matriculations": [
+          {"school": "University of Washington", "estimated_annual": 105},
+          {"school": "Washington State University", "estimated_annual": 48},
+          {"school": "University of Puget Sound", "estimated_annual": 18}
+        ],
+        "ivy_plus_rate": 0.04
+      },
+      "extracurriculars": {
+        "notable_clubs": ["STEM clubs", "Robotics", "Community service"],
+        "athletics_highlights": ["Football", "Soccer", "Basketball"],
+        "arts_programs": ["Band", "Choir", "Visual arts"],
+        "stem_programs": ["STEM courses", "Engineering"]
+      },
+      "culture": {
+        "description": "Glacier Peak is Snohomish area's flagship school with strong academics and comprehensive programs.",
+        "strengths": ["Strong academics", "Comprehensive programs", "College prep"],
+        "known_for": "Snohomish's top high school. Solid academics."
+      },
+      "tuition": null,
+      "financial_aid_available": false,
+      "niche_grade": "B+",
+      "wa_insight": "Glacier Peak is Snohomish SD's main school with 80% four-year college rate. SAT average 1240. Primary feeder to UW (105+/year). Serves Snohomish area with solid college prep. Good engineering and STEM programs. Comparable academics to Roosevelt in Seattle."
+    }
+  ]
+}

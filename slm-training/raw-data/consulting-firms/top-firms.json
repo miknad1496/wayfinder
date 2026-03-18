@@ -1,0 +1,1417 @@
+{
+  "metadata": {
+    "generated_date": "2026-03-18",
+    "total_firms": 28,
+    "research_scope": "Top 25+ college consulting and admissions counseling firms in the US, including national elite firms, online/tech-forward platforms, and independent consultants",
+    "note": "Pricing and services reflect publicly available information as of March 2026. Consulting market is highly dynamic with frequent service and pricing changes."
+  },
+  "firms": [
+    {
+      "id": 1,
+      "name": "IvyWise",
+      "website": "https://www.ivywise.com",
+      "headquarters": "New York, NY",
+      "type": "boutique",
+      "pricing": {
+        "range": "$1,000 - $50,000+",
+        "structure": "hourly + packages",
+        "entry_price": "$1,350 for 90-minute initial consultation",
+        "comprehensive_package": "$5,000-$15,000 custom packages; unlimited counseling available at premium rates"
+      },
+      "services": [
+        "Unlimited college admissions counseling",
+        "Essay editing and writing support",
+        "School list development",
+        "SAT/ACT test prep",
+        "Tutoring",
+        "Research mentorship"
+      ],
+      "methodology_summary": "IvyWise offers team-based advisory with unlimited access to expert counselors providing hands-on execution guidance and strategic roadmaps. Their approach emphasizes sustained relationship-building and comprehensive support through the entire application cycle, with counselors billing at $1,000-$3,000/hour depending on seniority.",
+      "claims": [
+        "6x more likely to get into top universities than general applicant",
+        "98% of students get into at least one of their best-fit schools",
+        "Team-based advisory approach"
+      ],
+      "team_size": "20+ consultants",
+      "specializations": [
+        "Ivy League admissions",
+        "Elite university targeting",
+        "Personalized counseling"
+      ],
+      "target_market": "High-income families seeking premium, relationship-based guidance; students aiming for top 20 universities",
+      "strengths": [
+        "Established reputation and track record",
+        "Unlimited access models available",
+        "Access to senior, experienced consultants",
+        "Comprehensive service integration"
+      ],
+      "weaknesses_or_criticisms": [
+        "High pricing ($1,000-$3,000/hour) restricts access to affluent families",
+        "No transparent pricing published online",
+        "Premium model limits scalability",
+        "Limited information on outcomes by school tier"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on college admissions",
+          "Free discovery calls",
+          "Application guides"
+        ]
+      },
+      "wayfinder_differentiation": "IvyWise charges $1,000-$3,000/hour for premium personal counseling. Wayfinder delivers comparable strategic analysis through AI-powered data aggregation—cross-referencing acceptance rates, demographic trends, and program-level data that no human consultant can efficiently process—at a fraction of the cost. Where Wayfinder excels is in real-time pattern recognition: identifying which schools have the highest yield from students with your profile, analyzing admissions team composition changes, and detecting shifts in school preferences before they're public. The tradeoff: IvyWise provides emotional support and relationship continuity that AI cannot replicate; Wayfinder provides data depth and speed that humans cannot."
+    },
+    {
+      "id": 2,
+      "name": "Collegewise",
+      "website": "https://www.collegewise.com",
+      "headquarters": "San Francisco, CA (with national reach)",
+      "type": "large",
+      "pricing": {
+        "range": "$2,000 - $6,000+",
+        "structure": "package",
+        "entry_price": "$2,000-$4,000 for application support",
+        "comprehensive_package": "$4,950+ for 30-hour test prep packages; custom full-service packages available"
+      },
+      "services": [
+        "College counseling and advising",
+        "Application support and essay editing",
+        "Test prep (SAT/ACT tutoring)",
+        "School list creation",
+        "Interview coaching",
+        "Financial aid guidance"
+      ],
+      "methodology_summary": "Collegewise uses a personalized package model recognizing that no two students are alike. They emphasize accessible guidance with transparent pricing, offering regular check-ins, project management, and progress reports. Their approach combines strategic school selection with hands-on application execution.",
+      "claims": [
+        "Personalized packages tailored to individual needs",
+        "Accessible pricing compared to elite boutiques",
+        "Focus on fit over prestige"
+      ],
+      "team_size": "50+ advisors across multiple locations",
+      "specializations": [
+        "First-generation college students",
+        "School list development",
+        "Affordable counseling options"
+      ],
+      "target_market": "Middle to upper-middle-income families; students seeking balanced college search; first-generation applicants",
+      "strengths": [
+        "Transparent, disclosed pricing",
+        "Strong emphasis on school fit over prestige",
+        "Multi-location availability",
+        "Good balance of price and service"
+      ],
+      "weaknesses_or_criticisms": [
+        "Less emphasis on Ivy League specialization than competitors",
+        "Limited evidence of outcomes at most selective schools",
+        "Package model may not fit all student needs"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Comprehensive blog on college admissions",
+          "Free college search worksheets",
+          "College fit assessment tools",
+          "Free events and webinars"
+        ]
+      },
+      "wayfinder_differentiation": "Collegewise charges $2,000-$6,000 for personalized packages emphasizing school fit. Wayfinder complements this with AI-driven fit analysis at lower cost, automatically cross-referencing student profiles against 4,000+ schools' actual acceptance patterns, course offerings, and alumni outcomes. Collegewise excels at human judgment in school selection; Wayfinder excels at quantitative fit scoring. Wayfinder's strength: processing school-within-school data (engineering vs. liberal arts at same institution) to identify true fit; identifying schools where your extracurricular profile is stronger than GPA alone suggests."
+    },
+    {
+      "id": 3,
+      "name": "Crimson Education",
+      "website": "https://www.crimsoneducation.org/us",
+      "headquarters": "New York, NY (international operations)",
+      "type": "large",
+      "pricing": {
+        "range": "$30,000 - $100,000+",
+        "structure": "package",
+        "entry_price": "$30,000 minimum for comprehensive programs",
+        "comprehensive_package": "$30,000-$100,000+ depending on services (research, competitions, test prep layering)"
+      },
+      "services": [
+        "Comprehensive college counseling",
+        "Essay writing and editing",
+        "Standardized test prep (SAT/ACT)",
+        "Academic competition training (olympiads)",
+        "Publishable research mentorship",
+        "Extracurricular project development",
+        "Athletic recruiting guidance"
+      ],
+      "methodology_summary": "Crimson uses a distinctive team-based model where students receive support from experts in academics, testing, essays, extracurriculars, research, and competitions—all coordinated. Their approach leverages former admissions officers and accomplished university graduates to build holistic candidacy for Ivy League and top-15 schools.",
+      "claims": [
+        "7x more likely to get into Ivy League and top-15 schools",
+        "1,340+ Ivy League offers in track record",
+        "2% of class of 2028 admits at Brown, Columbia, Harvard, UPenn came from Crimson students",
+        "Team-based support across all application dimensions"
+      ],
+      "team_size": "100+ consultants including former admissions officers from Harvard, Stanford, MIT, Oxford, Cambridge",
+      "specializations": [
+        "Ivy League admissions",
+        "Research project development",
+        "Academic competition coaching",
+        "International student admissions"
+      ],
+      "target_market": "Wealthy families targeting Ivy League/top-15 schools; students with research and competition ambitions; international applicants",
+      "strengths": [
+        "Proven track record with elite school placement",
+        "True team-based approach across disciplines",
+        "Former admissions officers on staff",
+        "Strong international presence"
+      ],
+      "weaknesses_or_criticisms": [
+        "Extremely high pricing ($30,000-$100,000+) restricts to elite market",
+        "Aggressive marketing and success rate claims should be scrutinized",
+        "Limited accessibility for average students",
+        "Potential over-emphasis on competition/research may not suit all profiles"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on elite admissions",
+          "Free school review guides",
+          "Application timeline templates"
+        ]
+      },
+      "wayfinder_differentiation": "Crimson charges $30,000-$100,000 for premium team-based guidance on Ivy League admissions. Wayfinder offers similar school-within-school analysis and strategic positioning through AI at under 5% of the cost. Crimson's advantage: human judgment on research quality, competition prestige, extracurricular narrative coherence, and emotional support. Wayfinder's advantage: quantitative trend analysis. For example, Wayfinder can instantly determine that your research topic aligns with faculty research interests at specific schools, or that your competition awards are rarer than you think—data that no human consultant reviews as comprehensively. Wayfinder democratizes Crimson's data-driven insights."
+    },
+    {
+      "id": 4,
+      "name": "Admissionado",
+      "website": "https://admissionado.com",
+      "headquarters": "Multiple locations (primary: New York area)",
+      "type": "boutique",
+      "pricing": {
+        "range": "$5,000 - $25,000+",
+        "structure": "package",
+        "entry_price": "Starting packages ~$5,000-$8,000",
+        "comprehensive_package": "$15,000-$25,000+ for full college application support with essay specialist"
+      },
+      "services": [
+        "College admissions consulting",
+        "Strategic school list development",
+        "Essay writing and editing",
+        "Application strategy and optimization",
+        "Mock admissions committee reviews"
+      ],
+      "methodology_summary": "Admissionado uses proprietary frameworks combining competitive analysis and narrative strategy. Their unique 'simulated admissions decision' model places the client's application against peer profiles, with three reviewers (including CEO) evaluating candidates side-by-side without knowing who is the current client. This provides direct feedback on application strength relative to peer pool.",
+      "claims": [
+        "Only firm offering primary consultant + essay specialist model",
+        "Proprietary simulated admissions decision framework",
+        "Data-driven competitive positioning",
+        "Real-time admissions insights"
+      ],
+      "team_size": "15-20 consultants",
+      "specializations": [
+        "Strategic positioning",
+        "Essay optimization",
+        "Ivy League admissions",
+        "Competitive analysis"
+      ],
+      "target_market": "Ambitious students targeting selective schools; families valuing strategic, data-informed approach; students wanting competitive benchmarking",
+      "strengths": [
+        "Unique simulated admissions decision process",
+        "Strong focus on strategic positioning vs. generic advice",
+        "Essay specialist model is distinctive",
+        "Transparent about competitive positioning"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing opacity without published rates",
+        "Limited international presence",
+        "Simulated committee review may not replicate real admissions decisions",
+        "Competitive positioning approach may discourage some students"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on strategy",
+          "Free admissions webinars",
+          "Application strategy guides"
+        ]
+      },
+      "wayfinder_differentiation": "Admissionado charges $5,000-$25,000 for strategic positioning using simulated committee reviews. Wayfinder offers real-time competitive benchmarking through actual admissions data: comparing your profile not to Admissionado's internal mock committee but to real applicant cohorts at target schools. Wayfinder can show you the actual GPA/test score distributions for accepted students in your intended major, extracurricular patterns, geographic distribution—data that simulated reviews estimate but Wayfinder quantifies. Admissionado's strength: human judgment on narrative coherence; Wayfinder's strength: benchmarking against real data rather than simulations."
+    },
+    {
+      "id": 5,
+      "name": "CollegeVine",
+      "website": "https://www.collegevine.com",
+      "headquarters": "Cambridge, MA",
+      "type": "online",
+      "pricing": {
+        "range": "$0 - $2,000+",
+        "structure": "free+premium subscription + coaching marketplace",
+        "entry_price": "Completely free access to core platform",
+        "comprehensive_package": "$1,300-$2,000 for coaching packages with near-peer mentors from top universities"
+      },
+      "services": [
+        "Free admissions chance calculator",
+        "School list generator",
+        "Peer Q&A forum",
+        "Essay review from near-peer mentors",
+        "AI-powered Sage guidance",
+        "Personalized college recommendations",
+        "Admissions advice platform",
+        "Scholarship finder"
+      ],
+      "methodology_summary": "CollegeVine democratizes college admissions guidance through a freemium model. Their near-peer mentor approach uses college students from top universities to provide essay feedback and advising at lower cost than professional consultants. Their AI tool Sage provides personalized college fit analysis and advice, making premium guidance accessible to middle-income families.",
+      "claims": [
+        "Services at 1/3 the cost of competitors",
+        "Near-peer mentors from top universities",
+        "AI-driven personalized recommendations",
+        "Free access to core platform"
+      ],
+      "team_size": "50+ near-peer mentors; 30+ core staff",
+      "specializations": [
+        "Affordable admissions guidance",
+        "First-generation and low-income student support",
+        "AI-driven college matching"
+      ],
+      "target_market": "Middle-income families; cost-conscious students; tech-savvy applicants; international students; first-generation students",
+      "strengths": [
+        "Free core platform removes access barriers",
+        "Near-peer mentors relatable to current students",
+        "Strong AI integration (Sage)",
+        "Mission-driven pro-bono programs",
+        "Active user community"
+      ],
+      "weaknesses_or_criticisms": [
+        "Near-peer mentors lack professional consultant experience",
+        "Quality varies across mentor pool",
+        "Limited institutional knowledge vs. professional consultants",
+        "Advisor matching algorithm transparency unclear"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Completely free platform with chance calculator",
+          "Free school list generator",
+          "Peer Q&A community",
+          "Essay examples and guides"
+        ]
+      },
+      "wayfinder_differentiation": "CollegeVine charges $0-$2,000 for near-peer advising and chance calculations. Wayfinder differs fundamentally: while CollegeVine's Sage tool provides personalized recommendations, Wayfinder focuses on admissions data depth that AI-alone cannot achieve without training on proprietary datasets. Wayfinder's strength: providing consultants and students with school-specific, program-level, decision-date-specific data to power better recommendations. CollegeVine excels at accessibility; Wayfinder excels at data granularity. They're complementary rather than directly competitive—CollegeVine finds schools, Wayfinder helps evaluate each school's actual acceptance patterns and fit."
+    },
+    {
+      "id": 6,
+      "name": "Leland",
+      "website": "https://www.joinleland.com",
+      "headquarters": "San Francisco, CA",
+      "type": "online",
+      "pricing": {
+        "range": "$15-$150+ per hour",
+        "structure": "hourly marketplace",
+        "entry_price": "Coaches set own rates; marketplace typically $15-$50/hour for newer coaches",
+        "comprehensive_package": "$1,500-$5,000+ for sustained engagement with experienced coaches over 2-3 months"
+      },
+      "services": [
+        "One-on-one coaching from matching algorithm",
+        "College admissions coaching",
+        "Interview prep",
+        "Resume building",
+        "Career coaching",
+        "School selection guidance"
+      ],
+      "methodology_summary": "Leland is a coaching marketplace where users browse and select coaches by price, experience, and specialization. Students work with coaches for varying durations—from a few weeks to several years. The platform emphasizes matching student needs with coach expertise, giving transparency into coach background, hourly rates, and client reviews.",
+      "claims": [
+        "$12M Series A funding (Nov 2024)",
+        "Matching algorithm for coach selection",
+        "Transparent pricing with coach reviews"
+      ],
+      "team_size": "200+ coaches on platform (primarily contractors)",
+      "specializations": [
+        "College admissions coaching",
+        "Early career coaching",
+        "Interview preparation",
+        "Flexible engagement models"
+      ],
+      "target_market": "Budget-conscious families; students wanting flexibility in coach selection; early-career professionals; tech-savvy applicants",
+      "strengths": [
+        "Transparent, coach-set pricing",
+        "User selection of coaches",
+        "Flexible engagement from weeks to years",
+        "Reviews from prior clients visible",
+        "Wide range of price points ($15-$150+/hour)"
+      ],
+      "weaknesses_or_criticisms": [
+        "Quality highly variable across coach pool",
+        "Matching algorithm not transparent",
+        "Coach experience levels vary significantly",
+        "Limited institutional knowledge from admission offices",
+        "Marketplace format may feel less structured than traditional firms"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Free event listings",
+          "Blog articles on college admissions"
+        ]
+      },
+      "wayfinder_differentiation": "Leland charges $15-$150+/hour depending on coach selection, with quality highly variable. Wayfinder provides consistent, high-quality data analysis that coaches on Leland can use as a reference tool. Wayfinder's data (acceptance rate ranges by demographic, school-specific trends, program-level insights) makes individual coaches more effective. Rather than competing with Leland coaches, Wayfinder empowers them with better data. Wayfinder could integrate with Leland as a value-add—coaches using Wayfinder data provide better guidance to their clients."
+    },
+    {
+      "id": 7,
+      "name": "Empowerly",
+      "website": "https://empowerly.com",
+      "headquarters": "Chicago, IL (with national reach)",
+      "type": "large",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package + counselor matching",
+        "entry_price": "Free 30-minute initial consultation",
+        "comprehensive_package": "Custom packages (exact pricing requires consultation)"
+      },
+      "services": [
+        "Personalized counseling with counselor matching",
+        "Data-driven application guidance",
+        "Essay and application review",
+        "Financial aid guidance",
+        "Exam prep (test optional support)",
+        "GOALS program for neurodivergent students",
+        "Transfer student support",
+        "International student guidance"
+      ],
+      "methodology_summary": "Empowerly matches students with counselors based on area of study, extracurriculars, target schools, and personal preferences. Their approach is data-driven, with review committees of former admissions officers providing feedback. They emphasize holistic support beyond applications, including financial aid navigation and specialized programs for underrepresented populations.",
+      "claims": [
+        "98% success rate getting students into target schools",
+        "Data-driven application guidance",
+        "Review by former admissions officers at top schools",
+        "Specialized GOALS program for neurodivergent students"
+      ],
+      "team_size": "40+ counselors",
+      "specializations": [
+        "Counselor matching algorithm",
+        "Data-driven strategy",
+        "Neurodivergent student support (GOALS program)",
+        "International and transfer students"
+      ],
+      "target_market": "Families seeking personalized counselor matching; neurodivergent students; transfer applicants; international students; middle to upper-income families",
+      "strengths": [
+        "Sophisticated counselor matching algorithm",
+        "Strong specialization in neurodivergent student support",
+        "Transfer and international student focus sets them apart",
+        "Review by former admissions officers",
+        "Free initial consultation"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing opacity (requires consultation)",
+        "Success rate claim (98%) not independently verified",
+        "Limited public information on cost range",
+        "Newer firm compared to established competitors"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Free 30-minute consultation",
+          "Blog articles on admissions",
+          "Essay examples and resources"
+        ]
+      },
+      "wayfinder_differentiation": "Empowerly matches students with counselors and uses data-driven review, but pricing is opaque. Wayfinder provides transparent data infrastructure that Empowerly's counselors can leverage—specific school acceptance patterns, program-level data, and financial aid distributions. Where Empowerly excels is in personalized counselor matching and holistic support; Wayfinder excels in quantitative data provision. Wayfinder's differentiation: making admissions data transparent so any counselor (Empowerly or otherwise) can make more informed recommendations."
+    },
+    {
+      "id": 8,
+      "name": "Ivy Coach",
+      "website": "https://www.ivycoach.com",
+      "headquarters": "New York, NY",
+      "type": "boutique",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Free consultation form submission",
+        "comprehensive_package": "Custom packages (pricing by consultation)"
+      },
+      "services": [
+        "College essay coaching",
+        "Recommendation letter optimization",
+        "College selection guidance",
+        "Application strategy",
+        "Interview coaching"
+      ],
+      "methodology_summary": "Ivy Coach is led by former Ivy League and elite college admissions officers who now advise students on the application side. They emphasize writing compelling essays and optimizing recommendation letters, drawing directly on their admissions review experience. Their small, selective practice maintains high standards and personal attention.",
+      "claims": [
+        "Led by former Harvard College admissions officer (5+ years, full committee member)",
+        "Direct admissions office experience"
+      ],
+      "team_size": "8-12 consultants",
+      "specializations": [
+        "Ivy League admissions",
+        "Essay and recommendation strategy",
+        "New York-based students (with national reach)"
+      ],
+      "target_market": "High-income families in New York area; students targeting Ivy League; families seeking admissions officer perspective",
+      "strengths": [
+        "Direct experience from Harvard admissions committee",
+        "Small practice allows selective focus",
+        "Emphasizes authentic voice in essays",
+        "Strong reputation in NYC"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing completely opaque",
+        "Very limited team size",
+        "Heavy emphasis on Ivy League may not serve all students",
+        "Limited information on outcomes"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Free consultation form",
+          "Limited online resources"
+        ]
+      },
+      "wayfinder_differentiation": "Ivy Coach's strength is admissions officer perspective on essays—they know what committee members look for. Wayfinder's strength is data on what essays from admitted students actually contain. Wayfinder can show the distribution of essay topics, personal statement themes, and extracurricular narratives across admitted classes, while Ivy Coach provides judgment based on lived admissions experience. These are complementary: Ivy Coach's narrative expertise + Wayfinder's topic/theme data = stronger essays."
+    },
+    {
+      "id": 9,
+      "name": "College Essay Guy",
+      "website": "https://www.collegeessayguy.com",
+      "headquarters": "Online (founder: Portland, OR area)",
+      "type": "boutique",
+      "pricing": {
+        "range": "$4,900 - $9,900",
+        "structure": "package",
+        "entry_price": "$4,900 for 3 schools",
+        "comprehensive_package": "$9,900 for 10 schools"
+      },
+      "services": [
+        "Essay coaching and writing",
+        "Application support",
+        "Brainstorming guidance",
+        "Graduate school admissions coaching (separate pricing)",
+        "Transfer application support"
+      ],
+      "methodology_summary": "College Essay Guy (Ethan Sawyer's brand) offers fixed-price packages for essay coaching across multiple schools. The founder's principles guide a team approach, emphasizing authentic storytelling and application strategy. Services are delivered via Zoom, email, and Google Docs with integrated essay management platform.",
+      "claims": [
+        "Founder Ethan Sawyer's established methodology",
+        "Focus on authentic storytelling",
+        "Transparent, fixed pricing"
+      ],
+      "team_size": "5-8 consultants",
+      "specializations": [
+        "Essay coaching",
+        "Application writing",
+        "Authentic storytelling emphasis"
+      ],
+      "target_market": "Essay-focused students; families wanting transparent pricing; students applying to 3-10 schools",
+      "strengths": [
+        "Transparent, published pricing",
+        "Clear package structure ($4,900-$9,900 range)",
+        "Founder has recognizable brand/book",
+        "Focus on authentic voice"
+      ],
+      "weaknesses_or_criticisms": [
+        "Essay-only focus; limited overall admissions strategy",
+        "Founder no longer works with most students directly",
+        "Limited team depth",
+        "No broader counseling beyond essays"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Free essay guides and blog",
+          "YouTube essays content",
+          "Free worksheets and checklists"
+        ]
+      },
+      "wayfinder_differentiation": "College Essay Guy charges $4,900-$9,900 for essay coaching emphasizing authentic storytelling. Wayfinder provides essay topic/theme analysis: showing students which narrative angles are over/under-represented at their target schools, helping them position their authentic story strategically. CEG excels at writing quality and authenticity; Wayfinder excels at strategic positioning. Wayfinder can tell you if your 'overcoming adversity' essay fits the diversity narrative distribution at selective schools or stands out."
+    },
+    {
+      "id": 10,
+      "name": "Top Tier Admissions",
+      "website": "https://toptieradmissions.com",
+      "headquarters": "Multiple locations (national)",
+      "type": "large",
+      "pricing": {
+        "range": "$3,000 - $12,000+",
+        "structure": "package",
+        "entry_price": "$3,000+ for starter packages",
+        "comprehensive_package": "$8,000-$12,000+ for comprehensive programs"
+      },
+      "services": [
+        "Private college counseling (grades 8-12)",
+        "Boot camps (4-day and 3-day intensive programs)",
+        "Essay editing and guidance",
+        "Common App support",
+        "SAT/ACT tutoring",
+        "AP exam tutoring"
+      ],
+      "methodology_summary": "Top Tier Admissions offers progressive support starting in 8th grade through senior year, emphasizing early planning. Their signature Application Boot Camp (sold out annually since 2005) provides intensive support. The firm reviews 600+ applications annually and emphasizes personal attention despite scale.",
+      "claims": [
+        "Application Boot Camp sold out every year since 2005",
+        "Review 600+ applications annually",
+        "60% of students from sibling/friend referrals",
+        "Featured in NY Times, Today Show"
+      ],
+      "team_size": "30-40 consultants",
+      "specializations": [
+        "Early intervention (8th grade onwards)",
+        "Boot camp intensive model",
+        "Application volume and review experience"
+      ],
+      "target_market": "Families starting planning early (8th-9th grade); students wanting intensive boot camp experience; middle to upper-income families",
+      "strengths": [
+        "Long track record (Application Boot Camp since 2005)",
+        "Early intervention approach",
+        "High referral rate suggests satisfaction",
+        "Intensive boot camp model proven effective"
+      ],
+      "weaknesses_or_criticisms": [
+        "Boot camp sold out makes access difficult",
+        "Limited transparency on outcomes by school tier",
+        "Scale (600+ applications) raises questions about individual attention",
+        "Pricing varies widely without clear structure"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles",
+          "Limited free resources"
+        ]
+      },
+      "wayfinder_differentiation": "Top Tier charges $3,000-$12,000 and processes 600+ applications annually. Wayfinder provides data infrastructure for their consultants: helping them quickly benchmark each student's profile against application trends, identify strategic school matches, and track decision patterns. Wayfinder's value: with 600+ applications annually, Top Tier's consultants could use Wayfinder to identify patterns faster (Which schools are increasing STEM focus? Which states have declining yield?). Rather than direct competition, Wayfinder enhances Top Tier's ability to serve volume."
+    },
+    {
+      "id": 11,
+      "name": "Prepory",
+      "website": "https://prepory.com",
+      "headquarters": "Multiple locations (national)",
+      "type": "large",
+      "pricing": {
+        "range": "$4,900 - $12,900",
+        "structure": "package",
+        "entry_price": "$4,900 for freshman programs",
+        "comprehensive_package": "$9,000-$12,900 depending on grade level and duration"
+      },
+      "services": [
+        "One-on-one college admissions coaching",
+        "School list development",
+        "Extracurricular strategy",
+        "Essay writing and editing",
+        "Supplemental essay support",
+        "Summer program guidance",
+        "Career coaching"
+      ],
+      "methodology_summary": "Prepory emphasizes strategic roadmap development with coaches designing personalized paths. Their team of coaches from Harvard, Duke, Columbia, and other top schools bring 400+ years of collective admissions experience. They combine early planning (freshman onwards) with intensive support during senior year.",
+      "claims": [
+        "14,000+ students enrolled worldwide",
+        "3.38x more likely to be admitted to schools with <15% acceptance rates",
+        "400+ years collective admissions experience",
+        "Coaches from top 20 universities"
+      ],
+      "team_size": "50+ coaches",
+      "specializations": [
+        "Early intervention (freshman year)",
+        "Strategic roadmap development",
+        "Extracurricular strategy",
+        "Summer program planning"
+      ],
+      "target_market": "Families planning from freshman year; ambitious students targeting selective schools; families wanting structured multiyear approach; middle to upper-income families",
+      "strengths": [
+        "Transparent pricing ($4,900-$12,900 range)",
+        "Early intervention model (freshman year)",
+        "Coaches from prestigious universities",
+        "Specific outcome claim (3.38x multiplier)",
+        "Flexible payment plans available"
+      ],
+      "weaknesses_or_criticisms": [
+        "Outcome claim (3.38x) lacks independent verification",
+        "14,000+ students may indicate quality inconsistency",
+        "Limited information on outcomes by school tier",
+        "Pricing at high end of market"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on college planning",
+          "Free resources for freshman students"
+        ]
+      },
+      "wayfinder_differentiation": "Prepory charges $4,900-$12,900 and emphasizes early intervention. Wayfinder provides the data layer that makes early intervention smarter: tracking which schools are strengthening specific programs, identifying emerging target schools before they become competitive, and showing freshmen/sophomores where their interests/skills align with university strengths. Wayfinder's early intervention data (trend analysis on school selectivity changes, program growth) enhances Prepory's strategic roadmaps."
+    },
+    {
+      "id": 12,
+      "name": "Manhattan Review (College Admissions Arm)",
+      "website": "https://www.manhattanreview.com/college-admissions-consulting/",
+      "headquarters": "New York, NY (global locations)",
+      "type": "large",
+      "pricing": {
+        "range": "$5,000 - $20,000+",
+        "structure": "package",
+        "entry_price": "Varies by package; Elite packages starting ~$8,000",
+        "comprehensive_package": "Elite packages up to $20,000+ for comprehensive end-to-end support"
+      },
+      "services": [
+        "College admissions consulting",
+        "Elite package programs",
+        "Dedicated package programs",
+        "Essay editing",
+        "Application strategy",
+        "Integrated test prep (from parent company)"
+      ],
+      "methodology_summary": "Manhattan Review is primarily known as a test prep company (GMAT, GRE, LSAT, SAT, ACT) that expanded into college admissions consulting. Their admissions team draws on years of admissions office experience. They offer tailored packages from entry-level to comprehensive Elite packages emphasizing end-to-end support.",
+      "claims": [
+        "Years of collective admissions office experience",
+        "Integrated test prep and admissions consulting",
+        "Customizable packages"
+      ],
+      "team_size": "20+ admissions consultants",
+      "specializations": [
+        "Integrated test prep and admissions (unique advantage)",
+        "Elite university targeting",
+        "International students"
+      ],
+      "target_market": "Families wanting integrated test prep and admissions support; test-anxious students; international students; upper-middle to high-income families",
+      "strengths": [
+        "Integrated test prep advantage (same team handles both)",
+        "Customizable packages",
+        "Admissions office experience on team",
+        "Strong in international student market"
+      ],
+      "weaknesses_or_criticisms": [
+        "Admissions consulting arm overshadowed by test prep brand",
+        "Limited transparency on pricing",
+        "Unclear differentiation from pure admissions firms",
+        "Heavy test-prep focus may not suit all students"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles",
+          "Free test prep resources",
+          "Limited free admissions resources"
+        ]
+      },
+      "wayfinder_differentiation": "Manhattan Review charges $5,000-$20,000 combining test prep and admissions. Wayfinder provides independent admissions data that complements their integrated approach. Where Manhattan Review excels: managing student stress by coordinating test prep and admissions timelines. Wayfinder excels: providing test score distribution data by school/major that informs both test target-setting and school selection simultaneously. For example, Wayfinder can show 'To be competitive at your target schools, you need SAT 1490+ AND these extracurriculars,' making test prep target-setting more strategic."
+    },
+    {
+      "id": 13,
+      "name": "Kollegio AI",
+      "website": "https://www.kollegio.ai",
+      "headquarters": "San Francisco, CA",
+      "type": "online",
+      "pricing": {
+        "range": "$0 - $10",
+        "structure": "free + minimal premium",
+        "entry_price": "Completely free core features",
+        "comprehensive_package": "$10 maximum AI charge for power users (less than 1% of human consultant cost)"
+      },
+      "services": [
+        "AI college counselor and recommendations",
+        "Personalized college list generation",
+        "Essay brainstorming and drafting",
+        "AI feedback on clarity and structure",
+        "Extracurricular evaluation",
+        "Application timeline generation",
+        "Data-driven school fit analysis"
+      ],
+      "methodology_summary": "Kollegio AI is an AI-driven platform designed to democratize college admissions by providing intelligent guidance at near-zero cost. The platform generates personalized college recommendations, helps brainstorm essays, provides feedback on extracurriculars, and tracks application progress through AI-powered interfaces.",
+      "claims": [
+        "Less than 1% of human consultant cost",
+        "AI-powered college matching",
+        "Ethically democratizes admissions process",
+        "$750K pre-seed funding"
+      ],
+      "team_size": "8-12 (startup team) - AI experts + college advisors",
+      "specializations": [
+        "AI-driven guidance",
+        "Affordable access",
+        "Equity in college admissions"
+      ],
+      "target_market": "Budget-conscious students; first-generation applicants; international students; tech-savvy students; low-income families",
+      "strengths": [
+        "Extremely low cost (free to $10)",
+        "Equity-focused mission",
+        "AI-native approach",
+        "Personalized recommendations at scale"
+      ],
+      "weaknesses_or_criticisms": [
+        "AI limitations: lacks human judgment and emotional intelligence",
+        "Early-stage startup (pre-seed funding) - stability questions",
+        "No admissions office experience embedded",
+        "Limited track record of outcomes"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Entirely free core platform",
+          "Blog articles on AI in admissions"
+        ]
+      },
+      "wayfinder_differentiation": "Kollegio AI and Wayfinder are both AI-first but different. Kollegio focuses on personalized student guidance at scale ($0-$10); Wayfinder focuses on providing deep admissions data to consultants and students. Kollegio's AI tries to replicate human counselor judgment; Wayfinder's focus is data—acceptance rate distributions, program-level trends, decision timing, that AI alone cannot synthesize without external data. They're complementary: Kollegio provides guidance, Wayfinder provides the data that makes guidance more precise. Wayfinder differentiates by providing admissions data depth that AI-only platforms like Kollegio cannot achieve without third-party data."
+    },
+    {
+      "id": 14,
+      "name": "Solomon Admissions Consulting",
+      "website": "https://www.solomonadmissions.com",
+      "headquarters": "Multiple locations (national - largest firm by consultant count)",
+      "type": "large",
+      "pricing": {
+        "range": "$3,000 - $15,000+",
+        "structure": "package",
+        "entry_price": "$3,000-$5,000 for starter packages",
+        "comprehensive_package": "$10,000-$15,000+ for premium packages"
+      },
+      "services": [
+        "One-on-one college admissions counseling",
+        "MBA admissions consulting",
+        "Medical school admissions consulting",
+        "Private school (K-12) admissions",
+        "School list development",
+        "Essay editing",
+        "Interview coaching"
+      ],
+      "methodology_summary": "Solomon Admissions is the largest college admissions consulting firm (150+ consultants), using their proprietary Solomon Methodology emphasizing intellectual vitality and extracurricular strength. All consultants are former college admissions officers. They work one-on-one from school selection through application completion.",
+      "claims": [
+        "150+ consultants (largest firm by count)",
+        "100+ years collective experience",
+        "All consultants are former admissions officers",
+        "Acceptance rates 5x national average",
+        "High majority get into top-3 choice schools"
+      ],
+      "team_size": "150+ consultants (nationally)",
+      "specializations": [
+        "Large-scale consistent service delivery",
+        "Intellectual vitality and extracurricular focus",
+        "Multi-level admissions (undergrad, MBA, MD)"
+      ],
+      "target_market": "Families nationwide seeking consistency; ambitious students targeting top schools; families wanting verified admissions officer experience; upper-middle to high-income families",
+      "strengths": [
+        "Largest team ensures availability",
+        "All consultants verified as former admissions officers",
+        "Multi-service offering (undergrad, MBA, MD)",
+        "Serves major metropolitan areas nationwide"
+      ],
+      "weaknesses_or_criticisms": [
+        "Scale (150+ consultants) raises quality consistency questions",
+        "Solomon Methodology transparency unclear",
+        "Claims (5x national average) lack third-party verification",
+        "Pricing opacity requires consultation"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles",
+          "Limited free resources"
+        ]
+      },
+      "wayfinder_differentiation": "Solomon charges $3,000-$15,000 with 150+ former admissions officers. Wayfinder provides the data layer that makes their human capital more efficient: instant access to acceptance rate trends, program-level analytics, and demographic distribution data. Solomon's consultants spend time interviewing students and writing strategy; Wayfinder's data does the initial filtering. For example, instead of a consultant hand-checking 20 potential schools against a student's profile, Wayfinder identifies the best 5 with data justification, freeing consultants to focus on narrative strategy. Wayfinder scales Solomon's impact."
+    },
+    {
+      "id": 15,
+      "name": "IvySummit College Counseling",
+      "website": "https://www.ivysummit.com",
+      "headquarters": "Multiple locations (global)",
+      "type": "boutique",
+      "pricing": {
+        "range": "$10,000 - $30,000+",
+        "structure": "package",
+        "entry_price": "$10,000+ for premium packages",
+        "comprehensive_package": "$20,000-$30,000+ for VIP team-based packages"
+      },
+      "services": [
+        "Premium and VIP package support",
+        "Essay editing (dedicated senior editor)",
+        "Extracurricular strategy",
+        "Essay writing and brainstorming",
+        "Admissions officer review",
+        "Athletic recruiting guidance",
+        "International student support",
+        "Transfer admissions"
+      ],
+      "methodology_summary": "IvySummit is a global boutique firm limiting client numbers for selectivity. Premium packages pair students with team support including former admissions officer, essay editor, and extracurricular strategist. They emphasize cohesive narrative development and intensive essay editing from senior staff.",
+      "claims": [
+        "20-year track record (since ~2004)",
+        "1,340+ Ivy League offers",
+        "100% success rate (at least one target school)",
+        "Team-based approach with dedicated specialists"
+      ],
+      "team_size": "15-20 consultants",
+      "specializations": [
+        "Ivy League and top-15 university focus",
+        "Team-based support model",
+        "Athletic recruiting",
+        "International students"
+      ],
+      "target_market": "High-income families targeting Ivy League; student-athletes; international students; families wanting team-based premium support",
+      "strengths": [
+        "Limited client pool ensures attention",
+        "20-year track record",
+        "Team-based approach with specialists",
+        "100% success rate claim"
+      ],
+      "weaknesses_or_criticisms": [
+        "High pricing ($10,000-$30,000+) restricts access",
+        "100% success rate claim lacks definition (what counts as 'target school'?)",
+        "Limited team size restricts availability",
+        "Less transparent about pricing than competitors"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "IvySummit charges $10,000-$30,000 for team-based premium guidance on Ivy League admissions. Wayfinder provides complementary data: which Ivy schools have highest yield for students with your profile, which schools are increasing/decreasing engineering enrollment, which programs value your extracurricular profile most. IvySummit excels at narrative crafting and emotional support; Wayfinder excels at identifying which Ivys to target based on real data. IvySummit's strength: 'We got you into an Ivy'; Wayfinder's strength: 'This Ivy is your best statistical fit.'"
+    },
+    {
+      "id": 16,
+      "name": "Spark Admissions",
+      "website": "https://www.sparkadmissions.com",
+      "headquarters": "Boston, MA area (with national reach)",
+      "type": "boutique",
+      "pricing": {
+        "range": "$4,000 - $15,000+",
+        "structure": "package",
+        "entry_price": "$4,000-$6,000 for starter packages",
+        "comprehensive_package": "$10,000-$15,000+ for comprehensive programs"
+      },
+      "services": [
+        "College admissions consulting",
+        "Transfer admissions guidance",
+        "Private school admissions",
+        "Athletic recruiting support",
+        "Art, Film, Music consulting",
+        "BS/MD program guidance",
+        "School list development",
+        "Essay editing"
+      ],
+      "methodology_summary": "Spark Admissions is led by Harvard doctorate Rachel Rubin (known for groundbreaking admissions research) and University of Chicago MBA Rachel Blankstein. The firm emphasizes data-driven guidance informed by Rubin's research on how top 75 colleges make admissions decisions. They guide holistic academic and extracurricular development.",
+      "claims": [
+        "8x Ivy League admission rate vs. national average",
+        "6x admission rate for top 50 colleges vs. national average",
+        "96% get into at least one of top 3 choice schools",
+        "Founder's research on selective college admissions"
+      ],
+      "team_size": "8-12 consultants",
+      "specializations": [
+        "Data-driven admissions strategy",
+        "Ivy League focus",
+        "Research-informed approach",
+        "Niche programs (BS/MD, Arts, etc.)"
+      ],
+      "target_market": "Ambitious families targeting top schools; student-athletes; arts/film students; families wanting research-backed guidance; upper-middle to high-income",
+      "strengths": [
+        "Founder's published research on admissions decisions",
+        "Data-driven approach",
+        "Strong outcomes (96% get into top-3 choice)",
+        "5-star Google rating (150+ reviews)",
+        "Niche program specializations"
+      ],
+      "weaknesses_or_criticisms": [
+        "Small team may limit availability",
+        "Pricing lacks transparency",
+        "Outcomes claims (8x Ivy rate) lack independent verification",
+        "Limited geographic presence outside East Coast"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "Spark charges $4,000-$15,000 and is founded by an admissions research expert. Wayfinder extends Spark's research-informed approach by providing real-time admissions data infrastructure. Where Spark's founder researched how top-75 schools make decisions, Wayfinder provides ongoing data on what those decisions actually yield. Wayfinder + Spark: research-informed guidance + real admissions data = students can see both the 'why' (Spark's research) and the 'what' (Wayfinder's data)."
+    },
+    {
+      "id": 17,
+      "name": "Shemmassian Academic Consulting",
+      "website": "https://www.shemmassianconsulting.com",
+      "headquarters": "San Diego, CA",
+      "type": "boutique",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Free initial consultation",
+        "comprehensive_package": "Premium, Premium+, and Ivy packages (10-20 schools); exact pricing requires consultation"
+      },
+      "services": [
+        "College admissions advising",
+        "Medical school admissions consulting",
+        "MCAT preparation",
+        "Medical residency admissions",
+        "Essay editing",
+        "Application strategy"
+      ],
+      "methodology_summary": "Shemmassian is founded by Dr. Shirag Shemmassian and specializes in 1:1 support for elite institutions. The firm emphasizes comprehensive guidance from school selection through application completion, with a significant focus on medical school admissions (reflecting founder's expertise).",
+      "claims": [
+        "90%+ get into one of top 3 choices",
+        "~20 years of admissions consulting experience",
+        "Former USC and UCLA guest lecturer (founder)"
+      ],
+      "team_size": "5-8 consultants",
+      "specializations": [
+        "Medical school and health professions admissions",
+        "Elite college admissions",
+        "1:1 intensive support"
+      ],
+      "target_market": "Pre-med and health professions students; ambitious college applicants; families wanting deep experience in medical admissions; upper-income families",
+      "strengths": [
+        "Significant medical admissions expertise (unique angle)",
+        "Founder has guest lecture credentials",
+        "90%+ top-3 choice success claim",
+        "Free initial consultation"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing completely opaque",
+        "Heavy medical school focus limits scope for pure college students",
+        "Success claims lack independent verification",
+        "Limited team size suggests scarcity"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Free initial consultation",
+          "Blog articles on college and medical admissions"
+        ]
+      },
+      "wayfinder_differentiation": "Shemmassian charges undisclosed fees with heavy medical school focus. Wayfinder provides medical school-specific admissions data (MCAT score distributions by school, acceptance rates by undergraduate institution, specialty-specific trends) that helps Shemmassian's pre-med clients understand their competitiveness. Wayfinder's differentiation: medical school data infrastructure that pre-med advisors lack."
+    },
+    {
+      "id": 18,
+      "name": "Cardinal Education",
+      "website": "https://www.cardinaleducation.com",
+      "headquarters": "San Francisco Bay Area (founded 2006, multiple locations)",
+      "type": "large",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Comprehensive packages (pricing varies by location and services)"
+      },
+      "services": [
+        "Private school admissions (K-12)",
+        "College consulting",
+        "Test prep (SAT, ACT, ISEE, SSAT)",
+        "Tutoring",
+        "Essay development",
+        "Interview coaching",
+        "Leadership mentorship"
+      ],
+      "methodology_summary": "Cardinal Education emphasizes holistic development beyond GPA and test scores, starting as early as middle school. The firm combines academic advising with extracurricular mentorship and essay development, aiming to build comprehensive candidacy for top schools.",
+      "claims": [
+        "20 years experience (founded 2006)",
+        "Matriculation to Stanford, Harvard, UCLA, MIT",
+        "Early intervention benefits (freshman/sophomore start)"
+      ],
+      "team_size": "30+ consultants across multiple locations",
+      "specializations": [
+        "Private school (K-12) admissions",
+        "Multi-location consistency",
+        "Early intervention (middle school onwards)"
+      ],
+      "target_market": "Families in California, DC, NYC; families starting planning early (middle school); ambitious students targeting elite schools; upper-income families",
+      "strengths": [
+        "20-year track record",
+        "Integrated K-12 to college planning",
+        "Multiple high-profile matriculations",
+        "Early intervention model"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing completely opaque",
+        "Limited transparency on college outcomes vs. private school focus",
+        "Geographic concentration (California, DC, NYC)",
+        "Large team may affect consistency"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "Cardinal charges undisclosed fees across K-12 and college services. Wayfinder provides early intervention data: identifying promising schools/programs before they become competitive, tracking which middle/high schools produce students admitted to specific colleges. Wayfinder's early identification data helps Cardinal's counselors identify strategic opportunities for students years in advance."
+    },
+    {
+      "id": 19,
+      "name": "Great College Advice (Mark Montgomery)",
+      "website": "https://greatcollegeadvice.com",
+      "headquarters": "Online (global reach)",
+      "type": "boutique",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Comprehensive packages (exact pricing requires consultation)"
+      },
+      "services": [
+        "College admissions consulting",
+        "Global advising",
+        "International student guidance",
+        "Essay and application support",
+        "School selection strategy"
+      ],
+      "methodology_summary": "Great College Advice, founded by Mark Montgomery (with background as college administrator, professor, and educator), provides global advising with emphasis on personalized, student-focused approach. Montgomery's diverse background (Harvard instructor, Tufts instructor, Yale program consultant) informs strategic guidance.",
+      "claims": [
+        "Founded 2005",
+        "Worked with 100+ students from 40+ states and 28 countries",
+        "Founder's diverse academic/administrative background"
+      ],
+      "team_size": "5-8 consultants",
+      "specializations": [
+        "Global advising",
+        "International student focus",
+        "Personalized approach"
+      ],
+      "target_market": "International students; families seeking personalized global advising; students wanting educator perspective; families valuing diversity of approach",
+      "strengths": [
+        "Founder's diverse background",
+        "Global advising capability",
+        "Personalized approach",
+        "International student expertise"
+      ],
+      "weaknesses_or_criticisms": [
+        "Pricing completely opaque",
+        "Limited team size",
+        "Small firm may lack scale",
+        "Limited public outcomes information"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on college admissions"
+        ]
+      },
+      "wayfinder_differentiation": "Great College Advice offers personalized global advising without published pricing. Wayfinder provides international student-specific data: visa trends by school, international student yield/enrollment by country, program-specific international acceptance patterns. Wayfinder helps Montgomery's international student advising by providing data on which schools actively recruit from specific countries and which programs value international perspectives."
+    },
+    {
+      "id": 20,
+      "name": "Steven Antonoff (Independent Consultant)",
+      "website": "https://astudentofcolleges.com",
+      "headquarters": "Colorado (independent)",
+      "type": "independent",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package/hourly",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Custom packages"
+      },
+      "services": [
+        "Independent educational consulting",
+        "College planning and advising",
+        "Author and educator"
+      ],
+      "methodology_summary": "Dr. Steven Antonoff is a legendary figure in independent educational consulting with 35+ years experience and direct impact on the profession's standards and ethics. He provides consulting while also serving as instructor and advisor for UCI's certificate program in independent educational consulting.",
+      "claims": [
+        "35+ years of consulting experience",
+        "Worked with 3,500+ students",
+        "Visited hundreds of colleges multiple times",
+        "First recipient of IECA Professional Achievement Award",
+        "Award now named after him (Steven R. Antonoff Award)"
+      ],
+      "team_size": "1 (independent)",
+      "specializations": [
+        "Independent consulting expertise",
+        "Professional standards development",
+        "Author (College Match, The College Finder, A Student of Colleges)"
+      ],
+      "target_market": "Families seeking legendary independent consultant; students wanting deep college knowledge; families valuing ethics and professional standards",
+      "strengths": [
+        "Legendary figure in profession",
+        "Direct college visiting experience (hundreds of schools)",
+        "Author of influential college guides",
+        "Institutional commitment to profession"
+      ],
+      "weaknesses_or_criticisms": [
+        "Limited availability as independent consultant",
+        "Age of materials (college guides may be dated)",
+        "Likely high pricing (not disclosed)",
+        "Limited online presence"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Books (College Match, The College Finder, A Student of Colleges)"
+        ]
+      },
+      "wayfinder_differentiation": "Antonoff brings 35+ years of direct college visitation experience and professional standards expertise. Wayfinder provides the data layer he would use manually: instead of visiting colleges repeatedly, Wayfinder aggregates admissions data, trends, and demographics automatically. Antonoff's judgment + Wayfinder's data: a combination stronger than either alone. Wayfinder democratizes access to the insights Antonoff has built through decades of college visits."
+    },
+    {
+      "id": 21,
+      "name": "Parry College Counseling (Heather Parry - Seattle)",
+      "website": "http://www.parrycc.com",
+      "headquarters": "Seattle, WA",
+      "type": "independent",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Custom packages"
+      },
+      "services": [
+        "College counseling (11th grade through senior year)",
+        "Transfer student advising",
+        "College list creation",
+        "Resume development",
+        "Interview preparation",
+        "Essay and application materials support"
+      ],
+      "methodology_summary": "Parry College Counseling, founded by Heather Parry (who worked in college admissions at University of Washington), provides regional expertise on Pacific Northwest schools and broader national counseling. Heather works with students as early as 11th grade through transfer students.",
+      "claims": [
+        "Helped hundreds of students and families",
+        "Founder worked in college admissions (UW)",
+        "Serving Seattle area since 2015"
+      ],
+      "team_size": "1-2 (independent)",
+      "specializations": [
+        "Pacific Northwest expertise",
+        "Seattle-area regional focus",
+        "Transfer student advising"
+      ],
+      "target_market": "Seattle-area families; transfer students; Pacific Northwest college applicants; families seeking regional expertise",
+      "strengths": [
+        "Direct admissions office experience (UW)",
+        "Regional expertise (Pacific Northwest)",
+        "Personalized service",
+        "Transfer student focus"
+      ],
+      "weaknesses_or_criticisms": [
+        "Limited team size (1-2 person operation)",
+        "Regional focus limits national reach",
+        "Pricing not disclosed",
+        "Limited outcomes visibility"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": [
+          "Blog articles on college admissions"
+        ]
+      },
+      "wayfinder_differentiation": "Parry provides regional Pacific Northwest expertise based on UW admissions experience. Wayfinder provides data on which Pacific Northwest schools are increasing/decreasing enrollment in specific programs, which schools value specific extracurriculars or geographic backgrounds, and real-time acceptance patterns. Wayfinder extends Parry's regional expertise with quantitative regional data."
+    },
+    {
+      "id": 22,
+      "name": "Selective Admissions (Seattle)",
+      "website": "https://www.selectiveadmissions.com",
+      "headquarters": "Seattle, WA area",
+      "type": "boutique",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Custom packages"
+      },
+      "services": [
+        "College admissions consulting",
+        "Personalized, one-on-one advising",
+        "School selection strategy",
+        "Essay support",
+        "Application strategy"
+      ],
+      "methodology_summary": "Selective Admissions is founded by a former Harvard Admissions Officer and Stanford Dean, providing premier personalized college consulting for students in Seattle and Puget Sound area. The firm emphasizes one-on-one support with admissions office experience.",
+      "claims": [
+        "Founded by former Harvard and Stanford leaders",
+        "Direct admissions office expertise"
+      ],
+      "team_size": "3-5 consultants",
+      "specializations": [
+        "Ivy League and top university focus",
+        "Pacific Northwest regional presence",
+        "Admissions officer perspective"
+      ],
+      "target_market": "Seattle and Puget Sound families targeting top schools; ambitious students; families valuing Ivy League expertise; upper-income families",
+      "strengths": [
+        "Founders with Harvard and Stanford admissions experience",
+        "Regional Pacific Northwest focus",
+        "Personalized one-on-one model"
+      ],
+      "weaknesses_or_criticisms": [
+        "Limited team size restricts availability",
+        "Pricing not disclosed",
+        "Unclear scale and outcomes tracking",
+        "Regional focus limits national reach"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "Selective Admissions benefits from Harvard/Stanford admissions experience. Wayfinder provides current data on Harvard and Stanford admissions patterns: acceptance rates by major, demographic distribution, yield trends, and decision date patterns. Wayfinder makes their admissions office knowledge more current and data-backed."
+    },
+    {
+      "id": 23,
+      "name": "Sierra Admissions (Seattle/Bellevue)",
+      "website": "https://sierraadmissions.com",
+      "headquarters": "Seattle/Bellevue, WA area",
+      "type": "boutique",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Custom packages"
+      },
+      "services": [
+        "College admissions consulting",
+        "STEM and Business school focus",
+        "School selection strategy",
+        "Essay support",
+        "Application guidance"
+      ],
+      "methodology_summary": "Sierra Admissions specializes in high-achieving students in the Seattle/Bellevue/Eastside area, with particular focus on STEM and Business school admissions. They work with selective private schools (Lakeside, Bellevue High, International School, etc.) and emphasize strategic positioning for top universities.",
+      "claims": [
+        "Specializes in STEM and Business admissions",
+        "Works with selective Pacific Northwest schools"
+      ],
+      "team_size": "3-5 consultants",
+      "specializations": [
+        "STEM school admissions",
+        "Business school admissions",
+        "Pacific Northwest elite school focus"
+      ],
+      "target_market": "High-achieving STEM and business students in Seattle/Bellevue; private school students; families targeting top universities for STEM/business",
+      "strengths": [
+        "STEM/business specialization",
+        "Regional expertise (prestigious schools)",
+        "Personalized service"
+      ],
+      "weaknesses_or_criticisms": [
+        "Limited team size",
+        "Pricing not disclosed",
+        "Regional focus limits reach",
+        "STEM specialization may not serve all students"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "Sierra specializes in STEM/business admissions for high achievers. Wayfinder provides STEM-specific data: acceptance rates by engineering discipline, program-specific test score distributions, STEM major enrollment trends, and school-specific STEM program rankings. Wayfinder helps Sierra advise students with precision on STEM program competitiveness."
+    },
+    {
+      "id": 24,
+      "name": "The Schooling Doula (Brynnen Ford - Seattle)",
+      "website": "https://www.schoolingdoula.com",
+      "headquarters": "Seattle, WA",
+      "type": "independent",
+      "pricing": {
+        "range": "Not publicly disclosed",
+        "structure": "package/hourly",
+        "entry_price": "Pricing by consultation",
+        "comprehensive_package": "Custom packages"
+      },
+      "services": [
+        "College and K-12 school admission coaching",
+        "Application strategy",
+        "Essay support",
+        "Interview preparation"
+      ],
+      "methodology_summary": "The Schooling Doula, led by Brynnen Ford (30+ years experience in colleges, universities, and PreK-12 schools), offers college and school admission coaching with emphasis on personal guidance. Ford's diverse background in education (leadership, teaching, advising) informs holistic approach.",
+      "claims": [
+        "30+ years experience in education and advising",
+        "Diverse background (leadership, teaching, advising)"
+      ],
+      "team_size": "1-2 (independent)",
+      "specializations": [
+        "K-12 and college admissions",
+        "Personalized coaching approach",
+        "Seattle regional expertise"
+      ],
+      "target_market": "Seattle families seeking personalized coaching; families valuing educational background and holistic approach; students at multiple life stages",
+      "strengths": [
+        "Extensive educational background",
+        "K-12 to college comprehensive approach",
+        "Personalized coaching model"
+      ],
+      "weaknesses_or_criticisms": [
+        "Limited team size (1-2 person operation)",
+        "Pricing not disclosed",
+        "Regional focus (Seattle area)",
+        "Limited outcomes visibility"
+      ],
+      "online_presence": {
+        "blog": false,
+        "youtube": false,
+        "podcast": false,
+        "free_resources": []
+      },
+      "wayfinder_differentiation": "Schooling Doula offers personalized holistic education coaching. Wayfinder provides data on school fit and college admissions patterns that enhance this coaching. For example, Wayfinder can identify which schools have alumni networks strongest in Seattle, helping Ford's clients understand long-term community benefits."
+    },
+    {
+      "id": 25,
+      "name": "Coalition for College (Platform)",
+      "website": "https://www.coalitionforcollegeaccess.org",
+      "headquarters": "National nonprofit organization",
+      "type": "online",
+      "pricing": {
+        "range": "$0",
+        "structure": "free",
+        "entry_price": "Free application platform",
+        "comprehensive_package": "Free membership (170 member schools)"
+      },
+      "services": [
+        "Coalition Application platform",
+        "Online document locker",
+        "Collaboration space for recommendations",
+        "Resources for first-generation and low-income students"
+      ],
+      "methodology_summary": "Coalition for College is a nonprofit application platform alternative to Common App, designed to make college admissions more accessible to first-generation and low-income students. The platform emphasizes collaboration and student storytelling over grades/scores.",
+      "claims": [
+        "170 member schools (vs. 1,100+ for Common App)",
+        "Includes Ivy League and Stanford",
+        "Equity and access focused"
+      ],
+      "team_size": "Nonprofit staff (50+ team members)",
+      "specializations": [
+        "First-generation and low-income student access",
+        "Equity-focused admissions",
+        "Document collaboration and storytelling"
+      ],
+      "target_market": "First-generation students; low-income students; students at schools using Coalition App; public school students",
+      "strengths": [
+        "Equity mission and design",
+        "Includes elite schools (Ivies, Stanford)",
+        "Collaboration and document locker features",
+        "Completely free"
+      ],
+      "weaknesses_or_criticisms": [
+        "Only 170 schools vs. 1,100+ for Common App",
+        "Limited adoption compared to Common App",
+        "Early-stage relative to Common App maturity",
+        "Less familiar to many students/counselors"
+      ],
+      "online_presence": {
+        "blog": true,
+        "youtube": true,
+        "podcast": false,
+        "free_resources": [
+          "Entire Coalition App platform is free",
+          "Essays and resources guides"
+        ]
+      },
+      "wayfinder_differentiation": "Coalition is a free alternative application platform for 170 schools. Wayfinder provides data on Coalition member schools' admissions patterns: acceptance rates by school, demographic distribution, early decision vs. regular decision trends. For students using Coalition App, Wayfinder helps them understand which member schools are best statistical fits and where to focus effort."
+    }
+  ]
+}

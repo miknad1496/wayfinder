@@ -1,0 +1,1020 @@
+{
+  "universities": [
+    {
+      "name": "University of Washington",
+      "type": "public-research",
+      "location": {"city": "Seattle", "state": "WA"},
+      "enrollment": {"total": 47500, "undergraduate": 31000, "graduate": 16500},
+      "acceptance_rate": 0.38,
+      "tuition": {"in_state": 11500, "out_of_state": 38500, "room_board": 18000},
+      "notable_programs": [
+        "Medicine (one of top 10 in nation)",
+        "Engineering",
+        "Computer Science",
+        "Business",
+        "Public Health",
+        "Law",
+        "Nursing"
+      ],
+      "program_rankings": {
+        "medical_school": "Top 10 nationally",
+        "engineering": "Top 25 nationally",
+        "computer_science": "Top 15 nationally",
+        "business": "Top 30 nationally"
+      },
+      "student_faculty_ratio": "20:1",
+      "graduation_rate_4yr": 0.78,
+      "graduation_rate_6yr": 0.85,
+      "avg_starting_salary": 68000,
+      "top_employers": ["Amazon", "Microsoft", "Boeing", "Google", "Meta", "Healthcare systems"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Test scores", "Essays", "Extracurriculars", "Demographics"],
+        "school_within_school": {
+          "Foster School of Business": "Separate admissions (requires 3.5+ GPA for competitiveness)",
+          "College of Engineering": "Separate admissions (highly competitive)",
+          "College of Built Environments": "Architecture program with portfolio requirement"
+        }
+      },
+      "campus_life": {
+        "setting": "Urban - Seattle",
+        "greek_life_pct": 0.18,
+        "athletics": "NCAA Division I (Pac-12)",
+        "housing_guarantee": "Guaranteed 3 years for freshmen"
+      },
+      "demographics": {"white_pct": 35, "asian_pct": 30, "hispanic_pct": 12, "black_pct": 5, "international_pct": 12},
+      "wa_insight": "UW's most selective schools (Engineering, Medicine, Foster Business) are harder to enter than the university overall - get high stats and have a backup path if your intended program is very competitive. For in-state students, this is genuinely one of the best values in higher ed for pre-med, engineering, and tech careers. The Seattle location and company recruiting pipeline (Amazon, Microsoft right nearby) make it exceptional for CS/tech careers."
+    },
+    {
+      "name": "University of Washington - Bothell",
+      "type": "public-research",
+      "location": {"city": "Bothell", "state": "WA"},
+      "enrollment": {"total": 5900, "undergraduate": 5400, "graduate": 500},
+      "acceptance_rate": 0.72,
+      "tuition": {"in_state": 11500, "out_of_state": 38500, "room_board": 15000},
+      "notable_programs": [
+        "Computer Science & Software Engineering",
+        "Business Administration",
+        "Engineering (select)",
+        "Technology Management"
+      ],
+      "program_rankings": {
+        "computer_science": "Strong regional program",
+        "engineering": "Selective STEM programs"
+      },
+      "student_faculty_ratio": "18:1",
+      "graduation_rate_4yr": 0.68,
+      "graduation_rate_6yr": 0.80,
+      "avg_starting_salary": 62000,
+      "top_employers": ["Tech companies", "Microsoft", "Amazon", "Local employers"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Major choice", "Extracurriculars"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Seattle area",
+        "greek_life_pct": 0.08,
+        "athletics": "NCAA Division II and Club sports",
+        "housing_guarantee": "Housing not guaranteed"
+      },
+      "demographics": {"white_pct": 40, "asian_pct": 28, "hispanic_pct": 13, "black_pct": 4, "international_pct": 10},
+      "wa_insight": "UWB is a stellar choice for tech-focused students who want UW quality at a less competitive admission rate - particularly strong for computer science and engineering with better odds than Seattle. It's technically a separate campus with its own admissions but offers many of the same benefits. Closer proximity to tech hubs in the Eastside corridor is a real advantage."
+    },
+    {
+      "name": "University of Washington - Tacoma",
+      "type": "public-research",
+      "location": {"city": "Tacoma", "state": "WA"},
+      "enrollment": {"total": 4300, "undergraduate": 3800, "graduate": 500},
+      "acceptance_rate": 0.76,
+      "tuition": {"in_state": 11500, "out_of_state": 38500, "room_board": 13000},
+      "notable_programs": [
+        "Business",
+        "Engineering",
+        "Computer Science",
+        "Environmental Science",
+        "Public Affairs"
+      ],
+      "program_rankings": {
+        "business": "Strong regional program",
+        "engineering": "Solid technical programs"
+      },
+      "student_faculty_ratio": "16:1",
+      "graduation_rate_4yr": 0.65,
+      "graduation_rate_6yr": 0.78,
+      "avg_starting_salary": 60000,
+      "top_employers": ["Port of Tacoma", "Puget Sound energy companies", "Tech firms", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Major selection", "Readiness"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Tacoma waterfront",
+        "greek_life_pct": 0.05,
+        "athletics": "NCAA Division II",
+        "housing_guarantee": "Limited housing"
+      },
+      "demographics": {"white_pct": 42, "asian_pct": 22, "hispanic_pct": 16, "black_pct": 6, "international_pct": 8},
+      "wa_insight": "UW Tacoma offers the lowest barrier to entry among UW campuses and has been improving significantly - it's an underrated option for South Puget Sound families who want the UW name and quality without Seattle's competitiveness. The waterfront location and growing tech presence in Tacoma make it increasingly attractive."
+    },
+    {
+      "name": "Washington State University",
+      "type": "public-research",
+      "location": {"city": "Pullman", "state": "WA"},
+      "enrollment": {"total": 33000, "undergraduate": 24000, "graduate": 9000},
+      "acceptance_rate": 0.74,
+      "tuition": {"in_state": 11800, "out_of_state": 27800, "room_board": 16000},
+      "notable_programs": [
+        "Engineering",
+        "Agriculture",
+        "Business",
+        "Veterinary Medicine",
+        "Architecture & Built Environments",
+        "Education"
+      ],
+      "program_rankings": {
+        "engineering": "Top 50 nationally",
+        "agriculture": "Top 10 nationally",
+        "veterinary_medicine": "Top 20 nationally",
+        "business": "Top 50 nationally"
+      },
+      "student_faculty_ratio": "16:1",
+      "graduation_rate_4yr": 0.72,
+      "graduation_rate_6yr": 0.82,
+      "avg_starting_salary": 65000,
+      "top_employers": ["Boeing", "Tech companies", "Government agencies", "Agriculture/Food companies"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Decision"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Test scores", "Major requirements"],
+        "school_within_school": {
+          "College of Engineering": "More selective, GPA requirements higher",
+          "College of Agriculture": "Specific program requirements"
+        }
+      },
+      "campus_life": {
+        "setting": "Rural - College town (Pullman)",
+        "greek_life_pct": 0.35,
+        "athletics": "NCAA Division I (Pac-12)",
+        "housing_guarantee": "Guaranteed 3 years"
+      },
+      "demographics": {"white_pct": 60, "asian_pct": 15, "hispanic_pct": 12, "black_pct": 4, "international_pct": 6},
+      "wa_insight": "WSU has one of the highest in-state acceptance rates of major WA universities but doesn't mean low quality - it's stronger than its acceptance rate suggests due to self-selection. Agriculture and engineering are nationally ranked; the rural college-town setting creates a strong community feel for students seeking that experience. Boeing recruiting on campus makes engineering particularly valuable."
+    },
+    {
+      "name": "Western Washington University",
+      "type": "public-regional",
+      "location": {"city": "Bellingham", "state": "WA"},
+      "enrollment": {"total": 16200, "undergraduate": 14500, "graduate": 1700},
+      "acceptance_rate": 0.79,
+      "tuition": {"in_state": 11400, "out_of_state": 26400, "room_board": 14000},
+      "notable_programs": [
+        "Environmental Science",
+        "Engineering Technology",
+        "Business Administration",
+        "Education",
+        "Geology",
+        "Fine Arts"
+      ],
+      "program_rankings": {
+        "environmental_science": "Strong regional reputation",
+        "engineering_technology": "Well-regarded"
+      },
+      "student_faculty_ratio": "19:1",
+      "graduation_rate_4yr": 0.67,
+      "graduation_rate_6yr": 0.79,
+      "avg_starting_salary": 56000,
+      "top_employers": ["Tech companies", "Environmental firms", "Local businesses", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essay", "Fit"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "College town - Bellingham",
+        "greek_life_pct": 0.08,
+        "athletics": "NCAA Division II (Great Northwest Athletic Conference)",
+        "housing_guarantee": "Guaranteed for freshmen"
+      },
+      "demographics": {"white_pct": 65, "asian_pct": 12, "hispanic_pct": 10, "black_pct": 3, "international_pct": 5},
+      "wa_insight": "WWU is a well-kept secret - it offers a beautiful Bellingham location (hour from Seattle, close to nature), strong environmental/STEM programs, and strong community culture at a very reasonable in-state price. The outdoor recreation and progressive campus vibe attracts outdoorsy, socially conscious students. Solid value and career preparation despite lower name recognition than UW."
+    },
+    {
+      "name": "Eastern Washington University",
+      "type": "public-regional",
+      "location": {"city": "Cheney", "state": "WA"},
+      "enrollment": {"total": 12800, "undergraduate": 11200, "graduate": 1600},
+      "acceptance_rate": 0.87,
+      "tuition": {"in_state": 11100, "out_of_state": 25100, "room_board": 13000},
+      "notable_programs": [
+        "Business",
+        "Education",
+        "Engineering Technology",
+        "Health Sciences",
+        "Nursing"
+      ],
+      "program_rankings": {
+        "nursing": "Strong regional program",
+        "education": "Good regional reputation"
+      },
+      "student_faculty_ratio": "20:1",
+      "graduation_rate_4yr": 0.45,
+      "graduation_rate_6yr": 0.63,
+      "avg_starting_salary": 52000,
+      "top_employers": ["Healthcare systems", "Schools", "Government", "Local businesses"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Program requirements"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Spokane area",
+        "greek_life_pct": 0.06,
+        "athletics": "NCAA Division II",
+        "housing_guarantee": "Guaranteed freshmen year"
+      },
+      "demographics": {"white_pct": 68, "asian_pct": 8, "hispanic_pct": 12, "black_pct": 3, "international_pct": 4},
+      "wa_insight": "EWU is an accessible option for first-generation and less-prepared students - it's oriented toward access and support. Nursing and education are legitimate strengths. For Eastern Washington students, this eliminates the need to move west and is very affordable. Not meant for selective-college tracks, but genuinely helps students who need support."
+    },
+    {
+      "name": "Central Washington University",
+      "type": "public-regional",
+      "location": {"city": "Ellensburg", "state": "WA"},
+      "enrollment": {"total": 10200, "undergraduate": 9100, "graduate": 1100},
+      "acceptance_rate": 0.83,
+      "tuition": {"in_state": 11000, "out_of_state": 25000, "room_board": 13000},
+      "notable_programs": [
+        "Education",
+        "Business",
+        "Engineering Technology",
+        "Nursing",
+        "Computer Science"
+      ],
+      "program_rankings": {
+        "education": "Regional strength",
+        "nursing": "Good program"
+      },
+      "student_faculty_ratio": "21:1",
+      "graduation_rate_4yr": 0.42,
+      "graduation_rate_6yr": 0.61,
+      "avg_starting_salary": 50000,
+      "top_employers": ["Schools", "Healthcare", "Tech (growing)", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Application completeness"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "College town - Ellensburg",
+        "greek_life_pct": 0.05,
+        "athletics": "NCAA Division II (Great Northwest Athletic Conference)",
+        "housing_guarantee": "Guaranteed for freshmen"
+      },
+      "demographics": {"white_pct": 70, "asian_pct": 7, "hispanic_pct": 13, "black_pct": 2, "international_pct": 3},
+      "wa_insight": "CWU is a solid access-oriented school for Central Washington students - particularly strong for education majors and nursing. It's not a selective destination, but for students planning to teach in Washington schools or work in regional healthcare, the local partnerships and affordability make sense. The small-town setting appeals to some students."
+    },
+    {
+      "name": "The Evergreen State College",
+      "type": "public-regional",
+      "location": {"city": "Olympia", "state": "WA"},
+      "enrollment": {"total": 3300, "undergraduate": 3000, "graduate": 300},
+      "acceptance_rate": 0.97,
+      "tuition": {"in_state": 11900, "out_of_state": 29900, "room_board": 13000},
+      "notable_programs": [
+        "Interdisciplinary studies",
+        "Environmental studies",
+        "Arts",
+        "Social Sciences",
+        "Sciences"
+      ],
+      "program_rankings": {
+        "liberal_arts": "Unique curricular model"
+      },
+      "student_faculty_ratio": "11:1",
+      "graduation_rate_4yr": 0.48,
+      "graduation_rate_6yr": 0.65,
+      "avg_starting_salary": 48000,
+      "top_employers": ["Non-profits", "Arts organizations", "Education", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions", "Narrative evaluation"],
+        "test_optional": true,
+        "important_factors": ["Essays", "Self-direction", "Intellectual engagement"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "College town - Olympia",
+        "greek_life_pct": 0.0,
+        "athletics": "Club sports only",
+        "housing_guarantee": "Guaranteed for freshmen and sophomores"
+      },
+      "demographics": {"white_pct": 62, "asian_pct": 8, "hispanic_pct": 11, "black_pct": 5, "international_pct": 3},
+      "wa_insight": "Evergreen is intentionally different - it uses narrative evaluations instead of traditional grades and has an interdisciplinary, project-based curriculum. It's ideal for creative, self-directed students who thrive in non-traditional settings. Career outcomes depend heavily on student initiative and networking; not ideal if you need structured career guidance."
+    },
+    {
+      "name": "Seattle University",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA"},
+      "enrollment": {"total": 12300, "undergraduate": 6800, "graduate": 5500},
+      "acceptance_rate": 0.58,
+      "tuition": {"in_state": 57000, "out_of_state": 57000, "room_board": 17000},
+      "notable_programs": [
+        "Business (Albers School of Business & Economics)",
+        "Engineering",
+        "Law",
+        "Nursing",
+        "Education"
+      ],
+      "program_rankings": {
+        "business": "Top 100 nationally",
+        "engineering": "Strong regional program",
+        "law": "Tier 2 law school",
+        "nursing": "Good program"
+      },
+      "student_faculty_ratio": "11:1",
+      "graduation_rate_4yr": 0.75,
+      "graduation_rate_6yr": 0.82,
+      "avg_starting_salary": 62000,
+      "top_employers": ["Tech companies", "Healthcare", "Law firms", "Non-profits", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essays", "Community service", "Fit with mission"],
+        "school_within_school": {
+          "Albers School of Business": "Slightly higher admission standards",
+          "College of Engineering": "Competitive admissions"
+        }
+      },
+      "campus_life": {
+        "setting": "Urban - Seattle (Capitol Hill area)",
+        "greek_life_pct": 0.12,
+        "athletics": "NCAA Division I (WAC Conference)",
+        "housing_guarantee": "Guaranteed 3 years"
+      },
+      "demographics": {"white_pct": 40, "asian_pct": 20, "hispanic_pct": 15, "black_pct": 7, "international_pct": 14},
+      "wa_insight": "Seattle U offers strong Jesuit education, urban location, and smaller classes than UW - it's particularly good for pre-law, business, and nursing. The cost is significant for in-state students compared to UW, but comes with more financial aid and smaller class sizes. Good alternative for students wanting smaller classes and stronger community."
+    },
+    {
+      "name": "University of Puget Sound",
+      "type": "private",
+      "location": {"city": "Tacoma", "state": "WA"},
+      "enrollment": {"total": 2500, "undergraduate": 2400, "graduate": 100},
+      "acceptance_rate": 0.73,
+      "tuition": {"in_state": 62000, "out_of_state": 62000, "room_board": 16000},
+      "notable_programs": [
+        "Liberal Arts",
+        "Business",
+        "Natural Sciences",
+        "Psychology",
+        "Music",
+        "International Studies"
+      ],
+      "program_rankings": {
+        "liberal_arts": "Top 100 liberal arts colleges (national)",
+        "music": "Strong program",
+        "business": "Regional strength"
+      },
+      "student_faculty_ratio": "12:1",
+      "graduation_rate_4yr": 0.78,
+      "graduation_rate_6yr": 0.83,
+      "avg_starting_salary": 61000,
+      "top_employers": ["Tech companies", "Non-profits", "Healthcare", "Education", "Law/Government"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essays", "Recommendations", "Extracurriculars"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Tacoma (near Puget Sound waterfront)",
+        "greek_life_pct": 0.30,
+        "athletics": "NCAA Division III (Northwest Conference)",
+        "housing_guarantee": "Guaranteed 4 years"
+      },
+      "demographics": {"white_pct": 65, "asian_pct": 10, "hispanic_pct": 8, "black_pct": 4, "international_pct": 8},
+      "wa_insight": "Puget Sound is a gem for students seeking a selective liberal arts experience without leaving Washington - strong academics, excellent student-professor relationships, and beautiful Tacoma location. More expensive than UW but with significantly smaller classes and stronger mentoring. Popular with students wanting a 'best of both' experience (research access + small college feel)."
+    },
+    {
+      "name": "Gonzaga University",
+      "type": "private",
+      "location": {"city": "Spokane", "state": "WA"},
+      "enrollment": {"total": 7600, "undergraduate": 5500, "graduate": 2100},
+      "acceptance_rate": 0.78,
+      "tuition": {"in_state": 57000, "out_of_state": 57000, "room_board": 15000},
+      "notable_programs": [
+        "Business (Gonzaga School of Business)",
+        "Engineering",
+        "Law",
+        "Education",
+        "Liberal Arts"
+      ],
+      "program_rankings": {
+        "business": "Strong regional program",
+        "engineering": "Regional strength",
+        "law": "Regional law school",
+        "liberal_arts": "Good program"
+      },
+      "student_faculty_ratio": "11:1",
+      "graduation_rate_4yr": 0.82,
+      "graduation_rate_6yr": 0.86,
+      "avg_starting_salary": 63000,
+      "top_employers": ["Tech companies", "Healthcare", "Law firms", "Government", "Business"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Decision", "Early Action"],
+        "test_optional": false,
+        "important_factors": ["GPA", "Test scores", "Essays", "Community service", "Jesuit mission fit"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Spokane",
+        "greek_life_pct": 0.15,
+        "athletics": "NCAA Division I (West Coast Conference, especially basketball)",
+        "housing_guarantee": "Guaranteed 3 years"
+      },
+      "demographics": {"white_pct": 70, "asian_pct": 8, "hispanic_pct": 10, "black_pct": 2, "international_pct": 6},
+      "wa_insight": "Gonzaga is the most selective private university in Eastern Washington with strong Jesuit values and excellent career outcomes. The basketball program gives it national visibility. For Eastern WA students, it's comparable to Seattle U but in your region with strong business/law programs. Still requires test scores despite test-optional trend - they maintain this requirement."
+    },
+    {
+      "name": "Whitman College",
+      "type": "private",
+      "location": {"city": "Walla Walla", "state": "WA"},
+      "enrollment": {"total": 1500, "undergraduate": 1450, "graduate": 50},
+      "acceptance_rate": 0.29,
+      "tuition": {"in_state": 62000, "out_of_state": 62000, "room_board": 15000},
+      "notable_programs": [
+        "Liberal Arts",
+        "Sciences",
+        "Economics",
+        "Environmental Studies",
+        "Classics"
+      ],
+      "program_rankings": {
+        "liberal_arts": "Top 50 liberal arts colleges nationally",
+        "sciences": "Strong program",
+        "economics": "Strong program"
+      },
+      "student_faculty_ratio": "8:1",
+      "graduation_rate_4yr": 0.89,
+      "graduation_rate_6yr": 0.91,
+      "avg_starting_salary": 68000,
+      "top_employers": ["Tech companies", "Finance/Consulting", "Non-profits", "Government", "Education"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA (3.8+ typical)", "Essays (very important)", "Recommendations", "Intellectual curiosity"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "College town - Walla Walla",
+        "greek_life_pct": 0.35,
+        "athletics": "NCAA Division III (Northwest Conference)",
+        "housing_guarantee": "Guaranteed 4 years"
+      },
+      "demographics": {"white_pct": 68, "asian_pct": 12, "hispanic_pct": 7, "black_pct": 3, "international_pct": 6},
+      "wa_insight": "Whitman is Washington's most selective liberal arts college with genuinely excellent academics and strong graduate outcomes (better salary than many state schools despite smaller size). The intimate community and Walla Walla's charming wine country location appeal to adventurous students. Highly selective - ensure strong essays and demonstrated intellectual engagement."
+    },
+    {
+      "name": "Pacific Lutheran University",
+      "type": "private",
+      "location": {"city": "Tacoma", "state": "WA"},
+      "enrollment": {"total": 3800, "undergraduate": 2900, "graduate": 900},
+      "acceptance_rate": 0.85,
+      "tuition": {"in_state": 52000, "out_of_state": 52000, "room_board": 15000},
+      "notable_programs": [
+        "Business Administration",
+        "Education",
+        "Engineering",
+        "Natural Sciences",
+        "Music",
+        "Nursing"
+      ],
+      "program_rankings": {
+        "engineering": "Regional program",
+        "education": "Good regional program",
+        "music": "Strong program"
+      },
+      "student_faculty_ratio": "12:1",
+      "graduation_rate_4yr": 0.72,
+      "graduation_rate_6yr": 0.79,
+      "avg_starting_salary": 58000,
+      "top_employers": ["Tech companies", "Healthcare", "Education", "Non-profits", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essays", "Fit with Lutheran values"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Tacoma",
+        "greek_life_pct": 0.08,
+        "athletics": "NCAA Division III (Northwest Conference)",
+        "housing_guarantee": "Guaranteed for freshmen"
+      },
+      "demographics": {"white_pct": 68, "asian_pct": 10, "hispanic_pct": 12, "black_pct": 4, "international_pct": 5},
+      "wa_insight": "PLU offers a Lutheran-values education at moderate cost with solid engineering and education programs - good for students seeking faith-based community without selecting to a highly competitive school. The Tacoma location provides urban access while maintaining smaller class sizes than Seattle U."
+    },
+    {
+      "name": "Whitworth University",
+      "type": "private",
+      "location": {"city": "Spokane", "state": "WA"},
+      "enrollment": {"total": 3200, "undergraduate": 2400, "graduate": 800},
+      "acceptance_rate": 0.81,
+      "tuition": {"in_state": 55000, "out_of_state": 55000, "room_board": 14000},
+      "notable_programs": [
+        "Liberal Arts",
+        "Business",
+        "Education",
+        "Music",
+        "Science",
+        "Engineering"
+      ],
+      "program_rankings": {
+        "liberal_arts": "Regional strength",
+        "education": "Good program",
+        "music": "Strong program"
+      },
+      "student_faculty_ratio": "13:1",
+      "graduation_rate_4yr": 0.75,
+      "graduation_rate_6yr": 0.82,
+      "avg_starting_salary": 57000,
+      "top_employers": ["Education", "Tech companies", "Non-profits", "Healthcare", "Business"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essays", "Fit with Presbyterian values"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Spokane",
+        "greek_life_pct": 0.05,
+        "athletics": "NCAA Division III (Northwest Conference)",
+        "housing_guarantee": "Guaranteed for all 4 years"
+      },
+      "demographics": {"white_pct": 75, "asian_pct": 6, "hispanic_pct": 7, "black_pct": 2, "international_pct": 5},
+      "wa_insight": "Whitworth is Eastern Washington's best option for liberal arts - stronger academics than some larger regional schools with very strong community and housing guarantee for all four years. Good for students seeking Presbyterian values + strong academics. Education and music programs are particularly good."
+    },
+    {
+      "name": "Seattle Pacific University",
+      "type": "private",
+      "location": {"city": "Seattle", "state": "WA"},
+      "enrollment": {"total": 4100, "undergraduate": 3000, "graduate": 1100},
+      "acceptance_rate": 0.73,
+      "tuition": {"in_state": 54000, "out_of_state": 54000, "room_board": 16000},
+      "notable_programs": [
+        "Business",
+        "Engineering",
+        "Education",
+        "Nursing",
+        "Psychology",
+        "Christian Studies"
+      ],
+      "program_rankings": {
+        "engineering": "Regional program",
+        "nursing": "Good program",
+        "education": "Good program"
+      },
+      "student_faculty_ratio": "13:1",
+      "graduation_rate_4yr": 0.73,
+      "graduation_rate_6yr": 0.81,
+      "avg_starting_salary": 59000,
+      "top_employers": ["Tech companies", "Healthcare", "Education", "Non-profits"],
+      "admissions_strategy": {
+        "decision_types": ["Regular Decision", "Early Action"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Essays", "Fit with Free Methodist values"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Seattle (Queen Anne neighborhood)",
+        "greek_life_pct": 0.03,
+        "athletics": "NCAA Division II (Great Northwest Athletic Conference)",
+        "housing_guarantee": "Guaranteed for freshmen"
+      },
+      "demographics": {"white_pct": 65, "asian_pct": 12, "hispanic_pct": 12, "black_pct": 5, "international_pct": 4},
+      "wa_insight": "SPU offers a Seattle location at lower cost than Seattle U, with Free Methodist values and strong nursing/education programs. Popular with students seeking faith-based Seattle education without the higher price tag of Seattle U. The Queen Anne neighborhood location is increasingly desirable."
+    },
+    {
+      "name": "Saint Martin's University",
+      "type": "private",
+      "location": {"city": "Lacey", "state": "WA"},
+      "enrollment": {"total": 1600, "undergraduate": 1100, "graduate": 500},
+      "acceptance_rate": 0.88,
+      "tuition": {"in_state": 45000, "out_of_state": 45000, "room_board": 13000},
+      "notable_programs": [
+        "Business",
+        "Engineering",
+        "Education",
+        "Accounting",
+        "Liberal Arts"
+      ],
+      "program_rankings": {
+        "engineering": "Regional program",
+        "business": "Regional program"
+      },
+      "student_faculty_ratio": "14:1",
+      "graduation_rate_4yr": 0.65,
+      "graduation_rate_6yr": 0.72,
+      "avg_starting_salary": 54000,
+      "top_employers": ["Government", "Healthcare", "Education", "Tech (growing)", "Business"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Fit"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Lacey (Olympia area)",
+        "greek_life_pct": 0.02,
+        "athletics": "NAIA",
+        "housing_guarantee": "Guaranteed for freshmen"
+      },
+      "demographics": {"white_pct": 70, "asian_pct": 8, "hispanic_pct": 14, "black_pct": 3, "international_pct": 3},
+      "wa_insight": "Saint Martin's is an accessible Benedictine-Catholic option for Central Washington students - most affordable private option in the state. Good for students seeking small classes and faith community without selective admissions. Engineering and business are reasonable options for this price point."
+    },
+    {
+      "name": "Walla Walla University",
+      "type": "private",
+      "location": {"city": "Walla Walla", "state": "WA"},
+      "enrollment": {"total": 1700, "undergraduate": 1200, "graduate": 500},
+      "acceptance_rate": 0.75,
+      "tuition": {"in_state": 50000, "out_of_state": 50000, "room_board": 13000},
+      "notable_programs": [
+        "Engineering",
+        "Business",
+        "Education",
+        "Natural Sciences",
+        "Nursing"
+      ],
+      "program_rankings": {
+        "engineering": "Seventh-day Adventist focus, regional program",
+        "nursing": "Good program"
+      },
+      "student_faculty_ratio": "14:1",
+      "graduation_rate_4yr": 0.68,
+      "graduation_rate_6yr": 0.76,
+      "avg_starting_salary": 56000,
+      "top_employers": ["Healthcare", "Tech companies", "Education", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Fit with Seventh-day Adventist values"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "College town - Walla Walla",
+        "greek_life_pct": 0.0,
+        "athletics": "NAIA",
+        "housing_guarantee": "Guaranteed for freshmen and sophomores"
+      },
+      "demographics": {"white_pct": 65, "asian_pct": 12, "hispanic_pct": 15, "black_pct": 4, "international_pct": 3},
+      "wa_insight": "Walla Walla University is a Seventh-day Adventist institution with solid engineering and nursing programs at moderate cost. Good for students seeking faith-based education or those who align with Adventist values. The Walla Walla location offers wine country charm and is more affordable than Whitman."
+    },
+    {
+      "name": "Northwest University",
+      "type": "private",
+      "location": {"city": "Kirkland", "state": "WA"},
+      "enrollment": {"total": 1100, "undergraduate": 900, "graduate": 200},
+      "acceptance_rate": 0.81,
+      "tuition": {"in_state": 48000, "out_of_state": 48000, "room_board": 13000},
+      "notable_programs": [
+        "Business",
+        "Ministry/Bible",
+        "Education",
+        "Liberal Arts",
+        "Health Services"
+      ],
+      "program_rankings": {
+        "theology": "Foursquare focus"
+      },
+      "student_faculty_ratio": "15:1",
+      "graduation_rate_4yr": 0.64,
+      "graduation_rate_6yr": 0.72,
+      "avg_starting_salary": 50000,
+      "top_employers": ["Non-profits", "Ministry organizations", "Education", "Healthcare"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "Fit with Foursquare Christian values"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Kirkland (Seattle area)",
+        "greek_life_pct": 0.0,
+        "athletics": "NAIA",
+        "housing_guarantee": "Limited housing"
+      },
+      "demographics": {"white_pct": 62, "asian_pct": 10, "hispanic_pct": 15, "black_pct": 5, "international_pct": 7},
+      "wa_insight": "Northwest University is a small, Foursquare-affiliated Christian college ideal for students seeking a faith-centered education near Seattle. Very small and community-focused, best for students whose faith is central to their identity. Limited career outcomes data suggests most students go into ministry or non-profit work."
+    },
+    {
+      "name": "Heritage University",
+      "type": "private",
+      "location": {"city": "Toppenish", "state": "WA"},
+      "enrollment": {"total": 1300, "undergraduate": 1000, "graduate": 300},
+      "acceptance_rate": 0.92,
+      "tuition": {"in_state": 35000, "out_of_state": 35000, "room_board": 11000},
+      "notable_programs": [
+        "Education",
+        "Business",
+        "Nursing",
+        "Health Sciences",
+        "Liberal Arts"
+      ],
+      "program_rankings": {
+        "education": "Strong for rural/indigenous education"
+      },
+      "student_faculty_ratio": "16:1",
+      "graduation_rate_4yr": 0.52,
+      "graduation_rate_6yr": 0.62,
+      "avg_starting_salary": 48000,
+      "top_employers": ["Schools", "Healthcare", "Government", "Social services"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["GPA", "First-generation/low-income status"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Rural - Toppenish (Yakima area)",
+        "greek_life_pct": 0.0,
+        "athletics": "NAIA",
+        "housing_guarantee": "Limited housing"
+      },
+      "demographics": {"white_pct": 35, "asian_pct": 5, "hispanic_pct": 40, "black_pct": 8, "international_pct": 2},
+      "wa_insight": "Heritage University is explicitly designed for first-generation, low-income, and Native American students - one of the most diverse campuses in WA. Very affordable and mission-driven toward educational equity. Not a traditional pathway school but transformative for students who fit the mission. Located in Central Washington near reservations."
+    },
+    {
+      "name": "Bastyr University",
+      "type": "private",
+      "location": {"city": "Kenmore", "state": "WA"},
+      "enrollment": {"total": 1600, "undergraduate": 300, "graduate": 1300},
+      "acceptance_rate": 0.68,
+      "tuition": {"in_state": 53000, "out_of_state": 53000, "room_board": 0},
+      "notable_programs": [
+        "Naturopathic Medicine",
+        "Acupuncture & Oriental Medicine",
+        "Midwifery",
+        "Nutrition",
+        "Herbal Medicine"
+      ],
+      "program_rankings": {
+        "naturopathic_medicine": "One of the few ND schools in US"
+      },
+      "student_faculty_ratio": "12:1",
+      "graduation_rate_4yr": 0.85,
+      "graduation_rate_6yr": 0.88,
+      "avg_starting_salary": 65000,
+      "top_employers": ["Naturopathic practices", "Healthcare", "Wellness centers", "Acupuncture clinics"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": false,
+        "important_factors": ["Pre-requisite sciences", "GPA", "Fit with naturopathic medicine"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Kenmore (Seattle area)",
+        "greek_life_pct": 0.0,
+        "athletics": "None",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 70, "asian_pct": 12, "hispanic_pct": 8, "black_pct": 3, "international_pct": 5},
+      "wa_insight": "Bastyr is specialized as a graduate-focused naturopathic and natural medicine university - few undergraduates. Only relevant for students committed to alternative medicine careers (Naturopathic Doctor, Acupuncturist, Midwife). Not a general college option but genuinely excellent if your career path aligns."
+    },
+    {
+      "name": "DigiPen Institute of Technology",
+      "type": "private",
+      "location": {"city": "Redmond", "state": "WA"},
+      "enrollment": {"total": 1100, "undergraduate": 700, "graduate": 400},
+      "acceptance_rate": 0.28,
+      "tuition": {"in_state": 42000, "out_of_state": 42000, "room_board": 0},
+      "notable_programs": [
+        "Computer Science",
+        "Game Development",
+        "Animation",
+        "Digital Art & Animation",
+        "Software Engineering"
+      ],
+      "program_rankings": {
+        "game_development": "Nationally recognized",
+        "animation": "Strong reputation",
+        "computer_science": "Specialized focus"
+      },
+      "student_faculty_ratio": "12:1",
+      "graduation_rate_4yr": 0.68,
+      "graduation_rate_6yr": 0.76,
+      "avg_starting_salary": 72000,
+      "top_employers": ["Gaming studios", "Tech companies", "Animation studios", "Software companies"],
+      "admissions_strategy": {
+        "decision_types": ["Rolling Admissions"],
+        "test_optional": true,
+        "important_factors": ["Portfolio/technical skills", "GPA in math/science", "Demonstrated passion"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Redmond (Seattle tech corridor)",
+        "greek_life_pct": 0.0,
+        "athletics": "None",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 45, "asian_pct": 40, "hispanic_pct": 8, "black_pct": 2, "international_pct": 15},
+      "wa_insight": "DigiPen is hyper-specialized for game development and digital animation - incredibly strong outcomes for students in those fields with median salary above many research universities. Selective despite lower test scores if you have a portfolio. Only relevant for students committed to gaming/animation careers; general CS students should consider UW instead."
+    },
+    {
+      "name": "Bellevue College",
+      "type": "community",
+      "location": {"city": "Bellevue", "state": "WA"},
+      "enrollment": {"total": 12500, "undergraduate": 12500, "graduate": 0},
+      "acceptance_rate": 0.99,
+      "tuition": {"in_state": 5500, "out_of_state": 14000, "room_board": 0},
+      "notable_programs": [
+        "Transfer programs (to UW, WSU, etc.)",
+        "Business",
+        "STEM",
+        "Healthcare",
+        "Information Technology",
+        "Accounting"
+      ],
+      "program_rankings": {
+        "transfer_preparation": "Strong articulation agreements"
+      },
+      "student_faculty_ratio": "25:1",
+      "graduation_rate_4yr": 0.30,
+      "graduation_rate_6yr": 0.48,
+      "avg_starting_salary": 45000,
+      "top_employers": ["Transfer to 4-year universities", "Tech companies", "Local businesses"],
+      "admissions_strategy": {
+        "decision_types": ["Open Enrollment"],
+        "test_optional": true,
+        "important_factors": ["High school diploma or GED"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Bellevue (eastside Seattle area)",
+        "greek_life_pct": 0.0,
+        "athletics": "NWAACC",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 40, "asian_pct": 30, "hispanic_pct": 14, "black_pct": 6, "international_pct": 10},
+      "wa_insight": "Bellevue College is one of Washington's best community colleges for STEM and transfer pathways - strong articulation agreements with UW means you can do gen-eds and intro STEM here more affordably, then transfer junior year. Many tech-bound students use this as a cost-saving strategy. Key: enter with a clear transfer goal."
+    },
+    {
+      "name": "Green River College",
+      "type": "community",
+      "location": {"city": "Auburn", "state": "WA"},
+      "enrollment": {"total": 8200, "undergraduate": 8200, "graduate": 0},
+      "acceptance_rate": 0.99,
+      "tuition": {"in_state": 5500, "out_of_state": 14000, "room_board": 9000},
+      "notable_programs": [
+        "Transfer programs",
+        "Aviation",
+        "Engineering Technology",
+        "Business",
+        "Healthcare",
+        "STEM"
+      ],
+      "program_rankings": {
+        "aviation": "Strong program",
+        "transfer_preparation": "Good articulation"
+      },
+      "student_faculty_ratio": "24:1",
+      "graduation_rate_4yr": 0.28,
+      "graduation_rate_6yr": 0.45,
+      "avg_starting_salary": 44000,
+      "top_employers": ["Transfer to 4-year", "Boeing", "Aviation companies", "Local tech"],
+      "admissions_strategy": {
+        "decision_types": ["Open Enrollment"],
+        "test_optional": true,
+        "important_factors": ["High school completion"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Auburn (South King County)",
+        "greek_life_pct": 0.0,
+        "athletics": "NWAACC",
+        "housing_guarantee": "Very limited on-campus housing"
+      },
+      "demographics": {"white_pct": 50, "asian_pct": 18, "hispanic_pct": 18, "black_pct": 8, "international_pct": 5},
+      "wa_insight": "Green River College has an exceptional aviation program (relatively rare at community colleges) and is South King County's best transfer pathway college. If you're interested in aviation, this is unique. For standard transfer pathways, it's solid but check articulation agreements with your target 4-year university."
+    },
+    {
+      "name": "Highline College",
+      "type": "community",
+      "location": {"city": "Des Moines", "state": "WA"},
+      "enrollment": {"total": 6400, "undergraduate": 6400, "graduate": 0},
+      "acceptance_rate": 0.99,
+      "tuition": {"in_state": 5500, "out_of_state": 14000, "room_board": 0},
+      "notable_programs": [
+        "Transfer programs",
+        "Business",
+        "STEM",
+        "Healthcare",
+        "Engineering Technology",
+        "Early Childhood Education"
+      ],
+      "program_rankings": {
+        "transfer_preparation": "Good articulation"
+      },
+      "student_faculty_ratio": "23:1",
+      "graduation_rate_4yr": 0.27,
+      "graduation_rate_6yr": 0.43,
+      "avg_starting_salary": 43000,
+      "top_employers": ["Transfer to 4-year", "Tech companies", "Healthcare", "Education"],
+      "admissions_strategy": {
+        "decision_types": ["Open Enrollment"],
+        "test_optional": true,
+        "important_factors": ["High school diploma"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Suburban - Des Moines (South King County)",
+        "greek_life_pct": 0.0,
+        "athletics": "NWAACC",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 45, "asian_pct": 20, "hispanic_pct": 20, "black_pct": 7, "international_pct": 6},
+      "wa_insight": "Highline College is a solid south Sound community college option - particularly good for students in the Des Moines/Sea-Tac area. Strong early childhood education program. For transfer pathways, works well if you have clear transfer agreements lined up with your target university."
+    },
+    {
+      "name": "South Seattle College",
+      "type": "community",
+      "location": {"city": "Seattle", "state": "WA"},
+      "enrollment": {"total": 5600, "undergraduate": 5600, "graduate": 0},
+      "acceptance_rate": 0.99,
+      "tuition": {"in_state": 5500, "out_of_state": 14000, "room_board": 0},
+      "notable_programs": [
+        "Transfer programs",
+        "Business",
+        "Health Sciences",
+        "STEM",
+        "Social Services",
+        "Culinary Arts"
+      ],
+      "program_rankings": {
+        "transfer_preparation": "Strong UW articulation"
+      },
+      "student_faculty_ratio": "22:1",
+      "graduation_rate_4yr": 0.26,
+      "graduation_rate_6yr": 0.42,
+      "avg_starting_salary": 42000,
+      "top_employers": ["Transfer to 4-year", "Healthcare", "Hospitality", "Tech"],
+      "admissions_strategy": {
+        "decision_types": ["Open Enrollment"],
+        "test_optional": true,
+        "important_factors": ["High school completion"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Seattle (Rainier Valley area)",
+        "greek_life_pct": 0.0,
+        "athletics": "NWAACC",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 30, "asian_pct": 28, "hispanic_pct": 25, "black_pct": 12, "international_pct": 8},
+      "wa_insight": "South Seattle College is the most diverse community college in Washington and is in Seattle proper - good for students living in South Seattle who want to avoid commuting. Strong transfer pathway to UW (same district). Culinary arts is an interesting vocational option. Urban location means no campus life but good transit access."
+    },
+    {
+      "name": "Tacoma Community College",
+      "type": "community",
+      "location": {"city": "Tacoma", "state": "WA"},
+      "enrollment": {"total": 6800, "undergraduate": 6800, "graduate": 0},
+      "acceptance_rate": 0.99,
+      "tuition": {"in_state": 5500, "out_of_state": 14000, "room_board": 0},
+      "notable_programs": [
+        "Transfer programs",
+        "Healthcare",
+        "Business",
+        "STEM",
+        "Welding",
+        "Construction Management"
+      ],
+      "program_rankings": {
+        "transfer_preparation": "Good articulation with regional universities"
+      },
+      "student_faculty_ratio": "23:1",
+      "graduation_rate_4yr": 0.28,
+      "graduation_rate_6yr": 0.44,
+      "avg_starting_salary": 44000,
+      "top_employers": ["Transfer to 4-year", "Healthcare", "Construction/Trades", "Government"],
+      "admissions_strategy": {
+        "decision_types": ["Open Enrollment"],
+        "test_optional": true,
+        "important_factors": ["High school diploma"],
+        "school_within_school": {}
+      },
+      "campus_life": {
+        "setting": "Urban - Tacoma (downtown/waterfront)",
+        "greek_life_pct": 0.0,
+        "athletics": "NWAACC",
+        "housing_guarantee": "No on-campus housing"
+      },
+      "demographics": {"white_pct": 48, "asian_pct": 15, "hispanic_pct": 18, "black_pct": 10, "international_pct": 4},
+      "wa_insight": "Tacoma CC is the South Puget Sound option for transfer or vocational pathways - strong trade programs (welding, construction) if you want non-traditional paths. Good articulation with UPS and Pacific Lutheran if you're planning to transfer. Waterfront location in downtown Tacoma is improving the campus feel."
+    }
+  ]
+}

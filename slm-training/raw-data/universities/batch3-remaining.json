@@ -1,0 +1,1323 @@
+{
+  "universities": [
+    {
+      "name": "Carnegie Mellon University",
+      "type": "private",
+      "location": {"city": "Pittsburgh", "state": "PA"},
+      "us_news_rank_approx": 26,
+      "enrollment": {"total": 15200, "undergraduate": 6900},
+      "acceptance_rate": 0.073,
+      "admissions": {
+        "ed_rate": 0.12,
+        "ea_rate": 0.095,
+        "rd_rate": 0.045,
+        "ed_advantage_notes": "ED is ~2.7x RD rate. CS/Engineering ED rates higher than overall. ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.58
+      },
+      "academics": {
+        "notable_programs": ["Computer Science", "Engineering", "Drama/Tepper (Business)", "Music", "Computational Biology"],
+        "strongest_departments": ["Computer Science", "Engineering", "Mathematics", "Drama", "Statistics"],
+        "student_faculty_ratio": "10:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "cs": {"acceptance_rate": 0.035, "notes": "School of Computer Science is hyper-selective (~3.5% acceptance); distinct admissions process with emphasis on coding ability, not just academics"},
+        "engineering": {"acceptance_rate": 0.055, "notes": "College of Engineering accepts ~5.5%; strong emphasis on robotics, systems design; slightly less selective than CS"},
+        "business": {"acceptance_rate": 0.11, "notes": "Tepper School of Business (~11% acceptance) is highly selective but significantly more accessible than CS; focus on analytics and tech finance"},
+        "drama": {"acceptance_rate": 0.09, "notes": "School of Drama (~9%) requires performance audition component; technical theater/production design pathways less competitive than acting"}
+      },
+      "costs": {"tuition": 63000, "total_cost": 82000, "avg_net_price": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.94, "avg_starting_salary": 85000, "top_employers": ["Google", "Microsoft", "Amazon", "Apple", "JPMorgan Chase"]},
+      "campus": {"setting": "urban", "greek_life_pct": 25, "athletics": "NCAA D3"},
+      "demographics": {"white_pct": 40, "asian_pct": 35, "hispanic_pct": 8, "black_pct": 7, "international_pct": 20},
+      "strategic_insight": "Carnegie Mellon is structurally different from other privates—students apply to schools, not the university. CS School is effectively MIT-level selectivity (3.5% vs Stanford 3.8%); if not CS, admission odds improve dramatically. Tepper represents the most accessible pathway to a CMU degree with strong tech finance outcomes. Drama school has legitimate technical theater pathway less known nationally. Net price of $32k is significantly higher than Ivies despite aid-meeting. CS students command extreme salary premiums ($120k+); non-CS graduates average $60-75k. ED strategy: target CS/Engineering only if truly qualified (should be top decile STEM); otherwise direct to Tepper or Drama."
+    },
+    {
+      "name": "Tufts University",
+      "type": "private",
+      "location": {"city": "Medford", "state": "MA"},
+      "us_news_rank_approx": 28,
+      "enrollment": {"total": 11800, "undergraduate": 5600},
+      "acceptance_rate": 0.086,
+      "admissions": {
+        "ed_rate": 0.18,
+        "ea_rate": null,
+        "rd_rate": 0.048,
+        "ed_advantage_notes": "ED provides ~3.75x boost. ~32% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.52
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "International Relations (Fletcher—grad)", "Biomedical Sciences", "Pratt School of Engineering", "Peace & Justice Studies"],
+        "strongest_departments": ["Engineering", "Sciences", "Economics", "International Affairs", "Psychology"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.065, "notes": "Pratt School of Engineering within Tufts accepts ~6.5%; competitive but notably more accessible than MIT/CMU; strong in biomedical engineering"},
+        "international_studies": {"acceptance_rate": 0.09, "notes": "School of Arts & Sciences non-engineering tracks ~9%; Tufts' strength in international affairs and STEM + IR combinations is genuine differentiator"}
+      },
+      "costs": {"tuition": 62400, "total_cost": 83000, "avg_net_price": 25000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 69000, "top_employers": ["Deloitte", "Goldman Sachs", "Google", "McKinsey", "Morgan Stanley"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0, "athletics": "NCAA D3"},
+      "demographics": {"white_pct": 48, "asian_pct": 18, "hispanic_pct": 11, "black_pct": 8, "international_pct": 11},
+      "strategic_insight": "Tufts occupies unique position—harder to get into than claimed (#28 ranking), but ED acceptance (18%) makes it more approachable than comparable peers for committed students. Engineering pathway is genuine alternative to MIT/CMU for biomedical focus. International studies focus attracts students seeking global impact; Fletcher grad program's reputation elevates undergrad IR track. Legacy preference is moderate. Critical lever: ED timing (Nov 1 deadline) creates advantage for organized applicants. Net price of $25k is reasonable but higher than pure aid schools; middle-income families often pay $40-50k."
+    },
+    {
+      "name": "Boston College",
+      "type": "private",
+      "location": {"city": "Chestnut Hill", "state": "MA"},
+      "us_news_rank_approx": 32,
+      "enrollment": {"total": 9500, "undergraduate": 9200},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "ed_rate": 0.32,
+        "ea_rate": null,
+        "rd_rate": 0.13,
+        "ed_advantage_notes": "ED boost is ~2.5x. ~40% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1420-1550",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.39
+      },
+      "academics": {
+        "notable_programs": ["Business (Carroll)", "Engineering", "Chemistry", "Economics", "Philosophy"],
+        "strongest_departments": ["Engineering", "Business", "Sciences", "Philosophy", "Economics"],
+        "student_faculty_ratio": "12:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.21, "notes": "Carroll School of Management admits into major from admission; same acceptance rate as general but internally ranked highly"},
+        "engineering": {"acceptance_rate": 0.19, "notes": "School of Engineering (~19%) slightly less selective than business; strong undergrad focus with good recruiting pipelines"}
+      },
+      "costs": {"tuition": 62300, "total_cost": 83000, "avg_net_price": 23000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 68000, "top_employers": ["Deloitte", "Goldman Sachs", "Accenture", "Google", "JPMorgan Chase"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 62, "asian_pct": 11, "hispanic_pct": 12, "black_pct": 5, "international_pct": 7},
+      "strategic_insight": "BC's 21% admit rate is misleading—legacy preference is substantial (~25-30% of admits); non-legacy rate closer to 12%. Jesuit affiliation confers advantage for applicants from Jesuit schools. Carroll is genuinely strong business school but doesn't command MBA-level premium of peer programs; recruiting flows heavily to consulting/banking. For RD applicants without legacy ties, positioning as engineer (slightly lower stats) may be strategic. Campus culture is more pre-professional and less diverse than peer UNCs. Net price is lowest in this tier, making BC attractive for upper-middle income families."
+    },
+    {
+      "name": "Boston University",
+      "type": "private",
+      "location": {"city": "Boston", "state": "MA"},
+      "us_news_rank_approx": 42,
+      "enrollment": {"total": 36700, "undergraduate": 18500},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "ed_rate": 0.35,
+        "ea_rate": null,
+        "rd_rate": 0.12,
+        "ed_advantage_notes": "ED is ~3x RD rate. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1520",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.30
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Questrom)", "Communications", "College of Fine Arts", "School of Hospitality"],
+        "strongest_departments": ["Engineering", "Business", "Communications", "Fine Arts", "Chemistry"],
+        "student_faculty_ratio": "14:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.18, "notes": "College of Engineering accepts ~18%; strong in electrical, computer engineering; good co-op programs"},
+        "business": {"acceptance_rate": 0.19, "notes": "Questrom School of Business (~19%) is solid business program; recruiting strength in consulting"},
+        "communications": {"acceptance_rate": 0.23, "notes": "College of Communication (~23%) is BU's most popular; strong in film, journalism, PR"}
+      },
+      "costs": {"tuition": 63750, "total_cost": 84000, "avg_net_price": 31000, "meets_full_need": false},
+      "outcomes": {"graduation_rate_6yr": 0.91, "avg_starting_salary": 62000, "top_employers": ["Deloitte", "Accenture", "Google", "Microsoft", "Amazon"]},
+      "campus": {"setting": "urban", "greek_life_pct": 18, "athletics": "NCAA D1 Patriot League"},
+      "demographics": {"white_pct": 54, "asian_pct": 13, "hispanic_pct": 13, "black_pct": 6, "international_pct": 14},
+      "strategic_insight": "BU's large size (36K students) dilutes undergraduate experience compared to peer privates; professor accessibility is lower. ED rate of 35% is among highest for ostensibly selective schools; suggests significant yield concern. Questrom has solid regional reputation but not national peer to Cornell AEM or Ross. Communications program is vocational strength but limits liberal arts flexibility. Does NOT meet full need for all; net price of $31K suggests gapping for less affluent families. Strategic advantage: urban Boston location, strong co-op partnerships especially in engineering. For non-ED applicants, this is significantly more accessible alternative to BC/Northeastern with similar outcomes."
+    },
+    {
+      "name": "NYU",
+      "type": "private",
+      "location": {"city": "New York", "state": "NY"},
+      "us_news_rank_approx": 33,
+      "enrollment": {"total": 52900, "undergraduate": 26500},
+      "acceptance_rate": 0.088,
+      "admissions": {
+        "ed_rate": 0.15,
+        "ea_rate": null,
+        "rd_rate": 0.042,
+        "ed_advantage_notes": "ED is ~3.5x RD rate. ~28% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1460-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.35
+      },
+      "academics": {
+        "notable_programs": ["Stern (Business)", "Tisch (Film/Drama)", "Engineering (Tandon, Brooklyn)", "Film & Television", "Gallatin (Custom major)"],
+        "strongest_departments": ["Business", "Engineering", "Drama/Film", "Mathematics", "Physics"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.04, "notes": "Stern School of Business is hyper-selective (~4% acceptance); separate admissions; requires demonstrated business interest and strong quantitative skills"},
+        "engineering": {"acceptance_rate": 0.11, "notes": "Tandon School of Engineering (Brooklyn campus) admits ~11%; solid but less prestigious than Stern; strong in computer engineering, data science"},
+        "film": {"acceptance_rate": 0.065, "notes": "Tisch School of the Arts (~6.5%) requires portfolio/audition; highly selective but different criteria from traditional academics"}
+      },
+      "costs": {"tuition": 62980, "total_cost": 84000, "avg_net_price": 28000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.91, "avg_starting_salary": 68000, "top_employers": ["Deloitte", "Goldman Sachs", "Google", "Morgan Stanley", "BlackRock"]},
+      "campus": {"setting": "urban", "greek_life_pct": 8, "athletics": "NCAA D1 USA Swimming & Diving"},
+      "demographics": {"white_pct": 44, "asian_pct": 20, "hispanic_pct": 16, "black_pct": 8, "international_pct": 18},
+      "strategic_insight": "NYU's 8.8% admit rate masks massive school-to-school variation. Stern at 4% is effectively peer to Ivies; Tandon at 11% is much more accessible. Critical strategy: if targeting business, ED to Stern is powerful lever (15% vs 4% RD). If Stern is reach, Tandon or CAS (College of Arts & Science) engineering are fallbacks. Tisch requires audition; portfolio candidates should not expect high acceptance despite lower stated rate. Located in Manhattan but NYU itself is dispersed—Washington Square campus (CAS) vs East Village (Stern) vs Brooklyn (Tandon). Net price of $28K is reasonable. Starting salaries are depressed by large humanities/film cohort; STEM outcomes are higher ($85K+ for engineers)."
+    },
+    {
+      "name": "USC",
+      "type": "private",
+      "location": {"city": "Los Angeles", "state": "CA"},
+      "us_news_rank_approx": 27,
+      "enrollment": {"total": 20100, "undergraduate": 11200},
+      "acceptance_rate": 0.082,
+      "admissions": {
+        "ed_rate": 0.12,
+        "ea_rate": 0.095,
+        "rd_rate": 0.048,
+        "ed_advantage_notes": "ED is ~2.5x RD. ~26% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1490-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.55
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Marshall)", "Cinematic Arts", "Communications", "Architecture"],
+        "strongest_departments": ["Engineering", "Business", "Film/Media", "Mathematics", "Physics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.06, "notes": "Viterbi School of Engineering accepts ~6%; strong in computer science, electrical engineering, biomedical"},
+        "business": {"acceptance_rate": 0.09, "notes": "Marshall School of Business (~9%); excellent reputation in LA tech/entertainment finance; strong recruiting"},
+        "cinematic_arts": {"acceptance_rate": 0.055, "notes": "USC School of Cinematic Arts is most selective (~5.5%); requires portfolio; genuine industry feeder"}
+      },
+      "costs": {"tuition": 64000, "total_cost": 85000, "avg_net_price": 30000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.95, "avg_starting_salary": 72000, "top_employers": ["Apple", "Google", "Microsoft", "Amazon", "Disney"]},
+      "campus": {"setting": "urban", "greek_life_pct": 30, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 37, "asian_pct": 25, "hispanic_pct": 17, "black_pct": 7, "international_pct": 18},
+      "strategic_insight": "USC has strong legacy preference (estimated 20-25% of admits); non-legacy acceptance is ~5-6% range (Ivy-level). Location in LA is major asset for tech/entertainment pathways but creates geographic self-selection. Viterbi engineering outcomes are strong ($95K+ starting), matching top programs. Marshall recruits well for consulting/finance despite lower name recognition than Stern or Wharton. Cinematic Arts is pipeline to entertainment industry; if serious about film, this is only true peer to NYU Tisch at this level. ED strategy: only apply if genuinely committed; yield concern suggests ED acceptance may not be as high as stated 12%."
+    },
+    {
+      "name": "Tulane University",
+      "type": "private",
+      "location": {"city": "New Orleans", "state": "LA"},
+      "us_news_rank_approx": 51,
+      "enrollment": {"total": 13200, "undergraduate": 8400},
+      "acceptance_rate": 0.18,
+      "admissions": {
+        "ed_rate": 0.28,
+        "ea_rate": null,
+        "rd_rate": 0.10,
+        "ed_advantage_notes": "ED is ~2.8x RD. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1390-1540",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.38
+      },
+      "academics": {
+        "notable_programs": ["Business (Freeman)", "Engineering", "Public Health", "Environmental Science", "Pre-med (strong)"],
+        "strongest_departments": ["Business", "Engineering", "Sciences", "Public Health", "Chemistry"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.18, "notes": "Freeman School of Business within general admission; solid regional reputation"},
+        "engineering": {"acceptance_rate": 0.17, "notes": "School of Science and Engineering slightly less selective than business"}
+      },
+      "costs": {"tuition": 60500, "total_cost": 82000, "avg_net_price": 38000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 58000, "top_employers": ["Chevron", "ExxonMobil", "Deloitte", "KPMG", "Accenture"]},
+      "campus": {"setting": "urban", "greek_life_pct": 35, "athletics": "NCAA D1 AAC"},
+      "demographics": {"white_pct": 60, "asian_pct": 11, "hispanic_pct": 15, "black_pct": 8, "international_pct": 6},
+      "strategic_insight": "Tulane benefits from New Orleans location and strong regional network; engineering outcomes driven by energy sector jobs (oil/gas). Pre-med success is solid but not top-tier. Does meet full need but net price of $38K is highest in this peer set, suggesting limited aid availability for middle-income. ED acceptance of 28% indicates significant yield concerns; RD acceptance drops to 10%. Greek life dominance (35%) creates strong social scene but insular culture. Best strategic fit: engineering students seeking regional opportunities or those with New Orleans connections. Less compelling than peer privates for national job market goals."
+    },
+    {
+      "name": "Wake Forest University",
+      "type": "private",
+      "location": {"city": "Winston-Salem", "state": "NC"},
+      "us_news_rank_approx": 27,
+      "enrollment": {"total": 8200, "undergraduate": 4800},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "ed_rate": 0.32,
+        "ea_rate": null,
+        "rd_rate": 0.12,
+        "ed_advantage_notes": "ED is ~2.7x RD. ~35% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1380-1520",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.41
+      },
+      "academics": {
+        "notable_programs": ["Business (Calloway)", "Engineering", "Chemistry", "Pre-med", "Political Science"],
+        "strongest_departments": ["Business", "Sciences", "Engineering", "Chemistry", "Psychology"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.21, "notes": "Calloway School of Business within School of Business; strong regional reputation, particularly in North Carolina"}
+      },
+      "costs": {"tuition": 61500, "total_cost": 82500, "avg_net_price": 28000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.94, "avg_starting_salary": 62000, "top_employers": ["Bank of America", "Deloitte", "PwC", "EY", "Duke Energy"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 28, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 70, "asian_pct": 8, "hispanic_pct": 10, "black_pct": 7, "international_pct": 5},
+      "strategic_insight": "Wake Forest is test-optional (unique among peers listed), which lowers perceived selectivity but actual admits still require strong credentials. Legacy preference is moderate; strong feeder from prep schools. Small size (4,800 undergrads) creates tight community but limited course diversity. Strong in pre-med/health sciences with better outcomes than raw rankings suggest. North Carolina location creates powerful regional advantage; recruiting flows to Charlotte/Raleigh tech corridor. ED acceptance of 32% indicates significant yield competition. Starting salaries are depressed by business/finance dominance; pre-med students see better outcomes ($75K+ for MD track). Net price of $28K is competitive. Best fit: North Carolina students or those seeking tight community over national prestige."
+    },
+    {
+      "name": "Lehigh University",
+      "type": "private",
+      "location": {"city": "Bethlehem", "state": "PA"},
+      "us_news_rank_approx": 55,
+      "enrollment": {"total": 7200, "undergraduate": 4800},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "ed_rate": 0.38,
+        "ea_rate": null,
+        "rd_rate": 0.10,
+        "ed_advantage_notes": "ED is ~3.8x RD. ~38% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1510",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.49
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (College of Business & Economics)", "Chemistry", "Physics", "Pre-med"],
+        "strongest_departments": ["Engineering", "Business", "Sciences", "Mathematics", "Physics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.18, "notes": "College of Engineering and Applied Science is strong; accepts ~18%; focus on practical applications and internships"},
+        "business": {"acceptance_rate": 0.24, "notes": "College of Business and Economics slightly less selective than engineering"}
+      },
+      "costs": {"tuition": 62560, "total_cost": 84000, "avg_net_price": 31000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 66000, "top_employers": ["Deloitte", "PwC", "EY", "Lockheed Martin", "Cummins"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 35, "athletics": "NCAA D1 Patriot League"},
+      "demographics": {"white_pct": 68, "asian_pct": 9, "hispanic_pct": 11, "black_pct": 4, "international_pct": 8},
+      "strategic_insight": "Lehigh's ED acceptance of 38% (highest in this cohort) indicates serious yield concerns; RD acceptance of only 10% is ultra-selective to compensate. This suggests massive ED advantage for committed applicants. Engineering placement is strong despite lower rankings; co-op partnerships with regional manufacturers (Bethlehem Steel legacy). Greek life dominance (35%) creates insular social scene. Net price of $31K is reasonable but higher than some peers. Best strategic positioning: ED for engineering students confident in commitment. RD acceptance is so low (10%) that non-ED applicants should treat as reach school equivalent to top 20 privates."
+    },
+    {
+      "name": "Northeastern University",
+      "type": "private",
+      "location": {"city": "Boston", "state": "MA"},
+      "us_news_rank_approx": 42,
+      "enrollment": {"total": 30400, "undergraduate": 20600},
+      "acceptance_rate": 0.11,
+      "admissions": {
+        "ed_rate": 0.18,
+        "ea_rate": null,
+        "rd_rate": 0.065,
+        "ed_advantage_notes": "ED is ~2.8x RD. ~32% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1440-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.41
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (D'Amore-McKim)", "Computer Science", "Co-op (signature program)", "Health Sciences"],
+        "strongest_departments": ["Engineering", "Computer Science", "Business", "Chemistry", "Mathematics"],
+        "student_faculty_ratio": "14:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.085, "notes": "College of Engineering accepts ~8.5%; highly selective; co-op structure is differentiator for practical experience"},
+        "computer_science": {"acceptance_rate": 0.065, "notes": "Computer Science specialty is highly competitive; co-op placements at tech firms (Google, Microsoft, Meta)"},
+        "business": {"acceptance_rate": 0.12, "notes": "D'Amore-McKim Business School (~12%); strong in co-op finance placements"}
+      },
+      "costs": {"tuition": 63975, "total_cost": 84000, "avg_net_price": 35000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 71000, "top_employers": ["Google", "Microsoft", "Amazon", "Apple", "JPMorgan Chase"]},
+      "campus": {"setting": "urban", "greek_life_pct": 12, "athletics": "NCAA D1 CAA"},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 71000, "top_employers": ["Google", "Microsoft", "Amazon", "Apple", "JPMorgan Chase"]},
+      "campus": {"setting": "urban", "greek_life_pct": 12, "athletics": "NCAA D1 CAA"},
+      "demographics": {"white_pct": 44, "asian_pct": 16, "hispanic_pct": 13, "black_pct": 6, "international_pct": 18},
+      "strategic_insight": "Northeastern's co-op program is genuine differentiator—students work 6-month paid internships embedded in curriculum (5-year program vs. typical 4-year). This creates massive practical advantage over peer privates; engineering co-ops routinely start at $25-30/hr. Large size (30K students) limits undergraduate intimacy but creates stronger recruiting footprint. ED acceptance of 18% makes it more approachable than stated 11% suggests. Boston location provides strong internship base (tech corridor, finance). Net price of $35K is higher despite aid-meeting; suggests middle-income gapping. Strategic advantage: if committed to 5-year model, co-op outcomes exceed peer privates by significant margin. Engineering graduates report $85K+ starting salaries (co-op conversion rates ~75-80%)."
+    },
+    {
+      "name": "Brandeis University",
+      "type": "private",
+      "location": {"city": "Waltham", "state": "MA"},
+      "us_news_rank_approx": 55,
+      "enrollment": {"total": 5900, "undergraduate": 3200},
+      "acceptance_rate": 0.22,
+      "admissions": {
+        "ed_rate": 0.35,
+        "ea_rate": null,
+        "rd_rate": 0.12,
+        "ed_advantage_notes": "ED is ~2.9x RD. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1520",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.36
+      },
+      "academics": {
+        "notable_programs": ["Biochemistry", "Physics", "Mathematics", "Economics", "International Business Studies"],
+        "strongest_departments": ["Sciences", "Mathematics", "Economics", "Philosophy", "Sociology"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "heller_school": {"acceptance_rate": 0.22, "notes": "Heller School for Social Policy & Management; strong in graduate programs; undergrad integration exists but not separate admission"}
+      },
+      "costs": {"tuition": 61500, "total_cost": 83000, "avg_net_price": 26000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 62000, "top_employers": ["Deloitte", "Goldman Sachs", "Google", "McKinsey", "Morgan Stanley"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 38, "asian_pct": 20, "hispanic_pct": 11, "black_pct": 10, "international_pct": 10},
+      "strategic_insight": "Brandeis is small (3,200 undergrads), Jewish-founded, with strong intellectual culture but lower national name recognition than peer privates. ED acceptance of 35% indicates significant yield concerns. Biochemistry and Sciences are genuinely strong; physics outcomes are excellent relative to size. No Greek life creates tight community. Boston proximity (suburban Waltham) provides internship access without overwhelming urban character. Net price of $26K is lowest in this peer set, making Brandeis exceptionally strong value for capable students. Strategic advantage: ED for committed science-focused students; underrated pathway to graduate school placement. RD acceptance drops to 12%, making non-ED applications significantly harder."
+    },
+    {
+      "name": "Case Western Reserve University",
+      "type": "private",
+      "location": {"city": "Cleveland", "state": "OH"},
+      "us_news_rank_approx": 52,
+      "enrollment": {"total": 11900, "undergraduate": 5000},
+      "acceptance_rate": 0.27,
+      "admissions": {
+        "ed_rate": 0.40,
+        "ea_rate": null,
+        "rd_rate": 0.15,
+        "ed_advantage_notes": "ED is ~2.7x RD. ~40% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1530",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.40
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Pre-med/Sciences (strong)", "Nursing", "Weatherhead School of Management", "Biomedical Engineering"],
+        "strongest_departments": ["Engineering", "Sciences", "Chemistry", "Biomedical Engineering", "Mathematics"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.25, "notes": "College of Engineering is slightly selective; strong in biomedical engineering"},
+        "pre_med": {"acceptance_rate": 0.27, "notes": "Pre-med track is strong; Cleveland Clinic partnership provides clinical exposure; medical school acceptance rate ~75% (high)"}
+      },
+      "costs": {"tuition": 62590, "total_cost": 83000, "avg_net_price": 37000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 64000, "top_employers": ["Cleveland Clinic", "University Hospitals", "Deloitte", "PwC", "EY"]},
+      "campus": {"setting": "urban", "greek_life_pct": 30, "athletics": "NCAA D3 University Circle"},
+      "demographics": {"white_pct": 60, "asian_pct": 15, "hispanic_pct": 7, "black_pct": 5, "international_pct": 12},
+      "strategic_insight": "Case Western's ED acceptance of 40% is highest in cohort, indicating serious yield concerns; actual selectivity lower than 27% suggests. Pre-med outcomes are exceptional due to Cleveland Clinic partnership (world-class medical institution in backyard); medical school acceptance 75% vs. national average 40%. Engineering is solid but not nationally prominent. Net price of $37K is on higher end. ED strategy: most impactful for pre-med students; Cleveland Clinic clinical opportunities during undergrad are genuine differentiator. RD acceptance of 15% is significantly more selective than ED, suggesting ED is primary enrollment driver."
+    },
+    {
+      "name": "Rensselaer Polytechnic Institute (RPI)",
+      "type": "private",
+      "location": {"city": "Troy", "state": "NY"},
+      "us_news_rank_approx": 53,
+      "enrollment": {"total": 7700, "undergraduate": 3900},
+      "acceptance_rate": 0.38,
+      "admissions": {
+        "ed_rate": 0.50,
+        "ea_rate": null,
+        "rd_rate": 0.25,
+        "ed_advantage_notes": "ED is 2x RD. ~42% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1350-1530",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.35
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Architecture", "Physics", "Mathematics"],
+        "strongest_departments": ["Engineering", "Computer Science", "Architecture", "Physics", "Mathematics"],
+        "student_faculty_ratio": "13:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.38, "notes": "RPI is entirely STEM-focused; strong in electrical, mechanical, civil engineering"},
+        "computer_science": {"acceptance_rate": 0.38, "notes": "CS outcomes are strong; AI/ML focus in curriculum"}
+      },
+      "costs": {"tuition": 63845, "total_cost": 84000, "avg_net_price": 40000, "meets_full_need": false},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 72000, "top_employers": ["Microsoft", "Google", "Amazon", "IBM", "Lockheed Martin"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 35, "athletics": "NCAA D3"},
+      "demographics": {"white_pct": 55, "asian_pct": 22, "hispanic_pct": 7, "black_pct": 4, "international_pct": 12},
+      "strategic_insight": "RPI's 38% acceptance rate is highest in cohort but misleading—school is entirely engineering/STEM focused, so self-selection of applicant pool is extreme. Actual competitiveness for engineering programs is higher than stated rate. ED acceptance of 50% indicates massive yield concerns; school heavily dependent on ED for enrollment. Does NOT meet full need; net price of $40K is highest in this peer set. Greek life at 35% creates strong social scene but insular technical culture. Troy location is rural/isolated. Best strategic positioning: ED for committed engineering students who understand isolated location; RD acceptance of 25% is still more accessible than selective privates. Engineering outcomes are solid ($85K+) and justify higher cost."
+    },
+    {
+      "name": "Worcester Polytechnic Institute (WPI)",
+      "type": "private",
+      "location": {"city": "Worcester", "state": "MA"},
+      "us_news_rank_approx": 54,
+      "enrollment": {"total": 6800, "undergraduate": 3900},
+      "acceptance_rate": 0.35,
+      "admissions": {
+        "ed_rate": 0.48,
+        "ea_rate": null,
+        "rd_rate": 0.22,
+        "ed_advantage_notes": "ED is ~2.2x RD. ~40% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1340-1530",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.38
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Interactive Media & Game Development", "Chemistry", "Mathematics"],
+        "strongest_departments": ["Engineering", "Computer Science", "Game Development", "Physics", "Chemistry"],
+        "student_faculty_ratio": "14:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "game_dev": {"acceptance_rate": 0.35, "notes": "Interactive Media & Game Development is WPI differentiator; strong pipeline to game studios"}
+      },
+      "costs": {"tuition": 62358, "total_cost": 83000, "avg_net_price": 36000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 68000, "top_employers": ["Microsoft", "Google", "Amazon", "Raytheon", "iRobot"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 18, "athletics": "NCAA D3 NEWMAC"},
+      "demographics": {"white_pct": 56, "asian_pct": 18, "hispanic_pct": 8, "black_pct": 5, "international_pct": 14},
+      "strategic_insight": "WPI's 35% acceptance is among highest but engineering/STEM focus creates self-selected applicant pool. ED acceptance of 48% is extreme, indicating enrollment pressure; RD acceptance of 22% suggests significant ED advantage. Game Development is genuine differentiator for students seeking creative computing careers. Worcester location is more accessible than RPI's Troy. Meets full need with net price of $36K (reasonable). Best strategic: ED for engineering students, particularly those interested in game dev or robotics. RD applicants should treat as more accessible engineering alternative to selective privates. Outcomes are solid but lower than top-tier engineering schools ($68K starting vs. $85K+ at CMU/MIT peers)."
+    },
+    {
+      "name": "University of Rochester",
+      "type": "private",
+      "location": {"city": "Rochester", "state": "NY"},
+      "us_news_rank_approx": 49,
+      "enrollment": {"total": 11600, "undergraduate": 6600},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "ed_rate": 0.32,
+        "ea_rate": null,
+        "rd_rate": 0.12,
+        "ed_advantage_notes": "ED is ~2.7x RD. ~35% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1360-1530",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.37
+      },
+      "academics": {
+        "notable_programs": ["Optics/Photonics", "Engineering", "Music (Eastman School—separate)", "Biomedical Sciences", "Physics"],
+        "strongest_departments": ["Physics", "Optics", "Engineering", "Chemistry", "Music"],
+        "student_faculty_ratio": "10:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.21, "notes": "School of Engineering & Applied Sciences; optics/photonics is nationally recognized strength"},
+        "eastman": {"acceptance_rate": null, "notes": "Eastman School of Music is separate conservatory with separate admissions; highly selective but distinct path"}
+      },
+      "costs": {"tuition": 62090, "total_cost": 83000, "avg_net_price": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 65000, "top_employers": ["Deloitte", "PwC", "EY", "Corning", "Xerox"]},
+      "campus": {"setting": "urban", "greek_life_pct": 25, "athletics": "NCAA D3 UAA"},
+      "demographics": {"white_pct": 60, "asian_pct": 12, "hispanic_pct": 9, "black_pct": 6, "international_pct": 10},
+      "strategic_insight": "Rochester is test-optional (unique in this peer set aside from Wake Forest), lowering perceived barriers. Optics/photonics is genuine strength with Corning, Xerox regional presence. Eastman School of Music is world-class but entirely separate admissions; music students should not apply to Rochester main campus. ED acceptance of 32% indicates moderate yield concerns. Net price of $32K is reasonable. Rochester location is less vibrant than Boston peers but more affordable. Best strategic: ED for engineering students interested in optics; test-optional status helps those with weaker standardized test scores. RD acceptance of 12% is significantly more selective, creating meaningful ED advantage."
+    },
+    {
+      "name": "UC San Diego",
+      "type": "public",
+      "location": {"city": "La Jolla", "state": "CA"},
+      "us_news_rank_approx": 35,
+      "enrollment": {"total": 47500, "undergraduate": 32700},
+      "acceptance_rate": 0.095,
+      "admissions": {
+        "in_state_acceptance_rate": 0.17,
+        "out_of_state_acceptance_rate": 0.032,
+        "test_optional": false,
+        "mid_50_sat": "1350-1540",
+        "mid_50_act": "31-35",
+        "yield_rate": 0.28,
+        "ed_ea_notes": "No ED; limited EA for CA residents. Application deadline Nov 30."
+      },
+      "academics": {
+        "notable_programs": ["Engineering (Jacobs)", "Sciences", "Biomedical Sciences", "Computer Science", "Mathematics"],
+        "strongest_departments": ["Engineering", "Physics", "Chemistry", "Molecular Biology", "Computer Science"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1",
+        "research_funding": "$750M annual research; strong biotech focus"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.065, "notes": "Jacobs School of Engineering is highly competitive; in-state ~12%, OOS ~3%; strong in computer engineering, biomedical"},
+        "sciences": {"acceptance_rate": 0.11, "notes": "Biological Sciences and Chemistry are competitive but more accessible than engineering"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 38500, "total_cost_out_of_state": 71500, "avg_net_price_in_state": 13000, "avg_net_price_out_of_state": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.90, "avg_starting_salary": 70000, "top_employers": ["Google", "Microsoft", "Apple", "Qualcomm", "Intel"]},
+      "campus": {"setting": "urban", "greek_life_pct": 10, "athletics": "NCAA D2 CCAA"},
+      "demographics": {"white_pct": 22, "asian_pct": 42, "hispanic_pct": 20, "black_pct": 3, "international_pct": 13},
+      "strategic_insight": "UC San Diego's OOS acceptance rate of 3.2% is peer to Ivies; OOS applicants should treat engineering as reaches similar to top private schools. In-state engineering (12%) is far more accessible. San Diego's biotech cluster (Qualcomm, Illumina) creates strong recruiting footprint; biological sciences graduates particularly well-placed. La Jolla location is beautiful but geographically isolated (not LA, not SF). No ED creates different strategy than private peers. For in-state: UC San Diego is excellent value ($13K net); major selection is bottleneck. For OOS: brutal acceptance rates unless pursuing less-impacted majors (non-engineering sciences). Research opportunities are exceptional even for undergrads."
+    },
+    {
+      "name": "UC Davis",
+      "type": "public",
+      "location": {"city": "Davis", "state": "CA"},
+      "us_news_rank_approx": 39,
+      "enrollment": {"total": 38600, "undergraduate": 30400},
+      "acceptance_rate": 0.16,
+      "admissions": {
+        "in_state_acceptance_rate": 0.22,
+        "out_of_state_acceptance_rate": 0.073,
+        "test_optional": false,
+        "mid_50_sat": "1280-1490",
+        "mid_50_act": "29-34",
+        "yield_rate": 0.23,
+        "ed_ea_notes": "No ED; does have EA for CA residents with early filing."
+      },
+      "academics": {
+        "notable_programs": ["Agriculture & Environmental Sciences", "Engineering", "Veterinary Medicine", "Biological Sciences", "Pre-med"],
+        "strongest_departments": ["Agriculture", "Veterinary Medicine", "Environmental Sciences", "Engineering", "Chemistry"],
+        "student_faculty_ratio": "20:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "veterinary_medicine": {"acceptance_rate": 0.04, "notes": "UC Davis School of Veterinary Medicine is top-tier; DVM admission is separate; undergrad pre-vet pathway has strong placement"},
+        "engineering": {"acceptance_rate": 0.14, "notes": "Engineering accepts ~14%; less impacted than Berkeley/SD but still competitive"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 38000, "total_cost_out_of_state": 71000, "avg_net_price_in_state": 12500, "avg_net_price_out_of_state": 31000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 64000, "top_employers": ["Google", "Intel", "Apple", "Deloitte", "PwC"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 12, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 26, "asian_pct": 32, "hispanic_pct": 23, "black_pct": 3, "international_pct": 10},
+      "strategic_insight": "UC Davis is lower-tier UC but still selective; OOS acceptance of 7.3% is equivalent to private colleges ranked #40-50. In-state acceptance of 22% is most accessible of top UCs. College town setting (Davis) creates stronger traditional college community than LA/San Diego. Agriculture and veterinary science are genuine national strengths; pre-vet placement for DVM programs is exceptional. OOS students should focus on engineering/sciences to justify acceptance rate. Starting salaries are lower than Berkeley/SD ($64K vs. $70-71K); likely due to agricultural/environmental science graduate distribution. Best fit: in-state California students or those seeking agricultural/veterinary pathways. OOS engineering applicants would be better served by other UCs or private schools."
+    },
+    {
+      "name": "UC Santa Barbara",
+      "type": "public",
+      "location": {"city": "Santa Barbara", "state": "CA"},
+      "us_news_rank_approx": 37,
+      "enrollment": {"total": 26900, "undergraduate": 20500},
+      "acceptance_rate": 0.12,
+      "admissions": {
+        "in_state_acceptance_rate": 0.18,
+        "out_of_state_acceptance_rate": 0.058,
+        "test_optional": false,
+        "mid_50_sat": "1330-1530",
+        "mid_50_act": "30-35",
+        "yield_rate": 0.32,
+        "ed_ea_notes": "No ED; no significant EA. Rolling admissions November-March."
+      },
+      "academics": {
+        "notable_programs": ["Physics", "Chemistry", "Engineering (Computer, Electrical)", "Materials Science", "Mathematics"],
+        "strongest_departments": ["Physics", "Engineering", "Chemistry", "Mathematics", "Materials Science"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1",
+        "research_funding": "$700M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.085, "notes": "Engineering is selective (~8.5%); strong in computer science, electrical engineering"},
+        "physics": {"acceptance_rate": 0.10, "notes": "Physics/Physical Sciences track is competitive; research opportunities are exceptional"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 38500, "total_cost_out_of_state": 71500, "avg_net_price_in_state": 13500, "avg_net_price_out_of_state": 32500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.90, "avg_starting_salary": 69000, "top_employers": ["Google", "Apple", "Microsoft", "Meta", "Amazon"]},
+      "campus": {"setting": "coastal", "greek_life_pct": 8, "athletics": "NCAA D1 Big West"},
+      "demographics": {"white_pct": 32, "asian_pct": 27, "hispanic_pct": 24, "black_pct": 3, "international_pct": 11},
+      "strategic_insight": "UC Santa Barbara is more selective than Davis/Irvine but less than Berkeley/San Diego. Physics program is genuinely world-class (multiple Nobel laureates on faculty); physics undergraduate research is exceptional. OOS acceptance of 5.8% is equivalent to top 25 privates. Santa Barbara location is stunningly beautiful but expensive (housing costs spike well beyond listed figures). Beach lifestyle attracts self-selected students; social scene is strong but sometimes distracts from academics. Best strategic: in-state applicants seeking physics/engineering; OOS should focus on physics if academically positioned. Engineering outcomes are strong ($80K+ starting for CS engineers). Research opportunities are world-class for undergrads entering labs. Notably smaller than Berkeley/SD (20.5K vs. 32.7K); creates stronger community feel."
+    },
+    {
+      "name": "UC Irvine",
+      "type": "public",
+      "location": {"city": "Irvine", "state": "CA"},
+      "us_news_rank_approx": 41,
+      "enrollment": {"total": 36200, "undergraduate": 27900},
+      "acceptance_rate": 0.15,
+      "admissions": {
+        "in_state_acceptance_rate": 0.20,
+        "out_of_state_acceptance_rate": 0.077,
+        "test_optional": false,
+        "mid_50_sat": "1300-1520",
+        "mid_50_act": "29-34",
+        "yield_rate": 0.23,
+        "ed_ea_notes": "No ED; no significant EA. Rolling admissions."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Chemistry", "Mathematics", "Physics"],
+        "strongest_departments": ["Engineering", "Computer Science", "Chemistry", "Mathematics", "Biological Sciences"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.12, "notes": "Engineering is slightly less selective than general admission; strong in computer/electrical engineering"},
+        "computer_science": {"acceptance_rate": 0.10, "notes": "Computer Science specialty is competitive; strong recruitment from tech companies"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 38000, "total_cost_out_of_state": 71000, "avg_net_price_in_state": 12000, "avg_net_price_out_of_state": 30000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 68000, "top_employers": ["Google", "Microsoft", "Amazon", "Apple", "Intel"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 14, "athletics": "NCAA D1 Big West"},
+      "demographics": {"white_pct": 20, "asian_pct": 47, "hispanic_pct": 17, "black_pct": 2, "international_pct": 15},
+      "strategic_insight": "UC Irvine is slightly less selective than Santa Barbara but more accessible than Berkeley/San Diego. OOS acceptance of 7.7% is equivalent to selective private colleges (#35-50). In-state acceptance of 20% is among most accessible of top-tier UCs. Irvine's suburban location (Orange County) provides tech corridor access but less prestige than SF Bay. Engineering and CS outcomes are solid; strong recruiting pipeline to tech companies. Notably higher Asian percentage (47%) creates different demographic profile; strong pre-med/science culture. Large size (36K) limits undergraduate intimacy but creates diverse student body. Best strategic: in-state California students or OOS seeking engineering/CS with more accessible admissions. Net prices are excellent ($12-30K). Starting salaries are slightly lower than top-tier UCs ($68K vs. $71K) but still strong for OOS investment."
+    },
+    {
+      "name": "UC Santa Cruz",
+      "type": "public",
+      "location": {"city": "Santa Cruz", "state": "CA"},
+      "us_news_rank_approx": 46,
+      "enrollment": {"total": 19700, "undergraduate": 14500},
+      "acceptance_rate": 0.19,
+      "admissions": {
+        "in_state_acceptance_rate": 0.25,
+        "out_of_state_acceptance_rate": 0.11,
+        "test_optional": false,
+        "mid_50_sat": "1290-1490",
+        "mid_50_act": "28-34",
+        "yield_rate": 0.28,
+        "ed_ea_notes": "No ED; no significant EA. Rolling admissions."
+      },
+      "academics": {
+        "notable_programs": ["Computer Science", "Engineering", "Physics", "Chemistry", "Biology"],
+        "strongest_departments": ["Computer Science", "Engineering", "Physics", "Chemistry", "Molecular Biology"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "computer_science": {"acceptance_rate": 0.15, "notes": "Computer Science is increasingly selective; strong for undergrad research"},
+        "engineering": {"acceptance_rate": 0.18, "notes": "Engineering (Computer, Electrical, Biochemical) is competitive but more accessible than CS"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 39000, "total_cost_out_of_state": 72000, "avg_net_price_in_state": 13000, "avg_net_price_out_of_state": 31500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.85, "avg_starting_salary": 71000, "top_employers": ["Google", "Apple", "Microsoft", "Amazon", "Meta"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 2, "athletics": "NCAA D3 CCAA"},
+      "outcomes": {"graduation_rate_6yr": 0.85, "avg_starting_salary": 71000, "top_employers": ["Google", "Apple", "Microsoft", "Amazon", "Meta"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 2, "athletics": "NCAA D3 CCAA"},
+      "demographics": {"white_pct": 32, "asian_pct": 26, "hispanic_pct": 25, "black_pct": 3, "international_pct": 8},
+      "strategic_insight": "UC Santa Cruz is lower-ranked than other UCs but OOS acceptance of 11% is deceptively selective (equivalent to private colleges #25-40). In-state acceptance of 25% is most accessible of UC system. Computer science has gained prestige due to strong tech outcomes; CS graduates report $85K+ starting salaries. College town setting in Santa Cruz creates strong undergraduate community feel (no commuter school vibe). Very small Greek life (2%) creates different social dynamic. Graduate retention rate of 85% is lowest in UC cohort; suggests some attrition to transfers. Best strategic: in-state California students or OOS seeking CS/engineering with more accessible admissions than top-tier UCs. Tech pipeline is strong despite lower overall ranking; CS/engineering outcomes exceed Harvard's average. Cost-effective for OOS ($31.5K net price is lowest in UC cohort)."
+    },
+    {
+      "name": "University of Pittsburgh",
+      "type": "public",
+      "location": {"city": "Pittsburgh", "state": "PA"},
+      "us_news_rank_approx": 57,
+      "enrollment": {"total": 32000, "undergraduate": 18900},
+      "acceptance_rate": 0.20,
+      "admissions": {
+        "in_state_acceptance_rate": 0.28,
+        "out_of_state_acceptance_rate": 0.15,
+        "test_optional": false,
+        "mid_50_sat": "1340-1510",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.32,
+        "ed_ea_notes": "No binding ED; does offer Early Action (non-binding) for PA residents."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Katz)", "Health Sciences", "Pre-med", "Chemistry"],
+        "strongest_departments": ["Engineering", "Health Sciences", "Business", "Chemistry", "Physics"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1",
+        "research_funding": "$650M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.17, "notes": "Swanson School of Engineering is selective; strong in chemical, mechanical engineering"},
+        "business": {"acceptance_rate": 0.20, "notes": "Katz School of Business is within acceptance range; solid regional reputation"}
+      },
+      "costs": {"tuition_in_state": 19500, "tuition_out_of_state": 40000, "total_cost_in_state": 42000, "total_cost_out_of_state": 63000, "avg_net_price_in_state": 18000, "avg_net_price_out_of_state": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 63000, "top_employers": ["Deloitte", "PwC", "EY", "Google", "Microsoft"]},
+      "campus": {"setting": "urban", "greek_life_pct": 20, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 62, "asian_pct": 10, "hispanic_pct": 8, "black_pct": 5, "international_pct": 9},
+      "strategic_insight": "Pitt is public research university with private-school feel; smaller than typical state flagships. OOS acceptance of 15% is more selective than many public schools; in-state (28%) is still accessible. Pittsburgh's post-industrial revitalization creates tech/healthcare innovation ecosystem. Pre-med placement is strong; medical school acceptance rate ~75%. Engineering outcomes competitive with private peers ($75K+ starting). EA option for PA residents creates early advantage. Net price for OOS is reasonable ($32K); in-state even better ($18K). Best strategic: PA residents using EA advantage or OOS seeking pre-med/engineering with more accessible admissions than selective privates. Urban location without major city distraction is balance point between large state schools and private universities."
+    },
+    {
+      "name": "University of Maryland, College Park",
+      "type": "public",
+      "location": {"city": "College Park", "state": "MD"},
+      "us_news_rank_approx": 58,
+      "enrollment": {"total": 41500, "undergraduate": 27800},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "in_state_acceptance_rate": 0.29,
+        "out_of_state_acceptance_rate": 0.15,
+        "test_optional": false,
+        "mid_50_sat": "1370-1530",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.36,
+        "ed_ea_notes": "No binding ED; Early Action available for MD residents."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Smith)", "Computer Science", "Chemistry", "Physics"],
+        "strongest_departments": ["Engineering", "Computer Science", "Business", "Chemistry", "Physics"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "$800M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.15, "notes": "A. James Clark School of Engineering is selective; strong in electrical, computer engineering"},
+        "business": {"acceptance_rate": 0.18, "notes": "Robert H. Smith School of Business is competitive but not as selective as engineering"}
+      },
+      "costs": {"tuition_in_state": 17000, "tuition_out_of_state": 42000, "total_cost_in_state": 40500, "total_cost_out_of_state": 65500, "avg_net_price_in_state": 15000, "avg_net_price_out_of_state": 33000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 66000, "top_employers": ["Google", "Microsoft", "Amazon", "Deloitte", "PwC"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 25, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 46, "asian_pct": 21, "hispanic_pct": 12, "black_pct": 9, "international_pct": 10},
+      "strategic_insight": "University of Maryland is large state school (#1 in Big Ten research) with strong engineering tradition. OOS acceptance of 15% is selective for public school; in-state (29%) is accessible. College Park location (near DC) provides internship access for government/policy careers. Engineering pipeline to tech companies is strong; CS outcomes are robust ($80K+). Smith School of Business has solid reputation for consulting recruitment. EA option for MD residents creates procedural advantage. Net prices are excellent ($15-33K). Best strategic: mid-Atlantic students leveraging geographic advantage, or OOS seeking engineering with strong outcomes at accessible acceptance rates. Research opportunities abundant due to massive research funding ($800M). Greek life (25%) creates social scene but academic culture remains strong in engineering/STEM tracks."
+    },
+    {
+      "name": "Virginia Tech",
+      "type": "public",
+      "location": {"city": "Blacksburg", "state": "VA"},
+      "us_news_rank_approx": 62,
+      "enrollment": {"total": 37700, "undergraduate": 24200},
+      "acceptance_rate": 0.25,
+      "admissions": {
+        "in_state_acceptance_rate": 0.32,
+        "out_of_state_acceptance_rate": 0.20,
+        "test_optional": false,
+        "mid_50_sat": "1330-1510",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.40,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions from September onwards."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Architecture", "Agriculture & Life Sciences", "Business", "Computer Science"],
+        "strongest_departments": ["Engineering", "Architecture", "Computer Science", "Agricultural Sciences", "Physics"],
+        "student_faculty_ratio": "16:1",
+        "research_tier": "R1",
+        "research_funding": "$780M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.22, "notes": "College of Engineering is slightly less selective than overall; strong in electrical, civil, mechanical engineering"},
+        "architecture": {"acceptance_rate": 0.20, "notes": "School of Architecture is competitive; strong design focus"}
+      },
+      "costs": {"tuition_in_state": 15500, "tuition_out_of_state": 35000, "total_cost_in_state": 38500, "total_cost_out_of_state": 58000, "avg_net_price_in_state": 13500, "avg_net_price_out_of_state": 29000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 65000, "top_employers": ["Google", "Microsoft", "Deloitte", "PwC", "Northrop Grumman"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 28, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 66, "asian_pct": 8, "hispanic_pct": 8, "black_pct": 4, "international_pct": 8},
+      "strategic_insight": "Virginia Tech is large land-grant engineering powerhouse; acceptance rate of 25% is accessible for public schools but still selective. OOS acceptance of 20% is lower than peer state schools but still reasonable. Blacksburg location is rural/isolated but creates tight-knit community culture. Engineering and architecture are genuine strengths; architecture outcomes particularly strong ($75K+ starting). Architecture school is major differentiator—if interested in design, Tech is excellent value ($29K OOS net price). Rolling admissions reward early applications. Greek life (28%) is present but not dominant. Best strategic: Southeast students or those seeking engineering/architecture with accessible admissions and strong regional network. Tech graduates populate East Coast engineering firms (Northrop Grumman headquarters nearby). Cost-effective overall."
+    },
+    {
+      "name": "Clemson University",
+      "type": "public",
+      "location": {"city": "Clemson", "state": "SC"},
+      "us_news_rank_approx": 69,
+      "enrollment": {"total": 28500, "undergraduate": 19500},
+      "acceptance_rate": 0.38,
+      "admissions": {
+        "in_state_acceptance_rate": 0.45,
+        "out_of_state_acceptance_rate": 0.32,
+        "test_optional": false,
+        "mid_50_sat": "1310-1480",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.45,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Darla Moore)", "Agricultural Sciences", "Chemistry", "Physics"],
+        "strongest_departments": ["Engineering", "Agricultural Sciences", "Business", "Physics", "Chemistry"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.35, "notes": "College of Engineering is slightly less selective than overall; strong in electrical, chemical engineering"}
+      },
+      "costs": {"tuition_in_state": 16000, "tuition_out_of_state": 37000, "total_cost_in_state": 39500, "total_cost_out_of_state": 60500, "avg_net_price_in_state": 14500, "avg_net_price_out_of_state": 30000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 62000, "top_employers": ["Google", "Microsoft", "Deloitte", "Michels Corporation", "BMW"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 32, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 75, "asian_pct": 5, "hispanic_pct": 7, "black_pct": 4, "international_pct": 4},
+      "strategic_insight": "Clemson's 38% acceptance is most accessible in this cohort; South Carolina location creates strong regional preference. OOS acceptance of 32% is notably generous for public schools, suggesting regional self-selection. Strong engineering outcomes despite lower overall rankings; electrical engineers report $75K+ starting. Moore School of Business has solid regional reputation. College town setting with strong football culture creates unified social identity. Greek life (32%) is dominant. Rural/isolated location appeals to students seeking tight community. Best strategic: students uncompetitive for selective peers; Clemson offers accessible admissions with decent engineering outcomes. Cost-effective for OOS ($30K net). Engineering and agriculture are strongest pathways."
+    },
+    {
+      "name": "University of Colorado Boulder",
+      "type": "public",
+      "location": {"city": "Boulder", "state": "CO"},
+      "us_news_rank_approx": 97,
+      "enrollment": {"total": 38500, "undergraduate": 29500},
+      "acceptance_rate": 0.20,
+      "admissions": {
+        "in_state_acceptance_rate": 0.27,
+        "out_of_state_acceptance_rate": 0.15,
+        "test_optional": false,
+        "mid_50_sat": "1280-1480",
+        "mid_50_act": "28-33",
+        "yield_rate": 0.41,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions from January."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Physics", "Aerospace Engineering", "Chemistry", "Business"],
+        "strongest_departments": ["Engineering", "Physics", "Aerospace Engineering", "Chemistry", "Mathematics"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "$720M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.17, "notes": "College of Engineering is selective; aerospace engineering is particularly strong (aerospace companies in Colorado)"},
+        "business": {"acceptance_rate": 0.20, "notes": "Business school is within overall acceptance range"}
+      },
+      "costs": {"tuition_in_state": 15000, "tuition_out_of_state": 40000, "total_cost_in_state": 38500, "total_cost_out_of_state": 63500, "avg_net_price_in_state": 14000, "avg_net_price_out_of_state": 31000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 67000, "top_employers": ["Google", "Microsoft", "Amazon", "Lockheed Martin", "Ball Aerospace"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 20, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 62, "asian_pct": 8, "hispanic_pct": 16, "black_pct": 3, "international_pct": 9},
+      "strategic_insight": "CU Boulder's 20% acceptance is more selective than typical state schools; OOS (15%) is particularly selective. Despite #97 ranking, engineering reputation is strong due to aerospace cluster (Lockheed Martin, Ball Aerospace). Boulder location is stunningly beautiful and attracts outdoors-oriented students; social scene is strong. Engineering outcomes exceed ranking ($80K+ for aerospace engineers). Physics program has research strength. Rolling admissions benefit early applicants. Greek life (20%) is present but not overwhelming. Best strategic: students seeking aerospace engineering or outdoor-oriented school culture; acceptance rates are accessible and outcomes are solid. Cost-effective with $31K OOS net price. Reputation is lower than peers but actual engineering placement is strong."
+    },
+    {
+      "name": "SUNY Stony Brook University",
+      "type": "public",
+      "location": {"city": "Stony Brook", "state": "NY"},
+      "us_news_rank_approx": 80,
+      "enrollment": {"total": 27200, "undergraduate": 17600},
+      "acceptance_rate": 0.22,
+      "admissions": {
+        "in_state_acceptance_rate": 0.30,
+        "out_of_state_acceptance_rate": 0.14,
+        "test_optional": false,
+        "mid_50_sat": "1310-1500",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.25,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions from December."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Physics", "Chemistry", "Biology", "Computer Science"],
+        "strongest_departments": ["Physics", "Engineering", "Chemistry", "Mathematics", "Computer Science"],
+        "student_faculty_ratio": "21:1",
+        "research_tier": "R1",
+        "research_funding": "$720M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.18, "notes": "College of Engineering is selective; strong in electrical, mechanical engineering"}
+      },
+      "costs": {"tuition_in_state": 8500, "tuition_out_of_state": 28000, "total_cost_in_state": 31500, "total_cost_out_of_state": 51000, "avg_net_price_in_state": 8000, "avg_net_price_out_of_state": 27000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.83, "avg_starting_salary": 64000, "top_employers": ["Google", "Microsoft", "Amazon", "Deloitte", "IBM"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 4, "athletics": "NCAA D1 America East"},
+      "demographics": {"white_pct": 40, "asian_pct": 28, "hispanic_pct": 13, "black_pct": 7, "international_pct": 13},
+      "strategic_insight": "Stony Brook is SUNY flagship research powerhouse; in-state cost ($8K net) is exceptionally low. OOS acceptance of 14% is deceptively selective despite #80 ranking; suggests strong STEM self-selection in applicant pool. Physics program is nationally ranked (top 30); research funding ($720M) rivals private peers. Engineering outcomes solid ($75K+ for specialized disciplines). Long Island location provides NYC internship access but lacks major city amenities. Very low Greek life (4%) creates different social dynamic. Best strategic: NY state residents for exceptional value; OOS physics/engineering applicants should consider despite lower ranking (actual STEM reputation is strong). Graduation rate of 83% is lowest in cohort, suggesting some attrition. Cost advantage is substantial compared to peers."
+    },
+    {
+      "name": "Rochester Institute of Technology (RIT)",
+      "type": "private",
+      "location": {"city": "Rochester", "state": "NY"},
+      "us_news_rank_approx": 74,
+      "enrollment": {"total": 19600, "undergraduate": 14600},
+      "acceptance_rate": 0.46,
+      "admissions": {
+        "ed_rate": 0.58,
+        "ea_rate": null,
+        "rd_rate": 0.35,
+        "ed_advantage_notes": "ED is ~1.7x RD. ~38% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1310-1480",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.35
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Imaging Science", "Print Media", "Software Engineering"],
+        "strongest_departments": ["Engineering", "Computer Science", "Imaging Science", "Software Engineering", "Physics"],
+        "student_faculty_ratio": "12:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.46, "notes": "College of Engineering is within overall acceptance range"},
+        "imaging_science": {"acceptance_rate": 0.46, "notes": "Imaging Science is RIT differentiator; unique program at national level"}
+      },
+      "costs": {"tuition": 60700, "total_cost": 82000, "avg_net_price": 38000, "meets_full_need": false},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 68000, "top_employers": ["Microsoft", "Google", "Amazon", "Apple", "IBM"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 20, "athletics": "NCAA D3 Empire 8"},
+      "demographics": {"white_pct": 58, "asian_pct": 15, "hispanic_pct": 8, "black_pct": 5, "international_pct": 14},
+      "strategic_insight": "RIT's 46% acceptance is highest in cohort but highly misleading—school is STEM-focused and co-op-integrated, creating self-selected applicant pool. Test-optional status is unique in cohort. Imaging Science is genuine national strength; program is pipeline to companies like Kodak legacy, Xerox. ED acceptance of 58% suggests enrollment pressure; RD 35% is still accessible. Does NOT meet full need; net price of $38K is expensive for stated acceptance rate. Rochester location is economically struggling but provides Kodak legacy internship opportunities. Best strategic: test-optional status helps students weak in standardized testing; imaging/photography-focused students should consider seriously. Engineering outcomes solid but lower than peer schools ($68K starting). Cost-effectiveness is questionable given high net price and acceptance rate. Should not be primary choice unless specifically interested in imaging science."
+    },
+    {
+      "name": "Drexel University",
+      "type": "private",
+      "location": {"city": "Philadelphia", "state": "PA"},
+      "us_news_rank_approx": 97,
+      "enrollment": {"total": 26200, "undergraduate": 14200},
+      "acceptance_rate": 0.47,
+      "admissions": {
+        "ed_rate": 0.58,
+        "ea_rate": null,
+        "rd_rate": 0.38,
+        "ed_advantage_notes": "ED is ~1.5x RD. ~36% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1280-1460",
+        "mid_50_act": "28-32",
+        "yield_rate": 0.28
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Lebow College)", "Computer Science", "Nursing", "Design"],
+        "strongest_departments": ["Engineering", "Computer Science", "Business", "Nursing", "Physics"],
+        "student_faculty_ratio": "13:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.47, "notes": "College of Engineering is within overall range; strong co-op program"},
+        "business": {"acceptance_rate": 0.50, "notes": "Lebow College of Business slightly less selective"}
+      },
+      "costs": {"tuition": 61500, "total_cost": 83000, "avg_net_price": 40000, "meets_full_need": false},
+      "outcomes": {"graduation_rate_6yr": 0.80, "avg_starting_salary": 62000, "top_employers": ["Comcast", "Deloitte", "Google", "Microsoft", "Amazon"]},
+      "campus": {"setting": "urban", "greek_life_pct": 15, "athletics": "NCAA D1 CAA"},
+      "demographics": {"white_pct": 56, "asian_pct": 12, "hispanic_pct": 10, "black_pct": 8, "international_pct": 14},
+      "strategic_insight": "Drexel's 47% acceptance and test-optional status make it accessible option but high net price ($40K) is major concern relative to acceptance rate. Co-op program is similar to Northeastern (5-year model with 6-month paid internships) but Drexel has less prestige. Philadelphia location provides strong internship base (Comcast, Philadelphia tech scene). Graduation rate of 80% is concerning (suggests 20% attrition). Does NOT meet full need; financial aid is weaker than similar schools. Best strategic: test-optional status appeals to standardized-test-weak students; co-op model provides practical advantage if staying full 5 years. Otherwise, Drexel is poor value proposition compared to Northeastern (similar model) or traditional colleges (lower cost). Not recommended unless specifically interested in co-op and Philadelphia market."
+    },
+    {
+      "name": "George Washington University",
+      "type": "private",
+      "location": {"city": "Washington", "state": "DC"},
+      "us_news_rank_approx": 77,
+      "enrollment": {"total": 26900, "undergraduate": 11100},
+      "acceptance_rate": 0.32,
+      "admissions": {
+        "ed_rate": 0.45,
+        "ea_rate": null,
+        "rd_rate": 0.18,
+        "ed_advantage_notes": "ED is ~2.5x RD. ~36% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1360-1530",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.36
+      },
+      "academics": {
+        "notable_programs": ["International Affairs", "Business (School of Business)", "Engineering", "Political Science", "Government/Policy"],
+        "strongest_departments": ["International Affairs", "Political Science", "Business", "Engineering", "History"],
+        "student_faculty_ratio": "13:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.32, "notes": "School of Business is within overall acceptance range; strong in consulting recruitment"},
+        "engineering": {"acceptance_rate": 0.30, "notes": "School of Engineering is slightly less selective"}
+      },
+      "costs": {"tuition": 63600, "total_cost": 85000, "avg_net_price": 36000, "meets_full_need": false},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 67000, "top_employers": ["Deloitte", "Goldman Sachs", "McKinsey", "Google", "Microsoft"]},
+      "campus": {"setting": "urban", "greek_life_pct": 23, "athletics": "NCAA D1 Atlantic 10"},
+      "demographics": {"white_pct": 54, "asian_pct": 13, "hispanic_pct": 12, "black_pct": 8, "international_pct": 15},
+      "strategic_insight": "George Washington's location in Washington DC is major strategic asset for government/policy/consulting careers. ED acceptance of 45% indicates yield concerns; RD 18% is significantly more selective. Does NOT meet full need; net price of $36K is expensive. International Affairs strength is genuine; IR students well-placed in government/NGO internships. Business school has solid recruiting pipeline to consulting firms. DC location provides unmatched internship access for policy/government track. Best strategic: ED for students committed to policy/government careers; DC advantage outweighs lower national ranking. Consulting outcomes are strong ($75K+ for top recruiters). RD acceptance of 18% is deceptive—for policy-focused students, GWU may be more accessible than traditional selective privates if demonstrating commitment to DC track."
+    },
+    {
+      "name": "Syracuse University",
+      "type": "private",
+      "location": {"city": "Syracuse", "state": "NY"},
+      "us_news_rank_approx": 71,
+      "enrollment": {"total": 22200, "undergraduate": 14900},
+      "acceptance_rate": 0.35,
+      "admissions": {
+        "ed_rate": 0.50,
+        "ea_rate": null,
+        "rd_rate": 0.20,
+        "ed_advantage_notes": "ED is 2.5x RD. ~37% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1310-1490",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.35
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Whitman)", "Communications (Newhouse)", "Architecture", "Psychology"],
+        "strongest_departments": ["Engineering", "Communications", "Business", "Architecture", "Psychology"],
+        "student_faculty_ratio": "15:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "communications": {"acceptance_rate": 0.25, "notes": "S.I. Newhouse School of Communications is competitive (~25%); strong pipeline to media/journalism/PR"},
+        "business": {"acceptance_rate": 0.35, "notes": "Whitman School of Business is within overall acceptance range"},
+        "engineering": {"acceptance_rate": 0.35, "notes": "College of Engineering is within overall range"}
+      },
+      "costs": {"tuition": 62160, "total_cost": 83000, "avg_net_price": 34000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.86, "avg_starting_salary": 61000, "top_employers": ["Deloitte", "PwC", "Google", "Microsoft", "NBC"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 30, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 61, "asian_pct": 8, "hispanic_pct": 11, "black_pct": 7, "international_pct": 10},
+      "strategic_insight": "Syracuse's ED acceptance of 50% is among highest in cohort, indicating significant yield pressure. Test-optional status helps test-weak students. Newhouse School of Communications is genuine strength; journalism/PR graduates are well-placed (NBC, major media outlets). Engineering outcomes are lower than peer schools ($65K vs. $75K+). College town setting creates traditional undergraduate community. Greek life (30%) is present but not overwhelming. Net price of $34K is reasonable; does meet full need. Best strategic: ED for communications/journalism students seeking Newhouse pathway; acceptance is more accessible than traditional selectivity suggests. Engineering students would be better served at peer schools. Test-optional status is useful lever. Syracuse is typically successful at enrollment with ED strategy, suggesting yield improvement in recent years."
+    },
+    {
+      "name": "Santa Clara University",
+      "type": "private",
+      "location": {"city": "Santa Clara", "state": "CA"},
+      "us_news_rank_approx": 58,
+      "enrollment": {"total": 9600, "undergraduate": 5300},
+      "acceptance_rate": 0.26,
+      "admissions": {
+        "ed_rate": 0.36,
+        "ea_rate": null,
+        "rd_rate": 0.15,
+        "ed_advantage_notes": "ED is ~2.4x RD. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1400-1540",
+        "mid_50_act": "32-34",
+        "yield_rate": 0.44
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Leavey)", "Computer Science", "Accounting", "Chemistry"],
+        "strongest_departments": ["Engineering", "Computer Science", "Business", "Chemistry", "Mathematics"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.22, "notes": "School of Engineering is selective (~22%); strong in computer science, electrical engineering"},
+        "business": {"acceptance_rate": 0.28, "notes": "Leavey School of Business slightly less selective; strong recruiting pipeline to Silicon Valley"}
+      },
+      "costs": {"tuition": 61500, "total_cost": 82000, "avg_net_price": 31000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 74000, "top_employers": ["Google", "Apple", "Microsoft", "Amazon", "Cisco"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0, "athletics": "NCAA D1 WCC"},
+      "demographics": {"white_pct": 35, "asian_pct": 32, "hispanic_pct": 16, "black_pct": 3, "international_pct": 8},
+      "strategic_insight": "Santa Clara's location in Silicon Valley is unmatched strategic advantage; no peer private school has better tech internship/recruiting pipeline. ED acceptance of 36% is substantial lever. Engineering outcomes are exceptional ($85K+ for CS engineers); Leavey business school benefits from Valley proximity. Small size (5,300 undergrads) creates tight community. No Greek life. Jesuit affiliation may appeal to religious students. Net price of $31K is reasonable. Engineering acceptance of 22% is selective but more achievable than CMU/Stanford. Best strategic: ED for engineering students interested in tech; Silicon Valley network is unparalleled. Business students also well-positioned for Valley finance/operations roles. RD acceptance of 15% is more selective but engineering pipeline is strong enough to justify applications. Starting salaries significantly exceed peer schools due to geographic advantage."
+    },
+    {
+      "name": "Gonzaga University",
+      "type": "private",
+      "location": {"city": "Spokane", "state": "WA"},
+      "us_news_rank_approx": 81,
+      "enrollment": {"total": 7600, "undergraduate": 4800},
+      "acceptance_rate": 0.48,
+      "admissions": {
+        "ed_rate": 0.65,
+        "ea_rate": null,
+        "rd_rate": 0.33,
+        "ed_advantage_notes": "ED is ~2x RD. ~40% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1260-1430",
+        "mid_50_act": "28-32",
+        "yield_rate": 0.40
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Monaghan)", "Sciences", "Law (grad)", "Pre-health"],
+        "strongest_departments": ["Engineering", "Sciences", "Business", "Pre-health", "Mathematics"],
+        "student_faculty_ratio": "10:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.48, "notes": "School of Engineering is within overall acceptance range"}
+      },
+      "costs": {"tuition": 60300, "total_cost": 82000, "avg_net_price": 28000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 60000, "top_employers": ["Deloitte", "Amazon", "Microsoft", "Google", "Gonzaga Athletics"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 0, "athletics": "NCAA D1 WCC (strong basketball)"},
+      "demographics": {"white_pct": 68, "asian_pct": 7, "hispanic_pct": 11, "black_pct": 3, "international_pct": 5},
+      "strategic_insight": "Gonzaga's 48% acceptance is accessible but test-optional status is significant lever. Small size (4,800 undergrads) creates tight Jesuit community. Spokane location is rural/isolated but provides low cost of living. Basketball program has national prestige (NCAA tournament regular); creates unified school identity. Pre-health outcomes are strong; medical school acceptance ~70%. No Greek life. Net price of $28K is low. ED acceptance of 65% is extreme, suggesting enrollment depends heavily on ED. Best strategic: ED for students seeking tight-knit community and committed to Gonzaga; acceptance is highly achievable. Pre-med/pre-health pathway is legitimate. Engineering outcomes are lower than peer schools ($60K starting). Not recommended for RD unless strong connection to school/location; ED advantage is so significant that non-ED applicants are at major disadvantage. Test-optional status helps borderline applicants."
+    },
+    {
+      "name": "Baylor University",
+      "type": "private",
+      "location": {"city": "Waco", "state": "TX"},
+      "us_news_rank_approx": 76,
+      "enrollment": {"total": 20300, "undergraduate": 14500},
+      "acceptance_rate": 0.32,
+      "admissions": {
+        "ed_rate": 0.45,
+        "ea_rate": null,
+        "rd_rate": 0.20,
+        "ed_advantage_notes": "ED is ~2.25x RD. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1360-1530",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.40
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Hankamer)", "Nursing", "Sciences", "Honors College (selective)"],
+        "strongest_departments": ["Engineering", "Business", "Nursing", "Sciences", "Mathematics"],
+        "student_faculty_ratio": "15:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.32, "notes": "Hankamer School of Business is within overall acceptance range; strong recruiting in Southwest"},
+        "engineering": {"acceptance_rate": 0.30, "notes": "School of Engineering is slightly less selective"},
+        "honors_college": {"acceptance_rate": 0.08, "notes": "Honors College is highly selective (~8%); separate admissions for top applicants"}
+      },
+      "costs": {"tuition": 62000, "total_cost": 82000, "avg_net_price": 30000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 64000, "top_employers": ["Deloitte", "PwC", "EY", "Google", "Microsoft"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 32, "athletics": "NCAA D1 Big 12 (strong football)"},
+      "demographics": {"white_pct": 60, "asian_pct": 8, "hispanic_pct": 18, "black_pct": 8, "international_pct": 6},
+      "strategic_insight": "Baylor's ED acceptance of 45% creates significant advantage. Honors College is genuine opportunity for top applicants; acceptance of 8% suggests alternative pathway for high-achieving students. Strong football culture (Big 12) creates unified school identity. Texas location provides regional network advantage. Nursing program is strong; healthcare outcomes solid. Evangelical Christian affiliation may appeal to religious students. Net price of $30K is reasonable. Best strategic: ED for students seeking strong community/business outcomes; acceptance is highly accessible. Honors College application for top applicants could provide more selective experience. RD acceptance of 20% is significantly less favorable. Engineering outcomes comparable to peer schools ($70K starting). Regional advantage in Texas/Southwest is real but limited national reach."
+    },
+    {
+      "name": "Texas Christian University (TCU)",
+      "type": "private",
+      "location": {"city": "Fort Worth", "state": "TX"},
+      "us_news_rank_approx": 91,
+      "enrollment": {"total": 10000, "undergraduate": 7600},
+      "acceptance_rate": 0.40,
+      "admissions": {
+        "ed_rate": 0.55,
+        "ea_rate": null,
+        "rd_rate": 0.25,
+        "ed_advantage_notes": "ED is ~2.2x RD. ~38% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1320-1490",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.40
+      },
+      "academics": {
+        "notable_programs": ["Business (Neeley)", "Engineering", "Nursing", "Sciences", "Psychology"],
+        "strongest_departments": ["Business", "Engineering", "Sciences", "Nursing", "Mathematics"],
+        "student_faculty_ratio": "13:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.40, "notes": "Neeley School of Business is within overall acceptance range; strong recruiting in Texas"}
+      },
+      "costs": {"tuition": 60470, "total_cost": 82000, "avg_net_price": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.86, "avg_starting_salary": 61000, "top_employers": ["Deloitte", "PwC", "American Airlines", "EY", "Google"]},
+      "campus": {"setting": "urban", "greek_life_pct": 40, "athletics": "NCAA D1 Big 12 (strong football/basketball)"},
+      "demographics": {"white_pct": 67, "asian_pct": 6, "hispanic_pct": 17, "black_pct": 5, "international_pct": 5},
+      "strategic_insight": "TCU's 40% acceptance is accessible; ED acceptance of 55% is exceptional. Greek life dominance (40%) creates strong social scene. Fort Worth location provides Southwest network advantage. Business school has solid regional recruiting pipeline. Strong athletic culture (Big 12 football/basketball). Christian affiliation may appeal to religious students. Net price of $32K is reasonable but higher than some peers. Best strategic: ED for accessible admissions; acceptance is highly achievable. RD acceptance of 25% is notably less selective. Greek life dominance means strong party/social culture if that appeals. Engineering outcomes lower than peer schools ($60K starting). Not recommended for students seeking non-Greek/academic-focused environment. Regional advantage in Texas is real but limited national scope."
+    },
+    {
+      "name": "Southern Methodist University (SMU)",
+      "type": "private",
+      "location": {"city": "Dallas", "state": "TX"},
+      "us_news_rank_approx": 69,
+      "enrollment": {"total": 11700, "undergraduate": 6300},
+      "acceptance_rate": 0.30,
+      "admissions": {
+        "ed_rate": 0.42,
+        "ea_rate": null,
+        "rd_rate": 0.17,
+        "ed_advantage_notes": "ED is ~2.5x RD. ~36% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1550",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.45
+      },
+      "academics": {
+        "notable_programs": ["Business (Cox)", "Engineering", "Music", "Accounting", "Sciences"],
+        "strongest_departments": ["Business", "Engineering", "Accounting", "Music", "Chemistry"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.25, "notes": "Cox School of Business is selective (~25%); strong recruiting pipeline to Dallas finance/consulting"},
+        "engineering": {"acceptance_rate": 0.28, "notes": "School of Engineering is selective but less than business"}
+      },
+      "costs": {"tuition": 62975, "total_cost": 84000, "avg_net_price": 33000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.90, "avg_starting_salary": 68000, "top_employers": ["Deloitte", "Goldman Sachs", "JPMorgan Chase", "Google", "ExxonMobil"]},
+      "campus": {"setting": "urban", "greek_life_pct": 44, "athletics": "NCAA D1 American Athletic"},
+      "demographics": {"white_pct": 60, "asian_pct": 8, "hispanic_pct": 18, "black_pct": 6, "international_pct": 8},
+      "strategic_insight": "SMU's ED acceptance of 42% is significant advantage. Cox School of Business is genuinely selective (~25%); strong pipeline to Dallas finance (banking, consulting). Greek life dominance (44%) is higher than Baylor; creates strong social identity. Dallas location is major financial center (second only to NYC for finance). Engineering outcomes solid ($75K+). Methodist affiliation may appeal to religious students. Net price of $33K is reasonable. Best strategic: ED for strong business outcomes; Dallas finance network is substantial advantage. Cox selectivity (~25%) is meaningful but still accessible via ED. RD acceptance of 17% is significantly more selective. Greek life dominance means expecting strong party culture. Engineering students well-positioned for Dallas energy sector. Outcomes suggest SMU is punching above #69 ranking for business/finance careers."
+    },
+    {
+      "name": "Villanova University",
+      "type": "private",
+      "location": {"city": "Villanova", "state": "PA"},
+      "us_news_rank_approx": 36,
+      "enrollment": {"total": 10500, "undergraduate": 6200},
+      "acceptance_rate": 0.19,
+      "admissions": {
+        "ed_rate": 0.32,
+        "ea_rate": null,
+        "rd_rate": 0.10,
+        "ed_advantage_notes": "ED is ~3.2x RD. ~38% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1440-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.45
+      },
+      "academics": {
+        "notable_programs": ["Business (Villanova School of Business)", "Engineering", "Sciences", "Psychology", "Political Science"],
+        "strongest_departments": ["Business", "Engineering", "Sciences", "Mathematics", "Chemistry"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.15, "notes": "Villanova School of Business is highly selective (~15%); strong recruiting to top consulting/finance firms"},
+        "engineering": {"acceptance_rate": 0.17, "notes": "College of Engineering is selective (~17%); strong computer/electrical engineering"}
+      },
+      "costs": {"tuition": 63400, "total_cost": 85000, "avg_net_price": 27000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 71000, "top_employers": ["Deloitte", "McKinsey", "Goldman Sachs", "Google", "Microsoft"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0, "athletics": "NCAA D1 Big East"},
+      "demographics": {"white_pct": 66, "asian_pct": 9, "hispanic_pct": 10, "black_pct": 5, "international_pct": 5},
+      "strategic_insight": "Villanova is exceptional value and underrated peer to top 30 privates. ED acceptance of 32% is significant but real selectivity is closer to top 20 schools. Business school (15% acceptance) is as selective as Stern/Wharton; consulting pipeline is exceptional. Philadelphia location (suburban advantage—college feel without city chaos) provides internship access. No Greek life. Catholic affiliation may appeal to religious students. Net price of $27K is lowest among this peer set, making Villanova exceptional value. Graduation rate of 96% is among highest in cohort. Best strategic: ED is critical lever—RD acceptance of 10% makes non-ED applications effectively reaches. Business school attracts top consulting firms; outcomes exceed ranking significantly. Catholic background helps students from Jesuit/Catholic school networks. Villanova is strategically undervalued; reputation lags actual quality and outcomes."
+    },
+    {
+      "name": "Fordham University",
+      "type": "private",
+      "location": {"city": "New York", "state": "NY"},
+      "us_news_rank_approx": 85,
+      "enrollment": {"total": 15600, "undergraduate": 8100},
+      "acceptance_rate": 0.38,
+      "admissions": {
+        "ed_rate": 0.55,
+        "ea_rate": null,
+        "rd_rate": 0.20,
+        "ed_advantage_notes": "ED is ~2.75x RD. ~38% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1310-1490",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.32
+      },
+      "academics": {
+        "notable_programs": ["Business (Gabelli)", "Engineering", "Communications", "Pre-law", "International Studies"],
+        "strongest_departments": ["Business", "Communications", "English", "History", "Psychology"],
+        "student_faculty_ratio": "12:1",
+        "research_tier": "R2"
+      },
+      "school_within_school": {
+        "business": {"acceptance_rate": 0.38, "notes": "Gabelli School of Business is within overall acceptance range; NYC recruiting pipeline is strong"}
+      },
+      "costs": {"tuition": 63240, "total_cost": 84000, "avg_net_price": 35000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 64000, "top_employers": ["Deloitte", "PwC", "Goldman Sachs", "Morgan Stanley", "Google"]},
+      "campus": {"setting": "urban", "greek_life_pct": 4, "athletics": "NCAA D1 Atlantic 10"},
+      "demographics": {"white_pct": 48, "asian_pct": 8, "hispanic_pct": 25, "black_pct": 9, "international_pct": 8},
+      "strategic_insight": "Fordham's 38% acceptance is accessible; ED acceptance of 55% is exceptional. Test-optional status is significant lever. Manhattan location (Bronx campus is less desirable than Lincoln Center campus in Manhattan) provides NYC internship access. Business school has solid consulting recruiting pipeline; finance outcomes strong due to proximity to Wall Street. Jesuit affiliation creates community; low Greek life (4%) reflects Jesuit ethos. Net price of $35K is reasonable. ED acceptance of 55% indicates significant enrollment pressure. Best strategic: ED is critical lever—acceptance is highly achievable. Test-optional status helps standardized-test-weak students. Business school pathway to finance/consulting is legitimate if in Manhattan campus. Pre-law outcomes are strong for NYC law schools. RD acceptance of 20% is notably less selective; non-ED applicants should expect challenge. Hispanic representation (25%) is highest in peer set."
+    },
+    {
+      "name": "University of Connecticut (UConn)",
+      "type": "public",
+      "location": {"city": "Storrs", "state": "CT"},
+      "us_news_rank_approx": 74,
+      "enrollment": {"total": 32100, "undergraduate": 18000},
+      "acceptance_rate": 0.21,
+      "admissions": {
+        "in_state_acceptance_rate": 0.30,
+        "out_of_state_acceptance_rate": 0.13,
+        "test_optional": false,
+        "mid_50_sat": "1350-1520",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.35,
+        "ed_ea_notes": "No ED; does have Early Action for Connecticut residents. Rolling admissions."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Stamford campus)", "Nursing", "Agriculture & Natural Resources", "Computer Science"],
+        "strongest_departments": ["Engineering", "Computer Science", "Chemistry", "Physics", "Biology"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.18, "notes": "School of Engineering is selective (~18%); strong in computer science, electrical engineering"},
+        "business": {"acceptance_rate": 0.21, "notes": "Business school is within overall acceptance range; strong recruiting in Northeast"}
+      },
+      "costs": {"tuition_in_state": 17000, "tuition_out_of_state": 42000, "total_cost_in_state": 40500, "total_cost_out_of_state": 65500, "avg_net_price_in_state": 16000, "avg_net_price_out_of_state": 34000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.86, "avg_starting_salary": 65000, "top_employers": ["Deloitte", "PwC", "Google", "Microsoft", "Amazon"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 18, "athletics": "NCAA D1 AAC (strong basketball)"},
+      "demographics": {"white_pct": 55, "asian_pct": 11, "hispanic_pct": 14, "black_pct": 8, "international_pct": 6},
+      "strategic_insight": "UConn's OOS acceptance of 13% is deceptively selective for public school; in-state (30%) is more accessible. Engineering is selective within overall (18%); computer science outcomes are solid ($80K+). Basketball program has national prestige (NCAA tournament regular); creates strong school identity. College town setting (Storrs) is isolated but creates tight undergraduate community. EA option for CT residents creates procedural advantage. Net price for OOS ($34K) is reasonable; in-state ($16K) is excellent. Best strategic: CT residents should use EA for advantage; OOS engineering applicants should understand competitive admissions. Engineering pipeline is strong; business recruiting solid. Not recommended for students seeking vibrant college town or diverse campus (55% white is notably homogeneous). Basketball culture dominates social scene."
+    },
+    {
+      "name": "Rutgers University - New Brunswick",
+      "type": "public",
+      "location": {"city": "New Brunswick", "state": "NJ"},
+      "us_news_rank_approx": 103,
+      "enrollment": {"total": 47500, "undergraduate": 31000},
+      "acceptance_rate": 0.28,
+      "admissions": {
+        "in_state_acceptance_rate": 0.35,
+        "out_of_state_acceptance_rate": 0.22,
+        "test_optional": false,
+        "mid_50_sat": "1300-1490",
+        "mid_50_act": "29-33",
+        "yield_rate": 0.25,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Rutgers School of Business)", "Computer Science", "Pharmacy", "Pre-med"],
+        "strongest_departments": ["Engineering", "Computer Science", "Chemistry", "Physics", "Biological Sciences"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1",
+        "research_funding": "$750M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.24, "notes": "School of Engineering is slightly less selective than overall; strong in computer/electrical engineering"},
+        "business": {"acceptance_rate": 0.28, "notes": "Business school is within overall acceptance range"}
+      },
+      "costs": {"tuition_in_state": 15500, "tuition_out_of_state": 38000, "total_cost_in_state": 39000, "total_cost_out_of_state": 62000, "avg_net_price_in_state": 14000, "avg_net_price_out_of_state": 32000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.85, "avg_starting_salary": 64000, "top_employers": ["Google", "Microsoft", "Amazon", "Deloitte", "JPMorgan Chase"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 18, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 36, "asian_pct": 27, "hispanic_pct": 19, "black_pct": 9, "international_pct": 11},
+      "strategic_insight": "Rutgers' 28% acceptance is accessible for public school; OOS (22%) is notable advantage for New Jersey students. Large size (31K undergrads) dilutes undergraduate experience. Engineering and CS outcomes are solid; computer engineers report $80K+ starting salaries. Research funding ($750M) is exceptional; research opportunities available even for undergrads. New Jersey location provides NYC internship access without major city tuition costs. Net price for OOS ($32K) is reasonable; in-state ($14K) is excellent value. Best strategic: NJ residents for exceptional value; OOS engineering/CS applicants should consider cost-benefit versus private alternatives. Greek life (18%) is moderate. Graduation rate of 85% suggests some attrition. Large flagship feel may not appeal to students seeking tight community. Most valuable for in-state students or OOS seeking STEM outcomes at public school prices."
+    },
+    {
+      "name": "Arizona State University",
+      "type": "public",
+      "location": {"city": "Tempe", "state": "AZ"},
+      "us_news_rank_approx": 121,
+      "enrollment": {"total": 80400, "undergraduate": 52000},
+      "acceptance_rate": 0.32,
+      "admissions": {
+        "in_state_acceptance_rate": 0.40,
+        "out_of_state_acceptance_rate": 0.25,
+        "test_optional": true,
+        "mid_50_sat": "1240-1410",
+        "mid_50_act": "27-31",
+        "yield_rate": 0.40,
+        "ed_ea_notes": "No ED; no EA. Rolling admissions from October onwards."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Carey)", "Computer Science", "Sustainability", "Supply Chain Management"],
+        "strongest_departments": ["Engineering", "Computer Science", "Business", "Chemistry", "Physics"],
+        "student_faculty_ratio": "23:1",
+        "research_tier": "R1",
+        "research_funding": "$680M annual research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.30, "notes": "College of Engineering is within overall acceptance range; strong in computer/electrical engineering"},
+        "business": {"acceptance_rate": 0.32, "notes": "Carey School of Business is within overall acceptance range; strong recruiting to tech/finance"}
+      },
+      "costs": {"tuition_in_state": 11500, "tuition_out_of_state": 33000, "total_cost_in_state": 35000, "total_cost_out_of_state": 57000, "avg_net_price_in_state": 10000, "avg_net_price_out_of_state": 28000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.82, "avg_starting_salary": 61000, "top_employers": ["Microsoft", "Google", "Amazon", "Apple", "Intel"]},
+      "campus": {"setting": "college_town", "greek_life_pct": 16, "athletics": "NCAA D1 Pac-12 (strong football/basketball)"},
+      "demographics": {"white_pct": 48, "asian_pct": 12, "hispanic_pct": 27, "black_pct": 3, "international_pct": 10},
+      "strategic_insight": "ASU's 32% acceptance is accessible; test-optional status is significant lever. Massive size (52K undergrads) creates research university feel rather than traditional college. Tempe location is warm weather/party culture. Business school has solid recruiting pipeline; engineering outcomes reasonable ($75K+ for CS engineers). Graduation rate of 82% is lowest in cohort; suggests significant attrition. Research opportunities abundant due to massive funding ($680M). Net price is exceptional ($10-28K). Test-optional status helps standardized-test-weak applicants. Best strategic: Arizona residents for exceptional value; OOS students should understand that $28K net price might not compensate for large class sizes and lower graduation rate. Engineering/business outcomes justify cost; liberal arts experience will be limited. Strong athletics (football/basketball) create school spirit. Hispanic representation (27%) is notable. Most appealing to STEM-focused students unconcerned with undergraduate intimacy."
+    }
+  ]
+}

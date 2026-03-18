@@ -1,0 +1,685 @@
+{
+  "universities": [
+    {
+      "name": "Harvard University",
+      "type": "private",
+      "location": {"city": "Cambridge", "state": "MA"},
+      "us_news_rank_approx": 2,
+      "enrollment": {"total": 23500, "undergraduate": 6700},
+      "acceptance_rate": 0.034,
+      "admissions": {
+        "ed_rate": 0.12,
+        "ea_rate": null,
+        "rd_rate": 0.023,
+        "ed_advantage_notes": "ED commitment is extremely valuable—roughly 5.2x RD acceptance rate. ~35% of class fills via ED.",
+        "test_optional": false,
+        "mid_50_sat": "1490-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.84
+      },
+      "academics": {
+        "notable_programs": ["Medicine", "Law", "Business (HBS)", "Government", "Applied Math"],
+        "strongest_departments": ["Science", "Engineering", "Economics", "History", "Classics"],
+        "student_faculty_ratio": "7:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.04, "notes": "SEAS accepts ~4% as standalone; strategic recruiting for female engineers"},
+        "business": {"acceptance_rate": null, "notes": "HBS is grad-only; undergrad business coursework through Economics concentration"},
+        "cs": {"acceptance_rate": 0.02, "notes": "Joint concentrations in CS + another field are competitive; no pure CS major (CS is secondary field)"}
+      },
+      "costs": {"tuition": 60408, "total_cost": 75600, "avg_net_price": 17000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.98, "avg_starting_salary": 75000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Morgan Stanley", "Bain"]},
+      "campus": {"setting": "urban", "greek_life_pct": 0.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 44, "asian_pct": 23, "hispanic_pct": 10, "black_pct": 13, "international_pct": 12},
+      "strategic_insight": "ED is the most critical lever here—students not choosing ED sacrifice ~80% of already minuscule chances. Harvard's hidden disadvantage: legacy preference is meaningful but less impactful than peer schools; strong first-gen support exists but admit rate for non-legacy/non-URM is under 2%. Focus RD applications on rare, demonstrable leadership or research impact that's genuinely uncommon."
+    },
+    {
+      "name": "Yale University",
+      "type": "private",
+      "location": {"city": "New Haven", "state": "CT"},
+      "us_news_rank_approx": 3,
+      "enrollment": {"total": 13000, "undergraduate": 5400},
+      "acceptance_rate": 0.044,
+      "admissions": {
+        "ed_rate": 0.14,
+        "ea_rate": null,
+        "rd_rate": 0.031,
+        "ed_advantage_notes": "ED boost is substantial (~4.5x RD rate). ~25-30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.76
+      },
+      "academics": {
+        "notable_programs": ["Drama", "Music", "International Studies", "Environmental Studies", "Political Science"],
+        "strongest_departments": ["Humanities", "Social Sciences", "Engineering", "Chemistry", "Physics"],
+        "student_faculty_ratio": "5:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.05, "notes": "Engineering & Applied Science school enrolls ~10% of undergrads; slightly less selective than general admit but still highly competitive"},
+        "business": {"acceptance_rate": null, "notes": "No undergrad business school; economics concentration is proxy; SOM is grad-only"},
+        "cs": {"acceptance_rate": 0.03, "notes": "Computer Science is increasingly popular but not a separate school; applies to College admissions"}
+      },
+      "costs": {"tuition": 63550, "total_cost": 78950, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 72000, "top_employers": ["McKinsey", "Goldman Sachs", "Deloitte", "Google", "Morgan Stanley"]},
+      "campus": {"setting": "urban", "greek_life_pct": 0.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 46, "asian_pct": 21, "hispanic_pct": 11, "black_pct": 12, "international_pct": 11},
+      "strategic_insight": "Yale's residential college system is not just housing—it creates subculture identity and affects social experience significantly. Legacy preference is more explicit here than Harvard; approximately 20-25% of admits have family ties. For RD, extreme differentiation is required; 'why Yale' essays must reference specific residential college, specific programs (Yale-NUS, SOAS exchange, drama scene), and genuine engagement. Environmental Studies and Drama are less-reported strengths that may have slightly better odds for non-legacy applicants."
+    },
+    {
+      "name": "Princeton University",
+      "type": "private",
+      "location": {"city": "Princeton", "state": "NJ"},
+      "us_news_rank_approx": 1,
+      "enrollment": {"total": 9200, "undergraduate": 5300},
+      "acceptance_rate": 0.031,
+      "admissions": {
+        "ed_rate": 0.15,
+        "ea_rate": null,
+        "rd_rate": 0.017,
+        "ed_advantage_notes": "ED acceptance is ~9x RD rate—most extreme ED advantage in Ivy League. ~33% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1500-1570",
+        "mid_50_act": "34-35",
+        "yield_rate": 0.82
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Public Affairs (Woodrow Wilson)", "Physics", "Mathematics", "Economics"],
+        "strongest_departments": ["Engineering", "Mathematics", "Physics", "Chemistry", "Molecular Biology"],
+        "student_faculty_ratio": "6:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.025, "notes": "School of Engineering is more selective than general admission (~2.5% vs 3.1%); strong feeder to tech"},
+        "business": {"acceptance_rate": null, "notes": "No undergrad business school; no business concentration. Economics is standard proxy; PWP is grad-only"},
+        "cs": {"acceptance_rate": 0.024, "notes": "CS is top-tier selective program (~2.4% acceptance within Engineering discipline)"}
+      },
+      "costs": {"tuition": 60910, "total_cost": 77160, "avg_net_price": 16000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.98, "avg_starting_salary": 78000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Two Sigma", "Bridgewater"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 42, "asian_pct": 27, "hispanic_pct": 9, "black_pct": 11, "international_pct": 12},
+      "strategic_insight": "ED is mandatory strategy here—RD odds are under 2%, making non-binding ED or RD essentially a lottery. Princeton's engineering school is genuinely more selective; if you're borderline for general admission but stronger in STEM, applying to Engineering is counterintuitive tactical play. The residential college system is real but less pronounced than Yale; physics and math departments are world-class and offer research opportunities for undergrads that rival PhD programs at many universities."
+    },
+    {
+      "name": "Columbia University",
+      "type": "private",
+      "location": {"city": "New York", "state": "NY"},
+      "us_news_rank_approx": 4,
+      "enrollment": {"total": 32000, "undergraduate": 8000},
+      "acceptance_rate": 0.036,
+      "admissions": {
+        "ed_rate": 0.13,
+        "ea_rate": null,
+        "rd_rate": 0.025,
+        "ed_advantage_notes": "ED boost is ~5.2x RD acceptance. ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1490-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.80
+      },
+      "academics": {
+        "notable_programs": ["Core Curriculum (Great Books)", "Journalism (SIPA)", "School of Engineering", "International Studies", "Neuroscience"],
+        "strongest_departments": ["English", "History", "Political Science", "Engineering", "Physics"],
+        "student_faculty_ratio": "6:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.035, "notes": "Fu School of Engineering is roughly equivalent selectivity to general Columbia; no meaningful separate advantage/disadvantage"},
+        "business": {"acceptance_rate": null, "notes": "CBS is grad-only; Economics major is common proxy but no undergrad business school"},
+        "cs": {"acceptance_rate": 0.03, "notes": "CS major available through School of Engineering; competitive but slightly less selective than engineering overall"}
+      },
+      "costs": {"tuition": 64912, "total_cost": 80000, "avg_net_price": 18500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 73000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Morgan Stanley", "Deloitte"]},
+      "campus": {"setting": "urban", "greek_life_pct": 0.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 40, "asian_pct": 27, "hispanic_pct": 12, "black_pct": 11, "international_pct": 12},
+      "strategic_insight": "Columbia's Core Curriculum is non-negotiable and must be genuinely appealing in your application—too many applicants claim to love it without specificity. Location in Manhattan is major draw but also a double-edged sword; housing shortage, expensive, but unparalleled internship access. Engineering applicants should know Fu is smaller and somewhat less prestigious than Ivy peer engineering schools, creating potential opportunity for stronger engineering students. Journalism interest is common but overplayed; SIPA is grad-only despite high visibility."
+    },
+    {
+      "name": "University of Pennsylvania",
+      "type": "private",
+      "location": {"city": "Philadelphia", "state": "PA"},
+      "us_news_rank_approx": 6,
+      "enrollment": {"total": 25000, "undergraduate": 10000},
+      "acceptance_rate": 0.036,
+      "admissions": {
+        "ed_rate": 0.16,
+        "ea_rate": null,
+        "rd_rate": 0.023,
+        "ed_advantage_notes": "ED boost is ~7x RD acceptance—among the strongest ED advantages. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.74
+      },
+      "academics": {
+        "notable_programs": ["Wharton School of Business", "School of Engineering (Penn Engineering)", "Pre-Med", "Nursing (Penn Nursing)"],
+        "strongest_departments": ["Business", "Engineering", "Economics", "Chemistry", "Biology"],
+        "student_faculty_ratio": "7:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.073, "notes": "Penn Engineering accepts ~7.3% vs 3.6% overall—significantly less selective than general admission. Major opportunity for engineering-focused applicants"},
+        "business": {"acceptance_rate": 0.083, "notes": "Wharton accepts ~8.3% vs 3.6% overall—even less selective than Engineering. Earliest possible application is ideal; very popular but genuinely more accessible than general admit"},
+        "cs": {"acceptance_rate": 0.06, "notes": "CS within Engineering; not separately tracked but ~6% estimated acceptance. Wharton also offers Digital Entrepreneurship track"}
+      },
+      "costs": {"tuition": 65540, "total_cost": 81000, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 79000, "top_employers": ["Goldman Sachs", "JPMorgan", "Blackstone", "Deloitte", "Google"]},
+      "campus": {"setting": "urban", "greek_life_pct": 8.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 39, "asian_pct": 31, "hispanic_pct": 10, "black_pct": 9, "international_pct": 13},
+      "strategic_insight": "Penn's major secret: Wharton and Engineering are measurably less selective than general admission (3.6%), making them genuine strategic advantages if you fit those schools. Wharton ED acceptance is ~16%, enabling much better odds than general admit RD. However, 'Penn for networking' is insufficient for essays—admissions officers see this constantly. If applying to Wharton, demonstrate specific business acumen (founded company, investment portfolio, business plan with data). Engineering students have best tech recruiting pipeline. Cross-school coursework is relatively easy, enabling some optimization for dual-track students."
+    },
+    {
+      "name": "Brown University",
+      "type": "private",
+      "location": {"city": "Providence", "state": "RI"},
+      "us_news_rank_approx": 9,
+      "enrollment": {"total": 10200, "undergraduate": 6800},
+      "acceptance_rate": 0.050,
+      "admissions": {
+        "ed_rate": 0.20,
+        "ea_rate": null,
+        "rd_rate": 0.032,
+        "ed_advantage_notes": "ED advantage is ~6.25x RD rate. ~27% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1470-1550",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.70
+      },
+      "academics": {
+        "notable_programs": ["Open Curriculum", "Applied Mathematics", "Biomedical Engineering", "Pre-Med", "Public Health"],
+        "strongest_departments": ["Engineering", "Mathematics", "Biology", "Chemistry", "Physics"],
+        "student_faculty_ratio": "7:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.062, "notes": "School of Engineering accepts ~6.2% vs 5.0% general; slightly less selective. Strong co-op program with Brown corporate partners"},
+        "business": {"acceptance_rate": null, "notes": "No separate business school; Business concentration available through other schools"},
+        "cs": {"acceptance_rate": 0.048, "notes": "CS concentrations within Engineering and other schools; roughly equivalent to general admit rate"}
+      },
+      "costs": {"tuition": 64724, "total_cost": 80490, "avg_net_price": 17500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 67000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Morgan Stanley", "Accenture"]},
+      "campus": {"setting": "urban", "greek_life_pct": 4.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 43, "asian_pct": 23, "hispanic_pct": 11, "black_pct": 11, "international_pct": 13},
+      "strategic_insight": "Brown's Open Curriculum is genuinely unique among Ivies—if you thrive with academic autonomy, this is a real differentiator. However, 'I love creative freedom' is generic; successful essays articulate specific intellectual sequences you want to pursue. Engineering is slightly less competitive; pre-med is a strong pipeline. Brown's yield is lowest of Ivies (70%) because of tufts, Cornell competition; less legacy-heavy than other Ivies, making ED more important for admitted students but slightly better odds overall for non-legacy applicants than peer schools."
+    },
+    {
+      "name": "Dartmouth College",
+      "type": "private",
+      "location": {"city": "Hanover", "state": "NH"},
+      "us_news_rank_approx": 8,
+      "enrollment": {"total": 6900, "undergraduate": 4200},
+      "acceptance_rate": 0.047,
+      "admissions": {
+        "ed_rate": 0.22,
+        "ea_rate": null,
+        "rd_rate": 0.032,
+        "ed_advantage_notes": "ED advantage is ~6.9x RD rate—significant boost. ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1470-1550",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.75
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Mathematics", "Physics", "Chemistry", "Environmental Studies"],
+        "strongest_departments": ["STEM fields", "Environmental Sciences", "Classics", "Government", "Native American Studies"],
+        "student_faculty_ratio": "6:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.058, "notes": "Thayer School of Engineering accepts ~5.8% vs 4.7% overall; slightly less selective but strong reputation"},
+        "business": {"acceptance_rate": null, "notes": "No business school; Tuck is grad-only; economics and business analysis concentrations available"},
+        "cs": {"acceptance_rate": 0.04, "notes": "CS emphasis within Engineering; strong offerings but not separately tracked"}
+      },
+      "costs": {"tuition": 64356, "total_cost": 80000, "avg_net_price": 17000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 68000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Deloitte", "Amazon"]},
+      "campus": {"setting": "rural", "greek_life_pct": 68.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 48, "asian_pct": 18, "hispanic_pct": 9, "black_pct": 9, "international_pct": 10},
+      "strategic_insight": "Dartmouth's 68% Greek life participation means this is a genuine lifestyle choice, not just weekend option—essays should demonstrate comfort with close-knit, outdoorsy community culture if not authentic. Rural location significantly impacts experience; outdoor access is real differentiator but also requires genuine interest. Quarter system is unusual (4 10-week terms + flexibility) and allows off-campus experiences; if highlighting this, explain your specific term-away plan. Legacy rates are highest among Ivies; first-gen and geographic diversity are real advantages. Engineering at Thayer is reputable but less recruited-from than peer schools."
+    },
+    {
+      "name": "Cornell University",
+      "type": "private",
+      "location": {"city": "Ithaca", "state": "NY"},
+      "us_news_rank_approx": 12,
+      "enrollment": {"total": 25000, "undergraduate": 15200},
+      "acceptance_rate": 0.070,
+      "admissions": {
+        "ed_rate": 0.25,
+        "ea_rate": null,
+        "rd_rate": 0.043,
+        "ed_advantage_notes": "ED advantage is ~5.8x RD rate. ~20% of class from ED. Varies significantly by school.",
+        "test_optional": false,
+        "mid_50_sat": "1430-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.65
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Hotel School", "Johnson School (grad)", "Agriculture", "Veterinary Medicine"],
+        "strongest_departments": ["Engineering", "Chemistry", "Physics", "Materials Science", "Hotel Administration"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.032, "notes": "College of Engineering accepts ~3.2% vs 7% overall—highly selective. Top-tier program with exceptional recruitment."},
+        "business": {"acceptance_rate": 0.118, "notes": "School of Hotel Administration accepts ~12% vs 7% overall—most accessible Cornell school. Non-traditional but strong outcomes."},
+        "cs": {"acceptance_rate": 0.028, "notes": "CS in Engineering is extremely selective (~2.8%). One of top 3 CS programs in US."}
+      },
+      "costs": {"tuition": 62180, "total_cost": 81500, "avg_net_price": 19500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.95, "avg_starting_salary": 70000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "JPMorgan", "Microsoft"]},
+      "campus": {"setting": "rural", "greek_life_pct": 32.0, "athletics": "NCAA D1 Ivy League"},
+      "demographics": {"white_pct": 42, "asian_pct": 28, "hispanic_pct": 10, "black_pct": 8, "international_pct": 15},
+      "strategic_insight": "Cornell is the most variable Ivy—Engineering (3.2%) is ~2.2x more selective than overall rate, while Hotel School (12%) is more accessible. Strategic school choice is critical: if you're strong in STEM, apply Engineering; if more liberal arts inclined, College of Arts & Sciences (6.8%). Ithaca location filters applicants significantly; commitment messaging is important. Cornell is less legacy-driven than other Ivies, making it relatively better for non-legacy applicants. Agricultural programs (hidden gem) and Vet School pathway are less-known options. Yield is lowest among Ivies, indicating admitted students choose elsewhere more often."
+    },
+    {
+      "name": "Stanford University",
+      "type": "private",
+      "location": {"city": "Stanford", "state": "CA"},
+      "us_news_rank_approx": 5,
+      "enrollment": {"total": 17000, "undergraduate": 6800},
+      "acceptance_rate": 0.036,
+      "admissions": {
+        "ed_rate": null,
+        "ea_rate": 0.14,
+        "rd_rate": 0.023,
+        "ed_advantage_notes": "No ED; EA acceptance is ~14% vs 2.3% RD—extreme advantage to EA. ~45% of class from EA.",
+        "test_optional": true,
+        "mid_50_sat": "1470-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.81
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Business (GSB)", "Medicine", "Humanities"],
+        "strongest_departments": ["Engineering", "Computer Science", "Physics", "Chemistry", "Biomedical Sciences"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.035, "notes": "School of Engineering accepts ~3.5% vs 3.6% overall; essentially same selectivity as general admission"},
+        "business": {"acceptance_rate": null, "notes": "GSB is grad-only; undergrads major in Economics or other fields"},
+        "cs": {"acceptance_rate": 0.026, "notes": "CS within Engineering is extremely selective (~2.6%); one of most competitive CS programs in world"}
+      },
+      "costs": {"tuition": 64800, "total_cost": 80000, "avg_net_price": 20000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 81000, "top_employers": ["Google", "Apple", "Microsoft", "Facebook/Meta", "Amazon"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 22.0, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 33, "asian_pct": 34, "hispanic_pct": 16, "black_pct": 6, "international_pct": 14},
+      "strategic_insight": "Stanford's EA (not ED) is critical: 14% EA vs 2.3% RD makes RD odds effectively lottery (1/43). EA application is almost mandatory. Stanford's location in Silicon Valley drives recruiting—tech companies recruit heavily, and proximity creates internship advantage. CS is exceptionally selective (2.6%), making it only viable for genuine top-tier applicants; other engineering disciplines more accessible. Test-optional is real (though most admits submit); first-gen, geographic diversity (especially non-CA), and URM status are meaningful advantages. Entrepreneurship is normalized here—side projects and execution matter more than other schools."
+    },
+    {
+      "name": "Massachusetts Institute of Technology",
+      "type": "private",
+      "location": {"city": "Cambridge", "state": "MA"},
+      "us_news_rank_approx": 2,
+      "enrollment": {"total": 1130, "undergraduate": 4600},
+      "acceptance_rate": 0.029,
+      "admissions": {
+        "ed_rate": 0.10,
+        "ea_rate": null,
+        "rd_rate": 0.023,
+        "ed_advantage_notes": "ED acceptance is ~4.3x RD rate. ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1500-1570",
+        "mid_50_act": "34-35",
+        "yield_rate": 0.78
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Physics", "Mathematics", "Chemistry"],
+        "strongest_departments": ["Engineering", "Computer Science", "Physics", "Aeronautics", "Materials Science"],
+        "student_faculty_ratio": "3:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.027, "notes": "Engineering dominates MIT culture; all disciplines (mechanical, electrical, civil, etc.) are world-class"},
+        "business": {"acceptance_rate": null, "notes": "Sloan is grad-only; undergrads pursue engineering + management or economics"},
+        "cs": {"acceptance_rate": 0.018, "notes": "CS is among most selective MIT programs (~1.8%); exceptional depth of study"}
+      },
+      "costs": {"tuition": 63688, "total_cost": 80000, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 85000, "top_employers": ["Google", "Goldman Sachs", "Microsoft", "Amazon", "Apple"]},
+      "campus": {"setting": "urban", "greek_life_pct": 33.0, "athletics": "NCAA D1"},
+      "demographics": {"white_pct": 32, "asian_pct": 32, "hispanic_pct": 16, "black_pct": 6, "international_pct": 16},
+      "strategic_insight": "MIT admits almost exclusively based on math/science ability + demonstrated problem-solving; essays and ECs are secondary unless they show genuine technical depth. Legacy is less meaningful here than other elites; gender (female in STEM) is genuine advantage. ED is strategic if committed; RD odds are 2.3%, essentially lottery. Residential system is tight-knit with strong house identity; fraternities/sororities are prominent (33%) but optional. Different from other elites: MIT culture celebrates hard work and nerdy depth; applicants should emphasize genuine curiosity in technical problems, not prestige. First-gen and geographic diversity are appreciated advantages."
+    },
+    {
+      "name": "California Institute of Technology",
+      "type": "private",
+      "location": {"city": "Pasadena", "state": "CA"},
+      "us_news_rank_approx": 7,
+      "enrollment": {"total": 1280, "undergraduate": 950},
+      "acceptance_rate": 0.028,
+      "admissions": {
+        "ed_rate": 0.089,
+        "ea_rate": null,
+        "rd_rate": 0.022,
+        "ed_advantage_notes": "ED boost is ~4x RD rate. ~15% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1510-1580",
+        "mid_50_act": "34-35",
+        "yield_rate": 0.77
+      },
+      "academics": {
+        "notable_programs": ["Physics", "Engineering", "Astronomy", "Chemistry", "Biology"],
+        "strongest_departments": ["Physics", "Astronomy", "Chemistry", "Engineering (all disciplines)", "Mathematics"],
+        "student_faculty_ratio": "3:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.027, "notes": "Engineering is equivalent selectivity to overall; all concentrations (mechanical, electrical, civil, chemical) world-class"},
+        "business": {"acceptance_rate": null, "notes": "No business school; economics available but not business-focused"},
+        "cs": {"acceptance_rate": 0.02, "notes": "CS concentration within Engineering; extremely competitive (~2%)"}
+      },
+      "costs": {"tuition": 63738, "total_cost": 80000, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 82000, "top_employers": ["Google", "Microsoft", "NASA", "SpaceX", "Tesla"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 60.0, "athletics": "NCAA D3"},
+      "demographics": {"white_pct": 30, "asian_pct": 41, "hispanic_pct": 14, "black_pct": 3, "international_pct": 13},
+      "strategic_insight": "Caltech is narrower mission than MIT—heavy physics/astronomy/engineering focus, lighter on humanities/social sciences. Essays must demonstrate genuine passion for fundamental physics or engineering; admissions reject 'smart kids who like science' in favor of problem-solvers obsessed with theory or building. Greek life is ubiquitous (60%); social life revolves around houses; applicants uncomfortable with this should reconsider. Unique advantage: undergraduates conduct research directly with faculty starting freshman year; if you've done physics/engineering research, emphasize that heavily. No legacy preference reported; gender (female in STEM) is advantage. Smallest student body of elite colleges creates unique culture—not for everyone."
+    },
+    {
+      "name": "Duke University",
+      "type": "private",
+      "location": {"city": "Durham", "state": "NC"},
+      "us_news_rank_approx": 10,
+      "enrollment": {"total": 16800, "undergraduate": 6700},
+      "acceptance_rate": 0.044,
+      "admissions": {
+        "ed_rate": 0.17,
+        "ea_rate": null,
+        "rd_rate": 0.031,
+        "ed_advantage_notes": "ED boost is ~5.5x RD rate. ~33% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1470-1550",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.70
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Medicine (Pratt)", "Business (Fuqua)", "Trinity College of Arts & Sciences", "Pre-Med"],
+        "strongest_departments": ["Engineering", "Chemistry", "Biology", "Biomedical Engineering", "Neuroscience"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.039, "notes": "Pratt School of Engineering accepts ~3.9% vs 4.4% overall; roughly equivalent selectivity"},
+        "business": {"acceptance_rate": null, "notes": "Fuqua is grad-only; undergrads pursue business concentration or dual-degree path"},
+        "cs": {"acceptance_rate": 0.035, "notes": "CS through Pratt Engineering; competitive but not separately tracked"}
+      },
+      "costs": {"tuition": 63850, "total_cost": 80000, "avg_net_price": 19500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 71000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Amazon", "Deloitte"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 45.0, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 45, "asian_pct": 18, "hispanic_pct": 11, "black_pct": 12, "international_pct": 11},
+      "strategic_insight": "Duke's yield is 70%—lower than peer schools—making admitted students more likely to choose elsewhere; this suggests legacy-heavy admits. Non-legacy ED is strategic lever here. Strong pre-med pipeline and medical school acceptance rates; if pre-med, Duke is legitimate advantage. Trinity College (Arts & Sciences) and Pratt (Engineering) have different cultures; Trinity is more traditional liberal arts, Pratt more pre-professional. Athletics culture is significant (45% Greek, sports-heavy); if you're not into Duke basketball or partying, messaging should reflect alternative social channels. Biomedical Engineering is increasingly popular; other engineering disciplines have better accessibility. Ranked highly but attracts fewer RD admits, suggesting ED is more important than at peer institutions."
+    },
+    {
+      "name": "Johns Hopkins University",
+      "type": "private",
+      "location": {"city": "Baltimore", "state": "MD"},
+      "us_news_rank_approx": 7,
+      "enrollment": {"total": 27000, "undergraduate": 6500},
+      "acceptance_rate": 0.058,
+      "admissions": {
+        "ed_rate": 0.15,
+        "ea_rate": null,
+        "rd_rate": 0.042,
+        "ed_advantage_notes": "ED boost is ~3.6x RD rate. ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1450-1540",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.60
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Pre-Med", "Molecular Biology", "Physics", "Public Health (Bloomberg)"],
+        "strongest_departments": ["Engineering", "Medicine", "Biology", "Chemistry", "Biomedical Engineering"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.062, "notes": "Whiting School of Engineering accepts ~6.2% vs 5.8% overall; slightly less selective"},
+        "business": {"acceptance_rate": null, "notes": "No undergrad business school; Carey is grad-only"},
+        "cs": {"acceptance_rate": 0.055, "notes": "CS within Engineering; roughly equivalent to engineering acceptance rate"}
+      },
+      "costs": {"tuition": 61750, "total_cost": 77970, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.95, "avg_starting_salary": 68000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "IBM", "Microsoft"]},
+      "campus": {"setting": "urban", "greek_life_pct": 25.0, "athletics": "NCAA D1 Patriot League"},
+      "demographics": {"white_pct": 38, "asian_pct": 26, "hispanic_pct": 11, "black_pct": 9, "international_pct": 17},
+      "strategic_insight": "JHU's yield is lowest among peer schools (60%), indicating admitted students frequently choose alternatives; pre-med reputation is accurate but also commodifies application pool. Pre-med and engineering applicants have better outcomes; liberal arts applicants should find other schools. Medical school acceptance rates are strong; if pre-med, JHU is legitimate pipeline. Baltimore location is urban but less attractive than top-tier cities; this filters applicants, making RD odds slightly better than at peer schools (4.2% vs 2.3% at Stanford). Research opportunities are genuine—undergrads can join faculty labs easily. Bloomberg School of Public Health is grad-only but creates health/science ecosystem. Whiting Engineering is accessible for students who don't qualify for MIT/Caltech."
+    },
+    {
+      "name": "Northwestern University",
+      "type": "private",
+      "location": {"city": "Evanston", "state": "IL"},
+      "us_news_rank_approx": 9,
+      "enrollment": {"total": 20000, "undergraduate": 8400},
+      "acceptance_rate": 0.063,
+      "admissions": {
+        "ed_rate": 0.21,
+        "ea_rate": null,
+        "rd_rate": 0.037,
+        "ed_advantage_notes": "ED boost is ~5.7x RD rate. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1440-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.68
+      },
+      "academics": {
+        "notable_programs": ["Engineering (McCormick)", "Kellogg (grad MBA)", "School of Communication", "Medill (Journalism)", "SESP"],
+        "strongest_departments": ["Engineering", "Journalism", "Communication", "Chemistry", "Physics"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.048, "notes": "McCormick School of Engineering accepts ~4.8% vs 6.3% overall; more selective than general admission"},
+        "business": {"acceptance_rate": null, "notes": "Kellogg is grad-only; Medill dominates undergrad business/media interests"},
+        "cs": {"acceptance_rate": 0.045, "notes": "CS through McCormick; slightly less selective than overall engineering"}
+      },
+      "costs": {"tuition": 63468, "total_cost": 80000, "avg_net_price": 19500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 69000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Deloitte", "Amazon"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 40.0, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 41, "asian_pct": 19, "hispanic_pct": 10, "black_pct": 7, "international_pct": 13},
+      "strategic_insight": "Northwestern is less selective than peer Ivies (6.3% vs 3-4%) but highly strategic by school: McCormick Engineering (4.8%) is more selective than overall admit, while Medill (communication/journalism) and SESP (education/social policy) are less selective than general admission. School choice matters significantly. Communication/Medill is major draw; 'I love journalism' is common, so specificity is crucial—what beats? What story will you pursue? ED is valuable (21% ED vs 3.7% RD); non-ED applicants at significant disadvantage. Evanston location is suburban but near Chicago; access to internships is meaningful. Yield is 68%, lower than peer schools, suggesting legacy-heavy admits. Geographic diversity and first-gen status are relative advantages."
+    },
+    {
+      "name": "University of Chicago",
+      "type": "private",
+      "location": {"city": "Chicago", "state": "IL"},
+      "us_news_rank_approx": 11,
+      "enrollment": {"total": 17100, "undergraduate": 7200},
+      "acceptance_rate": 0.048,
+      "admissions": {
+        "ed_rate": 0.165,
+        "ea_rate": null,
+        "rd_rate": 0.038,
+        "ed_advantage_notes": "ED boost is ~4.3x RD rate. ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1440-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.72
+      },
+      "academics": {
+        "notable_programs": ["Economics", "Booth (grad MBA)", "Physics", "Law School", "Divinity School"],
+        "strongest_departments": ["Economics", "Physics", "Chemistry", "Mathematics", "Political Science"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": null, "notes": "No standalone engineering school; engineering coursework available through College"},
+        "business": {"acceptance_rate": null, "notes": "Booth is grad-only; undergrads pursue economics concentration"},
+        "cs": {"acceptance_rate": 0.04, "notes": "CS available within College; strong reputation, roughly equivalent selectivity to general admission"}
+      },
+      "costs": {"tuition": 65070, "total_cost": 81500, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 72000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Deloitte", "Microsoft"]},
+      "campus": {"setting": "urban", "greek_life_pct": 19.0, "athletics": "NCAA D3 UAA"},
+      "demographics": {"white_pct": 36, "asian_pct": 23, "hispanic_pct": 12, "black_pct": 8, "international_pct": 15},
+      "strategic_insight": "UChicago's culture is intense intellectual rigor—'test optional' here is ironic because success requires proof of quantitative ability. Economics pipeline is exceptional; if interested in econ, this is legitimate advantage. The core curriculum and 'where fun goes to die' reputation are real; essays must demonstrate genuine love of intellectual difficulty, not just prestige-seeking. Uncommon supplement essays require genuine intellectual reflection; generic 'challenge' essays fail. First-gen and international student support is strong, making these groups advantaged. Physics is world-class but less of recruiting pipeline than economics. D3 athletics means no scholarship advantage but also no football culture distortion. Yield is 72%; less legacy-heavy than peer institutions in our sense, making ED slightly more valuable strategically."
+    },
+    {
+      "name": "Georgetown University",
+      "type": "private",
+      "location": {"city": "Washington", "state": "DC"},
+      "us_news_rank_approx": 15,
+      "enrollment": {"total": 19200, "undergraduate": 7600},
+      "acceptance_rate": 0.062,
+      "admissions": {
+        "ed_rate": 0.16,
+        "ea_rate": null,
+        "rd_rate": 0.040,
+        "ed_advantage_notes": "ED boost is ~4x RD rate. ~22% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1410-1520",
+        "mid_50_act": "32-34",
+        "yield_rate": 0.74
+      },
+      "academics": {
+        "notable_programs": ["International Relations", "Government", "McDonough School of Business", "Pre-Med", "Foreign Service"],
+        "strongest_departments": ["Government", "International Relations", "Economics", "Biology", "Chemistry"],
+        "student_faculty_ratio": "11:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": null, "notes": "No engineering school at undergraduate level"},
+        "business": {"acceptance_rate": 0.098, "notes": "McDonough School of Business accepts ~9.8% vs 6.2% overall—more accessible than general admission"},
+        "cs": {"acceptance_rate": null, "notes": "No standalone CS major; computer science available through College"}
+      },
+      "costs": {"tuition": 60888, "total_cost": 77700, "avg_net_price": 20000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.95, "avg_starting_salary": 66000, "top_employers": ["Goldman Sachs", "Deloitte", "McKinsey", "U.S. Department of State", "CIA"]},
+      "campus": {"setting": "urban", "greek_life_pct": 17.0, "athletics": "NCAA D1 Big East"},
+      "acceptance_rate_by_school": "College 3.8%, Foreign Service 4.1%, McDonough 9.8%, Nursing 14%",
+      "demographics": {"white_pct": 44, "asian_pct": 14, "hispanic_pct": 10, "black_pct": 10, "international_pct": 11},
+      "strategic_insight": "Georgetown's acceptance rate varies dramatically by school: McDonough (9.8%) is significantly less selective than College of Arts & Sciences (3.8%), School of Foreign Service (4.1%), or Nursing (14%). If business-inclined, McDonough is strategic advantage. Washington DC location is major draw; internship access is unparalleled for government/policy, making that narrative genuinely valuable. International Relations and Government are dominant; essays claiming IR interest are common and frequently lack depth—specificity is critical. Yield is strong (74%); legacy is meaningful but less extreme than top Ivies. Catholic identity is present but not restrictive. Pre-med pipeline exists but less prominent than Duke/JHU."
+    },
+    {
+      "name": "Vanderbilt University",
+      "type": "private",
+      "location": {"city": "Nashville", "state": "TN"},
+      "us_news_rank_approx": 14,
+      "enrollment": {"total": 13700, "undergraduate": 6900},
+      "acceptance_rate": 0.071,
+      "admissions": {
+        "ed_rate": 0.205,
+        "ea_rate": null,
+        "rd_rate": 0.045,
+        "ed_advantage_notes": "ED boost is ~4.6x RD rate. ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1400-1530",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.72
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Medicine (School of Medicine)", "Owen Graduate School", "Blair School of Music", "Nursing"],
+        "strongest_departments": ["Engineering", "Chemistry", "Biology", "Physics", "Medicine"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.092, "notes": "School of Engineering accepts ~9.2% vs 7.1% overall—less selective than general admission"},
+        "business": {"acceptance_rate": null, "notes": "Owen is grad-only MBA; undergrads pursue finance/business concentrations"},
+        "cs": {"acceptance_rate": 0.085, "notes": "CS within Engineering; roughly equivalent to engineering acceptance rate"}
+      },
+      "costs": {"tuition": 61410, "total_cost": 77850, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 68000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Deloitte", "Amazon"]},
+      "campus": {"setting": "urban", "greek_life_pct": 37.0, "athletics": "NCAA D1 SEC"},
+      "demographics": {"white_pct": 52, "asian_pct": 11, "hispanic_pct": 8, "black_pct": 9, "international_pct": 7},
+      "strategic_insight": "Vanderbilt's engineering school (9.2%) is less selective than overall admission (7.1%), making it a strategic advantage for engineering-interested applicants—unusual among peer schools. ED is important (20.5% ED vs 4.5% RD); non-ED applicants face significant disadvantage. Nashville location is distinctive; if you engage with music/culture honestly, that resonates. SEC athletics culture is strong and divisive—must assess fit carefully. Yield is 72%, moderate for this tier. More regionally concentrated (Southeast) than peer institutions; geographic diversity (especially non-South) is relative advantage. Merit aid is available; some applicants qualify for automatic scholarships based on test scores, reducing need-based aid competition. Pre-med outcomes are strong; nursing school feeds into MD pathway."
+    },
+    {
+      "name": "Rice University",
+      "type": "private",
+      "location": {"city": "Houston", "state": "TX"},
+      "us_news_rank_approx": 17,
+      "enrollment": {"total": 7700, "undergraduate": 4000},
+      "acceptance_rate": 0.073,
+      "admissions": {
+        "ed_rate": 0.205,
+        "ea_rate": null,
+        "rd_rate": 0.045,
+        "ed_advantage_notes": "ED boost is ~4.6x RD rate. ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1410-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.71
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Computer Science", "Physics", "Economics", "Architecture"],
+        "strongest_departments": ["Engineering", "Computer Science", "Physics", "Chemistry", "Economics"],
+        "student_faculty_ratio": "6:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.062, "notes": "School of Engineering accepts ~6.2% vs 7.3% overall; slightly more selective than general admission"},
+        "business": {"acceptance_rate": null, "notes": "Jones is grad-only; undergrads pursue economics or business concentrations"},
+        "cs": {"acceptance_rate": 0.05, "notes": "CS within Engineering; competitive but roughly equivalent to engineering rate"}
+      },
+      "costs": {"tuition": 63830, "total_cost": 80450, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 75000, "top_employers": ["Goldman Sachs", "Google", "McKinsey", "Microsoft", "Amazon"]},
+      "campus": {"setting": "urban", "greek_life_pct": 28.0, "athletics": "NCAA D1 American"},
+      "demographics": {"white_pct": 38, "asian_pct": 28, "hispanic_pct": 20, "black_pct": 6, "international_pct": 14},
+      "strategic_insight": "Rice is exceptional value—smallest elite school we cover with 6:1 student-faculty ratio, exceptional outcomes, yet less competitive than peer schools (7.3% vs 3-4% at top Ivies). Engineering is strong but slightly more selective than general; CS is competitive but accessible relative to MIT/Caltech. Houston location is underrated; energy sector recruiting is genuine, and tech companies increasingly recruit here. ED is strategic (20.5% ED vs 4.5% RD); ED students fill 25% of class. Hispanic representation (20%) is highest among elite schools. Residential college system creates strong community. Yield is 71%, solid for tier. Less regionally concentrated than Vanderbilt, more geographically diverse applicant pool. 'Why Rice' essays often lack specificity; residential college, engineering focus, and Houston tie-ins should be detailed."
+    },
+    {
+      "name": "University of Notre Dame",
+      "type": "private",
+      "location": {"city": "Notre Dame", "state": "IN"},
+      "us_news_rank_approx": 18,
+      "enrollment": {"total": 12800, "undergraduate": 8500},
+      "acceptance_rate": 0.063,
+      "admissions": {
+        "ed_rate": 0.185,
+        "ea_rate": null,
+        "rd_rate": 0.045,
+        "ed_advantage_notes": "ED boost is ~4.1x RD rate. ~28% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1400-1530",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.70
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Mendoza)", "Law School", "Pre-Med", "Physics"],
+        "strongest_departments": ["Engineering", "Business", "Physics", "Chemistry", "Mathematics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.054, "notes": "College of Engineering accepts ~5.4% vs 6.3% overall; slightly more selective"},
+        "business": {"acceptance_rate": 0.102, "notes": "Mendoza College of Business accepts ~10.2% vs 6.3% overall—significantly less selective, strategic advantage"},
+        "cs": {"acceptance_rate": 0.05, "notes": "CS within Engineering; competitive but available"}
+      },
+      "costs": {"tuition": 61685, "total_cost": 77300, "avg_net_price": 17500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 69000, "top_employers": ["Goldman Sachs", "Deloitte", "McKinsey", "Google", "Amazon"]},
+      "campus": {"setting": "rural", "greek_life_pct": 0.0, "athletics": "NCAA D1 Independent (Football)"},
+      "demographics": {"white_pct": 60, "asian_pct": 10, "hispanic_pct": 10, "black_pct": 4, "international_pct": 6},
+      "strategic_insight": "Notre Dame's Mendoza School of Business (10.2%) is significantly less selective than general admission (6.3%), making it a clear strategic advantage for business applicants. Catholic identity is core and non-negotiable; applicants uncomfortable with religious affiliation should avoid. No Greek life (0%) means social life built on dorms, clubs, faith community; assessment of fit is critical. Rural location (South Bend is small) is constraint; outdoor activities and tight campus community are reality. Football culture dominates weekends and donor relations; awareness required but doesn't require sports interest. ED is valuable (18.5% ED vs 4.5% RD). Yield is 70%, strong for tier. Legacy is meaningful. Engineering outcomes are strong; pre-med pipeline exists. First-gen support is improving but still less prominent than at peer institutions."
+    },
+    {
+      "name": "Emory University",
+      "type": "private",
+      "location": {"city": "Atlanta", "state": "GA"},
+      "us_news_rank_approx": 20,
+      "enrollment": {"total": 14900, "undergraduate": 7500},
+      "acceptance_rate": 0.074,
+      "admissions": {
+        "ed_rate": 0.245,
+        "ea_rate": null,
+        "rd_rate": 0.050,
+        "ed_advantage_notes": "ED boost is ~4.9x RD rate. ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1380-1520",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.62
+      },
+      "academics": {
+        "notable_programs": ["Medicine (School of Medicine)", "Business (Goizueta)", "Pre-Med", "Nursing", "International Studies"],
+        "strongest_departments": ["Biology", "Chemistry", "Physics", "Medicine", "Economics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": null, "notes": "No engineering school; engineering coursework available through College"},
+        "business": {"acceptance_rate": 0.077, "notes": "Goizueta School of Business accepts ~7.7% vs 7.4% overall; roughly equivalent selectivity"},
+        "cs": {"acceptance_rate": 0.06, "notes": "CS available through College; competitive but roughly equivalent to general admission"}
+      },
+      "costs": {"tuition": 61520, "total_cost": 77000, "avg_net_price": 19500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 65000, "top_employers": ["Goldman Sachs", "Deloitte", "McKinsey", "Google", "CDC"]},
+      "campus": {"setting": "urban", "greek_life_pct": 32.0, "athletics": "NCAA D1 UAA"},
+      "demographics": {"white_pct": 44, "asian_pct": 16, "hispanic_pct": 11, "black_pct": 14, "international_pct": 10},
+      "strategic_insight": "Emory is least competitive school in our 20-school list (7.4% overall), making it strategic fallback even for very strong applicants. Pre-med and medical school outcomes are strong; medical school acceptance rates exceed peer institutions. ED is highly valuable (24.5% ED vs 5% RD)—non-ED applicants face material disadvantage. Atlanta location offers internship and recruiting access; CDC proximity is unique advantage for public health/medicine students. Yield is lowest in our cohort (62%), indicating admitted students often choose elsewhere; legacy is likely concentrated. Goizueta is roughly equivalent selectivity to general admission (no advantage/disadvantage). Jewish identity is significant part of community culture but not restrictive. D3 athletics means no football distractions. First-gen and racial diversity are relative strengths compared to other elite schools."
+    }
+  ]
+}

@@ -1,0 +1,818 @@
+{
+  "universities": [
+    {
+      "name": "UC Berkeley",
+      "type": "public",
+      "location": {"city": "Berkeley", "state": "CA"},
+      "us_news_rank_approx": 15,
+      "enrollment": {"total": 45900, "undergraduate": 31700},
+      "acceptance_rate": 0.089,
+      "admissions": {
+        "in_state_acceptance_rate": 0.14,
+        "out_of_state_acceptance_rate": 0.03,
+        "test_optional": false,
+        "mid_50_sat": "1410-1560",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.44,
+        "ed_ea_notes": "No binding ED; does have Early Action (EA) for in-state applicants. ~20% of admits apply EA."
+      },
+      "academics": {
+        "notable_programs": ["Engineering (EECS, Civil, Mechanical)", "Physics", "Chemistry", "Molecular & Cell Biology", "Business (Haas—selective admission)"],
+        "strongest_departments": ["Physical Sciences", "Engineering", "Biosciences", "Mathematics", "Computer Science"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "Highest public in US; $841M annual research expenditure"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.05, "notes": "UC Berkeley College of Engineering is vastly oversubscribed; admits ~5% overall but in-state engineers much higher (~12%)"},
+        "business": {"acceptance_rate": 0.13, "notes": "Haas School of Business admission is separate; requires junior transfer or direct admit from pool"},
+        "cs": {"acceptance_rate": 0.02, "notes": "EECS (CS + EE combined) is single most competitive major; <2% acceptance for direct entry"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 38000, "total_cost_out_of_state": 71000, "avg_net_price_in_state": 12000, "avg_net_price_out_of_state": 31000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 71000, "top_employers": ["Google", "Apple", "Microsoft", "Goldman Sachs", "Meta"]},
+      "campus": {"setting": "urban", "greek_life_pct": 12, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 27, "asian_pct": 36, "hispanic_pct": 18, "black_pct": 5, "international_pct": 15},
+      "strategic_insight": "OOS applicants face brutal 3% admit rate; essentially peer to Ivies for non-California students. For in-state: admission is far more achievable (~14%), but major selection is the true bottleneck—EECS admits are capped extremely tight. For engineering OOS, this is harder than MIT. Physics and Math are slightly less impacted. Haas transfer route exists but is also hyper-competitive. Major strength: Berkeley's research opportunities are unmatched among publics; even non-majors can find world-class mentorship in labs. Legacy preference exists but less pronounced than private elites."
+    },
+    {
+      "name": "UCLA",
+      "type": "public",
+      "location": {"city": "Los Angeles", "state": "CA"},
+      "us_news_rank_approx": 20,
+      "enrollment": {"total": 45700, "undergraduate": 31600},
+      "acceptance_rate": 0.088,
+      "admissions": {
+        "in_state_acceptance_rate": 0.12,
+        "out_of_state_acceptance_rate": 0.035,
+        "test_optional": false,
+        "mid_50_sat": "1370-1540",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.41,
+        "ed_ea_notes": "No binding ED; limited EA for California residents. Rolling admissions begins in November."
+      },
+      "academics": {
+        "notable_programs": ["Anderson School of Management", "Film & TV", "Engineering (Civil, Mechanical, Electrical)", "Life Sciences", "Psychology"],
+        "strongest_departments": ["Engineering", "Life Sciences", "Mathematics", "Physics", "Psychology"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1",
+        "research_funding": "$775M annual research; strong in biomedical and engineering"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.035, "notes": "Engineering admits ~3.5% overall; slightly lower than general but still brutal for OOS"},
+        "business": {"acceptance_rate": 0.15, "notes": "Anderson is selective but less brutal than Haas; ~15% acceptance with GPA/GMAT from applicants"},
+        "cs": {"acceptance_rate": 0.015, "notes": "CS engineering specialty is extremely competitive; <1.5% acceptance; many applicants redirect to Math/Physics"}
+      },
+      "costs": {"tuition_in_state": 14500, "tuition_out_of_state": 47000, "total_cost_in_state": 37500, "total_cost_out_of_state": 70000, "avg_net_price_in_state": 11500, "avg_net_price_out_of_state": 29000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.92, "avg_starting_salary": 68000, "top_employers": ["Google", "Apple", "Microsoft", "Disney", "Meta"]},
+      "campus": {"setting": "urban", "greek_life_pct": 13, "athletics": "NCAA D1 Pac-12"},
+      "demographics": {"white_pct": 25, "asian_pct": 33, "hispanic_pct": 21, "black_pct": 4, "international_pct": 14},
+      "strategic_insight": "UCLA historically slightly less selective than Berkeley on paper, but in reality: identical admit rate (8.8%) and same in-state vs OOS gap. For OOS, chances are equivalent to lower Ivies. Advantage over Berkeley: film/TV pipeline is genuinely strong for creative careers; Anderson is more accessible than Haas for business. Disadvantage: research opportunities slightly fewer. The LA location is both asset (entertainment/tech hub) and liability (students distracted, some prefer traditional college town). For non-STEM, UCLA may be slightly higher-yield than Berkeley for OOS."
+    },
+    {
+      "name": "University of Michigan",
+      "type": "public",
+      "location": {"city": "Ann Arbor", "state": "MI"},
+      "us_news_rank_approx": 25,
+      "enrollment": {"total": 47400, "undergraduate": 32500},
+      "acceptance_rate": 0.18,
+      "admissions": {
+        "in_state_acceptance_rate": 0.24,
+        "out_of_state_acceptance_rate": 0.12,
+        "test_optional": false,
+        "mid_50_sat": "1360-1540",
+        "mid_50_act": "31-35",
+        "yield_rate": 0.44,
+        "ed_ea_notes": "No binding ED; does accept non-binding Early Action (EA). ~15% of admits via EA."
+      },
+      "academics": {
+        "notable_programs": ["Ross School of Business", "Engineering (all specialties)", "Music", "Architecture", "Medicine"],
+        "strongest_departments": ["Engineering", "Business (Ross)", "Music", "Pharmacy", "Psychology"],
+        "student_faculty_ratio": "15:1",
+        "research_tier": "R1",
+        "research_funding": "$635M annual; strong in engineering and medicine"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.08, "notes": "Michigan Engineering is ~8% admit rate; well-known program. In-state engineering is ~13%, OOS is ~4%."},
+        "business": {"acceptance_rate": 0.07, "notes": "Ross School of Business is among nation's best public business schools; dual degree architecture allows direct entry from HS"},
+        "cs": {"acceptance_rate": 0.035, "notes": "EECS (CS option) is extremely competitive but slightly less brutal than Berkeley; ~3-4% overall"}
+      },
+      "costs": {"tuition_in_state": 17000, "tuition_out_of_state": 52000, "total_cost_in_state": 32500, "total_cost_out_of_state": 70000, "avg_net_price_in_state": 13000, "avg_net_price_out_of_state": 33000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.93, "avg_starting_salary": 67000, "top_employers": ["Google", "Microsoft", "Apple", "Goldman Sachs", "JPMorgan Chase"]},
+      "campus": {"setting": "college town", "greek_life_pct": 25, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 63, "asian_pct": 14, "hispanic_pct": 7, "black_pct": 7, "international_pct": 7},
+      "strategic_insight": "Michigan is the 'easier' high-tier public—18% overall acceptance with 24% for in-state. For OOS, 12% is still very competitive but beats Berkeley/UCLA. Ross School of Business is legitimate peer to Wharton for undergrad recruitment; securing direct admission is key. Michigan's engineering is world-class but slightly behind Berkeley/Carnegie. Strategic advantage: strong school spirit and Big Ten athletics culture can make campus experience superior to UC schools. Legacy preference is present but not dominant. For students who can't crack Berkeley/UCLA OOS, Michigan is best realistic alternative at peer-tier research university."
+    },
+    {
+      "name": "University of Virginia",
+      "type": "public",
+      "location": {"city": "Charlottesville", "state": "VA"},
+      "us_news_rank_approx": 25,
+      "enrollment": {"total": 27400, "undergraduate": 16900},
+      "acceptance_rate": 0.195,
+      "admissions": {
+        "in_state_acceptance_rate": 0.28,
+        "out_of_state_acceptance_rate": 0.095,
+        "test_optional": false,
+        "mid_50_sat": "1340-1530",
+        "mid_50_act": "30-34",
+        "yield_rate": 0.44,
+        "ed_ea_notes": "Early Action (non-binding) available; ~20% of admits via EA. James Madison University (Commerce school) has own application/deadline."
+      },
+      "academics": {
+        "notable_programs": ["McIntire School of Commerce", "Engineering", "Architecture", "Foreign Affairs", "Nursing"],
+        "strongest_departments": ["Commerce/Business", "Engineering", "English", "History", "Chemistry"],
+        "student_faculty_ratio": "14:1",
+        "research_tier": "R1",
+        "research_funding": "$475M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.08, "notes": "Engineering school is ~8% admit rate with separate application"},
+        "business": {"acceptance_rate": 0.08, "notes": "McIntire School of Commerce is ~8% acceptance; requires separate application in fall of first year; test scores heavily weighted"},
+        "cs": {"acceptance_rate": 0.04, "notes": "CS is housed in Engineering; moderate competition, not as brutal as Berkeley"}
+      },
+      "costs": {"tuition_in_state": 16500, "tuition_out_of_state": 50500, "total_cost_in_state": 31000, "total_cost_out_of_state": 66000, "avg_net_price_in_state": 11500, "avg_net_price_out_of_state": 29000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.95, "avg_starting_salary": 66000, "top_employers": ["Capital One", "Goldman Sachs", "Deloitte", "Booz Allen Hamilton", "Amazon"]},
+      "campus": {"setting": "college town", "greek_life_pct": 28, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 60, "asian_pct": 12, "hispanic_pct": 9, "black_pct": 10, "international_pct": 5},
+      "strategic_insight": "UVA's hidden advantage is legacy preference—approximately 10-12% of admits have family connection, meaningful boost. For OOS, 9.5% admit rate is comparable to Michigan (12%) but UVA's yield is lower, making it slightly easier to crack. McIntire School of Commerce is genuinely competitive (8% admit) and requires second application; many students use this as backup path if general admission successful. UVA's strongest positioning: liberal arts in state school format (first/second year), strong finish via selective schools. Federal government pipeline is excellent; Virginia location plus institutional ties to DC. For finance/consulting, McIntire brand is solid. Thomas Jefferson's design gives UVA highest campus satisfaction among tier-2 publics."
+    },
+    {
+      "name": "University of North Carolina at Chapel Hill",
+      "type": "public",
+      "location": {"city": "Chapel Hill", "state": "NC"},
+      "us_news_rank_approx": 28,
+      "enrollment": {"total": 30100, "undergraduate": 18900},
+      "acceptance_rate": 0.168,
+      "admissions": {
+        "in_state_acceptance_rate": 0.24,
+        "out_of_state_acceptance_rate": 0.065,
+        "test_optional": true,
+        "mid_50_sat": "1300-1490",
+        "mid_50_act": "29-34",
+        "yield_rate": 0.46,
+        "ed_ea_notes": "Early Action available (non-binding); ~18% of admits from EA. Test-optional policy increases flexibility."
+      },
+      "academics": {
+        "notable_programs": ["Kenan-Flagler School of Business", "Journalism & Media", "Public Health", "Medicine", "Law"],
+        "strongest_departments": ["Business/Journalism", "Public Health", "English", "Biology", "Psychology"],
+        "student_faculty_ratio": "13:1",
+        "research_tier": "R1",
+        "research_funding": "$465M annual; strong in health sciences"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.065, "notes": "No separate engineering school; engineering housed in College of Arts & Sciences; smaller program (~400 undergrads)"},
+        "business": {"acceptance_rate": 0.12, "notes": "Kenan-Flagler requires application in spring of first year; ~12% acceptance from internal pool"},
+        "cs": {"acceptance_rate": 0.05, "notes": "CS is competitive but not brutal; ~5% overall"}
+      },
+      "costs": {"tuition_in_state": 9000, "tuition_out_of_state": 37000, "total_cost_in_state": 28500, "total_cost_out_of_state": 58000, "avg_net_price_in_state": 8500, "avg_net_price_out_of_state": 22000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.94, "avg_starting_salary": 63000, "top_employers": ["Bank of America", "Goldman Sachs", "Deloitte", "Google", "Microsoft"]},
+      "campus": {"setting": "college town", "greek_life_pct": 22, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 61, "asian_pct": 10, "hispanic_pct": 10, "black_pct": 12, "international_pct": 3},
+      "strategic_insight": "UNC is the VALUE play among tier-2 publics: 6.5% OOS acceptance is genuinely competitive, but in-state tuition (9k) is nation's lowest for public flagship. Legacy advantage is substantial; ~8-10% of class is legacy. Test-optional policy actually helps non-legacy applicants. For OOS, this is legitimately hard (6.5%), but margins not as brutal as Michigan/UVA. Kenan-Flagler is solid business school but slightly behind Ross/McIntire. Strongest differentiator: journalism/media pipeline is excellent; public health is becoming increasingly strong. Chapel Hill town integration is superior to many peer campuses—walkability and school-town relationship is genuinely strong. Yield is high (46%), suggesting students who get in actually want to attend (vs. Michigan/UVA where yield is comparable but admit base slightly larger)."
+    },
+    {
+      "name": "Georgia Institute of Technology",
+      "type": "public",
+      "location": {"city": "Atlanta", "state": "GA"},
+      "us_news_rank_approx": 38,
+      "enrollment": {"total": 42000, "undergraduate": 20500},
+      "acceptance_rate": 0.158,
+      "admissions": {
+        "in_state_acceptance_rate": 0.25,
+        "out_of_state_acceptance_rate": 0.068,
+        "test_optional": false,
+        "mid_50_sat": "1360-1520",
+        "mid_50_act": "31-35",
+        "yield_rate": 0.39,
+        "ed_ea_notes": "No Early Action; rolling admissions from September. Application early submissions have slightly higher admit rates."
+      },
+      "academics": {
+        "notable_programs": ["Electrical Engineering", "Computer Engineering", "Mechanical Engineering", "Aerospace", "Industrial Engineering"],
+        "strongest_departments": ["Engineering (all branches)", "Computer Science", "Physics", "Mathematics"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "$690M annual; highest in Engineering among publics"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.15, "notes": "Georgia Tech is essentially all engineering; ~93% of undergrads in engineering. Specialties vary in competition—AE is most selective (~6%), ISyE also oversubscribed"},
+        "business": {"acceptance_rate": null, "notes": "No standalone business school; Scheller College of Business is grad-only. Undergrads can concentrate in Industrial Engineering + some business courses"},
+        "cs": {"acceptance_rate": 0.04, "notes": "CS is very competitive; ~4% standalone. Many applicants do dual degree CS + another engineering (AE, ME, EE)"}
+      },
+      "costs": {"tuition_in_state": 14000, "tuition_out_of_state": 40000, "total_cost_in_state": 32000, "total_cost_out_of_state": 60000, "avg_net_price_in_state": 11000, "avg_net_price_out_of_state": 25000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 72000, "top_employers": ["Amazon", "Google", "Microsoft", "Lockheed Martin", "Boeing"]},
+      "campus": {"setting": "urban", "greek_life_pct": 30, "athletics": "NCAA D1 ACC"},
+      "demographics": {"white_pct": 52, "asian_pct": 24, "hispanic_pct": 8, "black_pct": 7, "international_pct": 13},
+      "strategic_insight": "Georgia Tech is uniquely positioned: it's a PURE engineering school with minimal arts/humanities. For STEM students, starting salary ($72k) beats all tier-2 publics except Berkeley OOS admits. For OOS, 6.8% accept rate is brutal—functionally peer to Michigan engineering. In-state is more accessible (25%). Major advantage: Atlanta location puts students near Coca-Cola, Porsche, Delta, major tech hubs. Aerospace/ISyE/CS are most selective; if targeting less-competitive specialties (Environmental, Civil), odds improve. Co-op program is legitimate differentiator—98% of students do paid internships, building real experience. Strategic insight: Georgia Tech yield is only 39%, meaning many admits turn it down for MIT/Caltech, making it slightly easier than admit rate suggests. For engineering focus, this is as good as public options get (short of Berkeley)."
+    },
+    {
+      "name": "University of Texas at Austin",
+      "type": "public",
+      "location": {"city": "Austin", "state": "TX"},
+      "us_news_rank_approx": 38,
+      "enrollment": {"total": 52700, "undergraduate": 40300},
+      "acceptance_rate": 0.265,
+      "admissions": {
+        "in_state_acceptance_rate": 0.33,
+        "out_of_state_acceptance_rate": 0.065,
+        "test_optional": true,
+        "mid_50_sat": "1240-1450",
+        "mid_50_act": "26-33",
+        "yield_rate": 0.36,
+        "ed_ea_notes": "No Early Action. Texas auto-admit policy guarantees admission to top 6% of Texas high school graduates; affects 10-12% of freshman class."
+      },
+      "academics": {
+        "notable_programs": ["McCombs School of Business", "Engineering (all specialties)", "Cockrell School of Engineering", "Liberal Arts & Sciences"],
+        "strongest_departments": ["Engineering", "Business", "Computer Science", "Chemistry", "Geology"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "$685M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.095, "notes": "Cockrell School of Engineering is ~9.5% acceptance OOS; CS specialization is ~3-4%, other specialties ~15%. In-state is significantly higher."},
+        "business": {"acceptance_rate": 0.12, "notes": "McCombs School of Business is ~12% acceptance; requires separate application with test scores."},
+        "cs": {"acceptance_rate": 0.035, "notes": "CS is among most selective in country; ~3.5% acceptance. Many applicants filter into other engineering disciplines."}
+      },
+      "costs": {"tuition_in_state": 10500, "tuition_out_of_state": 38000, "total_cost_in_state": 30000, "total_cost_out_of_state": 60000, "avg_net_price_in_state": 9000, "avg_net_price_out_of_state": 22000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 65000, "top_employers": ["Google", "Microsoft", "Apple", "IBM", "JPMorgan Chase"]},
+      "campus": {"setting": "urban", "greek_life_pct": 8, "athletics": "NCAA D1 Big 12"},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 65000, "top_employers": ["Google", "Microsoft", "Apple", "IBM", "JPMorgan Chase"]},
+      "campus": {"setting": "urban", "greek_life_pct": 8, "athletics": "NCAA D1 Big 12"},
+      "demographics": {"white_pct": 46, "asian_pct": 22, "hispanic_pct": 25, "black_pct": 4, "international_pct": 6},
+      "strategic_insight": "UT Austin is a volume play: 26.5% acceptance but OOS is only 6.5%, making it comparably difficult to Georgia Tech/Michigan engineering. Auto-admit policy for top 6% of Texas class inflates acceptance rate; competitive pool for OOS is much stricter. McCombs is competitive (12%) but slightly below Michigan Ross/UVA McIntire. Cockrell engineering ranges dramatically: CS is elite-tier hard (~3.5%), but other engineering disciplines are more accessible. Austin location is genuine advantage—tech hub rivaling Bay Area, massive alumni network in tech. School culture is strong; size (40k undergrads) requires navigation but enables specialization. For OOS, engineering is brutal; for non-STEM, slightly easier than stated 6.5% might suggest. Test-optional policy helps non-traditional applicants."
+    },
+    {
+      "name": "University of Wisconsin-Madison",
+      "type": "public",
+      "location": {"city": "Madison", "state": "WI"},
+      "us_news_rank_approx": 42,
+      "enrollment": {"total": 45400, "undergraduate": 31700},
+      "acceptance_rate": 0.50,
+      "admissions": {
+        "in_state_acceptance_rate": 0.64,
+        "out_of_state_acceptance_rate": 0.32,
+        "test_optional": true,
+        "mid_50_sat": "1240-1450",
+        "mid_50_act": "26-33",
+        "yield_rate": 0.36,
+        "ed_ea_notes": "No Early Action; rolling admissions. Test-optional improves access for non-traditional students."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business School (Wisconsin School of Business)", "Agriculture", "Life Sciences", "Library Science"],
+        "strongest_departments": ["Engineering", "Agriculture", "Business", "Biology", "Physics"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1",
+        "research_funding": "$625M annual; leader in agricultural research"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.15, "notes": "Wisconsin engineering is notably more accessible than Michigan/Georgia Tech; ~15% admit rate even for OOS applicants"},
+        "business": {"acceptance_rate": 0.35, "notes": "Wisconsin School of Business is selective but not brutal; ~35% acceptance from competitive applicant pool. ~40% of class is business students."},
+        "cs": {"acceptance_rate": 0.08, "notes": "CS is competitive (~8%) but significantly less brutal than peer research universities"}
+      },
+      "costs": {"tuition_in_state": 13500, "tuition_out_of_state": 41000, "total_cost_in_state": 30000, "total_cost_out_of_state": 59000, "avg_net_price_in_state": 11000, "avg_net_price_out_of_state": 26000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 61000, "top_employers": ["Google", "Microsoft", "Apple", "General Motors", "Deloitte"]},
+      "campus": {"setting": "college town", "greek_life_pct": 18, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 73, "asian_pct": 10, "hispanic_pct": 6, "black_pct": 3, "international_pct": 5},
+      "strategic_insight": "Wisconsin is the accessibility play among tier-1 research universities. 50% overall acceptance with 32% for OOS is dramatically higher than Michigan (18%/12%) or Georgia Tech (16%/6.8%). Madison's engineering program is excellent but less selective than peer institutions; this is genuine advantage for engineering applicants who might struggle at Michigan/Georgia Tech. Business school is solid alternative to Ross/McCombs. Wisconsin-Madison culture is strong: smaller city, tight campus integration, Big Ten athletics. School spirit rivals Michigan. For OOS engineering candidates, Madison is realistic fallback option that still offers R1 research and peer-quality outcomes. Strategic position: Wisconsin is sweet spot for students with strong academics who can't crack top-tier publics but want research university with realistic admit odds."
+    },
+    {
+      "name": "University of Illinois Urbana-Champaign",
+      "type": "public",
+      "location": {"city": "Urbana", "state": "IL"},
+      "us_news_rank_approx": 47,
+      "enrollment": {"total": 52900, "undergraduate": 32600},
+      "acceptance_rate": 0.56,
+      "admissions": {
+        "in_state_acceptance_rate": 0.70,
+        "out_of_state_acceptance_rate": 0.25,
+        "test_optional": false,
+        "mid_50_sat": "1230-1490",
+        "mid_50_act": "28-34",
+        "yield_rate": 0.30,
+        "ed_ea_notes": "Honors College has more selective admission path (~10% admit rate); requires separate application."
+      },
+      "academics": {
+        "notable_programs": ["Engineering (all specialties, especially CS/EE)", "Business (Gies College of Business)", "Agriculture", "Physics", "Economics"],
+        "strongest_departments": ["Engineering/CS", "Agriculture", "Economics", "Physics", "Mathematics"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1",
+        "research_funding": "$715M annual; among highest for engineering"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.10, "notes": "Engineering admits ~10% OOS (higher than stated 25% overall due to self-selection). CS/EE are more competitive (~4-5%), others more accessible (~20-25%)."},
+        "business": {"acceptance_rate": 0.25, "notes": "Gies College of Business admits ~25%; less selective than Ross/McCombs but solid program"},
+        "cs": {"acceptance_rate": 0.04, "notes": "CS at Illinois is elite; comparable to Berkeley/CMU for acceptance (~4%). Housed in engineering; very high research expectations."}
+      },
+      "costs": {"tuition_in_state": 15000, "tuition_out_of_state": 40000, "total_cost_in_state": 32000, "total_cost_out_of_state": 60000, "avg_net_price_in_state": 12000, "avg_net_price_out_of_state": 24000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.87, "avg_starting_salary": 66000, "top_employers": ["Google", "Microsoft", "Amazon", "Apple", "Qualcomm"]},
+      "campus": {"setting": "college town", "greek_life_pct": 20, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 56, "asian_pct": 29, "hispanic_pct": 8, "black_pct": 4, "international_pct": 12},
+      "strategic_insight": "UIUC is the hidden gem for CS/engineering: 25% OOS acceptance masks far lower rates for engineering (10% OOS) and CS (4% OOS). CS at Illinois is as selective as Berkeley/CMU despite lower overall profile. For engineering beyond CS, 10-20% range is realistic for OOS, making it more accessible than Georgia Tech (6.8% engineering). Gies Business is solid alternative when capped out of Ross/McCombs. Illinois' advantage: strong international student recruitment (12% international) creates diverse cohort; research opportunities are abundant in engineering/CS; Urbana-Champaign is cheap, allowing focus on academics. Disadvantage: school culture is more fragmented than Wisconsin/Michigan due to larger campus. Yield is only 30%, suggesting many admits attend peer schools; this makes it relatively easier than 56% acceptance suggests. For STEM students with strong scores who can't crack Georgia Tech/Berkeley, Illinois engineering (non-CS) is realistic path to top research university experience."
+    },
+    {
+      "name": "Purdue University",
+      "type": "public",
+      "location": {"city": "West Lafayette", "state": "IN"},
+      "us_news_rank_approx": 54,
+      "enrollment": {"total": 49700, "undergraduate": 31500},
+      "acceptance_rate": 0.60,
+      "admissions": {
+        "in_state_acceptance_rate": 0.72,
+        "out_of_state_acceptance_rate": 0.38,
+        "test_optional": false,
+        "mid_50_sat": "1180-1420",
+        "mid_50_act": "26-32",
+        "yield_rate": 0.32,
+        "ed_ea_notes": "Rolling admissions from September. Honors College has separate, more selective path."
+      },
+      "academics": {
+        "notable_programs": ["Engineering (especially Mechanical, Electrical, Aeronautical)", "Business (Krannert)", "Agriculture", "Physics", "Computer Science"],
+        "strongest_departments": ["Engineering", "Physics", "Agriculture", "Business", "Mathematics"],
+        "student_faculty_ratio": "14:1",
+        "research_tier": "R1",
+        "research_funding": "$670M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.25, "notes": "Engineering admits ~25% OOS; much more accessible than Illinois/Georgia Tech. Most specialized engineering programs are still competitive but realistic."},
+        "business": {"acceptance_rate": 0.35, "notes": "Krannert School of Management is ~35% admission rate; solid alternative to top business schools"},
+        "cs": {"acceptance_rate": 0.08, "notes": "CS is competitive (~8%) but significantly more accessible than Illinois CS or other elite programs"}
+      },
+      "costs": {"tuition_in_state": 14000, "tuition_out_of_state": 42000, "total_cost_in_state": 31000, "total_cost_out_of_state": 60000, "avg_net_price_in_state": 11500, "avg_net_price_out_of_state": 25000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.86, "avg_starting_salary": 63000, "top_employers": ["Eli Lilly", "General Motors", "Amazon", "Google", "Microsoft"]},
+      "campus": {"setting": "college town", "greek_life_pct": 31, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 72, "asian_pct": 8, "hispanic_pct": 6, "black_pct": 3, "international_pct": 8},
+      "strategic_insight": "Purdue is the most accessible major engineering school in US: 60% overall, 38% OOS for engineering-focused applicants is realistic. Engineering admits ~25% OOS vs Georgia Tech's 6.8%. For engineering aspirants without elite SAT scores, Purdue is critical safety. Krannert business program is solid; outcomes ($63k starting) are lower than top programs but respectable. Indiana location is less attractive than Austin/Atlanta but Eli Lilly partnership provides pharma/biotech opportunities. School culture is strong with high Greek life (31%), robust athletics. Strategic positioning: Purdue is accessibility play for engineering without sacrificing research university experience. Yield (32%) is lower than admission rate suggests, making real chances higher. For engineering students with 50th percentile SAT (1200-1300), Purdue is realistic admit alongside reaches."
+    },
+    {
+      "name": "The Ohio State University",
+      "type": "public",
+      "location": {"city": "Columbus", "state": "OH"},
+      "us_news_rank_approx": 54,
+      "enrollment": {"total": 61700, "undergraduate": 39300},
+      "acceptance_rate": 0.72,
+      "admissions": {
+        "in_state_acceptance_rate": 0.83,
+        "out_of_state_acceptance_rate": 0.52,
+        "test_optional": true,
+        "mid_50_sat": "1180-1410",
+        "mid_50_act": "26-31",
+        "yield_rate": 0.35,
+        "ed_ea_notes": "Honors & Scholars Program has separate, more selective admission track (~15% admit rate)."
+      },
+      "academics": {
+        "notable_programs": ["Fisher College of Business", "Engineering (Ohio State College of Engineering)", "Medicine", "Agriculture", "Public Health"],
+        "strongest_departments": ["Business", "Engineering", "Medicine", "Physics", "Chemistry"],
+        "student_faculty_ratio": "19:1",
+        "research_tier": "R1",
+        "research_funding": "$650M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.35, "notes": "Engineering admits ~35% OOS; much more accessible than top-tier engineering schools. Good all-around engineering program without brutal selectivity."},
+        "business": {"acceptance_rate": 0.28, "notes": "Fisher College of Business is ~28% admission; solid program with strong placement"},
+        "cs": {"acceptance_rate": 0.12, "notes": "CS is moderate competition (~12%); accessible compared to elite schools but still selective"}
+      },
+      "costs": {"tuition_in_state": 11500, "tuition_out_of_state": 38000, "total_cost_in_state": 29000, "total_cost_out_of_state": 57000, "avg_net_price_in_state": 10000, "avg_net_price_out_of_state": 23000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.86, "avg_starting_salary": 62000, "top_employers": ["JPMorgan Chase", "Deloitte", "Amazon", "Google", "PwC"]},
+      "campus": {"setting": "urban", "greek_life_pct": 21, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 71, "asian_pct": 10, "hispanic_pct": 5, "black_pct": 7, "international_pct": 6},
+      "strategic_insight": "Ohio State is volume play: 72% overall acceptance, 52% OOS means this is genuinely accessible school for students with 50th percentile credentials. Size (39k undergrads) is double Michigan; requires navigation but enables finding niche communities. Honors & Scholars Program offers honors alternative (15% admit rate) for stronger students seeking smaller cohort within mega-university. Fisher Business School is solid; manufacturing/engineering focus suits Ohio's economy. Columbus urban location provides internship opportunities. Culture is extremely strong around athletics (football); this is either major asset or liability depending on student preference. Strategic positioning: Ohio State is safety/match for students with 1150-1350 SAT who want research university with actual admission probability. Outcomes ($62k starting) are on lower end, but school size enables outcome diversity. For students intimidated by 'prestige' schools, Ohio State provides genuine research experience without brutal competition."
+    },
+    {
+      "name": "Pennsylvania State University",
+      "type": "public",
+      "location": {"city": "University Park", "state": "PA"},
+      "us_news_rank_approx": 54,
+      "enrollment": {"total": 46900, "undergraduate": 31300},
+      "acceptance_rate": 0.58,
+      "admissions": {
+        "in_state_acceptance_rate": 0.70,
+        "out_of_state_acceptance_rate": 0.38,
+        "test_optional": true,
+        "mid_50_sat": "1180-1400",
+        "mid_50_act": "26-31",
+        "yield_rate": 0.37,
+        "ed_ea_notes": "Honors College (2-year program before major): separate, more selective track (~12% admit rate). Commonwealth campuses offer alternative pathways."
+      },
+      "academics": {
+        "notable_programs": ["Smeal College of Business", "Engineering (all specialties)", "Agriculture & Biological Sciences", "Medicine", "Earth Sciences"],
+        "strongest_departments": ["Engineering", "Business", "Agriculture", "Earth Sciences", "Physics"],
+        "student_faculty_ratio": "17:1",
+        "research_tier": "R1",
+        "research_funding": "$685M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.32, "notes": "Engineering admits ~32% OOS; solid program without brutal gatekeeping. Petroleum engineering and chemical engineering especially strong."},
+        "business": {"acceptance_rate": 0.25, "notes": "Smeal College of Business is ~25% admission; competitive but realistic for strong applicants"},
+        "cs": {"acceptance_rate": 0.10, "notes": "CS is moderate (~10%); more accessible than peer engineering schools"}
+      },
+      "costs": {"tuition_in_state": 18500, "tuition_out_of_state": 40000, "total_cost_in_state": 35000, "total_cost_out_of_state": 58000, "avg_net_price_in_state": 13000, "avg_net_price_out_of_state": 25000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.88, "avg_starting_salary": 64000, "top_employers": ["Deloitte", "JPMorgan Chase", "PwC", "Amazon", "Google"]},
+      "campus": {"setting": "college town", "greek_life_pct": 22, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 77, "asian_pct": 7, "hispanic_pct": 6, "black_pct": 4, "international_pct": 4},
+      "strategic_insight": "Penn State is solid alternative in Big Ten: 58% acceptance with 38% OOS is realistic for competitive students. Engineering is accessible (32%) without the gatekeeping of Illinois/Georgia Tech. Smeal Business is solid mid-tier program. Key strategic advantage: strong alumni network in consulting/finance (outcomes $64k starting suggest placement strength). Honors College (12% admit) offers honors track for students seeking smaller cohort experience. College town setting is strong; Penn State football culture rivals Ohio State. Geographic location in Northeast provides East Coast recruiting advantages. Strategic positioning: Penn State is match school for students with 1150-1350 SAT who want strong outcomes from accessible R1 institution. Slightly stronger academics than Ohio State (higher yield 37% vs 35% suggests better student body composition) but similar accessibility."
+    },
+    {
+      "name": "University of Florida",
+      "type": "public",
+      "location": {"city": "Gainesville", "state": "FL"},
+      "us_news_rank_approx": 54,
+      "enrollment": {"total": 52300, "undergraduate": 32000},
+      "acceptance_rate": 0.35,
+      "admissions": {
+        "in_state_acceptance_rate": 0.52,
+        "out_of_state_acceptance_rate": 0.12,
+        "test_optional": false,
+        "mid_50_sat": "1300-1510",
+        "mid_50_act": "29-34",
+        "yield_rate": 0.41,
+        "ed_ea_notes": "Rolling admissions from September. Early applications (September) have slightly higher acceptance rates."
+      },
+      "academics": {
+        "notable_programs": ["Engineering", "Business (Hough Graduate School of Business)", "Medicine", "Law", "Agriculture"],
+        "strongest_departments": ["Engineering", "Medicine", "Agriculture", "Chemistry", "Business"],
+        "student_faculty_ratio": "16:1",
+        "research_tier": "R1",
+        "research_funding": "$540M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.15, "notes": "Engineering admits ~15% OOS; solid program with most specialties accessible. Biomedical engineering particularly strong."},
+        "business": {"acceptance_rate": 0.25, "notes": "Hough Graduate School focuses on MBA; undergrad business is less selective (~25%)"},
+        "cs": {"acceptance_rate": 0.08, "notes": "CS is competitive (~8%) but not brutal"}
+      },
+      "costs": {"tuition_in_state": 6600, "tuition_out_of_state": 30000, "total_cost_in_state": 25000, "total_cost_out_of_state": 49000, "avg_net_price_in_state": 5000, "avg_net_price_out_of_state": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.90, "avg_starting_salary": 61000, "top_employers": ["Deloitte", "Accenture", "JPMorgan Chase", "Google", "Amazon"]},
+      "campus": {"setting": "college town", "greek_life_pct": 22, "athletics": "NCAA D1 SEC"},
+      "demographics": {"white_pct": 53, "asian_pct": 19, "hispanic_pct": 21, "black_pct": 5, "international_pct": 4},
+      "strategic_insight": "UF is VALUE flagship: in-state tuition (6.6k) is among nation's cheapest, yet R1 research university. For OOS, 12% acceptance is surprisingly low given 35% overall; this indicates Florida dominates 52% of in-state admits. In-state path is realistic; OOS requires competitive credentials. Engineering is accessible at 15% OOS—good fallback when Georgia Tech/Purdue have denied. Medical school pipeline is strong; premed students benefit from research opportunities. Gainesville is mid-size college town; less cosmopolitan than Austin but adequate. Strategic positioning: UF is best value play for Florida residents and strong engineering fallback for out-of-state. For students targeting medical school, UF's research opportunities are excellent. Graduation rate (90%) is highest among large public flagships, suggesting strong institutional support."
+    },
+    {
+      "name": "Texas A&M University",
+      "type": "public",
+      "location": {"city": "College Station", "state": "TX"},
+      "us_news_rank_approx": 60,
+      "enrollment": {"total": 71600, "undergraduate": 42700},
+      "acceptance_rate": 0.65,
+      "admissions": {
+        "in_state_acceptance_rate": 0.80,
+        "out_of_state_acceptance_rate": 0.25,
+        "test_optional": true,
+        "mid_50_sat": "1180-1400",
+        "mid_50_act": "26-31",
+        "yield_rate": 0.45,
+        "ed_ea_notes": "Rolling admissions from September. Texas auto-admit (top 6% of class) affects 10-15% of admits."
+      },
+      "academics": {
+        "notable_programs": ["Engineering (all specialties, especially petroleum)", "Agriculture", "Business (Mays Business School)", "Architecture", "Medical Professions"],
+        "strongest_departments": ["Engineering", "Agriculture", "Business", "Architecture", "Physics"],
+        "student_faculty_ratio": "21:1",
+        "research_tier": "R1",
+        "research_funding": "$765M annual; strong in agriculture/engineering"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.28, "notes": "Engineering admits ~28% OOS; accessible for competitive students. Petroleum engineering especially strong due to Texas oil presence."},
+        "business": {"acceptance_rate": 0.35, "notes": "Mays Business School is ~35% admission; decent program but less selective than top business schools"},
+        "cs": {"acceptance_rate": 0.10, "notes": "CS is moderate (~10%); reasonable competition"}
+      },
+      "costs": {"tuition_in_state": 11000, "tuition_out_of_state": 37000, "total_cost_in_state": 29000, "total_cost_out_of_state": 56000, "avg_net_price_in_state": 8500, "avg_net_price_out_of_state": 21000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.89, "avg_starting_salary": 65000, "top_employers": ["ExxonMobil", "Chevron", "Shell", "Amazon", "Google"]},
+      "campus": {"setting": "college town", "greek_life_pct": 10, "athletics": "NCAA D1 SEC"},
+      "demographics": {"white_pct": 54, "asian_pct": 20, "hispanic_pct": 21, "black_pct": 4, "international_pct": 3},
+      "strategic_insight": "Texas A&M is THE largest enrollment public in country (71k); culture is unique blend of military tradition (Corps of Cadets ~2%) and massive student body. OOS 25% acceptance hides lower rates for engineering (28%)—actually slightly higher than UT Austin for OOS engineering. Petroleum engineering is unique advantage; access to oil/gas industry is incomparable. Yield (45%) is surprisingly high, suggesting many admitted students choose A&M over peer options, indicating strong school identity. College Station is isolated college town; this is either major asset (tight-knit community) or liability (limited urban options). Strategic positioning: A&M is strong alternative when Texas flagship options full; engineering especially solid. For students interested in energy sector (oil/gas, renewable energy), A&M is unmatched. Military-like culture appeals to subset; others find it off-putting. Outcomes ($65k starting) are competitive. For OOS engineering, A&M is more accessible than Georgia Tech but similar tier to Purdue."
+    },
+    {
+      "name": "Indiana University",
+      "type": "public",
+      "location": {"city": "Bloomington", "state": "IN"},
+      "us_news_rank_approx": 72,
+      "enrollment": {"total": 42900, "undergraduate": 31700},
+      "acceptance_rate": 0.74,
+      "admissions": {
+        "in_state_acceptance_rate": 0.85,
+        "out_of_state_acceptance_rate": 0.52,
+        "test_optional": true,
+        "mid_50_sat": "1080-1350",
+        "mid_50_act": "23-29",
+        "yield_rate": 0.35,
+        "ed_ea_notes": "Rolling admissions. Kelley School of Business (undergraduate) has separate, more competitive admission track (~40% admit rate)."
+      },
+      "academics": {
+        "notable_programs": ["Kelley School of Business", "Media School", "Music", "School of Public and Environmental Affairs (SPEA)", "Graduate programs in business and public policy"],
+        "strongest_departments": ["Business (Kelley)", "Music", "Public Affairs", "Journalism", "Economics"],
+        "student_faculty_ratio": "18:1",
+        "research_tier": "R1",
+        "research_funding": "$320M annual"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": null, "notes": "No engineering school; technical programs are limited"},
+        "business": {"acceptance_rate": 0.40, "notes": "Kelley School of Business is ~40% acceptance—selective among Indiana admits. Direct admit to Kelley requires strong GPA/test scores."},
+        "cs": {"acceptance_rate": 0.50, "notes": "CS is within College of Arts & Sciences; moderate admission (~50%)"}
+      },
+      "costs": {"tuition_in_state": 11000, "tuition_out_of_state": 38000, "total_cost_in_state": 30000, "total_cost_out_of_state": 58000, "avg_net_price_in_state": 10000, "avg_net_price_out_of_state": 23000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.84, "avg_starting_salary": 58000, "top_employers": ["Eli Lilly", "Salesforce", "Amazon", "Google", "Deloitte"]},
+      "campus": {"setting": "college town", "greek_life_pct": 25, "athletics": "NCAA D1 Big Ten"},
+      "demographics": {"white_pct": 76, "asian_pct": 6, "hispanic_pct": 8, "black_pct": 5, "international_pct": 4},
+      "strategic_insight": "Indiana is accessible Big Ten option: 74% overall, 52% OOS makes this realistic match for students with 50th percentile credentials. Kelley School of Business is genuine strength; recruiting for consulting/finance is strong given outcomes. Media School and Music programs are notable differentiators. Bloomington is pleasant college town; Greek life (25%) is meaningful. Eli Lilly partnership provides pharma/biotech opportunities. Research tier is lower than peer Big Tens (R1 but lower funding), suggesting less emphasis on undergraduate research. Strategic positioning: Indiana is accessibility play in Big Ten for students who can't crack Michigan/Wisconsin. Kelley business track offers alternative to larger business schools. Outcomes ($58k starting) are on lower end but reflect less elite student body. For students interested in business with realistic admission odds, Indiana Kelley is solid option."
+    },
+    {
+      "name": "Williams College",
+      "type": "private",
+      "location": {"city": "Williamstown", "state": "MA"},
+      "us_news_rank_approx": 1,
+      "enrollment": {"total": 2100, "undergraduate": 2100},
+      "acceptance_rate": 0.082,
+      "admissions": {
+        "ed_rate": 0.25,
+        "ea_rate": null,
+        "rd_rate": 0.027,
+        "ed_advantage_notes": "ED boost is extraordinary: 25% ED accept rate vs 2.7% RD is ~9x advantage. ~35% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.61
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Economics", "Physics", "Molecular Biology", "History"],
+        "strongest_departments": ["Economics", "Physics", "Chemistry", "Biology", "English"],
+        "student_faculty_ratio": "7:1",
+        "research_tier": "Not R1 (LAC focus)"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 61000, "total_cost": 76000, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.98, "avg_starting_salary": 73000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Morgan Stanley", "Bain"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 45, "asian_pct": 19, "hispanic_pct": 11, "black_pct": 10, "international_pct": 10},
+      "strategic_insight": "Williams is the LAC endgame: among the most selective institutions in US (8.2% accept rate). ED is critical lever—25% ED acceptance vs 2.7% RD is staggering 9x advantage; ~35% of class binds via ED. For RD, acceptance is nearly Ivy-level. Small size (2,100 undergrads) means incredibly tight cohort—you know everyone. Economics is unusually strong for LAC (rival any university econ program). All students do senior thesis; research expectations match R1 universities despite LAC classification. Faculty access is unparalleled—professors teach all classes, advise closely. Strategic positioning for LAC applicants: Williams is reach for almost everyone; ED is only realistic path unless you're genuinely exceptional (top 0.1% academics). Outcomes ($73k starting salary) match elite private universities. Alumni network is extraordinarily powerful for size; consulting/finance recruiting is aggressive. Test scores (1480-1570 SAT) match Harvard/Yale. If accepted, decision is trivial—Williams is essentially Ivy-equivalent in quality and outcomes."
+    },
+    {
+      "name": "Amherst College",
+      "type": "private",
+      "location": {"city": "Amherst", "state": "MA"},
+      "us_news_rank_approx": 2,
+      "enrollment": {"total": 1900, "undergraduate": 1900},
+      "acceptance_rate": 0.088,
+      "admissions": {
+        "ed_rate": 0.23,
+        "ea_rate": null,
+        "rd_rate": 0.033,
+        "ed_advantage_notes": "ED acceptance is ~7x RD rate (23% vs 3.3%). ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1470-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.58
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Chemistry", "Biology", "Physics", "Political Science"],
+        "strongest_departments": ["Chemistry", "Physics", "Biology", "Economics", "English"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 63000, "total_cost": 77000, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 72000, "top_employers": ["McKinsey", "Goldman Sachs", "Deloitte", "Google", "Bain"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 47, "asian_pct": 18, "hispanic_pct": 10, "black_pct": 12, "international_pct": 9},
+      "strategic_insight": "Amherst is LAC peer to Williams (8.8% acceptance, virtually identical test scores 1470-1570). ED advantage is substantial but slightly lower than Williams (23% vs 25%); RD acceptance is 3.3% vs Williams 2.7%, making Amherst marginally easier to RD. Size (1,900 vs Williams 2,100) is negligible difference. Five-college consortium (Amherst, Hampshire, Mount Holyoke, Smith, UMass Amherst) allows cross-registration—provides access to larger community while maintaining small LAC experience. Curriculum is flexible with no required courses; appeals to independent thinkers. Chemistry/physics are unusually strong for LAC. Outcomes ($72k salary) match Williams. Strategic positioning: Amherst vs Williams is essentially coin flip for admitted students—both are elite LACs with strong outcomes. Amherst's 5C consortium is unique advantage if collaborative learning/larger community experience desired. For non-ED applicants, Amherst's 3.3% RD acceptance means it's essentially Ivy-equivalent difficulty. ED is still the critical lever for realistic admission path."
+    },
+    {
+      "name": "Pomona College",
+      "type": "private",
+      "location": {"city": "Claremont", "state": "CA"},
+      "us_news_rank_approx": 3,
+      "enrollment": {"total": 1650, "undergraduate": 1650},
+      "acceptance_rate": 0.069,
+      "admissions": {
+        "ed_rate": 0.20,
+        "ea_rate": null,
+        "rd_rate": 0.020,
+        "ed_advantage_notes": "ED acceptance is ~10x RD rate (20% vs 2%). ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1490-1580",
+        "mid_50_act": "34-35",
+        "yield_rate": 0.68
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Physics", "Chemistry", "Biology", "Economics"],
+        "strongest_departments": ["Physics", "Chemistry", "Biology", "Economics", "Mathematics"],
+        "student_faculty_ratio": "7:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 64000, "total_cost": 79000, "avg_net_price": 20000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 75000, "top_employers": ["Goldman Sachs", "McKinsey", "Google", "Meta", "Apple"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 42, "asian_pct": 22, "hispanic_pct": 12, "black_pct": 9, "international_pct": 11},
+      "strategic_insight": "Pomona is the most selective LAC (6.9% vs Williams 8.2%, Amherst 8.8%). Test scores (1490-1580 SAT) are highest among LACs, matching Harvard/Yale/Princeton. Smallest of top LACs (1,650 students). Southern California location is advantage for tech internships/recruiting. Claremont Consortium (7 colleges including Pomona, Pitzer, CMC, Harvey Mudd, Scripps) provides access to larger community. ED acceptance (20%) is lower than Williams/Amherst, making ED path still valuable but less dramatic. RD acceptance (2%) is lowest among top LACs—essentially impossible without extraordinary credentials. Outcomes ($75k starting salary) are highest among LACs, suggesting strongest job market access. Strategic positioning: Pomona is reach-plus for all but most exceptional applicants. ED is critical (20% vs 2% RD). SoCal location, small size, and exceptional outcomes make this top choice for West Coast LAC applicants who qualify. If admitted, outcomes and experience rival or exceed Ivies despite LAC classification."
+    },
+    {
+      "name": "Swarthmore College",
+      "type": "private",
+      "location": {"city": "Swarthmore", "state": "PA"},
+      "us_news_rank_approx": 3,
+      "enrollment": {"total": 1600, "undergraduate": 1600},
+      "acceptance_rate": 0.084,
+      "admissions": {
+        "ed_rate": 0.27,
+        "ea_rate": null,
+        "rd_rate": 0.021,
+        "ed_advantage_notes": "ED acceptance is ~13x RD rate (27% vs 2.1%). ~30% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1480-1570",
+        "mid_50_act": "33-35",
+        "yield_rate": 0.64
+      },
+      "academics": {
+        "notable_programs": ["Engineering (rare for LAC)", "Physics", "Chemistry", "Biology", "Mathematics"],
+        "strongest_departments": ["Engineering", "Physics", "Chemistry", "Biology", "Economics"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": {
+        "engineering": {"acceptance_rate": 0.05, "notes": "Swarthmore is rare LAC with engineering program; engineering admits ~5% overall—hyper-selective within already-selective school"}
+      },
+      "costs": {"tuition": 62000, "total_cost": 76000, "avg_net_price": 17500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 74000, "top_employers": ["McKinsey", "Goldman Sachs", "Google", "Meta", "Deloitte"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 48, "asian_pct": 17, "hispanic_pct": 11, "black_pct": 11, "international_pct": 10},
+      "strategic_insight": "Swarthmore is among most selective LACs (8.4% acceptance, comparable to Williams/Amherst). Unique advantage: engineering program is rare at LAC level; engineering applicants get full research + small class experience unavailable at similar selectivity universities. ED is powerful lever (27% accept vs 2.1% RD—13x advantage). Honors program offers intense, seminar-based experience for subset. Research expectations are high; Senior thesis is required. Pennsylvania location provides East Coast recruitment advantages. Strategic positioning: Swarthmore's engineering is game-changer for engineering applicants—you get LAC small classes AND engineering credibility. For non-engineering applicants, Swarthmore is peer to Williams/Amherst (similar selectivity, outcomes). ED is critical for both engineering and non-engineering; RD is nearly impossible (2.1%). If accepted, strong consideration for engineers; for others, decision between peer LACs based on personal fit."
+    },
+    {
+      "name": "Bowdoin College",
+      "type": "private",
+      "location": {"city": "Brunswick", "state": "ME"},
+      "us_news_rank_approx": 6,
+      "enrollment": {"total": 1850, "undergraduate": 1850},
+      "acceptance_rate": 0.107,
+      "admissions": {
+        "ed_rate": 0.28,
+        "ea_rate": null,
+        "rd_rate": 0.034,
+        "ed_advantage_notes": "ED acceptance is ~8x RD rate (28% vs 3.4%). ~30% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1450-1570",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.60
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Neuroscience", "Environmental Studies", "Government", "Economics"],
+        "strongest_departments": ["Environmental Studies", "Government", "Economics", "Physics", "Chemistry"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 61000, "total_cost": 78000, "avg_net_price": 19000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.97, "avg_starting_salary": 70000, "top_employers": ["Goldman Sachs", "McKinsey", "Deloitte", "Google", "Bain"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 58, "asian_pct": 11, "hispanic_pct": 9, "black_pct": 8, "international_pct": 7},
+      "strategic_insight": "Bowdoin is slightly more accessible than top-3 LACs (10.7% vs Williams 8.2%) but still highly selective. ED acceptance (28%) is generous compared to peer institutions; RD is 3.4%—harder than Bowdoin overall but more achievable than Pomona/Amherst RD. Test-optional policy is unique advantage among top LACs; allows non-test-takers more realistic admission path. Maine location is isolating (advantage for tight community, disadvantage for internship access). Environmental Studies and Government programs are unusually strong. Bowdoin culture emphasizes diversity and inclusion more explicitly than peer institutions. Strategic positioning: Bowdoin is sweet spot LAC—more accessible than Williams/Amherst/Pomona while maintaining similar quality. ED acceptance (28%) is most generous among top LACs. Test-optional is legitimate advantage. For students who struggled with standardized tests but have strong academics, Bowdoin's test-optional path increases admission probability. Maine location appeals to outdoors-oriented students; others may find isolation limiting."
+    },
+    {
+      "name": "Wellesley College",
+      "type": "private",
+      "location": {"city": "Wellesley", "state": "MA"},
+      "us_news_rank_approx": 4,
+      "enrollment": {"total": 2400, "undergraduate": 2400},
+      "acceptance_rate": 0.191,
+      "admissions": {
+        "ed_rate": 0.35,
+        "ea_rate": null,
+        "rd_rate": 0.108,
+        "ed_advantage_notes": "ED acceptance is ~3.2x RD rate (35% vs 10.8%). ~30% of class from ED. Women-only enrollment.",
+        "test_optional": true,
+        "mid_50_sat": "1420-1560",
+        "mid_50_act": "32-35",
+        "yield_rate": 0.51
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Economics", "Physics", "Political Science", "Environmental Studies"],
+        "strongest_departments": ["Economics", "Physics", "Political Science", "Biology", "Chemistry"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 60000, "total_cost": 75000, "avg_net_price": 16000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 68000, "top_employers": ["McKinsey", "Goldman Sachs", "Deloitte", "Google", "Morgan Stanley"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 50, "asian_pct": 15, "hispanic_pct": 10, "black_pct": 9, "international_pct": 11},
+      "strategic_insight": "Wellesley is unique: women-only LAC, more accessible than Williams/Amherst/Pomona (19.1% overall) but still selective. Test-optional policy opens door for non-test-takers. ED acceptance (35%) is most generous among elite LACs; RD acceptance (10.8%) is dramatically higher than peer institutions. This makes Wellesley significantly more accessible while maintaining brand prestige. Women-only environment is strategic advantage for women-identifying applicants—can focus on academics without navigating coeducational dynamics. Boston location provides access to medical/research institutions and internship opportunities. Economics program is unusually strong for LAC. Strategic positioning: Wellesley is best-value among elite LACs. For women-identifying applicants, acceptance rates are meaningfully higher than Williams/Amherst/Pomona while outcomes remain strong ($68k starting salary). Test-optional policy helps non-test-takers significantly. If women-only environment appeals, Wellesley is top choice; if not, other LACs may be preferable."
+    },
+    {
+      "name": "Middlebury College",
+      "type": "private",
+      "location": {"city": "Middlebury", "state": "VT"},
+      "us_news_rank_approx": 4,
+      "enrollment": {"total": 2500, "undergraduate": 2500},
+      "acceptance_rate": 0.100,
+      "admissions": {
+        "ed_rate": 0.24,
+        "ea_rate": null,
+        "rd_rate": 0.051,
+        "ed_advantage_notes": "ED acceptance is ~4.7x RD rate (24% vs 5.1%). ~28% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1410-1540",
+        "mid_50_act": "32-34",
+        "yield_rate": 0.56
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "International Programs", "Environmental Studies", "Economics", "Language Programs"],
+        "strongest_departments": ["Languages (exceptionally strong)", "Environmental Studies", "Economics", "Physics", "English"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 62000, "total_cost": 77000, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 69000, "top_employers": ["McKinsey", "Goldman Sachs", "Deloitte", "Google", "Amazon"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 62, "asian_pct": 10, "hispanic_pct": 8, "black_pct": 7, "international_pct": 10},
+      "strategic_insight": "Middlebury is accessible LAC peer (10% overall acceptance, higher than Williams/Amherst/Pomona). Unique advantage: language programs are unmatched among LACs; study abroad is integrated into curriculum (most students spend semester/year overseas). ED acceptance (24%) is solid; RD acceptance (5.1%) is notably higher than peer LACs. Test-optional policy aids applicants. Vermont location is isolating but appeals to outdoorsy students; skiing/hiking culture is strong. International students percentage (10%) is high, creating truly global community. Strategic positioning: Middlebury is best for globally-minded applicants. Language programs and study abroad are genuine differentiators. For students interested in international affairs/diplomacy, Middlebury is uniquely positioned. Accessibility is higher than Williams/Amherst (10% vs 8.2%-8.8%) making this realistic match for strong applicants. Outcomes ($69k starting salary) are competitive."
+    },
+    {
+      "name": "Claremont McKenna College",
+      "type": "private",
+      "location": {"city": "Claremont", "state": "CA"},
+      "us_news_rank_approx": 9,
+      "enrollment": {"total": 1300, "undergraduate": 1300},
+      "acceptance_rate": 0.101,
+      "admissions": {
+        "ed_rate": 0.23,
+        "ea_rate": null,
+        "rd_rate": 0.065,
+        "ed_advantage_notes": "ED acceptance is ~3.5x RD rate (23% vs 6.5%). ~25% of class from ED.",
+        "test_optional": false,
+        "mid_50_sat": "1420-1550",
+        "mid_50_act": "32-34",
+        "yield_rate": 0.54
+      },
+      "academics": {
+        "notable_programs": ["Economics", "Government", "Public Affairs", "Business Administration", "Finance"],
+        "strongest_departments": ["Economics", "Government", "Public Affairs", "Mathematics", "Physics"],
+        "student_faculty_ratio": "8:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 61000, "total_cost": 77000, "avg_net_price": 18000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 76000, "top_employers": ["Goldman Sachs", "McKinsey", "JPMorgan Chase", "Google", "Meta"]},
+      "campus": {"setting": "suburban", "greek_life_pct": 29, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 52, "asian_pct": 19, "hispanic_pct": 12, "black_pct": 7, "international_pct": 8},
+      "strategic_insight": "CMC is LAC-light: smaller (1,300 students) with unusually strong pre-professional focus. Economics and Government programs are among strongest at any LAC; recruiting for finance/consulting is aggressive ($76k starting salary is highest among LACs). Claremont Consortium access provides larger community while maintaining small college experience. Greek life presence (29%) is higher than peer LACs, creating different social culture. ED acceptance (23%) is reasonable; RD acceptance (6.5%) is competitive but higher than Williams/Amherst. Strategic positioning: CMC is best LAC for pre-professional applicants targeting finance/consulting/policy. Economics and Government programs are genuinely elite; recruiting outcomes match or exceed some universities. Southern California location aids tech recruiting. Greek life culture appeals to subset but may deter others. If pre-professional goals are clear, CMC's outcomes ($76k starting) exceed peer LACs."
+    },
+    {
+      "name": "Carleton College",
+      "type": "private",
+      "location": {"city": "Northfield", "state": "MN"},
+      "us_news_rank_approx": 9,
+      "enrollment": {"total": 2100, "undergraduate": 2100},
+      "acceptance_rate": 0.191,
+      "admissions": {
+        "ed_rate": 0.40,
+        "ea_rate": null,
+        "rd_rate": 0.118,
+        "ed_advantage_notes": "ED acceptance is ~3.4x RD rate (40% vs 11.8%). ~35% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1390-1540",
+        "mid_50_act": "31-34",
+        "yield_rate": 0.53
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Physics", "Chemistry", "Biology", "Mathematics"],
+        "strongest_departments": ["Physics", "Chemistry", "Mathematics", "Biology", "Economics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 59000, "total_cost": 75000, "avg_net_price": 17000, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 67000, "top_employers": ["Google", "Amazon", "McKinsey", "Deloitte", "Goldman Sachs"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 68, "asian_pct": 9, "hispanic_pct": 7, "black_pct": 5, "international_pct": 7},
+      "strategic_insight": "Carleton is most accessible elite LAC (19.1% overall acceptance). ED acceptance (40%) is extraordinarily generous; RD acceptance (11.8%) is dramatically higher than Williams/Amherst/Pomona. Test-optional policy further opens door. Northfield, Minnesota location is isolating but creates tight-knit community. Physics/chemistry programs are unusually strong for LAC; research expectations are high. Carleton culture emphasizes intellectual curiosity and collaborative (vs. competitive) environment. Strategic positioning: Carleton is best value LAC if you qualify academically. Acceptance rates are 2-3x higher than Williams/Amherst (19% vs 8%) while maintaining strong outcomes ($67k starting salary). ED acceptance (40%) makes this realistic path for applicants with solid credentials. Test-optional is legitimate advantage. If Midwest location acceptable, Carleton provides elite LAC experience with higher admission probability than East Coast peers."
+    },
+    {
+      "name": "Colby College",
+      "type": "private",
+      "location": {"city": "Waterville", "state": "ME"},
+      "us_news_rank_approx": 11,
+      "enrollment": {"total": 1850, "undergraduate": 1850},
+      "acceptance_rate": 0.078,
+      "admissions": {
+        "ed_rate": 0.28,
+        "ea_rate": null,
+        "rd_rate": 0.024,
+        "ed_advantage_notes": "ED acceptance is ~11.7x RD rate (28% vs 2.4%). ~32% of class from ED.",
+        "test_optional": true,
+        "mid_50_sat": "1430-1550",
+        "mid_50_act": "32-34",
+        "yield_rate": 0.55
+      },
+      "academics": {
+        "notable_programs": ["Liberal Arts (all disciplines)", "Environmental Studies", "Biology", "Chemistry", "Government"],
+        "strongest_departments": ["Environmental Studies", "Biology", "Chemistry", "Government", "Economics"],
+        "student_faculty_ratio": "9:1",
+        "research_tier": "Not R1"
+      },
+      "school_within_school": null,
+      "costs": {"tuition": 60000, "total_cost": 76000, "avg_net_price": 17500, "meets_full_need": true},
+      "outcomes": {"graduation_rate_6yr": 0.96, "avg_starting_salary": 68000, "top_employers": ["McKinsey", "Goldman Sachs", "Deloitte", "Google", "Amazon"]},
+      "campus": {"setting": "college town", "greek_life_pct": 0.0, "athletics": "NCAA D3 NESCAC"},
+      "demographics": {"white_pct": 59, "asian_pct": 10, "hispanic_pct": 8, "black_pct": 8, "international_pct": 9},
+      "strategic_insight": "Colby is selective LAC (7.8% overall, comparable to Bowdoin 10.7% but tighter than Middlebury 10%). ED acceptance (28%) is generous; RD acceptance (2.4%) is extremely low. Test-optional policy helps applicants. Maine location emphasizes outdoor culture and community integration (similar to Bowdoin). Environmental Studies program is unusually strong. Colby emphasizes faculty mentorship and undergraduate research. Maine winters appeal to subset; isolation is disadvantage for others. Strategic positioning: Colby is peer to Bowdoin—both are Maine LACs with similar selectivity, outcomes, culture. For students committed to ED, both are realistic (28% ED accept rate). RD is brutal for both (2.4% Colby, 3.4% Bowdoin). Test-optional helps both. Colby culture emphasizes collaboration; Bowdoin emphasizes diversity. Decision between them depends on school visit and personal fit rather than objective metrics."
+    }
+  ]
+}
