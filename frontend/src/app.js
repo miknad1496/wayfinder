@@ -1815,11 +1815,25 @@ function renderSchoolDemographics(school, fullAccess) {
         for (const race of RACE_ORDER) {
           const pct = major.percentages[race] || 0;
           if (pct < 0.5) continue;
-          html += `<div class="demo-major-segment" style="width:${pct}%;background:${RACE_COLORS[race]}" data-tooltip="${RACE_LABELS[race]}: ${pct}%"></div>`;
+          const count = major.demographics?.[race];
+          const tooltip = count ? `${RACE_LABELS[race]}: ${count.toLocaleString()} (${pct}%)` : `${RACE_LABELS[race]}: ${pct}%`;
+          html += `<div class="demo-major-segment" style="width:${pct}%;background:${RACE_COLORS[race]}" data-tooltip="${tooltip}"></div>`;
         }
       }
 
-      html += `</div></div>`;
+      // Show numerical breakdown below the bar for paid users
+      if (major.demographics && Object.keys(major.demographics).length > 2) {
+        html += `</div><div class="demo-major-counts">`;
+        for (const race of RACE_ORDER) {
+          const count = major.demographics[race];
+          const pct = major.percentages?.[race] || 0;
+          if (!count || count < 1) continue;
+          html += `<span class="demo-count-chip" style="border-left: 3px solid ${RACE_COLORS[race]}">${RACE_LABELS[race]}: ${count.toLocaleString()} <small>(${pct}%)</small></span>`;
+        }
+        html += `</div></div>`;
+      } else {
+        html += `</div></div>`;
+      }
     }
 
     // Preview message
@@ -2221,6 +2235,7 @@ async function searchInternships() {
   $('internshipsResults').innerHTML = '';
 
   const params = new URLSearchParams();
+  if ($('internshipLevel')?.value) params.set('level', $('internshipLevel').value);
   if ($('internshipState').value) params.set('state', $('internshipState').value);
   if ($('internshipField').value) params.set('field', $('internshipField').value);
   if ($('internshipCost').value === 'paid') params.set('paid', 'true');

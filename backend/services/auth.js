@@ -51,8 +51,8 @@ const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com')
   .filter(Boolean);
 const PLAN_LIMITS = {
   free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
-  pro:   { enginePerDay: 20, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
-  elite: { enginePerDay: 40, dailyTokens: 500000,  monthlyTokens: 12000000, invites: 10 },
+  pro:   { enginePerDay: 10, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
+  elite: { enginePerDay: 20, dailyTokens: 500000,  monthlyTokens: 12000000, invites: 10 },
 };
 
 // Feature access control

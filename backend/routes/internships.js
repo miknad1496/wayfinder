@@ -100,7 +100,9 @@ router.get('/search', async (req, res) => {
     let results = [...data.internships];
 
     // Apply filters
-    const { state, field, major, paid, type, q } = req.query;
+    const { state, field, major, paid, type, level, q } = req.query;
+    if (level === 'high-school') results = results.filter(i => i.tags?.includes('high-school'));
+    if (level === 'college') results = results.filter(i => !i.tags?.includes('high-school'));
     if (state) results = results.filter(i => i.location?.state?.toUpperCase() === state.toUpperCase());
     if (field) results = results.filter(i => i.field?.toLowerCase().includes(field.toLowerCase()));
     if (major) results = results.filter(i => i.majors?.some(m => m.toLowerCase().includes(major.toLowerCase())));
