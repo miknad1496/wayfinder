@@ -203,6 +203,11 @@ router.post('/purchase-essays', checkoutLimiter, async (req, res) => {
       return res.status(400).json({ error: 'Invalid pack. Choose starter (5/$10), standard (10/$15), or bulk (20/$20).' });
     }
 
+    // Admins get unlimited credits — no need to purchase
+    if (user.isAdmin) {
+      return res.json({ message: 'Admin accounts have unlimited essay credits. No purchase needed.' });
+    }
+
     const priceId = ESSAY_PRICE_IDS[pack];
     if (!priceId) {
       return res.status(500).json({ error: 'Essay pricing not configured. Contact support.' });
