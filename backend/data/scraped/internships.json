@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastScraped": "2026-03-17",
-    "totalCount": 401,
+    "lastScraped": "2026-03-18",
+    "totalCount": 598,
     "sources": [
       "Company career portals (Google, Microsoft, Amazon, Meta, Apple, etc.)",
       "Government agencies (NASA, NIH, EPA, CDC, NSF, DoE)",
@@ -10468,6 +10468,5358 @@
       "url": "https://www.planet.com/careers/",
       "stipend": "$7,500/month",
       "duration": "12 weeks"
+    },
+    {
+      "title": "NASA SEES (Summer Employment Experience for Students)",
+      "company": "NASA",
+      "location": {
+        "city": "Kennedy Space Center",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-01-31",
+      "description": "Paid internship for high school students at NASA centers nationwide. Work on space exploration and STEM projects with NASA scientists.",
+      "majors": [
+        "Physics",
+        "Engineering",
+        "Computer Science",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "nasa",
+        "space",
+        "national"
+      ],
+      "url": "https://www.nasa.gov/internships",
+      "stipend": "$3,000-$5,000",
+      "duration": "8-10 weeks"
+    },
+    {
+      "title": "Google CSSI (Computer Science Summer Institute)",
+      "company": "Google",
+      "location": {
+        "city": "Mountain View",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Free coding summer program for high school students. Learn computer science fundamentals and build real projects.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "free",
+        "tech",
+        "competitive"
+      ],
+      "url": "https://buildyourfuture.withgoogle.com/programs/cs-summer-institute",
+      "stipend": "Free (fully funded)",
+      "duration": "4 weeks"
+    },
+    {
+      "title": "MITES Summer Program",
+      "company": "Massachusetts Institute of Technology",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-01-15",
+      "description": "Intensive 6-week residential program for high school juniors. STEM coursework in engineering, math, and science.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "residential",
+        "competitive",
+        "national"
+      ],
+      "url": "https://mites.mit.edu",
+      "stipend": "Fully funded (room & board included)",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Bank of America Student Leaders Program",
+      "company": "Bank of America",
+      "location": {
+        "city": "Charlotte",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-15",
+      "description": "Paid internship for high school juniors and seniors. Leadership development and financial services experience.",
+      "majors": [
+        "Business",
+        "Economics",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "leadership",
+        "national"
+      ],
+      "url": "https://careers.bofa.com/student-programs/internships",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Microsoft High School Internship",
+      "company": "Microsoft",
+      "location": {
+        "city": "Redmond",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Software development internship for high school students with strong programming background.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "tech",
+        "competitive"
+      ],
+      "url": "https://careers.microsoft.com/students/internships",
+      "stipend": "$5,000-$6,000",
+      "duration": "10 weeks"
+    },
+    {
+      "title": "NIH Summer Internship Program",
+      "company": "National Institutes of Health",
+      "location": {
+        "city": "Bethesda",
+        "state": "MD"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-01",
+      "description": "Biomedical research internship for high school students at NIH facilities. Work on cutting-edge medical research.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Biochemistry",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "research",
+        "healthcare",
+        "national"
+      ],
+      "url": "https://www.training.nih.gov/programs/sip",
+      "stipend": "$2,500-$3,500",
+      "duration": "9 weeks"
+    },
+    {
+      "title": "Smithsonian Summer Internship Program",
+      "company": "Smithsonian Institution",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-02-20",
+      "description": "Unpaid internship at various Smithsonian museums. Work on curation, education, and research projects.",
+      "majors": [
+        "Art",
+        "History",
+        "Anthropology",
+        "Science Education"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "arts",
+        "museum",
+        "government",
+        "education"
+      ],
+      "url": "https://www.si.edu/internships",
+      "stipend": null,
+      "duration": "8-10 weeks"
+    },
+    {
+      "title": "Congressional Internship Program",
+      "company": "U.S. House of Representatives",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law & Government",
+      "deadline": "2026-03-15",
+      "description": "Unpaid internship working in a Congressional office. Learn about government and policy firsthand.",
+      "majors": [
+        "Political Science",
+        "Government",
+        "History",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "government",
+        "leadership",
+        "national"
+      ],
+      "url": "https://www.house.gov/representatives/find-your-representative",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Alaska Native Science & Engineering Program (ANSEP)",
+      "company": "University of Alaska Anchorage",
+      "location": {
+        "city": "Anchorage",
+        "state": "AK"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Summer STEM camp for Alaska Native high school students. Engineering, mathematics, and computer science.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "indigenous",
+        "regional"
+      ],
+      "url": "https://www.ansep.uaa.alaska.edu",
+      "stipend": "Fully funded",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Hawaii Pacific University Summer Science Camp",
+      "company": "Hawaii Pacific University",
+      "location": {
+        "city": "Honolulu",
+        "state": "HI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-04-01",
+      "description": "Marine science and environmental studies summer program for high school students in Hawaii.",
+      "majors": [
+        "Biology",
+        "Environmental Science",
+        "Marine Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "environmental",
+        "regional"
+      ],
+      "url": "https://www.hpu.edu/academics/summer-programs",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Iowa Summer STEM Academy",
+      "company": "University of Iowa",
+      "location": {
+        "city": "Iowa City",
+        "state": "IA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and computer science summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "engineering",
+        "regional"
+      ],
+      "url": "https://engineering.uiowa.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Kansas State University Summer Leadership Program",
+      "company": "Kansas State University",
+      "location": {
+        "city": "Manhattan",
+        "state": "KS"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-04-01",
+      "description": "Leadership development program for high school students. Engineering and technology focus.",
+      "majors": [
+        "Engineering",
+        "Education",
+        "Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "leadership",
+        "regional"
+      ],
+      "url": "https://www.k-state.edu",
+      "stipend": null,
+      "duration": "3 weeks"
+    },
+    {
+      "title": "Louisiana State University STEM Summer Camp",
+      "company": "Louisiana State University",
+      "location": {
+        "city": "Baton Rouge",
+        "state": "LA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-04-10",
+      "description": "STEM summer camp for high school students featuring agriculture, engineering, and science.",
+      "majors": [
+        "Agriculture",
+        "Engineering",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.lsu.edu",
+      "stipend": null,
+      "duration": "5 weeks"
+    },
+    {
+      "title": "Maine Summer Youth Program",
+      "company": "University of Maine",
+      "location": {
+        "city": "Orono",
+        "state": "ME"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-04-15",
+      "description": "Environmental and marine science program for Maine high school students.",
+      "majors": [
+        "Environmental Science",
+        "Marine Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "environmental",
+        "regional"
+      ],
+      "url": "https://www.maine.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Washington University Summer High School Research Program",
+      "company": "Washington University in St. Louis",
+      "location": {
+        "city": "St. Louis",
+        "state": "MO"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-03-15",
+      "description": "Research internship for high school students in STEM fields. Work with university researchers.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "paid",
+        "research",
+        "regional"
+      ],
+      "url": "https://wustl.edu",
+      "stipend": "$2,000-$3,000",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "University of Mississippi Summer STEM Bridge Program",
+      "company": "University of Mississippi",
+      "location": {
+        "city": "Oxford",
+        "state": "MS"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Summer bridge program preparing high school students for STEM college majors.",
+      "majors": [
+        "Engineering",
+        "Mathematics",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.olemiss.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Montana STEM Outreach Program",
+      "company": "Montana State University",
+      "location": {
+        "city": "Bozeman",
+        "state": "MT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-04-01",
+      "description": "Environmental science and engineering program for Montana high school students.",
+      "majors": [
+        "Engineering",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "environmental",
+        "regional"
+      ],
+      "url": "https://www.montana.edu",
+      "stipend": null,
+      "duration": "5 weeks"
+    },
+    {
+      "title": "North Dakota State University Summer Program",
+      "company": "North Dakota State University",
+      "location": {
+        "city": "Fargo",
+        "state": "ND"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2026-04-10",
+      "description": "Agriculture and engineering summer program for North Dakota high school students.",
+      "majors": [
+        "Agriculture",
+        "Engineering",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "agriculture",
+        "regional"
+      ],
+      "url": "https://www.ndsu.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Nebraska-Lincoln Summer Scholars",
+      "company": "University of Nebraska-Lincoln",
+      "location": {
+        "city": "Lincoln",
+        "state": "NE"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and technology summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.unl.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Nevada Summer STEM Academy",
+      "company": "University of Nevada, Reno",
+      "location": {
+        "city": "Reno",
+        "state": "NV"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Summer engineering and science program for Nevada high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.unr.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of New Hampshire Summer Program",
+      "company": "University of New Hampshire",
+      "location": {
+        "city": "Durham",
+        "state": "NH"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-04-15",
+      "description": "Environmental and marine science summer program for New Hampshire students.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "environmental",
+        "regional"
+      ],
+      "url": "https://www.unh.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "New Mexico Tech Summer Program",
+      "company": "New Mexico Institute of Mining and Technology",
+      "location": {
+        "city": "Socorro",
+        "state": "NM"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-01",
+      "description": "Engineering and geoscience summer program for New Mexico high school students.",
+      "majors": [
+        "Engineering",
+        "Geology",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.nmt.edu",
+      "stipend": null,
+      "duration": "5 weeks"
+    },
+    {
+      "title": "University of Oklahoma Summer STEM Academy",
+      "company": "University of Oklahoma",
+      "location": {
+        "city": "Norman",
+        "state": "OK"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and computer science summer program for Oklahoma high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.ou.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Brown University High School Internship",
+      "company": "Brown University",
+      "location": {
+        "city": "Providence",
+        "state": "RI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-03-15",
+      "description": "Research internship opportunity at Brown University for high school students.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "research",
+        "regional"
+      ],
+      "url": "https://www.brown.edu",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Clemson University Summer STEM Experience",
+      "company": "Clemson University",
+      "location": {
+        "city": "Clemson",
+        "state": "SC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering summer program for high school students interested in STEM careers.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.clemson.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "South Dakota School of Mines Summer Program",
+      "company": "South Dakota School of Mines & Technology",
+      "location": {
+        "city": "Rapid City",
+        "state": "SD"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Mining and engineering summer program for South Dakota high school students.",
+      "majors": [
+        "Engineering",
+        "Geology",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.sdsmt.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Vermont Summer Program",
+      "company": "University of Vermont",
+      "location": {
+        "city": "Burlington",
+        "state": "VT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-04-15",
+      "description": "Environmental science and engineering summer program for high school students.",
+      "majors": [
+        "Environmental Science",
+        "Engineering",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "environmental",
+        "regional"
+      ],
+      "url": "https://www.uvm.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "West Virginia University STEM Summer Camp",
+      "company": "West Virginia University",
+      "location": {
+        "city": "Morgantown",
+        "state": "WV"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering summer camp for West Virginia high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.wvu.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Wisconsin Summer STEM Academy",
+      "company": "University of Wisconsin-Madison",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering and computer science summer program for Wisconsin high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.wisc.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Wyoming Summer Program",
+      "company": "University of Wyoming",
+      "location": {
+        "city": "Laramie",
+        "state": "WY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and natural sciences summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Geology",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.uwyo.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Lincoln Center Summer Internship Program",
+      "company": "Lincoln Center for the Performing Arts",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Internship in performing arts administration and production for high school students.",
+      "majors": [
+        "Arts",
+        "Theater",
+        "Music",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "arts",
+        "internship",
+        "regional"
+      ],
+      "url": "https://www.lincolncenter.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "ProPublica Journalism Summer Academy",
+      "company": "ProPublica",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-15",
+      "description": "Investigative journalism training for high school students from underrepresented backgrounds.",
+      "majors": [
+        "Journalism",
+        "English",
+        "History"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media",
+        "diversity"
+      ],
+      "url": "https://www.propublica.org",
+      "stipend": "$2,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Boys & Girls Club Summer Leadership Institute",
+      "company": "Boys & Girls Clubs of America",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-04-01",
+      "description": "Leadership and community service program for high school students.",
+      "majors": [
+        "Education",
+        "Leadership",
+        "Community Service"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "leadership",
+        "community",
+        "regional"
+      ],
+      "url": "https://www.bgca.org",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Planned Parenthood Internship Program",
+      "company": "Planned Parenthood",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Healthcare and community health internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.plannedparenthood.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Heart Association Youth Leadership Program",
+      "company": "American Heart Association",
+      "location": {
+        "city": "Dallas",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-15",
+      "description": "Health advocacy and science internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.heart.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "The Nature Conservancy Student Internship",
+      "company": "The Nature Conservancy",
+      "location": {
+        "city": "Arlington",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-02-28",
+      "description": "Environmental conservation internship for high school students. Work on land and water preservation.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Geology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://www.nature.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Environmental Defense Fund Youth Program",
+      "company": "Environmental Defense Fund",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-03-01",
+      "description": "Environmental advocacy internship for motivated high school students.",
+      "majors": [
+        "Environmental Science",
+        "Policy",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://www.edf.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Community Legal Services Summer Internship",
+      "company": "Community Legal Services",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law & Government",
+      "deadline": "2026-03-01",
+      "description": "Legal services internship for high school students interested in law and justice.",
+      "majors": [
+        "Law",
+        "Political Science",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "law",
+        "nonprofit"
+      ],
+      "url": "https://clsphila.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Acorn Children's Services Internship",
+      "company": "Acorn Children's Services",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-03-15",
+      "description": "Education and child development internship for high school students.",
+      "majors": [
+        "Education",
+        "Psychology",
+        "Social Work"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "education",
+        "nonprofit"
+      ],
+      "url": "https://acornchildrens.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Farm Bureau Federation Youth Program",
+      "company": "American Farm Bureau Federation",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2026-03-01",
+      "description": "Agriculture and farm management internship for high school students.",
+      "majors": [
+        "Agriculture",
+        "Environmental Science",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "agriculture",
+        "nonprofit"
+      ],
+      "url": "https://www.fb.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Save the Children Internship Program",
+      "company": "Save the Children",
+      "location": {
+        "city": "Westport",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-03-01",
+      "description": "International development and education internship for high school students.",
+      "majors": [
+        "International Studies",
+        "Education",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "education",
+        "nonprofit"
+      ],
+      "url": "https://www.savethechildren.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Codecademy High School Internship Path",
+      "company": "Codecademy",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2026-04-01",
+      "description": "Online coding internship for high school students. Build projects in web development.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "tech",
+        "online"
+      ],
+      "url": "https://www.codecademy.com",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Girl Develop It Summer Mentorship",
+      "company": "Girl Develop It",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Women-focused coding and web development mentorship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "tech",
+        "women",
+        "mentorship"
+      ],
+      "url": "https://www.girldevelopit.com",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "FIRST Robotics Summer Internship",
+      "company": "FIRST (For Inspiration and Recognition of Science and Technology)",
+      "location": {
+        "city": "Manchester",
+        "state": "NH"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-01",
+      "description": "Robotics and engineering internship for high school students. Design and build real robots.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "stem",
+        "engineering",
+        "robotics"
+      ],
+      "url": "https://www.firstinspires.org",
+      "stipend": null,
+      "duration": "8-12 weeks"
+    },
+    {
+      "title": "iGEM High School Internship",
+      "company": "International Genetically Engineered Machine competition",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-03-15",
+      "description": "Synthetic biology research internship for high school students. Conduct genetic engineering research.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Genetics"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "stem",
+        "research",
+        "biology"
+      ],
+      "url": "https://igem.org",
+      "stipend": null,
+      "duration": "10 weeks"
+    },
+    {
+      "title": "Hack the Future High School Program",
+      "company": "Tech Crunch Disrupt",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Hackathon and startup experience for high school students. Build and pitch tech projects.",
+      "majors": [
+        "Computer Science",
+        "Business",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "tech",
+        "startup"
+      ],
+      "url": "https://www.techcrunch.com",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "City of San Francisco Youth Internship",
+      "company": "City and County of San Francisco",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Law & Government",
+      "deadline": "2026-03-15",
+      "description": "Municipal government internship for high school students in various city departments.",
+      "majors": [
+        "Political Science",
+        "Public Administration",
+        "Law"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "local"
+      ],
+      "url": "https://sfgov.org",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Boston Medical Center Health Careers for Youth",
+      "company": "Boston Medical Center",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Healthcare internship for high school students interested in medicine and nursing.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.bmc.org",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Johns Hopkins Hospital Youth Health Program",
+      "company": "Johns Hopkins Hospital",
+      "location": {
+        "city": "Baltimore",
+        "state": "MD"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Paid internship in hospital administration and healthcare careers for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital",
+        "research"
+      ],
+      "url": "https://www.hopkinsmedicine.org",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "UCLA High School Summer Research Program",
+      "company": "University of California, Los Angeles",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Research internship at UCLA for high school students in STEM fields.",
+      "majors": [
+        "Science",
+        "Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "university"
+      ],
+      "url": "https://www.ucla.edu",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "San Diego Zoo Conservation Internship",
+      "company": "San Diego Zoo Wildlife Alliance",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-03-15",
+      "description": "Conservation and animal science internship for high school students.",
+      "majors": [
+        "Biology",
+        "Environmental Science",
+        "Zoology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "conservation"
+      ],
+      "url": "https://www.sandiegozoo.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "New York Public Library Summer Internship",
+      "company": "New York Public Library",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Library science and community engagement internship for high school students.",
+      "majors": [
+        "Library Science",
+        "Education",
+        "History"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "arts",
+        "education"
+      ],
+      "url": "https://www.nypl.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Chicago Public Schools STEM Internship",
+      "company": "Chicago Public Schools",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Education",
+      "deadline": "2026-03-01",
+      "description": "Education and mentorship internship for high school students in Chicago schools.",
+      "majors": [
+        "Education",
+        "STEM",
+        "Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "education",
+        "local"
+      ],
+      "url": "https://www.cps.edu",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Houston Museum of Natural Science Internship",
+      "company": "Houston Museum of Natural Science",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-03-15",
+      "description": "Museum education and science communication internship for high school students.",
+      "majors": [
+        "Science",
+        "Education",
+        "Museum Studies"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "arts",
+        "education",
+        "museum"
+      ],
+      "url": "https://www.hmns.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Museum of Natural History High School Internship",
+      "company": "American Museum of Natural History",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Museum research and curation internship for high school students interested in science.",
+      "majors": [
+        "Science",
+        "Anthropology",
+        "Geology",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "science",
+        "museum",
+        "research"
+      ],
+      "url": "https://www.amnh.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Metropolitan Museum of Art Summer Internship",
+      "company": "Metropolitan Museum of Art",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Art history and museum operations internship for high school students.",
+      "majors": [
+        "Art History",
+        "Arts",
+        "History"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "arts",
+        "museum"
+      ],
+      "url": "https://www.metmuseum.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "MIT Summer Research Program for High School",
+      "company": "Massachusetts Institute of Technology",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-01",
+      "description": "Research internship at MIT for high school students in engineering and science.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.mit.edu",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Stanford University Summer Research College",
+      "company": "Stanford University",
+      "location": {
+        "city": "Stanford",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Intensive research program for high school seniors at Stanford.",
+      "majors": [
+        "Science",
+        "Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.stanford.edu",
+      "stipend": "$5,000",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Princeton University Summer Internship",
+      "company": "Princeton University",
+      "location": {
+        "city": "Princeton",
+        "state": "NJ"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-20",
+      "description": "Research internship at Princeton for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.princeton.edu",
+      "stipend": "$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Yale Summer Program for High School Students",
+      "company": "Yale University",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-03-01",
+      "description": "Summer STEM program and research opportunities for high school students.",
+      "majors": [
+        "Engineering",
+        "Science",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "stem",
+        "research",
+        "regional"
+      ],
+      "url": "https://www.yale.edu",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Harvard Summer Program for High School",
+      "company": "Harvard University",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-28",
+      "description": "Research and coursework program for high school students at Harvard.",
+      "majors": [
+        "Science",
+        "Engineering",
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.harvard.edu",
+      "stipend": "$4,500",
+      "duration": "7 weeks"
+    },
+    {
+      "title": "Cornell University Summer Research",
+      "company": "Cornell University",
+      "location": {
+        "city": "Ithaca",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Engineering and science research for high school students at Cornell.",
+      "majors": [
+        "Engineering",
+        "Agriculture",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.cornell.edu",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "University of Pennsylvania STEM Summer",
+      "company": "University of Pennsylvania",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Engineering summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "stem",
+        "regional"
+      ],
+      "url": "https://www.upenn.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Duke University Summer Research Program",
+      "company": "Duke University",
+      "location": {
+        "city": "Durham",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-03-01",
+      "description": "Research internship for high school students in STEM fields.",
+      "majors": [
+        "Science",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "regional"
+      ],
+      "url": "https://www.duke.edu",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "University of Colorado Boulder Summer STEM",
+      "company": "University of Colorado Boulder",
+      "location": {
+        "city": "Boulder",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and space science summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science",
+        "Aerospace"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "engineering",
+        "regional"
+      ],
+      "url": "https://www.colorado.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Arizona State University Engineering Camp",
+      "company": "Arizona State University",
+      "location": {
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering and sustainability summer camp for high school students.",
+      "majors": [
+        "Engineering",
+        "Environmental Science",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "engineering",
+        "regional"
+      ],
+      "url": "https://www.asu.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Texas at Austin Summer STEM",
+      "company": "University of Texas at Austin",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and computer science summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.utexas.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Washington STEM Summer",
+      "company": "University of Washington",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering summer program with focus on robotics and sustainability.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.washington.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Michigan Summer Internship",
+      "company": "University of Michigan",
+      "location": {
+        "city": "Ann Arbor",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and STEM summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.umich.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Minnesota Summer STEM",
+      "company": "University of Minnesota",
+      "location": {
+        "city": "Minneapolis",
+        "state": "MN"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering and computer science summer program for Minnesota high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.umn.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Southern California Summer Program",
+      "company": "University of Southern California",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and entertainment technology summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Film & Television"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.usc.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "CalTech High School Summer Program",
+      "company": "California Institute of Technology",
+      "location": {
+        "city": "Pasadena",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Research internship at Caltech for high school students interested in STEM.",
+      "majors": [
+        "Physics",
+        "Engineering",
+        "Computer Science",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "competitive"
+      ],
+      "url": "https://www.caltech.edu",
+      "stipend": "$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Northwestern University Summer Program",
+      "company": "Northwestern University",
+      "location": {
+        "city": "Evanston",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-01",
+      "description": "Engineering and STEM summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.northwestern.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Georgia Institute of Technology Summer Program",
+      "company": "Georgia Institute of Technology",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering summer program for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.gatech.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Rice University Summer STEM",
+      "company": "Rice University",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering summer program for Texas high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.rice.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "EPA Summer Internship Program",
+      "company": "Environmental Protection Agency",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Environmental",
+      "deadline": "2026-02-28",
+      "description": "Environmental science and policy internship for high school students.",
+      "majors": [
+        "Environmental Science",
+        "Chemistry",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "environmental",
+        "government"
+      ],
+      "url": "https://www.epa.gov",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "NOAA Summer Internship Program",
+      "company": "National Oceanic and Atmospheric Administration",
+      "location": {
+        "city": "Silver Spring",
+        "state": "MD"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Environmental",
+      "deadline": "2026-02-15",
+      "description": "Ocean science and weather research internship for high school students.",
+      "majors": [
+        "Environmental Science",
+        "Physics",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "environmental",
+        "government",
+        "science"
+      ],
+      "url": "https://www.noaa.gov",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "USGS Summer Internship Program",
+      "company": "United States Geological Survey",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-03-01",
+      "description": "Geological and environmental science internship for high school students.",
+      "majors": [
+        "Geology",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "science",
+        "government"
+      ],
+      "url": "https://www.usgs.gov",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "National Park Service Youth Program",
+      "company": "National Park Service",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-03-15",
+      "description": "Conservation and environmental internship at national parks.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "History"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "government"
+      ],
+      "url": "https://www.nps.gov",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Red Cross Youth Volunteer Program",
+      "company": "American Red Cross",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Disaster relief and public health training for high school students.",
+      "majors": [
+        "Public Health",
+        "Emergency Management",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.redcross.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "United Nations Youth Program",
+      "company": "United Nations",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-02-28",
+      "description": "International development and global affairs internship for high school students.",
+      "majors": [
+        "International Studies",
+        "Political Science",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "government",
+        "international"
+      ],
+      "url": "https://www.un.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "American Cancer Society Youth Program",
+      "company": "American Cancer Society",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Cancer research and health advocacy internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.cancer.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Mayo Clinic High School Program",
+      "company": "Mayo Clinic",
+      "location": {
+        "city": "Rochester",
+        "state": "MN"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Healthcare and medical research internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital",
+        "research"
+      ],
+      "url": "https://www.mayoclinic.org",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Cleveland Clinic High School Internship",
+      "company": "Cleveland Clinic",
+      "location": {
+        "city": "Cleveland",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Hospital and healthcare career exploration for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.clevelandclinic.org",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "UCLA Health Internship Program",
+      "company": "UCLA Health",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Healthcare and public health internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.uclahealth.org",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Rady Children's Hospital Internship",
+      "company": "Rady Children's Hospital",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-15",
+      "description": "Pediatric healthcare internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Psychology",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.rchsd.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Amazon Web Services High School Program",
+      "company": "Amazon Web Services",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Cloud computing internship for high school students with tech background.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "cloud"
+      ],
+      "url": "https://aws.amazon.com",
+      "stipend": "$5,000-$7,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Apple High School Internship",
+      "company": "Apple",
+      "location": {
+        "city": "Cupertino",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Hardware and software engineering internship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "competitive"
+      ],
+      "url": "https://www.apple.com/careers",
+      "stipend": "$6,000-$8,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Intel High School Program",
+      "company": "Intel",
+      "location": {
+        "city": "Santa Clara",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Chip design and computer engineering internship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "engineering"
+      ],
+      "url": "https://www.intel.com/careers",
+      "stipend": "$5,000-$6,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Facebook (Meta) High School Program",
+      "company": "Meta Platforms",
+      "location": {
+        "city": "Menlo Park",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Software engineering internship for underrepresented high school students.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "diversity"
+      ],
+      "url": "https://www.metacareers.com",
+      "stipend": "$6,000-$7,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "IBM High School Internship",
+      "company": "IBM",
+      "location": {
+        "city": "Armonk",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Software and system engineering internship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech"
+      ],
+      "url": "https://www.ibm.com/careers",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Code2040 Summer Internship",
+      "company": "Code2040",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Tech internship for underrepresented minorities. Coding, mentorship, and career development.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "diversity",
+        "minority"
+      ],
+      "url": "https://www.code2040.org",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Year Up Youth Program",
+      "company": "Year Up",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-15",
+      "description": "Tech training and internship for low-income high school students.",
+      "majors": [
+        "Computer Science",
+        "Business",
+        "IT"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "diversity",
+        "accessibility"
+      ],
+      "url": "https://www.yearup.org",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Black Girls Code Summer Program",
+      "company": "Black Girls Code",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Coding and tech entrepreneurship for Black girls in high school.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "tech",
+        "women",
+        "diversity"
+      ],
+      "url": "https://www.blackgirlscode.com",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "LGBTQ+ STEM Alliance Summer Program",
+      "company": "LGBTQ+ STEM Alliance",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-03-15",
+      "description": "STEM mentorship and career development for LGBTQ+ high school students.",
+      "majors": [
+        "Science",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "stem",
+        "diversity",
+        "lgbtq"
+      ],
+      "url": "https://www.lgbtqstem.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Disney High School Internship",
+      "company": "The Walt Disney Company",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Entertainment and animation internship for high school students.",
+      "majors": [
+        "Arts",
+        "Computer Science",
+        "Animation",
+        "Film"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "media",
+        "entertainment"
+      ],
+      "url": "https://www.disneycareerscollege.com",
+      "stipend": "$3,500-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Pixar High School Program",
+      "company": "Pixar Animation Studios",
+      "location": {
+        "city": "Emeryville",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-15",
+      "description": "Animation and computer graphics internship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Animation",
+        "Arts",
+        "Film"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "media"
+      ],
+      "url": "https://www.pixar.com/careers",
+      "stipend": "$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Netflix Internship Program",
+      "company": "Netflix",
+      "location": {
+        "city": "Los Gatos",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Content and engineering internship for high school students interested in media.",
+      "majors": [
+        "Computer Science",
+        "Arts",
+        "Film",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "media",
+        "entertainment"
+      ],
+      "url": "https://jobs.netflix.com",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "NPR Audio Academy for High School",
+      "company": "National Public Radio",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Audio journalism and podcast production for high school students.",
+      "majors": [
+        "Journalism",
+        "Communication",
+        "Music"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media"
+      ],
+      "url": "https://www.npr.org",
+      "stipend": "$2,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Washington Post Summer Journalism Program",
+      "company": "The Washington Post",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-15",
+      "description": "Journalism and reporting internship for high school students.",
+      "majors": [
+        "Journalism",
+        "English",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media"
+      ],
+      "url": "https://www.washingtonpost.com/jobs",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "BBC America High School Program",
+      "company": "BBC America",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-03-15",
+      "description": "Television and media production internship for high school students.",
+      "majors": [
+        "Film",
+        "Journalism",
+        "Communication"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "media",
+        "television"
+      ],
+      "url": "https://www.bbcamerica.com",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "National Audubon Society Youth Program",
+      "company": "National Audubon Society",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-03-01",
+      "description": "Bird and wildlife conservation internship for high school students.",
+      "majors": [
+        "Biology",
+        "Environmental Science",
+        "Zoology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://www.audubon.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "World Wildlife Fund Youth Program",
+      "company": "World Wildlife Fund",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-02-28",
+      "description": "Conservation and wildlife protection internship for high school students.",
+      "majors": [
+        "Biology",
+        "Environmental Science",
+        "Geography"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://www.worldwildlife.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Sierra Club High School Program",
+      "company": "Sierra Club",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-03-15",
+      "description": "Environmental activism and conservation internship for high school students.",
+      "majors": [
+        "Environmental Science",
+        "Policy",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://www.sierraclub.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Ocean Conservancy Youth Program",
+      "company": "Ocean Conservancy",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental",
+      "deadline": "2026-02-28",
+      "description": "Marine conservation and ocean science internship for high school students.",
+      "majors": [
+        "Marine Science",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "environmental",
+        "nonprofit"
+      ],
+      "url": "https://oceanconservancy.org",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Goldman Sachs High School Internship",
+      "company": "Goldman Sachs",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-15",
+      "description": "Finance and business internship for high school students from diverse backgrounds.",
+      "majors": [
+        "Finance",
+        "Business",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "finance",
+        "diversity"
+      ],
+      "url": "https://www.goldmansachs.com/careers",
+      "stipend": "$5,000-$6,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "JPMorgan Chase High School Program",
+      "company": "JPMorgan Chase",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Banking and finance internship for diverse high school students.",
+      "majors": [
+        "Finance",
+        "Economics",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "finance"
+      ],
+      "url": "https://www.jpmorganchase.com/careers",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Deloitte High School Leadership Program",
+      "company": "Deloitte",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Consulting and business internship for high school students.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "consulting"
+      ],
+      "url": "https://www2.deloitte.com/us/en/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Oak Ridge National Laboratory Summer Program",
+      "company": "Oak Ridge National Laboratory",
+      "location": {
+        "city": "Oak Ridge",
+        "state": "TN"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "National laboratory research internship for high school students in STEM.",
+      "majors": [
+        "Physics",
+        "Chemistry",
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "national"
+      ],
+      "url": "https://www.ornl.gov",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Argonne National Laboratory Summer Program",
+      "company": "Argonne National Laboratory",
+      "location": {
+        "city": "Lemont",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Physics and energy research internship for high school students.",
+      "majors": [
+        "Physics",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "national"
+      ],
+      "url": "https://www.anl.gov",
+      "stipend": "$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Brookhaven National Laboratory Internship",
+      "company": "Brookhaven National Laboratory",
+      "location": {
+        "city": "Upton",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-20",
+      "description": "Physics and materials science research for high school students.",
+      "majors": [
+        "Physics",
+        "Chemistry",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem"
+      ],
+      "url": "https://www.bnl.gov",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Fermilab High School Internship",
+      "company": "Fermilab",
+      "location": {
+        "city": "Batavia",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-28",
+      "description": "Particle physics research internship for high school students.",
+      "majors": [
+        "Physics",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem"
+      ],
+      "url": "https://www.fnal.gov",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Lawrence Berkeley Lab Summer Program",
+      "company": "Lawrence Berkeley National Laboratory",
+      "location": {
+        "city": "Berkeley",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Energy and materials science research for high school students.",
+      "majors": [
+        "Physics",
+        "Chemistry",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "stem",
+        "energy"
+      ],
+      "url": "https://www.lbl.gov",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Medical Association Youth Program",
+      "company": "American Medical Association",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Healthcare career exploration and medical education for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.ama-assn.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "American Nurses Association Youth Program",
+      "company": "American Nurses Association",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-15",
+      "description": "Nursing career development and healthcare internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Nursing",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "nonprofit"
+      ],
+      "url": "https://www.nursingworld.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Dental Explorer Summer Program",
+      "company": "American Dental Association",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Dentistry career exploration for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "healthcare",
+        "dental"
+      ],
+      "url": "https://www.ada.org",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "USDA Summer Intern Program",
+      "company": "United States Department of Agriculture",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Agriculture",
+      "deadline": "2026-02-15",
+      "description": "Agricultural science and policy internship for high school students.",
+      "majors": [
+        "Agriculture",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "agriculture",
+        "government"
+      ],
+      "url": "https://www.usda.gov",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "4-H Summer Science Camp",
+      "company": "National 4-H Council",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2026-04-01",
+      "description": "STEM and agriculture leadership program for high school students.",
+      "majors": [
+        "Agriculture",
+        "Science",
+        "Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "agriculture",
+        "stem"
+      ],
+      "url": "https://www.4-h.org",
+      "stipend": null,
+      "duration": "2 weeks"
+    },
+    {
+      "title": "Young Farmers of America Internship",
+      "company": "Future Farmers of America",
+      "location": {
+        "city": "Indianapolis",
+        "state": "IN"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2026-03-15",
+      "description": "Agricultural education and farming internship for high school students.",
+      "majors": [
+        "Agriculture",
+        "Business",
+        "Science"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "agriculture"
+      ],
+      "url": "https://www.ffa.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Monsanto Agricultural Internship",
+      "company": "Bayer Crop Science",
+      "location": {
+        "city": "St. Louis",
+        "state": "MO"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Agriculture",
+      "deadline": "2026-03-15",
+      "description": "Agricultural biotechnology internship for high school students.",
+      "majors": [
+        "Agriculture",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "agriculture",
+        "stem"
+      ],
+      "url": "https://www.bayer.com",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Associated General Contractors Youth Program",
+      "company": "Associated General Contractors of America",
+      "location": {
+        "city": "Arlington",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Construction and project management internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Construction Management",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "construction"
+      ],
+      "url": "https://www.agc.org",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Joint Apprenticeship Training Committee Program",
+      "company": "JATC",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Electrical and construction trade internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Construction",
+        "Electrical"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "trades"
+      ],
+      "url": "https://www.jatcchicago.org",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Tesla Manufacturing Internship",
+      "company": "Tesla",
+      "location": {
+        "city": "Fremont",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-02-28",
+      "description": "Manufacturing and engineering internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "manufacturing"
+      ],
+      "url": "https://www.tesla.com/careers",
+      "stipend": "$5,500-$6,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "General Motors Youth Engineering Program",
+      "company": "General Motors",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-02-28",
+      "description": "Automotive engineering internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "automotive"
+      ],
+      "url": "https://www.gm.com/careers",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Ford Motor Company High School Program",
+      "company": "Ford Motor Company",
+      "location": {
+        "city": "Dearborn",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Automotive manufacturing and engineering for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "automotive"
+      ],
+      "url": "https://www.ford.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Boeing High School Internship",
+      "company": "Boeing",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Aerospace engineering internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "aerospace"
+      ],
+      "url": "https://www.boeing.com/careers",
+      "stipend": "$5,000-$6,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Lockheed Martin Youth Program",
+      "company": "Lockheed Martin",
+      "location": {
+        "city": "Bethesda",
+        "state": "MD"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Aerospace and defense engineering internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "aerospace",
+        "defense"
+      ],
+      "url": "https://www.lockheedmartin.com/careers",
+      "stipend": "$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "ExxonMobil STEM Camp",
+      "company": "ExxonMobil",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-02-28",
+      "description": "Energy and petroleum engineering internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Chemistry",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "energy"
+      ],
+      "url": "https://www.exxonmobil.com/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Chevron Energy Youth Program",
+      "company": "Chevron",
+      "location": {
+        "city": "San Ramon",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Energy sector internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Chemistry",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "energy"
+      ],
+      "url": "https://www.chevron.com/careers",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Duke Energy Summer Internship",
+      "company": "Duke Energy",
+      "location": {
+        "city": "Charlotte",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Electrical engineering and energy internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "energy"
+      ],
+      "url": "https://www.duke-energy.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Pfizer High School Internship",
+      "company": "Pfizer",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Pharmaceutical research and development internship for high school students.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "pharma"
+      ],
+      "url": "https://www.pfizer.com/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Merck Summer Program",
+      "company": "Merck",
+      "location": {
+        "city": "Kenilworth",
+        "state": "NJ"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Pharmaceutical internship for high school students interested in drug development.",
+      "majors": [
+        "Chemistry",
+        "Biology",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "pharma"
+      ],
+      "url": "https://www.merck.com/careers",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Genentech High School Research Program",
+      "company": "Genentech",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2026-02-15",
+      "description": "Biotechnology research internship for high school students.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "biotech"
+      ],
+      "url": "https://www.gene.com",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Amgen High School Internship",
+      "company": "Amgen",
+      "location": {
+        "city": "Thousand Oaks",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Biopharmaceutical research internship for high school students.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "biotech"
+      ],
+      "url": "https://www.amgen.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Moderna Research Internship",
+      "company": "Moderna",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "mRNA vaccine research internship for high school students.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "biotech"
+      ],
+      "url": "https://www.modernatx.com",
+      "stipend": "$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "United Airlines Youth Program",
+      "company": "United Airlines",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Airlines and travel industry internship for high school students.",
+      "majors": [
+        "Business",
+        "Customer Service",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "travel"
+      ],
+      "url": "https://www.united.com/careers",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Hilton Hotel Management Program",
+      "company": "Hilton Hotels",
+      "location": {
+        "city": "McLean",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Hotel management and hospitality internship for high school students.",
+      "majors": [
+        "Business",
+        "Hospitality",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "hospitality"
+      ],
+      "url": "https://www.hilton.com/careers",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Amazon Retail Youth Program",
+      "company": "Amazon",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "E-commerce and retail management internship for high school students.",
+      "majors": [
+        "Business",
+        "Computer Science",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "ecommerce"
+      ],
+      "url": "https://www.amazon.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Walmart Youth Internship",
+      "company": "Walmart",
+      "location": {
+        "city": "Bentonville",
+        "state": "AR"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Retail management and supply chain internship for high school students.",
+      "majors": [
+        "Business",
+        "Supply Chain",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "retail"
+      ],
+      "url": "https://www.walmart.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Target Summer Internship",
+      "company": "Target",
+      "location": {
+        "city": "Minneapolis",
+        "state": "MN"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Retail operations and logistics internship for high school students.",
+      "majors": [
+        "Business",
+        "Logistics",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "retail"
+      ],
+      "url": "https://www.target.com/careers",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Nike Design Internship",
+      "company": "Nike",
+      "location": {
+        "city": "Beaverton",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Product design and marketing internship for high school students.",
+      "majors": [
+        "Design",
+        "Engineering",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "design",
+        "sports"
+      ],
+      "url": "https://www.nike.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Adidas Innovation Lab",
+      "company": "Adidas",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Sports apparel design and innovation internship for high school students.",
+      "majors": [
+        "Design",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "design",
+        "sports"
+      ],
+      "url": "https://www.adidas.com/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "LVMH Luxury Brand Internship",
+      "company": "LVMH",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-15",
+      "description": "Luxury brand management and design internship for high school students.",
+      "majors": [
+        "Design",
+        "Business",
+        "Arts"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "design",
+        "luxury"
+      ],
+      "url": "https://www.lvmh.com/careers",
+      "stipend": "$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Coca-Cola Summer Internship",
+      "company": "The Coca-Cola Company",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Marketing and business internship for high school students.",
+      "majors": [
+        "Business",
+        "Marketing",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "food"
+      ],
+      "url": "https://www.coca-cola.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "PepsiCo Innovation Internship",
+      "company": "PepsiCo",
+      "location": {
+        "city": "Purchase",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Food and beverage innovation internship for high school students.",
+      "majors": [
+        "Business",
+        "Engineering",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "food"
+      ],
+      "url": "https://www.pepsico.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "McDonald's Corporate Internship",
+      "company": "McDonald's",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Business operations and management internship for high school students.",
+      "majors": [
+        "Business",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "food"
+      ],
+      "url": "https://www.mcdonalds.com/careers",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Starbucks Youth Program",
+      "company": "Starbucks",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Retail and operations management internship for high school students.",
+      "majors": [
+        "Business",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "food"
+      ],
+      "url": "https://www.starbucks.com/careers",
+      "stipend": "$2,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "State Farm Insurance Internship",
+      "company": "State Farm",
+      "location": {
+        "city": "Bloomington",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Insurance and risk management internship for high school students.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "finance"
+      ],
+      "url": "https://www.statefarm.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Wells Fargo Youth Program",
+      "company": "Wells Fargo",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Banking and finance internship for diverse high school students.",
+      "majors": [
+        "Finance",
+        "Business",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "finance"
+      ],
+      "url": "https://www.wellsfargo.com/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Verizon High School Program",
+      "company": "Verizon",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Telecommunications and network engineering for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "telecom"
+      ],
+      "url": "https://www.verizon.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "AT&T Summer Internship",
+      "company": "AT&T",
+      "location": {
+        "city": "Dallas",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Telecom engineering and business internship for high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "telecom"
+      ],
+      "url": "https://www.att.com/careers",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "AmeriCorps Vista Program for High School",
+      "company": "AmeriCorps",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-03-01",
+      "description": "Community service and civic engagement program for high school students.",
+      "majors": [
+        "Public Service",
+        "Education",
+        "Community Development"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "government",
+        "community"
+      ],
+      "url": "https://www.americorps.gov",
+      "stipend": null,
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Peace Corps World Wise Schools",
+      "company": "Peace Corps",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2026-02-28",
+      "description": "International development and global education for high school students.",
+      "majors": [
+        "International Studies",
+        "Education",
+        "Languages"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "government",
+        "international"
+      ],
+      "url": "https://www.peacecorps.gov",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "Habitat for Humanity Youth Build",
+      "company": "Habitat for Humanity",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-01",
+      "description": "Construction and community development for high school students.",
+      "majors": [
+        "Engineering",
+        "Construction",
+        "Community Service"
+      ],
+      "tags": [
+        "high-school",
+        "unpaid",
+        "nonprofit",
+        "construction"
+      ],
+      "url": "https://www.habitat.org",
+      "stipend": null,
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Skadden Arps Law Summer Program",
+      "company": "Skadden, Arps, Slate, Meagher & Flom",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Law & Government",
+      "deadline": "2026-02-15",
+      "description": "Law and legal affairs internship for high school students interested in law.",
+      "majors": [
+        "Law",
+        "Government",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law",
+        "internship"
+      ],
+      "url": "https://www.skadden.com",
+      "stipend": "$4,000-$5,000",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Sullivan & Cromwell High School Program",
+      "company": "Sullivan & Cromwell LLP",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Law & Government",
+      "deadline": "2026-02-20",
+      "description": "Corporate law internship for high school students.",
+      "majors": [
+        "Law",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law"
+      ],
+      "url": "https://www.sullcrom.com",
+      "stipend": "$4,000",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Wachtell, Lipton Youth Program",
+      "company": "Wachtell, Lipton, Rosen & Katz",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Law & Government",
+      "deadline": "2026-02-25",
+      "description": "Corporate and M&A law internship for high school students.",
+      "majors": [
+        "Law",
+        "Business",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law"
+      ],
+      "url": "https://www.wlrk.com",
+      "stipend": "$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "McKinsey High School Program",
+      "company": "McKinsey & Company",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Business consulting and strategy internship for high school students.",
+      "majors": [
+        "Business",
+        "Economics",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "consulting"
+      ],
+      "url": "https://www.mckinsey.com",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Boston Consulting Group High School",
+      "company": "Boston Consulting Group",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Management consulting internship for high school students.",
+      "majors": [
+        "Business",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "consulting"
+      ],
+      "url": "https://www.bcg.com",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Bain & Company High School Program",
+      "company": "Bain & Company",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Business strategy internship for high school students.",
+      "majors": [
+        "Business",
+        "Economics",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "consulting"
+      ],
+      "url": "https://www.bain.com",
+      "stipend": "$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "CBRE Group High School Program",
+      "company": "CBRE Group",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Real estate and commercial property management internship.",
+      "majors": [
+        "Business",
+        "Real Estate",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "realestate"
+      ],
+      "url": "https://www.cbre.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "JLL High School Internship",
+      "company": "Jones Lang LaSalle",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Commercial real estate internship for high school students.",
+      "majors": [
+        "Business",
+        "Real Estate"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "realestate"
+      ],
+      "url": "https://www.jll.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "New York Times High School Internship",
+      "company": "The New York Times",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-15",
+      "description": "Journalism and digital media internship for high school students.",
+      "majors": [
+        "Journalism",
+        "English",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media"
+      ],
+      "url": "https://www.nytimes.com/careers",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Wall Street Journal High School Program",
+      "company": "Dow Jones & Company",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Business journalism and reporting for high school students.",
+      "majors": [
+        "Journalism",
+        "Business",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media",
+        "business"
+      ],
+      "url": "https://www.wsj.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Time Magazine High School Program",
+      "company": "Time",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Magazine journalism and media production internship for high school students.",
+      "majors": [
+        "Journalism",
+        "English",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media"
+      ],
+      "url": "https://www.time.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Vogue High School Internship",
+      "company": "Conde Nast",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Fashion and magazine journalism for high school students.",
+      "majors": [
+        "Journalism",
+        "Fashion",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "media",
+        "fashion"
+      ],
+      "url": "https://www.condenast.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "NBA Youth Program",
+      "company": "National Basketball Association",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Sports management and business internship for high school students.",
+      "majors": [
+        "Business",
+        "Sports Management",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "sports",
+        "business"
+      ],
+      "url": "https://www.nba.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "NFL Internship Program",
+      "company": "National Football League",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Sports and business management internship for high school students.",
+      "majors": [
+        "Business",
+        "Sports Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "sports",
+        "business"
+      ],
+      "url": "https://www.nfl.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "MLB Summer Program",
+      "company": "Major League Baseball",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-02-28",
+      "description": "Baseball operations and business internship for high school students.",
+      "majors": [
+        "Business",
+        "Sports Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "sports"
+      ],
+      "url": "https://www.mlb.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Stanford Hospital Health Career Program",
+      "company": "Stanford Health",
+      "location": {
+        "city": "Stanford",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Healthcare and patient care internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.stanfordhealthcare.org",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "UCSF Medical Center Youth Program",
+      "company": "UCSF Health",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Medical research and healthcare internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital",
+        "research"
+      ],
+      "url": "https://www.ucsf.edu",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Massachusetts General Hospital Internship",
+      "company": "Massachusetts General Hospital",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-02-28",
+      "description": "Hospital operations and healthcare career exploration for high school.",
+      "majors": [
+        "Health Sciences",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://www.massgeneral.org",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "American Water High School Program",
+      "company": "American Water Works",
+      "location": {
+        "city": "Camden",
+        "state": "NJ"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Water systems and infrastructure engineering for high school students.",
+      "majors": [
+        "Engineering",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "infrastructure"
+      ],
+      "url": "https://www.amwater.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Consolidated Edison Youth Program",
+      "company": "Consolidated Edison",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Electrical engineering and utility management for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "utility"
+      ],
+      "url": "https://www.coned.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Warner Bros Entertainment Internship",
+      "company": "Warner Bros. Discovery",
+      "location": {
+        "city": "Burbank",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Film and television production internship for high school students.",
+      "majors": [
+        "Film",
+        "Arts",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "media",
+        "entertainment"
+      ],
+      "url": "https://www.warnerbros.com",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Universal Studios High School Program",
+      "company": "Universal Studios",
+      "location": {
+        "city": "Universal City",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Entertainment and theme park operations for high school students.",
+      "majors": [
+        "Business",
+        "Communications",
+        "Film"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "media",
+        "entertainment"
+      ],
+      "url": "https://www.universalstudios.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Paramount Pictures High School Internship",
+      "company": "Paramount Global",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Film production and entertainment internship for high school students.",
+      "majors": [
+        "Film",
+        "Communications",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "media"
+      ],
+      "url": "https://www.paramount.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Sony Music High School Program",
+      "company": "Sony Music Entertainment",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Music industry and artist management internship for high school.",
+      "majors": [
+        "Music",
+        "Business",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "music",
+        "media"
+      ],
+      "url": "https://www.sonymusic.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Universal Music Group Internship",
+      "company": "Universal Music Group",
+      "location": {
+        "city": "Santa Monica",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-02-28",
+      "description": "Recording industry and music production internship for high school.",
+      "majors": [
+        "Music",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "music"
+      ],
+      "url": "https://www.universalmusic.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Warner Music Group High School Program",
+      "company": "Warner Music Group",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2026-03-01",
+      "description": "Music business and talent management internship for high school.",
+      "majors": [
+        "Music",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "music",
+        "media"
+      ],
+      "url": "https://www.wmg.com",
+      "stipend": "$2,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Electronic Arts High School Program",
+      "company": "Electronic Arts",
+      "location": {
+        "city": "Redwood City",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Video game development and programming for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "gaming"
+      ],
+      "url": "https://www.ea.com/careers",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Activision Blizzard Internship",
+      "company": "Activision Blizzard",
+      "location": {
+        "city": "Irvine",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-02-28",
+      "description": "Game design and software engineering internship for high school.",
+      "majors": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "gaming"
+      ],
+      "url": "https://www.activision.com",
+      "stipend": "$3,500-$4,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Take-Two Interactive High School Program",
+      "company": "Take-Two Interactive",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2026-03-01",
+      "description": "Game development and creative internship for high school students.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Arts"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "gaming"
+      ],
+      "url": "https://www.take2games.com",
+      "stipend": "$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Northrop Grumman Youth Program",
+      "company": "Northrop Grumman",
+      "location": {
+        "city": "Falls Church",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Aerospace and defense engineering for high school students.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "aerospace"
+      ],
+      "url": "https://www.northropgrumman.com",
+      "stipend": "$4,500-$5,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Raytheon Technologies Internship",
+      "company": "RTX Corporation",
+      "location": {
+        "city": "Waltham",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Aerospace technology and engineering internship for high school.",
+      "majors": [
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "aerospace"
+      ],
+      "url": "https://www.rtx.com",
+      "stipend": "$4,000-$5,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "General Dynamics High School Program",
+      "company": "General Dynamics",
+      "location": {
+        "city": "Falls Church",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Defense and aerospace engineering internship for high school.",
+      "majors": [
+        "Engineering",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "defense"
+      ],
+      "url": "https://www.gd.com",
+      "stipend": "$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "AXA Group High School Program",
+      "company": "AXA",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-01",
+      "description": "Insurance and risk management internship for high school students.",
+      "majors": [
+        "Business",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "insurance"
+      ],
+      "url": "https://www.axa.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "6 weeks"
+    },
+    {
+      "title": "Progressive Insurance High School Program",
+      "company": "Progressive",
+      "location": {
+        "city": "Mayfield Village",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Insurance and technology internship for high school students.",
+      "majors": [
+        "Business",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "insurance"
+      ],
+      "url": "https://www.progressive.com/careers",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Allstate Youth Internship Program",
+      "company": "Allstate",
+      "location": {
+        "city": "Northbrook",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Insurance business and operations internship for high school students.",
+      "majors": [
+        "Business",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "insurance"
+      ],
+      "url": "https://www.allstate.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Cigna High School Program",
+      "company": "Cigna",
+      "location": {
+        "city": "Bloomfield",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Health insurance and healthcare management for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "insurance"
+      ],
+      "url": "https://www.cigna.com",
+      "stipend": "$3,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "United Health Group High School Program",
+      "company": "UnitedHealth Group",
+      "location": {
+        "city": "Minnetonka",
+        "state": "MN"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Health services and technology internship for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare"
+      ],
+      "url": "https://www.unitedhealthgroup.com",
+      "stipend": "$3,000-$4,000",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Humana High School Internship",
+      "company": "Humana",
+      "location": {
+        "city": "Louisville",
+        "state": "KY"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2026-03-15",
+      "description": "Healthcare insurance and operations for high school students.",
+      "majors": [
+        "Health Sciences",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare"
+      ],
+      "url": "https://www.humana.com",
+      "stipend": "$2,500-$3,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "Hilton Honors Youth Program",
+      "company": "Hilton Worldwide",
+      "location": {
+        "city": "McLean",
+        "state": "VA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2026-03-15",
+      "description": "Hospitality management and operations for high school students.",
+      "majors": [
+        "Business",
+        "Hospitality"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "business",
+        "hospitality"
+      ],
+      "url": "https://www.hiltonworldwide.com",
+      "stipend": "$2,500",
+      "duration": "8 weeks"
+    },
+    {
+      "title": "University of Alabama Summer STEM",
+      "company": "University of Alabama",
+      "location": {
+        "city": "Tuscaloosa",
+        "state": "AL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and computer science summer program for Alabama high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.ua.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Delaware Summer Program",
+      "company": "University of Delaware",
+      "location": {
+        "city": "Newark",
+        "state": "DE"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering and environmental science program for Delaware high school students.",
+      "majors": [
+        "Engineering",
+        "Environmental Science",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.udel.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Idaho Summer STEM Camp",
+      "company": "University of Idaho",
+      "location": {
+        "city": "Moscow",
+        "state": "ID"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-10",
+      "description": "Engineering and environmental science program for Idaho high school students.",
+      "majors": [
+        "Engineering",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.uidaho.edu",
+      "stipend": null,
+      "duration": "4 weeks"
+    },
+    {
+      "title": "University of Utah Summer Program",
+      "company": "University of Utah",
+      "location": {
+        "city": "Salt Lake City",
+        "state": "UT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-15",
+      "description": "Engineering summer program for Utah high school students.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "stem",
+        "unpaid",
+        "regional"
+      ],
+      "url": "https://www.utah.edu",
+      "stipend": null,
+      "duration": "4 weeks"
     }
   ]
 }

@@ -123,12 +123,13 @@ router.get('/search', async (req, res) => {
         _fullAccess: true
       });
     } else {
-      // Preview: top 5, no URLs, limited data
+      // Preview: top 3, no URLs, limited data — show total count
       res.json({
-        results: results.slice(0, 5).map(previewInternship),
+        results: results.slice(0, 3).map(previewInternship),
         total: results.length,
+        showing: 3,
         _fullAccess: false,
-        _previewMessage: `Showing 5 of ${results.length} internships. Upgrade to Consultant for full access with application links.`
+        _previewMessage: `Showing 3 of ${results.length} internships. Upgrade to Consultant for full access with application links.`
       });
     }
   } catch (err) {

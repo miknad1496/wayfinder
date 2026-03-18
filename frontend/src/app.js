@@ -1930,7 +1930,7 @@ function canAccess(feature) {
   const access = {
     admissions_timeline: ['pro', 'elite'],
     essay_reviewer: ['pro', 'elite'],
-    internships_preview: ['pro'],
+    internships_preview: ['pro', 'elite'],
     internships_full: ['elite'],
     scholarships_preview: ['pro'],
     scholarships: ['elite'],
@@ -2232,7 +2232,7 @@ async function searchInternships() {
     });
     const data = await res.json();
     $('internshipsLoading').style.display = 'none';
-    renderToolResults('internshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'internship');
+    renderToolResults('internshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'internship', data.total);
   } catch {
     $('internshipsLoading').style.display = 'none';
     $('internshipsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load internships.</p>';
@@ -2315,7 +2315,7 @@ async function searchPrograms() {
 // ========================
 // Shared Tool Results Renderer
 // ========================
-function renderToolResults(containerId, results, fullAccess, previewMessage, type) {
+function renderToolResults(containerId, results, fullAccess, previewMessage, type, totalCount) {
   const el = $(containerId);
 
   if (!results.length) {
@@ -2326,7 +2326,11 @@ function renderToolResults(containerId, results, fullAccess, previewMessage, typ
     return;
   }
 
-  let html = `<div class="tool-result-count">${results.length} result${results.length !== 1 ? 's' : ''}${!fullAccess ? ' (preview)' : ''}</div>`;
+  // Show "X of Y results" when in preview mode with total count available
+  const countText = (!fullAccess && totalCount && totalCount > results.length)
+    ? `Showing ${results.length} of ${totalCount} results`
+    : `${results.length} result${results.length !== 1 ? 's' : ''}`;
+  let html = `<div class="tool-result-count">${countText}</div>`;
 
   for (const item of results) {
     html += renderToolCard(item, type, fullAccess);

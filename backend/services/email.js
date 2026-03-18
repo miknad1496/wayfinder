@@ -92,28 +92,26 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
   <body>
     <div class="container">
       <div class="header">
-        <h1>You're invited to Wayfinder</h1>
+        <h1>You've been invited to Wayfinder</h1>
       </div>
 
       <div class="content">
-        <p>Hey there!</p>
-        <p><strong>${inviterName}</strong> thinks you'd get a lot out of Wayfinder — it's an AI-powered career and college admissions advisor built on real labor market data, not generic advice.</p>
+        <p><strong>${inviterName}</strong> invited you to Wayfinder — an invite-only AI advisor that combines deep career intelligence with college admissions strategy.</p>
+        <p style="color: #555; font-size: 14px; line-height: 1.7;">Wayfinder is powered by Claude Opus and trained on structured data from the Bureau of Labor Statistics, O*NET, NCES College Scorecard, and insights distilled from admissions officers, career counselors, and hiring professionals. It's not a chatbot with opinions — it's a reasoning engine backed by real data.</p>
       </div>
 
       <div class="invite-section">
-        <p style="margin: 0 0 15px 0; color: #666;">Click below to accept your invitation:</p>
-        <a href="${inviteLink}" class="cta-button">Accept Invitation</a>
+        <a href="${inviteLink}" class="cta-button">Accept Your Invitation</a>
         <div class="invite-code">Invite code: ${inviteCode}</div>
       </div>
 
       <div class="content">
-        <p>This invitation link expires in 14 days, so don't wait too long.</p>
-        <p>See you on Wayfinder!</p>
+        <p style="font-size: 13px; color: #777;">This invitation expires in 14 days. Wayfinder is currently invite-only.</p>
       </div>
 
       <div class="footer">
-        <p>Questions? Reply to this email or visit us at <a href="https://wayfinderai.org" style="color: #2563eb;">wayfinderai.org</a></p>
-        <p>© 2025 Wayfinder. All rights reserved.</p>
+        <p><a href="https://wayfinderai.org" style="color: #2563eb;">wayfinderai.org</a></p>
+        <p>&copy; 2026 Wayfinder. All rights reserved.</p>
       </div>
     </div>
   </body>
@@ -121,24 +119,19 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
 `;
 
     // Prepare the plain text fallback
-    const textBody = `You're invited to Wayfinder
+    const textBody = `You've been invited to Wayfinder
 
-Hey there!
+${inviterName} invited you to Wayfinder — an invite-only AI advisor that combines deep career intelligence with college admissions strategy.
 
-${inviterName} thinks you'd get a lot out of Wayfinder — it's an AI-powered career and college admissions advisor built on real labor market data, not generic advice.
+Wayfinder is powered by Claude Opus and trained on structured data from the Bureau of Labor Statistics, O*NET, NCES College Scorecard, and insights distilled from admissions officers, career counselors, and hiring professionals. It's not a chatbot with opinions — it's a reasoning engine backed by real data.
 
-Accept your invitation here:
-${inviteLink}
+Accept your invitation: ${inviteLink}
 
 Invite code: ${inviteCode}
 
-This invitation link expires in 14 days, so don't wait too long.
+This invitation expires in 14 days. Wayfinder is currently invite-only.
 
-See you on Wayfinder!
-
----
-Questions? Visit us at https://wayfinderai.org
-© 2025 Wayfinder. All rights reserved.
+wayfinderai.org
 `;
 
     // Call Resend API
