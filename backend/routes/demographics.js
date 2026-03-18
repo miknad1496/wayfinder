@@ -212,7 +212,19 @@ router.get('/school/:unitId', async (req, res) => {
     if (paid) {
       res.json({ school, _fullAccess: true });
     } else {
-      res.json({ school: stripForFreeUser(school), _fullAccess: false });
+      // Free users: school name + aggregate only, no major breakdown
+      res.json({
+        school: {
+          school: school.school,
+          unitId: school.unitId,
+          year: school.year,
+          totalMajorsWithData: school.totalMajorsWithData,
+          schoolAggregate: school.schoolAggregate,
+          majors: [] // No major-level data for free tier
+        },
+        _fullAccess: false,
+        _previewMessage: `${school.totalMajorsWithData || 0} majors with demographic data available. Upgrade to Coach for full per-major breakdowns.`
+      });
     }
   } catch (err) {
     console.error('Demographics school error:', err);
