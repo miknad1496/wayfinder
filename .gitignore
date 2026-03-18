@@ -5,6 +5,7 @@ backend/data/feedback/
 backend/data/users/
 backend/data/learned/
 frontend/dist/
+seed-data/
 *.log
 .DS_Store
 Thumbs.db
