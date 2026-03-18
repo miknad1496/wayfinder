@@ -1002,7 +1002,9 @@ function sanitizeUser(user) {
   // Admins: use their set plan for feature flags (so they can test tier UX)
   // but always get elite-level limits (engine pulls, tokens)
   // VIPs: always treated as elite (full access, no admin powers)
-  const plan = vip ? 'elite' : (user.plan || 'free');
+  // Normalize legacy 'premium' plan → 'pro' (old Stripe webhook data)
+  const rawPlan = user.plan === 'premium' ? 'pro' : (user.plan || 'free');
+  const plan = vip ? 'elite' : rawPlan;
   const limits = (admin || vip) ? getPlanLimits('elite') : getPlanLimits(plan);
 
   return {

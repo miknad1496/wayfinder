@@ -1894,7 +1894,7 @@ function setupToolListeners() {
   if ($('essaySubmitBtn')) $('essaySubmitBtn').addEventListener('click', submitEssayReview);
   if ($('essayBuyMoreBtn')) $('essayBuyMoreBtn').addEventListener('click', () => {
     $('essaysModal').style.display = 'none';
-    openUpgrade();
+    openUpgrade('admissions'); // Go straight to admissions pathway so essay packs are visible
   });
   if ($('essayText')) {
     $('essayText').addEventListener('input', () => {
@@ -2112,8 +2112,9 @@ async function loadEssayCredits() {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
     const data = await res.json();
-    $('essayCreditsCount').textContent = `${data.remaining || 0} reviews remaining`;
-    $('essaySubmitBtn').disabled = (data.remaining || 0) === 0;
+    const credits = data.credits ?? data.remaining ?? 0;
+    $('essayCreditsCount').textContent = `${credits} reviews remaining`;
+    $('essaySubmitBtn').disabled = credits === 0;
   } catch {}
 }
 
