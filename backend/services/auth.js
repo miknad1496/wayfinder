@@ -33,11 +33,15 @@ const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 const PLAN_DISPLAY_NAMES = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
 
 // Admin emails — can switch plans to test tier behavior, always get elite limits
-// 'admin' is the built-in admin account. Dan's personal email behaves like a normal user.
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin')
-  .split(',')
-  .map(e => e.toLowerCase().trim())
-  .filter(Boolean);
+// 'admin' is the built-in admin account (always included). Dan's personal email behaves like a normal user.
+// ADMIN_EMAILS env var adds additional admins; 'admin' is always admin regardless.
+const ADMIN_EMAILS = [
+  'admin', // Built-in admin — always recognized, cannot be removed via env var
+  ...(process.env.ADMIN_EMAILS || '')
+    .split(',')
+    .map(e => e.toLowerCase().trim())
+    .filter(Boolean)
+];
 
 // VIP emails — always get elite-tier access (not admin, just full access)
 // Load from env, fallback to hardcoded defaults

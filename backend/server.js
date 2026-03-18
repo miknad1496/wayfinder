@@ -23,6 +23,7 @@ import { ensureUsersDir } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
 import { startScheduler } from './services/scheduler.js';
 import { startScraperScheduler } from './services/scraper-scheduler.js';
+import { syncCommittedData } from './services/data-sync.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -214,6 +215,10 @@ async function start() {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);
     console.log(`   Environment: ${process.env.NODE_ENV || 'development'}\n`);
+
+    // Sync committed data files to persistent disk (fixes Render mount issue)
+    // Must run BEFORE scrapers to prevent overwriting good data
+    await syncCommittedData();
 
     // Start reminder scheduler in production
     if (process.env.NODE_ENV === 'production') {
