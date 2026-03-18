@@ -217,8 +217,8 @@ async function start() {
     console.log(`   Environment: ${process.env.NODE_ENV || 'development'}\n`);
 
     // Sync committed data files to persistent disk (fixes Render mount issue)
-    // Must run BEFORE scrapers to prevent overwriting good data
-    await syncCommittedData();
+    // Must run BEFORE scrapers — completely non-fatal
+    try { await syncCommittedData(); } catch (e) { console.error('[Data Sync] Error (non-fatal):', e.message); }
 
     // Start reminder scheduler in production
     if (process.env.NODE_ENV === 'production') {

@@ -8,26 +8,24 @@
  * restored appear. This means static data files (internships, programs,
  * curriculum, essays, etc.) are invisible to the server.
  *
- * Solution: On startup, extract any missing data files from git into
- * the working tree (i.e., onto the persistent disk). We use
- * `git show HEAD:<path>` to read from git, then write to disk only
- * if the file doesn't already exist or is suspiciously small (<1KB).
+ * Solution: On startup, check for missing data files. If any are missing,
+ * fetch them from the GitHub repo (raw.githubusercontent.com). Only writes
+ * files that are missing or suspiciously small (<1KB).
  *
- * This runs ONCE at startup, before scrapers or API routes need the data.
+ * This is COMPLETELY NON-FATAL — if anything fails, the server still starts.
  */
 
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const SCRAPED_DIR = join(__dirname, '..', 'data', 'scraped');
+const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/scraped';
 
 // All data files that are committed to git and should exist on the persistent disk.
-// This list is maintained manually — add new committed data files here.
 const COMMITTED_DATA_FILES = [
   'bls-occupations.json',
   'bls-occupations.md',
@@ -64,57 +62,71 @@ const COMMITTED_DATA_FILES = [
 
 /**
  * Sync committed data files to the persistent disk.
- * Only writes files that are missing or suspiciously small.
+ * Fetches missing files from GitHub. Completely non-fatal.
  */
 export async function syncCommittedData() {
-  console.log('[Data Sync] Checking for missing data files on persistent disk...');
+  try {
+    console.log('[Data Sync] Checking for missing data files...');
 
-  await fs.mkdir(SCRAPED_DIR, { recursive: true });
+    await fs.mkdir(SCRAPED_DIR, { recursive: true });
 
-  let synced = 0;
-  let skipped = 0;
-  let failed = 0;
-
-  for (const filename of COMMITTED_DATA_FILES) {
-    const filePath = join(SCRAPED_DIR, filename);
-    const gitPath = `backend/data/scraped/${filename}`;
-
-    try {
-      // Check if file already exists and is substantial
+    // First pass: figure out which files are missing
+    const missing = [];
+    for (const filename of COMMITTED_DATA_FILES) {
+      const filePath = join(SCRAPED_DIR, filename);
       try {
         const stat = await fs.stat(filePath);
-        if (stat.size > 1024) {
-          skipped++;
-          continue; // File exists and is >1KB, skip
-        }
-        // File exists but is tiny — likely corrupted, overwrite
-        console.log(`[Data Sync] ${filename}: exists but only ${stat.size}B — restoring from git`);
+        if (stat.size > 1024) continue; // File exists and is >1KB, skip
+        console.log(`[Data Sync] ${filename}: only ${stat.size}B — will restore`);
       } catch {
-        // File doesn't exist — need to sync
+        // File doesn't exist
       }
+      missing.push(filename);
+    }
 
-      // Extract from git
+    if (missing.length === 0) {
+      console.log('[Data Sync] All data files present. Nothing to sync.');
+      return { synced: 0, skipped: COMMITTED_DATA_FILES.length, failed: 0 };
+    }
+
+    console.log(`[Data Sync] ${missing.length} files missing — fetching from GitHub...`);
+
+    let synced = 0;
+    let failed = 0;
+
+    // Fetch missing files (sequentially to avoid hammering GitHub)
+    for (const filename of missing) {
+      const filePath = join(SCRAPED_DIR, filename);
+      const url = `${GITHUB_RAW_BASE}/${filename}`;
+
       try {
-        const content = execSync(`git show HEAD:${gitPath}`, {
-          encoding: 'utf8',
-          maxBuffer: 10 * 1024 * 1024, // 10MB
-          cwd: join(__dirname, '..', '..') // project root
-        });
+        const resp = await fetch(url);
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}`);
+        }
+        const content = await resp.text();
+
+        if (content.length < 100) {
+          console.warn(`[Data Sync] ✗ ${filename}: response too small (${content.length}B), skipping`);
+          failed++;
+          continue;
+        }
 
         await fs.writeFile(filePath, content, 'utf8');
         synced++;
         console.log(`[Data Sync] ✓ Restored ${filename} (${(content.length / 1024).toFixed(0)}KB)`);
-      } catch (gitErr) {
-        // File might not be in git (new file, or git not available)
+      } catch (err) {
         failed++;
-        console.warn(`[Data Sync] ✗ Could not extract ${filename} from git: ${gitErr.message?.slice(0, 100)}`);
+        console.warn(`[Data Sync] ✗ ${filename}: ${err.message}`);
       }
-    } catch (err) {
-      failed++;
-      console.error(`[Data Sync] ✗ Error syncing ${filename}: ${err.message}`);
     }
-  }
 
-  console.log(`[Data Sync] Complete: ${synced} restored, ${skipped} already present, ${failed} failed`);
-  return { synced, skipped, failed };
+    const skipped = COMMITTED_DATA_FILES.length - missing.length;
+    console.log(`[Data Sync] Complete: ${synced} restored, ${skipped} already present, ${failed} failed`);
+    return { synced, skipped, failed };
+  } catch (err) {
+    // NEVER crash the server over data sync
+    console.error('[Data Sync] Failed (non-fatal):', err.message);
+    return { synced: 0, skipped: 0, failed: -1 };
+  }
 }
