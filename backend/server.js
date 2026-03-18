@@ -211,7 +211,7 @@ async function start() {
   await ensureDirectories();
   await ensureUsersDir();
   await ensureInvitesDir();
-  app.listen(PORT, () => {
+  app.listen(PORT, async () => {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);
     console.log(`   Environment: ${process.env.NODE_ENV || 'development'}\n`);
