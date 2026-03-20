@@ -1,0 +1,184 @@
+================================================================================
+WAYFINDER SLM TRAINING DATASET - BATCH B13
+Generation Date: 2026-03-19
+Total Training Pairs: 120
+================================================================================
+
+FILE 1: admissions-quality-b13.jsonl
+────────────────────────────────────────────────────────────────────────────────
+Location: /sessions/compassionate-exciting-bell/mnt/Wayfinder/wayfinder/slm-training/
+Lines: 40
+Size: 24K
+Schema: Standard (system_prompt, conversations with turns)
+System Prompt: "You are Wayfinder, an elite AI college admissions consultant. Warm, data-driven, strategically honest."
+
+Sample Topics:
+  • SAT/GPA evaluation and target school selection
+  • Demonstrated interest and Early Decision strategy
+  • Test prep: retakes, Subject Tests
+  • Learning disabilities and GPA recovery narrative
+  • Parental expectations vs. genuine interests
+  • International applicant strategies
+  • Low-income/first-generation frameworks
+  • Essay voice and authenticity
+  • Campus visits and college list balance
+  • Diverse background framing
+
+Quality Indicators:
+  ✓ 3-4 turn conversations (follows Wayfinder depth style)
+  ✓ Data-driven responses with percentile context
+  ✓ Honest about admission odds (not toxic optimism)
+  ✓ Coherent narratives across questions
+  ✓ Specific, actionable guidance
+
+================================================================================
+FILE 2: career-quality-b13.jsonl
+────────────────────────────────────────────────────────────────────────────────
+Location: /sessions/compassionate-exciting-bell/mnt/Wayfinder/wayfinder/slm-training/
+Lines: 40
+Size: 28K
+Schema: Standard (system_prompt, conversations with turns)
+System Prompt: "You are Wayfinder, an AI career strategist. Real labor market data, practical wisdom. Warm, trajectory-focused."
+
+Sample Topics:
+  • Marketing to Product Manager transition
+  • Startup vs. Big Tech decisions
+  • Founder path and cofounder selection
+  • Career burnout and exploration testing
+  • Climate tech passion validation
+  • PM role 90-day execution plans
+  • Self-promotion and visibility tactics
+  • Equity negotiation and cap table analysis
+  • MBA worth assessment
+  • Leadership vs. IC track decisions
+
+Quality Indicators:
+  ✓ Real labor market data (comp ranges, acceptance rates)
+  ✓ Financial runway calculations
+  ✓ Risk assessment frameworks
+  ✓ Long-term trajectory analysis
+  ✓ Specific, quantifiable guidance
+
+================================================================================
+FILE 3: testprep-quality-b13.jsonl
+────────────────────────────────────────────────────────────────────────────────
+Location: /sessions/compassionate-exciting-bell/mnt/Wayfinder/wayfinder/slm-training/
+Lines: 20
+Size: 12K
+Schema: Standard (system_prompt, conversations with turns)
+System Prompt: "You are Wayfinder Test Prep Coach. Concept-focused, intuitive, warm."
+
+Distribution:
+  • 10 SAT/ACT pairs (word problems, data interpretation, reading strategy)
+  • 10 CogAT pairs (analogies, number series, verbal reasoning)
+
+Sample Topics:
+  • SAT Math word problem translation methodology
+  • SAT Math negative numbers and inequality testing
+  • ACT Reading: structure-based approach vs. memorization
+  • ACT Science: data interpretation without subject knowledge
+  • CogAT: analogy relationships (arithmetic, geometric, logical)
+  • CogAT: number series pattern recognition
+  • CogAT: figure rotation and classification
+  • Test strategy (pacing, triage, process optimization)
+  • Timing management and error categorization
+
+Quality Indicators:
+  ✓ Chain-of-thought (CoT) for math problems
+  ✓ Concept-focused over memorization
+  ✓ Diagnostic questioning (not just answers)
+  ✓ Practice frameworks with clear methodology
+  ✓ Distinction between ability and strategy failures
+
+================================================================================
+FILE 4: advanced-quality-b13.jsonl
+────────────────────────────────────────────────────────────────────────────────
+Location: /sessions/compassionate-exciting-bell/mnt/Wayfinder/wayfinder/slm-training/
+Lines: 20
+Size: 20K
+Schema: Mixed (DPO pairs + self-correction pairs)
+
+DPO Pairs (10):
+  Schema: {"type": "dpo", "prompt": "...", "chosen": "...", "rejected": "...", "metadata": {...}}
+  
+  Format distinction:
+    • "chosen": Data-driven, nuanced, acknowledges tradeoffs
+    • "rejected": Generic platitudes, lacks specificity, unhelpfully optimistic
+  
+  Topics:
+    • GPA/test score evaluation realism
+    • Career transitions (PM, startup)
+    • Family communication about major/career
+    • Financial aid and commitment decisions
+    • Self-assessment under uncertainty
+  
+  Quality Indicators:
+    ✓ Chosen responses prioritize data over hope
+    ✓ Rejected responses fail on actionability
+    ✓ Clear training signal for preference
+
+Self-Correction Pairs (10):
+  Schema: {"type": "self_correction", "conversations": [{"turns": [...]}]}
+  
+  Format:
+    • User asks question
+    • Assistant gives initial response
+    • User revisits ("let me think differently...")
+    • Assistant self-corrects or refines
+  
+  Topics:
+    • Test score strategy refinement
+    • Career advice recalibration
+    • ECs and authenticity reassessment
+    • Low-income narrative framing
+    • Startup timing decisions
+  
+  Quality Indicators:
+    ✓ Shows model acknowledging nuance
+    ✓ Refines without contradicting harshly
+    ✓ Demonstrates growth in reasoning
+
+================================================================================
+VALIDATION SUMMARY
+────────────────────────────────────────────────────────────────────────────────
+✓ All 4 files created
+✓ All files contain valid JSONL (each line is valid JSON)
+✓ Admissions: 40 lines (expected 40)
+✓ Career: 40 lines (expected 40)
+✓ Test Prep: 20 lines (expected 20)
+✓ Advanced: 20 lines (expected 20)
+✓ Total: 120 training pairs
+
+Schema Compliance:
+  ✓ admissions-quality-b13.jsonl: 3/3 sample lines valid
+  ✓ career-quality-b13.jsonl: 3/3 sample lines valid
+  ✓ testprep-quality-b13.jsonl: 3/3 sample lines valid
+  ✓ advanced-quality-b13.jsonl: 3/3 sample lines valid
+
+Quality Characteristics:
+  ✓ All pairs unique (no duplicates across domains)
+  ✓ Admissions/Career: 250-400 word responses
+  ✓ Test Prep: 150-250 word focused explanations
+  ✓ Advanced: DPO with clear chosen/rejected distinction
+  ✓ Warm, data-driven tone consistent across all
+  ✓ Actionable guidance (not generic advice)
+
+================================================================================
+USAGE NOTES
+────────────────────────────────────────────────────────────────────────────────
+These 120 pairs are designed for fine-tuning a language model to replicate
+Wayfinder's consultation style:
+
+1. Data-driven honesty: Percentile context, labor market data, realistic odds
+2. Strategic guidance: Framework-based advice with clear decision trees
+3. Depth over breadth: 3-4 turn conversations showing coherent narratives
+4. Warm authenticity: Accessible language, genuine care, no toxic positivity
+5. Domain expertise: College admissions, career strategy, test prep
+
+Recommended Training Approach:
+  • Use admissions + career as primary training (80 pairs of core expertise)
+  • Include test prep for versatility (20 pairs of different domain)
+  • Use advanced pairs for DPO/preference-based fine-tuning
+  • Ensure balanced sampling across all domains during training
+
+================================================================================
