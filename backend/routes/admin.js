@@ -66,6 +66,215 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+// ─── Admin Stats Endpoint ──────────────────────────
+
+// GET /api/admin/stats - Comprehensive dashboard stats
+router.get('/stats', async (req, res) => {
+  try {
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const DATA_DIR = join(__dirname, '..', 'data');
+    const USERS_DIR = join(DATA_DIR, 'users');
+    const SESSIONS_DIR = join(DATA_DIR, 'sessions');
+    const FEEDBACK_FILE = join(DATA_DIR, 'feedback', 'feedback.jsonl');
+
+    // Utility: time boundaries
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const thirtyDaysAgo = new Date(today);
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    // Load all users
+    const userFiles = await fs.readdir(USERS_DIR).catch(() => []);
+    const users = await Promise.all(
+      userFiles
+        .filter(f => f.endsWith('.json'))
+        .map(async f => {
+          try {
+            const raw = await fs.readFile(join(USERS_DIR, f), 'utf-8');
+            return JSON.parse(raw);
+          } catch {
+            return null;
+          }
+        })
+    );
+    const validUsers = users.filter(Boolean);
+
+    // User stats
+    const totalUsers = validUsers.length;
+    const usersByPlan = {
+      free: validUsers.filter(u => (u.plan || 'free') === 'free').length,
+      pro: validUsers.filter(u => u.plan === 'pro').length,
+      elite: validUsers.filter(u => u.plan === 'elite').length
+    };
+
+    // Last 30 days signup trend
+    const signupsByDate = {};
+    validUsers.forEach(u => {
+      const created = new Date(u.createdAt);
+      if (created >= thirtyDaysAgo) {
+        const dateStr = created.toISOString().split('T')[0];
+        signupsByDate[dateStr] = (signupsByDate[dateStr] || 0) + 1;
+      }
+    });
+
+    // Load all sessions
+    const sessionFiles = await fs.readdir(SESSIONS_DIR).catch(() => []);
+    const sessions = await Promise.all(
+      sessionFiles
+        .filter(f => f.endsWith('.json'))
+        .map(async f => {
+          try {
+            const raw = await fs.readFile(join(SESSIONS_DIR, f), 'utf-8');
+            return JSON.parse(raw);
+          } catch {
+            return null;
+          }
+        })
+    );
+    const validSessions = sessions.filter(Boolean);
+
+    // Session stats
+    const totalSessions = validSessions.length;
+    const totalMessages = validSessions.reduce((sum, s) => sum + (s.messageCount || 0), 0);
+    const avgMessagesPerSession = totalSessions > 0 ? (totalMessages / totalSessions).toFixed(1) : 0;
+
+    // Active users (by last active session)
+    const activeUsersToday = new Set();
+    const activeUsersThisWeek = new Set();
+    const activeUsersThisMonth = new Set();
+
+    validSessions.forEach(s => {
+      const lastActive = new Date(s.lastActive || s.created);
+      if (lastActive >= today) activeUsersToday.add(s.id);
+      if (lastActive >= sevenDaysAgo) activeUsersThisWeek.add(s.id);
+      if (lastActive >= thirtyDaysAgo) activeUsersThisMonth.add(s.id);
+    });
+
+    // Load feedback
+    const feedback = await (async () => {
+      try {
+        const raw = await fs.readFile(FEEDBACK_FILE, 'utf-8');
+        return raw
+          .trim()
+          .split('\n')
+          .filter(Boolean)
+          .map(line => {
+            try {
+              return JSON.parse(line);
+            } catch {
+              return null;
+            }
+          })
+          .filter(Boolean);
+      } catch {
+        return [];
+      }
+    })();
+
+    // Feedback stats
+    const feedbackCount = feedback.length;
+    const feedbackToday = feedback.filter(f => {
+      const ts = new Date(f.timestamp);
+      return ts >= today;
+    }).length;
+
+    // Rating distribution
+    const ratingDist = {
+      positive: feedback.filter(f => f.rating === 1).length,
+      neutral: feedback.filter(f => f.rating === 0).length,
+      negative: feedback.filter(f => f.rating === -1).length
+    };
+
+    // Top users by message count
+    const topUsersByMessages = validUsers
+      .map(u => ({
+        email: u.email,
+        name: u.name,
+        messageCount: (u.sessionHistory || []).reduce((sum, sessionId) => {
+          const session = validSessions.find(s => s.id === sessionId);
+          return sum + (session ? session.messageCount || 0 : 0);
+        }, 0)
+      }))
+      .filter(u => u.messageCount > 0)
+      .sort((a, b) => b.messageCount - a.messageCount)
+      .slice(0, 10);
+
+    // Engine queries (sum of engineUsesToday across all users)
+    const engineQueriesToday = validUsers.reduce((sum, u) => {
+      const today_str = new Date().toISOString().slice(0, 10);
+      if (u.engineLastReset === today_str) {
+        return sum + (u.engineUsesToday || 0);
+      }
+      return sum;
+    }, 0);
+
+    // Token usage
+    const today_str = new Date().toISOString().slice(0, 10);
+    const thisMonth_str = new Date().toISOString().slice(0, 7);
+    const tokenUsageToday = validUsers.reduce((sum, u) => {
+      if (u.tokenLastReset === today_str) {
+        return sum + (u.tokensUsedToday || 0);
+      }
+      return sum;
+    }, 0);
+    const tokenUsageMonth = validUsers.reduce((sum, u) => {
+      if (u.tokenMonthReset === thisMonth_str) {
+        return sum + (u.tokensUsedMonth || 0);
+      }
+      return sum;
+    }, 0);
+
+    // Revenue metrics
+    const usersWithStripe = validUsers.filter(u => u.stripeCustomerId).length;
+    const proUsers = usersByPlan.pro;
+    const eliteUsers = usersByPlan.elite;
+    // Potential MRR: pro users * $25 + elite users * $50
+    const potentialMRR = (proUsers * 25) + (eliteUsers * 50);
+
+    res.json({
+      timestamp: new Date().toISOString(),
+      overview: {
+        totalUsers,
+        totalSessions,
+        totalMessages,
+        avgMessagesPerSession
+      },
+      users: {
+        byPlan: usersByPlan,
+        activeToday: activeUsersToday.size,
+        activeThisWeek: activeUsersThisWeek.size,
+        activeThisMonth: activeUsersThisMonth.size,
+        signupTrend: signupsByDate,
+        topUsersByMessages
+      },
+      usage: {
+        engineQueriesToday,
+        tokenUsageToday,
+        tokenUsageMonth,
+        totalFeedback: feedbackCount,
+        feedbackToday,
+        feedbackRating: ratingDist
+      },
+      revenue: {
+        usersWithStripe,
+        proUsers,
+        eliteUsers,
+        potentialMRR
+      }
+    });
+  } catch (err) {
+    console.error('Stats error:', err);
+    res.status(500).json({ error: 'Failed to load stats' });
+  }
+});
+
 // ─── Scraper Scheduler Admin Endpoints ──────────────────────────
 
 // GET /api/admin/scrapers - Get all scraper schedule status

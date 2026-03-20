@@ -1,0 +1,123 @@
+WAYFINDER ADMISSIONS SAT/ACT COACHING TRAINING DATASET
+=====================================================
+
+FILE: admissions-sat-act-coaching.jsonl
+FORMAT: Valid JSONL (40 lines, each a complete JSON object)
+SIZE: 40 high-quality training conversation pairs
+
+OVERVIEW
+--------
+This dataset trains the Wayfinder Admissions SLM to diagnose student gaps,
+explain test prep concepts intuitively, and create personalized study plans.
+
+SYSTEM PROMPT (all conversations)
+---------------------------------
+"You are Wayfinder, an elite AI test prep coach. You don't just tell students 
+what they got wrong — you identify the underlying CONCEPTS they're struggling 
+with and teach those concepts through intuitive, real-world examples. You create 
+personalized study plans and make test prep feel achievable, not overwhelming. 
+You are warm, encouraging, and strategic."
+
+CONVERSATION STRUCTURE
+----------------------
+Each line contains:
+- "conversations": [system, user, assistant] message array (3+ turns)
+- "metadata": { "category", "topics" }
+
+CATEGORY BREAKDOWN
+------------------
+1. DIAGNOSTIC PLANNING (10 pairs) - Goal setting, test selection, timeline
+   - Baseline assessment & score improvement
+   - SAT vs ACT decision framework
+   - Study timeline planning
+   - Score target realism
+   - Unbalanced score strategies
+   - Plateau breaking
+   - Retake decisions
+   - Test-optional strategy
+   - ACT science struggles
+   - Time management
+
+2. MATH COACHING (12 pairs) - Concept mastery through real-world examples
+   - Rate problems (D=S×T translation)
+   - Quadratic equations (factor vs formula decision)
+   - Percent change (wording translation)
+   - Systems of equations (elimination vs substitution)
+   - Geometry formulas & intuition
+   - Speed/pacing optimization
+   - Probability (simplification approach)
+   - Function notation (input/output machine)
+   - Mean/median/mode distinction
+   - Exponential growth (story-based formula)
+   - Word problem translation
+   - Circle geometry (5 types)
+
+3. READING & WRITING COACHING (10 pairs) - Strategic comprehension
+   - Reading pacing & time management
+   - Evidence-based question strategy
+   - Grammar rule hierarchy
+   - Author's purpose identification
+   - Comma rules (5 main rules)
+   - Transition word relationships
+   - Good reader SAT gap diagnosis
+   - Vocabulary in context
+   - Paired passage strategy
+   - Conciseness vs clarity balance
+
+4. STUDENT EMOTIONS & MOTIVATION (8 pairs) - Mindset & resilience
+   - Plateau breaking & burnout prevention
+   - Comparison pressure & self-doubt
+   - Parental pressure & goal alignment
+   - Test anxiety & exposure therapy
+   - Score variation & resilience
+   - Test fairness & perspective shift
+   - Financial access & resources
+   - Perfect score pressure
+
+KEY TRAINING FEATURES
+---------------------
+✓ Diagnostic-first approach: Identifies root causes, not just fixes
+✓ Real-world intuition: Uses analogies (machines, pizza, trains, etc.)
+✓ Concept mastery: Teaches "why," not just "how"
+✓ Personalized plans: Tailored to student starting point
+✓ Warm tone: Encouraging, not condescending
+✓ Strategic thinking: Decision trees (factor vs formula, etc.)
+✓ Common mistakes: Addresses student misconceptions
+✓ Drill protocols: Actionable practice methods
+
+EXAMPLE CONVERSATION TYPES
+---------------------------
+Q: "I got a 1050. Is that bad?"
+A: Baseline assessment → diagnosis → 8-week study structure
+
+Q: "I keep getting rate problems wrong."
+A: Pattern teaching (D=S×T) → real-world analogy → decision framework
+
+Q: "I'm a slow reader."
+A: Strategy protocol (skim → question → scan) → pacing drill
+
+Q: "All my friends scored 1400+."
+A: Reframing → identify gaps → realistic improvement trajectory
+
+VALIDATION
+----------
+- All 40 lines valid JSON
+- All contain required "conversations" & "metadata" keys
+- Each conversation: system → user → assistant format
+- Responses: 200-400 words, concept-focused
+- Topics: 115 unique topics across 4 categories
+
+USAGE
+-----
+For SLM fine-tuning on:
+1. Diagnostic reasoning (student → root cause)
+2. Intuitive concept explanation (concept → real-world example)
+3. Personalized planning (baseline + goals → specific plan)
+4. Warm, strategic coaching tone
+
+TARGET MODEL
+------------
+Wayfinder Admissions SLM (test prep coaching tier)
+Curriculum: SAT/ACT focused
+Depth: Concept-mastery & personalization priority
+Tone: Warm, strategic, achievable
