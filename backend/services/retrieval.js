@@ -90,7 +90,29 @@ const SCHOOL_ENTITIES = new Set([
   'stony brook', 'uconn', 'colorado', 'iowa', 'oregon', 'indiana',
   'nc state', 'texas a&m', 'arizona state', 'pitt', 'drexel', 'rpi',
   'case western', 'rochester', 'brandeis', 'fordham', 'gw',
-  'santa clara', 'stevens', 'richmond', 'miami'
+  'santa clara', 'stevens', 'richmond', 'miami',
+  // Additional T25-T100 schools
+  'washington', 'colorado school of mines', 'baylor', 'marquette',
+  'loyola', 'creighton', 'gonzaga', 'santa clara', 'chapman',
+  'elon', 'furman', 'denison', 'kenyon', 'oberlin', 'reed',
+  'macalester', 'st olaf', 'whitman', 'colorado college',
+  'connecticut college', 'skidmore', 'union', 'bucknell',
+  'lafayette', 'gettysburg', 'dickinson', 'franklin marshall',
+  // State flagship additions
+  'uga', 'lsu', 'alabama', 'auburn', 'tennessee', 'arkansas',
+  'mississippi', 'ole miss', 'kentucky', 'missouri', 'kansas',
+  'oklahoma', 'nebraska', 'iowa state', 'utah', 'byu',
+  'new mexico', 'hawaii', 'wyoming', 'montana', 'idaho',
+  'maine', 'vermont', 'new hampshire', 'delaware', 'west virginia',
+  'north dakota', 'south dakota',
+  // HBCUs
+  'howard', 'spelman', 'morehouse', 'hampton', 'tuskegee',
+  'fisk', 'xavier', 'clark atlanta', 'nc a&t', 'florida a&m',
+  // International
+  'oxford', 'cambridge', 'toronto', 'mcgill', 'ubc',
+  'imperial', 'lse', 'edinburgh', 'st andrews', 'ucl',
+  'nus', 'ntu', 'eth zurich', 'epfl', 'melbourne',
+  'sydney', 'anu', 'hku', 'tsinghua', 'peking'
 ]);
 
 const CAREER_ENTITIES = new Set([
@@ -109,7 +131,47 @@ const CAREER_ENTITIES = new Set([
   'pharmacy', 'dental', 'veterinary',
   'trades', 'electrician', 'plumber', 'hvac', 'welding', 'carpentry',
   'cybersecurity', 'cloud', 'devops', 'infrastructure',
-  'entrepreneurship', 'startup', 'business'
+  'entrepreneurship', 'startup', 'business',
+  // Additional career fields
+  'project management', 'supply chain', 'logistics', 'operations',
+  'human resources', 'hr', 'recruiting', 'talent',
+  'real estate', 'insurance', 'underwriting',
+  'biotech', 'pharmaceutical', 'biomedical',
+  'environmental', 'sustainability', 'climate',
+  'aerospace', 'mechanical', 'civil engineering', 'chemical engineering',
+  'industrial', 'manufacturing', 'quality',
+  'film', 'entertainment', 'music', 'gaming',
+  'sports', 'athletics', 'coaching',
+  'nonprofit', 'philanthropy', 'social impact',
+  'diplomat', 'foreign service', 'intelligence',
+  'actuary', 'underwriter', 'claims',
+  'paralegal', 'compliance', 'regulatory',
+  'data analyst', 'business analyst', 'systems analyst',
+  'network engineer', 'database', 'blockchain',
+  'robotics', 'automation', 'iot',
+  'technical writer', 'content', 'copywriting',
+  'urban planning', 'public administration',
+  'librarian', 'museum', 'curator',
+  'pilot', 'aviation', 'maritime',
+  // Graduate programs (career-focused)
+  'mba', 'masters', 'phd', 'doctorate',
+  'graduate degree', 'professional degree', 'advanced degree',
+  // Trades careers
+  'electrician', 'plumber', 'hvac', 'welder', 'carpenter',
+  'pipefitter', 'journeyman', 'apprentice', 'trade worker',
+  'skilled trade', 'blue collar', 'union job',
+  'construction', 'electrical work', 'heating cooling',
+  // Military careers
+  'military', 'veteran', 'armed forces', 'army', 'navy', 'marines',
+  'air force', 'military service', 'military officer',
+  'military job', 'mos', 'occupational specialty',
+  'service academy', 'rotc', 'military branch',
+  // Medical career paths
+  'residency', 'fellowship', 'medical residency',
+  'medical training', 'clinical training', 'postgraduate training',
+  // International career focus
+  'international work', 'overseas work', 'expat', 'global career',
+  'foreign work', 'international employment'
 ]);
 
 const ADMISSIONS_ENTITIES = new Set([
@@ -123,7 +185,128 @@ const ADMISSIONS_ENTITIES = new Set([
   'demographics', 'diversity', 'ethnicity',
   'ed', 'ea', 'rea', 'scea', 'ed2', 'rd',
   'reach', 'target', 'safety', 'likely',
-  'yield', 'acceptance rate', 'selectivity'
+  'yield', 'acceptance rate', 'selectivity',
+  // Graduate program admissions
+  'graduate admission', 'grad admission', 'masters admission',
+  'mba admission', 'jd admission', 'md admission',
+  'gre', 'gmat', 'lsat', 'mcat',
+  'graduate gpa', 'bachelor degree', 'undergraduate gpa',
+  'personal statement', 'research experience', 'clinical experience',
+  'recommendation letter', 'letters of recommendation',
+  'professional school', 'professional program',
+  'application essay', 'application essays',
+  // International admissions
+  'international admission', 'visa requirement', 'student visa',
+  'english requirement', 'language requirement',
+  'toefl', 'ielts', 'english proficiency',
+  // Financial aid (admissions context)
+  'financial aid package', 'tuition assistance', 'funding',
+  'merit scholarship', 'need based', 'grant', '529',
+]);
+
+
+// ─── Synonym Expansion ──────────────────────────────────────────
+// Maps common terms to their synonyms for better recall.
+// When a user says "developer", BM25 should also match chunks containing "engineer".
+const SYNONYM_MAP = new Map([
+  // Tech careers
+  ['developer', ['engineer', 'programmer', 'coder', 'dev']],
+  ['engineer', ['developer', 'programmer']],
+  ['programmer', ['developer', 'engineer', 'coder']],
+  ['coder', ['developer', 'programmer']],
+  ['software', ['tech', 'programming', 'coding']],
+  ['ai', ['artificial_intelligence', 'machine_learning', 'ml']],
+  ['ml', ['machine_learning', 'artificial_intelligence', 'ai']],
+  ['devops', ['sre', 'infrastructure', 'cloud']],
+  ['cybersecurity', ['infosec', 'security']],
+  ['infosec', ['cybersecurity', 'security']],
+
+  // Healthcare
+  ['doctor', ['physician', 'md']],
+  ['physician', ['doctor', 'md']],
+  ['nurse', ['nursing', 'rn', 'bsn']],
+  ['therapist', ['counselor', 'therapy']],
+  ['premed', ['pre-med', 'medicine']],
+  ['md', ['medical_degree', 'doctor', 'physician']],
+  ['mcat', ['medical_school_test', 'med_school_exam']],
+
+  // Finance
+  ['banking', ['finance', 'investment']],
+  ['consulting', ['consultant', 'advisory']],
+  ['accounting', ['accountant', 'cpa']],
+  ['actuarial', ['actuary']],
+
+  // Education
+  ['college', ['university', 'school']],
+  ['university', ['college', 'school']],
+  ['major', ['concentration', 'field', 'discipline']],
+  ['masters', ['graduate', 'grad', 'master_degree']],
+  ['mba', ['business_school', 'business_degree', 'graduate_business']],
+  ['phd', ['doctorate', 'doctoral', 'graduate', 'grad_school']],
+  ['jd', ['law_degree', 'law_school', 'graduate_law']],
+  ['gre', ['graduate_school_test', 'grad_test']],
+  ['gmat', ['business_school_test', 'mba_test']],
+  ['lsat', ['law_school_test']],
+  ['graduate', ['grad', 'grad_school', 'graduate_program', 'graduate_school']],
+  ['tuition', ['cost', 'price', 'fees']],
+  ['scholarship', ['merit', 'financial_aid', 'grant', 'merit_aid']],
+  ['financial_aid', ['fafsa', 'scholarship', 'grant', 'aid', 'aid_package', 'merit_aid', 'need_based_aid']],
+  ['grant', ['free_money', 'gift_aid', 'financial_aid']],
+  ['loan', ['student_debt', 'education_loan', 'student_loan']],
+  ['fafsa', ['federal_aid', 'financial_aid_form']],
+  ['529', ['education_savings', 'savings_plan', 'college_savings']],
+
+  // Admissions
+  ['acceptance', ['admission', 'admissions']],
+  ['waitlist', ['waitlisted', 'deferred']],
+  ['essay', ['personal_statement', 'supplement', 'supplemental']],
+  ['extracurricular', ['activities', 'clubs', 'ecs']],
+  ['recommendation', ['rec', 'letter']],
+
+  // Career transitions
+  ['career_change', ['career_switch', 'pivot', 'transition']],
+  ['pivot', ['transition', 'switch', 'career_change']],
+  ['bootcamp', ['coding_bootcamp', 'intensive', 'accelerated']],
+
+  // Job search
+  ['resume', ['cv', 'curriculum_vitae']],
+  ['interview', ['behavioral', 'technical_interview']],
+  ['internship', ['intern', 'co-op', 'coop']],
+  ['salary', ['compensation', 'pay', 'wages', 'earnings']],
+  ['compensation', ['salary', 'pay', 'total_comp']],
+
+  // Trades
+  ['trades', ['skilled_labor', 'vocational', 'apprenticeship', 'skilled_trades', 'trade_school']],
+  ['apprenticeship', ['apprentice', 'apprentice_program', 'trades', 'journeyman']],
+  ['electrician', ['electrical_worker', 'electrical_trade', 'lineman']],
+  ['plumber', ['pipefitter', 'plumbing_trade']],
+  ['hvac', ['heating_cooling', 'heating_and_cooling', 'climate_control']],
+  ['welding', ['welder', 'welding_trade']],
+  ['welder', ['welding', 'welding_technician']],
+  ['union', ['organized_labor', 'labor_union', 'union_job']],
+  ['journeyman', ['journey_worker', 'skilled_trade_worker']],
+
+  // Military
+  ['military', ['armed_forces', 'military_service', 'service_member']],
+  ['veteran', ['vet', 'military_veteran', 'service_member']],
+  ['gi_bill', ['veteran_education_benefit', 'education_benefit']],
+  ['mos', ['military_job', 'military_occupational_specialty']],
+  ['skillbridge', ['military_internship', 'military_transition_program']],
+  ['clearance', ['security_clearance', 'military_clearance']],
+  ['rotc', ['reserve_officers_training_corps', 'military_training']],
+
+  // International
+  ['study_abroad', ['overseas_study', 'international_study', 'abroad']],
+  ['visa', ['student_visa', 'visa_requirement', 'visa_process']],
+  ['ucas', ['uk_application', 'uk_admissions', 'british_universities']],
+  ['toefl', ['english_proficiency_test', 'english_language_test']],
+  ['ielts', ['english_proficiency', 'english_test']],
+  ['international', ['international_student', 'overseas', 'foreign_student']],
+  ['coop', ['cooperative_education', 'work_integrated_learning', 'internship']],
+  ['co-op', ['cooperative_education', 'coop', 'internship']],
+
+  // Residency (medical training)
+  ['residency', ['medical_residency', 'medical_training', 'post_graduate_training']],
 ]);
 
 // ─── Tokenizer ──────────────────────────────────────────────────
@@ -136,8 +319,9 @@ const ADMISSIONS_ENTITIES = new Set([
  * - Stop word removal
  * - Minimum length filtering
  * - Bigram generation for known multi-word entities
+ * - Optional synonym expansion for better query recall
  */
-function tokenize(text) {
+function tokenize(text, { expandSynonyms = false } = {}) {
   if (!text) return [];
 
   const lower = text.toLowerCase();
@@ -157,7 +341,33 @@ function tokenize(text) {
     'boston college', 'boston university', 'uc berkeley', 'uc davis',
     'nc state', 'texas a&m', 'arizona state', 'case western',
     'harvey mudd', 'claremont mckenna', 'william mary', 'santa clara',
-    'stony brook'
+    'stony brook',
+    // Graduate programs
+    'graduate school', 'grad school', 'business school', 'law school',
+    'medical school', 'med school', 'professional school',
+    'graduate program', 'masters program', 'phd program',
+    'mba admission', 'jd admission', 'md admission',
+    'business school test', 'law school test', 'medical school test',
+    // Trades
+    'trade school', 'skilled trade', 'apprentice program', 'journey worker',
+    'blue collar', 'vocational training', 'skilled labor', 'union job',
+    'electrical worker', 'pipefitter', 'heating cooling',
+    // Military
+    'military service', 'service member', 'armed forces',
+    'gi bill', 'military career', 'service academy',
+    'military internship', 'security clearance', 'military job',
+    'military occupational', 'military transition',
+    // International
+    'international student', 'student visa', 'international education',
+    'study abroad', 'overseas study', 'international admissions',
+    'english proficiency', 'language requirement', 'uk application',
+    'cooperative education', 'work integrated',
+    // Financial aid
+    'financial aid', 'aid package', 'merit aid', 'merit scholarship',
+    'need based', 'need based aid', 'education savings',
+    'federal aid', 'expected family', 'family contribution',
+    // Medical/Health
+    'medical residency', 'medical training', 'post graduate training',
   ];
 
   for (const bg of bigramPatterns) {
@@ -171,6 +381,33 @@ function tokenize(text) {
     .replace(/[^a-z0-9\s\-']/g, ' ')
     .split(/\s+/)
     .filter(w => w.length >= 2 && !STOP_WORDS.has(w));
+
+  // Synonym expansion (only for queries, not for indexing)
+  if (expandSynonyms) {
+    const expanded = [];
+    for (const word of words) {
+      const syns = SYNONYM_MAP.get(word);
+      if (syns) {
+        for (const syn of syns) {
+          if (!words.includes(syn) && !expanded.includes(syn)) {
+            expanded.push(syn);
+          }
+        }
+      }
+    }
+    // Also check bigrams for expansion
+    for (const bg of bigrams) {
+      const syns = SYNONYM_MAP.get(bg);
+      if (syns) {
+        for (const syn of syns) {
+          if (!bigrams.includes(syn) && !expanded.includes(syn)) {
+            expanded.push(syn);
+          }
+        }
+      }
+    }
+    return [...bigrams, ...words, ...expanded];
+  }
 
   return [...bigrams, ...words];
 }
@@ -260,7 +497,7 @@ function scoreBM25(query, index, options = {}) {
     layerBoosts = {}             // { 'distilled': 1.5, 'base': 1.0, 'raw': 0.8 }
   } = options;
 
-  const queryTerms = tokenize(query);
+  const queryTerms = tokenize(query, { expandSynonyms: true });
   if (queryTerms.length === 0) return [];
 
   // Classify which query terms are entities (high-signal)
@@ -371,16 +608,38 @@ function analyzeQuery(query) {
     }
   }
 
-  // ─── Domain Detection (replaces detectBrainType) ─────────
+  // ─── Domain Detection (covers undergrad, grad, trades, military, international, financial aid) ─────────
   const admissionSignals = entities.filter(e => e.type === 'admissions' || e.type === 'school').length;
   const careerSignals = entities.filter(e => e.type === 'career').length;
+
+  // New domain signals (graduate, trades, military, international, financial aid)
+  const graduateSignals = /\b(graduate|grad school|masters|mba|phd|jd|gre|gmat|lsat|mcat|professional school|doctoral)\b/i;
+  const tradesSignals = /\b(trade|electrician|plumber|hvac|welder|apprentice|journeyman|union|blue collar|vocational|skilled trade)\b/i;
+  const militarySignals = /\b(military|armed forces|veteran|rotc|service academy|gi bill|skillbridge|mos|clearance)\b/i;
+  const internationalSignals = /\b(international|visa|study abroad|toefl|ielts|ucas|overseas|exchange)\b/i;
+  const financialAidSignals = /\b(fafsa|financial aid|scholarship|grant|loan|merit aid|need based|529|efc)\b/i;
+
+  const graduateHits = (lower.match(graduateSignals) || []).length;
+  const tradesHits = (lower.match(tradesSignals) || []).length;
+  const militaryHits = (lower.match(militarySignals) || []).length;
+  const internationalHits = (lower.match(internationalSignals) || []).length;
+  const financialAidHits = (lower.match(financialAidSignals) || []).length;
 
   // Check for weak admissions signals
   const weakAdmissionPatterns = /\b(college|university|school|parent|child|kid|son|daughter|teenager|teen|junior|senior|freshman|sophomore)\b/i;
   const weakAdmissionHits = (lower.match(weakAdmissionPatterns) || []).length;
 
   let domain = 'general';
-  if (admissionSignals >= 2 || (admissionSignals >= 1 && weakAdmissionHits >= 1)) {
+  // Priority: specific new domains > traditional admissions/career > general
+  if (graduateHits >= 1) {
+    domain = 'admissions'; // Graduate admissions still falls under admissions domain
+  } else if (tradesHits >= 1 || militaryHits >= 1) {
+    domain = 'career'; // Trades and military are career-domain
+  } else if (internationalHits >= 1) {
+    domain = 'admissions'; // International has both admissions AND career angles, default to admissions
+  } else if (financialAidHits >= 1) {
+    domain = 'admissions'; // Financial aid is primarily an admissions concern
+  } else if (admissionSignals >= 2 || (admissionSignals >= 1 && weakAdmissionHits >= 1)) {
     domain = 'admissions';
   } else if (careerSignals >= 2) {
     domain = 'career';
@@ -429,6 +688,14 @@ function analyzeQuery(query) {
     complexity = 'complex';
   } else if (wordCount > 15 || entityCount > 1 || questionDepth >= 1) {
     complexity = 'moderate';
+  }
+
+  // Edge case: Very short queries (1-2 words) need more context to avoid spurious results
+  // E.g., "MBA" or "electrician" alone should get broader context
+  if (wordCount <= 2 && entityCount === 1) {
+    complexity = 'moderate'; // Upgrade short named entities to moderate
+  } else if (wordCount === 1) {
+    complexity = 'simple'; // Single word stays simple but gets flagged for raw data
   }
 
   // ─── Needs Raw Data? ─────────────────────────────────────
@@ -628,5 +895,6 @@ export {
   SemanticCache,
   SCHOOL_ENTITIES,
   CAREER_ENTITIES,
-  ADMISSIONS_ENTITIES
+  ADMISSIONS_ENTITIES,
+  SYNONYM_MAP
 };

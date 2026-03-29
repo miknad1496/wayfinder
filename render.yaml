@@ -14,3 +14,15 @@ services:
         value: claude-opus-4-6
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: SLM_ENABLED
+        value: "true"
+      - key: SLM_ENDPOINT
+        value: https://api.runpod.ai/v2/us5mh5vyv6egt3/runsync
+      - key: SLM_API_KEY
+        sync: false
+      - key: SLM_MODEL_NAME
+        value: bigherokim/wayfinder-05e
+      - key: SLM_MAX_TOKENS
+        value: "1024"
+      - key: SLM_TEMPERATURE
+        value: "0.7"

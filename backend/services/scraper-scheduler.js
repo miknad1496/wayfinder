@@ -6,6 +6,7 @@
  *
  * Schedule:
  * - Weekly:    Reddit, HackerNews (community intelligence, fast-changing)
+ * - Weekly:    Learning pipeline (enriches brain files from conversation data)
  * - Monthly:   BLS, O*NET, USAJobs, Certifications, Admissions (structured data)
  * - Quarterly: NCES, IPEDS Ethnicity (slow-changing government data)
  * - On-demand: Decision dates (curated, run via admin endpoint)
@@ -40,6 +41,13 @@ const SCRAPERS = {
     module: '../scrapers/community-scraper.js',
     fn: 'runCommunityScraper',
     description: 'HackerNews & community discussions'
+  },
+  learn: {
+    frequency: 'weekly',
+    intervalMs: 7 * 24 * 60 * 60 * 1000,
+    module: '../services/learn.js',
+    fn: 'runLearningPipeline',
+    description: 'Enrich brain files from conversation data'
   },
 
   // Monthly scrapers — structured data, moderate change rate

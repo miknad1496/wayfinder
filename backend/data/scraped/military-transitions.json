@@ -1,0 +1,86 @@
+{
+  "lastUpdated": "2026-03-25",
+  "source": "Compiled from VA.gov, DOD, Syracuse IVMF, and veteran career resources",
+  "giBill": {
+    "postNine11": {
+      "eligibility": "90+ days active duty after 9/11/2001 (100% at 36 months)",
+      "benefits": ["Full tuition at public institutions (or Yellow Ribbon for private)", "Monthly housing allowance (BAH E-5 rate)", "Books/supplies stipend ($1,000/yr)", "36 months total benefit"],
+      "yellowRibbon": "Voluntary program where schools match VA funding for tuition above the public school cap. Most T50 schools participate.",
+      "transferability": "Can transfer to spouse or dependents if 6+ years served with 4+ more committed",
+      "expirationExtension": "No expiration for service members discharged on/after Jan 1, 2013 (Forever GI Bill)"
+    },
+    "vocRehab": {
+      "name": "VR&E (Veteran Readiness and Employment, Chapter 31)",
+      "eligibility": "Service-connected disability rating of 10%+",
+      "benefits": "More generous than GI Bill: no time limit on education, covers all costs + monthly subsistence",
+      "bestFor": "Veterans with service-connected disabilities wanting career change"
+    },
+    "strategy": [
+      "Use VR&E first if eligible (saves GI Bill for later or to transfer to dependents)",
+      "Community college + transfer can maximize GI Bill months",
+      "Some states offer additional veteran education benefits (TX, CA, IL, NY are most generous)",
+      "GI Bill comparison tool: va.gov/gi-bill-comparison-tool"
+    ]
+  },
+  "careerTransitions": {
+    "topInDemandPaths": [
+      {
+        "path": "Tech/Cybersecurity",
+        "mosTranslation": ["25B → IT Specialist", "17C → Cybersecurity Analyst", "35T → Intelligence Analyst → Data Analyst"],
+        "programs": ["VET TEC (free coding bootcamps)", "SANS VetSuccess", "Microsoft Software & Systems Academy (MSSA)", "Amazon Military Apprenticeship"],
+        "avgSalary": "Entry: $60K-$85K; 3yr: $90K-$130K",
+        "certPriority": ["CompTIA Security+", "AWS Cloud Practitioner", "CISSP (with experience)"]
+      },
+      {
+        "path": "Project Management",
+        "mosTranslation": ["Any leadership MOS → Project Manager", "Logistics MOSs → Supply Chain/Operations"],
+        "programs": ["PMP certification (military experience counts toward hours)", "Google Project Management Certificate"],
+        "avgSalary": "Entry: $65K-$85K; 5yr: $95K-$130K",
+        "note": "Military leadership experience translates directly. PMP is the gold standard."
+      },
+      {
+        "path": "Healthcare",
+        "mosTranslation": ["68W Combat Medic → Paramedic/PA pathway", "68C Nurse → Civilian RN (some states allow direct licensure)", "All → PA School (patient care hours count)"],
+        "programs": ["USMC/Army Medical → Civilian bridge programs", "PA school (military medics have strong apps)", "Nursing BSN programs with military credits"],
+        "avgSalary": "PA: $126K; RN: $81K; Paramedic: $49K"
+      },
+      {
+        "path": "Trades/Construction",
+        "mosTranslation": ["12B Combat Engineer → General Contractor", "12R → Electrician", "91B → Diesel Mechanic"],
+        "programs": ["Helmets to Hardhats (H2H)", "DOD SkillBridge (last 6 months of service)", "Union apprenticeships (military time may count)"],
+        "avgSalary": "Journeyman: $55K-$85K; Master/Business owner: $80K-$150K+"
+      },
+      {
+        "path": "Federal Government/Intelligence",
+        "mosTranslation": ["35-series → Intelligence Community (CIA, NSA, DIA)", "Any → GS positions with veteran preference", "MPs/CID → Federal law enforcement (FBI, DEA, Secret Service)"],
+        "programs": ["USAJobs (veteran preference: 5-10 points)", "Direct hire authority for certain agencies", "FBI Veterans Preference"],
+        "avgSalary": "GS-9: $61K; GS-13: $94K; SES: $150K+",
+        "note": "Veterans get 5-point or 10-point preference (disabled) on federal hiring. Significant advantage."
+      },
+      {
+        "path": "Entrepreneurship",
+        "programs": ["SBA Boots to Business (free)", "V-WISE (veteran women)", "Bunker Labs (veteran startup incubator)"],
+        "funding": ["SBA Veterans Advantage loans", "StreetShares (veteran lending)", "Hivers and Strivers (angel network for military grads)"],
+        "avgSalary": "Varies widely, $40K-$200K+ depending on business success",
+        "topVetIndustries": ["Government contracting", "Logistics", "Security", "Fitness", "Consulting"]
+      }
+    ],
+    "transitionResources": {
+      "skillBridge": "Last 180 days of service: work with civilian employer while still receiving military pay/benefits. 2,800+ employers participate.",
+      "taps": "Transition Assistance Program: mandatory pre-separation workshops. Start 12-18 months before ETS.",
+      "networkingOrgs": ["American Corporate Partners (ACP)", "Hire Heroes USA", "IVMF (Syracuse)", "FourBlock"],
+      "resumeTips": [
+        "Translate military jargon to civilian language (use O*NET crosswalk)",
+        "Quantify: '35 personnel' → 'team of 35 direct reports', '$2M budget' → '$2M annual operating budget'",
+        "Lead with transferable skills: leadership, logistics, project management, team building",
+        "Security clearance IS a resume bullet — mention it prominently if active"
+      ]
+    }
+  },
+  "securityClearance": {
+    "value": "Active TS/SCI clearance adds $10K-$30K to salary. Some employers will hire solely for clearance.",
+    "timeline": "Secret: 3-6 months. Top Secret: 6-18 months. TS/SCI: 12-24 months.",
+    "retention": "Clearance stays active 2 years after separation (24 months). After that, reinvestigation required.",
+    "topEmployers": ["Booz Allen Hamilton", "Leidos", "SAIC", "Raytheon", "Northrop Grumman", "Lockheed Martin", "ManTech", "CACI"]
+  }
+}

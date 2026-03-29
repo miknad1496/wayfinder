@@ -1,0 +1,86 @@
+{
+  "lastUpdated": "2026-03-25",
+  "source": "Compiled from US News, Peterson's, and institutional data",
+  "programs": [
+    {
+      "type": "MBA",
+      "topPrograms": [
+        {"school": "Harvard Business School", "ranking": 1, "medianGMAT": 740, "acceptanceRate": 0.11, "medianSalary": 175000, "tuition": 76500, "classSize": 938, "employmentRate": 0.96, "avgDebt": 110000},
+        {"school": "Stanford GSB", "ranking": 2, "medianGMAT": 738, "acceptanceRate": 0.06, "medianSalary": 180000, "tuition": 77940, "classSize": 436, "employmentRate": 0.95, "avgDebt": 105000},
+        {"school": "Wharton (Penn)", "ranking": 3, "medianGMAT": 733, "acceptanceRate": 0.18, "medianSalary": 170000, "tuition": 84672, "classSize": 918, "employmentRate": 0.96, "avgDebt": 115000},
+        {"school": "Booth (Chicago)", "ranking": 4, "medianGMAT": 730, "acceptanceRate": 0.21, "medianSalary": 168000, "tuition": 77844, "classSize": 614, "employmentRate": 0.95, "avgDebt": 108000},
+        {"school": "Kellogg (Northwestern)", "ranking": 5, "medianGMAT": 727, "acceptanceRate": 0.20, "medianSalary": 165000, "tuition": 78276, "classSize": 510, "employmentRate": 0.94, "avgDebt": 106000},
+        {"school": "Sloan (MIT)", "ranking": 6, "medianGMAT": 730, "acceptanceRate": 0.12, "medianSalary": 172000, "tuition": 82200, "classSize": 480, "employmentRate": 0.96, "avgDebt": 100000},
+        {"school": "Columbia Business School", "ranking": 7, "medianGMAT": 726, "acceptanceRate": 0.15, "medianSalary": 170000, "tuition": 82356, "classSize": 778, "employmentRate": 0.94, "avgDebt": 118000},
+        {"school": "Haas (Berkeley)", "ranking": 8, "medianGMAT": 726, "acceptanceRate": 0.12, "medianSalary": 165000, "tuition": 68444, "classSize": 291, "employmentRate": 0.94, "avgDebt": 90000},
+        {"school": "Tuck (Dartmouth)", "ranking": 9, "medianGMAT": 722, "acceptanceRate": 0.23, "medianSalary": 165000, "tuition": 77220, "classSize": 286, "employmentRate": 0.96, "avgDebt": 104000},
+        {"school": "Ross (Michigan)", "ranking": 10, "medianGMAT": 720, "acceptanceRate": 0.22, "medianSalary": 160000, "tuition": 74230, "classSize": 420, "employmentRate": 0.95, "avgDebt": 95000}
+      ],
+      "overview": {
+        "medianStartingSalary": 165000,
+        "typicalDuration": "2 years (some accelerated 1-year options)",
+        "avgROI": "Positive within 3-5 years at T15 programs",
+        "workExperienceRequired": "3-5 years median",
+        "applicationComponents": ["GMAT/GRE", "Essays", "Recommendations", "Interview", "Resume", "Transcripts"],
+        "trends": "Test-optional gaining traction; STEM-designated MBAs rising; deferred enrollment programs (2+2, Bridge) growing; online/hybrid MBA acceptance increasing"
+      }
+    },
+    {
+      "type": "Law (JD)",
+      "topPrograms": [
+        {"school": "Yale Law School", "ranking": 1, "medianLSAT": 176, "acceptanceRate": 0.05, "medianSalary": 215000, "tuition": 71425, "classSize": 200, "barPassRate": 0.97, "bigLawPlacementRate": 0.82},
+        {"school": "Stanford Law School", "ranking": 2, "medianLSAT": 174, "acceptanceRate": 0.06, "medianSalary": 215000, "tuition": 67512, "classSize": 180, "barPassRate": 0.96, "bigLawPlacementRate": 0.79},
+        {"school": "Harvard Law School", "ranking": 3, "medianLSAT": 174, "acceptanceRate": 0.10, "medianSalary": 215000, "tuition": 71610, "classSize": 560, "barPassRate": 0.97, "bigLawPlacementRate": 0.75},
+        {"school": "Columbia Law School", "ranking": 4, "medianLSAT": 174, "acceptanceRate": 0.13, "medianSalary": 215000, "tuition": 75380, "classSize": 390, "barPassRate": 0.96, "bigLawPlacementRate": 0.83},
+        {"school": "UChicago Law School", "ranking": 5, "medianLSAT": 174, "acceptanceRate": 0.14, "medianSalary": 215000, "tuition": 72726, "classSize": 195, "barPassRate": 0.97, "bigLawPlacementRate": 0.71}
+      ],
+      "overview": {
+        "medianStartingSalary": "BigLaw: $215,000; Public Interest: $65,000; Government: $75,000",
+        "typicalDuration": "3 years",
+        "bimodalDistribution": "Law salaries are bimodal: BigLaw peak (~$215K) and public sector peak (~$65K). Very few positions in between.",
+        "debtWarning": "Median debt $130K-$160K at T14. Consider debt-to-income ratios. LRAP programs critical for public interest."
+      }
+    },
+    {
+      "type": "Medical (MD)",
+      "topPrograms": [
+        {"school": "Harvard Medical School", "ranking": 1, "medianMCAT": 521, "acceptanceRate": 0.03, "tuition": 66816, "classSize": 165, "residencyMatchRate": 0.99, "avgResidentSalary": 67000},
+        {"school": "Johns Hopkins SOM", "ranking": 2, "medianMCAT": 521, "acceptanceRate": 0.04, "tuition": 61140, "classSize": 120, "residencyMatchRate": 0.99, "avgResidentSalary": 67000},
+        {"school": "Stanford Medicine", "ranking": 3, "medianMCAT": 520, "acceptanceRate": 0.02, "tuition": 63747, "classSize": 90, "residencyMatchRate": 0.99, "avgResidentSalary": 67000},
+        {"school": "UCSF SOM", "ranking": 4, "medianMCAT": 519, "acceptanceRate": 0.03, "tuition": 50118, "classSize": 149, "residencyMatchRate": 0.99, "avgResidentSalary": 67000},
+        {"school": "Penn Perelman SOM", "ranking": 5, "medianMCAT": 522, "acceptanceRate": 0.04, "tuition": 63382, "classSize": 152, "residencyMatchRate": 0.98, "avgResidentSalary": 67000}
+      ],
+      "overview": {
+        "totalApplicants": 62443,
+        "totalMatriculants": 23810,
+        "overallAcceptanceRate": 0.38,
+        "avgMCAT": 511.9,
+        "avgGPA": 3.75,
+        "typicalDuration": "4 years + 3-7 years residency",
+        "avgDebt": 200000,
+        "combinedPrograms": "BS/MD (7-8 year), MD/PhD (7-8 year), DO pathway (growing acceptance)",
+        "postBacc": "Post-baccalaureate pre-med programs valuable for career changers (Columbia, Bryn Mawr, Goucher)"
+      }
+    },
+    {
+      "type": "PhD/Research",
+      "overview": {
+        "funding": "Most STEM PhDs are fully funded (tuition + stipend $25K-$45K). Humanities/social sciences funding varies.",
+        "typicalDuration": "STEM: 5-6 years; Humanities: 6-8 years",
+        "acceptanceRates": "Top programs: 3-15% depending on field",
+        "careerOutcomes": "~60% of STEM PhDs enter industry; ~30% stay in academia; ~10% government/nonprofit",
+        "keyAdvice": "Apply to advisor, not just program. Research fit matters more than ranking. Visit before committing.",
+        "altCredentials": "Professional masters (MS) in data science, CS, engineering increasingly valued as PhD alternative"
+      }
+    },
+    {
+      "type": "PA/NP/PT/OT",
+      "overview": {
+        "PA": {"duration": "27 months avg", "medianSalary": 126010, "jobGrowth": "28% (2022-2032)", "prereqs": "~3000 hours patient care, bachelor's degree", "programs": 300},
+        "NP": {"duration": "2-3 years (MSN/DNP)", "medianSalary": 121610, "jobGrowth": "38% (2022-2032)", "prereqs": "BSN + RN license + clinical experience"},
+        "PT": {"duration": "3 years (DPT)", "medianSalary": 99710, "jobGrowth": "15% (2022-2032)", "prereqs": "Bachelor's + prereq courses"},
+        "OT": {"duration": "2.5-3 years (OTD/MSOT)", "medianSalary": 93180, "jobGrowth": "12% (2022-2032)", "prereqs": "Bachelor's + observation hours"}
+      }
+    }
+  ]
+}

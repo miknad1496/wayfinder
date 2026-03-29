@@ -578,3 +578,43 @@ Entry-level is harder. Bootcamp marketing about $120K starting salaries is disho
 **Document Type:** Career Intelligence
 **Confidence Level:** High (based on real hiring data, real feedback, real salary data from multiple sources)
 **Bias Disclosure:** This document reflects 2024-2026 tech hiring; pre-2020 rules no longer apply; survivor bias toward people who stayed in tech
+
+---
+
+---
+
+<!-- LEARNED_FROM_CONVERSATIONS -->
+## Learned From User Conversations
+
+*Auto-enriched by the Wayfinder learning pipeline (2026-03-28)*
+*2 high-quality exchanges analyzed*
+
+### Common Questions Users Ask
+
+- She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm. she interned at my company as an equity research analyst intern - Saturna Capital. she developed out AI prompting manual and helped research the cybersecurity industry.
+- I'm the father of a senior in HS. she will go to college next year. so far she was accepted into UW Foster school of business, northeastern, texas A&M. she'll get most decisions later this month and early april. my concern is how ai is disrupting several industries and career trajectories, and no one seems to know what will happen, including career coaches, college counselors, even industry executives themselves. also, most advisors try to recommend based on the static state of the world/economy, not what my daughter will need and require 4-5 years into the future, which is the actual relevant timeframe we need to be thinking of right now.
+
+### Key Insights From Conversations
+
+- This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live
+- This is one of the most thoughtful framings of the college decision problem I've heard
+
+### Example High-Quality Exchange
+
+**Q:** She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm....
+
+**A:** This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live.
+
+Let me think through this carefully with you.
+
+---
+
+**What Her Internship Actually Reveals**
+
+She did two things at Saturna that are worth separating:
+
+1. **Equity research** — Analyzing companies, synthesizing information, forming investment theses. This is judgment-intensive, relationship-driven work.
+
+2. **Built an AI prompting manual** — This is not a typical intern deliverable. This means she can translate between what AI tools can do and what professionals need. That's a genuinely rare skill right now.
+
+That combination — investment thinking *plus* AI fluency — is actually a very specific and valuable profile. It points somewhere more precise...

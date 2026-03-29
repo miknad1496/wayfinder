@@ -3,6 +3,8 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext, getLiteBrainContext } from './knowledge.js';
+import { initOutputFilter, filterResponse as filterLeakage, invalidateOutputFilter } from './output_filter.js';
+import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -112,10 +114,24 @@ function detectAnalysisFramework(query) {
 
 function getClient() {
   if (!client) {
-    if (!process.env.ANTHROPIC_API_KEY) {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+
+    // Validate API key existence and format
+    if (!apiKey) {
       throw new Error('ANTHROPIC_API_KEY not set. Copy .env.example to .env and add your key.');
     }
-    client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+    // Basic format check: Anthropic keys are typically 40+ chars starting with 'sk-ant-'
+    if (apiKey.length < 20) {
+      throw new Error('Invalid ANTHROPIC_API_KEY format (too short). Check your .env file.');
+    }
+
+    try {
+      client = new Anthropic({ apiKey });
+    } catch (err) {
+      // Anthropic SDK validation error
+      throw new Error(`Failed to initialize Anthropic client: ${err.message}`);
+    }
   }
   return client;
 }
@@ -328,6 +344,7 @@ function detectConversationPhase(conversationHistory, sessionContext) {
 export async function chat(conversationHistory, userMessage, sessionContext = {}, options = {}) {
   const anthropic = getClient();
   const useEngine = options.useEngine || false;
+  const scopeLabel = options.scopeLabel || 'in_scope';
 
   // Tiered model strategy:
   // - Free users (standard mode): Sonnet — efficient, selective context from lite brain
@@ -349,7 +366,9 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   if (useEngine) {
     // FULL ENGINE MODE: RAG retrieval — topK scales with conversation phase
     const topK = phase.phase >= 3 ? 8 : phase.phase >= 2 ? 6 : 4;
-    relevantChunks = await retrieveContext(userMessage, topK);
+    const ragResult = await retrieveContext(userMessage, topK);
+    // Support both new format ({ chunks, sources }) and legacy (flat array)
+    relevantChunks = Array.isArray(ragResult) ? ragResult : (ragResult?.chunks || []);
     contextStr = formatContext(relevantChunks);
     console.log(`[Engine Mode] Retrieved ${relevantChunks.length} chunks for: "${userMessage.slice(0, 60)}..."`);
   } else {
@@ -379,10 +398,34 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       systemPrompt += '\n\n' + framework.prompt;
       console.log(`[Engine Mode] Analysis framework activated: ${framework.name}`);
     }
+
+    // ─── SS-02: RAG PROMPT AUGMENTATION ───────────────────────────
+    // When real RAG chunks were retrieved, inject an expansion instruction
+    // to prevent the model from under-utilizing the evidence. Addresses
+    // RAG-04, RAG-09, RAG-11, RAG-12 (under-length despite correct
+    // evidence use). Only fires when actual context chunks are present —
+    // not on the "no documents matched" fallback.
+    if (relevantChunks.length > 0) {
+      systemPrompt += '\n\n[GENERATION INSTRUCTION: You have been provided with retrieved context. ' +
+        'Develop your analysis fully using specific data points from the context. ' +
+        'Structure your response with clear sections. For questions with substantial ' +
+        'retrieved data, target 400-600 words. Do not summarize in fewer than 200 words ' +
+        'when the context provides enough data to support a developed answer.]';
+      console.log(`[SS-02] RAG augmentation injected (${relevantChunks.length} chunks present)`);
+    }
   }
 
   // Add user profile
   systemPrompt += buildProfileString(sessionContext);
+
+  // ─── SS-04: SCOPE BOUNDARY INJECTION ────────────────────────
+  // For adjacent queries (straddling education + out-of-scope domain),
+  // inject a boundary instruction that tells the model to address only
+  // the education component and redirect the rest to a professional.
+  if (scopeLabel === 'adjacent') {
+    systemPrompt += BOUNDARY_INSTRUCTION;
+    console.log(`[SS-04] Boundary instruction injected for adjacent query`);
+  }
 
   // Add conversation phase guidance — tells Claude where we are in the arc
   // and how to calibrate response depth
@@ -404,6 +447,26 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // Token budget scales with conversation phase — early = lean, deep = generous
   const maxTokens = useEngine ? phase.suggestedMaxTokens : Math.min(phase.suggestedMaxTokens, 1500);
 
+  // ─── TOKEN COUNT ESTIMATION (prevent context overflow) ──────────────
+  // Rough estimate: 1 token ≈ 4 chars (Claude uses byte-pair encoding, varies by content)
+  // For safety, assume worst case (fewer chars per token for Unicode/special chars)
+  const estimateTokens = (text) => {
+    if (!text) return 0;
+    // Use 3.5 chars/token as conservative estimate (safer than 4)
+    return Math.ceil(text.length / 3.5);
+  };
+
+  const estimatedInputTokens = estimateTokens(systemPrompt) + messages.reduce((sum, m) => sum + estimateTokens(m.content), 0);
+  const estimatedTotalTokens = estimatedInputTokens + maxTokens;
+  const MAX_TOTAL_TOKENS = 200000; // Opus context limit safety margin
+
+  if (estimatedTotalTokens > MAX_TOTAL_TOKENS * 0.95) {
+    // Trim conversation history if approaching context limit
+    console.warn(`[Claude] Estimated tokens (${estimatedTotalTokens}) approaching limit. Trimming history.`);
+    // Keep only last 4 exchanges (8 messages) instead of 10
+    messages.splice(0, Math.max(0, messages.length - 8));
+  }
+
   // Call Claude
   try {
     const response = await anthropic.messages.create({
@@ -413,11 +476,24 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       messages
     });
 
-    const assistantMessage = response.content[0].text;
+    if (!response.content || response.content.length === 0 || !response.content[0].text) {
+      throw new Error('Claude returned empty or malformed response');
+    }
+    const rawMessage = response.content[0].text;
+
+    // ─── SS-03: OUTPUT LEAKAGE FILTER ───────────────────────────
+    // Scan every response for verbatim system prompt substrings.
+    // If leakage detected, replace entire response with safe redirect.
+    await initOutputFilter();
+    const { response: assistantMessage, leaked } = filterLeakage(rawMessage);
+    if (leaked) {
+      console.log(`[SS-03] Response replaced due to system prompt leakage`);
+    }
 
     return {
       response: assistantMessage,
       mode: useEngine ? 'engine' : 'standard',
+      leaked,
       phase: phase.phase,
       contextScore: phase.contextScore,
       usage: {
@@ -432,13 +508,29 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       }))
     };
   } catch (err) {
-    if (err.status === 401) {
-      throw new Error('Invalid API key. Check your ANTHROPIC_API_KEY in .env');
+    // ─── ERROR HANDLING: No API key leakage ────────────────────────
+    // Never expose actual API key, error details, or request bodies in error messages
+
+    // Map HTTP status codes to safe user messages
+    const statusErrorMap = {
+      401: 'Authentication failed. Verify your API key is valid and not expired.',
+      429: 'API rate limit exceeded. Please wait a moment and try again. Consider upgrading your plan for higher limits.',
+      400: 'Invalid request format. This may be due to message length or content.',
+      503: 'Anthropic API is temporarily unavailable. Please try again in a moment.',
+    };
+
+    if (err.status && statusErrorMap[err.status]) {
+      throw new Error(statusErrorMap[err.status]);
     }
-    if (err.status === 429) {
-      throw new Error('Rate limited. Please wait a moment and try again.');
-    }
-    throw err;
+
+    // Generic error — log to console (server-side only) but return safe message
+    console.error('[Claude API Error]', {
+      status: err.status,
+      message: err.message,
+      // Never log error.error which might contain full request/key details
+    });
+
+    throw new Error('Failed to generate response. Please try again.');
   }
 }
 
@@ -447,4 +539,5 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
  */
 export function reloadPrompt() {
   systemPromptCache = null;
+  invalidateOutputFilter(); // SS-03: re-build n-grams from new prompt
 }

@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import { reloadPrompt } from '../services/claude.js';
-import { invalidateCache } from '../services/knowledge.js';
+import { invalidateCache, getKnowledgeDB } from '../services/knowledge.js';
 import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
 import { getScheduleStatus, forceRunScraper } from '../services/scraper-scheduler.js';
+import { getSLMStatus, invalidateSLMPromptCache } from '../services/slm.js';
 
 const router = Router();
 
@@ -34,6 +35,56 @@ router.get('/knowledge-files', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to list knowledge files' });
   }
+});
+
+// GET /api/admin/knowledge-db - Get SQLite knowledge DB stats and query it
+router.get('/knowledge-db', async (req, res) => {
+  const db = await getKnowledgeDB();
+  if (!db) {
+    return res.json({
+      available: false,
+      message: 'SQLite knowledge DB not available. Install sql.js and run: python3 scripts/build-knowledge-db.py'
+    });
+  }
+  const metadata = db.getMetadata();
+  res.json({ available: true, metadata });
+});
+
+// GET /api/admin/knowledge-db/occupation/:soc - Get full occupation profile
+router.get('/knowledge-db/occupation/:soc', async (req, res) => {
+  const db = await getKnowledgeDB();
+  if (!db) return res.status(503).json({ error: 'SQLite knowledge DB not available' });
+  const profile = db.getOccupationProfile(req.params.soc);
+  if (!profile) return res.status(404).json({ error: 'Occupation not found' });
+  res.json(profile);
+});
+
+// GET /api/admin/knowledge-db/search?q=keyword - Search occupations
+router.get('/knowledge-db/search', async (req, res) => {
+  const db = await getKnowledgeDB();
+  if (!db) return res.status(503).json({ error: 'SQLite knowledge DB not available' });
+  const results = db.searchOccupations(req.query.q || '');
+  res.json({ query: req.query.q, results, count: results.length });
+});
+
+// GET /api/admin/knowledge-db/h1b/:soc - Get H1B data for an occupation
+router.get('/knowledge-db/h1b/:soc', async (req, res) => {
+  const db = await getKnowledgeDB();
+  if (!db) return res.status(503).json({ error: 'SQLite knowledge DB not available' });
+  const occ = db.getH1BOccupation(req.params.soc);
+  const companies = db.getH1BCompanies(req.params.soc, parseInt(req.query.limit) || 20);
+  res.json({ occupation: occ, companies });
+});
+
+// GET /api/admin/slm-status - Get SLM service status
+router.get('/slm-status', (req, res) => {
+  res.json(getSLMStatus());
+});
+
+// POST /api/admin/reload-slm-prompt - Reload SLM system prompt
+router.post('/reload-slm-prompt', (req, res) => {
+  invalidateSLMPromptCache();
+  res.json({ success: true, message: 'SLM prompt cache cleared' });
 });
 
 // GET /api/admin/dashboard - Get overall system stats

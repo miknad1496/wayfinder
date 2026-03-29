@@ -331,3 +331,45 @@ The most important thing you'll do in college isn't choosing your major—it's b
 Your first major is a bet. Make it informed, make it honest, and give yourself permission to adjust it if the evidence changes.
 
 Then get to work.
+
+---
+
+---
+
+<!-- LEARNED_FROM_CONVERSATIONS -->
+## Learned From User Conversations
+
+*Auto-enriched by the Wayfinder learning pipeline (2026-03-28)*
+*3 high-quality exchanges analyzed*
+
+### Common Questions Users Ask
+
+- She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm. she interned at my company as an equity research analyst intern - Saturna Capital. she developed out AI prompting manual and helped research the cybersecurity industry.
+- I'm the father of a senior in HS. she will go to college next year. so far she was accepted into UW Foster school of business, northeastern, texas A&M. she'll get most decisions later this month and early april. my concern is how ai is disrupting several industries and career trajectories, and no one seems to know what will happen, including career coaches, college counselors, even industry executives themselves. also, most advisors try to recommend based on the static state of the world/economy, not what my daughter will need and require 4-5 years into the future, which is the actual relevant timeframe we need to be thinking of right now.
+- I'm a college advisor looking for resources to help my students
+
+### Key Insights From Conversations
+
+- This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live
+- This is one of the most thoughtful framings of the college decision problem I've heard
+- Helping advisors is one of the highest-leverage things I can do, since the guidance you give ripples out to dozens of students
+
+### Example High-Quality Exchange
+
+**Q:** She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm....
+
+**A:** This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live.
+
+Let me think through this carefully with you.
+
+---
+
+**What Her Internship Actually Reveals**
+
+She did two things at Saturna that are worth separating:
+
+1. **Equity research** — Analyzing companies, synthesizing information, forming investment theses. This is judgment-intensive, relationship-driven work.
+
+2. **Built an AI prompting manual** — This is not a typical intern deliverable. This means she can translate between what AI tools can do and what professionals need. That's a genuinely rare skill right now.
+
+That combination — investment thinking *plus* AI fluency — is actually a very specific and valuable profile. It points somewhere more precise...

@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2026-03-25",
+  "source": "Compiled from QS Rankings, institutional data, UCAS, Study.com",
+  "studyAbroad": {
+    "topDestinations": [
+      {
+        "country": "United Kingdom",
+        "system": "UCAS (centralized application)",
+        "topSchools": ["Oxford", "Cambridge", "Imperial College London", "LSE", "UCL", "Edinburgh", "St Andrews", "King's College London", "Warwick", "Bristol"],
+        "tuition": "£9,250/yr domestic; £20,000-£40,000/yr international",
+        "duration": "3 years (undergraduate), 1 year (taught masters)",
+        "keyDifferences": ["Apply for a specific subject from day 1", "No general education requirements", "Finals-heavy assessment", "UCAS allows max 5 choices", "Oxbridge: separate admissions tests + interviews"],
+        "admissions": "Strong predicted grades (A*A*A typical for Oxbridge), personal statement focused on academic interest, subject-specific admissions tests (MAT, BMAT, TSA, LNAT)",
+        "financialAid": "Limited for international students. Scholarships: Chevening, Commonwealth, Gates Cambridge, Rhodes (postgrad). Some universities offer merit awards.",
+        "visaTips": "Student visa (Tier 4) required. Can work 20hrs/week during term. Post-study work visa: 2 years (Graduate Route)."
+      },
+      {
+        "country": "Canada",
+        "system": "Direct to each university (no centralized system except Ontario OUAC)",
+        "topSchools": ["Toronto", "UBC", "McGill", "Waterloo", "McMaster", "Western", "Queen's", "Alberta", "Montreal", "Ottawa"],
+        "tuition": "CAD $7,000-$12,000/yr domestic; CAD $30,000-$60,000/yr international",
+        "duration": "4 years (undergraduate), 1-2 years (masters)",
+        "keyDifferences": ["Co-op programs very common (Waterloo is king)", "French-language options (McGill, UdeM)", "More affordable than US/UK for comparable quality", "Path to permanent residency via PGWP"],
+        "admissions": "Grades-focused (less holistic than US). SAT/ACT optional at most schools. Some programs require supplementary applications (Waterloo AIF, UBC Broad-Based Admissions).",
+        "financialAid": "International student scholarships available at most major universities. Less generous than US need-based aid. Merit-based entrance scholarships common ($3K-$40K).",
+        "visaTips": "Study permit required. Can work 20hrs/week. PGWP (Post-Graduation Work Permit) for up to 3 years → path to PR via Express Entry."
+      },
+      {
+        "country": "Australia",
+        "system": "Direct to each university; UAC (NSW), VTAC (Victoria)",
+        "topSchools": ["Melbourne", "Sydney", "ANU", "UNSW", "Queensland", "Monash", "Adelaide", "Western Australia"],
+        "tuition": "AUD $30,000-$50,000/yr international",
+        "duration": "3 years (undergraduate), 1.5-2 years (masters)",
+        "keyDifferences": ["Semester starts in February (Southern Hemisphere)", "Group of Eight (Go8) is the top tier", "Strong in STEM, health sciences, business", "Work rights during study: 48hrs/fortnight"],
+        "financialAid": "Australia Awards (government scholarships), Destination Australia, university-specific scholarships. Generally less aid available than US.",
+        "visaTips": "Student visa (subclass 500). Post-study work visa: 2-4 years depending on qualification level."
+      },
+      {
+        "country": "Europe (Continental)",
+        "system": "Varies by country",
+        "highlights": [
+          {"country": "Germany", "tuition": "Free or near-free at public universities (even for internationals)", "language": "Growing number of English-taught programs, especially at masters level", "topSchools": ["TU Munich", "LMU Munich", "Heidelberg", "Humboldt Berlin", "RWTH Aachen"]},
+          {"country": "Netherlands", "tuition": "€2,300/yr EU; €8,000-€20,000/yr international", "language": "Extensive English-taught programs", "topSchools": ["Delft", "Amsterdam", "Leiden", "Utrecht", "Erasmus Rotterdam"]},
+          {"country": "Switzerland", "tuition": "CHF 1,500/yr at ETH/EPFL (even international)", "note": "ETH Zurich and EPFL are world-class STEM at incredible value", "topSchools": ["ETH Zurich", "EPFL", "Zurich", "Geneva"]}
+        ]
+      }
+    ]
+  },
+  "internationalStudentsInUS": {
+    "visaTypes": {
+      "F1": "Standard student visa. Can work on-campus 20hrs/week. OPT: 12 months post-graduation (36 months for STEM).",
+      "J1": "Exchange visitor. More restrictive. 2-year home residency requirement may apply.",
+      "M1": "Vocational/non-academic programs."
+    },
+    "financialAidForInternational": {
+      "needBlindForInternational": ["Harvard", "Yale", "Princeton", "MIT", "Amherst"],
+      "needAwareButGenerous": ["Stanford", "Dartmouth", "Columbia", "Penn", "Duke", "Williams", "Bowdoin", "Swarthmore"],
+      "meritScholarships": "Many T50-T100 schools offer merit scholarships to international students to attract talent",
+      "strategy": "Apply to a mix of need-blind, need-aware generous, and merit-focused schools. Run NPCs where available."
+    },
+    "admissionsTips": [
+      "TOEFL/IELTS required unless educated in English for 4+ years",
+      "International applicants often evaluated in regional pools",
+      "Demonstrated interest matters more at some schools",
+      "Financial documentation (bank statements) required early in process",
+      "Some schools have higher acceptance rates for international students; others are more selective"
+    ]
+  }
+}

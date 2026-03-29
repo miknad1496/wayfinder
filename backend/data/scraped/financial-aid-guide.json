@@ -1,0 +1,77 @@
+{
+  "lastUpdated": "2026-03-25",
+  "source": "Compiled from Federal Student Aid, College Board CSS, institutional policies",
+  "fafsa": {
+    "deadline": "June 30 for federal aid; state/institutional deadlines vary (many are February/March)",
+    "efc_replaced_by": "SAI (Student Aid Index), effective starting 2024-2025 cycle",
+    "maxPellGrant": 7395,
+    "dataYear": "2025-2026",
+    "incomeProtectionAllowance": "Family of 4 with one in college: ~$32,000",
+    "assetExclusions": ["Primary home equity", "Retirement accounts (401k, IRA)", "Small business < 100 employees", "Life insurance cash value"],
+    "commonMistakes": [
+      "Missing priority deadline (many schools: Feb 1 or March 1)",
+      "Not filing as 'independent' when eligible (married, 24+, veteran, ward of court)",
+      "Forgetting to include non-custodial parent information for CSS Profile schools",
+      "Not reporting 529 savings correctly (reported as parent asset, not student asset)",
+      "Assuming too much income disqualifies you — FAFSA considers many factors"
+    ],
+    "appealProcess": "Professional Judgment: Write to financial aid office explaining special circumstances (job loss, medical expenses, divorce, death). Include documentation. ~40-60% success rate at private schools."
+  },
+  "cssProfile": {
+    "usedBy": "~400 institutions (mostly private, selective colleges)",
+    "additionalFactors": ["Home equity", "Non-custodial parent income", "Small business assets", "Sibling private school tuition"],
+    "costToFile": "$25 first school + $16 each additional",
+    "keyDifference": "CSS Profile is more comprehensive than FAFSA. Schools that use it generally have more institutional aid to give.",
+    "strategy": "Some families are 'CSS-Profile-disadvantaged' (high home equity, divorced non-custodial parent with high income). Consider FAFSA-only schools as financial safeties."
+  },
+  "meritAid": {
+    "definition": "Non-need-based scholarships awarded for academic, athletic, artistic, or other achievements",
+    "strategy": [
+      "Target schools where your stats place you in the top 25% of admitted students",
+      "State flagships often have automatic merit thresholds (e.g., Alabama, Arizona State, Oklahoma)",
+      "Many T50-T100 schools offer significant merit to attract high-stat students away from T20",
+      "Negotiate: If you have a better offer from a comparable school, ask if they can match",
+      "Honors colleges at state schools: often provide near-Ivy experience at state school cost",
+      "Don't overlook full-ride competitions: Stamps, QuestBridge, Posse, Gates, Robertson"
+    ],
+    "fullRidePrograms": [
+      {"name": "QuestBridge", "target": "High-achieving, low-income students", "schools": 50, "value": "Full ride at partner schools"},
+      {"name": "Posse Foundation", "target": "Diverse student leaders", "schools": 64, "value": "Full tuition"},
+      {"name": "Gates Millennium Scholars", "target": "Minority students with financial need", "value": "Full cost of attendance"},
+      {"name": "Stamps Scholarship", "target": "Academic excellence + leadership", "schools": 40, "value": "Full ride + enrichment funds"},
+      {"name": "Robertson Scholars", "target": "Leadership at Duke/UNC", "value": "Full ride + summer experiences"},
+      {"name": "Morehead-Cain (UNC)", "target": "Leadership + scholarship + character", "value": "Full ride + summer enrichment"},
+      {"name": "Jefferson Scholars (UVA)", "target": "Leadership + scholarship + citizenship", "value": "Full ride"},
+      {"name": "Daniels Fund", "target": "Students from CO, NM, UT, WY", "value": "Full ride at partner schools"}
+    ]
+  },
+  "needBlindVsNeedAware": {
+    "needBlind": {
+      "definition": "Admission decision made without considering ability to pay",
+      "domesticNeedBlind": ["Harvard", "Yale", "Princeton", "MIT", "Amherst", "Bowdoin", "Pomona", "Swarthmore", "Vanderbilt", "Rice", "Columbia", "Penn", "Dartmouth", "Cornell", "Brown", "Duke", "Stanford", "Caltech", "UChicago"],
+      "internationalNeedBlind": ["Harvard", "Yale", "Princeton", "MIT", "Amherst"],
+      "note": "Being need-blind doesn't guarantee meeting full need. Always run net price calculators."
+    },
+    "needAware": {
+      "definition": "Financial situation may factor into admission, especially off waitlist or for borderline cases",
+      "strategy": "At need-aware schools, full-pay students may have a slight admission advantage. Consider applying ED (binding) to maximize chances — schools want to lock in students who demonstrate top preference.",
+      "examples": "Most LACs, many T30-T50 schools, all state schools for OOS students"
+    }
+  },
+  "netPriceCalculators": {
+    "importance": "EVERY school's website has a Net Price Calculator (NPC). Run it for your family before applying.",
+    "strategy": "Create a spreadsheet: school name, sticker price, estimated NPC, merit scholarship potential, total estimated cost",
+    "surprises": "Many families earning $100K-$200K are surprised to qualify for significant aid at wealthy private schools",
+    "examples": {
+      "harvardFreeThreshold": "Families earning < $85K/yr → free tuition + room & board",
+      "stanfordFreeThreshold": "Families earning < $100K/yr → free tuition; < $75K → free everything",
+      "mitFreeThreshold": "Families earning < $75K/yr → free attendance"
+    }
+  },
+  "529plans": {
+    "overview": "Tax-advantaged savings for education. Contributions grow tax-free; withdrawals for qualified expenses are tax-free.",
+    "fafsaImpact": "Reported as parent asset (5.64% assessed) not student asset (20% assessed). Grandparent-owned 529s no longer counted as student income under simplified FAFSA.",
+    "strategy": "Start early — even small monthly contributions compound significantly. $200/month from birth ≈ $80K by college.",
+    "superfunding": "Gift tax rules allow 5-year gift tax averaging: contribute up to $90K at once ($18K × 5 years) without gift tax consequences."
+  }
+}

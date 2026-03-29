@@ -1,0 +1,111 @@
+{
+  "lastUpdated": "2026-03-25",
+  "source": "Compiled from DOL ApprenticeshipUSA, BLS, trade union data",
+  "overview": {
+    "totalRegisteredApprentices": 835000,
+    "completionRate": 0.56,
+    "avgStartingWage": 18.50,
+    "avgJourneymanWage": 37.50,
+    "avgTimeToCompletion": "4-5 years",
+    "earnWhileLearn": true,
+    "avgDebt": 0,
+    "note": "Apprentices earn $60K-$80K during training vs. accumulating $30K-$100K+ in student debt"
+  },
+  "highDemandTrades": [
+    {
+      "trade": "Electrician",
+      "medianPay": 61590,
+      "topPay": 104180,
+      "jobGrowth": "6% (2022-2032)",
+      "apprenticeshipLength": "4-5 years (8,000-10,000 hours)",
+      "unionVsNonUnion": "Union: Higher pay, benefits, pension. IBEW (International Brotherhood of Electrical Workers). Non-union: More flexibility, varied pay.",
+      "specializations": ["Residential", "Commercial", "Industrial", "Lineman (highest pay: $85K median)", "Solar/Renewable"],
+      "demandDrivers": "EV infrastructure, solar installations, data center construction, building electrification"
+    },
+    {
+      "trade": "Plumber",
+      "medianPay": 61550,
+      "topPay": 99920,
+      "jobGrowth": "2% (2022-2032)",
+      "apprenticeshipLength": "4-5 years",
+      "unionVsNonUnion": "UA (United Association) is primary union. Strong benefits and pension.",
+      "specializations": ["Residential", "Commercial", "Pipefitter", "Steamfitter", "Gas"],
+      "demandDrivers": "Aging infrastructure, green building codes, water conservation systems"
+    },
+    {
+      "trade": "HVAC Technician",
+      "medianPay": 57300,
+      "topPay": 86020,
+      "jobGrowth": "6% (2022-2032)",
+      "apprenticeshipLength": "3-5 years",
+      "unionVsNonUnion": "HVAC unions (Sheet Metal Workers Local 66 and others) offer strong benefits and pension. Non-union work more flexible and accessible.",
+      "specializations": ["Residential", "Commercial", "Refrigeration", "Controls/Building Automation"],
+      "demandDrivers": "Heat pump adoption, refrigerant transitions, smart building systems"
+    },
+    {
+      "trade": "Welder",
+      "medianPay": 47540,
+      "topPay": 68750,
+      "jobGrowth": "2% (2022-2032)",
+      "apprenticeshipLength": "3-4 years",
+      "unionVsNonUnion": "Boilermakers and other welding unions offer strong apprenticeships. Non-union positions more readily available.",
+      "specializations": ["Pipe welder (highest: $70K-$100K+)", "Underwater welder ($50K-$200K)", "TIG", "MIG", "Structural", "Aerospace"],
+      "note": "Underwater welding and pipeline welding can pay $100K-$200K but with significant hazard premium"
+    },
+    {
+      "trade": "Elevator Installer/Repairer",
+      "medianPay": 102420,
+      "topPay": 130740,
+      "jobGrowth": "3% (2022-2032)",
+      "apprenticeshipLength": "4 years",
+      "unionVsNonUnion": "IUEC (International Union of Elevator Constructors) controls nearly all apprenticeships and positions. Union-only pathway.",
+      "specializations": ["Installation", "Maintenance", "Repair", "Modernization"],
+      "note": "One of the highest-paid trades. IUEC union controls most apprenticeships. Very competitive to enter."
+    },
+    {
+      "trade": "Ironworker",
+      "medianPay": 60100,
+      "topPay": 96040,
+      "jobGrowth": "4% (2022-2032)",
+      "apprenticeshipLength": "3-4 years",
+      "unionVsNonUnion": "Ironworkers International union (Local 40, etc.) provides training and strong benefits. Non-union positions available through general contractors.",
+      "specializations": ["Structural", "Reinforcing", "Ornamental"],
+      "demandDrivers": "Infrastructure spending, bridge repairs, high-rise construction"
+    }
+  ],
+  "pathways": {
+    "unionApprenticeship": {
+      "howToApply": "Contact local union hall. Most have annual application windows (often spring). Aptitude test + interview. Some require references.",
+      "pros": ["Structured training", "Guaranteed wage increases", "Benefits from day 1", "Pension", "Job placement"],
+      "cons": ["Competitive entry", "Rigid scheduling", "Geographic limitations", "Dues"],
+      "bestFor": "Those wanting maximum structure, benefits, and long-term career stability"
+    },
+    "nonUnionApprenticeship": {
+      "howToApply": "Apply directly to contractors or through trade schools. ABC (Associated Builders and Contractors) runs many programs.",
+      "pros": ["More openings", "Faster entry", "Geographic flexibility", "Diverse project types"],
+      "cons": ["Less structured benefits", "No pension", "Variable training quality", "May need own tools"],
+      "bestFor": "Those wanting faster entry or planning to start own business"
+    },
+    "tradeSchool": {
+      "duration": "6 months to 2 years",
+      "cost": "$5,000 - $30,000",
+      "pros": ["Fast entry", "Foundational skills", "Some transfer as apprenticeship credit"],
+      "cons": ["Doesn't replace apprenticeship for licensure", "Cost (vs. earning during apprenticeship)"],
+      "bestFor": "Career changers wanting to test a trade before committing to apprenticeship"
+    }
+  },
+  "stateByStateLicensing": {
+    "note": "Licensing requirements vary significantly by state. Always check your state's requirements.",
+    "generalPattern": {
+      "electrician": "Most states require journeyman license after completing apprenticeship + passing exam",
+      "plumber": "Most states require journeyman license. Master plumber license needed to run own business.",
+      "hvac": "EPA 608 certification required nationally. State requirements vary.",
+      "welder": "AWS certification widely accepted. No state license typically required but certifications improve pay."
+    }
+  },
+  "militaryToTrades": {
+    "programs": ["Helmets to Hardhats (H2H)", "DOD SkillBridge", "VET TEC (for tech trades)"],
+    "advantage": "Military experience may count toward apprenticeship hours. GI Bill can supplement apprenticeship wages.",
+    "topMilitaryToTradeTransitions": ["Electrician", "HVAC", "Welding", "Heavy equipment operation", "Diesel mechanics"]
+  }
+}

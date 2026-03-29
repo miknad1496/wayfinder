@@ -55,3 +55,65 @@ For younger students, the focus should be on identifying authentic interest and 
 - "Well-rounded" applicants are the most common rejection type at selective schools. Angular depth beats shallow breadth.
 - The demographic cliff (2025-2030) will make many currently-competitive schools notably more accessible. Only the top 20-30 will be unaffected due to international demand.
 - Community college is a genuine strategic pathway with structured transfer programs that make it financially smart.
+
+---
+
+---
+
+<!-- LEARNED_FROM_CONVERSATIONS -->
+## Learned From User Conversations
+
+*Auto-enriched by the Wayfinder learning pipeline (2026-03-28)*
+*2 high-quality exchanges analyzed*
+
+### Common Questions Users Ask
+
+- She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm. she interned at my company as an equity research analyst intern - Saturna Capital. she developed out AI prompting manual and helped research the cybersecurity industry.
+- I'm the father of a senior in HS. she will go to college next year. so far she was accepted into UW Foster school of business, northeastern, texas A&M. she'll get most decisions later this month and early april. my concern is how ai is disrupting several industries and career trajectories, and no one seems to know what will happen, including career coaches, college counselors, even industry executives themselves. also, most advisors try to recommend based on the static state of the world/economy, not what my daughter will need and require 4-5 years into the future, which is the actual relevant timeframe we need to be thinking of right now.
+
+### Key Insights From Conversations
+
+- This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live
+- This is one of the most thoughtful framings of the college decision problem I've heard
+
+### Example High-Quality Exchange
+
+**Q:** She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm....
+
+**A:** This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live.
+
+Let me think through this carefully with you.
+
+---
+
+**What Her Internship Actually Reveals**
+
+She did two things at Saturna that are worth separating:
+
+1. **Equity research** — Analyzing companies, synthesizing information, forming investment theses. This is judgment-intensive, relationship-driven work.
+
+2. **Built an AI prompting manual** — This is not a typical intern deliverable. This means she can translate between what AI tools can do and what professionals need. That's a genuinely rare skill right now.
+
+That combination — investment thinking *plus* AI fluency — is actually a very specific and valuable profile. It points somewhere more precise...
+
+---
+
+## Financial Outcomes by School (College Scorecard Data)
+
+When helping students choose between schools, use actual earnings data — not rankings. The Wayfinder knowledge base contains Scorecard earnings for 141 institutions and 8,362 programs.
+
+### Key Benchmarks (10-Year Post-Enrollment Median Earnings)
+- **$140K+**: MIT ($143K)
+- **$120-130K**: Caltech ($129K), Stanford ($124K)
+- **$100-115K**: Carnegie Mellon ($115K), UPenn ($111K), Princeton ($110K), Georgia Tech ($103K), Cornell ($104K), Harvard ($102K), Yale ($101K)
+- **$80-100K**: UC Berkeley ($92K), Rice ($90K), Michigan ($84K), UCSD ($85K), UCLA ($83K)
+- **$60-80K**: UF ($72K), UNC ($72K), Ohio State ($67K), Penn State ($67K)
+
+### Best-Value Schools (Earnings Relative to Net Price)
+CUNY Brooklyn (19.6x), Princeton (18.0x), UF (10.9x), Stanford (9.0x), Georgia Tech (8.5x), Caltech (8.0x), MIT (7.1x), UC Berkeley (6.9x)
+
+### The Program-Level Truth
+School-wide medians hide enormous variation by major. At the same university, an engineering program might produce $120K median earnings while a fine arts program produces $20K. Always look at program-specific outcomes, not school-level averages, when advising on major + school combinations.
+
+### Warning Signs (High Cost, Low Earnings)
+Music/film/fine arts programs at expensive private universities ($30-50K/year net price) frequently produce first-year earnings under $20K. If a student's passion is in these fields, the financial guidance is: pursue them where the net price is under $10K/year.

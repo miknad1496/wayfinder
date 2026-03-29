@@ -1000,3 +1000,41 @@ For someone young, ambitious, and willing to think long-term: Federal can be the
 
 **Document Version**: March 2026
 **Accuracy Note**: GS salary ranges, FEHB costs, and pension formulas are current as of early 2026 but change annually. Verify current numbers on FedSalaries.com and OPM.gov before making final decisions.
+
+---
+
+---
+
+<!-- LEARNED_FROM_CONVERSATIONS -->
+## Learned From User Conversations
+
+*Auto-enriched by the Wayfinder learning pipeline (2026-03-28)*
+*1 high-quality exchanges analyzed*
+
+### Common Questions Users Ask
+
+- She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm. she interned at my company as an equity research analyst intern - Saturna Capital. she developed out AI prompting manual and helped research the cybersecurity industry.
+
+### Key Insights From Conversations
+
+- This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live
+
+### Example High-Quality Exchange
+
+**Q:** She's considering foster and majoring in finance or information systems. I'm leaning towards finance because she doesn't want to just be an IT person at a firm, even if it's a financial services firm....
+
+**A:** This is really useful context — and honestly, her internship experience tells you a lot about where her strengths and interests actually live.
+
+Let me think through this carefully with you.
+
+---
+
+**What Her Internship Actually Reveals**
+
+She did two things at Saturna that are worth separating:
+
+1. **Equity research** — Analyzing companies, synthesizing information, forming investment theses. This is judgment-intensive, relationship-driven work.
+
+2. **Built an AI prompting manual** — This is not a typical intern deliverable. This means she can translate between what AI tools can do and what professionals need. That's a genuinely rare skill right now.
+
+That combination — investment thinking *plus* AI fluency — is actually a very specific and valuable profile. It points somewhere more precise...

@@ -6,6 +6,24 @@ import {
   assembleContext, SemanticCache
 } from './retrieval.js';
 
+// SQLite knowledge base — preferred over JSON files when available
+let KnowledgeDB = null;
+try {
+  const mod = await import('./knowledge-db.js');
+  KnowledgeDB = mod.KnowledgeDB;
+} catch (e) {
+  // sql.js not installed — fall back to JSON parsing
+  console.log('[knowledge] SQLite not available (install sql.js), using JSON fallback');
+}
+
+// Dynamic commitment deadline — always May 1 of the current admissions cycle
+function getCommitmentDeadline() {
+  const now = new Date();
+  // If we're past May 1, next cycle is next year; otherwise this year
+  const year = now.getMonth() >= 5 ? now.getFullYear() + 1 : now.getFullYear();
+  return `May 1, ${year}`;
+}
+
 /**
  * Wayfinder Knowledge Retrieval Engine v3 — Intelligent Indexed Retrieval
  * with Deep-Dive Raw Data Reserve
@@ -65,7 +83,14 @@ const CATEGORIES = {
       'startup', 'silicon', 'valley', 'devops', 'cloud', 'cybersecurity', 'infosec',
       'frontend', 'backend', 'fullstack', 'product', 'manager', 'ux', 'designer',
       'faang', 'google', 'amazon', 'meta', 'apple', 'microsoft', 'nvidia', 'openai'],
-    rawCategories: ['raw_onet', 'raw_bls']
+    rawCategories: ['raw_onet', 'raw_bls', 'raw_h1b', 'raw_col', 'raw_scorecard']
+  },
+  h1b_visa: {
+    files: ['synthesis-h1b-insights.md'],
+    triggers: ['h1b', 'h-1b', 'visa', 'sponsor', 'sponsorship', 'immigration', 'green card',
+      'work permit', 'opt', 'cpt', 'stem opt', 'lca', 'prevailing wage',
+      'infosys', 'tcs', 'cognizant', 'wipro', 'outsourcing', 'consulting firm'],
+    rawCategories: ['raw_h1b', 'raw_bls', 'raw_col']
   },
   finance_careers: {
     files: ['intel-finance-careers.md'],
@@ -73,7 +98,7 @@ const CATEGORIES = {
       'financial', 'analyst', 'hedge', 'fund', 'private', 'equity', 'venture', 'capital',
       'consulting', 'mckinsey', 'bain', 'bcg', 'deloitte', 'pwc', 'kpmg', 'ey',
       'actuarial', 'quant', 'trading', 'fintech', 'wealth', 'management'],
-    rawCategories: ['raw_onet', 'raw_certifications']
+    rawCategories: ['raw_onet', 'raw_bls', 'raw_h1b', 'raw_certifications', 'raw_col']
   },
   healthcare_careers: {
     files: ['intel-healthcare-careers.md'],
@@ -81,7 +106,7 @@ const CATEGORIES = {
       'hospital', 'clinical', 'pharmacy', 'pharmacist', 'dental', 'dentist', 'veterinary',
       'therapy', 'therapist', 'physical', 'occupational', 'mental', 'health', 'psych',
       'premed', 'mcat', 'residency', 'biotech', 'pharma', 'public', 'epidemiology'],
-    rawCategories: ['raw_onet', 'raw_bls']
+    rawCategories: ['raw_onet', 'raw_bls', 'raw_col', 'raw_census']
   },
   government_careers: {
     files: ['intel-government-federal.md'],
@@ -89,7 +114,7 @@ const CATEGORIES = {
       'military', 'army', 'navy', 'marines', 'air', 'force', 'state', 'department',
       'nonprofit', 'ngo', 'usajobs', 'clearance', 'gs', 'scale', 'civil', 'law',
       'enforcement', 'fbi', 'cia', 'nsa', 'diplomat'],
-    rawCategories: ['raw_bls']
+    rawCategories: ['raw_bls', 'raw_military', 'raw_col']
   },
   trades_careers: {
     files: ['intel-trades-renaissance.md'],
@@ -97,7 +122,7 @@ const CATEGORIES = {
       'carpenter', 'carpentry', 'welding', 'welder', 'hvac', 'mechanic', 'construction',
       'apprentice', 'apprenticeship', 'union', 'vocational', 'blue', 'collar',
       'skilled', 'labor', 'technician', 'lineman', 'diesel'],
-    rawCategories: ['raw_onet', 'raw_bls']
+    rawCategories: ['raw_onet', 'raw_bls', 'raw_trades', 'raw_col', 'raw_census']
   },
   career_transitions: {
     files: ['pathway-career-pivots-30s.md', 'pathway-tech-transitions.md', 'pathway-non-degree.md',
@@ -106,17 +131,18 @@ const CATEGORIES = {
       'new', 'field', 'different', 'industry', 'transferable', 'skills', 'restart',
       'reinvent', 'second', 'late', 'start', 'non-degree', 'alternative', 'without',
       'degree', 'bootcamp', 'self-taught'],
-    rawCategories: ['raw_reddit_stories']
+    rawCategories: ['raw_reddit_stories', 'raw_bls', 'raw_census', 'raw_h1b', 'raw_col']
   },
   education_decisions: {
     files: ['framework-major-selection.md', 'framework-grad-school.md', 'pathway-stem-vs-non-stem.md',
-      'roi-college-alternatives.md', 'roi-bootcamps.md'],
+      'roi-college-alternatives.md', 'roi-bootcamps.md', 'synthesis-census-education-premium.md',
+      'synthesis-scorecard-earnings.md'],
     triggers: ['major', 'college', 'university', 'degree', 'masters', 'phd', 'mba', 'grad',
       'school', 'graduate', 'undergraduate', 'bachelors', 'associates', 'stem',
       'humanities', 'liberal', 'arts', 'tuition', 'student', 'loan', 'debt',
       'bootcamp', 'community', 'online', 'course', 'study', 'education',
       'worth', 'roi', 'return'],
-    rawCategories: ['raw_nces', 'raw_reddit_stories']
+    rawCategories: ['raw_nces', 'raw_scorecard', 'raw_census', 'raw_reddit_stories', 'raw_grad_programs', 'raw_financial_aid']
   },
   admissions: {
     files: ['audience-high-school-undecided.md', 'admissions-strategic-playbook.md',
@@ -127,7 +153,8 @@ const CATEGORIES = {
       'admissions-ed-strategy-calibration.md',
       'admissions-adversity-landscape-intelligence.md',
       'admissions-diversity-school-profiling.md',
-      'admissions-extracurricular-differentiation-strategy.md'],
+      'admissions-extracurricular-differentiation-strategy.md',
+      'synthesis-scorecard-earnings.md'],
     triggers: ['admissions', 'admission', 'acceptance', 'accepted', 'apply', 'application',
       'essay', 'sat', 'act', 'gpa', 'extracurricular', 'recommendation', 'early',
       'decision', 'regular', 'ivy', 'league', 'harvard', 'yale', 'princeton', 'stanford',
@@ -149,7 +176,7 @@ const CATEGORIES = {
       'asian', 'white', 'black', 'hispanic', 'latino', 'representation',
       'notification', 'hear', 'hearing', 'waiting', 'results', 'released', 'ivy day',
       'decision date', 'decision dates', 'when will', 'when do'],
-    rawCategories: ['raw_admissions', 'raw_nces', 'raw_curriculum', 'raw_local_schools', 'raw_ethnicity', 'raw_decision_dates']
+    rawCategories: ['raw_admissions', 'raw_nces', 'raw_scorecard', 'raw_curriculum', 'raw_local_schools', 'raw_ethnicity', 'raw_decision_dates', 'raw_financial_aid', 'raw_international']
   },
   local_schools: {
     files: ['admissions-pre-highschool-planning.md'],
@@ -173,12 +200,12 @@ const CATEGORIES = {
     rawCategories: ['raw_local_schools']
   },
   salary_negotiation: {
-    files: ['framework-salary-negotiation.md', 'framework-job-offer-evaluation.md'],
+    files: ['framework-salary-negotiation.md', 'framework-job-offer-evaluation.md', 'synthesis-h1b-insights.md', 'synthesis-col-insights.md'],
     triggers: ['salary', 'pay', 'compensation', 'negotiate', 'negotiation', 'offer', 'raise',
       'promotion', 'benefits', 'equity', 'stock', 'options', 'bonus', 'package',
       'counter', 'accept', 'decline', 'compare', 'competing', 'total', 'comp',
       'remote', 'relocation', 'signing'],
-    rawCategories: ['raw_bls', 'raw_reddit_salary']
+    rawCategories: ['raw_bls', 'raw_h1b', 'raw_col', 'raw_reddit_salary']
   },
   job_search: {
     files: ['playbook-first-job.md', 'playbook-interview.md', 'playbook-networking.md'],
@@ -210,15 +237,29 @@ const CATEGORIES = {
       'disadvantaged', 'underrepresented', 'minority', 'immigrant', 'esl',
       'undocumented', 'daca', 'fafsa', 'financial', 'aid', 'scholarship',
       'work-study', 'need-based'],
-    rawCategories: ['raw_nces']
+    rawCategories: ['raw_nces', 'raw_financial_aid']
+  },
+  cost_of_living: {
+    files: ['synthesis-col-insights.md', 'framework-job-offer-evaluation.md'],
+    triggers: ['cost of living', 'col', 'cost-of-living', 'rpp', 'regional price', 'price parity',
+      'purchasing power', 'expensive', 'affordable', 'cheap', 'relocate', 'relocation',
+      'move to', 'moving to', 'live in', 'living in', 'rent', 'housing cost',
+      'geo band', 'location adjustment', 'location-based pay', 'remote salary',
+      'adjusted salary', 'real salary', 'nominal vs real',
+      'san francisco', 'new york', 'nyc', 'los angeles', 'seattle', 'austin', 'denver',
+      'chicago', 'miami', 'boston', 'dallas', 'houston', 'atlanta', 'phoenix',
+      'portland', 'minneapolis', 'nashville', 'raleigh', 'charlotte'],
+    rawCategories: ['raw_col', 'raw_bls']
   },
   data_synthesis: {
-    files: ['synthesis-bls-insights.md', 'synthesis-community-wisdom.md', 'core-reasoning-principles.md',
+    files: ['synthesis-bls-insights.md', 'synthesis-h1b-insights.md', 'synthesis-col-insights.md',
+      'synthesis-census-education-premium.md', 'synthesis-scorecard-earnings.md',
+      'synthesis-community-wisdom.md', 'core-reasoning-principles.md',
       'core-conversation-patterns.md'],
     triggers: ['statistics', 'data', 'trend', 'growth', 'decline', 'outlook', 'projection',
       'bureau', 'labor', 'bls', 'onet', 'occupation', 'median', 'average',
       'percentile', 'employment', 'unemployment', 'workforce', 'economy'],
-    rawCategories: ['raw_bls', 'raw_onet', 'raw_nces']
+    rawCategories: ['raw_bls', 'raw_onet', 'raw_nces', 'raw_scorecard', 'raw_census', 'raw_h1b', 'raw_col']
   }
 };
 
@@ -251,7 +292,12 @@ const SPECIFICITY_SIGNALS = [
   'compare', 'versus', 'difference between', 'better',
   // Deep experience
   'what is it like', 'experience', 'story', 'stories', 'real',
-  'actually', 'honestly', 'truth about'
+  'actually', 'honestly', 'truth about',
+  // Cost of living / location-based queries
+  'cost of living', 'col', 'rpp', 'purchasing power', 'price parity',
+  'relocate', 'relocation', 'move to', 'moving to', 'live in', 'living in',
+  'expensive', 'affordable', 'adjusted salary', 'real salary', 'geo band',
+  'location adjustment', 'remote salary', 'housing cost'
 ];
 
 function detectSpecificity(query) {
@@ -367,10 +413,22 @@ function parseOnetRecords(records) {
 }
 
 function parseBLSRecords(records) {
+  // Support both old format (bls-occupations.json) and new format (bls-compensation.json)
   return records
-    .filter(r => r.description && r.description.length > 50 &&
-      !['Home', 'Occupation Finder', 'OOH FAQs', 'A-Z Index'].includes(r.occupation))
+    .filter(r => {
+      // New format: has 'soc' field with wage percentiles
+      if (r.soc && r.wages) return true;
+      // Old format: filter out junk entries
+      return r.description && r.description.length > 50 &&
+        !['Home', 'Occupation Finder', 'OOH FAQs', 'A-Z Index'].includes(r.occupation);
+    })
     .map(r => {
+      // ─── New OEWS format (bls-compensation.json) ───
+      if (r.soc && r.wages) {
+        return parseBLSCompensationRecord(r);
+      }
+
+      // ─── Legacy format (bls-occupations.json) ───
       const text = [
         `Occupation: ${r.occupation} (${r.group})`,
         r.medianPay !== 'Not available' ? `Median Pay: ${r.medianPay}` : '',
@@ -392,6 +450,91 @@ function parseBLSRecords(records) {
     });
 }
 
+/**
+ * Parse a single BLS OEWS compensation record into RAG chunks.
+ * Each occupation produces one primary chunk (national data + top metros)
+ * and optionally additional geographic chunks for detailed state/metro queries.
+ */
+function parseBLSCompensationRecord(r) {
+  const fmt = (v) => v != null ? `$${v.toLocaleString()}` : 'N/A';
+  const nat = r.wages?.national?.annual || {};
+
+  // Primary chunk: national wages + employment + outlook
+  const lines = [
+    `Occupation: ${r.title} (SOC ${r.soc})`,
+    `Source: BLS OEWS (${r.reference_period || 'May 2024'})`,
+    '',
+    'National Annual Wages:',
+    `  Median (50th): ${fmt(nat.p50)}`,
+    `  Entry-level (10th percentile): ${fmt(nat.p10)}`,
+    `  25th percentile: ${fmt(nat.p25)}`,
+    `  75th percentile: ${fmt(nat.p75)}`,
+    `  Top earners (90th percentile): ${fmt(nat.p90)}`,
+    `  Mean: ${fmt(nat.mean)}`,
+  ];
+
+  if (r.employment?.total) {
+    lines.push(`\nTotal Employment: ${r.employment.total.toLocaleString()} jobs`);
+  }
+  if (r.employment?.jobs_per_1000) {
+    lines.push(`Jobs per 1,000: ${r.employment.jobs_per_1000}`);
+  }
+
+  if (r.outlook) {
+    lines.push(`\nJob Outlook (${r.outlook.period || '2024-2034'}): ${r.outlook.growth_rate} growth (${r.outlook.growth_category})`);
+    if (r.outlook.projected_openings) {
+      lines.push(`Projected Annual Openings: ${r.outlook.projected_openings.toLocaleString()}`);
+    }
+  }
+
+  // Add top-paying metros (up to 5 for context)
+  const metros = Object.entries(r.wages?.by_metro || {});
+  if (metros.length > 0) {
+    const sorted = metros
+      .filter(([, d]) => d.annual?.p50 != null)
+      .sort((a, b) => (b[1].annual.p50 || 0) - (a[1].annual.p50 || 0));
+
+    if (sorted.length > 0) {
+      lines.push('\nHighest-Paying Metro Areas:');
+      for (const [metro, data] of sorted.slice(0, 5)) {
+        lines.push(`  ${metro}: ${fmt(data.annual.p50)} median (range: ${fmt(data.annual.p10)} - ${fmt(data.annual.p90)})`);
+      }
+    }
+  }
+
+  // Add a few state highlights
+  const states = Object.entries(r.wages?.by_state || {});
+  if (states.length > 0) {
+    const sorted = states
+      .filter(([, d]) => d.annual?.p50 != null)
+      .sort((a, b) => (b[1].annual.p50 || 0) - (a[1].annual.p50 || 0));
+
+    if (sorted.length >= 5) {
+      lines.push(`\nHighest-Paying States: ${sorted.slice(0, 5).map(([st, d]) => `${st} (${fmt(d.annual.p50)})`).join(', ')}`);
+      lines.push(`Lowest-Paying States: ${sorted.slice(-3).map(([st, d]) => `${st} (${fmt(d.annual.p50)})`).join(', ')}`);
+    }
+  }
+
+  const text = lines.join('\n');
+
+  // Build rich keyword set for matching
+  const keywordParts = [
+    r.title, r.soc,
+    'salary', 'wage', 'pay', 'compensation', 'income', 'earnings',
+    'median', 'percentile', 'range',
+    nat.p50 ? 'annual' : '',
+  ].filter(Boolean).join(' ');
+
+  return {
+    source: 'bls-compensation.json',
+    title: `BLS Wages: ${r.title}`,
+    content: text.slice(0, MAX_CHUNK_CHARS),
+    keywords: extractKeywords(keywordParts),
+    boostFactor: 1.0, // Higher boost than old BLS data (0.8) — this is real wage data
+    isRawData: true,
+  };
+}
+
 function parseNCESRecords(records) {
   return records.map(r => {
     const text = [
@@ -411,6 +554,331 @@ function parseNCESRecords(records) {
       isRawData: true
     };
   });
+}
+
+/**
+ * Parse College Scorecard data into RAG chunks.
+ * Each institution produces one chunk with overview + top programs.
+ * Aggregate field-level data produces one chunk per major field.
+ */
+function parseScorecardRecords(data) {
+  const chunks = [];
+  const fmt = (v) => v != null ? `$${v.toLocaleString()}` : 'N/A';
+
+  // Institution-level chunks
+  const institutions = data.institutions || data;
+  if (Array.isArray(institutions)) {
+    for (const inst of institutions) {
+      if (!inst.institution?.name) continue;
+      const i = inst.institution;
+
+      const lines = [
+        `${i.name} (${i.city ? i.city + ', ' : ''}${i.state || ''})`,
+        `Source: College Scorecard (U.S. Dept of Education)`,
+        `Type: ${i.type || 'unknown'}`,
+        i.admission_rate != null ? `Admission Rate: ${(i.admission_rate * 100).toFixed(0)}%` : '',
+        i.sat_avg ? `Average SAT: ${i.sat_avg}` : '',
+        i.avg_net_price ? `Average Net Price: ${fmt(i.avg_net_price)}/year` : '',
+        i.tuition_in_state ? `In-State Tuition: ${fmt(i.tuition_in_state)}` : '',
+        i.tuition_out_of_state ? `Out-of-State Tuition: ${fmt(i.tuition_out_of_state)}` : '',
+        i.completion_rate != null ? `Completion Rate: ${(i.completion_rate * 100).toFixed(0)}%` : '',
+        i.median_debt ? `Median Debt at Graduation: ${fmt(i.median_debt)}` : '',
+        i.earnings_6yr ? `Median Earnings (6yr after entry): ${fmt(i.earnings_6yr)}` : '',
+        i.earnings_10yr ? `Median Earnings (10yr after entry): ${fmt(i.earnings_10yr)}` : '',
+      ].filter(Boolean);
+
+      // Add top programs with earnings
+      if (inst.programs && inst.programs.length > 0) {
+        const sorted = inst.programs
+          .filter(p => p.earnings_4yr?.median || p.earnings_1yr?.median)
+          .sort((a, b) => (b.earnings_4yr?.median || b.earnings_1yr?.median || 0) -
+                          (a.earnings_4yr?.median || a.earnings_1yr?.median || 0));
+
+        if (sorted.length > 0) {
+          lines.push(`\nProgram Earnings (${sorted.length} programs with data):`);
+          for (const prog of sorted.slice(0, 10)) {
+            const e1 = prog.earnings_1yr?.median;
+            const e4 = prog.earnings_4yr?.median;
+            const debt = prog.debt_at_grad?.median;
+            lines.push(`  ${prog.field} (${prog.credential}): ` +
+              (e4 ? `4yr=${fmt(e4)}` : '') +
+              (e1 ? ` 1yr=${fmt(e1)}` : '') +
+              (debt ? ` debt=${fmt(debt)}` : ''));
+          }
+        }
+      }
+
+      const text = lines.join('\n');
+      chunks.push({
+        source: 'scorecard-earnings.json',
+        title: `Scorecard: ${i.name}`,
+        content: text.slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(
+          `${i.name} ${i.state} ${i.city} college university earnings salary debt tuition admissions`
+        ),
+        boostFactor: 1.0,
+        isRawData: true,
+      });
+    }
+  }
+
+  // Aggregate field-level chunks
+  const aggFields = data.aggregate_by_field || [];
+  for (const field of aggFields) {
+    if (!field.field) continue;
+    const e1 = field.earnings_1yr;
+    const e4 = field.earnings_4yr;
+
+    const lines = [
+      `Field of Study: ${field.field} (CIP ${field.cip_2digit})`,
+      `Source: College Scorecard aggregate across ${field.sample_size || '?'} institutions`,
+      `Credential: ${field.credential || 'bachelors'}`,
+      '',
+    ];
+
+    if (e4) {
+      lines.push(`4-Year Post-Graduation Earnings (national, bachelors):`);
+      lines.push(`  Median: ${fmt(e4.median)}`);
+      lines.push(`  25th percentile: ${fmt(e4.p25)}`);
+      lines.push(`  75th percentile: ${fmt(e4.p75)}`);
+      lines.push(`  Range: ${fmt(e4.min)} - ${fmt(e4.max)}`);
+    }
+    if (e1) {
+      lines.push(`1-Year Post-Graduation Earnings:`);
+      lines.push(`  Median: ${fmt(e1.median)}`);
+      lines.push(`  25th percentile: ${fmt(e1.p25)}`);
+      lines.push(`  75th percentile: ${fmt(e1.p75)}`);
+    }
+
+    const text = lines.join('\n');
+    chunks.push({
+      source: 'scorecard-earnings.json',
+      title: `Earnings by Major: ${field.field}`,
+      content: text.slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords(
+        `${field.field} major degree earnings salary income bachelors graduate roi`
+      ),
+      boostFactor: 0.9,
+      isRawData: true,
+    });
+  }
+
+  return chunks;
+}
+
+/**
+ * Parse Census ACS education-earnings data into RAG chunks.
+ */
+function parseCensusRecords(data) {
+  const chunks = [];
+  const fmt = (v) => v != null ? `$${v.toLocaleString()}` : 'N/A';
+
+  // National overview chunk
+  if (data.national) {
+    const n = data.national;
+    const premiums = data.education_premiums || {};
+    const lines = [
+      'National Median Earnings by Education Level',
+      'Source: U.S. Census Bureau, American Community Survey',
+      '',
+      `  Less than High School: ${fmt(n.less_than_hs)}`,
+      `  High School Graduate: ${fmt(n.high_school)}`,
+      `  Some College/Associate's: ${fmt(n.some_college)}`,
+      `  Bachelor's Degree: ${fmt(n.bachelors)}`,
+      `  Graduate/Professional Degree: ${fmt(n.graduate)}`,
+      '',
+    ];
+
+    if (premiums.bachelors_over_hs) {
+      lines.push(`Bachelor's premium over HS: ${premiums.bachelors_over_hs.percent} (${fmt(premiums.bachelors_over_hs.absolute)}/year)`);
+    }
+    if (premiums.graduate_over_bachelors) {
+      lines.push(`Graduate premium over Bachelor's: ${premiums.graduate_over_bachelors.percent} (${fmt(premiums.graduate_over_bachelors.absolute)}/year)`);
+    }
+
+    chunks.push({
+      source: 'census-education-earnings.json',
+      title: 'Census: Earnings by Education Level (National)',
+      content: lines.join('\n'),
+      keywords: extractKeywords('education degree earnings salary bachelor master doctorate graduate premium worth value roi'),
+      boostFactor: 1.0,
+      isRawData: true,
+    });
+  }
+
+  // Age-bracket earnings chunk (experience progression)
+  if (data.by_age) {
+    const lines = [
+      'Median Earnings by Education Level and Age (Experience Proxy)',
+      'Source: Census ACS (PUMS estimates)',
+      '',
+    ];
+
+    for (const [age, earnings] of Object.entries(data.by_age)) {
+      lines.push(`Age ${age}:`);
+      for (const [level, amount] of Object.entries(earnings)) {
+        lines.push(`  ${level.replace(/_/g, ' ')}: ${fmt(amount)}`);
+      }
+    }
+
+    chunks.push({
+      source: 'census-education-earnings.json',
+      title: 'Census: Earnings by Education and Age',
+      content: lines.join('\n').slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('age experience earnings career progression salary growth mid-career education degree'),
+      boostFactor: 0.9,
+      isRawData: true,
+    });
+  }
+
+  // State-level chunks (top/bottom states)
+  if (data.by_state && data.by_state.length > 0) {
+    const statesWithData = data.by_state.filter(s => s.earnings?.bachelors);
+    const sorted = statesWithData.sort((a, b) => (b.earnings.bachelors || 0) - (a.earnings.bachelors || 0));
+
+    if (sorted.length > 0) {
+      const lines = [
+        'Median Earnings by Education Level — State Comparisons',
+        'Source: Census ACS',
+        '',
+        'Highest-paying states for bachelor\'s degree holders:',
+      ];
+      for (const s of sorted.slice(0, 10)) {
+        lines.push(`  ${s.state}: BS=${fmt(s.earnings.bachelors)}, Grad=${fmt(s.earnings.graduate)}, HS=${fmt(s.earnings.high_school)}`);
+      }
+      lines.push('\nLowest-paying states for bachelor\'s degree holders:');
+      for (const s of sorted.slice(-10)) {
+        lines.push(`  ${s.state}: BS=${fmt(s.earnings.bachelors)}, Grad=${fmt(s.earnings.graduate)}, HS=${fmt(s.earnings.high_school)}`);
+      }
+
+      chunks.push({
+        source: 'census-education-earnings.json',
+        title: 'Census: Earnings by Education — State Rankings',
+        content: lines.join('\n').slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords('state earnings salary education degree bachelor master comparison geographic location'),
+        boostFactor: 0.8,
+        isRawData: true,
+      });
+    }
+  }
+
+  return chunks;
+}
+
+/**
+ * Parse Cost of Living (RPP) data into RAG chunks.
+ */
+function parseCOLRecords(data) {
+  const chunks = [];
+
+  // State-level COL chunk
+  const states = data.states || [];
+  if (states.length > 0) {
+    const sorted = states.filter(s => s.rpp).sort((a, b) => b.rpp - a.rpp);
+
+    const lines = [
+      'Regional Price Parities by State (Cost of Living Index)',
+      'Source: Bureau of Economic Analysis (BEA)',
+      'RPP of 100 = national average. Higher = more expensive.',
+      '',
+      'Most Expensive States:',
+    ];
+    for (const s of sorted.slice(0, 10)) {
+      lines.push(`  ${s.name}: RPP ${s.rpp} — ${s.salary_equivalent?.note || ''}`);
+    }
+    lines.push('\nLeast Expensive States:');
+    for (const s of sorted.slice(-10)) {
+      lines.push(`  ${s.name}: RPP ${s.rpp} — ${s.salary_equivalent?.note || ''}`);
+    }
+
+    chunks.push({
+      source: 'cost-of-living.json',
+      title: 'Cost of Living: State Rankings (RPP)',
+      content: lines.join('\n').slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('cost living expensive cheap affordable state salary equivalent purchasing power rpp'),
+      boostFactor: 0.9,
+      isRawData: true,
+    });
+  }
+
+  // Metro-level COL chunk
+  const metros = data.metros || [];
+  if (metros.length > 0) {
+    const sorted = metros.filter(m => m.rpp).sort((a, b) => b.rpp - a.rpp);
+
+    const lines = [
+      'Regional Price Parities by Metro Area (Cost of Living Index)',
+      'Source: Bureau of Economic Analysis (BEA)',
+      '',
+      'Most Expensive Metro Areas:',
+    ];
+    for (const m of sorted.slice(0, 15)) {
+      lines.push(`  ${m.metro}: RPP ${m.rpp} — ${m.salary_equivalent?.note || ''}`);
+    }
+    lines.push('\nLeast Expensive Metro Areas:');
+    for (const m of sorted.slice(-10)) {
+      lines.push(`  ${m.metro}: RPP ${m.rpp} — ${m.salary_equivalent?.note || ''}`);
+    }
+
+    chunks.push({
+      source: 'cost-of-living.json',
+      title: 'Cost of Living: Metro Area Rankings (RPP)',
+      content: lines.join('\n').slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('cost living metro city expensive affordable salary purchasing power housing rent'),
+      boostFactor: 0.9,
+      isRawData: true,
+    });
+  }
+
+  return chunks;
+}
+
+/**
+ * Parse H1B LCA disclosure data into RAG chunks.
+ * Each SOC code produces one chunk with company-specific wage data.
+ */
+function parseH1BRecords(data) {
+  const occupations = data.occupations || data;
+  if (!Array.isArray(occupations)) return [];
+  const fmt = (v) => v != null ? `$${v.toLocaleString()}` : 'N/A';
+
+  return occupations
+    .filter(r => r.soc && r.total_filings >= 10)
+    .map(r => {
+      const lines = [
+        `${r.title} (SOC ${r.soc}) — H1B Salary Data`,
+        `Source: H1B LCA Disclosure Data (DOL/OFLC)`,
+        `Total H1B filings: ${r.total_filings?.toLocaleString()}`,
+        '',
+        'H1B Wages (annualized):',
+        `  Median: ${fmt(r.wages?.p50)}`,
+        `  25th percentile: ${fmt(r.wages?.p25)}`,
+        `  75th percentile: ${fmt(r.wages?.p75)}`,
+        `  10th percentile: ${fmt(r.wages?.p10)}`,
+        `  90th percentile: ${fmt(r.wages?.p90)}`,
+      ];
+
+      // Top companies
+      const companies = Object.entries(r.by_company || {}).slice(0, 10);
+      if (companies.length > 0) {
+        lines.push('\nTop H1B Sponsors:');
+        for (const [co, data] of companies) {
+          lines.push(`  ${co}: ${data.count} filings, median ${fmt(data.wages?.p50)}`);
+        }
+      }
+
+      const text = lines.join('\n');
+      return {
+        source: 'h1b-compensation.json',
+        title: `H1B Wages: ${r.title}`,
+        content: text.slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(
+          `${r.title} h1b visa salary compensation company employer tech ${Object.keys(r.by_company || {}).slice(0, 5).join(' ')}`
+        ),
+        boostFactor: 0.9,
+        isRawData: true,
+      };
+    });
 }
 
 function parseCertifications(data) {
@@ -1135,14 +1603,206 @@ async function buildCategoryIndex() {
 }
 
 // ─── Raw Data Loading (Layer 3) ──────────────────────────────────
+// Robust error handling: missing files, corrupted JSON, empty data
 
 async function loadJsonFile(filename) {
   try {
-    const raw = await fs.readFile(join(PATHS.scraped, filename), 'utf-8');
-    return JSON.parse(raw);
-  } catch {
+    const filePath = join(PATHS.scraped, filename);
+    const raw = await fs.readFile(filePath, 'utf-8');
+
+    // Check if file is empty or just whitespace
+    if (!raw || raw.trim().length === 0) {
+      console.warn(`[Knowledge] Warning: ${filename} is empty`);
+      return null;
+    }
+
+    const parsed = JSON.parse(raw);
+
+    // Validate parsed data is not null/undefined/empty
+    if (!parsed || (typeof parsed === 'object' && Object.keys(parsed).length === 0)) {
+      console.warn(`[Knowledge] Warning: ${filename} parsed to empty object`);
+      return null;
+    }
+
+    return parsed;
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      // File not found — expected for optional data files
+      console.debug(`[Knowledge] Data file not found: ${filename}`);
+    } else if (err instanceof SyntaxError) {
+      // JSON parse error — log but don't crash
+      console.warn(`[Knowledge] JSON parse error in ${filename}: ${err.message}`);
+    } else {
+      // Other file system errors
+      console.warn(`[Knowledge] Error loading ${filename}: ${err.message}`);
+    }
     return null;
   }
+}
+
+// ─── New Data Parsers (Graduate, Financial Aid, International, Trades, Military) ─
+
+function parseGradPrograms(programs) {
+  const chunks = [];
+  for (const prog of programs) {
+    if (prog.topPrograms) {
+      const text = [
+        `Graduate Program Type: ${prog.type}`,
+        ...(prog.topPrograms || []).map(p =>
+          `${p.school}: Rank #${p.ranking}` +
+          (p.medianGMAT ? `, GMAT ${p.medianGMAT}` : '') +
+          (p.medianLSAT ? `, LSAT ${p.medianLSAT}` : '') +
+          (p.medianMCAT ? `, MCAT ${p.medianMCAT}` : '') +
+          (p.acceptanceRate ? `, Accept ${(p.acceptanceRate * 100).toFixed(0)}%` : '') +
+          (p.medianSalary ? `, Median Salary $${p.medianSalary.toLocaleString()}` : '') +
+          (p.tuition ? `, Tuition $${p.tuition.toLocaleString()}` : '')
+        ),
+        prog.overview ? `\nOverview: ${JSON.stringify(prog.overview).slice(0, 800)}` : ''
+      ].filter(Boolean).join('\n');
+
+      chunks.push({
+        source: 'graduate-programs.json',
+        title: `Graduate: ${prog.type}`,
+        content: text.slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(prog.type + ' graduate ' + text.slice(0, 500)),
+        boostFactor: 0.9,
+        isRawData: true
+      });
+    }
+    if (prog.overview && !prog.topPrograms) {
+      chunks.push({
+        source: 'graduate-programs.json',
+        title: `Graduate: ${prog.type}`,
+        content: JSON.stringify(prog.overview).slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(prog.type + ' graduate program'),
+        boostFactor: 0.9,
+        isRawData: true
+      });
+    }
+  }
+  return chunks;
+}
+
+function parseFinancialAidGuide(data) {
+  const chunks = [];
+  for (const [section, content] of Object.entries(data)) {
+    if (section === 'lastUpdated' || section === 'source') continue;
+    const text = typeof content === 'string' ? content : JSON.stringify(content, null, 1).slice(0, MAX_CHUNK_CHARS);
+    chunks.push({
+      source: 'financial-aid-guide.json',
+      title: `Financial Aid: ${section.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase())}`,
+      content: text,
+      keywords: extractKeywords('financial aid fafsa css scholarship merit ' + section + ' ' + text.slice(0, 300)),
+      boostFactor: 1.0,
+      isRawData: true
+    });
+  }
+  return chunks;
+}
+
+function parseInternationalEducation(data) {
+  const chunks = [];
+  if (data.studyAbroad?.topDestinations) {
+    for (const dest of data.studyAbroad.topDestinations) {
+      const text = JSON.stringify(dest, null, 1).slice(0, MAX_CHUNK_CHARS);
+      chunks.push({
+        source: 'international-education.json',
+        title: `Study Abroad: ${dest.country}`,
+        content: text,
+        keywords: extractKeywords('international study abroad ' + dest.country + ' ' + (dest.topSchools || []).join(' ')),
+        boostFactor: 0.9,
+        isRawData: true
+      });
+    }
+  }
+  if (data.internationalStudentsInUS) {
+    chunks.push({
+      source: 'international-education.json',
+      title: 'International Students in US',
+      content: JSON.stringify(data.internationalStudentsInUS, null, 1).slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('international student visa f1 financial aid toefl ielts'),
+      boostFactor: 0.9,
+      isRawData: true
+    });
+  }
+  return chunks;
+}
+
+function parseTradesData(data) {
+  const chunks = [];
+  if (data.highDemandTrades) {
+    for (const trade of data.highDemandTrades) {
+      const text = [
+        `Trade: ${trade.trade}`,
+        `Median Pay: $${trade.medianPay?.toLocaleString()}`,
+        `Top Pay: $${trade.topPay?.toLocaleString()}`,
+        `Job Growth: ${trade.jobGrowth}`,
+        `Apprenticeship: ${trade.apprenticeshipLength}`,
+        trade.specializations ? `Specializations: ${trade.specializations.join(', ')}` : '',
+        trade.demandDrivers ? `Demand Drivers: ${trade.demandDrivers}` : '',
+        trade.unionVsNonUnion ? `Union vs Non-Union: ${trade.unionVsNonUnion}` : '',
+        trade.note || ''
+      ].filter(Boolean).join('\n');
+
+      chunks.push({
+        source: 'trades-apprenticeships.json',
+        title: `Trade: ${trade.trade}`,
+        content: text.slice(0, MAX_CHUNK_CHARS),
+        keywords: extractKeywords(trade.trade + ' trade apprenticeship union salary ' + text.slice(0, 300)),
+        boostFactor: 0.9,
+        isRawData: true
+      });
+    }
+  }
+  if (data.pathways) {
+    chunks.push({
+      source: 'trades-apprenticeships.json',
+      title: 'Trade Career Pathways',
+      content: JSON.stringify(data.pathways, null, 1).slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('trade apprenticeship union non-union pathway'),
+      boostFactor: 0.8,
+      isRawData: true
+    });
+  }
+  return chunks;
+}
+
+function parseMilitaryData(data) {
+  const chunks = [];
+  if (data.giBill) {
+    chunks.push({
+      source: 'military-transitions.json',
+      title: 'GI Bill & Military Education Benefits',
+      content: JSON.stringify(data.giBill, null, 1).slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('gi bill veteran military education post 911 yellow ribbon voc rehab'),
+      boostFactor: 1.0,
+      isRawData: true
+    });
+  }
+  if (data.careerTransitions?.topInDemandPaths) {
+    for (const path of data.careerTransitions.topInDemandPaths) {
+      const text = JSON.stringify(path, null, 1).slice(0, MAX_CHUNK_CHARS);
+      chunks.push({
+        source: 'military-transitions.json',
+        title: `Military → ${path.path}`,
+        content: text,
+        keywords: extractKeywords('military veteran transition career ' + path.path + ' mos'),
+        boostFactor: 0.9,
+        isRawData: true
+      });
+    }
+  }
+  if (data.securityClearance) {
+    chunks.push({
+      source: 'military-transitions.json',
+      title: 'Security Clearance Career Value',
+      content: JSON.stringify(data.securityClearance, null, 1).slice(0, MAX_CHUNK_CHARS),
+      keywords: extractKeywords('security clearance ts sci secret defense contractor'),
+      boostFactor: 0.8,
+      isRawData: true
+    });
+  }
+  return chunks;
 }
 
 async function buildRawDataIndex() {
@@ -1154,18 +1814,78 @@ async function buildRawDataIndex() {
   console.log('Building raw data reserve index...');
   const index = {};
 
-  // O*NET occupations (25 detailed profiles)
+  // ── Try SQLite first for structured data (BLS, H1B, Census, COL, Scorecard) ──
+  let sqliteLoaded = false;
+  if (KnowledgeDB) {
+    try {
+      const db = await KnowledgeDB.getInstance();
+      if (db.isAvailable) {
+        const sqlChunks = db.buildRAGChunks();
+        let totalChunks = 0;
+        for (const [category, chunks] of Object.entries(sqlChunks)) {
+          if (chunks.length > 0) {
+            index[category] = chunks;
+            totalChunks += chunks.length;
+            console.log(`  ${category}: ${chunks.length} chunks (from SQLite)`);
+          }
+        }
+        if (totalChunks > 0) {
+          sqliteLoaded = true;
+          console.log(`  ✓ SQLite loaded ${totalChunks} total chunks across ${Object.keys(sqlChunks).length} categories`);
+        }
+      }
+    } catch (err) {
+      console.warn('  ⚠ SQLite query failed, falling back to JSON:', err.message);
+    }
+  }
+
+  // O*NET occupations (25 detailed profiles) — always from JSON (not in SQLite yet)
   const onet = await loadJsonFile('onet-occupations.json');
   if (onet) {
     index.raw_onet = parseOnetRecords(onet);
     console.log(`  raw_onet: ${index.raw_onet.length} occupation profiles`);
   }
 
-  // BLS occupations
-  const bls = await loadJsonFile('bls-occupations.json');
-  if (bls) {
-    index.raw_bls = parseBLSRecords(bls);
-    console.log(`  raw_bls: ${index.raw_bls.length} occupation records`);
+  // ── JSON fallback for BLS/H1B/Census/COL/Scorecard (only if SQLite didn't load them) ──
+  if (!sqliteLoaded) {
+    // BLS occupations — prefer new OEWS compensation data, fall back to legacy
+    const blsComp = await loadJsonFile('bls-compensation.json');
+    const blsLegacy = await loadJsonFile('bls-occupations.json');
+    if (blsComp && blsComp.length > 0) {
+      index.raw_bls = parseBLSRecords(blsComp);
+      console.log(`  raw_bls: ${index.raw_bls.length} occupations (OEWS compensation data — JSON fallback)`);
+    } else if (blsLegacy) {
+      index.raw_bls = parseBLSRecords(blsLegacy);
+      console.log(`  raw_bls: ${index.raw_bls.length} occupation records (legacy OOH scraper — no wage data)`);
+    }
+
+    // Census ACS — earnings by education level
+    const censusEd = await loadJsonFile('census-education-earnings.json');
+    if (censusEd) {
+      index.raw_census = parseCensusRecords(censusEd);
+      console.log(`  raw_census: ${index.raw_census.length} education-earnings records (JSON fallback)`);
+    }
+
+    // Cost of Living — Regional Price Parities
+    const col = await loadJsonFile('cost-of-living.json');
+    if (col) {
+      index.raw_col = parseCOLRecords(col);
+      console.log(`  raw_col: ${index.raw_col.length} geographic cost-of-living records (JSON fallback)`);
+    }
+
+    // H1B LCA — company-specific compensation data
+    const h1b = await loadJsonFile('h1b-compensation.json');
+    if (h1b) {
+      index.raw_h1b = parseH1BRecords(h1b);
+      console.log(`  raw_h1b: ${index.raw_h1b.length} SOC codes with company-specific H1B wage data (JSON fallback)`);
+    }
+
+    // College Scorecard — institution-specific earnings by program
+    const scorecard = await loadJsonFile('scorecard-earnings.json');
+    if (scorecard) {
+      index.raw_scorecard = parseScorecardRecords(scorecard);
+      console.log(`  raw_scorecard: ${index.raw_scorecard.length} records (JSON fallback)`);
+    }
   }
 
   // NCES earnings by major
@@ -1281,11 +2001,60 @@ async function buildRawDataIndex() {
     console.log(`  raw_reddit_advice: ${index.raw_reddit_advice.length} threads`);
   }
 
-  let totalRaw = 0;
-  for (const chunks of Object.values(index)) {
-    totalRaw += chunks.length;
+  // Graduate programs (MBA, JD, MD, PhD, PA/NP/PT/OT)
+  const gradPrograms = await loadJsonFile('graduate-programs.json');
+  if (gradPrograms?.programs) {
+    index.raw_grad_programs = parseGradPrograms(gradPrograms.programs);
+    console.log(`  raw_grad_programs: ${index.raw_grad_programs.length} program profiles`);
   }
+
+  // Financial aid guide (FAFSA, CSS, merit, 529, need-blind)
+  const finAid = await loadJsonFile('financial-aid-guide.json');
+  if (finAid) {
+    index.raw_financial_aid = parseFinancialAidGuide(finAid);
+    console.log(`  raw_financial_aid: ${index.raw_financial_aid.length} chunks`);
+  }
+
+  // International education pathways
+  const intlEd = await loadJsonFile('international-education.json');
+  if (intlEd) {
+    index.raw_international = parseInternationalEducation(intlEd);
+    console.log(`  raw_international: ${index.raw_international.length} chunks`);
+  }
+
+  // Trades & apprenticeship data
+  const trades = await loadJsonFile('trades-apprenticeships.json');
+  if (trades) {
+    index.raw_trades = parseTradesData(trades);
+    console.log(`  raw_trades: ${index.raw_trades.length} chunks`);
+  }
+
+  // Military transition pathways
+  const military = await loadJsonFile('military-transitions.json');
+  if (military) {
+    index.raw_military = parseMilitaryData(military);
+    console.log(`  raw_military: ${index.raw_military.length} chunks`);
+  }
+
+  let totalRaw = 0;
+  let totalCharsRaw = 0;
+  for (const chunks of Object.values(index)) {
+    for (const chunk of chunks) {
+      totalRaw++;
+      totalCharsRaw += (chunk.content || '').length;
+    }
+  }
+
+  // ─── MEMORY MANAGEMENT: Check index size ─────────────────────────
+  // With 5+ new data files, ensure we don't exceed reasonable memory footprint
+  const MAX_RAW_CHARS = 50 * 1024 * 1024; // 50MB safety limit
+  if (totalCharsRaw > MAX_RAW_CHARS) {
+    console.warn(`[Knowledge] WARNING: Raw data index is ${(totalCharsRaw / 1024 / 1024).toFixed(1)}MB`);
+    console.warn(`[Knowledge] Consider pruning or archiving older data files to stay under ${MAX_RAW_CHARS / 1024 / 1024}MB`);
+  }
+
   console.log(`  Raw data reserve ready: ${totalRaw} total chunks across ${Object.keys(index).length} data sources`);
+  console.log(`  Memory footprint: ~${(totalCharsRaw / 1024 / 1024).toFixed(1)}MB`);
 
   rawDataIndex = index;
   rawDataTimestamp = now;
@@ -1521,13 +2290,15 @@ async function getLightDataContext(query) {
       }
     }
     if (dateParts.length > 0) {
-      contextParts.push(`\n--- DECISION DATE REFERENCE ---\n${dateParts.join('\n')}\nCommitment deadline: May 1, 2026`);
+      contextParts.push(`\n--- DECISION DATE REFERENCE ---\n${dateParts.join('\n')}\nCommitment deadline: ${getCommitmentDeadline()}`);
     }
   }
 
   // If asking generally about decisions (no specific school), give a helpful overview
   if (wantsDecisionDates && mentionedSchools.length === 0 && decisionDatesCache) {
-    contextParts.push(`\n--- DECISION TIMELINE OVERVIEW (2025-2026 cycle) ---
+    const cycleYear = new Date().getFullYear();
+    const cycleStr = `${cycleYear - 1}-${cycleYear}`;
+    contextParts.push(`\n--- DECISION TIMELINE OVERVIEW (${cycleStr} cycle) ---
 You have access to detailed decision date data for 99 colleges. Key patterns:
 - ED I notifications: Mid-December (most schools ~Dec 15)
 - EA notifications: Mid-December to late January (varies widely)
@@ -1535,7 +2306,7 @@ You have access to detailed decision date data for 99 colleges. Key patterns:
 - UC system: Mid-to-late March (Davis/UCSD first ~Mar 10-15, Berkeley/UCLA ~Mar 25-28)
 - Ivy Day: Late March (typically ~March 28)
 - Most RD decisions: Late March to early April
-- National commitment deadline: May 1, 2026
+- National commitment deadline: ${getCommitmentDeadline()}
 If the user mentions a specific school, reference the exact dates. Direct users wanting comprehensive date lookups to the Demographics tool in the sidebar.`);
   }
 
@@ -1779,16 +2550,49 @@ export async function retrieveContextV2(query, topK = 6) {
 
 /**
  * Retrieve the most relevant knowledge chunks for a query.
- * Now uses BM25 scoring (v2) instead of keyword-based routing.
+ * Supports both calling conventions:
+ *   - retrieveContext(query, 6) — legacy (claude.js)
+ *   - retrieveContext(query, { topK, domain, mode }) — new (slm.js)
  *
  * Falls back to the old keyword-based system if BM25 index fails to build.
  */
-export async function retrieveContext(query, topK = 6) {
+export async function retrieveContext(query, optionsOrTopK = 6) {
+  // Support both calling conventions:
+  //   retrieveContext(query, 6)         — legacy (claude.js)
+  //   retrieveContext(query, { topK, domain, mode }) — new (slm.js)
+  let topK = 6;
+  let domain = null;
+  let mode = 'standard';
+
+  if (typeof optionsOrTopK === 'object' && optionsOrTopK !== null) {
+    topK = optionsOrTopK.topK || 6;
+    domain = optionsOrTopK.domain || null;
+    mode = optionsOrTopK.mode || 'standard';
+  } else if (typeof optionsOrTopK === 'number') {
+    topK = optionsOrTopK;
+  }
+
   try {
-    return await retrieveContextV2(query, topK);
+    // For standard mode (SLM), use lite brain context + light data
+    if (mode === 'standard') {
+      const liteBrain = await getLiteBrainContext(query);
+      const chunks = [{
+        source: 'wayfinder-knowledge-base',
+        title: 'Wayfinder Knowledge',
+        content: liteBrain,
+        layer: 'base',
+        score: 1.0
+      }];
+      return { chunks, sources: ['wayfinder-knowledge-base'] };
+    }
+
+    // For engine mode, use full BM25 retrieval
+    const results = await retrieveContextV2(query, topK);
+    return { chunks: results, sources: results.map(r => r.source).filter(Boolean) };
   } catch (err) {
-    console.error('[BM25] Retrieval failed, falling back to keyword routing:', err.message);
-    return await retrieveContextLegacy(query, topK);
+    console.error('[retrieveContext] Error, falling back to legacy:', err.message);
+    const results = await retrieveContextLegacy(query, topK);
+    return { chunks: results, sources: results.map(r => r.source).filter(Boolean) };
   }
 }
 
@@ -1876,15 +2680,51 @@ export function formatContext(chunks) {
   return entries.join('\n');
 }
 
-export function invalidateCache() {
-  categoryIndex = null;
-  categoryTimestamp = 0;
-  rawDataIndex = null;
-  rawDataTimestamp = 0;
-  careerBrainCache = null;
-  admissionsBrainCache = null;
-  brainCacheTimestamp = 0;
-  bm25Index = null;
-  bm25IndexTimestamp = 0;
-  semanticCache.clear();
+export function getDataFreshness() {
+  return {
+    categoryIndex: categoryTimestamp > 0 ? new Date(categoryTimestamp).toISOString() : null,
+    rawDataIndex: rawDataTimestamp > 0 ? new Date(rawDataTimestamp).toISOString() : null,
+    brainCache: brainCacheTimestamp > 0 ? new Date(brainCacheTimestamp).toISOString() : null,
+    bm25Index: bm25IndexTimestamp > 0 ? new Date(bm25IndexTimestamp).toISOString() : null,
+    lightData: lightDataTimestamp > 0 ? new Date(lightDataTimestamp).toISOString() : null,
+    cacheTTL: CACHE_TTL,
+    semanticCacheStats: semanticCache.stats()
+  };
+}
+
+export function invalidateCache(which = 'all') {
+  // Granular cache invalidation — allows selective refresh
+  if (which === 'all' || which === 'category') {
+    categoryIndex = null;
+    categoryTimestamp = 0;
+  }
+  if (which === 'all' || which === 'raw') {
+    rawDataIndex = null;
+    rawDataTimestamp = 0;
+  }
+  if (which === 'all' || which === 'brains') {
+    careerBrainCache = null;
+    admissionsBrainCache = null;
+    brainCacheTimestamp = 0;
+  }
+  if (which === 'all' || which === 'bm25') {
+    bm25Index = null;
+    bm25IndexTimestamp = 0;
+  }
+  if (which === 'all' || which === 'semantic') {
+    semanticCache.clear();
+  }
+  console.log(`[Knowledge] Cache invalidated: ${which}`);
+}
+
+// ── Direct SQLite query access (for API endpoints that need structured data) ──
+
+/**
+ * Get the SQLite knowledge DB instance for direct queries.
+ * Returns null if SQLite is not available (better-sqlite3 not installed or DB not built).
+ */
+export async function getKnowledgeDB() {
+  if (!KnowledgeDB) return null;
+  const db = await KnowledgeDB.getInstance();
+  return db.isAvailable ? db : null;
 }
