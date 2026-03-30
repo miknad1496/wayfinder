@@ -333,6 +333,73 @@ function detectConversationPhase(conversationHistory, sessionContext) {
 }
 
 /**
+ * Haiku Intake — Cheapest possible first-turn response.
+ *
+ * Uses Claude Haiku (19x cheaper than Sonnet output) for the initial
+ * info-gathering prompt. This serves two purposes:
+ *   1. Saves money — intake doesn't need Sonnet's full power
+ *   2. Buys time — while Haiku responds, the caller can fire a
+ *      RunPod warm-up ping so the SLM worker is ready for turn 2
+ *
+ * Returns the same shape as chat() for drop-in compatibility.
+ */
+export async function chatHaikuIntake(userMessage, sessionContext = {}) {
+  const anthropic = getClient();
+  const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
+
+  // Lightweight system prompt for intake — no RAG, no frameworks
+  const intakeSystemPrompt = `You are Wayfinder, an expert advisor on college admissions and career planning for high school and college students, parents, and young professionals.
+
+This is the FIRST message in the conversation. Your job is to:
+1. Acknowledge who the user is and what they're looking for
+2. Show immediate value by making a smart observation based on what they've shared
+3. Ask 1-2 targeted follow-up questions to understand their situation better
+
+Be warm, direct, and knowledgeable. Sound like a smart friend who happens to be an expert — not a chatbot. Keep your response concise (150-250 words). No bullet points or lists — write in natural paragraphs.
+
+If the user provides profile context (parent, student, professional), use it to calibrate your tone and advice level. Parents get strategic framing; students get practical, encouraging guidance.`;
+
+  // Inject user context if available
+  let contextNote = '';
+  if (sessionContext.userName) contextNote += `User's name: ${sessionContext.userName}. `;
+  if (sessionContext.userType) contextNote += `User type: ${sessionContext.userType}. `;
+  if (sessionContext.interests) contextNote += `Interests: ${sessionContext.interests}. `;
+  if (sessionContext.profile) contextNote += `Profile: ${JSON.stringify(sessionContext.profile)}. `;
+
+  const systemPrompt = contextNote
+    ? `${intakeSystemPrompt}\n\n[User context: ${contextNote.trim()}]`
+    : intakeSystemPrompt;
+
+  try {
+    const response = await anthropic.messages.create({
+      model: haikuModel,
+      max_tokens: 512,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userMessage }],
+    });
+
+    const text = response.content?.[0]?.text || '';
+
+    console.log(`[HAIKU-INTAKE] ${haikuModel} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
+
+    return {
+      response: text,
+      mode: 'haiku_intake',
+      model: haikuModel,
+      retrievedSources: [],
+      usage: {
+        inputTokens: response.usage?.input_tokens || 0,
+        outputTokens: response.usage?.output_tokens || 0,
+        model: haikuModel,
+      },
+    };
+  } catch (err) {
+    console.error(`[HAIKU-INTAKE] Error: ${err.message} — falling back to standard chat`);
+    throw err; // Let caller handle fallback
+  }
+}
+
+/**
  * Send a message to Claude.
  *
  * @param {Array} conversationHistory - Array of {role, content} messages

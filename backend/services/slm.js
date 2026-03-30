@@ -604,6 +604,73 @@ export async function chatSLM(history, userMessage, sessionContext, options = {}
  *   5. In-scope → SLM
  *   6. Adjacent + high confidence → SLM (with boundary instruction)
  */
+// ─── Warm-Up Ping ──────────────────────────────────────────────
+
+/**
+ * Fire a lightweight request to the RunPod endpoint to wake the GPU worker.
+ * This is non-blocking — call it and forget. If the endpoint is already warm,
+ * this completes in <1s. If cold, it triggers the worker load (~60-90s) so
+ * it's ready by the time the user sends their second message.
+ *
+ * Returns a promise that resolves to { warmed: boolean, latency: number }
+ * but callers should NOT await this — fire and forget.
+ */
+export async function warmUpSLM() {
+  if (!isSLMAvailable()) {
+    return { warmed: false, reason: 'slm_not_available' };
+  }
+
+  const t0 = Date.now();
+  const isRunPod = SLM_ENDPOINT.includes('runpod.ai');
+
+  try {
+    if (isRunPod) {
+      // RunPod: use /runsync with a minimal prompt to trigger worker activation
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SLM_API_KEY}`,
+      };
+
+      const body = {
+        input: {
+          messages: [
+            { role: 'user', content: 'hello' }
+          ],
+          max_tokens: 1,
+          temperature: 0.0,
+        }
+      };
+
+      const response = await fetch(SLM_ENDPOINT, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(90000), // 90s — cold start can take a while
+      });
+
+      const latency = Date.now() - t0;
+      console.log(`[SLM] Warm-up ping completed in ${latency}ms (status: ${response.status})`);
+      return { warmed: true, latency };
+    } else {
+      // OpenAI-compatible: health check endpoint or minimal completion
+      const url = SLM_ENDPOINT.replace(/\/chat\/completions$/, '/models');
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${SLM_API_KEY}` },
+        signal: AbortSignal.timeout(10000),
+      });
+
+      const latency = Date.now() - t0;
+      console.log(`[SLM] Warm-up ping completed in ${latency}ms (status: ${response.status})`);
+      return { warmed: true, latency };
+    }
+  } catch (err) {
+    const latency = Date.now() - t0;
+    console.warn(`[SLM] Warm-up ping failed after ${latency}ms: ${err.message}`);
+    return { warmed: false, reason: err.message, latency };
+  }
+}
+
 export function shouldUseSLM(options = {}) {
   // Never use SLM for engine mode — that's the premium Claude experience
   if (options.useEngine) return false;

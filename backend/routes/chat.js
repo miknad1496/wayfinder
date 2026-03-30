@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { chat } from '../services/claude.js';
-import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain } from '../services/slm.js';
+import { chat, chatHaikuIntake } from '../services/claude.js';
+import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain, warmUpSLM } from '../services/slm.js';
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
@@ -297,16 +297,17 @@ router.post('/', async (req, res) => {
       };
     }
 
-    // ─── TIER ROUTING: SLM (fast/cheap) vs Claude (safety net) ───
-    // Decision: SLM for in-scope + high-confidence adjacent queries.
-    // Claude for engine mode, ambiguous adjacent, and SLM quality failures.
+    // ─── TIER ROUTING: Haiku intake → SLM (fast/cheap) → Claude (safety net) ───
+    // Turn 1 (new session): Haiku intake (cheapest) + async SLM warm-up ping
+    // Turn 2+: SLM for in-scope, Claude for engine/adjacent/fallback
+    const isFirstMessage = session.history.length === 0 && !engineAllowed;
     const routingOptions = {
       useEngine: engineAllowed,
       scopeLabel: scopeResult.label,
       scopeConfidence: scopeResult.confidence,
     };
 
-    const useSLM = shouldUseSLM(routingOptions);
+    const useSLM = !isFirstMessage && shouldUseSLM(routingOptions);
     const tGen = performance.now();
     const GENERATION_TIMEOUT = 120000; // 120 seconds max for generation
     let result;
@@ -316,7 +317,32 @@ router.post('/', async (req, res) => {
     try {
       // Wrap generation with timeout protection
       const generationPromise = (async () => {
-        if (useSLM) {
+        if (isFirstMessage && scopeResult.label !== 'out_of_scope') {
+          // ── Tier 0: Haiku Intake (first message only) ──
+          // Fire SLM warm-up in background (don't await — fire and forget)
+          if (isSLMAvailable()) {
+            warmUpSLM().catch(err => {
+              console.warn(`[WARM-UP] Background SLM warm-up failed: ${err.message}`);
+            });
+            console.log('[WARM-UP] SLM warm-up ping fired (background)');
+          }
+
+          try {
+            result = await chatHaikuIntake(trimmedMsg, session.context);
+            tEvent.generation.mode = 'haiku_intake';
+            console.log(`[TIER-0] Haiku intake response OK`);
+          } catch (haikuError) {
+            // Haiku failed — fall back to standard Claude
+            console.error(`[TIER-0→2] Haiku intake error: ${haikuError.message} — falling back to Sonnet`);
+            result = await chat(
+              session.history,
+              trimmedMsg,
+              session.context,
+              { useEngine: false, scopeLabel: scopeResult.label }
+            );
+            tEvent.generation.mode = 'standard';
+          }
+        } else if (useSLM) {
           // ── Tier 1: SLM (fast path) ──
           try {
             const slmResult = await chatSLM(
