@@ -459,10 +459,11 @@ async function callSLMEndpoint(messages) {
     };
   }
 
-  // Timeout validation (30s, convertible to config)
-  const timeout = parseInt(process.env.SLM_TIMEOUT || '30000', 10);
-  if (timeout < 5000 || timeout > 120000) {
-    throw new Error('SLM_TIMEOUT must be between 5000 and 120000 ms');
+  // Timeout: 90s default to handle RunPod cold starts (~60-90s first request)
+  // Warm requests complete in <2s, so this only matters for cold starts.
+  const timeout = parseInt(process.env.SLM_TIMEOUT || '90000', 10);
+  if (timeout < 5000 || timeout > 180000) {
+    throw new Error('SLM_TIMEOUT must be between 5000 and 180000 ms');
   }
 
   let response;
