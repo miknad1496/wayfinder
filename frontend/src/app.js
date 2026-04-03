@@ -642,7 +642,7 @@ function appendError(message, errorType = null) {
   if (errorType === 'rate_limit' || /too many requests/i.test(message)) {
     el.innerHTML = `<strong>Hang tight!</strong> You're sending messages faster than we can keep up. Give it a few seconds and try again.`;
   } else if (errorType === 'token_limit' || /token limit/i.test(message) || /daily.*limit/i.test(message)) {
-    el.innerHTML = `<strong>You've hit your daily usage limit.</strong> Your limit resets tomorrow. Want deeper, unlimited conversations? <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for more capacity.`;
+    el.innerHTML = `<strong>You've run out of tokens for today.</strong> Your tokens reset tomorrow. Want more? <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for higher token limits.`;
   } else if (errorType === 'engine_limit' || /engine queries/i.test(message)) {
     el.innerHTML = `<strong>You've used all your Engine queries for today.</strong> Engine resets tomorrow. You can keep chatting in standard mode, or <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">upgrade for more Engine pulls</a>.`;
   } else if (/timeout/i.test(message)) {

@@ -3,7 +3,7 @@ import { reloadPrompt } from '../services/claude.js';
 import { invalidateCache, getKnowledgeDB } from '../services/knowledge.js';
 import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
 import { getScheduleStatus, forceRunScraper } from '../services/scraper-scheduler.js';
-import { getSLMStatus, invalidateSLMPromptCache } from '../services/slm.js';
+import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../services/slm.js';
 
 const router = Router();
 
@@ -76,9 +76,21 @@ router.get('/knowledge-db/h1b/:soc', async (req, res) => {
   res.json({ occupation: occ, companies });
 });
 
-// GET /api/admin/slm-status - Get SLM service status
+// GET /api/admin/slm-status - Get SLM service status + warm-up diagnostics
 router.get('/slm-status', (req, res) => {
-  res.json(getSLMStatus());
+  const status = getSLMStatus();
+  const warmStatus = getSLMWarmStatus();
+  res.json({
+    ...status,
+    warm: warmStatus,
+    env: {
+      SLM_ENABLED: process.env.SLM_ENABLED || '(not set)',
+      SLM_ENDPOINT: process.env.SLM_ENDPOINT ? '✓ set' : '✗ NOT SET',
+      SLM_API_KEY: process.env.SLM_API_KEY ? '✓ set' : '✗ NOT SET',
+      SLM_TIMEOUT: process.env.SLM_TIMEOUT || '(default 90000)',
+      SLM_IDLE_TIMEOUT: process.env.SLM_IDLE_TIMEOUT || '(default 120000)',
+    }
+  });
 });
 
 // POST /api/admin/reload-slm-prompt - Reload SLM system prompt
