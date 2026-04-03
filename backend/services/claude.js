@@ -399,7 +399,7 @@ Any response that contains analysis, predictions, advice, opinions about the use
       console.log(`[HAIKU-INTAKE] Trying model: ${model}`);
       const response = await anthropic.messages.create({
         model,
-        max_tokens: 150,
+        max_tokens: 300,
         system: systemPrompt,
         messages: [
           // Only pass last 2 messages for minimal context — more history
