@@ -7,6 +7,7 @@ import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js'
 import { saveSession, loadSession } from '../services/storage.js';
 import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage } from '../services/auth.js';
 import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
+import { captureConversationMemory, captureTrainingPair } from '../services/conversation-memory.js';
 import { performance } from 'perf_hooks';
 
 const router = Router();
@@ -506,6 +507,27 @@ router.post('/', async (req, res) => {
 
     // Save session
     await saveSession(sessionId, session);
+
+    // ─── CONVERSATION MEMORY: Capture for RAG + future SLM training ───
+    // Runs in background — never blocks the response
+    const memoryParams = {
+      userMessage: message.trim(),
+      response: result.response,
+      mode: tEvent.generation.mode || result.mode,
+      scopeLabel: scopeResult?.label || 'in_scope',
+      sessionContext: session.context,
+      sessionId,
+    };
+    captureConversationMemory(memoryParams).catch(err => {
+      console.error('[Background] Memory capture failed:', err.message);
+    });
+    captureTrainingPair({
+      ...memoryParams,
+      qualitySignal: 'unrated',
+      domain: null, // auto-detected inside
+    }).catch(err => {
+      console.error('[Background] Training capture failed:', err.message);
+    });
 
     // Link session to user account if logged in
     if (auth?.token) {

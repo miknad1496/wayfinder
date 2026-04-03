@@ -4,6 +4,7 @@ import { invalidateCache, getKnowledgeDB } from '../services/knowledge.js';
 import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
 import { getScheduleStatus, forceRunScraper } from '../services/scraper-scheduler.js';
 import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../services/slm.js';
+import { getMemoryStats } from '../services/conversation-memory.js';
 
 const router = Router();
 
@@ -348,6 +349,30 @@ router.get('/stats', async (req, res) => {
   } catch (err) {
     console.error('Stats error:', err);
     res.status(500).json({ error: 'Failed to load stats' });
+  }
+});
+
+// ─── Conversation Memory Stats ────────────────────────────────
+
+// GET /api/admin/memory-stats - Get conversation memory + training data stats
+router.get('/memory-stats', async (req, res) => {
+  try {
+    const stats = await getMemoryStats();
+    res.json({
+      success: true,
+      memory: {
+        entries: stats.memoryEntries,
+        files: stats.memoryFiles,
+        description: 'Q&A pairs captured for RAG retrieval'
+      },
+      training: {
+        pairs: stats.trainingPairs,
+        files: stats.trainingFiles,
+        description: 'SLM fine-tuning data in OpenAI JSONL format'
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load memory stats' });
   }
 });
 

@@ -5,6 +5,7 @@ import {
   buildInvertedIndex, scoreBM25, analyzeQuery,
   assembleContext, SemanticCache
 } from './retrieval.js';
+import { getMemoryChunks } from './conversation-memory.js';
 
 // SQLite knowledge base — preferred over JSON files when available
 let KnowledgeDB = null;
@@ -2542,6 +2543,18 @@ export async function retrieveContextV2(query, topK = 6) {
     source: r.chunk.source || 'wayfinder-kb'
   }));
 
+  // Step 6: Blend in conversation memory chunks (past Q&A insights)
+  try {
+    const memoryChunks = await getMemoryChunks(query, 2);
+    if (memoryChunks.length > 0) {
+      results.push(...memoryChunks);
+      console.log(`  [BM25] Added ${memoryChunks.length} conversation memory chunks`);
+    }
+  } catch (memErr) {
+    // Never let memory retrieval break main retrieval
+    console.error(`  [BM25] Memory retrieval error (non-fatal): ${memErr.message}`);
+  }
+
   // Cache the results
   semanticCache.set(query, results);
 
@@ -2583,6 +2596,18 @@ export async function retrieveContext(query, optionsOrTopK = 6) {
         layer: 'base',
         score: 1.0
       }];
+
+      // Add conversation memory for SLM too — past insights improve all tiers
+      try {
+        const memoryChunks = await getMemoryChunks(query, 2);
+        if (memoryChunks.length > 0) {
+          chunks.push(...memoryChunks);
+          console.log(`  [RAG-STD] Added ${memoryChunks.length} memory chunks for SLM`);
+        }
+      } catch (memErr) {
+        console.error(`  [RAG-STD] Memory error (non-fatal): ${memErr.message}`);
+      }
+
       return { chunks, sources: ['wayfinder-knowledge-base'] };
     }
 
