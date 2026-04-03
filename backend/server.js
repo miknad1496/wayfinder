@@ -183,6 +183,14 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(join(__dirname, '..', 'frontend', 'why.html'));
   });
 
+  // Admin dashboard (standalone HTML, not part of the SPA)
+  app.get('/admin-dashboard.html', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'admin-dashboard.html'));
+  });
+  app.get('/admin', (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'admin-dashboard.html'));
+  });
+
   app.get('*', (req, res) => {
     // Don't serve index.html for API routes
     if (req.path.startsWith('/api')) {

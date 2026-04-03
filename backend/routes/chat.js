@@ -324,13 +324,18 @@ router.post('/', async (req, res) => {
       scopeConfidence: scopeResult.confidence,
     };
 
-    // SLM only gets used if it's available AND warm
-    const useSLM = !isFirstMessage && slmIsWarm && shouldUseSLM(routingOptions);
-    // Welcome Desk holds the conversation while SLM is warming
-    const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !slmIsWarm
+    // SLM gets used if it's available AND (warm OR was recently warm).
+    // On follow-up messages, we ALWAYS try SLM if it was warmed at least once —
+    // if it's gone cold, the catch block falls back to Haiku gracefully.
+    const slmEverWarmed = slmWarmStatus.lastWarmAt !== null;
+    const hasHistory = session.history.length > 0;
+    const useSLM = !isFirstMessage && (slmIsWarm || (hasHistory && slmEverWarmed))
+      && shouldUseSLM(routingOptions);
+    // Welcome Desk only holds the conversation on first message or if SLM has NEVER been warm
+    const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !useSLM && !slmIsWarm
       && scopeResult.label !== 'out_of_scope';
 
-    console.log(`[ROUTING] first=${isFirstMessage} slmState=${slmWarmStatus.state} slmWarm=${slmIsWarm} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk} engine=${engineAllowed} scope=${scopeResult.label} lastWarmAt=${slmWarmStatus.lastWarmAt} history=${session.history.length}`);
+    console.log(`[ROUTING] first=${isFirstMessage} slmState=${slmWarmStatus.state} slmWarm=${slmIsWarm} slmEverWarmed=${slmEverWarmed} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk} engine=${engineAllowed} scope=${scopeResult.label} lastWarmAt=${slmWarmStatus.lastWarmAt} timeSinceWarm=${slmWarmStatus.timeSinceWarmMs}ms history=${session.history.length}`);
 
     const tGen = performance.now();
     const GENERATION_TIMEOUT = 120000; // 120 seconds max for generation

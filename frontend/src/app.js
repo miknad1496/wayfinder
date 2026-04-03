@@ -535,14 +535,8 @@ function showAdvisorReadyNotification() {
   messagesEl.appendChild(notification);
   messagesEl.scrollTop = messagesEl.scrollHeight;
 
-  // Auto-dismiss after 15 seconds
-  setTimeout(() => {
-    if (notification.parentNode) {
-      notification.style.opacity = '0';
-      notification.style.transform = 'translateY(-8px)';
-      setTimeout(() => notification.remove(), 400);
-    }
-  }, 15000);
+  // Keep it visible — it stays until the user sends their next message
+  // (the next appendMessage call will naturally push it up in the chat)
 }
 
 function appendMessage(role, text, sources = [], mode = null) {

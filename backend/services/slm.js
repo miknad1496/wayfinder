@@ -112,16 +112,21 @@ export function getSLMStatus() {
  * Used by /api/slm/status endpoint for frontend notifications.
  */
 export function getSLMWarmStatus() {
-  // If warm-up happened recently (within 2x the idle timeout), consider it warm
-  // Default 120s matches Dan's RunPod idle timeout setting (120s)
+  // If warm-up happened recently (within 3x the idle timeout), consider it warm.
+  // RunPod idle timeout is 120s. We use 3x (360s) because the RunPod worker
+  // often stays alive slightly past the configured timeout, and it's better
+  // to TRY the SLM (fast response if warm, falls back to Haiku if cold)
+  // than to skip it and stay on Welcome Desk forever.
   const idleTimeout = parseInt(process.env.SLM_IDLE_TIMEOUT || '120000', 10);
-  const isStale = slmStatus.lastWarmAt &&
-    (Date.now() - slmStatus.lastWarmAt) > (idleTimeout * 2);
+  const timeSinceWarm = slmStatus.lastWarmAt ? (Date.now() - slmStatus.lastWarmAt) : Infinity;
+  const isStale = timeSinceWarm > (idleTimeout * 3);
 
   return {
     state: isStale ? 'cold' : slmStatus.state,
     lastWarmAt: slmStatus.lastWarmAt,
     warmLatencyMs: slmStatus.warmLatencyMs,
+    timeSinceWarmMs: timeSinceWarm === Infinity ? null : Math.round(timeSinceWarm),
+    idleTimeoutMs: idleTimeout,
     available: isSLMAvailable(),
   };
 }
