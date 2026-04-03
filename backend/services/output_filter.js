@@ -37,11 +37,10 @@ let systemPromptNgrams = null;
 let initialized = false;
 
 const LEAKAGE_REPLACEMENT =
-  "I'm Wayfinder, an education and career advisor. " +
-  "I'm not able to share details about my configuration, " +
-  "but I can help you with college planning, career strategy, " +
-  "financial aid analysis, and school selection. " +
-  "What would you like to work on?";
+  "I appreciate the question! I'm here to help with college admissions, " +
+  "career planning, and education strategy. " +
+  "Tell me a bit about your situation — are you a student, parent, " +
+  "or professional? I'd love to give you some tailored guidance.";
 
 /**
  * Generate n-grams from system prompt text.

@@ -397,7 +397,7 @@ async function sendMessage() {
   inputEl.style.height = 'auto';
   charCountEl.textContent = '';
 
-  appendMessage('user', message);
+  const userMsgEl = appendMessage('user', message);
   const typingEl = showTyping();
 
   isLoading = true;
@@ -418,7 +418,14 @@ async function sendMessage() {
 
     if (!response.ok) {
       const err = await response.json().catch(() => ({}));
-      throw new Error(err.error || `Server error (${response.status})`);
+      const error = new Error(err.error || `Server error (${response.status})`);
+      // Tag error type for friendly messaging
+      if (response.status === 429) {
+        error.errorType = err.error?.includes('token') ? 'token_limit'
+          : err.error?.includes('Engine') ? 'engine_limit'
+          : 'rate_limit';
+      }
+      throw error;
     }
 
     const data = await response.json();
@@ -451,7 +458,13 @@ async function sendMessage() {
 
   } catch (err) {
     typingEl.remove();
-    appendError(err.message);
+    // Remove the user's message from the UI — it was never delivered to the server
+    // Restore it to the input box so they can retry easily
+    if (userMsgEl && userMsgEl.parentNode) {
+      userMsgEl.remove();
+    }
+    inputEl.value = message;
+    appendError(err.message, err.errorType || null);
     if (engineActive) {
       engineActive = false;
       engineToggle.classList.remove('active');
@@ -558,9 +571,17 @@ function appendMessage(role, text, sources = [], mode = null) {
     ? `<div class="message-avatar user-avatar">${initial}</div>`
     : `<div class="message-avatar"><img src="/logo.svg" alt="Wayfinder"></div>`;
 
-  const roleName = role === 'user'
-    ? (currentUser?.name || 'You')
-    : 'Wayfinder';
+  // Persona name changes based on mode:
+  // - haiku_intake: "Welcome Desk" (the front-desk assistant)
+  // - slm/engine/standard: "Wayfinder" (the full advisor)
+  let roleName;
+  if (role === 'user') {
+    roleName = currentUser?.name || 'You';
+  } else if (mode === 'haiku_intake') {
+    roleName = 'Welcome Desk';
+  } else {
+    roleName = 'Wayfinder';
+  }
 
   const headerHTML = `
     <div class="message-header">
@@ -610,12 +631,26 @@ function appendMessage(role, text, sources = [], mode = null) {
   messageEl.innerHTML = headerHTML + badgeHTML + bodyHTML + sourcesHTML + actionsHTML;
   messagesEl.appendChild(messageEl);
   messagesEl.scrollTop = messagesEl.scrollHeight;
+  return messageEl;
 }
 
-function appendError(message) {
+function appendError(message, errorType = null) {
   const el = document.createElement('div');
   el.className = 'error-message';
-  el.textContent = `Something went wrong: ${message}. Please try again.`;
+
+  // Friendly, context-aware error messages
+  if (errorType === 'rate_limit' || /too many requests/i.test(message)) {
+    el.innerHTML = `<strong>Hang tight!</strong> You're sending messages faster than we can keep up. Give it a few seconds and try again.`;
+  } else if (errorType === 'token_limit' || /token limit/i.test(message) || /daily.*limit/i.test(message)) {
+    el.innerHTML = `<strong>You've hit your daily usage limit.</strong> Your limit resets tomorrow. Want deeper, unlimited conversations? <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for more capacity.`;
+  } else if (errorType === 'engine_limit' || /engine queries/i.test(message)) {
+    el.innerHTML = `<strong>You've used all your Engine queries for today.</strong> Engine resets tomorrow. You can keep chatting in standard mode, or <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">upgrade for more Engine pulls</a>.`;
+  } else if (/timeout/i.test(message)) {
+    el.innerHTML = `<strong>That took longer than expected.</strong> Try a simpler question, or give it another shot.`;
+  } else {
+    el.innerHTML = `<strong>Something went wrong.</strong> Please try again in a moment.`;
+  }
+
   messagesEl.appendChild(el);
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
