@@ -377,33 +377,52 @@ If the user provides profile context (parent, student, professional), use it to 
     ? `${intakeSystemPrompt}\n\n[User context: ${contextNote.trim()}]`
     : intakeSystemPrompt;
 
-  try {
-    const response = await anthropic.messages.create({
-      model: haikuModel,
-      max_tokens: 512,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userMessage }],
-    });
+  // Try Haiku first, then fall back to Sonnet with the same Welcome Desk persona
+  // (so the persona is preserved even if Haiku model isn't available)
+  const modelsToTry = [
+    haikuModel,
+    process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
+  ];
 
-    const text = response.content?.[0]?.text || '';
+  for (const model of modelsToTry) {
+    try {
+      console.log(`[HAIKU-INTAKE] Trying model: ${model}`);
+      const response = await anthropic.messages.create({
+        model,
+        max_tokens: 512,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userMessage }],
+      });
 
-    console.log(`[HAIKU-INTAKE] ${haikuModel} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
+      const text = response.content?.[0]?.text || '';
 
-    return {
-      response: text,
-      mode: 'haiku_intake',
-      model: haikuModel,
-      retrievedSources: [],
-      usage: {
-        inputTokens: response.usage?.input_tokens || 0,
-        outputTokens: response.usage?.output_tokens || 0,
-        model: haikuModel,
-      },
-    };
-  } catch (err) {
-    console.error(`[HAIKU-INTAKE] Error: ${err.message} — falling back to standard chat`);
-    throw err; // Let caller handle fallback
+      console.log(`[HAIKU-INTAKE] ${model} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
+
+      return {
+        response: text,
+        mode: 'haiku_intake',
+        model,
+        retrievedSources: [],
+        usage: {
+          inputTokens: response.usage?.input_tokens || 0,
+          outputTokens: response.usage?.output_tokens || 0,
+          model,
+        },
+      };
+    } catch (err) {
+      console.error(`[HAIKU-INTAKE] ${model} failed: ${err.status || ''} ${err.message}`);
+      // If this was Haiku and it failed, try the next model
+      if (model === haikuModel) {
+        console.log(`[HAIKU-INTAKE] Haiku unavailable — trying Sonnet with Welcome Desk persona`);
+        continue;
+      }
+      // If Sonnet also failed, throw to let caller handle
+      throw err;
+    }
   }
+
+  // Should never reach here, but just in case
+  throw new Error('All intake models failed');
 }
 
 /**

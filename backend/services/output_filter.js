@@ -29,9 +29,13 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const MIN_NGRAM_CHARS = 20;
-const MIN_WINDOW_SIZE = 4;
+// Tuned to avoid false positives: education-domain responses naturally share
+// vocabulary with the system prompt. Requiring 8+ word phrases (50+ chars)
+// catches real prompt extraction while ignoring normal education terminology.
+const MIN_NGRAM_CHARS = 50;
+const MIN_WINDOW_SIZE = 8;
 const MAX_WINDOW_SIZE = 15;
+const MIN_MATCHES_TO_TRIGGER = 3; // Require 3+ distinct matches to trigger
 
 let systemPromptNgrams = null;
 let initialized = false;
@@ -104,11 +108,23 @@ export function checkLeakage(response) {
   }
 
   const responseLower = response.toLowerCase();
+  let matchCount = 0;
+  const matchedNgrams = [];
 
   for (const ngram of systemPromptNgrams) {
     if (responseLower.includes(ngram)) {
-      return true;
+      matchCount++;
+      matchedNgrams.push(ngram.slice(0, 40) + '...');
+      if (matchCount >= MIN_MATCHES_TO_TRIGGER) {
+        console.log(`[SS-03] Leakage detected: ${matchCount} n-gram matches: ${matchedNgrams.join(' | ')}`);
+        return true;
+      }
     }
+  }
+
+  // Below threshold — not leakage, just normal education vocabulary overlap
+  if (matchCount > 0) {
+    console.log(`[SS-03] ${matchCount} n-gram near-miss (threshold: ${MIN_MATCHES_TO_TRIGGER}) — NOT blocking`);
   }
 
   return false;
