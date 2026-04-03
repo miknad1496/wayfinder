@@ -12,6 +12,14 @@ import { performance } from 'perf_hooks';
 
 const router = Router();
 
+// ─── Routing Debug Log (last 20 decisions, in-memory) ──────────
+const routingLog = [];
+function logRouting(entry) {
+  routingLog.push({ ...entry, ts: new Date().toISOString() });
+  if (routingLog.length > 20) routingLog.shift();
+}
+export function getRoutingLog() { return [...routingLog]; }
+
 // GET /api/chat/advisor-status — Check if the SLM advisor is warm and ready
 // Frontend polls this after the Haiku intake to show "your advisor has arrived"
 router.get('/advisor-status', (req, res) => {
@@ -335,7 +343,16 @@ router.post('/', async (req, res) => {
     const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !useSLM && !slmIsWarm
       && scopeResult.label !== 'out_of_scope';
 
-    console.log(`[ROUTING] first=${isFirstMessage} slmState=${slmWarmStatus.state} slmWarm=${slmIsWarm} slmEverWarmed=${slmEverWarmed} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk} engine=${engineAllowed} scope=${scopeResult.label} lastWarmAt=${slmWarmStatus.lastWarmAt} timeSinceWarm=${slmWarmStatus.timeSinceWarmMs}ms history=${session.history.length}`);
+    const routingDebug = {
+      isFirstMessage, slmState: slmWarmStatus.state, slmIsWarm, slmEverWarmed,
+      hasHistory, useSLM, useWelcomeDesk, engineAllowed,
+      scope: scopeResult.label, scopeConf: scopeResult.confidence,
+      lastWarmAt: slmWarmStatus.lastWarmAt, timeSinceWarm: slmWarmStatus.timeSinceWarmMs,
+      historyLen: session.history.length, sessionId,
+      shouldUseSLM: shouldUseSLM(routingOptions), slmAvailable: isSLMAvailable(),
+    };
+    logRouting(routingDebug);
+    console.log(`[ROUTING] ${JSON.stringify(routingDebug)}`);
 
     const tGen = performance.now();
     const GENERATION_TIMEOUT = 120000; // 120 seconds max for generation

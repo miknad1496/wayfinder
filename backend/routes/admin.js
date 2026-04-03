@@ -6,6 +6,7 @@ import { getScheduleStatus, forceRunScraper } from '../services/scraper-schedule
 import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../services/slm.js';
 import { getMemoryStats } from '../services/conversation-memory.js';
 import { getRoutingStats } from '../services/telemetry.js';
+import { getRoutingLog } from './chat.js';
 
 const router = Router();
 
@@ -375,6 +376,11 @@ router.get('/memory-stats', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to load memory stats' });
   }
+});
+
+// GET /api/admin/routing-log - Last 20 routing decisions with all variables
+router.get('/routing-log', (req, res) => {
+  res.json({ decisions: getRoutingLog() });
 });
 
 // GET /api/admin/routing-stats - Get routing tier breakdown since last deploy

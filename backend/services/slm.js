@@ -735,7 +735,7 @@ function startKeepAlive() {
   if (keepAliveTimer) return; // Already running
 
   const PING_INTERVAL = 90000; // 90s — under RunPod's 120s idle timeout
-  const MAX_IDLE = 600000;     // 10 minutes with no real traffic → stop pinging
+  const MAX_IDLE = 300000;     // 5 minutes with no real traffic → stop pinging
 
   keepAliveTimer = setInterval(async () => {
     // If it's been too long since any real warm-up, stop keep-alive
