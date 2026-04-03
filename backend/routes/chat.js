@@ -309,17 +309,28 @@ router.post('/', async (req, res) => {
       };
     }
 
-    // ─── TIER ROUTING: Haiku intake → SLM (fast/cheap) → Claude (safety net) ───
-    // Turn 1 (new session): Haiku intake (cheapest) + async SLM warm-up ping
-    // Turn 2+: SLM for in-scope, Claude for engine/adjacent/fallback
+    // ─── TIER ROUTING: Welcome Desk → SLM Advisor → Claude (safety net) ───
+    // Phase 1 (SLM cold/warming): Welcome Desk persona via Haiku (cheapest)
+    //   + async SLM warm-up ping on first message
+    // Phase 2 (SLM warm): Advisor (SLM) for in-scope queries
+    // Phase 3 (fallback): Claude Sonnet for engine/adjacent/complex queries
     const isFirstMessage = session.history.length === 0 && !engineAllowed;
+    const slmWarmStatus = getSLMWarmStatus();
+    const slmIsWarm = slmWarmStatus.state === 'warm';
     const routingOptions = {
       useEngine: engineAllowed,
       scopeLabel: scopeResult.label,
       scopeConfidence: scopeResult.confidence,
     };
 
-    const useSLM = !isFirstMessage && shouldUseSLM(routingOptions);
+    // SLM only gets used if it's available AND warm
+    const useSLM = !isFirstMessage && slmIsWarm && shouldUseSLM(routingOptions);
+    // Welcome Desk holds the conversation while SLM is warming
+    const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !slmIsWarm
+      && scopeResult.label !== 'out_of_scope';
+
+    console.log(`[ROUTING] first=${isFirstMessage} slmWarm=${slmIsWarm} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk}`);
+
     const tGen = performance.now();
     const GENERATION_TIMEOUT = 120000; // 120 seconds max for generation
     let result;
@@ -329,10 +340,10 @@ router.post('/', async (req, res) => {
     try {
       // Wrap generation with timeout protection
       const generationPromise = (async () => {
-        if (isFirstMessage && scopeResult.label !== 'out_of_scope') {
-          // ── Tier 0: Haiku Intake (first message only) ──
-          // Fire SLM warm-up in background (don't await — fire and forget)
-          if (isSLMAvailable()) {
+        if (useWelcomeDesk) {
+          // ── Welcome Desk: SLM not warm yet — use cheap Haiku persona ──
+          // Fire warm-up on first message only (don't re-fire if already warming)
+          if (isFirstMessage && isSLMAvailable()) {
             warmUpSLM().catch(err => {
               console.warn(`[WARM-UP] Background SLM warm-up failed: ${err.message}`);
             });
@@ -340,12 +351,12 @@ router.post('/', async (req, res) => {
           }
 
           try {
-            result = await chatHaikuIntake(trimmedMsg, session.context);
+            result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
             tEvent.generation.mode = 'haiku_intake';
-            console.log(`[TIER-0] Haiku intake response OK`);
+            console.log(`[WELCOME-DESK] Response OK (SLM state: ${slmWarmStatus.state}, history: ${session.history.length})`);
           } catch (haikuError) {
             // Haiku failed — fall back to standard Claude
-            console.error(`[TIER-0→2] Haiku intake error: ${haikuError.message} — falling back to Sonnet`);
+            console.error(`[WELCOME-DESK→CLAUDE] Error: ${haikuError.message} — falling back to Sonnet`);
             result = await chat(
               session.history,
               trimmedMsg,

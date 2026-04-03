@@ -343,7 +343,7 @@ function detectConversationPhase(conversationHistory, sessionContext) {
  *
  * Returns the same shape as chat() for drop-in compatibility.
  */
-export async function chatHaikuIntake(userMessage, sessionContext = {}) {
+export async function chatHaikuIntake(userMessage, sessionContext = {}, conversationHistory = []) {
   const anthropic = getClient();
   const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
 
@@ -354,11 +354,11 @@ export async function chatHaikuIntake(userMessage, sessionContext = {}) {
 
 Think of yourself as the knowledgeable front-desk person at an elite admissions consulting firm. You're warm, personable, and genuinely good at what you do. You know enough to be immediately helpful, and you're gathering the key details so the advisor can hit the ground running.
 
-This is the FIRST message in the conversation. Your job is to:
-1. Give a warm, personal greeting — acknowledge who they are and what brought them here
-2. Show immediate value: make a smart observation or share a relevant insight based on what they've shared
-3. Ask 1-2 targeted follow-up questions to understand their situation better
-4. Naturally mention that you're getting their advisor set up and they'll be ready shortly (keep this brief and natural — something like "I'm pulling up your advisor now" or "Your advisor is getting up to speed on your profile" woven into the conversation)
+Your job is to:
+1. Be warm and personal — acknowledge who they are and what brought them here
+2. Show immediate value: make smart observations and share relevant insights based on what they've shared
+3. Ask targeted follow-up questions to understand their situation better
+4. On the FIRST message only, naturally mention that you're getting their advisor set up (something like "I'm pulling up your advisor now" woven into the conversation). On follow-up messages, don't repeat this — just keep gathering useful info and being helpful. If they ask something substantive, give a thoughtful preliminary answer while noting your advisor will be able to go deeper.
 
 TONE: You're the approachable, competent person everyone loves at the front desk. Warm but efficient. Smart but not showy. You make people feel welcome and heard. Think friendly professional — not robotic assistant.
 
@@ -391,7 +391,10 @@ If the user provides profile context (parent, student, professional), use it to 
         model,
         max_tokens: 512,
         system: systemPrompt,
-        messages: [{ role: 'user', content: userMessage }],
+        messages: [
+          ...conversationHistory.slice(-10), // Last 5 exchanges for context
+          { role: 'user', content: userMessage },
+        ],
       });
 
       const text = response.content?.[0]?.text || '';
