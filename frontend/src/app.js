@@ -552,9 +552,10 @@ function appendMessage(role, text, sources = [], mode = null) {
       engine: 'Wayfinder Engine',
       haiku_intake: 'Welcome Desk',
       slm: 'Advisor',
+      haiku_advisor: 'Advisor',
       haiku_standard: 'Standard',
-      slm_quality_fallback: 'Standard',
-      slm_error_fallback: 'Standard',
+      slm_quality_fallback: 'Advisor',
+      slm_error_fallback: 'Advisor',
       standard: 'Standard',
       claude_escalated: 'Standard',
       claude_fallback: 'Standard',
@@ -576,6 +577,8 @@ function appendMessage(role, text, sources = [], mode = null) {
     roleName = currentUser?.name || 'You';
   } else if (mode === 'haiku_intake') {
     roleName = 'Welcome Desk';
+  } else if (mode === 'haiku_advisor' || mode === 'slm') {
+    roleName = 'Wayfinder Advisor';
   } else {
     roleName = 'Wayfinder';
   }

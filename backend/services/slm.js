@@ -691,6 +691,16 @@ export async function warmUpSLM() {
       });
 
       const latency = Date.now() - t0;
+
+      // Check HTTP status — a 500/503 means the worker isn't actually ready
+      if (!response.ok) {
+        const errBody = await response.text().catch(() => '');
+        slmStatus.state = 'error';
+        slmStatus.lastError = `Warm-up HTTP ${response.status}: ${errBody.slice(0, 200)}`;
+        console.warn(`[SLM] Warm-up got HTTP ${response.status} after ${latency}ms: ${errBody.slice(0, 200)}`);
+        return { warmed: false, reason: `HTTP ${response.status}`, latency };
+      }
+
       slmStatus.state = 'warm';
       slmStatus.lastWarmAt = Date.now();
       slmStatus.warmLatencyMs = latency;

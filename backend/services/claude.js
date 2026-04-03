@@ -441,6 +441,60 @@ Any response that contains analysis, predictions, advice, opinions about the use
 }
 
 /**
+ * Haiku Advisor — full advisory response using Haiku + RAG.
+ *
+ * Used when SLM fails to warm up. Instead of trapping the user in
+ * Welcome Desk purgatory, this gives them a real answer using the
+ * cheapest Claude model + the RAG knowledge base. Not as good as
+ * the SLM or Sonnet, but infinitely better than a 10th "your advisor
+ * is connecting now" greeting.
+ */
+export async function chatHaikuAdvisor(conversationHistory, userMessage, sessionContext = {}, options = {}) {
+  const anthropic = getClient();
+  const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
+
+  // Get RAG context — use lite brain (cheaper, faster)
+  const contextStr = await getLiteBrainContext(userMessage);
+  console.log(`[HAIKU-ADVISOR] Brain routed for: "${userMessage.slice(0, 60)}..."`);
+
+  // Build system prompt with context (same as full chat())
+  let systemPrompt = await loadSystemPrompt();
+  systemPrompt = systemPrompt.replace('{RETRIEVED_CONTEXT}', contextStr);
+  systemPrompt += buildTemporalContext();
+  systemPrompt += buildProfileString(sessionContext);
+
+  // Add scope boundary if needed
+  if (options.scopeLabel === 'adjacent') {
+    systemPrompt += BOUNDARY_INSTRUCTION;
+  }
+
+  const response = await anthropic.messages.create({
+    model: haikuModel,
+    max_tokens: 1024,
+    system: systemPrompt,
+    messages: [
+      ...conversationHistory.slice(-10),
+      { role: 'user', content: userMessage },
+    ],
+  });
+
+  const text = response.content?.[0]?.text || '';
+  const filtered = filterLeakage(text);
+  console.log(`[HAIKU-ADVISOR] ${haikuModel} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
+
+  return {
+    response: filtered,
+    mode: 'haiku_advisor',
+    model: haikuModel,
+    retrievedSources: [],
+    usage: {
+      inputTokens: response.usage?.input_tokens || 0,
+      outputTokens: response.usage?.output_tokens || 0,
+    },
+  };
+}
+
+/**
  * Send a message to Claude.
  *
  * @param {Array} conversationHistory - Array of {role, content} messages

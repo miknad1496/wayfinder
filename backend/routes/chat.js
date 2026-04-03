@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { chat, chatHaikuIntake } from '../services/claude.js';
+import { chat, chatHaikuIntake, chatHaikuAdvisor } from '../services/claude.js';
 import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
@@ -318,11 +318,11 @@ router.post('/', async (req, res) => {
       };
     }
 
-    // ─── TIER ROUTING: Welcome Desk → SLM Advisor → Claude (safety net) ───
-    // Phase 1 (SLM cold/warming): Welcome Desk persona via Haiku (cheapest)
-    //   + async SLM warm-up ping on first message
-    // Phase 2 (SLM warm): Advisor (SLM) for in-scope queries
-    // Phase 3 (fallback): Claude Sonnet for engine/adjacent/complex queries
+    // ─── TIER ROUTING ───────────────────────────────────────────────
+    // Message 1 (SLM cold): Welcome Desk greeter via Haiku + fire SLM warm-up
+    // Message 2+ (SLM warm): SLM Advisor
+    // Message 2+ (SLM failed): Haiku Advisor (full RAG, real answers — NOT Welcome Desk)
+    // Engine mode: Claude Sonnet/Opus (premium)
     const isFirstMessage = session.history.length === 0 && !engineAllowed;
     const slmWarmStatus = getSLMWarmStatus();
     const slmIsWarm = slmWarmStatus.state === 'warm';
@@ -332,20 +332,26 @@ router.post('/', async (req, res) => {
       scopeConfidence: scopeResult.confidence,
     };
 
-    // SLM gets used if it's available AND (warm OR was recently warm).
-    // On follow-up messages, we ALWAYS try SLM if it was warmed at least once —
-    // if it's gone cold, the catch block falls back to Haiku gracefully.
     const slmEverWarmed = slmWarmStatus.lastWarmAt !== null;
     const hasHistory = session.history.length > 0;
+
+    // SLM: use if warm or was recently warm AND scope allows it
     const useSLM = !isFirstMessage && (slmIsWarm || (hasHistory && slmEverWarmed))
       && shouldUseSLM(routingOptions);
-    // Welcome Desk only holds the conversation on first message or if SLM has NEVER been warm
-    const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !useSLM && !slmIsWarm
+
+    // Welcome Desk: ONLY on the very first message. Never again.
+    // After message 1, if SLM isn't ready, we use Haiku Advisor (real answers)
+    // instead of trapping the user in endless greetings.
+    const useWelcomeDesk = isFirstMessage && !engineAllowed
+      && scopeResult.label !== 'out_of_scope';
+
+    // Haiku Advisor: message 2+ when SLM isn't available/warm
+    const useHaikuAdvisor = hasHistory && !useSLM && !engineAllowed
       && scopeResult.label !== 'out_of_scope';
 
     const routingDebug = {
       isFirstMessage, slmState: slmWarmStatus.state, slmIsWarm, slmEverWarmed,
-      hasHistory, useSLM, useWelcomeDesk, engineAllowed,
+      hasHistory, useSLM, useWelcomeDesk, useHaikuAdvisor, engineAllowed,
       scope: scopeResult.label, scopeConf: scopeResult.confidence,
       lastWarmAt: slmWarmStatus.lastWarmAt, timeSinceWarm: slmWarmStatus.timeSinceWarmMs,
       historyLen: session.history.length, sessionId,
@@ -364,9 +370,9 @@ router.post('/', async (req, res) => {
       // Wrap generation with timeout protection
       const generationPromise = (async () => {
         if (useWelcomeDesk) {
-          // ── Welcome Desk: SLM not warm yet — use cheap Haiku persona ──
-          // Fire warm-up on first message only (don't re-fire if already warming)
-          if (isFirstMessage && isSLMAvailable()) {
+          // ── Welcome Desk: FIRST MESSAGE ONLY ──
+          // Fire SLM warm-up in background
+          if (isSLMAvailable()) {
             warmUpSLM().catch(err => {
               console.warn(`[WARM-UP] Background SLM warm-up failed: ${err.message}`);
             });
@@ -376,9 +382,8 @@ router.post('/', async (req, res) => {
           try {
             result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
             tEvent.generation.mode = 'haiku_intake';
-            console.log(`[WELCOME-DESK] Response OK (SLM state: ${slmWarmStatus.state}, history: ${session.history.length})`);
+            console.log(`[WELCOME-DESK] Response OK (SLM state: ${slmWarmStatus.state})`);
           } catch (haikuError) {
-            // Welcome Desk (Haiku) failed — show error, do NOT escalate to Sonnet
             console.error(`[WELCOME-DESK] Haiku error: ${haikuError.message}`);
             throw new Error('Our welcome desk is momentarily unavailable. Please try again.');
           }
@@ -393,45 +398,31 @@ router.post('/', async (req, res) => {
               { scopeLabel: scopeResult.label, scopeResult }
             );
 
-            // Quality gate: check if SLM response is good enough
             if (slmResult.qualityCheck.passed) {
               result = slmResult;
               tEvent.generation.mode = 'slm';
               tEvent.generation.domain = slmResult.domain;
               console.log(`[ADVISOR] SLM response OK (${slmResult.domain}, ${slmResult.latency}ms)`);
             } else {
-              // ── Quality gate failed: fall back to Haiku, NOT Sonnet ──
-              console.log(`[ADVISOR→DESK] SLM quality gate failed: ${slmResult.qualityCheck.reason} — falling back to Haiku`);
+              // Quality gate failed → Haiku Advisor (real answers, not greeter)
+              console.log(`[ADVISOR→HAIKU] SLM quality failed: ${slmResult.qualityCheck.reason}`);
               tEvent.generation.slm_escalation = slmResult.qualityCheck.reason;
               escalatedFromSLM = true;
-
-              try {
-                result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-                tEvent.generation.mode = 'slm_quality_fallback';
-              } catch (haikuErr) {
-                console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
-                result = await chat(
-                  session.history, trimmedMsg, session.context,
-                  { useEngine: false, scopeLabel: scopeResult.label }
-                );
-                tEvent.generation.mode = 'claude_escalated';
-              }
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+              tEvent.generation.mode = 'haiku_advisor';
             }
           } catch (slmError) {
-            // SLM errored — fall back to Haiku, NOT Sonnet
-            console.error(`[ADVISOR→DESK] SLM error: ${slmError.message} — falling back to Haiku`);
+            // SLM errored → Haiku Advisor (real answers, not greeter)
+            console.error(`[ADVISOR→HAIKU] SLM error: ${slmError.message}`);
             tEvent.generation.slm_error = slmError.message;
             escalatedFromSLM = true;
-
-            // Re-warm in background
-            console.log(`[ADVISOR] SLM may be cold — re-warming in background`);
-            warmUpSLM().catch(() => {});
+            warmUpSLM().catch(() => {}); // Re-warm in background
 
             try {
-              result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-              tEvent.generation.mode = 'slm_error_fallback';
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+              tEvent.generation.mode = 'haiku_advisor';
             } catch (haikuErr) {
-              console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
+              console.error(`[ADVISOR→HAIKU→CLAUDE] Both failed — last resort Sonnet`);
               result = await chat(
                 session.history, trimmedMsg, session.context,
                 { useEngine: false, scopeLabel: scopeResult.label }
@@ -448,20 +439,27 @@ router.post('/', async (req, res) => {
             { useEngine: true, scopeLabel: scopeResult.label }
           );
           tEvent.generation.mode = 'engine';
-        } else {
-          // ── SLM disabled or scope prevented SLM — use Haiku ──
+        } else if (useHaikuAdvisor) {
+          // ── Haiku Advisor: SLM not available but user needs real answers ──
+          console.log(`[HAIKU-ADVISOR] SLM unavailable — giving real answers via Haiku+RAG`);
           try {
-            result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-            tEvent.generation.mode = 'haiku_standard';
-            console.log(`[FALLBACK] No SLM route — using Haiku (slmAvail=${isSLMAvailable()} scope=${scopeResult.label})`);
+            result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+            tEvent.generation.mode = 'haiku_advisor';
           } catch (err) {
-            // True last resort
+            console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
             result = await chat(
               session.history, trimmedMsg, session.context,
               { useEngine: false, scopeLabel: scopeResult.label }
             );
-            tEvent.generation.mode = 'standard';
+            tEvent.generation.mode = 'claude_fallback';
           }
+        } else {
+          // ── Final fallback — Sonnet standard ──
+          result = await chat(
+            session.history, trimmedMsg, session.context,
+            { useEngine: false, scopeLabel: scopeResult.label }
+          );
+          tEvent.generation.mode = 'standard';
         }
       })();
 
