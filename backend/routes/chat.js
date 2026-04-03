@@ -319,9 +319,9 @@ router.post('/', async (req, res) => {
     }
 
     // ─── TIER ROUTING ───────────────────────────────────────────────
-    // Message 1 (SLM cold): Welcome Desk greeter via Haiku + fire SLM warm-up
-    // Message 2+ (SLM warm): SLM Advisor
-    // Message 2+ (SLM failed): Haiku Advisor (full RAG, real answers — NOT Welcome Desk)
+    // Messages 1-3 (SLM warming): Welcome Desk gathers context for advisor
+    // SLM warm at any point: SLM Advisor takes over
+    // Messages 4+ (SLM still not warm): Haiku Advisor fallback (real answers)
     // Engine mode: Claude Sonnet/Opus (premium)
     const isFirstMessage = session.history.length === 0 && !engineAllowed;
     const slmWarmStatus = getSLMWarmStatus();
@@ -334,19 +334,23 @@ router.post('/', async (req, res) => {
 
     const slmEverWarmed = slmWarmStatus.lastWarmAt !== null;
     const hasHistory = session.history.length > 0;
+    const exchangeCount = Math.floor(session.history.length / 2); // pairs of user+assistant
 
     // SLM: use if warm or was recently warm AND scope allows it
     const useSLM = !isFirstMessage && (slmIsWarm || (hasHistory && slmEverWarmed))
       && shouldUseSLM(routingOptions);
 
-    // Welcome Desk: ONLY on the very first message. Never again.
-    // After message 1, if SLM isn't ready, we use Haiku Advisor (real answers)
-    // instead of trapping the user in endless greetings.
-    const useWelcomeDesk = isFirstMessage && !engineAllowed
+    // Welcome Desk: holds the conversation for up to 3 exchanges while SLM warms up.
+    // Gathers useful context (grade level, interests, goals) so the advisor can
+    // hit the ground running. Only exits when SLM is warm or exchange threshold hit.
+    const WELCOME_DESK_MAX_EXCHANGES = 3;
+    const useWelcomeDesk = !useSLM && !engineAllowed
+      && exchangeCount < WELCOME_DESK_MAX_EXCHANGES
       && scopeResult.label !== 'out_of_scope';
 
-    // Haiku Advisor: message 2+ when SLM isn't available/warm
-    const useHaikuAdvisor = hasHistory && !useSLM && !engineAllowed
+    // Haiku Advisor: kicks in after Welcome Desk threshold if SLM still hasn't warmed.
+    // Gives real substantive answers using Haiku + RAG so user isn't stuck forever.
+    const useHaikuAdvisor = !useSLM && !useWelcomeDesk && !engineAllowed
       && scopeResult.label !== 'out_of_scope';
 
     const routingDebug = {
