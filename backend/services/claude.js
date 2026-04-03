@@ -479,11 +479,11 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   });
 
   const text = response.content?.[0]?.text || '';
-  const filtered = filterLeakage(text);
+  const { response: filteredText } = filterLeakage(text);
   console.log(`[HAIKU-ADVISOR] ${haikuModel} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
 
   return {
-    response: filtered,
+    response: filteredText,
     mode: 'haiku_advisor',
     model: haikuModel,
     retrievedSources: [],
