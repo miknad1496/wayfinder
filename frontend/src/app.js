@@ -436,6 +436,11 @@ async function sendMessage() {
     typingEl.remove();
     appendMessage('assistant', data.response, data.sources, data.mode);
 
+    // If advisor is warming up (Haiku intake + SLM waking), poll for readiness
+    if (data.advisorWarming) {
+      pollAdvisorStatus();
+    }
+
     if (engineActive) {
       engineActive = false;
       engineToggle.classList.remove('active');
@@ -458,6 +463,75 @@ async function sendMessage() {
   }
 }
 
+// ========================
+// Advisor Warm-Up Polling
+// ========================
+let advisorPollTimer = null;
+
+function pollAdvisorStatus() {
+  // Clear any existing poll
+  if (advisorPollTimer) clearInterval(advisorPollTimer);
+
+  let attempts = 0;
+  const maxAttempts = 40; // 40 × 3s = 120s max polling
+
+  advisorPollTimer = setInterval(async () => {
+    attempts++;
+    if (attempts > maxAttempts) {
+      clearInterval(advisorPollTimer);
+      advisorPollTimer = null;
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/chat/advisor-status`);
+      if (!res.ok) return;
+      const status = await res.json();
+
+      if (status.ready) {
+        clearInterval(advisorPollTimer);
+        advisorPollTimer = null;
+        showAdvisorReadyNotification();
+      }
+    } catch {
+      // Silently ignore — will retry on next interval
+    }
+  }, 3000);
+}
+
+function showAdvisorReadyNotification() {
+  // Don't show if user has already moved past the first exchange
+  if (messageCount > 3) return;
+
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = 'advisor-ready-notification';
+  notification.innerHTML = `
+    <div class="advisor-ready-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+    </div>
+    <div class="advisor-ready-text">
+      <strong>Your advisor is ready</strong>
+      <span>Ask your next question to connect directly.</span>
+    </div>
+  `;
+
+  messagesEl.appendChild(notification);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+
+  // Auto-dismiss after 15 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.style.opacity = '0';
+      notification.style.transform = 'translateY(-8px)';
+      setTimeout(() => notification.remove(), 400);
+    }
+  }, 15000);
+}
+
 function appendMessage(role, text, sources = [], mode = null) {
   const messageEl = document.createElement('div');
   messageEl.className = 'message';
@@ -467,7 +541,15 @@ function appendMessage(role, text, sources = [], mode = null) {
   // Mode badge
   let badgeHTML = '';
   if (role === 'assistant' && mode) {
-    const modeLabel = mode === 'engine' ? 'Wayfinder Engine' : 'Standard';
+    const modeLabels = {
+      engine: 'Wayfinder Engine',
+      haiku_intake: 'Welcome Desk',
+      slm: 'Advisor',
+      standard: 'Standard',
+      claude_escalated: 'Standard',
+      claude_fallback: 'Standard',
+    };
+    const modeLabel = modeLabels[mode] || 'Standard';
     badgeHTML = `<div class="engine-badge ${mode}">${modeLabel}</div>`;
   }
 

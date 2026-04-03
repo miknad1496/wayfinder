@@ -50,6 +50,17 @@ const REFUSAL_PATTERNS = [
 
 let systemPromptCache = null;
 
+// ─── Warm-Up Status Tracking ───────────────────────────────────
+// Tracks whether the SLM GPU worker is warm (ready for instant responses).
+// Updated by warmUpSLM() and successful chatSLM() calls.
+// Consumed by /api/slm/status endpoint so the frontend can notify the user.
+const slmStatus = {
+  state: 'cold',          // 'cold' | 'warming' | 'warm' | 'error'
+  lastWarmAt: null,        // Timestamp of last successful warm-up or response
+  lastError: null,         // Last error message if any
+  warmLatencyMs: null,     // How long the last warm-up took
+};
+
 // ─── System Prompt (SLM-specific, lighter than Claude's) ────────
 
 async function loadSLMSystemPrompt() {
@@ -92,6 +103,25 @@ export function getSLMStatus() {
     model: SLM_MODEL_NAME,
     maxTokens: SLM_MAX_TOKENS,
     temperature: SLM_TEMPERATURE,
+    available: isSLMAvailable(),
+  };
+}
+
+/**
+ * Get the live warm-up status of the SLM worker.
+ * Used by /api/slm/status endpoint for frontend notifications.
+ */
+export function getSLMWarmStatus() {
+  // If warm-up happened recently (within 2x the idle timeout), consider it warm
+  // Default 120s matches Dan's RunPod idle timeout setting (120s)
+  const idleTimeout = parseInt(process.env.SLM_IDLE_TIMEOUT || '120000', 10);
+  const isStale = slmStatus.lastWarmAt &&
+    (Date.now() - slmStatus.lastWarmAt) > (idleTimeout * 2);
+
+  return {
+    state: isStale ? 'cold' : slmStatus.state,
+    lastWarmAt: slmStatus.lastWarmAt,
+    warmLatencyMs: slmStatus.warmLatencyMs,
     available: isSLMAvailable(),
   };
 }
@@ -573,6 +603,10 @@ export async function chatSLM(history, userMessage, sessionContext, options = {}
 
   const latency = Date.now() - t0;
 
+  // Mark SLM as warm on any successful response
+  slmStatus.state = 'warm';
+  slmStatus.lastWarmAt = Date.now();
+
   // Rough token estimation (for cost tracking — SLM is essentially free)
   const inputChars = messages.reduce((sum, m) => sum + m.content.length, 0);
   const estimatedInputTokens = Math.ceil(inputChars / 4);
@@ -621,6 +655,7 @@ export async function warmUpSLM() {
     return { warmed: false, reason: 'slm_not_available' };
   }
 
+  slmStatus.state = 'warming';
   const t0 = Date.now();
   const isRunPod = SLM_ENDPOINT.includes('runpod.ai');
 
@@ -646,11 +681,15 @@ export async function warmUpSLM() {
         method: 'POST',
         headers,
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(90000), // 90s — cold start can take a while
+        signal: AbortSignal.timeout(120000), // 120s — cold start can take a while
       });
 
       const latency = Date.now() - t0;
-      console.log(`[SLM] Warm-up ping completed in ${latency}ms (status: ${response.status})`);
+      slmStatus.state = 'warm';
+      slmStatus.lastWarmAt = Date.now();
+      slmStatus.warmLatencyMs = latency;
+      slmStatus.lastError = null;
+      console.log(`[SLM] Warm-up complete in ${latency}ms (status: ${response.status})`);
       return { warmed: true, latency };
     } else {
       // OpenAI-compatible: health check endpoint or minimal completion
@@ -662,12 +701,18 @@ export async function warmUpSLM() {
       });
 
       const latency = Date.now() - t0;
-      console.log(`[SLM] Warm-up ping completed in ${latency}ms (status: ${response.status})`);
+      slmStatus.state = 'warm';
+      slmStatus.lastWarmAt = Date.now();
+      slmStatus.warmLatencyMs = latency;
+      slmStatus.lastError = null;
+      console.log(`[SLM] Warm-up complete in ${latency}ms (status: ${response.status})`);
       return { warmed: true, latency };
     }
   } catch (err) {
     const latency = Date.now() - t0;
-    console.warn(`[SLM] Warm-up ping failed after ${latency}ms: ${err.message}`);
+    slmStatus.state = 'error';
+    slmStatus.lastError = err.message;
+    console.warn(`[SLM] Warm-up failed after ${latency}ms: ${err.message}`);
     return { warmed: false, reason: err.message, latency };
   }
 }

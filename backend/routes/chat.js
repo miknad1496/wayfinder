@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat, chatHaikuIntake } from '../services/claude.js';
-import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain, warmUpSLM } from '../services/slm.js';
+import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
@@ -10,6 +10,18 @@ import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
 import { performance } from 'perf_hooks';
 
 const router = Router();
+
+// GET /api/chat/advisor-status — Check if the SLM advisor is warm and ready
+// Frontend polls this after the Haiku intake to show "your advisor has arrived"
+router.get('/advisor-status', (req, res) => {
+  const status = getSLMWarmStatus();
+  res.json({
+    ready: status.state === 'warm',
+    state: status.state,       // 'cold' | 'warming' | 'warm' | 'error'
+    warmLatencyMs: status.warmLatencyMs,
+    available: status.available,
+  });
+});
 
 // In-memory lock: prevents concurrent generation on the same session.
 // If a second request arrives while the first is mid-generation, return 409.
@@ -494,7 +506,9 @@ router.post('/', async (req, res) => {
         used: tokenUsageInfo.tokensUsed,
         remaining: tokenUsageInfo.tokensRemaining,
         limit: tokenUsageInfo.limit
-      } : null
+      } : null,
+      // Signal frontend to start polling /api/chat/advisor-status
+      advisorWarming: result.mode === 'haiku_intake' && isSLMAvailable(),
     });
 
   } catch (err) {
