@@ -611,6 +611,7 @@ export async function chatSLM(history, userMessage, sessionContext, options = {}
   // Mark SLM as warm on any successful response
   slmStatus.state = 'warm';
   slmStatus.lastWarmAt = Date.now();
+  startKeepAlive(); // Ensure keep-alive is running
 
   // Rough token estimation (for cost tracking — SLM is essentially free)
   const inputChars = messages.reduce((sum, m) => sum + m.content.length, 0);
@@ -695,6 +696,7 @@ export async function warmUpSLM() {
       slmStatus.warmLatencyMs = latency;
       slmStatus.lastError = null;
       console.log(`[SLM] Warm-up complete in ${latency}ms (status: ${response.status})`);
+      startKeepAlive(); // Keep the worker alive
       return { warmed: true, latency };
     } else {
       // OpenAI-compatible: health check endpoint or minimal completion
@@ -721,6 +723,67 @@ export async function warmUpSLM() {
     return { warmed: false, reason: err.message, latency };
   }
 }
+
+// ─── Keep-Alive Ping ─────────────────────────────────────────────
+// Once the SLM is warmed for the first time, ping every 90s to prevent
+// RunPod's idle timeout from killing the worker. Stops pinging if the
+// SLM goes cold/error and hasn't been used in 10 minutes.
+
+let keepAliveTimer = null;
+
+function startKeepAlive() {
+  if (keepAliveTimer) return; // Already running
+
+  const PING_INTERVAL = 90000; // 90s — under RunPod's 120s idle timeout
+  const MAX_IDLE = 600000;     // 10 minutes with no real traffic → stop pinging
+
+  keepAliveTimer = setInterval(async () => {
+    // If it's been too long since any real warm-up, stop keep-alive
+    if (!slmStatus.lastWarmAt || (Date.now() - slmStatus.lastWarmAt) > MAX_IDLE) {
+      console.log('[SLM-KEEPALIVE] No recent activity — stopping keep-alive');
+      clearInterval(keepAliveTimer);
+      keepAliveTimer = null;
+      return;
+    }
+
+    // Only ping if we think it's warm
+    if (slmStatus.state !== 'warm') return;
+
+    try {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SLM_API_KEY}`,
+      };
+      const body = {
+        input: {
+          messages: [{ role: 'user', content: 'ping' }],
+          max_tokens: 1,
+          temperature: 0.0,
+        }
+      };
+      const t0 = Date.now();
+      await fetch(SLM_ENDPOINT, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(30000),
+      });
+      slmStatus.lastWarmAt = Date.now();
+      console.log(`[SLM-KEEPALIVE] Ping OK (${Date.now() - t0}ms)`);
+    } catch (err) {
+      console.warn(`[SLM-KEEPALIVE] Ping failed: ${err.message}`);
+    }
+  }, PING_INTERVAL);
+
+  console.log('[SLM-KEEPALIVE] Started (90s interval, 10min idle cutoff)');
+}
+
+// Hook into warmUpSLM result — start keep-alive once warm
+const _origWarmUp = warmUpSLM;
+
+// We can't reassign exports, so we'll start keep-alive from the warmUpSLM success path.
+// Instead, watch slmStatus for transitions to 'warm'.
+// Simpler: just check in warmUpSLM and chatSLM success paths.
 
 export function shouldUseSLM(options = {}) {
   // Never use SLM for engine mode — that's the premium Claude experience

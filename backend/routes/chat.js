@@ -366,7 +366,8 @@ router.post('/', async (req, res) => {
             throw new Error('Our welcome desk is momentarily unavailable. Please try again.');
           }
         } else if (useSLM) {
-          // ── SLM Advisor (warm, in-scope) ──
+          // ── SLM Advisor (warm or recently warm, in-scope) ──
+          console.log(`[ADVISOR] Attempting SLM call...`);
           try {
             const slmResult = await chatSLM(
               session.history,
@@ -389,9 +390,8 @@ router.post('/', async (req, res) => {
 
               try {
                 result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-                tEvent.generation.mode = 'haiku_intake';
+                tEvent.generation.mode = 'slm_quality_fallback';
               } catch (haikuErr) {
-                // Last resort: Sonnet only if both SLM AND Haiku fail
                 console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
                 result = await chat(
                   session.history, trimmedMsg, session.context,
@@ -406,15 +406,14 @@ router.post('/', async (req, res) => {
             tEvent.generation.slm_error = slmError.message;
             escalatedFromSLM = true;
 
-            // Mark SLM as potentially cold again (it errored)
+            // Re-warm in background
             console.log(`[ADVISOR] SLM may be cold — re-warming in background`);
             warmUpSLM().catch(() => {});
 
             try {
               result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-              tEvent.generation.mode = 'haiku_intake';
+              tEvent.generation.mode = 'slm_error_fallback';
             } catch (haikuErr) {
-              // Last resort: Sonnet only if both SLM AND Haiku fail
               console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
               result = await chat(
                 session.history, trimmedMsg, session.context,
@@ -433,11 +432,11 @@ router.post('/', async (req, res) => {
           );
           tEvent.generation.mode = 'engine';
         } else {
-          // ── SLM disabled + not engine — use Haiku, not Sonnet ──
+          // ── SLM disabled or scope prevented SLM — use Haiku ──
           try {
             result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
-            tEvent.generation.mode = 'haiku_intake';
-            console.log(`[FALLBACK] SLM disabled — using Haiku`);
+            tEvent.generation.mode = 'haiku_standard';
+            console.log(`[FALLBACK] No SLM route — using Haiku (slmAvail=${isSLMAvailable()} scope=${scopeResult.label})`);
           } catch (err) {
             // True last resort
             result = await chat(
