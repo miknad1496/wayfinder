@@ -329,7 +329,7 @@ router.post('/', async (req, res) => {
     const useWelcomeDesk = !engineAllowed && isSLMAvailable() && !slmIsWarm
       && scopeResult.label !== 'out_of_scope';
 
-    console.log(`[ROUTING] first=${isFirstMessage} slmWarm=${slmIsWarm} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk}`);
+    console.log(`[ROUTING] first=${isFirstMessage} slmState=${slmWarmStatus.state} slmWarm=${slmIsWarm} useSLM=${useSLM} welcomeDesk=${useWelcomeDesk} engine=${engineAllowed} scope=${scopeResult.label} lastWarmAt=${slmWarmStatus.lastWarmAt} history=${session.history.length}`);
 
     const tGen = performance.now();
     const GENERATION_TIMEOUT = 120000; // 120 seconds max for generation
@@ -355,18 +355,12 @@ router.post('/', async (req, res) => {
             tEvent.generation.mode = 'haiku_intake';
             console.log(`[WELCOME-DESK] Response OK (SLM state: ${slmWarmStatus.state}, history: ${session.history.length})`);
           } catch (haikuError) {
-            // Haiku failed — fall back to standard Claude
-            console.error(`[WELCOME-DESK→CLAUDE] Error: ${haikuError.message} — falling back to Sonnet`);
-            result = await chat(
-              session.history,
-              trimmedMsg,
-              session.context,
-              { useEngine: false, scopeLabel: scopeResult.label }
-            );
-            tEvent.generation.mode = 'standard';
+            // Welcome Desk (Haiku) failed — show error, do NOT escalate to Sonnet
+            console.error(`[WELCOME-DESK] Haiku error: ${haikuError.message}`);
+            throw new Error('Our welcome desk is momentarily unavailable. Please try again.');
           }
         } else if (useSLM) {
-          // ── Tier 1: SLM (fast path) ──
+          // ── SLM Advisor (warm, in-scope) ──
           try {
             const slmResult = await chatSLM(
               session.history,
@@ -380,44 +374,72 @@ router.post('/', async (req, res) => {
               result = slmResult;
               tEvent.generation.mode = 'slm';
               tEvent.generation.domain = slmResult.domain;
-              console.log(`[TIER-1] SLM response OK (${slmResult.domain}, ${slmResult.latency}ms)`);
+              console.log(`[ADVISOR] SLM response OK (${slmResult.domain}, ${slmResult.latency}ms)`);
             } else {
-              // ── Quality gate failed: escalate to Claude ──
-              console.log(`[TIER-1→2] SLM quality gate failed: ${slmResult.qualityCheck.reason} — escalating to Claude`);
+              // ── Quality gate failed: fall back to Haiku, NOT Sonnet ──
+              console.log(`[ADVISOR→DESK] SLM quality gate failed: ${slmResult.qualityCheck.reason} — falling back to Haiku`);
               tEvent.generation.slm_escalation = slmResult.qualityCheck.reason;
               escalatedFromSLM = true;
 
-              result = await chat(
-                session.history,
-                trimmedMsg,
-                session.context,
-                { useEngine: false, scopeLabel: scopeResult.label }
-              );
-              tEvent.generation.mode = 'claude_escalated';
+              try {
+                result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
+                tEvent.generation.mode = 'haiku_intake';
+              } catch (haikuErr) {
+                // Last resort: Sonnet only if both SLM AND Haiku fail
+                console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
+                result = await chat(
+                  session.history, trimmedMsg, session.context,
+                  { useEngine: false, scopeLabel: scopeResult.label }
+                );
+                tEvent.generation.mode = 'claude_escalated';
+              }
             }
           } catch (slmError) {
-            // SLM errored out — fall back to Claude gracefully
-            console.error(`[TIER-1→2] SLM error: ${slmError.message} — falling back to Claude`);
+            // SLM errored — fall back to Haiku, NOT Sonnet
+            console.error(`[ADVISOR→DESK] SLM error: ${slmError.message} — falling back to Haiku`);
             tEvent.generation.slm_error = slmError.message;
             escalatedFromSLM = true;
 
-            result = await chat(
-              session.history,
-              trimmedMsg,
-              session.context,
-              { useEngine: false, scopeLabel: scopeResult.label }
-            );
-            tEvent.generation.mode = 'claude_fallback';
+            // Mark SLM as potentially cold again (it errored)
+            console.log(`[ADVISOR] SLM may be cold — re-warming in background`);
+            warmUpSLM().catch(() => {});
+
+            try {
+              result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
+              tEvent.generation.mode = 'haiku_intake';
+            } catch (haikuErr) {
+              // Last resort: Sonnet only if both SLM AND Haiku fail
+              console.error(`[ADVISOR→DESK→CLAUDE] Both SLM and Haiku failed — last resort Sonnet`);
+              result = await chat(
+                session.history, trimmedMsg, session.context,
+                { useEngine: false, scopeLabel: scopeResult.label }
+              );
+              tEvent.generation.mode = 'claude_fallback';
+            }
           }
-        } else {
-          // ── Tier 3: Claude (engine mode, adjacent, or SLM disabled) ──
+        } else if (engineAllowed) {
+          // ── Engine Mode: Claude Opus/Sonnet (premium, user-requested) ──
           result = await chat(
             session.history,
             trimmedMsg,
             session.context,
-            { useEngine: engineAllowed, scopeLabel: scopeResult.label }
+            { useEngine: true, scopeLabel: scopeResult.label }
           );
-          tEvent.generation.mode = engineAllowed ? 'engine' : 'standard';
+          tEvent.generation.mode = 'engine';
+        } else {
+          // ── SLM disabled + not engine — use Haiku, not Sonnet ──
+          try {
+            result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
+            tEvent.generation.mode = 'haiku_intake';
+            console.log(`[FALLBACK] SLM disabled — using Haiku`);
+          } catch (err) {
+            // True last resort
+            result = await chat(
+              session.history, trimmedMsg, session.context,
+              { useEngine: false, scopeLabel: scopeResult.label }
+            );
+            tEvent.generation.mode = 'standard';
+          }
         }
       })();
 
