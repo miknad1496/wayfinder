@@ -802,9 +802,12 @@ export function shouldUseSLM(options = {}) {
   // In-scope: SLM handles it
   if (scope === 'in_scope') return true;
 
-  // Adjacent: SLM handles high-confidence adjacent, Claude handles ambiguous
-  if (scope === 'adjacent' && confidence >= 0.7) return true;
+  // Adjacent: SLM handles ALL adjacent queries. The quality gate will
+  // catch bad responses. Previously gated on confidence >= 0.7, but this
+  // was blocking legitimate parent/career questions that the scope
+  // classifier marked as adjacent with low confidence.
+  if (scope === 'adjacent') return true;
 
-  // Default: escalate to Claude
-  return false;
+  // Default: try SLM anyway (only out_of_scope is blocked above)
+  return true;
 }
