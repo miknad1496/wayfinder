@@ -136,6 +136,37 @@ function getClient() {
   return client;
 }
 
+/**
+ * Sanitize conversation history for the Anthropic API.
+ * Ensures: no empty messages, no consecutive same-role, starts with user, content is string.
+ */
+function sanitizeHistory(history) {
+  if (!Array.isArray(history) || history.length === 0) return [];
+
+  // Filter out messages with empty/missing content
+  const clean = history
+    .filter(m => m && m.role && m.content && typeof m.content === 'string' && m.content.trim().length > 0)
+    .map(m => ({ role: m.role, content: m.content.trim() }));
+
+  // Remove consecutive same-role messages (keep last of each run)
+  const deduped = [];
+  for (const msg of clean) {
+    if (deduped.length > 0 && deduped[deduped.length - 1].role === msg.role) {
+      // Same role — merge content instead of dropping
+      deduped[deduped.length - 1].content += '\n\n' + msg.content;
+    } else {
+      deduped.push({ ...msg });
+    }
+  }
+
+  // Must start with 'user' role
+  while (deduped.length > 0 && deduped[0].role !== 'user') {
+    deduped.shift();
+  }
+
+  return deduped;
+}
+
 async function loadSystemPrompt() {
   if (!systemPromptCache) {
     const promptPath = join(__dirname, '..', '..', 'prompts', 'wayfinder-system-prompt.txt');
@@ -401,12 +432,12 @@ Any response that contains analysis, predictions, advice, opinions about the use
         model,
         max_tokens: 300,
         system: systemPrompt,
-        messages: [
+        messages: sanitizeHistory([
           // Only pass last 2 messages for minimal context — more history
           // causes the model to break character under conversational pressure
           ...conversationHistory.slice(-2),
           { role: 'user', content: userMessage },
-        ],
+        ]),
       });
 
       const text = response.content?.[0]?.text || '';
@@ -472,10 +503,10 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
     model: haikuModel,
     max_tokens: 1024,
     system: systemPrompt,
-    messages: [
+    messages: sanitizeHistory([
       ...conversationHistory.slice(-10),
       { role: 'user', content: userMessage },
-    ],
+    ]),
   });
 
   const text = response.content?.[0]?.text || '';
@@ -600,11 +631,11 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   };
   systemPrompt += phaseGuidance[phase.phase] || '';
 
-  // Build messages array
-  const messages = [
+  // Build messages array — sanitize to prevent API 400s from malformed history
+  const messages = sanitizeHistory([
     ...conversationHistory,
     { role: 'user', content: userMessage }
-  ];
+  ]);
 
   // Token budget scales with conversation phase — early = lean, deep = generous
   const maxTokens = useEngine ? phase.suggestedMaxTokens : Math.min(phase.suggestedMaxTokens, 1500);
