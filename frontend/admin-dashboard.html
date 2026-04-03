@@ -101,6 +101,18 @@
             background: rgba(251, 191, 36, 0.3);
         }
 
+        button.warm-btn {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 6px 14px;
+            font-size: 12px;
+        }
+
+        button.warm-btn:hover {
+            background: rgba(16, 185, 129, 0.3);
+        }
+
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -178,6 +190,12 @@
             gap: 20px;
         }
 
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
         .stat-row {
             display: flex;
             justify-content: space-between;
@@ -203,14 +221,17 @@
 
         .tag {
             display: inline-block;
-            background: rgba(251, 191, 36, 0.1);
-            color: #fbbf24;
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             margin-right: 8px;
             margin-bottom: 8px;
+        }
+
+        .tag-gold {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
         }
 
         .chart-container {
@@ -257,7 +278,6 @@
 
         .bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, #fbbf24, #f59e0b);
             border-radius: 4px;
             transition: width 0.5s ease;
             display: flex;
@@ -269,10 +289,17 @@
             color: #0f172a;
         }
 
+        .bar-fill.gold { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+        .bar-fill.green { background: linear-gradient(90deg, #10b981, #059669); }
+        .bar-fill.blue { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+        .bar-fill.purple { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+        .bar-fill.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
+        .bar-fill.cyan { background: linear-gradient(90deg, #06b6d4, #0891b2); }
+
         .bar-value {
             font-size: 13px;
             color: #94a3b8;
-            min-width: 50px;
+            min-width: 80px;
             text-align: right;
         }
 
@@ -316,6 +343,59 @@
             display: inline-block;
         }
 
+        /* Status pill for SLM state */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-pill.warm {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .status-pill.cold {
+            background: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .status-pill.warming {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .status-pill.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .status-pill.unavailable {
+            background: rgba(100, 116, 139, 0.15);
+            color: #64748b;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+        }
+
+        .status-pill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-pill.warm .status-pill-dot { background: #10b981; }
+        .status-pill.cold .status-pill-dot { background: #94a3b8; }
+        .status-pill.warming .status-pill-dot { background: #fbbf24; animation: pulse 1s infinite; }
+        .status-pill.error .status-pill-dot { background: #ef4444; }
+        .status-pill.unavailable .status-pill-dot { background: #64748b; }
+
         .loading {
             text-align: center;
             padding: 40px;
@@ -352,6 +432,12 @@
             margin-top: 20px;
         }
 
+        .mini-stat {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
         @media (max-width: 768px) {
             .dashboard-grid {
                 grid-template-columns: 1fr;
@@ -385,7 +471,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>⚡ Wayfinder Admin Dashboard</h1>
+            <h1>Wayfinder Admin Dashboard</h1>
             <div class="header-controls">
                 <div class="status-indicator">
                     <div class="status-dot"></div>
@@ -404,29 +490,105 @@
         </div>
 
         <div id="dashboardContent" style="display: none;">
+
             <!-- Overview Section -->
             <section class="section">
                 <h2 class="section-title">Overview</h2>
                 <div class="dashboard-grid">
                     <div class="card">
                         <div class="card-title">Total Users</div>
-                        <div class="card-value" id="totalUsers">—</div>
+                        <div class="card-value" id="totalUsers">-</div>
                         <div class="card-subtitle">Registered accounts</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Active Today</div>
-                        <div class="card-value" id="activeToday">—</div>
+                        <div class="card-value" id="activeToday">-</div>
                         <div class="card-subtitle">Users with activity</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Total Sessions</div>
-                        <div class="card-value" id="totalSessions">—</div>
+                        <div class="card-value" id="totalSessions">-</div>
                         <div class="card-subtitle">Chat sessions created</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Total Messages</div>
-                        <div class="card-value" id="totalMessages">—</div>
+                        <div class="card-value" id="totalMessages">-</div>
                         <div class="card-subtitle">Messages sent</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLM Advisor & Routing Section -->
+            <section class="section">
+                <h2 class="section-title">SLM Advisor & Routing</h2>
+
+                <div class="grid-2">
+                    <!-- SLM Status Card -->
+                    <div class="chart-container">
+                        <div class="chart-title">SLM Advisor Status</div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                            <span id="slmStatusPill" class="status-pill cold">
+                                <span class="status-pill-dot"></span>
+                                <span id="slmStateText">Loading...</span>
+                            </span>
+                            <button class="warm-btn" onclick="warmUpSLM()" id="warmupBtn">Warm Up</button>
+                        </div>
+                        <div class="bar-chart">
+                            <div class="stat-row">
+                                <span class="stat-label">Warm Latency</span>
+                                <span class="stat-value" id="slmLatency">-</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Last Warm At</span>
+                                <span class="stat-value" id="slmLastWarm" style="font-size: 13px;">-</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Available</span>
+                                <span class="stat-value" id="slmAvailable">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Routing Breakdown -->
+                    <div class="chart-container">
+                        <div class="chart-title">Routing Tier Breakdown <span style="font-size: 12px; color: #64748b; font-weight: 400;" id="routingSince">(since deploy)</span></div>
+                        <div class="bar-chart" id="routingBars">
+                            <div style="text-align: center; color: #64748b; padding: 20px;">No routing data yet</div>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <div class="stat-row">
+                                <span class="stat-label">Total Requests</span>
+                                <span class="stat-value" id="routingTotal">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conversation Memory Section -->
+            <section class="section">
+                <h2 class="section-title">Conversation Memory & Learning</h2>
+
+                <div class="grid-4">
+                    <div class="card">
+                        <div class="card-title">Memory Entries</div>
+                        <div class="card-value" id="memoryEntries">-</div>
+                        <div class="card-subtitle">Q&A pairs for RAG</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Memory Files</div>
+                        <div class="card-value" id="memoryFiles">-</div>
+                        <div class="card-subtitle">Daily JSONL logs</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Training Pairs</div>
+                        <div class="card-value" id="trainingPairs">-</div>
+                        <div class="card-subtitle">SLM fine-tune data</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Training Files</div>
+                        <div class="card-value" id="trainingFiles">-</div>
+                        <div class="card-subtitle">Monthly JSONL batches</div>
                     </div>
                 </div>
             </section>
@@ -442,23 +604,23 @@
                             <div class="bar-item">
                                 <div class="bar-label">Free</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="freePlanBar" style="width: 0%"></div>
+                                    <div class="bar-fill gold" id="freePlanBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="freeCount">—</div>
+                                <div class="bar-value" id="freeCount">-</div>
                             </div>
                             <div class="bar-item">
                                 <div class="bar-label">Pro ($25/mo)</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="proPlanBar" style="width: 0%"></div>
+                                    <div class="bar-fill green" id="proPlanBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="proCount">—</div>
+                                <div class="bar-value" id="proCount">-</div>
                             </div>
                             <div class="bar-item">
                                 <div class="bar-label">Elite ($50/mo)</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="elitePlanBar" style="width: 0%"></div>
+                                    <div class="bar-fill purple" id="elitePlanBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="eliteCount">—</div>
+                                <div class="bar-value" id="eliteCount">-</div>
                             </div>
                         </div>
                     </div>
@@ -469,23 +631,23 @@
                             <div class="bar-item">
                                 <div class="bar-label">Today</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="activeTodayBar" style="width: 0%"></div>
+                                    <div class="bar-fill gold" id="activeTodayBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="activeTodayCount">—</div>
+                                <div class="bar-value" id="activeTodayCount">-</div>
                             </div>
                             <div class="bar-item">
                                 <div class="bar-label">This Week</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="activeWeekBar" style="width: 0%"></div>
+                                    <div class="bar-fill gold" id="activeWeekBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="activeWeekCount">—</div>
+                                <div class="bar-value" id="activeWeekCount">-</div>
                             </div>
                             <div class="bar-item">
                                 <div class="bar-label">This Month</div>
                                 <div class="bar" style="max-width: 400px;">
-                                    <div class="bar-fill" id="activeMonthBar" style="width: 0%"></div>
+                                    <div class="bar-fill gold" id="activeMonthBar" style="width: 0%"></div>
                                 </div>
-                                <div class="bar-value" id="activeMonthCount">—</div>
+                                <div class="bar-value" id="activeMonthCount">-</div>
                             </div>
                         </div>
                     </div>
@@ -519,17 +681,17 @@
                 <div class="grid-3">
                     <div class="card">
                         <div class="card-title">Engine Queries Today</div>
-                        <div class="card-value" id="engineQueries">—</div>
+                        <div class="card-value" id="engineQueries">-</div>
                         <div class="card-subtitle">Claude calls</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Tokens Used Today</div>
-                        <div class="card-value" id="tokensTodayValue">—</div>
+                        <div class="card-value" id="tokensTodayValue">-</div>
                         <div class="card-subtitle">API tokens</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Tokens Used This Month</div>
-                        <div class="card-value" id="tokensMonthValue">—</div>
+                        <div class="card-value" id="tokensMonthValue">-</div>
                         <div class="card-subtitle">API tokens</div>
                     </div>
                 </div>
@@ -539,23 +701,23 @@
                     <div class="bar-chart">
                         <div class="stat-row">
                             <span class="stat-label">Total Feedback Entries</span>
-                            <span class="stat-value" id="totalFeedback">—</span>
+                            <span class="stat-value" id="totalFeedback">-</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Feedback Today</span>
-                            <span class="stat-value" id="feedbackToday">—</span>
+                            <span class="stat-value" id="feedbackToday">-</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Positive Ratings</span>
-                            <span class="stat-value" id="positiveRatings">—</span>
+                            <span class="stat-value" id="positiveRatings">-</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Neutral Ratings</span>
-                            <span class="stat-value" id="neutralRatings">—</span>
+                            <span class="stat-value" id="neutralRatings">-</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Negative Ratings</span>
-                            <span class="stat-value" id="negativeRatings">—</span>
+                            <span class="stat-value" id="negativeRatings">-</span>
                         </div>
                     </div>
                 </div>
@@ -568,12 +730,12 @@
                 <div class="grid-2">
                     <div class="card">
                         <div class="card-title">Users with Stripe</div>
-                        <div class="card-value" id="stripeUsers">—</div>
+                        <div class="card-value" id="stripeUsers">-</div>
                         <div class="card-subtitle">Connected accounts</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Potential Monthly Revenue</div>
-                        <div class="card-value" style="color: #10b981;" id="potentialMRR">—</div>
+                        <div class="card-value" style="color: #10b981;" id="potentialMRR">-</div>
                         <div class="card-subtitle">Estimated MRR</div>
                     </div>
                 </div>
@@ -583,18 +745,18 @@
                     <div class="bar-chart">
                         <div class="stat-row">
                             <span class="stat-label">Pro Tier Users</span>
-                            <span class="stat-value" id="proTierCount">—</span>
+                            <span class="stat-value" id="proTierCount">-</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Elite Tier Users</span>
-                            <span class="stat-value" id="eliteTierCount">—</span>
+                            <span class="stat-value" id="eliteTierCount">-</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             <div class="last-updated">
-                Last updated: <span id="lastUpdated">—</span>
+                Last updated: <span id="lastUpdated">-</span>
                 <br>
                 Auto-refresh every 60 seconds
             </div>
@@ -602,10 +764,9 @@
     </div>
 
     <script>
-        // Admin authentication
+        // ─── Admin Auth ────────────────────────────────────────
         function ensureAdmin() {
             let adminSecret = sessionStorage.getItem('adminSecret');
-
             if (!adminSecret) {
                 adminSecret = prompt('Enter admin secret to access dashboard:');
                 if (!adminSecret) {
@@ -614,50 +775,68 @@
                 }
                 sessionStorage.setItem('adminSecret', adminSecret);
             }
-
             return adminSecret;
         }
 
-        async function fetchStats() {
-            const adminSecret = sessionStorage.getItem('adminSecret');
-
-            try {
-                const response = await fetch('/api/admin/stats', {
-                    headers: {
-                        'X-Admin-Secret': adminSecret
-                    }
-                });
-
-                if (response.status === 401 || response.status === 403) {
-                    sessionStorage.removeItem('adminSecret');
-                    ensureAdmin();
-                    return;
-                }
-
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-
-                const data = await response.json();
-                return data;
-            } catch (err) {
-                console.error('Error fetching stats:', err);
-                return null;
-            }
+        function adminHeaders() {
+            return { 'X-Admin-Secret': sessionStorage.getItem('adminSecret') || '' };
         }
 
+        // ─── API Fetch Helpers ─────────────────────────────────
+        async function fetchJSON(url) {
+            const res = await fetch(url, { headers: adminHeaders() });
+            if (res.status === 401 || res.status === 403) {
+                sessionStorage.removeItem('adminSecret');
+                ensureAdmin();
+                return null;
+            }
+            if (!res.ok) return null;
+            return res.json();
+        }
+
+        async function fetchStats() {
+            return fetchJSON('/api/admin/stats');
+        }
+
+        async function fetchRouting() {
+            return fetchJSON('/api/admin/routing-stats');
+        }
+
+        async function fetchMemory() {
+            return fetchJSON('/api/admin/memory-stats');
+        }
+
+        // ─── Formatting ───────────────────────────────────────
         function formatNumber(num) {
-            if (num === null || num === undefined) return '—';
+            if (num === null || num === undefined) return '-';
             if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
             if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
             return num.toLocaleString();
         }
 
-        function updateDashboard(data) {
-            if (!data) {
-                showError('Failed to load dashboard data');
-                return;
-            }
+        function timeAgo(isoStr) {
+            if (!isoStr) return '-';
+            const diff = Date.now() - new Date(isoStr).getTime();
+            const mins = Math.floor(diff / 60000);
+            if (mins < 1) return 'just now';
+            if (mins < 60) return mins + 'm ago';
+            const hrs = Math.floor(mins / 60);
+            if (hrs < 24) return hrs + 'h ago';
+            return Math.floor(hrs / 24) + 'd ago';
+        }
+
+        // ─── Routing Tier Config ──────────────────────────────
+        const tierConfig = {
+            haiku_intake:    { label: 'Welcome Desk (Haiku)', color: 'blue',   order: 1 },
+            slm:             { label: 'SLM Advisor',          color: 'green',  order: 2 },
+            standard:        { label: 'Haiku Standard',       color: 'cyan',   order: 3 },
+            claude_fallback: { label: 'Sonnet Fallback',      color: 'purple', order: 4 },
+            engine:          { label: 'Engine (Opus)',         color: 'gold',   order: 5 },
+        };
+
+        // ─── Update Dashboard ─────────────────────────────────
+        function updateStats(data) {
+            if (!data) return;
 
             // Overview
             document.getElementById('totalUsers').textContent = formatNumber(data.overview.totalUsers);
@@ -666,32 +845,26 @@
             document.getElementById('activeToday').textContent = formatNumber(data.users.activeToday);
 
             // Users by plan
-            const maxPlan = Math.max(data.users.byPlan.free, data.users.byPlan.pro, data.users.byPlan.elite);
+            const maxPlan = Math.max(data.users.byPlan.free, data.users.byPlan.pro, data.users.byPlan.elite, 1);
             document.getElementById('freeCount').textContent = data.users.byPlan.free;
             document.getElementById('proCount').textContent = data.users.byPlan.pro;
             document.getElementById('eliteCount').textContent = data.users.byPlan.elite;
-
-            if (maxPlan > 0) {
-                document.getElementById('freePlanBar').style.width = (data.users.byPlan.free / maxPlan * 100) + '%';
-                document.getElementById('proPlanBar').style.width = (data.users.byPlan.pro / maxPlan * 100) + '%';
-                document.getElementById('elitePlanBar').style.width = (data.users.byPlan.elite / maxPlan * 100) + '%';
-            }
+            document.getElementById('freePlanBar').style.width = (data.users.byPlan.free / maxPlan * 100) + '%';
+            document.getElementById('proPlanBar').style.width = (data.users.byPlan.pro / maxPlan * 100) + '%';
+            document.getElementById('elitePlanBar').style.width = (data.users.byPlan.elite / maxPlan * 100) + '%';
 
             // Active users
-            const maxActive = Math.max(data.users.activeToday, data.users.activeThisWeek, data.users.activeThisMonth);
+            const maxActive = Math.max(data.users.activeToday, data.users.activeThisWeek, data.users.activeThisMonth, 1);
             document.getElementById('activeTodayCount').textContent = data.users.activeToday;
             document.getElementById('activeWeekCount').textContent = data.users.activeThisWeek;
             document.getElementById('activeMonthCount').textContent = data.users.activeThisMonth;
-
-            if (maxActive > 0) {
-                document.getElementById('activeTodayBar').style.width = (data.users.activeToday / maxActive * 100) + '%';
-                document.getElementById('activeWeekBar').style.width = (data.users.activeThisWeek / maxActive * 100) + '%';
-                document.getElementById('activeMonthBar').style.width = (data.users.activeThisMonth / maxActive * 100) + '%';
-            }
+            document.getElementById('activeTodayBar').style.width = (data.users.activeToday / maxActive * 100) + '%';
+            document.getElementById('activeWeekBar').style.width = (data.users.activeThisWeek / maxActive * 100) + '%';
+            document.getElementById('activeMonthBar').style.width = (data.users.activeThisMonth / maxActive * 100) + '%';
 
             // Top users
             const topUsersHtml = data.users.topUsersByMessages.length > 0
-                ? data.users.topUsersByMessages.map((u, i) => `
+                ? data.users.topUsersByMessages.map(u => `
                     <tr>
                         <td><strong>${u.name || 'Unknown'}</strong></td>
                         <td>${u.email}</td>
@@ -717,28 +890,129 @@
             document.getElementById('eliteTierCount').textContent = formatNumber(data.revenue.eliteUsers);
             document.getElementById('potentialMRR').textContent = '$' + formatNumber(data.revenue.potentialMRR);
 
-            // Last updated
-            const lastUpdated = new Date(data.timestamp);
-            document.getElementById('lastUpdated').textContent = lastUpdated.toLocaleTimeString();
-
-            // Show dashboard, hide loading
-            document.getElementById('loadingContainer').style.display = 'none';
-            document.getElementById('dashboardContent').style.display = 'block';
-            document.getElementById('statusText').textContent = 'Live';
+            // Timestamp
+            document.getElementById('lastUpdated').textContent = new Date(data.timestamp).toLocaleTimeString();
         }
 
+        function updateRouting(data) {
+            if (!data) return;
+
+            // SLM Status
+            const slm = data.slm || {};
+            const state = slm.state || 'unavailable';
+            const pill = document.getElementById('slmStatusPill');
+            pill.className = 'status-pill ' + (state === 'warm' ? 'warm' : state === 'warming' ? 'warming' : state === 'error' ? 'error' : slm.available ? 'cold' : 'unavailable');
+            document.getElementById('slmStateText').textContent = slm.available ? state.toUpperCase() : 'UNAVAILABLE';
+            document.getElementById('slmLatency').textContent = slm.warmLatencyMs ? slm.warmLatencyMs + 'ms' : '-';
+            document.getElementById('slmLastWarm').textContent = slm.lastWarmAt ? timeAgo(slm.lastWarmAt) : 'Never';
+            document.getElementById('slmAvailable').textContent = slm.available ? 'Yes' : 'No';
+
+            // Routing bars
+            const routing = data.routing || {};
+            const breakdown = routing.breakdown || {};
+            document.getElementById('routingTotal').textContent = formatNumber(routing.total);
+
+            const entries = Object.entries(breakdown)
+                .sort((a, b) => {
+                    const oa = (tierConfig[a[0]] || {}).order || 99;
+                    const ob = (tierConfig[b[0]] || {}).order || 99;
+                    return oa - ob;
+                });
+
+            if (entries.length === 0) {
+                document.getElementById('routingBars').innerHTML = '<div style="text-align: center; color: #64748b; padding: 20px;">No routing data yet — data accumulates after deploy</div>';
+                return;
+            }
+
+            const maxCount = Math.max(...entries.map(([, v]) => v.count), 1);
+            const barsHtml = entries.map(([mode, info]) => {
+                const cfg = tierConfig[mode] || { label: mode, color: 'gold', order: 99 };
+                const pct = info.pct || 0;
+                const width = Math.max((info.count / maxCount) * 100, 2);
+                return `
+                    <div class="bar-item">
+                        <div class="bar-label">${cfg.label}</div>
+                        <div class="bar" style="max-width: 400px;">
+                            <div class="bar-fill ${cfg.color}" style="width: ${width}%"></div>
+                        </div>
+                        <div class="bar-value">${info.count} (${pct}%)</div>
+                    </div>
+                `;
+            }).join('');
+            document.getElementById('routingBars').innerHTML = barsHtml;
+        }
+
+        function updateMemory(data) {
+            if (!data) return;
+            document.getElementById('memoryEntries').textContent = formatNumber(data.memory?.entries || 0);
+            document.getElementById('memoryFiles').textContent = formatNumber(data.memory?.files || 0);
+            document.getElementById('trainingPairs').textContent = formatNumber(data.training?.pairs || 0);
+            document.getElementById('trainingFiles').textContent = formatNumber(data.training?.files || 0);
+        }
+
+        // ─── SLM Warm-Up Button ───────────────────────────────
+        async function warmUpSLM() {
+            const btn = document.getElementById('warmupBtn');
+            btn.textContent = 'Warming...';
+            btn.disabled = true;
+            try {
+                const res = await fetch('/api/admin/slm-warmup', {
+                    method: 'POST',
+                    headers: adminHeaders()
+                });
+                const data = await res.json();
+                if (data.success) {
+                    btn.textContent = 'Warm! (' + data.latencyMs + 'ms)';
+                    setTimeout(() => refreshRouting(), 1000);
+                } else {
+                    btn.textContent = 'Failed';
+                }
+            } catch (err) {
+                btn.textContent = 'Error';
+            }
+            setTimeout(() => {
+                btn.textContent = 'Warm Up';
+                btn.disabled = false;
+            }, 5000);
+        }
+
+        // ─── Error Handling ───────────────────────────────────
         function showError(message) {
-            const errorContainer = document.getElementById('errorContainer');
-            errorContainer.innerHTML = `<div class="error">${message}</div>`;
+            document.getElementById('errorContainer').innerHTML = `<div class="error">${message}</div>`;
             document.getElementById('loadingContainer').style.display = 'none';
             document.getElementById('dashboardContent').style.display = 'block';
+        }
+
+        // ─── Refresh Logic ────────────────────────────────────
+        async function refreshRouting() {
+            const [routing, memory] = await Promise.all([fetchRouting(), fetchMemory()]);
+            updateRouting(routing);
+            updateMemory(memory);
         }
 
         async function refreshData() {
             document.getElementById('statusText').textContent = 'Refreshing...';
-            const data = await fetchStats();
-            updateDashboard(data);
-            document.getElementById('statusText').textContent = 'Live';
+            try {
+                const [stats, routing, memory] = await Promise.all([
+                    fetchStats(), fetchRouting(), fetchMemory()
+                ]);
+
+                if (!stats) {
+                    showError('Failed to load dashboard data. Check your admin secret.');
+                    return;
+                }
+
+                updateStats(stats);
+                updateRouting(routing);
+                updateMemory(memory);
+
+                document.getElementById('loadingContainer').style.display = 'none';
+                document.getElementById('dashboardContent').style.display = 'block';
+                document.getElementById('statusText').textContent = 'Live';
+            } catch (err) {
+                console.error('Dashboard refresh error:', err);
+                showError('Error loading data: ' + err.message);
+            }
         }
 
         function logout() {
@@ -746,11 +1020,10 @@
             window.location.href = '/';
         }
 
-        // Initialize
+        // ─── Initialize ───────────────────────────────────────
         (async () => {
             ensureAdmin();
             await refreshData();
-
             // Auto-refresh every 60 seconds
             setInterval(refreshData, 60000);
         })();

@@ -5,6 +5,7 @@ import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
 import { getScheduleStatus, forceRunScraper } from '../services/scraper-scheduler.js';
 import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../services/slm.js';
 import { getMemoryStats } from '../services/conversation-memory.js';
+import { getRoutingStats } from '../services/telemetry.js';
 
 const router = Router();
 
@@ -373,6 +374,27 @@ router.get('/memory-stats', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ error: 'Failed to load memory stats' });
+  }
+});
+
+// GET /api/admin/routing-stats - Get routing tier breakdown since last deploy
+router.get('/routing-stats', (req, res) => {
+  try {
+    const routing = getRoutingStats();
+    const slm = getSLMWarmStatus();
+    res.json({
+      success: true,
+      routing,
+      slm: {
+        state: slm.state,
+        available: slm.available,
+        warmLatencyMs: slm.warmLatencyMs,
+        lastWarmAt: slm.lastWarmAt || null,
+        idleTimeoutMs: slm.idleTimeoutMs || null,
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load routing stats' });
   }
 });
 

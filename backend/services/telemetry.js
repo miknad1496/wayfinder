@@ -36,6 +36,34 @@ const LOG_FILE = join(LOG_DIR, 'telemetry.jsonl');
 
 let dirEnsured = false;
 
+// ─── In-Memory Routing Counters (survives across requests, resets on deploy) ──
+const routingCounters = {
+  total: 0,
+  byMode: {},          // e.g. { haiku_intake: 12, slm: 45, engine: 3, standard: 2 }
+  byOutcome: {},       // e.g. { 200: 55, 429: 3, 500: 1 }
+  lastReset: new Date().toISOString(),
+};
+
+/**
+ * Get snapshot of in-memory routing stats (non-destructive).
+ */
+export function getRoutingStats() {
+  const total = routingCounters.total || 1; // avoid /0
+  const breakdown = {};
+  for (const [mode, count] of Object.entries(routingCounters.byMode)) {
+    breakdown[mode] = {
+      count,
+      pct: Math.round((count / total) * 1000) / 10, // e.g. 45.3
+    };
+  }
+  return {
+    total: routingCounters.total,
+    breakdown,
+    outcomes: { ...routingCounters.byOutcome },
+    since: routingCounters.lastReset,
+  };
+}
+
 /**
  * Create a blank telemetry event with all fields initialized.
  * Caller fills in fields as the request progresses through the pipeline.
@@ -111,6 +139,15 @@ export function createTelemetryEvent(sessionId = null, userId = null) {
  * Non-blocking — fire and forget. Errors go to stderr, never interrupt the request.
  */
 export async function logTelemetry(event) {
+  // ── Update in-memory routing counters ──
+  try {
+    routingCounters.total++;
+    const mode = event.generation?.mode || 'unknown';
+    routingCounters.byMode[mode] = (routingCounters.byMode[mode] || 0) + 1;
+    const status = String(event.outcome?.http_status || 200);
+    routingCounters.byOutcome[status] = (routingCounters.byOutcome[status] || 0) + 1;
+  } catch { /* counter updates should never fail */ }
+
   try {
     // Always emit a compact log line to stdout for Render's log drain
     const summary = {
