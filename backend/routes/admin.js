@@ -93,6 +93,19 @@ router.get('/slm-status', (req, res) => {
   });
 });
 
+// POST /api/admin/slm-warmup - Manually trigger SLM warm-up and return result
+router.post('/slm-warmup', async (req, res) => {
+  try {
+    const { warmUpSLM } = await import('../services/slm.js');
+    console.log('[ADMIN] Manual SLM warm-up triggered');
+    const result = await warmUpSLM();
+    const warmStatus = getSLMWarmStatus();
+    res.json({ ...result, warmStatus });
+  } catch (err) {
+    res.json({ warmed: false, error: err.message });
+  }
+});
+
 // POST /api/admin/reload-slm-prompt - Reload SLM system prompt
 router.post('/reload-slm-prompt', (req, res) => {
   invalidateSLMPromptCache();
