@@ -47,6 +47,10 @@ const engineCountEl = $('engineCount');
 // Initialize
 // ========================
 document.addEventListener('DOMContentLoaded', () => {
+  // Collapse sidebar on mobile by default
+  if (window.innerWidth <= 768 && sidebar) {
+    sidebar.classList.add('collapsed');
+  }
   setupChatListeners();
   setupSidebarListeners();
   setupAuthListeners();
@@ -137,8 +141,26 @@ function setupWelcomeChips() {
 // Sidebar
 // ========================
 function setupSidebarListeners() {
-  $('sidebarClose').addEventListener('click', () => sidebar.classList.add('collapsed'));
-  $('sidebarOpen').addEventListener('click', () => sidebar.classList.remove('collapsed'));
+  // Create mobile backdrop overlay
+  const backdrop = document.createElement('div');
+  backdrop.className = 'sidebar-backdrop';
+  document.getElementById('app').appendChild(backdrop);
+  backdrop.addEventListener('click', () => sidebar.classList.add('collapsed'));
+
+  // Sync backdrop visibility with sidebar state
+  const syncBackdrop = () => {
+    if (window.innerWidth <= 768 && !sidebar.classList.contains('collapsed')) {
+      backdrop.classList.add('visible');
+    } else {
+      backdrop.classList.remove('visible');
+    }
+  };
+
+  $('sidebarClose').addEventListener('click', () => { sidebar.classList.add('collapsed'); syncBackdrop(); });
+  $('sidebarOpen').addEventListener('click', () => { sidebar.classList.remove('collapsed'); syncBackdrop(); });
+
+  // Also sync on resize
+  window.addEventListener('resize', syncBackdrop);
   $('newChatBtn').addEventListener('click', startNewChat);
 
   // Search
@@ -1979,7 +2001,11 @@ function capitalize(str) {
 }
 
 function closeSidebarOnMobile() {
-  if (window.innerWidth <= 768) sidebar.classList.add('collapsed');
+  if (window.innerWidth <= 768) {
+    sidebar.classList.add('collapsed');
+    const bd = document.querySelector('.sidebar-backdrop');
+    if (bd) bd.classList.remove('visible');
+  }
 }
 
 function debounce(fn, delay) {

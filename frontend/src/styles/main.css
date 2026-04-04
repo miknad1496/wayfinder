@@ -1177,32 +1177,62 @@ html, body {
 /* Prevent horizontal overflow globally */
 html, body { overflow-x: hidden; }
 
+/* Mobile sidebar backdrop */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 199;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.sidebar-backdrop.visible {
+  display: block;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
-  /* Sidebar as overlay */
+  /* Sidebar as overlay — collapsed by default on mobile */
   .sidebar {
     position: fixed;
     top: 0; left: 0; bottom: 0;
     z-index: 200;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 0 24px rgba(0,0,0,0.3);
     width: 280px;
+    transform: translateX(0);
   }
-  .sidebar.collapsed { transform: translateX(-100%); width: 280px; }
+  .sidebar.collapsed { transform: translateX(-100%); }
 
   /* Always show the open sidebar button on mobile */
   .main-wrapper .sidebar-toggle-btn { display: flex !important; }
+
+  /* Main wrapper takes full width on mobile (no sidebar offset) */
+  .main-wrapper { width: 100%; }
 
   /* Plans grid single column */
   .plans-grid { grid-template-columns: 1fr; }
   .modal-upgrade { max-width: 420px; }
 
   /* Welcome chips vertical */
-  .welcome-chips { flex-direction: column; align-items: center; }
+  .welcome-chips { flex-direction: column; align-items: stretch; padding: 0 8px; }
+  .welcome-chip { justify-content: center; }
+
+  /* Welcome path cards — full width on mobile */
+  .welcome-path-cards { flex-direction: column; align-items: stretch; gap: 12px; padding: 0 4px; }
+  .welcome-path-card { width: 100%; padding: 20px 16px; }
+  .welcome-path-card h3 { font-size: 16px; }
+  .welcome-path-card p { font-size: 12px; }
 
   /* Hide topbar title on small screens */
   .topbar-brand .topbar-title { display: none; }
 
+  /* Topbar — tighter on mobile */
+  .topbar { padding: 8px 12px; min-height: 44px; }
+
   /* Messages — full width, less padding */
-  .messages { padding: 12px 8px; }
+  .messages { padding: 12px 10px; }
   .message { margin-bottom: 16px; }
 
   /* Message body — reduce left padding */
@@ -1228,9 +1258,9 @@ html, body { overflow-x: hidden; }
     overflow-x: auto;
   }
 
-  /* Input area */
-  .input-area { padding: 6px 10px 12px; }
-  .input-wrapper { padding: 8px 10px; }
+  /* Input area — snug to bottom */
+  .input-area { padding: 6px 10px 10px; }
+  .input-wrapper { padding: 8px 10px; border-radius: 12px; }
   .engine-toggle-row { flex-wrap: wrap; gap: 6px; }
   .engine-hint { display: none; }
 
@@ -1239,11 +1269,13 @@ html, body { overflow-x: hidden; }
   .modal-settings { max-width: calc(100vw - 16px); }
   .modal-upgrade { max-width: calc(100vw - 16px); padding: 24px 16px; }
 
-  /* Welcome screen */
-  .welcome-screen { padding: 24px 16px; }
+  /* Welcome screen — tighter padding */
+  .welcome-screen { padding: 20px 16px; }
+  .welcome-content { max-width: 100%; }
   .welcome-greeting { font-size: 24px; }
-  .welcome-sub { font-size: 14px; margin-bottom: 24px; }
-  .welcome-logo { width: 48px; height: 48px; }
+  .welcome-sub { font-size: 14px; margin-bottom: 20px; }
+  .welcome-logo { width: 44px; height: 44px; margin-bottom: 14px; }
+  .welcome-path-select { margin-top: 16px; }
 
   /* Consent banner stacks */
   .consent-banner {
@@ -1253,24 +1285,40 @@ html, body { overflow-x: hidden; }
     text-align: center;
   }
 
+  /* Footer note */
+  .footer-note { font-size: 10px; }
+  .input-footer { margin-top: 4px; }
+
   /* Settings toggles */
   .settings-toggle-row { gap: 10px; }
 }
 
 @media (max-width: 480px) {
   .welcome-greeting { font-size: 20px; }
-  .welcome-sub { font-size: 13px; }
-  .welcome-chip { font-size: 13px; padding: 8px 14px; }
+  .welcome-sub { font-size: 13px; margin-bottom: 16px; }
+  .welcome-chip { font-size: 13px; padding: 10px 14px; }
 
-  .topbar { padding: 6px 10px; }
+  .topbar { padding: 6px 10px; min-height: 40px; }
   .topbar-btn { padding: 5px 10px; font-size: 12px; }
+  .topbar-logo { width: 24px; height: 24px; }
 
   /* Even tighter message layout */
+  .messages { padding: 10px 8px; }
   .message-body { font-size: 14px; line-height: 1.6; }
   .message-body h3 { font-size: 15px; }
   .message-body h4 { font-size: 14px; }
   .message-body table { font-size: 12px; }
   .message-body th, .message-body td { padding: 4px 6px; }
+
+  /* Path cards tighter */
+  .welcome-path-card { padding: 16px 14px; }
+  .welcome-path-card h3 { font-size: 15px; }
+  .path-card-icon svg { width: 22px; height: 22px; }
+
+  /* Input snug */
+  .input-area { padding: 4px 8px 8px; }
+  .input-wrapper { padding: 8px 10px; }
+  #userInput { font-size: 14px; }
 
   /* Plan cards */
   .plan-card { padding: 18px 14px; }
@@ -1278,7 +1326,8 @@ html, body { overflow-x: hidden; }
   .plan-features li { font-size: 12px; }
 
   /* Footer note smaller */
-  .footer-note { font-size: 10px; }
+  .footer-note { font-size: 9px; }
+  .char-count { font-size: 10px; }
 }
 
 /* ========================
@@ -2416,8 +2465,11 @@ html, body { overflow-x: hidden; }
 
 /* Safe area support for notch phones */
 @supports (padding: env(safe-area-inset-bottom)) {
+  .topbar {
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
   .input-area {
-    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
   }
   .sidebar {
     padding-top: env(safe-area-inset-top);
