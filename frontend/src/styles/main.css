@@ -466,10 +466,11 @@ html, body {
 .messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 .message {
-  max-width: var(--max-width);
+  max-width: min(var(--max-width), 100%);
   margin: 0 auto 24px;
   width: 100%;
   animation: msgFadeIn 0.3s ease-out;
+  box-sizing: border-box;
 }
 @keyframes msgFadeIn {
   from { opacity: 0; transform: translateY(6px); }
@@ -671,10 +672,11 @@ html, body {
    ============================= */
 .input-area {
   padding: 8px 16px 16px;
-  max-width: calc(var(--max-width) + 32px);
+  max-width: min(calc(var(--max-width) + 32px), 100%);
   width: 100%;
   margin: 0 auto;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .engine-toggle-row {
@@ -1203,156 +1205,164 @@ html, body { overflow-x: hidden; }
 }
 
 @media (max-width: 768px) {
-  /* Global mobile fixes */
-  html, body { font-size: 14px; }
-  .chat-container, .welcome-screen, .main-wrapper { max-width: 100vw; overflow-x: hidden; }
+  /* === GLOBAL MOBILE RESET === */
+  html, body {
+    font-size: 14px;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  body > *, .app-layout, .chat-container, .welcome-screen, .main-wrapper {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
 
-  /* Sidebar as overlay — collapsed by default on mobile */
+  /* === SIDEBAR: fixed overlay, hidden by default === */
   .sidebar {
     position: fixed;
     top: 0; left: 0; bottom: 0;
     z-index: 200;
     box-shadow: 0 0 24px rgba(0,0,0,0.3);
-    width: 280px;
+    width: 260px;
     transform: translateX(0);
   }
-  .sidebar.collapsed { transform: translateX(-100%); }
-
-  /* Always show the open sidebar button on mobile */
+  .sidebar.collapsed { transform: translateX(-100%); box-shadow: none; }
   .main-wrapper .sidebar-toggle-btn { display: flex !important; }
+  .main-wrapper { width: 100% !important; margin-left: 0 !important; }
 
-  /* Main wrapper takes full width on mobile (no sidebar offset) */
-  .main-wrapper { width: 100%; }
+  /* === WELCOME SCREEN === */
+  .welcome-screen { padding: 16px 12px; }
+  .welcome-content { max-width: 100%; padding: 0; }
+  .welcome-greeting { font-size: 20px; }
+  .welcome-sub { font-size: 13px; margin-bottom: 16px; }
+  .welcome-logo { width: 36px; height: 36px; margin-bottom: 12px; }
+  .welcome-path-select { margin-top: 12px; }
 
-  /* Plans grid single column */
-  .plans-grid { grid-template-columns: 1fr; }
-  .modal-upgrade { max-width: 420px; }
+  /* Welcome chips — stack vertically */
+  .welcome-chips { flex-direction: column; align-items: stretch; padding: 0 4px; gap: 8px; }
+  .welcome-chip { justify-content: center; font-size: 13px; padding: 10px 14px; }
 
-  /* Welcome chips vertical */
-  .welcome-chips { flex-direction: column; align-items: stretch; padding: 0 8px; }
-  .welcome-chip { justify-content: center; }
+  /* Path cards — MUST stack vertically */
+  .welcome-path-cards {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px;
+    padding: 0 4px;
+  }
+  .welcome-path-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 14px 12px;
+    box-sizing: border-box;
+  }
+  .welcome-path-card h3 { font-size: 14px; }
+  .welcome-path-card p { font-size: 11px; line-height: 1.4; }
 
-  /* Welcome path cards — full width on mobile */
-  .welcome-path-cards { flex-direction: column; align-items: stretch; gap: 12px; padding: 0 4px; }
-  .welcome-path-card { width: 100%; padding: 16px 14px; }
-  .welcome-path-card h3 { font-size: 15px; }
-  .welcome-path-card p { font-size: 11px; }
-
-  /* Hide topbar title on small screens */
+  /* === TOPBAR === */
   .topbar-brand .topbar-title { display: none; }
+  .topbar { padding: max(6px, env(safe-area-inset-top)) 10px 6px 10px; min-height: 40px; }
+  .topbar-btn { padding: 5px 10px; font-size: 12px; }
+  .topbar-logo { width: 24px; height: 24px; }
 
-  /* Topbar — tighter on mobile */
-  .topbar { padding: max(6px, env(safe-area-inset-top)) 12px 8px 12px; min-height: 44px; }
-
-  /* Messages — full width, less padding */
-  .messages { padding: 10px 8px; }
-  .message { margin-bottom: 16px; }
-  .message-body { font-size: 14px; }
-  .message-avatar { width: 24px; height: 24px; font-size: 10px; }
-  .message-role { font-size: 12px; }
-
-  /* Message body — reduce left padding */
-  .message-body { padding-left: 0; }
+  /* === MESSAGES === */
+  .messages { padding: 8px 6px; }
+  .message { margin-bottom: 14px; max-width: 100% !important; }
+  .message-body { font-size: 14px; padding-left: 0; word-wrap: break-word; overflow-wrap: break-word; }
+  .message-avatar { width: 22px; height: 22px; font-size: 10px; }
+  .message-role { font-size: 11px; }
+  .message-header { gap: 6px; margin-bottom: 4px; }
   .message-actions { padding-left: 0; }
   .feedback-row { padding-left: 0; }
   .engine-badge { margin-left: 0; }
   .sources { padding-left: 0; }
   .typing-indicator { padding-left: 0; }
 
-  /* Tables scroll horizontally instead of overflowing */
+  /* Tables & code scroll horizontally */
   .message-body table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    max-width: 100%;
+    display: block; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    white-space: nowrap; max-width: calc(100vw - 32px);
   }
+  .message-body pre { max-width: calc(100vw - 32px); overflow-x: auto; }
 
-  /* Code blocks scroll too */
-  .message-body pre {
-    max-width: 100%;
-    overflow-x: auto;
+  /* === INPUT AREA — critical: must not overflow screen === */
+  .input-area {
+    padding: 4px 8px 8px;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-
-  /* Input area — snug to bottom */
-  .input-area { padding: 6px 8px 8px; }
-  .input-wrapper { padding: 6px 8px; border-radius: 12px; }
-  .engine-toggle-row { flex-wrap: wrap; gap: 6px; }
+  .input-wrapper {
+    padding: 6px 8px;
+    border-radius: 12px;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #userInput { font-size: 14px; }
+  .send-btn { width: 30px; height: 30px; flex-shrink: 0; }
+  .engine-toggle-row { flex-wrap: wrap; gap: 4px; }
+  .engine-toggle { padding: 4px 8px; font-size: 12px; }
   .engine-hint { display: none; }
+  .engine-count { font-size: 10px; }
+  .input-footer { margin-top: 2px; }
+  .footer-note { font-size: 9px; }
+  .char-count { font-size: 10px; }
+  .message-counter { font-size: 9px; }
 
-  /* Modals — almost full width on mobile */
-  .modal { padding: 24px 18px; margin: 8px; max-width: calc(100vw - 16px); }
+  /* === MODALS — full width === */
+  .modal { padding: 20px 14px; margin: 8px; max-width: calc(100vw - 16px); }
   .modal-settings { max-width: calc(100vw - 16px); }
-  .modal-upgrade { max-width: calc(100vw - 16px); padding: 24px 16px; }
-
-  /* Welcome screen — tighter padding */
-  .welcome-screen { padding: 20px 16px; }
-  .welcome-content { max-width: 100%; }
-  .welcome-greeting { font-size: 22px; }
-  .welcome-sub { font-size: 13px; margin-bottom: 20px; }
-  .welcome-logo { width: 36px; height: 36px; margin-bottom: 14px; }
-  .welcome-path-select { margin-top: 16px; }
-
-  /* Plan card styles for upgrade modal */
-  .plan-header h3 { font-size: 16px; }
-  .plan-price { font-size: 26px; }
+  .modal-upgrade { max-width: calc(100vw - 16px); padding: 20px 14px; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .plan-header h3 { font-size: 15px; }
+  .plan-price { font-size: 24px; }
   .plan-feature { font-size: 12px; }
+  .plan-card { padding: 16px 12px; }
 
   /* Consent banner stacks */
-  .consent-banner {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 16px;
-    text-align: center;
-  }
+  .consent-banner { flex-direction: column; gap: 8px; padding: 10px 12px; text-align: center; }
 
-  /* Footer note */
-  .footer-note { font-size: 10px; }
-  .input-footer { margin-top: 4px; }
-
-  /* Settings toggles */
-  .settings-toggle-row { gap: 10px; }
+  /* Settings */
+  .settings-toggle-row { gap: 8px; }
 }
 
 @media (max-width: 480px) {
-  .welcome-greeting { font-size: 18px; }
-  .welcome-sub { font-size: 12px; margin-bottom: 16px; }
-  .welcome-chip { font-size: 13px; padding: 10px 14px; }
+  .welcome-greeting { font-size: 17px; }
+  .welcome-sub { font-size: 12px; margin-bottom: 12px; }
+  .welcome-logo { width: 30px; height: 30px; margin-bottom: 10px; }
+  .welcome-chip { font-size: 12px; padding: 8px 12px; }
 
-  .topbar { padding: 6px 10px; min-height: 36px; }
-  .topbar-btn { padding: 5px 10px; font-size: 12px; }
-  .topbar-logo { width: 24px; height: 24px; }
+  .topbar { padding: 4px 8px; min-height: 36px; }
+  .topbar-btn { padding: 4px 8px; font-size: 11px; }
+  .topbar-logo { width: 22px; height: 22px; }
 
-  /* Even tighter message layout */
-  .messages { padding: 10px 8px; }
-  .message-body { font-size: 13px; line-height: 1.6; }
-  .message-body h3 { font-size: 14px; }
-  .message-body h4 { font-size: 13px; }
-  .message-body table { font-size: 12px; }
-  .message-body th, .message-body td { padding: 4px 6px; }
+  .messages { padding: 6px 4px; }
+  .message { margin-bottom: 10px; }
+  .message-body { font-size: 13px; line-height: 1.5; }
+  .message-body h3 { font-size: 13px; }
+  .message-body h4 { font-size: 12px; }
+  .message-body table { font-size: 11px; }
+  .message-body th, .message-body td { padding: 3px 5px; }
 
-  /* Path cards tighter */
-  .welcome-path-card { padding: 14px 12px; }
-  .welcome-path-card h3 { font-size: 15px; }
-  .path-card-icon svg { width: 22px; height: 22px; }
+  .welcome-path-card { padding: 12px 10px; }
+  .welcome-path-card h3 { font-size: 13px; }
+  .welcome-path-card p { font-size: 10px; }
+  .path-card-icon svg { width: 20px; height: 20px; }
 
-  /* Message avatar and role */
-  .message-avatar { width: 20px; height: 20px; font-size: 10px; }
-  .message-role { font-size: 11px; }
+  .message-avatar { width: 18px; height: 18px; font-size: 9px; }
+  .message-role { font-size: 10px; }
 
-  /* Input snug */
-  .input-area { padding: 4px 8px 8px; }
-  .input-wrapper { padding: 8px 10px; }
-  #userInput { font-size: 14px; }
+  .input-area { padding: 3px 6px 6px; }
+  .input-wrapper { padding: 5px 7px; }
+  #userInput { font-size: 13px; }
+  .send-btn { width: 28px; height: 28px; }
 
-  /* Plan cards */
-  .plan-card { padding: 18px 14px; }
-  .plan-price { font-size: 26px; }
-  .plan-features li { font-size: 12px; }
+  .plan-card { padding: 14px 10px; }
+  .plan-price { font-size: 22px; }
+  .plan-features li { font-size: 11px; }
 
-  /* Footer note smaller */
-  .footer-note { font-size: 9px; }
-  .char-count { font-size: 10px; }
+  .footer-note { font-size: 8px; }
+  .char-count { font-size: 9px; }
+  .message-counter { font-size: 8px; }
 }
 
 /* ========================
