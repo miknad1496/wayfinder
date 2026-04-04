@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 
 const API_BASE = 'https://api.data.gov/ed/collegescorecard/v1';
 // Free API key from https://api.data.gov/signup/ — set in .env as SCORECARD_API_KEY
-const API_KEY = process.env.SCORECARD_API_KEY || 'DEMO_KEY';
+const API_KEY = process.env.SCORECARD_API_KEY || 'rpX87ajbdbBkmTijLdkggZW5sVpT2rTUHGh7k0AU';
 
 // All fields we WANT from the API — the validator will auto-remove any that don't exist
 const ALL_DESIRED_FIELDS = [
