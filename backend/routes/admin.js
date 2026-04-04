@@ -159,6 +159,7 @@ router.get('/stats', async (req, res) => {
     const DATA_DIR = join(__dirname, '..', 'data');
     const USERS_DIR = join(DATA_DIR, 'users');
     const SESSIONS_DIR = join(DATA_DIR, 'sessions');
+    const INVITES_DIR = join(DATA_DIR, 'invites');
     const FEEDBACK_FILE = join(DATA_DIR, 'feedback', 'feedback.jsonl');
 
     // Utility: time boundaries
@@ -317,6 +318,35 @@ router.get('/stats', async (req, res) => {
     // Potential MRR: pro users * $25 + elite users * $50
     const potentialMRR = (proUsers * 25) + (eliteUsers * 50);
 
+    // Load all invites for per-user invite counts
+    const inviteFiles = await fs.readdir(INVITES_DIR).catch(() => []);
+    const invites = (await Promise.all(
+      inviteFiles.filter(f => f.endsWith('.json')).map(async f => {
+        try {
+          const raw = await fs.readFile(join(INVITES_DIR, f), 'utf-8');
+          return JSON.parse(raw);
+        } catch { return null; }
+      })
+    )).filter(Boolean);
+
+    // Build full user list with invite counts
+    const allUsersList = validUsers.map(u => {
+      const plan = u.plan === 'premium' ? 'pro' : (u.plan || 'free');
+      const sentInvites = invites.filter(inv => inv.inviterId === u.id);
+      const pendingInvites = sentInvites.filter(inv => !inv.redeemedAt && new Date(inv.expiresAt) > now);
+      const redeemedInvites = sentInvites.filter(inv => inv.redeemedAt);
+      return {
+        name: u.name || '(no name)',
+        email: u.email,
+        plan,
+        createdAt: u.createdAt,
+        lastLogin: u.lastLogin,
+        invitesSent: sentInvites.length,
+        invitesPending: pendingInvites.length,
+        invitesRedeemed: redeemedInvites.length
+      };
+    }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
     res.json({
       timestamp: new Date().toISOString(),
       overview: {
@@ -331,7 +361,8 @@ router.get('/stats', async (req, res) => {
         activeThisWeek: activeUsersThisWeek.size,
         activeThisMonth: activeUsersThisMonth.size,
         signupTrend: signupsByDate,
-        topUsersByMessages
+        topUsersByMessages,
+        allUsers: allUsersList
       },
       usage: {
         engineQueriesToday,

@@ -674,6 +674,35 @@
                 </div>
             </section>
 
+            <!-- All Users Section -->
+            <section class="section">
+                <h2 class="section-title">All Users</h2>
+                <div class="chart-container">
+                    <div class="chart-title">Registered Users — Joined Date &amp; Invites</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Plan</th>
+                                    <th>Joined</th>
+                                    <th>Last Login</th>
+                                    <th>Invites Sent</th>
+                                    <th>Pending</th>
+                                    <th>Redeemed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allUsersTable">
+                                <tr>
+                                    <td colspan="8" style="text-align: center; color: #94a3b8;">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
             <!-- Usage Section -->
             <section class="section">
                 <h2 class="section-title">Usage</h2>
@@ -873,6 +902,29 @@
                 `).join('')
                 : '<tr><td colspan="3" style="text-align: center; color: #94a3b8;">No users yet</td></tr>';
             document.getElementById('topUsersTable').innerHTML = topUsersHtml;
+
+            // All users table
+            const planColors = { free: '#94a3b8', pro: '#10b981', elite: '#8b5cf6' };
+            const planNames = { free: 'Explorer', pro: 'Coach', elite: 'Consultant' };
+            const allUsersHtml = (data.users.allUsers || []).length > 0
+                ? data.users.allUsers.map(u => {
+                    const joined = u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—';
+                    const lastLogin = u.lastLogin ? new Date(u.lastLogin).toLocaleDateString() : '—';
+                    const planColor = planColors[u.plan] || '#94a3b8';
+                    const planName = planNames[u.plan] || u.plan;
+                    return `<tr>
+                        <td><strong>${u.name}</strong></td>
+                        <td>${u.email}</td>
+                        <td><span style="color:${planColor};font-weight:600;">${planName}</span></td>
+                        <td>${joined}</td>
+                        <td>${lastLogin}</td>
+                        <td>${u.invitesSent}</td>
+                        <td>${u.invitesPending}</td>
+                        <td>${u.invitesRedeemed}</td>
+                    </tr>`;
+                }).join('')
+                : '<tr><td colspan="8" style="text-align: center; color: #94a3b8;">No users yet</td></tr>';
+            document.getElementById('allUsersTable').innerHTML = allUsersHtml;
 
             // Usage
             document.getElementById('engineQueries').textContent = formatNumber(data.usage.engineQueriesToday);
