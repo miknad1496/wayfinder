@@ -31,7 +31,9 @@ const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/miknad1496/wayfinder/m
 
 // ─── School abbreviation / alias lookup ─────────────────────────
 const SCHOOL_ALIASES = {
-  'uw': ['university of washington', 'university of wisconsin'],
+  'uw': ['university of washington'],
+  'uw madison': ['university of wisconsin'],
+  'wisc': ['university of wisconsin'],
   'mit': ['massachusetts institute of technology'],
   'stanford': ['stanford university'],
   'harvard': ['harvard university'],
@@ -76,7 +78,8 @@ const SCHOOL_ALIASES = {
   'vanderbilt': ['vanderbilt university'],
   'vandy': ['vanderbilt university'],
   'northwestern': ['northwestern university'],
-  'nu': ['northwestern university', 'northeastern university'],
+  'nu': ['northwestern university'],
+  'neu': ['northeastern university'],
   'uiuc': ['university of illinois'],
   'purdue': ['purdue university'],
   'uf': ['university of florida'],
@@ -264,19 +267,23 @@ router.get('/state-grants', async (req, res) => {
 
     const data = await loadFinancialAidData();
     if (!data?.stateGrants) {
-      return res.status(503).json({ error: 'State grants database not available.' });
+      return res.status(503).json({ error: 'Grants database not available.' });
     }
 
-    let results = [...data.stateGrants];
+    let stateResults = [...data.stateGrants];
 
     const { state } = req.query;
     if (state) {
-      results = results.filter(g => g.state?.toUpperCase() === state.toUpperCase());
+      stateResults = stateResults.filter(g => g.state?.toUpperCase() === state.toUpperCase());
     }
 
+    // Always include federal programs
+    const federalPrograms = data.federalPrograms || [];
+
     res.json({
-      results,
-      total: results.length
+      federalPrograms,
+      stateResults,
+      total: stateResults.length + federalPrograms.length
     });
   } catch (err) {
     console.error('State grants error:', err);
@@ -448,10 +455,19 @@ router.post('/my-strategy', async (req, res) => {
 
     const matchedSchools = [];
     for (const schoolName of cleanSchools) {
-      const school = data.schools.find(s =>
+      // Try direct match first
+      let school = data.schools.find(s =>
         s.name?.toLowerCase().includes(schoolName.toLowerCase()) ||
         schoolName.toLowerCase().includes(s.name?.toLowerCase())
       );
+      // Try alias expansion if no direct match
+      if (!school) {
+        const { aliases } = expandSearchQuery(schoolName);
+        for (const alias of aliases) {
+          school = data.schools.find(s => s.name?.toLowerCase().includes(alias));
+          if (school) break;
+        }
+      }
       if (school && !matchedSchools.find(m => m.name === school.name)) {
         matchedSchools.push(school);
       }
@@ -472,6 +488,8 @@ router.post('/my-strategy', async (req, res) => {
       state: s.state,
       type: s.type,
       stickerPrice: s.stickerPrice,
+      costBreakdown: s.costBreakdown,
+      inStateTuition: s.inStateTuition,
       meetsFullNeed: s.meetsFullNeed,
       needBlind: s.needBlind,
       netPrice: s.netPriceByIncome?.[incomeCat],
@@ -486,6 +504,8 @@ router.post('/my-strategy', async (req, res) => {
       ? data.stateGrants?.filter(g => g.state?.toUpperCase() === state.toUpperCase())
       : [];
 
+    const federalPrograms = data.federalPrograms || [];
+
     const userPrompt = `
 Student Financial Profile:
 - Household Income: $${income.toLocaleString()}
@@ -495,33 +515,51 @@ Student Financial Profile:
 - Home State: ${state || 'Not specified'}
 
 Target Schools and Their Financial Data:
-${schoolDetails.map(s => `
-  ${s.name} (${s.state})
-  - Sticker Price: $${s.stickerPrice?.toLocaleString()}
-  - Estimated Net Price (${incomeCat} income): $${s.netPrice?.toLocaleString() || 'N/A'}
+${schoolDetails.map(s => {
+  const cb = s.costBreakdown;
+  const costLine = cb ? `Tuition: $${cb.tuition?.toLocaleString()}, Fees: $${cb.fees?.toLocaleString()}, Room & Board: $${cb.roomBoard?.toLocaleString()}` : 'Breakdown not available';
+  return `
+  ${s.name} (${s.state}, ${s.type})
+  - Total Cost of Attendance: $${s.stickerPrice?.toLocaleString()}
+  - Cost Breakdown: ${costLine}
+  ${s.inStateTuition && state?.toUpperCase() === s.state?.toUpperCase() ? `- In-State Tuition: $${s.inStateTuition.toLocaleString()} (student is in-state!)` : ''}
+  - Estimated Net Price (${incomeCat} income): ${s.netPrice != null ? '$' + s.netPrice.toLocaleString() : 'N/A'}
   - Meets Full Need: ${s.meetsFullNeed ? 'Yes' : 'No'}
   - Need Blind: ${s.needBlind ? 'Yes' : 'No'}
   - CSS Profile Required: ${s.cssRequired ? 'Yes' : 'No'}
-  - Application Deadline: ${s.deadline}
-  - Merit Scholarships Available: ${Array.isArray(s.meritScholarships) && s.meritScholarships.length > 0 ? 'Yes' : 'No'}
-  - Key Insight: ${s.keyInsight || 'None'}
-`).join('\n')}
+  - Aid Deadline: ${s.deadline || 'Check school website'}
+  - Merit Scholarships: ${Array.isArray(s.meritScholarships) && s.meritScholarships.length > 0 ? s.meritScholarships.join('; ') : 'None listed'}
+  - Aid Policies: ${Array.isArray(s.aidPolicies) && s.aidPolicies.length > 0 ? s.aidPolicies.join('; ') : 'Standard'}
+  - Key Insight: ${s.keyInsight || 'None'}`;
+}).join('\n')}
+
+Federal Aid Programs Available:
+${federalPrograms.filter(p => p.type === 'grant').map(p => `- ${p.name}: Up to $${p.maxAward?.toLocaleString()} — ${p.eligibility || ''}`).join('\n')}
+${federalPrograms.filter(p => p.type === 'loan').map(p => `- ${p.name}: Up to $${p.maxAward?.toLocaleString()}, Rate: ${p.interestRate || 'variable'}`).join('\n')}
+${federalPrograms.filter(p => p.type === 'work-study').map(p => `- ${p.name}: ${p.description || ''}`).join('\n')}
+
 ${stateGrantsInfo.length > 0 ? `
-Relevant State Grants for ${state}:
-${stateGrantsInfo.map(g => `
-  - ${g.name}: Up to $${g.maxAward?.toLocaleString()} (Deadline: ${g.deadline})
-`).join('\n')}
+State Grants & Scholarships for ${state}:
+${stateGrantsInfo.map(g => `- ${g.name}: Up to $${g.maxAward?.toLocaleString()} | ${g.needBased ? 'Need-based' : ''}${g.meritBased ? 'Merit-based' : ''} | Deadline: ${g.deadline || 'varies'}`).join('\n')}
 ` : ''}
 
-Provide personalized financial aid advice focusing on:
-1. Estimated net costs at each school for this family's income level
-2. Which schools offer the best value based on their financial aid policies
-3. Specific merit scholarship opportunities relevant to the student
-4. Strategies for appealing financial aid offers
-5. FAFSA and CSS Profile timing recommendations
-6. Any relevant state grants they should pursue
+Create a comprehensive, personalized financial aid strategy covering:
 
-Be specific and reference actual programs, policies, and deadlines mentioned above.
+1. **Cost Comparison Table**: Show each school's total cost, estimated net price for this family, and annual savings vs. sticker price. If the student qualifies as in-state for any public school, highlight the in-state tuition savings.
+
+2. **Federal Aid Eligibility**: Based on this family's income ($${income.toLocaleString()}), estimate eligibility for Pell Grant, subsidized/unsubsidized loans, and work-study. Calculate the approximate Pell Grant amount.
+
+3. **School-by-School Analysis**: For each target school, break down the likely financial aid package (institutional grants, federal aid, loans, work-study) and the estimated out-of-pocket cost.
+
+4. **Merit Scholarship Strategy**: Given the student's GPA${safeGPA > 0 ? ' of ' + safeGPA : ''}, identify specific merit scholarship opportunities at each school and estimated likelihood.
+
+5. **State Aid**: Detail which state grants/scholarships the student should apply for, deadlines, and estimated award amounts.
+
+6. **Action Plan & Timeline**: FAFSA filing date, CSS Profile deadlines, when to submit appeals, and a month-by-month checklist.
+
+7. **Appeal Strategy**: Specific tactics for negotiating better offers, including which schools are most likely to match offers.
+
+Use markdown formatting with headers, tables, and bullet points for clarity. Be specific — cite actual program names, dollar amounts, and deadlines.
 `;
 
     const client = new Anthropic({
@@ -532,8 +570,8 @@ Be specific and reference actual programs, policies, and deadlines mentioned abo
     try {
       const response = await client.messages.create({
         model: process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
-        max_tokens: 2000,
-        system: 'You are a college financial aid advisor. Analyze the student financial situation and target schools to provide personalized, actionable advice. Focus on estimated net costs, best value schools from their list, specific merit scholarship opportunities, appeal strategies, and FAFSA/CSS timing recommendations. Be specific and reference actual programs and policies.',
+        max_tokens: 4000,
+        system: 'You are an expert college financial aid advisor with deep knowledge of FAFSA, CSS Profile, federal aid programs, state grants, and institutional aid policies. Provide a comprehensive, data-driven financial aid strategy. Use markdown formatting (headers, tables, bullet points, checkboxes) to make the output scannable and professional. Always cite specific dollar amounts, program names, and deadlines. When estimating federal aid eligibility, use the provided income data to give realistic estimates. Be thorough but actionable.',
         messages: [
           {
             role: 'user',
@@ -564,6 +602,7 @@ Be specific and reference actual programs, policies, and deadlines mentioned abo
       strategy: strategyText,
       schools: schoolDetails,
       stateGrants: stateGrantsInfo,
+      federalPrograms: federalPrograms.filter(p => p.type === 'grant'),
       _generated: true
     });
   } catch (err) {

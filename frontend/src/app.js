@@ -2785,11 +2785,25 @@ function renderFinaidResults(results, fullAccess, previewMessage, totalCount) {
 
   for (const school of results) {
     const tags = (school.tags || []).map(t => `<span class="tool-tag">${escapeHtml(t)}</span>`).join('');
-    const netPrice = school.netPriceByIncome;
+    const netPrice = school.netPriceByIncome || {};
     let priceInfo = '';
-    if (netPrice && fullAccess) {
-      priceInfo = `<div class="finaid-prices">
-        <span>Net price: $${(netPrice.under30k || 0).toLocaleString()} - $${(netPrice.over110k || 0).toLocaleString()}</span>
+    if (Object.keys(netPrice).length > 0 && fullAccess) {
+      const prices = Object.values(netPrice).filter(p => typeof p === 'number');
+      if (prices.length > 0) {
+        priceInfo = `<div class="finaid-prices">
+          <span>Net price: $${Math.min(...prices).toLocaleString()} &ndash; $${Math.max(...prices).toLocaleString()}</span>
+        </div>`;
+      }
+    }
+    // Cost breakdown (tuition, room & board)
+    const cb = school.costBreakdown;
+    let costDetail = '';
+    if (cb && fullAccess) {
+      costDetail = `<div class="finaid-cost-breakdown">
+        <span>Tuition: $${(cb.tuition || 0).toLocaleString()}</span>
+        <span>Fees: $${(cb.fees || 0).toLocaleString()}</span>
+        <span>Room &amp; Board: $${(cb.roomBoard || 0).toLocaleString()}</span>
+        ${school.inStateTuition ? `<span>In-State Tuition: $${school.inStateTuition.toLocaleString()}</span>` : ''}
       </div>`;
     }
     html += `<div class="tool-card ${school._preview ? 'preview' : ''}">
@@ -2801,9 +2815,10 @@ function renderFinaidResults(results, fullAccess, previewMessage, totalCount) {
       <div class="tool-card-meta">
         <span>${escapeHtml(school.type || '')}</span>
         <span>${escapeHtml(school.state || '')}</span>
-        <span>Sticker: $${(school.stickerPrice || 0).toLocaleString()}</span>
+        <span>Total Cost: $${(school.stickerPrice || 0).toLocaleString()}</span>
         ${school.deadline ? `<span>Aid Deadline: ${escapeHtml(school.deadline)}</span>` : ''}
       </div>
+      ${costDetail}
       ${priceInfo}
       ${school.keyInsight && fullAccess ? `<p class="tool-card-desc">${escapeHtml(school.keyInsight)}</p>` : ''}
       <div class="tool-card-tags">${tags}</div>
@@ -2837,32 +2852,86 @@ async function searchStateGrants() {
     const data = await res.json();
     $('grantsLoading').style.display = 'none';
 
-    const grants = data.results || [];
-    if (!grants.length) {
-      $('grantsResults').innerHTML = '<div class="tool-empty"><p>No state grants found. Select a state.</p></div>';
-      return;
+    const federalPrograms = data.federalPrograms || [];
+    const stateResults = data.stateResults || data.results || [];
+    let html = '';
+
+    // ── Federal Programs Section ──
+    if (federalPrograms.length > 0) {
+      const grants = federalPrograms.filter(p => p.type === 'grant');
+      const loans = federalPrograms.filter(p => p.type === 'loan');
+      const workStudy = federalPrograms.filter(p => p.type === 'work-study');
+
+      html += '<div class="grants-section-header">Federal Grants</div>';
+      for (const p of grants) {
+        html += renderGrantCard(p, 'federal');
+      }
+
+      if (workStudy.length) {
+        html += '<div class="grants-section-header">Federal Work-Study</div>';
+        for (const p of workStudy) {
+          html += renderGrantCard(p, 'federal');
+        }
+      }
+
+      html += '<div class="grants-section-header">Federal Loans</div>';
+      for (const p of loans) {
+        html += `<div class="tool-card">
+          <div class="tool-card-header">
+            <h4>${escapeHtml(p.name)}</h4>
+            <span class="tool-tag amount">${p.maxAward ? `Up to $${p.maxAward.toLocaleString()}` : 'Varies'}</span>
+          </div>
+          <div class="tool-card-meta">
+            <span>Federal</span>
+            ${p.interestRate ? `<span>Rate: ${escapeHtml(p.interestRate)}</span>` : ''}
+            ${p.repaymentRequired ? '<span class="tool-tag">Repayment Required</span>' : ''}
+          </div>
+          ${p.description ? `<p class="tool-card-desc">${escapeHtml(p.description)}</p>` : ''}
+          ${p.eligibility ? `<p class="tool-card-desc" style="font-size:12px;color:#94a3b8;"><strong>Eligibility:</strong> ${escapeHtml(p.eligibility)}</p>` : ''}
+        </div>`;
+      }
     }
-    let html = `<div class="tool-result-count">${grants.length} grant program${grants.length !== 1 ? 's' : ''}</div>`;
-    for (const g of grants) {
-      html += `<div class="tool-card">
-        <div class="tool-card-header">
-          <h4>${escapeHtml(g.name)}</h4>
-          <span class="tool-tag amount">Up to $${(g.maxAward || 0).toLocaleString()}</span>
-        </div>
-        <div class="tool-card-meta">
-          <span>${escapeHtml(g.state)}</span>
-          ${g.deadline ? `<span>Deadline: ${escapeHtml(g.deadline)}</span>` : ''}
-          ${g.needBased ? '<span>Need-Based</span>' : ''}
-          ${g.meritBased ? '<span>Merit-Based</span>' : ''}
-        </div>
-        ${g.keyDetail ? `<p class="tool-card-desc">${escapeHtml(g.keyDetail)}</p>` : ''}
-      </div>`;
+
+    // ── State Programs Section ──
+    if (stateResults.length > 0) {
+      const stateName = $('grantsState')?.value ? $('grantsState').selectedOptions[0]?.text || 'Selected State' : 'All States';
+      html += `<div class="grants-section-header">${escapeHtml(stateName)} — ${stateResults.length} Program${stateResults.length !== 1 ? 's' : ''}</div>`;
+      for (const g of stateResults) {
+        html += renderGrantCard(g, 'state');
+      }
+    } else if ($('grantsState')?.value) {
+      html += '<div class="grants-section-header">State Programs</div>';
+      html += '<div class="tool-empty"><p>No state programs found for this state.</p></div>';
+    } else {
+      html += '<div class="grants-section-header">State Programs</div>';
+      html += '<div class="tool-empty"><p>Select a state to view state-specific grants and scholarships.</p></div>';
     }
+
     $('grantsResults').innerHTML = html;
   } catch {
     $('grantsLoading').style.display = 'none';
-    $('grantsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load grants.</p>';
+    $('grantsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load grants and aid programs.</p>';
   }
+}
+
+function renderGrantCard(g, source) {
+  const typeLabel = g.type === 'grant' ? 'Grant' : g.type === 'loan' ? 'Loan' : g.type === 'work-study' ? 'Work-Study' : 'Aid';
+  return `<div class="tool-card">
+    <div class="tool-card-header">
+      <h4>${escapeHtml(g.name)}</h4>
+      <span class="tool-tag amount">Up to $${(g.maxAward || 0).toLocaleString()}</span>
+    </div>
+    <div class="tool-card-meta">
+      <span>${source === 'federal' ? 'Federal' : escapeHtml(g.state || '')}</span>
+      <span>${escapeHtml(typeLabel)}</span>
+      ${g.deadline ? `<span>Deadline: ${escapeHtml(g.deadline)}</span>` : ''}
+      ${g.needBased ? '<span>Need-Based</span>' : ''}
+      ${g.meritBased ? '<span>Merit-Based</span>' : ''}
+      ${g.repaymentRequired === false ? '<span class="tool-tag free">No Repayment</span>' : ''}
+    </div>
+    ${(g.keyDetail || g.description) ? `<p class="tool-card-desc">${escapeHtml(g.keyDetail || g.description)}</p>` : ''}
+    ${g.eligibility ? `<p class="tool-card-desc" style="font-size:12px;color:#94a3b8;"><strong>Eligibility:</strong> ${escapeHtml(g.eligibility)}</p>` : ''}
+  </div>`;
 }
 
 async function generateMyStrategy() {
@@ -2915,16 +2984,24 @@ async function generateMyStrategy() {
 
     // Show matched school cards if available
     if (data.schools && data.schools.length) {
-      html += '<div class="strategy-schools"><h4>Your Target Schools</h4>';
+      html += '<div class="strategy-schools"><h4>Your Target Schools — Cost Summary</h4>';
       for (const s of data.schools) {
-        const netPrice = s.netPrice ? `$${s.netPrice.toLocaleString()}` : 'varies';
+        const netPrice = (s.netPrice != null && s.netPrice >= 0) ? `$${s.netPrice.toLocaleString()}` : 'varies';
+        const cb = s.costBreakdown;
         html += `<div class="tool-card">
           <div class="tool-card-header"><h4>${escapeHtml(s.name)}</h4></div>
           <div class="tool-card-meta">
-            <span>Sticker: $${(s.stickerPrice || 0).toLocaleString()}</span>
+            <span>Total: $${(s.stickerPrice || 0).toLocaleString()}</span>
             <span>Est. Net: ${netPrice}</span>
             ${s.needBlind ? '<span class="tool-tag paid">Need-Blind</span>' : ''}
+            ${s.meetsFullNeed ? '<span class="tool-tag free">Meets Full Need</span>' : ''}
           </div>
+          ${cb ? `<div class="finaid-cost-breakdown">
+            <span>Tuition: $${(cb.tuition || 0).toLocaleString()}</span>
+            <span>Fees: $${(cb.fees || 0).toLocaleString()}</span>
+            <span>Room &amp; Board: $${(cb.roomBoard || 0).toLocaleString()}</span>
+            ${s.inStateTuition ? `<span>In-State: $${s.inStateTuition.toLocaleString()}</span>` : ''}
+          </div>` : ''}
         </div>`;
       }
       html += '</div>';

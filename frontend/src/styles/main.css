@@ -2368,23 +2368,37 @@ html, body { overflow-x: hidden; }
 .modal-finaid-wide { max-width: 900px; width: 95%; resize: horizontal; overflow: auto; min-width: 400px; }
 
 /* Strategy output formatting */
-.strategy-result { line-height: 1.7; color: var(--text-primary); font-size: 14px; }
-.strategy-result h2 { font-size: 18px; font-weight: 700; margin: 24px 0 12px 0; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-.strategy-result h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px 0; color: var(--text-primary); }
+.strategy-result { line-height: 1.7; color: var(--text); font-size: 14px; }
+.strategy-result h2 { font-size: 18px; font-weight: 700; margin: 24px 0 12px 0; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.strategy-result h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px 0; color: var(--text); }
 .strategy-result h4 { font-size: 14px; font-weight: 600; margin: 14px 0 6px 0; }
 .strategy-result p { margin: 8px 0; }
 .strategy-result ul, .strategy-result ol { margin: 8px 0 8px 20px; padding: 0; }
 .strategy-result li { margin: 4px 0; }
 .strategy-result table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
-.strategy-result th { background: var(--bg-secondary, #f1f5f9); padding: 8px 10px; text-align: left; font-weight: 600; border: 1px solid var(--border); }
+.strategy-result th { background: var(--border-light, #f1f5f9); padding: 8px 10px; text-align: left; font-weight: 600; border: 1px solid var(--border); }
 .strategy-result td { padding: 8px 10px; border: 1px solid var(--border); }
-.strategy-result tr:nth-child(even) td { background: var(--bg-secondary, #f8fafc); }
-.strategy-result strong { color: var(--accent); }
+.strategy-result tr:nth-child(even) td { background: var(--border-light, #f8fafc); }
+.strategy-result strong { color: var(--primary); }
 .strategy-result hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
-.strategy-result code { background: var(--bg-secondary, #f1f5f9); padding: 2px 5px; border-radius: 3px; font-size: 13px; }
-.strategy-result blockquote { border-left: 3px solid var(--accent); margin: 12px 0; padding: 8px 16px; background: var(--bg-secondary, #f8fafc); border-radius: 0 6px 6px 0; }
+.strategy-result code { background: var(--border-light, #f1f5f9); padding: 2px 5px; border-radius: 3px; font-size: 13px; }
+.strategy-result blockquote { border-left: 3px solid var(--primary); margin: 12px 0; padding: 8px 16px; background: var(--border-light, #f8fafc); border-radius: 0 6px 6px 0; }
 .strategy-result .checklist-item { display: flex; align-items: flex-start; gap: 6px; margin: 4px 0; }
 .strategy-result .checklist-item input[type="checkbox"] { margin-top: 4px; }
+
+/* Grants section headers */
+.grants-section-header { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin: 20px 0 10px 0; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.grants-section-header:first-child { margin-top: 0; }
+
+/* Financial Aid cost breakdown */
+.finaid-cost-breakdown { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 8px 0; font-size: 12px; color: var(--text-secondary); border-top: 1px solid var(--border-light); margin-top: 6px; }
+.finaid-cost-breakdown span { white-space: nowrap; }
+.finaid-prices { font-size: 13px; font-weight: 500; color: var(--text); padding: 4px 0; }
+
+/* Financial Aid tab buttons */
+.finaid-tab-btn { padding: 8px 16px; border: 1px solid #334155; background: transparent; color: #94a3b8; border-radius: 6px; cursor: pointer; transition: all 0.15s; font-size: 14px; }
+.finaid-tab-btn.active { background: #1e293b; color: #e2e8f0; border-color: #e2e8f0; }
+.finaid-tab-btn:hover:not(.active) { background: rgba(30,41,59,0.5); color: #cbd5e1; }
 
 /* =============================
    TIMELINE TOOL
