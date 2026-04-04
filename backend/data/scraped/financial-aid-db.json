@@ -1,0 +1,3757 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2026-04-04",
+    "totalSchools": 83,
+    "totalStateGrants": 54,
+    "source": "Compiled from institutional financial aid offices, IPEDS, College Board"
+  },
+  "schools": [
+    {
+      "id": "amherst-001",
+      "name": "Amherst College",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 90048,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3200,
+        "48to75k": 8500,
+        "75to110k": 14800,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Full demonstrated need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "northeast"
+      ],
+      "keyInsight": "Amherst's no-loan policy and need-blind admission make elite liberal arts education accessible to students of all economic backgrounds."
+    },
+    {
+      "id": "arizona-001",
+      "name": "Arizona State University",
+      "type": "public",
+      "state": "AZ",
+      "region": "West",
+      "stickerPrice": 32000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5500,
+        "30to48k": 8500,
+        "48to75k": 13000,
+        "75to110k": 18000,
+        "over110k": 27000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "ASU Scholarship",
+          "amount": 18000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "merit-available",
+        "west"
+      ],
+      "keyInsight": "ASU meets full demonstrated need; merit scholarships available for qualified applicants."
+    },
+    {
+      "id": "bates-001",
+      "name": "Bates College",
+      "type": "private",
+      "state": "ME",
+      "region": "Northeast",
+      "stickerPrice": 86820,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2500,
+        "30to48k": 5000,
+        "48to75k": 10000,
+        "75to110k": 16000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "No-loan policy for low-income",
+        "Free tuition under $60k",
+        "Full need commitment"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Bates combines need-blind admission with generous aid packages, though some middle-income families may see loans in packages."
+    },
+    {
+      "id": "bc-001",
+      "name": "Boston College",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 89328,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 4000,
+        "30to48k": 7500,
+        "48to75k": 13500,
+        "75to110k": 21000,
+        "over110k": 49000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Loans included in packages",
+        "Early decision applicants prioritized"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "meets-full-need",
+        "northeast"
+      ],
+      "keyInsight": "Boston College meets full need but includes loans in packages; merit aid is available primarily through early decision applications."
+    },
+    {
+      "id": "bowdoin-001",
+      "name": "Bowdoin College",
+      "type": "private",
+      "state": "ME",
+      "region": "Northeast",
+      "stickerPrice": 89490,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 2500,
+        "48to75k": 7500,
+        "75to110k": 13200,
+        "over110k": 40000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Full need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Bowdoin's no-loan policy and full need commitment are among the most generous in the LAC sector."
+    },
+    {
+      "id": "brown-001",
+      "name": "Brown University",
+      "type": "private",
+      "state": "RI",
+      "region": "Northeast",
+      "stickerPrice": 87500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1000,
+        "30to48k": 4500,
+        "48to75k": 9500,
+        "75to110k": 16000,
+        "over110k": 43500
+      },
+      "aidPolicies": [
+        "No loans under $60k",
+        "Free tuition under $60k",
+        "Full demonstrated need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "elite"
+      ],
+      "keyInsight": "Brown's commitment to need-blind admission and full need meeting makes it highly affordable for low to middle-income students."
+    },
+    {
+      "id": "caltech-001",
+      "name": "California Institute of Technology",
+      "type": "private",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 89208,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1200,
+        "30to48k": 4500,
+        "48to75k": 10000,
+        "75to110k": 16500,
+        "over110k": 44000
+      },
+      "aidPolicies": [
+        "No loans under $75k",
+        "Free tuition under $65k",
+        "Full demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "stem",
+        "generous",
+        "west-coast"
+      ],
+      "keyInsight": "Caltech's small size and generous aid mean no-loan policies apply to all admitted students regardless of income."
+    },
+    {
+      "id": "carleton-001",
+      "name": "Carleton College",
+      "type": "private",
+      "state": "MN",
+      "region": "Midwest",
+      "stickerPrice": 89952,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2000,
+        "30to48k": 4500,
+        "48to75k": 10000,
+        "75to110k": 16500,
+        "over110k": 43500
+      },
+      "aidPolicies": [
+        "No-loan policy for low-income",
+        "Free tuition under $65k",
+        "Full need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "midwest"
+      ],
+      "keyInsight": "Carleton's no-loan policies and commitment to full need make it highly accessible to low and middle-income students in the Midwest."
+    },
+    {
+      "id": "caswestern-001",
+      "name": "Case Western Reserve University",
+      "type": "private",
+      "state": "OH",
+      "region": "Midwest",
+      "stickerPrice": 90576,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8000,
+        "48to75k": 13500,
+        "75to110k": 20000,
+        "over110k": 47000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships heavily available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 45000,
+          "criteria": "Academic excellence, GPA 3.8+"
+        },
+        {
+          "name": "Provost Scholarship",
+          "amount": 35000,
+          "criteria": "Strong academics"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-generous",
+        "stem",
+        "midwest"
+      ],
+      "keyInsight": "Case Western offers substantial merit scholarships to STEM applicants; strong students can significantly reduce costs."
+    },
+    {
+      "id": "clarkatlanta-001",
+      "name": "Clark Atlanta University",
+      "type": "private",
+      "state": "GA",
+      "region": "Southeast",
+      "stickerPrice": 47000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 7500,
+        "30to48k": 11500,
+        "48to75k": 17000,
+        "75to110k": 24000,
+        "over110k": 41000
+      },
+      "aidPolicies": [
+        "Meets 70% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "CAU Scholarship",
+          "amount": 15000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "southeast"
+      ],
+      "keyInsight": "Clark Atlanta provides HBCU education with merit scholarships and strong institutional support."
+    },
+    {
+      "id": "colby-001",
+      "name": "Colby College",
+      "type": "private",
+      "state": "ME",
+      "region": "Northeast",
+      "stickerPrice": 90240,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4000,
+        "48to75k": 9000,
+        "75to110k": 15000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Full need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Colby meets full demonstrated need with no-loan policies, making elite New England education accessible to all admitted students."
+    },
+    {
+      "id": "columbia-001",
+      "name": "Columbia University",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 88800,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 5200,
+        "48to75k": 10500,
+        "75to110k": 17200,
+        "over110k": 45000
+      },
+      "aidPolicies": [
+        "No loans under $60k",
+        "Free tuition for families under $60k",
+        "Commitment to meet full demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "elite"
+      ],
+      "keyInsight": "Columbia meets full demonstrated need with no-loan policies for low-income families and strategic aid packaging favoring grants."
+    },
+    {
+      "id": "cornell-001",
+      "name": "Cornell University",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 89456,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3200,
+        "30to48k": 6500,
+        "48to75k": 12200,
+        "75to110k": 19800,
+        "over110k": 48000
+      },
+      "aidPolicies": [
+        "No loans for families under $60k",
+        "Free tuition under $60k",
+        "Meets full demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "elite"
+      ],
+      "keyInsight": "Cornell's cost of attendance is higher than peer Ivies, but its financial aid packages remain competitive for low-income students."
+    },
+    {
+      "id": "dartmouth-001",
+      "name": "Dartmouth College",
+      "type": "private",
+      "state": "NH",
+      "region": "Northeast",
+      "stickerPrice": 87978,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4800,
+        "48to75k": 10000,
+        "75to110k": 16500,
+        "over110k": 44000
+      },
+      "aidPolicies": [
+        "No-loan policy for families under $75k",
+        "Free tuition under $65k",
+        "Parents contribute up to 10% of income"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "elite"
+      ],
+      "keyInsight": "Dartmouth's no-loan commitment and full need policies ensure that financial need is not a barrier to admission for qualified students."
+    },
+    {
+      "id": "davidson-001",
+      "name": "Davidson College",
+      "type": "private",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 86028,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4000,
+        "48to75k": 9000,
+        "75to110k": 15000,
+        "over110k": 40000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Full demonstrated need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "southeast"
+      ],
+      "keyInsight": "Davidson's no-loan policy and full need commitment make it one of the most affordable elite LACs."
+    },
+    {
+      "id": "drexel-001",
+      "name": "Drexel University",
+      "type": "private",
+      "state": "PA",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 58000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 9000,
+        "30to48k": 13000,
+        "48to75k": 18000,
+        "75to110k": 25000,
+        "over110k": 43000
+      },
+      "aidPolicies": [
+        "Meets 80% of demonstrated need",
+        "Merit scholarships available",
+        "Co-op program earnings help offset costs"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Award",
+          "amount": 19000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "merit-available",
+        "stem",
+        "mid-atlantic"
+      ],
+      "keyInsight": "Drexel's co-op program allows students to earn money during work terms, effectively reducing overall education costs."
+    },
+    {
+      "id": "duke-001",
+      "name": "Duke University",
+      "type": "private",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 89010,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2500,
+        "30to48k": 6200,
+        "48to75k": 12000,
+        "75to110k": 19200,
+        "over110k": 47500
+      },
+      "aidPolicies": [
+        "Meets 100% of demonstrated need",
+        "No-loan policy for families under $60k",
+        "10% of income above $60k"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Robertson Scholarship",
+          "amount": 50000,
+          "criteria": "Merit-based, covers full cost of attendance for select admits"
+        },
+        {
+          "name": "Wilkinson Scholarship",
+          "amount": 45000,
+          "criteria": "Leadership and intellectual merit"
+        }
+      ],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite",
+        "need-blind",
+        "merit-available",
+        "southeast"
+      ],
+      "keyInsight": "Duke meets full need and offers substantial merit scholarships to select applicants, though not all aid is grant-based for higher-income families."
+    },
+    {
+      "id": "elon-001",
+      "name": "Elon University",
+      "type": "private",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 59000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 9000,
+        "30to48k": 13000,
+        "48to75k": 19000,
+        "75to110k": 27000,
+        "over110k": 44000
+      },
+      "aidPolicies": [
+        "Meets 80% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 25000,
+          "criteria": "Academic and leadership merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "southeast"
+      ],
+      "keyInsight": "Elon offers merit scholarships and strong institutional aid; merit scholarships available for high-achieving students."
+    },
+    {
+      "id": "emory-001",
+      "name": "Emory University",
+      "type": "private",
+      "state": "GA",
+      "region": "Southeast",
+      "stickerPrice": 89010,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 6500,
+        "48to75k": 12500,
+        "75to110k": 20000,
+        "over110k": 48000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need for admitted students",
+        "Merit scholarships available",
+        "Work-study opportunities"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Woodruff Scholarship",
+          "amount": 60000,
+          "criteria": "Exceptional academic and personal achievement"
+        },
+        {
+          "name": "Dean's Scholarship",
+          "amount": 35000,
+          "criteria": "Strong academics and involvement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "merit-generous",
+        "southeast"
+      ],
+      "keyInsight": "Emory offers substantial merit scholarships to strong applicants; many students receive significant aid reductions beyond need-based offerings."
+    },
+    {
+      "id": "fisk-001",
+      "name": "Fisk University",
+      "type": "private",
+      "state": "TN",
+      "region": "South",
+      "stickerPrice": 46000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 7000,
+        "30to48k": 11000,
+        "48to75k": 16000,
+        "75to110k": 23000,
+        "over110k": 40000
+      },
+      "aidPolicies": [
+        "Meets 70% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Fisk Scholarship",
+          "amount": 14000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-15",
+      "tags": [
+        "hbcu",
+        "south"
+      ],
+      "keyInsight": "Fisk offers liberal arts education with merit scholarships; strong performing arts and sciences programs."
+    },
+    {
+      "id": "famu-001",
+      "name": "Florida A&M University",
+      "type": "public",
+      "state": "FL",
+      "region": "Southeast",
+      "stickerPrice": 22000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 5000,
+        "48to75k": 8000,
+        "75to110k": 12000,
+        "over110k": 18000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Florida residents get in-state tuition",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "FAMU Scholarship",
+          "amount": 8000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "public",
+        "southeast"
+      ],
+      "keyInsight": "FAMU offers very affordable public HBCU education; Florida residents benefit from low in-state tuition."
+    },
+    {
+      "id": "fordham-001",
+      "name": "Fordham University",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 89400,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 9000,
+        "48to75k": 14500,
+        "75to110k": 21000,
+        "over110k": 48000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Loans included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 35000,
+          "criteria": "Academic and leadership excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "merit-available",
+        "jesuit",
+        "northeast"
+      ],
+      "keyInsight": "Fordham meets full demonstrated need but includes loans; merit scholarships help strong applicants reduce overall costs."
+    },
+    {
+      "id": "georgetown-001",
+      "name": "Georgetown University",
+      "type": "private",
+      "state": "DC",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 90072,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 7000,
+        "48to75k": 13200,
+        "75to110k": 21000,
+        "over110k": 50000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 45000,
+          "criteria": "Academic excellence and leadership"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-10",
+      "tags": [
+        "elite",
+        "merit-available",
+        "mid-atlantic"
+      ],
+      "keyInsight": "Georgetown meets full demonstrated need but uses need-aware admission; early application and demonstrated interest improve aid packages."
+    },
+    {
+      "id": "gatech-001",
+      "name": "Georgia Institute of Technology",
+      "type": "public",
+      "state": "GA",
+      "region": "Southeast",
+      "stickerPrice": 31000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 4000,
+        "30to48k": 7000,
+        "48to75k": 11500,
+        "75to110k": 17000,
+        "over110k": 27000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Foundation Scholarship",
+          "amount": 18000,
+          "criteria": "Academic excellence in STEM"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "stem",
+        "southeast"
+      ],
+      "keyInsight": "Georgia Tech meets full demonstrated need for admitted students; in-state tuition is reasonable for a top engineering school."
+    },
+    {
+      "id": "grinnell-001",
+      "name": "Grinnell College",
+      "type": "private",
+      "state": "IA",
+      "region": "Midwest",
+      "stickerPrice": 88848,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 2500,
+        "48to75k": 7000,
+        "75to110k": 12500,
+        "over110k": 38000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $60k",
+        "Full need commitment"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "midwest"
+      ],
+      "keyInsight": "Grinnell's endowment supports among the most generous need-based aid policies, with free tuition for low-income students."
+    },
+    {
+      "id": "hamilton-002",
+      "name": "Hamilton College",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 89156,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1800,
+        "30to48k": 4200,
+        "48to75k": 9100,
+        "75to110k": 15000,
+        "over110k": 41500
+      },
+      "aidPolicies": [
+        "No-loan policy under $75k",
+        "Free tuition under $65k",
+        "Meets 100% of demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Hamilton College meets full demonstrated financial need with grant-only aid and no loans for families under $75k, making quality liberal arts education accessible across income levels."
+    },
+    {
+      "id": "hampton-001",
+      "name": "Hampton University",
+      "type": "private",
+      "state": "VA",
+      "region": "Southeast",
+      "stickerPrice": 52000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 7000,
+        "30to48k": 11000,
+        "48to75k": 16000,
+        "75to110k": 24000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "Meets 70% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Hampton Scholarship",
+          "amount": 18000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "southeast"
+      ],
+      "keyInsight": "Hampton offers affordable HBCU education with merit scholarships for qualified students."
+    },
+    {
+      "id": "harvard-001",
+      "name": "Harvard University",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 86928,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3900,
+        "48to75k": 9200,
+        "75to110k": 15400,
+        "over110k": 42800
+      },
+      "aidPolicies": [
+        "No-loan policy for families under $85k",
+        "Free tuition under $65k",
+        "10% of income contribution above $65k"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "elite"
+      ],
+      "keyInsight": "Harvard meets 100% of demonstrated need with no loans and free tuition for families under $65k, making it accessible to low-income students despite high sticker price."
+    },
+    {
+      "id": "hofstra-001",
+      "name": "Hofstra University",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 57000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 8000,
+        "30to48k": 12000,
+        "48to75k": 17000,
+        "75to110k": 24000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship",
+          "amount": 20000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "merit-available",
+        "northeast"
+      ],
+      "keyInsight": "Hofstra offers merit scholarships; strong applicants should apply early for maximum aid."
+    },
+    {
+      "id": "howard-001",
+      "name": "Howard University",
+      "type": "private",
+      "state": "DC",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 55000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 8000,
+        "30to48k": 12000,
+        "48to75k": 18000,
+        "75to110k": 26000,
+        "over110k": 45000
+      },
+      "aidPolicies": [
+        "Meets 80% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study opportunities"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Howard Scholarship",
+          "amount": 25000,
+          "criteria": "Academic achievement and leadership"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "mid-atlantic"
+      ],
+      "keyInsight": "Howard provides quality education with strong institutional support; merit scholarships help reduce costs for strong applicants."
+    },
+    {
+      "id": "jhu-001",
+      "name": "Johns Hopkins University",
+      "type": "private",
+      "state": "MD",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 89190,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4800,
+        "48to75k": 10200,
+        "75to110k": 17000,
+        "over110k": 44500
+      },
+      "aidPolicies": [
+        "Full demonstrated need met",
+        "No-loan policy for families under $75k",
+        "Meets 100% of need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 75000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "stem"
+      ],
+      "keyInsight": "Johns Hopkins' no-loan policy and full need commitment make it accessible to low and middle-income families interested in STEM fields."
+    },
+    {
+      "id": "lehigh-001",
+      "name": "Lehigh University",
+      "type": "private",
+      "state": "PA",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 89160,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 9000,
+        "48to75k": 15000,
+        "75to110k": 22000,
+        "over110k": 51000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Loans included in need packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 40000,
+          "criteria": "Academic excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "stem",
+        "mid-atlantic"
+      ],
+      "keyInsight": "Lehigh meets full need but includes loans; strong STEM applicants should apply for merit scholarships which can reduce aid need."
+    },
+    {
+      "id": "loyola-chi-001",
+      "name": "Loyola University Chicago",
+      "type": "private",
+      "state": "IL",
+      "region": "Midwest",
+      "stickerPrice": 60000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 9000,
+        "30to48k": 13000,
+        "48to75k": 19000,
+        "75to110k": 27000,
+        "over110k": 45000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship",
+          "amount": 22000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "merit-available",
+        "jesuit",
+        "midwest"
+      ],
+      "keyInsight": "Loyola Chicago offers merit scholarships; apply early to maximize aid opportunities."
+    },
+    {
+      "id": "macalester-001",
+      "name": "Macalester College",
+      "type": "private",
+      "state": "MN",
+      "region": "Midwest",
+      "stickerPrice": 88500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4000,
+        "48to75k": 9000,
+        "75to110k": 15000,
+        "over110k": 41000
+      },
+      "aidPolicies": [
+        "No-loan policy under $65k",
+        "Full demonstrated need met",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "midwest"
+      ],
+      "keyInsight": "Macalester meets full need with no-loan policies for low-income families, making liberal arts education accessible."
+    },
+    {
+      "id": "mit-001",
+      "name": "Massachusetts Institute of Technology",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 90520,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3500,
+        "48to75k": 9200,
+        "75to110k": 15800,
+        "over110k": 43500
+      },
+      "aidPolicies": [
+        "No loans for families under $90k",
+        "Free tuition under $75k",
+        "10% contribution cap above income threshold"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 75000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "stem",
+        "no-loan-policy"
+      ],
+      "keyInsight": "MIT's no-loan policy and full need commitment ensure cost is not a factor in admission decisions for this highly selective STEM institution."
+    },
+    {
+      "id": "middlebury-001",
+      "name": "Middlebury College",
+      "type": "private",
+      "state": "VT",
+      "region": "Northeast",
+      "stickerPrice": 89820,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1500,
+        "30to48k": 4000,
+        "48to75k": 9200,
+        "75to110k": 15500,
+        "over110k": 42500
+      },
+      "aidPolicies": [
+        "No-loan policy for low-income",
+        "Free tuition under $65k",
+        "Full need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Middlebury meets full demonstrated need with no-loan policies for low-income students."
+    },
+    {
+      "id": "morehouse-001",
+      "name": "Morehouse College",
+      "type": "private",
+      "state": "GA",
+      "region": "Southeast",
+      "stickerPrice": 56000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 9000,
+        "30to48k": 13000,
+        "48to75k": 19000,
+        "75to110k": 27000,
+        "over110k": 47000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study opportunities"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Morehouse Scholarship",
+          "amount": 22000,
+          "criteria": "Academic merit and promise"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "men",
+        "southeast"
+      ],
+      "keyInsight": "Morehouse provides strong merit scholarships and institutional support for qualified applicants."
+    },
+    {
+      "id": "ncat-001",
+      "name": "North Carolina A&T State University",
+      "type": "public",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 23000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 5500,
+        "48to75k": 8500,
+        "75to110k": 12500,
+        "over110k": 19000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "A&T Scholarship",
+          "amount": 9000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "public",
+        "southeast"
+      ],
+      "keyInsight": "NC A&T offers affordable public HBCU education with strong engineering programs."
+    },
+    {
+      "id": "northeastern-001",
+      "name": "Northeastern University",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 89652,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 14000,
+        "75to110k": 21000,
+        "over110k": 49000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Co-op earnings can reduce costs"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship",
+          "amount": 30000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "merit-available",
+        "northeast"
+      ],
+      "keyInsight": "Northeastern's co-op program allows students to earn money during work terms, effectively reducing overall cost of attendance."
+    },
+    {
+      "id": "northwestern-001",
+      "name": "Northwestern University",
+      "type": "private",
+      "state": "IL",
+      "region": "Midwest",
+      "stickerPrice": 88584,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 6500,
+        "48to75k": 12500,
+        "75to110k": 20000,
+        "over110k": 48500
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Loans included in need analysis",
+        "Work-study opportunities available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 30000,
+          "criteria": "Academic and leadership excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "Northwestern meets full need but includes some loans in aid packages; merit scholarships available for exceptional applicants."
+    },
+    {
+      "id": "osu-001",
+      "name": "Ohio State University",
+      "type": "public",
+      "state": "OH",
+      "region": "Midwest",
+      "stickerPrice": 31000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8000,
+        "48to75k": 12500,
+        "75to110k": 18000,
+        "over110k": 27000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Morrill Scholarship",
+          "amount": 15000,
+          "criteria": "Academic excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "Ohio State meets full demonstrated need; in-state students benefit from lower tuition."
+    },
+    {
+      "id": "pennstate-001",
+      "name": "Pennsylvania State University",
+      "type": "public",
+      "state": "PA",
+      "region": "Northeast",
+      "stickerPrice": 34500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 9500,
+        "48to75k": 14000,
+        "75to110k": 20000,
+        "over110k": 30000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "President's Scholar Award",
+          "amount": 12000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "northeast"
+      ],
+      "keyInsight": "Penn State meets full demonstrated need; early application improves merit scholarship eligibility."
+    },
+    {
+      "id": "pomona-001",
+      "name": "Pomona College",
+      "type": "private",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 90012,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3000,
+        "48to75k": 8500,
+        "75to110k": 15000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Meets full demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "west"
+      ],
+      "keyInsight": "Pomona's no-loan policy and commitment to full need make it one of the most affordable elite colleges on the West Coast."
+    },
+    {
+      "id": "princeton-001",
+      "name": "Princeton University",
+      "type": "private",
+      "state": "NJ",
+      "region": "Northeast",
+      "stickerPrice": 87000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3800,
+        "48to75k": 9000,
+        "75to110k": 15200,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "No-loan policy for all families",
+        "Free tuition under $60k",
+        "Parents pay max 10% of gross income above $60k"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "elite"
+      ],
+      "keyInsight": "Princeton eliminated loans entirely; all aid comes as grants, making it the most affordable Ivy for most middle-income families."
+    },
+    {
+      "id": "purdue-001",
+      "name": "Purdue University",
+      "type": "public",
+      "state": "IN",
+      "region": "Midwest",
+      "stickerPrice": 29500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 4500,
+        "30to48k": 7500,
+        "48to75k": 12000,
+        "75to110k": 17500,
+        "over110k": 26000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Purdue Scholarship",
+          "amount": 10000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "stem",
+        "midwest"
+      ],
+      "keyInsight": "Purdue meets full demonstrated need with very affordable in-state tuition; engineering students have strong career outcomes."
+    },
+    {
+      "id": "rpi-001",
+      "name": "Rensselaer Polytechnic Institute",
+      "type": "private",
+      "state": "NY",
+      "region": "Northeast",
+      "stickerPrice": 90528,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 9500,
+        "48to75k": 15500,
+        "75to110k": 23000,
+        "over110k": 51000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Loans included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 35000,
+          "criteria": "Academic excellence in STEM"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "stem",
+        "northeast"
+      ],
+      "keyInsight": "RPI meets full need but includes loans; STEM-focused students should pursue merit scholarships."
+    },
+    {
+      "id": "rice-001",
+      "name": "Rice University",
+      "type": "private",
+      "state": "TX",
+      "region": "South",
+      "stickerPrice": 89200,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2000,
+        "30to48k": 5200,
+        "48to75k": 10800,
+        "75to110k": 17500,
+        "over110k": 45000
+      },
+      "aidPolicies": [
+        "Meets 100% of demonstrated need",
+        "No-loan policy under $65k",
+        "Full need commitment"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "south"
+      ],
+      "keyInsight": "Rice's endowment and commitment to full need with no-loan policies make it one of the most affordable elite universities in the South."
+    },
+    {
+      "id": "rutgers-001",
+      "name": "Rutgers University",
+      "type": "public",
+      "state": "NJ",
+      "region": "Northeast",
+      "stickerPrice": 35000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 9500,
+        "48to75k": 14000,
+        "75to110k": 20000,
+        "over110k": 31000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Work-study available"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "northeast"
+      ],
+      "keyInsight": "Rutgers meets full demonstrated need for admitted students; in-state New Jersey residents benefit from lower tuition."
+    },
+    {
+      "id": "santaclara-001",
+      "name": "Santa Clara University",
+      "type": "private",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 88695,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 8000,
+        "30to48k": 11000,
+        "48to75k": 17000,
+        "75to110k": 24000,
+        "over110k": 50000
+      },
+      "aidPolicies": [
+        "Meets 85% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "President's Scholarship",
+          "amount": 35000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "west",
+        "jesuit"
+      ],
+      "keyInsight": "Santa Clara meets most but not all demonstrated need; merit scholarships are important for reducing out-of-pocket costs."
+    },
+    {
+      "id": "smu-001",
+      "name": "Southern Methodist University",
+      "type": "private",
+      "state": "TX",
+      "region": "South",
+      "stickerPrice": 90096,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 12000,
+        "30to48k": 16000,
+        "48to75k": 22000,
+        "75to110k": 30000,
+        "over110k": 55000
+      },
+      "aidPolicies": [
+        "Meets 70% of demonstrated need",
+        "Merit scholarships heavily available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Hilltop Scholarship",
+          "amount": 50000,
+          "criteria": "Academic excellence, GPA 3.7+, test scores 1450+"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "amount": 40000,
+          "criteria": "Strong academics and involvement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "mid-tier",
+        "merit-generous",
+        "south"
+      ],
+      "keyInsight": "SMU offers generous merit scholarships; students with strong academics should prioritize merit aid applications."
+    },
+    {
+      "id": "spelman-001",
+      "name": "Spelman College",
+      "type": "private",
+      "state": "GA",
+      "region": "Southeast",
+      "stickerPrice": 57000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 10000,
+        "30to48k": 14000,
+        "48to75k": 20000,
+        "75to110k": 28000,
+        "over110k": 48000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Spelman Merit Award",
+          "amount": 20000,
+          "criteria": "Academic excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-15",
+      "tags": [
+        "hbcu",
+        "women",
+        "southeast"
+      ],
+      "keyInsight": "Spelman offers merit scholarships and strong institutional aid; merit-based applicants should apply early."
+    },
+    {
+      "id": "stanford-001",
+      "name": "Stanford University",
+      "type": "private",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 87840,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 2800,
+        "48to75k": 8500,
+        "75to110k": 14800,
+        "over110k": 41200
+      },
+      "aidPolicies": [
+        "No loans for families under $95k",
+        "Free tuition for families under $75k",
+        "5-year commitment to match California in-state costs"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 75000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "west-coast"
+      ],
+      "keyInsight": "Stanford's no-loan policy extends to families earning under $95k, making elite California education financially accessible."
+    },
+    {
+      "id": "swarthmore-001",
+      "name": "Swarthmore College",
+      "type": "private",
+      "state": "PA",
+      "region": "Northeast",
+      "stickerPrice": 90960,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2000,
+        "30to48k": 4200,
+        "48to75k": 9500,
+        "75to110k": 16000,
+        "over110k": 43500
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $60k",
+        "Full demonstrated need met"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Swarthmore's endowment supports generous no-loan policies and full need commitment for admitted students."
+    },
+    {
+      "id": "tcu-001",
+      "name": "Texas Christian University",
+      "type": "private",
+      "state": "TX",
+      "region": "South",
+      "stickerPrice": 87888,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 10000,
+        "30to48k": 14000,
+        "48to75k": 20000,
+        "75to110k": 28000,
+        "over110k": 52000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Achievement Scholarship",
+          "amount": 35000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "south"
+      ],
+      "keyInsight": "TCU offers merit-based aid; strong applicants can significantly reduce net cost through scholarships."
+    },
+    {
+      "id": "tufts-001",
+      "name": "Tufts University",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 90048,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 6500,
+        "48to75k": 12500,
+        "75to110k": 20000,
+        "over110k": 48000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "No-loan policy under $65k",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 35000,
+          "criteria": "Academic achievement and school contributions"
+        }
+      ],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "meets-full-need",
+        "northeast"
+      ],
+      "keyInsight": "Tufts meets full demonstrated need but practices need-aware admission; applying early decision improves financial aid packages."
+    },
+    {
+      "id": "tulane-001",
+      "name": "Tulane University",
+      "type": "private",
+      "state": "LA",
+      "region": "South",
+      "stickerPrice": 88560,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 15000,
+        "30to48k": 18000,
+        "48to75k": 22000,
+        "75to110k": 28000,
+        "over110k": 40000
+      },
+      "aidPolicies": [
+        "Meets approximately 80% of demonstrated need",
+        "Merit scholarships heavily available",
+        "Work-study opportunities"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship Program",
+          "amount": 30000,
+          "criteria": "Academic achievement, GPA 3.6+"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-generous",
+        "south"
+      ],
+      "keyInsight": "Tulane is known for generous merit scholarships; strong applicants should apply early to maximize merit aid packages."
+    },
+    {
+      "id": "tuskegee-001",
+      "name": "Tuskegee University",
+      "type": "private",
+      "state": "AL",
+      "region": "Southeast",
+      "stickerPrice": 51000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 6000,
+        "30to48k": 10000,
+        "48to75k": 15000,
+        "75to110k": 23000,
+        "over110k": 40000
+      },
+      "aidPolicies": [
+        "Meets 70% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Tuskegee Merit Scholarship",
+          "amount": 16000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "southeast"
+      ],
+      "keyInsight": "Tuskegee offers quality education with merit scholarships; engineering and STEM programs are particularly strong."
+    },
+    {
+      "id": "alabama-001",
+      "name": "University of Alabama",
+      "type": "public",
+      "state": "AL",
+      "region": "Southeast",
+      "stickerPrice": 30000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8000,
+        "48to75k": 12000,
+        "75to110k": 17000,
+        "over110k": 26000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships heavily available",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 40000,
+          "criteria": "GPA 3.8+, test score 1450+"
+        },
+        {
+          "name": "Capstone Scholarship",
+          "amount": 25000,
+          "criteria": "GPA 3.6+, test score 1350+"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "merit-generous",
+        "southeast"
+      ],
+      "keyInsight": "Alabama offers substantial merit scholarships making it very affordable for strong applicants; many out-of-state students get significant aid."
+    },
+    {
+      "id": "berkeley-001",
+      "name": "University of California, Berkeley",
+      "type": "public",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 42000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 6500,
+        "48to75k": 11500,
+        "75to110k": 17500,
+        "over110k": 31000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Loan-free aid for low-income"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-30",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "west"
+      ],
+      "keyInsight": "Berkeley meets full demonstrated need with loan-free aid for low-income families; in-state students benefit greatly."
+    },
+    {
+      "id": "ucla-001",
+      "name": "University of California, Los Angeles",
+      "type": "public",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 40500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 7000,
+        "48to75k": 12000,
+        "75to110k": 18000,
+        "over110k": 32000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "UC aid applies to tuition only",
+        "In-state preference"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-30",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "west"
+      ],
+      "keyInsight": "UCLA meets full demonstrated need but note that UC aid generally covers tuition; room/board requires separate funding sources."
+    },
+    {
+      "id": "uchicago-001",
+      "name": "University of Chicago",
+      "type": "private",
+      "state": "IL",
+      "region": "Midwest",
+      "stickerPrice": 90408,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2000,
+        "30to48k": 5500,
+        "48to75k": 11000,
+        "75to110k": 18000,
+        "over110k": 46000
+      },
+      "aidPolicies": [
+        "Full demonstrated need for admitted students",
+        "No-loan policy under $60k",
+        "Meets 100% of demonstrated need"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Dean's Merit Scholarship",
+          "amount": 35000,
+          "criteria": "Academic excellence and intellectual promise"
+        }
+      ],
+      "freeThreshold": 60000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "UChicago meets full demonstrated need for admitted students but practices need-aware admission; early application may improve financial aid packages."
+    },
+    {
+      "id": "denver-001",
+      "name": "University of Denver",
+      "type": "private",
+      "state": "CO",
+      "region": "West",
+      "stickerPrice": 85000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 10000,
+        "30to48k": 15000,
+        "48to75k": 22000,
+        "75to110k": 30000,
+        "over110k": 50000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Award",
+          "amount": 28000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-available",
+        "west"
+      ],
+      "keyInsight": "University of Denver offers merit scholarships to reduce costs; apply early for maximum aid consideration."
+    },
+    {
+      "id": "florida-001",
+      "name": "University of Florida",
+      "type": "public",
+      "state": "FL",
+      "region": "Southeast",
+      "stickerPrice": 26500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 6000,
+        "48to75k": 9500,
+        "75to110k": 14000,
+        "over110k": 22000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Very low in-state tuition",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Florida Bright Futures",
+          "amount": 10000,
+          "criteria": "State merit scholarship; academic thresholds"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "southeast"
+      ],
+      "keyInsight": "UF meets full demonstrated need with the lowest in-state tuition among top flagships; Florida residents should apply for Bright Futures."
+    },
+    {
+      "id": "uiuc-001",
+      "name": "University of Illinois Urbana-Champaign",
+      "type": "public",
+      "state": "IL",
+      "region": "Midwest",
+      "stickerPrice": 32500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 13000,
+        "75to110k": 18500,
+        "over110k": 28000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Work-study available"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "UIUC meets full demonstrated need; in-state students benefit from lower tuition and strong state grant programs."
+    },
+    {
+      "id": "miami-001",
+      "name": "University of Miami",
+      "type": "private",
+      "state": "FL",
+      "region": "Southeast",
+      "stickerPrice": 88000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 12000,
+        "30to48k": 18000,
+        "48to75k": 26000,
+        "75to110k": 35000,
+        "over110k": 55000
+      },
+      "aidPolicies": [
+        "Meets 80% of demonstrated need",
+        "Merit scholarships heavily available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship",
+          "amount": 35000,
+          "criteria": "GPA 3.7+, test score 1400+"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-generous",
+        "southeast"
+      ],
+      "keyInsight": "University of Miami offers generous merit scholarships; strong applicants should apply early to maximize aid."
+    },
+    {
+      "id": "umich-001",
+      "name": "University of Michigan",
+      "type": "public",
+      "state": "MI",
+      "region": "Midwest",
+      "stickerPrice": 32000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 12500,
+        "75to110k": 18000,
+        "over110k": 28000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state preference for aid",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Michigan Merit Scholarship",
+          "amount": 15000,
+          "criteria": "Academic excellence, primarily in-state"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "UMich meets full demonstrated need for admitted students; in-state students benefit significantly from lower tuition and aid packaging."
+    },
+    {
+      "id": "unc-001",
+      "name": "University of North Carolina at Chapel Hill",
+      "type": "public",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 29000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 6500,
+        "48to75k": 10500,
+        "75to110k": 15500,
+        "over110k": 25000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "No-loan for families under $60k",
+        "In-state advantage"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Morehead-Cain",
+          "amount": 40000,
+          "criteria": "Exceptional merit; highly selective"
+        }
+      ],
+      "freeThreshold": 60000,
+      "cssRequired": false,
+      "deadline": "2026-02-01",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "southeast"
+      ],
+      "keyInsight": "UNC meets full demonstrated need with no-loan policies for low-income students; in-state tuition is exceptionally affordable."
+    },
+    {
+      "id": "notredame-001",
+      "name": "University of Notre Dame",
+      "type": "private",
+      "state": "IN",
+      "region": "Midwest",
+      "stickerPrice": 89910,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2500,
+        "30to48k": 5800,
+        "48to75k": 11500,
+        "75to110k": 18800,
+        "over110k": 47000
+      },
+      "aidPolicies": [
+        "Meets 100% of demonstrated need",
+        "No-loan policy under $65k",
+        "Commitment to need-blind admission"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "midwest"
+      ],
+      "keyInsight": "Notre Dame's need-blind admission and no-loan policies make elite Catholic education accessible regardless of financial circumstance."
+    },
+    {
+      "id": "penn-001",
+      "name": "University of Pennsylvania",
+      "type": "private",
+      "state": "PA",
+      "region": "Northeast",
+      "stickerPrice": 89536,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 2000,
+        "30to48k": 5500,
+        "48to75k": 11000,
+        "75to110k": 18200,
+        "over110k": 46500
+      },
+      "aidPolicies": [
+        "No-loan policy for families under $75k",
+        "Free tuition for families under $65k",
+        "Meets 100% of demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "elite"
+      ],
+      "keyInsight": "Penn's no-loan commitment extends to families making up to $75k, providing significant relief for working-class families."
+    },
+    {
+      "id": "usc-001",
+      "name": "University of Southern California",
+      "type": "private",
+      "state": "CA",
+      "region": "West",
+      "stickerPrice": 90384,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 15000,
+        "75to110k": 23000,
+        "over110k": 52000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships competitive",
+        "Loans included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Trustee Scholarship",
+          "amount": 70000,
+          "criteria": "Exceptional achievement; full tuition coverage"
+        },
+        {
+          "name": "Presidential Scholarship",
+          "amount": 50000,
+          "criteria": "Academic and leadership excellence"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite",
+        "merit-generous",
+        "west-coast"
+      ],
+      "keyInsight": "USC is known for merit scholarships; competitive applicants should prioritize early application and strong test scores to maximize merit aid."
+    },
+    {
+      "id": "utaustin-001",
+      "name": "University of Texas at Austin",
+      "type": "public",
+      "state": "TX",
+      "region": "South",
+      "stickerPrice": 27000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3000,
+        "30to48k": 5500,
+        "48to75k": 9000,
+        "75to110k": 13500,
+        "over110k": 22000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Presidential Scholarship",
+          "amount": 20000,
+          "criteria": "Academic merit"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "south"
+      ],
+      "keyInsight": "UT Austin meets full demonstrated need with very low in-state tuition; strong applicants should pursue merit scholarships."
+    },
+    {
+      "id": "tulsa-001",
+      "name": "University of Tulsa",
+      "type": "private",
+      "state": "OK",
+      "region": "South",
+      "stickerPrice": 62000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 8000,
+        "30to48k": 12000,
+        "48to75k": 18000,
+        "75to110k": 26000,
+        "over110k": 45000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships very generous",
+        "Work-study available"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Merit Scholarship",
+          "amount": 30000,
+          "criteria": "Academic achievement, GPA 3.5+"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "merit-generous",
+        "south"
+      ],
+      "keyInsight": "University of Tulsa is known for generous merit scholarships; strong students can reduce costs significantly."
+    },
+    {
+      "id": "uva-001",
+      "name": "University of Virginia",
+      "type": "public",
+      "state": "VA",
+      "region": "Southeast",
+      "stickerPrice": 30500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 4000,
+        "30to48k": 7000,
+        "48to75k": 11000,
+        "75to110k": 16000,
+        "over110k": 26000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "No-loan policy for families under $60k",
+        "In-state advantage"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Jefferson Scholarship",
+          "amount": 35000,
+          "criteria": "Exceptional merit; highly competitive"
+        }
+      ],
+      "freeThreshold": 60000,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "southeast"
+      ],
+      "keyInsight": "UVA meets full demonstrated need and offers prestigious merit scholarships; in-state tuition provides significant cost savings."
+    },
+    {
+      "id": "uwash-001",
+      "name": "University of Washington",
+      "type": "public",
+      "state": "WA",
+      "region": "West",
+      "stickerPrice": 33500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 13000,
+        "75to110k": 19000,
+        "over110k": 29000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "west"
+      ],
+      "keyInsight": "University of Washington meets full demonstrated need; in-state students benefit from lower tuition."
+    },
+    {
+      "id": "wisconsin-001",
+      "name": "University of Wisconsin-Madison",
+      "type": "public",
+      "state": "WI",
+      "region": "Midwest",
+      "stickerPrice": 30000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 4000,
+        "30to48k": 7000,
+        "48to75k": 11000,
+        "75to110k": 16000,
+        "over110k": 25000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "In-state tuition advantage",
+        "Merit scholarships available"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "2026-01-15",
+      "tags": [
+        "public",
+        "flagship",
+        "meets-full-need",
+        "midwest"
+      ],
+      "keyInsight": "UW-Madison meets full demonstrated need; in-state tuition is very affordable for a top research university."
+    },
+    {
+      "id": "vanderbilt-001",
+      "name": "Vanderbilt University",
+      "type": "private",
+      "state": "TN",
+      "region": "South",
+      "stickerPrice": 89568,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 3500,
+        "48to75k": 9200,
+        "75to110k": 15800,
+        "over110k": 42500
+      },
+      "aidPolicies": [
+        "No-loan policy for families under $100k",
+        "Free tuition for families under $75k",
+        "Meets 100% of demonstrated need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 75000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "south"
+      ],
+      "keyInsight": "Vanderbilt's no-loan policy for families under $100k is among the most generous, making it exceptionally affordable for middle-income students."
+    },
+    {
+      "id": "villanova-001",
+      "name": "Villanova University",
+      "type": "private",
+      "state": "PA",
+      "region": "Mid-Atlantic",
+      "stickerPrice": 89412,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 7000,
+        "30to48k": 10000,
+        "48to75k": 16000,
+        "75to110k": 23000,
+        "over110k": 52000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships competitive",
+        "Loans included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Augustinian Scholarship",
+          "amount": 30000,
+          "criteria": "Merit and service"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "merit-available",
+        "mid-atlantic"
+      ],
+      "keyInsight": "Villanova meets full demonstrated need but uses need-aware admission; early application improves financial aid packages."
+    },
+    {
+      "id": "wakeforest-001",
+      "name": "Wake Forest University",
+      "type": "private",
+      "state": "NC",
+      "region": "Southeast",
+      "stickerPrice": 89286,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 5000,
+        "30to48k": 8500,
+        "48to75k": 14000,
+        "75to110k": 21000,
+        "over110k": 50000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need",
+        "Merit scholarships available",
+        "Loans included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Full Scholarship",
+          "amount": 85000,
+          "criteria": "Exceptional merit; extremely competitive"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "merit-available",
+        "southeast"
+      ],
+      "keyInsight": "Wake Forest offers full-ride merit scholarships to exceptional applicants; students should highlight unique achievements and contributions."
+    },
+    {
+      "id": "wustl-001",
+      "name": "Washington University in St. Louis",
+      "type": "private",
+      "state": "MO",
+      "region": "Midwest",
+      "stickerPrice": 90132,
+      "needBlind": false,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 7200,
+        "48to75k": 13500,
+        "75to110k": 21500,
+        "over110k": 52000
+      },
+      "aidPolicies": [
+        "Meets full demonstrated need for admitted students",
+        "Merit scholarships heavily available",
+        "Loans may be included in packages"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Competitive Scholarship Program",
+          "amount": 40000,
+          "criteria": "Academic excellence, GPA 3.8+, test scores 1470+"
+        },
+        {
+          "name": "Trustee Scholarship",
+          "amount": 55000,
+          "criteria": "Exceptional academic and personal achievements"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite",
+        "merit-generous",
+        "midwest"
+      ],
+      "keyInsight": "WashU is known for generous merit scholarships; students with strong academics should apply for merit aid, which can significantly reduce costs."
+    },
+    {
+      "id": "wellesley-001",
+      "name": "Wellesley College",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 89000,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1000,
+        "30to48k": 3500,
+        "48to75k": 8500,
+        "75to110k": 14500,
+        "over110k": 41500
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Full need commitment"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-15",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "women",
+        "northeast"
+      ],
+      "keyInsight": "Wellesley's commitment to access means no loans for low-income students and full demonstrated need for all admitted students."
+    },
+    {
+      "id": "williams-001",
+      "name": "Williams College",
+      "type": "private",
+      "state": "MA",
+      "region": "Northeast",
+      "stickerPrice": 91220,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 1000,
+        "30to48k": 3500,
+        "48to75k": 9000,
+        "75to110k": 15200,
+        "over110k": 43000
+      },
+      "aidPolicies": [
+        "No-loan policy",
+        "Free tuition under $65k",
+        "Meets 100% of need"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "elite-lac",
+        "need-blind",
+        "generous",
+        "northeast"
+      ],
+      "keyInsight": "Williams College meets full demonstrated need with no loans, ensuring cost is not a factor in admission decisions."
+    },
+    {
+      "id": "xavier-001",
+      "name": "Xavier University of Louisiana",
+      "type": "private",
+      "state": "LA",
+      "region": "South",
+      "stickerPrice": 48000,
+      "needBlind": false,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 8000,
+        "30to48k": 12000,
+        "48to75k": 17000,
+        "75to110k": 25000,
+        "over110k": 42000
+      },
+      "aidPolicies": [
+        "Meets 75% of demonstrated need",
+        "Merit scholarships available",
+        "Work-study options"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Xavier Merit Award",
+          "amount": 15000,
+          "criteria": "Academic achievement"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": true,
+      "deadline": "2026-02-01",
+      "tags": [
+        "hbcu",
+        "catholic",
+        "south"
+      ],
+      "keyInsight": "Xavier offers strong STEM and healthcare education with merit scholarships for qualified applicants."
+    },
+    {
+      "id": "yale-001",
+      "name": "Yale University",
+      "type": "private",
+      "state": "CT",
+      "region": "Northeast",
+      "stickerPrice": 89500,
+      "needBlind": true,
+      "meetsFullNeed": true,
+      "netPriceByIncome": {
+        "under30k": 0,
+        "30to48k": 4200,
+        "48to75k": 9800,
+        "75to110k": 16500,
+        "over110k": 44200
+      },
+      "aidPolicies": [
+        "No loans for families under $65k",
+        "Free tuition for families under $65k",
+        "Parent contribution capped at 10% of income above $65k"
+      ],
+      "meritScholarships": [],
+      "freeThreshold": 65000,
+      "cssRequired": true,
+      "deadline": "2026-01-01",
+      "tags": [
+        "ivy",
+        "need-blind",
+        "generous",
+        "no-loan-policy",
+        "elite"
+      ],
+      "keyInsight": "Yale's financial aid rivals Harvard with zero-loan policies for low-income families and commitment to meet full demonstrated need."
+    }
+  ],
+  "stateGrants": [
+    {
+      "state": "AL",
+      "name": "Alabama Student Assistance Program (ASAP)",
+      "maxAward": 1400,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ache.alabama.gov/",
+      "keyDetail": "Provides need-based grant assistance to eligible Alabama residents attending approved institutions."
+    },
+    {
+      "state": "AK",
+      "name": "Alaska Education Grant",
+      "maxAward": 4000,
+      "deadline": "2026-03-31",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://acpe.alaska.gov/",
+      "keyDetail": "Grant for Alaska residents demonstrating financial need."
+    },
+    {
+      "state": "AZ",
+      "name": "Arizona Student Loan Program",
+      "maxAward": 3000,
+      "deadline": "2026-05-31",
+      "residencyRequired": false,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://highered.az.gov/",
+      "keyDetail": "Assists Arizona residents with financing higher education."
+    },
+    {
+      "state": "AR",
+      "name": "Arkansas Grant Program",
+      "maxAward": 4000,
+      "deadline": "2026-06-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.adhe.edu/",
+      "keyDetail": "Need-based grant for Arkansas residents."
+    },
+    {
+      "state": "CA",
+      "name": "Cal Grant",
+      "maxAward": 12000,
+      "deadline": "2026-03-02",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": true,
+      "url": "https://www.csac.ca.gov/",
+      "keyDetail": "State's largest grant program with both need-based and entitlement components based on GPA."
+    },
+    {
+      "state": "CO",
+      "name": "Colorado Student Grant",
+      "maxAward": 6000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://highered.colorado.gov/",
+      "keyDetail": "Need-based grant for Colorado residents attending eligible institutions."
+    },
+    {
+      "state": "CT",
+      "name": "Connecticut Aid for Public College Students (CAPCS)",
+      "maxAward": 5300,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://portal.ct.gov/highered/",
+      "keyDetail": "Need-based grant for Connecticut residents attending public universities."
+    },
+    {
+      "state": "DE",
+      "name": "Delaware Grant Program",
+      "maxAward": 4000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://dhss.delaware.gov/",
+      "keyDetail": "Grants to eligible Delaware residents."
+    },
+    {
+      "state": "DC",
+      "name": "DC Tuition Assistance Grant (DCTAG)",
+      "maxAward": 14200,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": false,
+      "url": "https://osse.dc.gov/",
+      "keyDetail": "Provides tuition assistance to DC residents attending in-state or out-of-state institutions."
+    },
+    {
+      "state": "FL",
+      "name": "Florida Bright Futures Scholarship Program",
+      "maxAward": 12000,
+      "deadline": "2026-07-15",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.floridastudentfinancialaid.org/",
+      "keyDetail": "Merit-based program for Florida high school graduates based on GPA and test scores."
+    },
+    {
+      "state": "GA",
+      "name": "HOPE Scholarship",
+      "maxAward": 7500,
+      "deadline": "Ongoing",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.gafutures.org/",
+      "keyDetail": "Merit-based scholarship for Georgia residents with 3.0+ GPA attending Georgia institutions."
+    },
+    {
+      "state": "HI",
+      "name": "Hawaii State Student Incentive Grant",
+      "maxAward": 3000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://dem.hawaii.gov/",
+      "keyDetail": "Need-based grant for Hawaii residents."
+    },
+    {
+      "state": "ID",
+      "name": "Idaho Opportunity Scholarship",
+      "maxAward": 4000,
+      "deadline": "2026-03-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.sde.idaho.gov/",
+      "keyDetail": "Need-based grant for Idaho residents attending eligible Idaho institutions."
+    },
+    {
+      "state": "IL",
+      "name": "Monetary Award Program (MAP)",
+      "maxAward": 15000,
+      "deadline": "2026-05-31",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.isac.org/",
+      "keyDetail": "Need-based grant program for Illinois residents; one of the nation's largest state grant programs."
+    },
+    {
+      "state": "IN",
+      "name": "21st Century Scholars Program",
+      "maxAward": 8000,
+      "deadline": "2026-10-31",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.in.gov/che/",
+      "keyDetail": "Need-based grant for Indiana residents; encourages college preparation and access."
+    },
+    {
+      "state": "IA",
+      "name": "Iowa Grant",
+      "maxAward": 5000,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://iowacollegeaid.gov/",
+      "keyDetail": "Need-based grant for Iowa residents."
+    },
+    {
+      "state": "KS",
+      "name": "Kansas Ethnic Minority Scholarship",
+      "maxAward": 3500,
+      "deadline": "2026-02-15",
+      "residencyRequired": false,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.kheaa.org/",
+      "keyDetail": "Scholarship for underrepresented minorities attending Kansas institutions."
+    },
+    {
+      "state": "KY",
+      "name": "Kentucky Educational Excellence Scholarship (KEES)",
+      "maxAward": 3000,
+      "deadline": "Ongoing",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.kheaa.com/",
+      "keyDetail": "Merit-based scholarship for Kentucky high school graduates based on academic achievement."
+    },
+    {
+      "state": "LA",
+      "name": "Louisiana Student Financial Assistance Commission Grant",
+      "maxAward": 3000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.osfa.la.gov/",
+      "keyDetail": "Need-based grant for Louisiana residents."
+    },
+    {
+      "state": "ME",
+      "name": "Maine State Grant Program",
+      "maxAward": 3000,
+      "deadline": "2026-05-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.maine.gov/education/",
+      "keyDetail": "Need-based grant for Maine residents attending eligible institutions."
+    },
+    {
+      "state": "MD",
+      "name": "Maryland State Scholarship",
+      "maxAward": 3000,
+      "deadline": "2026-03-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://mhec.maryland.gov/",
+      "keyDetail": "Need-based grant for Maryland residents."
+    },
+    {
+      "state": "MA",
+      "name": "Massachusetts Tuition Waiver Program",
+      "maxAward": 13000,
+      "deadline": "Varies",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": false,
+      "url": "https://www.mass.edu/",
+      "keyDetail": "Public tuition waivers for eligible Massachusetts residents attending public universities."
+    },
+    {
+      "state": "MI",
+      "name": "Michigan Grants",
+      "maxAward": 5600,
+      "deadline": "2026-03-31",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.michigan.gov/mde/",
+      "keyDetail": "Need-based grant for Michigan residents."
+    },
+    {
+      "state": "MN",
+      "name": "Minnesota State Grant",
+      "maxAward": 11500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.state.mn.us/",
+      "keyDetail": "Need-based grant for Minnesota residents; one of the nation's largest state grant programs."
+    },
+    {
+      "state": "MS",
+      "name": "Mississippi Resident Grant",
+      "maxAward": 3600,
+      "deadline": "2026-09-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.rsa.msstate.edu/",
+      "keyDetail": "Need-based grant for Mississippi residents."
+    },
+    {
+      "state": "MO",
+      "name": "Missouri Grant Program",
+      "maxAward": 4800,
+      "deadline": "2026-04-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.dhewd.mo.gov/",
+      "keyDetail": "Need-based grant for Missouri residents attending eligible institutions."
+    },
+    {
+      "state": "MT",
+      "name": "Montana University System Honor Scholarship",
+      "maxAward": 2000,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://oche.mt.gov/",
+      "keyDetail": "Merit-based scholarship for Montana high school graduates."
+    },
+    {
+      "state": "NE",
+      "name": "Nebraska Student Grant Program",
+      "maxAward": 4500,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.nac.ne.gov/",
+      "keyDetail": "Need-based grant for Nebraska residents."
+    },
+    {
+      "state": "NV",
+      "name": "Millennium Scholarship",
+      "maxAward": 5000,
+      "deadline": "2026-04-01",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.ndcs.nv.gov/",
+      "keyDetail": "Merit-based scholarship for Nevada high school graduates meeting academic standards."
+    },
+    {
+      "state": "NH",
+      "name": "New Hampshire Grant Program",
+      "maxAward": 3500,
+      "deadline": "2026-05-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.education.nh.gov/",
+      "keyDetail": "Need-based grant for New Hampshire residents."
+    },
+    {
+      "state": "NJ",
+      "name": "New Jersey Student Assistance Award",
+      "maxAward": 15000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.nj.gov/higher/",
+      "keyDetail": "Need-based grant for New Jersey residents; among the most generous state grant programs."
+    },
+    {
+      "state": "NM",
+      "name": "New Mexico Legislative Lottery Scholarship",
+      "maxAward": 6000,
+      "deadline": "Ongoing",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.hed.state.nm.us/",
+      "keyDetail": "Merit-based scholarship for New Mexico residents with 2.5+ GPA."
+    },
+    {
+      "state": "NY",
+      "name": "Tuition Assistance Program (TAP)",
+      "maxAward": 6050,
+      "deadline": "2026-06-30",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.hesc.ny.gov/",
+      "keyDetail": "Need-based grant for New York residents attending eligible institutions."
+    },
+    {
+      "state": "NC",
+      "name": "North Carolina Education Lottery Scholarship",
+      "maxAward": 3000,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.cfnc.org/",
+      "keyDetail": "Merit-based scholarship for North Carolina residents meeting eligibility requirements."
+    },
+    {
+      "state": "ND",
+      "name": "North Dakota Scholarship",
+      "maxAward": 1100,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ndcares.nd.gov/",
+      "keyDetail": "Need-based grant for North Dakota residents."
+    },
+    {
+      "state": "OH",
+      "name": "Ohio College Opportunity Grant",
+      "maxAward": 3750,
+      "deadline": "2026-05-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ohiohighered.org/",
+      "keyDetail": "Need-based grant for Ohio residents attending eligible institutions."
+    },
+    {
+      "state": "OK",
+      "name": "Oklahoma Tuition Aid Grant (OTAG)",
+      "maxAward": 5500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ok.gov/",
+      "keyDetail": "Need-based grant for Oklahoma residents."
+    },
+    {
+      "state": "OR",
+      "name": "Oregon Student Aid Grant",
+      "maxAward": 7000,
+      "deadline": "2026-03-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.oregonstudentaid.gov/",
+      "keyDetail": "Need-based grant for Oregon residents attending eligible institutions."
+    },
+    {
+      "state": "PA",
+      "name": "Pennsylvania Higher Education Assistance Agency (PHEAA) Grant",
+      "maxAward": 4500,
+      "deadline": "2026-05-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.pheaa.org/",
+      "keyDetail": "Need-based grant for Pennsylvania residents."
+    },
+    {
+      "state": "PR",
+      "name": "Puerto Rico Educational Assistance Grant",
+      "maxAward": 2000,
+      "deadline": "2026-04-30",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.pr.gov/",
+      "keyDetail": "Need-based grant for Puerto Rico residents."
+    },
+    {
+      "state": "RI",
+      "name": "Rhode Island Grant Program",
+      "maxAward": 3500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ri.gov/",
+      "keyDetail": "Need-based grant for Rhode Island residents."
+    },
+    {
+      "state": "SC",
+      "name": "South Carolina Grants and Scholarships",
+      "maxAward": 5500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.scdhec.gov/",
+      "keyDetail": "Need-based grant for South Carolina residents attending eligible institutions."
+    },
+    {
+      "state": "SD",
+      "name": "South Dakota Grant Program",
+      "maxAward": 3000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://dlr.sd.gov/",
+      "keyDetail": "Need-based grant for South Dakota residents."
+    },
+    {
+      "state": "TN",
+      "name": "Tennessee Student Assistance Award",
+      "maxAward": 4500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.tn.gov/",
+      "keyDetail": "Need-based grant for Tennessee residents attending eligible institutions."
+    },
+    {
+      "state": "TX",
+      "name": "Texas GRANT (Grant for Access and Attainment with Health Professions)",
+      "maxAward": 6000,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.thecb.texas.gov/",
+      "keyDetail": "Need-based grant for Texas residents attending Texas public institutions."
+    },
+    {
+      "state": "UT",
+      "name": "Utah Student Assistance Foundation Grant",
+      "maxAward": 3000,
+      "deadline": "2026-04-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.ushe.edu/",
+      "keyDetail": "Need-based grant for Utah residents."
+    },
+    {
+      "state": "VT",
+      "name": "Vermont Student Assistance Corporation (VSAC)",
+      "maxAward": 4000,
+      "deadline": "2026-05-01",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.vsac.org/",
+      "keyDetail": "Need-based grant for Vermont residents attending eligible institutions."
+    },
+    {
+      "state": "VI",
+      "name": "US Virgin Islands Education Grant",
+      "maxAward": 1500,
+      "deadline": "2026-04-30",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.vi.gov/",
+      "keyDetail": "Need-based grant for Virgin Islands residents."
+    },
+    {
+      "state": "VA",
+      "name": "Virginia Student Assistance Foundation Grant",
+      "maxAward": 4000,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.vhec.org/",
+      "keyDetail": "Need-based grant for Virginia residents attending eligible institutions."
+    },
+    {
+      "state": "WA",
+      "name": "Washington College Need Grant",
+      "maxAward": 14500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.wsac.wa.gov/",
+      "keyDetail": "Need-based grant for Washington residents; among the nation's most generous state grant programs."
+    },
+    {
+      "state": "WV",
+      "name": "West Virginia Higher Education Grant Program",
+      "maxAward": 3500,
+      "deadline": "2026-03-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.wvhepc.org/",
+      "keyDetail": "Need-based grant for West Virginia residents."
+    },
+    {
+      "state": "WI",
+      "name": "Wisconsin Higher Education Grant (WHEG)",
+      "maxAward": 4500,
+      "deadline": "2026-05-15",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://dpi.wi.gov/",
+      "keyDetail": "Need-based grant for Wisconsin residents attending eligible institutions."
+    },
+    {
+      "state": "WY",
+      "name": "Wyoming Hathaway Scholarship",
+      "maxAward": 3500,
+      "deadline": "Ongoing",
+      "residencyRequired": true,
+      "needBased": false,
+      "meritBased": true,
+      "url": "https://www.wyoming.gov/",
+      "keyDetail": "Merit-based scholarship for Wyoming high school graduates with 21+ ACT score."
+    },
+    {
+      "state": "GU",
+      "name": "Guam Scholarship",
+      "maxAward": 2000,
+      "deadline": "2026-04-30",
+      "residencyRequired": true,
+      "needBased": true,
+      "meritBased": false,
+      "url": "https://www.guam.gov/",
+      "keyDetail": "Need-based grant for Guam residents."
+    }
+  ],
+  "strategies": {
+    "appealLetter": {
+      "steps": [
+        "Request a detailed breakdown of the financial aid office's need analysis",
+        "Document any significant family financial changes since application (job loss, medical expenses, etc.)",
+        "Research the school's net price for families with your income level using IPEDS data",
+        "Write a concise, professional letter (1-2 pages) explaining your circumstances",
+        "Include documentation: tax returns, medical bills, or unemployment notices if applicable",
+        "Send to the financial aid director with a respectful request for a meeting to discuss",
+        "Follow up within 2 weeks if you don't hear back"
+      ],
+      "successRate": "25-35% of appeals result in some additional aid consideration",
+      "tips": [
+        "Appeal based on changed circumstances, not just desire for more aid",
+        "Compare your package to peers at the same school using Net Price Calculator",
+        "Be respectful and avoid accusatory language",
+        "Provide specific numbers and documentation, not estimates",
+        "Appeal soon after receiving aid notice while positions are flexible",
+        "Contact other schools' aid offices if you have better offers to discuss matching"
+      ]
+    },
+    "negotiation": {
+      "when": [
+        "You have competing offers from peer institutions",
+        "Your family's financial situation has changed significantly",
+        "You notice discrepancies in how financial need was calculated",
+        "Peer institutions offered substantially more aid for similar qualifications"
+      ],
+      "how": [
+        "Schedule a meeting or phone call with the financial aid director or counselor",
+        "Present competing offers from peer schools in writing",
+        "Explain how the school is your first choice but affordability is a barrier",
+        "Ask if they can review and reconsider the package in light of other offers",
+        "Request they clarify what assumptions were made about your family's ability to pay",
+        "Discuss whether any institutional aid or discretionary awards might apply"
+      ],
+      "leverage": [
+        "Competing offers from peer-ranked institutions",
+        "Professional merit scholarships you've been awarded",
+        "Unmet needs in the package (excessive loans or work expectations)",
+        "Changed family circumstances affecting ability to pay",
+        "Your value as a student (strong academics, talents, diversity)",
+        "Interest in early enrollment or commitment to the school"
+      ]
+    },
+    "costReduction": [
+      {
+        "strategy": "AP/IB/CLEP Credit Substitution",
+        "description": "Use advanced placement credits to reduce time to degree and eliminate repetitive courses, potentially graduating a semester early",
+        "potentialSavings": "10-25% reduction in total education costs (one semester = 12-25% savings)"
+      },
+      {
+        "strategy": "Community College Transfer",
+        "description": "Complete first two years at community college with equivalent tuition before transferring to 4-year institution for final two years",
+        "potentialSavings": "30-50% reduction in total degree cost"
+      },
+      {
+        "strategy": "Work-Study and Part-Time Employment",
+        "description": "Utilize federal work-study or part-time jobs to reduce loan dependency; balance with academic performance",
+        "potentialSavings": "5000-8000 annually in reduced loan borrowing"
+      },
+      {
+        "strategy": "Living at Home",
+        "description": "Commute from family home instead of living on-campus or in off-campus housing",
+        "potentialSavings": "8000-15000 annually (room and board savings)"
+      },
+      {
+        "strategy": "Used Textbooks and Rental Options",
+        "description": "Purchase used textbooks or rent from library reserves instead of buying new retail copies",
+        "potentialSavings": "500-1500 annually"
+      },
+      {
+        "strategy": "Cooperative Education Programs",
+        "description": "Participate in alternating work-study terms to earn significant income while building career experience",
+        "potentialSavings": "10000-20000 total through earnings and extended time to degree"
+      }
+    ],
+    "taxPlanning": [
+      {
+        "strategy": "American Opportunity Tax Credit",
+        "description": "Claim up to $2,500 per student annually for first four years of college for qualified education expenses",
+        "impact": "Up to $2,500 annual reduction in federal income tax per student"
+      },
+      {
+        "strategy": "Lifetime Learning Credit",
+        "description": "Claim up to $2,000 annually for qualified education expenses for students beyond first four years",
+        "impact": "Up to $2,000 annual tax credit per family"
+      },
+      {
+        "strategy": "Student Loan Interest Deduction",
+        "description": "Deduct up to $2,500 in student loan interest paid during the year",
+        "impact": "Up to $2,500 annual deduction reducing taxable income"
+      },
+      {
+        "strategy": "529 Education Savings Plans",
+        "description": "Prepay tuition or save in tax-advantaged education plans; funds grow tax-free",
+        "impact": "Substantial long-term tax savings depending on investment growth"
+      },
+      {
+        "strategy": "Coverdell Education Savings Accounts",
+        "description": "Save up to $2,000 annually in tax-free accounts for education expenses",
+        "impact": "Up to $2,000 annual tax-free contribution with investment growth benefits"
+      },
+      {
+        "strategy": "Timing of Income and Deductions",
+        "description": "Manage timing of income recognition and education expense deductions to minimize tax burden across years",
+        "impact": "Variable depending on family tax bracket and situation"
+      }
+    ],
+    "timingStrategies": [
+      {
+        "strategy": "Early Application for Merit Scholarships",
+        "description": "Submit applications in September-October for schools with early decision or merit scholarship deadlines; later applicants face depleted funds"
+      },
+      {
+        "strategy": "FAFSA Filing Timing",
+        "description": "Submit FAFSA immediately when it opens (October 1st) to access maximum aid; many schools have limited aid for late applicants"
+      },
+      {
+        "strategy": "Financial Aid Appeal Windows",
+        "description": "Submit appeals within 2-4 weeks of receiving aid package; offices have more flexibility with adjustments made early"
+      },
+      {
+        "strategy": "CSS Profile Filing",
+        "description": "File CSS Profile before school-specific deadlines (usually early January) to ensure priority consideration"
+      },
+      {
+        "strategy": "Enrollment Deposit Timing",
+        "description": "Delay enrollment deposit until late April if waiting for financial aid appeals; most schools allow deposits through May 1st"
+      },
+      {
+        "strategy": "Comparing Multiple Offers",
+        "description": "Request all financial aid offers by March/April before enrolling; allows time to appeal or negotiate with top choices"
+      }
+    ]
+  }
+}

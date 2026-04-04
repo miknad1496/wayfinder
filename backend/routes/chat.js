@@ -634,9 +634,12 @@ router.post('/', async (req, res) => {
     tEvent.outcome.error = err.message || 'unknown';
     tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;
     logTelemetry(tEvent);
-    res.status(500).json({
-      error: err.message || 'Failed to generate response'
-    });
+    // Sanitize error message — never leak raw API JSON to frontend
+    let safeMsg = err.message || 'Failed to generate response';
+    if (safeMsg.includes('"type":"error"') || safeMsg.includes('invalid_request_error')) {
+      safeMsg = 'Your message could not be processed. Try rephrasing your question.';
+    }
+    res.status(500).json({ error: safeMsg });
   }
 });
 

@@ -2645,6 +2645,28 @@ html, body { overflow-x: hidden; }
 }
 .tool-upgrade-btn:hover { background: var(--primary-dark); }
 
+/* Financial Aid tabs */
+.finaid-tab-btn.active {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: var(--primary) !important;
+}
+.strategy-result {
+  background: var(--bg-secondary, #0f172a);
+  border: 1px solid var(--border, #334155);
+  border-radius: 8px;
+  padding: 20px;
+  line-height: 1.7;
+  color: var(--text-primary, #e2e8f0);
+  font-size: 14px;
+}
+.strategy-result p { margin-bottom: 12px; }
+.strategy-result strong { color: var(--primary, #6366f1); }
+.strategy-schools { margin-top: 16px; }
+.strategy-schools h4 { color: var(--text-secondary, #94a3b8); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+.finaid-prices { font-size: 13px; color: var(--text-secondary, #94a3b8); margin-top: 4px; }
+.tool-card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+
 @media (max-width: 600px) {
   .welcome-path-cards { flex-direction: column; align-items: center; }
   .welcome-path-card { width: 100%; max-width: 300px; }

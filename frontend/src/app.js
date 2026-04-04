@@ -1481,7 +1481,10 @@ function renderMarkdown(text) {
   // Inline code
   html = html.replace(/`(.*?)`/g, '<code>$1</code>');
   // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+    const safe = sanitizeUrl(url);
+    return safe ? `<a href="${safe}" target="_blank" rel="noopener">${text}</a>` : text;
+  });
   // Headings
   html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
   html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
@@ -1526,6 +1529,16 @@ function escapeHtml(text) {
   div.textContent = text;
   return div.innerHTML;
 }
+
+function sanitizeUrl(url) {
+  if (!url) return '';
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === 'https:' || parsed.protocol === 'http:') return url;
+  } catch {}
+  return '';
+}
+
 
 // ========================
 // Invite System
@@ -2094,6 +2107,7 @@ function setupToolListeners() {
   $('sidebarInternships').addEventListener('click', openInternships);
   $('sidebarScholarships').addEventListener('click', openScholarships);
   $('sidebarPrograms').addEventListener('click', openPrograms);
+  $('sidebarFinancialAid').addEventListener('click', openFinancialAid);
 
   // Modal close handlers
   setupModalClose('timelineModal', 'timelineModalClose');
@@ -2101,9 +2115,10 @@ function setupToolListeners() {
   setupModalClose('internshipsModal', 'internshipsModalClose');
   setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
   setupModalClose('programsModal', 'programsModalClose');
+  setupModalClose('financialAidModal', 'financialAidModalClose');
 
   // Upgrade gate buttons
-  const upgradeGateBtns = ['timelineUpgradeBtn', 'essaysUpgradeBtn', 'internshipsUpgradeBtn', 'scholarshipsUpgradeBtn', 'programsUpgradeBtn'];
+  const upgradeGateBtns = ['timelineUpgradeBtn', 'essaysUpgradeBtn', 'internshipsUpgradeBtn', 'scholarshipsUpgradeBtn', 'programsUpgradeBtn', 'financialAidUpgradeBtn'];
   for (const id of upgradeGateBtns) {
     const el = $(id);
     if (el) el.addEventListener('click', () => {
@@ -2135,6 +2150,20 @@ function setupToolListeners() {
 
   // Programs search
   if ($('programSearchBtn')) $('programSearchBtn').addEventListener('click', searchPrograms);
+
+  // Financial Aid tab buttons
+  document.querySelectorAll('.finaid-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchFinaidTab(btn.dataset.finaidTab));
+  });
+
+  // Financial Aid search
+  if ($('finaidSearchBtn')) $('finaidSearchBtn').addEventListener('click', searchFinancialAid);
+
+  // Grants state change
+  if ($('grantsState')) $('grantsState').addEventListener('change', searchStateGrants);
+
+  // Strategy button
+  if ($('strategyBtn')) $('strategyBtn').addEventListener('click', generateMyStrategy);
 }
 
 function setupModalClose(modalId, closeId) {
@@ -2161,6 +2190,8 @@ function canAccess(feature) {
     scholarships: ['elite'],
     programs_preview: ['pro'],
     programs: ['elite'],
+    financial_aid_preview: ['pro', 'elite'],
+    financial_aid: ['elite'],
   };
   return (access[feature] || []).includes(plan);
 }
@@ -2539,6 +2570,250 @@ async function searchPrograms() {
 }
 
 // ========================
+// Financial Aid Tool
+// ========================
+function openFinancialAid() {
+  if (!currentUser) { openAuthModal('login'); return; }
+  closeSidebarOnMobile();
+  $('financialAidModal').style.display = 'flex';
+
+  if (!canAccess('financial_aid_preview')) {
+    // Free users: show upgrade gate, hide content
+    $('financialAidRequiresUpgrade').style.display = 'block';
+    ['finaidTabSearch', 'finaidTabStrategy', 'finaidTabGrants'].forEach(id => {
+      if ($(id)) $(id).style.display = 'none';
+    });
+    return;
+  }
+
+  $('financialAidRequiresUpgrade').style.display = 'none';
+  // Show search tab by default
+  switchFinaidTab('search');
+  searchFinancialAid();
+}
+
+function switchFinaidTab(tab) {
+  // Hide all tab content
+  ['finaidTabSearch', 'finaidTabStrategy', 'finaidTabGrants'].forEach(id => {
+    if ($(id)) $(id).style.display = 'none';
+  });
+  // Remove active from all tab buttons
+  document.querySelectorAll('.finaid-tab-btn').forEach(btn => btn.classList.remove('active'));
+  // Show selected tab
+  if (tab === 'search') {
+    if ($('finaidTabSearch')) $('finaidTabSearch').style.display = 'block';
+    document.querySelector('[data-finaid-tab="search"]')?.classList.add('active');
+  } else if (tab === 'strategy') {
+    if (!canAccess('financial_aid')) {
+      if ($('finaidTabStrategy')) $('finaidTabStrategy').style.display = 'block';
+      document.querySelector('[data-finaid-tab="strategy"]')?.classList.add('active');
+      $('strategyResults').innerHTML = '<div class="tool-upgrade-teaser"><div class="tool-upgrade-content"><p>Personalized financial aid strategies require an Elite plan.</p><button onclick="openUpgrade()" class="tool-upgrade-btn">Upgrade to Elite</button></div></div>';
+      return;
+    }
+    if ($('finaidTabStrategy')) $('finaidTabStrategy').style.display = 'block';
+    document.querySelector('[data-finaid-tab="strategy"]')?.classList.add('active');
+  } else if (tab === 'grants') {
+    if ($('finaidTabGrants')) $('finaidTabGrants').style.display = 'block';
+    document.querySelector('[data-finaid-tab="grants"]')?.classList.add('active');
+    searchStateGrants();
+  }
+}
+
+async function searchFinancialAid() {
+  $('finaidLoading').style.display = 'flex';
+  $('finaidResults').innerHTML = '';
+
+  const params = new URLSearchParams();
+  if ($('finaidState')?.value) params.set('state', $('finaidState').value);
+  if ($('finaidType')?.value) params.set('type', $('finaidType').value);
+  if ($('finaidTags')?.value) params.set('tags', $('finaidTags').value);
+  if ($('finaidIncome')?.value) params.set('incomeBracket', $('finaidIncome').value);
+  if ($('finaidSearch')?.value?.trim()) params.set('q', $('finaidSearch').value.trim());
+
+  try {
+    const res = await fetch(`${API_BASE}/financial-aid/search?${params}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+    $('finaidLoading').style.display = 'none';
+    renderFinaidResults(data.results || [], data._fullAccess, data._previewMessage, data.total);
+  } catch {
+    $('finaidLoading').style.display = 'none';
+    $('finaidResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load data.</p>';
+  }
+}
+
+function renderFinaidResults(results, fullAccess, previewMessage, totalCount) {
+  const el = $('finaidResults');
+  if (!results.length) {
+    el.innerHTML = '<div class="tool-empty"><p>No schools found matching your filters.</p></div>';
+    return;
+  }
+  const countText = (!fullAccess && totalCount && totalCount > results.length)
+    ? `Showing ${results.length} of ${totalCount} results`
+    : `${results.length} result${results.length !== 1 ? 's' : ''}`;
+  let html = `<div class="tool-result-count">${countText}</div>`;
+
+  for (const school of results) {
+    const tags = (school.tags || []).map(t => `<span class="tool-tag">${escapeHtml(t)}</span>`).join('');
+    const netPrice = school.netPriceByIncome;
+    let priceInfo = '';
+    if (netPrice && fullAccess) {
+      priceInfo = `<div class="finaid-prices">
+        <span>Net price: $${(netPrice.under30k || 0).toLocaleString()} - $${(netPrice.over110k || 0).toLocaleString()}</span>
+      </div>`;
+    }
+    html += `<div class="tool-card ${school._preview ? 'preview' : ''}">
+      <div class="tool-card-header">
+        <h4>${escapeHtml(school.name)}</h4>
+        ${school.needBlind ? '<span class="tool-tag paid">Need-Blind</span>' : ''}
+        ${school.meetsFullNeed ? '<span class="tool-tag free">Meets Full Need</span>' : ''}
+      </div>
+      <div class="tool-card-meta">
+        <span>${escapeHtml(school.type || '')}</span>
+        <span>${escapeHtml(school.state || '')}</span>
+        <span>Sticker: $${(school.stickerPrice || 0).toLocaleString()}</span>
+        ${school.deadline ? `<span>Aid Deadline: ${escapeHtml(school.deadline)}</span>` : ''}
+      </div>
+      ${priceInfo}
+      ${school.keyInsight && fullAccess ? `<p class="tool-card-desc">${escapeHtml(school.keyInsight)}</p>` : ''}
+      <div class="tool-card-tags">${tags}</div>
+    </div>`;
+  }
+
+  if (previewMessage && !fullAccess) {
+    html += `<div class="tool-upgrade-teaser">
+      <div class="tool-upgrade-blur"></div>
+      <div class="tool-upgrade-content">
+        <p>${escapeHtml(previewMessage)}</p>
+        <button onclick="openUpgrade()" class="tool-upgrade-btn">Unlock Full Access</button>
+      </div>
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+async function searchStateGrants() {
+  $('grantsLoading').style.display = 'flex';
+  $('grantsResults').innerHTML = '';
+
+  const params = new URLSearchParams();
+  if ($('grantsState')?.value) params.set('state', $('grantsState').value);
+
+  try {
+    const res = await fetch(`${API_BASE}/financial-aid/state-grants?${params}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+    $('grantsLoading').style.display = 'none';
+
+    const grants = data.results || [];
+    if (!grants.length) {
+      $('grantsResults').innerHTML = '<div class="tool-empty"><p>No state grants found. Select a state.</p></div>';
+      return;
+    }
+    let html = `<div class="tool-result-count">${grants.length} grant program${grants.length !== 1 ? 's' : ''}</div>`;
+    for (const g of grants) {
+      html += `<div class="tool-card">
+        <div class="tool-card-header">
+          <h4>${escapeHtml(g.name)}</h4>
+          <span class="tool-tag amount">Up to $${(g.maxAward || 0).toLocaleString()}</span>
+        </div>
+        <div class="tool-card-meta">
+          <span>${escapeHtml(g.state)}</span>
+          ${g.deadline ? `<span>Deadline: ${escapeHtml(g.deadline)}</span>` : ''}
+          ${g.needBased ? '<span>Need-Based</span>' : ''}
+          ${g.meritBased ? '<span>Merit-Based</span>' : ''}
+        </div>
+        ${g.keyDetail ? `<p class="tool-card-desc">${escapeHtml(g.keyDetail)}</p>` : ''}
+      </div>`;
+    }
+    $('grantsResults').innerHTML = html;
+  } catch {
+    $('grantsLoading').style.display = 'none';
+    $('grantsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load grants.</p>';
+  }
+}
+
+async function generateMyStrategy() {
+  const income = $('strategyIncome')?.value;
+  const assets = $('strategyAssets')?.value;
+  const familySize = $('strategyFamilySize')?.value;
+  const state = $('strategyState')?.value;
+  const gpa = $('strategyGPA')?.value;
+  const schools = $('strategySchools')?.value;
+
+  if (!income || !schools) {
+    $('strategyResults').innerHTML = '<p style="color:#f87171;">Please enter at least your household income and target schools.</p>';
+    return;
+  }
+
+  $('strategyLoading').style.display = 'flex';
+  $('strategyResults').innerHTML = '';
+  $('strategyBtn').disabled = true;
+
+  try {
+    const res = await fetch(`${API_BASE}/financial-aid/my-strategy`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        householdIncome: parseFloat(income),
+        assets: parseFloat(assets) || 0,
+        familySize: parseInt(familySize) || 4,
+        state: state || '',
+        studentGPA: parseFloat(gpa) || 0,
+        targetSchools: schools.split(',').map(s => s.trim()).filter(Boolean)
+      })
+    });
+    const data = await res.json();
+    $('strategyLoading').style.display = 'none';
+    $('strategyBtn').disabled = false;
+
+    if (!res.ok || data.error) {
+      $('strategyResults').innerHTML = `<p style="color:#f87171;">${escapeHtml(data.error || 'Failed to generate strategy.')}</p>`;
+      return;
+    }
+
+    // Render the strategy as safe HTML — escape first, then apply formatting
+    const strategyText = escapeHtml(data.strategy || 'No strategy generated.');
+    const formatted = strategyText
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    let html = `<div class="strategy-result"><p>${formatted}</p></div>`;
+
+    // Show matched school cards if available
+    if (data.schools && data.schools.length) {
+      html += '<div class="strategy-schools"><h4>Your Target Schools</h4>';
+      for (const s of data.schools) {
+        const netPrice = s.netPrice ? `$${s.netPrice.toLocaleString()}` : 'varies';
+        html += `<div class="tool-card">
+          <div class="tool-card-header"><h4>${escapeHtml(s.name)}</h4></div>
+          <div class="tool-card-meta">
+            <span>Sticker: $${(s.stickerPrice || 0).toLocaleString()}</span>
+            <span>Est. Net: ${netPrice}</span>
+            ${s.needBlind ? '<span class="tool-tag paid">Need-Blind</span>' : ''}
+          </div>
+        </div>`;
+      }
+      html += '</div>';
+    }
+
+    $('strategyResults').innerHTML = html;
+  } catch {
+    $('strategyLoading').style.display = 'none';
+    $('strategyBtn').disabled = false;
+    $('strategyResults').innerHTML = '<p style="color:#f87171;">Failed to generate strategy. Please try again.</p>';
+  }
+}
+
+// ========================
 // Shared Tool Results Renderer
 // ========================
 function renderToolResults(containerId, results, fullAccess, previewMessage, type, totalCount) {
@@ -2592,7 +2867,7 @@ function renderToolCard(item, type, fullAccess) {
         ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
       </div>
       ${item.description && !isPreview ? `<p class="tool-card-desc">${escapeHtml(item.description.slice(0, 200))}${item.description.length > 200 ? '...' : ''}</p>` : ''}
-      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
+      ${item.url && fullAccess && sanitizeUrl(item.url) ? `<a href="${sanitizeUrl(item.url)}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
     </div>`;
   }
 
@@ -2608,7 +2883,7 @@ function renderToolCard(item, type, fullAccess) {
         ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
         ${item.competitiveness ? `<span>${capitalize(item.competitiveness)}</span>` : ''}
       </div>
-      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Apply</a>` : ''}
+      ${item.url && fullAccess && sanitizeUrl(item.url) ? `<a href="${sanitizeUrl(item.url)}" target="_blank" rel="noopener" class="tool-card-link">Apply</a>` : ''}
     </div>`;
   }
 
@@ -2625,7 +2900,7 @@ function renderToolCard(item, type, fullAccess) {
         ${item.cost?.type === 'free' || item.cost?.amount === 0 ? '<span class="tool-tag free">Free</span>' : ''}
         ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
       </div>
-      ${item.url && fullAccess ? `<a href="${item.url}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
+      ${item.url && fullAccess && sanitizeUrl(item.url) ? `<a href="${sanitizeUrl(item.url)}" target="_blank" rel="noopener" class="tool-card-link">Learn more</a>` : ''}
     </div>`;
   }
 

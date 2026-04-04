@@ -737,7 +737,7 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
     const statusErrorMap = {
       401: 'Authentication failed. Verify your API key is valid and not expired.',
       429: 'API rate limit exceeded. Please wait a moment and try again. Consider upgrading your plan for higher limits.',
-      400: 'Invalid request format. This may be due to message length or content.',
+      400: 'Your message could not be processed. Try rephrasing your question.',
       503: 'Anthropic API is temporarily unavailable. Please try again in a moment.',
     };
 

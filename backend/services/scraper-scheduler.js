@@ -87,6 +87,15 @@ const SCRAPERS = {
     description: 'College admissions profiles'
   },
 
+  // Weekly database maintenance
+  dbRefresh: {
+    frequency: 'weekly',
+    intervalMs: 7 * 24 * 60 * 60 * 1000,
+    module: '../scrapers/db-refresher.js',
+    fn: 'run',
+    description: 'Database refresh (deadlines, quality checks, statistics)'
+  },
+
   // Annual scrapers — slow-changing government/institutional data
   // These run at most once per year; use admin force-run endpoint to trigger manually
   nces: {

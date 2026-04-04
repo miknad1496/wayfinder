@@ -18,12 +18,14 @@ import essayRoutes from './routes/essays.js';
 import internshipRoutes from './routes/internships.js';
 import scholarshipRoutes from './routes/scholarships.js';
 import programRoutes from './routes/programs.js';
+import financialAidRoutes from './routes/financial-aid.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
 import { startScheduler } from './services/scheduler.js';
-import { startScraperScheduler } from './services/scraper-scheduler.js';
+import { startScraperScheduler, stopScraperScheduler } from './services/scraper-scheduler.js';
 import { syncCommittedData } from './services/data-sync.js';
+import { restoreFromBackup, startUserBackup, stopUserBackup } from './services/user-backup.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -164,6 +166,7 @@ app.use('/api/essays', apiLimiter, essayRoutes);
 app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);
+app.use('/api/financial-aid', apiLimiter, financialAidRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
@@ -219,6 +222,7 @@ async function start() {
   await ensureDirectories();
   await ensureUsersDir();
   await ensureInvitesDir();
+  await restoreFromBackup();
   app.listen(PORT, async () => {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);
@@ -232,8 +236,22 @@ async function start() {
     if (process.env.NODE_ENV === 'production') {
       startScheduler();
       startScraperScheduler();
+      startUserBackup();
     }
   });
 }
 
 start().catch(console.error);
+
+// Graceful shutdown — run final user backup before exit
+let isShuttingDown = false;
+async function gracefulShutdown(signal) {
+  if (isShuttingDown) return;
+  isShuttingDown = true;
+  console.log(`[Server] ${signal} received, shutting down gracefully...`);
+  try { stopScraperScheduler(); } catch (e) { console.error('[Scraper] Shutdown error:', e.message); }
+  try { await stopUserBackup(); } catch (e) { console.error('[Backup] Shutdown error:', e.message); }
+  process.exit(0);
+}
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));

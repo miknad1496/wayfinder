@@ -4,6 +4,8 @@ backend/data/sessions/
 backend/data/feedback/
 backend/data/users/
 backend/data/learned/
+backend/data/backup/
+backend/data/invites/
 frontend/dist/
 seed-data/
 *.log
@@ -11,6 +13,11 @@ backend/logs/
 .DS_Store
 Thumbs.db
 package-lock.json
+
+# Sensitive / local-only folders
+APIs Tokens/
+Pathivy emails/
+research/
 
 # Scraped data: ignore raw intermediate files, but TRACK the curated JSON datasets
 # These JSON files ARE the knowledge database and must deploy with the app

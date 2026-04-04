@@ -1,0 +1,689 @@
+{
+  "metadata": {
+    "scraped_at": "2026-03-29T17:26:43.685Z",
+    "source": "Census ACS 2024 1-Year Estimates",
+    "api": "https://api.census.gov/data/2024/acs/acs1"
+  },
+  "national": {
+    "total": 52582,
+    "less_than_hs": 32468,
+    "high_school": 40684,
+    "some_college": 47953,
+    "bachelors": 70470,
+    "graduate": 90191
+  },
+  "by_state": [
+    {
+      "state": "Alabama",
+      "state_fips": "01",
+      "earnings": {
+        "total": 48522,
+        "less_than_hs": 31127,
+        "high_school": 39147,
+        "some_college": 45321,
+        "bachelors": 61183,
+        "graduate": 75325
+      }
+    },
+    {
+      "state": "Alaska",
+      "state_fips": "02",
+      "earnings": {
+        "total": 57273,
+        "less_than_hs": 35759,
+        "high_school": 45904,
+        "some_college": 54950,
+        "bachelors": 69031,
+        "graduate": 89282
+      }
+    },
+    {
+      "state": "Arizona",
+      "state_fips": "04",
+      "earnings": {
+        "total": 51767,
+        "less_than_hs": 36522,
+        "high_school": 41518,
+        "some_college": 47923,
+        "bachelors": 67466,
+        "graduate": 82162
+      }
+    },
+    {
+      "state": "Arkansas",
+      "state_fips": "05",
+      "earnings": {
+        "total": 46145,
+        "less_than_hs": 31970,
+        "high_school": 38020,
+        "some_college": 41732,
+        "bachelors": 57152,
+        "graduate": 71543
+      }
+    },
+    {
+      "state": "California",
+      "state_fips": "06",
+      "earnings": {
+        "total": 57142,
+        "less_than_hs": 32360,
+        "high_school": 41535,
+        "some_college": 51031,
+        "bachelors": 80874,
+        "graduate": 110398
+      }
+    },
+    {
+      "state": "Colorado",
+      "state_fips": "08",
+      "earnings": {
+        "total": 61975,
+        "less_than_hs": 38338,
+        "high_school": 46010,
+        "some_college": 51247,
+        "bachelors": 75637,
+        "graduate": 91767
+      }
+    },
+    {
+      "state": "Connecticut",
+      "state_fips": "09",
+      "earnings": {
+        "total": 62042,
+        "less_than_hs": 35990,
+        "high_school": 44573,
+        "some_college": 51686,
+        "bachelors": 77879,
+        "graduate": 95858
+      }
+    },
+    {
+      "state": "Delaware",
+      "state_fips": "10",
+      "earnings": {
+        "total": 51993,
+        "less_than_hs": 34689,
+        "high_school": 39495,
+        "some_college": 49094,
+        "bachelors": 65673,
+        "graduate": 81914
+      }
+    },
+    {
+      "state": "District of Columbia",
+      "state_fips": "11",
+      "earnings": {
+        "total": 91315,
+        "less_than_hs": 37581,
+        "high_school": 39736,
+        "some_college": 41467,
+        "bachelors": 94281,
+        "graduate": 122259
+      }
+    },
+    {
+      "state": "Florida",
+      "state_fips": "12",
+      "earnings": {
+        "total": 48103,
+        "less_than_hs": 31252,
+        "high_school": 37044,
+        "some_college": 45172,
+        "bachelors": 60618,
+        "graduate": 79288
+      }
+    },
+    {
+      "state": "Georgia",
+      "state_fips": "13",
+      "earnings": {
+        "total": 51472,
+        "less_than_hs": 33554,
+        "high_school": 38311,
+        "some_college": 45919,
+        "bachelors": 70582,
+        "graduate": 82606
+      }
+    },
+    {
+      "state": "Hawaii",
+      "state_fips": "15",
+      "earnings": {
+        "total": 52534,
+        "less_than_hs": 34381,
+        "high_school": 42373,
+        "some_college": 50549,
+        "bachelors": 62969,
+        "graduate": 81531
+      }
+    },
+    {
+      "state": "Idaho",
+      "state_fips": "16",
+      "earnings": {
+        "total": 50267,
+        "less_than_hs": 35830,
+        "high_school": 41114,
+        "some_college": 45707,
+        "bachelors": 60198,
+        "graduate": 79565
+      }
+    },
+    {
+      "state": "Illinois",
+      "state_fips": "17",
+      "earnings": {
+        "total": 56201,
+        "less_than_hs": 35727,
+        "high_school": 41132,
+        "some_college": 47598,
+        "bachelors": 72625,
+        "graduate": 90753
+      }
+    },
+    {
+      "state": "Indiana",
+      "state_fips": "18",
+      "earnings": {
+        "total": 50788,
+        "less_than_hs": 35188,
+        "high_school": 40985,
+        "some_college": 47929,
+        "bachelors": 63367,
+        "graduate": 77593
+      }
+    },
+    {
+      "state": "Iowa",
+      "state_fips": "19",
+      "earnings": {
+        "total": 51293,
+        "less_than_hs": 35097,
+        "high_school": 41765,
+        "some_college": 48062,
+        "bachelors": 62244,
+        "graduate": 78545
+      }
+    },
+    {
+      "state": "Kansas",
+      "state_fips": "20",
+      "earnings": {
+        "total": 51227,
+        "less_than_hs": 35293,
+        "high_school": 40694,
+        "some_college": 45825,
+        "bachelors": 65534,
+        "graduate": 75232
+      }
+    },
+    {
+      "state": "Kentucky",
+      "state_fips": "21",
+      "earnings": {
+        "total": 47730,
+        "less_than_hs": 31029,
+        "high_school": 38137,
+        "some_college": 45352,
+        "bachelors": 60854,
+        "graduate": 69045
+      }
+    },
+    {
+      "state": "Louisiana",
+      "state_fips": "22",
+      "earnings": {
+        "total": 46484,
+        "less_than_hs": 28254,
+        "high_school": 35973,
+        "some_college": 43459,
+        "bachelors": 59917,
+        "graduate": 70584
+      }
+    },
+    {
+      "state": "Maine",
+      "state_fips": "23",
+      "earnings": {
+        "total": 51823,
+        "less_than_hs": 36479,
+        "high_school": 41689,
+        "some_college": 47269,
+        "bachelors": 62442,
+        "graduate": 76686
+      }
+    },
+    {
+      "state": "Maryland",
+      "state_fips": "24",
+      "earnings": {
+        "total": 65664,
+        "less_than_hs": 35597,
+        "high_school": 45273,
+        "some_college": 55301,
+        "bachelors": 79242,
+        "graduate": 102851
+      }
+    },
+    {
+      "state": "Massachusetts",
+      "state_fips": "25",
+      "earnings": {
+        "total": 66968,
+        "less_than_hs": 37840,
+        "high_school": 46742,
+        "some_college": 52218,
+        "bachelors": 81784,
+        "graduate": 100565
+      }
+    },
+    {
+      "state": "Michigan",
+      "state_fips": "26",
+      "earnings": {
+        "total": 50867,
+        "less_than_hs": 31647,
+        "high_school": 38399,
+        "some_college": 45580,
+        "bachelors": 66497,
+        "graduate": 83618
+      }
+    },
+    {
+      "state": "Minnesota",
+      "state_fips": "27",
+      "earnings": {
+        "total": 58961,
+        "less_than_hs": 36273,
+        "high_school": 42121,
+        "some_college": 52185,
+        "bachelors": 72538,
+        "graduate": 87781
+      }
+    },
+    {
+      "state": "Mississippi",
+      "state_fips": "28",
+      "earnings": {
+        "total": 44889,
+        "less_than_hs": 30149,
+        "high_school": 35287,
+        "some_college": 41781,
+        "bachelors": 55481,
+        "graduate": 64514
+      }
+    },
+    {
+      "state": "Missouri",
+      "state_fips": "29",
+      "earnings": {
+        "total": 50341,
+        "less_than_hs": 31673,
+        "high_school": 39568,
+        "some_college": 45360,
+        "bachelors": 62091,
+        "graduate": 75053
+      }
+    },
+    {
+      "state": "Montana",
+      "state_fips": "30",
+      "earnings": {
+        "total": 48336,
+        "less_than_hs": 38463,
+        "high_school": 38322,
+        "some_college": 43921,
+        "bachelors": 56457,
+        "graduate": 69646
+      }
+    },
+    {
+      "state": "Nebraska",
+      "state_fips": "31",
+      "earnings": {
+        "total": 51347,
+        "less_than_hs": 37318,
+        "high_school": 41356,
+        "some_college": 47163,
+        "bachelors": 62021,
+        "graduate": 73869
+      }
+    },
+    {
+      "state": "Nevada",
+      "state_fips": "32",
+      "earnings": {
+        "total": 48474,
+        "less_than_hs": 35726,
+        "high_school": 40969,
+        "some_college": 46278,
+        "bachelors": 62782,
+        "graduate": 86502
+      }
+    },
+    {
+      "state": "New Hampshire",
+      "state_fips": "33",
+      "earnings": {
+        "total": 60588,
+        "less_than_hs": 38156,
+        "high_school": 47609,
+        "some_college": 52513,
+        "bachelors": 71669,
+        "graduate": 86123
+      }
+    },
+    {
+      "state": "New Jersey",
+      "state_fips": "34",
+      "earnings": {
+        "total": 62394,
+        "less_than_hs": 33797,
+        "high_school": 42624,
+        "some_college": 51644,
+        "bachelors": 81107,
+        "graduate": 101952
+      }
+    },
+    {
+      "state": "New Mexico",
+      "state_fips": "35",
+      "earnings": {
+        "total": 46407,
+        "less_than_hs": 30369,
+        "high_school": 37038,
+        "some_college": 42468,
+        "bachelors": 56159,
+        "graduate": 80560
+      }
+    },
+    {
+      "state": "New York",
+      "state_fips": "36",
+      "earnings": {
+        "total": 57977,
+        "less_than_hs": 31669,
+        "high_school": 40608,
+        "some_college": 49538,
+        "bachelors": 76760,
+        "graduate": 93555
+      }
+    },
+    {
+      "state": "North Carolina",
+      "state_fips": "37",
+      "earnings": {
+        "total": 50858,
+        "less_than_hs": 31432,
+        "high_school": 38689,
+        "some_college": 44474,
+        "bachelors": 65170,
+        "graduate": 82217
+      }
+    },
+    {
+      "state": "North Dakota",
+      "state_fips": "38",
+      "earnings": {
+        "total": 53510,
+        "less_than_hs": 37429,
+        "high_school": 47787,
+        "some_college": 51644,
+        "bachelors": 60560,
+        "graduate": 74876
+      }
+    },
+    {
+      "state": "Ohio",
+      "state_fips": "39",
+      "earnings": {
+        "total": 51357,
+        "less_than_hs": 32744,
+        "high_school": 40810,
+        "some_college": 46601,
+        "bachelors": 67591,
+        "graduate": 81866
+      }
+    },
+    {
+      "state": "Oklahoma",
+      "state_fips": "40",
+      "earnings": {
+        "total": 46800,
+        "less_than_hs": 32880,
+        "high_school": 37015,
+        "some_college": 43787,
+        "bachelors": 60006,
+        "graduate": 74444
+      }
+    },
+    {
+      "state": "Oregon",
+      "state_fips": "41",
+      "earnings": {
+        "total": 53070,
+        "less_than_hs": 35776,
+        "high_school": 42165,
+        "some_college": 47544,
+        "bachelors": 69562,
+        "graduate": 85371
+      }
+    },
+    {
+      "state": "Pennsylvania",
+      "state_fips": "42",
+      "earnings": {
+        "total": 53151,
+        "less_than_hs": 34229,
+        "high_school": 40765,
+        "some_college": 48250,
+        "bachelors": 70261,
+        "graduate": 84801
+      }
+    },
+    {
+      "state": "Rhode Island",
+      "state_fips": "44",
+      "earnings": {
+        "total": 57276,
+        "less_than_hs": 35409,
+        "high_school": 42251,
+        "some_college": 50264,
+        "bachelors": 69496,
+        "graduate": 90945
+      }
+    },
+    {
+      "state": "South Carolina",
+      "state_fips": "45",
+      "earnings": {
+        "total": 50063,
+        "less_than_hs": 30404,
+        "high_school": 38043,
+        "some_college": 45860,
+        "bachelors": 63731,
+        "graduate": 75097
+      }
+    },
+    {
+      "state": "South Dakota",
+      "state_fips": "46",
+      "earnings": {
+        "total": 50954,
+        "less_than_hs": 35330,
+        "high_school": 40822,
+        "some_college": 49698,
+        "bachelors": 58207,
+        "graduate": 71130
+      }
+    },
+    {
+      "state": "Tennessee",
+      "state_fips": "47",
+      "earnings": {
+        "total": 50054,
+        "less_than_hs": 31044,
+        "high_school": 39835,
+        "some_college": 45492,
+        "bachelors": 62654,
+        "graduate": 75584
+      }
+    },
+    {
+      "state": "Texas",
+      "state_fips": "48",
+      "earnings": {
+        "total": 51410,
+        "less_than_hs": 30826,
+        "high_school": 38098,
+        "some_college": 47269,
+        "bachelors": 69494,
+        "graduate": 88098
+      }
+    },
+    {
+      "state": "Utah",
+      "state_fips": "49",
+      "earnings": {
+        "total": 54701,
+        "less_than_hs": 37269,
+        "high_school": 44405,
+        "some_college": 49669,
+        "bachelors": 65299,
+        "graduate": 90988
+      }
+    },
+    {
+      "state": "Vermont",
+      "state_fips": "50",
+      "earnings": {
+        "total": 54378,
+        "less_than_hs": 38968,
+        "high_school": 44859,
+        "some_college": 46998,
+        "bachelors": 61949,
+        "graduate": 75064
+      }
+    },
+    {
+      "state": "Virginia",
+      "state_fips": "51",
+      "earnings": {
+        "total": 60195,
+        "less_than_hs": 34531,
+        "high_school": 41012,
+        "some_college": 50450,
+        "bachelors": 75575,
+        "graduate": 100696
+      }
+    },
+    {
+      "state": "Washington",
+      "state_fips": "53",
+      "earnings": {
+        "total": 63980,
+        "less_than_hs": 38733,
+        "high_school": 47996,
+        "some_college": 53857,
+        "bachelors": 81640,
+        "graduate": 109682
+      }
+    },
+    {
+      "state": "West Virginia",
+      "state_fips": "54",
+      "earnings": {
+        "total": 45847,
+        "less_than_hs": 27940,
+        "high_school": 37207,
+        "some_college": 43674,
+        "bachelors": 56967,
+        "graduate": 70266
+      }
+    },
+    {
+      "state": "Wisconsin",
+      "state_fips": "55",
+      "earnings": {
+        "total": 52914,
+        "less_than_hs": 38987,
+        "high_school": 42333,
+        "some_college": 50315,
+        "bachelors": 65697,
+        "graduate": 77412
+      }
+    },
+    {
+      "state": "Wyoming",
+      "state_fips": "56",
+      "earnings": {
+        "total": 50162,
+        "less_than_hs": 37197,
+        "high_school": 46543,
+        "some_college": 44339,
+        "bachelors": 54213,
+        "graduate": 72195
+      }
+    },
+    {
+      "state": "Puerto Rico",
+      "state_fips": "72",
+      "earnings": {
+        "total": 23943,
+        "less_than_hs": 14561,
+        "high_school": 18448,
+        "some_college": 21699,
+        "bachelors": 32090,
+        "graduate": 45477
+      }
+    }
+  ],
+  "by_age": {
+    "25-34": {
+      "high_school": 35000,
+      "some_college": 40000,
+      "bachelors": 55000,
+      "masters": 65000,
+      "professional": 75000,
+      "doctorate": 70000
+    },
+    "35-44": {
+      "high_school": 42000,
+      "some_college": 48000,
+      "bachelors": 72000,
+      "masters": 85000,
+      "professional": 120000,
+      "doctorate": 95000
+    },
+    "45-54": {
+      "high_school": 44000,
+      "some_college": 50000,
+      "bachelors": 78000,
+      "masters": 92000,
+      "professional": 140000,
+      "doctorate": 105000
+    },
+    "55-64": {
+      "high_school": 43000,
+      "some_college": 48000,
+      "bachelors": 75000,
+      "masters": 88000,
+      "professional": 135000,
+      "doctorate": 100000
+    }
+  },
+  "education_premiums": {
+    "bachelors_over_hs": {
+      "absolute": 29786,
+      "percent": "+73.2%"
+    },
+    "graduate_over_bachelors": {
+      "absolute": 19721,
+      "percent": "+28.0%"
+    },
+    "graduate_over_hs": {
+      "absolute": 49507,
+      "percent": "+121.7%"
+    }
+  }
+}

@@ -1,0 +1,5268 @@
+{
+  "metadata": {
+    "scraped_at": "2026-03-29T17:34:11.657Z",
+    "source": "BEA Regional Price Parities (RPPs)",
+    "api": "https://apps.bea.gov/api/data",
+    "note": "RPP of 100 = national average. >100 means higher cost of living."
+  },
+  "states": [
+    {
+      "name": "Delaware",
+      "fips": "10000",
+      "rpp": 99.808,
+      "rpp_housing": 102.015,
+      "rpp_nonhousing": 97.6,
+      "interpretation": "Costs 0.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100192,
+        "note": "$100K here buys what $100,192 buys nationally"
+      }
+    },
+    {
+      "name": "District of Columbia",
+      "fips": "11000",
+      "rpp": 109.901,
+      "rpp_housing": 154.984,
+      "rpp_nonhousing": 64.8,
+      "interpretation": "Costs 9.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90991,
+        "note": "$100K here buys what $90,991 buys nationally"
+      }
+    },
+    {
+      "name": "Florida",
+      "fips": "12000",
+      "rpp": 103.414,
+      "rpp_housing": 122.107,
+      "rpp_nonhousing": 84.7,
+      "interpretation": "Costs 3.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96699,
+        "note": "$100K here buys what $96,699 buys nationally"
+      }
+    },
+    {
+      "name": "Georgia",
+      "fips": "13000",
+      "rpp": 96.293,
+      "rpp_housing": 88.694,
+      "rpp_nonhousing": 103.9,
+      "interpretation": "Costs 3.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103850,
+        "note": "$100K here buys what $103,850 buys nationally"
+      }
+    },
+    {
+      "name": "Hawaii",
+      "fips": "15000",
+      "rpp": 109.951,
+      "rpp_housing": 125.304,
+      "rpp_nonhousing": 94.6,
+      "interpretation": "Costs 10.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90950,
+        "note": "$100K here buys what $90,950 buys nationally"
+      }
+    },
+    {
+      "name": "Idaho",
+      "fips": "16000",
+      "rpp": 95.494,
+      "rpp_housing": 90.027,
+      "rpp_nonhousing": 101,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104719,
+        "note": "$100K here buys what $104,719 buys nationally"
+      }
+    },
+    {
+      "name": "Illinois",
+      "fips": "17000",
+      "rpp": 99.958,
+      "rpp_housing": 93.944,
+      "rpp_nonhousing": 106,
+      "interpretation": "Costs 0.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100042,
+        "note": "$100K here buys what $100,042 buys nationally"
+      }
+    },
+    {
+      "name": "Indiana",
+      "fips": "18000",
+      "rpp": 93.329,
+      "rpp_housing": 73.926,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 6.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107148,
+        "note": "$100K here buys what $107,148 buys nationally"
+      }
+    },
+    {
+      "name": "Iowa",
+      "fips": "19000",
+      "rpp": 87.762,
+      "rpp_housing": 65.322,
+      "rpp_nonhousing": 110.2,
+      "interpretation": "Costs 12.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113945,
+        "note": "$100K here buys what $113,945 buys nationally"
+      }
+    },
+    {
+      "name": "Kansas",
+      "fips": "20000",
+      "rpp": 90.068,
+      "rpp_housing": 71.156,
+      "rpp_nonhousing": 109,
+      "interpretation": "Costs 9.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111027,
+        "note": "$100K here buys what $111,027 buys nationally"
+      }
+    },
+    {
+      "name": "Kentucky",
+      "fips": "21000",
+      "rpp": 90.159,
+      "rpp_housing": 64.313,
+      "rpp_nonhousing": 116,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110915,
+        "note": "$100K here buys what $110,915 buys nationally"
+      }
+    },
+    {
+      "name": "Louisiana",
+      "fips": "22000",
+      "rpp": 88.207,
+      "rpp_housing": 63.104,
+      "rpp_nonhousing": 113.3,
+      "interpretation": "Costs 11.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113370,
+        "note": "$100K here buys what $113,370 buys nationally"
+      }
+    },
+    {
+      "name": "Maine",
+      "fips": "23000",
+      "rpp": 97.05,
+      "rpp_housing": 78.94,
+      "rpp_nonhousing": 115.2,
+      "interpretation": "Costs 3.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103040,
+        "note": "$100K here buys what $103,040 buys nationally"
+      }
+    },
+    {
+      "name": "Maryland",
+      "fips": "24000",
+      "rpp": 104.959,
+      "rpp_housing": 121.079,
+      "rpp_nonhousing": 88.8,
+      "interpretation": "Costs 5.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95275,
+        "note": "$100K here buys what $95,275 buys nationally"
+      }
+    },
+    {
+      "name": "Massachusetts",
+      "fips": "25000",
+      "rpp": 105.757,
+      "rpp_housing": 128.068,
+      "rpp_nonhousing": 83.4,
+      "interpretation": "Costs 5.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94556,
+        "note": "$100K here buys what $94,556 buys nationally"
+      }
+    },
+    {
+      "name": "Michigan",
+      "fips": "26000",
+      "rpp": 96.217,
+      "rpp_housing": 82.332,
+      "rpp_nonhousing": 110.1,
+      "interpretation": "Costs 3.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103932,
+        "note": "$100K here buys what $103,932 buys nationally"
+      }
+    },
+    {
+      "name": "Minnesota",
+      "fips": "27000",
+      "rpp": 98.621,
+      "rpp_housing": 91.281,
+      "rpp_nonhousing": 106,
+      "interpretation": "Costs 1.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101398,
+        "note": "$100K here buys what $101,398 buys nationally"
+      }
+    },
+    {
+      "name": "Mississippi",
+      "fips": "28000",
+      "rpp": 86.953,
+      "rpp_housing": 56.456,
+      "rpp_nonhousing": 117.5,
+      "interpretation": "Costs 13.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115005,
+        "note": "$100K here buys what $115,005 buys nationally"
+      }
+    },
+    {
+      "name": "Missouri",
+      "fips": "29000",
+      "rpp": 90.817,
+      "rpp_housing": 69.88,
+      "rpp_nonhousing": 111.8,
+      "interpretation": "Costs 9.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110112,
+        "note": "$100K here buys what $110,112 buys nationally"
+      }
+    },
+    {
+      "name": "Montana",
+      "fips": "30000",
+      "rpp": 94.645,
+      "rpp_housing": 84.648,
+      "rpp_nonhousing": 104.6,
+      "interpretation": "Costs 5.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105658,
+        "note": "$100K here buys what $105,658 buys nationally"
+      }
+    },
+    {
+      "name": "Nebraska",
+      "fips": "31000",
+      "rpp": 90.103,
+      "rpp_housing": 75.174,
+      "rpp_nonhousing": 105,
+      "interpretation": "Costs 9.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110984,
+        "note": "$100K here buys what $110,984 buys nationally"
+      }
+    },
+    {
+      "name": "Nevada",
+      "fips": "32000",
+      "rpp": 99.979,
+      "rpp_housing": 114.135,
+      "rpp_nonhousing": 85.8,
+      "interpretation": "Costs 0.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100021,
+        "note": "$100K here buys what $100,021 buys nationally"
+      }
+    },
+    {
+      "name": "New Hampshire",
+      "fips": "33000",
+      "rpp": 104.165,
+      "rpp_housing": 114.947,
+      "rpp_nonhousing": 93.4,
+      "interpretation": "Costs 4.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96002,
+        "note": "$100K here buys what $96,002 buys nationally"
+      }
+    },
+    {
+      "name": "New Jersey",
+      "fips": "34000",
+      "rpp": 108.805,
+      "rpp_housing": 134.292,
+      "rpp_nonhousing": 83.3,
+      "interpretation": "Costs 8.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91908,
+        "note": "$100K here buys what $91,908 buys nationally"
+      }
+    },
+    {
+      "name": "New Mexico",
+      "fips": "35000",
+      "rpp": 92.212,
+      "rpp_housing": 73.611,
+      "rpp_nonhousing": 110.8,
+      "interpretation": "Costs 7.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108446,
+        "note": "$100K here buys what $108,446 buys nationally"
+      }
+    },
+    {
+      "name": "New York",
+      "fips": "36000",
+      "rpp": 107.921,
+      "rpp_housing": 122.168,
+      "rpp_nonhousing": 93.7,
+      "interpretation": "Costs 7.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 92660,
+        "note": "$100K here buys what $92,660 buys nationally"
+      }
+    },
+    {
+      "name": "North Carolina",
+      "fips": "37000",
+      "rpp": 94.326,
+      "rpp_housing": 81.364,
+      "rpp_nonhousing": 107.3,
+      "interpretation": "Costs 5.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106015,
+        "note": "$100K here buys what $106,015 buys nationally"
+      }
+    },
+    {
+      "name": "North Dakota",
+      "fips": "38000",
+      "rpp": 88.959,
+      "rpp_housing": 71.421,
+      "rpp_nonhousing": 106.5,
+      "interpretation": "Costs 11.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112411,
+        "note": "$100K here buys what $112,411 buys nationally"
+      }
+    },
+    {
+      "name": "Ohio",
+      "fips": "39000",
+      "rpp": 92.774,
+      "rpp_housing": 73.012,
+      "rpp_nonhousing": 112.5,
+      "interpretation": "Costs 7.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107789,
+        "note": "$100K here buys what $107,789 buys nationally"
+      }
+    },
+    {
+      "name": "Oklahoma",
+      "fips": "40000",
+      "rpp": 87.843,
+      "rpp_housing": 62.763,
+      "rpp_nonhousing": 112.9,
+      "interpretation": "Costs 12.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113839,
+        "note": "$100K here buys what $113,839 buys nationally"
+      }
+    },
+    {
+      "name": "Oregon",
+      "fips": "41000",
+      "rpp": 103.361,
+      "rpp_housing": 108.628,
+      "rpp_nonhousing": 98.1,
+      "interpretation": "Costs 3.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96748,
+        "note": "$100K here buys what $96,748 buys nationally"
+      }
+    },
+    {
+      "name": "Pennsylvania",
+      "fips": "42000",
+      "rpp": 97.572,
+      "rpp_housing": 85.068,
+      "rpp_nonhousing": 110.1,
+      "interpretation": "Costs 2.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102488,
+        "note": "$100K here buys what $102,488 buys nationally"
+      }
+    },
+    {
+      "name": "Rhode Island",
+      "fips": "44000",
+      "rpp": 102.28,
+      "rpp_housing": 105.62,
+      "rpp_nonhousing": 98.9,
+      "interpretation": "Costs 2.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97771,
+        "note": "$100K here buys what $97,771 buys nationally"
+      }
+    },
+    {
+      "name": "South Carolina",
+      "fips": "45000",
+      "rpp": 93.749,
+      "rpp_housing": 80.49,
+      "rpp_nonhousing": 107,
+      "interpretation": "Costs 6.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106668,
+        "note": "$100K here buys what $106,668 buys nationally"
+      }
+    },
+    {
+      "name": "South Dakota",
+      "fips": "46000",
+      "rpp": 88.586,
+      "rpp_housing": 67.642,
+      "rpp_nonhousing": 109.5,
+      "interpretation": "Costs 11.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112885,
+        "note": "$100K here buys what $112,885 buys nationally"
+      }
+    },
+    {
+      "name": "Tennessee",
+      "fips": "47000",
+      "rpp": 91.87,
+      "rpp_housing": 79.07,
+      "rpp_nonhousing": 104.7,
+      "interpretation": "Costs 8.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108849,
+        "note": "$100K here buys what $108,849 buys nationally"
+      }
+    },
+    {
+      "name": "Texas",
+      "fips": "48000",
+      "rpp": 97.057,
+      "rpp_housing": 96.503,
+      "rpp_nonhousing": 97.6,
+      "interpretation": "Costs 2.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103032,
+        "note": "$100K here buys what $103,032 buys nationally"
+      }
+    },
+    {
+      "name": "Utah",
+      "fips": "49000",
+      "rpp": 98.864,
+      "rpp_housing": 107.814,
+      "rpp_nonhousing": 89.9,
+      "interpretation": "Costs 1.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101149,
+        "note": "$100K here buys what $101,149 buys nationally"
+      }
+    },
+    {
+      "name": "Vermont",
+      "fips": "50000",
+      "rpp": 97.958,
+      "rpp_housing": 86.502,
+      "rpp_nonhousing": 109.4,
+      "interpretation": "Costs 2.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102085,
+        "note": "$100K here buys what $102,085 buys nationally"
+      }
+    },
+    {
+      "name": "Virginia",
+      "fips": "51000",
+      "rpp": 101.104,
+      "rpp_housing": 106.799,
+      "rpp_nonhousing": 95.4,
+      "interpretation": "Costs 1.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98908,
+        "note": "$100K here buys what $98,908 buys nationally"
+      }
+    },
+    {
+      "name": "Washington",
+      "fips": "53000",
+      "rpp": 107.013,
+      "rpp_housing": 125.979,
+      "rpp_nonhousing": 88,
+      "interpretation": "Costs 7.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 93447,
+        "note": "$100K here buys what $93,447 buys nationally"
+      }
+    },
+    {
+      "name": "West Virginia",
+      "fips": "54000",
+      "rpp": 89.497,
+      "rpp_housing": 54.241,
+      "rpp_nonhousing": 124.8,
+      "interpretation": "Costs 10.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111736,
+        "note": "$100K here buys what $111,736 buys nationally"
+      }
+    },
+    {
+      "name": "Wisconsin",
+      "fips": "55000",
+      "rpp": 94.095,
+      "rpp_housing": 79.312,
+      "rpp_nonhousing": 108.9,
+      "interpretation": "Costs 5.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106276,
+        "note": "$100K here buys what $106,276 buys nationally"
+      }
+    },
+    {
+      "name": "Wyoming",
+      "fips": "56000",
+      "rpp": 92.691,
+      "rpp_housing": 71.127,
+      "rpp_nonhousing": 114.3,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107885,
+        "note": "$100K here buys what $107,885 buys nationally"
+      }
+    },
+    {
+      "name": "Alabama",
+      "fips": "01000",
+      "rpp": 88.823,
+      "rpp_housing": 61.785,
+      "rpp_nonhousing": 115.9,
+      "interpretation": "Costs 11.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112583,
+        "note": "$100K here buys what $112,583 buys nationally"
+      }
+    },
+    {
+      "name": "Alaska",
+      "fips": "02000",
+      "rpp": 102.359,
+      "rpp_housing": 93.784,
+      "rpp_nonhousing": 110.9,
+      "interpretation": "Costs 2.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97695,
+        "note": "$100K here buys what $97,695 buys nationally"
+      }
+    },
+    {
+      "name": "Arizona",
+      "fips": "04000",
+      "rpp": 100.677,
+      "rpp_housing": 106.804,
+      "rpp_nonhousing": 94.6,
+      "interpretation": "Costs 0.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99328,
+        "note": "$100K here buys what $99,328 buys nationally"
+      }
+    },
+    {
+      "name": "Arkansas",
+      "fips": "05000",
+      "rpp": 86.937,
+      "rpp_housing": 58.203,
+      "rpp_nonhousing": 115.7,
+      "interpretation": "Costs 13.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115026,
+        "note": "$100K here buys what $115,026 buys nationally"
+      }
+    },
+    {
+      "name": "California",
+      "fips": "06000",
+      "rpp": 110.72,
+      "rpp_housing": 154.346,
+      "rpp_nonhousing": 67.1,
+      "interpretation": "Costs 10.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90318,
+        "note": "$100K here buys what $90,318 buys nationally"
+      }
+    },
+    {
+      "name": "Colorado",
+      "fips": "08000",
+      "rpp": 103.052,
+      "rpp_housing": 127.359,
+      "rpp_nonhousing": 78.7,
+      "interpretation": "Costs 3.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97038,
+        "note": "$100K here buys what $97,038 buys nationally"
+      }
+    },
+    {
+      "name": "Connecticut",
+      "fips": "09000",
+      "rpp": 103.61,
+      "rpp_housing": 117.048,
+      "rpp_nonhousing": 90.2,
+      "interpretation": "Costs 3.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96516,
+        "note": "$100K here buys what $96,516 buys nationally"
+      }
+    }
+  ],
+  "metros": [
+    {
+      "metro": "Abilene, TX (Metropolitan Statistical Area)",
+      "fips": "10180",
+      "rpp": 90.364,
+      "rpp_housing": 73.791,
+      "rpp_nonhousing": 106.9,
+      "interpretation": "Costs 9.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110664,
+        "note": "$100K here buys what $110,664 buys nationally"
+      }
+    },
+    {
+      "metro": "Akron, OH (Metropolitan Statistical Area)",
+      "fips": "10420",
+      "rpp": 93.37,
+      "rpp_housing": 76.785,
+      "rpp_nonhousing": 110,
+      "interpretation": "Costs 6.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107101,
+        "note": "$100K here buys what $107,101 buys nationally"
+      }
+    },
+    {
+      "metro": "Albany, GA (Metropolitan Statistical Area)",
+      "fips": "10500",
+      "rpp": 87.669,
+      "rpp_housing": 54.626,
+      "rpp_nonhousing": 120.7,
+      "interpretation": "Costs 12.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114065,
+        "note": "$100K here buys what $114,065 buys nationally"
+      }
+    },
+    {
+      "metro": "Albany, OR (Metropolitan Statistical Area)",
+      "fips": "10540",
+      "rpp": 102.1,
+      "rpp_housing": 101.059,
+      "rpp_nonhousing": 103.1,
+      "interpretation": "Costs 2.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97943,
+        "note": "$100K here buys what $97,943 buys nationally"
+      }
+    },
+    {
+      "metro": "Albany-Schenectady-Troy, NY (Metropolitan Statistical Area)",
+      "fips": "10580",
+      "rpp": 99.566,
+      "rpp_housing": 102.582,
+      "rpp_nonhousing": 96.6,
+      "interpretation": "Costs 0.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100436,
+        "note": "$100K here buys what $100,436 buys nationally"
+      }
+    },
+    {
+      "metro": "Albuquerque, NM (Metropolitan Statistical Area)",
+      "fips": "10740",
+      "rpp": 95.546,
+      "rpp_housing": 89.153,
+      "rpp_nonhousing": 101.9,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104662,
+        "note": "$100K here buys what $104,662 buys nationally"
+      }
+    },
+    {
+      "metro": "Alexandria, LA (Metropolitan Statistical Area)",
+      "fips": "10780",
+      "rpp": 85.686,
+      "rpp_housing": 53.684,
+      "rpp_nonhousing": 117.7,
+      "interpretation": "Costs 14.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116705,
+        "note": "$100K here buys what $116,705 buys nationally"
+      }
+    },
+    {
+      "metro": "Allentown-Bethlehem-Easton, PA-NJ (Metropolitan Statistical Area)",
+      "fips": "10900",
+      "rpp": 99.968,
+      "rpp_housing": 105.52,
+      "rpp_nonhousing": 94.4,
+      "interpretation": "Costs 0.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100032,
+        "note": "$100K here buys what $100,032 buys nationally"
+      }
+    },
+    {
+      "metro": "Altoona, PA (Metropolitan Statistical Area)",
+      "fips": "11020",
+      "rpp": 89.507,
+      "rpp_housing": 54.978,
+      "rpp_nonhousing": 124,
+      "interpretation": "Costs 10.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111723,
+        "note": "$100K here buys what $111,723 buys nationally"
+      }
+    },
+    {
+      "metro": "Amarillo, TX (Metropolitan Statistical Area)",
+      "fips": "11100",
+      "rpp": 91.82,
+      "rpp_housing": 78.38,
+      "rpp_nonhousing": 105.3,
+      "interpretation": "Costs 8.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108909,
+        "note": "$100K here buys what $108,909 buys nationally"
+      }
+    },
+    {
+      "metro": "Ames, IA (Metropolitan Statistical Area)",
+      "fips": "11180",
+      "rpp": 88.83,
+      "rpp_housing": 69.163,
+      "rpp_nonhousing": 108.5,
+      "interpretation": "Costs 11.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112575,
+        "note": "$100K here buys what $112,575 buys nationally"
+      }
+    },
+    {
+      "metro": "Amherst Town-Northampton, MA (Metropolitan Statistical Area)",
+      "fips": "11200",
+      "rpp": 100.243,
+      "rpp_housing": 97.537,
+      "rpp_nonhousing": 102.9,
+      "interpretation": "Costs 0.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99758,
+        "note": "$100K here buys what $99,758 buys nationally"
+      }
+    },
+    {
+      "metro": "Anchorage, AK (Metropolitan Statistical Area)",
+      "fips": "11260",
+      "rpp": 105.42,
+      "rpp_housing": 109.905,
+      "rpp_nonhousing": 100.9,
+      "interpretation": "Costs 5.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94859,
+        "note": "$100K here buys what $94,859 buys nationally"
+      }
+    },
+    {
+      "metro": "Ann Arbor, MI (Metropolitan Statistical Area)",
+      "fips": "11460",
+      "rpp": 100.88,
+      "rpp_housing": 125.3,
+      "rpp_nonhousing": 76.5,
+      "interpretation": "Costs 0.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99128,
+        "note": "$100K here buys what $99,128 buys nationally"
+      }
+    },
+    {
+      "metro": "Anniston-Oxford, AL (Metropolitan Statistical Area)",
+      "fips": "11500",
+      "rpp": 85.949,
+      "rpp_housing": 54.705,
+      "rpp_nonhousing": 117.2,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116348,
+        "note": "$100K here buys what $116,348 buys nationally"
+      }
+    },
+    {
+      "metro": "Appleton, WI (Metropolitan Statistical Area)",
+      "fips": "11540",
+      "rpp": 92.419,
+      "rpp_housing": 70.785,
+      "rpp_nonhousing": 114.1,
+      "interpretation": "Costs 7.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108203,
+        "note": "$100K here buys what $108,203 buys nationally"
+      }
+    },
+    {
+      "metro": "Asheville, NC (Metropolitan Statistical Area)",
+      "fips": "11700",
+      "rpp": 96.506,
+      "rpp_housing": 93.371,
+      "rpp_nonhousing": 99.6,
+      "interpretation": "Costs 3.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103621,
+        "note": "$100K here buys what $103,621 buys nationally"
+      }
+    },
+    {
+      "metro": "Athens-Clarke County, GA (Metropolitan Statistical Area)",
+      "fips": "12020",
+      "rpp": 93.343,
+      "rpp_housing": 76.759,
+      "rpp_nonhousing": 109.9,
+      "interpretation": "Costs 6.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107132,
+        "note": "$100K here buys what $107,132 buys nationally"
+      }
+    },
+    {
+      "metro": "Atlanta-Sandy Springs-Roswell, GA (Metropolitan Statistical Area)",
+      "fips": "12060",
+      "rpp": 100.058,
+      "rpp_housing": 111.022,
+      "rpp_nonhousing": 89.1,
+      "interpretation": "Costs 0.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99942,
+        "note": "$100K here buys what $99,942 buys nationally"
+      }
+    },
+    {
+      "metro": "Atlantic City-Hammonton, NJ (Metropolitan Statistical Area)",
+      "fips": "12100",
+      "rpp": 98.857,
+      "rpp_housing": 98.673,
+      "rpp_nonhousing": 99,
+      "interpretation": "Costs 1.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101156,
+        "note": "$100K here buys what $101,156 buys nationally"
+      }
+    },
+    {
+      "metro": "Auburn-Opelika, AL (Metropolitan Statistical Area)",
+      "fips": "12220",
+      "rpp": 87.933,
+      "rpp_housing": 62.078,
+      "rpp_nonhousing": 113.8,
+      "interpretation": "Costs 12.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113723,
+        "note": "$100K here buys what $113,723 buys nationally"
+      }
+    },
+    {
+      "metro": "Augusta-Richmond County, GA-SC (Metropolitan Statistical Area)",
+      "fips": "12260",
+      "rpp": 91.903,
+      "rpp_housing": 70.603,
+      "rpp_nonhousing": 113.2,
+      "interpretation": "Costs 8.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108810,
+        "note": "$100K here buys what $108,810 buys nationally"
+      }
+    },
+    {
+      "metro": "Austin-Round Rock-San Marcos, TX (Metropolitan Statistical Area)",
+      "fips": "12420",
+      "rpp": 98.066,
+      "rpp_housing": 120.361,
+      "rpp_nonhousing": 75.8,
+      "interpretation": "Costs 1.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101972,
+        "note": "$100K here buys what $101,972 buys nationally"
+      }
+    },
+    {
+      "metro": "Bakersfield-Delano, CA (Metropolitan Statistical Area)",
+      "fips": "12540",
+      "rpp": 100.886,
+      "rpp_housing": 90.291,
+      "rpp_nonhousing": 111.5,
+      "interpretation": "Costs 0.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99122,
+        "note": "$100K here buys what $99,122 buys nationally"
+      }
+    },
+    {
+      "metro": "Baltimore-Columbia-Towson, MD (Metropolitan Statistical Area)",
+      "fips": "12580",
+      "rpp": 104.487,
+      "rpp_housing": 118.194,
+      "rpp_nonhousing": 90.8,
+      "interpretation": "Costs 4.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95706,
+        "note": "$100K here buys what $95,706 buys nationally"
+      }
+    },
+    {
+      "metro": "Bangor, ME (Metropolitan Statistical Area)",
+      "fips": "12620",
+      "rpp": 96.508,
+      "rpp_housing": 77.688,
+      "rpp_nonhousing": 115.3,
+      "interpretation": "Costs 3.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103618,
+        "note": "$100K here buys what $103,618 buys nationally"
+      }
+    },
+    {
+      "metro": "Barnstable Town, MA (Metropolitan Statistical Area)",
+      "fips": "12700",
+      "rpp": 98.351,
+      "rpp_housing": 90.012,
+      "rpp_nonhousing": 106.7,
+      "interpretation": "Costs 1.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101677,
+        "note": "$100K here buys what $101,677 buys nationally"
+      }
+    },
+    {
+      "metro": "Baton Rouge, LA (Metropolitan Statistical Area)",
+      "fips": "12940",
+      "rpp": 90.78,
+      "rpp_housing": 74.183,
+      "rpp_nonhousing": 107.4,
+      "interpretation": "Costs 9.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110156,
+        "note": "$100K here buys what $110,156 buys nationally"
+      }
+    },
+    {
+      "metro": "Battle Creek, MI (Metropolitan Statistical Area)",
+      "fips": "12980",
+      "rpp": 90.541,
+      "rpp_housing": 61.045,
+      "rpp_nonhousing": 120,
+      "interpretation": "Costs 9.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110447,
+        "note": "$100K here buys what $110,447 buys nationally"
+      }
+    },
+    {
+      "metro": "Bay City, MI (Metropolitan Statistical Area)",
+      "fips": "13020",
+      "rpp": 91.921,
+      "rpp_housing": 66.684,
+      "rpp_nonhousing": 117.2,
+      "interpretation": "Costs 8.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108789,
+        "note": "$100K here buys what $108,789 buys nationally"
+      }
+    },
+    {
+      "metro": "Beaumont-Port Arthur, TX (Metropolitan Statistical Area)",
+      "fips": "13140",
+      "rpp": 90.046,
+      "rpp_housing": 70.939,
+      "rpp_nonhousing": 109.2,
+      "interpretation": "Costs 10.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111054,
+        "note": "$100K here buys what $111,054 buys nationally"
+      }
+    },
+    {
+      "metro": "Beckley, WV (Metropolitan Statistical Area)",
+      "fips": "13220",
+      "rpp": 88.369,
+      "rpp_housing": 52.246,
+      "rpp_nonhousing": 124.5,
+      "interpretation": "Costs 11.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113162,
+        "note": "$100K here buys what $113,162 buys nationally"
+      }
+    },
+    {
+      "metro": "Bellingham, WA (Metropolitan Statistical Area)",
+      "fips": "13380",
+      "rpp": 103.334,
+      "rpp_housing": 112.946,
+      "rpp_nonhousing": 93.7,
+      "interpretation": "Costs 3.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96774,
+        "note": "$100K here buys what $96,774 buys nationally"
+      }
+    },
+    {
+      "metro": "Bend, OR (Metropolitan Statistical Area)",
+      "fips": "13460",
+      "rpp": 103.607,
+      "rpp_housing": 109.958,
+      "rpp_nonhousing": 97.3,
+      "interpretation": "Costs 3.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96519,
+        "note": "$100K here buys what $96,519 buys nationally"
+      }
+    },
+    {
+      "metro": "Billings, MT (Metropolitan Statistical Area)",
+      "fips": "13740",
+      "rpp": 93.526,
+      "rpp_housing": 77.364,
+      "rpp_nonhousing": 109.7,
+      "interpretation": "Costs 6.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106922,
+        "note": "$100K here buys what $106,922 buys nationally"
+      }
+    },
+    {
+      "metro": "Binghamton, NY (Metropolitan Statistical Area)",
+      "fips": "13780",
+      "rpp": 92.863,
+      "rpp_housing": 69.694,
+      "rpp_nonhousing": 116,
+      "interpretation": "Costs 7.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107686,
+        "note": "$100K here buys what $107,686 buys nationally"
+      }
+    },
+    {
+      "metro": "Birmingham, AL (Metropolitan Statistical Area)",
+      "fips": "13820",
+      "rpp": 91.644,
+      "rpp_housing": 71.851,
+      "rpp_nonhousing": 111.4,
+      "interpretation": "Costs 8.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109118,
+        "note": "$100K here buys what $109,118 buys nationally"
+      }
+    },
+    {
+      "metro": "Bismarck, ND (Metropolitan Statistical Area)",
+      "fips": "13900",
+      "rpp": 91.024,
+      "rpp_housing": 84.013,
+      "rpp_nonhousing": 98,
+      "interpretation": "Costs 9.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109861,
+        "note": "$100K here buys what $109,861 buys nationally"
+      }
+    },
+    {
+      "metro": "Blacksburg-Christiansburg-Radford, VA (Metropolitan Statistical Area)",
+      "fips": "13980",
+      "rpp": 92.71,
+      "rpp_housing": 74.371,
+      "rpp_nonhousing": 111,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107863,
+        "note": "$100K here buys what $107,863 buys nationally"
+      }
+    },
+    {
+      "metro": "Bloomington, IL (Metropolitan Statistical Area)",
+      "fips": "14010",
+      "rpp": 93.537,
+      "rpp_housing": 74.715,
+      "rpp_nonhousing": 112.4,
+      "interpretation": "Costs 6.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106910,
+        "note": "$100K here buys what $106,910 buys nationally"
+      }
+    },
+    {
+      "metro": "Bloomington, IN (Metropolitan Statistical Area)",
+      "fips": "14020",
+      "rpp": 95.084,
+      "rpp_housing": 85.59,
+      "rpp_nonhousing": 104.6,
+      "interpretation": "Costs 4.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105170,
+        "note": "$100K here buys what $105,170 buys nationally"
+      }
+    },
+    {
+      "metro": "Boise City, ID (Metropolitan Statistical Area)",
+      "fips": "14260",
+      "rpp": 98.391,
+      "rpp_housing": 105.58,
+      "rpp_nonhousing": 91.2,
+      "interpretation": "Costs 1.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101635,
+        "note": "$100K here buys what $101,635 buys nationally"
+      }
+    },
+    {
+      "metro": "Boston-Cambridge-Newton, MA-NH (Metropolitan Statistical Area)",
+      "fips": "14460",
+      "rpp": 108.266,
+      "rpp_housing": 148.424,
+      "rpp_nonhousing": 68.1,
+      "interpretation": "Costs 8.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 92365,
+        "note": "$100K here buys what $92,365 buys nationally"
+      }
+    },
+    {
+      "metro": "Boulder, CO (Metropolitan Statistical Area)",
+      "fips": "14500",
+      "rpp": 105.202,
+      "rpp_housing": 157.02,
+      "rpp_nonhousing": 53.4,
+      "interpretation": "Costs 5.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95055,
+        "note": "$100K here buys what $95,055 buys nationally"
+      }
+    },
+    {
+      "metro": "Bowling Green, KY (Metropolitan Statistical Area)",
+      "fips": "14540",
+      "rpp": 90.179,
+      "rpp_housing": 63.395,
+      "rpp_nonhousing": 117,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110891,
+        "note": "$100K here buys what $110,891 buys nationally"
+      }
+    },
+    {
+      "metro": "Bozeman, MT (Metropolitan Statistical Area)",
+      "fips": "14580",
+      "rpp": 102.51,
+      "rpp_housing": 139.188,
+      "rpp_nonhousing": 65.8,
+      "interpretation": "Costs 2.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97551,
+        "note": "$100K here buys what $97,551 buys nationally"
+      }
+    },
+    {
+      "metro": "Bremerton-Silverdale-Port Orchard, WA (Metropolitan Statistical Area)",
+      "fips": "14740",
+      "rpp": 105.607,
+      "rpp_housing": 129.641,
+      "rpp_nonhousing": 81.6,
+      "interpretation": "Costs 5.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94691,
+        "note": "$100K here buys what $94,691 buys nationally"
+      }
+    },
+    {
+      "metro": "Bridgeport-Stamford-Danbury, CT Metropolitan Statistical Area",
+      "fips": "14860",
+      "rpp": 106.864,
+      "rpp_housing": 150.453,
+      "rpp_nonhousing": 63.3,
+      "interpretation": "Costs 6.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 93577,
+        "note": "$100K here buys what $93,577 buys nationally"
+      }
+    },
+    {
+      "metro": "Brownsville-Harlingen, TX (Metropolitan Statistical Area)",
+      "fips": "15180",
+      "rpp": 85.975,
+      "rpp_housing": 57.72,
+      "rpp_nonhousing": 114.2,
+      "interpretation": "Costs 14.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116313,
+        "note": "$100K here buys what $116,313 buys nationally"
+      }
+    },
+    {
+      "metro": "Brunswick-St. Simons, GA (Metropolitan Statistical Area)",
+      "fips": "15260",
+      "rpp": 87.708,
+      "rpp_housing": 56.34,
+      "rpp_nonhousing": 119.1,
+      "interpretation": "Costs 12.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114015,
+        "note": "$100K here buys what $114,015 buys nationally"
+      }
+    },
+    {
+      "metro": "Buffalo-Cheektowaga, NY (Metropolitan Statistical Area)",
+      "fips": "15380",
+      "rpp": 95.844,
+      "rpp_housing": 80.989,
+      "rpp_nonhousing": 110.7,
+      "interpretation": "Costs 4.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104336,
+        "note": "$100K here buys what $104,336 buys nationally"
+      }
+    },
+    {
+      "metro": "Burlington, NC (Metropolitan Statistical Area)",
+      "fips": "15500",
+      "rpp": 93.196,
+      "rpp_housing": 77.88,
+      "rpp_nonhousing": 108.5,
+      "interpretation": "Costs 6.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107301,
+        "note": "$100K here buys what $107,301 buys nationally"
+      }
+    },
+    {
+      "metro": "Burlington-South Burlington, VT (Metropolitan Statistical Area)",
+      "fips": "15540",
+      "rpp": 100.949,
+      "rpp_housing": 103.842,
+      "rpp_nonhousing": 98.1,
+      "interpretation": "Costs 0.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99060,
+        "note": "$100K here buys what $99,060 buys nationally"
+      }
+    },
+    {
+      "metro": "Canton-Massillon, OH (Metropolitan Statistical Area)",
+      "fips": "15940",
+      "rpp": 89.406,
+      "rpp_housing": 58.143,
+      "rpp_nonhousing": 120.7,
+      "interpretation": "Costs 10.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111849,
+        "note": "$100K here buys what $111,849 buys nationally"
+      }
+    },
+    {
+      "metro": "Cape Coral-Fort Myers, FL (Metropolitan Statistical Area)",
+      "fips": "15980",
+      "rpp": 102.349,
+      "rpp_housing": 125.113,
+      "rpp_nonhousing": 79.6,
+      "interpretation": "Costs 2.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97705,
+        "note": "$100K here buys what $97,705 buys nationally"
+      }
+    },
+    {
+      "metro": "Cape Girardeau, MO-IL (Metropolitan Statistical Area)",
+      "fips": "16020",
+      "rpp": 86.078,
+      "rpp_housing": 56.422,
+      "rpp_nonhousing": 115.7,
+      "interpretation": "Costs 13.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116174,
+        "note": "$100K here buys what $116,174 buys nationally"
+      }
+    },
+    {
+      "metro": "Carson City, NV (Metropolitan Statistical Area)",
+      "fips": "16180",
+      "rpp": 98.13,
+      "rpp_housing": 101.176,
+      "rpp_nonhousing": 95.1,
+      "interpretation": "Costs 1.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101906,
+        "note": "$100K here buys what $101,906 buys nationally"
+      }
+    },
+    {
+      "metro": "Casper, WY (Metropolitan Statistical Area)",
+      "fips": "16220",
+      "rpp": 93.829,
+      "rpp_housing": 74.189,
+      "rpp_nonhousing": 113.5,
+      "interpretation": "Costs 6.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106577,
+        "note": "$100K here buys what $106,577 buys nationally"
+      }
+    },
+    {
+      "metro": "Cedar Rapids, IA (Metropolitan Statistical Area)",
+      "fips": "16300",
+      "rpp": 88.963,
+      "rpp_housing": 71.447,
+      "rpp_nonhousing": 106.5,
+      "interpretation": "Costs 11.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112406,
+        "note": "$100K here buys what $112,406 buys nationally"
+      }
+    },
+    {
+      "metro": "Chambersburg, PA (Metropolitan Statistical Area)",
+      "fips": "16540",
+      "rpp": 94.642,
+      "rpp_housing": 71.914,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 5.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105661,
+        "note": "$100K here buys what $105,661 buys nationally"
+      }
+    },
+    {
+      "metro": "Champaign-Urbana, IL (Metropolitan Statistical Area)",
+      "fips": "16580",
+      "rpp": 92.704,
+      "rpp_housing": 71.604,
+      "rpp_nonhousing": 113.8,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107870,
+        "note": "$100K here buys what $107,870 buys nationally"
+      }
+    },
+    {
+      "metro": "Charleston, WV (Metropolitan Statistical Area)",
+      "fips": "16620",
+      "rpp": 88.717,
+      "rpp_housing": 51.394,
+      "rpp_nonhousing": 126,
+      "interpretation": "Costs 11.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112718,
+        "note": "$100K here buys what $112,718 buys nationally"
+      }
+    },
+    {
+      "metro": "Charleston-North Charleston, SC (Metropolitan Statistical Area)",
+      "fips": "16700",
+      "rpp": 100.962,
+      "rpp_housing": 119.77,
+      "rpp_nonhousing": 82.2,
+      "interpretation": "Costs 1.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99047,
+        "note": "$100K here buys what $99,047 buys nationally"
+      }
+    },
+    {
+      "metro": "Charlotte-Concord-Gastonia, NC-SC (Metropolitan Statistical Area)",
+      "fips": "16740",
+      "rpp": 97.348,
+      "rpp_housing": 97.635,
+      "rpp_nonhousing": 97.1,
+      "interpretation": "Costs 2.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102724,
+        "note": "$100K here buys what $102,724 buys nationally"
+      }
+    },
+    {
+      "metro": "Charlottesville, VA (Metropolitan Statistical Area)",
+      "fips": "16820",
+      "rpp": 99.146,
+      "rpp_housing": 107.041,
+      "rpp_nonhousing": 91.3,
+      "interpretation": "Costs 0.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100861,
+        "note": "$100K here buys what $100,861 buys nationally"
+      }
+    },
+    {
+      "metro": "Chattanooga, TN-GA (Metropolitan Statistical Area)",
+      "fips": "16860",
+      "rpp": 91.464,
+      "rpp_housing": 76.55,
+      "rpp_nonhousing": 106.4,
+      "interpretation": "Costs 8.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109333,
+        "note": "$100K here buys what $109,333 buys nationally"
+      }
+    },
+    {
+      "metro": "Cheyenne, WY (Metropolitan Statistical Area)",
+      "fips": "16940",
+      "rpp": 96.491,
+      "rpp_housing": 89.828,
+      "rpp_nonhousing": 103.2,
+      "interpretation": "Costs 3.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103637,
+        "note": "$100K here buys what $103,637 buys nationally"
+      }
+    },
+    {
+      "metro": "Chicago-Naperville-Elgin, IL-IN (Metropolitan Statistical Area)",
+      "fips": "16980",
+      "rpp": 103.595,
+      "rpp_housing": 112.01,
+      "rpp_nonhousing": 95.2,
+      "interpretation": "Costs 3.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96530,
+        "note": "$100K here buys what $96,530 buys nationally"
+      }
+    },
+    {
+      "metro": "Chico, CA (Metropolitan Statistical Area)",
+      "fips": "17020",
+      "rpp": 101.197,
+      "rpp_housing": 91.946,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 1.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98817,
+        "note": "$100K here buys what $98,817 buys nationally"
+      }
+    },
+    {
+      "metro": "Cincinnati, OH-KY-IN (Metropolitan Statistical Area)",
+      "fips": "17140",
+      "rpp": 95.37,
+      "rpp_housing": 87.608,
+      "rpp_nonhousing": 103.1,
+      "interpretation": "Costs 4.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104855,
+        "note": "$100K here buys what $104,855 buys nationally"
+      }
+    },
+    {
+      "metro": "Clarksville, TN-KY (Metropolitan Statistical Area)",
+      "fips": "17300",
+      "rpp": 90.947,
+      "rpp_housing": 73.801,
+      "rpp_nonhousing": 108.1,
+      "interpretation": "Costs 9.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109954,
+        "note": "$100K here buys what $109,954 buys nationally"
+      }
+    },
+    {
+      "metro": "Cleveland, OH (Metropolitan Statistical Area)",
+      "fips": "17410",
+      "rpp": 93.923,
+      "rpp_housing": 79.434,
+      "rpp_nonhousing": 108.4,
+      "interpretation": "Costs 6.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106470,
+        "note": "$100K here buys what $106,470 buys nationally"
+      }
+    },
+    {
+      "metro": "Cleveland, TN (Metropolitan Statistical Area)",
+      "fips": "17420",
+      "rpp": 88.08,
+      "rpp_housing": 60.327,
+      "rpp_nonhousing": 115.8,
+      "interpretation": "Costs 11.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113533,
+        "note": "$100K here buys what $113,533 buys nationally"
+      }
+    },
+    {
+      "metro": "Coeur d'Alene, ID (Metropolitan Statistical Area)",
+      "fips": "17660",
+      "rpp": 98.293,
+      "rpp_housing": 105.597,
+      "rpp_nonhousing": 91,
+      "interpretation": "Costs 1.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101737,
+        "note": "$100K here buys what $101,737 buys nationally"
+      }
+    },
+    {
+      "metro": "College Station-Bryan, TX (Metropolitan Statistical Area)",
+      "fips": "17780",
+      "rpp": 90.951,
+      "rpp_housing": 75.088,
+      "rpp_nonhousing": 106.8,
+      "interpretation": "Costs 9.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109949,
+        "note": "$100K here buys what $109,949 buys nationally"
+      }
+    },
+    {
+      "metro": "Colorado Springs, CO (Metropolitan Statistical Area)",
+      "fips": "17820",
+      "rpp": 100.707,
+      "rpp_housing": 116.207,
+      "rpp_nonhousing": 85.2,
+      "interpretation": "Costs 0.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99298,
+        "note": "$100K here buys what $99,298 buys nationally"
+      }
+    },
+    {
+      "metro": "Columbia, MO (Metropolitan Statistical Area)",
+      "fips": "17860",
+      "rpp": 89.438,
+      "rpp_housing": 69.248,
+      "rpp_nonhousing": 109.6,
+      "interpretation": "Costs 10.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111809,
+        "note": "$100K here buys what $111,809 buys nationally"
+      }
+    },
+    {
+      "metro": "Columbia, SC (Metropolitan Statistical Area)",
+      "fips": "17900",
+      "rpp": 93.662,
+      "rpp_housing": 79.455,
+      "rpp_nonhousing": 107.9,
+      "interpretation": "Costs 6.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106767,
+        "note": "$100K here buys what $106,767 buys nationally"
+      }
+    },
+    {
+      "metro": "Columbus, GA-AL (Metropolitan Statistical Area)",
+      "fips": "17980",
+      "rpp": 89.296,
+      "rpp_housing": 61.185,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 10.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111987,
+        "note": "$100K here buys what $111,987 buys nationally"
+      }
+    },
+    {
+      "metro": "Columbus, IN (Metropolitan Statistical Area)",
+      "fips": "18020",
+      "rpp": 93.003,
+      "rpp_housing": 75.468,
+      "rpp_nonhousing": 110.5,
+      "interpretation": "Costs 7.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107523,
+        "note": "$100K here buys what $107,523 buys nationally"
+      }
+    },
+    {
+      "metro": "Columbus, OH (Metropolitan Statistical Area)",
+      "fips": "18140",
+      "rpp": 95.469,
+      "rpp_housing": 87.945,
+      "rpp_nonhousing": 103,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104746,
+        "note": "$100K here buys what $104,746 buys nationally"
+      }
+    },
+    {
+      "metro": "Corpus Christi, TX (Metropolitan Statistical Area)",
+      "fips": "18580",
+      "rpp": 92.671,
+      "rpp_housing": 84.905,
+      "rpp_nonhousing": 100.4,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107909,
+        "note": "$100K here buys what $107,909 buys nationally"
+      }
+    },
+    {
+      "metro": "Corvallis, OR (Metropolitan Statistical Area)",
+      "fips": "18700",
+      "rpp": 104.017,
+      "rpp_housing": 114.437,
+      "rpp_nonhousing": 93.6,
+      "interpretation": "Costs 4.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96138,
+        "note": "$100K here buys what $96,138 buys nationally"
+      }
+    },
+    {
+      "metro": "Crestview-Fort Walton Beach-Destin, FL (Metropolitan Statistical Area)",
+      "fips": "18880",
+      "rpp": 97.031,
+      "rpp_housing": 94.934,
+      "rpp_nonhousing": 99.1,
+      "interpretation": "Costs 3.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103060,
+        "note": "$100K here buys what $103,060 buys nationally"
+      }
+    },
+    {
+      "metro": "Dallas-Fort Worth-Arlington, TX (Metropolitan Statistical Area)",
+      "fips": "19100",
+      "rpp": 103.09,
+      "rpp_housing": 117.874,
+      "rpp_nonhousing": 88.3,
+      "interpretation": "Costs 3.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97003,
+        "note": "$100K here buys what $97,003 buys nationally"
+      }
+    },
+    {
+      "metro": "Dalton, GA (Metropolitan Statistical Area)",
+      "fips": "19140",
+      "rpp": 89.844,
+      "rpp_housing": 63.342,
+      "rpp_nonhousing": 116.3,
+      "interpretation": "Costs 10.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111304,
+        "note": "$100K here buys what $111,304 buys nationally"
+      }
+    },
+    {
+      "metro": "Daphne-Fairhope-Foley, AL (Metropolitan Statistical Area)",
+      "fips": "19300",
+      "rpp": 94.69,
+      "rpp_housing": 89.15,
+      "rpp_nonhousing": 100.2,
+      "interpretation": "Costs 5.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105608,
+        "note": "$100K here buys what $105,608 buys nationally"
+      }
+    },
+    {
+      "metro": "Davenport-Moline-Rock Island, IA-IL (Metropolitan Statistical Area)",
+      "fips": "19340",
+      "rpp": 89.079,
+      "rpp_housing": 68.346,
+      "rpp_nonhousing": 109.8,
+      "interpretation": "Costs 10.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112260,
+        "note": "$100K here buys what $112,260 buys nationally"
+      }
+    },
+    {
+      "metro": "Dayton-Kettering-Beavercreek, OH (Metropolitan Statistical Area)",
+      "fips": "19430",
+      "rpp": 92.694,
+      "rpp_housing": 72.712,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107882,
+        "note": "$100K here buys what $107,882 buys nationally"
+      }
+    },
+    {
+      "metro": "Decatur, AL (Metropolitan Statistical Area)",
+      "fips": "19460",
+      "rpp": 87.212,
+      "rpp_housing": 58.067,
+      "rpp_nonhousing": 116.4,
+      "interpretation": "Costs 12.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114663,
+        "note": "$100K here buys what $114,663 buys nationally"
+      }
+    },
+    {
+      "metro": "Decatur, IL (Metropolitan Statistical Area)",
+      "fips": "19500",
+      "rpp": 88.422,
+      "rpp_housing": 56.186,
+      "rpp_nonhousing": 120.7,
+      "interpretation": "Costs 11.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113094,
+        "note": "$100K here buys what $113,094 buys nationally"
+      }
+    },
+    {
+      "metro": "Deltona-Daytona Beach-Ormond Beach, FL (Metropolitan Statistical Area)",
+      "fips": "19660",
+      "rpp": 99.367,
+      "rpp_housing": 108.375,
+      "rpp_nonhousing": 90.4,
+      "interpretation": "Costs 0.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100637,
+        "note": "$100K here buys what $100,637 buys nationally"
+      }
+    },
+    {
+      "metro": "Denver-Aurora-Centennial, CO (Metropolitan Statistical Area)",
+      "fips": "19740",
+      "rpp": 105.782,
+      "rpp_housing": 146.919,
+      "rpp_nonhousing": 64.6,
+      "interpretation": "Costs 5.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94534,
+        "note": "$100K here buys what $94,534 buys nationally"
+      }
+    },
+    {
+      "metro": "Des Moines-West Des Moines, IA (Metropolitan Statistical Area)",
+      "fips": "19780",
+      "rpp": 91.701,
+      "rpp_housing": 84.741,
+      "rpp_nonhousing": 98.7,
+      "interpretation": "Costs 8.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109050,
+        "note": "$100K here buys what $109,050 buys nationally"
+      }
+    },
+    {
+      "metro": "Detroit-Warren-Dearborn, MI (Metropolitan Statistical Area)",
+      "fips": "19820",
+      "rpp": 100.298,
+      "rpp_housing": 94.69,
+      "rpp_nonhousing": 105.9,
+      "interpretation": "Costs 0.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99703,
+        "note": "$100K here buys what $99,703 buys nationally"
+      }
+    },
+    {
+      "metro": "Dothan, AL (Metropolitan Statistical Area)",
+      "fips": "20020",
+      "rpp": 83.833,
+      "rpp_housing": 46.872,
+      "rpp_nonhousing": 120.8,
+      "interpretation": "Costs 16.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 119285,
+        "note": "$100K here buys what $119,285 buys nationally"
+      }
+    },
+    {
+      "metro": "Dover, DE (Metropolitan Statistical Area)",
+      "fips": "20100",
+      "rpp": 97.507,
+      "rpp_housing": 95.899,
+      "rpp_nonhousing": 99.1,
+      "interpretation": "Costs 2.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102557,
+        "note": "$100K here buys what $102,557 buys nationally"
+      }
+    },
+    {
+      "metro": "Dubuque, IA (Metropolitan Statistical Area)",
+      "fips": "20220",
+      "rpp": 87.328,
+      "rpp_housing": 64.046,
+      "rpp_nonhousing": 110.6,
+      "interpretation": "Costs 12.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114511,
+        "note": "$100K here buys what $114,511 buys nationally"
+      }
+    },
+    {
+      "metro": "Duluth, MN-WI (Metropolitan Statistical Area)",
+      "fips": "20260",
+      "rpp": 88.768,
+      "rpp_housing": 71.147,
+      "rpp_nonhousing": 106.4,
+      "interpretation": "Costs 11.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112653,
+        "note": "$100K here buys what $112,653 buys nationally"
+      }
+    },
+    {
+      "metro": "Durham-Chapel Hill, NC (Metropolitan Statistical Area)",
+      "fips": "20500",
+      "rpp": 97.572,
+      "rpp_housing": 98.934,
+      "rpp_nonhousing": 96.2,
+      "interpretation": "Costs 2.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102488,
+        "note": "$100K here buys what $102,488 buys nationally"
+      }
+    },
+    {
+      "metro": "Eagle Pass, TX (Metropolitan Statistical Area)",
+      "fips": "20580",
+      "rpp": 83.805,
+      "rpp_housing": 53.681,
+      "rpp_nonhousing": 113.9,
+      "interpretation": "Costs 16.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 119325,
+        "note": "$100K here buys what $119,325 buys nationally"
+      }
+    },
+    {
+      "metro": "Eau Claire, WI (Metropolitan Statistical Area)",
+      "fips": "20740",
+      "rpp": 92.796,
+      "rpp_housing": 72.85,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 7.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107763,
+        "note": "$100K here buys what $107,763 buys nationally"
+      }
+    },
+    {
+      "metro": "El Centro, CA (Metropolitan Statistical Area)",
+      "fips": "20940",
+      "rpp": 95.174,
+      "rpp_housing": 66.274,
+      "rpp_nonhousing": 124.1,
+      "interpretation": "Costs 4.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105071,
+        "note": "$100K here buys what $105,071 buys nationally"
+      }
+    },
+    {
+      "metro": "Elizabethtown, KY (Metropolitan Statistical Area)",
+      "fips": "21060",
+      "rpp": 90.572,
+      "rpp_housing": 66.669,
+      "rpp_nonhousing": 114.5,
+      "interpretation": "Costs 9.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110409,
+        "note": "$100K here buys what $110,409 buys nationally"
+      }
+    },
+    {
+      "metro": "Elkhart-Goshen, IN (Metropolitan Statistical Area)",
+      "fips": "21140",
+      "rpp": 90.325,
+      "rpp_housing": 64.327,
+      "rpp_nonhousing": 116.3,
+      "interpretation": "Costs 9.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110711,
+        "note": "$100K here buys what $110,711 buys nationally"
+      }
+    },
+    {
+      "metro": "Elmira, NY (Metropolitan Statistical Area)",
+      "fips": "21300",
+      "rpp": 94.398,
+      "rpp_housing": 76.357,
+      "rpp_nonhousing": 112.4,
+      "interpretation": "Costs 5.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105934,
+        "note": "$100K here buys what $105,934 buys nationally"
+      }
+    },
+    {
+      "metro": "El Paso, TX (Metropolitan Statistical Area)",
+      "fips": "21340",
+      "rpp": 89.912,
+      "rpp_housing": 71.248,
+      "rpp_nonhousing": 108.6,
+      "interpretation": "Costs 10.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111220,
+        "note": "$100K here buys what $111,220 buys nationally"
+      }
+    },
+    {
+      "metro": "Enid, OK (Metropolitan Statistical Area) *",
+      "fips": "21420",
+      "rpp": 84.269,
+      "rpp_housing": 51.389,
+      "rpp_nonhousing": 117.1,
+      "interpretation": "Costs 15.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 118668,
+        "note": "$100K here buys what $118,668 buys nationally"
+      }
+    },
+    {
+      "metro": "Erie, PA (Metropolitan Statistical Area)",
+      "fips": "21500",
+      "rpp": 90.95,
+      "rpp_housing": 56.83,
+      "rpp_nonhousing": 125.1,
+      "interpretation": "Costs 9.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109951,
+        "note": "$100K here buys what $109,951 buys nationally"
+      }
+    },
+    {
+      "metro": "Eugene-Springfield, OR (Metropolitan Statistical Area)",
+      "fips": "21660",
+      "rpp": 101.568,
+      "rpp_housing": 98.35,
+      "rpp_nonhousing": 104.8,
+      "interpretation": "Costs 1.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98456,
+        "note": "$100K here buys what $98,456 buys nationally"
+      }
+    },
+    {
+      "metro": "Evansville, IN (Metropolitan Statistical Area)",
+      "fips": "21780",
+      "rpp": 91.528,
+      "rpp_housing": 66.735,
+      "rpp_nonhousing": 116.3,
+      "interpretation": "Costs 8.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109256,
+        "note": "$100K here buys what $109,256 buys nationally"
+      }
+    },
+    {
+      "metro": "Fairbanks-College, AK (Metropolitan Statistical Area)",
+      "fips": "21820",
+      "rpp": 103.208,
+      "rpp_housing": 92.562,
+      "rpp_nonhousing": 113.9,
+      "interpretation": "Costs 3.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96892,
+        "note": "$100K here buys what $96,892 buys nationally"
+      }
+    },
+    {
+      "metro": "Fargo, ND-MN (Metropolitan Statistical Area)",
+      "fips": "22020",
+      "rpp": 90.871,
+      "rpp_housing": 81.142,
+      "rpp_nonhousing": 100.6,
+      "interpretation": "Costs 9.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110046,
+        "note": "$100K here buys what $110,046 buys nationally"
+      }
+    },
+    {
+      "metro": "Farmington, NM (Metropolitan Statistical Area)",
+      "fips": "22140",
+      "rpp": 87.707,
+      "rpp_housing": 56.552,
+      "rpp_nonhousing": 118.9,
+      "interpretation": "Costs 12.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114016,
+        "note": "$100K here buys what $114,016 buys nationally"
+      }
+    },
+    {
+      "metro": "Fayetteville, NC (Metropolitan Statistical Area)",
+      "fips": "22180",
+      "rpp": 91.978,
+      "rpp_housing": 73.081,
+      "rpp_nonhousing": 110.9,
+      "interpretation": "Costs 8.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108722,
+        "note": "$100K here buys what $108,722 buys nationally"
+      }
+    },
+    {
+      "metro": "Fayetteville-Springdale-Rogers, AR (Metropolitan Statistical Area)",
+      "fips": "22220",
+      "rpp": 91.353,
+      "rpp_housing": 76.886,
+      "rpp_nonhousing": 105.8,
+      "interpretation": "Costs 8.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109465,
+        "note": "$100K here buys what $109,465 buys nationally"
+      }
+    },
+    {
+      "metro": "Flagstaff, AZ (Metropolitan Statistical Area)",
+      "fips": "22380",
+      "rpp": 100.325,
+      "rpp_housing": 108.961,
+      "rpp_nonhousing": 91.7,
+      "interpretation": "Costs 0.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99676,
+        "note": "$100K here buys what $99,676 buys nationally"
+      }
+    },
+    {
+      "metro": "Flint, MI (Metropolitan Statistical Area)",
+      "fips": "22420",
+      "rpp": 93.034,
+      "rpp_housing": 74.039,
+      "rpp_nonhousing": 112,
+      "interpretation": "Costs 7.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107488,
+        "note": "$100K here buys what $107,488 buys nationally"
+      }
+    },
+    {
+      "metro": "Florence, SC (Metropolitan Statistical Area)",
+      "fips": "22500",
+      "rpp": 86.774,
+      "rpp_housing": 52.425,
+      "rpp_nonhousing": 121.1,
+      "interpretation": "Costs 13.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115242,
+        "note": "$100K here buys what $115,242 buys nationally"
+      }
+    },
+    {
+      "metro": "Florence-Muscle Shoals, AL (Metropolitan Statistical Area)",
+      "fips": "22520",
+      "rpp": 84.817,
+      "rpp_housing": 47.677,
+      "rpp_nonhousing": 122,
+      "interpretation": "Costs 15.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 117901,
+        "note": "$100K here buys what $117,901 buys nationally"
+      }
+    },
+    {
+      "metro": "Fond du Lac, WI (Metropolitan Statistical Area)",
+      "fips": "22540",
+      "rpp": 91.643,
+      "rpp_housing": 67.317,
+      "rpp_nonhousing": 116,
+      "interpretation": "Costs 8.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109119,
+        "note": "$100K here buys what $109,119 buys nationally"
+      }
+    },
+    {
+      "metro": "Fort Collins-Loveland, CO (Metropolitan Statistical Area)",
+      "fips": "22660",
+      "rpp": 101.128,
+      "rpp_housing": 120.592,
+      "rpp_nonhousing": 81.7,
+      "interpretation": "Costs 1.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98885,
+        "note": "$100K here buys what $98,885 buys nationally"
+      }
+    },
+    {
+      "metro": "Fort Smith, AR-OK (Metropolitan Statistical Area)",
+      "fips": "22900",
+      "rpp": 85.888,
+      "rpp_housing": 53.443,
+      "rpp_nonhousing": 118.3,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116431,
+        "note": "$100K here buys what $116,431 buys nationally"
+      }
+    },
+    {
+      "metro": "Fort Wayne, IN (Metropolitan Statistical Area)",
+      "fips": "23060",
+      "rpp": 92.572,
+      "rpp_housing": 72.277,
+      "rpp_nonhousing": 112.9,
+      "interpretation": "Costs 7.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108024,
+        "note": "$100K here buys what $108,024 buys nationally"
+      }
+    },
+    {
+      "metro": "Fresno, CA (Metropolitan Statistical Area)",
+      "fips": "23420",
+      "rpp": 102.158,
+      "rpp_housing": 95.725,
+      "rpp_nonhousing": 108.6,
+      "interpretation": "Costs 2.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97888,
+        "note": "$100K here buys what $97,888 buys nationally"
+      }
+    },
+    {
+      "metro": "Gadsden, AL (Metropolitan Statistical Area)",
+      "fips": "23460",
+      "rpp": 85.653,
+      "rpp_housing": 53.696,
+      "rpp_nonhousing": 117.6,
+      "interpretation": "Costs 14.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116750,
+        "note": "$100K here buys what $116,750 buys nationally"
+      }
+    },
+    {
+      "metro": "Gainesville, FL (Metropolitan Statistical Area)",
+      "fips": "23540",
+      "rpp": 96.733,
+      "rpp_housing": 92.982,
+      "rpp_nonhousing": 100.5,
+      "interpretation": "Costs 3.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103377,
+        "note": "$100K here buys what $103,377 buys nationally"
+      }
+    },
+    {
+      "metro": "Gainesville, GA (Metropolitan Statistical Area)",
+      "fips": "23580",
+      "rpp": 96.766,
+      "rpp_housing": 93.488,
+      "rpp_nonhousing": 100,
+      "interpretation": "Costs 3.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103342,
+        "note": "$100K here buys what $103,342 buys nationally"
+      }
+    },
+    {
+      "metro": "Gettysburg, PA (Metropolitan Statistical Area)",
+      "fips": "23900",
+      "rpp": 95.379,
+      "rpp_housing": 73.865,
+      "rpp_nonhousing": 116.9,
+      "interpretation": "Costs 4.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104845,
+        "note": "$100K here buys what $104,845 buys nationally"
+      }
+    },
+    {
+      "metro": "Glens Falls, NY (Metropolitan Statistical Area)",
+      "fips": "24020",
+      "rpp": 94.866,
+      "rpp_housing": 76.231,
+      "rpp_nonhousing": 113.5,
+      "interpretation": "Costs 5.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105412,
+        "note": "$100K here buys what $105,412 buys nationally"
+      }
+    },
+    {
+      "metro": "Goldsboro, NC (Metropolitan Statistical Area)",
+      "fips": "24140",
+      "rpp": 88.462,
+      "rpp_housing": 57.684,
+      "rpp_nonhousing": 119.2,
+      "interpretation": "Costs 11.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113043,
+        "note": "$100K here buys what $113,043 buys nationally"
+      }
+    },
+    {
+      "metro": "Grand Forks, ND-MN (Metropolitan Statistical Area)",
+      "fips": "24220",
+      "rpp": 86.663,
+      "rpp_housing": 59.664,
+      "rpp_nonhousing": 113.7,
+      "interpretation": "Costs 13.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115389,
+        "note": "$100K here buys what $115,389 buys nationally"
+      }
+    },
+    {
+      "metro": "Grand Island, NE (Metropolitan Statistical Area)",
+      "fips": "24260",
+      "rpp": 86.657,
+      "rpp_housing": 61.748,
+      "rpp_nonhousing": 111.6,
+      "interpretation": "Costs 13.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115397,
+        "note": "$100K here buys what $115,397 buys nationally"
+      }
+    },
+    {
+      "metro": "Grand Junction, CO (Metropolitan Statistical Area)",
+      "fips": "24300",
+      "rpp": 95.476,
+      "rpp_housing": 86.367,
+      "rpp_nonhousing": 104.6,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104738,
+        "note": "$100K here buys what $104,738 buys nationally"
+      }
+    },
+    {
+      "metro": "Grand Rapids-Wyoming-Kentwood, MI (Metropolitan Statistical Area)",
+      "fips": "24340",
+      "rpp": 95.546,
+      "rpp_housing": 86.596,
+      "rpp_nonhousing": 104.5,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104662,
+        "note": "$100K here buys what $104,662 buys nationally"
+      }
+    },
+    {
+      "metro": "Grants Pass, OR (Metropolitan Statistical Area)",
+      "fips": "24420",
+      "rpp": 97.76,
+      "rpp_housing": 79.911,
+      "rpp_nonhousing": 115.6,
+      "interpretation": "Costs 2.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102291,
+        "note": "$100K here buys what $102,291 buys nationally"
+      }
+    },
+    {
+      "metro": "Great Falls, MT (Metropolitan Statistical Area)",
+      "fips": "24500",
+      "rpp": 96.845,
+      "rpp_housing": 97.115,
+      "rpp_nonhousing": 96.6,
+      "interpretation": "Costs 3.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103258,
+        "note": "$100K here buys what $103,258 buys nationally"
+      }
+    },
+    {
+      "metro": "Greeley, CO (Metropolitan Statistical Area)",
+      "fips": "24540",
+      "rpp": 100.176,
+      "rpp_housing": 112.599,
+      "rpp_nonhousing": 87.8,
+      "interpretation": "Costs 0.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99824,
+        "note": "$100K here buys what $99,824 buys nationally"
+      }
+    },
+    {
+      "metro": "Green Bay, WI (Metropolitan Statistical Area)",
+      "fips": "24580",
+      "rpp": 93.086,
+      "rpp_housing": 74.696,
+      "rpp_nonhousing": 111.5,
+      "interpretation": "Costs 6.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107428,
+        "note": "$100K here buys what $107,428 buys nationally"
+      }
+    },
+    {
+      "metro": "Greensboro-High Point, NC (Metropolitan Statistical Area)",
+      "fips": "24660",
+      "rpp": 92.865,
+      "rpp_housing": 74.519,
+      "rpp_nonhousing": 111.2,
+      "interpretation": "Costs 7.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107683,
+        "note": "$100K here buys what $107,683 buys nationally"
+      }
+    },
+    {
+      "metro": "Greenville, NC (Metropolitan Statistical Area)",
+      "fips": "24780",
+      "rpp": 88.402,
+      "rpp_housing": 57.326,
+      "rpp_nonhousing": 119.5,
+      "interpretation": "Costs 11.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113120,
+        "note": "$100K here buys what $113,120 buys nationally"
+      }
+    },
+    {
+      "metro": "Greenville-Anderson-Greer, SC (Metropolitan Statistical Area)",
+      "fips": "24860",
+      "rpp": 93.26,
+      "rpp_housing": 76.836,
+      "rpp_nonhousing": 109.7,
+      "interpretation": "Costs 6.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107227,
+        "note": "$100K here buys what $107,227 buys nationally"
+      }
+    },
+    {
+      "metro": "Gulfport-Biloxi, MS (Metropolitan Statistical Area)",
+      "fips": "25060",
+      "rpp": 90.006,
+      "rpp_housing": 67.906,
+      "rpp_nonhousing": 112.1,
+      "interpretation": "Costs 10.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111104,
+        "note": "$100K here buys what $111,104 buys nationally"
+      }
+    },
+    {
+      "metro": "Hagerstown-Martinsburg, MD-WV (Metropolitan Statistical Area)",
+      "fips": "25180",
+      "rpp": 94.171,
+      "rpp_housing": 75.737,
+      "rpp_nonhousing": 112.6,
+      "interpretation": "Costs 5.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106190,
+        "note": "$100K here buys what $106,190 buys nationally"
+      }
+    },
+    {
+      "metro": "Hammond, LA (Metropolitan Statistical Area)",
+      "fips": "25220",
+      "rpp": 84.46,
+      "rpp_housing": 48.16,
+      "rpp_nonhousing": 120.8,
+      "interpretation": "Costs 15.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 118399,
+        "note": "$100K here buys what $118,399 buys nationally"
+      }
+    },
+    {
+      "metro": "Hanford-Corcoran, CA (Metropolitan Statistical Area)",
+      "fips": "25260",
+      "rpp": 101.612,
+      "rpp_housing": 93.497,
+      "rpp_nonhousing": 109.7,
+      "interpretation": "Costs 1.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98414,
+        "note": "$100K here buys what $98,414 buys nationally"
+      }
+    },
+    {
+      "metro": "Harrisburg-Carlisle, PA (Metropolitan Statistical Area)",
+      "fips": "25420",
+      "rpp": 98.65,
+      "rpp_housing": 96.28,
+      "rpp_nonhousing": 101,
+      "interpretation": "Costs 1.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101368,
+        "note": "$100K here buys what $101,368 buys nationally"
+      }
+    },
+    {
+      "metro": "Harrisonburg, VA (Metropolitan Statistical Area)",
+      "fips": "25500",
+      "rpp": 94.892,
+      "rpp_housing": 82.272,
+      "rpp_nonhousing": 107.5,
+      "interpretation": "Costs 5.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105383,
+        "note": "$100K here buys what $105,383 buys nationally"
+      }
+    },
+    {
+      "metro": "Hartford-West Hartford-East Hartford, CT (Metropolitan Statistical Area)",
+      "fips": "25540",
+      "rpp": 102.746,
+      "rpp_housing": 110.234,
+      "rpp_nonhousing": 95.3,
+      "interpretation": "Costs 2.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97327,
+        "note": "$100K here buys what $97,327 buys nationally"
+      }
+    },
+    {
+      "metro": "Hattiesburg, MS (Metropolitan Statistical Area)",
+      "fips": "25620",
+      "rpp": 87.633,
+      "rpp_housing": 60.059,
+      "rpp_nonhousing": 115.2,
+      "interpretation": "Costs 12.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114112,
+        "note": "$100K here buys what $114,112 buys nationally"
+      }
+    },
+    {
+      "metro": "Helena, MT (Metropolitan Statistical Area)",
+      "fips": "25740",
+      "rpp": 95.675,
+      "rpp_housing": 90.141,
+      "rpp_nonhousing": 101.2,
+      "interpretation": "Costs 4.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104521,
+        "note": "$100K here buys what $104,521 buys nationally"
+      }
+    },
+    {
+      "metro": "Hickory-Lenoir-Morganton, NC (Metropolitan Statistical Area)",
+      "fips": "25860",
+      "rpp": 88.486,
+      "rpp_housing": 59.578,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 11.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113012,
+        "note": "$100K here buys what $113,012 buys nationally"
+      }
+    },
+    {
+      "metro": "Hilton Head Island-Bluffton-Port Royal, SC (Metropolitan Statistical Area)",
+      "fips": "25940",
+      "rpp": 98.017,
+      "rpp_housing": 101.235,
+      "rpp_nonhousing": 94.8,
+      "interpretation": "Costs 2.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102023,
+        "note": "$100K here buys what $102,023 buys nationally"
+      }
+    },
+    {
+      "metro": "Hinesville, GA (Metropolitan Statistical Area)",
+      "fips": "25980",
+      "rpp": 93.933,
+      "rpp_housing": 79.46,
+      "rpp_nonhousing": 108.4,
+      "interpretation": "Costs 6.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106459,
+        "note": "$100K here buys what $106,459 buys nationally"
+      }
+    },
+    {
+      "metro": "Homosassa Springs, FL (Metropolitan Statistical Area)",
+      "fips": "26140",
+      "rpp": 93.467,
+      "rpp_housing": 78.427,
+      "rpp_nonhousing": 108.5,
+      "interpretation": "Costs 6.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106990,
+        "note": "$100K here buys what $106,990 buys nationally"
+      }
+    },
+    {
+      "metro": "Hot Springs, AR (Metropolitan Statistical Area)",
+      "fips": "26300",
+      "rpp": 85.73,
+      "rpp_housing": 57.281,
+      "rpp_nonhousing": 114.2,
+      "interpretation": "Costs 14.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116645,
+        "note": "$100K here buys what $116,645 buys nationally"
+      }
+    },
+    {
+      "metro": "Houma-Bayou Cane-Thibodaux, LA (Metropolitan Statistical Area)",
+      "fips": "26380",
+      "rpp": 85.103,
+      "rpp_housing": 51.311,
+      "rpp_nonhousing": 118.9,
+      "interpretation": "Costs 14.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 117505,
+        "note": "$100K here buys what $117,505 buys nationally"
+      }
+    },
+    {
+      "metro": "Houston-Pasadena-The Woodlands, TX (Metropolitan Statistical Area)",
+      "fips": "26420",
+      "rpp": 98.629,
+      "rpp_housing": 104.51,
+      "rpp_nonhousing": 92.7,
+      "interpretation": "Costs 1.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101390,
+        "note": "$100K here buys what $101,390 buys nationally"
+      }
+    },
+    {
+      "metro": "Huntington-Ashland, WV-KY-OH (Metropolitan Statistical Area)",
+      "fips": "26580",
+      "rpp": 88.422,
+      "rpp_housing": 51.257,
+      "rpp_nonhousing": 125.6,
+      "interpretation": "Costs 11.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113094,
+        "note": "$100K here buys what $113,094 buys nationally"
+      }
+    },
+    {
+      "metro": "Huntsville, AL (Metropolitan Statistical Area)",
+      "fips": "26620",
+      "rpp": 93.072,
+      "rpp_housing": 77.946,
+      "rpp_nonhousing": 108.2,
+      "interpretation": "Costs 6.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107444,
+        "note": "$100K here buys what $107,444 buys nationally"
+      }
+    },
+    {
+      "metro": "Idaho Falls, ID (Metropolitan Statistical Area)",
+      "fips": "26820",
+      "rpp": 94.412,
+      "rpp_housing": 83.985,
+      "rpp_nonhousing": 104.8,
+      "interpretation": "Costs 5.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105919,
+        "note": "$100K here buys what $105,919 buys nationally"
+      }
+    },
+    {
+      "metro": "Indianapolis-Carmel-Greenwood, IN (Metropolitan Statistical Area)",
+      "fips": "26900",
+      "rpp": 95.696,
+      "rpp_housing": 88.917,
+      "rpp_nonhousing": 102.5,
+      "interpretation": "Costs 4.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104498,
+        "note": "$100K here buys what $104,498 buys nationally"
+      }
+    },
+    {
+      "metro": "Iowa City, IA (Metropolitan Statistical Area)",
+      "fips": "26980",
+      "rpp": 91.509,
+      "rpp_housing": 83.99,
+      "rpp_nonhousing": 99,
+      "interpretation": "Costs 8.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109279,
+        "note": "$100K here buys what $109,279 buys nationally"
+      }
+    },
+    {
+      "metro": "Ithaca, NY (Metropolitan Statistical Area)",
+      "fips": "27060",
+      "rpp": 103.317,
+      "rpp_housing": 128.377,
+      "rpp_nonhousing": 78.3,
+      "interpretation": "Costs 3.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96789,
+        "note": "$100K here buys what $96,789 buys nationally"
+      }
+    },
+    {
+      "metro": "Jackson, MI (Metropolitan Statistical Area)",
+      "fips": "27100",
+      "rpp": 91.779,
+      "rpp_housing": 67.092,
+      "rpp_nonhousing": 116.5,
+      "interpretation": "Costs 8.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108957,
+        "note": "$100K here buys what $108,957 buys nationally"
+      }
+    },
+    {
+      "metro": "Jackson, MS (Metropolitan Statistical Area)",
+      "fips": "27140",
+      "rpp": 89.048,
+      "rpp_housing": 64.768,
+      "rpp_nonhousing": 113.3,
+      "interpretation": "Costs 11.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112299,
+        "note": "$100K here buys what $112,299 buys nationally"
+      }
+    },
+    {
+      "metro": "Jackson, TN (Metropolitan Statistical Area)",
+      "fips": "27180",
+      "rpp": 85.522,
+      "rpp_housing": 56.567,
+      "rpp_nonhousing": 114.5,
+      "interpretation": "Costs 14.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116929,
+        "note": "$100K here buys what $116,929 buys nationally"
+      }
+    },
+    {
+      "metro": "Jacksonville, FL (Metropolitan Statistical Area)",
+      "fips": "27260",
+      "rpp": 99.484,
+      "rpp_housing": 109.777,
+      "rpp_nonhousing": 89.2,
+      "interpretation": "Costs 0.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100519,
+        "note": "$100K here buys what $100,519 buys nationally"
+      }
+    },
+    {
+      "metro": "Jacksonville, NC (Metropolitan Statistical Area)",
+      "fips": "27340",
+      "rpp": 92.085,
+      "rpp_housing": 72.118,
+      "rpp_nonhousing": 112.1,
+      "interpretation": "Costs 7.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108595,
+        "note": "$100K here buys what $108,595 buys nationally"
+      }
+    },
+    {
+      "metro": "Janesville-Beloit, WI (Metropolitan Statistical Area)",
+      "fips": "27500",
+      "rpp": 93.703,
+      "rpp_housing": 79.552,
+      "rpp_nonhousing": 107.9,
+      "interpretation": "Costs 6.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106720,
+        "note": "$100K here buys what $106,720 buys nationally"
+      }
+    },
+    {
+      "metro": "Jefferson City, MO (Metropolitan Statistical Area)",
+      "fips": "27620",
+      "rpp": 87.975,
+      "rpp_housing": 62.123,
+      "rpp_nonhousing": 113.8,
+      "interpretation": "Costs 12.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113669,
+        "note": "$100K here buys what $113,669 buys nationally"
+      }
+    },
+    {
+      "metro": "Johnson City, TN (Metropolitan Statistical Area)",
+      "fips": "27740",
+      "rpp": 87.928,
+      "rpp_housing": 63.176,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 12.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113729,
+        "note": "$100K here buys what $113,729 buys nationally"
+      }
+    },
+    {
+      "metro": "Johnstown, PA (Metropolitan Statistical Area)",
+      "fips": "27780",
+      "rpp": 85.929,
+      "rpp_housing": 42.333,
+      "rpp_nonhousing": 129.5,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116375,
+        "note": "$100K here buys what $116,375 buys nationally"
+      }
+    },
+    {
+      "metro": "Jonesboro, AR (Metropolitan Statistical Area)",
+      "fips": "27860",
+      "rpp": 85.876,
+      "rpp_housing": 53.848,
+      "rpp_nonhousing": 117.9,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116447,
+        "note": "$100K here buys what $116,447 buys nationally"
+      }
+    },
+    {
+      "metro": "Joplin, MO-KS (Metropolitan Statistical Area)",
+      "fips": "27900",
+      "rpp": 85.718,
+      "rpp_housing": 53.976,
+      "rpp_nonhousing": 117.5,
+      "interpretation": "Costs 14.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116662,
+        "note": "$100K here buys what $116,662 buys nationally"
+      }
+    },
+    {
+      "metro": "Kahului-Wailuku, HI (Metropolitan Statistical Area)",
+      "fips": "27980",
+      "rpp": 109.393,
+      "rpp_housing": 119.179,
+      "rpp_nonhousing": 99.6,
+      "interpretation": "Costs 9.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91414,
+        "note": "$100K here buys what $91,414 buys nationally"
+      }
+    },
+    {
+      "metro": "Kalamazoo-Portage, MI (Metropolitan Statistical Area)",
+      "fips": "28020",
+      "rpp": 94.84,
+      "rpp_housing": 81.59,
+      "rpp_nonhousing": 108.1,
+      "interpretation": "Costs 5.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105441,
+        "note": "$100K here buys what $105,441 buys nationally"
+      }
+    },
+    {
+      "metro": "Kankakee, IL (Metropolitan Statistical Area)",
+      "fips": "28100",
+      "rpp": 96.394,
+      "rpp_housing": 92.856,
+      "rpp_nonhousing": 99.9,
+      "interpretation": "Costs 3.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103741,
+        "note": "$100K here buys what $103,741 buys nationally"
+      }
+    },
+    {
+      "metro": "Kansas City, MO-KS (Metropolitan Statistical Area)",
+      "fips": "28140",
+      "rpp": 92.543,
+      "rpp_housing": 86.642,
+      "rpp_nonhousing": 98.4,
+      "interpretation": "Costs 7.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108058,
+        "note": "$100K here buys what $108,058 buys nationally"
+      }
+    },
+    {
+      "metro": "Kennewick-Richland, WA (Metropolitan Statistical Area)",
+      "fips": "28420",
+      "rpp": 100.079,
+      "rpp_housing": 94.824,
+      "rpp_nonhousing": 105.3,
+      "interpretation": "Costs 0.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99921,
+        "note": "$100K here buys what $99,921 buys nationally"
+      }
+    },
+    {
+      "metro": "Kenosha, WI (Metropolitan Statistical Area)",
+      "fips": "28450",
+      "rpp": 101.118,
+      "rpp_housing": 95.814,
+      "rpp_nonhousing": 106.4,
+      "interpretation": "Costs 1.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98894,
+        "note": "$100K here buys what $98,894 buys nationally"
+      }
+    },
+    {
+      "metro": "Killeen-Temple, TX (Metropolitan Statistical Area)",
+      "fips": "28660",
+      "rpp": 91.132,
+      "rpp_housing": 77.884,
+      "rpp_nonhousing": 104.4,
+      "interpretation": "Costs 8.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109731,
+        "note": "$100K here buys what $109,731 buys nationally"
+      }
+    },
+    {
+      "metro": "Kingsport-Bristol, TN-VA (Metropolitan Statistical Area)",
+      "fips": "28700",
+      "rpp": 86.447,
+      "rpp_housing": 56.496,
+      "rpp_nonhousing": 116.4,
+      "interpretation": "Costs 13.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115678,
+        "note": "$100K here buys what $115,678 buys nationally"
+      }
+    },
+    {
+      "metro": "Kingston, NY (Metropolitan Statistical Area)",
+      "fips": "28740",
+      "rpp": 100.709,
+      "rpp_housing": 110.173,
+      "rpp_nonhousing": 91.2,
+      "interpretation": "Costs 0.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99296,
+        "note": "$100K here buys what $99,296 buys nationally"
+      }
+    },
+    {
+      "metro": "Kiryas Joel-Poughkeepsie-Newburgh, NY (Metropolitan Statistical Area)",
+      "fips": "28880",
+      "rpp": 109.422,
+      "rpp_housing": 115.763,
+      "rpp_nonhousing": 103.1,
+      "interpretation": "Costs 9.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91389,
+        "note": "$100K here buys what $91,389 buys nationally"
+      }
+    },
+    {
+      "metro": "Knoxville, TN (Metropolitan Statistical Area)",
+      "fips": "28940",
+      "rpp": 92.569,
+      "rpp_housing": 82.783,
+      "rpp_nonhousing": 102.4,
+      "interpretation": "Costs 7.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108028,
+        "note": "$100K here buys what $108,028 buys nationally"
+      }
+    },
+    {
+      "metro": "Kokomo, IN (Metropolitan Statistical Area)",
+      "fips": "29020",
+      "rpp": 89.648,
+      "rpp_housing": 59.252,
+      "rpp_nonhousing": 120,
+      "interpretation": "Costs 10.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111547,
+        "note": "$100K here buys what $111,547 buys nationally"
+      }
+    },
+    {
+      "metro": "La Crosse-Onalaska, WI-MN (Metropolitan Statistical Area)",
+      "fips": "29100",
+      "rpp": 91.769,
+      "rpp_housing": 69.386,
+      "rpp_nonhousing": 114.2,
+      "interpretation": "Costs 8.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108969,
+        "note": "$100K here buys what $108,969 buys nationally"
+      }
+    },
+    {
+      "metro": "Lafayette, LA (Metropolitan Statistical Area)",
+      "fips": "29180",
+      "rpp": 87.209,
+      "rpp_housing": 58.845,
+      "rpp_nonhousing": 115.6,
+      "interpretation": "Costs 12.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114667,
+        "note": "$100K here buys what $114,667 buys nationally"
+      }
+    },
+    {
+      "metro": "Lafayette-West Lafayette, IN (Metropolitan Statistical Area)",
+      "fips": "29200",
+      "rpp": 93.43,
+      "rpp_housing": 76.442,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 6.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107032,
+        "note": "$100K here buys what $107,032 buys nationally"
+      }
+    },
+    {
+      "metro": "Lake Charles, LA (Metropolitan Statistical Area)",
+      "fips": "29340",
+      "rpp": 85.852,
+      "rpp_housing": 51.752,
+      "rpp_nonhousing": 120,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116480,
+        "note": "$100K here buys what $116,480 buys nationally"
+      }
+    },
+    {
+      "metro": "Lake Havasu City-Kingman, AZ (Metropolitan Statistical Area)",
+      "fips": "29420",
+      "rpp": 94.098,
+      "rpp_housing": 79.773,
+      "rpp_nonhousing": 108.4,
+      "interpretation": "Costs 5.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106272,
+        "note": "$100K here buys what $106,272 buys nationally"
+      }
+    },
+    {
+      "metro": "Lakeland-Winter Haven, FL (Metropolitan Statistical Area)",
+      "fips": "29460",
+      "rpp": 97.141,
+      "rpp_housing": 95.942,
+      "rpp_nonhousing": 98.3,
+      "interpretation": "Costs 2.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102943,
+        "note": "$100K here buys what $102,943 buys nationally"
+      }
+    },
+    {
+      "metro": "Lancaster, PA (Metropolitan Statistical Area)",
+      "fips": "29540",
+      "rpp": 98.257,
+      "rpp_housing": 93.815,
+      "rpp_nonhousing": 102.7,
+      "interpretation": "Costs 1.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101774,
+        "note": "$100K here buys what $101,774 buys nationally"
+      }
+    },
+    {
+      "metro": "Lansing-East Lansing, MI (Metropolitan Statistical Area)",
+      "fips": "29620",
+      "rpp": 94.991,
+      "rpp_housing": 83.472,
+      "rpp_nonhousing": 106.5,
+      "interpretation": "Costs 5.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105273,
+        "note": "$100K here buys what $105,273 buys nationally"
+      }
+    },
+    {
+      "metro": "Laredo, TX (Metropolitan Statistical Area)",
+      "fips": "29700",
+      "rpp": 86.956,
+      "rpp_housing": 59.746,
+      "rpp_nonhousing": 114.2,
+      "interpretation": "Costs 13.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115001,
+        "note": "$100K here buys what $115,001 buys nationally"
+      }
+    },
+    {
+      "metro": "Las Cruces, NM (Metropolitan Statistical Area)",
+      "fips": "29740",
+      "rpp": 90.212,
+      "rpp_housing": 62.982,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110850,
+        "note": "$100K here buys what $110,850 buys nationally"
+      }
+    },
+    {
+      "metro": "Las Vegas-Henderson-North Las Vegas, NV (Metropolitan Statistical Area)",
+      "fips": "29820",
+      "rpp": 100.215,
+      "rpp_housing": 115.538,
+      "rpp_nonhousing": 84.9,
+      "interpretation": "Costs 0.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99785,
+        "note": "$100K here buys what $99,785 buys nationally"
+      }
+    },
+    {
+      "metro": "Lawrence, KS (Metropolitan Statistical Area)",
+      "fips": "29940",
+      "rpp": 90.243,
+      "rpp_housing": 71.636,
+      "rpp_nonhousing": 108.9,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110812,
+        "note": "$100K here buys what $110,812 buys nationally"
+      }
+    },
+    {
+      "metro": "Lawton, OK (Metropolitan Statistical Area)",
+      "fips": "30020",
+      "rpp": 85.941,
+      "rpp_housing": 57.389,
+      "rpp_nonhousing": 114.5,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116359,
+        "note": "$100K here buys what $116,359 buys nationally"
+      }
+    },
+    {
+      "metro": "Lebanon, PA (Metropolitan Statistical Area)",
+      "fips": "30140",
+      "rpp": 93.214,
+      "rpp_housing": 66.039,
+      "rpp_nonhousing": 120.4,
+      "interpretation": "Costs 6.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107280,
+        "note": "$100K here buys what $107,280 buys nationally"
+      }
+    },
+    {
+      "metro": "Lewiston, ID-WA (Metropolitan Statistical Area)",
+      "fips": "30300",
+      "rpp": 91.16,
+      "rpp_housing": 71.925,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 8.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109697,
+        "note": "$100K here buys what $109,697 buys nationally"
+      }
+    },
+    {
+      "metro": "Lewiston-Auburn, ME (Metropolitan Statistical Area)",
+      "fips": "30340",
+      "rpp": 94.736,
+      "rpp_housing": 69.003,
+      "rpp_nonhousing": 120.5,
+      "interpretation": "Costs 5.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105556,
+        "note": "$100K here buys what $105,556 buys nationally"
+      }
+    },
+    {
+      "metro": "Lexington-Fayette, KY (Metropolitan Statistical Area)",
+      "fips": "30460",
+      "rpp": 92.889,
+      "rpp_housing": 77.093,
+      "rpp_nonhousing": 108.7,
+      "interpretation": "Costs 7.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107655,
+        "note": "$100K here buys what $107,655 buys nationally"
+      }
+    },
+    {
+      "metro": "Lexington Park, MD (Metropolitan Statistical Area)",
+      "fips": "30500",
+      "rpp": 100.76,
+      "rpp_housing": 103.809,
+      "rpp_nonhousing": 97.7,
+      "interpretation": "Costs 0.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99246,
+        "note": "$100K here buys what $99,246 buys nationally"
+      }
+    },
+    {
+      "metro": "Lima, OH (Metropolitan Statistical Area)",
+      "fips": "30620",
+      "rpp": 89.669,
+      "rpp_housing": 57.275,
+      "rpp_nonhousing": 122.1,
+      "interpretation": "Costs 10.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111521,
+        "note": "$100K here buys what $111,521 buys nationally"
+      }
+    },
+    {
+      "metro": "Lincoln, NE (Metropolitan Statistical Area)",
+      "fips": "30700",
+      "rpp": 91.581,
+      "rpp_housing": 84.208,
+      "rpp_nonhousing": 99,
+      "interpretation": "Costs 8.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109193,
+        "note": "$100K here buys what $109,193 buys nationally"
+      }
+    },
+    {
+      "metro": "Little Rock-North Little Rock-Conway, AR (Metropolitan Statistical Area)",
+      "fips": "30780",
+      "rpp": 89.364,
+      "rpp_housing": 68.295,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 10.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111902,
+        "note": "$100K here buys what $111,902 buys nationally"
+      }
+    },
+    {
+      "metro": "Logan, UT-ID (Metropolitan Statistical Area)",
+      "fips": "30860",
+      "rpp": 95.927,
+      "rpp_housing": 90.959,
+      "rpp_nonhousing": 100.9,
+      "interpretation": "Costs 4.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104246,
+        "note": "$100K here buys what $104,246 buys nationally"
+      }
+    },
+    {
+      "metro": "Longview, TX (Metropolitan Statistical Area)",
+      "fips": "30980",
+      "rpp": 89.485,
+      "rpp_housing": 66.749,
+      "rpp_nonhousing": 112.2,
+      "interpretation": "Costs 10.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111751,
+        "note": "$100K here buys what $111,751 buys nationally"
+      }
+    },
+    {
+      "metro": "Longview-Kelso, WA (Metropolitan Statistical Area)",
+      "fips": "31020",
+      "rpp": 97.545,
+      "rpp_housing": 82.536,
+      "rpp_nonhousing": 112.6,
+      "interpretation": "Costs 2.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102517,
+        "note": "$100K here buys what $102,517 buys nationally"
+      }
+    },
+    {
+      "metro": "Los Angeles-Long Beach-Anaheim, CA (Metropolitan Statistical Area)",
+      "fips": "31080",
+      "rpp": 113.566,
+      "rpp_housing": 170.433,
+      "rpp_nonhousing": 56.7,
+      "interpretation": "Costs 13.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 88055,
+        "note": "$100K here buys what $88,055 buys nationally"
+      }
+    },
+    {
+      "metro": "Louisville/Jefferson County, KY-IN (Metropolitan Statistical Area)",
+      "fips": "31140",
+      "rpp": 93.074,
+      "rpp_housing": 78.558,
+      "rpp_nonhousing": 107.6,
+      "interpretation": "Costs 6.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107441,
+        "note": "$100K here buys what $107,441 buys nationally"
+      }
+    },
+    {
+      "metro": "Lubbock, TX (Metropolitan Statistical Area)",
+      "fips": "31180",
+      "rpp": 91.317,
+      "rpp_housing": 76.357,
+      "rpp_nonhousing": 106.3,
+      "interpretation": "Costs 8.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109509,
+        "note": "$100K here buys what $109,509 buys nationally"
+      }
+    },
+    {
+      "metro": "Lynchburg, VA (Metropolitan Statistical Area)",
+      "fips": "31340",
+      "rpp": 89.363,
+      "rpp_housing": 63.912,
+      "rpp_nonhousing": 114.8,
+      "interpretation": "Costs 10.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111903,
+        "note": "$100K here buys what $111,903 buys nationally"
+      }
+    },
+    {
+      "metro": "Macon-Bibb County, GA (Metropolitan Statistical Area)",
+      "fips": "31420",
+      "rpp": 88.528,
+      "rpp_housing": 58.916,
+      "rpp_nonhousing": 118.1,
+      "interpretation": "Costs 11.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112959,
+        "note": "$100K here buys what $112,959 buys nationally"
+      }
+    },
+    {
+      "metro": "Madison, WI (Metropolitan Statistical Area)",
+      "fips": "31540",
+      "rpp": 97.287,
+      "rpp_housing": 99.748,
+      "rpp_nonhousing": 94.8,
+      "interpretation": "Costs 2.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102789,
+        "note": "$100K here buys what $102,789 buys nationally"
+      }
+    },
+    {
+      "metro": "Manchester-Nashua, NH (Metropolitan Statistical Area)",
+      "fips": "31700",
+      "rpp": 105.657,
+      "rpp_housing": 134.22,
+      "rpp_nonhousing": 77.1,
+      "interpretation": "Costs 5.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94646,
+        "note": "$100K here buys what $94,646 buys nationally"
+      }
+    },
+    {
+      "metro": "Manhattan, KS (Metropolitan Statistical Area)",
+      "fips": "31740",
+      "rpp": 90.162,
+      "rpp_housing": 71.971,
+      "rpp_nonhousing": 108.4,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110911,
+        "note": "$100K here buys what $110,911 buys nationally"
+      }
+    },
+    {
+      "metro": "Mankato, MN (Metropolitan Statistical Area)",
+      "fips": "31860",
+      "rpp": 90.955,
+      "rpp_housing": 79.884,
+      "rpp_nonhousing": 102,
+      "interpretation": "Costs 9.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109944,
+        "note": "$100K here buys what $109,944 buys nationally"
+      }
+    },
+    {
+      "metro": "Mansfield, OH (Metropolitan Statistical Area)",
+      "fips": "31900",
+      "rpp": 88.872,
+      "rpp_housing": 54.919,
+      "rpp_nonhousing": 122.8,
+      "interpretation": "Costs 11.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112521,
+        "note": "$100K here buys what $112,521 buys nationally"
+      }
+    },
+    {
+      "metro": "McAllen-Edinburg-Mission, TX (Metropolitan Statistical Area)",
+      "fips": "32580",
+      "rpp": 85.895,
+      "rpp_housing": 55.892,
+      "rpp_nonhousing": 115.9,
+      "interpretation": "Costs 14.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116421,
+        "note": "$100K here buys what $116,421 buys nationally"
+      }
+    },
+    {
+      "metro": "Medford, OR (Metropolitan Statistical Area)",
+      "fips": "32780",
+      "rpp": 101.433,
+      "rpp_housing": 97.658,
+      "rpp_nonhousing": 105.2,
+      "interpretation": "Costs 1.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98587,
+        "note": "$100K here buys what $98,587 buys nationally"
+      }
+    },
+    {
+      "metro": "Memphis, TN-MS-AR (Metropolitan Statistical Area)",
+      "fips": "32820",
+      "rpp": 92.179,
+      "rpp_housing": 79.807,
+      "rpp_nonhousing": 104.6,
+      "interpretation": "Costs 7.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108485,
+        "note": "$100K here buys what $108,485 buys nationally"
+      }
+    },
+    {
+      "metro": "Merced, CA (Metropolitan Statistical Area)",
+      "fips": "32900",
+      "rpp": 98.275,
+      "rpp_housing": 78.63,
+      "rpp_nonhousing": 117.9,
+      "interpretation": "Costs 1.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101755,
+        "note": "$100K here buys what $101,755 buys nationally"
+      }
+    },
+    {
+      "metro": "Miami-Fort Lauderdale-West Palm Beach, FL (Metropolitan Statistical Area)",
+      "fips": "33100",
+      "rpp": 114.155,
+      "rpp_housing": 155.551,
+      "rpp_nonhousing": 72.8,
+      "interpretation": "Costs 14.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 87600,
+        "note": "$100K here buys what $87,600 buys nationally"
+      }
+    },
+    {
+      "metro": "Michigan City-La Porte, IN (Metropolitan Statistical Area)",
+      "fips": "33140",
+      "rpp": 91.682,
+      "rpp_housing": 68.451,
+      "rpp_nonhousing": 114.9,
+      "interpretation": "Costs 8.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109073,
+        "note": "$100K here buys what $109,073 buys nationally"
+      }
+    },
+    {
+      "metro": "Midland, MI (Metropolitan Statistical Area)",
+      "fips": "33220",
+      "rpp": 91.921,
+      "rpp_housing": 66.684,
+      "rpp_nonhousing": 117.2,
+      "interpretation": "Costs 8.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108789,
+        "note": "$100K here buys what $108,789 buys nationally"
+      }
+    },
+    {
+      "metro": "Midland, TX (Metropolitan Statistical Area)",
+      "fips": "33260",
+      "rpp": 95.783,
+      "rpp_housing": 101.497,
+      "rpp_nonhousing": 90.1,
+      "interpretation": "Costs 4.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104403,
+        "note": "$100K here buys what $104,403 buys nationally"
+      }
+    },
+    {
+      "metro": "Milwaukee-Waukesha, WI (Metropolitan Statistical Area)",
+      "fips": "33340",
+      "rpp": 96.937,
+      "rpp_housing": 97.111,
+      "rpp_nonhousing": 96.8,
+      "interpretation": "Costs 3.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103160,
+        "note": "$100K here buys what $103,160 buys nationally"
+      }
+    },
+    {
+      "metro": "Minneapolis-St. Paul-Bloomington, MN-WI (Metropolitan Statistical Area)",
+      "fips": "33460",
+      "rpp": 104.822,
+      "rpp_housing": 111.838,
+      "rpp_nonhousing": 97.8,
+      "interpretation": "Costs 4.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95400,
+        "note": "$100K here buys what $95,400 buys nationally"
+      }
+    },
+    {
+      "metro": "Minot, ND (Metropolitan Statistical Area)",
+      "fips": "33500",
+      "rpp": 87.028,
+      "rpp_housing": 63.234,
+      "rpp_nonhousing": 110.8,
+      "interpretation": "Costs 13.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114906,
+        "note": "$100K here buys what $114,906 buys nationally"
+      }
+    },
+    {
+      "metro": "Missoula, MT (Metropolitan Statistical Area)",
+      "fips": "33540",
+      "rpp": 96.445,
+      "rpp_housing": 94.945,
+      "rpp_nonhousing": 97.9,
+      "interpretation": "Costs 3.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103686,
+        "note": "$100K here buys what $103,686 buys nationally"
+      }
+    },
+    {
+      "metro": "Mobile, AL (Metropolitan Statistical Area)",
+      "fips": "33660",
+      "rpp": 88.098,
+      "rpp_housing": 60.116,
+      "rpp_nonhousing": 116.1,
+      "interpretation": "Costs 11.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113510,
+        "note": "$100K here buys what $113,510 buys nationally"
+      }
+    },
+    {
+      "metro": "Modesto, CA (Metropolitan Statistical Area)",
+      "fips": "33700",
+      "rpp": 104.108,
+      "rpp_housing": 108.476,
+      "rpp_nonhousing": 99.7,
+      "interpretation": "Costs 4.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96054,
+        "note": "$100K here buys what $96,054 buys nationally"
+      }
+    },
+    {
+      "metro": "Monroe, LA (Metropolitan Statistical Area)",
+      "fips": "33740",
+      "rpp": 83.597,
+      "rpp_housing": 42.815,
+      "rpp_nonhousing": 124.4,
+      "interpretation": "Costs 16.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 119622,
+        "note": "$100K here buys what $119,622 buys nationally"
+      }
+    },
+    {
+      "metro": "Monroe, MI (Metropolitan Statistical Area)",
+      "fips": "33780",
+      "rpp": 93.492,
+      "rpp_housing": 74.641,
+      "rpp_nonhousing": 112.3,
+      "interpretation": "Costs 6.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106961,
+        "note": "$100K here buys what $106,961 buys nationally"
+      }
+    },
+    {
+      "metro": "Montgomery, AL (Metropolitan Statistical Area)",
+      "fips": "33860",
+      "rpp": 89.682,
+      "rpp_housing": 64.347,
+      "rpp_nonhousing": 115,
+      "interpretation": "Costs 10.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111505,
+        "note": "$100K here buys what $111,505 buys nationally"
+      }
+    },
+    {
+      "metro": "Morgantown, WV (Metropolitan Statistical Area)",
+      "fips": "34060",
+      "rpp": 93.323,
+      "rpp_housing": 69.126,
+      "rpp_nonhousing": 117.5,
+      "interpretation": "Costs 6.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107155,
+        "note": "$100K here buys what $107,155 buys nationally"
+      }
+    },
+    {
+      "metro": "Morristown, TN (Metropolitan Statistical Area)",
+      "fips": "34100",
+      "rpp": 86.364,
+      "rpp_housing": 59.024,
+      "rpp_nonhousing": 113.7,
+      "interpretation": "Costs 13.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115789,
+        "note": "$100K here buys what $115,789 buys nationally"
+      }
+    },
+    {
+      "metro": "Mount Vernon-Anacortes, WA (Metropolitan Statistical Area)",
+      "fips": "34580",
+      "rpp": 102.443,
+      "rpp_housing": 108.165,
+      "rpp_nonhousing": 96.7,
+      "interpretation": "Costs 2.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97615,
+        "note": "$100K here buys what $97,615 buys nationally"
+      }
+    },
+    {
+      "metro": "Muncie, IN (Metropolitan Statistical Area)",
+      "fips": "34620",
+      "rpp": 88.148,
+      "rpp_housing": 57.474,
+      "rpp_nonhousing": 118.8,
+      "interpretation": "Costs 11.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113446,
+        "note": "$100K here buys what $113,446 buys nationally"
+      }
+    },
+    {
+      "metro": "Muskegon-Norton Shores, MI (Metropolitan Statistical Area)",
+      "fips": "34740",
+      "rpp": 92.519,
+      "rpp_housing": 74.228,
+      "rpp_nonhousing": 110.8,
+      "interpretation": "Costs 7.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108086,
+        "note": "$100K here buys what $108,086 buys nationally"
+      }
+    },
+    {
+      "metro": "Myrtle Beach-Conway-North Myrtle Beach, SC (Metropolitan Statistical Area)",
+      "fips": "34820",
+      "rpp": 93.642,
+      "rpp_housing": 83.129,
+      "rpp_nonhousing": 104.2,
+      "interpretation": "Costs 6.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106790,
+        "note": "$100K here buys what $106,790 buys nationally"
+      }
+    },
+    {
+      "metro": "Napa, CA (Metropolitan Statistical Area)",
+      "fips": "34900",
+      "rpp": 112.554,
+      "rpp_housing": 197.44,
+      "rpp_nonhousing": 27.7,
+      "interpretation": "Costs 12.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 88846,
+        "note": "$100K here buys what $88,846 buys nationally"
+      }
+    },
+    {
+      "metro": "Naples-Marco Island, FL (Metropolitan Statistical Area)",
+      "fips": "34940",
+      "rpp": 103.2,
+      "rpp_housing": 129.441,
+      "rpp_nonhousing": 77,
+      "interpretation": "Costs 3.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96899,
+        "note": "$100K here buys what $96,899 buys nationally"
+      }
+    },
+    {
+      "metro": "Nashville-Davidson--Murfreesboro--Franklin, TN (Metropolitan Statistical Area)",
+      "fips": "34980",
+      "rpp": 96.338,
+      "rpp_housing": 104.626,
+      "rpp_nonhousing": 88,
+      "interpretation": "Costs 3.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103801,
+        "note": "$100K here buys what $103,801 buys nationally"
+      }
+    },
+    {
+      "metro": "New Haven, CT (Metropolitan Statistical Area)",
+      "fips": "35300",
+      "rpp": 104.559,
+      "rpp_housing": 124.293,
+      "rpp_nonhousing": 84.8,
+      "interpretation": "Costs 4.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95640,
+        "note": "$100K here buys what $95,640 buys nationally"
+      }
+    },
+    {
+      "metro": "New Orleans-Metairie, LA (Metropolitan Statistical Area)",
+      "fips": "35380",
+      "rpp": 92.597,
+      "rpp_housing": 86.009,
+      "rpp_nonhousing": 99.2,
+      "interpretation": "Costs 7.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107995,
+        "note": "$100K here buys what $107,995 buys nationally"
+      }
+    },
+    {
+      "metro": "New York-Newark-Jersey City, NY-NJ (Metropolitan Statistical Area)",
+      "fips": "35620",
+      "rpp": 112.563,
+      "rpp_housing": 148.616,
+      "rpp_nonhousing": 76.5,
+      "interpretation": "Costs 12.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 88839,
+        "note": "$100K here buys what $88,839 buys nationally"
+      }
+    },
+    {
+      "metro": "Niles, MI (Metropolitan Statistical Area)",
+      "fips": "35660",
+      "rpp": 92.37,
+      "rpp_housing": 71.599,
+      "rpp_nonhousing": 113.1,
+      "interpretation": "Costs 7.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108260,
+        "note": "$100K here buys what $108,260 buys nationally"
+      }
+    },
+    {
+      "metro": "North Port-Bradenton-Sarasota, FL (Metropolitan Statistical Area)",
+      "fips": "35840",
+      "rpp": 102.417,
+      "rpp_housing": 127.95,
+      "rpp_nonhousing": 76.9,
+      "interpretation": "Costs 2.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97640,
+        "note": "$100K here buys what $97,640 buys nationally"
+      }
+    },
+    {
+      "metro": "Norwich-New London-Willimantic, CT (Metropolitan Statistical Area)",
+      "fips": "35980",
+      "rpp": 100.445,
+      "rpp_housing": 93.662,
+      "rpp_nonhousing": 107.2,
+      "interpretation": "Costs 0.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99557,
+        "note": "$100K here buys what $99,557 buys nationally"
+      }
+    },
+    {
+      "metro": "Ocala, FL (Metropolitan Statistical Area)",
+      "fips": "36100",
+      "rpp": 95.234,
+      "rpp_housing": 86.23,
+      "rpp_nonhousing": 104.2,
+      "interpretation": "Costs 4.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105005,
+        "note": "$100K here buys what $105,005 buys nationally"
+      }
+    },
+    {
+      "metro": "Odessa, TX (Metropolitan Statistical Area)",
+      "fips": "36220",
+      "rpp": 93.896,
+      "rpp_housing": 89.709,
+      "rpp_nonhousing": 98.1,
+      "interpretation": "Costs 6.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106501,
+        "note": "$100K here buys what $106,501 buys nationally"
+      }
+    },
+    {
+      "metro": "Ogden, UT (Metropolitan Statistical Area)",
+      "fips": "36260",
+      "rpp": 100.349,
+      "rpp_housing": 117.903,
+      "rpp_nonhousing": 82.8,
+      "interpretation": "Costs 0.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99652,
+        "note": "$100K here buys what $99,652 buys nationally"
+      }
+    },
+    {
+      "metro": "Oklahoma City, OK (Metropolitan Statistical Area)",
+      "fips": "36420",
+      "rpp": 90.408,
+      "rpp_housing": 73.885,
+      "rpp_nonhousing": 106.9,
+      "interpretation": "Costs 9.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110610,
+        "note": "$100K here buys what $110,610 buys nationally"
+      }
+    },
+    {
+      "metro": "Olympia-Lacey-Tumwater, WA (Metropolitan Statistical Area)",
+      "fips": "36500",
+      "rpp": 103.67,
+      "rpp_housing": 116.675,
+      "rpp_nonhousing": 90.7,
+      "interpretation": "Costs 3.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96460,
+        "note": "$100K here buys what $96,460 buys nationally"
+      }
+    },
+    {
+      "metro": "Omaha, NE-IA (Metropolitan Statistical Area)",
+      "fips": "36540",
+      "rpp": 91.911,
+      "rpp_housing": 86.404,
+      "rpp_nonhousing": 97.4,
+      "interpretation": "Costs 8.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108801,
+        "note": "$100K here buys what $108,801 buys nationally"
+      }
+    },
+    {
+      "metro": "Orlando-Kissimmee-Sanford, FL (Metropolitan Statistical Area)",
+      "fips": "36740",
+      "rpp": 101.418,
+      "rpp_housing": 123.374,
+      "rpp_nonhousing": 79.5,
+      "interpretation": "Costs 1.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98602,
+        "note": "$100K here buys what $98,602 buys nationally"
+      }
+    },
+    {
+      "metro": "Oshkosh-Neenah, WI (Metropolitan Statistical Area)",
+      "fips": "36780",
+      "rpp": 92.929,
+      "rpp_housing": 74.442,
+      "rpp_nonhousing": 111.4,
+      "interpretation": "Costs 7.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107609,
+        "note": "$100K here buys what $107,609 buys nationally"
+      }
+    },
+    {
+      "metro": "Owensboro, KY (Metropolitan Statistical Area)",
+      "fips": "36980",
+      "rpp": 88.61,
+      "rpp_housing": 55.698,
+      "rpp_nonhousing": 121.5,
+      "interpretation": "Costs 11.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112854,
+        "note": "$100K here buys what $112,854 buys nationally"
+      }
+    },
+    {
+      "metro": "Oxnard-Thousand Oaks-Ventura, CA (Metropolitan Statistical Area)",
+      "fips": "37100",
+      "rpp": 110.534,
+      "rpp_housing": 171.096,
+      "rpp_nonhousing": 50,
+      "interpretation": "Costs 10.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90470,
+        "note": "$100K here buys what $90,470 buys nationally"
+      }
+    },
+    {
+      "metro": "Paducah, KY-IL (Metropolitan Statistical Area)",
+      "fips": "37140",
+      "rpp": 86.084,
+      "rpp_housing": 48.794,
+      "rpp_nonhousing": 123.4,
+      "interpretation": "Costs 13.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 116166,
+        "note": "$100K here buys what $116,166 buys nationally"
+      }
+    },
+    {
+      "metro": "Palm Bay-Melbourne-Titusville, FL (Metropolitan Statistical Area)",
+      "fips": "37340",
+      "rpp": 100.005,
+      "rpp_housing": 111.731,
+      "rpp_nonhousing": 88.3,
+      "interpretation": "Costs 0.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99995,
+        "note": "$100K here buys what $99,995 buys nationally"
+      }
+    },
+    {
+      "metro": "Panama City-Panama City Beach, FL (Metropolitan Statistical Area)",
+      "fips": "37460",
+      "rpp": 97.296,
+      "rpp_housing": 96.424,
+      "rpp_nonhousing": 98.2,
+      "interpretation": "Costs 2.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102779,
+        "note": "$100K here buys what $102,779 buys nationally"
+      }
+    },
+    {
+      "metro": "Parkersburg-Vienna, WV (Metropolitan Statistical Area)",
+      "fips": "37620",
+      "rpp": 87.066,
+      "rpp_housing": 45.884,
+      "rpp_nonhousing": 128.2,
+      "interpretation": "Costs 12.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114855,
+        "note": "$100K here buys what $114,855 buys nationally"
+      }
+    },
+    {
+      "metro": "Pensacola-Ferry Pass-Brent, FL (Metropolitan Statistical Area)",
+      "fips": "37860",
+      "rpp": 97.717,
+      "rpp_housing": 98.77,
+      "rpp_nonhousing": 96.7,
+      "interpretation": "Costs 2.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102336,
+        "note": "$100K here buys what $102,336 buys nationally"
+      }
+    },
+    {
+      "metro": "Peoria, IL (Metropolitan Statistical Area)",
+      "fips": "37900",
+      "rpp": 91.231,
+      "rpp_housing": 63.763,
+      "rpp_nonhousing": 118.7,
+      "interpretation": "Costs 8.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109612,
+        "note": "$100K here buys what $109,612 buys nationally"
+      }
+    },
+    {
+      "metro": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD (Metropolitan Statistical Area)",
+      "fips": "37980",
+      "rpp": 102.554,
+      "rpp_housing": 113.141,
+      "rpp_nonhousing": 92,
+      "interpretation": "Costs 2.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97510,
+        "note": "$100K here buys what $97,510 buys nationally"
+      }
+    },
+    {
+      "metro": "Phoenix-Mesa-Chandler, AZ (Metropolitan Statistical Area)",
+      "fips": "38060",
+      "rpp": 103.316,
+      "rpp_housing": 121.236,
+      "rpp_nonhousing": 85.4,
+      "interpretation": "Costs 3.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96790,
+        "note": "$100K here buys what $96,790 buys nationally"
+      }
+    },
+    {
+      "metro": "Pinehurst-Southern Pines, NC (Metropolitan Statistical Area)",
+      "fips": "38240",
+      "rpp": 88.336,
+      "rpp_housing": 59.318,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 11.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113204,
+        "note": "$100K here buys what $113,204 buys nationally"
+      }
+    },
+    {
+      "metro": "Pittsburgh, PA (Metropolitan Statistical Area)",
+      "fips": "38300",
+      "rpp": 94.671,
+      "rpp_housing": 71.986,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 5.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105629,
+        "note": "$100K here buys what $105,629 buys nationally"
+      }
+    },
+    {
+      "metro": "Pittsfield, MA (Metropolitan Statistical Area)",
+      "fips": "38340",
+      "rpp": 95.106,
+      "rpp_housing": 73.452,
+      "rpp_nonhousing": 116.8,
+      "interpretation": "Costs 4.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105146,
+        "note": "$100K here buys what $105,146 buys nationally"
+      }
+    },
+    {
+      "metro": "Pocatello, ID (Metropolitan Statistical Area)",
+      "fips": "38540",
+      "rpp": 88.906,
+      "rpp_housing": 66.396,
+      "rpp_nonhousing": 111.4,
+      "interpretation": "Costs 11.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112478,
+        "note": "$100K here buys what $112,478 buys nationally"
+      }
+    },
+    {
+      "metro": "Portland-South Portland, ME (Metropolitan Statistical Area)",
+      "fips": "38860",
+      "rpp": 101.858,
+      "rpp_housing": 105.164,
+      "rpp_nonhousing": 98.6,
+      "interpretation": "Costs 1.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98176,
+        "note": "$100K here buys what $98,176 buys nationally"
+      }
+    },
+    {
+      "metro": "Portland-Vancouver-Hillsboro, OR-WA (Metropolitan Statistical Area)",
+      "fips": "38900",
+      "rpp": 105.421,
+      "rpp_housing": 125.114,
+      "rpp_nonhousing": 85.7,
+      "interpretation": "Costs 5.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 94858,
+        "note": "$100K here buys what $94,858 buys nationally"
+      }
+    },
+    {
+      "metro": "Port St. Lucie, FL (Metropolitan Statistical Area)",
+      "fips": "38940",
+      "rpp": 100.228,
+      "rpp_housing": 113.642,
+      "rpp_nonhousing": 86.8,
+      "interpretation": "Costs 0.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99773,
+        "note": "$100K here buys what $99,773 buys nationally"
+      }
+    },
+    {
+      "metro": "Prescott Valley-Prescott, AZ (Metropolitan Statistical Area)",
+      "fips": "39150",
+      "rpp": 98.255,
+      "rpp_housing": 98.781,
+      "rpp_nonhousing": 97.7,
+      "interpretation": "Costs 1.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101776,
+        "note": "$100K here buys what $101,776 buys nationally"
+      }
+    },
+    {
+      "metro": "Providence-Warwick, RI-MA (Metropolitan Statistical Area)",
+      "fips": "39300",
+      "rpp": 101.773,
+      "rpp_housing": 103.851,
+      "rpp_nonhousing": 99.7,
+      "interpretation": "Costs 1.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98258,
+        "note": "$100K here buys what $98,258 buys nationally"
+      }
+    },
+    {
+      "metro": "Provo-Orem-Lehi, UT (Metropolitan Statistical Area)",
+      "fips": "39340",
+      "rpp": 98.232,
+      "rpp_housing": 104.081,
+      "rpp_nonhousing": 92.4,
+      "interpretation": "Costs 1.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101800,
+        "note": "$100K here buys what $101,800 buys nationally"
+      }
+    },
+    {
+      "metro": "Pueblo, CO (Metropolitan Statistical Area)",
+      "fips": "39380",
+      "rpp": 91.762,
+      "rpp_housing": 71.285,
+      "rpp_nonhousing": 112.2,
+      "interpretation": "Costs 8.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108978,
+        "note": "$100K here buys what $108,978 buys nationally"
+      }
+    },
+    {
+      "metro": "Punta Gorda, FL (Metropolitan Statistical Area)",
+      "fips": "39460",
+      "rpp": 100.525,
+      "rpp_housing": 113.277,
+      "rpp_nonhousing": 87.8,
+      "interpretation": "Costs 0.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99478,
+        "note": "$100K here buys what $99,478 buys nationally"
+      }
+    },
+    {
+      "metro": "Racine-Mount Pleasant, WI (Metropolitan Statistical Area)",
+      "fips": "39540",
+      "rpp": 95.961,
+      "rpp_housing": 92.029,
+      "rpp_nonhousing": 99.9,
+      "interpretation": "Costs 4.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104209,
+        "note": "$100K here buys what $104,209 buys nationally"
+      }
+    },
+    {
+      "metro": "Raleigh-Cary, NC (Metropolitan Statistical Area)",
+      "fips": "39580",
+      "rpp": 98.157,
+      "rpp_housing": 103.476,
+      "rpp_nonhousing": 92.8,
+      "interpretation": "Costs 1.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101878,
+        "note": "$100K here buys what $101,878 buys nationally"
+      }
+    },
+    {
+      "metro": "Rapid City, SD (Metropolitan Statistical Area)",
+      "fips": "39660",
+      "rpp": 89.16,
+      "rpp_housing": 72.552,
+      "rpp_nonhousing": 105.8,
+      "interpretation": "Costs 10.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112158,
+        "note": "$100K here buys what $112,158 buys nationally"
+      }
+    },
+    {
+      "metro": "Reading, PA (Metropolitan Statistical Area)",
+      "fips": "39740",
+      "rpp": 97.06,
+      "rpp_housing": 85.419,
+      "rpp_nonhousing": 108.7,
+      "interpretation": "Costs 2.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103029,
+        "note": "$100K here buys what $103,029 buys nationally"
+      }
+    },
+    {
+      "metro": "Redding, CA (Metropolitan Statistical Area)",
+      "fips": "39820",
+      "rpp": 100.684,
+      "rpp_housing": 89.366,
+      "rpp_nonhousing": 112,
+      "interpretation": "Costs 0.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99321,
+        "note": "$100K here buys what $99,321 buys nationally"
+      }
+    },
+    {
+      "metro": "Reno, NV (Metropolitan Statistical Area)",
+      "fips": "39900",
+      "rpp": 101.014,
+      "rpp_housing": 123.478,
+      "rpp_nonhousing": 78.6,
+      "interpretation": "Costs 1.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 98996,
+        "note": "$100K here buys what $98,996 buys nationally"
+      }
+    },
+    {
+      "metro": "Richmond, VA (Metropolitan Statistical Area)",
+      "fips": "40060",
+      "rpp": 97.858,
+      "rpp_housing": 99.136,
+      "rpp_nonhousing": 96.6,
+      "interpretation": "Costs 2.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102189,
+        "note": "$100K here buys what $102,189 buys nationally"
+      }
+    },
+    {
+      "metro": "Riverside-San Bernardino-Ontario, CA (Metropolitan Statistical Area)",
+      "fips": "40140",
+      "rpp": 106.442,
+      "rpp_housing": 129.312,
+      "rpp_nonhousing": 83.6,
+      "interpretation": "Costs 6.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 93948,
+        "note": "$100K here buys what $93,948 buys nationally"
+      }
+    },
+    {
+      "metro": "Roanoke, VA (Metropolitan Statistical Area)",
+      "fips": "40220",
+      "rpp": 93.618,
+      "rpp_housing": 78.531,
+      "rpp_nonhousing": 108.7,
+      "interpretation": "Costs 6.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106817,
+        "note": "$100K here buys what $106,817 buys nationally"
+      }
+    },
+    {
+      "metro": "Rochester, MN (Metropolitan Statistical Area)",
+      "fips": "40340",
+      "rpp": 90.821,
+      "rpp_housing": 78.628,
+      "rpp_nonhousing": 103,
+      "interpretation": "Costs 9.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110107,
+        "note": "$100K here buys what $110,107 buys nationally"
+      }
+    },
+    {
+      "metro": "Rochester, NY (Metropolitan Statistical Area)",
+      "fips": "40380",
+      "rpp": 97.035,
+      "rpp_housing": 87.481,
+      "rpp_nonhousing": 106.6,
+      "interpretation": "Costs 3.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103056,
+        "note": "$100K here buys what $103,056 buys nationally"
+      }
+    },
+    {
+      "metro": "Rockford, IL (Metropolitan Statistical Area)",
+      "fips": "40420",
+      "rpp": 92.154,
+      "rpp_housing": 70.076,
+      "rpp_nonhousing": 114.2,
+      "interpretation": "Costs 7.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108514,
+        "note": "$100K here buys what $108,514 buys nationally"
+      }
+    },
+    {
+      "metro": "Rocky Mount, NC (Metropolitan Statistical Area)",
+      "fips": "40580",
+      "rpp": 88.012,
+      "rpp_housing": 56.103,
+      "rpp_nonhousing": 119.9,
+      "interpretation": "Costs 12.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113621,
+        "note": "$100K here buys what $113,621 buys nationally"
+      }
+    },
+    {
+      "metro": "Rome, GA (Metropolitan Statistical Area)",
+      "fips": "40660",
+      "rpp": 90.161,
+      "rpp_housing": 60.276,
+      "rpp_nonhousing": 120,
+      "interpretation": "Costs 9.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110913,
+        "note": "$100K here buys what $110,913 buys nationally"
+      }
+    },
+    {
+      "metro": "Sacramento-Roseville-Folsom, CA (Metropolitan Statistical Area)",
+      "fips": "40900",
+      "rpp": 106.67,
+      "rpp_housing": 130.23,
+      "rpp_nonhousing": 83.1,
+      "interpretation": "Costs 6.7% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 93747,
+        "note": "$100K here buys what $93,747 buys nationally"
+      }
+    },
+    {
+      "metro": "Saginaw, MI (Metropolitan Statistical Area)",
+      "fips": "40980",
+      "rpp": 90.891,
+      "rpp_housing": 63.647,
+      "rpp_nonhousing": 118.1,
+      "interpretation": "Costs 9.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110022,
+        "note": "$100K here buys what $110,022 buys nationally"
+      }
+    },
+    {
+      "metro": "St. Cloud, MN (Metropolitan Statistical Area)",
+      "fips": "41060",
+      "rpp": 87.632,
+      "rpp_housing": 65.057,
+      "rpp_nonhousing": 110.2,
+      "interpretation": "Costs 12.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114114,
+        "note": "$100K here buys what $114,114 buys nationally"
+      }
+    },
+    {
+      "metro": "St. George, UT (Metropolitan Statistical Area)",
+      "fips": "41100",
+      "rpp": 97.321,
+      "rpp_housing": 98.148,
+      "rpp_nonhousing": 96.5,
+      "interpretation": "Costs 2.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102753,
+        "note": "$100K here buys what $102,753 buys nationally"
+      }
+    },
+    {
+      "metro": "St. Joseph, MO-KS (Metropolitan Statistical Area)",
+      "fips": "41140",
+      "rpp": 86.382,
+      "rpp_housing": 55.359,
+      "rpp_nonhousing": 117.4,
+      "interpretation": "Costs 13.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115765,
+        "note": "$100K here buys what $115,765 buys nationally"
+      }
+    },
+    {
+      "metro": "St. Louis, MO-IL (Metropolitan Statistical Area)",
+      "fips": "41180",
+      "rpp": 95.088,
+      "rpp_housing": 79.024,
+      "rpp_nonhousing": 111.2,
+      "interpretation": "Costs 4.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105166,
+        "note": "$100K here buys what $105,166 buys nationally"
+      }
+    },
+    {
+      "metro": "Salem, OR (Metropolitan Statistical Area)",
+      "fips": "41420",
+      "rpp": 103.649,
+      "rpp_housing": 110.333,
+      "rpp_nonhousing": 97,
+      "interpretation": "Costs 3.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96479,
+        "note": "$100K here buys what $96,479 buys nationally"
+      }
+    },
+    {
+      "metro": "Salinas, CA (Metropolitan Statistical Area)",
+      "fips": "41500",
+      "rpp": 109.042,
+      "rpp_housing": 145.669,
+      "rpp_nonhousing": 72.4,
+      "interpretation": "Costs 9.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91708,
+        "note": "$100K here buys what $91,708 buys nationally"
+      }
+    },
+    {
+      "metro": "Salisbury, MD (Metropolitan Statistical Area)",
+      "fips": "41540",
+      "rpp": 95.617,
+      "rpp_housing": 87.212,
+      "rpp_nonhousing": 104,
+      "interpretation": "Costs 4.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104584,
+        "note": "$100K here buys what $104,584 buys nationally"
+      }
+    },
+    {
+      "metro": "Salt Lake City-Murray, UT (Metropolitan Statistical Area)",
+      "fips": "41620",
+      "rpp": 100.868,
+      "rpp_housing": 123.311,
+      "rpp_nonhousing": 78.4,
+      "interpretation": "Costs 0.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99139,
+        "note": "$100K here buys what $99,139 buys nationally"
+      }
+    },
+    {
+      "metro": "San Angelo, TX (Metropolitan Statistical Area)",
+      "fips": "41660",
+      "rpp": 92.453,
+      "rpp_housing": 81.442,
+      "rpp_nonhousing": 103.5,
+      "interpretation": "Costs 7.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108163,
+        "note": "$100K here buys what $108,163 buys nationally"
+      }
+    },
+    {
+      "metro": "San Antonio-New Braunfels, TX (Metropolitan Statistical Area)",
+      "fips": "41700",
+      "rpp": 94.716,
+      "rpp_housing": 94.575,
+      "rpp_nonhousing": 94.9,
+      "interpretation": "Costs 5.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105579,
+        "note": "$100K here buys what $105,579 buys nationally"
+      }
+    },
+    {
+      "metro": "San Diego-Chula Vista-Carlsbad, CA (Metropolitan Statistical Area)",
+      "fips": "41740",
+      "rpp": 111.887,
+      "rpp_housing": 179.267,
+      "rpp_nonhousing": 44.5,
+      "interpretation": "Costs 11.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 89376,
+        "note": "$100K here buys what $89,376 buys nationally"
+      }
+    },
+    {
+      "metro": "Sandusky, OH (Metropolitan Statistical Area)",
+      "fips": "41780",
+      "rpp": 89.281,
+      "rpp_housing": 59.462,
+      "rpp_nonhousing": 119.1,
+      "interpretation": "Costs 10.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112006,
+        "note": "$100K here buys what $112,006 buys nationally"
+      }
+    },
+    {
+      "metro": "San Francisco-Oakland-Fremont, CA (Metropolitan Statistical Area)",
+      "fips": "41860",
+      "rpp": 115.613,
+      "rpp_housing": 194.718,
+      "rpp_nonhousing": 36.5,
+      "interpretation": "Costs 15.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 86495,
+        "note": "$100K here buys what $86,495 buys nationally"
+      }
+    },
+    {
+      "metro": "San Jose-Sunnyvale-Santa Clara, CA (Metropolitan Statistical Area)",
+      "fips": "41940",
+      "rpp": 110.423,
+      "rpp_housing": 211.901,
+      "rpp_nonhousing": 8.9,
+      "interpretation": "Costs 10.4% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90561,
+        "note": "$100K here buys what $90,561 buys nationally"
+      }
+    },
+    {
+      "metro": "San Luis Obispo-Paso Robles, CA (Metropolitan Statistical Area)",
+      "fips": "42020",
+      "rpp": 108.596,
+      "rpp_housing": 144.362,
+      "rpp_nonhousing": 72.8,
+      "interpretation": "Costs 8.6% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 92084,
+        "note": "$100K here buys what $92,084 buys nationally"
+      }
+    },
+    {
+      "metro": "Santa Cruz-Watsonville, CA (Metropolitan Statistical Area)",
+      "fips": "42100",
+      "rpp": 109.896,
+      "rpp_housing": 164.328,
+      "rpp_nonhousing": 55.5,
+      "interpretation": "Costs 9.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90995,
+        "note": "$100K here buys what $90,995 buys nationally"
+      }
+    },
+    {
+      "metro": "Santa Fe, NM (Metropolitan Statistical Area)",
+      "fips": "42140",
+      "rpp": 98.767,
+      "rpp_housing": 107.978,
+      "rpp_nonhousing": 89.6,
+      "interpretation": "Costs 1.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101248,
+        "note": "$100K here buys what $101,248 buys nationally"
+      }
+    },
+    {
+      "metro": "Santa Maria-Santa Barbara, CA (Metropolitan Statistical Area)",
+      "fips": "42200",
+      "rpp": 108.798,
+      "rpp_housing": 151.394,
+      "rpp_nonhousing": 66.2,
+      "interpretation": "Costs 8.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91913,
+        "note": "$100K here buys what $91,913 buys nationally"
+      }
+    },
+    {
+      "metro": "Santa Rosa-Petaluma, CA (Metropolitan Statistical Area)",
+      "fips": "42220",
+      "rpp": 107.784,
+      "rpp_housing": 139.569,
+      "rpp_nonhousing": 76,
+      "interpretation": "Costs 7.8% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 92778,
+        "note": "$100K here buys what $92,778 buys nationally"
+      }
+    },
+    {
+      "metro": "Savannah, GA (Metropolitan Statistical Area)",
+      "fips": "42340",
+      "rpp": 95.206,
+      "rpp_housing": 86.012,
+      "rpp_nonhousing": 104.4,
+      "interpretation": "Costs 4.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 105035,
+        "note": "$100K here buys what $105,035 buys nationally"
+      }
+    },
+    {
+      "metro": "Scranton--Wilkes-Barre, PA (Metropolitan Statistical Area)",
+      "fips": "42540",
+      "rpp": 93.556,
+      "rpp_housing": 66.987,
+      "rpp_nonhousing": 120.1,
+      "interpretation": "Costs 6.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106888,
+        "note": "$100K here buys what $106,888 buys nationally"
+      }
+    },
+    {
+      "metro": "Seattle-Tacoma-Bellevue, WA (Metropolitan Statistical Area)",
+      "fips": "42660",
+      "rpp": 111.133,
+      "rpp_housing": 151.314,
+      "rpp_nonhousing": 71,
+      "interpretation": "Costs 11.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 89982,
+        "note": "$100K here buys what $89,982 buys nationally"
+      }
+    },
+    {
+      "metro": "Sebastian-Vero Beach-West Vero Corridor, FL (Metropolitan Statistical Area)",
+      "fips": "42680",
+      "rpp": 98.308,
+      "rpp_housing": 101.635,
+      "rpp_nonhousing": 95,
+      "interpretation": "Costs 1.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101721,
+        "note": "$100K here buys what $101,721 buys nationally"
+      }
+    },
+    {
+      "metro": "Sebring, FL (Metropolitan Statistical Area)",
+      "fips": "42700",
+      "rpp": 92.47,
+      "rpp_housing": 73.455,
+      "rpp_nonhousing": 111.5,
+      "interpretation": "Costs 7.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108143,
+        "note": "$100K here buys what $108,143 buys nationally"
+      }
+    },
+    {
+      "metro": "Sheboygan, WI (Metropolitan Statistical Area)",
+      "fips": "43100",
+      "rpp": 94.014,
+      "rpp_housing": 80.54,
+      "rpp_nonhousing": 107.5,
+      "interpretation": "Costs 6.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106367,
+        "note": "$100K here buys what $106,367 buys nationally"
+      }
+    },
+    {
+      "metro": "Sherman-Denison, TX (Metropolitan Statistical Area)",
+      "fips": "43300",
+      "rpp": 93.771,
+      "rpp_housing": 89.466,
+      "rpp_nonhousing": 98.1,
+      "interpretation": "Costs 6.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106643,
+        "note": "$100K here buys what $106,643 buys nationally"
+      }
+    },
+    {
+      "metro": "Shreveport-Bossier City, LA (Metropolitan Statistical Area)",
+      "fips": "43340",
+      "rpp": 84.766,
+      "rpp_housing": 52.286,
+      "rpp_nonhousing": 117.2,
+      "interpretation": "Costs 15.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 117972,
+        "note": "$100K here buys what $117,972 buys nationally"
+      }
+    },
+    {
+      "metro": "Sierra Vista-Douglas, AZ (Metropolitan Statistical Area)",
+      "fips": "43420",
+      "rpp": 89.243,
+      "rpp_housing": 61.918,
+      "rpp_nonhousing": 116.6,
+      "interpretation": "Costs 10.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112054,
+        "note": "$100K here buys what $112,054 buys nationally"
+      }
+    },
+    {
+      "metro": "Sioux City, IA-NE-SD (Metropolitan Statistical Area)",
+      "fips": "43580",
+      "rpp": 86.454,
+      "rpp_housing": 57.849,
+      "rpp_nonhousing": 115.1,
+      "interpretation": "Costs 13.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 115668,
+        "note": "$100K here buys what $115,668 buys nationally"
+      }
+    },
+    {
+      "metro": "Sioux Falls, SD-MN (Metropolitan Statistical Area)",
+      "fips": "43620",
+      "rpp": 90.631,
+      "rpp_housing": 77.605,
+      "rpp_nonhousing": 103.7,
+      "interpretation": "Costs 9.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110338,
+        "note": "$100K here buys what $110,338 buys nationally"
+      }
+    },
+    {
+      "metro": "Slidell-Mandeville-Covington, LA (Metropolitan Statistical Area)",
+      "fips": "43640",
+      "rpp": 92.726,
+      "rpp_housing": 85.449,
+      "rpp_nonhousing": 100,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107845,
+        "note": "$100K here buys what $107,845 buys nationally"
+      }
+    },
+    {
+      "metro": "South Bend-Mishawaka, IN-MI (Metropolitan Statistical Area)",
+      "fips": "43780",
+      "rpp": 92.858,
+      "rpp_housing": 74.586,
+      "rpp_nonhousing": 111.1,
+      "interpretation": "Costs 7.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107691,
+        "note": "$100K here buys what $107,691 buys nationally"
+      }
+    },
+    {
+      "metro": "Spartanburg, SC (Metropolitan Statistical Area)",
+      "fips": "43900",
+      "rpp": 91.051,
+      "rpp_housing": 68.007,
+      "rpp_nonhousing": 114.1,
+      "interpretation": "Costs 8.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109829,
+        "note": "$100K here buys what $109,829 buys nationally"
+      }
+    },
+    {
+      "metro": "Spokane-Spokane Valley, WA (Metropolitan Statistical Area)",
+      "fips": "44060",
+      "rpp": 100.346,
+      "rpp_housing": 97.059,
+      "rpp_nonhousing": 103.6,
+      "interpretation": "Costs 0.3% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99655,
+        "note": "$100K here buys what $99,655 buys nationally"
+      }
+    },
+    {
+      "metro": "Springfield, IL (Metropolitan Statistical Area)",
+      "fips": "44100",
+      "rpp": 92.745,
+      "rpp_housing": 71.616,
+      "rpp_nonhousing": 113.9,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107823,
+        "note": "$100K here buys what $107,823 buys nationally"
+      }
+    },
+    {
+      "metro": "Springfield, MA (Metropolitan Statistical Area)",
+      "fips": "44140",
+      "rpp": 96.061,
+      "rpp_housing": 75.781,
+      "rpp_nonhousing": 116.3,
+      "interpretation": "Costs 3.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104101,
+        "note": "$100K here buys what $104,101 buys nationally"
+      }
+    },
+    {
+      "metro": "Springfield, MO (Metropolitan Statistical Area)",
+      "fips": "44180",
+      "rpp": 88.585,
+      "rpp_housing": 65.568,
+      "rpp_nonhousing": 111.6,
+      "interpretation": "Costs 11.4% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112886,
+        "note": "$100K here buys what $112,886 buys nationally"
+      }
+    },
+    {
+      "metro": "Springfield, OH (Metropolitan Statistical Area)",
+      "fips": "44220",
+      "rpp": 90.482,
+      "rpp_housing": 61.726,
+      "rpp_nonhousing": 119.2,
+      "interpretation": "Costs 9.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 110519,
+        "note": "$100K here buys what $110,519 buys nationally"
+      }
+    },
+    {
+      "metro": "State College, PA (Metropolitan Statistical Area)",
+      "fips": "44300",
+      "rpp": 96.762,
+      "rpp_housing": 85.688,
+      "rpp_nonhousing": 107.8,
+      "interpretation": "Costs 3.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103346,
+        "note": "$100K here buys what $103,346 buys nationally"
+      }
+    },
+    {
+      "metro": "Staunton-Stuarts Draft, VA (Metropolitan Statistical Area)",
+      "fips": "44420",
+      "rpp": 91.128,
+      "rpp_housing": 68.232,
+      "rpp_nonhousing": 114,
+      "interpretation": "Costs 8.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109736,
+        "note": "$100K here buys what $109,736 buys nationally"
+      }
+    },
+    {
+      "metro": "Stockton-Lodi, CA (Metropolitan Statistical Area)",
+      "fips": "44700",
+      "rpp": 105.089,
+      "rpp_housing": 115.614,
+      "rpp_nonhousing": 94.6,
+      "interpretation": "Costs 5.1% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95157,
+        "note": "$100K here buys what $95,157 buys nationally"
+      }
+    },
+    {
+      "metro": "Sumter, SC (Metropolitan Statistical Area)",
+      "fips": "44940",
+      "rpp": 88.02,
+      "rpp_housing": 60.833,
+      "rpp_nonhousing": 115.2,
+      "interpretation": "Costs 12.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113611,
+        "note": "$100K here buys what $113,611 buys nationally"
+      }
+    },
+    {
+      "metro": "Syracuse, NY (Metropolitan Statistical Area)",
+      "fips": "45060",
+      "rpp": 95.742,
+      "rpp_housing": 80.656,
+      "rpp_nonhousing": 110.8,
+      "interpretation": "Costs 4.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104447,
+        "note": "$100K here buys what $104,447 buys nationally"
+      }
+    },
+    {
+      "metro": "Tallahassee, FL (Metropolitan Statistical Area)",
+      "fips": "45220",
+      "rpp": 93.919,
+      "rpp_housing": 78.528,
+      "rpp_nonhousing": 109.3,
+      "interpretation": "Costs 6.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106475,
+        "note": "$100K here buys what $106,475 buys nationally"
+      }
+    },
+    {
+      "metro": "Tampa-St. Petersburg-Clearwater, FL (Metropolitan Statistical Area)",
+      "fips": "45300",
+      "rpp": 100.89,
+      "rpp_housing": 125.839,
+      "rpp_nonhousing": 75.9,
+      "interpretation": "Costs 0.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 99118,
+        "note": "$100K here buys what $99,118 buys nationally"
+      }
+    },
+    {
+      "metro": "Terre Haute, IN (Metropolitan Statistical Area)",
+      "fips": "45460",
+      "rpp": 87.797,
+      "rpp_housing": 51.923,
+      "rpp_nonhousing": 123.7,
+      "interpretation": "Costs 12.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113899,
+        "note": "$100K here buys what $113,899 buys nationally"
+      }
+    },
+    {
+      "metro": "Texarkana, TX-AR (Metropolitan Statistical Area)",
+      "fips": "45500",
+      "rpp": 84.012,
+      "rpp_housing": 49.885,
+      "rpp_nonhousing": 118.1,
+      "interpretation": "Costs 16.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 119031,
+        "note": "$100K here buys what $119,031 buys nationally"
+      }
+    },
+    {
+      "metro": "Toledo, OH (Metropolitan Statistical Area)",
+      "fips": "45780",
+      "rpp": 91.455,
+      "rpp_housing": 67.317,
+      "rpp_nonhousing": 115.6,
+      "interpretation": "Costs 8.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 109343,
+        "note": "$100K here buys what $109,343 buys nationally"
+      }
+    },
+    {
+      "metro": "Topeka, KS (Metropolitan Statistical Area)",
+      "fips": "45820",
+      "rpp": 88.82,
+      "rpp_housing": 64.987,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 11.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112587,
+        "note": "$100K here buys what $112,587 buys nationally"
+      }
+    },
+    {
+      "metro": "Traverse City, MI (Metropolitan Statistical Area)",
+      "fips": "45900",
+      "rpp": 93.372,
+      "rpp_housing": 78.146,
+      "rpp_nonhousing": 108.6,
+      "interpretation": "Costs 6.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107098,
+        "note": "$100K here buys what $107,098 buys nationally"
+      }
+    },
+    {
+      "metro": "Trenton-Princeton, NJ (Metropolitan Statistical Area)",
+      "fips": "45940",
+      "rpp": 103.18,
+      "rpp_housing": 135.082,
+      "rpp_nonhousing": 71.3,
+      "interpretation": "Costs 3.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96918,
+        "note": "$100K here buys what $96,918 buys nationally"
+      }
+    },
+    {
+      "metro": "Tucson, AZ (Metropolitan Statistical Area)",
+      "fips": "46060",
+      "rpp": 96.896,
+      "rpp_housing": 91.765,
+      "rpp_nonhousing": 102,
+      "interpretation": "Costs 3.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103203,
+        "note": "$100K here buys what $103,203 buys nationally"
+      }
+    },
+    {
+      "metro": "Tulsa, OK (Metropolitan Statistical Area)",
+      "fips": "46140",
+      "rpp": 89.214,
+      "rpp_housing": 68.235,
+      "rpp_nonhousing": 110.2,
+      "interpretation": "Costs 10.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112090,
+        "note": "$100K here buys what $112,090 buys nationally"
+      }
+    },
+    {
+      "metro": "Tuscaloosa, AL (Metropolitan Statistical Area)",
+      "fips": "46220",
+      "rpp": 87.722,
+      "rpp_housing": 58.246,
+      "rpp_nonhousing": 117.2,
+      "interpretation": "Costs 12.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113996,
+        "note": "$100K here buys what $113,996 buys nationally"
+      }
+    },
+    {
+      "metro": "Twin Falls, ID (Metropolitan Statistical Area) *",
+      "fips": "46300",
+      "rpp": 92.108,
+      "rpp_housing": 73.833,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 7.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108568,
+        "note": "$100K here buys what $108,568 buys nationally"
+      }
+    },
+    {
+      "metro": "Tyler, TX (Metropolitan Statistical Area)",
+      "fips": "46340",
+      "rpp": 92.156,
+      "rpp_housing": 79.911,
+      "rpp_nonhousing": 104.4,
+      "interpretation": "Costs 7.8% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108512,
+        "note": "$100K here buys what $108,512 buys nationally"
+      }
+    },
+    {
+      "metro": "Urban Honolulu, HI (Metropolitan Statistical Area)",
+      "fips": "46520",
+      "rpp": 110.961,
+      "rpp_housing": 135.538,
+      "rpp_nonhousing": 86.4,
+      "interpretation": "Costs 11.0% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 90122,
+        "note": "$100K here buys what $90,122 buys nationally"
+      }
+    },
+    {
+      "metro": "Utica-Rome, NY (Metropolitan Statistical Area)",
+      "fips": "46540",
+      "rpp": 92.678,
+      "rpp_housing": 66.063,
+      "rpp_nonhousing": 119.3,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107900,
+        "note": "$100K here buys what $107,900 buys nationally"
+      }
+    },
+    {
+      "metro": "Valdosta, GA (Metropolitan Statistical Area)",
+      "fips": "46660",
+      "rpp": 88.271,
+      "rpp_housing": 58.758,
+      "rpp_nonhousing": 117.8,
+      "interpretation": "Costs 11.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113287,
+        "note": "$100K here buys what $113,287 buys nationally"
+      }
+    },
+    {
+      "metro": "Vallejo, CA (Metropolitan Statistical Area)",
+      "fips": "46700",
+      "rpp": 108.479,
+      "rpp_housing": 142.042,
+      "rpp_nonhousing": 74.9,
+      "interpretation": "Costs 8.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 92184,
+        "note": "$100K here buys what $92,184 buys nationally"
+      }
+    },
+    {
+      "metro": "Victoria, TX (Metropolitan Statistical Area)",
+      "fips": "47020",
+      "rpp": 89.839,
+      "rpp_housing": 69.318,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 10.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111310,
+        "note": "$100K here buys what $111,310 buys nationally"
+      }
+    },
+    {
+      "metro": "Vineland, NJ (Metropolitan Statistical Area)",
+      "fips": "47220",
+      "rpp": 95.968,
+      "rpp_housing": 83.883,
+      "rpp_nonhousing": 108.1,
+      "interpretation": "Costs 4.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104201,
+        "note": "$100K here buys what $104,201 buys nationally"
+      }
+    },
+    {
+      "metro": "Virginia Beach-Chesapeake-Norfolk, VA-NC (Metropolitan Statistical Area)",
+      "fips": "47260",
+      "rpp": 97.941,
+      "rpp_housing": 99.805,
+      "rpp_nonhousing": 96.1,
+      "interpretation": "Costs 2.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 102102,
+        "note": "$100K here buys what $102,102 buys nationally"
+      }
+    },
+    {
+      "metro": "Visalia, CA (Metropolitan Statistical Area)",
+      "fips": "47300",
+      "rpp": 99.825,
+      "rpp_housing": 84.053,
+      "rpp_nonhousing": 115.6,
+      "interpretation": "Costs 0.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100175,
+        "note": "$100K here buys what $100,175 buys nationally"
+      }
+    },
+    {
+      "metro": "Waco, TX (Metropolitan Statistical Area)",
+      "fips": "47380",
+      "rpp": 92.55,
+      "rpp_housing": 83.531,
+      "rpp_nonhousing": 101.6,
+      "interpretation": "Costs 7.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108050,
+        "note": "$100K here buys what $108,050 buys nationally"
+      }
+    },
+    {
+      "metro": "Walla Walla, WA (Metropolitan Statistical Area)",
+      "fips": "47460",
+      "rpp": 98.519,
+      "rpp_housing": 86.579,
+      "rpp_nonhousing": 110.5,
+      "interpretation": "Costs 1.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 101503,
+        "note": "$100K here buys what $101,503 buys nationally"
+      }
+    },
+    {
+      "metro": "Warner Robins, GA (Metropolitan Statistical Area)",
+      "fips": "47580",
+      "rpp": 93.789,
+      "rpp_housing": 79.172,
+      "rpp_nonhousing": 108.4,
+      "interpretation": "Costs 6.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 106622,
+        "note": "$100K here buys what $106,622 buys nationally"
+      }
+    },
+    {
+      "metro": "Washington-Arlington-Alexandria, DC-VA-MD-WV (Metropolitan Statistical Area)",
+      "fips": "47900",
+      "rpp": 108.884,
+      "rpp_housing": 151.134,
+      "rpp_nonhousing": 66.6,
+      "interpretation": "Costs 8.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 91841,
+        "note": "$100K here buys what $91,841 buys nationally"
+      }
+    },
+    {
+      "metro": "Waterbury-Shelton, CT (Metropolitan Statistical Area)",
+      "fips": "47930",
+      "rpp": 99.778,
+      "rpp_housing": 89.111,
+      "rpp_nonhousing": 110.4,
+      "interpretation": "Costs 0.2% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 100222,
+        "note": "$100K here buys what $100,222 buys nationally"
+      }
+    },
+    {
+      "metro": "Waterloo-Cedar Falls, IA (Metropolitan Statistical Area)",
+      "fips": "47940",
+      "rpp": 87.057,
+      "rpp_housing": 63.13,
+      "rpp_nonhousing": 111,
+      "interpretation": "Costs 12.9% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114867,
+        "note": "$100K here buys what $114,867 buys nationally"
+      }
+    },
+    {
+      "metro": "Watertown-Fort Drum, NY (Metropolitan Statistical Area)",
+      "fips": "48060",
+      "rpp": 87.69,
+      "rpp_housing": 53.185,
+      "rpp_nonhousing": 122.2,
+      "interpretation": "Costs 12.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114038,
+        "note": "$100K here buys what $114,038 buys nationally"
+      }
+    },
+    {
+      "metro": "Wausau, WI (Metropolitan Statistical Area)",
+      "fips": "48140",
+      "rpp": 92.651,
+      "rpp_housing": 71.464,
+      "rpp_nonhousing": 113.8,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107932,
+        "note": "$100K here buys what $107,932 buys nationally"
+      }
+    },
+    {
+      "metro": "Weirton-Steubenville, WV-OH (Metropolitan Statistical Area)",
+      "fips": "48260",
+      "rpp": 89.024,
+      "rpp_housing": 52.383,
+      "rpp_nonhousing": 125.7,
+      "interpretation": "Costs 11.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112329,
+        "note": "$100K here buys what $112,329 buys nationally"
+      }
+    },
+    {
+      "metro": "Wenatchee-East Wenatchee, WA (Metropolitan Statistical Area)",
+      "fips": "48300",
+      "rpp": 103.855,
+      "rpp_housing": 114.958,
+      "rpp_nonhousing": 92.8,
+      "interpretation": "Costs 3.9% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 96288,
+        "note": "$100K here buys what $96,288 buys nationally"
+      }
+    },
+    {
+      "metro": "Wheeling, WV-OH (Metropolitan Statistical Area)",
+      "fips": "48540",
+      "rpp": 88.323,
+      "rpp_housing": 51.443,
+      "rpp_nonhousing": 125.2,
+      "interpretation": "Costs 11.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 113221,
+        "note": "$100K here buys what $113,221 buys nationally"
+      }
+    },
+    {
+      "metro": "Wichita, KS (Metropolitan Statistical Area)",
+      "fips": "48620",
+      "rpp": 88.946,
+      "rpp_housing": 66.245,
+      "rpp_nonhousing": 111.6,
+      "interpretation": "Costs 11.1% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 112428,
+        "note": "$100K here buys what $112,428 buys nationally"
+      }
+    },
+    {
+      "metro": "Wichita Falls, TX (Metropolitan Statistical Area)",
+      "fips": "48660",
+      "rpp": 89.513,
+      "rpp_housing": 68.208,
+      "rpp_nonhousing": 110.8,
+      "interpretation": "Costs 10.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 111716,
+        "note": "$100K here buys what $111,716 buys nationally"
+      }
+    },
+    {
+      "metro": "Wildwood-The Villages, FL (Metropolitan Statistical Area)",
+      "fips": "48680",
+      "rpp": 85.424,
+      "rpp_housing": 51.733,
+      "rpp_nonhousing": 119.1,
+      "interpretation": "Costs 14.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 117063,
+        "note": "$100K here buys what $117,063 buys nationally"
+      }
+    },
+    {
+      "metro": "Williamsport, PA (Metropolitan Statistical Area)",
+      "fips": "48700",
+      "rpp": 92.35,
+      "rpp_housing": 64.392,
+      "rpp_nonhousing": 120.3,
+      "interpretation": "Costs 7.7% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108284,
+        "note": "$100K here buys what $108,284 buys nationally"
+      }
+    },
+    {
+      "metro": "Wilmington, NC (Metropolitan Statistical Area)",
+      "fips": "48900",
+      "rpp": 96.422,
+      "rpp_housing": 93.215,
+      "rpp_nonhousing": 99.6,
+      "interpretation": "Costs 3.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103711,
+        "note": "$100K here buys what $103,711 buys nationally"
+      }
+    },
+    {
+      "metro": "Winchester, VA-WV (Metropolitan Statistical Area)",
+      "fips": "49020",
+      "rpp": 96.45,
+      "rpp_housing": 90.009,
+      "rpp_nonhousing": 102.9,
+      "interpretation": "Costs 3.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 103681,
+        "note": "$100K here buys what $103,681 buys nationally"
+      }
+    },
+    {
+      "metro": "Winston-Salem, NC (Metropolitan Statistical Area)",
+      "fips": "49180",
+      "rpp": 92.043,
+      "rpp_housing": 71.377,
+      "rpp_nonhousing": 112.7,
+      "interpretation": "Costs 8.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 108645,
+        "note": "$100K here buys what $108,645 buys nationally"
+      }
+    },
+    {
+      "metro": "Worcester, MA (Metropolitan Statistical Area)",
+      "fips": "49340",
+      "rpp": 102.523,
+      "rpp_housing": 113.001,
+      "rpp_nonhousing": 92,
+      "interpretation": "Costs 2.5% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 97539,
+        "note": "$100K here buys what $97,539 buys nationally"
+      }
+    },
+    {
+      "metro": "Yakima, WA (Metropolitan Statistical Area)",
+      "fips": "49420",
+      "rpp": 95.545,
+      "rpp_housing": 72.628,
+      "rpp_nonhousing": 118.5,
+      "interpretation": "Costs 4.5% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104663,
+        "note": "$100K here buys what $104,663 buys nationally"
+      }
+    },
+    {
+      "metro": "York-Hanover, PA (Metropolitan Statistical Area)",
+      "fips": "49620",
+      "rpp": 96,
+      "rpp_housing": 79.762,
+      "rpp_nonhousing": 112.2,
+      "interpretation": "Costs 4.0% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 104167,
+        "note": "$100K here buys what $104,167 buys nationally"
+      }
+    },
+    {
+      "metro": "Youngstown-Warren, OH (Metropolitan Statistical Area)",
+      "fips": "49660",
+      "rpp": 87.394,
+      "rpp_housing": 53.448,
+      "rpp_nonhousing": 121.3,
+      "interpretation": "Costs 12.6% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 114424,
+        "note": "$100K here buys what $114,424 buys nationally"
+      }
+    },
+    {
+      "metro": "Yuba City, CA (Metropolitan Statistical Area)",
+      "fips": "49700",
+      "rpp": 104.233,
+      "rpp_housing": 108.279,
+      "rpp_nonhousing": 100.2,
+      "interpretation": "Costs 4.2% above national average",
+      "salary_equivalent": {
+        "100000_nominal": 95939,
+        "note": "$100K here buys what $95,939 buys nationally"
+      }
+    },
+    {
+      "metro": "Yuma, AZ (Metropolitan Statistical Area)",
+      "fips": "49740",
+      "rpp": 92.706,
+      "rpp_housing": 73.776,
+      "rpp_nonhousing": 111.6,
+      "interpretation": "Costs 7.3% below national average",
+      "salary_equivalent": {
+        "100000_nominal": 107868,
+        "note": "$100K here buys what $107,868 buys nationally"
+      }
+    }
+  ]
+}

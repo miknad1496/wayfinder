@@ -1,0 +1,159 @@
+{
+  "refreshedAt": "2026-04-04T21:12:46.818Z",
+  "databases": {
+    "internships": {
+      "name": "Internships",
+      "totalEntries": 1514,
+      "expirationStatus": {
+        "active": 896,
+        "expired": 618
+      },
+      "renewalActivity": {
+        "entriesRenewed": 0,
+        "entriesExpired": 618
+      },
+      "dataQuality": {
+        "issueCount": 0,
+        "completeness": 100
+      },
+      "avgDescriptionLength": 210,
+      "categories": {
+        "Technology": 284,
+        "Business": 251,
+        "Science": 74,
+        "Healthcare": 166,
+        "Arts & Media": 47,
+        "Law & Government": 19,
+        "Engineering": 230,
+        "Education": 16,
+        "Agriculture": 7,
+        "Environmental": 11,
+        "Media": 18,
+        "Government": 1,
+        "Nonprofit": 33,
+        "Design": 4,
+        "Marketing": 80,
+        "Product": 1,
+        "Architecture": 1,
+        "Law": 61,
+        "Policy": 1,
+        "Arts": 1,
+        "Energy": 25,
+        "Operations": 107,
+        "Finance": 76
+      }
+    },
+    "scholarships": {
+      "name": "Scholarships",
+      "totalEntries": 976,
+      "expirationStatus": {
+        "active": 976,
+        "expired": 0
+      },
+      "renewalActivity": {
+        "entriesRenewed": 87,
+        "entriesExpired": 87
+      },
+      "dataQuality": {
+        "issueCount": 0,
+        "completeness": 100
+      },
+      "avgDescriptionLength": 212,
+      "categories": {
+        "merit": 694,
+        "need-based": 241,
+        "stem": 80,
+        "minority": 41,
+        "women": 20,
+        "community-service": 24,
+        "essay-based": 31,
+        "arts": 13,
+        "first-gen": 7,
+        "state-specific": 68,
+        "athletic": 3,
+        "international": 11,
+        "military": 10,
+        "career-development": 1,
+        "internship": 1,
+        "agricultural": 2,
+        "music": 1,
+        "lgbtq": 2,
+        "disability": 15,
+        "career-specific": 53,
+        "leadership": 3,
+        "environment": 7,
+        "business": 1,
+        "health": 1,
+        "law": 1,
+        "native-american": 1,
+        "veteran": 1,
+        "agriculture": 1,
+        "community": 1,
+        "entrepreneurship": 2,
+        "immigrant": 4
+      }
+    },
+    "programs": {
+      "name": "Programs",
+      "totalEntries": 746,
+      "expirationStatus": {
+        "active": 0,
+        "expired": 0
+      },
+      "renewalActivity": {
+        "entriesRenewed": 0,
+        "entriesExpired": 0
+      },
+      "dataQuality": {
+        "issueCount": 746,
+        "completeness": 0
+      },
+      "avgDescriptionLength": 305,
+      "categories": {
+        "stem": 107,
+        "research": 88,
+        "pre-college": 43,
+        "leadership": 86,
+        "health": 35,
+        "community-service": 15,
+        "arts": 94,
+        "entrepreneurship": 12,
+        "business": 48,
+        "non-traditional": 7,
+        "sports": 36,
+        "gap-year": 8,
+        "online": 9,
+        "sports-outdoors": 5,
+        "government": 9,
+        "international": 48,
+        "service": 48,
+        "technology": 48
+      }
+    },
+    "financial-aid": {
+      "name": "Financial Aid",
+      "totalEntries": 83,
+      "expirationStatus": {},
+      "renewalActivity": {
+        "entriesRenewed": 0,
+        "entriesExpired": 0
+      },
+      "dataQuality": {
+        "issueCount": 0,
+        "completeness": 100
+      },
+      "pricing": {
+        "outdatedCount": 83,
+        "needBlindSchools": 49,
+        "meetsFullNeedSchools": 64
+      }
+    }
+  },
+  "summary": {
+    "totalEntries": 3319,
+    "totalExpiredThisRefresh": 705,
+    "totalRenewedThisRefresh": 87,
+    "totalQualityIssuesDetected": 746,
+    "overallCompletenessScore": 78
+  }
+}
