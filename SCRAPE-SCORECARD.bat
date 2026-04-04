@@ -23,10 +23,16 @@ node backend/scrapers/college-scorecard-scraper.js
 
 echo.
 echo ==========================================
+echo  Injecting federal programs + state grants
+echo ==========================================
+node backend/scrapers/inject-grants-programs.js
+
+echo.
+echo ==========================================
 echo  Auto-committing and pushing to GitHub...
 echo ==========================================
 git add backend\data\scraped\financial-aid-db.json
-git commit -m "Update financial-aid-db.json with verified College Scorecard data"
+git commit -m "Update financial-aid-db.json with verified Scorecard data + grants"
 git push
 echo.
 echo Done! Data pushed to GitHub - Render will auto-deploy.

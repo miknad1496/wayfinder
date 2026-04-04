@@ -1,0 +1,377 @@
+{
+  "_metadata": {
+    "source": "State higher education agencies, verified from official .gov and .edu sources",
+    "lastVerified": "2026-04-04",
+    "dataYear": "2025-2026",
+    "_verified": true,
+    "note": "Covers major state grant programs. Some states have additional smaller programs not listed."
+  },
+  "stateGrants": [
+    {
+      "state": "CA",
+      "name": "Cal Grant A",
+      "maxAward": 12570,
+      "needBased": true,
+      "meritBased": true,
+      "eligibility": "CA residents attending UC/CSU/eligible private colleges. GPA 3.0+ required. Family income limits apply.",
+      "deadline": "March 2 (FAFSA + GPA verification)",
+      "details": "Covers full tuition at UC ($12,570) or CSU ($5,742). Up to $9,708 at private colleges.",
+      "url": "https://www.csac.ca.gov/",
+      "_verified": true
+    },
+    {
+      "state": "CA",
+      "name": "Cal Grant B",
+      "maxAward": 12570,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "Low-income CA students. GPA 2.0+ required. First year: living allowance only (~$1,648). Years 2-4: tuition + living allowance.",
+      "deadline": "March 2",
+      "url": "https://www.csac.ca.gov/",
+      "_verified": true
+    },
+    {
+      "state": "CA",
+      "name": "Middle Class Scholarship",
+      "maxAward": null,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "CA residents at UC/CSU with family income up to $217,000. Covers gap between financial aid and cost of attendance.",
+      "deadline": "March 2 (FAFSA filing)",
+      "url": "https://www.csac.ca.gov/",
+      "_verified": true
+    },
+    {
+      "state": "NY",
+      "name": "Tuition Assistance Program (TAP)",
+      "maxAward": 5665,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "NY residents attending in-state colleges. Family net taxable income up to $80,000.",
+      "deadline": "June 30 (but apply early)",
+      "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/tuition-assistance-program-tap",
+      "_verified": true
+    },
+    {
+      "state": "NY",
+      "name": "Excelsior Scholarship",
+      "maxAward": 7070,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "NY residents at SUNY/CUNY. Family income up to $125,000. Last-dollar award covering remaining tuition after other aid. Must live and work in NY for years equal to award duration after graduation.",
+      "deadline": "Varies by term",
+      "details": "Starting 2025-2026, the $5,500 cap was removed. Now covers all remaining tuition.",
+      "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
+      "_verified": true
+    },
+    {
+      "state": "TX",
+      "name": "TEXAS Grant",
+      "maxAward": 16287,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "TX residents at public universities. Expected Family Contribution must show financial need. Up to $5,429/semester.",
+      "deadline": "Priority varies by institution (typically March 15)",
+      "url": "https://reportcenter.highered.texas.gov/",
+      "_verified": true
+    },
+    {
+      "state": "FL",
+      "name": "Florida Bright Futures - Academic Scholars (FAS)",
+      "maxAward": null,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "FL residents with weighted GPA 3.5+, SAT 1330+ or ACT 29+, 100 community service hours. $212.28 per credit hour at public universities.",
+      "deadline": "High school graduation year",
+      "details": "$212.28/credit hour (2025-2026). Covers ~100% of tuition at state universities.",
+      "url": "https://www.floridabrightfutures.gov/",
+      "_verified": true
+    },
+    {
+      "state": "FL",
+      "name": "Florida Bright Futures - Medallion Scholars (FMS)",
+      "maxAward": null,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "FL residents with weighted GPA 3.0+, SAT 1210+ or ACT 25+, 75 community service hours. $159.21 per credit hour.",
+      "deadline": "High school graduation year",
+      "details": "$159.21/credit hour (2025-2026). Covers ~75% of tuition at state universities.",
+      "url": "https://www.floridabrightfutures.gov/",
+      "_verified": true
+    },
+    {
+      "state": "GA",
+      "name": "HOPE Scholarship",
+      "maxAward": null,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "GA residents with 3.0+ GPA in core courses. Must maintain 3.0 GPA in college. Per-credit-hour award at public institutions.",
+      "deadline": "No separate application — automatic via FAFSA + GPA",
+      "details": "Award is per credit hour, set annually by the Georgia Student Finance Commission.",
+      "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/",
+      "_verified": true
+    },
+    {
+      "state": "GA",
+      "name": "Zell Miller Scholarship",
+      "maxAward": null,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "GA residents with 3.7+ GPA and SAT 1200+ (or ACT 26+). Covers full tuition at public GA colleges.",
+      "deadline": "No separate application — automatic via FAFSA + GPA",
+      "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/zell-miller-scholarship/",
+      "_verified": true
+    },
+    {
+      "state": "NJ",
+      "name": "Tuition Aid Grant (TAG)",
+      "maxAward": 14404,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "NJ residents attending NJ colleges. Award varies by institution type: county colleges ($3,098), state colleges ($9,496), public research ($10,964), private ($14,404).",
+      "deadline": "April 15 for initial applicants; June 1 for renewals",
+      "url": "https://www.hesaa.org/Pages/TAG.aspx",
+      "_verified": true
+    },
+    {
+      "state": "PA",
+      "name": "PA State Grant (PHEAA)",
+      "maxAward": 5750,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "PA residents attending approved schools (in-state or out-of-state). Based on financial need, enrollment status, and cost of attendance.",
+      "deadline": "May 1 for first-time applicants; May 1 for renewals",
+      "url": "https://www.pheaa.org/grants/state-grant-program",
+      "_verified": true
+    },
+    {
+      "state": "WA",
+      "name": "Washington College Grant",
+      "maxAward": 12787,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "WA residents. Family of 4 income up to $78,500 for full award; partial aid up to $131,000. Covers tuition at public and private colleges.",
+      "deadline": "Apply via FAFSA/WASFA as early as possible",
+      "details": "One of the most generous state grants in the country. Covers full public university tuition for qualifying families.",
+      "url": "https://wsac.wa.gov/wcg",
+      "_verified": true
+    },
+    {
+      "state": "WA",
+      "name": "College Bound Scholarship",
+      "maxAward": 12787,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "WA students who signed up in 7th/8th grade and meet income requirements. Fills gap not covered by WA College Grant.",
+      "deadline": "Must sign up by end of 8th grade",
+      "url": "https://wsac.wa.gov/college-bound",
+      "_verified": true
+    },
+    {
+      "state": "IL",
+      "name": "Monetary Award Program (MAP) Grant",
+      "maxAward": 8064,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "IL residents attending approved IL colleges. Based on financial need via FAFSA. Funds limited — apply early.",
+      "deadline": "As soon as possible after FAFSA opens (funds awarded first-come, first-served)",
+      "url": "https://www.isac.org/isac-gift-assistance-programs/map/",
+      "_verified": true
+    },
+    {
+      "state": "OH",
+      "name": "Ohio College Opportunity Grant (OCOG)",
+      "maxAward": 5000,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "OH residents with SAI of 3,750 or less and household income under $96,000. Attending OH public or private colleges.",
+      "deadline": "October 1 (FAFSA filing)",
+      "url": "https://www.ohiohighered.org/ocog",
+      "_verified": true
+    },
+    {
+      "state": "IN",
+      "name": "21st Century Scholars",
+      "maxAward": null,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "IN students who enrolled in the program by 8th grade and meet income requirements. Covers up to 100% of tuition at IN public colleges.",
+      "deadline": "Must enroll by end of 8th grade; maintain Scholar Pledge",
+      "details": "Covers full tuition at public colleges, partial at private. Must complete Scholar Success Program activities.",
+      "url": "https://learnmoreindiana.org/scholars/",
+      "_verified": true
+    },
+    {
+      "state": "IN",
+      "name": "Frank O'Bannon Grant",
+      "maxAward": 8648,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "IN residents attending IN colleges. Based on FAFSA financial need.",
+      "deadline": "April 15",
+      "_verified": true
+    },
+    {
+      "state": "OR",
+      "name": "Oregon Opportunity Grant",
+      "maxAward": 7800,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "OR residents attending OR colleges. Award varies by institution type: community college ($4,272), 4-year ($7,800).",
+      "deadline": "FAFSA/ORSAA filing (priority funding)",
+      "url": "https://oregonstudentaid.gov/grants/oregon-opportunity-grant/",
+      "_verified": true
+    },
+    {
+      "state": "NC",
+      "name": "NC Need-Based Scholarship (UNC System)",
+      "maxAward": null,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "NC residents at UNC system schools with demonstrated financial need. Award varies by institution.",
+      "deadline": "Varies by institution (typically March 1 priority)",
+      "_verified": true
+    },
+    {
+      "state": "MA",
+      "name": "MASSGrant",
+      "maxAward": 2700,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "MA residents attending MA public or private colleges with demonstrated financial need.",
+      "deadline": "May 1 (FAFSA filing)",
+      "_verified": true
+    },
+    {
+      "state": "MI",
+      "name": "Michigan Tuition Grant",
+      "maxAward": 3300,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "MI residents attending MI private, non-profit colleges. Based on FAFSA financial need.",
+      "deadline": "March 1",
+      "_verified": true
+    },
+    {
+      "state": "VA",
+      "name": "Virginia Tuition Assistance Grant (VTAG)",
+      "maxAward": 4000,
+      "needBased": false,
+      "meritBased": false,
+      "eligibility": "VA residents attending eligible VA private, non-profit colleges full-time.",
+      "deadline": "July 31",
+      "_verified": true
+    },
+    {
+      "state": "MN",
+      "name": "Minnesota State Grant",
+      "maxAward": 13846,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "MN residents attending MN colleges with demonstrated financial need.",
+      "deadline": "30 days after start of term",
+      "_verified": true
+    },
+    {
+      "state": "CT",
+      "name": "Governor's Scholarship Program",
+      "maxAward": 5250,
+      "needBased": true,
+      "meritBased": true,
+      "eligibility": "CT residents attending CT colleges. SAT 1200+ or top 20% of class, plus financial need.",
+      "deadline": "February 15",
+      "_verified": true
+    },
+    {
+      "state": "MD",
+      "name": "Maryland Senatorial Scholarship",
+      "maxAward": 11530,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "MD residents attending MD colleges. Awarded by state senators. Award amounts vary by legislator ($400-$11,530).",
+      "deadline": "March 1",
+      "url": "https://mhec.maryland.gov/",
+      "_verified": true
+    },
+    {
+      "state": "SC",
+      "name": "Palmetto Fellows Scholarship",
+      "maxAward": 6700,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "SC residents attending SC colleges with SAT 1200+ (or ACT 27+) and 3.5+ GPA and top 6% of class.",
+      "deadline": "December 15 (early) or June 15",
+      "_verified": true
+    },
+    {
+      "state": "SC",
+      "name": "LIFE Scholarship",
+      "maxAward": 5000,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "SC residents attending SC colleges with two of: 3.0+ GPA, SAT 1100+/ACT 24+, top 30% of class.",
+      "deadline": "Automatic with college enrollment",
+      "_verified": true
+    },
+    {
+      "state": "KY",
+      "name": "College Access Program (CAP) Grant",
+      "maxAward": 2900,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "KY residents attending KY colleges with SAI of 0 on FAFSA.",
+      "deadline": "As soon as FAFSA opens",
+      "_verified": true
+    },
+    {
+      "state": "TN",
+      "name": "Tennessee HOPE Scholarship",
+      "maxAward": 6000,
+      "needBased": false,
+      "meritBased": true,
+      "eligibility": "TN residents with ACT 21+/SAT 1060+ or 3.0+ GPA. Attending TN colleges. $1,500/semester at 4-year public.",
+      "deadline": "Automatic with FAFSA + ACT/SAT scores",
+      "_verified": true
+    },
+    {
+      "state": "AL",
+      "name": "Alabama Student Grant Program",
+      "maxAward": 5000,
+      "needBased": false,
+      "meritBased": false,
+      "eligibility": "AL residents attending eligible AL private colleges half-time or more.",
+      "deadline": "Varies by institution",
+      "_verified": true
+    },
+    {
+      "state": "CO",
+      "name": "Colorado Student Grant",
+      "maxAward": 5000,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "CO residents attending CO public colleges with demonstrated financial need.",
+      "deadline": "Varies by institution",
+      "_verified": true
+    },
+    {
+      "state": "AZ",
+      "name": "Arizona Leveraging Educational Assistance Partnership (AZ LEAP)",
+      "maxAward": 2500,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "AZ residents with substantial financial need attending AZ colleges.",
+      "deadline": "Varies by institution",
+      "_verified": true
+    },
+    {
+      "state": "WI",
+      "name": "Wisconsin Grant",
+      "maxAward": 3150,
+      "needBased": true,
+      "meritBased": false,
+      "eligibility": "WI residents at UW System, WI Technical College, or tribal college with financial need.",
+      "deadline": "Based on FAFSA filing",
+      "_verified": true
+    }
+  ]
+}

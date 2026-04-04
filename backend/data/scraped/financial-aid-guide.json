@@ -1,6 +1,8 @@
 {
-  "lastUpdated": "2026-03-25",
-  "source": "Compiled from Federal Student Aid, College Board CSS, institutional policies",
+  "lastUpdated": "2026-04-04",
+  "source": "Compiled from Federal Student Aid (studentaid.gov), College Board CSS Profile, institutional policies",
+  "_verified": true,
+  "dataYear": "2025-2026",
   "fafsa": {
     "deadline": "June 30 for federal aid; state/institutional deadlines vary (many are February/March)",
     "efc_replaced_by": "SAI (Student Aid Index), effective starting 2024-2025 cycle",
@@ -20,7 +22,7 @@
   "cssProfile": {
     "usedBy": "~400 institutions (mostly private, selective colleges)",
     "additionalFactors": ["Home equity", "Non-custodial parent income", "Small business assets", "Sibling private school tuition"],
-    "costToFile": "$25 first school + $16 each additional",
+    "costToFile": "$25 first school + $16 each additional. FREE for families with AGI under $100,000 (fee waiver automatic).",
     "keyDifference": "CSS Profile is more comprehensive than FAFSA. Schools that use it generally have more institutional aid to give.",
     "strategy": "Some families are 'CSS-Profile-disadvantaged' (high home equity, divorced non-custodial parent with high income). Consider FAFSA-only schools as financial safeties."
   },
@@ -37,7 +39,7 @@
     "fullRidePrograms": [
       {"name": "QuestBridge", "target": "High-achieving, low-income students", "schools": 50, "value": "Full ride at partner schools"},
       {"name": "Posse Foundation", "target": "Diverse student leaders", "schools": 64, "value": "Full tuition"},
-      {"name": "Gates Millennium Scholars", "target": "Minority students with financial need", "value": "Full cost of attendance"},
+      {"name": "Gates Scholarship", "target": "Minority students with financial need and leadership", "value": "Full cost of attendance (replaces Gates Millennium Scholars)"},
       {"name": "Stamps Scholarship", "target": "Academic excellence + leadership", "schools": 40, "value": "Full ride + enrichment funds"},
       {"name": "Robertson Scholars", "target": "Leadership at Duke/UNC", "value": "Full ride + summer experiences"},
       {"name": "Morehead-Cain (UNC)", "target": "Leadership + scholarship + character", "value": "Full ride + summer enrichment"},
@@ -63,9 +65,9 @@
     "strategy": "Create a spreadsheet: school name, sticker price, estimated NPC, merit scholarship potential, total estimated cost",
     "surprises": "Many families earning $100K-$200K are surprised to qualify for significant aid at wealthy private schools",
     "examples": {
-      "harvardFreeThreshold": "Families earning < $85K/yr → free tuition + room & board",
-      "stanfordFreeThreshold": "Families earning < $100K/yr → free tuition; < $75K → free everything",
-      "mitFreeThreshold": "Families earning < $75K/yr → free attendance"
+      "harvardFreeThreshold": "Families earning < $100K/yr → completely free (tuition, room, board, travel); < $200K → free tuition (updated March 2025)",
+      "stanfordFreeThreshold": "Families earning < $100K/yr → free tuition + room & board; < $150K → free tuition",
+      "mitFreeThreshold": "Families earning < $100K/yr → completely free; < $200K → free tuition (updated 2024)"
     }
   },
   "529plans": {

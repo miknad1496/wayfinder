@@ -1,0 +1,115 @@
+{
+  "_metadata": {
+    "source": "Federal Student Aid (studentaid.gov), FSA Handbook 2025-2026",
+    "lastVerified": "2026-04-04",
+    "_verified": true,
+    "dataYear": "2025-2026"
+  },
+  "federalPrograms": [
+    {
+      "name": "Federal Pell Grant",
+      "type": "grant",
+      "maxAward": 7395,
+      "minAward": 740,
+      "eligibility": "Undergraduate students with financial need; no repayment required. Award based on SAI (Student Aid Index), cost of attendance, enrollment status.",
+      "incomeLimit": "Typically families under ~$60,000 qualify for some Pell; maximum for lowest-income families",
+      "needBased": true,
+      "meritBased": false,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/grants/pell",
+      "_verified": true
+    },
+    {
+      "name": "Federal Supplemental Educational Opportunity Grant (FSEOG)",
+      "type": "grant",
+      "maxAward": 4000,
+      "minAward": 100,
+      "eligibility": "Undergraduate students with exceptional financial need; Pell Grant recipients get priority. Limited funds — apply early.",
+      "needBased": true,
+      "meritBased": false,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/grants/fseog",
+      "_verified": true
+    },
+    {
+      "name": "TEACH Grant",
+      "type": "grant",
+      "maxAward": 4000,
+      "eligibility": "Students agreeing to teach high-need subjects in low-income schools for 4 years after graduation. Converts to loan if service requirement not met.",
+      "needBased": false,
+      "meritBased": false,
+      "condition": "Must complete 4 years of qualifying teaching within 8 years",
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/grants/teach",
+      "_verified": true
+    },
+    {
+      "name": "Iraq and Afghanistan Service Grant",
+      "type": "grant",
+      "maxAward": 7395,
+      "eligibility": "Students whose parent or guardian died as a result of military service in Iraq or Afghanistan after 9/11, and who are not Pell-eligible.",
+      "needBased": false,
+      "meritBased": false,
+      "source": "studentaid.gov",
+      "_verified": true
+    },
+    {
+      "name": "Direct Subsidized Loan",
+      "type": "loan",
+      "maxAward": 5500,
+      "annualLimits": {
+        "freshman": { "subsidized": 3500, "total": 5500 },
+        "sophomore": { "subsidized": 4500, "total": 6500 },
+        "juniorSenior": { "subsidized": 5500, "total": 7500 }
+      },
+      "interestRate": "6.39% (2025-2026)",
+      "eligibility": "Undergraduate students with demonstrated financial need. Government pays interest while in school at least half-time.",
+      "needBased": true,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+      "_verified": true
+    },
+    {
+      "name": "Direct Unsubsidized Loan",
+      "type": "loan",
+      "maxAward": 7500,
+      "annualLimits": {
+        "dependentFreshman": 5500,
+        "dependentSophomore": 6500,
+        "dependentJuniorSenior": 7500,
+        "independentFreshman": 9500,
+        "independentSophomore": 10500,
+        "independentJuniorSenior": 12500
+      },
+      "interestRate": "6.39% undergraduate, 7.94% graduate (2025-2026)",
+      "eligibility": "Available to all students regardless of financial need. Interest accrues while in school.",
+      "needBased": false,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+      "_verified": true
+    },
+    {
+      "name": "Direct PLUS Loan (Parent)",
+      "type": "loan",
+      "maxAward": null,
+      "description": "Up to cost of attendance minus other financial aid received",
+      "interestRate": "8.94% (2025-2026)",
+      "eligibility": "Parents of dependent undergraduate students. Credit check required. No aggregate limit.",
+      "needBased": false,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/loans/plus",
+      "_verified": true
+    },
+    {
+      "name": "Federal Work-Study",
+      "type": "work-study",
+      "maxAward": null,
+      "description": "Part-time jobs for undergraduate and graduate students with financial need. Federal funds cover 75% of wages. Award varies by school.",
+      "eligibility": "Students with financial need; limited funding — apply early via FAFSA.",
+      "needBased": true,
+      "source": "studentaid.gov",
+      "url": "https://studentaid.gov/understand-aid/types/work-study",
+      "_verified": true
+    }
+  ]
+}
