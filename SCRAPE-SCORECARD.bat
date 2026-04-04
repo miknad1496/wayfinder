@@ -7,14 +7,19 @@ echo.
 echo This replaces ALL school data in financial-aid-db.json
 echo with verified IPEDS data from the U.S. Dept of Education.
 echo.
-echo PREREQUISITE: Get a free API key from https://api.data.gov/signup/
-echo Then add to your .env file: SCORECARD_API_KEY=your_key_here
-echo.
-echo The DEMO_KEY works but is rate-limited to 30 req/hour.
-echo A real key allows 1000 req/hour.
-echo.
-pause
+
+if defined SCORECARD_API_KEY (
+    echo Using saved API key: %SCORECARD_API_KEY:~0,8%...
+    echo.
+) else (
+    echo Paste your API key from https://api.data.gov/signup/
+    echo Or just press Enter to use DEMO_KEY (slow, 30 req/hour^).
+    echo.
+    set /p SCORECARD_API_KEY="API Key: "
+    if not defined SCORECARD_API_KEY set SCORECARD_API_KEY=DEMO_KEY
+)
+
 node backend/scrapers/college-scorecard-scraper.js
 echo.
-echo Done! Check backend/data/scraped/financial-aid-db.json
+echo Done! Check backend\data\scraped\financial-aid-db.json
 pause
