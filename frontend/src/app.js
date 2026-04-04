@@ -1066,7 +1066,6 @@ async function deleteAccount() {
 // ========================
 // Plan display names — backend uses pro/elite internally
 const PLAN_DISPLAY = { free: 'Explorer', pro: 'Coach', elite: 'Consultant' };
-let currentPathway = 'career'; // 'career' or 'admissions'
 
 function setupUpgradeListeners() {
   $('upgradeModalClose').addEventListener('click', () => $('upgradeModal').style.display = 'none');
@@ -1074,17 +1073,9 @@ function setupUpgradeListeners() {
     if (e.target === $('upgradeModal')) $('upgradeModal').style.display = 'none';
   });
 
-  // Pathway toggle
-  $('pathwayCareerBtn').addEventListener('click', () => switchPathway('career'));
-  $('pathwayAdmissionsBtn').addEventListener('click', () => switchPathway('admissions'));
-
-  // Career plans — backend uses same 'pro'/'elite' keys with product context
-  $('planCareerProBtn').addEventListener('click', () => handlePlanUpgrade('pro', 'career'));
-  $('planCareerEliteBtn').addEventListener('click', () => handlePlanUpgrade('elite', 'career'));
-
-  // Admissions plans
-  $('planCoachBtn').addEventListener('click', () => handlePlanUpgrade('pro', 'admissions'));
-  $('planConsultantBtn').addEventListener('click', () => handlePlanUpgrade('elite', 'admissions'));
+  // Unified plans — Coach $25, Consultant $50
+  $('planCoachBtn').addEventListener('click', () => handlePlanUpgrade('pro'));
+  $('planConsultantBtn').addEventListener('click', () => handlePlanUpgrade('elite'));
 
   // Essay credit packs
   $('essayPack5Btn').addEventListener('click', () => handleEssayPurchase('starter'));
@@ -1092,63 +1083,33 @@ function setupUpgradeListeners() {
   $('essayPack20Btn').addEventListener('click', () => handleEssayPurchase('bulk'));
 }
 
-function switchPathway(path) {
-  currentPathway = path;
-  $('pathwayCareerBtn').classList.toggle('active', path === 'career');
-  $('pathwayAdmissionsBtn').classList.toggle('active', path === 'admissions');
-  $('careerPlans').style.display = path === 'career' ? 'grid' : 'none';
-  $('admissionsPlans').style.display = path === 'admissions' ? 'grid' : 'none';
-  $('essayAddonSection').style.display = path === 'admissions' ? 'block' : 'none';
-}
-
-function openUpgrade(pathway) {
+function openUpgrade() {
   if (!currentUser) {
     openAuthModal('signup');
     return;
   }
 
-  // Auto-detect pathway from user type or use passed value
-  if (pathway) {
-    switchPathway(pathway);
-  } else {
-    // Default: admissions for pre-college/parent, career for others
-    const ut = currentUser.userType || '';
-    const defaultPath = (ut.includes('parent') || ut.includes('pre-college') || ut.includes('high school'))
-      ? 'admissions' : currentPathway;
-    switchPathway(defaultPath);
-  }
-
-  // Normalize legacy plans
   const plan = normalizePlan(currentUser.plan || 'free');
+  const isProOrHigher = plan === 'pro' || plan === 'elite';
 
-  // Free buttons
+  // Free button
   $('planFreeBtn').textContent = plan === 'free' ? 'Current Plan' : 'Free Plan';
   $('planFreeBtn').className = plan === 'free' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
 
-  // Career Pro button
-  const isProOrHigher = plan === 'pro' || plan === 'elite';
-  $('planCareerProBtn').textContent = isProOrHigher ? 'Current Plan' : 'Upgrade — $15/mo';
-  $('planCareerProBtn').className = isProOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
-  $('planCareerProBtn').disabled = isProOrHigher;
-
-  // Career Elite button
-  $('planCareerEliteBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade — $30/mo';
-  $('planCareerEliteBtn').className = plan === 'elite' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
-  $('planCareerEliteBtn').disabled = plan === 'elite';
-
-  // Coach button (admissions)
-  $('planCoachBtn').textContent = plan === 'pro' ? 'Current Plan' : (plan === 'elite' ? 'Included' : 'Upgrade — $25/mo');
+  // Coach button ($25)
+  $('planCoachBtn').textContent = isProOrHigher ? 'Current Plan' : 'Upgrade — $25/mo';
   $('planCoachBtn').className = isProOrHigher ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
   $('planCoachBtn').disabled = isProOrHigher;
 
-  // Consultant button (admissions)
+  // Consultant button ($50)
   $('planConsultantBtn').textContent = plan === 'elite' ? 'Current Plan' : 'Upgrade — $50/mo';
   $('planConsultantBtn').className = plan === 'elite' ? 'plan-btn plan-btn-current' : 'plan-btn plan-btn-upgrade';
   $('planConsultantBtn').disabled = plan === 'elite';
 
-  // Essay credits visibility — available for Coach/Consultant
-  if (currentPathway === 'admissions') {
-    $('essayAddonSection').style.display = (plan === 'pro' || plan === 'elite') ? 'block' : 'none';
+  // Essay credits — available for Coach/Consultant
+  const essaySection = $('essayAddonSection');
+  if (essaySection) {
+    essaySection.style.display = isProOrHigher ? 'block' : 'none';
   }
 
   $('upgradeModal').style.display = 'flex';
@@ -1163,7 +1124,7 @@ function planDisplayName(plan) {
   return PLAN_DISPLAY[normalizePlan(plan)] || 'Career Explorer';
 }
 
-async function handlePlanUpgrade(plan, product = 'admissions') {
+async function handlePlanUpgrade(plan) {
   try {
     // Check if Stripe is configured
     const statusRes = await fetch(`${API_BASE}/stripe/status`);
@@ -1174,14 +1135,14 @@ async function handlePlanUpgrade(plan, product = 'admissions') {
       return;
     }
 
-    // Create Stripe Checkout session — pass product context for pricing
+    // Create Stripe Checkout session
     const res = await fetch(`${API_BASE}/stripe/create-checkout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`
       },
-      body: JSON.stringify({ plan, product })
+      body: JSON.stringify({ plan })
     });
 
     const data = await res.json();
@@ -2112,7 +2073,7 @@ function setupToolListeners() {
   if ($('essaySubmitBtn')) $('essaySubmitBtn').addEventListener('click', submitEssayReview);
   if ($('essayBuyMoreBtn')) $('essayBuyMoreBtn').addEventListener('click', () => {
     $('essaysModal').style.display = 'none';
-    openUpgrade('admissions'); // Go straight to admissions pathway so essay packs are visible
+    openUpgrade(); // Opens unified plans — essay packs shown for Coach/Consultant
   });
   if ($('essayText')) {
     $('essayText').addEventListener('input', () => {

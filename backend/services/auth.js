@@ -30,7 +30,7 @@ const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 // Display names: Career Explorer / Coach ($25/mo) / Consultant ($50/mo)
 // Free: Sonnet (selective lite brain context)
 // Coach/Consultant engine pulls: Opus if CLAUDE_MODEL_ENGINE is set
-const PLAN_DISPLAY_NAMES = { free: 'Career Explorer', pro: 'Coach', elite: 'Consultant' };
+const PLAN_DISPLAY_NAMES = { free: 'Explorer', pro: 'Coach ($25/mo)', elite: 'Consultant ($50/mo)' };
 
 // Admin emails — can switch plans to test tier behavior, always get elite limits
 // 'admin' is the built-in admin account (always included). Dan's personal email behaves like a normal user.

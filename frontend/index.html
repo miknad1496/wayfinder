@@ -148,7 +148,7 @@
                   </div>
                   <h3>Career Intelligence</h3>
                   <p>Labor market data, salary modeling, credentialing paths, industry analysis</p>
-                  <span class="path-card-price">Free — $15 — $30/mo</span>
+                  <span class="path-card-price">Free — $25 — $50/mo</span>
                 </button>
                 <button class="welcome-path-card welcome-path-card-highlight" data-path="admissions">
                   <div class="path-card-icon">
@@ -580,128 +580,62 @@
       <div class="modal modal-upgrade">
         <button class="modal-close" id="upgradeModalClose">&times;</button>
         <h2>Choose Your Plan</h2>
+        <p class="form-subtitle" style="margin-bottom:20px;">College admissions intelligence &amp; career strategy — one platform, one plan.</p>
 
-        <!-- Pathway Toggle -->
-        <div class="pathway-toggle">
-          <button class="pathway-btn active" id="pathwayCareerBtn" data-path="career">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            Career Intelligence
-          </button>
-          <button class="pathway-btn" id="pathwayAdmissionsBtn" data-path="admissions">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
-            College Admissions
-          </button>
-        </div>
-
-        <!-- Career Plans -->
-        <div id="careerPlans" class="plans-grid">
+        <div class="plans-grid">
           <div class="plan-card" data-plan="free">
             <div class="plan-header">
               <h3>Explorer</h3>
               <div class="plan-price">$0<span>/month</span></div>
             </div>
             <ul class="plan-features">
-              <li>Unlimited standard queries</li>
+              <li>10 messages/day, 30/month</li>
               <li>3 Engine deep-dives/day</li>
-              <li>Salary &amp; career data</li>
+              <li>Career &amp; admissions advisor</li>
+              <li>Demographics preview</li>
               <li>Basic profile &amp; chat history</li>
               <li>1 invitation</li>
             </ul>
             <button class="plan-btn plan-btn-current" id="planFreeBtn">Current Plan</button>
           </div>
 
-          <div class="plan-card plan-card-featured" data-plan="career-pro">
-            <div class="plan-badge">Most Popular</div>
-            <div class="plan-header">
-              <h3>Career Pro</h3>
-              <div class="plan-price">$15<span>/month</span></div>
-            </div>
-            <ul class="plan-features">
-              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
-              <li>20 Engine deep-dives/day</li>
-              <li>Full salary &amp; labor market data</li>
-              <li>Career path mapping</li>
-              <li>Certification guidance</li>
-              <li>Industry trend analysis</li>
-              <li>5 invitations</li>
-            </ul>
-            <button class="plan-btn plan-btn-upgrade" id="planCareerProBtn">Upgrade — $15/mo</button>
-          </div>
-
-          <div class="plan-card plan-card-elite" data-plan="career-elite">
-            <div class="plan-badge plan-badge-elite">Full Access</div>
-            <div class="plan-header">
-              <h3>Career Elite</h3>
-              <div class="plan-price">$30<span>/month</span></div>
-            </div>
-            <ul class="plan-features">
-              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
-              <li>40 Engine deep-dives/day</li>
-              <li>Everything in Pro</li>
-              <li>Internships database</li>
-              <li>Advanced career comparison</li>
-              <li>Professional development plan</li>
-              <li>10 invitations</li>
-            </ul>
-            <button class="plan-btn plan-btn-upgrade" id="planCareerEliteBtn">Upgrade — $30/mo</button>
-          </div>
-        </div>
-
-        <!-- Admissions Plans -->
-        <div id="admissionsPlans" class="plans-grid" style="display:none;">
-          <div class="plan-card" data-plan="free">
-            <div class="plan-header">
-              <h3>Explorer</h3>
-              <div class="plan-price">$0<span>/month</span></div>
-            </div>
-            <ul class="plan-features">
-              <li>Unlimited standard queries</li>
-              <li>3 Engine deep-dives/day</li>
-              <li>Demographics preview (school-level)</li>
-              <li>Basic profile &amp; chat history</li>
-              <li>1 invitation</li>
-            </ul>
-            <button class="plan-btn plan-btn-current">Current Plan</button>
-          </div>
-
-          <div class="plan-card plan-card-featured" data-plan="coach">
+          <div class="plan-card plan-card-featured" data-plan="pro">
             <div class="plan-badge">Most Popular</div>
             <div class="plan-header">
               <h3>Coach</h3>
               <div class="plan-price">$25<span>/month</span></div>
             </div>
             <ul class="plan-features">
-              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
-              <li>20 Engine deep-dives/day</li>
+              <li class="plan-feature-highlight">Wayfinder Engine</li>
+              <li>20 messages/day, 60/month</li>
+              <li>10 Engine deep-dives/day</li>
               <li>Full demographics (all majors)</li>
-              <li>Personalized admissions timeline</li>
-              <li>Internships database (preview)</li>
-              <li>Scholarships &amp; programs (preview)</li>
+              <li>Admissions timeline &amp; strategy</li>
+              <li>Career path mapping</li>
+              <li>Internships &amp; scholarships (preview)</li>
               <li>Decision date reminders</li>
               <li>Essay reviewer (add-on)</li>
-              <li>ED &amp; EA holistic strategy</li>
               <li>5 invitations</li>
             </ul>
             <button class="plan-btn plan-btn-upgrade" id="planCoachBtn">Upgrade — $25/mo</button>
           </div>
 
-          <div class="plan-card plan-card-elite" data-plan="consultant">
+          <div class="plan-card plan-card-elite" data-plan="elite">
             <div class="plan-badge plan-badge-elite">Full Access</div>
             <div class="plan-header">
               <h3>Consultant</h3>
               <div class="plan-price">$50<span>/month</span></div>
             </div>
             <ul class="plan-features">
-              <li class="plan-feature-highlight">⚡ Powered by Claude Opus 4.6</li>
-              <li>40 Engine deep-dives/day</li>
+              <li class="plan-feature-highlight">Wayfinder Engine</li>
+              <li>50 messages/day, 200/month</li>
+              <li>20 Engine deep-dives/day</li>
               <li>Full demographics + comparison</li>
               <li>Full admissions timeline</li>
               <li>Full internships database</li>
-              <li>Full scholarships database</li>
-              <li>Full programs database</li>
+              <li>Full scholarships &amp; programs</li>
               <li>All reminder types</li>
               <li>Essay reviewer (add-on)</li>
-              <li>Advanced ED &amp; EA holistic strategy</li>
               <li>10 invitations</li>
             </ul>
             <button class="plan-btn plan-btn-upgrade" id="planConsultantBtn">Upgrade — $50/mo</button>
