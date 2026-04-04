@@ -67,6 +67,8 @@ const FEATURE_ACCESS = {
   scholarships:         ['elite'],
   programs_preview:     ['pro'],
   programs:             ['elite'],
+  financial_aid_preview: ['pro'],
+  financial_aid:         ['elite'],
   email_reminders:      ['pro', 'elite'],
   email_full_reminders: ['elite'],
   essay_reviewer:       ['pro', 'elite'],
