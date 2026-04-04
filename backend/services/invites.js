@@ -11,6 +11,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
+import { isAdmin, isVIP } from './auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,17 +21,12 @@ const USERS_DIR = join(__dirname, '..', 'data', 'users');
 // How many invites each tier gets
 const INVITE_LIMITS = {
   free: 1,
-  premium: 3,
-  pro: 5
+  pro: 5,
+  elite: 10
 };
 
 // Default fallback
 const DEFAULT_INVITE_LIMIT = 1;
-
-// Admin emails with unlimited invites
-const UNLIMITED_INVITE_EMAILS = [
-  'danielyungkim@hotmail.com'
-];
 
 // Invite expiration: 14 days
 const INVITE_EXPIRY_DAYS = 14;
@@ -61,8 +57,8 @@ function generateInviteCode() {
 export async function getInviteBalance(userId, userEmail, userPlan) {
   await ensureInvitesDir();
 
-  // Check if this user has unlimited invites
-  const isUnlimited = userEmail && UNLIMITED_INVITE_EMAILS.includes(userEmail.toLowerCase().trim());
+  // Admin and VIP users get unlimited invites
+  const isUnlimited = userEmail && (isAdmin(userEmail) || isVIP(userEmail));
   const limit = INVITE_LIMITS[userPlan || 'free'] || DEFAULT_INVITE_LIMIT;
 
   try {
@@ -285,9 +281,9 @@ export async function deleteInvite(code, userId, userEmail) {
     const raw = await fs.readFile(filePath, 'utf-8');
     const invite = JSON.parse(raw);
 
-    // Check ownership: inviter can delete their own, unlimited users can delete any
-    const isUnlimited = userEmail && UNLIMITED_INVITE_EMAILS.includes(userEmail.toLowerCase().trim());
-    if (invite.inviterId !== userId && !isUnlimited) {
+    // Check ownership: inviter can delete their own, admin/VIP can delete any
+    const hasUnlimited = userEmail && (isAdmin(userEmail) || isVIP(userEmail));
+    if (invite.inviterId !== userId && !hasUnlimited) {
       return { error: 'You can only delete your own invitations.' };
     }
 

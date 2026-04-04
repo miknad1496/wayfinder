@@ -52,9 +52,10 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
         color: #555;
       }
       .invite-section {
-        background: #f3f4f6;
-        padding: 20px;
-        border-radius: 8px;
+        background: #ffffff;
+        border: 2px solid #e5e7eb;
+        padding: 24px;
+        border-radius: 10px;
         margin: 25px 0;
         text-align: center;
       }
@@ -62,20 +63,18 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
         font-family: monospace;
         font-size: 14px;
         color: #666;
-        margin-top: 10px;
+        margin-top: 12px;
       }
       .cta-button {
         display: inline-block;
-        background: #2563eb;
-        color: white;
-        padding: 12px 32px;
-        border-radius: 6px;
+        background: #1f2937;
+        color: #ffffff !important;
+        padding: 14px 36px;
+        border-radius: 8px;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 16px;
         margin-top: 15px;
-      }
-      .cta-button:hover {
-        background: #1d4ed8;
       }
       .footer {
         margin-top: 30px;
@@ -97,7 +96,7 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
 
       <div class="content">
         <p><strong>${inviterName}</strong> invited you to Wayfinder — an invite-only platform delivering college admissions intelligence and career strategy through domain-specific AI.</p>
-        <p style="color: #555; font-size: 14px; line-height: 1.7;">Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The reasoning engine is Claude Opus. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.</p>
+        <p style="color: #555; font-size: 14px; line-height: 1.7;">Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.</p>
       </div>
 
       <div class="invite-section">
@@ -123,7 +122,7 @@ export async function sendInviteEmail(recipientEmail, inviterName, inviteCode, i
 
 ${inviterName} invited you to Wayfinder — an invite-only platform delivering college admissions intelligence and career strategy through domain-specific AI.
 
-Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The reasoning engine is Claude Opus. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.
+Wayfinder runs on a proprietary knowledge architecture: retrieval-augmented generation over curated federal data from BLS, O*NET, and NCES College Scorecard, layered with distilled expertise from admissions officers, institutional strategy guides, and structured career research. The data is verified, sourced, and continuously refined. This is not a general-purpose chatbot.
 
 Accept your invitation: ${inviteLink}
 
