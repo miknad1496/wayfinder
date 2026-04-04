@@ -6,18 +6,8 @@ echo   WAYFINDER DEPLOY - Commit + Push to Render
 echo  ==========================================
 echo.
 
-:: Stage the specific files we changed
-git add frontend/src/app.js
+:: Stage changed files
 git add backend/services/auth.js
-git add backend/routes/stripe.js
-git add backend/services/invites.js
-git add backend/services/email.js
-git add frontend/index.html
-git add frontend/src/styles/main.css
-git add frontend/privacy.html
-git add frontend/terms.html
-git add frontend/admin-dashboard.html
-git add frontend/why.html
 git add DEPLOY.bat
 echo.
 
@@ -27,7 +17,7 @@ git diff --cached --name-only
 echo.
 
 :: Commit
-git commit -m "Fix invites (admin infinite, elite tier), email colors, auth + checkout fixes"
+git commit -m "Fix corrupted JSON crash: safe parse in all auth functions"
 
 if %ERRORLEVEL% NEQ 0 (
     echo.
@@ -43,9 +33,12 @@ git push origin main
 if %ERRORLEVEL% EQU 0 (
     echo.
     echo  ==========================================
-    echo   PUSHED - Render auto-deploy triggered
-    echo   Wait ~2-3 min then test at wayfinderai.org
-    echo   Check deploy status: https://dashboard.render.com
+    echo   PUSHED SUCCESSFULLY
+    echo.
+    echo   IMPORTANT: Go to dashboard.render.com
+    echo   Click: Manual Deploy ^> Clear build cache ^& deploy
+    echo   This forces a full fresh rebuild.
+    echo   Wait ~3 min then test at wayfinderai.org
     echo  ==========================================
 ) else (
     echo.

@@ -111,6 +111,21 @@ function generateToken() {
   return randomBytes(32).toString('hex');
 }
 
+/**
+ * Safely read and parse a JSON user file.
+ * Returns the parsed object or null if the file is corrupted/unreadable.
+ * Prevents one bad file from crashing auth for ALL users.
+ */
+async function safeReadUserFile(filePath) {
+  try {
+    const raw = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error(`[Auth] Corrupted/unreadable user file ${filePath}: ${err.message}`);
+    return null;
+  }
+}
+
 function isTokenExpired(tokenCreatedAt) {
   // If tokenCreatedAt is missing (legacy user), treat as NOT expired
   // — the token will be backfilled on next verifyToken call
@@ -332,8 +347,11 @@ export async function logoutUser(token) {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
       const filePath = join(USERS_DIR, file);
-      const raw = await fs.readFile(filePath, 'utf-8');
-      const user = JSON.parse(raw);
+      let user;
+      try {
+        const raw = await fs.readFile(filePath, 'utf-8');
+        user = JSON.parse(raw);
+      } catch { continue; }
       if (user.token === token) {
         // Invalidate token by setting it to null
         user.token = null;
@@ -357,8 +375,16 @@ export async function verifyToken(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      let user;
+      try {
+        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+        user = JSON.parse(raw);
+      } catch (parseErr) {
+        // Skip corrupted user files — don't let one bad file break ALL auth
+        console.error(`[Auth] Corrupted user file ${file}: ${parseErr.message}`);
+        continue;
+      }
+
       if (user.token === token) {
         // Check token expiration
         if (isTokenExpired(user.tokenCreatedAt)) {
@@ -393,8 +419,8 @@ export async function updateProfile(token, updates) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         // Update allowed fields
         if (updates.name) user.name = updates.name;
@@ -429,8 +455,8 @@ export async function linkSession(token, sessionId) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         if (!user.sessionHistory.includes(sessionId)) {
           user.sessionHistory.push(sessionId);
@@ -457,8 +483,8 @@ export async function getUserSessions(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         return user.sessionHistory;
       }
@@ -481,8 +507,8 @@ export async function getEngineUsage(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         const limits = getPlanLimits(user.plan || 'free');
         // Reset if new day
@@ -513,8 +539,8 @@ export async function deleteUser(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         await fs.unlink(join(USERS_DIR, file));
         return { success: true };
@@ -536,8 +562,8 @@ export async function updateSettings(token, settings) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         // Update allowed settings fields
         if (!user.settings) user.settings = {};
@@ -565,8 +591,8 @@ export async function getUserChatHistory(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         const sessionHistory = [];
         const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
@@ -620,8 +646,8 @@ export async function searchUserChats(token, query) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         const matchingSessions = [];
         const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
@@ -682,8 +708,8 @@ export async function useEngine(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         const limits = getPlanLimits(user.plan || 'free');
         // Reset if new day
@@ -738,8 +764,8 @@ export async function checkTokenUsage(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         let dirty = false;
 
@@ -801,8 +827,8 @@ export async function recordTokenUsage(token, tokensUsed) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         // Daily reset
         if (user.tokenLastReset !== today) {
@@ -841,8 +867,8 @@ export async function checkMessageUsage(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         let dirty = false;
         const admin = isAdmin(user.email);
@@ -913,8 +939,8 @@ export async function recordMessageUsage(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         // Daily reset
         if ((user.messageLastDayReset || '') !== today) {
@@ -946,8 +972,8 @@ export async function updateUserPlan(token, fields) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         if (fields.plan !== undefined) user.plan = fields.plan;
         if (fields.stripeCustomerId !== undefined) user.stripeCustomerId = fields.stripeCustomerId;
@@ -972,8 +998,8 @@ export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePa
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.stripeCustomerId === stripeCustomerId) {
         user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + quantity;
         if (!user.essayReviewsPurchased) user.essayReviewsPurchased = [];
@@ -1002,8 +1028,8 @@ export async function useEssayCredit(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         // Admins and VIPs get unlimited credits — never deduct
         if (isAdmin(user.email) || isVIP(user.email)) {
@@ -1033,8 +1059,8 @@ export async function updateAdmissionsProfile(token, profile) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.token === token) {
         if (!user.admissionsProfile) {
           user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
@@ -1059,8 +1085,8 @@ export async function findUserByStripeCustomerId(customerId) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
       if (user.stripeCustomerId === customerId) {
         return user; // Returns full user with token
       }
@@ -1081,8 +1107,14 @@ export async function findUserByToken(token) {
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
-      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-      const user = JSON.parse(raw);
+      let user;
+      try {
+        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+        user = JSON.parse(raw);
+      } catch (parseErr) {
+        console.error(`[Auth] Corrupted user file ${file}: ${parseErr.message}`);
+        continue;
+      }
       if (user.token === token) {
         return user; // Returns full user
       }
@@ -1102,8 +1134,8 @@ export async function setUserPlan(token, newPlan) {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
       const filePath = join(USERS_DIR, file);
-      const raw = await fs.readFile(filePath, 'utf-8');
-      const user = JSON.parse(raw);
+      const user = await safeReadUserFile(filePath);
+      if (!user) continue;
       if (user.token === token) {
         if (!isAdmin(user.email)) return { error: 'Admin only' };
         user.plan = newPlan;
