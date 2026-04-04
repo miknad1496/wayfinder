@@ -2365,6 +2365,26 @@ html, body { overflow-x: hidden; }
 .modal-timeline { max-width: 600px; width: 95%; max-height: 85vh; overflow-y: auto; }
 .modal-essays { max-width: 640px; width: 95%; max-height: 85vh; overflow-y: auto; }
 .modal-tool-list { max-width: 700px; width: 95%; max-height: 85vh; overflow-y: auto; }
+.modal-finaid-wide { max-width: 900px; width: 95%; resize: horizontal; overflow: auto; min-width: 400px; }
+
+/* Strategy output formatting */
+.strategy-result { line-height: 1.7; color: var(--text-primary); font-size: 14px; }
+.strategy-result h2 { font-size: 18px; font-weight: 700; margin: 24px 0 12px 0; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.strategy-result h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px 0; color: var(--text-primary); }
+.strategy-result h4 { font-size: 14px; font-weight: 600; margin: 14px 0 6px 0; }
+.strategy-result p { margin: 8px 0; }
+.strategy-result ul, .strategy-result ol { margin: 8px 0 8px 20px; padding: 0; }
+.strategy-result li { margin: 4px 0; }
+.strategy-result table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.strategy-result th { background: var(--bg-secondary, #f1f5f9); padding: 8px 10px; text-align: left; font-weight: 600; border: 1px solid var(--border); }
+.strategy-result td { padding: 8px 10px; border: 1px solid var(--border); }
+.strategy-result tr:nth-child(even) td { background: var(--bg-secondary, #f8fafc); }
+.strategy-result strong { color: var(--accent); }
+.strategy-result hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.strategy-result code { background: var(--bg-secondary, #f1f5f9); padding: 2px 5px; border-radius: 3px; font-size: 13px; }
+.strategy-result blockquote { border-left: 3px solid var(--accent); margin: 12px 0; padding: 8px 16px; background: var(--bg-secondary, #f8fafc); border-radius: 0 6px 6px 0; }
+.strategy-result .checklist-item { display: flex; align-items: flex-start; gap: 6px; margin: 4px 0; }
+.strategy-result .checklist-item input[type="checkbox"] { margin-top: 4px; }
 
 /* =============================
    TIMELINE TOOL
@@ -2544,10 +2564,11 @@ html, body { overflow-x: hidden; }
 
 /* Responsive for tools */
 @media (max-width: 768px) {
-  .modal-timeline, .modal-essays, .modal-tool-list {
+  .modal-timeline, .modal-essays, .modal-tool-list, .modal-finaid-wide {
     max-width: 100%;
     width: 100%;
     max-height: 90vh;
+    resize: none;
   }
   .tool-filters {
     flex-direction: column;

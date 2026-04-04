@@ -29,6 +29,101 @@ let cacheTimestamp = 0;
 const CACHE_TTL = 30 * 60 * 1000;
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/scraped/financial-aid-db.json';
 
+// ─── School abbreviation / alias lookup ─────────────────────────
+const SCHOOL_ALIASES = {
+  'uw': ['university of washington', 'university of wisconsin'],
+  'mit': ['massachusetts institute of technology'],
+  'stanford': ['stanford university'],
+  'harvard': ['harvard university'],
+  'yale': ['yale university'],
+  'princeton': ['princeton university'],
+  'columbia': ['columbia university'],
+  'upenn': ['university of pennsylvania'],
+  'penn': ['university of pennsylvania'],
+  'cornell': ['cornell university'],
+  'dartmouth': ['dartmouth college'],
+  'brown': ['brown university'],
+  'duke': ['duke university'],
+  'cal': ['university of california, berkeley'],
+  'berkeley': ['university of california, berkeley'],
+  'ucb': ['university of california, berkeley'],
+  'ucla': ['university of california, los angeles'],
+  'usc': ['university of southern california'],
+  'nyu': ['new york university'],
+  'cmu': ['carnegie mellon university'],
+  'caltech': ['california institute of technology'],
+  'gatech': ['georgia institute of technology'],
+  'gt': ['georgia institute of technology'],
+  'umich': ['university of michigan'],
+  'uva': ['university of virginia'],
+  'unc': ['university of north carolina'],
+  'ut': ['university of texas at austin'],
+  'osu': ['ohio state university'],
+  'psu': ['penn state university', 'pennsylvania state university'],
+  'umd': ['university of maryland'],
+  'bu': ['boston university'],
+  'bc': ['boston college'],
+  'jhu': ['johns hopkins university'],
+  'wustl': ['washington university in st. louis'],
+  'washu': ['washington university in st. louis'],
+  'rice': ['rice university'],
+  'emory': ['emory university'],
+  'tufts': ['tufts university'],
+  'gtown': ['georgetown university'],
+  'georgetown': ['georgetown university'],
+  'nd': ['university of notre dame'],
+  'notre dame': ['university of notre dame'],
+  'vanderbilt': ['vanderbilt university'],
+  'vandy': ['vanderbilt university'],
+  'northwestern': ['northwestern university'],
+  'nu': ['northwestern university', 'northeastern university'],
+  'uiuc': ['university of illinois'],
+  'purdue': ['purdue university'],
+  'uf': ['university of florida'],
+  'fsu': ['florida state university'],
+  'asu': ['arizona state university'],
+  'cu': ['university of colorado'],
+  'cu boulder': ['university of colorado'],
+  'uconn': ['university of connecticut'],
+  'rutgers': ['rutgers university'],
+  'howard': ['howard university'],
+  'spelman': ['spelman college'],
+  'morehouse': ['morehouse college'],
+  'hampton': ['hampton university'],
+  'williams': ['williams college'],
+  'amherst': ['amherst college'],
+  'swarthmore': ['swarthmore college'],
+  'pomona': ['pomona college'],
+  'bowdoin': ['bowdoin college'],
+  'wellesley': ['wellesley college'],
+  'barnard': ['barnard college'],
+  'smith': ['smith college'],
+  'colby': ['colby college'],
+  'bates': ['bates college'],
+  'carleton': ['carleton college'],
+  'grinnell': ['grinnell college'],
+  'oberlin': ['oberlin college'],
+  'reed': ['reed college'],
+  'cwru': ['case western reserve university'],
+  'case western': ['case western reserve university'],
+  'wfu': ['wake forest university'],
+  'wake forest': ['wake forest university'],
+  'tulane': ['tulane university'],
+  'lmu': ['loyola marymount university'],
+  'scu': ['santa clara university'],
+  'uop': ['university of the pacific'],
+  'uga': ['university of georgia'],
+  'clemson': ['clemson university'],
+  'vt': ['virginia tech'],
+  'virginia tech': ['virginia polytechnic institute'],
+};
+
+function expandSearchQuery(query) {
+  const q = query.toLowerCase().trim();
+  const aliasMatches = SCHOOL_ALIASES[q] || [];
+  return { original: q, aliases: aliasMatches };
+}
+
 async function loadFinancialAidData() {
   const now = Date.now();
   if (financialAidCache && (now - cacheTimestamp) < CACHE_TTL) return financialAidCache;
@@ -124,8 +219,20 @@ router.get('/search', async (req, res) => {
       });
     }
     if (q) {
-      const query = q.toLowerCase();
-      results = results.filter(s => s.name?.toLowerCase().includes(query));
+      const { original, aliases } = expandSearchQuery(q);
+      results = results.filter(s => {
+        const name = s.name?.toLowerCase() || '';
+        // Direct substring match
+        if (name.includes(original)) return true;
+        // Alias match: check if any alias is a substring of the school name
+        for (const alias of aliases) {
+          if (name.includes(alias)) return true;
+        }
+        // Fuzzy: also check if the query words all appear in the name
+        const words = original.split(/\s+/).filter(w => w.length > 1);
+        if (words.length > 1 && words.every(w => name.includes(w))) return true;
+        return false;
+      });
     }
 
     if (hasFull) {

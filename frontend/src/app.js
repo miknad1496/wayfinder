@@ -1539,6 +1539,131 @@ function sanitizeUrl(url) {
   return '';
 }
 
+/**
+ * Convert markdown text to safe HTML for strategy output.
+ * Handles: headers, bold, italic, tables, lists, checkboxes, blockquotes, hr, code blocks.
+ */
+function renderMarkdownToHTML(md) {
+  // Escape HTML entities first for safety
+  let text = escapeHtml(md);
+
+  // Code blocks (``` ... ```)
+  text = text.replace(/```[\s\S]*?```/g, (match) => {
+    const code = match.replace(/^```\w*\n?/, '').replace(/\n?```$/, '');
+    return `<pre><code>${code}</code></pre>`;
+  });
+
+  // Tables: detect lines with | separators
+  text = text.replace(/((?:^|\n)\|.+\|(?:\n\|.+\|)+)/g, (tableBlock) => {
+    const rows = tableBlock.trim().split('\n').filter(r => r.trim());
+    if (rows.length < 2) return tableBlock;
+
+    let html = '<table>';
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i].trim();
+      // Skip separator rows like |---|---|
+      if (/^\|[\s\-:]+\|$/.test(row) || /^\|(\s*-+\s*\|)+$/.test(row) || /^\|[\s\-:|]+\|$/.test(row)) continue;
+      const cells = row.split('|').filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+      const tag = i === 0 ? 'th' : 'td';
+      html += '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+    }
+    html += '</table>';
+    return html;
+  });
+
+  // Process line by line for headers, lists, blockquotes, checkboxes
+  const lines = text.split('\n');
+  let result = [];
+  let inList = false;
+  let listType = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    // Headers
+    if (/^####\s/.test(line)) { closeLists(); result.push(`<h4>${line.slice(5)}</h4>`); continue; }
+    if (/^###\s/.test(line)) { closeLists(); result.push(`<h3>${line.slice(4)}</h3>`); continue; }
+    if (/^##\s/.test(line)) { closeLists(); result.push(`<h2>${line.slice(3)}</h2>`); continue; }
+    if (/^#\s/.test(line)) { closeLists(); result.push(`<h2>${line.slice(2)}</h2>`); continue; }
+
+    // Horizontal rule
+    if (/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())) { closeLists(); result.push('<hr>'); continue; }
+
+    // Blockquote
+    if (/^&gt;\s?/.test(line)) {
+      closeLists();
+      const content = line.replace(/^(&gt;\s?)+/, '');
+      result.push(`<blockquote>${content}</blockquote>`);
+      continue;
+    }
+
+    // Checkbox items
+    if (/^[-*]\s\[[ x]\]\s/.test(line)) {
+      if (!inList) { result.push('<ul style="list-style:none;padding-left:0;">'); inList = true; listType = 'check'; }
+      const checked = /^[-*]\s\[x\]/.test(line);
+      const content = line.replace(/^[-*]\s\[[ x]\]\s/, '');
+      result.push(`<li class="checklist-item"><input type="checkbox" ${checked ? 'checked' : ''} disabled> ${content}</li>`);
+      continue;
+    }
+
+    // Unordered list
+    if (/^[-*+]\s/.test(line)) {
+      if (!inList || listType !== 'ul') { closeLists(); result.push('<ul>'); inList = true; listType = 'ul'; }
+      result.push(`<li>${line.replace(/^[-*+]\s/, '')}</li>`);
+      continue;
+    }
+
+    // Ordered list
+    if (/^\d+\.\s/.test(line)) {
+      if (!inList || listType !== 'ol') { closeLists(); result.push('<ol>'); inList = true; listType = 'ol'; }
+      result.push(`<li>${line.replace(/^\d+\.\s/, '')}</li>`);
+      continue;
+    }
+
+    // Empty line = paragraph break
+    if (line.trim() === '') {
+      closeLists();
+      result.push('');
+      continue;
+    }
+
+    // Regular text
+    closeLists();
+    result.push(line);
+  }
+  closeLists();
+
+  function closeLists() {
+    if (inList) {
+      result.push(listType === 'ol' ? '</ol>' : '</ul>');
+      inList = false;
+      listType = '';
+    }
+  }
+
+  // Join and wrap paragraphs
+  text = result.join('\n');
+
+  // Wrap consecutive text lines in <p> tags
+  text = text.replace(/\n{2,}/g, '</p><p>');
+  text = text.replace(/\n/g, '<br>');
+
+  // Inline formatting
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // Clean up empty paragraphs
+  text = text.replace(/<p>\s*<\/p>/g, '');
+  text = text.replace(/^<br>|<br>$/g, '');
+
+  // Wrap in paragraph if not starting with a block element
+  if (!/^<(h[1-6]|table|ul|ol|blockquote|pre|hr)/.test(text.trim())) {
+    text = `<p>${text}</p>`;
+  }
+
+  return text;
+}
 
 // ========================
 // Invite System
@@ -2156,8 +2281,11 @@ function setupToolListeners() {
     btn.addEventListener('click', () => switchFinaidTab(btn.dataset.finaidTab));
   });
 
-  // Financial Aid search
+  // Financial Aid search (button + Enter key)
   if ($('finaidSearchBtn')) $('finaidSearchBtn').addEventListener('click', searchFinancialAid);
+  if ($('finaidSearch')) $('finaidSearch').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); searchFinancialAid(); }
+  });
 
   // Grants state change
   if ($('grantsState')) $('grantsState').addEventListener('change', searchStateGrants);
@@ -2779,14 +2907,11 @@ async function generateMyStrategy() {
       return;
     }
 
-    // Render the strategy as safe HTML — escape first, then apply formatting
-    const strategyText = escapeHtml(data.strategy || 'No strategy generated.');
-    const formatted = strategyText
-      .replace(/\n\n/g, '</p><p>')
-      .replace(/\n/g, '<br>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Render the strategy as safe HTML with rich markdown support
+    const strategyText = data.strategy || 'No strategy generated.';
+    const formatted = renderMarkdownToHTML(strategyText);
 
-    let html = `<div class="strategy-result"><p>${formatted}</p></div>`;
+    let html = `<div class="strategy-result">${formatted}</div>`;
 
     // Show matched school cards if available
     if (data.schools && data.schools.length) {
