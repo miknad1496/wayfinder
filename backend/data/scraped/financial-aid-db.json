@@ -48,7 +48,9 @@
         "booksSupplies": 4502,
         "personal": 3602,
         "transportation": 1801
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "arizona-001",
@@ -95,7 +97,9 @@
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 12160,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "bates-001",
@@ -136,7 +140,9 @@
         "booksSupplies": 4341,
         "personal": 3473,
         "transportation": 1736
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "bc-001",
@@ -176,7 +182,9 @@
         "booksSupplies": 4466,
         "personal": 3573,
         "transportation": 1787
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "bowdoin-001",
@@ -217,7 +225,9 @@
         "booksSupplies": 4475,
         "personal": 3580,
         "transportation": 1790
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "brown-001",
@@ -258,7 +268,9 @@
         "booksSupplies": 4375,
         "personal": 3500,
         "transportation": 1750
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "caltech-001",
@@ -300,7 +312,9 @@
         "booksSupplies": 4460,
         "personal": 3568,
         "transportation": 1784
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "carleton-001",
@@ -341,7 +355,9 @@
         "booksSupplies": 4498,
         "personal": 3598,
         "transportation": 1799
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "caswestern-001",
@@ -392,7 +408,9 @@
         "booksSupplies": 4529,
         "personal": 3623,
         "transportation": 1812
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "clarkatlanta-001",
@@ -437,7 +455,9 @@
         "booksSupplies": 2350,
         "personal": 1880,
         "transportation": 940
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "colby-001",
@@ -478,7 +498,9 @@
         "booksSupplies": 4512,
         "personal": 3610,
         "transportation": 1805
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "columbia-001",
@@ -519,7 +541,9 @@
         "booksSupplies": 4440,
         "personal": 3552,
         "transportation": 1776
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "cornell-001",
@@ -560,7 +584,9 @@
         "booksSupplies": 4473,
         "personal": 3578,
         "transportation": 1789
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "dartmouth-001",
@@ -601,7 +627,9 @@
         "booksSupplies": 4399,
         "personal": 3519,
         "transportation": 1760
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "davidson-001",
@@ -642,7 +670,9 @@
         "booksSupplies": 4301,
         "personal": 3441,
         "transportation": 1721
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "drexel-001",
@@ -688,7 +718,9 @@
         "booksSupplies": 2900,
         "personal": 2320,
         "transportation": 1160
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "duke-001",
@@ -740,7 +772,9 @@
         "booksSupplies": 4451,
         "personal": 3560,
         "transportation": 1780
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "elon-001",
@@ -785,7 +819,9 @@
         "booksSupplies": 2950,
         "personal": 2360,
         "transportation": 1180
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "emory-001",
@@ -836,7 +872,9 @@
         "booksSupplies": 4451,
         "personal": 3560,
         "transportation": 1780
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "fisk-001",
@@ -881,7 +919,9 @@
         "booksSupplies": 2300,
         "personal": 1840,
         "transportation": 920
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "famu-001",
@@ -928,7 +968,9 @@
         "personal": 1320,
         "transportation": 1540
       },
-      "inStateTuition": 8360
+      "inStateTuition": 8360,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "fordham-001",
@@ -974,7 +1016,9 @@
         "booksSupplies": 4470,
         "personal": 3576,
         "transportation": 1788
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "georgetown-001",
@@ -1020,7 +1064,9 @@
         "booksSupplies": 4504,
         "personal": 3603,
         "transportation": 1801
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "gatech-001",
@@ -1069,7 +1115,9 @@
         "personal": 1860,
         "transportation": 2170
       },
-      "inStateTuition": 11780
+      "inStateTuition": 11780,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "grinnell-001",
@@ -1110,7 +1158,9 @@
         "booksSupplies": 4442,
         "personal": 3554,
         "transportation": 1777
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "hamilton-002",
@@ -1151,7 +1201,9 @@
         "booksSupplies": 4458,
         "personal": 3566,
         "transportation": 1783
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "hampton-001",
@@ -1196,7 +1248,9 @@
         "booksSupplies": 2600,
         "personal": 2080,
         "transportation": 1040
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "harvard-001",
@@ -1238,7 +1292,9 @@
         "booksSupplies": 4346,
         "personal": 3477,
         "transportation": 1739
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "hofstra-001",
@@ -1283,7 +1339,9 @@
         "booksSupplies": 2850,
         "personal": 2280,
         "transportation": 1140
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "howard-001",
@@ -1328,7 +1386,9 @@
         "booksSupplies": 2750,
         "personal": 2200,
         "transportation": 1100
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "jhu-001",
@@ -1369,7 +1429,9 @@
         "booksSupplies": 4460,
         "personal": 3568,
         "transportation": 1784
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "lehigh-001",
@@ -1415,7 +1477,9 @@
         "booksSupplies": 4458,
         "personal": 3566,
         "transportation": 1783
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "loyola-chi-001",
@@ -1461,7 +1525,9 @@
         "booksSupplies": 3000,
         "personal": 2400,
         "transportation": 1200
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "macalester-001",
@@ -1502,7 +1568,9 @@
         "booksSupplies": 4425,
         "personal": 3540,
         "transportation": 1770
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "mit-001",
@@ -1544,7 +1612,9 @@
         "booksSupplies": 4526,
         "personal": 3621,
         "transportation": 1810
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "middlebury-001",
@@ -1585,7 +1655,9 @@
         "booksSupplies": 4491,
         "personal": 3593,
         "transportation": 1796
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "morehouse-001",
@@ -1631,7 +1703,9 @@
         "booksSupplies": 2800,
         "personal": 2240,
         "transportation": 1120
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ncat-001",
@@ -1678,7 +1752,9 @@
         "personal": 1380,
         "transportation": 1610
       },
-      "inStateTuition": 8740
+      "inStateTuition": 8740,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "northeastern-001",
@@ -1723,7 +1799,9 @@
         "booksSupplies": 4483,
         "personal": 3586,
         "transportation": 1793
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "northwestern-001",
@@ -1769,7 +1847,9 @@
         "booksSupplies": 4429,
         "personal": 3543,
         "transportation": 1772
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "osu-001",
@@ -1817,7 +1897,9 @@
         "personal": 1860,
         "transportation": 2170
       },
-      "inStateTuition": 11780
+      "inStateTuition": 11780,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "pennstate-001",
@@ -1865,7 +1947,9 @@
         "personal": 2070,
         "transportation": 2415
       },
-      "inStateTuition": 13110
+      "inStateTuition": 13110,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "pomona-001",
@@ -1906,7 +1990,9 @@
         "booksSupplies": 4501,
         "personal": 3600,
         "transportation": 1800
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "princeton-001",
@@ -1948,7 +2034,9 @@
         "booksSupplies": 4350,
         "personal": 3480,
         "transportation": 1740
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "purdue-001",
@@ -1997,7 +2085,9 @@
         "personal": 1770,
         "transportation": 2065
       },
-      "inStateTuition": 11210
+      "inStateTuition": 11210,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "rpi-001",
@@ -2043,7 +2133,9 @@
         "booksSupplies": 4526,
         "personal": 3621,
         "transportation": 1811
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "rice-001",
@@ -2084,7 +2176,9 @@
         "booksSupplies": 4460,
         "personal": 3568,
         "transportation": 1784
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "rutgers-001",
@@ -2126,7 +2220,9 @@
         "personal": 2100,
         "transportation": 2450
       },
-      "inStateTuition": 13300
+      "inStateTuition": 13300,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "santaclara-001",
@@ -2172,7 +2268,9 @@
         "booksSupplies": 4435,
         "personal": 3548,
         "transportation": 1774
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "smu-001",
@@ -2223,7 +2321,9 @@
         "booksSupplies": 4505,
         "personal": 3604,
         "transportation": 1802
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "spelman-001",
@@ -2269,7 +2369,9 @@
         "booksSupplies": 2850,
         "personal": 2280,
         "transportation": 1140
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "stanford-001",
@@ -2311,7 +2413,9 @@
         "booksSupplies": 4392,
         "personal": 3514,
         "transportation": 1757
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "swarthmore-001",
@@ -2352,7 +2456,9 @@
         "booksSupplies": 4548,
         "personal": 3638,
         "transportation": 1819
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "tcu-001",
@@ -2397,7 +2503,9 @@
         "booksSupplies": 4394,
         "personal": 3516,
         "transportation": 1758
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "tufts-001",
@@ -2443,7 +2551,9 @@
         "booksSupplies": 4502,
         "personal": 3602,
         "transportation": 1801
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "tulane-001",
@@ -2488,7 +2598,9 @@
         "booksSupplies": 4428,
         "personal": 3542,
         "transportation": 1771
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "tuskegee-001",
@@ -2533,7 +2645,9 @@
         "booksSupplies": 2550,
         "personal": 2040,
         "transportation": 1020
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "alabama-001",
@@ -2585,7 +2699,9 @@
         "personal": 1800,
         "transportation": 2100
       },
-      "inStateTuition": 11400
+      "inStateTuition": 11400,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "berkeley-001",
@@ -2627,7 +2743,9 @@
         "personal": 2520,
         "transportation": 2940
       },
-      "inStateTuition": 15960
+      "inStateTuition": 15960,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucla-001",
@@ -2669,7 +2787,9 @@
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 15390,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uchicago-001",
@@ -2715,7 +2835,9 @@
         "booksSupplies": 4520,
         "personal": 3616,
         "transportation": 1808
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "denver-001",
@@ -2760,7 +2882,9 @@
         "booksSupplies": 4250,
         "personal": 3400,
         "transportation": 1700
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "florida-001",
@@ -2808,7 +2932,9 @@
         "personal": 1590,
         "transportation": 1855
       },
-      "inStateTuition": 10070
+      "inStateTuition": 10070,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uiuc-001",
@@ -2850,7 +2976,9 @@
         "personal": 1950,
         "transportation": 2275
       },
-      "inStateTuition": 12350
+      "inStateTuition": 12350,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "miami-001",
@@ -2895,7 +3023,9 @@
         "booksSupplies": 4400,
         "personal": 3520,
         "transportation": 1760
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "umich-001",
@@ -2943,7 +3073,9 @@
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 12160,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "unc-001",
@@ -2991,7 +3123,9 @@
         "personal": 1740,
         "transportation": 2030
       },
-      "inStateTuition": 11020
+      "inStateTuition": 11020,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "notredame-001",
@@ -3032,7 +3166,9 @@
         "booksSupplies": 4496,
         "personal": 3596,
         "transportation": 1798
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "penn-001",
@@ -3073,7 +3209,9 @@
         "booksSupplies": 4477,
         "personal": 3581,
         "transportation": 1791
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "usc-001",
@@ -3124,7 +3262,9 @@
         "booksSupplies": 4519,
         "personal": 3615,
         "transportation": 1808
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "utaustin-001",
@@ -3172,7 +3312,9 @@
         "personal": 1620,
         "transportation": 1890
       },
-      "inStateTuition": 10260
+      "inStateTuition": 10260,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "tulsa-001",
@@ -3217,7 +3359,9 @@
         "booksSupplies": 3100,
         "personal": 2480,
         "transportation": 1240
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uva-001",
@@ -3265,7 +3409,9 @@
         "personal": 1830,
         "transportation": 2135
       },
-      "inStateTuition": 11590
+      "inStateTuition": 11590,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uwash-001",
@@ -3307,7 +3453,9 @@
         "personal": 2010,
         "transportation": 2345
       },
-      "inStateTuition": 12730
+      "inStateTuition": 12730,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wisconsin-001",
@@ -3349,7 +3497,9 @@
         "personal": 1800,
         "transportation": 2100
       },
-      "inStateTuition": 11400
+      "inStateTuition": 11400,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vanderbilt-001",
@@ -3391,7 +3541,9 @@
         "booksSupplies": 4478,
         "personal": 3583,
         "transportation": 1791
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "villanova-001",
@@ -3436,7 +3588,9 @@
         "booksSupplies": 4471,
         "personal": 3576,
         "transportation": 1788
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wakeforest-001",
@@ -3481,7 +3635,9 @@
         "booksSupplies": 4464,
         "personal": 3571,
         "transportation": 1786
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wustl-001",
@@ -3532,7 +3688,9 @@
         "booksSupplies": 4507,
         "personal": 3605,
         "transportation": 1803
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wellesley-001",
@@ -3574,7 +3732,9 @@
         "booksSupplies": 4450,
         "personal": 3560,
         "transportation": 1780
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "williams-001",
@@ -3615,7 +3775,9 @@
         "booksSupplies": 4561,
         "personal": 3649,
         "transportation": 1824
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "xavier-001",
@@ -3661,7 +3823,9 @@
         "booksSupplies": 2400,
         "personal": 1920,
         "transportation": 960
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "yale-001",
@@ -3703,7 +3867,9 @@
         "booksSupplies": 4475,
         "personal": 3580,
         "transportation": 1790
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucdavis-001",
@@ -3757,7 +3923,9 @@
         "personal": 2910,
         "transportation": 3395
       },
-      "inStateTuition": 18430
+      "inStateTuition": 18430,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucirvine-001",
@@ -3811,7 +3979,9 @@
         "personal": 2952,
         "transportation": 3444
       },
-      "inStateTuition": 18696
+      "inStateTuition": 18696,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucsd-001",
@@ -3866,7 +4036,9 @@
         "personal": 3006,
         "transportation": 3507
       },
-      "inStateTuition": 19038
+      "inStateTuition": 19038,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucsb-001",
@@ -3920,7 +4092,9 @@
         "personal": 2928,
         "transportation": 3416
       },
-      "inStateTuition": 18544
+      "inStateTuition": 18544,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "iu-001",
@@ -3979,7 +4153,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uiowa-001",
@@ -4032,7 +4208,9 @@
         "personal": 1968,
         "transportation": 2296
       },
-      "inStateTuition": 12464
+      "inStateTuition": 12464,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uoregon-001",
@@ -4085,7 +4263,9 @@
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
+      "inStateTuition": 14630,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "usoutharolina-001",
@@ -4138,7 +4318,9 @@
         "personal": 2112,
         "transportation": 2464
       },
-      "inStateTuition": 13376
+      "inStateTuition": 13376,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "marquette-001",
@@ -4191,7 +4373,9 @@
         "booksSupplies": 3825,
         "personal": 3060,
         "transportation": 1530
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "loyola-chicago-001",
@@ -4244,7 +4428,9 @@
         "booksSupplies": 3700,
         "personal": 2960,
         "transportation": 1480
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ncaat-001",
@@ -4298,7 +4484,9 @@
         "personal": 1428,
         "transportation": 1666
       },
-      "inStateTuition": 9044
+      "inStateTuition": 9044,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "pvamu-001",
@@ -4352,7 +4540,9 @@
         "personal": 1230,
         "transportation": 1435
       },
-      "inStateTuition": 7790
+      "inStateTuition": 7790,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "suny-binghamton-001",
@@ -4406,7 +4596,9 @@
         "personal": 2148,
         "transportation": 2506
       },
-      "inStateTuition": 13604
+      "inStateTuition": 13604,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "suny-stonybrook-001",
@@ -4460,7 +4652,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "umass-001",
@@ -4513,7 +4707,9 @@
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
+      "inStateTuition": 14630,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "temple-001",
@@ -4566,7 +4762,9 @@
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 12160,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "rit-001",
@@ -4619,7 +4817,9 @@
         "booksSupplies": 4025,
         "personal": 3220,
         "transportation": 1610
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wpi-001",
@@ -4672,7 +4872,9 @@
         "booksSupplies": 4100,
         "personal": 3280,
         "transportation": 1640
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vtech-001",
@@ -4725,7 +4927,9 @@
         "personal": 2010,
         "transportation": 2345
       },
-      "inStateTuition": 12730
+      "inStateTuition": 12730,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ncsu-001",
@@ -4779,7 +4983,9 @@
         "personal": 2052,
         "transportation": 2394
       },
-      "inStateTuition": 12996
+      "inStateTuition": 12996,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "umd-001",
@@ -4832,7 +5038,9 @@
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 15010,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "umichigan-001",
@@ -4886,7 +5094,9 @@
         "personal": 2610,
         "transportation": 3045
       },
-      "inStateTuition": 16530
+      "inStateTuition": 16530,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uill-001",
@@ -4939,7 +5149,9 @@
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 15390,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "uwis-001",
@@ -4992,7 +5204,9 @@
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
+      "inStateTuition": 14630,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ucberkeley-001",
@@ -5046,7 +5260,9 @@
         "personal": 3120,
         "transportation": 3640
       },
-      "inStateTuition": 19760
+      "inStateTuition": 19760,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "penn-state-001",
@@ -5099,7 +5315,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "ostate-001",
@@ -5152,7 +5370,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "minnesota-001",
@@ -5205,7 +5425,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "georgia-001",
@@ -5258,7 +5480,9 @@
         "personal": 1830,
         "transportation": 2135
       },
-      "inStateTuition": 11590
+      "inStateTuition": 11590,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "upenn-001",
@@ -5300,7 +5524,9 @@
         "booksSupplies": 4450,
         "personal": 3560,
         "transportation": 1780
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "chicago-001",
@@ -5348,7 +5574,9 @@
         "booksSupplies": 4500,
         "personal": 3600,
         "transportation": 1800
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "cmu-001",
@@ -5396,7 +5624,9 @@
         "booksSupplies": 4500,
         "personal": 3600,
         "transportation": 1800
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "gtech-001",
@@ -5445,7 +5675,9 @@
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 12160,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "calpoly-001",
@@ -5494,7 +5726,9 @@
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 15390,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "sdsu-001",
@@ -5543,7 +5777,9 @@
         "personal": 2550,
         "transportation": 2975
       },
-      "inStateTuition": 16150
+      "inStateTuition": 16150,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vcu-001",
@@ -5592,7 +5828,9 @@
         "personal": 1710,
         "transportation": 1995
       },
-      "inStateTuition": 10830
+      "inStateTuition": 10830,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "gmu-001",
@@ -5641,7 +5879,9 @@
         "personal": 1830,
         "transportation": 2135
       },
-      "inStateTuition": 11590
+      "inStateTuition": 11590,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "suffolk-001",
@@ -5689,7 +5929,9 @@
         "booksSupplies": 3075,
         "personal": 2460,
         "transportation": 1230
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "nyu-001",
@@ -5737,7 +5979,9 @@
         "booksSupplies": 4475,
         "personal": 3580,
         "transportation": 1790
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "bu-001",
@@ -5790,7 +6034,9 @@
         "booksSupplies": 4325,
         "personal": 3460,
         "transportation": 1730
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vassar-001",
@@ -5831,7 +6077,9 @@
         "booksSupplies": 4375,
         "personal": 3500,
         "transportation": 1750
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "hmc-001",
@@ -5879,7 +6127,9 @@
         "booksSupplies": 4625,
         "personal": 3700,
         "transportation": 1850
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "clarks-001",
@@ -5920,7 +6170,9 @@
         "booksSupplies": 4525,
         "personal": 3620,
         "transportation": 1810
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "wesleyan-001",
@@ -5961,7 +6213,9 @@
         "booksSupplies": 4400,
         "personal": 3520,
         "transportation": 1760
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "case-western-001",
@@ -6008,7 +6262,9 @@
         "booksSupplies": 3975,
         "personal": 3180,
         "transportation": 1590
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "bucknell-001",
@@ -6054,7 +6310,9 @@
         "booksSupplies": 4075,
         "personal": 3260,
         "transportation": 1630
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "hamilton-001",
@@ -6094,7 +6352,9 @@
         "booksSupplies": 4375,
         "personal": 3500,
         "transportation": 1750
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "denison-001",
@@ -6140,7 +6400,9 @@
         "booksSupplies": 3975,
         "personal": 3180,
         "transportation": 1590
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "trinity-001",
@@ -6186,7 +6448,9 @@
         "booksSupplies": 4075,
         "personal": 3260,
         "transportation": 1630
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "connecticut-001",
@@ -6233,7 +6497,9 @@
         "personal": 2490,
         "transportation": 2905
       },
-      "inStateTuition": 15770
+      "inStateTuition": 15770,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vermont-001",
@@ -6280,7 +6546,9 @@
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 15010,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "auburnu-001",
@@ -6328,7 +6596,9 @@
         "personal": 1890,
         "transportation": 2205
       },
-      "inStateTuition": 11970
+      "inStateTuition": 11970,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "buffalo-001",
@@ -6375,7 +6645,9 @@
         "personal": 2250,
         "transportation": 2625
       },
-      "inStateTuition": 14250
+      "inStateTuition": 14250,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "rutgers-nb-001",
@@ -6422,7 +6694,9 @@
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 15390,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "delaware-001",
@@ -6469,7 +6743,9 @@
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 13870,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "clemson-001",
@@ -6516,7 +6792,9 @@
         "personal": 1950,
         "transportation": 2275
       },
-      "inStateTuition": 12350
+      "inStateTuition": 12350,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "vcu2-001",
@@ -6562,7 +6840,9 @@
         "personal": 2010,
         "transportation": 2345
       },
-      "inStateTuition": 12730
+      "inStateTuition": 12730,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "missouri-001",
@@ -6608,7 +6888,9 @@
         "personal": 1860,
         "transportation": 2170
       },
-      "inStateTuition": 11780
+      "inStateTuition": 11780,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "colorado-001",
@@ -6654,7 +6936,9 @@
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 15010,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "westpoint-001",
@@ -6695,7 +6979,9 @@
         "personal": 0,
         "transportation": 0
       },
-      "inStateTuition": 0
+      "inStateTuition": 0,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "colorado-state-001",
@@ -6742,7 +7028,9 @@
         "personal": 2250,
         "transportation": 2625
       },
-      "inStateTuition": 14250
+      "inStateTuition": 14250,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "nmexico-001",
@@ -6788,7 +7076,9 @@
         "personal": 1650,
         "transportation": 1925
       },
-      "inStateTuition": 10450
+      "inStateTuition": 10450,
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "brandeis-001",
@@ -6828,7 +7118,9 @@
         "booksSupplies": 4125,
         "personal": 3300,
         "transportation": 1650
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "colgate-001",
@@ -6868,7 +7160,9 @@
         "booksSupplies": 4350,
         "personal": 3480,
         "transportation": 1740
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "union-001",
@@ -6908,7 +7202,9 @@
         "booksSupplies": 4050,
         "personal": 3240,
         "transportation": 1620
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     },
     {
       "id": "oberlin-001",
@@ -6948,7 +7244,9 @@
         "booksSupplies": 4025,
         "personal": 3220,
         "transportation": 1610
-      }
+      },
+      "_verified": false,
+      "_dataSource": "ai-generated"
     }
   ],
   "stateGrants": [
@@ -9655,5 +9953,13 @@
       "repaymentRequired": true,
       "status": "discontinued-new-borrowers"
     }
-  ]
+  ],
+  "_dataIntegrity": {
+    "status": "UNVERIFIED",
+    "warning": "School cost data has NOT been validated against IPEDS or official sources. Run SCRAPE-SCORECARD.bat to replace with verified federal data.",
+    "auditDate": "2026-04-04",
+    "schoolDataSource": "AI-generated (NOT from real sources)",
+    "stateGrantsSource": "AI-generated with real agency URLs but unverified amounts",
+    "federalProgramsSource": "Needs verification against studentaid.gov"
+  }
 }
