@@ -323,18 +323,21 @@ async function scrapeAll() {
   const allSchools = [];
   let page = 0;
   let totalPages = 1;
-  
+  let rateLimitRetries = 0;
+  const MAX_RATE_RETRIES = 5;
+
   while (page < totalPages) {
     try {
       console.log(`Fetching page ${page + 1}...`);
       const data = await fetchPage(page, 100);
-      
+      rateLimitRetries = 0; // Reset on success
+
       if (page === 0) {
         const total = data.metadata.total;
         totalPages = Math.ceil(total / 100);
         console.log(`Total schools: ${total} (${totalPages} pages)\n`);
       }
-      
+
       for (const raw of data.results) {
         const school = transformSchool(raw);
         // Only include schools with actual cost data
@@ -342,18 +345,27 @@ async function scrapeAll() {
           allSchools.push(school);
         }
       }
-      
+
       page++;
-      
+
       // Rate limit: be nice to the API
       if (page < totalPages) {
-        await new Promise(r => setTimeout(r, 200));
+        await new Promise(r => setTimeout(r, 250));
       }
     } catch (err) {
-      console.error(`Error on page ${page}:`, err.message);
+      console.error(`Error on page ${page + 1}:`, err.message.substring(0, 120));
       if (err.message.includes('429')) {
-        console.log('Rate limited, waiting 5 seconds...');
-        await new Promise(r => setTimeout(r, 5000));
+        rateLimitRetries++;
+        if (rateLimitRetries > MAX_RATE_RETRIES) {
+          console.error(`\nHit rate limit ${MAX_RATE_RETRIES} times in a row. DEMO_KEY only allows 30 req/hour.`);
+          console.error(`Get a FREE API key at https://api.data.gov/signup/ (gives 1000 req/hour).`);
+          console.error(`Then run:  set SCORECARD_API_KEY=your_key_here`);
+          console.error(`Saving the ${allSchools.length} schools collected so far...\n`);
+          break;
+        }
+        const waitSec = 30 * rateLimitRetries; // 30s, 60s, 90s, 120s, 150s
+        console.log(`Rate limited (attempt ${rateLimitRetries}/${MAX_RATE_RETRIES}), waiting ${waitSec}s...`);
+        await new Promise(r => setTimeout(r, waitSec * 1000));
       } else {
         page++; // Skip this page on other errors
       }
