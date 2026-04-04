@@ -6097,140 +6097,6 @@
       }
     },
     {
-      "id": "rpi-001",
-      "name": "Rensselaer Polytechnic Institute",
-      "type": "private",
-      "state": "NY",
-      "region": "Northeast",
-      "stickerPrice": 84500,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5000,
-        "30to48k": 9500,
-        "48to75k": 14000,
-        "75to110k": 20000,
-        "over110k": 41000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "STEM focus"
-      ],
-      "meritScholarships": [
-        {
-          "name": "RPI Award",
-          "amount": 16000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-02-01",
-      "tags": [
-        "private",
-        "stem",
-        "engineering",
-        "northeast"
-      ],
-      "keyInsight": "RPI is one of the oldest engineering schools with strong STEM programs and merit aid.",
-      "costBreakdown": {
-        "tuition": 54925,
-        "fees": 3380,
-        "roomBoard": 16900,
-        "booksSupplies": 4225,
-        "personal": 3380,
-        "transportation": 1690
-      }
-    },
-    {
-      "id": "macalester-001",
-      "name": "Macalester College",
-      "type": "private",
-      "state": "MN",
-      "region": "Midwest",
-      "stickerPrice": 84000,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 2000,
-        "30to48k": 5500,
-        "48to75k": 10000,
-        "75to110k": 16000,
-        "over110k": 41000
-      },
-      "aidPolicies": [
-        "Need-blind admission",
-        "Full need commitment",
-        "International aid"
-      ],
-      "meritScholarships": [],
-      "freeThreshold": 65000,
-      "cssRequired": true,
-      "deadline": "2026-01-15",
-      "tags": [
-        "elite-lac",
-        "need-blind",
-        "midwest",
-        "liberal-arts"
-      ],
-      "keyInsight": "Macalester combines liberal arts excellence with need-blind admission and strong international focus.",
-      "costBreakdown": {
-        "tuition": 54600,
-        "fees": 3360,
-        "roomBoard": 16800,
-        "booksSupplies": 4200,
-        "personal": 3360,
-        "transportation": 1680
-      }
-    },
-    {
-      "id": "elon-001",
-      "name": "Elon University",
-      "type": "private",
-      "state": "NC",
-      "region": "Southeast",
-      "stickerPrice": 64500,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 6000,
-        "30to48k": 10000,
-        "48to75k": 14000,
-        "75to110k": 19000,
-        "over110k": 38000
-      },
-      "aidPolicies": [
-        "Meets demonstrated need",
-        "Merit scholarships available"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Elon Award",
-          "amount": 14000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": true,
-      "deadline": "2026-02-15",
-      "tags": [
-        "private",
-        "southeast",
-        "business",
-        "affordable"
-      ],
-      "keyInsight": "Elon offers engaged learning with strong business and communications programs at reasonable cost.",
-      "costBreakdown": {
-        "tuition": 41925,
-        "fees": 2580,
-        "roomBoard": 12900,
-        "booksSupplies": 3225,
-        "personal": 2580,
-        "transportation": 1290
-      }
-    },
-    {
       "id": "denison-001",
       "name": "Denison University",
       "type": "private",
@@ -6417,101 +6283,6 @@
       "inStateTuition": 18960
     },
     {
-      "id": "hofstra-001",
-      "name": "Hofstra University",
-      "type": "private",
-      "state": "NY",
-      "region": "Northeast",
-      "stickerPrice": 58500,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5000,
-        "30to48k": 8500,
-        "48to75k": 12000,
-        "75to110k": 16000,
-        "over110k": 33000
-      },
-      "aidPolicies": [
-        "Meets demonstrated need",
-        "Merit scholarships available",
-        "NYC location"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Hofstra Award",
-          "amount": 10000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-02-15",
-      "tags": [
-        "private",
-        "new-york",
-        "affordable",
-        "northeast"
-      ],
-      "keyInsight": "Hofstra offers affordable private education in New York with merit scholarship opportunities.",
-      "costBreakdown": {
-        "tuition": 38025,
-        "fees": 2340,
-        "roomBoard": 11700,
-        "booksSupplies": 2925,
-        "personal": 2340,
-        "transportation": 1170
-      }
-    },
-    {
-      "id": "alabama-001",
-      "name": "University of Alabama",
-      "type": "public",
-      "state": "AL",
-      "region": "Southeast",
-      "stickerPrice": 30500,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 4800,
-        "30to48k": 7200,
-        "48to75k": 10000,
-        "75to110k": 13500,
-        "over110k": 22000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Substantial merit scholarships",
-        "Honors College"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Alabama Award",
-          "amount": 6000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "southeast",
-        "affordable",
-        "merit-scholarships"
-      ],
-      "keyInsight": "University of Alabama offers exceptional value with generous merit scholarships and strong honors programs.",
-      "costBreakdown": {
-        "tuition": 11590,
-        "fees": 610,
-        "roomBoard": 7625,
-        "booksSupplies": 1830,
-        "personal": 1830,
-        "transportation": 2135
-      },
-      "inStateTuition": 14640
-    },
-    {
       "id": "auburnu-001",
       "name": "Auburn University",
       "type": "public",
@@ -6607,7 +6378,7 @@
       "inStateTuition": 18750
     },
     {
-      "id": "rutgers-001",
+      "id": "rutgers-nb-001",
       "name": "Rutgers University - New Brunswick",
       "type": "public",
       "state": "NJ",
@@ -7020,52 +6791,6 @@
       "inStateTuition": 13200
     },
     {
-      "id": "tulsa-001",
-      "name": "University of Tulsa",
-      "type": "private",
-      "state": "OK",
-      "region": "Southwest",
-      "stickerPrice": 58500,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 6000,
-        "30to48k": 10000,
-        "48to75k": 14000,
-        "75to110k": 19000,
-        "over110k": 38000
-      },
-      "aidPolicies": [
-        "Meets demonstrated need",
-        "Merit scholarships available"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Tulsa Award",
-          "amount": 12000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-02-01",
-      "tags": [
-        "private",
-        "southwest",
-        "engineering",
-        "business"
-      ],
-      "keyInsight": "Tulsa offers strong academics at lower cost with merit aid available.",
-      "costBreakdown": {
-        "tuition": 38025,
-        "fees": 2340,
-        "roomBoard": 11700,
-        "booksSupplies": 2925,
-        "personal": 2340,
-        "transportation": 1170
-      }
-    },
-    {
       "id": "brandeis-001",
       "name": "Brandeis University",
       "type": "private",
@@ -7103,46 +6828,6 @@
         "booksSupplies": 4125,
         "personal": 3300,
         "transportation": 1650
-      }
-    },
-    {
-      "id": "tufts-001",
-      "name": "Tufts University",
-      "type": "private",
-      "state": "MA",
-      "region": "Northeast",
-      "stickerPrice": 84500,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 2500,
-        "30to48k": 6500,
-        "48to75k": 11500,
-        "75to110k": 17500,
-        "over110k": 44000
-      },
-      "aidPolicies": [
-        "Need-blind admission",
-        "Full need commitment"
-      ],
-      "meritScholarships": [],
-      "freeThreshold": 60000,
-      "cssRequired": true,
-      "deadline": "2026-01-02",
-      "tags": [
-        "elite",
-        "need-blind",
-        "northeast",
-        "research"
-      ],
-      "keyInsight": "Tufts combines research excellence with generous need-blind admission and strong aid.",
-      "costBreakdown": {
-        "tuition": 54925,
-        "fees": 3380,
-        "roomBoard": 16900,
-        "booksSupplies": 4225,
-        "personal": 3380,
-        "transportation": 1690
       }
     },
     {

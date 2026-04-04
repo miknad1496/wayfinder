@@ -17,7 +17,7 @@ import { Router } from 'express';
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { verifyToken, canAccess } from '../services/auth.js';
+import { verifyToken, canAccess, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
 import Anthropic from '@anthropic-ai/sdk';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -417,6 +417,16 @@ router.post('/my-strategy', async (req, res) => {
       });
     }
 
+    // Check daily message limits (strategy generation counts as 2 messages due to cost)
+    const usageCheck = await checkMessageUsage(token);
+    if (usageCheck && !usageCheck.allowed) {
+      return res.status(429).json({
+        error: `You've reached your daily ${usageCheck.upgradeReason === 'daily_messages' ? 'message' : 'monthly'} limit. Upgrade for more.`,
+        _requiresUpgrade: true,
+        usage: usageCheck
+      });
+    }
+
     const {
       householdIncome,
       assets,
@@ -435,11 +445,11 @@ router.post('/my-strategy', async (req, res) => {
     if (!targetSchools || !Array.isArray(targetSchools) || targetSchools.length === 0) {
       return res.status(400).json({ error: 'Please provide at least one target school.' });
     }
-    // Sanitize: ensure all school names are strings
+    // Sanitize: ensure all school names are strings, cap length to prevent token abuse
     const cleanSchools = targetSchools
       .filter(s => typeof s === 'string' && s.trim().length > 0)
-      .map(s => s.trim())
-      .slice(0, 20); // Cap at 20 schools to prevent abuse
+      .map(s => s.trim().slice(0, 100)) // Cap each school name to 100 chars
+      .slice(0, 10); // Cap at 10 schools to prevent cost abuse (was 20)
     if (cleanSchools.length === 0) {
       return res.status(400).json({ error: 'Please provide at least one valid school name.' });
     }
@@ -597,6 +607,10 @@ Use markdown formatting with headers, tables, and bullet points for clarity. Be 
         error: statusMap[apiErr.status] || 'Strategy generation failed. Please try again.'
       });
     }
+
+    // Record usage: strategy counts as 2 messages (expensive API call)
+    recordMessageUsage(token).catch(() => {});
+    recordMessageUsage(token).catch(() => {});
 
     res.json({
       strategy: strategyText,

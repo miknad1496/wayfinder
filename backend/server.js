@@ -112,6 +112,16 @@ const adminLimiter = rateLimit({
   message: { error: 'Too many admin requests. Please slow down.' }
 });
 
+// Expensive endpoints: essay reviews and financial aid strategy generation
+// These hit Opus/Sonnet directly and cost $0.10-$0.40+ per call
+const expensiveLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 3, // 3 expensive API calls per minute per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Please wait before generating another strategy or review.' }
+});
+
 // CORS — locked to specific origins, no wildcard fallback
 const ALLOWED_ORIGINS = process.env.NODE_ENV === 'production'
   ? [process.env.FRONTEND_URL || 'https://wayfinderai.org', 'https://www.wayfinderai.org']
@@ -162,11 +172,11 @@ app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/demographics', apiLimiter, demographicsRoutes);
 app.use('/api/timeline', apiLimiter, timelineRoutes);
-app.use('/api/essays', apiLimiter, essayRoutes);
+app.use('/api/essays', expensiveLimiter, essayRoutes);
 app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);
-app.use('/api/financial-aid', apiLimiter, financialAidRoutes);
+app.use('/api/financial-aid', expensiveLimiter, financialAidRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {

@@ -16,7 +16,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
-import { verifyToken, useEssayCredit, canAccess, findUserByToken } from '../services/auth.js';
+import { verifyToken, useEssayCredit, canAccess } from '../services/auth.js';
 import { reviewEssay, getEssayTypes } from '../services/essay-reviewer.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -89,7 +89,7 @@ router.post('/review', async (req, res) => {
       return res.status(400).json({ error: 'Essay too long. Maximum 15,000 characters (~3,000 words).' });
     }
 
-    // Deduct 1 credit
+    // Deduct 1 credit (essays are credit-gated, not daily-limit-gated)
     const creditResult = await useEssayCredit(token);
     if (!creditResult.allowed) {
       return res.status(402).json({

@@ -7,8 +7,31 @@ import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../ser
 import { getMemoryStats } from '../services/conversation-memory.js';
 import { getRoutingStats } from '../services/telemetry.js';
 import { getRoutingLog } from './chat.js';
+import { verifyToken, isAdmin as checkIsAdmin } from '../services/auth.js';
 
 const router = Router();
+
+// ─── Admin Authentication Middleware ─────────────────────────
+// ALL admin endpoints require a valid token from an admin user
+router.use(async (req, res, next) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (!token) {
+      return res.status(401).json({ error: 'Admin authentication required' });
+    }
+    const user = await verifyToken(token);
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid or expired token' });
+    }
+    if (!user.isAdmin) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+    req.adminUser = user;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Authentication failed' });
+  }
+});
 
 // POST /api/admin/reload-prompt - Reload system prompt from disk
 router.post('/reload-prompt', async (req, res) => {
