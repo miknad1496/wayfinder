@@ -1124,7 +1124,15 @@ function planDisplayName(plan) {
   return PLAN_DISPLAY[normalizePlan(plan)] || 'Explorer';
 }
 
+let _checkoutInProgress = false;
 async function handlePlanUpgrade(plan) {
+  if (_checkoutInProgress) return; // Prevent double-clicks
+  _checkoutInProgress = true;
+
+  // Disable all plan buttons while processing
+  const btns = document.querySelectorAll('.plan-btn');
+  btns.forEach(b => { b.disabled = true; b.style.opacity = '0.6'; });
+
   try {
     // Check if Stripe is configured
     const statusRes = await fetch(`${API_BASE}/stripe/status`);
@@ -1158,10 +1166,23 @@ async function handlePlanUpgrade(plan) {
   } catch (err) {
     alert('Unable to process upgrade right now. Please try again later.');
     console.error('Upgrade error:', err);
+  } finally {
+    // Re-enable buttons after a short delay (in case redirect doesn't happen)
+    setTimeout(() => {
+      _checkoutInProgress = false;
+      btns.forEach(b => { b.disabled = false; b.style.opacity = '1'; });
+    }, 3000);
   }
 }
 
+let _essayPurchaseInProgress = false;
 async function handleEssayPurchase(pack) {
+  if (_essayPurchaseInProgress) return;
+  _essayPurchaseInProgress = true;
+
+  const btns = document.querySelectorAll('.essay-pack-btn');
+  btns.forEach(b => { b.disabled = true; b.style.opacity = '0.6'; });
+
   try {
     const statusRes = await fetch(`${API_BASE}/stripe/status`);
     const statusData = await statusRes.json();
@@ -1183,6 +1204,11 @@ async function handleEssayPurchase(pack) {
     if (data.url) window.location.href = data.url;
   } catch {
     alert('Unable to process purchase right now.');
+  } finally {
+    setTimeout(() => {
+      _essayPurchaseInProgress = false;
+      btns.forEach(b => { b.disabled = false; b.style.opacity = '1'; });
+    }, 3000);
   }
 }
 

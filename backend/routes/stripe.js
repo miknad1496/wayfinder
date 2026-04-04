@@ -14,7 +14,7 @@ const router = Router();
 // ---- Rate limiters for payment endpoints ----
 const checkoutLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 5, // 5 checkout attempts per minute per IP
+  max: 15, // 15 checkout attempts per minute per IP (generous for browsing plans)
   standardHeaders: true,
   legacyHeaders: false,
   message: { error: 'Too many checkout requests. Please wait a moment.' }
