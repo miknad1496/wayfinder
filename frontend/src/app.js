@@ -2707,6 +2707,7 @@ async function searchInternships() {
   if ($('internshipState').value) params.set('state', $('internshipState').value);
   if ($('internshipField').value) params.set('field', $('internshipField').value);
   if ($('internshipCost').value === 'paid') params.set('paid', 'true');
+  if ($('internshipCost').value === 'unpaid') params.set('paid', 'false');
   if ($('internshipSearch').value.trim()) params.set('q', $('internshipSearch').value.trim());
 
   try {

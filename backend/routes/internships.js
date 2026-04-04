@@ -107,6 +107,7 @@ router.get('/search', async (req, res) => {
     if (field) results = results.filter(i => i.field?.toLowerCase().includes(field.toLowerCase()));
     if (major) results = results.filter(i => i.majors?.some(m => m.toLowerCase().includes(major.toLowerCase())));
     if (paid === 'true') results = results.filter(i => i.paid);
+    if (paid === 'false') results = results.filter(i => !i.paid);
     if (type) results = results.filter(i => i.type === type);
     if (q) {
       const query = q.toLowerCase();
