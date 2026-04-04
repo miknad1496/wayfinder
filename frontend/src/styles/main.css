@@ -1,4 +1,4 @@
-/* Wayfinder — AI Career Advisor — Claude AI-style UI */
+/* Wayfinder — Intelligent Advisory Platform UI */
 
 :root {
   --primary: #2563eb;
@@ -1203,6 +1203,10 @@ html, body { overflow-x: hidden; }
 }
 
 @media (max-width: 768px) {
+  /* Global mobile fixes */
+  html, body { font-size: 14px; }
+  .chat-container, .welcome-screen, .main-wrapper { max-width: 100vw; overflow-x: hidden; }
+
   /* Sidebar as overlay — collapsed by default on mobile */
   .sidebar {
     position: fixed;
@@ -1230,19 +1234,22 @@ html, body { overflow-x: hidden; }
 
   /* Welcome path cards — full width on mobile */
   .welcome-path-cards { flex-direction: column; align-items: stretch; gap: 12px; padding: 0 4px; }
-  .welcome-path-card { width: 100%; padding: 20px 16px; }
-  .welcome-path-card h3 { font-size: 16px; }
-  .welcome-path-card p { font-size: 12px; }
+  .welcome-path-card { width: 100%; padding: 16px 14px; }
+  .welcome-path-card h3 { font-size: 15px; }
+  .welcome-path-card p { font-size: 11px; }
 
   /* Hide topbar title on small screens */
   .topbar-brand .topbar-title { display: none; }
 
   /* Topbar — tighter on mobile */
-  .topbar { padding: 8px 12px; min-height: 44px; }
+  .topbar { padding: max(6px, env(safe-area-inset-top)) 12px 8px 12px; min-height: 44px; }
 
   /* Messages — full width, less padding */
-  .messages { padding: 12px 10px; }
+  .messages { padding: 10px 8px; }
   .message { margin-bottom: 16px; }
+  .message-body { font-size: 14px; }
+  .message-avatar { width: 24px; height: 24px; font-size: 10px; }
+  .message-role { font-size: 12px; }
 
   /* Message body — reduce left padding */
   .message-body { padding-left: 0; }
@@ -1268,8 +1275,8 @@ html, body { overflow-x: hidden; }
   }
 
   /* Input area — snug to bottom */
-  .input-area { padding: 6px 10px 10px; }
-  .input-wrapper { padding: 8px 10px; border-radius: 12px; }
+  .input-area { padding: 6px 8px 8px; }
+  .input-wrapper { padding: 6px 8px; border-radius: 12px; }
   .engine-toggle-row { flex-wrap: wrap; gap: 6px; }
   .engine-hint { display: none; }
 
@@ -1281,10 +1288,15 @@ html, body { overflow-x: hidden; }
   /* Welcome screen — tighter padding */
   .welcome-screen { padding: 20px 16px; }
   .welcome-content { max-width: 100%; }
-  .welcome-greeting { font-size: 24px; }
-  .welcome-sub { font-size: 14px; margin-bottom: 20px; }
-  .welcome-logo { width: 44px; height: 44px; margin-bottom: 14px; }
+  .welcome-greeting { font-size: 22px; }
+  .welcome-sub { font-size: 13px; margin-bottom: 20px; }
+  .welcome-logo { width: 36px; height: 36px; margin-bottom: 14px; }
   .welcome-path-select { margin-top: 16px; }
+
+  /* Plan card styles for upgrade modal */
+  .plan-header h3 { font-size: 16px; }
+  .plan-price { font-size: 26px; }
+  .plan-feature { font-size: 12px; }
 
   /* Consent banner stacks */
   .consent-banner {
@@ -1303,26 +1315,30 @@ html, body { overflow-x: hidden; }
 }
 
 @media (max-width: 480px) {
-  .welcome-greeting { font-size: 20px; }
-  .welcome-sub { font-size: 13px; margin-bottom: 16px; }
+  .welcome-greeting { font-size: 18px; }
+  .welcome-sub { font-size: 12px; margin-bottom: 16px; }
   .welcome-chip { font-size: 13px; padding: 10px 14px; }
 
-  .topbar { padding: 6px 10px; min-height: 40px; }
+  .topbar { padding: 6px 10px; min-height: 36px; }
   .topbar-btn { padding: 5px 10px; font-size: 12px; }
   .topbar-logo { width: 24px; height: 24px; }
 
   /* Even tighter message layout */
   .messages { padding: 10px 8px; }
-  .message-body { font-size: 14px; line-height: 1.6; }
-  .message-body h3 { font-size: 15px; }
-  .message-body h4 { font-size: 14px; }
+  .message-body { font-size: 13px; line-height: 1.6; }
+  .message-body h3 { font-size: 14px; }
+  .message-body h4 { font-size: 13px; }
   .message-body table { font-size: 12px; }
   .message-body th, .message-body td { padding: 4px 6px; }
 
   /* Path cards tighter */
-  .welcome-path-card { padding: 16px 14px; }
+  .welcome-path-card { padding: 14px 12px; }
   .welcome-path-card h3 { font-size: 15px; }
   .path-card-icon svg { width: 22px; height: 22px; }
+
+  /* Message avatar and role */
+  .message-avatar { width: 20px; height: 20px; font-size: 10px; }
+  .message-role { font-size: 11px; }
 
   /* Input snug */
   .input-area { padding: 4px 8px 8px; }

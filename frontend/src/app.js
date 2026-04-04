@@ -1,7 +1,7 @@
 /**
  * Wayfinder Chat Application — v2.0
  *
- * Claude AI-style interface with:
+ * Wayfinder advisory interface with:
  * - Collapsible sidebar with chat history + tool buttons
  * - Search across chats
  * - Copy/paste on messages
@@ -761,13 +761,13 @@ function updateEngineUI() {
   } else {
     engineToggle.classList.remove('disabled');
   }
-  // Show Opus 4.6 badge for paid tiers
+  // Show PRO badge for paid tiers
   const modelBadge = $('engineModelBadge');
   if (modelBadge) {
     const plan = userPlan();
     if (plan === 'pro' || plan === 'elite') {
       modelBadge.style.display = 'inline-flex';
-      modelBadge.textContent = 'Opus 4.6';
+      modelBadge.textContent = plan === 'elite' ? 'ELITE' : 'PRO';
     } else {
       modelBadge.style.display = 'none';
     }
@@ -965,8 +965,8 @@ function openSettings() {
   $('settingsHelpImprove').checked = currentUser.settings?.helpImprove !== false;
 
   // Populate account tab
-  const planNames = { free: 'Career Explorer (Free)', pro: 'Coach ($25/mo)', elite: 'Consultant ($50/mo)', premium: 'Premium (Legacy)' };
-  const planLimits = { free: 3, pro: 20, elite: 40, premium: 10 };
+  const planNames = { free: 'Explorer (Free)', pro: 'Coach ($25/mo)', elite: 'Consultant ($50/mo)', premium: 'Coach (Legacy)' };
+  const planLimits = { free: 3, pro: 10, elite: 20, premium: 10 };
   const plan = currentUser.plan || 'free';
   $('currentPlanDisplay').innerHTML = `
     <span class="plan-name">${planNames[plan] || plan}</span>
@@ -1121,7 +1121,7 @@ function normalizePlan(plan) {
 }
 
 function planDisplayName(plan) {
-  return PLAN_DISPLAY[normalizePlan(plan)] || 'Career Explorer';
+  return PLAN_DISPLAY[normalizePlan(plan)] || 'Explorer';
 }
 
 async function handlePlanUpgrade(plan) {
