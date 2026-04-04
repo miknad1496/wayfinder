@@ -923,7 +923,7 @@ function setupSettingsListeners() {
       try {
         const res = await fetch('/api/auth/admin/plan', {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
           body: JSON.stringify({ plan })
         });
         const data = await res.json();
@@ -1207,7 +1207,20 @@ async function handleEssayPurchase(pack) {
       body: JSON.stringify({ pack })
     });
     const data = await res.json();
-    if (data.error) { alert(data.error); return; }
+
+    // Admin users get a message instead of a checkout URL
+    if (data.message) { alert(data.message); return; }
+
+    if (data.error) {
+      if (res.status === 401) {
+        alert('Your session has expired. Please log in again.');
+        logout();
+        openAuthModal('login');
+      } else {
+        alert(data.error);
+      }
+      return;
+    }
     if (data.url) window.location.href = data.url;
   } catch {
     alert('Unable to process purchase right now.');
