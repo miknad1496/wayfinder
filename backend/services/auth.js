@@ -112,8 +112,11 @@ function generateToken() {
 }
 
 function isTokenExpired(tokenCreatedAt) {
-  if (!tokenCreatedAt) return true;
+  // If tokenCreatedAt is missing (legacy user), treat as NOT expired
+  // — the token will be backfilled on next verifyToken call
+  if (!tokenCreatedAt) return false;
   const created = new Date(tokenCreatedAt).getTime();
+  if (isNaN(created)) return false; // malformed date — don't lock out user
   const now = Date.now();
   const ttlMs = TOKEN_TTL_DAYS * 24 * 60 * 60 * 1000;
   return (now - created) > ttlMs;
@@ -351,7 +354,6 @@ export async function logoutUser(token) {
 export async function verifyToken(token) {
   if (!token) return null;
 
-  // Constant-time-ish token comparison to prevent timing attacks
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
@@ -360,12 +362,22 @@ export async function verifyToken(token) {
       if (user.token === token) {
         // Check token expiration
         if (isTokenExpired(user.tokenCreatedAt)) {
-          return null; // Token expired — must re-login
+          console.log(`[Auth] Token expired for ${user.email} — must re-login`);
+          return null;
         }
+
+        // Backfill tokenCreatedAt for legacy users missing the field
+        if (!user.tokenCreatedAt) {
+          user.tokenCreatedAt = new Date().toISOString();
+          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+          console.log(`[Auth] Backfilled tokenCreatedAt for legacy user ${user.email}`);
+        }
+
         return sanitizeUser(user);
       }
     }
-  } catch {
+  } catch (err) {
+    console.error('[Auth] verifyToken error:', err.message);
     return null;
   }
 

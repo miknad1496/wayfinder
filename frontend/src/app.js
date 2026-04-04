@@ -1155,7 +1155,14 @@ async function handlePlanUpgrade(plan) {
 
     const data = await res.json();
     if (data.error) {
-      alert(data.error);
+      // If auth failed, prompt re-login instead of confusing error
+      if (res.status === 401) {
+        alert('Your session has expired. Please log in again to upgrade.');
+        logout();
+        openAuthModal('login');
+      } else {
+        alert(data.error);
+      }
       return;
     }
 
