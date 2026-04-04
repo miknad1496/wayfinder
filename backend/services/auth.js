@@ -50,9 +50,9 @@ const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com')
   .map(e => e.toLowerCase().trim())
   .filter(Boolean);
 const PLAN_LIMITS = {
-  free:  { enginePerDay: 3,  dailyTokens: 50000,   monthlyTokens: null,     invites: 1  },
-  pro:   { enginePerDay: 10, dailyTokens: 250000,  monthlyTokens: 5000000,  invites: 5  },
-  elite: { enginePerDay: 20, dailyTokens: 500000,  monthlyTokens: 12000000, invites: 10 },
+  free:  { enginePerDay: 3,  dailyTokens: 25000,   monthlyTokens: null,      invites: 1,  messagesPerDay: 10, messagesPerMonth: 30  },
+  pro:   { enginePerDay: 10, dailyTokens: 150000,  monthlyTokens: 3000000,   invites: 5,  messagesPerDay: 20, messagesPerMonth: 60  },
+  elite: { enginePerDay: 20, dailyTokens: 300000,  monthlyTokens: 8000000,   invites: 10, messagesPerDay: 50, messagesPerMonth: 200 },
 };
 
 // Feature access control
@@ -813,6 +813,118 @@ export async function recordTokenUsage(token, tokensUsed) {
   }
 }
 
+// ─── Message Usage Tracking ─────────────────────────────────────────
+// Tracks messages per day and per month, separate from token tracking.
+// All routing modes count (SLM, Haiku Advisor, Welcome Desk, Engine).
+
+/**
+ * Check daily + monthly message usage. Returns { allowed, daily, monthly, upgradeReason }.
+ */
+export async function checkMessageUsage(token) {
+  if (!token) return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
+
+  const today = new Date().toISOString().slice(0, 10);
+  const thisMonth = new Date().toISOString().slice(0, 7);
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        let dirty = false;
+        const admin = isAdmin(user.email);
+        const vip = isVIP(user.email);
+        const plan = vip ? 'elite' : (user.plan === 'premium' ? 'pro' : (user.plan || 'free'));
+        const limits = (admin || vip) ? getPlanLimits('elite') : getPlanLimits(plan);
+
+        // Daily reset
+        if ((user.messageLastDayReset || '') !== today) {
+          user.messagesUsedToday = 0;
+          user.messageLastDayReset = today;
+          dirty = true;
+        }
+        // Monthly reset
+        if ((user.messageLastMonthReset || '') !== thisMonth) {
+          user.messagesUsedMonth = 0;
+          user.messageLastMonthReset = thisMonth;
+          dirty = true;
+        }
+
+        if (dirty) {
+          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        }
+
+        const dailyUsed = user.messagesUsedToday || 0;
+        const monthlyUsed = user.messagesUsedMonth || 0;
+        const dailyLimit = limits.messagesPerDay;
+        const monthlyLimit = limits.messagesPerMonth;
+
+        const dailyOk = dailyLimit === null || dailyUsed < dailyLimit;
+        const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
+
+        let upgradeReason = null;
+        if (!dailyOk) upgradeReason = 'daily_messages';
+        else if (!monthlyOk) upgradeReason = 'monthly_messages';
+
+        return {
+          allowed: dailyOk && monthlyOk,
+          upgradeReason,
+          daily: {
+            used: dailyUsed,
+            limit: dailyLimit,
+            remaining: dailyLimit !== null ? Math.max(0, dailyLimit - dailyUsed) : null
+          },
+          monthly: {
+            used: monthlyUsed,
+            limit: monthlyLimit,
+            remaining: monthlyLimit !== null ? Math.max(0, monthlyLimit - monthlyUsed) : null
+          }
+        };
+      }
+    }
+  } catch {
+    return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
+  }
+  return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
+}
+
+/**
+ * Record one message for today + this month.
+ */
+export async function recordMessageUsage(token) {
+  if (!token) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+  const thisMonth = new Date().toISOString().slice(0, 7);
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        // Daily reset
+        if ((user.messageLastDayReset || '') !== today) {
+          user.messagesUsedToday = 0;
+          user.messageLastDayReset = today;
+        }
+        // Monthly reset
+        if ((user.messageLastMonthReset || '') !== thisMonth) {
+          user.messagesUsedMonth = 0;
+          user.messageLastMonthReset = thisMonth;
+        }
+        user.messagesUsedToday = (user.messagesUsedToday || 0) + 1;
+        user.messagesUsedMonth = (user.messagesUsedMonth || 0) + 1;
+        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        return;
+      }
+    }
+  } catch {
+    // Non-critical
+  }
+}
+
 /**
  * Update user plan and Stripe-related fields.
  */
@@ -1036,6 +1148,22 @@ function sanitizeUser(user) {
       limit: limits.monthlyTokens,
       remaining: Math.max(0, limits.monthlyTokens - (user.tokenMonthReset === thisMonth ? (user.tokensUsedMonth || 0) : 0))
     } : null,
+    messageUsage: {
+      daily: {
+        used: user.messageLastDayReset === today ? (user.messagesUsedToday || 0) : 0,
+        limit: limits.messagesPerDay,
+        remaining: limits.messagesPerDay !== null
+          ? Math.max(0, limits.messagesPerDay - (user.messageLastDayReset === today ? (user.messagesUsedToday || 0) : 0))
+          : null
+      },
+      monthly: {
+        used: user.messageLastMonthReset === thisMonth ? (user.messagesUsedMonth || 0) : 0,
+        limit: limits.messagesPerMonth,
+        remaining: limits.messagesPerMonth !== null
+          ? Math.max(0, limits.messagesPerMonth - (user.messageLastMonthReset === thisMonth ? (user.messagesUsedMonth || 0) : 0))
+          : null
+      }
+    },
     essayReviewsRemaining: (admin || vip) ? 999 : (user.essayReviewsRemaining || 0),
     admissionsProfile: user.admissionsProfile || null,
     isAdmin: admin,

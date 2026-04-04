@@ -443,7 +443,9 @@ async function sendMessage() {
       const error = new Error(err.error || `Server error (${response.status})`);
       // Tag error type for friendly messaging
       if (response.status === 429) {
-        error.errorType = err.error?.includes('token') ? 'token_limit'
+        error.errorType = err.upgradeReason === 'daily_messages' ? 'daily_message_limit'
+          : err.upgradeReason === 'monthly_messages' ? 'monthly_message_limit'
+          : err.error?.includes('token') ? 'token_limit'
           : err.error?.includes('Engine') ? 'engine_limit'
           : 'rate_limit';
       }
@@ -460,6 +462,11 @@ async function sendMessage() {
     if (data.engineRemaining !== null && data.engineRemaining !== undefined) {
       engineRemaining = data.engineRemaining;
       updateEngineUI();
+    }
+
+    // Update message usage counter
+    if (data.messageUsage) {
+      updateMessageCounter(data.messageUsage);
     }
 
     typingEl.remove();
@@ -661,7 +668,11 @@ function appendError(message, errorType = null) {
   el.className = 'error-message';
 
   // Friendly, context-aware error messages
-  if (errorType === 'rate_limit' || /too many requests/i.test(message)) {
+  if (errorType === 'daily_message_limit') {
+    el.innerHTML = `<strong>You've reached your daily message limit.</strong> Your messages reset tomorrow. <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for more daily messages.`;
+  } else if (errorType === 'monthly_message_limit') {
+    el.innerHTML = `<strong>You've used all your messages this month.</strong> <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for unlimited messaging.`;
+  } else if (errorType === 'rate_limit' || /too many requests/i.test(message)) {
     el.innerHTML = `<strong>Hang tight!</strong> You're sending messages faster than we can keep up. Give it a few seconds and try again.`;
   } else if (errorType === 'token_limit' || /token limit/i.test(message) || /daily.*limit/i.test(message)) {
     el.innerHTML = `<strong>You've run out of tokens for today.</strong> Your tokens reset tomorrow. Want more? <a href="#" onclick="event.preventDefault(); openUpgrade();" style="color: #2563eb; text-decoration: underline;">Upgrade your plan</a> for higher token limits.`;
@@ -761,6 +772,47 @@ function updateEngineUI() {
       modelBadge.style.display = 'none';
     }
   }
+}
+
+function updateMessageCounter(msgUsage) {
+  const counter = $('messageCounter');
+  if (!counter) return;
+
+  // Only show counter for plans with limits
+  const dailyLimit = msgUsage.daily?.limit;
+  const monthlyLimit = msgUsage.monthly?.limit;
+  if (dailyLimit === null && monthlyLimit === null) {
+    counter.style.display = 'none';
+    return;
+  }
+
+  counter.style.display = 'inline';
+
+  // Show the most relevant limit (whichever is closer to hitting)
+  let text = '';
+  let severity = '';
+
+  if (dailyLimit !== null) {
+    const remaining = msgUsage.daily.remaining;
+    text = `${remaining}/${dailyLimit} messages today`;
+    if (remaining <= 2) severity = 'critical';
+    else if (remaining <= 5) severity = 'warning';
+  }
+
+  if (monthlyLimit !== null) {
+    const mRemaining = msgUsage.monthly.remaining;
+    const mText = `${mRemaining}/${monthlyLimit} this month`;
+    if (dailyLimit !== null) {
+      text += ` · ${mText}`;
+    } else {
+      text = mText;
+    }
+    if (mRemaining <= 5) severity = 'critical';
+    else if (mRemaining <= 10) severity = severity || 'warning';
+  }
+
+  counter.textContent = text;
+  counter.className = 'message-counter' + (severity ? ` ${severity}` : '');
 }
 
 async function fetchEngineUsage() {
@@ -1255,6 +1307,11 @@ async function submitLogin() {
     loadChatHistory();
     closeAuthModal();
 
+    // Initialize message usage counter
+    if (currentUser.messageUsage) {
+      updateMessageCounter(currentUser.messageUsage);
+    }
+
     sessionId = null;
     localStorage.removeItem('wayfinder_session');
   } catch {
@@ -1341,6 +1398,10 @@ async function checkAuth() {
       updateGreeting();
       fetchEngineUsage();
       loadChatHistory();
+      // Initialize message usage counter
+      if (currentUser.messageUsage) {
+        updateMessageCounter(currentUser.messageUsage);
+      }
     } else {
       authToken = null;
       localStorage.removeItem('wayfinder_token');

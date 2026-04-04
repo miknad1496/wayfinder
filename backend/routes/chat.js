@@ -5,7 +5,7 @@ import { chatSLM, shouldUseSLM, qualityGate, isSLMAvailable, routeDomain, warmUp
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
-import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage } from '../services/auth.js';
+import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
 import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
 import { captureConversationMemory, captureTrainingPair } from '../services/conversation-memory.js';
 import { performance } from 'perf_hooks';
@@ -256,7 +256,31 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // Check daily token limits for authenticated users
+    // Check daily + monthly message limits for authenticated users
+    if (auth?.token) {
+      const msgUsage = await checkMessageUsage(auth.token);
+      if (!msgUsage.allowed) {
+        tEvent.outcome.http_status = 429;
+        tEvent.outcome.error = 'message_limit_exceeded';
+        tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;
+        logTelemetry(tEvent);
+
+        const reason = msgUsage.upgradeReason === 'daily_messages'
+          ? `You've reached your daily message limit (${msgUsage.daily.limit} messages/day). Come back tomorrow or upgrade for more.`
+          : `You've reached your monthly message limit (${msgUsage.monthly.limit} messages/month). Upgrade your plan for unlimited messaging.`;
+
+        return res.status(429).json({
+          error: reason,
+          messageUsage: {
+            daily: msgUsage.daily,
+            monthly: msgUsage.monthly
+          },
+          upgradeReason: msgUsage.upgradeReason
+        });
+      }
+    }
+
+    // Check daily token limits for authenticated users (Claude API calls)
     if (auth?.token) {
       const tokenUsage = await checkTokenUsage(auth.token);
       if (!tokenUsage.allowed) {
@@ -504,7 +528,14 @@ router.post('/', async (req, res) => {
       tEvent.rag.sources_count = result.retrievedSources.length;
     }
 
-    // Record token usage for authenticated users (only for Claude calls — SLM is free)
+    // Record message usage for authenticated users (ALL modes count toward message limits)
+    if (auth?.token) {
+      recordMessageUsage(auth.token).catch(err => {
+        console.error('[Background] Message usage recording failed:', err.message);
+      });
+    }
+
+    // Record token usage for authenticated users (only for Claude API calls — SLM tokens are free/separate)
     if (auth?.token && result.usage && result.mode !== 'slm') {
       const totalTokens = (result.usage.inputTokens || 0) + (result.usage.outputTokens || 0);
       if (totalTokens > 0) {
@@ -559,12 +590,14 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // Get updated engine and token usage for response
+    // Get updated engine, token, and message usage for response
     let engineUsage = null;
     let tokenUsageInfo = null;
+    let messageUsageInfo = null;
     if (auth?.token) {
       engineUsage = await getEngineUsage(auth.token);
       tokenUsageInfo = await checkTokenUsage(auth.token);
+      messageUsageInfo = await checkMessageUsage(auth.token);
     }
 
     // ─── TELEMETRY: success ──────────────────────────────────
@@ -584,6 +617,11 @@ router.post('/', async (req, res) => {
         used: tokenUsageInfo.tokensUsed,
         remaining: tokenUsageInfo.tokensRemaining,
         limit: tokenUsageInfo.limit
+      } : null,
+      // Message usage for frontend
+      messageUsage: messageUsageInfo ? {
+        daily: messageUsageInfo.daily,
+        monthly: messageUsageInfo.monthly
       } : null,
       // Signal frontend to start polling /api/chat/advisor-status
       advisorWarming: result.mode === 'haiku_intake' && isSLMAvailable(),
