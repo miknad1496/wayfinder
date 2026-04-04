@@ -2287,11 +2287,109 @@ function setupToolListeners() {
     if (e.key === 'Enter') { e.preventDefault(); searchFinancialAid(); }
   });
 
-  // Grants state change
+  // Grants state change + filter toggle
   if ($('grantsState')) $('grantsState').addEventListener('change', searchStateGrants);
+  document.querySelectorAll('.grants-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.grants-toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyGrantsFilter(btn.dataset.grantsFilter);
+    });
+  });
+
+  // School picker
+  initSchoolPicker();
 
   // Strategy button
   if ($('strategyBtn')) $('strategyBtn').addEventListener('click', generateMyStrategy);
+}
+
+// ─── School Picker ────────────────────────────────────────────
+let schoolPickerData = [];
+let selectedSchools = [];
+
+async function initSchoolPicker() {
+  const input = $('schoolPickerSearch');
+  if (!input) return;
+
+  // Load school list from API
+  try {
+    const res = await fetch(`${API_BASE}/financial-aid/schools?limit=500`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      schoolPickerData = (data.results || []).map(s => ({ id: s.id, name: s.name, type: s.type, state: s.state }));
+    }
+  } catch { /* use empty list if API fails */ }
+
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    const dropdown = $('schoolPickerDropdown');
+    if (query.length < 2) { dropdown.style.display = 'none'; return; }
+
+    const matches = schoolPickerData
+      .filter(s => !selectedSchools.find(sel => sel.id === s.id))
+      .filter(s => s.name.toLowerCase().includes(query))
+      .slice(0, 15);
+
+    if (matches.length === 0) {
+      dropdown.innerHTML = '<div class="school-picker-option" style="color:#94a3b8;">No matches found</div>';
+    } else {
+      dropdown.innerHTML = matches.map(s =>
+        `<div class="school-picker-option" data-school-id="${s.id}" data-school-name="${escapeHtml(s.name)}">
+          <span>${escapeHtml(s.name)}</span>
+          <span class="school-type">${s.type || ''} ${s.state || ''}</span>
+        </div>`
+      ).join('');
+    }
+    dropdown.style.display = 'block';
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') $('schoolPickerDropdown').style.display = 'none';
+  });
+
+  $('schoolPickerDropdown').addEventListener('click', (e) => {
+    const opt = e.target.closest('.school-picker-option');
+    if (!opt || !opt.dataset.schoolId) return;
+    if (selectedSchools.length >= 10) return;
+    selectedSchools.push({ id: opt.dataset.schoolId, name: opt.dataset.schoolName });
+    input.value = '';
+    $('schoolPickerDropdown').style.display = 'none';
+    renderSelectedSchools();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#schoolPickerContainer')) {
+      $('schoolPickerDropdown').style.display = 'none';
+    }
+  });
+}
+
+function renderSelectedSchools() {
+  const container = $('schoolPickerSelected');
+  container.innerHTML = selectedSchools.map((s, i) =>
+    `<span class="school-picker-chip">${escapeHtml(s.name)}<button onclick="removeSchoolPick(${i})">&times;</button></span>`
+  ).join('');
+  // Update hidden input
+  $('strategySchools').value = selectedSchools.map(s => s.name).join(', ');
+}
+
+function removeSchoolPick(index) {
+  selectedSchools.splice(index, 1);
+  renderSelectedSchools();
+}
+
+// ─── Grants Filter Toggle ─────────────────────────────────────
+function applyGrantsFilter(filter) {
+  const results = $('grantsResults');
+  if (!results) return;
+  const federalSections = results.querySelectorAll('[data-grant-type="federal"]');
+  const stateSections = results.querySelectorAll('[data-grant-type="state"]');
+
+  federalSections.forEach(el => el.style.display = (filter === 'state') ? 'none' : '');
+  stateSections.forEach(el => el.style.display = (filter === 'federal') ? 'none' : '');
 }
 
 function setupModalClose(modalId, closeId) {
@@ -2799,11 +2897,12 @@ function renderFinaidResults(results, fullAccess, previewMessage, totalCount) {
     const cb = school.costBreakdown;
     let costDetail = '';
     if (cb && fullAccess) {
+      const isPublic = school.type === 'public';
       costDetail = `<div class="finaid-cost-breakdown">
-        <span>Tuition: $${(cb.tuition || 0).toLocaleString()}</span>
+        ${school.inStateTuition ? `<span>In-State Tuition: $${school.inStateTuition.toLocaleString()}</span>` : ''}
+        <span>${isPublic ? 'Out-of-State Tuition' : 'Tuition'}: $${(cb.tuition || 0).toLocaleString()}</span>
         <span>Fees: $${(cb.fees || 0).toLocaleString()}</span>
         <span>Room &amp; Board: $${(cb.roomBoard || 0).toLocaleString()}</span>
-        ${school.inStateTuition ? `<span>In-State Tuition: $${school.inStateTuition.toLocaleString()}</span>` : ''}
       </div>`;
     }
     html += `<div class="tool-card ${school._preview ? 'preview' : ''}">
@@ -2862,21 +2961,21 @@ async function searchStateGrants() {
       const loans = federalPrograms.filter(p => p.type === 'loan');
       const workStudy = federalPrograms.filter(p => p.type === 'work-study');
 
-      html += '<div class="grants-section-header">Federal Grants</div>';
+      html += '<div data-grant-type="federal" class="grants-section-header">Federal Grants</div>';
       for (const p of grants) {
-        html += renderGrantCard(p, 'federal');
+        html += `<div data-grant-type="federal">${renderGrantCard(p, 'federal')}</div>`;
       }
 
       if (workStudy.length) {
-        html += '<div class="grants-section-header">Federal Work-Study</div>';
+        html += '<div data-grant-type="federal" class="grants-section-header">Federal Work-Study</div>';
         for (const p of workStudy) {
-          html += renderGrantCard(p, 'federal');
+          html += `<div data-grant-type="federal">${renderGrantCard(p, 'federal')}</div>`;
         }
       }
 
-      html += '<div class="grants-section-header">Federal Loans</div>';
+      html += '<div data-grant-type="federal" class="grants-section-header">Federal Loans</div>';
       for (const p of loans) {
-        html += `<div class="tool-card">
+        html += `<div data-grant-type="federal"><div class="tool-card">
           <div class="tool-card-header">
             <h4>${escapeHtml(p.name)}</h4>
             <span class="tool-tag amount">${p.maxAward ? `Up to $${p.maxAward.toLocaleString()}` : 'Varies'}</span>
@@ -2888,23 +2987,23 @@ async function searchStateGrants() {
           </div>
           ${p.description ? `<p class="tool-card-desc">${escapeHtml(p.description)}</p>` : ''}
           ${p.eligibility ? `<p class="tool-card-desc" style="font-size:12px;color:#94a3b8;"><strong>Eligibility:</strong> ${escapeHtml(p.eligibility)}</p>` : ''}
-        </div>`;
+        </div></div>`;
       }
     }
 
     // ── State Programs Section ──
     if (stateResults.length > 0) {
       const stateName = $('grantsState')?.value ? $('grantsState').selectedOptions[0]?.text || 'Selected State' : 'All States';
-      html += `<div class="grants-section-header">${escapeHtml(stateName)} — ${stateResults.length} Program${stateResults.length !== 1 ? 's' : ''}</div>`;
+      html += `<div data-grant-type="state" class="grants-section-header">${escapeHtml(stateName)} — ${stateResults.length} Program${stateResults.length !== 1 ? 's' : ''}</div>`;
       for (const g of stateResults) {
-        html += renderGrantCard(g, 'state');
+        html += `<div data-grant-type="state">${renderGrantCard(g, 'state')}</div>`;
       }
     } else if ($('grantsState')?.value) {
-      html += '<div class="grants-section-header">State Programs</div>';
-      html += '<div class="tool-empty"><p>No state programs found for this state.</p></div>';
+      html += '<div data-grant-type="state" class="grants-section-header">State Programs</div>';
+      html += '<div data-grant-type="state" class="tool-empty"><p>No state programs found for this state.</p></div>';
     } else {
-      html += '<div class="grants-section-header">State Programs</div>';
-      html += '<div class="tool-empty"><p>Select a state to view state-specific grants and scholarships.</p></div>';
+      html += '<div data-grant-type="state" class="grants-section-header">State Programs</div>';
+      html += '<div data-grant-type="state" class="tool-empty"><p>Select a state to view state-specific grants and scholarships.</p></div>';
     }
 
     $('grantsResults').innerHTML = html;
@@ -2941,15 +3040,21 @@ async function generateMyStrategy() {
   const state = $('strategyState')?.value;
   const gpa = $('strategyGPA')?.value;
   const schools = $('strategySchools')?.value;
+  const context = $('strategyContext')?.value || '';
 
-  if (!income || !schools) {
-    $('strategyResults').innerHTML = '<p style="color:#f87171;">Please enter at least your household income and target schools.</p>';
+  if (!income || (!schools && selectedSchools.length === 0)) {
+    $('strategyResults').innerHTML = '<p style="color:#f87171;">Please enter at least your household income and select target schools.</p>';
     return;
   }
 
   $('strategyLoading').style.display = 'flex';
   $('strategyResults').innerHTML = '';
   $('strategyBtn').disabled = true;
+
+  // Use selected schools from picker, or fall back to hidden input value
+  const schoolList = selectedSchools.length > 0
+    ? selectedSchools.map(s => s.name)
+    : schools.split(',').map(s => s.trim()).filter(Boolean);
 
   try {
     const res = await fetch(`${API_BASE}/financial-aid/my-strategy`, {
@@ -2964,7 +3069,8 @@ async function generateMyStrategy() {
         familySize: parseInt(familySize) || 4,
         state: state || '',
         studentGPA: parseFloat(gpa) || 0,
-        targetSchools: schools.split(',').map(s => s.trim()).filter(Boolean)
+        targetSchools: schoolList,
+        additionalContext: context.trim().slice(0, 500)
       })
     });
     const data = await res.json();
@@ -2997,10 +3103,10 @@ async function generateMyStrategy() {
             ${s.meetsFullNeed ? '<span class="tool-tag free">Meets Full Need</span>' : ''}
           </div>
           ${cb ? `<div class="finaid-cost-breakdown">
-            <span>Tuition: $${(cb.tuition || 0).toLocaleString()}</span>
+            ${s.inStateTuition ? `<span>In-State Tuition: $${s.inStateTuition.toLocaleString()}</span>` : ''}
+            <span>${s.inStateTuition ? 'Out-of-State' : 'Tuition'}: $${(cb.tuition || 0).toLocaleString()}</span>
             <span>Fees: $${(cb.fees || 0).toLocaleString()}</span>
             <span>Room &amp; Board: $${(cb.roomBoard || 0).toLocaleString()}</span>
-            ${s.inStateTuition ? `<span>In-State: $${s.inStateTuition.toLocaleString()}</span>` : ''}
           </div>` : ''}
         </div>`;
       }

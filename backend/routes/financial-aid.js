@@ -184,6 +184,24 @@ function previewSchool(s) {
   };
 }
 
+// ─── GET /api/financial-aid/schools ──────────────────────────── (lightweight list for picker)
+router.get('/schools', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+
+    const results = financialAidData.schools.map(s => ({
+      id: s.id, name: s.name, type: s.type, state: s.state
+    }));
+    results.sort((a, b) => a.name.localeCompare(b.name));
+    res.json({ results });
+  } catch (err) {
+    console.error('Schools list error:', err);
+    res.status(500).json({ error: 'Failed to load school list' });
+  }
+});
+
 // ─── GET /api/financial-aid/search ─────────────────────────────
 router.get('/search', async (req, res) => {
   try {
@@ -433,7 +451,8 @@ router.post('/my-strategy', async (req, res) => {
       familySize,
       state,
       studentGPA,
-      targetSchools
+      targetSchools,
+      additionalContext
     } = req.body;
 
     // Validate required fields with type checking
@@ -569,6 +588,16 @@ Create a comprehensive, personalized financial aid strategy covering:
 
 7. **Appeal Strategy**: Specific tactics for negotiating better offers, including which schools are most likely to match offers.
 
+8. **Smart Financial Moves**: Include lesser-known but powerful strategies, such as:
+   - Students with their own Roth IRA can withdraw contributions (not earnings) penalty-free for qualified education expenses
+   - 529 plan strategies and grandparent-owned 529 FAFSA advantages under current rules
+   - FAFSA asset protection allowance and how to position assets before filing
+   - If the family has multiple children, consider timing of enrollment for FAFSA sibling benefits
+   - American Opportunity Tax Credit ($2,500/year for 4 years) and Lifetime Learning Credit strategies
+   - Employer tuition reimbursement programs that parents may have access to
+   Only include tips that are relevant to this family's specific financial profile.
+
+${additionalContext ? `\nAdditional Context from Student:\n${String(additionalContext).slice(0, 500)}\n\nFactor this context into your recommendations where relevant.\n` : ''}
 Use markdown formatting with headers, tables, and bullet points for clarity. Be specific — cite actual program names, dollar amounts, and deadlines.
 `;
 
@@ -581,7 +610,18 @@ Use markdown formatting with headers, tables, and bullet points for clarity. Be 
       const response = await client.messages.create({
         model: process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
         max_tokens: 4000,
-        system: 'You are an expert college financial aid advisor with deep knowledge of FAFSA, CSS Profile, federal aid programs, state grants, and institutional aid policies. Provide a comprehensive, data-driven financial aid strategy. Use markdown formatting (headers, tables, bullet points, checkboxes) to make the output scannable and professional. Always cite specific dollar amounts, program names, and deadlines. When estimating federal aid eligibility, use the provided income data to give realistic estimates. Be thorough but actionable.',
+        system: `You are an expert college financial aid advisor with deep knowledge of FAFSA, CSS Profile, federal aid programs, state grants, institutional aid policies, and sophisticated tax/savings strategies. Provide a comprehensive, data-driven financial aid strategy. Use markdown formatting (headers, tables, bullet points, checkboxes) to make the output scannable and professional. Always cite specific dollar amounts, program names, and deadlines. When estimating federal aid eligibility, use the provided income data to give realistic estimates.
+
+Key expertise areas to draw from when relevant:
+- Roth IRA education strategy: Contributions (not earnings) can be withdrawn penalty-free and tax-free for qualified education expenses. This is a powerful tool many families overlook.
+- 529 plan optimization: Grandparent-owned 529s no longer count against FAFSA (as of 2024 FAFSA simplification). Recommend front-loading contributions.
+- FAFSA asset positioning: Money in retirement accounts is excluded from FAFSA. Small businesses with <100 employees are excluded. Time asset moves before filing.
+- Tax credits: American Opportunity Tax Credit ($2,500/yr for 4 years) and Lifetime Learning Credit — never stack these, choose the better one per year.
+- Sibling enrollment timing: Having multiple children in college simultaneously no longer splits the EFC under SAI, but can still impact institutional aid at CSS Profile schools.
+- Appeal leverage: Use competing offers from peer schools. Best timing is within 2 weeks of receiving award letters.
+- Professional judgment: Families can request FAFSA income adjustments for job loss, divorce, or unusual circumstances.
+
+Be thorough but actionable. Present information as a trusted advisor who knows insider strategies.`,
         messages: [
           {
             role: 'user',

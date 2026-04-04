@@ -1154,8 +1154,17 @@
             </div>
           </div>
           <div style="margin:12px 0;">
-            <label style="color:#94a3b8;font-size:12px;display:block;margin-bottom:4px;">Target Schools (comma-separated)</label>
-            <textarea id="strategySchools" class="tool-filter-search" placeholder="Harvard, UCLA, Alabama, Spelman..." style="width:100%;min-height:60px;resize:vertical;font-family:inherit;"></textarea>
+            <label style="color:#94a3b8;font-size:12px;display:block;margin-bottom:4px;">Target Schools (select up to 10)</label>
+            <div id="schoolPickerContainer" class="school-picker-container">
+              <input type="text" id="schoolPickerSearch" class="tool-filter-search" placeholder="Type to search schools..." autocomplete="off" style="width:100%;">
+              <div id="schoolPickerDropdown" class="school-picker-dropdown" style="display:none;"></div>
+              <div id="schoolPickerSelected" class="school-picker-selected"></div>
+            </div>
+            <input type="hidden" id="strategySchools" value="">
+          </div>
+          <div style="margin:0 0 12px 0;">
+            <label style="color:#94a3b8;font-size:12px;display:block;margin-bottom:4px;">Additional Context (optional)</label>
+            <textarea id="strategyContext" class="tool-filter-search" placeholder="e.g. Planning to apply early decision, have a sibling in college, interested in merit scholarships..." style="width:100%;min-height:50px;resize:vertical;font-family:inherit;font-size:13px;"></textarea>
           </div>
           <button id="strategyBtn" class="form-btn" style="margin-bottom:16px;">Generate Strategy</button>
           <div id="strategyResults" class="tool-results"></div>
@@ -1164,9 +1173,9 @@
           </div>
         </div>
 
-        <!-- Tab 3: State Grants -->
+        <!-- Tab 3: Grants & Aid -->
         <div id="finaidTabGrants" style="display:none;">
-          <div class="tool-filters">
+          <div class="tool-filters" style="flex-wrap:wrap;gap:10px;">
             <select id="grantsState" class="tool-filter-select">
             <option value="">Select State</option>
             <option value="AL">Alabama</option>
@@ -1222,6 +1231,11 @@
             <option value="WY">Wyoming</option>
 
             </select>
+            <div class="grants-toggle-group">
+              <button class="grants-toggle-btn active" data-grants-filter="all">All</button>
+              <button class="grants-toggle-btn" data-grants-filter="federal">Federal</button>
+              <button class="grants-toggle-btn" data-grants-filter="state">State</button>
+            </div>
           </div>
           <div id="grantsResults" class="tool-results"></div>
           <div id="grantsLoading" class="tool-loading" style="display:none;">
