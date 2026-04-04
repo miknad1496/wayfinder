@@ -20,6 +20,14 @@ if defined SCORECARD_API_KEY (
 )
 
 node backend/scrapers/college-scorecard-scraper.js
+
 echo.
-echo Done! Check backend\data\scraped\financial-aid-db.json
+echo ==========================================
+echo  Auto-committing and pushing to GitHub...
+echo ==========================================
+git add backend\data\scraped\financial-aid-db.json
+git commit -m "Update financial-aid-db.json with verified College Scorecard data"
+git push
+echo.
+echo Done! Data pushed to GitHub - Render will auto-deploy.
 pause
