@@ -31,7 +31,12 @@ const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/miknad1496/wayfinder/m
 
 // ─── School abbreviation / alias lookup ─────────────────────────
 const SCHOOL_ALIASES = {
-  'uw': ['university of washington'],
+  'uw': ['university of washington - seattle'],
+  'uw seattle': ['university of washington - seattle'],
+  'uw bothell': ['university of washington - bothell'],
+  'uwb': ['university of washington - bothell'],
+  'uw tacoma': ['university of washington - tacoma'],
+  'uwt': ['university of washington - tacoma'],
   'uw madison': ['university of wisconsin'],
   'wisc': ['university of wisconsin'],
   'mit': ['massachusetts institute of technology'],

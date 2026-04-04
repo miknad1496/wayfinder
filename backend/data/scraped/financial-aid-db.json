@@ -56,7 +56,7 @@
       "type": "public",
       "state": "AZ",
       "region": "West",
-      "stickerPrice": 30080,
+      "stickerPrice": 51329,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -88,14 +88,14 @@
       ],
       "keyInsight": "ASU meets full demonstrated need; merit scholarships available for qualified applicants.",
       "costBreakdown": {
-        "tuition": 15360,
-        "fees": 640,
-        "roomBoard": 8000,
+        "tuition": 34014,
+        "fees": 685,
+        "roomBoard": 10550,
         "booksSupplies": 1920,
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 11822
     },
     {
       "id": "bates-001",
@@ -889,7 +889,7 @@
       "type": "public",
       "state": "FL",
       "region": "Southeast",
-      "stickerPrice": 21120,
+      "stickerPrice": 34917,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -921,14 +921,14 @@
       ],
       "keyInsight": "FAMU offers very affordable public HBCU education; Florida residents benefit from low in-state tuition.",
       "costBreakdown": {
-        "tuition": 11000,
-        "fees": 440,
-        "roomBoard": 5500,
+        "tuition": 17585,
+        "fees": 0,
+        "roomBoard": 13152,
         "booksSupplies": 1320,
         "personal": 1320,
         "transportation": 1540
       },
-      "inStateTuition": 8360
+      "inStateTuition": 5645
     },
     {
       "id": "fordham-001",
@@ -1028,7 +1028,7 @@
       "type": "public",
       "state": "GA",
       "region": "Southeast",
-      "stickerPrice": 29140,
+      "stickerPrice": 55367,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -1062,14 +1062,14 @@
       ],
       "keyInsight": "Georgia Tech meets full demonstrated need for admitted students; in-state tuition is reasonable for a top engineering school.",
       "costBreakdown": {
-        "tuition": 14880,
-        "fees": 620,
-        "roomBoard": 7750,
-        "booksSupplies": 1860,
-        "personal": 1860,
-        "transportation": 2170
+        "tuition": 36171,
+        "fees": 1200,
+        "roomBoard": 13996,
+        "booksSupplies": 800,
+        "personal": 2000,
+        "transportation": 1200
       },
-      "inStateTuition": 11780
+      "inStateTuition": 12359
     },
     {
       "id": "grinnell-001",
@@ -1110,47 +1110,6 @@
         "booksSupplies": 4442,
         "personal": 3554,
         "transportation": 1777
-      }
-    },
-    {
-      "id": "hamilton-002",
-      "name": "Hamilton College",
-      "type": "private",
-      "state": "NY",
-      "region": "Northeast",
-      "stickerPrice": 89156,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 1800,
-        "30to48k": 4200,
-        "48to75k": 9100,
-        "75to110k": 15000,
-        "over110k": 41500
-      },
-      "aidPolicies": [
-        "No-loan policy under $75k",
-        "Free tuition under $65k",
-        "Meets 100% of demonstrated need"
-      ],
-      "meritScholarships": [],
-      "freeThreshold": 65000,
-      "cssRequired": true,
-      "deadline": "2026-01-01",
-      "tags": [
-        "lac",
-        "need-blind",
-        "generous",
-        "northeast"
-      ],
-      "keyInsight": "Hamilton College meets full demonstrated financial need with grant-only aid and no loans for families under $75k, making quality liberal arts education accessible across income levels.",
-      "costBreakdown": {
-        "tuition": 57951,
-        "fees": 3566,
-        "roomBoard": 17831,
-        "booksSupplies": 4458,
-        "personal": 3566,
-        "transportation": 1783
       }
     },
     {
@@ -1639,7 +1598,7 @@
       "type": "public",
       "state": "NC",
       "region": "Southeast",
-      "stickerPrice": 21620,
+      "stickerPrice": 37743,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -1671,14 +1630,14 @@
       ],
       "keyInsight": "NC A&T offers affordable public HBCU education with strong engineering programs.",
       "costBreakdown": {
-        "tuition": 11040,
-        "fees": 460,
-        "roomBoard": 5750,
+        "tuition": 20941,
+        "fees": 0,
+        "roomBoard": 12432,
         "booksSupplies": 1380,
         "personal": 1380,
         "transportation": 1610
       },
-      "inStateTuition": 8740
+      "inStateTuition": 6879
     },
     {
       "id": "northeastern-001",
@@ -1777,7 +1736,7 @@
       "type": "public",
       "state": "OH",
       "region": "Midwest",
-      "stickerPrice": 29760,
+      "stickerPrice": 64159,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -1810,14 +1769,14 @@
       ],
       "keyInsight": "Ohio State meets full demonstrated need; in-state students benefit from lower tuition.",
       "costBreakdown": {
-        "tuition": 15500,
-        "fees": 620,
-        "roomBoard": 7750,
-        "booksSupplies": 1860,
-        "personal": 1860,
-        "transportation": 2170
+        "tuition": 41751,
+        "fees": 600,
+        "roomBoard": 17808,
+        "booksSupplies": 1000,
+        "personal": 2400,
+        "transportation": 600
       },
-      "inStateTuition": 11780
+      "inStateTuition": 13641
     },
     {
       "id": "pennstate-001",
@@ -1825,7 +1784,7 @@
       "type": "public",
       "state": "PA",
       "region": "Northeast",
-      "stickerPrice": 33120,
+      "stickerPrice": 61690,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -1858,14 +1817,14 @@
       ],
       "keyInsight": "Penn State meets full demonstrated need; early application improves merit scholarship eligibility.",
       "costBreakdown": {
-        "tuition": 17250,
-        "fees": 690,
-        "roomBoard": 8625,
-        "booksSupplies": 2070,
-        "personal": 2070,
-        "transportation": 2415
+        "tuition": 42860,
+        "fees": 630,
+        "roomBoard": 14000,
+        "booksSupplies": 1000,
+        "personal": 2400,
+        "transportation": 800
       },
-      "inStateTuition": 13110
+      "inStateTuition": 20468
     },
     {
       "id": "pomona-001",
@@ -1956,7 +1915,7 @@
       "type": "public",
       "state": "IN",
       "region": "Midwest",
-      "stickerPrice": 27730,
+      "stickerPrice": 46114,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -1990,14 +1949,14 @@
       ],
       "keyInsight": "Purdue meets full demonstrated need with very affordable in-state tuition; engineering students have strong career outcomes.",
       "costBreakdown": {
-        "tuition": 14160,
-        "fees": 590,
-        "roomBoard": 7375,
-        "booksSupplies": 1770,
-        "personal": 1770,
-        "transportation": 2065
+        "tuition": 28520,
+        "fees": 274,
+        "roomBoard": 13720,
+        "booksSupplies": 1000,
+        "personal": 2000,
+        "transportation": 600
       },
-      "inStateTuition": 11210
+      "inStateTuition": 9718
     },
     {
       "id": "rpi-001",
@@ -2092,7 +2051,7 @@
       "type": "public",
       "state": "NJ",
       "region": "Northeast",
-      "stickerPrice": 32900,
+      "stickerPrice": 60830,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2119,14 +2078,14 @@
       ],
       "keyInsight": "Rutgers meets full demonstrated need for admitted students; in-state New Jersey residents benefit from lower tuition.",
       "costBreakdown": {
-        "tuition": 16800,
-        "fees": 700,
-        "roomBoard": 8750,
+        "tuition": 35758,
+        "fees": 3090,
+        "roomBoard": 15332,
         "booksSupplies": 2100,
         "personal": 2100,
         "transportation": 2450
       },
-      "inStateTuition": 13300
+      "inStateTuition": 14933
     },
     {
       "id": "santaclara-001",
@@ -2541,7 +2500,7 @@
       "type": "public",
       "state": "AL",
       "region": "Southeast",
-      "stickerPrice": 28200,
+      "stickerPrice": 61916,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2578,14 +2537,14 @@
       ],
       "keyInsight": "Alabama offers substantial merit scholarships making it very affordable for strong applicants; many out-of-state students get significant aid.",
       "costBreakdown": {
-        "tuition": 14400,
-        "fees": 600,
-        "roomBoard": 7500,
+        "tuition": 35172,
+        "fees": 0,
+        "roomBoard": 21044,
         "booksSupplies": 1800,
         "personal": 1800,
         "transportation": 2100
       },
-      "inStateTuition": 11400
+      "inStateTuition": 12467
     },
     {
       "id": "berkeley-001",
@@ -2593,7 +2552,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 38220,
+      "stickerPrice": 69471,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2620,14 +2579,14 @@
       ],
       "keyInsight": "Berkeley meets full demonstrated need with loan-free aid for low-income families; in-state students benefit greatly.",
       "costBreakdown": {
-        "tuition": 18900,
-        "fees": 840,
-        "roomBoard": 10500,
-        "booksSupplies": 2520,
-        "personal": 2520,
-        "transportation": 2940
+        "tuition": 48726,
+        "fees": 1500,
+        "roomBoard": 15245,
+        "booksSupplies": 1200,
+        "personal": 2000,
+        "transportation": 800
       },
-      "inStateTuition": 15960
+      "inStateTuition": 15978
     },
     {
       "id": "ucla-001",
@@ -2635,7 +2594,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 36855,
+      "stickerPrice": 69690,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2662,14 +2621,14 @@
       ],
       "keyInsight": "UCLA meets full demonstrated need but note that UC aid generally covers tuition; room/board requires separate funding sources.",
       "costBreakdown": {
-        "tuition": 18225,
-        "fees": 810,
-        "roomBoard": 10125,
-        "booksSupplies": 2430,
-        "personal": 2430,
-        "transportation": 2835
+        "tuition": 46121,
+        "fees": 1200,
+        "roomBoard": 18369,
+        "booksSupplies": 1200,
+        "personal": 2000,
+        "transportation": 800
       },
-      "inStateTuition": 15390
+      "inStateTuition": 14233
     },
     {
       "id": "uchicago-001",
@@ -2768,7 +2727,7 @@
       "type": "public",
       "state": "FL",
       "region": "Southeast",
-      "stickerPrice": 25440,
+      "stickerPrice": 46574,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2801,14 +2760,14 @@
       ],
       "keyInsight": "UF meets full demonstrated need with the lowest in-state tuition among top flagships; Florida residents should apply for Bright Futures.",
       "costBreakdown": {
-        "tuition": 13250,
-        "fees": 530,
-        "roomBoard": 6625,
-        "booksSupplies": 1590,
-        "personal": 1590,
-        "transportation": 1855
+        "tuition": 28659,
+        "fees": 1500,
+        "roomBoard": 12615,
+        "booksSupplies": 1000,
+        "personal": 2000,
+        "transportation": 800
       },
-      "inStateTuition": 10070
+      "inStateTuition": 6381
     },
     {
       "id": "uiuc-001",
@@ -2816,7 +2775,7 @@
       "type": "public",
       "state": "IL",
       "region": "Midwest",
-      "stickerPrice": 31200,
+      "stickerPrice": 57212,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2843,14 +2802,14 @@
       ],
       "keyInsight": "UIUC meets full demonstrated need; in-state students benefit from lower tuition and strong state grant programs.",
       "costBreakdown": {
-        "tuition": 16250,
-        "fees": 650,
-        "roomBoard": 8125,
-        "booksSupplies": 1950,
-        "personal": 1950,
-        "transportation": 2275
+        "tuition": 35900,
+        "fees": 3292,
+        "roomBoard": 14020,
+        "booksSupplies": 1000,
+        "personal": 2400,
+        "transportation": 600
       },
-      "inStateTuition": 12350
+      "inStateTuition": 14768
     },
     {
       "id": "miami-001",
@@ -2903,7 +2862,7 @@
       "type": "public",
       "state": "MI",
       "region": "Midwest",
-      "stickerPrice": 30080,
+      "stickerPrice": 82402,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2936,14 +2895,14 @@
       ],
       "keyInsight": "UMich meets full demonstrated need for admitted students; in-state students benefit significantly from lower tuition and aid packaging.",
       "costBreakdown": {
-        "tuition": 15360,
-        "fees": 640,
-        "roomBoard": 8000,
-        "booksSupplies": 1920,
-        "personal": 1920,
-        "transportation": 2240
+        "tuition": 66202,
+        "fees": 0,
+        "roomBoard": 12000,
+        "booksSupplies": 1200,
+        "personal": 2400,
+        "transportation": 600
       },
-      "inStateTuition": 12160
+      "inStateTuition": 19403
     },
     {
       "id": "unc-001",
@@ -2951,7 +2910,7 @@
       "type": "public",
       "state": "NC",
       "region": "Southeast",
-      "stickerPrice": 27260,
+      "stickerPrice": 58168,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -2984,14 +2943,14 @@
       ],
       "keyInsight": "UNC meets full demonstrated need with no-loan policies for low-income students; in-state tuition is exceptionally affordable.",
       "costBreakdown": {
-        "tuition": 13920,
-        "fees": 580,
-        "roomBoard": 7250,
-        "booksSupplies": 1740,
-        "personal": 1740,
-        "transportation": 2030
+        "tuition": 37360,
+        "fees": 1970,
+        "roomBoard": 15038,
+        "booksSupplies": 1000,
+        "personal": 2000,
+        "transportation": 800
       },
-      "inStateTuition": 11020
+      "inStateTuition": 7019
     },
     {
       "id": "notredame-001",
@@ -3132,7 +3091,7 @@
       "type": "public",
       "state": "TX",
       "region": "South",
-      "stickerPrice": 25920,
+      "stickerPrice": 62174,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3165,14 +3124,14 @@
       ],
       "keyInsight": "UT Austin meets full demonstrated need with very low in-state tuition; strong applicants should pursue merit scholarships.",
       "costBreakdown": {
-        "tuition": 13500,
-        "fees": 540,
-        "roomBoard": 6750,
-        "booksSupplies": 1620,
-        "personal": 1620,
-        "transportation": 1890
+        "tuition": 42574,
+        "fees": 1000,
+        "roomBoard": 14000,
+        "booksSupplies": 1000,
+        "personal": 2400,
+        "transportation": 1200
       },
-      "inStateTuition": 10260
+      "inStateTuition": 12217
     },
     {
       "id": "tulsa-001",
@@ -3225,7 +3184,7 @@
       "type": "public",
       "state": "VA",
       "region": "Southeast",
-      "stickerPrice": 28670,
+      "stickerPrice": 78897,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3258,22 +3217,22 @@
       ],
       "keyInsight": "UVA meets full demonstrated need and offers prestigious merit scholarships; in-state tuition provides significant cost savings.",
       "costBreakdown": {
-        "tuition": 14640,
-        "fees": 610,
-        "roomBoard": 7625,
-        "booksSupplies": 1830,
-        "personal": 1830,
-        "transportation": 2135
+        "tuition": 57000,
+        "fees": 4897,
+        "roomBoard": 13000,
+        "booksSupplies": 1200,
+        "personal": 2000,
+        "transportation": 800
       },
-      "inStateTuition": 11590
+      "inStateTuition": 19000
     },
     {
       "id": "uwash-001",
-      "name": "University of Washington",
+      "name": "University of Washington - Seattle",
       "type": "public",
       "state": "WA",
       "region": "West",
-      "stickerPrice": 31490,
+      "stickerPrice": 65256,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3300,56 +3259,14 @@
       ],
       "keyInsight": "University of Washington meets full demonstrated need; in-state students benefit from lower tuition.",
       "costBreakdown": {
-        "tuition": 16080,
-        "fees": 670,
-        "roomBoard": 8375,
-        "booksSupplies": 2010,
-        "personal": 2010,
-        "transportation": 2345
+        "tuition": 36855,
+        "fees": 2409,
+        "roomBoard": 21342,
+        "booksSupplies": 1050,
+        "personal": 2400,
+        "transportation": 1200
       },
-      "inStateTuition": 12730
-    },
-    {
-      "id": "wisconsin-001",
-      "name": "University of Wisconsin-Madison",
-      "type": "public",
-      "state": "WI",
-      "region": "Midwest",
-      "stickerPrice": 28200,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 4000,
-        "30to48k": 7000,
-        "48to75k": 11000,
-        "75to110k": 16000,
-        "over110k": 25000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "In-state tuition advantage",
-        "Merit scholarships available"
-      ],
-      "meritScholarships": [],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-01-15",
-      "tags": [
-        "public",
-        "flagship",
-        "meets-full-need",
-        "midwest"
-      ],
-      "keyInsight": "UW-Madison meets full demonstrated need; in-state tuition is very affordable for a top research university.",
-      "costBreakdown": {
-        "tuition": 14400,
-        "fees": 600,
-        "roomBoard": 7500,
-        "booksSupplies": 1800,
-        "personal": 1800,
-        "transportation": 2100
-      },
-      "inStateTuition": 11400
+      "inStateTuition": 10998
     },
     {
       "id": "vanderbilt-001",
@@ -3711,7 +3628,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 44135,
+      "stickerPrice": 78786,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3750,14 +3667,14 @@
       ],
       "keyInsight": "UC Davis offers strong STEM programs with generous UC aid. In-state tuition significantly lower than out-of-state.",
       "costBreakdown": {
-        "tuition": 21825,
-        "fees": 970,
-        "roomBoard": 12125,
+        "tuition": 48800,
+        "fees": 0,
+        "roomBoard": 20771,
         "booksSupplies": 2910,
         "personal": 2910,
         "transportation": 3395
       },
-      "inStateTuition": 18430
+      "inStateTuition": 18900
     },
     {
       "id": "ucirvine-001",
@@ -3765,7 +3682,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 44772,
+      "stickerPrice": 77326,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3804,14 +3721,14 @@
       ],
       "keyInsight": "UCI has grown into a top research university with strong CS and engineering programs. Highly diverse student body.",
       "costBreakdown": {
-        "tuition": 22140,
-        "fees": 984,
-        "roomBoard": 12300,
+        "tuition": 48325,
+        "fees": 0,
+        "roomBoard": 19653,
         "booksSupplies": 2952,
         "personal": 2952,
         "transportation": 3444
       },
-      "inStateTuition": 18696
+      "inStateTuition": 15286
     },
     {
       "id": "ucsd-001",
@@ -3819,7 +3736,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 45591,
+      "stickerPrice": 83745,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3859,14 +3776,14 @@
       ],
       "keyInsight": "UCSD has risen to become one of the top public universities for STEM and research, especially in engineering and biology.",
       "costBreakdown": {
-        "tuition": 22545,
-        "fees": 1002,
-        "roomBoard": 12525,
+        "tuition": 49368,
+        "fees": 0,
+        "roomBoard": 24858,
         "booksSupplies": 3006,
         "personal": 3006,
         "transportation": 3507
       },
-      "inStateTuition": 19038
+      "inStateTuition": 16329
     },
     {
       "id": "ucsb-001",
@@ -3874,7 +3791,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 44408,
+      "stickerPrice": 83716,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3913,14 +3830,14 @@
       ],
       "keyInsight": "UCSB combines excellent academics with a vibrant beach community. Strong in physical sciences and environmental studies.",
       "costBreakdown": {
-        "tuition": 21960,
-        "fees": 976,
-        "roomBoard": 12200,
+        "tuition": 47332,
+        "fees": 0,
+        "roomBoard": 27112,
         "booksSupplies": 2928,
         "personal": 2928,
         "transportation": 3416
       },
-      "inStateTuition": 18544
+      "inStateTuition": 15444
     },
     {
       "id": "iu-001",
@@ -3928,7 +3845,7 @@
       "type": "public",
       "state": "IN",
       "region": "Midwest",
-      "stickerPrice": 34310,
+      "stickerPrice": 64979,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -3972,14 +3889,14 @@
       ],
       "keyInsight": "IU offers strong academic programs with generous merit scholarships. Kelley School of Business is particularly well-regarded.",
       "costBreakdown": {
-        "tuition": 17520,
-        "fees": 730,
-        "roomBoard": 9125,
+        "tuition": 39004,
+        "fees": 1832,
+        "roomBoard": 17208,
         "booksSupplies": 2190,
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 10312
     },
     {
       "id": "uiowa-001",
@@ -3987,7 +3904,7 @@
       "type": "public",
       "state": "IA",
       "region": "Midwest",
-      "stickerPrice": 30832,
+      "stickerPrice": 56589,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4025,14 +3942,14 @@
       ],
       "keyInsight": "University of Iowa provides an affordable flagship education with particularly strong engineering and business programs.",
       "costBreakdown": {
-        "tuition": 15744,
-        "fees": 656,
-        "roomBoard": 8200,
+        "tuition": 33371,
+        "fees": 0,
+        "roomBoard": 16986,
         "booksSupplies": 1968,
         "personal": 1968,
         "transportation": 2296
       },
-      "inStateTuition": 12464
+      "inStateTuition": 11283
     },
     {
       "id": "uoregon-001",
@@ -4040,7 +3957,7 @@
       "type": "public",
       "state": "OR",
       "region": "West",
-      "stickerPrice": 36190,
+      "stickerPrice": 68595,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4078,14 +3995,14 @@
       ],
       "keyInsight": "University of Oregon is known for its liberal community and outdoor lifestyle, with strong humanities and social sciences.",
       "costBreakdown": {
-        "tuition": 18480,
-        "fees": 770,
-        "roomBoard": 9625,
+        "tuition": 43880,
+        "fees": 0,
+        "roomBoard": 17400,
         "booksSupplies": 2310,
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
+      "inStateTuition": 13906
     },
     {
       "id": "usoutharolina-001",
@@ -4093,7 +4010,7 @@
       "type": "public",
       "state": "SC",
       "region": "Southeast",
-      "stickerPrice": 33088,
+      "stickerPrice": 60452,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4131,14 +4048,14 @@
       ],
       "keyInsight": "USC offers competitive merit scholarships and LIFE/HOPE scholarship eligibility, making it affordable for in-state and out-of-state.",
       "costBreakdown": {
-        "tuition": 16896,
-        "fees": 704,
-        "roomBoard": 8800,
+        "tuition": 37388,
+        "fees": 0,
+        "roomBoard": 16376,
         "booksSupplies": 2112,
         "personal": 2112,
         "transportation": 2464
       },
-      "inStateTuition": 13376
+      "inStateTuition": 12688
     },
     {
       "id": "marquette-001",
@@ -4194,65 +4111,12 @@
       }
     },
     {
-      "id": "loyola-chicago-001",
-      "name": "Loyola University Chicago",
-      "type": "private",
-      "state": "IL",
-      "region": "Midwest",
-      "stickerPrice": 74000,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 6000,
-        "30to48k": 9500,
-        "48to75k": 13500,
-        "75to110k": 18500,
-        "over110k": 38000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "Chicago location advantages"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Loyola Award",
-          "amount": 14000,
-          "criteria": "Merit-based"
-        },
-        {
-          "name": "Chicago Scholar Award",
-          "amount": 10000,
-          "criteria": "Demonstrated need"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": true,
-      "deadline": "2026-02-15",
-      "tags": [
-        "private",
-        "jesuit",
-        "chicago",
-        "business",
-        "midwest"
-      ],
-      "keyInsight": "Loyola Chicago offers Jesuit education in a major city with strong business and health professions programs.",
-      "costBreakdown": {
-        "tuition": 48100,
-        "fees": 2960,
-        "roomBoard": 14800,
-        "booksSupplies": 3700,
-        "personal": 2960,
-        "transportation": 1480
-      }
-    },
-    {
       "id": "ncaat-001",
       "name": "North Carolina Agricultural & Technical State University",
       "type": "public",
       "state": "NC",
       "region": "Southeast",
-      "stickerPrice": 22372,
+      "stickerPrice": 37895,
       "needBlind": true,
       "meetsFullNeed": false,
       "netPriceByIncome": {
@@ -4291,14 +4155,14 @@
       ],
       "keyInsight": "NC A&T is the largest HBCU and particularly strong in engineering. Affordable with strong STEM programs.",
       "costBreakdown": {
-        "tuition": 11424,
-        "fees": 476,
-        "roomBoard": 5950,
+        "tuition": 20941,
+        "fees": 0,
+        "roomBoard": 12432,
         "booksSupplies": 1428,
         "personal": 1428,
         "transportation": 1666
       },
-      "inStateTuition": 9044
+      "inStateTuition": 6879
     },
     {
       "id": "pvamu-001",
@@ -4306,7 +4170,7 @@
       "type": "public",
       "state": "TX",
       "region": "Southwest",
-      "stickerPrice": 19680,
+      "stickerPrice": 41442,
       "needBlind": true,
       "meetsFullNeed": false,
       "netPriceByIncome": {
@@ -4345,14 +4209,14 @@
       ],
       "keyInsight": "Prairie View A&M offers exceptional value. Strong in engineering and agriculture with tight-knit community.",
       "costBreakdown": {
-        "tuition": 10250,
-        "fees": 410,
-        "roomBoard": 5125,
+        "tuition": 26874,
+        "fees": 0,
+        "roomBoard": 10673,
         "booksSupplies": 1230,
         "personal": 1230,
         "transportation": 1435
       },
-      "inStateTuition": 7790
+      "inStateTuition": 11299
     },
     {
       "id": "suny-binghamton-001",
@@ -4360,7 +4224,7 @@
       "type": "public",
       "state": "NY",
       "region": "Northeast",
-      "stickerPrice": 34368,
+      "stickerPrice": 58086,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4399,14 +4263,14 @@
       ],
       "keyInsight": "SUNY Binghamton is one of the strongest SUNY schools with excellent engineering and business programs.",
       "costBreakdown": {
-        "tuition": 17900,
-        "fees": 716,
-        "roomBoard": 8950,
+        "tuition": 31475,
+        "fees": 0,
+        "roomBoard": 19809,
         "booksSupplies": 2148,
         "personal": 2148,
         "transportation": 2506
       },
-      "inStateTuition": 13604
+      "inStateTuition": 10775
     },
     {
       "id": "suny-stonybrook-001",
@@ -4414,7 +4278,7 @@
       "type": "public",
       "state": "NY",
       "region": "Northeast",
-      "stickerPrice": 35040,
+      "stickerPrice": 64789,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4453,14 +4317,14 @@
       ],
       "keyInsight": "Stony Brook is a major research institution with excellent engineering and computer science programs.",
       "costBreakdown": {
-        "tuition": 18250,
-        "fees": 730,
-        "roomBoard": 9125,
+        "tuition": 35320,
+        "fees": 3490,
+        "roomBoard": 19044,
         "booksSupplies": 2190,
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 7070
     },
     {
       "id": "umass-001",
@@ -4468,7 +4332,7 @@
       "type": "public",
       "state": "MA",
       "region": "Northeast",
-      "stickerPrice": 36190,
+      "stickerPrice": 65680,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4506,14 +4370,14 @@
       ],
       "keyInsight": "UMass Amherst is the flagship of the UMass system with strong engineering and business programs.",
       "costBreakdown": {
-        "tuition": 18480,
-        "fees": 770,
-        "roomBoard": 9625,
+        "tuition": 41639,
+        "fees": 0,
+        "roomBoard": 16726,
         "booksSupplies": 2310,
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
+      "inStateTuition": 18197
     },
     {
       "id": "temple-001",
@@ -4521,7 +4385,7 @@
       "type": "public",
       "state": "PA",
       "region": "Northeast",
-      "stickerPrice": 30720,
+      "stickerPrice": 57640,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4559,14 +4423,14 @@
       ],
       "keyInsight": "Temple offers an affordable urban education with strong programs in business, engineering, and arts.",
       "costBreakdown": {
-        "tuition": 16000,
-        "fees": 640,
-        "roomBoard": 8000,
+        "tuition": 35312,
+        "fees": 968,
+        "roomBoard": 15280,
         "booksSupplies": 1920,
         "personal": 1920,
         "transportation": 2240
       },
-      "inStateTuition": 12160
+      "inStateTuition": 21023
     },
     {
       "id": "rit-001",
@@ -4680,7 +4544,7 @@
       "type": "public",
       "state": "VA",
       "region": "Southeast",
-      "stickerPrice": 31490,
+      "stickerPrice": 58242,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4718,14 +4582,14 @@
       ],
       "keyInsight": "Virginia Tech is one of the best engineering schools, particularly strong in mechanical and electrical engineering.",
       "costBreakdown": {
-        "tuition": 16080,
-        "fees": 670,
-        "roomBoard": 8375,
+        "tuition": 38977,
+        "fees": 0,
+        "roomBoard": 12900,
         "booksSupplies": 2010,
         "personal": 2010,
         "transportation": 2345
       },
-      "inStateTuition": 12730
+      "inStateTuition": 16526
     },
     {
       "id": "ncsu-001",
@@ -4733,7 +4597,7 @@
       "type": "public",
       "state": "NC",
       "region": "Southeast",
-      "stickerPrice": 32148,
+      "stickerPrice": 57833,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4772,14 +4636,14 @@
       ],
       "keyInsight": "NC State is a major engineering and research institution with strong job placement and alumni network.",
       "costBreakdown": {
-        "tuition": 16416,
-        "fees": 684,
-        "roomBoard": 8550,
+        "tuition": 31604,
+        "fees": 2169,
+        "roomBoard": 17562,
         "booksSupplies": 2052,
         "personal": 2052,
         "transportation": 2394
       },
-      "inStateTuition": 12996
+      "inStateTuition": 6535
     },
     {
       "id": "umd-001",
@@ -4787,7 +4651,7 @@
       "type": "public",
       "state": "MD",
       "region": "Northeast",
-      "stickerPrice": 37130,
+      "stickerPrice": 69736,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4825,14 +4689,14 @@
       ],
       "keyInsight": "University of Maryland is a top public research university with excellent engineering and computer science programs.",
       "costBreakdown": {
-        "tuition": 18960,
-        "fees": 790,
-        "roomBoard": 9875,
+        "tuition": 42085,
+        "fees": 0,
+        "roomBoard": 20146,
         "booksSupplies": 2370,
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 12121
     },
     {
       "id": "umichigan-001",
@@ -4840,7 +4704,7 @@
       "type": "public",
       "state": "MI",
       "region": "Midwest",
-      "stickerPrice": 40890,
+      "stickerPrice": 86467,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4879,67 +4743,14 @@
       ],
       "keyInsight": "University of Michigan is consistently ranked among the top public universities with world-class research and engineering.",
       "costBreakdown": {
-        "tuition": 20880,
-        "fees": 870,
-        "roomBoard": 10875,
+        "tuition": 66202,
+        "fees": 0,
+        "roomBoard": 12000,
         "booksSupplies": 2610,
         "personal": 2610,
         "transportation": 3045
       },
-      "inStateTuition": 16530
-    },
-    {
-      "id": "uill-001",
-      "name": "University of Illinois Urbana-Champaign",
-      "type": "public",
-      "state": "IL",
-      "region": "Midwest",
-      "stickerPrice": 38880,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 7000,
-        "30to48k": 10000,
-        "48to75k": 13500,
-        "75to110k": 18000,
-        "over110k": 30000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "Strong in all STEM fields"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Illinois Scholarship",
-          "amount": 7000,
-          "criteria": "Merit-based"
-        },
-        {
-          "name": "Engineering Award",
-          "amount": 5500,
-          "criteria": "Engineering majors"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "engineering",
-        "midwest",
-        "research"
-      ],
-      "keyInsight": "UIUC has legendary strength in engineering and computer science. One of the top public research universities.",
-      "costBreakdown": {
-        "tuition": 20250,
-        "fees": 810,
-        "roomBoard": 10125,
-        "booksSupplies": 2430,
-        "personal": 2430,
-        "transportation": 2835
-      },
-      "inStateTuition": 15390
+      "inStateTuition": 19403
     },
     {
       "id": "uwis-001",
@@ -4947,7 +4758,7 @@
       "type": "public",
       "state": "WI",
       "region": "Midwest",
-      "stickerPrice": 36190,
+      "stickerPrice": 65220,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -4985,174 +4796,14 @@
       ],
       "keyInsight": "UW-Madison is a premier public research university with strong academics across all disciplines.",
       "costBreakdown": {
-        "tuition": 18480,
-        "fees": 770,
-        "roomBoard": 9625,
+        "tuition": 39042,
+        "fees": 1561,
+        "roomBoard": 17302,
         "booksSupplies": 2310,
         "personal": 2310,
         "transportation": 2695
       },
-      "inStateTuition": 14630
-    },
-    {
-      "id": "ucberkeley-001",
-      "name": "University of California, Berkeley",
-      "type": "public",
-      "state": "CA",
-      "region": "West",
-      "stickerPrice": 47320,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 9500,
-        "30to48k": 12500,
-        "48to75k": 16000,
-        "75to110k": 21000,
-        "over110k": 36000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Cal Grant eligible",
-        "Need-blind admission"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Regent's Scholarship",
-          "amount": 8000,
-          "criteria": "Academic excellence"
-        },
-        {
-          "name": "Chancellor's Award",
-          "amount": 6000,
-          "criteria": "Top applicants"
-        }
-      ],
-      "freeThreshold": 50000,
-      "cssRequired": false,
-      "deadline": "2026-11-30",
-      "tags": [
-        "public-flagship",
-        "california",
-        "research",
-        "top-tier",
-        "west"
-      ],
-      "keyInsight": "UC Berkeley is the top public university with world-leading research and selective admission.",
-      "costBreakdown": {
-        "tuition": 23400,
-        "fees": 1040,
-        "roomBoard": 13000,
-        "booksSupplies": 3120,
-        "personal": 3120,
-        "transportation": 3640
-      },
-      "inStateTuition": 19760
-    },
-    {
-      "id": "penn-state-001",
-      "name": "Pennsylvania State University",
-      "type": "public",
-      "state": "PA",
-      "region": "Northeast",
-      "stickerPrice": 35040,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5500,
-        "30to48k": 8000,
-        "48to75k": 11500,
-        "75to110k": 15500,
-        "over110k": 26000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "Strong alumni network"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Penn State Award",
-          "amount": 5500,
-          "criteria": "Merit-based"
-        },
-        {
-          "name": "Engineering Award",
-          "amount": 4000,
-          "criteria": "Engineering students"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "engineering",
-        "northeast",
-        "research"
-      ],
-      "keyInsight": "Penn State is a major research university with strong engineering and business programs.",
-      "costBreakdown": {
-        "tuition": 18250,
-        "fees": 730,
-        "roomBoard": 9125,
-        "booksSupplies": 2190,
-        "personal": 2190,
-        "transportation": 2555
-      },
-      "inStateTuition": 13870
-    },
-    {
-      "id": "ostate-001",
-      "name": "Ohio State University",
-      "type": "public",
-      "state": "OH",
-      "region": "Midwest",
-      "stickerPrice": 35040,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5500,
-        "30to48k": 8000,
-        "48to75k": 11500,
-        "75to110k": 15500,
-        "over110k": 26000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "Strong Honors College"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Buckeye Scholarship",
-          "amount": 6000,
-          "criteria": "Merit-based"
-        },
-        {
-          "name": "Honors Award",
-          "amount": 4500,
-          "criteria": "Top applicants"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "midwest",
-        "research",
-        "football"
-      ],
-      "keyInsight": "Ohio State is a top research university with strong engineering and business schools.",
-      "costBreakdown": {
-        "tuition": 18250,
-        "fees": 730,
-        "roomBoard": 9125,
-        "booksSupplies": 2190,
-        "personal": 2190,
-        "transportation": 2555
-      },
-      "inStateTuition": 13870
+      "inStateTuition": 9644
     },
     {
       "id": "minnesota-001",
@@ -5160,7 +4811,7 @@
       "type": "public",
       "state": "MN",
       "region": "Midwest",
-      "stickerPrice": 34310,
+      "stickerPrice": 60119,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5198,14 +4849,14 @@
       ],
       "keyInsight": "University of Minnesota is a premier research university with excellent programs across all fields.",
       "costBreakdown": {
-        "tuition": 17520,
-        "fees": 730,
-        "roomBoard": 9125,
+        "tuition": 38362,
+        "fees": 0,
+        "roomBoard": 14822,
         "booksSupplies": 2190,
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 17214
     },
     {
       "id": "georgia-001",
@@ -5213,7 +4864,7 @@
       "type": "public",
       "state": "GA",
       "region": "Southeast",
-      "stickerPrice": 28670,
+      "stickerPrice": 53971,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5251,104 +4902,14 @@
       ],
       "keyInsight": "University of Georgia is an affordable flagship with strong academics and HOPE scholarship eligibility.",
       "costBreakdown": {
-        "tuition": 14640,
-        "fees": 610,
-        "roomBoard": 7625,
+        "tuition": 31688,
+        "fees": 0,
+        "roomBoard": 16488,
         "booksSupplies": 1830,
         "personal": 1830,
         "transportation": 2135
       },
-      "inStateTuition": 11590
-    },
-    {
-      "id": "upenn-001",
-      "name": "University of Pennsylvania",
-      "type": "private",
-      "state": "PA",
-      "region": "Northeast",
-      "stickerPrice": 89000,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 2000,
-        "30to48k": 5500,
-        "48to75k": 10500,
-        "75to110k": 16500,
-        "over110k": 44000
-      },
-      "aidPolicies": [
-        "Need-blind admission",
-        "Full need commitment",
-        "Wharton School aid"
-      ],
-      "meritScholarships": [],
-      "freeThreshold": 60000,
-      "cssRequired": true,
-      "deadline": "2026-01-01",
-      "tags": [
-        "elite",
-        "ivy",
-        "need-blind",
-        "business",
-        "northeast"
-      ],
-      "keyInsight": "Penn combines Ivy prestige with need-blind admission and the renowned Wharton School of Business.",
-      "costBreakdown": {
-        "tuition": 57850,
-        "fees": 3560,
-        "roomBoard": 17800,
-        "booksSupplies": 4450,
-        "personal": 3560,
-        "transportation": 1780
-      }
-    },
-    {
-      "id": "chicago-001",
-      "name": "University of Chicago",
-      "type": "private",
-      "state": "IL",
-      "region": "Midwest",
-      "stickerPrice": 90000,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 2000,
-        "30to48k": 6000,
-        "48to75k": 11000,
-        "75to110k": 17000,
-        "over110k": 45000
-      },
-      "aidPolicies": [
-        "Need-blind admission",
-        "Full need commitment",
-        "Merit scholarships available"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Calderone Scholarship",
-          "amount": 16000,
-          "criteria": "Top academics"
-        }
-      ],
-      "freeThreshold": 60000,
-      "cssRequired": true,
-      "deadline": "2026-01-02",
-      "tags": [
-        "elite",
-        "need-blind",
-        "generous",
-        "research",
-        "midwest"
-      ],
-      "keyInsight": "University of Chicago is highly selective with need-blind admission and strong research across all disciplines.",
-      "costBreakdown": {
-        "tuition": 58500,
-        "fees": 3600,
-        "roomBoard": 18000,
-        "booksSupplies": 4500,
-        "personal": 3600,
-        "transportation": 1800
-      }
+      "inStateTuition": 11450
     },
     {
       "id": "cmu-001",
@@ -5399,61 +4960,12 @@
       }
     },
     {
-      "id": "gtech-001",
-      "name": "Georgia Institute of Technology",
-      "type": "public",
-      "state": "GA",
-      "region": "Southeast",
-      "stickerPrice": 30080,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5200,
-        "30to48k": 7800,
-        "48to75k": 11000,
-        "75to110k": 14800,
-        "over110k": 23000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Georgia HOPE eligible",
-        "Merit scholarships"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Georgia Tech Award",
-          "amount": 5000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "engineering",
-        "southeast",
-        "stem",
-        "hope-eligible"
-      ],
-      "keyInsight": "Georgia Tech is one of the best engineering schools with particular strength in mechanical and electrical engineering.",
-      "costBreakdown": {
-        "tuition": 15360,
-        "fees": 640,
-        "roomBoard": 8000,
-        "booksSupplies": 1920,
-        "personal": 1920,
-        "transportation": 2240
-      },
-      "inStateTuition": 12160
-    },
-    {
       "id": "calpoly-001",
       "name": "California Polytechnic State University, San Luis Obispo",
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 36855,
+      "stickerPrice": 62786,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5487,14 +4999,14 @@
       ],
       "keyInsight": "Cal Poly emphasizes hands-on learning with strong engineering and technical programs.",
       "costBreakdown": {
-        "tuition": 18225,
-        "fees": 810,
-        "roomBoard": 10125,
+        "tuition": 33230,
+        "fees": 0,
+        "roomBoard": 21861,
         "booksSupplies": 2430,
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 12161
     },
     {
       "id": "sdsu-001",
@@ -5502,7 +5014,7 @@
       "type": "public",
       "state": "CA",
       "region": "West",
-      "stickerPrice": 38675,
+      "stickerPrice": 55819,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5536,14 +5048,14 @@
       ],
       "keyInsight": "San Diego State is an affordable California university with strong engineering and business programs.",
       "costBreakdown": {
-        "tuition": 19125,
-        "fees": 850,
-        "roomBoard": 10625,
+        "tuition": 21328,
+        "fees": 0,
+        "roomBoard": 26416,
         "booksSupplies": 2550,
         "personal": 2550,
         "transportation": 2975
       },
-      "inStateTuition": 16150
+      "inStateTuition": 8728
     },
     {
       "id": "vcu-001",
@@ -5551,7 +5063,7 @@
       "type": "public",
       "state": "VA",
       "region": "Southeast",
-      "stickerPrice": 26790,
+      "stickerPrice": 60947,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5585,14 +5097,14 @@
       ],
       "keyInsight": "VCU offers an affordable option in Richmond with strong arts and health professions programs.",
       "costBreakdown": {
-        "tuition": 13680,
-        "fees": 570,
-        "roomBoard": 7125,
+        "tuition": 40404,
+        "fees": 0,
+        "roomBoard": 15128,
         "booksSupplies": 1710,
         "personal": 1710,
         "transportation": 1995
       },
-      "inStateTuition": 10830
+      "inStateTuition": 17240
     },
     {
       "id": "gmu-001",
@@ -5600,7 +5112,7 @@
       "type": "public",
       "state": "VA",
       "region": "Northeast",
-      "stickerPrice": 28670,
+      "stickerPrice": 63875,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -5634,14 +5146,14 @@
       ],
       "keyInsight": "George Mason is affordable with proximity to DC and strong business and computer science programs.",
       "costBreakdown": {
-        "tuition": 14640,
-        "fees": 610,
-        "roomBoard": 7625,
+        "tuition": 38688,
+        "fees": 0,
+        "roomBoard": 19392,
         "booksSupplies": 1830,
         "personal": 1830,
         "transportation": 2135
       },
-      "inStateTuition": 11590
+      "inStateTuition": 14220
     },
     {
       "id": "suffolk-001",
@@ -5964,53 +5476,6 @@
       }
     },
     {
-      "id": "case-western-001",
-      "name": "Case Western Reserve University",
-      "type": "private",
-      "state": "OH",
-      "region": "Midwest",
-      "stickerPrice": 79500,
-      "needBlind": false,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5500,
-        "30to48k": 10000,
-        "48to75k": 14500,
-        "75to110k": 20000,
-        "over110k": 40000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available",
-        "STEM scholarships"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Case Scholarship",
-          "amount": 18000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": true,
-      "deadline": "2026-02-01",
-      "tags": [
-        "private",
-        "stem",
-        "cleveland",
-        "midwest"
-      ],
-      "keyInsight": "Case Western is particularly strong in engineering and science with substantial merit aid.",
-      "costBreakdown": {
-        "tuition": 51675,
-        "fees": 3180,
-        "roomBoard": 15900,
-        "booksSupplies": 3975,
-        "personal": 3180,
-        "transportation": 1590
-      }
-    },
-    {
       "id": "bucknell-001",
       "name": "Bucknell University",
       "type": "private",
@@ -6194,7 +5659,7 @@
       "type": "public",
       "state": "CT",
       "region": "Northeast",
-      "stickerPrice": 39010,
+      "stickerPrice": 66373,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6226,14 +5691,14 @@
       ],
       "keyInsight": "University of Connecticut is a strong public flagship with affordable tuition and good financial aid.",
       "costBreakdown": {
-        "tuition": 19920,
-        "fees": 830,
-        "roomBoard": 10375,
+        "tuition": 43712,
+        "fees": 0,
+        "roomBoard": 14776,
         "booksSupplies": 2490,
         "personal": 2490,
         "transportation": 2905
       },
-      "inStateTuition": 15770
+      "inStateTuition": 21044
     },
     {
       "id": "vermont-001",
@@ -6241,7 +5706,7 @@
       "type": "public",
       "state": "VT",
       "region": "Northeast",
-      "stickerPrice": 37130,
+      "stickerPrice": 69285,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6273,14 +5738,14 @@
       ],
       "keyInsight": "University of Vermont offers outdoor-focused education in New England with affordable cost structure.",
       "costBreakdown": {
-        "tuition": 18960,
-        "fees": 790,
-        "roomBoard": 9875,
+        "tuition": 44646,
+        "fees": 2908,
+        "roomBoard": 14226,
         "booksSupplies": 2370,
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 16606
     },
     {
       "id": "auburnu-001",
@@ -6288,7 +5753,7 @@
       "type": "public",
       "state": "AL",
       "region": "Southeast",
-      "stickerPrice": 29610,
+      "stickerPrice": 59062,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6321,14 +5786,14 @@
       ],
       "keyInsight": "Auburn is a strong engineering school with affordable tuition and engaged student community.",
       "costBreakdown": {
-        "tuition": 15120,
-        "fees": 630,
-        "roomBoard": 7875,
+        "tuition": 34035,
+        "fees": 1832,
+        "roomBoard": 17210,
         "booksSupplies": 1890,
         "personal": 1890,
         "transportation": 2205
       },
-      "inStateTuition": 11970
+      "inStateTuition": 11436
     },
     {
       "id": "buffalo-001",
@@ -6336,7 +5801,7 @@
       "type": "public",
       "state": "NY",
       "region": "Northeast",
-      "stickerPrice": 36000,
+      "stickerPrice": 61911,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6368,14 +5833,14 @@
       ],
       "keyInsight": "SUNY Buffalo is a strong research university with good engineering programs and affordable tuition.",
       "costBreakdown": {
-        "tuition": 18750,
-        "fees": 750,
-        "roomBoard": 9375,
+        "tuition": 32530,
+        "fees": 0,
+        "roomBoard": 22256,
         "booksSupplies": 2250,
         "personal": 2250,
         "transportation": 2625
       },
-      "inStateTuition": 14250
+      "inStateTuition": 11092
     },
     {
       "id": "rutgers-nb-001",
@@ -6383,7 +5848,7 @@
       "type": "public",
       "state": "NJ",
       "region": "Northeast",
-      "stickerPrice": 38070,
+      "stickerPrice": 61875,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6415,14 +5880,14 @@
       ],
       "keyInsight": "Rutgers is a major research university near NYC with strong engineering and business programs.",
       "costBreakdown": {
-        "tuition": 19440,
-        "fees": 810,
-        "roomBoard": 10125,
+        "tuition": 35758,
+        "fees": 3090,
+        "roomBoard": 15332,
         "booksSupplies": 2430,
         "personal": 2430,
         "transportation": 2835
       },
-      "inStateTuition": 15390
+      "inStateTuition": 14933
     },
     {
       "id": "delaware-001",
@@ -6430,7 +5895,7 @@
       "type": "public",
       "state": "DE",
       "region": "Northeast",
-      "stickerPrice": 34310,
+      "stickerPrice": 67472,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6462,14 +5927,14 @@
       ],
       "keyInsight": "University of Delaware offers solid academics and engineering with reasonable cost.",
       "costBreakdown": {
-        "tuition": 17520,
-        "fees": 730,
-        "roomBoard": 9125,
+        "tuition": 43151,
+        "fees": 0,
+        "roomBoard": 17386,
         "booksSupplies": 2190,
         "personal": 2190,
         "transportation": 2555
       },
-      "inStateTuition": 13870
+      "inStateTuition": 17573
     },
     {
       "id": "clemson-001",
@@ -6477,7 +5942,7 @@
       "type": "public",
       "state": "SC",
       "region": "Southeast",
-      "stickerPrice": 30550,
+      "stickerPrice": 59897,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6509,60 +5974,14 @@
       ],
       "keyInsight": "Clemson is a strong engineering school with vibrant campus community and affordable cost.",
       "costBreakdown": {
-        "tuition": 15600,
-        "fees": 650,
-        "roomBoard": 8125,
+        "tuition": 37982,
+        "fees": 1516,
+        "roomBoard": 14224,
         "booksSupplies": 1950,
         "personal": 1950,
         "transportation": 2275
       },
-      "inStateTuition": 12350
-    },
-    {
-      "id": "vcu2-001",
-      "name": "Virginia Polytechnic Institute & State University",
-      "type": "public",
-      "state": "VA",
-      "region": "Southeast",
-      "stickerPrice": 31490,
-      "needBlind": true,
-      "meetsFullNeed": true,
-      "netPriceByIncome": {
-        "under30k": 5500,
-        "30to48k": 8000,
-        "48to75k": 11500,
-        "75to110k": 15500,
-        "over110k": 25000
-      },
-      "aidPolicies": [
-        "Meets full demonstrated need",
-        "Merit scholarships available"
-      ],
-      "meritScholarships": [
-        {
-          "name": "Tech Award",
-          "amount": 5000,
-          "criteria": "Merit-based"
-        }
-      ],
-      "freeThreshold": null,
-      "cssRequired": false,
-      "deadline": "2026-03-01",
-      "tags": [
-        "public-flagship",
-        "engineering",
-        "southeast"
-      ],
-      "keyInsight": "Virginia Tech is one of the best engineering schools with particular strength in mechanical and electrical engineering.",
-      "costBreakdown": {
-        "tuition": 16080,
-        "fees": 670,
-        "roomBoard": 8375,
-        "booksSupplies": 2010,
-        "personal": 2010,
-        "transportation": 2345
-      },
-      "inStateTuition": 12730
+      "inStateTuition": 14038
     },
     {
       "id": "missouri-001",
@@ -6570,7 +5989,7 @@
       "type": "public",
       "state": "MO",
       "region": "Midwest",
-      "stickerPrice": 29140,
+      "stickerPrice": 58210,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6601,14 +6020,14 @@
       ],
       "keyInsight": "University of Missouri offers strong academics with affordable tuition.",
       "costBreakdown": {
-        "tuition": 14880,
-        "fees": 620,
-        "roomBoard": 7750,
+        "tuition": 37320,
+        "fees": 0,
+        "roomBoard": 15000,
         "booksSupplies": 1860,
         "personal": 1860,
         "transportation": 2170
       },
-      "inStateTuition": 11780
+      "inStateTuition": 13110
     },
     {
       "id": "colorado-001",
@@ -6616,7 +6035,7 @@
       "type": "public",
       "state": "CO",
       "region": "West",
-      "stickerPrice": 37130,
+      "stickerPrice": 59051,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6647,14 +6066,14 @@
       ],
       "keyInsight": "CU Boulder offers strong STEM programs with beautiful mountain setting.",
       "costBreakdown": {
-        "tuition": 18960,
-        "fees": 790,
-        "roomBoard": 9875,
+        "tuition": 40297,
+        "fees": 1646,
+        "roomBoard": 9603,
         "booksSupplies": 2370,
         "personal": 2370,
         "transportation": 2765
       },
-      "inStateTuition": 15010
+      "inStateTuition": 13910
     },
     {
       "id": "westpoint-001",
@@ -6703,7 +6122,7 @@
       "type": "public",
       "state": "CO",
       "region": "West",
-      "stickerPrice": 35250,
+      "stickerPrice": 63349,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6735,14 +6154,14 @@
       ],
       "keyInsight": "Colorado State is strong in agriculture and engineering with affordable cost.",
       "costBreakdown": {
-        "tuition": 18000,
-        "fees": 750,
-        "roomBoard": 9375,
+        "tuition": 36113,
+        "fees": 0,
+        "roomBoard": 20111,
         "booksSupplies": 2250,
         "personal": 2250,
         "transportation": 2625
       },
-      "inStateTuition": 14250
+      "inStateTuition": 13774
     },
     {
       "id": "nmexico-001",
@@ -6750,7 +6169,7 @@
       "type": "public",
       "state": "NM",
       "region": "Southwest",
-      "stickerPrice": 25850,
+      "stickerPrice": 43669,
       "needBlind": true,
       "meetsFullNeed": true,
       "netPriceByIncome": {
@@ -6781,14 +6200,14 @@
       ],
       "keyInsight": "University of New Mexico offers exceptional affordability for desert Southwest.",
       "costBreakdown": {
-        "tuition": 13200,
-        "fees": 550,
-        "roomBoard": 6875,
+        "tuition": 25139,
+        "fees": 1312,
+        "roomBoard": 11993,
         "booksSupplies": 1650,
         "personal": 1650,
         "transportation": 1925
       },
-      "inStateTuition": 10450
+      "inStateTuition": 9700
     },
     {
       "id": "brandeis-001",
@@ -6949,6 +6368,98 @@
         "personal": 3220,
         "transportation": 1610
       }
+    },
+    {
+      "id": "uwb-001",
+      "name": "University of Washington - Bothell",
+      "type": "public",
+      "state": "WA",
+      "region": "West",
+      "stickerPrice": 61563,
+      "needBlind": true,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 4000,
+        "30to48k": 7000,
+        "48to75k": 11000,
+        "75to110k": 16000,
+        "over110k": 24000
+      },
+      "aidPolicies": [
+        "In-state tuition advantage",
+        "Merit scholarships available",
+        "Husky Promise eligible"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Chancellor's Scholarship",
+          "amount": "Up to $5,000/year"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "February 15",
+      "keyInsight": "Smaller campus experience with UW brand and resources. Often overlooked for strong merit aid.",
+      "costBreakdown": {
+        "tuition": 40878,
+        "fees": 1035,
+        "roomBoard": 15000,
+        "booksSupplies": 1050,
+        "personal": 2400,
+        "transportation": 1200
+      },
+      "inStateTuition": 11524,
+      "tags": [
+        "public",
+        "west",
+        "washington"
+      ]
+    },
+    {
+      "id": "uwt-001",
+      "name": "University of Washington - Tacoma",
+      "type": "public",
+      "state": "WA",
+      "region": "West",
+      "stickerPrice": 59200,
+      "needBlind": true,
+      "meetsFullNeed": false,
+      "netPriceByIncome": {
+        "under30k": 3500,
+        "30to48k": 6500,
+        "48to75k": 10000,
+        "75to110k": 15000,
+        "over110k": 23000
+      },
+      "aidPolicies": [
+        "In-state tuition advantage",
+        "Merit scholarships available",
+        "Husky Promise eligible"
+      ],
+      "meritScholarships": [
+        {
+          "name": "Chancellor's Scholarship",
+          "amount": "Up to $5,000/year"
+        }
+      ],
+      "freeThreshold": null,
+      "cssRequired": false,
+      "deadline": "February 15",
+      "keyInsight": "Urban campus in growing Tacoma metro. Lower cost alternative with UW degree.",
+      "costBreakdown": {
+        "tuition": 37800,
+        "fees": 1750,
+        "roomBoard": 15000,
+        "booksSupplies": 1050,
+        "personal": 2400,
+        "transportation": 1200
+      },
+      "inStateTuition": 11418,
+      "tags": [
+        "public",
+        "west",
+        "washington"
+      ]
     }
   ],
   "stateGrants": [
