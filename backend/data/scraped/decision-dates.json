@@ -3,8 +3,11 @@
     "source": "College websites and historical admissions data",
     "description": "Estimated admissions decision notification dates for the 2025-2026 cycle",
     "lastUpdated": "2026-03-17",
+    "lastVerified": "2026-04-04",
     "cycle": "2025-2026 (Class of 2030)",
     "note": "Dates are approximate based on historical patterns. Actual dates may vary by a few days each year. All dates reference when online portals update, not mailed letters.",
+    "_verified": "partial",
+    "_verificationNotes": "Application deadlines (Nov 1, Jan 1, etc.) are well-established and accurate. Notification dates are approximate (e.g., 'Mid-December', 'Late March') based on historical patterns and may shift by a few days each year. Commitment deadline of May 1 is standard for most schools. Users should check individual school portals for exact dates.",
     "totalSchools": 99
   },
   "schools": [
