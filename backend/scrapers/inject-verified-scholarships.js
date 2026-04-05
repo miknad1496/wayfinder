@@ -983,6 +983,276 @@ const verifiedScholarships = [
     _verifiedDate: "2026-04-04",
     _source: "https://scholars.horatioalger.org/scholarships/"
   },
+
+  // ════════════════════════════════════════════════════════════════
+  // NEW ENTRIES — April 2026 Refresh
+  // ════════════════════════════════════════════════════════════════
+
+  {
+    name: "Buick Achievers Scholarship Program",
+    provider: "GM Foundation / Scholarship America",
+    amount: { min: 5000, max: 25000, display: "Up to $25,000/year (renewable)" },
+    deadline: "2027-02-28",
+    category: ["merit", "need-based"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: true,
+      majors: ["STEM"],
+      demographics: ["women", "minority", "first-gen", "military-family"],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Renewable scholarship up to $25,000/year for students planning to major in STEM fields. ~50 scholars selected annually. Special consideration for women, minorities, military veterans, and first-generation college students. Funded by the GM Foundation.",
+    url: "https://powerofdiscovery.org/buick-achievers-scholarship-program",
+    renewable: true,
+    tags: ["stem", "renewable", "need-based", "national", "prestigious"],
+    _verified: true,
+    _verifiedDate: "2026-04-04",
+    _source: "https://powerofdiscovery.org/buick-achievers-scholarship-program"
+  },
+  {
+    name: "Carol S. Comeau Environmental Scholarship",
+    provider: "Carol S. Comeau Environmental Scholarship Fund",
+    amount: { min: 2000, max: 2000, display: "$2,000" },
+    deadline: "2027-04-01",
+    category: ["merit", "community-service"],
+    competitiveness: "moderate",
+    scope: "state",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: false,
+      majors: ["Environmental Studies", "Environmental Science"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Scholarship for Washington state public high school seniors planning to pursue a degree in environmental studies. Four winners selected annually. Essay-based application about how you hope to make a difference through environmental studies.",
+    url: "https://bold.org/scholarships/carol-s-comeau-environmental-scholarship/",
+    renewable: false,
+    tags: ["washington", "environmental", "essay", "state"],
+    _verified: true,
+    _verifiedDate: "2026-04-04",
+    _source: "https://bold.org/scholarships/carol-s-comeau-environmental-scholarship/"
+  },
+  {
+    name: "Cooke Young Scholars Program",
+    provider: "Jack Kent Cooke Foundation",
+    amount: { min: 0, max: 55000, display: "Comprehensive support through high school + pathway to $55K/yr college scholarship" },
+    deadline: "2026-04-29",
+    category: ["merit", "need-based"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.7,
+      states: ["all"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["7"]
+    },
+    description: "Selective five-year pre-college scholarship for exceptional 7th graders with financial need. Provides individualized academic advising, financial support for enrichment, and a pathway to the Cooke College Scholarship ($55K/year). Family AGI up to $95,000 eligible.",
+    url: "https://www.jkcf.org/our-scholarships/young-scholars-program/",
+    renewable: true,
+    tags: ["pre-college", "prestigious", "need-based", "middle-school", "advising"],
+    _verified: true,
+    _verifiedDate: "2026-04-04",
+    _source: "https://www.jkcf.org/our-scholarships/young-scholars-program/"
+  },
+  {
+    name: "Washington State College Grant",
+    provider: "Washington Student Achievement Council (WSAC)",
+    amount: { min: 0, max: 12000, display: "Up to full tuition at public institutions" },
+    deadline: "2027-06-30",
+    category: ["need-based"],
+    competitiveness: "low",
+    scope: "state",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Washington's largest state financial aid program, covering up to the full cost of tuition at public colleges. Available to Washington residents with family income at or below 100% of state median family income (~$70K for family of four). Apply via FAFSA or WASFA.",
+    url: "https://wsac.wa.gov/washington-college-grant",
+    renewable: true,
+    tags: ["washington", "need-based", "state-grant", "tuition"],
+    _verified: true,
+    _verifiedDate: "2026-04-04",
+    _source: "https://wsac.wa.gov/washington-college-grant"
+  },
+  {
+    name: "NSHSS Foundation STEM Scholarship",
+    provider: "National Society of High School Scholars",
+    amount: { min: 1000, max: 5000, display: "$1,000 - $5,000" },
+    deadline: "2026-12-15",
+    category: ["merit"],
+    competitiveness: "moderate",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["STEM"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["9", "10", "11", "12"]
+    },
+    description: "Scholarship supporting students with demonstrated interest in STEM fields. Applicants need resume, transcript, educator recommendation, and essay about why they want to study STEM and how they will give back to their community.",
+    url: "https://www.nshss.org/scholarships/",
+    renewable: false,
+    tags: ["stem", "national", "merit", "essay"],
+    _verified: true,
+    _verifiedDate: "2026-04-04",
+    _source: "https://www.nshss.org/scholarships/"
+  },
+  // ════════════════════════════════════════════════════════════════
+  // NEW ENTRIES — 2026-04-05 Weekly Refresh
+  // ════════════════════════════════════════════════════════════════
+
+  {
+    name: "SAME Seattle Post & PSE&SSF Engineering Scholarship",
+    provider: "Society of American Military Engineers — Seattle Post",
+    amount: { min: 1000, max: 2000, display: "$1,000 - $2,000" },
+    deadline: "2026-04-17",
+    category: ["merit"],
+    competitiveness: "moderate",
+    scope: "regional",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: false,
+      majors: ["Engineering", "Science", "Technology"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Up to $27,500 awarded across 18 scholarships for graduating high school seniors in Puget Sound counties pursuing BS degrees in engineering, science, or technology. Awards range from $1,000-$2,000. Must attend an accredited college or university in Fall 2026.",
+    url: "https://www.same.org/seattle/scholarships/",
+    renewable: false,
+    tags: ["engineering", "stem", "military", "puget-sound", "regional"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.same.org/seattle/scholarships/"
+  },
+  {
+    name: "Museum of Flight Post-Secondary STEM Scholarship",
+    provider: "The Museum of Flight",
+    amount: { min: 5000, max: 30000, display: "Up to $30,000/year for 4 years" },
+    deadline: "2027-02-01",
+    category: ["merit"],
+    competitiveness: "high",
+    scope: "state",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 3.5,
+      states: ["WA"],
+      financialNeed: false,
+      majors: ["STEM", "Aviation", "Aerospace"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Renewable STEM scholarship for Washington State resident high school seniors with 3.5+ GPA who participated in at least 40 hours of Museum of Flight programs. Awards up to $30,000 annually for four years toward a STEM degree.",
+    url: "https://www.museumofflight.org/education/post-secondary-scholarships",
+    renewable: true,
+    tags: ["stem", "aerospace", "aviation", "washington", "renewable", "high-value"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.museumofflight.org/education/post-secondary-scholarships"
+  },
+  {
+    name: "Nellie Martin Carman Scholarship",
+    provider: "Nellie Martin Carman Scholarship Fund",
+    amount: { min: 500, max: 2000, display: "Up to $2,000/year" },
+    deadline: "2027-04-06",
+    category: ["need-based"],
+    competitiveness: "moderate",
+    scope: "regional",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Founded in 1949. For graduating seniors from public high schools in King, Pierce, or Snohomish County, WA. Must demonstrate financial need. Requires school counselor nomination. Must attend a WA college or university full-time. Not available for arts majors.",
+    url: "https://carmanscholarships.org/",
+    renewable: true,
+    tags: ["need-based", "king-county", "pierce-county", "snohomish", "counselor-nomination"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://carmanscholarships.org/"
+  },
+  {
+    name: "Black at Microsoft Scholarship",
+    provider: "Black at Microsoft & Seattle Foundation",
+    amount: { min: 2500, max: 5000, display: "$2,500 - $5,000 (renewable)" },
+    deadline: "2027-03-16",
+    category: ["merit"],
+    competitiveness: "high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["Engineering", "Computer Science", "Business", "Finance"],
+      demographics: ["Black/African American"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "National scholarship for Black high school seniors pursuing STEM or business degrees. Five $5,000 renewable awards (up to 3 years) and 55 one-time $2,500 awards. Administered by Scholarship America. Selection based on academics, interest in software/tech, and leadership.",
+    url: "https://www.microsoft.com/en-us/diversity/bam-scholarship",
+    renewable: true,
+    tags: ["tech", "microsoft", "diversity", "stem", "business", "renewable"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.microsoft.com/en-us/diversity/bam-scholarship"
+  },
+  {
+    name: "WWIN Star Scholarship",
+    provider: "Washington Women In Need",
+    amount: { min: 5000, max: 5000, display: "$5,000/year (up to $20,000 total)" },
+    deadline: "2026-04-16",
+    category: ["need-based"],
+    competitiveness: "moderate",
+    scope: "state",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: ["women"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Annual $5,000 renewable scholarship for women in Washington state pursuing post-secondary credentials. Renewable up to $20,000 total. Includes a Resiliency Fund for financial setbacks, Career Coaching program, and online networking community. Open to US citizens, permanent residents, refugees, asylees, and DACA recipients.",
+    url: "https://wwin.org/star-scholars/",
+    renewable: true,
+    tags: ["women", "washington", "need-based", "renewable", "career-support"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://wwin.org/star-scholars/"
+  },
+
 ];
 
 

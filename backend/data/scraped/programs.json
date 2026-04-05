@@ -48,8 +48,8 @@
       "Habitat for Humanity"
     ],
     "_verified": "partial",
-    "_verificationNotes": "42 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 746 programs are unverified and may contain template descriptions.",
-    "lastUpdated": "2026-04-05T00:18:58.822Z",
+    "_verificationNotes": "5 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 795 programs are unverified and may contain template descriptions.",
+    "lastUpdated": "2026-04-05T03:59:22.907Z",
     "totalPrograms": 795,
     "verifiedCount": 49
   },
@@ -33419,6 +33419,237 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle"
+    },
+    {
+      "name": "Seattle University AI for Equity Pre-College Program",
+      "provider": "Seattle University",
+      "category": "stem",
+      "subcategory": "artificial-intelligence",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free (merit scholarships available)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-04-25",
+      "description": "Pre-college residential program exploring the intersection of AI and criminal justice. Students examine modern technology issues like bias, equity, and AI ethics. Runs July 12-17, 2026 as an overnight program. College credit available. Merit scholarships offered for students with financial need.",
+      "url": "https://www.seattleu.edu/pre-college-summer-programs/ai-for-equity/",
+      "tags": [
+        "ai",
+        "equity",
+        "criminal-justice",
+        "college-credit",
+        "residential",
+        "seattle"
+      ],
+      "duration": "1 week (July 12-17)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleu.edu/pre-college-summer-programs/ai-for-equity/"
+    },
+    {
+      "name": "Seattle University Summer Business Institute",
+      "provider": "Seattle University",
+      "category": "business",
+      "subcategory": "business",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "varies",
+        "display": "Varies (merit scholarships available)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-04-25",
+      "description": "Credit-bearing residential summer business program for high school students. Explore various business disciplines through experiential learning. Students live on-campus July 19-25, 2026. Includes interactions with Seattle business leaders and entrepreneurs.",
+      "url": "https://www.seattleu.edu/pre-college-summer-programs/summer-business-institute/",
+      "tags": [
+        "business",
+        "college-credit",
+        "residential",
+        "experiential-learning",
+        "seattle"
+      ],
+      "duration": "1 week (July 19-25)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleu.edu/pre-college-summer-programs/summer-business-institute/"
+    },
+    {
+      "name": "Summer@Cornish Art & Design Intensive",
+      "provider": "Cornish College of the Arts / Seattle University",
+      "category": "arts",
+      "subcategory": "visual-arts",
+      "type": "summer",
+      "cost": {
+        "amount": 730,
+        "type": "paid",
+        "display": "From $730 (electives) to $3,160 (morning intensive); scholarships available"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-06-01",
+      "description": "4-week intensive pre-college arts program at Cornish College in Seattle's South Lake Union. Choose from art & design, music, film, musical theater, or dance. Full-day and half-day options with optional on-campus housing. Afternoons feature cross-disciplinary electives.",
+      "url": "https://plus.cornish.edu/summeratcornish",
+      "tags": [
+        "arts",
+        "music",
+        "film",
+        "theater",
+        "dance",
+        "residential",
+        "seattle",
+        "pre-college"
+      ],
+      "duration": "4 weeks (July 6-31)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://plus.cornish.edu/summeratcornish"
+    },
+    {
+      "name": "Lakeside Summer Institute: AI & Machine Learning",
+      "provider": "Lakeside School",
+      "category": "stem",
+      "subcategory": "computer-science",
+      "type": "summer",
+      "cost": {
+        "amount": 450,
+        "type": "paid",
+        "display": "~$450/week (financial aid available)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-02-23",
+      "description": "Lakeside Summer Institute courses offer students the opportunity to learn from experts in AI, molecular biology, and planetary science, gaining real-world skills. Also includes competition math (AMC prep) and environmental solutions courses. Financial aid available on first-come basis.",
+      "url": "https://www.lakesideschool.org/summer/high-school-courses",
+      "tags": [
+        "ai",
+        "machine-learning",
+        "stem",
+        "seattle",
+        "prestigious-school",
+        "college-prep"
+      ],
+      "duration": "1 week sessions",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.lakesideschool.org/summer/high-school-courses"
+    },
+    {
+      "name": "UW Youth & Teen Engineering Challenges",
+      "provider": "University of Washington",
+      "category": "stem",
+      "subcategory": "engineering",
+      "type": "summer",
+      "cost": {
+        "amount": 400,
+        "type": "paid",
+        "display": "~$400/course"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-06-01",
+      "description": "Summer engineering courses on the UW Seattle campus for high school students. Over 100 courses available including Introduction to Engineering Design & Process and hands-on Engineering Challenges. In-person and online options available.",
+      "url": "https://www.youth-teen.uw.edu/programs/summer-2026-courses",
+      "tags": [
+        "engineering",
+        "stem",
+        "UW",
+        "seattle",
+        "hands-on",
+        "college-campus"
+      ],
+      "duration": "1-2 weeks per course",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
     }
   ]
 }

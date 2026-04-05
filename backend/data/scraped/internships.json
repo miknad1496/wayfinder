@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-04",
-    "totalCount": 1543,
+    "totalCount": 1548,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -1146,6 +1146,179 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "format": "remote"
+    },
+    {
+      "title": "Open Science Quest at Allen Institute",
+      "company": "Allen Institute",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$500 stipend + 0.5 high school credit",
+      "field": "Science",
+      "deadline": "2027-02-28",
+      "description": "3-week career intensive at the Allen Institute in South Lake Union. Students dive deep into cell biology, neuroscience, and immunology with world-class researchers. Includes orientation, daily programming 9am-4pm, and culminating project.",
+      "majors": [
+        "Biology",
+        "Neuroscience",
+        "Immunology",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "neuroscience",
+        "cell-biology",
+        "stipend",
+        "seattle"
+      ],
+      "url": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/science-quest-allen-institute/",
+      "duration": "3 weeks (July)",
+      "whyApply": "Work at a premier brain and cell science research institute. Unparalleled exposure to cutting-edge neuroscience and cell biology.",
+      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/science-quest-allen-institute/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "Clean Water Ambassadors Internship",
+      "company": "King County Wastewater Treatment Division",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$22/hour",
+      "field": "Environmental Science",
+      "deadline": "2026-04-22",
+      "description": "5-week paid summer internship for a cohort of 12 high school youth (16+). Learn about local environmental issues and solutions, then practice educating community members. Meet Mon-Fri 9am-3pm in downtown Seattle. Free public transit provided.",
+      "majors": [
+        "Environmental Science",
+        "Public Health",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "environmental",
+        "community-engagement",
+        "seattle"
+      ],
+      "url": "https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water/internships",
+      "duration": "5 weeks (July-August)",
+      "whyApply": "Paid environmental internship with strong community engagement component. Great for students passionate about water quality and environmental justice.",
+      "_source": "https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water/internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "Youth Internship Program",
+      "company": "Seattle Indian Health Board",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$21.30/hour, 20 hours/week",
+      "field": "Healthcare",
+      "deadline": "2026-04-03",
+      "description": "8-week paid summer internship for high school students (ages 16-18) exploring public health careers. Work with the Youth team on programs including Family Saturday events. Learn about Indigenous methodologies and public health programming. Located at SIHB's International District location.",
+      "majors": [
+        "Public Health",
+        "Healthcare",
+        "Social Work",
+        "Community Health"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "public-health",
+        "indigenous",
+        "seattle",
+        "community-health"
+      ],
+      "url": "https://www.sihb.org/learner-opportunities/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Paid public health internship with focus on Indigenous health equity. Builds professional and leadership skills in a community-centered environment.",
+      "_source": "https://www.sihb.org/learner-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "Apprenticeships in STEAM Exploration (ASE)",
+      "company": "Saturday Academy",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Stipend provided to all interns",
+      "field": "Science",
+      "deadline": "2027-03-06",
+      "description": "Competitive STEM internship program placing high school students with mentors at universities, hospitals, research institutions, and companies in the Portland/Corvallis area. 4-8 week part-time or full-time positions. ~100 spots from 400+ applicants. 70% of interns from historically excluded backgrounds.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "mentored",
+        "stipend",
+        "competitive",
+        "pacific-northwest"
+      ],
+      "url": "https://www.saturdayacademy.org/ase",
+      "duration": "4-8 weeks (summer)",
+      "whyApply": "Highly respected Pacific NW STEM internship with real research mentors. Strong track record of placing students from underrepresented backgrounds.",
+      "_source": "https://www.saturdayacademy.org/ase",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "UW Engineering Academy",
+      "company": "University of Washington College of Engineering",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Free one-week intensive summer program at the UW Seattle campus for high school sophomores and juniors in the greater Seattle area. Introduces students to multiple engineering disciplines through hands-on projects and faculty-led sessions. Mon-Fri 10am-4pm.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Mechanical Engineering",
+        "Electrical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "engineering",
+        "UW",
+        "seattle",
+        "hands-on"
+      ],
+      "url": "https://www.engr.washington.edu/about/k12/engineering-academy",
+      "duration": "1 week (July)",
+      "whyApply": "Free program at one of the top public engineering schools. Direct interaction with UW engineering faculty and current students.",
+      "_source": "https://www.engr.washington.edu/about/k12/engineering-academy",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "format": "in-person"
     },
     {
       "title": "Software Engineering Intern (STEP)",
@@ -42585,122 +42758,6 @@
       "stipend": "$21/hour",
       "duration": "12 weeks",
       "whyApply": "Join Burlington Coat Factory to develop professional expertise in retail/consumer and build your network with industry leaders. Valuable experience for career growth and future opportunities."
-    },
-    {
-      "title": "Microsoft Discovery Program",
-      "company": "Microsoft",
-      "field": "technology",
-      "paid": true,
-      "stipend": "$26.00/hour",
-      "format": "in-person",
-      "location": {
-        "city": "Redmond",
-        "state": "WA"
-      },
-      "deadline": "2026-03-01",
-      "duration": "4 weeks (summer)",
-      "eligibility": "High school seniors within 50 miles of Redmond, WA. Must be member of partner orgs (College Success Foundation, Computing for All, Rainier Scholars, etc.). Completed pre-calculus required.",
-      "description": "Four-week paid program teaching programming fundamentals, career skills, mentorship from Microsoft employees, and tech career exploration. $26/hr. Must have US work authorization.",
-      "url": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://careers.microsoft.com/v2/global/en/discoveryprogram"
-    },
-    {
-      "title": "Amazon Periscope High School Program",
-      "company": "Amazon",
-      "field": "technology",
-      "paid": false,
-      "format": "in-person",
-      "location": {
-        "city": "Seattle",
-        "state": "WA"
-      },
-      "deadline": "2026-04-15",
-      "duration": "2 weeks (July)",
-      "eligibility": "Current 10th grade students in the Seattle metro area.",
-      "description": "Two-week career intensive at Amazon's South Lake Union campus for current 10th grade students. Explore tech careers, learn from Amazon professionals, and build skills.",
-      "url": "https://www.seattleschools.org/departments/cte/regional-internships/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/"
-    },
-    {
-      "title": "Changemakers in Computing at UW",
-      "company": "University of Washington",
-      "field": "technology",
-      "paid": false,
-      "format": "in-person",
-      "location": {
-        "city": "Seattle",
-        "state": "WA"
-      },
-      "deadline": "2026-04-01",
-      "duration": "4 weeks (July 6-30)",
-      "eligibility": "Washington state high school students, juniors or seniors in Fall 2026.",
-      "description": "Free in-person summer program at UW Seattle campus for WA state high school students interested in computing. Runs Monday-Thursday, July 6-30, 2026.",
-      "url": "https://www.seattleschools.org/news/internships-for-high-school-students/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
-    },
-    {
-      "title": "Seattle Children's Research Training Program",
-      "company": "Seattle Children's Hospital",
-      "field": "health",
-      "paid": false,
-      "format": "in-person",
-      "location": {
-        "city": "Seattle",
-        "state": "WA"
-      },
-      "deadline": "2026-03-15",
-      "duration": "4 weeks (summer)",
-      "eligibility": "Students in grades 10-11 within commuting distance of downtown Seattle.",
-      "description": "Transformative 4-week laboratory research experience hosted by Seattle Children's Science Education Department. Learn biology lab techniques and explore biomedical research careers.",
-      "url": "https://www.seattlechildrens.org/research/training-program/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
-    },
-    {
-      "title": "Students Exploring Pharmacy (STEP) — UW",
-      "company": "University of Washington School of Pharmacy",
-      "field": "health",
-      "paid": false,
-      "format": "in-person",
-      "location": {
-        "city": "Seattle",
-        "state": "WA"
-      },
-      "deadline": "2026-05-01",
-      "duration": "4 days (summer)",
-      "eligibility": "Students in grades 9-12 interested in pharmacy, healthcare, or STEM careers.",
-      "description": "4-day in-person program for high school students exploring pharmacy and healthcare careers. Hands-on activities and interaction with UW pharmacy faculty and students.",
-      "url": "https://sop.washington.edu/step/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
-    },
-    {
-      "title": "Seattle Public Schools Career Quest Summer Internship",
-      "company": "Seattle Public Schools",
-      "field": "general",
-      "paid": true,
-      "stipend": "$21.30/hour",
-      "format": "in-person",
-      "location": {
-        "city": "Seattle",
-        "state": "WA"
-      },
-      "deadline": "2026-05-15",
-      "duration": "6 weeks (July-August)",
-      "eligibility": "Seattle Public Schools students aged 16+ by 7/6/26.",
-      "description": "Paid summer internship pairing SPS high school students with local businesses and SPS departments. $21.30/hour. Wide variety of fields including tech, healthcare, business, and more. July 8 - August 21, 2026.",
-      "url": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/career-quest-summer-internships/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/career-quest-summer-internships/"
     }
   ]
 }

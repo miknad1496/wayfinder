@@ -652,9 +652,20 @@ router.post('/context', async (req, res) => {
       return res.status(400).json({ error: 'sessionId is required' });
     }
 
+    // Require authentication for context updates
+    const auth = await getOptionalUser(req);
+    if (!auth?.user) {
+      return res.status(401).json({ error: 'Authentication required to update session context' });
+    }
+
     let session = await loadSession(sessionId);
     if (!session) {
       return res.status(404).json({ error: 'Session not found' });
+    }
+
+    // Verify the authenticated user owns this session
+    if (session.userId && session.userId !== auth.user.id) {
+      return res.status(403).json({ error: 'Access denied' });
     }
 
     session.context = { ...session.context, ...context };
@@ -670,9 +681,14 @@ router.post('/context', async (req, res) => {
 // GET /api/chat/session/:id - Get session info
 router.get('/session/:id', async (req, res) => {
   try {
+    const auth = await getOptionalUser(req);
     const session = await loadSession(req.params.id);
     if (!session) {
       return res.status(404).json({ error: 'Session not found' });
+    }
+    // Verify user owns session if authenticated and session has an owner
+    if (auth?.user && session.userId && session.userId !== auth.user.id) {
+      return res.status(403).json({ error: 'Access denied' });
     }
     res.json({
       id: session.id,

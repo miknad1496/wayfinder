@@ -5,7 +5,7 @@
     "totalCount": 976,
     "totalValue": "$14.7 million+",
     "_verified": "partial",
-    "_verificationNotes": "27 new verified scholarships injected, 8 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
+    "_verificationNotes": "5 new verified scholarships injected, 35 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
     "dataYear": "2026-2027",
     "sources": [
       "Gates Foundation",
@@ -28,7 +28,7 @@
       "Military Service Academies",
       "Professional Organizations"
     ],
-    "lastUpdated": "2026-04-05T00:33:26.706Z",
+    "lastUpdated": "2026-04-05T03:59:12.117Z",
     "totalScholarships": 1013,
     "verifiedCount": 46
   },
@@ -40165,6 +40165,235 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.edison.com/community/edison-scholars"
+    },
+    {
+      "name": "Buick Achievers Scholarship Program",
+      "provider": "GM Foundation / Scholarship America",
+      "amount": {
+        "min": 5000,
+        "max": 25000,
+        "display": "Up to $25,000/year (renewable)"
+      },
+      "deadline": "2027-02-28",
+      "category": [
+        "merit",
+        "need-based"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3,
+        "states": [
+          "all"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "STEM"
+        ],
+        "demographics": [
+          "women",
+          "minority",
+          "first-gen",
+          "military-family"
+        ],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Renewable scholarship up to $25,000/year for students planning to major in STEM fields. ~50 scholars selected annually. Special consideration for women, minorities, military veterans, and first-generation college students. Funded by the GM Foundation.",
+      "url": "https://powerofdiscovery.org/buick-achievers-scholarship-program",
+      "renewable": true,
+      "tags": [
+        "stem",
+        "renewable",
+        "need-based",
+        "national",
+        "prestigious"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://powerofdiscovery.org/buick-achievers-scholarship-program"
+    },
+    {
+      "name": "Carol S. Comeau Environmental Scholarship",
+      "provider": "Carol S. Comeau Environmental Scholarship Fund",
+      "amount": {
+        "min": 2000,
+        "max": 2000,
+        "display": "$2,000"
+      },
+      "deadline": "2027-04-01",
+      "category": [
+        "merit",
+        "community-service"
+      ],
+      "competitiveness": "moderate",
+      "scope": "state",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "Environmental Studies",
+          "Environmental Science"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Scholarship for Washington state public high school seniors planning to pursue a degree in environmental studies. Four winners selected annually. Essay-based application about how you hope to make a difference through environmental studies.",
+      "url": "https://bold.org/scholarships/carol-s-comeau-environmental-scholarship/",
+      "renewable": false,
+      "tags": [
+        "washington",
+        "environmental",
+        "essay",
+        "state"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://bold.org/scholarships/carol-s-comeau-environmental-scholarship/"
+    },
+    {
+      "name": "Cooke Young Scholars Program",
+      "provider": "Jack Kent Cooke Foundation",
+      "amount": {
+        "min": 0,
+        "max": 55000,
+        "display": "Comprehensive support through high school + pathway to $55K/yr college scholarship"
+      },
+      "deadline": "2026-04-29",
+      "category": [
+        "merit",
+        "need-based"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3.7,
+        "states": [
+          "all"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "7"
+        ]
+      },
+      "description": "Selective five-year pre-college scholarship for exceptional 7th graders with financial need. Provides individualized academic advising, financial support for enrichment, and a pathway to the Cooke College Scholarship ($55K/year). Family AGI up to $95,000 eligible.",
+      "url": "https://www.jkcf.org/our-scholarships/young-scholars-program/",
+      "renewable": true,
+      "tags": [
+        "pre-college",
+        "prestigious",
+        "need-based",
+        "middle-school",
+        "advising"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.jkcf.org/our-scholarships/young-scholars-program/"
+    },
+    {
+      "name": "Washington State College Grant",
+      "provider": "Washington Student Achievement Council (WSAC)",
+      "amount": {
+        "min": 0,
+        "max": 12000,
+        "display": "Up to full tuition at public institutions"
+      },
+      "deadline": "2027-06-30",
+      "category": [
+        "need-based"
+      ],
+      "competitiveness": "low",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Washington's largest state financial aid program, covering up to the full cost of tuition at public colleges. Available to Washington residents with family income at or below 100% of state median family income (~$70K for family of four). Apply via FAFSA or WASFA.",
+      "url": "https://wsac.wa.gov/washington-college-grant",
+      "renewable": true,
+      "tags": [
+        "washington",
+        "need-based",
+        "state-grant",
+        "tuition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://wsac.wa.gov/washington-college-grant"
+    },
+    {
+      "name": "NSHSS Foundation STEM Scholarship",
+      "provider": "National Society of High School Scholars",
+      "amount": {
+        "min": 1000,
+        "max": 5000,
+        "display": "$1,000 - $5,000"
+      },
+      "deadline": "2026-12-15",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "STEM"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Scholarship supporting students with demonstrated interest in STEM fields. Applicants need resume, transcript, educator recommendation, and essay about why they want to study STEM and how they will give back to their community.",
+      "url": "https://www.nshss.org/scholarships/",
+      "renewable": false,
+      "tags": [
+        "stem",
+        "national",
+        "merit",
+        "essay"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.nshss.org/scholarships/"
     }
   ]
 }
