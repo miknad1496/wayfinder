@@ -295,6 +295,30 @@ export async function sendScholarshipReminder(recipientEmail, userName, scholars
   });
 }
 
+// ─── Password Reset Email ──────────────────────────────────────
+export async function sendPasswordResetEmail(recipientEmail, userName, resetCode) {
+  const html = `
+    <div style="max-width: 500px; margin: 0 auto; font-family: -apple-system, sans-serif; color: #333;">
+      <h2 style="color: #1f2937;">Password Reset</h2>
+      <p>Hey ${userName || 'there'},</p>
+      <p>We received a request to reset your Wayfinder password. Use the code below to set a new password:</p>
+      <div style="background: #f3f4f6; border-radius: 8px; padding: 25px; margin: 20px 0; text-align: center;">
+        <p style="font-size: 36px; letter-spacing: 8px; margin: 0; font-weight: bold; color: #1f2937;">${resetCode}</p>
+        <p style="color: #666; font-size: 13px; margin: 10px 0 0;">This code expires in 15 minutes</p>
+      </div>
+      <p>If you didn't request this, you can safely ignore this email.</p>
+      <p style="font-size: 12px; color: #999; margin-top: 30px;">— Wayfinder AI</p>
+    </div>
+  `;
+
+  return sendEmail({
+    to: recipientEmail,
+    subject: 'Wayfinder — Password Reset Code',
+    html,
+    text: `Password Reset\n\nYour reset code: ${resetCode}\nThis code expires in 15 minutes.\n\nIf you didn't request this, ignore this email.`
+  });
+}
+
 // ─── Essay Review Ready ─────────────────────────────────────────
 export async function sendEssayReviewReady(recipientEmail, userName, essayType, score) {
   const html = `

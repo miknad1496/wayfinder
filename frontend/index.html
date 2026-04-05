@@ -294,7 +294,35 @@
           </div>
           <div id="loginError" class="form-error" style="display:none;"></div>
           <button id="loginSubmit" class="form-btn">Log In</button>
+          <p class="form-switch"><a href="#" id="showForgotPassword" style="color:#94a3b8;font-size:13px;">Forgot password?</a></p>
           <p class="form-switch">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </div>
+
+        <div id="forgotPasswordForm" class="auth-form" style="display:none;">
+          <h2>Reset Password</h2>
+          <p class="form-subtitle">Enter your email and we'll send you a reset code</p>
+          <div id="forgotStep1">
+            <div class="form-group">
+              <label for="forgotEmail">Email</label>
+              <input type="email" id="forgotEmail" placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div id="forgotError" class="form-error" style="display:none;"></div>
+            <button id="forgotSubmit" class="form-btn">Send Reset Code</button>
+          </div>
+          <div id="forgotStep2" style="display:none;">
+            <p class="form-subtitle" style="color:#059669;">Check your email for a 6-digit code.</p>
+            <div class="form-group">
+              <label for="resetCode">Reset Code</label>
+              <input type="text" id="resetCode" placeholder="123456" maxlength="6" style="letter-spacing:4px;text-align:center;font-size:20px;font-weight:600;">
+            </div>
+            <div class="form-group">
+              <label for="resetNewPassword">New Password</label>
+              <input type="password" id="resetNewPassword" placeholder="New password (6+ characters)" autocomplete="new-password">
+            </div>
+            <div id="resetError" class="form-error" style="display:none;"></div>
+            <button id="resetSubmit" class="form-btn">Reset Password</button>
+          </div>
+          <p class="form-switch">Remember your password? <a href="#" id="backToLogin">Log in</a></p>
         </div>
 
         <div id="signupForm" class="auth-form" style="display:none;">

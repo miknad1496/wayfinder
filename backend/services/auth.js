@@ -340,6 +340,79 @@ export async function loginUser(email, password) {
 }
 
 /**
+ * Generate a password reset token for a user.
+ * Token is 6-digit numeric code, valid for 15 minutes.
+ */
+export async function requestPasswordReset(email) {
+  await ensureUsersDir();
+  const emailLower = email.toLowerCase().trim();
+  const userFile = join(USERS_DIR, `${emailLower.replace(/[^a-z0-9]/g, '_')}.json`);
+
+  let user;
+  try {
+    const raw = await fs.readFile(userFile, 'utf-8');
+    user = JSON.parse(raw);
+  } catch {
+    // Don't reveal whether account exists
+    return { success: true };
+  }
+
+  // Generate 6-digit reset code
+  const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+  user.resetCode = resetCode;
+  user.resetCodeExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 min
+
+  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  return { success: true, resetCode, userName: user.name || emailLower };
+}
+
+/**
+ * Reset password using a valid reset code.
+ */
+export async function resetPassword(email, code, newPassword) {
+  await ensureUsersDir();
+  const emailLower = email.toLowerCase().trim();
+  const userFile = join(USERS_DIR, `${emailLower.replace(/[^a-z0-9]/g, '_')}.json`);
+
+  let user;
+  try {
+    const raw = await fs.readFile(userFile, 'utf-8');
+    user = JSON.parse(raw);
+  } catch {
+    return { error: 'Invalid reset code.' };
+  }
+
+  // Verify code
+  if (!user.resetCode || user.resetCode !== code) {
+    return { error: 'Invalid reset code.' };
+  }
+
+  // Check expiry
+  if (new Date(user.resetCodeExpires) < new Date()) {
+    user.resetCode = null;
+    user.resetCodeExpires = null;
+    await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+    return { error: 'Reset code has expired. Please request a new one.' };
+  }
+
+  // Validate new password
+  if (!newPassword || newPassword.length < 6) {
+    return { error: 'Password must be at least 6 characters.' };
+  }
+
+  // Hash and save
+  user.passwordHash = await bcrypt.hash(newPassword, BCRYPT_ROUNDS);
+  delete user.salt; // Remove legacy salt if present
+  user.resetCode = null;
+  user.resetCodeExpires = null;
+  user.failedLoginAttempts = 0;
+  user.accountLockedUntil = null;
+
+  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  return { success: true };
+}
+
+/**
  * Log out a user by invalidating their token.
  */
 export async function logoutUser(token) {

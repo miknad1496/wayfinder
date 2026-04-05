@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { createUser, loginUser, logoutUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan } from '../services/auth.js';
+import { createUser, loginUser, logoutUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan, requestPasswordReset, resetPassword } from '../services/auth.js';
 import { validateInvite, redeemInvite } from '../services/invites.js';
+import { sendPasswordResetEmail } from '../services/email.js';
 
 const router = Router();
 
@@ -77,6 +78,47 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.error('Login error:', err);
     res.status(500).json({ error: 'Failed to log in' });
+  }
+});
+
+// POST /api/auth/forgot-password — Request a password reset code
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email is required' });
+
+    const result = await requestPasswordReset(email);
+
+    // If we got a reset code, send the email
+    if (result.resetCode) {
+      await sendPasswordResetEmail(email, result.userName, result.resetCode);
+    }
+
+    // Always return success to not reveal whether account exists
+    res.json({ success: true, message: 'If an account exists with that email, a reset code has been sent.' });
+  } catch (err) {
+    console.error('Forgot password error:', err);
+    res.status(500).json({ error: 'Failed to process reset request' });
+  }
+});
+
+// POST /api/auth/reset-password — Reset password with code
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { email, code, newPassword } = req.body;
+    if (!email || !code || !newPassword) {
+      return res.status(400).json({ error: 'Email, code, and new password are required' });
+    }
+
+    const result = await resetPassword(email, code, newPassword);
+    if (result.error) {
+      return res.status(400).json({ error: result.error });
+    }
+
+    res.json({ success: true, message: 'Password has been reset. You can now log in.' });
+  } catch (err) {
+    console.error('Reset password error:', err);
+    res.status(500).json({ error: 'Failed to reset password' });
   }
 });
 

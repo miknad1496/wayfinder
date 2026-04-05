@@ -1241,6 +1241,10 @@ function setupAuthListeners() {
   $('modalClose').addEventListener('click', closeAuthModal);
   $('showSignup').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('signup'); });
   $('showLogin').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('login'); });
+  $('showForgotPassword').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('forgot'); });
+  $('backToLogin').addEventListener('click', (e) => { e.preventDefault(); switchAuthForm('login'); });
+  $('forgotSubmit').addEventListener('click', submitForgotPassword);
+  $('resetSubmit').addEventListener('click', submitResetPassword);
 
   $('authModal').addEventListener('click', (e) => {
     if (e.target === $('authModal')) closeAuthModal();
@@ -1274,12 +1278,19 @@ function closeAuthModal() {
   $('authModal').style.display = 'none';
   $('loginError').style.display = 'none';
   $('signupError').style.display = 'none';
+  if ($('forgotError')) $('forgotError').style.display = 'none';
+  if ($('resetError')) $('resetError').style.display = 'none';
+  // Reset forgot password form state
+  if ($('forgotStep1')) $('forgotStep1').style.display = 'block';
+  if ($('forgotStep2')) $('forgotStep2').style.display = 'none';
 }
 
 function switchAuthForm(mode) {
   $('loginForm').style.display = mode === 'login' ? 'block' : 'none';
   $('signupForm').style.display = mode === 'signup' ? 'block' : 'none';
+  $('forgotPasswordForm').style.display = mode === 'forgot' ? 'block' : 'none';
   if (mode === 'login') $('loginEmail').focus();
+  else if (mode === 'forgot') $('forgotEmail').focus();
   else $('signupName').focus();
 }
 
@@ -1323,6 +1334,79 @@ async function submitLogin() {
     localStorage.removeItem('wayfinder_session');
   } catch {
     showAuthError('loginError', 'Connection error. Is the server running?');
+  }
+}
+
+let forgotEmail = ''; // track email across forgot/reset steps
+
+async function submitForgotPassword() {
+  const email = $('forgotEmail').value.trim();
+  if (!email) { showAuthError('forgotError', 'Please enter your email'); return; }
+
+  $('forgotSubmit').disabled = true;
+  $('forgotSubmit').textContent = 'Sending...';
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/forgot-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const data = await res.json();
+    if (data.error) {
+      showAuthError('forgotError', data.error);
+    } else {
+      forgotEmail = email;
+      $('forgotStep1').style.display = 'none';
+      $('forgotStep2').style.display = 'block';
+      $('resetCode').focus();
+    }
+  } catch {
+    showAuthError('forgotError', 'Connection error. Please try again.');
+  } finally {
+    $('forgotSubmit').disabled = false;
+    $('forgotSubmit').textContent = 'Send Reset Code';
+  }
+}
+
+async function submitResetPassword() {
+  const code = $('resetCode').value.trim();
+  const newPassword = $('resetNewPassword').value;
+  if (!code || !newPassword) { showAuthError('resetError', 'Please enter the code and a new password'); return; }
+
+  $('resetSubmit').disabled = true;
+  $('resetSubmit').textContent = 'Resetting...';
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/reset-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: forgotEmail, code, newPassword })
+    });
+    const data = await res.json();
+    if (data.error) {
+      showAuthError('resetError', data.error);
+    } else {
+      // Success — switch to login with pre-filled email
+      switchAuthForm('login');
+      $('loginEmail').value = forgotEmail;
+      $('loginPassword').focus();
+      $('forgotStep1').style.display = 'block';
+      $('forgotStep2').style.display = 'none';
+      showAuthError('loginError', '');
+      $('loginError').style.display = 'none';
+      // Show success message briefly
+      const msg = document.createElement('p');
+      msg.style.cssText = 'color:#059669;text-align:center;font-size:14px;margin-bottom:10px;';
+      msg.textContent = 'Password reset! Log in with your new password.';
+      $('loginForm').insertBefore(msg, $('loginSubmit'));
+      setTimeout(() => msg.remove(), 5000);
+    }
+  } catch {
+    showAuthError('resetError', 'Connection error. Please try again.');
+  } finally {
+    $('resetSubmit').disabled = false;
+    $('resetSubmit').textContent = 'Reset Password';
   }
 }
 
