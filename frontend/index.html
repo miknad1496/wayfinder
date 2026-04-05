@@ -1550,11 +1550,13 @@
   </div>
 
   
-  <!-- David Coach Chat Widget (floating, every page) -->
+  <!-- David Concierge Chat Widget (floating, every page) -->
   <div id="davidWidget" class="david-widget" style="display:none;">
     <button id="davidToggle" class="david-toggle" title="Ask David">
       <span class="david-toggle-badge">Ask David</span>
-      <img src="/david-coach.jpg" alt="David" class="david-toggle-img" />
+      <video src="/david-anim.webm" autoplay loop muted playsinline class="david-toggle-img" poster="/david-coach.jpg">
+        <img src="/david-anim.gif" alt="David" class="david-toggle-img" />
+      </video>
     </button>
 
     <div id="davidChat" class="david-chat" style="display:none;">
@@ -1563,14 +1565,14 @@
           <img src="/david-coach.jpg" alt="David" class="david-chat-avatar" />
           <div>
             <div class="david-chat-name">David</div>
-            <div class="david-chat-status">Wayfinder Coach</div>
+            <div class="david-chat-status">Wayfinder Concierge</div>
           </div>
         </div>
         <button id="davidClose" class="david-chat-close" title="Close">&times;</button>
       </div>
       <div id="davidMessages" class="david-chat-messages">
         <div class="david-msg david-msg-assistant">
-          <div class="david-msg-bubble">Hey! I'm David, your Wayfinder coach. I can help you navigate the platform, brainstorm essay ideas, or answer questions about the admissions process. What can I help you with?</div>
+          <div class="david-msg-bubble">Hey! I'm David, your Wayfinder concierge. I'm here to help you navigate the platform, find the right tools, and answer questions about the admissions process. What can I help you with?</div>
         </div>
       </div>
       <div class="david-chat-input-area">
