@@ -4124,7 +4124,7 @@ html, body { overflow-x: hidden; }
    ============================================================ */
 
 .meet-david-section {
-  margin: 36px 0 28px;
+  margin: 40px 0 40px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border-radius: 16px;
   padding: 36px 32px;
@@ -4160,6 +4160,8 @@ html, body { overflow-x: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.2);
 }
 
 .meet-david-title {
@@ -4226,7 +4228,7 @@ html, body { overflow-x: hidden; }
 
 .david-widget {
   position: fixed;
-  bottom: 24px;
+  bottom: 72px;
   right: 24px;
   z-index: 9999;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -4240,7 +4242,7 @@ html, body { overflow-x: hidden; }
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border: 2px solid rgba(251, 191, 36, 0.3);
   border-radius: 32px;
-  padding: 6px 18px 6px 6px;
+  padding: 6px 6px 6px 18px;
   cursor: pointer;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(251, 191, 36, 0.1);
   transition: all 0.25s ease;
@@ -4257,6 +4259,8 @@ html, body { overflow-x: hidden; }
   height: 42px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.15);
   border: 2px solid rgba(251, 191, 36, 0.25);
 }
 
@@ -4461,7 +4465,7 @@ html, body { overflow-x: hidden; }
 /* Mobile responsive */
 @media (max-width: 500px) {
   .david-widget {
-    bottom: 16px;
+    bottom: 64px;
     right: 16px;
   }
   .david-chat {
