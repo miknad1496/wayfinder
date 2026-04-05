@@ -4489,6 +4489,9 @@ html, body { overflow-x: hidden; }
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
 
 .david-toggle:hover {
@@ -4510,7 +4513,7 @@ html, body { overflow-x: hidden; }
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
-  transform: scale(1.12);
+  transform: scale(1.2);
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
@@ -4732,6 +4735,8 @@ html, body { overflow-x: hidden; }
     padding: 3px 3px 3px 12px;
     gap: 7px;
     border-radius: 28px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
   .david-toggle-img {
     width: 40px;

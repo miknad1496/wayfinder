@@ -3901,12 +3901,12 @@ function setupDavidCoach() {
     const isOpen = chat.style.display !== 'none';
     chat.style.display = isOpen ? 'none' : 'flex';
     if (!isOpen) {
-      // Immediate focus for desktop; delayed focus for mobile (Safari needs delay after display change)
-      input.focus();
-      setTimeout(() => {
+      // On desktop, focus input immediately. On mobile, don't auto-focus —
+      // let user see the chat + welcome message first, then tap input when ready.
+      const isMobile = window.innerWidth <= 500;
+      if (!isMobile) {
         input.focus();
-        input.click();
-      }, 350);
+      }
     }
   });
 
