@@ -1252,7 +1252,6 @@ const verifiedScholarships = [
     _verifiedDate: "2026-04-05",
     _source: "https://wwin.org/star-scholars/"
   },
-
 ];
 
 

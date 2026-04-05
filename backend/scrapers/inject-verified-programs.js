@@ -1198,6 +1198,147 @@ const verifiedPrograms = [
     _source: "https://www.engr.washington.edu/k12"
   },
 
+  {
+    "name": "Seattle University Urban Sustainability Pre-College Program",
+    "provider": "Seattle University",
+    "category": "stem",
+    "subcategory": "environmental-science",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "varies",
+      "display": "Scholarships available"
+    },
+    "selectivity": "moderate",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "eligibility": {
+      "grades": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2026-04-25",
+    "description": "Overnight pre-college program at Seattle University incorporating biology, chemistry, environmental studies, and environmental engineering with emphasis on social equity and environmental justice. Activities include urban wildlife camera trapping, fish counting and identification, and water sampling.",
+    "url": "https://www.seattleu.edu/pre-college-summer-programs/urban-sustainability/",
+    "tags": [
+      "stem",
+      "environmental",
+      "sustainability",
+      "pre-college",
+      "seattle",
+      "overnight",
+      "college-credit"
+    ],
+    "duration": "1 week (July 26-31, 2026)",
+    "region": "Pacific Northwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-05",
+    "_source": "https://www.seattleu.edu/pre-college-summer-programs/urban-sustainability/"
+  },
+  {
+    "name": "UW STEP (Students Exploring Pharmacy)",
+    "provider": "University of Washington School of Pharmacy",
+    "category": "stem",
+    "subcategory": "healthcare",
+    "type": "summer",
+    "cost": {
+      "amount": 200,
+      "type": "paid",
+      "display": "$200 (scholarships for free/reduced lunch eligible)"
+    },
+    "selectivity": "moderate",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "eligibility": {
+      "grades": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "WA"
+      ]
+    },
+    "deadline": "2026-04-30",
+    "description": "4-day program at UW School of Pharmacy for grades 9-12. Interactive presentations, labs, discussion groups, tours, and workshops including basic medication compounding, exploring treatment approaches, medication safety and quality, and practicing clinical skills.",
+    "url": "https://sop.washington.edu/pharmd/admissions/step-summer-program/",
+    "tags": [
+      "stem",
+      "pharmacy",
+      "healthcare",
+      "pre-college",
+      "seattle",
+      "uw",
+      "hands-on"
+    ],
+    "duration": "4 days (July 13-16, 2026)",
+    "region": "Pacific Northwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-05",
+    "_source": "https://sop.washington.edu/pharmd/admissions/step-summer-program/"
+  },
+  {
+    "name": "Lakeside Summer Institute: Science Courses",
+    "provider": "Lakeside School",
+    "category": "stem",
+    "subcategory": "science",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "varies",
+      "display": "Varies by course"
+    },
+    "selectivity": "moderate",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "eligibility": {
+      "grades": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2026-06-01",
+    "description": "Advanced science courses at Lakeside School covering AI, molecular biology, and planetary science. Students learn from experts in each field, gaining real-world skills. Lakeside is one of Seattle's most prestigious private schools.",
+    "url": "https://www.lakesideschool.org/summer/high-school-courses",
+    "tags": [
+      "stem",
+      "ai",
+      "science",
+      "pre-college",
+      "seattle",
+      "prestigious",
+      "lakeside"
+    ],
+    "duration": "Varies by course",
+    "region": "Pacific Northwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-05",
+    "_source": "https://www.lakesideschool.org/summer/high-school-courses"
+  },
 ];
 
 

@@ -48,8 +48,8 @@
       "Habitat for Humanity"
     ],
     "_verified": "partial",
-    "_verificationNotes": "5 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 795 programs are unverified and may contain template descriptions.",
-    "lastUpdated": "2026-04-05T03:59:22.907Z",
+    "_verificationNotes": "7 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 800 programs are unverified and may contain template descriptions.",
+    "lastUpdated": "2026-04-05T13:34:21.737Z",
     "totalPrograms": 795,
     "verifiedCount": 49
   },
@@ -33650,6 +33650,328 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
+    },
+    {
+      "name": "Lakeside Educational Enrichment Program (LEEP)",
+      "provider": "Lakeside School",
+      "category": "academic-enrichment",
+      "subcategory": "multi-subject",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free (includes transportation)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "5",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-05-01",
+      "description": "Free 4-week summer enrichment program at Lakeside School for current 5th and 8th graders in Seattle Public Schools entering 6th or 9th grade. Includes classes, sports, outdoor activities, trips, and field days. Free daily bus transportation within Seattle city limits. July 6-31, 2026.",
+      "url": "https://www.lakesideschool.org/summer/leep",
+      "tags": [
+        "free",
+        "enrichment",
+        "seattle",
+        "lakeside",
+        "elementary",
+        "middle-school",
+        "transportation"
+      ],
+      "duration": "4 weeks (July)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.lakesideschool.org/summer/leep"
+    },
+    {
+      "name": "Washington Aerospace Scholars (WAS)",
+      "provider": "Museum of Flight & NASA",
+      "category": "stem",
+      "subcategory": "aerospace",
+      "type": "academic-year",
+      "cost": {
+        "amount": 1850,
+        "type": "paid",
+        "display": "$1,850 residency fee (covers room & board)"
+      },
+      "selectivity": "selective",
+      "admissionsImpact": "high",
+      "format": "hybrid",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "11"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-10-01",
+      "description": "Two-phase program for WA state high school juniors: online UW college course on aerospace design and NASA space exploration (earns 5 UW credits), followed by a 6-day summer residency at the Museum of Flight. Work with STEM professionals, NASA scientists, and university students.",
+      "url": "https://www.museumofflight.org/WAS",
+      "tags": [
+        "stem",
+        "aerospace",
+        "nasa",
+        "uw-credits",
+        "selective",
+        "residential",
+        "washington"
+      ],
+      "duration": "Academic year + 6-day summer residency",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.museumofflight.org/WAS"
+    },
+    {
+      "name": "ACAP Seattle Residency Week",
+      "provider": "Accounting Career Awareness Program Seattle",
+      "category": "business",
+      "subcategory": "accounting",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free (includes housing, food, and activities)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-04-03",
+      "description": "Free week-long residential program at UW for WA high school sophomores, juniors, and seniors underrepresented in accounting. Immersed in the college experience: stay on UW campus, learn about accounting and business majors, visit firms, and get matched with a year-long mentor.",
+      "url": "https://www.seattleacap.org/residency",
+      "tags": [
+        "free",
+        "business",
+        "accounting",
+        "residential",
+        "uw",
+        "mentorship",
+        "diversity",
+        "seattle"
+      ],
+      "duration": "1 week (summer)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.seattleacap.org/residency"
+    },
+    {
+      "name": "UW Changemakers in Computing",
+      "provider": "University of Washington",
+      "category": "stem",
+      "subcategory": "computer-science",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-04-01",
+      "description": "Free 4-week in-person summer program at UW Seattle for WA state high school juniors and seniors with little to no prior computing experience. July 6-30, 2026. Introduction to computing concepts, hands-on projects, and exposure to tech careers.",
+      "url": "https://www.engr.washington.edu/k12",
+      "tags": [
+        "free",
+        "computer-science",
+        "uw",
+        "seattle",
+        "beginners",
+        "stem",
+        "washington"
+      ],
+      "duration": "4 weeks (July 6-30)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.engr.washington.edu/k12"
+    },
+    {
+      "name": "Seattle University Urban Sustainability Pre-College Program",
+      "provider": "Seattle University",
+      "category": "stem",
+      "subcategory": "environmental-science",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "varies",
+        "display": "Scholarships available"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-04-25",
+      "description": "Overnight pre-college program at Seattle University incorporating biology, chemistry, environmental studies, and environmental engineering with emphasis on social equity and environmental justice. Activities include urban wildlife camera trapping, fish counting and identification, and water sampling.",
+      "url": "https://www.seattleu.edu/pre-college-summer-programs/urban-sustainability/",
+      "tags": [
+        "stem",
+        "environmental",
+        "sustainability",
+        "pre-college",
+        "seattle",
+        "overnight",
+        "college-credit"
+      ],
+      "duration": "1 week (July 26-31, 2026)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.seattleu.edu/pre-college-summer-programs/urban-sustainability/"
+    },
+    {
+      "name": "UW STEP (Students Exploring Pharmacy)",
+      "provider": "University of Washington School of Pharmacy",
+      "category": "stem",
+      "subcategory": "healthcare",
+      "type": "summer",
+      "cost": {
+        "amount": 200,
+        "type": "paid",
+        "display": "$200 (scholarships for free/reduced lunch eligible)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "2026-04-30",
+      "description": "4-day program at UW School of Pharmacy for grades 9-12. Interactive presentations, labs, discussion groups, tours, and workshops including basic medication compounding, exploring treatment approaches, medication safety and quality, and practicing clinical skills.",
+      "url": "https://sop.washington.edu/pharmd/admissions/step-summer-program/",
+      "tags": [
+        "stem",
+        "pharmacy",
+        "healthcare",
+        "pre-college",
+        "seattle",
+        "uw",
+        "hands-on"
+      ],
+      "duration": "4 days (July 13-16, 2026)",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://sop.washington.edu/pharmd/admissions/step-summer-program/"
+    },
+    {
+      "name": "Lakeside Summer Institute: Science Courses",
+      "provider": "Lakeside School",
+      "category": "stem",
+      "subcategory": "science",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "varies",
+        "display": "Varies by course"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-06-01",
+      "description": "Advanced science courses at Lakeside School covering AI, molecular biology, and planetary science. Students learn from experts in each field, gaining real-world skills. Lakeside is one of Seattle's most prestigious private schools.",
+      "url": "https://www.lakesideschool.org/summer/high-school-courses",
+      "tags": [
+        "stem",
+        "ai",
+        "science",
+        "pre-college",
+        "seattle",
+        "prestigious",
+        "lakeside"
+      ],
+      "duration": "Varies by course",
+      "region": "Pacific Northwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.lakesideschool.org/summer/high-school-courses"
     }
   ]
 }

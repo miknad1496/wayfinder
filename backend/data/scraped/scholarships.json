@@ -5,7 +5,7 @@
     "totalCount": 976,
     "totalValue": "$14.7 million+",
     "_verified": "partial",
-    "_verificationNotes": "5 new verified scholarships injected, 35 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
+    "_verificationNotes": "0 new verified scholarships injected, 45 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
     "dataYear": "2026-2027",
     "sources": [
       "Gates Foundation",
@@ -28,7 +28,7 @@
       "Military Service Academies",
       "Professional Organizations"
     ],
-    "lastUpdated": "2026-04-05T03:59:12.117Z",
+    "lastUpdated": "2026-04-05T13:33:47.492Z",
     "totalScholarships": 1013,
     "verifiedCount": 46
   },
@@ -40394,6 +40394,239 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.nshss.org/scholarships/"
+    },
+    {
+      "name": "SAME Seattle Post & PSE&SSF Engineering Scholarship",
+      "provider": "Society of American Military Engineers — Seattle Post",
+      "amount": {
+        "min": 1000,
+        "max": 2000,
+        "display": "$1,000 - $2,000"
+      },
+      "deadline": "2026-04-17",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "regional",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "Engineering",
+          "Science",
+          "Technology"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Up to $27,500 awarded across 18 scholarships for graduating high school seniors in Puget Sound counties pursuing BS degrees in engineering, science, or technology. Awards range from $1,000-$2,000. Must attend an accredited college or university in Fall 2026.",
+      "url": "https://www.same.org/seattle/scholarships/",
+      "renewable": false,
+      "tags": [
+        "engineering",
+        "stem",
+        "military",
+        "puget-sound",
+        "regional"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.same.org/seattle/scholarships/"
+    },
+    {
+      "name": "Museum of Flight Post-Secondary STEM Scholarship",
+      "provider": "The Museum of Flight",
+      "amount": {
+        "min": 5000,
+        "max": 30000,
+        "display": "Up to $30,000/year for 4 years"
+      },
+      "deadline": "2027-02-01",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "high",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 3.5,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "STEM",
+          "Aviation",
+          "Aerospace"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Renewable STEM scholarship for Washington State resident high school seniors with 3.5+ GPA who participated in at least 40 hours of Museum of Flight programs. Awards up to $30,000 annually for four years toward a STEM degree.",
+      "url": "https://www.museumofflight.org/education/post-secondary-scholarships",
+      "renewable": true,
+      "tags": [
+        "stem",
+        "aerospace",
+        "aviation",
+        "washington",
+        "renewable",
+        "high-value"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.museumofflight.org/education/post-secondary-scholarships"
+    },
+    {
+      "name": "Nellie Martin Carman Scholarship",
+      "provider": "Nellie Martin Carman Scholarship Fund",
+      "amount": {
+        "min": 500,
+        "max": 2000,
+        "display": "Up to $2,000/year"
+      },
+      "deadline": "2027-04-06",
+      "category": [
+        "need-based"
+      ],
+      "competitiveness": "moderate",
+      "scope": "regional",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Founded in 1949. For graduating seniors from public high schools in King, Pierce, or Snohomish County, WA. Must demonstrate financial need. Requires school counselor nomination. Must attend a WA college or university full-time. Not available for arts majors.",
+      "url": "https://carmanscholarships.org/",
+      "renewable": true,
+      "tags": [
+        "need-based",
+        "king-county",
+        "pierce-county",
+        "snohomish",
+        "counselor-nomination"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://carmanscholarships.org/"
+    },
+    {
+      "name": "Black at Microsoft Scholarship",
+      "provider": "Black at Microsoft & Seattle Foundation",
+      "amount": {
+        "min": 2500,
+        "max": 5000,
+        "display": "$2,500 - $5,000 (renewable)"
+      },
+      "deadline": "2027-03-16",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "Engineering",
+          "Computer Science",
+          "Business",
+          "Finance"
+        ],
+        "demographics": [
+          "Black/African American"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "National scholarship for Black high school seniors pursuing STEM or business degrees. Five $5,000 renewable awards (up to 3 years) and 55 one-time $2,500 awards. Administered by Scholarship America. Selection based on academics, interest in software/tech, and leadership.",
+      "url": "https://www.microsoft.com/en-us/diversity/bam-scholarship",
+      "renewable": true,
+      "tags": [
+        "tech",
+        "microsoft",
+        "diversity",
+        "stem",
+        "business",
+        "renewable"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.microsoft.com/en-us/diversity/bam-scholarship"
+    },
+    {
+      "name": "WWIN Star Scholarship",
+      "provider": "Washington Women In Need",
+      "amount": {
+        "min": 5000,
+        "max": 5000,
+        "display": "$5,000/year (up to $20,000 total)"
+      },
+      "deadline": "2026-04-16",
+      "category": [
+        "need-based"
+      ],
+      "competitiveness": "moderate",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [
+          "women"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Annual $5,000 renewable scholarship for women in Washington state pursuing post-secondary credentials. Renewable up to $20,000 total. Includes a Resiliency Fund for financial setbacks, Career Coaching program, and online networking community. Open to US citizens, permanent residents, refugees, asylees, and DACA recipients.",
+      "url": "https://wwin.org/star-scholars/",
+      "renewable": true,
+      "tags": [
+        "women",
+        "washington",
+        "need-based",
+        "renewable",
+        "career-support"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://wwin.org/star-scholars/"
     }
   ]
 }
