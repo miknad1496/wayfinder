@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-04",
-    "totalCount": 1545,
+    "totalCount": 1548,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -1213,6 +1213,110 @@
       "_source": "https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water/internships",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "Microsoft Discovery Program",
+      "company": "Microsoft",
+      "location": {
+        "city": "Redmond",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid hourly internship",
+      "field": "Technology",
+      "deadline": "2027-03-01",
+      "description": "4-week paid internship for graduating high school seniors living within 50 miles of Redmond, WA. Work in small teams on real projects spanning product development, software engineering, product management, and UX design. No prior technical experience required. Must be affiliated with a Microsoft-sponsored org (Computing for All, College Success Foundation, Rainier Scholars, TAF, UW STEM Upward Bound, or Washington MESA).",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Design",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "technology",
+        "microsoft",
+        "competitive",
+        "redmond"
+      ],
+      "url": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
+      "duration": "4 weeks (July-August)",
+      "whyApply": "Hands-on tech experience at one of the world's largest tech companies. Great for college applications and exploring career paths in tech.",
+      "_source": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "Amazon Periscope Finance Internship",
+      "company": "Amazon / Seattle Public Schools",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$400 stipend upon completion",
+      "field": "Business",
+      "deadline": "2027-04-17",
+      "description": "2-week career intensive at Amazon South Lake Union campus for current 10th grade students. Introduction to finance and accounting careers including Microsoft Excel training, day-in-the-life of a financial analyst, personal finance workshops, and a business case study capstone project. 30 students accepted. Earns 0.25 CTE credits plus ongoing Amazon leadership mentorship.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Accounting"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "finance",
+        "amazon",
+        "seattle",
+        "stipend"
+      ],
+      "url": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/finance-quest-amazon-periscope/",
+      "duration": "2 weeks (July)",
+      "whyApply": "Get real exposure to corporate finance at Amazon with ongoing mentorship from Amazon leadership. Unique opportunity for 10th graders.",
+      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/finance-quest-amazon-periscope/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "T-Mobile Career Launch Web Developer Program",
+      "company": "T-Mobile / Seattle Colleges",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid summer internship",
+      "field": "Technology",
+      "deadline": "2027-03-15",
+      "description": "Career Launch program for Seattle Public Schools high school juniors combining paid summer internships at T-Mobile with college coursework at Seattle Colleges. Students work toward a 59-credit full stack web developer certificate over 2 years, with two paid summer internships at T-Mobile headquarters.",
+      "majors": [
+        "Computer Science",
+        "Web Development",
+        "Software Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "technology",
+        "t-mobile",
+        "seattle",
+        "web-development",
+        "career-launch"
+      ],
+      "url": "https://wabsalliance.org/what-we-do/for-industry/career-launch.html",
+      "duration": "2 summers (multi-year program)",
+      "whyApply": "Earn college credits and paid work experience simultaneously at a major tech company. Pipeline to a full stack developer career.",
+      "_source": "https://wabsalliance.org/what-we-do/for-industry/career-launch.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
       "format": "in-person"
     },
     {
