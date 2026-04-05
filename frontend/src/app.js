@@ -3631,6 +3631,9 @@ async function searchInternships() {
     const data = await res.json();
     $('internshipsLoading').style.display = 'none';
     renderToolResults('internshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'internship', data.total);
+    // Fetch intel tips based on active field filter
+    const intField = $('internshipField')?.value || '';
+    fetchAndRenderIntel('internshipsResults', 'internships', intField || null);
   } catch {
     $('internshipsLoading').style.display = 'none';
     $('internshipsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load internships.</p>';
@@ -3671,6 +3674,9 @@ async function searchScholarships() {
     const data = await res.json();
     $('scholarshipsLoading').style.display = 'none';
     renderToolResults('scholarshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'scholarship');
+    // Fetch intel tips based on active category filter
+    const schCat = $('scholarshipCategory')?.value || $('scholarshipFormat')?.value || '';
+    fetchAndRenderIntel('scholarshipsResults', 'scholarships', schCat || null);
   } catch {
     $('scholarshipsLoading').style.display = 'none';
     $('scholarshipsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load scholarships.</p>';
@@ -3712,6 +3718,9 @@ async function searchPrograms() {
     const data = await res.json();
     $('programsLoading').style.display = 'none';
     renderToolResults('programsResults', data.results || [], data._fullAccess, data._previewMessage, 'program');
+    // Fetch intel tips based on active category filter
+    const progCat = $('programCategory')?.value || '';
+    fetchAndRenderIntel('programsResults', 'programs', progCat || null);
   } catch {
     $('programsLoading').style.display = 'none';
     $('programsResults').innerHTML = '<p style="color:#94a3b8;text-align:center;">Failed to load programs.</p>';
@@ -4050,6 +4059,55 @@ async function generateMyStrategy() {
     $('strategyBtn').disabled = false;
     $('strategyResults').innerHTML = '<p style="color:#f87171;">Failed to generate strategy. Please try again.</p>';
   }
+}
+
+// ========================
+// Opportunity Intelligence Tips
+// ========================
+async function fetchAndRenderIntel(containerId, type, category) {
+  try {
+    const path = category
+      ? `${API_BASE}/intelligence/${type}/${category}`
+      : `${API_BASE}/intelligence/${type}`;
+    const res = await fetch(path, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+
+    // Build a compact tip card
+    let tipHtml = '';
+
+    if (data.reality) {
+      // Category-specific insight
+      tipHtml = `<div class="intel-tip">
+        <div class="intel-tip-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>Strategy Insight</span>
+        </div>
+        <p class="intel-tip-text">${escapeHtml(data.reality)}</p>
+        ${data.keyHacks?.length ? `<details class="intel-hacks"><summary>Tips & Hacks (${data.keyHacks.length})</summary><ul>${data.keyHacks.map(h => `<li>${escapeHtml(h)}</li>`).join('')}</ul></details>` : ''}
+      </div>`;
+    } else if (data.crossCuttingStrategy) {
+      // Cross-cutting strategy (no specific category matched)
+      const strat = data.crossCuttingStrategy;
+      const tips = Object.values(strat).filter(v => typeof v === 'string').slice(0, 3);
+      if (tips.length) {
+        tipHtml = `<div class="intel-tip">
+          <div class="intel-tip-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <span>Strategy Tips</span>
+          </div>
+          <ul class="intel-tip-list">${tips.map(t => `<li>${escapeHtml(t)}</li>`).join('')}</ul>
+        </div>`;
+      }
+    }
+
+    if (tipHtml) {
+      const el = $(containerId);
+      if (el) el.insertAdjacentHTML('afterbegin', tipHtml);
+    }
+  } catch { /* Intel is a nice-to-have, don't break the page */ }
 }
 
 // ========================

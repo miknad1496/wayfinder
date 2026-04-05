@@ -2291,6 +2291,59 @@ html, body { overflow-x: hidden; }
 .tool-empty svg { margin-bottom: 8px; }
 .tool-empty p { font-size: 14px; }
 
+/* Intelligence Tips */
+.intel-tip {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.03));
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.intel-tip-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #f59e0b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.intel-tip-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 8px;
+}
+.intel-tip-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.intel-tip-list li { margin-bottom: 4px; }
+.intel-hacks {
+  margin-top: 8px;
+}
+.intel-hacks summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f59e0b;
+  cursor: pointer;
+  user-select: none;
+}
+.intel-hacks summary:hover { text-decoration: underline; }
+.intel-hacks ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.intel-hacks li { margin-bottom: 6px; }
+
 /* Tool Cards */
 .tool-card {
   border: 1px solid var(--border);

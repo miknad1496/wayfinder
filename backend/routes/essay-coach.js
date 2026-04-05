@@ -27,6 +27,7 @@ const client = new Anthropic();
 
 // ─── Knowledge Cache ────────────────────────────────────────
 let coachKnowledge = null;
+let opportunityIntel = null;
 
 async function loadCoachKnowledge() {
   if (coachKnowledge) return coachKnowledge;
@@ -42,13 +43,191 @@ async function loadCoachKnowledge() {
   for (const file of files) {
     try {
       const content = await fs.readFile(join(basePath, file), 'utf-8');
-      // Take first ~1500 chars of each file for Haiku context efficiency
-      chunks.push(content.substring(0, 1500));
+      // Take first ~800 chars of each file for Haiku context efficiency
+      // (3 files × 800 chars ≈ 800 tokens — keeps total system prompt under 3K tokens)
+      chunks.push(content.substring(0, 800));
     } catch { /* skip missing files */ }
   }
 
   coachKnowledge = chunks.join('\n\n---\n\n');
   return coachKnowledge;
+}
+
+async function loadOpportunityIntel() {
+  if (opportunityIntel) return opportunityIntel;
+  try {
+    const raw = await fs.readFile(
+      join(__dirname, '..', 'data', 'scraped', 'opportunity-intelligence.json'),
+      'utf-8'
+    );
+    opportunityIntel = JSON.parse(raw);
+  } catch { opportunityIntel = null; }
+  return opportunityIntel;
+}
+
+/**
+ * Pull the right slice of opportunity intelligence based on what the user
+ * is currently looking at. Returns a compact text block for Haiku injection.
+ */
+function getRelevantIntel(toolContext, intel) {
+  if (!intel || !toolContext?.activeTool) return '';
+
+  const tool = toolContext.activeTool.toLowerCase();
+  const filters = (toolContext.activeFilters || '').toLowerCase();
+  const parts = [];
+
+  // ── Scholarships ────────────────────────────────────────────
+  if (tool.includes('scholarship')) {
+    const ss = intel.scholarshipStrategy;
+    if (!ss) return '';
+
+    // Try to match a specific category from the active filters
+    const catMap = {
+      'full-ride': ss.categoryInsights?.['full-ride'],
+      'merit': ss.categoryInsights?.merit,
+      'need': ss.categoryInsights?.['need-based'],
+      'essay': ss.categoryInsights?.['essay-based'],
+      'video': ss.categoryInsights?.['video-and-portfolio'],
+      'portfolio': ss.categoryInsights?.['video-and-portfolio'],
+      'stem': ss.categoryInsights?.stem,
+    };
+
+    // Match up to 2 categories (not just first) for richer context
+    let matchCount = 0;
+    for (const [key, val] of Object.entries(catMap)) {
+      if (val && filters.includes(key) && matchCount < 2) {
+        parts.push(`SCHOLARSHIP STRATEGY (${key}):\n${val.reality}\nTop hack: ${val.keyHacks?.[0] || ''}`);
+        matchCount++;
+      }
+    }
+    if (matchCount === 0) {
+      parts.push(`SCHOLARSHIP CROSS-CUTTING STRATEGY:\n${ss.crossCuttingStrategy?.timeline || ''}\n${ss.crossCuttingStrategy?.localAdvantage || ''}`);
+    }
+  }
+
+  // ── Internships ─────────────────────────────────────────────
+  if (tool.includes('internship')) {
+    const is = intel.internshipStrategy;
+    if (!is) return '';
+
+    const catMap = {
+      'research': is.categoryInsights?.['research-programs'],
+      'tech': is.categoryInsights?.['tech-industry'],
+      'healthcare': is.categoryInsights?.['healthcare-clinical'],
+      'clinical': is.categoryInsights?.['healthcare-clinical'],
+      'government': is.categoryInsights?.['government-and-national-labs'],
+      'nasa': is.categoryInsights?.['government-and-national-labs'],
+      'national lab': is.categoryInsights?.['government-and-national-labs'],
+    };
+
+    let matchCount = 0;
+    for (const [key, val] of Object.entries(catMap)) {
+      if (val && filters.includes(key) && matchCount < 2) {
+        parts.push(`INTERNSHIP STRATEGY (${key}):\n${val.reality}\nTop hack: ${val.keyHacks?.[0] || ''}`);
+        matchCount++;
+      }
+    }
+    if (matchCount === 0) {
+      parts.push(`INTERNSHIP CROSS-CUTTING STRATEGY:\n${is.crossCuttingStrategy?.applicationTimeline || ''}\n${is.crossCuttingStrategy?.localFirst || ''}`);
+    }
+  }
+
+  // ── Programs ────────────────────────────────────────────────
+  if (tool.includes('program')) {
+    const ps = intel.programStrategy;
+    if (!ps) return '';
+
+    const catMap = {
+      'art': ps.categoryInsights?.['arts-programs'],
+      'music': ps.categoryInsights?.['arts-programs'],
+      'stem': ps.categoryInsights?.['stem-enrichment'],
+      'science': ps.categoryInsights?.['stem-enrichment'],
+      'math': ps.categoryInsights?.['stem-enrichment'],
+      'leadership': ps.categoryInsights?.['leadership-and-service'],
+      'service': ps.categoryInsights?.['leadership-and-service'],
+      'entrepreneur': ps.categoryInsights?.entrepreneurship,
+      'business': ps.categoryInsights?.entrepreneurship,
+      'academic': ps.categoryInsights?.['prestigious-academic'],
+    };
+
+    let matchCount = 0;
+    for (const [key, val] of Object.entries(catMap)) {
+      if (val && filters.includes(key) && matchCount < 2) {
+        parts.push(`PROGRAM STRATEGY (${key}):\n${val.reality}\nTop hack: ${val.keyHacks?.[0] || ''}`);
+        if (val.admissionsCalibration) parts.push(`AO Calibration: ${val.admissionsCalibration}`);
+        matchCount++;
+      }
+    }
+    if (matchCount === 0) {
+      parts.push(`PROGRAM CROSS-CUTTING STRATEGY:\n${ps.crossCuttingStrategy?.selectionPrinciple || ''}\n${ps.crossCuttingStrategy?.costVsValue || ''}`);
+    }
+  }
+
+  // ── Financial Aid (always include if SAI context present) ───
+  if (toolContext.saiScore || tool.includes('financial') || tool.includes('aid')) {
+    const fa = intel.financialAidStrategy;
+    if (fa) {
+      parts.push(`FINANCIAL AID INTEL:\n${fa.fafsaHacks?.timing || ''}\n${fa.fafsaHacks?.assetProtection || ''}\n${fa.negotiationTactics?.appealProcess || ''}`);
+    }
+  }
+
+  if (parts.length === 0) return '';
+  return '\n\nOPPORTUNITY INTELLIGENCE (use this to give strategic advice when relevant):\n' + parts.join('\n\n');
+}
+
+/**
+ * Search for item-level intelligence matching the user's message.
+ * If the user mentions a specific program/scholarship/internship by name,
+ * David gets that specific strategic intel injected.
+ */
+// Common words that should NOT trigger item matches on their own
+const COMMON_WORDS = new Set([
+  'scholarship', 'scholarships', 'program', 'programs', 'internship', 'internships',
+  'foundation', 'national', 'state', 'college', 'summer', 'online', 'camp',
+  'arts', 'code', 'discovery', 'merit', 'fellowship', 'center', 'laboratory',
+  'university', 'institute', 'institutes', 'aerospace', 'scholars', 'cancer',
+  'pre-collegiate', 'enrichment', 'girls', 'boys', 'high', 'school', 'match',
+  'ship', 'apply', 'good', 'about', 'help', 'want', 'need', 'should',
+]);
+
+function getItemIntel(userMessage, intel) {
+  if (!intel || !userMessage) return '';
+  const msg = userMessage.toLowerCase();
+  const parts = [];
+
+  for (const section of [intel.scholarshipStrategy, intel.internshipStrategy, intel.programStrategy]) {
+    if (!section?.itemIntel) continue;
+    for (const [name, data] of Object.entries(section.itemIntel)) {
+      // Full name match (most reliable)
+      if (msg.includes(name.toLowerCase())) {
+        addItemBlock(parts, name, data);
+        if (parts.length >= 2) break;
+        continue;
+      }
+      // Distinctive word match — only match on proper nouns / brand names,
+      // not generic words like "scholarship", "program", "national", etc.
+      const distinctiveWords = name.split(/\s+/).filter(
+        w => w.length > 3 && !COMMON_WORDS.has(w.toLowerCase())
+      );
+      if (distinctiveWords.length > 0 &&
+          distinctiveWords.some(w => msg.includes(w.toLowerCase()))) {
+        addItemBlock(parts, name, data);
+        if (parts.length >= 2) break;
+      }
+    }
+    if (parts.length >= 2) break;
+  }
+
+  if (parts.length === 0) return '';
+  return '\n\nITEM-LEVEL OPPORTUNITY INTELLIGENCE:\n' + parts.join('\n\n');
+}
+
+function addItemBlock(parts, name, data) {
+  let block = `SPECIFIC INTEL — ${name}:`;
+  if (data.insiderTip) block += `\nInsider tip: ${data.insiderTip}`;
+  if (data.applicationHack) block += `\nApplication hack: ${data.applicationHack}`;
+  if (data.competitiveEdge) block += `\nCompetitive edge: ${data.competitiveEdge}`;
+  parts.push(block);
 }
 
 // ─── David's System Prompt ──────────────────────────────────
@@ -181,6 +360,7 @@ router.post('/chat', async (req, res) => {
 
     // Load knowledge and build system prompt
     const knowledge = await loadCoachKnowledge();
+    const intel = await loadOpportunityIntel();
     let systemPrompt = DAVID_SYSTEM_PROMPT.replace('{KNOWLEDGE_INJECTION}', knowledge);
 
     // Inject live tool context so David knows what the user is looking at
@@ -221,7 +401,20 @@ router.post('/chat', async (req, res) => {
       }
 
       ctxBlock += '\nYou ARE part of Wayfinder. Own all platform features — say "your SAI" not "the tool shows." Answer questions about their results directly.\n';
+
+      // Inject opportunity intelligence relevant to what the user is browsing
+      if (intel) {
+        const intelBlock = getRelevantIntel(toolContext, intel);
+        if (intelBlock) ctxBlock += intelBlock;
+      }
+
       systemPrompt += ctxBlock;
+    }
+
+    // Inject item-level intel if the user mentions a specific opportunity by name
+    if (intel) {
+      const itemBlock = getItemIntel(message, intel);
+      if (itemBlock) systemPrompt += itemBlock;
     }
 
     // Build messages array from history (last 10 messages for context efficiency)

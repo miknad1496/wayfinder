@@ -1,14 +1,12 @@
 {
   "metadata": {
-    "version": "1.0",
+    "version": "2.0",
     "lastUpdated": "2026-04-05",
-    "description": "Strategic intelligence layer for Wayfinder opportunity databases. Category-level strategy, individual opportunity hacks, and cross-cutting insights that help users not just find opportunities but actually win them.",
+    "description": "Strategic intelligence layer for Wayfinder opportunity databases. Category-level strategy, individual opportunity hacks, and cross-cutting insights that help users not just find opportunities but actually win them. Now includes item-level intelligence for key verified entries — specific strategy for individual scholarships, internships, and programs.",
     "usage": "Loaded by David concierge for contextual strategy advice. Can be surfaced in frontend alongside search results."
   },
-
   "scholarshipStrategy": {
     "_meta": "Strategy intelligence for the scholarships database",
-
     "categoryInsights": {
       "full-ride": {
         "reality": "Full-ride scholarships (Gates, QuestBridge, Coolidge, Posse) accept 1-3% of applicants. Most students who deserve them don't apply because they assume they won't win. The actual edge isn't being the most qualified — it's being the most prepared.",
@@ -76,18 +74,81 @@
         ]
       }
     },
-
     "crossCuttingStrategy": {
       "timeline": "Start scholarship applications in August before senior year. The major national deadlines cluster in September-February. Build a spreadsheet tracking: name, deadline, amount, essay prompt, word count, status.",
       "stackingStrategy": "The most successful scholarship students apply to 20-40 scholarships and win 5-10. Treat it like a portfolio — diversify across full-ride, mid-range, and small local scholarships.",
       "localAdvantage": "Local and regional scholarships (Seattle Foundation, community Rotary clubs, local credit unions) have the best odds. Check your school counselor's scholarship list, your parent's employer, your religious institution, and local civic organizations.",
       "negotiationLeverage": "If you receive a merit scholarship from School A, email School B's financial aid office: 'I've received [amount] from [School A]. I prefer [School B] — is there anything you can do to make it more affordable?' This works about 40% of the time at schools outside the top 20."
+    },
+    "itemIntel": {
+      "Coolidge Scholarship": {
+        "tags": [
+          "full-ride",
+          "merit"
+        ],
+        "insiderTip": "Coolidge wants students with a demonstrated interest in public policy, government, or civic leadership — but they define it broadly. A student who organized a voter registration drive qualifies as much as a debate champion. The key differentiator is 'presidential qualities': maturity, leadership under pressure, and genuine interest in governance.",
+        "applicationHack": "The Coolidge application has a unique 'public policy' emphasis. Don't just talk about your achievements — connect them to how you'd make an impact in the public sphere. Read the bios of past winners: they're future senators and policy analysts, not just valedictorians.",
+        "competitiveEdge": "Acceptance rate is under 1%. Your state-level semifinalist round is scored by local alumni — make sure your state-specific references and community context are strong."
+      },
+      "QuestBridge National College Match": {
+        "tags": [
+          "full-ride",
+          "need-based"
+        ],
+        "insiderTip": "QuestBridge is the single best pathway for high-achieving, low-income students. If your family income is under $65K and you have strong academics, this should be your #1 application. The Match process lets you rank up to 12 partner schools and potentially receive a full ride before December.",
+        "applicationHack": "The QuestBridge essay is about resilience — they want to understand how financial hardship shaped you without defining you. Be specific about the hardship but spend more words on what you built despite it. Matched students often write about the tension between their home life and academic ambitions.",
+        "competitiveEdge": "Even if you don't Match, being a QuestBridge Finalist gives you fee waivers and an inside track at partner schools during Regular Decision. The 'loss' is still valuable."
+      },
+      "GE-Reagan Foundation Scholarship": {
+        "tags": [
+          "merit",
+          "renewable"
+        ],
+        "insiderTip": "This is $10K/year renewable to $40K — one of the best mid-range renewable scholarships. Reagan Foundation values leadership, drive, and character. Think: student body president meets community organizer, not just GPA machines.",
+        "applicationHack": "Strong recommendations matter enormously here. Choose recommenders who can speak to your leadership in action — a coach, club advisor, or community leader who's seen you organize people, not just a teacher who's seen you ace tests.",
+        "competitiveEdge": "The renewable nature is the key advantage — $40K total is exceptional for a mid-range scholarship. Most $10K scholarships are one-time awards. Framing this as a '$40K scholarship' in your tracking spreadsheet puts it in the right competitive context."
+      },
+      "National Merit Scholarship": {
+        "tags": [
+          "merit",
+          "test-based"
+        ],
+        "insiderTip": "The $2,500 National Merit award gets the press, but the real money is in corporate-sponsored and college-sponsored awards that piggyback on NMSF/NMF status. Some schools (Alabama, Oklahoma, UT Dallas) offer full rides just for being a National Merit Finalist.",
+        "applicationHack": "If you're a Semifinalist, your biggest task is confirming as a Finalist — don't blow the application. Write the essay thoughtfully, get your school counselor to submit on time, and maintain your test score consistency with the SAT confirmation score.",
+        "competitiveEdge": "Strategic school list: if cost is a factor, include 2-3 schools that offer guaranteed full tuition for NMF status. These are typically large state schools with strong honors programs."
+      },
+      "Posse Foundation": {
+        "tags": [
+          "full-ride",
+          "leadership"
+        ],
+        "insiderTip": "Posse is nomination-based — you can't directly apply. It works through high school partnerships. If your school is a Posse partner, talk to your counselor about being nominated. If not, check if any community organizations in your area (Boys & Girls Club, community colleges, nonprofits) are Posse nominators.",
+        "applicationHack": "The Dynamic Assessment Process (DAP) is unlike any other scholarship interview. It's a group exercise where you collaborate with other nominees. They're evaluating your teamwork, communication, and ability to lift others up — not just your individual brilliance. Practice group discussions beforehand.",
+        "competitiveEdge": "Posse sends students in cohorts of 10 to each partner school. You get a built-in support network on campus. This is a massive advantage for first-gen students — the college retention rate for Posse Scholars is 90%."
+      },
+      "Thiel Fellowship": {
+        "tags": [
+          "entrepreneurship",
+          "alternative"
+        ],
+        "insiderTip": "The Thiel Fellowship is $200K to skip or drop out of college and build something. It's not a scholarship in the traditional sense — it's a bet on your entrepreneurial potential. If you have a genuine business idea with traction, this is transformative. If you're applying because it sounds cool, you'll be outcompeted by applicants who've already built products with real users.",
+        "applicationHack": "Thiel wants evidence of building, not just ideas. Previous winners had working prototypes, revenue, published research, or open-source projects with active communities before they applied.",
+        "competitiveEdge": "The $200K doesn't need to be repaid and there's no equity stake. Plus the Thiel network (alumni include Vitalik Buterin, Laura Deming, Austin Russell) gives you access to Silicon Valley's inner circle. Even being a finalist without winning puts you on the radar of major VCs."
+      },
+      "Washington State Opportunity Scholarship": {
+        "tags": [
+          "stem",
+          "state",
+          "need-based"
+        ],
+        "insiderTip": "If you're a WA resident pursuing STEM or healthcare, this is up to $22,500 in funding with a relatively accessible application. It's not as competitive as national scholarships — the pool is limited to WA students in eligible majors.",
+        "applicationHack": "Apply early in the cycle. The Skills & Trades track has a separate deadline and is even less competitive. If you're considering a technical degree path, look at both tracks.",
+        "competitiveEdge": "This is a state-funded scholarship with a smaller applicant pool than national awards. WA residents in STEM/healthcare who apply early have significantly better odds than competing nationally. Combine with the Washington College Grant (need-based, covers up to full tuition at state schools) for maximum state-level financial coverage."
+      }
     }
   },
-
   "internshipStrategy": {
     "_meta": "Strategy intelligence for the internships database",
-
     "categoryInsights": {
       "research-programs": {
         "reality": "Formal research programs (Fred Hutch SHIP, Brookhaven HSRP, NIH SIP, NASA OSTEM) are the gold standard for college applications. AOs treat 'selected for competitive national research program' as a major credential. But acceptance rates are 5-15%.",
@@ -135,21 +196,63 @@
         ]
       }
     },
-
     "crossCuttingStrategy": {
       "applicationTimeline": "Most competitive summer programs have December-March deadlines. Start your search in October, applications in November, submit by January. Don't wait for spring — by then, most slots are filled.",
       "coldOutreachFormula": "For informal internships: identify 15-20 professionals or professors in your field of interest. Send personalized emails referencing their specific work. Expect a 10-15% response rate. One 'yes' is all you need.",
       "maximizingAdmissionsImpact": "An internship becomes a powerful admissions credential when you can articulate: (1) what specific problem you worked on, (2) what you contributed, (3) what you learned that changed your thinking, and (4) how it connects to your future goals. Without this narrative, even a prestigious internship is just a line on a resume.",
       "localFirst": "Your highest-probability internships are local. A professor at your state university, a lab at your nearest research hospital, a nonprofit in your community. National programs are great to apply to, but local connections are where most students actually land meaningful experience."
+    },
+    "itemIntel": {
+      "Fred Hutchinson Cancer Center SHIP": {
+        "tags": [
+          "research",
+          "paid",
+          "prestigious"
+        ],
+        "insiderTip": "SHIP is one of the most prestigious high school research programs in the Pacific Northwest. It's heavily lab-based — you'll work alongside actual researchers. The application emphasizes genuine scientific curiosity over credentials. A student with a 3.5 GPA who wrote a compelling essay about why they want to study immunology can beat a 4.0 student with a generic 'I love science' essay.",
+        "applicationHack": "In your application, name a specific research area at Fred Hutch that excites you. Browse their lab pages (fredhutch.org/research) and mention a PI whose work aligns with your interests. This shows initiative that most applicants don't demonstrate.",
+        "competitiveEdge": "SHIP alumni have a strong track record at top-20 schools. The recommendation letter from your SHIP mentor carries significant weight — treat the relationship seriously."
+      },
+      "Microsoft Discovery Program": {
+        "tags": [
+          "tech",
+          "paid",
+          "corporate"
+        ],
+        "insiderTip": "Microsoft Discovery is extremely competitive and regionally focused — you need to be within commuting distance of Redmond, WA. It's a pipeline program: they're looking for students who might become future Microsoft engineers. Prior coding experience helps but isn't required — they value problem-solving mindset.",
+        "applicationHack": "Connection to a Microsoft-sponsored program (TEALS, DigiPen, local STEM partnership) significantly increases your chances. If you're in the Seattle area, participate in Microsoft-affiliated events before applying.",
+        "competitiveEdge": "The paid nature ($26/hr) makes this one of the best-compensated high school tech experiences in the country. It's a genuine resume item for future tech internships in college."
+      },
+      "Brookhaven National Laboratory HSRP": {
+        "tags": [
+          "research",
+          "government",
+          "STEM"
+        ],
+        "insiderTip": "Brookhaven's High School Research Program is a DOE facility — the prestige is on par with NASA internships. You'll work on real research problems with national lab scientists. The application emphasizes academic readiness and a clear statement of research interest.",
+        "applicationHack": "In your statement, connect your interest to one of Brookhaven's research divisions (nuclear physics, energy sciences, computational science). They want students who understand what the lab actually does, not generic STEM enthusiasts."
+      },
+      "NASA OSTEM Internships": {
+        "tags": [
+          "government",
+          "STEM",
+          "prestigious"
+        ],
+        "insiderTip": "NASA OSTEM is the umbrella for all NASA student programs. The high school track is competitive but less so than the college track. Citizenship is required. The magic is in applying to specific NASA centers — smaller centers (Stennis, Glenn) are less competitive than JPL or Goddard.",
+        "applicationHack": "Apply to 3-4 NASA centers, not just the famous ones. Your location-to-center proximity matters for some positions. Check intern.nasa.gov monthly starting in September for the summer cycle."
+      }
     }
   },
-
   "programStrategy": {
     "_meta": "Strategy intelligence for the programs/enrichment database",
-
     "categoryInsights": {
       "prestigious-academic": {
-        "programs": ["Johns Hopkins CTY", "Stanford Pre-Collegiate", "COSMOS", "MIT Launch/LaunchX"],
+        "programs": [
+          "Johns Hopkins CTY",
+          "Stanford Pre-Collegiate",
+          "COSMOS",
+          "MIT Launch/LaunchX"
+        ],
         "reality": "These programs are widely recognized by AOs and signal academic seriousness. But they've become common enough that attendance alone doesn't differentiate — what you DO with the experience matters more.",
         "keyHacks": [
           "At CTY or Stanford, identify a specific project or insight from the program and reference it in your college essays. 'At CTY, I took Number Theory and realized that the elegance of mathematical proof was what I wanted to spend my life pursuing' is powerful. 'I attended a Johns Hopkins summer program' is not.",
@@ -159,7 +262,12 @@
         "admissionsCalibration": "AOs at top-20 schools see CTY/Stanford summer programs on 15-20% of applications. It's a positive signal but not a differentiator at that level. At top-50 schools, it's more distinctive. At top-100, it's very strong."
       },
       "arts-programs": {
-        "programs": ["Interlochen", "Tanglewood BUTI", "YoungArts", "Scholastic Art & Writing"],
+        "programs": [
+          "Interlochen",
+          "Tanglewood BUTI",
+          "YoungArts",
+          "Scholastic Art & Writing"
+        ],
         "reality": "For students pursuing arts in college, these programs are near-essential credentials. For students pursuing non-arts majors, they demonstrate dimension and authenticity that AOs value highly.",
         "keyHacks": [
           "Interlochen and Tanglewood both offer substantial financial aid — 85% of Interlochen aid applicants receive support. Apply for aid even if you think you won't qualify.",
@@ -169,7 +277,12 @@
         "admissionsCalibration": "Interlochen/Tanglewood on an application tells AOs 'this student is serious about their art at a national level.' It's one of the strongest signals for arts-interested applicants."
       },
       "stem-enrichment": {
-        "programs": ["Washington Aerospace Scholars", "Girls Who Code", "MATHCOUNTS", "Science Olympiad"],
+        "programs": [
+          "Washington Aerospace Scholars",
+          "Girls Who Code",
+          "MATHCOUNTS",
+          "Science Olympiad"
+        ],
         "reality": "STEM enrichment programs range from genuinely selective (WAS, COSMOS) to open-enrollment (Girls Who Code, many local camps). AOs can tell the difference. The key is what you build, not where you sat.",
         "keyHacks": [
           "Washington Aerospace Scholars is free, NASA-affiliated, and earns 5 UW college credits. If you're a WA junior interested in STEM, this should be your top program priority.",
@@ -179,7 +292,12 @@
         ]
       },
       "leadership-and-service": {
-        "programs": ["Boys/Girls State", "Bank of America Student Leaders", "NYLF", "City Year"],
+        "programs": [
+          "Boys/Girls State",
+          "Bank of America Student Leaders",
+          "NYLF",
+          "City Year"
+        ],
         "reality": "Leadership programs are in a tough spot — they used to be differentiating but many have become commoditized. The ones that still carry weight are highly selective (Boys/Girls State, Posse) or involve sustained real-world service.",
         "keyHacks": [
           "Boys/Girls State (American Legion) is still respected by AOs because it's nomination-based, state-level competition, and involves genuine civic engagement. If your school offers a nomination slot, take it seriously.",
@@ -189,7 +307,12 @@
         "admissionsCalibration": "AOs distinguish between 'selected for leadership' (strong signal) and 'paid for leadership program' (weak signal). The test: would you have gotten in without paying? If yes, it's a real credential."
       },
       "entrepreneurship": {
-        "programs": ["LaunchX", "Diamond Challenge", "DECA", "FBLA"],
+        "programs": [
+          "LaunchX",
+          "Diamond Challenge",
+          "DECA",
+          "FBLA"
+        ],
         "reality": "Entrepreneurship programs have become popular but AOs are increasingly skeptical of 'teen founder' claims that don't show real traction. The bar has moved from 'started a business' to 'built something people actually use.'",
         "keyHacks": [
           "LaunchX is respected because it's competitive entry and MIT-affiliated. The deliverable matters — if your team builds a working prototype with user feedback, that's a genuine accomplishment.",
@@ -198,18 +321,71 @@
         ]
       }
     },
-
     "crossCuttingStrategy": {
       "selectionPrinciple": "Choose 1-2 programs that align with your genuine interests over 4-5 programs that 'look good.' Depth in one area beats breadth across many. AOs can tell when a student attended a program because they were passionate vs. because a consultant told them to.",
       "costVsValue": "Free selective programs (WAS, Girls Who Code, many university-sponsored programs) often carry more admissions weight than expensive open-enrollment programs. Selectivity signals ability; price signals privilege.",
       "gradeLevelTiming": "Elementary (K-5): Explore broadly, build curiosity, no admissions pressure. Middle (6-8): Start identifying interests, build foundational skills, begin competition participation. High school (9-10): Target 1-2 meaningful programs aligned with your developing 'spike.' High school (11-12): Selective/prestigious programs, research, leadership — these are the ones that land on your application.",
       "documentEverything": "Every program you attend should produce a tangible artifact: a project, a paper, a recording, a portfolio piece, a presentation, a photo journal. These artifacts become evidence for your application and essay content."
+    },
+    "itemIntel": {
+      "Johns Hopkins CTY On-Campus": {
+        "tags": [
+          "prestigious-academic",
+          "residential"
+        ],
+        "insiderTip": "CTY is the original 'gifted summer program' and still carries significant weight with AOs. The on-campus residential experience is where the real value lies — the intellectual community is as valuable as the coursework. Students come back saying 'I finally found my people.'",
+        "applicationHack": "CTY requires qualifying test scores (SAT, ACT, or School and College Ability Test). Take the qualifying test in fall/winter to apply for summer. Financial aid covers up to full tuition — 25% of students receive aid.",
+        "competitiveEdge": "The specific course you choose matters. Intensive math or science courses (Number Theory, Cryptology, Data Science) signal intellectual depth more than survey courses."
+      },
+      "Stanford Pre-Collegiate Summer Institutes": {
+        "tags": [
+          "prestigious-academic",
+          "virtual"
+        ],
+        "insiderTip": "Stanford's Pre-Collegiate program is fully virtual now, which means geography is no longer a barrier. The Stanford name on your application carries weight, but what matters more is what you produce during the program. Each course has a capstone project — make yours exceptional.",
+        "applicationHack": "The application asks for a statement of purpose. Tie your course selection to a specific intellectual question you're trying to answer. 'I want to take AI & Ethics because I'm building a chatbot for my school's counseling office and need to understand the ethical framework' beats 'I'm interested in AI.'"
+      },
+      "Girls Who Code Pathways": {
+        "tags": [
+          "stem-enrichment",
+          "free",
+          "virtual"
+        ],
+        "insiderTip": "Girls Who Code Pathways is free and virtual — there's zero barrier to entry. That means the program name alone won't differentiate you. The value is in what you BUILD during the 7 weeks. Use the program as a launchpad for a portfolio project you can showcase on GitHub and reference in your application.",
+        "applicationHack": "No competitive application — you just sign up. The differentiation comes from self-motivation: students who treat it like a 'class to attend' get nothing. Students who use it to build something real get a portfolio piece and a story for their application."
+      },
+      "LaunchX Online Entrepreneurship": {
+        "tags": [
+          "entrepreneurship",
+          "selective"
+        ],
+        "insiderTip": "LaunchX is MIT-founded and genuinely competitive — they're looking for students with entrepreneurial instincts, not just business interest. Previous founders, students who've already started small projects or side hustles, have an advantage.",
+        "applicationHack": "In your application, show evidence of DOING, not just thinking. Have you sold something? Built something? Organized something? Even a small lemonade stand or Etsy shop counts more than a business plan with no execution.",
+        "competitiveEdge": "The LaunchX deliverable is a working venture with customer feedback. If your team builds something with real users or revenue, that's one of the strongest extracurricular signals possible."
+      },
+      "Washington Aerospace Scholars": {
+        "tags": [
+          "stem-enrichment",
+          "free",
+          "state"
+        ],
+        "insiderTip": "WAS is a hidden gem for WA state juniors. It's free, NASA-affiliated, and earns 5 UW college credits. The program has an online phase (6 months) followed by a 6-day residential at Museum of Flight. Completion rate matters — the online phase weeds out students who don't sustain engagement.",
+        "applicationHack": "To qualify, you need to be a WA state junior interested in STEM. The application opens in fall — apply early. The online phase requires sustained effort over months, so treat it like a real course, not a side activity.",
+        "competitiveEdge": "WAS alumni get a NASA connection on their resume, UW credits, and a cohort of motivated STEM peers in WA state. For in-state applications (UW, WSU, WWU), this carries significant weight."
+      },
+      "Interlochen Arts Camp": {
+        "tags": [
+          "arts-programs",
+          "residential"
+        ],
+        "insiderTip": "Interlochen is the gold standard for pre-college arts experiences. It's not just about the instruction — it's about being immersed in a community of young artists for 1-6 weeks. Students consistently describe it as transformative. If your child is serious about arts, this is the program.",
+        "applicationHack": "85% of financial aid applicants receive support. Don't let the sticker price ($2,050-$10,350) discourage you — apply for aid. The audition/portfolio is what matters for admission, not ability to pay.",
+        "competitiveEdge": "For students applying to arts-focused programs or schools with strong arts programs (RISD, Juilliard, Berklee, Oberlin), Interlochen on the resume is a major credential."
+      }
     }
   },
-
   "financialAidStrategy": {
     "_meta": "Complements the SAI calculator and financial aid planner",
-
     "fafsaHacks": {
       "timing": "File FAFSA on October 1 — the day it opens. State grants (like the Washington College Grant) are often first-come, first-served. Filing in December vs. October can cost you thousands.",
       "incomeManagement": "FAFSA uses 'prior-prior year' income (2024 taxes for 2026-27 FAFSA). If your family had an unusually high-income year (sold a house, cashed stock, one-time bonus), you can file a professional judgment appeal explaining the anomaly.",
@@ -217,7 +393,6 @@
       "parentStrategy": "For divorced/separated parents: FAFSA only looks at the custodial parent's finances (the parent the student lived with more). CSS Profile schools may look at both parents. Strategic custody arrangements can significantly affect aid eligibility.",
       "studentAssets": "Student assets are assessed at 20% vs. parent assets at 5.64%. Don't put college savings in the student's name — a $10,000 student savings account reduces aid by $2,000; the same $10,000 in a parent account reduces aid by $564."
     },
-
     "cssProfileInsights": {
       "whoUsesIt": "About 200 schools use the CSS Profile in addition to FAFSA. These tend to be selective private schools. The CSS Profile asks about home equity, non-custodial parent income, and more — it paints a more complete (and often less favorable) financial picture.",
       "strategies": [
@@ -226,7 +401,6 @@
         "Some CSS Profile schools cap home equity consideration at 1.2x or 2x income. This benefits families with high home equity in expensive markets (Seattle, Bay Area, NYC)."
       ]
     },
-
     "negotiationTactics": {
       "appealProcess": "After receiving your financial aid package, you can appeal. The magic phrase is: 'We'd like to request a professional judgment review of our financial aid package.' Include: competing offers from peer schools, documentation of special circumstances (medical bills, job loss, elder care costs), and a specific dollar amount you need to make attendance possible.",
       "leveragePoints": [
