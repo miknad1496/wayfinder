@@ -18,6 +18,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken } from '../services/auth.js';
+import { recordConciergeMessage } from '../services/intelligence-analytics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -160,6 +161,7 @@ router.post('/chat', async (req, res) => {
     }
     messages.push({ role: 'user', content: message.trim() });
 
+    const coachStart = Date.now();
     const response = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 500,
@@ -168,10 +170,21 @@ router.post('/chat', async (req, res) => {
     });
 
     const reply = response.content?.[0]?.text || 'Sorry, I had trouble thinking of a response. Try asking again!';
+    const coachLatency = Date.now() - coachStart;
+    const coachTokens = (response.usage?.input_tokens || 0) + (response.usage?.output_tokens || 0);
+
+    recordConciergeMessage({
+      userId: user?.id,
+      userMessage: message,
+      responseLength: reply.length,
+      tokensUsed: coachTokens,
+      latencyMs: coachLatency,
+    });
 
     res.json({ reply });
   } catch (err) {
     console.error('[Coach] David chat error:', err.message);
+    recordConciergeMessage({ userMessage: '', error: err.message });
     res.status(500).json({ error: 'David is taking a quick break. Please try again in a moment.' });
   }
 });

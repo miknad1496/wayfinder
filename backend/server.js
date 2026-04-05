@@ -172,7 +172,9 @@ app.use('/api/invites', apiLimiter, inviteRoutes);
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/demographics', apiLimiter, demographicsRoutes);
 app.use('/api/timeline', apiLimiter, timelineRoutes);
-app.use('/api/essays', expensiveLimiter, essayRoutes);
+// Essay: expensive limiter on POST /review only; normal limiter on GETs (credits, types, prompts, history)
+app.post('/api/essays/review', expensiveLimiter);
+app.use('/api/essays', apiLimiter, essayRoutes);
 app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);

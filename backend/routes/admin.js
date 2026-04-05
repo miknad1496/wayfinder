@@ -8,6 +8,7 @@ import { getMemoryStats } from '../services/conversation-memory.js';
 import { getRoutingStats } from '../services/telemetry.js';
 import { getRoutingLog } from './chat.js';
 import { verifyToken, isAdmin as checkIsAdmin, getVIPList, addVIP, removeVIP } from '../services/auth.js';
+import { getIntelligenceAnalytics } from '../services/intelligence-analytics.js';
 
 const router = Router();
 
@@ -510,6 +511,19 @@ router.delete('/vip', (req, res) => {
   }
   const removed = removeVIP(email);
   res.json({ success: true, removed, vipEmails: getVIPList() });
+});
+
+// ─── Intelligence Analytics ───────────────────────────────
+
+// GET /api/admin/intelligence-analytics - Get AI layer performance stats
+router.get('/intelligence-analytics', (req, res) => {
+  try {
+    const analytics = getIntelligenceAnalytics();
+    res.json({ success: true, analytics });
+  } catch (err) {
+    console.error('Intelligence analytics error:', err);
+    res.status(500).json({ error: 'Failed to load intelligence analytics' });
+  }
 });
 
 // ─── Per-User Token & API Activity ─────────────────────────

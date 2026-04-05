@@ -17,6 +17,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { recordEssayReview } from './intelligence-analytics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -483,6 +484,7 @@ CRITICAL RULES:
  * @returns {object} Structured review result with {success, review, tokensUsed}
  */
 export async function reviewEssay(essayText, essayType = 'other', targetSchool = null, prompt = null) {
+  const startTime = Date.now();
   try {
     const typeName = ESSAY_TYPES[essayType] || ESSAY_TYPES.other;
 
@@ -523,29 +525,77 @@ export async function reviewEssay(essayText, essayType = 'other', targetSchool =
     }
     userPrompt += `\n\n--- ESSAY ---\n${essayText}\n--- END ESSAY ---`;
 
-    const response = await client.messages.create({
-      model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-6',
-      max_tokens: 3500,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }]
-    });
+    // Use AbortController for timeout protection (90 seconds max)
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 90000);
 
-    const text = response.content[0]?.text || '';
-
-    // Parse JSON from response
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      const review = JSON.parse(jsonMatch[0]);
-      return {
-        success: true,
-        review,
-        tokensUsed: response.usage?.input_tokens + response.usage?.output_tokens || 0
-      };
+    let response;
+    try {
+      response = await client.messages.create({
+        model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-6',
+        max_tokens: 3500,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userPrompt }]
+      }, { signal: controller.signal });
+    } finally {
+      clearTimeout(timeout);
     }
 
-    return { success: false, error: 'Failed to parse review response' };
+    const text = response.content[0]?.text || '';
+    const tokensUsed = (response.usage?.input_tokens || 0) + (response.usage?.output_tokens || 0);
+
+    // Parse JSON from response — resilient to common LLM JSON issues
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      let jsonStr = jsonMatch[0];
+      // Fix trailing commas before } or ] (common LLM issue)
+      jsonStr = jsonStr.replace(/,\s*([\]}])/g, '$1');
+
+      try {
+        const review = JSON.parse(jsonStr);
+        const latencyMs = Date.now() - startTime;
+        recordEssayReview({ success: true, essayType, targetSchool, score: review.overallScore, scoreLabel: review.scoreLabel, tokensUsed, latencyMs, wordCount: essayText.split(/\s+/).length });
+        return { success: true, review, tokensUsed };
+      } catch (parseErr) {
+        console.error('[EssayReviewer] JSON parse failed, attempting recovery:', parseErr.message);
+        // Try to extract at least the score and summary for a partial result
+        try {
+          const scoreMatch = text.match(/"overallScore"\s*:\s*(\d+)/);
+          const labelMatch = text.match(/"scoreLabel"\s*:\s*"([^"]+)"/);
+          const summaryMatch = text.match(/"summary"\s*:\s*"([^"]+)"/);
+          if (scoreMatch) {
+            const recoveredScore = parseInt(scoreMatch[1]);
+            const latencyMs = Date.now() - startTime;
+            recordEssayReview({ success: true, essayType, targetSchool, score: recoveredScore, tokensUsed, latencyMs, parseRecovered: true, wordCount: essayText.split(/\s+/).length });
+            return {
+              success: true,
+              review: {
+                overallScore: recoveredScore,
+                scoreLabel: labelMatch ? labelMatch[1] : 'Assessment',
+                summary: summaryMatch ? summaryMatch[1] : 'Review completed but some details could not be parsed.',
+                strengths: [],
+                improvements: [],
+                lineNotes: [],
+                voiceAssessment: { authentic: true, sounds_like_teenager: true, notes: 'Parse error — partial review' },
+                structure: { hasHook: false, hasNarrative: false, hasReflection: false, notes: 'Parse error — partial review' },
+                wordCount: essayText.split(/\s+/).length,
+                readingLevel: 'N/A',
+                _parseWarning: 'Review was partially recovered from malformed JSON'
+              },
+              tokensUsed
+            };
+          }
+        } catch { /* fall through */ }
+        recordEssayReview({ success: false, essayType, targetSchool, latencyMs: Date.now() - startTime, error: 'JSON parse failed' });
+        return { success: false, error: 'Failed to parse review response (malformed JSON from model)' };
+      }
+    }
+
+    recordEssayReview({ success: false, essayType, targetSchool, latencyMs: Date.now() - startTime, error: 'No JSON in output' });
+    return { success: false, error: 'Failed to parse review response — no JSON found in model output' };
   } catch (err) {
     console.error('[EssayReviewer] Error:', err.message);
+    recordEssayReview({ success: false, essayType, latencyMs: Date.now() - startTime, error: err.message });
     return { success: false, error: err.message };
   }
 }

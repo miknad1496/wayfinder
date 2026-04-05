@@ -8,6 +8,7 @@ import { saveSession, loadSession } from '../services/storage.js';
 import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
 import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
 import { captureConversationMemory, captureTrainingPair } from '../services/conversation-memory.js';
+import { recordChatQuery } from '../services/intelligence-analytics.js';
 import { performance } from 'perf_hooks';
 
 const router = Router();
@@ -604,6 +605,20 @@ router.post('/', async (req, res) => {
     activeSessions.delete(sessionId);
     tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;
     logTelemetry(tEvent);
+
+    // ─── INTELLIGENCE ANALYTICS: record for model dev ──────
+    recordChatQuery({
+      userId: auth?.user?.id || null,
+      scopeLabel: scopeResult?.label || null,
+      ragUsed: !!(result.retrievedSources && result.retrievedSources.length > 0),
+      ragSourceCount: result.retrievedSources?.length || 0,
+      engineRequested: !!useWayfinderEngine,
+      engineAllowed,
+      latencyMs: Math.round(tEvent.latency.total_ms),
+      tokensUsed: (result.usage?.inputTokens || 0) + (result.usage?.outputTokens || 0),
+      generationMode: tEvent.generation.mode || result.mode,
+      httpStatus: 200,
+    });
 
     res.json({
       sessionId,

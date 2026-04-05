@@ -831,6 +831,55 @@
                 </div>
             </section>
 
+            <!-- Intelligence Analytics Section -->
+            <section class="section">
+                <h2 class="section-title">Intelligence Analytics</h2>
+
+                <!-- Essay Review Performance -->
+                <div class="chart-container" style="margin-bottom: 16px;">
+                    <div class="chart-title">Essay Review Engine (Opus)</div>
+                    <div class="grid-4" style="margin-bottom: 16px;">
+                        <div><span class="stat-label">Total Reviews</span><br><span class="stat-value" id="intelEssayTotal">-</span></div>
+                        <div><span class="stat-label">Success Rate</span><br><span class="stat-value" id="intelEssaySuccess">-</span></div>
+                        <div><span class="stat-label">Avg Score</span><br><span class="stat-value" id="intelEssayAvgScore">-</span></div>
+                        <div><span class="stat-label">Avg Latency</span><br><span class="stat-value" id="intelEssayLatency">-</span></div>
+                    </div>
+                    <div class="grid-4" style="margin-bottom: 16px;">
+                        <div><span class="stat-label">Avg Tokens/Review</span><br><span class="stat-value" id="intelEssayTokens">-</span></div>
+                        <div><span class="stat-label">Parse Recovery</span><br><span class="stat-value" id="intelEssayParseRecovery">-</span></div>
+                        <div><span class="stat-label">Est. Cost</span><br><span class="stat-value" id="intelEssayCost">-</span></div>
+                        <div><span class="stat-label">Last Review</span><br><span class="stat-value" id="intelEssayLast" style="font-size: 14px;">-</span></div>
+                    </div>
+                    <div class="chart-title" style="font-size: 13px; margin-top: 12px;">Score Distribution</div>
+                    <div id="intelScoreDist" class="bar-chart"></div>
+                    <div id="intelEssayErrors" style="margin-top: 12px;"></div>
+                </div>
+
+                <!-- Concierge (David) Performance -->
+                <div class="chart-container" style="margin-bottom: 16px;">
+                    <div class="chart-title">David Concierge (Haiku)</div>
+                    <div class="grid-4">
+                        <div><span class="stat-label">Total Messages</span><br><span class="stat-value" id="intelConciergeTotal">-</span></div>
+                        <div><span class="stat-label">Avg Tokens/Msg</span><br><span class="stat-value" id="intelConciergeTokens">-</span></div>
+                        <div><span class="stat-label">Avg Latency</span><br><span class="stat-value" id="intelConciergeLatency">-</span></div>
+                        <div><span class="stat-label">Est. Cost</span><br><span class="stat-value" id="intelConciergeCost">-</span></div>
+                    </div>
+                </div>
+
+                <!-- Chat Pipeline Performance -->
+                <div class="chart-container">
+                    <div class="chart-title">Chat Pipeline</div>
+                    <div class="grid-4" style="margin-bottom: 16px;">
+                        <div><span class="stat-label">Total Queries</span><br><span class="stat-value" id="intelChatTotal">-</span></div>
+                        <div><span class="stat-label">RAG Hit Rate</span><br><span class="stat-value" id="intelChatRAG">-</span></div>
+                        <div><span class="stat-label">Avg Latency</span><br><span class="stat-value" id="intelChatLatency">-</span></div>
+                        <div><span class="stat-label">Engine Requests</span><br><span class="stat-value" id="intelChatEngine">-</span></div>
+                    </div>
+                    <div class="chart-title" style="font-size: 13px;">Scope Breakdown</div>
+                    <div id="intelScopeBars" class="bar-chart"></div>
+                </div>
+            </section>
+
             <div class="last-updated">
                 Last updated: <span id="lastUpdated">-</span>
                 <br>
@@ -1120,9 +1169,10 @@
                 updateRouting(routing);
                 updateMemory(memory);
 
-                // Load VIP list and user activity (non-blocking)
+                // Load VIP list, user activity, and intelligence analytics (non-blocking)
                 loadVIPList();
                 loadUserActivity();
+                loadIntelligenceAnalytics();
 
                 document.getElementById('loadingContainer').style.display = 'none';
                 document.getElementById('dashboardContent').style.display = 'block';
@@ -1250,6 +1300,90 @@
                     <td>${lastLogin}</td>
                 </tr>`;
             }).join('');
+        }
+
+        // ─── Intelligence Analytics ──────────────────────────────
+        async function loadIntelligenceAnalytics() {
+            try {
+                const data = await fetchJSON('/api/admin/intelligence-analytics');
+                if (!data || !data.analytics) return;
+                renderIntelligenceAnalytics(data.analytics);
+            } catch (err) {
+                console.error('Intelligence analytics load error:', err);
+            }
+        }
+
+        function renderIntelligenceAnalytics(a) {
+            // Essay review stats
+            const e = a.essay || {};
+            document.getElementById('intelEssayTotal').textContent = formatNumber(e.totalReviews || 0);
+            document.getElementById('intelEssaySuccess').textContent = (e.successRate || 0) + '%';
+            document.getElementById('intelEssayAvgScore').textContent = e.avgScore || '-';
+            document.getElementById('intelEssayLatency').textContent = e.avgLatencyMs ? (e.avgLatencyMs / 1000).toFixed(1) + 's' : '-';
+            document.getElementById('intelEssayTokens').textContent = formatNumber(e.avgTokensPerReview || 0);
+            document.getElementById('intelEssayParseRecovery').textContent = (e.parseRecoveryRate || 0) + '%';
+            document.getElementById('intelEssayCost').textContent = a.costEstimates?.essayCostEstimate || '$0.00';
+            document.getElementById('intelEssayLast').textContent = e.lastReviewAt ? timeAgo(e.lastReviewAt) : 'Never';
+
+            // Score distribution bars
+            const dist = e.scoreDistribution || {};
+            const maxScore = Math.max(...Object.values(dist), 1);
+            const scoreColors = { 1: 'red', 2: 'red', 3: 'red', 4: 'purple', 5: 'purple', 6: 'blue', 7: 'blue', 8: 'green', 9: 'gold', 10: 'gold' };
+            const scoreBars = Object.entries(dist).map(([score, count]) => {
+                const width = Math.max((count / maxScore) * 100, count > 0 ? 4 : 0);
+                return `<div class="bar-item">
+                    <div class="bar-label" style="min-width: 40px;">Score ${score}</div>
+                    <div class="bar" style="max-width: 300px;">
+                        <div class="bar-fill ${scoreColors[score] || 'gold'}" style="width: ${width}%"></div>
+                    </div>
+                    <div class="bar-value">${count}</div>
+                </div>`;
+            }).join('');
+            document.getElementById('intelScoreDist').innerHTML = scoreBars || '<div style="color: #64748b; padding: 8px;">No reviews yet</div>';
+
+            // Recent errors
+            const errors = e.recentErrors || [];
+            if (errors.length > 0) {
+                document.getElementById('intelEssayErrors').innerHTML = `
+                    <div class="chart-title" style="font-size: 13px; color: #ef4444;">Recent Errors (${errors.length})</div>
+                    ${errors.slice(-5).map(err => `<div style="font-size: 12px; color: #94a3b8; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span style="color: #64748b;">${timeAgo(err.timestamp)}</span> &mdash; ${err.essayType}: ${err.error || 'Unknown'}
+                    </div>`).join('')}`;
+            } else {
+                document.getElementById('intelEssayErrors').innerHTML = '';
+            }
+
+            // Concierge stats
+            const c = a.concierge || {};
+            document.getElementById('intelConciergeTotal').textContent = formatNumber(c.totalMessages || 0);
+            document.getElementById('intelConciergeTokens').textContent = formatNumber(c.avgTokensPerMessage || 0);
+            document.getElementById('intelConciergeLatency').textContent = c.avgLatencyMs ? c.avgLatencyMs + 'ms' : '-';
+            document.getElementById('intelConciergeCost').textContent = a.costEstimates?.conciergeCostEstimate || '$0.00';
+
+            // Chat pipeline stats
+            const ch = a.chat || {};
+            document.getElementById('intelChatTotal').textContent = formatNumber(ch.totalQueries || 0);
+            document.getElementById('intelChatRAG').textContent = (ch.ragHitRate || 0) + '%';
+            document.getElementById('intelChatLatency').textContent = ch.avgLatencyMs ? (ch.avgLatencyMs / 1000).toFixed(1) + 's' : '-';
+            document.getElementById('intelChatEngine').textContent = formatNumber(ch.engineUsage?.requested || 0);
+
+            // Scope breakdown bars
+            const scope = ch.scopeBreakdown || {};
+            const scopeTotal = Object.values(scope).reduce((s, v) => s + v, 0) || 1;
+            const scopeColors = { in_scope: 'green', adjacent: 'blue', out_of_scope: 'red' };
+            const scopeLabels = { in_scope: 'In Scope', adjacent: 'Adjacent', out_of_scope: 'Out of Scope' };
+            const scopeBars = Object.entries(scope).map(([label, count]) => {
+                const pct = Math.round(count / scopeTotal * 100);
+                const width = Math.max((count / scopeTotal) * 100, count > 0 ? 4 : 0);
+                return `<div class="bar-item">
+                    <div class="bar-label" style="min-width: 100px;">${scopeLabels[label] || label}</div>
+                    <div class="bar" style="max-width: 300px;">
+                        <div class="bar-fill ${scopeColors[label] || 'gold'}" style="width: ${width}%"></div>
+                    </div>
+                    <div class="bar-value">${count} (${pct}%)</div>
+                </div>`;
+            }).join('');
+            document.getElementById('intelScopeBars').innerHTML = scopeBars || '<div style="color: #64748b; padding: 8px;">No data yet</div>';
         }
 
         // ─── Initialize ───────────────────────────────────────
