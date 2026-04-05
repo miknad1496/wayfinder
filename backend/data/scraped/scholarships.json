@@ -5,7 +5,7 @@
     "totalCount": 976,
     "totalValue": "$14.7 million+",
     "_verified": "partial",
-    "_verificationNotes": "0 new verified scholarships injected, 45 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
+    "_verificationNotes": "5 new verified scholarships injected, 45 existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.",
     "dataYear": "2026-2027",
     "sources": [
       "Gates Foundation",
@@ -28,7 +28,7 @@
       "Military Service Academies",
       "Professional Organizations"
     ],
-    "lastUpdated": "2026-04-05T13:33:47.492Z",
+    "lastUpdated": "2026-04-05T16:08:01.392Z",
     "totalScholarships": 1013,
     "verifiedCount": 46
   },
@@ -40627,6 +40627,246 @@
       "_verified": true,
       "_verifiedDate": "2026-04-05",
       "_source": "https://wwin.org/star-scholars/"
+    },
+    {
+      "name": "Pride Foundation Scholarships",
+      "provider": "Pride Foundation",
+      "amount": {
+        "min": 1000,
+        "max": 12500,
+        "display": "Average $6,700 (up to $12,500)"
+      },
+      "deadline": "2027-01-09",
+      "category": [
+        "need-based",
+        "merit",
+        "community-service"
+      ],
+      "competitiveness": "moderate",
+      "scope": "regional",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA",
+          "OR",
+          "ID",
+          "MT",
+          "AK"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [
+          "lgbtq"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "60+ scholarships for LGBTQ+ students and allies in the Pacific Northwest (AK, ID, MT, OR, WA). One application covers all awards. Over $8.5 million awarded to 2,400+ students. Average award is $6,700. Renewable — students can reapply annually.",
+      "url": "https://pridefoundation.org/find-funding/scholarships/",
+      "renewable": true,
+      "tags": [
+        "lgbtq",
+        "pacific-northwest",
+        "washington",
+        "renewable",
+        "regional"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://pridefoundation.org/find-funding/scholarships/"
+    },
+    {
+      "name": "We The Future Contest",
+      "provider": "Constituting America",
+      "amount": {
+        "min": 2000,
+        "max": 5000,
+        "display": "$2,000–$5,000"
+      },
+      "deadline": "2026-05-31",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Submit an essay (500-1000 words), song, STEM project, short film (5-10 min), social media video (60 sec), or PSA (~30 sec) on the U.S. Constitution. Open to elementary through college. High school winners may receive an additional $5,000 Hillsdale College scholarship.",
+      "url": "https://constitutingamerica.org/contest-categories-new/",
+      "renewable": false,
+      "tags": [
+        "essay",
+        "video",
+        "stem-project",
+        "constitution",
+        "creative",
+        "multi-format"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://constitutingamerica.org/contest-categories-new/"
+    },
+    {
+      "name": "Stossel in the Classroom Essay Contest",
+      "provider": "Stossel in the Classroom",
+      "amount": {
+        "min": 500,
+        "max": 2500,
+        "display": "Up to $2,500"
+      },
+      "deadline": "2027-03-13",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Essay contest for grades 5-12 requiring a 500-1000 word original essay. For 2026, the topic focuses on America's 250th anniversary milestone. Finalists must participate in a brief interview. Open to students in the US, Canada, or at US military addresses.",
+      "url": "https://stosselintheclassroom.org/essay-contest/",
+      "renewable": false,
+      "tags": [
+        "essay",
+        "middle-school",
+        "high-school",
+        "writing"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://stosselintheclassroom.org/essay-contest/"
+    },
+    {
+      "name": "College JumpStart Scholarship",
+      "provider": "College JumpStart Scholarship Fund",
+      "amount": {
+        "min": 1000,
+        "max": 1000,
+        "display": "$1,000"
+      },
+      "deadline": "2027-03-31",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "low",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Merit-based scholarship requiring a personal statement about educational goals. No GPA or test score requirements. Multiple scholarship tracks with different themes and deadlines throughout the year (Show Grit, Gratitude, Pay It Forward, Love of Learning).",
+      "url": "https://www.jumpstart-scholarship.net/",
+      "renewable": false,
+      "tags": [
+        "essay",
+        "no-gpa-requirement",
+        "easy-apply",
+        "personal-statement"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.jumpstart-scholarship.net/"
+    },
+    {
+      "name": "Terry Foundation Scholarship",
+      "provider": "Terry Foundation",
+      "amount": {
+        "min": 0,
+        "max": 200000,
+        "display": "Full cost of attendance (last-dollar)"
+      },
+      "deadline": "2027-01-15",
+      "category": [
+        "merit",
+        "need-based"
+      ],
+      "competitiveness": "very_high",
+      "scope": "state",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3.5,
+        "states": [
+          "TX"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Full-ride, last-dollar scholarship covering up to 8 semesters at 11 Texas public universities including UT Austin, Texas A&M, UH, and Texas Tech. Covers tuition, room, board, books, and includes a $5,000 study abroad stipend. Selected based on academic achievement, leadership, and financial need.",
+      "url": "https://terryfoundation.org/apply/",
+      "renewable": true,
+      "tags": [
+        "full-ride",
+        "texas",
+        "prestigious",
+        "leadership",
+        "study-abroad"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://terryfoundation.org/apply/"
     }
   ]
 }

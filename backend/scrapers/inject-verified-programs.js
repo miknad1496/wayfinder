@@ -1339,6 +1339,77 @@ const verifiedPrograms = [
     "_verifiedDate": "2026-04-05",
     "_source": "https://www.lakesideschool.org/summer/high-school-courses"
   },
+
+  // ════════════════════════════════════════════════════════════════
+  // ADDED 2026-04-05 — Weekly Refresh
+  // ════════════════════════════════════════════════════════════════
+
+  {
+    name: "DigiPen Academy Pre-College Summer Programs",
+    provider: "DigiPen Institute of Technology",
+    category: "stem",
+    subcategory: "game-design",
+    type: "summer",
+    cost: { amount: 2000, type: "paid", display: "~$2,000 (early bird discount available)" },
+    selectivity: "open",
+    admissionsImpact: "high",
+    format: "online",
+    location: { city: "Redmond", state: "WA" },
+    eligibility: { grades: ["11", "12"], states: ["all"] },
+    deadline: "2026-06-01",
+    description: "4-week pre-college summer program in Art & Animation for Games, Game Design, Game Programming, or Music & Sound Design for Games. Students work together to create a game from start to finish. Classes M-F 9:30am-4:30pm PST. Must be entering junior/senior year or graduated within 18 months.",
+    url: "https://academy.digipen.edu/academic-programs/pre-college-programs/",
+    tags: ["stem", "game-design", "programming", "animation", "pre-college", "online", "washington"],
+    duration: "4 weeks (July 6-31)",
+    region: "Pacific Northwest",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://academy.digipen.edu/academic-programs/pre-college-programs/"
+  },
+  {
+    name: "UW Changemakers in Computing Summer 2026",
+    provider: "University of Washington",
+    category: "stem",
+    subcategory: "computer-science",
+    type: "summer",
+    cost: { amount: 0, type: "free", display: "Free" },
+    selectivity: "selective",
+    admissionsImpact: "high",
+    format: "in-person",
+    location: { city: "Seattle", state: "WA" },
+    eligibility: { grades: ["11", "12"], states: ["WA"] },
+    deadline: "2026-04-01",
+    description: "Free in-person summer program for WA state high school juniors and seniors with little to no prior computing experience. Runs July 6-30 M-Th on UW Seattle campus. Designed for students from underrepresented backgrounds and economically disadvantaged families.",
+    url: "https://www.engr.washington.edu/k12",
+    tags: ["stem", "computer-science", "free", "underrepresented", "seattle", "uw"],
+    duration: "4 weeks (July 6-30)",
+    region: "Pacific Northwest",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.engr.washington.edu/k12"
+  },
+  {
+    name: "UW Students Exploring Pharmacy (STEP)",
+    provider: "University of Washington School of Pharmacy",
+    category: "stem",
+    subcategory: "healthcare",
+    type: "summer",
+    cost: { amount: 0, type: "free", display: "Free" },
+    selectivity: "selective",
+    admissionsImpact: "medium",
+    format: "in-person",
+    location: { city: "Seattle", state: "WA" },
+    eligibility: { grades: ["9", "10", "11", "12"], states: ["WA"] },
+    deadline: "2026-05-15",
+    description: "Free 4-day in-person program for grades 9-12 interested in pharmacy, healthcare, or STEM careers. Hands-on learning, small-group activities, and direct interaction with UW faculty, pharmacy students, and pharmacists.",
+    url: "https://sop.washington.edu/pharmd/student-experience/office-of-student-affairs/pre-pharmacy-programs/",
+    tags: ["stem", "healthcare", "pharmacy", "free", "seattle", "uw"],
+    duration: "4 days",
+    region: "Pacific Northwest",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://sop.washington.edu/pharmd/student-experience/office-of-student-affairs/pre-pharmacy-programs/"
+  },
 ];
 
 

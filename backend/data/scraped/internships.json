@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-04",
-    "totalCount": 1548,
+    "totalCount": 1552,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -1315,6 +1315,143 @@
       "duration": "2 summers (multi-year program)",
       "whyApply": "Earn college credits and paid work experience simultaneously at a major tech company. Pipeline to a full stack developer career.",
       "_source": "https://wabsalliance.org/what-we-do/for-industry/career-launch.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "Port of Seattle High School Internship",
+      "company": "Port of Seattle",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "~$18/hour",
+      "field": "Business",
+      "deadline": "2027-05-15",
+      "description": "Paid summer internship across a variety of fields including aviation operations, maritime operations, governance, community engagement, and green jobs. Includes mentorship meetings, facility tours, LinkedIn 101, resume workshops, and professional development. Must be at least 16 years old.",
+      "majors": [
+        "Business",
+        "Engineering",
+        "Environmental Science",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "seattle",
+        "aviation",
+        "maritime"
+      ],
+      "url": "https://www.portseattle.org/programs/high-school-internships",
+      "duration": "8-10 weeks (summer)",
+      "whyApply": "Unique exposure to aviation and maritime industries at a major West Coast port. Paid with professional development programming.",
+      "_source": "https://www.portseattle.org/programs/high-school-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "Seattle Youth Employment Program (SYEP)",
+      "company": "City of Seattle Human Services",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid (rate varies by placement)",
+      "field": "General",
+      "deadline": "2026-05-04",
+      "description": "6-8 week paid summer internship placing 250 youth (ages 16-24) in City departments, nonprofits, and private sector employers. Selected by lottery. Must live in Seattle or attend Seattle Public Schools/Seattle Colleges with household income at or below 80% AMI.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "seattle",
+        "nonprofit",
+        "lottery"
+      ],
+      "url": "https://www.seattle.gov/human-services/services-and-programs/youth-and-young-adults/seattle-youth-employment-program",
+      "duration": "6-8 weeks (July-August)",
+      "whyApply": "Great entry-level paid work experience with the City of Seattle. Builds professional skills and resume for college applications.",
+      "_source": "https://www.seattle.gov/human-services/services-and-programs/youth-and-young-adults/seattle-youth-employment-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "Seattle Indian Health Board Public Health Internship",
+      "company": "Seattle Indian Health Board",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$21.30/hour",
+      "field": "Healthcare",
+      "deadline": "2026-05-15",
+      "description": "Public health internship focused on American Indian/Alaska Native health. 20 hours/week for 8 weeks. Open to high school students ages 16-18 interested in public health. Runs June 29 - August 21, 2026.",
+      "majors": [
+        "Public Health",
+        "Biology",
+        "Pre-Med",
+        "Social Work"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "public-health",
+        "seattle",
+        "native-american",
+        "healthcare"
+      ],
+      "url": "https://www.seattleschools.org/news/internships-for-high-school-students/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Well-paid public health internship with unique focus on AI/AN health disparities. Strong addition to healthcare-focused college applications.",
+      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "format": "in-person"
+    },
+    {
+      "title": "ISB Paid Summer STEM Internship",
+      "company": "Institute for Systems Biology (ISB)",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$5,000 stipend",
+      "field": "Science",
+      "deadline": "2027-03-15",
+      "description": "8-week paid STEM internship for 11th graders at the Institute for Systems Biology. Work in a lab with professionals exploring computational biology, microbial interactions, and cancer research. Collaborate with mentors on ongoing research projects. July 1 - August 23.",
+      "majors": [
+        "Biology",
+        "Computer Science",
+        "Data Science",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "computational-biology",
+        "seattle",
+        "stipend"
+      ],
+      "url": "https://see.isbscience.org/resources/for-students/high-school-intern-program/",
+      "duration": "8 weeks (July-August)",
+      "whyApply": "Paid $5,000 stipend for cutting-edge computational biology research. ISB is a world leader in systems biology.",
+      "_source": "https://see.isbscience.org/resources/for-students/high-school-intern-program/",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
       "format": "in-person"
