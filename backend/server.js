@@ -20,7 +20,7 @@ import scholarshipRoutes from './routes/scholarships.js';
 import programRoutes from './routes/programs.js';
 import financialAidRoutes from './routes/financial-aid.js';
 import { ensureDirectories } from './services/storage.js';
-import { ensureUsersDir } from './services/auth.js';
+import { ensureUsersDir, repairCorruptedUserFiles } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
 import { startScheduler } from './services/scheduler.js';
 import { startScraperScheduler, stopScraperScheduler } from './services/scraper-scheduler.js';
@@ -233,6 +233,7 @@ async function start() {
   await ensureUsersDir();
   await ensureInvitesDir();
   await restoreFromBackup();
+  await repairCorruptedUserFiles();
   app.listen(PORT, async () => {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);

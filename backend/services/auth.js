@@ -104,6 +104,49 @@ export async function ensureUsersDir() {
   await fs.mkdir(USERS_DIR, { recursive: true });
 }
 
+/**
+ * Scan and repair all corrupted user files on startup.
+ * Fixes the race condition where concurrent writes corrupt JSON.
+ */
+export async function repairCorruptedUserFiles() {
+  await ensureUsersDir();
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    let repaired = 0;
+    let failed = 0;
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const filePath = join(USERS_DIR, file);
+      try {
+        const raw = await fs.readFile(filePath, 'utf-8');
+        JSON.parse(raw); // test if valid
+      } catch {
+        // File is corrupted — attempt repair
+        console.warn(`[Auth] Startup repair: corrupted file detected: ${file}`);
+        try {
+          const raw = await fs.readFile(filePath, 'utf-8');
+          const fixed = tryRepairJSON(raw);
+          if (fixed && fixed.email) {
+            await atomicWriteJSON(filePath, fixed);
+            console.log(`[Auth] Startup repair: FIXED ${file} (user: ${fixed.email})`);
+            repaired++;
+          } else {
+            console.error(`[Auth] Startup repair: FAILED to repair ${file}`);
+            failed++;
+          }
+        } catch (err) {
+          console.error(`[Auth] Startup repair: error processing ${file}: ${err.message}`);
+          failed++;
+        }
+      }
+    }
+    if (repaired > 0 || failed > 0) {
+      console.log(`[Auth] Startup repair complete: ${repaired} fixed, ${failed} failed`);
+    }
+  } catch (err) {
+    console.error('[Auth] Startup repair scan error:', err.message);
+  }
+}
+
 // Legacy password check (SHA256) — only for migration
 function legacyHashPassword(password, salt) {
   return createHash('sha256').update(password + salt).digest('hex');
@@ -114,18 +157,77 @@ function generateToken() {
 }
 
 /**
+ * Attempt to repair corrupted JSON by extracting the first valid JSON object.
+ * Handles the common case of extra data appended after valid JSON (race condition).
+ */
+function tryRepairJSON(raw) {
+  // Try parsing as-is first
+  try { return JSON.parse(raw); } catch {}
+
+  // Find the last } in the file and try parsing up to there
+  // The corruption is usually extra content appended after the closing brace
+  let depth = 0;
+  let inString = false;
+  let escape = false;
+  let lastValidEnd = -1;
+
+  for (let i = 0; i < raw.length; i++) {
+    const ch = raw[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (ch === '{') depth++;
+    if (ch === '}') {
+      depth--;
+      if (depth === 0) { lastValidEnd = i + 1; break; }
+    }
+  }
+
+  if (lastValidEnd > 0) {
+    try {
+      return JSON.parse(raw.substring(0, lastValidEnd));
+    } catch {}
+  }
+
+  return null;
+}
+
+/**
  * Safely read and parse a JSON user file.
- * Returns the parsed object or null if the file is corrupted/unreadable.
+ * If corrupted, attempts to repair by extracting valid JSON.
  * Prevents one bad file from crashing auth for ALL users.
  */
 async function safeReadUserFile(filePath) {
   try {
     const raw = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(raw);
+    try {
+      return JSON.parse(raw);
+    } catch (parseErr) {
+      console.warn(`[Auth] JSON parse failed for ${filePath}: ${parseErr.message}. Attempting repair...`);
+      const repaired = tryRepairJSON(raw);
+      if (repaired) {
+        // Write the repaired file back (atomic)
+        await atomicWriteJSON(filePath, repaired);
+        console.log(`[Auth] Successfully repaired corrupted user file: ${filePath}`);
+        return repaired;
+      }
+      console.error(`[Auth] Could not repair corrupted user file ${filePath}`);
+      return null;
+    }
   } catch (err) {
-    console.error(`[Auth] Corrupted/unreadable user file ${filePath}: ${err.message}`);
+    console.error(`[Auth] Unreadable user file ${filePath}: ${err.message}`);
     return null;
   }
+}
+
+/**
+ * Atomic write: write to a temp file then rename, preventing partial writes.
+ */
+async function atomicWriteJSON(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  await fs.writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await fs.rename(tmpPath, filePath);
 }
 
 function isTokenExpired(tokenCreatedAt) {
@@ -247,7 +349,7 @@ export async function createUser({ email, password, name, userType, school, inte
     consentTimestamp: null
   };
 
-  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  await atomicWriteJSON(userFile, user);
 
   return {
     success: true,
@@ -268,7 +370,20 @@ export async function loginUser(email, password) {
   let user;
   try {
     const raw = await fs.readFile(userFile, 'utf-8');
-    user = JSON.parse(raw);
+    try {
+      user = JSON.parse(raw);
+    } catch (parseErr) {
+      // Attempt to repair corrupted JSON (race condition from concurrent writes)
+      console.warn(`[Auth] Login: corrupted user file ${userFile}, attempting repair...`);
+      user = tryRepairJSON(raw);
+      if (user) {
+        await atomicWriteJSON(userFile, user);
+        console.log(`[Auth] Login: repaired user file ${userFile}`);
+      } else {
+        console.error(`[Auth] Login: could not repair ${userFile}`);
+        return { error: 'Invalid email or password' };
+      }
+    }
   } catch {
     return { error: 'Invalid email or password' };
   }
@@ -317,7 +432,7 @@ export async function loginUser(email, password) {
       console.log(`🔒 Account locked for ${emailLower} after ${MAX_LOGIN_ATTEMPTS} failed attempts`);
     }
 
-    await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+    await atomicWriteJSON(userFile, user);
     return { error: 'Invalid email or password' };
   }
 
@@ -330,7 +445,7 @@ export async function loginUser(email, password) {
   user.token = generateToken();
   user.tokenCreatedAt = now;
   user.lastLogin = now;
-  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  await atomicWriteJSON(userFile, user);
 
   return {
     success: true,
@@ -362,7 +477,7 @@ export async function requestPasswordReset(email) {
   user.resetCode = resetCode;
   user.resetCodeExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 min
 
-  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  await atomicWriteJSON(userFile, user);
   return { success: true, resetCode, userName: user.name || emailLower };
 }
 
@@ -391,7 +506,7 @@ export async function resetPassword(email, code, newPassword) {
   if (new Date(user.resetCodeExpires) < new Date()) {
     user.resetCode = null;
     user.resetCodeExpires = null;
-    await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+    await atomicWriteJSON(userFile, user);
     return { error: 'Reset code has expired. Please request a new one.' };
   }
 
@@ -408,7 +523,7 @@ export async function resetPassword(email, code, newPassword) {
   user.failedLoginAttempts = 0;
   user.accountLockedUntil = null;
 
-  await fs.writeFile(userFile, JSON.stringify(user, null, 2));
+  await atomicWriteJSON(userFile, user);
   return { success: true };
 }
 
@@ -431,7 +546,7 @@ export async function logoutUser(token) {
         // Invalidate token by setting it to null
         user.token = null;
         user.tokenCreatedAt = null;
-        await fs.writeFile(filePath, JSON.stringify(user, null, 2));
+        await atomicWriteJSON(filePath, user);
         return { success: true };
       }
     }
@@ -470,7 +585,7 @@ export async function verifyToken(token) {
         // Backfill tokenCreatedAt for legacy users missing the field
         if (!user.tokenCreatedAt) {
           user.tokenCreatedAt = new Date().toISOString();
-          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+          await atomicWriteJSON(join(USERS_DIR, file), user);
           console.log(`[Auth] Backfilled tokenCreatedAt for legacy user ${user.email}`);
         }
 
@@ -510,7 +625,7 @@ export async function updateProfile(token, updates) {
           user.consentTimestamp = new Date().toISOString();
         }
 
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { success: true, user: sanitizeUser(user) };
       }
     }
@@ -540,7 +655,7 @@ export async function linkSession(token, sessionId) {
             user.sessionHistory = user.sessionHistory.slice(-50);
           }
         }
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return;
       }
     }
@@ -590,7 +705,7 @@ export async function getEngineUsage(token) {
         if (user.engineLastReset !== today) {
           user.engineUsesToday = 0;
           user.engineLastReset = today;
-          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+          await atomicWriteJSON(join(USERS_DIR, file), user);
         }
         return {
           usesToday: user.engineUsesToday || 0,
@@ -646,7 +761,7 @@ export async function updateSettings(token, settings) {
         if (settings.memory !== undefined) user.settings.memory = settings.memory;
         if (settings.helpImprove !== undefined) user.settings.helpImprove = settings.helpImprove;
 
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { success: true, user: sanitizeUser(user) };
       }
     }
@@ -798,7 +913,7 @@ export async function useEngine(token) {
         }
 
         user.engineUsesToday = (user.engineUsesToday || 0) + 1;
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
 
         return {
           allowed: true,
@@ -859,7 +974,7 @@ export async function checkTokenUsage(token) {
         }
 
         if (dirty) {
-          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+          await atomicWriteJSON(join(USERS_DIR, file), user);
         }
 
         const dailyLimit = getDailyTokenLimit(user.plan || 'free');
@@ -917,7 +1032,7 @@ export async function recordTokenUsage(token, tokensUsed) {
         }
         user.tokensUsedToday = (user.tokensUsedToday || 0) + tokensUsed;
         user.tokensUsedMonth = (user.tokensUsedMonth || 0) + tokensUsed;
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return;
       }
     }
@@ -965,7 +1080,7 @@ export async function checkMessageUsage(token) {
         }
 
         if (dirty) {
-          await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+          await atomicWriteJSON(join(USERS_DIR, file), user);
         }
 
         const dailyUsed = user.messagesUsedToday || 0;
@@ -1029,7 +1144,7 @@ export async function recordMessageUsage(token) {
         }
         user.messagesUsedToday = (user.messagesUsedToday || 0) + 1;
         user.messagesUsedMonth = (user.messagesUsedMonth || 0) + 1;
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return;
       }
     }
@@ -1055,7 +1170,7 @@ export async function updateUserPlan(token, fields) {
         if (fields.stripeSubscriptionId !== undefined) user.stripeSubscriptionId = fields.stripeSubscriptionId;
         if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
 
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { success: true, user: sanitizeUser(user) };
       }
     }
@@ -1084,7 +1199,7 @@ export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePa
           purchasedAt: new Date().toISOString(),
           stripePaymentId
         });
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { success: true, remaining: user.essayReviewsRemaining };
       }
     }
@@ -1115,7 +1230,7 @@ export async function useEssayCredit(token) {
           return { allowed: false, remaining: 0 };
         }
         user.essayReviewsRemaining = remaining - 1;
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { allowed: true, remaining: user.essayReviewsRemaining };
       }
     }
@@ -1141,7 +1256,7 @@ export async function updateAdmissionsProfile(token, profile) {
           user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
         }
         user.admissionsProfile = { ...user.admissionsProfile, ...profile };
-        await fs.writeFile(join(USERS_DIR, file), JSON.stringify(user, null, 2));
+        await atomicWriteJSON(join(USERS_DIR, file), user);
         return { success: true, admissionsProfile: user.admissionsProfile };
       }
     }
@@ -1214,7 +1329,7 @@ export async function setUserPlan(token, newPlan) {
       if (user.token === token) {
         if (!isAdmin(user.email)) return { error: 'Admin only' };
         user.plan = newPlan;
-        await fs.writeFile(filePath, JSON.stringify(user, null, 2), 'utf-8');
+        await atomicWriteJSON(filePath, user);
         return { success: true, user: sanitizeUser(user) };
       }
     }
