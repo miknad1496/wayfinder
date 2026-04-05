@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Wayfinder — College Admissions Tool for Scholarships, Internships & Essay Help</title>
-  <meta name="description" content="Free college admissions platform with 1,000+ scholarships, 1,500+ high school internships, summer programs, essay review, and financial aid tools. Find opportunities by state, field, and eligibility.">
-  <meta name="keywords" content="college admissions, scholarships for high school students, high school internships, summer programs for teens, college essay review, financial aid calculator, college planning tool, scholarship search, admissions counselor alternative, college prep">
+  <title>Wayfinder — Free Scholarship Search, Internship Finder & College Essay Review (2026)</title>
+  <meta name="description" content="Free college admissions platform with 1,000+ scholarships, 1,500+ high school internships, 800+ summer programs, AI essay review, and financial aid comparison. Search by state, amount, field, and eligibility. Updated for 2025-26 admissions cycle.">
+  <meta name="keywords" content="college admissions, scholarships for high school students, high school internships 2026, summer programs for teens, college essay review AI, financial aid calculator, scholarship search by state, college planning tool, admissions counselor alternative, college prep, Common App essay help, merit scholarships, STEM internships high school, free scholarship finder">
+  <meta name="author" content="Wayfinder">
   <link rel="canonical" href="https://wayfinderai.org/">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="alternate" hreflang="en" href="https://wayfinderai.org/">
+  <link rel="alternate" hreflang="x-default" href="https://wayfinderai.org/">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#1e293b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Wayfinder">
   <meta name="application-name" content="Wayfinder">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml">
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wayfinderai.org/">
-  <meta property="og:title" content="Wayfinder — Scholarships, Internships & College Admissions Intelligence">
-  <meta property="og:description" content="Search 1,000+ scholarships, 1,500+ internships, and 800+ summer programs. AI-powered essay review and financial aid tools built for high school students and families.">
+  <meta property="og:title" content="Wayfinder — Free Scholarship Search, Internships & AI Essay Review">
+  <meta property="og:description" content="Search 1,000+ scholarships, 1,500+ internships, and 800+ summer programs. AI-powered essay review and financial aid tools built for high school students and families. Free to start.">
   <meta property="og:image" content="https://wayfinderai.org/og-image.png">
+  <meta property="og:image:alt" content="Wayfinder college admissions platform showing scholarship search and essay review tools">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Wayfinder">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wayfinder — Scholarships, Internships & College Admissions Intelligence">
-  <meta name="twitter:description" content="Free scholarship search, internship finder, summer programs, AI essay review, and financial aid tools. Built for high school students and families.">
+  <meta name="twitter:title" content="Wayfinder — Free Scholarship Search, Internships & AI Essay Review">
+  <meta name="twitter:description" content="1,000+ scholarships. 1,500+ internships. 800+ programs. AI essay coaching. Financial aid tools. Free for high school students.">
   <meta name="twitter:image" content="https://wayfinderai.org/og-image.png">
+  <meta name="twitter:image:alt" content="Wayfinder college admissions platform">
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -32,27 +42,37 @@
     "@type": "WebApplication",
     "name": "Wayfinder",
     "url": "https://wayfinderai.org",
-    "description": "College admissions intelligence platform with scholarship search, internship finder, summer program directory, AI essay review, and financial aid tools for high school students.",
+    "description": "Free college admissions platform with scholarship search, internship finder, summer program directory, AI essay review, and financial aid comparison tools for high school students.",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free tier with access to scholarships, internships, and program search"
+      "description": "Free tier includes scholarship search, internship finder, and summer program directory"
     },
     "featureList": [
-      "Scholarship search with 1,000+ opportunities",
-      "High school internship finder with 1,500+ listings",
-      "Summer program directory with 800+ programs",
-      "AI-powered college essay review and coaching",
-      "Financial aid comparison tool",
-      "AI concierge for admissions guidance"
+      "Scholarship search with 1,000+ opportunities filterable by state, amount, and format",
+      "High school internship finder with 1,500+ listings across all 50 states",
+      "Summer program directory with 800+ enrichment and academic programs",
+      "AI-powered college essay review with scoring and line-by-line coaching",
+      "Financial aid package comparison tool",
+      "AI concierge for personalized admissions guidance"
     ],
     "audience": {
       "@type": "EducationalAudience",
       "educationalRole": "student",
-      "audienceType": "High school students and families"
+      "audienceType": "High school students, parents, and college counselors"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wayfinder",
+      "url": "https://wayfinderai.org",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wayfinderai.org/logo.svg"
+      }
     }
   }
   </script>
@@ -66,28 +86,53 @@
         "name": "What is Wayfinder?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wayfinder is a free college admissions platform that helps high school students find scholarships, internships, and summer programs, get AI-powered essay feedback, and compare financial aid packages."
+          "text": "Wayfinder is a free college admissions platform that helps high school students find scholarships, internships, and summer programs, get AI-powered essay feedback, and compare financial aid packages across schools."
         }
       },
       {
         "@type": "Question",
-        "name": "How many scholarships are on Wayfinder?",
+        "name": "How many scholarships can I search on Wayfinder?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Wayfinder has over 1,000 scholarships searchable by state, amount, category, and application format including essay-based, video, portfolio, and application-only awards."
+          "text": "Wayfinder has over 1,000 scholarships searchable by state, award amount, category, and application format including essay-based, video, portfolio, and application-only awards ranging from under $1,000 to over $50,000."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Wayfinder free?",
+        "name": "Is Wayfinder free to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Wayfinder offers a free tier with access to scholarship search, internship finder, and program directory. Premium tiers unlock AI essay review, financial aid tools, and the David AI concierge."
+          "text": "Yes. Wayfinder's free tier includes full access to the scholarship search, internship finder, and summer program directory. Premium tiers add AI-powered essay review with detailed scoring, financial aid comparison tools, and a personal AI concierge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Wayfinder's AI essay review work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wayfinder's essay review uses AI trained on admissions officer insights to score your essay 1-10, assess voice authenticity, evaluate structure, and provide line-by-line coaching suggestions. It supports Common App essays, supplementals, Why School essays, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I find internships for high school students on Wayfinder?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Wayfinder lists over 1,500 internships specifically for high school students, filterable by state, field of interest, paid or unpaid, and format (in-person, remote, or hybrid)."
         }
       }
     ]
   }
   </script>
+  <!-- Noscript fallback for SEO crawlers -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://wayfinderai.org/">
+    <style>body{font-family:sans-serif;max-width:700px;margin:40px auto;padding:0 20px;}</style>
+    <h1>Wayfinder — College Admissions Intelligence</h1>
+    <p>Wayfinder is a free college admissions platform for high school students. Search 1,000+ scholarships by state and amount, browse 1,500+ internships, explore 800+ summer programs, get AI-powered essay review, and compare financial aid packages.</p>
+    <p>Features: Scholarship Search, Internship Finder, Summer Program Directory, AI Essay Review, Financial Aid Comparison, AI Concierge</p>
+    <p><a href="https://wayfinderai.org/">Visit Wayfinder</a></p>
+  </noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -376,7 +421,7 @@
               <span>Back</span>
             </button>
             <div class="ev-brand">
-              <h1 class="ev-title">Essay Intelligence Engine</h1>
+              <h2 class="ev-title">Essay Intelligence Engine</h2>
               <span class="ev-badge">Premium Add-on</span>
             </div>
           </div>
