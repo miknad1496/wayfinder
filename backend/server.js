@@ -153,12 +153,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// Health check
+// Health check (no sensitive info like model names)
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     version: '2.0.0',
-    model: process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
     timestamp: new Date().toISOString()
   });
 });

@@ -793,30 +793,47 @@
     </div>
 
     <script>
-        // ─── Admin Auth ────────────────────────────────────────
-        function ensureAdmin() {
-            let adminSecret = sessionStorage.getItem('adminSecret');
-            if (!adminSecret) {
-                adminSecret = prompt('Enter admin secret to access dashboard:');
-                if (!adminSecret) {
+        // ─── Admin Auth (JWT-based) ────────────────────────────
+        async function ensureAdmin() {
+            let token = sessionStorage.getItem('adminToken');
+            if (token) return token;
+
+            const email = prompt('Admin email:');
+            if (!email) { window.location.href = '/'; return; }
+            const password = prompt('Admin password:');
+            if (!password) { window.location.href = '/'; return; }
+
+            try {
+                const res = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await res.json();
+                if (!res.ok || !data.token) {
+                    alert(data.error || 'Login failed');
                     window.location.href = '/';
                     return;
                 }
-                sessionStorage.setItem('adminSecret', adminSecret);
+                sessionStorage.setItem('adminToken', data.token);
+                return data.token;
+            } catch (err) {
+                alert('Login failed: ' + err.message);
+                window.location.href = '/';
             }
-            return adminSecret;
         }
 
         function adminHeaders() {
-            return { 'X-Admin-Secret': sessionStorage.getItem('adminSecret') || '' };
+            const token = sessionStorage.getItem('adminToken') || '';
+            return { 'Authorization': 'Bearer ' + token };
         }
 
         // ─── API Fetch Helpers ─────────────────────────────────
         async function fetchJSON(url) {
             const res = await fetch(url, { headers: adminHeaders() });
             if (res.status === 401 || res.status === 403) {
-                sessionStorage.removeItem('adminSecret');
-                ensureAdmin();
+                sessionStorage.removeItem('adminToken');
+                await ensureAdmin();
                 return null;
             }
             if (!res.ok) return null;
@@ -1050,7 +1067,7 @@
                 ]);
 
                 if (!stats) {
-                    showError('Failed to load dashboard data. Check your admin secret.');
+                    showError('Failed to load dashboard data. Check your admin credentials.');
                     return;
                 }
 
@@ -1068,7 +1085,7 @@
         }
 
         function logout() {
-            sessionStorage.removeItem('adminSecret');
+            sessionStorage.removeItem('adminToken');
             window.location.href = '/';
         }
 

@@ -2320,14 +2320,14 @@ function setupToolListeners() {
 
   // Modal close handlers
   setupModalClose('timelineModal', 'timelineModalClose');
-  setupModalClose('essaysModal', 'essaysModalClose');
+  // Essays use full-page view now (no modal)
   setupModalClose('internshipsModal', 'internshipsModalClose');
   setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
   setupModalClose('programsModal', 'programsModalClose');
   setupModalClose('financialAidModal', 'financialAidModalClose');
 
   // Upgrade gate buttons
-  const upgradeGateBtns = ['timelineUpgradeBtn', 'essaysUpgradeBtn', 'internshipsUpgradeBtn', 'scholarshipsUpgradeBtn', 'programsUpgradeBtn', 'financialAidUpgradeBtn'];
+  const upgradeGateBtns = ['timelineUpgradeBtn', 'internshipsUpgradeBtn', 'scholarshipsUpgradeBtn', 'programsUpgradeBtn', 'financialAidUpgradeBtn'];
   for (const id of upgradeGateBtns) {
     const el = $(id);
     if (el) el.addEventListener('click', () => {
@@ -2339,17 +2339,7 @@ function setupToolListeners() {
   // Timeline
   if ($('timelineSaveProfile')) $('timelineSaveProfile').addEventListener('click', saveTimelineProfile);
 
-  // Essays
-  if ($('essaySubmitBtn')) $('essaySubmitBtn').addEventListener('click', submitEssayReview);
-  if ($('essayBuyMoreBtn')) $('essayBuyMoreBtn').addEventListener('click', () => {
-    $('essaysModal').style.display = 'none';
-    openUpgrade(); // Opens unified plans — essay packs shown for Coach/Consultant
-  });
-  if ($('essayText')) {
-    $('essayText').addEventListener('input', () => {
-      $('essayCharCount').textContent = `${$('essayText').value.length} / 15,000 characters`;
-    });
-  }
+  // Essays — listeners handled inside setupEssayView() for the full-page view
 
   // Internships search
   if ($('internshipSearchBtn')) $('internshipSearchBtn').addEventListener('click', searchInternships);
@@ -2652,26 +2642,151 @@ function renderTimelineEvents(events) {
 // ========================
 // Essay Reviewer Tool
 // ========================
+// ─── Word Limits by Essay Type ───────────────────────────────
+const ESSAY_WORD_LIMITS = {
+  'common-app': { limit: 650, label: 'Common App max: 650 words' },
+  'supplemental': { limit: 400, label: 'Typical max: ~400 words' },
+  'why-school': { limit: 400, label: 'Typical max: ~400 words' },
+  'diversity': { limit: 650, label: 'Typical max: ~650 words' },
+  'activity': { limit: 150, label: 'Common App activity: 150 words' },
+  'community': { limit: 400, label: 'Typical max: ~400 words' },
+  'challenge': { limit: 650, label: 'Typical max: ~650 words' },
+  'other': { limit: 0, label: '' }
+};
+
+let evInitialized = false;
+
 function openEssays() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
-  $('essaysModal').style.display = 'flex';
 
-  // Always show the essay form so free users can see what it does
-  $('essaysContent').style.display = 'block';
+  // Hide chat, show essay full-page view
+  document.querySelector('.chat-container').style.display = 'none';
+  $('essayView').style.display = 'flex';
 
-  if (!canAccess('essay_reviewer')) {
-    // Free users see the form but can't submit — show upgrade nudge below
-    $('essaySubmitBtn').disabled = true;
-    $('essaySubmitBtn').textContent = 'Upgrade to Coach for Essay Reviews';
-    $('essayCreditsBar').style.display = 'none';
-    $('essaysRequiresUpgrade').style.display = 'block';
+  if (!evInitialized) {
+    setupEssayView();
+    evInitialized = true;
+  }
+
+  const hasAccess = canAccess('essay_reviewer');
+
+  if (!hasAccess) {
+    // Hide all panels, show upgrade gate
+    document.querySelectorAll('.ev-panel').forEach(p => p.style.display = 'none');
+    $('evNav').style.display = 'none';
+    $('evCreditsBar').style.display = 'none';
+    $('evUpgradeGate').style.display = 'flex';
   } else {
-    $('essaySubmitBtn').disabled = false;
-    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
-    $('essayCreditsBar').style.display = 'flex';
-    $('essaysRequiresUpgrade').style.display = 'none';
+    $('evUpgradeGate').style.display = 'none';
+    $('evNav').style.display = 'flex';
+    $('evCreditsBar').style.display = 'flex';
+    switchEvTab('compose');
     loadEssayCredits();
+    loadEssayPrompts();
+  }
+}
+
+function closeEssays() {
+  $('essayView').style.display = 'none';
+  document.querySelector('.chat-container').style.display = '';
+}
+
+function setupEssayView() {
+  // Back button
+  $('essayBackBtn').addEventListener('click', closeEssays);
+
+  // Nav tabs
+  document.querySelectorAll('.ev-nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchEvTab(tab.dataset.tab));
+  });
+
+  // Submit button
+  $('evSubmitBtn').addEventListener('click', submitEssayReview);
+
+  // Buy credits
+  $('evBuyMoreBtn').addEventListener('click', () => handleEssayPurchase('standard'));
+
+  // Upgrade button
+  const upgradeBtn = $('evUpgradeBtn');
+  if (upgradeBtn) upgradeBtn.addEventListener('click', () => { closeEssays(); openUpgrade(); });
+
+  // Essay type change → update word limit
+  $('evEssayType').addEventListener('change', updateWordLimit);
+
+  // Textarea input → update word/char counts
+  $('evEssayText').addEventListener('input', updateEssayCounts);
+
+  // History filter
+  const histFilter = $('evHistoryTypeFilter');
+  if (histFilter) histFilter.addEventListener('change', () => loadEssayHistory());
+
+  // Tracker filter
+  const trackFilter = $('evTrackerTypeFilter');
+  if (trackFilter) trackFilter.addEventListener('change', () => {
+    const type = trackFilter.value;
+    if (type) loadScoreProgression(type);
+  });
+
+  // Init word limit display
+  updateWordLimit();
+}
+
+function switchEvTab(tabName) {
+  document.querySelectorAll('.ev-nav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ev-panel').forEach(p => p.style.display = 'none');
+
+  const tab = document.querySelector(`.ev-nav-tab[data-tab="${tabName}"]`);
+  if (tab) tab.classList.add('active');
+
+  if (tabName === 'compose') {
+    $('evComposePanel').style.display = 'block';
+  } else if (tabName === 'history') {
+    $('evHistoryPanel').style.display = 'block';
+    loadEssayHistory();
+  } else if (tabName === 'tracker') {
+    $('evTrackerPanel').style.display = 'block';
+  }
+}
+
+function updateWordLimit() {
+  const type = $('evEssayType').value;
+  const info = ESSAY_WORD_LIMITS[type] || ESSAY_WORD_LIMITS.other;
+  const limitEl = $('evWordLimit');
+  if (info.limit > 0) {
+    limitEl.textContent = info.label;
+    limitEl.style.display = '';
+  } else {
+    limitEl.textContent = '';
+    limitEl.style.display = 'none';
+  }
+  // Re-check if over limit
+  updateEssayCounts();
+}
+
+function updateEssayCounts() {
+  const text = $('evEssayText').value;
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const chars = text.length;
+
+  $('evWordCount').textContent = `${words} words`;
+  $('evCharCount').textContent = `${chars} / 15,000 characters`;
+
+  const type = $('evEssayType').value;
+  const info = ESSAY_WORD_LIMITS[type] || ESSAY_WORD_LIMITS.other;
+  const limitEl = $('evWordLimit');
+
+  if (info.limit > 0) {
+    if (words > info.limit) {
+      limitEl.className = 'ev-word-limit over-limit';
+      limitEl.textContent = `${words - info.limit} words over limit!`;
+    } else if (words > info.limit * 0.9) {
+      limitEl.className = 'ev-word-limit near-limit';
+      limitEl.textContent = `${info.limit - words} words remaining`;
+    } else {
+      limitEl.className = 'ev-word-limit';
+      limitEl.textContent = info.label;
+    }
   }
 }
 
@@ -2682,22 +2797,98 @@ async function loadEssayCredits() {
     });
     const data = await res.json();
     const credits = data.credits ?? data.remaining ?? 0;
-    $('essayCreditsCount').textContent = `${credits} reviews remaining`;
-    $('essaySubmitBtn').disabled = credits === 0;
+    $('evCreditsCount').textContent = `${credits} reviews`;
+    $('evSubmitBtn').disabled = credits === 0;
   } catch {}
 }
 
+let evPromptsLoaded = false;
+async function loadEssayPrompts() {
+  if (evPromptsLoaded) return;
+  try {
+    const res = await fetch(`${API_BASE}/essays/prompts`);
+    const prompts = await res.json();
+
+    const categorySelect = $('evPromptCategory');
+    const promptSelect = $('evPromptSelect');
+    const promptSelectGroup = $('evPromptSelectGroup');
+
+    categorySelect.innerHTML = '<option value="">Choose a prompt set...</option>';
+    Object.keys(prompts).forEach(key => {
+      const option = document.createElement('option');
+      option.value = key;
+      option.textContent = prompts[key].label;
+      categorySelect.appendChild(option);
+    });
+
+    categorySelect.addEventListener('change', (e) => {
+      const selectedKey = e.target.value;
+      if (!selectedKey) {
+        promptSelectGroup.style.display = 'none';
+        promptSelect.innerHTML = '<option value="">Choose a specific prompt...</option>';
+        return;
+      }
+
+      const category = prompts[selectedKey];
+      promptSelect.innerHTML = '<option value="">Choose a specific prompt...</option>';
+      category.prompts.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.text;
+        option.textContent = p.text.substring(0, 60) + (p.text.length > 60 ? '...' : '');
+        option.dataset.fullText = p.text;
+        option.dataset.essayType = mapPromptToEssayType(selectedKey, p.id);
+        promptSelect.appendChild(option);
+      });
+      promptSelectGroup.style.display = 'block';
+    });
+
+    promptSelect.addEventListener('change', (e) => {
+      if (e.target.value) {
+        const selectedOption = e.target.options[e.target.selectedIndex];
+        const fullText = selectedOption.dataset.fullText || e.target.value;
+        const essayType = selectedOption.dataset.essayType;
+        $('evPrompt').value = fullText;
+        if (essayType && essayType !== 'other') {
+          $('evEssayType').value = essayType;
+          updateWordLimit();
+        }
+      }
+    });
+    evPromptsLoaded = true;
+  } catch (err) {
+    console.error('Failed to load essay prompts:', err);
+  }
+}
+
+function mapPromptToEssayType(category, promptId) {
+  // Auto-select essay type based on prompt source
+  if (category === 'commonApp2025') {
+    return 'common-app';
+  } else if (category === 'ucPIQ') {
+    return 'other'; // UC essays are varied
+  } else if (category === 'coalition') {
+    return 'supplemental';
+  } else if (category === 'supplements') {
+    // Map supplement types based on prompt ID
+    if (promptId === 'sup-why') return 'why-school';
+    if (promptId === 'sup-diversity') return 'diversity';
+    if (promptId === 'sup-activity') return 'activity';
+    if (promptId === 'sup-community') return 'community';
+    return 'supplemental';
+  }
+  return 'other';
+}
+
 async function submitEssayReview() {
-  const essayText = $('essayText').value.trim();
-  const essayType = $('essayType').value;
-  const targetSchool = $('essayTargetSchool').value.trim();
-  const prompt = $('essayPrompt').value.trim();
+  const essayText = $('evEssayText').value.trim();
+  const essayType = $('evEssayType').value;
+  const targetSchool = $('evTargetSchool').value.trim();
+  const prompt = $('evPrompt').value.trim();
 
-  if (essayText.length < 50) { showMsg('essaySubmitMsg', 'Essay must be at least 50 characters.', '#991b1b'); return; }
+  if (essayText.length < 50) { showMsg('evSubmitMsg', 'Essay must be at least 50 characters.', '#991b1b'); return; }
 
-  $('essaySubmitBtn').disabled = true;
-  $('essaySubmitBtn').textContent = 'Reviewing...';
-  $('essayReviewResult').style.display = 'none';
+  $('evSubmitBtn').disabled = true;
+  $('evSubmitBtn').textContent = 'Reviewing...';
 
   try {
     const res = await fetch(`${API_BASE}/essays/review`, {
@@ -2708,64 +2899,358 @@ async function submitEssayReview() {
     const data = await res.json();
 
     if (data.error) {
-      showMsg('essaySubmitMsg', data.error, '#991b1b');
-      $('essaySubmitBtn').disabled = false;
-      $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+      showMsg('evSubmitMsg', data.error, '#991b1b');
+      $('evSubmitBtn').disabled = false;
+      $('evSubmitBtn').textContent = 'Submit for Review (1 credit)';
       return;
     }
 
     // Show result
     renderEssayReview(data.review);
     loadEssayCredits();
-    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
-    $('essaySubmitBtn').disabled = false;
+    $('evSubmitBtn').textContent = 'Submit for Review (1 credit)';
+    $('evSubmitBtn').disabled = false;
   } catch {
-    showMsg('essaySubmitMsg', 'Failed to submit essay.', '#991b1b');
-    $('essaySubmitBtn').disabled = false;
-    $('essaySubmitBtn').textContent = 'Submit for Review (1 credit)';
+    showMsg('evSubmitMsg', 'Failed to submit essay.', '#991b1b');
+    $('evSubmitBtn').disabled = false;
+    $('evSubmitBtn').textContent = 'Submit for Review (1 credit)';
   }
 }
 
 function renderEssayReview(review) {
-  const el = $('essayReviewResult');
+  const el = $('evReviewResult');
   const r = review;
+
+  let html = `<div class="essay-result-card">`;
+
+  // Score section with gauge, label, word count, reading level
   const scoreClass = r.overallScore >= 8 ? 'score-high' : (r.overallScore >= 5 ? 'score-mid' : 'score-low');
-
-  let html = `<div class="essay-result-card">
-    <div class="essay-score ${scoreClass}">
+  const scorePercent = (r.overallScore / 10) * 100;
+  html += `<div class="essay-score-section">
+    <div class="essay-score-gauge" style="--score-percent: ${scorePercent}%">
       <div class="essay-score-num">${r.overallScore}</div>
-      <div class="essay-score-label">out of 10</div>
-    </div>`;
+    </div>
+    <div class="essay-score-details">
+      <div class="essay-score-label">${escapeHtml(r.scoreLabel || 'Assessment')}</div>
+      ${r.wordCount ? `<div class="essay-meta">Word count: ${r.wordCount}</div>` : ''}
+      ${r.readingLevel ? `<div class="essay-meta">Reading level: ${escapeHtml(r.readingLevel)}</div>` : ''}
+    </div>
+  </div>`;
 
+  // Top Priority callout (if exists)
+  if (r.topPriority) {
+    html += `<div class="essay-top-priority">
+      <div class="essay-priority-icon">🎯</div>
+      <div class="essay-priority-content">
+        <div class="essay-priority-title">Top Priority</div>
+        <div class="essay-priority-text">${escapeHtml(r.topPriority)}</div>
+      </div>
+    </div>`;
+  }
+
+  // Summary section
+  if (r.summary) {
+    html += `<div class="essay-summary-callout">
+      <div class="essay-summary-text">${escapeHtml(r.summary)}</div>
+    </div>`;
+  }
+
+  // Voice Assessment with notes
   if (r.voiceAssessment) {
-    html += `<div class="essay-voice">
-      <span class="voice-badge ${r.voiceAssessment.authentic ? 'authentic' : 'concern'}">
-        ${r.voiceAssessment.authentic ? 'Authentic voice' : 'Voice concerns'}
-      </span>
-      ${r.voiceAssessment.sounds_like_teenager !== undefined ? `<span class="voice-badge ${r.voiceAssessment.sounds_like_teenager ? 'authentic' : 'concern'}">
-        ${r.voiceAssessment.sounds_like_teenager ? 'Age-appropriate' : 'Sounds too polished'}
-      </span>` : ''}
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Voice Assessment</h4>
+      <div class="essay-voice">
+        <span class="voice-badge ${r.voiceAssessment.authentic ? 'authentic' : 'concern'}">
+          ${r.voiceAssessment.authentic ? '✓ Authentic voice' : '⚠ Voice concerns'}
+        </span>
+        ${r.voiceAssessment.sounds_like_teenager !== undefined ? `<span class="voice-badge ${r.voiceAssessment.sounds_like_teenager ? 'authentic' : 'concern'}">
+          ${r.voiceAssessment.sounds_like_teenager ? '✓ Age-appropriate' : '⚠ Sounds too polished'}
+        </span>` : ''}
+      </div>
+      ${r.voiceAssessment.notes ? `<div class="essay-voice-notes">${escapeHtml(r.voiceAssessment.notes)}</div>` : ''}
     </div>`;
   }
 
+  // Admissions Impact section
+  if (r.admissionsImpact) {
+    const impact = r.admissionsImpact;
+    const levelToColor = (lvl) => {
+      if (lvl === 'high') return 'impact-high';
+      if (lvl === 'medium') return 'impact-medium';
+      return 'impact-low';
+    };
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Admissions Impact</h4>
+      <div class="essay-impact-row">
+        <div class="essay-impact-metric">
+          <div class="essay-impact-label">Memorability</div>
+          <span class="essay-impact-level ${levelToColor(impact.memorability)}">${escapeHtml(impact.memorability || 'N/A')}</span>
+        </div>
+        <div class="essay-impact-metric">
+          <div class="essay-impact-label">Distinctiveness</div>
+          <span class="essay-impact-level ${levelToColor(impact.distinctiveness)}">${escapeHtml(impact.distinctiveness || 'N/A')}</span>
+        </div>
+      </div>
+      ${impact.wouldDiscussInCommittee ? `<div class="essay-impact-committee">
+        <span class="essay-impact-indicator">✓</span> Likely to be discussed in committee
+      </div>` : ''}
+      ${impact.notes ? `<div class="essay-impact-notes">${escapeHtml(impact.notes)}</div>` : ''}
+    </div>`;
+  }
+
+  // Strengths section
   if (r.strengths?.length) {
-    html += `<div class="essay-section"><h4>Strengths</h4><ul>${r.strengths.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ul></div>`;
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Strengths</h4>
+      <ul class="essay-strengths">
+        ${r.strengths.map(s => `<li>${escapeHtml(s)}</li>`).join('')}
+      </ul>
+    </div>`;
   }
 
+  // Improvements section with priority badges
   if (r.improvements?.length) {
-    html += `<div class="essay-section"><h4>Areas for Improvement</h4><ul>${r.improvements.map(i =>
-      `<li><strong>${escapeHtml(i.area || '')}</strong>: ${escapeHtml(i.suggestion || i)}</li>`
-    ).join('')}</ul></div>`;
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Areas for Improvement</h4>
+      <div class="essay-improvements">
+        ${r.improvements.map(i => {
+          const priority = i.priority || 'medium';
+          const priorityColor = priority === 'high' ? 'high' : (priority === 'low' ? 'low' : 'medium');
+          return `<div class="essay-improvement-item">
+            <div class="essay-improvement-header">
+              <span class="essay-priority-badge essay-priority-${priorityColor}">${priority}</span>
+              <strong class="essay-improvement-area">${escapeHtml(i.area || '')}</strong>
+            </div>
+            <div class="essay-improvement-suggestion">${escapeHtml(i.suggestion || '')}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
   }
 
+  // Line Notes section
+  if (r.lineNotes?.length) {
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Line-by-Line Feedback</h4>
+      <div class="essay-line-notes">
+        ${r.lineNotes.map(note => `<div class="essay-line-note">
+          <div class="essay-line-quote">"${escapeHtml(note.text)}"</div>
+          <div class="essay-line-feedback">${escapeHtml(note.note)}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Structure section with checkmarks
   if (r.structure) {
-    html += `<div class="essay-section"><h4>Structure</h4><p>${escapeHtml(typeof r.structure === 'string' ? r.structure : JSON.stringify(r.structure))}</p></div>`;
+    const struct = r.structure;
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Structure Analysis</h4>
+      <div class="essay-structure-checks">
+        <div class="essay-structure-check">
+          <span class="essay-structure-icon ${struct.hasHook ? 'has' : 'missing'}">
+            ${struct.hasHook ? '✓' : '✗'}
+          </span>
+          <span class="essay-structure-label">Strong Hook</span>
+        </div>
+        <div class="essay-structure-check">
+          <span class="essay-structure-icon ${struct.hasNarrative ? 'has' : 'missing'}">
+            ${struct.hasNarrative ? '✓' : '✗'}
+          </span>
+          <span class="essay-structure-label">Clear Narrative</span>
+        </div>
+        <div class="essay-structure-check">
+          <span class="essay-structure-icon ${struct.hasReflection ? 'has' : 'missing'}">
+            ${struct.hasReflection ? '✓' : '✗'}
+          </span>
+          <span class="essay-structure-label">Thoughtful Reflection</span>
+        </div>
+      </div>
+      ${struct.notes ? `<div class="essay-structure-notes">${escapeHtml(struct.notes)}</div>` : ''}
+    </div>`;
+  }
+
+  // Emotional Arc section
+  if (r.emotionalArc) {
+    const arc = r.emotionalArc;
+    html += `<div class="essay-section">
+      <h4 class="essay-section-header">Emotional Arc</h4>
+      <div class="essay-emotional-arc">
+        <div class="essay-arc-stage">
+          <div class="essay-arc-label">Opening</div>
+          <div class="essay-arc-value">${escapeHtml(arc.openingTone || '—')}</div>
+        </div>
+        <div class="essay-arc-arrow">→</div>
+        <div class="essay-arc-stage">
+          <div class="essay-arc-label">Shift</div>
+          <div class="essay-arc-value">${escapeHtml(arc.shift || '—')}</div>
+        </div>
+        <div class="essay-arc-arrow">→</div>
+        <div class="essay-arc-stage">
+          <div class="essay-arc-label">Closing</div>
+          <div class="essay-arc-value">${escapeHtml(arc.closingTone || '—')}</div>
+        </div>
+      </div>
+      ${arc.notes ? `<div class="essay-arc-notes">${escapeHtml(arc.notes)}</div>` : ''}
+    </div>`;
   }
 
   html += `</div>`;
   el.innerHTML = html;
-  el.style.display = 'block';
   el.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ========================
+// Essay History & Score Tracking (Full-Page View)
+// ========================
+
+async function loadEssayHistory() {
+  const typeFilter = $('evHistoryTypeFilter')?.value || '';
+  const listContainer = $('evHistoryList');
+  const loadingEl = $('evHistoryLoading');
+  const chartContainer = $('evScoreChart');
+
+  if (!listContainer) return;
+
+  listContainer.innerHTML = '';
+  loadingEl.style.display = 'flex';
+  chartContainer.innerHTML = '';
+
+  try {
+    const url = `${API_BASE}/essays/history${typeFilter ? `?essayType=${typeFilter}` : ''}`;
+    const res = await fetch(url, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    const reviews = data.reviews || [];
+
+    loadingEl.style.display = 'none';
+
+    if (reviews.length === 0) {
+      listContainer.innerHTML = `<div class="essay-history-empty"><p>No reviews yet. Submit your first essay for review to get started.</p></div>`;
+      return;
+    }
+
+    // Render score progression chart if showing a specific essay type
+    if (typeFilter && reviews.length > 1) {
+      loadScoreProgression(typeFilter);
+    } else if (!typeFilter && reviews.length > 1) {
+      chartContainer.innerHTML = `<div class="essay-score-progression-message">Filter by essay type to see score progression</div>`;
+    }
+
+    // Render history cards
+    reviews.forEach(review => {
+      const card = createHistoryCard(review);
+      listContainer.appendChild(card);
+    });
+  } catch (err) {
+    loadingEl.style.display = 'none';
+    listContainer.innerHTML = `<div class="essay-history-empty"><p>Failed to load history. Please try again.</p></div>`;
+  }
+}
+
+function createHistoryCard(review) {
+  const card = document.createElement('div');
+  card.className = 'essay-history-card';
+
+  const date = new Date(review.createdAt).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
+  const scoreColor = review.score >= 8 ? '#10b981' : (review.score >= 5 ? '#f59e0b' : '#ef4444');
+
+  const summaryText = review.summary ? review.summary.substring(0, 120) + (review.summary.length > 120 ? '...' : '') : 'No summary available';
+
+  const schoolText = review.targetSchool ? `<div class="essay-history-meta-item">School: ${escapeHtml(review.targetSchool)}</div>` : '';
+
+  const html = `
+    <div class="essay-history-card-header">
+      <div style="flex: 1; min-width: 0;">
+        <div style="margin-bottom: 6px;">
+          <span class="essay-history-type-badge">${review.essayType.replace(/-/g, ' ')}</span>
+          <span class="essay-history-date">${date}</span>
+        </div>
+      </div>
+      <div class="essay-history-score">
+        <span class="essay-history-score-num" style="color: ${scoreColor};">${review.score || '—'}</span>
+        <div>
+          <div class="essay-history-score-label">${review.scoreLabel || 'N/A'}</div>
+        </div>
+      </div>
+    </div>
+    <div class="essay-history-card-body">
+      <div class="essay-history-summary">${escapeHtml(summaryText)}</div>
+      <div class="essay-history-meta">
+        ${schoolText}
+        <div class="essay-history-meta-item">Words: ${review.wordCount}</div>
+      </div>
+    </div>
+    <button class="essay-history-view-btn" onclick="viewEssayReviewFull('${review.id}')">View Full Review</button>
+  `;
+
+  card.innerHTML = html;
+  return card;
+}
+
+async function viewEssayReviewFull(reviewId) {
+  try {
+    const res = await fetch(`${API_BASE}/essays/review/${reviewId}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const reviewRecord = await res.json();
+    renderEssayReview(reviewRecord.review);
+    switchEvTab('compose');
+  } catch (err) {
+    alert('Failed to load review. Please try again.');
+  }
+}
+
+async function loadScoreProgression(essayType) {
+  const chartContainer = $('evScoreChart');
+  chartContainer.innerHTML = '';
+
+  try {
+    const res = await fetch(`${API_BASE}/essays/drafts/${essayType}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    const data = await res.json();
+    const drafts = data.drafts || [];
+
+    if (drafts.length < 2) {
+      chartContainer.innerHTML = `<div class="essay-score-progression-message">Submit another draft of this essay type to track your score progression</div>`;
+      return;
+    }
+
+    renderScoreChart(drafts);
+  } catch (err) {
+    console.error('Failed to load score progression:', err);
+  }
+}
+
+function renderScoreChart(drafts) {
+  const container = $('evScoreChart');
+  container.innerHTML = '';
+
+  const chartHtml = `
+    <div class="essay-chart-container">
+      ${drafts.map((draft, idx) => {
+        const scorePercent = (draft.overallScore / 10) * 100;
+        const date = new Date(draft.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        return `
+          <div class="essay-chart-bar-wrapper">
+            <div class="essay-chart-bar" style="height: ${scorePercent}px;">
+              <div class="essay-chart-bar-score">${draft.overallScore}</div>
+            </div>
+            <div class="essay-chart-label">${date}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+
+  container.innerHTML = chartHtml;
 }
 
 // ========================

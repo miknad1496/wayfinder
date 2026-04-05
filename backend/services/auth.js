@@ -472,8 +472,8 @@ export async function requestPasswordReset(email) {
     return { success: true };
   }
 
-  // Generate 6-digit reset code
-  const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+  // Generate 6-digit reset code using cryptographically secure random
+  const resetCode = String(100000 + (randomBytes(4).readUInt32BE(0) % 900000));
   user.resetCode = resetCode;
   user.resetCodeExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 min
 
@@ -510,9 +510,10 @@ export async function resetPassword(email, code, newPassword) {
     return { error: 'Reset code has expired. Please request a new one.' };
   }
 
-  // Validate new password
-  if (!newPassword || newPassword.length < 6) {
-    return { error: 'Password must be at least 6 characters.' };
+  // Validate new password strength (same rules as signup)
+  const passValidation = validatePasswordStrength(newPassword);
+  if (!passValidation.valid) {
+    return { error: passValidation.error };
   }
 
   // Hash and save
@@ -1238,6 +1239,34 @@ export async function useEssayCredit(token) {
     return { allowed: false, remaining: 0 };
   }
   return { allowed: false, remaining: 0 };
+}
+
+/**
+ * Refund one essay review credit. Called when a review fails or returns invalid data.
+ */
+export async function refundEssayCredit(token) {
+  if (!token) return { success: false, remaining: 0 };
+
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      const user = await safeReadUserFile(join(USERS_DIR, file));
+      if (!user) continue;
+      if (user.token === token) {
+        // Admins and VIPs don't need refunds (they have unlimited)
+        if (isAdmin(user.email) || isVIP(user.email)) {
+          return { success: true, remaining: 999 };
+        }
+        // Increment the credit count back
+        user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + 1;
+        await atomicWriteJSON(join(USERS_DIR, file), user);
+        return { success: true, remaining: user.essayReviewsRemaining };
+      }
+    }
+  } catch (err) {
+    return { success: false, remaining: 0 };
+  }
+  return { success: false, remaining: 0 };
 }
 
 /**

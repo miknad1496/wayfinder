@@ -45,6 +45,15 @@ let essayBrainCache = {
   'school-specific': null
 };
 
+// Deep knowledge cache structure
+let deepKnowledgeCache = {
+  loaded: false,
+  'failure-patterns': null,
+  'scoring-calibration': null,
+  'edge-case': null,
+  'supplement-mastery': null
+};
+
 /**
  * Load essay brain knowledge files at startup and cache them
  */
@@ -86,6 +95,44 @@ async function loadEssayBrainKnowledge() {
 }
 
 /**
+ * Load deep knowledge files for selective injection
+ */
+async function loadDeepKnowledge() {
+  if (deepKnowledgeCache.loaded) {
+    return deepKnowledgeCache;
+  }
+
+  try {
+    const knowledgeBasePath = join(__dirname, '..', 'knowledge-base', 'distilled', 'essay-deep');
+
+    // Map of cache keys to file names
+    const files = {
+      'failure-patterns': 'essay-diagnostic-failure-patterns.md',
+      'scoring-calibration': 'essay-scoring-calibration.md',
+      'edge-case': 'essay-edge-case-coaching.md',
+      'supplement-mastery': 'essay-supplement-type-mastery.md'
+    };
+
+    for (const [key, filename] of Object.entries(files)) {
+      const filepath = join(knowledgeBasePath, filename);
+      try {
+        const content = await fs.readFile(filepath, 'utf-8');
+        deepKnowledgeCache[key] = content;
+      } catch (err) {
+        console.warn(`[EssayReviewer] Could not load deep knowledge ${filename}:`, err.message);
+        deepKnowledgeCache[key] = null;
+      }
+    }
+
+    deepKnowledgeCache.loaded = true;
+  } catch (err) {
+    console.error('[EssayReviewer] Error loading deep knowledge:', err.message);
+  }
+
+  return deepKnowledgeCache;
+}
+
+/**
  * Extract relevant sections from an essay brain file based on search terms
  * Returns up to maxTokens worth of content (rough estimate: 4 chars ≈ 1 token)
  */
@@ -119,12 +166,12 @@ function extractRelevantSections(content, searchTerms, maxTokens = 1000) {
 
 /**
  * Build knowledge injection based on essay type and target school
- * Returns formatted knowledge context (under 4000 tokens)
+ * Returns formatted knowledge context (under 6000 tokens)
  */
-function buildKnowledgeInjection(essayType, targetSchool, knowledgeCache) {
+function buildKnowledgeInjection(essayType, targetSchool, knowledgeCache, deepCache = null) {
   let injection = '';
   let tokenCount = 0;
-  const maxTokens = 4000;
+  const maxTokens = 6000;
 
   // ALWAYS inject: Core essay philosophy from main brain file
   if (knowledgeCache['essay-brain']) {
@@ -204,6 +251,61 @@ function buildKnowledgeInjection(essayType, targetSchool, knowledgeCache) {
     }
   }
 
+  // DEEP KNOWLEDGE INJECTION
+  if (deepCache) {
+    // ALWAYS: Failure patterns for this essay type
+    if (deepCache['failure-patterns'] && tokenCount < maxTokens - 1000) {
+      const failurePatterns = extractRelevantSections(
+        deepCache['failure-patterns'],
+        [essayType, 'pattern', 'failure', 'common mistake'],
+        800
+      );
+      if (failurePatterns) {
+        injection += '## COMMON FAILURE PATTERNS (DEEP DIAGNOSTIC)\n' + failurePatterns + '\n\n';
+        tokenCount += Math.ceil(failurePatterns.length / 4);
+      }
+    }
+
+    // ALWAYS: Scoring calibration anchor points
+    if (deepCache['scoring-calibration'] && tokenCount < maxTokens - 800) {
+      const scoringGuide = extractRelevantSections(
+        deepCache['scoring-calibration'],
+        ['anchor', 'score 6', 'score 7', 'score 8', 'calibration'],
+        400
+      );
+      if (scoringGuide) {
+        injection += '## SCORING CALIBRATION ANCHORS\n' + scoringGuide + '\n\n';
+        tokenCount += Math.ceil(scoringGuide.length / 4);
+      }
+    }
+
+    // CONDITIONAL: Edge case coaching for diversity/challenge essays
+    if ((essayType === 'diversity' || essayType === 'challenge') && deepCache['edge-case'] && tokenCount < maxTokens - 600) {
+      const edgeCaseCoaching = extractRelevantSections(
+        deepCache['edge-case'],
+        [essayType, 'identity', 'adversity', 'trauma', 'first-generation'],
+        600
+      );
+      if (edgeCaseCoaching) {
+        injection += '## EDGE CASE COACHING (Post-SFFA Context)\n' + edgeCaseCoaching + '\n\n';
+        tokenCount += Math.ceil(edgeCaseCoaching.length / 4);
+      }
+    }
+
+    // CONDITIONAL: Supplement mastery for supplemental/why-school essays
+    if ((essayType === 'supplemental' || essayType === 'why-school') && deepCache['supplement-mastery'] && tokenCount < maxTokens - 600) {
+      const supplementMastery = extractRelevantSections(
+        deepCache['supplement-mastery'],
+        [essayType, 'supplement', 'why school', 'fit', 'strategy'],
+        600
+      );
+      if (supplementMastery) {
+        injection += '## SUPPLEMENT ESSAY MASTERY\n' + supplementMastery + '\n\n';
+        tokenCount += Math.ceil(supplementMastery.length / 4);
+      }
+    }
+  }
+
   return injection;
 }
 
@@ -272,6 +374,19 @@ REVIEW STRUCTURE (you must follow this exact JSON format):
     "hasReflection": <true|false>,
     "notes": "<brief structural assessment—does the opening land immediately? Is there a clear turning point? Does reflection feel earned?>"
   },
+  "emotionalArc": {
+    "openingTone": "<one-word descriptor>",
+    "shift": "<what changes emotionally>",
+    "closingTone": "<one-word descriptor>",
+    "notes": "<brief assessment of emotional journey>"
+  },
+  "admissionsImpact": {
+    "memorability": "<low|medium|high>",
+    "distinctiveness": "<low|medium|high>",
+    "wouldDiscussInCommittee": <true|false>,
+    "notes": "<what an AO would actually think reading this>"
+  },
+  "topPriority": "<single most important thing this student should work on in their next draft>",
   "wordCount": <number>,
   "readingLevel": "<approximate grade level>"
 }
@@ -327,6 +442,19 @@ REVIEW STRUCTURE (you must follow this exact JSON format):
     "hasReflection": <true|false>,
     "notes": "<brief structural assessment>"
   },
+  "emotionalArc": {
+    "openingTone": "<one-word descriptor>",
+    "shift": "<what changes emotionally>",
+    "closingTone": "<one-word descriptor>",
+    "notes": "<brief assessment of emotional journey>"
+  },
+  "admissionsImpact": {
+    "memorability": "<low|medium|high>",
+    "distinctiveness": "<low|medium|high>",
+    "wouldDiscussInCommittee": <true|false>,
+    "notes": "<what an AO would actually think reading this>"
+  },
+  "topPriority": "<single most important thing this student should work on in their next draft>",
   "wordCount": <number>,
   "readingLevel": "<approximate grade level>"
 }
@@ -361,25 +489,43 @@ export async function reviewEssay(essayText, essayType = 'other', targetSchool =
     // Load essay brain knowledge
     const knowledgeCache = await loadEssayBrainKnowledge();
 
+    // Load deep knowledge for selective injection
+    const deepCache = await loadDeepKnowledge();
+
     // Build knowledge injection based on essay type and target school
-    const knowledgeInjection = buildKnowledgeInjection(essayType, targetSchool, knowledgeCache);
+    const knowledgeInjection = buildKnowledgeInjection(essayType, targetSchool, knowledgeCache, deepCache);
 
     // Build enhanced system prompt with knowledge injection
     const systemPrompt = buildEnhancedSystemPrompt(knowledgeInjection);
+
+    // Build essay type-specific guidance
+    const typeSpecificGuidance = {
+      'common-app': 'Focus on whether the personal statement reveals genuine growth and self-awareness. Common App essays are the student\'s primary voice in their application.',
+      'why-school': 'Evaluate whether the student demonstrates genuine research and authentic connection to the school, not just facts from the website.',
+      'diversity': 'Assess whether the essay handles identity with nuance and specificity rather than broad generalizations. Post-SFFA context matters.',
+      'activity': 'Check if the essay goes beyond resume-listing to reveal what the activity actually taught or changed in the student.',
+      'supplemental': 'Evaluate fit with the specific school\'s values and whether it adds new dimensions not covered elsewhere.',
+      'community': 'Look for genuine engagement rather than savior narratives. Does it show humility and learning?',
+      'challenge': 'Assess whether the challenge is specific and the growth is genuine, not performative resilience.',
+      'other': 'Apply general college essay evaluation criteria.'
+    };
+
+    const guidance = typeSpecificGuidance[essayType] || typeSpecificGuidance.other;
 
     // Build user prompt
     let userPrompt = `Please review this ${typeName}`;
     if (targetSchool) {
       userPrompt += ` (targeted at ${targetSchool})`;
     }
+    userPrompt += `.\n\nEssay type-specific guidance: ${guidance}`;
     if (prompt) {
-      userPrompt += `.\n\nAdditional context from the student: ${prompt}`;
+      userPrompt += `\n\nAdditional context from the student: ${prompt}`;
     }
     userPrompt += `\n\n--- ESSAY ---\n${essayText}\n--- END ESSAY ---`;
 
     const response = await client.messages.create({
       model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-6',
-      max_tokens: 2000,
+      max_tokens: 3500,
       system: systemPrompt,
       messages: [{ role: 'user', content: userPrompt }]
     });
