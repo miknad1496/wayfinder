@@ -2490,6 +2490,7 @@ function switchSAIMode(mode) {
 }
 
 async function calculateSAIQuick() {
+  addBreadcrumb('Calculated SAI (quick)');
   const income = parseFloat($('saiQuickIncome')?.value) || 0;
   const assets = parseFloat($('saiQuickAssets')?.value) || 0;
   const familySize = parseInt($('saiQuickFamilySize')?.value) || 4;
@@ -2513,6 +2514,7 @@ async function calculateSAIQuick() {
 }
 
 async function calculateSAIDetailed() {
+  addBreadcrumb('Calculated SAI (detailed)');
   const parentAGI = parseFloat($('saiParentAGI')?.value) || 0;
   const incomeTax = parseFloat($('saiParentIncomeTax')?.value) || 0;
   const untaxedIncome = parseFloat($('saiParentUntaxedIncome')?.value) || 0;
@@ -2575,6 +2577,49 @@ async function runSAICalculation(payload) {
   } finally {
     $('saiLoading').style.display = 'none';
   }
+}
+
+function buildSAIGauge(sai) {
+  // Map SAI to a position on the gauge (0-100%)
+  // Scale: -1500 (far left, max aid) to 100000 (far right, no need)
+  const minSAI = -1500;
+  const maxSAI = 100000;
+  const clamped = Math.max(minSAI, Math.min(maxSAI, sai));
+  const pct = ((clamped - minSAI) / (maxSAI - minSAI)) * 100;
+
+  // Determine which zone is active
+  const zones = [
+    { label: 'Max Aid', color: '#22c55e', min: -1500, max: 0 },
+    { label: 'High Need', color: '#4ade80', min: 0, max: 7000 },
+    { label: 'Moderate', color: '#facc15', min: 7000, max: 25000 },
+    { label: 'Some Need', color: '#f97316', min: 25000, max: 50000 },
+    { label: 'Low Need', color: '#ef4444', min: 50000, max: 100000 },
+  ];
+
+  const activeZone = zones.find(z => sai >= z.min && sai < z.max) || zones[zones.length - 1];
+
+  const zonesHTML = zones.map(z => {
+    const isActive = z === activeZone;
+    return '<span class="sai-gauge-zone ' + (isActive ? 'gz-active' : '') + '">'
+      + '<span class="gz-dot" style="background:' + z.color + '"></span>'
+      + z.label
+      + '</span>';
+  }).join('');
+
+  return '<div class="sai-gauge">'
+    + '<div class="sai-gauge-label">Where You Fall</div>'
+    + '<div class="sai-gauge-bar">'
+    + '<div class="sai-gauge-marker" style="left:' + Math.min(98, Math.max(2, pct)) + '%" data-label="You"></div>'
+    + '</div>'
+    + '<div class="sai-gauge-labels">'
+    + '<span>-$1,500<br>Max Aid</span>'
+    + '<span>$0</span>'
+    + '<span>$25K</span>'
+    + '<span>$50K</span>'
+    + '<span>$100K+<br>Low Need</span>'
+    + '</div>'
+    + '<div class="sai-gauge-zones">' + zonesHTML + '</div>'
+    + '</div>';
 }
 
 function renderSAIResults(data) {
@@ -2648,6 +2693,8 @@ function renderSAIResults(data) {
         <div class="sai-pell-badge ${pellBadgeClass}">${pellBadgeText}</div>
       </div>
     </div>
+
+    ${buildSAIGauge(sai)}
 
     ${tipsHTML}
     ${contextHTML}
@@ -2879,6 +2926,7 @@ const ESSAY_WORD_LIMITS = {
 let evInitialized = false;
 
 function openEssays() {
+  addBreadcrumb('Opened Essay Reviewer');
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
 
@@ -3171,6 +3219,7 @@ function mapPromptToEssayType(category, promptId) {
 }
 
 async function submitEssayReview() {
+  const _et = $('essayType')?.value; if (_et) addBreadcrumb('Submitted essay: ' + _et);
   const essayText = $('evEssayText').value.trim();
   const essayType = $('evEssayType').value;
   const targetSchool = $('evTargetSchool').value.trim();
@@ -3562,6 +3611,7 @@ function openInternships() {
 }
 
 async function searchInternships() {
+  const _is = $('internshipState')?.value || $('internshipField')?.value; if (_is) addBreadcrumb('Searched internships: ' + _is);
   $('internshipsLoading').style.display = 'flex';
   $('internshipsResults').innerHTML = '';
 
@@ -3602,6 +3652,7 @@ function openScholarships() {
 }
 
 async function searchScholarships() {
+  const _ss = $('scholarshipState')?.value || $('scholarshipScope')?.value; if (_ss) addBreadcrumb('Searched scholarships: ' + _ss);
   $('scholarshipsLoading').style.display = 'flex';
   $('scholarshipsResults').innerHTML = '';
 
@@ -3641,6 +3692,7 @@ function openPrograms() {
 }
 
 async function searchPrograms() {
+  const _ps = $('programState')?.value || $('programCategory')?.value; if (_ps) addBreadcrumb('Searched programs: ' + _ps);
   $('programsLoading').style.display = 'flex';
   $('programsResults').innerHTML = '';
 
@@ -3671,6 +3723,7 @@ async function searchPrograms() {
 // ========================
 function openFinancialAid() {
   if (!currentUser) { openAuthModal('login'); return; }
+  addBreadcrumb('Opened Financial Aid');
   closeSidebarOnMobile();
   $('financialAidModal').style.display = 'flex';
 
@@ -3714,12 +3767,14 @@ function switchFinaidTab(tab) {
     document.querySelector('[data-finaid-tab="grants"]')?.classList.add('active');
     searchStateGrants();
   } else if (tab === 'sai') {
+    addBreadcrumb('Opened SAI Calculator');
     if ($('finaidTabSAI')) $('finaidTabSAI').style.display = 'block';
     document.querySelector('[data-finaid-tab="sai"]')?.classList.add('active');
   }
 }
 
 async function searchFinancialAid() {
+  addBreadcrumb('Searched schools');
   $('finaidLoading').style.display = 'flex';
   $('finaidResults').innerHTML = '';
 
@@ -3908,6 +3963,7 @@ function renderGrantCard(g, source) {
 }
 
 async function generateMyStrategy() {
+  addBreadcrumb('Generated aid strategy');
   const income = $('strategyIncome')?.value;
   const assets = $('strategyAssets')?.value;
   const familySize = $('strategyFamilySize')?.value;
@@ -4105,6 +4161,18 @@ function renderToolCard(item, type, fullAccess) {
 let davidHistory = [];
 let davidInitialized = false;
 
+// Session breadcrumbs — lightweight tracker of what the user has done this session.
+// Max 12 entries, each is a short string like "Opened SAI Calculator" or "Searched scholarships: WA".
+// This gives David session-wide awareness without a massive context payload.
+const sessionBreadcrumbs = [];
+function addBreadcrumb(action) {
+  // Dedupe consecutive identical entries
+  if (sessionBreadcrumbs.length > 0 && sessionBreadcrumbs[sessionBreadcrumbs.length - 1] === action) return;
+  sessionBreadcrumbs.push(action);
+  // Keep only the last 12 — enough for David to connect dots, not enough to blow up tokens
+  if (sessionBreadcrumbs.length > 12) sessionBreadcrumbs.shift();
+}
+
 function setupDavidCoach() {
   const widget = $('davidWidget');
   const toggle = $('davidToggle');
@@ -4159,47 +4227,103 @@ function hideDavidWidget() {
 
 function getActiveToolContext() {
   const ctx = {};
-  // Check which modal is open
+
+  // Always attach session breadcrumbs
+  if (sessionBreadcrumbs.length > 0) {
+    ctx.sessionBreadcrumbs = [...sessionBreadcrumbs];
+  }
+
+  // ── Financial Aid ──
   if ($('financialAidModal')?.style.display === 'flex') {
     ctx.activeTool = 'Financial Aid Planner';
-    // Which tab?
     if ($('finaidTabSAI')?.style.display === 'block') {
       ctx.activeTab = 'SAI Calculator';
-      // Grab SAI results if visible
+      // Which mode
+      const quickVisible = $('saiQuickForm')?.style.display !== 'none';
+      ctx.saiMode = quickVisible ? 'Quick Estimate' : 'Detailed';
+      // Results
       const saiResults = $('saiResults');
       if (saiResults?.style.display === 'block') {
         const scoreEl = saiResults.querySelector('.sai-score-number');
-        const meaningEl = saiResults.querySelector('.sai-score-meaning');
         const pellEl = saiResults.querySelector('.sai-pell-badge');
         if (scoreEl) ctx.saiScore = scoreEl.textContent.trim();
-        if (meaningEl) ctx.saiMeaning = meaningEl.textContent.trim();
         if (pellEl) ctx.pellStatus = pellEl.textContent.trim();
       }
-      // Grab inputs
+      // Inputs (quick or detailed)
       const inc = $('saiQuickIncome')?.value || $('saiParentAGI')?.value;
       const assets = $('saiQuickAssets')?.value || $('saiParentAssets')?.value;
       const fam = $('saiQuickFamilySize')?.value || $('saiDetailedFamilySize')?.value;
+      const filing = $('saiQuickFiling')?.value || $('saiDetailedFiling')?.value;
       if (inc) ctx.userIncome = inc;
       if (assets) ctx.userAssets = assets;
       if (fam) ctx.familySize = fam;
+      if (filing) ctx.filingStatus = filing;
     } else if ($('finaidTabSearch')?.style.display === 'block') {
       ctx.activeTab = 'School Search';
+      const st = $('finaidState')?.value;
+      const tp = $('finaidType')?.value;
+      const tg = $('finaidTags')?.value;
+      const parts = [st, tp, tg].filter(Boolean);
+      if (parts.length) ctx.schoolSearchState = parts.join(', ');
+      const count = $('finaidResults')?.querySelectorAll('.tool-card').length;
+      if (count) ctx.schoolResultCount = count;
     } else if ($('finaidTabStrategy')?.style.display === 'block') {
       ctx.activeTab = 'My Strategy';
     } else if ($('finaidTabGrants')?.style.display === 'block') {
       ctx.activeTab = 'Grants & Aid';
+      const gs = $('grantsState')?.value;
+      if (gs) ctx.activeFilters = 'State: ' + gs;
     }
+
+  // ── Essays ──
   } else if ($('essaysModal')?.style.display === 'flex') {
     ctx.activeTool = 'Essay Reviewer';
+    const essayType = $('essayType')?.value;
+    const school = $('essayTargetSchool')?.value;
+    const text = $('essayText')?.value;
+    if (essayType) ctx.essayType = essayType;
+    if (school) ctx.essaySchool = school;
+    if (text) ctx.essayWordCount = text.trim().split(/\s+/).filter(Boolean).length;
+    // Check if results are showing
+    const scoreEl = document.querySelector('.essay-score-value');
+    if (scoreEl) ctx.essayScore = scoreEl.textContent.trim();
+
+  // ── Internships ──
   } else if ($('internshipsModal')?.style.display === 'flex') {
     ctx.activeTool = 'Internships Database';
+    const parts = [];
+    const f = $('internshipField')?.value; if (f) parts.push(f);
+    const s = $('internshipState')?.value; if (s) parts.push(s);
+    const p = $('internshipPaid')?.value; if (p) parts.push(p);
+    if (parts.length) ctx.activeFilters = parts.join(', ');
+
+  // ── Scholarships ──
   } else if ($('scholarshipsModal')?.style.display === 'flex') {
     ctx.activeTool = 'Scholarships Database';
+    const parts = [];
+    const sc = $('scholarshipScope')?.value; if (sc) parts.push(sc);
+    const ss = $('scholarshipState')?.value; if (ss) parts.push(ss);
+    const sa = $('scholarshipAmount')?.value; if (sa) parts.push(sa);
+    if (parts.length) ctx.activeFilters = parts.join(', ');
+
+  // ── Programs ──
   } else if ($('programsModal')?.style.display === 'flex') {
     ctx.activeTool = 'Programs Database';
+    const parts = [];
+    const pc = $('programCategory')?.value; if (pc) parts.push(pc);
+    const ps = $('programState')?.value; if (ps) parts.push(ps);
+    const pg = $('programGrade')?.value; if (pg) parts.push('grade:' + pg);
+    if (parts.length) ctx.activeFilters = parts.join(', ');
+
+  // ── Timeline ──
   } else if ($('timelineModal')?.style.display === 'flex') {
     ctx.activeTool = 'Timeline Builder';
+
+  // ── Demographics ──
+  } else if ($('demographicsModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Demographics & Admissions Data';
   }
+
   return Object.keys(ctx).length > 0 ? ctx : null;
 }
 
