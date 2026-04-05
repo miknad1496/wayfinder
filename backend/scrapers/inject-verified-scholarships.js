@@ -1387,6 +1387,183 @@ const verifiedScholarships = [
     _verifiedDate: "2026-04-05",
     _source: "https://terryfoundation.org/apply/"
   },
+
+  // ════════════════════════════════════════════════════════════════
+  // NATIONAL — FULL RIDE / HIGH VALUE (NEW BATCH — April 5 2026)
+  // ════════════════════════════════════════════════════════════════
+
+  {
+    name: "Coolidge Scholarship",
+    provider: "Calvin Coolidge Presidential Foundation",
+    amount: { min: 0, max: 250000, display: "Full ride (tuition, room, board, expenses)" },
+    deadline: "2026-12-16",
+    category: ["merit"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.5,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: true,
+      grades: ["11"]
+    },
+    description: "The only full-ride presidential scholarship in the United States. Covers tuition, room, board, required fees, and provides an annual book stipend for four years at any accredited U.S. college or university. Open to high school juniors who demonstrate academic excellence, interest in public policy, and leadership.",
+    url: "https://coolidgescholars.org/",
+    renewable: true,
+    tags: ["full-ride", "prestigious", "merit", "public-policy", "leadership"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://coolidgescholars.org/"
+  },
+  {
+    name: "GE-Reagan Foundation Scholarship",
+    provider: "Ronald Reagan Presidential Foundation & Institute",
+    amount: { min: 10000, max: 40000, display: "$10,000/year renewable up to $40,000" },
+    deadline: "2027-01-05",
+    category: ["merit", "leadership"],
+    competitiveness: "high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Awards $10,000 per year (renewable up to $40,000 total) to high school seniors who demonstrate leadership, drive, integrity, and citizenship with a minimum 3.0 GPA. Applicants must demonstrate strong community involvement, plan to enroll full-time at an accredited U.S. college or university.",
+    url: "https://www.reaganfoundation.org/education/scholarship-programs",
+    renewable: true,
+    tags: ["leadership", "renewable", "merit", "citizenship"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.reaganfoundation.org/education/scholarship-programs"
+  },
+  {
+    name: "Posse Foundation Leadership Scholarship",
+    provider: "Posse Foundation",
+    amount: { min: 0, max: 300000, display: "Full tuition for four years" },
+    deadline: "2026-08-01",
+    category: ["merit", "leadership"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "interview",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Full-tuition leadership scholarships to 70+ partner colleges and universities including Vanderbilt, Middlebury, Pomona, Bryn Mawr, and more. Students are nominated by their high school or community organization, then go through a dynamic assessment process emphasizing leadership, teamwork, and communication. Scholars attend college in cohorts of 10.",
+    url: "https://www.possefoundation.org/",
+    renewable: true,
+    tags: ["full-tuition", "prestigious", "leadership", "nomination-based", "diverse"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.possefoundation.org/"
+  },
+  {
+    name: "Cobell Scholarship (Undergraduate)",
+    provider: "Cobell Education Scholarship Fund",
+    amount: { min: 1000, max: 10000, display: "Up to $10,000" },
+    deadline: "2027-03-31",
+    category: ["need-based", "heritage"],
+    competitiveness: "moderate",
+    scope: "national",
+    applicationFormat: "application-only",
+    eligibility: {
+      states: ["all"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: ["native-american", "alaska-native"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Scholarship for American Indian, Alaska Native, Native Hawaiian, and Pacific Islander students who are enrolled members of U.S. federally recognized tribes. Authorized by the Cobell Settlement Agreement, funded by the U.S. Department of the Interior. Covers tuition and educational expenses for undergraduate study.",
+    url: "https://cobellscholar.org/our-scholarships/",
+    renewable: true,
+    tags: ["native-american", "need-based", "federal", "indigenous"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://cobellscholar.org/our-scholarships/"
+  },
+  {
+    name: "Thiel Fellowship",
+    provider: "Thiel Foundation",
+    amount: { min: 200000, max: 200000, display: "$200,000 over two years" },
+    deadline: "2026-12-31",
+    category: ["merit", "entrepreneurship"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Two-year $200,000 grant for young people aged 22 or under who want to build new things instead of attending college. Founded by Peter Thiel in 2011. Approximately 20-30 fellows selected annually. The Foundation does not take equity. Fellows build startups, nonprofits, research projects, and technologies with mentorship from the Thiel network of founders, investors, and scientists.",
+    url: "https://thielfellowship.org/",
+    renewable: false,
+    tags: ["entrepreneurship", "innovation", "prestigious", "alternative-path", "startup"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://thielfellowship.org/"
+  },
+  {
+    name: "DAR Good Citizens Scholarship",
+    provider: "Daughters of the American Revolution",
+    amount: { min: 500, max: 5000, display: "$500-$5,000 (varies by chapter/state/national level)" },
+    deadline: "2027-02-01",
+    category: ["merit", "community-service", "leadership"],
+    competitiveness: "moderate",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Since 1934, the DAR Good Citizens program recognizes high school seniors who exemplify dependability, service, leadership, and patriotism. Students are nominated by their school, then write an essay to compete for scholarships at the chapter, state, division, and national levels. One student per school may be nominated per year.",
+    url: "https://www.dar.org/national-society/scholarships/dar-related",
+    renewable: false,
+    tags: ["leadership", "community-service", "patriotism", "nomination-based", "essay"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.dar.org/national-society/scholarships/dar-related"
+  },
+  {
+    name: "National Merit Scholarship",
+    provider: "National Merit Scholarship Corporation",
+    amount: { min: 2500, max: 2500, display: "$2,500 one-time (corporate/college-sponsored awards up to full tuition)" },
+    deadline: "2026-10-15",
+    category: ["merit"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "application-only",
+    eligibility: {
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      citizenshipRequired: true,
+      grades: ["11"]
+    },
+    description: "Based on PSAT/NMSQT scores, approximately 16,000 semifinalists are named each September. About 95% advance to finalist standing, and approximately 6,930 scholarships worth nearly $26 million are awarded: 2,500 National Merit $2,500 Scholarships, 830 corporate-sponsored awards, and 3,600 college-sponsored awards (some covering full tuition at the sponsoring institution).",
+    url: "https://www.nationalmerit.org/",
+    renewable: false,
+    tags: ["merit", "prestigious", "PSAT", "standardized-test", "national"],
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    _source: "https://www.nationalmerit.org/"
+  },
 ];
 
 

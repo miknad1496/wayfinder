@@ -891,6 +891,69 @@ const VERIFIED_PROGRAMS = [
     _verifiedDate: "2026-04-05",
     format: "in-person"
   },
+
+  // ─── NEW YORK ───────────────────────────────────────────────────
+  {
+    title: "High School Research Program (HSRP)",
+    company: "Brookhaven National Laboratory",
+    location: { city: "Upton", state: "NY" },
+    type: "summer",
+    paid: false,
+    field: "Science",
+    deadline: "2027-03-01",
+    description: "Competitive 6-week program where students work alongside Brookhaven Lab scientific and engineering staff on hands-on research projects supporting the DOE mission. Covers physics, chemistry, biology, environmental science, and engineering. Commuter program, Monday-Friday 8:30am-5pm. Concludes with poster session and oral presentations.",
+    majors: ["Physics", "Chemistry", "Biology", "Engineering", "Environmental Science"],
+    tags: ["high-school", "research", "national-lab", "DOE", "competitive", "STEM"],
+    url: "https://www.bnl.gov/education/programs/program.php?q=219",
+    duration: "6 weeks (July-August)",
+    whyApply: "Work at a U.S. Department of Energy national laboratory alongside world-class scientists. Exceptional for college applications in any STEM field.",
+    _source: "https://www.bnl.gov/education/programs/program.php?q=219",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    format: "in-person"
+  },
+  {
+    title: "Ellen Brenner Memorial Summer Internship",
+    company: "Cold Spring Harbor Laboratory",
+    location: { city: "Cold Spring Harbor", state: "NY" },
+    type: "summer",
+    paid: true,
+    stipend: "$1,785 stipend + $16.50/hr wage",
+    field: "Science",
+    deadline: "2027-05-01",
+    description: "High school juniors and seniors from Long Island work on mentored projects in CSHL Library and Archives related to the history of molecular biology. Two tracks available: Library Interns gain experience in science librarianship; Archives Interns work with collections documenting the history of CSHL and molecular biology including digitization, oral history, and cataloging.",
+    majors: ["Biology", "History of Science", "Library Science", "Molecular Biology"],
+    tags: ["high-school", "research", "history-of-science", "archives", "paid", "long-island"],
+    url: "https://www.cshl.edu/education/center-for-humanities/grants-fellowships/ellen-brenner-memorial-internship/",
+    duration: "3-6 weeks (part-time 6 weeks or full-time 3 weeks)",
+    whyApply: "Cold Spring Harbor Laboratory is one of the most storied biological research institutions in the world. Unique intersection of science and humanities.",
+    _source: "https://www.cshl.edu/education/center-for-humanities/grants-fellowships/ellen-brenner-memorial-internship/",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    format: "in-person"
+  },
+
+  // ─── MICHIGAN ───────────────────────────────────────────────────
+  {
+    title: "Aspirnaut Summer Research Internship",
+    company: "University of Michigan Life Sciences Institute",
+    location: { city: "Ann Arbor", state: "MI" },
+    type: "summer",
+    paid: true,
+    stipend: "Housing, meals, and monthly stipend provided",
+    field: "Science",
+    deadline: "2027-02-15",
+    description: "Immersive 6-week residential program where high school juniors join real research projects led by University of Michigan scientists. Students live on campus in double-occupancy housing, eat at campus dining, and receive a monthly stipend. Includes professional development, mentorship, college advising, and culminates in public research presentations.",
+    majors: ["Biology", "Biochemistry", "Chemistry", "Neuroscience", "Biomedical Engineering"],
+    tags: ["high-school", "research", "residential", "paid", "life-sciences", "competitive"],
+    url: "https://aspirnaut.lsi.umich.edu/",
+    duration: "6 weeks (residential, summer)",
+    whyApply: "Fully funded residential research at a top public university. Exceptional mentorship and direct research experience for college applications.",
+    _source: "https://aspirnaut.lsi.umich.edu/",
+    _verified: true,
+    _verifiedDate: "2026-04-05",
+    format: "in-person"
+  },
 ];
 
 

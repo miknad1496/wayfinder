@@ -48,8 +48,8 @@
       "Habitat for Humanity"
     ],
     "_verified": "partial",
-    "_verificationNotes": "3 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 807 programs are unverified and may contain template descriptions.",
-    "lastUpdated": "2026-04-05T16:08:17.833Z",
+    "_verificationNotes": "6 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 810 programs are unverified and may contain template descriptions.",
+    "lastUpdated": "2026-04-05T23:29:34.613Z",
     "totalPrograms": 795,
     "verifiedCount": 49
   },
@@ -34107,6 +34107,301 @@
       "_verified": true,
       "_verifiedDate": "2026-04-05",
       "_source": "https://sop.washington.edu/pharmd/student-experience/office-of-student-affairs/pre-pharmacy-programs/"
+    },
+    {
+      "name": "Girls Who Code Pathways Program",
+      "provider": "Girls Who Code",
+      "category": "stem",
+      "subcategory": "computer-science",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "medium",
+      "format": "remote",
+      "location": {
+        "city": "Virtual",
+        "state": "National"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-04-10",
+      "description": "Free 7-week virtual summer program for high school girls and non-binary students. Learn AI, data science, cybersecurity, game design, or web development through hands-on projects. Self-paced asynchronous format with optional live events, mentorship, and peer collaboration via private Discord. No prior coding experience required.",
+      "url": "https://girlswhocode.com/programs/pathways",
+      "tags": [
+        "stem",
+        "coding",
+        "free",
+        "virtual",
+        "women-in-tech",
+        "ai",
+        "data-science",
+        "beginner-friendly"
+      ],
+      "duration": "7 weeks (June 29 - August 14)",
+      "region": "National (virtual)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://girlswhocode.com/programs/pathways"
+    },
+    {
+      "name": "Johns Hopkins Center for Talented Youth (CTY) On-Campus",
+      "provider": "Johns Hopkins University",
+      "category": "academic",
+      "subcategory": "multi-disciplinary",
+      "type": "summer",
+      "cost": {
+        "amount": 5500,
+        "type": "paid",
+        "display": "$3,149-$7,501 (financial aid available)"
+      },
+      "selectivity": "selective",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Baltimore",
+        "state": "MD"
+      },
+      "eligibility": {
+        "grades": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-05-11",
+      "description": "Prestigious residential program for academically talented students. Three-week intensive courses in STEM, humanities, writing, debate, and engineering. Students live on a college campus, participate in evening activities and field trips. Talent-identified students through qualifying test scores. One of the most recognized gifted programs in the country.",
+      "url": "https://cty.jhu.edu/programs/on-campus",
+      "tags": [
+        "academic",
+        "gifted",
+        "residential",
+        "prestigious",
+        "stem",
+        "humanities",
+        "writing"
+      ],
+      "duration": "3 weeks per session (June - August)",
+      "region": "Mid-Atlantic / National",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://cty.jhu.edu/programs/on-campus"
+    },
+    {
+      "name": "Stanford Pre-Collegiate Summer Institutes",
+      "provider": "Stanford University",
+      "category": "academic",
+      "subcategory": "multi-disciplinary",
+      "type": "summer",
+      "cost": {
+        "amount": 3200,
+        "type": "paid",
+        "display": "$3,200 per 2-week session (financial aid available)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "remote",
+      "location": {
+        "city": "Virtual",
+        "state": "National"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-03-15",
+      "description": "Two-week intensive online courses taught by Stanford instructors. Over 75 subjects including Computer Science, Engineering, Business, Creative Writing, Philosophy, Mathematics. Daily synchronous classes with rigorous academics. Ungraded, no college credit, but Stanford certificate of completion. Financial aid available based on demonstrated need.",
+      "url": "https://summerinstitutes.spcs.stanford.edu/",
+      "tags": [
+        "academic",
+        "stanford",
+        "prestigious",
+        "virtual",
+        "stem",
+        "humanities",
+        "business"
+      ],
+      "duration": "2 weeks (Session I: June 15-26, Session II: July 6-17)",
+      "region": "National (virtual)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://summerinstitutes.spcs.stanford.edu/"
+    },
+    {
+      "name": "LaunchX Online Entrepreneurship Program",
+      "provider": "LaunchX (founded at MIT)",
+      "category": "entrepreneurship",
+      "subcategory": "business",
+      "type": "summer",
+      "cost": {
+        "amount": 6495,
+        "type": "paid",
+        "display": "$6,495 (financial awards available)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "remote",
+      "location": {
+        "city": "Virtual",
+        "state": "National"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-03-25",
+      "description": "5-week online entrepreneurship program where students develop real business ideas, create prototypes, pitch to mentors, and collaborate with peers from 60+ countries. Mentorship from MIT-trained entrepreneurs. Students build business plans and functional prototypes. Financial awards available for applicants who apply by February 11.",
+      "url": "https://www.launchx.com/programs/online-entrepreneurship",
+      "tags": [
+        "entrepreneurship",
+        "business",
+        "startup",
+        "mit",
+        "innovation",
+        "global"
+      ],
+      "duration": "5 weeks (July 13 - August 14)",
+      "region": "National (virtual)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.launchx.com/programs/online-entrepreneurship"
+    },
+    {
+      "name": "Interlochen Arts Camp",
+      "provider": "Interlochen Center for the Arts",
+      "category": "arts",
+      "subcategory": "performing-arts",
+      "type": "summer",
+      "cost": {
+        "amount": 5250,
+        "type": "paid",
+        "display": "$2,050-$10,350 (85% of applicants received financial aid)"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Interlochen",
+        "state": "MI"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-04-15",
+      "description": "One of the nation's premier summer arts programs. 1-6 week residential sessions in music, visual arts, dance, theatre, and creative writing. Study with professional artists, perform in concerts and exhibitions. Camp activities include lakeside recreation. 85% of financial aid applicants receive assistance. Audition/portfolio-based merit scholarships available.",
+      "url": "https://www.interlochen.org/art-summer-camp",
+      "tags": [
+        "arts",
+        "music",
+        "visual-arts",
+        "dance",
+        "theatre",
+        "residential",
+        "michigan",
+        "prestigious"
+      ],
+      "duration": "1-6 weeks (June 20 - August 9)",
+      "region": "Midwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.interlochen.org/art-summer-camp"
+    },
+    {
+      "name": "Boston University Tanglewood Institute (BUTI) Young Artists",
+      "provider": "Boston University",
+      "category": "arts",
+      "subcategory": "music",
+      "type": "summer",
+      "cost": {
+        "amount": 7000,
+        "type": "paid",
+        "display": "$5,000-$8,000+ (financial aid available)"
+      },
+      "selectivity": "highly-selective",
+      "admissionsImpact": "high",
+      "format": "in-person",
+      "location": {
+        "city": "Lenox",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-01-21",
+      "description": "Highly selective residential music program at the Tanglewood Music Festival. Young Artists Orchestra, Wind Ensemble, and specialized tracks (harp, voice). Study with professional conductors and musicians. Perform at one of the most prestigious music festivals in the world. Master classes, rehearsals, and performances in a concert-quality setting.",
+      "url": "https://www.bu.edu/cfa/tanglewood/program/yao/",
+      "tags": [
+        "music",
+        "orchestra",
+        "prestigious",
+        "audition-based",
+        "residential",
+        "performing-arts"
+      ],
+      "duration": "2-6 weeks (June 21 - August 15)",
+      "region": "Northeast",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.bu.edu/cfa/tanglewood/program/yao/"
     }
   ]
 }
