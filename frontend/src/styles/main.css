@@ -4802,3 +4802,137 @@ html, body { overflow-x: hidden; }
 .ev-guidance-text a:hover {
   text-decoration: underline;
 }
+
+/* ─── SAI Calculator ──────────────────────────────────────── */
+.sai-calc-intro { margin-bottom: 16px; }
+.sai-calc-desc { color: #94a3b8; font-size: 13px; line-height: 1.5; margin: 0; }
+.sai-calc-desc strong { color: #e2e8f0; }
+
+.sai-mode-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
+.sai-mode-btn {
+  padding: 8px 20px; border: 1px solid #334155; background: transparent;
+  color: #94a3b8; border-radius: 6px; cursor: pointer; transition: all 0.15s; font-size: 14px;
+}
+.sai-mode-btn.active { background: #1e293b; color: #e2e8f0; border-color: #e2e8f0; }
+.sai-mode-btn:hover:not(.active) { background: rgba(30,41,59,0.5); color: #cbd5e1; }
+
+.sai-form { margin-bottom: 16px; }
+.sai-form-section { margin-bottom: 20px; }
+.sai-section-title {
+  color: #e2e8f0; font-size: 14px; font-weight: 600; margin: 0 0 12px 0;
+  padding-bottom: 6px; border-bottom: 1px solid #1e293b;
+}
+.sai-form-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.sai-field { display: flex; flex-direction: column; gap: 4px; }
+.sai-field label { color: #94a3b8; font-size: 12px; font-weight: 500; }
+.sai-field select, .sai-field input {
+  background: #0f172a; border: 1px solid #334155; border-radius: 6px;
+  color: #e2e8f0; padding: 8px 10px; font-size: 13px; width: 100%; box-sizing: border-box;
+}
+.sai-field select:focus, .sai-field input:focus {
+  outline: none; border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+}
+.sai-input-wrap {
+  display: flex; align-items: center; background: #0f172a;
+  border: 1px solid #334155; border-radius: 6px; overflow: hidden;
+}
+.sai-input-wrap:focus-within { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.15); }
+.sai-input-prefix {
+  padding: 8px 6px 8px 10px; color: #64748b; font-size: 13px; user-select: none;
+}
+.sai-input-wrap input {
+  border: none !important; background: transparent !important;
+  padding-left: 2px !important; box-shadow: none !important;
+}
+.sai-field-hint { color: #64748b; font-size: 11px; line-height: 1.3; }
+
+.sai-calc-btn {
+  margin-top: 8px; padding: 10px 28px; font-size: 14px; font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #2563eb); border: none;
+  color: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+}
+.sai-calc-btn:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8); transform: translateY(-1px); }
+.sai-calc-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* SAI Results */
+.sai-results { margin-top: 16px; }
+
+.sai-score-hero {
+  display: flex; align-items: center; gap: 24px; padding: 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid #334155; border-radius: 12px; margin-bottom: 20px;
+}
+.sai-score-number {
+  font-size: 48px; font-weight: 700; line-height: 1; min-width: 120px; text-align: center;
+}
+.sai-score-number.sai-negative { color: #22c55e; }
+.sai-score-number.sai-low { color: #4ade80; }
+.sai-score-number.sai-medium { color: #facc15; }
+.sai-score-number.sai-high { color: #f97316; }
+.sai-score-number.sai-very-high { color: #ef4444; }
+
+.sai-score-details { flex: 1; }
+.sai-score-label { font-size: 13px; color: #94a3b8; margin-bottom: 4px; }
+.sai-score-meaning { font-size: 14px; color: #e2e8f0; line-height: 1.5; }
+
+.sai-pell-badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+  border-radius: 20px; font-size: 13px; font-weight: 600; margin-top: 8px;
+}
+.sai-pell-badge.pell-full { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+.sai-pell-badge.pell-partial { background: rgba(250,204,21,0.15); color: #facc15; border: 1px solid rgba(250,204,21,0.3); }
+.sai-pell-badge.pell-none { background: rgba(148,163,184,0.1); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+
+/* Breakdown Steps */
+.sai-breakdown { margin-bottom: 20px; }
+.sai-breakdown-title {
+  font-size: 14px; font-weight: 600; color: #e2e8f0; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;
+}
+.sai-breakdown-title .sai-chevron { transition: transform 0.2s; font-size: 12px; }
+.sai-breakdown-title .sai-chevron.open { transform: rotate(90deg); }
+
+.sai-steps { display: flex; flex-direction: column; gap: 6px; }
+.sai-step {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 8px 12px; background: #0f172a; border-radius: 6px; font-size: 13px;
+}
+.sai-step-label { color: #94a3b8; flex: 1; padding-right: 12px; }
+.sai-step-value { color: #e2e8f0; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sai-step-value.positive { color: #4ade80; }
+.sai-step-value.negative { color: #f87171; }
+.sai-step-separator {
+  border: none; border-top: 1px dashed #334155; margin: 4px 0;
+}
+
+/* Tips & Warnings */
+.sai-tips { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.sai-tip {
+  display: flex; gap: 10px; padding: 10px 14px;
+  border-radius: 8px; font-size: 13px; line-height: 1.45;
+}
+.sai-tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.sai-tip.tip-info { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); color: #93c5fd; }
+.sai-tip.tip-success { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); color: #86efac; }
+.sai-tip.tip-warning { background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.2); color: #fde047; }
+
+/* Disclaimer */
+.sai-disclaimer {
+  font-size: 11px; color: #64748b; line-height: 1.5; padding: 10px 14px;
+  background: rgba(15,23,42,0.5); border-radius: 6px; border: 1px solid #1e293b;
+  margin-top: 16px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .sai-form-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sai-score-hero { flex-direction: column; text-align: center; gap: 12px; padding: 16px; }
+  .sai-score-number { font-size: 36px; min-width: auto; }
+  .sai-mode-toggle { flex-wrap: wrap; }
+}
+@media (max-width: 400px) {
+  .sai-form-grid { grid-template-columns: 1fr; }
+}

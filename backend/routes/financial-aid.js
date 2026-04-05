@@ -10,6 +10,7 @@
  * - GET /api/financial-aid/strategies  — Financial aid strategies guide (elite only)
  * - GET /api/financial-aid/stats       — Public stats on database coverage
  * - GET /api/financial-aid/estimate    — Estimate net price for a school
+ * - POST /api/financial-aid/calculate-sai — Calculate Student Aid Index (SAI) estimate
  * - POST /api/financial-aid/my-strategy — Generate personalized aid strategy (elite only)
  */
 
@@ -18,6 +19,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken, canAccess, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
+import { calculateSAI, quickEstimateSAI } from '../services/sai-calculator.js';
 import Anthropic from '@anthropic-ai/sdk';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -428,6 +430,88 @@ router.get('/estimate', async (req, res) => {
   }
 });
 
+// ─── POST /api/financial-aid/calculate-sai ─────────────────────────
+router.post('/calculate-sai', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+
+    // SAI calculator available to all authenticated users (it's a core value-add)
+    const hasPreview = canAccess(user, 'financial_aid_preview') || canAccess(user, 'financial_aid');
+    if (!hasPreview) {
+      return res.status(403).json({
+        error: 'SAI calculator requires a Pro plan or higher.',
+        _requiresUpgrade: true
+      });
+    }
+
+    const { mode, ...params } = req.body;
+
+    let result;
+    if (mode === 'detailed') {
+      // Full detailed calculation with all inputs
+      const {
+        parentAGI, parentFederalTaxPaid, parentUntaxedIncome,
+        parent1EarnedIncome, parent2EarnedIncome,
+        parentCashSavingsInvestments, parentBusinessFarmNetWorth,
+        familySize, parentMaritalStatus, olderParentAge, stateOfResidence,
+        studentAGI, studentFederalTaxPaid, studentEarnedIncome,
+        studentAssets, receivedMeansTestedBenefit
+      } = params;
+
+      // Validate required fields
+      if (parentAGI === undefined || parentAGI === null) {
+        return res.status(400).json({ error: 'Parent AGI is required.' });
+      }
+
+      result = calculateSAI({
+        parentAGI: Number(parentAGI) || 0,
+        parentFederalTaxPaid: Number(parentFederalTaxPaid) || 0,
+        parentUntaxedIncome: Number(parentUntaxedIncome) || 0,
+        parent1EarnedIncome: Number(parent1EarnedIncome) || 0,
+        parent2EarnedIncome: Number(parent2EarnedIncome) || 0,
+        parentCashSavingsInvestments: Number(parentCashSavingsInvestments) || 0,
+        parentBusinessFarmNetWorth: Number(parentBusinessFarmNetWorth) || 0,
+        familySize: Number(familySize) || 4,
+        parentMaritalStatus: parentMaritalStatus || 'married',
+        olderParentAge: Number(olderParentAge) || 45,
+        stateOfResidence: stateOfResidence || 'WA',
+        studentAGI: Number(studentAGI) || 0,
+        studentFederalTaxPaid: Number(studentFederalTaxPaid) || 0,
+        studentEarnedIncome: Number(studentEarnedIncome) || 0,
+        studentAssets: Number(studentAssets) || 0,
+        receivedMeansTestedBenefit: !!receivedMeansTestedBenefit,
+      });
+    } else {
+      // Quick estimate with fewer inputs
+      const { householdIncome, parentAssets, familySize, studentIncome, studentAssets, state, filingStatus } = params;
+
+      if (!householdIncome && householdIncome !== 0) {
+        return res.status(400).json({ error: 'Household income is required.' });
+      }
+
+      result = quickEstimateSAI({
+        householdIncome: Number(householdIncome) || 0,
+        parentAssets: Number(parentAssets) || 0,
+        familySize: Number(familySize) || 4,
+        studentIncome: Number(studentIncome) || 0,
+        studentAssets: Number(studentAssets) || 0,
+        state: state || 'WA',
+        filingStatus: filingStatus || 'married',
+      });
+    }
+
+    // Don't send back the full inputs object (privacy)
+    delete result.inputs;
+
+    res.json(result);
+  } catch (err) {
+    console.error('SAI calculation error:', err);
+    res.status(500).json({ error: 'Failed to calculate SAI. Please check your inputs.' });
+  }
+});
+
 // ─── POST /api/financial-aid/my-strategy ───────────────────────────
 router.post('/my-strategy', async (req, res) => {
   try {
@@ -460,7 +544,8 @@ router.post('/my-strategy', async (req, res) => {
       state,
       studentGPA,
       targetSchools,
-      additionalContext
+      additionalContext,
+      includeSAI
     } = req.body;
 
     // Validate required fields with type checking
@@ -520,6 +605,20 @@ router.post('/my-strategy', async (req, res) => {
     const safeAssets = Number(assets) || 0;
     const safeGPA = Number(studentGPA) || 0;
 
+    // Calculate SAI if requested
+    let saiResult = null;
+    if (includeSAI) {
+      try {
+        saiResult = quickEstimateSAI({
+          householdIncome: income,
+          parentAssets: safeAssets,
+          familySize: famSize,
+          state: state || 'WA',
+          filingStatus: 'married'
+        });
+      } catch { /* SAI calc is optional, don't fail the strategy */ }
+    }
+
     const schoolDetails = matchedSchools.map(s => ({
       name: s.name,
       state: s.state,
@@ -550,6 +649,8 @@ Student Financial Profile:
 - Family Size: ${famSize}
 - Student GPA: ${safeGPA > 0 ? safeGPA : 'Not specified'}
 - Home State: ${state || 'Not specified'}
+${saiResult ? `- Estimated SAI (Student Aid Index): $${saiResult.sai.toLocaleString()}
+- Estimated Pell Grant: ${saiResult.pellGrant > 0 ? '$' + saiResult.pellGrant.toLocaleString() : 'Not eligible'}` : ''}
 
 Target Schools and Their Financial Data:
 ${schoolDetails.map(s => {
