@@ -4510,6 +4510,7 @@ html, body { overflow-x: hidden; }
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
+  transform: scale(1.12);
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
