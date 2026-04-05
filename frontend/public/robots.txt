@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /src/
+Disallow: /data/
 
 Sitemap: https://wayfinderai.org/sitemap.xml

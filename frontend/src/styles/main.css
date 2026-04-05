@@ -4381,11 +4381,11 @@ html, body { overflow-x: hidden; }
   margin: 0;
 }
 
-/* Body row: photo left, text right, top-aligned */
+/* Body row: photo left, text right, vertically centered */
 .meet-david-content {
   display: flex;
   gap: 24px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .meet-david-photo {
