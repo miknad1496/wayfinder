@@ -4128,21 +4128,29 @@ html, body { overflow-x: hidden; }
   margin: 36px 0 28px;
   background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f8 100%);
   border-radius: 16px;
-  padding: 24px 28px;
+  padding: 20px 24px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 
+.meet-david-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 14px;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
 .meet-david-content {
   display: flex;
-  gap: 24px;
-  align-items: center;
+  gap: 18px;
+  align-items: flex-start;
 }
 
 .meet-david-photo {
   flex-shrink: 0;
-  width: 140px;
-  height: 170px;
+  width: 120px;
+  height: 145px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
@@ -4160,35 +4168,21 @@ html, body { overflow-x: hidden; }
   min-width: 0;
 }
 
-.meet-david-header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
 .meet-david-label {
+  display: block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #2563eb;
-}
-
-.meet-david-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  margin-bottom: 6px;
 }
 
 .meet-david-desc {
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.6;
   color: #475569;
-  margin: 0 0 6px;
+  margin: 0 0 5px;
 }
 
 .meet-david-tags {
@@ -4221,8 +4215,8 @@ html, body { overflow-x: hidden; }
     align-items: center;
     text-align: center;
   }
-  .meet-david-header {
-    justify-content: center;
+  .meet-david-title {
+    text-align: center;
   }
   .meet-david-photo {
     width: 100px;
@@ -4232,7 +4226,7 @@ html, body { overflow-x: hidden; }
     justify-content: center;
   }
   .meet-david-section {
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
 }
 
