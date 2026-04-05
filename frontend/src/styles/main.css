@@ -4133,29 +4133,44 @@ html, body { overflow-x: hidden; }
   text-align: left;
 }
 
-.meet-david-content {
+/* Top row: "Meet David" left, "YOUR WAYFINDER CONCIERGE" right, baseline-aligned */
+.meet-david-header {
   display: flex;
+  align-items: baseline;
   gap: 24px;
-  align-items: stretch;
-}
-
-.meet-david-left {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 12px;
 }
 
 .meet-david-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   color: #1e293b;
-  margin: 0 0 10px;
+  margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
   white-space: nowrap;
+  flex-shrink: 0;
+  width: 140px;
+  text-align: center;
+}
+
+.meet-david-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin: 0;
+}
+
+/* Body row: photo left, text right, top-aligned */
+.meet-david-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .meet-david-photo {
+  flex-shrink: 0;
   width: 140px;
   height: 160px;
   border-radius: 10px;
@@ -4173,23 +4188,10 @@ html, body { overflow-x: hidden; }
 .meet-david-text {
   flex: 1;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.meet-david-label {
-  display: block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #2563eb;
-  margin-bottom: 10px;
 }
 
 .meet-david-desc {
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.65;
   color: #475569;
   margin: 0 0 6px;
@@ -4220,20 +4222,23 @@ html, body { overflow-x: hidden; }
 }
 
 @media (max-width: 600px) {
+  .meet-david-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .meet-david-title {
+    width: auto;
+    text-align: center;
+  }
   .meet-david-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .meet-david-title {
-    text-align: center;
-  }
   .meet-david-photo {
     width: 100px;
     height: 120px;
-  }
-  .meet-david-tags {
-    justify-content: center;
   }
   .meet-david-section {
     padding: 18px 14px;
@@ -4285,13 +4290,13 @@ html, body { overflow-x: hidden; }
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 10%;
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
 video.david-toggle-img {
-  object-position: center 25%;
-  transform: scale(1.05);
+  object-position: center 15%;
+  transform: scale(1.1);
 }
 
 /* Chat panel */
@@ -4343,15 +4348,17 @@ video.david-toggle-img {
 }
 
 .david-chat-name {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: #f1f5f9;
+  letter-spacing: 0.3px;
 }
 
 .david-chat-status {
-  font-size: 11px;
+  font-size: 12px;
   color: #fbbf24;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .david-chat-close {
