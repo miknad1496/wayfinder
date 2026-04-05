@@ -44,8 +44,8 @@ const ADMIN_EMAILS = [
 ];
 
 // VIP emails — always get elite-tier access (not admin, just full access)
-// Load from env, fallback to hardcoded defaults
-const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotmail.com,serenakimkimkim@gmail.com,benjaminkim042@gmail.com,elenakimjune@gmail.com')
+// Load from env, fallback to hardcoded defaults. Mutable at runtime via admin API.
+let VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotmail.com,serenakimkimkim@gmail.com,benjaminkim042@gmail.com,elenakimjune@gmail.com')
   .split(',')
   .map(e => e.toLowerCase().trim())
   .filter(Boolean);
@@ -97,6 +97,26 @@ export function isAdmin(email) {
 
 export function isVIP(email) {
   return email && VIP_EMAILS.includes(email.toLowerCase());
+}
+
+export function getVIPList() {
+  return [...VIP_EMAILS];
+}
+
+export function addVIP(email) {
+  const normalized = email.toLowerCase().trim();
+  if (!normalized) return false;
+  if (VIP_EMAILS.includes(normalized)) return false;
+  VIP_EMAILS.push(normalized);
+  return true;
+}
+
+export function removeVIP(email) {
+  const normalized = email.toLowerCase().trim();
+  const idx = VIP_EMAILS.indexOf(normalized);
+  if (idx === -1) return false;
+  VIP_EMAILS.splice(idx, 1);
+  return true;
 }
 
 // Ensure users directory exists

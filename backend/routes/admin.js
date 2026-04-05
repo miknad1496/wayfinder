@@ -7,7 +7,7 @@ import { getSLMStatus, getSLMWarmStatus, invalidateSLMPromptCache } from '../ser
 import { getMemoryStats } from '../services/conversation-memory.js';
 import { getRoutingStats } from '../services/telemetry.js';
 import { getRoutingLog } from './chat.js';
-import { verifyToken, isAdmin as checkIsAdmin } from '../services/auth.js';
+import { verifyToken, isAdmin as checkIsAdmin, getVIPList, addVIP, removeVIP } from '../services/auth.js';
 
 const router = Router();
 
@@ -482,6 +482,80 @@ router.post('/scrapers/:key/run', async (req, res) => {
   } catch (err) {
     console.error('Force-run scraper error:', err);
     res.status(500).json({ error: 'Failed to run scraper' });
+  }
+});
+
+// ─── VIP Management ────────────────────────────────────────
+
+// GET /api/admin/vip - Get current VIP list
+router.get('/vip', (req, res) => {
+  res.json({ vipEmails: getVIPList() });
+});
+
+// POST /api/admin/vip - Add a VIP email
+router.post('/vip', (req, res) => {
+  const { email } = req.body;
+  if (!email || !email.includes('@')) {
+    return res.status(400).json({ error: 'Valid email required' });
+  }
+  const added = addVIP(email);
+  res.json({ success: true, added, vipEmails: getVIPList() });
+});
+
+// DELETE /api/admin/vip - Remove a VIP email
+router.delete('/vip', (req, res) => {
+  const { email } = req.body;
+  if (!email) {
+    return res.status(400).json({ error: 'Email required' });
+  }
+  const removed = removeVIP(email);
+  res.json({ success: true, removed, vipEmails: getVIPList() });
+});
+
+// ─── Per-User Token & API Activity ─────────────────────────
+
+// GET /api/admin/user-activity - Get per-user token/engine/message usage
+router.get('/user-activity', async (req, res) => {
+  try {
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const USERS_DIR = join(__dirname, '..', 'data', 'users');
+
+    const userFiles = await fs.readdir(USERS_DIR).catch(() => []);
+    const today_str = new Date().toISOString().slice(0, 10);
+    const thisMonth_str = new Date().toISOString().slice(0, 7);
+
+    const users = await Promise.all(
+      userFiles.filter(f => f.endsWith('.json')).map(async f => {
+        try {
+          const raw = await fs.readFile(join(USERS_DIR, f), 'utf-8');
+          return JSON.parse(raw);
+        } catch { return null; }
+      })
+    );
+
+    const activity = users.filter(Boolean).map(u => ({
+      email: u.email,
+      name: u.name || '(no name)',
+      plan: u.plan || 'free',
+      engineUsesToday: (u.engineLastReset === today_str) ? (u.engineUsesToday || 0) : 0,
+      tokensUsedToday: (u.tokenLastReset === today_str) ? (u.tokensUsedToday || 0) : 0,
+      tokensUsedMonth: (u.tokenMonthReset === thisMonth_str) ? (u.tokensUsedMonth || 0) : 0,
+      messagesUsedToday: (u.messageLastReset === today_str) ? (u.messagesUsedToday || 0) : 0,
+      messagesUsedMonth: (u.messageMonthReset === thisMonth_str) ? (u.messagesUsedMonth || 0) : 0,
+      essayCreditsRemaining: u.essayReviewsRemaining || 0,
+      lastLogin: u.lastLogin || null
+    }))
+    .sort((a, b) => (b.tokensUsedToday + b.tokensUsedMonth) - (a.tokensUsedToday + a.tokensUsedMonth));
+
+    res.json({ activity });
+  } catch (err) {
+    console.error('User activity error:', err);
+    res.status(500).json({ error: 'Failed to load user activity' });
   }
 });
 

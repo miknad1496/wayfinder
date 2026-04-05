@@ -784,6 +784,53 @@
                 </div>
             </section>
 
+            <!-- VIP Management Section -->
+            <section class="section">
+                <h2 class="section-title">VIP Management</h2>
+                <div class="chart-container">
+                    <div class="chart-title">VIP Emails — Full Elite Access (no admin powers)</div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                        <input type="email" id="vipEmailInput" placeholder="email@example.com" style="flex:1; padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(251,191,36,0.3); background: rgba(15,23,42,0.8); color: #e2e8f0; font-size: 14px;">
+                        <button onclick="addVIPEmail()" style="padding: 8px 16px;">Add VIP</button>
+                    </div>
+                    <div id="vipList" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="color: #64748b;">Loading...</span>
+                    </div>
+                    <div id="vipMessage" style="margin-top: 8px; font-size: 13px; color: #fbbf24; display: none;"></div>
+                </div>
+            </section>
+
+            <!-- Per-User Token & API Activity Section -->
+            <section class="section">
+                <h2 class="section-title">User API Activity</h2>
+                <div class="chart-container">
+                    <div class="chart-title">Token &amp; Engine Usage by User</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Plan</th>
+                                    <th>Engine Today</th>
+                                    <th>Tokens Today</th>
+                                    <th>Tokens Month</th>
+                                    <th>Msgs Today</th>
+                                    <th>Msgs Month</th>
+                                    <th>Essay Credits</th>
+                                    <th>Last Login</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userActivityTable">
+                                <tr>
+                                    <td colspan="10" style="text-align: center; color: #94a3b8;">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
             <div class="last-updated">
                 Last updated: <span id="lastUpdated">-</span>
                 <br>
@@ -1073,6 +1120,10 @@
                 updateRouting(routing);
                 updateMemory(memory);
 
+                // Load VIP list and user activity (non-blocking)
+                loadVIPList();
+                loadUserActivity();
+
                 document.getElementById('loadingContainer').style.display = 'none';
                 document.getElementById('dashboardContent').style.display = 'block';
                 document.getElementById('statusText').textContent = 'Live';
@@ -1087,9 +1138,124 @@
             window.location.href = '/';
         }
 
+        // ─── VIP Management ──────────────────────────────────
+        async function loadVIPList() {
+            try {
+                const data = await fetchJSON('/api/admin/vip');
+                if (!data) return;
+                renderVIPList(data.vipEmails || []);
+            } catch (err) {
+                console.error('VIP load error:', err);
+            }
+        }
+
+        function renderVIPList(emails) {
+            const container = document.getElementById('vipList');
+            if (emails.length === 0) {
+                container.innerHTML = '<span style="color: #64748b;">No VIP emails configured</span>';
+                return;
+            }
+            container.innerHTML = emails.map(email => `
+                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 20px; font-size: 13px; color: #c4b5fd;">
+                    ${email}
+                    <button onclick="removeVIPEmail('${email}')" style="background: none; border: none; color: #ef4444; cursor: pointer; padding: 0 2px; font-size: 16px; font-weight: bold; box-shadow: none; transform: none;" title="Remove">&times;</button>
+                </span>
+            `).join('');
+        }
+
+        async function addVIPEmail() {
+            const input = document.getElementById('vipEmailInput');
+            const email = input.value.trim();
+            if (!email || !email.includes('@')) {
+                showVIPMessage('Enter a valid email address', true);
+                return;
+            }
+            try {
+                const res = await fetch('/api/admin/vip', {
+                    method: 'POST',
+                    headers: { ...adminHeaders(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    renderVIPList(data.vipEmails);
+                    input.value = '';
+                    showVIPMessage(data.added ? `Added ${email} as VIP` : `${email} is already a VIP`);
+                }
+            } catch (err) {
+                showVIPMessage('Failed to add VIP: ' + err.message, true);
+            }
+        }
+
+        async function removeVIPEmail(email) {
+            try {
+                const res = await fetch('/api/admin/vip', {
+                    method: 'DELETE',
+                    headers: { ...adminHeaders(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    renderVIPList(data.vipEmails);
+                    showVIPMessage(data.removed ? `Removed ${email}` : `${email} was not in VIP list`);
+                }
+            } catch (err) {
+                showVIPMessage('Failed to remove VIP: ' + err.message, true);
+            }
+        }
+
+        function showVIPMessage(msg, isError = false) {
+            const el = document.getElementById('vipMessage');
+            el.textContent = msg;
+            el.style.display = 'block';
+            el.style.color = isError ? '#ef4444' : '#fbbf24';
+            setTimeout(() => { el.style.display = 'none'; }, 4000);
+        }
+
+        // ─── User Activity ────────────────────────────────────
+        async function loadUserActivity() {
+            try {
+                const data = await fetchJSON('/api/admin/user-activity');
+                if (!data) return;
+                renderUserActivity(data.activity || []);
+            } catch (err) {
+                console.error('User activity load error:', err);
+            }
+        }
+
+        function renderUserActivity(activity) {
+            const table = document.getElementById('userActivityTable');
+            const planColors = { free: '#94a3b8', pro: '#10b981', elite: '#8b5cf6' };
+            const planNames = { free: 'Explorer', pro: 'Coach', elite: 'Consultant' };
+
+            if (activity.length === 0) {
+                table.innerHTML = '<tr><td colspan="10" style="text-align: center; color: #94a3b8;">No user activity</td></tr>';
+                return;
+            }
+
+            table.innerHTML = activity.map(u => {
+                const planColor = planColors[u.plan] || '#94a3b8';
+                const planName = planNames[u.plan] || u.plan;
+                const lastLogin = u.lastLogin ? new Date(u.lastLogin).toLocaleDateString() : '—';
+                return `<tr>
+                    <td><strong>${u.name}</strong></td>
+                    <td>${u.email}</td>
+                    <td><span style="color:${planColor};font-weight:600;">${planName}</span></td>
+                    <td>${u.engineUsesToday}</td>
+                    <td>${formatNumber(u.tokensUsedToday)}</td>
+                    <td>${formatNumber(u.tokensUsedMonth)}</td>
+                    <td>${u.messagesUsedToday}</td>
+                    <td>${u.messagesUsedMonth}</td>
+                    <td>${u.essayCreditsRemaining}</td>
+                    <td>${lastLogin}</td>
+                </tr>`;
+            }).join('');
+        }
+
         // ─── Initialize ───────────────────────────────────────
         (async () => {
-            ensureAdmin();
+            const token = await ensureAdmin();
+            if (!token) return;
             await refreshData();
             // Auto-refresh every 60 seconds
             setInterval(refreshData, 60000);
