@@ -16,8 +16,8 @@ router.post('/signup', async (req, res) => {
     if (!sanitizedEmail || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
     }
-    if (password.length < 6) {
-      return res.status(400).json({ error: 'Password must be at least 6 characters' });
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Password must be at least 8 characters' });
     }
 
     // All signups require a valid invite code — no exceptions
@@ -201,6 +201,46 @@ router.put('/settings', async (req, res) => {
   }
 
   res.json(result);
+});
+
+// POST /api/auth/admin/secret-login — Login with admin secret (for admin dashboard)
+// Returns a token for a built-in admin user, creating it if needed
+router.post('/admin/secret-login', async (req, res) => {
+  try {
+    const { secret } = req.body;
+    if (!secret || secret !== process.env.ADMIN_SECRET) {
+      return res.status(403).json({ error: 'Invalid admin secret.' });
+    }
+
+    // Try to login as the built-in 'admin' account
+    // If it doesn't exist, create it first
+    const adminEmail = 'admin';
+    const adminPassword = secret; // Use the secret as the password
+    let result = await loginUser(adminEmail, adminPassword);
+
+    if (result.error) {
+      // Account might not exist — create it
+      const createResult = await createUser({
+        email: adminEmail,
+        password: adminPassword,
+        name: 'Admin',
+        userType: 'advisor'
+      });
+      if (createResult.error && !createResult.error.includes('already exists')) {
+        return res.status(500).json({ error: 'Failed to bootstrap admin account: ' + createResult.error });
+      }
+      // Try login again (if create said 'already exists', password mismatch — update it)
+      result = await loginUser(adminEmail, adminPassword);
+      if (result.error) {
+        return res.status(500).json({ error: 'Admin account exists but password mismatch. Reset manually.' });
+      }
+    }
+
+    res.json({ token: result.token, email: adminEmail, isAdmin: true });
+  } catch (err) {
+    console.error('Admin secret login error:', err);
+    res.status(500).json({ error: 'Failed to authenticate' });
+  }
 });
 
 // POST /api/auth/admin/create — Create admin account (no invite needed)

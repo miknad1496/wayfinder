@@ -19,6 +19,7 @@ import internshipRoutes from './routes/internships.js';
 import scholarshipRoutes from './routes/scholarships.js';
 import programRoutes from './routes/programs.js';
 import financialAidRoutes from './routes/financial-aid.js';
+import coachRoutes from './routes/essay-coach.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir, repairCorruptedUserFiles } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
@@ -176,6 +177,7 @@ app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);
 app.use('/api/financial-aid', expensiveLimiter, financialAidRoutes);
+app.use('/api/coach', chatLimiter, coachRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {

@@ -233,6 +233,28 @@
                 <span>RAG-augmented reasoning over a proprietary, continuously curated knowledge base</span>
               </div>
             </div>
+            
+            <!-- Meet David - Wayfinder Coach -->
+            <div class="meet-david-section">
+              <div class="meet-david-label">MEET YOUR COACH</div>
+              <div class="meet-david-content">
+                <div class="meet-david-photo">
+                  <img src="/david-coach.jpg" alt="David - Your Wayfinder Coach" />
+                </div>
+                <div class="meet-david-text">
+                  <h2 class="meet-david-title">David is here to help.</h2>
+                  <p class="meet-david-desc">Every tool in Wayfinder comes with David &mdash; your AI-powered admissions coach. He&rsquo;s available on every page to answer questions, explain features, and guide you through the college admissions journey.</p>
+                  <p class="meet-david-desc">Whether you need help choosing an essay prompt, understanding your financial aid options, or figuring out which summer programs to apply to, David draws on deep admissions intelligence to give you clear, actionable guidance.</p>
+                  <div class="meet-david-tags">
+                    <span class="meet-david-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Essay Coaching</span>
+                    <span class="meet-david-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Admissions Strategy</span>
+                    <span class="meet-david-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Financial Aid</span>
+                    <span class="meet-david-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Platform Navigation</span>
+                    <span class="meet-david-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Scholarship Guidance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="splash-actions">
               <button id="splashJoinBtn" class="splash-btn splash-btn-primary">I Have an Invite Code</button>
               <button id="splashLoginBtn" class="splash-btn splash-btn-secondary">Log In</button>
@@ -310,6 +332,12 @@
           <div class="ev-split">
             <!-- Left: Essay Input -->
             <div class="ev-input-pane">
+              <div class="ev-guidance">
+                <div class="ev-guidance-icon">&#x1F4A1;</div>
+                <div class="ev-guidance-text">
+                  <strong>Getting started:</strong> Select your essay type and prompt, then paste or write your draft below. When ready, hit Submit for detailed scoring, voice assessment, and line-by-line coaching. Need help brainstorming? <a href="#" onclick="event.preventDefault(); document.getElementById('davidToggle').click();">Ask David</a> for ideas.
+                </div>
+              </div>
               <div class="ev-input-card">
                 <h3 class="ev-card-title">Essay Details</h3>
 
@@ -1524,6 +1552,39 @@
       <div class="consent-actions">
         <button id="consentAccept" class="consent-btn consent-btn-accept">I Understand</button>
         <button id="consentDismiss" class="consent-btn">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- David Coach Chat Widget (floating, every page) -->
+  <div id="davidWidget" class="david-widget" style="display:none;">
+    <button id="davidToggle" class="david-toggle" title="Ask David">
+      <img src="/david-coach.jpg" alt="David" class="david-toggle-img" />
+      <span class="david-toggle-badge">Ask David</span>
+    </button>
+
+    <div id="davidChat" class="david-chat" style="display:none;">
+      <div class="david-chat-header">
+        <div class="david-chat-header-left">
+          <img src="/david-coach.jpg" alt="David" class="david-chat-avatar" />
+          <div>
+            <div class="david-chat-name">David</div>
+            <div class="david-chat-status">Wayfinder Coach</div>
+          </div>
+        </div>
+        <button id="davidClose" class="david-chat-close" title="Close">&times;</button>
+      </div>
+      <div id="davidMessages" class="david-chat-messages">
+        <div class="david-msg david-msg-assistant">
+          <div class="david-msg-bubble">Hey! I'm David, your Wayfinder coach. I can help you navigate the platform, brainstorm essay ideas, or answer questions about the admissions process. What can I help you with?</div>
+        </div>
+      </div>
+      <div class="david-chat-input-area">
+        <input type="text" id="davidInput" class="david-chat-input" placeholder="Ask David anything..." maxlength="2000" autocomplete="off" />
+        <button id="davidSend" class="david-chat-send" title="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
       </div>
     </div>
   </div>

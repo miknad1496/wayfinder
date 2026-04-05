@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupUpgradeListeners();
   setupInviteListeners();
   setupToolListeners();
+  setupDavidCoach();
   setupWelcomeChips();
   updateGreeting();
   checkAuth();
@@ -1324,6 +1325,7 @@ async function submitLogin() {
     fetchEngineUsage();
     loadChatHistory();
     closeAuthModal();
+    showDavidWidget();
 
     // Initialize message usage counter
     if (currentUser.messageUsage) {
@@ -1489,6 +1491,7 @@ async function checkAuth() {
       updateGreeting();
       fetchEngineUsage();
       loadChatHistory();
+      showDavidWidget();
       // Initialize message usage counter
       if (currentUser.messageUsage) {
         updateMessageCounter(currentUser.messageUsage);
@@ -1498,9 +1501,11 @@ async function checkAuth() {
       localStorage.removeItem('wayfinder_token');
       updateAuthUI();
       updateEngineUI();
+      hideDavidWidget();
     }
   } catch {
     updateAuthUI();
+    hideDavidWidget();
   }
 }
 
@@ -3801,4 +3806,136 @@ function renderToolCard(item, type, fullAccess) {
   }
 
   return '';
+}
+
+// ========================
+// David Coach — Floating Chat Widget
+// ========================
+
+let davidHistory = [];
+let davidInitialized = false;
+
+function setupDavidCoach() {
+  const widget = $('davidWidget');
+  const toggle = $('davidToggle');
+  const chat = $('davidChat');
+  const closeBtn = $('davidClose');
+  const input = $('davidInput');
+  const sendBtn = $('davidSend');
+
+  if (!widget || !toggle) return;
+
+  // Show widget only when user is logged in
+  // (checkAuth will call showDavidWidget when appropriate)
+
+  toggle.addEventListener('click', () => {
+    const isOpen = chat.style.display !== 'none';
+    chat.style.display = isOpen ? 'none' : 'flex';
+    if (!isOpen) {
+      input.focus();
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    chat.style.display = 'none';
+  });
+
+  sendBtn.addEventListener('click', () => sendDavidMessage());
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendDavidMessage();
+    }
+  });
+
+  davidInitialized = true;
+}
+
+function showDavidWidget() {
+  const widget = $('davidWidget');
+  if (widget) widget.style.display = 'block';
+}
+
+function hideDavidWidget() {
+  const widget = $('davidWidget');
+  if (widget) widget.style.display = 'none';
+}
+
+async function sendDavidMessage() {
+  const input = $('davidInput');
+  const messagesEl = $('davidMessages');
+  const sendBtn = $('davidSend');
+  const message = input.value.trim();
+
+  if (!message || message.length < 2) return;
+
+  // Add user message to UI
+  const userDiv = document.createElement('div');
+  userDiv.className = 'david-msg david-msg-user';
+  userDiv.innerHTML = `<div class="david-msg-bubble">${escapeHtml(message)}</div>`;
+  messagesEl.appendChild(userDiv);
+
+  // Clear input
+  input.value = '';
+  sendBtn.disabled = true;
+
+  // Add typing indicator
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'david-msg david-msg-typing';
+  typingDiv.innerHTML = `<div class="david-msg-bubble">David is thinking...</div>`;
+  messagesEl.appendChild(typingDiv);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+
+  // Add to history
+  davidHistory.push({ role: 'user', content: message });
+
+  try {
+    const res = await fetch(`${API_BASE}/coach/chat`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      },
+      body: JSON.stringify({ message, history: davidHistory })
+    });
+
+    const data = await res.json();
+
+    // Remove typing indicator
+    typingDiv.remove();
+
+    if (data.error) {
+      const errDiv = document.createElement('div');
+      errDiv.className = 'david-msg david-msg-assistant';
+      errDiv.innerHTML = `<div class="david-msg-bubble">${escapeHtml(data.error)}</div>`;
+      messagesEl.appendChild(errDiv);
+    } else {
+      const reply = data.reply;
+      davidHistory.push({ role: 'assistant', content: reply });
+
+      const assistantDiv = document.createElement('div');
+      assistantDiv.className = 'david-msg david-msg-assistant';
+      assistantDiv.innerHTML = `<div class="david-msg-bubble">${formatDavidReply(reply)}</div>`;
+      messagesEl.appendChild(assistantDiv);
+    }
+  } catch {
+    typingDiv.remove();
+    const errDiv = document.createElement('div');
+    errDiv.className = 'david-msg david-msg-assistant';
+    errDiv.innerHTML = `<div class="david-msg-bubble">Sorry, I couldn't connect. Please try again in a moment.</div>`;
+    messagesEl.appendChild(errDiv);
+  }
+
+  sendBtn.disabled = false;
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+  input.focus();
+}
+
+function formatDavidReply(text) {
+  // Basic markdown-like formatting for David's replies
+  return escapeHtml(text)
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '</p><p style="margin-top:8px;">')
+    .replace(/\n/g, '<br>');
 }

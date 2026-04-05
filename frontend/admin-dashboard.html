@@ -798,16 +798,14 @@
             let token = sessionStorage.getItem('adminToken');
             if (token) return token;
 
-            const email = prompt('Admin email:');
-            if (!email) { window.location.href = '/'; return; }
-            const password = prompt('Admin password:');
-            if (!password) { window.location.href = '/'; return; }
+            const secret = prompt('Enter admin password:');
+            if (!secret) { window.location.href = '/'; return; }
 
             try {
-                const res = await fetch('/api/auth/login', {
+                const res = await fetch('/api/auth/admin/secret-login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
+                    body: JSON.stringify({ secret })
                 });
                 const data = await res.json();
                 if (!res.ok || !data.token) {
