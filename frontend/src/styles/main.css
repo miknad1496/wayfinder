@@ -4505,12 +4505,12 @@ html, body { overflow-x: hidden; }
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center 35%;
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
 video.david-toggle-img {
-  object-position: center 45%;
+  object-position: center 35%;
 }
 
 /* Chat panel */
@@ -4711,7 +4711,7 @@ video.david-toggle-img {
 /* Mobile responsive */
 @media (max-width: 500px) {
   .david-widget {
-    bottom: 100px;
+    bottom: 90px;
     right: 12px;
   }
   .david-chat {
@@ -4724,17 +4724,17 @@ video.david-toggle-img {
     z-index: 10000;
   }
   .david-toggle-badge {
-    display: none;
+    font-size: 11px;
+    letter-spacing: 0.3px;
   }
   .david-toggle {
-    padding: 4px;
-    border-radius: 50%;
-    background: none;
-    border: none;
+    padding: 3px 3px 3px 12px;
+    gap: 7px;
+    border-radius: 28px;
   }
   .david-toggle-img {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 

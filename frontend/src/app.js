@@ -3901,7 +3901,12 @@ function setupDavidCoach() {
     const isOpen = chat.style.display !== 'none';
     chat.style.display = isOpen ? 'none' : 'flex';
     if (!isOpen) {
+      // Immediate focus for desktop; delayed focus for mobile (Safari needs delay after display change)
       input.focus();
+      setTimeout(() => {
+        input.focus();
+        input.click();
+      }, 350);
     }
   });
 
