@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-04-05",
+    "description": "Strategic intelligence layer for Wayfinder opportunity databases. Category-level strategy, individual opportunity hacks, and cross-cutting insights that help users not just find opportunities but actually win them.",
+    "usage": "Loaded by David concierge for contextual strategy advice. Can be surfaced in frontend alongside search results."
+  },
+
+  "scholarshipStrategy": {
+    "_meta": "Strategy intelligence for the scholarships database",
+
+    "categoryInsights": {
+      "full-ride": {
+        "reality": "Full-ride scholarships (Gates, QuestBridge, Coolidge, Posse) accept 1-3% of applicants. Most students who deserve them don't apply because they assume they won't win. The actual edge isn't being the most qualified — it's being the most prepared.",
+        "keyHacks": [
+          "Start the application 8-10 weeks before the deadline. Full-ride essays go through 5+ revisions before they're competitive.",
+          "Every full-ride has an implicit 'type' of student they want. Gates wants community-oriented leaders who overcame adversity. QuestBridge wants academic achievers from low-income backgrounds. Coolidge wants public-policy thinkers. Read the previous winners' bios on the foundation's website to reverse-engineer the profile.",
+          "Request recommendation letters 6 weeks early with a one-page 'brag sheet' listing your top 5 accomplishments. Generic letters sink full-ride applications.",
+          "If you're a QuestBridge finalist who doesn't match, you still get access to Regular Decision fee waivers and supplemental financial aid at partner schools. The 'loss' is still worth thousands."
+        ],
+        "commonMistakes": [
+          "Writing the same generic essay for every scholarship. Full-ride reviewers can tell when you're recycling.",
+          "Not mentioning financial need explicitly when the scholarship values it. Many students dance around money — these foundations want to hear the real story.",
+          "Applying to only one full-ride. Apply to 3-5 and treat each one as a serious campaign."
+        ]
+      },
+      "merit": {
+        "reality": "Merit scholarships are often the most negotiable form of aid. Schools use them as enrollment management tools — they're buying you, not gifting you.",
+        "keyHacks": [
+          "If your SAT/ACT score exceeds a school's 75th percentile by 50+ points, you are a 'stat buy' — the school is incentivized to pay you to enroll because you raise their median. Use this leverage.",
+          "Many merit scholarships have separate applications with earlier deadlines than the admissions app. Miss the scholarship deadline and you may get admitted but with no merit money.",
+          "Stack institutional merit + outside scholarships. Some schools reduce institutional aid dollar-for-dollar when you bring outside money — ask the financial aid office about their 'outside scholarship policy' BEFORE you accept.",
+          "National Merit Semifinalist/Finalist status unlocks massive institutional scholarships at specific schools (University of Alabama: full tuition + housing + stipend; University of Oklahoma: full ride; UT Dallas: full ride). These are published and guaranteed — no application beyond NMSF status needed."
+        ],
+        "commonMistakes": [
+          "Assuming merit aid is fixed. Many schools will increase merit offers if you can show a competing offer from a peer institution.",
+          "Not applying to 'financial safety' schools where your stats put you in the top 5-10% of admits."
+        ]
+      },
+      "need-based": {
+        "reality": "Need-based aid is driven by your SAI (Student Aid Index) from FAFSA and your CSS Profile. The gap between what FAFSA says you can pay and what CSS Profile says can be $20K+. Schools that only use FAFSA tend to be more generous.",
+        "keyHacks": [
+          "File FAFSA the day it opens (October 1 for the following year). Many state grants are first-come, first-served and run out by November.",
+          "If your family income dropped significantly (job loss, medical emergency, divorce), file a 'professional judgment' appeal with each school's financial aid office. They can override the FAFSA formula.",
+          "The CSS Profile counts home equity and retirement assets differently than FAFSA. If your family has significant home equity, schools using only FAFSA will calculate a lower expected contribution.",
+          "Some schools meet 100% of demonstrated need (all Ivies, Stanford, MIT, Amherst, Williams, etc.). At these schools, getting in IS the financial aid strategy — once admitted, the package will be strong."
+        ],
+        "commonMistakes": [
+          "Not filing FAFSA because your family 'makes too much.' The FAFSA Simplification Act 2025-26 changed the formula — families earning up to $100K+ can qualify for aid depending on family size and state.",
+          "Ignoring the net price calculator on each school's website. It gives a personalized estimate that's more accurate than guessing."
+        ]
+      },
+      "essay-based": {
+        "reality": "Essay scholarships are the most undervalued category. Many have applicant pools under 500 because students don't want to write another essay. The ROI on a well-written 500-word essay can be $5,000-$50,000.",
+        "keyHacks": [
+          "Repurpose your college application essays. A Common App essay about overcoming adversity can be adapted for 5-10 scholarship essays with light modifications to match each prompt.",
+          "For essay contests (Fountainhead, Stossel, Freedom From Religion), read the winning essays from prior years — they're usually posted on the organization's website. Model your structure after what won.",
+          "Small regional essay scholarships ($500-$2,000) have the best odds. Apply to 10 of them — winning 3-4 nets more than one long-shot at a national scholarship.",
+          "Have someone outside your family read your essay aloud to you. You'll hear problems you can't see."
+        ]
+      },
+      "video-and-portfolio": {
+        "reality": "Video and portfolio scholarships have tiny applicant pools because they require more effort. A student who submits a polished 2-minute video to Project Yellow Light is competing against maybe 200 entries, not 20,000.",
+        "keyHacks": [
+          "You don't need expensive equipment. Smartphone + natural light + a quiet room + iMovie or DaVinci Resolve (free) produces scholarship-quality video.",
+          "For portfolio scholarships (Scholastic Art & Writing, YoungArts), quality over quantity. Submit your 5 best pieces, not your 15 most recent.",
+          "Video scholarships often value story over production quality. A genuine, well-told personal story on a phone beats a slick but hollow production."
+        ]
+      },
+      "stem": {
+        "reality": "STEM scholarships are the most abundant category but also the most competitive at the top tier (Regeneron, Davidson). The mid-tier ($5K-$20K) is where the real opportunity is — lots of money, less competition.",
+        "keyHacks": [
+          "Amazon Future Engineer doesn't require prior CS experience — just enrollment in a CS course. Many qualified students skip it because they assume they need a coding portfolio.",
+          "The Washington State Opportunity Scholarship is specifically for STEM and healthcare majors in WA state. If you're in Washington pursuing STEM, this should be your first application — up to $22,500.",
+          "For research-based STEM scholarships (Regeneron, Siemens), start your research project sophomore year. Winning entries represent 18+ months of sustained work, not a summer project."
+        ]
+      }
+    },
+
+    "crossCuttingStrategy": {
+      "timeline": "Start scholarship applications in August before senior year. The major national deadlines cluster in September-February. Build a spreadsheet tracking: name, deadline, amount, essay prompt, word count, status.",
+      "stackingStrategy": "The most successful scholarship students apply to 20-40 scholarships and win 5-10. Treat it like a portfolio — diversify across full-ride, mid-range, and small local scholarships.",
+      "localAdvantage": "Local and regional scholarships (Seattle Foundation, community Rotary clubs, local credit unions) have the best odds. Check your school counselor's scholarship list, your parent's employer, your religious institution, and local civic organizations.",
+      "negotiationLeverage": "If you receive a merit scholarship from School A, email School B's financial aid office: 'I've received [amount] from [School A]. I prefer [School B] — is there anything you can do to make it more affordable?' This works about 40% of the time at schools outside the top 20."
+    }
+  },
+
+  "internshipStrategy": {
+    "_meta": "Strategy intelligence for the internships database",
+
+    "categoryInsights": {
+      "research-programs": {
+        "reality": "Formal research programs (Fred Hutch SHIP, Brookhaven HSRP, NIH SIP, NASA OSTEM) are the gold standard for college applications. AOs treat 'selected for competitive national research program' as a major credential. But acceptance rates are 5-15%.",
+        "keyHacks": [
+          "Apply to 5-8 research programs, not just 1-2. The selection processes are largely independent — getting rejected from Fred Hutch says nothing about your chances at Brookhaven.",
+          "Your application essay should show genuine research curiosity, not just credentials. Describe a specific question that fascinates you and why. 'I want to understand why...' beats 'I have a 4.0 GPA and love science.'",
+          "If you don't get into a formal program, cold-email professors at your local university. Template: 'Dear Dr. [Name], I'm a [grade] student at [school] interested in [their specific research topic]. I read your paper on [specific paper] and found [specific finding] fascinating. Would you consider mentoring me on a summer project? I can commit [hours/week] and I'm happy to start with literature review or data entry.' Success rate: ~10-15%, which means emailing 10-15 professors usually lands one yes.",
+          "Document everything. Keep a research journal from day one. Take photos of your lab setup, save data visualizations, screenshot code. You'll need this for your college application activity descriptions and potentially for science competitions."
+        ],
+        "commonMistakes": [
+          "Waiting until spring of junior year to apply. Most prestigious programs have January-March deadlines. Start researching programs in fall of sophomore year.",
+          "Listing the research program on your application without explaining what you actually did. 'Interned at Fred Hutch' tells AOs nothing. 'Investigated the role of T-cell exhaustion markers in pediatric leukemia relapse under Dr. [Name]' tells them everything."
+        ]
+      },
+      "paid-vs-unpaid": {
+        "reality": "Paid internships are not inherently better than unpaid ones for college applications. AOs care about what you did and learned, not whether you got paid. However, paid programs (Microsoft Discovery at $26/hr) are more competitive precisely because they're paid.",
+        "keyHacks": [
+          "If you can afford to take an unpaid internship, the competition is lower and the experience is often the same quality.",
+          "Many 'unpaid' programs offer stipends, transit cards, or meal allowances that aren't technically wages but offset costs. Read the fine print.",
+          "If financial constraints prevent unpaid work, say so in applications that ask. Many programs have equity-focused slots specifically for students who can't afford to work for free."
+        ]
+      },
+      "tech-industry": {
+        "reality": "Tech companies (Microsoft Discovery, Amazon, T-Mobile) have formal high school programs but they're extremely competitive and often require you to be part of a partner pipeline program first.",
+        "keyHacks": [
+          "Microsoft Discovery requires participation in a Microsoft-sponsored organization and living within 50 miles of Redmond. If you're in the Seattle area, get connected to TEALS, DigiPen partnerships, or other Microsoft-affiliated programs first.",
+          "For students not near a tech hub: remote internships in tech exist but are harder to find. Look for open-source contribution opportunities (Google Summer of Code accepts high schoolers in some cases) or build your own project and document it publicly on GitHub.",
+          "Tech internship applications often include a technical assessment. Practice on LeetCode Easy problems or freeCodeCamp before applying."
+        ]
+      },
+      "healthcare-clinical": {
+        "reality": "Hospital volunteer programs are abundant but commoditized — every pre-med applicant has them. The differentiator is doing something beyond shadowing.",
+        "keyHacks": [
+          "Clinical volunteering becomes powerful when you can describe a specific patient interaction or system observation that shaped your understanding of medicine. Generic 'I filed charts and learned about patient care' is invisible to AOs.",
+          "Research-focused healthcare internships (Seattle Children's RTP, Houston Methodist, City of Hope) are far more impressive than general hospital volunteering because they demonstrate intellectual engagement, not just presence.",
+          "If you want to stand out in healthcare: combine clinical exposure with a research or service project. Volunteer at a clinic AND analyze a public health dataset. The combination is rare and powerful."
+        ]
+      },
+      "government-and-national-labs": {
+        "reality": "Government internships (NASA, Smithsonian, DOE labs, NIH) carry enormous prestige and are often paid, but they typically require U.S. citizenship and have extensive application processes.",
+        "keyHacks": [
+          "NASA OSTEM applications open months before the session. Bookmark intern.nasa.gov and check monthly starting in September.",
+          "National labs (Brookhaven, Argonne, ORNL) often have less visibility than NASA but equivalent prestige. AOs respect 'Department of Energy National Laboratory' just as much as NASA.",
+          "Smithsonian internships are an overlooked gem for humanities-oriented students. The NMNH program pays a stipend and the institutional name is elite."
+        ]
+      }
+    },
+
+    "crossCuttingStrategy": {
+      "applicationTimeline": "Most competitive summer programs have December-March deadlines. Start your search in October, applications in November, submit by January. Don't wait for spring — by then, most slots are filled.",
+      "coldOutreachFormula": "For informal internships: identify 15-20 professionals or professors in your field of interest. Send personalized emails referencing their specific work. Expect a 10-15% response rate. One 'yes' is all you need.",
+      "maximizingAdmissionsImpact": "An internship becomes a powerful admissions credential when you can articulate: (1) what specific problem you worked on, (2) what you contributed, (3) what you learned that changed your thinking, and (4) how it connects to your future goals. Without this narrative, even a prestigious internship is just a line on a resume.",
+      "localFirst": "Your highest-probability internships are local. A professor at your state university, a lab at your nearest research hospital, a nonprofit in your community. National programs are great to apply to, but local connections are where most students actually land meaningful experience."
+    }
+  },
+
+  "programStrategy": {
+    "_meta": "Strategy intelligence for the programs/enrichment database",
+
+    "categoryInsights": {
+      "prestigious-academic": {
+        "programs": ["Johns Hopkins CTY", "Stanford Pre-Collegiate", "COSMOS", "MIT Launch/LaunchX"],
+        "reality": "These programs are widely recognized by AOs and signal academic seriousness. But they've become common enough that attendance alone doesn't differentiate — what you DO with the experience matters more.",
+        "keyHacks": [
+          "At CTY or Stanford, identify a specific project or insight from the program and reference it in your college essays. 'At CTY, I took Number Theory and realized that the elegance of mathematical proof was what I wanted to spend my life pursuing' is powerful. 'I attended a Johns Hopkins summer program' is not.",
+          "Financial aid is available at most of these programs but often requires applying separately and early. Don't self-select out because of the sticker price.",
+          "If you attend a prestigious program and connect with a professor or instructor who knows your work, ask for a recommendation letter. A letter from a Stanford instructor who taught you for two weeks can supplement (not replace) your school counselor letter."
+        ],
+        "admissionsCalibration": "AOs at top-20 schools see CTY/Stanford summer programs on 15-20% of applications. It's a positive signal but not a differentiator at that level. At top-50 schools, it's more distinctive. At top-100, it's very strong."
+      },
+      "arts-programs": {
+        "programs": ["Interlochen", "Tanglewood BUTI", "YoungArts", "Scholastic Art & Writing"],
+        "reality": "For students pursuing arts in college, these programs are near-essential credentials. For students pursuing non-arts majors, they demonstrate dimension and authenticity that AOs value highly.",
+        "keyHacks": [
+          "Interlochen and Tanglewood both offer substantial financial aid — 85% of Interlochen aid applicants receive support. Apply for aid even if you think you won't qualify.",
+          "If you attend an arts program and produce a portfolio piece, body of work, or performance recording, it becomes a tangible artifact for your application. Save high-quality recordings/photos of everything you create.",
+          "Arts programs build a network of peers and mentors that extends beyond the summer. Stay in touch — these connections matter for college recommendations and collaborative projects."
+        ],
+        "admissionsCalibration": "Interlochen/Tanglewood on an application tells AOs 'this student is serious about their art at a national level.' It's one of the strongest signals for arts-interested applicants."
+      },
+      "stem-enrichment": {
+        "programs": ["Washington Aerospace Scholars", "Girls Who Code", "MATHCOUNTS", "Science Olympiad"],
+        "reality": "STEM enrichment programs range from genuinely selective (WAS, COSMOS) to open-enrollment (Girls Who Code, many local camps). AOs can tell the difference. The key is what you build, not where you sat.",
+        "keyHacks": [
+          "Washington Aerospace Scholars is free, NASA-affiliated, and earns 5 UW college credits. If you're a WA junior interested in STEM, this should be your top program priority.",
+          "Girls Who Code Pathways is free and fully virtual — there's no barrier to entry. The value isn't the program name, it's building a coding portfolio. Use the 7 weeks to create a tangible project you can showcase.",
+          "For competition-based programs (Science Olympiad, MATHCOUNTS, AMC/AIME), regional/national placement matters more than participation. 'Science Olympiad — State Finalist' is strong. 'Science Olympiad member' is background noise.",
+          "Stack a free program (Girls Who Code) with a self-directed project and you've created something AOs respect more than passive attendance at an expensive program."
+        ]
+      },
+      "leadership-and-service": {
+        "programs": ["Boys/Girls State", "Bank of America Student Leaders", "NYLF", "City Year"],
+        "reality": "Leadership programs are in a tough spot — they used to be differentiating but many have become commoditized. The ones that still carry weight are highly selective (Boys/Girls State, Posse) or involve sustained real-world service.",
+        "keyHacks": [
+          "Boys/Girls State (American Legion) is still respected by AOs because it's nomination-based, state-level competition, and involves genuine civic engagement. If your school offers a nomination slot, take it seriously.",
+          "Programs with 'leadership' in the name but open enrollment and high cost (many NYLF-type programs) are viewed skeptically by experienced AOs. They see them as resume-padding, not genuine development.",
+          "The most powerful leadership signal isn't a program — it's building something from scratch in your community. Organized a voter registration drive that registered 200 people? That beats any leadership conference."
+        ],
+        "admissionsCalibration": "AOs distinguish between 'selected for leadership' (strong signal) and 'paid for leadership program' (weak signal). The test: would you have gotten in without paying? If yes, it's a real credential."
+      },
+      "entrepreneurship": {
+        "programs": ["LaunchX", "Diamond Challenge", "DECA", "FBLA"],
+        "reality": "Entrepreneurship programs have become popular but AOs are increasingly skeptical of 'teen founder' claims that don't show real traction. The bar has moved from 'started a business' to 'built something people actually use.'",
+        "keyHacks": [
+          "LaunchX is respected because it's competitive entry and MIT-affiliated. The deliverable matters — if your team builds a working prototype with user feedback, that's a genuine accomplishment.",
+          "DECA and FBLA competitions at state/national level are strong credentials. Regional participation alone is not distinctive.",
+          "If you pursue entrepreneurship independently, the strongest evidence is: revenue, users, or measurable community impact. 'Founded a nonprofit' with no evidence of impact is Phase 4 commoditized (see extracurricular differentiation). 'Built an app with 500 active users' or 'ran tutoring service earning $200/month' is real."
+        ]
+      }
+    },
+
+    "crossCuttingStrategy": {
+      "selectionPrinciple": "Choose 1-2 programs that align with your genuine interests over 4-5 programs that 'look good.' Depth in one area beats breadth across many. AOs can tell when a student attended a program because they were passionate vs. because a consultant told them to.",
+      "costVsValue": "Free selective programs (WAS, Girls Who Code, many university-sponsored programs) often carry more admissions weight than expensive open-enrollment programs. Selectivity signals ability; price signals privilege.",
+      "gradeLevelTiming": "Elementary (K-5): Explore broadly, build curiosity, no admissions pressure. Middle (6-8): Start identifying interests, build foundational skills, begin competition participation. High school (9-10): Target 1-2 meaningful programs aligned with your developing 'spike.' High school (11-12): Selective/prestigious programs, research, leadership — these are the ones that land on your application.",
+      "documentEverything": "Every program you attend should produce a tangible artifact: a project, a paper, a recording, a portfolio piece, a presentation, a photo journal. These artifacts become evidence for your application and essay content."
+    }
+  },
+
+  "financialAidStrategy": {
+    "_meta": "Complements the SAI calculator and financial aid planner",
+
+    "fafsaHacks": {
+      "timing": "File FAFSA on October 1 — the day it opens. State grants (like the Washington College Grant) are often first-come, first-served. Filing in December vs. October can cost you thousands.",
+      "incomeManagement": "FAFSA uses 'prior-prior year' income (2024 taxes for 2026-27 FAFSA). If your family had an unusually high-income year (sold a house, cashed stock, one-time bonus), you can file a professional judgment appeal explaining the anomaly.",
+      "assetProtection": "FAFSA does NOT count: primary home equity, retirement accounts (401k, IRA, 403b), small business assets (if <100 employees). CSS Profile schools DO count home equity. This difference can be $20K+ in expected family contribution.",
+      "parentStrategy": "For divorced/separated parents: FAFSA only looks at the custodial parent's finances (the parent the student lived with more). CSS Profile schools may look at both parents. Strategic custody arrangements can significantly affect aid eligibility.",
+      "studentAssets": "Student assets are assessed at 20% vs. parent assets at 5.64%. Don't put college savings in the student's name — a $10,000 student savings account reduces aid by $2,000; the same $10,000 in a parent account reduces aid by $564."
+    },
+
+    "cssProfileInsights": {
+      "whoUsesIt": "About 200 schools use the CSS Profile in addition to FAFSA. These tend to be selective private schools. The CSS Profile asks about home equity, non-custodial parent income, and more — it paints a more complete (and often less favorable) financial picture.",
+      "strategies": [
+        "If your family has significant home equity but modest income, FAFSA-only schools will be more affordable than CSS Profile schools.",
+        "CSS Profile schools often meet 100% of demonstrated need — but 'demonstrated need' is calculated more aggressively. Run both your FAFSA SAI and an estimated CSS Profile calculation before building your school list.",
+        "Some CSS Profile schools cap home equity consideration at 1.2x or 2x income. This benefits families with high home equity in expensive markets (Seattle, Bay Area, NYC)."
+      ]
+    },
+
+    "negotiationTactics": {
+      "appealProcess": "After receiving your financial aid package, you can appeal. The magic phrase is: 'We'd like to request a professional judgment review of our financial aid package.' Include: competing offers from peer schools, documentation of special circumstances (medical bills, job loss, elder care costs), and a specific dollar amount you need to make attendance possible.",
+      "leveragePoints": [
+        "A better offer from a peer institution is the strongest leverage. If School A offers $15K more than School B, School B will often match or close the gap if they want you.",
+        "Schools that admitted you Early Decision have less incentive to negotiate — they know you're committed. Regular Decision admits have more leverage because they have alternatives.",
+        "The best time to negotiate is March-April, after all offers are in but before the May 1 deposit deadline."
+      ]
+    }
+  }
+}
