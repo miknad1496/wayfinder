@@ -304,9 +304,10 @@ html, body {
 .welcome-screen {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 40px 20px;
+  overflow-y: auto;
 }
 .welcome-content {
   text-align: center;
@@ -4124,7 +4125,7 @@ html, body { overflow-x: hidden; }
    ============================================================ */
 
 .meet-david-section {
-  margin: 40px 0 80px;
+  margin: 40px 0 32px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border-radius: 16px;
   padding: 36px 32px;
@@ -4148,8 +4149,8 @@ html, body { overflow-x: hidden; }
 
 .meet-david-photo {
   flex-shrink: 0;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(251, 191, 36, 0.3);
@@ -4234,33 +4235,31 @@ html, body { overflow-x: hidden; }
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Toggle button — circular face only (like Kaia) */
+/* Toggle button — circular face with label */
 .david-toggle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0;
   background: none;
   border: none;
-  border-radius: 50%;
   padding: 0;
   cursor: pointer;
   transition: all 0.25s ease;
+  position: relative;
 }
 
 .david-toggle:hover {
-  transform: translateY(-2px) scale(1.05);
-  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
 .david-toggle-img {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
   border: 3px solid rgba(251, 191, 36, 0.4);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(251, 191, 36, 0.15);
-  overflow: hidden;
 }
 
 video.david-toggle-img {
@@ -4269,7 +4268,19 @@ video.david-toggle-img {
 }
 
 .david-toggle-badge {
-  display: none;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  color: #fbbf24;
+  background: #1a1a2e;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 8px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 /* Chat panel */
