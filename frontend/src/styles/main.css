@@ -3760,10 +3760,42 @@ html, body { overflow-x: hidden; }
 /* ─── Split Layout (Compose Tab) ──────────────────────────── */
 .ev-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr 6px 1fr;
+  gap: 0;
   height: 100%;
   min-height: 0;
+}
+
+.ev-resizer {
+  width: 6px;
+  cursor: col-resize;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  transition: background 0.15s;
+}
+
+.ev-resizer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 40px;
+  border-radius: 2px;
+  background: var(--border);
+  transition: background 0.15s, height 0.15s;
+}
+
+.ev-resizer:hover::after,
+.ev-resizer.dragging::after {
+  background: var(--primary);
+  height: 60px;
+}
+
+.ev-resizer.dragging {
+  background: rgba(37, 99, 235, 0.05);
 }
 
 .ev-input-pane {
@@ -3771,12 +3803,12 @@ html, body { overflow-x: hidden; }
   flex-direction: column;
   gap: 16px;
   overflow-y: auto;
-  padding-right: 8px;
+  padding-right: 12px;
 }
 
 .ev-results-pane {
   overflow-y: auto;
-  padding-left: 8px;
+  padding-left: 12px;
 }
 
 /* ─── Cards ───────────────────────────────────────────────── */
@@ -4106,6 +4138,7 @@ html, body { overflow-x: hidden; }
     grid-template-columns: 1fr;
     height: auto;
   }
+  .ev-resizer { display: none; }
   .ev-results-pane {
     padding-left: 0;
     margin-top: 16px;
@@ -4154,7 +4187,7 @@ html, body { overflow-x: hidden; }
 }
 
 .meet-david-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -4191,10 +4224,10 @@ html, body { overflow-x: hidden; }
 }
 
 .meet-david-desc {
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: #475569;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .meet-david-tags {
@@ -4290,13 +4323,12 @@ html, body { overflow-x: hidden; }
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: center 45%;
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
 video.david-toggle-img {
-  object-position: center 15%;
-  transform: scale(1.1);
+  object-position: center 45%;
 }
 
 /* Chat panel */
@@ -4501,14 +4533,26 @@ video.david-toggle-img {
     right: 12px;
   }
   .david-chat {
-    width: calc(100vw - 24px);
-    right: -4px;
-    bottom: 64px;
-    max-height: 65vh;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-height: 75vh;
+    z-index: 10000;
+  }
+  .david-toggle-badge {
+    display: none;
+  }
+  .david-toggle {
+    padding: 4px;
+    border-radius: 50%;
+    background: none;
+    border: none;
   }
   .david-toggle-img {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
   }
 }
 

@@ -2735,6 +2735,75 @@ function setupEssayView() {
 
   // Init word limit display
   updateWordLimit();
+
+  // Essay pane resizer
+  setupEvResizer();
+}
+
+function setupEvResizer() {
+  const resizer = $('evResizer');
+  if (!resizer) return;
+  const split = resizer.closest('.ev-split');
+  if (!split) return;
+
+  let dragging = false;
+  let startX = 0;
+  let startLeftW = 0;
+
+  resizer.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    dragging = true;
+    startX = e.clientX;
+    const leftPane = split.querySelector('.ev-input-pane');
+    startLeftW = leftPane.getBoundingClientRect().width;
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    const totalW = split.getBoundingClientRect().width - 6; // minus resizer width
+    const newLeftW = Math.max(200, Math.min(totalW - 200, startLeftW + dx));
+    const leftFr = newLeftW / totalW;
+    const rightFr = 1 - leftFr;
+    split.style.gridTemplateColumns = `${leftFr}fr 6px ${rightFr}fr`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  });
+
+  // Touch support for mobile/tablet
+  resizer.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    dragging = true;
+    startX = e.touches[0].clientX;
+    const leftPane = split.querySelector('.ev-input-pane');
+    startLeftW = leftPane.getBoundingClientRect().width;
+    resizer.classList.add('dragging');
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    const dx = e.touches[0].clientX - startX;
+    const totalW = split.getBoundingClientRect().width - 6;
+    const newLeftW = Math.max(200, Math.min(totalW - 200, startLeftW + dx));
+    const leftFr = newLeftW / totalW;
+    const rightFr = 1 - leftFr;
+    split.style.gridTemplateColumns = `${leftFr}fr 6px ${rightFr}fr`;
+  });
+
+  document.addEventListener('touchend', () => {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove('dragging');
+  });
 }
 
 function switchEvTab(tabName) {
