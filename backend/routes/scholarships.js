@@ -62,6 +62,8 @@ function previewScholarship(s) {
     deadline: s.deadline,
     category: s.category,
     competitiveness: s.competitiveness,
+    scope: s.scope || 'national',
+    applicationFormat: s.applicationFormat || null,
     _preview: true
   };
 }
@@ -90,12 +92,37 @@ router.get('/search', async (req, res) => {
 
     let results = [...data.scholarships];
 
-    const { state, gpa, need, major, category, q } = req.query;
+    const { state, gpa, need, major, category, scope, applicationFormat, amountRange, q } = req.query;
     if (state) results = results.filter(s => s.eligibility?.states?.includes('all') || s.eligibility?.states?.includes(state.toUpperCase()));
     if (gpa) results = results.filter(s => !s.eligibility?.gpa || s.eligibility.gpa <= parseFloat(gpa));
     if (need === 'true') results = results.filter(s => s.eligibility?.financialNeed);
     if (major) results = results.filter(s => s.eligibility?.majors?.includes('any') || s.eligibility?.majors?.some(m => m.toLowerCase().includes(major.toLowerCase())));
     if (category) results = results.filter(s => s.category?.includes(category));
+
+    // Scope filter: national vs state vs regional
+    if (scope) {
+      results = results.filter(s => (s.scope || 'national') === scope);
+    }
+
+    // Application format filter: essay, video, portfolio, project, etc.
+    if (applicationFormat) {
+      results = results.filter(s => s.applicationFormat === applicationFormat);
+    }
+
+    // Amount range filter
+    if (amountRange) {
+      const getMax = (sch) => sch.amount?.max || sch.amount?.min || 0;
+      const rangeMap = {
+        'under1k': (sch) => getMax(sch) > 0 && getMax(sch) < 1000,
+        '1k-5k': (sch) => getMax(sch) >= 1000 && getMax(sch) <= 5000,
+        '5k-20k': (sch) => getMax(sch) > 5000 && getMax(sch) <= 20000,
+        '20k-50k': (sch) => getMax(sch) > 20000 && getMax(sch) <= 50000,
+        'over50k': (sch) => getMax(sch) > 50000,
+      };
+      const filterFn = rangeMap[amountRange];
+      if (filterFn) results = results.filter(filterFn);
+    }
+
     if (q) {
       const query = q.toLowerCase();
       results = results.filter(s => s.name?.toLowerCase().includes(query) || s.provider?.toLowerCase().includes(query));

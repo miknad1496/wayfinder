@@ -98,7 +98,15 @@ router.get('/search', async (req, res) => {
     if (category) results = results.filter(p => p.category === category || p.subcategory === category);
     if (state) results = results.filter(p => p.location?.state === state.toUpperCase() || p.eligibility?.states?.includes('all'));
     if (cost === 'free') results = results.filter(p => p.cost?.amount === 0 || p.cost?.type === 'free');
-    if (grade) results = results.filter(p => p.eligibility?.grades?.includes(grade));
+    if (grade) {
+      const gradeMap = {
+        elementary: ['K', '1', '2', '3', '4', '5'],
+        middle: ['6', '7', '8'],
+        high: ['9', '10', '11', '12']
+      };
+      const gradeSet = gradeMap[grade] || [grade];
+      results = results.filter(p => p.eligibility?.grades?.some(g => gradeSet.includes(g)));
+    }
     if (selectivity) results = results.filter(p => p.selectivity === selectivity);
     if (format) {
       const fmt = format.toLowerCase();

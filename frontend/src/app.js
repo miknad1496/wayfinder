@@ -2270,8 +2270,11 @@ function setupToolListeners() {
   // Internships search
   if ($('internshipSearchBtn')) $('internshipSearchBtn').addEventListener('click', searchInternships);
 
-  // Scholarships search
+  // Scholarships search + filter auto-search
   if ($('scholarshipSearchBtn')) $('scholarshipSearchBtn').addEventListener('click', searchScholarships);
+  ['scholarshipScope', 'scholarshipCategory', 'scholarshipState', 'scholarshipAmount', 'scholarshipFormat'].forEach(id => {
+    if ($(id)) $(id).addEventListener('change', searchScholarships);
+  });
 
   // Programs search
   if ($('programSearchBtn')) $('programSearchBtn').addEventListener('click', searchPrograms);
@@ -2745,6 +2748,9 @@ async function searchScholarships() {
   const params = new URLSearchParams();
   if ($('scholarshipCategory').value) params.set('category', $('scholarshipCategory').value);
   if ($('scholarshipState').value) params.set('state', $('scholarshipState').value);
+  if ($('scholarshipScope')?.value) params.set('scope', $('scholarshipScope').value);
+  if ($('scholarshipAmount')?.value) params.set('amountRange', $('scholarshipAmount').value);
+  if ($('scholarshipFormat')?.value) params.set('applicationFormat', $('scholarshipFormat').value);
   if ($('scholarshipSearch').value.trim()) params.set('q', $('scholarshipSearch').value.trim());
 
   try {
@@ -3187,15 +3193,21 @@ function renderToolCard(item, type, fullAccess) {
 
   if (type === 'scholarship') {
     const amountStr = item.amount?.max ? `Up to $${item.amount.max.toLocaleString()}` : (item.amount || 'Varies');
+    const scopeLabel = item.scope === 'state' ? 'State' : item.scope === 'regional' ? 'Regional' : 'National';
+    const fmtLabels = { essay: 'Essay', video: 'Video', portfolio: 'Portfolio', project: 'Project', 'research-paper': 'Research', 'application-only': 'App Only', interview: 'Interview' };
+    const fmtTag = item.applicationFormat && fmtLabels[item.applicationFormat] ? `<span class="tool-tag format">${fmtLabels[item.applicationFormat]}</span>` : '';
     return `<div class="tool-card ${isPreview ? 'preview' : ''}">
       <div class="tool-card-header">
         <h4>${escapeHtml(item.name || 'Scholarship')}</h4>
         <span class="tool-tag amount">${typeof amountStr === 'string' ? escapeHtml(amountStr) : amountStr}</span>
+        <span class="tool-tag scope-${item.scope || 'national'}">${scopeLabel}</span>
+        ${fmtTag}
       </div>
       <div class="tool-card-meta">
         ${item.provider ? `<span>${escapeHtml(item.provider)}</span>` : ''}
         ${item.deadline ? `<span>Deadline: ${item.deadline}</span>` : ''}
         ${item.competitiveness ? `<span>${capitalize(item.competitiveness)}</span>` : ''}
+        ${item._verified ? '<span class="tool-tag verified">Verified</span>' : ''}
       </div>
       ${item.url && fullAccess && sanitizeUrl(item.url) ? `<a href="${sanitizeUrl(item.url)}" target="_blank" rel="noopener" class="tool-card-link">Apply</a>` : ''}
     </div>`;
