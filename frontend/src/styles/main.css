@@ -4128,29 +4128,36 @@ html, body { overflow-x: hidden; }
   margin: 36px 0 28px;
   background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f8 100%);
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 24px 28px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 
-.meet-david-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0 0 14px;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
 .meet-david-content {
   display: flex;
-  gap: 18px;
-  align-items: flex-start;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.meet-david-left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meet-david-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 10px;
+  font-family: Georgia, 'Times New Roman', serif;
+  white-space: nowrap;
 }
 
 .meet-david-photo {
-  flex-shrink: 0;
-  width: 120px;
-  height: 145px;
+  width: 140px;
+  height: 160px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
@@ -4166,6 +4173,9 @@ html, body { overflow-x: hidden; }
 .meet-david-text {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .meet-david-label {
@@ -4175,14 +4185,14 @@ html, body { overflow-x: hidden; }
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #2563eb;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .meet-david-desc {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.65;
   color: #475569;
-  margin: 0 0 5px;
+  margin: 0 0 6px;
 }
 
 .meet-david-tags {
@@ -4275,12 +4285,12 @@ html, body { overflow-x: hidden; }
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   border: 2px solid rgba(251, 191, 36, 0.3);
 }
 
 video.david-toggle-img {
-  object-position: center 35%;
+  object-position: center 25%;
   transform: scale(1.05);
 }
 
