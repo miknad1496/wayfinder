@@ -2708,6 +2708,7 @@ async function searchInternships() {
   if ($('internshipField').value) params.set('field', $('internshipField').value);
   if ($('internshipCost').value === 'paid') params.set('paid', 'true');
   if ($('internshipCost').value === 'unpaid') params.set('paid', 'false');
+  if ($('internshipFormat')?.value) params.set('format', $('internshipFormat').value);
   if ($('internshipSearch').value.trim()) params.set('q', $('internshipSearch').value.trim());
 
   try {
@@ -3167,7 +3168,8 @@ function renderToolCard(item, type, fullAccess) {
     return `<div class="tool-card ${isPreview ? 'preview' : ''}">
       <div class="tool-card-header">
         <h4>${escapeHtml(item.title || item.name || 'Internship')}</h4>
-        ${item.paid ? '<span class="tool-tag paid">Paid</span>' : ''}
+        ${item.paid ? '<span class="tool-tag paid">Paid</span>' : '<span class="tool-tag unpaid">Unpaid</span>'}
+        ${item.format ? `<span class="tool-tag format">${escapeHtml(item.format)}</span>` : ''}
         ${item.field ? `<span class="tool-tag">${escapeHtml(item.field)}</span>` : ''}
       </div>
       <div class="tool-card-meta">

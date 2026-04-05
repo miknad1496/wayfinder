@@ -68,6 +68,7 @@ function previewInternship(intern) {
     type: intern.type,
     paid: intern.paid,
     field: intern.field,
+    format: intern.format || null,
     deadline: intern.deadline,
     tags: intern.tags?.slice(0, 3),
     _preview: true
@@ -100,7 +101,7 @@ router.get('/search', async (req, res) => {
     let results = [...data.internships];
 
     // Apply filters
-    const { state, field, major, paid, type, level, q } = req.query;
+    const { state, field, major, paid, type, level, format, q } = req.query;
     if (level === 'high-school') results = results.filter(i => i.tags?.includes('high-school'));
     if (level === 'college') results = results.filter(i => !i.tags?.includes('high-school'));
     if (state) results = results.filter(i => i.location?.state?.toUpperCase() === state.toUpperCase());
@@ -109,6 +110,10 @@ router.get('/search', async (req, res) => {
     if (paid === 'true') results = results.filter(i => i.paid);
     if (paid === 'false') results = results.filter(i => !i.paid);
     if (type) results = results.filter(i => i.type === type);
+    if (format) {
+      const fmt = format.toLowerCase();
+      results = results.filter(i => i.format?.toLowerCase() === fmt);
+    }
     if (q) {
       const query = q.toLowerCase();
       results = results.filter(i =>
