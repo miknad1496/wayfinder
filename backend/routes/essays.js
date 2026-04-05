@@ -25,6 +25,17 @@ const REVIEWS_DIR = join(__dirname, '..', 'data', 'essay-reviews');
 
 const router = Router();
 
+/**
+ * Sanitize a review ID to prevent path traversal attacks.
+ * Only allows alphanumeric characters, hyphens, and underscores.
+ */
+function sanitizeReviewId(id) {
+  if (!id || typeof id !== 'string') return null;
+  if (!/^[a-zA-Z0-9_-]+$/.test(id)) return null;
+  if (id.length > 128) return null;
+  return id;
+}
+
 // Ensure reviews directory exists
 async function ensureDir() {
   await fs.mkdir(REVIEWS_DIR, { recursive: true });
@@ -185,7 +196,11 @@ router.get('/review/:id', async (req, res) => {
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
     await ensureDir();
-    const filePath = join(REVIEWS_DIR, `${req.params.id}.json`);
+    const safeId = sanitizeReviewId(req.params.id);
+    if (!safeId) {
+      return res.status(400).json({ error: 'Invalid review ID' });
+    }
+    const filePath = join(REVIEWS_DIR, `${safeId}.json`);
 
     try {
       const raw = await fs.readFile(filePath, 'utf-8');

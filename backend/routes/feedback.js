@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { saveFeedback, loadAllFeedback } from '../services/storage.js';
+import { verifyToken } from '../services/auth.js';
 
 const router = Router();
 
@@ -16,13 +17,21 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Rating must be -1 (bad), 0 (neutral), or 1 (good)' });
     }
 
+    // Validate string inputs to prevent injection/abuse
+    if (typeof sessionId !== 'string' || sessionId.length > 128) {
+      return res.status(400).json({ error: 'Invalid sessionId' });
+    }
+    if (comment && (typeof comment !== 'string' || comment.length > 2000)) {
+      return res.status(400).json({ error: 'Comment must be under 2000 characters' });
+    }
+
     await saveFeedback({
       sessionId,
       messageIndex,
       rating,
-      comment: comment || null,
-      userMessage: userMessage || null,
-      assistantResponse: assistantResponse ? assistantResponse.substring(0, 500) : null
+      comment: comment ? comment.substring(0, 2000) : null,
+      userMessage: userMessage ? String(userMessage).substring(0, 500) : null,
+      assistantResponse: assistantResponse ? String(assistantResponse).substring(0, 500) : null
     });
 
     res.json({ success: true });
@@ -32,9 +41,16 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET /api/feedback/stats - Get feedback statistics
+// GET /api/feedback/stats - Get feedback statistics (admin only)
 router.get('/stats', async (req, res) => {
   try {
+    // Require admin authentication — stats contain user messages/comments
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user || !user.isAdmin) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+
     const feedback = await loadAllFeedback();
     const total = feedback.length;
     const positive = feedback.filter(f => f.rating === 1).length;

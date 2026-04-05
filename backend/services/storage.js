@@ -35,7 +35,7 @@ export async function ensureDirectories() {
   console.log('Storage directories initialized');
 }
 
-// Session storage - simple JSON files per session
+// Session storage - simple JSON files per session (atomic write to prevent corruption)
 export async function saveSession(sessionId, data) {
   const safe = sanitizeSessionId(sessionId);
   if (!safe) throw new Error('Invalid session ID');
@@ -44,7 +44,10 @@ export async function saveSession(sessionId, data) {
   if (!resolve(filePath).startsWith(resolve(PATHS.sessions))) {
     throw new Error('Invalid session path');
   }
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+  // Atomic write: write to temp file then rename to prevent partial writes on crash
+  const tmpPath = filePath + '.tmp';
+  await fs.writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await fs.rename(tmpPath, filePath);
 }
 
 export async function loadSession(sessionId) {
