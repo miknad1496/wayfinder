@@ -24,7 +24,9 @@
       "University research programs (UW, UMich, Stanford, etc.)",
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
-    ]
+    ],
+    "totalInternships": 1549,
+    "verifiedCount": 40
   },
   "internships": [
     {
@@ -42583,6 +42585,122 @@
       "stipend": "$21/hour",
       "duration": "12 weeks",
       "whyApply": "Join Burlington Coat Factory to develop professional expertise in retail/consumer and build your network with industry leaders. Valuable experience for career growth and future opportunities."
+    },
+    {
+      "title": "Microsoft Discovery Program",
+      "company": "Microsoft",
+      "field": "technology",
+      "paid": true,
+      "stipend": "$26.00/hour",
+      "format": "in-person",
+      "location": {
+        "city": "Redmond",
+        "state": "WA"
+      },
+      "deadline": "2026-03-01",
+      "duration": "4 weeks (summer)",
+      "eligibility": "High school seniors within 50 miles of Redmond, WA. Must be member of partner orgs (College Success Foundation, Computing for All, Rainier Scholars, etc.). Completed pre-calculus required.",
+      "description": "Four-week paid program teaching programming fundamentals, career skills, mentorship from Microsoft employees, and tech career exploration. $26/hr. Must have US work authorization.",
+      "url": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://careers.microsoft.com/v2/global/en/discoveryprogram"
+    },
+    {
+      "title": "Amazon Periscope High School Program",
+      "company": "Amazon",
+      "field": "technology",
+      "paid": false,
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "deadline": "2026-04-15",
+      "duration": "2 weeks (July)",
+      "eligibility": "Current 10th grade students in the Seattle metro area.",
+      "description": "Two-week career intensive at Amazon's South Lake Union campus for current 10th grade students. Explore tech careers, learn from Amazon professionals, and build skills.",
+      "url": "https://www.seattleschools.org/departments/cte/regional-internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/"
+    },
+    {
+      "title": "Changemakers in Computing at UW",
+      "company": "University of Washington",
+      "field": "technology",
+      "paid": false,
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "deadline": "2026-04-01",
+      "duration": "4 weeks (July 6-30)",
+      "eligibility": "Washington state high school students, juniors or seniors in Fall 2026.",
+      "description": "Free in-person summer program at UW Seattle campus for WA state high school students interested in computing. Runs Monday-Thursday, July 6-30, 2026.",
+      "url": "https://www.seattleschools.org/news/internships-for-high-school-students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
+    },
+    {
+      "title": "Seattle Children's Research Training Program",
+      "company": "Seattle Children's Hospital",
+      "field": "health",
+      "paid": false,
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "deadline": "2026-03-15",
+      "duration": "4 weeks (summer)",
+      "eligibility": "Students in grades 10-11 within commuting distance of downtown Seattle.",
+      "description": "Transformative 4-week laboratory research experience hosted by Seattle Children's Science Education Department. Learn biology lab techniques and explore biomedical research careers.",
+      "url": "https://www.seattlechildrens.org/research/training-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
+    },
+    {
+      "title": "Students Exploring Pharmacy (STEP) — UW",
+      "company": "University of Washington School of Pharmacy",
+      "field": "health",
+      "paid": false,
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "deadline": "2026-05-01",
+      "duration": "4 days (summer)",
+      "eligibility": "Students in grades 9-12 interested in pharmacy, healthcare, or STEM careers.",
+      "description": "4-day in-person program for high school students exploring pharmacy and healthcare careers. Hands-on activities and interaction with UW pharmacy faculty and students.",
+      "url": "https://sop.washington.edu/step/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleschools.org/news/internships-for-high-school-students/"
+    },
+    {
+      "title": "Seattle Public Schools Career Quest Summer Internship",
+      "company": "Seattle Public Schools",
+      "field": "general",
+      "paid": true,
+      "stipend": "$21.30/hour",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "deadline": "2026-05-15",
+      "duration": "6 weeks (July-August)",
+      "eligibility": "Seattle Public Schools students aged 16+ by 7/6/26.",
+      "description": "Paid summer internship pairing SPS high school students with local businesses and SPS departments. $21.30/hour. Wide variety of fields including tech, healthcare, business, and more. July 8 - August 21, 2026.",
+      "url": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/career-quest-summer-internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.seattleschools.org/departments/cte/regional-internships/career-quest-learning-in-pathway/career-quest-summer-internships/"
     }
   ]
 }

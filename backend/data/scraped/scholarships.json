@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastScraped": "2026-03-17",
+    "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-04",
     "totalCount": 976,
     "totalValue": "$14.7 million+",
@@ -28,7 +28,9 @@
       "Military Service Academies",
       "Professional Organizations"
     ],
-    "lastUpdated": "2026-04-05T00:33:26.706Z"
+    "lastUpdated": "2026-04-05T00:33:26.706Z",
+    "totalScholarships": 1013,
+    "verifiedCount": 46
   },
   "scholarships": [
     {
@@ -2465,38 +2467,36 @@
     },
     {
       "name": "Amazon Future Engineer Scholarship",
-      "provider": "Amazon",
+      "provider": "Amazon / Scholarship America",
       "amount": {
         "min": 10000,
-        "max": 10000,
-        "display": "$10,000"
+        "max": 40000,
+        "display": "Up to $40,000 ($10K/year)"
       },
-      "deadline": "2027-03-31",
+      "deadline": "2027-01-26",
       "category": [
         "stem",
-        "merit"
+        "need-based"
       ],
-      "competitiveness": "high",
+      "competitiveness": "very_high",
       "eligibility": {
-        "gpa": 3.5,
+        "gpa": 0,
         "states": [
           "all"
         ],
         "financialNeed": true,
         "majors": [
-          "Computer Science",
-          "Engineering"
-        ],
-        "demographics": [
-          "underrepresented minorities"
+          "computer-science",
+          "software-engineering",
+          "computer-engineering"
         ],
         "citizenshipRequired": true,
         "grades": [
           "12"
         ]
       },
-      "description": "Amazon Future Engineer Scholarship is a merit-based award recognizing academic achievement, renewable across multiple years, designed for underrepresented minorities students. Seeks students demonstrating academic excellence and leadership potential. Strong essays and recommendations strengthen competitiveness significantly.",
-      "url": "https://amazonf4e.force.com/awsfutureengineer",
+      "description": "400 scholars receive up to $10,000/year for 4 years toward CS degree plus paid Amazon internship after freshman year. Must have completed or be enrolled in a CS course. Amount depends on unmet financial need.",
+      "url": "https://www.amazonfutureengineer.com/scholarships",
       "renewable": true,
       "tags": [
         "tech",
@@ -2505,7 +2505,12 @@
         "corporate"
       ],
       "strategyTip": "Review all eligibility criteria carefully and tailor your application. Strong essays and recommendations strengthen your candidacy.",
-      "expired": false
+      "expired": false,
+      "scope": "national",
+      "applicationFormat": "application-only",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.amazonfutureengineer.com/scholarships"
     },
     {
       "name": "Accenture Scholarship",
@@ -39771,6 +39776,395 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://scholars.horatioalger.org/scholarships/"
+    },
+    {
+      "name": "College Success Foundation Leadership 1000 Scholarship",
+      "provider": "College Success Foundation",
+      "amount": {
+        "min": 1000,
+        "max": 5000,
+        "display": "Up to $5,000/year, renewable"
+      },
+      "deadline": "2027-01-30",
+      "category": [
+        "need-based",
+        "merit"
+      ],
+      "competitiveness": "high",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 2.5,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Renewable scholarship for WA state high school seniors with at least 2.5 GPA and financial need. Must plan to attend eligible WA state college/university pursuing 4-year degree. Scholars also receive career and financial aid guidance plus networking with alumni.",
+      "url": "https://www.collegesuccessfoundation.org/scholarship/leadership-1000-scholarship/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.collegesuccessfoundation.org/scholarship/leadership-1000-scholarship/"
+    },
+    {
+      "name": "Washington CPA Foundation Accounting Scholarship",
+      "provider": "Washington Society of CPAs",
+      "amount": {
+        "min": 2000,
+        "max": 2000,
+        "display": "$2,000"
+      },
+      "deadline": "2027-02-10",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 2.5,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "accounting",
+          "business"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Over 20 scholarships of $2,000 each for WA state high school seniors interested in accounting careers. Must plan to attend a WA state college or university. The WA CPA Foundation awarded over $650,000 in scholarships in 2025-2026.",
+      "url": "https://www.wscpa.org/scholarships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.wscpa.org/scholarships"
+    },
+    {
+      "name": "American Indian Endowed Scholarship (Washington)",
+      "provider": "Washington Student Achievement Council",
+      "amount": {
+        "min": 500,
+        "max": 2000,
+        "display": "Up to $2,000"
+      },
+      "deadline": "2027-02-01",
+      "category": [
+        "minority"
+      ],
+      "competitiveness": "moderate",
+      "scope": "state",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [
+          "native-american"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "For students with close social and cultural ties to an American Indian tribe or community in Washington State. Must demonstrate financial need and plan to attend an eligible WA institution.",
+      "url": "https://wsac.wa.gov/american-indian-endowed-scholarship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://wsac.wa.gov/sfa-overview"
+    },
+    {
+      "name": "Science Ambassador Scholarship",
+      "provider": "Cards Against Humanity / Science Ambassador",
+      "amount": {
+        "min": 20000,
+        "max": 20000,
+        "display": "$20,000"
+      },
+      "deadline": "2026-12-15",
+      "category": [
+        "stem",
+        "merit"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "video",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "stem"
+        ],
+        "demographics": [
+          "women",
+          "non-binary"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Full-tuition scholarship for women and non-binary students in STEM. Applicants submit a 3-minute educational video teaching a STEM topic. Five winners receive $20,000 each. Funded by Cards Against Humanity. No GPA requirement.",
+      "url": "https://www.scienceambassadorscholarship.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.scienceambassadorscholarship.org/"
+    },
+    {
+      "name": "Fountainhead Essay Contest",
+      "provider": "Ayn Rand Institute",
+      "amount": {
+        "min": 50,
+        "max": 25000,
+        "display": "Up to $25,000"
+      },
+      "deadline": "2026-06-07",
+      "category": [
+        "merit",
+        "creative"
+      ],
+      "competitiveness": "high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Write an 800-1,600 word essay on Ayn Rand's The Fountainhead. Open to all middle and high school students worldwide age 13+. First prize $25,000, multiple runner-up prizes. One of the largest essay contests in the US.",
+      "url": "https://aynrand.org/students/essay-contests/the-fountainhead/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://aynrand.org/students/essay-contests/the-fountainhead/"
+    },
+    {
+      "name": "Freedom From Religion Foundation Essay Contest",
+      "provider": "Freedom From Religion Foundation",
+      "amount": {
+        "min": 200,
+        "max": 3500,
+        "display": "Up to $3,500"
+      },
+      "deadline": "2026-06-01",
+      "category": [
+        "merit",
+        "creative"
+      ],
+      "competitiveness": "moderate",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Annual essay contest for high school students on topics related to separation of church and state or personal experiences as a freethinker. Multiple prize levels from $200 to $3,500.",
+      "url": "https://ffrf.org/outreach/student-scholarship-essay-contests",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://ffrf.org/outreach/student-scholarship-essay-contests"
+    },
+    {
+      "name": "Ocean Awareness Student Contest",
+      "provider": "Bow Seat Ocean Awareness Programs",
+      "amount": {
+        "min": 100,
+        "max": 1500,
+        "display": "Up to $1,500"
+      },
+      "deadline": "2026-06-13",
+      "category": [
+        "creative",
+        "community"
+      ],
+      "competitiveness": "moderate",
+      "scope": "national",
+      "applicationFormat": "portfolio",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Students explore ocean topics through visual art, creative writing, poetry, spoken word, music, dance, or film. Open to students ages 11-18 worldwide. Multiple award categories and cash prizes.",
+      "url": "https://bowseat.org/programs/ocean-awareness-contest/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://bowseat.org/programs/ocean-awareness-contest/"
+    },
+    {
+      "name": "YoungArts Foundation Awards",
+      "provider": "National YoungArts Foundation",
+      "amount": {
+        "min": 250,
+        "max": 10000,
+        "display": "Up to $10,000"
+      },
+      "deadline": "2026-10-09",
+      "category": [
+        "creative",
+        "merit"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "portfolio",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "arts",
+          "film",
+          "music",
+          "dance",
+          "theater",
+          "writing",
+          "visual-arts"
+        ],
+        "citizenshipRequired": true,
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Prestigious national arts competition in 10 disciplines including visual arts, film, music, dance, theater, writing, and more. Winners receive cash awards up to $10,000 plus masterclasses and national recognition. Gateway to Presidential Scholars in the Arts.",
+      "url": "https://www.youngarts.org/apply",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.youngarts.org/apply"
+    },
+    {
+      "name": "AXA Achievement Scholarship",
+      "provider": "AXA Foundation / Scholarship America",
+      "amount": {
+        "min": 2500,
+        "max": 25000,
+        "display": "Up to $25,000"
+      },
+      "deadline": "2026-12-15",
+      "category": [
+        "community",
+        "merit"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Recognizes outstanding achievement in school, community, or workplace. 52 state winners each get $2,500; national winners get up to $25,000. Emphasizes non-traditional community engagement and self-driven projects.",
+      "url": "https://us.axa.com/axa-foundation/AXA-achievement-scholarship.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://us.axa.com/axa-foundation/AXA-achievement-scholarship.html"
+    },
+    {
+      "name": "Edison Scholars Program (Southern California)",
+      "provider": "Edison International",
+      "amount": {
+        "min": 12500,
+        "max": 50000,
+        "display": "$12,500/year ($50K over 4 years)"
+      },
+      "deadline": "2027-01-22",
+      "category": [
+        "stem",
+        "need-based"
+      ],
+      "competitiveness": "high",
+      "scope": "regional",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 3,
+        "states": [
+          "CA"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "stem",
+          "engineering",
+          "computer-science",
+          "mathematics"
+        ],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Up to 30 awards of $12,500/year ($50K total over 4 years) for HS seniors in SCE service area pursuing STEM degrees. Must demonstrate financial need and 3.0+ GPA.",
+      "url": "https://www.edison.com/community/edison-scholars",
+      "_verified": true,
+      "_verifiedDate": "2026-04-04",
+      "_source": "https://www.edison.com/community/edison-scholars"
     }
   ]
 }
