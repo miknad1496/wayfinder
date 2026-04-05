@@ -196,6 +196,9 @@ router.get('/schools', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
+    const financialAidData = await loadFinancialAidData();
+    if (!financialAidData) return res.status(503).json({ error: 'Financial aid data not available' });
+
     const results = financialAidData.schools.map(s => ({
       id: s.id, name: s.name, type: s.type, state: s.state
     }));
