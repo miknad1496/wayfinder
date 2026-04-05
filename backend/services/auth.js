@@ -45,7 +45,7 @@ const ADMIN_EMAILS = [
 
 // VIP emails — always get elite-tier access (not admin, just full access)
 // Load from env, fallback to hardcoded defaults
-const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotmail.com')
+const VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotmail.com,serenakimkimkim@gmail.com,benjaminkim042@gmail.com,elenakimjune@gmail.com')
   .split(',')
   .map(e => e.toLowerCase().trim())
   .filter(Boolean);
