@@ -4157,6 +4157,52 @@ function hideDavidWidget() {
   if (widget) widget.style.display = 'none';
 }
 
+function getActiveToolContext() {
+  const ctx = {};
+  // Check which modal is open
+  if ($('financialAidModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Financial Aid Planner';
+    // Which tab?
+    if ($('finaidTabSAI')?.style.display === 'block') {
+      ctx.activeTab = 'SAI Calculator';
+      // Grab SAI results if visible
+      const saiResults = $('saiResults');
+      if (saiResults?.style.display === 'block') {
+        const scoreEl = saiResults.querySelector('.sai-score-number');
+        const meaningEl = saiResults.querySelector('.sai-score-meaning');
+        const pellEl = saiResults.querySelector('.sai-pell-badge');
+        if (scoreEl) ctx.saiScore = scoreEl.textContent.trim();
+        if (meaningEl) ctx.saiMeaning = meaningEl.textContent.trim();
+        if (pellEl) ctx.pellStatus = pellEl.textContent.trim();
+      }
+      // Grab inputs
+      const inc = $('saiQuickIncome')?.value || $('saiParentAGI')?.value;
+      const assets = $('saiQuickAssets')?.value || $('saiParentAssets')?.value;
+      const fam = $('saiQuickFamilySize')?.value || $('saiDetailedFamilySize')?.value;
+      if (inc) ctx.userIncome = inc;
+      if (assets) ctx.userAssets = assets;
+      if (fam) ctx.familySize = fam;
+    } else if ($('finaidTabSearch')?.style.display === 'block') {
+      ctx.activeTab = 'School Search';
+    } else if ($('finaidTabStrategy')?.style.display === 'block') {
+      ctx.activeTab = 'My Strategy';
+    } else if ($('finaidTabGrants')?.style.display === 'block') {
+      ctx.activeTab = 'Grants & Aid';
+    }
+  } else if ($('essaysModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Essay Reviewer';
+  } else if ($('internshipsModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Internships Database';
+  } else if ($('scholarshipsModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Scholarships Database';
+  } else if ($('programsModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Programs Database';
+  } else if ($('timelineModal')?.style.display === 'flex') {
+    ctx.activeTool = 'Timeline Builder';
+  }
+  return Object.keys(ctx).length > 0 ? ctx : null;
+}
+
 async function sendDavidMessage() {
   const input = $('davidInput');
   const messagesEl = $('davidMessages');
@@ -4185,6 +4231,9 @@ async function sendDavidMessage() {
   // Add to history
   davidHistory.push({ role: 'user', content: message });
 
+  // Detect what the user is currently looking at
+  const toolContext = getActiveToolContext();
+
   try {
     const res = await fetch(`${API_BASE}/coach/chat`, {
       method: 'POST',
@@ -4192,7 +4241,7 @@ async function sendDavidMessage() {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${authToken}`
       },
-      body: JSON.stringify({ message, history: davidHistory })
+      body: JSON.stringify({ message, history: davidHistory, toolContext })
     });
 
     const data = await res.json();

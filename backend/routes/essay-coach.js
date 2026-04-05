@@ -150,7 +150,7 @@ router.post('/chat', async (req, res) => {
       return res.status(401).json({ error: 'Please log in to chat with David.' });
     }
 
-    const { message, history } = req.body;
+    const { message, history, toolContext } = req.body;
     if (!message || typeof message !== 'string' || message.trim().length < 2) {
       return res.status(400).json({ error: 'Please type a message.' });
     }
@@ -160,7 +160,22 @@ router.post('/chat', async (req, res) => {
 
     // Load knowledge and build system prompt
     const knowledge = await loadCoachKnowledge();
-    const systemPrompt = DAVID_SYSTEM_PROMPT.replace('{KNOWLEDGE_INJECTION}', knowledge);
+    let systemPrompt = DAVID_SYSTEM_PROMPT.replace('{KNOWLEDGE_INJECTION}', knowledge);
+
+    // Inject live tool context so David knows what the user is looking at
+    if (toolContext && typeof toolContext === 'object') {
+      let ctxBlock = '\n\nCURRENT USER CONTEXT (what the user is looking at right now on screen):\n';
+      if (toolContext.activeTool) ctxBlock += `- The user has the "${toolContext.activeTool}" open.\n`;
+      if (toolContext.activeTab) ctxBlock += `- They are on the "${toolContext.activeTab}" tab.\n`;
+      if (toolContext.saiScore) ctxBlock += `- Their SAI calculation result is showing: ${toolContext.saiScore}\n`;
+      if (toolContext.saiMeaning) ctxBlock += `- SAI interpretation: ${toolContext.saiMeaning}\n`;
+      if (toolContext.pellStatus) ctxBlock += `- Pell Grant status: ${toolContext.pellStatus}\n`;
+      if (toolContext.userIncome) ctxBlock += `- They entered household income: $${Number(toolContext.userIncome).toLocaleString()}\n`;
+      if (toolContext.userAssets) ctxBlock += `- They entered parent assets: $${Number(toolContext.userAssets).toLocaleString()}\n`;
+      if (toolContext.familySize) ctxBlock += `- Family size: ${toolContext.familySize}\n`;
+      ctxBlock += '\nIMPORTANT: You ARE part of Wayfinder. When the user references "you guys" or "this tool" or results on their screen, they are talking about Wayfinder features that YOU are part of. Own it — say "your SAI score" or "the calculation shows" — never act confused about where a number came from. Answer questions about their results directly and helpfully.\n';
+      systemPrompt += ctxBlock;
+    }
 
     // Build messages array from history (last 10 messages for context efficiency)
     const messages = [];
