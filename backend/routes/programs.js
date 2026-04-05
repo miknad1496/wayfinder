@@ -64,6 +64,7 @@ function previewProgram(p) {
     cost: p.cost,
     selectivity: p.selectivity,
     admissionsImpact: p.admissionsImpact,
+    format: p.format || null,
     deadline: p.deadline,
     _preview: true
   };
@@ -93,12 +94,16 @@ router.get('/search', async (req, res) => {
 
     let results = [...data.programs];
 
-    const { category, state, cost, grade, selectivity, q } = req.query;
+    const { category, state, cost, grade, selectivity, format, q } = req.query;
     if (category) results = results.filter(p => p.category === category || p.subcategory === category);
     if (state) results = results.filter(p => p.location?.state === state.toUpperCase() || p.eligibility?.states?.includes('all'));
     if (cost === 'free') results = results.filter(p => p.cost?.amount === 0 || p.cost?.type === 'free');
     if (grade) results = results.filter(p => p.eligibility?.grades?.includes(grade));
     if (selectivity) results = results.filter(p => p.selectivity === selectivity);
+    if (format) {
+      const fmt = format.toLowerCase();
+      results = results.filter(p => p.format?.toLowerCase() === fmt);
+    }
     if (q) {
       const query = q.toLowerCase();
       results = results.filter(p =>

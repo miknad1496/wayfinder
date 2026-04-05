@@ -2780,7 +2780,10 @@ async function searchPrograms() {
 
   const params = new URLSearchParams();
   if ($('programCategory').value) params.set('category', $('programCategory').value);
+  if ($('programState')?.value) params.set('state', $('programState').value);
+  if ($('programGrade')?.value) params.set('grade', $('programGrade').value);
   if ($('programCost').value) params.set('cost', $('programCost').value);
+  if ($('programFormat')?.value) params.set('format', $('programFormat').value);
   if ($('programSelectivity').value) params.set('selectivity', $('programSelectivity').value);
   if ($('programSearch').value.trim()) params.set('q', $('programSearch').value.trim());
 
@@ -3204,6 +3207,7 @@ function renderToolCard(item, type, fullAccess) {
         <h4>${escapeHtml(item.name || 'Program')}</h4>
         ${item.admissionsImpact ? `<span class="tool-tag impact-${item.admissionsImpact}">${capitalize(item.admissionsImpact.replace('_', ' '))}</span>` : ''}
         ${item.selectivity ? `<span class="tool-tag">${capitalize(item.selectivity.replace('_', ' '))}</span>` : ''}
+        ${item.format ? `<span class="tool-tag format">${escapeHtml(item.format)}</span>` : ''}
       </div>
       <div class="tool-card-meta">
         ${item.provider ? `<span>${escapeHtml(item.provider)}</span>` : ''}
