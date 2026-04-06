@@ -954,6 +954,249 @@ const VERIFIED_PROGRAMS = [
     _verifiedDate: "2026-04-05",
     format: "in-person"
   },
+
+  // ─── WASHINGTON STATE — APRIL 2026 DEEP DIVE ───────────────────
+
+  {
+    title: "UW Botanic Gardens Youth Summer Internship",
+    company: "University of Washington Botanic Gardens",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid internship (amount varies)",
+    field: "Environmental Science",
+    deadline: "2027-04-01",
+    description: "Paid summer internship for teens with a commitment to community and equity. No previous experience in environmental issues required. Interns work alongside Botanic Gardens educators leading youth programming, maintaining plant collections, and supporting community engagement events across the Washington Park Arboretum and UW campus gardens.",
+    majors: ["Environmental Science", "Biology", "Ecology", "Education"],
+    tags: ["high-school", "paid", "environmental", "conservation", "seattle"],
+    url: "https://botanicgardens.uw.edu/education/youth-family/summer-camp/youth-summer-internship/",
+    duration: "8 weeks (summer)",
+    whyApply: "Paid environmental internship at a major research university botanical garden. Great for students interested in ecology, conservation, or outdoor education.",
+    _source: "https://botanicgardens.uw.edu/education/youth-family/summer-camp/youth-summer-internship/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "Seattle City Light College Internship Program",
+    company: "Seattle City Light",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid (competitive hourly rate)",
+    field: "Engineering",
+    deadline: "2027-03-01",
+    description: "Over 40 paid internship roles across data science, engineering, customer experience, accounting, environmental science, and more at Seattle's publicly owned electric utility. Summer interns typically work 40 hours/week embedded in real teams at one of the nation's greenest utilities. Positions posted in January each year.",
+    majors: ["Electrical Engineering", "Data Science", "Environmental Science", "Accounting", "Computer Science"],
+    tags: ["college", "paid", "engineering", "government", "utility", "sustainability"],
+    url: "https://www.seattle.gov/city-light/about-us/careers/internships/college-internships",
+    duration: "10-12 weeks (summer)",
+    whyApply: "40+ paid roles at a municipal utility committed to 100% clean energy. Excellent government work experience with real project ownership.",
+    _source: "https://www.seattle.gov/city-light/about-us/careers/internships/college-internships",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "UW NOAA Fisheries Science Summer Internship",
+    company: "University of Washington / NOAA",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "$6,400 stipend",
+    field: "Environmental Science",
+    deadline: "2027-02-15",
+    description: "Paid summer internship where undergraduates work directly with a NOAA scientist to integrate mathematics and fisheries science. Based at the UW School of Aquatic and Fishery Sciences in collaboration with NOAA's Northwest Fisheries Science Center. Students conduct original research on marine ecosystems, fish population modeling, or climate impacts on fisheries.",
+    majors: ["Marine Biology", "Applied Mathematics", "Statistics", "Environmental Science", "Fisheries"],
+    tags: ["college", "paid", "research", "NOAA", "marine-science", "competitive"],
+    url: "https://sites.uw.edu/ceadvice/2026/02/11/2026-summer-paid-internship-opportunity-work-with-a-noaa-scientist-and-learn-to-integrate-mathematics-and-fisheries-science-2/",
+    duration: "10 weeks (summer)",
+    whyApply: "Work one-on-one with a NOAA research scientist. $6,400 stipend plus potential for published co-authorship. Outstanding for grad school applications.",
+    _source: "https://sites.uw.edu/ceadvice/2026/02/11/2026-summer-paid-internship-opportunity-work-with-a-noaa-scientist-and-learn-to-integrate-mathematics-and-fisheries-science-2/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "UW Teaching Tomorrow Internship",
+    company: "Cultivate Learning / University of Washington",
+    location: { city: "Seattle", state: "WA" },
+    type: "academic-year",
+    paid: false,
+    stipend: "Unpaid (school credit available)",
+    field: "Education",
+    deadline: "2027-02-01",
+    description: "6-month internship (March-August) for Seattle Public Schools high school students age 16+. Interns work in early learning classrooms gaining hands-on experience with child development, curriculum planning, and classroom management. Program provides mentorship from UW education faculty and builds skills for careers in education, psychology, or social work.",
+    majors: ["Education", "Child Development", "Psychology", "Social Work"],
+    tags: ["high-school", "education", "unpaid", "school-credit", "seattle"],
+    url: "https://cultivatelearning.uw.edu/high-school-internship/",
+    duration: "6 months (March-August)",
+    whyApply: "Rare education-focused internship with UW faculty mentorship. Outstanding for students considering teaching, child psychology, or social work.",
+    _source: "https://cultivatelearning.uw.edu/high-school-internship/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "Fred Hutch High School Explorers Program",
+    company: "Fred Hutchinson Cancer Center",
+    location: { city: "Seattle", state: "WA" },
+    type: "academic-year",
+    paid: false,
+    stipend: "Free program",
+    field: "Healthcare",
+    deadline: "2027-01-15",
+    description: "After-school program for 9th and 10th graders interested in biomedical science. Students visit Fred Hutch labs, meet researchers, learn about cancer biology and scientific careers. Distinct from the competitive SHIP summer internship — Explorers is designed as a pipeline to build interest and readiness for future research opportunities. Meets weekly during the school year.",
+    majors: ["Biology", "Chemistry", "Pre-Med", "Public Health"],
+    tags: ["high-school", "after-school", "biomedical", "mentorship", "free"],
+    url: "https://www.fredhutch.org/en/education-training/high-school-students/high-school-explorers-program.html",
+    duration: "Academic year (weekly sessions)",
+    whyApply: "Pipeline program at a world-class cancer research center. Builds foundation for competitive summer research internships like SHIP.",
+    _source: "https://www.fredhutch.org/en/education-training/high-school-students/high-school-explorers-program.html",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "Fred Hutch Pathways Undergraduate Research Program",
+    company: "Fred Hutchinson Cancer Center",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid stipend",
+    field: "Healthcare",
+    deadline: "2027-02-01",
+    description: "10-week paid summer research internship for undergraduates from groups underrepresented in the sciences. Students are embedded in Fred Hutch research labs conducting independent projects in cancer biology, immunology, computational biology, or public health sciences. Includes professional development seminars, GRE prep, and graduate school advising.",
+    majors: ["Biology", "Biochemistry", "Computer Science", "Public Health", "Chemistry"],
+    tags: ["college", "paid", "research", "cancer-research", "diversity", "competitive"],
+    url: "https://www.fredhutch.org/en/education-training/undergraduate-students/pathways-undergraduate-researchers.html",
+    duration: "10 weeks (summer)",
+    whyApply: "Fully funded research at a top cancer center. Strong track record of placing alumni in graduate programs at elite institutions.",
+    _source: "https://www.fredhutch.org/en/education-training/undergraduate-students/pathways-undergraduate-researchers.html",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "UW EarthLab Undergraduate Summer Internship",
+    company: "University of Washington EarthLab",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid stipend",
+    field: "Environmental Science",
+    deadline: "2027-03-15",
+    description: "Paid summer internship for UW undergraduates (Seattle, Tacoma, or Bothell campuses) focused on environmental and sustainability research. Interns work with interdisciplinary faculty on projects spanning climate science, environmental justice, urban ecology, and conservation. Includes cohort-based professional development and research presentations.",
+    majors: ["Environmental Science", "Biology", "Earth Science", "Public Policy", "Data Science"],
+    tags: ["college", "paid", "research", "environment", "sustainability", "uw"],
+    url: "https://earthlab.uw.edu/students/summer-internship-program/",
+    duration: "10 weeks (summer)",
+    whyApply: "Interdisciplinary environmental research at UW with strong faculty mentorship. Excellent for students bridging science and policy.",
+    _source: "https://earthlab.uw.edu/students/summer-internship-program/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "Port of Seattle College & Graduate Internship Program",
+    company: "Port of Seattle",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid (competitive hourly rate)",
+    field: "Business",
+    deadline: "2027-03-01",
+    description: "Paid internship for college and graduate students at the Port of Seattle, which operates Seattle-Tacoma International Airport and regional maritime facilities. Interns rotate through departments including aviation operations, maritime logistics, environmental programs, finance, engineering, IT, and community engagement. Includes mentorship, facility tours, and professional development workshops.",
+    majors: ["Business", "Engineering", "Environmental Science", "Aviation", "Public Administration", "Finance"],
+    tags: ["college", "paid", "government", "aviation", "maritime", "professional"],
+    url: "https://www.portseattle.org/programs/college-and-graduate-internship-program",
+    duration: "10-12 weeks (summer)",
+    whyApply: "Work at one of the busiest airports and ports on the West Coast. Exceptional government career pipeline with diverse department rotations.",
+    _source: "https://www.portseattle.org/programs/college-and-graduate-internship-program",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "City of Seattle Government Internships",
+    company: "City of Seattle",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid (varies by department)",
+    field: "Government",
+    deadline: "Rolling (positions posted year-round)",
+    description: "The City of Seattle offers paid internships across dozens of departments including transportation, parks, public utilities, IT, human services, planning, and public health. Most are part-time during the academic year and full-time during summer. Open to college students and recent graduates. Positions posted on the city's careers portal.",
+    majors: ["Public Administration", "Urban Planning", "Engineering", "IT", "Social Work", "Public Health"],
+    tags: ["college", "paid", "government", "public-service", "diverse-fields"],
+    url: "https://www.seattle.gov/human-resources/working-at-the-city/internships",
+    duration: "Varies (summer full-time, academic year part-time)",
+    whyApply: "Broad range of paid government internships across all city departments. Outstanding for students interested in public service careers.",
+    _source: "https://www.seattle.gov/human-resources/working-at-the-city/internships",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "UW INSIGHT High School Research Program",
+    company: "UW Harborview Injury Prevention & Research Center",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: false,
+    stipend: "Tuition: $2,200 (financial assistance available)",
+    field: "Healthcare",
+    deadline: "2027-04-01",
+    description: "4-week summer research program for high school students entering grades 10-12. Students dive deep into injury and violence prevention research through hands-on investigations, data analysis, and mentored projects. Virtual format for 2026. Topics include traffic safety, firearm violence prevention, substance use, and health equity. Students are accepted on a rolling basis.",
+    majors: ["Public Health", "Pre-Med", "Psychology", "Sociology", "Data Science"],
+    tags: ["high-school", "research", "public-health", "virtual", "injury-prevention"],
+    url: "https://hiprc.org/training/high-school/insight-hs/",
+    duration: "4 weeks (July)",
+    whyApply: "Research experience at UW's nationally recognized injury prevention center. Strong letter-of-rec potential for public health and pre-med applicants.",
+    _source: "https://hiprc.org/training/high-school/insight-hs/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "remote"
+  },
+  {
+    title: "Boeing Manufacturing Student Development Program",
+    company: "Boeing",
+    location: { city: "Everett", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid hourly",
+    field: "Engineering",
+    deadline: "2027-01-20",
+    description: "Paid on-site manufacturing internship for high school students at Boeing factories in Everett, Renton, and Auburn. Roles include Assembly, Toolmaker, Test, Facilities, and Mechatronics. Program includes tailored hands-on training, factory floor experience, resume and interview workshops, networking with Boeing engineers, and career planning support. Distance bonus available for students 65+ miles from site.",
+    majors: ["Manufacturing", "Engineering", "Aerospace", "Mechatronics"],
+    tags: ["high-school", "paid", "manufacturing", "aerospace", "hands-on"],
+    url: "https://jobs.boeing.com/internships",
+    duration: "8 weeks (June-August)",
+    whyApply: "Build real aircraft at one of the world's largest aerospace manufacturers. Paid with professional development and direct industry connections.",
+    _source: "https://jobs.boeing.com/internships",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
+  {
+    title: "ISB Summer Undergraduate Research Experiences (SURE)",
+    company: "Institute for Systems Biology",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid stipend",
+    field: "Technology",
+    deadline: "2027-03-01",
+    description: "Paid 10-week summer research program for undergraduates at the Institute for Systems Biology. Students work in computational biology, cancer research, microbiome science, infectious disease, or aging research alongside ISB scientists. Includes professional development, research presentations, and access to ISB's cutting-edge multi-omics facilities.",
+    majors: ["Biology", "Computer Science", "Bioinformatics", "Data Science", "Chemistry"],
+    tags: ["college", "paid", "research", "computational-biology", "biotech", "competitive"],
+    url: "https://isbscience.org/careers/internships/summer-undergraduate-research-experiences-program/",
+    duration: "10 weeks (summer)",
+    whyApply: "Research at a pioneering systems biology institute. Ideal for students at the intersection of biology and computer science.",
+    _source: "https://isbscience.org/careers/internships/summer-undergraduate-research-experiences-program/",
+    _verified: true,
+    _verifiedDate: "2026-04-06",
+    format: "in-person"
+  },
 ];
 
 
@@ -1013,15 +1256,15 @@ async function main() {
 
   await fs.writeFile(dataPath, JSON.stringify(data, null, 2));
 
-  const verifiedCount = merged.filter(i => i._verified).length;
+  const verifiedCount = clean.filter(i => i._verified).length;
   const byState = {};
-  for (const i of merged) {
+  for (const i of clean) {
     const st = i.location?.state || 'Other';
     byState[st] = (byState[st] || 0) + 1;
   }
 
   console.log(`\n✅ Injected ${verifiedCount} verified programs`);
-  console.log(`Total internships: ${merged.length}`);
+  console.log(`Total internships: ${clean.length}`);
   console.log(`\nBy state (top 10):`);
   const sorted = Object.entries(byState).sort((a, b) => b[1] - a[1]).slice(0, 10);
   for (const [state, count] of sorted) {
@@ -1029,8 +1272,8 @@ async function main() {
   }
 
   // Count unpaid
-  const unpaidCount = merged.filter(i => !i.paid).length;
-  const unpaidWA = merged.filter(i => !i.paid && i.location?.state === 'WA').length;
+  const unpaidCount = clean.filter(i => !i.paid).length;
+  const unpaidWA = clean.filter(i => !i.paid && i.location?.state === 'WA').length;
   console.log(`\nUnpaid total: ${unpaidCount}`);
   console.log(`Unpaid WA: ${unpaidWA}`);
 }
