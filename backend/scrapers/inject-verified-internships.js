@@ -974,35 +974,25 @@ async function main() {
 
   console.log(`\nLoaded existing data: ${data.internships?.length || 0} internships`);
 
-  // Remove any previously injected verified entries (by _verified flag)
-  const existingNonVerified = data.internships.filter(i => !i._verified);
-  const existingVerified = data.internships.filter(i => i._verified);
-  console.log(`Existing verified: ${existingVerified.length}`);
-  console.log(`Existing non-verified: ${existingNonVerified.length}`);
+  // Combine all entries: new verified + existing. The data-integrity module
+  // handles dedup (verified always wins) and schema validation automatically.
+  const { validateAndDedup } = await import('../services/data-integrity.js');
+  const allEntries = [...VERIFIED_PROGRAMS, ...(data.internships || [])];
+  const { clean, removed, warnings, stats } = validateAndDedup('internships', allEntries);
 
-  // Merge: keep all existing non-verified, add our new verified ones
-  // Dedup by title+company
-  const seen = new Set();
-  const merged = [];
-
-  for (const prog of VERIFIED_PROGRAMS) {
-    const key = `${prog.title}|||${prog.company}`.toLowerCase();
-    if (!seen.has(key)) {
-      seen.add(key);
-      merged.push(prog);
-    }
+  console.log(`\n📊 Data Integrity Report:`);
+  console.log(`  Input: ${stats.input} | Output: ${stats.output}`);
+  console.log(`  Duplicates removed: ${stats.duplicatesRemoved}`);
+  console.log(`  Invalid removed: ${stats.invalidRemoved}`);
+  console.log(`  Verified: ${stats.verified} | Non-verified: ${stats.nonVerified}`);
+  if (warnings.length > 0) {
+    console.log(`\n⚠️  Warnings (${warnings.length}):`);
+    warnings.slice(0, 10).forEach(w => console.log(`  ${w}`));
+    if (warnings.length > 10) console.log(`  ... and ${warnings.length - 10} more`);
   }
 
-  for (const intern of existingNonVerified) {
-    const key = `${intern.title}|||${intern.company}`.toLowerCase();
-    if (!seen.has(key)) {
-      seen.add(key);
-      merged.push(intern);
-    }
-  }
-
-  data.internships = merged;
-  data.metadata.totalCount = merged.length;
+  data.internships = clean;
+  data.metadata.totalCount = clean.length;
   data.metadata.lastScraped = new Date().toISOString().slice(0, 10);
 
   // Update sources

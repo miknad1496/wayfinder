@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 746,
+    "totalCount": 815,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -51,7 +51,9 @@
     "_verificationNotes": "6 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 810 programs are unverified and may contain template descriptions.",
     "lastUpdated": "2026-04-05T23:29:34.613Z",
     "totalPrograms": 795,
-    "verifiedCount": 49
+    "verifiedCount": 49,
+    "lastHealthCheck": "2026-04-06T14:45:01.557Z",
+    "healthCheckAction": "Removed 1 dupes, 0 invalid"
   },
   "programs": [
     {
@@ -18782,48 +18784,6 @@
       "duration": "3-4 weeks",
       "region": "Northeast",
       "advisorNote": "Arts programs strengthen applications by showing sustained commitment to your craft. Selective programs like Iowa Young Writers Workshop demonstrate that your talent is recognized by professional artists."
-    },
-    {
-      "name": "Kenyon Review Young Writers Workshop",
-      "provider": "Kenyon College",
-      "category": "arts",
-      "subcategory": "writing",
-      "type": "summer",
-      "cost": {
-        "amount": 2500,
-        "type": "paid",
-        "display": "$2,500"
-      },
-      "selectivity": "moderate",
-      "admissionsImpact": "moderate",
-      "location": {
-        "city": "Gambier",
-        "state": "OH"
-      },
-      "eligibility": {
-        "grades": [
-          "9",
-          "10",
-          "11",
-          "12"
-        ],
-        "states": [
-          "all"
-        ],
-        "gpa": null,
-        "demographics": []
-      },
-      "deadline": "2026-03-01",
-      "description": "Immerse yourself in writing at Kenyon College. Study under accomplished artists and faculty. Develop technical skills, explore your creative voice, and create a portfolio piece during this intensive summer experience. Connect with fellow aspiring artists and be inspired by a community dedicated to the arts.",
-      "url": "https://www.kenyonreview.org/",
-      "tags": [
-        "arts",
-        "prestigious",
-        "writing"
-      ],
-      "duration": "3-4 weeks",
-      "region": "Northeast",
-      "advisorNote": "Arts programs strengthen applications by showing sustained commitment to your craft. Selective programs like Kenyon Review Young Writers Workshop demonstrate that your talent is recognized by professional artists."
     },
     {
       "name": "Kenyon Review Young Writers Workshop - Session 2",

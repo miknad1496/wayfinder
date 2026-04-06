@@ -22,11 +22,12 @@ import financialAidRoutes from './routes/financial-aid.js';
 import coachRoutes from './routes/essay-coach.js';
 import intelligenceRoutes from './routes/intelligence.js';
 import { ensureDirectories } from './services/storage.js';
-import { ensureUsersDir, repairCorruptedUserFiles } from './services/auth.js';
+import { ensureUsersDir, repairCorruptedUserFiles, buildTokenIndex } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
 import { startScheduler } from './services/scheduler.js';
 import { startScraperScheduler, stopScraperScheduler } from './services/scraper-scheduler.js';
 import { syncCommittedData } from './services/data-sync.js';
+import { runDataHealthCheck } from './services/data-integrity.js';
 import { restoreFromBackup, startUserBackup, stopUserBackup } from './services/user-backup.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -239,6 +240,7 @@ async function start() {
   await ensureInvitesDir();
   await restoreFromBackup();
   await repairCorruptedUserFiles();
+  await buildTokenIndex();
   app.listen(PORT, async () => {
     console.log(`\n🧭 Wayfinder API running on http://localhost:${PORT}`);
     console.log(`   Model: ${process.env.CLAUDE_MODEL || 'claude-sonnet-4-6'}`);
@@ -247,6 +249,9 @@ async function start() {
     // Sync committed data files to persistent disk (fixes Render mount issue)
     // Must run BEFORE scrapers — completely non-fatal
     try { await syncCommittedData(); } catch (e) { console.error('[Data Sync] Error (non-fatal):', e.message); }
+
+    // Data health check — logs warnings if duplicates or invalid entries found
+    try { await runDataHealthCheck(); } catch (e) { console.error('[Data Health] Error (non-fatal):', e.message); }
 
     // Start reminder scheduler in production
     if (process.env.NODE_ENV === 'production') {

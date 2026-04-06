@@ -2716,12 +2716,26 @@ export async function scrapeInternships() {
   try {
     log(SCRAPER_NAME, 'Starting internships data scraper...', 'progress');
 
-    // Deduplicate by company + title + state
-    const deduplicated = deduplicateByKey(INTERNSHIPS_DATA, (item) => {
-      return `${item.company.toLowerCase()}_${item.title.toLowerCase()}_${item.location.state}`;
-    });
+    // Deduplicate + validate through the central data-integrity module
+    const { validateAndDedup } = await import('../../services/data-integrity.js');
 
-    log(SCRAPER_NAME, `Curated ${deduplicated.length} unique internship programs`, 'progress');
+    // Also load existing data to preserve verified entries that aren't in the scraper
+    let existingVerified = [];
+    try {
+      const { promises: fsPromises } = await import('fs');
+      const { join: joinPath, dirname: dirnamePath } = await import('path');
+      const { fileURLToPath: fileURL } = await import('url');
+      const existingPath = joinPath(dirnamePath(fileURL(import.meta.url)), '..', '..', 'data', 'scraped', 'internships.json');
+      const existing = JSON.parse(await fsPromises.readFile(existingPath, 'utf-8'));
+      existingVerified = (existing.internships || []).filter(e => e._verified);
+      log(SCRAPER_NAME, `Preserving ${existingVerified.length} verified entries from existing data`, 'progress');
+    } catch { /* File might not exist yet */ }
+
+    // Verified entries first so they win dedup conflicts
+    const allEntries = [...existingVerified, ...INTERNSHIPS_DATA];
+    const { clean: deduplicated, stats } = validateAndDedup('internships', allEntries);
+
+    log(SCRAPER_NAME, `Curated ${deduplicated.length} unique internship programs (${stats.duplicatesRemoved} dupes removed, ${stats.verified} verified preserved)`, 'progress');
 
     // Build metadata
     const metadata = {

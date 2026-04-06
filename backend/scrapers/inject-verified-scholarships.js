@@ -1571,30 +1571,28 @@ async function main() {
   const raw = await fs.readFile(SCHOLARSHIPS_PATH, 'utf8');
   const data = JSON.parse(raw);
 
-  const existingNames = new Set(data.scholarships.map(s => s.name?.toLowerCase().trim()));
-  let injected = 0;
-  let updated = 0;
+  // Use data-integrity module for dedup + validation (verified always wins)
+  const { validateAndDedup } = await import('../services/data-integrity.js');
+  const allEntries = [...verifiedScholarships, ...(data.scholarships || [])];
+  const { clean, removed, warnings, stats } = validateAndDedup('scholarships', allEntries);
 
-  for (const schol of verifiedScholarships) {
-    const key = schol.name.toLowerCase().trim();
-    if (existingNames.has(key)) {
-      // Replace the existing entry with verified data
-      const idx = data.scholarships.findIndex(s => s.name?.toLowerCase().trim() === key);
-      if (idx !== -1) {
-        data.scholarships[idx] = schol;
-        updated++;
-      }
-    } else {
-      data.scholarships.push(schol);
-      existingNames.add(key);
-      injected++;
-    }
+  console.log(`\n📊 Data Integrity Report:`);
+  console.log(`  Input: ${stats.input} | Output: ${stats.output}`);
+  console.log(`  Duplicates removed: ${stats.duplicatesRemoved}`);
+  console.log(`  Invalid removed: ${stats.invalidRemoved}`);
+  console.log(`  Verified: ${stats.verified} | Non-verified: ${stats.nonVerified}`);
+  if (warnings.length > 0) {
+    console.log(`\n⚠️  Warnings (${warnings.length}):`);
+    warnings.slice(0, 10).forEach(w => console.log(`  ${w}`));
+    if (warnings.length > 10) console.log(`  ... and ${warnings.length - 10} more`);
   }
+
+  data.scholarships = clean;
 
   // Update metadata
   data.metadata = data.metadata || {};
   data.metadata._verified = "partial";
-  data.metadata._verificationNotes = `${injected} new verified scholarships injected, ${updated} existing entries replaced with verified data on 2026-04-04. Each verified entry has _source URL. Remaining entries may have template descriptions.`;
+  data.metadata._verificationNotes = `Data integrity enforced on ${new Date().toISOString().slice(0, 10)}. ${stats.verified} verified, ${stats.nonVerified} non-verified, ${stats.duplicatesRemoved} dupes removed.`;
   data.metadata.lastUpdated = new Date().toISOString();
 
   await fs.writeFile(SCHOLARSHIPS_PATH, JSON.stringify(data, null, 2));

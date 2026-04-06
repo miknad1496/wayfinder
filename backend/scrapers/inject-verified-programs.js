@@ -1557,22 +1557,28 @@ async function main() {
   const raw = await fs.readFile(PROGRAMS_PATH, 'utf8');
   const data = JSON.parse(raw);
 
-  const existingNames = new Set(data.programs.map(p => `${p.name}||${p.provider}`));
-  let injected = 0;
+  // Use data-integrity module for dedup + validation (verified always wins)
+  const { validateAndDedup } = await import('../services/data-integrity.js');
+  const allEntries = [...verifiedPrograms, ...(data.programs || [])];
+  const { clean, removed, warnings, stats } = validateAndDedup('programs', allEntries);
 
-  for (const prog of verifiedPrograms) {
-    const key = `${prog.name}||${prog.provider}`;
-    if (!existingNames.has(key)) {
-      data.programs.push(prog);
-      existingNames.add(key);
-      injected++;
-    }
+  console.log(`\n📊 Data Integrity Report:`);
+  console.log(`  Input: ${stats.input} | Output: ${stats.output}`);
+  console.log(`  Duplicates removed: ${stats.duplicatesRemoved}`);
+  console.log(`  Invalid removed: ${stats.invalidRemoved}`);
+  console.log(`  Verified: ${stats.verified} | Non-verified: ${stats.nonVerified}`);
+  if (warnings.length > 0) {
+    console.log(`\n⚠️  Warnings (${warnings.length}):`);
+    warnings.slice(0, 10).forEach(w => console.log(`  ${w}`));
+    if (warnings.length > 10) console.log(`  ... and ${warnings.length - 10} more`);
   }
+
+  data.programs = clean;
 
   // Update metadata
   data.metadata = data.metadata || {};
   data.metadata._verified = "partial";
-  data.metadata._verificationNotes = `${injected} verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing ${data.programs.length - injected} programs are unverified and may contain template descriptions.`;
+  data.metadata._verificationNotes = `Data integrity enforced on ${new Date().toISOString().slice(0, 10)}. ${stats.verified} verified, ${stats.nonVerified} non-verified, ${stats.duplicatesRemoved} dupes removed.`;
   data.metadata.lastUpdated = new Date().toISOString();
 
   await fs.writeFile(PROGRAMS_PATH, JSON.stringify(data, null, 2));
