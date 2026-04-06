@@ -2188,7 +2188,7 @@ async function loadSchoolDemographics(unitId) {
     const data = await res.json();
 
     if (data.error) {
-      contentEl.innerHTML = `<div class="demographics-empty-state"><p>${data.error}</p></div>`;
+      contentEl.innerHTML = `<div class="demographics-empty-state"><p>${escapeHtml(data.error)}</p></div>`;
       return;
     }
 

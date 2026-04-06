@@ -117,15 +117,6 @@
         "applicationHack": "If you're a Semifinalist, your biggest task is confirming as a Finalist — don't blow the application. Write the essay thoughtfully, get your school counselor to submit on time, and maintain your test score consistency with the SAT confirmation score.",
         "competitiveEdge": "Strategic school list: if cost is a factor, include 2-3 schools that offer guaranteed full tuition for NMF status. These are typically large state schools with strong honors programs."
       },
-      "Posse Foundation": {
-        "tags": [
-          "full-ride",
-          "leadership"
-        ],
-        "insiderTip": "Posse is nomination-based — you can't directly apply. It works through high school partnerships. If your school is a Posse partner, talk to your counselor about being nominated. If not, check if any community organizations in your area (Boys & Girls Club, community colleges, nonprofits) are Posse nominators.",
-        "applicationHack": "The Dynamic Assessment Process (DAP) is unlike any other scholarship interview. It's a group exercise where you collaborate with other nominees. They're evaluating your teamwork, communication, and ability to lift others up — not just your individual brilliance. Practice group discussions beforehand.",
-        "competitiveEdge": "Posse sends students in cohorts of 10 to each partner school. You get a built-in support network on campus. This is a massive advantage for first-gen students — the college retention rate for Posse Scholars is 90%."
-      },
       "Thiel Fellowship": {
         "tags": [
           "entrepreneurship",
@@ -135,7 +126,16 @@
         "applicationHack": "Thiel wants evidence of building, not just ideas. Previous winners had working prototypes, revenue, published research, or open-source projects with active communities before they applied.",
         "competitiveEdge": "The $200K doesn't need to be repaid and there's no equity stake. Plus the Thiel network (alumni include Vitalik Buterin, Laura Deming, Austin Russell) gives you access to Silicon Valley's inner circle. Even being a finalist without winning puts you on the radar of major VCs."
       },
-      "Washington State Opportunity Scholarship": {
+      "Posse Foundation Scholarship": {
+        "tags": [
+          "full-ride",
+          "leadership"
+        ],
+        "insiderTip": "Posse is nomination-based — you can't directly apply. It works through high school partnerships. If your school is a Posse partner, talk to your counselor about being nominated. If not, check if any community organizations in your area (Boys & Girls Club, community colleges, nonprofits) are Posse nominators.",
+        "applicationHack": "The Dynamic Assessment Process (DAP) is unlike any other scholarship interview. It's a group exercise where you collaborate with other nominees. They're evaluating your teamwork, communication, and ability to lift others up — not just your individual brilliance. Practice group discussions beforehand.",
+        "competitiveEdge": "Posse sends students in cohorts of 10 to each partner school. You get a built-in support network on campus. This is a massive advantage for first-gen students — the college retention rate for Posse Scholars is 90%."
+      },
+      "Washington State Opportunity Scholarship (WSOS) — Baccalaureate": {
         "tags": [
           "stem",
           "state",
@@ -203,16 +203,6 @@
       "localFirst": "Your highest-probability internships are local. A professor at your state university, a lab at your nearest research hospital, a nonprofit in your community. National programs are great to apply to, but local connections are where most students actually land meaningful experience."
     },
     "itemIntel": {
-      "Fred Hutchinson Cancer Center SHIP": {
-        "tags": [
-          "research",
-          "paid",
-          "prestigious"
-        ],
-        "insiderTip": "SHIP is one of the most prestigious high school research programs in the Pacific Northwest. It's heavily lab-based — you'll work alongside actual researchers. The application emphasizes genuine scientific curiosity over credentials. A student with a 3.5 GPA who wrote a compelling essay about why they want to study immunology can beat a 4.0 student with a generic 'I love science' essay.",
-        "applicationHack": "In your application, name a specific research area at Fred Hutch that excites you. Browse their lab pages (fredhutch.org/research) and mention a PI whose work aligns with your interests. This shows initiative that most applicants don't demonstrate.",
-        "competitiveEdge": "SHIP alumni have a strong track record at top-20 schools. The recommendation letter from your SHIP mentor carries significant weight — treat the relationship seriously."
-      },
       "Microsoft Discovery Program": {
         "tags": [
           "tech",
@@ -223,7 +213,17 @@
         "applicationHack": "Connection to a Microsoft-sponsored program (TEALS, DigiPen, local STEM partnership) significantly increases your chances. If you're in the Seattle area, participate in Microsoft-affiliated events before applying.",
         "competitiveEdge": "The paid nature ($26/hr) makes this one of the best-compensated high school tech experiences in the country. It's a genuine resume item for future tech internships in college."
       },
-      "Brookhaven National Laboratory HSRP": {
+      "Summer High School Internship Program (SHIP)": {
+        "tags": [
+          "research",
+          "paid",
+          "prestigious"
+        ],
+        "insiderTip": "SHIP is one of the most prestigious high school research programs in the Pacific Northwest. It's heavily lab-based — you'll work alongside actual researchers. The application emphasizes genuine scientific curiosity over credentials. A student with a 3.5 GPA who wrote a compelling essay about why they want to study immunology can beat a 4.0 student with a generic 'I love science' essay.",
+        "applicationHack": "In your application, name a specific research area at Fred Hutch that excites you. Browse their lab pages (fredhutch.org/research) and mention a PI whose work aligns with your interests. This shows initiative that most applicants don't demonstrate.",
+        "competitiveEdge": "SHIP alumni have a strong track record at top-20 schools. The recommendation letter from your SHIP mentor carries significant weight — treat the relationship seriously."
+      },
+      "Brookhaven National Laboratory Internship": {
         "tags": [
           "research",
           "government",
@@ -232,7 +232,7 @@
         "insiderTip": "Brookhaven's High School Research Program is a DOE facility — the prestige is on par with NASA internships. You'll work on real research problems with national lab scientists. The application emphasizes academic readiness and a clear statement of research interest.",
         "applicationHack": "In your statement, connect your interest to one of Brookhaven's research divisions (nuclear physics, energy sciences, computational science). They want students who understand what the lab actually does, not generic STEM enthusiasts."
       },
-      "NASA OSTEM Internships": {
+      "NASA Internship Program (OSTEM)": {
         "tags": [
           "government",
           "STEM",
@@ -328,15 +328,6 @@
       "documentEverything": "Every program you attend should produce a tangible artifact: a project, a paper, a recording, a portfolio piece, a presentation, a photo journal. These artifacts become evidence for your application and essay content."
     },
     "itemIntel": {
-      "Johns Hopkins CTY On-Campus": {
-        "tags": [
-          "prestigious-academic",
-          "residential"
-        ],
-        "insiderTip": "CTY is the original 'gifted summer program' and still carries significant weight with AOs. The on-campus residential experience is where the real value lies — the intellectual community is as valuable as the coursework. Students come back saying 'I finally found my people.'",
-        "applicationHack": "CTY requires qualifying test scores (SAT, ACT, or School and College Ability Test). Take the qualifying test in fall/winter to apply for summer. Financial aid covers up to full tuition — 25% of students receive aid.",
-        "competitiveEdge": "The specific course you choose matters. Intensive math or science courses (Number Theory, Cryptology, Data Science) signal intellectual depth more than survey courses."
-      },
       "Stanford Pre-Collegiate Summer Institutes": {
         "tags": [
           "prestigious-academic",
@@ -354,25 +345,6 @@
         "insiderTip": "Girls Who Code Pathways is free and virtual — there's zero barrier to entry. That means the program name alone won't differentiate you. The value is in what you BUILD during the 7 weeks. Use the program as a launchpad for a portfolio project you can showcase on GitHub and reference in your application.",
         "applicationHack": "No competitive application — you just sign up. The differentiation comes from self-motivation: students who treat it like a 'class to attend' get nothing. Students who use it to build something real get a portfolio piece and a story for their application."
       },
-      "LaunchX Online Entrepreneurship": {
-        "tags": [
-          "entrepreneurship",
-          "selective"
-        ],
-        "insiderTip": "LaunchX is MIT-founded and genuinely competitive — they're looking for students with entrepreneurial instincts, not just business interest. Previous founders, students who've already started small projects or side hustles, have an advantage.",
-        "applicationHack": "In your application, show evidence of DOING, not just thinking. Have you sold something? Built something? Organized something? Even a small lemonade stand or Etsy shop counts more than a business plan with no execution.",
-        "competitiveEdge": "The LaunchX deliverable is a working venture with customer feedback. If your team builds something with real users or revenue, that's one of the strongest extracurricular signals possible."
-      },
-      "Washington Aerospace Scholars": {
-        "tags": [
-          "stem-enrichment",
-          "free",
-          "state"
-        ],
-        "insiderTip": "WAS is a hidden gem for WA state juniors. It's free, NASA-affiliated, and earns 5 UW college credits. The program has an online phase (6 months) followed by a 6-day residential at Museum of Flight. Completion rate matters — the online phase weeds out students who don't sustain engagement.",
-        "applicationHack": "To qualify, you need to be a WA state junior interested in STEM. The application opens in fall — apply early. The online phase requires sustained effort over months, so treat it like a real course, not a side activity.",
-        "competitiveEdge": "WAS alumni get a NASA connection on their resume, UW credits, and a cohort of motivated STEM peers in WA state. For in-state applications (UW, WSU, WWU), this carries significant weight."
-      },
       "Interlochen Arts Camp": {
         "tags": [
           "arts-programs",
@@ -381,6 +353,34 @@
         "insiderTip": "Interlochen is the gold standard for pre-college arts experiences. It's not just about the instruction — it's about being immersed in a community of young artists for 1-6 weeks. Students consistently describe it as transformative. If your child is serious about arts, this is the program.",
         "applicationHack": "85% of financial aid applicants receive support. Don't let the sticker price ($2,050-$10,350) discourage you — apply for aid. The audition/portfolio is what matters for admission, not ability to pay.",
         "competitiveEdge": "For students applying to arts-focused programs or schools with strong arts programs (RISD, Juilliard, Berklee, Oberlin), Interlochen on the resume is a major credential."
+      },
+      "Johns Hopkins Center for Talented Youth (CTY) On-Campus": {
+        "tags": [
+          "prestigious-academic",
+          "residential"
+        ],
+        "insiderTip": "CTY is the original 'gifted summer program' and still carries significant weight with AOs. The on-campus residential experience is where the real value lies — the intellectual community is as valuable as the coursework. Students come back saying 'I finally found my people.'",
+        "applicationHack": "CTY requires qualifying test scores (SAT, ACT, or School and College Ability Test). Take the qualifying test in fall/winter to apply for summer. Financial aid covers up to full tuition — 25% of students receive aid.",
+        "competitiveEdge": "The specific course you choose matters. Intensive math or science courses (Number Theory, Cryptology, Data Science) signal intellectual depth more than survey courses."
+      },
+      "LaunchX Online Entrepreneurship Program": {
+        "tags": [
+          "entrepreneurship",
+          "selective"
+        ],
+        "insiderTip": "LaunchX is MIT-founded and genuinely competitive — they're looking for students with entrepreneurial instincts, not just business interest. Previous founders, students who've already started small projects or side hustles, have an advantage.",
+        "applicationHack": "In your application, show evidence of DOING, not just thinking. Have you sold something? Built something? Organized something? Even a small lemonade stand or Etsy shop counts more than a business plan with no execution.",
+        "competitiveEdge": "The LaunchX deliverable is a working venture with customer feedback. If your team builds something with real users or revenue, that's one of the strongest extracurricular signals possible."
+      },
+      "Washington Aerospace Scholars (WAS)": {
+        "tags": [
+          "stem-enrichment",
+          "free",
+          "state"
+        ],
+        "insiderTip": "WAS is a hidden gem for WA state juniors. It's free, NASA-affiliated, and earns 5 UW college credits. The program has an online phase (6 months) followed by a 6-day residential at Museum of Flight. Completion rate matters — the online phase weeds out students who don't sustain engagement.",
+        "applicationHack": "To qualify, you need to be a WA state junior interested in STEM. The application opens in fall — apply early. The online phase requires sustained effort over months, so treat it like a real course, not a side activity.",
+        "competitiveEdge": "WAS alumni get a NASA connection on their resume, UW credits, and a cohort of motivated STEM peers in WA state. For in-state applications (UW, WSU, WWU), this carries significant weight."
       }
     }
   },

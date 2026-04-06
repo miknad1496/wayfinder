@@ -25,6 +25,93 @@ const TOKEN_TTL_DAYS = 30; // Tokens expire after 30 days
 const MAX_LOGIN_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 
+// ─── Token Index ─────────────────────────────────────────────────
+// In-memory Map<token, filename> for O(1) auth lookups.
+// Without this, every verifyToken/logoutUser/etc call does an O(n)
+// readdir + read-all-files scan. With 100+ users, this means 100+
+// file reads on EVERY authenticated API request.
+//
+// Built once at startup via buildTokenIndex(), then maintained by
+// createUser(), loginUser(), and logoutUser().
+const tokenIndex = new Map();
+
+/**
+ * Build the token → filename index by scanning all user files once.
+ * Call this at startup AFTER repairCorruptedUserFiles().
+ */
+export async function buildTokenIndex() {
+  await ensureUsersDir();
+  tokenIndex.clear();
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      try {
+        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+        const user = JSON.parse(raw);
+        if (user.token) {
+          tokenIndex.set(user.token, file);
+        }
+      } catch {
+        // Skip unreadable files — already handled by repairCorruptedUserFiles
+      }
+    }
+    console.log(`[Auth] Token index built: ${tokenIndex.size} active tokens`);
+  } catch (err) {
+    console.error('[Auth] Failed to build token index:', err.message);
+  }
+}
+
+/**
+ * Resolve a token to a {user, filePath, filename} object using the index.
+ * Falls back to full directory scan on index miss, then updates the index.
+ * Returns null if the token is invalid or expired.
+ *
+ * This is the core helper that all token-based lookups should use.
+ */
+async function resolveUserByToken(token) {
+  if (!token) return null;
+
+  // Fast path: O(1) index lookup
+  const cachedFile = tokenIndex.get(token);
+  if (cachedFile) {
+    const filePath = join(USERS_DIR, cachedFile);
+    try {
+      const raw = await fs.readFile(filePath, 'utf-8');
+      const user = JSON.parse(raw);
+      if (user.token === token) {
+        return { user, filePath, filename: cachedFile };
+      }
+      // Token changed (e.g., user re-logged in) — stale index entry
+      tokenIndex.delete(token);
+    } catch {
+      // File unreadable or deleted — remove stale entry
+      tokenIndex.delete(token);
+    }
+  }
+
+  // Slow path: full scan (cold start, index miss, stale entry)
+  try {
+    const files = await fs.readdir(USERS_DIR);
+    for (const file of files.filter(f => f.endsWith('.json'))) {
+      try {
+        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
+        const user = JSON.parse(raw);
+        if (user.token === token) {
+          // Populate index for next time
+          tokenIndex.set(token, file);
+          return { user, filePath: join(USERS_DIR, file), filename: file };
+        }
+      } catch {
+        continue;
+      }
+    }
+  } catch (err) {
+    console.error('[Auth] resolveUserByToken scan error:', err.message);
+  }
+
+  return null;
+}
+
 // ─── Plan Configuration ──────────────────────────────────────────
 // Internal plan keys: free / pro / elite
 // Display names: Career Explorer / Coach ($25/mo) / Consultant ($50/mo)
@@ -251,11 +338,11 @@ async function atomicWriteJSON(filePath, data) {
 }
 
 function isTokenExpired(tokenCreatedAt) {
-  // If tokenCreatedAt is missing (legacy user), treat as NOT expired
-  // — the token will be backfilled on next verifyToken call
-  if (!tokenCreatedAt) return false;
+  // Missing or invalid timestamps are treated as expired for security.
+  // Legacy users will need to re-login, which backfills the timestamp.
+  if (!tokenCreatedAt) return true;
   const created = new Date(tokenCreatedAt).getTime();
-  if (isNaN(created)) return false; // malformed date — don't lock out user
+  if (isNaN(created)) return true;
   const now = Date.now();
   const ttlMs = TOKEN_TTL_DAYS * 24 * 60 * 60 * 1000;
   return (now - created) > ttlMs;
@@ -371,6 +458,10 @@ export async function createUser({ email, password, name, userType, school, inte
 
   await atomicWriteJSON(userFile, user);
 
+  // Update token index for O(1) lookups
+  const filename = userFile.split('/').pop() || userFile.split('\\').pop();
+  tokenIndex.set(token, filename);
+
   return {
     success: true,
     user: sanitizeUser(user),
@@ -461,11 +552,17 @@ export async function loginUser(email, password) {
   user.lastFailedLoginAt = null;
 
   // Generate new token with expiration tracking
+  const oldToken = user.token;
   const now = new Date().toISOString();
   user.token = generateToken();
   user.tokenCreatedAt = now;
   user.lastLogin = now;
   await atomicWriteJSON(userFile, user);
+
+  // Update token index: remove old token, add new one
+  if (oldToken) tokenIndex.delete(oldToken);
+  const filename = userFile.split('/').pop() || userFile.split('\\').pop();
+  tokenIndex.set(user.token, filename);
 
   return {
     success: true,
@@ -555,23 +652,16 @@ export async function logoutUser(token) {
   if (!token) return { error: 'No token provided' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const filePath = join(USERS_DIR, file);
-      let user;
-      try {
-        const raw = await fs.readFile(filePath, 'utf-8');
-        user = JSON.parse(raw);
-      } catch { continue; }
-      if (user.token === token) {
-        // Invalidate token by setting it to null
-        user.token = null;
-        user.tokenCreatedAt = null;
-        await atomicWriteJSON(filePath, user);
-        return { success: true };
-      }
-    }
-    return { error: 'User not found' };
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
+
+    const { user, filePath } = resolved;
+    // Invalidate token by setting it to null
+    user.token = null;
+    user.tokenCreatedAt = null;
+    tokenIndex.delete(token);
+    await atomicWriteJSON(filePath, user);
+    return { success: true };
   } catch (err) {
     return { error: 'Failed to log out' };
   }
@@ -579,46 +669,29 @@ export async function logoutUser(token) {
 
 /**
  * Verify a token and return the user.
+ * Uses token index for O(1) lookup instead of scanning all user files.
  */
 export async function verifyToken(token) {
   if (!token) return null;
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      let user;
-      try {
-        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-        user = JSON.parse(raw);
-      } catch (parseErr) {
-        // Skip corrupted user files — don't let one bad file break ALL auth
-        console.error(`[Auth] Corrupted user file ${file}: ${parseErr.message}`);
-        continue;
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return null;
 
-      if (user.token === token) {
-        // Check token expiration
-        if (isTokenExpired(user.tokenCreatedAt)) {
-          console.log(`[Auth] Token expired for ${user.email} — must re-login`);
-          return null;
-        }
+    const { user, filePath } = resolved;
 
-        // Backfill tokenCreatedAt for legacy users missing the field
-        if (!user.tokenCreatedAt) {
-          user.tokenCreatedAt = new Date().toISOString();
-          await atomicWriteJSON(join(USERS_DIR, file), user);
-          console.log(`[Auth] Backfilled tokenCreatedAt for legacy user ${user.email}`);
-        }
-
-        return sanitizeUser(user);
-      }
+    // Check token expiration
+    if (isTokenExpired(user.tokenCreatedAt)) {
+      console.log(`[Auth] Token expired for ${user.email} — must re-login`);
+      tokenIndex.delete(token);
+      return null;
     }
+
+    return sanitizeUser(user);
   } catch (err) {
     console.error('[Auth] verifyToken error:', err.message);
     return null;
   }
-
-  return null;
 }
 
 /**
@@ -910,6 +983,7 @@ export async function searchUserChats(token, query) {
 
 /**
  * Increment engine usage for today. Returns false if limit reached.
+ * Uses token index for O(1) lookup.
  */
 export async function useEngine(token) {
   if (!token) return { allowed: false, remaining: 0 };
@@ -917,36 +991,32 @@ export async function useEngine(token) {
   const today = new Date().toISOString().slice(0, 10);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        const limits = getPlanLimits(user.plan || 'free');
-        // Reset if new day
-        if (user.engineLastReset !== today) {
-          user.engineUsesToday = 0;
-          user.engineLastReset = today;
-        }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: false, remaining: 0, max: 3 };
 
-        if ((user.engineUsesToday || 0) >= limits.enginePerDay) {
-          return { allowed: false, remaining: 0, max: limits.enginePerDay };
-        }
-
-        user.engineUsesToday = (user.engineUsesToday || 0) + 1;
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-
-        return {
-          allowed: true,
-          remaining: limits.enginePerDay - user.engineUsesToday,
-          max: limits.enginePerDay
-        };
-      }
+    const { user, filePath } = resolved;
+    const limits = getPlanLimits(user.plan || 'free');
+    // Reset if new day
+    if (user.engineLastReset !== today) {
+      user.engineUsesToday = 0;
+      user.engineLastReset = today;
     }
+
+    if ((user.engineUsesToday || 0) >= limits.enginePerDay) {
+      return { allowed: false, remaining: 0, max: limits.enginePerDay };
+    }
+
+    user.engineUsesToday = (user.engineUsesToday || 0) + 1;
+    await atomicWriteJSON(filePath, user);
+
+    return {
+      allowed: true,
+      remaining: limits.enginePerDay - user.engineUsesToday,
+      max: limits.enginePerDay
+    };
   } catch {
     return { allowed: false, remaining: 0, max: 3 };
   }
-  return { allowed: false, remaining: 0, max: 3 };
 }
 
 /**
@@ -965,6 +1035,7 @@ function getMonthlyTokenLimit(plan) {
 
 /**
  * Check daily + monthly token usage. Returns { allowed, tokensUsed, tokensRemaining, limit, monthly }.
+ * Uses token index for O(1) lookup.
  */
 export async function checkTokenUsage(token) {
   if (!token) return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
@@ -973,61 +1044,58 @@ export async function checkTokenUsage(token) {
   const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        let dirty = false;
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
 
-        // Daily reset
-        if (user.tokenLastReset !== today) {
-          user.tokensUsedToday = 0;
-          user.tokenLastReset = today;
-          dirty = true;
-        }
+    const { user, filePath } = resolved;
+    let dirty = false;
 
-        // Monthly reset
-        if (user.tokenMonthReset !== thisMonth) {
-          user.tokensUsedMonth = 0;
-          user.tokenMonthReset = thisMonth;
-          dirty = true;
-        }
-
-        if (dirty) {
-          await atomicWriteJSON(join(USERS_DIR, file), user);
-        }
-
-        const dailyLimit = getDailyTokenLimit(user.plan || 'free');
-        const monthlyLimit = getMonthlyTokenLimit(user.plan || 'free');
-        const dailyUsed = user.tokensUsedToday || 0;
-        const monthlyUsed = user.tokensUsedMonth || 0;
-
-        // Check both daily and monthly limits
-        const dailyOk = dailyUsed < dailyLimit;
-        const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
-
-        return {
-          allowed: dailyOk && monthlyOk,
-          tokensUsed: dailyUsed,
-          tokensRemaining: Math.max(0, dailyLimit - dailyUsed),
-          limit: dailyLimit,
-          monthly: monthlyLimit ? {
-            used: monthlyUsed,
-            limit: monthlyLimit,
-            remaining: Math.max(0, monthlyLimit - monthlyUsed)
-          } : null
-        };
-      }
+    // Daily reset
+    if (user.tokenLastReset !== today) {
+      user.tokensUsedToday = 0;
+      user.tokenLastReset = today;
+      dirty = true;
     }
+
+    // Monthly reset
+    if (user.tokenMonthReset !== thisMonth) {
+      user.tokensUsedMonth = 0;
+      user.tokenMonthReset = thisMonth;
+      dirty = true;
+    }
+
+    if (dirty) {
+      await atomicWriteJSON(filePath, user);
+    }
+
+    const dailyLimit = getDailyTokenLimit(user.plan || 'free');
+    const monthlyLimit = getMonthlyTokenLimit(user.plan || 'free');
+    const dailyUsed = user.tokensUsedToday || 0;
+    const monthlyUsed = user.tokensUsedMonth || 0;
+
+    // Check both daily and monthly limits
+    const dailyOk = dailyUsed < dailyLimit;
+    const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
+
+    return {
+      allowed: dailyOk && monthlyOk,
+      tokensUsed: dailyUsed,
+      tokensRemaining: Math.max(0, dailyLimit - dailyUsed),
+      limit: dailyLimit,
+      monthly: monthlyLimit ? {
+        used: monthlyUsed,
+        limit: monthlyLimit,
+        remaining: Math.max(0, monthlyLimit - monthlyUsed)
+      } : null
+    };
   } catch {
     return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
   }
-  return { allowed: true, tokensUsed: 0, tokensRemaining: 50000, limit: 50000 };
 }
 
 /**
  * Record token usage for today.
+ * Uses token index for O(1) lookup.
  */
 export async function recordTokenUsage(token, tokensUsed) {
   if (!token || !tokensUsed) return;
@@ -1036,27 +1104,23 @@ export async function recordTokenUsage(token, tokensUsed) {
   const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Daily reset
-        if (user.tokenLastReset !== today) {
-          user.tokensUsedToday = 0;
-          user.tokenLastReset = today;
-        }
-        // Monthly reset
-        if (user.tokenMonthReset !== thisMonth) {
-          user.tokensUsedMonth = 0;
-          user.tokenMonthReset = thisMonth;
-        }
-        user.tokensUsedToday = (user.tokensUsedToday || 0) + tokensUsed;
-        user.tokensUsedMonth = (user.tokensUsedMonth || 0) + tokensUsed;
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return;
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return;
+
+    const { user, filePath } = resolved;
+    // Daily reset
+    if (user.tokenLastReset !== today) {
+      user.tokensUsedToday = 0;
+      user.tokenLastReset = today;
     }
+    // Monthly reset
+    if (user.tokenMonthReset !== thisMonth) {
+      user.tokensUsedMonth = 0;
+      user.tokenMonthReset = thisMonth;
+    }
+    user.tokensUsedToday = (user.tokensUsedToday || 0) + tokensUsed;
+    user.tokensUsedMonth = (user.tokensUsedMonth || 0) + tokensUsed;
+    await atomicWriteJSON(filePath, user);
   } catch {
     // Non-critical
   }
@@ -1068,6 +1132,7 @@ export async function recordTokenUsage(token, tokensUsed) {
 
 /**
  * Check daily + monthly message usage. Returns { allowed, daily, monthly, upgradeReason }.
+ * Uses token index for O(1) lookup.
  */
 export async function checkMessageUsage(token) {
   if (!token) return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
@@ -1076,70 +1141,67 @@ export async function checkMessageUsage(token) {
   const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        let dirty = false;
-        const admin = isAdmin(user.email);
-        const vip = isVIP(user.email);
-        const plan = vip ? 'elite' : (user.plan === 'premium' ? 'pro' : (user.plan || 'free'));
-        const limits = (admin || vip) ? getPlanLimits('elite') : getPlanLimits(plan);
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
 
-        // Daily reset
-        if ((user.messageLastDayReset || '') !== today) {
-          user.messagesUsedToday = 0;
-          user.messageLastDayReset = today;
-          dirty = true;
-        }
-        // Monthly reset
-        if ((user.messageLastMonthReset || '') !== thisMonth) {
-          user.messagesUsedMonth = 0;
-          user.messageLastMonthReset = thisMonth;
-          dirty = true;
-        }
+    const { user, filePath } = resolved;
+    let dirty = false;
+    const admin = isAdmin(user.email);
+    const vip = isVIP(user.email);
+    const plan = vip ? 'elite' : (user.plan === 'premium' ? 'pro' : (user.plan || 'free'));
+    const limits = (admin || vip) ? getPlanLimits('elite') : getPlanLimits(plan);
 
-        if (dirty) {
-          await atomicWriteJSON(join(USERS_DIR, file), user);
-        }
-
-        const dailyUsed = user.messagesUsedToday || 0;
-        const monthlyUsed = user.messagesUsedMonth || 0;
-        const dailyLimit = limits.messagesPerDay;
-        const monthlyLimit = limits.messagesPerMonth;
-
-        const dailyOk = dailyLimit === null || dailyUsed < dailyLimit;
-        const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
-
-        let upgradeReason = null;
-        if (!dailyOk) upgradeReason = 'daily_messages';
-        else if (!monthlyOk) upgradeReason = 'monthly_messages';
-
-        return {
-          allowed: dailyOk && monthlyOk,
-          upgradeReason,
-          daily: {
-            used: dailyUsed,
-            limit: dailyLimit,
-            remaining: dailyLimit !== null ? Math.max(0, dailyLimit - dailyUsed) : null
-          },
-          monthly: {
-            used: monthlyUsed,
-            limit: monthlyLimit,
-            remaining: monthlyLimit !== null ? Math.max(0, monthlyLimit - monthlyUsed) : null
-          }
-        };
-      }
+    // Daily reset
+    if ((user.messageLastDayReset || '') !== today) {
+      user.messagesUsedToday = 0;
+      user.messageLastDayReset = today;
+      dirty = true;
     }
+    // Monthly reset
+    if ((user.messageLastMonthReset || '') !== thisMonth) {
+      user.messagesUsedMonth = 0;
+      user.messageLastMonthReset = thisMonth;
+      dirty = true;
+    }
+
+    if (dirty) {
+      await atomicWriteJSON(filePath, user);
+    }
+
+    const dailyUsed = user.messagesUsedToday || 0;
+    const monthlyUsed = user.messagesUsedMonth || 0;
+    const dailyLimit = limits.messagesPerDay;
+    const monthlyLimit = limits.messagesPerMonth;
+
+    const dailyOk = dailyLimit === null || dailyUsed < dailyLimit;
+    const monthlyOk = monthlyLimit === null || monthlyUsed < monthlyLimit;
+
+    let upgradeReason = null;
+    if (!dailyOk) upgradeReason = 'daily_messages';
+    else if (!monthlyOk) upgradeReason = 'monthly_messages';
+
+    return {
+      allowed: dailyOk && monthlyOk,
+      upgradeReason,
+      daily: {
+        used: dailyUsed,
+        limit: dailyLimit,
+        remaining: dailyLimit !== null ? Math.max(0, dailyLimit - dailyUsed) : null
+      },
+      monthly: {
+        used: monthlyUsed,
+        limit: monthlyLimit,
+        remaining: monthlyLimit !== null ? Math.max(0, monthlyLimit - monthlyUsed) : null
+      }
+    };
   } catch {
     return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
   }
-  return { allowed: true, daily: { used: 0, limit: null, remaining: null }, monthly: { used: 0, limit: null, remaining: null } };
 }
 
 /**
  * Record one message for today + this month.
+ * Uses token index for O(1) lookup.
  */
 export async function recordMessageUsage(token) {
   if (!token) return;
@@ -1148,27 +1210,23 @@ export async function recordMessageUsage(token) {
   const thisMonth = new Date().toISOString().slice(0, 7);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Daily reset
-        if ((user.messageLastDayReset || '') !== today) {
-          user.messagesUsedToday = 0;
-          user.messageLastDayReset = today;
-        }
-        // Monthly reset
-        if ((user.messageLastMonthReset || '') !== thisMonth) {
-          user.messagesUsedMonth = 0;
-          user.messageLastMonthReset = thisMonth;
-        }
-        user.messagesUsedToday = (user.messagesUsedToday || 0) + 1;
-        user.messagesUsedMonth = (user.messagesUsedMonth || 0) + 1;
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return;
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return;
+
+    const { user, filePath } = resolved;
+    // Daily reset
+    if ((user.messageLastDayReset || '') !== today) {
+      user.messagesUsedToday = 0;
+      user.messageLastDayReset = today;
     }
+    // Monthly reset
+    if ((user.messageLastMonthReset || '') !== thisMonth) {
+      user.messagesUsedMonth = 0;
+      user.messageLastMonthReset = thisMonth;
+    }
+    user.messagesUsedToday = (user.messagesUsedToday || 0) + 1;
+    user.messagesUsedMonth = (user.messagesUsedMonth || 0) + 1;
+    await atomicWriteJSON(filePath, user);
   } catch {
     // Non-critical
   }
@@ -1232,61 +1290,58 @@ export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePa
 
 /**
  * Use one essay review credit. Returns false if no credits remaining.
+ * Uses token index for O(1) lookup.
  */
 export async function useEssayCredit(token) {
   if (!token) return { allowed: false, remaining: 0 };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Admins and VIPs get unlimited credits — never deduct
-        if (isAdmin(user.email) || isVIP(user.email)) {
-          return { allowed: true, remaining: 999 };
-        }
-        const remaining = user.essayReviewsRemaining || 0;
-        if (remaining <= 0) {
-          return { allowed: false, remaining: 0 };
-        }
-        user.essayReviewsRemaining = remaining - 1;
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { allowed: true, remaining: user.essayReviewsRemaining };
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: false, remaining: 0 };
+
+    const { user, filePath } = resolved;
+
+    // Admins and VIPs get unlimited credits — never deduct
+    if (isAdmin(user.email) || isVIP(user.email)) {
+      return { allowed: true, remaining: 999 };
     }
+    const remaining = user.essayReviewsRemaining || 0;
+    if (remaining <= 0) {
+      return { allowed: false, remaining: 0 };
+    }
+    user.essayReviewsRemaining = remaining - 1;
+    await atomicWriteJSON(filePath, user);
+    return { allowed: true, remaining: user.essayReviewsRemaining };
   } catch {
     return { allowed: false, remaining: 0 };
   }
-  return { allowed: false, remaining: 0 };
 }
 
 /**
  * Refund one essay review credit. Called when a review fails or returns invalid data.
  */
+/**
+ * Refund one essay review credit. Uses token index for O(1) lookup.
+ */
 export async function refundEssayCredit(token) {
   if (!token) return { success: false, remaining: 0 };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Admins and VIPs don't need refunds (they have unlimited)
-        if (isAdmin(user.email) || isVIP(user.email)) {
-          return { success: true, remaining: 999 };
-        }
-        // Increment the credit count back
-        user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + 1;
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, remaining: user.essayReviewsRemaining };
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false, remaining: 0 };
+
+    const { user, filePath } = resolved;
+    // Admins and VIPs don't need refunds (they have unlimited)
+    if (isAdmin(user.email) || isVIP(user.email)) {
+      return { success: true, remaining: 999 };
     }
+    // Increment the credit count back
+    user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + 1;
+    await atomicWriteJSON(filePath, user);
+    return { success: true, remaining: user.essayReviewsRemaining };
   } catch (err) {
     return { success: false, remaining: 0 };
   }
-  return { success: false, remaining: 0 };
 }
 
 /**
@@ -1339,30 +1394,12 @@ export async function findUserByStripeCustomerId(customerId) {
 
 /**
  * Find a full user record by token (unsanitized, for internal use).
+ * Uses token index for O(1) lookup.
  */
 export async function findUserByToken(token) {
   if (!token) return null;
-
-  try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      let user;
-      try {
-        const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-        user = JSON.parse(raw);
-      } catch (parseErr) {
-        console.error(`[Auth] Corrupted user file ${file}: ${parseErr.message}`);
-        continue;
-      }
-      if (user.token === token) {
-        return user; // Returns full user
-      }
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
+  const resolved = await resolveUserByToken(token);
+  return resolved ? resolved.user : null;
 }
 
 // Remove sensitive fields before sending to client

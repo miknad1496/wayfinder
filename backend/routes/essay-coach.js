@@ -350,12 +350,36 @@ router.post('/chat', async (req, res) => {
       return res.status(401).json({ error: 'Please log in to chat with David.' });
     }
 
-    const { message, history, toolContext } = req.body;
+    const { message, history, toolContext: rawToolContext } = req.body;
     if (!message || typeof message !== 'string' || message.trim().length < 2) {
       return res.status(400).json({ error: 'Please type a message.' });
     }
     if (message.length > 2000) {
       return res.status(400).json({ error: 'Message too long. Keep it under 2000 characters.' });
+    }
+
+    // Sanitize toolContext — only allow known fields with string/number values
+    // Prevents client from injecting arbitrary content into system prompt
+    const ALLOWED_CTX_FIELDS = new Set([
+      'activeTool', 'activeTab', 'saiScore', 'pellStatus', 'userIncome', 'userAssets',
+      'familySize', 'filingStatus', 'saiMode', 'schoolSearchState', 'schoolResultCount',
+      'essayType', 'essaySchool', 'essayScore', 'essayWordCount', 'activeFilters',
+    ]);
+    let toolContext = null;
+    if (rawToolContext && typeof rawToolContext === 'object' && !Array.isArray(rawToolContext)) {
+      toolContext = {};
+      for (const [k, v] of Object.entries(rawToolContext)) {
+        if (ALLOWED_CTX_FIELDS.has(k) && (typeof v === 'string' || typeof v === 'number')) {
+          toolContext[k] = typeof v === 'string' ? v.slice(0, 200) : v; // Cap string length
+        }
+      }
+      // sessionBreadcrumbs: array of short strings
+      if (Array.isArray(rawToolContext.sessionBreadcrumbs)) {
+        toolContext.sessionBreadcrumbs = rawToolContext.sessionBreadcrumbs
+          .filter(s => typeof s === 'string')
+          .slice(-10) // Max 10 breadcrumbs
+          .map(s => s.slice(0, 100)); // Cap each to 100 chars
+      }
     }
 
     // Load knowledge and build system prompt
