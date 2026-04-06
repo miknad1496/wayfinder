@@ -1,9 +1,35 @@
 import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
 import { createUser, loginUser, logoutUser, verifyToken, updateProfile, getUserSessions, getEngineUsage, deleteUser, updateSettings, getUserChatHistory, searchUserChats, checkTokenUsage, isAdmin, setUserPlan, requestPasswordReset, resetPassword } from '../services/auth.js';
 import { validateInvite, redeemInvite } from '../services/invites.js';
 import { sendPasswordResetEmail } from '../services/email.js';
 
 const router = Router();
+
+// ─── Rate limiters for auth-sensitive endpoints ──────────────────
+const forgotPasswordLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5,                    // 5 requests per 15 min per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many reset requests. Please try again in 15 minutes.' }
+});
+
+const resetPasswordLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10,                   // 10 attempts per 15 min per IP (tight — 6-digit code is brute-forceable)
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many reset attempts. Please try again in 15 minutes.' }
+});
+
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,                   // 20 login attempts per 15 min per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many login attempts. Please try again in 15 minutes.' }
+});
 
 // POST /api/auth/signup — invite code always required
 router.post('/signup', async (req, res) => {
@@ -57,7 +83,7 @@ router.post('/signup', async (req, res) => {
 });
 
 // POST /api/auth/login
-router.post('/login', async (req, res) => {
+router.post('/login', loginLimiter, async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -82,7 +108,7 @@ router.post('/login', async (req, res) => {
 });
 
 // POST /api/auth/forgot-password — Request a password reset code
-router.post('/forgot-password', async (req, res) => {
+router.post('/forgot-password', forgotPasswordLimiter, async (req, res) => {
   try {
     const { email } = req.body;
     if (!email) return res.status(400).json({ error: 'Email is required' });
@@ -103,7 +129,7 @@ router.post('/forgot-password', async (req, res) => {
 });
 
 // POST /api/auth/reset-password — Reset password with code
-router.post('/reset-password', async (req, res) => {
+router.post('/reset-password', resetPasswordLimiter, async (req, res) => {
   try {
     const { email, code, newPassword } = req.body;
     if (!email || !code || !newPassword) {
@@ -137,6 +163,14 @@ router.get('/me', async (req, res) => {
 // PUT /api/auth/profile - Update user profile
 router.put('/profile', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
+
+  // Reject obviously oversized payloads (profile updates shouldn't be huge)
+  const bodyStr = JSON.stringify(req.body);
+  if (bodyStr.length > 10000) {
+    return res.status(413).json({ error: 'Request body too large' });
+  }
+
   const result = await updateProfile(token, req.body);
 
   if (result.error) {

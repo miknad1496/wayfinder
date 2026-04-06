@@ -3617,12 +3617,12 @@ async function searchInternships() {
 
   const params = new URLSearchParams();
   if ($('internshipLevel')?.value) params.set('level', $('internshipLevel').value);
-  if ($('internshipState').value) params.set('state', $('internshipState').value);
-  if ($('internshipField').value) params.set('field', $('internshipField').value);
-  if ($('internshipCost').value === 'paid') params.set('paid', 'true');
-  if ($('internshipCost').value === 'unpaid') params.set('paid', 'false');
+  if ($('internshipState')?.value) params.set('state', $('internshipState').value);
+  if ($('internshipField')?.value) params.set('field', $('internshipField').value);
+  if ($('internshipCost')?.value === 'paid') params.set('paid', 'true');
+  if ($('internshipCost')?.value === 'unpaid') params.set('paid', 'false');
   if ($('internshipFormat')?.value) params.set('format', $('internshipFormat').value);
-  if ($('internshipSearch').value.trim()) params.set('q', $('internshipSearch').value.trim());
+  if ($('internshipSearch')?.value?.trim()) params.set('q', $('internshipSearch').value.trim());
 
   try {
     const res = await fetch(`${API_BASE}/internships/search?${params}`, {
@@ -3660,12 +3660,12 @@ async function searchScholarships() {
   $('scholarshipsResults').innerHTML = '';
 
   const params = new URLSearchParams();
-  if ($('scholarshipCategory').value) params.set('category', $('scholarshipCategory').value);
-  if ($('scholarshipState').value) params.set('state', $('scholarshipState').value);
+  if ($('scholarshipCategory')?.value) params.set('category', $('scholarshipCategory').value);
+  if ($('scholarshipState')?.value) params.set('state', $('scholarshipState').value);
   if ($('scholarshipScope')?.value) params.set('scope', $('scholarshipScope').value);
   if ($('scholarshipAmount')?.value) params.set('amountRange', $('scholarshipAmount').value);
   if ($('scholarshipFormat')?.value) params.set('applicationFormat', $('scholarshipFormat').value);
-  if ($('scholarshipSearch').value.trim()) params.set('q', $('scholarshipSearch').value.trim());
+  if ($('scholarshipSearch')?.value?.trim()) params.set('q', $('scholarshipSearch').value.trim());
 
   try {
     const res = await fetch(`${API_BASE}/scholarships/search?${params}`, {
@@ -3703,13 +3703,13 @@ async function searchPrograms() {
   $('programsResults').innerHTML = '';
 
   const params = new URLSearchParams();
-  if ($('programCategory').value) params.set('category', $('programCategory').value);
+  if ($('programCategory')?.value) params.set('category', $('programCategory').value);
   if ($('programState')?.value) params.set('state', $('programState').value);
   if ($('programGrade')?.value) params.set('grade', $('programGrade').value);
-  if ($('programCost').value) params.set('cost', $('programCost').value);
+  if ($('programCost')?.value) params.set('cost', $('programCost').value);
   if ($('programFormat')?.value) params.set('format', $('programFormat').value);
-  if ($('programSelectivity').value) params.set('selectivity', $('programSelectivity').value);
-  if ($('programSearch').value.trim()) params.set('q', $('programSearch').value.trim());
+  if ($('programSelectivity')?.value) params.set('selectivity', $('programSelectivity').value);
+  if ($('programSearch')?.value?.trim()) params.set('q', $('programSearch').value.trim());
 
   try {
     const res = await fetch(`${API_BASE}/programs/search?${params}`, {

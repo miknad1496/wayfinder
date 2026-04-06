@@ -758,8 +758,7 @@ Be thorough but actionable. Present information as a trusted advisor who knows i
     }
 
     // Record usage: strategy counts as 2 messages (expensive API call)
-    recordMessageUsage(token).catch(() => {});
-    recordMessageUsage(token).catch(() => {});
+    recordMessageUsage(token, 2).catch(() => {});
 
     res.json({
       strategy: strategyText,

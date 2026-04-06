@@ -109,17 +109,17 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Message must be a string' });
     }
 
-    // Empty check (after trim to avoid whitespace-only messages)
+    // Trim first — all subsequent checks use trimmed content
     const trimmedMsg = message.trim();
     if (trimmedMsg.length === 0) {
       return res.status(400).json({ error: 'Message cannot be empty or whitespace only' });
     }
 
-    // Length check (5000 char limit)
+    // Length check on trimmed message (prevents spaces-padding bypass)
     const MAX_MESSAGE_LENGTH = 5000;
-    if (message.length > MAX_MESSAGE_LENGTH) {
+    if (trimmedMsg.length > MAX_MESSAGE_LENGTH) {
       return res.status(413).json({
-        error: `Message too long (max ${MAX_MESSAGE_LENGTH} characters, got ${message.length})`
+        error: `Message too long (max ${MAX_MESSAGE_LENGTH} characters, got ${trimmedMsg.length})`
       });
     }
 

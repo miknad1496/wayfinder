@@ -701,33 +701,45 @@ export async function updateProfile(token, updates) {
   if (!token) return { error: 'Not authenticated' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Update allowed fields
-        if (updates.name) user.name = updates.name;
-        if (updates.userType) user.userType = updates.userType;
-        if (updates.school) user.school = updates.school;
-        if (updates.interests) user.interests = updates.interests;
-        if (updates.profile) {
-          user.profile = { ...user.profile, ...updates.profile };
-        }
-        if (updates.consentGiven !== undefined) {
-          user.consentGiven = updates.consentGiven;
-          user.consentTimestamp = new Date().toISOString();
-        }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
 
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, user: sanitizeUser(user) };
+    const { user, filePath } = resolved;
+
+    // Allowlist of updatable fields — prevents mass assignment
+    const ALLOWED_FIELDS = ['name', 'userType', 'school', 'interests', 'profile', 'consentGiven'];
+    for (const key of Object.keys(updates)) {
+      if (!ALLOWED_FIELDS.includes(key)) continue; // Silently ignore disallowed fields
+
+      if (key === 'name' && typeof updates.name === 'string') {
+        user.name = updates.name.slice(0, 100);
+      } else if (key === 'userType' && typeof updates.userType === 'string') {
+        const validTypes = ['student', 'parent', 'counselor', 'other'];
+        if (validTypes.includes(updates.userType)) user.userType = updates.userType;
+      } else if (key === 'school' && typeof updates.school === 'string') {
+        user.school = updates.school.slice(0, 200);
+      } else if (key === 'interests' && Array.isArray(updates.interests)) {
+        user.interests = updates.interests.filter(i => typeof i === 'string').slice(0, 20).map(i => i.slice(0, 100));
+      } else if (key === 'profile' && typeof updates.profile === 'object' && updates.profile !== null) {
+        // Only merge safe string/number values into profile
+        const safeProfile = {};
+        for (const [pk, pv] of Object.entries(updates.profile)) {
+          if ((typeof pv === 'string' || typeof pv === 'number' || typeof pv === 'boolean') && pk.length <= 50) {
+            safeProfile[pk] = typeof pv === 'string' ? pv.slice(0, 500) : pv;
+          }
+        }
+        user.profile = { ...user.profile, ...safeProfile };
+      } else if (key === 'consentGiven' && typeof updates.consentGiven === 'boolean') {
+        user.consentGiven = updates.consentGiven;
+        user.consentTimestamp = new Date().toISOString();
       }
     }
+
+    await atomicWriteJSON(filePath, user);
+    return { success: true, user: sanitizeUser(user) };
   } catch (err) {
     return { error: 'Failed to update profile' };
   }
-
-  return { error: 'User not found' };
 }
 
 /**
@@ -842,28 +854,31 @@ export async function deleteUser(token) {
  */
 export async function updateSettings(token, settings) {
   if (!token) return { error: 'Not authenticated' };
+  if (!settings || typeof settings !== 'object') return { error: 'Invalid settings' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        // Update allowed settings fields
-        if (!user.settings) user.settings = {};
-        if (settings.displayName !== undefined) user.settings.displayName = settings.displayName;
-        if (settings.memory !== undefined) user.settings.memory = settings.memory;
-        if (settings.helpImprove !== undefined) user.settings.helpImprove = settings.helpImprove;
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
 
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, user: sanitizeUser(user) };
-      }
+    const { user, filePath } = resolved;
+
+    if (!user.settings) user.settings = {};
+    // Validate and apply only known settings with type checks
+    if (typeof settings.displayName === 'string') {
+      user.settings.displayName = settings.displayName.slice(0, 100);
     }
+    if (typeof settings.memory === 'boolean') {
+      user.settings.memory = settings.memory;
+    }
+    if (typeof settings.helpImprove === 'boolean') {
+      user.settings.helpImprove = settings.helpImprove;
+    }
+
+    await atomicWriteJSON(filePath, user);
+    return { success: true, user: sanitizeUser(user) };
   } catch (err) {
     return { error: 'Failed to update settings' };
   }
-
-  return { error: 'User not found' };
 }
 
 /**
@@ -1203,8 +1218,9 @@ export async function checkMessageUsage(token) {
  * Record one message for today + this month.
  * Uses token index for O(1) lookup.
  */
-export async function recordMessageUsage(token) {
+export async function recordMessageUsage(token, count = 1) {
   if (!token) return;
+  count = Math.max(1, Math.min(10, Math.floor(count))); // Clamp 1-10
 
   const today = new Date().toISOString().slice(0, 10);
   const thisMonth = new Date().toISOString().slice(0, 7);
@@ -1224,8 +1240,8 @@ export async function recordMessageUsage(token) {
       user.messagesUsedMonth = 0;
       user.messageLastMonthReset = thisMonth;
     }
-    user.messagesUsedToday = (user.messagesUsedToday || 0) + 1;
-    user.messagesUsedMonth = (user.messagesUsedMonth || 0) + 1;
+    user.messagesUsedToday = (user.messagesUsedToday || 0) + count;
+    user.messagesUsedMonth = (user.messagesUsedMonth || 0) + count;
     await atomicWriteJSON(filePath, user);
   } catch {
     // Non-critical

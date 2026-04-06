@@ -278,10 +278,15 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
-  // Idempotency check
-  if (event.id && processedEvents.has(event.id)) {
-    console.log(`ℹ️ Skipping already-processed event: ${event.id}`);
-    return res.json({ received: true, duplicate: true });
+  // Idempotency check — mark BEFORE processing to prevent TOCTOU race condition.
+  // Two concurrent webhooks with the same event ID: the first to call markEventProcessed()
+  // wins; the second sees it already in the Set and returns early.
+  if (event.id) {
+    if (processedEvents.has(event.id)) {
+      console.log(`ℹ️ Skipping already-processed event: ${event.id}`);
+      return res.json({ received: true, duplicate: true });
+    }
+    markEventProcessed(event.id); // Claim this event immediately
   }
 
   if (!event.type || !event.data?.object) {
@@ -391,7 +396,7 @@ router.post('/webhook', webhookLimiter, async (req, res) => {
       }
     }
 
-    if (event.id) markEventProcessed(event.id);
+    // event.id already marked at the top — no duplicate mark needed
 
   } catch (err) {
     console.error('Webhook processing error:', err);
