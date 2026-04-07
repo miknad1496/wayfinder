@@ -410,6 +410,48 @@ The April 4 audits already covered the most critical security issues (session pa
 
 ---
 
+## 2026-04-07 (Night #2) — UX/Frontend
+
+**Focus Areas**: Frontend error handling (H-7, H-8), XSS (M-12), listener accumulation (H-9, M-13), fetch resilience
+
+### Issues Found
+
+| # | Severity | Issue | Status |
+|---|----------|-------|--------|
+| 1 | **MODERATE** | XSS in demographics search — `s.school` and `s.unitId` interpolated directly into innerHTML without escapeHtml() | FIXED |
+| 2 | **MODERATE** | Event listener accumulation in `setupEvResizer()` — 6 document-level listeners (mousemove, mouseup, touchmove, touchend) added every time essay view opens | FIXED |
+| 3 | **MODERATE** | onclick handler with API-controlled ID — `review.id` injected into inline onclick without sanitization | FIXED |
+| 4 | **HIGH** | ~25 fetch calls missing `res.ok` checks — server errors result in silent failures or incorrect JSON parsing | FIXED (systematic) |
+| 5 | **HIGH** | Auth functions (login, signup, forgot-password, reset-password) parse JSON without checking HTTP status | FIXED |
+| 6 | **MODERATE** | Settings save, profile save, invite send, admin plan switch all missing `res.ok` guards | FIXED |
+| 7 | **MINOR** | ~10 remaining fetch calls without safeFetch (lower-priority paths like feedback post, advisor status poll) | NOT FIXED — already have local error handling or are non-critical |
+
+### Fixes Applied
+
+1. **`safeFetch()` wrapper (app.js)**: Added a reusable `safeFetch(url, opts)` function at top of file that checks `res.ok` before parsing JSON and throws a descriptive error with status code. Converted ~20 fetch calls across internships, scholarships, programs, demographics, essays, invites, timeline, and financial aid to use it.
+
+2. **XSS fix (demographics search)**: Applied `escapeHtml()` to `s.school` and `String(s.unitId)` in the search results innerHTML template. Used `Number()` coercion for `totalCompletions` to prevent injection via numeric fields.
+
+3. **Listener accumulation fix (setupEvResizer)**: Added `_evResizerInitialized` guard flag that prevents the function from attaching duplicate document-level listeners on repeated calls.
+
+4. **onclick sanitization (essay history)**: Applied `escapeHtml()` to `review.id` in the inline onclick handler to prevent XSS via malicious review IDs.
+
+5. **Auth res.ok checks**: Added `!res.ok ||` to the error condition checks in `submitLogin()`, `submitSignup()`, `submitForgotPassword()`, `submitResetPassword()`, settings saves, profile save, invite send, and admin plan switch.
+
+### Not Fixed (Documented Only)
+
+- **Remaining ~10 fetch calls without safeFetch**: Lower-priority paths (feedback POST, advisor status poll, Stripe purchase-essays) that either already have local error handling or are non-critical fire-and-forget operations.
+- **Accessibility gaps (M-14)**: Missing ARIA roles on modals/dropdowns — larger effort requiring HTML changes across index.html.
+- **Console warnings in production (L-2)**: ~8 console.warn calls left in production code — cosmetic, not functional.
+
+### Recommendations for Next Audit
+
+- **Data Integrity**: Fix metadata count mismatches (C-5), populate scholarship state data (H-10), normalize multi-state program entries (H-11)
+- **Accessibility**: Add ARIA roles/labels to modals, dropdowns, and interactive elements (M-14)
+- **Code Quality**: Split auth.js into modules; clean up remaining console.warn calls in production frontend
+
+---
+
 ## 2026-04-07 (Late Night) — Full System Audit #3 (Automated)
 
 **Focus Areas**: All — Security, Backend Routes, Frontend, Data Integrity, Performance, Infrastructure
