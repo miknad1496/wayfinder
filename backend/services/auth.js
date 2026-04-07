@@ -337,6 +337,26 @@ async function atomicWriteJSON(filePath, data) {
   await fs.rename(tmpPath, filePath);
 }
 
+/**
+ * Per-user lock for credit operations to prevent race conditions.
+ * Uses a simple in-memory Map of promises so concurrent credit ops
+ * on the same user are serialized.
+ */
+const _creditLocks = new Map();
+async function withCreditLock(userId, fn) {
+  const prev = _creditLocks.get(userId) || Promise.resolve();
+  const current = prev.then(fn, fn); // Run fn after previous completes (even on error)
+  _creditLocks.set(userId, current);
+  try {
+    return await current;
+  } finally {
+    // Clean up if this was the last operation
+    if (_creditLocks.get(userId) === current) {
+      _creditLocks.delete(userId);
+    }
+  }
+}
+
 function isTokenExpired(tokenCreatedAt) {
   // Missing or invalid timestamps are treated as expired for security.
   // Legacy users will need to re-login, which backfills the timestamp.
@@ -1321,13 +1341,20 @@ export async function useEssayCredit(token) {
     if (isAdmin(user.email) || isVIP(user.email)) {
       return { allowed: true, remaining: 999 };
     }
-    const remaining = user.essayReviewsRemaining || 0;
-    if (remaining <= 0) {
-      return { allowed: false, remaining: 0 };
-    }
-    user.essayReviewsRemaining = remaining - 1;
-    await atomicWriteJSON(filePath, user);
-    return { allowed: true, remaining: user.essayReviewsRemaining };
+
+    // Use per-user lock to prevent race condition where concurrent requests
+    // both read the same credit balance and both deduct, going negative.
+    return await withCreditLock(user.id || user.email, async () => {
+      // Re-read the file inside the lock to get the freshest value
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      const remaining = freshData.essayReviewsRemaining || 0;
+      if (remaining <= 0) {
+        return { allowed: false, remaining: 0 };
+      }
+      freshData.essayReviewsRemaining = remaining - 1;
+      await atomicWriteJSON(filePath, freshData);
+      return { allowed: true, remaining: freshData.essayReviewsRemaining };
+    });
   } catch {
     return { allowed: false, remaining: 0 };
   }
@@ -1351,10 +1378,14 @@ export async function refundEssayCredit(token) {
     if (isAdmin(user.email) || isVIP(user.email)) {
       return { success: true, remaining: 999 };
     }
-    // Increment the credit count back
-    user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + 1;
-    await atomicWriteJSON(filePath, user);
-    return { success: true, remaining: user.essayReviewsRemaining };
+
+    // Use per-user lock to prevent race condition with concurrent credit operations
+    return await withCreditLock(user.id || user.email, async () => {
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      freshData.essayReviewsRemaining = (freshData.essayReviewsRemaining || 0) + 1;
+      await atomicWriteJSON(filePath, freshData);
+      return { success: true, remaining: freshData.essayReviewsRemaining };
+    });
   } catch (err) {
     return { success: false, remaining: 0 };
   }

@@ -205,10 +205,11 @@ router.post('/review', async (req, res) => {
       createdAt: new Date().toISOString()
     };
 
-    await fs.writeFile(
-      join(REVIEWS_DIR, `${reviewId}.json`),
-      JSON.stringify(reviewRecord, null, 2)
-    );
+    // Atomic write: temp file then rename to prevent corruption on crash
+    const reviewPath = join(REVIEWS_DIR, `${reviewId}.json`);
+    const tmpPath = reviewPath + '.tmp';
+    await fs.writeFile(tmpPath, JSON.stringify(reviewRecord, null, 2));
+    await fs.rename(tmpPath, reviewPath);
 
     res.json({
       id: reviewId,
