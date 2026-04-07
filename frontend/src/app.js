@@ -16,6 +16,31 @@
 const API_BASE = '/api';
 
 // ========================
+// Safe Fetch Wrapper
+// ========================
+/**
+ * Wrapper around fetch() that checks res.ok before parsing JSON.
+ * Throws an error with the server's error message if response is not ok.
+ * @param {string} url - The URL to fetch
+ * @param {RequestInit} [opts] - Fetch options
+ * @returns {Promise<any>} Parsed JSON response
+ */
+async function safeFetch(url, opts) {
+  const res = await fetch(url, opts);
+  if (!res.ok) {
+    let errMsg = `Server error (${res.status})`;
+    try {
+      const body = await res.json();
+      if (body.error) errMsg = body.error;
+    } catch { /* ignore parse error */ }
+    const err = new Error(errMsg);
+    err.status = res.status;
+    throw err;
+  }
+  return res.json();
+}
+
+// ========================
 // State
 // ========================
 let sessionId = localStorage.getItem('wayfinder_session') || null;
@@ -869,7 +894,7 @@ async function saveProfile() {
       body: JSON.stringify({ profile })
     });
     const data = await res.json();
-    if (data.error) {
+    if (!res.ok || data.error) {
       showMsg('profileSaveMsg', data.error, '#991b1b');
       return;
     }
@@ -928,7 +953,7 @@ function setupSettingsListeners() {
           body: JSON.stringify({ plan })
         });
         const data = await res.json();
-        if (data.success) {
+        if (res.ok && data.success) {
           currentUser = data.user;
           document.querySelectorAll('.admin-tier-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
@@ -1003,8 +1028,8 @@ async function saveGeneralSettings() {
       body: JSON.stringify({ settings: { displayName } })
     });
     const data = await res.json();
-    if (data.error) {
-      showMsg('settingsGeneralMsg', data.error, '#991b1b');
+    if (!res.ok || data.error) {
+      showMsg('settingsGeneralMsg', data.error || 'Failed to save.', '#991b1b');
       return;
     }
     currentUser = data.user;
@@ -1026,7 +1051,7 @@ async function savePrivacySettings() {
       body: JSON.stringify({ settings: { memory, helpImprove } })
     });
     const data = await res.json();
-    if (data.error) {
+    if (!res.ok || data.error) {
       showMsg('settingsPrivacyMsg', data.error, '#991b1b');
       return;
     }
@@ -1136,8 +1161,7 @@ async function handlePlanUpgrade(plan) {
 
   try {
     // Check if Stripe is configured
-    const statusRes = await fetch(`${API_BASE}/stripe/status`);
-    const statusData = await statusRes.json();
+    const statusData = await safeFetch(`${API_BASE}/stripe/status`);
 
     if (!statusData.configured) {
       alert(`Stripe payments are being set up. Contact support@wayfinderai.org to upgrade in the meantime.`);
@@ -1145,7 +1169,7 @@ async function handlePlanUpgrade(plan) {
     }
 
     // Create Stripe Checkout session
-    const res = await fetch(`${API_BASE}/stripe/create-checkout`, {
+    const data = await safeFetch(`${API_BASE}/stripe/create-checkout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1154,7 +1178,6 @@ async function handlePlanUpgrade(plan) {
       body: JSON.stringify({ plan })
     });
 
-    const data = await res.json();
     if (data.error) {
       // If auth failed, prompt re-login instead of confusing error
       if (res.status === 401) {
@@ -1192,8 +1215,7 @@ async function handleEssayPurchase(pack) {
   btns.forEach(b => { b.disabled = true; b.style.opacity = '0.6'; });
 
   try {
-    const statusRes = await fetch(`${API_BASE}/stripe/status`);
-    const statusData = await statusRes.json();
+    const statusData = await safeFetch(`${API_BASE}/stripe/status`);
     if (!statusData.configured) {
       alert('Payments are being set up. Contact support@wayfinderai.org.');
       return;
@@ -1212,7 +1234,7 @@ async function handleEssayPurchase(pack) {
     // Admin users get a message instead of a checkout URL
     if (data.message) { alert(data.message); return; }
 
-    if (data.error) {
+    if (!res.ok || data.error) {
       if (res.status === 401) {
         alert('Your session has expired. Please log in again.');
         logout();
@@ -1313,7 +1335,7 @@ async function submitLogin() {
       body: JSON.stringify({ email, password })
     });
     const data = await res.json();
-    if (data.error) { showAuthError('loginError', data.error); return; }
+    if (!res.ok || data.error) { showAuthError('loginError', data.error || `Login failed (${res.status})`); return; }
 
     authToken = data.token;
     currentUser = data.user;
@@ -1355,7 +1377,7 @@ async function submitForgotPassword() {
       body: JSON.stringify({ email })
     });
     const data = await res.json();
-    if (data.error) {
+    if (!res.ok || data.error) {
       showAuthError('forgotError', data.error);
     } else {
       forgotEmail = email;
@@ -1386,7 +1408,7 @@ async function submitResetPassword() {
       body: JSON.stringify({ email: forgotEmail, code, newPassword })
     });
     const data = await res.json();
-    if (data.error) {
+    if (!res.ok || data.error) {
       showAuthError('resetError', data.error);
     } else {
       // Success — switch to login with pre-filled email
@@ -1440,7 +1462,7 @@ async function submitSignup() {
       })
     });
     const data = await res.json();
-    if (data.error) { showAuthError('signupError', data.error); return; }
+    if (!res.ok || data.error) { showAuthError('signupError', data.error || `Signup failed (${res.status})`); return; }
 
     authToken = data.token;
     currentUser = data.user;
@@ -1831,7 +1853,7 @@ async function validateInviteCode() {
     const res = await fetch(`${API_BASE}/invites/validate/${encodeURIComponent(code)}`);
     const data = await res.json();
 
-    if (data.valid) {
+    if (res.ok && data.valid) {
       statusEl.textContent = '✓ Valid';
       statusEl.className = 'invite-code-status valid';
       fieldsEl.style.display = 'block';
@@ -1905,7 +1927,7 @@ async function sendInvite() {
 
     const data = await res.json();
 
-    if (data.error) {
+    if (!res.ok || data.error) {
       showMsg('inviteSendMsg', data.error, '#991b1b');
       return;
     }
@@ -1932,10 +1954,9 @@ async function loadInvitesList() {
   if (!authToken) return;
 
   try {
-    const res = await fetch(`${API_BASE}/invites/mine`, {
+    const data = await safeFetch(`${API_BASE}/invites/mine`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
 
     // Update balance
     if (data.balance) {
@@ -2113,12 +2134,11 @@ function initDemographicsListeners() {
     if (q.length < 2) { resultsEl.style.display = 'none'; return; }
 
     try {
-      const res = await fetch(`/api/demographics/search?q=${encodeURIComponent(q)}`);
-      const data = await res.json();
+      const data = await safeFetch(`/api/demographics/search?q=${encodeURIComponent(q)}`);
       if (data.results && data.results.length > 0) {
         resultsEl.innerHTML = data.results.map(s =>
-          `<div class="demographics-search-item" data-unitid="${s.unitId}">
-            ${s.school}<span class="search-completions">${s.totalCompletions.toLocaleString()} graduates</span>
+          `<div class="demographics-search-item" data-unitid="${escapeHtml(String(s.unitId))}">
+            ${escapeHtml(s.school)}<span class="search-completions">${Number(s.totalCompletions).toLocaleString()} graduates</span>
           </div>`
         ).join('');
         resultsEl.style.display = 'block';
@@ -2171,8 +2191,7 @@ function initDemographicsListeners() {
 
 async function loadDemographicsSchools() {
   try {
-    const res = await fetch('/api/demographics/schools');
-    const data = await res.json();
+    const data = await safeFetch('/api/demographics/schools');
     demographicsSchoolsCache = data.schools || [];
   } catch { demographicsSchoolsCache = []; }
 }
@@ -2184,8 +2203,7 @@ async function loadSchoolDemographics(unitId) {
   try {
     const headers = {};
     if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
-    const res = await fetch(`/api/demographics/school/${unitId}`, { headers });
-    const data = await res.json();
+    const data = await safeFetch(`/api/demographics/school/${unitId}`, { headers });
 
     if (data.error) {
       contentEl.innerHTML = `<div class="demographics-empty-state"><p>${escapeHtml(data.error)}</p></div>`;
@@ -2794,10 +2812,9 @@ async function loadTimelineProfile() {
   $('timelineContent').style.display = 'none';
 
   try {
-    const res = await fetch(`${API_BASE}/timeline/profile`, {
+    const data = await safeFetch(`${API_BASE}/timeline/profile`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
 
     if (data.profile?.graduationYear) {
       // Has profile, load events
@@ -2830,7 +2847,7 @@ async function saveTimelineProfile() {
       body: JSON.stringify({ graduationYear: parseInt(gradYear), targetSchools, intendedMajors, state })
     });
     const data = await res.json();
-    if (data.error) { showMsg('timelineSetupMsg', data.error, '#991b1b'); return; }
+    if (!res.ok || data.error) { showMsg('timelineSetupMsg', data.error || 'Failed to save profile.', '#991b1b'); return; }
 
     showMsg('timelineSetupMsg', 'Profile saved!', '#059669');
     loadTimelineEvents();
@@ -3005,11 +3022,14 @@ function setupEssayView() {
   setupEvResizer();
 }
 
+let _evResizerInitialized = false;
 function setupEvResizer() {
+  if (_evResizerInitialized) return; // Prevent listener accumulation
   const resizer = $('evResizer');
   if (!resizer) return;
   const split = resizer.closest('.ev-split');
   if (!split) return;
+  _evResizerInitialized = true;
 
   let dragging = false;
   let startX = 0;
@@ -3131,10 +3151,9 @@ function updateEssayCounts() {
 
 async function loadEssayCredits() {
   try {
-    const res = await fetch(`${API_BASE}/essays/credits`, {
+    const data = await safeFetch(`${API_BASE}/essays/credits`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     const credits = data.credits ?? data.remaining ?? 0;
     $('evCreditsCount').textContent = `${credits} reviews`;
     $('evSubmitBtn').disabled = credits === 0;
@@ -3145,8 +3164,7 @@ let evPromptsLoaded = false;
 async function loadEssayPrompts() {
   if (evPromptsLoaded) return;
   try {
-    const res = await fetch(`${API_BASE}/essays/prompts`);
-    const prompts = await res.json();
+    const prompts = await safeFetch(`${API_BASE}/essays/prompts`);
 
     const categorySelect = $('evPromptCategory');
     const promptSelect = $('evPromptSelect');
@@ -3238,7 +3256,7 @@ async function submitEssayReview() {
     });
     const data = await res.json();
 
-    if (data.error) {
+    if (!res.ok || data.error) {
       showMsg('evSubmitMsg', data.error, '#991b1b');
       $('evSubmitBtn').disabled = false;
       $('evSubmitBtn').textContent = 'Submit for Review (1 credit)';
@@ -3458,10 +3476,9 @@ async function loadEssayHistory() {
 
   try {
     const url = `${API_BASE}/essays/history${typeFilter ? `?essayType=${typeFilter}` : ''}`;
-    const res = await fetch(url, {
+    const data = await safeFetch(url, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     const reviews = data.reviews || [];
 
     loadingEl.style.display = 'none';
@@ -3527,7 +3544,7 @@ function createHistoryCard(review) {
         <div class="essay-history-meta-item">Words: ${review.wordCount}</div>
       </div>
     </div>
-    <button class="essay-history-view-btn" onclick="viewEssayReviewFull('${review.id}')">View Full Review</button>
+    <button class="essay-history-view-btn" onclick="viewEssayReviewFull('${escapeHtml(String(review.id).replace(/'/g, "\\'"))}')">View Full Review</button>
   `;
 
   card.innerHTML = html;
@@ -3536,10 +3553,9 @@ function createHistoryCard(review) {
 
 async function viewEssayReviewFull(reviewId) {
   try {
-    const res = await fetch(`${API_BASE}/essays/review/${reviewId}`, {
+    const reviewRecord = await safeFetch(`${API_BASE}/essays/review/${reviewId}`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const reviewRecord = await res.json();
     renderEssayReview(reviewRecord.review);
     switchEvTab('compose');
   } catch (err) {
@@ -3552,10 +3568,9 @@ async function loadScoreProgression(essayType) {
   chartContainer.innerHTML = '';
 
   try {
-    const res = await fetch(`${API_BASE}/essays/drafts/${essayType}`, {
+    const data = await safeFetch(`${API_BASE}/essays/drafts/${essayType}`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     const drafts = data.drafts || [];
 
     if (drafts.length < 2) {
@@ -3625,10 +3640,9 @@ async function searchInternships() {
   if ($('internshipSearch')?.value?.trim()) params.set('q', $('internshipSearch').value.trim());
 
   try {
-    const res = await fetch(`${API_BASE}/internships/search?${params}`, {
+    const data = await safeFetch(`${API_BASE}/internships/search?${params}`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     $('internshipsLoading').style.display = 'none';
     renderToolResults('internshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'internship', data.total);
     // Fetch intel tips based on active field filter
@@ -3668,10 +3682,9 @@ async function searchScholarships() {
   if ($('scholarshipSearch')?.value?.trim()) params.set('q', $('scholarshipSearch').value.trim());
 
   try {
-    const res = await fetch(`${API_BASE}/scholarships/search?${params}`, {
+    const data = await safeFetch(`${API_BASE}/scholarships/search?${params}`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     $('scholarshipsLoading').style.display = 'none';
     renderToolResults('scholarshipsResults', data.results || [], data._fullAccess, data._previewMessage, 'scholarship');
     // Fetch intel tips based on active category filter
@@ -3712,10 +3725,9 @@ async function searchPrograms() {
   if ($('programSearch')?.value?.trim()) params.set('q', $('programSearch').value.trim());
 
   try {
-    const res = await fetch(`${API_BASE}/programs/search?${params}`, {
+    const data = await safeFetch(`${API_BASE}/programs/search?${params}`, {
       headers: { 'Authorization': `Bearer ${authToken}` }
     });
-    const data = await res.json();
     $('programsLoading').style.display = 'none';
     renderToolResults('programsResults', data.results || [], data._fullAccess, data._previewMessage, 'program');
     // Fetch intel tips based on active category filter
@@ -3996,7 +4008,7 @@ async function generateMyStrategy() {
     : schools.split(',').map(s => s.trim()).filter(Boolean);
 
   try {
-    const res = await fetch(`${API_BASE}/financial-aid/my-strategy`, {
+    const data = await safeFetch(`${API_BASE}/financial-aid/my-strategy`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,
@@ -4013,7 +4025,6 @@ async function generateMyStrategy() {
         includeSAI: true
       })
     });
-    const data = await res.json();
     $('strategyLoading').style.display = 'none';
     $('strategyBtn').disabled = false;
 
@@ -4427,6 +4438,7 @@ async function sendDavidMessage() {
     });
 
     const data = await res.json();
+    if (!res.ok && !data.error) data.error = `Coach unavailable (${res.status})`;
 
     // Remove typing indicator
     typingDiv.remove();
