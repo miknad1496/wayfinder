@@ -131,33 +131,13 @@ function stripForFreeUser(schoolData) {
 }
 
 // ─── GET /api/demographics/health ─────────────────────────────
-// Debug endpoint to check if data file is accessible
+// Operational status endpoint — no internal paths exposed
 router.get('/health', async (req, res) => {
-  const pathCandidates = [
-    join(__dirname, '..', 'data', 'scraped', 'ethnicity-demographics.json'),
-    join(process.cwd(), 'backend', 'data', 'scraped', 'ethnicity-demographics.json'),
-    join(process.cwd(), 'data', 'scraped', 'ethnicity-demographics.json'),
-  ];
-
-  const results = [];
-  for (const p of pathCandidates) {
-    try {
-      const stat = await fs.stat(p);
-      results.push({ path: p, exists: true, size: stat.size });
-    } catch (err) {
-      results.push({ path: p, exists: false, error: err.code });
-    }
-  }
-
   const data = await loadDemographicsData();
   res.json({
-    __dirname,
-    cwd: process.cwd(),
-    paths: results,
     dataLoaded: data ? true : false,
     schoolCount: data?.schools?.length || 0,
-    githubFallbackUrl: GITHUB_RAW_URL,
-    source: demographicsCache ? (results.some(r => r.exists) ? 'local' : 'github') : 'none'
+    source: demographicsCache ? 'loaded' : 'none'
   });
 });
 
