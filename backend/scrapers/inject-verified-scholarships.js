@@ -1589,11 +1589,14 @@ async function main() {
 
   data.scholarships = clean;
 
-  // Update metadata
+  // Update metadata — sync counts to actual data
   data.metadata = data.metadata || {};
   data.metadata._verified = "partial";
   data.metadata._verificationNotes = `Data integrity enforced on ${new Date().toISOString().slice(0, 10)}. ${stats.verified} verified, ${stats.nonVerified} non-verified, ${stats.duplicatesRemoved} dupes removed.`;
   data.metadata.lastUpdated = new Date().toISOString();
+  data.metadata.totalCount = data.scholarships.length;
+  data.metadata.totalScholarships = data.scholarships.length;
+  data.metadata.verifiedCount = data.scholarships.filter(s => s._verified).length;
 
   await fs.writeFile(SCHOLARSHIPS_PATH, JSON.stringify(data, null, 2));
 

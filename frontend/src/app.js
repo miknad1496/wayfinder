@@ -1448,7 +1448,7 @@ async function submitSignup() {
   const consent = $('signupConsent').checked;
 
   if (!name || !email || !password) { showAuthError('signupError', 'Please fill in all required fields'); return; }
-  if (password.length < 6) { showAuthError('signupError', 'Password must be at least 6 characters'); return; }
+  if (password.length < 8) { showAuthError('signupError', 'Password must be at least 8 characters with a number and letter'); return; }
   if (!email.includes('@')) { showAuthError('signupError', 'Please enter a valid email'); return; }
 
   try {

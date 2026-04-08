@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 815,
+    "totalCount": 814,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -49,9 +49,9 @@
     ],
     "_verified": "partial",
     "_verificationNotes": "6 verified programs injected on 2026-04-04 with _source URLs from official program websites. Existing 810 programs are unverified and may contain template descriptions.",
-    "lastUpdated": "2026-04-05T23:29:34.613Z",
-    "totalPrograms": 795,
-    "verifiedCount": 49,
+    "lastUpdated": "2026-04-08T07:12:39.997Z",
+    "totalPrograms": 814,
+    "verifiedCount": 70,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid"
   },
@@ -18157,23 +18157,30 @@
     },
     {
       "name": "Interlochen Arts Camp",
-      "provider": "Interlochen",
+      "provider": "Interlochen Center for the Arts",
       "category": "arts",
       "subcategory": "performing-arts",
       "type": "summer",
       "cost": {
-        "amount": 6500,
+        "amount": 5250,
         "type": "paid",
-        "display": "$6,500"
+        "display": "$2,050-$10,350 (85% of applicants received financial aid)"
       },
       "selectivity": "moderate",
-      "admissionsImpact": "moderate",
+      "admissionsImpact": "high",
+      "format": "in-person",
       "location": {
         "city": "Interlochen",
         "state": "MI"
       },
       "eligibility": {
         "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
           "9",
           "10",
           "11",
@@ -18181,21 +18188,26 @@
         ],
         "states": [
           "all"
-        ],
-        "gpa": null,
-        "demographics": []
+        ]
       },
-      "deadline": "2026-03-01",
-      "description": "Immerse yourself in performing arts at Interlochen. Study under accomplished artists and faculty. Develop technical skills, explore your creative voice, and create a portfolio piece during this intensive summer experience. Connect with fellow aspiring artists and be inspired by a community dedicated to the arts.",
-      "url": "https://www.interlochen.org/",
+      "deadline": "2026-04-15",
+      "description": "One of the nation's premier summer arts programs. 1-6 week residential sessions in music, visual arts, dance, theatre, and creative writing. Study with professional artists, perform in concerts and exhibitions. Camp activities include lakeside recreation. 85% of financial aid applicants receive assistance. Audition/portfolio-based merit scholarships available.",
+      "url": "https://www.interlochen.org/art-summer-camp",
       "tags": [
         "arts",
-        "prestigious",
-        "performing-arts"
+        "music",
+        "visual-arts",
+        "dance",
+        "theatre",
+        "residential",
+        "michigan",
+        "prestigious"
       ],
-      "duration": "3-4 weeks",
-      "region": "Northeast",
-      "advisorNote": "Arts programs strengthen applications by showing sustained commitment to your craft. Selective programs like Interlochen Arts Camp demonstrate that your talent is recognized by professional artists."
+      "duration": "1-6 weeks (June 20 - August 9)",
+      "region": "Midwest",
+      "_verified": true,
+      "_verifiedDate": "2026-04-05",
+      "_source": "https://www.interlochen.org/art-summer-camp"
     },
     {
       "name": "Interlochen Arts Camp - Session 2",
@@ -33946,7 +33958,7 @@
       },
       "selectivity": "open",
       "admissionsImpact": "high",
-      "format": "online",
+      "format": "remote",
       "location": {
         "city": "Redmond",
         "state": "WA"
@@ -34262,60 +34274,6 @@
       "_verified": true,
       "_verifiedDate": "2026-04-05",
       "_source": "https://www.launchx.com/programs/online-entrepreneurship"
-    },
-    {
-      "name": "Interlochen Arts Camp",
-      "provider": "Interlochen Center for the Arts",
-      "category": "arts",
-      "subcategory": "performing-arts",
-      "type": "summer",
-      "cost": {
-        "amount": 5250,
-        "type": "paid",
-        "display": "$2,050-$10,350 (85% of applicants received financial aid)"
-      },
-      "selectivity": "moderate",
-      "admissionsImpact": "high",
-      "format": "in-person",
-      "location": {
-        "city": "Interlochen",
-        "state": "MI"
-      },
-      "eligibility": {
-        "grades": [
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "10",
-          "11",
-          "12"
-        ],
-        "states": [
-          "all"
-        ]
-      },
-      "deadline": "2026-04-15",
-      "description": "One of the nation's premier summer arts programs. 1-6 week residential sessions in music, visual arts, dance, theatre, and creative writing. Study with professional artists, perform in concerts and exhibitions. Camp activities include lakeside recreation. 85% of financial aid applicants receive assistance. Audition/portfolio-based merit scholarships available.",
-      "url": "https://www.interlochen.org/art-summer-camp",
-      "tags": [
-        "arts",
-        "music",
-        "visual-arts",
-        "dance",
-        "theatre",
-        "residential",
-        "michigan",
-        "prestigious"
-      ],
-      "duration": "1-6 weeks (June 20 - August 9)",
-      "region": "Midwest",
-      "_verified": true,
-      "_verifiedDate": "2026-04-05",
-      "_source": "https://www.interlochen.org/art-summer-camp"
     },
     {
       "name": "Boston University Tanglewood Institute (BUTI) Young Artists",

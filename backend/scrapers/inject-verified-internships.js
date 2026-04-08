@@ -1236,6 +1236,8 @@ async function main() {
 
   data.internships = clean;
   data.metadata.totalCount = clean.length;
+  data.metadata.totalInternships = clean.length;
+  data.metadata.verifiedCount = clean.filter(i => i._verified).length;
   data.metadata.lastScraped = new Date().toISOString().slice(0, 10);
 
   // Update sources

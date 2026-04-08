@@ -1575,11 +1575,14 @@ async function main() {
 
   data.programs = clean;
 
-  // Update metadata
+  // Update metadata — sync counts to actual data
   data.metadata = data.metadata || {};
   data.metadata._verified = "partial";
   data.metadata._verificationNotes = `Data integrity enforced on ${new Date().toISOString().slice(0, 10)}. ${stats.verified} verified, ${stats.nonVerified} non-verified, ${stats.duplicatesRemoved} dupes removed.`;
   data.metadata.lastUpdated = new Date().toISOString();
+  data.metadata.totalCount = data.programs.length;
+  data.metadata.totalPrograms = data.programs.length;
+  data.metadata.verifiedCount = data.programs.filter(p => p._verified).length;
 
   await fs.writeFile(PROGRAMS_PATH, JSON.stringify(data, null, 2));
 
