@@ -15236,6 +15236,474 @@ const VERIFIED_PROGRAMS = [
     format: "in-person"
   },
 
+  {
+    "title": "Aspiring Scientists Summer Internship Program (ASSIP)",
+    "company": "George Mason University College of Science",
+    "location": {
+      "city": "Fairfax",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "STEM Research",
+    "deadline": "February 15, 2026",
+    "description": "Nationally recognized 8-week full-time summer research internship (June 18 – August 12, 2026) placing high school and undergraduate students with faculty mentors at George Mason and collaborating institutions across biology, chemistry, physics, neuroscience, computer science, bioinformatics, environmental science, and engineering. Interns work 30 hours/week on real research projects, attend weekly seminars, and present posters at a symposium. Format can be fully in-person, fully remote, or hybrid depending on the project and mentor. Wet-lab interns must be 16+ by the start date. Accepted students receive 3 undergraduate credits through GMU ($1,299 tuition; need-based fee waivers for the $25 application fee are available). No minimum GPA and no transcripts required at application stage — selection is based on STEM coursework, personal statement, and recommendations. One of the most respected high school research programs on the East Coast and a strong signal for selective college admissions.",
+    "majors": [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Neuroscience",
+      "Computer Science",
+      "Bioinformatics",
+      "Environmental Science",
+      "Engineering",
+      "Mathematics"
+    ],
+    "tags": [
+      "high-school",
+      "age-16",
+      "research",
+      "STEM",
+      "Fairfax",
+      "NoVA",
+      "8-week",
+      "credit-bearing",
+      "competitive"
+    ],
+    "url": "https://science.gmu.edu/assip",
+    "duration": "8 weeks (June 18 – August 12, 2026)",
+    "whyApply": "A real, faculty-mentored research placement with published and presented output — on par with top university research programs, and one of the few that accepts students at 16 across every major STEM discipline.",
+    "_source": "https://science.gmu.edu/assip",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "hybrid"
+  },
+  {
+    "title": "C-Tech² — Computers and Technology at Virginia Tech",
+    "company": "Virginia Tech Center for the Enhancement of Engineering Diversity (CEED)",
+    "location": {
+      "city": "Blacksburg",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Engineering / Computer Science",
+    "deadline": "Spring 2026",
+    "description": "Two-week residential summer program for rising high school junior and senior girls introducing them to computer science and the many disciplines of engineering through hands-on lab experiences, a biomedical-focused team engineering design project, and visits to Virginia Tech research labs. Participants work with faculty and graduate-student mentors, receive sessions on financial literacy and the college application process, and have critiques from Bloomberg Industry Group engineers. Evening and weekend programming is led by Virginia Tech undergraduate RAs. Part of CEED's long-running diversity-in-engineering pipeline.",
+    "majors": [
+      "Engineering",
+      "Computer Science",
+      "Biomedical Engineering",
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Computer Engineering"
+    ],
+    "tags": [
+      "high-school",
+      "rising-11th",
+      "rising-12th",
+      "girls-in-STEM",
+      "engineering",
+      "residential",
+      "Blacksburg",
+      "diversity"
+    ],
+    "url": "https://eng.vt.edu/ceed/ceed-pre-college-programs/c-tech2.html",
+    "duration": "2 weeks (residential, summer)",
+    "whyApply": "One of Virginia's flagship residential engineering diversity programs, with real lab time at a top public engineering school and a team design project critiqued by industry judges.",
+    "_source": "https://eng.vt.edu/ceed/ceed-pre-college-programs/c-tech2.html",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "Imagination — Virginia Tech CEED Middle School Engineering Program",
+    "company": "Virginia Tech Center for the Enhancement of Engineering Diversity (CEED)",
+    "location": {
+      "city": "Blacksburg",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Engineering / STEM",
+    "deadline": "Spring 2026",
+    "description": "One-week residential summer program for rising 7th and 8th graders that introduces the world of engineering, computer science, and technology through hands-on projects. Three weeklong sessions are offered each summer; two sessions feature an electrical and computer engineering project (building a video-game console or digital camera, learning to solder) with lab tours and activities across engineering disciplines. Run by Virginia Tech's Center for the Enhancement of Engineering Diversity as an early-pipeline introduction to engineering.",
+    "majors": [
+      "Engineering",
+      "Computer Science",
+      "Electrical Engineering",
+      "Computer Engineering"
+    ],
+    "tags": [
+      "middle-school",
+      "rising-7th",
+      "rising-8th",
+      "engineering",
+      "residential",
+      "Blacksburg",
+      "pipeline"
+    ],
+    "url": "https://eng.vt.edu/ceed/ceed-pre-college-programs/imagination.html",
+    "duration": "1 week (residential)",
+    "whyApply": "A hands-on, project-based first exposure to engineering at a top engineering school — ideal for curious middle schoolers before the high school camp ladder begins.",
+    "_source": "https://eng.vt.edu/ceed/ceed-pre-college-programs/imagination.html",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "JSA / Jefferson Lab High School Summer Honors Program",
+    "company": "Thomas Jefferson National Accelerator Facility (Jefferson Lab)",
+    "location": {
+      "city": "Newport News",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": true,
+    "field": "Physics / Engineering Research",
+    "deadline": "Spring 2026",
+    "description": "Six-week paid summer internship at Jefferson Lab — a U.S. Department of Energy Office of Science national laboratory in Newport News, VA — for local high school students (within ~60 miles of the lab). Interns work alongside Jefferson Lab scientists and engineers on projects in nuclear physics, accelerator science, detector engineering, computational physics, and related technical fields. Requires age 16+ by program start, good academic standing, and a minimum 3.5 GPA. Participants are paid a stipend, selected based on merit from a competitive applicant pool, and gain hands-on experience with a unique DOE accelerator facility.",
+    "majors": [
+      "Physics",
+      "Nuclear Physics",
+      "Engineering",
+      "Computer Science",
+      "Mathematics",
+      "Electrical Engineering"
+    ],
+    "tags": [
+      "high-school",
+      "age-16",
+      "paid",
+      "research",
+      "physics",
+      "accelerator",
+      "DOE",
+      "Newport-News",
+      "Hampton-Roads"
+    ],
+    "url": "https://www.jlab.org/human_resources/student_aide",
+    "duration": "6 weeks",
+    "whyApply": "A paid summer placement at a DOE national lab doing real nuclear and accelerator research — one of the only opportunities in the country for high schoolers to work directly with a particle accelerator facility.",
+    "_source": "https://www.jlab.org/human_resources/student_aide",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "Virginia Aerospace Science and Technology Scholars (VASTS)",
+    "company": "Virginia Space Grant Consortium & NASA Langley Research Center",
+    "location": {
+      "city": "Hampton",
+      "state": "VA"
+    },
+    "type": "year-round",
+    "paid": false,
+    "field": "Aerospace / STEM",
+    "deadline": "Early fall 2026 (applications open fall)",
+    "description": "Free statewide STEM learning experience for Virginia 11th and 12th graders combining a semester-long online course (Nov–Apr) focused on NASA human spaceflight, lunar and Mars mission design, followed by a selective seven-day residential summer academy at NASA Langley Research Center in Hampton, VA, where the top ~180 scholars complete a teamed human-spaceflight mission design project. Participants can earn up to four free dual-enrollment college credits. Run as a partnership between the Virginia Space Grant Consortium, NASA Langley, the Commonwealth of Virginia, and industry.",
+    "majors": [
+      "Aerospace Engineering",
+      "Physics",
+      "Mechanical Engineering",
+      "Mathematics",
+      "Computer Science",
+      "Planetary Science"
+    ],
+    "tags": [
+      "high-school",
+      "11th",
+      "12th",
+      "Virginia-resident",
+      "aerospace",
+      "NASA",
+      "free",
+      "dual-enrollment",
+      "statewide"
+    ],
+    "url": "https://vsgc.odu.edu/vasts/",
+    "duration": "Semester-long online + 7-day residential summer academy",
+    "whyApply": "A free, competitive, NASA-branded statewide academy that combines rigorous online coursework, college credit, and a residential week at Langley — one of the most prestigious aerospace experiences available to Virginia public school students.",
+    "_source": "https://vsgc.odu.edu/vasts/",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "hybrid"
+  },
+  {
+    "title": "NIAHD Pre-College Program in American History",
+    "company": "National Institute of American History & Democracy at William & Mary",
+    "location": {
+      "city": "Williamsburg",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Humanities / History",
+    "deadline": "Spring 2026",
+    "description": "Three-week residential pre-college program at William & Mary for rising juniors, rising seniors, and graduated seniors who have completed at least sophomore year. Students develop college-level reading and writing skills, participate in seminar discussions with William & Mary faculty, and take daily field trips to Williamsburg-area museums and historic sites — including Colonial Williamsburg, Jamestown, Yorktown, and Monticello — to analyze events of early American history where they actually occurred. Optional weekend participation in a Fairfield Foundation archaeological dig. Two summer sessions offered; students earn transferable college credit. No application fee.",
+    "majors": [
+      "History",
+      "American Studies",
+      "Political Science",
+      "Archaeology",
+      "Public History",
+      "English"
+    ],
+    "tags": [
+      "high-school",
+      "rising-11th",
+      "rising-12th",
+      "humanities",
+      "history",
+      "residential",
+      "Williamsburg",
+      "college-credit"
+    ],
+    "url": "https://www.wm.edu/as/niahd/precol/",
+    "duration": "3 weeks (2 sessions offered)",
+    "whyApply": "One of the most distinctive humanities pre-college programs in the country — pairs rigorous William & Mary seminar teaching with hands-on fieldwork at Colonial Williamsburg, Jamestown, and Monticello.",
+    "_source": "https://www.wm.edu/as/niahd/precol/",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "UVA Advance Summer Pre-College Program",
+    "company": "University of Virginia Summer Session",
+    "location": {
+      "city": "Charlottesville",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Pre-College / General Academics",
+    "deadline": "Spring 2026 (applications close early spring)",
+    "description": "Four-week residential summer pre-college program for highly motivated rising juniors and seniors. Students enroll in two undergraduate UVA courses — a dedicated UVA Advance core course and an open elective — and earn six transferable undergraduate credits taught by UVA faculty. Participants live in an air-conditioned residence hall on Grounds, experience the full rhythm of UVA college life, and work with small, intensive class cohorts. Requires minimum 3.5 GPA in a college-prep curriculum; students must be 15–18 during the program. Runs from early July to early August.",
+    "majors": [
+      "Liberal Arts",
+      "Humanities",
+      "Sciences",
+      "Social Sciences",
+      "Engineering"
+    ],
+    "tags": [
+      "high-school",
+      "rising-11th",
+      "rising-12th",
+      "residential",
+      "college-credit",
+      "Charlottesville",
+      "pre-college"
+    ],
+    "url": "https://summer.virginia.edu/uva-advance",
+    "duration": "4 weeks (early July to early August)",
+    "whyApply": "Real UVA undergraduate credit from a flagship public university, with genuine residential college life — far more substantive than most for-profit 'pre-college' experiences.",
+    "_source": "https://summer.virginia.edu/uva-advance",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "NSWC Dahlgren SEAP (Science and Engineering Apprenticeship Program)",
+    "company": "Naval Surface Warfare Center Dahlgren Division (U.S. Navy)",
+    "location": {
+      "city": "Dahlgren",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": true,
+    "field": "Engineering / Defense Research",
+    "deadline": "Fall 2025 (applications typically due in Nov)",
+    "description": "Eight-week paid summer apprenticeship placing academically talented high school sophomores, juniors, and seniors directly into working Navy research labs at NSWC Dahlgren — the Navy's principal R&D and test-and-evaluation site for surface-ship combat systems, ordnance, directed energy, and strategic-systems support. Apprentices are mentored by Navy scientists and engineers on real projects including autonomous maritime systems, cybersecurity, directed-energy and sensor applications, missile trajectory modeling and defense simulation, and AI/machine learning for naval systems. Stipend paid bi-weekly by direct deposit, with higher rates for returning participants. Administered via the ASEE SEAP portal.",
+    "majors": [
+      "Mechanical Engineering",
+      "Electrical Engineering",
+      "Computer Science",
+      "Cybersecurity",
+      "Physics",
+      "Mathematics",
+      "Aerospace Engineering",
+      "AI / Machine Learning"
+    ],
+    "tags": [
+      "high-school",
+      "paid",
+      "research",
+      "engineering",
+      "Navy",
+      "defense",
+      "Dahlgren",
+      "NoVA-south",
+      "competitive"
+    ],
+    "url": "https://seap.asee.org/participating_labs/naval_surface_warfare_center___dahlgren",
+    "duration": "8 weeks (summer)",
+    "whyApply": "A paid federal research internship at a major Navy lab working on problems like directed energy, autonomous systems, and cybersecurity — one of the few true 'paid-to-do-real-research' placements open to high schoolers.",
+    "_source": "https://seap.asee.org/participating_labs/naval_surface_warfare_center___dahlgren",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "Janelia-Loudoun County Resident Summer Internship Program",
+    "company": "HHMI Janelia Research Campus",
+    "location": {
+      "city": "Ashburn",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": true,
+    "field": "Biomedical Research / Computational Biology",
+    "deadline": "Spring 2026 (apply through Loudoun County Public Schools)",
+    "description": "Seven-week full-time paid summer internship (June 22 – August 7, 2026) at HHMI's Janelia Research Campus, the Howard Hughes Medical Institute's flagship neuroscience and imaging research center in Loudoun County, VA. Open to high school students age 16+ who attend a Loudoun County Public School or are Loudoun County residents. Interns spend 40 hours/week performing real research in biology and computational science under the direct guidance of Janelia group leaders, scientists, and engineers, and also attend seminars by Janelia researchers and participate in journal clubs. LCPS students must apply through the school-administered application process — direct applications are not considered.",
+    "majors": [
+      "Neuroscience",
+      "Biology",
+      "Computational Biology",
+      "Biomedical Research",
+      "Physics",
+      "Computer Science"
+    ],
+    "tags": [
+      "high-school",
+      "age-16",
+      "paid",
+      "research",
+      "Loudoun-County-resident",
+      "neuroscience",
+      "HHMI",
+      "Ashburn",
+      "NoVA"
+    ],
+    "url": "https://www.janelia.org/you-janelia/students-and-postdocs/high-school-internship-program",
+    "duration": "7 weeks, 40 hrs/week (June 22 – August 7, 2026)",
+    "whyApply": "Paid, full-time research at one of the top neuroscience and imaging institutes in the world — Janelia routinely produces Nature and Cell papers and the work here is as close to 'real science' as a high schooler can get.",
+    "_source": "https://www.janelia.org/you-janelia/students-and-postdocs/high-school-internship-program",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "Summer Residential Governor's School — Humanities",
+    "company": "Virginia Department of Education (hosted at Radford University)",
+    "location": {
+      "city": "Radford",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Humanities",
+    "deadline": "Fall 2025 – early winter (division-level nomination)",
+    "description": "Free four-week residential summer Governor's School for approximately 100 rising high school seniors from across Virginia, hosted on the Radford University campus. The Humanities program offers intensive interdisciplinary study in anthropology, economics, history, literature, media studies, philosophy, political science, psychology, and sociology through seminars, individual and group projects, and faculty-led research. Students are nominated by their home school division and selected by a state committee. All costs are covered by the Commonwealth of Virginia.",
+    "majors": [
+      "History",
+      "Philosophy",
+      "Political Science",
+      "Psychology",
+      "Sociology",
+      "Economics",
+      "Literature",
+      "Anthropology"
+    ],
+    "tags": [
+      "high-school",
+      "rising-12th",
+      "Virginia-resident",
+      "humanities",
+      "residential",
+      "free",
+      "Radford",
+      "governors-school"
+    ],
+    "url": "https://www.doe.virginia.gov/teaching-learning-assessment/specialized-instruction/governor-s-schools/summer-residential-governor-s-schools",
+    "duration": "4 weeks (residential)",
+    "whyApply": "Virginia's premier free humanities honors program — a month of graduate-seminar-style coursework with the state's top humanities students, paid for entirely by the Commonwealth.",
+    "_source": "https://www.doe.virginia.gov/teaching-learning-assessment/specialized-instruction/governor-s-schools/summer-residential-governor-s-schools",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "Summer Residential Governor's School — Visual and Performing Arts",
+    "company": "Virginia Department of Education (hosted at Radford University)",
+    "location": {
+      "city": "Radford",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Arts / Visual and Performing Arts",
+    "deadline": "Fall 2025 – early winter (division-level nomination + statewide adjudication)",
+    "description": "Free four-week residential Summer Residential Governor's School in the Visual and Performing Arts for approximately 250 rising Virginia high school seniors, hosted on the Radford University campus. Students are selected through a competitive statewide adjudication process (audition or portfolio review in front of professionals) in one of five areas: instrumental music, vocal music, visual art, dance, or theatre. During the month, students work with conservatory-level faculty, collaborate with peers from across the state, and perform or exhibit their work. Fully funded by the Commonwealth of Virginia.",
+    "majors": [
+      "Visual Art",
+      "Theatre",
+      "Dance",
+      "Vocal Music",
+      "Instrumental Music",
+      "Arts"
+    ],
+    "tags": [
+      "high-school",
+      "rising-12th",
+      "Virginia-resident",
+      "arts",
+      "visual-arts",
+      "performing-arts",
+      "residential",
+      "free",
+      "Radford",
+      "governors-school",
+      "audition"
+    ],
+    "url": "https://www.doe.virginia.gov/teaching-learning-assessment/specialized-instruction/governor-s-schools/summer-residential-governor-s-schools",
+    "duration": "4 weeks (residential)",
+    "whyApply": "The most selective free arts conservatory experience in Virginia — four weeks of intensive training and collaboration with top faculty, reserved for adjudicated student-artists statewide.",
+    "_source": "https://www.doe.virginia.gov/teaching-learning-assessment/specialized-instruction/governor-s-schools/summer-residential-governor-s-schools",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+  {
+    "title": "VCU Health Sciences Academy (HSA)",
+    "company": "Virginia Commonwealth University – PATHS / Division of Student Engagement and Impact",
+    "location": {
+      "city": "Richmond",
+      "state": "VA"
+    },
+    "type": "summer",
+    "paid": false,
+    "field": "Medicine / Health Sciences",
+    "deadline": "Spring 2026",
+    "description": "Free, selective Health Sciences Academy run by VCU's PATHS office for Richmond-area high school students interested in medicine and the health professions. The two-week summer workshop offers hands-on exposure on the VCU Medical Center (MCV) campus: students learn basic suturing techniques, practice CPR and AED training, use simulation and standardized-patient centers, and learn the basics of ultrasound imaging and patient interaction. Designed as an early pipeline for students considering medicine, nursing, dentistry, pharmacy, and allied health careers at one of Virginia's top academic medical centers.",
+    "majors": [
+      "Medicine",
+      "Nursing",
+      "Pre-Med",
+      "Pharmacy",
+      "Dentistry",
+      "Public Health",
+      "Allied Health"
+    ],
+    "tags": [
+      "high-school",
+      "rising-10th",
+      "Richmond",
+      "medicine",
+      "health-sciences",
+      "free",
+      "simulation",
+      "pipeline"
+    ],
+    "url": "https://dsei.vcu.edu/paths/programs/high-school/health-sciences-academy-hsa/",
+    "duration": "2 weeks (summer)",
+    "whyApply": "Free, hands-on clinical skills exposure — suturing, ultrasound, CPR, and simulated patients — at a major academic medical center, one of the best low-cost pre-med pipelines in Virginia.",
+    "_source": "https://dsei.vcu.edu/paths/programs/high-school/health-sciences-academy-hsa/",
+    "_verified": true,
+    "_verifiedDate": "2026-04-09",
+    "format": "in-person"
+  },
+
 ];
 
 

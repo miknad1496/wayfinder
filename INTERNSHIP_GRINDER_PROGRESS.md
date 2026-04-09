@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (run 15 — WI buildout)
+Last updated: 2026-04-09 (run 16 — VA buildout)
 
 ## State-by-state verified internship counts
 
@@ -17,7 +17,7 @@ Generated from inject-verified-internships.js run output.
 | MA    | 46    | In progress |
 | DC    | 42    | National/multi |
 | NJ    | 34    | In progress (buildout) |
-| VA    | 26    | Needs work |
+| VA    | 38    | In progress (run 16 — GMU ASSIP, VT C-Tech², VT Imagination, JLab HSSIP, VASTS, W&M NIAHD, UVA Advance, NSWC Dahlgren SEAP, HHMI Janelia, Gov School Humanities/VPA, VCU HSA) |
 | MN    | 23    | Needs work |
 | OH    | 29    | In progress (second run — arts/business/law/engineering added) |
 | GA    | 29+   | In progress (run 8 — broadened into CS/tech, arts, medicine, humanities) |
@@ -40,6 +40,7 @@ Generated from inject-verified-internships.js run output.
 - 2026-04-09 (run 7): Started Georgia coverage with 16 verified programs — Georgia Governor's Honors Program (Statesboro), Georgia Tech CEISMC Summer PEAKS HS, Georgia Tech Summer Institute, GTRI High School Summer Internship (paid), Emory Pre-College Program, Emory Oxford Ox-perience, Winship Cancer Institute Summer Scholars (paid $2,400), CDC Museum Disease Detective Camp (free/competitive), UGA CAES Young Scholars Internship (paid agriculture/env research), Federal Reserve Bank of Atlanta HS Research Internship (paid finance/economics), Spelman Early College Program, Spelman College Prep Institute, Morehouse School of Medicine S.T.E.A.M. Academy 9-12, Zoo Atlanta Volunteen Program, Fernbank Museum FYI Youth Interpreters (ages 13+), Georgia Aquarium Beginner Environmental Leadership Program. Spans medicine, engineering, finance/economics, agriculture, public health, arts, HBCU pipelines, and conservation/environmental science. GA now at 16.
 
 
+- 2026-04-09 (run 16): Started Virginia buildout with 12 verified programs — George Mason ASSIP (Aspiring Scientists Summer Internship Program, Fairfax, 8-week research, age 16+), Virginia Tech C-Tech² (CEED, girls engineering, Blacksburg, residential), Virginia Tech Imagination (CEED middle school engineering, Blacksburg), JSA/Jefferson Lab High School Summer Honors Program (Newport News, DOE, paid nuclear physics / accelerator research), Virginia Aerospace Science and Technology Scholars VASTS (VSGC + NASA Langley, Hampton, free statewide aerospace with 7-day residential academy), William & Mary NIAHD Pre-College Program in American History (Williamsburg, 3-week residential humanities with Colonial Williamsburg/Monticello/Jamestown field trips), UVA Advance Summer Pre-College (Charlottesville, 4-week residential, 6 UVA credits), NSWC Dahlgren SEAP (Dahlgren, paid 8-week Navy research in autonomous systems / directed energy / cybersecurity / AI), HHMI Janelia Loudoun County Resident Summer Internship (Ashburn, paid 7-week neuroscience and computational biology research for Loudoun County students), Virginia Summer Residential Governor's School — Humanities (Radford, free 4-week), Virginia Summer Residential Governor's School — Visual and Performing Arts (Radford, free 4-week, audition), VCU Health Sciences Academy (Richmond, free hands-on suturing/ultrasound/CPR clinical skills). Broadened VA coverage across STEM research, engineering, CS, aerospace, defense, nuclear physics, biomedical research, humanities, arts, pre-college, and medicine. VA now 38 verified (was 26).
 - 2026-04-09 (run 15): Added 8 more verified Wisconsin programs — Wisconsin School of Business Business Basics (rising 9-10 commuter), Wisconsin School of Business Junior Business Badgers (rising 11-12 commuter), Marquette Law Summer Youth Institute (free, gr 8-10, first-gen Milwaukee pipeline), Badger Boys State (American Legion residential civics at UW-Eau Claire), Milwaukee Art Museum Satellite Teens Internship (year-round arts), Milwaukee Art Museum ArtXpress Summer Internship (4-week public mural project), Carthage College CNA Certification Program (3-week healthcare credential, Kenosha), SUPREMES Program (Marquette/MCW joint BME year-long mentored research). Broadened WI into business/finance, law, civics/government, arts/public art, healthcare credentialing, and biomedical engineering research. WI now 21 verified.
 
 ## Next priorities
