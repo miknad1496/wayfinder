@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1125,
+    "totalCount": 1145,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1125,
-    "verifiedCount": 500,
+    "totalInternships": 1145,
+    "verifiedCount": 520,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -16783,6 +16783,652 @@
       "duration": "Academic year",
       "whyApply": "Nationally recognized Chicago-based mentoring program with proven outcomes for young men's leadership development.",
       "_source": "youth-guidance.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "JJ Vance Memorial Summer Internship",
+      "company": "University of Miami Miller School of Medicine (Hussman Institute for Human Genomics)",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$14/hour for 8 weeks",
+      "field": "Science",
+      "deadline": "2027-02-15",
+      "description": "Eight-week paid summer research program at UM Miller School of Medicine for Florida resident high school juniors interested in biological and computational sciences. Students are paired with faculty and research staff at the Hussman Institute for Human Genomics.",
+      "majors": [
+        "Biology",
+        "Genomics",
+        "Computer Science",
+        "Biomedical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "genomics",
+        "miami"
+      ],
+      "url": "https://umiamihealth.org/en/sylvester-comprehensive-cancer-center/research/education-and-training/high-school-students-and-undergraduates",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Rare paid high school research position in genomics at a top-tier academic medical center.",
+      "_source": "umiamihealth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CREATE Cancer Research Program",
+      "company": "Sylvester Comprehensive Cancer Center, University of Miami",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Stipend + housing on Coral Gables campus",
+      "field": "Science",
+      "deadline": "2027-02-28",
+      "description": "Mentored cancer biology research experience for rising juniors and seniors at Sylvester Comprehensive Cancer Center. Scholars work in faculty labs learning cutting-edge oncology tools and concepts, with stipend and housing provided.",
+      "majors": [
+        "Biology",
+        "Cancer Biology",
+        "Biochemistry",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "residential",
+        "research",
+        "oncology"
+      ],
+      "url": "https://umiamihealth.org/en/sylvester-comprehensive-cancer-center/research/education-and-training/high-school-students-and-undergraduates",
+      "duration": "Summer (multiple weeks)",
+      "whyApply": "Funded residential cancer research at a top NCI-designated cancer center in Florida.",
+      "_source": "umiamihealth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "FIU Summer Research Internship Program (Cardiovascular Health)",
+      "company": "Florida International University",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-01",
+      "description": "Eight-week cardiovascular health research program blending curriculum (case studies, journal clubs, workshops) with ~15 hours/week of hands-on lab research in FIU College of Arts, Sciences & Education.",
+      "majors": [
+        "Biology",
+        "Public Health",
+        "Biomedical Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "cardiovascular",
+        "miami"
+      ],
+      "url": "https://case.fiu.edu/opportunities/internships-jobs/summer-research-internship/",
+      "duration": "8 weeks",
+      "whyApply": "Structured curriculum + mentored research at South Florida's largest public university.",
+      "_source": "case.fiu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Center for Translational Science High School Summer Internship",
+      "company": "FIU Center for Translational Science",
+      "location": {
+        "city": "Port St. Lucie",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "High school summer internship program at FIU's Center for Translational Science in Port St. Lucie. Students work alongside researchers on translational biomedical projects including drug discovery and infectious disease.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Biomedical Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "translational-science"
+      ],
+      "url": "https://cts.fiu.edu/education/high-school-summer-internship-program/",
+      "duration": "Summer",
+      "whyApply": "Exposure to real drug-discovery and translational research methodology at a university research center.",
+      "_source": "cts.fiu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Youth Internship Program (SYIP)",
+      "company": "Miami-Dade County / The Education Fund",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Various",
+      "deadline": "2027-03-15",
+      "description": "Five-week paid summer internship for rising 10th-12th grade Miami-Dade County Public Schools students. Places teens in real-world work sites across industries including healthcare, government, nonprofit, and business for career exploration.",
+      "majors": [
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "career-exploration",
+        "miami-dade"
+      ],
+      "url": "https://www.miamidade.gov/global/service.page?Mduid_service=ser1547056672529572",
+      "duration": "5 weeks",
+      "whyApply": "Rare PAID county-sponsored summer work experience for Miami-Dade public school students.",
+      "_source": "miamidade.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Youth Internship Program",
+      "company": "Nicklaus Children's Hospital",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship via MDCPS partnership",
+      "field": "Healthcare",
+      "deadline": "2027-03-01",
+      "description": "Five-week paid clinical internship for rising 10th-12th grade Miami-Dade Public Schools students. Interns spend ~30 hours/week working with mentors at Nicklaus Children's, applying medical knowledge while assisting with patient care and observing clinical procedures.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "clinical",
+        "pediatrics"
+      ],
+      "url": "https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant",
+      "duration": "5 weeks (summer)",
+      "whyApply": "Paid clinical exposure at one of the top pediatric hospitals in the Southeast.",
+      "_source": "nicklauschildrens.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "OSTEM High School Internship",
+      "company": "NASA Kennedy Space Center",
+      "location": {
+        "city": "Merritt Island",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "NASA OSTEM stipend",
+      "field": "Engineering",
+      "deadline": "2027-02-15",
+      "description": "NASA Office of STEM Engagement (OSTEM) internship at Kennedy Space Center for high school students 16+. Interns work alongside NASA scientists and engineers on real spaceflight, aeronautics, and earth science projects. Fall, spring, and summer sessions available.",
+      "majors": [
+        "Aerospace Engineering",
+        "Mechanical Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "NASA",
+        "aerospace",
+        "competitive"
+      ],
+      "url": "https://intern.nasa.gov/",
+      "duration": "8-10 weeks",
+      "whyApply": "Work at NASA's primary launch facility — a resume-defining opportunity for aerospace-bound students.",
+      "_source": "intern.nasa.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Florida Senate Page Program",
+      "company": "The Florida Senate",
+      "location": {
+        "city": "Tallahassee",
+        "state": "FL"
+      },
+      "type": "semester",
+      "paid": true,
+      "stipend": "$250 stipend OR 40 community-service hours",
+      "field": "Government",
+      "deadline": "2027-01-15",
+      "description": "Week-long program during the Florida legislative session for students ages 15-18. Pages distribute legislative materials in the Senate Chamber and participate in a mock session where they draft legislation and learn the bill-filing process.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Pre-Law",
+        "History"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "legislature",
+        "state-capitol"
+      ],
+      "url": "https://senatepages.flsenate.gov/",
+      "duration": "1 week (during session)",
+      "whyApply": "Direct immersion in Florida state government during active legislative session.",
+      "_source": "flsenate.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "HIP IMO (High School Internship in Integrated Mathematical Oncology)",
+      "company": "Moffitt Cancer Center",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "Eight-week interdisciplinary research program for students 16+ at Moffitt's Integrated Mathematical Oncology department. Interns complete an individual research project combining mathematical modeling and cancer biology, culminating in a 15-minute presentation and scientific report.",
+      "majors": [
+        "Mathematics",
+        "Biology",
+        "Computer Science",
+        "Oncology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "competitive",
+        "math-bio"
+      ],
+      "url": "https://www.moffitt.org/education/research-education-and-training/pre-college-programs/hip-imo/",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "One of the few programs in the US that combines mathematical modeling with cancer research at the high school level.",
+      "_source": "moffitt.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "USF-Moffitt Explorers Oncology Program",
+      "company": "University of South Florida / Moffitt Cancer Center",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-04-15",
+      "description": "One-week immersive summer program for rising 11th-12th graders exploring cancer care, research, pharmacy, genetics, and modern healthcare at USF and Moffitt Cancer Center.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Pharmacy",
+        "Genetics"
+      ],
+      "tags": [
+        "high-school",
+        "summer-camp",
+        "oncology",
+        "healthcare"
+      ],
+      "url": "https://www.usf.edu/innovative-education/yxp/summer-camps/moffitt-oncology-program.aspx",
+      "duration": "1 week",
+      "whyApply": "Broad introduction to oncology careers at a top cancer center — accessible one-week commitment.",
+      "_source": "usf.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Conservation Teen Scientist (CTS)",
+      "company": "Zoo Miami",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-01",
+      "description": "Volunteer program for high school students 14-18 to develop practical skills in environmental conservation, wildlife biology, zoo operations, and public engagement. Teens assist with guest interpretation and animal encounters.",
+      "majors": [
+        "Biology",
+        "Zoology",
+        "Environmental Science",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "conservation",
+        "zoo",
+        "volunteer"
+      ],
+      "url": "https://www.zoomiami.org/volunteer",
+      "duration": "Year-round (7-hour shifts)",
+      "whyApply": "Hands-on wildlife experience and public speaking practice at a major accredited zoo.",
+      "_source": "zoomiami.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "SPARK Research Mentorship Program",
+      "company": "Mayo Clinic in Florida",
+      "location": {
+        "city": "Jacksonville",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2026-12-31",
+      "description": "Mentored biomedical research program for rising juniors and seniors from Duval or St. Johns Counties. SPARK scholars design and carry out research projects within Discovery and Translation labs at Mayo Clinic, committing 25+ hours/week during summer.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Pre-Med",
+        "Neuroscience"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "local",
+        "competitive"
+      ],
+      "url": "https://college.mayo.edu/academics/non-clinical-education/science-program-for-the-advancement-of-research-knowledge-spark-florida/",
+      "duration": "Summer + limited fall continuation",
+      "whyApply": "Mayo Clinic research mentorship available only to local NE Florida students — high acceptance odds for motivated applicants.",
+      "_source": "college.mayo.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Volunteer Internship Program",
+      "company": "Miami-Dade State Attorney's Office",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-04-15",
+      "description": "Volunteer internship at the Office of the Miami-Dade State Attorney Katherine Fernandez Rundle. High school students observe courtroom proceedings, work alongside Assistant State Attorneys, and gain exposure to the criminal justice system.",
+      "majors": [
+        "Pre-Law",
+        "Criminal Justice",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "criminal-justice",
+        "miami"
+      ],
+      "url": "https://miamisao.com/careers/miami-sao-internship-opportunities/high-school-volunteer-internship-program/",
+      "duration": "Summer",
+      "whyApply": "Direct exposure to working prosecutors and live courtroom proceedings.",
+      "_source": "miamisao.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PAMM Teen Arts Council (PTAC)",
+      "company": "Pérez Art Museum Miami",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-08-15",
+      "description": "Teen-led, museum-facilitated council for high schoolers interested in creative arts. PTAC members develop programming, respond creatively to exhibitions, and host Free Second Saturdays: Teen Takeover events at PAMM.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "Curatorial Studies",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "museum",
+        "miami",
+        "leadership"
+      ],
+      "url": "https://www.pamm.org/teenartcouncil",
+      "duration": "Academic year",
+      "whyApply": "Build a curatorial portfolio and arts leadership experience at a major contemporary art museum.",
+      "_source": "pamm.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Summer Research Internship",
+      "company": "Max Planck Florida Institute for Neuroscience",
+      "location": {
+        "city": "Jupiter",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$14/hour",
+      "field": "Science",
+      "deadline": "2027-02-08",
+      "description": "Six-week paid research internship for high school juniors and seniors from Palm Beach or Martin Counties. Interns work on projects in Neuroscience, Scientific Programming, or Mechanical Engineering tracks alongside MPFI researchers.",
+      "majors": [
+        "Neuroscience",
+        "Computer Science",
+        "Mechanical Engineering",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "neuroscience",
+        "competitive",
+        "local"
+      ],
+      "url": "https://mpfi.org/community/education-outreach/high-school-internship/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "One of very few high school neuroscience research internships in the US, at a Max Planck research institute.",
+      "_source": "mpfi.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program (TVP)",
+      "company": "Mote Marine Laboratory & Aquarium",
+      "location": {
+        "city": "Sarasota",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Competitive marine science volunteer program where high schoolers act as Aquarium Guides at Mote. Teens receive training in marine science, Mote research, interpretation, and public speaking, then interpret exhibits and facilitate animal encounters.",
+      "majors": [
+        "Marine Biology",
+        "Environmental Science",
+        "Zoology"
+      ],
+      "tags": [
+        "high-school",
+        "marine-biology",
+        "conservation",
+        "aquarium"
+      ],
+      "url": "https://mote.org/support/volunteer/high-school-volunteer-programs/",
+      "duration": "Summer (multi-week)",
+      "whyApply": "Training and hands-on interpretation experience at one of Florida's top marine research institutions.",
+      "_source": "mote.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "JA Finance Park & Advanced Programs",
+      "company": "Junior Achievement of South Florida",
+      "location": {
+        "city": "Coconut Creek",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-09-01",
+      "description": "JA Finance Park is JA's capstone personal finance and career exploration program. Students complete 16-20 hours of classroom curriculum then visit JA Finance Park to simulate adult budgeting with assigned identities, income, and expenses. The advanced high school version adds long-term education, savings, and credit decisions.",
+      "majors": [
+        "Finance",
+        "Economics",
+        "Business",
+        "Accounting"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "financial-literacy",
+        "simulation"
+      ],
+      "url": "https://jasouthflorida.org/ja-finance-park/",
+      "duration": "Multi-week (classroom + site visit)",
+      "whyApply": "Real-world budgeting simulation that teaches credit, taxes, and savings decisions — rare hands-on finance for teens.",
+      "_source": "jasouthflorida.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Student Science Training Program (SSTP)",
+      "company": "University of Florida Center for Precollegiate Education and Training",
+      "location": {
+        "city": "Gainesville",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-25",
+      "description": "Seven-week residential summer research program at UF for rising seniors considering science, medicine, math, computer science, or engineering careers. Students work with a UF faculty mentor on ongoing research, attend a lecture series, and take a UF honors seminar for potential dual enrollment credit.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "research",
+        "competitive",
+        "college-credit"
+      ],
+      "url": "https://www.cpet.ufl.edu/students/uf-cpet-summer-programs/student-science-training-program/",
+      "duration": "7 weeks (residential)",
+      "whyApply": "One of the oldest and most respected residential high school research programs in the country.",
+      "_source": "cpet.ufl.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Florida 4-H Youth Development Program",
+      "company": "UF/IFAS Extension (Florida 4-H)",
+      "location": {
+        "city": "Statewide",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2027-09-01",
+      "description": "Statewide 4-H program administered by UF/IFAS Extension. Youth participate in hands-on projects spanning agriculture, animal science, food science, STEM/robotics, civic engagement, and mock government through community clubs, workshops, and county fairs.",
+      "majors": [
+        "Agriculture",
+        "Animal Science",
+        "Food Science",
+        "Biology"
+      ],
+      "tags": [
+        "elementary",
+        "middle-school",
+        "high-school",
+        "agriculture",
+        "4-H"
+      ],
+      "url": "https://florida4h.ifas.ufl.edu/",
+      "duration": "Year-round",
+      "whyApply": "Largest youth-development program in Florida — projects span agriculture, livestock, robotics, and civic engagement.",
+      "_source": "florida4h.ifas.ufl.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Florida Attorney General's Internship Program",
+      "company": "Office of the Florida Attorney General",
+      "location": {
+        "city": "Tallahassee",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-03-15",
+      "description": "Internship program at the Office of the Florida Attorney General with placements across divisions including consumer protection, civil rights, and criminal appeals. High school interns observe legal proceedings and support paralegal work at state offices in Tallahassee and other regional locations.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "state-government",
+        "legal"
+      ],
+      "url": "https://www.myfloridalegal.com/employment-opportunities/florida-attorney-generals-internship-program",
+      "duration": "Summer",
+      "whyApply": "Exposure to statewide legal work at the office of Florida's top legal officer.",
+      "_source": "myfloridalegal.com",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
