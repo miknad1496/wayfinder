@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (tenth run — NC kickoff)
+Last updated: 2026-04-09 (run 14 — WI kickoff)
 
 ## State-by-state verified internship counts
 
@@ -22,7 +22,10 @@ Generated from inject-verified-internships.js run output.
 | OH    | 29    | In progress (second run — arts/business/law/engineering added) |
 | GA    | 29+   | In progress (run 8 — broadened into CS/tech, arts, medicine, humanities) |
 | PA    | 19    | In progress (run 9 — CMU pre-college, PGSS, Penn State, CHOP, Carnegie museums) |
-| NC    | 13    | Started (run 10 — NCSSM Summer Ventures, NC Governor's School, Duke DUNE/STAR/Pre-College, UNC Project Uplift/Uplift PLUS, NC State Engineering Place, Wake Forest RKS Debate, UNC Charlotte STEM, NCMNS teen volunteer) |
+| NC    | 35    | In progress (run 11 — UNCSA, ACS SEED UNCC, Wake Forest, WFIRM, Duke STEM/REP, etc.) |
+| CO    | 22    | Started (run 12 — CU Boulder, Mines, NCAR, Children's Colorado, etc.) |
+| OR    | 14    | Started (run 13 — OHSU CURE, ASE Saturday Academy, UO SAIL, OMSI, etc.) |
+| WI    | 13    | Started (run 14 — UW-Madison ESP, PEOPLE, MCW AIM, Badger Summer Scholars, WCATY ALP, MSOE, EnQuest, Marquette UB/UBMS, Beloit CLS, Lawrence Ascent, ICF, Milwaukee Zoo HSA, Discovery World) |
 
 ## Recent runs
 - 2026-04-09 (run 1): Added 10 verified Massachusetts programs (MITES Summer, MITES Semester, BWSI, MIT PRIMES, PROMYS, BU RISE, Harvard Pre-College, Harvard SSP, WPI Frontiers, Boston Leadership Institute)
@@ -49,5 +52,7 @@ Generated from inject-verified-internships.js run output.
 
 
 - 2026-04-09 (run 12): Started Colorado coverage with 17 verified programs — CU Boulder Science Discovery Summer Classes, CU Boulder Precollegiate Development Program, CU Boulder Precollege STEM Pathfinder (Bioscience + Engineering), Colorado School of Mines SUMMET, CS@Mines Summer Computing, Mines Upward Bound Math & Science (TRIO), Denver Museum of Nature & Science Teen Science Scholars, NCAR/UCAR PRECIP Pre-College Internship (paid atmospheric science), Children's Hospital Colorado Junior Volunteer, Children's Hospital Colorado Medical Career Collaborative MC² (paid 2-yr healthcare pathway), CU Anschutz K-12 Pre-Health (CUPS, CADAVERS), Colorado College Pre-College Block, Colorado College Stroud Scholars, Denver Botanic Gardens Summer Teen Volunteer, CSU Global Business Academy, GoGetMath@CSU, Denver Art Museum Teen Studio. Spans STEM, engineering, CS, atmospheric/climate, medicine, pre-health, business/finance, mathematics, environmental, arts, and college-access pipelines for first-gen and underrepresented students. CO now 22 verified.
+
+- 2026-04-09 (run 14): Started Wisconsin coverage with 13 verified programs — UW-Madison Engineering Summer Program (free residential), UW-Madison PEOPLE Program (4-year college access pipeline), Medical College of Wisconsin AIM (paid medicine), Badger Summer Scholars (UW-Madison pre-college), WCATY Accelerated Learning Program (gifted residential), MSOE Summer Programs (Explore/Focus, Milwaukee), UWM EnQuest (girls in engineering, day + overnight), Marquette Upward Bound + UBMS (TRIO), Beloit College Center for Language Studies (Chinese/Japanese/Russian, college credit), Lawrence University Ascent Summer Institute (liberal arts), International Crane Foundation Naturalist Internship (Baraboo conservation), Milwaukee County Zoo HSA (zoo summer camp assistant), Discovery World Teen Volunteer (year-round STEM museum). Spans engineering, medicine, gifted ed, languages, college access, conservation, and arts. WI now 13 verified.
 
 - 2026-04-09 (run 13): Started Oregon coverage with 14 verified programs — OHSU Ted R. Lilley CURE Program (paid cancer research), PSI Program (OHSU/PSU medicine course + summer lab match), STEMPrep-OHSU Internship (paid residential research w/ housing), Saturday Academy ASE Apprenticeships (paid statewide STEM placements at Intel/Nike/OHSU/OSU), UO Summer SAIL (free Eugene pre-college), OSU-Cascades Summer Academy (Bend residential), SESEY at OSU Corvallis (free residential engineering for girls/URM), OSU STEM Academy High School Summer Camps, Oregon Zoo ZAP (paid multi-year apprenticeship), Oregon Zoo Wildlife Leaders (teen volunteer), OMSI Career Pathways (paid year-long), OMSI Teen Volunteer, PNCA Pre-College Summer Intensive (art portfolio, Portland), EOU ECI Summer Institute (Eastern Oregon business/humanities). Spans medicine/cancer research, biomedical research, engineering (incl. diversity pipelines), arts, business, conservation, and museum/science-communication pathways. OR now 14 verified.

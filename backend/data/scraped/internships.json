@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1368,
+    "totalCount": 1381,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1368,
-    "verifiedCount": 743,
+    "totalInternships": 1381,
+    "verifiedCount": 756,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -24842,6 +24842,455 @@
       "duration": "1 week (June 22-27, 2026)",
       "whyApply": "One of the very few pre-college summer options in Eastern Oregon — rare combination of business and humanities tracks for rural students.",
       "_source": "https://www.eou.edu/early-college-initiatives/summer-institutes/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Engineering Summer Program (ESP)",
+      "company": "UW-Madison College of Engineering",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free residential program (housing & meals included)",
+      "field": "Engineering",
+      "deadline": "2026-03-15",
+      "description": "Free three-week residential program July 11-31, 2026 for rising high school juniors and seniors interested in engineering. Curriculum includes math (pre-calc or calc), physics, chemistry, and engineering design taught by UW-Madison faculty. Participants live in Dejope Hall, take field trips to industry sites, and receive faculty mentoring. U.S. citizens or permanent residents only; minimum 3.0 unweighted GPA. Highly selective holistic admissions.",
+      "majors": [
+        "Engineering",
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "residential",
+        "engineering",
+        "diversity-pipeline",
+        "selective"
+      ],
+      "url": "https://engineering.wisc.edu/engineering-summer-program/",
+      "duration": "3 weeks (July 11-31, 2026)",
+      "whyApply": "Wisconsin's flagship free residential engineering program for high schoolers — includes housing, meals, and college-level coursework with UW faculty.",
+      "_source": "https://engineering.wisc.edu/engineering-summer-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PEOPLE Program (Pre-college Enrichment Opportunity Program for Learning Excellence)",
+      "company": "UW-Madison",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Free 4-year program with summer residential component",
+      "field": "College Access / Multi-Disciplinary",
+      "deadline": "2027-01-09",
+      "description": "Multi-year college access program for Wisconsin students of color, students from economically disadvantaged backgrounds, and first-generation college attendees. Open to 9th graders entering 10 partner Milwaukee Public Schools. Includes free after-school tutoring, advising, UW System campus tours, college application help, and PEOPLE Summer University (PSU) — a residential summer program at UW-Madison after senior year offering core subject prep, ACT prep, and career exploration. Successful completion can lead to admission and tuition support at UW-Madison.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "college-access",
+        "first-gen",
+        "diversity",
+        "multi-year",
+        "Milwaukee"
+      ],
+      "url": "https://peopleprogram.wisc.edu/",
+      "duration": "4 years (9th grade through summer after senior year)",
+      "whyApply": "One of the most comprehensive college access pipelines in the Midwest — provides 4 years of support and a clear pathway to UW-Madison admission and aid.",
+      "_source": "https://peopleprogram.wisc.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Apprenticeship in Medicine (AIM)",
+      "company": "Medical College of Wisconsin",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Stipend upon completion",
+      "field": "Medicine / Biomedical Research",
+      "deadline": "2026-12-15",
+      "description": "Six-week paid summer enrichment for rising juniors, rising seniors, and graduating seniors (16+) from Milwaukee-area high schools with a 2.75+ GPA in science/math. Runs mid-June to early August. Activities include classroom lectures in anatomy and physiology, suture clinics, heart dissections, clinical shadowing, simulation training, mentorship by current medical students, and a final oral presentation. Aimed at students from diverse backgrounds interested in medicine, biomedical research, or allied health.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Biochemistry",
+        "Allied Health"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "medicine",
+        "diversity",
+        "Milwaukee",
+        "shadowing",
+        "research"
+      ],
+      "url": "https://www.mcw.edu/education/pathway-programs/for-high-school-students",
+      "duration": "6 weeks (mid-June to early August)",
+      "whyApply": "Rare paid medical pipeline program for Milwaukee teens — combines classroom medicine, hands-on clinical simulations, and physician mentorship.",
+      "_source": "https://www.mcw.edu/education/pathway-programs/for-high-school-students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Badger Summer Scholars",
+      "company": "UW-Madison Badger Precollege",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Academic Enrichment / Multi-Disciplinary",
+      "deadline": "2026-05-15",
+      "description": "Two-week pre-college program for high school students offering college-level seminars in subjects ranging from engineering, computer science, business, music, art, to law. Taught by UW-Madison faculty and Badger Precollege instructors in small class sizes. Commuter or residential options. 2026 application period opens January 12, 2026; rolling admissions and first-come placement.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Business",
+        "Music",
+        "Art",
+        "Law"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "residential-or-commuter",
+        "Madison",
+        "interdisciplinary"
+      ],
+      "url": "https://precollege.wisc.edu/badger-summer-scholars/",
+      "duration": "2 weeks",
+      "whyApply": "Broad subject menu with UW-Madison faculty — strong fit for academically motivated teens exploring potential majors before college applications.",
+      "_source": "https://precollege.wisc.edu/badger-summer-scholars/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Accelerated Learning Program (ALP)",
+      "company": "Wisconsin Center for Academically Talented Youth (WCATY) / UW-Madison",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Gifted Enrichment / Multi-Disciplinary",
+      "deadline": "2026-05-15",
+      "description": "Three-week intensive residential summer program at UW-Madison for academically talented high school students from across Wisconsin, the U.S., and internationally. Designed to push students to the next academic level in an intimate learning environment. Subjects span engineering, architecture, robotics, marine biology, forensic science, and law. Founded in 1991, WCATY is a UW-Madison outreach program serving rural, urban, and suburban Wisconsin communities.",
+      "majors": [
+        "Engineering",
+        "Architecture",
+        "Robotics",
+        "Biology",
+        "Forensic Science",
+        "Law"
+      ],
+      "tags": [
+        "high-school",
+        "gifted",
+        "residential",
+        "Madison",
+        "selective"
+      ],
+      "url": "https://wcaty.wisc.edu/",
+      "duration": "3 weeks",
+      "whyApply": "Wisconsin's premier gifted/talented summer residential — small cohorts and serious academic pacing for students who want depth over breadth.",
+      "_source": "https://wcaty.wisc.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Programs at MSOE (Explore & Focus)",
+      "company": "Milwaukee School of Engineering",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering / Healthcare / Computer Science",
+      "deadline": "2026-06-01",
+      "description": "Week-long residential academic camps in July 2026 for high school freshmen, sophomores, and juniors with a 3.5+ GPA. The Explore program rotates students through half-day sessions across MSOE engineering majors (architectural, biomedical, chemical & biomolecular, civil, computer, electrical, mechanical, software) and healthcare disciplines. The Focus program is for students committed to a single major. Includes hands-on labs and dorm housing on the MSOE Milwaukee campus.",
+      "majors": [
+        "Mechanical Engineering",
+        "Biomedical Engineering",
+        "Computer Engineering",
+        "Software Engineering",
+        "Architectural Engineering",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "engineering",
+        "Milwaukee",
+        "healthcare",
+        "STEM"
+      ],
+      "url": "https://www.msoe.edu/academics/high-school-programs/summer-programs-at-msoe/",
+      "duration": "1 week (July)",
+      "whyApply": "One of the few residential STEM camps in Wisconsin where students can sample multiple engineering majors in a single week — useful for narrowing college focus.",
+      "_source": "https://www.msoe.edu/academics/high-school-programs/summer-programs-at-msoe/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "EnQuest Engineering Camp",
+      "company": "UW-Milwaukee College of Engineering & Applied Science",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering / Diversity Pipeline",
+      "deadline": "2026-06-01",
+      "description": "Hands-on engineering camp for girls in Wisconsin to explore computer, civil, electrical, mechanical, biomedical, materials, and industrial engineering. 2026 Day Camp runs July 13-17 (girls exiting 8th-11th, 9:30am-3:30pm). 2026 Overnight Camp runs July 26-31 (girls exiting 9th-11th). Hosted on the UW-Milwaukee campus by the College of Engineering & Applied Science.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Biomedical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "girls",
+        "diversity",
+        "engineering",
+        "Milwaukee",
+        "residential"
+      ],
+      "url": "https://uwm.edu/engineering/students/future/k-12-students/enquest/",
+      "duration": "1 week",
+      "whyApply": "One of the longest-running girls-in-engineering camps in Wisconsin — both day and residential options across grade ranges, including 8th graders.",
+      "_source": "https://uwm.edu/engineering/students/future/k-12-students/enquest/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Marquette Upward Bound & Upward Bound Math-Science",
+      "company": "Marquette University Educational Opportunity Program",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Free TRIO program (federally funded)",
+      "field": "College Access / Math & Science",
+      "deadline": "Rolling (8th/9th grade recruitment)",
+      "description": "Federally funded TRIO program preparing low-income, first-generation Milwaukee high school students to enter and complete college. Includes specialized classes, tutorials, college placement assistance, career development labs, academic and personal counseling, plus social/cultural activities. UBMS adds specialized math, science, writing, and technology classes for students with serious STEM interest. Target schools: Riverside University HS, Bradley Tech, Washington HS, Marshall, Hamilton HS, Milwaukee Academy of Science. Recruitment in 8th grade (UB) or 9th grade (UBMS).",
+      "majors": [
+        "Any",
+        "Math",
+        "Science"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "first-gen",
+        "college-access",
+        "TRIO",
+        "Milwaukee",
+        "multi-year"
+      ],
+      "url": "https://www.marquette.edu/educational-opportunity-program/upward-bound.php",
+      "duration": "Multi-year (through high school)",
+      "whyApply": "Among the most established TRIO college-access pipelines in Milwaukee — comprehensive, free, and runs throughout high school.",
+      "_source": "https://www.marquette.edu/educational-opportunity-program/upward-bound.php",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Beloit College Center for Language Studies Summer Program",
+      "company": "Beloit College",
+      "location": {
+        "city": "Beloit",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "World Languages / Humanities",
+      "deadline": "2026-05-15",
+      "description": "Intensive summer language immersion offering Chinese, Japanese, and Russian in two 3-week sessions (June 15 - July 31, 2026). Open to high school juniors and seniors alongside undergraduates and adult learners. Each session earns 4 US credits (1 Beloit Unit); students completing both earn 8 semester hours. Cutting-edge teaching methods, immersive virtual setting, and cultural enrichment activities. Requires $300 non-refundable deposit by May 15.",
+      "majors": [
+        "World Languages",
+        "Linguistics",
+        "International Studies"
+      ],
+      "tags": [
+        "high-school",
+        "language-immersion",
+        "college-credit",
+        "Chinese",
+        "Japanese",
+        "Russian"
+      ],
+      "url": "https://www.beloit.edu/offices/global-experience/center-for-language-studies/summer-language-program/",
+      "duration": "3 or 6 weeks (June 15 - July 31, 2026)",
+      "whyApply": "One of the few intensive less-commonly-taught-language summer programs open to high schoolers — earns real college credit in critical languages.",
+      "_source": "https://www.beloit.edu/offices/global-experience/center-for-language-studies/summer-language-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "remote"
+    },
+    {
+      "title": "Lawrence University Ascent Summer Institute",
+      "company": "Lawrence University",
+      "location": {
+        "city": "Appleton",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Liberal Arts / Leadership",
+      "deadline": "2026-05-15",
+      "description": "One-week residential pre-college experience for rising high school students at Lawrence University in Appleton. Designed for high-achieving AP-level students and taught by Lawrence faculty, the institute offers a college-level interdisciplinary learning and leadership-development experience on a leading liberal arts campus. Companion Odyssey Immersion Program offers a three-week multi-location interdisciplinary track with college credit.",
+      "majors": [
+        "Liberal Arts",
+        "Humanities",
+        "Leadership Studies"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "liberal-arts",
+        "leadership",
+        "Appleton",
+        "interdisciplinary"
+      ],
+      "url": "https://www.lawrence.edu/articles/summer-lawrence",
+      "duration": "1 week (Ascent) / 3 weeks (Odyssey)",
+      "whyApply": "Rare interdisciplinary liberal-arts pre-college experience in Wisconsin — strong fit for students considering small-college humanities programs.",
+      "_source": "https://www.lawrence.edu/articles/summer-lawrence",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "International Crane Foundation Conservation Education Naturalist Internship",
+      "company": "International Crane Foundation",
+      "location": {
+        "city": "Baraboo",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Conservation / Environmental Science",
+      "deadline": "Rolling",
+      "description": "Conservation Education Naturalist internships at the world's only facility holding all 15 crane species. Interns help interpret cranes and conservation strategies for visitors at the 250-acre Baraboo headquarters, support field-ecology activities (prairie restoration, invasive species control, prescribed burns, crane tracking), and learn from leading crane biologists. Volunteer Naturalist roles also open to teens with public-speaking interest. A pipeline opportunity for Wisconsin teens interested in conservation, ornithology, and environmental science.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Conservation",
+        "Ornithology",
+        "Ecology"
+      ],
+      "tags": [
+        "high-school",
+        "conservation",
+        "wildlife",
+        "field-research",
+        "Baraboo",
+        "rural"
+      ],
+      "url": "https://savingcranes.org/volunteer/",
+      "duration": "Variable (summer / season)",
+      "whyApply": "Hands-on conservation work at a globally significant wildlife research site — unmatched ornithology and ecology exposure for Wisconsin students.",
+      "_source": "https://savingcranes.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Milwaukee County Zoo High School Assistant Program",
+      "company": "Zoological Society of Milwaukee",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Conservation / Education",
+      "deadline": "Spring (rolling)",
+      "description": "High School Assistant (HSA) volunteer role supporting Milwaukee County Zoo Summer Camps. Teen volunteers (15+) work alongside a college mentor to assist children, gain hands-on animal-care and education experience, and develop teaching/leadership skills. Onboarding includes online application, background check, interview, and orientation. Volunteers contribute toward the 55,000 hours of annual service the zoo's volunteer program logs.",
+      "majors": [
+        "Biology",
+        "Education",
+        "Zoology",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "zoo",
+        "animals",
+        "Milwaukee",
+        "summer-camp"
+      ],
+      "url": "https://www.zoosociety.org/support/help-the-society/volunteer-opportunities/",
+      "duration": "Summer (multiple weeks)",
+      "whyApply": "Best entry point for Milwaukee teens interested in zoology and informal science education — direct mentorship and meaningful kid-facing teaching role.",
+      "_source": "https://www.zoosociety.org/support/help-the-society/volunteer-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Discovery World Teen Volunteer Program",
+      "company": "Discovery World",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science Education / STEM Outreach",
+      "deadline": "Rolling",
+      "description": "Teen volunteer roles at Discovery World, Milwaukee's lakefront science and technology center. Volunteers (14+) support exhibits, educational programming, and visitor engagement, becoming partners in the museum's mission to bring STEM learning to hundreds of thousands of guests. Multiple role options with varying minimum hour commitments (12-28 hours) and a once-a-month minimum cadence — flexible enough for school-year participation.",
+      "majors": [
+        "STEM",
+        "Education",
+        "Engineering",
+        "Marine Biology"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "volunteer",
+        "STEM",
+        "museum",
+        "Milwaukee",
+        "flexible"
+      ],
+      "url": "https://discoveryworld.org/careers/volunteer/",
+      "duration": "Year-round (flexible)",
+      "whyApply": "One of the most accessible STEM volunteer entry points in Milwaukee for younger teens (age 14+) — flexible schedule that pairs well with school year.",
+      "_source": "https://discoveryworld.org/careers/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
