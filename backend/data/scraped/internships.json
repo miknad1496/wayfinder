@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1145,
+    "totalCount": 1165,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1145,
-    "verifiedCount": 520,
+    "totalInternships": 1165,
+    "verifiedCount": 540,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -17429,6 +17429,654 @@
       "duration": "Summer",
       "whyApply": "Exposure to statewide legal work at the office of Florida's top legal officer.",
       "_source": "myfloridalegal.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Young Scholars Program (YSP)",
+      "company": "Florida State University",
+      "location": {
+        "city": "Tallahassee",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Fully funded residential program",
+      "field": "Science",
+      "deadline": "2027-02-15",
+      "description": "Six-week residential summer program for 40 Florida high school students with demonstrated ability in science and mathematics. Students work alongside FSU faculty on original research projects in physics, biology, chemistry, computer science, and engineering.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "residential",
+        "competitive",
+        "STEM"
+      ],
+      "url": "https://ysp.fsu.edu/",
+      "duration": "6 weeks",
+      "whyApply": "Florida's premier residential STEM research program for rising seniors, fully funded.",
+      "_source": "ysp.fsu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Scholars Program",
+      "company": "University of Miami",
+      "location": {
+        "city": "Coral Gables",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Various",
+      "deadline": "2027-04-01",
+      "description": "Pre-college program where rising juniors and seniors take UM undergraduate courses for college credit while living on campus. Over 20 academic tracks including marine science, business, health professions, and engineering.",
+      "majors": [
+        "Marine Science",
+        "Business",
+        "Health Professions",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "summer",
+        "residential",
+        "college-credit"
+      ],
+      "url": "https://continue.miami.edu/summerscholars",
+      "duration": "3 weeks",
+      "whyApply": "Earn college credit at a top R1 university while exploring potential majors.",
+      "_source": "continue.miami.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Aerospace Academy",
+      "company": "Embry-Riddle Aeronautical University",
+      "location": {
+        "city": "Daytona Beach",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-04-15",
+      "description": "Residential aerospace program for high school students featuring hands-on flight simulation, aircraft design, rocketry, aviation maintenance, and meetings with pilots and aerospace engineers at the nation's leading aviation university.",
+      "majors": [
+        "Aerospace Engineering",
+        "Aviation",
+        "Mechanical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "aerospace",
+        "aviation",
+        "summer",
+        "engineering"
+      ],
+      "url": "https://erau.edu/outreach-programs/summer-programs",
+      "duration": "1-2 weeks",
+      "whyApply": "Immersive aviation experience at the world's top aerospace university.",
+      "_source": "erau.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer High School Programs",
+      "company": "Florida Polytechnic University",
+      "location": {
+        "city": "Lakeland",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-05-01",
+      "description": "STEM-focused residential and day camps for high school students in cybersecurity, data science, engineering, and computer science at Florida's only public polytechnic university.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Cybersecurity",
+        "Data Science"
+      ],
+      "tags": [
+        "high-school",
+        "STEM",
+        "cybersecurity",
+        "summer",
+        "residential"
+      ],
+      "url": "https://floridapoly.edu/summer-programs/",
+      "duration": "1 week",
+      "whyApply": "Hands-on STEM experience at a specialized polytechnic university.",
+      "_source": "floridapoly.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "Orlando Science Center",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-03-01",
+      "description": "Teens ages 13-17 serve as exhibit interpreters, help staff hands-on science demonstrations, assist with camp programs, and engage with museum visitors across physics, biology, and engineering exhibits.",
+      "majors": [
+        "Science Education",
+        "Biology",
+        "Physics"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "volunteer",
+        "STEM",
+        "museum"
+      ],
+      "url": "https://www.osc.org/get-involved/volunteer/",
+      "duration": "Year-round",
+      "whyApply": "Teach science to the public while building STEM communication skills.",
+      "_source": "osc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Museum Volunteers & Teen Programs",
+      "company": "Phillip and Patricia Frost Museum of Science",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-04-01",
+      "description": "Teens work in the aquarium, planetarium, and science galleries assisting with visitor engagement, live animal encounters, and hands-on STEM activities at Miami's flagship science museum.",
+      "majors": [
+        "Biology",
+        "Marine Science",
+        "Astronomy",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "museum",
+        "marine-science",
+        "aquarium"
+      ],
+      "url": "https://www.frostscience.org/get-involved/",
+      "duration": "Year-round",
+      "whyApply": "Combines aquarium, planetarium, and museum experience at a top science institution.",
+      "_source": "frostscience.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Junior Docent & Teen Volunteer Program",
+      "company": "The Florida Aquarium",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Teens ages 14-17 train as junior docents to interpret marine exhibits, assist with animal care demonstrations, and support conservation education programs at one of the nation's top-ranked aquariums.",
+      "majors": [
+        "Marine Biology",
+        "Environmental Science",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "marine-biology",
+        "aquarium",
+        "conservation"
+      ],
+      "url": "https://www.flaquarium.org/volunteer",
+      "duration": "Year-round",
+      "whyApply": "Direct marine conservation experience and animal interpretation training.",
+      "_source": "flaquarium.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Zoo Crew",
+      "company": "ZooTampa at Lowry Park",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-01",
+      "description": "Teens ages 13-17 assist zookeepers, lead interpretive talks for guests, help with enrichment activities for animals, and participate in conservation education at an accredited zoo caring for 1,300+ animals.",
+      "majors": [
+        "Zoology",
+        "Biology",
+        "Environmental Science",
+        "Veterinary Science"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "zoo",
+        "conservation",
+        "animal-care"
+      ],
+      "url": "https://zootampa.org/volunteer/",
+      "duration": "Summer",
+      "whyApply": "Hands-on zoo experience ideal for aspiring vets and wildlife biologists.",
+      "_source": "zootampa.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "Jacksonville Zoo and Gardens",
+      "location": {
+        "city": "Jacksonville",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Teens ages 14-17 engage guests at animal exhibits, assist with zoo camps, conduct biofact demonstrations, and support conservation outreach at Jacksonville's AZA-accredited zoo.",
+      "majors": [
+        "Zoology",
+        "Biology",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "zoo",
+        "conservation"
+      ],
+      "url": "https://www.jacksonvillezoo.org/volunteer",
+      "duration": "Summer & weekends",
+      "whyApply": "Build wildlife career skills at North Florida's premier zoo.",
+      "_source": "jacksonvillezoo.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Junior Achievement of Central Florida Programs",
+      "company": "Junior Achievement of Central Florida",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-09-01",
+      "description": "Programs including JA Company, JA Finance Park, and JA BizTown teach financial literacy, entrepreneurship, and workforce readiness. Teen participants start and run student-led businesses with mentorship from local executives.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Entrepreneurship",
+        "Economics"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "entrepreneurship",
+        "financial-literacy"
+      ],
+      "url": "https://jacentralflorida.org/",
+      "duration": "Year-round",
+      "whyApply": "Run an actual student business with real-world financial decisions and mentors.",
+      "_source": "jacentralflorida.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Junior Volunteer Program",
+      "company": "Tampa General Hospital",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-04-01",
+      "description": "Teens ages 15-17 serve as junior volunteers in patient areas, assisting with wayfinding, clerical support, patient experience initiatives, and observing clinical workflows at West Central Florida's only Level I trauma center.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "pre-med",
+        "healthcare"
+      ],
+      "url": "https://www.tgh.org/volunteer",
+      "duration": "Summer",
+      "whyApply": "Direct clinical exposure at Tampa's academic Level I trauma center.",
+      "_source": "tgh.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "AdventHealth Orlando",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-04-15",
+      "description": "Teens ages 15-17 serve in patient-facing and support roles across AdventHealth's flagship Orlando campus — one of the largest hospitals in the US — gaining insight into diverse medical specialties and hospital operations.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Healthcare Administration"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "pre-med"
+      ],
+      "url": "https://www.adventhealth.com/hospital/adventhealth-orlando/volunteering",
+      "duration": "Summer",
+      "whyApply": "Healthcare exposure at one of America's largest hospital campuses.",
+      "_source": "adventhealth.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "Nemours Children's Health",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-04-01",
+      "description": "Teen volunteers support pediatric patients and families at Nemours Children's Hospital, assisting with playroom activities, family support, and wayfinding while experiencing pediatric healthcare firsthand.",
+      "majors": [
+        "Pediatrics",
+        "Nursing",
+        "Child Life"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "pediatrics",
+        "hospital"
+      ],
+      "url": "https://www.nemours.org/about/giveback/volunteer.html",
+      "duration": "Summer & year-round",
+      "whyApply": "Meaningful pediatric healthcare experience with children and families.",
+      "_source": "nemours.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Research Experience for High School Students",
+      "company": "Florida Atlantic University",
+      "location": {
+        "city": "Boca Raton",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "High school students are paired with FAU faculty mentors to conduct original research in biology, chemistry, neuroscience, ocean engineering, and data science, culminating in a research symposium presentation.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Neuroscience",
+        "Data Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "mentored"
+      ],
+      "url": "https://www.fau.edu/osher/programs/high-school/",
+      "duration": "6-8 weeks",
+      "whyApply": "Mentored faculty research on a coastal R1 campus with a symposium.",
+      "_source": "fau.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Upward Bound Math-Science",
+      "company": "University of Central Florida",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend for summer residential component",
+      "field": "Science",
+      "deadline": "2027-02-15",
+      "description": "Federally funded TRIO program serving first-generation and low-income Central Florida high school students with intensive STEM academic enrichment, tutoring, and a 6-week summer residential academy at UCF.",
+      "majors": [
+        "Math",
+        "Biology",
+        "Chemistry",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "TRIO",
+        "first-generation",
+        "STEM",
+        "residential"
+      ],
+      "url": "https://ubms.sdes.ucf.edu/",
+      "duration": "Year-round + 6-week summer",
+      "whyApply": "Federally funded STEM prep program for first-gen students at UCF.",
+      "_source": "ucf.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Teen Leadership Programs",
+      "company": "Boys & Girls Clubs of Miami-Dade",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2027-09-01",
+      "description": "Teens participate in Keystone Club leadership development, Youth of the Year competition, Career Launch job readiness, and Junior Staff training while mentoring younger members at club sites across Miami-Dade County.",
+      "majors": [
+        "Social Work",
+        "Nonprofit Management",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "leadership",
+        "community-service",
+        "mentoring"
+      ],
+      "url": "https://www.bgcmia.org/",
+      "duration": "Year-round",
+      "whyApply": "Build leadership skills while mentoring younger kids in your community.",
+      "_source": "bgcmia.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Opportunities",
+      "company": "Tampa Bay History Center",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-05-01",
+      "description": "Teens volunteer as gallery interpreters, living history actors, camp counselors, and digitization assistants at the Smithsonian Affiliate museum telling 12,000 years of Florida history.",
+      "majors": [
+        "History",
+        "Museum Studies",
+        "Education",
+        "Anthropology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "museum",
+        "history"
+      ],
+      "url": "https://tampabayhistorycenter.org/support/volunteer/",
+      "duration": "Year-round",
+      "whyApply": "Smithsonian-affiliated museum experience for aspiring historians.",
+      "_source": "tampabayhistorycenter.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "University Scholars Program",
+      "company": "University of Florida",
+      "location": {
+        "city": "Gainesville",
+        "state": "FL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$500 scholarship",
+      "field": "Various",
+      "deadline": "2027-02-01",
+      "description": "Undergraduate research program that also accepts exceptional high school students. Participants work with UF faculty mentors on original research projects across all disciplines and publish in UF's Journal of Undergraduate Research.",
+      "majors": [
+        "Biology",
+        "Engineering",
+        "Humanities",
+        "Social Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "publication",
+        "mentored"
+      ],
+      "url": "https://cur.aa.ufl.edu/usp/",
+      "duration": "Academic year + summer",
+      "whyApply": "Publish research in UF's undergraduate journal as a high schooler.",
+      "_source": "cur.aa.ufl.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Young Entrepreneurs Academy (YEA!)",
+      "company": "UCF College of Business / YEA Orlando",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-09-15",
+      "description": "30-week program where middle and high school students develop an original business or social movement, write a business plan, pitch to investors, and launch an actual company with seed funding.",
+      "majors": [
+        "Business",
+        "Entrepreneurship",
+        "Marketing"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "entrepreneurship",
+        "pitch",
+        "business-plan"
+      ],
+      "url": "https://business.ucf.edu/center/cei/yea/",
+      "duration": "30 weeks (Sept-May)",
+      "whyApply": "Actually launch a real business with investor funding as a student.",
+      "_source": "business.ucf.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PACE Center for Girls Teen Programs",
+      "company": "PACE Center for Girls",
+      "location": {
+        "city": "Jacksonville",
+        "state": "FL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2027-09-01",
+      "description": "Teen volunteer and leadership opportunities at a nationally recognized nonprofit serving at-risk girls through education, counseling, and life skills. Volunteers tutor, mentor, and support programs at PACE sites statewide.",
+      "majors": [
+        "Social Work",
+        "Education",
+        "Psychology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "mentoring",
+        "nonprofit",
+        "girls-empowerment"
+      ],
+      "url": "https://www.pacecenter.org/",
+      "duration": "Year-round",
+      "whyApply": "Mentor at-risk girls at a nationally recognized gender-responsive nonprofit.",
+      "_source": "pacecenter.org",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
