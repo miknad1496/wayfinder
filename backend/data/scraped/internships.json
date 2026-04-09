@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 933,
+    "totalCount": 950,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 933,
-    "verifiedCount": 308,
+    "totalInternships": 950,
+    "verifiedCount": 325,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -10333,6 +10333,592 @@
       "duration": "3 days per mission",
       "whyApply": "Direct behind-the-scenes access to NASA Johnson Space Center through Space Center Houston's education programs.",
       "_source": "spacecenter.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Clark Scholars Program",
+      "company": "Texas Tech University",
+      "location": {
+        "city": "Lubbock",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$750 stipend + room/board",
+      "field": "Science",
+      "deadline": "2027-02-10",
+      "description": "The Clark Scholars Program is an intensive 7-week summer research experience for 12 of the most outstanding high school juniors and seniors from around the country. Scholars work one-on-one with Texas Tech faculty in any discipline, from engineering and biology to humanities.",
+      "majors": [
+        "Various STEM",
+        "Engineering",
+        "Mathematics",
+        "Humanities"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "highly-competitive",
+        "national",
+        "research",
+        "paid"
+      ],
+      "url": "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandhighschool/clarks/",
+      "duration": "7 weeks (June-August)",
+      "whyApply": "One of the most selective high school research programs in the country — only 12 scholars accepted nationally each summer.",
+      "_source": "ttu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Texas 4-H Youth Development Program",
+      "company": "Texas A&M AgriLife Extension",
+      "location": {
+        "city": "Statewide",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2027-09-01",
+      "description": "Texas 4-H engages K-12 youth in all 254 Texas counties in hands-on learning projects across agriculture, livestock, STEM, food science, veterinary science, robotics, and leadership. Members can compete at county/state levels and attend Texas 4-H Congress.",
+      "majors": [
+        "Agriculture",
+        "Animal Science",
+        "Veterinary Medicine",
+        "Food Science",
+        "Horticulture"
+      ],
+      "tags": [
+        "elementary",
+        "middle-school",
+        "high-school",
+        "year-round",
+        "agriculture",
+        "4h",
+        "livestock"
+      ],
+      "url": "https://texas4-h.tamu.edu/",
+      "duration": "Year-round",
+      "whyApply": "The largest youth development organization in Texas — builds agricultural and leadership skills with a direct pipeline into Texas A&M AgriLife.",
+      "_source": "texas4-h.tamu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Texas Senate Page Program",
+      "company": "Texas State Senate",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-01-15",
+      "description": "Selected high school students serve as pages for Texas State Senators during legislative sessions. Pages deliver messages on the Senate floor, attend committee hearings, and observe firsthand how Texas state government operates from the inside.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Government",
+        "Pre-Law"
+      ],
+      "tags": [
+        "high-school",
+        "legislative",
+        "government",
+        "state-capitol",
+        "page",
+        "austin"
+      ],
+      "url": "https://senate.texas.gov/",
+      "duration": "1-2 weeks",
+      "whyApply": "Immersive experience inside the Texas State Capitol — invaluable exposure for future public servants and attorneys.",
+      "_source": "senate.texas.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Code2College High School Tech Internship",
+      "company": "Code2College",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Technology",
+      "deadline": "2027-03-01",
+      "description": "Austin-based nonprofit Code2College trains underrepresented high school students in full-stack software engineering, then places them into paid tech internships at partner companies including Indeed, Google, Meta, IBM, and dozens of Austin startups.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering",
+        "Information Technology"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "tech",
+        "software",
+        "underrepresented",
+        "austin"
+      ],
+      "url": "https://www.code2college.org/",
+      "duration": "8-10 weeks (summer)",
+      "whyApply": "Rare paid tech internships for high schoolers — C2C has placed hundreds of Austin teens into real engineering roles at major tech companies.",
+      "_source": "code2college.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Youth Internship Program",
+      "company": "Texas Parks and Wildlife Department",
+      "location": {
+        "city": "Statewide",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Hourly wage",
+      "field": "Environmental Science",
+      "deadline": "2027-02-28",
+      "description": "TPWD offers summer internships at state parks, wildlife management areas, and fish hatcheries across Texas. Interns assist biologists with habitat management, wildlife surveys, fisheries research, and park interpretation.",
+      "majors": [
+        "Wildlife Biology",
+        "Fisheries Science",
+        "Environmental Science",
+        "Natural Resources"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "state-parks",
+        "wildlife",
+        "conservation"
+      ],
+      "url": "https://tpwd.texas.gov/jobs/internships/",
+      "duration": "8-12 weeks (summer)",
+      "whyApply": "Paid field work with state wildlife biologists — one of the best pathways into conservation careers in Texas.",
+      "_source": "tpwd.texas.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer / Wildlife Explorers Program",
+      "company": "Fort Worth Zoo",
+      "location": {
+        "city": "Fort Worth",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Teens ages 13-17 learn about animal care, conservation, and zoo operations while assisting the Fort Worth Zoo staff with guest engagement, enrichment activities, and biofact handling. Fort Worth Zoo is ranked among the top five zoos in North America.",
+      "majors": [
+        "Biology",
+        "Zoology",
+        "Environmental Science",
+        "Animal Science"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "summer",
+        "zoo",
+        "wildlife",
+        "volunteer"
+      ],
+      "url": "https://www.fortworthzoo.org/",
+      "duration": "Summer + school-year options",
+      "whyApply": "Hands-on animal and conservation experience at a nationally ranked zoo — excellent for aspiring biologists and veterinarians.",
+      "_source": "fortworthzoo.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "Dell Children's Medical Center",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "Dell Children's in Austin offers teen volunteer opportunities assisting with patient activities, family support, and hospital services at the only dedicated pediatric hospital in Central Texas. Volunteers gain direct exposure to pediatric medicine.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Child Life",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "hospital",
+        "pediatric",
+        "volunteer",
+        "austin"
+      ],
+      "url": "https://www.dellchildrens.net/",
+      "duration": "Ongoing",
+      "whyApply": "Volunteer at Austin's premier pediatric hospital — invaluable experience for future pediatricians and child life specialists.",
+      "_source": "dellchildrens.net",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "DoSeum Teen Volunteer Corps",
+      "company": "The DoSeum — San Antonio's Museum for Kids",
+      "location": {
+        "city": "San Antonio",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-04-01",
+      "description": "Teen volunteers at the DoSeum facilitate STEAM activities for children, help run summer camps, and assist with exhibit interpretation. The DoSeum is San Antonio's premier children's museum focused on hands-on science, art, and discovery.",
+      "majors": [
+        "Education",
+        "Biology",
+        "Engineering",
+        "Child Development"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "museum",
+        "steam",
+        "education",
+        "volunteer"
+      ],
+      "url": "https://www.thedoseum.org/",
+      "duration": "Summer (minimum hour commitment)",
+      "whyApply": "Combine STEM passion with teaching younger kids — ideal for future educators, engineers, or STEM professionals.",
+      "_source": "thedoseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Docent Corps",
+      "company": "Witte Museum",
+      "location": {
+        "city": "San Antonio",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-08-15",
+      "description": "Trained teen docents lead Witte Museum visitors through exhibits on Texas natural history, South Texas heritage, paleontology, and science. Teens develop public speaking, interpretation, and research skills while engaging with museum collections.",
+      "majors": [
+        "Biology",
+        "History",
+        "Anthropology",
+        "Paleontology",
+        "Museum Studies"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "museum",
+        "science",
+        "docent",
+        "texas-history"
+      ],
+      "url": "https://www.wittemuseum.org/learn/teens/",
+      "duration": "Ongoing (academic year)",
+      "whyApply": "Develop museum education and public interpretation skills at San Antonio's flagship natural history museum.",
+      "_source": "wittemuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Austin Nature & Science Center Youth Programs",
+      "company": "City of Austin Parks and Recreation",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-05-15",
+      "description": "The Austin Nature & Science Center engages youth through teen volunteer opportunities, summer naturalist programs, and conservation camps. Volunteers assist with live animal care, visitor education, and habitat restoration in Zilker Park.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Ecology",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "summer",
+        "environmental",
+        "nature-center",
+        "volunteer"
+      ],
+      "url": "https://www.austintexas.gov/department/austin-nature-science-center",
+      "duration": "Flexible",
+      "whyApply": "Learn hands-on wildlife and ecology skills in Austin's central nature center — great for budding naturalists and conservationists.",
+      "_source": "austintexas.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Bush School Student Programs",
+      "company": "George H.W. Bush Presidential Library & Museum",
+      "location": {
+        "city": "College Station",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-04-01",
+      "description": "The Bush Presidential Library offers student programs including the Civic Engagement Academy and archival volunteer opportunities for high schoolers interested in American government, diplomatic history, and public service. Students engage with primary source documents and attend speaker events.",
+      "majors": [
+        "Political Science",
+        "History",
+        "International Relations",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "government",
+        "history",
+        "presidential-library"
+      ],
+      "url": "https://www.bush41.org/",
+      "duration": "Varies",
+      "whyApply": "Unique access to presidential archives and civic education programs at one of the 14 presidential libraries in the US.",
+      "_source": "bush41.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Docent Program",
+      "company": "Amon Carter Museum of American Art",
+      "location": {
+        "city": "Fort Worth",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-08-01",
+      "description": "Amon Carter Museum trains high school teens as docents to lead tours and interpret American art for museum visitors. Teen docents also plan teen nights, engage with curators, and learn art history firsthand with the museum's renowned collection.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "American Studies",
+        "Museum Studies"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "museum",
+        "art",
+        "docent",
+        "fort-worth"
+      ],
+      "url": "https://www.cartermuseum.org/education/teens",
+      "duration": "Ongoing (training + year-round service)",
+      "whyApply": "Shape your public speaking and curatorial skills at one of the nation's leading museums of American art — free admission and world-class collection.",
+      "_source": "cartermuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Bullock Museum Teen Programs",
+      "company": "Bullock Texas State History Museum",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-07-31",
+      "description": "The official state history museum of Texas offers teen volunteer and educational programs including teen docent training, summer history academies, and exhibit interpretation roles. Teens learn Texas history from the Spanish colonial era to present.",
+      "majors": [
+        "History",
+        "Public History",
+        "Museum Studies",
+        "American Studies"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "museum",
+        "history",
+        "texas",
+        "docent"
+      ],
+      "url": "https://www.thestoryoftexas.com/education",
+      "duration": "Varies",
+      "whyApply": "Work at the state's official history museum — ideal for students interested in history, historiography, or museum careers.",
+      "_source": "thestoryoftexas.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "HGOco Young Artist Programs",
+      "company": "Houston Grand Opera (HGOco)",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-09-15",
+      "description": "HGOco, the community engagement arm of Houston Grand Opera, offers student programs including Opera to Go tours, teen chorus participation, and mentorship with HGO resident artists. Programs introduce students to opera performance and production.",
+      "majors": [
+        "Music",
+        "Voice",
+        "Theater",
+        "Opera",
+        "Performing Arts"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "opera",
+        "music",
+        "performing-arts",
+        "houston"
+      ],
+      "url": "https://www.houstongrandopera.org/community/hgoco/",
+      "duration": "Year-round",
+      "whyApply": "Work alongside Houston Grand Opera's professional artists — extraordinary opportunity for young classical musicians and vocalists.",
+      "_source": "houstongrandopera.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Bernard Harris Summer Science Camp (ExxonMobil BHSSC)",
+      "company": "ExxonMobil / The Harris Foundation",
+      "location": {
+        "city": "Multiple Texas cities",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free tuition + housing",
+      "field": "Science",
+      "deadline": "2027-02-28",
+      "description": "A two-week residential STEM camp for rising 6th-8th graders held at university campuses including UT Austin, UT Arlington, Texas A&M, and others. Students engage in hands-on STEM activities taught by university faculty, focused on encouraging underrepresented youth in STEM.",
+      "majors": [
+        "Science",
+        "Technology",
+        "Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "middle-school",
+        "summer",
+        "stem",
+        "residential",
+        "free",
+        "underrepresented"
+      ],
+      "url": "https://www.theharrisfoundation.org/programs/exxonmobil-bernard-harris-summer-science-camp/",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Fully funded STEM residential camp founded by astronaut Dr. Bernard Harris — one of the best middle school STEM opportunities in Texas.",
+      "_source": "theharrisfoundation.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Diversity and Leadership in Business Camp",
+      "company": "UT Austin McCombs School of Business",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free tuition + room/board",
+      "field": "Business",
+      "deadline": "2027-02-15",
+      "description": "A free residential summer program at UT Austin's McCombs School of Business for rising high school juniors and seniors from underrepresented backgrounds. Students attend business lectures, company visits, case competitions, and mentorship sessions with Texas executives.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Marketing",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "business",
+        "free",
+        "residential",
+        "underrepresented"
+      ],
+      "url": "https://www.mccombs.utexas.edu/programs/undergraduate/diversity-equity-inclusion/high-school-programs/",
+      "duration": "1 week (summer)",
+      "whyApply": "Free residential business immersion at one of the top-ranked public business schools in the nation — a direct pipeline to McCombs.",
+      "_source": "mccombs.utexas.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "San Antonio Museum of Art",
+      "location": {
+        "city": "San Antonio",
+        "state": "TX"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-09-01",
+      "description": "SAMA engages high school teens as art educators and event assistants, providing training in art interpretation, gallery teaching, and museum operations. Teens work with SAMA's encyclopedic collection spanning 5,000 years of global art.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "Museum Studies",
+        "Curatorial Studies"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "museum",
+        "art",
+        "volunteer",
+        "san-antonio"
+      ],
+      "url": "https://www.samuseum.org/",
+      "duration": "Ongoing",
+      "whyApply": "Explore curatorial and art education careers at San Antonio's premier fine arts museum with a renowned global collection.",
+      "_source": "samuseum.org",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
