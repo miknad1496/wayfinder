@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1465,
+    "totalCount": 1474,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1465,
-    "verifiedCount": 840,
+    "totalInternships": 1474,
+    "verifiedCount": 849,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -20023,6 +20023,311 @@
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "hybrid"
+    },
+    {
+      "title": "Summer Science and Engineering Program (SSEP)",
+      "company": "Smith College",
+      "location": {
+        "city": "Northampton",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based; need-based financial aid available",
+      "field": "STEM",
+      "deadline": "2027-04-15",
+      "description": "Two-week residential precollege program for exceptional high school students (grades 9-12) interested in science and engineering. Lab-based courses taught by Smith faculty across life sciences, physical sciences, mathematics, and engineering. Two session options each summer.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Engineering",
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "women-in-stem",
+        "lab-based"
+      ],
+      "url": "https://www.smith.edu/academics/precollege-programs/summer-science-and-engineering-program",
+      "duration": "2 weeks (Session 1 July 4-17 / Session 2 July 19-Aug 1)",
+      "whyApply": "One of the longest-running residential STEM programs for young women in the country. Hands-on faculty-led lab courses on a beautiful liberal arts campus.",
+      "_source": "https://www.smith.edu/academics/precollege-programs/summer-science-and-engineering-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Broad Summer Scholars Program (BSSP)",
+      "company": "Broad Institute of MIT and Harvard",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$3,600 stipend + partial transportation reimbursement",
+      "field": "Biomedical Research",
+      "deadline": "2027-01-21",
+      "description": "Six-week paid summer research program for rising seniors attending high school in Massachusetts within commuting distance of the Broad Institute. Scholars are paired with Broad scientists for hands-on genomics, computational biology, and biomedical research projects. Includes scientific talks, a poster session, and college preparation activities.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Computer Science",
+        "Genomics",
+        "Bioinformatics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "genomics",
+        "selective",
+        "MA-residents"
+      ],
+      "url": "https://www.broadinstitute.org/bssp",
+      "duration": "6 weeks (late June - early August)",
+      "whyApply": "Direct access to one of the world's leading genomics research institutes. Paid research experience with Broad scientists — exceptional college admissions credential.",
+      "_source": "https://www.broadinstitute.org/bssp",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Hampshire College Summer Studies in Mathematics (HCSSiM)",
+      "company": "Hampshire College",
+      "location": {
+        "city": "Amherst",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$7,208 tuition; ample financial aid available",
+      "field": "Mathematics",
+      "deadline": "2027-03-01",
+      "description": "Six-week intensive residential program in college-level mathematics for talented and highly motivated high school students. Focus on actively doing mathematics rather than just learning results. Daily structure includes 4 hours of morning classes (Mon-Sat), Prime Time Theorem, and evening problem sessions. Students live in Hampshire College dorms.",
+      "majors": [
+        "Mathematics",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "mathematics",
+        "selective",
+        "intensive"
+      ],
+      "url": "https://hcssim.org/",
+      "duration": "6 weeks (June 28 - August 8)",
+      "whyApply": "One of the most respected and longest-running residential math programs in the country (54+ years). Strong pipeline to top STEM colleges and a tight-knit mathematical community.",
+      "_source": "https://hcssim.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Pre-College Summer Studios",
+      "company": "Massachusetts College of Art and Design (MassArt)",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based; financial aid available",
+      "field": "Visual Arts & Design",
+      "deadline": "2027-04-15",
+      "description": "Four-week immersive studio art program for students entering grades 11-12 passionate about the visual arts. Students choose a major studio area (painting, sculpture, illustration, animation, etc.) plus electives, and work alongside MassArt faculty in MassArt's Boston studios. Strong portfolio-building focus for art-school applicants.",
+      "majors": [
+        "Fine Arts",
+        "Illustration",
+        "Animation",
+        "Sculpture",
+        "Graphic Design",
+        "Photography"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "portfolio",
+        "residential",
+        "studio"
+      ],
+      "url": "https://massart.edu/youth-teen-programs/pre-college-summer-studios/",
+      "duration": "4 weeks (July)",
+      "whyApply": "MassArt is the only freestanding public art college in the US. Pre-College Summer Studios is one of the strongest portfolio-building experiences in the Northeast for art-school applicants.",
+      "_source": "https://massart.edu/youth-teen-programs/pre-college-summer-studios/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "UMass Amherst Summer Pre-College Programs",
+      "company": "University of Massachusetts Amherst",
+      "location": {
+        "city": "Amherst",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based; financial aid available",
+      "field": "Multiple — STEM, Humanities, Business, Research",
+      "deadline": "2027-05-01",
+      "description": "UMass Amherst's University Without Walls offers 25+ residential and online summer pre-college programs for high school students, including six-week immersive Research Intensives in biology and food science (lab-based). Programs span academic disciplines from data science to creative writing to sustainability.",
+      "majors": [
+        "Multiple"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "research",
+        "multi-discipline"
+      ],
+      "url": "https://www.umass.edu/uww/pre-college/",
+      "duration": "1-6 weeks (varies by program)",
+      "whyApply": "Public R1 university experience with strong research intensives and broad subject coverage. Residential and online options accommodate different students' needs and budgets.",
+      "_source": "https://www.umass.edu/uww/pre-college/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Aspire: Five-Week Music Performance Intensive",
+      "company": "Berklee College of Music",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$5,430 tuition + $4,200 housing; merit scholarships available",
+      "field": "Music — Contemporary Performance",
+      "deadline": "2027-06-01",
+      "description": "Berklee's flagship five-week residential summer program for musicians ages 15+ from over 70 countries. Includes weekly private lessons on principal instrument, ensemble placements (jazz, pop/rock, funk/fusion, salsa, bluegrass, world music), elective coursework in songwriting/production/business, visiting artist clinics, and 200+ final-week concerts. College credit option available.",
+      "majors": [
+        "Music Performance",
+        "Songwriting",
+        "Music Production",
+        "Music Business"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "music",
+        "performance",
+        "scholarship-eligible"
+      ],
+      "url": "https://summer.berklee.edu/programs/aspire-five-week-music-performance-intensive",
+      "duration": "5 weeks (July 5 - August 7)",
+      "whyApply": "The world's most comprehensive summer music performance program — direct access to Berklee faculty, visiting artists, and a global community of serious young musicians.",
+      "_source": "https://summer.berklee.edu/programs/aspire-five-week-music-performance-intensive",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wentworth ImpactLab",
+      "company": "Wentworth Institute of Technology",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based",
+      "field": "Engineering & Design",
+      "deadline": "2027-06-01",
+      "description": "Two-week or four-week residential pre-college engineering and design program for students entering grades 11-12. Non-credit Wentworth-faculty-led instruction across engineering, computer science, architecture, and design disciplines. Includes hands-on labs, networking with peers internationally, social activities, and workshops.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Architecture",
+        "Industrial Design"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "engineering",
+        "design",
+        "hands-on"
+      ],
+      "url": "https://wit.edu/admissions/pre-college/impact-lab/",
+      "duration": "2 or 4 weeks (July 5-17 or July 19-31)",
+      "whyApply": "Project-based engineering and design exposure on a hands-on technical campus right in the heart of Boston's Fenway. Strong fit for students considering applied engineering programs.",
+      "_source": "https://wit.edu/admissions/pre-college/impact-lab/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NEC Summer Programs (Orchestra / Vocal / Jazz / Chamber / Band Institutes)",
+      "company": "New England Conservatory",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition varies; full-scholarship Chamber Music Young Artist Program available",
+      "field": "Music — Conservatory",
+      "deadline": "2027-04-01",
+      "description": "New England Conservatory's residential summer institutes for ages 13-18, including the Summer Orchestra Institute (4-week full symphony program), Summer Vocal Institute (2 weeks), Summer Band Institute (1 week, wind/brass/percussion), Jazz Lab (1 week), and the fully-funded Summer Chamber Music Young Artist Program (9-day immersive festival). Conservatory-level instruction with NEC faculty.",
+      "majors": [
+        "Music Performance",
+        "Voice",
+        "Jazz",
+        "Chamber Music"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "music",
+        "conservatory",
+        "scholarship-available"
+      ],
+      "url": "https://necmusic.edu/expanded-education/summer-programs/",
+      "duration": "1-4 weeks (varies by program)",
+      "whyApply": "NEC is one of the oldest and most prestigious music conservatories in the country. The summer institutes give serious young classical/jazz musicians direct conservatory-style training and exposure to NEC faculty.",
+      "_source": "https://necmusic.edu/expanded-education/summer-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Launch Summer Day Camp",
+      "company": "Worcester Polytechnic Institute (WPI)",
+      "location": {
+        "city": "Worcester",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based; $125,000+ in K-12 financial aid available",
+      "field": "STEM (Project-Based)",
+      "deadline": "2027-05-15",
+      "description": "WPI's pre-collegiate summer day camp for grades 9-11 offering hands-on, project-based STEM exploration in WPI's signature project-based style. Students work in teams on engineering and science challenges with WPI faculty and staff at the Bartlett Center on the WPI campus.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Robotics",
+        "STEM"
+      ],
+      "tags": [
+        "high-school",
+        "day-camp",
+        "stem",
+        "project-based"
+      ],
+      "url": "https://www.wpi.edu/academics/pre-collegiate",
+      "duration": "1-2 weeks day camp",
+      "whyApply": "Direct exposure to WPI's renowned project-based learning model — a great preview for students considering applied engineering and STEM colleges. Significant K-12 financial aid available.",
+      "_source": "https://www.wpi.edu/academics/pre-collegiate",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
     },
     {
       "title": "Princeton Summer Journalism Program",
