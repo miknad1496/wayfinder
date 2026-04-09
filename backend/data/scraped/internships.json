@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 731,
+    "totalCount": 744,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 731,
-    "verifiedCount": 106,
+    "totalInternships": 744,
+    "verifiedCount": 119,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -3661,6 +3661,447 @@
       "duration": "School year (meeting schedule varies)",
       "whyApply": "Make real grant decisions affecting Seattle nonprofits. Learn nonprofit finance and community impact assessment at one of WA's largest foundations. Unique leadership credential for college applications in business, finance, or public policy.",
       "_source": "https://www.seattlefoundation.org/philanthropists/family-philanthropy/youth-grantmaking-board/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Careers in Science (CiS) Intern Program",
+      "company": "California Academy of Sciences",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Science",
+      "deadline": "2026-04-01",
+      "description": "Multi-year paid internship for SF high school students underrepresented in STEM. Interns conduct fieldwork, facilitate museum learning experiences, and attend bimonthly trainings covering science communication and career development. Must be 9th-10th grader in SFUSD with 2.5+ GPA.",
+      "majors": [
+        "Biology",
+        "Environmental Science",
+        "Science Education"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-francisco",
+        "science",
+        "museum",
+        "stem"
+      ],
+      "url": "https://www.calacademy.org/careers-in-science-cis-intern-program",
+      "duration": "Year-round (Saturdays during school, weekdays in summer)",
+      "whyApply": "Prestigious multi-year program at a world-class science museum with real fieldwork and STEM career exposure.",
+      "_source": "https://www.calacademy.org/careers-in-science-cis-intern-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UCSF SEP High School Intern Program",
+      "company": "UCSF Science & Health Education Partnership",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$4,500 stipend",
+      "field": "Healthcare",
+      "deadline": "2026-02-01",
+      "description": "Eight-week paid summer internship where SF high school rising seniors conduct biomedical research at UCSF labs. Students are matched with scientist mentors in areas like neuroscience, immunology, cancer, and molecular biology. Must attend SFUSD or SF charter school.",
+      "majors": [
+        "Biomedical Research",
+        "Neuroscience",
+        "Molecular Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-francisco",
+        "healthcare",
+        "research",
+        "biomedical"
+      ],
+      "url": "https://sep.ucsf.edu/programs/high-school-students/intern-program/",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "Hands-on biomedical research at a top-tier university hospital with $4,500 stipend.",
+      "_source": "https://sep.ucsf.edu/programs/high-school-students/intern-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "California Science Center Community Teen Interns",
+      "company": "California Science Center",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid position",
+      "field": "Science",
+      "deadline": "2026-08-01",
+      "description": "Paid internship for LA-area high school students (grades 10-12) who live within 3 miles of the Science Center. Interns work in the Education Department, delivering hands-on science activities to museum guests. 7 hrs/week during school year, up to 35 hrs/week in summer. Must maintain 2.0+ GPA.",
+      "majors": [
+        "Science Education",
+        "STEM",
+        "Public Engagement"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "los-angeles",
+        "science",
+        "museum",
+        "education"
+      ],
+      "url": "https://californiasciencecenter.org/programs/community-teen-interns",
+      "duration": "Year-round (school year + summer)",
+      "whyApply": "Long-running paid program at LA's premier science museum with hands-on teaching experience.",
+      "_source": "https://californiasciencecenter.org/programs/community-teen-interns",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "USC Unruh Institute High School Summer Internship",
+      "company": "USC Dornsife Center for the Political Future",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2026-04-24",
+      "description": "Online summer internship for high school students interested in politics and environmental policy. In partnership with USC Wrigley Institute, interns analyze legislation and complete a policy memo and legislative process analysis. Completed work is published online with recognition as USC Research Intern.",
+      "majors": [
+        "Political Science",
+        "Environmental Policy",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "remote",
+        "los-angeles",
+        "government",
+        "politics",
+        "policy"
+      ],
+      "url": "https://dornsife.usc.edu/center-for-political-future/jesse-m-unruh-institute-of-politics/high-school-summer-internship-program/",
+      "duration": "Summer (online)",
+      "whyApply": "Prestigious USC-affiliated political research experience with published work — strong for college apps.",
+      "_source": "https://dornsife.usc.edu/center-for-political-future/jesse-m-unruh-institute-of-politics/high-school-summer-internship-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "remote"
+    },
+    {
+      "title": "Enterprise for Youth Paid Internships",
+      "company": "Enterprise for Youth",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$20/hour",
+      "field": "Various",
+      "deadline": "2027-01-01",
+      "description": "Paid internships ($20/hr) for SF youth ages 14-21 across sectors including healthcare, technology, art/design, financial services, legal services, government, nonprofit, and environmental stewardship. 75-hour placements with 12 hrs/week, plus weekly professional development workshops and job coaching.",
+      "majors": [
+        "Business",
+        "Healthcare",
+        "Technology",
+        "Arts"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-francisco",
+        "various",
+        "youth-employment"
+      ],
+      "url": "https://www.enterpriseforyouth.org/paid-internships",
+      "duration": "75 hours total (12 hrs/week)",
+      "whyApply": "Excellent paid program across many industries with built-in career coaching and professional development.",
+      "_source": "https://www.enterpriseforyouth.org/paid-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Sacramento Thousand Strong Internship",
+      "company": "City of Sacramento / Mayor's Office",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid (300 hrs work experience)",
+      "field": "Various",
+      "deadline": "2027-01-01",
+      "description": "Mayor's workforce initiative providing 300 hours of paid work experience plus 40 hours of workplace basics training for Sacramento high school students. Partners with school districts, community organizations, and businesses. Must be 16+ and enrolled in high school with valid work permit.",
+      "majors": [
+        "Business",
+        "Government",
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "sacramento",
+        "various",
+        "youth-employment",
+        "workforce"
+      ],
+      "url": "https://www.cityofsacramento.gov/ypce/youth-employment",
+      "duration": "Year-round (300 hours)",
+      "whyApply": "Substantial paid work experience with professional training — backed by the City of Sacramento.",
+      "_source": "https://www.cityofsacramento.gov/ypce/youth-employment",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "HIRE LA's Youth Summer Employment",
+      "company": "City of Los Angeles",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$15/hour",
+      "field": "Various",
+      "deadline": "2026-05-01",
+      "description": "LA's premier youth employment program for ages 14-24. Participants earn $15/hr while gaining 120 hours of work experience in virtual and in-person roles across city departments and partner organizations. Includes mentorship and career readiness training.",
+      "majors": [
+        "Business",
+        "Government",
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "los-angeles",
+        "various",
+        "youth-employment",
+        "summer"
+      ],
+      "url": "https://www.hirelayouth.com/",
+      "duration": "Summer (120 hours)",
+      "whyApply": "Massive city-backed program with thousands of placements across diverse industries in LA.",
+      "_source": "https://www.hirelayouth.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Salk Institute Heithoff-Brody High School Scholars",
+      "company": "Salk Institute for Biological Studies",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Science",
+      "deadline": "2026-03-01",
+      "description": "Eight-week paid summer research internship at the world-renowned Salk Institute. High school students work 30-40 hours/week alongside Salk scientists, performing original research and building STEM career skills. Highly competitive.",
+      "majors": [
+        "Biology",
+        "Neuroscience",
+        "Genetics",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-diego",
+        "science",
+        "research",
+        "biology"
+      ],
+      "url": "https://www.salk.edu/about/education-outreach/programs/high-school-scholars/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "World-class research institute — one of the most prestigious HS science internships in California.",
+      "_source": "https://www.salk.edu/about/education-outreach/programs/high-school-scholars/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UCSD OPALS High School Research Internship",
+      "company": "UC San Diego IEM",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2026-04-19",
+      "description": "UCSD's OPALS program empowers pre-college students through hands-on STEM research. Students work with university researchers on authentic engineering and science projects during the summer. Open to high school students; competitive admission.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics",
+        "STEM"
+      ],
+      "tags": [
+        "high-school",
+        "san-diego",
+        "engineering",
+        "research",
+        "ucsd",
+        "stem"
+      ],
+      "url": "https://iem.ucsd.edu/programs/opals/index.html",
+      "duration": "Summer",
+      "whyApply": "Authentic university research experience at UC San Diego — strong for engineering-bound students.",
+      "_source": "https://iem.ucsd.edu/programs/opals/index.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SF Project Pull Summer Internship",
+      "company": "City of San Francisco / SFPUC",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$19.25/hour",
+      "field": "Engineering",
+      "deadline": "2026-03-01",
+      "description": "Eight-week paid summer internship placing SF high school students (sophomores-seniors) in city departments including SFPUC. Interns learn about careers in architecture, business, engineering, and science. 20 hrs/week at $19.25/hr. Must live or attend school in SF.",
+      "majors": [
+        "Engineering",
+        "Architecture",
+        "Business",
+        "Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-francisco",
+        "engineering",
+        "government",
+        "city"
+      ],
+      "url": "https://www.sf.gov/apply-internship-project-pull",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Well-paid city internship with exposure to engineering, architecture, and public infrastructure careers.",
+      "_source": "https://www.sf.gov/apply-internship-project-pull",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "California Innocence Project HS Internship",
+      "company": "California Innocence Project",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-01-01",
+      "description": "Legal internship for high school students at California Western School of Law working on wrongful conviction cases. Interns assist attorneys with case reviews, legal research, document organization, and public education. 15-35 hrs/week for minimum 10 weeks. In-person only.",
+      "majors": [
+        "Law",
+        "Criminal Justice",
+        "Social Justice"
+      ],
+      "tags": [
+        "high-school",
+        "san-diego",
+        "law",
+        "legal",
+        "criminal-justice"
+      ],
+      "url": "https://www.calinnocence.org/join-us",
+      "duration": "Minimum 10 weeks (spring/summer/fall)",
+      "whyApply": "Rare high school law internship working on real wrongful conviction cases — exceptional for law-bound students.",
+      "_source": "https://www.calinnocence.org/join-us",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "KP Launch High School Summer Internship",
+      "company": "Kaiser Permanente",
+      "location": {
+        "city": "Oakland",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Seven-week paid summer internship introducing underrepresented high school students to healthcare careers across Northern California Kaiser facilities. Interns work full-time (M-F, 8am-5pm) in various hospital and administrative departments. Open to all NorCal high school students.",
+      "majors": [
+        "Healthcare",
+        "Public Health",
+        "Administration"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "oakland",
+        "northern-california",
+        "healthcare",
+        "hospital"
+      ],
+      "url": "https://mentalhealthtraining-ncal.kaiserpermanente.org/mental-health-training-program-and-kp-launch-summer-internship/",
+      "duration": "7 weeks (June-July)",
+      "whyApply": "Major healthcare system internship with real hospital exposure — great for aspiring medical professionals.",
+      "_source": "https://mentalhealthtraining-ncal.kaiserpermanente.org/mental-health-training-program-and-kp-launch-summer-internship/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SF YouthWorks City Government Internship",
+      "company": "City of San Francisco",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$19.18/hour",
+      "field": "Government",
+      "deadline": "2026-09-01",
+      "description": "Paid after-school and summer internship placing SF 11th-12th graders in 30+ city government departments. Interns earn $19.18/hr for 6-10 hours/week during the school year. Over 20 years of operation providing public service career exposure.",
+      "majors": [
+        "Government",
+        "Public Administration",
+        "Policy"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "san-francisco",
+        "government",
+        "city",
+        "public-service"
+      ],
+      "url": "https://www.sfpuc.gov/about-us/careers-sfpuc/internships-and-youth-employment",
+      "duration": "School year (6-10 hrs/week) + summer",
+      "whyApply": "Paid government internship across 30+ SF city departments — excellent for public service careers.",
+      "_source": "https://www.sfpuc.gov/about-us/careers-sfpuc/internships-and-youth-employment",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
