@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1486,
+    "totalCount": 1501,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1486,
-    "verifiedCount": 861,
+    "totalInternships": 1501,
+    "verifiedCount": 876,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -1369,6 +1369,539 @@
       "_source": "umich.edu",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
+      "format": "in-person"
+    },
+    {
+      "title": "Michigan Math and Science Scholars (MMSS)",
+      "company": "University of Michigan LSA",
+      "location": {
+        "city": "Ann Arbor",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition (financial aid available)",
+      "field": "STEM",
+      "deadline": "2027-04-01",
+      "description": "Flagship 2-week residential summer program for rising high school sophomores, juniors, and seniors. Three sessions (late June through July) with small classes (~15 students) taught by U-M faculty in mathematics, physics, chemistry, biology, astronomy, and computing. Residential or commuter options.",
+      "majors": [
+        "Mathematics",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "pre-college",
+        "math",
+        "science",
+        "competitive"
+      ],
+      "url": "https://sites.lsa.umich.edu/mmss/",
+      "duration": "2 weeks per session (1-3 sessions)",
+      "whyApply": "One of the top STEM pre-college programs in the Midwest, taught directly by U-M faculty. Small-class format and genuine research exposure.",
+      "_source": "https://sites.lsa.umich.edu/mmss/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Engineering Exploration (SEE) Camp",
+      "company": "University of Michigan – Society of Women Engineers",
+      "location": {
+        "city": "Ann Arbor",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Need-based financial aid available",
+      "field": "Engineering",
+      "deadline": "2027-04-15",
+      "description": "One-week residential co-ed engineering camp hosted by SWE at the University of Michigan. Campers (rising grades 10-11) explore engineering disciplines through the design process, tour the College of Engineering, and meet admissions staff. Aims to reach students with limited access to engineering resources.",
+      "majors": [
+        "Engineering",
+        "Mechanical",
+        "Electrical",
+        "Computer",
+        "Chemical"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "engineering",
+        "women-in-STEM",
+        "exploration"
+      ],
+      "url": "https://www.seecamp.org/",
+      "duration": "1 week",
+      "whyApply": "Low-barrier intro to engineering at a top-5 public engineering school, explicitly serving students without prior exposure to engineering.",
+      "_source": "https://www.seecamp.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Youth Programs (SYP)",
+      "company": "Michigan Technological University",
+      "location": {
+        "city": "Houghton",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Scholarships available",
+      "field": "STEM",
+      "deadline": "Rolling through June",
+      "description": "Nearly 1,000 middle and high school students come to Michigan Tech each summer for week-long STEM, business, and career explorations. Grades 6-11, over 50 different camps including robotics, engineering, CS, aerospace, environmental science, outdoor adventure, film production, and molten-metal casting. Residence hall + dining hall included.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Biology",
+        "Environmental Science",
+        "Business"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "residential",
+        "STEM",
+        "exploration"
+      ],
+      "url": "https://www.mtu.edu/syp/",
+      "duration": "1 week (multiple sessions Jun 14 – Jul 17, 2026)",
+      "whyApply": "One of the largest and longest-running residential STEM programs in the Midwest, with an unmatched breadth of subject options in a gorgeous Upper Peninsula setting.",
+      "_source": "https://www.mtu.edu/syp/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Youth Pathway Programs",
+      "company": "Michigan Technological University",
+      "location": {
+        "city": "Houghton",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Scholarships available",
+      "field": "STEM",
+      "deadline": "2027-02-15",
+      "description": "Selective Pathway Programs at Michigan Tech Summer Youth Programs for advanced high schoolers ready for deeper career exploration. Students work directly with Michigan Tech faculty and industry partners on projects in engineering, CS, and applied sciences, plus leadership and professional-skills training.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Applied Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "selective",
+        "research",
+        "industry"
+      ],
+      "url": "https://www.mtu.edu/syp/discover/pathway-programs/",
+      "duration": "1-2 weeks",
+      "whyApply": "Steps up from the general SYP camps with a faculty/industry research component — strong fit for advanced high schoolers preparing for engineering college applications.",
+      "_source": "https://www.mtu.edu/syp/discover/pathway-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Engineering Institute (Future Engineers)",
+      "company": "Michigan State University College of Engineering",
+      "location": {
+        "city": "East Lansing",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Scholarships available",
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Residential program for rising HS sophomores, juniors, and seniors seriously considering engineering. Each day students dive into a different engineering major through lectures, demonstrations, hands-on activities, team problem-solving, and tours with faculty, grad students, and undergraduates.",
+      "majors": [
+        "Engineering",
+        "Mechanical",
+        "Electrical",
+        "Computer",
+        "Civil",
+        "Chemical",
+        "Biosystems"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "engineering",
+        "major-exploration"
+      ],
+      "url": "https://engineering.msu.edu/academics/k-12/summer-programs",
+      "duration": "1 week",
+      "whyApply": "Ranked among the top-5 engineering summer camps nationally by College Transitions. Excellent major-discovery experience for students weighing engineering disciplines.",
+      "_source": "https://engineering.msu.edu/academics/k-12/summer-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Quantum Motor City Summer Camp",
+      "company": "Michigan State University (NSF-funded)",
+      "location": {
+        "city": "East Lansing",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free — housing and meals included",
+      "field": "STEM",
+      "deadline": "2027-05-01",
+      "description": "NSF-supported free summer camp (July 29–31, 2026) introducing high schoolers to quantum technology. Students program an actual quantum computer and tour an MSU quantum computing lab. Housing and meals are covered.",
+      "majors": [
+        "Physics",
+        "Computer Science",
+        "Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "quantum-computing",
+        "free",
+        "NSF",
+        "emerging-tech"
+      ],
+      "url": "https://spartanyouth.msu.edu/",
+      "duration": "3 days",
+      "whyApply": "Rare free opportunity to actually run code on a real quantum computer — cutting-edge, well-funded, and unusually accessible.",
+      "_source": "https://engineering.msu.edu/academics/k-12/summer-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Academically Interested Minds (AIM) Program",
+      "company": "Kettering University",
+      "location": {
+        "city": "Flint",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Scholarships ($5,000 to full tuition) for AIM completers who enroll at Kettering",
+      "field": "Engineering",
+      "deadline": "2027-03-15",
+      "description": "Six-week residential pre-college program helping students of color transition from high school to engineering/STEM college. College-level courses in calculus, chemistry with lab, physics with lab, and business management taught by Kettering faculty, plus career institute sessions with engineering and management professionals. $500 program fee — tuition, room, board, supplies, activities, and some transportation covered by Kettering and corporate partners.",
+      "majors": [
+        "Engineering",
+        "Mechanical",
+        "Electrical",
+        "Industrial",
+        "Chemistry",
+        "Physics",
+        "Mathematics",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "diversity",
+        "engineering",
+        "HBCU-pipeline",
+        "college-prep",
+        "paid-scholarship"
+      ],
+      "url": "https://www.kettering.edu/admissions-aid/visit/pre-college-camps-programs/aim",
+      "duration": "6 weeks",
+      "whyApply": "40+ years of proven success moving students of color into engineering careers. AIM alumni earn automatic scholarships worth $5,000/year up to full tuition if they matriculate at Kettering.",
+      "_source": "https://www.kettering.edu/admissions-aid/visit/pre-college-camps-programs/aim",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Horizons-Upward Bound (HUB)",
+      "company": "Cranbrook Schools",
+      "location": {
+        "city": "Bloomfield Hills",
+        "state": "MI"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Free (federally funded TRIO)",
+      "field": "College Access",
+      "deadline": "Rolling",
+      "description": "One of the oldest and largest TRIO Upward Bound programs in the country, hosted at Cranbrook since 1965. Year-round intensive academic program for first-generation/low-income Detroit Community District public high school students. Includes a 6-week residential summer component at Cranbrook + 24 Saturday academic sessions during the school year. Students join the summer before freshman year and continue through high school.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "TRIO",
+        "first-gen",
+        "low-income",
+        "Detroit",
+        "college-access"
+      ],
+      "url": "https://schools.cranbrook.edu/explore/horizons-upward-bound/the-program",
+      "duration": "4 years (summer + academic year)",
+      "whyApply": "Full-ride, four-year college-access pipeline for Detroit public school students with faculty from one of Michigan's top independent schools.",
+      "_source": "https://schools.cranbrook.edu/explore/horizons-upward-bound/the-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Arts Council",
+      "company": "Detroit Institute of Arts",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid employment with the DIA",
+      "field": "Arts",
+      "deadline": "Applications open early May, close late June",
+      "description": "12 high school students design and implement programs for metro Detroit teens as paid employees of the Detroit Institute of Arts. Focus on community building, social justice, and culture. Teen Arts Council members build relationships across DIA departments and external museum partners. Two-year contract ending at HS graduation.",
+      "majors": [
+        "Arts",
+        "Art History",
+        "Museum Studies",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "museum",
+        "leadership",
+        "Detroit"
+      ],
+      "url": "https://dia.org/learning/teen-council",
+      "duration": "2 years",
+      "whyApply": "Rare paid museum leadership role for teens at one of America's top encyclopedic art museums. Eligible residents of Macomb, Oakland, or Wayne counties age 16+.",
+      "_source": "https://dia.org/learning/teen-council",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "RYSE MED (Readying Youth Scientists for Excellence in Medicine)",
+      "company": "Henry Ford Health",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free program",
+      "field": "Healthcare",
+      "deadline": "2027-04-30",
+      "description": "Free 6-week in-person summer program (June 28 – Aug 7, 2026) at Henry Ford Hospital exposing metro Detroit 10th/11th graders to healthcare clinical, research, and administration. Students conduct research and create a group infographic and 10-15 minute presentation on a health equity topic. 16+ and 2.5+ GPA required.",
+      "majors": [
+        "Biology",
+        "Public Health",
+        "Pre-Med",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "healthcare",
+        "research",
+        "health-equity",
+        "Detroit",
+        "free"
+      ],
+      "url": "https://www.henryford.com/hcp/med-ed/ryse-med",
+      "duration": "6 weeks",
+      "whyApply": "Free, long-format exposure to clinical medicine, translational research, and health-equity work at one of Michigan's largest academic health systems — for local students who wouldn't otherwise afford pre-med exposure.",
+      "_source": "https://www.henryford.com/hcp/med-ed/ryse-med",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Department of Surgery High School Mentorship Program",
+      "company": "Henry Ford Health",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$1,000 stipend",
+      "field": "Healthcare",
+      "deadline": "2027-04-30",
+      "description": "Free three-part program introducing HS students to careers in medicine and surgery through early exposure, hands-on learning, and professional mentorship. Selected students earn a $1,000 stipend for a 7-week summer internship, paired 1:1 with a physician/surgeon mentor aligned to their interests.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Surgery",
+        "Healthcare"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "stipend",
+        "medicine",
+        "surgery",
+        "mentorship",
+        "Detroit"
+      ],
+      "url": "https://www.henryford.com/hcp/med-ed/surgery-mentorship",
+      "duration": "7 weeks",
+      "whyApply": "Paid 1:1 mentorship with practicing surgeons — unusual access for high schoolers, with real clinical exposure instead of just shadowing.",
+      "_source": "https://www.henryford.com/hcp/med-ed/surgery-mentorship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer High School Research Program (Engineering)",
+      "company": "Wayne State University – Anderson College of Engineering",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free",
+      "field": "Engineering",
+      "deadline": "2027-06-01",
+      "description": "Four-week summer program at Wayne State's College of Engineering where HS students work on emerging energy technology, CAD/3D modeling, or fuel cells. Students come to campus four days per week starting in July and ending at the end of the month.",
+      "majors": [
+        "Engineering",
+        "Mechanical",
+        "Electrical",
+        "Chemical",
+        "Materials"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "energy",
+        "Detroit",
+        "research",
+        "free"
+      ],
+      "url": "https://engineering.wayne.edu/academics/community/outreach/summer-high-school-research",
+      "duration": "4 weeks",
+      "whyApply": "Hands-on engineering research in a real Wayne State lab — accessible to Detroit-area high schoolers without a cost barrier.",
+      "_source": "https://engineering.wayne.edu/academics/community/outreach/summer-high-school-research",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Biomedical Career Advancement Program (BCAP)",
+      "company": "Wayne State University",
+      "location": {
+        "city": "Detroit",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free",
+      "field": "Healthcare",
+      "deadline": "2027-05-01",
+      "description": "6-week summer research experience for 10th–12th graders exploring biomedical research and health science careers at Wayne State. Students learn lab techniques and get mentored exposure to health science fields.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Pre-Med",
+        "Public Health",
+        "Neuroscience"
+      ],
+      "tags": [
+        "high-school",
+        "biomedical",
+        "research",
+        "health-science",
+        "Detroit",
+        "free"
+      ],
+      "url": "https://engineering.wayne.edu/academics/community/outreach",
+      "duration": "6 weeks",
+      "whyApply": "Solid introduction to biomedical research for Detroit-area HS students at a major urban research university.",
+      "_source": "https://engineering.wayne.edu/academics/community/outreach",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Interlochen Arts Camp",
+      "company": "Interlochen Center for the Arts",
+      "location": {
+        "city": "Interlochen",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Need-based financial aid and merit scholarships available",
+      "field": "Arts",
+      "deadline": "Rolling with audition",
+      "description": "World-renowned residential arts camp on a 1,200-acre campus near Traverse City. High schoolers (grades 9-12) study music, theatre, dance, visual arts, film, and creative writing. Offers 6-week, 3-week, and 1-week Intensive sessions. Auditions required for HS programs.",
+      "majors": [
+        "Music",
+        "Theater",
+        "Dance",
+        "Visual Arts",
+        "Film",
+        "Creative Writing"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "arts",
+        "conservatory",
+        "competitive"
+      ],
+      "url": "https://www.interlochen.org/art-summer-camp/high-school",
+      "duration": "1, 3, or 6 weeks",
+      "whyApply": "One of the most prestigious pre-college arts programs in the United States, with alumni across every major performing and visual arts industry.",
+      "_source": "https://www.interlochen.org/art-summer-camp/high-school",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Blue Lake Fine Arts Camp",
+      "company": "Blue Lake Fine Arts Camp",
+      "location": {
+        "city": "Twin Lake",
+        "state": "MI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Scholarships available",
+      "field": "Arts",
+      "deadline": "Rolling",
+      "description": "Michigan nonprofit fine arts camp in the Manistee National Forest serving over 5,400 students annually. Students in grades 5-12 choose a major and minor across Orchestra, Band, Art, Choir, Creative Writing, Dance, Harp, Jazz Ensemble, Piano, and Theater. 12-day sessions with 175+ performances in the Summer Arts Festival.",
+      "majors": [
+        "Music",
+        "Art",
+        "Dance",
+        "Theater",
+        "Creative Writing"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "residential",
+        "arts",
+        "affordable",
+        "scholarships"
+      ],
+      "url": "https://bluelake.org/summer-camp/",
+      "duration": "12 days",
+      "whyApply": "More affordable than Interlochen with a similarly intensive residential arts experience, broad enough to serve both middle and high school students.",
+      "_source": "https://bluelake.org/summer-camp/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
       "format": "in-person"
     },
     {
