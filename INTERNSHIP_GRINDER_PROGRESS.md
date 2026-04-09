@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (run 14 — WI kickoff)
+Last updated: 2026-04-09 (run 15 — WI buildout)
 
 ## State-by-state verified internship counts
 
@@ -25,7 +25,7 @@ Generated from inject-verified-internships.js run output.
 | NC    | 35    | In progress (run 11 — UNCSA, ACS SEED UNCC, Wake Forest, WFIRM, Duke STEM/REP, etc.) |
 | CO    | 22    | Started (run 12 — CU Boulder, Mines, NCAR, Children's Colorado, etc.) |
 | OR    | 14    | Started (run 13 — OHSU CURE, ASE Saturday Academy, UO SAIL, OMSI, etc.) |
-| WI    | 13    | Started (run 14 — UW-Madison ESP, PEOPLE, MCW AIM, Badger Summer Scholars, WCATY ALP, MSOE, EnQuest, Marquette UB/UBMS, Beloit CLS, Lawrence Ascent, ICF, Milwaukee Zoo HSA, Discovery World) |
+| WI    | 21    | In progress (run 15 — UW-Madison ESP, PEOPLE, MCW AIM, Badger Summer Scholars, WCATY ALP, MSOE, EnQuest, Marquette UB/UBMS, Beloit CLS, Lawrence Ascent, ICF, Milwaukee Zoo HSA, Discovery World) |
 
 ## Recent runs
 - 2026-04-09 (run 1): Added 10 verified Massachusetts programs (MITES Summer, MITES Semester, BWSI, MIT PRIMES, PROMYS, BU RISE, Harvard Pre-College, Harvard SSP, WPI Frontiers, Boston Leadership Institute)
@@ -38,6 +38,9 @@ Generated from inject-verified-internships.js run output.
 
 - 2026-04-09 (run 8): Added 13 more verified Georgia programs — UGA Young Dawgs, SCAD Summer Seminars (Atlanta), High Museum of Art Teen Leadership Council (paid arts), Atlanta Botanical Garden SPEAK Volunteers, Atlanta Botanical Garden Summer HS Internship (paid, Title I), Morehouse SMASH Rising (free CS HBCU), Georgia Tech Summer Engineering Institute (free), Kennesaw State DiscoverU Summer Camps, Kennesaw State ArtsKSU Summer Intensives, Mercer Great Books Summer Program (humanities, Macon), Children's Healthcare of Atlanta VolunTEEN, Georgia State Early College Summer Enrichment, GSU Neuroscience School. Broadened into CS/tech, arts, humanities, medicine, environmental science, and college-prep pipelines. GA now 29+ verified.
 - 2026-04-09 (run 7): Started Georgia coverage with 16 verified programs — Georgia Governor's Honors Program (Statesboro), Georgia Tech CEISMC Summer PEAKS HS, Georgia Tech Summer Institute, GTRI High School Summer Internship (paid), Emory Pre-College Program, Emory Oxford Ox-perience, Winship Cancer Institute Summer Scholars (paid $2,400), CDC Museum Disease Detective Camp (free/competitive), UGA CAES Young Scholars Internship (paid agriculture/env research), Federal Reserve Bank of Atlanta HS Research Internship (paid finance/economics), Spelman Early College Program, Spelman College Prep Institute, Morehouse School of Medicine S.T.E.A.M. Academy 9-12, Zoo Atlanta Volunteen Program, Fernbank Museum FYI Youth Interpreters (ages 13+), Georgia Aquarium Beginner Environmental Leadership Program. Spans medicine, engineering, finance/economics, agriculture, public health, arts, HBCU pipelines, and conservation/environmental science. GA now at 16.
+
+
+- 2026-04-09 (run 15): Added 8 more verified Wisconsin programs — Wisconsin School of Business Business Basics (rising 9-10 commuter), Wisconsin School of Business Junior Business Badgers (rising 11-12 commuter), Marquette Law Summer Youth Institute (free, gr 8-10, first-gen Milwaukee pipeline), Badger Boys State (American Legion residential civics at UW-Eau Claire), Milwaukee Art Museum Satellite Teens Internship (year-round arts), Milwaukee Art Museum ArtXpress Summer Internship (4-week public mural project), Carthage College CNA Certification Program (3-week healthcare credential, Kenosha), SUPREMES Program (Marquette/MCW joint BME year-long mentored research). Broadened WI into business/finance, law, civics/government, arts/public art, healthcare credentialing, and biomedical engineering research. WI now 21 verified.
 
 ## Next priorities
 - Continue GA buildout toward 80-100 (more CS/tech, law, business/finance, humanities)
