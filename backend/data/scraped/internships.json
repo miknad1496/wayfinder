@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1501,
+    "totalCount": 1513,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1501,
-    "verifiedCount": 876,
+    "totalInternships": 1513,
+    "verifiedCount": 888,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -29449,6 +29449,413 @@
       "duration": "6 weeks (summer) + year-round programming",
       "whyApply": "Strong free college-access pipeline with a residential St. Olaf experience, designed to prepare first-generation and lower-income MN students for college.",
       "_source": "https://wp.stolaf.edu/upward/summer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Seminar for High School Juniors",
+      "company": "Oregon Shakespeare Festival",
+      "location": {
+        "city": "Ashland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based; financial aid available",
+      "field": "Arts / Theater",
+      "deadline": "2026-03-31",
+      "description": "Highly selective 12-day residential program for rising seniors at the Oregon Shakespeare Festival in Ashland, Oregon. Participants attend up to nine OSF plays, take workshops on acting, voice and text work, and meet with actors, directors, and designers from one of the largest regional theaters in the United States.",
+      "majors": [
+        "Theater",
+        "Acting",
+        "English",
+        "Literature",
+        "Performing Arts"
+      ],
+      "tags": [
+        "high-school",
+        "theater",
+        "arts",
+        "residential",
+        "Ashland"
+      ],
+      "url": "https://www.osfashland.org/engage-and-learn",
+      "duration": "12 days",
+      "whyApply": "A rare chance for serious young theater students to immerse in a working professional regional theater with nine plays and direct access to OSF artists.",
+      "_source": "https://www.osfashland.org/engage-and-learn",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Reed College Young Scholars Program",
+      "company": "Reed College",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Scholarship-funded tuition",
+      "field": "Humanities / STEM",
+      "deadline": "2026-04-15",
+      "description": "Long-running (since 1980) program that selects high school seniors from the greater Portland metropolitan area to take one college class at Reed each semester of their senior year while enrolled in high school. Students attend Reed classes alongside Reed undergraduates with full faculty support.",
+      "majors": [
+        "Humanities",
+        "STEM",
+        "Liberal Arts"
+      ],
+      "tags": [
+        "high-school",
+        "college-credit",
+        "Portland",
+        "liberal-arts",
+        "scholarship"
+      ],
+      "url": "https://www.reed.edu/academics/special-programs/young-scholars/index.html",
+      "duration": "Full academic year",
+      "whyApply": "One of the country's longest-running dual-enrollment programs at a nationally respected liberal arts college, genuine Reed coursework on the Reed campus.",
+      "_source": "https://www.reed.edu/academics/special-programs/young-scholars/index.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Reed College STEP-UP Summer Research",
+      "company": "Reed College (NIH/NIDDK)",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "NIH stipend",
+      "field": "Biomedical Research",
+      "deadline": "2026-02-15",
+      "description": "NIDDK-funded Short-Term Research Experience for Underrepresented Persons (STEP-UP) placement at Reed College. Provides hands-on summer biomedical research experience for high school students from underrepresented backgrounds interested in diabetes, digestive, kidney, endocrine or blood research careers.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Public Health",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "paid",
+        "NIH",
+        "diversity",
+        "Portland"
+      ],
+      "url": "https://www.reed.edu/academics/student-funding-and-fellowships/nationally-competitive-opportunities/step-up.html",
+      "duration": "8 weeks",
+      "whyApply": "Paid NIH-funded biomedical research experience at Reed for underrepresented high school students. Strong mentorship and a nationally competitive program.",
+      "_source": "https://www.reed.edu/academics/student-funding-and-fellowships/nationally-competitive-opportunities/step-up.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Nike Summer Internship Program",
+      "company": "Nike",
+      "location": {
+        "city": "Beaverton",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$20-$30/hr + housing stipend",
+      "field": "Business / Design / Technology",
+      "deadline": "2026-11-30",
+      "description": "Selective 10-12 week summer internship at Nike World Headquarters in Beaverton across Design, Engineering, Finance, Marketing, Merchandising, Supply Chain, Technology and more. About 200 interns accepted annually. Summer interns earn $20-$30 per hour plus housing and relocation stipends. Primarily college and high-college-age interns aged 16+.",
+      "majors": [
+        "Business",
+        "Design",
+        "Engineering",
+        "Finance",
+        "Marketing",
+        "Computer Science"
+      ],
+      "tags": [
+        "paid",
+        "business",
+        "design",
+        "finance",
+        "corporate",
+        "Beaverton"
+      ],
+      "url": "https://careers.nike.com/career-areas",
+      "duration": "10-12 weeks",
+      "whyApply": "Flagship paid corporate internship at a global brand headquartered in Oregon. Exposure to design, business, finance and technology roles at Nike HQ.",
+      "_source": "https://careers.nike.com/career-areas",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Portland State University Dual Enrollment High School Program",
+      "company": "Portland State University",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "College credit tuition",
+      "field": "Academic / College Credit",
+      "deadline": "2026-05-15",
+      "description": "Portland State's High School Programs allow qualified high school students to earn college credit by enrolling in PSU courses during the summer and academic year. Summer Term at PSU is open to high school students seeking college credit before graduation.",
+      "majors": [
+        "Humanities",
+        "STEM",
+        "Business",
+        "Liberal Arts"
+      ],
+      "tags": [
+        "high-school",
+        "college-credit",
+        "dual-enrollment",
+        "Portland",
+        "academic"
+      ],
+      "url": "https://www.pdx.edu/registration/high-school-programs",
+      "duration": "Varies by course",
+      "whyApply": "Affordable pathway to earn real college credit at Oregon's urban research university before finishing high school.",
+      "_source": "https://www.pdx.edu/registration/high-school-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "PSU Summer Brass Academy",
+      "company": "Portland State University School of Music & Theater",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based",
+      "field": "Arts / Music",
+      "deadline": "2026-06-01",
+      "description": "Intensive summer brass performance academy at Portland State University's School of Music & Theater. High school brass students improve solo and ensemble performance skills with focus on intonation, technique, tone quality and musicianship through PSU faculty instruction.",
+      "majors": [
+        "Music Performance",
+        "Brass",
+        "Music Education"
+      ],
+      "tags": [
+        "high-school",
+        "music",
+        "arts",
+        "performance",
+        "Portland"
+      ],
+      "url": "https://www.pdx.edu/music-theater/psu-summer-brass-academy",
+      "duration": "1 week",
+      "whyApply": "Dedicated brass-focused summer intensive on a university music school campus for serious student brass players.",
+      "_source": "https://www.pdx.edu/music-theater/psu-summer-brass-academy",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Portland Summer Percussion Academy",
+      "company": "Portland State University School of Music & Theater",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based",
+      "field": "Arts / Music",
+      "deadline": "2026-06-01",
+      "description": "One-week intensive summer percussion camp at Portland State University (since 2013) where high school percussionists work directly with professional percussionists across a wide range of styles and techniques. Includes clinics, ensemble work and masterclasses.",
+      "majors": [
+        "Music Performance",
+        "Percussion",
+        "Music Education"
+      ],
+      "tags": [
+        "high-school",
+        "music",
+        "arts",
+        "percussion",
+        "Portland"
+      ],
+      "url": "https://www.pdx.edu/music-theater/pspa",
+      "duration": "1 week",
+      "whyApply": "Long-running PSU percussion intensive giving serious student percussionists access to professional performers and a collegiate music environment.",
+      "_source": "https://www.pdx.edu/music-theater/pspa",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Oregon Coast Aquarium Youth Volunteer Program",
+      "company": "Oregon Coast Aquarium",
+      "location": {
+        "city": "Newport",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Unpaid volunteer",
+      "field": "Marine Science / Conservation",
+      "deadline": "2026-03-01",
+      "description": "High school youth volunteer program at the Oregon Coast Aquarium in Newport. Teens rotate to different exhibits, educate guests about marine life and conservation, and learn about marine science careers while developing public-facing professional and leadership skills.",
+      "majors": [
+        "Marine Biology",
+        "Environmental Science",
+        "Conservation",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "marine-science",
+        "conservation",
+        "Newport"
+      ],
+      "url": "https://aquarium.org/support/volunteer/youth/",
+      "duration": "Seasonal / year-round",
+      "whyApply": "Front-line guest-facing experience in marine education and conservation at one of Oregon's premier aquariums on the coast.",
+      "_source": "https://aquarium.org/support/volunteer/youth/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Randall Children's Hospital Teen Volunteer Program",
+      "company": "Legacy Health - Randall Children's Hospital at Legacy Emanuel",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Unpaid volunteer",
+      "field": "Healthcare / Pediatric Medicine",
+      "deadline": "Rolling",
+      "description": "Volunteer program at Randall Children's Hospital at Legacy Emanuel in Portland. High school volunteers support patients, families and staff across pediatric units including acute care floors with infants and toddlers. Applicants must meet Legacy's age and commitment requirements.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Psychology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "medicine",
+        "pediatric",
+        "Portland"
+      ],
+      "url": "https://www.legacyhealth.org/patients-and-visitors/visit-or-volunteer/volunteer/randall",
+      "duration": "Year-round, minimum commitment",
+      "whyApply": "Rare pediatric hospital volunteer placement in Portland. Strong clinical exposure for students interested in medicine, nursing or child health.",
+      "_source": "https://www.legacyhealth.org/patients-and-visitors/visit-or-volunteer/volunteer/randall",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Providence Portland Medical Center Volunteer Program",
+      "company": "Providence Oregon",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Unpaid volunteer",
+      "field": "Healthcare / Medicine",
+      "deadline": "Rolling",
+      "description": "Teen and young adult volunteer program at Providence Portland Medical Center. Applicants must be at least 16 years old and commit to a minimum of 6 consecutive months, 2-4 hours per week. Includes opportunities at the Center for Medically Fragile Children.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "medicine",
+        "hospital",
+        "Portland"
+      ],
+      "url": "https://www.providence.org/locations/or/portland-medical-center/volunteer",
+      "duration": "6+ months, 2-4 hrs/week",
+      "whyApply": "Longitudinal clinical exposure at a major Portland hospital system. Highly relevant for pre-med and nursing applicants who need sustained clinical hours.",
+      "_source": "https://www.providence.org/locations/or/portland-medical-center/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Willamette University Camp College",
+      "company": "Willamette University",
+      "location": {
+        "city": "Salem",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free program",
+      "field": "College Access / Pre-College",
+      "deadline": "2026-05-15",
+      "description": "Free three-day, two-night pre-college experience at Willamette University in Salem for rising high school juniors and seniors. Students take a sample college class, learn how to navigate the college search and application process, and experience residential college life on the Willamette campus.",
+      "majors": [
+        "Liberal Arts",
+        "College Access"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "college-access",
+        "residential",
+        "Salem"
+      ],
+      "url": "https://willamette.edu/admissions/precollege/camp-college",
+      "duration": "3 days",
+      "whyApply": "Free residential college-prep experience at a respected Oregon liberal arts university, demystifying the college search process.",
+      "_source": "https://willamette.edu/admissions/precollege/camp-college",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PNCA Pre-College Weekend Workshops",
+      "company": "Pacific Northwest College of Art (Willamette University)",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Tuition-based; need-based scholarships available",
+      "field": "Arts / Design",
+      "deadline": "Rolling",
+      "description": "Weekend pre-college art and design workshops for high school students ages 14-18 at Pacific Northwest College of Art in Portland. Options in studio art, creative technology and design, taught by PNCA faculty. Complements PNCA's two-week Pre-College Summer Intensive with a portfolio review.",
+      "majors": [
+        "Studio Art",
+        "Design",
+        "Creative Technology",
+        "Illustration"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "design",
+        "portfolio",
+        "Portland"
+      ],
+      "url": "https://pnca.willamette.edu/academics/pre-college-programs",
+      "duration": "Weekend workshops (varies)",
+      "whyApply": "Lower-commitment on-ramp to a professional art school, useful for students building a portfolio without committing to a full summer intensive.",
+      "_source": "https://pnca.willamette.edu/academics/pre-college-programs",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
