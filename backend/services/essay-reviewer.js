@@ -544,8 +544,10 @@ export async function reviewEssay(essayText, essayType = 'other', targetSchool =
     const text = response.content[0]?.text || '';
     const tokensUsed = (response.usage?.input_tokens || 0) + (response.usage?.output_tokens || 0);
 
-    // Parse JSON from response — resilient to common LLM JSON issues
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    // Parse JSON from response — resilient to common LLM JSON issues.
+    // Strip markdown code fences (```json ... ```) if present before matching.
+    const stripped = text.replace(/```(?:json)?\s*/gi, '').replace(/```/g, '');
+    const jsonMatch = stripped.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       let jsonStr = jsonMatch[0];
       // Fix trailing commas before } or ] (common LLM issue)

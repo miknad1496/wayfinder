@@ -157,6 +157,17 @@ router.post('/review', async (req, res) => {
       return res.status(400).json({ error: 'Essay too long. Maximum 15,000 characters (~3,000 words).' });
     }
 
+    // Validate optional text inputs to prevent abuse of the LLM prompt
+    if (targetSchool != null && (typeof targetSchool !== 'string' || targetSchool.length > 200)) {
+      return res.status(400).json({ error: 'targetSchool must be a string of at most 200 characters.' });
+    }
+    if (prompt != null && (typeof prompt !== 'string' || prompt.length > 2000)) {
+      return res.status(400).json({ error: 'prompt must be a string of at most 2000 characters.' });
+    }
+    if (essayType != null && typeof essayType !== 'string') {
+      return res.status(400).json({ error: 'essayType must be a string.' });
+    }
+
     // Deduct 1 credit (essays are credit-gated, not daily-limit-gated)
     const creditResult = await useEssayCredit(token);
     if (!creditResult.allowed) {
@@ -247,37 +258,41 @@ router.get('/history', async (req, res) => {
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
     const essayTypeFilter = req.query.essayType;
+    // Cap limit between 1 and 200, default 100, to prevent unbounded scans
+    const rawLimit = parseInt(req.query.limit, 10);
+    const limit = Number.isFinite(rawLimit) ? Math.min(Math.max(rawLimit, 1), 200) : 100;
 
     await ensureDir();
-    const files = await fs.readdir(REVIEWS_DIR);
-    const reviews = [];
+    const files = (await fs.readdir(REVIEWS_DIR)).filter(f => f.endsWith('.json'));
 
-    for (const file of files.filter(f => f.endsWith('.json'))) {
+    // Parallel reads with bounded concurrency via Promise.all
+    const parsed = await Promise.all(files.map(async (file) => {
       try {
         const raw = await fs.readFile(join(REVIEWS_DIR, file), 'utf-8');
-        const review = JSON.parse(raw);
-        if (review.userId === user.id) {
-          if (essayTypeFilter && review.essayType !== essayTypeFilter) {
-            continue;
-          }
-          reviews.push({
-            id: review.id,
-            essayType: review.essayType,
-            targetSchool: review.targetSchool,
-            wordCount: review.wordCount,
-            score: review.review?.overallScore,
-            scoreLabel: review.review?.scoreLabel,
-            createdAt: review.createdAt,
-            summary: review.review?.summary
-          });
-        }
+        return JSON.parse(raw);
       } catch {
-        // Skip corrupt files
+        return null;
       }
+    }));
+
+    const reviews = [];
+    for (const review of parsed) {
+      if (!review || review.userId !== user.id) continue;
+      if (essayTypeFilter && review.essayType !== essayTypeFilter) continue;
+      reviews.push({
+        id: review.id,
+        essayType: review.essayType,
+        targetSchool: review.targetSchool,
+        wordCount: review.wordCount,
+        score: review.review?.overallScore,
+        scoreLabel: review.review?.scoreLabel,
+        createdAt: review.createdAt,
+        summary: review.review?.summary
+      });
     }
 
     reviews.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    res.json({ reviews });
+    res.json({ reviews: reviews.slice(0, limit), total: reviews.length });
   } catch (err) {
     console.error('Essay history error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -294,30 +309,37 @@ router.get('/drafts/:essayType', async (req, res) => {
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
     const essayType = req.params.essayType;
+    // Reject malformed essayType params that could never match
+    if (typeof essayType !== 'string' || essayType.length > 64) {
+      return res.status(400).json({ error: 'Invalid essayType' });
+    }
 
     await ensureDir();
-    const files = await fs.readdir(REVIEWS_DIR);
-    const drafts = [];
+    const files = (await fs.readdir(REVIEWS_DIR)).filter(f => f.endsWith('.json'));
 
-    for (const file of files.filter(f => f.endsWith('.json'))) {
+    const parsed = await Promise.all(files.map(async (file) => {
       try {
         const raw = await fs.readFile(join(REVIEWS_DIR, file), 'utf-8');
-        const review = JSON.parse(raw);
-        if (review.userId === user.id && review.essayType === essayType) {
-          drafts.push({
-            id: review.id,
-            essayType: review.essayType,
-            targetSchool: review.targetSchool,
-            overallScore: review.review?.overallScore,
-            scoreLabel: review.review?.scoreLabel,
-            wordCount: review.wordCount,
-            createdAt: review.createdAt,
-            summary: review.review?.summary
-          });
-        }
+        return JSON.parse(raw);
       } catch {
-        // Skip corrupt files
+        return null;
       }
+    }));
+
+    const drafts = [];
+    for (const review of parsed) {
+      if (!review || review.userId !== user.id) continue;
+      if (review.essayType !== essayType) continue;
+      drafts.push({
+        id: review.id,
+        essayType: review.essayType,
+        targetSchool: review.targetSchool,
+        overallScore: review.review?.overallScore,
+        scoreLabel: review.review?.scoreLabel,
+        wordCount: review.wordCount,
+        createdAt: review.createdAt,
+        summary: review.review?.summary
+      });
     }
 
     drafts.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
