@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastScraped": "2026-04-06",
+    "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 683,
+    "totalCount": 694,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 683,
-    "verifiedCount": 58,
+    "totalInternships": 694,
+    "verifiedCount": 69,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -1987,6 +1987,385 @@
       "_source": "https://isbscience.org/careers/internships/summer-undergraduate-research-experiences-program/",
       "_verified": true,
       "_verifiedDate": "2026-04-06",
+      "format": "in-person"
+    },
+    {
+      "title": "SAM Teen Programs Internship",
+      "company": "Seattle Art Museum",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$20.76/hour",
+      "field": "Arts & Media",
+      "deadline": "2026-09-01",
+      "description": "Part-time (10 hrs/week) paid internship supporting the Education team in developing intergenerational programming for youth and families. Runs October through June (~36 weeks). Designed to further racial equity and diversity objectives within SAM. No prior museum experience required.",
+      "majors": [
+        "Art",
+        "Education",
+        "Museum Studies",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "museum",
+        "seattle",
+        "part-time",
+        "year-round"
+      ],
+      "url": "https://seattleartmuseum.applytojob.com/apply/R7nFOqt42k/Teen-Programs-Internship",
+      "duration": "36 weeks (October-June), 10 hrs/week",
+      "whyApply": "Paid museum internship at one of the Pacific Northwest's premier art museums. No prior experience needed — great for students exploring arts careers.",
+      "_source": "https://seattleartmuseum.applytojob.com/apply/R7nFOqt42k/Teen-Programs-Internship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "KEXP Youth Radio Program",
+      "company": "KEXP",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-09-01",
+      "description": "Free educational program teaching young people music curation and radio broadcasting. Work alongside KEXP DJs to develop skills in music selection, board operation, digital and physical music library management, and on-air broadcasting. Must live in or around the Seattle-Tacoma metro area.",
+      "majors": [
+        "Communications",
+        "Music",
+        "Media",
+        "Journalism"
+      ],
+      "tags": [
+        "high-school",
+        "radio",
+        "music",
+        "seattle",
+        "media",
+        "broadcasting"
+      ],
+      "url": "https://www.kexp.org/education/programs/youth-radio/",
+      "duration": "Varies",
+      "whyApply": "Unique opportunity to learn radio broadcasting at KEXP, one of the most respected independent radio stations in the world. Great for media-interested students.",
+      "_source": "https://www.kexp.org/education/programs/youth-radio/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "KEXP 2026 Internships",
+      "company": "Friends of KEXP",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Arts & Media",
+      "deadline": "2027-02-18",
+      "description": "6-month paid internship (May-November, ~18 hrs/week, 450 total hours) at KEXP radio. Tracks include Communications & Audience Engagement, Community Events, Latin American Content, and Library & Archives. Seeks applicants from historically underrepresented communities at the beginning of their career.",
+      "majors": [
+        "Communications",
+        "Music",
+        "Marketing",
+        "Media",
+        "Library Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "radio",
+        "music",
+        "seattle",
+        "media",
+        "diversity"
+      ],
+      "url": "https://www.kexp.org/internships/",
+      "duration": "6 months (May-November), ~18 hrs/week",
+      "whyApply": "Paid, hands-on media experience at a world-renowned independent radio station. Multiple tracks let you match your interests.",
+      "_source": "https://www.kexp.org/internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "5th Avenue Theatre Rising Star Project",
+      "company": "5th Avenue Theatre",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2026-09-01",
+      "description": "Tuition-free youth theater program for WA teens ages 14-19. ~200 hours of rehearsal with professional mentors. Tracks include performance, theater design/technology, artistic leadership, and arts administration. Students produce a full-scale musical alongside theater professionals.",
+      "majors": [
+        "Theater",
+        "Music",
+        "Arts Administration",
+        "Design"
+      ],
+      "tags": [
+        "high-school",
+        "theater",
+        "performing-arts",
+        "seattle",
+        "free",
+        "mentorship"
+      ],
+      "url": "https://www.5thavenue.org/education/theater-careers/rising-star-project/",
+      "duration": "Full season (~200 hours)",
+      "whyApply": "Professional-level theater experience at one of Seattle's top venues. Completely free with multiple career tracks beyond just performing.",
+      "_source": "https://www.5thavenue.org/education/theater-careers/rising-star-project/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Village Theatre KIDSTAGE Internship",
+      "company": "Village Theatre",
+      "location": {
+        "city": "Issaquah",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Small cost-reimbursement stipend for some roles",
+      "field": "Arts & Media",
+      "deadline": "2027-02-01",
+      "description": "Summer theater internship at Village Theatre's KIDSTAGE program. Roles in classroom instruction, stage management, design, costumes, sound, lights, and directing. The Summer Independent Production (SIP) is tuition-free and puts students in charge of every aspect of production. Ages 18+ (younger by permission).",
+      "majors": [
+        "Theater",
+        "Education",
+        "Design",
+        "Music"
+      ],
+      "tags": [
+        "high-school",
+        "theater",
+        "eastside",
+        "issaquah",
+        "performing-arts"
+      ],
+      "url": "https://villagetheatre.org/kidstage-internships/",
+      "duration": "Summer (varies by role)",
+      "whyApply": "Hands-on theater production experience on Seattle's Eastside. SIP program gives students rare autonomy over full productions.",
+      "_source": "https://villagetheatre.org/kidstage-internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "FareStart Youth Barista & Customer Service Program",
+      "company": "FareStart",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid training (stipend + credit available)",
+      "field": "Nonprofit",
+      "deadline": "2026-12-31",
+      "description": "8-week workforce training program for youth ages 15.5-24. Job Readiness pathway: 4 weeks online + 4 weeks paid in-person training at FareStart Cafe learning espresso, register, customer service. Education pathway in partnership with Seattle Public Schools earns credit and stipend. 1:1 mentorship ratio.",
+      "majors": [
+        "Business",
+        "Hospitality",
+        "Food Service"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "nonprofit",
+        "seattle",
+        "workforce",
+        "food-service",
+        "barista"
+      ],
+      "url": "https://www.farestart.org/youth-young-adult-barista-program-0",
+      "duration": "8 weeks",
+      "whyApply": "Structured workforce training with real cafe experience and 1:1 mentorship. Good for students who need flexible entry points into the workforce.",
+      "_source": "https://www.farestart.org/youth-young-adult-barista-program-0",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "YMCA WAGES Youth Employment Program",
+      "company": "YMCA of Greater Seattle",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$20.97/hour (max 135 hours over 9 weeks)",
+      "field": "Nonprofit",
+      "deadline": "2026-12-31",
+      "description": "10-week paid cohort program for ages 17-24. ~45 hours of classroom soft skills training + ~100 hours of internship placement at organizations like Burien CARES, College Nannies, Farmer's Market, and more. Develops employment readiness skills.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "nonprofit",
+        "seattle",
+        "workforce",
+        "ymca",
+        "soft-skills"
+      ],
+      "url": "https://www.seattleymca.org/social-impact-center/youth-young-adults/employment-education",
+      "duration": "10 weeks",
+      "whyApply": "Paid $20.97/hr with built-in soft skills training. Great first job experience with YMCA's support network.",
+      "_source": "https://www.seattleymca.org/social-impact-center/youth-young-adults/employment-education",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "YWCA Youth Employment Services",
+      "company": "YWCA Seattle King Snohomish",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2026-12-31",
+      "description": "Career and education assistance for young adults ages 15-24. Includes job coaching, college planning, internship referrals, resume/cover letter help, interview prep, and short-term training programs including Customer Service Training in partnership with Starbucks.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "nonprofit",
+        "seattle",
+        "workforce",
+        "ywca",
+        "job-training",
+        "starbucks"
+      ],
+      "url": "https://www.ywcaworks.org/programs/youth-employment-services-program",
+      "duration": "Ongoing",
+      "whyApply": "Comprehensive career support with Starbucks partnership. Good for students who need wraparound job-readiness support.",
+      "_source": "https://www.ywcaworks.org/programs/youth-employment-services-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Pierce County Summer Internship Program",
+      "company": "Pierce County Government",
+      "location": {
+        "city": "Tacoma",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Above minimum wage (rate varies by department)",
+      "field": "Government",
+      "deadline": "2026-04-30",
+      "description": "12-week paid summer internship (June-August) across Pierce County government departments. Real, meaningful work — not routine tasks. Assigned a mentor, free ORCA Card for transit, some hybrid/remote options. Departments include public works, IT, parks, human services, and more.",
+      "majors": [
+        "Public Policy",
+        "Business",
+        "Engineering",
+        "IT",
+        "Social Work"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "tacoma",
+        "pierce-county",
+        "mentorship"
+      ],
+      "url": "https://www.piercecountywa.gov/6506/Paid-Internship-Program",
+      "duration": "12 weeks (June-August)",
+      "whyApply": "Paid government internship with real project work and mentorship. Free ORCA Card and potential hybrid schedule.",
+      "_source": "https://www.piercecountywa.gov/6506/Paid-Internship-Program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Tacoma Jobs 253 Internship Program",
+      "company": "Tacoma Public Schools",
+      "location": {
+        "city": "Tacoma",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$500 stipend per session (up to $1,500 total)",
+      "field": "Various",
+      "deadline": "2026-12-31",
+      "description": "Paid internship program connecting Tacoma HS students (ages 14-18) with local businesses for 40+ hours of work experience per session. 5 sessions per year. Earn stipend + high school credit. Must complete reflection form, resume, and financial literacy certificate. Up to 3 experiences total.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tacoma",
+        "workforce",
+        "credit",
+        "multiple-sessions"
+      ],
+      "url": "https://www.tacomaschools.org/departments/cte/internships/253",
+      "duration": "40+ hours per session (5 sessions/year)",
+      "whyApply": "Accessible paid program for Tacoma students with rolling entry points throughout the year. Builds resume and earns credit.",
+      "_source": "https://www.tacomaschools.org/departments/cte/internships/253",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "City of Kirkland Parks & Community Services Internship",
+      "company": "City of Kirkland",
+      "location": {
+        "city": "Kirkland",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid (hourly, rate varies)",
+      "field": "Government",
+      "deadline": "2026-04-15",
+      "description": "Summer paid internship for high school students in Kirkland Parks & Community Services. 10-20 hrs/week in recreation, parks management, Green Kirkland Partnership, administration, or human services. Tasks include outdoor programs, research, photo/video editing, and promotional materials.",
+      "majors": [
+        "Parks & Recreation",
+        "Environmental Science",
+        "Communications",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "kirkland",
+        "eastside",
+        "parks",
+        "recreation"
+      ],
+      "url": "https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/About-PCS/Parks-Jobs",
+      "duration": "Summer (10-20 hrs/week)",
+      "whyApply": "Paid local government experience on the Eastside. Flexible hours and diverse assignment areas from parks to media.",
+      "_source": "https://www.governmentjobs.com/careers/kirklandwa/jobs/4904110/high-school-intern",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
       "format": "in-person"
     },
     {
