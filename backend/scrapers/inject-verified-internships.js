@@ -1424,6 +1424,177 @@ const VERIFIED_PROGRAMS = [
     _verifiedDate: "2026-04-08",
     format: "in-person"
   },
+
+  // --- ADDED 2026-04-08 --- WA Deep Dive Batch 2 ----
+
+  // GOVERNMENT -- OLYMPIA / STATE
+  {
+    title: "Washington State Legislature Page Program",
+    company: "Washington State Legislature",
+    location: { city: "Olympia", state: "WA" },
+    type: "year-round",
+    paid: true,
+    stipend: "$65-67/day stipend",
+    field: "Government",
+    deadline: "2026-11-01",
+    description: "1-week paid program for youth ages 14-17 during the legislative session (Jan-Apr). Pages assist on the chamber floor, make deliveries, support member offices, and attend Page School learning about state government. Sponsored by a legislator from your district. House pays $65/day, Senate $67/day.",
+    majors: ["Political Science", "Public Policy", "Government", "Law"],
+    tags: ["high-school", "paid", "government", "olympia", "legislature", "civics"],
+    url: "https://leg.wa.gov/learn-and-participate/civic-education-programs/page-program/",
+    duration: "1 week (during Jan-Apr session)",
+    whyApply: "See state government from the inside. Work on the chamber floor alongside legislators. Paid stipend and excellent civics education.",
+    _source: "https://leg.wa.gov/learn-and-participate/civic-education-programs/page-program/",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+
+  // HEALTHCARE -- TACOMA
+  {
+    title: "MultiCare M.A.S.H. Camp",
+    company: "MultiCare Health System",
+    location: { city: "Tacoma", state: "WA" },
+    type: "summer",
+    paid: false,
+    field: "Healthcare",
+    deadline: "2027-03-09",
+    description: "Free 5-day healthcare career exploration camp for high school sophomores, juniors, and seniors. Hands-on station rotations, mock codes, job shadows, and college visits. Learn about nursing, pharmacy, radiology, physical therapy, and allied health. Must be in Pierce, south King, Kitsap, or north Thurston counties.",
+    majors: ["Nursing", "Pharmacy", "Radiology", "Physical Therapy", "Pre-Med"],
+    tags: ["high-school", "healthcare", "tacoma", "free", "career-exploration", "multicare"],
+    url: "https://www.multicare.org/about/community/mash-camp/",
+    duration: "5 days (summer)",
+    whyApply: "Free immersive healthcare experience at a major regional health system. Over 20 years of inspiring future healthcare professionals.",
+    _source: "https://www.multicare.org/about/community/mash-camp/",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+  {
+    title: "MultiCare Summer Volunteer Program",
+    company: "MultiCare Health System",
+    location: { city: "Tacoma", state: "WA" },
+    type: "summer",
+    paid: false,
+    field: "Healthcare",
+    deadline: "2026-04-15",
+    description: "Summer volunteer program at MultiCare hospitals. Must be at least 16 years old and commit to 100+ hours of service. After 60 volunteer hours, eligible for job shadowing in clinical departments. Applications open Feb 1 - Apr 15.",
+    majors: ["Nursing", "Pre-Med", "Healthcare Administration"],
+    tags: ["high-school", "healthcare", "tacoma", "volunteer", "job-shadowing", "clinical"],
+    url: "https://www.multicare.org/volunteers/summer-volunteer-program/",
+    duration: "Summer (100+ hours commitment)",
+    whyApply: "Earn clinical volunteer hours at a major hospital system, then unlock job shadowing. Strong foundation for pre-med applications.",
+    _source: "https://www.multicare.org/volunteers/summer-volunteer-program/",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+
+  // ARTS -- TACOMA
+  {
+    title: "Museum of Glass Curator High Program",
+    company: "Museum of Glass",
+    location: { city: "Tacoma", state: "WA" },
+    type: "year-round",
+    paid: true,
+    stipend: "Paid via Jobs 253 partnership",
+    field: "Arts & Media",
+    deadline: "2026-12-31",
+    description: "Curatorial intensive for Tacoma high school students in partnership with Jobs 253. Work with every department at Museum of Glass to conceive, develop, and install an exhibition in the Grand Hall. Learn museum organizational structure and gain professional development.",
+    majors: ["Art", "Museum Studies", "Communications", "Design"],
+    tags: ["high-school", "paid", "arts", "museum", "tacoma", "curatorial", "glass-art"],
+    url: "https://www.museumofglass.org/curator-high",
+    duration: "Program season (varies)",
+    whyApply: "Rare curatorial experience for high schoolers. Curate a real exhibition at a world-class museum. Paid through Jobs 253.",
+    _source: "https://www.museumofglass.org/curator-high",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+
+  // CONSERVATION / ENVIRONMENTAL
+  {
+    title: "King County Parks Youth Conservation Corps (YCC)",
+    company: "King County Parks",
+    location: { city: "Seattle", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Paid (hourly)",
+    field: "Environmental Science",
+    deadline: "2026-06-01",
+    description: "6-week paid summer internship for teens entering grades 10-12. Learn about public lands, environmental justice, and environmental careers. Work Mon-Thu (22 hrs/week), Thursdays virtual. Sites at White Center or Skyway. Must be at least 15 by program start and a King County student.",
+    majors: ["Environmental Science", "Conservation", "Public Policy", "Biology"],
+    tags: ["high-school", "paid", "conservation", "environmental-justice", "seattle", "king-county"],
+    url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/get-involved/youth-conservation-corps",
+    duration: "6 weeks (July 7 - Aug 13)",
+    whyApply: "Paid conservation work with environmental justice focus. Hands-on public lands experience for environmental science college applications.",
+    _source: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/parks-recreation/king-county-parks/get-involved/youth-conservation-corps",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "hybrid"
+  },
+  {
+    title: "Northwest Youth Corps Sound to Summit",
+    company: "Northwest Youth Corps",
+    location: { city: "Tacoma", state: "WA" },
+    type: "summer",
+    paid: true,
+    stipend: "Stipend + potential HS credit",
+    field: "Environmental Science",
+    deadline: "2026-05-15",
+    description: "5-week day conservation crew program for youth ages 15-18 in Tacoma, Olympia, and Lakewood areas. Complete service projects on public lands averaging 6.5 hours/day of work + 1 hour of education. Earn a stipend and high school credit.",
+    majors: ["Environmental Science", "Conservation", "Biology", "Forestry"],
+    tags: ["high-school", "paid", "conservation", "tacoma", "olympia", "outdoor", "corps"],
+    url: "https://www.nwyouthcorps.org/community/sound-to-summit/",
+    duration: "5 weeks (summer)",
+    whyApply: "Hands-on conservation work on public lands with an education component. Build outdoor skills while earning a stipend.",
+    _source: "https://www.nwyouthcorps.org/community/sound-to-summit/",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+
+  // WORKFORCE -- EVERETT / SNOHOMISH
+  {
+    title: "Everett Career Link Summer Internship",
+    company: "Everett Public Schools / Snohomish STEM / City of Everett",
+    location: { city: "Everett", state: "WA" },
+    type: "summer",
+    paid: false,
+    stipend: "Unpaid (earns 0.5 CTE/Elective credit)",
+    field: "Various",
+    deadline: "2027-03-09",
+    description: "90-hour summer internship (5-6 weeks, July-August) connecting Everett HS sophomores/juniors with employers including Kaiser Permanente and Providence. Partnership between Everett Public Schools, Snohomish STEM, and City of Everett. Earns 0.5 CTE/Elective credit.",
+    majors: ["Any"],
+    tags: ["high-school", "career-exploration", "everett", "snohomish", "credit", "healthcare"],
+    url: "https://www.everettsd.org/domain/4828",
+    duration: "90 hours over 5-6 weeks (summer)",
+    whyApply: "Structured employer placements with real businesses in Snohomish County. Earn high school credit while exploring careers.",
+    _source: "https://www.everettsd.org/domain/4828",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
+
+  // HEALTHCARE -- BELLEVUE / EASTSIDE
+  {
+    title: "Overlake Medical Center Teen Volunteer Program",
+    company: "Overlake Medical Center",
+    location: { city: "Bellevue", state: "WA" },
+    type: "summer",
+    paid: false,
+    field: "Healthcare",
+    deadline: "2027-01-31",
+    description: "Summer volunteer program for teens at Overlake Medical Center in Bellevue. Supports Nursing Assistant Certified (NAC) observation hours for high school students in the healthcare track. Application window opens January. Contact 425-688-5921.",
+    majors: ["Nursing", "Pre-Med", "Healthcare"],
+    tags: ["high-school", "healthcare", "bellevue", "eastside", "volunteer", "clinical"],
+    url: "https://www.overlakehospital.org/about/volunteer",
+    duration: "Summer (max 4 hrs/day)",
+    whyApply: "Clinical volunteer experience at a top-rated Eastside hospital. Supports NAC certification pathway.",
+    _source: "https://www.overlakehospital.org/about/volunteer",
+    _verified: true,
+    _verifiedDate: "2026-04-08",
+    format: "in-person"
+  },
 ];
 
 
