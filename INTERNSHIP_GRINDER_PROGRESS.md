@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (eighth run — GA broadening)
+Last updated: 2026-04-09 (ninth run — PA buildout)
 
 ## State-by-state verified internship counts
 
@@ -21,6 +21,7 @@ Generated from inject-verified-internships.js run output.
 | MN    | 23    | Needs work |
 | OH    | 29    | In progress (second run — arts/business/law/engineering added) |
 | GA    | 29+   | In progress (run 8 — broadened into CS/tech, arts, medicine, humanities) |
+| PA    | 19    | In progress (run 9 — CMU pre-college, PGSS, Penn State, CHOP, Carnegie museums) |
 
 ## Recent runs
 - 2026-04-09 (run 1): Added 10 verified Massachusetts programs (MITES Summer, MITES Semester, BWSI, MIT PRIMES, PROMYS, BU RISE, Harvard Pre-College, Harvard SSP, WPI Frontiers, Boston Leadership Institute)
@@ -40,3 +41,5 @@ Generated from inject-verified-internships.js run output.
 - Continue NJ buildout toward 80-100 (more medicine, CS, scholars programs)
 - Continue MA buildout toward 80-100
 - GA, NC, CO, OR, WI, AZ (all still 0 or very low)
+
+- 2026-04-09 (run 9): Added 14 verified Pennsylvania programs — Pennsylvania Governor's School for the Sciences (PGSS at CMU), CMU Pre-College AI Scholars, CMU Pre-College Computational Biology, CMU Pre-College CS Scholars, CMU Pre-College Architecture, CMU Pre-College Drama, CMU National HS Game Academy, Penn State Summer Discovery (Readiness Institute), Penn State Harrisburg STEM Summer Enrichment, Pennsylvania School for Excellence in the Agricultural Sciences (PSEAS), Penn State SCOPE Education Program, CHOP-RISES Research Internship, Carnegie Museum of Art Youth Art Initiative, Carnegie Science Center Teen Volunteers. Broadened PA coverage into CS/AI, architecture, drama, agriculture, education pipeline, biomedical research, and arts. PA now 19 verified.
