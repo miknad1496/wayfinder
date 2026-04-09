@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1401,
+    "totalCount": 1415,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1401,
-    "verifiedCount": 776,
+    "totalInternships": 1415,
+    "verifiedCount": 790,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -26045,6 +26045,468 @@
       "duration": "2 weeks (summer)",
       "whyApply": "Free, hands-on clinical skills exposure — suturing, ultrasound, CPR, and simulated patients — at a major academic medical center, one of the best low-cost pre-med pipelines in Virginia.",
       "_source": "https://dsei.vcu.edu/paths/programs/high-school/health-sciences-academy-hsa/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "KEYS Research Internship",
+      "company": "BIO5 Institute, University of Arizona",
+      "location": {
+        "city": "Tucson",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Biomedical Research",
+      "deadline": "2027-02-01",
+      "description": "7-week summer research internship for Arizona high school students placing them in University of Arizona faculty labs in bioscience, engineering, environmental health, and biostatistics. Includes career development workshops and a final research showcase. Open to motivated AZ residents age 16+.",
+      "majors": [
+        "Biology",
+        "Bioengineering",
+        "Environmental Health",
+        "Biostatistics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "biomedical",
+        "competitive",
+        "arizona-residents"
+      ],
+      "url": "https://keys.arizona.edu/",
+      "duration": "7 weeks (June-July)",
+      "whyApply": "Arizona's flagship bioscience research training program for high schoolers. Real lab placement with University of Arizona faculty.",
+      "_source": "https://keys.arizona.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Med-Start Health Careers Program",
+      "company": "University of Arizona Health Sciences",
+      "location": {
+        "city": "Tucson",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine",
+      "deadline": "2027-02-15",
+      "description": "6-week residential summer academic enrichment program for rising 11th graders interested in health professions. Students live in UArizona residence halls and participate in college-level coursework, clinical exposure, and mentorship designed to strengthen readiness for health professional school admissions.",
+      "majors": [
+        "Pre-Med",
+        "Public Health",
+        "Nursing",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "medicine",
+        "pipeline",
+        "arizona-residents"
+      ],
+      "url": "https://healthsciences.arizona.edu/outreach/student-engagement-and-career-advancement/programs/med-start",
+      "duration": "6 weeks (June-July)",
+      "whyApply": "Long-running residential pre-health pipeline for Arizona juniors. Free residential program with strong record of placing first-gen students into health careers.",
+      "_source": "https://healthsciences.arizona.edu/outreach/student-engagement-and-career-advancement/programs/med-start",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Engineering Academy (SEA)",
+      "company": "University of Arizona College of Engineering",
+      "location": {
+        "city": "Tucson",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-04-15",
+      "description": "Residential summer engineering academy for rising 10th-12th grade students. Hands-on workshops across multiple engineering disciplines (aerospace, biomedical, electrical, mechanical, mining, optical, and systems engineering), faculty-led labs, and team design projects.",
+      "majors": [
+        "Aerospace Engineering",
+        "Biomedical Engineering",
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Optical Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "engineering",
+        "hands-on"
+      ],
+      "url": "https://engineering.arizona.edu/k12/k12_SEA",
+      "duration": "1-4 weeks (June-July)",
+      "whyApply": "Hands-on multi-discipline engineering residential at one of Arizona's top engineering programs (incl. internationally ranked optical sciences).",
+      "_source": "https://engineering.arizona.edu/k12/k12_SEA",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Helios Scholars Program",
+      "company": "Translational Genomics Research Institute (TGen)",
+      "location": {
+        "city": "Phoenix",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid 8-week stipend",
+      "field": "Genomics / Biomedical Research",
+      "deadline": "2027-02-01",
+      "description": "Paid 8-week biomedical research internship for Arizona high school, undergraduate, graduate, and medical students. Interns are placed in TGen labs working on genomics, cancer biology, neurological disorders, infectious disease, and antimicrobial resistance. Phoenix or TGen North (Flagstaff) campuses.",
+      "majors": [
+        "Genomics",
+        "Cancer Biology",
+        "Bioinformatics",
+        "Microbiology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "genomics",
+        "competitive",
+        "arizona-residents"
+      ],
+      "url": "https://www.tgen.org/education/helios-scholars-program/",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Premier paid biomedical research program in Arizona — competitive placement at one of the country's top translational genomics institutes.",
+      "_source": "https://www.tgen.org/education/helios-scholars-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer High School Internship Program",
+      "company": "Barrow Neurological Institute",
+      "location": {
+        "city": "Phoenix",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Neuroscience",
+      "deadline": "2027-02-14",
+      "description": "Free 5-week neuroscience research internship at Barrow Neurological Institute for students age 16+. Interns work in faculty labs (Ivy Brain Tumor Center, Neuroimaging Innovation Center, Translational Neuroscience), evaluate scientific literature, develop projects, and present findings. Non-research support roles in publications, marketing, and the foundation are also available.",
+      "majors": [
+        "Neuroscience",
+        "Biology",
+        "Biomedical Engineering",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "neuroscience",
+        "brain",
+        "free"
+      ],
+      "url": "https://www.barrowneuro.org/for-physicians-researchers/research/training-programs/high-school-research-program/",
+      "duration": "5 weeks (May 30 - July 3)",
+      "whyApply": "20+ year-old neuroscience research internship at one of the world's leading neurological institutes — free and highly competitive.",
+      "_source": "https://www.barrowneuro.org/for-physicians-researchers/research/training-programs/high-school-research-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Mayo Clinic CARES Program",
+      "company": "Mayo Clinic Arizona",
+      "location": {
+        "city": "Phoenix",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine",
+      "deadline": "2027-02-15",
+      "description": "Career Advancement, Research, and Education Summer (CARES) Program offering Arizona high school freshmen, sophomores, and juniors hands-on hospital experience and longitudinal mentorship. 4 weeks in-person in June plus 1 week virtual in July. Designed to expand the pipeline of underrepresented students into health careers.",
+      "majors": [
+        "Pre-Med",
+        "Public Health",
+        "Nursing",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "mentorship",
+        "pipeline",
+        "arizona-residents"
+      ],
+      "url": "https://college.mayo.edu/academics/office-of-education-engagement-and-outreach/programs/mayo-clinic-cares/",
+      "duration": "5 weeks (June-July)",
+      "whyApply": "Mayo Clinic-branded pipeline program for Arizona high schoolers — rare access to one of the top hospital systems in the world.",
+      "_source": "https://college.mayo.edu/academics/office-of-education-engagement-and-outreach/programs/mayo-clinic-cares/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Fulton Summer Academy",
+      "company": "Ira A. Fulton Schools of Engineering, Arizona State University",
+      "location": {
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Hands-on summer engineering academy on ASU's Tempe, Polytechnic, and West Valley campuses. Students learn engineering design, rapid prototyping (laser cutting, CAD, Arduino, 3D printing), and prototype testing through application-based projects. Multiple discipline tracks available for rising 9-12.",
+      "majors": [
+        "Mechanical Engineering",
+        "Robotics",
+        "Computer Engineering",
+        "Industrial Design"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "hands-on",
+        "prototyping",
+        "commuter"
+      ],
+      "url": "https://outreach.engineering.asu.edu/fulton-academy/",
+      "duration": "1-2 weeks (June-July)",
+      "whyApply": "ASU Fulton's flagship engineering camp with full prototyping shops — accessible across the Phoenix metro on three campuses.",
+      "_source": "https://outreach.engineering.asu.edu/fulton-academy/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "EPICS Summer Program (Engineering Projects in Community Service)",
+      "company": "Ira A. Fulton Schools of Engineering, Arizona State University",
+      "location": {
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering / Social Impact",
+      "deadline": "2027-05-01",
+      "description": "Award-winning social-entrepreneurship engineering camp in which high school students design, build, and deploy systems that solve engineering-based problems for charities, schools, and other nonprofits. Two one-week sessions on the Tempe campus.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Industrial Design",
+        "Sustainability"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "service-learning",
+        "social-impact",
+        "hands-on"
+      ],
+      "url": "https://outreach.engineering.asu.edu/2022/07/epicsbc/",
+      "duration": "1 week (June)",
+      "whyApply": "Connects engineering with community impact — students leave with a real prototype delivered to a real client organization.",
+      "_source": "https://outreach.engineering.asu.edu/2022/07/epicsbc/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Engineering Explore (SEE@ASU)",
+      "company": "Ira A. Fulton Schools of Engineering, Arizona State University",
+      "location": {
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Pre-college program for high school juniors and seniors providing a comprehensive overview of 27 undergraduate engineering degrees at ASU. Students interact with faculty, current engineering students, and tour cutting-edge labs and facilities.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Robotics",
+        "Aerospace Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "engineering",
+        "exploration"
+      ],
+      "url": "https://outreach.engineering.asu.edu/2022/07/seeasu/",
+      "duration": "1 week (summer)",
+      "whyApply": "Best fit for students still exploring which engineering discipline to pursue — broad exposure to one of the largest engineering schools in the U.S.",
+      "_source": "https://outreach.engineering.asu.edu/2022/07/seeasu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Business Careers Awareness Program (BCAP)",
+      "company": "Eller College of Management, University of Arizona",
+      "location": {
+        "city": "Tucson",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business / Accounting",
+      "deadline": "2027-04-15",
+      "description": "Week-long residential business and accounting program for high school juniors, run by Eller's Dhaliwal-Reidy School of Accountancy in partnership with EY. Includes coursework in accounting, marketing, ethics, and business communication; case study competition with $500 book scholarship; site visit to the EY Phoenix office; on-campus housing.",
+      "majors": [
+        "Accounting",
+        "Business",
+        "Finance",
+        "Marketing"
+      ],
+      "tags": [
+        "high-school",
+        "business",
+        "accounting",
+        "residential",
+        "first-gen-friendly"
+      ],
+      "url": "https://accounting.eller.arizona.edu/bcap",
+      "duration": "1 week (summer)",
+      "whyApply": "One of the few free residential business/finance pipelines in Arizona — direct exposure to Big Four accounting via the EY partnership.",
+      "_source": "https://accounting.eller.arizona.edu/bcap",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "The Advance Program",
+      "company": "Sandra Day O'Connor College of Law, Arizona State University",
+      "location": {
+        "city": "Tempe",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-05-01",
+      "description": "Pre-law pipeline program at ASU's Sandra Day O'Connor College of Law introducing high school and undergraduate students to legal education through workshops on legal reasoning, the law school admissions process, and exposure to law school faculty and current law students.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "pre-law",
+        "pipeline"
+      ],
+      "url": "https://law.asu.edu/admission/advance-program",
+      "duration": "1 week (summer)",
+      "whyApply": "Direct exposure to a top-50 law school for students considering pre-law — rare structured pre-law experience for AZ high schoolers.",
+      "_source": "https://law.asu.edu/admission/advance-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Indigenous Youth Media Workshop",
+      "company": "Northern Arizona University School of Communication",
+      "location": {
+        "city": "Flagstaff",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Journalism / Media",
+      "deadline": "2027-04-30",
+      "description": "10-day immersive journalism, storytelling, and digital media bootcamp for high school students grades 9-12 at NAU's Flagstaff campus, with preference given to Indigenous students. Students gain hands-on experience with reporting, audio, video, and photography under the mentorship of NAU faculty and working journalists.",
+      "majors": [
+        "Journalism",
+        "Communications",
+        "Film",
+        "Media Studies"
+      ],
+      "tags": [
+        "high-school",
+        "journalism",
+        "indigenous",
+        "humanities",
+        "arts"
+      ],
+      "url": "https://nau.edu/sbs/communication/indigenous-youth-media-workshop/",
+      "duration": "10 days (June 22 - July 1)",
+      "whyApply": "One of very few Indigenous-focused journalism pipelines in the Southwest — rare humanities/arts opportunity in northern Arizona.",
+      "_source": "https://nau.edu/sbs/communication/indigenous-youth-media-workshop/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "Arizona Science Center",
+      "location": {
+        "city": "Phoenix",
+        "state": "AZ"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "STEM Education / Museum",
+      "deadline": "Rolling",
+      "description": "Teen Volunteer Program for students age 15+ at the Arizona Science Center in downtown Phoenix. Volunteers work with the Science Center's leadership team to develop, test, and implement new content, programs, and exhibits, lead activities for visitors, and prep science kits for schools across Arizona. Eligible for service-learning credit.",
+      "majors": [
+        "Education",
+        "Science Communication",
+        "STEM",
+        "Museum Studies"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "volunteer",
+        "stem-education",
+        "year-round"
+      ],
+      "url": "https://www.azscience.org/learn/students/teens/",
+      "duration": "Year-round (flexible)",
+      "whyApply": "Accessible year-round STEM education and science-communication experience in the heart of Phoenix — open to ages 15+.",
+      "_source": "https://www.azscience.org/learn/students/teens/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Teen Volunteer Program",
+      "company": "Banner Desert Medical Center",
+      "location": {
+        "city": "Mesa",
+        "state": "AZ"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-31",
+      "description": "Summer hospital teen volunteer program at Banner Desert Medical Center in Mesa for high school students. Roles include patient transport, family support, gift shop, and unit support. Summer applications are accepted January through March only. Includes Banner's Medical Explorers Club for students seriously considering healthcare careers.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "volunteer",
+        "hospital",
+        "summer"
+      ],
+      "url": "https://www.bannerhealth.com/services/volunteer/banner-desert-volunteer",
+      "duration": "Summer (10+ weeks, 100 hour commitment)",
+      "whyApply": "One of the largest hospital teen volunteer pipelines in the East Valley — direct patient-facing healthcare exposure plus the Medical Explorers Club.",
+      "_source": "https://www.bannerhealth.com/services/volunteer/banner-desert-volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"

@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (run 16 — VA buildout)
+Last updated: 2026-04-09 (run 17 — AZ buildout)
 
 ## State-by-state verified internship counts
 
@@ -26,8 +26,10 @@ Generated from inject-verified-internships.js run output.
 | CO    | 22    | Started (run 12 — CU Boulder, Mines, NCAR, Children's Colorado, etc.) |
 | OR    | 14    | Started (run 13 — OHSU CURE, ASE Saturday Academy, UO SAIL, OMSI, etc.) |
 | WI    | 21    | In progress (run 15 — UW-Madison ESP, PEOPLE, MCW AIM, Badger Summer Scholars, WCATY ALP, MSOE, EnQuest, Marquette UB/UBMS, Beloit CLS, Lawrence Ascent, ICF, Milwaukee Zoo HSA, Discovery World) |
+| AZ    | 14    | Started (run 17 — KEYS BIO5, Med-Start, UA SEA, TGen Helios, Barrow, Mayo CARES, Fulton Academy, EPICS, SEE@ASU, Eller BCAP, ASU Law Advance, NAU IYMW, AZ Sci Center, Banner Desert) |
 
 ## Recent runs
+- 2026-04-09 (run 17): Started Arizona coverage with 14 verified programs — KEYS Research Internship (BIO5/UArizona), Med-Start Health Careers (UArizona Health Sciences, residential pre-med), UA Summer Engineering Academy, TGen Helios Scholars (paid genomics research, Phoenix/Flagstaff), Barrow Neurological Institute Summer HS Internship (free 5-week neuroscience research), Mayo Clinic CARES (Mayo Clinic Arizona pipeline), ASU Fulton Summer Academy, ASU EPICS Summer (engineering+social impact), ASU SEE@ASU (engineering exploration), Eller College BCAP (business/accounting w/ EY partnership), ASU Sandra Day O'Connor Law Advance Program (pre-law), NAU Indigenous Youth Media Workshop (journalism, Flagstaff), Arizona Science Center Teen Volunteer Program, Banner Desert Medical Center Summer Teen Volunteer (Mesa). Spans biomedical research, neuroscience, medicine, engineering, CS, business/finance, law, journalism/humanities, and STEM education. AZ now 14 verified.
 - 2026-04-09 (run 1): Added 10 verified Massachusetts programs (MITES Summer, MITES Semester, BWSI, MIT PRIMES, PROMYS, BU RISE, Harvard Pre-College, Harvard SSP, WPI Frontiers, Boston Leadership Institute)
 - 2026-04-09 (run 2): Added 11 more verified Massachusetts programs (RSI at MIT, MIT THINK Scholars, MIT MathROOTS, Brandeis Genesis, Harvard Secondary School Program, Northeastern YSP, Boston Medical Center Junior Summer Volunteer, Babson Summer Study, Tufts Summer Research Experience, Tufts Mini Med School, Northeastern Accelerate Pre-College) — broadened to finance/business, medicine, math, humanities
 - 2026-04-09 (run 3): Added 11 verified New Jersey programs — Princeton Summer Journalism Program, Princeton Laboratory Learning Program, Princeton James Madison Summer Seminar, Princeton University Preparatory Program (PUPP), Governor's School in the Sciences at Drew, Governor's School of Engineering & Technology at Rutgers, Stevens Pre-College Summer Residential, NJIT Summer STEMx Residency, NJIT Summer STEMx High School Programs, Liberty Science Center Partners in Science, Governor's STEM Scholars. First NJ state coverage — spans journalism, humanities/political science, engineering, STEM research.
