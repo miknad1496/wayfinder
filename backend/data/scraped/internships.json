@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1213,
+    "totalCount": 1224,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1213,
-    "verifiedCount": 588,
+    "totalInternships": 1224,
+    "verifiedCount": 599,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -19646,6 +19646,383 @@
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
+    },
+    {
+      "title": "Research Science Institute (RSI)",
+      "company": "Center for Excellence in Education / MIT",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Fully funded (tuition, room, board, travel — free to participants)",
+      "field": "STEM Research",
+      "deadline": "2027-01-15",
+      "description": "Six-week cost-free summer research program hosted at MIT. 100 of the most accomplished rising high school seniors worldwide. One week of intensive STEM coursework with MIT faculty, followed by five weeks conducting individual research under scientists and engineers in MIT labs, area universities, and companies. Culminates in a written research paper and symposium presentation.",
+      "majors": [
+        "Mathematics",
+        "Physics",
+        "Computer Science",
+        "Biology",
+        "Chemistry",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "extremely-competitive",
+        "fully-funded",
+        "prestigious"
+      ],
+      "url": "https://www.cee.org/programs/research-science-institute",
+      "duration": "6 weeks (late June - early August)",
+      "whyApply": "Widely considered the most selective free high school STEM research program in the world. ~5% acceptance rate. RSI alumni dominate Regeneron STS, ISEF, and top college STEM admissions.",
+      "_source": "https://www.cee.org/programs/research-science-institute",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "MIT THINK Scholars Program",
+      "company": "Massachusetts Institute of Technology",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "academic-year",
+      "paid": true,
+      "stipend": "Up to $1,000 project funding + all-expenses-paid trip to MIT",
+      "field": "STEM Research",
+      "deadline": "2027-01-01",
+      "description": "National STEM research initiative run by MIT undergraduates. High school students submit original project proposals; 4-6 finalists receive mentorship from MIT students and faculty, up to $1,000 in seed funding to implement their project, and an all-expenses-paid trip to MIT for lab visits, class attendance, and research presentations. Open to U.S. high schoolers.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "mentorship",
+        "funded",
+        "national"
+      ],
+      "url": "https://think.mit.edu/",
+      "duration": "Spring semester (January-May)",
+      "whyApply": "One of the only programs that funds and mentors high schoolers to actually build and execute their own original STEM projects, rather than slotting them into a pre-existing lab.",
+      "_source": "https://think.mit.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "MathROOTS",
+      "company": "MIT Department of Mathematics",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Free (fully funded — no tuition, travel covered)",
+      "field": "Mathematics",
+      "deadline": "2027-03-15",
+      "description": "Two-week residential summer program at MIT for high-potential high school students from underrepresented backgrounds or underserved communities who have a talent for mathematics. Intense mathematical problem-solving, lectures by MIT faculty and graduate students, and mentorship. Free to admitted students.",
+      "majors": [
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "math",
+        "underrepresented",
+        "fully-funded",
+        "residential"
+      ],
+      "url": "https://math.mit.edu/research/highschool/mathroots/",
+      "duration": "2 weeks (June)",
+      "whyApply": "Highly selective, fully funded, designed specifically to open math research careers to talented students from backgrounds underrepresented in the mathematical sciences.",
+      "_source": "https://math.mit.edu/research/highschool/mathroots/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Brandeis Genesis Precollege Program",
+      "company": "Brandeis University",
+      "location": {
+        "city": "Waltham",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$5,850 tuition; need- and merit-based scholarships + travel stipends up to $500",
+      "field": "Humanities & Jewish Studies",
+      "deadline": "2027-05-01",
+      "description": "Three-week pluralistic, academically focused Jewish learning and identity-building summer precollege program for students ages 15-18. Participants take college-level courses (2 hours/day, 5 days/week), participate in Shabbat celebrations, explorations, spiritual practice, evening activities, and weekly Boston-area trips while residing on the Brandeis campus.",
+      "majors": [
+        "Jewish Studies",
+        "Humanities",
+        "Religion",
+        "Philosophy"
+      ],
+      "tags": [
+        "high-school",
+        "humanities",
+        "residential",
+        "jewish",
+        "scholarships-available"
+      ],
+      "url": "https://www.brandeis.edu/precollege/genesis/index.html",
+      "duration": "3 weeks (late June - mid July)",
+      "whyApply": "Rare residential humanities-focused precollege program at a top research university with substantial need- and merit-based aid available.",
+      "_source": "https://www.brandeis.edu/precollege/genesis/index.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Harvard Summer School — Secondary School Program",
+      "company": "Harvard University",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$4,180-$15,735 depending on format (online/commuter/residential); limited financial aid",
+      "field": "Liberal Arts & Sciences",
+      "deadline": "2027-02-11",
+      "description": "Seven-week (June 20-Aug 8) and four-week (July 12-Aug 8) credit-bearing programs where motivated high school students take actual Harvard Summer School courses alongside undergraduates. 200+ course options across humanities, social sciences, sciences, and math. Residential, commuting, and online formats available.",
+      "majors": [
+        "Liberal Arts",
+        "Sciences",
+        "Humanities",
+        "Social Sciences",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "college-credit",
+        "residential",
+        "online-option",
+        "rigorous"
+      ],
+      "url": "https://summer.harvard.edu/high-school-programs/secondary-school-program/",
+      "duration": "4 or 7 weeks",
+      "whyApply": "Students earn real Harvard credit and experience college-level academics at one of the world's most prestigious universities, with broad course selection across nearly every discipline.",
+      "_source": "https://summer.harvard.edu/high-school-programs/secondary-school-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Young Scholars Program (YSP)",
+      "company": "Northeastern University Center for STEM Education",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Free to participants; no tuition",
+      "field": "STEM Research",
+      "deadline": "2027-03-02",
+      "description": "Six-week commuter research program for Massachusetts high school juniors entering 12th grade. Students conduct hands-on research in Northeastern's engineering, science, and health sciences laboratories. Program runs late June through late July, Monday-Thursday 8:30am-4:30pm, and includes career seminars, college counseling, and field trips to corporate and government research sites. Limited to permanent MA residents within commuting distance.",
+      "majors": [
+        "Engineering",
+        "Biology",
+        "Chemistry",
+        "Computer Science",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "free",
+        "massachusetts-only",
+        "commuter"
+      ],
+      "url": "https://stem.northeastern.edu/summer/ysp/",
+      "duration": "6 weeks (late June - late July)",
+      "whyApply": "One of the best free research opportunities exclusively for Massachusetts high school students, with genuine lab research and strong college counseling support built in.",
+      "_source": "https://stem.northeastern.edu/summer/ysp/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Junior Summer Volunteer Program",
+      "company": "Boston Medical Center",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-06",
+      "description": "Eight-week volunteer program for rising high school juniors and seniors, with preference given to Boston residents. Volunteers commit to at least one 3-hour weekly shift in outpatient settings (ambassador programs, food pantry, pediatric clinics) plus a mandatory weekly lecture series delivered by Boston Medical Center Health Systems professionals. Program accepts ~70 students; fills quickly.",
+      "majors": [
+        "Pre-Med",
+        "Public Health",
+        "Nursing",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "healthcare",
+        "volunteer",
+        "hospital",
+        "boston-residents"
+      ],
+      "url": "https://www.bmc.org/volunteer-services/junior-summer-volunteer-program",
+      "duration": "8 weeks (late June - late August)",
+      "whyApply": "Genuine hospital exposure inside New England's largest safety-net hospital, with a structured weekly lecture series from actual clinicians — excellent for students exploring medicine.",
+      "_source": "https://www.bmc.org/volunteer-services/junior-summer-volunteer-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Babson Summer Study for High School Students",
+      "company": "Babson College",
+      "location": {
+        "city": "Wellesley",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition varies; $95 application fee (waived for need-based aid applicants); partial scholarships available",
+      "field": "Business & Entrepreneurship",
+      "deadline": "2027-04-15",
+      "description": "Three-week experiential pre-college program for rising high school juniors and seniors (must be at least 15 by start date). Students earn 4 college credits while exploring social, economic, and environmental problems through an entrepreneurial lens framed by the UN Global Goals. Covers entrepreneurship, leadership, marketing, finance, business communication, and venture creation. Residential, commuter, and online options.",
+      "majors": [
+        "Business",
+        "Entrepreneurship",
+        "Finance",
+        "Marketing",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "business",
+        "entrepreneurship",
+        "college-credit",
+        "residential"
+      ],
+      "url": "https://www.babson.edu/summer-at-babson/high-school-learners/summer-study/",
+      "duration": "3 weeks",
+      "whyApply": "Babson is #1-ranked for entrepreneurship in the U.S., and this is one of the few pre-college programs that actually awards college credit while immersing students in real business and venture-creation coursework.",
+      "_source": "https://www.babson.edu/summer-at-babson/high-school-learners/summer-study/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Tufts Summer Research Experience",
+      "company": "Tufts University",
+      "location": {
+        "city": "Medford",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition applies; limited financial aid (scholarships typically covering 75-100% of program fee based on demonstrated need)",
+      "field": "STEM Research",
+      "deadline": "2027-04-15",
+      "description": "Hands-on collegiate research program for high school students on the Tufts Medford campus. Students work directly with Tufts researchers and faculty on real projects across sciences and engineering. Residential and commuter options available. Part of Tufts University College's pre-college portfolio.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Computer Science",
+        "Psychology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "residential",
+        "university"
+      ],
+      "url": "https://universitycollege.tufts.edu/high-school/programs/tufts-research-experience",
+      "duration": "1-6 weeks depending on track",
+      "whyApply": "Authentic university research experience at a top-30 research university in the Boston area, with a structured mentor match and financial aid for qualifying students.",
+      "_source": "https://universitycollege.tufts.edu/high-school/programs/tufts-research-experience",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Tufts Pre-College Mini Med School",
+      "company": "Tufts University",
+      "location": {
+        "city": "Medford",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition applies; limited financial aid available (75-100% scholarships for qualifying need)",
+      "field": "Healthcare",
+      "deadline": "2027-04-15",
+      "description": "Intensive pre-college program introducing high school students to medicine, clinical practice, and medical school coursework through lectures, interactive case studies, and simulation exercises taught by Tufts School of Medicine faculty. Students explore anatomy, physiology, pathology, and the daily realities of being a physician.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Public Health",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "pre-med",
+        "residential",
+        "simulation"
+      ],
+      "url": "https://universitycollege.tufts.edu/pre-college/academics/health-science-programs-high-school-students",
+      "duration": "1-2 weeks",
+      "whyApply": "Direct access to Tufts Medical School faculty and curriculum, including clinical simulation exercises — far more immersive than most shadowing or lecture-only pre-med programs.",
+      "_source": "https://universitycollege.tufts.edu/pre-college/academics/health-science-programs-high-school-students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Northeastern Accelerate Pre-College Programs",
+      "company": "Northeastern University",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition varies by program; financial aid available",
+      "field": "Multiple — STEM, Business, Humanities, Health",
+      "deadline": "2027-04-01",
+      "description": "Immersive residential and online pre-college programs for rising juniors and seniors led by Northeastern faculty on the Boston campus. Offerings span STEM, business, global affairs, health sciences, design, and the humanities. Students engage in experiential, project-based coursework aligned with Northeastern's signature co-op/experiential learning model.",
+      "majors": [
+        "Engineering",
+        "Business",
+        "Computer Science",
+        "Health Sciences",
+        "International Affairs"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "experiential",
+        "multi-discipline"
+      ],
+      "url": "https://precollegeprograms.northeastern.edu/",
+      "duration": "1-4 weeks",
+      "whyApply": "Northeastern's signature experiential-learning approach applied to high schoolers — programs emphasize real-world problems and professional skills, not just lectures.",
+      "_source": "https://precollegeprograms.northeastern.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
     },
     {
       "title": "Software Engineering Intern (STEP)",
