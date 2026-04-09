@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1203,
+    "totalCount": 1213,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1203,
-    "verifiedCount": 578,
+    "totalInternships": 1213,
+    "verifiedCount": 588,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -19291,6 +19291,358 @@
       "duration": "School year",
       "whyApply": "Shape criminal justice policy from inside a major prosecutor's office.",
       "_source": "phillyda.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "MITES Summer",
+      "company": "MIT (Massachusetts Institute of Technology)",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Fully funded — all tuition, housing, and meals covered",
+      "field": "STEM",
+      "deadline": "2027-02-01",
+      "description": "Six-week residential STEM enrichment program for rising high school seniors from underrepresented or underserved backgrounds. Students take rigorous college-level courses in math, physics, biology, chemistry, humanities, and engineering design while living on MIT's campus and working directly with MIT faculty and staff.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "free",
+        "STEM",
+        "highly-selective",
+        "underrepresented"
+      ],
+      "url": "https://mites.mit.edu/",
+      "duration": "6 weeks (June-August)",
+      "whyApply": "One of the most prestigious free pre-college STEM programs in the country. MITES alumni have exceptional college admissions outcomes and lifelong MIT community access.",
+      "_source": "mites.mit.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "MITES Semester",
+      "company": "MIT (Massachusetts Institute of Technology)",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Fully funded",
+      "field": "STEM",
+      "deadline": "2027-02-01",
+      "description": "Six-month virtual program (June-December) for rising high school seniors. Provides the rigor of MITES Summer in a flexible online format: college-level STEM courses, mentorship from MIT faculty and students, and a culminating independent project. Includes a one-week on-campus experience in Cambridge.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "virtual",
+        "hybrid",
+        "free",
+        "STEM",
+        "selective"
+      ],
+      "url": "https://mites.mit.edu/",
+      "duration": "6 months (June-December)",
+      "whyApply": "All the benefits of MITES without having to relocate — exceptional mentorship and college prep for students who can't commit to a residential summer.",
+      "_source": "mites.mit.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Beaver Works Summer Institute (BWSI)",
+      "company": "MIT Lincoln Laboratory / MIT Beaver Works",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free — no tuition charged for accepted students",
+      "field": "Engineering & Technology",
+      "deadline": "2027-03-15",
+      "description": "Four-week project-based summer institute for rising high school seniors. Tracks include autonomous RACECAR, cog*works, embedded security and hardware hacking, remote sensing for disaster response, assistive technology, UAV and drone engineering, quantum computing, and more. Students complete a capstone challenge with MIT Lincoln Lab engineers.",
+      "majors": [
+        "Computer Science",
+        "Electrical Engineering",
+        "Robotics",
+        "Aerospace Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "free",
+        "engineering",
+        "robotics",
+        "highly-selective"
+      ],
+      "url": "https://bwsi.mit.edu/",
+      "duration": "4 weeks (July)",
+      "whyApply": "Unique hands-on engineering experience with MIT Lincoln Lab — one of the few advanced technology programs that is both free and residential at MIT.",
+      "_source": "bwsi.mit.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PRIMES (Program for Research in Mathematics, Engineering and Science)",
+      "company": "MIT Department of Mathematics",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "stipend": "Free — no cost to participants",
+      "field": "Mathematics & Research",
+      "deadline": "2026-11-30",
+      "description": "Year-long research program for high school sophomores and juniors in the Greater Boston area. Students are paired with MIT graduate student mentors to work on original research projects in mathematics, theoretical computer science, and computational biology, culminating in research papers presented at the PRIMES conference.",
+      "majors": [
+        "Mathematics",
+        "Computer Science",
+        "Computational Biology",
+        "Theoretical Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "free",
+        "year-long",
+        "math",
+        "highly-selective"
+      ],
+      "url": "https://math.mit.edu/research/highschool/primes/",
+      "duration": "Year-long (January-December)",
+      "whyApply": "Produces genuine original research with MIT mentors — PRIMES students regularly win top prizes at Regeneron STS, ISEF, and other national research competitions.",
+      "_source": "math.mit.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "PROMYS (Program in Mathematics for Young Scientists)",
+      "company": "Boston University",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Need-based financial aid up to 100% of costs",
+      "field": "Mathematics",
+      "deadline": "2027-03-15",
+      "description": "Six-week intensive residential program in number theory and higher mathematics for high school students. Daily problem sets, lectures, and discussions with university mathematicians push students to discover mathematics through exploration. Application includes a challenging problem set.",
+      "majors": [
+        "Mathematics",
+        "Theoretical Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "math",
+        "highly-selective",
+        "need-based-aid"
+      ],
+      "url": "https://promys.org/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Considered one of the premier math enrichment programs in the world. Strong emphasis on discovery-based learning and a guiding principle of 'no financial barriers to participation.'",
+      "_source": "promys.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Research Internship and Summer Experience (RISE)",
+      "company": "Boston University",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Paid tuition program ($75 application fee; financial aid available)",
+      "field": "STEM Research",
+      "deadline": "2027-02-04",
+      "description": "Six-week selective pre-college research program for rising seniors. Two tracks: the Internship Track places students in a BU research lab under a faculty or postdoc mentor (biology, chemistry, physics, computer science, neuroscience, astronomy, public health, psychology, engineering, and more); the Practicum Track offers a structured Computational Neurobiology course. Culminates in a research poster symposium.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Computer Science",
+        "Neuroscience",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "residential",
+        "selective",
+        "financial-aid-available"
+      ],
+      "url": "https://www.bu.edu/summer/high-school-programs/research-in-science-engineering/",
+      "duration": "6 weeks (June-August)",
+      "whyApply": "One of the best structured high school research experiences on the East Coast. Final poster session gives students a taste of real academic research communication.",
+      "_source": "bu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Harvard Pre-College Program",
+      "company": "Harvard University",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Paid program ($6,100/session + $75 application fee; limited financial aid)",
+      "field": "Liberal Arts & Sciences",
+      "deadline": "2027-02-11",
+      "description": "Two-week residential pre-college program for rising juniors and seniors. Non-credit courses taught by Harvard faculty with small class sizes (~15 students). Students receive Harvard transcripts and written evaluations. Three sessions offered throughout the summer across disciplines from medicine to creative writing.",
+      "majors": [
+        "Humanities",
+        "Social Sciences",
+        "STEM",
+        "Arts"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "college-prep",
+        "harvard",
+        "selective"
+      ],
+      "url": "https://www.summer.harvard.edu/high-school-programs/pre-college-program/",
+      "duration": "2 weeks",
+      "whyApply": "Live and learn on Harvard's campus with world-class faculty and a curated cohort of ambitious peers from around the world.",
+      "_source": "summer.harvard.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Harvard Secondary School Program (SSP)",
+      "company": "Harvard University",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Paid tuition ($4,180-$15,735 depending on format; limited scholarships)",
+      "field": "Liberal Arts & Sciences",
+      "deadline": "2027-02-11",
+      "description": "Seven-week or four-week credit-bearing summer program for high school students. Take real Harvard College courses (200+ options in the 7-week session) taught by Harvard faculty. Residential, commuter, and online formats available. Earn college credit that can transfer to many universities.",
+      "majors": [
+        "Computer Science",
+        "Biology",
+        "Economics",
+        "English",
+        "Psychology",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "college-credit",
+        "harvard",
+        "residential",
+        "online-available"
+      ],
+      "url": "https://summer.harvard.edu/high-school-programs/secondary-school-program/",
+      "duration": "4 or 7 weeks (June-August)",
+      "whyApply": "Earn actual college credit from Harvard while experiencing college-level academics alongside current undergraduates.",
+      "_source": "summer.harvard.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "WPI Frontiers",
+      "company": "Worcester Polytechnic Institute",
+      "location": {
+        "city": "Worcester",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Paid program ($4,495; financial assistance available)",
+      "field": "STEM & Business",
+      "deadline": "2027-04-30",
+      "description": "Two-week residential pre-college program for rising 10th-12th graders. Students explore a STEM or Business major (robotics, biotechnology, computer science, aerospace engineering, game development, and more) paired with a humanities, arts, or business minor. Includes college-prep workshops, field trips, and hands-on lab work at WPI's Bartlett Center.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Biotechnology",
+        "Robotics",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "STEM",
+        "project-based",
+        "financial-aid-available"
+      ],
+      "url": "https://www.wpi.edu/academics/pre-collegiate/summer-programs/frontiers",
+      "duration": "2 weeks",
+      "whyApply": "Project-based learning in WPI's hallmark style — students spend most of the day in labs building real things rather than sitting in lectures.",
+      "_source": "wpi.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Boston Leadership Institute Summer Research Programs",
+      "company": "Boston Leadership Institute",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Paid program ($699 one-week to $4,597 three-week residential)",
+      "field": "STEM, Medicine & Business",
+      "deadline": "2027-05-15",
+      "description": "Three-week intensive research programs and one-week intro courses for middle and high school students. Over 25 programs spanning medical research, biotech, engineering, robotics, forensics, neuroscience, and business. Students conduct independent research projects culminating in presentations. Includes field trips to Boston hospitals, labs, and companies.",
+      "majors": [
+        "Medicine",
+        "Biology",
+        "Engineering",
+        "Business",
+        "Forensic Science"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "research",
+        "residential",
+        "business",
+        "medical"
+      ],
+      "url": "https://www.bostonleadershipinstitute.com/",
+      "duration": "1-3 weeks",
+      "whyApply": "Unusual breadth of research topics for middle and high schoolers, and one of the few Boston-area programs that actively serves rising middle schoolers alongside high school students.",
+      "_source": "bostonleadershipinstitute.com",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
