@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 715,
+    "totalCount": 724,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 715,
-    "verifiedCount": 90,
+    "totalInternships": 724,
+    "verifiedCount": 99,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -3096,6 +3096,325 @@
       "duration": "Academic year (flexible)",
       "whyApply": "One of the only structured paid HS internship programs in Vancouver, WA. Stipend plus support for professional supplies and transportation. Good for students interested in manufacturing and trades careers.",
       "_source": "https://vansd.org/programs-items/career-connected-learning/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "TeamChild Youth Advisory Board",
+      "company": "TeamChild",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-06-01",
+      "description": "Youth advocacy board for ages 14-24 at TeamChild, a nonprofit providing free legal services to system-involved youth. Board members use lived experience to advocate for policy change through storytelling, education, and legislative reform. Available in King, Pierce, Yakima, and Spokane counties. Participants shape hiring decisions, communications strategy, and fundraising.",
+      "majors": [
+        "Law",
+        "Public Policy",
+        "Social Work",
+        "Advocacy"
+      ],
+      "tags": [
+        "high-school",
+        "legal",
+        "advocacy",
+        "seattle",
+        "policy",
+        "youth-voice",
+        "statewide"
+      ],
+      "url": "https://www.teamchild.org/youth-advisory-board",
+      "duration": "Year-round (flexible)",
+      "whyApply": "Rare youth legal advocacy opportunity in WA. Work alongside civil legal aid attorneys on real policy reform. Build public speaking, advocacy, and policy skills directly relevant to law school applications.",
+      "_source": "https://www.teamchild.org/youth-advisory-board",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "Seattle Youth Traffic Court Volunteer",
+      "company": "Seattle Municipal Court",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "High school students serve as judges, prosecutors, defense attorneys, jurors, and bailiffs in real traffic court hearings for teen drivers. Partnership between Seattle Municipal Court, Seattle University School of Law, Garfield HS, and Seattle Police. Law school staff and students mentor and train HS volunteers. Court meets first Monday of each month, September through June.",
+      "majors": [
+        "Law",
+        "Criminal Justice",
+        "Pre-Law"
+      ],
+      "tags": [
+        "high-school",
+        "legal",
+        "volunteer",
+        "seattle",
+        "court",
+        "mock-trial",
+        "mentored"
+      ],
+      "url": "https://www.seattle.gov/courts/programs-and-services/specialized-courts/seattle-youth-traffic-court",
+      "duration": "School year (monthly sessions Sep-Jun)",
+      "whyApply": "Handle real court cases as a teen judge or attorney. Mentored by Seattle University law students. One of the only programs in WA where HS students participate in actual legal proceedings.",
+      "_source": "https://www.seattle.gov/courts/programs-and-services/specialized-courts/seattle-youth-traffic-court",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "East King County Youth Traffic Court",
+      "company": "King County District Court",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "Student-led restorative justice program handling real traffic cases for 16-17 year old drivers in East King County. HS student volunteers serve as panel members questioning respondents and determining case dispositions. Meets twice monthly on Tuesdays (except June/July): first Tuesday for training, second for hearings. Open to any East King County high school student.",
+      "majors": [
+        "Law",
+        "Criminal Justice",
+        "Conflict Resolution"
+      ],
+      "tags": [
+        "high-school",
+        "legal",
+        "volunteer",
+        "bellevue",
+        "eastside",
+        "restorative-justice",
+        "court"
+      ],
+      "url": "https://kingcounty.gov/so-so/court/district-court/courts-jails-legal-system/traffic-vehicle-citations/youth-traffic-court-east-kc",
+      "duration": "School year (twice monthly)",
+      "whyApply": "Handle real legal cases through restorative justice on the Eastside. Open to all East KC high school students (not limited to one school). Builds legal reasoning, compassionate questioning, and decision-making skills.",
+      "_source": "https://kingcounty.gov/so-so/court/district-court/courts-jails-legal-system/traffic-vehicle-citations/youth-traffic-court-east-kc",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Ballard HS Academy of Finance Internship",
+      "company": "NAF Academy of Finance / Seattle Public Schools",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship (varies by employer)",
+      "field": "Finance",
+      "deadline": "2027-03-01",
+      "description": "Paid summer internship between junior and senior year through Ballard High School's NAF Academy of Finance. Students are placed at partner firms including K&L Gates, KeyBank, KPMG, and Marriott. Multi-year program includes accounting, finance, entrepreneurship courses, UW Foster School mentoring, and a senior-year trip to Wall Street in NYC. NAFTrack certification upon completion.",
+      "majors": [
+        "Finance",
+        "Accounting",
+        "Business",
+        "Economics"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "seattle",
+        "finance",
+        "accounting",
+        "internship",
+        "NAF",
+        "career-pathway"
+      ],
+      "url": "https://ballardhs.seattleschools.org/academics/academy-of-finance/",
+      "duration": "Summer (between junior and senior year)",
+      "whyApply": "One of the only paid finance internships for WA high schoolers. NAFTrack certification provides priority interviewing at major firms. UW Foster School mentoring and Wall Street trip included. 1,400+ Core Plus graduates hired at partner companies.",
+      "_source": "https://ballardhs.seattleschools.org/academics/academy-of-finance/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "ACAP Seattle Accounting Residency Program",
+      "company": "ACAP Seattle",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-05-01",
+      "description": "Free summer residency week for underrepresented WA high school students interested in accounting and business careers. Includes intensive accounting education, career exploration, mentorship from accounting professionals, and scholarship opportunities. Since 1980, ACAP has focused on increasing diversity in the accounting profession.",
+      "majors": [
+        "Accounting",
+        "Finance",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "seattle",
+        "accounting",
+        "diversity",
+        "mentorship",
+        "scholarship"
+      ],
+      "url": "https://www.seattleacap.org/",
+      "duration": "1 week (summer residency)",
+      "whyApply": "Free intensive accounting career exploration. Scholarship opportunities and professional mentoring. Since 1980 — strong alumni network in Seattle accounting firms. Focus on underrepresented students.",
+      "_source": "https://www.seattleacap.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "YEOC - Young Executives in Our Community",
+      "company": "UW Foster School of Business",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-05-31",
+      "description": "Free 9-month college readiness program at UW Foster School of Business for first-generation and/or economically disadvantaged HS juniors and seniors statewide. Monthly Saturday sessions on UW campus covering college preparation, business lectures, professional development, and mentorship. Serves 160+ students from 73+ WA schools annually.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Economics",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "seattle",
+        "business",
+        "college-prep",
+        "first-gen",
+        "mentorship",
+        "statewide"
+      ],
+      "url": "https://foster.uw.edu/academics/degree-programs/undergraduate-programs/diversity-services/young-executives-community/",
+      "duration": "9 months (Sep - May, monthly Saturdays)",
+      "whyApply": "Direct access to UW Foster School of Business faculty and resources. Free program for first-gen and economically disadvantaged students. Strong college admissions support and business career preparation. Open to all WA schools.",
+      "_source": "https://foster.uw.edu/academics/degree-programs/undergraduate-programs/diversity-services/young-executives-community/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "AJAC Youth Apprenticeship - Production Technician",
+      "company": "AJAC (Aerospace Joint Apprenticeship Committee)",
+      "location": {
+        "city": "Various",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "~$32,560 average earnings during program",
+      "field": "Manufacturing",
+      "deadline": "2027-06-01",
+      "description": "Registered 2,000-hour youth apprenticeship for HS juniors and seniors in advanced manufacturing. Combines paid on-the-job training with college-level coursework. Learn CNC machining, manual machining, robotics, production engineering, and fabrication. Earn journey-level certification, college credits, and HS diploma. Available through 13 school districts across WA state.",
+      "majors": [
+        "Manufacturing",
+        "Mechanical Engineering",
+        "Industrial Technology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "statewide",
+        "manufacturing",
+        "apprenticeship",
+        "CNC",
+        "aerospace",
+        "trades"
+      ],
+      "url": "https://www.ajactraining.org/programs/youth/",
+      "duration": "2,000 hours (across junior + senior year)",
+      "whyApply": "Earn ~$32K while getting a nationally-recognized manufacturing certification. 178+ youth hired through this program. One of WA's only registered youth apprenticeships in advanced manufacturing. Available across 13 school districts statewide.",
+      "_source": "https://www.ajactraining.org/programs/youth/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Boeing Core Plus Aerospace Student Development Program",
+      "company": "The Boeing Company",
+      "location": {
+        "city": "Everett",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid (Boeing rates)",
+      "field": "Manufacturing",
+      "deadline": "2027-02-28",
+      "description": "Paid summer manufacturing program at Boeing factories in Everett, Renton, and Auburn for WA high school students enrolled in Core Plus Aerospace or aligned manufacturing programs. Roles include Assembly, Toolmaker, Test, Facilities, and Mechatronics. Taught by experienced Boeing trainers in mechanical and electrical assembly. Distance bonus available for students 65+ miles from site.",
+      "majors": [
+        "Aerospace",
+        "Manufacturing",
+        "Mechanical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "everett",
+        "renton",
+        "auburn",
+        "boeing",
+        "aerospace",
+        "manufacturing",
+        "summer"
+      ],
+      "url": "https://coreplusaerospace.org/internships-development-programs/",
+      "duration": "Summer (June - July)",
+      "whyApply": "Work on-site at Boeing factories alongside professional trainers. One of the most prestigious manufacturing programs for WA high schoolers. 1,400+ Core Plus graduates hired by Boeing since 2015. Direct pathway to aerospace manufacturing careers.",
+      "_source": "https://coreplusaerospace.org/internships-development-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Pierce County Skills Center Construction Trades Pre-Apprenticeship",
+      "company": "Pierce County Skills Center",
+      "location": {
+        "city": "Tacoma",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Manufacturing",
+      "deadline": "2027-02-26",
+      "description": "State-approved pre-apprenticeship program for juniors and seniors from 10 Pierce County school districts. Covers carpentry, electrical, welding, plumbing, masonry, HVAC, boilermaking, and roofing. Taught by industry professionals in state-of-the-art facilities. Students attend home school mornings, PCSC afternoons. Free tuition. Graduates receive preferred entry into union apprenticeship programs.",
+      "majors": [
+        "Construction",
+        "Welding",
+        "Electrical",
+        "Carpentry"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "tacoma",
+        "pierce-county",
+        "trades",
+        "pre-apprenticeship",
+        "construction",
+        "welding"
+      ],
+      "url": "https://pcsc.bethelsd.org/programs/programs/construction-trades",
+      "duration": "1 year (afternoon sessions during school year)",
+      "whyApply": "Free state-approved pre-apprenticeship covering 8+ construction trades. Preferred entry into union apprenticeships statewide. Industry-certified instructors. Available to students across 10 Pierce County school districts.",
+      "_source": "https://pcsc.bethelsd.org/programs/programs/construction-trades",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
