@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 991,
+    "totalCount": 1011,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 991,
-    "verifiedCount": 366,
+    "totalInternships": 1011,
+    "verifiedCount": 386,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -12279,6 +12279,709 @@
       "duration": "2-4 weeks",
       "whyApply": "Strong academic bridge and mentoring pipeline into a top public research university.",
       "_source": "lcae.utexas.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NYU ARISE (Applied Research Innovations in Science and Engineering)",
+      "company": "NYU Tandon School of Engineering",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Free program (NYC residents)",
+      "field": "Engineering",
+      "deadline": "2027-02-15",
+      "description": "Free, selective 7-week full-time summer research program for NYC high school students. Participants work in active NYU Tandon labs across bioengineering, molecular engineering, robotics, computer science, AI and machine learning alongside faculty and graduate-student mentors.",
+      "majors": [
+        "Engineering",
+        "Bioengineering",
+        "Computer Science",
+        "Robotics",
+        "AI"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "free",
+        "research",
+        "engineering",
+        "NYC-residents",
+        "competitive"
+      ],
+      "url": "https://engineering.nyu.edu/academics/programs/k12-stem-education/arise",
+      "duration": "7 weeks (full-time)",
+      "whyApply": "One of the most prestigious free high school engineering research programs in NYC — direct access to Tandon labs.",
+      "_source": "engineering.nyu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NYU CS4CS (Computer Science for Cyber Security)",
+      "company": "NYU Tandon School of Engineering",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free program",
+      "field": "Technology",
+      "deadline": "2027-03-01",
+      "description": "Free 3-week summer program for NYC 9th-11th graders training in digital forensics, steganography, hacking, and cryptography. One of the only free cybersecurity programs for high schoolers nationally. No prior CS experience required.",
+      "majors": [
+        "Computer Science",
+        "Cybersecurity",
+        "Information Security"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "free",
+        "cybersecurity",
+        "technology",
+        "NYC"
+      ],
+      "url": "https://engineering.nyu.edu/academics/programs/k12-stem-education/cs4cs",
+      "duration": "3 weeks",
+      "whyApply": "Best free cybersecurity pipeline into college CS and cyber programs.",
+      "_source": "engineering.nyu.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Morgan Stanley JumpStart High School Program",
+      "company": "Morgan Stanley",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$3,000–$4,000",
+      "field": "Finance",
+      "deadline": "2027-03-15",
+      "description": "Paid 6-week program for high school juniors and seniors in NYC introducing students to the finance industry through shadowing, workshops, and networking. Students gain exposure to sales & trading, wealth management, and investment banking.",
+      "majors": [
+        "Finance",
+        "Economics",
+        "Business",
+        "Accounting"
+      ],
+      "tags": [
+        "high-school",
+        "junior",
+        "senior",
+        "summer",
+        "paid",
+        "finance",
+        "banking",
+        "competitive"
+      ],
+      "url": "https://www.morganstanley.com/people-opportunities/students-graduates",
+      "duration": "6 weeks (July–August)",
+      "whyApply": "Rare paid high school exposure to a top-tier Wall Street firm — competitive and highly selective.",
+      "_source": "morganstanley.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Futures and Options Internship Program",
+      "company": "Futures and Options",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Business",
+      "deadline": "2027-03-15",
+      "description": "Paid summer internships placing NYC public high school students at financial firms, marketing agencies, nonprofits, and corporate partners. Includes work-readiness training, resume and interview prep, and field visits to companies like EY and JPMorgan Chase.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Marketing",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "business",
+        "NYC-public-school",
+        "work-readiness"
+      ],
+      "url": "https://futuresandoptions.org/internship-program-application/",
+      "duration": "Summer (6–7 weeks)",
+      "whyApply": "Established NYC pipeline placing students at top business partners — strong alumni network.",
+      "_source": "futuresandoptions.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Bloomberg Arts Internship",
+      "company": "Studio Institute (Bloomberg Philanthropies)",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$15+/hour",
+      "field": "Arts & Media",
+      "deadline": "2027-03-01",
+      "description": "Paid 6-week summer internship for NYC public high school juniors placing them at major cultural institutions (museums, performing arts organizations, libraries). Interns rotate through departments and complete a capstone project under professional mentorship.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "Museum Studies",
+        "Arts Administration",
+        "English"
+      ],
+      "tags": [
+        "high-school",
+        "junior",
+        "summer",
+        "paid",
+        "arts",
+        "museum",
+        "NYC-public-school"
+      ],
+      "url": "https://www.studioinstitute.org/bloomberg-arts-internship",
+      "duration": "6 weeks",
+      "whyApply": "Most prestigious paid high school arts internship in NYC — rotates through top cultural institutions.",
+      "_source": "studioinstitute.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Brooklyn Museum Teen Apprentice Program",
+      "company": "Brooklyn Museum",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "$16.50/hour",
+      "field": "Arts & Media",
+      "deadline": "2027-03-15",
+      "description": "Paid teen programs including the Museum Apprentice Program, Creative Practice, Teen Night Planning Committee, and InterseXtions. Teens explore art, education, activism, and museum careers while contributing to real programming and exhibitions.",
+      "majors": [
+        "Art History",
+        "Museum Studies",
+        "Arts Administration",
+        "Visual Arts"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "museum",
+        "teen",
+        "year-round"
+      ],
+      "url": "https://www.brooklynmuseum.org/education/teens",
+      "duration": "Semester / year-round",
+      "whyApply": "Paid teen program at a major art museum — exceptional for aspiring arts professionals.",
+      "_source": "brooklynmuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Weill Cornell HPREP (Health Professions Recruitment & Exposure Program)",
+      "company": "Weill Cornell Medical College",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-12-01",
+      "description": "Free 10-week Friday-afternoon program held January–April. NYC high school students hear from physicians and health professionals, explore health career pathways, and engage in interactive sessions on medicine, public health, and research.",
+      "majors": [
+        "Pre-Med",
+        "Public Health",
+        "Biology",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "medical",
+        "healthcare",
+        "mentorship",
+        "career-exposure"
+      ],
+      "url": "https://diversity.weill.cornell.edu/opportunities/high-school-programs",
+      "duration": "10 weeks (Fridays, Jan–Apr)",
+      "whyApply": "Direct access to Weill Cornell faculty and pipeline programs — excellent for aspiring doctors.",
+      "_source": "diversity.weill.cornell.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NewYork-Presbyterian Summer Volunteer Program",
+      "company": "NewYork-Presbyterian Hospital",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-31",
+      "description": "Summer-only volunteer program for students 16+ requiring 120 service hours across select NYP campuses. Volunteer roles include patient services, child life programs, and clerical/administrative support in clinics and nursing units.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "volunteer",
+        "hospital",
+        "clinical"
+      ],
+      "url": "https://www.nyp.org/volunteer/summer-volunteering",
+      "duration": "Summer (min 120 hours)",
+      "whyApply": "Hands-on hospital experience at one of NYC's top academic medical centers.",
+      "_source": "nyp.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Brooklyn Navy Yard Employment Center Internship",
+      "company": "Brooklyn Navy Yard Development Corporation",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Manufacturing",
+      "deadline": "2027-04-01",
+      "description": "Paid summer internship placing Brooklyn high school students at businesses within the Brooklyn Navy Yard including tech startups, manufacturing companies, and creative agencies. Interns gain exposure to modern urban industrial work.",
+      "majors": [
+        "Engineering",
+        "Manufacturing",
+        "Business",
+        "Design"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "manufacturing",
+        "tech",
+        "Brooklyn"
+      ],
+      "url": "https://brooklynnavyyard.org/employment-center/",
+      "duration": "Summer (6–8 weeks)",
+      "whyApply": "Unique hands-on exposure to modern urban manufacturing and industrial design at the Brooklyn Navy Yard.",
+      "_source": "brooklynnavyyard.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CUNY Career Launch",
+      "company": "The City University of New York (CUNY)",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$20/hour",
+      "field": "Various",
+      "deadline": "2027-03-15",
+      "description": "CUNY Career Launch hires thousands of student interns across dynamic industries at $20/hour for 6 weeks. Placements span tech, healthcare, government, business, and nonprofit sectors. Open to CUNY students and graduating NYC high school seniors.",
+      "majors": [
+        "Various",
+        "Business",
+        "Computer Science",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "college-prep",
+        "senior",
+        "summer",
+        "paid",
+        "CUNY"
+      ],
+      "url": "https://www.cuny.edu/about/administration/offices/ocip/students/careerlaunch/",
+      "duration": "6 weeks",
+      "whyApply": "Large-scale paid internship pipeline connecting NYC students to industry partners at $20/hr.",
+      "_source": "cuny.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "AMNH Lang Science Program",
+      "company": "American Museum of Natural History",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-04-15",
+      "description": "Selective 5-year (Grades 8–12) science enrichment program at AMNH. Students engage in hands-on investigations, field trips, lab work, and mentored research alongside AMNH scientists across biology, earth science, astrophysics, and anthropology.",
+      "majors": [
+        "Biology",
+        "Earth Science",
+        "Astrophysics",
+        "Anthropology",
+        "Paleontology"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "year-round",
+        "science",
+        "museum",
+        "research",
+        "competitive"
+      ],
+      "url": "https://www.amnh.org/learn-teach/grades-9-12/lang-science-program",
+      "duration": "5 years (grades 8–12)",
+      "whyApply": "Exceptional long-term immersion in real museum science — one of AMNH's most competitive programs.",
+      "_source": "amnh.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "New York Hall of Science Explainer Program",
+      "company": "New York Hall of Science",
+      "location": {
+        "city": "Queens",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid position",
+      "field": "Science",
+      "deadline": "2027-04-01",
+      "description": "Paid positions for high school and college students serving as floor educators at NYSCI, engaging visitors with hands-on science demos, exhibits, and workshops. Explainers develop STEM communication skills and deepen content knowledge through weekly training.",
+      "majors": [
+        "Science Education",
+        "Physics",
+        "Biology",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-round",
+        "STEM",
+        "science-communication",
+        "museum"
+      ],
+      "url": "https://nysci.org/get-involved/explainers/",
+      "duration": "Year-round (part-time)",
+      "whyApply": "One of the oldest and most respected paid STEM youth programs in NYC — strong professional development.",
+      "_source": "nysci.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Carnegie Hall Weill Music Institute Youth Programs",
+      "company": "Carnegie Hall",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-02-15",
+      "description": "Carnegie Hall's Weill Music Institute offers programs for teen musicians including NYO2 (for 14-17 year-old orchestral musicians), NYO Jazz, and Musical Connections. Students receive world-class mentorship from Carnegie Hall artists and perform at major venues.",
+      "majors": [
+        "Music Performance",
+        "Music Education",
+        "Composition"
+      ],
+      "tags": [
+        "high-school",
+        "music",
+        "arts",
+        "selective",
+        "audition-required",
+        "year-round"
+      ],
+      "url": "https://www.carnegiehall.org/Education/Young-Musicians",
+      "duration": "Year-round / summer residencies",
+      "whyApply": "Unparalleled mentorship and performance opportunities for serious young musicians at Carnegie Hall.",
+      "_source": "carnegiehall.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NYC Urban Park Rangers Junior Ranger Program",
+      "company": "NYC Department of Parks & Recreation",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-05-01",
+      "description": "Volunteer programs run by NYC Urban Park Rangers connecting youth with nature through guided hikes, ecological restoration, wildlife monitoring, and conservation education across all five boroughs. Teens can progress to leadership roles in the Junior Ranger program.",
+      "majors": [
+        "Environmental Science",
+        "Ecology",
+        "Wildlife Biology",
+        "Urban Planning"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "volunteer",
+        "conservation",
+        "nature",
+        "year-round"
+      ],
+      "url": "https://www.nycgovparks.org/programs/rangers",
+      "duration": "Year-round",
+      "whyApply": "Hands-on urban ecology and conservation experience with NYC's professional park ranger corps.",
+      "_source": "nycgovparks.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Genesys Works New York",
+      "company": "Genesys Works",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid corporate internship",
+      "field": "Technology",
+      "deadline": "2027-03-31",
+      "description": "Year-long paid professional internship program for NYC high school seniors from underserved communities. Students complete 8 weeks of training in IT, business operations, or accounting followed by paid corporate internships at Fortune 500 companies.",
+      "majors": [
+        "Computer Science",
+        "Business",
+        "Accounting",
+        "Information Technology"
+      ],
+      "tags": [
+        "high-school",
+        "senior",
+        "paid",
+        "technology",
+        "corporate",
+        "underserved"
+      ],
+      "url": "https://www.genesysworks.org/new-york",
+      "duration": "Senior year (school-year + summer)",
+      "whyApply": "Rare paid senior-year corporate internship pipeline for NYC students from underserved communities.",
+      "_source": "genesysworks.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Cooper Hewitt Teen Design Scholars",
+      "company": "Cooper Hewitt, Smithsonian Design Museum",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid stipend",
+      "field": "Arts & Media",
+      "deadline": "2027-04-01",
+      "description": "Paid summer intensive at Cooper Hewitt for NYC high school students interested in design. Scholars learn design thinking, prototyping, and visual communication while collaborating with museum curators, educators, and professional designers on real-world projects.",
+      "majors": [
+        "Industrial Design",
+        "Graphic Design",
+        "Architecture",
+        "UX Design"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "design",
+        "arts",
+        "museum"
+      ],
+      "url": "https://www.cooperhewitt.org/teen-programs/",
+      "duration": "Summer intensive",
+      "whyApply": "Only Smithsonian design museum program — rare paid design career exposure for high schoolers.",
+      "_source": "cooperhewitt.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "The Bell Voices Reporter Internship",
+      "company": "The Bell",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid training and reporting",
+      "field": "Arts & Media",
+      "deadline": "2027-08-01",
+      "description": "Paid journalism training and reporting internship for NYC high school students. Students learn reporting, news writing, research, interviewing, and investigative techniques, then publish original stories about the NYC public school system.",
+      "majors": [
+        "Journalism",
+        "English",
+        "Communications",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "journalism",
+        "media",
+        "reporting"
+      ],
+      "url": "https://www.bellvoices.org/programs",
+      "duration": "Semester / school year",
+      "whyApply": "Student-led newsroom publishing real investigative reporting — excellent portfolio-builder for aspiring journalists.",
+      "_source": "bellvoices.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Cornell 4-H Career Explorations",
+      "company": "Cornell Cooperative Extension / Cornell University",
+      "location": {
+        "city": "Ithaca",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Low-cost residential",
+      "field": "Agriculture",
+      "deadline": "2027-05-01",
+      "description": "3-day residential career exploration conference at Cornell University for New York 4-H members in grades 8-12. Students choose tracks spanning agriculture, animal science, veterinary medicine, food science, engineering, and natural resources, working with Cornell faculty and graduate students.",
+      "majors": [
+        "Agriculture",
+        "Animal Science",
+        "Veterinary Medicine",
+        "Food Science",
+        "Environmental Science"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "summer",
+        "residential",
+        "4-H",
+        "agriculture",
+        "career-exploration"
+      ],
+      "url": "https://nys4-h.org/career-explorations",
+      "duration": "3 days residential",
+      "whyApply": "Direct access to Cornell faculty and labs in agriculture and life sciences through New York's 4-H program.",
+      "_source": "nys4-h.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NYPL Teen Internship Program",
+      "company": "New York Public Library",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid summer internship",
+      "field": "Education",
+      "deadline": "2027-04-15",
+      "description": "Paid summer internship placing NYC teens in NYPL branches and research centers. Interns support literacy programs, help run summer reading, assist with tech training, and contribute to teen programming while gaining library science and public service experience.",
+      "majors": [
+        "Library Science",
+        "Education",
+        "English",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "library",
+        "education",
+        "literacy"
+      ],
+      "url": "https://www.nypl.org/help/about-nypl/internship-opportunities",
+      "duration": "Summer (6–8 weeks)",
+      "whyApply": "Behind-the-scenes experience at one of the world's most iconic library systems while getting paid.",
+      "_source": "nypl.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Bank of America Student Leaders — NYC",
+      "company": "Bank of America",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid 8-week internship + DC summit",
+      "field": "Nonprofit",
+      "deadline": "2027-01-15",
+      "description": "8-week paid internship placing NYC high school juniors and seniors with local nonprofits like Boys & Girls Clubs and Habitat for Humanity. Includes a fully-funded week-long Student Leaders Summit in Washington, DC to develop leadership skills and meet peers nationwide.",
+      "majors": [
+        "Public Policy",
+        "Nonprofit Management",
+        "Social Work",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "junior",
+        "senior",
+        "summer",
+        "paid",
+        "nonprofit",
+        "leadership",
+        "DC-summit"
+      ],
+      "url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+      "duration": "8 weeks + DC summit",
+      "whyApply": "Prestigious national leadership program with paid nonprofit placement and DC summit experience.",
+      "_source": "about.bankofamerica.com",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
