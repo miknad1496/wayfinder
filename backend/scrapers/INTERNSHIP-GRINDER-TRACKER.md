@@ -4,12 +4,12 @@
 - WA: 80 verified (done in prior sessions)
 - CA: 150 verified, 337 total in DB (target: 150+ ✅)
 - TX: 100 verified, 123 total in DB (target: 100 ✅)
+- NY: 101 verified, 197 total in DB (target: 100 ✅)
 
 ## IN PROGRESS
-- NY (target: 100, current: 86 verified, 182 total in DB)
+- IL (target: 80, current: 0 verified)
 
 ## QUEUE (in order)
-- IL (target: 80)
 - FL (target: 80)
 - PA (target: 80)
 - OH (target: 80)
@@ -43,3 +43,4 @@
 - 2026-04-09 run 14: Added 20 verified NY entries (batch 3). Fields: Engineering (1: NYU ARISE), Technology (3: NYU CS4CS, Genesys Works NY, CUNY Career Launch), Finance (1: Morgan Stanley JumpStart), Business (1: Futures and Options), Arts & Media (6: Bloomberg Arts, Brooklyn Museum Apprentice, Carnegie Hall WMI, Cooper Hewitt Teen Design, The Bell Voices, CUNY), Healthcare (2: Weill Cornell HPREP, NewYork-Presbyterian Summer Volunteer), Manufacturing (1: Brooklyn Navy Yard), Science (2: AMNH Lang, NYSCI Explainers), Environmental Science (1: NYC Urban Park Rangers), Agriculture (1: Cornell 4-H Career Explorations), Education (1: NYPL Teen Internship), Nonprofit (1: BofA Student Leaders NYC). Focused on underrepresented fields (Finance, Manufacturing, Agriculture, Nonprofit, Education) and boroughs (Brooklyn, Queens, Manhattan, Ithaca). Total verified NY: 47. DB total NY: 143.
 - 2026-04-09 run 16: Added 20 verified NY entries (batch 5). Fields: Science (4: U Rochester LLE, BTI Plant Science, Binghamton SRI/CSTEP, Einstein BEYOND ALBERT, Hofstra HUSSRP), Various (4: Cornell Precollege, Syracuse Summer College, Summer@Rensselaer, U Rochester Pre-College), Healthcare (4: Lang Youth NYP/Columbia, Mount Sinai South Nassau Jr Volunteer, LIJ Northwell Jr Volunteer, NY Blood Center), Environmental Science (2: Staten Island Zoo Jr Docent, SUNY ESF Timbuctoo), Government (2: NYC Mayor's Office Internship, NY YMCA Youth & Government), Engineering (1: RPI PREFACE), Agriculture (1: Cornell AgriTech Summer Scholars), Arts & Media (1: Met/NYCHA/Trinity Art & Culture Scholars). Focused on upstate NY geographic spread (Rochester, Ithaca, Geneva, Binghamton, Syracuse, Troy) and underrepresented fields. Total verified NY: 86. DB total NY: 182. Total verified in DB: 425. NY still needs 14 more to hit 100 target.
 - 2026-04-09 run 12: Added 20 verified NY entries (batch 2). Fields: Science (5: Simons/Stony Brook, Garcia MRSEC, Columbia SHP, CSHL Partners for the Future, Rockefeller RockEDU, NYBG Explainer), Law (1: Legal Outreach SLI), Government (1: NY State Senate), Finance (1: NY Fed HS Challenge), Various (2: Ladders for Leaders, SYEP), Arts & Media (4: Met Teen, Whitney Youth Insights, Radio Rookies, School of NYT), Engineering (1: Intrepid GOALS for Girls), Environmental Science (2: WCS Project TRUE, BBG Apprentice), Healthcare (2: Feinstein/Northwell, Mount Sinai CEYE). Focused on underrepresented fields first (Finance, Law, Government) and geographic spread (NYC, Stony Brook, Cold Spring Harbor, Albany, Bronx, Brooklyn, Manhasset). Total verified NY: 27. DB total NY: 123.
+- 2026-04-09 run: Added 15 verified NY entries (final NY batch). Programs: Brookhaven National Lab HSRP, NASA GISS CCRI, Mianus River Gorge RAP, Wave Hill Forest Project, AMNH SRMP, Rockefeller SNP, Genspace Teen Biodesign, BioBus Junior Scientist, Fresh Air Fund Career Awareness, Global Kids, NY Phil Very Young Composers, SEO Scholars, NYPD Explorers, Queens Botanical Teen Green Team, Riverkeeper Volunteer. Fields: Science (5), Environmental Science (5), Arts & Media (1), Government (1), Various (2), Law (1). **NY TARGET HIT: 101 verified, 197 total.** Moving to IL next run.

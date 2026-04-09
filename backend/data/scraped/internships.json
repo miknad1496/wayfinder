@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1050,
+    "totalCount": 1065,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1050,
-    "verifiedCount": 425,
+    "totalInternships": 1065,
+    "verifiedCount": 440,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -14327,6 +14327,515 @@
       "duration": "2 weeks (July or August)",
       "whyApply": "Fully-funded climate science experience that takes NYC students into the Adirondacks for real fieldwork — rare equity-forward environmental program.",
       "_source": "suny.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Brookhaven National Laboratory High School Research Program (HSRP)",
+      "company": "Brookhaven National Laboratory (DOE)",
+      "location": {
+        "city": "Upton",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$2,000 stipend (6 weeks)",
+      "field": "Science",
+      "deadline": "2027-04-01",
+      "description": "Six-week summer research program at Brookhaven National Laboratory for rising juniors and seniors in Suffolk County who have completed biology and chemistry. Students work alongside BNL scientists on active research in physics, chemistry, biology, environmental science, and computing.",
+      "majors": [
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Computer Science",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "national-lab",
+        "doe",
+        "long-island",
+        "paid"
+      ],
+      "url": "https://www.bnl.gov/education/programs/program.php?q=219",
+      "duration": "6 weeks (July-August)",
+      "whyApply": "Rare chance to do real national-lab research as a high schooler — DOE-funded stipend and access to world-class facilities.",
+      "_source": "bnl.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NASA GISS Climate Change Research Initiative (CCRI)",
+      "company": "NASA Goddard Institute for Space Studies / CCNY",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend provided (NASA-funded)",
+      "field": "Environmental Science",
+      "deadline": "2027-03-01",
+      "description": "Year-long STEM engagement program placing NYC high school students and teachers into active NASA GISS climate research groups. Students work with NASA scientists on climate modeling, remote sensing, and Earth system analysis, culminating in a research symposium.",
+      "majors": [
+        "Climate Science",
+        "Earth Science",
+        "Atmospheric Science",
+        "Data Science"
+      ],
+      "tags": [
+        "high-school",
+        "nasa",
+        "climate",
+        "research",
+        "year-long",
+        "nyc"
+      ],
+      "url": "https://www.giss.nasa.gov/edu/ccri/",
+      "duration": "One academic year + summer",
+      "whyApply": "Direct research mentorship from NASA climate scientists — extraordinarily rare for high schoolers.",
+      "_source": "giss.nasa.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Mianus River Gorge Research Assistant Program",
+      "company": "Mianus River Gorge Preserve",
+      "location": {
+        "city": "Bedford",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Small stipend provided",
+      "field": "Environmental Science",
+      "deadline": "2027-02-15",
+      "description": "Multi-year field ecology research program for Westchester/Fairfield high school students. Participants conduct original field research on forest ecology, wildlife tracking, invasive species, and watershed health in an old-growth preserve, and present findings at scientific conferences.",
+      "majors": [
+        "Ecology",
+        "Environmental Science",
+        "Biology",
+        "Wildlife Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "field-research",
+        "ecology",
+        "westchester",
+        "long-term"
+      ],
+      "url": "https://www.mianus.org/programs/research-assistant-program/",
+      "duration": "Summer + school year (multi-year)",
+      "whyApply": "One of the most respected high school field ecology programs in the country — students have co-authored peer-reviewed papers.",
+      "_source": "mianus.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wave Hill Forest Project Internship",
+      "company": "Wave Hill Public Garden & Cultural Center",
+      "location": {
+        "city": "Bronx",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Hourly wage",
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Paid environmental stewardship internship for Bronx high school students. Interns restore urban woodlands, remove invasive species, collect ecological data, and learn about horticulture, conservation, and environmental careers.",
+      "majors": [
+        "Environmental Science",
+        "Horticulture",
+        "Ecology",
+        "Urban Forestry"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "bronx",
+        "environment",
+        "conservation"
+      ],
+      "url": "https://www.wavehill.org/teens",
+      "duration": "School year + summer",
+      "whyApply": "Hands-on paid conservation work in NYC — great for Bronx students interested in environmental careers.",
+      "_source": "wavehill.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "AMNH Science Research Mentoring Program (SRMP)",
+      "company": "American Museum of Natural History",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Science",
+      "deadline": "2027-04-15",
+      "description": "Yearlong authentic research program pairing NYC high school juniors with AMNH scientists in astrophysics, genomics, paleontology, anthropology, or earth science. Students complete original research projects and present at the museum's Colloquium.",
+      "majors": [
+        "Astrophysics",
+        "Genomics",
+        "Paleontology",
+        "Earth Science",
+        "Anthropology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "museum",
+        "nyc",
+        "yearlong"
+      ],
+      "url": "https://www.amnh.org/learn-teach/teens/science-research-mentoring-program",
+      "duration": "One academic year",
+      "whyApply": "Real research mentorship from curators and postdocs at one of the world's top natural history museums.",
+      "_source": "amnh.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Rockefeller University Summer Neuroscience Program (SNP)",
+      "company": "The Rockefeller University",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free — no cost",
+      "field": "Science",
+      "deadline": "2027-02-01",
+      "description": "Free two-week intensive summer program for NYC high school students exploring neuroscience through lectures, hands-on labs, and mentoring from Rockefeller faculty, postdocs, and grad students. Covers neural circuits, behavior, and neurological disease.",
+      "majors": [
+        "Neuroscience",
+        "Biology",
+        "Psychology",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "neuroscience",
+        "free",
+        "selective",
+        "nyc"
+      ],
+      "url": "https://www.rockefeller.edu/outreach/snp/",
+      "duration": "2 weeks (July)",
+      "whyApply": "Elite neuroscience exposure at a legendary biomedical research university — completely free.",
+      "_source": "rockefeller.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Genspace Teen Urban Biodesign Program",
+      "company": "Genspace Community Biology Lab",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free — community biolab",
+      "field": "Science",
+      "deadline": "2027-05-01",
+      "description": "Hands-on synthetic biology and biodesign program at Brooklyn's community biology lab. Teens learn CRISPR basics, bioart, DIY lab techniques, and bioethics while working on small group projects. No prior lab experience required.",
+      "majors": [
+        "Biology",
+        "Bioengineering",
+        "Biotechnology",
+        "Design"
+      ],
+      "tags": [
+        "high-school",
+        "synthetic-biology",
+        "brooklyn",
+        "diy-bio",
+        "free"
+      ],
+      "url": "https://www.genspace.org/classes-workshops-teens",
+      "duration": "Summer weeks",
+      "whyApply": "One of the first community biolabs in the country — unique access to DIY synthetic biology as a teen.",
+      "_source": "genspace.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "BioBus Junior Scientist Program",
+      "company": "BioBus",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "Paid multi-year science research program for NYC middle and high school students in Harlem and the Lower East Side. Participants use research-grade microscopes and learn cell biology, neuroscience, and microbiology from BioBus scientists.",
+      "majors": [
+        "Biology",
+        "Neuroscience",
+        "Microbiology",
+        "Cell Biology"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "paid",
+        "harlem",
+        "microscopy",
+        "nyc"
+      ],
+      "url": "https://www.biobus.org/programs/",
+      "duration": "Multi-year (afterschool + summer)",
+      "whyApply": "Rare paid science research opportunity open to middle schoolers and underserved NYC neighborhoods.",
+      "_source": "biobus.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Fresh Air Fund Career Awareness Program",
+      "company": "The Fresh Air Fund",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Various",
+      "deadline": "2027-03-01",
+      "description": "Multi-year paid career development program for NYC teens from under-resourced communities. Students explore careers in healthcare, STEM, law, business, and arts through workshops, internships, and mentoring.",
+      "majors": [
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "career-exploration",
+        "nyc",
+        "multi-year"
+      ],
+      "url": "https://freshair.org/what-we-do/teen-leadership/career-awareness-program/",
+      "duration": "Multi-year (school year + summer)",
+      "whyApply": "Long-term career development and paid internships specifically for NYC teens — strong alumni network.",
+      "_source": "freshair.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Global Kids Youth Leadership Programs",
+      "company": "Global Kids",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend for advanced participants",
+      "field": "Government",
+      "deadline": "2027-09-15",
+      "description": "Human rights, global affairs, and civic engagement program for NYC high school students. Participants learn about international issues, advocate for policy change, visit the UN, and lead community action projects.",
+      "majors": [
+        "International Relations",
+        "Political Science",
+        "Human Rights",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "leadership",
+        "human-rights",
+        "un",
+        "advocacy",
+        "nyc"
+      ],
+      "url": "https://globalkids.org/our-programs/",
+      "duration": "School year + summer institute",
+      "whyApply": "Direct engagement with the UN and global policy issues — strong pipeline to international affairs careers.",
+      "_source": "globalkids.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "New York Philharmonic Very Young Composers",
+      "company": "New York Philharmonic",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Free",
+      "field": "Arts & Media",
+      "deadline": "2027-09-30",
+      "description": "Free composition program for NYC students ages 12-18 who have no prior composition experience. Students compose original orchestral works with guidance from teaching artists, and selected pieces are performed by NY Philharmonic musicians.",
+      "majors": [
+        "Music Composition",
+        "Music Theory",
+        "Music"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "composition",
+        "free",
+        "nyc",
+        "orchestra"
+      ],
+      "url": "https://nyphil.org/education/very-young-composers",
+      "duration": "School year",
+      "whyApply": "Your original composition performed by NY Philharmonic musicians — rare and prestigious for student composers.",
+      "_source": "nyphil.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Sponsors for Educational Opportunity (SEO) Scholars Program",
+      "company": "Sponsors for Educational Opportunity",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Free (scholarship-based)",
+      "field": "Various",
+      "deadline": "2027-04-01",
+      "description": "Intensive 8-year academic and career preparation program for high-achieving Black, Hispanic/Latinx, and Native American students from NYC public high schools. Includes rigorous academic coaching, college counseling, and career exposure in finance, law, medicine, and more.",
+      "majors": [
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "college-prep",
+        "nyc",
+        "selective",
+        "equity"
+      ],
+      "url": "https://www.seo-usa.org/scholars/",
+      "duration": "8 years (starts in 9th grade)",
+      "whyApply": "One of the most intensive college-readiness programs in the country — free for qualifying NYC students.",
+      "_source": "seo-usa.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NYPD Explorers Program",
+      "company": "New York City Police Department",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "None",
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "Career exploration program for NYC youth ages 14-20 interested in law enforcement. Explorers participate in weekly meetings, ride-alongs, community service, and training in first aid, self-defense, and leadership.",
+      "majors": [
+        "Criminal Justice",
+        "Law Enforcement",
+        "Public Safety"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "law-enforcement",
+        "nyc",
+        "career-exploration"
+      ],
+      "url": "https://www1.nyc.gov/site/nypd/bureaus/community-affairs/explorers.page",
+      "duration": "Year-round, multi-year",
+      "whyApply": "Structured exposure to law enforcement careers with real officers — good fit for students considering criminal justice.",
+      "_source": "nyc.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Queens Botanical Garden Teen Green Team",
+      "company": "Queens Botanical Garden",
+      "location": {
+        "city": "Flushing",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Hourly wage",
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Paid environmental education and stewardship program for Queens high school students. Teens maintain gardens, lead community programs, learn about sustainability and urban ecology, and develop public speaking and leadership skills.",
+      "majors": [
+        "Environmental Science",
+        "Horticulture",
+        "Sustainability",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "queens",
+        "garden",
+        "environment"
+      ],
+      "url": "https://queensbotanical.org/learn/teens/",
+      "duration": "School year + summer",
+      "whyApply": "Paid green jobs program specifically for Queens teens — rare in an outer borough.",
+      "_source": "queensbotanical.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Riverkeeper Volunteer Program",
+      "company": "Riverkeeper",
+      "location": {
+        "city": "Ossining",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "stipend": "Unpaid volunteer",
+      "field": "Environmental Science",
+      "deadline": "2027-05-01",
+      "description": "Volunteer opportunities for Hudson Valley high school students with the leading Hudson River watershed protection organization. Volunteers help with water sampling, shoreline cleanups, sweep days, education, and advocacy campaigns.",
+      "majors": [
+        "Environmental Science",
+        "Water Resources",
+        "Policy"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hudson-river",
+        "advocacy",
+        "water-quality"
+      ],
+      "url": "https://www.riverkeeper.org/get-involved/volunteer/",
+      "duration": "Flexible, year-round",
+      "whyApply": "Work with a nationally recognized environmental advocacy group protecting the Hudson River.",
+      "_source": "riverkeeper.org",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
