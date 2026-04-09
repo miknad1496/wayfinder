@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 858,
+    "totalCount": 876,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 858,
-    "verifiedCount": 233,
+    "totalInternships": 876,
+    "verifiedCount": 251,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -7859,6 +7859,616 @@
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
+    },
+    {
+      "title": "UCSF SEP High School Intern Program (HIP)",
+      "company": "UC San Francisco — Science & Health Education Partnership",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$3,200-$4,500 depending on hours",
+      "field": "Science",
+      "deadline": "2027-02-08",
+      "description": "8-week paid biomedical research internship for SFUSD high school juniors. Students are matched with a scientist mentor at UCSF to conduct an original research project in areas like neuroscience, cancer biology, immunology, or bioengineering.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Neuroscience",
+        "Bioengineering"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "paid",
+        "summer",
+        "biomedical",
+        "competitive"
+      ],
+      "url": "https://sep.ucsf.edu/programs/high-school-students/intern-program/",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "Prestigious paid research internship at a top medical research university — real lab experience with scientist mentors.",
+      "_source": "sep.ucsf.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Cedars-Sinai Teen Volunteer Program",
+      "company": "Cedars-Sinai Medical Center",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-06-01",
+      "description": "Year-long healthcare volunteer program at one of LA's top hospitals. Students choose clinical or clerical tracks, interacting with patients and healthcare staff. 100 hours of service required over 12+ months, with shifts available weekly.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Healthcare Administration",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "year-round",
+        "hospital",
+        "clinical"
+      ],
+      "url": "https://www.cedars-sinai.org/volunteer-services/high-school-students.html",
+      "duration": "12+ months commitment",
+      "whyApply": "Volunteer at one of the nation's top-ranked hospitals — choose clinical or clerical track for hands-on healthcare experience.",
+      "_source": "cedars-sinai.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UCLA Health High School Volunteer Program",
+      "company": "UCLA Health — Volunteer Services",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-06-01",
+      "description": "Volunteer at UCLA's Ronald Reagan Medical Center as a Patient Transport volunteer or Wayfinder ambassador. Transport volunteers assist with patient discharges and transfers; Wayfinders greet visitors and provide wheelchair escort assistance. Ages 16+.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "year-round",
+        "hospital",
+        "clinical"
+      ],
+      "url": "https://www.uclahealth.org/volunteer/westwood/student-programs/high-school-students",
+      "duration": "Ongoing (year-round shifts)",
+      "whyApply": "Gain clinical exposure at a top-5 US hospital — see all areas of the medical center through patient transport or ambassador roles.",
+      "_source": "uclahealth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Crystal Cove Conservancy Fire Ecology High School Internship",
+      "company": "Crystal Cove Conservancy / Irvine Ranch Conservancy / UC Irvine",
+      "location": {
+        "city": "Laguna Beach",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-09-15",
+      "description": "School-year internship (Oct-May) studying wildfire impacts on coastal ecosystems. Students collect data at burn sites, analyze soil samples in the lab, and investigate how fire frequency influences ecological recovery. Includes Saturday field days and Wednesday virtual meetings. Culminates in a public research presentation.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Ecology",
+        "Earth Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "year-round",
+        "fire-ecology",
+        "orange-county"
+      ],
+      "url": "https://crystalcove.org/fire-ecology-high-school-internship/",
+      "duration": "8 months (October-May)",
+      "whyApply": "Unique fire ecology research program in Orange County — real fieldwork studying wildfire impacts with university scientists.",
+      "_source": "crystalcove.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "Arroyos & Foothills Conservancy High School Training Program",
+      "company": "Arroyos & Foothills Conservancy",
+      "location": {
+        "city": "Pasadena",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend available for qualifying students",
+      "field": "Environmental Science",
+      "deadline": "2027-05-01",
+      "description": "Two-week intensive conservation training for students ages 15+. Learn trail restoration, native/invasive plant identification, research-focused field work, data analysis, and conservation communications. Full 8-hour days in Southern California open spaces. Mentored by college interns.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Conservation",
+        "Ecology"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "conservation",
+        "field-work",
+        "pasadena"
+      ],
+      "url": "https://arroyosfoothills.org/get-involved/summer-internship-program/",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Hands-on conservation fieldwork in the San Gabriel foothills — intensive training in trail restoration and ecological research.",
+      "_source": "arroyosfoothills.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Stanford Young Investigators Summer Internship",
+      "company": "Stanford Doerr School of Sustainability",
+      "location": {
+        "city": "Stanford",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-15",
+      "description": "Prestigious summer research internship at Stanford for Bay Area high schoolers. Students work one-on-one with scientists in tracks like Oceans, Geology, Energy, or Environmental Science & Engineering. Projects range from battery efficiency to AI-based fire detection to soil ecosystem health. Highly competitive — only 10-20 students selected annually.",
+      "majors": [
+        "Environmental Science",
+        "Geology",
+        "Energy",
+        "Engineering",
+        "Earth Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "competitive",
+        "stanford",
+        "bay-area"
+      ],
+      "url": "https://sustainability.stanford.edu/admissions-education/k-12-outreach/young-investigators",
+      "duration": "3-4 weeks (June-July)",
+      "whyApply": "Work directly with Stanford scientists on real sustainability research — one of the most competitive high school research programs in the country.",
+      "_source": "sustainability.stanford.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Enterprise for Youth Paid Internship Program",
+      "company": "Enterprise for Youth",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "field": "Various",
+      "deadline": "2027-04-01",
+      "description": "Multi-year paid internship program for under-resourced SF high schoolers. Students gain 75+ hours of on-site work experience plus 15+ professional development hours across fields like healthcare, technology, art/design, finance, law, government, and environmental stewardship. Earn college credit through City College of San Francisco.",
+      "majors": [
+        "Business",
+        "Healthcare",
+        "Technology",
+        "Arts",
+        "Finance",
+        "Law"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-round",
+        "multi-year",
+        "san-francisco",
+        "college-credit"
+      ],
+      "url": "https://www.enterpriseforyouth.org/paid-internships",
+      "duration": "Multi-year (year-round)",
+      "whyApply": "Paid internships across 8+ career fields with college credit — builds real work experience and professional networks for SF students.",
+      "_source": "enterpriseforyouth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "KP Launch Summer Internship — Kaiser Permanente Northern California",
+      "company": "Kaiser Permanente",
+      "location": {
+        "city": "Oakland",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "7-week paid summer internship introducing high school students to non-medical healthcare careers at Kaiser Permanente. Explore roles in finance, communications, hospital operations, IT, and more. Designed for underrepresented and low-income students in Northern California KP service areas.",
+      "majors": [
+        "Healthcare Administration",
+        "Business",
+        "Finance",
+        "Communications",
+        "IT"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "healthcare",
+        "northern-california"
+      ],
+      "url": "https://www.snow.day/learning-opportunities/3514eafc-6b76-4684-a20f-f551a79854f0/kp-launch",
+      "duration": "7 weeks (summer)",
+      "whyApply": "Paid internship at one of California's largest healthcare systems — explore non-clinical careers in finance, IT, and operations.",
+      "_source": "kaiserpermanente.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Grassroots Ecology Environmental Internship",
+      "company": "Grassroots Ecology",
+      "location": {
+        "city": "Palo Alto",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-04-15",
+      "description": "9-week summer naturalist internship focused on habitat restoration and environmental conservation in the San Francisco Bay Area. Interns participate in hands-on restoration work, native plant propagation, volunteer event coordination, and environmental education programming.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Ecology",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "summer",
+        "conservation",
+        "bay-area"
+      ],
+      "url": "https://www.grassrootsecology.org/internships",
+      "duration": "9 weeks (June-August)",
+      "whyApply": "Hands-on conservation work in the Bay Area — restore habitats and learn native plant ecology in Silicon Valley's green spaces.",
+      "_source": "grassrootsecology.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "California Attorney General Student Intern Program",
+      "company": "California Department of Justice — Office of the Attorney General",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-05-01",
+      "description": "Internship at the California Attorney General's office for students interested in law and public service. Work alongside deputy attorneys general on civil rights, consumer protection, environmental enforcement, and criminal justice. Multiple office locations across CA including Sacramento, LA, SF, San Diego, and Oakland.",
+      "majors": [
+        "Political Science",
+        "Criminal Justice",
+        "Pre-Law",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "semester",
+        "legal",
+        "government",
+        "statewide"
+      ],
+      "url": "https://oag.ca.gov/careers/students",
+      "duration": "Semester-based",
+      "whyApply": "Work at the highest legal office in California — gain exposure to civil rights, environmental law, and consumer protection.",
+      "_source": "oag.ca.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Evodyne Robotics Academy High School Internship",
+      "company": "Evodyne Academy",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Hands-on robotics internship where high school students work at Evodyne's Research Lab, contributing to enhancing current robots and designing innovative new ones for educational and research applications. Gain experience in mechanical design, programming, and AI integration.",
+      "majors": [
+        "Robotics",
+        "Mechanical Engineering",
+        "Computer Science",
+        "AI"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "robotics",
+        "engineering",
+        "hands-on"
+      ],
+      "url": "https://www.evodyneacademy.com/high-school-robotics-internship",
+      "duration": "Varies (summer)",
+      "whyApply": "Work in an actual robotics R&D lab designing and building robots — rare hands-on engineering experience for high schoolers.",
+      "_source": "evodyneacademy.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "California State Bar Internship Program",
+      "company": "The State Bar of California",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-04-15",
+      "description": "Internship at the organization that licenses all California attorneys and regulates the legal profession. Gain exposure to legal ethics, attorney discipline, public protection, and access-to-justice initiatives. Available in SF and LA offices.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "semester",
+        "legal",
+        "regulatory"
+      ],
+      "url": "https://www.calbar.ca.gov/about-us/careers/view-all-job-listings/internship-program",
+      "duration": "Semester-based",
+      "whyApply": "Intern at the body that governs California's legal profession — unique exposure to legal ethics and attorney regulation.",
+      "_source": "calbar.ca.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Santa Clara Valley Medical Center Teen Volunteer Program",
+      "company": "Santa Clara Valley Healthcare",
+      "location": {
+        "city": "San Jose",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-06-01",
+      "description": "Year-round volunteer program at San Jose's largest public hospital. Teens assist in patient care areas, clerical support, and community outreach. Gain direct healthcare experience in a Level I trauma center serving Silicon Valley's diverse population.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "year-round",
+        "hospital",
+        "san-jose"
+      ],
+      "url": "https://rmc.scvh.org/giving-volunteering/volunteer-services",
+      "duration": "Ongoing (year-round)",
+      "whyApply": "Volunteer at Silicon Valley's major public hospital — experience a Level I trauma center serving a diverse community.",
+      "_source": "scvh.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "CISA Cyber & IT Student Trainee Program — California",
+      "company": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "field": "Technology",
+      "deadline": "2027-06-01",
+      "description": "Federal paid internship for students age 16+ enrolled in high school or college. Work on cybersecurity, IT management, and infrastructure protection at CISA's California offices. Gain hands-on experience in federal cybersecurity operations and earn GS-1 Student Trainee pay.",
+      "majors": [
+        "Computer Science",
+        "Cybersecurity",
+        "Information Technology",
+        "Network Security"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-round",
+        "cybersecurity",
+        "federal",
+        "government"
+      ],
+      "url": "https://www.cisa.gov/careers/work-rolescyber-and-it-interns",
+      "duration": "Varies (year-round)",
+      "whyApply": "Paid federal cybersecurity internship — work on real national infrastructure protection at one of the most important US cyber agencies.",
+      "_source": "cisa.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "USDA Pathways Internship Program — California",
+      "company": "U.S. Department of Agriculture",
+      "location": {
+        "city": "Davis",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "field": "Agriculture",
+      "deadline": "2027-06-01",
+      "description": "Year-round paid federal internship for high school and college students interested in agriculture, food safety, conservation, and rural development. Work at USDA facilities across California on projects spanning plant science, food inspection, animal health, and natural resource conservation.",
+      "majors": [
+        "Agriculture",
+        "Biology",
+        "Environmental Science",
+        "Food Science",
+        "Veterinary Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-round",
+        "federal",
+        "agriculture",
+        "food-science"
+      ],
+      "url": "https://www.usda.gov/farming-and-ranching/agricultural-education-and-outreach/youth-agriculture/internships-and-career-opportunities",
+      "duration": "Varies (year-round)",
+      "whyApply": "Paid federal agriculture internship — explore careers in food safety, conservation, and plant science at USDA facilities.",
+      "_source": "usda.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LA Times High School Insider Summer Internship",
+      "company": "Los Angeles Times",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2027-04-15",
+      "description": "Fully funded summer journalism internship at the LA Times for high school students in Los Angeles or Orange County. Interns function as working journalists — reporting on breaking news, writing features, conducting interviews, and publishing stories. Runs June through August.",
+      "majors": [
+        "Journalism",
+        "English",
+        "Communications",
+        "Media Studies"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "journalism",
+        "writing",
+        "competitive"
+      ],
+      "url": "https://highschool.latimes.com/",
+      "duration": "7 weeks (June-August)",
+      "whyApply": "Work as a real journalist at one of America's most prestigious newspapers — publish stories read by millions.",
+      "_source": "latimes.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Stanford SHTEM Summer Research Internship",
+      "company": "Stanford University",
+      "location": {
+        "city": "Stanford",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Need-based stipends available",
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "8-week fully remote summer research internship blending Science, Humanities, Technology, Engineering, and Math. For high school juniors, seniors, and early community college students. Work on interdisciplinary research projects with Stanford faculty mentors.",
+      "majors": [
+        "STEM",
+        "Humanities",
+        "Interdisciplinary Studies",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "remote",
+        "interdisciplinary",
+        "stanford"
+      ],
+      "url": "https://fast.stanford.edu/resources/internships/",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Remote Stanford research experience blending STEM and humanities — accessible from anywhere in California with need-based stipends.",
+      "_source": "stanford.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "remote"
+    },
+    {
+      "title": "Youth Mental Health Academy — California",
+      "company": "Child Mind Institute / California Department of Education",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-04-15",
+      "description": "Summer program providing high school students with hands-on experience in mental health awareness, peer support, and youth advocacy through project-based learning, mentorship, and community engagement. Students learn about mental health first aid, crisis intervention basics, and peer counseling techniques.",
+      "majors": [
+        "Psychology",
+        "Social Work",
+        "Education",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "mental-health",
+        "education",
+        "youth-advocacy"
+      ],
+      "url": "https://childmind.org/our-impact/youth-mental-health-academy/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Become a youth mental health advocate — gain skills in peer support and crisis awareness through a nationally recognized program.",
+      "_source": "childmind.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
     },
     {
       "title": "Software Engineering Intern (STEP)",
