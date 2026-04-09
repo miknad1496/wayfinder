@@ -146,7 +146,8 @@ wayfinderai.org
         subject: `${inviterName} invited you to Wayfinder`,
         html: htmlBody,
         text: textBody
-      })
+      }),
+      signal: AbortSignal.timeout(15000)
     });
 
     if (!response.ok) {
@@ -186,7 +187,8 @@ async function sendEmail({ to, subject, html, text }) {
         subject,
         html,
         text
-      })
+      }),
+      signal: AbortSignal.timeout(15000)
     });
 
     if (!response.ok) {

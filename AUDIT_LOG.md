@@ -1,5 +1,55 @@
 # Wayfinder Nightly Audit Log
 
+## 2026-04-09 — Reliability (External Fetch Timeouts)
+
+**Focus Area**: Reliability — rotation day 9 % 8 = 1
+
+Targeted the long-standing H-13 finding ("External fetch calls have no timeout"). Node's global `fetch` has no default timeout; a slow/hung upstream (GitHub raw, Resend API) would hold an Express request handler open indefinitely, eventually exhausting the event loop and causing cascading 502s on Render. This is a concrete production risk — GitHub raw and Resend have both had multi-minute latency incidents.
+
+### Issues Found
+
+| # | Severity | File | Issue | Status |
+|---|----------|------|-------|--------|
+| R-1 | HIGH | `backend/routes/internships.js:51` | GitHub fallback fetch no timeout | FIXED |
+| R-2 | HIGH | `backend/routes/financial-aid.js:159` | GitHub fallback fetch no timeout | FIXED |
+| R-3 | HIGH | `backend/routes/timeline.js:45` | GitHub decision-dates fetch no timeout | FIXED |
+| R-4 | HIGH | `backend/routes/programs.js:47` | GitHub fallback fetch no timeout | FIXED |
+| R-5 | HIGH | `backend/routes/demographics.js:61` | GitHub demographics fetch no timeout (larger payload → 15s) | FIXED |
+| R-6 | HIGH | `backend/routes/scholarships.js:46` | GitHub fallback fetch no timeout | FIXED |
+| R-7 | HIGH | `backend/services/scheduler.js:72` | Decision-dates GitHub fetch no timeout | FIXED |
+| R-8 | HIGH | `backend/services/email.js:137` | Resend API fetch (invite) no timeout | FIXED |
+| R-9 | HIGH | `backend/services/email.js:177` | Resend API fetch (generic) no timeout | FIXED |
+
+### Fix Applied
+
+Wrapped all nine external fetches with `AbortSignal.timeout(...)`:
+- **GitHub raw content** (JSON data fallbacks): 10 s, except demographics which uses 15 s due to a much larger payload.
+- **Resend API** (transactional email): 15 s.
+
+Pattern used (example from `scholarships.js`):
+```js
+const resp = await fetch(GITHUB_RAW_URL, { signal: AbortSignal.timeout(10000) });
+```
+
+All existing error handling already swallows or re-throws thrown errors, so timeouts will surface as the already-handled "GitHub fallback failed" / "Email service error" paths rather than hanging the request indefinitely. `AbortSignal.timeout` is supported on Node 18.17+ (we run Node 20 on Render).
+
+### Other Reliability Findings (Logged, Not Fixed)
+
+#### R-10: LOW — Inconsistent error logging in GitHub fallbacks
+Some route fallbacks (`internships.js`, `programs.js`, `scholarships.js`, `timeline.js`, `scheduler.js`) use bare `catch {}` blocks that silently swallow the error, while others (`financial-aid.js`, `demographics.js`) log the failure. With timeouts now in place, a silent swallow makes it hard to distinguish "never needed GitHub" from "GitHub timed out". Recommend logging at `warn` level in the five silent sites.
+
+#### R-11: LOW — `slm.js` keep-alive timer never cleared on module shutdown
+`backend/services/slm.js` uses `setInterval` for keep-alive and stops it only when idle. If the process receives SIGTERM during an active period, the interval isn't cleared, which can delay graceful shutdown by up to 90 s. Register a shutdown hook to clear `keepAliveTimer`.
+
+#### R-12: LOW — JSON fallback parse not validated
+Routes cache `JSON.parse(await resp.json())` output as the canonical data blob without any schema check. A corrupted GitHub payload (e.g. HTML error page served as raw.githubusercontent) would be stored in cache and break all downstream filtering until TTL expires. Recommend validating top-level shape (`Array.isArray(data.programs)` etc.) before assigning to cache.
+
+### Cumulative Tracker Update
+
+- **H-13** — External fetch calls have no timeout → **CLOSED** (fixed across all 9 call sites).
+
+---
+
 ## 2026-04-04 — Security & Reliability
 
 **Focus Areas**: Security (path traversal, auth gaps, input validation), Reliability (session ownership)

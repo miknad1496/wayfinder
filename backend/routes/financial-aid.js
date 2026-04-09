@@ -156,7 +156,7 @@ async function loadFinancialAidData() {
   }
 
   try {
-    const resp = await fetch(GITHUB_RAW_URL);
+    const resp = await fetch(GITHUB_RAW_URL, { signal: AbortSignal.timeout(10000) });
     if (resp.ok) {
       financialAidCache = await resp.json();
       cacheTimestamp = now;

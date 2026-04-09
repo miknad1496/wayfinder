@@ -58,7 +58,7 @@ async function loadDemographicsData() {
   // local files get deleted during the build process and git checkout fails)
   console.log('[Demographics] Local files not found, fetching from GitHub...');
   try {
-    const response = await fetch(GITHUB_RAW_URL);
+    const response = await fetch(GITHUB_RAW_URL, { signal: AbortSignal.timeout(15000) });
     if (response.ok) {
       const raw = await response.text();
       demographicsCache = JSON.parse(raw);

@@ -43,7 +43,7 @@ async function loadScholarshipsData() {
   }
 
   try {
-    const resp = await fetch(GITHUB_RAW_URL);
+    const resp = await fetch(GITHUB_RAW_URL, { signal: AbortSignal.timeout(10000) });
     if (resp.ok) {
       scholarshipsCache = await resp.json();
       cacheTimestamp = now;

@@ -42,7 +42,7 @@ async function loadDecisionDates() {
 
   // GitHub fallback
   try {
-    const resp = await fetch('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/scraped/decision-dates.json');
+    const resp = await fetch('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/scraped/decision-dates.json', { signal: AbortSignal.timeout(10000) });
     if (resp.ok) {
       decisionDatesCache = await resp.json();
       return decisionDatesCache;
