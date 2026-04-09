@@ -7,7 +7,10 @@
 - NY: 101 verified, 197 total in DB (target: 100 ✅)
 
 ## IN PROGRESS
-- IL (target: 80, current: 20 verified, 43 total in DB)
+- IL (target: 80, current: 40 verified, 63 total in DB)
+
+## RECENT RUN (2026-04-09 run 18)
+Added 20 verified IL entries (batch 2). Fields: Engineering (4: NURPH Northwestern, Northwestern REM, UIC SHARP!, IIT Pre-Engineering), Science (3: CIERA REACH, UIC YSP, Morton Arboretum Tree Monitor components in volunteer), Healthcare (2: Lurie DHC, Lurie Junior M.E.D.), Law (1: Cook County State's Attorney), Government (2: IL House Pages, CMAP FLIP), Arts & Media (3: Goodman GYAC, Goodman Musical Theater Intensive, Steppenwolf Teen), Environmental Science (4: Brookfield King Scholars, Brookfield YVC, Morton Arboretum Youth Volunteer, Morton Youth Climate Action), Technology (1: CPL YOUmedia), Manufacturing (1: Caterpillar Peoria). Strong geographic spread: Chicago, Evanston, Brookfield, Lisle, Peoria, Springfield. IL now 40 verified, 63 total. Next run: continue IL (40 more needed).
 
 ## QUEUE (in order)
 - FL (target: 80)
