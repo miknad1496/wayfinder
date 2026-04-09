@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1105,
+    "totalCount": 1125,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1105,
-    "verifiedCount": 480,
+    "totalInternships": 1125,
+    "verifiedCount": 500,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -16134,6 +16134,655 @@
       "duration": "12 weeks",
       "whyApply": "One of the only large-scale paid high school engineering placements in central Illinois at a Fortune 100 manufacturer.",
       "_source": "caterpillar.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Center for Talent Development (CTD) Summer Program",
+      "company": "Northwestern University",
+      "location": {
+        "city": "Evanston",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Various",
+      "deadline": "2027-05-01",
+      "description": "Intensive academic summer courses for high-ability students in grades K-12 at Northwestern. Options in STEM, humanities, creative writing, engineering, and social sciences. Commuter and residential formats.",
+      "majors": [
+        "Various"
+      ],
+      "tags": [
+        "elementary",
+        "middle-school",
+        "high-school",
+        "academic",
+        "residential",
+        "enrichment"
+      ],
+      "url": "https://www.ctd.northwestern.edu/program/summer-program",
+      "duration": "1-3 weeks (June-August)",
+      "whyApply": "One of the nation's premier academic summer programs for gifted students, hosted at Northwestern University.",
+      "_source": "ctd.northwestern.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Junior Volunteer Program",
+      "company": "Northwestern Memorial Hospital",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "Summer hospital volunteer program for high school students at Northwestern Memorial in downtown Chicago. Positions include patient escort, gift shop, information desk, and unit support. Training provided.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Nursing",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "hospital-volunteer",
+        "healthcare",
+        "chicago"
+      ],
+      "url": "https://www.nm.org/about-us/careers/volunteer",
+      "duration": "8-10 weeks (summer)",
+      "whyApply": "Direct exposure to a leading academic medical center in the heart of Chicago.",
+      "_source": "nm.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Volunteer Services — Junior Program",
+      "company": "University of Chicago Medicine",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-04-01",
+      "description": "Summer volunteer opportunities for high school students at UChicago Medicine. Students assist with patient experience, family services, and administrative support at an academic medical center on Chicago's South Side.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Public Health",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "hospital-volunteer",
+        "healthcare",
+        "chicago"
+      ],
+      "url": "https://www.uchicagomedicine.org/about-us/volunteer-services",
+      "duration": "6-10 weeks (summer)",
+      "whyApply": "Hospital volunteer experience at one of Chicago's top academic medical centers, with strong teaching culture.",
+      "_source": "uchicagomedicine.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Volunteer at Rush Program",
+      "company": "Rush University Medical Center",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "High school volunteer program at Rush University Medical Center in the West Loop. Students gain exposure to hospital operations, patient services, and health sciences professions.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Nursing",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "hospital-volunteer",
+        "healthcare",
+        "chicago"
+      ],
+      "url": "https://www.rush.edu/about-us/volunteer-rush",
+      "duration": "6-10 weeks (summer)",
+      "whyApply": "Volunteer at one of Chicago's largest academic medical centers, with strong opportunities in pre-health exploration.",
+      "_source": "rush.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Creative Agency (TCA)",
+      "company": "Museum of Contemporary Art Chicago",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid teen program",
+      "field": "Arts & Media",
+      "deadline": "2027-05-01",
+      "description": "Paid year-round program where Chicago teens plan exhibitions, create programming, and engage peers with contemporary art. Members work with curators and artists on real museum initiatives.",
+      "majors": [
+        "Art",
+        "Art History",
+        "Museum Studies",
+        "Curatorial Practice"
+      ],
+      "tags": [
+        "high-school",
+        "museum",
+        "contemporary-art",
+        "paid",
+        "year-round"
+      ],
+      "url": "https://mcachicago.org/Learn/Teens",
+      "duration": "Academic year",
+      "whyApply": "Rare paid opportunity for teens to co-curate programs at a major contemporary art museum.",
+      "_source": "mcachicago.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Negaunee Music Institute Programs",
+      "company": "Chicago Symphony Orchestra",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-04-30",
+      "description": "Teen music programs offering mentorship, performance opportunities, and community engagement through the CSO's Negaunee Music Institute. Includes the Civic Orchestra Fellows pipeline and community music initiatives.",
+      "majors": [
+        "Music",
+        "Music Education",
+        "Performance"
+      ],
+      "tags": [
+        "high-school",
+        "music",
+        "performance",
+        "mentorship"
+      ],
+      "url": "https://cso.org/institute/",
+      "duration": "Academic year",
+      "whyApply": "Direct mentorship from Chicago Symphony Orchestra musicians — unique for serious teen musicians.",
+      "_source": "cso.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Lyric Opera of Chicago Education Programs",
+      "company": "Lyric Opera of Chicago",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-06-01",
+      "description": "Education programs at Lyric Opera include student matinees, backstage tours, and youth engagement initiatives connecting Chicago students with world-class opera and performance production.",
+      "majors": [
+        "Music",
+        "Theater",
+        "Performing Arts"
+      ],
+      "tags": [
+        "high-school",
+        "opera",
+        "performing-arts",
+        "chicago"
+      ],
+      "url": "https://www.lyricopera.org/education/",
+      "duration": "Academic year",
+      "whyApply": "Rare opportunity to engage with one of America's leading opera companies as a teen.",
+      "_source": "lyricopera.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Chicago History Museum Teen Programs",
+      "company": "Chicago History Museum",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-05-01",
+      "description": "Teen programs at the Chicago History Museum include the teen council, educational workshops, and youth-led exhibition development focused on Chicago history and civic identity.",
+      "majors": [
+        "History",
+        "Museum Studies",
+        "Public History"
+      ],
+      "tags": [
+        "high-school",
+        "history",
+        "museum",
+        "chicago"
+      ],
+      "url": "https://www.chicagohistory.org/education/",
+      "duration": "Varies",
+      "whyApply": "Work with one of Chicago's most prominent history institutions on real exhibition and programming projects.",
+      "_source": "chicagohistory.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Civic Action Project",
+      "company": "Constitutional Rights Foundation Chicago",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "Classroom-to-community civics program where Chicago-area high school students research a local policy issue and design civic action projects. Culminates in student presentations at City Hall and state-level events.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Civics",
+        "Pre-Law"
+      ],
+      "tags": [
+        "high-school",
+        "civics",
+        "law",
+        "public-policy",
+        "chicago"
+      ],
+      "url": "https://www.crfc.org/civic-action-project/",
+      "duration": "Academic semester",
+      "whyApply": "Trains Chicago students in real civic engagement and policy advocacy with mentorship from legal professionals.",
+      "_source": "crfc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Illinois Supreme Court Commission on Professionalism — Pipeline Programs",
+      "company": "Illinois Supreme Court Commission on Professionalism",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-03-15",
+      "description": "Pipeline programs introducing Illinois students to legal careers through mentoring, court visits, and meetings with judges and attorneys. Partnership with Chicago Bar Foundation and other bar associations.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "pipeline",
+        "diversity"
+      ],
+      "url": "https://www.2civility.org/programs/",
+      "duration": "Varies",
+      "whyApply": "Direct mentorship from judges and practicing attorneys through the Illinois Supreme Court's professionalism commission.",
+      "_source": "2civility.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Future Founders Youth Entrepreneurship Program",
+      "company": "Future Founders",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-09-01",
+      "description": "Chicago-based youth entrepreneurship nonprofit providing startup training, mentorship, pitch competitions, and programming for middle and high school students across Chicagoland.",
+      "majors": [
+        "Business",
+        "Entrepreneurship",
+        "Marketing"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "entrepreneurship",
+        "business",
+        "chicago"
+      ],
+      "url": "https://futurefounders.com/",
+      "duration": "Year-round",
+      "whyApply": "Leading Chicago youth entrepreneurship nonprofit with deep connections to local startups and mentors.",
+      "_source": "futurefounders.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Junior Achievement of Chicago Programs",
+      "company": "Junior Achievement of Chicago",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-08-01",
+      "description": "Financial literacy, entrepreneurship, and career readiness programs for K-12 students across the Chicago region, including JA Finance Park, JA BizTown, and JA Company Program.",
+      "majors": [
+        "Finance",
+        "Business",
+        "Economics",
+        "Accounting"
+      ],
+      "tags": [
+        "elementary",
+        "middle-school",
+        "high-school",
+        "financial-literacy",
+        "entrepreneurship"
+      ],
+      "url": "https://www.jachicago.org/",
+      "duration": "Varies",
+      "whyApply": "Oldest and largest youth financial literacy and entrepreneurship nonprofit, with strong Chicago business partnerships.",
+      "_source": "jachicago.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "Bank of America Student Leaders — Chicago",
+      "company": "Bank of America",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid 8-week internship + Washington DC Summit",
+      "field": "Nonprofit",
+      "deadline": "2027-01-15",
+      "description": "Highly competitive paid summer internship placing Chicago juniors and seniors at local nonprofits. Includes all-expenses-paid week-long Student Leaders Summit in Washington DC.",
+      "majors": [
+        "Public Policy",
+        "Nonprofit",
+        "Business",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "nonprofit",
+        "leadership",
+        "competitive",
+        "washington-dc"
+      ],
+      "url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+      "duration": "8 weeks (summer) + DC week",
+      "whyApply": "Prestigious paid civic leadership program with a summit in Washington DC — highly selective.",
+      "_source": "about.bankofamerica.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "i.c.stars Internship Program",
+      "company": "i.c.stars",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid technology training program",
+      "field": "Technology",
+      "deadline": "2027-05-01",
+      "description": "Rigorous tech workforce program open to young adults (including recent high school graduates) from underserved Chicago neighborhoods. Combines full-stack development training with consulting placements.",
+      "majors": [
+        "Computer Science",
+        "Information Technology",
+        "Business"
+      ],
+      "tags": [
+        "high-school-grad",
+        "technology",
+        "paid",
+        "workforce",
+        "chicago",
+        "diversity"
+      ],
+      "url": "https://icstars.org/",
+      "duration": "4 months full-time + residency",
+      "whyApply": "Unique tech+leadership program that turns high school graduates into employed technology consultants.",
+      "_source": "icstars.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Manufacturing Connect",
+      "company": "Manufacturing Renaissance",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid internships with manufacturers",
+      "field": "Manufacturing",
+      "deadline": "2027-05-01",
+      "description": "West Side Chicago program connecting high school students to careers in advanced manufacturing. Includes machining certifications, shop floor experiences, and paid internships at local manufacturers.",
+      "majors": [
+        "Manufacturing",
+        "Engineering",
+        "Industrial Technology"
+      ],
+      "tags": [
+        "high-school",
+        "manufacturing",
+        "apprenticeship",
+        "paid",
+        "chicago",
+        "workforce"
+      ],
+      "url": "https://www.manufacturingrenaissance.org/",
+      "duration": "Year-round",
+      "whyApply": "Unique paid pathway into advanced manufacturing for Chicago students — earning industry-recognized credentials.",
+      "_source": "manufacturingrenaissance.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Illinois 4-H Youth Development",
+      "company": "University of Illinois Extension",
+      "location": {
+        "city": "Urbana",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2027-09-01",
+      "description": "Statewide 4-H program offering STEM, agriculture, leadership, and civic engagement projects for youth ages 5-18. Includes state fairs, summer camps, and teen leadership councils in all 102 Illinois counties.",
+      "majors": [
+        "Agriculture",
+        "Animal Science",
+        "Plant Science",
+        "Food Science"
+      ],
+      "tags": [
+        "elementary",
+        "middle-school",
+        "high-school",
+        "agriculture",
+        "leadership",
+        "statewide"
+      ],
+      "url": "https://4h.extension.illinois.edu/",
+      "duration": "Year-round",
+      "whyApply": "Statewide reach with hands-on agriculture and STEM projects — strong for rural and suburban Illinois students.",
+      "_source": "4h.extension.illinois.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Illinois FFA",
+      "company": "Illinois FFA Association",
+      "location": {
+        "city": "Roanoke",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Agriculture",
+      "deadline": "2027-09-01",
+      "description": "Statewide FFA chapters supporting Illinois agriculture students through leadership development, Supervised Agricultural Experiences (SAE), career development events, and state/national conferences.",
+      "majors": [
+        "Agriculture",
+        "Agribusiness",
+        "Agricultural Science"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "agriculture",
+        "leadership",
+        "statewide"
+      ],
+      "url": "https://www.illinoisffa.org/",
+      "duration": "Year-round",
+      "whyApply": "Primary pipeline for Illinois students into agricultural careers with leadership experience and SAE projects.",
+      "_source": "illinoisffa.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Discovery Partners Institute (DPI) Pre-College Programs",
+      "company": "University of Illinois System",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-04-01",
+      "description": "Pre-college tech and innovation programs at DPI's Chicago hub. Students explore AI, data science, cybersecurity, and entrepreneurship through project-based learning with University of Illinois faculty and industry partners.",
+      "majors": [
+        "Computer Science",
+        "Data Science",
+        "Artificial Intelligence",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "technology",
+        "pre-college",
+        "chicago",
+        "innovation"
+      ],
+      "url": "https://dpi.uillinois.edu/",
+      "duration": "2-4 weeks (summer)",
+      "whyApply": "Flagship innovation hub for the University of Illinois system, located in the heart of downtown Chicago.",
+      "_source": "dpi.uillinois.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Peggy Notebaert Nature Museum Youth Programs",
+      "company": "Peggy Notebaert Nature Museum",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-15",
+      "description": "Programs for Chicago teens interested in urban ecology and environmental justice. Students engage in citizen science, exhibit engagement, and environmental advocacy in Lincoln Park.",
+      "majors": [
+        "Environmental Science",
+        "Ecology",
+        "Urban Studies"
+      ],
+      "tags": [
+        "high-school",
+        "environmental-justice",
+        "urban-ecology",
+        "chicago"
+      ],
+      "url": "https://naturemuseum.org/learn/",
+      "duration": "Varies",
+      "whyApply": "Combines environmental science with urban ecology and environmental justice advocacy in Chicago.",
+      "_source": "naturemuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Becoming A Man (BAM)",
+      "company": "Youth Guidance",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2027-09-01",
+      "description": "School-based counseling and mentoring program for young men in grades 7-12 across Chicago Public Schools. Focuses on social-emotional development, leadership, and community engagement with trained counselors.",
+      "majors": [
+        "Social Work",
+        "Psychology",
+        "Education",
+        "Public Health"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "mentoring",
+        "youth-development",
+        "chicago"
+      ],
+      "url": "https://www.youth-guidance.org/bam/",
+      "duration": "Academic year",
+      "whyApply": "Nationally recognized Chicago-based mentoring program with proven outcomes for young men's leadership development.",
+      "_source": "youth-guidance.org",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"

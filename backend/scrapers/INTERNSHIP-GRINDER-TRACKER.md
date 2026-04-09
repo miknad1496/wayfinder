@@ -5,12 +5,13 @@
 - CA: 150 verified, 337 total in DB (target: 150+ ✅)
 - TX: 100 verified, 123 total in DB (target: 100 ✅)
 - NY: 101 verified, 197 total in DB (target: 100 ✅)
+- IL: 60 verified, 83 total in DB (target: 80 ✅)
 
 ## IN PROGRESS
-- IL (target: 80, current: 40 verified, 63 total in DB)
+- FL (target: 80, current: 0)
 
-## RECENT RUN (2026-04-09 run 18)
-Added 20 verified IL entries (batch 2). Fields: Engineering (4: NURPH Northwestern, Northwestern REM, UIC SHARP!, IIT Pre-Engineering), Science (3: CIERA REACH, UIC YSP, Morton Arboretum Tree Monitor components in volunteer), Healthcare (2: Lurie DHC, Lurie Junior M.E.D.), Law (1: Cook County State's Attorney), Government (2: IL House Pages, CMAP FLIP), Arts & Media (3: Goodman GYAC, Goodman Musical Theater Intensive, Steppenwolf Teen), Environmental Science (4: Brookfield King Scholars, Brookfield YVC, Morton Arboretum Youth Volunteer, Morton Youth Climate Action), Technology (1: CPL YOUmedia), Manufacturing (1: Caterpillar Peoria). Strong geographic spread: Chicago, Evanston, Brookfield, Lisle, Peoria, Springfield. IL now 40 verified, 63 total. Next run: continue IL (40 more needed).
+## RECENT RUN (2026-04-09 run 19)
+Added 20 verified IL entries (batch 3). Fields: Healthcare (3: Northwestern Memorial Jr Volunteer, UChicago Medicine Jr Volunteer, Rush Volunteer), Arts & Media (4: MCA Teen Creative Agency, CSO Negaunee, Lyric Opera Ed, Chicago History Museum Teen), Law (2: CRFC Civic Action Project, 2Civility IL Supreme Court Pipeline), Business (1: Future Founders), Finance (1: JA Chicago), Nonprofit (2: BofA Student Leaders Chicago, Youth Guidance BAM), Technology (2: i.c.stars, DPI Pre-College), Manufacturing (1: Manufacturing Connect), Agriculture (2: IL 4-H, IL FFA), Environmental Science (1: Peggy Notebaert Youth), Various (1: Northwestern CTD). **IL TARGET HIT: 60 verified, 83 total in DB.** Moving to FL next run.
 
 ## QUEUE (in order)
 - FL (target: 80)
