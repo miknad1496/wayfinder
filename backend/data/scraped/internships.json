@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 762,
+    "totalCount": 783,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 762,
-    "verifiedCount": 137,
+    "totalInternships": 783,
+    "verifiedCount": 158,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -4702,6 +4702,698 @@
       "duration": "6-8 weeks (summer)",
       "whyApply": "Paid climate action work in Silicon Valley — tangible environmental impact with career-building skills.",
       "_source": "https://www.sjcccs.org/youthclimatecorps",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "OPALS High School Research Internship",
+      "company": "UC San Diego Institute for Engineering in Medicine",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-04-19",
+      "description": "Pre-college STEM research internship at UC San Diego. Students work alongside researchers on biomedical engineering projects, gaining hands-on lab experience and scientific presentation skills.",
+      "majors": [
+        "Biomedical Engineering",
+        "Biology",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "STEM",
+        "summer",
+        "competitive"
+      ],
+      "url": "https://iem.ucsd.edu/programs/opals/index.html",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Work on real biomedical engineering research at a top-tier UC research university.",
+      "_source": "https://iem.ucsd.edu/programs/opals/index.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Heithoff-Brody High School Summer Scholars Program",
+      "company": "Salk Institute for Biological Studies",
+      "location": {
+        "city": "La Jolla",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend provided",
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "Elite 8-week summer research program at the world-renowned Salk Institute. High school students are embedded in research labs working on projects in molecular biology, genetics, neuroscience, and plant biology alongside leading scientists.",
+      "majors": [
+        "Biology",
+        "Neuroscience",
+        "Genetics",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "competitive",
+        "prestigious"
+      ],
+      "url": "https://www.salk.edu/about/education-outreach/programs/high-school-scholars/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "One of the most prestigious high school research programs in the country — Salk is a Nobel Prize-producing institute.",
+      "_source": "https://www.salk.edu/about/education-outreach/programs/high-school-scholars/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "REHS — Research Experience for High School Students",
+      "company": "San Diego Supercomputer Center (SDSC), UC San Diego",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-03-15",
+      "description": "Volunteer internship at the San Diego Supercomputer Center. Students work on computational research projects involving data science, machine learning, bioinformatics, or scientific visualization under mentorship from SDSC researchers.",
+      "majors": [
+        "Computer Science",
+        "Data Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "computing",
+        "summer",
+        "competitive"
+      ],
+      "url": "https://education.sdsc.edu/studenttech/rehs/",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "Gain hands-on experience in supercomputing and data science at one of the nation's premier research computing centers.",
+      "_source": "https://education.sdsc.edu/studenttech/rehs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SMUD High School Summer Internship Program",
+      "company": "Sacramento Municipal Utility District (SMUD)",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$16.90/hour",
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Paid 6-week summer internship at California's largest community-owned electric utility. High school juniors and seniors rotate through departments including engineering, IT, customer service, and renewable energy. Includes professional development workshops and mentorship.",
+      "majors": [
+        "Engineering",
+        "Business",
+        "Environmental Science",
+        "IT"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "utility",
+        "energy"
+      ],
+      "url": "https://www.smud.org/Corporate/Careers-at-SMUD/Student-Jobs",
+      "duration": "6 weeks (June-August)",
+      "whyApply": "Paid internship at a major utility company with exposure to clean energy careers — 55 spots available each summer.",
+      "_source": "https://www.smud.org/Corporate/Careers-at-SMUD/Student-Jobs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SHTEM Summer Research Internship",
+      "company": "Stanford Compression Forum, Stanford University",
+      "location": {
+        "city": "Stanford",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend available for eligible students",
+      "field": "Technology",
+      "deadline": "2027-02-01",
+      "description": "Summer internship for high schoolers and community college students at Stanford focused on STEM research. Students engage in hands-on projects in areas such as data compression, machine learning, signal processing, and computational imaging.",
+      "majors": [
+        "Computer Science",
+        "Electrical Engineering",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "stanford",
+        "summer",
+        "competitive"
+      ],
+      "url": "https://compression.stanford.edu/outreach/shtem-summer-internships-high-schoolers-and-community-college-students",
+      "duration": "8-10 weeks (summer)",
+      "whyApply": "Conduct real research at Stanford University with faculty mentorship — exceptional college application credential.",
+      "_source": "https://compression.stanford.edu/outreach/shtem-summer-internships-high-schoolers-and-community-college-students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Oakland Zoo Teen Summer Internship",
+      "company": "Oakland Zoo",
+      "location": {
+        "city": "Oakland",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-04-01",
+      "description": "Summer internship for teens entering grades 10-12. Interns work alongside zookeepers and educators learning animal husbandry, conservation education, and guest engagement. Includes behind-the-scenes access to animal care facilities.",
+      "majors": [
+        "Biology",
+        "Zoology",
+        "Environmental Science",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "zoo",
+        "conservation",
+        "summer"
+      ],
+      "url": "https://www.oaklandzoo.org/programs-and-events/teen-summer-internships",
+      "duration": "7 weeks (June-August)",
+      "whyApply": "Hands-on animal care and conservation education experience at a respected Bay Area zoo.",
+      "_source": "https://www.oaklandzoo.org/programs-and-events/teen-summer-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Aquarium of the Pacific VolunTEEN Program",
+      "company": "Aquarium of the Pacific",
+      "location": {
+        "city": "Long Beach",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-03-01",
+      "description": "10-week structured volunteer program for teens ages 14-16. Participants learn marine biology, exhibit interpretation, and public communication skills through 80 hours of hands-on experience with aquarium visitors and marine habitats.",
+      "majors": [
+        "Marine Biology",
+        "Environmental Science",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "volunteer",
+        "marine-science",
+        "aquarium"
+      ],
+      "url": "https://www.aquariumofpacific.org/volunteer",
+      "duration": "10 weeks (80 hours)",
+      "whyApply": "Outstanding marine science volunteer experience — competitive selection process builds your application profile.",
+      "_source": "https://www.aquariumofpacific.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Sacramento Zoo Teen Volunteer Program",
+      "company": "Sacramento Zoo",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-04-05",
+      "description": "Summer volunteer program for teens at the Sacramento Zoo. Volunteers assist with animal enrichment, guest education, conservation programming, and special events while learning about wildlife biology and zoo management.",
+      "majors": [
+        "Biology",
+        "Zoology",
+        "Veterinary Science"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "zoo",
+        "conservation",
+        "summer"
+      ],
+      "url": "https://www.saczoo.org/volunteer",
+      "duration": "May-September",
+      "whyApply": "Great entry-level wildlife and veterinary experience in the Sacramento region.",
+      "_source": "https://www.saczoo.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "KP LAUNCH High School Internship Program",
+      "company": "Kaiser Permanente",
+      "location": {
+        "city": "Oakland",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$24/hour",
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "Paid summer internship for high school students ages 16-19 in Northern California Kaiser Permanente service areas. Interns participate in departmental projects, weekly professional development workshops, and mentorship sessions while earning $24/hour.",
+      "majors": [
+        "Healthcare",
+        "Public Health",
+        "Business",
+        "IT"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "summer",
+        "competitive"
+      ],
+      "url": "https://community.kp.org/about/program/summer-youth-employment-program",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "One of the highest-paying high school internships in California with real healthcare industry exposure.",
+      "_source": "https://community.kp.org/about/program/summer-youth-employment-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UC Berkeley Center for Youth Development through Law — Summer Program",
+      "company": "UC Berkeley School of Law",
+      "location": {
+        "city": "Berkeley",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend provided for eligible students",
+      "field": "Law",
+      "deadline": "2027-04-15",
+      "description": "Summer program providing local disadvantaged high school students with instruction in law on the Berkeley campus, life skills workshops, and law-related internship placements. Students gain exposure to legal careers through classroom learning and hands-on experience.",
+      "majors": [
+        "Law",
+        "Political Science",
+        "Social Justice"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "summer",
+        "underserved",
+        "UC-Berkeley"
+      ],
+      "url": "https://www.law.berkeley.edu/center-for-youth-development-through-law/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Learn law from UC Berkeley professors and gain a real legal internship placement — designed for underserved students.",
+      "_source": "https://www.law.berkeley.edu/center-for-youth-development-through-law/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "ACLU of Southern California Student Internship",
+      "company": "ACLU of Southern California",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-02-20",
+      "description": "Internship at the ACLU SoCal working on civil rights and liberties cases. High school and college students assist with legal research, advocacy campaigns, community outreach, and policy analysis on issues including immigrant rights, criminal justice reform, and free speech.",
+      "majors": [
+        "Law",
+        "Political Science",
+        "Human Rights",
+        "Journalism"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "civil-rights",
+        "summer",
+        "advocacy"
+      ],
+      "url": "https://www.aclusocal.org/jobs/legaladvocacy-internships-externships-volunteer-opportunities/",
+      "duration": "10-12 weeks (summer)",
+      "whyApply": "Work on real civil rights cases at one of the most influential legal advocacy organizations in the country.",
+      "_source": "https://www.aclusocal.org/jobs/legaladvocacy-internships-externships-volunteer-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Fresno Building Healthy Communities Youth Internship",
+      "company": "Fresno Building Healthy Communities",
+      "location": {
+        "city": "Fresno",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Nonprofit",
+      "deadline": "2027-04-01",
+      "description": "Paid internship for Fresno County high school sophomores and juniors. Youth interns work on community health, environmental justice, and youth advocacy projects, becoming change agents within their schools and neighborhoods.",
+      "majors": [
+        "Public Health",
+        "Social Work",
+        "Community Development"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "community-health",
+        "Central-Valley",
+        "advocacy"
+      ],
+      "url": "https://fresnobhc.org/youth-internship-program/",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Paid community advocacy work in California's Central Valley — empowers students to drive real neighborhood change.",
+      "_source": "https://fresnobhc.org/youth-internship-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Career Exploration Experience (CLAOC)",
+      "company": "CEO Leadership Alliance Orange County / Brighter Futures OC",
+      "location": {
+        "city": "Irvine",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-05-15",
+      "description": "6-week hybrid career exploration program connecting Orange County high school students with business leaders. Students attend workshops, site visits to major companies, and networking events covering industries from tech and healthcare to finance and marketing.",
+      "majors": [
+        "Business",
+        "Marketing",
+        "Finance",
+        "Technology"
+      ],
+      "tags": [
+        "high-school",
+        "career-exploration",
+        "Orange-County",
+        "summer",
+        "hybrid"
+      ],
+      "url": "https://brighterfuturesoc.org/high-school-career-exploration-experience-2026/",
+      "duration": "6 weeks (June-July)",
+      "whyApply": "Network directly with Orange County CEOs and executives — excellent for students exploring business careers.",
+      "_source": "https://brighterfuturesoc.org/high-school-career-exploration-experience-2026/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "Lawrence Hall of Science Teen Volunteer Program",
+      "company": "Lawrence Hall of Science, UC Berkeley",
+      "location": {
+        "city": "Berkeley",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-08-01",
+      "description": "Teen volunteers at UC Berkeley's Lawrence Hall of Science facilitate hands-on STEM activities for museum visitors, lead science demonstrations, and assist with educational programs. Volunteers build public speaking, teaching, and science communication skills.",
+      "majors": [
+        "Science Education",
+        "STEM",
+        "Communication"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "museum",
+        "STEM-education",
+        "year-round"
+      ],
+      "url": "https://lawrencehallofscience.org/support/volunteer-teen/",
+      "duration": "Year-round (flexible scheduling)",
+      "whyApply": "Build teaching and science communication skills at UC Berkeley's iconic public science center.",
+      "_source": "https://lawrencehallofscience.org/support/volunteer-teen/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "CDFA High School Agricultural Internship",
+      "company": "California Department of Food and Agriculture",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid state internship",
+      "field": "Agriculture",
+      "deadline": "2027-04-15",
+      "description": "State government internship at CDFA for high school and college students interested in agriculture, food safety, and environmental policy. Interns gain exposure to agricultural regulation, pest prevention, dairy and livestock programs, and food safety inspection.",
+      "majors": [
+        "Agriculture",
+        "Food Science",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "agriculture",
+        "government",
+        "Sacramento"
+      ],
+      "url": "https://www.cdfa.ca.gov/internships/",
+      "duration": "8-10 weeks (summer)",
+      "whyApply": "Unique exposure to California's massive agricultural industry through the state's official food and agriculture department.",
+      "_source": "https://www.cdfa.ca.gov/internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "West Sacramento Home Run Summer Internship",
+      "company": "West Sacramento Home Run",
+      "location": {
+        "city": "West Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid up to 40 hours/week",
+      "field": "Various",
+      "deadline": "2027-05-01",
+      "description": "Paid summer internships for Washington Unified School District high school students. Interns are placed across city departments and local organizations gaining real-world work experience in fields ranging from public works and parks to administration and recreation.",
+      "majors": [
+        "General",
+        "Public Administration",
+        "Recreation"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "government",
+        "Sacramento-area"
+      ],
+      "url": "https://www.wshomerun.org/internships",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Full-time paid summer work experience through a well-organized city youth employment program.",
+      "_source": "https://www.wshomerun.org/internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SF Youth Connect High School Internship Program",
+      "company": "SF Youth Connect / San Francisco Recreation and Parks",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Nonprofit",
+      "deadline": "2027-09-15",
+      "description": "Paid internship program placing San Francisco high school students with local nonprofit organizations and city agencies. Includes pre-employment training, ongoing mentorship, and professional development workshops throughout the school year.",
+      "majors": [
+        "Social Work",
+        "Community Development",
+        "Public Service"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "nonprofit",
+        "school-year",
+        "San-Francisco"
+      ],
+      "url": "https://www.sfyouthconnect.com/highschoolinternships",
+      "duration": "School year (October-May)",
+      "whyApply": "Paid year-round nonprofit internship with structured mentorship — excellent for SF students passionate about community service.",
+      "_source": "https://www.sfyouthconnect.com/highschoolinternships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "County of Santa Clara Student Internship Program",
+      "company": "County of Santa Clara",
+      "location": {
+        "city": "San Jose",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid county internship",
+      "field": "Government",
+      "deadline": "2027-04-01",
+      "description": "County government internship pairing high school and college students with positions across Santa Clara County agencies including public health, social services, parks and recreation, and IT. Tasks and lengths vary by department.",
+      "majors": [
+        "Government",
+        "Public Administration",
+        "Public Health",
+        "IT"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "Silicon-Valley",
+        "summer"
+      ],
+      "url": "https://www.sccgov.org/sites/opa/Pages/Student-Intern-Program.aspx",
+      "duration": "8-12 weeks (summer)",
+      "whyApply": "Work inside Silicon Valley's county government — great exposure to public service careers in the heart of the tech region.",
+      "_source": "sccgov.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Make-A-Wish Orange County High School Summer Internship",
+      "company": "Make-A-Wish Orange County & Inland Empire",
+      "location": {
+        "city": "Irvine",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2027-04-17",
+      "description": "Summer internship at Make-A-Wish OC/IE where high school students support wish-granting operations, fundraising events, community outreach, and marketing. Students gain nonprofit management experience while helping grant wishes for children with critical illnesses.",
+      "majors": [
+        "Nonprofit Management",
+        "Marketing",
+        "Event Planning",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "nonprofit",
+        "summer",
+        "Orange-County",
+        "community-service"
+      ],
+      "url": "https://wish.org/ocie/careers-internships",
+      "duration": "10 weeks (June-August)",
+      "whyApply": "Meaningful nonprofit work at one of the most beloved charitable organizations — strong community service credential.",
+      "_source": "https://wish.org/ocie/careers-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LA Zoo Teen Council for Conservation",
+      "company": "Los Angeles Zoo and Botanical Gardens",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Environmental Science",
+      "deadline": "2027-09-01",
+      "description": "Nine-month program for LA high school students focused on conservation, environmental justice, and climate action. Up to 30 members engage in a blend of virtual and in-person meetings, field trips, and conservation projects throughout the school year.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Conservation",
+        "Sustainability"
+      ],
+      "tags": [
+        "high-school",
+        "conservation",
+        "zoo",
+        "year-round",
+        "Los-Angeles"
+      ],
+      "url": "https://www.lazoo.org/learn/teen-programs/",
+      "duration": "9 months (school year)",
+      "whyApply": "Deep-dive conservation leadership program at LA's premier zoo — limited to 30 students, building a powerful peer network.",
+      "_source": "lazoo.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "Evodyne Robotics High School Internship",
+      "company": "Evodyne Academy",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Hands-on robotics engineering internship for high school students. Interns work on projects involving CAD design, electronics, 3D printing, and programming robotic systems. Students gain practical engineering skills while contributing to real robotics projects.",
+      "majors": [
+        "Robotics",
+        "Mechanical Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "robotics",
+        "engineering",
+        "summer",
+        "hands-on"
+      ],
+      "url": "https://www.evodyneacademy.com/high-school-robotics-internship",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Build real robots with professional tools — CAD, 3D printing, and programming in a startup environment.",
+      "_source": "https://www.evodyneacademy.com/high-school-robotics-internship",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
