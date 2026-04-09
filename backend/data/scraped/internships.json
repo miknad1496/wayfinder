@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 724,
+    "totalCount": 731,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 724,
-    "verifiedCount": 99,
+    "totalInternships": 731,
+    "verifiedCount": 106,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -3415,6 +3415,252 @@
       "duration": "1 year (afternoon sessions during school year)",
       "whyApply": "Free state-approved pre-apprenticeship covering 8+ construction trades. Preferred entry into union apprenticeships statewide. Industry-certified instructors. Available to students across 10 Pierce County school districts.",
       "_source": "https://pcsc.bethelsd.org/programs/programs/construction-trades",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Whatcom County Teen Court",
+      "company": "Northwest Youth Services / Whatcom County Superior Court",
+      "location": {
+        "city": "Bellingham",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "Juvenile diversion program since 1998 where HS students serve as jurors, advocates, bailiffs, and clerks in real misdemeanor cases. Volunteer attorneys serve as judges and mentors. Meets 2nd Wednesday of each month. Won Liberty Bell Award from Whatcom County Bar Association and Ken Gass Founders Award. Partnership between Superior Court and Northwest Youth Services.",
+      "majors": [
+        "Law",
+        "Criminal Justice",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "legal",
+        "volunteer",
+        "bellingham",
+        "whatcom",
+        "court",
+        "restorative-justice"
+      ],
+      "url": "https://www.whatcomcounty.us/772/Teen-Court",
+      "duration": "School year (monthly sessions)",
+      "whyApply": "Handle real misdemeanor cases in Bellingham. Award-winning program mentored by volunteer attorneys. One of the longest-running teen courts in WA (since 1998). Only structured legal program in Whatcom County for HS students.",
+      "_source": "https://www.whatcomcounty.us/772/Teen-Court",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Clallam County Youth Court",
+      "company": "Clallam County Juvenile Services",
+      "location": {
+        "city": "Port Angeles",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-09-01",
+      "description": "One of only three courts in Washington State entirely run by youth. Grades 7-12 serve as jurors, defense advocates, and prosecutors handling misdemeanor and gross misdemeanor cases. Volunteers trained locally through the Prosecutor's Office and Juvenile Services, plus annual training at Seattle University Law School. Court of accountability founded on teen capability.",
+      "majors": [
+        "Law",
+        "Criminal Justice",
+        "Public Speaking"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "legal",
+        "volunteer",
+        "port-angeles",
+        "olympic-peninsula",
+        "court",
+        "youth-run"
+      ],
+      "url": "https://clallamcountywa.gov/451/Youth-Court",
+      "duration": "School year (regular sessions)",
+      "whyApply": "One of only 3 entirely youth-run courts in Washington State. Annual training at Seattle University Law School. Handle real criminal cases as student attorneys and jurors. Rare legal experience on the Olympic Peninsula.",
+      "_source": "https://clallamcountywa.gov/451/Youth-Court",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "WANIC Aerospace Manufacturing Program",
+      "company": "Washington Network for Innovative Careers",
+      "location": {
+        "city": "Kirkland",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Manufacturing",
+      "deadline": "2027-02-01",
+      "description": "Full-year 3-period skills center class at Liberty High School for juniors and seniors. Hands-on aerospace manufacturing including materials science, applied physics, electrical systems, hydraulics, and sheet metal fabrication. Earns 3 HS credits (CTE/ELA, Lab Science, Math). Free tuition. Serves 7 Eastside school districts: Bellevue, Issaquah, Lake Washington, Mercer Island, Northshore, Riverview, Snoqualmie Valley.",
+      "majors": [
+        "Aerospace Manufacturing",
+        "Mechanical Engineering",
+        "Materials Science"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "kirkland",
+        "eastside",
+        "aerospace",
+        "manufacturing",
+        "CTE-credit",
+        "skills-center"
+      ],
+      "url": "https://wanic.lwsd.org/academics/full-year-courses/aerospace-manufacturing",
+      "duration": "Full school year (3 periods/day)",
+      "whyApply": "Free aerospace manufacturing training serving 7 Eastside school districts. Earn 3 HS credits including lab science and math. Hands-on advanced shop work in materials science and fabrication. Direct pathway to aerospace careers averaging $58K-$156K.",
+      "_source": "https://wanic.lwsd.org/academics/full-year-courses/aerospace-manufacturing",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Spokane Valley Tech Advanced Manufacturing",
+      "company": "Spokane Valley Tech Skills Center",
+      "location": {
+        "city": "Spokane Valley",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Manufacturing",
+      "deadline": "2027-02-01",
+      "description": "Year-long advanced manufacturing program for HS juniors and seniors. 2.5 hours per day learning industrial safety, customer-focused design, precision measurement, sheet metal fabrication, welding, 3D printing, laser cutting, and manual machining. Includes Manufacturing Connect program with tours of 24+ local manufacturers including Kaiser Aluminum. Core Plus Aerospace aligned. Central Valley School District.",
+      "majors": [
+        "Manufacturing",
+        "Welding",
+        "Machining",
+        "Industrial Technology"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "spokane",
+        "manufacturing",
+        "welding",
+        "machining",
+        "3D-printing",
+        "skills-center"
+      ],
+      "url": "https://www.spokanevalleytech.org/apps/pages/index.jsp?uREC_ID=1237925&type=d&pREC_ID=1467309",
+      "duration": "Full school year (2.5 hrs/day)",
+      "whyApply": "Hands-on manufacturing training in eastern WA with connections to 24+ local employers through Manufacturing Connect. Learn welding, machining, 3D printing, and laser cutting. Core Plus Aerospace aligned for Boeing pathway. Only advanced manufacturing program in greater Spokane area.",
+      "_source": "https://spokanevalleychamber.org/chamber-news/how-the-manufacturing-connect-program-prepares-career-ready-high-school-students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Tri-Tech Skills Center Welding Technology",
+      "company": "Tri-Tech Skills Center",
+      "location": {
+        "city": "Kennewick",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Manufacturing",
+      "deadline": "2027-02-26",
+      "description": "Welding technology program for juniors and seniors from 8 Tri-Cities school districts (Columbia, Finley, Kennewick, Kiona-Benton, North Franklin, Pasco, Prosser, Richland). Free tuition. Students attend Tri-Tech for half day, home school for other half. Earn high school and college credits plus industry certifications. State-of-the-art welding facilities with instruction by industry professionals.",
+      "majors": [
+        "Welding",
+        "Manufacturing",
+        "Metal Fabrication"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "kennewick",
+        "tri-cities",
+        "welding",
+        "trades",
+        "certification",
+        "skills-center"
+      ],
+      "url": "https://tritech.ksd.org/program-catalog",
+      "duration": "Full school year (half day)",
+      "whyApply": "Free welding certification program serving 8 Tri-Cities school districts. Industry-certified instructors and state-of-the-art facilities. Earn both HS and college credits. Only welding skills center program in the Tri-Cities region.",
+      "_source": "https://tritech.ksd.org/program-catalog",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "TiE Young Entrepreneurs (TYE) Seattle",
+      "company": "TiE Seattle",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-09-15",
+      "description": "Year-long entrepreneurship program for grades 9-12. Students form 4-person teams to launch real startups using Lean Startup methodology. Curriculum covers ideation, design thinking, customer empathy, prototyping, business modeling, marketing, and finance. Mentored by local entrepreneurs and venture capitalists. Alternate Thursday evenings Oct-Apr (hybrid). Finals in May, global competition in June. 50 seats, first-come first-served. Fee: $499 (financial aid available).",
+      "majors": [
+        "Entrepreneurship",
+        "Business",
+        "Finance",
+        "Marketing"
+      ],
+      "tags": [
+        "high-school",
+        "seattle",
+        "entrepreneurship",
+        "startup",
+        "business",
+        "mentorship",
+        "competition"
+      ],
+      "url": "https://seattle.tie.org/tye/",
+      "duration": "8 months (Oct - May, biweekly evenings)",
+      "whyApply": "Build a real startup with mentoring from VCs and entrepreneurs. Compete locally and globally for cash prizes up to $10,000. Learn business, finance, and marketing through hands-on experience. Financial aid available.",
+      "_source": "https://seattle.tie.org/tye/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "Seattle Foundation Youth Grantmaking Board",
+      "company": "Seattle Foundation",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-06-01",
+      "description": "Youth philanthropy board for King County HS sophomores, juniors, and seniors. Members lead the full grantmaking process: identify community issues with field experts, develop requests for proposals, evaluate nonprofit applications, conduct site visits, and make $5,000-$15,000 in funding recommendations to the Seattle Foundation Board of Trustees. Free to participate. Learn nonprofit finance, community impact assessment, and strategic giving.",
+      "majors": [
+        "Finance",
+        "Nonprofit Management",
+        "Public Policy",
+        "Philanthropy"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "seattle",
+        "king-county",
+        "philanthropy",
+        "grantmaking",
+        "nonprofit",
+        "leadership"
+      ],
+      "url": "https://www.seattlefoundation.org/philanthropists/family-philanthropy/youth-grantmaking-board/",
+      "duration": "School year (meeting schedule varies)",
+      "whyApply": "Make real grant decisions affecting Seattle nonprofits. Learn nonprofit finance and community impact assessment at one of WA's largest foundations. Unique leadership credential for college applications in business, finance, or public policy.",
+      "_source": "https://www.seattlefoundation.org/philanthropists/family-philanthropy/youth-grantmaking-board/",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
