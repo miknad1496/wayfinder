@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1354,
+    "totalCount": 1368,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1354,
-    "verifiedCount": 729,
+    "totalInternships": 1368,
+    "verifiedCount": 743,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -24368,6 +24368,480 @@
       "duration": "Multi-day workshops (July)",
       "whyApply": "Studio art experience at one of the West's leading museums, with scholarship support — meaningful creative-portfolio building for teens.",
       "_source": "https://www.denverartmuseum.org/en/teen-studio",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Ted R. Lilley CURE Program",
+      "company": "OHSU Knight Cancer Institute",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid summer research internship",
+      "field": "Medicine / Cancer Research",
+      "deadline": "2026-12-15",
+      "description": "Eight-week biomedical cancer research internship at OHSU Knight Cancer Institute, June 22 to August 14, 2026. Portland-area high school students from socially or economically disadvantaged backgrounds are placed in Knight Cancer Institute labs with faculty mentors. Supported by the Center for Diversity and Inclusion. Applications for 2026 closed; 2027 cycle opens late fall.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Cancer Biology",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "cancer",
+        "diversity",
+        "paid",
+        "Portland"
+      ],
+      "url": "https://www.ohsu.edu/knight-cancer-institute/ted-r-lilley-cure-program",
+      "duration": "8 weeks (June 22 - Aug 14)",
+      "whyApply": "One of Oregon's flagship paid high-school biomedical research programs, embedded in a top cancer research institute with a strong diversity pipeline.",
+      "_source": "https://www.ohsu.edu/knight-cancer-institute/ted-r-lilley-cure-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PSI Program (Partnering in Science & Medicine Internship)",
+      "company": "OHSU / Portland State University",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "spring",
+      "paid": false,
+      "field": "Medicine / Biomedical Research",
+      "deadline": "2026-11-30",
+      "description": "A 16-week evening course (Wednesdays 6-8pm PT, Jan 14 - May 27, 2026) for high school sophomores, juniors, and seniors interested in medicine or biomedical research. Taught by OHSU physicians and scientists via Webex. Qualifying students are matched with an OHSU research lab for a summer internship. Students must be 16+ at time of summer placement.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Biomedical Research"
+      ],
+      "tags": [
+        "high-school",
+        "virtual",
+        "mentorship",
+        "research",
+        "medicine"
+      ],
+      "url": "https://www.psiprogramohsu.com/",
+      "duration": "16-week course + optional summer internship",
+      "whyApply": "Structured pathway into OHSU research labs for Portland-area teens with a genuine interest in medicine — rare combination of coursework and hands-on lab matching.",
+      "_source": "https://www.psiprogramohsu.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "hybrid"
+    },
+    {
+      "title": "STEMPrep-OHSU Internship Program",
+      "company": "OHSU School of Medicine",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid research internship + housing provided",
+      "field": "Medicine / Basic Science Research",
+      "deadline": "2027-02-01",
+      "description": "OHSU partners with the national STEMPrep program to host high school and college trainees for an 8-10 week basic science research internship from mid-June to mid-August. Students conduct a hypothesis-driven research project mentored by OHSU faculty, post-docs, and graduate students. Housed at Portland State University with commute to OHSU via trolley.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Cell Biology",
+        "Cancer Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "residential",
+        "diversity",
+        "housing"
+      ],
+      "url": "https://www.ohsu.edu/school-of-medicine/cell-developmental-and-cancer-biology/stemprep-ohsu-internship-program",
+      "duration": "8-10 weeks (mid-June to mid-August)",
+      "whyApply": "Full residential research experience with housing included — equivalent to a college-level REU, extremely rare for high schoolers.",
+      "_source": "https://www.ohsu.edu/school-of-medicine/cell-developmental-and-cancer-biology/stemprep-ohsu-internship-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Apprenticeships in Science & Engineering (ASE)",
+      "company": "Saturday Academy",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid 8-week summer internship",
+      "field": "STEM / Engineering / Research",
+      "deadline": "2027-03-06",
+      "description": "Saturday Academy's ASE program connects rising 10th-12th grade students with paid 8-week full-time summer internships mentored by STEM professionals at companies like Intel, Nike, OHSU, Oregon Department of Fish and Wildlife, OSU, PSU, and Oregon national labs. Internships take place throughout Oregon and SW Washington (Portland, Eugene, Corvallis, Vancouver, Bend). ~75 placements per year. 2026 applications closed March 6; matching begins April 15.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "apprenticeship",
+        "STEM",
+        "mentorship",
+        "competitive",
+        "statewide"
+      ],
+      "url": "https://www.saturdayacademy.org/ase",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Oregon's flagship paid STEM apprenticeship pipeline — project-based placement with a real mentor at top-tier Oregon companies and labs.",
+      "_source": "https://www.saturdayacademy.org/ase",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer SAIL",
+      "company": "University of Oregon",
+      "location": {
+        "city": "Eugene",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free program (tuition waived)",
+      "field": "Academic Enrichment / Multi-Disciplinary",
+      "deadline": "2026-05-15",
+      "description": "Free weeklong day program July 20-24, 2026 on the UO Eugene campus for Oregon high school students. Participants explore academic subjects with University of Oregon faculty across various departments (architecture, business, education, environmental science, journalism, etc.). Designed to build college readiness and aspirations for first-gen and underserved students.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "college-prep",
+        "first-gen",
+        "commuter",
+        "Eugene"
+      ],
+      "url": "https://fyp.uoregon.edu/sail/summer",
+      "duration": "1 week (July 20-24, 2026)",
+      "whyApply": "Zero-cost, faculty-led college preview for Oregon teens — one of the best free pre-college taster programs in the state.",
+      "_source": "https://fyp.uoregon.edu/sail/summer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "OSU-Cascades Summer Academy",
+      "company": "Oregon State University - Cascades",
+      "location": {
+        "city": "Bend",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Academic Enrichment / Pre-College",
+      "deadline": "2026-05-30",
+      "description": "One-week residential or commuter pre-college experience for students entering grades 10-12. Two 2026 sessions: July 19-24 and July 26-31. Students explore academic tracks (science, engineering, outdoor, tourism, business) on OSU's Bend campus. Overnight option $1,500; day option $1,000; scholarships available.",
+      "majors": [
+        "Engineering",
+        "Environmental Science",
+        "Business",
+        "Tourism & Recreation"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "pre-college",
+        "Central-Oregon",
+        "Bend"
+      ],
+      "url": "https://osucascades.edu/summer-academy",
+      "duration": "1 week (July)",
+      "whyApply": "Only Central Oregon residential pre-college — lets teens experience college life outside Portland/Willamette Valley.",
+      "_source": "https://osucascades.edu/summer-academy",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "SESEY - Summer Experience in Science & Engineering for Youth",
+      "company": "Oregon State University College of Engineering",
+      "location": {
+        "city": "Corvallis",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free with scholarships for residential fees",
+      "field": "Engineering / STEM",
+      "deadline": "2026-05-01",
+      "description": "One-week residential engineering camp at OSU Corvallis, July 19-24, 2026, for female and underrepresented minority students in grades 9-11. Participants are embedded with a CBEE (Chemical, Biological, Environmental Engineering) research group for hands-on lab work and present their findings at the end. Scholarships cover the full cost for qualifying students.",
+      "majors": [
+        "Chemical Engineering",
+        "Biological Engineering",
+        "Environmental Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "female",
+        "URM",
+        "diversity",
+        "engineering",
+        "residential",
+        "research"
+      ],
+      "url": "https://engineering.oregonstate.edu/CBEE/about/k-12-education/summer-experience-science-and-engineering-youth-sesey",
+      "duration": "1 week (July 19-24, 2026)",
+      "whyApply": "Free residential research camp for girls and URM students at OSU — directly addresses STEM diversity pipeline.",
+      "_source": "https://engineering.oregonstate.edu/CBEE/about/k-12-education/summer-experience-science-and-engineering-youth-sesey",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "OSU STEM Academy High School Summer Camps",
+      "company": "Oregon State University STEM Academy",
+      "location": {
+        "city": "Corvallis",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM / Engineering / Computer Science",
+      "deadline": "2026-06-01",
+      "description": "Week-long summer camps on the OSU Corvallis campus taught by OSU experts. Tracks include Engineering, TekPets, Computer Science, Forensic Science, Ocean Science, Lego Robotics, and Science & Art. Open to students in grades 6-12, with scholarships available. Registration opened March 2, 2026.",
+      "majors": [
+        "Computer Science",
+        "Engineering",
+        "Forensic Science",
+        "Oceanography",
+        "Robotics"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "STEM",
+        "camps",
+        "scholarships"
+      ],
+      "url": "https://stemacademy.oregonstate.edu/high-school-summer-camps",
+      "duration": "1 week per camp (summer)",
+      "whyApply": "Broad menu of STEM camps accessible to both middle and high school students, with scholarships — one of Oregon's most flexible STEM enrichment pipelines.",
+      "_source": "https://stemacademy.oregonstate.edu/high-school-summer-camps",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Oregon Zoo Apprenticeship Program (ZAP)",
+      "company": "Oregon Zoo",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Multi-year paid apprenticeship",
+      "field": "Zoology / Conservation / Animal Care",
+      "deadline": "2027-01-15",
+      "description": "Multi-year paid apprenticeship at the Oregon Zoo for high school-aged youth 15 and older. Combines educational programming, career exploration in wildlife and conservation fields, and direct connections to zookeepers, educators, and conservation staff. Apprentices gain hands-on experience with zoo operations and conservation-focused projects.",
+      "majors": [
+        "Zoology",
+        "Biology",
+        "Environmental Science",
+        "Conservation"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "apprenticeship",
+        "zoo",
+        "conservation",
+        "multi-year"
+      ],
+      "url": "https://www.oregonzoo.org/zap",
+      "duration": "Multi-year",
+      "whyApply": "Extremely rare paid multi-year zoo apprenticeship — exceptional for students serious about zoology or conservation careers.",
+      "_source": "https://www.oregonzoo.org/zap",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Oregon Zoo Wildlife Leaders (OWLs)",
+      "company": "Oregon Zoo",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Conservation / Environmental Science",
+      "deadline": "2027-02-01",
+      "description": "Teen volunteer and education program for youth ages 13-15 passionate about animals and conservation. Participants volunteer at the Oregon Zoo, engage in hands-on conservation work in the Portland metro area, and learn about wildlife and conservation career fields. 2026 applications have closed.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Conservation"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "volunteer",
+        "conservation",
+        "zoo"
+      ],
+      "url": "https://www.oregonzoo.org/wildlife-leaders",
+      "duration": "Summer + year-round activities",
+      "whyApply": "One of the few structured conservation-focused teen programs in Oregon for middle schoolers — great early pipeline into environmental careers.",
+      "_source": "https://www.oregonzoo.org/wildlife-leaders",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "OMSI Career Pathways Program",
+      "company": "Oregon Museum of Science and Industry",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid summer internship + year-round learning",
+      "field": "STEM / Museum Education / Career Exploration",
+      "deadline": "2027-02-28",
+      "description": "Year-long program for Portland-area high schoolers ages 16-19 with a paid summer internship aligned to career interests. Participants explore STEM, museum, media, and design careers while developing professional skills. Requires a year-long commitment including monthly workshops plus a paid full-time summer placement.",
+      "majors": [
+        "Any STEM",
+        "Education",
+        "Media",
+        "Design"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-long",
+        "career-exploration",
+        "museum"
+      ],
+      "url": "https://omsi.edu/career-pathways/",
+      "duration": "1 year (including paid summer internship)",
+      "whyApply": "Structured career-exploration program with a paid internship component — top option for Portland teens unsure which STEM path to pursue.",
+      "_source": "https://omsi.edu/career-pathways/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "OMSI Teen Volunteer Program",
+      "company": "Oregon Museum of Science and Industry",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science Education / Museum",
+      "deadline": "2027-06-01",
+      "description": "Teen volunteer opportunities at OMSI's Portland campus. Volunteers support public engagement in exhibit halls, lead hands-on science activities for museum visitors, and assist with special events. Open to middle and high school students. Strong pathway into OMSI's more selective Career Pathways and Teen Tech Center programs.",
+      "majors": [
+        "Any",
+        "Science Education"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "volunteer",
+        "museum",
+        "science-communication"
+      ],
+      "url": "https://omsi.edu/teens/",
+      "duration": "Year-round (flexible)",
+      "whyApply": "Low-barrier entry point into OMSI's teen ecosystem and a great introduction to science communication for Portland-area students.",
+      "_source": "https://omsi.edu/teens/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "PNCA Pre-College Summer Intensive",
+      "company": "Pacific Northwest College of Art (Willamette University)",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts / Studio Art / Design",
+      "deadline": "2026-05-15",
+      "description": "Two-week pre-college summer intensive at PNCA in downtown Portland for high school students interested in art and design. Students build technical skills, develop portfolio pieces, and explore professional practice in disciplines like illustration, graphic design, painting, and animation. Taught by PNCA faculty and practicing artists.",
+      "majors": [
+        "Studio Art",
+        "Illustration",
+        "Graphic Design",
+        "Animation",
+        "Painting"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "portfolio",
+        "pre-college",
+        "Portland"
+      ],
+      "url": "https://pnca.willamette.edu/academics/pre-college-programs",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Oregon's most established art-school pre-college — essential for teens building a portfolio for BFA applications.",
+      "_source": "https://pnca.willamette.edu/academics/pre-college-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "EOU ECI Summer Institute",
+      "company": "Eastern Oregon University - Early College Initiatives",
+      "location": {
+        "city": "La Grande",
+        "state": "OR"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Academic Enrichment / Interdisciplinary",
+      "deadline": "2026-05-15",
+      "description": "One-week interdisciplinary summer institute at Eastern Oregon University in La Grande, June 22-27, 2026, for grades 9-12. Students explore Digital Music, Business, Writing, and Spanish tracks. Cost is $450 plus a $25 application fee. Offers a genuine college-life experience with faculty instruction and campus residence.",
+      "majors": [
+        "Music",
+        "Business",
+        "Creative Writing",
+        "Spanish / World Languages"
+      ],
+      "tags": [
+        "high-school",
+        "rural",
+        "Eastern-Oregon",
+        "pre-college",
+        "business",
+        "humanities"
+      ],
+      "url": "https://www.eou.edu/early-college-initiatives/summer-institutes/",
+      "duration": "1 week (June 22-27, 2026)",
+      "whyApply": "One of the very few pre-college summer options in Eastern Oregon — rare combination of business and humanities tracks for rural students.",
+      "_source": "https://www.eou.edu/early-college-initiatives/summer-institutes/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
