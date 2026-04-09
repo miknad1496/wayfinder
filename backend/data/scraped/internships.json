@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1337,
+    "totalCount": 1354,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1337,
-    "verifiedCount": 712,
+    "totalInternships": 1354,
+    "verifiedCount": 729,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -23804,6 +23804,570 @@
       "duration": "7 weeks",
       "whyApply": "Long-form mentored biomedical engineering research at one of the top BME departments in the country — strong signal for engineering applications.",
       "_source": "https://sites.duke.edu/dukerep/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CU Science Discovery Summer Classes for High School Students",
+      "company": "University of Colorado Boulder — Science Discovery",
+      "location": {
+        "city": "Boulder",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM / Multidisciplinary",
+      "deadline": "2027-05-15",
+      "description": "Pre-college, non-credit one-week STEM-focused classes on the CU Boulder campus that combine academics with hands-on labs and college life immersion. Course topics include aerospace, medicine, biomedical research, neuroscience, maker technologies, robotics, video game design, and forensics. Designed to give high school students a well-rounded introduction to college life and college-level STEM.",
+      "majors": [
+        "Aerospace",
+        "Biomedical Sciences",
+        "Neuroscience",
+        "Robotics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "STEM",
+        "pre-college",
+        "CU-Boulder",
+        "summer-camp"
+      ],
+      "url": "https://www.colorado.edu/sciencediscovery/programs/summer-classes-high-school-students",
+      "duration": "1 week per course",
+      "whyApply": "Affordable, hands-on STEM exposure on a flagship public research campus — useful for students testing interest in different STEM fields before college.",
+      "_source": "https://www.colorado.edu/sciencediscovery/programs/summer-classes-high-school-students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CU Boulder Precollegiate Development Program (PDP)",
+      "company": "University of Colorado Boulder — Office of Precollege Outreach and Engagement",
+      "location": {
+        "city": "Boulder",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "College Access / Multidisciplinary",
+      "deadline": "2027-02-15",
+      "description": "Multi-year, year-round college access program culminating in a five-week summer residential experience the summer before senior year. Students live on the CU Boulder campus, take academic courses, and learn about postsecondary resources. Targets first-generation, low-income, and historically underrepresented students from Colorado.",
+      "majors": [
+        "College Prep",
+        "Multidisciplinary"
+      ],
+      "tags": [
+        "high-school",
+        "first-generation",
+        "low-income",
+        "college-access",
+        "residential",
+        "free"
+      ],
+      "url": "https://www.colorado.edu/precollege/precollegiate-development-program",
+      "duration": "5-week residential summer (multi-year program)",
+      "whyApply": "Free, intensive college-readiness pipeline for first-gen and underrepresented Colorado students with a strong record of college matriculation.",
+      "_source": "https://www.colorado.edu/precollege/precollegiate-development-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CU Boulder Precollege STEM Summer Program (STEM Pathfinder)",
+      "company": "University of Colorado Boulder — Office of Precollege Outreach and Engagement",
+      "location": {
+        "city": "Boulder",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM / Engineering / Bioscience",
+      "deadline": "2027-03-15",
+      "description": "Two-week summer program where high school students dive into four different fields within engineering or bioscience through hands-on activities, lab tours, and faculty interactions. Two tracks: Bioscience Program (June 1-12, 2026) and Engineering Program (July 13-24, 2026).",
+      "majors": [
+        "Engineering",
+        "Bioscience",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "STEM",
+        "engineering",
+        "bioscience",
+        "CU-Boulder"
+      ],
+      "url": "https://www.colorado.edu/precollege/partnership-outreach/precollege-stem-summer-program",
+      "duration": "2 weeks",
+      "whyApply": "Lets students sample multiple sub-fields of engineering or bioscience in a short timeframe — great for narrowing major interest before college applications.",
+      "_source": "https://www.colorado.edu/precollege/partnership-outreach/precollege-stem-summer-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Mines Engineering and Training (SUMMET)",
+      "company": "Colorado School of Mines — Undergraduate Admissions",
+      "location": {
+        "city": "Golden",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering / STEM",
+      "deadline": "2027-03-01",
+      "description": "Engineering, science, and technology program for rising juniors and seniors to experience college life at Mines. Combines coursework, hands-on projects, industry tours, team-building, and social events. The program is offered at no cost to participants except a $50 confirmation fee. Strong fit for students from underrepresented backgrounds in engineering.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Geology",
+        "Mining Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "STEM",
+        "free",
+        "Mines",
+        "diversity"
+      ],
+      "url": "https://www.mines.edu/undergraduate-admissions/summer-mines-engineering-and-training-summet/",
+      "duration": "1 week",
+      "whyApply": "Free engineering immersion at a top-ranked applied science school — strong on industry exposure and especially valuable for students considering specialized engineering majors.",
+      "_source": "https://www.mines.edu/undergraduate-admissions/summer-mines-engineering-and-training-summet/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CS@Mines Summer Computing Program for High School Students",
+      "company": "Colorado School of Mines — Department of Computer Science",
+      "location": {
+        "city": "Golden",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Computer Science / Software Engineering",
+      "deadline": "2027-04-01",
+      "description": "Five-week summer program where high school students work in teams to complete a substantive computer programming project at the CS@Mines department. Program runs June 22 – July 28, 2026 with a $200 program fee. Mentored by Mines CS faculty and students.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "CS",
+        "tech",
+        "team-project",
+        "Mines"
+      ],
+      "url": "https://cs.mines.edu/csminesinterns/",
+      "duration": "5 weeks",
+      "whyApply": "Low-cost, project-based CS experience at Mines — meaningful portfolio-quality team project for students considering computer science.",
+      "_source": "https://cs.mines.edu/csminesinterns/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Upward Bound Math and Science (UBMS) at Colorado School of Mines",
+      "company": "Colorado School of Mines — TRIO UBMS",
+      "location": {
+        "city": "Golden",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM / College Access",
+      "deadline": "2027-03-01",
+      "description": "TRIO Upward Bound Math and Science is a federally funded six-week summer program preparing first-generation, low-income high school students for college-level math and science. The first four weeks take place at Colorado School of Mines, where participants take classes in math, science, language arts, and foreign language while living on campus.",
+      "majors": [
+        "Mathematics",
+        "Science",
+        "STEM"
+      ],
+      "tags": [
+        "high-school",
+        "first-generation",
+        "low-income",
+        "TRIO",
+        "STEM",
+        "free",
+        "residential"
+      ],
+      "url": "https://www.mines.edu/trioubms/",
+      "duration": "6 weeks",
+      "whyApply": "Free, federally funded residential STEM enrichment specifically for first-gen and low-income students — pathway to STEM majors at four-year colleges.",
+      "_source": "https://www.mines.edu/trioubms/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Denver Museum of Nature & Science Teen Science Scholars",
+      "company": "Denver Museum of Nature & Science",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science / Research / Museum",
+      "deadline": "2027-02-15",
+      "description": "Competitive paid-equivalent internship that selects 20 high school students each summer to work alongside Museum scientists in the Science Division. Research areas include paleontology, wildlife disease ecology, zoology, and anthropology. Program intentionally serves students from underserved and underrepresented communities, provides daily lunch vouchers and all materials, and culminates in an end-of-summer Showcase.",
+      "majors": [
+        "Paleontology",
+        "Zoology",
+        "Anthropology",
+        "Earth Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "museum",
+        "diversity",
+        "underserved",
+        "paleontology"
+      ],
+      "url": "https://www.dmns.org/about/teen-science-scholars/",
+      "duration": "Summer (multi-week)",
+      "whyApply": "One of the few authentic, mentored research internships in Colorado open to high schoolers — explicitly designed for students from underrepresented backgrounds.",
+      "_source": "https://www.dmns.org/about/teen-science-scholars/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NCAR / UCAR PRECIP — Pre-College Internship Program",
+      "company": "NSF NCAR — UCAR Center for Science Education",
+      "location": {
+        "city": "Boulder",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Atmospheric Science / Earth Science / Climate",
+      "deadline": "2027-02-15",
+      "description": "Six-week pre-college internship coordinated by the UCAR Center for Science Education for current high school juniors, seniors, and community college students. Interns work on projects with NSF NCAR scientists across atmospheric science, climate, and Earth systems labs. NCAR does not provide housing; out-of-area students must arrange a parent, legal guardian, or chaperone for the duration of the program.",
+      "majors": [
+        "Atmospheric Science",
+        "Climate Science",
+        "Earth Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "atmospheric-science",
+        "climate",
+        "NCAR",
+        "paid"
+      ],
+      "url": "https://ncar.ucar.edu/opportunities/internships",
+      "duration": "6 weeks",
+      "whyApply": "Direct access to research at the nation's premier atmospheric and climate science laboratory — a strong signal for students pursuing geoscience or climate.",
+      "_source": "https://ncar.ucar.edu/opportunities/internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Children's Hospital Colorado Junior Volunteer Program",
+      "company": "Children's Hospital Colorado",
+      "location": {
+        "city": "Aurora",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine / Healthcare / Volunteer",
+      "deadline": "Rolling",
+      "description": "Junior Volunteer Program for teens ages 13 to 18 that places youth volunteers in hospital departments and supports fundraising events at Children's Hospital Colorado. Both full-year and summer-only volunteer opportunities are available. Application includes interview and health screening. Volunteers may receive credit toward scholarship applications.",
+      "majors": [
+        "Medicine",
+        "Nursing",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "medicine",
+        "volunteer",
+        "hospital",
+        "pediatrics"
+      ],
+      "url": "https://www.childrenscolorado.org/community/support-childrens-colorado/volunteer/teen-volunteer-opportunities/",
+      "duration": "Summer or year-round",
+      "whyApply": "One of the most accessible structured medical volunteer programs in Colorado — direct exposure to a top-ranked pediatric hospital.",
+      "_source": "https://www.childrenscolorado.org/community/support-childrens-colorado/volunteer/teen-volunteer-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Medical Career Collaborative (MC²)",
+      "company": "Children's Hospital Colorado / Denver Health",
+      "location": {
+        "city": "Aurora",
+        "state": "CO"
+      },
+      "type": "school-year",
+      "paid": true,
+      "field": "Medicine / Healthcare Pathway",
+      "deadline": "2027-05-01",
+      "description": "Multi-year health careers pathway program for high school students interested in healthcare professions. Provides paid internships, mentorship, certification opportunities, and career coaching. Offered at Denver Health and several Children's Hospital Colorado locations including Anschutz Medical Campus (Aurora), North Campus (Broomfield), South Campus (Highlands Ranch), and Colorado Springs. Applicants must be sophomores in Denver metro or Colorado Springs at time of application; students start the program at the beginning of junior year.",
+      "majors": [
+        "Medicine",
+        "Nursing",
+        "Public Health",
+        "Allied Health"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "medicine",
+        "pipeline",
+        "Anschutz",
+        "diversity"
+      ],
+      "url": "https://www.childrenscolorado.org/careers/professional-development/medical-career-collaborative/",
+      "duration": "2 years (junior + senior year)",
+      "whyApply": "Rare two-year paid healthcare pathway for Colorado students — combines clinical exposure, mentorship, and certifications.",
+      "_source": "https://www.childrenscolorado.org/careers/professional-development/medical-career-collaborative/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CU Anschutz K-12 Outreach — Pre-Health Programs",
+      "company": "University of Colorado Anschutz Medical Campus — Office of Access & Engagement",
+      "location": {
+        "city": "Aurora",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine / Pre-Health",
+      "deadline": "2027-04-15",
+      "description": "K-12 outreach programs at the CU Anschutz Medical Campus including the CU Pre-Health Scholars (CUPS) High School Track and CADAVERS — a Colorado AHEC outreach providing high school students hands-on experience with anatomy in a medical university setting (lectures plus gross anatomy labs). Focus on reaching students from all Colorado regions interested in health sciences.",
+      "majors": [
+        "Medicine",
+        "Anatomy",
+        "Biology",
+        "Pre-Health"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "pre-health",
+        "Anschutz",
+        "anatomy",
+        "diversity"
+      ],
+      "url": "https://www.cuanschutz.edu/offices/access-engagement/programs-and-initiatives/educational-outreach-and-pathway-initiatives/programs/k-12-programs",
+      "duration": "Varies (week to multi-week)",
+      "whyApply": "Direct access to a top-ranked medical campus and hands-on anatomy exposure — distinctive credential for pre-med-bound high schoolers.",
+      "_source": "https://www.cuanschutz.edu/offices/access-engagement/programs-and-initiatives/educational-outreach-and-pathway-initiatives/programs/k-12-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Colorado College Pre-College Summer Program",
+      "company": "Colorado College",
+      "location": {
+        "city": "Colorado Springs",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Liberal Arts / Multidisciplinary",
+      "deadline": "2027-04-01",
+      "description": "Pre-College Block invites rising juniors and seniors to take a single, immersive, for-credit course over two and a half weeks under Colorado College's distinctive Block Plan. Course offerings include environmental studies, history, economics and business, and human anatomy. Students live in CC residence halls and participate in fieldwork, labs, and hands-on experiences in Colorado's landscape. Total cost $7,250 (tuition, housing, meals, fees).",
+      "majors": [
+        "Environmental Studies",
+        "History",
+        "Economics",
+        "Business",
+        "Anatomy"
+      ],
+      "tags": [
+        "high-school",
+        "liberal-arts",
+        "for-credit",
+        "block-plan",
+        "Colorado-Springs"
+      ],
+      "url": "https://www.coloradocollege.edu/admission/pre-college/",
+      "duration": "2.5 weeks",
+      "whyApply": "Try Colorado College's unique Block Plan and earn college credit on a single subject — meaningful for liberal arts students interested in deep focus.",
+      "_source": "https://www.coloradocollege.edu/admission/pre-college/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Stroud Scholars Program at Colorado College",
+      "company": "Colorado College",
+      "location": {
+        "city": "Colorado Springs",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "College Access / Liberal Arts",
+      "deadline": "2027-02-01",
+      "description": "Three-year college access program for talented Colorado public high school students from historically underrepresented backgrounds. Students participate in summer residential programming on the CC campus before their sophomore, junior, and senior years, plus year-round support. Designed to prepare scholars for selective four-year colleges.",
+      "majors": [
+        "College Prep",
+        "Liberal Arts",
+        "Multidisciplinary"
+      ],
+      "tags": [
+        "high-school",
+        "college-access",
+        "first-generation",
+        "underrepresented",
+        "free",
+        "residential"
+      ],
+      "url": "https://www.coloradocollege.edu/other/stroudscholars/",
+      "duration": "3 summers + year-round",
+      "whyApply": "Free three-year mentorship and selective-college prep pipeline for Colorado students from underrepresented backgrounds.",
+      "_source": "https://www.coloradocollege.edu/other/stroudscholars/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Denver Botanic Gardens Summer Teen Volunteer Program",
+      "company": "Denver Botanic Gardens",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science / Horticulture",
+      "deadline": "2027-04-15",
+      "description": "Summer volunteer program for current high school students (rising freshmen through graduating seniors). Participants explore experiences in horticulture and guest engagement that build professionalism and independence — gardening, science communication, and customer service. Volunteer at any of three locations (York Street, Chatfield Farms, Plains Conservation Center) and participate at least once per week from June 3 – August 2.",
+      "majors": [
+        "Environmental Science",
+        "Horticulture",
+        "Botany",
+        "Ecology"
+      ],
+      "tags": [
+        "high-school",
+        "environmental",
+        "horticulture",
+        "volunteer",
+        "outdoor"
+      ],
+      "url": "https://www.botanicgardens.org/join-give/volunteer/teen-volunteer-programs",
+      "duration": "8 weeks (June – August)",
+      "whyApply": "Hands-on plant science and public engagement experience at one of the country's leading public gardens — strong fit for students interested in environmental science.",
+      "_source": "https://www.botanicgardens.org/join-give/volunteer/teen-volunteer-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CSU Global Business Academy",
+      "company": "Colorado State University — College of Business",
+      "location": {
+        "city": "Fort Collins",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business / Finance",
+      "deadline": "2027-04-15",
+      "description": "Ten-day, action-packed summer business program for high school students ages 15-18 enrolled for fall. Students learn how to use business to create a better world while collaborating with peers from around the globe. Hosted by the CSU College of Business in Fort Collins.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Entrepreneurship",
+        "International Business"
+      ],
+      "tags": [
+        "high-school",
+        "business",
+        "finance",
+        "international",
+        "CSU"
+      ],
+      "url": "https://k12summer.colostate.edu/academic-programs/",
+      "duration": "10 days",
+      "whyApply": "Short, intensive immersion in business and finance with a global lens — strong fit for students considering business school.",
+      "_source": "https://k12summer.colostate.edu/academic-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "GoGetMath@CSU",
+      "company": "Colorado State University — Department of Mathematics",
+      "location": {
+        "city": "Fort Collins",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Mathematics",
+      "deadline": "2027-05-01",
+      "description": "Free five-day, non-residential summer math program for Colorado high school students entering grades 10-12. Held in the Department of Mathematics on the CSU Fort Collins campus. Students engage with university faculty in advanced math topics beyond the standard high school curriculum.",
+      "majors": [
+        "Mathematics",
+        "Applied Mathematics",
+        "Statistics"
+      ],
+      "tags": [
+        "high-school",
+        "mathematics",
+        "free",
+        "CSU",
+        "non-residential"
+      ],
+      "url": "https://k12summer.colostate.edu/academic-programs/",
+      "duration": "5 days",
+      "whyApply": "Free advanced math program at a major research university — strong fit for math-inclined students looking beyond their high school curriculum.",
+      "_source": "https://k12summer.colostate.edu/academic-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Denver Art Museum Teen Studio",
+      "company": "Denver Art Museum",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts / Visual Art",
+      "deadline": "2027-05-15",
+      "description": "Museum-based art workshops at the Denver Art Museum where teens experiment with materials, tackle creative challenges, and develop their own artistic voice. Workshops blend gallery exploration with hands-on studio work, led by experienced educators and professional teaching artists. Three workshops are offered for ages 12-14 and ages 15-17 (July 13-31). Full-day studios cost $450 (members) / $500 (nonmembers); one full scholarship is offered per camp.",
+      "majors": [
+        "Visual Arts",
+        "Studio Art",
+        "Art History"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "arts",
+        "studio",
+        "museum",
+        "Denver"
+      ],
+      "url": "https://www.denverartmuseum.org/en/teen-studio",
+      "duration": "Multi-day workshops (July)",
+      "whyApply": "Studio art experience at one of the West's leading museums, with scholarship support — meaningful creative-portfolio building for teens.",
+      "_source": "https://www.denverartmuseum.org/en/teen-studio",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
