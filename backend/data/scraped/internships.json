@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 950,
+    "totalCount": 970,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 950,
-    "verifiedCount": 325,
+    "totalInternships": 970,
+    "verifiedCount": 345,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -10919,6 +10919,697 @@
       "duration": "Ongoing",
       "whyApply": "Explore curatorial and art education careers at San Antonio's premier fine arts museum with a renowned global collection.",
       "_source": "samuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Simons Summer Research Program",
+      "company": "Stony Brook University",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend provided",
+      "field": "Science",
+      "deadline": "2027-02-07",
+      "description": "Highly competitive 7-week summer research program for rising high school seniors to conduct hands-on research in STEM fields with Stony Brook faculty mentors. Students author a written research abstract and present a poster at the Simons Poster Symposium.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "stipend",
+        "prestigious",
+        "competitive",
+        "residential"
+      ],
+      "url": "https://www.stonybrook.edu/simons/",
+      "duration": "7 weeks (July-August)",
+      "whyApply": "One of the most prestigious high school research programs in the country. Simons alumni are highly competitive in Regeneron STS and ISEF.",
+      "_source": "stonybrook.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Garcia MRSEC Summer Research Program",
+      "company": "Stony Brook University",
+      "location": {
+        "city": "Stony Brook",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-02-15",
+      "description": "7-week summer research program in polymer science and engineering for high school students. Participants conduct original research projects, attend lectures, and present findings. Many projects lead to Regeneron STS and ISEF submissions.",
+      "majors": [
+        "Materials Science",
+        "Chemistry",
+        "Engineering",
+        "Polymer Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "engineering",
+        "materials",
+        "competitive"
+      ],
+      "url": "https://www.stonybrook.edu/commcms/garcia/summer_program/",
+      "duration": "7 weeks (July-August)",
+      "whyApply": "One of the best-pipelined programs for national science competitions. Strong track record in polymer and materials research.",
+      "_source": "stonybrook.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Science Honors Program (SHP)",
+      "company": "Columbia University",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-05-01",
+      "description": "Free Saturday science program for academically talented high school students from the NYC metro area. Offers advanced courses in mathematics, physics, chemistry, biology, computer science, and astronomy taught by Columbia faculty and graduate students.",
+      "majors": [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "academic-year",
+        "saturday",
+        "free",
+        "prestigious",
+        "academic"
+      ],
+      "url": "https://www.columbia.edu/cu/shp/",
+      "duration": "Academic year (Saturdays)",
+      "whyApply": "One of the oldest and most respected Saturday science programs in the country. Free tuition at an Ivy League institution.",
+      "_source": "columbia.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Partners for the Future",
+      "company": "Cold Spring Harbor Laboratory",
+      "location": {
+        "city": "Cold Spring Harbor",
+        "state": "NY"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-05-15",
+      "description": "Year-long research mentorship for Long Island high school seniors. Students work 10 hours/week in CSHL labs alongside world-class researchers on cutting-edge biology and genomics projects, culminating in a research symposium.",
+      "majors": [
+        "Biology",
+        "Genetics",
+        "Neuroscience",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "academic-year",
+        "mentorship",
+        "genomics",
+        "prestigious"
+      ],
+      "url": "https://www.cshl.edu/education/high-school-students/partners-for-the-future/",
+      "duration": "10 months (September-March)",
+      "whyApply": "Work at a Nobel Prize-winning research institution. Extraordinary opportunity for students passionate about genetics and molecular biology.",
+      "_source": "cshl.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "RockEDU Summer Science Research Program",
+      "company": "Rockefeller University",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$1,500 stipend",
+      "field": "Science",
+      "deadline": "2027-02-01",
+      "description": "Paid 7-week summer research experience for NYC public high school students. Students conduct biomedical research in Rockefeller labs alongside graduate students and postdocs, exploring topics from neuroscience to immunology.",
+      "majors": [
+        "Biology",
+        "Neuroscience",
+        "Biochemistry",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "paid",
+        "nyc-public",
+        "biomedical",
+        "competitive"
+      ],
+      "url": "https://www.rockedu.rockefeller.edu/opportunity/sssrp/",
+      "duration": "7 weeks (summer)",
+      "whyApply": "Paid research at one of the world's leading biomedical research institutions. Designed to increase access for NYC public school students.",
+      "_source": "rockefeller.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Legal Outreach Summer Law Institute",
+      "company": "Legal Outreach",
+      "location": {
+        "city": "Long Island City",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-04-15",
+      "description": "Intensive 5-week summer program for rising 9th graders introducing underserved NYC students to law school, moot court competitions, and legal writing. Students develop public speaking and analytical skills while exploring law careers.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "law",
+        "pipeline",
+        "underserved",
+        "moot-court"
+      ],
+      "url": "https://legaloutreach.org/our-programs/college-bound/summer-law-institute/",
+      "duration": "5 weeks (summer)",
+      "whyApply": "Rare opportunity for younger high school students to get serious legal exposure. Strong track record of students matriculating to top colleges and law schools.",
+      "_source": "legaloutreach.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "New York State Senate Student Programs",
+      "company": "New York State Senate",
+      "location": {
+        "city": "Albany",
+        "state": "NY"
+      },
+      "type": "semester",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Government",
+      "deadline": "2027-10-15",
+      "description": "Student Programs include undergraduate internships and the high school Senate Session Assistant program, placing students with NY State Senators to observe legislative sessions, conduct research, and assist with constituent services.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Government",
+        "Pre-Law"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "legislative",
+        "albany",
+        "state-senate"
+      ],
+      "url": "https://www.nysenate.gov/student-programs",
+      "duration": "Varies (session-based)",
+      "whyApply": "Direct exposure to state legislative process. Builds practical civics experience valued by top colleges and law schools.",
+      "_source": "nysenate.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Fed Challenge",
+      "company": "Federal Reserve Bank of New York",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "academic-year",
+      "paid": false,
+      "field": "Finance",
+      "deadline": "2027-09-30",
+      "description": "Team-based competition where high school students role-play as the Federal Open Market Committee, analyzing economic conditions and making monetary policy recommendations. Regional and national finals hosted at the NY Fed.",
+      "majors": [
+        "Economics",
+        "Finance",
+        "Business",
+        "Mathematics"
+      ],
+      "tags": [
+        "high-school",
+        "finance",
+        "economics",
+        "competition",
+        "team-based",
+        "federal-reserve"
+      ],
+      "url": "https://www.newyorkfed.org/outreach-and-education/high-school-fed-challenge",
+      "duration": "Fall semester (September-November)",
+      "whyApply": "Prestigious economics competition with direct exposure to Federal Reserve economists. Excellent for students interested in finance, economics, or public policy.",
+      "_source": "newyorkfed.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Ladders for Leaders",
+      "company": "NYC Department of Youth and Community Development",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid ($15-$20/hour)",
+      "field": "Various",
+      "deadline": "2027-01-31",
+      "description": "Competitive 6-week paid summer internship program for NYC high school and college students in fields including finance, law, healthcare, tech, media, and government. Students receive professional training and work at leading companies and nonprofits.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Computer Science",
+        "Pre-Law",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "competitive",
+        "nyc",
+        "professional"
+      ],
+      "url": "https://www.nyc.gov/site/dycd/services/jobs-internships/ladders-for-leaders.page",
+      "duration": "6 weeks (summer)",
+      "whyApply": "One of the most competitive paid internship programs for NYC students. Access to elite employers like JPMorgan, Google, and NYC government.",
+      "_source": "nyc.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Youth Employment Program (SYEP)",
+      "company": "NYC Department of Youth and Community Development",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Minimum wage or higher",
+      "field": "Various",
+      "deadline": "2027-03-31",
+      "description": "Nation's largest summer youth employment program. Provides paid summer jobs for NYC youth ages 14-24 across diverse industries including healthcare, tech, government, and nonprofits. Participants gain work experience and professional skills.",
+      "majors": [
+        "Various"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "summer",
+        "paid",
+        "nyc",
+        "entry-level"
+      ],
+      "url": "https://www.nyc.gov/site/dycd/services/jobs-internships/summer-youth-employment-program-syep.page",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Most accessible paid work experience for NYC teens. Open to students starting at age 14, including middle schoolers.",
+      "_source": "nyc.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Metropolitan Museum of Art Teen Programs",
+      "company": "The Metropolitan Museum of Art",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-09-01",
+      "description": "Free teen programs including Career Labs, Teen Advisory Groups, and summer workshops at the Met. Students explore museum careers, develop art-making skills, and engage with curators, conservators, and educators.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "Museum Studies"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "museum",
+        "year-round",
+        "free",
+        "career-exploration"
+      ],
+      "url": "https://www.metmuseum.org/events/programs/met-teens",
+      "duration": "Varies (year-round)",
+      "whyApply": "Direct access to one of the world's greatest art museums. Free programs designed for teens interested in art and museum careers.",
+      "_source": "metmuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Whitney Museum Youth Insights",
+      "company": "Whitney Museum of American Art",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "academic-year",
+      "paid": true,
+      "stipend": "Paid (hourly)",
+      "field": "Arts & Media",
+      "deadline": "2027-05-15",
+      "description": "Paid year-long program where NYC high school students work with Whitney curators and educators to research exhibitions, lead public programs, and create art-based projects exploring contemporary American art.",
+      "majors": [
+        "Art History",
+        "Studio Art",
+        "Contemporary Art"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "museum",
+        "paid",
+        "contemporary-art",
+        "nyc"
+      ],
+      "url": "https://whitney.org/education/teens",
+      "duration": "Academic year",
+      "whyApply": "Paid immersion in contemporary art with a landmark NYC museum. Develops public speaking, curatorial, and creative skills.",
+      "_source": "whitney.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "GOALS for Girls",
+      "company": "Intrepid Sea, Air & Space Museum",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-03-01",
+      "description": "Free STEM initiative introducing high school girls to science, technology, engineering, and mathematics through a two-week summer intensive at the Intrepid Museum. Features hands-on projects, mentorship, and site visits to STEM employers.",
+      "majors": [
+        "Engineering",
+        "Aerospace",
+        "Computer Science",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "stem",
+        "girls",
+        "free",
+        "aerospace"
+      ],
+      "url": "https://intrepidmuseum.org/goals-for-girls",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Dedicated program for girls in STEM at one of NYC's most iconic museums. Exposure to aerospace and engineering careers.",
+      "_source": "intrepidmuseum.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wildlife Conservation Society Project TRUE",
+      "company": "Bronx Zoo / Wildlife Conservation Society",
+      "location": {
+        "city": "Bronx",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid stipend",
+      "field": "Environmental Science",
+      "deadline": "2027-03-01",
+      "description": "Paid 6-week summer research program for NYC high school students studying urban wildlife ecology at the Bronx Zoo and across NYC parks. Students work alongside Fordham University graduate students to conduct original ecological research.",
+      "majors": [
+        "Biology",
+        "Ecology",
+        "Environmental Science",
+        "Zoology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "paid",
+        "conservation",
+        "urban-ecology"
+      ],
+      "url": "https://www.wcs.org/our-work/project-true",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Combines wildlife conservation with hands-on urban ecology research in NYC's largest parks. Paid opportunity at a world-renowned conservation organization.",
+      "_source": "wcs.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Brooklyn Botanic Garden Garden Apprentice Program",
+      "company": "Brooklyn Botanic Garden",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid (hourly)",
+      "field": "Environmental Science",
+      "deadline": "2027-04-01",
+      "description": "Multi-year paid apprenticeship for NYC high school students to learn urban agriculture, horticulture, and environmental education. Apprentices work in BBG's Children's Garden teaching younger kids and tending crops.",
+      "majors": [
+        "Environmental Science",
+        "Horticulture",
+        "Agriculture",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "year-round",
+        "paid",
+        "agriculture",
+        "environmental",
+        "teaching"
+      ],
+      "url": "https://www.bbg.org/learn/apprentice_program",
+      "duration": "Up to 4 years (multi-year apprenticeship)",
+      "whyApply": "Rare multi-year paid apprenticeship combining urban agriculture, education, and environmental stewardship. Strong mentorship pipeline.",
+      "_source": "bbg.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "New York Botanical Garden Explainer Program",
+      "company": "New York Botanical Garden",
+      "location": {
+        "city": "Bronx",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Paid (hourly)",
+      "field": "Science",
+      "deadline": "2027-03-31",
+      "description": "Paid teen docent program at the New York Botanical Garden where high schoolers become science communicators, leading tours and educational programs about plants, ecology, and botany for visitors of all ages.",
+      "majors": [
+        "Biology",
+        "Botany",
+        "Environmental Science",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "year-round",
+        "botany",
+        "science-communication",
+        "bronx"
+      ],
+      "url": "https://www.nybg.org/learn/children-and-families/explainer-program/",
+      "duration": "Year-round (weekends)",
+      "whyApply": "Develops strong science communication skills in a botanical research setting. Paid position at one of the world's leading plant science institutions.",
+      "_source": "nybg.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Feinstein Institutes Medical Research Summer Program",
+      "company": "Feinstein Institutes for Medical Research (Northwell Health)",
+      "location": {
+        "city": "Manhasset",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-02-15",
+      "description": "Competitive 8-week summer program placing high school and college students in Feinstein Institutes laboratories to conduct original biomedical research. Includes weekly scientific seminars and a final research symposium.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Biomedical Engineering",
+        "Chemistry"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "biomedical",
+        "hospital",
+        "long-island"
+      ],
+      "url": "https://feinstein.northwell.edu/institutes-researchers/our-researchers/high-school-summer-program",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Research at Northwell Health's flagship research institute, home to cutting-edge work in bioelectronic medicine and immunology.",
+      "_source": "feinstein.northwell.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Mount Sinai Center for Excellence in Youth Education (CEYE)",
+      "company": "Icahn School of Medicine at Mount Sinai",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "year-round",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Healthcare",
+      "deadline": "2027-03-15",
+      "description": "Year-round STEM and biomedical mentorship program for NYC public school students, including a 7-week paid summer research internship in Mount Sinai labs. Students work on projects spanning cancer biology, neuroscience, and public health.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Public Health",
+        "Biochemistry"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "year-round",
+        "paid",
+        "nyc-public",
+        "biomedical"
+      ],
+      "url": "https://icahn.mssm.edu/about/ceye",
+      "duration": "Year-round + 7-week summer intensive",
+      "whyApply": "Long-standing pipeline program designed to increase underrepresented students in STEM and medicine. Paid, mentored research at a top medical school.",
+      "_source": "mssm.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Radio Rookies",
+      "company": "WNYC",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid stipend",
+      "field": "Arts & Media",
+      "deadline": "2027-03-15",
+      "description": "Immersive paid audio journalism workshop for NYC teens. Participants learn to report, record, edit, and produce their own first-person radio documentaries that air on WNYC and NPR stations nationwide.",
+      "majors": [
+        "Journalism",
+        "Communications",
+        "Audio Production",
+        "Media Studies"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "paid",
+        "journalism",
+        "radio",
+        "npr",
+        "nyc"
+      ],
+      "url": "https://www.wnyc.org/shows/rookies",
+      "duration": "Varies (project-based)",
+      "whyApply": "Produce stories that actually air on NPR. Exceptional experience for students interested in journalism or audio storytelling.",
+      "_source": "wnyc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "The School of The New York Times Career Discovery Programs",
+      "company": "The School of The New York Times",
+      "location": {
+        "city": "New York",
+        "state": "NY"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-04-01",
+      "description": "Pre-college summer academy where high school students explore journalism, media, business, and policy careers with New York Times journalists, editors, and industry experts through immersive courses and site visits.",
+      "majors": [
+        "Journalism",
+        "Communications",
+        "Business",
+        "Political Science"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "journalism",
+        "pre-college",
+        "nytimes",
+        "career-exploration"
+      ],
+      "url": "https://www.nytimes.edu/",
+      "duration": "1-2 weeks (summer)",
+      "whyApply": "Direct mentorship from New York Times journalists and media professionals. Strong signal for students pursuing journalism or media careers.",
+      "_source": "nytimes.edu",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"

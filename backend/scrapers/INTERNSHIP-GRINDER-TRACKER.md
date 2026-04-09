@@ -3,12 +3,12 @@
 ## COMPLETED
 - WA: 80 verified (done in prior sessions)
 - CA: 150 verified, 337 total in DB (target: 150+ ✅)
+- TX: 102 verified, 102 total in DB (target: 100 ✅)
 
 ## IN PROGRESS
-- TX (target: 100, current: ~80 verified, 102 total in DB)
+- NY (target: 100, current: 27 verified, 123 total in DB)
 
 ## QUEUE (in order)
-- NY (target: 100, current: 7 verified)
 - IL (target: 80)
 - FL (target: 80)
 - PA (target: 80)
@@ -38,3 +38,4 @@
 - 2026-04-09 run 10: Added 20 verified TX entries (batch 4). Fields: Science (5), Healthcare (3), Arts & Media (3), Environmental Science (3), Engineering (1), Law (1), Finance (1), Business (1), Nonprofit (1), Technology (1). Programs: NASA HAS (Johnson Space Center), MD Anderson HS Summer Program, Baylor SMS, UT Southwestern STARS, UT Austin HSRA, Texas Children's Junior Volunteer, DMA Teen Advisory Council, Houston Zoo Crew Explorers, Perot ConnecTEEN, TX HS Mock Trial (Dallas Bar), JA Finance Park Dallas, MFAH hang@MFAH, Children's Health Dallas VolunTEEN, TAMU Camp SOAR, Alley Conservatory, Audubon TLC, San Antonio Zoo Wildlife Allies, Houston Food Bank Student Heroes, Rice Digital Health Young Scholars, SMU Subiendo Academy. ~3 overlaps with run 9 merged. DB total TX: 85. Total verified in DB: 308.
 - 2026-04-09 run 9: Added 20 verified TX entries (batch 3). Fields: Engineering (4), Science (5), Healthcare (1), Environmental Science (2), Law (1), Finance (2), Business (1), Government (1), Arts & Media (1), Nonprofit (1), Various (1). Programs: NASA HAS Johnson Space Center, Baylor SMS Summer Research, SwRI YES Program (San Antonio), Memorial Hermann TMC, Houston Zoo Zoo Crew Explorers, Dallas Zoo Zoo Crew, Perot ConnecTEEN, Dallas Bar SLIP, Dallas Fed High School Fed Challenge, JA Finance Park Southeast TX, UT Dallas NanoExplorers, Welch Summer Scholar Program, TAMU Youth Adventure Program, Hire Houston Youth, Rice Lilie Entrepreneurship, SMU Lyle Engineering Design Experience, Austin Film Festival YFP, Fort Worth Museum of Science & History Ambassadors, Houston Food Bank Teen Leadership, Space Center Houston Space Center U. Total verified TX: 45. DB total TX: 68.
 - 2026-04-09 run 11: Added 17 verified TX entries (batch 5). Fields: Science (4: Clark Scholars TTU, DoSeum, Witte, ExxonMobil BHSSC), Environmental Science (3: TPWD, Fort Worth Zoo, Austin Nature & Science Center), Arts & Media (4: Amon Carter, Bullock TX History, HGOco Houston Opera, SAMA San Antonio), Government (2: TX Senate Page, Bush Presidential Library), Agriculture (1: Texas 4-H), Technology (1: Code2College Austin), Healthcare (1: Dell Children's Austin), Business (1: UT McCombs Diversity & Leadership). Focused on non-duplicate, underrepresented fields and geography (Austin, San Antonio, Fort Worth, College Station, Lubbock, statewide). DB total TX: 102 ✅ target hit. Verified total: 325.
+- 2026-04-09 run 12: Added 20 verified NY entries (batch 2). Fields: Science (5: Simons/Stony Brook, Garcia MRSEC, Columbia SHP, CSHL Partners for the Future, Rockefeller RockEDU, NYBG Explainer), Law (1: Legal Outreach SLI), Government (1: NY State Senate), Finance (1: NY Fed HS Challenge), Various (2: Ladders for Leaders, SYEP), Arts & Media (4: Met Teen, Whitney Youth Insights, Radio Rookies, School of NYT), Engineering (1: Intrepid GOALS for Girls), Environmental Science (2: WCS Project TRUE, BBG Apprentice), Healthcare (2: Feinstein/Northwell, Mount Sinai CEYE). Focused on underrepresented fields first (Finance, Law, Government) and geographic spread (NYC, Stony Brook, Cold Spring Harbor, Albany, Bronx, Brooklyn, Manhasset). Total verified NY: 27. DB total NY: 123.
