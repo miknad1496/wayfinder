@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 803,
+    "totalCount": 823,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 803,
-    "verifiedCount": 178,
+    "totalInternships": 823,
+    "verifiedCount": 198,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -6058,6 +6058,656 @@
       "duration": "6 weeks (summer)",
       "whyApply": "Paid internship at a major tech company — explore business, tech, and financial literacy at Meta HQ.",
       "_source": "metacareers.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Children's Hospital Los Angeles Summer Volunteer Program",
+      "company": "Children's Hospital Los Angeles",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-02-02",
+      "description": "7-week summer volunteer program where high school students complete 112 service hours at one of the nation's top pediatric hospitals. Volunteers gain direct exposure to hospital operations, patient care environments, and healthcare career paths.",
+      "majors": [
+        "Biology",
+        "Healthcare",
+        "Nursing",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "summer",
+        "healthcare"
+      ],
+      "url": "https://www.chla.org/volunteering-hospital/high-school-summer-volunteer-program",
+      "duration": "7 weeks (June–August)",
+      "whyApply": "Gain 112 hours of hands-on hospital experience at a nationally ranked children's hospital.",
+      "_source": "chla.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Cedars-Sinai High School Volunteer Program",
+      "company": "Cedars-Sinai Medical Center",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-05-01",
+      "description": "Year-round volunteer program for high school students interested in healthcare careers. Students assist clinical and administrative departments, gaining firsthand experience in a world-class hospital environment.",
+      "majors": [
+        "Healthcare",
+        "Biology",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "year-round"
+      ],
+      "url": "https://www.cedars-sinai.org/volunteer-services/high-school-students.html",
+      "duration": "Year-round (flexible scheduling)",
+      "whyApply": "Volunteer at one of the top hospitals in Los Angeles and explore diverse healthcare careers.",
+      "_source": "cedars-sinai.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UCLA Health High School Volunteer Program",
+      "company": "UCLA Health",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-06-01",
+      "description": "High school students volunteer in Patient Transport and other departments at UCLA Medical Center, assisting with patient discharges, transfers, and errands. Shifts available seven days a week between 8 AM and 8 PM.",
+      "majors": [
+        "Healthcare",
+        "Biology",
+        "Pre-Med",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "year-round",
+        "flexible"
+      ],
+      "url": "https://www.uclahealth.org/volunteer/westwood/student-programs/high-school-students",
+      "duration": "Year-round (flexible shifts)",
+      "whyApply": "Volunteer at a top-ranked academic medical center with flexible scheduling throughout the year.",
+      "_source": "uclahealth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Torrance Memorial High School Volunteer Program",
+      "company": "Torrance Memorial Medical Center",
+      "location": {
+        "city": "Torrance",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-06-01",
+      "description": "High school students ages 14-18 enrolled in 9th–11th grade volunteer in Escort Services, assisting with patient and staff errands throughout the hospital. Great introduction to hospital operations and healthcare careers.",
+      "majors": [
+        "Healthcare",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "hospital",
+        "year-round"
+      ],
+      "url": "https://www.torrancememorial.org/volunteer/opportunities/high-school-program/",
+      "duration": "Year-round",
+      "whyApply": "Hands-on hospital volunteering open to students as young as 14 — great first healthcare experience.",
+      "_source": "torrancememorial.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "CAMP CHLA — Health Care Career Exploration",
+      "company": "Children's Hospital Los Angeles",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-03-01",
+      "description": "Intensive health care career exploration program at Children's Hospital Los Angeles. High school students shadow medical professionals, participate in clinical simulations, and learn about diverse health career pathways in a pediatric hospital setting.",
+      "majors": [
+        "Healthcare",
+        "Biology",
+        "Pre-Med",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "career-exploration",
+        "hospital",
+        "summer"
+      ],
+      "url": "https://www.chla.org/camp-chla-health-care-career-exploration",
+      "duration": "1 week (summer)",
+      "whyApply": "Immersive career exploration at a nationally ranked pediatric hospital — great for aspiring healthcare professionals.",
+      "_source": "chla.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UC Berkeley embARC Summer Design Academy",
+      "company": "UC Berkeley College of Environmental Design",
+      "location": {
+        "city": "Berkeley",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-04-01",
+      "description": "Competitive summer design academy where high school students learn architecture, sustainable city planning, and urban design. Includes design assignments, 1-on-1 faculty reviews, field trips, and a design/build project for a community nonprofit.",
+      "majors": [
+        "Architecture",
+        "Urban Planning",
+        "Design",
+        "Environmental Design"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "architecture",
+        "design",
+        "competitive"
+      ],
+      "url": "https://ced.berkeley.edu/academics/summer-programs/embarc",
+      "duration": "3 weeks (summer)",
+      "whyApply": "Study architecture and urban design at UC Berkeley with faculty mentorship and real community impact projects.",
+      "_source": "berkeley.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SCI-Arc High School Summer Program",
+      "company": "Southern California Institute of Architecture",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-06-05",
+      "description": "High school students explore architecture and design thinking at SCI-Arc's LA campus. The program introduces students to architectural design, fabrication, and creative problem-solving through hands-on studio projects.",
+      "majors": [
+        "Architecture",
+        "Design",
+        "Art",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "architecture",
+        "design",
+        "rolling-admission"
+      ],
+      "url": "https://www.sciarc.edu/academics/summer-programs",
+      "duration": "2–4 weeks (summer)",
+      "whyApply": "Study architecture at one of the world's most innovative design schools in the heart of LA.",
+      "_source": "sciarc.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "USC Exploration of Architecture Summer Program",
+      "company": "University of Southern California",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-04-15",
+      "description": "Intensive summer program where high school students explore architecture through studio workshops, lectures, and field trips across Los Angeles. Students develop design portfolios and learn fundamentals of architectural practice.",
+      "majors": [
+        "Architecture",
+        "Design",
+        "Urban Planning"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "architecture",
+        "portfolio"
+      ],
+      "url": "https://arch.usc.edu/programs/summer",
+      "duration": "4 weeks (June–July)",
+      "whyApply": "Build an architecture portfolio at USC while exploring LA's iconic buildings and urban landscapes.",
+      "_source": "usc.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Temecula Youth Entrepreneur Program",
+      "company": "City of Temecula",
+      "location": {
+        "city": "Temecula",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-05-01",
+      "description": "Two-week summer entrepreneurship program for high school students ages 14–18 in Inland Southern California. Students learn business planning, marketing, financial literacy, and pitch presentation skills from local business leaders.",
+      "majors": [
+        "Business",
+        "Entrepreneurship",
+        "Marketing",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "entrepreneurship",
+        "business",
+        "free"
+      ],
+      "url": "https://temeculaca.gov/1181/Youth-Entrepreneur-Program",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Free city-run entrepreneurship program — learn to build a business plan and pitch to real investors.",
+      "_source": "temeculaca.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "San Diego Symphony High School Ambassadors",
+      "company": "San Diego Symphony / Jacobs Music Center",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$17.75/hour",
+      "field": "Arts & Media",
+      "deadline": "2027-04-01",
+      "description": "Paid two-week summer internship combining professional development training with on-the-job experience at the San Diego Symphony. Ambassadors ages 16–18 earn $17.75/hour and receive complimentary concert tickets and networking opportunities.",
+      "majors": [
+        "Music",
+        "Arts Management",
+        "Marketing",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "summer",
+        "music"
+      ],
+      "url": "https://www.sandiegosymphony.org/learning-plus-community/high-school-ambassadors/",
+      "duration": "2 weeks (summer)",
+      "whyApply": "Paid arts internship at a major symphony — build professional skills while experiencing the performing arts industry.",
+      "_source": "sandiegosymphony.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SDSC Research Experience for High School Students (REHS)",
+      "company": "San Diego Supercomputer Center / UC San Diego",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-03-15",
+      "description": "8-week summer volunteer research internship at the San Diego Supercomputer Center where high school students work alongside scientists on computational research projects in data science, machine learning, and high-performance computing.",
+      "majors": [
+        "Computer Science",
+        "Data Science",
+        "Mathematics",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "summer",
+        "computing",
+        "competitive"
+      ],
+      "url": "https://education.sdsc.edu/studenttech/rehs/",
+      "duration": "8 weeks (June–July)",
+      "whyApply": "Work on real computational research at one of the nation's premier supercomputing centers.",
+      "_source": "sdsc.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Cal Poly SLO Architecture Summer Career Workshop",
+      "company": "California Polytechnic State University",
+      "location": {
+        "city": "San Luis Obispo",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "4-week summer architecture and environmental design workshop at Cal Poly SLO. High school students explore architectural design, structural engineering concepts, and sustainable building practices through hands-on studio projects.",
+      "majors": [
+        "Architecture",
+        "Engineering",
+        "Environmental Design"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "architecture",
+        "engineering",
+        "residential"
+      ],
+      "url": "https://www.caed.calpoly.edu/summer",
+      "duration": "4 weeks (June–July)",
+      "whyApply": "Immersive architecture workshop at Cal Poly's renowned learn-by-doing program.",
+      "_source": "calpoly.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Fresno EOC Youth Summer Employment Program",
+      "company": "Fresno Economic Opportunities Commission",
+      "location": {
+        "city": "Fresno",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Various",
+      "deadline": "2027-04-15",
+      "description": "Paid summer internship and employment program placing Fresno-area high school students in local businesses, nonprofits, and government agencies. Students gain real-world work experience while earning wages and developing professional skills.",
+      "majors": [
+        "General",
+        "Business",
+        "Government",
+        "Nonprofit"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "central-valley",
+        "employment"
+      ],
+      "url": "https://fresnoeoc.org/fresno-eoc-employment-training-services-provides-paid-summer-internships/",
+      "duration": "6–8 weeks (summer)",
+      "whyApply": "Paid summer employment in Fresno's Central Valley — great for students seeking their first professional experience.",
+      "_source": "fresnoeoc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Central California Health Career Connection Internship",
+      "company": "Health Career Connection",
+      "location": {
+        "city": "Fresno",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2027-02-15",
+      "description": "Paid summer health internship placing students in healthcare organizations throughout the Central Valley including Fresno, Stockton, Madera, Merced, and Bakersfield. Students explore health careers through hands-on clinical and administrative placements.",
+      "majors": [
+        "Healthcare",
+        "Public Health",
+        "Biology",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "summer",
+        "central-valley"
+      ],
+      "url": "https://healthcareerconnection.org/regions/central-california-valley/",
+      "duration": "8–10 weeks (summer)",
+      "whyApply": "Paid health internship in the Central Valley — excellent pipeline to healthcare careers in underserved communities.",
+      "_source": "healthcareerconnection.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "UC Irvine Summer Healthcare Experience Program",
+      "company": "UC Irvine Health",
+      "location": {
+        "city": "Irvine",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-02-27",
+      "description": "One-week intensive healthcare experience for high school students ages 16–18 entering junior or senior year. Students participate in shadowing, ultrasound workshops, simulator training, and learn about health career pathways at UC Irvine Medical Center.",
+      "majors": [
+        "Healthcare",
+        "Biology",
+        "Pre-Med",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "summer",
+        "healthcare",
+        "orange-county"
+      ],
+      "url": "https://www.ucihealth.org/volunteer/high-school-students",
+      "duration": "1 week (July)",
+      "whyApply": "Hands-on medical simulations and shadowing at a UC medical center — ideal for aspiring doctors and nurses.",
+      "_source": "ucihealth.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SFPUC YouthWorks Summer Internship",
+      "company": "San Francisco Public Utilities Commission",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Government",
+      "deadline": "2027-04-01",
+      "description": "Paid summer internship for SF high school students at the San Francisco Public Utilities Commission. Interns work alongside city employees in departments including engineering, environmental science, communications, and public policy.",
+      "majors": [
+        "Government",
+        "Environmental Science",
+        "Engineering",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "government",
+        "summer",
+        "city-agency"
+      ],
+      "url": "https://www.sfpuc.gov/about-us/careers-sfpuc/internships-and-youth-employment",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Paid city government internship combining environmental science with public service in San Francisco.",
+      "_source": "sfpuc.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "SF Public Works Youth Outreach — Architecture Program",
+      "company": "San Francisco Department of Public Works",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2027-04-15",
+      "description": "Paid summer program where high school students learn architecture and landscape architecture through hands-on projects with SF Public Works professionals. Students explore urban design, public space planning, and civic architecture.",
+      "majors": [
+        "Architecture",
+        "Landscape Architecture",
+        "Urban Planning",
+        "Design"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "architecture",
+        "summer",
+        "government"
+      ],
+      "url": "https://sfpublicworks.org/get_involved/youth-outreach-program-2024-architecture-and-landscape-architecture",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Paid architecture program with real city projects — learn how public spaces are designed and built.",
+      "_source": "sfpublicworks.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "CA Speaker of the Assembly Student Internship Program",
+      "company": "California State Assembly",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-05-01",
+      "description": "High school and college students intern in California State Assembly offices in Sacramento or district offices statewide. Interns assist with constituent services, legislative research, policy analysis, and community outreach.",
+      "majors": [
+        "Government",
+        "Political Science",
+        "Public Policy",
+        "Law"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "legislative",
+        "semester",
+        "year-round"
+      ],
+      "url": "https://speaker.asmdc.org/student-internship-program",
+      "duration": "Semester-long or summer",
+      "whyApply": "Work directly with California state legislators on real policy issues and constituent services.",
+      "_source": "asmdc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LegiSchool Real World Civics Internship",
+      "company": "Sacramento State / Center for California Studies",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-04-01",
+      "description": "High school sophomores, juniors, and seniors work with the California State Legislature through the LegiSchool Project. Students engage in public policy discussions, meet state leaders, and gain direct experience with the legislative process.",
+      "majors": [
+        "Government",
+        "Political Science",
+        "History",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "legislative",
+        "civics"
+      ],
+      "url": "https://www.csus.edu/center/center-california-studies/legischool-project.html",
+      "duration": "Semester (flexible)",
+      "whyApply": "Engage directly with California's state government and learn how public policy is made.",
+      "_source": "csus.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LA County AJCC Youth Internship & Apprenticeship Program",
+      "company": "Los Angeles County AJCC",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Various",
+      "deadline": "2027-05-01",
+      "description": "LA County's America's Job Center of California connects youth ages 16–24 with paid internship and apprenticeship placements across diverse industries including manufacturing, technology, healthcare, and government services.",
+      "majors": [
+        "General",
+        "Manufacturing",
+        "Technology",
+        "Healthcare"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "summer",
+        "apprenticeship",
+        "workforce"
+      ],
+      "url": "https://www.ajcc.lacounty.gov/job-seekers/general-placement-services/internship-apprenticeship-programs",
+      "duration": "6–12 weeks (summer or year-round)",
+      "whyApply": "Paid workforce development program connecting LA County youth with real jobs across multiple industries.",
+      "_source": "lacounty.gov",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
