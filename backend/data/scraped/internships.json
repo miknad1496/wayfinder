@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1326,
+    "totalCount": 1337,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1326,
-    "verifiedCount": 701,
+    "totalInternships": 1337,
+    "verifiedCount": 712,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -23435,6 +23435,375 @@
       "duration": "Ongoing (minimum 4 hrs/month)",
       "whyApply": "Accessible hands-on science engagement at NC's largest natural sciences museum, open to younger teens.",
       "_source": "https://naturalsciences.org/learn/teens",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "UNCSA Summer Intensives",
+      "company": "University of North Carolina School of the Arts",
+      "location": {
+        "city": "Winston-Salem",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts",
+      "deadline": "2027-03-01",
+      "description": "Pre-professional summer intensives at UNCSA across dance, drama, filmmaking, music, and visual arts. Programs range from one to four weeks; high school students live on campus and study with conservatory faculty. Disciplines include classical and contemporary ballet, acting, screenwriting, classical music, jazz, and visual arts portfolio development.",
+      "majors": [
+        "Dance",
+        "Drama",
+        "Film",
+        "Music",
+        "Visual Arts"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "arts",
+        "residential",
+        "conservatory",
+        "selective"
+      ],
+      "url": "https://www.uncsa.edu/summer/index.aspx",
+      "duration": "1-4 weeks",
+      "whyApply": "Conservatory-level pre-professional arts training at the state arts conservatory — strong pipeline for arts college applications.",
+      "_source": "https://www.uncsa.edu/summer/index.aspx",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "ACS Project SEED at UNC Charlotte",
+      "company": "American Chemical Society / UNC Charlotte Department of Chemistry",
+      "location": {
+        "city": "Charlotte",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$4,000 stipend",
+      "field": "Chemistry / Research",
+      "deadline": "2027-03-01",
+      "description": "8-week paid summer chemistry research experience for economically disadvantaged rising juniors and seniors who have completed at least one chemistry course. Students work side-by-side with UNC Charlotte chemistry faculty conducting hands-on research in synthetic, analytical, biochemical, or materials chemistry. Run by the NC Section of ACS in partnership with UNCC.",
+      "majors": [
+        "Chemistry",
+        "Biochemistry",
+        "Materials Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "paid",
+        "chemistry",
+        "STEM",
+        "underrepresented",
+        "competitive"
+      ],
+      "url": "https://pages.charlotte.edu/walter-research-group/acs-project-seed/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Paid hands-on chemistry research at a major research university, with national ACS recognition and networking with practicing chemists.",
+      "_source": "https://pages.charlotte.edu/walter-research-group/acs-project-seed/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NCMA Teen Arts Council",
+      "company": "North Carolina Museum of Art",
+      "location": {
+        "city": "Raleigh",
+        "state": "NC"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Arts / Museum Studies",
+      "deadline": "2027-09-30",
+      "description": "Year-long teen leadership council that meets Thursday afternoons (4:30-6:30 pm) at the NC Museum of Art from September through June. Council members plan teen takeovers and exhibitions, attend artist workshops, learn about museum careers, and design pop-up art activities and juried exhibitions. Free, with applications opening in summer.",
+      "majors": [
+        "Art",
+        "Art History",
+        "Museum Studies",
+        "Curation"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "leadership",
+        "free",
+        "year-round",
+        "Raleigh"
+      ],
+      "url": "https://learn.ncartmuseum.org/programs/teen/",
+      "duration": "Academic year (Sept-June)",
+      "whyApply": "Real curatorial and program-design experience at the state's flagship art museum — a strong springboard for arts and museum studies college applications.",
+      "_source": "https://learn.ncartmuseum.org/programs/teen/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wake Forest Pre-College Medicine Institute",
+      "company": "Wake Forest University / Wake Forest School of Medicine",
+      "location": {
+        "city": "Winston-Salem",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine / Pre-Health",
+      "deadline": "2027-04-15",
+      "description": "Residential pre-college summer immersion for high school students exploring careers in medicine. Students gain hands-on exposure across multiple medical disciplines, work with Wake Forest School of Medicine faculty and clinicians, simulate patient care scenarios, and learn about the medical school admissions pathway. On-campus residential experience.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Public Health"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "medicine",
+        "pre-college",
+        "selective"
+      ],
+      "url": "https://immersion.summer.wfu.edu/on-campus-institutes/medicine-institute/",
+      "duration": "1-2 weeks",
+      "whyApply": "Direct exposure to clinical and academic medicine at a top-tier medical school — valuable for students considering a pre-med pathway.",
+      "_source": "https://immersion.summer.wfu.edu/on-campus-institutes/medicine-institute/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "WFIRM Summer Research Exposure Program (SREP)",
+      "company": "Wake Forest Institute for Regenerative Medicine",
+      "location": {
+        "city": "Winston-Salem",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Regenerative Medicine / Research",
+      "deadline": "2027-03-15",
+      "description": "4-week summer research exposure program for North Carolina high school students ages 16-18. Provides educational and hands-on, mentored research/shadowing experiences with WFIRM faculty researchers and their teams in tissue engineering, organ regeneration, biomaterials, and translational medicine. NC residents only.",
+      "majors": [
+        "Biology",
+        "Biomedical Engineering",
+        "Bioengineering",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "biomedical",
+        "regenerative-medicine",
+        "NC-residents"
+      ],
+      "url": "https://school.wakehealth.edu/research/institutes-and-centers/wake-forest-institute-for-regenerative-medicine/education-and-training/high-school-summer-research-exposure-program",
+      "duration": "4 weeks (summer)",
+      "whyApply": "Direct mentored exposure to one of the world's leading regenerative medicine institutes — rare opportunity for HS students to see translational tissue engineering up close.",
+      "_source": "https://school.wakehealth.edu/research/institutes-and-centers/wake-forest-institute-for-regenerative-medicine/education-and-training/high-school-summer-research-exposure-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wake Forest Medical Scholars Summer Experience",
+      "company": "Wake Forest University School of Medicine",
+      "location": {
+        "city": "Winston-Salem",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine / Pre-Health",
+      "deadline": "2027-03-31",
+      "description": "Summer experience for underrepresented and disadvantaged 11th and 12th grade students with a demonstrated interest in medical careers and academic potential. Recruits, educates, and prepares scholars for the medical school pipeline through clinical exposure, mentorship from medical students and physicians, and pre-med academic enrichment. Cost-free for accepted students.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Health Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "free",
+        "underrepresented",
+        "diversity-pipeline"
+      ],
+      "url": "https://school.wakehealth.edu/education-and-training/educational-excellence/diversity-and-inclusion/programs-and-partnerships/high-school-programs/medical-scholars-summer-program",
+      "duration": "Summer (multi-week)",
+      "whyApply": "Free, structured pipeline program for underrepresented students into medicine — direct mentorship from Wake Forest physicians and med students.",
+      "_source": "https://school.wakehealth.edu/education-and-training/educational-excellence/diversity-and-inclusion/programs-and-partnerships/high-school-programs/medical-scholars-summer-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "WFSOM Center for Precision Medicine Summer Intern Program",
+      "company": "Wake Forest School of Medicine — Center for Precision Medicine",
+      "location": {
+        "city": "Winston-Salem",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Precision Medicine / Genomics Research",
+      "deadline": "2027-03-15",
+      "description": "Summer internship program at the WFSOM Center for Precision Medicine for students interested in genomics, computational biology, and precision medicine research. Interns work alongside faculty on active research projects spanning bioinformatics, pharmacogenomics, and translational genomic medicine.",
+      "majors": [
+        "Biology",
+        "Bioinformatics",
+        "Computational Biology",
+        "Genetics",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "genomics",
+        "precision-medicine",
+        "computational"
+      ],
+      "url": "https://www.wfcenterforprecisionmedicine.org/summer-intern-program",
+      "duration": "Summer",
+      "whyApply": "Hands-on exposure to precision medicine and genomic research — an emerging high-impact field combining biology, statistics, and computing.",
+      "_source": "https://www.wfcenterforprecisionmedicine.org/summer-intern-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Discovery Place Career Launchpad",
+      "company": "Discovery Place Science Museum",
+      "location": {
+        "city": "Charlotte",
+        "state": "NC"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "STEM / Youth Development",
+      "deadline": "2027-08-31",
+      "description": "Multi-year youth development program at Discovery Place Science for Charlotte teens. Participants gain leadership skills, academic support, professional mentorship, and career exposure across STEM disciplines and museum operations. Includes paid internship opportunities for advanced cohort members. Contact YouthDevelopment@discoveryplace.org for application info.",
+      "majors": [
+        "STEM",
+        "Science Education",
+        "Youth Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "leadership",
+        "STEM",
+        "mentorship",
+        "Charlotte"
+      ],
+      "url": "https://discoveryplace.org/learn/educational-programs/youth-development/",
+      "duration": "Multi-year (year-round)",
+      "whyApply": "Long-term mentorship and leadership pipeline at a major science museum — strong fit for Charlotte-area teens interested in STEM careers and informal science education.",
+      "_source": "https://discoveryplace.org/learn/educational-programs/youth-development/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Explore@UNC",
+      "company": "UNC Chapel Hill Summer School",
+      "location": {
+        "city": "Chapel Hill",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary / Pre-College",
+      "deadline": "2027-05-01",
+      "description": "One-week, on-campus pre-college program at UNC Chapel Hill for rising high school seniors. Over five days, students explore two academic majors as focused two-day tracks led by Carolina faculty and near-peer mentors. Tracks include biology, anthropology, music, political science, sports administration, archaeology, public policy, and classics. Need-based fee assistance available for SNAP/NSLP-eligible students.",
+      "majors": [
+        "Biology",
+        "Anthropology",
+        "Music",
+        "Political Science",
+        "Public Policy",
+        "Classics"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "multidisciplinary",
+        "need-based-aid",
+        "Chapel-Hill"
+      ],
+      "url": "https://summer.unc.edu/exploreunc/",
+      "duration": "1 week",
+      "whyApply": "Low-cost (with aid) on-campus exposure to two academic majors at a top public university — useful for students still narrowing their college focus.",
+      "_source": "https://summer.unc.edu/exploreunc/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Duke Summer STEM Academy",
+      "company": "Duke Thomas Lord Department of Mechanical Engineering & Materials Science",
+      "location": {
+        "city": "Durham",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering / STEM",
+      "deadline": "2027-04-15",
+      "description": "Three-week intensive engineering program for rising juniors and seniors at high schools around Durham and the Research Triangle Region. Students learn computer-aided drafting (CAD), advanced manufacturing techniques (3D printing, laser cutting, microcontroller programming, electronics, shop tools), project management, product design, and technical communication. Students develop a digital portfolio of their work.",
+      "majors": [
+        "Mechanical Engineering",
+        "Materials Science",
+        "Product Design",
+        "Manufacturing"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "STEM",
+        "hands-on",
+        "Triangle",
+        "portfolio"
+      ],
+      "url": "https://sites.duke.edu/summerstem/",
+      "duration": "3 weeks",
+      "whyApply": "Hands-on engineering design and fabrication experience at Duke's Pratt School — designed to build a tech talent pipeline for the Triangle region.",
+      "_source": "https://sites.duke.edu/summerstem/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Duke Research in Engineering Program (DukeREP)",
+      "company": "Duke University — Department of Biomedical Engineering",
+      "location": {
+        "city": "Durham",
+        "state": "NC"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Biomedical Engineering / Research",
+      "deadline": "2027-03-01",
+      "description": "7-week summer research program hosted by Duke's Department of Biomedical Engineering for high school students with strong interest in science and engineering. Students work in active Duke research labs alongside graduate students and faculty mentors on biomedical engineering projects spanning imaging, biomaterials, neural engineering, and biomechanics.",
+      "majors": [
+        "Biomedical Engineering",
+        "Bioengineering",
+        "Biology",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "biomedical-engineering",
+        "Duke",
+        "competitive"
+      ],
+      "url": "https://sites.duke.edu/dukerep/",
+      "duration": "7 weeks",
+      "whyApply": "Long-form mentored biomedical engineering research at one of the top BME departments in the country — strong signal for engineering applications.",
+      "_source": "https://sites.duke.edu/dukerep/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
