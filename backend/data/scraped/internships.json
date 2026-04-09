@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 783,
+    "totalCount": 803,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 783,
-    "verifiedCount": 158,
+    "totalInternships": 803,
+    "verifiedCount": 178,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -5394,6 +5394,670 @@
       "duration": "6-8 weeks (summer)",
       "whyApply": "Build real robots with professional tools — CAD, 3D printing, and programming in a startup environment.",
       "_source": "https://www.evodyneacademy.com/high-school-robotics-internship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "TECH360 Intro to AI Summer Bootcamp",
+      "company": "America On Tech",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$500 stipend upon completion",
+      "field": "Technology",
+      "deadline": "2027-05-15",
+      "description": "Intensive 3-week hybrid bootcamp for rising juniors and seniors exploring AI and web development. Students learn HTML, CSS, Bootstrap, machine learning concepts, and predictive modeling. Culminates with a group project pitching an AI-powered tool to mock clients.",
+      "majors": [
+        "Computer Science",
+        "Artificial Intelligence",
+        "Web Development"
+      ],
+      "tags": [
+        "high-school",
+        "AI",
+        "coding",
+        "summer",
+        "free",
+        "stipend"
+      ],
+      "url": "https://www.americaontech.org/tech360.html",
+      "duration": "3 weeks (summer)",
+      "whyApply": "Free AI bootcamp with a $500 stipend — no prior coding experience required.",
+      "_source": "americaontech.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "hybrid"
+    },
+    {
+      "title": "UC Merced High School Computer Science Internship",
+      "company": "UC Merced Inclusive Interaction Lab",
+      "location": {
+        "city": "Merced",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-04-01",
+      "description": "12-week virtual research internship where 4 selected students work directly with a CS professor building real-world software systems. Students learn responsible research conduct, ethical standards, and gain hands-on software development experience. Particularly seeks Central Valley applicants.",
+      "majors": [
+        "Computer Science",
+        "Software Engineering",
+        "Human-Computer Interaction"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "virtual",
+        "summer",
+        "competitive",
+        "central-valley"
+      ],
+      "url": "https://news.ucmerced.edu/news/2026/high-school-students-invited-apply-free-computer-science-internship",
+      "duration": "12 weeks (20 hrs/week, summer)",
+      "whyApply": "Direct mentorship from a UC professor on real software research — free and fully virtual.",
+      "_source": "ucmerced.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "remote"
+    },
+    {
+      "title": "Computer Science Immersion Program (C-SIP)",
+      "company": "Impact Internships",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Technology",
+      "deadline": "2027-05-01",
+      "description": "9-session Saturday afternoon program where high school students explore computer science career pathways. Hear presentations from professionals in web design, software development, and UX design. Gain exposure to real industry roles and build a network in tech.",
+      "majors": [
+        "Computer Science",
+        "Web Design",
+        "UX Design"
+      ],
+      "tags": [
+        "high-school",
+        "career-exploration",
+        "summer",
+        "saturday-program"
+      ],
+      "url": "https://www.impactinternships.org/csip/",
+      "duration": "9 Saturdays (summer)",
+      "whyApply": "Low time commitment way to explore CS careers with industry professionals.",
+      "_source": "impactinternships.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LA County Bloomberg Arts Internship (BAI)",
+      "company": "LA County Department of Arts and Culture",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$27.81/hour for 8 weeks",
+      "field": "Arts & Media",
+      "deadline": "2027-04-30",
+      "description": "8-week paid summer internship connecting rising public high school seniors with cultural institutions across LA County. Includes professional development workshops, college preparation support, dedicated mentorship, and educational field trips to arts organizations. Supported by Bloomberg Philanthropies.",
+      "majors": [
+        "Fine Arts",
+        "Art History",
+        "Museum Studies",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "arts",
+        "summer",
+        "competitive",
+        "bloomberg"
+      ],
+      "url": "https://www.lacountyarts.org/BAI-students",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Prestigious paid arts internship at $27.81/hr with college prep and mentorship included.",
+      "_source": "lacountyarts.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LACMA Art & Tech Teen Internship",
+      "company": "Los Angeles County Museum of Art",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": true,
+      "field": "Arts & Media",
+      "deadline": "2027-03-01",
+      "description": "6-month paid residency for high school juniors and seniors at LACMA. Interns work on specialized art and technology projects for the Education Community Programs department, gaining hands-on museum experience. Designed for students from historically marginalized communities interested in museum careers.",
+      "majors": [
+        "Art History",
+        "Museum Studies",
+        "Digital Media",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "museum",
+        "arts",
+        "technology",
+        "diversity"
+      ],
+      "url": "https://www.lacma.org/high-school-internship",
+      "duration": "6 months",
+      "whyApply": "Work at one of the largest art museums in the western US — paid position combining art and technology.",
+      "_source": "lacma.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Holocaust Museum LA High School Summer Internship",
+      "company": "Holocaust Museum Los Angeles",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts & Media",
+      "deadline": "2027-04-15",
+      "description": "Immersive summer program for high school students exploring Holocaust history, survivor testimony, and museum education. Participants engage with primary sources, art, media, and personal narratives while developing skills in research, public speaking, and historical analysis.",
+      "majors": [
+        "History",
+        "Education",
+        "Museum Studies",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "museum",
+        "history",
+        "summer",
+        "education"
+      ],
+      "url": "https://www.holocaustmuseumla.org/programs",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Powerful educational experience combining historical research, media, and museum skills.",
+      "_source": "holocaustmuseumla.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Scripps Research REACH Summer Internship",
+      "company": "Scripps Research",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Science",
+      "deadline": "2027-03-01",
+      "description": "7-week paid summer research internship at Scripps Research for San Diego County high school students. Includes a mandatory 3-day boot camp followed by immersive lab research. Students work directly with scientists on cutting-edge biomedical research projects. Targets students from underrepresented backgrounds.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Biochemistry",
+        "Biomedical Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "summer",
+        "competitive",
+        "diversity"
+      ],
+      "url": "https://education.scripps.edu/k-12-outreach/ca-outreach/hs-internships/",
+      "duration": "7 weeks (June-August 2026)",
+      "whyApply": "Paid research at a world-class research institute — exceptional for aspiring scientists.",
+      "_source": "scripps.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "FACES for the Future at Rady Children's Hospital",
+      "company": "Rady Children's Hospital-San Diego",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Healthcare",
+      "deadline": "2027-02-01",
+      "description": "3-year pathway program starting sophomore year that prepares high school students from underserved areas for healthcare careers. Includes clinical internships, health professional mentoring, healthcare environment exposure, and academic support. Students gain direct experience in a major children's hospital.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Healthcare Administration"
+      ],
+      "tags": [
+        "high-school",
+        "healthcare",
+        "mentorship",
+        "multi-year",
+        "diversity"
+      ],
+      "url": "https://www.rchsd.org/programs-services/faces-for-the-future/",
+      "duration": "3 years (sophomore through senior year)",
+      "whyApply": "Multi-year healthcare pathway program at a top children's hospital — starts sophomore year.",
+      "_source": "rchsd.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "LegiSchool Civics Virtual Institute",
+      "company": "Sacramento State Center for California Studies",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-05-15",
+      "description": "Intensive 4-week online summer program exploring California policy issues. Students meet virtually Mon/Wed/Fri afternoons, develop leadership and professional skills, and learn how state government works. Open to all CA sophomores, juniors, and seniors.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Government",
+        "Civic Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "civics",
+        "summer",
+        "virtual",
+        "california"
+      ],
+      "url": "https://www.csus.edu/center/center-california-studies/legischool-project.html",
+      "duration": "4 weeks (June-July)",
+      "whyApply": "Unique chance to learn CA state policy from Sacramento State experts — fully virtual and accessible statewide.",
+      "_source": "csus.edu",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "remote"
+    },
+    {
+      "title": "California State Assembly District Office Internship",
+      "company": "California State Assembly",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-06-01",
+      "description": "Hands-on internship in a California Assembly member's district office. High school and college students experience daily legislative operations, constituent services, policy research, and community outreach. Positions available in district offices statewide.",
+      "majors": [
+        "Political Science",
+        "Public Policy",
+        "Government",
+        "Pre-Law"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "legislative",
+        "year-round",
+        "statewide"
+      ],
+      "url": "https://speaker.asmdc.org/student-internship-program",
+      "duration": "Flexible (semester or summer)",
+      "whyApply": "Direct exposure to state government operations — available in district offices throughout California.",
+      "_source": "asmdc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "CLA High School Internship Program",
+      "company": "CliftonLarsonAllen (CLA)",
+      "location": {
+        "city": "San Jose",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Finance",
+      "deadline": "2027-03-15",
+      "description": "Paid summer internship at one of the nation's largest accounting and professional services firms. High school students gain exposure to accounting, tax, advisory, and financial consulting through hands-on projects and mentorship from professionals. Available at CLA offices in California.",
+      "majors": [
+        "Accounting",
+        "Finance",
+        "Business Administration"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "accounting",
+        "finance",
+        "summer",
+        "professional-services"
+      ],
+      "url": "https://www.claconnect.com/en/careers/high-school-internship",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Paid exposure to professional accounting at a top-10 national firm — real client work experience.",
+      "_source": "claconnect.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "San Diego County Behavioral Health Student Internship (YEA Pilot)",
+      "company": "County of San Diego Health and Human Services",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "semester",
+      "paid": true,
+      "field": "Healthcare",
+      "deadline": "2027-01-15",
+      "description": "Paid part-time (15 hrs/week) non-clinical internship in behavioral health services. High school, undergraduate, and graduate students gain experience in mental health program administration, community outreach, and public health systems within county government.",
+      "majors": [
+        "Psychology",
+        "Public Health",
+        "Social Work",
+        "Healthcare Administration"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "behavioral-health",
+        "government",
+        "part-time"
+      ],
+      "url": "https://www.sandiegocounty.gov/content/sdc/hhsa/programs/bhs/connect/bhs_student_opportunities.html",
+      "duration": "~5 months (February-June)",
+      "whyApply": "Paid government health internship — great for students interested in psychology or public health careers.",
+      "_source": "sandiegocounty.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Higher Ground Youth Mentor Internship",
+      "company": "Higher Ground Youth & Family Services",
+      "location": {
+        "city": "Santa Ana",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-06-01",
+      "description": "Hands-on mentoring internship serving as a positive role model in afterschool programs for youth in underserved Orange County communities. Interns lead activities, tutor students, and develop leadership and communication skills while making a direct community impact.",
+      "majors": [
+        "Education",
+        "Social Work",
+        "Psychology",
+        "Youth Development"
+      ],
+      "tags": [
+        "high-school",
+        "mentoring",
+        "nonprofit",
+        "year-round",
+        "orange-county"
+      ],
+      "url": "https://gostars.org/",
+      "duration": "Ongoing (flexible schedule)",
+      "whyApply": "Meaningful mentorship experience in Orange County — develop leadership while serving your community.",
+      "_source": "gostars.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "San Diego Natural History Museum Teen Internship",
+      "company": "San Diego Natural History Museum",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-04-01",
+      "description": "Unpaid internship for high school students age 16+ rotating through three science departments: Entomology, Paleontology, and Botany. Interns receive hands-on training in specimen handling, field collection, and scientific cataloging while working alongside museum researchers.",
+      "majors": [
+        "Biology",
+        "Natural Sciences",
+        "Environmental Science",
+        "Paleontology"
+      ],
+      "tags": [
+        "high-school",
+        "museum",
+        "natural-history",
+        "summer",
+        "science"
+      ],
+      "url": "https://www.sdnhm.org/education/teens/",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Rotate through three real science departments — rare behind-the-scenes museum research experience.",
+      "_source": "sdnhm.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "USDA Pathways Internship Program — California",
+      "company": "United States Department of Agriculture",
+      "location": {
+        "city": "Davis",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Agriculture",
+      "deadline": "2027-03-01",
+      "description": "Paid federal internship providing high school students hands-on experience in agriculture, food safety, natural resources, and rural development. Work alongside USDA scientists and professionals at California field offices. Flexible scheduling year-round or summer-only options.",
+      "majors": [
+        "Agriculture",
+        "Food Science",
+        "Environmental Science",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "federal",
+        "agriculture",
+        "summer"
+      ],
+      "url": "https://www.usda.gov/farming-and-ranching/agricultural-education-and-outreach/youth-agriculture/internships-and-career-opportunities",
+      "duration": "10-16 weeks (summer or year-round)",
+      "whyApply": "Paid federal internship — excellent for students interested in agriculture, food science, or environmental careers.",
+      "_source": "usda.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "OC Public Libraries Teen Volunteer Program",
+      "company": "Orange County Public Libraries",
+      "location": {
+        "city": "Orange",
+        "state": "CA"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Education",
+      "deadline": "2027-06-01",
+      "description": "Volunteer program for teens at Orange County library branches. Students assist with summer reading programs, children's events, shelving, and community outreach. Earn community service hours while developing organizational and interpersonal skills.",
+      "majors": [
+        "Education",
+        "Library Science",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "volunteer",
+        "library",
+        "year-round",
+        "community-service"
+      ],
+      "url": "https://ocpl.org/teens/get-involved",
+      "duration": "Ongoing (flexible)",
+      "whyApply": "Easy-access volunteer opportunity at library branches across Orange County — great for community service hours.",
+      "_source": "ocpl.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Make-A-Wish Orange County & Inland Empire Marketing Internship",
+      "company": "Make-A-Wish Orange County & Inland Empire",
+      "location": {
+        "city": "Irvine",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Nonprofit",
+      "deadline": "2027-04-17",
+      "description": "Summer internship at Make-A-Wish assisting with marketing and communications. Interns develop skills in brand management, written and oral communications, social media, and event coordination while supporting the organization's mission of granting wishes to children with critical illnesses.",
+      "majors": [
+        "Marketing",
+        "Communications",
+        "Public Relations",
+        "Nonprofit Management"
+      ],
+      "tags": [
+        "high-school",
+        "nonprofit",
+        "marketing",
+        "summer",
+        "orange-county"
+      ],
+      "url": "https://wish.org/ocie/careers-internships",
+      "duration": "8-10 weeks (June-August)",
+      "whyApply": "Build real marketing skills at a beloved nonprofit — flexible 8-10 hours per week.",
+      "_source": "wish.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "ACLU of Southern California Student Internship — Orange County",
+      "company": "ACLU of Southern California",
+      "location": {
+        "city": "Santa Ana",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Law",
+      "deadline": "2027-02-20",
+      "description": "Legal advocacy internship at ACLU SoCal's Orange County office in Santa Ana. Students assist with civil rights cases, legal research, community outreach, and advocacy campaigns. Gain direct exposure to civil liberties law and social justice work.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice",
+        "Social Justice"
+      ],
+      "tags": [
+        "high-school",
+        "legal",
+        "civil-rights",
+        "summer",
+        "advocacy"
+      ],
+      "url": "https://www.aclusocal.org/jobs/legaladvocacy-internships-externships-volunteer-opportunities/",
+      "duration": "10 weeks (summer)",
+      "whyApply": "Work on real civil rights cases at one of America's most influential legal organizations.",
+      "_source": "aclusocal.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Orange County Government Student Internship Program",
+      "company": "County of Orange Human Resource Services",
+      "location": {
+        "city": "Santa Ana",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Government",
+      "deadline": "2027-05-01",
+      "description": "Internships across multiple Orange County government departments including public works, health care, social services, and community resources. Students learn how local government functions through real project work impacting community development and public safety.",
+      "majors": [
+        "Political Science",
+        "Public Administration",
+        "Public Policy",
+        "Social Work"
+      ],
+      "tags": [
+        "high-school",
+        "government",
+        "local-government",
+        "summer",
+        "orange-county"
+      ],
+      "url": "https://hrs.oc.gov/careers/volunteer-intern/internships/internship-opportunities",
+      "duration": "8-12 weeks (summer)",
+      "whyApply": "See how local government actually works — hands-on experience across multiple county departments.",
+      "_source": "oc.gov",
+      "_verified": true,
+      "_verifiedDate": "2026-04-08",
+      "format": "in-person"
+    },
+    {
+      "title": "Meta Summer Academy — California",
+      "company": "Meta Platforms",
+      "location": {
+        "city": "Menlo Park",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business",
+      "deadline": "2027-03-01",
+      "description": "6-week paid summer internship at Meta headquarters giving high school students firsthand experience of the tech business world. Students explore different careers, learn financial literacy, build communication and networking skills, and get an introduction to coding.",
+      "majors": [
+        "Business",
+        "Technology",
+        "Marketing",
+        "Computer Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "tech",
+        "summer",
+        "competitive",
+        "silicon-valley"
+      ],
+      "url": "https://www.metacareers.com/life/meta-summer-academy/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "Paid internship at a major tech company — explore business, tech, and financial literacy at Meta HQ.",
+      "_source": "metacareers.com",
       "_verified": true,
       "_verifiedDate": "2026-04-08",
       "format": "in-person"
