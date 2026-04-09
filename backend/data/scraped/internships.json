@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1247,
+    "totalCount": 1259,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1247,
-    "verifiedCount": 622,
+    "totalInternships": 1259,
+    "verifiedCount": 634,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -20818,6 +20818,417 @@
       "duration": "1 week (summer)",
       "whyApply": "Accessible, well-structured exposure to college-level business curriculum at a top-ranked public business school with strong Wall Street recruiting ties.",
       "_source": "https://www.business.rutgers.edu/pre-college/summer-business-camp",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Explorations in Neuroscience Research Internship",
+      "company": "Ohio State University College of Medicine",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid 7-week program (NIH-funded)",
+      "field": "Science",
+      "deadline": "2027-02-01",
+      "description": "Seven-week paid summer program at The Ohio State University funded by the NIH. Participants are placed in a neuroscience or biomedical research lab and work alongside faculty, graduate students, and technicians on ongoing research projects. Includes professional development, seminars, and a research symposium.",
+      "majors": [
+        "Neuroscience",
+        "Biology",
+        "Pre-Med",
+        "Biomedical Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "neuroscience",
+        "paid",
+        "NIH",
+        "competitive"
+      ],
+      "url": "https://medicine.osu.edu/departments/neuroscience/outreach-and-events/internship",
+      "duration": "7 weeks (summer)",
+      "whyApply": "Paid, NIH-funded neuroscience research at a major R1 university — rare combination of mentorship and real lab work for high schoolers.",
+      "_source": "https://medicine.osu.edu/departments/neuroscience/outreach-and-events/internship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "AWS Foundation & Mₐ²JIC High School Internship Program",
+      "company": "Manufacturing & Materials Joining Innovation Center (Ma²JIC), The Ohio State University",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Engineering",
+      "deadline": "2027-02-13",
+      "description": "Paid on-campus summer internship for high school students interested in welding engineering, materials joining, manufacturing processes, and engineering design. Interns contribute to ongoing research projects under faculty, graduate researchers, and industry partners at the Mₐ²JIC center at Ohio State.",
+      "majors": [
+        "Mechanical Engineering",
+        "Materials Science",
+        "Manufacturing Engineering",
+        "Welding Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "engineering",
+        "research",
+        "manufacturing"
+      ],
+      "url": "https://ma2jic.osu.edu/resources/aws-foundation-m2jic-high-school-internship-program",
+      "duration": "Summer (on-campus)",
+      "whyApply": "One of the only paid high school internships in welding/manufacturing engineering at a top-ranked engineering college. Industry-aligned research with real deliverables.",
+      "_source": "https://ma2jic.osu.edu/resources/aws-foundation-m2jic-high-school-internship-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "CYCE High School Summer Internship Program",
+      "company": "Cleveland Clinic",
+      "location": {
+        "city": "Cleveland",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Healthcare",
+      "deadline": "2027-02-02",
+      "description": "Paid 8-week summer internship (June–July) providing high school students with engaging, real-world work experience in clinical, non-clinical, and advanced technology healthcare tracks. Clinical areas include Behavioral Health, Lab Medicine, Nursing, Pharmacy, Physical Therapy, Radiology, and Respiratory Care. Non-clinical tracks cover Community Health, Finance, Healthcare Administration, HR, and more.",
+      "majors": [
+        "Pre-Med",
+        "Biology",
+        "Healthcare Administration",
+        "Public Health",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "clinical",
+        "hospital"
+      ],
+      "url": "https://my.clevelandclinic.org/departments/education/center-for-youth-and-college-education/internships",
+      "duration": "8 weeks (June 8 – July 28)",
+      "whyApply": "Paid, structured, and deeply varied hospital internship at a top-5 US hospital. Strong eligibility guardrail (NE Ohio residents) means local students have a real shot at a competitive program.",
+      "_source": "https://my.clevelandclinic.org/departments/education/center-for-youth-and-college-education/internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "NASA Glenn High School Engineering Institute",
+      "company": "NASA Glenn Research Center",
+      "location": {
+        "city": "Cleveland",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-free; students cover meals/lodging/transit",
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Week-long engineering institute for highly motivated high school students with strong STEM credentials. Participants use the Engineering Design Process to design and test prototypes in NASA Glenn focus areas: acoustic damping, power management and distribution, and simulated lunar operations. 60 students per summer across three weeks in July.",
+      "majors": [
+        "Aerospace Engineering",
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "high-school",
+        "NASA",
+        "engineering",
+        "aerospace",
+        "competitive"
+      ],
+      "url": "https://www.nasa.gov/learning-resources/for-students-grades-9-12/nasa-glenn-high-school-engineering-institute/",
+      "duration": "1 week (July)",
+      "whyApply": "Direct exposure to NASA engineers and facilities. One of the few ways for high schoolers to work inside a federal aerospace research center.",
+      "_source": "https://www.nasa.gov/learning-resources/for-students-grades-9-12/nasa-glenn-high-school-engineering-institute/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Young Writers Summer Residential Workshop",
+      "company": "The Kenyon Review at Kenyon College",
+      "location": {
+        "city": "Gambier",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$2,575 tuition (need-based financial aid available)",
+      "field": "Arts",
+      "deadline": "2027-03-01",
+      "description": "Prestigious two-week residential creative writing workshop at Kenyon College for rising juniors and seniors (ages 16-18). Students live in college dorms, write daily in small workshop groups led by published writers, and develop work in fiction, poetry, and creative nonfiction. Two sessions: June 21–July 4 and July 12–25, 2026.",
+      "majors": [
+        "English",
+        "Creative Writing",
+        "Literature",
+        "Journalism"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "writing",
+        "humanities",
+        "selective"
+      ],
+      "url": "https://kenyonreview.org/event/young-writers-summer-residential-workshops/",
+      "duration": "2 weeks (June or July)",
+      "whyApply": "One of the nation's most respected high school creative writing programs, run by The Kenyon Review — a prestigious literary journal. Strong signal on college applications for humanities-focused students.",
+      "_source": "https://kenyonreview.org/event/young-writers-summer-residential-workshops/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Medical Sciences Summer Institute (MSSI)",
+      "company": "University of Cincinnati College of Medicine",
+      "location": {
+        "city": "Cincinnati",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$1,100 per session (limited financial aid)",
+      "field": "Healthcare",
+      "deadline": "2027-03-25",
+      "description": "Week-long full-day summer sessions for rising juniors and seniors interested in medicine and healthcare. Hands-on biomedical research in cellular/molecular biology or the new medical informatics track (AI, data science, and healthcare analytics). Multiple one-week sessions offered.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Biochemistry",
+        "Data Science",
+        "Bioinformatics"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "research",
+        "informatics",
+        "pre-college"
+      ],
+      "url": "https://med.uc.edu/education/undergraduate-education/undergraduate-program-in-medical-sciences/admissions/medical-sciences-summer-institute",
+      "duration": "1 week (multiple sessions)",
+      "whyApply": "Direct exposure to medical school faculty and real biomedical research. The new AI/informatics track reflects where modern medicine is heading.",
+      "_source": "https://med.uc.edu/education/undergraduate-education/undergraduate-program-in-medical-sciences/admissions/medical-sciences-summer-institute",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "UC Futures: Rural & Small-Town Scholars Summer Program",
+      "company": "University of Cincinnati",
+      "location": {
+        "city": "Cincinnati",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free program (all-expenses covered)",
+      "field": "Education",
+      "deadline": "2027-05-01",
+      "description": "Free three-day residential summer program at UC for 80 rising high school juniors and seniors from rural communities across the Ohio River Valley. Focused on college access, major exploration, campus visits, and meeting faculty and current students. Particularly targeted at first-generation and underserved students.",
+      "majors": [
+        "Undeclared",
+        "General Education",
+        "Pre-Professional"
+      ],
+      "tags": [
+        "high-school",
+        "rural",
+        "pre-college",
+        "access",
+        "first-generation"
+      ],
+      "url": "https://www.uc.edu/news/articles/2026/03/uc-futures-provides-free-summer-program-for-rising-high-school-juniors-and-seniors.html",
+      "duration": "3 days (June 15-17)",
+      "whyApply": "Rare free residential college-prep experience specifically designed for rural Ohio River Valley students. High-touch access to a major research university with no cost barrier.",
+      "_source": "https://www.uc.edu/news/articles/2026/03/uc-futures-provides-free-summer-program-for-rising-high-school-juniors-and-seniors.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Summer Internship Program",
+      "company": "Cincinnati Children's Hospital Medical Center",
+      "location": {
+        "city": "Cincinnati",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Healthcare",
+      "deadline": "2027-02-01",
+      "description": "Eight-week paid pediatric biomedical research internship where rising seniors work with PhD scientists and physician researchers on cutting-edge projects in cancer biology, immunology, genetics, neuroscience, and more. Open to Cincinnati metro residents (Hamilton, Butler, Warren, Clermont counties in Ohio; Boone, Kenton, Campbell counties in KY) with 3.5+ GPA.",
+      "majors": [
+        "Biology",
+        "Pre-Med",
+        "Biochemistry",
+        "Genetics",
+        "Neuroscience"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "pediatric",
+        "competitive"
+      ],
+      "url": "https://www.cincinnatichildrens.org/education/research/high-school/summer-internship",
+      "duration": "8 weeks",
+      "whyApply": "Cincinnati Children's is consistently ranked among the top pediatric research hospitals in the US. Paid research alongside PhD mentors is a strong credential for pre-med applicants.",
+      "_source": "https://www.cincinnatichildrens.org/education/research/high-school/summer-internship",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Scholars Program",
+      "company": "Miami University",
+      "location": {
+        "city": "Oxford",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition-based (need-based scholarships available)",
+      "field": "Education",
+      "deadline": "2027-03-01",
+      "description": "Selective one-week residential summer experience for academically talented rising juniors and seniors. Students choose from 22 academic modules spanning sciences, humanities, business, arts, and engineering. Live in dorms, attend college-level classes taught by Miami faculty, and explore 10+ major areas.",
+      "majors": [
+        "Business",
+        "Engineering",
+        "Humanities",
+        "Sciences",
+        "Arts",
+        "Social Sciences"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "pre-college",
+        "selective"
+      ],
+      "url": "https://miamioh.edu/visit-miami/summer-scholars/index.html",
+      "duration": "1 week (multiple sessions)",
+      "whyApply": "Broad academic exploration with 22 module choices — useful for students still deciding a focus area. Strong fit for Ohio-based students considering Miami or similar public flagships.",
+      "_source": "https://miamioh.edu/visit-miami/summer-scholars/index.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Institute (Ohio Supercomputer Center)",
+      "company": "Ohio Supercomputer Center (OSC)",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Free residential program (Ohio residents)",
+      "field": "Technology",
+      "deadline": "2027-05-15",
+      "description": "Two-week residential program where gifted Ohio high school students use OSC's supercomputers to solve real computational science and engineering problems. Teams work on projects like network forensics, epidemiological modeling (bird flu spread), game design, and simulation. Project-based, hands-on HPC experience.",
+      "majors": [
+        "Computer Science",
+        "Data Science",
+        "Mathematics",
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "free",
+        "HPC",
+        "computing",
+        "residential",
+        "ohio-residents"
+      ],
+      "url": "https://www.osc.edu/education/si",
+      "duration": "2 weeks",
+      "whyApply": "One of the only free, residential HPC/supercomputing programs for high schoolers in the country. Real access to research-grade compute infrastructure.",
+      "_source": "https://www.osc.edu/press/summer_academy_to_teach_modeling_and_simulation_skills_to_ohio_high_school_students_teachers",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Camp CAR (Center for Automotive Research)",
+      "company": "Ohio State University College of Engineering",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-05-01",
+      "description": "Week-long summer day camp for students ages 14-18 exploring automotive engineering, simulation, and manufacturing at the OSU Center for Automotive Research. Hands-on exposure to vehicle dynamics, EV technology, and motorsports engineering. Taught by OSU engineering faculty and graduate students.",
+      "majors": [
+        "Mechanical Engineering",
+        "Automotive Engineering",
+        "Electrical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "engineering",
+        "automotive",
+        "day-camp"
+      ],
+      "url": "https://engineering.osu.edu/youth-summer-programs",
+      "duration": "1 week (day camp)",
+      "whyApply": "Direct access to one of the top automotive engineering research centers in the US. Good for students considering EV, motorsports, or mechanical engineering careers.",
+      "_source": "https://engineering.osu.edu/youth-summer-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Teen Volunteer Program",
+      "company": "COSI (Center of Science and Industry)",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "type": "year-round",
+      "paid": false,
+      "field": "Science",
+      "deadline": "2027-03-31",
+      "description": "Year-round teen volunteer program at COSI, one of the nation's top-rated science museums. Volunteers ages 14+ work directly with museum guests delivering science demonstrations, facilitating exhibits, and supporting programs and events. Application cycles run twice per year (spring and fall). Minimum commitment: 4-8 hours per day, at least twice per month.",
+      "majors": [
+        "Biology",
+        "Physics",
+        "Chemistry",
+        "Education",
+        "Communications"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "volunteer",
+        "museum",
+        "STEM-education"
+      ],
+      "url": "https://cosi.org/volunteer/",
+      "duration": "Year-round (ongoing)",
+      "whyApply": "Accessible entry point for younger students (14+) to build science communication and education experience. Strong for students interested in teaching, pediatrics, or informal STEM learning.",
+      "_source": "https://cosi.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
