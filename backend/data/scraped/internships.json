@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-09",
     "lastVerified": "2026-04-08",
-    "totalCount": 1455,
+    "totalCount": 1465,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1455,
-    "verifiedCount": 830,
+    "totalInternships": 1465,
+    "verifiedCount": 840,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -23005,6 +23005,337 @@
       "duration": "Summer or school year",
       "whyApply": "Accessible STEM-communication experience for younger teens at a major science museum.",
       "_source": "https://carnegiesciencecenter.org/join/teen-volunteers/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Leadership in the Business World (LBW)",
+      "company": "Wharton Global Youth Program — University of Pennsylvania",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-02-15",
+      "description": "Highly selective three-week residential pre-college program for rising seniors interested in business, management, and leadership. Approximately 120 students admitted per session. Taught by Wharton faculty with curriculum in strategy, negotiation, marketing, and finance, culminating in a capstone case competition. Requires 3.5+ unweighted GPA and demonstrated leadership.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Economics",
+        "Management"
+      ],
+      "tags": [
+        "high-school",
+        "finance",
+        "business",
+        "leadership",
+        "competitive",
+        "residential"
+      ],
+      "url": "https://globalyouth.wharton.upenn.edu/programs-courses/leadership-in-the-business-world/",
+      "duration": "3 weeks (July)",
+      "whyApply": "Flagship Wharton pre-college business program — one of the most prestigious high-school business experiences in the country.",
+      "_source": "https://globalyouth.wharton.upenn.edu/programs-courses/leadership-in-the-business-world/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Moneyball Academy",
+      "company": "Wharton Global Youth Program — University of Pennsylvania",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Data Science",
+      "deadline": "2027-02-15",
+      "description": "Selective three-week residential program in sports analytics at Wharton. Approximately 75 students selected each summer. Curriculum covers statistical thinking, regression, and introductory statistical programming (R) applied to baseball, basketball, and football analytics. Taught by Professor Adi Wyner. Participants earn a Wharton Global Youth Certificate of Completion.",
+      "majors": [
+        "Statistics",
+        "Data Science",
+        "Mathematics",
+        "Sports Analytics"
+      ],
+      "tags": [
+        "high-school",
+        "statistics",
+        "data-science",
+        "sports-analytics",
+        "competitive"
+      ],
+      "url": "https://globalyouth.wharton.upenn.edu/programs-courses/moneyball-academy/",
+      "duration": "3 weeks (July)",
+      "whyApply": "Unique elite intersection of statistics and sports — strong signal for quantitative majors and sports-industry pathways.",
+      "_source": "https://globalyouth.wharton.upenn.edu/programs-courses/moneyball-academy/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Engineering Summer Academy at Penn (ESAP)",
+      "company": "University of Pennsylvania — School of Engineering and Applied Science",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-02-15",
+      "description": "Three-week residential pre-college engineering intensive (July 12–31, 2026) for rigorous high schoolers. Specialized course tracks include Artificial Intelligence, Biotechnology, Computer Graphics, Computer Science, AI x Biology, Nanotechnology, and Robotics. Taught by Penn Engineering faculty on campus with evening labs and college-level rigor.",
+      "majors": [
+        "Engineering",
+        "Computer Science",
+        "Artificial Intelligence",
+        "Biotechnology"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "AI",
+        "robotics",
+        "residential",
+        "competitive"
+      ],
+      "url": "https://esap.seas.upenn.edu/",
+      "duration": "3 weeks (July)",
+      "whyApply": "One of the most recognized pre-college engineering programs. Strong foundation in applied engineering and AI for competitive STEM applicants.",
+      "_source": "https://esap.seas.upenn.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Penn Arts & Sciences Summer Academies",
+      "company": "University of Pennsylvania — School of Arts and Sciences",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary",
+      "deadline": "2027-04-15",
+      "description": "Subject-intensive 2-week and 3-week residential academies for high schoolers led by Penn faculty. Topics span Experimental Physics, Biomedical Research, Neuroscience, Forensic Science, Ancient World/Classics, Global Human Rights, Social Justice Research, and Coding. Tuition $6,700 (2-week) or $10,050 (3-week), residential included. School District of Philadelphia public/charter students eligible for full scholarship.",
+      "majors": [
+        "Physics",
+        "Biology",
+        "Neuroscience",
+        "Humanities",
+        "Forensic Science",
+        "Classics"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "humanities",
+        "STEM",
+        "residential",
+        "Penn"
+      ],
+      "url": "https://hs.sas.upenn.edu/summer-programs/academies",
+      "duration": "2-3 weeks (July)",
+      "whyApply": "Faculty-led Ivy League academies across STEM and humanities with full scholarship pipeline for Philadelphia public-school students.",
+      "_source": "https://hs.sas.upenn.edu/summer-programs/academies",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Fox Chase Cancer Center Immersion Science Program (ISP)",
+      "company": "Fox Chase Cancer Center",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Biomedical Research",
+      "deadline": "2027-04-01",
+      "description": "Cost-free multi-phase biomedical research training program for Philadelphia and tri-state-area high school students ages 16+ who have completed chemistry and biology. Students train in laboratory research techniques focused on nutrients and cancer signaling using Drosophila models, then advance to design and execute original research projects in the Fox Chase teaching lab. Offers bootcamp, year-long research track, and summer intensives.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Cancer Research",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "biomedical",
+        "cancer-research",
+        "free",
+        "Philadelphia"
+      ],
+      "url": "https://www.foxchase.org/research-training/education/research/high-school/immersion-science-program",
+      "duration": "Summer + year-round options",
+      "whyApply": "Rare free cancer-research lab training at an NCI-designated Comprehensive Cancer Center, open to Philadelphia-area teens without cost barriers.",
+      "_source": "https://www.foxchase.org/research-training/education/research/high-school/immersion-science-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Lehigh Summer Engineering Institute (SEI)",
+      "company": "Lehigh University",
+      "location": {
+        "city": "Bethlehem",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "2027-04-01",
+      "description": "Free intensive two-week residential program of classroom study and hands-on research for rising juniors and seniors. Students explore mechanical, electrical, computer, bioengineering, chemical, and civil engineering disciplines with Lehigh faculty and graduate student mentors, culminating in a team design project. Fully funded — no tuition, room, or board cost to participants.",
+      "majors": [
+        "Engineering",
+        "Computer Engineering",
+        "Bioengineering",
+        "Mechanical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "engineering",
+        "free",
+        "residential",
+        "research"
+      ],
+      "url": "https://engineering.lehigh.edu/k-12/sei",
+      "duration": "2 weeks (July)",
+      "whyApply": "One of the few free residential engineering pre-college programs in the Northeast — removes cost barriers to a selective hands-on engineering experience.",
+      "_source": "https://engineering.lehigh.edu/k-12/sei",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Iacocca Global Entrepreneurship Intensive (IGEI)",
+      "company": "Lehigh University — Iacocca Institute",
+      "location": {
+        "city": "Bethlehem",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Business",
+      "deadline": "2027-03-15",
+      "description": "Three-week residential pre-college program (July 5–25, 2026) at Lehigh University's Iacocca Institute for internationally minded high school students ages 15–17 graduating in 2027 or 2028. Participants build a global business plan in teams alongside peers from around the world, exploring entrepreneurship, cross-cultural leadership, and innovation with workshops, site visits, and cultural activities.",
+      "majors": [
+        "Business",
+        "Entrepreneurship",
+        "International Business",
+        "Finance"
+      ],
+      "tags": [
+        "high-school",
+        "business",
+        "entrepreneurship",
+        "international",
+        "residential"
+      ],
+      "url": "https://global.lehigh.edu/iacocca-institute/IGEI",
+      "duration": "3 weeks (July)",
+      "whyApply": "Global cohort and entrepreneurship curriculum — distinctive for students interested in international business and venture creation.",
+      "_source": "https://global.lehigh.edu/iacocca-institute/IGEI",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Temple University Summer Academy",
+      "company": "Temple University — Undergraduate Admissions",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary",
+      "deadline": "2027-05-01",
+      "description": "Pre-college program for rising juniors and seniors at Temple's Main Campus. Students take one Temple undergraduate course for college credit plus project-based non-credit workshops. Successful completion earns a Temple tuition grant for later enrollment. Residential on-campus or commuter options.",
+      "majors": [
+        "Multiple — varies by course selection"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "college-credit",
+        "Philadelphia"
+      ],
+      "url": "https://admissions.temple.edu/summer/pre-college/find-your-program/interdisciplinary-programs/summer-academy",
+      "duration": "3-6 weeks (June–July)",
+      "whyApply": "Earns transferable college credit plus a tuition grant incentive for later Temple enrollment — high ROI pre-college option.",
+      "_source": "https://admissions.temple.edu/summer/pre-college/find-your-program/interdisciplinary-programs/summer-academy",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Temple Tyler School of Art Pre-College Summer Studios",
+      "company": "Temple University — Tyler School of Art and Architecture",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Arts",
+      "deadline": "2027-05-01",
+      "description": "Residential and commuter pre-college studio experiences at Temple's Tyler School of Art and Architecture for rising 10-12 graders. Tracks include Portfolio Boot Camp, Architecture Institute, Environmental Design Institute, and Pre-College Summer Studios across fine art, design, and architecture. Hands-on studio instruction in world-class Tyler facilities.",
+      "majors": [
+        "Studio Art",
+        "Architecture",
+        "Design",
+        "Environmental Design"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "portfolio",
+        "architecture",
+        "design"
+      ],
+      "url": "https://admissions.temple.edu/summer/pre-college",
+      "duration": "1-4 weeks (July)",
+      "whyApply": "Accredited art-school faculty instruction with direct portfolio development for art/architecture applicants.",
+      "_source": "https://admissions.temple.edu/summer/pre-college",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Curtis Summer Organ Intensive",
+      "company": "Curtis Institute of Music",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Music",
+      "deadline": "2027-03-15",
+      "description": "Seven-day intensive (June 14–20, 2026) for exceptional high school organ students at Curtis Institute of Music, one of the world's most selective conservatories. Daily lessons in repertoire, improvisation, harpsichord, and conducting with Curtis faculty, plus an excursion to Longwood Gardens and tours of historic Philadelphia-area pipe organs.",
+      "majors": [
+        "Music Performance",
+        "Organ",
+        "Music Composition"
+      ],
+      "tags": [
+        "high-school",
+        "music",
+        "organ",
+        "conservatory",
+        "arts"
+      ],
+      "url": "https://www.curtis.edu/learn/summer-programs/",
+      "duration": "7 days (June)",
+      "whyApply": "Immersion at one of the world's top conservatories with direct Curtis faculty mentorship — strong signal for classical-music admissions.",
+      "_source": "https://www.curtis.edu/learn/summer-programs/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
