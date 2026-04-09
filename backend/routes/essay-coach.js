@@ -333,10 +333,52 @@ TIPS DAVID CAN SHARE:
 
 WHAT YOU DON'T DO:
 - Write essays or do homework for students
-- Provide the deep analysis the main Engine gives — redirect them there
-- Score or do detailed essay reviews — redirect to the Essay Review tool
+- Provide the deep strategic analysis the main Engine gives — nudge them there instead
+- Score or do detailed essay reviews — nudge them to the Essay Reviewer instead
 - Give specific investment, tax planning, or legal advice (but DO answer basic "what counts as income/assets on FAFSA" questions)
-- If asked to do deep analysis, say: "That's exactly what the Wayfinder Engine is built for! Type your question in the main chat and hit the lightning bolt for deep analysis."
+
+NUDGING USERS TO THE RIGHT EXPERT (IMPORTANT — read carefully):
+
+You are the CONCIERGE. You are NOT the main coaching/consulting engine. When users ask you open-ended coaching or consulting questions — the kind that deserve the real expert — you should give a SHORT helpful framing (1-2 sentences of useful orientation), then warmly nudge them to the right tool. Don't refuse to engage, don't be cold. Acknowledge the question, offer a quick orienting thought, then point them to where the real answer lives.
+
+Questions that should trigger a nudge to the **Wayfinder Engine** (main chat + lightning-bolt button):
+- "What should my college list look like?"
+- "How do I build a strong activities list?"
+- "What majors should I consider for my interests?"
+- "Analyze my profile / give me a chance at X school"
+- "What's my best strategy for ED/EA?"
+- "How competitive am I for Ivies?"
+- Anything that asks for deep, personalized strategy or analysis
+
+Nudge pattern for the Engine:
+"Quick take: [1 sentence of helpful framing]. But this is exactly what the Wayfinder Engine is built for — type the same question in the main chat and hit the ⚡ lightning bolt for the deep dive. It'll pull from BLS, NCES, admissions officer insights, and your profile to give you a real answer."
+
+Questions that should trigger a nudge to the **Essay Reviewer**:
+- "Can you review my essay?"
+- "Is this essay good?"
+- "Score my draft"
+- "What would you change about this paragraph?"
+- Anything where they paste essay text and want feedback
+
+Nudge pattern for Essay Reviewer:
+"Happy to help you think about it — but for real AO-calibrated feedback (score, voice check, line notes), the Essay Reviewer is the right place. It's built for exactly this. Want me to point you there?"
+
+Questions that should trigger a nudge to **Financial Aid Planner**:
+- "How much aid will I get at X?"
+- "What's my SAI?"
+- "Run my numbers"
+
+Nudge pattern: "Let's get you real numbers — the Financial Aid Planner has an SAI calculator that'll give you an actual figure. Want me to walk you over?"
+
+WHAT YOU DO HANDLE DIRECTLY (don't nudge these away):
+- Navigation: "where do I find X?", "what does this button do?", "how do I switch tabs?"
+- Feature explanations: "what's the difference between Coach and Consultant?"
+- Quick factual questions about FAFSA/SAI mechanics (income, assets, Pell, 529s — you have the knowledge above)
+- Questions about their CURRENT PAGE's state (their SAI result, their active filters, their last search)
+- Brief orientation / "I don't know where to start"
+- Conversational warmth, encouragement, reassurance
+
+The rule of thumb: if it's a NAVIGATION, EXPLANATION, or CONTEXT question → handle it. If it's a DEEP COACHING / STRATEGY / EVALUATION question → give a quick orienting take then nudge to the expert tool.
 
 Always be helpful, warm, and action-oriented. End responses with a clear next step or helpful question.`;
 
@@ -361,9 +403,20 @@ router.post('/chat', async (req, res) => {
     // Sanitize toolContext — only allow known fields with string/number values
     // Prevents client from injecting arbitrary content into system prompt
     const ALLOWED_CTX_FIELDS = new Set([
-      'activeTool', 'activeTab', 'saiScore', 'pellStatus', 'userIncome', 'userAssets',
+      'activeTool', 'activeTab', 'currentPage',
+      'saiScore', 'pellStatus', 'userIncome', 'userAssets',
       'familySize', 'filingStatus', 'saiMode', 'schoolSearchState', 'schoolResultCount',
       'essayType', 'essaySchool', 'essayScore', 'essayWordCount', 'activeFilters',
+    ]);
+    // Fields allowed inside a moduleSummary entry (flat string/number/boolean values only)
+    const ALLOWED_MODULE_KEYS = new Set([
+      'visits', 'lastFilters', 'lastResultCount', 'lastSearchAt', 'lastMode', 'lastTab',
+      'lastType', 'lastScore', 'lastSchool', 'reviews', 'lastSchoolFilters',
+      'saiScore', 'pellStatus', 'strategyGenerated',
+    ]);
+    const ALLOWED_MODULES = new Set([
+      'internships', 'scholarships', 'programs', 'essays',
+      'financialAid', 'timeline', 'demographics', 'home', 'main-chat',
     ]);
     let toolContext = null;
     if (rawToolContext && typeof rawToolContext === 'object' && !Array.isArray(rawToolContext)) {
@@ -373,12 +426,31 @@ router.post('/chat', async (req, res) => {
           toolContext[k] = typeof v === 'string' ? v.slice(0, 200) : v; // Cap string length
         }
       }
-      // sessionBreadcrumbs: array of short strings
-      if (Array.isArray(rawToolContext.sessionBreadcrumbs)) {
-        toolContext.sessionBreadcrumbs = rawToolContext.sessionBreadcrumbs
+      // moduleSummaries: object of { moduleName: { flat values } }
+      if (rawToolContext.moduleSummaries && typeof rawToolContext.moduleSummaries === 'object' && !Array.isArray(rawToolContext.moduleSummaries)) {
+        const clean = {};
+        for (const [mod, summary] of Object.entries(rawToolContext.moduleSummaries)) {
+          if (!ALLOWED_MODULES.has(mod)) continue;
+          if (!summary || typeof summary !== 'object' || Array.isArray(summary)) continue;
+          const cleanSummary = {};
+          for (const [sk, sv] of Object.entries(summary)) {
+            if (!ALLOWED_MODULE_KEYS.has(sk)) continue;
+            if (typeof sv === 'string') cleanSummary[sk] = sv.slice(0, 120);
+            else if (typeof sv === 'number' || typeof sv === 'boolean') cleanSummary[sk] = sv;
+          }
+          if (Object.keys(cleanSummary).length > 0) clean[mod] = cleanSummary;
+        }
+        if (Object.keys(clean).length > 0) toolContext.moduleSummaries = clean;
+      }
+      // recentActions: array of short strings (preferred) — falls back to sessionBreadcrumbs
+      const recentSource = Array.isArray(rawToolContext.recentActions)
+        ? rawToolContext.recentActions
+        : (Array.isArray(rawToolContext.sessionBreadcrumbs) ? rawToolContext.sessionBreadcrumbs : null);
+      if (recentSource) {
+        toolContext.recentActions = recentSource
           .filter(s => typeof s === 'string')
-          .slice(-10) // Max 10 breadcrumbs
-          .map(s => s.slice(0, 100)); // Cap each to 100 chars
+          .slice(-5) // Max 5
+          .map(s => s.slice(0, 100));
       }
     }
 
@@ -387,44 +459,82 @@ router.post('/chat', async (req, res) => {
     const intel = await loadOpportunityIntel();
     let systemPrompt = DAVID_SYSTEM_PROMPT.replace('{KNOWLEDGE_INJECTION}', knowledge);
 
-    // Inject live tool context so David knows what the user is looking at
+    // Inject structured session context so David knows what the user is looking at
+    // Layered by priority: PRIMARY (current page + live state) → OTHER MODULES (brief) → RECENT
     if (toolContext && typeof toolContext === 'object') {
-      let ctxBlock = '\n\nCURRENT USER CONTEXT:\n';
+      const PAGE_LABELS = {
+        'main-chat': 'Main Chat (Wayfinder Engine)',
+        'financialAid': 'Financial Aid Planner',
+        'essays': 'Essay Reviewer',
+        'internships': 'Internships Database',
+        'scholarships': 'Scholarships Database',
+        'programs': 'Programs Database',
+        'timeline': 'Timeline Builder',
+        'demographics': 'Demographics & Admissions Data',
+        'home': 'Home',
+      };
 
-      // Active tool + tab
-      if (toolContext.activeTool) ctxBlock += `Tool open: ${toolContext.activeTool}`;
-      if (toolContext.activeTab) ctxBlock += ` > ${toolContext.activeTab}`;
-      if (toolContext.activeTool) ctxBlock += '\n';
+      let ctxBlock = '\n\n━━━ SESSION CONTEXT ━━━\n';
 
-      // SAI Calculator state
-      if (toolContext.saiScore) ctxBlock += `SAI result: ${toolContext.saiScore}`;
-      if (toolContext.pellStatus) ctxBlock += ` | ${toolContext.pellStatus}`;
-      if (toolContext.saiScore) ctxBlock += '\n';
-      if (toolContext.userIncome) ctxBlock += `Income entered: ${Number(toolContext.userIncome).toLocaleString()}\n`;
-      if (toolContext.userAssets) ctxBlock += `Assets entered: ${Number(toolContext.userAssets).toLocaleString()}\n`;
-      if (toolContext.familySize) ctxBlock += `Family size: ${toolContext.familySize}\n`;
-      if (toolContext.filingStatus) ctxBlock += `Filing: ${toolContext.filingStatus}\n`;
-      if (toolContext.saiMode) ctxBlock += `Calculator mode: ${toolContext.saiMode}\n`;
+      // ── PRIMARY: where the user is RIGHT NOW ──
+      const primaryPage = toolContext.currentPage || 'main-chat';
+      ctxBlock += `\n▸ PRIMARY — CURRENT PAGE: ${PAGE_LABELS[primaryPage] || primaryPage}\n`;
+      ctxBlock += `  (This is your main focus. Tailor your response to what they're doing here.)\n`;
 
-      // School search state
-      if (toolContext.schoolSearchState) ctxBlock += `School filter: ${toolContext.schoolSearchState}\n`;
-      if (toolContext.schoolResultCount) ctxBlock += `Schools showing: ${toolContext.schoolResultCount} results\n`;
+      // Live state for the current page (detailed — this is where David should be sharpest)
+      if (toolContext.activeTool) {
+        ctxBlock += `  Tool: ${toolContext.activeTool}`;
+        if (toolContext.activeTab) ctxBlock += ` > ${toolContext.activeTab}`;
+        ctxBlock += '\n';
+      }
+      // SAI calculator live state
+      if (toolContext.saiScore) {
+        ctxBlock += `  SAI result: ${toolContext.saiScore}`;
+        if (toolContext.pellStatus) ctxBlock += ` | ${toolContext.pellStatus}`;
+        ctxBlock += '\n';
+      }
+      if (toolContext.userIncome) ctxBlock += `  Income entered: ${Number(toolContext.userIncome).toLocaleString()}\n`;
+      if (toolContext.userAssets) ctxBlock += `  Assets entered: ${Number(toolContext.userAssets).toLocaleString()}\n`;
+      if (toolContext.familySize) ctxBlock += `  Family size: ${toolContext.familySize}\n`;
+      if (toolContext.filingStatus) ctxBlock += `  Filing: ${toolContext.filingStatus}\n`;
+      if (toolContext.saiMode) ctxBlock += `  Calculator mode: ${toolContext.saiMode}\n`;
+      if (toolContext.schoolSearchState) ctxBlock += `  School filter: ${toolContext.schoolSearchState}\n`;
+      if (toolContext.schoolResultCount) ctxBlock += `  Schools showing: ${toolContext.schoolResultCount}\n`;
+      // Essay live state
+      if (toolContext.essayType) ctxBlock += `  Essay type: ${toolContext.essayType}\n`;
+      if (toolContext.essaySchool) ctxBlock += `  Target school: ${toolContext.essaySchool}\n`;
+      if (toolContext.essayScore) ctxBlock += `  Last essay score: ${toolContext.essayScore}\n`;
+      if (toolContext.essayWordCount) ctxBlock += `  Word count: ${toolContext.essayWordCount}\n`;
+      // Scholarships/internships/programs active filters
+      if (toolContext.activeFilters) ctxBlock += `  Active filters: ${toolContext.activeFilters}\n`;
 
-      // Essay state
-      if (toolContext.essayType) ctxBlock += `Essay type: ${toolContext.essayType}\n`;
-      if (toolContext.essaySchool) ctxBlock += `Target school: ${toolContext.essaySchool}\n`;
-      if (toolContext.essayScore) ctxBlock += `Last essay score: ${toolContext.essayScore}\n`;
-      if (toolContext.essayWordCount) ctxBlock += `Word count: ${toolContext.essayWordCount}\n`;
-
-      // Scholarship/internship filters
-      if (toolContext.activeFilters) ctxBlock += `Active filters: ${toolContext.activeFilters}\n`;
-
-      // Session breadcrumbs — compact history of what user has done this session
-      if (toolContext.sessionBreadcrumbs && toolContext.sessionBreadcrumbs.length > 0) {
-        ctxBlock += `Session activity: ${toolContext.sessionBreadcrumbs.join(' → ')}\n`;
+      // ── SECONDARY: brief summary of other modules the user has touched this session ──
+      if (toolContext.moduleSummaries && Object.keys(toolContext.moduleSummaries).length > 0) {
+        const otherMods = Object.entries(toolContext.moduleSummaries).filter(([mod]) => mod !== primaryPage);
+        if (otherMods.length > 0) {
+          ctxBlock += `\n▸ OTHER MODULES TOUCHED THIS SESSION (brief — for continuity only):\n`;
+          for (const [mod, summary] of otherMods) {
+            const bits = [];
+            if (summary.visits) bits.push(`${summary.visits} visit${summary.visits !== 1 ? 's' : ''}`);
+            if (summary.lastFilters && summary.lastFilters !== '(none)') bits.push(`last: ${summary.lastFilters}`);
+            if (summary.lastType) bits.push(`type: ${summary.lastType}`);
+            if (summary.lastScore) bits.push(`score: ${summary.lastScore}`);
+            if (summary.lastSchool) bits.push(`school: ${summary.lastSchool}`);
+            if (summary.reviews) bits.push(`${summary.reviews} essay review${summary.reviews !== 1 ? 's' : ''}`);
+            if (summary.saiScore) bits.push(`SAI: ${summary.saiScore}`);
+            if (summary.lastMode) bits.push(`mode: ${summary.lastMode}`);
+            if (summary.strategyGenerated) bits.push('strategy generated');
+            ctxBlock += `  • ${PAGE_LABELS[mod] || mod}: ${bits.join(', ') || 'opened'}\n`;
+          }
+        }
       }
 
-      ctxBlock += '\nYou ARE part of Wayfinder. Own all platform features — say "your SAI" not "the tool shows." Answer questions about their results directly.\n';
+      // ── RECENT: last 5 actions as a rolling breadcrumb trail ──
+      if (toolContext.recentActions && toolContext.recentActions.length > 0) {
+        ctxBlock += `\n▸ RECENT ACTIONS: ${toolContext.recentActions.join(' → ')}\n`;
+      }
+
+      ctxBlock += '\nYou ARE part of Wayfinder. Own all platform features — say "your SAI" not "the tool shows." Answer questions about what they\'re looking at directly. When referencing other modules, be brief — the user is focused on the PRIMARY page.\n';
 
       // Inject opportunity intelligence relevant to what the user is browsing
       if (intel) {

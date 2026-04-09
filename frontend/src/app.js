@@ -2508,7 +2508,7 @@ function switchSAIMode(mode) {
 }
 
 async function calculateSAIQuick() {
-  addBreadcrumb('Calculated SAI (quick)');
+  trackModuleActivity('financialAid', 'Calculated SAI (quick)', { lastMode: 'Quick' });
   const income = parseFloat($('saiQuickIncome')?.value) || 0;
   const assets = parseFloat($('saiQuickAssets')?.value) || 0;
   const familySize = parseInt($('saiQuickFamilySize')?.value) || 4;
@@ -2532,7 +2532,7 @@ async function calculateSAIQuick() {
 }
 
 async function calculateSAIDetailed() {
-  addBreadcrumb('Calculated SAI (detailed)');
+  trackModuleActivity('financialAid', 'Calculated SAI (detailed)', { lastMode: 'Detailed' });
   const parentAGI = parseFloat($('saiParentAGI')?.value) || 0;
   const incomeTax = parseFloat($('saiParentIncomeTax')?.value) || 0;
   const untaxedIncome = parseFloat($('saiParentUntaxedIncome')?.value) || 0;
@@ -2943,7 +2943,7 @@ const ESSAY_WORD_LIMITS = {
 let evInitialized = false;
 
 function openEssays() {
-  addBreadcrumb('Opened Essay Reviewer');
+  trackModuleActivity('essays', 'Opened Essay Reviewer', null);
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
 
@@ -3237,7 +3237,12 @@ function mapPromptToEssayType(category, promptId) {
 }
 
 async function submitEssayReview() {
-  const _et = $('essayType')?.value; if (_et) addBreadcrumb('Submitted essay: ' + _et);
+  {
+    const _et = $('evEssayType')?.value || '';
+    const _sch = $('evTargetSchool')?.value?.trim() || '';
+    const _existing = sessionContext.moduleSummaries.essays?.reviews || 0;
+    trackModuleActivity('essays', _et ? 'Submitted essay: ' + _et : 'Submitted essay', { lastType: _et, lastSchool: _sch, reviews: _existing + 1 });
+  }
   const essayText = $('evEssayText').value.trim();
   const essayType = $('evEssayType').value;
   const targetSchool = $('evTargetSchool').value.trim();
@@ -3626,7 +3631,10 @@ function openInternships() {
 }
 
 async function searchInternships() {
-  const _is = $('internshipState')?.value || $('internshipField')?.value; if (_is) addBreadcrumb('Searched internships: ' + _is);
+  {
+    const _filters = [$('internshipField')?.value, $('internshipState')?.value, $('internshipCost')?.value, $('internshipFormat')?.value, $('internshipSearch')?.value?.trim()].filter(Boolean).join(', ');
+    trackModuleActivity('internships', _filters ? 'Searched internships: ' + _filters : 'Browsed internships', { lastFilters: _filters || '(none)', lastSearchAt: Date.now() });
+  }
   $('internshipsLoading').style.display = 'flex';
   $('internshipsResults').innerHTML = '';
 
@@ -3669,7 +3677,10 @@ function openScholarships() {
 }
 
 async function searchScholarships() {
-  const _ss = $('scholarshipState')?.value || $('scholarshipScope')?.value; if (_ss) addBreadcrumb('Searched scholarships: ' + _ss);
+  {
+    const _filters = [$('scholarshipScope')?.value, $('scholarshipCategory')?.value, $('scholarshipState')?.value, $('scholarshipAmount')?.value, $('scholarshipFormat')?.value, $('scholarshipSearch')?.value?.trim()].filter(Boolean).join(', ');
+    trackModuleActivity('scholarships', _filters ? 'Searched scholarships: ' + _filters : 'Browsed scholarships', { lastFilters: _filters || '(none)', lastSearchAt: Date.now() });
+  }
   $('scholarshipsLoading').style.display = 'flex';
   $('scholarshipsResults').innerHTML = '';
 
@@ -3711,7 +3722,10 @@ function openPrograms() {
 }
 
 async function searchPrograms() {
-  const _ps = $('programState')?.value || $('programCategory')?.value; if (_ps) addBreadcrumb('Searched programs: ' + _ps);
+  {
+    const _filters = [$('programCategory')?.value, $('programState')?.value, $('programGrade')?.value, $('programCost')?.value, $('programFormat')?.value, $('programSelectivity')?.value, $('programSearch')?.value?.trim()].filter(Boolean).join(', ');
+    trackModuleActivity('programs', _filters ? 'Searched programs: ' + _filters : 'Browsed programs', { lastFilters: _filters || '(none)', lastSearchAt: Date.now() });
+  }
   $('programsLoading').style.display = 'flex';
   $('programsResults').innerHTML = '';
 
@@ -3744,7 +3758,7 @@ async function searchPrograms() {
 // ========================
 function openFinancialAid() {
   if (!currentUser) { openAuthModal('login'); return; }
-  addBreadcrumb('Opened Financial Aid');
+  trackModuleActivity('financialAid', 'Opened Financial Aid', null);
   closeSidebarOnMobile();
   $('financialAidModal').style.display = 'flex';
 
@@ -3788,14 +3802,17 @@ function switchFinaidTab(tab) {
     document.querySelector('[data-finaid-tab="grants"]')?.classList.add('active');
     searchStateGrants();
   } else if (tab === 'sai') {
-    addBreadcrumb('Opened SAI Calculator');
+    trackModuleActivity('financialAid', 'Opened SAI Calculator', { lastTab: 'SAI' });
     if ($('finaidTabSAI')) $('finaidTabSAI').style.display = 'block';
     document.querySelector('[data-finaid-tab="sai"]')?.classList.add('active');
   }
 }
 
 async function searchFinancialAid() {
-  addBreadcrumb('Searched schools');
+  {
+    const _filters = [$('finaidState')?.value, $('finaidType')?.value, $('finaidTags')?.value, $('finaidSearch')?.value?.trim()].filter(Boolean).join(', ');
+    trackModuleActivity('financialAid', _filters ? 'Searched schools: ' + _filters : 'Searched schools', { lastSchoolFilters: _filters || '(none)' });
+  }
   $('finaidLoading').style.display = 'flex';
   $('finaidResults').innerHTML = '';
 
@@ -3984,7 +4001,7 @@ function renderGrantCard(g, source) {
 }
 
 async function generateMyStrategy() {
-  addBreadcrumb('Generated aid strategy');
+  trackModuleActivity('financialAid', 'Generated aid strategy', { strategyGenerated: true });
   const income = $('strategyIncome')?.value;
   const assets = $('strategyAssets')?.value;
   const familySize = $('strategyFamilySize')?.value;
@@ -4230,16 +4247,54 @@ function renderToolCard(item, type, fullAccess) {
 let davidHistory = [];
 let davidInitialized = false;
 
-// Session breadcrumbs — lightweight tracker of what the user has done this session.
-// Max 12 entries, each is a short string like "Opened SAI Calculator" or "Searched scholarships: WA".
-// This gives David session-wide awareness without a massive context payload.
-const sessionBreadcrumbs = [];
+// ─── Session Context — Structured awareness for David ───────────────
+// Organized in three tiers to keep the token budget bounded:
+//   1. PRIMARY: currentPage + live state (computed fresh in getActiveToolContext)
+//   2. SECONDARY: per-module summaries (fixed keys, merged not appended — bounded size)
+//   3. RECENT: last 5 action breadcrumbs (short rolling queue)
+const sessionContext = {
+  currentPage: 'home',
+  moduleSummaries: {
+    // internships:    { visits, lastFilters, lastResultCount, lastSearchAt }
+    // scholarships:   { visits, lastFilters, lastResultCount, lastSearchAt }
+    // programs:       { visits, lastFilters, lastResultCount, lastSearchAt }
+    // essays:         { reviews, lastType, lastScore, lastSchool }
+    // financialAid:   { saiScore, pellStatus, lastMode }
+    // timeline:       { visits }
+    // demographics:   { visits }
+  },
+  recentActions: [] // max 5, rolling
+};
+
+// Record a user action. Merges into the module summary (bounded) and pushes to recent queue.
+// module: one of 'internships','scholarships','programs','essays','financialAid','timeline','demographics','home'
+// label: short string for the recent-actions queue
+// patch: optional object merged into sessionContext.moduleSummaries[module]
+function trackModuleActivity(module, label, patch) {
+  if (module) {
+    const cur = sessionContext.moduleSummaries[module] || { visits: 0 };
+    cur.visits = (cur.visits || 0) + 1;
+    if (patch && typeof patch === 'object') {
+      for (const [k, v] of Object.entries(patch)) {
+        if (v !== undefined && v !== null && v !== '') cur[k] = v;
+      }
+    }
+    sessionContext.moduleSummaries[module] = cur;
+  }
+  if (label) {
+    // Dedupe consecutive identical entries
+    const last = sessionContext.recentActions[sessionContext.recentActions.length - 1];
+    if (last !== label) {
+      sessionContext.recentActions.push(label);
+      if (sessionContext.recentActions.length > 5) sessionContext.recentActions.shift();
+    }
+  }
+}
+
+// Legacy alias — keeps existing call sites working while we migrate the rest.
+// Routes generic breadcrumbs into the recent queue without touching module summaries.
 function addBreadcrumb(action) {
-  // Dedupe consecutive identical entries
-  if (sessionBreadcrumbs.length > 0 && sessionBreadcrumbs[sessionBreadcrumbs.length - 1] === action) return;
-  sessionBreadcrumbs.push(action);
-  // Keep only the last 12 — enough for David to connect dots, not enough to blow up tokens
-  if (sessionBreadcrumbs.length > 12) sessionBreadcrumbs.shift();
+  trackModuleActivity(null, action, null);
 }
 
 function setupDavidCoach() {
@@ -4294,12 +4349,40 @@ function hideDavidWidget() {
   if (widget) widget.style.display = 'none';
 }
 
+// Detect the user's current page. Priority order:
+//   1. Open tool modals (financial aid, essays, internships, scholarships, programs, timeline, demographics)
+//   2. Essay full-page view
+//   3. Default to 'main-chat' (Wayfinder Engine chat interface)
+function detectCurrentPage() {
+  if ($('financialAidModal')?.style.display === 'flex') return 'financialAid';
+  if ($('essaysModal')?.style.display === 'flex' || $('essayView')?.style.display === 'flex') return 'essays';
+  if ($('internshipsModal')?.style.display === 'flex') return 'internships';
+  if ($('scholarshipsModal')?.style.display === 'flex') return 'scholarships';
+  if ($('programsModal')?.style.display === 'flex') return 'programs';
+  if ($('timelineModal')?.style.display === 'flex') return 'timeline';
+  if ($('demographicsModal')?.style.display === 'flex') return 'demographics';
+  return 'main-chat';
+}
+
 function getActiveToolContext() {
   const ctx = {};
 
-  // Always attach session breadcrumbs
-  if (sessionBreadcrumbs.length > 0) {
-    ctx.sessionBreadcrumbs = [...sessionBreadcrumbs];
+  // ── PRIMARY: current page + structured module summaries + recent actions ──
+  const currentPage = detectCurrentPage();
+  sessionContext.currentPage = currentPage;
+  ctx.currentPage = currentPage;
+
+  // Attach per-module summaries (bounded — one compact object per module)
+  if (Object.keys(sessionContext.moduleSummaries).length > 0) {
+    ctx.moduleSummaries = JSON.parse(JSON.stringify(sessionContext.moduleSummaries));
+  }
+  // Recent actions queue (max 5)
+  if (sessionContext.recentActions.length > 0) {
+    ctx.recentActions = [...sessionContext.recentActions];
+  }
+  // Legacy key for backward compat during rollout (backend still reads sessionBreadcrumbs)
+  if (sessionContext.recentActions.length > 0) {
+    ctx.sessionBreadcrumbs = [...sessionContext.recentActions];
   }
 
   // ── Financial Aid ──
