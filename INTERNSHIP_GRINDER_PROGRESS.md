@@ -1,6 +1,6 @@
 # Internship Grinder Progress Tracker
 
-Last updated: 2026-04-09 (ninth run — PA buildout)
+Last updated: 2026-04-09 (tenth run — NC kickoff)
 
 ## State-by-state verified internship counts
 
@@ -22,6 +22,7 @@ Generated from inject-verified-internships.js run output.
 | OH    | 29    | In progress (second run — arts/business/law/engineering added) |
 | GA    | 29+   | In progress (run 8 — broadened into CS/tech, arts, medicine, humanities) |
 | PA    | 19    | In progress (run 9 — CMU pre-college, PGSS, Penn State, CHOP, Carnegie museums) |
+| NC    | 13    | Started (run 10 — NCSSM Summer Ventures, NC Governor's School, Duke DUNE/STAR/Pre-College, UNC Project Uplift/Uplift PLUS, NC State Engineering Place, Wake Forest RKS Debate, UNC Charlotte STEM, NCMNS teen volunteer) |
 
 ## Recent runs
 - 2026-04-09 (run 1): Added 10 verified Massachusetts programs (MITES Summer, MITES Semester, BWSI, MIT PRIMES, PROMYS, BU RISE, Harvard Pre-College, Harvard SSP, WPI Frontiers, Boston Leadership Institute)
