@@ -6,6 +6,7 @@ backend/data/users/
 backend/data/learned/
 backend/data/backup/
 backend/data/invites/
+backend/data/anon-rate-limits.json
 frontend/dist/
 seed-data/
 *.log

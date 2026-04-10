@@ -10,6 +10,9 @@ import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
 import { captureConversationMemory, captureTrainingPair } from '../services/conversation-memory.js';
 import { recordChatQuery } from '../services/intelligence-analytics.js';
 import { performance } from 'perf_hooks';
+import { promises as fs } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const router = Router();
 
@@ -44,7 +47,7 @@ const userRateLimits = new Map();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 30; // Max 30 requests per minute per user
 
-function checkRateLimit(identifier) {
+function checkRateLimit(identifier, maxRequests = RATE_LIMIT_MAX_REQUESTS) {
   const now = Date.now();
   const record = userRateLimits.get(identifier);
 
@@ -60,11 +63,11 @@ function checkRateLimit(identifier) {
         userRateLimits.delete(key);
       }
     }
-    return { allowed: true, remaining: RATE_LIMIT_MAX_REQUESTS - 1 };
+    return { allowed: true, remaining: maxRequests - 1 };
   }
 
   // Within existing window
-  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
+  if (record.count >= maxRequests) {
     return {
       allowed: false,
       remaining: 0,
@@ -75,8 +78,58 @@ function checkRateLimit(identifier) {
   record.count++;
   return {
     allowed: true,
-    remaining: RATE_LIMIT_MAX_REQUESTS - record.count
+    remaining: maxRequests - record.count
   };
+}
+
+// ─── Anonymous Daily Cap (disk-persisted, survives redeploys) ─────
+// Hard ceiling: 5 messages/day per IP for unauthenticated users.
+// Stored in backend/data/anon-rate-limits.json, auto-resets each calendar day.
+const ANON_DAILY_LIMIT = 5;
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ANON_LIMITS_PATH = join(__dirname, '..', 'data', 'anon-rate-limits.json');
+
+// In-memory cache, flushed to disk on every write
+let anonLimits = { date: '', ips: {} };
+let anonLimitsLoaded = false;
+
+async function loadAnonLimits() {
+  if (anonLimitsLoaded) return;
+  try {
+    const raw = await fs.readFile(ANON_LIMITS_PATH, 'utf-8');
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed.date === 'string' && typeof parsed.ips === 'object') {
+      anonLimits = parsed;
+    }
+  } catch { /* file missing or corrupt — start fresh */ }
+  anonLimitsLoaded = true;
+}
+
+async function flushAnonLimits() {
+  try {
+    await fs.writeFile(ANON_LIMITS_PATH, JSON.stringify(anonLimits), 'utf-8');
+  } catch (err) {
+    console.error('[AnonCap] Failed to write limits file:', err.message);
+  }
+}
+
+async function checkAnonDailyLimit(ip) {
+  await loadAnonLimits();
+  const today = new Date().toISOString().slice(0, 10);
+
+  // Reset on new day
+  if (anonLimits.date !== today) {
+    anonLimits = { date: today, ips: {} };
+  }
+
+  const used = anonLimits.ips[ip] || 0;
+  if (used >= ANON_DAILY_LIMIT) {
+    return { allowed: false, used, limit: ANON_DAILY_LIMIT };
+  }
+
+  anonLimits.ips[ip] = used + 1;
+  flushAnonLimits(); // fire-and-forget — don't block response
+  return { allowed: true, used: used + 1, limit: ANON_DAILY_LIMIT };
 }
 
 // Helper: extract user from auth header (optional — doesn't fail if no token)
@@ -211,10 +264,29 @@ router.post('/', async (req, res) => {
     const auth = await getOptionalUser(req);
     tEvent.user_id = auth?.user?.id || null;
 
+    // ─── ANONYMOUS DAILY CAP (disk-persisted) ─────────────────────
+    // Unauthenticated users get 5 messages/day. Persists across redeploys.
+    if (!auth?.user) {
+      const ip = req.ip || req.connection.remoteAddress || 'unknown';
+      const anonCheck = await checkAnonDailyLimit(ip);
+      if (!anonCheck.allowed) {
+        tEvent.outcome.http_status = 429;
+        tEvent.outcome.error = 'anonymous_daily_limit';
+        tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;
+        logTelemetry(tEvent);
+        return res.status(429).json({
+          error: `You've used your ${ANON_DAILY_LIMIT} free messages for today. Create a free account to continue chatting, or come back tomorrow.`,
+          anonLimit: { used: anonCheck.used, limit: anonCheck.limit }
+        });
+      }
+    }
+
     // ─── PER-USER RATE LIMITING ────────────────────────────────────
     // Identify user by: auth ID > client IP (fallback)
+    // Anonymous users get a tighter burst limit (5/min vs 30/min for authed)
     const rateLimitId = auth?.user?.id || (req.ip || req.connection.remoteAddress || 'unknown');
-    const rateCheck = checkRateLimit(rateLimitId);
+    const effectiveMax = auth?.user ? RATE_LIMIT_MAX_REQUESTS : 5;
+    const rateCheck = checkRateLimit(rateLimitId, effectiveMax);
 
     if (!rateCheck.allowed) {
       tEvent.outcome.http_status = 429;
