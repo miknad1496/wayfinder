@@ -35,6 +35,13 @@ const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 // createUser(), loginUser(), and logoutUser().
 const tokenIndex = new Map();
 
+// ─── Stripe Customer ID Index ────────────────────────────────────
+// In-memory Map<stripeCustomerId, filename> for O(1) webhook lookups.
+// Without this, every Stripe webhook (payment, subscription update,
+// cancellation) does an O(n) readdir + read-all-files scan.
+// Built at startup alongside tokenIndex, maintained by updateUserPlan().
+const stripeCustomerIndex = new Map();
+
 /**
  * Build the token → filename index by scanning all user files once.
  * Call this at startup AFTER repairCorruptedUserFiles().
@@ -42,6 +49,7 @@ const tokenIndex = new Map();
 export async function buildTokenIndex() {
   await ensureUsersDir();
   tokenIndex.clear();
+  stripeCustomerIndex.clear();
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
@@ -51,11 +59,14 @@ export async function buildTokenIndex() {
         if (user.token) {
           tokenIndex.set(user.token, file);
         }
+        if (user.stripeCustomerId) {
+          stripeCustomerIndex.set(user.stripeCustomerId, file);
+        }
       } catch {
         // Skip unreadable files — already handled by repairCorruptedUserFiles
       }
     }
-    console.log(`[Auth] Token index built: ${tokenIndex.size} active tokens`);
+    console.log(`[Auth] Token index built: ${tokenIndex.size} active tokens, ${stripeCustomerIndex.size} Stripe customers`);
   } catch (err) {
     console.error('[Auth] Failed to build token index:', err.message);
   }
@@ -769,22 +780,18 @@ export async function linkSession(token, sessionId) {
   if (!token) return;
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        if (!user.sessionHistory.includes(sessionId)) {
-          user.sessionHistory.push(sessionId);
-          // Keep last 50 sessions
-          if (user.sessionHistory.length > 50) {
-            user.sessionHistory = user.sessionHistory.slice(-50);
-          }
-        }
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return;
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return;
+
+    const { user, filePath } = resolved;
+    if (!user.sessionHistory) user.sessionHistory = [];
+    if (!user.sessionHistory.includes(sessionId)) {
+      user.sessionHistory.push(sessionId);
+      if (user.sessionHistory.length > 50) {
+        user.sessionHistory = user.sessionHistory.slice(-50);
       }
     }
+    await atomicWriteJSON(filePath, user);
   } catch {
     // Non-critical, don't throw
   }
@@ -797,19 +804,12 @@ export async function getUserSessions(token) {
   if (!token) return [];
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        return user.sessionHistory;
-      }
-    }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return [];
+    return resolved.user.sessionHistory || [];
   } catch {
     return [];
   }
-
-  return [];
 }
 
 /**
@@ -821,29 +821,25 @@ export async function getEngineUsage(token) {
   const today = new Date().toISOString().slice(0, 10);
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        const limits = getPlanLimits(user.plan || 'free');
-        // Reset if new day
-        if (user.engineLastReset !== today) {
-          user.engineUsesToday = 0;
-          user.engineLastReset = today;
-          await atomicWriteJSON(join(USERS_DIR, file), user);
-        }
-        return {
-          usesToday: user.engineUsesToday || 0,
-          remaining: Math.max(0, limits.enginePerDay - (user.engineUsesToday || 0)),
-          max: limits.enginePerDay
-        };
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { usesToday: 0, remaining: 0, max: 3 };
+
+    const { user, filePath } = resolved;
+    const limits = getPlanLimits(user.plan || 'free');
+    // Reset if new day
+    if (user.engineLastReset !== today) {
+      user.engineUsesToday = 0;
+      user.engineLastReset = today;
+      await atomicWriteJSON(filePath, user);
     }
+    return {
+      usesToday: user.engineUsesToday || 0,
+      remaining: Math.max(0, limits.enginePerDay - (user.engineUsesToday || 0)),
+      max: limits.enginePerDay
+    };
   } catch {
     return { usesToday: 0, remaining: 0, max: 3 };
   }
-  return { usesToday: 0, remaining: 0, max: 3 };
 }
 
 /**
@@ -853,20 +849,18 @@ export async function deleteUser(token) {
   if (!token) return { error: 'Not authenticated' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        await fs.unlink(join(USERS_DIR, file));
-        return { success: true };
-      }
-    }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
+
+    const { user, filePath } = resolved;
+    await fs.unlink(filePath);
+    // Clean up indexes
+    tokenIndex.delete(token);
+    if (user.stripeCustomerId) stripeCustomerIndex.delete(user.stripeCustomerId);
+    return { success: true };
   } catch (err) {
     return { error: 'Failed to delete user' };
   }
-
-  return { error: 'User not found' };
 }
 
 /**
@@ -908,50 +902,43 @@ export async function getUserChatHistory(token) {
   if (!token) return [];
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        const sessionHistory = [];
-        const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return [];
 
-        for (const sessionId of user.sessionHistory || []) {
-          try {
-            const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
-            const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
-            const session = JSON.parse(sessionRaw);
+    const user = resolved.user;
+    const sessionHistory = [];
+    const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
 
-            // Extract first user message as title (truncated to 50 chars)
-            let title = '';
-            if (session.history && session.history.length > 0) {
-              const firstUserMsg = session.history.find(msg => msg.role === 'user');
-              if (firstUserMsg) {
-                title = firstUserMsg.content.substring(0, 50);
-              }
-            }
+    for (const sessionId of user.sessionHistory || []) {
+      try {
+        const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
+        const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
+        const session = JSON.parse(sessionRaw);
 
-            sessionHistory.push({
-              id: session.id,
-              title: title || '(Empty session)',
-              created: session.created,
-              lastActive: session.lastActive,
-              messageCount: session.messageCount || 0
-            });
-          } catch {
-            // Skip sessions that can't be loaded
+        let title = '';
+        if (session.history && session.history.length > 0) {
+          const firstUserMsg = session.history.find(msg => msg.role === 'user');
+          if (firstUserMsg) {
+            title = firstUserMsg.content.substring(0, 50);
           }
         }
 
-        // Sort by lastActive descending
-        return sessionHistory.sort((a, b) => new Date(b.lastActive) - new Date(a.lastActive));
+        sessionHistory.push({
+          id: session.id,
+          title: title || '(Empty session)',
+          created: session.created,
+          lastActive: session.lastActive,
+          messageCount: session.messageCount || 0
+        });
+      } catch {
+        // Skip sessions that can't be loaded
       }
     }
+
+    return sessionHistory.sort((a, b) => new Date(b.lastActive) - new Date(a.lastActive));
   } catch {
     return [];
   }
-
-  return [];
 }
 
 /**
@@ -963,57 +950,50 @@ export async function searchUserChats(token, query) {
   const lowerQuery = query.toLowerCase();
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        const matchingSessions = [];
-        const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return [];
 
-        for (const sessionId of user.sessionHistory || []) {
-          try {
-            const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
-            const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
-            const session = JSON.parse(sessionRaw);
+    const user = resolved.user;
+    const matchingSessions = [];
+    const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
 
-            // Search through message content
-            let matchingSnippet = '';
-            if (session.history) {
-              for (const msg of session.history) {
-                if (msg.content.toLowerCase().includes(lowerQuery)) {
-                  // Get a snippet around the match
-                  const index = msg.content.toLowerCase().indexOf(lowerQuery);
-                  const start = Math.max(0, index - 30);
-                  const end = Math.min(msg.content.length, index + lowerQuery.length + 30);
-                  matchingSnippet = '...' + msg.content.substring(start, end) + '...';
-                  break;
-                }
-              }
+    for (const sessionId of user.sessionHistory || []) {
+      try {
+        const sessionFile = join(SESSIONS_DIR, `${sessionId}.json`);
+        const sessionRaw = await fs.readFile(sessionFile, 'utf-8');
+        const session = JSON.parse(sessionRaw);
+
+        let matchingSnippet = '';
+        if (session.history) {
+          for (const msg of session.history) {
+            if (msg.content.toLowerCase().includes(lowerQuery)) {
+              const index = msg.content.toLowerCase().indexOf(lowerQuery);
+              const start = Math.max(0, index - 30);
+              const end = Math.min(msg.content.length, index + lowerQuery.length + 30);
+              matchingSnippet = '...' + msg.content.substring(start, end) + '...';
+              break;
             }
-
-            if (matchingSnippet) {
-              matchingSessions.push({
-                id: session.id,
-                created: session.created,
-                lastActive: session.lastActive,
-                messageCount: session.messageCount || 0,
-                matchingSnippet
-              });
-            }
-          } catch {
-            // Skip sessions that can't be loaded
           }
         }
 
-        return matchingSessions;
+        if (matchingSnippet) {
+          matchingSessions.push({
+            id: session.id,
+            created: session.created,
+            lastActive: session.lastActive,
+            messageCount: session.messageCount || 0,
+            matchingSnippet
+          });
+        }
+      } catch {
+        // Skip sessions that can't be loaded
       }
     }
+
+    return matchingSessions;
   } catch {
     return [];
   }
-
-  return [];
 }
 
 /**
@@ -1275,53 +1255,57 @@ export async function updateUserPlan(token, fields) {
   if (!token) return { error: 'Not authenticated' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        if (fields.plan !== undefined) user.plan = fields.plan;
-        if (fields.stripeCustomerId !== undefined) user.stripeCustomerId = fields.stripeCustomerId;
-        if (fields.stripeSubscriptionId !== undefined) user.stripeSubscriptionId = fields.stripeSubscriptionId;
-        if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
 
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, user: sanitizeUser(user) };
+    const { user, filePath } = resolved;
+    if (fields.plan !== undefined) user.plan = fields.plan;
+    if (fields.stripeCustomerId !== undefined) {
+      // Maintain Stripe customer index
+      const oldId = user.stripeCustomerId;
+      if (oldId && oldId !== fields.stripeCustomerId) stripeCustomerIndex.delete(oldId);
+      user.stripeCustomerId = fields.stripeCustomerId;
+      if (fields.stripeCustomerId) {
+        stripeCustomerIndex.set(fields.stripeCustomerId, resolved.filename);
       }
     }
+    if (fields.stripeSubscriptionId !== undefined) user.stripeSubscriptionId = fields.stripeSubscriptionId;
+    if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
+
+    await atomicWriteJSON(filePath, user);
+    return { success: true, user: sanitizeUser(user) };
   } catch (err) {
     return { error: 'Failed to update plan' };
   }
-
-  return { error: 'User not found' };
 }
 
 /**
  * Add essay review credits to a user account.
  */
 export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePaymentId) {
+  // Use Stripe customer index for O(1) lookup instead of O(n) scan
+  const user = await findUserByStripeCustomerId(stripeCustomerId);
+  if (!user) return { error: 'User not found' };
+
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.stripeCustomerId === stripeCustomerId) {
-        user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + quantity;
-        if (!user.essayReviewsPurchased) user.essayReviewsPurchased = [];
-        user.essayReviewsPurchased.push({
-          pack,
-          quantity,
-          purchasedAt: new Date().toISOString(),
-          stripePaymentId
-        });
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, remaining: user.essayReviewsRemaining };
-      }
-    }
+    // Re-resolve filename from index for write
+    const filename = stripeCustomerIndex.get(stripeCustomerId);
+    if (!filename) return { error: 'User file not found' };
+    const filePath = join(USERS_DIR, filename);
+
+    user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + quantity;
+    if (!user.essayReviewsPurchased) user.essayReviewsPurchased = [];
+    user.essayReviewsPurchased.push({
+      pack,
+      quantity,
+      purchasedAt: new Date().toISOString(),
+      stripePaymentId
+    });
+    await atomicWriteJSON(filePath, user);
+    return { success: true, remaining: user.essayReviewsRemaining };
   } catch (err) {
     return { error: 'Failed to add essay credits' };
   }
-  return { error: 'User not found' };
 }
 
 /**
@@ -1398,23 +1382,19 @@ export async function updateAdmissionsProfile(token, profile) {
   if (!token) return { error: 'Not authenticated' };
 
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const user = await safeReadUserFile(join(USERS_DIR, file));
-      if (!user) continue;
-      if (user.token === token) {
-        if (!user.admissionsProfile) {
-          user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
-        }
-        user.admissionsProfile = { ...user.admissionsProfile, ...profile };
-        await atomicWriteJSON(join(USERS_DIR, file), user);
-        return { success: true, admissionsProfile: user.admissionsProfile };
-      }
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
+
+    const { user, filePath } = resolved;
+    if (!user.admissionsProfile) {
+      user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
     }
+    user.admissionsProfile = { ...user.admissionsProfile, ...profile };
+    await atomicWriteJSON(filePath, user);
+    return { success: true, admissionsProfile: user.admissionsProfile };
   } catch (err) {
     return { error: 'Failed to update admissions profile' };
   }
-  return { error: 'User not found' };
 }
 
 /**
@@ -1423,13 +1403,30 @@ export async function updateAdmissionsProfile(token, profile) {
 export async function findUserByStripeCustomerId(customerId) {
   if (!customerId) return null;
 
+  // Fast path: O(1) index lookup
+  const cachedFile = stripeCustomerIndex.get(customerId);
+  if (cachedFile) {
+    try {
+      const user = await safeReadUserFile(join(USERS_DIR, cachedFile));
+      if (user && user.stripeCustomerId === customerId) {
+        return user;
+      }
+      // Stale entry
+      stripeCustomerIndex.delete(customerId);
+    } catch {
+      stripeCustomerIndex.delete(customerId);
+    }
+  }
+
+  // Slow path: full scan (cold start or stale index)
   try {
     const files = await fs.readdir(USERS_DIR);
     for (const file of files.filter(f => f.endsWith('.json'))) {
       const user = await safeReadUserFile(join(USERS_DIR, file));
       if (!user) continue;
       if (user.stripeCustomerId === customerId) {
-        return user; // Returns full user with token
+        stripeCustomerIndex.set(customerId, file);
+        return user;
       }
     }
   } catch {
@@ -1454,19 +1451,14 @@ export async function findUserByToken(token) {
 export async function setUserPlan(token, newPlan) {
   if (!token) return { error: 'No token' };
   try {
-    const files = await fs.readdir(USERS_DIR);
-    for (const file of files.filter(f => f.endsWith('.json'))) {
-      const filePath = join(USERS_DIR, file);
-      const user = await safeReadUserFile(filePath);
-      if (!user) continue;
-      if (user.token === token) {
-        if (!isAdmin(user.email)) return { error: 'Admin only' };
-        user.plan = newPlan;
-        await atomicWriteJSON(filePath, user);
-        return { success: true, user: sanitizeUser(user) };
-      }
-    }
-    return { error: 'User not found' };
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { error: 'User not found' };
+
+    const { user, filePath } = resolved;
+    if (!isAdmin(user.email)) return { error: 'Admin only' };
+    user.plan = newPlan;
+    await atomicWriteJSON(filePath, user);
+    return { success: true, user: sanitizeUser(user) };
   } catch (err) {
     return { error: err.message };
   }

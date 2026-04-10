@@ -683,3 +683,56 @@ The April 4 audits already covered the most critical security issues (session pa
 2. **Data sprint needed**: H-10 (scholarship states), H-15 (internship sources), H-16 (metadata counts), H-17 (applicationFormat) are all data quality issues that should be addressed in one batch
 3. **Architecture**: C-4 (customer ID index) and H-1 (persistent webhook idempotency) require small but important architectural changes
 4. **Frontend cleanup**: H-7, H-8, H-9, M-20, M-21 can be batched into a single frontend reliability pass
+
+---
+
+## Nightly Audit — April 10, 2026
+
+**Focus Area**: Performance (rotation slot 2)
+**Auditor**: Automated nightly audit
+
+### Findings
+
+#### P-1 (CRITICAL → FIXED): O(n) Stripe Customer ID Lookup on Webhooks
+- **Files**: `backend/services/auth.js` — `findUserByStripeCustomerId()`, `addEssayCredits()`
+- **Description**: Every Stripe webhook (payment, subscription update, cancellation) triggered a full O(n) readdir + read-all-files scan of the users directory to find a user by their Stripe customer ID. With growing user count, this is a hot path that scales linearly.
+- **Fix**: Added `stripeCustomerIndex` (Map<stripeCustomerId, filename>) built at startup alongside the existing `tokenIndex`. `findUserByStripeCustomerId()` now does O(1) index lookup with slow-path fallback. `addEssayCredits()` rewritten to use the index. Index maintained in `updateUserPlan()` and cleaned up in `deleteUser()`.
+- **Resolves**: C-4 from earlier audits.
+
+#### P-2 (HIGH → FIXED): 8 Functions Still Using O(n) User Scans Despite Token Index
+- **Files**: `backend/services/auth.js`
+- **Description**: The token index (`resolveUserByToken`) was built in a prior sprint for O(1) auth lookups, but 8 functions were never migrated and still did O(n) readdir scans by token:
+  - `updateUserPlan()` — called on every Stripe webhook
+  - `setUserPlan()` — admin plan changes
+  - `linkSession()` — called on every new chat session
+  - `getUserSessions()` — called on dashboard load
+  - `getEngineUsage()` — called on every chat message
+  - `deleteUser()` — account deletion
+  - `getUserChatHistory()` — chat history page
+  - `searchUserChats()` — chat search
+  - `updateAdmissionsProfile()` — profile updates
+- **Fix**: All 9 functions converted to use `resolveUserByToken()` for O(1) lookup. Only 4 readdir scans remain in auth.js: `buildTokenIndex()` (startup), `resolveUserByToken()` slow-path fallback, `repairCorruptedUserFiles()` (startup), and `findUserByStripeCustomerId()` slow-path fallback.
+
+#### P-3 (MEDIUM): Admin Stats Endpoint Reads All Files on Every Request
+- **File**: `backend/routes/admin.js`, GET `/api/admin/stats`
+- **Description**: Every call reads ALL user files, ALL session files, AND all invite files. No caching. With 100+ users and sessions, this is hundreds of file reads per admin dashboard refresh. Protected by admin auth + rate limiter (5/min), so impact is limited to admin UX slowness.
+- **Status**: Logged, not fixed this audit. Recommend adding a 60-second in-memory cache.
+
+#### P-4 (LOW): Search Endpoints Copy Full Dataset Arrays
+- **Files**: `backend/routes/internships.js`, `scholarships.js`, `programs.js`, `financial-aid.js`
+- **Description**: Every search request creates a full array copy via spread (`[...data.internships]`) before filtering. With 1592 internships (2MB), 1035 scholarships (1.3MB), and 788 programs (1.1MB), this is ~4.4MB of unnecessary array allocation per search. The cache is re-read from disk on TTL expiry, so in-place filtering would be safe if a fresh reference were used.
+- **Status**: Logged, not fixed this audit. Low priority since the 30-min cache TTL means the underlying data is stable, and the array copy is cheap in V8 (shallow copy of references). Would matter more at 10K+ entries.
+
+### Summary
+- **Fixed**: 2 issues (P-1 CRITICAL, P-2 HIGH) — 10 functions converted from O(n) to O(1) lookups
+- **Logged**: 2 issues (P-3 MEDIUM, P-4 LOW) for future audits
+- **Impact**: Every authenticated API request, every Stripe webhook, and every chat message now uses O(1) indexed lookups instead of scanning all user files
+
+### Cumulative Open Issue Tracker Update
+
+| ID | Severity | Summary | First Found | Status |
+|----|----------|---------|-------------|--------|
+| C-4 | CRITICAL | O(n) Stripe webhook user scan | Apr 7 AM | **FIXED Apr 10** |
+| P-2 | HIGH | 9 functions with O(n) token scans despite index | Apr 10 | **FIXED Apr 10** |
+| P-3 | MEDIUM | Admin stats O(n) all-files read, no caching | Apr 10 | OPEN |
+| P-4 | LOW | Search endpoints copy full dataset arrays | Apr 10 | OPEN |
