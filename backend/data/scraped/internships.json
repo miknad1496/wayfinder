@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-10",
     "lastVerified": "2026-04-08",
-    "totalCount": 1571,
+    "totalCount": 1582,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1571,
-    "verifiedCount": 946,
+    "totalInternships": 1582,
+    "verifiedCount": 957,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -31942,6 +31942,392 @@
       "duration": "1-week sessions across the summer",
       "whyApply": "One of the most respected community art schools in the Mountain West, attached to a museum and Colorado College — a serious option for students building a fine arts portfolio.",
       "_source": "https://artschool.csfineartscenter.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Yale Young Global Scholars (YYGS)",
+      "company": "Yale University",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Humanities / STEM / Interdisciplinary",
+      "deadline": "2026-01-10",
+      "description": "Academically intensive two-week residential program on Yale's New Haven campus for rising juniors and seniors. Thematic sessions include Politics/Law/Economics, Literature/Philosophy/Culture, Innovations in Science & Technology, and Solving Global Challenges. Small seminars, lectures from Yale faculty, and collaborative capstone projects. Yale provides over $3M in need-based financial aid, including full-tuition discounts.",
+      "majors": [
+        "Political Science",
+        "Law",
+        "Economics",
+        "Literature",
+        "Philosophy",
+        "Biology",
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "residential",
+        "Yale",
+        "global",
+        "selective"
+      ],
+      "url": "https://globalscholars.yale.edu/",
+      "duration": "2 weeks (June-July, 3 sessions)",
+      "whyApply": "One of the flagship Ivy League pre-college experiences. Global cohort, serious academics, and substantial need-based aid make it accessible to students from all backgrounds.",
+      "_source": "https://globalscholars.yale.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Yale Summer Session Pre-College",
+      "company": "Yale University",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary / Pre-College",
+      "deadline": "2026-03-15",
+      "description": "Credit-bearing Yale courses opened to qualified high school students entering their senior year (or current seniors). Students take actual Yale University courses for a grade and transcript alongside Yale undergraduates. Both 5-week and 2-week session options. Must be at least 16 years old at program start.",
+      "majors": [
+        "Biology",
+        "English",
+        "History",
+        "Computer Science",
+        "Economics",
+        "Psychology"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "college-credit",
+        "Yale",
+        "residential"
+      ],
+      "url": "https://summer.yale.edu/apply/pre-college-students",
+      "duration": "2-5 weeks (June-August)",
+      "whyApply": "Take real Yale courses with real Yale professors and a real Yale transcript. Best option for students who want genuine college academics rather than summer-camp-style pre-college.",
+      "_source": "https://summer.yale.edu/apply/pre-college-students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "UConn Pre-College Summer (PCS)",
+      "company": "University of Connecticut",
+      "location": {
+        "city": "Storrs",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary",
+      "deadline": "2026-05-01",
+      "description": "Residential one-week non-credit sessions (and a two-week credit option) at UConn's Storrs campus. Students live in dorms, eat in dining halls, and take classes in STEM, humanities, social sciences, and arts taught by UConn faculty and industry professionals. For current freshmen, sophomores, and juniors aged 14-17 with at least a 2.0 GPA.",
+      "majors": [
+        "Engineering",
+        "Biology",
+        "Computer Science",
+        "Business",
+        "Psychology",
+        "Nursing"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "residential",
+        "UConn"
+      ],
+      "url": "https://precollege-summer.uconn.edu/",
+      "duration": "1-2 weeks",
+      "whyApply": "Affordable, in-state flagship pre-college experience. A strong fit for CT students exploring majors before applying to UConn or similar flagships.",
+      "_source": "https://precollege-summer.uconn.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "UConn Health High School Student Research Apprentice Program",
+      "company": "UConn Health / UConn School of Medicine",
+      "location": {
+        "city": "Farmington",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Stipend provided",
+      "field": "Biomedical Research / Medicine",
+      "deadline": "2026-03-15",
+      "description": "Five-week paid biomedical research apprenticeship at UConn Health in Farmington or at Central Connecticut State University in New Britain. Students work in the laboratories of UConn School of Medicine or School of Dental Medicine researchers on real projects involving cell culture, molecular biology, and biomedical techniques. Designed to introduce CT students from underrepresented backgrounds to careers in health and biomedical sciences.",
+      "majors": [
+        "Biology",
+        "Biochemistry",
+        "Pre-Med",
+        "Dental Medicine",
+        "Molecular Biology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "biomedical",
+        "stipend",
+        "diversity-pipeline",
+        "UConn"
+      ],
+      "url": "https://health.uconn.edu/hcop/pathway-programs/high-school-student-research-apprentice-program/",
+      "duration": "5 weeks (summer)",
+      "whyApply": "A rare paid in-state biomedical research experience at Connecticut's academic medical center — designed specifically for CT high schoolers and a strong pipeline into medical and dental careers.",
+      "_source": "https://health.uconn.edu/hcop/pathway-programs/high-school-student-research-apprentice-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Yale New Haven Hospital High School Volunteer Program",
+      "company": "Yale New Haven Hospital",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Healthcare / Medicine",
+      "deadline": "2026-04-01",
+      "description": "Established high school volunteer program at one of the top academic medical centers in the United States. Volunteers must be at least 15 years old. Roles include assisting patients and visitors with wayfinding and supporting patients and staff on inpatient units. Summer and year-round sessions available. Hospital provides college and scholarship references for students who fulfill their commitment.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Public Health",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "healthcare",
+        "volunteer",
+        "hospital",
+        "Yale",
+        "patient-facing"
+      ],
+      "url": "https://www.ynhh.org/about/community/volunteers/high-school-volunteer-program",
+      "duration": "Summer or year-round shifts",
+      "whyApply": "Direct clinical exposure at a nationally ranked academic medical center — one of the strongest ways for a CT teen to test interest in medicine and nursing.",
+      "_source": "https://www.ynhh.org/about/community/volunteers/high-school-volunteer-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Choate Rosemary Hall Summer Programs",
+      "company": "Choate Rosemary Hall",
+      "location": {
+        "city": "Wallingford",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary / Pre-College",
+      "deadline": "2026-01-31",
+      "description": "Since 1916, Choate Rosemary Hall has offered academic enrichment summer programs with over 100 courses. Options include Immersion Geometry, the Theater Arts Institute, the JFK '35 Institute in Government, the English Language Institute, Competition Robotics, Oil Painting, World Issues, Economic Principles, and more. Residential and day options, 2-5 week sessions on the historic Wallingford campus.",
+      "majors": [
+        "Mathematics",
+        "Theater",
+        "Government",
+        "Economics",
+        "Engineering",
+        "English",
+        "Visual Arts"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "residential",
+        "boarding-school",
+        "Choate"
+      ],
+      "url": "https://www.choate.edu/summer",
+      "duration": "2-5 weeks (June 28 - July 31, 2026)",
+      "whyApply": "One of the oldest and most respected boarding-school summer programs in the country, with signature institutes in government, theater, and geometry.",
+      "_source": "https://www.choate.edu/summer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wesleyan Summer Session Pre-College",
+      "company": "Wesleyan University",
+      "location": {
+        "city": "Middletown",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary / Pre-College",
+      "deadline": "2026-05-01",
+      "description": "Wesleyan University's Summer Session opens its intensive, credit-bearing undergraduate courses to high school students. Students complete full semester-length Wesleyan courses in just over four weeks, earning Wesleyan credit. Offerings include writing, literature, government, biology, data analysis, and more. Two sessions: Session I (May 27 - June 23) and Session II (June 29 - July 24).",
+      "majors": [
+        "English",
+        "Government",
+        "Biology",
+        "Data Science",
+        "Film",
+        "Psychology"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "college-credit",
+        "Wesleyan"
+      ],
+      "url": "https://www.wesleyan.edu/summer/precollege.html",
+      "duration": "4-5 weeks per session",
+      "whyApply": "A genuine liberal-arts college experience — credit-bearing Wesleyan classes at one of the top liberal arts colleges in the country.",
+      "_source": "https://www.wesleyan.edu/summer/precollege.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wesleyan Summer Science Camp for Girls",
+      "company": "Wesleyan University — Joint Center for Community Programs",
+      "location": {
+        "city": "Middletown",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM / Women in Science",
+      "deadline": "2026-05-09",
+      "description": "One-week summer science camp at Wesleyan for middle and high school girls from Middletown and surrounding CT towns. Hands-on experiments, interactive STEM activities, and field trips, mentored by Wesleyan science faculty and student program assistants. Free or very low cost for local students.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Environmental Science"
+      ],
+      "tags": [
+        "middle-school",
+        "high-school",
+        "STEM",
+        "women-in-STEM",
+        "girls",
+        "free"
+      ],
+      "url": "https://www.wesleyan.edu/jccp/girlsinscience.html",
+      "duration": "1 week",
+      "whyApply": "A free or near-free STEM camp for local girls at a highly ranked liberal arts college — strong early-career science exposure for middle and high school students in central Connecticut.",
+      "_source": "https://www.wesleyan.edu/jccp/girlsinscience.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Connecticut Science Center Teen Innovation Program",
+      "company": "Connecticut Science Center",
+      "location": {
+        "city": "Hartford",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Public bus transit vouchers provided",
+      "field": "STEM Education / Museum",
+      "deadline": "2026-04-15",
+      "description": "Six-week summer teen ambassador program at the Connecticut Science Center in downtown Hartford. Teens (primarily from under-resourced Greater Hartford communities) create original STEM programs and exhibits to teach museum visitors. Prerequisites include completing the Investigate! program or one full school year on the Teen Advisory Council.",
+      "majors": [
+        "STEM Education",
+        "Communications",
+        "Biology",
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "STEM",
+        "museum",
+        "leadership",
+        "diversity-pipeline",
+        "Hartford",
+        "free"
+      ],
+      "url": "https://ctsciencecenter.org/teens/innovation2/",
+      "duration": "6 weeks (summer)",
+      "whyApply": "A paid-adjacent museum teen leadership experience with a strong equity focus for Greater Hartford students — pairs STEM content with real communication and exhibit-design practice.",
+      "_source": "https://ctsciencecenter.org/teens/innovation2/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Quinnipiac University Summer Programs for High School Students",
+      "company": "Quinnipiac University",
+      "location": {
+        "city": "Hamden",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Multidisciplinary / Pre-College",
+      "deadline": "2026-06-01",
+      "description": "Short-form summer programs for high school students at Quinnipiac University's Hamden campus. Fields include data science, healthcare career exploration, game design, interactive media, cybersecurity, communications, photography, film, and creative writing. Both residential and commuter options available.",
+      "majors": [
+        "Data Science",
+        "Nursing",
+        "Game Design",
+        "Communications",
+        "Cybersecurity",
+        "Film"
+      ],
+      "tags": [
+        "high-school",
+        "pre-college",
+        "Quinnipiac",
+        "residential",
+        "commuter"
+      ],
+      "url": "https://www.qu.edu/academics/about-our-programs/summer-experiences-courses/high-school-students/",
+      "duration": "1-2 weeks",
+      "whyApply": "Career-focused short programs with strong offerings in healthcare, game design, and sports media — fields where Quinnipiac has nationally recognized undergraduate programs.",
+      "_source": "https://www.qu.edu/academics/about-our-programs/summer-experiences-courses/high-school-students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Hartford Magnet Trinity College Academy Summer Writing Institute",
+      "company": "Trinity College (Hartford)",
+      "location": {
+        "city": "Hartford",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Writing / Humanities",
+      "deadline": "2026-05-15",
+      "description": "Summer writing program run by Trinity College faculty for Hartford Magnet Trinity College Academy high school students. Introduces students to the rigors of college-level writing in a fun, interactive environment, with a focus on academic and creative writing. Companion 'Designing Your College Experience' program also runs concurrently for college-readiness coaching.",
+      "majors": [
+        "English",
+        "Creative Writing",
+        "Humanities"
+      ],
+      "tags": [
+        "high-school",
+        "writing",
+        "humanities",
+        "Trinity-College",
+        "Hartford",
+        "free"
+      ],
+      "url": "https://www.trincoll.edu/cher/blog/hmtca-trinity-college-summer-programs-reach-record-number-of-high-school-student-participants/",
+      "duration": "Several weeks (summer)",
+      "whyApply": "A structured, Trinity-faculty-led writing program specifically for Hartford public school students — a strong, free, college-level humanities experience.",
+      "_source": "https://www.trincoll.edu/cher/blog/hmtca-trinity-college-summer-programs-reach-record-number-of-high-school-student-participants/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
