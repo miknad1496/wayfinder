@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-10",
     "lastVerified": "2026-04-08",
-    "totalCount": 1554,
+    "totalCount": 1565,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1554,
-    "verifiedCount": 929,
+    "totalInternships": 1565,
+    "verifiedCount": 940,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -27084,6 +27084,396 @@
       "duration": "Academic year (1 year)",
       "whyApply": "Authentic, year-long mentored biomedical research at a top medical school — far more substantive than a one-week summer camp, with publishable-quality output (manuscript + poster + presentation).",
       "_source": "https://mcw.marquette.edu/biomedical-engineering/supremes-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Future Titans High School (FT-HS)",
+      "company": "UW-Oshkosh PreCollege Programs",
+      "location": {
+        "city": "Oshkosh",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "WI DPI + UW System scholarships cover all expenses for eligible students",
+      "field": "Multi-Disciplinary / College Access",
+      "deadline": "2026-03-20",
+      "description": "One-week summer residential pre-college program for students entering grades 10-12 in fall 2026, with two sessions June 21-27 and July 5-11, 2026. Focus is on developing educational proficiency through problem-solving learning experiences, challenging participants to explore new concepts and discover college/career opportunities on the UW-Oshkosh campus. Wisconsin Department of Public Instruction and University of Wisconsin System provide scholarships that cover all expenses for eligible Wisconsin students — free for those who qualify.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "free",
+        "college-access",
+        "pre-college",
+        "Oshkosh",
+        "Fox Valley"
+      ],
+      "url": "https://www.uwosh.edu/precollege/programs/",
+      "duration": "1 week (June 21-27 or July 5-11, 2026)",
+      "whyApply": "A rare fully-scholarshipped residential pre-college week for Wisconsin students — 2 sessions, DPI scholarships, and college campus immersion at UW-Oshkosh.",
+      "_source": "https://www.uwosh.edu/precollege/programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Academy of Medicine",
+      "company": "St. Norbert College",
+      "location": {
+        "city": "De Pere",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Medicine / Health Sciences",
+      "deadline": "Registration opens 2026-01-01; sessions fill quickly",
+      "description": "Hands-on medical experience for high school students at St. Norbert College in De Pere (Green Bay area). Two 4-day sessions: Session 1 June 16-19, 2026 and Session 2 June 23-26, 2026. Participants gain hands-on experience, connect with medical experts, and learn from professionals in the field across multiple specialties. Designed as an introduction to health careers for students seriously considering medicine, nursing, or allied health.",
+      "majors": [
+        "Pre-Med",
+        "Nursing",
+        "Health Sciences",
+        "Biology"
+      ],
+      "tags": [
+        "high-school",
+        "medicine",
+        "pre-med",
+        "hands-on",
+        "Green Bay",
+        "short-program"
+      ],
+      "url": "https://snc.edu/helpful-info/business-community/child-teen-programs/summer-academy-of-medicine",
+      "duration": "4 days (June 16-19 or June 23-26, 2026)",
+      "whyApply": "Short, accessible medicine exposure program in the Green Bay area — good for rising 11th-12th graders exploring health careers without a multi-week residential commitment.",
+      "_source": "https://snc.edu/helpful-info/business-community/child-teen-programs/summer-academy-of-medicine",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Lawrence Summer Music Institute",
+      "company": "Lawrence University Conservatory of Music",
+      "location": {
+        "city": "Appleton",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Tuition $850 (early, by Jan 15) or $950; lodging $355; meals $300",
+      "field": "Music / Performing Arts",
+      "deadline": "2026-01-15 (early tuition) / later applications accepted",
+      "description": "Week-long residential music intensive at Lawrence University's highly regarded Conservatory of Music in Appleton, running concurrently July 5-12, 2026 across three programs: Classical Voice, Percussion, and Piano & Strings. Open to students currently in 8th through 12th grades (including those graduating high school in 2026). Participants focus on building classical performance and chamber music skills through private lessons, group coaching, performance opportunities, and workshops with Lawrence Conservatory faculty and guest artists.",
+      "majors": [
+        "Music",
+        "Music Performance",
+        "Voice",
+        "Piano",
+        "Strings",
+        "Percussion"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "residential",
+        "music",
+        "conservatory",
+        "classical",
+        "chamber-music"
+      ],
+      "url": "https://www.lawrence.edu/summer-lawrence/lawrence-summer-music-institute",
+      "duration": "1 week (July 5-12, 2026)",
+      "whyApply": "A true conservatory-level residential week with Lawrence faculty — serious pre-professional training at one of the Midwest's top music programs, open to middle schoolers through graduating seniors.",
+      "_source": "https://www.lawrence.edu/summer-lawrence/lawrence-summer-music-institute",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Wisconsin Conservatory of Music 2026 Summer Music Camps",
+      "company": "Wisconsin Conservatory of Music",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Music / Performing Arts",
+      "deadline": "Registration opens 2026-02-01",
+      "description": "A range of 2026 summer music camps at the Wisconsin Conservatory of Music in Milwaukee and partner sites, continuing WCM's longstanding Milwaukee music education tradition. Camps include Music Exploration Camps, Piano Camp, Percussion programs, and more across multiple Wisconsin locations, serving elementary through high school students. Space is limited and families are encouraged to register early when registration opens February 1, 2026.",
+      "majors": [
+        "Music",
+        "Piano",
+        "Percussion",
+        "Music Performance"
+      ],
+      "tags": [
+        "elementary-school",
+        "middle-school",
+        "high-school",
+        "music",
+        "day-camp",
+        "Milwaukee"
+      ],
+      "url": "https://www.wcmusic.org/2026-summer-music-camps/",
+      "duration": "1-2 week camps (summer 2026)",
+      "whyApply": "Milwaukee's longstanding community conservatory — broad K-12 reach, multiple camp options, and access to serious music instruction at a lower commitment than residential institutes.",
+      "_source": "https://www.wcmusic.org/2026-summer-music-camps/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Summer Engineering Experiences (SEE)",
+      "company": "Marquette University Opus College of Engineering",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Engineering",
+      "deadline": "Spring 2026 (rolling; programs fill)",
+      "description": "Non-residential half-day summer engineering experiences on Marquette's Milwaukee campus for rising 10th graders and above. Participants learn new skills, lead hands-on experiments, and explore engineering passions across biomedical engineering, coding and automation, community-focused engineering projects, and other tracks offered by Opus College of Engineering faculty and students. Designed to introduce high schoolers to the breadth of modern engineering in a low-cost, commuter-friendly format.",
+      "majors": [
+        "Engineering",
+        "Biomedical Engineering",
+        "Computer Engineering",
+        "Mechanical Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "rising-10th",
+        "engineering",
+        "biomedical",
+        "coding",
+        "Milwaukee",
+        "day-program"
+      ],
+      "url": "https://www.marquette.edu/engineering/k12-outreach/summer-engineering-experiences.php",
+      "duration": "Half-day week-long programs (summer 2026)",
+      "whyApply": "Low-barrier, commuter-friendly engineering exposure at a top Jesuit research university — ideal for Milwaukee-area students testing engineering interests before committing to longer residential programs.",
+      "_source": "https://www.marquette.edu/engineering/k12-outreach/summer-engineering-experiences.php",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "High School Science Research Internship Program",
+      "company": "Madison Metropolitan School District (MMSD)",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "STEM Research",
+      "deadline": "Spring 2026 (applications open to rising 11th graders)",
+      "description": "Nine-week summer science research internship for Madison Metropolitan School District 11th grade students. Interns are matched with authentic science research placements across UW-Madison labs and affiliated Madison research institutions, gaining real experimental experience across biology, chemistry, physics, bioengineering, and environmental science. At the end of the program, interns design a scientific poster to share their work at a September poster session. One of the few MMSD-specific programs with priority access to UW-Madison research labs.",
+      "majors": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Bioengineering",
+        "Environmental Science",
+        "Neuroscience"
+      ],
+      "tags": [
+        "high-school",
+        "rising-11th",
+        "research",
+        "UW-Madison",
+        "MMSD",
+        "9-weeks",
+        "in-person"
+      ],
+      "url": "https://www.madison.k12.wi.us/curriculum-instruction/science/high-school-science-research-internship-program",
+      "duration": "9 weeks (summer 2026)",
+      "whyApply": "A rare substantive 9-week wet-lab research experience reserved for Madison public school students — real data, real mentorship, and a September presentation built in.",
+      "_source": "https://www.madison.k12.wi.us/curriculum-instruction/science/high-school-science-research-internship-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Inspire U",
+      "company": "UW-La Crosse Pre-College Programs",
+      "location": {
+        "city": "La Crosse",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Leadership / College Access",
+      "deadline": "Spring 2026 (check precollege@uwlax.edu)",
+      "description": "Five-day, four-night residential camp June 15-19, 2026 for students entering grades 9-12 in fall 2025. Inspire U focuses on leadership development and college/career pathway exploration on the UW-La Crosse campus, giving Western Wisconsin and Twin Cities-area students an immersive taste of college residence life, academic advising, and career planning. Run by the Multicultural Student Services pre-college team.",
+      "majors": [
+        "Any"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "leadership",
+        "college-access",
+        "multicultural",
+        "La Crosse",
+        "Western WI"
+      ],
+      "url": "https://www.uwlax.edu/multicultural-student-services/pre-college-staff/pre-college-summer/",
+      "duration": "5 days/4 nights (June 15-19, 2026)",
+      "whyApply": "One of the few residential Wisconsin pre-college weeks explicitly focused on leadership development and first-gen/multicultural college access — includes dorm life and career-pathway exploration.",
+      "_source": "https://www.uwlax.edu/multicultural-student-services/pre-college-staff/pre-college-summer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "My River Adventures (MRA)",
+      "company": "UW-La Crosse Youth & Pre-College Programs",
+      "location": {
+        "city": "La Crosse",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Environmental Science / Field Biology",
+      "deadline": "Spring 2026",
+      "description": "Five-day residential environmental field summer camp July 27-31, 2026 on the UW-La Crosse campus and along the Upper Mississippi River for incoming 9th-12th graders. Students conduct hands-on field work in river ecology, water quality, wetland science, and river-corridor biodiversity — a region of exceptional ecological importance where the Mississippi flyway, Driftless Area, and major confluence rivers meet. Strong option for students considering environmental science, ecology, fisheries, or water resources careers.",
+      "majors": [
+        "Environmental Science",
+        "Ecology",
+        "Biology",
+        "Fisheries",
+        "Water Resources"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "environmental-science",
+        "field-biology",
+        "river",
+        "Driftless",
+        "La Crosse"
+      ],
+      "url": "https://www.uwlax.edu/gel/ypc/summer-youth-programs/",
+      "duration": "5 days (July 27-31, 2026)",
+      "whyApply": "Hands-on Mississippi River field ecology along the Driftless Area — a unique combination of residential college life and real environmental field science for students considering ecology or water-resources careers.",
+      "_source": "https://www.uwlax.edu/gel/ypc/summer-youth-programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Freshwater High School Experience",
+      "company": "Freshwater Collaborative of Wisconsin (at UW-Oshkosh)",
+      "location": {
+        "city": "Oshkosh",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "$25 participation fee; all lodging, meals, and activities covered by FCW",
+      "field": "Environmental Science / Freshwater Science",
+      "deadline": "2026-07 (until 20 slots fill)",
+      "description": "Three-day residential freshwater science camp July 13-15, 2026 at UW-Oshkosh. High school students conduct hands-on freshwater research, pilot water drones, explore Lake Winnebago waterways on a pontoon boat, learn about freshwater-related college majors and careers, and stay two nights in UW-Oshkosh residence halls. Aside from a $25 participation fee, all costs — lodging, meals, hands-on activities — are covered by the Freshwater Collaborative of Wisconsin. Limited to 20 participants, making it highly selective.",
+      "majors": [
+        "Environmental Science",
+        "Limnology",
+        "Biology",
+        "Water Resources"
+      ],
+      "tags": [
+        "high-school",
+        "residential",
+        "free",
+        "environmental-science",
+        "freshwater",
+        "water-drones",
+        "Lake Winnebago"
+      ],
+      "url": "https://freshwater.wisconsin.edu/freshwater-high-school-experience-2/",
+      "duration": "3 days (July 13-15, 2026)",
+      "whyApply": "A near-free residential freshwater research camp limited to 20 students — water drones, pontoon fieldwork, and direct college/career advising from the state's freshwater workforce network.",
+      "_source": "https://freshwater.wisconsin.edu/freshwater-high-school-experience-2/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Freshwater Science Field Experience",
+      "company": "Freshwater Collaborative of Wisconsin (UW-Stout, UW-Eau Claire, UW-River Falls)",
+      "location": {
+        "city": "Menomonie",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Full-tuition scholarships available to all participants via FCW funding",
+      "field": "Environmental Science / Water Resources",
+      "deadline": "Spring 2026",
+      "description": "Five-day immersive summer field experience June 21-25, 2026 for high school juniors and seniors, hosted jointly by UW-Stout, UW-Eau Claire, and UW-River Falls. Students explore western Wisconsin's lakes, streams, and groundwater alongside faculty and college students, conducting real freshwater research across multiple campuses and field sites. Chaperoned lodging is provided at UW-Stout. Maximum of 24 spots, and all participants are eligible for full-tuition scholarships thanks to Freshwater Collaborative of Wisconsin funding.",
+      "majors": [
+        "Environmental Science",
+        "Water Resources",
+        "Hydrology",
+        "Geology",
+        "Biology",
+        "Ecology"
+      ],
+      "tags": [
+        "high-school",
+        "rising-12th",
+        "residential",
+        "free",
+        "environmental-science",
+        "hydrology",
+        "Western WI"
+      ],
+      "url": "https://freshwater.wisconsin.edu/freshwater-field-experience/",
+      "duration": "5 days (June 21-25, 2026)",
+      "whyApply": "A rare fully-scholarshipped multi-campus freshwater field research week — expose rising seniors to real hydrology and ecology fieldwork across three UW campuses and Western Wisconsin ecosystems.",
+      "_source": "https://freshwater.wisconsin.edu/freshwater-field-experience/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Freshwater Summer Scholars Program",
+      "company": "UW-Green Bay / Freshwater Collaborative of Wisconsin",
+      "location": {
+        "city": "Green Bay",
+        "state": "WI"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$1,750 paid in two installments",
+      "field": "Environmental Science / Freshwater Research",
+      "deadline": "2026-03-16 (applications open)",
+      "description": "Paid summer research program at UW-Green Bay where high school students conduct authentic freshwater science research alongside faculty mentors. Scholars commit 120 hours across the summer and receive a $1,750 stipend paid in two installments. Applications open March 16, 2026. Focuses on Lake Michigan / Green Bay watershed issues including water quality, fisheries, aquatic invasive species, and coastal ecology — connecting students directly to Wisconsin's freshwater workforce pipeline.",
+      "majors": [
+        "Environmental Science",
+        "Biology",
+        "Ecology",
+        "Freshwater Science",
+        "Fisheries"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "research",
+        "environmental-science",
+        "Lake Michigan",
+        "Green Bay",
+        "stipend"
+      ],
+      "url": "https://www.uwgb.edu/freshwater-scholars/",
+      "duration": "120 hours across summer 2026",
+      "whyApply": "One of the few truly paid high school freshwater research positions in Wisconsin — $1,750 stipend, direct faculty mentorship at UW-Green Bay, and a clear on-ramp into the state's freshwater workforce pipeline.",
+      "_source": "https://www.uwgb.edu/freshwater-scholars/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
       "format": "in-person"
