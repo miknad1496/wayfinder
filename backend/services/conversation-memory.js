@@ -136,7 +136,7 @@ export async function captureConversationMemory(params) {
       scopeLabel,
       query: userMessage.trim(),
       response: response.trim().slice(0, 2000), // Cap response length for RAG
-      userName: sessionContext?.userName || null,
+      // Note: userName intentionally excluded to prevent PII leaking into RAG context
     };
 
     // Append to daily memory file (one file per day for manageable sizes)
@@ -274,10 +274,15 @@ export async function getMemoryChunks(query, topK = 3) {
     const topEntries = scored.slice(0, topK);
 
     // Format as RAG chunks
+    // Note: Memory is shared across users (no userId filter). The chunks below
+    // contain sanitized Q&A pairs without PII — responses are capped at 2000 chars
+    // and userNames are stripped at capture time. This is safe for general domain
+    // knowledge (e.g., "what are good CS internships in WA?") but should be
+    // user-scoped if the product evolves to store personal strategy data.
     return topEntries.map(({ entry, score }) => ({
       source: 'conversation-memory',
       title: `Past conversation: ${(entry.topics || []).slice(0, 3).join(', ')}`,
-      content: `[Previous exchange — ${entry.domain}]\nUser asked: ${entry.query}\nWayfinder responded: ${entry.response}`,
+      content: `[Previous exchange — ${entry.domain}]\nQuestion: ${entry.query}\nAnswer: ${entry.response}`,
       layer: 'memory',
       score: Math.min(score / 5, 1.0), // Normalize to 0-1
     }));

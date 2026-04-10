@@ -108,11 +108,11 @@ const INJECTION_PATTERNS = [
   // System prompt extraction variants (NEW)
   {
     name: 'extraction_variant_summarize',
-    pattern: /summarize|recap\s+everything\s+(?:you|before|above)/i,
+    pattern: /(?:summarize|recap)\s+(?:everything|all(?:\s+of)?(?:\s+(?:that|what))?)\s+(?:you(?:'ve|\s+have)?\s+(?:been|said|told|written|instructed)|(?:before|above|prior|earlier|that\s+(?:was|came)))/i,
   },
   {
     name: 'extraction_variant_list',
-    pattern: /(?:list|enumerate)\s+(?:all|every|each)\s+(?:rule|guideline|instruction|constraint|limitation)/i,
+    pattern: /(?:list|enumerate)\s+(?:all|every|each)\s+(?:of\s+)?(?:your|(?:the\s+)?(?:system(?:'s)?|internal|hidden))\s+(?:(?:\w+\s+)?(?:rules?|guidelines?|instructions?|constraints?|limitations?))/i,
   },
 
   // Essay ghostwriting — handle "college application essay" as a compound noun

@@ -755,7 +755,20 @@ router.post('/context', async (req, res) => {
       return res.status(403).json({ error: 'Access denied' });
     }
 
-    session.context = { ...session.context, ...context };
+    // Whitelist allowed context keys to prevent prototype pollution and arbitrary injection
+    const ALLOWED_CONTEXT_KEYS = new Set([
+      'userName', 'userType', 'school', 'interests', 'profile',
+      'track', 'valuesOrientation',
+    ]);
+    const sanitizedContext = {};
+    if (context && typeof context === 'object' && !Array.isArray(context)) {
+      for (const [key, value] of Object.entries(context)) {
+        if (ALLOWED_CONTEXT_KEYS.has(key) && key !== '__proto__' && key !== 'constructor') {
+          sanitizedContext[key] = value;
+        }
+      }
+    }
+    session.context = { ...session.context, ...sanitizedContext };
     await saveSession(sessionId, session);
 
     res.json({ success: true, context: session.context });
@@ -773,9 +786,14 @@ router.get('/session/:id', async (req, res) => {
     if (!session) {
       return res.status(404).json({ error: 'Session not found' });
     }
-    // Verify user owns session if authenticated and session has an owner
-    if (auth?.user && session.userId && session.userId !== auth.user.id) {
-      return res.status(403).json({ error: 'Access denied' });
+    // If session has an owner, only that owner can access it
+    if (session.userId) {
+      if (!auth?.user) {
+        return res.status(401).json({ error: 'Authentication required' });
+      }
+      if (auth.user.id !== session.userId) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
     }
     res.json({
       id: session.id,
@@ -797,9 +815,14 @@ router.get('/history/:sessionId', async (req, res) => {
     if (!session) {
       return res.status(404).json({ error: 'Session not found' });
     }
-    // Verify user owns session if authenticated
-    if (auth?.user && session.userId && session.userId !== auth.user.id) {
-      return res.status(403).json({ error: 'Access denied' });
+    // If session has an owner, only that owner can access it
+    if (session.userId) {
+      if (!auth?.user) {
+        return res.status(401).json({ error: 'Authentication required' });
+      }
+      if (auth.user.id !== session.userId) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
     }
     res.json({
       id: session.id,
