@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-10",
     "lastVerified": "2026-04-08",
-    "totalCount": 1582,
+    "totalCount": 1592,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1582,
-    "verifiedCount": 957,
+    "totalInternships": 1592,
+    "verifiedCount": 967,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -32330,6 +32330,347 @@
       "_source": "https://www.trincoll.edu/cher/blog/hmtca-trinity-college-summer-programs-reach-record-number-of-high-school-student-participants/",
       "_verified": true,
       "_verifiedDate": "2026-04-09",
+      "format": "in-person"
+    },
+    {
+      "title": "Yale Peabody Museum EVOLUTIONS Internship",
+      "company": "Yale Peabody Museum of Natural History",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid, 100 hours total",
+      "field": "Science / Research",
+      "deadline": "2026-03-01",
+      "description": "Paid summer research internship for New Haven and West Haven public high school students. Work alongside Yale scientists in fields like vertebrate paleontology, geochemistry, anthropology, and cultural history. Approximately 15-20 hours per week for 100 total hours, culminating in a research symposium presentation. Advanced juniors/seniors may qualify for the Lab Internship track with Yale faculty.",
+      "majors": [
+        "Biology",
+        "Geology",
+        "Anthropology",
+        "Environmental Science"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "Yale",
+        "museum",
+        "paid",
+        "New-Haven"
+      ],
+      "url": "https://evolutions.peabody.yale.edu/evo-internships",
+      "duration": "6-7 weeks (summer, ~100 hours)",
+      "whyApply": "Conduct real research at one of the world's premier natural history museums, working directly with Yale graduate students and faculty.",
+      "_source": "https://evolutions.peabody.yale.edu/evo-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Yale ITS High School Internship Program",
+      "company": "Yale University Information Technology Services",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Computer Science / Technology",
+      "deadline": "2026-04-01",
+      "description": "8-week paid summer internship for high school students from New Haven, West Haven, or Orange, CT. Students work within Yale's IT department gaining hands-on experience in technology operations, software development, cybersecurity, and IT project management. School nomination required.",
+      "majors": [
+        "Computer Science",
+        "Information Technology",
+        "Engineering"
+      ],
+      "tags": [
+        "high-school",
+        "technology",
+        "IT",
+        "Yale",
+        "paid",
+        "New-Haven"
+      ],
+      "url": "https://your.yale.edu/work-yale/learn-and-grow/career-development/yale-its-high-school-internship-program",
+      "duration": "8 weeks (summer)",
+      "whyApply": "Gain real IT experience at an Ivy League institution. Excellent for students interested in computer science, cybersecurity, or tech careers.",
+      "_source": "https://your.yale.edu/work-yale/learn-and-grow/career-development/yale-its-high-school-internship-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Youth@Work — New Haven Work-Based Learning",
+      "company": "City of New Haven Youth and Recreation",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business / Finance / Government",
+      "deadline": "2026-05-01",
+      "description": "Paid summer work-based learning program for New Haven youth ages 14-21. Students are placed with local businesses, nonprofits, and city agencies in roles spanning finance, marketing, customer service, administration, and project support. Develops workplace readiness, professional skills, and career exploration in a real employment setting.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Marketing",
+        "Public Administration"
+      ],
+      "tags": [
+        "high-school",
+        "middle-school",
+        "paid",
+        "government",
+        "business",
+        "New-Haven"
+      ],
+      "url": "https://www.newhavenct.gov/government/departments-divisions/youth-and-recreation",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "Accessible paid work experience for New Haven students — great first professional experience across multiple career fields.",
+      "_source": "https://www.newhavenct.gov/government/departments-divisions/youth-and-recreation",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "ReadyCT Career-Connected Learning Internships",
+      "company": "ReadyCT / CBIA",
+      "location": {
+        "city": "Hartford",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Business / Finance / Insurance / Technology",
+      "deadline": "2026-03-15",
+      "description": "Statewide paid internship program placing Connecticut public high school students with 100+ employers across business, insurance, IT, finance, healthcare, and manufacturing sectors. Students interview for positions, work on real projects, and gain professional experience. Focuses on providing access to low-income and minority students. Includes the G.R.I.T. (Get Ready! Immersive Traineeship) track with team-based client projects.",
+      "majors": [
+        "Business",
+        "Finance",
+        "Technology",
+        "Healthcare",
+        "Manufacturing"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "statewide",
+        "career-readiness",
+        "equity"
+      ],
+      "url": "https://readyct.org/for-students/",
+      "duration": "6-8 weeks (summer)",
+      "whyApply": "One of Connecticut's largest career-connected learning programs with 100+ employer partners. Paid internships with real workplace expectations.",
+      "_source": "https://readyct.org/for-students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Bank of America Student Leaders Program — Connecticut",
+      "company": "Bank of America",
+      "location": {
+        "city": "Hartford",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "field": "Finance / Civic Leadership",
+      "deadline": "2026-01-17",
+      "description": "Nationally competitive 8-week paid internship connecting rising juniors and seniors with nonprofits in Hartford, Fairfield, or New Haven communities. Includes a week-long Student Leaders Summit in Washington, D.C. for leadership development and civic engagement training. Approximately 300 students selected nationwide.",
+      "majors": [
+        "Finance",
+        "Business",
+        "Public Policy",
+        "Nonprofit Management"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "finance",
+        "leadership",
+        "civic",
+        "national",
+        "competitive"
+      ],
+      "url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+      "duration": "8 weeks (June-August) + DC Summit",
+      "whyApply": "Prestigious national program combining nonprofit internship with financial literacy and leadership training. Strong resume builder.",
+      "_source": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Greater New Haven Bioscience Collaborative Internship",
+      "company": "Greater New Haven Bioscience Collaborative",
+      "location": {
+        "city": "New Haven",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Up to 10 paid hours/week",
+      "field": "Bioscience / Research",
+      "deadline": "2026-05-01",
+      "description": "Paid internship for high school students providing real-world bioscience research experience in the New Haven biotech corridor. Students work up to 10 paid hours per week alongside researchers and industry professionals. Availability to start in May or June 2026. Hands-on experience in laboratory techniques, data analysis, and scientific communication.",
+      "majors": [
+        "Biology",
+        "Biotechnology",
+        "Chemistry",
+        "Biomedical Science"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "biotech",
+        "research",
+        "New-Haven"
+      ],
+      "url": "https://lifescisprints.com/internships/",
+      "duration": "Summer (flexible start May-June)",
+      "whyApply": "Access New Haven's thriving biotech ecosystem. Part-time paid schedule makes it combinable with other summer activities.",
+      "_source": "https://lifescisprints.com/internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Mystic Seaport Museum Maritime Adventure Program (MAP)",
+      "company": "Mystic Seaport Museum",
+      "location": {
+        "city": "Mystic",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "field": "Maritime Studies / Environmental Science / Leadership",
+      "deadline": "2026-05-15",
+      "description": "Experiential maritime education program engaging under-resourced high school youth through hands-on sailing, navigation, marine ecology, and boatbuilding. Anchored in positive youth development to build social, emotional, and leadership skills. Students gain real seamanship experience at America's leading maritime museum.",
+      "majors": [
+        "Environmental Science",
+        "Marine Biology",
+        "History",
+        "Leadership"
+      ],
+      "tags": [
+        "high-school",
+        "maritime",
+        "museum",
+        "leadership",
+        "hands-on",
+        "under-resourced"
+      ],
+      "url": "https://mysticseaport.org/learn/maritime-adventure-program/",
+      "duration": "Multi-week (summer)",
+      "whyApply": "Unique experiential program at America's premier maritime museum. Builds confidence, teamwork, and environmental awareness through real sailing and seamanship.",
+      "_source": "https://mysticseaport.org/learn/maritime-adventure-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Music Theatre of Connecticut Summer Internship",
+      "company": "Music Theatre of Connecticut",
+      "location": {
+        "city": "Norwalk",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Weekly stipend",
+      "field": "Arts / Theater",
+      "deadline": "2026-04-15",
+      "description": "10-week summer theater internship covering administration, box office operations, education programming, and production. Education component lasts 5 weeks at 6-7 hours/day. Interns gain hands-on experience in all aspects of running a professional theater company, from marketing to stage management. Weekly stipend provided.",
+      "majors": [
+        "Theater",
+        "Performing Arts",
+        "Arts Management",
+        "Education"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "theater",
+        "stipend",
+        "production",
+        "education"
+      ],
+      "url": "https://www.musictheatreofct.com/work-with-us",
+      "duration": "10 weeks (June 16 - August 16)",
+      "whyApply": "Comprehensive professional theater experience covering both creative and business sides. Paid stipend makes this accessible.",
+      "_source": "https://www.musictheatreofct.com/work-with-us",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Children's Theater of Madison Summer Stage Internship",
+      "company": "Children's Theater of Madison (CTM)",
+      "location": {
+        "city": "Madison",
+        "state": "CT"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Program credit ($35-$75 toward CTM classes)",
+      "field": "Arts / Theater / Education",
+      "deadline": "2026-03-01",
+      "description": "High school interns assist professional teaching artists during CTM's Summer Stage productions in 1-3 week programs. Responsibilities include supporting student performers, modeling positive classroom behavior, and helping with production elements. Earn credit toward CTM classes and community service hours.",
+      "majors": [
+        "Theater",
+        "Education",
+        "Performing Arts"
+      ],
+      "tags": [
+        "high-school",
+        "arts",
+        "theater",
+        "teaching",
+        "community-service"
+      ],
+      "url": "https://ctmtheater.org/get-involved/internships/",
+      "duration": "1-3 weeks per session (summer)",
+      "whyApply": "Great entry-level theater experience working alongside professional teaching artists. Ideal for students interested in education or performing arts.",
+      "_source": "https://ctmtheater.org/get-involved/internships/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Connecticut Science Center Investigate! Program",
+      "company": "Connecticut Science Center",
+      "location": {
+        "city": "Hartford",
+        "state": "CT"
+      },
+      "type": "after-school",
+      "paid": false,
+      "field": "STEM / Science Education",
+      "deadline": "2026-09-01",
+      "description": "After-school STEM exploration program for teens at Connecticut Science Center. Covers engaging topics not typically taught in school: food science, computer coding, sound engineering, architecture & design, and more. Completing Investigate! qualifies teens for the competitive Summer Teen Innovation Program as assistant managers and peer mentors. Pathway from Investigate! → Teen Advisory Council → Teen Innovation internship.",
+      "majors": [
+        "STEM",
+        "Computer Science",
+        "Engineering",
+        "Food Science"
+      ],
+      "tags": [
+        "high-school",
+        "STEM",
+        "museum",
+        "after-school",
+        "pathway",
+        "Hartford"
+      ],
+      "url": "https://ctsciencecenter.org/education/teens",
+      "duration": "School year (after-school sessions)",
+      "whyApply": "Gateway to the prestigious Teen Innovation Program. Explore STEM fields you won't encounter in school, at Hartford's premier science museum.",
+      "_source": "https://ctsciencecenter.org/education/teens",
+      "_verified": true,
+      "_verifiedDate": "2026-04-10",
       "format": "in-person"
     },
     {
