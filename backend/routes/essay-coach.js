@@ -18,6 +18,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken } from '../services/auth.js';
+import { checkInjection } from '../services/input_filter.js';
 import { recordConciergeMessage } from '../services/intelligence-analytics.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -400,6 +401,12 @@ router.post('/chat', async (req, res) => {
       return res.status(400).json({ error: 'Message too long. Keep it under 2000 characters.' });
     }
 
+    // SS-01: Check for prompt injection in user message
+    const injectionCheck = checkInjection(message);
+    if (injectionCheck.blocked) {
+      return res.status(400).json({ error: 'Your message contains content that cannot be processed. Please rephrase and try again.' });
+    }
+
     // Sanitize toolContext — only allow known fields with string/number values
     // Prevents client from injecting arbitrary content into system prompt
     const ALLOWED_CTX_FIELDS = new Set([
@@ -556,20 +563,30 @@ router.post('/chat', async (req, res) => {
     if (history && Array.isArray(history)) {
       const recentHistory = history.slice(-10);
       for (const msg of recentHistory) {
-        if (msg.role === 'user' || msg.role === 'assistant') {
+        if ((msg.role === 'user' || msg.role === 'assistant') &&
+            typeof msg.content === 'string' && msg.content.length <= 3000) {
           messages.push({ role: msg.role, content: msg.content });
         }
       }
     }
     messages.push({ role: 'user', content: message.trim() });
 
+    // Timeout protection — prevent hung Anthropic calls from blocking the handler
+    const controller = new AbortController();
+    const coachTimeout = setTimeout(() => controller.abort(), 30000); // 30s for Haiku
+
     const coachStart = Date.now();
-    const response = await client.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 500,
-      system: systemPrompt,
-      messages
-    });
+    let response;
+    try {
+      response = await client.messages.create({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 500,
+        system: systemPrompt,
+        messages
+      }, { signal: controller.signal });
+    } finally {
+      clearTimeout(coachTimeout);
+    }
 
     const reply = response.content?.[0]?.text || 'Sorry, I had trouble thinking of a response. Try asking again!';
     const coachLatency = Date.now() - coachStart;

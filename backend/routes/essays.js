@@ -19,6 +19,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
 import { verifyToken, useEssayCredit, refundEssayCredit, canAccess } from '../services/auth.js';
+import { checkInjection } from '../services/input_filter.js';
 import { reviewEssay, getEssayTypes } from '../services/essay-reviewer.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -166,6 +167,14 @@ router.post('/review', async (req, res) => {
     }
     if (essayType != null && typeof essayType !== 'string') {
       return res.status(400).json({ error: 'essayType must be a string.' });
+    }
+
+    // SS-01: Check for prompt injection in user-supplied text fields
+    // Run BEFORE credit deduction so injections don't cost the user a credit
+    const combinedInput = [essayText, targetSchool, prompt].filter(Boolean).join(' ');
+    const injectionCheck = checkInjection(combinedInput);
+    if (injectionCheck.blocked) {
+      return res.status(400).json({ error: 'Your submission contains content that cannot be processed. Please revise and try again.' });
     }
 
     // Deduct 1 credit (essays are credit-gated, not daily-limit-gated)
