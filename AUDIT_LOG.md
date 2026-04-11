@@ -736,3 +736,80 @@ The April 4 audits already covered the most critical security issues (session pa
 | P-2 | HIGH | 9 functions with O(n) token scans despite index | Apr 10 | **FIXED Apr 10** |
 | P-3 | MEDIUM | Admin stats O(n) all-files read, no caching | Apr 10 | OPEN |
 | P-4 | LOW | Search endpoints copy full dataset arrays | Apr 10 | OPEN |
+
+---
+
+## Nightly Audit — April 11, 2026
+
+**Focus Area**: UX (rotation slot 3 — day 11 % 8 = 3)
+**Auditor**: Automated nightly audit
+
+### Findings
+
+#### UX-1 (MODERATE → FIXED): No Escape Key Handler for Any Modal
+- **Files**: `frontend/src/app.js`
+- **Description**: All 10 modal overlays (auth, profile, settings, upgrade, demographics, timeline, internships, scholarships, programs, financial aid) plus the essay full-page view had no keyboard dismiss support. Users had to click the × button or backdrop to close — keyboard-only users were effectively trapped.
+- **Fix**: Added a global `document.addEventListener('keydown')` handler that closes the topmost visible modal on Escape. Uses a stack (`_openModals[]`) to track open order, with a fallback DOM scan of all known modal IDs. Essay full-page view handled as a special case (calls `closeEssays()`).
+
+#### UX-2 (MODERATE → FIXED): No Body Scroll Lock When Modals Open
+- **Files**: `frontend/src/app.js`
+- **Description**: When any modal overlay was open, the page body behind it remained scrollable. On mobile devices, this caused disorienting scroll-behind-modal behavior where users would accidentally scroll the main page while interacting with a modal.
+- **Fix**: Added `_modalOpened(modalId)` / `_modalClosed(modalId)` lifecycle functions. `_modalOpened` sets `document.body.style.overflow = 'hidden'`; `_modalClosed` restores it when the last modal closes. Hooked into all 10 modal open sites, all close-button handlers, all backdrop-click handlers, all programmatic close paths (settings→upgrade, demographics→upgrade, profile save timeout), and the centralized `setupModalClose()` function used by 5 tool modals.
+
+#### UX-3 (MODERATE → FIXED): Zero ARIA Attributes on Modals
+- **Files**: `frontend/index.html`
+- **Description**: All 10 modal overlay `<div>` elements had no `role="dialog"`, no `aria-modal="true"`, and all 10 close buttons lacked `aria-label`. Screen readers couldn't identify modals as dialogs or close buttons as actionable elements (the × character reads as "times").
+- **Fix**: Added `role="dialog" aria-modal="true"` to all 10 modal overlay divs. Added `aria-label="Close"` to all 10 close buttons.
+
+#### UX-4 (LOW — NOT FIXED): No Focus Trap in Modals
+- **File**: `frontend/src/app.js`
+- **Description**: When a modal is open, pressing Tab can navigate to elements behind the modal overlay. Proper modal accessibility requires trapping focus within the modal while it's open (cycling between first and last focusable elements). This is a larger effort requiring per-modal focus management.
+- **Impact**: Keyboard-only users can tab to invisible elements behind the overlay.
+- **Recommendation**: Implement a reusable `trapFocus(modalEl)` / `releaseFocus()` utility.
+
+#### UX-5 (LOW — NOT FIXED): Console Warnings in Production
+- **Files**: `frontend/src/app.js` (~8 locations)
+- **Description**: Multiple `console.warn()` calls remain in production code. While not user-facing in normal browsing, they clutter the developer console and could confuse users who check it.
+- **Status**: Cosmetic — logged for a future code quality pass.
+
+### Summary
+- **Fixed**: 3 issues (UX-1, UX-2, UX-3) — centralized modal lifecycle management with Escape key, scroll lock, and ARIA
+- **Logged**: 2 issues (UX-4, UX-5) for future audits
+- **Impact**: All 10 modals and the essay full-page view now support keyboard dismissal. Mobile scroll-behind-modal eliminated. Screen readers can identify all modals and close buttons.
+
+### Implementation Details
+
+**New modal lifecycle system in app.js:**
+- `_openModals[]` — stack tracking currently-open modal overlay IDs
+- `_modalOpened(id)` — pushes to stack, locks body scroll
+- `_modalClosed(id)` — removes from stack, unlocks body scroll when stack empty
+- Global Escape keydown handler — closes topmost modal from stack with DOM fallback
+- `setupModalClose()` — enhanced to call `_modalClosed` on both × click and backdrop click
+- All 10 modal open sites call `_modalOpened`
+- All individual close handlers (profile, settings, upgrade, demographics, auth) patched to call `_modalClosed`
+- 3 programmatic close paths (profile save timeout, settings→upgrade, demographics→upgrade) patched
+
+**ARIA additions in index.html:**
+- 10 modal overlays: `role="dialog" aria-modal="true"`
+- 10 close buttons: `aria-label="Close"`
+
+### Cumulative Open Issue Tracker Update
+
+| ID | Severity | Summary | First Found | Status |
+|----|----------|---------|-------------|--------|
+| UX-4 | LOW | No focus trap in modals | Apr 11 | NEW |
+| UX-5 | LOW | Console warnings in production | Apr 7 | OPEN (was L-2) |
+| P-3 | MEDIUM | Admin stats O(n) all-files read, no caching | Apr 10 | OPEN |
+| H-10 | HIGH | 0/1035 scholarships have location.state | Apr 7 | OPEN |
+| H-14 | HIGH | JSONL injection in conversation memory | Apr 7 | OPEN |
+| H-15 | HIGH | 34 verified internships have invalid _source | Apr 7 | OPEN |
+| H-17 | HIGH | applicationFormat filter broken (6.6% populated) | Apr 7 | OPEN |
+| H-1 | HIGH | Webhook idempotency in-memory only | Apr 7 | OPEN |
+| H-2 | HIGH | No max_tokens on Claude API calls | Apr 7 | OPEN |
+| H-3 | HIGH | Reset code brute-forceable via botnet | Apr 7 | OPEN |
+| H-12 | HIGH | Email validation too permissive in invites | Apr 7 | OPEN |
+
+### Recommendations for Next Audit
+1. **Data Integrity** (next in rotation): Fix H-10 (scholarship states), H-15 (internship sources), H-17 (applicationFormat population)
+2. **Security**: Address H-14 (JSONL injection), H-3 (reset code brute force), H-12 (email validation)
+3. **UX follow-up**: Implement focus trap (UX-4) for full WCAG compliance

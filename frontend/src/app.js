@@ -859,10 +859,10 @@ async function fetchEngineUsage() {
 // Profile
 // ========================
 function setupProfileListeners() {
-  $('profileModalClose').addEventListener('click', () => $('profileModal').style.display = 'none');
+  $('profileModalClose').addEventListener('click', () => { $('profileModal').style.display = 'none'; _modalClosed('profileModal'); });
   $('profileSave').addEventListener('click', saveProfile);
   $('profileModal').addEventListener('click', (e) => {
-    if (e.target === $('profileModal')) $('profileModal').style.display = 'none';
+    if (e.target === $('profileModal')) { $('profileModal').style.display = 'none'; _modalClosed('profileModal'); }
   });
 }
 
@@ -876,6 +876,7 @@ function openProfile() {
   $('profileAbout').value = p.aboutMe || '';
   $('profileSaveMsg').style.display = 'none';
   $('profileModal').style.display = 'flex';
+    _modalOpened('profileModal');
 }
 
 async function saveProfile() {
@@ -900,7 +901,7 @@ async function saveProfile() {
     }
     currentUser = data.user;
     showMsg('profileSaveMsg', 'Profile saved!', '#059669');
-    setTimeout(() => $('profileModal').style.display = 'none', 1200);
+    setTimeout(() => { $('profileModal').style.display = 'none'; _modalClosed('profileModal'); }, 1200);
   } catch {
     showMsg('profileSaveMsg', 'Failed to save.', '#991b1b');
   }
@@ -910,9 +911,9 @@ async function saveProfile() {
 // Settings
 // ========================
 function setupSettingsListeners() {
-  $('settingsModalClose').addEventListener('click', () => $('settingsModal').style.display = 'none');
+  $('settingsModalClose').addEventListener('click', () => { $('settingsModal').style.display = 'none'; _modalClosed('settingsModal'); });
   $('settingsModal').addEventListener('click', (e) => {
-    if (e.target === $('settingsModal')) $('settingsModal').style.display = 'none';
+    if (e.target === $('settingsModal')) { $('settingsModal').style.display = 'none'; _modalClosed('settingsModal'); }
   });
 
   // Tabs
@@ -938,6 +939,7 @@ function setupSettingsListeners() {
   $('settingsDeleteAccount').addEventListener('click', deleteAccount);
   $('settingsUpgradeBtn').addEventListener('click', () => {
     $('settingsModal').style.display = 'none';
+    _modalClosed('settingsModal');
     openUpgrade();
   });
 
@@ -1017,6 +1019,7 @@ function openSettings() {
   $('settingsGeneral').classList.add('active');
 
   $('settingsModal').style.display = 'flex';
+    _modalOpened('settingsModal');
 }
 
 async function saveGeneralSettings() {
@@ -1094,9 +1097,9 @@ async function deleteAccount() {
 const PLAN_DISPLAY = { free: 'Explorer', pro: 'Coach', elite: 'Consultant' };
 
 function setupUpgradeListeners() {
-  $('upgradeModalClose').addEventListener('click', () => $('upgradeModal').style.display = 'none');
+  $('upgradeModalClose').addEventListener('click', () => { $('upgradeModal').style.display = 'none'; _modalClosed('upgradeModal'); });
   $('upgradeModal').addEventListener('click', (e) => {
-    if (e.target === $('upgradeModal')) $('upgradeModal').style.display = 'none';
+    if (e.target === $('upgradeModal')) { $('upgradeModal').style.display = 'none'; _modalClosed('upgradeModal'); }
   });
 
   // Unified plans — Coach $25, Consultant $50
@@ -1139,6 +1142,7 @@ function openUpgrade() {
   }
 
   $('upgradeModal').style.display = 'flex';
+    _modalOpened('upgradeModal');
 }
 
 function normalizePlan(plan) {
@@ -1294,11 +1298,13 @@ function setupAuthListeners() {
 
 function openAuthModal(mode) {
   $('authModal').style.display = 'flex';
+    _modalOpened('authModal');
   switchAuthForm(mode);
 }
 
 function closeAuthModal() {
   $('authModal').style.display = 'none';
+  _modalClosed('authModal');
   $('loginError').style.display = 'none';
   $('signupError').style.display = 'none';
   if ($('forgotError')) $('forgotError').style.display = 'none';
@@ -2111,6 +2117,7 @@ function openDemographics() {
     return;
   }
   $('demographicsModal').style.display = 'flex';
+    _modalOpened('demographicsModal');
   closeSidebarOnMobile();
   // Load school list if not cached
   if (!demographicsSchoolsCache) loadDemographicsSchools();
@@ -2122,9 +2129,9 @@ function initDemographicsListeners() {
   if (demoListenersAttached) return;
   demoListenersAttached = true;
 
-  $('demographicsModalClose').addEventListener('click', () => $('demographicsModal').style.display = 'none');
+  $('demographicsModalClose').addEventListener('click', () => { $('demographicsModal').style.display = 'none'; _modalClosed('demographicsModal'); });
   $('demographicsModal').addEventListener('click', (e) => {
-    if (e.target === $('demographicsModal')) $('demographicsModal').style.display = 'none';
+    if (e.target === $('demographicsModal')) { $('demographicsModal').style.display = 'none'; _modalClosed('demographicsModal'); }
   });
 
   // Search input
@@ -2177,6 +2184,7 @@ function initDemographicsListeners() {
   if ($('demographicsUpgradeBtn')) {
     $('demographicsUpgradeBtn').addEventListener('click', () => {
       $('demographicsModal').style.display = 'none';
+      _modalClosed('demographicsModal');
       openUpgrade();
     });
   }
@@ -2756,10 +2764,70 @@ function fmtDollar(num) {
   return sign + '$' + Math.abs(Math.round(num)).toLocaleString();
 }
 
+// ========================
+// Modal UX: Escape key, body scroll lock, ARIA
+// ========================
+const _openModals = []; // stack of currently-open modal overlay IDs
+
+function _modalOpened(modalId) {
+  if (!_openModals.includes(modalId)) _openModals.push(modalId);
+  document.body.style.overflow = 'hidden';
+}
+
+function _modalClosed(modalId) {
+  const idx = _openModals.indexOf(modalId);
+  if (idx !== -1) _openModals.splice(idx, 1);
+  if (_openModals.length === 0) document.body.style.overflow = '';
+}
+
+// Close the topmost visible modal-overlay on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+
+  // Essay full-page view (not a modal-overlay, special case)
+  if ($('essayView')?.style.display === 'flex') {
+    closeEssays();
+    return;
+  }
+
+  // All modal overlays — check from the topmost in our stack, then fall back to DOM scan
+  const modalIds = [
+    'financialAidModal', 'internshipsModal', 'scholarshipsModal', 'programsModal',
+    'timelineModal', 'demographicsModal', 'upgradeModal', 'settingsModal',
+    'profileModal', 'authModal'
+  ];
+
+  // Prefer our stack order (topmost first)
+  for (let i = _openModals.length - 1; i >= 0; i--) {
+    const el = $(_openModals[i]);
+    if (el && el.style.display === 'flex') {
+      el.style.display = 'none';
+      _modalClosed(_openModals[i]);
+      return;
+    }
+  }
+
+  // Fallback: scan all known modals
+  for (const id of modalIds) {
+    const el = $(id);
+    if (el && el.style.display === 'flex') {
+      el.style.display = 'none';
+      _modalClosed(id);
+      return;
+    }
+  }
+});
+
 function setupModalClose(modalId, closeId) {
-  $(closeId).addEventListener('click', () => $(modalId).style.display = 'none');
+  $(closeId).addEventListener('click', () => {
+    $(modalId).style.display = 'none';
+    _modalClosed(modalId);
+  });
   $(modalId).addEventListener('click', (e) => {
-    if (e.target === $(modalId)) $(modalId).style.display = 'none';
+    if (e.target === $(modalId)) {
+      $(modalId).style.display = 'none';
+      _modalClosed(modalId);
+    }
   });
 }
 
@@ -2793,6 +2861,7 @@ function openTimeline() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
   $('timelineModal').style.display = 'flex';
+    _modalOpened('timelineModal');
 
   if (!canAccess('admissions_timeline')) {
     $('timelineSetup').style.display = 'none';
@@ -3620,6 +3689,7 @@ function openInternships() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
   $('internshipsModal').style.display = 'flex';
+    _modalOpened('internshipsModal');
 
   // Always show filters — free users see preview data as teaser
   $('internshipsRequiresUpgrade').style.display = 'none';
@@ -3669,6 +3739,7 @@ function openScholarships() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
   $('scholarshipsModal').style.display = 'flex';
+    _modalOpened('scholarshipsModal');
 
   $('scholarshipsRequiresUpgrade').style.display = 'none';
   $('scholarshipsFilters').style.display = 'flex';
@@ -3714,6 +3785,7 @@ function openPrograms() {
   if (!currentUser) { openAuthModal('login'); return; }
   closeSidebarOnMobile();
   $('programsModal').style.display = 'flex';
+    _modalOpened('programsModal');
 
   $('programsRequiresUpgrade').style.display = 'none';
   $('programsFilters').style.display = 'flex';
@@ -3761,6 +3833,7 @@ function openFinancialAid() {
   trackModuleActivity('financialAid', 'Opened Financial Aid', null);
   closeSidebarOnMobile();
   $('financialAidModal').style.display = 'flex';
+    _modalOpened('financialAidModal');
 
   if (!canAccess('financial_aid_preview')) {
     // Free users: show upgrade gate, hide content
