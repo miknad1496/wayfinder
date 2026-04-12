@@ -624,6 +624,7 @@ export async function requestPasswordReset(email) {
   const resetCode = String(100000 + (randomBytes(4).readUInt32BE(0) % 900000));
   user.resetCode = resetCode;
   user.resetCodeExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 min
+  user.resetAttempts = 0; // Clear attempt counter on new code
 
   await atomicWriteJSON(userFile, user);
   return { success: true, resetCode, userName: user.name || emailLower };
@@ -645,8 +646,19 @@ export async function resetPassword(email, code, newPassword) {
     return { error: 'Invalid reset code.' };
   }
 
-  // Verify code
+  // Track failed reset attempts — invalidate code after 5 failures
+  // This prevents distributed brute-force attacks on the 6-digit code
   if (!user.resetCode || user.resetCode !== code) {
+    user.resetAttempts = (user.resetAttempts || 0) + 1;
+    if (user.resetAttempts >= 5) {
+      // Invalidate the code entirely after 5 wrong guesses
+      user.resetCode = null;
+      user.resetCodeExpires = null;
+      user.resetAttempts = 0;
+      await atomicWriteJSON(userFile, user);
+      return { error: 'Too many incorrect attempts. Please request a new reset code.' };
+    }
+    await atomicWriteJSON(userFile, user);
     return { error: 'Invalid reset code.' };
   }
 
@@ -669,6 +681,7 @@ export async function resetPassword(email, code, newPassword) {
   delete user.salt; // Remove legacy salt if present
   user.resetCode = null;
   user.resetCodeExpires = null;
+  user.resetAttempts = 0;
   user.failedLoginAttempts = 0;
   user.accountLockedUntil = null;
 
@@ -755,6 +768,7 @@ export async function updateProfile(token, updates) {
         // Only merge safe string/number values into profile
         const safeProfile = {};
         for (const [pk, pv] of Object.entries(updates.profile)) {
+          if (pk === '__proto__' || pk === 'constructor' || pk === 'prototype') continue; // Prototype pollution guard
           if ((typeof pv === 'string' || typeof pv === 'number' || typeof pv === 'boolean') && pk.length <= 50) {
             safeProfile[pk] = typeof pv === 'string' ? pv.slice(0, 500) : pv;
           }
@@ -825,7 +839,8 @@ export async function getEngineUsage(token) {
     if (!resolved) return { usesToday: 0, remaining: 0, max: 3 };
 
     const { user, filePath } = resolved;
-    const limits = getPlanLimits(user.plan || 'free');
+    const effectivePlan = (isAdmin(user.email) || isVIP(user.email)) ? 'elite' : (user.plan || 'free');
+    const limits = getPlanLimits(effectivePlan);
     // Reset if new day
     if (user.engineLastReset !== today) {
       user.engineUsesToday = 0;
@@ -1010,7 +1025,8 @@ export async function useEngine(token) {
     if (!resolved) return { allowed: false, remaining: 0, max: 3 };
 
     const { user, filePath } = resolved;
-    const limits = getPlanLimits(user.plan || 'free');
+    const effectivePlan = (isAdmin(user.email) || isVIP(user.email)) ? 'elite' : (user.plan || 'free');
+    const limits = getPlanLimits(effectivePlan);
     // Reset if new day
     if (user.engineLastReset !== today) {
       user.engineUsesToday = 0;
@@ -1083,8 +1099,9 @@ export async function checkTokenUsage(token) {
       await atomicWriteJSON(filePath, user);
     }
 
-    const dailyLimit = getDailyTokenLimit(user.plan || 'free');
-    const monthlyLimit = getMonthlyTokenLimit(user.plan || 'free');
+    const effectivePlan = (isAdmin(user.email) || isVIP(user.email)) ? 'elite' : (user.plan || 'free');
+    const dailyLimit = getDailyTokenLimit(effectivePlan);
+    const monthlyLimit = getMonthlyTokenLimit(effectivePlan);
     const dailyUsed = user.tokensUsedToday || 0;
     const monthlyUsed = user.tokensUsedMonth || 0;
 
@@ -1389,7 +1406,13 @@ export async function updateAdmissionsProfile(token, profile) {
     if (!user.admissionsProfile) {
       user.admissionsProfile = { targetSchools: [], intendedMajors: [], reminderPreferences: {} };
     }
-    user.admissionsProfile = { ...user.admissionsProfile, ...profile };
+    // Filter out prototype pollution keys before merging
+    const safeProfileKeys = Object.keys(profile).filter(k => k !== '__proto__' && k !== 'constructor' && k !== 'prototype');
+    const safeAdmProfile = {};
+    for (const k of safeProfileKeys) {
+      safeAdmProfile[k] = profile[k];
+    }
+    user.admissionsProfile = { ...user.admissionsProfile, ...safeAdmProfile };
     await atomicWriteJSON(filePath, user);
     return { success: true, admissionsProfile: user.admissionsProfile };
   } catch (err) {
