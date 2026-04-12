@@ -25,6 +25,7 @@ import Anthropic from '@anthropic-ai/sdk';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const router = Router();
+const anthropicClient = new Anthropic();
 
 let financialAidCache = null;
 let cacheTimestamp = 0;
@@ -710,13 +711,10 @@ ${additionalContext ? `\nAdditional Context from Student:\n${String(additionalCo
 Use markdown formatting with headers, tables, and bullet points for clarity. Be specific — cite actual program names, dollar amounts, and deadlines.
 `;
 
-    const client = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY
-    });
 
     let strategyText = '';
     try {
-      const response = await client.messages.create({
+      const response = await anthropicClient.messages.create({
         model: process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
         max_tokens: 4000,
         system: `You are an expert college financial aid advisor with deep knowledge of FAFSA, CSS Profile, federal aid programs, state grants, institutional aid policies, and sophisticated tax/savings strategies. Provide a comprehensive, data-driven financial aid strategy. Use markdown formatting (headers, tables, bullet points, checkboxes) to make the output scannable and professional. Always cite specific dollar amounts, program names, and deadlines. When estimating federal aid eligibility, use the provided income data to give realistic estimates.

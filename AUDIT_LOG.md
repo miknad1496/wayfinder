@@ -813,3 +813,69 @@ The April 4 audits already covered the most critical security issues (session pa
 1. **Data Integrity** (next in rotation): Fix H-10 (scholarship states), H-15 (internship sources), H-17 (applicationFormat population)
 2. **Security**: Address H-14 (JSONL injection), H-3 (reset code brute force), H-12 (email validation)
 3. **UX follow-up**: Implement focus trap (UX-4) for full WCAG compliance
+
+---
+
+## Nightly Audit — April 12, 2026
+
+**Focus Area**: Code Quality (rotation slot 4 — day 12 % 8 = 4)
+**Auditor**: Automated nightly audit
+
+### Findings
+
+#### CQ-1 (MODERATE → FIXED): Unused Imports in chat.js
+- **File**: `backend/routes/chat.js`
+- **Description**: `routeDomain` and `qualityGate` were imported from `../services/slm.js` but never used anywhere in the file. `routeDomain` is called internally by `chatSLM()` and `qualityGate` is applied inside `chatSLM()` as well — the route never needs to invoke them directly. These imports add dead weight to the module scope and confuse developers reading the import list about what the route actually uses.
+- **Fix**: Removed `routeDomain` and `qualityGate` from the import statement. Verified module loads cleanly after change.
+
+#### CQ-2 (MODERATE → FIXED): Dead/Misplaced Files in backend/services/
+- **Files**: `backend/services/test_scope_classifier.js`, `backend/services/eval_scope_full.js`, `backend/services/ingest.js`
+- **Description**: Three files in the `services/` directory were never imported by any route, server.js, or other service:
+  - `test_scope_classifier.js` (SS-04 test suite) — standalone test script, not a service
+  - `eval_scope_full.js` (SS-04 eval report) — standalone eval script, not a service
+  - `ingest.js` (knowledge base ingestion pipeline) — completely orphaned; `npm run ingest` script doesn't exist in package.json either
+  Having test/eval scripts alongside production services muddies the codebase and makes it harder to understand which files are part of the runtime vs. tooling.
+- **Fix**: Moved `test_scope_classifier.js` and `eval_scope_full.js` to `backend/tests/`. Moved `ingest.js` to `backend/scripts/`. No deletions — preserved for potential future use.
+
+#### CQ-3 (MODERATE → FIXED): Per-Request Anthropic Client in financial-aid.js
+- **File**: `backend/routes/financial-aid.js`
+- **Description**: The `/api/financial-aid/my-strategy` handler created `new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })` on every request (line 714). This is wasteful — the Anthropic SDK client is stateless and safe to reuse. Other files (`essay-coach.js`, `essay-reviewer.js`) correctly use module-level singletons. The per-request instantiation also redundantly passed `apiKey` — the SDK reads `ANTHROPIC_API_KEY` from env automatically.
+- **Fix**: Created `const anthropicClient = new Anthropic()` at module level (alongside `router`). Removed the per-request `new Anthropic()` block and updated the call site to use `anthropicClient`. The existing `process.env.ANTHROPIC_API_KEY` guard at line 570 still protects against missing keys before the Claude call is reached.
+
+#### CQ-4 (LOW — NOT FIXED): Duplicated Essay Review File-Reading Logic
+- **Files**: `backend/routes/essays.js` (history and drafts/:essayType endpoints)
+- **Description**: The `/api/essays/history` and `/api/essays/drafts/:essayType` endpoints contain identical boilerplate: `readdir → Promise.all(files.map(readFile+parse)) → filter by userId`. This pattern should be extracted into a shared `loadUserReviews(userId, filter?)` helper to reduce duplication and simplify future changes (e.g., switching from file-per-review to a database).
+- **Impact**: Not critical — both endpoints work correctly. Logged for a future refactoring pass.
+
+#### CQ-5 (LOW — NOT FIXED): Empty Catch Blocks in Data-Loading Functions
+- **Files**: `backend/routes/internships.js`, `scholarships.js`, `programs.js`, `timeline.js` (12 occurrences total)
+- **Description**: The `loadXxxData()` functions in all four tool route files use bare `catch {}` blocks when trying local file paths and GitHub fallback. While intentional (try multiple paths, fail silently), this swallows errors that could help debug production data-loading issues. At minimum, these should log to stderr on the final fallback failure.
+- **Impact**: Low — the fallback chain works, but silent failures make debugging harder.
+
+### Summary
+- **Fixed**: 3 issues (CQ-1, CQ-2, CQ-3) — removed dead imports, relocated misplaced files, eliminated per-request SDK instantiation
+- **Logged**: 2 issues (CQ-4, CQ-5) for future audits
+- **Impact**: Cleaner import graph in the hot-path chat route, correct SDK usage patterns, clearer separation of production services from tooling scripts
+
+### Cumulative Open Issue Tracker Update
+
+| ID | Severity | Summary | First Found | Status |
+|----|----------|---------|-------------|--------|
+| CQ-4 | LOW | Duplicated essay review file-reading logic | Apr 12 | NEW |
+| CQ-5 | LOW | Empty catch blocks in data-loading functions | Apr 12 | NEW |
+| UX-4 | LOW | No focus trap in modals | Apr 11 | OPEN |
+| UX-5 | LOW | Console warnings in production | Apr 7 | OPEN |
+| P-3 | MEDIUM | Admin stats O(n) all-files read, no caching | Apr 10 | OPEN |
+| H-10 | HIGH | 0/1035 scholarships have location.state | Apr 7 | OPEN |
+| H-14 | HIGH | JSONL injection in conversation memory | Apr 7 | OPEN |
+| H-15 | HIGH | 34 verified internships have invalid _source | Apr 7 | OPEN |
+| H-17 | HIGH | applicationFormat filter broken (6.6% populated) | Apr 7 | OPEN |
+| H-1 | HIGH | Webhook idempotency in-memory only | Apr 7 | OPEN |
+| H-2 | HIGH | No max_tokens on Claude API calls | Apr 7 | OPEN |
+| H-3 | HIGH | Reset code brute-forceable via botnet | Apr 7 | OPEN |
+| H-12 | HIGH | Email validation too permissive in invites | Apr 7 | OPEN |
+
+### Recommendations for Next Audit
+1. **Data Integrity** (next in rotation): Fix H-10 (scholarship states), H-15 (internship sources), H-17 (applicationFormat population)
+2. **Security**: Address H-14 (JSONL injection), H-3 (reset code brute force)
+3. **Code Quality follow-up**: Extract shared essay review file reader (CQ-4), add logging to silent catch blocks (CQ-5)
