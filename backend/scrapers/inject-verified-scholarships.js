@@ -1564,6 +1564,194 @@ const verifiedScholarships = [
     _verifiedDate: "2026-04-05",
     _source: "https://www.nationalmerit.org/"
   },
+
+  // ════════════════════════════════════════════════════════════════
+  // WEEKLY REFRESH — April 12, 2026
+  // ════════════════════════════════════════════════════════════════
+
+  {
+    name: "Jackie Robinson Foundation Scholarship",
+    provider: "Jackie Robinson Foundation",
+    amount: { min: 0, max: 35000, display: "Up to $35,000 over 4 years" },
+    deadline: "2027-01-07",
+    category: ["merit", "need-based"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: ["minority"],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Provides up to $35,000 over four years to minority high school seniors demonstrating academic excellence, leadership potential, and community service. Approximately 60 scholars selected annually. Includes mentoring, internship placement, career guidance, and an annual leadership conference in NYC.",
+    url: "https://jackierobinson.org/scholarship/",
+    renewable: true,
+    tags: ["merit", "need-based", "minority", "leadership", "mentorship"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://jackierobinson.org/scholarship/"
+  },
+  {
+    name: "Taco Bell Live Más Scholarship",
+    provider: "Taco Bell Foundation",
+    amount: { min: 5000, max: 25000, display: "$5,000 - $25,000" },
+    deadline: "2027-01-06",
+    category: ["merit"],
+    competitiveness: "high",
+    scope: "national",
+    applicationFormat: "video",
+    eligibility: {
+      gpa: 0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["11", "12"]
+    },
+    description: "Awards $5,000, $10,000, or $25,000 scholarships to innovative young leaders ages 16-26 pursuing education after high school. Over $14.5 million awarded annually to 1,000+ students. Unique 2-minute video application — no GPA or test score requirements. Focuses on passion, creativity, and community impact.",
+    url: "https://www.tacobellfoundation.org/live-mas-scholarship/",
+    renewable: false,
+    tags: ["video-application", "creative", "no-GPA-requirement", "accessible"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://www.tacobellfoundation.org/live-mas-scholarship/"
+  },
+  {
+    name: "Foot Locker Scholar Athletes",
+    provider: "Foot Locker Foundation",
+    amount: { min: 20000, max: 20000, display: "$20,000 ($5,000/year for 4 years)" },
+    deadline: "2026-12-15",
+    category: ["merit"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Awards 20 graduating high school seniors $20,000 each ($5,000/year over 4 years) for leadership in academics, sports, and community. Must be involved in high school or community-based sports. Recognizes well-rounded student-athletes who demonstrate excellence beyond the playing field.",
+    url: "https://www.footlocker-inc.com/content/flinc-aem/us/en/community/foot-locker-scholar-athletes.html",
+    renewable: true,
+    tags: ["athlete", "leadership", "sports", "community"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://www.footlocker-inc.com/content/flinc-aem/us/en/community/foot-locker-scholar-athletes.html"
+  },
+  {
+    name: "Generation Google Scholarship",
+    provider: "Google",
+    amount: { min: 10000, max: 10000, display: "$10,000" },
+    deadline: "2026-04-23",
+    category: ["field-specific"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 0,
+      states: ["all"],
+      financialNeed: false,
+      majors: ["Computer Science", "Computer Engineering", "Software Engineering"],
+      demographics: ["underrepresented-in-tech"],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Awards $10,000 to students from groups historically underrepresented in the technology industry who are pursuing degrees in computer science or related fields. Selected based on academic performance, leadership, and commitment to diversity in tech. Administered by the Institute of International Education (IIE).",
+    url: "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship",
+    renewable: false,
+    tags: ["tech", "computer-science", "diversity", "google", "STEM"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship"
+  },
+  {
+    name: "Burger King Scholars Program",
+    provider: "Burger King McLamore Foundation",
+    amount: { min: 1000, max: 60000, display: "$1,000 - $60,000" },
+    deadline: "2026-12-15",
+    category: ["merit", "need-based"],
+    competitiveness: "high",
+    scope: "national",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 2.5,
+      states: ["all"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Awards scholarships ranging from $1,000 to $60,000 to graduating high school seniors. The top-tier James W. McLamore WHOPPER Scholarship awards $60,000 to three students annually. Applicants evaluated on academics, community involvement, work experience, and financial need. Application opens October 15 and closes at 30,000 applications or December 15.",
+    url: "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars",
+    renewable: false,
+    tags: ["need-based", "merit", "community-service", "work-experience"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars"
+  },
+  {
+    name: "Amazon Future Engineer Scholarship",
+    provider: "Amazon / Scholarship America",
+    amount: { min: 40000, max: 40000, display: "$40,000 ($10,000/year for 4 years)" },
+    deadline: "2027-01-22",
+    category: ["field-specific", "need-based"],
+    competitiveness: "very_high",
+    scope: "national",
+    applicationFormat: "essay",
+    eligibility: {
+      gpa: 3.0,
+      states: ["all"],
+      financialNeed: true,
+      majors: ["Computer Science", "Software Engineering", "Computer Engineering"],
+      demographics: [],
+      citizenshipRequired: true,
+      grades: ["12"]
+    },
+    description: "Awards $40,000 over four years plus a paid summer internship at Amazon to high school seniors planning to study computer science. Must have completed a CS course in high school. Demonstrates financial need and plans to major in CS or related STEM field at an accredited 4-year institution.",
+    url: "https://www.amazonfutureengineer.com/scholarships",
+    renewable: true,
+    tags: ["tech", "computer-science", "internship", "amazon", "STEM", "need-based"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://www.amazonfutureengineer.com/scholarships"
+  },
+  {
+    name: "WSECU Foundation Scholarship",
+    provider: "Washington State Employees Credit Union",
+    amount: { min: 2000, max: 3000, display: "$2,000 - $3,000" },
+    deadline: "2027-02-28",
+    category: ["merit"],
+    competitiveness: "moderate",
+    scope: "state",
+    applicationFormat: "application-only",
+    eligibility: {
+      gpa: 0,
+      states: ["WA"],
+      financialNeed: true,
+      majors: ["any"],
+      demographics: [],
+      citizenshipRequired: false,
+      grades: ["12"]
+    },
+    description: "Awards $2,000 for 2-year/vocational and $3,000 for 4-year undergraduate/graduate students. Open to WSECU members of all ages pursuing higher education. $100,000 total awarded annually. FAFSA completion required. Application opens December through February each year.",
+    url: "https://wsecu.org/scholarships",
+    renewable: false,
+    tags: ["washington", "credit-union", "accessible", "state"],
+    _verified: true,
+    _verifiedDate: "2026-04-12",
+    _source: "https://wsecu.org/scholarships"
+  },
+
 ];
 
 

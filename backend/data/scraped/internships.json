@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastScraped": "2026-04-10",
+    "lastScraped": "2026-04-12",
     "lastVerified": "2026-04-08",
-    "totalCount": 1592,
+    "totalCount": 1599,
     "_verified": "partial",
     "_verificationNotes": "Internship titles, companies, and general program structures are based on real programs that historically exist. However, many entries share template descriptions and unverified deadlines/stipend amounts. Users should verify specific details (deadlines, pay, application links) directly on company career portals. The 'whyApply' field provides unique guidance per entry.",
     "dataYear": "2026",
@@ -25,8 +25,8 @@
       "Hospital volunteer programs",
       "Environmental/conservation nonprofits"
     ],
-    "totalInternships": 1592,
-    "verifiedCount": 967,
+    "totalInternships": 1599,
+    "verifiedCount": 974,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
     "lastUpdated": "2026-04-08T07:13:20.810Z"
@@ -32671,6 +32671,246 @@
       "_source": "https://ctsciencecenter.org/education/teens",
       "_verified": true,
       "_verifiedDate": "2026-04-10",
+      "format": "in-person"
+    },
+    {
+      "title": "Seattle Indian Health Board Youth Internship",
+      "company": "Seattle Indian Health Board",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$21.30/hour",
+      "field": "Healthcare",
+      "deadline": "2026-06-01",
+      "description": "8-week paid summer internship for high school students aged 16-18 interested in American Indian/Alaska Native public health. 20 hours/week from late June through mid-August. Exposure to community health, behavioral health, dental, and medical programs serving urban Native populations.",
+      "majors": [
+        "Public Health",
+        "Biology",
+        "Social Work",
+        "Pre-Med"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "healthcare",
+        "native-american",
+        "public-health",
+        "seattle"
+      ],
+      "url": "https://www.sihb.org/careers/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Unique opportunity to learn about Indigenous health equity in an urban setting. Strong hourly pay and hands-on community health experience.",
+      "_source": "https://www.sihb.org/careers/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "Dallas Bar Association Summer Law Intern Program (SLIP)",
+      "company": "Dallas Bar Association / DISD",
+      "location": {
+        "city": "Dallas",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Law",
+      "deadline": "2026-04-01",
+      "description": "8-week paid summer legal internship placing high school students with law firms and corporate legal departments throughout the Dallas area. Students shadow attorneys, attend court proceedings, and gain exposure to various legal practice areas. Partnership with Dallas Independent School District.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Government"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law",
+        "legal",
+        "dallas",
+        "texas"
+      ],
+      "url": "https://www.dallasbar.org/?pg=summerlawinternprogram",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "Direct placement with real law firms in a major legal market. Excellent for students considering law careers.",
+      "_source": "https://www.dallasbar.org/?pg=summerlawinternprogram",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "HBA Communities In Schools Legal Internship",
+      "company": "Houston Bar Association / Communities In Schools",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Paid internship",
+      "field": "Law",
+      "deadline": "2026-03-15",
+      "description": "Paid 8-week summer legal internship for Houston-area high school students from at-risk schools. Placements at major firms including Jones Day, Baker & Hostetler, Gibbs & Bruns, and others. Students gain exposure to corporate law, litigation, and legal operations while earning money for college.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law",
+        "legal",
+        "houston",
+        "texas",
+        "at-risk-youth"
+      ],
+      "url": "https://www.hba.org/?pg=Communities-In-Schools",
+      "duration": "8 weeks (June-July)",
+      "whyApply": "Placement at top Houston law firms. Specifically designed for students from underserved communities.",
+      "_source": "https://www.hba.org/?pg=Communities-In-Schools",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "California Attorney General Student Intern Program",
+      "company": "California Department of Justice",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Unpaid (academic credit available)",
+      "field": "Law",
+      "deadline": "2026-04-30",
+      "description": "Summer internship at the California Attorney General's office for students interested in public interest law and government. Interns work alongside Deputy Attorneys General on civil and criminal matters, policy analysis, and legal research across divisions including civil rights, environmental law, and consumer protection.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice",
+        "Public Policy"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "government",
+        "california",
+        "public-interest"
+      ],
+      "url": "https://oag.ca.gov/careers/students",
+      "duration": "10 weeks (June-August)",
+      "whyApply": "Prestigious government legal experience. Exposure to state-level civil rights, environmental, and consumer protection law.",
+      "_source": "https://oag.ca.gov/careers/students",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "Kaiser Permanente Legal Careers Internship",
+      "company": "Kaiser Permanente",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "$23/hour",
+      "field": "Law",
+      "deadline": "2027-01-06",
+      "description": "Paid summer internship for current high school students and graduating seniors ages 16-19. Explore legal careers within one of the nation's largest healthcare organizations. Work alongside Kaiser Permanente attorneys on health law, compliance, contracts, and regulatory matters. June 16 through August 1.",
+      "majors": [
+        "Pre-Law",
+        "Healthcare Administration",
+        "Business"
+      ],
+      "tags": [
+        "high-school",
+        "paid",
+        "law",
+        "healthcare",
+        "seattle",
+        "corporate"
+      ],
+      "url": "https://www.kaiserpermanente.org/",
+      "duration": "7 weeks (June-August)",
+      "whyApply": "Well-paid legal internship at a Fortune 500 healthcare company. Unique intersection of law and healthcare.",
+      "_source": "https://www.kaiserpermanente.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "UW INSIGHT Summer Research Training Program",
+      "company": "Harborview Injury Prevention & Research Center / UW",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "type": "summer",
+      "paid": true,
+      "stipend": "Stipend provided",
+      "field": "Healthcare",
+      "deadline": "2026-03-01",
+      "description": "Summer research training program at UW's Harborview Injury Prevention & Research Center. Students work on injury prevention research projects including data analysis, literature review, and community health assessment. Focus on health equity and reducing disparities in injury outcomes.",
+      "majors": [
+        "Public Health",
+        "Biology",
+        "Data Science",
+        "Sociology"
+      ],
+      "tags": [
+        "high-school",
+        "research",
+        "public-health",
+        "healthcare",
+        "seattle",
+        "stipend"
+      ],
+      "url": "https://hiprc.org/training/undergrad-grad/insight/",
+      "duration": "8 weeks (June-August)",
+      "whyApply": "Research experience at one of the nation's top trauma centers. Focus on health equity and injury prevention.",
+      "_source": "https://hiprc.org/training/undergrad-grad/insight/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
+      "format": "in-person"
+    },
+    {
+      "title": "Texas Attorney General Student Internship",
+      "company": "Office of the Texas Attorney General",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "type": "summer",
+      "paid": false,
+      "stipend": "Unpaid (academic credit available)",
+      "field": "Law",
+      "deadline": "2026-04-15",
+      "description": "Unpaid internship for students interested in law and government at the Texas AG's office. Work alongside state attorneys on legal research, case preparation, and policy analysis. Departments include consumer protection, Medicaid fraud, human trafficking, and environmental enforcement.",
+      "majors": [
+        "Pre-Law",
+        "Political Science",
+        "Criminal Justice"
+      ],
+      "tags": [
+        "high-school",
+        "law",
+        "government",
+        "texas",
+        "austin"
+      ],
+      "url": "https://www.texasattorneygeneral.gov/careers/fellowships-volunteer-programs-and-employment/student-opportunities",
+      "duration": "10 weeks (June-August)",
+      "whyApply": "Direct exposure to state-level legal practice and policy. Excellent for students considering law or public service careers.",
+      "_source": "https://www.texasattorneygeneral.gov/careers/fellowships-volunteer-programs-and-employment/student-opportunities",
+      "_verified": true,
+      "_verifiedDate": "2026-04-12",
       "format": "in-person"
     },
     {
