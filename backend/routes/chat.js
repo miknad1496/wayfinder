@@ -107,7 +107,11 @@ async function loadAnonLimits() {
 
 async function flushAnonLimits() {
   try {
-    await fs.writeFile(ANON_LIMITS_PATH, JSON.stringify(anonLimits), 'utf-8');
+    // Atomic write: write to temp file then rename to prevent corruption
+    // if the process crashes mid-write or concurrent flushes overlap
+    const tmpPath = ANON_LIMITS_PATH + '.tmp';
+    await fs.writeFile(tmpPath, JSON.stringify(anonLimits), 'utf-8');
+    await fs.rename(tmpPath, ANON_LIMITS_PATH);
   } catch (err) {
     console.error('[AnonCap] Failed to write limits file:', err.message);
   }
@@ -184,8 +188,15 @@ router.post('/', async (req, res) => {
     }
 
     // ─── SESSION ID VALIDATION ─────────────────────────────────────
-    if (existingSessionId && (typeof existingSessionId !== 'string' || existingSessionId.length === 0)) {
-      return res.status(400).json({ error: 'sessionId must be a non-empty string if provided' });
+    if (existingSessionId) {
+      if (typeof existingSessionId !== 'string' || existingSessionId.length === 0) {
+        return res.status(400).json({ error: 'sessionId must be a non-empty string if provided' });
+      }
+      // Only allow UUID-like strings (alphanumeric, hyphens, underscores, max 128 chars)
+      // to match storage.js sanitizeSessionId and prevent path traversal or injection
+      if (!/^[a-zA-Z0-9_-]+$/.test(existingSessionId) || existingSessionId.length > 128) {
+        return res.status(400).json({ error: 'Invalid sessionId format' });
+      }
     }
 
     // ─── SS-01: INPUT INJECTION FILTER ──────────────────────────
@@ -400,6 +411,22 @@ router.post('/', async (req, res) => {
         messageCount: 0,
         userId: auth?.user?.id || null
       };
+    }
+
+    // ─── SESSION OWNERSHIP CHECK ────────────────────────────────
+    // If the session already has an owner, verify the current user matches.
+    // Prevents authenticated user A from hijacking user B's session by
+    // guessing or reusing a sessionId. Anonymous sessions (no userId) are
+    // adoptable by any authenticated user on first use.
+    if (session.userId && auth?.user && session.userId !== auth.user.id) {
+      activeSessions.delete(sessionId);
+      tEvent.outcome.http_status = 403;
+      tEvent.outcome.error = 'session_ownership_mismatch';
+      tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;
+      logTelemetry(tEvent);
+      return res.status(403).json({
+        error: 'This session belongs to another user.'
+      });
     }
 
     // If user is logged in, inject their profile into context

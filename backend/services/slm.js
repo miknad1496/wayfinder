@@ -737,7 +737,7 @@ export async function warmUpSLM() {
 // ─── Keep-Alive Ping ─────────────────────────────────────────────
 // Once the SLM is warmed for the first time, ping every 90s to prevent
 // RunPod's idle timeout from killing the worker. Stops pinging if the
-// SLM goes cold/error and hasn't been used in 10 minutes.
+// SLM goes cold/error and hasn't been used in 5 minutes.
 
 let keepAliveTimer = null;
 

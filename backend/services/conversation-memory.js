@@ -124,7 +124,11 @@ export async function captureConversationMemory(params) {
 
     const topics = extractTopics(userMessage + ' ' + response);
     const domain = detectDomain(userMessage);
-    const userType = sessionContext?.userType || 'unknown';
+    // Sanitize userType: cap length and strip control chars to prevent training data pollution
+    const rawUserType = sessionContext?.userType || 'unknown';
+    const userType = typeof rawUserType === 'string'
+      ? rawUserType.replace(/[\x00-\x1f\x7f]/g, '').slice(0, 50)
+      : 'unknown';
 
     const entry = {
       timestamp: new Date().toISOString(),
@@ -190,7 +194,9 @@ export async function captureTrainingPair(params) {
         timestamp: new Date().toISOString(),
         mode,
         domain: domain || detectDomain(userMessage),
-        userType: sessionContext?.userType || 'unknown',
+        userType: typeof sessionContext?.userType === 'string'
+          ? sessionContext.userType.replace(/[\x00-\x1f\x7f]/g, '').slice(0, 50)
+          : 'unknown',
         scopeLabel,
         quality: qualitySignal || 'unrated',
       }
