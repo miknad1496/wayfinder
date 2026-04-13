@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-08",
-    "totalCount": 1039,
+    "totalCount": 1037,
     "totalValue": "$14.7 million+",
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-12. 74 verified, 965 non-verified, 60 dupes removed.",
@@ -9718,89 +9718,6 @@
       "expired": false,
       "scope": "state",
       "applicationFormat": "application-only"
-    },
-    {
-      "name": "Taco Bell Live Más Scholarship",
-      "provider": "Taco Bell",
-      "amount": {
-        "min": 5000,
-        "max": 25000,
-        "display": "$5,000-$25,000"
-      },
-      "deadline": "2026-04-30",
-      "category": [
-        "merit",
-        "essay-based"
-      ],
-      "competitiveness": "moderate",
-      "eligibility": {
-        "gpa": 2,
-        "states": [
-          "all"
-        ],
-        "financialNeed": false,
-        "majors": [
-          "any"
-        ],
-        "demographics": [],
-        "citizenshipRequired": true,
-        "grades": [
-          "12"
-        ]
-      },
-      "description": "Scholarship prioritizing passion and creativity over traditional metrics. Applicants submit a video or essay describing their life passion and positive change-making. Strong applications emphasize alignment with the scholarship's mission and demonstrated commitment.",
-      "url": "https://www.tacobell.com/scholarships",
-      "renewable": false,
-      "tags": [
-        "corporate",
-        "essay-based",
-        "video",
-        "creative"
-      ],
-      "strategyTip": "Highlight academic excellence and leadership demonstrated in and out of the classroom. Strong test scores and GPA are important but not everything.",
-      "scope": "national",
-      "applicationFormat": "video"
-    },
-    {
-      "name": "Burger King Scholars Program",
-      "provider": "Burger King Foundation",
-      "amount": {
-        "min": 1000,
-        "max": 50000,
-        "display": "$1,000-$50,000"
-      },
-      "deadline": "2026-09-26",
-      "category": [
-        "merit"
-      ],
-      "competitiveness": "high",
-      "eligibility": {
-        "gpa": 3,
-        "states": [
-          "all"
-        ],
-        "financialNeed": false,
-        "majors": [
-          "any"
-        ],
-        "demographics": [],
-        "citizenshipRequired": true,
-        "grades": [
-          "12",
-          "undergraduate"
-        ]
-      },
-      "description": "Burger King Foundation Burger King Scholars Program rewards students demonstrating academic excellence, leadership, and commitment to innovation. The company values diverse perspectives and encourages applications from students underrepresented in technology and business.",
-      "url": "https://www.burgerkingfoundation.com/scholarship",
-      "renewable": false,
-      "tags": [
-        "corporate",
-        "merit",
-        "leadership"
-      ],
-      "strategyTip": "Research Burger King Foundation's mission and products. Align your essay to their values—emphasize innovation, leadership, or how you can contribute to their industry. Personalize your application rather than using generic statements.",
-      "scope": "national",
-      "applicationFormat": "essay"
     },
     {
       "name": "McDonald's Black and Positively Golden Scholarship",

@@ -879,3 +879,71 @@ The April 4 audits already covered the most critical security issues (session pa
 1. **Data Integrity** (next in rotation): Fix H-10 (scholarship states), H-15 (internship sources), H-17 (applicationFormat population)
 2. **Security**: Address H-14 (JSONL injection), H-3 (reset code brute force)
 3. **Code Quality follow-up**: Extract shared essay review file reader (CQ-4), add logging to silent catch blocks (CQ-5)
+
+---
+
+## Nightly Audit — April 13, 2026
+
+**Focus Area**: Data Integrity (rotation slot 5 — day 13 % 8 = 5)
+**Auditor**: Automated nightly audit
+
+### Findings
+
+#### DI-1 (HIGH → FIXED): 470 Verified Internships Had _source URLs Without https:// Prefix (was H-15)
+- **File**: `backend/data/scraped/internships.json`
+- **Description**: 470 of 974 verified internship entries had `_source` values like `seattlechildrens.org` or `fredhutch.org` without an `https://` protocol prefix. These URLs would fail if used as clickable links in the frontend. The issue affected entries across all states, with domains including `nasa.gov`, `nyc.gov`, `northwestern.edu`, `rice.edu`, and many others.
+- **Fix**: Scripted fix to prepend `https://` to all `_source` values that don't start with `http://` or `https://`. All 470 entries corrected. Post-fix verification: 0 remaining bad URLs.
+
+#### DI-2 (LOW → FIXED): 2 Duplicate Scholarship Entries
+- **File**: `backend/data/scraped/scholarships.json`
+- **Description**: Two scholarships had duplicate entries — "Taco Bell Live Más Scholarship" and "Burger King Scholars Program". In each case, one entry was verified and one was unverified (template). The inject script's dedup logic should have caught these, but they slipped through (likely the verified entry had a slightly different name at injection time, then was renamed to match).
+- **Fix**: Deduplication script that keeps verified entries over unverified ones when names match. Count went from 1039 → 1037. Metadata totalCount updated accordingly.
+
+#### DI-3 (CLOSED — FALSE POSITIVE): H-10 — Scholarships Missing location.state
+- **Description**: H-10 reported "0/1035 scholarships have location.state." Investigation shows the scholarship state filter actually uses `eligibility.states` (an array), NOT `location.state`. The `eligibility.states` field is 100% populated (1039/1039 entries), covering all 50 states + DC + "all" for national scholarships. The state filter works correctly — WA returns 21 results, all other states populated. The `location.state` field was never part of the schema design for scholarships.
+- **Status**: Closing H-10 as false positive.
+
+#### DI-4 (CLOSED — FALSE POSITIVE): H-17 — applicationFormat Filter Broken
+- **Description**: H-17 reported "applicationFormat filter broken (6.6% populated)." Investigation shows `applicationFormat` is now 100% populated (1039/1039 entries). Distribution: 851 application-only, 143 essay, 32 project, 6 video, 4 portfolio, 2 interview, 1 research-paper. This was likely fixed by a prior data refresh task.
+- **Status**: Closing H-17 as resolved.
+
+#### DI-5 (CLOSED — FALSE POSITIVE): H-14 — JSONL Injection in Conversation Memory
+- **Description**: H-14 flagged potential JSONL injection via newlines in user input being written to `.jsonl` files. Investigation of `backend/services/conversation-memory.js` shows that user input is stored as a field inside a JSON object, and `JSON.stringify()` properly escapes any newlines in string values (converting literal `\n` to the escaped sequence `\\n`). This means a malicious user message containing newlines cannot break the JSONL line structure. Verified with a test: `JSON.stringify({query: "hello\n{\"malicious\":true}"})` produces a single valid JSON line.
+- **Status**: Closing H-14 as false positive.
+
+#### DI-6 (LOW — NOT FIXED): 38 Internships Have Non-Date Deadline Values
+- **Files**: `backend/data/scraped/internships.json`
+- **Description**: 38 internship entries have deadline values like "Rolling" (16), "Annual" (9), "Rolling through June" (1), and other freeform text instead of ISO date strings. While these are semantically valid (rolling admissions exist), they cause issues with the featured internships sort (`deadline.localeCompare`) since text strings sort differently than date strings. Currently, "Rolling" entries will never appear in featured results (line 164: `i.deadline >= now` fails for non-date strings).
+- **Impact**: Low — rolling-deadline internships are excluded from featured listings but appear in normal search results.
+- **Recommendation**: Normalize to use `deadline: null` with a separate `deadlineNote: "Rolling"` field, or handle text deadlines in the featured sort logic.
+
+#### DI-7 (INFO): Internship Field Schema Uses title/company, Not name/organization
+- **Description**: The internships data schema uses `title` and `company` as primary fields, while scholarships use `name` and `provider`. Programs use `name` and `organization`. This inconsistency is handled correctly by each module's route file, but could confuse developers working across modules. Not a bug — just a documentation note.
+
+### Summary
+- **Fixed**: 2 issues (DI-1: 470 internship source URLs, DI-2: 2 scholarship duplicates)
+- **Closed**: 3 false positives (H-10, H-14, H-17 — all previously resolved or misidentified)
+- **Logged**: 2 issues (DI-6: non-date deadlines, DI-7: schema inconsistency)
+- **Impact**: All verified internship _source URLs are now valid clickable links. Scholarship data is deduplicated. Issue tracker significantly cleaned up.
+
+### Cumulative Open Issue Tracker Update
+
+| ID | Severity | Summary | First Found | Status |
+|----|----------|---------|-------------|--------|
+| DI-6 | LOW | 38 internships have non-date deadline values | Apr 13 | NEW |
+| CQ-4 | LOW | Duplicated essay review file-reading logic | Apr 12 | OPEN |
+| CQ-5 | LOW | Empty catch blocks in data-loading functions | Apr 12 | OPEN |
+| UX-4 | LOW | No focus trap in modals | Apr 11 | OPEN |
+| UX-5 | LOW | Console warnings in production | Apr 7 | OPEN |
+| P-3 | MEDIUM | Admin stats O(n) all-files read, no caching | Apr 10 | OPEN |
+| H-1 | HIGH | Webhook idempotency in-memory only | Apr 7 | OPEN |
+| H-2 | HIGH | No max_tokens on Claude API calls | Apr 7 | OPEN |
+| H-3 | HIGH | Reset code brute-forceable via botnet | Apr 7 | OPEN |
+| H-12 | HIGH | Email validation too permissive in invites | Apr 7 | OPEN |
+
+**Closed this session**: H-10 (false positive), H-14 (false positive), H-15 (fixed), H-17 (already resolved)
+
+### Recommendations for Next Audit
+1. **API Design** (next in rotation): Review route consistency, response formats, error handling patterns
+2. **Security**: Address H-1 (webhook idempotency), H-2 (max_tokens), H-3 (reset code brute force), H-12 (email validation)
+3. **Performance follow-up**: Fix P-3 (admin stats caching)
