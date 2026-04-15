@@ -778,7 +778,8 @@ function startKeepAlive() {
         body: JSON.stringify(body),
         signal: AbortSignal.timeout(30000),
       });
-      slmStatus.lastWarmAt = Date.now();
+      // NOTE: Do NOT update lastWarmAt here — pings must not reset the idle timer
+      // or keep-alive runs forever. Only real chatSLM() calls update lastWarmAt.
       console.log(`[SLM-KEEPALIVE] Ping OK (${Date.now() - t0}ms)`);
     } catch (err) {
       console.warn(`[SLM-KEEPALIVE] Ping failed: ${err.message}`);
