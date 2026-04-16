@@ -97,11 +97,48 @@ router.post('/profile', async (req, res) => {
     const { graduationYear, targetSchools, intendedMajors, state, reminderPreferences } = req.body;
 
     const profile = {};
-    if (graduationYear) profile.graduationYear = parseInt(graduationYear);
-    if (targetSchools) profile.targetSchools = targetSchools;
-    if (intendedMajors) profile.intendedMajors = intendedMajors;
-    if (state) profile.state = state;
-    if (reminderPreferences) profile.reminderPreferences = reminderPreferences;
+    if (graduationYear) {
+      const gy = parseInt(graduationYear);
+      if (!Number.isFinite(gy) || gy < 2020 || gy > 2040) {
+        return res.status(400).json({ error: 'Graduation year must be between 2020 and 2040.' });
+      }
+      profile.graduationYear = gy;
+    }
+    if (targetSchools) {
+      if (!Array.isArray(targetSchools) || targetSchools.length > 30) {
+        return res.status(400).json({ error: 'targetSchools must be an array of at most 30 entries.' });
+      }
+      // Sanitize each entry: only keep known safe fields
+      profile.targetSchools = targetSchools.slice(0, 30).map(s => {
+        if (typeof s === 'string') return { name: s.slice(0, 200) };
+        if (typeof s === 'object' && s !== null) return {
+          name: typeof s.name === 'string' ? s.name.slice(0, 200) : '',
+          unitId: typeof s.unitId === 'number' ? s.unitId : undefined,
+        };
+        return null;
+      }).filter(Boolean);
+    }
+    if (intendedMajors) {
+      if (!Array.isArray(intendedMajors) || intendedMajors.length > 10) {
+        return res.status(400).json({ error: 'intendedMajors must be an array of at most 10 entries.' });
+      }
+      profile.intendedMajors = intendedMajors
+        .filter(m => typeof m === 'string')
+        .slice(0, 10)
+        .map(m => m.slice(0, 100));
+    }
+    if (state) {
+      if (typeof state !== 'string' || state.length > 5) {
+        return res.status(400).json({ error: 'Invalid state code.' });
+      }
+      profile.state = state.toUpperCase();
+    }
+    if (reminderPreferences) {
+      if (typeof reminderPreferences !== 'object' || Array.isArray(reminderPreferences)) {
+        return res.status(400).json({ error: 'Invalid reminderPreferences.' });
+      }
+      profile.reminderPreferences = reminderPreferences;
+    }
 
     const result = await updateAdmissionsProfile(token, profile);
     if (result.error) return res.status(400).json(result);

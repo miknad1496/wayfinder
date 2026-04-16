@@ -78,6 +78,11 @@ router.get('/item/:name', async (req, res) => {
 
     const name = req.params.name;
 
+    // Validate name length to prevent abuse
+    if (!name || name.length > 200) {
+      return res.status(400).json({ error: 'Invalid item name.' });
+    }
+
     // Search across all strategy sections for item-level intel
     for (const [section, data] of Object.entries(intel)) {
       if (data?.itemIntel?.[name]) {

@@ -180,7 +180,11 @@ app.use('/api/essays', apiLimiter, essayRoutes);
 app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);
-app.use('/api/financial-aid', expensiveLimiter, financialAidRoutes);
+// Financial aid: expensive limiter on POST routes only (my-strategy, calculate-sai);
+// GET routes (search, schools, stats, estimate, state-grants, strategies) use normal limiter
+app.post('/api/financial-aid/my-strategy', expensiveLimiter);
+app.post('/api/financial-aid/calculate-sai', expensiveLimiter);
+app.use('/api/financial-aid', apiLimiter, financialAidRoutes);
 app.use('/api/coach', chatLimiter, coachRoutes);
 app.use('/api/intelligence', apiLimiter, intelligenceRoutes);
 

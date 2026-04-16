@@ -19,6 +19,17 @@ import {
 const router = Router();
 
 /**
+ * Sanitize invite code param — only allow alphanumeric + hyphens, max 64 chars.
+ * Prevents path traversal or injection via the :code route param.
+ */
+function sanitizeCode(code) {
+  if (!code || typeof code !== 'string') return null;
+  if (code.length > 64) return null;
+  if (!/^[a-zA-Z0-9_-]+$/.test(code)) return null;
+  return code;
+}
+
+/**
  * POST /api/invites/send — Send an invitation (authenticated)
  */
 router.post('/send', async (req, res) => {
@@ -67,7 +78,9 @@ router.post('/send', async (req, res) => {
  */
 router.get('/validate/:code', async (req, res) => {
   try {
-    const result = await validateInvite(req.params.code);
+    const code = sanitizeCode(req.params.code);
+    if (!code) return res.status(400).json({ error: 'Invalid invite code format.' });
+    const result = await validateInvite(code);
     if (result.error) {
       return res.status(400).json({ error: result.error });
     }
@@ -131,7 +144,9 @@ router.delete('/:code', async (req, res) => {
       return res.status(401).json({ error: 'Not authenticated' });
     }
 
-    const result = await deleteInvite(req.params.code, user.id, user.email);
+    const code = sanitizeCode(req.params.code);
+    if (!code) return res.status(400).json({ error: 'Invalid invite code format.' });
+    const result = await deleteInvite(code, user.id, user.email);
 
     if (result.error) {
       return res.status(400).json({ error: result.error });

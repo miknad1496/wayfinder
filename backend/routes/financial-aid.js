@@ -19,6 +19,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken, canAccess, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
+import { checkInjection } from '../services/input_filter.js';
 import { calculateSAI, quickEstimateSAI } from '../services/sai-calculator.js';
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -565,6 +566,17 @@ router.post('/my-strategy', async (req, res) => {
       .slice(0, 10); // Cap at 10 schools to prevent cost abuse (was 20)
     if (cleanSchools.length === 0) {
       return res.status(400).json({ error: 'Please provide at least one valid school name.' });
+    }
+
+    // SS-01: Check for prompt injection in user-supplied text fields
+    // additionalContext and school names are interpolated into the Claude prompt
+    const combinedInput = [
+      ...cleanSchools,
+      additionalContext ? String(additionalContext).slice(0, 500) : ''
+    ].filter(Boolean).join(' ');
+    const injectionCheck = checkInjection(combinedInput);
+    if (injectionCheck.blocked) {
+      return res.status(400).json({ error: 'Your submission contains content that cannot be processed. Please revise and try again.' });
     }
 
     if (!process.env.ANTHROPIC_API_KEY) {
