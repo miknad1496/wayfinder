@@ -947,3 +947,29 @@ The April 4 audits already covered the most critical security issues (session pa
 1. **API Design** (next in rotation): Review route consistency, response formats, error handling patterns
 2. **Security**: Address H-1 (webhook idempotency), H-2 (max_tokens), H-3 (reset code brute force), H-12 (email validation)
 3. **Performance follow-up**: Fix P-3 (admin stats caching)
+
+---
+
+## 2026-04-16: Nightly Audit — Cost & Resource Leaks + Data Integrity
+
+### Areas Checked
+
+**1. Cost & Resource Leaks (mandatory)**
+- **SLM keep-alive bug**: CLEAN — ping does NOT update `lastWarmAt` (slm.js:781). `clearInterval` fires after 5min idle. No infinite loop.
+- **Anonymous chat cap**: CLEAN — `ANON_DAILY_LIMIT = 5`, disk-persisted at `anon-rate-limits.json`, gated at chat.js:282.
+- **Rate limiter**: CLEAN — In-memory limiter: 30/min authenticated, 5/min anonymous (chat.js:299). Memory cleanup on expired windows present.
+- **Claude model costs**: Essay reviewer defaults to Opus (essay-reviewer.js:535). Financial-aid uses Sonnet. Essay-coach uses Haiku. No unexpected model usage.
+- **Runaway intervals**: CLEAN — All 4 `setInterval` calls in backend have proper `clearInterval` or idle-timeout. SLM keep-alive has 5min MAX_IDLE cutoff. user-backup.js has clearInterval + unref. scraper-scheduler.js has clearInterval. scheduler.js hourly check is intentionally long-lived.
+- **CORS**: CLEAN — No wildcard. Locked to `wayfinderai.org` / `www.wayfinderai.org` in production.
+
+**2. Data Integrity**
+- **internships.json**: Valid JSON, 1599 entries, 974 verified (all with `_source`). metadata.totalCount matches.
+- **scholarships.json**: Valid JSON, 1037 entries, 74 verified (all with `_source`). metadata.totalCount matches.
+- **programs-expanded.json**: Valid JSON, 74 entries across 3 sections (middleSchool:22, highSchoolInternships:16, highSchoolPrograms:36). **FIX: metadata.totalPrograms was 156 but actual total was 74 — corrected to 74.**
+- **Spot-check verified sources**: 5 random verified entries checked — all have plausible `_source` URLs (bcm.edu, sfyouthconnect.com, usc.edu, bowseat.org, nshss.org).
+- **Frontend syntax**: `node -c frontend/src/app.js` — clean, no syntax errors.
+
+### Fixes Applied
+1. `programs-expanded.json`: metadata.totalPrograms corrected from 156 → 74 to match actual entry count.
+
+### Result: 1 fix applied, all other checks clean.
