@@ -973,3 +973,37 @@ The April 4 audits already covered the most critical security issues (session pa
 1. `programs-expanded.json`: metadata.totalPrograms corrected from 156 → 74 to match actual entry count.
 
 ### Result: 1 fix applied, all other checks clean.
+
+---
+
+## 2026-04-17 Nightly Audit — Cost & Resource Leaks + Security & Auth
+
+### Areas Checked
+1. **Cost & Resource Leaks** (mandatory)
+2. **Security & Auth**
+
+### Cost & Resource Leaks — All Clean
+- **SLM keep-alive bug**: PASS — `startKeepAlive()` does NOT update `lastWarmAt` on pings (line ~757 comment confirms). `MAX_IDLE=300000` (5min) properly triggers `clearInterval`. No infinite loop risk.
+- **Anonymous chat cap**: PASS — `checkAnonDailyLimit()` is disk-persisted (`anon-rate-limits.json`), resets daily, hard limit of 5 messages/day per IP for unauthenticated users.
+- **Rate limiter**: PASS — Anonymous users get 5 req/min, authenticated get 30 req/min. `maxRequests` parameter is properly passed.
+- **Claude model costs**: Essay reviewer defaults to `claude-opus-4-6` (line 535 of essay-reviewer.js) — known and documented in CLAUDE.md. Chat uses Haiku for intake/advisor, Sonnet for standard/fallback. Financial-aid `/my-strategy` uses Sonnet. Essay-coach `/chat` uses Haiku. No unexpected expensive model usage.
+- **Runaway intervals/timers**: PASS — 4 `setInterval` calls found:
+  - `user-backup.js`: 30min backup, has `clearInterval` in stop function ✓
+  - `scheduler.js`: hourly reminder check, server-lifetime (acceptable) ✓
+  - `scraper-scheduler.js`: 6-hour check, has `clearInterval` in stop function ✓
+  - `slm.js`: 90s keep-alive, has `clearInterval` + 5min idle cutoff ✓
+
+### Security & Auth — All Clean
+- **Premium route auth**: PASS — All Claude-calling routes require `verifyToken()`:
+  - `essays.js`: all endpoints gated (review, credits, history)
+  - `essay-coach.js /chat`: requires login
+  - `financial-aid.js /my-strategy`: requires auth + Elite tier
+  - `intelligence.js`: requires auth
+  - `admin.js`: middleware enforces admin-only on ALL endpoints
+- **CORS config**: PASS — Locked to specific origins (`wayfinderai.org` in production, `localhost` in dev). No wildcard. `credentials: true` set.
+- **Stripe webhook**: PASS — `constructEvent()` with signature verification in production. Dev mode skips verification with console warning. Missing secret in production returns 500 (rejects webhook). Idempotency check on event IDs.
+- **Chat route (anonymous access)**: By design — anonymous users can hit Claude/Haiku but are capped at 5 messages/day (disk-persisted) and 5 req/min burst limit. Acceptable cost exposure.
+
+### No Fixes Required
+All checks passed. No issues found.
+
