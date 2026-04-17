@@ -29,7 +29,7 @@
     "verifiedCount": 974,
     "lastDeduplication": "2026-04-06T14:27:44.353Z",
     "previousCount": 1555,
-    "lastUpdated": "2026-04-08T07:13:20.810Z"
+    "lastUpdated": "2026-04-17T07:12:56.187Z"
   },
   "internships": [
     {
@@ -33459,7 +33459,8 @@
       "company": "CERN",
       "location": {
         "city": "Geneva",
-        "state": "Switzerland"
+        "state": "International",
+        "country": "Switzerland"
       },
       "type": "summer",
       "paid": true,
@@ -33789,7 +33790,8 @@
       "company": "DeepMind",
       "location": {
         "city": "London",
-        "state": "UK"
+        "state": "International",
+        "country": "UK"
       },
       "type": "summer",
       "paid": true,
@@ -34129,7 +34131,8 @@
       "company": "BBC",
       "location": {
         "city": "London",
-        "state": "UK"
+        "state": "International",
+        "country": "UK"
       },
       "type": "summer",
       "paid": false,
@@ -34157,7 +34160,8 @@
       "company": "LVMH",
       "location": {
         "city": "Paris",
-        "state": "France"
+        "state": "International",
+        "country": "France"
       },
       "type": "summer",
       "paid": true,
