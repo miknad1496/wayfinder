@@ -1007,3 +1007,23 @@ The April 4 audits already covered the most critical security issues (session pa
 ### No Fixes Required
 All checks passed. No issues found.
 
+
+## 2026-04-18: Clean — Cost & Resource Leaks + Data Integrity
+
+### Areas Checked
+1. **Cost & Resource Leaks** (priority check)
+   - SLM keep-alive: ✅ Ping does NOT update `lastWarmAt` (line 781 slm.js). No infinite loop.
+   - Anonymous chat cap: ✅ Disk-persisted 5/day per IP (`checkAnonDailyLimit` in chat.js:120-137). Applied at line 280-293.
+   - Rate limiter: ✅ 30 req/min authenticated, 5 req/min anonymous (chat.js:48-49, 298-299).
+   - Claude model costs: ✅ Essay reviewer defaults opus (expected for premium). Chat uses Haiku for intake/advisor, Sonnet for standard, Opus only for engine mode. Financial-aid uses Sonnet. Essay-coach uses Haiku. Appropriate tiering.
+   - Runaway intervals: ✅ 4 setInterval calls found. user-backup.js has clearInterval+unref. scraper-scheduler.js has clearInterval. slm.js has idle-timeout self-stop. scheduler.js is an intentional always-on hourly reminder check (no cleanup needed for server-lifetime interval).
+
+2. **Data Integrity**
+   - internships.json: ✅ Valid JSON, 1599 entries, 974 verified (all with real `_source` URLs), metadata count matches.
+   - scholarships.json: ✅ Valid JSON, 1037 entries, 74 verified (all with real `_source` URLs), metadata count matches.
+   - programs.json: ✅ Valid JSON, 821 entries, 77 verified, metadata count matches.
+   - programs-expanded.json: ✅ Valid JSON, 74 entries across 3 sections (middleSchool:22, highSchoolInternships:16, highSchoolPrograms:36), metadata matches.
+   - Spot-checked verified entries (Gates Scholarship, QuestBridge, Jack Kent Cooke, Seattle Children's RTP, Fred Hutch SHIP) — all have legitimate source URLs.
+
+### No Fixes Required
+All checks passed. No issues found.
