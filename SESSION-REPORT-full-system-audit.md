@@ -1,83 +1,77 @@
 # Full System Audit — Session Report
-**Date:** 2026-04-17
-**Focus Area:** Data Layer — JSON integrity, verified entry quality, metadata consistency, state code normalization, format field coverage
+**Date:** 2026-04-18
+**Focus Area:** Essay Review Pipeline — Claude integration, JSON parsing, credit system, error recovery, timeout handling, input validation, dead code
 
 ## Run Summary
-Deep audit of all three data files (`scholarships.json`, `programs.json`, `internships.json`) covering: metadata accuracy, duplicate detection, verified entry quality (source URLs, required fields), state code normalization, format field coverage, and filter compatibility. Found and fixed 5 issues across all three data files.
+Deep audit of the entire essay review pipeline: `backend/routes/essays.js`, `backend/services/essay-reviewer.js`, `backend/routes/essay-coach.js`, and the credit system in `backend/services/auth.js`. Reviewed frontend rendering in `app.js` (lines 3221-3640). Found and fixed 3 issues, documented 4 informational findings.
 
 ## Key Findings
 
-### DL-1: LOW — Scholarship Metadata Count Mismatch
-**File:** `backend/data/scraped/scholarships.json` — metadata
+### EP-1: LOW — essayType POST validation missing length limit
+**File:** `backend/routes/essays.js` — line 168
 **Status:** FIXED
 
-`metadata.totalCount` was 1037 (correct) but `metadata.totalScholarships` was 1039 (stale from a previous inject run). These two fields should always match the actual array length. Could cause confusion in admin dashboards or stats endpoints.
+The `essayType` field on POST `/api/essays/review` was validated as a string but had no max length. Since `essayType` is passed as a search term into `extractRelevantSections()` for knowledge extraction, an arbitrarily long string could cause unnecessary processing. The `/drafts/:essayType` route already enforced a 64-char limit, but the POST route did not.
 
-**Fix:** Synced both `totalCount` and `totalScholarships` to actual array length (1037).
+**Fix:** Added `essayType.length > 64` check to the POST validation, matching the drafts route limit.
 
-### DL-2: MODERATE — 744 Programs Missing `format` Field (91% of dataset)
-**File:** `backend/data/scraped/programs.json` — 744 of 821 entries
+### EP-2: LOW — History endpoint essayType query param unvalidated
+**File:** `backend/routes/essays.js` — line 269
 **Status:** FIXED
 
-Only 77 programs (all verified entries) had a `format` field. The remaining 744 non-verified entries lacked it entirely. The programs search route filters by format (`p.format?.toLowerCase() === fmt`), so any user filtering by "in-person" would only see 70 results instead of the expected ~807. This made the format filter nearly useless for programs.
+The `GET /api/essays/history` endpoint accepted `req.query.essayType` without any length validation. While this is only used as a string equality filter (not as a search term), it's good practice to cap it for consistency with other endpoints.
 
-**Fix:** Backfilled `format` based on `location.state`: entries with `state=Online` → `"online"`, `state=Remote` → `"remote"`, all others → `"in-person"`. Result: 807 in-person, 3 hybrid, 8 online, 3 remote. Added `_formatBackfillNotes` to metadata documenting the inference.
+**Fix:** Added type and length validation (string, max 64 chars). Invalid values silently ignored (filter becomes undefined, returning all results).
 
-### DL-3: LOW — 4 Programs with Combo State Codes (e.g., "NY/IN")
-**File:** `backend/data/scraped/programs.json` — 4 entries
+### EP-3: INFO — Dead code: BASE_SYSTEM_PROMPT in essay-reviewer.js
+**File:** `backend/services/essay-reviewer.js` — lines 411-476
+**Status:** FIXED (removed)
+
+A large `BASE_SYSTEM_PROMPT` constant (~65 lines, ~2500 chars) was defined but never referenced anywhere in the codebase. The active system prompt is built by `buildEnhancedSystemPrompt()` (line 316) which includes all the same guidance plus knowledge injection. This dead code was likely the original prompt before knowledge injection was implemented.
+
+**Fix:** Removed the dead constant and added a comment noting it was removed and why.
+
+### EP-4: INFO — Duplicate JSDoc comment on refundEssayCredit
+**File:** `backend/services/auth.js` — lines 1364-1369
 **Status:** FIXED
 
-Four programs had compound state codes like `NY/IN`, `CA/NY`, `CA/MA`, `NY/MA` in `location.state`. These never match the state filter (which compares against a single 2-letter code). Affected programs: Telluride Association Summer Program (TASP), Venture Capital Summer Internship, Biotech Summer Research Internship, Consulting Summer Program.
+Two consecutive JSDoc blocks preceded `refundEssayCredit()`. Merged into a single comment.
 
-**Fix:** Normalized `location.state` to the first state in the compound. Added the second state to `eligibility.states` so the program is still discoverable when filtering by either state.
-
-### DL-4: LOW — 48 Programs and 4 Internships with Country Names as State Codes
-**File:** `backend/data/scraped/programs.json` (48 entries), `internships.json` (4 entries)
-**Status:** FIXED
-
-International programs/internships had country names (Costa Rica, Peru, Spain, Germany, Japan, Brazil, Switzerland, UK, France) stored in `location.state`. These never match any state filter and create misleading state distribution stats.
-
-**Fix:** Moved country name to new `location.country` field and set `location.state` to `"International"`. This preserves the country data while making the state field consistent and filterable.
-
-### DL-5: INFO — `programs-expanded.json` is Orphaned (Not Used by Any Route)
-**File:** `backend/data/scraped/programs-expanded.json`
+### EP-5: INFO — History/drafts endpoints have unbounded file read concurrency
+**File:** `backend/routes/essays.js` — lines 278, 329
 **Status:** NOT FIXED — informational
 
-This file has a section-based structure (`middleSchool`, `highSchoolInternships`, `highSchoolPrograms`) with 74 entries total, 0 verified. The programs route loads `programs.json` (821 entries, 77 verified), and the inject script targets `programs.json`. `programs-expanded.json` appears to be an older format that is no longer canonical. It has no consumers.
+Both `/history` and `/drafts/:essayType` use `Promise.all(files.map(async file => ...))` to read ALL review JSON files in parallel. If the reviews directory grows to thousands of files, this creates a burst of concurrent file descriptors. Currently safe (0 review files exist on disk), but will become a performance concern at scale.
 
-**Recommendation:** Consider deleting `programs-expanded.json` or archiving it to avoid confusion. Multiple audits have flagged confusion about which file is canonical.
+**Recommendation:** When review volume grows past ~200, consider either: (a) an index file that maps userId to their review IDs, or (b) batched reads with a concurrency limiter (e.g., `p-limit`).
 
-## Data Health Summary
+### EP-6: INFO — max_tokens: 3500 is tight for the full review JSON schema
+**File:** `backend/services/essay-reviewer.js` — line 536
+**Status:** NOT FIXED — informational
 
-| Dataset | Total | Verified | Duplicates | Missing Key Fields | State Issues |
-|---------|-------|----------|------------|-------------------|--------------|
-| Scholarships | 1,037 | 74 (7.1%) | 0 | 0 | 0 |
-| Programs | 821 | 77 (9.4%) | 0 | 0 (after fix) | 0 (after fix) |
-| Internships | 1,599 | 974 (60.9%) | 0 | 0 | 0 (after fix) |
+The review JSON schema has 14 top-level fields including nested objects (voiceAssessment, structure, emotionalArc, admissionsImpact) and arrays (strengths, improvements, lineNotes). A thorough review with 5+ line notes and 4+ improvements could approach 3000 tokens. The 3500 limit provides a thin margin. If Claude generates detailed feedback, JSON may get truncated, triggering the parse recovery path (partial review with only score/label/summary).
 
-### Verified Entry Quality
-All verified entries across all three datasets have valid `_source` URLs (no example.com, no missing protocols), proper `_verifiedDate` fields, and complete required fields. Source URL quality is good — no hallucinated URLs detected.
+The parse recovery at line 564 handles this gracefully (extracts score via regex), so this is not a bug — but it may cause some users to receive degraded reviews. Consider bumping to 4000 if Opus output costs are acceptable.
 
-### Data Structure Notes
-- Scholarships use `name` as primary identifier
-- Internships use `title` (not `name`) as primary identifier — consistent across all 1,599 entries
-- Programs use `name` as primary identifier
-- All three datasets have proper deduplication (0 duplicates found)
+### EP-7: INFO — Essay type not validated against ESSAY_TYPES enum
+**File:** `backend/routes/essays.js` — POST handler
+**Status:** NOT FIXED — informational, by design
+
+The POST `/api/essays/review` accepts any string as `essayType` (up to 64 chars after EP-1 fix). It is not validated against the `ESSAY_TYPES` keys in `essay-reviewer.js`. Invalid types fall back to `ESSAY_TYPES.other` ("General College Essay") on line 489, so functionality is correct. However, the stored review record preserves the original invalid type string, which could cause confusion in history/drafts filtering.
+
+This appears to be by design — allowing frontend flexibility to add new types without backend changes. No fix needed.
 
 ## Positive Observations
-- All verified source URLs are valid and well-formed
-- Deadline formats are consistent across all three datasets
-- Scholarship amount structure is uniform (all have `amount.min`/`amount.max`)
-- Internship field, company, and location coverage is 100% for verified entries
-- Grade coverage is 100% for programs (all 821 have `eligibility.grades`)
-- The inject scripts correctly target the canonical data files
 
-## Previously Flagged Items — Status
-- **C-5 (metadata count mismatches):** RESOLVED — scholarships metadata synced, programs metadata was already correct at 74 (for programs-expanded.json) and 821 (for programs.json)
-- **H-10 (scholarship state data):** RESOLVED — all 258 state-scoped scholarships have proper `eligibility.states` arrays
-- **H-11 (program invalid state codes):** RESOLVED — combo codes and country names normalized
-- **Password validation mismatch (6 vs 8):** Already fixed in a prior commit (app.js line 1457 now says 8)
+1. **Credit system is race-condition-safe** — `withCreditLock` properly serializes concurrent credit operations per user using promise chaining. The lock cleanup in the `finally` block is correct.
+2. **Refund on failure is comprehensive** — Three separate code paths handle credit refunds: (a) `reviewEssay()` returns `success: false`, (b) review has invalid structure (no overallScore), (c) unexpected exception in the outer try/catch. All three refund paths work correctly.
+3. **Atomic file writes** — Both review storage (essays.js line 229-230) and user data (auth.js atomicWriteJSON) use write-to-temp-then-rename pattern, preventing corruption on crash.
+4. **Input validation is thorough** — Injection checks run BEFORE credit deduction (line 173-178), preventing users from losing credits to blocked submissions. All text inputs have length caps. Review IDs are sanitized with alphanumeric-only regex.
+5. **Timeout protection** — Both essay reviewer (90s) and David coach (30s) use AbortController with proper cleanup in `finally` blocks.
+6. **David coach context sanitization is solid** — The toolContext sanitization (essay-coach.js lines 412-462) uses allowlists for field names, modules, and value types. String values are capped at 120-200 chars. No arbitrary client data reaches the system prompt.
+7. **Parse recovery is well-designed** — The JSON parse fallback (essay-reviewer.js lines 564-589) extracts score/label/summary via regex from malformed JSON, returning a partial but usable review with a `_parseWarning` flag.
 
-## Git Status
-- **Files changed:** `backend/data/scraped/scholarships.json`, `backend/data/scraped/programs.json`, `backend/data/scraped/internships.json`
-- **Commit:** See below
+## Files Changed
+- `backend/routes/essays.js` — essayType length validation on POST and GET /history
+- `backend/services/essay-reviewer.js` — removed dead BASE_SYSTEM_PROMPT constant
+- `backend/services/auth.js` — merged duplicate JSDoc comment on refundEssayCredit

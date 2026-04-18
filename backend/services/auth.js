@@ -1363,9 +1363,7 @@ export async function useEssayCredit(token) {
 
 /**
  * Refund one essay review credit. Called when a review fails or returns invalid data.
- */
-/**
- * Refund one essay review credit. Uses token index for O(1) lookup.
+ * Uses token index for O(1) lookup.
  */
 export async function refundEssayCredit(token) {
   if (!token) return { success: false, remaining: 0 };

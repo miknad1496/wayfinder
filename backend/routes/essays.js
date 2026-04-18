@@ -165,8 +165,8 @@ router.post('/review', async (req, res) => {
     if (prompt != null && (typeof prompt !== 'string' || prompt.length > 2000)) {
       return res.status(400).json({ error: 'prompt must be a string of at most 2000 characters.' });
     }
-    if (essayType != null && typeof essayType !== 'string') {
-      return res.status(400).json({ error: 'essayType must be a string.' });
+    if (essayType != null && (typeof essayType !== 'string' || essayType.length > 64)) {
+      return res.status(400).json({ error: 'essayType must be a string of at most 64 characters.' });
     }
 
     // SS-01: Check for prompt injection in user-supplied text fields
@@ -266,7 +266,8 @@ router.get('/history', async (req, res) => {
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
 
-    const essayTypeFilter = req.query.essayType;
+    const rawEssayType = req.query.essayType;
+    const essayTypeFilter = (typeof rawEssayType === 'string' && rawEssayType.length <= 64) ? rawEssayType : undefined;
     // Cap limit between 1 and 200, default 100, to prevent unbounded scans
     const rawLimit = parseInt(req.query.limit, 10);
     const limit = Number.isFinite(rawLimit) ? Math.min(Math.max(rawLimit, 1), 200) : 100;
