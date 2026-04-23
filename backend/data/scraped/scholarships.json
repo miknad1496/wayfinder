@@ -2,10 +2,10 @@
   "metadata": {
     "lastScraped": "2026-04-05",
     "lastVerified": "2026-04-08",
-    "totalCount": 1037,
+    "totalCount": 1043,
     "totalValue": "$14.7 million+",
     "_verified": "partial",
-    "_verificationNotes": "Data integrity enforced on 2026-04-12. 74 verified, 965 non-verified, 60 dupes removed.",
+    "_verificationNotes": "Data integrity enforced on 2026-04-23. 80 verified, 963 non-verified, 65 dupes removed.",
     "dataYear": "2026-2027",
     "sources": [
       "Gates Foundation",
@@ -28,9 +28,9 @@
       "Military Service Academies",
       "Professional Organizations"
     ],
-    "lastUpdated": "2026-04-17T07:12:29.851Z",
-    "totalScholarships": 1037,
-    "verifiedCount": 74,
+    "lastUpdated": "2026-04-23T15:34:11.996Z",
+    "totalScholarships": 1043,
+    "verifiedCount": 80,
     "lastSchemaBackfill": "2026-04-10T00:25:35.437Z",
     "_schemaBackfillNotes": "Inferred scope and applicationFormat for 967 entries missing scope, 967 missing applicationFormat. Inference based on eligibility.states, description, tags."
   },
@@ -2924,6 +2924,325 @@
       "_verified": true,
       "_verifiedDate": "2026-04-12",
       "_source": "https://wsecu.org/scholarships"
+    },
+    {
+      "name": "Bezos Scholars Program",
+      "provider": "Bezos Family Foundation / Aspen Institute",
+      "amount": {
+        "min": 1000,
+        "max": 1000,
+        "display": "$1,000 + all-expenses-paid trip to Aspen Ideas Festival"
+      },
+      "deadline": "2027-01-15",
+      "category": [
+        "leadership",
+        "merit"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 3,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [
+          "underserved-schools"
+        ],
+        "citizenshipRequired": true,
+        "grades": [
+          "11"
+        ]
+      },
+      "description": "Selects 12 US juniors from underserved public schools for a yearlong leadership program, including an all-expenses-paid trip to the Aspen Ideas Festival. Scholars receive $1,000 to launch community change projects and personalized college advising. Prioritizes economically disadvantaged and first-generation college students.",
+      "url": "https://bezosscholars.org/apply/",
+      "renewable": false,
+      "tags": [
+        "leadership",
+        "aspen",
+        "community-service",
+        "juniors",
+        "prestigious"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://bezosscholars.org/apply/"
+    },
+    {
+      "name": "Stamps Scholars Program",
+      "provider": "Stamps Family Charitable Foundation",
+      "amount": {
+        "min": 20000,
+        "max": 98000,
+        "display": "$20,000-$98,000/year (varies by partner school)"
+      },
+      "deadline": "2027-01-01",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "very_high",
+      "scope": "national",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 3.8,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Full-tuition or full cost-of-attendance merit scholarship administered through 50+ partner universities including Georgia Tech, UMich, Purdue, UCLA, UVA, and more. Includes enrichment funds for study abroad, research, and conferences. Nominated by partner schools — apply through the university's admission process.",
+      "url": "https://www.stampsscholars.org/",
+      "renewable": true,
+      "tags": [
+        "full-ride",
+        "merit",
+        "prestigious",
+        "enrichment-funds"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://www.stampsscholars.org/our-program/how-to-apply/"
+    },
+    {
+      "name": "Daniels Scholarship",
+      "provider": "Daniels Fund",
+      "amount": {
+        "min": 0,
+        "max": 100000,
+        "display": "Full cost of attendance (4 years)"
+      },
+      "deadline": "2026-11-15",
+      "category": [
+        "merit",
+        "need-based"
+      ],
+      "competitiveness": "very_high",
+      "scope": "state",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "CO",
+          "NM",
+          "UT",
+          "WY"
+        ],
+        "financialNeed": true,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Comprehensive scholarship for high-achieving, values-driven graduating seniors in Colorado, New Mexico, Utah, and Wyoming. Covers full cost of attendance at any accredited college or university nationwide. ~205 scholars selected annually. Emphasizes strength of character, leadership, and community involvement.",
+      "url": "https://danielsfund.org/our-work/scholarships/",
+      "renewable": true,
+      "tags": [
+        "full-ride",
+        "character",
+        "leadership",
+        "regional"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://danielsfund.org/our-work/scholarships/"
+    },
+    {
+      "name": "AXA Achievement Scholarship",
+      "provider": "AXA Foundation / Scholarship America",
+      "amount": {
+        "min": 2500,
+        "max": 25000,
+        "display": "$2,500-$25,000"
+      },
+      "deadline": "2026-12-15",
+      "category": [
+        "merit",
+        "community-service"
+      ],
+      "competitiveness": "high",
+      "scope": "national",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Rewards high school seniors who demonstrate ambition and drive through outstanding achievement in school, community, or work activities. 52 students win $10,000 (one per state + DC + PR), with 10 of those elevated to $25,000. ~300 additional students receive $2,500. Over $1.5M awarded annually.",
+      "url": "https://www.scholarsapply.org/axa-achievement/",
+      "renewable": false,
+      "tags": [
+        "achievement",
+        "community",
+        "accessible",
+        "national"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://www.scholarsapply.org/axa-achievement/"
+    },
+    {
+      "name": "Congressional Award Gold Medal Program",
+      "provider": "United States Congress",
+      "amount": {
+        "min": 0,
+        "max": 0,
+        "display": "Non-monetary — highest Congressional honor for youth"
+      },
+      "deadline": "2026-12-31",
+      "category": [
+        "leadership",
+        "community-service"
+      ],
+      "competitiveness": "high",
+      "scope": "national",
+      "applicationFormat": "portfolio",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "The highest honor Congress bestows on young Americans ages 14-24. Earn Bronze, Silver, or Gold medals by setting and achieving goals in voluntary public service (400+ hrs for Gold), personal development, physical fitness, and expedition/exploration. Gold Medal ceremony held in the US Capitol. Exceptional resume builder.",
+      "url": "https://www.congressionalaward.org/",
+      "renewable": false,
+      "tags": [
+        "congress",
+        "service",
+        "leadership",
+        "prestigious",
+        "non-monetary"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://www.congressionalaward.org/"
+    },
+    {
+      "name": "WSADA Bright Future Scholarship",
+      "provider": "Washington State Auto Dealers Association",
+      "amount": {
+        "min": 1000,
+        "max": 2500,
+        "display": "$1,000-$2,500"
+      },
+      "deadline": "2027-03-31",
+      "category": [
+        "vocational",
+        "merit"
+      ],
+      "competitiveness": "moderate",
+      "scope": "state",
+      "applicationFormat": "application-only",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "WA"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "automotive-technology"
+        ],
+        "demographics": [],
+        "citizenshipRequired": false,
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Awards scholarships to WA high school seniors enrolling in an automotive technology program or currently employed by a WSADA-member dealership. Supports hands-on career pathways in the automotive industry. Multiple awards given annually.",
+      "url": "https://wsada.org/bright-future-scholarship/",
+      "renewable": false,
+      "tags": [
+        "washington",
+        "vocational",
+        "automotive",
+        "trade-school"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://wsada.org/bright-future-scholarship/"
+    },
+    {
+      "name": "American Legion National Oratorical Contest",
+      "provider": "The American Legion",
+      "amount": {
+        "min": 1500,
+        "max": 25000,
+        "display": "Up to $25,000"
+      },
+      "deadline": "2026-12-01",
+      "category": [
+        "merit"
+      ],
+      "competitiveness": "high",
+      "scope": "national",
+      "applicationFormat": "essay",
+      "eligibility": {
+        "gpa": 0,
+        "states": [
+          "all"
+        ],
+        "financialNeed": false,
+        "majors": [
+          "any"
+        ],
+        "demographics": [],
+        "citizenshipRequired": true,
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "National oratorical competition for high school students under 20. Contestants deliver prepared orations on aspects of the US Constitution plus an assigned topic. Department (state) winners advance to nationals. First place receives $25,000; second $22,500; third $20,000. Each department finalist receives $1,500.",
+      "url": "https://www.legion.org/oratorical",
+      "renewable": false,
+      "tags": [
+        "speech",
+        "constitution",
+        "public-speaking",
+        "competition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-23",
+      "_source": "https://www.legion.org/oratorical"
     },
     {
       "name": "Horatio Alger Scholarship Program",
@@ -43130,42 +43449,6 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.youngarts.org/apply"
-    },
-    {
-      "name": "AXA Achievement Scholarship",
-      "provider": "AXA Foundation / Scholarship America",
-      "amount": {
-        "min": 2500,
-        "max": 25000,
-        "display": "Up to $25,000"
-      },
-      "deadline": "2026-12-15",
-      "category": [
-        "community",
-        "merit"
-      ],
-      "competitiveness": "very_high",
-      "scope": "national",
-      "applicationFormat": "application-only",
-      "eligibility": {
-        "gpa": 0,
-        "states": [
-          "all"
-        ],
-        "financialNeed": false,
-        "majors": [
-          "any"
-        ],
-        "citizenshipRequired": true,
-        "grades": [
-          "12"
-        ]
-      },
-      "description": "Recognizes outstanding achievement in school, community, or workplace. 52 state winners each get $2,500; national winners get up to $25,000. Emphasizes non-traditional community engagement and self-driven projects.",
-      "url": "https://us.axa.com/axa-foundation/AXA-achievement-scholarship.html",
-      "_verified": true,
-      "_verifiedDate": "2026-04-04",
-      "_source": "https://us.axa.com/axa-foundation/AXA-achievement-scholarship.html"
     },
     {
       "name": "Edison Scholars Program (Southern California)",

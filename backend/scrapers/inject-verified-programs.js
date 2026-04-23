@@ -1710,6 +1710,277 @@ const verifiedPrograms = [
     _source: "https://med.stanford.edu/simr.html"
   },
 
+  {
+    "name": "UW Center for Neurotechnology Summer Research (YSP-REACH)",
+    "provider": "University of Washington",
+    "category": "stem",
+    "subcategory": "neuroscience",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "free",
+      "display": "Free (stipend provided)"
+    },
+    "selectivity": "competitive",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "eligibility": {
+      "grades": [
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "WA"
+      ]
+    },
+    "deadline": "2026-04-30",
+    "description": "High school students explore neural engineering and neuroscience at UW's Center for Neurotechnology. Tour labs, learn about brain-computer interfaces, and get introduced to neuroengineering. Stipend included. Strong pipeline for college applications in neuroscience and bioengineering.",
+    "url": "https://centerforneurotech.uw.edu/content/young-scholars-program",
+    "tags": [
+      "stem",
+      "neuroscience",
+      "research",
+      "seattle",
+      "free",
+      "stipend"
+    ],
+    "duration": "2 weeks (summer)",
+    "region": "Pacific Northwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://centerforneurotech.uw.edu/content/young-scholars-program"
+  },
+  {
+    "name": "UW Materials Science Camp for High Schoolers",
+    "provider": "University of Washington",
+    "category": "stem",
+    "subcategory": "materials-science",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "free",
+      "display": "Free"
+    },
+    "selectivity": "competitive",
+    "admissionsImpact": "medium",
+    "format": "in-person",
+    "location": {
+      "city": "Seattle",
+      "state": "WA"
+    },
+    "eligibility": {
+      "grades": [
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "WA"
+      ]
+    },
+    "deadline": "2026-05-15",
+    "description": "Week-long materials science camp at UW's Materials Science & Engineering department. Students explore polymers, metals, ceramics, and composites through hands-on lab activities. Learn about real-world applications in aerospace, biomedical, and sustainable materials.",
+    "url": "https://mse.washington.edu/community/materialscamp-hs",
+    "tags": [
+      "stem",
+      "materials-science",
+      "engineering",
+      "seattle",
+      "free",
+      "hands-on"
+    ],
+    "duration": "1 week (summer)",
+    "region": "Pacific Northwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://mse.washington.edu/community/materialscamp-hs"
+  },
+  {
+    "name": "Cooper Union Summer STEM 2026",
+    "provider": "The Cooper Union",
+    "category": "stem",
+    "subcategory": "engineering",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "free",
+      "display": "Free"
+    },
+    "selectivity": "competitive",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "New York",
+      "state": "NY"
+    },
+    "eligibility": {
+      "grades": [
+        "10",
+        "11"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2026-04-15",
+    "description": "Free 6-week summer engineering program at Cooper Union for rising juniors and seniors. Students take college-level courses in engineering, mathematics, and physics. Includes hands-on lab work and exposure to multiple engineering disciplines. Fully funded including materials.",
+    "url": "https://cooper.edu/engineering/stem/summer",
+    "tags": [
+      "stem",
+      "engineering",
+      "free",
+      "nyc",
+      "pre-college",
+      "competitive"
+    ],
+    "duration": "6 weeks (summer)",
+    "region": "Northeast",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://cooper.edu/engineering/stem/summer"
+  },
+  {
+    "name": "NASA STEM Enhancement in Earth Science (SEES)",
+    "provider": "NASA / UT Austin Center for Space Research",
+    "category": "stem",
+    "subcategory": "earth-science",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "free",
+      "display": "Free (all expenses covered)"
+    },
+    "selectivity": "very_competitive",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Austin",
+      "state": "TX"
+    },
+    "eligibility": {
+      "grades": [
+        "10",
+        "11"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2027-02-22",
+    "description": "Two-week NASA-funded on-site internship at UT Austin for rising juniors/seniors. Collaborate with NASA scientists and academic experts on Earth science research including astronomy, planetary science, remote sensing, and space geodesy. Must be 16 by program start and a US citizen.",
+    "url": "https://csr.utexas.edu/education-outreach/high-school-internships/sees/",
+    "tags": [
+      "nasa",
+      "stem",
+      "earth-science",
+      "free",
+      "research",
+      "texas",
+      "competitive"
+    ],
+    "duration": "2 weeks (July)",
+    "region": "Southwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://csr.utexas.edu/education-outreach/high-school-internships/sees/"
+  },
+  {
+    "name": "NSLC Pre-College Career Programs",
+    "provider": "National Student Leadership Conference",
+    "category": "leadership",
+    "subcategory": "career-exploration",
+    "type": "summer",
+    "cost": {
+      "amount": 3000,
+      "type": "paid",
+      "display": "~$3,000-$4,500 (financial aid available)"
+    },
+    "selectivity": "moderate",
+    "admissionsImpact": "medium",
+    "format": "in-person",
+    "location": {
+      "city": "Washington",
+      "state": "DC"
+    },
+    "eligibility": {
+      "grades": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2026-06-01",
+    "description": "Pre-college leadership programs in Medicine, Business, STEM, Law, Intelligence, and more. Held at top universities including Georgetown, American University, and Georgia Tech. Students engage in hands-on simulations, site visits, and mentorship with professionals.",
+    "url": "https://www.nslcleaders.org/",
+    "tags": [
+      "leadership",
+      "pre-college",
+      "career-exploration",
+      "medicine",
+      "law",
+      "business"
+    ],
+    "duration": "6-10 days (summer)",
+    "region": "National",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://www.nslcleaders.org/"
+  },
+  {
+    "name": "Anson L. Clark Scholars Program",
+    "provider": "Texas Tech University",
+    "category": "stem",
+    "subcategory": "research",
+    "type": "summer",
+    "cost": {
+      "amount": 0,
+      "type": "free",
+      "display": "Free + $750 stipend"
+    },
+    "selectivity": "very_competitive",
+    "admissionsImpact": "high",
+    "format": "in-person",
+    "location": {
+      "city": "Lubbock",
+      "state": "TX"
+    },
+    "eligibility": {
+      "grades": [
+        "11",
+        "12"
+      ],
+      "states": [
+        "all"
+      ]
+    },
+    "deadline": "2027-02-15",
+    "description": "Highly competitive 7-week summer research program at Texas Tech. 12 scholars per year work one-on-one with faculty on original research in sciences, engineering, humanities, and social sciences. Includes $750 stipend, room and board, and weekly seminars with visiting scholars.",
+    "url": "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandhonors/clark-scholars/",
+    "tags": [
+      "research",
+      "stem",
+      "humanities",
+      "free",
+      "stipend",
+      "competitive",
+      "texas"
+    ],
+    "duration": "7 weeks (June-August)",
+    "region": "Southwest",
+    "_verified": true,
+    "_verifiedDate": "2026-04-23",
+    "_source": "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandhonors/clark-scholars/"
+  },
+
 ];
 
 
