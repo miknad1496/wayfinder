@@ -765,12 +765,19 @@ export async function updateProfile(token, updates) {
       } else if (key === 'interests' && Array.isArray(updates.interests)) {
         user.interests = updates.interests.filter(i => typeof i === 'string').slice(0, 20).map(i => i.slice(0, 100));
       } else if (key === 'profile' && typeof updates.profile === 'object' && updates.profile !== null) {
-        // Only merge safe string/number values into profile
+        // Only merge safe string/number/boolean/array values into profile
         const safeProfile = {};
+        const PROFILE_ARRAY_FIELDS = new Set(['favoriteClasses', 'careerInterests']);
         for (const [pk, pv] of Object.entries(updates.profile)) {
           if (pk === '__proto__' || pk === 'constructor' || pk === 'prototype') continue; // Prototype pollution guard
-          if ((typeof pv === 'string' || typeof pv === 'number' || typeof pv === 'boolean') && pk.length <= 50) {
-            safeProfile[pk] = typeof pv === 'string' ? pv.slice(0, 500) : pv;
+          if (pk.length > 50) continue;
+          if (typeof pv === 'string') {
+            safeProfile[pk] = pv.slice(0, 500);
+          } else if (typeof pv === 'number' || typeof pv === 'boolean') {
+            safeProfile[pk] = pv;
+          } else if (Array.isArray(pv) && PROFILE_ARRAY_FIELDS.has(pk)) {
+            // Allow known array fields — sanitize each element
+            safeProfile[pk] = pv.filter(i => typeof i === 'string').slice(0, 20).map(i => i.slice(0, 100));
           }
         }
         user.profile = { ...user.profile, ...safeProfile };

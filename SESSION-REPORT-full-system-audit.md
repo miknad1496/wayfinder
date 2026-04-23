@@ -1,77 +1,87 @@
 # Full System Audit — Session Report
-**Date:** 2026-04-18
-**Focus Area:** Essay Review Pipeline — Claude integration, JSON parsing, credit system, error recovery, timeout handling, input validation, dead code
+**Date:** 2026-04-23
+**Focus Area:** Chat Pipeline — routing logic, SLM/Haiku/Engine tiers, scope classifier, memory capture, rate limiting, timeout handling
 
 ## Run Summary
-Deep audit of the entire essay review pipeline: `backend/routes/essays.js`, `backend/services/essay-reviewer.js`, `backend/routes/essay-coach.js`, and the credit system in `backend/services/auth.js`. Reviewed frontend rendering in `app.js` (lines 3221-3640). Found and fixed 3 issues, documented 4 informational findings.
+Deep audit of the entire chat pipeline: `backend/routes/chat.js` (866 lines), `backend/services/claude.js` (765 lines), `backend/services/slm.js` (824 lines), `backend/services/scope_classifier.js` (434 lines), `backend/services/conversation-memory.js` (331 lines), `backend/services/input_filter.js`, `backend/services/output_filter.js`, and `backend/services/storage.js`. Found and fixed 3 issues, documented 5 informational findings.
 
 ## Key Findings
 
-### EP-1: LOW — essayType POST validation missing length limit
-**File:** `backend/routes/essays.js` — line 168
+### CP-1: MODERATE — Generation timeout timer never cleared on success
+**File:** `backend/routes/chat.js` — lines 594-599
 **Status:** FIXED
 
-The `essayType` field on POST `/api/essays/review` was validated as a string but had no max length. Since `essayType` is passed as a search term into `extractRelevantSections()` for knowledge extraction, an arbitrarily long string could cause unnecessary processing. The `/drafts/:essayType` route already enforced a 64-char limit, but the POST route did not.
+The `Promise.race()` pattern used for generation timeout creates a `setTimeout` that is never cleared when generation succeeds. On every successful chat request, a dangling 120-second timer remains on the Node.js event loop. When it fires, it rejects a promise with no `.catch()` handler, risking an unhandled rejection event. Under sustained traffic (e.g., 100 requests/minute), hundreds of orphaned timers accumulate on the event loop.
 
-**Fix:** Added `essayType.length > 64` check to the POST validation, matching the drafts route limit.
+**Fix:** Captured the timer handle and wrapped the `Promise.race()` in a `try/finally` that calls `clearTimeout(timeoutHandle)`. The timer is now always cleaned up regardless of outcome.
 
-### EP-2: LOW — History endpoint essayType query param unvalidated
-**File:** `backend/routes/essays.js` — line 269
+### CP-2: MODERATE — Anonymous rate limit IP map grows unboundedly
+**File:** `backend/routes/chat.js` — lines 118-138
 **Status:** FIXED
 
-The `GET /api/essays/history` endpoint accepted `req.query.essayType` without any length validation. While this is only used as a string equality filter (not as a search term), it's good practice to cap it for consistency with other endpoints.
+The `anonLimits.ips` object accumulates one entry per unique IP address per day with no upper bound. An IP-rotating attack could inject millions of entries into this object, consuming hundreds of MB of memory and causing increasingly slow disk flushes (the entire object is serialized to JSON on every anonymous request). The object is flushed to disk via `flushAnonLimits()` on every write, so a large object also increases I/O latency.
 
-**Fix:** Added type and length validation (string, max 64 chars). Invalid values silently ignored (filter becomes undefined, returning all results).
+**Fix:** Added a `MAX_TRACKED_IPS = 50000` cap. When the cap is reached, new (unseen) IPs are rejected with the daily limit exhausted response. Existing tracked IPs continue to work normally. This bounds memory at ~5MB worst case while accommodating normal traffic patterns (Wayfinder is unlikely to see 50K unique anonymous IPs in a day).
 
-### EP-3: INFO — Dead code: BASE_SYSTEM_PROMPT in essay-reviewer.js
-**File:** `backend/services/essay-reviewer.js` — lines 411-476
-**Status:** FIXED (removed)
-
-A large `BASE_SYSTEM_PROMPT` constant (~65 lines, ~2500 chars) was defined but never referenced anywhere in the codebase. The active system prompt is built by `buildEnhancedSystemPrompt()` (line 316) which includes all the same guidance plus knowledge injection. This dead code was likely the original prompt before knowledge injection was implemented.
-
-**Fix:** Removed the dead constant and added a comment noting it was removed and why.
-
-### EP-4: INFO — Duplicate JSDoc comment on refundEssayCredit
-**File:** `backend/services/auth.js` — lines 1364-1369
+### CP-3: MODERATE — Profile array fields silently dropped on update
+**File:** `backend/services/auth.js` — lines 767-776
 **Status:** FIXED
 
-Two consecutive JSDoc blocks preceded `refundEssayCredit()`. Merged into a single comment.
+The profile update handler only accepts `string | number | boolean` values for profile sub-fields. Array fields like `favoriteClasses` and `careerInterests` — which the frontend sends as arrays (app.js lines 886-887) — are silently dropped on every profile save. These fields can only be set on initial user creation (auth.js lines 449-450) but never updated through the PUT `/api/auth/profile` endpoint. Users editing their favorite classes or career interests see no error but their changes are lost.
 
-### EP-5: INFO — History/drafts endpoints have unbounded file read concurrency
-**File:** `backend/routes/essays.js` — lines 278, 329
+**Fix:** Added an `Array.isArray()` branch gated to known array fields (`favoriteClasses`, `careerInterests`) via a `PROFILE_ARRAY_FIELDS` allowlist. Array elements are sanitized: filtered to strings only, capped at 20 elements, each element capped at 100 chars. This matches the sanitization pattern used for `interests` on line 766.
+
+### CP-4: INFO — Profile fields injected unsanitized into Haiku intake prompt
+**File:** `backend/services/claude.js` — line 440
 **Status:** NOT FIXED — informational
 
-Both `/history` and `/drafts/:essayType` use `Promise.all(files.map(async file => ...))` to read ALL review JSON files in parallel. If the reviews directory grows to thousands of files, this creates a burst of concurrent file descriptors. Currently safe (0 review files exist on disk), but will become a performance concern at scale.
+In `chatHaikuIntake()`, the user's profile is serialized via `JSON.stringify(sessionContext.profile)` and concatenated directly into the system prompt. While individual profile string values are capped at 500 chars at the auth layer (auth.js line 773), the aggregate serialized profile can be several KB and could contain text that looks like prompt injection (e.g., `aboutMe: "ignore all previous instructions..."`).
 
-**Recommendation:** When review volume grows past ~200, consider either: (a) an index file that maps userId to their review IDs, or (b) batched reads with a concurrency limiter (e.g., `p-limit`).
+The risk is mitigated by: (a) profile values are set by authenticated users modifying their own data, (b) the Haiku intake prompt is narrowly scoped with firm character limits, (c) the intake response is lightweight (60-100 words, max_tokens: 300). The attack surface is limited to self-sabotage (a user injecting their own profile to manipulate their own responses).
 
-### EP-6: INFO — max_tokens: 3500 is tight for the full review JSON schema
-**File:** `backend/services/essay-reviewer.js` — line 536
+**Recommendation:** For defense-in-depth, consider using `buildProfileString()` instead of `JSON.stringify()` for the intake prompt, which formats values as labeled lines rather than raw JSON.
+
+### CP-5: INFO — `buildProfileString` doesn't strip control characters
+**File:** `backend/services/claude.js` — lines 204-240
 **Status:** NOT FIXED — informational
 
-The review JSON schema has 14 top-level fields including nested objects (voiceAssessment, structure, emotionalArc, admissionsImpact) and arrays (strengths, improvements, lineNotes). A thorough review with 5+ line notes and 4+ improvements could approach 3000 tokens. The 3500 limit provides a thin margin. If Claude generates detailed feedback, JSON may get truncated, triggering the parse recovery path (partial review with only score/label/summary).
+Profile values like `userName`, `school`, `aboutMe`, and `targetSchools` are interpolated into system prompts without stripping control characters (null bytes, newlines, backspaces). The auth layer caps lengths but doesn't filter control chars for these fields (unlike `conversation-memory.js` line 154 which does `.replace(/[\x00-\x1f\x7f]/g, '')`). Control characters in profile values could disrupt prompt formatting.
 
-The parse recovery at line 564 handles this gracefully (extracts score via regex), so this is not a bug — but it may cause some users to receive degraded reviews. Consider bumping to 4000 if Opus output costs are acceptable.
+**Recommendation:** Add control-character stripping in `buildProfileString()` using the same pattern as conversation-memory.js.
 
-### EP-7: INFO — Essay type not validated against ESSAY_TYPES enum
-**File:** `backend/routes/essays.js` — POST handler
-**Status:** NOT FIXED — informational, by design
+### CP-6: INFO — Scope classifier allows multiple domains but only reports the first
+**File:** `backend/services/scope_classifier.js` — line 185
+**Status:** NOT FIXED — informational
 
-The POST `/api/essays/review` accepts any string as `essayType` (up to 64 chars after EP-1 fix). It is not validated against the `ESSAY_TYPES` keys in `essay-reviewer.js`. Invalid types fall back to `ESSAY_TYPES.other` ("General College Essay") on line 489, so functionality is correct. However, the stored review record preserves the original invalid type string, which could cause confusion in history/drafts filtering.
+When multiple soft out-of-scope domains are hit, `primaryDomain` is set to `[...domainHits][0]` — the first element of the Set. Set iteration order in JavaScript follows insertion order, which is the order patterns are defined in `SCOPE_RULES.out_of_scope_soft`. A query matching both `medical` and `legal` domains would always report `medical` because it's listed first, regardless of which domain is more relevant. This affects the refusal message wording (e.g., "consult a healthcare provider" vs "consult an attorney").
 
-This appears to be by design — allowing frontend flexibility to add new types without backend changes. No fix needed.
+This is cosmetic — the scope label (`out_of_scope` / `adjacent`) is correct regardless of which domain is reported. The refusal message is slightly misleading if the secondary domain was the user's actual intent.
+
+### CP-7: INFO — SLM keep-alive comment says "10min idle cutoff" but code uses 5 minutes
+**File:** `backend/services/slm.js` — lines 665, 648
+**Status:** NOT FIXED — informational (documentation mismatch)
+
+The `startKeepAlive` function's log message says "10min idle cutoff" but `MAX_IDLE` is set to `300000` (5 minutes). The comment on line 648 also correctly says "5 minutes with no real traffic." Only the log message is wrong.
+
+### CP-8: INFO — Conversation memory shared across users without isolation
+**File:** `backend/services/conversation-memory.js` — lines 241-249 (comment on line 246)
+**Status:** NOT FIXED — informational, already documented in code
+
+The existing code comment on line 246 correctly notes that memory chunks are shared across all users with no userId filter. The code strips `userName` at capture time (good), but `sessionContext.userType` and query content remain, meaning User A's question about "my daughter's application to Stanford" could surface as RAG context for User B. The `response` field is capped at 2000 chars (line 146) which limits data exposure.
+
+The existing code comment recommends user-scoping if the product evolves to store personal strategy data. Currently acceptable for general domain knowledge retrieval.
 
 ## Positive Observations
 
-1. **Credit system is race-condition-safe** — `withCreditLock` properly serializes concurrent credit operations per user using promise chaining. The lock cleanup in the `finally` block is correct.
-2. **Refund on failure is comprehensive** — Three separate code paths handle credit refunds: (a) `reviewEssay()` returns `success: false`, (b) review has invalid structure (no overallScore), (c) unexpected exception in the outer try/catch. All three refund paths work correctly.
-3. **Atomic file writes** — Both review storage (essays.js line 229-230) and user data (auth.js atomicWriteJSON) use write-to-temp-then-rename pattern, preventing corruption on crash.
-4. **Input validation is thorough** — Injection checks run BEFORE credit deduction (line 173-178), preventing users from losing credits to blocked submissions. All text inputs have length caps. Review IDs are sanitized with alphanumeric-only regex.
-5. **Timeout protection** — Both essay reviewer (90s) and David coach (30s) use AbortController with proper cleanup in `finally` blocks.
-6. **David coach context sanitization is solid** — The toolContext sanitization (essay-coach.js lines 412-462) uses allowlists for field names, modules, and value types. String values are capped at 120-200 chars. No arbitrary client data reaches the system prompt.
-7. **Parse recovery is well-designed** — The JSON parse fallback (essay-reviewer.js lines 564-589) extracts score/label/summary via regex from malformed JSON, returning a partial but usable review with a `_parseWarning` flag.
+1. **Session concurrency lock is well-implemented** — `activeSessions` Set prevents parallel generation on the same session, cleaned up in all code paths (success, timeout, error, and the outer catch).
+2. **Tier routing is sophisticated and well-documented** — The Welcome Desk → SLM Advisor → Haiku Advisor → Claude Sonnet fallback chain handles every failure mode gracefully with automatic escalation.
+3. **Scope classifier two-stage design is sound** — Rule-based fast path handles 90%+ of queries in <1ms; embedding fallback for ambiguous cases. Conservative defaults (adjacent) prevent false out-of-scope blocks.
+4. **Input injection filter is comprehensive** — Layer 1 (patterns) + Layer 2 (keyword density) covers known attack classes. Hardcoded refusal prevents any injection from reaching the LLM.
+5. **Output leakage filter tuning is good** — MIN_NGRAM_CHARS=50, MIN_WINDOW_SIZE=8, MIN_MATCHES_TO_TRIGGER=3 prevents false positives on education vocabulary while catching real prompt extraction.
+6. **Error messages are consistently sanitized** — API key details, raw Claude error JSON, and internal paths are never leaked to the frontend.
+7. **Conversation memory capture is well-designed** — Substantive exchange threshold (20 char query, 200 char response), scope filtering, PII stripping, fire-and-forget pattern, and JSONL format for easy fine-tuning data extraction.
+8. **Token estimation with context overflow protection** — claude.js estimates token counts and trims history when approaching the 200K limit, preventing API 400 errors from oversized requests.
 
 ## Files Changed
-- `backend/routes/essays.js` — essayType length validation on POST and GET /history
-- `backend/services/essay-reviewer.js` — removed dead BASE_SYSTEM_PROMPT constant
-- `backend/services/auth.js` — merged duplicate JSDoc comment on refundEssayCredit
+- `backend/routes/chat.js` — Fixed timer leak in generation timeout race; added IP cap on anonymous rate limits
+- `backend/services/auth.js` — Fixed profile array field handling for favoriteClasses and careerInterests

@@ -126,9 +126,20 @@ async function checkAnonDailyLimit(ip) {
     anonLimits = { date: today, ips: {} };
   }
 
+  // Cap total tracked IPs to prevent memory exhaustion under DDoS
+  const MAX_TRACKED_IPS = 50000;
+  const ipCount = Object.keys(anonLimits.ips).length;
+
   const used = anonLimits.ips[ip] || 0;
   if (used >= ANON_DAILY_LIMIT) {
     return { allowed: false, used, limit: ANON_DAILY_LIMIT };
+  }
+
+  // If we've hit the IP tracking cap and this is a new IP, reject it
+  // (prevents unbounded memory growth from IP-rotating attacks)
+  if (ipCount >= MAX_TRACKED_IPS && !anonLimits.ips[ip]) {
+    console.warn(`[AnonCap] IP tracking limit reached (${MAX_TRACKED_IPS}), rejecting new IP`);
+    return { allowed: false, used: ANON_DAILY_LIMIT, limit: ANON_DAILY_LIMIT };
   }
 
   anonLimits.ips[ip] = used + 1;
@@ -591,12 +602,17 @@ router.post('/', async (req, res) => {
         }
       })();
 
-      // Race generation against timeout
-      const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Generation timeout')), GENERATION_TIMEOUT)
-      );
+      // Race generation against timeout (clear timer on success to prevent leak)
+      let timeoutHandle;
+      const timeoutPromise = new Promise((_, reject) => {
+        timeoutHandle = setTimeout(() => reject(new Error('Generation timeout')), GENERATION_TIMEOUT);
+      });
 
-      await Promise.race([generationPromise, timeoutPromise]);
+      try {
+        await Promise.race([generationPromise, timeoutPromise]);
+      } finally {
+        clearTimeout(timeoutHandle);
+      }
     } catch (genErr) {
       if (genErr.message === 'Generation timeout') {
         generationTimedOut = true;
