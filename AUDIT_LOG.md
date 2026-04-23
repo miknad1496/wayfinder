@@ -1027,3 +1027,29 @@ All checks passed. No issues found.
 
 ### No Fixes Required
 All checks passed. No issues found.
+
+## 2026-04-23: Clean — Cost & Resource Leaks + Data Integrity + Security & Auth
+
+### Areas Checked
+1. **Cost & Resource Leaks** (priority check)
+   - SLM keep-alive: ✅ Ping does NOT update `lastWarmAt` (line 781 slm.js). MAX_IDLE=5min with clearInterval. No infinite loop.
+   - Anonymous chat cap: ✅ Disk-persisted 5/day per IP (`checkAnonDailyLimit` chat.js:120-137). Atomic write via tmp+rename.
+   - Rate limiter: ✅ 30 req/min authenticated, 5 req/min anonymous (chat.js:299-300).
+   - Claude model costs: ✅ Essay reviewer=opus (premium feature, acceptable). Chat=Haiku intake + Sonnet standard. Financial-aid=Sonnet.
+   - Runaway intervals: ✅ All 4 setInterval calls (user-backup, scraper-scheduler, slm, scheduler) have proper teardown or are intentional server-lifetime loops.
+
+2. **Data Integrity**
+   - internships.json: ✅ Valid JSON, 1599 entries, 974 verified. Metadata totalCount=1599, verifiedCount=974 — match.
+   - scholarships.json: ✅ Valid JSON, 1037 entries, 74 verified. Metadata totalCount=1037, verifiedCount=74 — match.
+   - programs-expanded.json: ✅ Valid JSON, 74 entries across 3 sections (22+16+36), metadata.totalPrograms=74 — match.
+   - Spot-checked verified entries: Elks MVS, DAR Good Citizens, Horatio Alger TX, Amazon Future Engineer, Fountainhead Essay Contest — all have legitimate _source URLs.
+   - Minor note: 1 internship ("Student Leaders Program – SF Bay Area") has generic _source (bankofamerica.com) instead of specific program page. Non-critical.
+
+3. **Security & Auth**
+   - CORS: ✅ Origin allowlist with explicit rejection for unlisted origins (server.js:133-143). No wildcard.
+   - Stripe webhook: ✅ Signature verification via constructEvent in production, rejects if STRIPE_WEBHOOK_SECRET missing (stripe.js:260-276).
+   - Premium routes: ✅ essays.js (5 endpoints), financial-aid.js (7 endpoints) all call verifyToken before processing.
+   - Frontend syntax: ✅ `node -c frontend/src/app.js` passed.
+
+### No Fixes Required
+All checks passed. No cost leaks, no auth gaps, data integrity verified.
