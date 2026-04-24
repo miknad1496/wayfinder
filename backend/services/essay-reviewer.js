@@ -504,7 +504,7 @@ export async function reviewEssay(essayText, essayType = 'other', targetSchool =
           const labelMatch = text.match(/"scoreLabel"\s*:\s*"([^"]+)"/);
           const summaryMatch = text.match(/"summary"\s*:\s*"([^"]+)"/);
           if (scoreMatch) {
-            const recoveredScore = parseInt(scoreMatch[1]);
+            const recoveredScore = Math.max(1, Math.min(10, parseInt(scoreMatch[1])));
             const latencyMs = Date.now() - startTime;
             recordEssayReview({ success: true, essayType, targetSchool, score: recoveredScore, tokensUsed, latencyMs, parseRecovered: true, wordCount: essayText.split(/\s+/).length });
             return {

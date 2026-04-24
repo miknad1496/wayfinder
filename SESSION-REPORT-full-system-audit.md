@@ -1,87 +1,85 @@
 # Full System Audit — Session Report
-**Date:** 2026-04-23
-**Focus Area:** Chat Pipeline — routing logic, SLM/Haiku/Engine tiers, scope classifier, memory capture, rate limiting, timeout handling
+**Date:** 2026-04-24
+**Focus Area:** Essay Review Pipeline — Claude integration, credit system, JSON parsing, error recovery, injection filtering, coach chat security
 
 ## Run Summary
-Deep audit of the entire chat pipeline: `backend/routes/chat.js` (866 lines), `backend/services/claude.js` (765 lines), `backend/services/slm.js` (824 lines), `backend/services/scope_classifier.js` (434 lines), `backend/services/conversation-memory.js` (331 lines), `backend/services/input_filter.js`, `backend/services/output_filter.js`, and `backend/services/storage.js`. Found and fixed 3 issues, documented 5 informational findings.
+Deep audit of the essay review pipeline: `backend/routes/essays.js` (395 lines), `backend/services/essay-reviewer.js` (545 lines), `backend/routes/essay-coach.js` (611 lines), credit operations in `backend/services/auth.js`, Stripe essay purchase flow in `backend/routes/stripe.js`, and frontend rendering in `frontend/src/app.js`. Found and fixed 3 issues, documented 5 informational findings.
 
 ## Key Findings
 
-### CP-1: MODERATE — Generation timeout timer never cleared on success
-**File:** `backend/routes/chat.js` — lines 594-599
+### ER-01: MODERATE — Essay review score not bounds-checked
+**File:** `backend/routes/essays.js` — line 205, `backend/services/essay-reviewer.js` — line 503
 **Status:** FIXED
 
-The `Promise.race()` pattern used for generation timeout creates a `setTimeout` that is never cleared when generation succeeds. On every successful chat request, a dangling 120-second timer remains on the Node.js event loop. When it fires, it rejects a promise with no `.catch()` handler, risking an unhandled rejection event. Under sustained traffic (e.g., 100 requests/minute), hundreds of orphaned timers accumulate on the event loop.
+The route validates that `overallScore` is a number but does not check the range. If Claude returns a score of 0, -1, 15, NaN, or Infinity, it passes validation and gets stored and rendered. In the frontend, `scorePercent = (overallScore / 10) * 100` would produce negative percentages or values over 100%, causing the score gauge to render incorrectly. The partial-parse recovery path (`parseInt(scoreMatch[1])`) also had no bounds clamping.
 
-**Fix:** Captured the timer handle and wrapped the `Promise.race()` in a `try/finally` that calls `clearTimeout(timeoutHandle)`. The timer is now always cleaned up regardless of outcome.
+**Fix (essays.js):** Added bounds validation: `!Number.isFinite(overallScore) || overallScore < 1 || overallScore > 10` triggers the invalid-structure refund path.
 
-### CP-2: MODERATE — Anonymous rate limit IP map grows unboundedly
-**File:** `backend/routes/chat.js` — lines 118-138
+**Fix (essay-reviewer.js):** Clamped recovered score: `Math.max(1, Math.min(10, parseInt(scoreMatch[1])))`.
+
+### ER-02: MODERATE — addEssayCredits race condition with credit lock
+**File:** `backend/services/auth.js` — line 1309
 **Status:** FIXED
 
-The `anonLimits.ips` object accumulates one entry per unique IP address per day with no upper bound. An IP-rotating attack could inject millions of entries into this object, consuming hundreds of MB of memory and causing increasingly slow disk flushes (the entire object is serialized to JSON on every anonymous request). The object is flushed to disk via `flushAnonLimits()` on every write, so a large object also increases I/O latency.
+`addEssayCredits()` (called from the Stripe webhook when a user purchases an essay credit pack) performed a read-modify-write on the user's `essayReviewsRemaining` field WITHOUT using `withCreditLock`. Meanwhile, `useEssayCredit()` and `refundEssayCredit()` both use `withCreditLock` for their read-modify-write cycles. If a Stripe webhook fires at the same moment a user submits a review, both operations could read the same credit balance. The loser's write would overwrite the winner's, either losing the deduction (giving a free review) or losing the purchased credits.
 
-**Fix:** Added a `MAX_TRACKED_IPS = 50000` cap. When the cap is reached, new (unseen) IPs are rejected with the daily limit exhausted response. Existing tracked IPs continue to work normally. This bounds memory at ~5MB worst case while accommodating normal traffic patterns (Wayfinder is unlikely to see 50K unique anonymous IPs in a day).
+**Fix:** Wrapped the credit addition in `withCreditLock(lockKey, ...)` and re-reads the file inside the lock to get the freshest value, matching the pattern used by `useEssayCredit` and `refundEssayCredit`.
 
-### CP-3: MODERATE — Profile array fields silently dropped on update
-**File:** `backend/services/auth.js` — lines 767-776
+### ER-03: MODERATE — David coach history messages bypass injection filter
+**File:** `backend/routes/essay-coach.js` — line 561
 **Status:** FIXED
 
-The profile update handler only accepts `string | number | boolean` values for profile sub-fields. Array fields like `favoriteClasses` and `careerInterests` — which the frontend sends as arrays (app.js lines 886-887) — are silently dropped on every profile save. These fields can only be set on initial user creation (auth.js lines 449-450) but never updated through the PUT `/api/auth/profile` endpoint. Users editing their favorite classes or career interests see no error but their changes are lost.
+The David coach chat endpoint checks the current `message` for prompt injection (line 405) but does not check `history` messages. The `history` array is client-supplied and sent directly to the Claude API. An attacker could craft a request with injection payloads in fabricated history entries to manipulate David's behavior while the current message appears benign.
 
-**Fix:** Added an `Array.isArray()` branch gated to known array fields (`favoriteClasses`, `careerInterests`) via a `PROFILE_ARRAY_FIELDS` allowlist. Array elements are sanitized: filtered to strings only, capped at 20 elements, each element capped at 100 chars. This matches the sanitization pattern used for `interests` on line 766.
+**Fix:** Added `checkInjection()` screening for user-role history messages. Injected entries are silently skipped (not rejected — to avoid breaking the entire request over one stale history entry). Assistant-role messages are not checked since they represent our own previous output.
 
-### CP-4: INFO — Profile fields injected unsanitized into Haiku intake prompt
-**File:** `backend/services/claude.js` — line 440
+### ER-04: INFO — History/drafts endpoints scan all review files on every request
+**File:** `backend/routes/essays.js` — lines 276-286, 328-337
 **Status:** NOT FIXED — informational
 
-In `chatHaikuIntake()`, the user's profile is serialized via `JSON.stringify(sessionContext.profile)` and concatenated directly into the system prompt. While individual profile string values are capped at 500 chars at the auth layer (auth.js line 773), the aggregate serialized profile can be several KB and could contain text that looks like prompt injection (e.g., `aboutMe: "ignore all previous instructions..."`).
+Both `/api/essays/history` and `/api/essays/drafts/:essayType` read the entire reviews directory and parse every JSON file with `Promise.all`, then filter by userId. This is O(all_users_reviews) per request. Currently acceptable (0 reviews on disk), but will degrade as reviews accumulate. At 10K reviews with average 2KB each, each history request would read ~20MB from disk.
 
-The risk is mitigated by: (a) profile values are set by authenticated users modifying their own data, (b) the Haiku intake prompt is narrowly scoped with firm character limits, (c) the intake response is lightweight (60-100 words, max_tokens: 300). The attack surface is limited to self-sabotage (a user injecting their own profile to manipulate their own responses).
+**Recommendation:** When review volume grows, either: (a) add a per-user index file mapping userId → reviewIds, or (b) use per-user subdirectories (`essay-reviews/{userId}/`), or (c) add a lightweight SQLite database.
 
-**Recommendation:** For defense-in-depth, consider using `buildProfileString()` instead of `JSON.stringify()` for the intake prompt, which formats values as labeled lines rather than raw JSON.
+### ER-05: INFO — Essay text not stored in review records
+**File:** `backend/routes/essays.js` — lines 221-226
+**Status:** NOT FIXED — informational (known gap per CLAUDE.md)
 
-### CP-5: INFO — `buildProfileString` doesn't strip control characters
-**File:** `backend/services/claude.js` — lines 204-240
+Review records store `wordCount` but not the actual essay text. Users cannot compare what they submitted across drafts. This is documented in CLAUDE.md as a known gap ("No multi-draft tracking").
+
+### ER-06: INFO — Recovered partial reviews default voiceAssessment to authentic
+**File:** `backend/services/essay-reviewer.js` — lines 519-520
 **Status:** NOT FIXED — informational
 
-Profile values like `userName`, `school`, `aboutMe`, and `targetSchools` are interpolated into system prompts without stripping control characters (null bytes, newlines, backspaces). The auth layer caps lengths but doesn't filter control chars for these fields (unlike `conversation-memory.js` line 154 which does `.replace(/[\x00-\x1f\x7f]/g, '')`). Control characters in profile values could disrupt prompt formatting.
+When JSON parsing fails and the score is recovered via regex, the fallback `voiceAssessment` defaults to `{ authentic: true, sounds_like_teenager: true }`. This is misleading — these fields should be null or marked as unknown since the LLM's actual assessment was lost. However, since partial recovery is rare and the `_parseWarning` field flags the issue, this is low-priority.
 
-**Recommendation:** Add control-character stripping in `buildProfileString()` using the same pattern as conversation-memory.js.
-
-### CP-6: INFO — Scope classifier allows multiple domains but only reports the first
-**File:** `backend/services/scope_classifier.js` — line 185
+### ER-07: INFO — Knowledge injection token counting is approximate
+**File:** `backend/services/essay-reviewer.js` — lines 143, 173-175
 **Status:** NOT FIXED — informational
 
-When multiple soft out-of-scope domains are hit, `primaryDomain` is set to `[...domainHits][0]` — the first element of the Set. Set iteration order in JavaScript follows insertion order, which is the order patterns are defined in `SCOPE_RULES.out_of_scope_soft`. A query matching both `medical` and `legal` domains would always report `medical` because it's listed first, regardless of which domain is more relevant. This affects the refusal message wording (e.g., "consult a healthcare provider" vs "consult an attorney").
+Token estimation uses `chars / 4` which is a rough approximation. For the knowledge injection cap of 6000 tokens, actual token counts could vary by ±30%. The system prompt could end up at ~7800 actual tokens in the worst case. Since the essay reviewer uses `max_tokens: 3500` for the response and Opus has a 200K context window, this overshoot is inconsequential.
 
-This is cosmetic — the scope label (`out_of_scope` / `adjacent`) is correct regardless of which domain is reported. The refusal message is slightly misleading if the secondary domain was the user's actual intent.
+### ER-08: INFO — Stripe essay pack description says $20 for bulk but code says $18
+**File:** `backend/routes/stripe.js` — line 194
+**Status:** NOT FIXED — informational
 
-### CP-7: INFO — SLM keep-alive comment says "10min idle cutoff" but code uses 5 minutes
-**File:** `backend/services/slm.js` — lines 665, 648
-**Status:** NOT FIXED — informational (documentation mismatch)
-
-The `startKeepAlive` function's log message says "10min idle cutoff" but `MAX_IDLE` is set to `300000` (5 minutes). The comment on line 648 also correctly says "5 minutes with no real traffic." Only the log message is wrong.
-
-### CP-8: INFO — Conversation memory shared across users without isolation
-**File:** `backend/services/conversation-memory.js` — lines 241-249 (comment on line 246)
-**Status:** NOT FIXED — informational, already documented in code
-
-The existing code comment on line 246 correctly notes that memory chunks are shared across all users with no userId filter. The code strips `userName` at capture time (good), but `sessionContext.userType` and query content remain, meaning User A's question about "my daughter's application to Stanford" could surface as RAG context for User B. The `response` field is capped at 2000 chars (line 146) which limits data exposure.
-
-The existing code comment recommends user-scoping if the product evolves to store personal strategy data. Currently acceptable for general domain knowledge retrieval.
+The error message for invalid pack selection says "bulk (20/$20)" but the credits endpoint (essays.js line 128) advertises the bulk pack as "$18". The Stripe price ID controls the actual charge, so whatever's configured in Stripe is the real price. The error message text is just misleading.
 
 ## Positive Observations
 
-1. **Session concurrency lock is well-implemented** — `activeSessions` Set prevents parallel generation on the same session, cleaned up in all code paths (success, timeout, error, and the outer catch).
-2. **Tier routing is sophisticated and well-documented** — The Welcome Desk → SLM Advisor → Haiku Advisor → Claude Sonnet fallback chain handles every failure mode gracefully with automatic escalation.
-3. **Scope classifier two-stage design is sound** — Rule-based fast path handles 90%+ of queries in <1ms; embedding fallback for ambiguous cases. Conservative defaults (adjacent) prevent false out-of-scope blocks.
-4. **Input injection filter is comprehensive** — Layer 1 (patterns) + Layer 2 (keyword density) covers known attack classes. Hardcoded refusal prevents any injection from reaching the LLM.
-5. **Output leakage filter tuning is good** — MIN_NGRAM_CHARS=50, MIN_WINDOW_SIZE=8, MIN_MATCHES_TO_TRIGGER=3 prevents false positives on education vocabulary while catching real prompt extraction.
-6. **Error messages are consistently sanitized** — API key details, raw Claude error JSON, and internal paths are never leaked to the frontend.
-7. **Conversation memory capture is well-designed** — Substantive exchange threshold (20 char query, 200 char response), scope filtering, PII stripping, fire-and-forget pattern, and JSONL format for easy fine-tuning data extraction.
-8. **Token estimation with context overflow protection** — claude.js estimates token counts and trims history when approaching the 200K limit, preventing API 400 errors from oversized requests.
+1. **Credit locking is well-designed** — `withCreditLock` serializes per-user credit operations via a promise chain, preventing the classic double-deduction race condition on concurrent review submissions.
+2. **Atomic writes throughout** — All file writes (reviews, user data) use the tmp+rename pattern to prevent corruption from crashes.
+3. **Credit refund on every failure path** — The review endpoint refunds credits on: review failure, invalid JSON structure, and unexpected exceptions. The outer catch block even attempts a refund if the inner logic throws.
+4. **Injection checks before credit deduction** — Smart ordering: injection check runs BEFORE `useEssayCredit`, so malicious input never costs the user a credit.
+5. **Input validation is thorough** — Essay text (50 char min, 15K max), targetSchool (200 char cap), prompt (2K cap), essayType (64 char cap) all validated before processing.
+6. **Review ID sanitization** — `sanitizeReviewId` prevents path traversal with strict alphanumeric+hyphen+underscore regex and 128 char cap.
+7. **AbortController timeout** — The Claude API call has a 90-second timeout with proper cleanup (`clearTimeout` in `finally`), preventing indefinite hangs.
+8. **JSON parse recovery** — Graceful degradation: if the LLM returns malformed JSON, the system attempts regex extraction of at least the score and summary, providing a partial but usable result rather than a hard failure.
+9. **David coach context sanitization** — Extensive allowlisting of `toolContext` fields with length caps prevents client-side prompt injection via the session context object.
+10. **Prompt database is server-side** — Common App, UC PIQ, Coalition, and supplement prompts are served from the backend, ensuring students get accurate, curated prompts.
 
 ## Files Changed
-- `backend/routes/chat.js` — Fixed timer leak in generation timeout race; added IP cap on anonymous rate limits
-- `backend/services/auth.js` — Fixed profile array field handling for favoriteClasses and careerInterests
+- `backend/routes/essays.js` — Added score bounds validation (1-10 range, finite number check)
+- `backend/services/essay-reviewer.js` — Clamped recovered score to 1-10 range on partial parse
+- `backend/services/auth.js` — Wrapped addEssayCredits in withCreditLock to prevent race condition with concurrent credit operations
+- `backend/routes/essay-coach.js` — Added injection screening for client-supplied history messages

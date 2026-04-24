@@ -559,12 +559,19 @@ router.post('/chat', async (req, res) => {
     }
 
     // Build messages array from history (last 10 messages for context efficiency)
+    // SS-02: Screen history messages for injection — an attacker could embed
+    // payloads in fabricated history entries that bypass the current-message check.
     const messages = [];
     if (history && Array.isArray(history)) {
       const recentHistory = history.slice(-10);
       for (const msg of recentHistory) {
         if ((msg.role === 'user' || msg.role === 'assistant') &&
             typeof msg.content === 'string' && msg.content.length <= 3000) {
+          // Only check user-role history messages (assistant messages are our own output)
+          if (msg.role === 'user') {
+            const histCheck = checkInjection(msg.content);
+            if (histCheck.blocked) continue; // Skip injected history entries silently
+          }
           messages.push({ role: msg.role, content: msg.content });
         }
       }

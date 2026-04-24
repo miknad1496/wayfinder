@@ -202,7 +202,10 @@ router.post('/review', async (req, res) => {
     }
 
     // Check if review has a valid overall score (ensure the review is usable)
-    if (!result.review || typeof result.review.overallScore !== 'number') {
+    // ER-01: Validate score is a finite integer in the 1-10 range
+    if (!result.review || typeof result.review.overallScore !== 'number' ||
+        !Number.isFinite(result.review.overallScore) ||
+        result.review.overallScore < 1 || result.review.overallScore > 10) {
       // Invalid review structure - refund the credit
       const refund = await refundEssayCredit(token);
       console.warn(`Essay review produced invalid structure for user ${user.id}. Credit refunded.`);

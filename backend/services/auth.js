@@ -1317,16 +1317,24 @@ export async function addEssayCredits(stripeCustomerId, pack, quantity, stripePa
     if (!filename) return { error: 'User file not found' };
     const filePath = join(USERS_DIR, filename);
 
-    user.essayReviewsRemaining = (user.essayReviewsRemaining || 0) + quantity;
-    if (!user.essayReviewsPurchased) user.essayReviewsPurchased = [];
-    user.essayReviewsPurchased.push({
-      pack,
-      quantity,
-      purchasedAt: new Date().toISOString(),
-      stripePaymentId
+    // ER-02: Use per-user credit lock to prevent race condition with concurrent
+    // useEssayCredit/refundEssayCredit calls. Without the lock, a Stripe webhook
+    // adding credits while a review deducts could lose one write.
+    const lockKey = user.id || user.email;
+    return await withCreditLock(lockKey, async () => {
+      // Re-read inside lock for freshest data
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      freshData.essayReviewsRemaining = (freshData.essayReviewsRemaining || 0) + quantity;
+      if (!freshData.essayReviewsPurchased) freshData.essayReviewsPurchased = [];
+      freshData.essayReviewsPurchased.push({
+        pack,
+        quantity,
+        purchasedAt: new Date().toISOString(),
+        stripePaymentId
+      });
+      await atomicWriteJSON(filePath, freshData);
+      return { success: true, remaining: freshData.essayReviewsRemaining };
     });
-    await atomicWriteJSON(filePath, user);
-    return { success: true, remaining: user.essayReviewsRemaining };
   } catch (err) {
     return { error: 'Failed to add essay credits' };
   }
