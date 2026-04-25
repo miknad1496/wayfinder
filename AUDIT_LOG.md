@@ -1081,3 +1081,30 @@ All checks passed. No cost leaks, no auth gaps, data integrity verified.
 
 ### No Fixes Required
 All checks passed. No cost leaks, no auth gaps, data integrity verified.
+
+---
+
+## 2026-04-25 Nightly Audit
+
+**Focus Areas**: Cost & Resource Leaks, Data Integrity
+
+### 1. Cost & Resource Leaks (mandatory)
+- **SLM keep-alive**: ✅ Line 781-782 confirms pings do NOT update `lastWarmAt`. Idle timeout at line 752 properly stops keep-alive via `clearInterval`. No infinite loop risk.
+- **Anonymous chat cap**: ✅ Disk-persisted 5/day per IP. DDoS protection via MAX_TRACKED_IPS=50000. Atomic writes with tmp+rename.
+- **Rate limiter**: ✅ Auth=30/min, Anon=5/min. Correctly applied via `effectiveMax` at line 311.
+- **Claude models**: Essay reviewer=opus (credit-gated premium feature), chat=sonnet, concierge=haiku. Acceptable cost distribution.
+- **setInterval audit**: ✅ All 4 intervals (user-backup, scheduler, scraper-scheduler, slm keep-alive) have proper cleanup or are server-lifetime. Frontend advisorPollTimer also properly cleared on completion/error.
+
+### 2. Data Integrity
+- **internships.json**: ✅ Valid JSON, 1606 entries, 981 verified, metadata count matches array length.
+- **scholarships.json**: ✅ Valid JSON, 1043 entries, 80 verified, metadata count matches array length.
+- **programs.json** (canonical): ✅ Valid JSON, 826 entries, 82 verified, metadata count matches. Note: CLAUDE.md references `programs-expanded.json` but the route uses `programs.json`.
+- **programs-expanded.json**: ✅ Valid JSON, 74 entries across 3 arrays (middleSchool=22, highSchoolInternships=16, highSchoolPrograms=36). Appears to be a secondary/supplemental file.
+- **Spot-check verified sources**: Scholarship sources have proper `https://` URLs. 470 internship `_source` fields use bare domains (e.g., `scripps.edu`) without `https://` — cosmetic only, not used in frontend rendering (cards use `item.url`).
+- **All JS syntax checks passed**: app.js, all backend routes, all backend services, server.js.
+
+### Notes
+- CLAUDE.md lists `programs-expanded.json` as the canonical programs data file, but `backend/routes/programs.js` loads `programs.json` (826 entries vs 74). Doc is stale on this point.
+
+### No Fixes Required
+All checks passed. No cost leaks, no data corruption, no syntax errors.
