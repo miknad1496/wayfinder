@@ -1108,3 +1108,27 @@ All checks passed. No cost leaks, no auth gaps, data integrity verified.
 
 ### No Fixes Required
 All checks passed. No cost leaks, no data corruption, no syntax errors.
+
+## 2026-04-25: 4 Fixes — API Surface Audit
+
+### Areas Checked
+Full audit of all 15 route files (5,773 lines) plus server.js route mounting. Focused on input validation, auth consistency, rate limiting, error response codes.
+
+### Fixes Applied
+1. **feedback.js** — `messageIndex` was not validated; could be any type/size stored to JSONL. Added integer bounds check (0–100,000), coerce invalid to null.
+2. **auth.js (consent)** — `POST /consent` returned 400 for missing token. Added early `if (!token) return 401` guard.
+3. **auth.js (delete)** — `DELETE /account` returned 400 for missing token. Added early `if (!token) return 401` guard.
+4. **auth.js (settings)** — `PUT /settings` returned 400 for missing token. Added early `if (!token) return 401` guard.
+
+### Informational Findings
+- Admin secret comparisons use `!==` (not timing-safe) — low risk due to authLimiter (10/15min).
+- Feedback POST is unauthenticated — by design, protected by apiLimiter.
+- Stats endpoints are unauthenticated — by design, only aggregate data.
+- Rate limiter stacking on auth routes — server-level (10/15min) is binding, route-level limiters are redundant but harmless.
+- programs.json (826 entries) is the canonical file; programs-expanded.json (74 entries) is supplementary.
+
+### Data Integrity
+- internships.json: ✅ 1606 entries, 981 verified, metadata matches.
+- scholarships.json: ✅ 1043 entries, 80 verified, metadata matches.
+- programs.json: ✅ 826 entries, metadata matches.
+- Frontend syntax: ✅ `node -c frontend/src/app.js` passed.

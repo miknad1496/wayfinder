@@ -24,10 +24,16 @@ router.post('/', async (req, res) => {
     if (comment && (typeof comment !== 'string' || comment.length > 2000)) {
       return res.status(400).json({ error: 'Comment must be under 2000 characters' });
     }
+    // Validate messageIndex — must be a non-negative integer if provided
+    if (messageIndex !== undefined && messageIndex !== null) {
+      if (typeof messageIndex !== 'number' || !Number.isInteger(messageIndex) || messageIndex < 0 || messageIndex > 100000) {
+        return res.status(400).json({ error: 'Invalid messageIndex' });
+      }
+    }
 
     await saveFeedback({
       sessionId,
-      messageIndex,
+      messageIndex: (typeof messageIndex === 'number' && Number.isInteger(messageIndex)) ? messageIndex : null,
       rating,
       comment: comment ? comment.substring(0, 2000) : null,
       userMessage: userMessage ? String(userMessage).substring(0, 500) : null,

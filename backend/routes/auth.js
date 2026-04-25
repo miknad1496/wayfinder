@@ -183,6 +183,7 @@ router.put('/profile', async (req, res) => {
 // POST /api/auth/consent - Record data usage consent
 router.post('/consent', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const result = await updateProfile(token, { consentGiven: true });
 
   if (result.error) {
@@ -216,6 +217,7 @@ router.get('/token-usage', async (req, res) => {
 // DELETE /api/auth/account - Delete user account
 router.delete('/account', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const result = await deleteUser(token);
 
   if (result.error) {
@@ -228,6 +230,7 @@ router.delete('/account', async (req, res) => {
 // PUT /api/auth/settings - Update user settings
 router.put('/settings', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const result = await updateSettings(token, req.body.settings || {});
 
   if (result.error) {

@@ -1,85 +1,99 @@
 # Full System Audit — Session Report
-**Date:** 2026-04-24
-**Focus Area:** Essay Review Pipeline — Claude integration, credit system, JSON parsing, error recovery, injection filtering, coach chat security
+**Date:** 2026-04-25
+**Focus Area:** API Surface — All route handlers, error responses, input validation, rate limiting consistency
 
 ## Run Summary
-Deep audit of the essay review pipeline: `backend/routes/essays.js` (395 lines), `backend/services/essay-reviewer.js` (545 lines), `backend/routes/essay-coach.js` (611 lines), credit operations in `backend/services/auth.js`, Stripe essay purchase flow in `backend/routes/stripe.js`, and frontend rendering in `frontend/src/app.js`. Found and fixed 3 issues, documented 5 informational findings.
+Deep audit of all 15 route files (5,773 lines total) and server.js route mounting. Reviewed: auth.js (372 lines), feedback.js (78 lines), invites.js (186 lines), demographics.js (278 lines), timeline.js (301 lines), intelligence.js (210 lines), internships.js (208 lines), scholarships.js (201 lines), programs.js (221 lines), financial-aid.js (786 lines), essay-coach.js (618 lines), essays.js (398 lines), chat.js (882 lines), admin.js (576 lines), stripe.js (458 lines). Found and fixed 4 issues, documented 6 informational findings.
 
 ## Key Findings
 
-### ER-01: MODERATE — Essay review score not bounds-checked
-**File:** `backend/routes/essays.js` — line 205, `backend/services/essay-reviewer.js` — line 503
+### API-01: LOW — Feedback messageIndex not validated
+**File:** `backend/routes/feedback.js` — line 30
 **Status:** FIXED
 
-The route validates that `overallScore` is a number but does not check the range. If Claude returns a score of 0, -1, 15, NaN, or Infinity, it passes validation and gets stored and rendered. In the frontend, `scorePercent = (overallScore / 10) * 100` would produce negative percentages or values over 100%, causing the score gauge to render incorrectly. The partial-parse recovery path (`parseInt(scoreMatch[1])`) also had no bounds clamping.
+The `messageIndex` field from `req.body` was destructured and stored directly into the feedback JSONL file without any type or bounds validation. An attacker could submit an object, array, huge string, or negative number as `messageIndex`, which would be serialized to disk via `JSON.stringify`. While `saveFeedback` uses `appendFile` (not a write-replace), a large payload in `messageIndex` could bloat the JSONL file over time.
 
-**Fix (essays.js):** Added bounds validation: `!Number.isFinite(overallScore) || overallScore < 1 || overallScore > 10` triggers the invalid-structure refund path.
+**Fix:** Added validation: `messageIndex` must be a non-negative integer ≤ 100,000 if provided. Non-conforming values are coerced to `null` before storage.
 
-**Fix (essay-reviewer.js):** Clamped recovered score: `Math.max(1, Math.min(10, parseInt(scoreMatch[1])))`.
-
-### ER-02: MODERATE — addEssayCredits race condition with credit lock
-**File:** `backend/services/auth.js` — line 1309
+### API-02: LOW — Auth consent endpoint returns 400 for missing auth instead of 401
+**File:** `backend/routes/auth.js` — line 185
 **Status:** FIXED
 
-`addEssayCredits()` (called from the Stripe webhook when a user purchases an essay credit pack) performed a read-modify-write on the user's `essayReviewsRemaining` field WITHOUT using `withCreditLock`. Meanwhile, `useEssayCredit()` and `refundEssayCredit()` both use `withCreditLock` for their read-modify-write cycles. If a Stripe webhook fires at the same moment a user submits a review, both operations could read the same credit balance. The loser's write would overwrite the winner's, either losing the deduction (giving a free review) or losing the purchased credits.
+`POST /api/auth/consent` passed a null token to `updateProfile()`, which returned `{error: 'Not authenticated'}`. The route then sent this with `res.status(400)` instead of `401`. Clients checking HTTP status codes for auth failures would not detect this correctly.
 
-**Fix:** Wrapped the credit addition in `withCreditLock(lockKey, ...)` and re-reads the file inside the lock to get the freshest value, matching the pattern used by `useEssayCredit` and `refundEssayCredit`.
+**Fix:** Added early `if (!token) return res.status(401)` guard before calling `updateProfile`.
 
-### ER-03: MODERATE — David coach history messages bypass injection filter
-**File:** `backend/routes/essay-coach.js` — line 561
+### API-03: LOW — Auth delete endpoint returns 400 for missing auth instead of 401
+**File:** `backend/routes/auth.js` — line 218
 **Status:** FIXED
 
-The David coach chat endpoint checks the current `message` for prompt injection (line 405) but does not check `history` messages. The `history` array is client-supplied and sent directly to the Claude API. An attacker could craft a request with injection payloads in fabricated history entries to manipulate David's behavior while the current message appears benign.
+Same pattern as API-02. `DELETE /api/auth/account` would return 400 with "Not authenticated" error text when no token was provided.
 
-**Fix:** Added `checkInjection()` screening for user-role history messages. Injected entries are silently skipped (not rejected — to avoid breaking the entire request over one stale history entry). Assistant-role messages are not checked since they represent our own previous output.
+**Fix:** Added early `if (!token) return res.status(401)` guard.
 
-### ER-04: INFO — History/drafts endpoints scan all review files on every request
-**File:** `backend/routes/essays.js` — lines 276-286, 328-337
+### API-04: LOW — Auth settings endpoint returns 400 for missing auth instead of 401
+**File:** `backend/routes/auth.js` — line 230
+**Status:** FIXED
+
+Same pattern. `PUT /api/auth/settings` would return 400 for missing auth.
+
+**Fix:** Added early `if (!token) return res.status(401)` guard.
+
+### API-05: INFO — Admin secret comparison uses string !== (not timing-safe)
+**File:** `backend/routes/auth.js` — lines 245, 285; `backend/routes/invites.js` — line 157
 **Status:** NOT FIXED — informational
 
-Both `/api/essays/history` and `/api/essays/drafts/:essayType` read the entire reviews directory and parse every JSON file with `Promise.all`, then filter by userId. This is O(all_users_reviews) per request. Currently acceptable (0 reviews on disk), but will degrade as reviews accumulate. At 10K reviews with average 2KB each, each history request would read ~20MB from disk.
+Three endpoints compare `ADMIN_SECRET` using JavaScript `!==` operator, which is theoretically vulnerable to timing attacks. In practice, the risk is minimal because: (a) authLimiter restricts to 10 attempts per 15 minutes, (b) network jitter overwhelms any timing signal, (c) the secret is only used for admin bootstrapping. A timing-safe comparison (`crypto.timingSafeEqual`) would be ideal but is low priority given the rate limiting.
 
-**Recommendation:** When review volume grows, either: (a) add a per-user index file mapping userId → reviewIds, or (b) use per-user subdirectories (`essay-reviews/{userId}/`), or (c) add a lightweight SQLite database.
+### API-06: INFO — Feedback POST endpoint has no authentication
+**File:** `backend/routes/feedback.js` — line 8
+**Status:** NOT FIXED — informational (by design)
 
-### ER-05: INFO — Essay text not stored in review records
-**File:** `backend/routes/essays.js` — lines 221-226
-**Status:** NOT FIXED — informational (known gap per CLAUDE.md)
+`POST /api/feedback` accepts feedback from any client without authentication. This is likely intentional to collect feedback from users who may not be logged in (e.g., during the signup flow or from free-tier users). The `apiLimiter` (30 req/min/IP) provides basic protection against spam. Input validation is otherwise solid: sessionId type+length, rating type+range, comment length cap.
 
-Review records store `wordCount` but not the actual essay text. Users cannot compare what they submitted across drafts. This is documented in CLAUDE.md as a known gap ("No multi-draft tracking").
+### API-07: INFO — Stats endpoints on internships/scholarships/programs have no authentication
+**File:** `backend/routes/internships.js` (stats), `backend/routes/scholarships.js` (stats), `backend/routes/programs.js` (stats)
+**Status:** NOT FIXED — informational (by design)
 
-### ER-06: INFO — Recovered partial reviews default voiceAssessment to authentic
-**File:** `backend/services/essay-reviewer.js` — lines 519-520
+These public endpoints return aggregate counts (by state, by field, by category). They expose no individual entries or user data. Useful for landing page content and SEO. Protected by `apiLimiter`.
+
+### API-08: INFO — Rate limiter stacking: auth routes get both authLimiter and route-level limiters
+**File:** `backend/server.js` — line 172; `backend/routes/auth.js` — lines 11-31
 **Status:** NOT FIXED — informational
 
-When JSON parsing fails and the score is recovered via regex, the fallback `voiceAssessment` defaults to `{ authentic: true, sounds_like_teenager: true }`. This is misleading — these fields should be null or marked as unknown since the LLM's actual assessment was lost. However, since partial recovery is rare and the `_parseWarning` field flags the issue, this is low-priority.
+The `/api/auth` prefix gets `authLimiter` (10 req/15min) at the server level. Inside auth.js, login gets an additional `loginLimiter` (20 req/15min), and forgot-password/reset-password have their own limiters. The server-level limiter is the binding constraint — the route-level limiters are effectively redundant since 10 < 20. This is harmless (defense in depth) but worth noting.
 
-### ER-07: INFO — Knowledge injection token counting is approximate
-**File:** `backend/services/essay-reviewer.js` — lines 143, 173-175
+### API-09: INFO — programs.js loads programs.json (826 entries), not programs-expanded.json (74 entries)
+**File:** `backend/routes/programs.js` — line 28
 **Status:** NOT FIXED — informational
 
-Token estimation uses `chars / 4` which is a rough approximation. For the knowledge injection cap of 6000 tokens, actual token counts could vary by ±30%. The system prompt could end up at ~7800 actual tokens in the worst case. Since the essay reviewer uses `max_tokens: 3500` for the response and Opus has a 200K context window, this overshoot is inconsequential.
+Two programs JSON files exist. `programs.json` has 826 entries and is the one served by the API. `programs-expanded.json` has 74 entries in a different structure (middleSchool/highSchoolInternships/highSchoolPrograms sections). CLAUDE.md mentions some confusion about which is canonical. Currently `programs.json` is correctly served as the primary database. The expanded file appears to be supplementary.
 
-### ER-08: INFO — Stripe essay pack description says $20 for bulk but code says $18
-**File:** `backend/routes/stripe.js` — line 194
+### API-10: INFO — Demographics search has no result count cap on fuzzy matching
+**File:** `backend/routes/demographics.js` — line 230
 **Status:** NOT FIXED — informational
 
-The error message for invalid pack selection says "bulk (20/$20)" but the credits endpoint (essays.js line 128) advertises the bulk pack as "$18". The Stripe price ID controls the actual charge, so whatever's configured in Stripe is the real price. The error message text is just misleading.
+`GET /api/demographics/search?q=university` could match hundreds of schools, but the result is capped at `.slice(0, 10)` — this is correctly bounded. No issue.
 
 ## Positive Observations
 
-1. **Credit locking is well-designed** — `withCreditLock` serializes per-user credit operations via a promise chain, preventing the classic double-deduction race condition on concurrent review submissions.
-2. **Atomic writes throughout** — All file writes (reviews, user data) use the tmp+rename pattern to prevent corruption from crashes.
-3. **Credit refund on every failure path** — The review endpoint refunds credits on: review failure, invalid JSON structure, and unexpected exceptions. The outer catch block even attempts a refund if the inner logic throws.
-4. **Injection checks before credit deduction** — Smart ordering: injection check runs BEFORE `useEssayCredit`, so malicious input never costs the user a credit.
-5. **Input validation is thorough** — Essay text (50 char min, 15K max), targetSchool (200 char cap), prompt (2K cap), essayType (64 char cap) all validated before processing.
-6. **Review ID sanitization** — `sanitizeReviewId` prevents path traversal with strict alphanumeric+hyphen+underscore regex and 128 char cap.
-7. **AbortController timeout** — The Claude API call has a 90-second timeout with proper cleanup (`clearTimeout` in `finally`), preventing indefinite hangs.
-8. **JSON parse recovery** — Graceful degradation: if the LLM returns malformed JSON, the system attempts regex extraction of at least the score and summary, providing a partial but usable result rather than a hard failure.
-9. **David coach context sanitization** — Extensive allowlisting of `toolContext` fields with length caps prevents client-side prompt injection via the session context object.
-10. **Prompt database is server-side** — Common App, UC PIQ, Coalition, and supplement prompts are served from the backend, ensuring students get accurate, curated prompts.
+1. **Consistent rate limiting architecture** — All routes have rate limiters applied at the server.js level. Expensive endpoints (essay review, financial-aid strategy) have a dedicated `expensiveLimiter` (3 req/min). Smart layering.
+2. **Auth checks are consistently placed** — All data endpoints (internships, scholarships, programs, financial-aid, timeline, intelligence) require `verifyToken()` and use `canAccess()` for tier gating. No exposed data routes.
+3. **Input validation is thorough across routes** — Query params, body fields, and URL params are validated. Invite codes are sanitized with regex. Search queries have minimum length. Profile fields have size caps.
+4. **Preview/full access tier separation is clean** — All three data modules (internships, scholarships, programs) implement the same `previewX()` → strip sensitive data → `.slice(0, 3)` pattern for non-premium users. Consistent UX.
+5. **Error responses never leak internals** — 500 handlers return generic messages. Stack traces are only shown in development mode.
+6. **CORS is properly locked down** — Specific origin allowlist in production, no wildcard. Credentials enabled.
+7. **Stripe webhook body parsing is correctly ordered** — Raw body middleware for webhook route is registered BEFORE `express.json()`, ensuring signature verification works.
+8. **GitHub fallback for data files** — Demographics, internships, scholarships, programs all have GitHub raw content fallback when local files are missing (handles Render deploy edge cases).
+9. **Graceful shutdown** — Server handles SIGTERM/SIGINT, stops scrapers and runs final backup before exit.
+10. **Request body size limit** — Global 100KB cap via `express.json({ limit: '100kb' })` prevents large payload abuse.
+
+## Data Integrity Check
+- Internships: 1606 entries, 981 verified — metadata matches ✓
+- Scholarships: 1043 entries, 80 verified — metadata matches ✓
+- Programs: 826 entries — metadata matches ✓
+- Frontend syntax: `node -c frontend/src/app.js` — PASS ✓
 
 ## Files Changed
-- `backend/routes/essays.js` — Added score bounds validation (1-10 range, finite number check)
-- `backend/services/essay-reviewer.js` — Clamped recovered score to 1-10 range on partial parse
-- `backend/services/auth.js` — Wrapped addEssayCredits in withCreditLock to prevent race condition with concurrent credit operations
-- `backend/routes/essay-coach.js` — Added injection screening for client-supplied history messages
+- `backend/routes/feedback.js` — Added messageIndex type+bounds validation
+- `backend/routes/auth.js` — Added 401 early-return guards on consent, delete, and settings endpoints
