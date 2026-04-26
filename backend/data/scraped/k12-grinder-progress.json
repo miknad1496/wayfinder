@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T11:49:33.320988Z",
-  "totalRuns": 15,
-  "totalEnriched": 91,
-  "totalSkipped": 29,
-  "notes": "Run 15: enriched 6 WA high (SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline HS, Centralia HS, Green Hill Academic). Skipped 2 (School to Life enr=33 special_ed, Futurus enr=47 alt). Queue offset 112 -> 120.",
+  "lastRun": "2026-04-26T11:59:01.293799Z",
+  "totalRuns": 13,
+  "totalEnriched": 77,
+  "totalSkipped": 27,
+  "notes": "Run 13: enriched 5 WA high (Camas HS, Hayes Freedom HS, Discovery HS, Neah Bay Jr/Sr HS, Cascade HS Leavenworth). Skipped 3 (Open Doors Mt Vernon enr=9, Camas SD Open Doors enr=6, Kodiak Virtual Academy enr=7 - all <50). Queue offset 96 -> 104.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 120,
+      "offset": 104,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 120 of 649; enriched 91 total"
+      "note": "raw NCES offset 104 of 649; enriched 77 total (cumulative grinder count)"
     },
     {
       "state": "WA",

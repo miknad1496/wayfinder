@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T11:49:33Z",
-    "count": 91,
+    "lastUpdated": "2026-04-26T11:58:43Z",
+    "count": 96,
     "source": "NCES + verified web sources",
-    "note": "Run 15: +6 verified WA high (CVSD cluster: SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline + Centralia HS + Green Hill juvenile-rehab academic school, offsets 112-119)",
-    "totalSchools": 91,
+    "note": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
+    "totalSchools": 96,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 6,
+    "lastRunAdded": 5,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 15: +6 verified WA high (CVSD cluster: SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline + Centralia HS + Green Hill juvenile-rehab academic school, offsets 112-119)",
-    "totalVerified": 91,
+    "lastRunNote": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
+    "totalVerified": 96,
     "totalEnriched": 77,
     "lastRun": 15
   },
@@ -3946,6 +3946,277 @@
         "https://en.wikipedia.org/wiki/Green_Hill_School_(Chehalis,_Washington)",
         "https://www.usnews.com/education/best-high-schools/washington/districts/chehalis-school-district/green-hill-academic-school-153714",
         "https://www.niche.com/k12/green-hill-academic-school-chehalis-wa/"
+      ]
+    },
+    {
+      "ncessch": "530081003152",
+      "name": "Camas High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5750",
+      "latitude": 45.6123,
+      "longitude": -122.3986,
+      "website": "https://www.camas.wednet.edu/o/chs",
+      "principal": "Kelly O'Rourke",
+      "principalNotes": "Joined Camas HS for the 2022-23 school year from Clark County School District (NV). Announced departure at end of 2025-26 school year for an international school role in China.",
+      "enrollment": 1964,
+      "studentTeacherRatio": "22:1",
+      "apParticipationRate": "53%",
+      "apCourses": "20+ AP offerings",
+      "graduationRate": "92%",
+      "testScores": {
+        "mathProficient": "60%",
+        "readingProficient": "91%",
+        "averageSAT": 1280
+      },
+      "address": "26900 SE 15th St, Camas, WA 98607",
+      "notablePrograms": [
+        "Advanced Placement (20+ courses)",
+        "STEM and engineering pathways",
+        "Athletics (Papermakers - multiple state titles)",
+        "Performing arts and music"
+      ],
+      "rating": {
+        "source": "US News",
+        "value": "Top 10% in Washington",
+        "nicheGrade": "A",
+        "publicSchoolReview": "Top 10% for 2025-26"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/o/chs/page/administration",
+        "https://lacamasmagazine.com/2022/07/kelly-orourke-hired-as-new-camas-high-school-principal.html",
+        "https://camasonian.com/21805/news/chs-principal-kelly-orourke-accepts-leadership-role-abroad/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/camas-high-school-20763",
+        "https://www.niche.com/k12/camas-high-school-camas-wa/",
+        "https://www.publicschoolreview.com/camas-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530081003200",
+      "name": "Hayes Freedom High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5602",
+      "latitude": 45.592653,
+      "longitude": -122.401196,
+      "website": "https://www.camas.wednet.edu/o/hfhs",
+      "principal": "Amy Holmes",
+      "principalNotes": "Founding principal - has led Hayes Freedom since the school opened in 2010.",
+      "enrollment": 143,
+      "studentTeacherRatio": "17:1",
+      "graduationRate": "90%",
+      "testScores": {
+        "mathProficient": "25%",
+        "readingProficient": "65%",
+        "averageSAT": 1140
+      },
+      "address": "1919 NE Ione St, Camas, WA 98607",
+      "schoolDescription": "Smaller, nontraditional 'choice' high school within Camas SD for students who opt out of the traditional Camas HS program. Named after Camas native Denis Hayes, who organized the first Earth Day.",
+      "notablePrograms": [
+        "Personalized / project-based instruction",
+        "Small-cohort high-school choice school",
+        "Camas SD 'choice schools' family alongside Discovery and Camas Connect"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B-",
+        "publicSchoolReview": "Bottom 50% for 2026"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/page/hayes-freedom-high-school",
+        "https://www.camaspostrecord.com/news/2023/mar/02/camas-school-officials-dispel-hayes-freedom-high-closure-rumors/",
+        "https://www.niche.com/k12/hayes-freedom-high-school-camas-wa/",
+        "https://www.publicschoolreview.com/hayes-freedom-high-school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/hayes-freedom-high-school-20764"
+      ]
+    },
+    {
+      "ncessch": "530081003662",
+      "name": "Discovery High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5790",
+      "latitude": 45.594008,
+      "longitude": -122.462125,
+      "website": "https://www.camas.wednet.edu/o/dhs",
+      "principal": "Daniel Huld, Ed.D.",
+      "principalNotes": "Principal since spring 2021; oversees the Camas SD Project-Based Learning campus (Discovery HS + Odyssey MS) plus Camas Connect Academy. CHS '98 graduate; Ed.D. from Portland State; prior history operating virtual charter schools in Oregon.",
+      "enrollment": 191,
+      "studentTeacherRatio": "16:1",
+      "apParticipationRate": "46%",
+      "graduationRate": "94%",
+      "testScores": {
+        "mathProficient": "60%",
+        "readingProficient": "92%",
+        "scienceProficient": "85%",
+        "averageSAT": 1250
+      },
+      "address": "5125 NW Nan Henriksen Way, Camas, WA 98607",
+      "schoolDescription": "Project-Based Learning (PBL) high school in Camas SD. Opened 2018-19 with a freshman-only class; first senior cohort graduated 2022.",
+      "notablePrograms": [
+        "Project-Based Learning model",
+        "Advanced Placement (46% participation)",
+        "Camas SD 'choice schools' family alongside Hayes Freedom and Camas Connect"
+      ],
+      "rating": {
+        "source": "US News",
+        "value": "#2,264 national / #39 in Washington",
+        "publicSchoolReview": "Top 20% for 2026",
+        "notes": "Ranks better than 97% of WA high schools per Niche"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/o/dhs/page/administration",
+        "https://www.linkedin.com/in/daniel-huld-ed-d-6889a78/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/discovery-high-school-410715",
+        "https://www.niche.com/k12/discovery-high-school-camas-wa/",
+        "https://www.publicschoolreview.com/discovery-high-school-profile/98607",
+        "https://www.camaspostrecord.com/news/2025/jun/05/despite-objections-discovery-odyssey-to-share-one-campus/"
+      ]
+    },
+    {
+      "ncessch": "530084000165",
+      "name": "Neah Bay Junior/Senior High School",
+      "city": "Neah Bay",
+      "state": "WA",
+      "zip": "98357",
+      "district": "Cape Flattery School District",
+      "level": "high",
+      "grades": "6-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(360)645-2221",
+      "latitude": 48.3632,
+      "longitude": -124.6224,
+      "website": "https://nbs.cfsd401.org/",
+      "principal": "Lucy Dafoe",
+      "principalNotes": "Secondary Principal of Neah Bay HS / Markishtum MS. Prior experience at Puyallup Tribe, Seminole Tribe of Florida, and Suquamish Tribe (Chief Kitsap Academy).",
+      "enrollment": 189,
+      "studentTeacherRatio": "13:1",
+      "graduationRate": "80%",
+      "testScores": {
+        "mathProficient": "12%",
+        "readingProficient": "32%"
+      },
+      "address": "401 S Bay View Ave, Neah Bay, WA 98357",
+      "schoolDescription": "Combined junior/senior high school (grades 6-12) on the Makah Reservation; the principal high school of Cape Flattery SD. 84% economically disadvantaged.",
+      "demographics": {
+        "americanIndian": "64%",
+        "twoOrMoreRaces": "20%",
+        "hispanic": "15%",
+        "white": "1%",
+        "minorityTotal": "99%",
+        "economicallyDisadvantaged": "84%"
+      },
+      "notablePrograms": [
+        "Makah cultural and language integration",
+        "Athletics (Red Devils) - basketball is a community focal point",
+        "Environmental literacy / outdoor education partnerships"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "Below state average",
+        "publicSchoolReview": "Bottom 50% for 2026"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cfsd401.org/our-schools/neah-bay-schools",
+        "https://nbs.cfsd401.org/332823_2",
+        "https://www.cfsd401.org/our-district/staff-directory",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cape-flattery-school-district/neah-bay-junior-senior-high-school-20766",
+        "https://www.niche.com/k12/neah-bay-junior-senior-high-school-neah-bay-wa/",
+        "https://www.publicschoolreview.com/neah-bay-junior-senior-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530095001935",
+      "name": "Cascade High School",
+      "city": "Leavenworth",
+      "state": "WA",
+      "zip": "98826",
+      "district": "Cascade School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "phone": "(509)548-5277",
+      "latitude": 47.6018,
+      "longitude": -120.6545,
+      "website": "https://www.cascadesd.org/o/chs",
+      "principal": "James Swanson",
+      "principalNotes": "Started 2024-25 as first-year Cascade HS principal after two years as principal of Icicle River Middle School. Native of Moses Lake; WSU graduate; prior leadership at South Whidbey SD and teaching in Wenatchee and Tonasket.",
+      "enrollment": 397,
+      "studentTeacherRatio": "20:1",
+      "apParticipationRate": "5%",
+      "graduationRate": "95%",
+      "testScores": {
+        "mathProficient": "32%",
+        "readingProficient": "77%",
+        "averageSAT": 1170,
+        "averageACT": 29
+      },
+      "address": "10190 Chumstick Hwy, Leavenworth, WA 98826",
+      "schoolDescription": "Rural-town high school serving Leavenworth and the Upper Wenatchee Valley; mascot Kodiaks.",
+      "notablePrograms": [
+        "Advanced Placement (limited slate)",
+        "Gifted & Talented program",
+        "Outdoor Education / mountain-area athletics",
+        "Athletics (Kodiaks)"
+      ],
+      "rating": {
+        "source": "US News",
+        "value": "Top 20% in Washington",
+        "nicheGrade": "B",
+        "greatSchoolsRating": "7/10"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cascadesd.org/o/chs",
+        "https://www.ncwbusiness.com/stories/cascade-school-district-navigates-leadership-changes-at-high-school-and-middle-school,79656",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cascade-school-district/cascade-high-school-20767",
+        "https://www.niche.com/k12/cascade-high-school-leavenworth-wa/",
+        "https://www.greatschools.org/washington/leavenworth/257-Cascade-High-School/",
+        "https://www.publicschoolreview.com/cascade-high-school-profile/98826"
       ]
     }
   ]
