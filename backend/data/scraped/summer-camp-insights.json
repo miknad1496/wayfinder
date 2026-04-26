@@ -7,70 +7,70 @@
   "sections": [
     {
       "id": "registration-windows",
-      "title": "Registration window cheat sheet — when to actually book",
-      "icon": "📅",
+      "title": "Registration window cheat sheet \u2014 when to actually book",
+      "icon": "\ud83d\udcc5",
       "items": [
         {
-          "label": "December–January",
+          "label": "December\u2013January",
           "detail": "Member registration opens at top-tier museum/zoo camps in major metros (Pacific Science Center, Woodland Park Zoo, Burke Museum, Seattle Children's Theatre). Premium camps fill in days. If you're not yet a member, the membership pays for itself just from earlier access."
         },
         {
           "label": "February (Early Bird windows)",
-          "detail": "Camp Galileo Early Bird discount typically expires Feb 28 ($50/wk savings). YMCA Camp Orkila + Camp Sealth registration windows open this month — overnight camps. Multi-week discounts often stack with Early Bird."
+          "detail": "Camp Galileo Early Bird discount typically expires Feb 28 ($50/wk savings). YMCA Camp Orkila + Camp Sealth registration windows open this month \u2014 overnight camps. Multi-week discounts often stack with Early Bird."
         },
         {
           "label": "March (general public registration)",
           "detail": "Most Seattle-metro institution camps open general (non-member) registration. Point Defiance Zoo & Aquarium typically opens early-mid March. Most popular sessions fill within 2-3 weeks."
         },
         {
-          "label": "April–May (last call + scholarship windows)",
-          "detail": "Most popular sessions full. Off-the-radar specialty camps still have space. Scholarship application windows often close mid-May — check each org. Many districts publish their summer enrichment lists in April."
+          "label": "April\u2013May (last call + scholarship windows)",
+          "detail": "Most popular sessions full. Off-the-radar specialty camps still have space. Scholarship application windows often close mid-May \u2014 check each org. Many districts publish their summer enrichment lists in April."
         },
         {
           "label": "June (late game + cancellations)",
-          "detail": "Some camps add late sessions if demand exists. Cancellation lists at premium camps move quickly — call directly, don't just check website. Parks dept rec camps almost always have space."
+          "detail": "Some camps add late sessions if demand exists. Cancellation lists at premium camps move quickly \u2014 call directly, don't just check website. Parks dept rec camps almost always have space."
         }
       ]
     },
     {
       "id": "scholarship-cheats",
-      "title": "Scholarship cheat sheet — generous aid most parents don't ask about",
-      "icon": "💰",
+      "title": "Scholarship cheat sheet \u2014 generous aid most parents don't ask about",
+      "icon": "\ud83d\udcb0",
       "items": [
         {
-          "label": "YMCA — sliding scale Price A / Price B",
-          "detail": "All Y branches use a sliding-scale cost structure. You self-select based on household income. No documentation required at registration. Some Ys offer additional financial assistance beyond Price B — ask the membership desk directly. Camp Orkila and other residential Ys have the same structure."
+          "label": "YMCA \u2014 sliding scale Price A / Price B",
+          "detail": "All Y branches use a sliding-scale cost structure. You self-select based on household income. No documentation required at registration. Some Ys offer additional financial assistance beyond Price B \u2014 ask the membership desk directly. Camp Orkila and other residential Ys have the same structure."
         },
         {
-          "label": "Pacific Science Center — needs-based scholarships up to 100%",
-          "detail": "Application opens early February (well before general registration). Scholarship windows are SEPARATE from regular registration — apply to both. Bring tax return + proof of income. 100% scholarships exist; partial more common."
+          "label": "Pacific Science Center \u2014 needs-based scholarships up to 100%",
+          "detail": "Application opens early February (well before general registration). Scholarship windows are SEPARATE from regular registration \u2014 apply to both. Bring tax return + proof of income. 100% scholarships exist; partial more common."
         },
         {
-          "label": "Woodland Park Zoo — scholarships up to 100% in 20% increments",
-          "detail": "Tiered based on income. Application is short. They publish the income brackets — check the FAQ. Apply once per year, valid for all WPZ camps that summer."
+          "label": "Woodland Park Zoo \u2014 scholarships up to 100% in 20% increments",
+          "detail": "Tiered based on income. Application is short. They publish the income brackets \u2014 check the FAQ. Apply once per year, valid for all WPZ camps that summer."
         },
         {
-          "label": "Camp Sealth (Camp Fire CPS) — Camperships",
+          "label": "Camp Sealth (Camp Fire CPS) \u2014 Camperships",
           "detail": "Need-based aid called 'Camperships'. Apply 4-6 weeks before session. Particularly generous for 'first-time camper' families. Foster, kinship, and EBT/WIC families get expedited review."
         },
         {
-          "label": "Point Defiance Zoo — Pierce County resident aid",
+          "label": "Point Defiance Zoo \u2014 Pierce County resident aid",
           "detail": "Special scholarship pool for Pierce County residents on EBT/WIC/foster/kinship. Smaller pool but high acceptance rate if eligible."
         },
         {
-          "label": "Camp Galileo — financial aid + multi-week sibling discounts",
-          "detail": "Up to 75% aid for qualifying families. Multi-week + multi-sibling discounts stack with aid. Apply early — pool is smaller than the museum/zoo programs."
+          "label": "Camp Galileo \u2014 financial aid + multi-week sibling discounts",
+          "detail": "Up to 75% aid for qualifying families. Multi-week + multi-sibling discounts stack with aid. Apply early \u2014 pool is smaller than the museum/zoo programs."
         },
         {
-          "label": "School district summer programs — often free or near-free",
+          "label": "School district summer programs \u2014 often free or near-free",
           "detail": "Most districts run summer enrichment using federal Title I funds. Eligibility may be income-tested or open to all district kids. Check your district's website starting in March. Often the BEST kept secret in the local market."
         }
       ]
     },
     {
       "id": "nationwide-remote",
-      "title": "Nationwide & remote programs — equally available to ANY family",
-      "icon": "🌎",
+      "title": "Nationwide & remote programs \u2014 equally available to ANY family",
+      "icon": "\ud83c\udf0e",
       "items": [
         {
           "label": "iD Tech (online + in-person at universities)",
@@ -78,7 +78,7 @@
         },
         {
           "label": "Camp Galileo (CA + WA expansion + virtual)",
-          "detail": "Also offers Galileo Online — interactive virtual camps for ages 5-12. Project-based, not video lectures. Lower cost than in-person."
+          "detail": "Also offers Galileo Online \u2014 interactive virtual camps for ages 5-12. Project-based, not video lectures. Lower cost than in-person."
         },
         {
           "label": "Camp Invention (National Inventors Hall of Fame)",
@@ -89,7 +89,7 @@
           "detail": "Free K-2 app year-round. Some library systems run Khan-aligned summer programs. Cheapest meaningful enrichment option for early elementary."
         },
         {
-          "label": "Outschool — small-group online classes (K-12)",
+          "label": "Outschool \u2014 small-group online classes (K-12)",
           "detail": "Marketplace of online classes from independent teachers. Subjects from D&D club to coding to creative writing. Per-class pricing, often $10-30/session. Great for kids with niche interests not served by local options."
         },
         {
@@ -105,19 +105,19 @@
           "detail": "Game design, animation, programming. Ages 5-12 + teen tracks. Strong instruction quality."
         },
         {
-          "label": "MOOC platforms — Coursera, edX, Khan Academy",
+          "label": "MOOC platforms \u2014 Coursera, edX, Khan Academy",
           "detail": "Free university-level content available to motivated middle schoolers. Especially good for kids who finish their grade-level curriculum early."
         },
         {
-          "label": "Connections Academy + K12 — full virtual public school",
+          "label": "Connections Academy + K12 \u2014 full virtual public school",
           "detail": "Free in many states. Year-round option not just summer. Worth considering for kids whose schools aren't a fit, or families with travel flexibility."
         }
       ]
     },
     {
       "id": "sleepaway-readiness",
-      "title": "Sleepaway readiness — is your kid actually ready?",
-      "icon": "🏕️",
+      "title": "Sleepaway readiness \u2014 is your kid actually ready?",
+      "icon": "\ud83c\udfd5\ufe0f",
       "items": [
         {
           "label": "Green-light signals (start considering 3-5 day sessions)",
@@ -137,18 +137,18 @@
         },
         {
           "label": "First-timer success patterns",
-          "detail": "Pre-write a few letters together (kids love getting mail). Pre-decide on a comfort item that's not too precious to lose. Talk through what a hard moment might look like + what the kid would do. Don't promise an early pickup — that signals 'this might fail' and erodes confidence."
+          "detail": "Pre-write a few letters together (kids love getting mail). Pre-decide on a comfort item that's not too precious to lose. Talk through what a hard moment might look like + what the kid would do. Don't promise an early pickup \u2014 that signals 'this might fail' and erodes confidence."
         }
       ]
     },
     {
       "id": "budget-framework",
-      "title": "Budget framework — getting maximum value across the summer",
-      "icon": "💵",
+      "title": "Budget framework \u2014 getting maximum value across the summer",
+      "icon": "\ud83d\udcb5",
       "items": [
         {
           "label": "The 60/30/10 frame (a starting heuristic)",
-          "detail": "If you have a fixed summer budget: spend ~60% on a recurring 'anchor' — typically the YMCA / parks dept day camp 3-4 weeks running ($150-300/wk subsidized). Spend ~30% on 1-2 specialty experiences ($400-600 each — the museum camp, the coding camp, the zoo camp). Reserve ~10% for the wildcard — the niche experience the kid asked for, or a weekend mini-camp."
+          "detail": "If you have a fixed summer budget: spend ~60% on a recurring 'anchor' \u2014 typically the YMCA / parks dept day camp 3-4 weeks running ($150-300/wk subsidized). Spend ~30% on 1-2 specialty experiences ($400-600 each \u2014 the museum camp, the coding camp, the zoo camp). Reserve ~10% for the wildcard \u2014 the niche experience the kid asked for, or a weekend mini-camp."
         },
         {
           "label": "Multi-summer planning (K-8 arc)",
@@ -171,7 +171,7 @@
     {
       "id": "common-mistakes",
       "title": "Common parent mistakes (K-8 specifically)",
-      "icon": "⚠️",
+      "icon": "\u26a0\ufe0f",
       "items": [
         {
           "label": "Over-stacking specialty camps",
@@ -179,7 +179,7 @@
         },
         {
           "label": "Treating it like college admissions",
-          "detail": "K-8 summers don't appear in college applications. Picking based on 'what looks good' backfires — kids sense the inauthenticity and disengage."
+          "detail": "K-8 summers don't appear in college applications. Picking based on 'what looks good' backfires \u2014 kids sense the inauthenticity and disengage."
         },
         {
           "label": "Skipping the kid's preferences",
@@ -191,7 +191,7 @@
         },
         {
           "label": "Not asking about scholarships",
-          "detail": "Most reputable orgs have 50-80% aid available; rarely advertised. Email the camp director directly — application is often shorter than expected."
+          "detail": "Most reputable orgs have 50-80% aid available; rarely advertised. Email the camp director directly \u2014 application is often shorter than expected."
         },
         {
           "label": "Sleepaway too early",
@@ -199,14 +199,14 @@
         },
         {
           "label": "Single-track specialization too early",
-          "detail": "A kid who does only soccer camps every summer K-8 won't necessarily play in HS. Variety in K-5 → emerging interest in 6-8 → specialization in 9-12 is the healthier arc."
+          "detail": "A kid who does only soccer camps every summer K-8 won't necessarily play in HS. Variety in K-5 \u2192 emerging interest in 6-8 \u2192 specialization in 9-12 is the healthier arc."
         }
       ]
     },
     {
       "id": "out-of-the-box",
       "title": "Out-of-the-box hacks most parents miss",
-      "icon": "💡",
+      "icon": "\ud83d\udca1",
       "items": [
         {
           "label": "Trade with a friend's family for week-long swap",
@@ -214,18 +214,18 @@
         },
         {
           "label": "Volunteer-as-CIT (Counselor In Training) at age 12-14",
-          "detail": "Many camps need junior counselors. Tweens get free or discounted attendance + leadership experience. Apply early — these slots fill faster than camper slots. YMCA, Camp Fire, BGCA all have CIT pipelines."
+          "detail": "Many camps need junior counselors. Tweens get free or discounted attendance + leadership experience. Apply early \u2014 these slots fill faster than camper slots. YMCA, Camp Fire, BGCA all have CIT pipelines."
         },
         {
           "label": "Subscribe to a museum at the right tier",
-          "detail": "Not all memberships are equal. Look for the tier that includes 'priority camp registration' — usually $150-200 family-tier upgrade. Pays for itself just from earlier access to popular camps."
+          "detail": "Not all memberships are equal. Look for the tier that includes 'priority camp registration' \u2014 usually $150-200 family-tier upgrade. Pays for itself just from earlier access to popular camps."
         },
         {
           "label": "ACA accreditation is a real signal",
-          "detail": "American Camp Association accreditation means health/safety/staff-ratio standards verified annually. Not a fancy badge — actually means something. Free filter at acacamps.org/find-a-camp."
+          "detail": "American Camp Association accreditation means health/safety/staff-ratio standards verified annually. Not a fancy badge \u2014 actually means something. Free filter at acacamps.org/find-a-camp."
         },
         {
-          "label": "University youth programs — often hidden gems",
+          "label": "University youth programs \u2014 often hidden gems",
           "detail": "UW Robinson Center, DigiPen Open World, Stanford EPGY (now Compass), Northwestern Center for Talent Development. Often more substantive than for-profit camps. Check your local research university."
         },
         {
@@ -247,6 +247,17 @@
         {
           "label": "Theater + arts intensives often have surprise scholarships",
           "detail": "Most regional theaters with kids' programs (Seattle Children's Theatre, ACT Theatre, etc.) have under-applied-for scholarship pools. Even a no-pretense email asking about aid often surfaces options not on the website."
+        }
+      ]
+    },
+    {
+      "id": "field-notes",
+      "title": "From the field \u2014 fresh insider notes (auto-discovered)",
+      "icon": "\ud83d\udd0d",
+      "items": [
+        {
+          "label": "Live grinder discoveries appear here",
+          "detail": "Every time the ES/MS grinder finds a non-obvious parent insight while researching new programs (hidden scholarship pools, real registration timing vs. stated, age-flexibility, name vs reality mismatches, CIT pipelines, multi-program discounts), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top."
         }
       ]
     }

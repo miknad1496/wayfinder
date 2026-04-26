@@ -95,3 +95,40 @@
 | 2026-04-26 | 1 | 5 (3hi/2md) | 0 | WA — Seattle/Bellevue/Vashon/Orcas | KidsQuest (md), Coyote Central (hi), Burke (hi), Camp Orkila (hi), Camp Sealth (md). Bootstrapped progress file + lessons. |
 | 2026-04-26 | 2 | 6 (4hi/3md... wait 4hi/2md after correction) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Woodland Park Zoo (hi), Seattle Aquarium (md cost), Seattle Children's Theatre (md cost+dates), Camp Galileo Bellevue (hi), Music Center NW (hi), Point Defiance Zoo (hi). Caught Pacific Science Center as existing-DB duplicate; substituted Point Defiance. New writable-clone workaround documented. |
 | 2026-04-26 | 3 | 5 (4hi/1md) | 0 | WA — Bellingham/Bellevue/Olympia/Bainbridge | Whatcom Family YMCA Discovery Camp (hi), Music Works NW (hi), Hands On Children's Museum Olympia (md cost), IslandWood Bainbridge (hi), BYSO Summer Music Camps (hi). First run reaching outside core Seattle/Eastside metros — three new WA cities covered. |
+
+
+## INSIGHT CAPTURE PROTOCOL (added 2026-04-26)
+
+While researching each program, opportunistically capture **parent-facing insights** that go beyond standard fields. These are the "I wouldn't have known unless I'd talked to 50 parents" facts that make Wayfinder genuinely valuable.
+
+### What counts as a capture-worthy insight
+
+- **Hidden scholarship details** — "Org X has 100% aid but landing page only says 'sliding scale'"; specific tier breakdowns
+- **Registration timing edge cases** — "Members get access 3 weeks before general; popular sessions sell out in <48h"
+- **Age-flexibility** — "Listed ages 6-12 but accepts 5 if you email coordinator"
+- **Name vs reality mismatches** — "Marketed as 'STEM camp' but actually 70% arts/crafts"
+- **Hidden discount stacks** — "Multi-week + sibling discounts stack with Early Bird"
+- **CIT / volunteer pathways** — "Free attendance for 13-15 year olds via CIT pipeline"
+- **Counter-intuitive quality** — "Free parks dept camp at this site is run by the same instructors as the $500/wk specialty camp"
+- **Site-specific gotchas** — "Downtown site is loud + cramped vs suburban site has full grounds — same brand, different experience"
+- **Real cost vs sticker price** — fees beyond tuition, refund policies
+
+### How to capture
+
+After processing each program, if you discovered ≥1 capture-worthy insight, append to `backend/data/scraped/summer-camp-insights.json` → find the section with `id: "field-notes"` → PREPEND new items to its `items[]` array (most recent at top).
+
+Format each item:
+```json
+{ "label": "[Org name] — [Insight type in 4-7 words]", "detail": "[1-2 sentence specific actionable detail with org named]" }
+```
+
+Cap section at 30 items. Drop oldest if exceeding. Dedup by label substring match.
+
+**Quality bar**: specific, actionable, parent-facing. "This camp is fun" doesn't qualify. "PSC scholarship form is 1 page and includes low-friction pay-stub upload — most parents skip because they assume it's complex" qualifies.
+
+### NOT to capture
+- Generic facts already in entry's structured fields
+- Marketing fluff
+- Anything you can't trace to a specific fetched source
+- Speculation
+- Anything stale within 30 days
