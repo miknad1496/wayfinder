@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 907,
+    "totalCount": 914,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -39592,6 +39592,303 @@
       "description": "HSF Youth Leadership Institute: pipeline program for Hispanic/Latino youth (grades 7-12) with mentorship, leadership training, college prep workshops, and pathway to HSF scholarships ($500-$5K). Free for selected applicants. Regional summits in NYC, LA, Miami, Houston, Chicago, DC. Online programming year-round. Strong combination of cultural-identity + academic + leadership development.",
       "url": "https://www.hsf.net/scholar-services/programs",
       "_source": "https://www.hsf.net",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Sierra Club Inspiring Connections Outdoors (ICO)",
+      "provider": "Sierra Club",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free for participating youth \u2014 Sierra Club volunteers fund all gear + transportation"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "50+ ICO chapters in major US cities",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 18
+      },
+      "deadline": "Year-round trips; chapter-coordinated",
+      "description": "Sierra Club ICO connects under-resourced urban youth with the outdoors via free guided trips: hikes, camping, kayaking, snowshoeing, backpacking. Volunteer-led; gear, transport, and food covered by Sierra Club fundraising. 50+ city chapters (Seattle, Bay Area, Chicago, NYC, Atlanta, Miami, etc.). Most chapters partner with schools, BGCA, YMCA, or community centers to reach kids. Excellent low-barrier outdoor entry for kids whose families don't have outdoor gear/experience.",
+      "url": "https://www.sierraclub.org/inspiring-connections-outdoors",
+      "_source": "https://www.sierraclub.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "National Wildlife Federation Eco-Schools USA",
+      "provider": "National Wildlife Federation",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for participating schools (curriculum + certification)"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Schools nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Year-round school enrollment",
+      "description": "NWF Eco-Schools USA is the school-based environmental sustainability program \u2014 kids audit their school's environmental footprint (energy, water, waste, biodiversity, schoolyard habitat) and lead improvement projects. 7 'pathways' (climate, energy, water, waste, etc.). Schools earn Bronze / Silver / Green Flag certifications. FREE curriculum + tools. International (Eco-Schools active in 70+ countries). Strong fit for kids interested in environmental leadership at school.",
+      "url": "https://www.nwf.org/Eco-Schools-USA",
+      "_source": "https://www.nwf.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "NPS Every Kid Outdoors (free 4th grade pass)",
+      "provider": "National Park Service / White House initiative",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE pass \u2014 admits 4th grader + 3 adults + all minor siblings to all NPS sites"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "All 400+ NPS sites",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "4"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 9,
+        "ageMax": 11
+      },
+      "deadline": "Pass valid Sep 1 - Aug 31 of 4th grade year",
+      "description": "Every Kid Outdoors pass gives ALL US 4th graders FREE entry to all 400+ NPS sites (national parks, monuments, historic sites, recreation areas) PLUS US Forest Service + US Fish & Wildlife sites + US Army Corps lands. Pass admits the 4th grader + 3 adults + all minor siblings in a single vehicle. Get yours at everykidoutdoors.gov by completing a short activity. Valid Sep 1 - Aug 31 of 4th grade year. Easy way to do an entire family of national parks vacations free.",
+      "url": "https://everykidoutdoors.gov",
+      "_source": "https://everykidoutdoors.gov/index.htm",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Audubon for Kids \u2014 citizen science + Junior Birder",
+      "provider": "National Audubon Society",
+      "category": "stem",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for all youth participation (Audubon Adventures curriculum ~$50 for educators)"
+      },
+      "selectivity": "open",
+      "format": "hybrid",
+      "location": {
+        "city": "500+ Audubon chapters + nature centers",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Christmas Bird Count Dec 14 - Jan 5; Great Backyard Bird Count Feb; year-round chapter activities",
+      "description": "National Audubon Society offers free youth bird-focused citizen science: Christmas Bird Count for Kids, Great Backyard Bird Count (Feb, family-friendly), Junior Birder programs at 500+ local Audubon chapters + nature centers. Audubon Adventures is the K-6 in-school curriculum. Combines real science contribution + outdoor time + photography skills. Excellent low-barrier entry to STEM + environment for elementary kids.",
+      "url": "https://www.audubon.org/get-outside/activities/audubon-for-kids",
+      "_source": "https://www.audubon.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "NOAA Planet Stewards Education Project",
+      "provider": "NOAA Office of Education",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE curriculum + project funding up to $5,000 for educator-led student projects"
+      },
+      "selectivity": "moderate",
+      "format": "hybrid",
+      "location": {
+        "city": "Online + nationwide partner schools",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Project funding applications due September each year",
+      "description": "NOAA's Planet Stewards program funds K-12 educator-led student projects on climate, oceans, and weather. Up to $5,000 per project (typical $500-2,500). Free curriculum + monthly virtual seminars. Past projects: schoolyard rain gardens, climate-action campaigns, beach cleanup data, weather stations. Strong fit for kids interested in environmental science with real-world impact + funding to actually do something.",
+      "url": "https://www.noaa.gov/education/opportunities/planet-stewards",
+      "_source": "https://www.noaa.gov/education",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Outdoor Afro Youth + Family Programs",
+      "provider": "Outdoor Afro",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for Outdoor Afro participants \u2014 chapter-led trips"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "60+ chapters in major US cities",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Chapter-led trips year-round",
+      "description": "Outdoor Afro celebrates Black connections + leadership in nature. 60+ city chapters run free hikes, camping trips, paddling, fishing, climbing, and family events. Founded by Rue Mapp. Particularly impactful for Black families historically under-served in outdoor recreation. Chapters in Seattle, Bay Area, Chicago, ATL, NYC, DC, etc. Pairs naturally with NPS Junior Ranger + Sierra Club ICO.",
+      "url": "https://outdoorafro.com",
+      "_source": "https://outdoorafro.com/about/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Earthwatch Kids + Family Expeditions",
+      "provider": "Earthwatch Institute",
+      "category": "stem",
+      "subcategory": "nature",
+      "type": "summer",
+      "cost": {
+        "amount": 2500,
+        "type": "paid",
+        "display": "~$2,000-3,500/wk + airfare; need-based aid via Ignite Awards (covers up to 100%)"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "Field sites worldwide (Costa Rica, Iceland, Kenya, Bahamas, etc.)",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 15
+      },
+      "deadline": "Family expeditions year-round; book 6-8 months ahead",
+      "description": "Earthwatch Family Expeditions: parents + kids join real scientists on conservation field research. 8-12 day trips to field sites worldwide (sea turtles in Costa Rica, lemurs in Madagascar, climate change in Iceland, Caribbean reefs). Kids ages 8+ accepted with parent. Earthwatch's Ignite Awards provide up to 100% scholarships for qualifying low-income youth. Real science contribution + immersive intl experience. Premium pricing but powerful long-term memory.",
+      "url": "https://earthwatch.org/family-expeditions",
+      "_source": "https://earthwatch.org",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
