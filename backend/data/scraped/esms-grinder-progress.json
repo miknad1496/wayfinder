@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T19:28:11.410Z",
-  "totalRuns": 9,
-  "totalAdded": 46,
+  "lastRun": "2026-04-26T19:44:11Z",
+  "totalRuns": 10,
+  "totalAdded": 52,
   "queue": [
     {
       "focus": "nationwide-remote",
@@ -96,7 +96,7 @@
     {
       "focus": "national-anchors",
       "target": 25,
-      "current": 24,
+      "current": 30,
       "status": "in_progress",
       "themes": [
         "YMCA / Camp Fire / BGCA national programs",
@@ -114,7 +114,7 @@
         "Curious Cardinals 1:1 mentorship",
         "Synthesis Tutor (AI K-5 math)",
         "Brain Chase Summer Treasure Hunt",
-        "Northwestern CTD (gifted PreK–grade 8)",
+        "Northwestern CTD (gifted PreK\u2013grade 8)",
         "Mathnasium nationwide tutoring",
         "Code Ninjas nationwide STEM camps",
         "CodaKid online coding",
@@ -136,7 +136,8 @@
         "CodeWizardsHQ",
         "Black Girls CODE",
         "AAUW Tech Trek"
-      ]
+      ],
+      "lastFocus": "Free/freemium online K-8 (Wonderopolis, CrunchLabs, GenerationGenius, MysteryScience, MakerCamp, BrainPOP)"
     }
   ],
   "plan": {
@@ -158,6 +159,6 @@
     ],
     "perStateTarget": 10,
     "cadence": "1 state-batch per run, then rotate to next state. Mix nationwide/remote in opportunistically when high-value.",
-    "remainingPriorityFocus": "Major metros first — large metro areas before secondary cities. Nationwide/remote programs still welcome opportunistically when they fill genuine gaps."
+    "remainingPriorityFocus": "Major metros first \u2014 large metro areas before secondary cities. Nationwide/remote programs still welcome opportunistically when they fill genuine gaps."
   }
 }

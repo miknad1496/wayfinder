@@ -386,3 +386,27 @@ Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rota
 | Date | Run # | Added | Skipped | Focus | Notable |
 |------|-------|-------|---------|-------|---------|
 | 2026-04-26 | 9 | 6 (4hi/2md) | 3 (initially picked, found in DB after fresh-clone dedup) | National-anchors — diversity + advanced + virtual K-8 STEM | NSBE SEEK, Math Beasts Camp, Northwestern CTD Solstice, CodeWizardsHQ, Black Girls CODE, AAUW Tech Trek. Caught stale-clone problem; new lesson added. |
+
+## RUN 10 — FREE/FREEMIUM ONLINE K-8 BATCH (2026-04-26, replay after rebase incident)
+
+### What happened (operationally)
+- Initial attempt at this run (commit e6ccc30) was based on a STALE `/sessions/.../mnt/outputs/wayfinder-esms` clone showing only runs 1-2. Pushing it clobbered runs 3-9 on the remote (938→843 programs, lost ~95 entries). **Reverted with commit 22fbbbc within minutes**, then re-cloned cleanly into `/sessions/brave-exciting-rubin/tmp/wf-push` (the `mnt/outputs` mount had permissions/disk issues — `/tmp` on `/` was at 100% used and `mnt/outputs/` had stuck `.git/config.lock` from the bad clone).
+- **NEW LESSON: `/sessions/brave-exciting-rubin/tmp/` is the writable scratch space when `mnt/outputs/` and `/tmp` are degraded.** Adopt this as the default writable-clone location going forward.
+- **NEW LESSON: when a stale local clone is suspected, ALWAYS check `git log --oneline | head` against the remote BEFORE editing.** A 2-line log when the remote has 9+ recent commits is a smoking gun.
+
+### What worked (research)
+- All 6 picks: Camp Wonderopolis (free, NCFL), Camp CrunchLabs (Mark Rober, $329.40/12wk), Generation Genius (K-8 NGSS science), Mystery Science (K-5 science, free trial through June 30 2026), Maker Camp by Make: (free 6-week), BrainPOP/BrainPOP Jr ($129/$159 family). All verified via search snippets — no JS-heavy fetches needed.
+- **NEW DEFUNCT-CHECK PATTERN**: NaNoWriMo Young Writers Program was on the candidate list. Quick "shutdown 2025" search caught that the parent NaNoWriMo nonprofit closed March 2025 and YWP is no longer active. Always run a "shutdown OR closure OR defunct" sanity search on any nonprofit-affiliated candidate before adding.
+
+### Source notes
+- **Camp Wonderopolis**: Genuine free, 350K+ learners, current edition is music-themed. Fully high-confidence.
+- **Camp CrunchLabs**: $329.40/12 weeks ships physical Build Boxes weekly + Mark Rober videos. Auto-rolls to $27.45/month subscription unless cancelled — flagged as field-note.
+- **Generation Genius**: 14-day no-card trial; subscription price not posted publicly. Marked medium with `_unverifiedFields: ["paidSubscriptionPrice"]`.
+- **Mystery Science**: 50%+ of US elementary schools use it. Free trial currently extended through June 30, 2026 (no card). Acquired by Discovery Education. Subscription price not on landing page — medium confidence.
+- **Maker Camp**: 2,000+ host sites worldwide. Free 6-week structured summer; can be run anytime by family. Badge system. High confidence.
+- **BrainPOP**: $129/yr family (3-8), +$30/yr for combo with Jr. (K-3) → $159/yr. 30-day free trial REQUIRES card and auto-converts — flagged as field-note. High confidence on pricing.
+
+### Calibration
+- **Hold at 6/run, even after replay**. Replay batch ran cleanly with zero skips; no signal to push higher.
+- **Add `git log --oneline -5` against remote BEFORE EVERY EDIT as a mandatory check** in the run-flow.
+

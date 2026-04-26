@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 938,
+    "totalCount": 944,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -50,7 +50,7 @@
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
     "lastUpdated": "2026-04-26",
-    "totalPrograms": 938,
+    "totalPrograms": 944,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
@@ -41004,6 +41004,278 @@
       "scholarshipAid": "Fully sponsored — $50 nominal family fee is the only cost, and many AAUW branches waive even that for families in need.",
       "registrationUrl": "https://www.aauw.org/resources/programs/tech-trek/",
       "howToStart": "Talk to your daughter's 7th-grade math/science teacher about nomination. Then apply through your local AAUW branch — nominations typically due late winter for summer camp."
+    },
+    {
+      "name": "Camp Wonderopolis (Free Online Summer Learning)",
+      "provider": "National Center for Families Learning (NCFL)",
+      "category": "non-traditional",
+      "type": "summer",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free — no fee, no credit card to register"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (NCFL HQ: Louisville, KY)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling enrollment — runs through summer and year-round",
+      "description": "Free virtual summer-learning destination from the National Center for Families Learning, built around STEM and literacy 'Wonders' boosted by hands-on Maker experiments. Each edition is themed; the current edition is music, with six tracks (Production & Composition, Science & Math, Health, Instruments, Careers, History & Culture). Builds vocabulary, science background knowledge, reading comprehension, and critical thinking. Counselor accounts available for parents, librarians, and after-school staff who want to run a small group. 350,000+ learners worldwide.",
+      "url": "https://camp.wonderopolis.org/",
+      "registrationUrl": "https://camp.wonderopolis.org/register",
+      "scholarshipAid": "Not applicable — program is fully free",
+      "howToStart": "Visit camp.wonderopolis.org, register as a Camper (kid) or Counselor (adult), pick a Wonder track, and start exploring. No download required.",
+      "_source": "https://camp.wonderopolis.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Camp CrunchLabs (12-Week Summer Build Box Subscription, Mark Rober)",
+      "provider": "CrunchLabs (Mark Rober)",
+      "category": "stem",
+      "type": "summer",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 27,
+        "type": "paid",
+        "display": "$329.40 for the full 12-week summer program (~$27.45/week); auto-rolls into month-to-month $27.45/month after"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online + at-home build kits (CrunchLabs HQ: Sunnyvale, CA)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — sign up before summer to start with Week 1; weekly boxes ship throughout summer",
+      "description": "Twelve-week virtual summer engineering camp built around hands-on Build Boxes shipped weekly to your door, paired with exclusive videos hosted by Mark Rober (former NASA engineer / 'Glitter Bomb' YouTuber, 30M+ subscribers). Designed for ages 8-12 (most appropriate for grades 3-7). Each box contains a tinkering project with mechanical, magnetic, or electronic components, plus a video walkthrough and engineering challenges. Each box also enters child into a 'Platinum Ticket' drawing for an in-person trip to CrunchLabs to build with Mark Rober. Standout: combines physical construction with screen-based coaching — rare in the online camp space.",
+      "url": "https://www.crunchlabs.com/products/camp-crunchlabs-weekly-subscription",
+      "registrationUrl": "https://www.crunchlabs.com/products/camp-crunchlabs-weekly-subscription",
+      "scholarshipAid": "No formal scholarship program identified; gift subscriptions sometimes covered by employer-sponsored programs",
+      "howToStart": "Order Camp CrunchLabs subscription at crunchlabs.com — choose annual prepay ($329.40) or monthly ($29.95) plan, child receives weekly boxes and access to videos. Cancel anytime after week 12 to avoid auto-renewal.",
+      "_source": "https://www.crunchlabs.com/products/camp-crunchlabs-weekly-subscription",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Generation Genius — K-8 Online Science Videos & Lessons",
+      "provider": "Generation Genius (partnered with NSTA)",
+      "category": "stem",
+      "type": "year-round",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "14-day free trial (no credit card); paid family/teacher subscriptions thereafter (price not posted publicly — check site)"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (Generation Genius HQ: Brooklyn, NY)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — free trial available year-round; subscription month-to-month or annual",
+      "description": "Curriculum-aligned online science platform for K-8 with 117+ video lessons covering 100% of the Next Generation Science Standards (NGSS). Each video is paired with full lesson plans, hands-on activities, vocabulary, reading materials, and quizzes. Partnered with the National Science Teaching Association (NSTA) and aligned to all U.S. state standards. Videos are self-contained and grade-appropriate — useful for summer enrichment, summer camps, homeschool, or supplementing school curriculum. The 14-day free trial is no-card so safe for parents to test-drive.",
+      "url": "https://www.generationgenius.com/",
+      "registrationUrl": "https://www.generationgenius.com/subscribe/",
+      "scholarshipAid": "Title I and underserved-school free access programs available — apply via website 'School Plan' tab",
+      "howToStart": "Visit generationgenius.com, start the 14-day free trial (no credit card), browse by grade and topic, then convert to family or teacher subscription if continuing.",
+      "_source": "https://www.generationgenius.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "paidSubscriptionPrice"
+      ]
+    },
+    {
+      "name": "Mystery Science — K-5 Elementary Science (Free Trial Through June 30, 2026)",
+      "provider": "Mystery Science (a Discovery Education company)",
+      "category": "stem",
+      "type": "year-round",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "Free trial through June 30, 2026 with access to select units, mini-lessons, and hands-on activities; paid memberships thereafter (price not on public landing page)"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (parent: Discovery Education, Charlotte, NC)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — free trial currently extended through June 30, 2026",
+      "description": "Open-and-go elementary science lessons used in 50%+ of U.S. elementary schools each month. Each Mystery starts with an everyday-life question ('Why do leaves change color?') and walks K-5 students through a video story, a hands-on activity using only common household supplies, and a reflection. Strong fit for summer enrichment with parents/caregivers — minimal teacher prep required. Now operates under Discovery Education following acquisition. Summer 2026 curriculum updates are posted on their support site.",
+      "url": "https://mysteryscience.com/",
+      "registrationUrl": "https://mysteryscience.com/",
+      "scholarshipAid": "Free home-edition access historically offered during summer months; check site for current household-account terms",
+      "howToStart": "Sign up for free trial at mysteryscience.com (no credit card before June 30, 2026), pick grade band, browse Mysteries by topic, queue 1-2 per week as summer enrichment.",
+      "_source": "https://support.mysteryscience.com/hc/en-us/sections/49909437097747-Science-Curriculum-Updates-Summer-2026",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "paidSubscriptionPrice"
+      ]
+    },
+    {
+      "name": "Maker Camp by Make: (Free Online Summer Maker Program)",
+      "provider": "Make: Community / Make: Magazine",
+      "category": "stem",
+      "type": "summer",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free to register and access; physical project supplies vary by activity"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (Make: HQ: San Francisco, CA)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — 6-week summer session; can be run anytime by family or community group",
+      "description": "Free 6-week online (and DIY in-person) summer camp from Make: Magazine for kids interested in DIY, making, hacking, electronics, fabrication, and STEAM. 200+ step-by-step project library spanning coding, electronics, fabrication, paper, textiles, music, and more. Projects can be completed solo at home or run as a community group at a library, school, or makerspace — over 2,000 registered Maker Camps worldwide each summer. Badge system rewards completion. All ages welcome; most projects fit ages 7-15 with adult support for younger children.",
+      "url": "https://makercamp.make.co/",
+      "registrationUrl": "https://makercamp.make.co/",
+      "scholarshipAid": "Not applicable — program is fully free; supplies for individual projects are sourced by family",
+      "howToStart": "Register a free account at makercamp.make.co (parent or community leader), browse the project library or follow weekly themed adventures, gather supplies, build projects with kids, optionally claim badges.",
+      "_source": "https://makercamp.make.co/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "BrainPOP & BrainPOP Jr. — K-8 Animated Online Learning",
+      "provider": "BrainPOP",
+      "category": "non-traditional",
+      "type": "year-round",
+      "scope": "national-remote",
+      "cost": {
+        "amount": 129,
+        "type": "paid",
+        "display": "Family $129/yr (Grades 3-8); +$30/yr or $159/yr combo to add BrainPOP Jr. (K-3); monthly plans ~$30/mo; 30-day free trial"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (BrainPOP HQ: New York, NY)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — month-to-month or annual subscriptions; 30-day free trial available year-round",
+      "description": "Long-running animated online learning platform — Tim and Moby host short topical videos with quizzes, vocabulary, and games for grades 3-8 (BrainPOP) and K-3 (BrainPOP Jr.). Topics span science, math, social studies, English, arts & music, health, and technology. Strong choice for summer maintenance learning and reluctant readers, since the format is short (3-5 min videos) and self-paced. Family subscription works across multiple devices and child profiles. 30-day free trial means parents can sample before committing for summer.",
+      "url": "https://www.brainpop.com/at-home",
+      "registrationUrl": "https://www.brainpop.com/discover",
+      "scholarshipAid": "Title I school free-access programs; military-family discounts have been offered historically — verify current program",
+      "howToStart": "Start the 30-day free trial at brainpop.com/at-home (credit card required to begin trial — cancel anytime), set up child profiles by grade, queue summer-relevant topics or follow a topical playlist.",
+      "_source": "https://www.brainpop.com/at-home",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
     }
   ]
 }
