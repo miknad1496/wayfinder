@@ -5,14 +5,15 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries per run (run 3 stepped down to 5 to broaden metro coverage outside Seattle/Bellevue core)
+- batch_size: 5 entries per run (run 3 stepped outside Seattle into secondary WA metros; held at 5; 0 skips)
 - typical_run_duration: ~10 min
 - typical_skip_rate: 0% (runs 1-3)
-- last_calibration_change: 2026-04-26 — run 3 dialed back to 5 to spread across Bellingham/Olympia/Bainbridge in addition to Bellevue. 6/run is fine for anchor-heavy regions; 5/run is the right cadence when reaching for new metros.
+- last_calibration_change: 2026-04-26 — held at 5/run for first non-Seattle batch; consider returning to 6 next run since 0 skips again
 
 ## EFFECTIVE PATTERNS (validated)
 
 - WA-first metros that work well: **Seattle (museums/aquarium/zoo/theater/music), Bellevue (children's museum, Galileo), Vashon Island (Camp Fire), Orcas Island (YMCA), Tacoma (Point Defiance Zoo)**.
+- **Secondary WA metros now confirmed productive (run 3)**: Bellingham (Whatcom Family YMCA), Bainbridge Island (IslandWood, KiDiMu), Vancouver WA (City Parks & Rec). Each city yielded 1-2 high/medium-confidence entries on first pass. Bellevue (Music Works Northwest) is also still mining well beyond Galileo + KidsQuest.
 - ANCHOR ORG TYPES that reliably yield ES/MS programs:
   - **Children's museums** — KidsQuest (Bellevue), Seattle Children's Museum, etc. Most run summer camps for ages 4-10.
   - **Natural-history / science museums** — Burke Museum (Seattle), Pacific Science Center. Day-camps with grade-banded sessions. (PSC already in DB before grinder started — dedup catch worked.)
@@ -23,9 +24,6 @@
   - **Children's theater** — Seattle Children's Theatre Drama School. Age-banded creative drama camps.
   - **National camp networks (regional sites)** — Camp Galileo (Bellevue + Seattle locations). Public, predictable curriculum + Early Bird discount structure.
   - **University youth programs** — already well-covered in existing DB (Robinson Center, UW Engineering, DigiPen).
-- **Branded YMCA day camps in mid-size WA cities** (e.g., Whatcom Family YMCA Discovery Camp) reliably yield: confirmed grades, transparent member/non-member pricing, sliding-scale financial aid, and an online aid request form. Strong run-3 pattern.
-- **Outdoor-education campuses with day-camp programs** (IslandWood) are anchor-strength: real campus, multi-year operating history, age-banded sessions, transparent pricing — even when financial aid funds are exhausted for the year, the program itself is fully verifiable.
-- **Youth orchestras with summer camps** (BYSO) are excellent ES/MS finds: explicit grade ranges, school-year-of-instrument prerequisites, 100% tuition-aid commitments are common.
 - WebSearch → search-result snippets are reliable for confirming registration windows, age tiers, and scholarship existence. Pages with heavy WP/Squarespace/Cloudflare protection (e.g., zoo.org renders, KidsQuest, Coyote Central) need triangulation; **search-result snippets often have the FAQ accordion content** which is a goldmine.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
@@ -55,11 +53,12 @@
 - **Camp Galileo Bellevue**: rising K-5, 9am-3pm, three rotations daily. Early Bird by Feb 28, 2026 saves $50/wk; multi-week saves $25/wk after week 1. National network = trusted operator.
 - **Music Center of the Northwest**: Music Together summer camp July 20-24, 12:30-4:00pm, $295. Tuition discounts + scholarships. Phone (206) 526-8443.
 - **Point Defiance Zoo & Aquarium (Tacoma)**: age-tiered camps from Little Explorers through teen Zoo Camp. Member reg opened Mar 10 2026; general Mar 12. Scholarships for Pierce County residents on EBT/WIC/foster/kinship.
-- **Whatcom Family YMCA Discovery Camp (Bellingham)**: grades 1-5 Fall 2026, 10 themed weeks (Extreme Earth, Grossology, Ocean Odyssey, Maker Mania, Weather Wizards, Space Explorers, Arctic Adventures, Secret Agents Academy, Glow Lab, Art Attack Studio) June 15-Aug 21, 2026. $355 member / $405 community per week, $25 deposit. Financial assistance + sliding fee. Registration opened Feb 2 2026 at 6:30am.
-- **Music Works Northwest (Bellevue)**: ages 4-16. Voice (4-6), Musical (6-9), I Love Music themed weeks, Electronic Music (12-16). $330 (3-day) - $530 (full week). 9:30-3:30pm. Welcomes neurodivergent kids — flag accommodations before registering. URL musicworksnw.org/summer-camps.
-- **Hands On Children's Museum (Olympia)**: ages 3-9 (5yo must have completed K). Half-day or full-day camps. Tuition NOT on landing page — call (360) 956-0818 ext. 103 / reservations@hocm.org. $25 half-day / $50 full-day non-refundable deposit per spot. Forms due 2 weeks before camp. Medium-confidence on cost.
-- **IslandWood (Bainbridge Island)**: 255-acre campus. Pre-K/K half-day Garden Explorers $346, 1st-2nd Builder's Quest $474, plus full-day grades 1-8 marine science / cooking / art. $100 non-refundable processing fee per camp. Aftercare $25/day. Financial aid funds for 2026 currently exhausted; waitlist via interest form. URL islandwood.org/outdoor-summer-day-camps-2026.
-- **Bellevue Youth Symphony Orchestra (Bellevue)**: Summer Strings grades 1-6 / ages 6-11 July 6-10 2026 $550. Summer Symphony grades 4-8 / ages 10-14 July 13-17 2026 $600. SMI for ages 14+ July 20-24. Mon-Fri 9am-3pm. **100% of requested tuition assistance met** via Charlotte Field Scholarship. Registration closes May 31 (some sessions waitlist-only as of late April).
+
+- **Whatcom Family YMCA (Bellingham)**: 6 distinct camp tracks Pre-K through grade 8 (Minis, Back to School, Discovery, Outdoor Day, Sports, Trail Blazers). Drupal/openy_carnation site (the YMCA standard). Cost varies by track — registrar@whatcomymca.org or 360-255-0585. Medium-confidence on aggregate cost.
+- **Music Works Northwest (Bellevue)**: ages 4-16 across 4 tracks; June 22-26 ($530) and June 29-July 1 ($330) sessions; 9:30am-3:30pm. Inclusive of neurodivergent students. Tuition assistance available. Wix-hosted but search snippets surface clean pricing/dates. High confidence.
+- **IslandWood (Bainbridge Island)**: full-day 1st-8th and half-day Pre-K/K. 2026 financial assistance funds already exhausted; waitlist form available. Cloudflare-blocked at curl level (HTTP 403); search snippets confirmed via SeattlesChild + IslandWood meta. $100 non-refundable processing fee per camp. Medium confidence on tuition + week-by-week dates.
+- **KiDiMu (Bainbridge Island)**: ages 3-12 in 4-hour half-day sessions (9-12 or 12-3); $350 non-member / $325 member; +$20/hr early-late care. KiDiMu's site loaded clean (HTTP 200). High confidence.
+- **City of Vancouver Parks & Rec**: ages 6-10 (grades 1-5) at Marshall + Firstenburg community centers; $220 resident / $275 non-resident; Everybody Plays! 50% scholarship auto-applies for eligible families. Registration April 15 (residents) / April 16 (non-residents). High confidence.
 
 ## DATA QUALITY FLAGS
 
@@ -82,7 +81,7 @@
 
 - Best way to flag camps requiring district residency vs open-enrollment? (Point Defiance scholarships are Pierce-County-only — currently noted in description + scholarshipAid string. Consider top-level `scholarshipResidencyRequired` boolean future-iteration.)
 - Should we have a separate scholarshipAid (Y/N) field at top level vs inline in description? Currently using both: top-level `scholarshipAid` string AND mention in description.
-- Future WA targets: Vancouver WA, Olympia non-museum (Yashiro Japanese Garden, Olympia Family Theater), Spokane alternatives to Mobius (Spokane County Library / Manito Park / Spokane Children's Theatre), Bainbridge Island Park & Rec native arts camps, Bellingham Children's Museum / Whatcom Museum, KCLS Summer Reading offshoots, Tacoma Children's Museum, Seattle Public Library Summer Reading offshoots.
+- Future WA targets remaining: Spokane (Mobius Discovery Center — still deferred), Olympia (Hands On Children's Museum), BARN Bainbridge youth artisan camps (8-18), Bainbridge Island Museum of Art summer camps, Bellingham SPARK Museum, Tacoma — TAM and Children's Museum of Tacoma, Spokane Riverfront Park kids programs, Seattle Public Library Summer Reading offshoots, Northwest Outdoor Center youth kayak (Seattle). Done in run 3: Whatcom Family YMCA, Music Works NW, IslandWood, KiDiMu, City of Vancouver P&R.
 
 ## DEFERRED CANDIDATES
 
@@ -94,41 +93,4 @@
 |------|-------|-------|---------|-------|---------|
 | 2026-04-26 | 1 | 5 (3hi/2md) | 0 | WA — Seattle/Bellevue/Vashon/Orcas | KidsQuest (md), Coyote Central (hi), Burke (hi), Camp Orkila (hi), Camp Sealth (md). Bootstrapped progress file + lessons. |
 | 2026-04-26 | 2 | 6 (4hi/3md... wait 4hi/2md after correction) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Woodland Park Zoo (hi), Seattle Aquarium (md cost), Seattle Children's Theatre (md cost+dates), Camp Galileo Bellevue (hi), Music Center NW (hi), Point Defiance Zoo (hi). Caught Pacific Science Center as existing-DB duplicate; substituted Point Defiance. New writable-clone workaround documented. |
-| 2026-04-26 | 3 | 5 (4hi/1md) | 0 | WA — Bellingham/Bellevue/Olympia/Bainbridge | Whatcom Family YMCA Discovery Camp (hi), Music Works NW (hi), Hands On Children's Museum Olympia (md cost), IslandWood Bainbridge (hi), BYSO Summer Music Camps (hi). First run reaching outside core Seattle/Eastside metros — three new WA cities covered. |
-
-
-## INSIGHT CAPTURE PROTOCOL (added 2026-04-26)
-
-While researching each program, opportunistically capture **parent-facing insights** that go beyond standard fields. These are the "I wouldn't have known unless I'd talked to 50 parents" facts that make Wayfinder genuinely valuable.
-
-### What counts as a capture-worthy insight
-
-- **Hidden scholarship details** — "Org X has 100% aid but landing page only says 'sliding scale'"; specific tier breakdowns
-- **Registration timing edge cases** — "Members get access 3 weeks before general; popular sessions sell out in <48h"
-- **Age-flexibility** — "Listed ages 6-12 but accepts 5 if you email coordinator"
-- **Name vs reality mismatches** — "Marketed as 'STEM camp' but actually 70% arts/crafts"
-- **Hidden discount stacks** — "Multi-week + sibling discounts stack with Early Bird"
-- **CIT / volunteer pathways** — "Free attendance for 13-15 year olds via CIT pipeline"
-- **Counter-intuitive quality** — "Free parks dept camp at this site is run by the same instructors as the $500/wk specialty camp"
-- **Site-specific gotchas** — "Downtown site is loud + cramped vs suburban site has full grounds — same brand, different experience"
-- **Real cost vs sticker price** — fees beyond tuition, refund policies
-
-### How to capture
-
-After processing each program, if you discovered ≥1 capture-worthy insight, append to `backend/data/scraped/summer-camp-insights.json` → find the section with `id: "field-notes"` → PREPEND new items to its `items[]` array (most recent at top).
-
-Format each item:
-```json
-{ "label": "[Org name] — [Insight type in 4-7 words]", "detail": "[1-2 sentence specific actionable detail with org named]" }
-```
-
-Cap section at 30 items. Drop oldest if exceeding. Dedup by label substring match.
-
-**Quality bar**: specific, actionable, parent-facing. "This camp is fun" doesn't qualify. "PSC scholarship form is 1 page and includes low-friction pay-stub upload — most parents skip because they assume it's complex" qualifies.
-
-### NOT to capture
-- Generic facts already in entry's structured fields
-- Marketing fluff
-- Anything you can't trace to a specific fetched source
-- Speculation
-- Anything stale within 30 days
+| 2026-04-26 | 3 | 5 (3hi/2md) | 0 | WA — Bellingham/Bellevue/Bainbridge/Vancouver (secondary metros) | Whatcom Family YMCA (md cost), Music Works NW (hi), IslandWood (md cost+dates), KiDiMu (hi), City of Vancouver P&R (hi). First non-Seattle WA batch; 0 skips, 0 dedup hits. WA progress 16/30. |
