@@ -1644,11 +1644,11 @@
           <p class="form-subtitle">For elementary &amp; middle school parents. Plan tailored summers, browse curated camps, get insider hacks, or ask Wayfinder anything K-8.</p>
         </div>
 
-        <div class="tool-tabs" style="display:flex;gap:4px;margin-bottom:14px;border-bottom:1px solid #e5e7eb;">
+        <div class="tool-tabs" style="display:flex;gap:4px;margin-bottom:14px;border-bottom:1px solid #e5e7eb;flex-wrap:wrap;">
           <button id="scTabBrowse" class="sc-tab active" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid #2563eb;color:#1e3a8a;font-weight:600;cursor:pointer;">Browse Camps</button>
+          <button id="scTabPlanner" class="sc-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">📅 Summer Planner</button>
           <button id="scTabPlan" class="sc-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Plan My Summer ✨</button>
           <button id="scTabInsights" class="sc-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Insights &amp; Hacks</button>
-          <button id="scTabAsk" class="sc-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Ask Wayfinder ✨</button>
         </div>
 
         <!-- BROWSE PANEL: K-8 only -->
@@ -1687,6 +1687,33 @@
           <div id="scBrowseResults" class="tool-results"></div>
         </div>
 
+        <!-- SUMMER PLANNER PANEL — dedicated calendar homebase -->
+        <div id="scPlannerPanel" style="display:none;">
+          <div style="background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border-radius:10px;padding:18px 20px;margin-bottom:14px;">
+            <h3 style="margin:0 0 4px;font-size:17px;font-weight:700;">Your Summer 2026 Planner</h3>
+            <p style="margin:0;font-size:13px;color:#dbeafe;">The central homebase for your kid's summer. Add programs, see them on the calendar, track total cost — auto-saves across sessions.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px;">
+              <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:11px;color:#dbeafe;opacity:0.9;text-transform:uppercase;letter-spacing:0.05em;">Events</div>
+                <div id="scPlannerStatEvents" style="font-size:22px;font-weight:700;margin-top:2px;">0</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:11px;color:#dbeafe;opacity:0.9;text-transform:uppercase;letter-spacing:0.05em;">Weeks Planned</div>
+                <div id="scPlannerStatWeeks" style="font-size:22px;font-weight:700;margin-top:2px;">0 / 13</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:11px;color:#dbeafe;opacity:0.9;text-transform:uppercase;letter-spacing:0.05em;">Total Cost</div>
+                <div id="scPlannerStatCost" style="font-size:22px;font-weight:700;margin-top:2px;">$0</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 12px;">
+                <div style="font-size:11px;color:#dbeafe;opacity:0.9;text-transform:uppercase;letter-spacing:0.05em;">Days to Summer</div>
+                <div id="scPlannerStatCountdown" style="font-size:22px;font-weight:700;margin-top:2px;">—</div>
+              </div>
+            </div>
+          </div>
+          <div id="scPlannerCalendarWrap"></div>
+        </div>
+
         <!-- PLAN PANEL -->
         <div id="scPlanPanel" style="display:none;">
           <p class="form-subtitle" style="margin:8px 0 16px;">Tell us about your kid &amp; situation. Wayfinder will build a tailored summer plan with anchor + specialty + wildcard recommendations, scholarship guidance, and watch-outs specific to YOUR family. <button class="wf-help-btn" data-help="Uses Wayfinder's AI to assemble a calibrated K-8 summer strategy. Free; no LLM cost passed to you. Output is JSON-structured: anchor commitment, specialty experiences, wildcard, scholarship note, watch-outs, next step.">?</button></p>
@@ -1694,7 +1721,7 @@
             <select id="scPlanGrade" class="tool-filter-select">
               <option value="K">Kindergarten</option><option value="1">1st grade</option><option value="2">2nd grade</option><option value="3" selected>3rd grade</option><option value="4">4th grade</option><option value="5">5th grade</option><option value="6">6th grade</option><option value="7">7th grade</option><option value="8">8th grade</option>
             </select>
-            <input type="text" id="scPlanCity" class="tool-filter-input" placeholder="City (e.g. Bellevue)">
+            <input type="text" id="scPlanCity" class="tool-filter-input" placeholder="City (e.g. Bellevue)" style="font-family:inherit;font-size:13px;padding:9px 12px;">
             <select id="scPlanState" class="tool-filter-select">
               <option value="WA">Washington</option><option value="CA">California</option><option value="NY">New York</option><option value="TX">Texas</option><option value="MA">Massachusetts</option><option value="IL">Illinois</option><option value="FL">Florida</option><option value="MI">Michigan</option><option value="OR">Oregon</option><option value="VA">Virginia</option><option value="MD">Maryland</option><option value="CO">Colorado</option><option value="NJ">New Jersey</option><option value="PA">Pennsylvania</option><option value="GA">Georgia</option><option value="NC">North Carolina</option>
             </select>
@@ -1717,7 +1744,7 @@
             <label style="font-size:13px;color:#475569;"><input type="checkbox" id="scPlanSleepaway"> Open to sleepaway / overnight camp</label>
             <label style="font-size:13px;color:#475569;"><input type="checkbox" id="scPlanScholarship"> Need scholarship/aid info</label>
           </div>
-          <textarea id="scPlanCareerCurious" class="tool-filter-input" rows="2" placeholder="Anything specific your kid is curious about? (optional, e.g. 'wants to try coding' or 'asks about marine biology')" style="width:100%;margin-bottom:10px;font-family:inherit;"></textarea>
+          <textarea id="scPlanCareerCurious" rows="2" placeholder="Anything specific your kid is curious about? (e.g. wants to try coding, asks about marine biology)" style="width:100%;margin-bottom:10px;font-family:inherit;font-size:13px;padding:10px 12px;border:1px solid #cfdcef;border-radius:6px;line-height:1.5;color:#1f2328;"></textarea>
           <button id="scPlanGenerate" class="form-btn" style="width:100%;padding:12px;font-size:14px;">Build My Summer Plan ✨</button>
           <div id="scPlanResult" style="margin-top:18px;"></div>
         </div>
@@ -1728,24 +1755,6 @@
           <div id="scInsightsContent"><p style="color:#94a3b8;padding:12px;">Loading...</p></div>
         </div>
 
-        <!-- ASK PANEL -->
-        <div id="scAskPanel" style="display:none;">
-          <p class="form-subtitle" style="margin:8px 0 14px;">Free-form K-8 question — Wayfinder calibrates its answer for your kid's grade, location, and situation. <button class="wf-help-btn" data-help="Uses Wayfinder's AI tuned for K-8 parent questions. Examples: 'How do I pick between YMCA Camp Orkila and Camp Sealth?' / 'My 8-year-old loves marine biology, what should we do?' / 'When does Pacific Science Center scholarship app open?'">?</button></p>
-          <div class="tool-filters" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin-bottom:10px;">
-            <select id="scAskGrade" class="tool-filter-select">
-              <option value="">Any grade</option>
-              <option value="K">Kindergarten</option><option value="1">1st</option><option value="2">2nd</option><option value="3">3rd</option><option value="4">4th</option><option value="5">5th</option><option value="6">6th</option><option value="7">7th</option><option value="8">8th</option>
-            </select>
-            <input type="text" id="scAskCity" class="tool-filter-input" placeholder="City (optional)">
-            <select id="scAskState" class="tool-filter-select">
-              <option value="">State (optional)</option>
-              <option value="WA">WA</option><option value="CA">CA</option><option value="NY">NY</option><option value="TX">TX</option><option value="MA">MA</option><option value="IL">IL</option><option value="FL">FL</option><option value="MI">MI</option><option value="OR">OR</option>
-            </select>
-          </div>
-          <textarea id="scAskQuestion" rows="4" placeholder="Ask anything — sleepaway readiness, scholarship windows, specific camp recommendations, registration timing, budget allocation, what your kid would love..." style="width:100%;padding:12px;border:1px solid #cfdcef;border-radius:8px;font-family:inherit;font-size:14px;margin-bottom:10px;"></textarea>
-          <button id="scAskSubmit" class="form-btn" style="width:100%;padding:12px;font-size:14px;">Ask Wayfinder ✨</button>
-          <div id="scAskResult" style="margin-top:18px;"></div>
-        </div>
       </div>
     </div>
 

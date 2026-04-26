@@ -5456,9 +5456,9 @@ function openSummerCamps() {
 function _initSC() {
   // Tab switching
   document.getElementById('scTabBrowse').addEventListener('click', () => { _scSetTab('Browse'); searchSCBrowse(); });
+  document.getElementById('scTabPlanner').addEventListener('click', () => { _scSetTab('Planner'); renderSCPlanner(); });
   document.getElementById('scTabPlan').addEventListener('click', () => _scSetTab('Plan'));
   document.getElementById('scTabInsights').addEventListener('click', () => { _scSetTab('Insights'); loadSCInsights(); });
-  document.getElementById('scTabAsk').addEventListener('click', () => _scSetTab('Ask'));
 
   // Browse tab — wire filters + search button
   document.getElementById('scBrowseSearchBtn').addEventListener('click', searchSCBrowse);
@@ -5488,17 +5488,12 @@ function _initSC() {
   });
   document.getElementById('scPlanGenerate').addEventListener('click', generateSCPlan);
 
-  // Ask tab
-  document.getElementById('scAskSubmit').addEventListener('click', submitSCAsk);
-  document.getElementById('scAskQuestion').addEventListener('keydown', e => {
-    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submitSCAsk();
-  });
 
   _scInitialized = true;
 }
 
 function _scSetTab(name) {
-  for (const t of ['Browse','Plan','Insights','Ask']) {
+  for (const t of ['Browse','Planner','Plan','Insights']) {
     const tab = document.getElementById('scTab' + t);
     const panel = document.getElementById('sc' + t + 'Panel');
     if (t === name) {
@@ -5865,6 +5860,54 @@ function _scShowCalForm(prefill = {}) {
   document.getElementById('scCalEvCancel').addEventListener('click', () => { form.style.display = 'none'; });
 }
 
+
+
+// ─── SUMMER PLANNER PANEL — calendar homebase with stats ─────────
+function renderSCPlanner() {
+  const wrap = document.getElementById('scPlannerCalendarWrap');
+  if (!wrap) return;
+  // Render the calendar (reuses _scScheduleCanvasHtml)
+  wrap.innerHTML = _scScheduleCanvasHtml();
+  _scWireVisualTools(); // wire calendar interactions
+  _scUpdatePlannerStats();
+}
+
+function _scUpdatePlannerStats() {
+  let events = [];
+  try { events = JSON.parse(localStorage.getItem('wf_sc_cal_events') || '[]'); } catch {}
+  document.getElementById('scPlannerStatEvents').textContent = events.length;
+
+  // Weeks planned: count distinct weeks covered by any event (June-August = 13 weeks)
+  const weekStart = (d) => { const x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.getDate() - x.getDay()); return x.getTime(); };
+  const weekKeys = new Set();
+  for (const ev of events) {
+    if (!ev.startDate) continue;
+    const start = new Date(ev.startDate);
+    const end = ev.endDate ? new Date(ev.endDate) : start;
+    let cur = new Date(start);
+    while (cur <= end) {
+      weekKeys.add(weekStart(cur));
+      cur.setDate(cur.getDate() + 1);
+    }
+  }
+  document.getElementById('scPlannerStatWeeks').textContent = weekKeys.size + ' / 13';
+
+  // Total cost (sum of all event.cost — strip $ and commas)
+  let totalCost = 0;
+  for (const ev of events) {
+    if (ev.cost) {
+      const n = parseFloat(String(ev.cost).replace(/[$,]/g,''));
+      if (!isNaN(n)) totalCost += n;
+    }
+  }
+  document.getElementById('scPlannerStatCost').textContent = '$' + totalCost.toLocaleString();
+
+  // Days to summer (June 15 of current year)
+  const summerStart = new Date(new Date().getFullYear(), 5, 15);
+  const days = Math.ceil((summerStart - Date.now()) / (1000*60*60*24));
+  document.getElementById('scPlannerStatCountdown').textContent = days > 0 ? days : 'Now';
+}
+
 // ─── Wire up interactive widgets after render ────────────────────
 function _scWireVisualTools() {
   // Calendar hover
@@ -5967,15 +6010,15 @@ document.addEventListener('click', (e) => {
 // Visual registration timeline — horizontal bar showing key K-8 summer-camp milestones
 function _scTimelineHtml() {
   const months = [
-    { label: 'Dec', detail: 'Member registration opens at top museums/zoos. Premium camps fill in days.', heat: 3 },
-    { label: 'Jan', detail: 'Member-window peak. Sleepaway camp registration opens (YMCA, Camp Fire).', heat: 5 },
-    { label: 'Feb', detail: 'Early Bird discount windows close (Camp Galileo etc.). Multi-week discounts stack.', heat: 5 },
-    { label: 'Mar', detail: 'General public registration opens at most Seattle-metro institution camps.', heat: 5 },
-    { label: 'Apr', detail: 'Most popular sessions full. Off-the-radar camps still open. Scholarship windows close mid-May.', heat: 4 },
-    { label: 'May', detail: 'Last-call registration. Many scholarships still being awarded. District lists publish.', heat: 3 },
-    { label: 'Jun', detail: 'Camp season begins. Cancellation lists move fast — call directly. Late sessions open.', heat: 2 },
-    { label: 'Jul', detail: 'Mid-summer. Some camps add late August sessions if demand exists.', heat: 1 },
-    { label: 'Aug', detail: 'Late-summer + back-to-school enrichment registration opens for fall.', heat: 1 },
+    { label: 'Dec', detail: 'Member registration opens at top museums/zoos (PSC, WPZ, Burke). Premium camps fill in days. If you\'re not yet a member, the membership often pays for itself just from earlier access. Holiday camps + winter intersessions fill mid-month.', heat: 3 },
+    { label: 'Jan', detail: 'Member-window peak. Sleepaway camp registration opens (YMCA Camp Orkila, Camp Sealth, Camp Fire residential camps). District summer enrichment lists start trickling out. NSLI-Y deadline (early Nov already closed but JCamp, AAJA windows open).', heat: 5 },
+    { label: 'Feb', detail: 'Early Bird discount windows close (Camp Galileo, iD Tech Bellevue, etc.). Multi-week + sibling discounts stack. PSC + WPZ scholarship application windows open AND close — this is the high-leverage scholarship month. SUMaC, Mathcamp, PROMYS deadlines.', heat: 5 },
+    { label: 'Mar', detail: 'General public registration opens at most Seattle-metro institution camps. Point Defiance, Burke, Aquarium, Children\'s Theatre — popular sessions sell out within 2-3 weeks of opening. AoPS + iD Tech online cohort registration windows.', heat: 5 },
+    { label: 'Apr', detail: 'Most popular sessions full. Off-the-radar specialty camps still open. Most scholarship windows close mid-May. School district summer enrichment lists publish — often the best-kept secret in the local market.', heat: 4 },
+    { label: 'May', detail: 'Last-call registration windows close. Many scholarships still being awarded — don\'t assume you\'re too late. Cancellation slot openings start mid-month at premium camps. Final scholarship review at PSC + Camp Sealth.', heat: 3 },
+    { label: 'Jun', detail: 'Camp season begins. Cancellation lists move fast — call directly, don\'t just check website. Some camps add late sessions if demand exists. Library + parks dept summer programs all in full swing.', heat: 2 },
+    { label: 'Jul', detail: 'Mid-summer. Some camps add late August sessions if demand exists. Mid-camp transitions (kids switching from one camp to another). Time to start thinking about back-to-school enrichment for fall.', heat: 1 },
+    { label: 'Aug', detail: 'Late-summer + back-to-school enrichment registration opens for fall. After-school program signups (chess, music, math). Library/parks dept fall program calendars publish late month.', heat: 1 },
   ];
   const bars = months.map(m => {
     const intensity = Math.round(m.heat * 30 + 60); // 60-210 range for blue intensity
@@ -6083,34 +6126,6 @@ function renderSCPlan(data) {
     ${p.nextStep ? `<div style="margin-top:14px;background:#1e3a8a;color:#fff;padding:12px 14px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
     <p style="font-size:11px;color:#94a3b8;margin-top:12px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated plan — verify program details directly.')}</p>
   `;
-}
-
-async function submitSCAsk() {
-  const question = document.getElementById('scAskQuestion').value.trim();
-  if (question.length < 5) { alert('Please enter a question (at least 5 characters).'); return; }
-  const grade = document.getElementById('scAskGrade').value;
-  const city = document.getElementById('scAskCity').value.trim();
-  const state = document.getElementById('scAskState').value;
-
-  const result = document.getElementById('scAskResult');
-  result.innerHTML = '<p style="color:#94a3b8;padding:12px;">✨ Wayfinder is thinking... (5-15 sec)</p>';
-  try {
-    const res = await fetch(`${API_BASE}/summer-camps/ask`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question, grade, city, state })
-    });
-    const data = await res.json();
-    if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
-    result.innerHTML = `
-      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;">
-        <p style="margin:0 0 8px;font-size:13px;color:#334155;line-height:1.6;white-space:pre-wrap;">${_esc(data.answer || '')}</p>
-        <p style="font-size:11px;color:#94a3b8;margin:10px 0 0;font-style:italic;">Wayfinder K-8 advisor (${_esc(data.mode || 'AI')})</p>
-      </div>
-    `;
-  } catch (e) {
-    result.innerHTML = `<p style="color:#cf222e;padding:12px;">Ask failed: ${e.message}</p>`;
-  }
 }
 
 // ─── HELP TOOLTIP SYSTEM (global) ──────────────────────────────
