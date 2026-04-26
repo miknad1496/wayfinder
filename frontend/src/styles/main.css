@@ -5054,3 +5054,36 @@ html, body { overflow-x: hidden; }
 @media (max-width: 400px) {
   .sai-form-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Wayfinder global help tooltip system */
+.wf-help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #cfdcef;
+  color: #1e3a8a;
+  font-size: 11px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: middle;
+  padding: 0;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+.wf-help-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.wf-help-popup {
+  animation: wf-help-fade-in 0.12s ease;
+}
+@keyframes wf-help-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

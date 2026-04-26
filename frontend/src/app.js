@@ -2359,6 +2359,7 @@ function setupToolListeners() {
   setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
   setupModalClose('programsModal', 'programsModalClose');
   setupModalClose('volunteerModal', 'volunteerModalClose');
+  setupModalClose('summerCampsModal', 'summerCampsModalClose');
   setupModalClose('k12Modal', 'k12ModalClose');
   setupModalClose('financialAidModal', 'financialAidModalClose');
 
@@ -5394,17 +5395,280 @@ function _k12CardHtml(s) {
   `;
 }
 
-// Summer Camps shortcut — opens Programs modal pre-filtered to elementary/middle
+// ─── SUMMER CAMPS (K-8) MODULE ─────────────────────────────────
+
+let _scInitialized = false;
+
+const SC_INTERESTS = ['STEM','arts','music','sports','nature','reading','coding','theater','science','math','dance','crafts','outdoor','animals','cooking','LEGO/building'];
+let _scSelectedInterests = new Set();
+
 function openSummerCamps() {
-  openPrograms();
-  // Pre-set grade filter to elementary by default (parents searching summer camps
-  // most often have K-5 kids; they can switch to middle from the dropdown)
-  setTimeout(() => {
-    const gradeSel = document.getElementById('programGrade');
-    if (gradeSel) {
-      gradeSel.value = 'elementary';
-      // Trigger the search if the page has its handler ready
-      if (typeof searchPrograms === 'function') searchPrograms();
-    }
-  }, 50);
+  document.getElementById('summerCampsModal').style.display = 'flex';
+  _modalOpened('summerCampsModal');
+  if (!_scInitialized) _initSC();
+  _scSetTab('Browse');
+  searchSCBrowse();
 }
+
+function _initSC() {
+  // Tab switching
+  document.getElementById('scTabBrowse').addEventListener('click', () => { _scSetTab('Browse'); searchSCBrowse(); });
+  document.getElementById('scTabPlan').addEventListener('click', () => _scSetTab('Plan'));
+  document.getElementById('scTabInsights').addEventListener('click', () => { _scSetTab('Insights'); loadSCInsights(); });
+  document.getElementById('scTabAsk').addEventListener('click', () => _scSetTab('Ask'));
+
+  // Browse tab — wire filters + search button
+  document.getElementById('scBrowseSearchBtn').addEventListener('click', searchSCBrowse);
+  ['scBrowseGrade','scBrowseCategory','scBrowseState','scBrowseFormat','scBrowseCost'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', searchSCBrowse);
+  });
+  document.getElementById('scBrowseSearch')?.addEventListener('keydown', e => { if (e.key === 'Enter') searchSCBrowse(); });
+
+  // Plan tab — interest tags + generate
+  const interestsContainer = document.getElementById('scPlanInterests');
+  SC_INTERESTS.forEach(int => {
+    const tag = document.createElement('button');
+    tag.type = 'button';
+    tag.dataset.interest = int;
+    tag.textContent = int;
+    tag.style.cssText = 'padding:6px 12px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:14px;font-size:12px;cursor:pointer;';
+    tag.addEventListener('click', () => {
+      if (_scSelectedInterests.has(int)) {
+        _scSelectedInterests.delete(int);
+        tag.style.background = '#fff'; tag.style.color = '#1e3a8a';
+      } else {
+        _scSelectedInterests.add(int);
+        tag.style.background = '#2563eb'; tag.style.color = '#fff';
+      }
+    });
+    interestsContainer.appendChild(tag);
+  });
+  document.getElementById('scPlanGenerate').addEventListener('click', generateSCPlan);
+
+  // Ask tab
+  document.getElementById('scAskSubmit').addEventListener('click', submitSCAsk);
+  document.getElementById('scAskQuestion').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) submitSCAsk();
+  });
+
+  _scInitialized = true;
+}
+
+function _scSetTab(name) {
+  for (const t of ['Browse','Plan','Insights','Ask']) {
+    const tab = document.getElementById('scTab' + t);
+    const panel = document.getElementById('sc' + t + 'Panel');
+    if (t === name) {
+      tab.style.borderBottom = '2px solid #2563eb';
+      tab.style.color = '#1e3a8a';
+      if (panel) panel.style.display = '';
+    } else {
+      tab.style.borderBottom = '2px solid transparent';
+      tab.style.color = '#59636e';
+      if (panel) panel.style.display = 'none';
+    }
+  }
+}
+
+async function searchSCBrowse() {
+  const params = new URLSearchParams();
+  const grade = document.getElementById('scBrowseGrade').value;
+  const cat = document.getElementById('scBrowseCategory').value;
+  const state = document.getElementById('scBrowseState').value;
+  const fmt = document.getElementById('scBrowseFormat').value;
+  const cost = document.getElementById('scBrowseCost').value;
+  const q = document.getElementById('scBrowseSearch').value.trim();
+  // Hard-cap: K-8 only. Browse Programs API but enforce grade is K-8 client-side
+  if (grade) params.set('grade', grade);
+  else params.set('grade', 'k8'); // sentinel handled below
+  if (cat) params.set('category', cat);
+  if (state) params.set('state', state);
+  if (fmt) params.set('format', fmt);
+  if (cost === 'free') params.set('cost', 'free');
+  if (q) params.set('search', q);
+
+  const c = document.getElementById('scBrowseResults');
+  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/programs/search?${params}`);
+    const data = await res.json();
+    let items = data.results || [];
+    // Client-side enforcement: hide HS programs
+    items = items.filter(p => {
+      const grades = (p.eligibility?.grades || []).map(String);
+      const hasK8 = grades.some(g => ['K','1','2','3','4','5','6','7','8','Pre-K'].includes(g));
+      const hsOnly = grades.length > 0 && grades.every(g => ['9','10','11','12'].includes(g));
+      return hasK8 && !hsOnly;
+    });
+    if (!items.length) {
+      c.innerHTML = '<p style="color:#94a3b8;padding:18px;text-align:center;">No K-8 matches with these filters. Try widening your search or check the Plan / Insights tabs for ideas.</p>';
+      return;
+    }
+    c.innerHTML = `<p style="color:#59636e;font-size:13px;margin-bottom:10px;">${items.length} K-8 program${items.length===1?'':'s'} match.</p>` + items.map(_scProgramCardHtml).join('');
+  } catch (e) {
+    c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load: ${e.message}</p>`;
+  }
+}
+
+function _scProgramCardHtml(p) {
+  const cost = p.cost?.display || (p.cost?.type === 'free' ? 'Free' : (p.cost?.amount ? '$' + p.cost.amount : ''));
+  const loc = p.location?.city ? `${p.location.city}${p.location.state ? ', ' + p.location.state : ''}` : (p.location?.state || '');
+  const grades = (p.eligibility?.grades || []).filter(g => ['K','1','2','3','4','5','6','7','8','Pre-K'].includes(String(g))).join(', ');
+  return `
+    <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
+        <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(p.name || 'Untitled')}</h4>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          ${cost ? `<span style="background:#fef3c7;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(cost)}</span>` : ''}
+          ${p.format ? `<span style="background:#f0fff4;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(p.format)}</span>` : ''}
+        </div>
+      </div>
+      <p style="margin:0 0 6px;font-size:12px;color:#59636e;">${_esc(p.provider || p.organization || '')}${loc ? ' &middot; ' + _esc(loc) : ''}${grades ? ' &middot; Grades: ' + _esc(grades) : ''}</p>
+      <p style="margin:0 0 6px;font-size:13px;color:#334155;">${_esc((p.description || '').slice(0, 220))}${(p.description||'').length>220?'...':''}</p>
+      ${p.url || p.registrationUrl ? `<a href="${_esc(p.url || p.registrationUrl)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Program page →</a>` : ''}
+    </div>
+  `;
+}
+
+async function loadSCInsights() {
+  const c = document.getElementById('scInsightsContent');
+  if (c.dataset.loaded === 'yes') return;
+  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading insights...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/summer-camps/insights`);
+    const data = await res.json();
+    const sections = data.sections || [];
+    if (!sections.length) { c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Insights not yet loaded.</p>'; return; }
+    c.innerHTML = sections.map(_scInsightSectionHtml).join('');
+    c.dataset.loaded = 'yes';
+  } catch (e) {
+    c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
+  }
+}
+
+function _scInsightSectionHtml(sec) {
+  const items = (sec.items || []).map(it => `
+    <details style="margin-bottom:6px;border-left:3px solid #cfdcef;padding-left:12px;">
+      <summary style="cursor:pointer;font-weight:600;font-size:13px;color:#1e3a8a;padding:4px 0;">${_esc(it.label)}</summary>
+      <p style="margin:4px 0 8px;font-size:13px;color:#334155;line-height:1.55;">${_esc(it.detail)}</p>
+    </details>
+  `).join('');
+  return `
+    <div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:14px;background:#fff;">
+      <h3 style="margin:0 0 10px;font-size:15px;color:#1f2328;">${_esc(sec.icon || '')} ${_esc(sec.title)}</h3>
+      ${items}
+    </div>
+  `;
+}
+
+async function generateSCPlan() {
+  const grade = document.getElementById('scPlanGrade').value;
+  const city = document.getElementById('scPlanCity').value.trim();
+  const state = document.getElementById('scPlanState').value;
+  const budget = document.getElementById('scPlanBudget').value;
+  const weeks = parseInt(document.getElementById('scPlanWeeks').value, 10) || 4;
+  const sleepawayInterest = document.getElementById('scPlanSleepaway').checked;
+  const needsScholarshipInfo = document.getElementById('scPlanScholarship').checked;
+  const careerCurious = document.getElementById('scPlanCareerCurious').value.trim();
+  const interests = Array.from(_scSelectedInterests);
+
+  const result = document.getElementById('scPlanResult');
+  result.innerHTML = '<p style="color:#94a3b8;padding:12px;">✨ Building your plan... (10-30 sec)</p>';
+  try {
+    const res = await fetch(`${API_BASE}/summer-camps/plan`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ grade, city, state, budget, weeks, interests, careerCurious, sleepawayInterest, needsScholarshipInfo })
+    });
+    const data = await res.json();
+    if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
+    renderSCPlan(data);
+  } catch (e) {
+    result.innerHTML = `<p style="color:#cf222e;padding:12px;">Plan failed: ${e.message}</p>`;
+  }
+}
+
+function renderSCPlan(data) {
+  const p = data.plan || {};
+  const specialty = (p.specialtyRecommendations || []).map(sp => `
+    <div style="border-left:3px solid #2563eb;padding:10px 14px;margin-bottom:8px;background:#fff;border-radius:0 6px 6px 0;">
+      <div style="font-weight:600;font-size:13px;color:#1e3a8a;">${_esc(sp.category || '')} — ${_esc(sp.estimatedCost || '')}</div>
+      <p style="margin:4px 0 6px;font-size:13px;color:#334155;">${_esc(sp.rationale || '')}</p>
+      ${(sp.lookFor || []).length ? `<p style="margin:4px 0 0;font-size:12px;color:#59636e;"><strong>Look for:</strong> ${_esc((sp.lookFor || []).join(' · '))}</p>` : ''}
+    </div>
+  `).join('');
+  const watchOuts = (p.watchOuts || []).map(w => `<li style="font-size:13px;color:#854d0e;margin-bottom:4px;">${_esc(w)}</li>`).join('');
+
+  document.getElementById('scPlanResult').innerHTML = `
+    <div style="background:#ddf4ff;padding:14px 16px;border-radius:8px;margin-bottom:14px;border-left:3px solid #0969da;">
+      <p style="margin:0;font-size:14px;color:#0a3069;"><strong>Plan summary:</strong> ${_esc(p.summary || '')}</p>
+    </div>
+    ${p.anchorRecommendation ? `
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;">
+        <h4 style="margin:0 0 6px;font-size:14px;color:#1e3a8a;">⚓ Anchor commitment — ${_esc(p.anchorRecommendation.type || '')}</h4>
+        <p style="margin:0 0 6px;font-size:13px;color:#334155;">${_esc(p.anchorRecommendation.rationale || '')}</p>
+        ${(p.anchorRecommendation.lookFor || []).length ? `<p style="margin:4px 0 0;font-size:12px;color:#59636e;"><strong>Look for:</strong> ${_esc((p.anchorRecommendation.lookFor || []).join(' · '))}</p>` : ''}
+      </div>` : ''}
+    ${specialty ? `<h4 style="margin:14px 0 8px;font-size:14px;color:#1f2328;">🎯 Specialty experiences</h4>${specialty}` : ''}
+    ${p.wildcardSuggestion ? `
+      <div style="background:#fff8c5;padding:12px 14px;border-radius:8px;margin:10px 0;">
+        <h4 style="margin:0 0 4px;font-size:13px;color:#854d0e;">💡 Wildcard idea</h4>
+        <p style="margin:0;font-size:13px;color:#854d0e;"><strong>${_esc(p.wildcardSuggestion.idea || '')}</strong> — ${_esc(p.wildcardSuggestion.rationale || '')}</p>
+      </div>` : ''}
+    ${p.scholarshipNote ? `<p style="margin:10px 0;font-size:13px;color:#15803d;background:#f0fff4;padding:10px 14px;border-radius:6px;border-left:3px solid #22c55e;"><strong>💰 Scholarship guidance:</strong> ${_esc(p.scholarshipNote)}</p>` : ''}
+    ${watchOuts ? `<div style="margin-top:14px;"><h4 style="margin:0 0 6px;font-size:13px;color:#854d0e;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
+    ${p.nextStep ? `<div style="margin-top:14px;background:#1e3a8a;color:#fff;padding:12px 14px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
+    <p style="font-size:11px;color:#94a3b8;margin-top:12px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated plan — verify program details directly.')}</p>
+  `;
+}
+
+async function submitSCAsk() {
+  const question = document.getElementById('scAskQuestion').value.trim();
+  if (question.length < 5) { alert('Please enter a question (at least 5 characters).'); return; }
+  const grade = document.getElementById('scAskGrade').value;
+  const city = document.getElementById('scAskCity').value.trim();
+  const state = document.getElementById('scAskState').value;
+
+  const result = document.getElementById('scAskResult');
+  result.innerHTML = '<p style="color:#94a3b8;padding:12px;">✨ Wayfinder is thinking... (5-15 sec)</p>';
+  try {
+    const res = await fetch(`${API_BASE}/summer-camps/ask`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question, grade, city, state })
+    });
+    const data = await res.json();
+    if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
+    result.innerHTML = `
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;">
+        <p style="margin:0 0 8px;font-size:13px;color:#334155;line-height:1.6;white-space:pre-wrap;">${_esc(data.answer || '')}</p>
+        <p style="font-size:11px;color:#94a3b8;margin:10px 0 0;font-style:italic;">Wayfinder K-8 advisor (${_esc(data.mode || 'AI')})</p>
+      </div>
+    `;
+  } catch (e) {
+    result.innerHTML = `<p style="color:#cf222e;padding:12px;">Ask failed: ${e.message}</p>`;
+  }
+}
+
+// ─── HELP TOOLTIP SYSTEM (global) ──────────────────────────────
+// Any element with class="wf-help-btn" data-help="..." shows a tooltip on click
+
+document.addEventListener('click', (e) => {
+  // Close any open help tooltip on outside click
+  const open = document.querySelector('.wf-help-popup');
+  if (open && !e.target.classList.contains('wf-help-btn')) {
+    open.remove();
+  }
+  if (!e.target.classList.contains('wf-help-btn')) return;
+  e.stopPropagation();
+  if (open) { open.remove(); return; }
+  const text = e.target.dataset.help || 'No help text provided.';
+  const popup = document.createElement('div');
+  popup.className = 'wf-help-popup';
+  popup.style.cssText = 'position:absolute;background:#1e3a8a;color:#fff;padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.5;max-width:320px;z-index:10000;box-shadow:0 4px 16px rgba(0,0,0,0.25);';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+  const r = e.target.getBoundingClientRect();
+  popup.style.left = Math.max(8, Math.min(window.innerWidth - 340, r.left + window.scrollX)) + 'px';
+  popup.style.top = (r.bottom + window.scrollY + 6) + 'px';
+});

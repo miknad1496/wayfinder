@@ -36,6 +36,7 @@ const SEED_FILES = [
   'data/scraped/h1b-by-soc.json',
   'data/scraped/volunteer-opportunities.json',
   'data/scraped/k12-enriched.json',
+  'data/scraped/summer-camp-insights.json',
   'data/scraped/k12-national/AK_elementary.json',
   'data/scraped/k12-national/AK_high.json',
   'data/scraped/k12-national/AK_middle.json',
