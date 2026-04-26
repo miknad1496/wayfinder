@@ -70,6 +70,93 @@ async function loadInsights() {
   }
 }
 
+
+// GET /api/summer-camps/browse — K-8 program browse (public, no auth required)
+// Filters programs.json to K-8 entries with safe public fields.
+let _scBrowseCache = null;
+let _scBrowseTimestamp = 0;
+const SC_BROWSE_TTL = 5 * 60 * 1000;
+
+async function _loadProgramsForBrowse() {
+  if (_scBrowseCache && (Date.now() - _scBrowseTimestamp) < SC_BROWSE_TTL) return _scBrowseCache;
+  const localPath = path.join(__dirname, '..', 'data', 'scraped', 'programs.json');
+  try {
+    const raw = fs.readFileSync(localPath, 'utf8');
+    _scBrowseCache = JSON.parse(raw);
+    _scBrowseTimestamp = Date.now();
+    return _scBrowseCache;
+  } catch (e) {
+    if (e.code !== 'ENOENT') console.error('[sc/browse] disk error:', e.message);
+  }
+  try {
+    console.log('[sc/browse] lazy-fetching programs.json from GitHub raw');
+    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/programs.json`);
+    fs.mkdirSync(path.dirname(localPath), { recursive: true });
+    fs.writeFileSync(localPath, buf);
+    _scBrowseCache = JSON.parse(buf.toString('utf8'));
+    _scBrowseTimestamp = Date.now();
+    return _scBrowseCache;
+  } catch (err) {
+    console.error('[sc/browse] lazy-fetch failed:', err.message);
+    return { programs: [] };
+  }
+}
+
+router.get('/browse', async (req, res) => {
+  const data = await _loadProgramsForBrowse();
+  let arr = data.programs || [];
+  const ES = ['K','1','2','3','4','5','Pre-K'];
+  const MS = ['6','7','8'];
+  const HS = ['9','10','11','12'];
+  // Hard K-8 enforcement: must include at least one K-8 grade AND must NOT be HS-only
+  arr = arr.filter(p => {
+    const grades = (p.eligibility?.grades || []).map(String);
+    const hasK8 = grades.some(g => [...ES, ...MS].includes(g));
+    const allHS = grades.length > 0 && grades.every(g => HS.includes(g));
+    return hasK8 && !allHS;
+  });
+
+  const { grade, category, state, format, cost, search } = req.query;
+  if (grade === 'elementary') {
+    arr = arr.filter(p => (p.eligibility?.grades || []).map(String).some(g => ES.includes(g)));
+  } else if (grade === 'middle') {
+    arr = arr.filter(p => (p.eligibility?.grades || []).map(String).some(g => MS.includes(g)));
+  }
+  if (category) arr = arr.filter(p => (p.category || '').toLowerCase() === String(category).toLowerCase());
+  if (state) arr = arr.filter(p => (p.location?.state || '').toUpperCase() === String(state).toUpperCase()
+                                   || (p.eligibility?.states || []).includes(String(state).toUpperCase())
+                                   || (p.eligibility?.states || []).includes('all'));
+  if (format) arr = arr.filter(p => (p.format || '').toLowerCase() === String(format).toLowerCase());
+  if (cost === 'free') arr = arr.filter(p => (p.cost?.type || '').toLowerCase() === 'free' || p.cost?.amount === 0);
+  if (search && String(search).trim().length >= 2) {
+    const term = String(search).trim().toLowerCase();
+    arr = arr.filter(p =>
+      (p.name || '').toLowerCase().includes(term) ||
+      (p.provider || p.organization || '').toLowerCase().includes(term) ||
+      (p.description || '').toLowerCase().includes(term)
+    );
+  }
+
+  // Public-safe fields only (no admissionsImpact reasoning, etc.)
+  const safe = arr.slice(0, 60).map(p => ({
+    id: (p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50) + '_' + ((p.provider||p.organization||'').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 30)),
+    name: p.name,
+    provider: p.provider || p.organization,
+    category: p.category,
+    type: p.type,
+    cost: p.cost,
+    format: p.format,
+    location: p.location,
+    grades: (p.eligibility?.grades || []).filter(g => [...ES, ...MS].includes(String(g))),
+    description: (p.description || '').slice(0, 240),
+    deadline: p.deadline,
+    url: p.url || p.registrationUrl,
+    confidence: p.confidence,
+  }));
+
+  res.json({ count: arr.length, returned: safe.length, results: safe });
+});
+
 // GET /api/summer-camps/insights — curated static content + lazy-fetch fallback
 router.get('/insights', async (req, res) => {
   const data = await loadInsights();
