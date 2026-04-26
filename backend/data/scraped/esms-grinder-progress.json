@@ -1,12 +1,12 @@
 {
-  "lastRun": "2026-04-26T16:38:49Z",
-  "totalRuns": 3,
-  "totalAdded": 16,
+  "lastRun": "2026-04-26T16:54:29Z",
+  "totalRuns": 4,
+  "totalAdded": 18,
   "queue": [
     {
       "focus": "WA",
       "target": 30,
-      "current": 16,
+      "current": 18,
       "status": "in_progress",
       "metros": [
         "Seattle",
@@ -25,7 +25,9 @@
         "Seattle",
         "Tacoma",
         "Vancouver",
-        "Vashon"
+        "Vashon",
+        "Everett",
+        "Stanwood"
       ]
     },
     {

@@ -5,11 +5,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries per run (run 3 hit 5/5 with 0 skips on first non-anchor batch — extending Olympia/Bellingham/Bainbridge/Vancouver/Bellevue. Stay at 5 for next out-of-anchor run, push back to 6 once stabilized.)
+- batch_size: 5 entries planned, but parallel-run collision dropped run 4 to 2 net new (3 dups detected against the prior run-3 push)
 - typical_run_duration: ~10 min
-- typical_skip_rate: 0% (runs 1-3)
-- last_calibration_change: 2026-04-26 — held at 5/run for first non-anchor batch (run 3); validated zero skips on outlying-metro candidates
-
+- typical_skip_rate: 60% on this run (3/5) — first parallel collision in grinder history
+- last_calibration_change: 2026-04-26 — added a parallel-run guard: pull-rebase BEFORE building candidate batch on next run, not after. Org-level dedup (not just name+provider) saved us from adding a 2nd Whatcom YMCA listing.
 
 ## EFFECTIVE PATTERNS (validated)
 
@@ -60,6 +59,9 @@
 - **IslandWood (Bainbridge Island)**: 255-acre campus + Brightwater Education Center (Woodinville). Full-day Pre-K/K (half-day) through 1st-6th grade. Summer 2026 financial aid funds EXHAUSTED — note this in description for users. Per-session tuition not in snippets ($100 processing fee per camp confirmed). Medium-confidence on cost. Contact: info@islandwood.org / (206) 855-4300.
 - **GeoGirls (Mount St. Helens Institute, pickup Vancouver WA)**: FREE 5-day overnight geology+tech camp for girls (cis + transgender) entering 8th-9th grade in WA + OR. 2026 dates Aug 3-7. Recurring annually since 2015 (USGS partnership). 2026 cycle CLOSED; 2027 apps open January 2027. Application = student form + Teacher Recommendation. Selection based on interest, social/financial need. High-confidence. URL: mshinstitute.org/geogirls.
 
+- **Imagine Children's Museum (Everett)**: 10 weeks of camps June 22 - Aug 24, 2026. Three age tiers: 4-5 (half-day 9-12), 6-8 (full-day 9-3), 9-12 (full-day 9-3). Cost not on landing — medium confidence with `_unverifiedFields: ["cost","scholarshipAid"]`. Email education@imaginecm.org for pricing. Themes per session (Pirate Quest, Robots, Makers Studio, Dino Rangers, etc.). Optional Extended Play for full-day campers.
+- **Camp Killoqua (Stanwood, Camp Fire Snohomish County)**: 185-acre site at 15207 E Lake Goodwin Rd. Day Camp grades K-8 (9-4 + extended 7:30-9 / 4-5:30); Preschool 3-5 (sessions 3, 5, 8 only); Resident Camp grades 4-8; CIT 1 entering 11th grade. Bus available except for preschool. Financial assistance first-come first-served. Phone (360) 652-6250. Cost not on landing page — medium confidence.
+
 ## DATA QUALITY FLAGS
 
 - Existing `programs.json` schema uses object-shaped `cost` (`{amount, type, display}`) and object `location` (`{city, state}`). Grinder writes both this canonical shape AND task-spec extras (`scope`, `dates`, `scholarshipAid`, `registrationUrl`, `howToStart`, `confidence`). Backward-compatible — extras are ignored by the search route.
@@ -97,4 +99,4 @@
 | 2026-04-26 | 1 | 5 (3hi/2md) | 0 | WA — Seattle/Bellevue/Vashon/Orcas | KidsQuest (md), Coyote Central (hi), Burke (hi), Camp Orkila (hi), Camp Sealth (md). Bootstrapped progress file + lessons. |
 | 2026-04-26 | 2 | 6 (4hi/2md) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Woodland Park Zoo (hi), Seattle Aquarium (md), Seattle Children's Theatre (md), Camp Galileo Bellevue (hi), Music Center NW (hi), Point Defiance Zoo (hi). Caught Pacific Science Center as DB duplicate; substituted Point Defiance. New writable-clone workaround documented. |
 | 2026-04-26 | 3 | 5 (2hi/3md) | 0 | WA — Olympia/Bellingham/Bellevue/Bainbridge/Vancouver | Hands On Children's Museum (md), Whatcom Family YMCA Discovery (md), Music Works NW (hi), IslandWood (md), GeoGirls/MSHI (hi). First non-anchor batch — clean. WA queue now 16/30. |
-
+| 2026-04-26 | 4 | 2 (0hi/2md) | 3 | WA — Everett (Imagine CM) + Stanwood (Camp Killoqua) | Parallel-run collision: prior run-3 push (commit 23446c7) had already added HOCM Olympia, Whatcom YMCA, IslandWood, plus 2 others. Of my planned 5, 3 were dups (HOCM, IslandWood by exact name, Whatcom YMCA by org). Kept Imagine CM (md cost) + Camp Killoqua (md cost). New lesson: rebase BEFORE candidate selection. |

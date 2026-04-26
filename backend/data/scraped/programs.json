@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 842,
+    "totalCount": 844,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -54,7 +54,7 @@
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
-    "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online→online, Remote→remote, all others→in-person."
+    "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online\u2192online, Remote\u2192remote, all others\u2192in-person."
   },
   "programs": [
     {
@@ -641,7 +641,7 @@
       "_source": "https://www.washington.edu/omad/washington-mesa/college-prep-program/"
     },
     {
-      "name": "Destination Science Summer Camps — Seattle",
+      "name": "Destination Science Summer Camps \u2014 Seattle",
       "provider": "Destination Science",
       "category": "stem",
       "subcategory": "science",
@@ -734,7 +734,7 @@
       "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents"
     },
     {
-      "name": "Camp Invention — Texas Locations",
+      "name": "Camp Invention \u2014 Texas Locations",
       "provider": "National Inventors Hall of Fame",
       "category": "stem",
       "subcategory": "invention",
@@ -923,7 +923,7 @@
       "_source": "https://www.txgcp.org/stem-camps-across-tx"
     },
     {
-      "name": "Governor's Summer Merit Program — Texas",
+      "name": "Governor's Summer Merit Program \u2014 Texas",
       "provider": "State of Texas",
       "category": "stem",
       "subcategory": "careers",
@@ -3216,7 +3216,7 @@
       "_source": "https://tapiacenter.rice.edu/tapia-stem-camps"
     },
     {
-      "name": "Columbia SHAPE — Summer High School Academic Program for Engineers",
+      "name": "Columbia SHAPE \u2014 Summer High School Academic Program for Engineers",
       "provider": "Columbia University",
       "category": "stem",
       "subcategory": "engineering",
@@ -3668,7 +3668,7 @@
       ],
       "duration": "6 weeks",
       "region": "Northeast",
-      "advisorNote": "MITES is one of the most prestigious pathways for underrepresented students in STEM—admission demonstrates exceptional potential and commitment. Colleges view this program as a strong signal of both academic excellence and diversity contribution.",
+      "advisorNote": "MITES is one of the most prestigious pathways for underrepresented students in STEM\u2014admission demonstrates exceptional potential and commitment. Colleges view this program as a strong signal of both academic excellence and diversity contribution.",
       "format": "in-person"
     },
     {
@@ -3712,7 +3712,7 @@
       ],
       "duration": "8 weeks",
       "region": "West Coast",
-      "advisorNote": "SIMR provides genuine research experience that directly strengthens STEM college applications—especially valuable if you choose a project you can discuss in detail during interviews. The research credential carries weight with top universities.",
+      "advisorNote": "SIMR provides genuine research experience that directly strengthens STEM college applications\u2014especially valuable if you choose a project you can discuss in detail during interviews. The research credential carries weight with top universities.",
       "format": "in-person"
     },
     {
@@ -3758,7 +3758,7 @@
       ],
       "duration": "4 weeks",
       "region": "Northeast",
-      "advisorNote": "RSI's global reputation and rigorous curriculum make it exceptionally valuable for STEM applications. Colleges recognize the program's selectivity—admission itself becomes a talking point in your application narrative.",
+      "advisorNote": "RSI's global reputation and rigorous curriculum make it exceptionally valuable for STEM applications. Colleges recognize the program's selectivity\u2014admission itself becomes a talking point in your application narrative.",
       "format": "in-person"
     },
     {
@@ -3845,7 +3845,7 @@
       ],
       "duration": "6 weeks",
       "region": "Northeast",
-      "advisorNote": "PROMYS is the go-to program for students serious about advanced mathematics—colleges view it as strong evidence of mathematical maturity. Ideal if you're considering math, physics, or computer science at selective universities.",
+      "advisorNote": "PROMYS is the go-to program for students serious about advanced mathematics\u2014colleges view it as strong evidence of mathematical maturity. Ideal if you're considering math, physics, or computer science at selective universities.",
       "format": "in-person"
     },
     {
@@ -4062,7 +4062,7 @@
       ],
       "duration": "9 weeks",
       "region": "South",
-      "advisorNote": "The Clark Program offers substantial research experience with publication potential—a major advantage for pre-med and life sciences students. The one-on-one mentorship and original research contribution strengthen medical school and graduate school applications significantly.",
+      "advisorNote": "The Clark Program offers substantial research experience with publication potential\u2014a major advantage for pre-med and life sciences students. The one-on-one mentorship and original research contribution strengthen medical school and graduate school applications significantly.",
       "format": "in-person"
     },
     {
@@ -4106,7 +4106,7 @@
       ],
       "duration": "4-8 weeks",
       "region": "Northeast",
-      "advisorNote": "Harvard Summer School provides institutional access and a college transcript—useful for demonstrating ability to handle college coursework. However, admissions committees typically view this differently than more selective, competitive summer programs.",
+      "advisorNote": "Harvard Summer School provides institutional access and a college transcript\u2014useful for demonstrating ability to handle college coursework. However, admissions committees typically view this differently than more selective, competitive summer programs.",
       "format": "in-person"
     },
     {
@@ -4149,7 +4149,7 @@
       ],
       "duration": "2 weeks",
       "region": "Northeast",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -4404,7 +4404,7 @@
       ],
       "duration": "1 weekend",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4445,7 +4445,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4487,7 +4487,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -4529,7 +4529,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4615,7 +4615,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4914,7 +4914,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4957,7 +4957,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5810,7 +5810,7 @@
       ],
       "duration": "1 semester",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5852,7 +5852,7 @@
       ],
       "duration": "1 semester or 2 weeks",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5896,7 +5896,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6199,7 +6199,7 @@
       ],
       "duration": "1-3 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6373,7 +6373,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6418,7 +6418,7 @@
       ],
       "duration": "2-3 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6855,7 +6855,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6943,7 +6943,7 @@
       ],
       "duration": "2 days",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6989,7 +6989,7 @@
       ],
       "duration": "2 weeks",
       "region": "West Coast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -7295,7 +7295,7 @@
       ],
       "duration": "10 weeks",
       "region": "Northeast",
-      "advisorNote": "Arise is NYU's selective pathway for underrepresented engineers—strong signal of engineering commitment and potential. Colleges value programs targeting diversity in engineering as they address important equity goals.",
+      "advisorNote": "Arise is NYU's selective pathway for underrepresented engineers\u2014strong signal of engineering commitment and potential. Colleges value programs targeting diversity in engineering as they address important equity goals.",
       "format": "in-person"
     },
     {
@@ -7650,7 +7650,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "USSYP is an extremely selective honor (only 104 students nationwide)—simply being selected carries significant prestige on college applications. Strong signal for students interested in policy, law, government, or public service.",
+      "advisorNote": "USSYP is an extremely selective honor (only 104 students nationwide)\u2014simply being selected carries significant prestige on college applications. Strong signal for students interested in policy, law, government, or public service.",
       "format": "in-person"
     },
     {
@@ -7693,7 +7693,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -8536,7 +8536,7 @@
       ],
       "duration": "2-3 weeks",
       "region": "West",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -8578,7 +8578,7 @@
       ],
       "duration": "2-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -9711,7 +9711,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11694,7 +11694,7 @@
       ],
       "duration": "1 week",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11737,7 +11737,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "Southeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11779,7 +11779,7 @@
       ],
       "duration": "1 week",
       "region": "Midwest",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -12771,7 +12771,7 @@
       ],
       "duration": "8-10 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -12942,7 +12942,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -13025,7 +13025,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14098,7 +14098,7 @@
       ],
       "duration": "4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14140,7 +14140,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14182,7 +14182,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14264,7 +14264,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14306,7 +14306,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14347,7 +14347,7 @@
       ],
       "duration": "1 week",
       "region": "International",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14513,7 +14513,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14556,7 +14556,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15319,7 +15319,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15567,7 +15567,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15650,7 +15650,7 @@
       ],
       "duration": "8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15693,7 +15693,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15780,7 +15780,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15824,7 +15824,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15867,7 +15867,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15953,7 +15953,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -16037,7 +16037,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -24272,7 +24272,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24315,7 +24315,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24358,7 +24358,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24401,7 +24401,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24444,7 +24444,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24487,7 +24487,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24530,7 +24530,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24573,7 +24573,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24616,7 +24616,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24659,7 +24659,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24702,7 +24702,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24745,7 +24745,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24788,7 +24788,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24831,7 +24831,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24874,7 +24874,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24917,7 +24917,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24960,7 +24960,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25003,7 +25003,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25046,7 +25046,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25089,7 +25089,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25132,7 +25132,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25175,7 +25175,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25218,7 +25218,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25261,7 +25261,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25304,7 +25304,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25347,7 +25347,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25390,7 +25390,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25433,7 +25433,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25476,7 +25476,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25519,7 +25519,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25562,7 +25562,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25605,7 +25605,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25648,7 +25648,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25691,7 +25691,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25734,7 +25734,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25777,7 +25777,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25820,7 +25820,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25863,7 +25863,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25906,7 +25906,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25949,7 +25949,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25992,7 +25992,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26035,7 +26035,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26078,7 +26078,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26121,7 +26121,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26164,7 +26164,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26207,7 +26207,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26250,7 +26250,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26293,7 +26293,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -35380,7 +35380,7 @@
       "format": "in-person"
     },
     {
-      "name": "Destination Science Camps — Seattle",
+      "name": "Destination Science Camps \u2014 Seattle",
       "provider": "Destination Science",
       "category": "stem",
       "subcategory": "science",
@@ -35462,7 +35462,7 @@
       "_source": "https://www.idtech.com/locations/washington-summer-camps/uw-seattle"
     },
     {
-      "name": "Camp Tech Revolution — Seattle",
+      "name": "Camp Tech Revolution \u2014 Seattle",
       "provider": "Camp Tech Revolution",
       "category": "stem",
       "subcategory": "technology",
@@ -35681,7 +35681,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session — see registration page"
+        "display": "Varies by session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -35704,7 +35704,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — sessions fill spring",
+      "deadline": "Rolling \u2014 sessions fill spring",
       "description": "Weeklong summer camps at KidsQuest Children's Museum in downtown Bellevue for ages 4-10. Themes change weekly and include exploratory STEAM, art, fashion, and storytelling. Children must be the listed age at the time camp begins. Note: 2026 per-session pricing not posted on landing page; confirm directly with the museum's Education Department (education@kidsquestmuseum.org).",
       "url": "https://www.kidsquestmuseum.org/programs/summer-camp/",
       "tags": [
@@ -35724,7 +35724,7 @@
       ],
       "subregion": "Eastside",
       "ages": "4-10",
-      "dates": "Summer 2026 — weekly sessions June through August",
+      "dates": "Summer 2026 \u2014 weekly sessions June through August",
       "scholarshipAid": "Not advertised on landing page",
       "registrationUrl": "https://www.kidsquestmuseum.org/programs/summer-camp/",
       "howToStart": "Browse weekly themes and register at kidsquestmuseum.org/programs/summer-camp; popular sessions fill in spring.",
@@ -35769,7 +35769,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling until full — register early",
+      "deadline": "Rolling until full \u2014 register early",
       "description": "Pay-what-you-can creative classes for ages 10-15 taught by professional teaching artists at Coyote Central's Central District studios. Mediums include welding, woodworking, fashion design, culinary, bike-building, and visual art across roughly 20-21 hours of instruction per course, culminating in a student-designed project. Sliding-scale pricing keeps the program accessible across income levels.",
       "url": "https://coyotecentral.org/programs",
       "tags": [
@@ -35790,7 +35790,7 @@
       "subregion": "Seattle",
       "ages": "10-15",
       "dates": "8 weeks of summer programming, late June through August 2026",
-      "scholarshipAid": "Available — pay-what-you-can sliding scale",
+      "scholarshipAid": "Available \u2014 pay-what-you-can sliding scale",
       "registrationUrl": "https://coyotecentral.org/register-for-classes",
       "howToStart": "Register at coyotecentral.org/register-for-classes; email programs@coyotecentral.org or call (206) 323-7276 for sliding-scale and scholarship questions.",
       "confidence": "high",
@@ -35851,7 +35851,7 @@
       "subregion": "Seattle",
       "ages": "6-12",
       "dates": "Multiple sessions summer 2026 (e.g., Aug 17, 2026)",
-      "scholarshipAid": "Burke offers financial assistance — see Education Financial Assistance page",
+      "scholarshipAid": "Burke offers financial assistance \u2014 see Education Financial Assistance page",
       "registrationUrl": "https://www.burkemuseum.org/education/families-and-youth/camps",
       "howToStart": "Register on the Burke camps page; member discount applies (~10% off).",
       "confidence": "high",
@@ -35869,7 +35869,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Sliding scale — Price A (full) / Price B (subsidized); $50 deposit; financial assistance available"
+        "display": "Sliding scale \u2014 Price A (full) / Price B (subsidized); $50 deposit; financial assistance available"
       },
       "selectivity": "open",
       "admissionsImpact": "medium",
@@ -35918,7 +35918,7 @@
       "subregion": "San Juan Islands",
       "ages": "8-17",
       "dates": "Sessions late June through late August 2026 (e.g., Session 2A Jul 13-24, Session 6A Aug 10-21)",
-      "scholarshipAid": "Available — sliding scale + need-based financial assistance",
+      "scholarshipAid": "Available \u2014 sliding scale + need-based financial assistance",
       "registrationUrl": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp",
       "howToStart": "Registration opens Feb 4, 2026 at 6 a.m.; create account at seattleymca.org and apply for financial assistance separately if needed.",
       "confidence": "high",
@@ -35936,7 +35936,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session — see registration page"
+        "display": "Varies by session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -35966,7 +35966,7 @@
         ]
       },
       "deadline": "Rolling until full",
-      "description": "Camp Fire-operated overnight and day camp on Vashon Island, ACA-accredited. Programs for youth of all genders ages 5-17 in 8 summer sessions ranging 4-13 days. Classic activities include archery, swimming, arts & crafts, boating, fishing, hikes, marine touch tanks, outdoor cooking, songs, and theme meals. Need-based financial assistance is available — apply early as funds are limited. Note: 2026 per-session pricing not surfaced on landing page; check the registration page or call (206) 463-3174.",
+      "description": "Camp Fire-operated overnight and day camp on Vashon Island, ACA-accredited. Programs for youth of all genders ages 5-17 in 8 summer sessions ranging 4-13 days. Classic activities include archery, swimming, arts & crafts, boating, fishing, hikes, marine touch tanks, outdoor cooking, songs, and theme meals. Need-based financial assistance is available \u2014 apply early as funds are limited. Note: 2026 per-session pricing not surfaced on landing page; check the registration page or call (206) 463-3174.",
       "url": "https://campfireseattle.org/camp-sealth-overnight-camp/",
       "tags": [
         "outdoor",
@@ -35986,7 +35986,7 @@
       "subregion": "Puget Sound",
       "ages": "5-17",
       "dates": "8 sessions, late June through end of August 2026",
-      "scholarshipAid": "Available — need-based, limited funds; apply early",
+      "scholarshipAid": "Available \u2014 need-based, limited funds; apply early",
       "registrationUrl": "https://campfireseattle.org/camp-sealth-overnight-camp/",
       "howToStart": "Browse sessions and register at campfireseattle.org; financial assistance application is separate. Phone (206) 463-3174.",
       "confidence": "medium",
@@ -36008,7 +36008,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by age tier and session — see registration page"
+        "display": "Varies by age tier and session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36034,8 +36034,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — popular sessions fill in spring",
-      "description": "Themed day camps for kids ages 4–13 at Woodland Park Zoo in Seattle. Camps are tiered by age with developmentally appropriate, NGSS-aligned curricula focused on animals, ecosystems and biology — campers get hands-on activities and zoo encounters. Preschool through kindergarten attend two- or three-day camps; first grade and up attend four- and five-day camps. Partial and full scholarships available in 20% increments up to 100% for families with financial barriers.",
+      "deadline": "Rolling \u2014 popular sessions fill in spring",
+      "description": "Themed day camps for kids ages 4\u201313 at Woodland Park Zoo in Seattle. Camps are tiered by age with developmentally appropriate, NGSS-aligned curricula focused on animals, ecosystems and biology \u2014 campers get hands-on activities and zoo encounters. Preschool through kindergarten attend two- or three-day camps; first grade and up attend four- and five-day camps. Partial and full scholarships available in 20% increments up to 100% for families with financial barriers.",
       "url": "https://zoo.org/camps/",
       "tags": [
         "summer-camp",
@@ -36055,8 +36055,8 @@
       ],
       "subregion": "Seattle",
       "ages": "4-13",
-      "dates": "Summer 2026 — multiple sessions across the season",
-      "scholarshipAid": "Available — partial and full (up to 100%) for qualifying families",
+      "dates": "Summer 2026 \u2014 multiple sessions across the season",
+      "scholarshipAid": "Available \u2014 partial and full (up to 100%) for qualifying families",
       "registrationUrl": "https://zoo.org/camps/",
       "howToStart": "Register at zoo.org/camps; popular sessions fill in spring. Apply for scholarships during registration.",
       "confidence": "high",
@@ -36098,8 +36098,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — registration is open",
-      "description": "The Seattle Aquarium's Marine Summer Camp serves children ages 6–12 at the Aquarium on Pier 59. Campers explore Puget Sound marine life through guided behind-the-scenes activities, exhibit time, hands-on labs and group play. Camp groups are placed by age tier so curricula match developmental stage. Before and after care available 8:30–9:15am and 4–4:45pm for an additional fee. A limited number of needs-based scholarships are offered. Note: per-session tuition not posted on the public landing page; confirm directly via registration@seattleaquarium.org.",
+      "deadline": "Rolling \u2014 registration is open",
+      "description": "The Seattle Aquarium's Marine Summer Camp serves children ages 6\u201312 at the Aquarium on Pier 59. Campers explore Puget Sound marine life through guided behind-the-scenes activities, exhibit time, hands-on labs and group play. Camp groups are placed by age tier so curricula match developmental stage. Before and after care available 8:30\u20139:15am and 4\u20134:45pm for an additional fee. A limited number of needs-based scholarships are offered. Note: per-session tuition not posted on the public landing page; confirm directly via registration@seattleaquarium.org.",
       "url": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
       "tags": [
         "summer-camp",
@@ -36118,8 +36118,8 @@
       ],
       "subregion": "Seattle",
       "ages": "6-12",
-      "dates": "Summer 2026 — multiple weeklong sessions",
-      "scholarshipAid": "Available — limited number of needs-based scholarships",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
+      "scholarshipAid": "Available \u2014 limited number of needs-based scholarships",
       "registrationUrl": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
       "howToStart": "Register at seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp; email registration@seattleaquarium.org for tuition specifics or scholarship application.",
       "confidence": "medium",
@@ -36141,7 +36141,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by camp — see 2026 Summer Digital Course Catalog"
+        "display": "Varies by camp \u2014 see 2026 Summer Digital Course Catalog"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36167,8 +36167,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — registration via SCT website",
-      "description": "The Adrienne Dillard-Coons Drama School at Seattle Children's Theatre runs summer day camps for ages 3.5–18 at SCT's Seattle Center campus. Offerings include Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte and pratfalls), adventure-themed and art-focused drama. Camps build acting and storytelling skills in age-banded groups, with a focus on exploration over performance for the youngest tiers. Note: 2026 per-camp dates and tuition not surfaced on landing page; consult the 2026 Summer Digital Course Catalog or email dramaschool@sct.org.",
+      "deadline": "Rolling \u2014 registration via SCT website",
+      "description": "The Adrienne Dillard-Coons Drama School at Seattle Children's Theatre runs summer day camps for ages 3.5\u201318 at SCT's Seattle Center campus. Offerings include Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte and pratfalls), adventure-themed and art-focused drama. Camps build acting and storytelling skills in age-banded groups, with a focus on exploration over performance for the youngest tiers. Note: 2026 per-camp dates and tuition not surfaced on landing page; consult the 2026 Summer Digital Course Catalog or email dramaschool@sct.org.",
       "url": "https://www.sct.org/education-programs/camps-classes-sct/",
       "tags": [
         "summer-camp",
@@ -36187,7 +36187,7 @@
       ],
       "subregion": "Seattle",
       "ages": "3.5-18",
-      "dates": "Summer 2026 — multiple weeklong sessions",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
       "scholarshipAid": "See SCT financial aid page",
       "registrationUrl": "https://www.sct.org/education-programs/class-finder/",
       "howToStart": "Browse offerings via the Class Finder at sct.org/education-programs/class-finder; contact dramaschool@sct.org for catalog and tuition details.",
@@ -36233,8 +36233,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — early-bird ends Feb 28, 2026",
-      "description": "Camp Galileo Bellevue is a multi-week summer day camp for rising K–5th graders blending STEAM project rotations, outdoor games and classic camp activities. Campers cycle through three rotations daily (engineering challenges, art studios, and active outdoor play) at a 9am–3pm schedule with optional extended care. Galileo Learning operates a national network of camps with consistent, design-thinking-based curriculum and trained staff. Early-bird enrollment by February 28 saves $50/week and provides priority friend placement; multi-week pricing reduces the per-week rate after week one.",
+      "deadline": "Rolling \u2014 early-bird ends Feb 28, 2026",
+      "description": "Camp Galileo Bellevue is a multi-week summer day camp for rising K\u20135th graders blending STEAM project rotations, outdoor games and classic camp activities. Campers cycle through three rotations daily (engineering challenges, art studios, and active outdoor play) at a 9am\u20133pm schedule with optional extended care. Galileo Learning operates a national network of camps with consistent, design-thinking-based curriculum and trained staff. Early-bird enrollment by February 28 saves $50/week and provides priority friend placement; multi-week pricing reduces the per-week rate after week one.",
       "url": "https://galileo-camps.com/our-camps/locations/bellevue/",
       "tags": [
         "summer-camp",
@@ -36254,7 +36254,7 @@
       ],
       "subregion": "Eastside",
       "ages": "5-11",
-      "dates": "Summer 2026 — multiple weeklong sessions, 9am–3pm",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions, 9am\u20133pm",
       "scholarshipAid": "See Galileo financial assistance program",
       "registrationUrl": "https://galileo-camps.com/our-camps/locations/bellevue/",
       "howToStart": "Enroll at galileo-camps.com/our-camps/locations/bellevue; lock in Early Bird pricing by Feb 28, 2026.",
@@ -36300,8 +36300,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — register via musiccenternw.org",
-      "description": "Music Center of the Northwest in north Seattle runs summer music camps for young children including Rhythm Kids® and a Music Together® summer camp (currently scheduled July 20–24, 12:30–4:00 pm, $295 tuition). The Center's mission is that music education should be accessible regardless of financial means, so a variety of tuition discounts and scholarships are offered to make programs more affordable. Music Together classes use songs, rhythm, rhymes, movement and instrument play to introduce basic musical concepts; families also receive a Music Together songbook and CD/app access.",
+      "deadline": "Rolling \u2014 register via musiccenternw.org",
+      "description": "Music Center of the Northwest in north Seattle runs summer music camps for young children including Rhythm Kids\u00ae and a Music Together\u00ae summer camp (currently scheduled July 20\u201324, 12:30\u20134:00 pm, $295 tuition). The Center's mission is that music education should be accessible regardless of financial means, so a variety of tuition discounts and scholarships are offered to make programs more affordable. Music Together classes use songs, rhythm, rhymes, movement and instrument play to introduce basic musical concepts; families also receive a Music Together songbook and CD/app access.",
       "url": "https://www.musiccenternw.org/musictogether",
       "tags": [
         "summer-camp",
@@ -36320,8 +36320,8 @@
       ],
       "subregion": "Seattle",
       "ages": "3-12",
-      "dates": "Music Together summer camp: July 20–24, 2026; other sessions throughout summer",
-      "scholarshipAid": "Available — tuition discounts and scholarships offered",
+      "dates": "Music Together summer camp: July 20\u201324, 2026; other sessions throughout summer",
+      "scholarshipAid": "Available \u2014 tuition discounts and scholarships offered",
       "registrationUrl": "https://www.musiccenternw.org/musictogether",
       "howToStart": "Browse and register at musiccenternw.org/musictogether or call (206) 526-8443.",
       "confidence": "high",
@@ -36340,7 +36340,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by age tier — see registration page"
+        "display": "Varies by age tier \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36367,7 +36367,7 @@
         ]
       },
       "deadline": "Member registration opened March 10, 2026; general March 12, 2026",
-      "description": "Point Defiance Zoo & Aquarium summer camps in Tacoma deliver lively, age-tiered programs about animals, ecosystem exploration, crafts and group games — with a focus on fostering empathy and respect for wildlife. Camps cover ages from preschool/Little Explorers through teen Zoo Camp (14–17), with elementary and middle-school tiers running across the summer. The Zoo offers needs-based scholarships for Pierce County residents whose parent/guardian is enrolled in EBT/Washington Quest, WIC, or who are foster/kinship caregivers.",
+      "description": "Point Defiance Zoo & Aquarium summer camps in Tacoma deliver lively, age-tiered programs about animals, ecosystem exploration, crafts and group games \u2014 with a focus on fostering empathy and respect for wildlife. Camps cover ages from preschool/Little Explorers through teen Zoo Camp (14\u201317), with elementary and middle-school tiers running across the summer. The Zoo offers needs-based scholarships for Pierce County residents whose parent/guardian is enrolled in EBT/Washington Quest, WIC, or who are foster/kinship caregivers.",
       "url": "https://www.pdza.org/summer-camps/",
       "tags": [
         "summer-camp",
@@ -36386,8 +36386,8 @@
       ],
       "subregion": "South Puget Sound",
       "ages": "4-13 (elementary/middle tiers)",
-      "dates": "Summer 2026 — multiple weeklong sessions",
-      "scholarshipAid": "Available — needs-based for Pierce County residents on EBT/WIC/foster/kinship",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
+      "scholarshipAid": "Available \u2014 needs-based for Pierce County residents on EBT/WIC/foster/kinship",
       "registrationUrl": "https://www.pdza.org/summer-camps/",
       "howToStart": "Register at pdza.org/summer-camps; scholarship applicants must reside in Pierce County and meet program enrollment criteria.",
       "confidence": "high",
@@ -36405,7 +36405,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session — non-refundable deposit $25 (half-day) or $50 (full-day) per session"
+        "display": "Varies by session \u2014 non-refundable deposit $25 (half-day) or $50 (full-day) per session"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36427,7 +36427,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — early registration recommended",
+      "deadline": "Rolling \u2014 early registration recommended",
       "description": "Weeklong half-day and full-day summer camps at Hands On Children's Museum in Olympia for ages 3-9, with a Counselor in Training program for ages 10-13. Themes include art, nature, science, and cooking. Note: 2026 per-session tuition not published on the landing page; confirm directly with reservations@hocm.org or (360) 956-0818 ext. 103.",
       "url": "https://www.hocm.org/events-programs/camps/summer-camps-2026/",
       "tags": [
@@ -36447,7 +36447,7 @@
       ],
       "subregion": "South Sound / Olympia",
       "ages": "3-13",
-      "dates": "Summer 2026 — weekly sessions June through August",
+      "dates": "Summer 2026 \u2014 weekly sessions June through August",
       "scholarshipAid": "Not advertised on landing page",
       "registrationUrl": "https://www.hocm.org/events-programs/camps/summer-camps-2026/",
       "howToStart": "Visit hocm.org/events-programs/camps/summer-camps-2026 to browse weekly themes; contact reservations@hocm.org for tuition rates.",
@@ -36491,7 +36491,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — payments drafted Monday two weeks before each session",
+      "deadline": "Rolling \u2014 payments drafted Monday two weeks before each session",
       "description": "Weeklong summer day camp at the Whatcom Family YMCA in Bellingham for kids entering 1st-5th grade in fall 2026. Sister programs include Outdoor Day Camp (entering 2nd-5th, transported to Gordon Carter Conservation Site), Sports & Swim Camp, and Back to School Camp. Programming runs 9am-4pm with 7:30am-9am and 4pm-6pm extended care. Sliding fee schedule and approved childcare subsidies (state and local assistance) are accepted. Note: 2026 weekly tuition rates not on landing page; confirm with registrar@whatcomymca.org or (360) 255-0585.",
       "url": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
       "tags": [
@@ -36514,7 +36514,7 @@
       "subregion": "Bellingham / Whatcom County",
       "ages": "6-11",
       "dates": "11 weekly sessions, June 15 - August 28, 2026",
-      "scholarshipAid": "Available — sliding fee schedule + state/local childcare subsidies accepted",
+      "scholarshipAid": "Available \u2014 sliding fee schedule + state/local childcare subsidies accepted",
       "registrationUrl": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
       "howToStart": "Visit whatcomymca.org/camps-summer-programs/Discovery-Camp to register; contact registrar@whatcomymca.org for tuition specifics.",
       "confidence": "medium",
@@ -36558,7 +36558,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — sessions fill spring",
+      "deadline": "Rolling \u2014 sessions fill spring",
       "description": "Music camps at Music Works Northwest, a 60-year nonprofit community music school in Bellevue. 2026 offerings include Creative Keyboards Piano Camp (ages 4-6, June 29-July 1), I Love Music Camp (ages 6-10, July 6-10), Gotta Sing! Voice Camp (ages 4-6, July 6-10), and Pop Star Camp (ages 4-6, July 13-17), among others. Weekly camps run 9:30am-3:30pm and end with a Friday performance for family. Welcomes neurodivergent students. Tuition discounts and scholarships available.",
       "url": "https://www.musicworksnw.org/summer-camps",
       "tags": [
@@ -36582,7 +36582,7 @@
       "subregion": "Eastside",
       "ages": "4-10",
       "dates": "Sessions across June, July 2026",
-      "scholarshipAid": "Available — tuition discounts and scholarships",
+      "scholarshipAid": "Available \u2014 tuition discounts and scholarships",
       "registrationUrl": "https://www.musicworksnw.org/summer-camps",
       "howToStart": "Browse 2026 camp lineup at musicworksnw.org/summer-camps and register online; ask about tuition discounts when applying.",
       "confidence": "high",
@@ -36624,8 +36624,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — sessions fill spring",
-      "description": "Outdoor day camps on IslandWood's 255-acre Bainbridge Island campus and at the Brightwater Education Center in Woodinville. Full-day camps (9:00am-3:30pm) for campers entering 1st-6th grade; half-day camps (9:00am-12:00pm) for entering Pre-K and Kindergarten. Camp lineup includes marine science, cooking, art, Outdoor Adventures, and Wilderness Survival Skills. Sessions run from the last week of June through the first week of August (Mon-Fri; Friday July 3 closure). Note: 2026 financial-assistance funds have been fully allocated; per-session tuition not in search snippets — see registration page.",
+      "deadline": "Rolling \u2014 sessions fill spring",
+      "description": "Outdoor day camps on IslandWood's 255-acre Bainbridge Island campus and at the Brightwater Education Center in Woodinville. Full-day camps (9:00am-3:30pm) for campers entering 1st-6th grade; half-day camps (9:00am-12:00pm) for entering Pre-K and Kindergarten. Camp lineup includes marine science, cooking, art, Outdoor Adventures, and Wilderness Survival Skills. Sessions run from the last week of June through the first week of August (Mon-Fri; Friday July 3 closure). Note: 2026 financial-assistance funds have been fully allocated; per-session tuition not in search snippets \u2014 see registration page.",
       "url": "https://islandwood.org/outdoor-summer-day-camps-2026/",
       "tags": [
         "summer-camp",
@@ -36648,7 +36648,7 @@
       "subregion": "Kitsap / Bainbridge",
       "ages": "4-12",
       "dates": "Last week of June through first week of August 2026",
-      "scholarshipAid": "Not available for 2026 — funds exhausted",
+      "scholarshipAid": "Not available for 2026 \u2014 funds exhausted",
       "registrationUrl": "https://islandwood.org/outdoor-summer-day-camps-2026/",
       "howToStart": "Register at islandwood.org/outdoor-summer-day-camps-2026; contact info@islandwood.org or (206) 855-4300 for tuition.",
       "confidence": "medium",
@@ -36669,7 +36669,7 @@
       "cost": {
         "amount": 0,
         "type": "free",
-        "display": "Free — fully donor-funded"
+        "display": "Free \u2014 fully donor-funded"
       },
       "selectivity": "competitive",
       "admissionsImpact": "medium",
@@ -36689,7 +36689,7 @@
         ],
         "gender": "girls (cis and transgender)"
       },
-      "deadline": "Applications open January each year — 2026 cycle CLOSED, applications for 2027 open January 2027",
+      "deadline": "Applications open January each year \u2014 2026 cycle CLOSED, applications for 2027 open January 2027",
       "description": "Free 5-day overnight geology and technology field camp at Mount St. Helens for girls (cis and transgender) graduating from 7th and 8th grade in Washington and Oregon. Campers explore volcano science, geologic hazards, and ecology with USGS scientists, Mount St. Helens Institute educators, and university researchers. 2026 dates: Aug 3-7. Pickup/drop-off at the Cascades Volcano Observatory in Vancouver, WA. Applications require a Teacher Recommendation Form; selection is based on interest in science, social/financial need, and program fit. Recurring annually since 2015.",
       "url": "https://www.mshinstitute.org/geogirls",
       "tags": [
@@ -36714,7 +36714,7 @@
       "subregion": "Southwest WA / Portland Metro",
       "ages": "12-14 (entering 8th-9th grade)",
       "dates": "August 3-7, 2026",
-      "scholarshipAid": "N/A — program is fully free",
+      "scholarshipAid": "N/A \u2014 program is fully free",
       "registrationUrl": "https://www.mshinstitute.org/learn/for-parents/geogirls/geogirl-apply.html",
       "howToStart": "Watch mshinstitute.org/geogirls for January application opening; complete student application + Teacher Recommendation Form. Contact learn@mshinstitute.org with questions.",
       "confidence": "high",
@@ -36722,6 +36722,139 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_source": "https://www.mshinstitute.org/geogirls"
+    },
+    {
+      "name": "Imagine Children's Museum Summer Camps",
+      "provider": "Imagine Children's Museum",
+      "organization": "Imagine Children's Museum",
+      "category": "academic-enrichment",
+      "subcategory": "stem-arts-children",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies \u2014 see registration page (Extended Play available for full-day camps)"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Everett",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "ages": "4-12",
+      "dates": "10 weeks of camps starting week of June 22, 2026 through August 24, 2026",
+      "deadline": "Rolling weekly registration",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Snohomish County",
+      "scholarshipAid": "Not advertised on landing page \u2014 contact education@imaginecm.org",
+      "description": "Imagine Children's Museum in Everett offers 10 weeks of themed summer camps with three age tiers: Preschool (ages 4-5, half-day 9 AM-12 PM), Elementary (ages 6-8, full-day 9 AM-3 PM), and Tweens (ages 9-12, full-day 9 AM-3 PM). Camps run Monday-Friday at the museum or Evergreen Arboretum and span themes from pirate adventures and engineering to nature, robotics, and makerspace work. Optional Extended Play extends drop-off/pickup hours for full-day campers. Note: per-camp tuition not published on the landing page; confirm directly with the organization.",
+      "registrationUrl": "https://www.imaginecm.org/summer-camps/",
+      "url": "https://www.imaginecm.org/summer-camps/",
+      "howToStart": "Register at imaginecm.org/summer-camps. Email education@imaginecm.org for age exceptions or pricing details.",
+      "tags": [
+        "summer-camp",
+        "children",
+        "museum",
+        "stem",
+        "arts",
+        "everett",
+        "wa"
+      ],
+      "_source": "https://www.imaginecm.org/summer-camps/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "scholarshipAid"
+      ],
+      "_addedBy": "esms-grinder"
+    },
+    {
+      "name": "Camp Killoqua Day Camp & Resident Camp",
+      "provider": "Camp Fire Snohomish County",
+      "organization": "Camp Fire Snohomish County (Camp Killoqua)",
+      "category": "academic-enrichment",
+      "subcategory": "outdoor-residential",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by session \u2014 see registration page; financial assistance first-come, first-served"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Stanwood",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "ages": "3-14",
+      "dates": "Multiple weekly day-camp sessions and overnight sessions through summer 2026",
+      "deadline": "Rolling registration; financial assistance first-come first-served",
+      "scope": "regional",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Snohomish County / Stanwood",
+      "scholarshipAid": "Available \u2014 first come, first served basis",
+      "description": "Camp Killoqua is the 185-acre summer camp owned and operated by Camp Fire Snohomish County in Stanwood, WA (15207 E Lake Goodwin Rd). Day Camp runs grades K-8 (9 AM-4 PM, with extended hours 7:30-9:00 AM and 4:00-5:30 PM), with Preschool Day Camp (ages 3-5, 9 AM-12 PM) offered in select sessions. Overnight Resident Camp serves grades 4-8. Bus transportation available for day camp (not preschool). The CIT 1 leadership program serves campers entering 11th grade in fall 2026. Long-running Camp Fire affiliate camp. Note: per-session tuition not published on the landing page; confirm directly with the organization.",
+      "registrationUrl": "https://campkilloqua.org/programs/",
+      "url": "https://campkilloqua.org/",
+      "howToStart": "Register at campkilloqua.org/registration-information or call (360) 652-6250. Apply for financial assistance early.",
+      "tags": [
+        "summer-camp",
+        "camp-fire",
+        "outdoor",
+        "residential",
+        "stanwood",
+        "wa"
+      ],
+      "_source": "https://campkilloqua.org/programs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "_addedBy": "esms-grinder"
     }
   ]
 }
