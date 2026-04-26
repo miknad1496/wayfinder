@@ -257,6 +257,30 @@
       "icon": "\ud83d\udd0d",
       "items": [
         {
+          "label": "Special Olympics Unified Champion Schools \u2014 100% free for schools",
+          "detail": "Unified Champion Schools is FREE for participating K-12 schools \u2014 Special Olympics covers all curriculum, coaching subsidies, and event support. 7,500+ US schools participate. Schools that achieve 'National Banner' status get serious recognition. Inclusive Youth Leadership track is a strong leadership credential for kids who participate as Unified Partners (without disabilities)."
+        },
+        {
+          "label": "Camp Korey + SeriousFun camps \u2014 100% free including travel",
+          "detail": "Camp Korey (Carnation WA, part of SeriousFun Network founded by Paul Newman) serves kids with serious medical conditions FREE including travel, meals, and 24/7 medical care. Disease-specific weeks (cancer week, kidney week, etc.) \u2014 kids meet others with their condition. Apply via your kid's specialist 4-6 months before session. There are ~30 SeriousFun camps globally \u2014 find one for your condition."
+        },
+        {
+          "label": "Friendship Circle \u2014 buddies are HS volunteers, free for families",
+          "detail": "Friendship Circle is FREE for special-needs families. Buddies (HS volunteers) commit to weekly home visits + monthly group events. 100+ chapters globally. Founded by Chabad-Lubavitch but explicitly open to all faiths/none. Strong combo: disability-inclusion for the special-needs kid + community-service credential for the HS buddy."
+        },
+        {
+          "label": "Easterseals \u2014 sibling-inclusive at many affiliates",
+          "detail": "Many Easterseals affiliates accept 'typically-developing' siblings of kids with disabilities at the same camp \u2014 important for families that want all kids in one place during summer. Ask affiliate directly. Sliding-scale fees + scholarship pool covers most need-based requests."
+        },
+        {
+          "label": "AHRC NY \u2014 OPWDD waiver funds most NY camps",
+          "detail": "For NY residents, the Office for People with Developmental Disabilities (OPWDD) waiver covers most disability-focused camp costs at AHRC + many other providers. Application is through the kid's care manager. If your kid has a developmental disability diagnosis but isn't in OPWDD yet, the application takes ~3-6 months. Worth starting now even if you don't need camp this summer."
+        },
+        {
+          "label": "Autism Society local affiliate is the best starting point",
+          "detail": "For autism-specific camps, START with your state Autism Society affiliate. They maintain vetted directories including autism-specific camps, inclusive camps with trained staff, and family camps. They also know which Medicaid HCBS waivers can fund camp in your state \u2014 more important than the camp choice itself for many families."
+        },
+        {
           "label": "Sierra Club ICO \u2014 gear + transport + food all free",
           "detail": "Sierra Club Inspiring Connections Outdoors covers EVERYTHING: gear (boots, jackets, packs, sleeping bags), transportation, food, leader fees. 100% free for participating kids. 50+ chapters in major US cities partner with BGCA, YMCA, and schools to reach under-resourced families. The hidden secret is the Sierra Club volunteers fundraise for the gear pool \u2014 there's nothing else like this."
         },
@@ -351,30 +375,6 @@
         {
           "label": "Best Buddies \u2014 strong AO signal (inclusion track)",
           "detail": "Best Buddies Middle School + High School chapters are recognized by admissions readers as authentic disability-inclusion engagement (vs. one-off charity events). Multi-year participation with documented friendship + chapter leadership reads strongly. Your school can charter a chapter for free at bestbuddies.org."
-        },
-        {
-          "label": "Field Museum \u2014 Junior Curators behind-the-scenes lab access",
-          "detail": "Field Museum's Junior Curators track (older kids) includes behind-the-scenes museum lab visits \u2014 meeting actual paleontologists + curators working on collections. Distinct experience vs. the regular age-banded camps. Members get priority registration."
-        },
-        {
-          "label": "Science Olympiad \u2014 23 events let any kid find their lane",
-          "detail": "Sci Oly Division B (grades 6-9) has 23 different events \u2014 anatomy, disease detectives, dynamic planet, engineering build events, Wright stuff (planes), bridge building, etc. Lots of room for different strengths within one team. Most kids do 2-3 events, not all 23. Schools register teams of 15."
-        },
-        {
-          "label": "EF Language Travel \u2014 group leaders + chaperones for ages 10-13",
-          "detail": "EF's younger language-travel programs (ages 10-13) include adult chaperones + group leaders the entire trip. More structure than the 14+ programs but still genuinely abroad. Good first-international experience for tweens whose parents aren't ready to send them solo. Pricier than Concordia but actually-abroad."
-        },
-        {
-          "label": "BGCA \u2014 annual membership $20-30 covers everything",
-          "detail": "Boys & Girls Clubs of America membership at most local Clubs is $20-30/year and grants kids access to ALL programming: after-school, summer day camp, sports leagues, arts, computer labs, tutoring. Many clubs waive entirely for low-income families. Way cheaper than the 'pay-per-camp' model \u2014 most parents underuse this."
-        },
-        {
-          "label": "YMCA Open Doors covers 100% for qualifying families",
-          "detail": "Y-USA's Open Doors financial assistance program covers up to 100% of YMCA membership + program fees for qualifying families. Application is short (income verification only). Applies across day camps, swim lessons, sports leagues, residential camps. Apply once per year, valid family-wide."
-        },
-        {
-          "label": "Scholastic + library combo > paid summer reading apps",
-          "detail": "Scholastic Summer Reading Challenge is free, ad-free, and pairs perfectly with your local public library's summer reading club (most libraries have one with prizes). Combined: free books + tracking + community + prizes. No need for paid summer reading apps unless you want gamification specifically."
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 914,
+    "totalCount": 920,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -39889,6 +39889,284 @@
       "description": "Earthwatch Family Expeditions: parents + kids join real scientists on conservation field research. 8-12 day trips to field sites worldwide (sea turtles in Costa Rica, lemurs in Madagascar, climate change in Iceland, Caribbean reefs). Kids ages 8+ accepted with parent. Earthwatch's Ignite Awards provide up to 100% scholarships for qualifying low-income youth. Real science contribution + immersive intl experience. Premium pricing but powerful long-term memory.",
       "url": "https://earthwatch.org/family-expeditions",
       "_source": "https://earthwatch.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Special Olympics Unified Champion Schools",
+      "provider": "Special Olympics",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for participating schools (Special Olympics covers all program costs)"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "7,500+ schools nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Year-round school enrollment",
+      "description": "Special Olympics Unified Champion Schools is the K-12 education program that combines inclusive sports + leadership + whole-school engagement. Three components: (1) Unified Sports \u2014 students with and without intellectual disabilities play together, (2) Inclusive Youth Leadership, (3) Whole-School Engagement events. 7,500+ US schools participate. 100% free; Special Olympics provides curriculum, coaching, equipment subsidies. Strongest school-based disability-inclusion program in the US.",
+      "url": "https://www.specialolympics.org/our-work/unified-champion-schools",
+      "_source": "https://www.specialolympics.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Easter Seals Camps + Inclusive Recreation",
+      "provider": "Easterseals",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "summer",
+      "cost": {
+        "amount": 600,
+        "type": "sliding-scale",
+        "display": "Day camps ~$200-500/wk; residential ~$700-1,200/wk; sliding scale + scholarships heavy"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "70+ Easterseals affiliates nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Member registration Jan-Feb; general March-April",
+      "description": "Easterseals' 70+ US affiliates run summer camps explicitly designed for kids with disabilities \u2014 autism, cerebral palsy, intellectual disability, physical disability, sensory processing differences. Programs span day camps, residential weeks, family weekends, and parents' respite weekends. Trained staff with 1:1 to 3:1 ratios. Sliding-scale + need-based scholarships. Some affiliates include 'typically developing' siblings. Find your local affiliate via easterseals.com.",
+      "url": "https://www.easterseals.com/our-programs/childrens-services/",
+      "_source": "https://www.easterseals.com",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Camp Korey (chronic illness camp, WA)",
+      "provider": "Camp Korey (SeriousFun Children's Network)",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE \u2014 including travel + meals + medical care"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "Carnation, WA",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 7,
+        "ageMax": 17
+      },
+      "deadline": "Apply 4-6 months before session; sessions disease-specific",
+      "description": "Camp Korey serves kids with serious medical conditions (cancer, blood disorders, neurological conditions, etc.) FREE including travel, meals, medical care. SeriousFun Network founded by Paul Newman. Disease-specific weeks (e.g., 'cancer week', 'kidney week') so kids share their condition with peers. Full-time medical team on-site. 50-acre site in Carnation WA. Sibling weekends + family retreats also offered. Application via referring physician.",
+      "url": "https://campkorey.org",
+      "_source": "https://campkorey.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Friendship Circle (special needs + peer-buddy program)",
+      "provider": "Friendship Circle (Chabad-affiliated, open to all)",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for participating families with special-needs kids"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "100+ chapters in US, Canada, UK, Israel, France, Brazil, Mexico",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Year-round enrollment",
+      "description": "Friendship Circle pairs kids/teens with special needs (autism, IDD, physical disabilities) with typical-peer 'buddies' for weekly home visits + monthly group events + summer programs. Buddies are HS volunteers. 100+ chapters globally. 100% FREE for families with special-needs kids. Founded by Chabad-Lubavitch but open to all faiths/none. Strong disability-inclusion + community for families isolated by their kid's needs.",
+      "url": "https://friendshipcircle.org",
+      "_source": "https://friendshipcircle.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "AHRC Camps + Recreation",
+      "provider": "AHRC New York City + AHRC NY State",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "summer",
+      "cost": {
+        "amount": 500,
+        "type": "sliding-scale",
+        "display": "Day camps ~$300-700/wk; residential ~$800-1,200/wk; OPWDD funding covers most for NY residents"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "NYC + Westchester + Long Island + upstate NY",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "NY",
+          "NJ",
+          "CT",
+          "PA"
+        ],
+        "ageMin": 5,
+        "ageMax": 21
+      },
+      "deadline": "Member registration January; general March",
+      "description": "AHRC New York runs the largest network of disability-focused camps + recreation in NYC metro. Day camps in all 5 boroughs + residential at Camp Anne (NY upstate). For NY residents, OPWDD (Office for People with Developmental Disabilities) waiver funding covers most costs. Open to autism, IDD, Down syndrome, cerebral palsy, sensory processing. 1:1 staffing for kids with significant support needs. Sibling Days + family events.",
+      "url": "https://www.ahrcnyc.org/programs-services/camp-recreation/",
+      "_source": "https://www.ahrcnyc.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Autism Society Resource Network \u2014 local camps + summer programs",
+      "provider": "Autism Society of America",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "summer",
+      "cost": {
+        "amount": 300,
+        "type": "sliding-scale",
+        "display": "Varies by local affiliate; Autism Society directory lists state-by-state options + funding"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "75+ Autism Society affiliates in 40+ states",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Affiliate-specific",
+      "description": "Autism Society of America's 75+ state + local affiliates maintain summer-camp directories specifically vetted for autistic kids. Resources include: (a) autism-specific camps (full immersion), (b) inclusive camps (mainstream camps with autism-trained staff), (c) family camps. Most state affiliates also know which Medicaid HCBS waivers can fund camp + respite care in their state. Best starting point for parents new to autism camp landscape.",
+      "url": "https://autismsociety.org/affiliate-network/",
+      "_source": "https://autismsociety.org",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
