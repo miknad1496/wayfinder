@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T12:10:00Z",
-  "totalRuns": 16,
-  "totalEnriched": 99,
-  "totalSkipped": 36,
-  "notes": "Run 16 (catching up progress JSON; runs 14+15 had committed enriched data but didn't update progress.json). Run 16 enriched 8 WA high schools (W F West / Chelan / Cheney / Three Springs / Jenkins / Chimacum / CFA Clarkston / Cle Elum-Roslyn) spanning offsets 120-136. Skipped 7 alt-placeholders <50. Queue offset 120 -> 137.",
+  "lastRun": "2026-04-26T12:25:00Z",
+  "totalRuns": 17,
+  "totalEnriched": 107,
+  "totalSkipped": 46,
+  "notes": "Run 17: enriched 8 WA HS in Lakewood (Clover Park SD x3) + Colfax + College Place + Columbia/Burbank + Colville + Concrete. Spans offsets 137-154. 10 sub-50 alt skips (Swiftwater alt, Alfaretta House special_ed, Re-Entry, Transition Day, Oakridge Group, CPSD Open Doors name-pattern, College Place Open Doors, Columbia Alternative, Colville Fish Hatchery vocational enr=1, Twin Cedars alt). Caught Concrete HS combined-superintendent-principal role (Carrie Crickmore) via direct staff-directory fetch. Queue offset 137 -> 155.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 137,
+      "offset": 155,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 137 of 649; enriched 96 cumulative grinder count (96 total entries in k12-enriched.json incl 8 from this run)"
+      "note": "raw NCES offset 155 of 649; 107 cumulative grinder count"
     },
     {
       "state": "WA",

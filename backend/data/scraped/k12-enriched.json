@@ -11,7 +11,10 @@
     "lastRunNote": "Run 16: +8 verified WA high (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum-Roslyn band, offsets 120-136). Schools: W F West HS, Chelan HS, Cheney HS, Three Springs HS, Jenkins Jr/Sr, Chimacum Jr/Sr, Charles Francis Adams (Clarkston), Cle Elum-Roslyn HS. 7 alt-placeholder/<50 skips: Lewis Juv Det (10), Lewis Jail (0), Lewis Alt (45), Chelan Innovation (15), Cheney Open Doors (9), Chewelah Open Doors (27), Open Doors Reengagement (0).",
     "totalVerified": 96,
     "totalEnriched": 77,
-    "lastRun": 15
+    "lastRun": 15,
+    "lastEnriched": "2026-04-26",
+    "totalEntries": 112,
+    "verifiedCount": 112
   },
   "schools": [
     {
@@ -1718,7 +1721,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program \u2014 growth and excellence"
+        "2020 WA School Recognition Program — growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2535,7 +2538,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 \u2014 district's oldest HS",
+        "Founded 1952 — district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2891,7 +2894,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2941,7 +2944,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3131,7 +3134,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers \u2014 4A)",
+        "Athletics (Papermakers — 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3290,7 +3293,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3303,7 +3306,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3600,7 +3603,7 @@
         "Shannon McGowan",
         "Jacquie Monks"
       ],
-      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) — historical, not current.",
       "enrollment": 1380,
       "studentTeacherRatio": "22:1",
       "apParticipationRate": "30%",
@@ -4495,6 +4498,258 @@
         "https://www.dailyrecordnews.com/news/cle-elum-roslyn-high-school-welcomes-new-interim-principal/article_c9f4c220-60da-11ef-9e90-93e757f1f109.html",
         "https://www.niche.com/k12/cle-elum-roslyn-high-school-cle-eum-wa/",
         "https://www.usnews.com/education/best-high-schools/washington/districts/cle-elum-roslyn-school-district/cle-elum-roslyn-high-school-20800"
+      ]
+    },
+    {
+      "ncessch": "530141000250",
+      "name": "Clover Park High School",
+      "city": "Lakewood",
+      "state": "WA",
+      "district": "Clover Park School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://cphs.cloverpark.k12.wa.us/",
+      "principal": "Jennifer Appel, M.Ed., NBCT",
+      "principalNotes": "Confirmed via LinkedIn profile (Jennifer Appel - Principal at Clover Park High School) and CPHS principal-message page on cloverpark.k12.wa.us; NBCT certification, EdD candidate at Pacific Lutheran (educational leadership and equity).",
+      "enrollment": 1137,
+      "studentTeacherRatio": "16:1",
+      "graduationRate": "89% (recent average; range 74-88.6% across years)",
+      "apParticipation": "27% (Niche) / 48% (US News)",
+      "demographics": {
+        "minority": "84%",
+        "economicallyDisadvantaged": "84%"
+      },
+      "rating": {
+        "niche": "C+",
+        "usnews_rank_state": "Listed in CPSD"
+      },
+      "notablePrograms": "Diverse comprehensive HS; #84 of 544 in WA for Most Diverse Public High Schools (Niche).",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.linkedin.com/in/jennifer-appel-m-ed-nbct-850b57aa/",
+        "https://cphs.cloverpark.k12.wa.us/principal-message",
+        "https://www.niche.com/k12/clover-park-high-school-lakewood-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/clover-park-school-district/clover-park-high-school-20802"
+      ]
+    },
+    {
+      "ncessch": "530141000261",
+      "name": "Lakes High School",
+      "city": "Lakewood",
+      "state": "WA",
+      "district": "Clover Park School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "address": "10320 Farwest Drive SW, Lakewood, WA 98498",
+      "phone": "253-583-5550",
+      "website": "https://lakes.cloverpark.k12.wa.us/",
+      "principal": "Kären Mauer-Smith",
+      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role — current district pages list her as Principal.",
+      "enrollment": 1195,
+      "studentTeacherRatio": "20:1",
+      "graduationRate": "91% (Niche; WA state avg 84%); 91.4% in 2022-23",
+      "apParticipation": "36%",
+      "testScores": {
+        "mathProficient": "16%",
+        "readingProficient": "52%"
+      },
+      "rating": {
+        "niche": "Above average"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://lakes.cloverpark.k12.wa.us/students/school_groups/guidance_office/meet_our_staff",
+        "https://www.niche.com/k12/lakes-high-school-lakewood-wa/",
+        "https://www.publicschoolreview.com/lakes-high-school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/clover-park-school-district/lakes-high-school-20803"
+      ]
+    },
+    {
+      "ncessch": "530141003000",
+      "name": "General William H. Harrison Preparatory School",
+      "city": "Lakewood",
+      "state": "WA",
+      "district": "Clover Park School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "6-12",
+      "address": "8800 121st St SW, Lakewood, WA 98498",
+      "website": "https://harrisonprep.cloverpark.k12.wa.us/",
+      "principal": "Kevin Rupprecht",
+      "principalNotes": "Confirmed via Niche, Movoto, and US News listings; CPSD's school directory page (cloverpark.k12.wa.us/53161_4) lists him as Principal.",
+      "enrollment": 745,
+      "studentTeacherRatio": "19:1",
+      "graduationRate": "90%",
+      "ibProgram": true,
+      "ibParticipation": "81%",
+      "demographics": {
+        "minority": "70%",
+        "economicallyDisadvantaged": "67%"
+      },
+      "notablePrograms": "International Baccalaureate (IB) MYP and DP World School serving grades 6-12; college-prep curriculum centered on the IB program.",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cloverpark.k12.wa.us/53161_4",
+        "https://harrisonprep.cloverpark.k12.wa.us/",
+        "https://www.niche.com/k12/harrison-preparatory-school-lakewood-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/clover-park-school-district/general-william-h-harrison-preparatory-school-20807",
+        "https://www.ibo.org/en/school/004887"
+      ]
+    },
+    {
+      "ncessch": "530144000273",
+      "name": "Colfax High School",
+      "city": "Colfax",
+      "state": "WA",
+      "district": "Colfax School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "7-12",
+      "website": "https://csd300.org/",
+      "principal": "R. Aaron Lippy",
+      "principalNotes": "Selected April 2025 to replace outgoing principal David Gibb (six years of service). Lippy previously vice principal & athletic director at Coeur d'Alene Charter Academy (since 2017); M.S. School Administration, University of Idaho. Effective 2025-26 school year. Confirmed via Whitman County Gazette articles (April 2025 and 2026 follow-up).",
+      "enrollment": 262,
+      "graduationRate": "82-83% (range 82.2-83.6% recent years)",
+      "rating": {
+        "publicschoolreview": "Top 20% in WA for overall test scores"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.wcgazette.com/story/2025/04/24/news/new-colfax-jrsr-high-school-principal-selected/43744.html",
+        "https://www.wcgazette.com/story/2026/01/01/people/gazette-top-story-new-colfax-jrsr-high-school-principal-selected/45389.html",
+        "https://www.publicschoolreview.com/colfax-high-school-profile/99111",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/colfax-school-district/colfax-high-school-20808"
+      ]
+    },
+    {
+      "ncessch": "530147003489",
+      "name": "College Place High School",
+      "city": "College Place",
+      "state": "WA",
+      "district": "College Place Public Schools",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.cpps.org/o/high-school",
+      "principal": "Robert Aguilar",
+      "principalNotes": "Walla Walla native; also serves as K-12 Multilingual Director per LinkedIn. Confirmed via union-bulletin.com (2019 hire announcement) plus current LinkedIn profile and 2024-25 district calendar PDF.",
+      "studentTeacherRatio": "17:1",
+      "testScores": {
+        "mathProficient": "27%",
+        "readingProficient": "57%"
+      },
+      "notablePrograms": "Dual Language Program (district-launched, K-12 Multilingual model).",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.linkedin.com/in/robert-aguilar-b69b2624b/",
+        "https://www.union-bulletin.com/news/education/college_place/walla-walla-native-named-college-place-high-school-principal/article_ff3263c0-3930-11e9-a62a-c3472ddb6418.html",
+        "https://www.cpps.org/o/high-school/staff",
+        "https://www.niche.com/k12/college-place-high-school-college-place-wa/"
+      ]
+    },
+    {
+      "ncessch": "530159001758",
+      "name": "Columbia High School",
+      "city": "Burbank",
+      "state": "WA",
+      "district": "Columbia School District (Burbank)",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://csd400.org/",
+      "principal": "Kyle Miller",
+      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name — recommend cross-verifying against csd400.org admin page next pass.",
+      "enrollment": 223,
+      "graduationRate": "86% (2022-23; range 64.9-87% across recent years)",
+      "demographics": {
+        "white": "49.29%",
+        "hispanic": "44.08%",
+        "minority": "52%",
+        "economicallyDisadvantaged": "58%"
+      },
+      "mascot": "Coyotes",
+      "rating": {
+        "schooldigger": "1-star (rank 309/437 WA)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://en.wikipedia.org/wiki/Columbia_High_School_(Burbank,_Washington)",
+        "https://csd400.org/",
+        "https://www.publicschoolreview.com/columbia-high-school-profile/99323",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/columbia/columbia-high-school-20811"
+      ]
+    },
+    {
+      "ncessch": "530163000282",
+      "name": "Colville Senior High School",
+      "city": "Colville",
+      "state": "WA",
+      "district": "Colville School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "address": "154 Highway 20 East, Colville, WA 99114",
+      "website": "https://www.colsd.org/o/chs",
+      "principal": "Kevin Knight",
+      "assistantPrincipal": "Brad Groce",
+      "athleticDirector": "Megan Smedley",
+      "principalNotes": "Listed in CHS principal's-welcome page on chs.colsd.org and district about-CHS page; corroborated by 2023-24 student handbook PDF.",
+      "enrollment": 506,
+      "graduationRate": "90-94% (range 82.7-90.9% across recent years)",
+      "apParticipation": "35%",
+      "demographics": {
+        "minority": "15%",
+        "economicallyDisadvantaged": "56%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.colsd.org/o/chs",
+        "http://chs.colsd.org/about_c_h_s/principal_s_welcome",
+        "https://www.colsd.org/o/chs/page/about-chs",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/colville-school-district/colville-senior-high-school-20812",
+        "https://www.niche.com/k12/colville-senior-high-school-colville-wa/"
+      ]
+    },
+    {
+      "ncessch": "530166000286",
+      "name": "Concrete High School",
+      "city": "Concrete",
+      "state": "WA",
+      "district": "Concrete School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "7-12",
+      "website": "https://www.concrete.k12.wa.us/en-US/high-school",
+      "principal": "Carrie Crickmore",
+      "assistantPrincipal": "David Rodriguez",
+      "principalNotes": "Carrie Crickmore serves a combined Superintendent-and-Principal role for the small Concrete SD (verified via the district's High School Staff Directory page); David Rodriguez is Assistant Principal & Athletic Director. Prior interim principal Kristen Fairbank was removed from the 2024-25 staff list (April 2024 GoSkagit article).",
+      "enrollment": 203,
+      "graduationRate": "60-79% (range 68.0-83.6% across recent years)",
+      "demographics": {
+        "white": "77%",
+        "hispanic": "15%",
+        "twoOrMore": "4%",
+        "americanIndian": "3%",
+        "black": "1%",
+        "economicallyDisadvantaged": "86%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.concrete.k12.wa.us/en-US/contact-us/high-school-staff-directory-db71f6b6",
+        "https://www.concrete.k12.wa.us/en-US/high-school",
+        "https://www.goskagit.com/news/concrete-school-board-removes-high-school-principal-from-2024-25-staff-list/article_1256d460-0328-11ef-a52a-3785139193aa.html",
+        "https://www.publicschoolreview.com/concrete-high-school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/concrete-school-district/concrete-high-school-20816"
       ]
     }
   ]

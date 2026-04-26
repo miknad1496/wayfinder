@@ -239,3 +239,61 @@
 | 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced; /tmp full + fuse mount traps discovered. |
 | 2026-04-26 | 8     | 7        | 1       | Battle Ground / Prairie / Summit View / Lumen / Whatcom batch. |
 | 2026-04-26 | 7     | 6        | 2       | WebFetch failures + site:domain workaround. |
+
+## RUN 17 (2026-04-26) — Lakewood/Colfax/College Place/Burbank/Colville/Concrete band (offsets 137-154)
+
+### Outcome
+- Verified: 8 (Clover Park HS, Lakes HS, Harrison Prep, Colfax HS, College Place HS, Columbia HS Burbank, Colville Senior HS, Concrete HS)
+- Skipped: 10 (Swiftwater alt 22, Alfaretta House special_ed 14, Re-Entry HS 0, Transition Day 12, Oakridge Group 3, CPSD Open Doors 218 [name-pattern auto-skip], College Place Open Doors 8, Columbia Alt 0, Colville Fish Hatchery vocational 1, Twin Cedars alt 0)
+- Wall-clock: ~10 min, 1 successful WebFetch (Concrete HS staff directory ~149KB, parseable via python regex)
+
+### EFFECTIVE PATTERNS (added)
+- **Combined-role discovery via direct staff-directory fetch**: Concrete SD (small rural Skagit district) has Carrie Crickmore as both **Superintendent and Principal** — surfaced from staff-directory page that web-search couldn't pin down. Lesson: when WebSearch returns ambiguous results for small rural HS principals, fetch the district's HS staff-directory URL directly; the JSON-wrapped HTML is parseable via python regex on `principal` keyword even at 100KB+.
+- **Lakewood Clover Park SD cluster (3 schools)**: Clover Park HS + Lakes HS + Harrison Prep — district-clustering held but each school had different administrative pages. Cluster batching saved time on context-switching but each school still needed an individual `"[School]" Lakewood principal 2024 2025` query because they don't share staff.
+- **Cross-state homonym disambiguation for "Lakewood"**: Lakewood, WA vs Lakewood, OH/CA/NJ/CO are all distinct districts. Always include "Lakewood Washington" or "WA" in the query to defeat the OH/NJ Lakewood HS dominance in search results.
+- **Outgoing/incoming principal transitions**: Colfax HS had David Gibb (out, 6 years) → R. Aaron Lippy (in, 2025-26). Two-article confirm via Whitman County Gazette (April 2025 nomination + 2026 follow-up "top story" recap). Lesson: when a principal-transition article surfaces, *always* search for a follow-up confirmation article 6-12 months later before recording the new name as current.
+
+### FAILED PATTERNS (added)
+- **Niche / RateMyTeachers role-confusion**: For Lakes HS, an old RateMyTeachers archive listed Kären Mauer-Smith as "Registrar" — first-pass WebSearch synthesis surfaced this and contradicted the actual current "Principal" listing on the district staff page. Lesson: when role conflict appears in synthesis, *always* prefer the district's official staff page URL (lakes.cloverpark.k12.wa.us/students/school_groups/guidance_office/meet_our_staff) over third-party archives.
+- **Synthesis hallucination on conflicting names**: For Clover Park HS, first synthesis paragraph claimed "Tim Stults" as principal alongside "Jennifer Appel" — Stults is outdated. Lesson: when synthesis offers two candidate names, run a `"[Candidate]" [School] [district]` confirmation query before recording either; the wrong name will produce no LinkedIn/news hit, the right one will.
+
+### SOURCE-SPECIFIC NOTES (added)
+- `concrete.k12.wa.us/en-US/contact-us/high-school-staff-directory-db71f6b6` — ~149KB; web_fetch saves to file; principal name parseable via python regex on `principal` keyword.
+- `cphs.cloverpark.k12.wa.us/principal-message` — clean, fetches inline; carries principal name in body.
+- `harrisonprep.cloverpark.k12.wa.us/` — clean, IB-focused school page.
+- `lakes.cloverpark.k12.wa.us/students/school_groups/guidance_office/meet_our_staff` — staff list, parseable.
+- `wcgazette.com` — high-yield Whitman County (Colfax/Pullman) news source for school admin transitions.
+- `union-bulletin.com` — high-yield Walla Walla / College Place news source.
+- `goskagit.com` — high-yield Skagit County (Concrete/Mt Vernon/Burlington) news source.
+
+### DATA QUALITY FLAGS
+- **Columbia HS Burbank single-source principal**: Kyle Miller from Wikipedia only — no LinkedIn/news byline corroboration found. Recommend follow-up cross-check on csd400.org admin page next pass.
+- **Lakes HS staff-page role conflict** (registrar vs principal for Mauer-Smith) — recorded as Principal per current district staff page; flagged in `principalNotes`.
+- **Concrete HS combined Superintendent/Principal role** — Carrie Crickmore holds both; record reflects the dual role in `principalNotes`.
+- **CPSD Open Doors Program (enr=218)** is the first Open Doors entry above the <50 skip threshold. Per name-pattern lessons rule from Run 13, auto-skipped without research because "Open Doors" name pattern signals consortium-administered alternative pathway, not a regular HS — but worth noting for future-prompt revision: should the threshold be enr<100 specifically for Open Doors / Reentry / Virtual Academy patterns to avoid over-aggressive skipping?
+
+### CALIBRATION SUGGESTIONS
+- **Heavy alt-cluster band confirmed**: 10 of 18 raw rows (55%) at offsets 137-154 were sub-50 alt placeholders or special-ed homes. The CPSD Lakewood band has the worst alt-density seen so far (5 of 9 CPSD rows were skipped). Recommend keeping batch_size=8 — bumping to 10 in this band would only yield maybe 1-2 extra schools but cost more wall-clock per skip.
+- **Open Doors name-pattern carve-out works at the >50 threshold too**: CPSD Open Doors enr=218 was correctly auto-skipped without research per the name-pattern rule. The rule is robust.
+- **Pre-dedup pass**: Run 17 had 0 dups (all 8 candidates were NEW), but the Run 9/16 proposal to formalize a pre-dedup pre-filter remains open.
+- **Recommend keeping batch_size=8** for next 1-2 runs. Queue at offset 155+ enters Coupeville / Creston / Cusick / Curlew band — likely lower density, more rural single-district schools.
+
+### OPEN QUESTIONS / TODO
+- Should `principalNotes` get a structured `principalRole: "primary | combined-superintendent | interim | acting"` field? Concrete HS would benefit. CERHS (Run 16's Tim Berndt interim) too.
+- Wikipedia-only principal name (Columbia HS Burbank Kyle Miller) — should the schema mark single-source-name entries with a `verificationStrength: "low|medium|high"` tag so a future pass can reprioritize re-verification?
+- `Open Doors` name-pattern: tighten or loosen? CPSD Open Doors at enr=218 was a real consortium program but auto-skipped. Future-prompt revision could carve out a "consortium reentry" track that processes these with a `schoolType: "open_doors_consortium"` schema.
+
+## RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 17    | 8        | 10      | WA high offsets 137-154 (Lakewood CPSD x3 + Colfax + College Place + Burbank Columbia + Colville + Concrete). 8/8 verified. Heavy alt-cluster band (55% skip rate). Concrete SD combined Superintendent/Principal (Carrie Crickmore) discovered via direct staff-directory fetch. Colfax incoming-principal transition (Lippy 2025-26 replacing Gibb) confirmed via 2 Whitman Gazette articles. ~10 min wall-clock, 1 WebFetch. |
+| 2026-04-26 | 16    | 8        | 7       | WA high offsets 120-136 (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band). 8/8 verified incl. 1 alt (Three Springs); 7 alt-placeholder skips all <50. Caught up progress.json drift from runs 14+15. |
+| 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane). Edge-case heavy: SVT Skills Center + CVSD Open Doors + Green Hill juvenile-rehab academic. |
+| 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD). 8/8 verified clean comprehensive band. Caught Hittle/CVHS hallucination via direct admin-page fetch (actual: Katie Louie). |
+| 2026-04-26 | 13    | 5        | 3       | WA high offsets 96-103 (Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth). |
+| 2026-04-26 | 12    | 5        | 3       | WA high offsets 88-95 (Bremerton/Brewster/Bridgeport/Burlington-Edison). |
+| 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel/Blaine/Bremerton). |
+| 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham/Bethel district cluster). |
+| 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced. |
+| 2026-04-26 | 8     | 7        | 1       | Battle Ground / Prairie / Summit View / Lumen / Whatcom batch. |
