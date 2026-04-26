@@ -2348,6 +2348,7 @@ function setupToolListeners() {
   $('sidebarScholarships').addEventListener('click', openScholarships);
   $('sidebarPrograms').addEventListener('click', openPrograms);
   $('sidebarVolunteer').addEventListener('click', openVolunteer);
+  $('sidebarK12').addEventListener('click', openK12);
   $('sidebarFinancialAid').addEventListener('click', openFinancialAid);
 
   // Modal close handlers
@@ -2357,6 +2358,7 @@ function setupToolListeners() {
   setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
   setupModalClose('programsModal', 'programsModalClose');
   setupModalClose('volunteerModal', 'volunteerModalClose');
+  setupModalClose('k12Modal', 'k12ModalClose');
   setupModalClose('financialAidModal', 'financialAidModalClose');
 
   // Upgrade gate buttons
@@ -5266,5 +5268,115 @@ function renderDiscoverResult(data) {
       </div>
     `).join('')}
     <p style="font-size:11px;color:#94a3b8;margin-top:12px;">${_esc(data.disclaimer || '')}</p>
+  `;
+}
+
+// ─── K12 SCHOOLS MODULE ────────────────────────────────────────
+
+let _k12StatesLoaded = false;
+const _k12FullStateNames = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'
+};
+
+async function openK12() {
+  $('k12Modal').style.display = 'flex';
+  _modalOpened('k12Modal');
+  if (!_k12StatesLoaded) await _initK12();
+  searchK12();
+}
+
+async function _initK12() {
+  try {
+    const res = await fetch(`${API_BASE}/k12/states`);
+    const data = await res.json();
+    const sel = $('k12State');
+    // Replace the default WA option with full state list — keep WA selected
+    sel.innerHTML = '';
+    for (const st of data.states || []) {
+      const opt = document.createElement('option');
+      opt.value = st.state;
+      const fullName = _k12FullStateNames[st.state] || st.state;
+      const enrichedTag = st.enrichedCount > 0 ? ` (${st.enrichedCount} enriched)` : '';
+      opt.textContent = `${fullName}${enrichedTag}`;
+      sel.appendChild(opt);
+    }
+    sel.value = 'WA'; // default
+  } catch (e) {
+    console.error('k12 init failed:', e);
+  }
+  ['k12State','k12Level','k12Filter'].forEach(id => $(id)?.addEventListener('change', searchK12));
+  $('k12District')?.addEventListener('input', _debounce(searchK12, 350));
+  $('k12Search')?.addEventListener('input', _debounce(searchK12, 350));
+  _k12StatesLoaded = true;
+}
+
+async function searchK12() {
+  const params = new URLSearchParams();
+  params.set('state', $('k12State').value);
+  params.set('level', $('k12Level').value);
+  const dist = $('k12District').value.trim();
+  const q = $('k12Search').value.trim();
+  const filter = $('k12Filter').value;
+  if (dist) params.set('district', dist);
+  if (q) params.set('q', q);
+  if (filter) params.set(filter, 'true');
+
+  $('k12Results').innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/k12/search?${params}`);
+    const data = await res.json();
+    if (data.error) {
+      $('k12Results').innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`;
+      return;
+    }
+    renderK12Results(data);
+  } catch (e) {
+    $('k12Results').innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load: ${e.message}</p>`;
+  }
+}
+
+function renderK12Results(data) {
+  const items = data.results || [];
+  const c = $('k12Results');
+  if (!items.length) {
+    c.innerHTML = '<p style="color:#94a3b8;padding:20px;text-align:center;">No matches. Try widening filters or selecting a different state/level.</p>';
+    return;
+  }
+  const stateFull = _k12FullStateNames[data.state] || data.state;
+  const header = `<p style="color:#59636e;font-size:13px;margin-bottom:12px;">${data.matched} of ${data.totalInState} ${data.level} schools in ${stateFull} match (${data.enrichedInResults} enriched).</p>`;
+  c.innerHTML = header + items.map(_k12CardHtml).join('');
+}
+
+function _k12CardHtml(s) {
+  const enrichedBadge = s.enriched
+    ? '<span style="background:#ddf4ff;color:#0a3069;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Enriched</span>'
+    : '<span style="background:#f1f5f9;color:#64748b;padding:2px 8px;border-radius:10px;font-size:11px;">NCES base only</span>';
+  const apBadge = s.apCourses ? `<span style="background:#fef3c7;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">${s.apCourses} AP</span>` : '';
+  const ibBadge = s.ibProgram ? '<span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">IB</span>' : '';
+  const magnetBadge = s.magnetProgram ? '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:10px;font-size:11px;">Magnet</span>' : '';
+  const ratingHtml = s.rating?.score
+    ? `<span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:10px;font-size:11px;">${s.rating.source || 'rating'}: ${s.rating.score}/${s.rating.scale || '10'}</span>`
+    : '';
+  const enrollment = s.enrollment ? `${s.enrollment.toLocaleString()} students` : '';
+  const ratio = s.studentTeacherRatio ? ` &middot; ${s.studentTeacherRatio}:1 ratio` : '';
+  const principal = s.principal ? ` &middot; Principal: ${_esc(s.principal)}` : '';
+  const programs = (s.notablePrograms || []).slice(0,4).join(' · ');
+  const phone = s.phone ? ` &middot; ${_esc(s.phone)}` : '';
+  return `
+    <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
+        <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(s.name || 'Unnamed school')}</h4>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">${enrichedBadge}${apBadge}${ibBadge}${magnetBadge}${ratingHtml}</div>
+      </div>
+      <p style="margin:2px 0 8px;font-size:12px;color:#59636e;">${_esc(s.district || '')} &middot; ${_esc(s.city || '')}, ${_esc(s.state || '')} ${_esc(s.zip || '')}${phone}</p>
+      ${enrollment || principal ? `<p style="margin:0 0 6px;font-size:13px;color:#334155;">${enrollment}${ratio}${principal}</p>` : ''}
+      ${programs ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Programs:</strong> ${_esc(programs)}</p>` : ''}
+      ${s.graduationRate ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Graduation rate:</strong> ${s.graduationRate}%</p>` : ''}
+      <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+        ${s.website ? `<a href="${_esc(s.website)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">School website →</a>` : ''}
+        ${s.rating?.url ? `<a href="${_esc(s.rating.url)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">${_esc(s.rating.source || 'Rating')} profile →</a>` : ''}
+      </div>
+      ${!s.enriched ? '<p style="margin:8px 0 0;font-size:11px;color:#94a3b8;font-style:italic;">Enriched data not yet collected for this school. Visit the website above for current details.</p>' : ''}
+    </div>
   `;
 }

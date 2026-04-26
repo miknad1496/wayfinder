@@ -216,6 +216,11 @@
           <span>Volunteer</span>
           <span class="tool-badge new-badge" style="background:#16a34a;color:#fff;">NEW</span>
         </button>
+        <button id="sidebarK12" class="sidebar-footer-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+          <span>K-12 Schools</span>
+          <span class="tool-badge new-badge" style="background:#16a34a;color:#fff;">NEW</span>
+        </button>
       </div>
 
       <!-- Sidebar Footer -->
@@ -1574,6 +1579,37 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+
+    <!-- K-12 Schools Modal -->
+    <div id="k12Modal" class="modal-overlay" role="dialog" aria-modal="true" style="display:none;">
+      <div class="modal modal-tool-list">
+        <div class="modal-header">
+          <h2>K-12 Schools</h2>
+          <button id="k12ModalClose" class="modal-close" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-intro">Search and filter K-12 schools across the US. Enriched schools show principal, enrollment, AP/IB programs, and ratings. Other schools show NCES base data (name, district, address). Coverage deepens state-by-state.</p>
+          <div class="tool-filters" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;">
+            <select id="k12State" class="tool-filter-select"><option value="WA">Washington</option></select>
+            <select id="k12Level" class="tool-filter-select">
+              <option value="high">High School</option>
+              <option value="middle">Middle School</option>
+              <option value="elementary">Elementary</option>
+            </select>
+            <input id="k12District" type="text" placeholder="District (optional)" class="tool-filter-input" />
+            <input id="k12Search" type="text" placeholder="Search by school name / city" class="tool-filter-input" />
+            <select id="k12Filter" class="tool-filter-select">
+              <option value="">No additional filter</option>
+              <option value="hasAP">Has AP courses (enriched only)</option>
+              <option value="ibProgram">Has IB program (enriched only)</option>
+              <option value="magnetProgram">Magnet/STEM school (enriched only)</option>
+              <option value="enrichedOnly">Enriched data only</option>
+            </select>
+          </div>
+          <div id="k12Results" class="tool-results"></div>
         </div>
       </div>
     </div>

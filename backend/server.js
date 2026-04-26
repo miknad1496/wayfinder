@@ -24,6 +24,7 @@ import intelligenceRoutes from './routes/intelligence.js';
 import wagesRoutes from './routes/wages.js';
 import h1bRoutes from './routes/h1b.js';
 import volunteerRoutes from './routes/volunteer.js';
+import k12Routes from './routes/k12.js';
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir, repairCorruptedUserFiles, buildTokenIndex } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
@@ -193,6 +194,7 @@ app.use('/api/intelligence', apiLimiter, intelligenceRoutes);
 app.use('/api/wages', apiLimiter, wagesRoutes);
 app.use('/api/h1b', apiLimiter, h1bRoutes);
 app.use('/api/volunteer', apiLimiter, volunteerRoutes);
+app.use('/api/k12', apiLimiter, k12Routes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
