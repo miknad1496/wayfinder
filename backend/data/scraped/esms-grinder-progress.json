@@ -1,12 +1,12 @@
 {
-  "lastRun": "2026-04-26T19:08:30.843Z",
-  "totalRuns": 8,
-  "totalAdded": 40,
+  "lastRun": "2026-04-26T19:28:11.410Z",
+  "totalRuns": 9,
+  "totalAdded": 46,
   "queue": [
     {
       "focus": "nationwide-remote",
       "target": 30,
-      "current": 6,
+      "current": 11,
       "status": "in_progress",
       "lastBatchDate": "2026-04-26"
     },
@@ -96,7 +96,7 @@
     {
       "focus": "national-anchors",
       "target": 25,
-      "current": 18,
+      "current": 24,
       "status": "in_progress",
       "themes": [
         "YMCA / Camp Fire / BGCA national programs",
@@ -118,12 +118,24 @@
         "Mathnasium nationwide tutoring",
         "Code Ninjas nationwide STEM camps",
         "CodaKid online coding",
-        "STEM franchises (Mad Science, EFK, Play-Well)"
+        "STEM franchises (Mad Science, EFK, Play-Well)",
+        "NSBE SEEK",
+        "Math Beasts Camp / AoPS",
+        "Northwestern CTD Solstice",
+        "CodeWizardsHQ",
+        "Black Girls CODE",
+        "AAUW Tech Trek"
       ],
       "anchorsAdded": [
         "Mathnasium",
         "Code Ninjas",
-        "CodaKid"
+        "CodaKid",
+        "NSBE SEEK",
+        "Math Beasts Camp",
+        "Northwestern CTD Solstice",
+        "CodeWizardsHQ",
+        "Black Girls CODE",
+        "AAUW Tech Trek"
       ]
     }
   ],

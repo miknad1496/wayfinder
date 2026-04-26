@@ -355,3 +355,34 @@ Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rota
 | 2026-04-26 | 2 | 6 (4hi/2md) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Caught PSC pre-existing dup |
 | 2026-04-26 | 3-7 | various | various | WA expansion + ad-hoc national rounds | DB grew from 837 → 926 via mix of esms-grinder + ad-hoc + round runs |
 | 2026-04-26 | 8 | 6 (2hi/4md-cost) | 0 | nationwide-remote (Juni, iCode, Snapology, Bricks 4 Kidz, Create & Learn, Codingal) | WA concluded by Dan directive. Next iterations: ~10 per state starting CA. Field-notes hit 30/30 cap. Push conflicted once with concurrent commits — resolved by reset/replay. |
+
+## RUN 9 — NSBE / Diversity-anchored national STEM (2026-04-26)
+
+### What landed (6/6, 0 skipped after dedup)
+1. **NSBE SEEK** (high) — FREE 3-week virtual program, rising 4th-6th, materials shipped at no cost.
+2. **Math Beasts Camp / AoPS Academy** (medium-cost) — distinct sub-product from "Beast Academy Online" already in DB. Live online K-5 math camps in 2-week / 4-week formats.
+3. **Northwestern CTD Solstice Online (Grades 4-6)** (medium-cost) — distinct from general "Northwestern CTD Academic Day Camps" already in DB. No district nomination required (key parent-facing insight).
+4. **CodeWizardsHQ** (high) — virtual coding ages 8-18, 1-week themed + 3-week accelerated formats.
+5. **Black Girls CODE Summer Camp 2026** (high) — 10 US cities + 2 virtual sessions, mostly $0 via sponsorship. Game design theme.
+6. **AAUW Tech Trek** (high) — week-long residential STEM at university campuses for rising 8th-grade girls. $50 family fee covers $1,000+ program via AAUW donations.
+
+### Stale-clone gotcha (NEW LESSON — IMPORTANT)
+- The pattern of cloning into `/tmp/wayfinder-esms` PLUS copying into `/sessions/.../mnt/outputs/wayfinder-esms` produced a STALE working copy: the lessons file in that copy showed only runs 1-2, but the actual remote was already at run 8 with 932 programs. The copy step had been done at the start of an earlier session and persisted.
+- **Workaround applied**: Did a fresh `git clone` into `/tmp/wfg2` (newly-named, fresh-perms) right before commit. Compared `/tmp/wfg2/programs.json` to my outputs and discovered 3 of my 6 candidates were already in DB (Outschool, Play-Well, Engineering For Kids — all added in runs 4-8 by ad-hoc and round runs). Substituted CodeWizardsHQ, Black Girls CODE, AAUW Tech Trek as drop-in replacements.
+- **Future-proof rule**: Always `git pull` (or fresh clone) IMMEDIATELY before dedup check, not at the start of session. The grinder is one of multiple writers (esms-grinder, k12-grinder, ad-hoc rounds, harvest tasks) and the DB state shifts within a single calendar day. Treat any local cache >2 hours old as definitely stale.
+
+### Permission gotcha continues
+- `/sessions/.../mnt/outputs/wayfinder-esms` was unwritable for git operations on this run too (`Operation not permitted` on .git/index.lock). Worked around by doing all git work in `/tmp/wfg2` (fresh clone, owned by adoring-gracious-gauss). Same as the lesson noted in run 8: don't use the mounted folder for git, only for staging file content.
+
+### Insight capture (6 new field-notes prepended; cap held at 30)
+- AAUW Tech Trek $50 covers $1,000+ residential STEM week
+- NSBE SEEK open to all students despite name
+- Black Girls CODE most participants pay $0 via sponsorship
+- Northwestern CTD Solstice no district nomination required
+- Math Beasts Camp placement is by readiness not strict grade
+- CodeWizardsHQ money-back guarantee does NOT cover summer camps
+
+### Run history (appended)
+| Date | Run # | Added | Skipped | Focus | Notable |
+|------|-------|-------|---------|-------|---------|
+| 2026-04-26 | 9 | 6 (4hi/2md) | 3 (initially picked, found in DB after fresh-clone dedup) | National-anchors — diversity + advanced + virtual K-8 STEM | NSBE SEEK, Math Beasts Camp, Northwestern CTD Solstice, CodeWizardsHQ, Black Girls CODE, AAUW Tech Trek. Caught stale-clone problem; new lesson added. |

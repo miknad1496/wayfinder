@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 932,
+    "totalCount": 938,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -50,7 +50,7 @@
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
     "lastUpdated": "2026-04-26",
-    "totalPrograms": 932,
+    "totalPrograms": 938,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
@@ -40743,6 +40743,267 @@
       "registrationUrl": "https://www.codingal.com/en-us/kids-teens-coding-camps/summer/",
       "howToStart": "Sign up at codingal.com, take free trial class, then enroll in matching grade-band camp.",
       "dates": "Summer 2026 themed weeks throughout June-August"
+    },
+    {
+      "name": "NSBE SEEK (Summer Engineering Experience for Kids)",
+      "provider": "National Society of Black Engineers (NSBE)",
+      "organization": "NSBE",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free — fully sponsored by NSBE corporate partners"
+      },
+      "selectivity": "moderate",
+      "format": "remote",
+      "location": {
+        "city": "Online (3-week virtual program)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling until program start (registration form open spring 2026)",
+      "description": "NSBE SEEK is a FREE 3-week summer engineering program for students rising into 4th-6th grade (currently completing 3rd, 4th, or 5th). For 2026 the program is virtual-only with rolling admissions. Students complete hands-on engineering challenges with mentorship from NSBE collegiate and professional members. Despite NSBE's name, SEEK is open to ALL students with demonstrated STEM interest — not Black-only. Selection criteria include grade, household income, prior participation, attendance, and NSBE Jr. membership status. Materials kits are shipped to participants at no cost.",
+      "url": "https://nsbe.org/program/nsbe-seek/",
+      "_source": "https://seek.nsbe.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "Program is fully free — no tuition, no fees, materials shipped at no cost to family.",
+      "registrationUrl": "https://form.jotform.com/252825002616147",
+      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free."
+    },
+    {
+      "name": "Math Beasts Camp (AoPS Academy / Beast Academy Live)",
+      "provider": "AoPS Academy / Beast Academy",
+      "organization": "Art of Problem Solving",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "Tuition not posted publicly until spring — typical AoPS summer camps run $400-$900 for 2-4 weeks"
+      },
+      "selectivity": "moderate",
+      "format": "remote",
+      "location": {
+        "city": "Online (Virtual Campus)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-05-31",
+      "description": "Math Beasts Camps are AoPS Academy's elementary-tier summer offerings (Camps 2, 3, 4, 5) using the Beast Academy curriculum. Each camp is a 2-week or 4-week live online course meeting 1.5 hours per day, exploring topics not covered in school math (cryptography, game theory, combinatorics) and reviewing/extending grade-level content. Students enter the camp aligned with the grade they will enter (or have completed) in fall, but placement is based on math readiness and can be flexible. Distinct from Beast Academy Online (self-paced curriculum).",
+      "url": "https://virtual.aopsacademy.org/courses/catalog/summer",
+      "_source": "https://aopsacademy.org/courses/course/summer-math-3",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "exactDates"
+      ],
+      "scope": "national",
+      "scholarshipAid": "AoPS offers limited need-based scholarships for AoPS Academy and AoPS Online courses; apply via aopsacademy.org/policies/financial-aid.",
+      "registrationUrl": "https://virtual.aopsacademy.org/courses/catalog/summer",
+      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026)."
+    },
+    {
+      "name": "Northwestern CTD Solstice Online Summer Program (Grades 4-6)",
+      "provider": "Northwestern University Center for Talent Development (CTD)",
+      "organization": "Northwestern University CTD",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "Tuition varies by course — typical CTD 2-week online courses run ~$1,000-$1,400; financial aid available"
+      },
+      "selectivity": "selective",
+      "format": "remote",
+      "location": {
+        "city": "Evanston (Online)",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-05-15",
+      "description": "Northwestern CTD's Solstice Online Summer Program offers advanced enrichment courses for academically-talented rising 4th-6th graders in fast-paced 2-week formats. Courses span math, science, writing, technology, leadership, and service-learning, producing tangible outputs such as writing portfolios, original iOS apps, or community action plans. Admission is by application (test scores or teacher recommendation) — does NOT require district nomination, a common misconception that keeps qualified students out. Distinct from Northwestern's Pre-College HS programs.",
+      "url": "https://www.ctd.northwestern.edu/grades-4-6-solstice-summer",
+      "_source": "https://www.ctd.northwestern.edu/grades-4-6-solstice-summer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "exactDates"
+      ],
+      "scope": "national",
+      "scholarshipAid": "CTD offers need-based financial aid; eligibility based on family income. Aid applications open with summer registration.",
+      "registrationUrl": "https://www.ctd.northwestern.edu/summer-programs",
+      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required."
+    },
+    {
+      "name": "CodeWizardsHQ Summer Coding Camps",
+      "provider": "CodeWizardsHQ",
+      "organization": "CodeWizardsHQ",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "1-week camps typically $200-$300; 3-week accelerated tracks $500-$900"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online (live small-group)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Rolling — sessions in June, July, August",
+      "description": "CodeWizardsHQ runs live online coding camps for ages 8-18, with elementary, middle-school, and high-school tracks. Summer formats: 1-week themed camps (Roblox, Minecraft, AI/Machine Learning, Web Development, Python) plus 3-week accelerated versions of their year-round 12-week core courses. AI Camp covers basics for ages 8-10 and fundamentals for ages 11-13. All classes are live with real instructors (not pre-recorded). 100% money-back guarantee on year-round classes (does NOT apply to summer camps — note before booking).",
+      "url": "https://www.codewizardshq.com/summer/",
+      "_source": "https://www.codewizardshq.com/coding-camps/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "Limited promo discounts (early-bird, multi-camp); no central need-based scholarship program. Multi-pay plans available.",
+      "registrationUrl": "https://www.codewizardshq.com/summer/",
+      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required."
+    },
+    {
+      "name": "Black Girls CODE Summer Camp 2026",
+      "provider": "Black Girls Code",
+      "organization": "Black Girls Code (wearebgc.org)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Heavily subsidized — most participants pay $0 via sponsorship; nominal materials/transit fee may apply at some sites"
+      },
+      "selectivity": "selective",
+      "format": "hybrid",
+      "location": {
+        "city": "10 cities (Atlanta, Chicago, Detroit, LA, NYC, Raleigh-Durham, Puerto Rico, plus 3 others) + 2 virtual sessions",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-06-01",
+      "description": "Black Girls CODE 2026 Summer Camp series 'Game Design: She Won't Just Play the Game. She'll Build It' runs in 10 US cities plus two virtual sessions (Virtual Camp 1: July 7-9; Virtual Camp 2: August 4-6). Girls ages 10-17 (rising 5th-12th) learn game design, build their own games, and develop coding skills using real industry tools to design game assets, narratives, and gameplay mechanics. Includes daily coding instruction, industry speaker sessions, wellness activities, and a capstone showcase. Despite the name, applications are open to all girls with interest in tech (Black girls prioritized in selection but not exclusive).",
+      "url": "https://www.wearebgc.org/summer-camp",
+      "_source": "https://www.wearebgc.org/summer-camp",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "Programs are heavily subsidized — most participants pay $0 thanks to corporate sponsorship. Apply early; selective due to high demand.",
+      "registrationUrl": "https://www.wearebgc.org/summer-camp",
+      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive."
+    },
+    {
+      "name": "AAUW Tech Trek STEM Camp for Girls",
+      "provider": "American Association of University Women (AAUW)",
+      "organization": "AAUW",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 50,
+        "type": "sliding-scale",
+        "display": "$50 nominal family fee + transportation; full tuition (~$1,000+) covered by AAUW donations"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "University campuses across multiple states (CA, FL, WA, others)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "7"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "2026-03-15",
+      "description": "AAUW Tech Trek is a week-long residential STEM summer camp for girls entering 8th grade in fall 2026 (rising 8th — currently 7th grade). Campers live in dorms at college campuses, eat in cafeterias, attend STEM labs and workshops, and experience college life. Confirmed 2026 sites include University of San Diego (June 14-20), Sonoma State (June 21-27), Stetson University FL, Florida Atlantic, Pacific Lutheran University WA (July). Tuition is fully sponsored by AAUW donations — families pay only a nominal $50 fee plus transportation to/from campus. Selection is competitive — nomination by school counselor or teacher typical entry path.",
+      "url": "https://www.aauw.org/resources/programs/tech-trek/",
+      "_source": "https://www.aauw.org/resources/programs/tech-trek/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "Fully sponsored — $50 nominal family fee is the only cost, and many AAUW branches waive even that for families in need.",
+      "registrationUrl": "https://www.aauw.org/resources/programs/tech-trek/",
+      "howToStart": "Talk to your daughter's 7th-grade math/science teacher about nomination. Then apply through your local AAUW branch — nominations typically due late winter for summer camp."
     }
   ]
 }
