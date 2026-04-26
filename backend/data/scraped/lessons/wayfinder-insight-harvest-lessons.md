@@ -26,6 +26,10 @@
 - Two-tier scholarship structures (full + partial) hide the "you missed full but partial is still open" pathway parents need to know about (Museum of Flight Campership)
 - For UW / university-affiliated programs, the gotcha is usually "is this what the parent thinks it is?" — Seattle MESA is teacher-nominated; Engineering Discovery Days is a 2-day spring event not a camp; Robinson Saturday Program doesn't run in summer
 - Public-Servant / educator / military discounts are a recurring under-marketed insight (DigiPen 50%) — worth checking explicitly on every commercial program
+- For HS entries, school-district choice/lottery pages and PTSA pages outperform school homepages — homepages are JS-bundled marketing; PTSA wikis describe boundary/HC-pathway nuance plainly
+- LWSD lottery-status pages publish CURRENT waitlist position numbers — temporal but extremely high-value for parents deciding whether to apply
+- For HCC/IB/dual-language pathway schools, the parent gotcha is usually "it routes to X, not Y" — verify HS endpoints on the district language-program pages, not the host school's own page
+- AP Capstone integration often hides where Seminar is offered — sometimes embedded in required English (BHS does this), sometimes a stand-alone elective. Check the district course catalog PDF
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
@@ -33,6 +37,7 @@
 
 - Don't fabricate insights. If the page only confirms standard fields, skip — record entry as harvested with `_insightYield: 0`.
 - Don't append generic insights ("X is a good camp") — only specific, actionable, parent-facing nuggets.
+- High school .org domains (bsd405.org, seattleschools.org, lwsd.org) often return 191K+ char marketing pages from WebFetch — must use curl + sed strip + targeted grep instead. Don't waste a fetch on the homepage; go directly to the deep page (/about-us/application-process, /counseling/grad-class-school-profile, etc.)
 
 ## ROTATION SCHEDULE
 
@@ -80,6 +85,7 @@ Each captured insight must be:
 |------|-------|--------|-----------------|-------------------|---------|
 | (no runs yet) | | | | | |
 | 2026-04-26 | 1 | esms | 5 | 5 | First run; 100% capture rate. WA Seattle programs all yielded insights. Notable: Museum of Flight Campership full-aid window closes BEFORE registration opens — parent gotcha. |
+| 2026-04-26 | 2 | k12 | 5 | 5 | First k12 batch (BSD/SPS HS). 100% capture. Highlights: Tesla STEM no-sibling lottery + 24h response window; Garfield HC pathway requires Choice Form; Roosevelt Jazz needs June audition + 0-period; BHS embeds AP Seminar in 10th-grade English. |
 
 
 ## DATA QUALITY FLAGS
@@ -87,28 +93,14 @@ Each captured insight must be:
 - DigiPen Open World entry name says "Ages 5-12" but real product structure is Explorer (6-8), Adventurer (9-13), Innovator (14-18). Lower bound is 6 not 5; upper bound goes to 13 for the Adventurer track. Consider patching the entry name on next data refresh.
 - UW Engineering Discovery Days is in programs.json with eligibility.grades K-8, but the program officially targets grades 4-8 only. Also it's a 2-day spring event, not a multi-week summer program — `type: 'summer'` may be wrong. Worth a future correction.
 - Robinson Center entry exists but its Saturday Enrichment program does NOT run in summer — it's quarterly fall/winter/spring. If users filter by `type: 'summer'`, this entry should map to Robinson's separate summer offerings instead.
+- Roosevelt HS (530771001239) and Garfield HS (530771001171) entries have `rating: undefined` in k12-enriched.json despite being two of Seattle's most-discussed HSs. Worth backfilling US News / GreatSchools rating in next data refresh.
+- Newport HS entry should note its "Closed" enrollment status — out-of-attendance-area students cannot freely transfer in, which is material to parents browsing the database. Consider adding an `enrollmentStatus: 'closed'` flag to the schema.
+- Tesla STEM lottery numbers shift weekly — any "current waitlist position" insight goes stale fast. Consider a separate temporal-data refresh task that re-pulls these every 1-2 weeks.
 
 ## CALIBRATION SUGGESTIONS
 
 - Keep batch_size at 5 — yield was high enough that throughput is fine. Going to 10 risks shallower research per entry.
 - Add a "name vs reality" check pattern explicitly to STEP 2 — entries 3 and 5 both had name/eligibility mismatches that became insights.
 - Consider a `_dataQualityFlags` field harvested in parallel that the data-refresh task can read to schedule entry corrections (separate from the parent-facing insights).
-
-## Run 2 — 2026-04-26 — k12
-
-| Date | Run # | Module | Entries scanned | Insights captured | Notable |
-|------|-------|--------|-----------------|-------------------|---------|
-| 2026-04-26 | 2 | k12 | 5 | 5 | First k12 batch: Bellevue HS, Newport HS, Tesla STEM, Roosevelt, Garfield. 100% capture. WA Eastside + Seattle high schools all yielded actionable parent insights from district FAQ pages and PTSA pages. |
-
-### Effective Patterns added
-- For BSD / LWSD / SPS schools, the *district-level* AP/HCC/admissions FAQ pages have richer parent gotchas than the school's own homepage. Search "<district name> AP scholarship deadline" or "<district name> HCC pathway" and the district FAQ surfaces above the school site.
-- Magnet/lottery schools (Tesla STEM): ALWAYS look up the current waitlist position — it tells parents whether their lottery dream is realistic for next year. Tesla STEM publishes "next number called" — a goldmine.
-- Choice/audition-based programs at otherwise-comprehensive HS (Roosevelt Jazz, Wind Ensemble): the audition timing is the parent gotcha, since these classes can't be added by registration alone.
-- HC pathway schools (Garfield, Lincoln, West Seattle in SPS): the geographic-zone-to-pathway mapping + 8th-grade guarantee is the single most useful parent insight for HCC families.
-
-### Failed Patterns
-- The school's own homepage (e.g. bellevuehigh.bsd405.org/) is mostly menu/JS — curl returns navigation chrome and CSS. Don't rely on it; jump straight to district-level pages or the school-profile PDF.
-
-### Calibration
-- Keep batch_size at 5. K12 yielded 1 insight per school cleanly — going to 10 would dilute research depth.
-- For k12 specifically, weight searches toward "<school name> + AP/HCC/lottery/scholarship/audition" rather than the school homepage URL itself.
+- k12 first run yielded 5/5 (100%) like esms. Maintain batch_size=5 for now; revisit after volunteer batch.
+- Add a "deep page first" rule to STEP 2: never fetch HS homepage; always go to /about-us/application-process, /counseling/grad-class-school-profile, /academics/{program}, or PTSA equivalents.

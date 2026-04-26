@@ -2,7 +2,9 @@
   "metadata": {
     "audience": "K-12 parents",
     "lastUpdated": "2026-04-26",
-    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention."
+    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention.",
+    "lastFieldNoteUpdate": "2026-04-26",
+    "fieldNoteCount": 6
   },
   "sections": [
     {
@@ -106,24 +108,28 @@
       "icon": "🔍",
       "items": [
         {
-          "label": "Bellevue HS (BSD) — AP fee scholarship deadline beats registration window",
-          "detail": "BSD's AP-exam fee scholarship request must be filed by Oct 31 — BEFORE the Nov 10 early-registration window even opens. Awards reduce the $109/exam fee to $65 (first exam) and $35 (each additional). Free/Reduced-Meals families must complete a separate 'Consent to Share' form for exams to ring up at $0. Captured 2026-04-26."
+          "label": "Tesla STEM (Redmond) — sibling priority does NOT apply",
+          "detail": "Unique among LWSD choice schools, Tesla STEM's lottery is purely random — no sibling tiebreaker. As of 2026-04-24 the 2026-27 9th-grade waitlist is at #241 (spots still moving), but 10th-grade waitlist is at #256 with zero openings. If your number is called you have only 24 hours to reply by email or you lose the seat."
         },
         {
-          "label": "Newport HS (Bellevue) — 40 community-service hours required + 93% AP take-rate",
-          "detail": "Beyond the 24 credits, Newport HS requires 40 community-service hours to graduate. 93% of students take at least one of the 27 offered AP courses, and there's no cap on how many AP classes one student may take. Modified block schedule: seven 50-min periods three days/week, 90-min periods two days/week. Captured 2026-04-26."
+          "label": "Garfield (Seattle) — HC pathway seat is NOT automatic",
+          "detail": "Garfield is one of three 2026-27 Highly Capable pathway HSs (with Lincoln and West Seattle). HC-identified students get a guaranteed Garfield seat ONLY if they submit a School Choice Form during Open Enrollment by March 31, 2026 — guarantee is conditional on the form. Waitlists dissolve May 31, 2026."
         },
         {
-          "label": "Tesla STEM HS (LWSD/Redmond) — Class of 2030 already full, 24-hour waitlist reply window",
-          "detail": "For the 2026-27 year, the next lottery number on the 9th-grade waitlist is #237 and the Class of 2030 is reported full; 10th grade has zero openings. If a parent's lottery number does come up, they have only 24 hours from the email to reply or the spot is forfeited. Captured 2026-04-26."
+          "label": "Roosevelt Jazz (Seattle) — June audition + 0-period commitment",
+          "detail": "The famous Roosevelt Jazz ensembles place by audition in June for the FOLLOWING school year — miss that and you wait a full year. Vocal Jazz students must double-enroll in a concert ensemble (usually Concert Choir) AND attend 0-period every school day — significant early-morning load parents often don't anticipate."
         },
         {
-          "label": "Roosevelt HS (Seattle) — Famed Jazz/Wind ensembles require prior-Spring audition",
-          "detail": "Wind Ensemble, Percussion Ensemble, Jazz Band Adv, and Jazz Lab cannot be added by course-registration alone — students must pass a Spring audition to confirm enrollment for the following year. Roosevelt is otherwise address-based for general enrollment but has open-enrollment choice slots for out-of-zone families. Captured 2026-04-26."
+          "label": "Newport HS (Bellevue) — Spanish Dual Language goes elsewhere",
+          "detail": "Common parent confusion: Newport hosts BSD's Mandarin Dual Language continuation (~100 K spots/yr via Tillicum MS) and the Spanish Immersion (ISA) cohort, but Spanish DUAL LANGUAGE students are routed to Sammamish HS via Highland MS — not Newport. Newport is also officially 'Closed' enrollment, so non-area transfer requires meeting specific criteria."
         },
         {
-          "label": "Garfield HS (Seattle) — Central/SE HCC pathway = guaranteed 9th-grade seat; new 2-5 choice",
-          "detail": "Currently enrolled 8th graders at HCC Pathway elementary/middle schools are guaranteed admission to their HC pathway HS (Garfield for central/southeast, Lincoln for north, West Seattle for southwest) by residence zone. New for 2025-26: eligible HC students in grades 2-5 may now choose pathway services OR HC services at their neighborhood school via school choice application — May 31 deadline. Captured 2026-04-26."
+          "label": "Bellevue HS — AP Seminar is the 10th-grade English class",
+          "detail": "BHS embeds AP Capstone into the standard sophomore curriculum: AP Seminar is offered as the 10th-grade English course (ENA_501), so kids get AP Capstone exposure without choosing a separate elective. Running Start at Bellevue College covers tuition up to 15 credits/quarter only — families pay class fees, books, late fees, and full tuition on overage credits (Fall 2026 deadline Aug 31)."
+        },
+        {
+          "label": "Live grinder discoveries appear here",
+          "detail": "When the K12 enrichment grinder uncovers a non-obvious parent insight while researching schools (principal-led program changes, magnet program quirks, hidden transfer paths, rating quirks, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top."
         }
       ]
     }
