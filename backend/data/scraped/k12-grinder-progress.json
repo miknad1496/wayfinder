@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T12:25:00Z",
-  "totalRuns": 17,
-  "totalEnriched": 107,
-  "totalSkipped": 46,
-  "notes": "Run 17: enriched 8 WA HS in Lakewood (Clover Park SD x3) + Colfax + College Place + Columbia/Burbank + Colville + Concrete. Spans offsets 137-154. 10 sub-50 alt skips (Swiftwater alt, Alfaretta House special_ed, Re-Entry, Transition Day, Oakridge Group, CPSD Open Doors name-pattern, College Place Open Doors, Columbia Alternative, Colville Fish Hatchery vocational enr=1, Twin Cedars alt). Caught Concrete HS combined-superintendent-principal role (Carrie Crickmore) via direct staff-directory fetch. Queue offset 137 -> 155.",
+  "lastRun": "2026-04-26T12:43:00Z",
+  "totalRuns": 18,
+  "totalEnriched": 115,
+  "totalSkipped": 52,
+  "notes": "Run 18: enriched 8 WA HS in Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley SDs. Spans offsets 155-168. 6 sub-50 / placeholder skips (Island Juvenile Det 2, Island Cty Corrections 0, Open Den 48-57 borderline alt name change to 'Coupeville Open Academy', Ferry Cty Open Doors 33, Lincoln Cty Tech 0 placeholder, Dayton SD Alt 3). Coupeville HS: 3 principals in transition (Berard on leave Mar 2026; Becky Cays acting). Creston Jr-Sr HS shares cooperative principal Teresa Chrisman with Wilbur HS. Dayton Guin Joyce remained as Secondary Principal after losing super search to Wheatley. Queue offset 155 -> 169.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 155,
+      "offset": 169,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 155 of 649; 107 cumulative grinder count"
+      "note": "raw NCES offset 169 of 649; 115 cumulative grinder count"
     },
     {
       "state": "WA",

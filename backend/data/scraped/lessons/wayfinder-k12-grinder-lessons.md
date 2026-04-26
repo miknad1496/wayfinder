@@ -297,3 +297,62 @@
 | 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham/Bethel district cluster). |
 | 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced. |
 | 2026-04-26 | 8     | 7        | 1       | Battle Ground / Prairie / Summit View / Lumen / Whatcom batch. |
+
+## RUN 18 (2026-04-26) — Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley band (offsets 155-168)
+
+### Outcome
+- Verified: 8 (Coupeville HS, Creston Jr-Sr HS, Cusick Jr Sr HS, Darrington HS, Davenport Senior HS, Dayton HS, Deer Park HS, East Valley HS Spokane)
+- Skipped: 6 (Island Juv Det 2, Island Cty Corrections 0, Open Den 48-57 alt borderline + name change, Ferry Cty Open Doors 33 alt, Lincoln Cty Tech 0 vocational placeholder, Dayton SD Alt 3 alt)
+- Wall clock: ~10 min, all WebSearch (no WebFetch needed)
+
+### EFFECTIVE PATTERNS (added)
+- **Three principal-transitions captured cleanly via newspaper bylines** (Whidbey News-Times Mar 2026 + Coupeville Sports Jan 2025 + Whidbey News-Times older "Coupeville schools pick new principal"): chained 3 articles to reconstruct the Geoff Kappes → Springy Yamasaki → Dan Berard → Becky Cays succession. Recorded the *acting* current principal (Cays) with full predecessor context in `principalNotes` so the entry stays accurate as the situation evolves.
+- **Cooperative-district principal lookup**: For Creston Jr-Sr HS, the standalone school's NCES record points to a cooperative arrangement with Wilbur SD. The `wcsd.wednet.edu/page/wilbur-creston-high-school` page surfaced Teresa Chrisman as the cooperative principal — single search query yielded the cooperative structure + principal name. **Pattern:** for any small rural WA HS with enrollment <100 in a Lincoln/Adams/Whitman/Garfield county district, check whether it's part of a cooperative before recording.
+- **Press-archive disambiguation for transitional principals (Dayton's Guin Joyce)**: The Dayton Chronicle 2022 hire announcement + the Waitsburg Times 2024 superintendent-finalist article confirmed Joyce was *still* the secondary principal as of early 2024 (since she didn't get the super job, she stayed in the principal role). Two-source timestamp triangulation works well for "is this person still in the role?" verification.
+- **Single-quoted-name search for tier-2 small rural districts** (`"Steve Bollinger" Cusick Washington principal`) cleanly returned the K-12 Principal title + district directory hit. Worked first try without needing district homepage fetch.
+
+### FAILED PATTERNS (added)
+- **Open Den (Coupeville alternative HS)** has been renamed to "Coupeville Open Academy" (board action March 2024, per Coupeville Sports). NCES still has it as "Open Den" with enrollment 57; Niche shows 48 (post-rename). Borderline <50 enrollment + name-change pending in NCES = skip. Future runs may want a `nameAlias` lookup.
+- **Don't conflate WA Davenport (Lincoln County, Gorillas) with FL/TX Davenport HS** in initial WebSearch — first results page mixed all three. Add state qualifier (`Washington` + `Lincoln County`) to disambiguate.
+
+### SOURCE-SPECIFIC NOTES (added)
+- `whidbeynewstimes.com` / `southwhidbeyrecord.com` / `coupevillesports.com` — high-yield Island County WA news triad; Coupeville SD admin transitions consistently surface here with named-byline articles.
+- `wcsd.wednet.edu` (Wilbur-Creston Cooperative) — multi-district cooperative homepage; reachable via WebSearch. The cooperative-school page directly lists principal name in body content.
+- `daytonchronicle.com` — high-yield Columbia County WA local paper; Dayton SD admin transitions and superintendent searches covered with named bylines.
+- `waitsburgtimes.com` — also high-yield for Walla Walla / Columbia County coverage.
+- `statesmanexaminer.com` — Deer Park / Stevens County news; useful for Deer Park HS reclassification + admin coverage.
+- `ncwbusiness.com` (already noted in Run 13) — NCW (Wenatchee + surrounding) press source for principal transitions.
+
+### DATA QUALITY FLAGS
+- **Coupeville HS**: 3 principals in 18 months (Kappes → Yamasaki interim → Berard → Cays acting). Recorded current acting principal; flagged in `principalNotes` for re-verification on next pass through this district.
+- **Creston Jr-Sr HS**: enrollment of 54 alone, but cooperative HS instruction is centralized at Wilbur. The NCES record may be stale — both districts may report identical/near-identical schools through cooperative arrangement.
+- **Open Den (offset 158)**: Renamed to "Coupeville Open Academy" 2024; NCES still uses old name. **Recommend rename normalization** at inject time so frontend doesn't show stale name.
+- **Davenport Senior HS** grades 6-12 (per Niche) but NCES classifies as `level: high`. Combined Jr/Sr HS housed in one building — common pattern for rural WA <500-student districts.
+- **Deer Park HS** graduation rate: 92% Niche / 85-89% USNews / 96.2% school-reported. Recorded the middle estimate (Niche) per prior conservative-default rule.
+- **East Valley HS (Spokane)** has had 18% enrollment decline over 5 years per Niche. Worth tracking as a downward-trend indicator for the East Valley SD.
+
+### CALIBRATION SUGGESTIONS
+- **Recommend bumping batch_size to 10 for next 1-2 runs**. This run's queue was clean comprehensive-HS band (only 2 of 14 raw rows were structural <50 placeholders aside from Open Den borderline). Net 8/14 = 57% verification rate, but the comprehensive-HS share is rising as we exit alphabetical-by-district. The next bands (E-G) will likely include Edmonds/Eastmont/Eatonville/Edgemont/Enumclaw/Everett/Federal Way/Ferndale/Forks/Friday Harbor — large comprehensive HS districts with deep enrichment data.
+- **Pre-dedup pass STILL not formalized in prompt** — Run 18 had zero dups but the risk grows as the queue advances toward populous-district bands where prior manual entries (Run 4) cluster.
+- **Cooperative-district carve-out**: when a school's NCES record indicates cooperative arrangement (Wilbur-Creston, Wahkiakum-Naselle, etc.), record principal at the cooperative level + add `cooperativeNotes` field. New schema field worth formalizing.
+- **Acting/Interim principal annotation**: Coupeville HS this run has an "Acting" principal (Becky Cays). Recommend formalizing `principalStatus: permanent | interim | acting | on-leave` field as previously suggested in Run 16.
+
+### OPEN QUESTIONS / TODO
+- Should the inject pipeline normalize NCES "Open Den" → "Coupeville Open Academy" via a `nameAlias` map? Same for any other recent renames.
+- The cooperative-school principal arrangement (Wilbur-Creston shared admin) is a recurring rural-WA pattern. Worth a one-time pass to identify all WA cooperative HS arrangements and tag them.
+- Three principal transitions in 18 months at Coupeville HS suggest the entry will need re-verification soon. Worth a `verifyAfter: <date>` field to flag entries needing re-verification?
+
+## RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 18    | 8        | 6       | WA high offsets 155-168 (Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley). 8/8 verified, 6 sub-50/placeholder skips. Captured 3 principal transitions at Coupeville (Kappes→Yamasaki→Berard→Cays Acting Mar 2026). Cooperative-district detail captured for Creston (Wilbur-Creston cooperative under Teresa Chrisman). All-WebSearch run, ~10 min. |
+| 2026-04-26 | 17    | 8        | 10      | WA high offsets 137-154 (Lakewood/Colfax/College Place/Burbank/Colville/Concrete band). Concrete combined Super-Principal role (Carrie Crickmore). |
+| 2026-04-26 | 16    | 8        | 7       | WA high offsets 120-136 (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band). Caught up progress.json drift since run 13. |
+| 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane). Edge-case heavy: Skills Center + Open Doors + juvenile-rehab. |
+| 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD). Caught Hittle/CVHS hallucination via direct admin-page fetch. |
+| 2026-04-26 | 13    | 5        | 3       | WA high offsets 96-103 (Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth). Tribal-school carve-out applied. |
+| 2026-04-26 | 12    | 5        | 3       | WA high offsets 88-95 (Bremerton/Brewster/Bridgeport/Burlington-Edison). Skills Center carve-out applied. |
+| 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel/Blaine/Bremerton). All-WebSearch run, district clustering held. |
+| 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham/Bethel district cluster). |
+| 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced; /tmp full + fuse mount traps discovered. |

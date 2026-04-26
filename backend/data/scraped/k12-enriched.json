@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T12:10:00Z",
+    "lastUpdated": "2026-04-26",
     "count": 104,
     "source": "NCES + verified web sources",
     "note": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
@@ -14,7 +14,9 @@
     "lastRun": 15,
     "lastEnriched": "2026-04-26",
     "totalEntries": 112,
-    "verifiedCount": 112
+    "verifiedCount": 112,
+    "totalCount": 120,
+    "lastUpdateNote": "Run 18: +8 WA HS (Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley)"
   },
   "schools": [
     {
@@ -1721,7 +1723,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program — growth and excellence"
+        "2020 WA School Recognition Program \u2014 growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2538,7 +2540,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 — district's oldest HS",
+        "Founded 1952 \u2014 district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2894,7 +2896,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2944,7 +2946,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3134,7 +3136,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers — 4A)",
+        "Athletics (Papermakers \u2014 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3293,7 +3295,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3306,7 +3308,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3603,7 +3605,7 @@
         "Shannon McGowan",
         "Jacquie Monks"
       ],
-      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) — historical, not current.",
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
       "enrollment": 1380,
       "studentTeacherRatio": "22:1",
       "apParticipationRate": "30%",
@@ -4546,8 +4548,8 @@
       "address": "10320 Farwest Drive SW, Lakewood, WA 98498",
       "phone": "253-583-5550",
       "website": "https://lakes.cloverpark.k12.wa.us/",
-      "principal": "Kären Mauer-Smith",
-      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role — current district pages list her as Principal.",
+      "principal": "K\u00e4ren Mauer-Smith",
+      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role \u2014 current district pages list her as Principal.",
       "enrollment": 1195,
       "studentTeacherRatio": "20:1",
       "graduationRate": "91% (Niche; WA state avg 84%); 91.4% in 2022-23",
@@ -4665,7 +4667,7 @@
       "grades": "9-12",
       "website": "https://csd400.org/",
       "principal": "Kyle Miller",
-      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name — recommend cross-verifying against csd400.org admin page next pass.",
+      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name \u2014 recommend cross-verifying against csd400.org admin page next pass.",
       "enrollment": 223,
       "graduationRate": "86% (2022-23; range 64.9-87% across recent years)",
       "demographics": {
@@ -4750,6 +4752,244 @@
         "https://www.goskagit.com/news/concrete-school-board-removes-high-school-principal-from-2024-25-staff-list/article_1256d460-0328-11ef-a52a-3785139193aa.html",
         "https://www.publicschoolreview.com/concrete-high-school-profile",
         "https://www.usnews.com/education/best-high-schools/washington/districts/concrete-school-district/concrete-high-school-20816"
+      ]
+    },
+    {
+      "ncessch": "530180000290",
+      "name": "Coupeville High School",
+      "city": "Coupeville",
+      "state": "WA",
+      "district": "Coupeville School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.coupeville.k12.wa.us/coupeville-high-school/homepage",
+      "principal": "Becky Cays (Acting)",
+      "principalNotes": "As of March 2026: Dan Berard placed on paid leave March 16, 2026 pending district review (Whidbey News-Times). Becky Cays serving as acting principal of both CHS and CMS, with Willie Smith providing athletic and supervision support. Berard had taken over after a turbulent 2024-25 in which prior principal Geoff Kappes was placed on non-disciplinary leave (Dec 2024) and longtime educator Springy Yamasaki came out of retirement to serve as interim principal.",
+      "enrollment": 266,
+      "studentTeacherRatio": "16:1",
+      "graduationRate": "90-94% (above WA state average of 84%)",
+      "apParticipation": "30%",
+      "demographics": {
+        "proficientMath": "40%",
+        "proficientReading": "74%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.coupeville.k12.wa.us/coupeville-high-school/homepage",
+        "https://www.whidbeynewstimes.com/2026/03/17/coupeville-high-school-principal-placed-on-leave/",
+        "https://coupevillesports.com/2025/01/02/chs-cms-adds-interim-principal/",
+        "https://www.niche.com/k12/coupeville-high-school-coupeville-wa/",
+        "https://www.publicschoolreview.com/coupeville-high-school-profile",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530180000290"
+      ]
+    },
+    {
+      "ncessch": "530186000294",
+      "name": "Creston Jr-Sr High School",
+      "city": "Creston",
+      "state": "WA",
+      "district": "Creston School District (Wilbur-Creston Cooperative)",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "7-12",
+      "website": "https://www.wcsd.wednet.edu/",
+      "principal": "Teresa Chrisman",
+      "principalNotes": "Teresa Chrisman serves as Principal of Wilbur-Creston High School (the cooperative high school formed by Wilbur SD #200 and Creston SD #73). Per the 2024-25 student handbook 'Coffee with Chrisman' references and the WCSD staff directory. Both districts have operated as a cooperative for high school instruction; Creston Jr-Sr HS shares administration with the cooperative.",
+      "enrollment": 54,
+      "schoolStatus": "cooperative_member",
+      "cooperativeNotes": "Creston SD and Wilbur SD have been an athletic cooperative since 1985 forming the Wilbur-Creston Wildcats; the cooperative HS instruction is centered in Wilbur (PO Box 1090, 202 SE Pope St., Wilbur, WA 99185).",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.wcsd.wednet.edu/",
+        "https://www.wcsd.wednet.edu/page/wilbur-creston-high-school",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&Miles=10&Zip=99147&ID=530186000294",
+        "https://www.publicschoolreview.com/washington/creston-school-district/5301860-school-district",
+        "https://www.usnews.com/education/k12/washington/creston-jr-sr-high-school-20820"
+      ]
+    },
+    {
+      "ncessch": "530192000297",
+      "name": "Cusick Junior Senior High School",
+      "city": "Cusick",
+      "state": "WA",
+      "district": "Cusick School District 59",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "6-12",
+      "website": "https://www.cusick.wednet.edu/",
+      "principal": "Stephen 'Steve' Bollinger",
+      "principalNotes": "Stephen Bollinger serves as K-12 Principal at Cusick School District (per district staff directory and Niche/USNews leadership records). Single principal serves both K-12 levels in this small rural Pend Oreille County district; phone (509) 445-1125.",
+      "enrollment": 129,
+      "studentTeacherRatio": "10:1",
+      "graduationRate": "60-79% (range 78-83.6% across recent years; below WA state average of 84%)",
+      "districtEnrollment": 332,
+      "demographics": {
+        "proficientMath": "12%",
+        "proficientReading": "32%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cusick.wednet.edu/",
+        "https://www.cusick.wednet.edu/staff",
+        "https://www.cusick.wednet.edu/staff-directory2",
+        "https://www.niche.com/k12/cusick-junior-senior-high-school-cusick-wa/",
+        "https://www.usnews.com/education/k12/washington/cusick-junior-sr-high-school-20822",
+        "https://www.publicschoolreview.com/cusick-junior-senior-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530198000301",
+      "name": "Darrington High School",
+      "city": "Darrington",
+      "state": "WA",
+      "district": "Darrington School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.darringtonschools.org/high-school",
+      "principal": "Cindy Christoferson",
+      "principalNotes": "Cindy Christoferson serves a combined High School Principal / Special Education Director / Homeless Liaison role for the small rural Snohomish/Skagit-County district (per Darrington SD contact page and ZoomInfo). Combined-role principal is typical for districts with single high schools and limited admin overhead.",
+      "enrollment": 114,
+      "studentTeacherRatio": "13:1",
+      "graduationRate": "85% (Niche)",
+      "apParticipation": "1% (limited AP offerings)",
+      "districtEnrollment": 478,
+      "demographics": {
+        "minorityEnrollment": "18%",
+        "economicallyDisadvantaged": "49%",
+        "proficientMath": "25%",
+        "proficientReading": "65%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.darringtonschools.org/high-school",
+        "https://www.darringtonschools.org/contact",
+        "https://www.niche.com/k12/darrington-high-school-darrington-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/darrington-school-district/darrington-high-school-20823",
+        "https://www.darringtonloggers.com/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5301980&ID=530198000301"
+      ]
+    },
+    {
+      "ncessch": "530201000303",
+      "name": "Davenport Senior High School",
+      "city": "Davenport",
+      "state": "WA",
+      "district": "Davenport School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "6-12",
+      "website": "https://www.davenportsd.org/",
+      "principal": "Jennifer Hargrave",
+      "principalNotes": "Jennifer Hargrave serves as Principal of Davenport Senior High School in the rural Lincoln County district. Davenport identifies its athletic teams as the Gorillas. Verified via Niche school profile and district homepage.",
+      "enrollment": 302,
+      "graduationRate": "90% (above WA state average of 84%)",
+      "apParticipation": "42%",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.davenportsd.org/",
+        "https://www.niche.com/k12/davenport-senior-high-school-davenport-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/davenport-school-district/davenport-senior-high-school-20824",
+        "https://www.publicschoolreview.com/davenport-senior-high-school-profile",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530201000303"
+      ]
+    },
+    {
+      "ncessch": "530204000305",
+      "name": "Dayton High School",
+      "city": "Dayton",
+      "state": "WA",
+      "district": "Dayton School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.daytonsd.org/",
+      "principal": "Guinevere 'Guin' Joyce",
+      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley \u2014 Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
+      "enrollment": 90,
+      "studentTeacherRatio": "8:1",
+      "graduationRate": "60-79% (below WA state average of 84%; school size limits stability of 4-yr cohort metric)",
+      "demographics": {
+        "white": "76%",
+        "hispanic": "20%",
+        "twoOrMore": "3%",
+        "asian": "1%",
+        "minorityEnrollment": "24%",
+        "proficientMath": "40-59%",
+        "proficientReading": "60-79%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.daytonsd.org/",
+        "https://www.daytonchronicle.com/story/2022/06/23/news/guinevere-joyce-is-newly-hired-permanent-secondary-principal/3056.html",
+        "https://www.waitsburgtimes.com/story/2024/02/29/news/dayton-school-district-narrows-superintendent-search-to-three/20731.html",
+        "https://www.niche.com/k12/dayton-high-school-dayton-wa/",
+        "https://www.publicschoolreview.com/dayton-high-school-profile/99328",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/dayton-school-district/dayton-high-school-20825"
+      ]
+    },
+    {
+      "ncessch": "530207001759",
+      "name": "Deer Park High School",
+      "city": "Deer Park",
+      "state": "WA",
+      "district": "Deer Park School District",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.dpsd.org/o/dph",
+      "principal": "Joe Feist",
+      "principalNotes": "Joe Feist serves as Principal of Deer Park HS (Stags). In 2024 Feist and Athletic Director Cameron Gilbert appealed the school's WIAA reclassification; the school officially began competing in the 2A division of the Greater Spokane League starting fall 2024 (Statesman-Examiner / Deer Park Gazette). Verified via dpsd.org school homepage.",
+      "enrollment": 637,
+      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% \u2014 variance reflects different reporting cohorts)",
+      "leagueClassification": "2A (Greater Spokane League, joined fall 2024)",
+      "address": "800 South Weber, Deer Park, WA 99006",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.dpsd.org/o/dph",
+        "https://www.statesmanexaminer.com/dptribune/news/deer-park-high-school-joins-greater-spokane-league-as-a-2a-school/article_3cad1e68-6a43-11ef-acfa-bfa62ed8fc52.html",
+        "https://news.dpgazette.com/2024/08/deer-park-joins-gsl-as-2a-school-what-to-expect/",
+        "https://www.niche.com/k12/deer-park-high-school-deer-park-wa/",
+        "https://www.publicschoolreview.com/deer-park-high-school-profile/99006",
+        "https://en.wikipedia.org/wiki/Deer_Park_High_School_(Washington_State)"
+      ]
+    },
+    {
+      "ncessch": "530228000312",
+      "name": "East Valley High School",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "district": "East Valley School District (Spokane)",
+      "schoolType": "regular",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://eastvalleyhigh.evsd90.org/",
+      "principal": "Sara Frederiksen",
+      "principalNotes": "Sara Frederiksen serves as Principal of East Valley High School (Knights). Frederiksen grew up in the Yakima Valley (Toppenish HS graduate) and brings 16 years of education experience. Verified via EVHS homepage. Address: 15711 E Wellesley Ave, Spokane Valley, WA 99216, (509) 927-3200.",
+      "enrollment": 926,
+      "graduationRate": "83% (Niche; range 81-89.4% across sources; near WA state average of 84%)",
+      "apParticipation": "18%",
+      "averageSAT": 1160,
+      "averageACT": 23,
+      "address": "15711 E Wellesley Ave, Spokane Valley, WA 99216",
+      "nicheGrade": "B-",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://eastvalleyhigh.evsd90.org/",
+        "https://www.evsd.org/o/evhs",
+        "https://eastvalleyhigh.evsd90.org/apps/staff/",
+        "https://www.niche.com/k12/east-valley-high-school-and-extension-spokane-valley-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/east-valley-school-district/east-valley-high-school-20828",
+        "https://www.publicschoolreview.com/east-valley-high-school-profile"
       ]
     }
   ]
