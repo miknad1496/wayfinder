@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T03:45:06.089Z",
-    "count": 24,
+    "lastUpdated": "2026-04-26T04:13:16.010Z",
+    "count": 32,
     "source": "NCES + verified web sources",
-    "note": "Bootstrapped run 1: raw NCES dump not yet present at backend/data/scraped/k12-national/. Schools enriched via direct manual web research."
+    "note": "Run 4: +8 WA high schools (Ingraham, Cleveland STEM, Chief Sealth, Rainier Beach, Juanita, Hazen, Kentridge, Edmonds-Woodway). Manual research mode (raw NCES dump still missing)."
   },
   "schools": [
     {
@@ -930,6 +930,249 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5302670&ID=530267001726"
       ],
       "_notes": "Principal field omitted; the everettsd.org/domain/2251 principals-message page returned 404 this run, no other authoritative page was fetched."
+    },
+    {
+      "ncessch": "530771001187",
+      "name": "Ingraham High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://ingrahamhs.seattleschools.org/",
+      "principal": "Zack Elvig",
+      "enrollment": 1391,
+      "notablePrograms": [
+        "International Baccalaureate (since 2002)",
+        "Academy of Information Technology"
+      ],
+      "ibProgram": true,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/ingraham-high-school-21150"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ingrahamhs.seattleschools.org/",
+        "https://ingrahamhs.seattleschools.org/about/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&SchoolID=530771001187&ID=530771001187",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/ingraham-high-school-21150",
+        "https://en.wikipedia.org/wiki/Ingraham_High_School"
+      ]
+    },
+    {
+      "ncessch": "530771001150",
+      "name": "Cleveland STEM High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://clevelandhs.seattleschools.org/",
+      "principal": "Jeff Lam",
+      "enrollment": 904,
+      "notablePrograms": [
+        "STEM Option School (project-based learning, 1:1 technology)"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/cleveland-high-school-21147"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://clevelandhs.seattleschools.org/",
+        "https://clevelandhs.seattleschools.org/about/",
+        "https://www.seattleschools.org/wp-content/uploads/sites/20/2025/09/Cleveland-Profile-25-26ADA.pdf",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530771001150",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/cleveland-high-school-21147"
+      ]
+    },
+    {
+      "ncessch": "530771001149",
+      "name": "Chief Sealth International High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://chiefsealthhs.seattleschools.org/",
+      "principal": "Chris Kinsey",
+      "enrollment": 1201,
+      "notablePrograms": [
+        "IB World School",
+        "International Baccalaureate Diploma Programme"
+      ],
+      "ibProgram": true,
+      "demographics": {
+        "note": "Approximately 75% minority enrollment; ~56% economically disadvantaged per US News profile"
+      },
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/chief-sealth-international-high-school-21146"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chiefsealthhs.seattleschools.org/",
+        "https://www.ibo.org/en/school/002912",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5307710&SchoolPageNum=2&ID=530771001149",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/chief-sealth-international-high-school-21146",
+        "https://en.wikipedia.org/wiki/Chief_Sealth_International_High_School"
+      ]
+    },
+    {
+      "ncessch": "530771001236",
+      "name": "Rainier Beach High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://rainierbeachhs.seattleschools.org/",
+      "principal": "Ivory Brooks",
+      "enrollment": 854,
+      "notablePrograms": [
+        "IB-for-All (FEPP Levy-funded inclusive IB model)",
+        "International Baccalaureate Diploma Programme (since 2013)"
+      ],
+      "ibProgram": true,
+      "graduationRate": 90,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/rainier-beach-high-school-21154"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://rainierbeachhs.seattleschools.org/",
+        "https://rainierbeachhs.seattleschools.org/about/",
+        "https://education.seattle.gov/rainier-beach-high-schools-record-setting-participation-in-ib-for-all-a-fepp-levy-funded-model-for-inclusive-high-quality-student-learning/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530771001236",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/rainier-beach-high-school-21154"
+      ]
+    },
+    {
+      "ncessch": "530423000670",
+      "name": "Juanita High School",
+      "city": "Kirkland",
+      "state": "WA",
+      "district": "Lake Washington School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://jhs.lwsd.org/",
+      "principal": "Ella Maeda",
+      "enrollment": 1778,
+      "notablePrograms": [
+        "Cambridge International Programme",
+        "Highly Capable services"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/juanita-high-school-20954"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://jhs.lwsd.org/",
+        "https://jhs.lwsd.org/about/staff-directory",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&Zip=98034&Miles=5&ID=530423000670",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/juanita-high-school-20954",
+        "https://en.wikipedia.org/wiki/Juanita_High_School"
+      ]
+    },
+    {
+      "ncessch": "530723001080",
+      "name": "Hazen Senior High School",
+      "city": "Renton",
+      "state": "WA",
+      "district": "Renton School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://hazen.rentonschools.us/",
+      "principal": "Craig Cooper",
+      "enrollment": 1796,
+      "apCourses": 15,
+      "notablePrograms": [
+        "AP program (15 courses)",
+        "Hazen High School Modernization 2025-2028"
+      ],
+      "demographics": {
+        "note": "Approximately 72% minority enrollment; ~40% economically disadvantaged per US News profile"
+      },
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/renton-school-district/hazen-senior-high-school-21121"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://hazen.rentonschools.us/",
+        "https://hazen.rentonschools.us/our-school/principals-message",
+        "https://www.rentonschools.us/departments/capital-planning/construction-projects/hazen-high-school-modernization-2025-2028",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5307230&ID=530723001080",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/renton-school-district/hazen-senior-high-school-21121"
+      ]
+    },
+    {
+      "ncessch": "530396000622",
+      "name": "Kentridge High School",
+      "city": "Kent",
+      "state": "WA",
+      "district": "Kent School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://www.kent.k12.wa.us/o/krhs",
+      "principal": "Mike Albrecht",
+      "enrollment": 2186,
+      "demographics": {
+        "note": "Approximately 73% minority enrollment; ~44% economically disadvantaged per US News profile"
+      },
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/kent-school-district/kentridge-high-school-20936"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.kent.k12.wa.us/o/krhs",
+        "https://www.kent.k12.wa.us/KR/Principal",
+        "https://www.kent.k12.wa.us/o/krhs/page/school-information",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530396000622",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/kent-school-district/kentridge-high-school-20936"
+      ]
+    },
+    {
+      "ncessch": "530240002673",
+      "name": "Edmonds-Woodway High School",
+      "city": "Edmonds",
+      "state": "WA",
+      "district": "Edmonds School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://ewhs.edmonds.wednet.edu/",
+      "principal": "Allison Chace Larsen",
+      "enrollment": 1578,
+      "ibProgram": true,
+      "notablePrograms": [
+        "IB World School (since 1996, only IB in Edmonds SD)",
+        "Deaf and Hard of Hearing Program"
+      ],
+      "graduationRate": 84,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/edmonds-woodway-high-school-20842"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ewhs.edmonds.wednet.edu/",
+        "https://ewhs.edmonds.wednet.edu/about",
+        "https://www.ibo.org/en/school/000874",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5302400&SchoolPageNum=2&ID=530240002673",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/edmonds-woodway-high-school-20842"
+      ]
     }
   ]
 }

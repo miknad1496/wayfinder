@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-04-26T03:45:06.089Z",
-  "totalRuns": 3,
-  "totalEnriched": 24,
+  "lastRun": "2026-04-26T04:13:16.011Z",
+  "totalRuns": 4,
+  "totalEnriched": 32,
   "totalSkipped": 0,
-  "notes": "Run 3: enriched 8 more WA high schools (W Seattle, Franklin, Lincoln, Nathan Hale, Bothell, North Creek, Woodinville, Henry M. Jackson). All NCES CCD 2024-25 base data verified from directly-fetched detail pages. Cumulative WA high enriched: 24.",
+  "notes": "Run 4: enriched 8 more WA high schools (Ingraham, Cleveland STEM, Chief Sealth, Rainier Beach, Juanita, Hazen, Kentridge, Edmonds-Woodway). Cumulative WA high enriched: 32.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 24,
+      "offset": 32,
       "total": null,
       "status": "in_progress",
       "note": "manual research mode (raw NCES dump still missing); offset = cumulative count enriched"
