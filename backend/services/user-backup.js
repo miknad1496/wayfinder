@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'url';
+import { decryptUserFields } from './crypto.js';
 import { dirname, join } from 'path';
 import { promises as fs } from 'fs';
 import { existsSync } from 'fs';

@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { decryptUserFields } from '../services/crypto.js';
 import { reloadPrompt } from '../services/claude.js';
 import { invalidateCache, getKnowledgeDB } from '../services/knowledge.js';
 import { listKnowledgeFiles, loadAllFeedback } from '../services/storage.js';
@@ -211,7 +212,7 @@ router.get('/stats', async (req, res) => {
         .map(async f => {
           try {
             const raw = await fs.readFile(join(USERS_DIR, f), 'utf-8');
-            return JSON.parse(raw);
+            return decryptUserFields(JSON.parse(raw));
           } catch {
             return null;
           }
@@ -556,7 +557,7 @@ router.get('/user-activity', async (req, res) => {
       userFiles.filter(f => f.endsWith('.json')).map(async f => {
         try {
           const raw = await fs.readFile(join(USERS_DIR, f), 'utf-8');
-          return JSON.parse(raw);
+          return decryptUserFields(JSON.parse(raw));
         } catch { return null; }
       })
     );

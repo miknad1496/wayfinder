@@ -12,6 +12,7 @@
 
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
+import { encryptUserFields, decryptUserFields } from './crypto.js';
 import { fileURLToPath } from 'url';
 import { createHash, randomBytes } from 'crypto';
 import bcrypt from 'bcryptjs';
@@ -55,7 +56,7 @@ export async function buildTokenIndex() {
     for (const file of files.filter(f => f.endsWith('.json'))) {
       try {
         const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-        const user = JSON.parse(raw);
+        const user = decryptUserFields(JSON.parse(raw));
         if (user.token) {
           tokenIndex.set(user.token, file);
         }
@@ -88,7 +89,7 @@ async function resolveUserByToken(token) {
     const filePath = join(USERS_DIR, cachedFile);
     try {
       const raw = await fs.readFile(filePath, 'utf-8');
-      const user = JSON.parse(raw);
+      const user = decryptUserFields(JSON.parse(raw));
       if (user.token === token) {
         return { user, filePath, filename: cachedFile };
       }
@@ -106,7 +107,7 @@ async function resolveUserByToken(token) {
     for (const file of files.filter(f => f.endsWith('.json'))) {
       try {
         const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
-        const user = JSON.parse(raw);
+        const user = decryptUserFields(JSON.parse(raw));
         if (user.token === token) {
           // Populate index for next time
           tokenIndex.set(token, file);
@@ -319,20 +320,23 @@ function tryRepairJSON(raw) {
 async function safeReadUserFile(filePath) {
   try {
     const raw = await fs.readFile(filePath, 'utf-8');
+    let parsed;
     try {
-      return JSON.parse(raw);
+      parsed = JSON.parse(raw);
     } catch (parseErr) {
       console.warn(`[Auth] JSON parse failed for ${filePath}: ${parseErr.message}. Attempting repair...`);
       const repaired = tryRepairJSON(raw);
       if (repaired) {
-        // Write the repaired file back (atomic)
         await atomicWriteJSON(filePath, repaired);
         console.log(`[Auth] Successfully repaired corrupted user file: ${filePath}`);
-        return repaired;
+        parsed = repaired;
+      } else {
+        console.error(`[Auth] Could not repair corrupted user file ${filePath}`);
+        return null;
       }
-      console.error(`[Auth] Could not repair corrupted user file ${filePath}`);
-      return null;
     }
+    // Decrypt sensitive fields if present (no-op for plaintext / when key missing)
+    return decryptUserFields(parsed);
   } catch (err) {
     console.error(`[Auth] Unreadable user file ${filePath}: ${err.message}`);
     return null;
@@ -343,8 +347,15 @@ async function safeReadUserFile(filePath) {
  * Atomic write: write to a temp file then rename, preventing partial writes.
  */
 async function atomicWriteJSON(filePath, data) {
+  // If writing into the users directory, encrypt sensitive fields on a deep clone
+  // so the in-memory user object handed to the caller stays plaintext.
+  let toWrite = data;
+  if (filePath.includes(USERS_DIR) && data && typeof data === 'object') {
+    const clone = JSON.parse(JSON.stringify(data));
+    toWrite = encryptUserFields(clone);
+  }
   const tmpPath = filePath + '.tmp';
-  await fs.writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await fs.writeFile(tmpPath, JSON.stringify(toWrite, null, 2));
   await fs.rename(tmpPath, filePath);
 }
 
@@ -513,7 +524,7 @@ export async function loginUser(email, password) {
   try {
     const raw = await fs.readFile(userFile, 'utf-8');
     try {
-      user = JSON.parse(raw);
+      user = decryptUserFields(JSON.parse(raw));
     } catch (parseErr) {
       // Attempt to repair corrupted JSON (race condition from concurrent writes)
       console.warn(`[Auth] Login: corrupted user file ${userFile}, attempting repair...`);
@@ -614,7 +625,7 @@ export async function requestPasswordReset(email) {
   let user;
   try {
     const raw = await fs.readFile(userFile, 'utf-8');
-    user = JSON.parse(raw);
+    user = decryptUserFields(JSON.parse(raw));
   } catch {
     // Don't reveal whether account exists
     return { success: true };
@@ -641,7 +652,7 @@ export async function resetPassword(email, code, newPassword) {
   let user;
   try {
     const raw = await fs.readFile(userFile, 'utf-8');
-    user = JSON.parse(raw);
+    user = decryptUserFields(JSON.parse(raw));
   } catch {
     return { error: 'Invalid reset code.' };
   }
@@ -875,12 +886,79 @@ export async function deleteUser(token) {
     if (!resolved) return { error: 'User not found' };
 
     const { user, filePath } = resolved;
+    const sessionIds = Array.isArray(user.sessionHistory) ? [...user.sessionHistory] : [];
+    const userId = user.id;
+    const userEmail = user.email;
+
+    // 1. Delete the user file
     await fs.unlink(filePath);
-    // Clean up indexes
     tokenIndex.delete(token);
     if (user.stripeCustomerId) stripeCustomerIndex.delete(user.stripeCustomerId);
-    return { success: true };
+
+    const cascade = { sessionsDeleted: 0, memoryEntriesScrubbed: 0, trainingEntriesScrubbed: 0 };
+
+    // 2. Delete session files belonging to this user
+    const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+    for (const sid of sessionIds) {
+      // Sanitize sid the same way storage.js does (alphanumeric + hyphen + underscore)
+      const safe = String(sid).replace(/[^a-zA-Z0-9_-]/g, '');
+      if (!safe) continue;
+      try { await fs.unlink(join(SESSIONS_DIR, `${safe}.json`)); cascade.sessionsDeleted++; } catch {}
+    }
+
+    // 3. Scrub memory + training entries tied to those sessions
+    const MEMORY_DIR = join(__dirname, '..', 'data', 'memory');
+    const TRAINING_DIR = join(__dirname, '..', 'data', 'training-capture');
+    const sidSet = new Set(sessionIds.map(String));
+
+    async function scrubDir(dir, kind) {
+      try {
+        const files = await fs.readdir(dir);
+        for (const f of files.filter(n => n.endsWith('.jsonl'))) {
+          const p2 = join(dir, f);
+          const raw = await fs.readFile(p2, 'utf8').catch(() => null);
+          if (!raw) continue;
+          const lines = raw.split('\n');
+          let changed = false;
+          for (let i = 0; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            let e; try { e = JSON.parse(lines[i]); } catch { continue; }
+            const sid = e.sessionId || e.metadata?.sessionId;
+            if (sid && sidSet.has(String(sid))) {
+              lines[i] = '';
+              changed = true;
+              if (kind === 'memory') cascade.memoryEntriesScrubbed++;
+              else cascade.trainingEntriesScrubbed++;
+            }
+          }
+          if (changed) {
+            const tmp = p2 + '.del.tmp';
+            await fs.writeFile(tmp, lines.filter(l => l !== '').join('\n'));
+            await fs.rename(tmp, p2);
+          }
+        }
+      } catch {}
+    }
+    await scrubDir(MEMORY_DIR, 'memory');
+    await scrubDir(TRAINING_DIR, 'training');
+
+    // 4. Append tombstone for audit (no PII — just hashed user id + counts)
+    try {
+      const TOMBSTONE_DIR = join(__dirname, '..', 'data');
+      const tombstone = {
+        at: new Date().toISOString(),
+        userIdHash: (await import('crypto')).createHash('sha256').update(userId).digest('hex').slice(0, 16),
+        emailDomain: (userEmail || '').split('@')[1] || null,
+        sessionsDeleted: cascade.sessionsDeleted,
+        memoryEntriesScrubbed: cascade.memoryEntriesScrubbed,
+        trainingEntriesScrubbed: cascade.trainingEntriesScrubbed,
+      };
+      await fs.appendFile(join(TOMBSTONE_DIR, 'deletion-log.jsonl'), JSON.stringify(tombstone) + '\n');
+    } catch {}
+
+    return { success: true, cascade };
   } catch (err) {
+    console.error('[Auth] deleteUser cascade error:', err.message);
     return { error: 'Failed to delete user' };
   }
 }

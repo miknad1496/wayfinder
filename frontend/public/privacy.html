@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wayfinder — Privacy Policy</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #1f2328; background: #fff; line-height: 1.6; font-size: 16px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+header { border-bottom: 1px solid #d0d7de; padding-bottom: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; margin: 0 0 4px; font-weight: 700; }
+.sub { color: #59636e; font-size: 14px; }
+h2 { font-size: 18px; margin: 32px 0 10px; font-weight: 600; }
+h3 { font-size: 15px; margin: 20px 0 8px; font-weight: 600; color: #1f2328; }
+p, li { font-size: 15px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 6px; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; background: #f6f8fa; padding: 1px 5px; border-radius: 3px; }
+.tldr { background: #ddf4ff; border-left: 3px solid #0969da; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0 28px; }
+.tldr p { margin: 0; font-size: 15px; color: #0a3069; }
+a { color: #0969da; }
+.footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #d0d7de; font-size: 13px; color: #59636e; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Privacy Policy</h1>
+  <div class="sub">Wayfinder &middot; Last updated April 25, 2026</div>
+</header>
+
+<div class="tldr">
+  <p><strong>The short version.</strong> Wayfinder is built by Dan Kim for his daughter to use, then opened to other families. We collect only what's needed to give you a useful college and career advisor. Personal information is encrypted at rest with AES-256 in addition to disk-level encryption. You can delete your account and all associated data at any time, and the deletion cascades through every system within minutes. We don't sell your data, ever. We don't show ads.</p>
+</div>
+
+<h2>What we collect</h2>
+
+<h3>Account information</h3>
+<ul>
+  <li><strong>Email address</strong> — used to identify your account and let you log in. Stored in plaintext (needed as a primary key for lookup) but treated as confidential.</li>
+  <li><strong>Password</strong> — stored only as a bcrypt hash. We can never see your actual password, even if compelled.</li>
+  <li><strong>Name, school, grade level, interests, and freeform profile notes</strong> — used to personalize advice. Stored encrypted with AES-256-GCM at the application layer using a key only the running service holds.</li>
+</ul>
+
+<h3>Conversation data</h3>
+<ul>
+  <li><strong>Your chats with David, the Wayfinder concierge</strong> — used to give you advice in real time, and to make the system smarter for everyone over time.</li>
+  <li>Before any conversation is persisted, it passes through a <strong>PII redactor</strong> that scrubs personally identifying information: names, email addresses, phone numbers, K-12 school names, addresses, and SSN-like patterns. Redacted entries are what gets stored, not raw text.</li>
+  <li>A <strong>weekly automated audit</strong> re-reviews recent captures for anything the redactor missed and patches it.</li>
+  <li>Bare college and university names (Stanford, MIT, etc.) and public companies (Microsoft, Google) are <em>not</em> redacted — they're the topic of conversation, not personal identifiers.</li>
+</ul>
+
+<h3>Usage telemetry</h3>
+<ul>
+  <li>Per-request metadata: timestamp, response latency, which model handled the request, RAG source counts, scope-classifier decisions. No content of your messages is logged in telemetry.</li>
+  <li>Aggregate counts for our admin dashboard so we can tell whether the system is working well.</li>
+</ul>
+
+<h3>Payments</h3>
+<ul>
+  <li>If you subscribe to a paid plan, payment processing is handled by <strong>Stripe</strong>. We never see or store your full credit card number — Stripe handles all of that. We only store a Stripe customer ID and subscription status.</li>
+</ul>
+
+<h2>What we do <em>not</em> do</h2>
+<ul>
+  <li><strong>We don't sell your data.</strong> Not to advertisers, not to data brokers, not to anyone.</li>
+  <li><strong>We don't show ads.</strong> The product is funded by subscriptions.</li>
+  <li><strong>We don't share your data with third parties</strong> beyond what's strictly necessary to operate the service (Anthropic for AI inference, Stripe for billing, Render for hosting). None of these providers receive your raw chat content with your identity attached — only the redacted, anonymized form.</li>
+  <li><strong>We don't train external AI models on your data.</strong> Conversations are used to improve our own retrieval system and our own SLM. They are never sent to third parties for model training.</li>
+</ul>
+
+<h2>How your data is protected</h2>
+<ul>
+  <li><strong>In transit:</strong> all traffic to and from <code>wayfinderai.org</code> is encrypted with TLS (HTTPS).</li>
+  <li><strong>At rest (infrastructure):</strong> our hosting provider, Render, encrypts the underlying disk with industry-standard block-level encryption.</li>
+  <li><strong>At rest (application layer):</strong> sensitive personal fields on user accounts (name, school, interests, profile) are additionally encrypted with AES-256-GCM using a key held only by the running service. Even with raw file access, those fields are opaque ciphertext.</li>
+  <li><strong>Passwords:</strong> bcrypt hashed with 12 rounds. Never stored or logged in any recoverable form.</li>
+  <li><strong>Daily encrypted snapshots</strong> of the database are retained for 7 days. Older snapshots are automatically deleted.</li>
+  <li><strong>Admin access is restricted</strong> to a small allowlist of accounts and gated by token-based authentication.</li>
+</ul>
+
+<h2>Your rights</h2>
+
+<h3>Access</h3>
+<p>Log in and visit your account page to see everything we have on you. The full record is available via <code>GET /api/auth/me</code>.</p>
+
+<h3>Update</h3>
+<p>Edit any profile field at any time from your account page.</p>
+
+<h3>Delete</h3>
+<p>You can delete your account and all associated data at any time from your account page (or by calling <code>DELETE /api/auth/account</code>). Deletion cascades:</p>
+<ul>
+  <li>Your user account file is deleted immediately.</li>
+  <li>Every conversation session you've had is deleted.</li>
+  <li>Every memory chunk and training-pair record tied to your sessions is scrubbed from the persistent store.</li>
+  <li>An audit log entry is appended (containing only a hashed user identifier and counts — no personal information).</li>
+  <li>Within 7 days, the daily-snapshot rotation completes and your data is gone from backups too.</li>
+</ul>
+<p>Deletion is immediate and irreversible. There is no waiting period and no soft-delete.</p>
+
+<h3>Opt out of "help improve"</h3>
+<p>Even without deleting your account, you can turn off the setting that allows your conversations to contribute to memory and training data. Go to your account settings and toggle <strong>Help improve Wayfinder</strong> off. Your future conversations will not be persisted to the learning system.</p>
+
+<h2>Children's privacy</h2>
+<p>Wayfinder is intended for high-school students and their families. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has registered, contact <a href="mailto:danielyungkim@hotmail.com">danielyungkim@hotmail.com</a> and we will delete the account immediately.</p>
+
+<h2>Data we may share with law enforcement</h2>
+<p>We will only share your data with law enforcement if compelled by a valid legal process (subpoena, court order). We will notify you of any such request unless legally prohibited from doing so.</p>
+
+<h2>Changes to this policy</h2>
+<p>If we make material changes to this policy, we'll notify active users by email at least 30 days before the change takes effect.</p>
+
+<h2>Contact</h2>
+<p>Questions, concerns, or requests: <a href="mailto:danielyungkim@hotmail.com">danielyungkim@hotmail.com</a></p>
+
+<div class="footer">
+  Wayfinder &middot; Built by Dan Kim &middot; <a href="/">Home</a>
+</div>
+
+</div>
+</body>
+</html>
