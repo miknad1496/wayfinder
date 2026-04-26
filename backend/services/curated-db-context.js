@@ -66,11 +66,12 @@ function _filterByState(arr, state, stateKey = 'states', listKey = 'state', limi
 }
 
 async function _buildSummary() {
-  const [programs, internships, scholarships, volunteer] = await Promise.all([
+  const [programs, internships, scholarships, volunteer, k12] = await Promise.all([
     _loadJson('programs.json'),
     _loadJson('internships.json'),
     _loadJson('scholarships.json'),
     _loadJson('volunteer-opportunities.json'),
+    _loadJson('k12-enriched.json'),
   ]);
 
   const lines = [];
@@ -167,6 +168,37 @@ async function _buildSummary() {
     lines.push('    to keep statically catalogued)');
     lines.push('  Module also includes: 3-pillar strategy generator, saved-programs tracking,');
     lines.push('    hour-logging dashboard');
+    lines.push('');
+  }
+
+  // ── K12 ENRICHED SCHOOLS ──
+  if (k12?.schools) {
+    const arr = k12.schools || [];
+    const byState = {};
+    const byLevel = {};
+    for (const s of arr) {
+      const st = s.state || 'unknown';
+      const lvl = s.level || 'unknown';
+      byState[st] = (byState[st] || 0) + 1;
+      byLevel[lvl] = (byLevel[lvl] || 0) + 1;
+    }
+    const stateCounts = Object.entries(byState).sort((a,b) => b[1]-a[1]).slice(0, 8).map(([k,v]) => `${k}:${v}`).join(', ');
+    const sampleNames = arr.slice(0, 8).map(s => s.name).join(', ');
+    lines.push('━━━ K-12 ENRICHED SCHOOLS DATABASE ━━━');
+    lines.push(`  Total enriched: ${arr.length} schools (high schools focus, expanding state-by-state)`);
+    lines.push(`  By state: ${stateCounts}`);
+    lines.push(`  Note: also have RAW NCES base data for ALL 91,354 K-12 schools across 50 states + DC`);
+    lines.push('  Per-school enriched fields available: website, principal, enrollment,');
+    lines.push('    student-teacher ratio, AP course count, IB program flag, magnet status,');
+    lines.push('    notable programs, graduation rate, college readiness %, test scores,');
+    lines.push('    demographics, ratings (US News / Niche / GreatSchools)');
+    lines.push(`  Sample enriched schools (first 8): ${sampleNames}`);
+    lines.push('  When a parent asks about a specific school by name, you can reference our');
+    lines.push('  enriched data IF it\'s in the DB. If not yet enriched, acknowledge the school');
+    lines.push('  exists (NCES base) and offer strategic guidance based on the school\'s context.');
+    lines.push('  No dedicated sidebar tool yet — surface the data through chat directly.');
+    lines.push('  WA coverage is strongest right now (Dan\'s family priority); TX/CA/NY/MI/MA');
+    lines.push('  and other states being enriched on rolling basis.');
     lines.push('');
   }
 
