@@ -648,13 +648,17 @@
                 <h2>13. Termination</h2>
 
                 <h3>Termination by You</h3>
-                <p>You may terminate your account at any time by logging into your account and selecting "Delete Account." When you delete your account:</p>
+                <p>You may terminate your account at any time by logging into your account and selecting "Delete Account." When you delete your account, our cascade-deletion process runs immediately:</p>
                 <ul>
-                    <li>You will immediately lose access to Wayfinder</li>
-                    <li>Your account data will be marked for deletion</li>
-                    <li>Complete deletion of your data will occur within 30 days</li>
+                    <li>You immediately lose access to Wayfinder</li>
+                    <li>Your account file is deleted from the persistent store</li>
+                    <li>All conversation sessions linked to your account are deleted</li>
+                    <li>All memory chunks and training-pair records tied to those sessions are scrubbed from the learning system</li>
+                    <li>An anonymized tombstone (containing only a hashed user identifier and counts &mdash; no personal information) is appended for compliance audit purposes</li>
+                    <li>Within 7 days, the daily-snapshot rotation completes and your data is gone from backups too</li>
                     <li>No refunds will be issued for any remaining subscription period</li>
                 </ul>
+                <p>Deletion is immediate and irreversible. There is no soft-delete or 30-day grace period.</p>
 
                 <h3>Termination by Wayfinder</h3>
                 <p>Wayfinder may terminate or suspend your account immediately and without notice if:</p>
@@ -806,7 +810,7 @@
                     <p>By using Wayfinder, you acknowledge that you have read and understood these Terms of Service and agree to be bound by them. Thank you for using Wayfinder to explore your career path.</p>
                 </div>
                 <div class="last-updated">
-                    Last Updated: March 2026
+                    Last Updated: April 25, 2026
                 </div>
             </footer>
         </div>
