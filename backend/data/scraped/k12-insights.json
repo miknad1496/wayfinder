@@ -106,24 +106,44 @@
       "icon": "🔍",
       "items": [
         {
-          "label": "Bellevue High School — IB Diploma is at Interlake, not Bellevue HS",
-          "detail": "Within Bellevue School District, Bellevue HS is an AP + College-in-the-High-School pathway only; the IB Diploma Program is offered ONLY at Interlake HS. Parents specifically wanting IB must apply via the BSD Choice Schools window — for the 2026-27 cycle this ran Dec 15, 2025 9:00am to Jan 16, 2026 4:30pm, with waitlist applications opening Jan 22, 2026. (verified 2026-04-26)"
+          "label": "Bellevue HS — Wolverine Guard 100-hour service award",
+          "detail": "Bellevue HS recognizes graduates with 100+ documented community service hours via the Wolverine Guard (WG) award, distinct from district graduation requirements. Worth aiming for if your student is service-oriented — it's a transcript line item colleges notice (verified 2026-04-26 via BHS counseling pages)."
         },
         {
-          "label": "Newport Senior High School — dual-language program is K-12 continuation, not 9th-grade entry",
-          "detail": "Newport's Spanish Immersion and Mandarin Dual Language programs are the high school terminus of a 12-year K-12 continuation pathway in BSD — students typically must have started in elementary grades. Incoming 9th graders without that history cannot enter the dual-language track at the high-school level. Newport is also AP-saturated: 27 AP courses, 93% of students take 1+ AP class, 90% of AP exams score 3+. (verified 2026-04-26)"
+          "label": "Bellevue HS — Naviance ends 2025-26 for grades below senior",
+          "detail": "Per BSD, only the Class of 2026 (current seniors) uses Naviance for college planning in 2025-26; grades 6-11 are on SchooLinks. Parents asking about Naviance access for sophomores/juniors will get blocked — the right platform is SchooLinks (verified 2026-04-26)."
         },
         {
-          "label": "Tesla STEM High School — pure lottery, public waitlist call numbers, residency must precede deadline",
-          "detail": "For the 2026-27 cycle, Tesla STEM application window was Nov 1 — Dec 1, 2025; lottery ran Jan 9, 2026; notifications Jan 16; acceptances due Jan 30. As of 2026-04-26 the next-called waitlist numbers are #237 (9th grade) and #242 (10th grade) — parents can compare their lottery number to gauge realistic odds. No GPA or test prereq, but families MUST establish LWSD district residency by the Dec 1 application deadline to be eligible — late movers get nothing."
+          "label": "Newport HS — 90% AP score-3+ rate across 2,706 exams",
+          "detail": "Newport HS posts an extraordinary 90% pass rate (score 3+) across 2,706 AP exams from 1,151 students tested, with 84% AP participation. This is well above WA state averages and a meaningful signal of AP-instruction quality, not just course availability (verified 2026-04-26 via Newport profile)."
         },
         {
-          "label": "Roosevelt High School — Jazz Band 1 auditions happen in JUNE of the preceding school year",
-          "detail": "Roosevelt's elite Jazz Band 1 (regular Essentially Ellington competitor in NYC) auditions occur in June BEFORE the student starts at Roosevelt — incoming 9th graders must audition before fall enrollment. Summer jazz camps and ongoing private instruction are 'highly recommended' (effectively expected). The 6-ensemble tier (Jazz Bands 1-4 + Vocal Jazz 1 & 2) means non-Band-1 students still have placement options. Seattle Public Schools does NOT fund most of the program — the Roosevelt Jazz Boosters fund nearly all events; expect dues + fundraising asks. (verified 2026-04-26)"
+          "label": "Newport HS — AVID program partnered with UW consultants",
+          "detail": "Newport HS runs AVID specifically for first-generation-to-college students with curriculum support from University of Washington consultants — non-trivial because AVID quality varies wildly by school. Newport's UW partnership is a real differentiator for striver-track families (verified 2026-04-26)."
         },
         {
-          "label": "Garfield High School — HCC pathway school, ~25% of every grade is Highly Capable",
-          "detail": "For 2026-27, Garfield is one of three SPS Highly Capable Pathway high schools (with Lincoln and West Seattle) — HCC-eligible families anywhere in the city can route to Garfield regardless of attendance area. About 25% of each grade level at Garfield is from the HCC program, meaning the academic-pace baseline is materially elevated. Garfield offers 18 AP + 9 honors courses, and Jazz Ensemble I tours Europe regularly (Montreux Jazz Festival, North Sea Jazz Festival, IAJE). (verified 2026-04-26)"
+          "label": "Tesla STEM — Application window Nov 1 to Dec 1 only",
+          "detail": "Tesla STEM admission applications open Nov 1 and close Dec 1 each year via the LWSD ParentSquare portal; the lottery runs in early January (Jan 9 for 2026-27 cycle), with acceptances due Jan 30. Parents who discover Tesla STEM in spring of 8th grade have already missed the window (verified 2026-04-26)."
+        },
+        {
+          "label": "Tesla STEM — Waitlist moves slowly (#237 still uncalled)",
+          "detail": "As of the 2026-27 cycle, Tesla STEM's 9th grade waitlist next-up number is 237 and has not yet been called — meaning 9th-grade waitlist almost never moves. Don't bank on a waitlist offer; treat lottery rejection as a final answer and apply elsewhere (verified 2026-04-26 via LWSD lottery info)."
+        },
+        {
+          "label": "Tesla STEM — Locked 4-year CS pathway sequence",
+          "detail": "Tesla STEM's CS pathway is a fixed 4-year sequence: AP CS Principles (9th) → AP CSA (10th) → Data Structures (11th) → Advanced Projects in Java (12th). Students who haven't done coding by 8th grade can struggle starting cold in 9th. Worth pre-prep if your kid plans the CS path (verified 2026-04-26)."
+        },
+        {
+          "label": "Roosevelt HS — Universal AP enrollment for 10th and 11/12 ELA",
+          "detail": "Roosevelt HS auto-enrolls ALL 10th graders in AP Human Geography and ALL 11th-or-12th-grade students in AP Lang — not opt-in. Even reluctant test-takers will end up sitting at least 2 AP exams. Plan and budget for those fees (verified 2026-04-26 via RHS academics page)."
+        },
+        {
+          "label": "Roosevelt HS — Jazz Band 1 has won Essentially Ellington 4x since 1999",
+          "detail": "Roosevelt's Jazz Band 1 (dir. Hannah Mowry) has placed first four times at Lincoln Center's Essentially Ellington High School Jazz competition since 1999, most recently 2019 — among the nation's top high-school jazz programs. Audition spots are competitive; serious jazz students should audition early in 9th (verified 2026-04-26)."
+        },
+        {
+          "label": "Garfield HS — Highly Capable cohort split across 3 schools since 2019-20",
+          "detail": "Garfield is no longer the single HCC destination — since 2019-20, Seattle Public Schools split HC pathways into north (Lincoln HS), central/southeast (Garfield), and southwest (West Seattle). HC-identified students are only guaranteed Garfield if they live in its boundary; otherwise pathway depends on address (verified 2026-04-26 via Garfield PTSA info)."
         }
       ]
     }

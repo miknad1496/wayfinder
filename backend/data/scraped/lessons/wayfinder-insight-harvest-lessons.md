@@ -10,8 +10,8 @@
 
 - batch_size: 5 entries per run (small — quality > throughput)
 - typical_run_duration: ~6 min on esms module (mostly WebSearch + occasional curl fallback)
-- typical_skip_rate: 0% on esms run 1 AND on k12 run 2 — Seattle-metro WA schools are insight-rich. Each yielded ≥1 actionable insight.
-- last_calibration_change: 2026-04-26 — k12 run 2 confirmed batch_size 5 still right; quality stayed high
+- typical_skip_rate: 0% on first esms batch — every entry yielded ≥1 actionable insight. Seattle/WA programs are insight-rich because partner orgs publish detailed FAQ/scholarship pages
+- last_calibration_change: 2026-04-26 — first run completed, batch_size 5 felt right
 
 ## EFFECTIVE PATTERNS (to be filled by runs)
 
@@ -26,9 +26,11 @@
 - Two-tier scholarship structures (full + partial) hide the "you missed full but partial is still open" pathway parents need to know about (Museum of Flight Campership)
 - For UW / university-affiliated programs, the gotcha is usually "is this what the parent thinks it is?" — Seattle MESA is teacher-nominated; Engineering Discovery Days is a 2-day spring event not a camp; Robinson Saturday Program doesn't run in summer
 - Public-Servant / educator / military discounts are a recurring under-marketed insight (DigiPen 50%) — worth checking explicitly on every commercial program
-- For HS k12 entries, district choice/transfer FAQ pages are insight-rich — they expose application windows, waitlist call numbers, residency-deadline gotchas, and feeder pattern continuation rules that the school's own homepage never mentions.
-- Specialty programs at high schools (jazz, dual-language, STEM magnet) often have audition or continuation timing that DOES NOT match the regular enrollment timeline — explicitly check for "auditions in June," "K-12 continuation only," "lottery in November-December," etc.
-- HCC / Highly Capable pathway designations and the % of grade level made up of pathway students are major academic-pace signals AOs and parents both care about. Always check "what % of grade level is HCC" for SPS pathway high schools.
+
+- For K12 entries, school district transition documents (Naviance → SchooLinks) and HC/HCC pathway change history (when did the boundary split?) are non-obvious parent gotchas worth flagging
+- For magnet/lottery schools, the LIVE waitlist number ("next number to be called: 237") is a more useful insight than the published acceptance rate — it tells parents whether the waitlist is realistic
+- Universal-AP-enrollment policies (where ALL 10th graders take a specific AP) are non-obvious — parents assume APs are opt-in
+- For high-profile signature programs (jazz, music, STEM), look up specific competition wins (Essentially Ellington, Montreux Jazz Festival, ExploraVision) to anchor the program in concrete achievements
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
@@ -83,7 +85,7 @@ Each captured insight must be:
 |------|-------|--------|-----------------|-------------------|---------|
 | (no runs yet) | | | | | |
 | 2026-04-26 | 1 | esms | 5 | 5 | First run; 100% capture rate. WA Seattle programs all yielded insights. Notable: Museum of Flight Campership full-aid window closes BEFORE registration opens — parent gotcha. |
-| 2026-04-26 | 2 | k12 | 5 | 5 | First k12 batch — Bellevue/Newport/Tesla STEM/Roosevelt/Garfield. 100% capture. WA Seattle-metro entries reliably yield district-mechanics + program-access insights. Tesla STEM waitlist call numbers (#237/#242) are publicly published — extremely actionable. |
+| 2026-04-26 | 2 | k12 | 5 | 10 | High yield. WA HS profiles published rich detail (AP pass rates, Naviance/SchooLinks transitions, jazz program rankings, HCC pathway changes). Tesla STEM lottery dates + waitlist #237 reality were strongest insights. |
 
 
 ## DATA QUALITY FLAGS
@@ -91,11 +93,15 @@ Each captured insight must be:
 - DigiPen Open World entry name says "Ages 5-12" but real product structure is Explorer (6-8), Adventurer (9-13), Innovator (14-18). Lower bound is 6 not 5; upper bound goes to 13 for the Adventurer track. Consider patching the entry name on next data refresh.
 - UW Engineering Discovery Days is in programs.json with eligibility.grades K-8, but the program officially targets grades 4-8 only. Also it's a 2-day spring event, not a multi-week summer program — `type: 'summer'` may be wrong. Worth a future correction.
 - Robinson Center entry exists but its Saturday Enrichment program does NOT run in summer — it's quarterly fall/winter/spring. If users filter by `type: 'summer'`, this entry should map to Robinson's separate summer offerings instead.
-- k12-enriched.json entries for several SPS / BSD high schools are quite thin — Bellevue HS has no AP count, Roosevelt HS has no notablePrograms field despite running one of the country's top jazz programs. The k12 grinder should consider re-enriching these with a "specialty programs" pass.
+
+- Garfield HS entry's notablePrograms still says "Designated school for Highly Capable / academically highly gifted students" — but since 2019-20 SPS split HCC across 3 schools (Lincoln/Garfield/West Seattle). Entry should clarify "designated for central/southeast Seattle HC pathway"
+- Bellevue HS entry doesn't include AP count (27 courses) or principal — Newport's entry has both. Worth backfilling on next data refresh
+- Roosevelt HS entry doesn't capture universal-AP-enrollment policy or AP Jazz Band 1 (Essentially Ellington 4x champion) — both are signature features
 
 ## CALIBRATION SUGGESTIONS
 
+- K12 yield was 2 insights/entry on first batch — even higher than esms. Keep batch_size at 5
+- For each school, run 2-3 distinct WebSearches: (a) AP/profile, (b) signature programs, (c) HC/transfer/pathway specifics. The third query often reveals the strongest gotcha
 - Keep batch_size at 5 — yield was high enough that throughput is fine. Going to 10 risks shallower research per entry.
 - Add a "name vs reality" check pattern explicitly to STEP 2 — entries 3 and 5 both had name/eligibility mismatches that became insights.
 - Consider a `_dataQualityFlags` field harvested in parallel that the data-refresh task can read to schedule entry corrections (separate from the parent-facing insights).
-- For k12 module, prioritize entries with `_sources` containing district-FAQ or PTSA URLs — these consistently yield higher-quality insights than entries with only Wikipedia + US News URLs.
