@@ -1,8 +1,8 @@
 {
   "approach": "top-50-per-state-by-enrollment",
-  "lastRun": "2026-04-26T15:08:56.976Z",
-  "totalRuns": 26,
-  "totalEnriched": 166,
+  "lastRun": "2026-04-26T15:30:00.000Z",
+  "totalRuns": 27,
+  "totalEnriched": 174,
   "totalSkipped": 70,
   "migratedFrom": "march-through-every-offset",
   "migratedAt": "2026-04-26T15:08:56.976Z",
@@ -13,13 +13,13 @@
       "target": 50,
       "current": 166,
       "status": "complete",
-      "note": "Marked complete by Dan directive 2026-04-26 — 166 enriched well past 50 target"
+      "note": "Marked complete by Dan directive 2026-04-26 \u2014 166 enriched well past 50 target"
     },
     {
       "state": "TX",
       "level": "high",
       "target": 50,
-      "current": 0,
+      "current": 8,
       "status": "in_progress"
     },
     {

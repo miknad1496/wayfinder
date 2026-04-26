@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T14:51:10Z",
+    "lastUpdated": "2026-04-26",
     "count": 161,
     "source": "NCES + verified web sources",
     "note": "Run 26: +5 WA high (Grandview HS, Granger HS, Granite Falls HS, Crossroads HS, Granite Falls Open Doors). Skipped 3 sub-50 alt placeholders (Contract Learning Center enr=33, Step to College Open Doors enr=6, Harrington HS enr=43). Queue offset 226 -> 234.",
-    "totalSchools": 166,
+    "totalSchools": 174,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 5,
+    "lastRunAdded": 8,
     "lastRunReplaced": 0,
     "lastRunNote": "Run 26: +5 verified WA high (Grandview + Granger + Granite Falls SD cluster, offsets 226-233)",
     "totalVerified": 166,
@@ -1743,7 +1743,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program — growth and excellence"
+        "2020 WA School Recognition Program \u2014 growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2560,7 +2560,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 — district's oldest HS",
+        "Founded 1952 \u2014 district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2916,7 +2916,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2966,7 +2966,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3156,7 +3156,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers — 4A)",
+        "Athletics (Papermakers \u2014 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3315,7 +3315,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3328,7 +3328,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3625,7 +3625,7 @@
         "Shannon McGowan",
         "Jacquie Monks"
       ],
-      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) — historical, not current.",
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
       "enrollment": 1380,
       "studentTeacherRatio": "22:1",
       "apParticipationRate": "30%",
@@ -4568,8 +4568,8 @@
       "address": "10320 Farwest Drive SW, Lakewood, WA 98498",
       "phone": "253-583-5550",
       "website": "https://lakes.cloverpark.k12.wa.us/",
-      "principal": "Kären Mauer-Smith",
-      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role — current district pages list her as Principal.",
+      "principal": "K\u00e4ren Mauer-Smith",
+      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role \u2014 current district pages list her as Principal.",
       "enrollment": 1195,
       "studentTeacherRatio": "20:1",
       "graduationRate": "91% (Niche; WA state avg 84%); 91.4% in 2022-23",
@@ -4687,7 +4687,7 @@
       "grades": "9-12",
       "website": "https://csd400.org/",
       "principal": "Kyle Miller",
-      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name — recommend cross-verifying against csd400.org admin page next pass.",
+      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name \u2014 recommend cross-verifying against csd400.org admin page next pass.",
       "enrollment": 223,
       "graduationRate": "86% (2022-23; range 64.9-87% across recent years)",
       "demographics": {
@@ -4931,7 +4931,7 @@
       "grades": "9-12",
       "website": "https://www.daytonsd.org/",
       "principal": "Guinevere 'Guin' Joyce",
-      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley — Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
+      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley \u2014 Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
       "enrollment": 90,
       "studentTeacherRatio": "8:1",
       "graduationRate": "60-79% (below WA state average of 84%; school size limits stability of 4-yr cohort metric)",
@@ -4968,7 +4968,7 @@
       "principal": "Joe Feist",
       "principalNotes": "Joe Feist serves as Principal of Deer Park HS (Stags). In 2024 Feist and Athletic Director Cameron Gilbert appealed the school's WIAA reclassification; the school officially began competing in the 2A division of the Greater Spokane League starting fall 2024 (Statesman-Examiner / Deer Park Gazette). Verified via dpsd.org school homepage.",
       "enrollment": 637,
-      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% — variance reflects different reporting cohorts)",
+      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% \u2014 variance reflects different reporting cohorts)",
       "leagueClassification": "2A (Greater Spokane League, joined fall 2024)",
       "address": "800 South Weber, Deer Park, WA 99006",
       "_verified": true,
@@ -5250,7 +5250,7 @@
         "https://www.niche.com/k12/meadowdale-high-school-lynnwood-wa/",
         "https://www.publicschoolreview.com/meadowdale-high-school-profile/98037"
       ],
-      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about — 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
+      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about \u2014 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
     },
     {
       "ncessch": "530240000356",
@@ -5447,7 +5447,7 @@
         "On-campus 2-4 days/week, 5-15 hrs/wk",
         "GED + diploma + dual-enrollment pathways"
       ],
-      "principalNote": "Open Doors consortium program — administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
+      "principalNote": "Open Doors consortium program \u2014 administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
     },
     {
       "ncessch": "530246000365",
@@ -5595,7 +5595,7 @@
       "gradeRange": "6-12",
       "studentTeacherRatio": "14:1",
       "athleticsSite": "https://www.entiattigers.com/",
-      "regionalContext": "Distant rural setting in Chelan County — only HS in Entiat SD"
+      "regionalContext": "Distant rural setting in Chelan County \u2014 only HS in Entiat SD"
     },
     {
       "ncessch": "530261000386",
@@ -5634,7 +5634,7 @@
     {
       "ncessch": "530267000391",
       "name": "Cascade High School",
-      "nameDisambiguator": "Everett — distinct from Cascade HS Leavenworth (530095001935)",
+      "nameDisambiguator": "Everett \u2014 distinct from Cascade HS Leavenworth (530095001935)",
       "city": "Everett",
       "state": "WA",
       "zip": "98203",
@@ -5739,7 +5739,7 @@
       "notablePrograms": [
         "Alternative Learning Experience (ALE) choice school within Everett SD",
         "8 academic terms per year (instead of semesters)",
-        "Class sizes ≤15 students",
+        "Class sizes \u226415 students",
         "Mandatory advisory class 4 days/week",
         "Three guiding principles: choice, equity, relationships",
         "Required CONNECTED orientation for new enrollees"
@@ -5932,7 +5932,7 @@
       "website": "https://www.cascadiatechnicalacademy.org/",
       "address": "12200 NE 28th St, Vancouver, WA 98682",
       "principal": null,
-      "principalNote": "Skills Center / consortium model — administered by Evergreen Public Schools as host. Foundation Executive Director: Kristina Bauska. Specific academy administrator name not surfaced in this run.",
+      "principalNote": "Skills Center / consortium model \u2014 administered by Evergreen Public Schools as host. Foundation Executive Director: Kristina Bauska. Specific academy administrator name not surfaced in this run.",
       "enrollment": 1600,
       "enrollmentNotes": "NCES total=16 reflects host-district teacher-FTE-adjusted snapshot, NOT true cohort. Cascadia serves over 1,600 students across the Vancouver campus and 7 satellite campuses. Skills-Center carve-out per grinder rules.",
       "schoolCategory": "skills center / CTE consortium",
@@ -6089,7 +6089,7 @@
         "niche": "B+",
         "usnews_state_rank": "Top 50% WA"
       },
-      "namedAfter": "Henrietta Lacks (HeLa cell line) — first US public institution named after Lacks (2013)",
+      "namedAfter": "Henrietta Lacks (HeLa cell line) \u2014 first US public institution named after Lacks (2013)",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_sources": [
@@ -6124,7 +6124,7 @@
         "Clark College"
       ],
       "eligibility": "Youth ages 16-21 who dropped out of school or are not expected to graduate by age 21",
-      "graduationRate": "5% (NCES — typical of reengagement programs serving previously disconnected youth)",
+      "graduationRate": "5% (NCES \u2014 typical of reengagement programs serving previously disconnected youth)",
       "notablePrograms": [
         "Performance-based individualized learning model",
         "Multiple pathways to a high school diploma",
@@ -6341,7 +6341,7 @@
     },
     {
       "ncessch": "530282003479",
-      "name": "Open Doors Youth Reengagement (1418) — Federal Way",
+      "name": "Open Doors Youth Reengagement (1418) \u2014 Federal Way",
       "district": "Federal Way School District",
       "city": "Federal Way",
       "state": "WA",
@@ -6360,7 +6360,7 @@
         "economicallyDisadvantaged": 84
       },
       "notablePrograms": [
-        "Open Doors Youth Reengagement (WAC 392-700) — ages 16-21",
+        "Open Doors Youth Reengagement (WAC 392-700) \u2014 ages 16-21",
         "1:1 weekly meetings with reengagement specialists",
         "Personalized/competency-based learning",
         "Located at Truman Campus alongside Career Academy at Truman"
@@ -6661,7 +6661,7 @@
       },
       "notablePrograms": [
         "CTE Offerings 2025-2026 (per district CTE landing page)",
-        "Athletics (Scotties — football, multi-sport program)",
+        "Athletics (Scotties \u2014 football, multi-sport program)",
         "Small-school/community-driven model 19 mi southwest of Spokane"
       ],
       "rating": {
@@ -6830,7 +6830,7 @@
       "titleI": true,
       "website": "https://hs.gsd.wednet.edu/",
       "principal": null,
-      "principalNote": "Mike Carlson reported as principal since 2018 (Wikipedia); Niche and Public School Review surface conflicting more-recent names — confirmation pending direct district admin page (JS-rendered)",
+      "principalNote": "Mike Carlson reported as principal since 2018 (Wikipedia); Niche and Public School Review surface conflicting more-recent names \u2014 confirmation pending direct district admin page (JS-rendered)",
       "enrollment": 408,
       "studentTeacherRatio": null,
       "apParticipationRate": null,
@@ -6920,7 +6920,7 @@
       "titleI": false,
       "website": "https://xrhs.gfalls.wednet.edu/about-us",
       "principal": "Bridgette Perrigoue",
-      "principalNote": "Niche lists Bridgette Perrigoue; some recent sources reference an updated 'ALE Manager' role for 2025-26 — confirm at district staff directory if name changes",
+      "principalNote": "Niche lists Bridgette Perrigoue; some recent sources reference an updated 'ALE Manager' role for 2025-26 \u2014 confirm at district staff directory if name changes",
       "enrollment": 212,
       "studentTeacherRatio": "21:1",
       "schoolType": "alternative-learning-experience",
@@ -6929,7 +6929,7 @@
       "address": "205 North Alder Avenue, Granite Falls, WA 98252",
       "phone": "(360) 283-4407",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) model — small-class flexible scheduling",
+        "Alternative Learning Experience (ALE) model \u2014 small-class flexible scheduling",
         "Personalized credit-recovery and re-engagement pathways",
         "Designed for students who haven't found success in traditional HS settings",
         "Serves grades 10-12 primarily (some 9th-grade exceptions)"
@@ -6967,7 +6967,7 @@
       "titleI": false,
       "website": "https://www.facebook.com/time2graduate/",
       "principal": null,
-      "principalNote": "Open Doors consortium / reentry program — administered by Granite Falls SD, no traditional principal role; co-located with Crossroads HS at 205 N Alder Ave",
+      "principalNote": "Open Doors consortium / reentry program \u2014 administered by Granite Falls SD, no traditional principal role; co-located with Crossroads HS at 205 N Alder Ave",
       "enrollment": 52,
       "schoolType": "reentry",
       "eligibility": "Ages 16-21 on Sept 1 who are not enrolled in high school or are not on track to graduate by age 21",
@@ -6983,7 +6983,7 @@
       },
       "rating": {
         "source": "OSPI / NCES",
-        "notes": "Reentry consortium program — not directly comparable to traditional HS; serves 52 students (2023-24)"
+        "notes": "Reentry consortium program \u2014 not directly comparable to traditional HS; serves 52 students (2023-24)"
       },
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -6993,6 +6993,391 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/granite-falls-school-district/granite-falls-open-doors-158494",
         "https://www.niche.com/k12/granite-falls-open-doors-granite-falls-wa/",
         "https://ospi.k12.wa.us/student-success/learning-alternatives/open-doors-youth-reengagement"
+      ]
+    },
+    {
+      "ncessch": "480789000117",
+      "name": "Allen High School",
+      "city": "Allen",
+      "state": "TX",
+      "zip": "75002",
+      "district": "Allen ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://www.allenisd.org/o/ahs",
+      "principal": "Carrie Jackson",
+      "principalNote": "Named principal effective 2025-26; previously Northwest HS (Northwest ISD) principal since 2018; former TASSP president and 2013 NASSP National Digital Principal of the Year",
+      "enrollment": 5317,
+      "schoolType": "comprehensive",
+      "address": "300 Rivercrest Boulevard, Allen, TX 75002",
+      "phone": "(972) 727-0400",
+      "apCourses": 28,
+      "apParticipationPercent": "52%",
+      "ibProgram": true,
+      "notablePrograms": [
+        "International Baccalaureate (IB) Diploma Programme",
+        "28 AP courses (Advanced Placement)",
+        "Dual Credit through Collin College",
+        "Advanced Academics + elective career pathways",
+        "Allen Eagles athletics (UIL 6A)"
+      ],
+      "demographics": {
+        "whitePercent": "37.1%",
+        "economicallyDisadvantagedPercent": "16.5%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune",
+        "notes": "Largest Texas HS by enrollment; 6A UIL classification; multi-campus model with Lowery Freshman Center (9th) feeding the main 10-12 campus"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.allenisd.org/o/ahs",
+        "https://www.allenisd.org/o/ahs/article/2048844",
+        "https://www.allenisd.org/o/ahs/page/advanced-academics",
+        "https://schools.texastribune.org/districts/allen-isd/allen-high-school/",
+        "https://en.wikipedia.org/wiki/Allen_High_School_(Texas)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=480789000117"
+      ]
+    },
+    {
+      "ncessch": "481500001002",
+      "name": "Conroe High School",
+      "city": "Conroe",
+      "state": "TX",
+      "zip": "77303",
+      "district": "Conroe ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://chs.conroeisd.net/",
+      "principal": "Dr. Rotasha Smith",
+      "principalNote": "Principal of Conroe HS Main Campus (10-12); Spencer Neal serves as principal of the Conroe HS 9th Grade Campus",
+      "enrollment": 4915,
+      "schoolType": "comprehensive",
+      "phone": "(936) 709-5700",
+      "apParticipationPercent": "40%",
+      "graduationRate": "92%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program",
+        "Career & Technical Education (CTE) pathways",
+        "Dual Credit with Lone Star College",
+        "Conroe Tigers athletics (UIL 6A)"
+      ],
+      "demographics": {
+        "minorityEnrollmentPercent": "73%",
+        "economicallyDisadvantagedPercent": "61%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune",
+        "notes": "Largest of 7 high schools in Conroe ISD; main 10-12 campus pairs with separate 9th Grade Campus; ~94-95% four-year grad rate in recent years"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chs.conroeisd.net/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/conroe-independent-school-district/conroe-high-school-18850",
+        "https://schools.texastribune.org/districts/conroe-isd/conroe-high-school/",
+        "https://en.wikipedia.org/wiki/Conroe_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481500001002"
+      ]
+    },
+    {
+      "ncessch": "482025001989",
+      "name": "North Shore Senior High",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77015",
+      "district": "Galena Park ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://nssh.galenaparkisd.com/",
+      "principal": null,
+      "principalNote": "North Shore operates as a three-campus model (9th Grade Center, 10th Grade Center, Senior High 11-12). Kenneth W. Bryant Jr. is the 10th Grade Center principal (HAABSE Principal of the Year 2025-26). David Pierson is associated with the senior campus per district staff records but specific main-campus head principal role for 2025-26 not independently verified \u2014 recording cautiously per multi-campus structure.",
+      "enrollment": 4534,
+      "schoolType": "comprehensive",
+      "address": "353 N Castlegory, Houston, TX 77015",
+      "phone": "(832) 386-4100",
+      "apParticipationPercent": "23%",
+      "graduationRate": "87%",
+      "notablePrograms": [
+        "Three-campus model: 9th Grade Center, 10th Grade Center, Senior High (11-12)",
+        "Advanced Placement (AP) program",
+        "CTE pathways and Career & Technical Education programs",
+        "North Shore Mustangs athletics (UIL 6A) \u2014 multiple state football titles"
+      ],
+      "demographics": {
+        "hispanicPercent": "72.3%",
+        "africanAmericanPercent": "22.9%",
+        "whitePercent": "3.3%",
+        "freeReducedLunchPercent": "87%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune",
+        "notes": "One of the largest Texas HS by enrollment; three-campus model spans grades 9-12 across separate physical campuses"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://nssh.galenaparkisd.com/",
+        "https://nssh.galenaparkisd.com/school-information",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/galena-park-independent-school-district/north-shore-senior-high-school-19110",
+        "https://schools.texastribune.org/districts/galena-park-isd/north-shore-senior-high/",
+        "https://en.wikipedia.org/wiki/North_Shore_Senior_High_School_(Texas)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=482025001989"
+      ]
+    },
+    {
+      "ncessch": "481764001524",
+      "name": "Duncanville High School",
+      "city": "Duncanville",
+      "state": "TX",
+      "zip": "75116",
+      "district": "Duncanville ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://dhs.duncanvilleisd.org/",
+      "principal": "Danny Colbert Jr.",
+      "principalNote": "Promoted to Executive Principal of Duncanville HS effective July 2025; previously Principal of Alexander Elementary; prior to that served three years as Assistant Principal at DHS leading the 9th-grade team",
+      "enrollment": 4501,
+      "schoolType": "comprehensive",
+      "phone": "(972) 708-3700",
+      "graduationRate": "94%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program",
+        "Gifted & Talented program",
+        "Career & Technical Education (CTE) Department",
+        "Duncanville Collegiate Academy (early-college / dual-credit pathway)",
+        "Duncanville Panthers athletics (UIL 6A) \u2014 historic basketball powerhouse"
+      ],
+      "rating": {
+        "source": "U.S. News / Texas Tribune",
+        "notes": "Single comprehensive 9-12 campus serving Duncanville ISD; Collegiate Academy operates as separate co-located early-college program"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://dhs.duncanvilleisd.org/",
+        "https://dhs.duncanvilleisd.org/our-school/leadership",
+        "https://www.focusdailynews.com/danny-colbert-promoted-to-duncanville-hs-executive-principal/",
+        "https://schools.texastribune.org/districts/duncanville-isd/duncanville-high-school/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/duncanville-independent-school-district/duncanville-high-school-18984",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481764001524"
+      ]
+    },
+    {
+      "ncessch": "481500001007",
+      "name": "The Woodlands High School",
+      "city": "The Woodlands",
+      "state": "TX",
+      "zip": "77381",
+      "district": "Conroe ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://twhs.conroeisd.net/",
+      "principal": "Dennis Muehsler",
+      "principalNote": "Principal of The Woodlands HS Main Campus (10-12); paired with separate Ninth Grade Campus",
+      "enrollment": 4361,
+      "schoolType": "comprehensive",
+      "phone": "(936) 709-3200",
+      "apParticipationPercent": "59%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 59% AP participation rate",
+        "Strong fine-arts and athletics programs (UIL 6A Highlanders)",
+        "Dual Credit with Lone Star College",
+        "Multi-campus 10-12 main + 9th Grade Campus model"
+      ],
+      "rating": {
+        "source": "U.S. News / Texas Tribune / TEA",
+        "notes": "TEA 2024-25 score 92/100 (A grade); among the highest-rated comprehensive HS in Conroe ISD; affluent suburban community"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://twhs.conroeisd.net/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/conroe-independent-school-district/the-woodlands-high-school-18852",
+        "https://schools.texastribune.org/districts/conroe-isd/the-woodlands-high-school/",
+        "https://en.wikipedia.org/wiki/The_Woodlands_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481500001007"
+      ]
+    },
+    {
+      "ncessch": "482730003072",
+      "name": "Lewisville High School",
+      "city": "Lewisville",
+      "state": "TX",
+      "zip": "75067",
+      "district": "Lewisville ISD",
+      "level": "high",
+      "grades": "11-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://lhs.lisd.net/",
+      "principal": "Jim Baker",
+      "principalNote": "Principal of Lewisville HS Main Campus (11-12) since 2020; prior assistant principal at LHS (2007-2011) and principal of DeLay Middle School (LHS feeder, 2011-2020). Verified via lhs.lisd.net Principal's Message page (published 2026-03-30). Email bakerjf@lisd.net.",
+      "enrollment": 4240,
+      "schoolType": "comprehensive",
+      "address": "1098 W. Main St., Lewisville, TX 75067",
+      "phone": "(469) 713-5190",
+      "apParticipationPercent": "26%",
+      "graduationRate": "90%",
+      "notablePrograms": [
+        "Three-campus structure: LHS Main (11-12), LHS Killough (9-10 North), LHS Harmon (9-10 South)",
+        "Advanced Placement (AP) program",
+        "Career & Technical Education via TECC East / TECC West specialty centers",
+        "Lewisville Fighting Farmers athletics (UIL 6A)",
+        "Communities In Schools wraparound supports"
+      ],
+      "demographics": {
+        "hispanicPercent": "60%",
+        "blackPercent": "20%",
+        "whitePercent": "11%",
+        "asianPercent": "6%",
+        "minorityEnrollmentPercent": "89%",
+        "economicallyDisadvantagedPercent": "69%"
+      },
+      "administrativeTeam": [
+        "Jim Baker (Principal)",
+        "Monica Story (Associate Principal)",
+        "Nathan Hawes (Assistant Principal A-C)",
+        "Lauren Johnson (Assistant Principal D-He)",
+        "Jaden Wright (Assistant Principal Hi-Mi)",
+        "Glenn 'Sonny' Dack (Assistant Principal Mo-R)",
+        "Dr. Lionel Soto (Assistant Principal S-Z, Campus Behavior Coordinator)"
+      ],
+      "rating": {
+        "source": "U.S. News / Texas Tribune / Niche",
+        "notes": "Three-campus structure splits 9-10 (Killough North + Harmon South) from 11-12 main campus; one of the largest LISD high schools"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://lhs.lisd.net/",
+        "https://lhs.lisd.net/our-school/administration",
+        "https://lhs.lisd.net/our-school/administration/principals-message",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/lewisville-independent-school-district/lewisville-high-school-19442",
+        "https://schools.texastribune.org/districts/lewisville-isd/lewisville-high-school/",
+        "https://en.wikipedia.org/wiki/Lewisville_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=482730003072"
+      ]
+    },
+    {
+      "ncessch": "481623001357",
+      "name": "Skyline High School",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75228",
+      "district": "Dallas ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": true,
+      "titleI": false,
+      "website": "https://skyline.dallasisd.org/",
+      "principal": "Angela West",
+      "principalNote": "Principal of Skyline HS for 2024-25 / 2025-26 (Dallas ISD)",
+      "enrollment": 3780,
+      "schoolType": "career_magnet",
+      "magnetProgram": true,
+      "phone": "(972) 502-4700",
+      "apParticipationPercent": "46%",
+      "graduationRate": "78%",
+      "notablePrograms": [
+        "Skyline Career Development Center (CDC) \u2014 26+ career magnet clusters (architecture, aviation, business, fashion, IT, media, etc.)",
+        "Advanced Placement (AP) program",
+        "Dual Credit with Eastfield College / DCCCD",
+        "Skyline Raiders athletics (UIL 6A)"
+      ],
+      "demographics": {
+        "minorityEnrollmentPercent": "98%",
+        "economicallyDisadvantagedPercent": "86%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune / Niche",
+        "notes": "Historic citywide-magnet high school in Dallas ISD; one of largest comprehensive + career-magnet HS in Texas; student population declined ~8% over five years"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://skyline.dallasisd.org/",
+        "https://staff.dallasisd.org/2024/04/10/transforming-skyline-high-school/",
+        "https://mydata.dallasisd.org/docs/SRC/2425/202425_SCHOOL_PROFILE_25.pdf",
+        "https://schools.texastribune.org/districts/dallas-isd/skyline-high-school/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/dallas-independent-school-district/skyline-high-school-18927",
+        "https://en.wikipedia.org/wiki/Skyline_High_School_(Texas)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481623001357"
+      ]
+    },
+    {
+      "ncessch": "480783000103",
+      "name": "Elsik High School",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77072",
+      "district": "Alief ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://elsik.aliefisd.net/",
+      "principal": "Andrew K. Bailey",
+      "principalNote": "Coordinating Principal at Elsik High School (Alief ISD); email andrew.bailey@aliefisd.net. School celebrating 50 years serving Houston in 2024-25.",
+      "enrollment": 4118,
+      "schoolType": "comprehensive",
+      "phone": "(281) 988-6500",
+      "apParticipationPercent": "36%",
+      "graduationRate": "81%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program",
+        "Career & Technical Education (CTE) pathways",
+        "Dual Credit with Houston Community College",
+        "Multi-campus model with separate 9th Grade Center",
+        "Elsik Rams athletics (UIL 6A)"
+      ],
+      "demographics": {
+        "hispanicPercent": "64%",
+        "blackPercent": "25%",
+        "asianPercent": "8%",
+        "whitePercent": "2%",
+        "americanIndianPercent": "1%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune / TEA",
+        "notes": "Largest HS in Alief ISD; B Rating in 2024-25 TEA Accountability Report; majority Hispanic/Black student body, highly diverse"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://elsik.aliefisd.net/",
+        "https://core-docs.s3.us-east-1.amazonaws.com/documents/asset/uploaded_file/4448/AISD/4780132/Elsik_School_Profile_2024-2025.pdf",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/alief-independent-school-district/elsik-high-school-18558",
+        "https://schools.texastribune.org/districts/alief-isd/elsik-high-school/",
+        "https://en.wikipedia.org/wiki/Alief_Elsik_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=480783000103"
       ]
     }
   ]
