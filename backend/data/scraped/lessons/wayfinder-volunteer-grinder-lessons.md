@@ -15,10 +15,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries (run 12 again completed 5-of-5 verified, 0 skipped — sustain at 5)
-- typical_run_duration: ~15-25 min for 5 entries (run 12 spent extra time recovering from a stale clone — see Effective Patterns)
-- typical_skip_rate: 0-1 of 5 candidates in final batch
-- last_calibration_change: 2026-04-26 — run 3 (raised from 4 → 5); runs 4-12 confirm 5 sustains across WA + CA + Austin TX clusters
+- batch_size: 5 entries (run 13 again completed 5-of-5 verified, 0 skipped — sustain at 5)
+- typical_run_duration: ~15-20 min for 5 entries (longer when canonical /volunteer URL 404s — fall back to /support-us/volunteer/ways-to-volunteer/ pattern as seen with SPCA of Texas)
+- typical_skip_rate: 0-1 of 5 candidates
+- last_calibration_change: 2026-04-26 — run 13 confirms 5 is sustainable for the institutional-anchors recipe across 3 TX metros and CA queue
 
 
 ## EFFECTIVE PATTERNS
@@ -239,3 +239,29 @@
 
 | 2026-04-26 | 11 | 5 | 0 | TX (Houston) — first TX run | Houston Food Bank, Houston Zoo Zoo Crew Explorers/Year-Round, Houston Public Library Youth Volunteer, Children's Museum of Houston Discovery Squad, Houston SPCA. All HIGH confidence. TX queue → 5/12. Cluster-by-metro held cleanly; "5 institutional anchors" recipe (food bank + zoo + library + museum + SPCA) yielded 5/5 with 0 mid-research drops. |
 | 2026-04-26 | 12 | 5 | 0 | TX (Austin metro) | Central Texas Food Bank, Austin Public Library Teen Vol, Austin Pets Alive!, Thinkery VolunTeen, Caritas of Austin Community Kitchen. All HIGH confidence. Stale-clone recovery cost ~10 min; pivoted from planned WA fill-in to TX after detecting WA + CA queue completion mid-flight. |
+
+## RUN 13 NOTES (2026-04-26 — TX queue COMPLETE, Dallas cluster)
+
+- Added 5 HIGH-confidence Dallas entries to complete TX queue: North Texas Food Bank (12+ Pack-Box / 16+ produce, cold, garden / 18+ donor-door, senior box / 16-23 Junior Kernel summer immersive), Dallas Zoo Zoo Crew (13-17 youth + 18+ adult conservation ambassadors), Dallas Public Library + TAC (14+ branch volunteers + Teen Advisory Council), Perot Museum ConnecTEEN + Year-Round (14+ teens / 18+ adults / grades 10-12 ConnecTEEN summer cohorts), SPCA of Texas (10-14 with adult / 15-17 independent / 18+ adult — $15 fee per applicant).
+- All 5 HIGH confidence — Dallas continues the Houston/Austin pattern: institutional teen-volunteer pages publish ages cleanly with separate sub-pages or tier tables per program track.
+- Mid-research drops: 0. Final batch hit 5/5 on first pass.
+- **TX queue → 15/12 COMPLETE (5 over target).** Pivot to NY queue next run.
+
+### Source-specific run-13 notes
+- `ntfb.org/get-involved/volunteer/` — clean WordPress fetch, large (~480KB) but well-structured. Tier-by-role age policy laid out per opportunity card (Pack-Box 12+, Produce 16+, Cold Sorting 16+, Donor Door 18+, Senior Box 18+, Jan's Garden 16+, Junior Kernel 16-23 summer 64hr immersive). Volunteer Portal is a separate sub-domain.
+- `dallaszoo.com/learn/volunteer/` — clean curl. Single-page split into "Youth Volunteers" (13-17 Zoo Crew with Training Program prerequisite) and "Adult Volunteers" (18+, US national + SSN required for background check). Conservation Ambassadors role uses biofacts for guest interpretation — strong fit for "education + animals" categorization.
+- `dallaslibrary.org/about/volunteer` — clean curl (1.5MB page, regex-strip handles fine). Explicit "age 14 and older" with TAC sub-program. Includes Court-Ordered service track (preferred at J. Erikson Central Library Branch).
+- `perotmuseum.org/about/volunteer/` — clean curl. Three programs on one umbrella page (Year-Round 14+, Group 10-15 vols, ConnecTEEN summer cohorts grades 10-12). ConnecTEEN cohort dates published explicitly (5 cohorts June-Aug). 10 hours/month minimum for year-round.
+- `spca.org/support-us/volunteer/ways-to-volunteer/` — clean curl. 4-tier age policy: 18+ adults, 15-17 independent, 10-14 with adult chaperone, special needs track. $15 application fee for general volunteers ($35 for court-ordered). Separate forms per age tier. Volunteer Portal at spcatx.volunteerportal.org. Note: spca.org/volunteer/ returns 404 — canonical path is /support-us/volunteer/ways-to-volunteer/.
+
+### Calibration notes from run 13
+- TX queue completed across 3 runs (Houston / Austin / Dallas) with 0 mid-research drops final-batch and 0 medium-confidence entries. Same clean pattern as CA queue. The "5 institutional anchors" recipe (Food Bank + Zoo + Library + Children's/Science Museum + SPCA/Humane) is now confirmed across 3 metros.
+- Stay at batch_size 5.
+- **Run 14 target: NY queue first run — NYC cluster.** Suggested candidates following the institutional-anchors recipe: Food Bank for NYC (citymeals or NYCFB), Bronx Zoo Wildlife Conservation Society (Project TRUE / Discovery Volunteer / Junior Volunteer), New York Public Library Teen Volunteer / Teen Advisory Group, Brooklyn Children's Museum or American Museum of Natural History Teen Programs, ASPCA NYC (note: ASPCA is national HQ in NYC; check for NYC-specific volunteer program vs national).
+- After NYC, NY queue will likely need 1-2 more runs covering Buffalo / Rochester / Albany. Buffalo zoo, Strong Museum of Play (Rochester), Albany Pine Bush, Buffalo & Erie County Public Library could be anchors for upstate runs.
+
+### Calibration table update
+| Date | Run # | Added | Skipped | Focus | Notable |
+|------|-------|-------|---------|-------|---------|
+| 2026-04-26 | 13 | 5 | 0 | TX (Dallas) — TX queue complete | NTFB, Dallas Zoo Zoo Crew, Dallas Public Library + TAC, Perot Museum ConnecTEEN, SPCA of Texas. All HIGH. TX queue → 15/12 COMPLETE. Cluster-by-metro held; 5 institutional anchors recipe yielded 5/5 on first pass. |
+
