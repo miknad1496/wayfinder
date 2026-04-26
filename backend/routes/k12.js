@@ -16,6 +16,7 @@ import fs from 'fs';
 import path from 'path';
 import https from 'https';
 import { fileURLToPath } from 'url';
+import { loadJsonFresh } from '../services/data-loader.js';
 
 const GH_RAW = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend';
 
@@ -43,24 +44,9 @@ let enrichedCache = null;
 let enrichedIndex = null; // ncessch → enriched record
 
 async function loadEnriched() {
-  if (enrichedCache) return enrichedCache;
-  const filepath = path.join(SCRAPED, 'k12-enriched.json');
-  try {
-    enrichedCache = JSON.parse(fs.readFileSync(filepath, 'utf8'));
-  } catch (e) {
-    if (e.code !== 'ENOENT') console.error('[k12] enriched disk read failed:', e.message);
-    // Fall back to GitHub raw
-    try {
-      console.log('[k12] lazy-fetching k12-enriched.json from GitHub raw');
-      const buf = await _fetchUrl(`${GH_RAW}/data/scraped/k12-enriched.json`);
-      fs.mkdirSync(SCRAPED, { recursive: true });
-      fs.writeFileSync(filepath, buf);
-      enrichedCache = JSON.parse(buf.toString('utf8'));
-    } catch (err) {
-      console.error('[k12] enriched lazy-fetch failed:', err.message);
-      enrichedCache = { schools: [] };
-    }
-  }
+  // GitHub-first with 5-min TTL — auto-picks up grinder commits
+  const data = await loadJsonFresh('data/scraped/k12-enriched.json', path.join(__dirname, '..'));
+  enrichedCache = data || { schools: [] };
   enrichedIndex = new Map();
   for (const s of enrichedCache.schools || []) {
     if (s.ncessch) enrichedIndex.set(String(s.ncessch), s);
@@ -247,29 +233,11 @@ router.get('/zip/:zip', async (req, res) => {
 
 
 
-// GET /api/k12/insights — curated parent-facing K-12 insights (lazy-fetch fallback)
-let _k12InsightsCache = null;
+// GET /api/k12/insights — curated parent-facing K-12 insights (GitHub-first 5min TTL)
 router.get('/insights', async (req, res) => {
-  if (_k12InsightsCache) return res.json(_k12InsightsCache);
-  const insightsPath = path.join(SCRAPED, 'k12-insights.json');
-  try {
-    const data = JSON.parse(fs.readFileSync(insightsPath, 'utf8'));
-    _k12InsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
-    return res.json(_k12InsightsCache);
-  } catch (e) {
-    if (e.code !== 'ENOENT') console.error('[k12/insights] disk error:', e.message);
-  }
-  try {
-    console.log('[k12/insights] lazy-fetching from GitHub raw');
-    const buf = await _fetchUrl(`${GH_RAW}/data/scraped/k12-insights.json`);
-    fs.mkdirSync(SCRAPED, { recursive: true });
-    fs.writeFileSync(insightsPath, buf);
-    const data = JSON.parse(buf.toString('utf8'));
-    _k12InsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
-    res.json(_k12InsightsCache);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to load K12 insights: ' + err.message });
-  }
+  const data = await loadJsonFresh('data/scraped/k12-insights.json', path.join(__dirname, '..'));
+  if (!data) return res.status(500).json({ error: 'Failed to load K12 insights' });
+  res.json({ sections: data.sections || [], metadata: data.metadata || {} });
 });
 
 export default router;

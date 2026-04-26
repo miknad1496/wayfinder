@@ -17,6 +17,7 @@ import https from 'https';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 import { chatSLM, isSLMAvailable } from '../services/slm.js';
+import { loadJsonFresh } from '../services/data-loader.js';
 
 const GH_RAW = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend';
 
@@ -47,59 +48,19 @@ function getClaude() {
   return claudeClient;
 }
 
-let insightsCache = null;
 async function loadInsights() {
-  if (insightsCache) return insightsCache;
-  try {
-    insightsCache = JSON.parse(fs.readFileSync(INSIGHTS_PATH, 'utf8'));
-    return insightsCache;
-  } catch (e) {
-    if (e.code !== 'ENOENT') console.error('[summer-camps] disk error:', e.message);
-  }
-  try {
-    console.log('[summer-camps/insights] lazy-fetching from GitHub raw');
-    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/summer-camp-insights.json`);
-    fs.mkdirSync(path.dirname(INSIGHTS_PATH), { recursive: true });
-    fs.writeFileSync(INSIGHTS_PATH, buf);
-    insightsCache = JSON.parse(buf.toString('utf8'));
-    return insightsCache;
-  } catch (err) {
-    console.error('[summer-camps] lazy-fetch failed:', err.message);
-    insightsCache = { sections: [] };
-    return insightsCache;
-  }
+  // GitHub-first with 5-min TTL
+  const data = await loadJsonFresh('data/scraped/summer-camp-insights.json', path.join(__dirname, '..'));
+  return data || { sections: [] };
 }
 
 
 // GET /api/summer-camps/browse — K-8 program browse (public, no auth required)
 // Filters programs.json to K-8 entries with safe public fields.
-let _scBrowseCache = null;
-let _scBrowseTimestamp = 0;
-const SC_BROWSE_TTL = 5 * 60 * 1000;
-
 async function _loadProgramsForBrowse() {
-  if (_scBrowseCache && (Date.now() - _scBrowseTimestamp) < SC_BROWSE_TTL) return _scBrowseCache;
-  const localPath = path.join(__dirname, '..', 'data', 'scraped', 'programs.json');
-  try {
-    const raw = fs.readFileSync(localPath, 'utf8');
-    _scBrowseCache = JSON.parse(raw);
-    _scBrowseTimestamp = Date.now();
-    return _scBrowseCache;
-  } catch (e) {
-    if (e.code !== 'ENOENT') console.error('[sc/browse] disk error:', e.message);
-  }
-  try {
-    console.log('[sc/browse] lazy-fetching programs.json from GitHub raw');
-    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/programs.json`);
-    fs.mkdirSync(path.dirname(localPath), { recursive: true });
-    fs.writeFileSync(localPath, buf);
-    _scBrowseCache = JSON.parse(buf.toString('utf8'));
-    _scBrowseTimestamp = Date.now();
-    return _scBrowseCache;
-  } catch (err) {
-    console.error('[sc/browse] lazy-fetch failed:', err.message);
-    return { programs: [] };
-  }
+  // GitHub-first with 5-min TTL — picks up grinder commits within 5 min
+  const data = await loadJsonFresh('data/scraped/programs.json', path.join(__dirname, '..'));
+  return data || { programs: [] };
 }
 
 router.get('/browse', async (req, res) => {
