@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T14:16:11.617Z",
-    "count": 156,
+    "lastUpdated": "2026-04-26T14:28:49Z",
+    "count": 161,
     "source": "NCES + verified web sources",
-    "note": "Run 24: +6 WA high (Fed Way + Ferndale + Fife + Finley + Franklin Pierce). Queue offset 210 -> 218. 2 sub-50 alt skips.",
-    "totalSchools": 156,
+    "note": "Run 25: +5 verified WA high (Franklin Pierce + Freeman + Goldendale + Lake Roosevelt cluster, offsets 218-225). Skipped 3 sub-50 (Garfield-Palouse enr=33, Glenwood Secondary enr=39, Lake Roosevelt Alt enr=30).",
+    "totalSchools": 161,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 6,
+    "lastRunAdded": 5,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 24: +6 verified WA high (Federal Way Open Doors, TAF@Saghalie, Ferndale HS, Fife HS, River View HS Finley, Franklin Pierce HS). Offsets 210-217, 2 alt skips (Ferndale Re-Engagement enr=43, Fife Open Doors enr=29).",
-    "totalVerified": 156,
+    "lastRunNote": "Run 25: +5 verified WA high (Franklin Pierce + Freeman + Goldendale + Lake Roosevelt cluster, offsets 218-225). Skipped 3 sub-50 (Garfield-Palouse enr=33, Glenwood Secondary enr=39, Lake Roosevelt Alt enr=30).",
+    "totalVerified": 161,
     "totalEnriched": 88,
     "lastRun": 22,
     "lastEnriched": "2026-04-26",
@@ -6549,6 +6549,221 @@
         "https://franklinpiercehighschool.fpschools.org/about-us/message-from-the-principal",
         "https://www.usnews.com/education/best-high-schools/washington/districts/franklin-pierce-school-district/franklin-pierce-high-school-20884",
         "https://www.niche.com/k12/franklin-pierce-high-school-tacoma-wa/"
+      ]
+    },
+    {
+      "ncessch": "530294000483",
+      "name": "Washington High School",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98444",
+      "district": "Franklin Pierce School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "website": "https://washington.fpschools.org/",
+      "principal": "Kwesi Amoah",
+      "enrollment": 989,
+      "apParticipationRate": "33%",
+      "demographics": {
+        "minorityEnrollmentPct": "76%",
+        "economicallyDisadvantagedPct": "71%"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "CTE pathways",
+        "1 of 3 high schools in Franklin Pierce SD"
+      ],
+      "rating": {
+        "source": "US News + Niche",
+        "value": "Niche profile (Parkland community), Tacoma-area comprehensive HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://washington.fpschools.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/franklin-pierce-school-district/washington-high-school-20885",
+        "https://www.niche.com/k12/washington-high-school-tacoma-wa/",
+        "https://www.greatschools.org/washington/tacoma/664-Washington-High-School/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5302940&ID=530294000483"
+      ]
+    },
+    {
+      "ncessch": "530294001769",
+      "name": "Gates Secondary School",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98444",
+      "district": "Franklin Pierce School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(253)298-4005",
+      "website": "https://gates.fpschools.org/",
+      "principal": "Valinda Jones",
+      "enrollment": 112,
+      "studentTeacherRatio": "7:1",
+      "schoolFocus": "GATES = 'Greater Alternatives To Educating Students'. Largest of FPSD's alternative programs; closely resembles a traditional HS day with accelerated 8-term schedule. Entry via counselor referral; orientation classes every 4 weeks. Daily 20-minute Check & Connect advisor period; credit-recovery online courses available.",
+      "notablePrograms": [
+        "Accelerated 8-term schedule",
+        "Online credit retrieval",
+        "Counselor-referral entry + 4-week orientation cycle",
+        "Check & Connect advisor system"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "Above average (alternative school category)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://gates.fpschools.org/",
+        "https://gates.fpschools.org/about-us",
+        "https://gates.fpschools.org/student-learning/enrollment-at-gates",
+        "https://www.niche.com/k12/gates-secondary-school-tacoma-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/franklin-pierce-school-district/gates-secondary-school-20886"
+      ]
+    },
+    {
+      "ncessch": "530297000485",
+      "name": "Freeman High School",
+      "city": "Rockford",
+      "state": "WA",
+      "zip": "99030",
+      "district": "Freeman School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(509)291-3721",
+      "address": "S 14626 Jackson Rd (14626 South Jackson Rd), Rockford, WA 99030",
+      "website": "https://fhs.freemansd.org/",
+      "principal": null,
+      "principalNotes": "Current principal name not confirmed via on-record fetched URL; FHS leadership page returned 404, district staff directory was JS-rendered. Skipping field per Run 12 lesson (don't record unverified principals).",
+      "enrollment": 300,
+      "studentTeacherRatio": "17:1",
+      "graduationRate": "95% (district 5-yr range)",
+      "graduationRateNotes": "Freeman SD district-wide 95% (5-yr trend rising from 90-94%); FHS 4-yr cohort range 82.2%-90% per Public School Review.",
+      "testScores": {
+        "mathProficient": "42%",
+        "readingProficient": "82%"
+      },
+      "notablePrograms": [
+        "CTE Offerings 2025-2026 (per district CTE landing page)",
+        "Athletics (Scotties — football, multi-sport program)",
+        "Small-school/community-driven model 19 mi southwest of Spokane"
+      ],
+      "rating": {
+        "source": "Public School Review",
+        "value": "Top 30% (2025)",
+        "notes": "Niche A-/B+ tier; small-rural-WA cohort"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://fhs.freemansd.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/freeman-school-district/freeman-high-school-20887",
+        "https://www.publicschoolreview.com/freeman-high-school-profile/99030",
+        "https://www.niche.com/k12/freeman-high-school-rockford-wa/",
+        "https://www.freemansd.org/Page/3500"
+      ]
+    },
+    {
+      "ncessch": "530309000490",
+      "name": "Goldendale High School",
+      "city": "Goldendale",
+      "state": "WA",
+      "zip": "98620",
+      "district": "Goldendale School District 404",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "address": "525 Simcoe Drive, Goldendale, WA 98620",
+      "website": "https://www.goldendaleschools.org/",
+      "principal": "Clayborne Henry",
+      "enrollment": 299,
+      "studentTeacherRatio": "17:1",
+      "graduationRate": "85-89%",
+      "graduationRateNotes": "Above WA state average of 84% per Public School Review.",
+      "notablePrograms": [
+        "Advanced Placement courses",
+        "Gifted & Talented program",
+        "Klickitat County rural-comprehensive HS"
+      ],
+      "rating": {
+        "source": "Public School Review",
+        "value": "Bottom 50% (2024-25)",
+        "notes": "Rural Klickitat County context; participates in Goldendale SD 404 along with Connections Academy virtual campus."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/goldendale-school-district/goldendale-high-school-20890",
+        "https://www.greatschools.org/washington/goldendale/676-Goldendale-High-School/",
+        "https://www.niche.com/k12/goldendale-high-school-goldendale-wa/",
+        "https://www.publicschoolreview.com/goldendale-high-school-profile",
+        "https://www.goldendaleschools.org/"
+      ]
+    },
+    {
+      "ncessch": "530313000496",
+      "name": "Lake Roosevelt Jr/Sr High School",
+      "city": "Coulee Dam",
+      "state": "WA",
+      "zip": "99116",
+      "district": "Grand Coulee Dam School District 301-J",
+      "level": "high",
+      "grades": "7-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "address": "505 Crest Drive, Coulee Dam, WA 99116",
+      "phone": "(509)633-1442",
+      "website": "https://www.gcdsd.org/home-lake-roosevelt-jrsr-high",
+      "principal": "Natalie Kontos",
+      "principalNotes": "Promoted from elementary PE/health teacher at Lake Roosevelt Elementary (8 years there) to Jr/Sr HS principal; board-approved in June. Reachable at (509) 633-1442.",
+      "enrollment": 364,
+      "demographics": {
+        "minorityEnrollmentPct": "74%",
+        "majorityRaceEthnicity": "American Indian (Colville Confederated Tribes service area)",
+        "economicallyDisadvantagedPct": "76%"
+      },
+      "communityContext": "School located on lands of the Colville Confederated Tribes; district acknowledges its tribal partnership. Combined Jr/Sr HS serving grades 7-12.",
+      "notablePrograms": [
+        "Combined junior + senior high (grades 7-12)",
+        "Raiders athletics",
+        "Tribal community partnership w/ Colville Confederated Tribes"
+      ],
+      "rating": {
+        "source": "Public School Review",
+        "value": "Bottom 50% (2025)",
+        "notes": "Rural / tribal-community context; small school size."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.gcdsd.org/home-lake-roosevelt-jrsr-high",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/grand-coulee-dam-school-district/lake-roosevelt-jr-sr-high-school-20891",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530313000496",
+        "https://www.niche.com/k12/lake-roosevelt-jr-sr-high-school-coulee-dam-wa/",
+        "https://www.publicschoolreview.com/lake-roosevelt-jr-sr-high-school-profile"
       ]
     }
   ]

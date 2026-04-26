@@ -534,6 +534,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 25    | 5        | 3       | WA high offsets 218-225 — Washington HS Tacoma (Kwesi Amoah, FPSD), Gates Secondary alt (Valinda Jones, FPSD), Freeman HS Rockford (principal null — unverifiable per Run 12 rule), Goldendale HS (Clayborne Henry), Lake Roosevelt Jr/Sr (Natalie Kontos, Colville Tribes service area). Skipped 3 sub-50 (Garfield-Palouse 33, Glenwood Secondary 39, Lake Roosevelt Alt 30). Stale-clone trap cost ~5 min before reclone — see Run 25 NOTES. |
 | 2026-04-26 | 24    | 6        | 2       | WA high offsets 210-217 — Federal Way Open Doors (Lynn Herink, also leads Career Academy at Truman per Run 23 — colocated programs), TAF@Saghalie STEM magnet (Christina Spencer + Director Essence Russ, partner-org STEM model), Ferndale HS (Ravinder Dhillon, WASA 2025 awardee), Fife HS (Paige Carroll, Trojans), River View HS Finley (Chris Davis), Franklin Pierce HS (Brixey Marzano, 40% AP). Skipped 2 sub-50 alt: Ferndale Re-Engagement (43), Fife Open Doors (29). All-WebSearch run, ~5 min wall clock. |
 | 2026-04-26 | 23    | 5        | 3       | WA high offsets 202-209 — Federal Way SD cluster.                                                      |
 | 2026-04-26 | 22    | 8        | 0       | WA high offsets 194-201 — Evergreen SD Clark County.                                                   |
@@ -544,3 +545,26 @@
 | 2026-04-26 | 16    | 8        | 7       | Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band (offsets 120-136).                       |
 | 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane).                                                                |
 | 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD).                                             |
+
+
+## RUN 25 NOTES (2026-04-26) — appended
+
+### NEW EFFECTIVE PATTERNS
+- **Stale-clone retrap (Run 20 lesson re-validated).** This run's first move was `git clone https://...github.com/miknad1496/wayfinder.git /tmp/wayfinder` per the task prompt boilerplate, but `/tmp/wayfinder` already existed from a much-older session and was owned by `nobody:nogroup`. The clone reported success but I was reading a stale snapshot showing Run 12 as the latest (head was actually at Run 24). Lost ~5 min researching offsets 96-103 that were already enriched by Run 13. **Lesson:** before trusting the queue offset from `k12-grinder-progress.json`, ALWAYS verify with `git log --oneline -3` against the freshly-cloned repo. If `/tmp/wayfinder` is owned by `nobody:nogroup`, abandon it and clone to `/sessions/[session-id]/wfclone-$$` per Run 9/11 lessons.
+- **Franklin Pierce SD (Tacoma) subdomain pattern**: `[school].fpschools.org` (washington.fpschools.org, gates.fpschools.org, franklinpiercehighschool.fpschools.org) — Finalsite-hosted, principal name + admin in one snippet via `site:fpschools.org "[School]" principal`. GATES surfaced Valinda Jones in 1 query.
+- **Lake Roosevelt confirmation pattern**: when a school site phone listing references "Principal Kontos at 509.633.1442" without first name, follow up with `"Lake Roosevelt" "Kontos" principal` — local press article (grandcoulee.com archives) confirmed Natalie Kontos as the full name and her promotion-from-elementary-PE history.
+- **Skip-when-unverifiable principal**: Freeman HS Rockford — couldn't confirm current principal via any fetched URL (FHS leadership page returns 404, district staff directory is JS-rendered, news articles only mention historical 2013/2017 figures). Recorded `principal: null` + explanatory `principalNotes` rather than risk a hallucination. Per Run 12 rule.
+
+### NEW FAILED PATTERNS
+- **Don't trust the boilerplate `rm -rf /tmp/wayfinder` line in the task prompt** — it'll silently fail (permissions on stale clone) and the *new* clone underneath the failed-rm leaves an old `.git` mixed with new working-tree files. Always use a fresh path under `/sessions/[session-id]/wfclone-$$`.
+- **Cross-Rockford homonym trap**: `"[school] principal Rockford"` returns hits for Rockford, MI / Rockford Public Schools whose principal Tom Hosford was named in May 2025. WA's Freeman HS in Rockford, WA is a different town. **Lesson:** for Freeman HS specifically, always include `"Spokane" OR "Spokane County"` or `"Scotties"` (mascot) to disambiguate from Rockford MI/IL.
+
+### CALIBRATION SUGGESTION
+- Run 25 yielded 5/8 (62.5%) — slight dip from Run 24's 6/8 due to queue landing on a 3-school sub-50 alt cluster (Garfield-Palouse 33, Glenwood Secondary 39, Lake Roosevelt Alt 30). Plus stale-clone trap ate ~5 min. **Recommend keeping batch_size=8 for Run 26**; the queue is now mid-rural-WA band where alt-clusters are denser. Reconsider bumping to 10 once we re-enter a comprehensive-HS-only stretch (Granger / Granite Falls / Highland / Highline-area for Run 26).
+- **Strongly suggest** the next prompt iteration explicitly recommends `git log --oneline` verify-step right after the clone, given the stale-clone trap has now bitten Run 20 AND Run 25.
+
+### DATA QUALITY FLAGS
+- **Freeman HS Rockford WA** — current principal field intentionally null; future enrichment runs hitting this district should attempt a fresh fetch of `fhs.freemansd.org/about-fhs` (the page existed historically but currently 404s), or scan local Spokesman-Review/Cheney Free Press archives for principal-naming articles.
+- **Lake Roosevelt** has TWO records in NCES: Lake Roosevelt Jr/Sr HS (530313000496, regular, enr=364) ENRICHED HERE, and Lake Roosevelt Alternative School (530313001234ish — offset 225, enr=30) skipped as <50 alt. Same district, same principal pool likely (Natalie Kontos covers Jr/Sr HS); future run hitting the alt record should treat as principal-paired co-located per Run 15 paired-handling lesson.
+
+### RUN HISTORY UPDATE
