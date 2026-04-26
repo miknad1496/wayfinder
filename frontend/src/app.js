@@ -4970,6 +4970,11 @@ function _volCardHtml(o) {
   const cats = (o.categories || []).map(k => (_volCategories?.[k] || k)).join(', ');
   const cavBadge = o.collegeAppValue === 'high' ? '<span style="background:#ddf4ff;color:#0a3069;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">High admissions value</span>' : '';
   const remoteBadge = o.format === 'remote' ? '<span style="background:#f0fff4;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">Remote</span>' : (o.format === 'hybrid' ? '<span style="background:#fff8c5;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">Hybrid</span>' : '');
+  const subBadge = o.subregion ? `<span style="background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(o.subregion)}</span>` : '';
+  const confBadge = o.confidence === 'medium' ? '<span title="Some details could not be publicly verified — confirm directly with the organization" style="background:#fef3c7;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;cursor:help;">Verify directly</span>' : '';
+  const unverNote = (o.confidence === 'medium' && Array.isArray(o._unverifiedFields) && o._unverifiedFields.length)
+    ? `<p style="margin:6px 0 4px;font-size:11px;color:#854d0e;background:#fef3c7;padding:6px 10px;border-radius:6px;border-left:3px solid #d97706;"><strong>⚠ Confirm before applying:</strong> ${_esc(o._unverifiedFields.join(', '))} not published on the official page. Verify directly with the organization.</p>`
+    : '';
   const age = `Age ${o.ageMin || 'any'}${o.ageMax && o.ageMax < 99 ? '-' + o.ageMax : '+'}`;
   const time = (o.timeCommitment || 'flexible').replace('_', ' ');
   const skills = (o.skillsBuilt || []).slice(0, 4).join(' · ');
@@ -4977,10 +4982,11 @@ function _volCardHtml(o) {
     <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
         <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(o.name)}</h4>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">${cavBadge}${remoteBadge}</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">${confBadge}${subBadge}${cavBadge}${remoteBadge}</div>
       </div>
       <p style="margin:2px 0 8px;font-size:12px;color:#59636e;">${_esc(o.organization || '')} &middot; ${cats}</p>
       <p style="margin:0 0 8px;font-size:13px;line-height:1.5;color:#334155;">${_esc(o.description || '')}</p>
+      ${unverNote}
       ${skills ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Skills:</strong> ${_esc(skills)}</p>` : ''}
       <p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Time:</strong> ${time} &middot; <strong>Eligibility:</strong> ${age} &middot; <strong>Scope:</strong> ${o.scope || 'national'}</p>
       ${o.howToStart ? `<p style="margin:8px 0 4px;font-size:12px;color:#0969da;background:#f6f8fa;padding:8px 10px;border-radius:6px;"><strong>How to start:</strong> ${_esc(o.howToStart)}</p>` : ''}
