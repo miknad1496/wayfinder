@@ -5576,16 +5576,239 @@ function _scProgramCardHtml(p) {
 async function loadSCInsights() {
   const c = document.getElementById('scInsightsContent');
   if (c.dataset.loaded === 'yes') return;
-  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading insights...</p>';
+  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading insights & visual tools...</p>';
   try {
     const res = await fetch(`${API_BASE}/summer-camps/insights`);
     const data = await res.json();
     const sections = data.sections || [];
-    if (!sections.length) { c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Insights not yet loaded.</p>'; return; }
-    c.innerHTML = _scTimelineHtml() + sections.map(_scInsightSectionHtml).join('');
+    c.innerHTML = _scTimelineHtml()
+      + _scStrategyRoadmapHtml()
+      + _scBudgetSliderHtml()
+      + _scScholarshipCountdownHtml()
+      + _scScheduleCanvasHtml()
+      + (sections.length ? '<h3 style="margin:24px 0 10px;font-size:15px;color:#1f2328;">📚 Insider Hacks & Strategy</h3>' + sections.map(_scInsightSectionHtml).join('') : '');
     c.dataset.loaded = 'yes';
+    _scWireVisualTools();
   } catch (e) {
     c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
+  }
+}
+
+// ─── 1. SUMMER CALENDAR (existing — kept) ───────────────────────
+// ─── 2. K-8 STRATEGY ROADMAP — visual phases ─────────────────────
+function _scStrategyRoadmapHtml() {
+  return `
+    <div style="background:linear-gradient(135deg,#fff,#f0f9ff);border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">🛤️ K-8 Strategy Roadmap — the developmental arc</h3>
+      <p style="margin:0 0 12px;font-size:12px;color:#59636e;">Different phases benefit from different summer strategies. Hover each phase for the recipe.</p>
+      <div style="display:flex;gap:8px;align-items:stretch;">
+        <div class="sc-phase" data-phase="K-2" data-detail="K-2: EXPLORE phase. Low-stakes exposure across many areas. Cheap day camps + lots of unstructured time. Library reading clubs + parks dept rec is more than enough. Don't optimize. Cost: $0-$300/wk." style="flex:1;background:linear-gradient(180deg,#dbeafe 0%,#fff 100%);border:2px solid #93c5fd;border-radius:10px;padding:14px 12px;text-align:center;cursor:pointer;transition:transform 0.15s;">
+          <div style="font-size:24px;">🌱</div>
+          <div style="font-weight:700;font-size:14px;color:#1e40af;margin:6px 0 2px;">K-2</div>
+          <div style="font-size:11px;color:#1e3a8a;">EXPLORE</div>
+          <div style="font-size:10px;color:#64748b;margin-top:4px;">Ages 5-7</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#cbd5e1;font-size:18px;">→</div>
+        <div class="sc-phase" data-phase="3-5" data-detail="3-5: DISCOVER phase. Add specialty camps in 1-2 areas of demonstrated interest. Mix anchor (Y day camp) with 1-2 themed weeks. Sleepaway becomes age-appropriate. Cost: $200-$500/wk for specialty. Anchors stay subsidized." style="flex:1;background:linear-gradient(180deg,#fef3c7 0%,#fff 100%);border:2px solid #fcd34d;border-radius:10px;padding:14px 12px;text-align:center;cursor:pointer;transition:transform 0.15s;">
+          <div style="font-size:24px;">🔍</div>
+          <div style="font-weight:700;font-size:14px;color:#92400e;margin:6px 0 2px;">3-5</div>
+          <div style="font-size:11px;color:#854d0e;">DISCOVER</div>
+          <div style="font-size:10px;color:#64748b;margin-top:4px;">Ages 8-10</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#cbd5e1;font-size:18px;">→</div>
+        <div class="sc-phase" data-phase="6-8" data-detail="6-8: DEEPEN phase. Multi-week intensives or residential programs in area of strongest interest. CIT pipeline opens at 13. University youth programs (UW Robinson, AoPS) become accessible. Set up sustained engagement that compounds into HS. Cost: $300-$800/wk for residential, $0-$200 for free university programs." style="flex:1;background:linear-gradient(180deg,#fae8ff 0%,#fff 100%);border:2px solid #d8b4fe;border-radius:10px;padding:14px 12px;text-align:center;cursor:pointer;transition:transform 0.15s;">
+          <div style="font-size:24px;">🎯</div>
+          <div style="font-weight:700;font-size:14px;color:#6b21a8;margin:6px 0 2px;">6-8</div>
+          <div style="font-size:11px;color:#581c87;">DEEPEN</div>
+          <div style="font-size:10px;color:#64748b;margin-top:4px;">Ages 11-13</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#cbd5e1;font-size:18px;">→</div>
+        <div style="flex:0.7;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:10px;padding:14px 12px;text-align:center;font-size:11px;color:#94a3b8;display:flex;align-items:center;justify-content:center;">
+          <div>9-12<br><em>HS planning</em></div>
+        </div>
+      </div>
+      <div id="scPhaseDetail" style="margin-top:12px;font-size:13px;color:#334155;min-height:50px;padding:10px 12px;background:#f6f8fa;border-radius:6px;"><em>Hover a phase to see the recipe.</em></div>
+    </div>
+  `;
+}
+
+// ─── 3. BUDGET ALLOCATOR — interactive slider ───────────────────
+function _scBudgetSliderHtml() {
+  return `
+    <div style="background:linear-gradient(135deg,#fff,#f0fdf4);border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">💵 Budget Allocator — drag the slider</h3>
+      <p style="margin:0 0 14px;font-size:12px;color:#59636e;">Set your total summer budget. The 60/30/10 frame splits it across anchor, specialty, and wildcard. Watch the recommendations update.</p>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+        <div style="font-size:13px;color:#475569;font-weight:600;">$0</div>
+        <input type="range" id="scBudgetSlider" min="0" max="5000" step="100" value="2000" style="flex:1;height:6px;border-radius:3px;accent-color:#16a34a;">
+        <div style="font-size:13px;color:#475569;font-weight:600;">$5K+</div>
+      </div>
+      <div style="text-align:center;font-size:24px;font-weight:700;color:#16a34a;margin-bottom:14px;" id="scBudgetTotal">$2,000</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        <div style="background:#dcfce7;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:11px;color:#166534;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">⚓ Anchor 60%</div>
+          <div style="font-size:18px;font-weight:700;color:#15803d;margin:4px 0;" id="scBudgetAnchor">$1,200</div>
+          <div style="font-size:10px;color:#166534;line-height:1.4;" id="scBudgetAnchorRec">YMCA day camp 4-5 wks</div>
+        </div>
+        <div style="background:#dbeafe;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:11px;color:#1e40af;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">🎯 Specialty 30%</div>
+          <div style="font-size:18px;font-weight:700;color:#2563eb;margin:4px 0;" id="scBudgetSpecialty">$600</div>
+          <div style="font-size:10px;color:#1e40af;line-height:1.4;" id="scBudgetSpecialtyRec">1-2 themed weeks</div>
+        </div>
+        <div style="background:#fef3c7;padding:12px;border-radius:8px;text-align:center;">
+          <div style="font-size:11px;color:#92400e;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">💡 Wildcard 10%</div>
+          <div style="font-size:18px;font-weight:700;color:#d97706;margin:4px 0;" id="scBudgetWildcard">$200</div>
+          <div style="font-size:10px;color:#92400e;line-height:1.4;" id="scBudgetWildcardRec">Niche workshop</div>
+        </div>
+      </div>
+      <p style="margin:10px 0 0;font-size:11px;color:#94a3b8;font-style:italic;" id="scBudgetTier">Mid-tier budget. Most families land here.</p>
+    </div>
+  `;
+}
+
+// ─── 4. SCHOLARSHIP DEADLINE COUNTDOWNS ─────────────────────────
+function _scScholarshipCountdownHtml() {
+  // Hardcoded major K-8 program windows — date-stamped for the 2026 cycle
+  const deadlines = [
+    { org: 'Pacific Science Center', event: 'Scholarship application opens', date: '2026-02-06', tier: 'high' },
+    { org: 'Woodland Park Zoo', event: 'Scholarship application closes', date: '2026-04-15', tier: 'high' },
+    { org: 'Camp Galileo', event: 'Early Bird discount expires', date: '2026-02-28', tier: 'medium' },
+    { org: 'YMCA Camp Orkila', event: 'Registration opens', date: '2026-02-04', tier: 'high' },
+    { org: 'Camp Sealth', event: 'Camperships application due', date: '2026-04-30', tier: 'high' },
+    { org: 'Burke Museum', event: 'General registration opens', date: '2026-03-15', tier: 'medium' },
+    { org: 'Point Defiance Zoo', event: 'Member registration opens', date: '2026-03-10', tier: 'medium' },
+    { org: 'Seattle Aquarium', event: 'Camp registration opens', date: '2026-03-01', tier: 'medium' },
+  ];
+  const today = new Date();
+  const items = deadlines.map(d => {
+    const dt = new Date(d.date);
+    const days = Math.ceil((dt - today) / (1000 * 60 * 60 * 24));
+    let badge, color;
+    if (days < 0) { badge = `${Math.abs(days)}d ago`; color = '#94a3b8'; }
+    else if (days <= 7) { badge = `${days}d left ⚠`; color = '#dc2626'; }
+    else if (days <= 30) { badge = `${days}d left`; color = '#d97706'; }
+    else { badge = `${days}d`; color = '#16a34a'; }
+    return `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid #f1f5f9;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:600;color:#1e3a8a;">${_esc(d.org)}</div>
+          <div style="font-size:11px;color:#64748b;">${_esc(d.event)} · ${dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:${color};white-space:nowrap;margin-left:10px;">${badge}</div>
+      </div>
+    `;
+  }).join('');
+  return `
+    <div style="background:linear-gradient(135deg,#fff,#fff7ed);border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">⏳ Scholarship & Registration Countdown</h3>
+      <p style="margin:0 0 8px;font-size:12px;color:#59636e;">Live countdowns to key 2026 windows. Red = within a week. Amber = within a month.</p>
+      <div style="background:#fff;border-radius:6px;border:1px solid #e5e7eb;">${items}</div>
+    </div>
+  `;
+}
+
+// ─── 5. SUMMER SCHEDULE CANVAS — drag-drop weekly slots ─────────
+function _scScheduleCanvasHtml() {
+  // Use localStorage to persist plan
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('wf_sc_schedule') || '{}'); } catch {}
+  const weeks = [];
+  const start = new Date(new Date().getFullYear(), 5, 15); // June 15
+  for (let i = 0; i < 11; i++) {
+    const d = new Date(start);
+    d.setDate(d.getDate() + i * 7);
+    const key = d.toISOString().slice(0, 10);
+    const plan = saved[key] || '';
+    const label = `Wk ${i+1} (${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})`;
+    weeks.push({ key, label, plan });
+  }
+  const cards = weeks.map(w => `
+    <div style="background:#fff;border:1px solid #cfdcef;border-radius:8px;padding:10px 12px;">
+      <div style="font-size:11px;font-weight:600;color:#1e3a8a;margin-bottom:6px;">${w.label}</div>
+      <input type="text" class="sc-schedule-slot" data-key="${w.key}" value="${_esc(w.plan)}" placeholder="Camp / activity" style="width:100%;border:1px solid #e5e7eb;border-radius:4px;padding:6px 8px;font-size:12px;font-family:inherit;">
+    </div>
+  `).join('');
+  return `
+    <div style="background:linear-gradient(135deg,#fff,#fdf4ff);border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">🗓️ Your Summer Schedule — fill it in week by week</h3>
+      <p style="margin:0 0 12px;font-size:12px;color:#59636e;">Type whatever's planned for each week. Auto-saves as you type. Use this to spot gaps + avoid double-booking.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;">${cards}</div>
+      <div style="margin-top:10px;text-align:right;">
+        <button id="scScheduleClear" style="font-size:11px;padding:4px 10px;border:1px solid #cfdcef;background:#fff;color:#64748b;border-radius:14px;cursor:pointer;">Clear all</button>
+      </div>
+    </div>
+  `;
+}
+
+// ─── Wire up interactive widgets after render ────────────────────
+function _scWireVisualTools() {
+  // Calendar hover
+  document.querySelectorAll('.sc-timeline-month').forEach(el => {
+    const update = () => {
+      const detail = document.getElementById('scTimelineDetail');
+      if (detail) detail.innerHTML = '<strong>' + el.textContent.trim() + ':</strong> ' + el.dataset.detail;
+    };
+    el.addEventListener('mouseenter', update);
+    el.addEventListener('click', update);
+  });
+
+  // Phase hover
+  document.querySelectorAll('.sc-phase').forEach(el => {
+    const update = () => {
+      const detail = document.getElementById('scPhaseDetail');
+      if (detail) detail.innerHTML = '<strong>' + el.dataset.phase + ':</strong> ' + el.dataset.detail;
+      el.style.transform = 'scale(1.04)';
+    };
+    el.addEventListener('mouseenter', update);
+    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    el.addEventListener('click', update);
+  });
+
+  // Budget slider
+  const slider = document.getElementById('scBudgetSlider');
+  if (slider) {
+    const update = () => {
+      const v = parseInt(slider.value, 10);
+      const anchor = Math.round(v * 0.6);
+      const specialty = Math.round(v * 0.3);
+      const wildcard = v - anchor - specialty;
+      document.getElementById('scBudgetTotal').textContent = '$' + v.toLocaleString();
+      document.getElementById('scBudgetAnchor').textContent = '$' + anchor.toLocaleString();
+      document.getElementById('scBudgetSpecialty').textContent = '$' + specialty.toLocaleString();
+      document.getElementById('scBudgetWildcard').textContent = '$' + wildcard.toLocaleString();
+      // Tier label + recs
+      let tier, anchorRec, specRec, wildRec;
+      if (v < 600) { tier = 'Lean budget — focus on free/subsidized options'; anchorRec='Library + parks dept rec'; specRec='Apply for full scholarship'; wildRec='Free book / online course'; }
+      else if (v < 1500) { tier = 'Budget-friendly — most families land here with aid'; anchorRec='YMCA day camp 3-4 wks (sliding scale)'; specRec='1 themed week (museum/zoo)'; wildRec='Library workshop'; }
+      else if (v < 3000) { tier = 'Mid-tier — strong mix achievable'; anchorRec='YMCA day camp 4-5 wks'; specRec='1-2 themed weeks (museum/zoo/STEM)'; wildRec='Niche workshop or weekend mini-camp'; }
+      else if (v < 5000) { tier = 'Generous — premium specialty camps in reach'; anchorRec='YMCA + 1 wk sleepaway'; specRec='2-3 themed weeks incl. iD Tech / Galileo'; wildRec='Out-of-state intensive or extended sleepaway'; }
+      else { tier = 'Premium — all options open. Stay focused on fit, not features.'; anchorRec='4 wks YMCA + 2 wks sleepaway'; specRec='3+ themed weeks incl premium tech/arts'; wildRec='International or extended residential'; }
+      document.getElementById('scBudgetTier').textContent = tier;
+      document.getElementById('scBudgetAnchorRec').textContent = anchorRec;
+      document.getElementById('scBudgetSpecialtyRec').textContent = specRec;
+      document.getElementById('scBudgetWildcardRec').textContent = wildRec;
+    };
+    slider.addEventListener('input', update);
+    update(); // initial render
+  }
+
+  // Schedule slots: auto-save to localStorage
+  document.querySelectorAll('.sc-schedule-slot').forEach(input => {
+    input.addEventListener('input', () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem('wf_sc_schedule') || '{}');
+        saved[input.dataset.key] = input.value;
+        localStorage.setItem('wf_sc_schedule', JSON.stringify(saved));
+      } catch {}
+    });
+  });
+  const clearBtn = document.getElementById('scScheduleClear');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (!confirm('Clear all weeks?')) return;
+      localStorage.removeItem('wf_sc_schedule');
+      document.querySelectorAll('.sc-schedule-slot').forEach(i => { i.value = ''; });
+    });
   }
 }
 
