@@ -15,10 +15,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries (run 5 again completed 5-of-5 verified, 0 skipped — sustain at 5)
-- typical_run_duration: ~15-20 min for 5 entries (most time in HTML extraction from large WordPress / Webflow sites)
-- typical_skip_rate: 0-1 of 5 candidates in final batch (in run 5 also dropped 2 candidates earlier in research — see Failed Patterns)
-- last_calibration_change: 2026-04-26 — run 3 (raised from 4 → 5); runs 4 + 5 confirm 5 is sustainable for metro clusters
+- batch_size: 5 entries (run 12 again completed 5-of-5 verified, 0 skipped — sustain at 5)
+- typical_run_duration: ~15-25 min for 5 entries (run 12 spent extra time recovering from a stale clone — see Effective Patterns)
+- typical_skip_rate: 0-1 of 5 candidates in final batch
+- last_calibration_change: 2026-04-26 — run 3 (raised from 4 → 5); runs 4-12 confirm 5 sustains across WA + CA + Austin TX clusters
 
 
 ## EFFECTIVE PATTERNS
@@ -95,6 +95,12 @@
 - `www.marybridge.org/support-mary-bridge/volunteering/` — Cloudflare challenge on first curl (returns ~5KB challenge body); internal `web_fetch` bypasses it cleanly. 16+, 8-9 month onboarding (info session → interview → application → orientation → onboarding meeting → health screening → background check → department training).
 - `www.columbiasprings.org/volunteer/` — Divi-themed WP page; volunteer roles enumerated (Community Engagement, Field Trips 2nd-5th grade, Salmon in the Classroom, Stewardship) but NO published age min. Logged at confidence: "medium" with default ageMin 14 + `_unverifiedFields: ["ageMin", "timeCommitment"]` per the new policy.
 - `ywcaspokane.org/get-involved/volunteer/` — describes Sister's Closet roles + event committees with 6-month commitment but NO age min. Sensitive population (DV shelter) — skip rather than default.
+- `centraltexasfoodbank.org/frequently-asked-questions-volunteering` — clean tiered age policy (warehouse 8+, mobile 12+, kitchen/garden 15+) on FAQ page; umbrella /volunteer page lacks the explicit ages. Use the FAQ as canonical source.
+- `library.austintexas.gov/node/1734565` — Austin Public Library Teen Volunteer Program; Drupal node URL is opaque but stable. Seasonal apps (Jul/Dec/Mar windows). 13-17 by season cutoff. Coordinator: Paul Lopez APL.Volunteers@austintexas.gov.
+- `austinpetsalive.org/volunteer/requirements` — full tier breakdown (12 with parent at all times; 13-15 dual app; 16-17 parental-waiver solo; 18+ no waiver). BetterImpact portal for shift sign-up. Onboarding fee + online + on-site orientation per location.
+- `thinkeryaustin.org/volunteer/` — VolunTeen 13-18 with 60hr training + 40hr service back; CIT for entering 7th-12th grade in summer camps; quarterly Teen Participation Days for short-term commitment. 208 VolunTeens / 8,880 hours stat.
+- `caritasofaustin.org/get-involved/volunteer/` — clean role table with explicit ages: Community Kitchen 13+ (under 18 with adult), Direct Service 18+ (4-month, 6-8hr/wk). Caritas University training (7-18 hrs). Founded 1965.
+
 ## DATA QUALITY FLAGS DISCOVERED
 
 - Hopelink, KCLS, Seattle Aquarium YOA, WTA, PDZA, TRM, Greentrike, Mobius are all "scope": "state" rather than "national" — but their reach is regional (Puget Sound or all-WA), not single-city. Confirmed appropriate per the existing schema.
@@ -110,6 +116,10 @@
 - **NEW (run 8):** Aquarium of the Pacific has a public umbrella `/get_involved/volunteer/` page with deep links to age-tiered sub-pages (`/youth_11_18`, `/families`, `/group`). This pattern (umbrella page → tiered sub-pages) is common at LA cultural institutions; check the umbrella for the right sub-page slug instead of guessing.
 - **NEW (run 8):** LAPL Teen Volunteer ecosystem is THREE programs (Teen Volunteer / Teen Council / TLC) with overlapping eligibility — best to bundle into one DB entry that lists all three in description so users see the full pathway, not three near-duplicate cards.
 - **NEW (run 8):** When parallel scheduled-task runs commit during your research window, re-clone fresh into a new `/tmp/wf-vol2/` (NOT the stale `/tmp/wayfinder-vol/`) and re-check the DB before writing — the WA queue completed mid-flight and 4 of 5 originally-planned WA candidates were already in DB from runs 5/6/7. Pivoted to CA cleanly without losing batch slots.
+- **NEW (run 12):** When the parallel-runs problem (run 8 lesson) recurs, ALWAYS clone to a writable home-directory path (`~/wayfinder-vol-new/`) instead of the legacy `/tmp/wayfinder-vol/` — the latter retains nobody:nogroup ownership from a prior session and the file is read-only even after a fresh clone. Symptom: `mv: Permission denied`, `cp: cannot remove`. Fix: `git clone https://...github.com/miknad1496/wayfinder.git ~/wayfinder-vol-new` and use that path for the entire run. This run wasted ~10 min before catching the issue; documenting now so it gets caught in step 0 of future runs.
+- **NEW (run 12):** Austin TX is a clean cluster — the major nonprofits (Central Texas Food Bank, Austin Public Library, Austin Pets Alive, Thinkery, Caritas) all publish explicit teen-tier age policies on canonical /volunteer or FAQ pages. CTFB's "FAQ - Volunteering" sub-page is more reliable than the umbrella /volunteer page. Pattern: for any TX/CA metro, search `"[city]" food bank volunteer age` first as a calibration probe — if that surfaces clearly, the rest of the metro usually follows.
+- **NEW (run 12):** Multi-tier age policies from a single org (CTFB 8/12/15 tiers, APA! 12/13-15/16-17/18 tiers) compress nicely into one DB entry by setting `ageMin` to the lowest accessible tier and detailing the tiers in `description` + `howToStart`. Filter UX gets the inclusive default; teens read the tiers in the card body.
+
 
 ## CALIBRATION SUGGESTIONS FROM PAST RUNS
 
@@ -131,6 +141,8 @@
 - **Run 6 added 5 verified entries (Vancouver depth + Spokane + Tacoma): Columbia Springs (medium), HSSW Teen Volunteer, Fort Vancouver Regional Libraries, Vanessa Behan Crisis Nursery, Mary Bridge Children's Hospital. Mid-research drops: 3 (Innovative Services NW — rebranded site, no /volunteer page; YWCA Spokane — no published age; Spokane Riverkeeper — page too thin).** Net add 5/5 against final batch; mid-research drop rate ~3 per 5 final-batch is the new baseline once "no published age" is enforced even with the medium-confidence escape valve.
 - After 6 runs WA queue is at 29/30 (one entry away from completion). Suggested run-7 target: ONE last WA entry (Catholic Charities Eastern WA Spokane, or Pierce County Library Teen Volunteer for the Tacoma area), then **PIVOT TO CA**. CA queue (target 15) has 4 metro buckets to attack: LA, SF, San Diego, Sacramento. Suggested run-7 cluster (post WA-finish): Bay Area youth-serving orgs — Glide Memorial (SF), Larkin Street Youth (SF), Project Open Hand (SF), ACE Mentor Program of San Francisco, BAYAC AmeriCorps. Or LA cluster: 826LA, Los Angeles Regional Food Bank, Aquarium of the Pacific Teen Council, Heal the Bay Teen Volunteers.
 - **Run 8 added 5 verified LA-metro CA entries (skipped 0; 1 mid-research drop — Heart of Los Angeles, no published age).** All 5 are HIGH confidence. CA queue 5/15 after run 8. Suggested run-9 cluster: Bay Area / SF — Glide Memorial, Project Open Hand, Larkin Street Youth Services, San Francisco Marin Food Bank, San Francisco Public Library Teen Advisory Council, Friends of the Urban Forest. STAY at batch_size 5.
+- **Run 12 added 5 verified Austin TX entries (skipped 0 from final batch; 0 mid-research drops; ~10 min lost to a stale-clone recovery that the new run-12 EFFECTIVE PATTERN bullet now flags).** TX queue 10/12 after run 12. Suggested run-13 target: complete TX with a Dallas + Austin overflow OR Houston-overflow + San Antonio cluster. Strong Dallas candidates: North Texas Food Bank (Plano), Children's Health teen volunteer, Dallas Public Library Teen Council, Perot Museum Teen Council, The Bridge Homeless Recovery Center. Strong San Antonio candidates: San Antonio Food Bank, San Antonio Public Library Teen Council, Witte Museum Teen Volunteer, San Antonio Zoo Teen Volunteer Corps.
+
 - **NEW (run 8):** When pivoting from a completed state (WA → CA), take ONE fresh DB read after research (NOT before). 4 candidates Dan's run-7 had completed were re-considered by run-8 simply because the local clone was 7 hours stale. Lesson: always `git pull` immediately before writing the JSON, even after a clean fresh clone, if research took >30 min.
 
 ## OPEN QUESTIONS / TODO FOR FUTURE RUNS
@@ -226,3 +238,4 @@
 - Texas-specific: program fees on structured teen curricula (Houston Zoo $325) are common and locally accepted. Don't conflate with voluntourism — flag fee in description for transparency.
 
 | 2026-04-26 | 11 | 5 | 0 | TX (Houston) — first TX run | Houston Food Bank, Houston Zoo Zoo Crew Explorers/Year-Round, Houston Public Library Youth Volunteer, Children's Museum of Houston Discovery Squad, Houston SPCA. All HIGH confidence. TX queue → 5/12. Cluster-by-metro held cleanly; "5 institutional anchors" recipe (food bank + zoo + library + museum + SPCA) yielded 5/5 with 0 mid-research drops. |
+| 2026-04-26 | 12 | 5 | 0 | TX (Austin metro) | Central Texas Food Bank, Austin Public Library Teen Vol, Austin Pets Alive!, Thinkery VolunTeen, Caritas of Austin Community Kitchen. All HIGH confidence. Stale-clone recovery cost ~10 min; pivoted from planned WA fill-in to TX after detecting WA + CA queue completion mid-flight. |
