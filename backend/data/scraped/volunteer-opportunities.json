@@ -2,16 +2,18 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 137,
+    "totalCount": 142,
     "_verified": "partial",
-    "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design — they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
+    "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
     "sources": [
       "826 National",
       "826LA",
       "AARP Foundation Tax-Aide",
       "AFSP",
+      "ASPCA (NYC Adoption Center)",
       "AmeriCorps",
+      "American Museum of Natural History",
       "American Red Cross",
       "Aquarium of the Pacific",
       "Audubon Society",
@@ -33,6 +35,7 @@
       "Dallas Zoo",
       "Earthwatch",
       "Eastside Friends of Seniors",
+      "Food Bank For New York City",
       "Fort Vancouver Regional Libraries",
       "Friends of the Urban Forest",
       "GLIDE",
@@ -56,6 +59,7 @@
       "NCASA",
       "NHPCO",
       "NPS Volunteers-In-Parks",
+      "New York Public Library",
       "North Texas Food Bank",
       "Operation Warm",
       "PATH International",
@@ -84,6 +88,7 @@
       "UN Volunteers Online",
       "Vanessa Behan Crisis Nursery",
       "Washington Trails Association",
+      "Wildlife Conservation Society (Bronx Zoo / Discovery Guide)",
       "YMCA",
       "YWCA Clark County"
     ],
@@ -133,7 +138,7 @@
         "professionalism"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Search \"{your hospital name} junior volunteer program\" — most hospitals have an online application opening February-April. Background check, TB test, and orientation required.",
+      "howToStart": "Search \"{your hospital name} junior volunteer program\" \u2014 most hospitals have an online application opening February-April. Background check, TB test, and orientation required.",
       "_source": "https://www.aamc.org/cim/explore-options/aspiring-docs/community-clinical-experiences",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -192,7 +197,7 @@
         "event management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Find your state chapter at specialolympics.org. School-based Unified Champion Schools programs are the easiest entry — talk to your school athletics director.",
+      "howToStart": "Find your state chapter at specialolympics.org. School-based Unified Champion Schools programs are the easiest entry \u2014 talk to your school athletics director.",
       "_source": "https://www.specialolympics.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -472,7 +477,7 @@
         "public-facing service"
       ],
       "collegeAppValue": "high",
-      "howToStart": "volunteer.gov is the official portal — search by location and skill. SCA (thesca.org) runs residential summer programs for youth.",
+      "howToStart": "volunteer.gov is the official portal \u2014 search by location and skill. SCA (thesca.org) runs residential summer programs for youth.",
       "_source": "https://www.nps.gov/getinvolved/volunteer.htm",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -480,7 +485,7 @@
     {
       "name": "Sierra Club Local Outings & Conservation",
       "organization": "Sierra Club",
-      "description": "Local chapters (60+ across the country) run volunteer days: trail building, restoration projects, advocacy training, conservation education. Some chapters have ICO (Inspiring Connections Outdoors) — leading youth on outdoor experiences.",
+      "description": "Local chapters (60+ across the country) run volunteer days: trail building, restoration projects, advocacy training, conservation education. Some chapters have ICO (Inspiring Connections Outdoors) \u2014 leading youth on outdoor experiences.",
       "scope": "national",
       "states": [
         "all"
@@ -585,7 +590,7 @@
         "international fieldwork"
       ],
       "collegeAppValue": "high",
-      "howToStart": "earthwatch.org/expeditions/teen — apply 6-8 months in advance. Need-based scholarships available.",
+      "howToStart": "earthwatch.org/expeditions/teen \u2014 apply 6-8 months in advance. Need-based scholarships available.",
       "_source": "https://earthwatch.org/expeditions/teen",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -614,7 +619,7 @@
         "land management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "thesca.org — High School Crew applications open November for summer programs. Highly competitive at flagship parks; less so at lesser-known sites.",
+      "howToStart": "thesca.org \u2014 High School Crew applications open November for summer programs. Highly competitive at flagship parks; less so at lesser-known sites.",
       "_source": "https://www.thesca.org/serve/high-school-conservation-crews",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -642,7 +647,7 @@
         "adoption counseling"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Search \"[your city] humane society volunteer\" — orientation typically required. Younger volunteers often start with cat socialization or laundry/cleaning before moving to dog walking.",
+      "howToStart": "Search \"[your city] humane society volunteer\" \u2014 orientation typically required. Younger volunteers often start with cat socialization or laundry/cleaning before moving to dog walking.",
       "_source": "https://www.humanesociety.org/take-action/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -703,7 +708,7 @@
         "adoption counseling"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "bestfriends.org/get-involved — local chapter or sanctuary stays available.",
+      "howToStart": "bestfriends.org/get-involved \u2014 local chapter or sanctuary stays available.",
       "_source": "https://bestfriends.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -731,7 +736,7 @@
         "team coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "feedingamerica.org/find-your-local-foodbank — every food bank has a volunteer page. Many run weekly Saturday morning sort events.",
+      "howToStart": "feedingamerica.org/find-your-local-foodbank \u2014 every food bank has a volunteer page. Many run weekly Saturday morning sort events.",
       "_source": "https://www.feedingamerica.org/take-action/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -760,7 +765,7 @@
         "community-building"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Search \"[your city] soup kitchen volunteer\" — Salvation Army, Catholic Charities, and local churches typically operate them.",
+      "howToStart": "Search \"[your city] soup kitchen volunteer\" \u2014 Salvation Army, Catholic Charities, and local churches typically operate them.",
       "_source": "https://www.salvationarmyusa.org/usn/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -789,7 +794,7 @@
         "reliability"
       ],
       "collegeAppValue": "high",
-      "howToStart": "mealsonwheelsamerica.org — find local provider. School-based MoW clubs exist in some areas; check your guidance office.",
+      "howToStart": "mealsonwheelsamerica.org \u2014 find local provider. School-based MoW clubs exist in some areas; check your guidance office.",
       "_source": "https://www.mealsonwheelsamerica.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -847,7 +852,7 @@
         "team-building"
       ],
       "collegeAppValue": "high",
-      "howToStart": "habitat.org/volunteer — find local affiliate. Build sites need 16+; ReStore takes 14+. Group days easy to organize for clubs/sports teams.",
+      "howToStart": "habitat.org/volunteer \u2014 find local affiliate. Build sites need 16+; ReStore takes 14+. Group days easy to organize for clubs/sports teams.",
       "_source": "https://www.habitat.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -876,7 +881,7 @@
         "holiday event coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "salvationarmyusa.org — find local Corps. Bell-ringing November-December is the easiest entry; they'll take any willing volunteer.",
+      "howToStart": "salvationarmyusa.org \u2014 find local Corps. Bell-ringing November-December is the easiest entry; they'll take any willing volunteer.",
       "_source": "https://www.salvationarmyusa.org/usn/ways-to-give/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -961,7 +966,7 @@
         "intergenerational communication"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "aarp.org/volunteer — Tax-Aide season runs January-April; training in November-December.",
+      "howToStart": "aarp.org/volunteer \u2014 Tax-Aide season runs January-April; training in November-December.",
       "_source": "https://www.aarp.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -990,7 +995,7 @@
         "peer support principles"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nami.org/find-your-local-nami — Ending the Silence is school-based and trains teen presenters.",
+      "howToStart": "nami.org/find-your-local-nami \u2014 Ending the Silence is school-based and trains teen presenters.",
       "_source": "https://www.nami.org/get-involved/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1018,7 +1023,7 @@
         "letter-writing"
       ],
       "collegeAppValue": "low",
-      "howToStart": "lettersagainstisolation.com — sign up, get assigned a senior, mail a letter. No background check needed.",
+      "howToStart": "lettersagainstisolation.com \u2014 sign up, get assigned a senior, mail a letter. No background check needed.",
       "_source": "https://www.lettersagainstisolation.com/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1026,7 +1031,7 @@
     {
       "name": "Color a Smile",
       "organization": "Color a Smile",
-      "description": "Color drawings/cards that get distributed to seniors, deployed military, and others who need cheering up. Lowest-barrier remote service — works for elementary kids through adults. Good entry point for service-shy younger teens.",
+      "description": "Color drawings/cards that get distributed to seniors, deployed military, and others who need cheering up. Lowest-barrier remote service \u2014 works for elementary kids through adults. Good entry point for service-shy younger teens.",
       "scope": "national",
       "states": [
         "all"
@@ -1045,7 +1050,7 @@
         "consistency"
       ],
       "collegeAppValue": "low",
-      "howToStart": "colorasmile.org — download printable templates, color, mail to their PO box.",
+      "howToStart": "colorasmile.org \u2014 download printable templates, color, mail to their PO box.",
       "_source": "https://www.colorasmile.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1073,7 +1078,7 @@
         "event planning"
       ],
       "collegeAppValue": "high",
-      "howToStart": "bestbuddies.org — check if your school has a chapter; if not, you can start one with their school onboarding kit.",
+      "howToStart": "bestbuddies.org \u2014 check if your school has a chapter; if not, you can start one with their school onboarding kit.",
       "_source": "https://www.bestbuddies.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1137,7 +1142,7 @@
       "_verifiedDate": "2026-04-25"
     },
     {
-      "name": "Court Appointed Special Advocate (CASA) — Limited Teen Roles",
+      "name": "Court Appointed Special Advocate (CASA) \u2014 Limited Teen Roles",
       "organization": "National CASA Association",
       "description": "Trained volunteers advocate for abused/neglected children in court. Most CASA roles require 21+, but several state CASA programs have Teen Advocates or Mentors for older youth in foster care (typically 18+ with training).",
       "scope": "national",
@@ -1160,7 +1165,7 @@
         "advocacy"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nationalcasagal.org/find-a-program — for high schoolers, ask your local CASA about Teen Advocate or admin support roles.",
+      "howToStart": "nationalcasagal.org/find-a-program \u2014 for high schoolers, ask your local CASA about Teen Advocate or admin support roles.",
       "_source": "https://nationalcasagal.org/become-a-volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1273,7 +1278,7 @@
         "campaign organization"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "unicefusa.org/teens — start a UNICEF Club at your school or join an existing one.",
+      "howToStart": "unicefusa.org/teens \u2014 start a UNICEF Club at your school or join an existing one.",
       "_source": "https://www.unicefusa.org/teens",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1301,7 +1306,7 @@
         "project management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "translatorswithoutborders.org/volunteer — application requires language proof and 18+. Some sister orgs accept younger translators.",
+      "howToStart": "translatorswithoutborders.org/volunteer \u2014 application requires language proof and 18+. Some sister orgs accept younger translators.",
       "_source": "https://translatorswithoutborders.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1331,7 +1336,7 @@
         "radio communication"
       ],
       "collegeAppValue": "high",
-      "howToStart": "ready.gov/cert — find local CERT program through your city's emergency management office.",
+      "howToStart": "ready.gov/cert \u2014 find local CERT program through your city's emergency management office.",
       "_source": "https://www.ready.gov/cert",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1361,7 +1366,7 @@
         "public speaking"
       ],
       "collegeAppValue": "high",
-      "howToStart": "keyclub.org — check if your school has a chapter, or ask the office about chartering one.",
+      "howToStart": "keyclub.org \u2014 check if your school has a chapter, or ask the office about chartering one.",
       "_source": "https://www.keyclub.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1390,7 +1395,7 @@
         "project management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "rotary.org/interact — find your local Rotary Club via their site; they sponsor school chapters.",
+      "howToStart": "rotary.org/interact \u2014 find your local Rotary Club via their site; they sponsor school chapters.",
       "_source": "https://www.rotary.org/en/get-involved/interact-clubs",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1446,7 +1451,7 @@
         "medical setting professionalism"
       ],
       "collegeAppValue": "high",
-      "howToStart": "seattlechildrens.org/about/volunteering — applications open March-April for fall. Background check + immunization records.",
+      "howToStart": "seattlechildrens.org/about/volunteering \u2014 applications open March-April for fall. Background check + immunization records.",
       "_source": "https://www.seattlechildrens.org/about/volunteering/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1473,7 +1478,7 @@
         "volunteer coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "northwestharvest.org — sign up for Saturday morning sort shifts in Kent or partner pantries throughout WA.",
+      "howToStart": "northwestharvest.org \u2014 sign up for Saturday morning sort shifts in Kent or partner pantries throughout WA.",
       "_source": "https://www.northwestharvest.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1501,7 +1506,7 @@
         "shelter operations"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "marysplaceseattle.org/volunteer — group-friendly shifts at multiple locations.",
+      "howToStart": "marysplaceseattle.org/volunteer \u2014 group-friendly shifts at multiple locations.",
       "_source": "https://www.marysplaceseattle.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1530,7 +1535,7 @@
         "conservation messaging"
       ],
       "collegeAppValue": "high",
-      "howToStart": "zoo.org/teens — Junior Zookeeper applications open January for summer.",
+      "howToStart": "zoo.org/teens \u2014 Junior Zookeeper applications open January for summer.",
       "_source": "https://www.zoo.org/get-involved/volunteer/youth-volunteer-opportunities",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1587,7 +1592,7 @@
         "tutoring"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "bgca.org/find-a-club — local club volunteer coordinator handles application.",
+      "howToStart": "bgca.org/find-a-club \u2014 local club volunteer coordinator handles application.",
       "_source": "https://www.bgca.org/get-involved/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1615,7 +1620,7 @@
         "fundraising"
       ],
       "collegeAppValue": "high",
-      "howToStart": "wish.org — contact local chapter; teen-appropriate roles vary by chapter.",
+      "howToStart": "wish.org \u2014 contact local chapter; teen-appropriate roles vary by chapter.",
       "_source": "https://wish.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1645,7 +1650,7 @@
         "presence"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nhpco.org find a hospice — apply to local hospice; expect 30 hours of training and background check.",
+      "howToStart": "nhpco.org find a hospice \u2014 apply to local hospice; expect 30 hours of training and background check.",
       "_source": "https://www.nhpco.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1673,7 +1678,7 @@
         "customer service"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "habitat.org/restores — find local ReStore.",
+      "howToStart": "habitat.org/restores \u2014 find local ReStore.",
       "_source": "https://www.habitat.org/restores",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1701,7 +1706,7 @@
         "team leadership"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "cancer.org/involved — search Relay For Life by zip code or start a school team.",
+      "howToStart": "cancer.org/involved \u2014 search Relay For Life by zip code or start a school team.",
       "_source": "https://www.cancer.org/involved/volunteer.html",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1728,14 +1733,14 @@
         "event fundraising"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "heart.org/volunteer — local affiliate has youth/school programs.",
+      "howToStart": "heart.org/volunteer \u2014 local affiliate has youth/school programs.",
       "_source": "https://www.heart.org/en/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
     },
     {
       "name": "Doctors Without Borders Student Ambassador",
-      "organization": "Médecins Sans Frontières (MSF) USA",
+      "organization": "M\u00e9decins Sans Fronti\u00e8res (MSF) USA",
       "description": "Student-led MSF Student Coalition chapters at 50+ universities, with high school feeder events. Awareness campaigns, fundraising, advocacy on global health crises. Strong med-school pipeline signal.",
       "scope": "national",
       "states": [
@@ -1757,7 +1762,7 @@
         "event organizing"
       ],
       "collegeAppValue": "high",
-      "howToStart": "doctorswithoutborders.org/get-involved — student coalition resources for school chapters.",
+      "howToStart": "doctorswithoutborders.org/get-involved \u2014 student coalition resources for school chapters.",
       "_source": "https://www.doctorswithoutborders.org/get-involved/student-coalition",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1785,7 +1790,7 @@
         "holiday season stamina"
       ],
       "collegeAppValue": "low",
-      "howToStart": "registertoring.com — sign up for 2-hour shifts at a local store November-December.",
+      "howToStart": "registertoring.com \u2014 sign up for 2-hour shifts at a local store November-December.",
       "_source": "https://www.registertoring.com/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1815,7 +1820,7 @@
         "calm presence"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "tdi-dog.org or petpartners.org — evaluation requires several months of training.",
+      "howToStart": "tdi-dog.org or petpartners.org \u2014 evaluation requires several months of training.",
       "_source": "https://www.petpartners.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1844,7 +1849,7 @@
         "team-building"
       ],
       "collegeAppValue": "high",
-      "howToStart": "habitat.org/volunteer/travel-build/global-village — applications 4-6 months in advance.",
+      "howToStart": "habitat.org/volunteer/travel-build/global-village \u2014 applications 4-6 months in advance.",
       "_source": "https://www.habitat.org/volunteer/travel-build/global-village",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1902,7 +1907,7 @@
         "career counseling support"
       ],
       "collegeAppValue": "low",
-      "howToStart": "goodwill.org/locator — local Goodwill volunteer coordinator.",
+      "howToStart": "goodwill.org/locator \u2014 local Goodwill volunteer coordinator.",
       "_source": "https://www.goodwill.org/get-involved/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1929,7 +1934,7 @@
         "community service"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "County elections office — apply 6-8 weeks before election day.",
+      "howToStart": "County elections office \u2014 apply 6-8 weeks before election day.",
       "_source": "https://www.eac.gov/voters/national-poll-worker-recruitment-day",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1957,7 +1962,7 @@
         "tech support basics"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Ask at your library reference desk — most have ongoing digital literacy programs needing volunteers.",
+      "howToStart": "Ask at your library reference desk \u2014 most have ongoing digital literacy programs needing volunteers.",
       "_source": "https://www.ala.org/yalsa/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1986,7 +1991,7 @@
         "entrepreneurial mindset"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "ja.org/volunteer — match with local school based on your background.",
+      "howToStart": "ja.org/volunteer \u2014 match with local school based on your background.",
       "_source": "https://www.juniorachievement.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2014,7 +2019,7 @@
         "distribution logistics"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "rif.org — get the book drive starter kit and organize at your school.",
+      "howToStart": "rif.org \u2014 get the book drive starter kit and organize at your school.",
       "_source": "https://www.rif.org/take-action",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2042,7 +2047,7 @@
         "distribution day logistics"
       ],
       "collegeAppValue": "low",
-      "howToStart": "operationwarm.org — partner with a local school or shelter for distribution.",
+      "howToStart": "operationwarm.org \u2014 partner with a local school or shelter for distribution.",
       "_source": "https://www.operationwarm.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2131,7 +2136,7 @@
         "community outreach"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "afsp.org/walks — find walk near you, sign up to volunteer.",
+      "howToStart": "afsp.org/walks \u2014 find walk near you, sign up to volunteer.",
       "_source": "https://afsp.org/get-involved/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2160,7 +2165,7 @@
         "financial literacy"
       ],
       "collegeAppValue": "high",
-      "howToStart": "aarpfoundation.org/taxaide — November-December training for January-April season.",
+      "howToStart": "aarpfoundation.org/taxaide \u2014 November-December training for January-April season.",
       "_source": "https://www.aarpfoundation.org/our-programs/tax-aide-foundation",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2219,7 +2224,7 @@
         "team coordination"
       ],
       "collegeAppValue": "high",
-      "howToStart": "americorps.gov/serve — applications 3-6 months ahead of service year start.",
+      "howToStart": "americorps.gov/serve \u2014 applications 3-6 months ahead of service year start.",
       "_source": "https://www.americorps.gov/serve",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2246,7 +2251,7 @@
         "remote collaboration"
       ],
       "collegeAppValue": "high",
-      "howToStart": "onlinevolunteering.org/en — must be 18+ and create a profile.",
+      "howToStart": "onlinevolunteering.org/en \u2014 must be 18+ and create a profile.",
       "_source": "https://www.onlinevolunteering.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2340,7 +2345,7 @@
       "_verifiedDate": "2026-04-26"
     },
     {
-      "name": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+      "name": "Seattle Humane \u2014 Humane Teen Club & High School Service Shifts",
       "organization": "Seattle Humane",
       "description": "Two volunteer pathways for teens at Seattle Humane (Bellevue, WA). The Humane Teen Club (ages 13-17) meets two Saturdays per month during the school year to learn shelter operations and animal-welfare topics; graduates are eligible for select volunteer roles including summer opportunities. High School Service Shifts let students entering grades 9-12 earn community-service hours by washing food/water bowls, cleaning transfer crates, and packing pet food.",
       "scope": "state",
@@ -2371,7 +2376,7 @@
     {
       "name": "EarthCorps Volunteer Restoration Events",
       "organization": "EarthCorps",
-      "description": "EarthCorps runs habitat-restoration volunteer events year-round across the Salish Sea region — Seattle, Burien, Tukwila, Tacoma, and Everett — engaging roughly 10,000 youth and community volunteers per year. Tasks include removing invasive English Ivy and Himalayan Blackberry, planting native trees and shrubs, and spreading mulch. Open to all ages; volunteers under 14 must be accompanied by an adult.",
+      "description": "EarthCorps runs habitat-restoration volunteer events year-round across the Salish Sea region \u2014 Seattle, Burien, Tukwila, Tacoma, and Everett \u2014 engaging roughly 10,000 youth and community volunteers per year. Tasks include removing invasive English Ivy and Himalayan Blackberry, planting native trees and shrubs, and spreading mulch. Open to all ages; volunteers under 14 must be accompanied by an adult.",
       "scope": "state",
       "states": [
         "WA"
@@ -2398,7 +2403,7 @@
       "_verifiedDate": "2026-04-26"
     },
     {
-      "name": "Treehouse for Kids — Volunteer & Treehouse Store",
+      "name": "Treehouse for Kids \u2014 Volunteer & Treehouse Store",
       "organization": "Treehouse",
       "description": "Treehouse (founded 1988) is the only Washington nonprofit focused exclusively on the educational, material, and financial needs of youth in foster care, serving more than 7,000 youth across the state each year. Volunteer roles include sorting donations and assisting at the Treehouse Store in Seattle (which provides free clothing and school supplies to foster youth) and supporting events. Shifts are open to youth age 12 and older; volunteers age 16+ can volunteer on their own.",
       "scope": "state",
@@ -2491,7 +2496,7 @@
     {
       "name": "KCLS Teen Volunteer Program (TVP) & Teen Advisory Boards",
       "organization": "King County Library System",
-      "description": "Teen-led KCLS program operating since June 2020 across King County's library network (50+ branches including Bellevue, Redmond, Issaquah, Kent, Auburn, Federal Way). The Teen Volunteer Program empowers teens to plan, create, and lead online and in-branch events and workshops for kids, teens, and families — earning community service hours and leadership experience. Teen Advisory Boards meet regularly with a librarian facilitator to co-design library programming. Branch-level teen volunteer roles are available at most KCLS locations.",
+      "description": "Teen-led KCLS program operating since June 2020 across King County's library network (50+ branches including Bellevue, Redmond, Issaquah, Kent, Auburn, Federal Way). The Teen Volunteer Program empowers teens to plan, create, and lead online and in-branch events and workshops for kids, teens, and families \u2014 earning community service hours and leadership experience. Teen Advisory Boards meet regularly with a librarian facilitator to co-design library programming. Branch-level teen volunteer roles are available at most KCLS locations.",
       "scope": "state",
       "states": [
         "WA"
@@ -2521,7 +2526,7 @@
     {
       "name": "Washington Trails Association Volunteer Trail Work Parties",
       "organization": "Washington Trails Association (WTA)",
-      "description": "Largest state-based hiking advocacy and trail-stewardship organization in the U.S., founded in 1966. WTA's volunteer trail crews log 100,000+ hours per year repairing and maintaining hundreds of miles of public trails across Washington — Mount Rainier, North Cascades, Olympic peninsula, Issaquah Alps, Tiger Mountain, Capitol Forest, and dozens more. Single-day work parties, week-long Backcountry Response Teams, and Youth Volunteer Vacations.",
+      "description": "Largest state-based hiking advocacy and trail-stewardship organization in the U.S., founded in 1966. WTA's volunteer trail crews log 100,000+ hours per year repairing and maintaining hundreds of miles of public trails across Washington \u2014 Mount Rainier, North Cascades, Olympic peninsula, Issaquah Alps, Tiger Mountain, Capitol Forest, and dozens more. Single-day work parties, week-long Backcountry Response Teams, and Youth Volunteer Vacations.",
       "scope": "state",
       "states": [
         "WA"
@@ -2541,7 +2546,7 @@
         "physical labor / tool use"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Browse and register for a work party at wta.org/volunteer. Volunteers must be 10+; under 14 must be accompanied by a registered adult, and all under-18 volunteers must be signed in by a parent or guardian. Wear sturdy closed-toe shoes and long pants — bring your own lunch. WTA provides tools, training, and a free day-use pass.",
+      "howToStart": "Browse and register for a work party at wta.org/volunteer. Volunteers must be 10+; under 14 must be accompanied by a registered adult, and all under-18 volunteers must be signed in by a parent or guardian. Wear sturdy closed-toe shoes and long pants \u2014 bring your own lunch. WTA provides tools, training, and a free day-use pass.",
       "_source": "https://www.wta.org/get-involved/volunteer/questions",
       "_verified": true,
       "_verifiedDate": "2026-04-26"
@@ -2774,7 +2779,7 @@
         "child-welfare awareness"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Sign up via kidvantagenw.org/volunteer. Welcomes volunteers ages 12 and up; volunteers ages 12 and 13 must be accompanied one-to-one by an adult. Group opportunities available — contact the volunteer coordinator listed on the page.",
+      "howToStart": "Sign up via kidvantagenw.org/volunteer. Welcomes volunteers ages 12 and up; volunteers ages 12 and 13 must be accompanied one-to-one by an adult. Group opportunities available \u2014 contact the volunteer coordinator listed on the page.",
       "_source": "https://kidvantagenw.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-26"
@@ -3024,7 +3029,7 @@
     {
       "name": "Humane Society for Southwest Washington (HSSW) Teen Volunteer",
       "organization": "Humane Society for Southwest Washington",
-      "description": "HSSW is the regional humane society for Southwest Washington (Clark, Skamania, Klickitat counties), operating the Vancouver shelter and the ReTails resale store. Teen volunteers (16+) help in animal care, dog walking, cat socialization, adoption support, and ReTails retail operations. Required commitment: one 2-hour shift/week for 6 months, OR five 2-hour shifts/week for 2 months. Parental approval required. Important caveat: HSSW does NOT accept community-based assessments and explicitly notes that teen volunteer hours may not be used to satisfy school-required service hours — so the experience is for personal/college-app interest, not for fulfilling NHS/school hour requirements.",
+      "description": "HSSW is the regional humane society for Southwest Washington (Clark, Skamania, Klickitat counties), operating the Vancouver shelter and the ReTails resale store. Teen volunteers (16+) help in animal care, dog walking, cat socialization, adoption support, and ReTails retail operations. Required commitment: one 2-hour shift/week for 6 months, OR five 2-hour shifts/week for 2 months. Parental approval required. Important caveat: HSSW does NOT accept community-based assessments and explicitly notes that teen volunteer hours may not be used to satisfy school-required service hours \u2014 so the experience is for personal/college-app interest, not for fulfilling NHS/school hour requirements.",
       "scope": "state",
       "states": [
         "WA"
@@ -3055,7 +3060,7 @@
     {
       "name": "Fort Vancouver Regional Libraries (FVRL) Volunteer + Teen Council",
       "organization": "Fort Vancouver Regional Libraries",
-      "description": "FVRLibraries serves Clark, Skamania, and Klickitat counties (plus parts of Cowlitz) — about 460,000 people across 14 library branches. Online volunteer application is open to ages 13+; younger volunteers (12 and under) apply through the Volunteer Coordinator. Background checks are required for volunteers 18 and older (per WA state law). Roles include shelving and circulation support, Connect FVRL homework/tech help, summer reading program assistance, special-event support, and Teen Council membership (meets first Monday monthly — gives teens a voice in library teen programming + counts toward volunteer hours).",
+      "description": "FVRLibraries serves Clark, Skamania, and Klickitat counties (plus parts of Cowlitz) \u2014 about 460,000 people across 14 library branches. Online volunteer application is open to ages 13+; younger volunteers (12 and under) apply through the Volunteer Coordinator. Background checks are required for volunteers 18 and older (per WA state law). Roles include shelving and circulation support, Connect FVRL homework/tech help, summer reading program assistance, special-event support, and Teen Council membership (meets first Monday monthly \u2014 gives teens a voice in library teen programming + counts toward volunteer hours).",
       "scope": "state",
       "states": [
         "WA"
@@ -3086,7 +3091,7 @@
       "confidence": "high"
     },
     {
-      "name": "Vanessa Behan Crisis Nursery — Childcare Volunteer (Spokane)",
+      "name": "Vanessa Behan Crisis Nursery \u2014 Childcare Volunteer (Spokane)",
       "organization": "Vanessa Behan",
       "description": "Vanessa Behan operates Spokane's only crisis nursery, providing free 24/7 emergency childcare for families in crisis (parental illness, financial hardship, domestic violence, mental health crisis). Childcare volunteers work directly with infants and children in the nursery: feeding, diapering, comforting, playing, supervising. Required commitment: minimum 2 shifts/month (5 max), each 2.5 hours, for at least 6 months. Required: 16+, WA State Patrol background check, Vanessa's Promise Tour, online application + 4 personal references, Basic Childcare Training (offered monthly), TB test, and WA Food Handler's Permit. A standout for prospective educators, social workers, pediatricians, and child psychology students.",
       "scope": "state",
@@ -3122,7 +3127,7 @@
     {
       "name": "Mary Bridge Children's Hospital Volunteer (Tacoma)",
       "organization": "Mary Bridge Children's Hospital (MultiCare)",
-      "description": "Mary Bridge Children's Hospital, part of MultiCare in Tacoma, is the South Puget Sound's only dedicated children's hospital — Level II Pediatric Trauma Center. Hospital volunteers (16+) staff self-led roles supporting Child Life, family-support services, the BRIDGES Center for Grieving Children, and various inpatient/outpatient units. Onboarding takes ~8-9 months end-to-end: attend a 1-hour in-person Information Session, interview with a Volunteer Engagement Manager, complete application, attend Orientation + Onboarding meeting, complete a health screening (flu shots required in season), pass criminal background check, then department-specific training. A premier credential for prospective pediatricians, nurses, child-life specialists, and social workers.",
+      "description": "Mary Bridge Children's Hospital, part of MultiCare in Tacoma, is the South Puget Sound's only dedicated children's hospital \u2014 Level II Pediatric Trauma Center. Hospital volunteers (16+) staff self-led roles supporting Child Life, family-support services, the BRIDGES Center for Grieving Children, and various inpatient/outpatient units. Onboarding takes ~8-9 months end-to-end: attend a 1-hour in-person Information Session, interview with a Volunteer Engagement Manager, complete application, attend Orientation + Onboarding meeting, complete a health screening (flu shots required in season), pass criminal background check, then department-specific training. A premier credential for prospective pediatricians, nurses, child-life specialists, and social workers.",
       "scope": "state",
       "states": [
         "WA"
@@ -3189,7 +3194,7 @@
     {
       "name": "The Olympia Free Clinic Volunteer (Registration, Triage, Spanish Interpreter, Provider)",
       "organization": "The Olympia Free Clinic (TOFC)",
-      "description": "Free medical clinic in Thurston County operated almost entirely by volunteers. Roles span registration, triage, discharge, Spanish interpreter, pharmacy, social services connector, and licensed provider positions (MDs, PAs, RNs, dentists). Administrative roles require no medical experience and are appropriate for college-bound students (18+) gaining health-care exposure. Flexible schedule — some volunteers complete a weekly shift, others rotate a few times per year.",
+      "description": "Free medical clinic in Thurston County operated almost entirely by volunteers. Roles span registration, triage, discharge, Spanish interpreter, pharmacy, social services connector, and licensed provider positions (MDs, PAs, RNs, dentists). Administrative roles require no medical experience and are appropriate for college-bound students (18+) gaining health-care exposure. Flexible schedule \u2014 some volunteers complete a weekly shift, others rotate a few times per year.",
       "scope": "state",
       "states": [
         "WA"
@@ -3256,7 +3261,7 @@
     {
       "name": "Los Angeles Regional Food Bank Volunteer",
       "organization": "Los Angeles Regional Food Bank",
-      "description": "LA's largest hunger-relief organization, distributing food to over 600 partner agencies across LA County. Volunteers sort and pack food at the Commerce or Glendale warehouses, work pantry-side at the Mobile Food Pantry, and assist with food drives. All volunteers must register online — no walk-ins. Founded in 1973; 50+ years of operation.",
+      "description": "LA's largest hunger-relief organization, distributing food to over 600 partner agencies across LA County. Volunteers sort and pack food at the Commerce or Glendale warehouses, work pantry-side at the Mobile Food Pantry, and assist with food drives. All volunteers must register online \u2014 no walk-ins. Founded in 1973; 50+ years of operation.",
       "scope": "state",
       "states": [
         "CA"
@@ -3443,7 +3448,7 @@
     {
       "name": "Project Open Hand Individual Volunteer",
       "organization": "Project Open Hand",
-      "description": "Project Open Hand has delivered 'meals with love' to seniors and people facing serious illness in San Francisco and Oakland since 1985. Individual volunteers make a 3-month commitment to a weekly shift (or 40 hours per semester for students) — Kitchen meal assembly, Grocery Center sort/pack/distribute, Delivery (walk or drive), or Meal Site hosting. Minimum age is 15, and volunteers need a TB test within the last year.",
+      "description": "Project Open Hand has delivered 'meals with love' to seniors and people facing serious illness in San Francisco and Oakland since 1985. Individual volunteers make a 3-month commitment to a weekly shift (or 40 hours per semester for students) \u2014 Kitchen meal assembly, Grocery Center sort/pack/distribute, Delivery (walk or drive), or Meal Site hosting. Minimum age is 15, and volunteers need a TB test within the last year.",
       "scope": "local",
       "states": [
         "CA"
@@ -3505,7 +3510,7 @@
     {
       "name": "San Francisco Public Library Teen Volunteer Corps / YELL / YAB",
       "organization": "San Francisco Public Library",
-      "description": "SFPL operates a tiered teen-volunteer pathway across the Main Library and 27 branches: (1) Teen Volunteer Corps for ages 13-18 (event support, summer reading, branch programming); (2) Youth Engaged in Library Leadership (YELL) — paid summer workforce-development program for older teens with weekly commitment; (3) Youth Advisory Board (YAB) — paid 10-hour/week leadership program for SF 11th-12th graders during the school year, focused on advocacy, facilitation and shaping teen library services. Applications for paid programs open in March.",
+      "description": "SFPL operates a tiered teen-volunteer pathway across the Main Library and 27 branches: (1) Teen Volunteer Corps for ages 13-18 (event support, summer reading, branch programming); (2) Youth Engaged in Library Leadership (YELL) \u2014 paid summer workforce-development program for older teens with weekly commitment; (3) Youth Advisory Board (YAB) \u2014 paid 10-hour/week leadership program for SF 11th-12th graders during the school year, focused on advocacy, facilitation and shaping teen library services. Applications for paid programs open in March.",
       "scope": "local",
       "states": [
         "CA"
@@ -3538,7 +3543,7 @@
     {
       "name": "Friends of the Urban Forest Tree Planting & Care",
       "organization": "Friends of the Urban Forest",
-      "description": "Founded 1981, FUF has planted more than 60,000 street trees — about half of San Francisco's street tree canopy. Year-round Saturday volunteer events: Street Tree Planting, Tree Care & Watering, and Sidewalk Garden installations. Volunteer requirements: ages 16-18 need a parent/guardian-signed waiver emailed to volunteers@fuf.net in advance; ages 12-15 must be accompanied by a parent or legal guardian (1 adult per child, no group chaperones). Excellent fit for environmental stewardship and college-app environmental-impact narrative.",
+      "description": "Founded 1981, FUF has planted more than 60,000 street trees \u2014 about half of San Francisco's street tree canopy. Year-round Saturday volunteer events: Street Tree Planting, Tree Care & Watering, and Sidewalk Garden installations. Volunteer requirements: ages 16-18 need a parent/guardian-signed waiver emailed to volunteers@fuf.net in advance; ages 12-15 must be accompanied by a parent or legal guardian (1 adult per child, no group chaperones). Excellent fit for environmental stewardship and college-app environmental-impact narrative.",
       "scope": "local",
       "states": [
         "CA"
@@ -3567,7 +3572,7 @@
       "confidence": "high"
     },
     {
-      "name": "San Diego Zoo — Zoo Corps Teen Volunteer Program",
+      "name": "San Diego Zoo \u2014 Zoo Corps Teen Volunteer Program",
       "organization": "San Diego Zoo Wildlife Alliance",
       "description": "Zoo Corps is the San Diego Zoo's teen volunteer program for high-school-age members ages 13-17. Teens use education kits (backyard habitats, saving species, animal care, sustainability) to teach guests on the public floor about wildlife conservation while building public-speaking and science-communication skills. The program runs year-round in two cohorts (May-November and January-May). Members commit to volunteering at least once per month. (San Diego Zoo Wildlife Alliance's adult volunteer program separately requires age 18+ and 60 hr/year, so under-18s should apply to Zoo Corps, not the general adult track.)",
       "scope": "state",
@@ -3592,7 +3597,7 @@
         "guest interaction"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Visit zoo.sandiegozoo.org/kids-programs/zoo-corps for application info. Cohorts start in May and January each year — applications typically open before the cohort kick-off; check the page for the current application window. Applicants must be 13-17 and able to commit to monthly volunteering at the Zoo in Balboa Park.",
+      "howToStart": "Visit zoo.sandiegozoo.org/kids-programs/zoo-corps for application info. Cohorts start in May and January each year \u2014 applications typically open before the cohort kick-off; check the page for the current application window. Applicants must be 13-17 and able to commit to monthly volunteering at the Zoo in Balboa Park.",
       "_source": "https://zoo.sandiegozoo.org/kids-programs/zoo-corps",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -3633,7 +3638,7 @@
     {
       "name": "Jacobs & Cushman San Diego Food Bank Volunteer (Warehouse, Sorting, Distribution)",
       "organization": "Jacobs & Cushman San Diego Food Bank",
-      "description": "Jacobs & Cushman San Diego Food Bank is San Diego County's largest hunger-relief organization, with a 90,000-sq-ft Miramar warehouse plus a North County campus in Vista. Volunteers sort and box food, repack bulk produce, assemble Senior Food Program bags, and support distribution. Two-hour and three-hour shift slots run multiple days per week at both warehouses, with online registration via the volunteer portal. Volunteers must be at least 11 years old; ages 11-15 must be accompanied 1 adult per 4 children. No special training required — a brief on-site orientation covers procedures. Ideal for repeat group service days plus individual recurring shifts.",
+      "description": "Jacobs & Cushman San Diego Food Bank is San Diego County's largest hunger-relief organization, with a 90,000-sq-ft Miramar warehouse plus a North County campus in Vista. Volunteers sort and box food, repack bulk produce, assemble Senior Food Program bags, and support distribution. Two-hour and three-hour shift slots run multiple days per week at both warehouses, with online registration via the volunteer portal. Volunteers must be at least 11 years old; ages 11-15 must be accompanied 1 adult per 4 children. No special training required \u2014 a brief on-site orientation covers procedures. Ideal for repeat group service days plus individual recurring shifts.",
       "scope": "state",
       "states": [
         "CA"
@@ -3654,7 +3659,7 @@
         "production-line workflow"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Register at sandiegofoodbank.org/volunteer and create an account in the online scheduler. Browse open shifts at the Miramar warehouse (9850 Distribution Ave) or Vista North County center (2260 Oak Ridge Way) and sign up. Confirmation email includes directions and policies. Group shifts available — submit a Group Volunteer Request for 5+ participants. Contact volunteer@sandiegofoodbank.org or 1-866-350-FOOD with questions.",
+      "howToStart": "Register at sandiegofoodbank.org/volunteer and create an account in the online scheduler. Browse open shifts at the Miramar warehouse (9850 Distribution Ave) or Vista North County center (2260 Oak Ridge Way) and sign up. Confirmation email includes directions and policies. Group shifts available \u2014 submit a Group Volunteer Request for 5+ participants. Contact volunteer@sandiegofoodbank.org or 1-866-350-FOOD with questions.",
       "_source": "https://www.sandiegofoodbank.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -3693,7 +3698,7 @@
       "confidence": "high"
     },
     {
-      "name": "California Academy of Sciences — TASC Force (Teen Advocates for Science Communication)",
+      "name": "California Academy of Sciences \u2014 TASC Force (Teen Advocates for Science Communication)",
       "organization": "California Academy of Sciences",
       "description": "TASC Force is the California Academy of Sciences' youth volunteer program for 8th-12th graders. Members design and deliver youth-created science programs to museum guests across the Academy's exhibits (Steinhart Aquarium, Osher Rainforest, Morrison Planetarium, natural history galleries) in Golden Gate Park. Activities include developing public programs, presenting on the museum floor, and participating in Bay Area educational outreach. Time commitment is one program day per week plus monthly all-cohort meetings. Community service hours are formally documented for college applications. (The Academy's separate, paid Careers in Science (CiS) Internship is a more competitive multi-year program for SFUSD-enrolled 9th/10th graders interested in STEM workforce development; TASC Force is the open-application volunteer counterpart.)",
       "scope": "state",
@@ -3757,7 +3762,7 @@
       "confidence": "high"
     },
     {
-      "name": "Houston Zoo — Zoo Crew Explorers + Year-Round Zoo Crew",
+      "name": "Houston Zoo \u2014 Zoo Crew Explorers + Year-Round Zoo Crew",
       "organization": "Houston Zoo",
       "description": "Houston Zoo's teen volunteer pipeline begins with the Zoo Crew Explorers four-week summer program (Mon-Fri, 8:30am+) for ages 13-17. Each summer offers four sessions (June-August). Teens must be 13 by June 1 and not turn 18 before their session ends. Zoo Crew Explorers introduces participants to careers across the zoo (zookeepers, groundskeepers, marketing, conservation), wildlife conservation initiatives, and interpretation skills for engaging guests. After completing Zoo Crew Explorers, teens are eligible for the Year-Round Zoo Crew (regular school-year + summer roles, ages 15+) and Returning Summer Zoo Crew. Mandatory virtual orientation in May. Program fees apply (Summer-only $325; Year-round +$275); these recover the cost of the structured curriculum. Strong fit for teens interested in wildlife biology, conservation, environmental education, or veterinary careers.",
       "scope": "state",
@@ -3782,7 +3787,7 @@
         "teamwork"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Apply via houstonzoo.org → Make Memories → Teens → First-Year Zoo Crew Explorers. Applications typically open winter for the following summer. Selection is competitive. Email teenprograms@houstonzoo.org or call 713-533-6567 with questions.",
+      "howToStart": "Apply via houstonzoo.org \u2192 Make Memories \u2192 Teens \u2192 First-Year Zoo Crew Explorers. Applications typically open winter for the following summer. Selection is competitive. Email teenprograms@houstonzoo.org or call 713-533-6567 with questions.",
       "_source": "https://www.houstonzoo.org/make-memories/teens/first-year-zoo-crew-explorers/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -3821,9 +3826,9 @@
       "confidence": "high"
     },
     {
-      "name": "Children's Museum of Houston — Discovery Squad",
+      "name": "Children's Museum of Houston \u2014 Discovery Squad",
       "organization": "Children's Museum of Houston",
-      "description": "Discovery Squad is a year-long youth leadership program for ages 14-17 at Children's Museum Houston (Museum District) and the Fort Bend Children's Discovery Center (Sugar Land). Squad members assist with exhibits, activities, and programs — gaining hands-on experience facilitating science, art, and early-literacy programming for younger visitors. Selection is competitive (application + interview). Members commit to a minimum of 75 hours of volunteer service across the summer or school year. Distinct from the Museum's general Individual Volunteer pool, which accepts age 13+ with first-shift parent accompaniment. Discovery Squad is widely cited among Houston ISD/HISD-area college-prep counselors as a strong leadership/community-service entry. Applications for the 2026-27 cohort open April 2026.",
+      "description": "Discovery Squad is a year-long youth leadership program for ages 14-17 at Children's Museum Houston (Museum District) and the Fort Bend Children's Discovery Center (Sugar Land). Squad members assist with exhibits, activities, and programs \u2014 gaining hands-on experience facilitating science, art, and early-literacy programming for younger visitors. Selection is competitive (application + interview). Members commit to a minimum of 75 hours of volunteer service across the summer or school year. Distinct from the Museum's general Individual Volunteer pool, which accepts age 13+ with first-shift parent accompaniment. Discovery Squad is widely cited among Houston ISD/HISD-area college-prep counselors as a strong leadership/community-service entry. Applications for the 2026-27 cohort open April 2026.",
       "scope": "state",
       "states": [
         "TX"
@@ -3846,7 +3851,7 @@
         "leadership"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Apply via volunteer.cmhouston.org → Discovery Squad. Selection is competitive (application + interview). Contact Dulce Aguirre, Office and Logistics Coordinator, at DAGUIRRE@cmhouston.org. Applications open annually in April.",
+      "howToStart": "Apply via volunteer.cmhouston.org \u2192 Discovery Squad. Selection is competitive (application + interview). Contact Dulce Aguirre, Office and Logistics Coordinator, at DAGUIRRE@cmhouston.org. Applications open annually in April.",
       "_source": "https://volunteer.cmhouston.org/agency/detail/?agency_id=173468",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -3855,7 +3860,7 @@
     {
       "name": "Houston SPCA Volunteer (Animal Care, Adoptions, Wildlife Center)",
       "organization": "Houston SPCA",
-      "description": "Houston SPCA, founded 1924, operates a 7-acre campus in West Houston serving more than 35,000 animals each year — including Texas's largest 24/7 Wildlife Center. Teen and adult volunteers support animal care (feeding, exercise, socialization), adoption events, customer service at the front desk, special events, and the Wildlife Rescue program. Minimum age 16 at time of application. Ages 16-17 pay a $25 application fee that covers screening and a volunteer T-shirt; volunteers 18+ must complete a background check. Available shifts run 7 days/week, 7am-6pm, after completing orientation and training. Strong fit for teens interested in veterinary medicine, animal welfare, wildlife rehabilitation, or non-profit operations.",
+      "description": "Houston SPCA, founded 1924, operates a 7-acre campus in West Houston serving more than 35,000 animals each year \u2014 including Texas's largest 24/7 Wildlife Center. Teen and adult volunteers support animal care (feeding, exercise, socialization), adoption events, customer service at the front desk, special events, and the Wildlife Rescue program. Minimum age 16 at time of application. Ages 16-17 pay a $25 application fee that covers screening and a volunteer T-shirt; volunteers 18+ must complete a background check. Available shifts run 7 days/week, 7am-6pm, after completing orientation and training. Strong fit for teens interested in veterinary medicine, animal welfare, wildlife rehabilitation, or non-profit operations.",
       "scope": "state",
       "states": [
         "TX"
@@ -4045,7 +4050,7 @@
     {
       "name": "North Texas Food Bank Volunteer (Pack & Box, Produce/Cold Sorting, Jan's Garden, Junior Kernel Program)",
       "organization": "North Texas Food Bank (NTFB)",
-      "description": "North Texas Food Bank is the regional Feeding America-affiliated hunger-relief organization serving 13 counties around Dallas/Plano. Volunteer roles include Pack and Box (assembly-line meal packing — 12+, 12-15 with chaperone), Produce Sorting (16+, in 40°F cooler), Cold Sorting (16+, frozen/refrigerated dock), Jan's Garden (16+, on-site learning garden), Food Donation Door Clerk (18+), and Senior Food Box Distribution (18+). The Junior Kernel Program is a competitive 64-hour summer immersive for high school and college students (16-23) running May 26-August 8, with leadership and Kids Camp counselor pathways.",
+      "description": "North Texas Food Bank is the regional Feeding America-affiliated hunger-relief organization serving 13 counties around Dallas/Plano. Volunteer roles include Pack and Box (assembly-line meal packing \u2014 12+, 12-15 with chaperone), Produce Sorting (16+, in 40\u00b0F cooler), Cold Sorting (16+, frozen/refrigerated dock), Jan's Garden (16+, on-site learning garden), Food Donation Door Clerk (18+), and Senior Food Box Distribution (18+). The Junior Kernel Program is a competitive 64-hour summer immersive for high school and college students (16-23) running May 26-August 8, with leadership and Kids Camp counselor pathways.",
       "scope": "state",
       "states": [
         "TX"
@@ -4075,9 +4080,9 @@
       "confidence": "high"
     },
     {
-      "name": "Dallas Zoo — Zoo Crew Youth Volunteers + Adult Volunteer Corps",
+      "name": "Dallas Zoo \u2014 Zoo Crew Youth Volunteers + Adult Volunteer Corps",
       "organization": "Dallas Zoo",
-      "description": "The Dallas Zoo's volunteer program contributes over 100,000 service hours annually. Zoo Crew is a structured youth volunteer program for teens 13-17 interested in a zoo or animal-care career — placements span guest services, special events, education, and animal care, with an application + Zoo Crew Training Program required. Adult volunteers (18+, U.S. national, with social security number for background check) staff Animal Nutrition Center, Conservation Ambassadors (interpretive guest engagement using biofacts), Special Events, Special Projects (welders/carpenters/electricians), and Keeper Aide roles. Conservation Ambassadors and Animal Nutrition Center volunteers commit to one weekly shift.",
+      "description": "The Dallas Zoo's volunteer program contributes over 100,000 service hours annually. Zoo Crew is a structured youth volunteer program for teens 13-17 interested in a zoo or animal-care career \u2014 placements span guest services, special events, education, and animal care, with an application + Zoo Crew Training Program required. Adult volunteers (18+, U.S. national, with social security number for background check) staff Animal Nutrition Center, Conservation Ambassadors (interpretive guest engagement using biofacts), Special Events, Special Projects (welders/carpenters/electricians), and Keeper Aide roles. Conservation Ambassadors and Animal Nutrition Center volunteers commit to one weekly shift.",
       "scope": "state",
       "states": [
         "TX"
@@ -4109,7 +4114,7 @@
     {
       "name": "Dallas Public Library Volunteer + Teen Advisory Council (TAC)",
       "organization": "Dallas Public Library",
-      "description": "The Dallas Public Library accepts volunteers age 14 and older across its branches. Roles include Book Master (shelving, sorting, weeding, display creation, branch logistics), Events and Programming Collaborator (event prep + day-of support), and Court-Ordered Volunteering (low-level non-violent misdemeanors). The Teen Advisory Council (TAC) is a teen-led program that creates engaging programs for Dallas teens — DIY YouTube videos, Teen Talk Safe Spaces, TikTok content, YA author chats, Summer Teen Kits, SMART Summer scavenger hunts, and branch-level volunteering. TAC participants earn volunteer hours useful for school and college applications.",
+      "description": "The Dallas Public Library accepts volunteers age 14 and older across its branches. Roles include Book Master (shelving, sorting, weeding, display creation, branch logistics), Events and Programming Collaborator (event prep + day-of support), and Court-Ordered Volunteering (low-level non-violent misdemeanors). The Teen Advisory Council (TAC) is a teen-led program that creates engaging programs for Dallas teens \u2014 DIY YouTube videos, Teen Talk Safe Spaces, TikTok content, YA author chats, Summer Teen Kits, SMART Summer scavenger hunts, and branch-level volunteering. TAC participants earn volunteer hours useful for school and college applications.",
       "scope": "state",
       "states": [
         "TX"
@@ -4140,9 +4145,9 @@
       "confidence": "high"
     },
     {
-      "name": "Perot Museum of Nature and Science — ConnecTEEN + Year-Round Volunteers",
+      "name": "Perot Museum of Nature and Science \u2014 ConnecTEEN + Year-Round Volunteers",
       "organization": "Perot Museum of Nature and Science",
-      "description": "The Perot Museum's volunteer program supports STEM education and visitor engagement at its downtown Dallas campus. ConnecTEEN is the application-only summer cohort program for students entering grades 10-12 — 5 cohorts of 2 weeks each (Mon-Fri 9am-4:30pm), running June through August, with workforce-readiness sessions, STEM-professional connections, and team-building. Cohort 1 starts early June; orientation precedes each cohort. Year-round volunteers (teens 14+, adults 18+) commit to a 10-hour/month minimum across placements: 3D Dinosaur, Discovery on the Spot, Guest Services, Traveling Exhibition Support, Exhibition Hall Support. ConnecTEEN is a required first step for teens who want to continue as year-round volunteers. Background checks required for all adults; the museum no longer accepts court-ordered service.",
+      "description": "The Perot Museum's volunteer program supports STEM education and visitor engagement at its downtown Dallas campus. ConnecTEEN is the application-only summer cohort program for students entering grades 10-12 \u2014 5 cohorts of 2 weeks each (Mon-Fri 9am-4:30pm), running June through August, with workforce-readiness sessions, STEM-professional connections, and team-building. Cohort 1 starts early June; orientation precedes each cohort. Year-round volunteers (teens 14+, adults 18+) commit to a 10-hour/month minimum across placements: 3D Dinosaur, Discovery on the Spot, Guest Services, Traveling Exhibition Support, Exhibition Hall Support. ConnecTEEN is a required first step for teens who want to continue as year-round volunteers. Background checks required for all adults; the museum no longer accepts court-ordered service.",
       "scope": "state",
       "states": [
         "TX"
@@ -4173,7 +4178,7 @@
       "confidence": "high"
     },
     {
-      "name": "SPCA of Texas Volunteer (Shelter, Clinic, Community Events — Adult + Youth Tracks)",
+      "name": "SPCA of Texas Volunteer (Shelter, Clinic, Community Events \u2014 Adult + Youth Tracks)",
       "organization": "SPCA of Texas",
       "description": "The SPCA of Texas is the largest animal welfare organization in North Texas, with shelter, clinic, and community programs across the Dallas-Fort Worth Metroplex. Volunteer tracks: Adults 18+ (background check, $15 application fee), Youth 15-17 (independent shifts, $15 fee), Kiddos 10-14 (must be accompanied by an adult 18+ during every shift, $15 fee). Off-site cat-location volunteers under 18 must be accompanied by an adult. Activities span shelter operations, clinic support, community education events, mobile adoption events, and dog/cat enrichment. Court-ordered service tracks have a $35 fee.",
       "scope": "state",
@@ -4199,6 +4204,165 @@
       "collegeAppValue": "high",
       "howToStart": "Submit an application via spca.org/support-us/volunteer/ways-to-volunteer (separate forms for 18+, 15-17, and 10-14). Call 214-461-1886 with questions. New volunteers register for orientation through the Volunteer Portal at spcatx.volunteerportal.org.",
       "_source": "https://spca.org/support-us/volunteer/ways-to-volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Food Bank For New York City Volunteer (Pantry, Repack, Community Kitchen)",
+      "organization": "Food Bank For New York City",
+      "description": "Food Bank For NYC is the city's largest hunger-relief organization (501(c)(3), member of Feeding America), serving all five boroughs. Volunteer roles span Pantry Distribution (14+ with adult chaperone if under 18), Hunts Point Distribution Center Repack in the Bronx (14+, 2.5-hr shifts), Community Kitchen meal service (18+), Older Adult Center Support (18+), and the SNAP Call Center (18+, bilingual). Group volunteering for ages 10+ available with adult chaperone (1:5 middle / 1:10 high school ratios). Individual sign-up via volunteer.foodbanknyc.org/calendar.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "food sorting & repacking",
+        "client-facing service",
+        "bilingual phone support"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Sign up at volunteer.foodbanknyc.org/calendar for individual shifts; for group volunteering of 10-25 email volunteer@foodbanknyc.org. Repack shifts at 355 Food Center Drive, Bronx; Community Kitchen at 252 W 116th St, Manhattan.",
+      "_source": "https://www.foodbanknyc.org/how-to-help/take-action/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "WCS Discovery Guide Youth Volunteer Program (Bronx Zoo + 4 sister facilities)",
+      "organization": "Wildlife Conservation Society (WCS)",
+      "description": "The Discovery Guide program is a structured educational youth volunteer program for ages 14-22 across all 5 WCS facilities in NYC: Bronx Zoo (16+ at Bronx specifically), Central Park Zoo, Prospect Park Zoo, Queens Zoo, and the New York Aquarium (Coney Island, Brooklyn). Discovery Guides engage zoo/aquarium visitors in fun, educational activities, assist with education programs, and support wildlife campaigns. Spring and summer cohorts; commitment varies by location. The companion Project TRUE (Teens Researching Urban Ecology) program for high school sophomores/juniors living in the Bronx is a separate research-track partnership with Fordham University.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 22,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "informal education",
+        "public speaking",
+        "wildlife biology",
+        "conservation messaging",
+        "interpretive design"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via bronxzoo.com/volunteering/discovery-guide-volunteer-program (or the equivalent page for each WCS facility). Bronx Zoo applicants must be 16+ at time of submission; other WCS sites accept ages 14+. Email questions to discoveryguide@wcs.org (Bronx), NYAvolunteers@wcs.org (Aquarium), CPZdiscoveryguides@wcs.org (Central Park).",
+      "_source": "https://bronxzoo.com/volunteering/discovery-guide-volunteer-program/learn-more",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "New York Public Library Teen Volunteer & Reading Ambassadors",
+      "organization": "New York Public Library (NYPL)",
+      "description": "NYPL serves Manhattan, the Bronx, and Staten Island through 92 branches plus four research libraries. Volunteer roles include branch-level support (shelving, programs, summer reading), the Teen Reading Ambassadors program (peer book recommendations for ages 12-18 readers), and virtual volunteering opportunities. Volunteers must be at least 14 years old; under-18 applicants need a parent/guardian to complete the consent section of the application. Brooklyn Public Library and Queens Public Library run separate teen volunteer programs (note: not the same system as NYPL).",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "education",
+        "civic",
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "literacy support",
+        "library operations",
+        "peer book recommendation",
+        "community programming"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit nypl.org/help/about-nypl/volunteer to apply. Branch coordinators match volunteers to roles. For Teen Reading Ambassadors, see nypl.org/remote-learning-resources/teen-reading-ambassadors. Brooklyn (bklynlibrary.org/support/volunteer) and Queens (volunteer.queenslibrary.org) systems are separate.",
+      "_source": "https://www.nypl.org/help/about-nypl/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "American Museum of Natural History (AMNH) Volunteer",
+      "organization": "American Museum of Natural History",
+      "description": "AMNH (Central Park West, Manhattan) is one of the largest natural history museums in the world. Adult volunteer roles support Visitor Services (Information Desk, Hall Explainer), Education programs, the Library, and special exhibitions. Minimum volunteer age is 16 (no upper limit). Time commitment is one-half day to several days per week for at least one year (some positions require longer). Applications via the volunteer portal. The companion Science Research Mentoring Program (SRMP) and paid teen internships are separate tracks for science-track high schoolers.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "education",
+        "arts",
+        "leadership"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "informal science education",
+        "public-facing interpretation",
+        "exhibit research",
+        "museum operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Complete the online application at amnh.samaritan.com (linked from amnh.org/about/careers/volunteer). After application review, AMNH staff will contact about specific openings matching your availability and interests.",
+      "_source": "https://www.amnh.org/about/careers/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "ASPCA NYC Volunteer (Adoption Center, Recovery & Rehabilitation Center)",
+      "organization": "American Society for the Prevention of Cruelty to Animals (ASPCA)",
+      "description": "The ASPCA's NYC operations center on the Adoption Center (424 E 92nd Street, Manhattan) and the Recovery & Rehabilitation Center (R&R) for dogs recovering from cruelty cases. Adoption Center Shelter Support volunteers must be 16+ \u2014 distinct Adult (18+) and Youth (16-17) application tracks. Recovery & Rehabilitation Center is 18+ only. Tasks include cleaning, sanitizing dishes/cages, walking and socializing animals, and general support. Volunteers must be able to stand 3 hours unassisted and lift 35 lbs. ASPCA does not currently accept court-ordered service.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal handling",
+        "shelter operations",
+        "cleaning and sanitation protocols",
+        "adoption-counselor support",
+        "trauma-informed animal care (R&R)"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Apply via aspca.volunteerportal.org/nycvolunteers (Adult 18+) or /nycyouthvolunteers (Youth 16-17). Recovery & Rehabilitation Center has a separate application \u2014 see aspca.org/get-involved/volunteer/volunteer-aspca-recovery-rehabilitation-center.",
+      "_source": "https://www.aspca.org/get-involved/volunteer/volunteer-aspca-adoption-center",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"

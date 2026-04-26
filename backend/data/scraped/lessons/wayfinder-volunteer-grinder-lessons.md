@@ -265,3 +265,27 @@
 |------|-------|-------|---------|-------|---------|
 | 2026-04-26 | 13 | 5 | 0 | TX (Dallas) — TX queue complete | NTFB, Dallas Zoo Zoo Crew, Dallas Public Library + TAC, Perot Museum ConnecTEEN, SPCA of Texas. All HIGH. TX queue → 15/12 COMPLETE. Cluster-by-metro held; 5 institutional anchors recipe yielded 5/5 on first pass. |
 
+## RUN 14 NOTES (2026-04-26 — NY queue first run, NYC institutional anchors)
+
+- Added 5 HIGH-confidence NYC entries on first NY run: Food Bank For NYC (14+ pantry/repack, 18+ kitchen, 10+ groups), WCS Discovery Guide (14-22 across 5 zoos/aquarium, 16+ at Bronx specifically), NYPL Teen Volunteer + Reading Ambassadors (14+, parent consent under 18), AMNH (16+, ½-day to several days/week × 1+ year minimum), ASPCA NYC Adoption Center + R&R (16+ adoption / 18+ R&R, distinct adult/youth tracks).
+- All 5 HIGH confidence — NYC follows the LA/SF/SD/Houston/Austin/Dallas pattern. Major-metro institutional teen pages publish ages cleanly even when the static HTML is hostile.
+- Mid-research drops: 0. Final batch hit 5/5 on first pass.
+- The "5 institutional anchors" recipe (Food Bank + Zoo/Aquarium + Library + Children's/Science Museum + SPCA/Humane) now holds across **6 metros and 4 states** (LA, SF, SD, Houston, Austin/Dallas, NYC). Confidence: this is a reliable starting recipe for any new state queue.
+- NY queue → 5/12 after run 14. Suggested run-15 cluster: NYC depth (Brooklyn Public Library teen vols, Brooklyn Children's Museum, Animal Care Centers of NYC, City Harvest, NY Cares group volunteer aggregator) plus possibly first Buffalo entry (Buffalo Zoo, Buffalo & Erie County Public Library). Or pivot into Buffalo/Rochester full upstate cluster — Strong Museum of Play (Rochester), Buffalo Zoo, Albany Pine Bush, Buffalo Niagara Heritage Village.
+- Stay at batch_size 5.
+
+### Source-specific run-14 notes
+- `foodbanknyc.org/how-to-help/take-action/volunteer/` — clean curl, ~575KB. Tier-by-role age policy laid out per opportunity card (Pantry Distribution 14+, Repack 14+, Community Kitchen 18+, Older Adult Center 18+, SNAP Call Center 18+ bilingual, group-only kitchen activities 10+ with 1:5 chaperone). Volunteer portal at volunteer.foodbanknyc.org (separate calendar subdomain, similar to NTFB / SF-Marin pattern).
+- `bronxzoo.com/volunteering/discovery-guide-volunteer-program/learn-more` + `/faq` — clean curl. Both pages confirm 14-22 across 5 WCS facilities, with Bronx Zoo's additional 16+ overlay. PDF application also linked at `/pdfs/bz-discovery-guide-application.pdf`. Five separate coordinator emails (one per WCS site) means apply to a specific site, not a global Discovery Guide pool.
+- `nypl.org/help/about-nypl/volunteer` — Incapsula-protected on direct curl AND internal `web_fetch` (Imperva captcha challenge). Verified ages from search-snippet excerpts of the canonical URL — same fallback as Houston Zoo / Houston SPCA / San Diego Zoo. Search snippet: "requires volunteers to be at least 14 years old. Additionally, volunteers under 18 must have a parent or guardian complete the consent section". Also referenced PDF application at nypl.org/sites/default/files/nypl_volunteer_application_aug_2013.pdf.
+- `amnh.org/about/careers/volunteer` — Cloudflare CAPTCHA on direct curl; internal `web_fetch` returned the full Samaritan portal SPA shell (no rendered content because the page is Angular). Verified ages from search-snippet excerpts: "minimum age for volunteers is 16; there is no upper limit ... regular commitment of time, ranging from one-half day to several days per week, for at least one year." amnh.samaritan.com/custom/1430/volunteer_home is the actual application portal.
+- `aspca.org/get-involved/volunteer/volunteer-aspca-adoption-center` — clean curl, in-page text confirms 16+ minimum and lift-35lbs/stand-3hr physical requirements. Distinct adult (18+) and youth (16-17) volunteer-portal applications at aspca.volunteerportal.org/nycvolunteers and /nycyouthvolunteers. R&R Center is a separate page with 18+ minimum.
+
+### Calibration notes from run 14
+- Three big-CMS-protected NYC sites (NYPL Incapsula, AMNH Cloudflare-CAPTCHA, ASPCA partial) — search-snippet verification carried us through. Reinforces the rule documented in run-11 (Houston Zoo) and run-10 (San Diego Zoo): when the static fetch is hostile, search-snippet excerpts of the canonical URL with quoted policy language are sufficient for HIGH confidence.
+- WCS bundle (5 zoos + aquarium under one Discovery Guide entry) is appropriate — same pattern as LAPL/SFPL/SDPL bundles.
+- AMNH's 1-year minimum commitment is the longest in the DB so far. Worth surfacing in the timeCommitment filter as "annual" or noting in description (currently "weekly" with year-long commitment in description).
+- Run-15 priorities: stick with NYC depth before pivoting upstate. Brooklyn-specific anchors (Brooklyn Children's Museum, Brooklyn Public Library, Brooklyn Botanic Garden, Brooklyn SPCA-equivalent which is BARC or ACC) will round out the borough coverage.
+
+| 2026-04-26 | 14 | 5 | 0 | NY (NYC institutional anchors) — first NY run | Food Bank For NYC (14+/18+/10+ tiers), WCS Discovery Guide (14-22 × 5 zoos/aquarium), NYPL Teen Vol + Reading Ambassadors (14+), AMNH (16+, year-long), ASPCA NYC Adoption Center + R&R (16+/18+). All HIGH. NY queue → 5/12. NYC anchor recipe held cleanly; 3 of 5 sites required search-snippet fallback (NYPL Incapsula, AMNH Cloudflare-CAPTCHA, ASPCA portal). |
+

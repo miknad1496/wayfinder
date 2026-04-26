@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T13:36:00+00:00",
-  "totalRuns": 13,
-  "totalAdded": 62,
+  "lastRun": "2026-04-26T14:05:00+00:00",
+  "totalRuns": 14,
+  "totalAdded": 67,
   "queue": [
     {
       "focus": "WA",
@@ -44,8 +44,8 @@
     {
       "focus": "NY",
       "target": 12,
-      "current": 0,
-      "status": "pending",
+      "current": 5,
+      "status": "in_progress",
       "metros": [
         "New York City",
         "Buffalo",
