@@ -16,6 +16,15 @@ const router = Router();
 // ALL admin endpoints require a valid token from an admin user
 router.use(async (req, res, next) => {
   try {
+    // ── Internal task token fallback (for scheduled-task automation) ──
+    // Allows external scheduled tasks to call admin endpoints without a user JWT.
+    // Set INTERNAL_TASK_TOKEN as a long random secret on Render.
+    const taskToken = req.headers['x-task-token'];
+    if (taskToken && process.env.INTERNAL_TASK_TOKEN && taskToken === process.env.INTERNAL_TASK_TOKEN) {
+      req.adminUser = { email: 'internal-task', isAdmin: true, _taskAuth: true };
+      return next();
+    }
+
     const token = req.headers.authorization?.replace('Bearer ', '');
     if (!token) {
       return res.status(401).json({ error: 'Admin authentication required' });
@@ -570,6 +579,195 @@ router.get('/user-activity', async (req, res) => {
   } catch (err) {
     console.error('User activity error:', err);
     res.status(500).json({ error: 'Failed to load user activity' });
+  }
+});
+
+
+// ─── PII Protection — backfill + audit endpoints (Apr 2026) ─────────
+
+import { redactPII } from '../services/pii-redactor.js';
+
+// POST /api/admin/pii-backfill — Run the backfill script in-process
+router.post('/pii-backfill', async (req, res) => {
+  try {
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const DATA_DIR = join(__dirname, '..', 'data');
+    const MEMORY_DIR = join(DATA_DIR, 'memory');
+    const TRAINING_DIR = join(DATA_DIR, 'training-capture');
+
+    const stats = { files: 0, filesModified: 0, entriesScanned: 0, entriesAlreadyRedacted: 0, entriesRedactedNow: 0, redactionsByType: {}, errors: [] };
+
+    function applyToEntry(entry) {
+      if (entry?.piiRedacted || entry?._piiRedacted) { stats.entriesAlreadyRedacted++; return { entry, changed: false }; }
+      let touched = false; const types = new Set();
+      for (const f of ['query', 'response', 'userMessage']) {
+        if (typeof entry[f] === 'string') {
+          const r = redactPII(entry[f]);
+          if (r.redactedCount > 0) { entry[f] = r.text; touched = true; r.types.forEach(t => types.add(t)); stats.entriesRedactedNow++; }
+        }
+      }
+      if (Array.isArray(entry.messages)) {
+        for (const m of entry.messages) {
+          if (m && typeof m.content === 'string' && m.role !== 'system') {
+            const r = redactPII(m.content);
+            if (r.redactedCount > 0) { m.content = r.text; touched = true; r.types.forEach(t => types.add(t)); }
+          }
+        }
+      }
+      if (touched) {
+        const rec = { count: types.size, types: Array.from(types), at: new Date().toISOString(), backfill: true };
+        if (entry.messages) entry._piiRedacted = rec; else entry.piiRedacted = rec;
+        types.forEach(t => { stats.redactionsByType[t] = (stats.redactionsByType[t] || 0) + 1; });
+      }
+      return { entry, changed: touched };
+    }
+
+    async function processFile(filepath) {
+      stats.files++;
+      const raw = await fs.readFile(filepath, 'utf8').catch(() => null);
+      if (!raw) { stats.errors.push({ file: filepath, error: 'read failed' }); return; }
+      const lines = raw.split('\n'); const out = []; let changed = false;
+      for (const line of lines) {
+        if (!line.trim()) { out.push(line); continue; }
+        let entry; try { entry = JSON.parse(line); } catch { out.push(line); continue; }
+        stats.entriesScanned++;
+        const r = applyToEntry(entry); if (r.changed) changed = true;
+        out.push(JSON.stringify(r.entry));
+      }
+      if (changed) {
+        const tmp = filepath + '.bf.tmp';
+        await fs.writeFile(tmp, out.join('\n'));
+        await fs.rename(tmp, filepath);
+        stats.filesModified++;
+      }
+    }
+
+    async function listJsonl(dir) {
+      try { return (await fs.readdir(dir)).filter(n => n.endsWith('.jsonl')).map(n => join(dir, n)); }
+      catch { return []; }
+    }
+
+    const memFiles = await listJsonl(MEMORY_DIR);
+    const trnFiles = await listJsonl(TRAINING_DIR);
+    for (const f of [...memFiles, ...trnFiles]) await processFile(f);
+
+    res.json({ success: true, stats });
+  } catch (err) {
+    console.error('[pii-backfill] error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// GET /api/admin/memory-recent?days=7 — Fetch recent memory entries for audit
+// Returns entries from the last N days, with a stable index for patching.
+router.get('/memory-recent', async (req, res) => {
+  try {
+    const days = Math.min(parseInt(req.query.days || '7', 10), 30);
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const MEMORY_DIR = join(__dirname, '..', 'data', 'memory');
+    const TRAINING_DIR = join(__dirname, '..', 'data', 'training-capture');
+
+    const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;
+    const out = { memory: [], training: [], totalEntries: 0 };
+
+    async function collect(dir, kind) {
+      try {
+        const files = await fs.readdir(dir);
+        for (const file of files.filter(f => f.endsWith('.jsonl'))) {
+          const filepath = join(dir, file);
+          const raw = await fs.readFile(filepath, 'utf8');
+          const lines = raw.split('\n');
+          for (let i = 0; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            let e; try { e = JSON.parse(lines[i]); } catch { continue; }
+            if (e._claudeAudited) continue;
+            const ts = e.timestamp || e.metadata?.timestamp;
+            if (ts && new Date(ts).getTime() < cutoff) continue;
+            const ref = { _file: file, _line: i, kind };
+            if (kind === 'memory') out.memory.push({ ...ref, query: e.query, response: e.response });
+            else out.training.push({ ...ref, messages: e.messages?.filter(m => m.role !== 'system') });
+            out.totalEntries++;
+          }
+        }
+      } catch (err) { /* dir may not exist */ }
+    }
+
+    await collect(MEMORY_DIR, 'memory');
+    await collect(TRAINING_DIR, 'training');
+    res.json({ success: true, days, ...out });
+  } catch (err) {
+    console.error('[memory-recent] error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /api/admin/memory-patch — Apply audit patches
+// Body: { patches: [{ kind, file, line, query?, response?, messageContents? }] }
+// where messageContents = ['user content...', 'assistant content...'] (system stripped)
+router.post('/memory-patch', async (req, res) => {
+  try {
+    const patches = Array.isArray(req.body?.patches) ? req.body.patches : [];
+    if (patches.length === 0) return res.json({ success: true, applied: 0 });
+
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const MEMORY_DIR = join(__dirname, '..', 'data', 'memory');
+    const TRAINING_DIR = join(__dirname, '..', 'data', 'training-capture');
+
+    // Group patches by file
+    const byFile = new Map();
+    for (const p of patches) {
+      const dir = p.kind === 'training' ? TRAINING_DIR : MEMORY_DIR;
+      const key = join(dir, p.file);
+      if (!byFile.has(key)) byFile.set(key, []);
+      byFile.get(key).push(p);
+    }
+
+    let applied = 0;
+    for (const [filepath, ps] of byFile) {
+      const raw = await fs.readFile(filepath, 'utf8').catch(() => null);
+      if (!raw) continue;
+      const lines = raw.split('\n');
+      for (const p of ps) {
+        if (typeof p.line !== 'number' || !lines[p.line]) continue;
+        let e; try { e = JSON.parse(lines[p.line]); } catch { continue; }
+        if (p.kind === 'memory') {
+          if (typeof p.query === 'string') e.query = p.query;
+          if (typeof p.response === 'string') e.response = p.response;
+        } else if (p.kind === 'training' && Array.isArray(p.messageContents) && Array.isArray(e.messages)) {
+          let idx = 0;
+          for (const m of e.messages) {
+            if (m.role === 'system') continue;
+            if (idx < p.messageContents.length && typeof p.messageContents[idx] === 'string') {
+              m.content = p.messageContents[idx];
+            }
+            idx++;
+          }
+        }
+        e._claudeAudited = { at: new Date().toISOString() };
+        lines[p.line] = JSON.stringify(e);
+        applied++;
+      }
+      const tmp = filepath + '.patch.tmp';
+      await fs.writeFile(tmp, lines.join('\n'));
+      await fs.rename(tmp, filepath);
+    }
+
+    res.json({ success: true, applied });
+  } catch (err) {
+    console.error('[memory-patch] error:', err);
+    res.status(500).json({ error: err.message });
   }
 });
 
