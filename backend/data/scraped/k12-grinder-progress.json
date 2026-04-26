@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T05:41:07.706Z",
-  "totalRuns": 7,
-  "totalEnriched": 45,
-  "totalSkipped": 11,
-  "notes": "Run 7: enriched 6 WA high (Bainbridge, Eagle Harbor, Summit Olympus [closed 2025], Summit Sierra, PRIDE Prep/Innovation HS, RVLA). Skipped 2 placeholder/reentry programs (Ella Baker Open Doors, Renton Technical HS placeholder). Advanced WA high offset 48 -> 56.",
+  "lastRun": "2026-04-26T06:13:10.056Z",
+  "totalRuns": 8,
+  "totalEnriched": 52,
+  "totalSkipped": 12,
+  "notes": "Run 8: enriched 7 WA high (Summit Atlas, Why Not You Academy [closing 2025-26], Lumen, Whatcom Intergenerational, Battle Ground HS, Summit View [alt], Prairie HS). Skipped 1 (Open Doors Battle Ground placeholder, alt <50). Queue offset 56 -> 64.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 56,
+      "offset": 64,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset (48 of 649); prior 32 manual entries already in enriched.json"
+      "note": "raw NCES offset (56 of 649); prior 32 manual entries already in enriched.json"
     },
     {
       "state": "WA",
