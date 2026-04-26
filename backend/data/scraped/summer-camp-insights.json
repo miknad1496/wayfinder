@@ -257,6 +257,30 @@
       "icon": "🔍",
       "items": [
         {
+          "label": "Math Kangaroo USA — Late-fee penalty is nearly 2x",
+          "detail": "Math Kangaroo USA charges $18 for standard registration (Sep 15 - Dec 31) but jumps to $35 if you wait until Jan 1 - Feb 1 — almost double. The contest is the same. (As of 2026-04-26.) Test day 2026 is Mar 19."
+        },
+        {
+          "label": "MOEMS — Individual students cannot enroll directly",
+          "detail": "MOEMS Math Olympiad only accepts SCHOOL TEAMS, not individual students. If a school does not run MOEMS, parents need to organize through a homeschool co-op, after-school program, or PTA. 2026-27 enrollment opens May 2026."
+        },
+        {
+          "label": "KiwiCo — Annual plan saves ~25-30% over monthly",
+          "detail": "KiwiCo monthly is ~$24/mo but the 12-month plan drops to ~$18.50/mo (save ~$66/yr per child) and 6-month to ~$19.95/mo. Many parents subscribe month-to-month and miss this; the discount is on the same crates."
+        },
+        {
+          "label": "MEL Science — First box 60% off during promo windows",
+          "detail": "MEL Science runs first-box 60%-off promos during Black Friday, Cyber Monday, and parts of summer — drops month-1 cost from $29.90 to ~$12. Annual plan is also '12 months for the price of 8' — equivalent to ~33% off."
+        },
+        {
+          "label": "ChessKid — Free tier covers everything that matters for under-rated kids",
+          "detail": "ChessKid Gold is $49/yr for lessons + puzzles, but FREE tier already includes unlimited play, slow chess, basic puzzles, and the FunMaster Mike video series. Most kids under USCF 800 don't need Gold. Many local chess clubs sponsor Gold memberships for active club members."
+        },
+        {
+          "label": "Prodigy Math — Paid tiers are 100% cosmetic, not content",
+          "detail": "Prodigy Math Level Up ($9.95/mo) and Ultimate ($14.95/mo) DO NOT unlock any additional math content — all 45,000+ curriculum-aligned questions are free. Paid tiers only unlock cosmetic upgrades, member zones, and progress dashboards. Don't pay unless your child specifically motivates around the rewards."
+        },
+        {
           "label": "Steve & Kate's Camp — auto-refund unused passes is unusual leverage",
           "detail": "Buy 15+ Day Passes ($114/day) instead of a Summer Pass; unused passes are AUTOMATICALLY refunded after summer. Most parents over-buy fearing waste — this model removes that risk entirely. Bay Area + LA only."
         },
@@ -351,30 +375,6 @@
         {
           "label": "Juni Learning — 2-week free trial is the smart entry point",
           "detail": "Juni Learning's monthly fees run $140-$450+ depending on cadence/subject — but the 2-week free trial includes actual classes (often via placement or intro course). Use the trial to verify instructor fit before committing; their model is 1:1 so chemistry with the teacher matters more than at small-group competitors."
-        },
-        {
-          "label": "iCode + Snapology + Bricks 4 Kidz — franchise quality varies by owner",
-          "detail": "iCode (244+ US locations), Snapology, and Bricks 4 Kidz all operate as franchises — curriculum is national but day-to-day quality, pricing, and instructor training depend on the local owner. Read Yelp + Google reviews specifically for the location you're considering, not the brand. Many partner with local parks & rec departments which can subsidize tuition for in-district residents."
-        },
-        {
-          "label": "Create & Learn — free intro classes are real teaching sessions",
-          "detail": "Create & Learn's free intro classes are full 50-minute live small-group lessons (3-5 students), not sales calls. Use them to test the small-group format before paying. They claim <5% of teacher applicants accepted — verifiable in instructor bios that list university and prior teaching experience."
-        },
-        {
-          "label": "Codingal — STEM.org accreditation matters for 529/employer reimbursement",
-          "detail": "Codingal is STEM.org-accredited (most independent online instructors are not). For families using a 529 education savings plan or seeking a credential-friendly receipt for employer reimbursement, accreditation matters. Free trial class available before committing to a paid camp."
-        },
-        {
-          "label": "Bricks 4 Kidz 2026 — choose-your-own-adventure model is a real upgrade",
-          "detail": "Bricks 4 Kidz rolled out 'choose your own adventure' camps in 2026 — every camper picks from hundreds of model plans (motorized models, classic sculptures, mosaics, programmable robots) instead of following the same plan as the room. Worth checking if your kid hated last year's prescriptive build sequence."
-        },
-        {
-          "label": "iCode 2026 season — May 26 to Aug 7 is the full window",
-          "detail": "iCode's 2026 summer camp lineup runs May 26 through August 7 — wider than most STEM franchises that compress into June-July. If you want shoulder-week coverage (post-school in May or pre-school in August) when other camps are closed, iCode is one of few options at this scale."
-        },
-        {
-          "label": "AISES National Conference travel scholarships",
-          "detail": "AISES (American Indian Science & Engineering Society) National Conference is the largest annual gathering of Indigenous STEM professionals + students. AISES offers travel scholarships covering airfare + lodging for Native youth attendees. Apply via AISES Pre-College student membership (free for tribal-enrolled + descendants)."
         }
       ]
     }
@@ -382,5 +382,6 @@
   "_meta": {
     "lastUpdated": "2026-04-26",
     "totalFieldNotes": 30
-  }
+  },
+  "lastUpdated": "2026-04-26"
 }

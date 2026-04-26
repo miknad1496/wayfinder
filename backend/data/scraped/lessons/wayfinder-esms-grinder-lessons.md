@@ -459,3 +459,41 @@ Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rota
 - Should we add a top-level `presaleWindow` or `memberOnlyRegistrationOpens` field? Multiple CA museums (CSC, Lawrence Hall, Birch) all gate first-tier access via membership presale, then open to public. Currently noted in description + deadline — could be a structured filter.
 - Most CA anchors have undisclosed scholarship policies that require email follow-up. Worth a "scholarshipDisclosed" boolean to rank programs by transparency for parents on tight budgets.
 
+
+## RUN 13 ADDITIONS (2026-04-26)
+
+### What worked
+- **Year-round / subscription / contest pivot.** Most prior nationwide-remote work hit summer camps + online classes. This run targeted ongoing K-8 enrichment that families can layer year-round: math contests (Math Kangaroo, MOEMS), subscription crates (KiwiCo, MEL Science), and free/cheap online platforms (ChessKid, Prodigy Math). Different category from prior runs — zero collisions on 6 candidates after careful pre-research dedup.
+- **Initial baseline was stale (totalRuns=2, programs=837).** The actual remote head was at run 12, programs=950. Pre-flight MUST re-fetch and re-check; the original 6 candidates I researched (Connected Camps, Brain Chase, Northwestern CTD, Tynker, Curious Cardinals, Synthesis) had ALL been added by other runs in parallel. Aborted that batch and pivoted to a fresh K-8 lens.
+- **$HOME/wf-push works as the writable clone location** (lessons confirmed this from run 12; reproduced here). /sessions/.../mnt/outputs has weird mount restrictions that locked .git/index.lock unrecoverably.
+
+### Failed patterns (process)
+- **Stale baseline trap.** Cloning into /tmp succeeded, doing dedup against /tmp/programs.json ran clean — but /tmp's clone was actually the FIRST clone of the day, before runs 3-12 had landed. The /sessions/.../mnt/outputs cp inherited that stale state. Lesson: ALWAYS do the live clone in $HOME/wf-push at the START of dedup, not at the END right before push.
+- **Bash heredoc + dollar-sign content collision.** Inline node -e with `$29.90` etc. hit shell variable expansion and produced corrupted JSON. Fix: write field-note content to a JSON file via heredoc (heredoc doesn't expand $ inside JSON when the body uses standard EOF), then load via fs.readFileSync.
+
+### Source notes (run 13)
+- **Math Kangaroo USA**: $18 reg fee Sep 15 - Dec 31; $35 late fee Jan 1 - Feb 1, 2026. Test day: 3rd Thursday in March, so March 19, 2026. Grades 1-12. 6+ million students globally.
+- **MOEMS**: SCHOOL TEAMS ONLY (max 35 students). 5 monthly contests Nov-March. Two divisions: Elementary 4-6, Middle School 6-8. 2026-27 enrollment opens May 2026. Cost not on landing — medium confidence.
+- **KiwiCo**: Monthly $24 → $18.50 on annual plan (~30% off). Crate lines: Kiwi (5-8), Atlas (6-11), Doodle (9-16), Tinker (9-16), Eureka (14+).
+- **MEL Science**: 3 lines for K-8 — MEL Kids ($29.90, ages 5-9+), MEL Physics ($39.90, 8+), MEL Chemistry ($39.90, 10-14+). Annual plan = 12 mo for 8 mo price.
+- **ChessKid**: Free tier is fully featured for play; Gold $49/yr unlocks 800+ lessons + all puzzles. Built-in safety: parent-only chat, no friend-adds without approval. 10M+ kids on platform. Built by Chess.com.
+- **Prodigy Math**: Free for ALL math content (45K+ questions, K-8, curriculum-aligned). Paid tiers ($9.95-$14.95/mo) are 100% cosmetic — they don't gate any educational content. 50M+ users.
+
+### Field-note insights captured (6 new)
+- Math Kangaroo late-fee is nearly 2x ($18 → $35) — register before Dec 31.
+- MOEMS school-teams-only (parents must organize through school/co-op).
+- KiwiCo annual plan saves ~25-30% (often missed).
+- MEL Science first-box 60% promo can drop month 1 to ~$12.
+- ChessKid free tier is enough for under-USCF-800 kids (don't auto-pay).
+- Prodigy Math paid tiers are cosmetic-only (don't pay for math content that's already free).
+
+### Calibration update
+- Stayed at 6/run. Hit 6/6 again. Will hold 6 for next nationwide-remote batch.
+- New PRE-FLIGHT discipline: clone to $HOME/wf-push FIRST, run dedup against THAT, before any research. /tmp baselines age out within minutes.
+
+## RUN HISTORY (continued)
+
+| Date | Run # | Added | Skipped | Focus | Notable |
+|------|-------|-------|---------|-------|---------|
+| 2026-04-26 | 13 | 6 (5hi/1md) | 6 (initial batch was all dupes from parallel runs) | Nationwide year-round/subscription/contest K-8 | Math Kangaroo USA, MOEMS, KiwiCo, MEL Science, ChessKid, Prodigy Math (free). +6 field-notes. Aborted initial batch (Connected Camps/Brain Chase/CTD/Tynker/Curious Cardinals/Synthesis — all already added by other runs). nationwide-remote queue 17/30. |
+

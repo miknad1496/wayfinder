@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 950,
+    "totalCount": 956,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -50,8 +50,8 @@
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
     "lastUpdated": "2026-04-26",
-    "totalPrograms": 950,
-    "verifiedCount": 87,
+    "totalPrograms": 956,
+    "verifiedCount": 93,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
     "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online→online, Remote→remote, all others→in-person."
@@ -41653,6 +41653,395 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_source": "https://aquarium.ucsd.edu/learn/camps/summer-camps"
+    },
+    {
+      "name": "Math Kangaroo USA — International Math Contest (Grades 1-12)",
+      "provider": "Math Kangaroo USA",
+      "category": "stem",
+      "subcategory": "math-competition",
+      "type": "year-round",
+      "cost": {
+        "amount": 18,
+        "type": "paid",
+        "display": "$18 standard registration (Sep 15 - Dec 31); $35 late registration (Jan 1 - Feb 1, 2026)"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "medium",
+      "format": "hybrid",
+      "location": {
+        "city": "Local Math Kangaroo Centers nationwide",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "Late registration closes Feb 1, 2026; contest March 19, 2026",
+      "description": "International annual math competition founded in France in 1991, now serving 95+ countries and 6+ million students. K-8 students can register through their school or a local Math Kangaroo center; the test is administered the third Thursday in March (March 19, 2026). 75-minute multiple-choice test: 24 questions for grades 1-4, 30 for grade 5+. All participants receive a t-shirt, certificate, and the chance at school/regional/national prizes. Strong addition to a student's intellectual portfolio for high-school admissions and gifted track placements. Local centers can be searched on the Math Kangaroo USA site.",
+      "url": "https://mathkangaroo.org/mks/",
+      "tags": [
+        "math",
+        "competition",
+        "international",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "gifted",
+        "talent-search"
+      ],
+      "duration": "75-minute test annually + optional year-round prep materials",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "local-centers + online proctoring",
+      "ages": "6-18 (grades 1-12)",
+      "dates": "Test day: March 19, 2026. Registration window: Sep 15, 2025 - Feb 1, 2026.",
+      "scholarshipAid": "Some local centers offer fee waivers for schools serving low-income students; contact the Math Kangaroo USA office",
+      "registrationUrl": "https://mathkangaroo.org/mks/registration/",
+      "howToStart": "Find your nearest Math Kangaroo Center at mathkangaroo.org and register the student before Dec 31 to avoid the late fee. Past papers are free for download for prep.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://mathkangaroo.org/mks/registration/"
+    },
+    {
+      "name": "Math Olympiads for Elementary and Middle Schools (MOEMS)",
+      "provider": "Mathematical Olympiads for Elementary and Middle Schools, Inc.",
+      "category": "stem",
+      "subcategory": "math-competition",
+      "type": "year-round",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "School/team enrollment fee — schools handle registration; check moems.org when 2026-27 enrollment opens in May 2026"
+      },
+      "selectivity": "selective",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "School-based teams nationwide",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "2026-27 enrollment opens May 2026; contests run Nov 2026 - March 2027",
+      "description": "MOEMS runs five monthly problem-solving contests from November through March for two divisions: Elementary (grades 4-6) and Middle School (grades 6-8). Up to 35 students per team. Schools, homeschool co-ops, or after-school programs enroll the team; individual students cannot enroll directly. Students who score in the top 50% nationally earn awards. Strong precursor to AMC 8/MATHCOUNTS and a measurable elementary gifted-math signal that high schools and admissions consultants recognize. Cost depends on team size; 2026-27 fees not yet posted as of April 2026.",
+      "url": "https://www.moems.org/",
+      "tags": [
+        "math",
+        "competition",
+        "problem-solving",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "gifted",
+        "team-based"
+      ],
+      "duration": "5 monthly contests (Nov-Mar), ~30 minutes each",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "school-based",
+      "ages": "9-14 (grades 4-8)",
+      "dates": "5 monthly contests: Nov 2026, Dec 2026, Jan 2027, Feb 2027, Mar 2027",
+      "scholarshipAid": "Subsidized team registrations available for Title I schools; contact MOEMS",
+      "registrationUrl": "https://www.moems.org/pages/register-today",
+      "howToStart": "Ask your child's school's gifted/math coordinator to register a team — MOEMS only enrolls teams, not individuals. Homeschool co-ops can also enroll. Watch moems.org in May 2026 for 2026-27 season opening.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.moems.org/pages/about-the-program"
+    },
+    {
+      "name": "KiwiCo Subscription Crates (Hands-On STEM/Art Kits, Ages 5-16+)",
+      "provider": "KiwiCo",
+      "category": "stem",
+      "subcategory": "subscription-kit",
+      "type": "year-round",
+      "cost": {
+        "amount": 24,
+        "type": "paid",
+        "display": "~$24/mo (monthly); ~$18.50-21.95/mo on 6/12-month plans"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "remote",
+      "location": {
+        "city": "Mailed to home",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "Rolling — start any month",
+      "description": "KiwiCo mails monthly hands-on project crates organized by age. K-8 lines: Kiwi Crate (ages 5-8, science/art/engineering), Atlas Crate (ages 6-11, geography), Doodle Crate (ages 9-16, art/design), and Tinker Crate (ages 9-16, physics/engineering). Eureka Crate (ages 14+) for older middle-schoolers. Each crate includes all materials and a step-by-step illustrated guide; projects take 30-90 minutes. Strong rainy-day backup and screen-free enrichment. Annual plan saves ~30%. Crates also available for one-time gift purchase without subscription.",
+      "url": "https://www.kiwico.com/",
+      "tags": [
+        "stem",
+        "art",
+        "subscription",
+        "hands-on",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "screen-free"
+      ],
+      "duration": "30-90 min per project; ongoing monthly",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "mail-delivery",
+      "ages": "5-16+ (multiple lines)",
+      "dates": "Rolling — start anytime, pause/cancel anytime",
+      "scholarshipAid": "Not advertised; KiwiCo Cares program donates crates to underserved schools",
+      "registrationUrl": "https://www.kiwico.com/us/store/cp/subscription-boxes-for-kids",
+      "howToStart": "Pick the right crate line for your child's age at kiwico.com; longer-term plans (6 or 12 months) cut the per-month cost ~25%.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.kiwico.com/us/store/cp/subscription-boxes-for-kids"
+    },
+    {
+      "name": "MEL Science Subscription Kits (STEM / Chemistry / Physics, Ages 5-14)",
+      "provider": "MEL Science",
+      "category": "stem",
+      "subcategory": "subscription-kit",
+      "type": "year-round",
+      "cost": {
+        "amount": 29.9,
+        "type": "paid",
+        "display": "From $29.90/mo (MEL Kids); $39.90/mo (Physics or Chemistry); annual plan ~33% off"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "remote",
+      "location": {
+        "city": "Mailed to home",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "Rolling — start any month",
+      "description": "MEL Science mails monthly hands-on STEM kits with companion app-based AR/VR lessons. Three lines for K-8: MEL Kids (STEM, ages 5-9+, $29.90/mo), MEL Physics (ages 8+, $39.90/mo), MEL Chemistry (ages 10-14+, $39.90/mo). Each kit includes all materials, lab equipment, and 2-3 experiments per month with safety-tested instructions. Kits are reusable across siblings; Chemistry includes a starter pack with goggles, beakers, and pipettes. Annual plan: 12 months for the price of 8. 100+ projects total in the back catalog.",
+      "url": "https://melscience.com/US-en/",
+      "tags": [
+        "stem",
+        "chemistry",
+        "physics",
+        "subscription",
+        "hands-on",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "ar-vr"
+      ],
+      "duration": "~1 hour per experiment; ongoing monthly",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "mail-delivery",
+      "ages": "5-14+ (lines split by age)",
+      "dates": "Rolling — start anytime",
+      "scholarshipAid": "First-box discounts up to 60% during promo periods (Black Friday, summer); no formal aid program",
+      "registrationUrl": "https://melscience.com/US-en/",
+      "howToStart": "Pick MEL Kids (5-9), MEL Physics (8+), or MEL Chemistry (10+) at melscience.com. Watch for first-box 60% discounts which can drop month 1 to ~$12.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://melscience.com/US-en/"
+    },
+    {
+      "name": "ChessKid.com — Online Chess for Kids (Free + Gold)",
+      "provider": "ChessKid (Chess.com)",
+      "category": "academic-enrichment",
+      "subcategory": "chess",
+      "type": "year-round",
+      "cost": {
+        "amount": 49,
+        "type": "paid",
+        "display": "Free tier (unlimited play); Gold $49/year for lessons, puzzles, computer levels, 800+ videos"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "Rolling — sign up any time",
+      "description": "ChessKid.com is the kids' chess platform built by Chess.com — 10M+ kids, ages roughly 5-13. Free tier includes unlimited live and slow games, basic puzzles, and the FunMaster Mike video series. Gold membership ($49/yr) unlocks 800+ lessons, all 10 computer chess levels, unlimited puzzles, and puzzle duels. Built-in safety: kids can only chat in games with their parents; no friend-adds without parental approval. Strong online activity for kids who like strategy games; ratings translate roughly to USCF scale. Used by many elementary chess clubs as their digital backbone.",
+      "url": "https://www.chesskid.com/",
+      "tags": [
+        "chess",
+        "strategy",
+        "online",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "free-tier",
+        "kid-safe"
+      ],
+      "duration": "Self-paced, year-round",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "online",
+      "ages": "5-14",
+      "dates": "Year-round; tournaments most weekends",
+      "scholarshipAid": "Free tier is fully featured for play and basic puzzles; many local chess clubs sponsor Gold memberships",
+      "registrationUrl": "https://www.chesskid.com/membership",
+      "howToStart": "Create a free account at chesskid.com; let the child play 10-20 games and try the free puzzles before deciding on Gold. Look for ~40-50% off Gold promos around back-to-school.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.chesskid.com/membership"
+    },
+    {
+      "name": "Prodigy Math Game (Free K-8 Adaptive Math)",
+      "provider": "Prodigy Education",
+      "category": "stem",
+      "subcategory": "math-game",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free for full curriculum coverage; optional Level Up $9.95/mo or $74.95/yr; Ultimate $14.95/mo or $99.95/yr"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Nationwide"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "ALL"
+        ]
+      },
+      "deadline": "Rolling — sign up anytime",
+      "description": "Free curriculum-aligned math game for grades 1-8, used by 50M+ students. Adventure RPG format (kids battle monsters by answering math problems) covers 45,000+ questions aligned with state standards. Free version includes all educational content; the optional Level Up ($9.95/mo) and Ultimate ($14.95/mo) memberships unlock cosmetic upgrades, member-only zones, and progress reports — they don't gate any math content. As of Feb 2026 the site is running 50% off paid tiers. Teachers can use the free educator dashboard to assign and track student progress.",
+      "url": "https://www.prodigygame.com/",
+      "tags": [
+        "math",
+        "game",
+        "free",
+        "online",
+        "nationwide",
+        "elementary",
+        "middle-school",
+        "adaptive",
+        "curriculum-aligned"
+      ],
+      "duration": "Self-paced, year-round",
+      "region": "Nationwide",
+      "scope": "national",
+      "states": [
+        "ALL"
+      ],
+      "subregion": "online",
+      "ages": "6-14 (grades 1-8)",
+      "dates": "Year-round",
+      "scholarshipAid": "Free tier covers 100% of math content; paid tiers are cosmetic/progress-tracking only",
+      "registrationUrl": "https://www.prodigygame.com/Memberships/math/",
+      "howToStart": "Sign up for the free parent or teacher account at prodigygame.com; the child gets curriculum-aligned math practice without paying. Skip Level Up/Ultimate unless the child specifically motivates around the cosmetic rewards.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.prodigygame.com/Memberships/math/"
     }
   ]
 }
