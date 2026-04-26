@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T17:21:58.356947Z",
-  "totalRuns": 4,
-  "totalAdded": 22,
+  "lastRun": "2026-04-26T17:55:00Z",
+  "totalRuns": 5,
+  "totalAdded": 25,
   "queue": [
     {
       "focus": "WA",
@@ -88,7 +88,7 @@
     {
       "focus": "national-anchors",
       "target": 25,
-      "current": 6,
+      "current": 9,
       "status": "in_progress",
       "themes": [
         "YMCA / Camp Fire / BGCA national programs",
@@ -106,7 +106,15 @@
         "Curious Cardinals 1:1 mentorship",
         "Synthesis Tutor (AI K-5 math)",
         "Brain Chase Summer Treasure Hunt",
-        "Northwestern CTD (gifted PreK\u2013grade 8)"
+        "Northwestern CTD (gifted PreK–grade 8)",
+        "Mathnasium nationwide tutoring",
+        "Code Ninjas nationwide STEM camps",
+        "CodaKid online coding"
+      ],
+      "anchorsAdded": [
+        "Mathnasium",
+        "Code Ninjas",
+        "CodaKid"
       ]
     }
   ]
