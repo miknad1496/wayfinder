@@ -7,6 +7,7 @@
 - batch_size: 8 schools (current setting in prompt)
 - typical_run_duration: 12-20 min (Run 10 ~10 min — batched parallel WebSearch is fast for clusters of district-grouped schools)
 - typical_skip_rate: ~25% structural; can spike to 60%+ when batch overlaps with manually-entered schools
+- last_calibration_change: 2026-04-26 — Run 26 confirmed batch_size=8 sustainable on a clean Grandview/Granger/Granite-Falls SD cluster (5/5 processable verified, 3 sub-50 skips). Same yield pattern as Run 12/23.
 - last_calibration_change: 2026-04-26 — Run 23 confirmed batch_size=8 sustainable on a clean Federal Way SD cluster (5/5 processable verified, 3 sub-50/special-ed skips). Same yield pattern as Run 12.
 - last_calibration_change: 2026-04-26 — Run 22 produced 8/8 verified, 0 skipped on offsets 194-201 — entire Evergreen SD (Clark County) cluster including 1 Skills Center (Cascadia Tech, vocational carve-out) and 1 Open Doors (consortium reengagement, enr=110 >50 threshold). Confirms district-cluster + carve-out rules now consistently produce zero-waste batches when the queue lands in a single-district band. **Recommend bumping batch_size to 10 for next run** while WA-high queue remains in clean comprehensive-HS Federal Way / Ferndale / Fife band (offsets 202+).
 
@@ -62,6 +63,10 @@
 
 - **NEW (Run 23):** **FWPS subdomain pattern is gold** — every Federal Way Public Schools high school has a self-titled subdomain (`dhs.fwps.org`, `fwhs.fwps.org`, `tjhs.fwps.org`, `tbhs.fwps.org`, `careeracademy.fwps.org`) that hosts a /staff page with full admin team in clean HTML. `site:fwps.org "[School]" principal staff` returns principal + 2-3 assistant principals + counselors in one snippet. Net: 5/5 verified principals in 5 searches.
 - **NEW (Run 23):** **District-cluster batches keep paying off** — Run 23's batch was 5 FWPS schools across the same 8-row NCES window. Same district-domain query pattern reused 5 times. Re-validates Run 10/11/12 finding that natural NCES alphabetical-by-city ordering keeps districts grouped automatically.
+
+
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
 
@@ -205,6 +210,10 @@
 
 - **NEW (Run 15, replaces Run 14 suggestion):** Run 15 yielded 6 verified + 2 skipped on the CVSD-Spokane band (offsets 112-119). Includes one Skills Center carve-out + one Open Doors consortium + one juvenile-rehab academic school — three "edge case" school types in one batch that all enriched cleanly thanks to prior runs' carve-out rules. **Recommend keeping batch_size=8** through the next 1-2 WA-high runs. After that, consider bumping to 10 once the queue clears the Spokane / Lewis County band (offsets 120+) and enters the larger comprehensive-HS bands. The dedup pre-filter (Run 9's open proposal) STILL hasn't been formalized in the prompt — Run 15 had 0 dups but the risk remains.
 
+
+- **NEW (Run 26):** Run 26 yielded 5 verified + 3 skipped (sub-50 alt placeholders) — exactly the Run 12/23 pattern when queue lands in a multi-district small-school band. Recommend keeping batch_size=8 through offsets 234-300 (Yakima Valley + Grant County districts likely have similar 1 comprehensive + 1-2 alt-placeholder pattern). Bumping to 10 still on hold pending a clean comprehensive-only run band.
+
+
 ## OPEN QUESTIONS / TODO FOR FUTURE RUNS
 
 - Worth normalizing rating fields across US News / Niche / GreatSchools to a unified 1-10 scale? Currently each entry stores source + scale separately.
@@ -248,7 +257,11 @@
 - **For interim/transitional principals (Tim Berndt at CERHS)**: cersd.org/article/1712841 hire announcement + dailyrecordnews byline gave 2 independent timestamps + biography. The school's own "meet-the-principal" page is too large to fetch but its existence + cross-confirms via two news sources is enough.
 - **District news archives (Daily Chronicle / Lake Chelan Mirror / Daily Record / Cheney Free Press / Port Townsend Leader)** consistently surface principal-transition announcements with quoted-name byline citations. For rural WA districts, local newspapers > district staff pages.
 
-### FAILED PATTERNS (added)
+#
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
+
+## FAILED PATTERNS (added)
 - **`cersd.org/o/cerhs/page/meet-the-principal`** returned >1MB inline tokens — too large to parse. Skip and rely on the two news-article sources instead.
 - **`site:tshs.cheneysd.org` WebSearch returned no results** — but a direct WebFetch on the same URL worked. Don't rely on `site:` operator for low-traffic small-school subdomains; just fetch the URL directly when you know it.
 
@@ -282,7 +295,11 @@
 - **Pre-dedup check is now mandatory** — bake it into the next prompt revision: before counting toward batch, name-check each candidate against `enriched.json`, advance past dups silently. If formalized, batch_size could safely bump to 10.
 - **Skill Center / juvenile rehab / Open Doors carve-outs from prior runs all held this run** — good signal that the schema is stable enough to allow batch_size 10 in the near future.
 
-### OPEN QUESTIONS / TODO
+#
+- **NEW (Run 26):** Run 26 yielded 5 verified + 3 skipped (sub-50 alt placeholders) — exactly the Run 12/23 pattern when queue lands in a multi-district small-school band. Recommend keeping batch_size=8 through offsets 234-300 (Yakima Valley + Grant County districts likely have similar 1 comprehensive + 1-2 alt-placeholder pattern). Bumping to 10 still on hold pending a clean comprehensive-only run band.
+
+
+## OPEN QUESTIONS / TODO
 - Should the inject pipeline normalize `enrollment` to a single most-recent NCES year + a `enrollmentRangeNote` for cases like Three Springs (88-116 range across sources)?
 - Should `principal` schema have a `principalStatus: permanent | interim | acting` field? Tim Berndt at CERHS would benefit from this.
 - The progress.json drift problem (runs 14+15 stale) suggests progress.json should be auto-derived from `k12-enriched.json` last-row offset rather than separately maintained, to prevent future stale-cursor bugs.
@@ -317,7 +334,11 @@
 - **Cross-state homonym disambiguation for "Lakewood"**: Lakewood, WA vs Lakewood, OH/CA/NJ/CO are all distinct districts. Always include "Lakewood Washington" or "WA" in the query to defeat the OH/NJ Lakewood HS dominance in search results.
 - **Outgoing/incoming principal transitions**: Colfax HS had David Gibb (out, 6 years) → R. Aaron Lippy (in, 2025-26). Two-article confirm via Whitman County Gazette (April 2025 nomination + 2026 follow-up "top story" recap). Lesson: when a principal-transition article surfaces, *always* search for a follow-up confirmation article 6-12 months later before recording the new name as current.
 
-### FAILED PATTERNS (added)
+#
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
+
+## FAILED PATTERNS (added)
 - **Niche / RateMyTeachers role-confusion**: For Lakes HS, an old RateMyTeachers archive listed Kären Mauer-Smith as "Registrar" — first-pass WebSearch synthesis surfaced this and contradicted the actual current "Principal" listing on the district staff page. Lesson: when role conflict appears in synthesis, *always* prefer the district's official staff page URL (lakes.cloverpark.k12.wa.us/students/school_groups/guidance_office/meet_our_staff) over third-party archives.
 - **Synthesis hallucination on conflicting names**: For Clover Park HS, first synthesis paragraph claimed "Tim Stults" as principal alongside "Jennifer Appel" — Stults is outdated. Lesson: when synthesis offers two candidate names, run a `"[Candidate]" [School] [district]` confirmation query before recording either; the wrong name will produce no LinkedIn/news hit, the right one will.
 
@@ -350,7 +371,11 @@
 - **Pre-dedup pass**: Run 17 had 0 dups (all 8 candidates were NEW), but the Run 9/16 proposal to formalize a pre-dedup pre-filter remains open.
 - **Recommend keeping batch_size=8** for next 1-2 runs. Queue at offset 155+ enters Coupeville / Creston / Cusick / Curlew band — likely lower density, more rural single-district schools.
 
-### OPEN QUESTIONS / TODO
+#
+- **NEW (Run 26):** Run 26 yielded 5 verified + 3 skipped (sub-50 alt placeholders) — exactly the Run 12/23 pattern when queue lands in a multi-district small-school band. Recommend keeping batch_size=8 through offsets 234-300 (Yakima Valley + Grant County districts likely have similar 1 comprehensive + 1-2 alt-placeholder pattern). Bumping to 10 still on hold pending a clean comprehensive-only run band.
+
+
+## OPEN QUESTIONS / TODO
 - Should `principalNotes` get a structured `principalRole: "primary | combined-superintendent | interim | acting"` field? Concrete HS would benefit. CERHS (Run 16's Tim Berndt interim) too.
 - Wikipedia-only principal name (Columbia HS Burbank Kyle Miller) — should the schema mark single-source-name entries with a `verificationStrength: "low|medium|high"` tag so a future pass can reprioritize re-verification?
 - `Open Doors` name-pattern: tighten or loosen? CPSD Open Doors at enr=218 was a real consortium program but auto-skipped. Future-prompt revision could carve out a "consortium reentry" track that processes these with a `schoolType: "open_doors_consortium"` schema.
@@ -385,7 +410,11 @@
 - **Press-archive disambiguation for transitional principals (Dayton's Guin Joyce)**: The Dayton Chronicle 2022 hire announcement + the Waitsburg Times 2024 superintendent-finalist article confirmed Joyce was *still* the secondary principal as of early 2024 (since she didn't get the super job, she stayed in the principal role). Two-source timestamp triangulation works well for "is this person still in the role?" verification.
 - **Single-quoted-name search for tier-2 small rural districts** (`"Steve Bollinger" Cusick Washington principal`) cleanly returned the K-12 Principal title + district directory hit. Worked first try without needing district homepage fetch.
 
-### FAILED PATTERNS (added)
+#
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
+
+## FAILED PATTERNS (added)
 - **Open Den (Coupeville alternative HS)** has been renamed to "Coupeville Open Academy" (board action March 2024, per Coupeville Sports). NCES still has it as "Open Den" with enrollment 57; Niche shows 48 (post-rename). Borderline <50 enrollment + name-change pending in NCES = skip. Future runs may want a `nameAlias` lookup.
 - **Don't conflate WA Davenport (Lincoln County, Gorillas) with FL/TX Davenport HS** in initial WebSearch — first results page mixed all three. Add state qualifier (`Washington` + `Lincoln County`) to disambiguate.
 
@@ -419,7 +448,11 @@
 - **Cooperative-district carve-out**: when a school's NCES record indicates cooperative arrangement (Wilbur-Creston, Wahkiakum-Naselle, etc.), record principal at the cooperative level + add `cooperativeNotes` field. New schema field worth formalizing.
 - **Acting/Interim principal annotation**: Coupeville HS this run has an "Acting" principal (Becky Cays). Recommend formalizing `principalStatus: permanent | interim | acting | on-leave` field as previously suggested in Run 16.
 
-### OPEN QUESTIONS / TODO
+#
+- **NEW (Run 26):** Run 26 yielded 5 verified + 3 skipped (sub-50 alt placeholders) — exactly the Run 12/23 pattern when queue lands in a multi-district small-school band. Recommend keeping batch_size=8 through offsets 234-300 (Yakima Valley + Grant County districts likely have similar 1 comprehensive + 1-2 alt-placeholder pattern). Bumping to 10 still on hold pending a clean comprehensive-only run band.
+
+
+## OPEN QUESTIONS / TODO
 - Should the inject pipeline normalize NCES "Open Den" → "Coupeville Open Academy" via a `nameAlias` map? Same for any other recent renames.
 - The cooperative-school principal arrangement (Wilbur-Creston shared admin) is a recurring rural-WA pattern. Worth a one-time pass to identify all WA cooperative HS arrangements and tag them.
 - Three principal transitions in 18 months at Coupeville HS suggest the entry will need re-verification soon. Worth a `verifyAfter: <date>` field to flag entries needing re-verification?
@@ -453,7 +486,11 @@
 - **Eatonville's Finalsite `principals-message` page carries the principal name + photo as plain text + image alt-text** (Amy Sturdivant). Page is ~80KB but inline-fetchable. Pattern: `[district].wednet.edu/[school-code]/about-us/principals-message` is a reliable single-source for small WA districts using Finalsite — bypass the staff-directory pages entirely.
 - **eastmont206.org/ehs/people staff page is large (~270KB)** but `Del Enders` shows up cleanly via regex on the saved-fetch file under both `>Email Del Enders` and the principal block. Confirmed Del Enders hire from May 2024 Wenatchee World article.
 
-### FAILED PATTERNS (added)
+#
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
+
+## FAILED PATTERNS (added)
 - **`site:edmonds.wednet.edu` WebSearch returned only general district hits** — no specific principal names per school surfaced in snippets. Going direct to school subdomain `*.edmonds.wednet.edu/about` was much faster. Lesson: for districts with subdomain-per-school sites, skip the district-level site: search and go straight to subdomain about pages.
 - **`mhs.edmonds.wednet.edu/about` and `mths.edmonds.wednet.edu/about` both exceed the inline token cap (74KB and 87KB)** — but they SAVE TO FILE and the saved file is parseable with the python regex pattern. Pattern is now: try inline fetch, on token-exceed go straight to the saved file path under `mnt/.claude/projects/.../tool-results/`.
 
@@ -484,7 +521,11 @@
 - **Dedup pre-filter is now demonstrably necessary**: progress.json was stale at offset 96 (showed Run 12 state) but actual enriched.json was already at Run 18 (offset 169). Required reading the actual enriched.json + progress.json fresh-clone-side-by-side to discover the drift. Run 16 lessons mentioned the same issue. Codification: next prompt iteration MUST add a step "before selecting batch, derive next-offset from `enriched.json` length-based proxy AND cross-check progress.json — use the higher offset as authoritative".
 - **Stale `/tmp/wayfinder` clone trap (re-confirmed)**: this run hit the Run 11 lesson — old `/tmp/wayfinder` from prior session was owned by `nobody:nogroup`, and that stale clone had Run 12-state data that was 7 runs out of date. The fresh `/sessions/jolly-loving-feynman/wfclone-$$` clone had the correct current state. **Always clone fresh on `/sessions/[session-id]/` first thing**, never trust an existing `/tmp/wayfinder`.
 
-### OPEN QUESTIONS / TODO
+#
+- **NEW (Run 26):** Run 26 yielded 5 verified + 3 skipped (sub-50 alt placeholders) — exactly the Run 12/23 pattern when queue lands in a multi-district small-school band. Recommend keeping batch_size=8 through offsets 234-300 (Yakima Valley + Grant County districts likely have similar 1 comprehensive + 1-2 alt-placeholder pattern). Bumping to 10 still on hold pending a clean comprehensive-only run band.
+
+
+## OPEN QUESTIONS / TODO
 - Should `principalStatus` be added as a first-class schema field? Run 16 (Tim Berndt CERHS interim), Run 19 (Dan Falk Scriber Lake interim), Run 18 (Becky Cays Coupeville acting) all have interim/acting flags — making it a first-class field would let the frontend filter "schools with permanent leadership" if useful.
 - Edmonds SD has 4 high schools all on the same Finalsite template — a one-time scraper to pull `Principal:` from each `*.edmonds.wednet.edu/about` page might be more efficient than the per-grinder-run pattern. Worth proposing if Edmonds-style multi-school subdomain districts cluster again.
 - Eastmont's 10-12 grade structure suggests a `feederSchool` field for sophomore-and-up campuses — would help college-search UX understand the actual entry grade.
@@ -517,7 +558,11 @@
 - **Same-campus colocation pattern**: Open Doors Youth Reengagement 1418 (NCES 530282003479) and Career Academy at Truman (NCES 530282003654, Run 23) both operate at 31455 28th Ave S, Federal Way under principal **Lynn Herink**. Two distinct NCES records, same physical campus, same principal. Worth a future schema field `colocatedWith: [ncessch]` so the frontend can display "campus partners" — both serve disconnected youth via different pathways (Big Picture Learning vs Open Doors WAC 392-700).
 - **Ferndale `ferndalehigh.ferndalesd.org`** publishes a "Principal's Message" subpage that surfaces in WebSearch as a standalone result containing the principal name reliably; the district news subdomain also publishes principal awards (Dhillon's WASA 2025 Cobel Scholarship), giving a second corroborating source within the district domain.
 
-### FAILED PATTERNS (new this run)
+#
+- **NEW (Run 26):** **Three-district mini-cluster (single-county / similar-archetype).** Offsets 226-233 spanned 3 small districts (Grandview, Granger, Granite Falls) but each was a comprehensive HS + Title I or alt sub-school. Single-query `[School] [city] enrollment AP graduation rate Niche` returned 4-of-5 fields per school in one snippet. Pattern: when cluster spans multiple districts, one well-shaped query template per school still beats running per-district `site:` queries.
+- **NEW (Run 26):** **Open Doors program "principal" expectation.** Non-consortium single-district Open Doors (Granite Falls Open Doors, NCES 530321003485) is co-located with the district's alternative HS (Crossroads HS, same address 205 N Alder Ave) and shares administration. Treat as `principal: null` with `principalNote` describing the consortium model — same handling as Run 11 Acceleration Academy and Run 20 EdCAP. The Facebook page (`facebook.com/time2graduate`) is the only public-facing site.
+
+## FAILED PATTERNS (new this run)
 - Don't skip `Open Doors` programs by default just because they're `schoolType: alternative` — when enrollment is meaningfully ≥50 (Federal Way's was 147), they have full Open Doors WAC 392-700 program profiles on `ospi.k12.wa.us`, public staff pages, and demographics. Treat them like reengagement vocational programs (not <50 placeholder alts). New rule: `schoolType: alternative` AND name contains `Open Doors` AND `enrollment ≥ 100` → process; else apply the existing <50 skip.
 
 ### SOURCE-SPECIFIC NOTES
@@ -534,6 +579,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 26    | 5        | 3       | WA high offsets 226-233 (Grandview SD + Granger SD + Granite Falls SD cluster). 5/5 processable verified (Grandview HS [Derek Anderson, 1168, 14% AP, 8 AP courses], Granger HS [principal unconfirmed, 408, Title I, 97% minority], Granite Falls HS [John Kniseley II + AP Dave Bianchini, 555, 50% AP], Crossroads HS [Bridgette Perrigoue, alt 212, intl-accredited 2005], Granite Falls Open Doors [reentry 52, co-located w/ Crossroads]). 3 sub-50 skips (Contract Learning Center 33, Step to College Open Doors 6, Harrington HS 43). Stale-clone trap from /tmp/wayfinder caught early — reclone to /sessions/[id]/wf-run13. Wall-clock research ~6 min, all WebSearch + 2 large-fetch parses (no useful yield). |
 | 2026-04-26 | 25    | 5        | 3       | WA high offsets 218-225 — Washington HS Tacoma (Kwesi Amoah, FPSD), Gates Secondary alt (Valinda Jones, FPSD), Freeman HS Rockford (principal null — unverifiable per Run 12 rule), Goldendale HS (Clayborne Henry), Lake Roosevelt Jr/Sr (Natalie Kontos, Colville Tribes service area). Skipped 3 sub-50 (Garfield-Palouse 33, Glenwood Secondary 39, Lake Roosevelt Alt 30). Stale-clone trap cost ~5 min before reclone — see Run 25 NOTES. |
 | 2026-04-26 | 24    | 6        | 2       | WA high offsets 210-217 — Federal Way Open Doors (Lynn Herink, also leads Career Academy at Truman per Run 23 — colocated programs), TAF@Saghalie STEM magnet (Christina Spencer + Director Essence Russ, partner-org STEM model), Ferndale HS (Ravinder Dhillon, WASA 2025 awardee), Fife HS (Paige Carroll, Trojans), River View HS Finley (Chris Davis), Franklin Pierce HS (Brixey Marzano, 40% AP). Skipped 2 sub-50 alt: Ferndale Re-Engagement (43), Fife Open Doors (29). All-WebSearch run, ~5 min wall clock. |
 | 2026-04-26 | 23    | 5        | 3       | WA high offsets 202-209 — Federal Way SD cluster.                                                      |

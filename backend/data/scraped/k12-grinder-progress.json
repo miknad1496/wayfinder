@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T14:28:59.386880Z",
-  "totalRuns": 25,
-  "totalEnriched": 161,
-  "totalSkipped": 67,
-  "notes": "Run 25: enriched 5 new WA HS (offsets 218-225). New: Washington HS Tacoma (Kwesi Amoah), Gates Secondary alt (Valinda Jones), Freeman HS Rockford (principal unverified), Goldendale HS (Clayborne Henry), Lake Roosevelt Jr/Sr (Natalie Kontos). Skipped 3 sub-50 (Garfield-Palouse 33, Glenwood Secondary 39, Lake Roosevelt Alt 30). Queue offset 218 -> 226.",
+  "lastRun": "2026-04-26T14:51:18.994Z",
+  "totalRuns": 26,
+  "totalEnriched": 166,
+  "totalSkipped": 70,
+  "notes": "Run 26: enriched 5 WA HS (offsets 226-233). New: Grandview HS (Derek Anderson), Granger HS (principal pending), Granite Falls HS (John Kniseley II), Crossroads HS (Bridgette Perrigoue), Granite Falls Open Doors. Skipped 3 sub-50 (Contract Learning Center 33, Step to College Open Doors 6, Harrington HS 43). Queue offset 226 -> 234.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 226,
+      "offset": 234,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 226 of 649; 161 cumulative grinder count"
+      "note": "raw NCES offset 234 of 649; 166 cumulative grinder count"
     },
     {
       "state": "WA",

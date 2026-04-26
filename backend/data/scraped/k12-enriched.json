@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T14:28:49Z",
+    "lastUpdated": "2026-04-26T14:51:10Z",
     "count": 161,
     "source": "NCES + verified web sources",
-    "note": "Run 25: +5 verified WA high (Franklin Pierce + Freeman + Goldendale + Lake Roosevelt cluster, offsets 218-225). Skipped 3 sub-50 (Garfield-Palouse enr=33, Glenwood Secondary enr=39, Lake Roosevelt Alt enr=30).",
-    "totalSchools": 161,
+    "note": "Run 26: +5 WA high (Grandview HS, Granger HS, Granite Falls HS, Crossroads HS, Granite Falls Open Doors). Skipped 3 sub-50 alt placeholders (Contract Learning Center enr=33, Step to College Open Doors enr=6, Harrington HS enr=43). Queue offset 226 -> 234.",
+    "totalSchools": 166,
     "lastUpdate": "2026-04-26",
     "lastRunAdded": 5,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 25: +5 verified WA high (Franklin Pierce + Freeman + Goldendale + Lake Roosevelt cluster, offsets 218-225). Skipped 3 sub-50 (Garfield-Palouse enr=33, Glenwood Secondary enr=39, Lake Roosevelt Alt enr=30).",
-    "totalVerified": 161,
+    "lastRunNote": "Run 26: +5 verified WA high (Grandview + Granger + Granite Falls SD cluster, offsets 226-233)",
+    "totalVerified": 166,
     "totalEnriched": 88,
     "lastRun": 22,
     "lastEnriched": "2026-04-26",
@@ -6764,6 +6764,235 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530313000496",
         "https://www.niche.com/k12/lake-roosevelt-jr-sr-high-school-coulee-dam-wa/",
         "https://www.publicschoolreview.com/lake-roosevelt-jr-sr-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530315000499",
+      "name": "Grandview High School",
+      "city": "Grandview",
+      "state": "WA",
+      "zip": "98930",
+      "district": "Grandview School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://ghs.gsd200.org/",
+      "principal": "Derek Anderson",
+      "enrollment": 1168,
+      "studentTeacherRatio": null,
+      "apParticipationRate": "14%",
+      "apCoursesOffered": 8,
+      "graduationRate": null,
+      "testScores": {
+        "mathProficient": "18%",
+        "readingProficient": "50%"
+      },
+      "notablePrograms": [
+        "Advanced Placement (8 AP courses)",
+        "Project Lead The Way (PLTW) curriculum",
+        "Gifted & Talented program",
+        "Yakima Valley regional CTE pathways"
+      ],
+      "demographics": {
+        "minorityPercent": "95%",
+        "majorityRace": "Hispanic/Latino"
+      },
+      "rating": {
+        "source": "US News / Niche / Public School Review",
+        "notes": "Bottom 50% per Public School Review 2026; high opportunity-gap profile (ProPublica) but offers full AP/PLTW/GT pathways"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ghs.gsd200.org/",
+        "https://www.gsd200.org/Page/1255",
+        "https://ghs.gsd200.org/about-us/staff-directory/staff-directory-home",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/grandview-school-district/grandview-high-school-20892",
+        "https://www.niche.com/k12/grandview-high-school-grandview-wa/",
+        "https://projects.propublica.org/schools/schools/530315000499"
+      ]
+    },
+    {
+      "ncessch": "530318000502",
+      "name": "Granger High School",
+      "city": "Granger",
+      "state": "WA",
+      "zip": "98932",
+      "district": "Granger School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": true,
+      "website": "https://hs.gsd.wednet.edu/",
+      "principal": null,
+      "principalNote": "Mike Carlson reported as principal since 2018 (Wikipedia); Niche and Public School Review surface conflicting more-recent names — confirmation pending direct district admin page (JS-rendered)",
+      "enrollment": 408,
+      "studentTeacherRatio": null,
+      "apParticipationRate": null,
+      "graduationRate": "84%",
+      "graduationRateYear": "2022-2023 4-year (83.9%)",
+      "testScores": {},
+      "demographics": {
+        "minorityPercent": "97%",
+        "economicallyDisadvantagedPercent": "94%"
+      },
+      "notablePrograms": [
+        "Comprehensive small-school program serving Lower Yakima Valley",
+        "CTE pathways including agriculture (Granger is Yakima Valley ag community)",
+        "Title I high-need designation"
+      ],
+      "rating": {
+        "source": "Niche / Public School Review / US News",
+        "notes": "Bottom 50% per Public School Review 2025; high economic-disadvantage profile"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://hs.gsd.wednet.edu/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/granger-school-district/granger-high-school-20896",
+        "https://www.niche.com/k12/granger-high-school-granger-wa/",
+        "https://www.publicschoolreview.com/granger-high-school-profile/98932",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5303180&ID=530318000502"
+      ]
+    },
+    {
+      "ncessch": "530321000506",
+      "name": "Granite Falls High School",
+      "city": "Granite Falls",
+      "state": "WA",
+      "zip": "98252",
+      "district": "Granite Falls School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://gfhs.gfalls.wednet.edu/granite-falls-high-school",
+      "principal": "John Kniseley II",
+      "assistantPrincipal": "Dave Bianchini",
+      "enrollment": 555,
+      "studentTeacherRatio": "20:1",
+      "apParticipationRate": "50%",
+      "graduationRate": null,
+      "testScores": {
+        "mathProficient": "33%",
+        "readingProficient": "67%"
+      },
+      "notablePrograms": [
+        "Advanced Placement (multiple subjects, ~50% AP participation)",
+        "Gifted & Talented program",
+        "Tigers athletics (2A division)",
+        "Outdoor / environmental education leveraging Cascade foothills setting"
+      ],
+      "mascot": "Tigers",
+      "rating": {
+        "source": "Niche / US News",
+        "notes": "Comprehensive 2A high school; above-state-average reading proficiency, below-state math"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://gfhs.gfalls.wednet.edu/granite-falls-high-school",
+        "https://www.gfalls.wednet.edu/Page/190",
+        "https://www.gfalls.wednet.edu/Page/188",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/granite-falls-school-district/granite-falls-high-school-20897",
+        "https://www.niche.com/k12/granite-falls-high-school-granite-falls-wa/"
+      ]
+    },
+    {
+      "ncessch": "530321003300",
+      "name": "Crossroads High School",
+      "city": "Granite Falls",
+      "state": "WA",
+      "zip": "98252",
+      "district": "Granite Falls School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://xrhs.gfalls.wednet.edu/about-us",
+      "principal": "Bridgette Perrigoue",
+      "principalNote": "Niche lists Bridgette Perrigoue; some recent sources reference an updated 'ALE Manager' role for 2025-26 — confirm at district staff directory if name changes",
+      "enrollment": 212,
+      "studentTeacherRatio": "21:1",
+      "schoolType": "alternative-learning-experience",
+      "yearEstablished": 2005,
+      "accreditation": "Internationally accredited",
+      "address": "205 North Alder Avenue, Granite Falls, WA 98252",
+      "phone": "(360) 283-4407",
+      "notablePrograms": [
+        "Alternative Learning Experience (ALE) model — small-class flexible scheduling",
+        "Personalized credit-recovery and re-engagement pathways",
+        "Designed for students who haven't found success in traditional HS settings",
+        "Serves grades 10-12 primarily (some 9th-grade exceptions)"
+      ],
+      "staff": {
+        "certificated": 15,
+        "support": 10
+      },
+      "rating": {
+        "source": "Niche / US News",
+        "notes": "Alternative-learning specialty school; rated separately from comprehensive HS metrics"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://xrhs.gfalls.wednet.edu/about-us",
+        "https://www.gfalls.wednet.edu/crhs",
+        "https://www.niche.com/k12/crossroads-high-school-granite-falls-wa/",
+        "https://www.greatschools.org/washington/granite-falls/5703-Crossroads-Alternative-High-School/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/granite-falls-school-district/crossroads-high-school-20898"
+      ]
+    },
+    {
+      "ncessch": "530321003485",
+      "name": "Granite Falls Open Doors",
+      "city": "Granite Falls",
+      "state": "WA",
+      "zip": "98252",
+      "district": "Granite Falls School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://www.facebook.com/time2graduate/",
+      "principal": null,
+      "principalNote": "Open Doors consortium / reentry program — administered by Granite Falls SD, no traditional principal role; co-located with Crossroads HS at 205 N Alder Ave",
+      "enrollment": 52,
+      "schoolType": "reentry",
+      "eligibility": "Ages 16-21 on Sept 1 who are not enrolled in high school or are not on track to graduate by age 21",
+      "address": "205 N Alder Ave, Granite Falls, WA 98252",
+      "phone": "(360) 283-4407",
+      "notablePrograms": [
+        "Open Doors Youth Reengagement (RCW 28A.175.100) statewide reentry pathway",
+        "Diploma + GED + post-secondary preparation routes",
+        "Wraparound case-management for disconnected youth"
+      ],
+      "demographics": {
+        "economicallyDisadvantagedPercent": "89%"
+      },
+      "rating": {
+        "source": "OSPI / NCES",
+        "notes": "Reentry consortium program — not directly comparable to traditional HS; serves 52 students (2023-24)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5303210&ID=530321003485",
+        "https://www.facebook.com/time2graduate/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/granite-falls-school-district/granite-falls-open-doors-158494",
+        "https://www.niche.com/k12/granite-falls-open-doors-granite-falls-wa/",
+        "https://ospi.k12.wa.us/student-success/learning-alternatives/open-doors-youth-reengagement"
       ]
     }
   ]
