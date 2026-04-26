@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T13:40:35.164054Z",
-  "totalRuns": 21,
-  "totalEnriched": 132,
+  "lastRun": "2026-04-26T13:48:05.615Z",
+  "totalRuns": 22,
+  "totalEnriched": 140,
   "totalSkipped": 59,
-  "notes": "Run 21: enriched 5 new + replaced 1 (Jackson HS \u2014 merged web research with NCES demographics). New: Ephrata HS, Cascade HS Everett, Everett HS, Sequoia HS, Everett Reengagement Academy. Skipped 3 (Sage Hills Open Doors enr=26 alt, NW Learning Center enr=1 alt, Sno Co Jail enr=0 placeholder). Queue offset 185 -> 194.",
+  "notes": "Run 22: enriched 8 new WA HS Evergreen SD (Clark County) cluster — offsets 194-201. New: Legacy HS, Evergreen HS, Mountain View HS, Cascadia Technical Academy Skills Center (vocational, NCES underreports), Heritage HS, Union HS, Henrietta Lacks (HeLa magnet), Open Doors Evergreen (reengagement consortium, co-located with Legacy). 0 skipped — clean Evergreen-SD district cluster batch. Queue offset 194 -> 202.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 194,
+      "offset": 202,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 194 of 649; 132 cumulative grinder count"
+      "note": "raw NCES offset 202 of 649; 140 cumulative grinder count"
     },
     {
       "state": "WA",

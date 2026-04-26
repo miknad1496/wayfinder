@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T13:40:35.164054Z",
-    "count": 137,
+    "lastUpdated": "2026-04-26T13:47:57.444Z",
+    "count": 145,
     "source": "NCES + verified web sources",
-    "note": "Run 21: enriched 6 WA high (Ephrata HS, Cascade HS Everett, Everett HS, Henry M Jackson HS Mill Creek, Sequoia HS choice/alt, Everett Reengagement Academy). Skipped 3 (Sage Hills Open Doors enr=26, NW Learning Center enr=1, Sno Co Jail enr=0 placeholder). Queue offset 185 -> 194.",
-    "totalSchools": 137,
+    "note": "Run 22: +8 verified WA HS Evergreen SD (Clark County) cluster, offsets 194-201. 0 skipped — clean Evergreen-SD cluster.",
+    "totalSchools": 145,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 5,
-    "lastRunReplaced": 1,
-    "lastRunNote": "Run 21: +6 verified WA HS Everett SD cluster (+ Ephrata), offsets 185-193. 3 skipped (Sage Hills Open Doors enr=26, NW Learning Center enr=1, Sno Co Jail enr=0).",
-    "totalVerified": 137,
+    "lastRunAdded": 8,
+    "lastRunReplaced": 0,
+    "lastRunNote": "Run 22: +8 verified WA HS Evergreen SD (Clark County) cluster, offsets 194-201. 0 skipped — clean Evergreen-SD cluster.",
+    "totalVerified": 145,
     "totalEnriched": 88,
-    "lastRun": 21,
+    "lastRun": 22,
     "lastEnriched": "2026-04-26",
-    "totalEntries": 137,
-    "verifiedCount": 137,
-    "totalCount": 137,
-    "lastUpdateNote": "Run 21: +6 verified WA HS Everett SD + Ephrata cluster"
+    "totalEntries": 145,
+    "verifiedCount": 145,
+    "totalCount": 145,
+    "lastUpdateNote": "Run 22: +8 verified WA HS Evergreen SD Clark County cluster"
   },
   "schools": [
     {
@@ -1743,7 +1743,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program \u2014 growth and excellence"
+        "2020 WA School Recognition Program — growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2560,7 +2560,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 \u2014 district's oldest HS",
+        "Founded 1952 — district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2916,7 +2916,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2966,7 +2966,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3156,7 +3156,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers \u2014 4A)",
+        "Athletics (Papermakers — 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3315,7 +3315,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3328,7 +3328,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3625,7 +3625,7 @@
         "Shannon McGowan",
         "Jacquie Monks"
       ],
-      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) — historical, not current.",
       "enrollment": 1380,
       "studentTeacherRatio": "22:1",
       "apParticipationRate": "30%",
@@ -4568,8 +4568,8 @@
       "address": "10320 Farwest Drive SW, Lakewood, WA 98498",
       "phone": "253-583-5550",
       "website": "https://lakes.cloverpark.k12.wa.us/",
-      "principal": "K\u00e4ren Mauer-Smith",
-      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role \u2014 current district pages list her as Principal.",
+      "principal": "Kären Mauer-Smith",
+      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role — current district pages list her as Principal.",
       "enrollment": 1195,
       "studentTeacherRatio": "20:1",
       "graduationRate": "91% (Niche; WA state avg 84%); 91.4% in 2022-23",
@@ -4687,7 +4687,7 @@
       "grades": "9-12",
       "website": "https://csd400.org/",
       "principal": "Kyle Miller",
-      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name \u2014 recommend cross-verifying against csd400.org admin page next pass.",
+      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name — recommend cross-verifying against csd400.org admin page next pass.",
       "enrollment": 223,
       "graduationRate": "86% (2022-23; range 64.9-87% across recent years)",
       "demographics": {
@@ -4931,7 +4931,7 @@
       "grades": "9-12",
       "website": "https://www.daytonsd.org/",
       "principal": "Guinevere 'Guin' Joyce",
-      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley \u2014 Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
+      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley — Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
       "enrollment": 90,
       "studentTeacherRatio": "8:1",
       "graduationRate": "60-79% (below WA state average of 84%; school size limits stability of 4-yr cohort metric)",
@@ -4968,7 +4968,7 @@
       "principal": "Joe Feist",
       "principalNotes": "Joe Feist serves as Principal of Deer Park HS (Stags). In 2024 Feist and Athletic Director Cameron Gilbert appealed the school's WIAA reclassification; the school officially began competing in the 2A division of the Greater Spokane League starting fall 2024 (Statesman-Examiner / Deer Park Gazette). Verified via dpsd.org school homepage.",
       "enrollment": 637,
-      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% \u2014 variance reflects different reporting cohorts)",
+      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% — variance reflects different reporting cohorts)",
       "leagueClassification": "2A (Greater Spokane League, joined fall 2024)",
       "address": "800 South Weber, Deer Park, WA 99006",
       "_verified": true,
@@ -5250,7 +5250,7 @@
         "https://www.niche.com/k12/meadowdale-high-school-lynnwood-wa/",
         "https://www.publicschoolreview.com/meadowdale-high-school-profile/98037"
       ],
-      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about \u2014 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
+      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about — 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
     },
     {
       "ncessch": "530240000356",
@@ -5447,7 +5447,7 @@
         "On-campus 2-4 days/week, 5-15 hrs/wk",
         "GED + diploma + dual-enrollment pathways"
       ],
-      "principalNote": "Open Doors consortium program \u2014 administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
+      "principalNote": "Open Doors consortium program — administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
     },
     {
       "ncessch": "530246000365",
@@ -5595,7 +5595,7 @@
       "gradeRange": "6-12",
       "studentTeacherRatio": "14:1",
       "athleticsSite": "https://www.entiattigers.com/",
-      "regionalContext": "Distant rural setting in Chelan County \u2014 only HS in Entiat SD"
+      "regionalContext": "Distant rural setting in Chelan County — only HS in Entiat SD"
     },
     {
       "ncessch": "530261000386",
@@ -5634,7 +5634,7 @@
     {
       "ncessch": "530267000391",
       "name": "Cascade High School",
-      "nameDisambiguator": "Everett \u2014 distinct from Cascade HS Leavenworth (530095001935)",
+      "nameDisambiguator": "Everett — distinct from Cascade HS Leavenworth (530095001935)",
       "city": "Everett",
       "state": "WA",
       "zip": "98203",
@@ -5739,7 +5739,7 @@
       "notablePrograms": [
         "Alternative Learning Experience (ALE) choice school within Everett SD",
         "8 academic terms per year (instead of semesters)",
-        "Class sizes \u226415 students",
+        "Class sizes ≤15 students",
         "Mandatory advisory class 4 days/week",
         "Three guiding principles: choice, equity, relationships",
         "Required CONNECTED orientation for new enrollees"
@@ -5795,6 +5795,350 @@
         "https://www.everettsd.org/domain/2111",
         "https://www.publicschoolreview.com/everett-reengagement-academy-profile",
         "https://www.greatschools.org/washington/everett/7279-Graduation-Alliance-Everett/"
+      ]
+    },
+    {
+      "ncessch": "530270000412",
+      "name": "Legacy High School",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98684",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "8-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://lhs.evergreenps.org/",
+      "principal": "Christen Palmer",
+      "associatePrincipal": "David Shoup",
+      "enrollment": 342,
+      "schoolCategory": "small school of choice",
+      "notablePrograms": [
+        "Small school of choice within Evergreen Public Schools",
+        "Designed for students who want a small community of teachers and peers",
+        "Co-located with Open Doors Evergreen reengagement program"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://lhs.evergreenps.org/",
+        "https://www.niche.com/k12/legacy-high-school-vancouver-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/legacy-high-school-20863",
+        "https://en.wikipedia.org/wiki/Legacy_High_School_(Vancouver,_Washington)"
+      ]
+    },
+    {
+      "ncessch": "530270000418",
+      "name": "Evergreen High School",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98664",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://ehs.evergreenps.org/",
+      "principal": "Dr. Sheree Gomez-Clark",
+      "enrollment": 1550,
+      "studentTeacherRatio": null,
+      "apCourses": 25,
+      "apParticipationRate": "13%",
+      "apPassRate": "56%",
+      "graduationRate": "89%",
+      "rating": {
+        "niche": "C+ (3.62/5)",
+        "usnews_state_rank": "253-328 in WA"
+      },
+      "demographics": {
+        "minorityEnrollment": "53%",
+        "economicallyDisadvantaged": "60%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ehs.evergreenps.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/evergreen-high-school-20864",
+        "https://www.niche.com/k12/evergreen-high-school-vancouver-wa/",
+        "https://www.publicschoolreview.com/evergreen-high-school-profile/98684"
+      ]
+    },
+    {
+      "ncessch": "530270001834",
+      "name": "Mountain View High School",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98683",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://mvhs.evergreenps.org/",
+      "principal": "Charles Anthony",
+      "associatePrincipals": [
+        "Tony Miles",
+        "Amber Moore",
+        "Charlie Tumelty"
+      ],
+      "enrollment": 1636,
+      "studentTeacherRatio": "21:1",
+      "apCourses": 25,
+      "apParticipationRate": "35%",
+      "apEnrollment": "36%",
+      "apPassRate": "82%",
+      "graduationRate": "91%",
+      "rating": {
+        "niche": "3.8/5 (Rank #6 Clark County)",
+        "usnews_state_rank": "135 in WA",
+        "usnews_national_rank": 8005
+      },
+      "testScores": {
+        "readingProficiency": "63%",
+        "mathProficiency": "31%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://mvhs.evergreenps.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/mountain-view-high-school-20865",
+        "https://www.niche.com/k12/mountain-view-high-school-vancouver-wa/",
+        "https://www.publicschoolreview.com/mountain-view-high-school-profile/98683"
+      ]
+    },
+    {
+      "ncessch": "530270002097",
+      "name": "Cascadia Technical Academy Skills Center",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98682",
+      "district": "Evergreen Public Schools (host) / 10-district consortium",
+      "level": "high",
+      "grades": "11-12",
+      "type": "vocational",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://www.cascadiatechnicalacademy.org/",
+      "address": "12200 NE 28th St, Vancouver, WA 98682",
+      "principal": null,
+      "principalNote": "Skills Center / consortium model — administered by Evergreen Public Schools as host. Foundation Executive Director: Kristina Bauska. Specific academy administrator name not surfaced in this run.",
+      "enrollment": 1600,
+      "enrollmentNotes": "NCES total=16 reflects host-district teacher-FTE-adjusted snapshot, NOT true cohort. Cascadia serves over 1,600 students across the Vancouver campus and 7 satellite campuses. Skills-Center carve-out per grinder rules.",
+      "schoolCategory": "skills center / CTE consortium",
+      "consortiumDistricts": [
+        "Battle Ground",
+        "Camas",
+        "ESD 112",
+        "Evergreen",
+        "Hockinson",
+        "La Center",
+        "Ridgefield",
+        "Vancouver",
+        "Washougal",
+        "Woodland"
+      ],
+      "notablePrograms": [
+        "20 CTE program areas (juniors and seniors only)",
+        "Administrative Office Professional",
+        "Applied Medical Sciences",
+        "Automotive Technology",
+        "Aviation Technology",
+        "Construction Technology",
+        "Cosmetology",
+        "Criminal Justice",
+        "Culinary, Baking and Pastry Arts",
+        "Dental Assisting",
+        "Diesel Technology",
+        "Fashion Design",
+        "Fire Science",
+        "Information Technology Systems",
+        "Pre-Engineering Design Technology",
+        "Tuition-free dual-credit + certifications/licenses"
+      ],
+      "founded": 1983,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cascadiatechnicalacademy.org/",
+        "https://www.cascadiatechnicalacademy.org/page/what-is-cascadia-tech",
+        "https://www.cascadiatechfoundation.org/",
+        "https://www.washingtonskillscenters.org/article/2200553"
+      ]
+    },
+    {
+      "ncessch": "530270002711",
+      "name": "Heritage High School",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98682",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://hhs.evergreenps.org/heritage-home",
+      "principal": "Derek Garrison",
+      "enrollment": 1588,
+      "studentTeacherRatio": "21:1",
+      "apParticipationRate": "19%",
+      "graduationRate": "88%",
+      "rating": {
+        "usnews_state_rank": "252 in WA",
+        "usnews_national_rank": 13405
+      },
+      "demographics": {
+        "minorityEnrollment": "54%",
+        "economicallyDisadvantaged": "61%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://hhs.evergreenps.org/heritage-home",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/heritage-high-school-20867",
+        "https://www.niche.com/k12/heritage-high-school-vancouver-wa/",
+        "https://www.publicschoolreview.com/heritage-high-school-profile/98682"
+      ]
+    },
+    {
+      "ncessch": "530270003222",
+      "name": "Union High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://uhs.evergreenps.org/union",
+      "address": "6201 NW Friberg-Strunk St, Camas, WA 98607",
+      "principal": "Gregg Brown",
+      "enrollment": 1987,
+      "studentTeacherRatio": "23:1",
+      "apParticipationRate": "40%",
+      "graduationRate": "97%",
+      "averageSAT": 1220,
+      "averageACT": 27,
+      "averageGPA": 3.59,
+      "testScores": {
+        "readingProficiency": "66%",
+        "mathProficiency": "38%"
+      },
+      "rating": {
+        "niche": "A- (Rank #3 Clark County)",
+        "usnews_state_rank": "81 in WA",
+        "usnews_national_rank": 4904
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://uhs.evergreenps.org/union",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/union-high-school-20868",
+        "https://www.niche.com/k12/union-high-school-camas-wa/",
+        "https://www.publicschoolreview.com/union-high-school-profile/98607"
+      ]
+    },
+    {
+      "ncessch": "530270003463",
+      "name": "Henrietta Lacks Health and Bioscience High School",
+      "alias": "HeLa",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98683",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": true,
+      "magnetProgram": true,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://hela.evergreenps.org/",
+      "principal": "Allison Harding",
+      "enrollment": 466,
+      "studentTeacherRatio": "19:1",
+      "apParticipationRate": "78%",
+      "graduationRate": "97%",
+      "schoolCategory": "STEM / health & bioscience magnet",
+      "notablePrograms": [
+        "Pathway courses in Pharmacy",
+        "Pathway courses in Biotechnology",
+        "Pathway courses in Public Health",
+        "Pathway courses in Nursing",
+        "Pathway courses in Biomedical Engineering"
+      ],
+      "rating": {
+        "niche": "B+",
+        "usnews_state_rank": "Top 50% WA"
+      },
+      "namedAfter": "Henrietta Lacks (HeLa cell line) — first US public institution named after Lacks (2013)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://hela.evergreenps.org/",
+        "https://en.wikipedia.org/wiki/Henrietta_Lacks_Health_and_Bioscience_High_School",
+        "https://www.niche.com/k12/henrietta-lacks-health-and-bioscience-high-school-vancouver-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/evergreen-school-district/henrietta-lacks-health-and-bioscience-high-school-hela-147716"
+      ]
+    },
+    {
+      "ncessch": "530270003567",
+      "name": "Open Doors Evergreen",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98684",
+      "district": "Evergreen Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburban",
+      "website": "https://lhs.evergreenps.org/open-doors",
+      "principal": null,
+      "principalNote": "Open Doors consortium / WA OSPI Youth Reengagement program. Co-located with Legacy HS; primary contact at Legacy HS is Shawn Wallace. Program-level oversight by Evergreen Public Schools + ESD 112 + Clark College.",
+      "enrollment": 110,
+      "schoolCategory": "reengagement / dropout reentry",
+      "consortiumPartners": [
+        "Evergreen Public Schools",
+        "ESD 112",
+        "Clark College"
+      ],
+      "eligibility": "Youth ages 16-21 who dropped out of school or are not expected to graduate by age 21",
+      "graduationRate": "5% (NCES — typical of reengagement programs serving previously disconnected youth)",
+      "notablePrograms": [
+        "Performance-based individualized learning model",
+        "Multiple pathways to a high school diploma",
+        "Community partnerships and post-secondary on-ramps",
+        "Coordinated with Clark College Open Doors program"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://lhs.evergreenps.org/open-doors",
+        "https://ospi.k12.wa.us/student-success/learning-alternatives/open-doors-youth-reengagement",
+        "https://www.niche.com/k12/open-doors-evergreen-vancouver-wa/",
+        "https://www.clark.edu/academics/transitional-ed/open-doors.php",
+        "https://www.esd112.org/opendoors/"
       ]
     }
   ]
