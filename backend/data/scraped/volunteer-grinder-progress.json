@@ -1,0 +1,95 @@
+{
+  "lastRun": "2026-04-26T06:04:40.822939Z",
+  "totalRuns": 1,
+  "totalAdded": 5,
+  "queue": [
+    {
+      "focus": "WA",
+      "target": 30,
+      "current": 5,
+      "status": "in_progress",
+      "metros": [
+        "Seattle",
+        "Bellevue",
+        "Tacoma",
+        "Spokane",
+        "Vancouver",
+        "Olympia"
+      ]
+    },
+    {
+      "focus": "CA",
+      "target": 15,
+      "current": 0,
+      "status": "pending",
+      "metros": [
+        "Los Angeles",
+        "San Francisco",
+        "San Diego",
+        "Sacramento"
+      ]
+    },
+    {
+      "focus": "TX",
+      "target": 12,
+      "current": 0,
+      "status": "pending",
+      "metros": [
+        "Houston",
+        "Austin",
+        "Dallas",
+        "San Antonio"
+      ]
+    },
+    {
+      "focus": "NY",
+      "target": 12,
+      "current": 0,
+      "status": "pending",
+      "metros": [
+        "New York City",
+        "Buffalo",
+        "Rochester",
+        "Albany"
+      ]
+    },
+    {
+      "focus": "MI",
+      "target": 10,
+      "current": 0,
+      "status": "pending",
+      "metros": [
+        "Detroit",
+        "Ann Arbor",
+        "Grand Rapids"
+      ]
+    },
+    {
+      "focus": "MA",
+      "target": 8,
+      "current": 0,
+      "status": "pending",
+      "metros": [
+        "Boston",
+        "Cambridge",
+        "Worcester"
+      ]
+    },
+    {
+      "focus": "national-gaps",
+      "target": 20,
+      "current": 0,
+      "status": "pending",
+      "themes": [
+        "disability services",
+        "STEM mentorship",
+        "civic engagement",
+        "cultural preservation",
+        "veterans support",
+        "refugee services",
+        "LGBTQ+ youth support",
+        "ocean/marine conservation"
+      ]
+    }
+  ]
+}
