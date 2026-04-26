@@ -1,13 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T06:37:41.237Z",
+    "lastUpdated": "2026-04-26",
     "count": 55,
     "source": "NCES + verified web sources",
     "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
-    "totalSchools": 61,
+    "totalSchools": 67,
     "lastUpdate": "2026-04-25",
     "lastRunAdded": 6,
-    "lastRunReplaced": 0
+    "lastRunReplaced": 0,
+    "lastRunNote": "Run 11: +6 verified WA high (Bethel + Blaine + Bremerton SD cluster, offsets 80-87)"
   },
   "schools": [
     {
@@ -1714,7 +1715,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program — growth and excellence"
+        "2020 WA School Recognition Program \u2014 growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2531,7 +2532,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 — district's oldest HS",
+        "Founded 1952 \u2014 district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2580,6 +2581,290 @@
         "https://slhs.bethelsd.org/welcome/about-us",
         "https://www.niche.com/k12/spanaway-lake-high-school-spanaway-wa/academics/",
         "https://www.usnews.com/education/best-high-schools/washington/districts/bethel-school-district/spanaway-lake-high-school-20748"
+      ]
+    },
+    {
+      "ncessch": "530048002200",
+      "name": "Challenger High School",
+      "city": "Spanaway",
+      "state": "WA",
+      "zip": "98387",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(253)800-6800",
+      "latitude": 47.092652,
+      "longitude": -122.430969,
+      "website": "https://chs.bethelsd.org/",
+      "principal": "Bethany Aoki",
+      "enrollment": 366,
+      "studentTeacherRatio": "18:1",
+      "schoolType": "alternative",
+      "testScores": {
+        "mathProficient": "10%",
+        "readingProficient": "55%"
+      },
+      "notablePrograms": [
+        "Alternative HS for Bethel SD (founded 1974)",
+        "Four 9-week quarter system",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented",
+        "Smaller class sizes for at-risk learners"
+      ],
+      "rating": {
+        "source": "Niche"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chs.bethelsd.org/welcome/about-us",
+        "https://chs.bethelsd.org/academics/school-profile",
+        "https://www.niche.com/k12/challenger-high-school-spanaway-wa/"
+      ]
+    },
+    {
+      "ncessch": "530048003003",
+      "name": "Graham Kapowsin High School",
+      "city": "Graham",
+      "state": "WA",
+      "zip": "98338",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(253)800-6100",
+      "latitude": 47.05741,
+      "longitude": -122.286679,
+      "website": "https://gkhs.bethelsd.org/",
+      "principal": "Kevin Zamira",
+      "enrollment": 2105,
+      "studentTeacherRatio": "25:1",
+      "apParticipationRate": "47%",
+      "graduationRate": "94%",
+      "demographics": {
+        "minorityEnrollment": "54%",
+        "economicallyDisadvantaged": "47%"
+      },
+      "notablePrograms": [
+        "Comprehensive AP",
+        "Project Lead The Way (PLTW)",
+        "JROTC",
+        "Athletics (multiple sports)",
+        "2023 expansion bond improvements"
+      ],
+      "rating": {
+        "source": "US News",
+        "notes": "#172 in Washington high schools"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://gkhs.bethelsd.org/welcome/about-us",
+        "https://gkhs.bethelsd.org/welcome/principal-s-message",
+        "https://www.niche.com/k12/graham-kapowsin-high-school-graham-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bethel-school-district/graham-kapowsin-high-school-20750"
+      ]
+    },
+    {
+      "ncessch": "530048003284",
+      "name": "Pierce County Skills Center",
+      "city": "Puyallup",
+      "state": "WA",
+      "zip": "98375",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "vocational",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(253)800-5950",
+      "latitude": 47.109551,
+      "longitude": -122.356678,
+      "website": "https://pcsc.bethelsd.org/",
+      "principal": "Michelle Ledbetter",
+      "principalTitle": "Director",
+      "enrollment": 279,
+      "capacity": 900,
+      "schoolType": "vocational",
+      "notablePrograms": [
+        "17 preparatory CTE programs",
+        "Aerospace Composites",
+        "Aerospace Machining/Fabrication",
+        "Automotive Technology",
+        "Construction Trades",
+        "Cosmetology",
+        "Criminal Justice",
+        "Culinary Arts",
+        "DigiPen Video Game Development (AP CS Principles)",
+        "Fire Science",
+        "Medical Careers",
+        "PC Networking",
+        "Pre-Pharmacy Technology",
+        "Pre-Physical Therapy & Sports Medicine",
+        "Pre-Veterinary Technology"
+      ],
+      "serviceArea": "Junior/senior students from 10 Pierce County school districts",
+      "address": "16117 Canyon Road E, Puyallup, WA 98375",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://pcsc.bethelsd.org/welcome/about-pcsc",
+        "https://pcsc.bethelsd.org/programs/programs",
+        "https://pcsc.bethelsd.org/"
+      ]
+    },
+    {
+      "ncessch": "530048003466",
+      "name": "Acceleration Academy",
+      "city": "Spanaway",
+      "state": "WA",
+      "zip": "98387",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(253)267-1045",
+      "latitude": 47.109051,
+      "longitude": -122.435396,
+      "website": "https://www.accelerationacademy.org/bethel",
+      "enrollment": 405,
+      "studentTeacherRatio": "51:1",
+      "schoolType": "alternative",
+      "testScores": {
+        "mathProficient": "10%",
+        "readingProficient": "55%"
+      },
+      "demographics": {
+        "minorityEnrollment": "57%",
+        "economicallyDisadvantaged": "62%"
+      },
+      "notablePrograms": [
+        "Credit-recovery / dropout-reentry alt program",
+        "Operated in partnership with Acceleration Academies (national org) + Bethel SD",
+        "Two paths: fully online OR hybrid (in-person + online)",
+        "One-course-at-a-time pacing",
+        "Tuition-free for eligible Bethel SD students"
+      ],
+      "admission": "Eligibility: credit ratio <65% (gr 11) or <75% (gr 12); age 16+ by Sep 1; must have had ~2 yrs HS attendance",
+      "address": "16218 Pacific Ave. S, Spanaway, WA 98387",
+      "hours": "Mon 9a-5p; Tue-Thu 8a-6p; Fri 9a-3p",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.bethelsd.org/programs/bethel-acceleration-academy",
+        "https://www.accelerationacademy.org/bethel",
+        "https://www.niche.com/k12/acceleration-academy-spanaway-wa/"
+      ]
+    },
+    {
+      "ncessch": "530057000132",
+      "name": "Blaine High School",
+      "city": "BLAINE",
+      "state": "WA",
+      "zip": "98230",
+      "district": "Blaine School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "phone": "(360)332-6045",
+      "latitude": 48.9932,
+      "longitude": -122.737,
+      "website": "https://www.blainesd.org/o/blaine-high-school",
+      "principal": "Beth Eide",
+      "enrollment": 589,
+      "studentTeacherRatio": "18:1",
+      "apParticipationRate": "14%",
+      "testScores": {
+        "mathProficient": "48%",
+        "readingProficient": "79%"
+      },
+      "demographics": {
+        "minorityEnrollment": "32%",
+        "economicallyDisadvantaged": "44%"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented program"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B",
+        "notes": "#199 Best Public High Schools in Washington (Niche)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.blainesd.org/o/blaine-high-school",
+        "https://www.blainesd.org/o/blaine-high-school/staff",
+        "https://www.niche.com/k12/blaine-high-school-blaine-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/blaine-school-district/blaine-high-school-20753"
+      ]
+    },
+    {
+      "ncessch": "530066000139",
+      "name": "Bremerton High School",
+      "city": "Bremerton",
+      "state": "WA",
+      "zip": "98337",
+      "district": "Bremerton School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)473-0800",
+      "latitude": 47.57327,
+      "longitude": -122.63874,
+      "website": "https://bhs.bremertonschools.org/",
+      "principal": "Erin Wilkinson",
+      "principalNotes": "Joined Bremerton SD as BHS principal Fall 2024",
+      "enrollment": 1279,
+      "studentTeacherRatio": "21:1",
+      "apParticipationRate": "22%",
+      "testScores": {
+        "mathProficient": "18%",
+        "readingProficient": "47%"
+      },
+      "demographics": {
+        "minorityEnrollment": "56%",
+        "economicallyDisadvantaged": "59%"
+      },
+      "notablePrograms": [
+        "Advanced Placement (district-wide 40 AP courses across schools)",
+        "CTE pathway connections with district CTE programs"
+      ],
+      "rating": {
+        "source": "US News + Niche"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://bhs.bremertonschools.org/",
+        "https://bhs.bremertonschools.org/71316_2",
+        "https://www.niche.com/k12/bremerton-high-school-bremerton-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bremerton-school-district/bremerton-high-school-20755"
       ]
     }
   ]
