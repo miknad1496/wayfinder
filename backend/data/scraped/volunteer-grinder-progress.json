@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T12:35:00+00:00",
-  "totalRuns": 9,
-  "totalAdded": 42,
+  "lastRun": "2026-04-26T12:55:00+00:00",
+  "totalRuns": 10,
+  "totalAdded": 47,
   "queue": [
     {
       "focus": "WA",
@@ -20,8 +20,8 @@
     {
       "focus": "CA",
       "target": 15,
-      "current": 10,
-      "status": "in_progress",
+      "current": 15,
+      "status": "complete",
       "metros": [
         "Los Angeles",
         "San Francisco",

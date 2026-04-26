@@ -181,3 +181,25 @@
 - Batch of 5 again sustainable, 0 final-batch skips. Stay at 5.
 - First-time SF cluster yielded 5/5 high-confidence — SF has well-documented teen-volunteer infrastructure (similar to LA in run 8, possibly even cleaner). No medium-confidence entries needed.
 - Larkin Street is a recurring trap pattern: an org's "youth program" can refer to participant population (the youth they serve) rather than a volunteer pipeline. Always confirm whether "youth opportunities" = participant or = volunteer before researching.
+
+## RUN 10 NOTES (2026-04-26 — San Diego cluster + 1 SF Bay depth, CA queue COMPLETE)
+
+- Added 5 HIGH-confidence entries (3 SD + 1 SD/La Jolla + 1 SF): San Diego Zoo Zoo Corps (13-17), San Diego Public Library Teen Council (12-18), Jacobs & Cushman San Diego Food Bank (11+), Birch Aquarium at Scripps (16+, 4hr/wk × 6mo), California Academy of Sciences TASC Force (8th-12th grade).
+- 0 medium-confidence — SD's institutional pages publish age tiers as cleanly as LA's and SF's. CA-as-a-state has produced 15/15 high-confidence entries with zero medium across runs 8-10. This is the cleanest state-queue we've seen.
+- **CA queue → 15/15 COMPLETE.** Pivot to TX queue next run.
+- Stale-clone issue (cont'd): the scheduled-task prompt's snapshot was 6 hours old — WA queue had completed via runs 5-7 and CA queue had advanced via runs 8-9 between prompt-capture and execution. Resolution: re-cloned to a writable `/tmp/wf/`, ran `git pull --rebase` immediately before the JSON write, treated the upstream state as authoritative and pivoted the batch from WA to SD. Same pattern as run 8's lesson but now also requires a copy-out-of-`/tmp/wayfinder-vol/`-into-`/tmp/wf/` step because the original clone dir's permissions were inherited as `nobody:nogroup` (read-only for our user).
+
+### Source-specific run-10 notes
+- `zoo.sandiegozoo.org/kids-programs/zoo-corps` — direct curl returns Drupal "Access denied" (permission gate); search-result summary contains the full age policy (13-17, year-round 2 cohorts May-Nov / Jan-May, monthly minimum). Internal `web_fetch` also returns 403. Workaround: cite the canonical URL but verify program details from search-snippet excerpts of the same page. Tag for re-verification when the page becomes anonymously crawlable.
+- `sandiego.gov/public-library/volunteer` — City of San Diego Drupal site; volunteer landing page lists branch-level opportunities, plus separate `sandiego.librarymarket.com/event/...` pages for specific Teen Council meetings. Bundle into one entry (LAPL/SFPL pattern).
+- `sandiegofoodbank.org/volunteer/` — clean WordPress fetch via `curl -A "Mozilla/5.0"`. Explicit policy: 11+ independent, 11-15 with 1:4 adult-to-child ratio. Two warehouse locations (Miramar + Vista). No training required — 2-3 hr shifts.
+- `aquarium.ucsd.edu/about/volunteer` — UC San Diego subdomain, Drupal CMS. Explicit 16+, 4hr/wk × 6 months, quarterly onboarding cohorts. Two reference letters required with application. Tide Pool Interpreter / Greeter as entry roles; Aquarist Assistant + School Programs Assistant as advanced roles.
+- `calacademy.org/teen-advocates-for-science-communication-tasc` — Cal Academy's youth volunteer program (NOT the paid CiS internship). 8th-12th grade, one program day/week + monthly cohort meetings. Older Academy Naturalist Teen (ANT) program is currently paused — TASC Force is the active replacement for general teen volunteering. Flag for re-check if ANT reopens.
+
+### Calibration notes from run 10
+- Batch of 5 sustainable again, 0 final-batch skips, 0 medium-confidence. Stay at 5.
+- CA queue cleanliness (zero medium across 15 entries) suggests the medium-confidence escape valve is most needed in WA-style smaller-town nonprofits (Squarespace pages, no published age min). State queues anchored by major cultural institutions (LA-metro museums/zoos, SF civic + zoo + cultural, SD zoo/aquarium/library/foodbank) consistently publish age tiers cleanly.
+- **Run 11 target: TX queue first run — Houston cluster.** Suggested candidates: Houston Food Bank (verified large), Houston Zoo Volunteens, Houston Public Library Teen Council, Children's Museum of Houston volunteer, Houston SPCA. Pivot rationale: TX queue is fresh (0/12), and Houston is the largest TX metro with the most institutional teen programs (parallel to LA in CA queue).
+- Consider whether to introduce a parallel "national-gaps thematic" run interleaved with state runs to break up state monotony — but current calibration says sequential state-by-state is faster (cluster-by-metro discoveries chain). Defer thematic queue until all state queues finish.
+
+| 2026-04-26 | 10 | 5 | 0 | CA (San Diego cluster + 1 SF Bay) | San Diego Zoo Zoo Corps (13-17), SD Public Library Teen Council (12-18), Jacobs & Cushman SD Food Bank (11+), Birch Aquarium at Scripps (16+ × 4hr/wk × 6mo), Cal Academy TASC Force (8th-12th). All HIGH. CA queue → 15/15 COMPLETE. SDZoo page returned 403/Access-denied on direct fetch; verified from search-snippet excerpts of canonical URL. |
