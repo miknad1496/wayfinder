@@ -9,9 +9,9 @@
 ## CURRENT CALIBRATION
 
 - batch_size: 5 entries per run (small — quality > throughput)
-- typical_run_duration: TBD (no runs yet)
-- typical_skip_rate: expect 30-50% of entries to yield no new insight worth capturing
-- last_calibration_change: 2026-04-26 — initial bootstrap
+- typical_run_duration: ~6 min on esms module (mostly WebSearch + occasional curl fallback)
+- typical_skip_rate: 0% on first esms batch — every entry yielded ≥1 actionable insight. Seattle/WA programs are insight-rich because partner orgs publish detailed FAQ/scholarship pages
+- last_calibration_change: 2026-04-26 — first run completed, batch_size 5 felt right
 
 ## EFFECTIVE PATTERNS (to be filled by runs)
 
@@ -21,6 +21,11 @@
 - Compare published age min vs. real flexibility ("ages 6-12, exceptions for siblings")
 - Check for hidden discount stacks (multi-week + sibling + Early Bird + member)
 - Note real cost vs sticker (registration fee, late fee, refund policy)
+- Search-engine snippet often surfaces FAQ-page content even when the camp's main page is JS-bundled and unreadable via curl (Pacific Science Center, Museum of Flight)
+- For programs where the entry mentions "scholarships available," dig into the actual scholarship sub-page — it almost always has gotcha timing (Pacific Science Center: Mar 13 deadline; Museum of Flight: Feb 2 deadline BEFORE registration even opens)
+- Two-tier scholarship structures (full + partial) hide the "you missed full but partial is still open" pathway parents need to know about (Museum of Flight Campership)
+- For UW / university-affiliated programs, the gotcha is usually "is this what the parent thinks it is?" — Seattle MESA is teacher-nominated; Engineering Discovery Days is a 2-day spring event not a camp; Robinson Saturday Program doesn't run in summer
+- Public-Servant / educator / military discounts are a recurring under-marketed insight (DigiPen 50%) — worth checking explicitly on every commercial program
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
@@ -74,3 +79,17 @@ Each captured insight must be:
 | Date | Run # | Module | Entries scanned | Insights captured | Notable |
 |------|-------|--------|-----------------|-------------------|---------|
 | (no runs yet) | | | | | |
+| 2026-04-26 | 1 | esms | 5 | 5 | First run; 100% capture rate. WA Seattle programs all yielded insights. Notable: Museum of Flight Campership full-aid window closes BEFORE registration opens — parent gotcha. |
+
+
+## DATA QUALITY FLAGS
+
+- DigiPen Open World entry name says "Ages 5-12" but real product structure is Explorer (6-8), Adventurer (9-13), Innovator (14-18). Lower bound is 6 not 5; upper bound goes to 13 for the Adventurer track. Consider patching the entry name on next data refresh.
+- UW Engineering Discovery Days is in programs.json with eligibility.grades K-8, but the program officially targets grades 4-8 only. Also it's a 2-day spring event, not a multi-week summer program — `type: 'summer'` may be wrong. Worth a future correction.
+- Robinson Center entry exists but its Saturday Enrichment program does NOT run in summer — it's quarterly fall/winter/spring. If users filter by `type: 'summer'`, this entry should map to Robinson's separate summer offerings instead.
+
+## CALIBRATION SUGGESTIONS
+
+- Keep batch_size at 5 — yield was high enough that throughput is fine. Going to 10 risks shallower research per entry.
+- Add a "name vs reality" check pattern explicitly to STEP 2 — entries 3 and 5 both had name/eligibility mismatches that became insights.
+- Consider a `_dataQualityFlags` field harvested in parallel that the data-refresh task can read to schedule entry corrections (separate from the parent-facing insights).
