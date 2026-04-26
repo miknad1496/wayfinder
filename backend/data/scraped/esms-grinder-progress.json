@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T17:11:31.398Z",
-  "totalRuns": 3,
-  "totalAdded": 16,
+  "lastRun": "2026-04-26T17:21:58.356947Z",
+  "totalRuns": 4,
+  "totalAdded": 22,
   "queue": [
     {
       "focus": "WA",
@@ -88,8 +88,8 @@
     {
       "focus": "national-anchors",
       "target": 25,
-      "current": 0,
-      "status": "pending",
+      "current": 6,
+      "status": "in_progress",
       "themes": [
         "YMCA / Camp Fire / BGCA national programs",
         "iD Tech university circuit",
@@ -99,6 +99,14 @@
         "national arts/music/theater intensive networks",
         "STEM Olympiad summer training programs",
         "national religious/scout summer camps"
+      ],
+      "themesUsed": [
+        "Outschool nationwide remote",
+        "Beast Academy Online (AoPS K-5 math)",
+        "Curious Cardinals 1:1 mentorship",
+        "Synthesis Tutor (AI K-5 math)",
+        "Brain Chase Summer Treasure Hunt",
+        "Northwestern CTD (gifted PreK\u2013grade 8)"
       ]
     }
   ]

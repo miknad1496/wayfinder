@@ -5,10 +5,11 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries per run (run 3 stepped outside Seattle into secondary WA metros; held at 5; 0 skips)
+- batch_size: 6 entries per run (run 4 stepped from WA-only metros into nationwide/remote anchors per Dan's directive; held at 6 with 0 skips)
 - typical_run_duration: ~10 min
-- typical_skip_rate: 0% (runs 1-3)
-- last_calibration_change: 2026-04-26 — held at 5/run for first non-Seattle batch; consider returning to 6 next run since 0 skips again
+- typical_skip_rate: 0% (runs 1-4)
+- last_calibration_change: 2026-04-26 — moved from 5 to 6 for run 4 because run 3 finished at 5/0 skips. Comfortable at 6 when sources are well-known national operators.
+
 
 ## EFFECTIVE PATTERNS (validated)
 
@@ -24,6 +25,7 @@
   - **Children's theater** — Seattle Children's Theatre Drama School. Age-banded creative drama camps.
   - **National camp networks (regional sites)** — Camp Galileo (Bellevue + Seattle locations). Public, predictable curriculum + Early Bird discount structure.
   - **University youth programs** — already well-covered in existing DB (Robinson Center, UW Engineering, DigiPen).
+- **Nationwide/remote anchors are the highest-leverage tier** (run 4 confirmed): Outschool, Beast Academy Online, Curious Cardinals, Synthesis Tutor, Brain Chase, Northwestern CTD all yielded high-confidence entries with full pricing/eligibility/scholarship data on a single research pass. Operating histories are publicly documented, pricing is structured (not negotiable per-family), and they benefit students in EVERY state — exactly what Dan flagged as the "golden low-hanging fruit." Continue rotating nationwide candidates into runs alongside metro/state work.
 - WebSearch → search-result snippets are reliable for confirming registration windows, age tiers, and scholarship existence. Pages with heavy WP/Squarespace/Cloudflare protection (e.g., zoo.org renders, KidsQuest, Coyote Central) need triangulation; **search-result snippets often have the FAQ accordion content** which is a goldmine.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
@@ -60,6 +62,14 @@
 - **KiDiMu (Bainbridge Island)**: ages 3-12 in 4-hour half-day sessions (9-12 or 12-3); $350 non-member / $325 member; +$20/hr early-late care. KiDiMu's site loaded clean (HTTP 200). High confidence.
 - **City of Vancouver Parks & Rec**: ages 6-10 (grades 1-5) at Marshall + Firstenburg community centers; $220 resident / $275 non-resident; Everybody Plays! 50% scholarship auto-applies for eligible families. Registration April 15 (residents) / April 16 (non-residents). High confidence.
 
+
+- **Outschool**: pivoted to credit-based memberships in 2026 ($60–$600/mo for 1–10 group classes/wk) alongside the legacy pay-per-class model. Group class $5–$36 each; self-paced $10–$94/week. ESA-funded enrollment supported in AZ + other participating states. Outschool Cares scholarships exist but require app. URL: outschool.com/online-classes/summer-camps. High confidence.
+- **Beast Academy Online (AoPS)**: $99.99/yr or $16/mo per student covers grades 1–5 (one sub, all five levels). Sibling Yearly $64.99 ONLY with active Bundle. Bundle ~$160 (printed books for one level + 1-yr sub). 10% group discount for 5+. URL: beastacademy.com/online/enroll. High confidence.
+- **Curious Cardinals**: 1:1 mentorship K–12, sessions start $95/hr. 4-month plan cheapest, monthly higher, pay-as-you-go highest. 2-month minimum commitment + 2-week money-back. 30-min sessions for under-4th-grade or learning differences. URL: curiouscardinals.com/pricing. High confidence.
+- **Synthesis Tutor**: AI math K–5 (ages 5–11) at $20/mo, $99/yr, or $240/yr (up to 7 student profiles). Synthesis Teams (live group, ages 8–14) is $95/mo — separate product. 7-day free trial. URL: synthesis.com/tutor. High confidence.
+- **Brain Chase Summer Treasure Hunt**: 5-week online program ages 6–16 (designed gr 2–8) starting June 15, 2026. Early-bird $199, standard ~$249. Choose-your-own electives + global treasure-hunt narrative. URL: brainchase.com/upcoming-programs. High confidence.
+- **Northwestern CTD Academic Day Camps**: PreK–grade 8 enrichment in Evanston + Chicago South Loop. Amber tier (PreK–gr 2) is open enrollment; Emerald tier (gr 3–8) requires eligibility docs. Tuition from $395. Need-based aid + Jack Kent Cooke partnership. Sessions June 29 – Aug 7, 2026. URL: ctd.northwestern.edu/summer-programs. High confidence.
+
 ## DATA QUALITY FLAGS
 
 - Existing `programs.json` schema uses object-shaped `cost` (`{amount, type, display}`) and object `location` (`{city, state}`). Grinder writes both this canonical shape AND task-spec extras (`scope`, `dates`, `scholarshipAid`, `registrationUrl`, `howToStart`, `confidence`). Backward-compatible — extras are ignored by the search route.
@@ -79,9 +89,11 @@
 
 ## OPEN QUESTIONS / TODO
 
-- Best way to flag camps requiring district residency vs open-enrollment? (Point Defiance scholarships are Pierce-County-only — currently noted in description + scholarshipAid string. Consider top-level `scholarshipResidencyRequired` boolean future-iteration.)
+- Best way to flag camps requiring district residency vs open-enrollment? 
+- **Next nationwide/remote candidates** (run 5+): Outschool's 1:1 tutoring vertical (separate product), iD Tech online courses, MIT App Inventor youth camps, NASA Kids' Club / NASA STEM Stars sub-program for younger kids, Khan Academy Kids (preK-2 free app — borderline 'platform' vs program), Mathnasium Summer Programs (national chain), Stanford OHS Summer Online (limited K-8 footprint), Davidson Young Scholars enrichment (highly selective).
+- (Point Defiance scholarships are Pierce-County-only — currently noted in description + scholarshipAid string. Consider top-level `scholarshipResidencyRequired` boolean future-iteration.)
 - Should we have a separate scholarshipAid (Y/N) field at top level vs inline in description? Currently using both: top-level `scholarshipAid` string AND mention in description.
-- Future WA targets remaining: Spokane (Mobius Discovery Center — still deferred), Olympia (Hands On Children's Museum), BARN Bainbridge youth artisan camps (8-18), Bainbridge Island Museum of Art summer camps, Bellingham SPARK Museum, Tacoma — TAM and Children's Museum of Tacoma, Spokane Riverfront Park kids programs, Seattle Public Library Summer Reading offshoots, Northwest Outdoor Center youth kayak (Seattle). Done in run 3: Whatcom Family YMCA, Music Works NW, IslandWood, KiDiMu, City of Vancouver P&R.
+- Future WA targets remaining: Spokane (Mobius Discovery Center — still deferred), Olympia (Hands On Children's Museum), BARN Bainbridge youth artisan camps (8-18), Bainbridge Island Museum of Art summer camps, Bellingham SPARK Museum, Tacoma — TAM and Children's Museum of Tacoma, Spokane Riverfront Park kids programs, Seattle Public Library Summer Reading offshoots, Northwest Outdoor Center youth kayak (Seattle). Done in run 3: Whatcom Family YMCA, Music Works NW, IslandWood, KiDiMu, City of Vancouver P&R. Run 4 pivoted to nationwide/remote anchors (Outschool, Beast Academy, Curious Cardinals, Synthesis, Brain Chase, Northwestern CTD).
 
 ## DEFERRED CANDIDATES
 
@@ -94,3 +106,4 @@
 | 2026-04-26 | 1 | 5 (3hi/2md) | 0 | WA — Seattle/Bellevue/Vashon/Orcas | KidsQuest (md), Coyote Central (hi), Burke (hi), Camp Orkila (hi), Camp Sealth (md). Bootstrapped progress file + lessons. |
 | 2026-04-26 | 2 | 6 (4hi/3md... wait 4hi/2md after correction) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Woodland Park Zoo (hi), Seattle Aquarium (md cost), Seattle Children's Theatre (md cost+dates), Camp Galileo Bellevue (hi), Music Center NW (hi), Point Defiance Zoo (hi). Caught Pacific Science Center as existing-DB duplicate; substituted Point Defiance. New writable-clone workaround documented. |
 | 2026-04-26 | 3 | 5 (3hi/2md) | 0 | WA — Bellingham/Bellevue/Bainbridge/Vancouver (secondary metros) | Whatcom Family YMCA (md cost), Music Works NW (hi), IslandWood (md cost+dates), KiDiMu (hi), City of Vancouver P&R (hi). First non-Seattle WA batch; 0 skips, 0 dedup hits. WA progress 16/30. |
+| 2026-04-26 | 4 | 6 (6hi/0md) | 0 | National-remote anchors (per Dan's nationwide priority directive) | Outschool, Beast Academy Online, Curious Cardinals, Synthesis Tutor, Brain Chase, Northwestern CTD. First batch outside WA — all high-confidence; 0 skips. National-anchors queue 6/25. Captured 6 field-note insights (CTD Amber open enrollment; BA sibling discount requires Bundle; Synthesis Tutor vs Teams; Brain Chase early-bird window; Curious Cardinals plan tiers; Outschool 2026 membership pivot). |
