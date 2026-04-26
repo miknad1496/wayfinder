@@ -449,7 +449,8 @@ router.post('/', async (req, res) => {
         userType: auth.user.userType,
         school: auth.user.school,
         interests: auth.user.interests,
-        profile: auth.user.profile
+        profile: auth.user.profile,
+        plan: auth.user.plan || 'free'
       };
     }
 

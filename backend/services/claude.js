@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext, getLiteBrainContext } from './knowledge.js';
+import { getCuratedDBContext, buildUserTierContext } from './curated-db-context.js';
 import { initOutputFilter, filterResponse as filterLeakage, invalidateOutputFilter } from './output_filter.js';
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
 
@@ -610,6 +611,17 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // Add mode indicator and analysis framework injection
   if (useEngine) {
     systemPrompt += '\n\n[WAYFINDER ENGINE ACTIVE — You have access to Wayfinder\'s full proprietary advisory intelligence: deep domain-specific knowledge continuously refined across hundreds of career and admissions sub-verticals, multi-layer distilled reasoning from expert synthesis, and calibrated insights from industry professionals and real interaction patterns. Provide personalized, strategic analysis mapped to this user\'s specific situation. Use specific data points, projections, and nuanced recommendations. This is the $10K consultant moment — deliver maximum value.]';
+
+    // ── CURATED DB CONTEXT — Engine has access to summaries of all curated databases ──
+    // The LLM knows the data exists, references it confidently, but routes user to the
+    // sidebar tool for the granular filterable list (premium gate per Dan's request).
+    try {
+      const dbContext = await getCuratedDBContext();
+      systemPrompt += '\n\n' + dbContext;
+      systemPrompt += buildUserTierContext(sessionContext?.plan || sessionContext?.userPlan || 'free');
+    } catch (dbErr) {
+      console.warn('[Engine] curated DB context unavailable:', dbErr.message);
+    }
 
     // Check if a structured analysis framework should be activated
     const framework = detectAnalysisFramework(userMessage);
