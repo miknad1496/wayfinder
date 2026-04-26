@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 851,
+    "totalCount": 857,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -50,7 +50,7 @@
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
     "lastUpdated": "2026-04-26",
-    "totalPrograms": 831,
+    "totalPrograms": 857,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
@@ -37189,6 +37189,271 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_source": "https://codakid.com/camps/"
+    },
+    {
+      "name": "Tynker — K-12 Self-Paced Coding Platform",
+      "provider": "Tynker (CodeHS)",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 180,
+        "type": "paid",
+        "display": "$54 quarterly or $180/year (or ~$15/month yearly); each plan covers up to 3 children; 30-day money-back guarantee"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-09-01",
+      "description": "Tynker is the #1 K-12 creative coding platform — used by 1 in 3 U.S. K-8 schools, 150,000 schools globally, and 100M+ kids worldwide. Self-paced gamified courses for ages 5-18 covering block coding (Tynker Jr for pre-readers age 5-7), Minecraft modding, Python, JavaScript, web design, and AI/data science. Quarterly ($54), Yearly ($180), and Lifetime plans all include up to 3 children per family. 30-day money-back guarantee. Full access to Tynker self-paced web platform plus all Tynker iPad apps (Tynker Jr, Tynker, Mod Creator). Strong fit for K-8 students who want to learn at their own pace year-round, especially good for siblings sharing a plan.",
+      "url": "https://www.tynker.com/parents/",
+      "_source": "https://www.tynker.com/parents/pricing/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "No formal scholarship program publicly listed; 30-day money-back guarantee on all plans serves as a low-risk trial",
+      "registrationUrl": "https://www.tynker.com/parents/pricing/",
+      "howToStart": "Start a Free Tynker account at tynker.com/parents — explore Hour of Code activities and free starter games before subscribing. Try the Quarterly plan ($54) first if uncertain; both Quarterly and Yearly include the full self-paced library."
+    },
+    {
+      "name": "Connected Camps — Online Minecraft & Roblox Clubs",
+      "provider": "Connected Camps",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "Sold per session/week via Outschool; typical pricing varies — Free Kid Club Minecraft Server is separate and 100% free"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-08-31",
+      "description": "Online learning programs run year-round for tech-savvy kids ages 8-13: Minecraft Builder's Club (design + build), Minecraft Survival Club, Girls' Builder's Club, Girls' Survival Club, Roblox Gaming Club, Overwatch Club (ages 9-14), and Smash Ultimate Club. Clubs meet weekly for 90 minutes via expert coach moderation, on Outschool's platform. Compatible with PC, Mac, tablets, phones, Chromebooks, Switch, Xbox, and PS4/PS5. Co-founded by Connie Yowell and U.C. Irvine professor Mimi Ito; designed to convert 'screen time' into structured learning of problem-solving, teamwork, and design. NOTE: pricing is per Outschool listing and varies by club — consult outschool.com Connected Camps storefront. Connected Camps also runs a separate FREE Kid Club Minecraft Server (moderated public sandbox) for kids without subscriptions.",
+      "url": "https://connectedcamps.com/summer-clubs",
+      "_source": "https://connectedcamps.com/summer-clubs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "scope": "national",
+      "scholarshipAid": "Outschool Cares scholarship program may apply (Connected Camps lists on Outschool); state Education Savings Account funds (AZ/FL/AR) usable through Outschool",
+      "registrationUrl": "https://outschool.com/teachers/Connected-Camps",
+      "howToStart": "Browse Connected Camps storefront on Outschool to see live pricing and current cohort availability, OR join the FREE Kid Club Minecraft Server first to test fit before subscribing."
+    },
+    {
+      "name": "Khan Academy Kids — Free Early Learning App (Ages 2-8)",
+      "provider": "Khan Academy",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free — no ads, no subscriptions, no in-app purchases"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-12-31",
+      "description": "Free educational app for children ages 2-8 (PreK through grade 2). 5,000+ activities and books across reading/phonics, math, social-emotional learning, and creative play. Built in partnership with Stanford Graduate School of Education. Aligned with Head Start standards and Common Core. COPPA-compliant. Featured five-character cast (Kodi, Reya, Peck, Sandy, Ollo) guides kids through structured learning paths. Available iOS, Android, Amazon Fire (beta on Android/Amazon). Multiple awards including Common Sense Media Top Rated Educational App, Children's Technology Review Editor's Choice, Parents' Choice Gold. Strongest fit for K-2 home reinforcement, summer learning loss prevention, and pre-K readiness. Khan Academy proper (separate program, already in DB) covers grades 3+.",
+      "url": "https://www.khanacademy.org/kids",
+      "_source": "https://www.khanacademy.org/kids",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "100% free — no scholarship needed; no paid tier exists",
+      "registrationUrl": "https://www.khanacademy.org/kids",
+      "howToStart": "Download the Khan Academy Kids app (App Store, Google Play, or Amazon Appstore) — no account required to start, but creating a parent account unlocks per-child progress tracking and a Library mode."
+    },
+    {
+      "name": "NASA Kids' Club & K-8 STEM Resources",
+      "provider": "NASA Office of STEM Engagement",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free — federal government educational resource"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-12-31",
+      "description": "NASA's official free K-8 STEM portal. Hands-on activities, games, videos, and stories — kids can launch rockets, build a Moon Habitat, explore the Solar System, and solve space-themed puzzles. Content organized by grade band (K-4, 5-8, 9-12) with separate hub pages per band. Includes the NASA EXPRESS newsletter (workshops, contests, student challenges, science experiments), STEM Multimedia library, and 'NASA at Home' family activity packets. Spanish-language sub-portal (Sistema Solar) available. Strong fit for elementary/middle school enrichment, especially for science fair prep, summer STEM exposure, and supplementing classroom curriculum. Not a structured 'camp' but a curated portal to thousands of NASA-published activities, lesson plans, and challenges — many designed for self-led or parent-guided use at home.",
+      "url": "https://www.nasa.gov/learning-resources/nasa-kids-club/",
+      "_source": "https://www.nasa.gov/learning-resources/nasa-kids-club/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "high",
+      "scope": "national",
+      "scholarshipAid": "100% free — no application required",
+      "registrationUrl": "https://www.nasa.gov/learning-resources/for-kids-and-students/",
+      "howToStart": "Visit nasa.gov/learning-resources/nasa-kids-club/ — no signup required. Subscribe to the NASA EXPRESS newsletter (free) for weekly student-challenges, contests, and seasonal hands-on activities targeted to your child's grade band."
+    },
+    {
+      "name": "CodeCombat — Game-Based Coding (Python & JavaScript)",
+      "provider": "CodeCombat",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 10,
+        "type": "paid",
+        "display": "First chapter free; home premium reportedly $10-$40/month range; school pricing by quote"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-12-31",
+      "description": "Game-based coding platform recommended for grades 4-12 (ages 9+) where students learn real Python and JavaScript by playing through fantasy game levels. Includes the original CodeCombat (action RPG style) and Ozaria (immersive narrative game aligned to middle-school CSTA + ISTE standards). First chapter is free for any student. Home premium subscription typically $10-$40/month range (verify current price on site). School/classroom pricing is by quote. Clever and Google Classroom integrations supported. Ozaria works on Windows PCs, Chromebooks, and Macs in a modern browser. Strongest fit for 4th-8th graders ready to graduate from block-based coding (Scratch/Tynker Jr) into typed-language programming.",
+      "url": "https://codecombat.com/parents",
+      "_source": "https://codecombat.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "scope": "national",
+      "scholarshipAid": "Not publicly advertised; first chapter free serves as no-risk trial",
+      "registrationUrl": "https://codecombat.com/play",
+      "howToStart": "Create a free CodeCombat account at codecombat.com — kids can play through Chapter 1 (Kithgard Dungeon) at zero cost. Decide on premium based on engagement level after the free chapter; classroom teachers can also sign students up for Ozaria's free first unit."
+    },
+    {
+      "name": "Russian School of Mathematics (RSM) Online — Summer & Year-Round",
+      "provider": "Russian School of Mathematics",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 41,
+        "type": "paid",
+        "display": "Reported range $41-$110 per lesson depending on grade and program; exact tuition only via tuition-request form"
+      },
+      "selectivity": "moderate",
+      "format": "remote",
+      "location": {
+        "city": "Online (HQ Newton, MA)",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "Multiple"
+        ]
+      },
+      "deadline": "2026-06-29",
+      "description": "Online after-school math enrichment grades 2-10 (year-round school year program; physical-location program covers K-12 across 60+ U.S. branches). 2026 summer schedule June 29 - August 6 with 6-week and 3-week tracks: math reinforcement, math competition prep (AMC 8 / Math Kangaroo / Math Olympiad), and special enrichment courses including Coding (JavaScript for middle school), Summer Chess (grades 1-5), STEAM (K-1), and Math/Science/Art Lab (K-1). Twice-weekly classes (1.5-2 hrs in-person grades 1-3; 2 hrs online grades 4-10). Curriculum is a continuous K-12 vertically-aligned program emphasizing depth + abstract reasoning, modeled on Russian/Eastern European mathematics pedagogy. Placement test required for entry; tuition only available by submitting the tuition-request form. Strong fit for ambitious K-8 math students or families wanting summer-loss prevention beyond a worksheet program.",
+      "url": "https://www.mathschool.com/rsm-online-math",
+      "_source": "https://www.mathschool.com/rsm-online-math",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "scholarshipAid"
+      ],
+      "scope": "national",
+      "scholarshipAid": "Not publicly advertised on landing pages; some local branches offer financial aid — call the local branch director directly to ask",
+      "registrationUrl": "https://www.mathschool.com/rsm-online-math-program",
+      "howToStart": "Submit the tuition-request form on mathschool.com to get the PDF with grade-specific pricing for your region/track. Schedule a placement test (free) — RSM uses results to assign the right level rather than relying on grade alone, so a strong 5th grader may place into the 6th-grade curriculum."
     }
   ]
 }

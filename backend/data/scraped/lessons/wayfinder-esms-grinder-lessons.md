@@ -5,10 +5,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 6 entries per run (run 4 stepped from WA-only metros into nationwide/remote anchors per Dan's directive; held at 6 with 0 skips)
+- batch_size: 6 entries per run (run 6 held at 6, 0 skips, mixed 3 high + 3 medium confidence — comfortable when leaning on national operators)
 - typical_run_duration: ~10 min
-- typical_skip_rate: 0% (runs 1-4)
-- last_calibration_change: 2026-04-26 — moved from 5 to 6 for run 4 because run 3 finished at 5/0 skips. Comfortable at 6 when sources are well-known national operators.
+- typical_skip_rate: 0% (runs 1-6)
+- last_calibration_change: 2026-04-26 — held at 6 for run 6; medium-confidence entries were medium because cost not posted on landing page (Connected Camps via Outschool, CodeCombat parent pricing, RSM tuition-by-form), not because the org itself was uncertain.
 
 
 ## EFFECTIVE PATTERNS (validated)
@@ -26,6 +26,7 @@
   - **National camp networks (regional sites)** — Camp Galileo (Bellevue + Seattle locations). Public, predictable curriculum + Early Bird discount structure.
   - **University youth programs** — already well-covered in existing DB (Robinson Center, UW Engineering, DigiPen).
 - **Nationwide/remote anchors are the highest-leverage tier** (run 4 confirmed): Outschool, Beast Academy Online, Curious Cardinals, Synthesis Tutor, Brain Chase, Northwestern CTD all yielded high-confidence entries with full pricing/eligibility/scholarship data on a single research pass. Operating histories are publicly documented, pricing is structured (not negotiable per-family), and they benefit students in EVERY state — exactly what Dan flagged as the "golden low-hanging fruit." Continue rotating nationwide candidates into runs alongside metro/state work.
+- **Run 6 reinforced the nationwide tier** with mixed-confidence batch (3 hi + 3 md): Tynker, Khan Academy Kids, NASA Kids' Club delivered as high-confidence on first pass; Connected Camps / CodeCombat / RSM landed at medium because *pricing surfaces require parent action* (Outschool storefront for CC, Vue SPA for CodeCombat, tuition-form-submission for RSM). Lesson: when researching a national org and its landing page lacks a public price, mark medium and capture the friction itself as a field-note (parents value the heads-up about the obstacle).
 - WebSearch → search-result snippets are reliable for confirming registration windows, age tiers, and scholarship existence. Pages with heavy WP/Squarespace/Cloudflare protection (e.g., zoo.org renders, KidsQuest, Coyote Central) need triangulation; **search-result snippets often have the FAQ accordion content** which is a goldmine.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
@@ -75,6 +76,16 @@
 - **Brain Chase Summer Treasure Hunt**: 5-week online program ages 6–16 (designed gr 2–8) starting June 15, 2026. Early-bird $199, standard ~$249. Choose-your-own electives + global treasure-hunt narrative. URL: brainchase.com/upcoming-programs. High confidence.
 - **Northwestern CTD Academic Day Camps**: PreK–grade 8 enrichment in Evanston + Chicago South Loop. Amber tier (PreK–gr 2) is open enrollment; Emerald tier (gr 3–8) requires eligibility docs. Tuition from $395. Need-based aid + Jack Kent Cooke partnership. Sessions June 29 – Aug 7, 2026. URL: ctd.northwestern.edu/summer-programs. High confidence.
 
+- **Tynker**: K-12 self-paced platform, ages 5-18. Quarterly $54 / Yearly - **Northwestern CTD Academic Day Camps**: PreK–grade 8 enrichment in Evanston + Chicago South Loop. Amber tier (PreK–gr 2) is open enrollment; Emerald tier (gr 3–8) requires eligibility docs. Tuition from $395. Need-based aid + Jack Kent Cooke partnership. Sessions June 29 – Aug 7, 2026. URL: ctd.northwestern.edu/summer-programs. High confidence.
+80 / Lifetime tier; ALL plans cover up to 3 children. 30-day money-back guarantee on all plans. Pricing pulled cleanly from /parents/pricing/ via curl. URL: tynker.com/parents/pricing.
+- **Connected Camps**: ages 8-13 (some clubs 9-14), 90-min weekly clubs sold via Outschool. Co-founded by Connie Yowell + UC Irvine prof Mimi Ito. Includes a separate FREE Kid Club Minecraft server (moderated public sandbox). Site is WordPress + Wordfence — clean curl extraction.
+- **Khan Academy Kids**: ages 2-8. 100% free, no ads, COPPA-compliant, partnered with Stanford GSE. Distinct from Khan Academy proper (which is already in DB). Award-winner. URL: khanacademy.org/kids.
+- **NASA Kids' Club**: K-8 portal organized by grade band (K-4, 5-8). Spanish sub-portal (Sistema Solar). Free federal resource. NASA EXPRESS newsletter is the action-item: weekly student challenges + contests. URL: nasa.gov/learning-resources/nasa-kids-club.
+- **CodeCombat**: grades 4-12, ages 9+. JS/Python via game (Kithgard Dungeon RPG + Ozaria narrative). First chapter free. Home premium - **Northwestern CTD Academic Day Camps**: PreK–grade 8 enrichment in Evanston + Chicago South Loop. Amber tier (PreK–gr 2) is open enrollment; Emerald tier (gr 3–8) requires eligibility docs. Tuition from $395. Need-based aid + Jack Kent Cooke partnership. Sessions June 29 – Aug 7, 2026. URL: ctd.northwestern.edu/summer-programs. High confidence.
+0-$40/mo range (cited via search snippet — codecombat.com itself is fully Vue SPA, parent pricing not curl-extractable). Schools by quote.
+- **RSM Online**: grades 2-10 online (K-12 in-person at 60+ branches). 2026 Summer June 29 - Aug 6, 6-week and 3-week tracks. Tuition by form submission only — cited range $41-- **Northwestern CTD Academic Day Camps**: PreK–grade 8 enrichment in Evanston + Chicago South Loop. Amber tier (PreK–gr 2) is open enrollment; Emerald tier (gr 3–8) requires eligibility docs. Tuition from $395. Need-based aid + Jack Kent Cooke partnership. Sessions June 29 – Aug 7, 2026. URL: ctd.northwestern.edu/summer-programs. High confidence.
+10/lesson. Placement test (free) determines level not grade. Includes coding (JS), chess, STEAM, Math/Science/Art Lab. URL: mathschool.com/rsm-online-math.
+
 ## DATA QUALITY FLAGS
 
 - Existing `programs.json` schema uses object-shaped `cost` (`{amount, type, display}`) and object `location` (`{city, state}`). Grinder writes both this canonical shape AND task-spec extras (`scope`, `dates`, `scholarshipAid`, `registrationUrl`, `howToStart`, `confidence`). Backward-compatible — extras are ignored by the search route.
@@ -95,8 +106,9 @@
 ## OPEN QUESTIONS / TODO
 
 - Best way to flag camps requiring district residency vs open-enrollment? 
-- **Next nationwide/remote candidates** (run 5+): Outschool's 1:1 tutoring vertical (separate product), iD Tech online courses, MIT App Inventor youth camps, NASA Kids' Club / NASA STEM Stars sub-program for younger kids, Khan Academy Kids (preK-2 free app — borderline 'platform' vs program), Mathnasium Summer Programs (national chain), Stanford OHS Summer Online (limited K-8 footprint), Davidson Young Scholars enrichment (highly selective).
+- **Next nationwide/remote candidates** (run 7+): MIT App Inventor youth camps, Camp Galileo Online, Zaniac Learning, Stanford OHS K-8 footprint (limited), Davidson Young Scholars enrichment, AOPS Online (separate from Beast Academy), Prodigy Math (free game-based K-8), Russian School of Math in-person locations (CA/MA/NY/NJ branches), Brilliant.org Kids/Family, Studio in a School (NYC arts), 4-H Online STEM, Coursera for Kids partnerships, Outschool 1:1 tutoring vertical (separate product line from group classes already added run 4).
 - (Point Defiance scholarships are Pierce-County-only — currently noted in description + scholarshipAid string. Consider top-level `scholarshipResidencyRequired` boolean future-iteration.)
+- (run 6 confirmed) National queue is the productive lane — 15 of target-25 done. WA queue still at 16/30. Once national is at 20+, rotate back to WA secondary metros (Spokane Mobius, Olympia, Tacoma TAM, Bainbridge BIMA + BARN, Seattle Public Library Summer Reading).
 - Should we have a separate scholarshipAid (Y/N) field at top level vs inline in description? Currently using both: top-level `scholarshipAid` string AND mention in description.
 - Future WA targets remaining: Spokane (Mobius Discovery Center — still deferred), Olympia (Hands On Children's Museum), BARN Bainbridge youth artisan camps (8-18), Bainbridge Island Museum of Art summer camps, Bellingham SPARK Museum, Tacoma — TAM and Children's Museum of Tacoma, Spokane Riverfront Park kids programs, Seattle Public Library Summer Reading offshoots, Northwest Outdoor Center youth kayak (Seattle). Done in run 3: Whatcom Family YMCA, Music Works NW, IslandWood, KiDiMu, City of Vancouver P&R. Run 4 pivoted to nationwide/remote anchors (Outschool, Beast Academy, Curious Cardinals, Synthesis, Brain Chase, Northwestern CTD).
 
@@ -113,3 +125,4 @@
 | 2026-04-26 | 3 | 5 (3hi/2md) | 0 | WA — Bellingham/Bellevue/Bainbridge/Vancouver (secondary metros) | Whatcom Family YMCA (md cost), Music Works NW (hi), IslandWood (md cost+dates), KiDiMu (hi), City of Vancouver P&R (hi). First non-Seattle WA batch; 0 skips, 0 dedup hits. WA progress 16/30. |
 | 2026-04-26 | 4 | 6 (6hi/0md) | 0 | National-remote anchors (per Dan's nationwide priority directive) | Outschool, Beast Academy Online, Curious Cardinals, Synthesis Tutor, Brain Chase, Northwestern CTD. First batch outside WA — all high-confidence; 0 skips. National-anchors queue 6/25. Captured 6 field-note insights (CTD Amber open enrollment; BA sibling discount requires Bundle; Synthesis Tutor vs Teams; Brain Chase early-bird window; Curious Cardinals plan tiers; Outschool 2026 membership pivot). |
 | 2026-04-26 | 5 | 3 (3hi/0md) | 3 dedup (Outschool, Beast Academy Online, Brain Chase already added in run 4) | National-anchors continued — nationwide K-8 STEM/math/coding | Mathnasium (hi), Code Ninjas (hi), CodaKid (hi). Six original candidates collapsed to 3 after fetching remote and discovering Outschool/Beast Academy/Brain Chase landed in run 4. Captured 6 field-note insights focused on Mathnasium pricing/sibling discounts, Outschool ESA-fund eligibility + filter caveat, Code Ninjas Unlimited Pass effective rate, CodaKid free-trial trick. Pushed via GitHub REST API after local git tooling hit unrecoverable index/rebase locks on the sandbox mount. |
+| 2026-04-26 | 6 | 6 (3hi/3md) | 0 | National-remote anchors continued (per Dan's nationwide priority directive) | Tynker (hi), Connected Camps (md cost), Khan Academy Kids (hi free), NASA Kids' Club (hi free), CodeCombat (md cost), RSM Online (md cost). 0 dedup; loose hits on "Khan Academy" and "NASA" turned out to be different K-8 vs HS programs. Captured 8 field-note insights (Tynker family-plan trick, 30-day refund, Connected Camps free Kid Club server, Khan Academy Kids vs ABCmouse free, NASA Spanish portal, CodeCombat free Chapter 1, RSM tuition-by-form, RSM placement-test placement). National queue 15/25. |
