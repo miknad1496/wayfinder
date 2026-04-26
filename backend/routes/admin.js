@@ -781,4 +781,246 @@ router.post('/memory-patch', async (req, res) => {
   }
 });
 
+
+/* === WAYFINDER REVAMP V2: GRINDER-WRITE ENDPOINT === */
+// POST /api/admin/grinder-write — atomic multi-file commit endpoint for scheduled-task grinders.
+// Replaces the bash + git clone + node + helper pattern with a single HTTP call.
+// Applies a list of operations server-side and writes them all in ONE git commit
+// via the GitHub Git Data API (blob -> tree -> commit -> ref).
+//
+// Auth: x-task-token header OR ?token=<INTERNAL_TASK_TOKEN> query param.
+//   (Header preferred; query-param fallback is for tools that can't set custom headers.)
+//
+// Body (POST): { operations: [...], message: "..." }
+// Or GET: ?token=...&ops=<base64-of-the-JSON-body>
+//
+// Supported operations (each must include "path"):
+//   { op:"append-array", path:".json", key:"programs", items:[...] }
+//   { op:"prepend-array-section-items", path:".json", sectionId:"field-notes", items:[...], max:30 }
+//   { op:"set", path:".json", key:"metadata.totalCount", value: 950 }
+//   { op:"merge", path:".json", value: { ...shallowMergeIntoRoot } }
+//   { op:"rewrite", path:"any", content:"<full new content>" }
+//   { op:"append-text", path:".md|.txt", text:"..." }
+//   { op:"prepend-text", path:".md|.txt", text:"..." }
+//
+// Returns { ok:true, commit:<sha>, commitUrl, pathsTouched:[...] }
+router.all('/grinder-write', async (req, res) => {
+  try {
+    // Auth: query-param token works alongside the middleware's x-task-token header
+    if (!req.adminUser?._taskAuth) {
+      const qTok = req.query?.token;
+      if (qTok && process.env.INTERNAL_TASK_TOKEN && qTok === process.env.INTERNAL_TASK_TOKEN) {
+        // already passed top middleware — nothing to do
+      } else if (!req.adminUser) {
+        return res.status(401).json({ error: 'auth required' });
+      }
+    }
+
+    let body = req.method === 'POST' ? (req.body || {}) : {};
+    if ((!body || !body.operations) && req.query?.ops) {
+      try {
+        body = JSON.parse(Buffer.from(String(req.query.ops), 'base64').toString('utf8'));
+      } catch (e) {
+        return res.status(400).json({ error: 'Invalid ops query param: ' + e.message });
+      }
+    }
+    const operations = Array.isArray(body.operations) ? body.operations : null;
+    const message = body.message;
+    if (!operations || !operations.length || !message) {
+      return res.status(400).json({ error: 'body must include { operations:[...], message:"..." }' });
+    }
+
+    const owner = process.env.WAYFINDER_GH_OWNER || 'miknad1496';
+    const repoName = process.env.WAYFINDER_GH_REPO || 'wayfinder';
+    const branch = process.env.WAYFINDER_GH_BRANCH || 'main';
+    const ghToken = process.env.WAYFINDER_GH_TOKEN || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+    if (!ghToken) return res.status(500).json({ error: 'WAYFINDER_GH_TOKEN env not set' });
+
+    const ghHeaders = {
+      'User-Agent': 'wayfinder-grinder-write',
+      'Accept': 'application/vnd.github+json',
+      'Authorization': 'Bearer ' + ghToken,
+      'X-GitHub-Api-Version': '2022-11-28',
+    };
+    const gh = async (method, urlPath, json) => {
+      const r = await fetch('https://api.github.com' + urlPath, {
+        method,
+        headers: { ...ghHeaders, ...(json ? { 'Content-Type': 'application/json' } : {}) },
+        body: json ? JSON.stringify(json) : undefined,
+      });
+      if (!r.ok) {
+        const txt = await r.text();
+        throw new Error('GitHub ' + method + ' ' + urlPath + ' -> ' + r.status + ': ' + txt.slice(0, 400));
+      }
+      return r.json();
+    };
+
+    // 1. Get base commit + tree
+    const ref = await gh('GET', '/repos/' + owner + '/' + repoName + '/git/ref/heads/' + branch);
+    const baseCommitSha = ref.object.sha;
+    const baseCommit = await gh('GET', '/repos/' + owner + '/' + repoName + '/git/commits/' + baseCommitSha);
+    const baseTreeSha = baseCommit.tree.sha;
+
+    // 2. Fetch current content for each path touched
+    const pathsToTouch = new Set();
+    for (const op of operations) if (op.path) pathsToTouch.add(op.path);
+
+    const fileContents = {};
+    for (const p of pathsToTouch) {
+      try {
+        const enc = p.split('/').map(encodeURIComponent).join('/');
+        const f = await gh('GET', '/repos/' + owner + '/' + repoName + '/contents/' + enc + '?ref=' + encodeURIComponent(branch));
+        if (f.encoding === 'base64' && f.content) {
+          fileContents[p] = Buffer.from(String(f.content).replace(/\n/g, ''), 'base64').toString('utf8');
+        } else if (f.download_url) {
+          const r = await fetch(f.download_url, { headers: { 'User-Agent': 'wayfinder-grinder-write' } });
+          if (!r.ok) throw new Error('Raw fetch ' + f.download_url + ' -> ' + r.status);
+          fileContents[p] = await r.text();
+        } else {
+          throw new Error('Unexpected getFile shape for ' + p);
+        }
+      } catch (e) {
+        if (String(e.message).includes('-> 404')) {
+          fileContents[p] = ''; // new file
+        } else {
+          throw e;
+        }
+      }
+    }
+
+    // 3. Parse JSON paths
+    const isJson = (p) => p.endsWith('.json');
+    const dataObjects = {};
+    for (const p of Object.keys(fileContents)) {
+      if (isJson(p)) {
+        try {
+          dataObjects[p] = fileContents[p] ? JSON.parse(fileContents[p]) : {};
+        } catch (e) {
+          return res.status(500).json({ error: 'Failed to parse JSON for ' + p + ': ' + e.message });
+        }
+      }
+    }
+
+    function setNested(obj, dottedKey, value) {
+      const keys = dottedKey.split('.');
+      let cur = obj;
+      for (let i = 0; i < keys.length - 1; i++) {
+        if (typeof cur[keys[i]] !== 'object' || cur[keys[i]] === null) cur[keys[i]] = {};
+        cur = cur[keys[i]];
+      }
+      cur[keys[keys.length - 1]] = value;
+    }
+    function getNested(obj, dottedKey) {
+      const keys = dottedKey.split('.');
+      let cur = obj;
+      for (const k of keys) { if (cur == null) return undefined; cur = cur[k]; }
+      return cur;
+    }
+
+    // 4. Apply operations
+    for (const op of operations) {
+      const p = op.path;
+      if (!p) return res.status(400).json({ error: 'op missing path: ' + JSON.stringify(op).slice(0,200) });
+
+      switch (op.op) {
+        case 'append-array': {
+          if (!isJson(p)) return res.status(400).json({ error: 'append-array requires .json path: ' + p });
+          const data = dataObjects[p];
+          const arr = Array.isArray(getNested(data, op.key)) ? getNested(data, op.key) : [];
+          setNested(data, op.key, arr.concat(op.items || []));
+          break;
+        }
+        case 'prepend-array-section-items': {
+          if (!isJson(p)) return res.status(400).json({ error: 'prepend-array-section-items requires .json: ' + p });
+          const data = dataObjects[p];
+          const sections = Array.isArray(data.sections) ? data.sections : [];
+          const sec = sections.find(s => s && s.id === op.sectionId);
+          if (!sec) return res.status(400).json({ error: 'Section not found in ' + p + ': ' + op.sectionId });
+          const merged = (op.items || []).concat(Array.isArray(sec.items) ? sec.items : []);
+          sec.items = (op.max && merged.length > op.max) ? merged.slice(0, op.max) : merged;
+          break;
+        }
+        case 'set': {
+          if (!isJson(p)) return res.status(400).json({ error: 'set requires .json: ' + p });
+          setNested(dataObjects[p], op.key, op.value);
+          break;
+        }
+        case 'merge': {
+          if (!isJson(p)) return res.status(400).json({ error: 'merge requires .json: ' + p });
+          Object.assign(dataObjects[p], op.value || {});
+          break;
+        }
+        case 'rewrite': {
+          if (isJson(p)) {
+            try { dataObjects[p] = JSON.parse(op.content); }
+            catch (e) { return res.status(400).json({ error: 'rewrite content not valid JSON for ' + p + ': ' + e.message }); }
+          } else {
+            fileContents[p] = String(op.content == null ? '' : op.content);
+          }
+          break;
+        }
+        case 'append-text': {
+          if (isJson(p)) return res.status(400).json({ error: 'append-text not for .json: ' + p });
+          fileContents[p] = (fileContents[p] || '') + String(op.text || '');
+          break;
+        }
+        case 'prepend-text': {
+          if (isJson(p)) return res.status(400).json({ error: 'prepend-text not for .json: ' + p });
+          fileContents[p] = String(op.text || '') + (fileContents[p] || '');
+          break;
+        }
+        default:
+          return res.status(400).json({ error: 'Unknown op: ' + op.op });
+      }
+    }
+
+    // 5. Serialize JSON paths back to text
+    for (const p of Object.keys(dataObjects)) {
+      fileContents[p] = JSON.stringify(dataObjects[p], null, 2) + '\n';
+    }
+
+    // 6. Create blobs
+    const blobShas = {};
+    for (const p of Object.keys(fileContents)) {
+      const blob = await gh('POST', '/repos/' + owner + '/' + repoName + '/git/blobs', {
+        content: Buffer.from(fileContents[p], 'utf8').toString('base64'),
+        encoding: 'base64',
+      });
+      blobShas[p] = blob.sha;
+    }
+
+    // 7. Create new tree (based on baseTreeSha — only touched paths included)
+    const treeEntries = Object.keys(blobShas).map(p => ({
+      path: p, mode: '100644', type: 'blob', sha: blobShas[p],
+    }));
+    const newTree = await gh('POST', '/repos/' + owner + '/' + repoName + '/git/trees', {
+      base_tree: baseTreeSha,
+      tree: treeEntries,
+    });
+
+    // 8. Create commit
+    const newCommit = await gh('POST', '/repos/' + owner + '/' + repoName + '/git/commits', {
+      message,
+      tree: newTree.sha,
+      parents: [baseCommitSha],
+    });
+
+    // 9. Update branch ref
+    await gh('PATCH', '/repos/' + owner + '/' + repoName + '/git/refs/heads/' + branch, {
+      sha: newCommit.sha,
+      force: false,
+    });
+
+    res.json({
+      ok: true,
+      commit: newCommit.sha,
+      commitUrl: 'https://github.com/' + owner + '/' + repoName + '/commit/' + newCommit.sha,
+      pathsTouched: Object.keys(fileContents),
+    });
+  } catch (err) {
+    console.error('[grinder-write]', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
