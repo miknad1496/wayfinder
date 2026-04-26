@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-04-26T05:11:27Z",
-  "totalRuns": 6,
-  "totalEnriched": 39,
-  "totalSkipped": 9,
-  "notes": "Run 6: enriched 4 WA high (Auburn Senior, Auburn Riverside, Auburn Mountainview, WSSB). Skipped 4 alternative/specialty programs (Opportunity Project, LWIT Tech Academy, Open Doors, Youth Academy). Advanced WA high offset 40 -> 48.",
+  "lastRun": "2026-04-26T05:41:07.706Z",
+  "totalRuns": 7,
+  "totalEnriched": 45,
+  "totalSkipped": 11,
+  "notes": "Run 7: enriched 6 WA high (Bainbridge, Eagle Harbor, Summit Olympus [closed 2025], Summit Sierra, PRIDE Prep/Innovation HS, RVLA). Skipped 2 placeholder/reentry programs (Ella Baker Open Doors, Renton Technical HS placeholder). Advanced WA high offset 48 -> 56.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 48,
+      "offset": 56,
       "total": 649,
       "status": "in_progress",
       "note": "raw NCES offset (48 of 649); prior 32 manual entries already in enriched.json"
