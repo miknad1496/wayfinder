@@ -22,7 +22,7 @@
     "ingest": "cd backend && node services/ingest.js",
     "distill": "node backend/distillation/distill.js",
     "distill:list": "node backend/distillation/distill.js --list",
-    "start": "node backend/server.js"
+    "start": "node backend/scripts/seed-disk-from-git.js && node backend/server.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.0",
