@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-04-26T15:50:00Z",
-  "totalRuns": 2,
-  "totalAdded": 11,
+  "lastRun": "2026-04-26T16:25:00Z",
+  "totalRuns": 3,
+  "totalAdded": 16,
   "queue": [
-    {"focus": "WA", "target": 30, "current": 11, "status": "in_progress",
+    {"focus": "WA", "target": 30, "current": 16, "status": "in_progress",
      "metros": ["Seattle", "Bellevue", "Eastside", "Tacoma", "Spokane", "Vancouver"],
-     "metrosUsed": ["Seattle", "Bellevue", "Vashon", "Orcas Island", "Tacoma"]},
+     "metrosUsed": ["Seattle", "Bellevue", "Vashon", "Orcas Island", "Tacoma", "Everett", "Bellingham", "Bainbridge Island", "Woodinville"]},
     {"focus": "CA", "target": 20, "current": 0, "status": "pending",
      "metros": ["Bay Area", "Los Angeles", "San Diego", "Sacramento"]},
     {"focus": "TX", "target": 15, "current": 0, "status": "pending",

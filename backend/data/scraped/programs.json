@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 837,
+    "totalCount": 842,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -36395,6 +36395,343 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_source": "https://www.pdza.org/summer-camps/"
+    },
+    {
+      "name": "Imagine Children's Museum Summer Camps",
+      "provider": "Imagine Children's Museum",
+      "category": "academic-enrichment",
+      "subcategory": "play-based-learning",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by session — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Everett",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — sessions fill spring",
+      "description": "Weeklong summer day camps at Imagine Children's Museum in downtown Everett (1502 Wall St) and partner sites such as Evergreen Arboretum. The first Preschool Camp begins the week of June 22, 2026. Half-day camps run for ages 3-5 and ages 5-7 (themed STEM, marine science, soccer, animal clinic, water exploration). Full-day camps serve ages 7-11 with nature, fossils, and themed enrichment tracks. Note: 2026 per-session tuition and scholarship details are not published on the landing page; confirm directly with education@imaginecm.org or (425) 258-1006.",
+      "url": "https://www.imaginecm.org/summer-camps/",
+      "tags": [
+        "summer-camp",
+        "stem",
+        "arts",
+        "play-based",
+        "everett",
+        "snohomish",
+        "children's-museum",
+        "elementary"
+      ],
+      "duration": "1 week per session (half-day or full-day)",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Snohomish County",
+      "ages": "3-11",
+      "dates": "Summer 2026 — weekly sessions starting week of June 22",
+      "scholarshipAid": "Not advertised on landing page",
+      "registrationUrl": "https://www.imaginecm.org/summer-camps/",
+      "howToStart": "Browse 2026 sessions at imaginecm.org/summer-camps; contact education@imaginecm.org for tuition and aid.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "scholarshipAid"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.imaginecm.org/summer-camps/"
+    },
+    {
+      "name": "Whatcom Family YMCA Outdoor Day Camp",
+      "provider": "Whatcom Family YMCA",
+      "category": "sports-outdoors",
+      "subcategory": "ymca-day-camp",
+      "type": "summer",
+      "cost": {
+        "amount": 330,
+        "type": "paid",
+        "display": "$330 member / $380 non-member per week (+ $25/wk deposit at registration)"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellingham",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — fills January-April; financial assistance applications encouraged early",
+      "description": "Outdoor-focused weekly day camp from Whatcom Family YMCA for kids entering 2nd-5th grade in fall 2026. Activities emphasize outdoor exploration, swimming, hiking, and team challenges. The Y also runs Minis Camp (ages 3-5), Discovery Camp (entering 1st-5th grade, $355 member/$405 non-member), Sports & Swim, Multi-Sports & Court Sports (entering 4th-7th grade), and Trail Blazers Elementary (entering 2nd-5th) and Trail Blazers Middle School (entering 6th-8th) sessions. $25/wk deposit due at registration; YMCA membership required at the member rate. Financial assistance is available — apply via registrar@whatcomymca.org or 360-255-0585.",
+      "url": "https://www.whatcomymca.org/camps-summer-programs/outdoor-day-camp",
+      "tags": [
+        "summer-camp",
+        "ymca",
+        "outdoor",
+        "bellingham",
+        "whatcom",
+        "elementary",
+        "middle-school",
+        "financial-aid"
+      ],
+      "duration": "1 week per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Bellingham / Whatcom County",
+      "ages": "7-11 (Outdoor Day Camp); broader range across all Whatcom Y camps",
+      "dates": "Summer 2026 — weekly sessions throughout June, July, August",
+      "scholarshipAid": "Available — financial assistance application via registrar@whatcomymca.org",
+      "registrationUrl": "https://www.whatcomymca.org/camps-summer-programs",
+      "howToStart": "Browse all Whatcom Y summer camps and register at whatcomymca.org/camps-summer-programs; contact registrar@whatcomymca.org for aid.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.whatcomymca.org/camps-summer-programs/outdoor-day-camp"
+    },
+    {
+      "name": "Bellevue Youth Theatre Summer Camps",
+      "provider": "Bellevue Youth Theatre (City of Bellevue)",
+      "category": "arts",
+      "subcategory": "youth-theatre",
+      "type": "summer",
+      "cost": {
+        "amount": 280,
+        "type": "paid",
+        "display": "$120-$720 depending on session length, age tier, and Resident/Non-Resident rate"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — sessions open for registration via City of Bellevue Parks",
+      "description": "Bellevue Youth Theatre is a city-funded recreational theatre program that casts every camper who registers. Summer 2026 camps include the annual Play-Making Camp (Aug 10-14, 9:30 a.m.-3 p.m. — campers learn plot, character, script-writing and produce a piece by Friday), a Beauty and the Beast camp (Aug 17-21, 9:30 a.m.-3 p.m.), and other story-based camps including A Midsummer Night's Dream, Jack and the Beanstalk, and The Tortoise and the Hare. Extended care available 8-9:30 a.m. and 3-5:30 p.m. for many sessions. BYT specifically welcomes performers of all abilities. Note: 2026 per-camp pricing varies by length, age tier, and resident vs non-resident — confirm exact session price during registration at the City of Bellevue Parks site or by calling (425) 452-7155.",
+      "url": "https://bellevuewa.gov/city-government/departments/parks/community-centers/bellevue-youth-theatre/classes-camps",
+      "tags": [
+        "summer-camp",
+        "theatre",
+        "drama",
+        "performance",
+        "bellevue",
+        "eastside",
+        "inclusive",
+        "all-abilities"
+      ],
+      "duration": "1-2 weeks per session, weekday daytime",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Eastside",
+      "ages": "approx 6-18 across all sessions; age tiering varies per camp",
+      "dates": "Summer 2026 — sessions throughout July and August (incl. Aug 10-14 Play-Making, Aug 17-21 Beauty and the Beast)",
+      "scholarshipAid": "Scholarship/financial assistance available via City of Bellevue Parks (Recreation Resource Reduction)",
+      "registrationUrl": "https://bellevuewa.gov/city-government/departments/parks/community-centers/bellevue-youth-theatre/classes-camps",
+      "howToStart": "Browse camps and register through the City of Bellevue Parks system at the BYT classes-camps page; call (425) 452-7155 for ages, scholarship, and waitlist questions.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "per-session cost",
+        "per-session age tier"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://bellevuewa.gov/city-government/departments/parks/community-centers/bellevue-youth-theatre/classes-camps"
+    },
+    {
+      "name": "Music Works Northwest Summer Music Camps",
+      "provider": "Music Works Northwest",
+      "category": "arts",
+      "subcategory": "music-camp",
+      "type": "summer",
+      "cost": {
+        "amount": 330,
+        "type": "paid",
+        "display": "$330 short session (3 days) / $530 longer session (5 days); sliding-scale tuition assistance available"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — sessions fill spring",
+      "description": "Music Works Northwest, a Bellevue community music school, runs summer music camps for ages 4-16 in 2026. Programs include I Love Music Camp, Creative Keyboards Piano Camp, Gotta Sing! Voice Camp, Instrument Exploration Camp, and Electronic Music Creation. Shorter 3-day sessions (e.g., June 29 - July 1) are $330; longer 5-day sessions (e.g., June 22-26) are $530. Sliding-scale tuition assistance is available because the school believes music should be accessible regardless of economic status.",
+      "url": "https://www.musicworksnw.org/summer-camps",
+      "tags": [
+        "summer-camp",
+        "music",
+        "piano",
+        "voice",
+        "electronic-music",
+        "bellevue",
+        "eastside",
+        "sliding-scale",
+        "financial-aid"
+      ],
+      "duration": "3 days or 5 days per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Eastside",
+      "ages": "4-16",
+      "dates": "Summer 2026 — weekly sessions June 22 through August (incl. 3-day and 5-day formats)",
+      "scholarshipAid": "Available — sliding-scale tuition assistance",
+      "registrationUrl": "https://www.musicworksnw.org/summer-camps",
+      "howToStart": "Pick a camp at musicworksnw.org/summer-camps and apply for tuition assistance at musicworksnw.org/tuition-assistance if needed.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.musicworksnw.org/summer-camps"
+    },
+    {
+      "name": "IslandWood Outdoor Summer Day Camps",
+      "provider": "IslandWood",
+      "category": "outdoor",
+      "subcategory": "nature-environmental-education",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by session — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bainbridge Island",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "April 3 (full refund cutoff, less $100 processing fee/camp); financial-assistance applications close earlier",
+      "description": "IslandWood runs nature-immersion outdoor day camps on its 255-acre Bainbridge Island campus and at the Brightwater Education Center in Woodinville. 2026 sessions run from the last week of June through the first week of August, Monday-Friday (except the week of June 29). Full-day camps (9:00 a.m. - 3:30 p.m.) serve campers entering 1st-6th grades. Half-day camps (9:00 a.m. - 12:00 p.m., Brightwater only) serve campers entering Pre-K and Kindergarten, beginning at age 4. $100 per-camp processing fee is non-refundable. As of April 2026, all financial-assistance funds for summer 2026 have been allocated, but families for whom cost is prohibitive can complete a community-need form to be added to a waitlist if additional funds become available. Note: per-session tuition is not displayed on the public landing page; confirm via 206-855-4300 or registration page.",
+      "url": "https://islandwood.org/outdoor-summer-day-camps-2026/",
+      "tags": [
+        "summer-camp",
+        "outdoor",
+        "environmental-education",
+        "nature",
+        "bainbridge",
+        "woodinville",
+        "kitsap",
+        "king-county",
+        "elementary"
+      ],
+      "duration": "1 week per session (full-day or half-day)",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Kitsap / King County",
+      "ages": "4-12 (Pre-K through entering 6th grade)",
+      "dates": "Last week of June 2026 through first week of August 2026, Monday-Friday",
+      "scholarshipAid": "Limited — 2026 funds currently exhausted; community-need waitlist available",
+      "registrationUrl": "https://islandwood.org/outdoor-summer-day-camps-2026/",
+      "howToStart": "Register at islandwood.org/outdoor-summer-day-camps-2026; call 206-855-4300 for tuition specifics or to join the financial-assistance waitlist.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/"
     }
   ]
 }
