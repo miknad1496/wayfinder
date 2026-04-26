@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 122,
+    "totalCount": 127,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design — they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -3712,6 +3712,162 @@
       "collegeAppValue": "high",
       "howToStart": "Visit calacademy.org/teen-advocates-for-science-communication-tasc for current cohort dates and the application form. Plan to commit to one program day per week plus monthly cohort meetings before applying. Open to 8th-12th graders Bay Area-wide. Note: the Academy's older Academy Naturalist Teen (ANT) program is currently paused; TASC Force is the active teen volunteer track.",
       "_source": "https://www.calacademy.org/teen-advocates-for-science-communication-tasc",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Houston Food Bank Volunteer (Portwall Warehouse, Keegan Kitchen, Teachers Aid)",
+      "organization": "Houston Food Bank",
+      "description": "Houston Food Bank is the largest food bank in America by distribution, serving 18 southeast Texas counties from a 308,000 sq ft Portwall Warehouse in east Houston. Volunteer roles include inspecting and sorting food, repacking dry goods into family-sized bags, building home delivery kits, supporting the Teachers Aid program (school supplies for under-resourced schools), and assisting Backpack Buddy weekend food bag assembly. The Keegan Kitchen meal-prep operation requires volunteers to be 16+. Youth volunteers under 16 must be accompanied by a parent/legal guardian, and all volunteers under 18 must submit a Minor Liability Waiver signed by a parent or guardian. Closed-toe shoes required; shifts register through houstonfoodbank.org/volunteernow.",
+      "scope": "state",
+      "states": [
+        "TX"
+      ],
+      "subregion": "Houston",
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 6,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "teamwork",
+        "logistics",
+        "community service",
+        "warehouse operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Register at houstonfoodbank.org/volunteernow. Under-18s must have a parent-signed Minor Liability Waiver. Under-16s must volunteer alongside a parent/legal guardian. Kitchen volunteers must be 16+.",
+      "_source": "https://info.houstonfoodbank.org/hc/en-us/articles/4412601502605-What-do-volunteers-do-and-what-are-the-requirements-for-age-and-signing-up",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Houston Zoo — Zoo Crew Explorers + Year-Round Zoo Crew",
+      "organization": "Houston Zoo",
+      "description": "Houston Zoo's teen volunteer pipeline begins with the Zoo Crew Explorers four-week summer program (Mon-Fri, 8:30am+) for ages 13-17. Each summer offers four sessions (June-August). Teens must be 13 by June 1 and not turn 18 before their session ends. Zoo Crew Explorers introduces participants to careers across the zoo (zookeepers, groundskeepers, marketing, conservation), wildlife conservation initiatives, and interpretation skills for engaging guests. After completing Zoo Crew Explorers, teens are eligible for the Year-Round Zoo Crew (regular school-year + summer roles, ages 15+) and Returning Summer Zoo Crew. Mandatory virtual orientation in May. Program fees apply (Summer-only $325; Year-round +$275); these recover the cost of the structured curriculum. Strong fit for teens interested in wildlife biology, conservation, environmental education, or veterinary careers.",
+      "scope": "state",
+      "states": [
+        "TX"
+      ],
+      "subregion": "Houston",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 13,
+      "ageMax": 17,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "wildlife conservation",
+        "public speaking",
+        "interpretation",
+        "teamwork"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via houstonzoo.org → Make Memories → Teens → First-Year Zoo Crew Explorers. Applications typically open winter for the following summer. Selection is competitive. Email teenprograms@houstonzoo.org or call 713-533-6567 with questions.",
+      "_source": "https://www.houstonzoo.org/make-memories/teens/first-year-zoo-crew-explorers/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Houston Public Library Youth Volunteer Program",
+      "organization": "Houston Public Library",
+      "description": "Houston Public Library's Youth Volunteer Program welcomes teens 14+ across HPL's network of branch libraries throughout the City of Houston. Activities vary by branch and include shelving and reading-room support, summer reading program assistance, Teen Advisory Club participation, technology helper for seniors, and event support. Parent or guardian permission is required (consent form emailed after application). Volunteers 18+ must complete a criminal background check; under-18 volunteers do not. Strong fit for teens interested in education, literacy, civic service, or library careers. The Teen Advisory Club (TAC) at participating branches is a leadership pathway where teens plan teen programming and recommend collection purchases.",
+      "scope": "state",
+      "states": [
+        "TX"
+      ],
+      "subregion": "Houston",
+      "categories": [
+        "education",
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "literacy",
+        "customer service",
+        "event planning",
+        "tech tutoring"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Apply at houstonlibrary.org/youth-volunteer (online form). Allow up to 6 weeks for processing. Contact hplvolunteers@houstontx.gov or 832-393-1481.",
+      "_source": "https://houstonlibrary.org/youth-volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Children's Museum of Houston — Discovery Squad",
+      "organization": "Children's Museum of Houston",
+      "description": "Discovery Squad is a year-long youth leadership program for ages 14-17 at Children's Museum Houston (Museum District) and the Fort Bend Children's Discovery Center (Sugar Land). Squad members assist with exhibits, activities, and programs — gaining hands-on experience facilitating science, art, and early-literacy programming for younger visitors. Selection is competitive (application + interview). Members commit to a minimum of 75 hours of volunteer service across the summer or school year. Distinct from the Museum's general Individual Volunteer pool, which accepts age 13+ with first-shift parent accompaniment. Discovery Squad is widely cited among Houston ISD/HISD-area college-prep counselors as a strong leadership/community-service entry. Applications for the 2026-27 cohort open April 2026.",
+      "scope": "state",
+      "states": [
+        "TX"
+      ],
+      "subregion": "Houston",
+      "categories": [
+        "education",
+        "arts",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 17,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "public engagement",
+        "child education",
+        "exhibit interpretation",
+        "leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via volunteer.cmhouston.org → Discovery Squad. Selection is competitive (application + interview). Contact Dulce Aguirre, Office and Logistics Coordinator, at DAGUIRRE@cmhouston.org. Applications open annually in April.",
+      "_source": "https://volunteer.cmhouston.org/agency/detail/?agency_id=173468",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Houston SPCA Volunteer (Animal Care, Adoptions, Wildlife Center)",
+      "organization": "Houston SPCA",
+      "description": "Houston SPCA, founded 1924, operates a 7-acre campus in West Houston serving more than 35,000 animals each year — including Texas's largest 24/7 Wildlife Center. Teen and adult volunteers support animal care (feeding, exercise, socialization), adoption events, customer service at the front desk, special events, and the Wildlife Rescue program. Minimum age 16 at time of application. Ages 16-17 pay a $25 application fee that covers screening and a volunteer T-shirt; volunteers 18+ must complete a background check. Available shifts run 7 days/week, 7am-6pm, after completing orientation and training. Strong fit for teens interested in veterinary medicine, animal welfare, wildlife rehabilitation, or non-profit operations.",
+      "scope": "state",
+      "states": [
+        "TX"
+      ],
+      "subregion": "Houston",
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal care",
+        "customer service",
+        "wildlife handling",
+        "non-profit operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at houstonspca.org/get-involved/volunteer (16+; $25 fee for under-18). Complete orientation + training before first shift. Wildlife Rescue program has separate application path at houstonspca.org/wildlife-center/volunteer-wildlife-rescue.",
+      "_source": "https://houstonspca.org/get-involved/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"

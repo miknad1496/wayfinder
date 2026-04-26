@@ -203,3 +203,26 @@
 - Consider whether to introduce a parallel "national-gaps thematic" run interleaved with state runs to break up state monotony — but current calibration says sequential state-by-state is faster (cluster-by-metro discoveries chain). Defer thematic queue until all state queues finish.
 
 | 2026-04-26 | 10 | 5 | 0 | CA (San Diego cluster + 1 SF Bay) | San Diego Zoo Zoo Corps (13-17), SD Public Library Teen Council (12-18), Jacobs & Cushman SD Food Bank (11+), Birch Aquarium at Scripps (16+ × 4hr/wk × 6mo), Cal Academy TASC Force (8th-12th). All HIGH. CA queue → 15/15 COMPLETE. SDZoo page returned 403/Access-denied on direct fetch; verified from search-snippet excerpts of canonical URL. |
+
+## RUN 11 NOTES (2026-04-26 — TX queue first run, Houston cluster)
+
+- Added 5 HIGH-confidence Houston entries (TX queue's first batch): Houston Food Bank (16+ Keegan Kitchen / 6+ warehouse with parent), Houston Zoo Zoo Crew Explorers + Year-Round Crew (13-17, 4-week summer + year-round), Houston Public Library Youth Volunteer Program (14+, parent permission), Children's Museum of Houston Discovery Squad (14-17, 75 hr/yr leadership), Houston SPCA (16+, $25 application fee for 16-17, wildlife center pathway).
+- All 5 HIGH-confidence — Houston follows the LA/SF/SD pattern: institutional teen-volunteer pages publish ages cleanly, often with separate sub-pages per program track. No medium-confidence entries needed.
+- Mid-research drops: 0. Final batch hit 5/5 on first pass.
+- Heart of Los Angeles-style "no published age" sensitive-population trap did NOT recur in Houston — even Houston SPCA's published 16+ minimum is unambiguous.
+- TX queue → 5/12 after run 11. Suggested run-12 cluster: Austin metro (Austin Public Library Teen Volunteer / Teen Library Connection, Central Texas Food Bank, Austin Animal Center Volunteers, Thinkery Children's Museum teen volunteer, Texas State Parks volunteer trail crews — Bastrop / Pedernales). Or, if Austin teen-program landscape is thin, pivot to Dallas (Dallas Zoo, Perot Museum Teen Volunteer, Dallas Public Library, North Texas Food Bank, SPCA of Texas) for a 4-1 split.
+- Stay at batch_size 5.
+
+### Source-specific run-11 notes
+- `info.houstonfoodbank.org/hc/en-us/articles/4412601502605` — Zendesk help-center FAQ. Single source for canonical age policy (16+ Keegan Kitchen; 6+ warehouse with parent; under-18 Minor Liability Waiver). Multi-language (EN/ES). Compact, clean fetch via internal `web_fetch`.
+- `houstonzoo.org/make-memories/teens/first-year-zoo-crew-explorers/` — internal `web_fetch` exceeded token limits (large WordPress page); fell back to `curl -A "Mozilla/5.0"` + Python regex strip. Page lists explicit 13-17 age window, 4-week summer sessions, virtual May orientation, $325 program fee. Fee is structured-curriculum cost recovery, not pay-to-volunteer (similar to Aquarium of the Pacific VolunTEEN's fee structure already in DB).
+- `houstonlibrary.org/youth-volunteer` — clean curl fetch (~1.5KB). Explicit 14+, parent permission, 6-week processing window. Email hplvolunteers@houstontx.gov.
+- `volunteer.cmhouston.org/agency/detail/?agency_id=173468` — Galaxy Digital "Get Connected" volunteer-portal subdomain. Discovery Squad page enumerates 14-17 age + 75-hour minimum + competitive application+interview process. Distinct sub-portal from cmhouston.org main site — useful pattern to remember (museum/library nonprofits often use Galaxy Digital, VolunteerLocal, or Better Impact as the portal subdomain).
+- `houstonspca.org/get-involved/volunteer/` — direct curl returned 1.4KB (likely WAF/Cloudflare lite challenge), but search-snippet excerpts surface the canonical policy (16+, $25 fee for 16-17, 18+ background check, 7am-6pm shifts). Internal `web_fetch` exceeded token limits. Same pattern as Houston Zoo — large WordPress page, search-result excerpts are reliable for the structured policy data.
+
+### Calibration notes from run 11
+- TX (like CA) is yielding HIGH-confidence entries cleanly. Major-metro institutional teen programs (food bank, zoo, library, children's museum, SPCA) publish ages on the first or second canonical page hit.
+- Pattern confirmed across LA / SF / SD / Houston: when targeting a single major metro, the "5 institutional anchors" recipe (Food Bank + Zoo/Aquarium + Library + Children's/Science Museum + SPCA/Humane) consistently fills a batch with 0 mid-research drops. Recommend continuing this anchor recipe for Austin / Dallas / NYC / Boston / Detroit.
+- Texas-specific: program fees on structured teen curricula (Houston Zoo $325) are common and locally accepted. Don't conflate with voluntourism — flag fee in description for transparency.
+
+| 2026-04-26 | 11 | 5 | 0 | TX (Houston) — first TX run | Houston Food Bank, Houston Zoo Zoo Crew Explorers/Year-Round, Houston Public Library Youth Volunteer, Children's Museum of Houston Discovery Squad, Houston SPCA. All HIGH confidence. TX queue → 5/12. Cluster-by-metro held cleanly; "5 institutional anchors" recipe (food bank + zoo + library + museum + SPCA) yielded 5/5 with 0 mid-research drops. |

@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T12:55:00+00:00",
-  "totalRuns": 10,
-  "totalAdded": 47,
+  "lastRun": "2026-04-26T13:05:00+00:00",
+  "totalRuns": 11,
+  "totalAdded": 52,
   "queue": [
     {
       "focus": "WA",
@@ -32,8 +32,8 @@
     {
       "focus": "TX",
       "target": 12,
-      "current": 0,
-      "status": "pending",
+      "current": 5,
+      "status": "in-progress",
       "metros": [
         "Houston",
         "Austin",
