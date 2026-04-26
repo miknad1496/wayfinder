@@ -5,7 +5,7 @@
 ## CURRENT CALIBRATION (latest accepted values)
 
 - batch_size: 8 schools (current setting in prompt)
-- typical_run_duration: 18-25 min
+- typical_run_duration: 12-20 min (Run 10 ~10 min — batched parallel WebSearch is fast for clusters of district-grouped schools)
 - typical_skip_rate: ~25% structural; can spike to 60%+ when batch overlaps with manually-entered schools
 - last_calibration_change: 2026-04-26 — initial setup; bootstrap from runs 1-7
 
@@ -18,6 +18,9 @@
 - Niche.com pages parse cleaner than US News for ratings.
 - **NEW (Run 9):** BSD405 (and other Finalsite-hosted district sites) staff pages return >100KB but are searchable via Python: load the JSON tool-result file, find anchor like "Principal - {School Name}" and extract the `<h3 class="fsFullName">` 200-400 chars before. Worked first try for 3/3 BSD principals (Drew Thomas / Russell White / Bethany Spinler).
 - **NEW (Run 9):** When a `web_fetch` returns "exceeds maximum allowed tokens" but **saves to a file**, treat that file as a parseable artifact — `python3` regex over the saved file (in `~/.claude/projects/.../tool-results/*.txt`) recovers data without retrying the fetch.
+
+- **NEW (Run 10):** **Cluster batches by district when possible.** Run 10's batch was 4 Bellingham SD schools + 2 Bethel SD schools — single `site:[district].org "[School]" principal` queries returned principal + AP courses + grad rate in one snippet for each. Net: 6/6 verified in <10 min using only WebSearch (no WebFetch needed).
+- **NEW (Run 10):** **Niche.com k12 pages return clean snippets for AP enrollment %, AP pass %, student-teacher ratio, demographics in WebSearch results** without needing to fetch the full page. Standard query: `"[School]" [city] enrollment AP courses graduation rate`.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
 
@@ -57,7 +60,8 @@
 
 - Batch size 8 is the current setting and seems sustainable. Run 7 reported "WebFetch hit 'file too large' wall on 2 of 8 sites" — workaround via WebSearch handled it without dropping enrichment quality.
 - The grinder is currently advancing offset by 8 even when 2-3 are skipped. Consider whether to keep advancing the cursor (current behavior — moves through the queue faster but leaves gaps) vs. only advancing the cursor by `verified` count (more thorough but slower). **Current consensus: advancing by 8 is correct** — skipped schools are typically structurally low-yield and not worth re-attempting later.
-- **NEW (Run 9, replaces prior suggestion):** Run 9 produced only 3 enrichments because 3 dups + 2 alt-program skips ate the batch. Two viable next-run tweaks: (a) **pre-dedup pass** — at batch-selection time, scan candidates against the existing `enriched.json` name set; advance past dups silently and pull additional NCES rows to keep net target = 8 enrichments. (b) **Bump batch_size to 10** for the WA-high tail since most remaining entries are processable. Recommend (a) — preserves data quality, addresses the actual blocker. **Proposed prompt change for next iteration:** add step "When selecting batch, skip names already present in enriched.json (count as 'pre-dedup', not 'skipped'); advance offset until net target = batch_size processable schools." Until prompt changes, this run advanced offset only by 8 per current rule.
+- **NEW (Run 10, replaces Run 9 suggestion):** Run 10 hit a clean district-cluster (Bellingham SD + Bethel SD) and verified 6/6 with no dups in ~10 min. Validates that **clustering by district** is the right batch-selection heuristic when the queue allows it. Strong recommendation for next prompt iteration: when `findRaw`/batch-selection returns a sequential window, look ahead for district groupings and prefer 6-8 schools across 1-3 districts over 8 schools spread across 8 districts. Until prompt formalizes this, the natural NCES alphabetical-by-city ordering already groups districts well, so business-as-usual works.
+- **NEW (Run 9 — kept for reference):** Run 9 produced only 3 enrichments because 3 dups + 2 alt-program skips ate the batch. Two viable next-run tweaks: (a) **pre-dedup pass** — at batch-selection time, scan candidates against the existing `enriched.json` name set; advance past dups silently and pull additional NCES rows to keep net target = 8 enrichments. (b) **Bump batch_size to 10** for the WA-high tail since most remaining entries are processable. Recommend (a) — preserves data quality, addresses the actual blocker. **Proposed prompt change for next iteration:** add step "When selecting batch, skip names already present in enriched.json (count as 'pre-dedup', not 'skipped'); advance offset until net target = batch_size processable schools." Until prompt changes, this run advanced offset only by 8 per current rule.
 
 ## OPEN QUESTIONS / TODO FOR FUTURE RUNS
 
@@ -70,6 +74,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham SD + Bethel SD cluster). 6/6 verified, 2 skipped (Visions enr=13, Bellingham Re-Engagement alt). District-cluster batching = fast. |
 | 2026-04-26 | 9     | 3        | 5       | 3/5 skips were dups w/ manual entries (Bellevue HS, Interlake, Newport); 2 alt-program <50 skips. Discovered fuse mount + /tmp full traps. |
 | 2026-04-26 | 8     | 7        | 1       | Battle Ground / Prairie / Summit View / Lumen / Whatcom batch; 1 alt placeholder skipped              |
 | 2026-04-26 | 7     | 6        | 2       | WebFetch failed on 2 sites; site:domain workaround OK                                                  |

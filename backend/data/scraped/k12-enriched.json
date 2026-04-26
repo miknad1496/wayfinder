@@ -3,7 +3,11 @@
     "lastUpdated": "2026-04-26T06:37:41.237Z",
     "count": 55,
     "source": "NCES + verified web sources",
-    "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72."
+    "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
+    "totalSchools": 61,
+    "lastUpdate": "2026-04-25",
+    "lastRunAdded": 6,
+    "lastRunReplaced": 0
   },
   "schools": [
     {
@@ -2323,6 +2327,259 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/bellevue-big-picture-school-146593",
         "https://www.niche.com/k12/bellevue-big-picture-school-bellevue-wa/",
         "https://www.publicschoolreview.com/bellevue-big-picture-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530042000099",
+      "name": "Bellingham High School",
+      "city": "Bellingham",
+      "state": "WA",
+      "zip": "98225",
+      "district": "Bellingham School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)676-6575",
+      "latitude": 48.7569,
+      "longitude": -122.4741,
+      "website": "https://bellingham.bellinghamschools.org/",
+      "principal": "Ben Goodwin",
+      "enrollment": 1188,
+      "studentTeacherRatio": "22:1",
+      "apCourses": 19,
+      "apParticipationRate": "37%",
+      "apPassRate": "50%",
+      "rating": {
+        "source": "Niche",
+        "value": "3.94/5",
+        "countyRank": "#2 Best Public HS in Whatcom County"
+      },
+      "notablePrograms": [
+        "Career & Technical Education (CTE)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://www.bellinghamschools.org/all-news/p/~board/2024-2025-news/post/bellingham-high-principal-update",
+        "https://www.niche.com/k12/bellingham-high-school-bellingham-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellingham-school-district/bellingham-high-school-20740"
+      ]
+    },
+    {
+      "ncessch": "530042000113",
+      "name": "Sehome High School",
+      "city": "Bellingham",
+      "state": "WA",
+      "zip": "98225",
+      "district": "Bellingham School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)676-6481",
+      "latitude": 48.727268,
+      "longitude": -122.480112,
+      "website": "https://sehome.bellinghamschools.org/",
+      "principal": "Sonia Cole",
+      "assistantPrincipals": [
+        "Mike Couto",
+        "Camille Mora"
+      ],
+      "enrollment": 1163,
+      "studentTeacherRatio": "22:1",
+      "apCourses": 19,
+      "apParticipationRate": "43%",
+      "graduationRate": "92%",
+      "notablePrograms": [
+        "Comprehensive AP program: English Lang/Lit, Calculus, Statistics, Bio, Chem, Env Sci, Physics 1/2, Gov, Geography, US/Euro/World History, Econ, Psych, French, Spanish"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "Strong academics"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://sehome.bellinghamschools.org/directory",
+        "https://www.niche.com/k12/sehome-high-school-bellingham-wa/academics/",
+        "https://resources.finalsite.net/images/v1758577245/bellinghamschoolsorg/qudglgxpibx43du8dvkx/2025-26SHSProfile.pdf"
+      ]
+    },
+    {
+      "ncessch": "530042002693",
+      "name": "Squalicum High School",
+      "city": "Bellingham",
+      "state": "WA",
+      "zip": "98226",
+      "district": "Bellingham School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)676-6471",
+      "latitude": 48.7842,
+      "longitude": -122.4228,
+      "website": "https://squalicum.bellinghamschools.org/",
+      "principal": "Miguel Perez",
+      "enrollment": 1241,
+      "studentTeacherRatio": "20:1",
+      "apCourses": null,
+      "apParticipationRate": "54%",
+      "apPassRate": "44%",
+      "graduationRate": "87%",
+      "demographics": {
+        "minorityEnrollment": "45%",
+        "economicallyDisadvantaged": "49%"
+      },
+      "rating": {
+        "source": "Niche",
+        "notes": "Above WA state graduation rate avg of 84%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://squalicum.bellinghamschools.org/directory",
+        "https://www.niche.com/k12/squalicum-high-school-bellingham-wa/academics/",
+        "https://reportcard.ospi.k12.wa.us/ReportCard/ViewSchoolOrDistrict/103073"
+      ]
+    },
+    {
+      "ncessch": "530042001738",
+      "name": "Options High School",
+      "city": "Bellingham",
+      "state": "WA",
+      "zip": "98225",
+      "district": "Bellingham School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)647-6871",
+      "latitude": 48.757245,
+      "longitude": -122.471079,
+      "website": "https://options.bellinghamschools.org/",
+      "principal": "Bethany Barrett",
+      "assistantPrincipals": [
+        "Nick Hayes"
+      ],
+      "enrollment": 206,
+      "studentTeacherRatio": "10:1",
+      "schoolType": "alternative",
+      "notablePrograms": [
+        "Public alternative school of choice",
+        "Community partnerships (off-site learning)",
+        "On-site health center via Compass Health and Sea Mar",
+        "Supplemental virtual instruction"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://options.bellinghamschools.org/our-school/about-our-school",
+        "https://www.niche.com/k12/options-high-school-bellingham-wa/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300420&ID=530042001738"
+      ]
+    },
+    {
+      "ncessch": "530048000119",
+      "name": "Bethel High School",
+      "city": "Spanaway",
+      "state": "WA",
+      "zip": "98387",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(253)800-7000",
+      "latitude": 47.0545,
+      "longitude": -122.3781,
+      "website": "https://bhs.bethelsd.org/",
+      "principal": "Christy Rodriguez",
+      "assistantPrincipals": [
+        "Leisha Bonine",
+        "Tyson Lowry (Athletic Coordinator)",
+        "Mike Chappell"
+      ],
+      "enrollment": 1651,
+      "studentTeacherRatio": "20:1",
+      "apParticipationRate": "33%",
+      "graduationRate": "91%",
+      "testScores": {
+        "mathProficient": "24%",
+        "readingProficient": "62%",
+        "avgSAT": 1140,
+        "avgACT": 24
+      },
+      "demographics": {
+        "minorityEnrollment": "56%",
+        "economicallyDisadvantaged": "50%"
+      },
+      "notablePrograms": [
+        "Founded 1952 — district's oldest HS",
+        "Comprehensive AP"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "C+"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://bhs.bethelsd.org/welcome/about-us",
+        "https://www.niche.com/k12/bethel-high-school-spanaway-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bethel-school-district/bethel-high-school-20746"
+      ]
+    },
+    {
+      "ncessch": "530048001821",
+      "name": "Spanaway Lake High School",
+      "city": "Spanaway",
+      "state": "WA",
+      "zip": "98387",
+      "district": "Bethel School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(253)800-5600",
+      "latitude": 47.1056,
+      "longitude": -122.4124,
+      "website": "https://slhs.bethelsd.org/",
+      "principal": "Susie Askew",
+      "enrollment": 1804,
+      "studentTeacherRatio": "23:1",
+      "apCourses": 12,
+      "apParticipationRate": "30%",
+      "graduationRate": "87%",
+      "rating": {
+        "source": "multiple",
+        "notes": "Above WA state grad-rate avg of 84%"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://slhs.bethelsd.org/welcome/about-us",
+        "https://www.niche.com/k12/spanaway-lake-high-school-spanaway-wa/academics/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bethel-school-district/spanaway-lake-high-school-20748"
       ]
     }
   ]
