@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 147,
+    "totalCount": 152,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -95,7 +95,12 @@
       "Washington Trails Association",
       "Wildlife Conservation Society (Bronx Zoo / Discovery Guide)",
       "YMCA",
-      "YWCA Clark County"
+      "YWCA Clark County",
+      "Coalition for the Homeless (NYC)",
+      "New York Cares",
+      "Greater Boston Food Bank",
+      "Zoo New England",
+      "MSPCA-Angell"
     ],
     "categories": {
       "health": "Health & Medical",
@@ -4528,6 +4533,168 @@
       "collegeAppValue": "high",
       "howToStart": "Visit nybg.org/learn/kids-teens/explainers/ for the application cycle (typically opens late fall/early winter for the following spring/summer cohort). Open to all NYC-area high school students; competitive admission. Contact NYBG Education for cycle-specific deadlines.",
       "_source": "https://www.nybg.org/learn/kids-teens/explainers/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Coalition for the Homeless \u2014 Grand Central Food Program (GCFP) Volunteer",
+      "organization": "Coalition for the Homeless (NYC)",
+      "description": "Founded 1981, the Coalition is the nation's oldest advocacy and direct-service organization helping homeless New Yorkers. The Grand Central Food Program is the largest nightly mobile soup kitchen in the country, delivering ~1,000 meals every night of the year at 22 stops across Manhattan and the Bronx. Volunteers help set up and serve at St. Bartholomew's Church (4:30-6:30pm) Monday-Friday, with consistent multi-week commitment expected. Drivers run the route 6:45-9:30pm (separate role; valid license / 21+ for vehicle insurance reasons). Kids and teens not yet ready for evening service can run school care-kit drives, back-to-school supply drives, or host the Coalition's Advocacy presentation. Note: explicit age min not published on the GCFP volunteer page \u2014 confirm directly via volunteer@cfthomeless.org.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC (Manhattan / Bronx)",
+      "categories": [
+        "hunger",
+        "homelessness",
+        "civic"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "meal service",
+        "consistent commitment",
+        "advocacy",
+        "community organizing"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Email volunteer@cfthomeless.org to request a GCFP shift. For school-based involvement (care kits, supply drives, presentations), see coalitionforthehomeless.org/how-kids-and-teens-can-help/. Note: GCFP requires consistent recurring attendance, not one-off shifts.",
+      "_source": "https://www.coalitionforthehomeless.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "ageMin"
+      ]
+    },
+    {
+      "name": "New York Cares Youth-Friendly Volunteering (Family Friendly + Teen Friendly + Teen Group)",
+      "organization": "New York Cares",
+      "description": "NYC's largest volunteer-mobilizing organization, with a year-round youth-friendly tier explicitly designed for ages 5-17. Family Friendly projects let parents register children ages 5-13 and serve alongside them. Teen Friendly projects (ages 14-17) allow solo participation or with a parent/guardian. Teen Group projects bring 14+ teens together with a 21+ group leader for serving meals to the homeless, visiting seniors, tutoring younger kids, environmental cleanups, and arts events. Parent/guardian must create the New York Cares account first and register the youth to the family roster (one-time online waiver).",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC (5 boroughs)",
+      "categories": [
+        "hunger",
+        "seniors",
+        "education",
+        "environment",
+        "mentorship",
+        "leadership"
+      ],
+      "ageMin": 5,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "service-leadership",
+        "team coordination",
+        "community engagement across causes"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Parent/guardian creates an account at newyorkcares.org, registers the youth to the family roster, and signs the one-time online waiver. Then browse the calendar filtered by Family Friendly, Teen Friendly, or Teen Group.",
+      "_source": "https://www.newyorkcares.org/youth-friendly",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Greater Boston Food Bank Volunteer (Sort & Inspect, Kids Who Care, Families for Impact)",
+      "organization": "The Greater Boston Food Bank (GBFB)",
+      "description": "GBFB is the largest hunger-relief organization in New England, distributing tens of millions of meals per year across Eastern Massachusetts. Standard sort-and-inspect warehouse shifts are 16+; volunteers under 18 require an adult chaperone. Group-based youth programs lower the bar: Kids Who Care welcomes group volunteers as young as 10, and Families for Impact runs exclusive family events for kids age 5+. Multiple shifts daily at the Yawkey Distribution Center in Boston.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Greater Boston",
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "food safety",
+        "team coordination",
+        "service-leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit gbfb.org/get-involved/volunteer to register for an individual or group shift. Kids Who Care and Families for Impact have separate registration tracks. Email volunteer@gbfb.org for group bookings.",
+      "_source": "https://www.gbfb.org/get-involved/volunteer/volunteering-faqs/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Zoo New England \u2014 Summer ZooTeen + Teen Ambassador + Keeper Aide (Franklin Park Zoo / Stone Zoo)",
+      "organization": "Zoo New England (Franklin Park Zoo + Stone Zoo)",
+      "description": "Zoo New England operates Franklin Park Zoo (Boston) and Stone Zoo (Stoneham) with three distinct teen tracks: (1) Summer ZooTeen \u2014 ages 14-18, 6-week summer experience combining work in animal care, horticulture, marketing, and camp counseling with professional development and life-skills training. Paid ZooTeen roles are reserved for Boston and Cambridge residents; volunteer ZooTeen roles are open to all. (2) Teen Ambassador Program \u2014 ages 15-17, October-May, 15 hr/week, by application after completing ZooTeen. Designed for Boston youth interested in wildlife, education, and environmental justice. (3) Keeper Aide volunteer (16+) \u2014 three-hour shift weekly, 9am-12pm, supporting the Zoo Education team. No fee to volunteer at either zoo.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Greater Boston",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal care",
+        "horticulture",
+        "environmental education",
+        "guest interpretation",
+        "professional development"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Summer 2026 ZooTeen application posts mid-March at zoonewengland.org/discover/teen-programs/summer-zooteen-paid/. Teen Ambassador admits select ZooTeen alumni. For Keeper Aide, email fpzvolunteers@zoonewengland.com.",
+      "_source": "https://www.zoonewengland.org/discover/teen-programs/summer-zooteen-paid/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "MSPCA-Angell Volunteer (Boston Adoption Center + Nevins Farm Junior Volunteer)",
+      "organization": "MSPCA-Angell (Massachusetts Society for the Prevention of Cruelty to Animals)",
+      "description": "Founded 1868, MSPCA-Angell is one of the oldest humane societies in the United States. Two distinct volunteer tracks: (1) Boston Adoption Center & Angell Animal Medical Center \u2014 16+ minimum (16-17 must obtain and submit a completed MA Youth Work Permit). Roles include animal care, adoption support, hospital reception, and veterinary observation. (2) Junior Volunteer Program at Nevins Farm Adoption Center (Methuen) \u2014 ages 11-15, with experienced volunteers and staff coaching participants. Summer Camp Junior Counselor positions at Nevins Farm require age 15 by start date (per MA state employment law). Northeast Animal Shelter (Salem) and Cape Cod Adoption Center are additional sites.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Greater Boston / Northeastern MA",
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 11,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal welfare",
+        "shelter operations",
+        "humane education",
+        "hospital reception"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Boston: visit mspca.org/animal_care/frequently-asked-questions-boston-mspca-volunteer-program/ to apply (16+; MA Youth Work Permit for 16-17). Nevins Farm Junior Volunteer (11-15): apply via mspca.org/adoption-centers/nevins-farm-adoption-center/humane-education-programs-at-nevins-farm/junior-volunteer-program/.",
+      "_source": "https://www.mspca.org/animal_care/frequently-asked-questions-boston-mspca-volunteer-program/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"

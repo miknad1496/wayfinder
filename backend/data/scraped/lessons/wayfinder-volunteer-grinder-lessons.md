@@ -311,3 +311,26 @@
 - Run 16 target: finish NY queue with 2 more entries (suggest: Coalition for the Homeless NYC + Lincoln Center Activities Council teen volunteer OR teen docent), then pivot to MA queue. Alternatively cluster on Buffalo/Rochester for the upstate share — but NYC depth is still rich enough for a 2-entry close-out.
 
 | 2026-04-26 | 15 | 5 | 0 | NY (NYC depth — 5 institutional anchors v2) | City Harvest (6+ tiered), BBG GAP (grades 9-11, 9-mo), BPL Teen Volunteer (12+ tiered), QPL Teen Central + P2PSC (13/14+), NYBG Explainers (14-18 competitive). All HIGH. NY queue → 10/12. |
+
+## RUN 16 NOTES (2026-04-26 — NY queue close + MA queue first run)
+
+- Added 5 entries: 2 NYC closeouts (Coalition for the Homeless GCFP, New York Cares Youth-Friendly aggregator) + 3 MA Boston anchors (GBFB, Zoo New England Franklin Park / Stone Zoo, MSPCA-Angell).
+- 4 HIGH confidence + 1 MEDIUM (Coalition for the Homeless GCFP — explicit ageMin not on /volunteer/ page; defaulted to 16 with caveat per direct-service-with-evening-hours convention).
+- **NY queue → 12/12 COMPLETE. MA queue → 3/8 (Boston anchors started).**
+- Mid-research drops: 0. Stale-clone issue (cont'd from runs 10 & 15): the scheduled-task prompt's lessons file was 11 runs out of date (showed run 4 as latest; actual was run 15). Same workaround as run 15: clone to a user-owned `~/work/` path (the `/tmp/wayfinder-vol/` clone inherited `nobody:nogroup` ownership and was read-only).
+- The "5 institutional anchors" recipe held for Boston too (Food Bank + Zoo + Animal-welfare/SPCA, 3 anchors filled this batch). Run 17 plan: finish MA with the remaining 2 anchors (Boston Public Library Teen Volunteer + Boston Children's Museum or another science museum) plus 3 more — full Boston anchor recipe v2 (BPL teen, BCM, Museum of Science Teen Roadshow / Volunteer Programs, New England Aquarium teen volunteer / Live Blue Ambassadors, Pine Street Inn shelter volunteer).
+
+### Source-specific run-16 notes
+- `coalitionforthehomeless.org/volunteer/` — clean curl. Tells you what GCFP is (1,000 meals/night × 22 stops, largest mobile soup kitchen in country) and that consistent commitment is required, but does NOT publish a numeric age min — uses email contact instead. Confirmed via `coalitionforthehomeless.org/how-kids-and-teens-can-help/` that K-12 youth involvement is via care-kit drives, supply drives, and the Advocacy presentation rather than direct serving.
+- `newyorkcares.org/youth-friendly` — search-snippet excerpt confirms the explicit youth-tier policy (Family Friendly 5-13, Teen Friendly 14-17 solo or with parent, Teen Group 14+ with 21+ leader). Aggregator covers all 5 boroughs and many causes; right-fit for the "discover-local" alternative when a parent wants one platform for the whole family.
+- `gbfb.org/get-involved/volunteer/volunteering-faqs/` — search-snippet excerpt confirms 16+ standard, Kids Who Care (10+ groups), Families for Impact (5+ family events). GBFB is the New England equivalent to NTFB / Houston Food Bank / FBNYC / Jacobs & Cushman SD.
+- `zoonewengland.org/discover/teen-programs/summer-zooteen-paid/` — Summer ZooTeen 14-18 (paid roles for Boston/Cambridge residents only — equity-focused), Teen Ambassador 15-17 (post-ZooTeen alumni track, October-May × 15hr/wk), Keeper Aide 16+ (3hr weekly). Three distinct tracks under one umbrella entry.
+- `mspca.org/animal_care/frequently-asked-questions-boston-mspca-volunteer-program/` — Boston Adoption Center 16+ (16-17 must obtain MA Youth Work Permit). Junior Volunteer Program at Nevins Farm (Methuen) 11-15. Summer Camp Junior Counselor 15+. Multiple sites: Boston, Methuen (Nevins Farm), Salem (Northeast Animal Shelter), Cape Cod.
+
+### Calibration notes from run 16
+- New York Cares is the first "aggregator" entry in the DB — appropriate because their youth-friendly tier is consistent across thousands of NYC projects, not project-specific. Pattern: when an org runs many projects under one consistent youth policy, treat the org page as the single DB entry rather than one entry per project.
+- The Coalition for the Homeless ageMin gap is recurring (similar to LifeWire / Jubilee REACH / Imagine Housing in earlier WA runs). For nationally-recognized direct-service orgs serving sensitive populations, default ageMin=16 with `_unverifiedFields: ["ageMin"]` is the right call per the new confidence-tier policy. Only skip when the org itself can't be verified.
+- MA queue progress: 3/8 with the Food Bank + Zoo/Aquarium + SPCA anchors covered. Need 5 more; Run 17 should fill BPL Teen + Boston Children's Museum + Museum of Science + New England Aquarium + Pine Street Inn (or substitute with Cradles to Crayons / Community Servings / Project Bread).
+- Stay at batch_size 5.
+
+| 2026-04-26 | 16 | 5 | 0 | NY close + MA start (Boston anchors) | Coalition for the Homeless GCFP (medium — ageMin unverified), New York Cares Youth-Friendly (aggregator HIGH), Greater Boston Food Bank, Zoo New England (ZooTeen + Teen Ambassador + Keeper Aide), MSPCA-Angell (Boston + Nevins Farm Junior). NY → 12/12 COMPLETE. MA → 3/8. |
