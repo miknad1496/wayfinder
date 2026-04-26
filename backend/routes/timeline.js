@@ -37,7 +37,7 @@ async function loadDecisionDates() {
       const raw = await fs.readFile(p, 'utf8');
       decisionDatesCache = JSON.parse(raw);
       return decisionDatesCache;
-    } catch {}
+    } catch (err) { /* try next fallback path */ }
   }
 
   // GitHub fallback
@@ -47,7 +47,7 @@ async function loadDecisionDates() {
       decisionDatesCache = await resp.json();
       return decisionDatesCache;
     }
-  } catch {}
+  } catch (err) { /* try next fallback path */ }
 
   return null;
 }

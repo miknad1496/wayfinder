@@ -2768,17 +2768,61 @@ function fmtDollar(num) {
 // Modal UX: Escape key, body scroll lock, ARIA
 // ========================
 const _openModals = []; // stack of currently-open modal overlay IDs
+const _focusReturnStack = []; // matched 1:1 with _openModals — element to restore focus to on close
+
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function _focusableInside(modalEl) {
+  if (!modalEl) return [];
+  return Array.from(modalEl.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => {
+    // Skip elements that are visually hidden
+    return el.offsetParent !== null || el === document.activeElement;
+  });
+}
 
 function _modalOpened(modalId) {
-  if (!_openModals.includes(modalId)) _openModals.push(modalId);
+  if (!_openModals.includes(modalId)) {
+    _openModals.push(modalId);
+    _focusReturnStack.push(document.activeElement);
+    // Move focus into the modal so Tab cycling starts inside it
+    setTimeout(() => {
+      const modal = document.getElementById(modalId);
+      const focusables = _focusableInside(modal);
+      if (focusables.length > 0) focusables[0].focus();
+    }, 0);
+  }
   document.body.style.overflow = 'hidden';
 }
 
 function _modalClosed(modalId) {
   const idx = _openModals.indexOf(modalId);
-  if (idx !== -1) _openModals.splice(idx, 1);
+  if (idx !== -1) {
+    _openModals.splice(idx, 1);
+    const restore = _focusReturnStack.splice(idx, 1)[0];
+    if (restore && typeof restore.focus === 'function') {
+      try { restore.focus(); } catch (e) { /* element may have been removed */ }
+    }
+  }
   if (_openModals.length === 0) document.body.style.overflow = '';
 }
+
+// Focus trap: when a modal is open, Tab and Shift+Tab cycle within its focusable elements
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Tab' || _openModals.length === 0) return;
+  const topModalId = _openModals[_openModals.length - 1];
+  const modal = document.getElementById(topModalId);
+  if (!modal) return;
+  const focusables = _focusableInside(modal);
+  if (focusables.length === 0) return;
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+  const active = document.activeElement;
+  if (e.shiftKey) {
+    if (active === first || !modal.contains(active)) { e.preventDefault(); last.focus(); }
+  } else {
+    if (active === last || !modal.contains(active)) { e.preventDefault(); first.focus(); }
+  }
+});
 
 // Close the topmost visible modal-overlay on Escape
 document.addEventListener('keydown', (e) => {

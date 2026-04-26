@@ -43,7 +43,7 @@ async function loadInternshipsData() {
       internshipsCache = JSON.parse(raw);
       cacheTimestamp = now;
       return internshipsCache;
-    } catch {}
+    } catch (err) { /* try next fallback path */ }
   }
 
   // GitHub fallback
@@ -54,7 +54,7 @@ async function loadInternshipsData() {
       cacheTimestamp = now;
       return internshipsCache;
     }
-  } catch {}
+  } catch (err) { /* try next fallback path */ }
 
   return null;
 }

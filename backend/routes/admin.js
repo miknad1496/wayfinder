@@ -181,8 +181,17 @@ router.get('/dashboard', async (req, res) => {
 
 // ─── Admin Stats Endpoint ──────────────────────────
 
+// ---- /stats response cache: 60-second TTL ----
+// Avoids re-reading every user file on every dashboard tab refresh.
+let _statsCache = { at: 0, payload: null };
+const STATS_TTL_MS = 60 * 1000;
+
 // GET /api/admin/stats - Comprehensive dashboard stats
 router.get('/stats', async (req, res) => {
+  // Cache hit: serve stale-up-to-60s payload
+  if (_statsCache.payload && Date.now() - _statsCache.at < STATS_TTL_MS) {
+    return res.json({ ..._statsCache.payload, _cached: true, _ageMs: Date.now() - _statsCache.at });
+  }
   try {
     const { promises: fs } = await import('fs');
     const { join, dirname } = await import('path');
@@ -381,7 +390,7 @@ router.get('/stats', async (req, res) => {
       };
     }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-    res.json({
+    _statsCache = { at: Date.now(), payload: {
       timestamp: new Date().toISOString(),
       overview: {
         totalUsers,
@@ -412,7 +421,7 @@ router.get('/stats', async (req, res) => {
         eliteUsers,
         potentialMRR
       }
-    });
+    } }; res.json({ ..._statsCache.payload, _cached: false });
   } catch (err) {
     console.error('Stats error:', err);
     res.status(500).json({ error: 'Failed to load stats' });

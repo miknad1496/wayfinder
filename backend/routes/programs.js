@@ -40,7 +40,7 @@ async function loadProgramsData() {
       programsCache = JSON.parse(raw);
       cacheTimestamp = now;
       return programsCache;
-    } catch {}
+    } catch (err) { /* try next fallback path */ }
   }
 
   try {
@@ -50,7 +50,7 @@ async function loadProgramsData() {
       cacheTimestamp = now;
       return programsCache;
     }
-  } catch {}
+  } catch (err) { /* try next fallback path */ }
 
   return null;
 }

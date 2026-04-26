@@ -36,19 +36,43 @@ const webhookLimiter = rateLimit({
   message: { error: 'Too many webhook requests.' }
 });
 
-// ---- Idempotency: track processed webhook event IDs ----
+// ---- Idempotency: track processed webhook event IDs (persisted) ----
+// Stripe redelivers events on transient failures and during testing. Without
+// persistence, every Render redeploy re-processed any in-flight events.
+// Now backed by JSONL append on disk and reloaded on startup.
 const processedEvents = new Set();
 const MAX_PROCESSED_EVENTS = 10000;
+const IDEMPOTENCY_FILE = join(__dirname, '..', 'data', 'webhook-idempotency.jsonl');
 
-function markEventProcessed(eventId) {
+(async function loadIdempotencyFromDisk() {
+  try {
+    const raw = await fsPromises.readFile(IDEMPOTENCY_FILE, 'utf8');
+    let count = 0;
+    for (const line of raw.split('\n')) {
+      const t = line.trim();
+      if (t && !processedEvents.has(t)) { processedEvents.add(t); count++; }
+    }
+    console.log(`[stripe] loaded ${count} processed webhook IDs from disk`);
+  } catch (e) {
+    if (e.code !== 'ENOENT') console.error('[stripe] idempotency load failed:', e.message);
+  }
+})();
+
+async function markEventProcessed(eventId) {
+  if (!eventId) return;
+  if (processedEvents.has(eventId)) return;
   processedEvents.add(eventId);
-  // Prevent memory leak — trim oldest entries
+  // Trim in-memory if it grows past the cap
   if (processedEvents.size > MAX_PROCESSED_EVENTS) {
     const entries = Array.from(processedEvents);
     for (let i = 0; i < entries.length - MAX_PROCESSED_EVENTS / 2; i++) {
       processedEvents.delete(entries[i]);
     }
   }
+  // Persist (fire-and-forget, never block webhook handling)
+  fsPromises.appendFile(IDEMPOTENCY_FILE, eventId + '\n').catch(err => {
+    console.error('[stripe] idempotency persist failed:', err.message);
+  });
 }
 
 // ---- Audit logging for payment events ----

@@ -42,7 +42,14 @@ router.post('/send', async (req, res) => {
     }
 
     const { email } = req.body;
-    if (!email || !email.includes('@')) {
+    // RFC 5322 simplified: requires local@domain.tld, no spaces, no consecutive dots,
+    // no leading/trailing dot in local part, max 254 chars total (RFC limit).
+    const emailValid = typeof email === 'string'
+      && email.length <= 254
+      && /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,62}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,62}[A-Za-z0-9])?)+$/.test(email)
+      && !/\.\./.test(email)
+      && !email.startsWith('.') && !email.includes('@.');
+    if (!emailValid) {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 

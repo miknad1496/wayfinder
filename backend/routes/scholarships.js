@@ -39,7 +39,7 @@ async function loadScholarshipsData() {
       scholarshipsCache = JSON.parse(raw);
       cacheTimestamp = now;
       return scholarshipsCache;
-    } catch {}
+    } catch (err) { /* try next fallback path */ }
   }
 
   try {
@@ -49,7 +49,7 @@ async function loadScholarshipsData() {
       cacheTimestamp = now;
       return scholarshipsCache;
     }
-  } catch {}
+  } catch (err) { /* try next fallback path */ }
 
   return null;
 }
