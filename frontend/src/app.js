@@ -2347,6 +2347,7 @@ function setupToolListeners() {
   $('sidebarInternships').addEventListener('click', openInternships);
   $('sidebarScholarships').addEventListener('click', openScholarships);
   $('sidebarPrograms').addEventListener('click', openPrograms);
+  $('sidebarVolunteer').addEventListener('click', openVolunteer);
   $('sidebarFinancialAid').addEventListener('click', openFinancialAid);
 
   // Modal close handlers
@@ -2355,6 +2356,7 @@ function setupToolListeners() {
   setupModalClose('internshipsModal', 'internshipsModalClose');
   setupModalClose('scholarshipsModal', 'scholarshipsModalClose');
   setupModalClose('programsModal', 'programsModalClose');
+  setupModalClose('volunteerModal', 'volunteerModalClose');
   setupModalClose('financialAidModal', 'financialAidModalClose');
 
   // Upgrade gate buttons
@@ -4678,3 +4680,262 @@ function formatDavidReply(text) {
     .replace(/\n/g, '<br>');
 }
 
+// ─── VOLUNTEER MODULE ────────────────────────────────────────────
+
+const VOL_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+let _volCategories = null;
+let _volStrategySelectedCauses = new Set();
+let _volDiscoverSelectedCauses = new Set();
+
+async function openVolunteer() {
+  $('volunteerModal').style.display = 'flex';
+  _modalOpened('volunteerModal');
+  // Lazy-init: load categories + populate filters once
+  if (!_volCategories) await _volInit();
+  // Default to browse tab
+  _volSetTab('Browse');
+  searchVolunteer();
+}
+
+async function _volInit() {
+  try {
+    const res = await fetch(`${API_BASE}/volunteer/categories`);
+    const data = await res.json();
+    _volCategories = data.categories || {};
+  } catch (e) {
+    _volCategories = {};
+  }
+
+  // Populate category dropdowns
+  const catSelect = $('volunteerCategory');
+  Object.entries(_volCategories).forEach(([k, name]) => {
+    const o = document.createElement('option'); o.value = k; o.textContent = name;
+    catSelect.appendChild(o);
+  });
+
+  // Populate state dropdowns (3 places)
+  for (const id of ['volunteerState', 'volStrState', 'volDisState']) {
+    const sel = $(id);
+    if (!sel) continue;
+    VOL_STATES.forEach(st => {
+      const o = document.createElement('option'); o.value = st; o.textContent = st;
+      sel.appendChild(o);
+    });
+  }
+
+  // Populate cause-tags for strategy + discover panels
+  for (const [containerId, selected] of [['volStrCauses', _volStrategySelectedCauses], ['volDisCauses', _volDiscoverSelectedCauses]]) {
+    const container = $(containerId);
+    if (!container) continue;
+    Object.entries(_volCategories).forEach(([k, name]) => {
+      const tag = document.createElement('button');
+      tag.type = 'button';
+      tag.dataset.causeKey = k;
+      tag.textContent = name;
+      tag.style.cssText = 'padding:6px 12px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:16px;font-size:12px;cursor:pointer;';
+      tag.addEventListener('click', () => {
+        if (selected.has(k)) {
+          selected.delete(k);
+          tag.style.background = '#fff'; tag.style.color = '#1e3a8a';
+        } else {
+          selected.add(k);
+          tag.style.background = '#2563eb'; tag.style.color = '#fff';
+        }
+      });
+      container.appendChild(tag);
+    });
+  }
+
+  // Filter change listeners (browse panel)
+  ['volunteerCategory','volunteerState','volunteerAgeMin','volunteerTime','volunteerFormat','volunteerCollegeApp'].forEach(id => {
+    $(id)?.addEventListener('change', searchVolunteer);
+  });
+  $('volunteerSearch')?.addEventListener('input', _debounce(searchVolunteer, 350));
+
+  // Tab switching
+  $('volunteerTabBrowse').addEventListener('click', () => _volSetTab('Browse'));
+  $('volunteerTabStrategy').addEventListener('click', () => _volSetTab('Strategy'));
+  $('volunteerTabDiscover').addEventListener('click', () => _volSetTab('Discover'));
+
+  // Strategy + Discover buttons
+  $('volStrGenerate').addEventListener('click', runVolunteerStrategy);
+  $('volDisSearch').addEventListener('click', discoverLocalVolunteer);
+}
+
+function _volSetTab(name) {
+  for (const t of ['Browse', 'Strategy', 'Discover']) {
+    const tab = $('volunteerTab' + t);
+    const panel = $('volunteer' + t + 'Panel');
+    if (t === name) {
+      tab.style.borderBottom = '2px solid #2563eb';
+      tab.style.color = '#1e3a8a';
+      panel.style.display = '';
+    } else {
+      tab.style.borderBottom = '2px solid transparent';
+      tab.style.color = '#59636e';
+      panel.style.display = 'none';
+    }
+  }
+}
+
+function _debounce(fn, ms) {
+  let t = null;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+async function searchVolunteer() {
+  const params = new URLSearchParams();
+  const cat = $('volunteerCategory').value;
+  const state = $('volunteerState').value;
+  const age = $('volunteerAgeMin').value;
+  const time = $('volunteerTime').value;
+  const fmt = $('volunteerFormat').value;
+  const cav = $('volunteerCollegeApp').value;
+  const q = $('volunteerSearch').value.trim();
+  if (cat && cat !== 'all') params.set('category', cat);
+  if (state && state !== 'all') params.set('state', state);
+  if (age) params.set('ageMin', age);
+  if (time && time !== 'all') params.set('timeCommitment', time);
+  if (fmt && fmt !== 'all') params.set('format', fmt);
+  if (cav && cav !== 'all') params.set('collegeAppValue', cav);
+  if (q) params.set('q', q);
+
+  $('volunteerResults').innerHTML = '<p style="color:#94a3b8;">Loading...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/volunteer/search?${params}`);
+    const data = await res.json();
+    renderVolunteerResults('volunteerResults', data.results || [], data.count, data.totalDB);
+  } catch (e) {
+    $('volunteerResults').innerHTML = `<p style="color:#cf222e;">Failed to load: ${e.message}</p>`;
+  }
+}
+
+function renderVolunteerResults(containerId, items, count, totalDB) {
+  const c = $(containerId);
+  if (!items.length) {
+    c.innerHTML = '<p style="color:#94a3b8;padding:20px;text-align:center;">No matches. Try widening filters or use Discover Local for area-specific programs.</p>';
+    return;
+  }
+  const header = `<p style="color:#59636e;font-size:13px;margin-bottom:12px;">${count} match${count===1?'':'es'} of ${totalDB} curated programs.</p>`;
+  c.innerHTML = header + items.map(_volCardHtml).join('');
+}
+
+function _volCardHtml(o) {
+  const cats = (o.categories || []).map(k => (_volCategories?.[k] || k)).join(', ');
+  const cavBadge = o.collegeAppValue === 'high' ? '<span style="background:#ddf4ff;color:#0a3069;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">High admissions value</span>' : '';
+  const remoteBadge = o.format === 'remote' ? '<span style="background:#f0fff4;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">Remote</span>' : (o.format === 'hybrid' ? '<span style="background:#fff8c5;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">Hybrid</span>' : '');
+  const age = `Age ${o.ageMin || 'any'}${o.ageMax && o.ageMax < 99 ? '-' + o.ageMax : '+'}`;
+  const time = (o.timeCommitment || 'flexible').replace('_', ' ');
+  const skills = (o.skillsBuilt || []).slice(0, 4).join(' · ');
+  return `
+    <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
+        <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(o.name)}</h4>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">${cavBadge}${remoteBadge}</div>
+      </div>
+      <p style="margin:2px 0 8px;font-size:12px;color:#59636e;">${_esc(o.organization || '')} &middot; ${cats}</p>
+      <p style="margin:0 0 8px;font-size:13px;line-height:1.5;color:#334155;">${_esc(o.description || '')}</p>
+      ${skills ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Skills:</strong> ${_esc(skills)}</p>` : ''}
+      <p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Time:</strong> ${time} &middot; <strong>Eligibility:</strong> ${age} &middot; <strong>Scope:</strong> ${o.scope || 'national'}</p>
+      ${o.howToStart ? `<p style="margin:8px 0 4px;font-size:12px;color:#0969da;background:#f6f8fa;padding:8px 10px;border-radius:6px;"><strong>How to start:</strong> ${_esc(o.howToStart)}</p>` : ''}
+      ${o._source ? `<a href="${_esc(o._source)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Official page →</a>` : ''}
+    </div>
+  `;
+}
+
+function _esc(s) { return String(s || '').replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c])); }
+
+async function runVolunteerStrategy() {
+  const grade = parseInt($('volStrGrade').value, 10) || 10;
+  const state = $('volStrState').value;
+  const hours = parseInt($('volStrHours').value, 10) || 4;
+  const goal = $('volStrGoal').value;
+  const career = $('volStrCareer').value.trim();
+  const causes = Array.from(_volStrategySelectedCauses);
+
+  $('volStrategyResult').innerHTML = '<p style="color:#94a3b8;">Building your strategy...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/volunteer/strategy`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ grade, state, hoursPerWeek: hours, causes, careerInterest: career, goal, horizon: 'year' })
+    });
+    const data = await res.json();
+    renderVolunteerStrategy(data);
+  } catch (e) {
+    $('volStrategyResult').innerHTML = `<p style="color:#cf222e;">Strategy build failed: ${e.message}</p>`;
+  }
+}
+
+function renderVolunteerStrategy(data) {
+  const s = data.strategy;
+  if (!s) { $('volStrategyResult').innerHTML = '<p style="color:#cf222e;">No strategy returned.</p>'; return; }
+  const pillarsHtml = s.pillars.map(p => `
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;">
+      <h4 style="margin:0 0 4px;font-size:14px;color:#1e3a8a;">${_esc(p.name)}</h4>
+      <p style="margin:0 0 10px;font-size:13px;color:#475569;">${_esc(p.description)}</p>
+      ${p.recommended.length ? p.recommended.map(_volCardHtml).join('') : '<p style="font-size:12px;color:#94a3b8;font-style:italic;">No matches at this tier — try widening your causes or hours.</p>'}
+    </div>
+  `).join('');
+  $('volStrategyResult').innerHTML = `
+    <div style="background:#ddf4ff;border-left:3px solid #0969da;padding:12px 16px;border-radius:0 6px 6px 0;margin-bottom:14px;">
+      <p style="margin:0;color:#0a3069;font-size:14px;">${_esc(s.summary)}</p>
+      <p style="margin:6px 0 0;color:#0a3069;font-size:13px;"><strong>Expected hours:</strong> ${_esc(s.expectedHours)} &middot; <strong>Matched programs:</strong> ${data.matched}</p>
+    </div>
+    ${pillarsHtml}
+    <div style="background:#f6f8fa;border-radius:8px;padding:12px 16px;margin-bottom:14px;">
+      <h4 style="margin:0 0 8px;font-size:14px;color:#1e3a8a;">Growth path</h4>
+      <ul style="margin:0;padding-left:20px;color:#334155;font-size:13px;">${s.growthPath.map(g => `<li style="margin-bottom:4px;">${_esc(g)}</li>`).join('')}</ul>
+    </div>
+    <p style="font-size:12px;color:#94a3b8;font-style:italic;">${_esc(s.discoverLocalNote)}</p>
+  `;
+}
+
+async function discoverLocalVolunteer() {
+  const city = $('volDisCity').value.trim();
+  const state = $('volDisState').value;
+  const grade = parseInt($('volDisGrade').value, 10) || 10;
+  const causes = Array.from(_volDiscoverSelectedCauses);
+  if (!city && !state) { alert('Please enter a city or state.'); return; }
+  if (causes.length === 0) { alert('Please pick at least one cause area.'); return; }
+
+  $('volDiscoverResult').innerHTML = '<p style="color:#94a3b8;">Searching live for local programs...</p>';
+  const ageMin = grade <= 9 ? 14 : grade <= 11 ? 16 : 17;
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    const token = localStorage.getItem('wayfinder_token') || sessionStorage.getItem('wayfinder_token');
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+    const res = await fetch(`${API_BASE}/volunteer/discover-local`, {
+      method: 'POST', headers,
+      body: JSON.stringify({ city, state, grade, ageMin, causes, radiusMiles: 25 })
+    });
+    const data = await res.json();
+    if (data.error) { $('volDiscoverResult').innerHTML = `<p style="color:#cf222e;">${_esc(data.error)}</p>`; return; }
+    renderDiscoverResult(data);
+  } catch (e) {
+    $('volDiscoverResult').innerHTML = `<p style="color:#cf222e;">Discover failed: ${e.message}</p>`;
+  }
+}
+
+function renderDiscoverResult(data) {
+  const programs = data.programs || [];
+  if (!programs.length) {
+    $('volDiscoverResult').innerHTML = '<p style="color:#94a3b8;">No local programs surfaced. Try different causes or a nearby larger city.</p>';
+    return;
+  }
+  $('volDiscoverResult').innerHTML = `
+    <p style="color:#59636e;font-size:13px;margin-bottom:12px;">Found ${programs.length} local program${programs.length===1?'':'s'} in ${_esc(data.location)}.</p>
+    ${programs.map(p => `
+      <div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
+        <h4 style="margin:0 0 4px;font-size:15px;color:#1f2328;">${_esc(p.name || 'Untitled')}</h4>
+        <p style="margin:2px 0 8px;font-size:12px;color:#59636e;">${_esc(p.organization || '')}</p>
+        <p style="margin:0 0 8px;font-size:13px;line-height:1.5;color:#334155;">${_esc(p.briefDescription || '')}</p>
+        ${p.whyItFits ? `<p style="margin:0 0 6px;font-size:12px;color:#1e3a8a;font-style:italic;">${_esc(p.whyItFits)}</p>` : ''}
+        <p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Time:</strong> ${_esc(p.weeklyTimeRange || 'varies')} &middot; <strong>Age:</strong> ${_esc(p.ageRequirement || '14+')}</p>
+        ${p.howToStart ? `<p style="margin:8px 0 4px;font-size:12px;color:#0969da;background:#f6f8fa;padding:8px 10px;border-radius:6px;"><strong>How to start:</strong> ${_esc(p.howToStart)}</p>` : ''}
+        ${p.url ? `<a href="${_esc(p.url)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Verify directly →</a>` : ''}
+      </div>
+    `).join('')}
+    <p style="font-size:11px;color:#94a3b8;margin-top:12px;">${_esc(data.disclaimer || '')}</p>
+  `;
+}

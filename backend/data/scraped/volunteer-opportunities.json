@@ -1,0 +1,2237 @@
+{
+  "metadata": {
+    "lastScraped": "2026-04-25",
+    "lastVerified": "2026-04-25",
+    "totalCount": 75,
+    "_verified": "partial",
+    "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
+    "dataYear": "2026",
+    "sources": [
+      "AmeriCorps",
+      "American Red Cross",
+      "Habitat for Humanity",
+      "Best Buddies International",
+      "Big Brothers Big Sisters",
+      "Special Olympics",
+      "NAMI",
+      "Crisis Text Line",
+      "Make-A-Wish",
+      "Salvation Army",
+      "YMCA",
+      "Boys & Girls Clubs",
+      "Key Club International",
+      "Rotary Interact",
+      "BSA / GSUSA",
+      "Audubon Society",
+      "Sierra Club",
+      "SCA",
+      "Earthwatch",
+      "PATH International",
+      "Reading Partners",
+      "826 National",
+      "Hospital junior volunteer programs (national survey)",
+      "NCASA",
+      "AARP Foundation Tax-Aide",
+      "Junior Achievement",
+      "Operation Warm",
+      "AFSP",
+      "NHPCO",
+      "NPS Volunteers-In-Parks",
+      "CERT (FEMA)",
+      "NCASA",
+      "UN Volunteers Online"
+    ],
+    "categories": {
+      "health": "Health & Medical",
+      "education": "Education & Tutoring",
+      "environment": "Environment & Conservation",
+      "animals": "Animal Welfare",
+      "hunger": "Hunger & Food Security",
+      "homelessness": "Homelessness & Housing",
+      "seniors": "Senior Care",
+      "mental_health": "Mental Health",
+      "mentorship": "Youth Mentorship",
+      "disability": "Disability Services",
+      "civic": "Civic & Government",
+      "arts": "Arts & Culture",
+      "international": "International & Global",
+      "faith": "Religious & Faith-Based",
+      "disaster": "Disaster Relief",
+      "crisis": "Crisis Intervention",
+      "leadership": "Leadership & Service"
+    },
+    "description": "Curated database of large, sustainable, recurring volunteer programs. The Wayfinder volunteer module also offers an on-demand \"discover local\" feature that uses live web search to find programs not in this DB."
+  },
+  "opportunities": [
+    {
+      "name": "Hospital Junior Volunteer Program",
+      "organization": "Most major hospitals",
+      "description": "Junior volunteer programs at hospitals offer high-school students 14-18 the chance to work directly in patient care areas (with supervision), administrative support, gift shops, way-finding, and family lounges. Excellent for pre-med students. Most require ~50-100 hours/year minimum. Application typically opens in spring; selection is competitive at top hospitals.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "seniors"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "patient care basics",
+        "HIPAA awareness",
+        "medical terminology",
+        "professionalism"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Search \"{your hospital name} junior volunteer program\" \u2014 most hospitals have an online application opening February-April. Background check, TB test, and orientation required.",
+      "_source": "https://www.aamc.org/cim/explore-options/aspiring-docs/community-clinical-experiences",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "American Red Cross Volunteer",
+      "organization": "American Red Cross",
+      "description": "Multiple roles for teens 14+: blood drive support, disaster shelter staffing, Red Cross Youth clubs, international humanitarian advocacy, and CPR/First Aid instruction. Disaster response roles open at 18. Excellent training program; nationally recognized credential.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "disaster",
+        "crisis"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "CPR/First Aid",
+        "disaster response",
+        "crisis communication",
+        "blood drive logistics"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit redcross.org/volunteer to find local chapter opportunities by zip code. Some roles require 18+; most teen roles start in school chapters or summer camps.",
+      "_source": "https://www.redcross.org/volunteer/become-a-volunteer.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Special Olympics Volunteer / Unified Partner",
+      "organization": "Special Olympics",
+      "description": "Volunteer at local Special Olympics events as a coach, Unified Partner (athlete partnered with a Special Olympics athlete), event staff, or fundraiser. Year-round at chapter level. Unified Champion Schools program is school-based, easier entry point.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "disability",
+        "health",
+        "mentorship"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "inclusive coaching",
+        "disability advocacy",
+        "event management"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Find your state chapter at specialolympics.org. School-based Unified Champion Schools programs are the easiest entry \u2014 talk to your school athletics director.",
+      "_source": "https://www.specialolympics.org/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Ronald McDonald House Charities Volunteer",
+      "organization": "RMHC",
+      "description": "Help families with children receiving medical treatment by serving meals, doing light housekeeping, organizing activities, or fundraising. 365+ houses across the US. Most accept volunteers 14+, some 12+ with parent.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "hunger",
+        "mentorship"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "empathy",
+        "hospitality",
+        "meal preparation",
+        "family support"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Find local house at rmhc.org. Most have monthly Meals from the Heart programs your family or club can sign up for.",
+      "_source": "https://www.rmhc.org/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Crisis Text Line",
+      "organization": "Crisis Text Line",
+      "description": "Trained volunteer crisis counselors respond to texts from people in mental health crisis. Requires intensive 30-hour training. **Must be 18+.** One of the most respected mental health volunteer credentials. 4-hour weekly shift commitment for one year minimum.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "crisis intervention",
+        "active listening",
+        "suicide prevention",
+        "documentation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at crisistextline.org/become-a-volunteer. Application includes references, background check, and ~30 hours of training before shifts begin.",
+      "_source": "https://www.crisistextline.org/become-a-volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Public Library Teen Volunteer",
+      "organization": "Local public libraries",
+      "description": "Most public libraries have structured teen volunteer programs: shelving, summer reading program assistance, tech help for seniors, story time helpers, craft program leaders. Reliable weekly hours, friendly staff, low entry barrier.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "education",
+        "seniors",
+        "arts"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "organization",
+        "customer service",
+        "event support",
+        "digital literacy coaching"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit your local library website or ask at the reference desk. Most run summer programs (May-August) requiring a brief application.",
+      "_source": "https://www.ala.org/yalsa/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Khan Academy Peer Tutor",
+      "organization": "Khan Academy",
+      "description": "Peer tutoring program where students help younger learners through Khan Academy content. School-based clubs (Khan Academy Club) coordinate this. Flexible, free, scalable to any subject area.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "education",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "teaching",
+        "curriculum knowledge",
+        "patience",
+        "online platform fluency"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Check if your school has a Khan Academy Club. If not, propose one to a teacher and use Khan's school onboarding materials at khanacademy.org/khan-for-educators.",
+      "_source": "https://khanacademy.org/college-careers-more/career-content/career-profile/khan-academy-tutor",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Reading Partners",
+      "organization": "Reading Partners",
+      "description": "One-on-one literacy tutoring for K-4 students who need extra help. Available in 10+ states (CA, NY, MD, NC, SC, TX, WA, CO, OK, MN). 12-week commitment, 45-minute sessions twice weekly. Strong evidence base of impact.",
+      "scope": "regional",
+      "states": [
+        "CA",
+        "NY",
+        "MD",
+        "NC",
+        "SC",
+        "TX",
+        "WA",
+        "CO",
+        "OK",
+        "MN"
+      ],
+      "categories": [
+        "education",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "phonics instruction",
+        "elementary literacy",
+        "data tracking",
+        "child engagement"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit readingpartners.org and select your region. Background check + 1 training session required before tutoring begins.",
+      "_source": "https://readingpartners.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "826 National Writing Tutor",
+      "organization": "826 National",
+      "description": "Writing tutoring and creative writing workshops for under-resourced students K-12. Centers in Boston, Brooklyn, Chicago, Detroit, LA, NYC, Mid-Manhattan, Minneapolis, San Francisco, Washington DC, Tulsa. Founded by Dave Eggers. Strong literary community.",
+      "scope": "regional",
+      "states": [
+        "MA",
+        "NY",
+        "IL",
+        "MI",
+        "CA",
+        "MN",
+        "DC",
+        "OK"
+      ],
+      "categories": [
+        "education",
+        "arts",
+        "mentorship"
+      ],
+      "ageMin": 15,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "writing instruction",
+        "creative writing",
+        "editing",
+        "workshop facilitation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "826national.org has a chapter locator. Each chapter has its own application process; expect a writing sample.",
+      "_source": "https://826national.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Big Brothers Big Sisters Volunteer (Bigs/Beyond School)",
+      "organization": "Big Brothers Big Sisters of America",
+      "description": "One-to-one youth mentoring. School-based (Bigs in School) opens to teens 14+; community-based mentorship typically requires 18+. Multi-year commitment expected. National network with chapters everywhere.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mentorship",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mentorship",
+        "consistency",
+        "youth development",
+        "relationship-building"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Use bbbs.org chapter finder. Bigs in School (high school students mentoring elementary kids) is the teen-accessible track at most chapters.",
+      "_source": "https://www.bbbs.org/get-involved/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "School-Based Peer Tutoring (NHS / Beta Club)",
+      "organization": "Various (school-administered)",
+      "description": "Most high schools have peer tutoring programs through National Honor Society, Beta Club, or subject-specific honor societies (Mu Alpha Theta for math, Tri-M for music, etc.). Reliable weekly hours, easy to start, well-recognized.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "education",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "subject-specific teaching",
+        "patience",
+        "study habits coaching"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Talk to your school's counseling office or NHS faculty advisor. Most programs run September-May with weekly tutoring blocks.",
+      "_source": "https://www.nhs.us/students/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "National Park Service Volunteers-In-Parks (VIP)",
+      "organization": "National Park Service",
+      "description": "Volunteer at any of 400+ national park sites: trail maintenance, visitor center staffing, junior ranger program leadership, citizen science projects, archaeology digs. Some sites have residential programs for high-schoolers in summer (Student Conservation Association partnerships).",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "education",
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "conservation",
+        "interpretation",
+        "outdoor skills",
+        "public-facing service"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "volunteer.gov is the official portal \u2014 search by location and skill. SCA (thesca.org) runs residential summer programs for youth.",
+      "_source": "https://www.nps.gov/getinvolved/volunteer.htm",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Sierra Club Local Outings & Conservation",
+      "organization": "Sierra Club",
+      "description": "Local chapters (60+ across the country) run volunteer days: trail building, restoration projects, advocacy training, conservation education. Some chapters have ICO (Inspiring Connections Outdoors) \u2014 leading youth on outdoor experiences.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "trail maintenance",
+        "plant identification",
+        "advocacy",
+        "outdoor leadership"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Find local chapter at sierraclub.org/chapters. Check their events calendar for the next volunteer workday.",
+      "_source": "https://www.sierraclub.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Audubon Society Citizen Science (Christmas Bird Count, Climate Watch)",
+      "organization": "National Audubon Society",
+      "description": "The longest-running citizen science project (Christmas Bird Count) has 80,000+ annual volunteers. Year-round bird counts and habitat surveys. Local Audubon chapters also run habitat restoration and education programs.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "education"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "bird identification",
+        "data collection",
+        "citizen science methodology"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "audubon.org/volunteer to find local chapter. Christmas Bird Count happens Dec 14 - Jan 5 annually.",
+      "_source": "https://www.audubon.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Watershed / Stream Cleanup",
+      "organization": "Various local watershed councils",
+      "description": "Most metro areas have a watershed council or \"Friends of [River/Lake]\" group running monthly cleanups, water quality monitoring, and restoration plantings. Easy entry, family-friendly, visible impact.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "water quality testing",
+        "restoration planting",
+        "habitat assessment"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search \"Friends of [your local river or lake]\" or check American Rivers (americanrivers.org) for local affiliates.",
+      "_source": "https://www.americanrivers.org/take-action/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Earthwatch Teen Expeditions",
+      "organization": "Earthwatch Institute",
+      "description": "Field research expeditions led by scientists; teen-specific programs in marine biology, climate change, archaeology, wildlife. 10-14 day intensive programs. Costs $2,000-3,500 plus airfare; need-based aid available. Major credential for science-focused students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "education"
+      ],
+      "ageMin": 15,
+      "ageMax": 18,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "field research",
+        "data collection",
+        "scientific method",
+        "international fieldwork"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "earthwatch.org/expeditions/teen \u2014 apply 6-8 months in advance. Need-based scholarships available.",
+      "_source": "https://earthwatch.org/expeditions/teen",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Student Conservation Association (SCA)",
+      "organization": "SCA",
+      "description": "Largest provider of conservation service opportunities for youth. High School Crews (4-5 weeks summer) and Conservation Internships (3-12 months gap year). Stipends + housing + AmeriCorps Education Award for longer programs.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 15,
+      "ageMax": 21,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "conservation",
+        "crew leadership",
+        "outdoor living",
+        "land management"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "thesca.org \u2014 High School Crew applications open November for summer programs. Highly competitive at flagship parks; less so at lesser-known sites.",
+      "_source": "https://www.thesca.org/serve/high-school-conservation-crews",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Humane Society / SPCA Volunteer",
+      "organization": "Various (Humane Society network, ASPCA-affiliated)",
+      "description": "Animal shelters always need volunteers: dog walking, cat socialization, foster home support, adoption events, kennel cleaning. Most shelters accept teens 14+ (some 12+ with parent). Year-round, very low barrier to entry.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal handling",
+        "customer service",
+        "shelter operations",
+        "adoption counseling"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search \"[your city] humane society volunteer\" \u2014 orientation typically required. Younger volunteers often start with cat socialization or laundry/cleaning before moving to dog walking.",
+      "_source": "https://www.humanesociety.org/take-action/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Wildlife Rehabilitation Center Volunteer",
+      "organization": "Various state-licensed rehabbers",
+      "description": "Wildlife rehab centers care for injured/orphaned wild animals. Volunteer roles: feeding orphaned birds, cage cleaning, education program assistance, transport drivers. Higher animal-handling responsibility comes with training. State licensing requirements vary.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "animals",
+        "environment"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "wildlife handling",
+        "medical observation",
+        "species identification",
+        "public education"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Find state rehabbers via your state Department of Fish & Wildlife. Most run spring volunteer drives before baby season (April-July).",
+      "_source": "https://www.nwrawildlife.org/page/find_a_rehabilitator",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Best Friends Animal Society (Local Chapters + Sanctuary)",
+      "organization": "Best Friends Animal Society",
+      "description": "No-kill animal welfare org with chapters in NY, LA, Atlanta, Salt Lake City, Houston, Northwest Arkansas. Volunteer at adoption centers, foster, transport. The Utah sanctuary takes teen volunteers for week-long stays.",
+      "scope": "regional",
+      "states": [
+        "UT",
+        "NY",
+        "CA",
+        "GA",
+        "TX",
+        "AR"
+      ],
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal care",
+        "transport logistics",
+        "adoption counseling"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "bestfriends.org/get-involved \u2014 local chapter or sanctuary stays available.",
+      "_source": "https://bestfriends.org/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Food Bank (Feeding America Network)",
+      "organization": "Feeding America",
+      "description": "200+ food banks across the country. Volunteer roles: sorting donations, packing emergency food boxes, distribution events, mobile pantries. High-impact, very high frequency need. Easy for groups, families, or individuals.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "food safety",
+        "team coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "feedingamerica.org/find-your-local-foodbank \u2014 every food bank has a volunteer page. Many run weekly Saturday morning sort events.",
+      "_source": "https://www.feedingamerica.org/take-action/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Soup Kitchen / Community Meal Program",
+      "organization": "Various local",
+      "description": "Most communities have soup kitchens or community meal programs (often church- or shelter-based) that serve hot meals daily/weekly. Roles: meal prep, serving, cleanup, dishwashing. Usually requires only one orientation shift.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness",
+        "faith"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food service",
+        "dignity-centered service",
+        "community-building"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search \"[your city] soup kitchen volunteer\" \u2014 Salvation Army, Catholic Charities, and local churches typically operate them.",
+      "_source": "https://www.salvationarmyusa.org/usn/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Meals on Wheels",
+      "organization": "Meals on Wheels America",
+      "description": "Deliver hot meals to homebound seniors. Drivers must be 18+ with valid license; passengers/ride-alongs accepted at 14+. Most programs need 1-2 hour weekday lunch shifts. Brief, high-impact human contact for isolated seniors.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "seniors",
+        "hunger"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "eldercare",
+        "wellness checks",
+        "navigation",
+        "reliability"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "mealsonwheelsamerica.org \u2014 find local provider. School-based MoW clubs exist in some areas; check your guidance office.",
+      "_source": "https://www.mealsonwheelsamerica.org/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Community Garden Volunteer",
+      "organization": "American Community Gardening Association affiliates",
+      "description": "Community gardens grow produce for local food pantries while teaching urban agriculture. Most cities have multiple sites. Plant, weed, harvest, deliver. Minimal weekly commitment, friendly community.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "environment"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "urban agriculture",
+        "seasonal planning",
+        "crop knowledge",
+        "plot maintenance"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "communitygarden.org garden finder. Most parks departments also list community gardens on their websites.",
+      "_source": "https://www.communitygarden.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Habitat for Humanity (Build Sites + ReStore)",
+      "organization": "Habitat for Humanity International",
+      "description": "Build affordable housing alongside future homeowners (build sites: typically 16+) or work the ReStore (donated home goods retail; 14+). 1,400+ US affiliates. Iconic high-school service experience.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "carpentry",
+        "painting",
+        "retail operations",
+        "team-building"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "habitat.org/volunteer \u2014 find local affiliate. Build sites need 16+; ReStore takes 14+. Group days easy to organize for clubs/sports teams.",
+      "_source": "https://www.habitat.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Salvation Army Local Volunteer",
+      "organization": "The Salvation Army",
+      "description": "Year-round programs at 7,500+ US centers: food pantries, holiday red kettle bell-ringing (November-December), thrift stores, homeless shelters, after-school programs. Easy entry, lots of hour-flexibility.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "hunger",
+        "faith"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "retail support",
+        "hospitality",
+        "holiday event coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "salvationarmyusa.org \u2014 find local Corps. Bell-ringing November-December is the easiest entry; they'll take any willing volunteer.",
+      "_source": "https://www.salvationarmyusa.org/usn/ways-to-give/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Family Promise Volunteer",
+      "organization": "Family Promise",
+      "description": "Helps homeless families with children. 200+ affiliates across the country. Volunteers prepare meals, set up sleeping rooms in host congregations, provide childcare during meetings, drive families to appointments.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "hunger"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "family-centered service",
+        "meal preparation",
+        "childcare",
+        "cross-cultural communication"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "familypromise.org affiliate finder. Most affiliates need volunteers for evening meal-and-host shifts.",
+      "_source": "https://familypromise.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Nursing Home / Assisted Living Visitor",
+      "organization": "Various local facilities",
+      "description": "Direct one-on-one or group visits with isolated elders. Activities: reading, music, games, technology help, conversation. Programs often coordinate through facility activity directors. Schools and faith communities often organize regular visits.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "seniors",
+        "health"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "eldercare",
+        "dementia-friendly communication",
+        "life-history listening"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Call the activity director at any local nursing home / assisted living. Most welcome individual volunteers and especially repeat visitors who form ongoing relationships.",
+      "_source": "https://www.aarp.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "AARP Volunteer (Tax-Aide, Driver Safety)",
+      "organization": "AARP",
+      "description": "AARP's Tax-Aide is the largest volunteer-run free tax prep program (must be 18+ for IRS-certified roles, but high school helpers can do greeting and reception). Driver Safety also has youth-supported roles.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "seniors",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "tax preparation",
+        "customer service",
+        "intergenerational communication"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "aarp.org/volunteer \u2014 Tax-Aide season runs January-April; training in November-December.",
+      "_source": "https://www.aarp.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "NAMI (National Alliance on Mental Illness) Volunteer",
+      "organization": "NAMI",
+      "description": "600+ local affiliates run support groups, education programs (Family-to-Family, Ending the Silence in schools), and walk fundraisers (NAMIWalks). Teen volunteers can lead Ending the Silence presentations after training.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "education",
+        "crisis"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health literacy",
+        "public speaking",
+        "peer support principles"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "nami.org/find-your-local-nami \u2014 Ending the Silence is school-based and trains teen presenters.",
+      "_source": "https://www.nami.org/get-involved/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Letters Against Isolation",
+      "organization": "Letters Against Isolation",
+      "description": "Write letters to seniors in care facilities. Fully remote, flexible, accessible to any age. Provides specific seniors and prompts. Low intensity but meaningful for chronically isolated elders.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "seniors"
+      ],
+      "ageMin": 8,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "written communication",
+        "empathy",
+        "letter-writing"
+      ],
+      "collegeAppValue": "low",
+      "howToStart": "lettersagainstisolation.com \u2014 sign up, get assigned a senior, mail a letter. No background check needed.",
+      "_source": "https://www.lettersagainstisolation.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Color a Smile",
+      "organization": "Color a Smile",
+      "description": "Color drawings/cards that get distributed to seniors, deployed military, and others who need cheering up. Lowest-barrier remote service \u2014 works for elementary kids through adults. Good entry point for service-shy younger teens.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "seniors"
+      ],
+      "ageMin": 5,
+      "ageMax": 99,
+      "timeCommitment": "one_time",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "creative expression",
+        "consistency"
+      ],
+      "collegeAppValue": "low",
+      "howToStart": "colorasmile.org \u2014 download printable templates, color, mail to their PO box.",
+      "_source": "https://www.colorasmile.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Best Buddies Chapter Member",
+      "organization": "Best Buddies International",
+      "description": "School- and community-based one-on-one friendships between people with and without intellectual/developmental disabilities. Strong school chapters; expect 1-2 hours/month minimum with assigned buddy. National jobs program also has volunteer mentors.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "disability",
+        "mentorship"
+      ],
+      "ageMin": 11,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "inclusive friendship",
+        "disability awareness",
+        "event planning"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "bestbuddies.org \u2014 check if your school has a chapter; if not, you can start one with their school onboarding kit.",
+      "_source": "https://www.bestbuddies.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Therapeutic Riding / Equine-Assisted Programs",
+      "organization": "PATH International member centers",
+      "description": "Therapeutic horseback riding for individuals with disabilities. Volunteers serve as side-walkers, horse leaders, barn assistants. PATH International has 800+ certified centers. Typically requires 14+ and a one-time training session.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "disability",
+        "animals",
+        "health"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "horse handling",
+        "disability-aware support",
+        "session preparation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "pathintl.org has a center finder. Most centers run lessons Tuesday-Saturday with consistent volunteer slots.",
+      "_source": "https://pathintl.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Election Day Poll Worker (16+ in many states)",
+      "organization": "State and county election offices",
+      "description": "40+ states now allow 16- or 17-year-olds to serve as poll workers (paid, often $150-300/day). Set up the polling location, check in voters, distribute ballots, count machines. High-impact civic experience.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "one_time",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "election administration",
+        "customer service",
+        "civic procedure",
+        "long-day stamina"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Check your state's Secretary of State website (or eac.gov for federal coordination). Apply in fall for November elections; primaries are also available.",
+      "_source": "https://www.eac.gov/voters/national-poll-worker-recruitment-day",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Court Appointed Special Advocate (CASA) \u2014 Limited Teen Roles",
+      "organization": "National CASA Association",
+      "description": "Trained volunteers advocate for abused/neglected children in court. Most CASA roles require 21+, but several state CASA programs have Teen Advocates or Mentors for older youth in foster care (typically 18+ with training).",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mentorship",
+        "civic"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "child welfare",
+        "court navigation",
+        "case documentation",
+        "advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "nationalcasagal.org/find-a-program \u2014 for high schoolers, ask your local CASA about Teen Advocate or admin support roles.",
+      "_source": "https://nationalcasagal.org/become-a-volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Town Council / School Board Youth Representative",
+      "organization": "Various local government",
+      "description": "Many municipalities have Youth Advisory Councils or non-voting student reps on school boards. Direct exposure to local policy-making. Strong leadership / policy interest signal.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 15,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "public policy",
+        "meeting facilitation",
+        "civic discourse"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Email your school board secretary or town council clerk. Some applications open spring for September terms.",
+      "_source": "https://www.usa.gov/local-governments",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Museum Docent / Educator (Junior Tracks)",
+      "organization": "Various art / science / history museums",
+      "description": "Many museums have junior docent programs for high school students: gallery interpretation, leading school group tours, hands-on activity facilitation. Multi-year commitment expected at top-tier museums (Met, MFA Boston, Smithsonian); typically requires 80+ hours of training.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "arts",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "public speaking",
+        "curatorial knowledge",
+        "tour facilitation",
+        "collection interpretation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Email education departments at your top 1-3 local museums. Junior docent application typically opens spring, training summer, tours start fall.",
+      "_source": "https://www.aam-us.org/programs/about-museums/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Theatre Volunteer (Box Office, Ushering, Set Crew)",
+      "organization": "Local community theatres + regional theatres",
+      "description": "Regional theatres and community theatres always need ushers, box office, set construction, costume help. Great way to support arts and meet creative people. Free shows often included as a perk.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "hospitality",
+        "set construction",
+        "front-of-house operations"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Email your local community theatre directly. Most have ongoing usher rotations.",
+      "_source": "https://www.tcg.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "UNICEF UNITES (US Fund for UNICEF)",
+      "organization": "US Fund for UNICEF",
+      "description": "School and community clubs supporting UNICEF's global child welfare work. Trick-or-Treat for UNICEF, advocacy campaigns, fundraising, awareness events. School chapters easy to start.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "international",
+        "education",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "fundraising",
+        "global advocacy",
+        "campaign organization"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "unicefusa.org/teens \u2014 start a UNICEF Club at your school or join an existing one.",
+      "_source": "https://www.unicefusa.org/teens",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Translators Without Borders Volunteer (Bilingual Required)",
+      "organization": "Translators Without Borders",
+      "description": "Translate humanitarian content for crisis-affected communities. Fully remote. Requires near-native fluency in source + target language. Excellent for bilingual students; meaningful global service entry.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "international",
+        "education"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "professional translation",
+        "humanitarian context",
+        "project management"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "translatorswithoutborders.org/volunteer \u2014 application requires language proof and 18+. Some sister orgs accept younger translators.",
+      "_source": "https://translatorswithoutborders.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Community Emergency Response Team (CERT)",
+      "organization": "FEMA / local jurisdictions",
+      "description": "FEMA-sponsored neighborhood emergency response training. Teen CERT programs in many cities for 14+. 20+ hours of disaster preparedness, light search/rescue, fire safety, first aid. Recognized credential.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "disaster",
+        "health",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "disaster response",
+        "triage basics",
+        "search and rescue",
+        "radio communication"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "ready.gov/cert \u2014 find local CERT program through your city's emergency management office.",
+      "_source": "https://www.ready.gov/cert",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Key Club International (Kiwanis Youth)",
+      "organization": "Key Club International",
+      "description": "High school service club chartered through Kiwanis. 250,000+ members in 5,000+ schools globally. Annual service projects (March of Dimes, Children's Miracle Network), local community service, leadership development. Convention/conference circuit.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "leadership",
+        "health",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "club leadership",
+        "event planning",
+        "district-level coordination",
+        "public speaking"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "keyclub.org \u2014 check if your school has a chapter, or ask the office about chartering one.",
+      "_source": "https://www.keyclub.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Rotary Interact Club",
+      "organization": "Rotary International (Interact)",
+      "description": "High school service club chartered by local Rotary Club. Two service projects annually (one community, one international). Strong adult mentorship, networking with local business community, scholarship pipeline.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "leadership",
+        "international",
+        "civic"
+      ],
+      "ageMin": 12,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "cross-generational networking",
+        "international service",
+        "project management"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "rotary.org/interact \u2014 find your local Rotary Club via their site; they sponsor school chapters.",
+      "_source": "https://www.rotary.org/en/get-involved/interact-clubs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Girl Scouts Gold Award / Boy Scouts Eagle Project",
+      "organization": "GSUSA / BSA",
+      "description": "Capstone service projects: 80-100 hours of independent leadership on a community-focused project. Eagle Scout and Gold Award are widely recognized credentials with measurable college admissions value.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "project leadership",
+        "community needs assessment",
+        "volunteer recruitment",
+        "documentation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Active Scouts: talk to your troop leader about Eagle/Gold timeline. Non-Scouts: must join a troop first; many regions have flexible older-teen tracks.",
+      "_source": "https://www.scouting.org/programs/scouts-bsa/youth/eagle-scout/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Seattle Children's Hospital Junior Volunteer",
+      "organization": "Seattle Children's Hospital",
+      "description": "Top-rated children's hospital with a competitive junior volunteer program for high-schoolers 16+. Roles: family resource center, gift shop, surgical waiting area, child life support. ~100-hour annual minimum.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "health",
+        "mentorship"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "pediatric care exposure",
+        "family support",
+        "medical setting professionalism"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "seattlechildrens.org/about/volunteering \u2014 applications open March-April for fall. Background check + immunization records.",
+      "_source": "https://www.seattlechildrens.org/about/volunteering/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Northwest Harvest Volunteer",
+      "organization": "Northwest Harvest",
+      "description": "WA's leading food bank network. Volunteer at Kent SODO warehouse (Seattle area) or one of 375+ partner food banks. Group-friendly, year-round shifts.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "food safety",
+        "volunteer coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "northwestharvest.org \u2014 sign up for Saturday morning sort shifts in Kent or partner pantries throughout WA.",
+      "_source": "https://www.northwestharvest.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Mary's Place (Family Shelters, WA)",
+      "organization": "Mary's Place",
+      "description": "Seattle-based family shelter network. Teen volunteers (14+) help with kids' programs, meal service, donation sorting. Family-friendly entry point.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "homelessness",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "family services",
+        "childcare",
+        "shelter operations"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "marysplaceseattle.org/volunteer \u2014 group-friendly shifts at multiple locations.",
+      "_source": "https://www.marysplaceseattle.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Woodland Park Zoo Junior Zookeeper / Teen Volunteer",
+      "organization": "Woodland Park Zoo",
+      "description": "Seattle zoo's teen programs: Junior Zookeeper (summer, paid stipend, competitive), ZooCorps year-round, ZooU education volunteers. Strong conservation/biology track.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal care",
+        "public education",
+        "conservation messaging"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "zoo.org/teens \u2014 Junior Zookeeper applications open January for summer.",
+      "_source": "https://www.zoo.org/get-involved/volunteer/youth-volunteer-opportunities",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "YMCA Y Service Squad",
+      "organization": "YMCA of the USA",
+      "description": "YMCA branches run teen volunteer corps for camp counseling, swim lessons, after-school programs, fundraisers. 2,700+ Y locations nationally. Easy to scale to leadership roles. Many Y's are also CPR-training certified.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mentorship",
+        "health",
+        "leadership"
+      ],
+      "ageMin": 13,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "youth programming",
+        "aquatics",
+        "camp leadership"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "ymca.net to find local Y. Most have year-round teen volunteer rosters.",
+      "_source": "https://www.ymca.net/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Boys & Girls Clubs of America Volunteer",
+      "organization": "Boys & Girls Clubs of America",
+      "description": "4,800+ clubs serving 4M+ kids annually. Teen volunteers help with after-school homework, sports, arts, tech programs. Easy entry, family-friendly schedules.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mentorship",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mentorship",
+        "youth program leadership",
+        "tutoring"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "bgca.org/find-a-club \u2014 local club volunteer coordinator handles application.",
+      "_source": "https://www.bgca.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Make-A-Wish Foundation Volunteer",
+      "organization": "Make-A-Wish America",
+      "description": "Granting wishes to children with critical illnesses. Most direct wish-granter roles require 21+, but teens can volunteer for special events, fundraisers, office support, transportation logistics.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "event coordination",
+        "family support",
+        "fundraising"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "wish.org \u2014 contact local chapter; teen-appropriate roles vary by chapter.",
+      "_source": "https://wish.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Hospice Volunteer (Family Companion / Vigil)",
+      "organization": "National Hospice and Palliative Care Organization affiliates",
+      "description": "Sit with terminally ill patients and their families. Most programs require 18+ and 30+ hours of training. Profound experience; strong signal of emotional maturity. Some hospices have teen tracks for non-clinical support.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "seniors",
+        "mental_health"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "end-of-life care",
+        "active listening",
+        "grief support",
+        "presence"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "nhpco.org find a hospice \u2014 apply to local hospice; expect 30 hours of training and background check.",
+      "_source": "https://www.nhpco.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Habitat ReStore (Donated Goods Retail)",
+      "organization": "Habitat for Humanity",
+      "description": "ReStore is Habitat's home-improvement thrift store funding builds. Teen volunteers (14+) work donations intake, retail floor, organizing, deliveries. Lower-barrier than build sites.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "environment"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "retail operations",
+        "donations processing",
+        "customer service"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "habitat.org/restores \u2014 find local ReStore.",
+      "_source": "https://www.habitat.org/restores",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "American Cancer Society Relay For Life / Teen Programs",
+      "organization": "American Cancer Society",
+      "description": "Major fundraising events (Relay For Life, Making Strides Against Breast Cancer), school-based DetermiNation, hope lodge volunteer support. Teen leaders run school relay teams.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "fundraising",
+        "event production",
+        "team leadership"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "cancer.org/involved \u2014 search Relay For Life by zip code or start a school team.",
+      "_source": "https://www.cancer.org/involved/volunteer.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "American Heart Association School Volunteer",
+      "organization": "American Heart Association",
+      "description": "School-based fundraising (Kids Heart Challenge, Hoops For Heart), community CPR training events, patient support. AHA-certified CPR instruction is a strong skill credential.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "CPR/AED",
+        "heart health education",
+        "event fundraising"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "heart.org/volunteer \u2014 local affiliate has youth/school programs.",
+      "_source": "https://www.heart.org/en/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Doctors Without Borders Student Ambassador",
+      "organization": "M\u00e9decins Sans Fronti\u00e8res (MSF) USA",
+      "description": "Student-led MSF Student Coalition chapters at 50+ universities, with high school feeder events. Awareness campaigns, fundraising, advocacy on global health crises. Strong med-school pipeline signal.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "international",
+        "health",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "global health awareness",
+        "advocacy",
+        "event organizing"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "doctorswithoutborders.org/get-involved \u2014 student coalition resources for school chapters.",
+      "_source": "https://www.doctorswithoutborders.org/get-involved/student-coalition",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Salvation Army Bell Ringer (Holiday Season)",
+      "organization": "The Salvation Army",
+      "description": "Iconic Red Kettle bell-ringing November-December. Easiest entry point to large-scale service. 2-hour shifts, no application required for most stores.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness",
+        "faith"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "one_time",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "public-facing service",
+        "holiday season stamina"
+      ],
+      "collegeAppValue": "low",
+      "howToStart": "registertoring.com \u2014 sign up for 2-hour shifts at a local store November-December.",
+      "_source": "https://www.registertoring.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Hospital Pet Therapy Visit (Therapy Dog International)",
+      "organization": "Therapy Dogs International / Pet Partners",
+      "description": "Trained dog + handler teams visit hospitals, nursing homes, schools, libraries. Requires the dog be evaluated and certified through TDI or Pet Partners. Family-friendly with parent handler.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "animals",
+        "health",
+        "seniors",
+        "mental_health"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal-assisted therapy",
+        "facility protocols",
+        "calm presence"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "tdi-dog.org or petpartners.org \u2014 evaluation requires several months of training.",
+      "_source": "https://www.petpartners.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Habitat for Humanity Global Village (International Build Trips)",
+      "organization": "Habitat for Humanity Global Village",
+      "description": "1-2 week international build trips. Costs $1,500-3,500 plus airfare. Highly structured, safety-conscious. Limited slots for 16-17 year olds (must travel with parent/guardian).",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "international",
+        "leadership"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "cross-cultural service",
+        "construction skills",
+        "team-building"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "habitat.org/volunteer/travel-build/global-village \u2014 applications 4-6 months in advance.",
+      "_source": "https://www.habitat.org/volunteer/travel-build/global-village",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Voter Registration Drive Volunteer",
+      "organization": "Various nonpartisan groups (League of Women Voters, Rock the Vote, When We All Vote)",
+      "description": "Help register new voters at schools, festivals, community events. League of Women Voters runs high-school chapters in many states. Nonpartisan civic engagement.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civic engagement",
+        "event tabling",
+        "data entry",
+        "public conversation"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "lwv.org/local-leagues or whenweallvote.org. Many high schools allow drives during senior class meetings.",
+      "_source": "https://www.lwv.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Goodwill Industries Volunteer",
+      "organization": "Goodwill Industries International",
+      "description": "Goodwill stores, donation processing, career resource centers. Less prestige than some, but very high accessibility and frequent shifts.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "mental_health",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "retail operations",
+        "sorting/processing",
+        "career counseling support"
+      ],
+      "collegeAppValue": "low",
+      "howToStart": "goodwill.org/locator \u2014 local Goodwill volunteer coordinator.",
+      "_source": "https://www.goodwill.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Election Day Driver / Polling Site Setup",
+      "organization": "County election offices",
+      "description": "Help set up polling locations early morning, drive voters who lack transportation, deliver ballots between sites. 16+ in many states. Paid in some jurisdictions.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "one_time",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "logistics",
+        "election administration",
+        "community service"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "County elections office \u2014 apply 6-8 weeks before election day.",
+      "_source": "https://www.eac.gov/voters/national-poll-worker-recruitment-day",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Library Tech Coach for Seniors",
+      "organization": "Public libraries",
+      "description": "Teach seniors basic smartphone, email, video chat, online safety. Most libraries have weekly digital literacy hours. High satisfaction from both sides.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "seniors",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "patient instruction",
+        "adaptive teaching",
+        "tech support basics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Ask at your library reference desk \u2014 most have ongoing digital literacy programs needing volunteers.",
+      "_source": "https://www.ala.org/yalsa/get-involved/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Junior Achievement Volunteer (Classroom Mentor)",
+      "organization": "Junior Achievement USA",
+      "description": "Bring financial literacy and entrepreneurship lessons into K-12 classrooms. Volunteers (typically 18+, but teen helpers in some chapters) deliver pre-built curriculum. Local-business-heavy.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "education",
+        "mentorship",
+        "civic"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "classroom teaching",
+        "financial literacy",
+        "entrepreneurial mindset"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "ja.org/volunteer \u2014 match with local school based on your background.",
+      "_source": "https://www.juniorachievement.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "RIF (Reading Is Fundamental) Book Drive Captain",
+      "organization": "Reading Is Fundamental",
+      "description": "Run book drives at school or in community to provide books to kids in low-income areas. Strong project-based leadership opportunity. RIF supplies organizing materials.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "education",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "campaign organization",
+        "marketing",
+        "distribution logistics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "rif.org \u2014 get the book drive starter kit and organize at your school.",
+      "_source": "https://www.rif.org/take-action",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Operation Warm (Coat Drive)",
+      "organization": "Operation Warm",
+      "description": "Annual coat collection and distribution to children in need. School-based coat drives easy to organize as a sophomore/junior leadership project.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "education"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "project",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "drive organization",
+        "community partnership",
+        "distribution day logistics"
+      ],
+      "collegeAppValue": "low",
+      "howToStart": "operationwarm.org \u2014 partner with a local school or shelter for distribution.",
+      "_source": "https://www.operationwarm.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Parks Department Trail Maintenance Crew",
+      "organization": "State / county parks departments",
+      "description": "Most state and county parks departments run weekend trail maintenance crews. Physical work, outdoor, family-friendly. State Parks Foundations often recruit teens.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "trail building",
+        "tool use",
+        "crew coordination",
+        "wilderness ethics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search \"[your state] State Parks volunteer\" or \"[your county] parks volunteer\".",
+      "_source": "https://www.nrpa.org/our-work/Three-Pillars/health-wellness/volunteer-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Synagogue/Church/Mosque/Temple Service Programs",
+      "organization": "Various faith communities",
+      "description": "Most faith communities run multiple service projects: meal prep for shelters, after-school tutoring, holiday baskets, immigrant support, addiction recovery support, eldercare visits. Open to non-members in most cases.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "faith",
+        "hunger",
+        "homelessness",
+        "seniors",
+        "mentorship"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "community organizing",
+        "service leadership",
+        "faith-grounded service"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Email the social action / outreach committee chair at a local congregation.",
+      "_source": "https://www.faithactionnetwork.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Local Suicide Prevention Walk Volunteer (AFSP)",
+      "organization": "American Foundation for Suicide Prevention",
+      "description": "Out of the Darkness Walks happen in 600+ cities each fall. Volunteer roles: registration, route marshal, family lounge, post-walk reception. Powerful entry point to mental health advocacy.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis",
+        "health"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "one_time",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "event volunteering",
+        "mental health awareness",
+        "community outreach"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "afsp.org/walks \u2014 find walk near you, sign up to volunteer.",
+      "_source": "https://afsp.org/get-involved/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Tax-Aide IRS-Certified Volunteer Preparer",
+      "organization": "AARP Foundation Tax-Aide / VITA",
+      "description": "Free tax preparation for low-income filers. Requires IRS certification (~30 hours of training, exam). Must be 18+. Excellent quantitative skills credential.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "education"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "tax law",
+        "client interview",
+        "professional documentation",
+        "financial literacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "aarpfoundation.org/taxaide \u2014 November-December training for January-April season.",
+      "_source": "https://www.aarpfoundation.org/our-programs/tax-aide-foundation",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Free Clinic Volunteer (Translators, Reception, Logistics)",
+      "organization": "Various free clinics",
+      "description": "Free/low-cost clinics need bilingual translators, intake clerks, supply organizers. Spanish-English translators highly valued. Excellent pre-med exposure without clinical role.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "international"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "medical setting protocols",
+        "translation",
+        "patient flow",
+        "intake"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Search \"free clinic [your city]\" or freeclinics.com for the National Association of Free & Charitable Clinics.",
+      "_source": "https://www.nafcclinics.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "AmeriCorps Service Year (Post-HS, Gap Year)",
+      "organization": "AmeriCorps",
+      "description": "Year-long full-time service ($30K+ stipend + $7K education award). Programs: City Year, Teach For America Corps Member, NCCC. Must be 17+. Major gap year option for committed service-oriented students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "leadership",
+        "education",
+        "homelessness"
+      ],
+      "ageMin": 17,
+      "ageMax": 99,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "professional service",
+        "leadership at scale",
+        "direct service",
+        "team coordination"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "americorps.gov/serve \u2014 applications 3-6 months ahead of service year start.",
+      "_source": "https://www.americorps.gov/serve",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "UNICEF Volunteer Translation / Content Review (Remote)",
+      "organization": "United Nations Volunteers Online",
+      "description": "UN Volunteers Online has remote volunteer opportunities in translation, content review, web design, research, training material development. International credential, fully remote.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "international"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "professional translation",
+        "UN system literacy",
+        "remote collaboration"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "onlinevolunteering.org/en \u2014 must be 18+ and create a profile.",
+      "_source": "https://www.onlinevolunteering.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    },
+    {
+      "name": "Community Bike Repair Coop",
+      "organization": "Various local",
+      "description": "Community bike co-ops fix bikes for low-income community members and teach repair skills. Practical hands-on skills, environmental angle, transportation equity. Most metros have one.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "environment",
+        "homelessness"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "bicycle mechanics",
+        "teaching repair",
+        "community education"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search \"[your city] bike kitchen\" or \"community bike co-op\".",
+      "_source": "https://thinktank.bikeleague.org/community-bike-shops",
+      "_verified": true,
+      "_verifiedDate": "2026-04-25"
+    }
+  ]
+}

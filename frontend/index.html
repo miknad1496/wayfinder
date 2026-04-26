@@ -211,6 +211,11 @@
           <span>Programs</span>
           <span class="tool-badge">Consultant</span>
         </button>
+        <button id="sidebarVolunteer" class="sidebar-footer-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Volunteer</span>
+          <span class="tool-badge">Consultant</span>
+        </button>
       </div>
 
       <!-- Sidebar Footer -->
@@ -1426,6 +1431,136 @@
           <h3>Programs &amp; Activities</h3>
           <p>Browse high-impact leadership programs, research opportunities, and more. Full access requires Consultant plan.</p>
           <button class="plan-btn plan-btn-upgrade" id="programsUpgradeBtn">Upgrade to Consultant</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Volunteer Modal -->
+    <div id="volunteerModal" class="modal-overlay" role="dialog" aria-modal="true" style="display:none;">
+      <div class="modal modal-tool-list">
+        <div class="modal-header">
+          <h2>Volunteer Opportunities</h2>
+          <button id="volunteerModalClose" class="modal-close" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Tab nav -->
+          <div class="tool-tabs" style="display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid #e5e7eb;">
+            <button id="volunteerTabBrowse" class="tool-tab active" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid #2563eb;color:#1e3a8a;font-weight:600;cursor:pointer;">Browse Programs</button>
+            <button id="volunteerTabStrategy" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Build My Strategy</button>
+            <button id="volunteerTabDiscover" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Discover Local</button>
+          </div>
+
+          <!-- BROWSE PANEL -->
+          <div id="volunteerBrowsePanel">
+            <p class="modal-intro">Curated database of large, sustainable, recurring volunteer programs &mdash; the high-confidence baseline.</p>
+            <div class="tool-filters" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;">
+              <select id="volunteerCategory" class="tool-filter-select">
+                <option value="all">All causes</option>
+              </select>
+              <select id="volunteerState" class="tool-filter-select">
+                <option value="all">All states</option>
+              </select>
+              <select id="volunteerAgeMin" class="tool-filter-select">
+                <option value="">Any age</option>
+                <option value="12">12+</option>
+                <option value="14">14+</option>
+                <option value="16">16+</option>
+                <option value="18">18+</option>
+              </select>
+              <select id="volunteerTime" class="tool-filter-select">
+                <option value="all">Any time commitment</option>
+                <option value="one_time">One-time</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="project">Project-based</option>
+                <option value="intensive">Intensive (multi-week)</option>
+                <option value="flexible">Flexible</option>
+              </select>
+              <select id="volunteerFormat" class="tool-filter-select">
+                <option value="all">In-person + remote</option>
+                <option value="in-person">In-person only</option>
+                <option value="remote">Remote only</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+              <select id="volunteerCollegeApp" class="tool-filter-select">
+                <option value="all">Any admissions value</option>
+                <option value="high">High admissions value</option>
+                <option value="medium">Medium</option>
+              </select>
+              <input id="volunteerSearch" type="text" placeholder="Search by name / org / skill..." class="tool-filter-input" />
+            </div>
+            <div id="volunteerResults" class="tool-results"></div>
+          </div>
+
+          <!-- STRATEGY PANEL -->
+          <div id="volunteerStrategyPanel" style="display:none;">
+            <p class="modal-intro">Tell us about your situation and we'll build a tailored plan: an anchor commitment, project initiatives, and a stretch leadership track.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px;">
+              <div>
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Grade level</label>
+                <select id="volStrGrade" class="tool-filter-select">
+                  <option value="9">9th grade</option>
+                  <option value="10" selected>10th grade</option>
+                  <option value="11">11th grade</option>
+                  <option value="12">12th grade</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">State</label>
+                <select id="volStrState" class="tool-filter-select"><option value="all">Any state</option></select>
+              </div>
+              <div>
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Hours/week available</label>
+                <select id="volStrHours" class="tool-filter-select">
+                  <option value="2">1-2 hours/week</option>
+                  <option value="4" selected>3-4 hours/week</option>
+                  <option value="6">5-6 hours/week</option>
+                  <option value="8">7+ hours/week</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Goal</label>
+                <select id="volStrGoal" class="tool-filter-select">
+                  <option value="rounded">Well-rounded experience</option>
+                  <option value="college_app" selected>Strengthen college app</option>
+                  <option value="leadership">Leadership development</option>
+                  <option value="specific_skill">Specific skill / career exposure</option>
+                </select>
+              </div>
+              <div style="grid-column:1 / -1;">
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Career interest (optional, e.g. medicine, law, engineering)</label>
+                <input id="volStrCareer" type="text" placeholder="medicine, law, engineering, education, business..." class="tool-filter-input" style="width:100%;" />
+              </div>
+              <div style="grid-column:1 / -1;">
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Causes you care about (multi-select; pick 1-4)</label>
+                <div id="volStrCauses" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+              </div>
+            </div>
+            <button id="volStrGenerate" class="form-btn form-btn-primary" style="width:100%;padding:12px;">Build My Strategy →</button>
+            <div id="volStrategyResult" style="margin-top:20px;"></div>
+          </div>
+
+          <!-- DISCOVER LOCAL PANEL -->
+          <div id="volunteerDiscoverPanel" style="display:none;">
+            <p class="modal-intro">Live AI search for current LOCAL programs not in our static database. Volunteer programs change too often to keep statically catalogued &mdash; this finds what's happening in your area right now.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;">
+              <input id="volDisCity" type="text" placeholder="City (e.g. Bellevue)" class="tool-filter-input" />
+              <select id="volDisState" class="tool-filter-select"><option value="">Select state</option></select>
+              <select id="volDisGrade" class="tool-filter-select">
+                <option value="9">9th grade</option><option value="10" selected>10th grade</option>
+                <option value="11">11th grade</option><option value="12">12th grade</option>
+              </select>
+              <div style="grid-column:1 / -1;">
+                <label style="font-size:13px;color:#475569;display:block;margin-bottom:4px;">Causes (multi-select; pick 1-3)</label>
+                <div id="volDisCauses" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+              </div>
+            </div>
+            <button id="volDisSearch" class="form-btn form-btn-primary" style="width:100%;padding:12px;">Discover Local Programs →</button>
+            <div id="volDiscoverResult" style="margin-top:20px;"></div>
+            <p style="font-size:12px;color:#94a3b8;margin-top:12px;">Local programs surface via live AI research. <strong>Always verify directly</strong> before applying &mdash; details change frequently.</p>
+          </div>
+
         </div>
       </div>
     </div>

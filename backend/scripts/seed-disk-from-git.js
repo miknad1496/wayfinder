@@ -34,6 +34,7 @@ const SEED_FILES = [
   'data/scraped/oews-state.json',
   'data/scraped/h1b-employers.json',
   'data/scraped/h1b-by-soc.json',
+  'data/scraped/volunteer-opportunities.json',
 ];
 
 function downloadToBuffer(url) {
