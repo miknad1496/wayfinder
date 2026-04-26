@@ -1,13 +1,20 @@
 {
-  "lastRun": "2026-04-26T18:30:00Z",
-  "totalRuns": 7,
-  "totalAdded": 34,
+  "lastRun": "2026-04-26T19:08:30.843Z",
+  "totalRuns": 8,
+  "totalAdded": 40,
   "queue": [
+    {
+      "focus": "nationwide-remote",
+      "target": 30,
+      "current": 6,
+      "status": "in_progress",
+      "lastBatchDate": "2026-04-26"
+    },
     {
       "focus": "WA",
       "target": 30,
       "current": 16,
-      "status": "in_progress",
+      "status": "concluded",
       "metros": [
         "Seattle",
         "Bellevue",
@@ -25,7 +32,8 @@
         "Bellingham",
         "Bainbridge Island",
         "Vancouver"
-      ]
+      ],
+      "note": "Concluded by Dan directive on 2026-04-26."
     },
     {
       "focus": "CA",
@@ -118,5 +126,26 @@
         "CodaKid"
       ]
     }
-  ]
+  ],
+  "plan": {
+    "asOf": "2026-04-26",
+    "directive": "Dan directive 2026-04-26: WA concluded. Next iterations work top 10 per major state/metro progressively for basic coverage.",
+    "nextStateOrder": [
+      "CA (Bay Area, LA, San Diego, Sacramento)",
+      "NY (NYC, Long Island, Westchester)",
+      "TX (Houston, Austin, Dallas, San Antonio)",
+      "MA (Boston, Cambridge, Worcester)",
+      "MI (Detroit, Ann Arbor, Grand Rapids)",
+      "IL (Chicago metro)",
+      "PA (Philadelphia, Pittsburgh)",
+      "GA (Atlanta metro)",
+      "FL (Miami, Orlando, Tampa)",
+      "CO (Denver, Boulder)",
+      "OR (Portland)",
+      "DC metro (DC, MD, VA)"
+    ],
+    "perStateTarget": 10,
+    "cadence": "1 state-batch per run, then rotate to next state. Mix nationwide/remote in opportunistically when high-value.",
+    "remainingPriorityFocus": "Major metros first — large metro areas before secondary cities. Nationwide/remote programs still welcome opportunistically when they fill genuine gaps."
+  }
 }

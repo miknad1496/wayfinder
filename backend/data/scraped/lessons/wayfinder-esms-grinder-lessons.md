@@ -301,3 +301,57 @@ NEXT GRINDER PRIORITY ZONES (handed off to /15-min cron grinder):
 - WA/CA/NY metro local-program coverage
 - Religious-school summer programs (parochial schools)
 - Suburban day-camp networks (KE Camps, Kids in the Game, Harlem RBI)
+
+## RUN 8 — 2026-04-26 (nationwide-remote, post-WA-conclude)
+
+Added 6 nationwide/remote K-8-eligible programs:
+- **Juni Learning 1:1 Online** (high) — $140-$450/mo, 2-wk free trial, ages 7-18
+- **iCode National Summer STEM Camps** (medium cost) — 244+ US locations, ages 6-18, $400-$700/wk
+- **Snapology LEGO STEAM Camps** (medium cost) — national franchise, ages 4-14
+- **Bricks 4 Kidz LEGO Camps** (medium cost) — national franchise, ages 5-14, NEW for 2026: choose-your-own-adventure
+- **Create & Learn Online** (high) — small-group (3-5 students), ~$30/hr, free intro classes, K-12
+- **Codingal Online Summer Camp** (medium cost) — STEM.org accredited, ages 6-18
+
+6 field-note insights captured. Field-notes section at 30/30 cap (oldest 6 dropped on PREPEND).
+
+## DIRECTIVE CHANGE — 2026-04-26 (Dan)
+
+> "after you finish this round, move onto the top 10 or so for each major state/metro areas. conclude wa state at this point. progressively should keep iterating and have basic coverage"
+
+**WA state CONCLUDED** in `esms-grinder-progress.json`. Sufficient coverage: 17+ esms-grinder entries spanning Seattle, Bellevue, Vashon, Orcas Island, Tacoma, Bellingham, Vancouver, Bainbridge, plus IslandWood. Future WA additions only when a clear gap surfaces.
+
+**Next iterations: state-by-state, ~10 per state**, rotating in this order (codified in `progress.plan.nextStateOrder`):
+
+1. CA (Bay Area, LA, San Diego, Sacramento) — start here
+2. NY (NYC, Long Island, Westchester)
+3. TX (Houston, Austin, Dallas, San Antonio)
+4. MA (Boston, Cambridge, Worcester)
+5. MI (Detroit Metro, Ann Arbor, Grand Rapids)
+6. IL (Chicago metro)
+7. PA (Philly, Pittsburgh)
+8. GA (Atlanta metro)
+9. FL (Miami, Orlando, Tampa)
+10. CO (Denver, Boulder)
+11. OR (Portland)
+12. DC metro (DC, MD, VA)
+
+Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rotate to next. Mix in nationwide/remote opportunistically when they fill genuine gaps. Major metros first — secondary cities come later.
+
+**Run 9 should start CA** — Bay Area anchor orgs to research first: Tech Interactive (San Jose), Exploratorium (SF), CuriOdyssey (San Mateo), Lawrence Hall of Science (Berkeley), Children's Discovery Museum SJ, San Mateo County Park ranger camps, JCC Berkeley, Roughing It Day Camp (Lafayette). Existing dedup risk: Camp Galileo Bay Area sites — many are likely already in DB; check before listing.
+
+## CALIBRATION UPDATE
+
+- Batch size 6 still comfortable when targeting well-known online/national orgs. Maintain 6 for state-batches.
+- DEDUP CRITICAL: many "obvious" national programs (Outschool, Beast Academy, Code Ninjas, Curious Cardinals, Synthesis, Brain Chase, AoPS, Khan Academy, iD Tech, Camp Invention, Tynker, Mathnasium) are now ALREADY in DB from prior ad-hoc and round runs (920+ programs as of run 8). Always run name-substring grep against existing programs before deciding candidate list.
+- Permission gotcha: `/sessions/.../mnt/outputs/wayfinder-esms` was NOT writable on this run after `cp -r` — files came over with read-only perms. Workaround: clone fresh into `/tmp/esms-work/wayfinder` and work entirely from there. Both `/tmp/wayfinder-esms` and `/sessions/.../mnt/outputs/wayfinder-esms` had permission issues; `/tmp/esms-work/wayfinder` was clean.
+- ESM gotcha: package.json declares `"type": "module"`, so any `node` script using `require()` must use `.cjs` extension. All future inline grinder scripts: name them `*.cjs`.
+- PUSH-CONFLICT gotcha: programs.json + summer-camp-insights.json get concurrent commits from k12-grinder, ad-hoc rounds, and harvest tasks. Plan for conflict on push. Workflow: commit → try push → on rejection, abort/reset to origin/main, re-run update script (which is idempotent on dedup), recommit, push.
+
+## RUN HISTORY (UPDATED)
+
+| Date | Run # | Added | Skipped | Focus | Notable |
+|------|-------|-------|---------|-------|---------|
+| 2026-04-26 | 1 | 5 (3hi/2md) | 0 | WA — Seattle/Bellevue/Vashon/Orcas | Bootstrapped progress + lessons |
+| 2026-04-26 | 2 | 6 (4hi/2md) | 0 | WA — Seattle/Bellevue/Tacoma anchors | Caught PSC pre-existing dup |
+| 2026-04-26 | 3-7 | various | various | WA expansion + ad-hoc national rounds | DB grew from 837 → 926 via mix of esms-grinder + ad-hoc + round runs |
+| 2026-04-26 | 8 | 6 (2hi/4md-cost) | 0 | nationwide-remote (Juni, iCode, Snapology, Bricks 4 Kidz, Create & Learn, Codingal) | WA concluded by Dan directive. Next iterations: ~10 per state starting CA. Field-notes hit 30/30 cap. Push conflicted once with concurrent commits — resolved by reset/replay. |
