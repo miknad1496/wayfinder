@@ -116,6 +116,12 @@
 
 - **Mobius Discovery Center (Spokane)** — confirmed real org (children's museum + science center merger, downtown Spokane, 331 N Post St). Camp/class detail not crawlable from landing page; FAQ exists but content is JS-rendered. Defer until we can pull from a parent newsletter or ParentMap listing for current age tiers + dates.
 
+
+## NEW LESSON FROM 2026-04-26 RUN 7 (CLOBBER INCIDENT)
+
+- **Always pull-rebase before push.** Run 7 cloned to /tmp at the start of execution; mid-run, runs 4-6 plus an ad-hoc grinder commit landed on the remote (added 27 entries to the DB). When run 7 pushed, it fast-forwarded against its own stale base and overwrote the in-between work. Rescue path: `git show <prev-good-sha>:path > base.json`, replay our additions on top, force-push (or normal push if the bad commit is at HEAD). Going forward: ALWAYS run `git pull --rebase origin main` after the initial clone-and-before any commit, OR re-clone fresh into a unique /tmp path right before commit/push.
+- **Writable mount can corrupt new git clones.** Cloning into `/sessions/.../mnt/outputs/<new-name>` produces a `.git/config` with mode bytes ahead of the real content (`fatal: bad config line 1`). Workaround: clone into `/tmp/<unique-name>` (e.g., `/tmp/wf_esms_run3_$`) where the working user has full write — then commit and push from there. Don't reuse the long-lived `/sessions/.../mnt/outputs/wayfinder-esms` working copy across multiple runs because rebases there can wedge the index in a state that's impossible for the user to clear (`Operation not permitted` on `.git/index.lock`).
+
 ## RUN HISTORY
 
 | Date | Run # | Added | Skipped | Focus | Notable |
@@ -164,3 +170,4 @@ This is the 'low-hanging fruit' batch Dan flagged — programs that benefit
 WA + every other state equally. Future grinder runs should continue
 expanding this national-anchor coverage before going deeper into local
 metros.
+| 2026-04-26 | 7 | 3 (0hi/3md) | 3 (Outschool, Beast Academy, Mathnasium — already added by run 6 / ad-hoc) | National STEM franchises | Mad Science, Engineering For Kids, Play-Well TEKnologies (all md cost — varies by franchise/host). Recovered from a clobber-rebase incident; learned NEVER to push from a stale base clone — always pull-rebase first. Captured 3 net-new field-note insights. |
