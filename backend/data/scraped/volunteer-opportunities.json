@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 142,
+    "totalCount": 147,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -24,11 +24,14 @@
       "Big Brothers Big Sisters",
       "Birch Aquarium at Scripps",
       "Boys & Girls Clubs",
+      "Brooklyn Botanic Garden",
+      "Brooklyn Public Library",
       "CERT (FEMA)",
       "California Academy of Sciences",
       "Caritas of Austin",
       "Central Texas Food Bank",
       "Children's Hospital Los Angeles (CHLA)",
+      "City Harvest",
       "Columbia Springs",
       "Crisis Text Line",
       "Dallas Public Library",
@@ -59,6 +62,7 @@
       "NCASA",
       "NHPCO",
       "NPS Volunteers-In-Parks",
+      "New York Botanical Garden",
       "New York Public Library",
       "North Texas Food Bank",
       "Operation Warm",
@@ -66,6 +70,7 @@
       "Perot Museum of Nature and Science",
       "Point Defiance Zoo & Aquarium",
       "Project Open Hand",
+      "Queens Public Library",
       "Reading Partners",
       "Renewal Food Bank",
       "Rotary Interact",
@@ -4363,6 +4368,166 @@
       "collegeAppValue": "medium",
       "howToStart": "Apply via aspca.volunteerportal.org/nycvolunteers (Adult 18+) or /nycyouthvolunteers (Youth 16-17). Recovery & Rehabilitation Center has a separate application \u2014 see aspca.org/get-involved/volunteer/volunteer-aspca-recovery-rehabilitation-center.",
       "_source": "https://www.aspca.org/get-involved/volunteer/volunteer-aspca-adoption-center",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "City Harvest Volunteer (Repack, Greenmarket Rescue, Mobile Markets, Office Projects)",
+      "organization": "City Harvest",
+      "description": "City Harvest is NYC's largest food rescue organization, delivering 90M+ lbs of rescued food a year to feed nearly 2M New Yorkers facing food insecurity. Volunteer roles span the Brooklyn Volunteer Center in Sunset Park (repacks), Greenmarket Rescues (collecting unsold farmer's-market produce), Mobile Markets (free produce distribution at NYCHA and partner sites), Food Show Rescues (event surplus pickup), Nutrition Education Projects, and office support. Tiered age policy: 6-9 with 1:4 adult ratio (limited shifts); 10+ at repacks with chaperone; 14+ Greenmarket Rescues; 16+ Mobile Markets and Office Projects; 18+ Food Show Rescues and Nutrition Education. Minors require parent/guardian release waiver and adult 21+ chaperone except for Office Projects.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "hunger",
+        "civic"
+      ],
+      "ageMin": 6,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food rescue logistics",
+        "community engagement",
+        "warehouse operations",
+        "nutrition education"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Register at cityharvestvolunteers.civicore.com, complete the volunteer application, and sign up for a shift type matching your age tier. Minors must have parent/guardian sign the release waiver and bring a 21+ chaperone (except Office Projects). Greenmarket Rescues are the most accessible 14+ shifts.",
+      "_source": "https://www.cityharvest.org/volunteer/volunteer-faq/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Brooklyn Botanic Garden \u2014 Garden Apprentice Program (GAP)",
+      "organization": "Brooklyn Botanic Garden",
+      "description": "GAP is BBG's flagship teen program: a competitive 4-tier apprenticeship in urban agriculture, horticulture, and environmental science at one of NYC's premier public gardens. Apprentices in grades 9-11 commit to a 9-month program (March-November) \u2014 once or twice a week during spring/fall and four days a week in summer. Tier 1 apprentices learn garden basics; advanced tiers lead workshops, mentor younger apprentices, and run community programming. Long-running program (since 1998), strong college-app signal for environmental/STEM students. 12th graders are not eligible (apply junior year for the senior-year cohort).",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "environment",
+        "education",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 17,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "urban agriculture",
+        "horticulture",
+        "public-facing education",
+        "leadership",
+        "scientific observation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at bbg.org/learn/gap (application typically opens in late fall for the following March cohort). Attend a GAP information session before applying. Email gap@bbg.org with questions. Open to all NYC-area students grades 9-11; Tier 1 is the entry point.",
+      "_source": "https://www.bbg.org/learn/gap",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Brooklyn Public Library Teen Volunteer (Teen Techies, Book Buddy, Teen Takeovers)",
+      "organization": "Brooklyn Public Library (BPL)",
+      "description": "BPL \u2014 the third-largest library system in the U.S. and serving 2.6M Brooklyn residents \u2014 runs three distinct teen volunteer tracks. Teen Techies (14-18) help branch patrons with technology, devices, and digital literacy. Book Buddy (12-18) pairs teens with younger readers for literacy support and read-alouds. Teen Takeovers Branch Council (16-19) is a paid internship-style program where high schoolers plan, organize, promote, and host after-hours public programs for other teens. General volunteer minimum is 12+; under-18 must have parent/guardian sign the consent section of the application.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "education",
+        "civic",
+        "mentorship"
+      ],
+      "ageMin": 12,
+      "ageMax": 19,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "literacy tutoring",
+        "technology coaching",
+        "event planning",
+        "public speaking"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit the BPL volunteer application at bklynlibrary.org/volunteer (online or print). Indicate program of interest (Teen Techies, Book Buddy, or general). Parent/guardian consent required for under-18. For Teen Takeovers Branch Council, watch bklynlibrary.org/support/volunteer/branch-council for the next paid cohort cycle (16-19 only).",
+      "_source": "https://www.bklynlibrary.org/support/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Queens Public Library Teen Central + Peer-to-Peer Service Collective (P2PSC)",
+      "organization": "Queens Public Library (QPL)",
+      "description": "QPL \u2014 serving 2.4M Queens residents across 65+ branches \u2014 runs a year-round teen volunteer program through Teen Central (volunteer.queenslibrary.org). Teens 14+ may apply year-round for ongoing roles (homework help, branch events, technology support, summer reading program); 13-year-olds are eligible for select single-day projects. The Peer-to-Peer Service Collective (P2PSC) is a high-school leadership program (14-18) where teens propose and lead community service projects, workshops, and presentations through QPL branches. Teen Central is QPL's online hub for teens 13-19.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "education",
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 13,
+      "ageMax": 19,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "literacy tutoring",
+        "community programming",
+        "leadership",
+        "event planning"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Create an account at volunteer.queenslibrary.org and browse opportunities under Teen Central or Under-18 listings. Submit application + parent/guardian consent for under-18. For P2PSC (high school leadership), check the P2PSC page for cohort timing \u2014 applications typically open in late summer for fall start.",
+      "_source": "https://volunteer.queenslibrary.org/under_18",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "New York Botanical Garden \u2014 High School Explainers Program",
+      "organization": "New York Botanical Garden (NYBG)",
+      "description": "NYBG's Explainers Program is a competitive, tiered teen volunteer program at the 250-acre Bronx botanical garden. Each year 100+ high school students start as Explainers in the Everett Children's Adventure Garden, leading hands-on plant and ecology activities for visiting families and school groups. Advanced tiers build outdoor-education skills, environmental stewardship, and public-facing science communication; the program is a feeder pipeline into NYBG's GreenSchool teaching corps and college environmental-science programs. Long-running flagship NYC teen STEM volunteer track.",
+      "scope": "state",
+      "states": [
+        "NY"
+      ],
+      "subregion": "NYC Metro",
+      "categories": [
+        "environment",
+        "education",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "environmental education",
+        "public speaking",
+        "plant science",
+        "child engagement"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit nybg.org/learn/kids-teens/explainers/ for the application cycle (typically opens late fall/early winter for the following spring/summer cohort). Open to all NYC-area high school students; competitive admission. Contact NYBG Education for cycle-specific deadlines.",
+      "_source": "https://www.nybg.org/learn/kids-teens/explainers/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"

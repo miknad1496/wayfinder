@@ -289,3 +289,25 @@
 
 | 2026-04-26 | 14 | 5 | 0 | NY (NYC institutional anchors) — first NY run | Food Bank For NYC (14+/18+/10+ tiers), WCS Discovery Guide (14-22 × 5 zoos/aquarium), NYPL Teen Vol + Reading Ambassadors (14+), AMNH (16+, year-long), ASPCA NYC Adoption Center + R&R (16+/18+). All HIGH. NY queue → 5/12. NYC anchor recipe held cleanly; 3 of 5 sites required search-snippet fallback (NYPL Incapsula, AMNH Cloudflare-CAPTCHA, ASPCA portal). |
 
+
+## RUN 15 NOTES (2026-04-26 — NYC depth, 5 institutional anchors v2)
+
+- Added 5 HIGH-confidence NYC entries beyond the run-14 anchor set: City Harvest (6+ tiered up to 18+), Brooklyn Botanic Garden Garden Apprentice Program (grades 9-11, 9-month commitment), Brooklyn Public Library (12+ general; Teen Techies 14-18; Book Buddy 12-18; Teen Takeovers 16-19), Queens Public Library Teen Central + P2PSC (13/14+), and NYBG High School Explainers (14-18 competitive).
+- NY queue → 10/12 after run 15. 2 more NYC depth entries OR pivot to Buffalo/Rochester/Albany cluster for run 16.
+- All HIGH confidence — NYC's institutional teen-volunteer pages publish ages and tiered policies cleanly, including the multi-borough library systems (BPL, QPL, NYPL run-14) which each maintain their own teen-volunteer infrastructure.
+- Stale-clone issue (cont'd from run 10): the scheduled-task prompt's lessons file was 4 runs out of date (showed run 4 as latest; actual was run 14). The clone-into-`/tmp/wayfinder-vol/` step inherited `nobody:nogroup` ownership and was read-only for our user. Workaround: clone to a new path, `cp -r` to a user-owned `/tmp/work/`, run `git config safe.directory` + `git pull --rebase` for the latest state. Same workaround as run 10 — maybe time to bake this into the task prompt as standard preflight.
+- Mid-research drops: 0. The "5 institutional anchors v2" recipe (food rescue + botanical garden + 2 borough libraries + secondary botanical garden) yielded 5/5 on first pass, mirroring the primary "food bank + zoo + main library + children's museum + SPCA" recipe in run 14.
+
+### Source-specific run-15 notes
+- `cityharvest.org/volunteer/volunteer-faq/` — comprehensive WordPress FAQ. Tiered age policy is explicit: 6-9 with 1:4 ratio, 10+ repacks, 14+ Greenmarket Rescues, 16+ Mobile Markets/Office, 18+ Food Show Rescues. Volunteer portal is on a separate Civicore subdomain (cityharvestvolunteers.civicore.com).
+- `bbg.org/learn/gap` — explicit grades 9-11 (NOT 12); 4-tier structure; March-November 9-month commitment; once-twice/week spring+fall, 4 days/wk summer. Long-running (since 1998) flagship teen STEM program. Strong college-app signal.
+- `bklynlibrary.org/support/volunteer` — minimum 12+; under-18 parent consent on application. Three program tiers explicitly listed: Teen Techies (14-18), Book Buddy (12-18), Teen Takeovers (16-19). The Teen Takeovers Branch Council at /support/volunteer/branch-council is paid and competitive — distinguish from unpaid Book Buddy/Techies.
+- `volunteer.queenslibrary.org/under_18` — separate volunteer-portal subdomain (similar pattern to City Harvest's Civicore portal). 14+ year-round, 13+ for single-day projects. P2PSC (Peer-to-Peer Service Collective) at 14-18 is a leadership cohort distinct from general volunteer roles.
+- `nybg.org/learn/kids-teens/explainers/` — 100+ teens/year competitive admission. Tiered: Explainers → advanced workshops → GreenSchool teaching corps. Bronx-based (Everett Children's Adventure Garden as entry point). 250-acre garden footprint.
+
+### Calibration notes from run 15
+- Stay at batch_size 5. NYC has now produced 10/10 high-confidence entries across runs 14-15 with 0 medium and 0 mid-research drops — same pattern as LA/SF/SD/Houston/Austin/Dallas. Major-metro institutional anchors are consistently the cleanest candidates.
+- Volunteer-portal subdomain pattern recurring: City Harvest (Civicore), Queens Library (volunteer.queenslibrary.org), Children's Museum of Houston (Galaxy Digital). When a main-domain volunteer page seems thin, check `volunteer.[orgdomain]` or `[org].civicore.com` / Galaxy Digital subdomains for the canonical application form.
+- Run 16 target: finish NY queue with 2 more entries (suggest: Coalition for the Homeless NYC + Lincoln Center Activities Council teen volunteer OR teen docent), then pivot to MA queue. Alternatively cluster on Buffalo/Rochester for the upstate share — but NYC depth is still rich enough for a 2-entry close-out.
+
+| 2026-04-26 | 15 | 5 | 0 | NY (NYC depth — 5 institutional anchors v2) | City Harvest (6+ tiered), BBG GAP (grades 9-11, 9-mo), BPL Teen Volunteer (12+ tiered), QPL Teen Central + P2PSC (13/14+), NYBG Explainers (14-18 competitive). All HIGH. NY queue → 10/12. |
