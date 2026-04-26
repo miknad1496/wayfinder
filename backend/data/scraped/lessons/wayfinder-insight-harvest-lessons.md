@@ -93,3 +93,22 @@ Each captured insight must be:
 - Keep batch_size at 5 — yield was high enough that throughput is fine. Going to 10 risks shallower research per entry.
 - Add a "name vs reality" check pattern explicitly to STEP 2 — entries 3 and 5 both had name/eligibility mismatches that became insights.
 - Consider a `_dataQualityFlags` field harvested in parallel that the data-refresh task can read to schedule entry corrections (separate from the parent-facing insights).
+
+## Run 2 — 2026-04-26 — k12
+
+| Date | Run # | Module | Entries scanned | Insights captured | Notable |
+|------|-------|--------|-----------------|-------------------|---------|
+| 2026-04-26 | 2 | k12 | 5 | 5 | First k12 batch: Bellevue HS, Newport HS, Tesla STEM, Roosevelt, Garfield. 100% capture. WA Eastside + Seattle high schools all yielded actionable parent insights from district FAQ pages and PTSA pages. |
+
+### Effective Patterns added
+- For BSD / LWSD / SPS schools, the *district-level* AP/HCC/admissions FAQ pages have richer parent gotchas than the school's own homepage. Search "<district name> AP scholarship deadline" or "<district name> HCC pathway" and the district FAQ surfaces above the school site.
+- Magnet/lottery schools (Tesla STEM): ALWAYS look up the current waitlist position — it tells parents whether their lottery dream is realistic for next year. Tesla STEM publishes "next number called" — a goldmine.
+- Choice/audition-based programs at otherwise-comprehensive HS (Roosevelt Jazz, Wind Ensemble): the audition timing is the parent gotcha, since these classes can't be added by registration alone.
+- HC pathway schools (Garfield, Lincoln, West Seattle in SPS): the geographic-zone-to-pathway mapping + 8th-grade guarantee is the single most useful parent insight for HCC families.
+
+### Failed Patterns
+- The school's own homepage (e.g. bellevuehigh.bsd405.org/) is mostly menu/JS — curl returns navigation chrome and CSS. Don't rely on it; jump straight to district-level pages or the school-profile PDF.
+
+### Calibration
+- Keep batch_size at 5. K12 yielded 1 insight per school cleanly — going to 10 would dilute research depth.
+- For k12 specifically, weight searches toward "<school name> + AP/HCC/lottery/scholarship/audition" rather than the school homepage URL itself.
