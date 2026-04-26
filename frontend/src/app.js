@@ -2347,6 +2347,7 @@ function setupToolListeners() {
   $('sidebarInternships').addEventListener('click', openInternships);
   $('sidebarScholarships').addEventListener('click', openScholarships);
   $('sidebarPrograms').addEventListener('click', openPrograms);
+  $('sidebarSummerCamps').addEventListener('click', openSummerCamps);
   $('sidebarVolunteer').addEventListener('click', openVolunteer);
   $('sidebarK12').addEventListener('click', openK12);
   $('sidebarFinancialAid').addEventListener('click', openFinancialAid);
@@ -4897,7 +4898,8 @@ async function _volInit() {
   ['volunteerCategory','volunteerState','volunteerAgeMin','volunteerTime','volunteerFormat','volunteerCollegeApp'].forEach(id => {
     $(id)?.addEventListener('change', searchVolunteer);
   });
-  $('volunteerSearch')?.addEventListener('input', _debounce(searchVolunteer, 350));
+  $('volunteerSearchBtn')?.addEventListener('click', searchVolunteer);
+  $('volunteerSearch')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') searchVolunteer(); });
 
   // Tab switching
   $('volunteerTabBrowse').addEventListener('click', () => _volSetTab('Browse'));
@@ -5286,27 +5288,38 @@ async function openK12() {
 }
 
 async function _initK12() {
+  const sel = $('k12State');
+  // Always start with the hardcoded full state list so the dropdown is never empty
+  // (even if /api/k12/states is slow/failing). Enriched counts are layered on top
+  // when the API responds.
+  sel.innerHTML = '';
+  for (const st of Object.keys(_k12FullStateNames).sort()) {
+    const opt = document.createElement('option');
+    opt.value = st;
+    opt.textContent = _k12FullStateNames[st];
+    sel.appendChild(opt);
+  }
+  sel.value = 'WA'; // default to WA (strongest enriched coverage)
+
+  // Then attempt to enrich the labels with live counts
   try {
     const res = await fetch(`${API_BASE}/k12/states`);
     const data = await res.json();
-    const sel = $('k12State');
-    // Replace the default WA option with full state list — keep WA selected
-    sel.innerHTML = '';
-    for (const st of data.states || []) {
-      const opt = document.createElement('option');
-      opt.value = st.state;
-      const fullName = _k12FullStateNames[st.state] || st.state;
-      const enrichedTag = st.enrichedCount > 0 ? ` (${st.enrichedCount} enriched)` : '';
-      opt.textContent = `${fullName}${enrichedTag}`;
-      sel.appendChild(opt);
+    const counts = {};
+    for (const st of data.states || []) counts[st.state] = st.enrichedCount;
+    for (const opt of sel.options) {
+      const c = counts[opt.value];
+      if (c > 0) opt.textContent = `${_k12FullStateNames[opt.value] || opt.value} (${c} enriched)`;
     }
-    sel.value = 'WA'; // default
   } catch (e) {
-    console.error('k12 init failed:', e);
+    console.warn('k12 states API unavailable; using hardcoded state list:', e.message);
   }
+
+  // Listeners — explicit Search button + Enter key, no auto-search on every keystroke
+  $('k12SearchBtn')?.addEventListener('click', searchK12);
   ['k12State','k12Level','k12Filter'].forEach(id => $(id)?.addEventListener('change', searchK12));
-  $('k12District')?.addEventListener('input', _debounce(searchK12, 350));
-  $('k12Search')?.addEventListener('input', _debounce(searchK12, 350));
+  $('k12Search')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') searchK12(); });
+  $('k12District')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') searchK12(); });
   _k12StatesLoaded = true;
 }
 
@@ -5379,4 +5392,19 @@ function _k12CardHtml(s) {
       ${!s.enriched ? '<p style="margin:8px 0 0;font-size:11px;color:#94a3b8;font-style:italic;">Enriched data not yet collected for this school. Visit the website above for current details.</p>' : ''}
     </div>
   `;
+}
+
+// Summer Camps shortcut — opens Programs modal pre-filtered to elementary/middle
+function openSummerCamps() {
+  openPrograms();
+  // Pre-set grade filter to elementary by default (parents searching summer camps
+  // most often have K-5 kids; they can switch to middle from the dropdown)
+  setTimeout(() => {
+    const gradeSel = document.getElementById('programGrade');
+    if (gradeSel) {
+      gradeSel.value = 'elementary';
+      // Trigger the search if the page has its handler ready
+      if (typeof searchPrograms === 'function') searchPrograms();
+    }
+  }, 50);
 }

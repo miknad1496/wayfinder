@@ -211,6 +211,11 @@
           <span>Programs</span>
           <span class="tool-badge">Consultant</span>
         </button>
+        <button id="sidebarSummerCamps" class="sidebar-footer-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 22h16L12 2z"/><path d="M9 14h6"/></svg>
+          <span>Summer Camps (K-8)</span>
+          <span class="tool-badge" style="background:#f59e0b;color:#fff;">BETA</span>
+        </button>
         <button id="sidebarVolunteer" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span>Volunteer</span>
@@ -1463,14 +1468,10 @@
 
           <!-- BROWSE PANEL -->
           <div id="volunteerBrowsePanel">
-            <p class="modal-intro"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-right:8px;">BETA</span>Curated database of large, sustainable, recurring volunteer programs. Coverage is densest in WA and major metros; growing weekly. The <strong>Discover Local</strong> tab works for any city/state via live AI search.</p>
-            <div class="tool-filters" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;">
-              <select id="volunteerCategory" class="tool-filter-select">
-                <option value="all">All causes</option>
-              </select>
-              <select id="volunteerState" class="tool-filter-select">
-                <option value="all">All states</option>
-              </select>
+            <p class="form-subtitle" style="margin:8px 0 16px;">Curated database of sustained, recurring volunteer programs. Densest in WA + major metros. The <strong>Discover Local</strong> tab works for any city via live AI search.</p>
+            <div class="tool-filters" id="volunteerFilters">
+              <select id="volunteerCategory" class="tool-filter-select"><option value="all">All causes</option></select>
+              <select id="volunteerState" class="tool-filter-select"><option value="all">All states</option></select>
               <select id="volunteerAgeMin" class="tool-filter-select">
                 <option value="">Any age</option>
                 <option value="12">12+</option>
@@ -1484,13 +1485,13 @@
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
                 <option value="project">Project-based</option>
-                <option value="intensive">Intensive (multi-week)</option>
+                <option value="intensive">Intensive</option>
                 <option value="flexible">Flexible</option>
               </select>
               <select id="volunteerFormat" class="tool-filter-select">
-                <option value="all">In-person + remote</option>
-                <option value="in-person">In-person only</option>
-                <option value="remote">Remote only</option>
+                <option value="all">All formats</option>
+                <option value="in-person">In-person</option>
+                <option value="remote">Remote</option>
                 <option value="hybrid">Hybrid</option>
               </select>
               <select id="volunteerCollegeApp" class="tool-filter-select">
@@ -1498,7 +1499,8 @@
                 <option value="high">High admissions value</option>
                 <option value="medium">Medium</option>
               </select>
-              <input id="volunteerSearch" type="text" placeholder="Search by name / org / skill..." class="tool-filter-input" />
+              <input type="text" id="volunteerSearch" class="tool-filter-search" placeholder="Search name / org / skill...">
+              <button id="volunteerSearchBtn" class="form-btn form-btn-sm">Search</button>
             </div>
             <div id="volunteerResults" class="tool-results"></div>
           </div>
@@ -1586,31 +1588,32 @@
     <!-- K-12 Schools Modal -->
     <div id="k12Modal" class="modal-overlay" role="dialog" aria-modal="true" style="display:none;">
       <div class="modal modal-tool-list">
-        <div class="modal-header">
-          <h2>K-12 Schools</h2>
-          <button id="k12ModalClose" class="modal-close" aria-label="Close">×</button>
+        <button class="modal-close" id="k12ModalClose" aria-label="Close">&times;</button>
+        <div class="tool-header">
+          <h2>K-12 Schools <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-left:8px;vertical-align:middle;">BETA</span></h2>
+          <p class="form-subtitle">Search public + private K-12 schools nationwide. Enriched detail (principal, enrollment, AP/IB, ratings) is strongest in WA right now — expanding state-by-state. All 50 states show real schools.</p>
         </div>
-        <div class="modal-body">
-          <p class="modal-intro"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-right:8px;">BETA</span>Search and filter K-12 schools across the US. <strong>Enriched detail</strong> (principal, enrollment, AP/IB, ratings) is strongest in <strong>WA</strong> right now &mdash; expanding state-by-state. All 50 states show NCES base data (name, district, address) so you see real schools no matter where you are.</p>
-          <div class="tool-filters" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;">
-            <select id="k12State" class="tool-filter-select"><option value="WA">Washington</option></select>
-            <select id="k12Level" class="tool-filter-select">
-              <option value="high">High School</option>
-              <option value="middle">Middle School</option>
-              <option value="elementary">Elementary</option>
-            </select>
-            <input id="k12District" type="text" placeholder="District (optional)" class="tool-filter-input" />
-            <input id="k12Search" type="text" placeholder="Search by school name / city" class="tool-filter-input" />
-            <select id="k12Filter" class="tool-filter-select">
-              <option value="">No additional filter</option>
-              <option value="hasAP">Has AP courses (enriched only)</option>
-              <option value="ibProgram">Has IB program (enriched only)</option>
-              <option value="magnetProgram">Magnet/STEM school (enriched only)</option>
-              <option value="enrichedOnly">Enriched data only</option>
-            </select>
-          </div>
-          <div id="k12Results" class="tool-results"></div>
+
+        <div class="tool-filters" id="k12Filters">
+          <select id="k12State" class="tool-filter-select"></select>
+          <select id="k12Level" class="tool-filter-select">
+            <option value="high">High School</option>
+            <option value="middle">Middle School</option>
+            <option value="elementary">Elementary</option>
+          </select>
+          <input type="text" id="k12District" class="tool-filter-input" placeholder="District (optional)" />
+          <select id="k12Filter" class="tool-filter-select">
+            <option value="">No extra filter</option>
+            <option value="hasAP">Has AP courses</option>
+            <option value="ibProgram">Has IB program</option>
+            <option value="magnetProgram">Magnet/STEM school</option>
+            <option value="enrichedOnly">Enriched data only</option>
+          </select>
+          <input type="text" id="k12Search" class="tool-filter-search" placeholder="Search school name / city">
+          <button id="k12SearchBtn" class="form-btn form-btn-sm">Search</button>
         </div>
+
+        <div id="k12Results" class="tool-results"></div>
       </div>
     </div>
 
