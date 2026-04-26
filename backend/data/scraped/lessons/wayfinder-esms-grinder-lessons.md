@@ -410,3 +410,17 @@ Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rota
 - **Hold at 6/run, even after replay**. Replay batch ran cleanly with zero skips; no signal to push higher.
 - **Add `git log --oneline -5` against remote BEFORE EVERY EDIT as a mandatory check** in the run-flow.
 
+
+
+## RUN 11 — RACE-CONDITION RECOVERY (originally planned as run 3)
+
+### Outcome
+- Started with DB at 837. Researched 6 nationwide/online programs (Outschool, Brain Chase, Mathnasium, Synthesis Teams, Code Ninjas, Connected Camps) + 6 field-note insights.
+- Between research start (~19:46) and final commit attempt (~20:05), at least 8 concurrent grinder runs landed on remote — DB grew 837 → 944. 5 of my 6 candidates were claimed by ad-hoc/concurrent runs in parallel.
+- Synthesis Teams remained unique → added. All 6 of my insights were novel → captured. (Insight survives races much better than program entries.)
+
+### New patterns
+- Pre-research dedup CHECK + post-research RE-DEDUP both required. Race window can be ~minutes.
+- Filesystem permission woes in /sessions/.../mnt/outputs prevent some `git` operations: `cp -r` of a clone induces mode-changes; `.git/index.lock` can be stuck and unremovable. WORKAROUND: use `GIT_INDEX_FILE=/tmp/git-index` env var for index ops, run `git config core.fileMode false`, work via `read-tree FETCH_HEAD` + plumbing.
+- Direct cloning into `/sessions/.../mnt/outputs/<name>` fails with `bad config line 1` if the same path was previously cp'd. Use a fresh path or rsync instead of cp.
+- When research target is hot (nationwide/online programs are everyone's "low-hanging fruit"), expect dupes. Pivot toward narrower geographic targets that fewer parallel grinders are working on.
