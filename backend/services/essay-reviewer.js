@@ -52,7 +52,17 @@ let deepKnowledgeCache = {
   'failure-patterns': null,
   'scoring-calibration': null,
   'edge-case': null,
-  'supplement-mastery': null
+  'supplement-mastery': null,
+  // Expanded April 2026: bring 7 more essay-relevant deep files into rotation
+  'ai-landscape': null,
+  'ao-insider': null,
+  'ao-reading-sim': null,
+  'diagnostic-tree': null,
+  'coaching-demos': null,
+  'ecosystem-strategy': null,
+  'emerging-trends': null,
+  'before-after-library': null,
+  'post-sffa-adversity': null
 };
 
 /**
@@ -111,7 +121,17 @@ async function loadDeepKnowledge() {
       'failure-patterns': 'essay-diagnostic-failure-patterns.md',
       'scoring-calibration': 'essay-scoring-calibration.md',
       'edge-case': 'essay-edge-case-coaching.md',
-      'supplement-mastery': 'essay-supplement-type-mastery.md'
+      'supplement-mastery': 'essay-supplement-type-mastery.md',
+      // April 2026 expansion — 7 additional deep brain files for selective injection
+      'ai-landscape': 'essay-ai-landscape-2026.md',
+      'ao-insider': 'essay-ao-insider-intelligence.md',
+      'ao-reading-sim': 'essay-ao-reading-simulation.md',
+      'diagnostic-tree': 'essay-diagnostic-decision-tree.md',
+      'coaching-demos': 'essay-coaching-demonstrations.md',
+      'ecosystem-strategy': 'essay-ecosystem-strategy.md',
+      'emerging-trends': 'essay-emerging-trends-2026.md',
+      'before-after-library': 'essay-technique-before-after-library.md',
+      'post-sffa-adversity': 'essay-post-sffa-adversity-intelligence.md'
     };
 
     for (const [key, filename] of Object.entries(files)) {
@@ -304,6 +324,102 @@ function buildKnowledgeInjection(essayType, targetSchool, knowledgeCache, deepCa
         injection += '## SUPPLEMENT ESSAY MASTERY\n' + supplementMastery + '\n\n';
         tokenCount += Math.ceil(supplementMastery.length / 4);
       }
+    }
+  }
+
+    // ── April 2026 expansion: pull from 7 newly-loaded deep brain files ──
+
+  // ALWAYS inject: 2026 AI detection landscape (every essay is now read in this context)
+  if (deepCache?.['ai-landscape'] && tokenCount < maxTokens - 400) {
+    const aiSlice = extractRelevantSections(
+      deepCache['ai-landscape'],
+      ['detection', 'AO', 'red flag', 'authenticity', '2026'],
+      400
+    );
+    if (aiSlice) {
+      injection += '## AI DETECTION LANDSCAPE 2026\n' + aiSlice + '\n\n';
+      tokenCount += Math.ceil(aiSlice.length / 4);
+    }
+  }
+
+  // ALWAYS inject: Diagnostic decision tree (the meta-framework for review)
+  if (deepCache?.['diagnostic-tree'] && tokenCount < maxTokens - 500) {
+    const diagSlice = extractRelevantSections(
+      deepCache['diagnostic-tree'],
+      ['initial read', 'tier 1', 'tier 2', 'story problem', 'execution'],
+      500
+    );
+    if (diagSlice) {
+      injection += '## DIAGNOSTIC DECISION TREE\n' + diagSlice + '\n\n';
+      tokenCount += Math.ceil(diagSlice.length / 4);
+    }
+  }
+
+  // ALWAYS inject: Concrete before/after examples (anchors abstract feedback in specifics)
+  if (deepCache?.['before-after-library'] && tokenCount < maxTokens - 400) {
+    const baSlice = extractRelevantSections(
+      deepCache['before-after-library'],
+      ['before', 'after', 'transform', 'specificity', 'sensory'],
+      400
+    );
+    if (baSlice) {
+      injection += '## TECHNIQUE BEFORE/AFTER LIBRARY\n' + baSlice + '\n\n';
+      tokenCount += Math.ceil(baSlice.length / 4);
+    }
+  }
+
+  // CONDITIONAL: AO insider intelligence — for personal essays where reader perception matters
+  if (['common-app', 'why-school', 'supplemental', 'diversity'].includes(essayType)
+      && deepCache?.['ao-insider'] && tokenCount < maxTokens - 500) {
+    const aoSlice = extractRelevantSections(
+      deepCache['ao-insider'],
+      ['committee', 'reader', 'pile', 'first read', 'memory', 'distinctive'],
+      500
+    );
+    if (aoSlice) {
+      injection += '## AO INSIDER INTELLIGENCE\n' + aoSlice + '\n\n';
+      tokenCount += Math.ceil(aoSlice.length / 4);
+    }
+  }
+
+  // CONDITIONAL: Ecosystem strategy — for supplementals (essays work together across an app)
+  if (['supplemental', 'why-school'].includes(essayType)
+      && deepCache?.['ecosystem-strategy'] && tokenCount < maxTokens - 400) {
+    const ecoSlice = extractRelevantSections(
+      deepCache['ecosystem-strategy'],
+      ['portfolio', 'across essays', 'overlap', 'differentiation', 'theme'],
+      400
+    );
+    if (ecoSlice) {
+      injection += '## ESSAY ECOSYSTEM STRATEGY\n' + ecoSlice + '\n\n';
+      tokenCount += Math.ceil(ecoSlice.length / 4);
+    }
+  }
+
+  // CONDITIONAL: Post-SFFA adversity intelligence — for diversity / community / challenge essays
+  if (['diversity', 'community', 'challenge'].includes(essayType)
+      && deepCache?.['post-sffa-adversity'] && tokenCount < maxTokens - 400) {
+    const sffaSlice = extractRelevantSections(
+      deepCache['post-sffa-adversity'],
+      ['SFFA', 'identity', 'race', 'adversity', 'specificity', 'pitfall'],
+      400
+    );
+    if (sffaSlice) {
+      injection += '## POST-SFFA ADVERSITY GUIDANCE\n' + sffaSlice + '\n\n';
+      tokenCount += Math.ceil(sffaSlice.length / 4);
+    }
+  }
+
+  // ALWAYS inject (small): emerging trends — short signal so feedback feels current
+  if (deepCache?.['emerging-trends'] && tokenCount < maxTokens - 300) {
+    const trendSlice = extractRelevantSections(
+      deepCache['emerging-trends'],
+      ['2026', 'trend', 'shift', 'new', 'emerging'],
+      300
+    );
+    if (trendSlice) {
+      injection += '## EMERGING TRENDS 2026\n' + trendSlice + '\n\n';
+      tokenCount += Math.ceil(trendSlice.length / 4);
     }
   }
 
