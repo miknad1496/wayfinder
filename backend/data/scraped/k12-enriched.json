@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T13:47:57.444Z",
-    "count": 145,
+    "lastUpdated": "2026-04-26T14:01:35.790Z",
+    "count": 150,
     "source": "NCES + verified web sources",
-    "note": "Run 22: +8 verified WA HS Evergreen SD (Clark County) cluster, offsets 194-201. 0 skipped — clean Evergreen-SD cluster.",
-    "totalSchools": 145,
+    "note": "Run 23: +5 verified WA high — Federal Way Public Schools cluster (Decatur HS, Federal Way HS, Thomas Jefferson HS, Todd Beamer HS, Career Academy at Truman). Skipped 3: Employment Transition Program (51 special_ed, low-yield), FW Running Start Home School (enr 1), Gateway to College (enr 11).",
+    "totalSchools": 150,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 8,
+    "lastRunAdded": 5,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 22: +8 verified WA HS Evergreen SD (Clark County) cluster, offsets 194-201. 0 skipped — clean Evergreen-SD cluster.",
-    "totalVerified": 145,
+    "lastRunNote": "Run 23: +5 verified WA high — Federal Way Public Schools cluster (Decatur HS, Federal Way HS, Thomas Jefferson HS, Todd Beamer HS, Career Academy at Truman). Skipped 3: Employment Transition Program (51 special_ed, low-yield), FW Running Start Home School (enr 1), Gateway to College (enr 11).",
+    "totalVerified": 150,
     "totalEnriched": 88,
     "lastRun": 22,
     "lastEnriched": "2026-04-26",
@@ -6139,6 +6139,204 @@
         "https://www.niche.com/k12/open-doors-evergreen-vancouver-wa/",
         "https://www.clark.edu/academics/transitional-ed/open-doors.php",
         "https://www.esd112.org/opendoors/"
+      ]
+    },
+    {
+      "ncessch": "530282000434",
+      "name": "Decatur High School",
+      "city": "Federal Way",
+      "state": "WA",
+      "district": "Federal Way Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "address": "2800 SW 320th St, Federal Way, WA 98023",
+      "phone": "(253) 945-5200",
+      "website": "https://dhs.fwps.org/",
+      "principal": "Jamie Tough",
+      "assistantPrincipals": [
+        "Lia Kang",
+        "Nick Wilken"
+      ],
+      "enrollment": 1352,
+      "enrollmentNotes": "2024-25 enrollment per US News; NCES dump shows 1327 (2023-24)",
+      "apCourses": "Offered",
+      "apParticipationRate": "49%",
+      "graduationRate": "87%",
+      "demographics": {
+        "minorityEnrollment": "76%",
+        "economicallyDisadvantaged": "64%"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented program"
+      ],
+      "foundedYear": 1971,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/decatur-high-school-20869"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/decatur-high-school-20869",
+        "https://dhs.fwps.org/",
+        "https://dhs.fwps.org/staff",
+        "https://www.niche.com/k12/decatur-high-school-federal-way-wa/",
+        "https://en.wikipedia.org/wiki/Decatur_High_School_(Federal_Way,_Washington)"
+      ]
+    },
+    {
+      "ncessch": "530282000435",
+      "name": "Federal Way High School",
+      "city": "Federal Way",
+      "state": "WA",
+      "district": "Federal Way Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://fwhs.fwps.org/",
+      "principal": "Dr. Matt Oberst",
+      "assistantPrincipals": [
+        "Deborah Drake",
+        "Jana Kelly",
+        "Travis Savala"
+      ],
+      "enrollment": 1640,
+      "apCourses": 4,
+      "apParticipationRate": "20%",
+      "graduationRate": "90%",
+      "graduationRateNotes": "Most recent OSPI 4-year reporting: 89.5% (2022-23), down from 92.4% (2019-20)",
+      "demographics": {
+        "minorityEnrollment": "86%",
+        "economicallyDisadvantaged": "73%"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Project Lead The Way (PLTW)",
+        "Cambridge International curriculum"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/federal-way-high-school-20870"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/federal-way-high-school-20870",
+        "https://fwhs.fwps.org/",
+        "https://fwhs.fwps.org/about-us/school-profile",
+        "https://www.niche.com/k12/federal-way-high-school-federal-way-wa/"
+      ]
+    },
+    {
+      "ncessch": "530282000451",
+      "name": "Thomas Jefferson High School",
+      "city": "Auburn",
+      "state": "WA",
+      "district": "Federal Way Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://tjhs.fwps.org/",
+      "principal": "Joseph Rush",
+      "enrollment": 1813,
+      "enrollmentNotes": "Largest enrolled HS in Federal Way SD",
+      "studentTeacherRatio": "23.2:1",
+      "ibProgram": true,
+      "ibParticipationRate": "54%",
+      "apCourses": "Offered",
+      "notablePrograms": [
+        "International Baccalaureate (IB)",
+        "Advanced Placement",
+        "Project Lead The Way (PLTW)"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/thomas-jefferson-high-school-20871"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/thomas-jefferson-high-school-20871",
+        "https://tjhs.fwps.org/",
+        "https://tjhs.fwps.org/about-us/school-profile",
+        "https://en.wikipedia.org/wiki/Thomas_Jefferson_High_School_(Auburn,_Washington)",
+        "https://www.niche.com/k12/thomas-jefferson-high-school-auburn-wa/"
+      ]
+    },
+    {
+      "ncessch": "530282003154",
+      "name": "Todd Beamer High School",
+      "city": "Federal Way",
+      "state": "WA",
+      "district": "Federal Way Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://tbhs.fwps.org/",
+      "principal": "Travis Savala",
+      "enrollment": 1412,
+      "enrollmentNotes": "2024-25 per US News; NCES dump shows 1302 (2023-24)",
+      "studentTeacherRatio": "21.53:1",
+      "apCourses": "Offered",
+      "apParticipationRate": "35%",
+      "graduationRate": "82%",
+      "notablePrograms": [
+        "Advanced Placement",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented program"
+      ],
+      "namesakeNote": "Named after Todd Beamer, passenger on United Flight 93 (9/11)",
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/todd-beamer-high-school-20876"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/todd-beamer-high-school-20876",
+        "https://tbhs.fwps.org/",
+        "https://tbhs.fwps.org/about-us/school-profile",
+        "https://www.niche.com/k12/todd-beamer-high-school-federal-way-wa/",
+        "https://en.wikipedia.org/wiki/Todd_Beamer_High_School"
+      ]
+    },
+    {
+      "ncessch": "530282003306",
+      "name": "Career Academy at Truman High School",
+      "city": "Federal Way",
+      "state": "WA",
+      "district": "Federal Way Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "alternative",
+      "schoolCategory": "Big Picture Learning project/internship-based alternative high school",
+      "address": "31455 28th Avenue S., Federal Way, WA 98003",
+      "phone": "(253) 945-5800",
+      "website": "https://careeracademy.fwps.org/",
+      "principal": "Lynn Herink",
+      "principalNotes": "Lynn Herink is principal of the Truman Campus (which hosts Career Academy + Open Doors at Truman + Internet Academy)",
+      "assistantPrincipal": "Kendra Pratchett",
+      "enrollment": 72,
+      "enrollmentNotes": "Above the <50 alt-skip threshold; valid Big Picture program",
+      "studentTeacherRatio": "14:1",
+      "notablePrograms": [
+        "Big Picture Learning model",
+        "Twice-weekly community internships (Tuesdays & Thursdays)",
+        "Personalized Learning Plans (PLPs)",
+        "AJAC Manufacturing Academy partnership",
+        "Career & Technical Education (CTE) pathways"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/career-academy-at-truman-high-school-20878"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://careeracademy.fwps.org/",
+        "https://careeracademy.fwps.org/contact",
+        "https://www.niche.com/k12/career-academy-at-truman-high-school-federal-way-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/career-academy-at-truman-high-school-20878",
+        "https://www.ajactraining.org/programs/manufacturing-academy/truman/"
       ]
     }
   ]

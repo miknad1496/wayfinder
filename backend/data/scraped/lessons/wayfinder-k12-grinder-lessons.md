@@ -7,7 +7,7 @@
 - batch_size: 8 schools (current setting in prompt)
 - typical_run_duration: 12-20 min (Run 10 ~10 min — batched parallel WebSearch is fast for clusters of district-grouped schools)
 - typical_skip_rate: ~25% structural; can spike to 60%+ when batch overlaps with manually-entered schools
-- last_calibration_change: 2026-04-26 — Run 20 confirmed batch_size=8 yields 6 verified + 2 alt-placeholder skips for the Edmonds-SD-clustered offset band (177-184). Edmonds eLearning Academy (enr 255 alt-online) refines the alt-skip rule: alt programs >100 enrollment ARE processable; the auto-skip name pattern (Open Doors / Virtual Academy / Reentry / Re-Engagement) holds — eLearning Academy is its own enrichment class.
+- last_calibration_change: 2026-04-26 — Run 23 confirmed batch_size=8 sustainable on a clean Federal Way SD cluster (5/5 processable verified, 3 sub-50/special-ed skips). Same yield pattern as Run 12.
 - last_calibration_change: 2026-04-26 — Run 22 produced 8/8 verified, 0 skipped on offsets 194-201 — entire Evergreen SD (Clark County) cluster including 1 Skills Center (Cascadia Tech, vocational carve-out) and 1 Open Doors (consortium reengagement, enr=110 >50 threshold). Confirms district-cluster + carve-out rules now consistently produce zero-waste batches when the queue lands in a single-district band. **Recommend bumping batch_size to 10 for next run** while WA-high queue remains in clean comprehensive-HS Federal Way / Ferndale / Fife band (offsets 202+).
 
 ## EFFECTIVE PATTERNS (use these — they work)
@@ -60,6 +60,9 @@
 - **NEW (Run 22):** **Magnet/STEM-pathway flag pays off in metadata.** HeLa (Henrietta Lacks) was tagged `magnet: true` + `magnetProgram: true` + `schoolCategory: "STEM / health & bioscience magnet"` + `namedAfter` field. This makes the entry filterable by the frontend's magnet/specialty filter (per Run 9 open question) without a schema migration — just consistent field naming.
 - **NEW (Run 22):** **Co-located dual-record handling.** Open Doors Evergreen (530270003567) and Legacy HS (530270000412) share the same physical campus and primary contact (Shawn Wallace at Legacy). Per Run 15's pair-handling rule, both were enriched with cross-referencing notes — Legacy's `notablePrograms` mentions co-location, Open Doors' `principalNote` references Legacy's contact. Saves duplicate research and surfaces the relationship for users.
 
+- **NEW (Run 23):** **FWPS subdomain pattern is gold** — every Federal Way Public Schools high school has a self-titled subdomain (`dhs.fwps.org`, `fwhs.fwps.org`, `tjhs.fwps.org`, `tbhs.fwps.org`, `careeracademy.fwps.org`) that hosts a /staff page with full admin team in clean HTML. `site:fwps.org "[School]" principal staff` returns principal + 2-3 assistant principals + counselors in one snippet. Net: 5/5 verified principals in 5 searches.
+- **NEW (Run 23):** **District-cluster batches keep paying off** — Run 23's batch was 5 FWPS schools across the same 8-row NCES window. Same district-domain query pattern reused 5 times. Re-validates Run 10/11/12 finding that natural NCES alphabetical-by-city ordering keeps districts grouped automatically.
+
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
 
 - Don't retry WebFetch on the same URL after a "file too large" error — it'll fail again. Switch to WebSearch immediately.
@@ -96,6 +99,9 @@
 
 - **NEW (Run 22):** Don't trust `/tmp/wayfinder` even when initial `git clone` returns successfully — confirmed AGAIN this run. Initial clone to `/tmp/wayfinder-1777211014` succeeded with current-user ownership but `df -h /` showed the root filesystem at 96% full, leaving only 448M free for git operations. Cloned fresh to `/sessions/ecstatic-focused-galileo/wfclone-$$` (4.8G free) without issues. Sticking with Run 11's permanent fix: clone to `/sessions/[session-id]/wfclone-$$` from the very first try.
 - **NEW (Run 22):** **Cascadia Tech Academy staff page is JS-rendered** — `https://www.cascadiatechnicalacademy.org/staff/` returned generic "Client Challenge" / Cloudflare interstitial in WebSearch results. Foundation site (`cascadiatechfoundation.org`) carries Foundation Executive Director (Kristina Bauska) but not the Academy's principal/director. Recorded `principal: null` with `principalNote` explaining the consortium model. Consistent with Run 11's Acceleration Academy + Run 15's Open Doors handling.
+
+- **NEW (Run 23):** **Stale-clone trap.** First clone attempt landed on `/tmp/wayfinder` from a previous session and showed offset 96 / totalEnriched 72 — but the `origin/main` HEAD had advanced through Runs 13-22 (offset 202, 145 schools). Wasted ~10 min building entries for offsets 96-103 (Camas SD cluster) before catching the dup. **Fix going forward (already encoded in lessons but worth re-stating):** clone exclusively to `/sessions/[session-id]/tmp/wfclone-$` and NEVER trust an existing `/tmp/wayfinder` directory — the EACCES on write was the canary that flagged this run. Even `git pull` inside an old clone wouldn't have caught the discrepancy quickly.
+- **NEW (Run 23):** **Pre-flight dedup check is mandatory.** Before generating new entries, run `jq '[.schools[] | select(.name | test(...))]` on the NEW batch's school names. Run 23 caught it because writing failed first; Run 9 caught it after building the entries. Future runs: dedup-by-ncessch BEFORE research, after clone freshness verified.
 
 ## SOURCE-SPECIFIC NOTES
 
@@ -143,6 +149,10 @@
 - For Camas SD schools: `site:camas.wednet.edu "[School]" principal` returns clean staff-directory snippet.
 - For tribal/reservation schools with active district sites: `"[School]" principal "[District]" 2024 OR 2025` — surfaces OSPI / state-level coverage with principal name in body text.
 
+#### NEW (Run 23) — high-yield templates added
+- FWPS-specific (and probably any district with per-school subdomains): `site:[district].org "[School]" principal staff` returns the staff page directly with full admin team. Faster than navigating to the subdomain root.
+- For schools named after notable people / events (Todd Beamer, Henrietta Lacks, Thomas Jefferson), Wikipedia is unusually clean as a backup source — namesake context + founding year + enrollment all in one infobox.
+
 ## DATA QUALITY FLAGS DISCOVERED
 
 - 2026-04-26: **Summit Olympus, Tacoma** appears to have CLOSED at the end of 2024-25 per WA Charter Commission. Recorded with `schoolStatus: "closed_2025"` so the frontend can filter. Going forward: when adding charter schools, do a quick "[school] charter commission [state] status" check.
@@ -165,6 +175,9 @@
 
 
 - 2026-04-26 (Run 21): **Skeletal NCES-only entries from prior auto-runs** — Jackson HS at offset 189 was already in enriched.json (Run 19) but with NCES-only fields (demographics, enrollment-by-grade, no principal/programs). When the grinder hits these, the right move is `merge` not `skip` — preserve the rich NCES detail and layer the web-research fields on top. Update `lastRunReplaced` count, not `lastRunAdded`.
+
+- 2026-04-26 (Run 23): **Big Picture Learning alt-schools clear the >50 enrollment bar by design.** Career Academy at Truman (enr 72, Big Picture model with internship rotations) is fully enrichable — has principal, ratio, address, programs, partner orgs. Cf. the auto-skip rule: alternative schools <50 are placeholders, but project/Big-Picture/internship-based alts ≥50 are usually fully-staffed alt programs with normal admin and websites. **Refined rule:** if `schoolType: "alternative"` AND `enrollment >= 50`, attempt enrichment; only auto-skip alts with enr <50.
+- 2026-04-26 (Run 23): **Special-ed transition programs (`schoolType: "special_ed"`) at exactly the 50-student boundary are low-yield.** Federal Way's Employment Transition Program (enr 51, ages 18-21 transition services) has effectively no public profile beyond the district website. Adding to skip-list candidates: special_ed transition programs <100 students. Soft rule, not hard.
 
 ## CALIBRATION SUGGESTIONS FROM PAST RUNS
 
@@ -480,6 +493,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 23    | 5        | 3       | WA high offsets 202-209 — Federal Way Public Schools cluster (Decatur HS [Jamie Tough], Federal Way HS [Dr. Matt Oberst, Cambridge curriculum], Thomas Jefferson HS [Joseph Rush, IB 54%], Todd Beamer HS [Travis Savala], Career Academy at Truman [Lynn Herink, Big Picture Learning]). Skipped 3: Employment Transition Program (51 special_ed), FW Running Start Home School (1 student), Gateway to College (11 students). All-WebSearch run, ~7 min. fwps.org per-school subdomain pattern (`<schoolcode>.fwps.org/staff`) yielded principal + assistant principals + counselors in single snippet for all 5 schools. |
 | 2026-04-26 | 22    | 8        | 0       | WA high offsets 194-201 — entire Evergreen SD (Clark County) cluster. 8/8 verified, 0 skipped: Legacy HS (Christen Palmer, alt 342), Evergreen HS (Sheree Gomez-Clark, 1550), Mountain View HS (Charles Anthony, 1636 + 25 AP), Cascadia Tech Academy Skills Center (consortium 1600+ students, NCES under-reports), Heritage HS (Derek Garrison, 1588), Union HS (Gregg Brown, 1987 + 40% AP, USNews #81 WA, 97% grad), Henrietta Lacks Health & Bioscience HS (Allison Harding, 466, 78% AP, magnet), Open Doors Evergreen (consortium reengagement, co-located with Legacy). All-WebSearch run, ~6 min wall clock — fastest run yet. Single-domain cluster (`evergreenps.org`) made the batch trivially efficient. |
 | 2026-04-26 | 19    | 6        | 2       | Eastmont/Eatonville/Edmonds-SD cluster (offsets 169-176). All 4 Edmonds SD HS verified via subdomain `about` pages: Lynnwood/Meadowdale/Mountlake Terrace + Scriber Lake choice. STEM magnet flag added for Mountlake Terrace. Caught 7-run progress.json drift from stale /tmp clone — re-cloned fresh on /sessions. ~10 min wall-clock. |
 | 2026-04-26 | 18    | 8        | 6       | Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley (offsets 155-168).         |

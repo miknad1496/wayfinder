@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T13:48:05.615Z",
-  "totalRuns": 22,
-  "totalEnriched": 140,
-  "totalSkipped": 59,
-  "notes": "Run 22: enriched 8 new WA HS Evergreen SD (Clark County) cluster — offsets 194-201. New: Legacy HS, Evergreen HS, Mountain View HS, Cascadia Technical Academy Skills Center (vocational, NCES underreports), Heritage HS, Union HS, Henrietta Lacks (HeLa magnet), Open Doors Evergreen (reengagement consortium, co-located with Legacy). 0 skipped — clean Evergreen-SD district cluster batch. Queue offset 194 -> 202.",
+  "lastRun": "2026-04-26T14:01:35.794Z",
+  "totalRuns": 23,
+  "totalEnriched": 150,
+  "totalSkipped": 62,
+  "notes": "Run 23: enriched 5 new WA HS Federal Way SD cluster — offsets 202-209. New: Decatur HS, Federal Way HS, Thomas Jefferson HS (IB), Todd Beamer HS, Career Academy at Truman (Big Picture). Skipped 3: Employment Transition Program (51 special_ed), FW Running Start Home School (enr 1), Gateway to College (enr 11). Queue offset 202 -> 210.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 202,
+      "offset": 210,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 202 of 649; 140 cumulative grinder count"
+      "note": "raw NCES offset 210 of 649; 150 cumulative grinder count"
     },
     {
       "state": "WA",
