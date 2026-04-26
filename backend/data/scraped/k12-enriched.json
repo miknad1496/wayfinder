@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T13:03:54Z",
-    "count": 126,
+    "lastUpdated": "2026-04-26T13:25:00Z",
+    "count": 132,
     "source": "NCES + verified web sources",
-    "note": "Run 19: enriched 6 WA HS spanning Eastmont SD + Eatonville SD + Edmonds SD cluster (Scriber Lake choice + Lynnwood + Meadowdale + Mountlake Terrace). 2 skipped (Easton Secondary enr=0 placeholder; Eatonville ESD New Beginnings enr=40 alt). Queue offset 169 -> 177.",
-    "totalSchools": 126,
+    "note": "Run 20: enriched 6 WA HS Edmonds SD cluster + Ellensburg/Elma/Entiat band (offsets 177-184). Skipped 2 (East Grays Harbor HS enr=8, East Grays Harbor Open Doors enr=44 \u2014 both <50 alt placeholders). Queue offset 177 -> 185.",
+    "totalSchools": 132,
     "lastUpdate": "2026-04-26",
     "lastRunAdded": 6,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 19: +6 verified WA HS (Eastmont/Eatonville/Scriber Lake/Lynnwood/Meadowdale/Mountlake Terrace), offsets 169-176. 2 skipped (Easton Secondary enr=0 placeholder, ESD New Beginnings enr=40 alt).",
-    "totalVerified": 126,
-    "totalEnriched": 77,
-    "lastRun": 19,
+    "lastRunNote": "Run 20: +6 verified WA HS (Edmonds eLearning Academy, Edmonds-Woodway, Edmonds Career Access, Ellensburg, Elma, Entiat MS/HS), offsets 177-184. 2 skipped (East Grays Harbor pair both <50 alt).",
+    "totalVerified": 132,
+    "totalEnriched": 83,
+    "lastRun": 20,
     "lastEnriched": "2026-04-26",
-    "totalEntries": 126,
-    "verifiedCount": 126,
-    "totalCount": 126,
-    "lastUpdateNote": "Run 19: +6 WA HS Eastmont/Eatonville/Edmonds-SD cluster (Scriber Lake/Lynnwood/Meadowdale/Mountlake Terrace)"
+    "totalEntries": 132,
+    "verifiedCount": 132,
+    "totalCount": 132,
+    "lastUpdateNote": "Run 20: +6 WA HS Edmonds SD + Ellensburg/Elma/Entiat"
   },
   "schools": [
     {
@@ -5283,6 +5283,299 @@
         "https://en.wikipedia.org/wiki/Mountlake_Terrace_High_School"
       ],
       "principalNotes": "David Friedle confirmed via direct fetch of mths.edmonds.wednet.edu/about. Crosby Carpenter held the role earlier (per March 2024 My Edmonds News article); leadership transition occurred after that."
+    },
+    {
+      "ncessch": "530240002205",
+      "name": "Edmonds eLearning Academy",
+      "district": "Edmonds School District",
+      "city": "LYNNWOOD",
+      "state": "WA",
+      "zip": "98036",
+      "latitude": 47.81087,
+      "longitude": -122.334701,
+      "phone": "425-431-7298",
+      "schoolLevel": 3,
+      "schoolType": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "enrollment": {
+        "total": 255
+      },
+      "demographics": {},
+      "freeReducedLunch": 125,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://eela.edmonds.wednet.edu/",
+        "https://eela.edmonds.wednet.edu/about",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/edmonds-elearning-academy-20841",
+        "https://www.niche.com/k12/edmonds-elearning-academy-lynnwood-wa/",
+        "https://myedmondsnews.com/2025/06/class-of-2025-edmonds-elearning-academy-graduates-receive-diplomas-with-perseverance/",
+        "https://ospi.k12.wa.us/node/19820"
+      ],
+      "principal": "Kim Hunter",
+      "principalContact": "hunterk@edmonds.wednet.edu",
+      "website": "https://eela.edmonds.wednet.edu/",
+      "schoolFormat": "online/alternative",
+      "gradeRange": "6-12",
+      "address": "23200 100th Ave. W, Building B, Edmonds, WA 98020",
+      "notablePrograms": [
+        "Online learning with skills mastery model",
+        "Advanced Placement",
+        "Credit recovery",
+        "Honors",
+        "Individualized instruction & support"
+      ],
+      "schoolDescription": "Alternative learning program within the Edmonds School District serving grades 6-12 with online + flexible-pace coursework"
+    },
+    {
+      "ncessch": "530240002673",
+      "name": "Edmonds Woodway High School",
+      "district": "Edmonds School District",
+      "city": "EDMONDS",
+      "state": "WA",
+      "zip": "98026",
+      "latitude": 47.806,
+      "longitude": -122.3369,
+      "phone": "(425)431-7900",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "enrollment": {
+        "total": 1547
+      },
+      "demographics": {},
+      "freeReducedLunch": 548,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ewhs.edmonds.wednet.edu/about",
+        "https://ewhs.edmonds.wednet.edu/academics/ewhsibprogram",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/edmonds-woodway-high-school-20842",
+        "https://www.niche.com/k12/edmonds-woodway-high-school-edmonds-wa/",
+        "https://www.publicschoolreview.com/edmonds-woodway-high-school-profile",
+        "https://www.ibo.org/en/school/000874",
+        "https://resources.finalsite.net/images/v1727810842/edmondswednetedu/lzlhu89nudv06bp4v8ot/SchoolProfile2024-251.pdf"
+      ],
+      "principal": "Allison Chace Larsen",
+      "ibProgram": true,
+      "ibCoordinators": [
+        "Nick Wellington",
+        "Allison Groseclose-Deschler"
+      ],
+      "ibParticipationRate": "32%",
+      "website": "https://ewhs.edmonds.wednet.edu/",
+      "notablePrograms": [
+        "Full IB Diploma Programme (525+ Jr/Sr in IB)",
+        "AP courses",
+        "Running Start",
+        "Magnet/regional IB partner"
+      ],
+      "graduationRate": "88.5%",
+      "testScores": {
+        "math": "46.6%",
+        "ela": "73.6%",
+        "science": "55.8%"
+      },
+      "rating": {
+        "usNewsNationalRank": 3880,
+        "publicSchoolReviewStateRank": 21,
+        "tier": "top 30% WA"
+      },
+      "demographics_note": "66% of graduates enroll in college within 1 year; ranks #1 of 6 Edmonds SD high schools"
+    },
+    {
+      "ncessch": "530240003490",
+      "name": "Edmonds Career Access Program",
+      "district": "Edmonds School District",
+      "city": "Lynnwood",
+      "state": "WA",
+      "zip": "98036",
+      "latitude": 47.81683,
+      "longitude": -122.327691,
+      "phone": "425-640-1593",
+      "schoolLevel": 3,
+      "schoolType": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "enrollment": {
+        "total": 150
+      },
+      "demographics": {},
+      "freeReducedLunch": 56,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.edmonds.edu/programs-and-degrees/academic-foundations/edmonds-career-access-program/",
+        "https://www.niche.com/k12/edmonds-career-access-program-lynnwood-wa/",
+        "https://www.edmonds.edu/programs-and-degrees/academic-foundations/edmonds-career-access-program/admission.html",
+        "https://www.edmonds.edu/programs-and-degrees/academic-foundations/edmonds-career-access-program/frequently-asked-questions.html",
+        "https://www.edmonds.wednet.edu/quicklinks/career-college-readiness/graduation-requirements/earning-additional-credits-and-alternative-programs"
+      ],
+      "schoolFormat": "open-doors-reentry",
+      "website": "https://www.edmonds.edu/programs-and-degrees/academic-foundations/edmonds-career-access-program/",
+      "notablePrograms": [
+        "WA State Open Doors program (16-21 reentry)",
+        "Edmonds College + Edmonds SD partnership",
+        "On-campus 2-4 days/week, 5-15 hrs/wk",
+        "GED + diploma + dual-enrollment pathways"
+      ],
+      "principalNote": "Open Doors consortium program \u2014 administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
+    },
+    {
+      "ncessch": "530246000365",
+      "name": "Ellensburg High School",
+      "district": "Ellensburg School District",
+      "city": "Ellensburg",
+      "state": "WA",
+      "zip": "98926",
+      "latitude": 46.9931,
+      "longitude": -120.5278,
+      "phone": "509-925-8300",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "enrollment": {
+        "total": 938
+      },
+      "demographics": {
+        "minorityEnrollment": "28%"
+      },
+      "freeReducedLunch": 372,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ehs.esd401.org/about",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/ellensburg-school-district/ellensburg-high-school-20846",
+        "https://www.niche.com/k12/ellensburg-high-school-ellensburg-wa/",
+        "https://www.publicschoolreview.com/ellensburg-high-school-profile",
+        "https://www.greatschools.org/washington/ellensburg/516-Ellensburg-High-School/"
+      ],
+      "principal": "Beau Snow",
+      "assistantPrincipals": [
+        "Ole Hall (also Safety Director)"
+      ],
+      "website": "https://ehs.esd401.org/",
+      "address": "1203 East Capitol Avenue, Ellensburg, WA 98926",
+      "mascot": "Bulldogs",
+      "notablePrograms": [
+        "AP courses",
+        "Gifted & Talented",
+        "Running Start partnership with Central Washington University"
+      ],
+      "graduationRate": "88%",
+      "testScores": {
+        "math": "35%",
+        "ela": "55-59%"
+      },
+      "rating": {
+        "usNewsNationalRank": 5994,
+        "stateRank": 102,
+        "tier": "top 50% WA"
+      }
+    },
+    {
+      "ncessch": "530249000372",
+      "name": "Elma High School",
+      "district": "Elma School District",
+      "city": "Elma",
+      "state": "WA",
+      "zip": "98541",
+      "latitude": 47.003189,
+      "longitude": -123.413652,
+      "phone": "360-482-3121",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "enrollment": {
+        "total": 542
+      },
+      "demographics": {},
+      "freeReducedLunch": 414,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.eagles.edu/our-schools/high-school",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/elma-school-district/elma-high-school-20848",
+        "https://www.niche.com/k12/elma-high-school-elma-wa/",
+        "https://www.publicschoolreview.com/elma-high-school-profile",
+        "https://www.greatschools.org/washington/elma/524-Elma-High-School/"
+      ],
+      "principal": "Tatia Holme",
+      "principalContact": "tholme@eagles.edu",
+      "website": "https://www.eagles.edu/our-schools/high-school",
+      "mascot": "Eagles",
+      "notablePrograms": [
+        "AP courses (offered through district)",
+        "Athletics across multiple sports"
+      ],
+      "graduationRate": "95%",
+      "averageSAT": 1120,
+      "testScores": {
+        "math": "25-29%",
+        "ela": "55-59%"
+      },
+      "rating": {
+        "usNewsNationalRank": 7704,
+        "stateRank": 241,
+        "nicheGrade": "B-",
+        "greatSchoolsRating": "7/10"
+      }
+    },
+    {
+      "ncessch": "530255000374",
+      "name": "Entiat Middle and High School",
+      "district": "Entiat School District",
+      "city": "ENTIAT",
+      "state": "WA",
+      "zip": "98822",
+      "latitude": 47.664444,
+      "longitude": -120.225939,
+      "phone": "509-784-1800",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "enrollment": {
+        "total": 141
+      },
+      "demographics": {
+        "minorityEnrollment": "59%",
+        "economicallyDisadvantaged": "73%"
+      },
+      "freeReducedLunch": 100,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.entiatschools.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/entiat-school-district/entiat-middle-and-high-school-20850",
+        "https://www.niche.com/k12/entiat-middle-and-high-school-entiat-wa/",
+        "https://www.publicschoolreview.com/entiat-middle-and-high-school-profile",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530255000374"
+      ],
+      "principalNote": "MS/HS Principal name not surfaced in any searched source; per Run 12 lesson, principal field intentionally left blank rather than fabricate.",
+      "website": "https://www.entiatschools.org/",
+      "address": "2650 Entiat Way, Entiat, WA 98822",
+      "mascot": "Tigers",
+      "gradeRange": "6-12",
+      "studentTeacherRatio": "14:1",
+      "athleticsSite": "https://www.entiattigers.com/",
+      "regionalContext": "Distant rural setting in Chelan County \u2014 only HS in Entiat SD"
     }
   ]
 }
