@@ -49,6 +49,11 @@
 - **NEW (Run 15):** **WA Open Doors / reentry programs DO have enrichable data** when enrollment > 50, even though they're consortium-administered. The CVSD/OSPI program profile PDF + the district's `/apps/pages/OpenDoors` landing page provide outcomes (diploma counts, GED counts) and consortium structure — counts as ≥3 verified fields without a traditional principal. Use `schoolType: "reentry"` and skip the principal field.
 - **NEW (Run 15):** **Juvenile-rehab schools (Green Hill, Maple Lane historically)** have a clean enrichment path: WA DCYF page (facility info, superintendent name, capacity) + DCYF's youth handbook PDF + Wikipedia + Niche/USNews academic profile = 4-5 sources. Use `schoolType: "juvenile_rehabilitation"` and a `facilityNotes` field; the academic program is operated by the host district (Chehalis SD for Green Hill).
 
+
+- **NEW (Run 21):** **Merge-on-dup pattern.** When NCES offset hits a school already in `enriched.json` from a prior NCES-only stub, don't skip the slot — read the old entry, layer new web-research fields on top, preserve old NCES demographics, and replace by ncessch. Counts as a `lastRunReplaced` not a fresh `lastRunAdded`. This run: Henry M. Jackson HS had a Run 19 NCES-only entry (no principal, no programs); Run 21 added principal/AP/mascot and kept the demographics block.
+- **NEW (Run 21):** **Common-name disambiguator field.** Cascade HS Everett (530267000391) and Cascade HS Leavenworth (530095001935) both verified in the past 2 weeks. Added `nameDisambiguator` field to the Everett entry pointing at the other ncessch. Recommend doing the same any time a name collides across two enriched entries.
+- **NEW (Run 21):** **Reengagement / Graduation Alliance partner schools** (Everett Reengagement Academy this run) consistently surface principal + program model + enrollment route + diploma-issuing school via the district's `/graduation/[name]` URL pattern. Standard query: `"[School]" "[district]" principal program description` returns the partner-org details (Graduation Alliance) plus the local principal in one snippet.
+
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
 
 - Don't retry WebFetch on the same URL after a "file too large" error — it'll fail again. Switch to WebSearch immediately.
@@ -78,6 +83,10 @@
 - **NEW (Run 14):** **Don't trust principal names sourced only from old award/news articles.** Spokesman-Review's 2009 "Hittle awarded principal honors" article surfaces in 2026 search results without dating context, and LLM synthesis treats it as current. Rule: any principal sourced from a news article older than 3 years should be treated as needs-verification, not as the answer.
 - **NEW (Run 14):** **us news k12 pages with auto-generated leadership lists are stale.** US News' "Principal: [Name]" line on Olympic HS pointed to a generic answer because the data refresh appears to lag the school's own site. Prefer the school district's own admin page when available.
 
+
+- **NEW (Run 21):** Don't trust the first WebSearch hit for `"School" "Mill Creek" principal` — for Henry M Jackson HS, the 2024-25 student handbook shows "Monica Pierce, Principal for Instruction (12th grade)" prominently. That's a sub-role, NOT the head principal. The actual head is Lance Balla (verified via countyoffice.org snippet quoting "Lance Balla is listed as the Principal"). **Lesson:** when a school's handbook lists multiple "Principal of X" roles, do a follow-up search for "head principal" to disambiguate.
+- **NEW (Run 21):** Don't `git clone` to `/tmp/wayfinder` — the fresh clone *appears* to succeed with current-user ownership but underlying files (e.g. `k12-enriched.json`) get written with `nobody:nogroup` ownership from the prior session's leftovers, blocking subsequent writes with `Permission denied`. Confirmed AGAIN this run (Run 21) — same trap as Runs 9/11. Always clone to `/sessions/[session-id]/wfclone-$$` from the start.
+
 ## SOURCE-SPECIFIC NOTES
 
 ### URLs / domains that hit "too large for inline parsing"
@@ -104,6 +113,10 @@
 - CTE / Skills Centers: `"[Skills Center name]" director programs CTE` — returns director + program list in one snippet.
 - Recovery / alt-academy franchises: combine `"[School]" [district]` (general) + `"[School]" [city] niche student teacher ratio` (Niche stats) for full coverage in 2 searches.
 
+
+#### NEW (Run 21) — high-yield templates added
+- Disambiguating head principal vs sub-principal at large schools: `"[School]" "[district]" "head principal" OR "principal" [mascot]` — the mascot keyword filters out staff handbook hits and surfaces athletics/news pages with the lead admin name.
+- For partner-org alt schools (Graduation Alliance, Acceleration Academy): `"[School]" "[district]" principal program description` reliably returns the local principal + partner-org program model in a single snippet.
 
 - Principal: `site:[district].org "[School]" principal`
 - Enrollment: `"[School]" Washington enrollment 2024 OR 2025`
@@ -140,7 +153,12 @@
 - 2026-04-26 (Run 13): **Conflicting enrollment & graduation rate sources for Discovery HS Camas.** US News/Niche show 181-201 students, grad rate 84.5%; project-design source claims 94% grad rate. Recorded the higher (94%) and noted SAT 1250. **Pattern:** when enrollment fluctuates by ±10% across sources, prefer the most recent NCES + Niche convergence. When grad rates conflict, prefer the higher *only if* it appears in 2+ independent sources; otherwise flag and pick the lower (more conservative).
 - 2026-04-26 (Run 13): **Tribal/reservation school enrollment is reliable.** Neah Bay Jr/Sr HS NCES = 189 vs Niche/PSR = 196 (likely combined Jr+Sr count incl. Markishtum MS). Both are in the right neighborhood; the school operates as a combined 6-12 secondary. Recorded 196 with note in `programNotes`.
 
+
+- 2026-04-26 (Run 21): **Skeletal NCES-only entries from prior auto-runs** — Jackson HS at offset 189 was already in enriched.json (Run 19) but with NCES-only fields (demographics, enrollment-by-grade, no principal/programs). When the grinder hits these, the right move is `merge` not `skip` — preserve the rich NCES detail and layer the web-research fields on top. Update `lastRunReplaced` count, not `lastRunAdded`.
+
 ## CALIBRATION SUGGESTIONS FROM PAST RUNS
+
+- **NEW (Run 21):** Run 21 yielded 5 new + 1 merged-replace + 3 skips on offsets 185-193. The Everett SD cluster (5 of 9 raw rows from 530267xxx) gave dense district-cluster batching — all WebSearch, no WebFetch needed. ~7 min wall clock. Recommend keeping batch_size=8 through the rest of the WA-high E-band (offsets 194-250 likely contains Federal Way + Ferndale + Fife districts based on alphabetical ordering). **Open follow-up:** the dedup-merge auto-detection is now formalized as an EFFECTIVE PATTERN above — future runs should always check `existing_ncessch` before skipping.
 
 - Batch size 8 is the current setting and seems sustainable. Run 7 reported "WebFetch hit 'file too large' wall on 2 of 8 sites" — workaround via WebSearch handled it without dropping enrichment quality.
 - The grinder is currently advancing offset by 8 even when 2-3 are skipped. Consider whether to keep advancing the cursor (current behavior — moves through the queue faster but leaves gaps) vs. only advancing the cursor by `verified` count (more thorough but slower). **Current consensus: advancing by 8 is correct** — skipped schools are typically structurally low-yield and not worth re-attempting later.
@@ -172,6 +190,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 21    | 5 new + 1 merged | 3 | WA high offsets 185-193 (Ephrata + Everett SD cluster). 5 verified new (Ephrata HS, Cascade HS Everett, Everett HS, Sequoia HS, Everett Reengagement Academy) + 1 merged-replace (Jackson HS — added principal/AP/mascot to existing Run 19 NCES-stub). 3 skipped (Sage Hills Open Doors enr=26, NW Learning Center enr=1, Sno Co Jail enr=0 placeholder). Discovered tmpfs-permission trap AGAIN — Run 9/11/21 same root cause. ~7 min research wall-clock, all WebSearch. |
 | 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (Central Valley SD cluster + Centralia HS + Green Hill juvenile-rehab academic). 6/6 processable verified (SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline HS, Centralia HS, Green Hill Academic). 2 skipped (School to Life enr=33 special_ed, Futurus enr=47 alt). Three edge-case school types in one batch: Skills Center carve-out, reentry consortium, juvenile rehab — all enriched cleanly via existing rules. Wall-clock research ~8 min, all WebSearch + 1 small fetch. |
 | 2026-04-26 | 13    | 5        | 3       | WA high offsets 96-103 (Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth). 5/5 verified (Camas HS 1983 enroll, Hayes Freedom alt 161, Discovery HS STEAM 201, Neah Bay Jr/Sr 196 Makah Reservation, Cascade HS Leavenworth 410). 3 sub-50 skips (Open Doors Mt Vernon enr=9, Camas SD Open Doors enr=6, Kodiak Virtual Academy Leavenworth enr=7). Note: Camas + Hayes Freedom + Discovery share district homepage `camas.wednet.edu` — district-cluster batching held. Tribal/reservation Neah Bay was processable (enroll>50). All-WebSearch run, ~7 min research. |
 | 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere + Castle Rock + Central Kitsap SD + Central Valley SD). 8/8 verified, 0 skipped — clean comprehensive-HS band. Caught Mike Hittle (CVHS) hallucination via direct cvhs.cvsd.org fetch — actual principal is Katie Louie. Wall-clock research ~12 min. |
@@ -206,7 +225,11 @@
 - **`cersd.org/o/cerhs/page/meet-the-principal`** returned >1MB inline tokens — too large to parse. Skip and rely on the two news-article sources instead.
 - **`site:tshs.cheneysd.org` WebSearch returned no results** — but a direct WebFetch on the same URL worked. Don't rely on `site:` operator for low-traffic small-school subdomains; just fetch the URL directly when you know it.
 
-### SOURCE-SPECIFIC NOTES (added)
+#
+- **NEW (Run 21):** Don't trust the first WebSearch hit for `"School" "Mill Creek" principal` — for Henry M Jackson HS, the 2024-25 student handbook shows "Monica Pierce, Principal for Instruction (12th grade)" prominently. That's a sub-role, NOT the head principal. The actual head is Lance Balla (verified via countyoffice.org snippet quoting "Lance Balla is listed as the Principal"). **Lesson:** when a school's handbook lists multiple "Principal of X" roles, do a follow-up search for "head principal" to disambiguate.
+- **NEW (Run 21):** Don't `git clone` to `/tmp/wayfinder` — the fresh clone *appears* to succeed with current-user ownership but underlying files (e.g. `k12-enriched.json`) get written with `nobody:nogroup` ownership from the prior session's leftovers, blocking subsequent writes with `Permission denied`. Confirmed AGAIN this run (Run 21) — same trap as Runs 9/11. Always clone to `/sessions/[session-id]/wfclone-$$` from the start.
+
+## SOURCE-SPECIFIC NOTES (added)
 - `cersd.org/o/cerhs/page/meet-the-principal` — too large (>1MB), use cersd.org/article/1712841 (the hire announcement article) instead for principal info.
 - `tshs.cheneysd.org/contact/our-staff` — clean Finalsite staff directory, ~83KB; principal at top in "Front Office Staff" section, parseable inline.
 - `chronline.com` (Daily Chronicle) — high-yield WA SW news source; principal-transition articles surface in search snippets without needing fetch.
@@ -266,7 +289,11 @@
 - **Niche / RateMyTeachers role-confusion**: For Lakes HS, an old RateMyTeachers archive listed Kären Mauer-Smith as "Registrar" — first-pass WebSearch synthesis surfaced this and contradicted the actual current "Principal" listing on the district staff page. Lesson: when role conflict appears in synthesis, *always* prefer the district's official staff page URL (lakes.cloverpark.k12.wa.us/students/school_groups/guidance_office/meet_our_staff) over third-party archives.
 - **Synthesis hallucination on conflicting names**: For Clover Park HS, first synthesis paragraph claimed "Tim Stults" as principal alongside "Jennifer Appel" — Stults is outdated. Lesson: when synthesis offers two candidate names, run a `"[Candidate]" [School] [district]` confirmation query before recording either; the wrong name will produce no LinkedIn/news hit, the right one will.
 
-### SOURCE-SPECIFIC NOTES (added)
+#
+- **NEW (Run 21):** Don't trust the first WebSearch hit for `"School" "Mill Creek" principal` — for Henry M Jackson HS, the 2024-25 student handbook shows "Monica Pierce, Principal for Instruction (12th grade)" prominently. That's a sub-role, NOT the head principal. The actual head is Lance Balla (verified via countyoffice.org snippet quoting "Lance Balla is listed as the Principal"). **Lesson:** when a school's handbook lists multiple "Principal of X" roles, do a follow-up search for "head principal" to disambiguate.
+- **NEW (Run 21):** Don't `git clone` to `/tmp/wayfinder` — the fresh clone *appears* to succeed with current-user ownership but underlying files (e.g. `k12-enriched.json`) get written with `nobody:nogroup` ownership from the prior session's leftovers, blocking subsequent writes with `Permission denied`. Confirmed AGAIN this run (Run 21) — same trap as Runs 9/11. Always clone to `/sessions/[session-id]/wfclone-$$` from the start.
+
+## SOURCE-SPECIFIC NOTES (added)
 - `concrete.k12.wa.us/en-US/contact-us/high-school-staff-directory-db71f6b6` — ~149KB; web_fetch saves to file; principal name parseable via python regex on `principal` keyword.
 - `cphs.cloverpark.k12.wa.us/principal-message` — clean, fetches inline; carries principal name in body.
 - `harrisonprep.cloverpark.k12.wa.us/` — clean, IB-focused school page.
@@ -325,7 +352,11 @@
 - **Open Den (Coupeville alternative HS)** has been renamed to "Coupeville Open Academy" (board action March 2024, per Coupeville Sports). NCES still has it as "Open Den" with enrollment 57; Niche shows 48 (post-rename). Borderline <50 enrollment + name-change pending in NCES = skip. Future runs may want a `nameAlias` lookup.
 - **Don't conflate WA Davenport (Lincoln County, Gorillas) with FL/TX Davenport HS** in initial WebSearch — first results page mixed all three. Add state qualifier (`Washington` + `Lincoln County`) to disambiguate.
 
-### SOURCE-SPECIFIC NOTES (added)
+#
+- **NEW (Run 21):** Don't trust the first WebSearch hit for `"School" "Mill Creek" principal` — for Henry M Jackson HS, the 2024-25 student handbook shows "Monica Pierce, Principal for Instruction (12th grade)" prominently. That's a sub-role, NOT the head principal. The actual head is Lance Balla (verified via countyoffice.org snippet quoting "Lance Balla is listed as the Principal"). **Lesson:** when a school's handbook lists multiple "Principal of X" roles, do a follow-up search for "head principal" to disambiguate.
+- **NEW (Run 21):** Don't `git clone` to `/tmp/wayfinder` — the fresh clone *appears* to succeed with current-user ownership but underlying files (e.g. `k12-enriched.json`) get written with `nobody:nogroup` ownership from the prior session's leftovers, blocking subsequent writes with `Permission denied`. Confirmed AGAIN this run (Run 21) — same trap as Runs 9/11. Always clone to `/sessions/[session-id]/wfclone-$$` from the start.
+
+## SOURCE-SPECIFIC NOTES (added)
 - `whidbeynewstimes.com` / `southwhidbeyrecord.com` / `coupevillesports.com` — high-yield Island County WA news triad; Coupeville SD admin transitions consistently surface here with named-byline articles.
 - `wcsd.wednet.edu` (Wilbur-Creston Cooperative) — multi-district cooperative homepage; reachable via WebSearch. The cooperative-school page directly lists principal name in body content.
 - `daytonchronicle.com` — high-yield Columbia County WA local paper; Dayton SD admin transitions and superintendent searches covered with named bylines.
@@ -384,7 +415,11 @@
 - **`site:edmonds.wednet.edu` WebSearch returned only general district hits** — no specific principal names per school surfaced in snippets. Going direct to school subdomain `*.edmonds.wednet.edu/about` was much faster. Lesson: for districts with subdomain-per-school sites, skip the district-level site: search and go straight to subdomain about pages.
 - **`mhs.edmonds.wednet.edu/about` and `mths.edmonds.wednet.edu/about` both exceed the inline token cap (74KB and 87KB)** — but they SAVE TO FILE and the saved file is parseable with the python regex pattern. Pattern is now: try inline fetch, on token-exceed go straight to the saved file path under `mnt/.claude/projects/.../tool-results/`.
 
-### SOURCE-SPECIFIC NOTES (added)
+#
+- **NEW (Run 21):** Don't trust the first WebSearch hit for `"School" "Mill Creek" principal` — for Henry M Jackson HS, the 2024-25 student handbook shows "Monica Pierce, Principal for Instruction (12th grade)" prominently. That's a sub-role, NOT the head principal. The actual head is Lance Balla (verified via countyoffice.org snippet quoting "Lance Balla is listed as the Principal"). **Lesson:** when a school's handbook lists multiple "Principal of X" roles, do a follow-up search for "head principal" to disambiguate.
+- **NEW (Run 21):** Don't `git clone` to `/tmp/wayfinder` — the fresh clone *appears* to succeed with current-user ownership but underlying files (e.g. `k12-enriched.json`) get written with `nobody:nogroup` ownership from the prior session's leftovers, blocking subsequent writes with `Permission denied`. Confirmed AGAIN this run (Run 21) — same trap as Runs 9/11. Always clone to `/sessions/[session-id]/wfclone-$$` from the start.
+
+## SOURCE-SPECIFIC NOTES (added)
 - `*.edmonds.wednet.edu/about` — all four high-school subdomain about-pages tested in Run 19 follow the same template: `Principal: <Name>` followed by `Assistant Principal: <Name>` rows. Reliable single-source.
 - `eatonville.wednet.edu/ehs/about-us/principals-message` — Finalsite-template principal-letter page; inline-fetchable (~80KB); image alt-text + signed letter both name the principal.
 - `eastmont206.org/ehs/people` — large staff directory page (~270KB), saves to file, parseable via regex; includes principal email format.
