@@ -99,7 +99,7 @@ router.get('/browse', async (req, res) => {
   }
 
   // Public-safe fields only (no admissionsImpact reasoning, etc.)
-  const safe = arr.slice(0, 60).map(p => ({
+  const safe = arr.slice(0, 200).map(p => ({
     id: (p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50) + '_' + ((p.provider||p.organization||'').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 30)),
     name: p.name,
     provider: p.provider || p.organization,

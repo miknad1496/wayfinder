@@ -2873,11 +2873,21 @@ function setupModalClose(modalId, closeId) {
     $(modalId).style.display = 'none';
     _modalClosed(modalId);
   });
+  // Track whether mousedown started inside the modal content. If so, the
+  // subsequent click event (which fires with target = modal-overlay when
+  // the cursor releases outside, e.g. during a resize-handle drag) should
+  // NOT close the modal. Only close on a genuine outside click — both
+  // mousedown AND mouseup outside.
+  let _mousedownInside = false;
+  $(modalId).addEventListener('mousedown', (e) => {
+    _mousedownInside = (e.target !== $(modalId));
+  });
   $(modalId).addEventListener('click', (e) => {
-    if (e.target === $(modalId)) {
+    if (e.target === $(modalId) && !_mousedownInside) {
       $(modalId).style.display = 'none';
       _modalClosed(modalId);
     }
+    _mousedownInside = false;
   });
 }
 
