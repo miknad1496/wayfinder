@@ -94,84 +94,95 @@ async function _buildSummary() {
   lines.push('    you just route the user to view them in the tool');
   lines.push('');
 
-  // ── PROGRAMS ──
+  // ── PROGRAMS (dynamic — counts + exemplars from live JSON) ──
   if (programs?.opportunities || programs?.programs) {
     const arr = programs.programs || programs.opportunities || [];
     const verified = arr.filter(p => p._verified).length;
+    const elemCount = arr.filter(p => (p.eligibility?.grades || []).some(g => ['K','1','2','3','4','5','Pre-K'].includes(String(g)))).length;
+    const middleCount = arr.filter(p => (p.eligibility?.grades || []).some(g => ['6','7','8'].includes(String(g)))).length;
+    const hsCount = arr.filter(p => (p.eligibility?.grades || []).some(g => ['9','10','11','12'].includes(String(g)))).length;
     const waSubset = _filterByState(arr, 'WA', 'states', 'state', 6);
+    const lastUpdated = programs.metadata?.lastScraped || programs.metadata?.lastUpdated || 'unknown';
     lines.push('━━━ PROGRAMS DATABASE (sidebar: Programs, Coach/Consultant tier) ━━━');
-    lines.push(`  Total entries: ${arr.length} (${verified} verified with real source URLs)`);
-    lines.push('  Categories: STEM, humanities, arts, business, leadership, language,');
-    lines.push('              residential, commuter, virtual, K-12, middle, high school');
+    lines.push(`  Total entries: ${arr.length} (${verified} verified with real source URLs) — last updated ${lastUpdated}`);
+    lines.push(`  Grade-level coverage: ${elemCount} elementary (K-5), ${middleCount} middle (6-8), ${hsCount} high school (9-12)`);
     lines.push('  Filterable by: grade (K-12), state (50), format, category, cost ($0-$13K),');
     lines.push('                 selectivity, residential vs commuter');
-    lines.push('  Tier-1 selective+free programs included: RSI, MITES, MOSTEC, SSP, TASP,');
-    lines.push('    TASS, NSLI-Y, Garcia, Clark Scholars, NIH HS-SIP, Bank of America');
-    lines.push('    Student Leaders, Telluride, JCamp, Mathcamp (full aid), PROMYS, Ross');
-    lines.push('  Tier-2 selective: SUMaC, Iowa Young Writers, Princeton Summer Journalism,');
-    lines.push('    BU RISE, NIH HS-SIP, Smithsonian internships');
-    lines.push('  Tier-3 paid pre-college: Stanford Pre-Collegiate, Yale YYGS, Brown PreCo,');
-    lines.push('    Cornell Summer College, Columbia Summer Immersion, Notre Dame Leadership');
-    lines.push('  WA-specific entries (sample): UW Robinson Center, UW Summer Quest,');
-    lines.push('    Fred Hutch summer high school internships, Seattle Children\'s Research,');
-    lines.push('    Allen Institute summer programs');
+    lines.push('  Sample tier-1 selective+free HS programs in DB: RSI, MITES, MOSTEC, SSP, TASP,');
+    lines.push('    TASS, NSLI-Y, Garcia, Clark Scholars, NIH HS-SIP, Bank of America Student Leaders,');
+    lines.push('    Telluride, Mathcamp (full aid), PROMYS, Ross, Iowa Young Writers');
+    lines.push('  Sample paid pre-college: Stanford SPCS, Yale YYGS, Brown PreCo, Cornell Summer College');
+    if (waSubset.length > 0) {
+      lines.push(`  WA-specific entries (sample of ${waSubset.length}+): ${waSubset.slice(0,5).map(p => p.name).join(', ')}`);
+    }
     lines.push('');
   }
 
-  // ── INTERNSHIPS ──
+  // ── INTERNSHIPS (dynamic) ──
   if (internships?.internships) {
     const arr = internships.internships || [];
     const verified = arr.filter(i => i._verified).length;
+    const waCount = arr.filter(i => (i.location?.state === 'WA') || (i.states || []).includes('WA')).length;
+    const remoteCount = arr.filter(i => i.format === 'remote').length;
+    const paidCount = arr.filter(i => i.paid === true).length;
+    const lastUpdated = internships.metadata?.lastScraped || internships.metadata?.lastUpdated || 'unknown';
     lines.push('━━━ INTERNSHIPS DATABASE (sidebar: Internships, Consultant tier) ━━━');
-    lines.push(`  Total entries: ${arr.length} (${verified} verified with real source URLs)`);
+    lines.push(`  Total entries: ${arr.length} (${verified} verified) — last updated ${lastUpdated}`);
+    lines.push(`  Format breakdown: ${paidCount} paid, ${remoteCount} remote-friendly, ${waCount} in WA`);
     lines.push('  Filterable by: state, field (STEM/medicine/finance/law/business/CS/arts/');
-    lines.push('                 research/humanities), paid/unpaid, in-person/remote/hybrid');
-    lines.push('  Strong representation: Microsoft, Google, Amazon, Meta, Apple internships,');
-    lines.push('    NASA REUs, NSF REUs, NIH summer programs, hospital research programs,');
-    lines.push('    Boeing, SpaceX, Tesla, McKinsey/BCG/Bain summer programs, Goldman Sachs,');
-    lines.push('    JPMorgan, Disney, Netflix, Smithsonian, DOE National Labs (SULI)');
-    lines.push('  WA-heavy: 80+ verified WA internships (Seattle Children\'s, Fred Hutch,');
-    lines.push('    UW labs, Boeing, Microsoft, Amazon, Allen Institute, T-Mobile, etc.)');
+    lines.push('                 research/humanities), paid/unpaid, format');
+    lines.push('  Strong representation: Microsoft, Google, Amazon, Meta, Apple, NASA REUs,');
+    lines.push('    NSF REUs, NIH summer programs, hospital research, Boeing, SpaceX, Tesla,');
+    lines.push('    McKinsey/BCG/Bain, Goldman Sachs, JPMorgan, Disney, Netflix, Smithsonian,');
+    lines.push('    DOE National Labs (SULI). WA depth: Seattle Children\'s, Fred Hutch, UW labs.');
     lines.push('');
   }
 
-  // ── SCHOLARSHIPS ──
+  // ── SCHOLARSHIPS (dynamic) ──
   if (scholarships?.scholarships) {
     const arr = scholarships.scholarships || [];
-    const verified = arr.filter(s => s._verified).length;
+    const verified = arr.filter(sch => sch._verified).length;
+    const nationalCount = arr.filter(sch => sch.scope === 'national').length;
+    const lastUpdated = scholarships.metadata?.lastScraped || scholarships.metadata?.lastUpdated || 'unknown';
     lines.push('━━━ SCHOLARSHIPS DATABASE (sidebar: Scholarships, Consultant tier) ━━━');
-    lines.push(`  Total entries: ${arr.length} (${verified} verified)`);
-    lines.push('  Total value tracked: $14.7M+');
-    lines.push('  Filterable by: scope (national/state/regional), category, state (all 50+DC),');
-    lines.push('                 amount range, application format');
-    lines.push('  Major scholarships included: Gates, QuestBridge, Coca-Cola, National Merit,');
-    lines.push('    Goldwater, Hispanic Scholarship Fund, UNCF, Jack Kent Cooke, Dell Scholars,');
-    lines.push('    Posse Foundation, Ron Brown Scholars, Fulbright, plus 1000+ others');
-    lines.push('  Application formats covered: essay, video, portfolio, project, research-paper');
+    lines.push(`  Total entries: ${arr.length} (${verified} verified) — last updated ${lastUpdated}`);
+    lines.push(`  Scope mix: ${nationalCount} national, ${arr.length - nationalCount} state/regional`);
+    lines.push(`  Total value tracked: ${scholarships.metadata?.totalValue || '$14.7M+'}`);
+    lines.push('  Filterable by: scope, category, state (all 50+DC), amount range, application format');
+    lines.push('  Major scholarships: Gates, QuestBridge, Coca-Cola, National Merit, Goldwater,');
+    lines.push('    Hispanic Scholarship Fund, UNCF, Jack Kent Cooke, Dell Scholars, Posse,');
+    lines.push('    Ron Brown Scholars, Fulbright, plus 1000+ others');
     lines.push('');
   }
 
-  // ── VOLUNTEER ──
+  // ── VOLUNTEER (dynamic — Beta phase) ──
   if (volunteer?.opportunities) {
     const arr = volunteer.opportunities || [];
-    lines.push('━━━ VOLUNTEER DATABASE (sidebar: Volunteer, Consultant tier) ━━━');
-    lines.push(`  Total entries: ${arr.length} (curated, all verified)`);
+    const highConf = arr.filter(o => o.confidence !== 'medium').length;
+    const medConf = arr.filter(o => o.confidence === 'medium').length;
+    const waCount = arr.filter(o => (o.states || []).includes('WA')).length;
+    const nationalCount = arr.filter(o => o.scope === 'national').length;
+    const lastUpdated = volunteer.metadata?.lastScraped || volunteer.metadata?.lastVerified || 'unknown';
+    lines.push('━━━ VOLUNTEER DATABASE (sidebar: Volunteer, BETA tier) ━━━');
+    lines.push(`  Total entries: ${arr.length} (${highConf} high-confidence, ${medConf} medium-confidence) — last updated ${lastUpdated}`);
+    lines.push(`  Geographic mix: ${nationalCount} national programs, ${waCount} WA-specific (strongest state coverage)`);
     lines.push('  17 cause categories (health, education, environment, animals, hunger,');
     lines.push('    homelessness, seniors, mental health, mentorship, disability, civic,');
     lines.push('    arts, international, faith, disaster, crisis, leadership)');
-    lines.push('  National anchors: Habitat, Red Cross, Special Olympics, Big Brothers Big');
-    lines.push('    Sisters, NAMI, Crisis Text Line, NPS VIP, NSLI-Y, Best Buddies');
-    lines.push('  WA-specific: Seattle Children\'s junior volunteer, Northwest Harvest, Mary\'s');
-    lines.push('    Place, Woodland Park Zoo Junior Zookeeper');
+    lines.push('  Module status: BETA — curated DB is densest in WA + major metros, expanding.');
+    lines.push('  Sample national anchors: Habitat, Red Cross, Special Olympics, Big Brothers Big');
+    lines.push('    Sisters, NAMI, Crisis Text Line, NSLI-Y, Best Buddies, Reading Partners');
+    if (waCount > 0) {
+      const waNames = arr.filter(o => (o.states || []).includes('WA')).slice(0, 5).map(o => o.name).join(', ');
+      lines.push(`  WA depth (sample of ${waCount}): ${waNames}`);
+    }
     lines.push('  PLUS: on-demand "Discover Local" feature uses live AI search to find current');
-    lines.push('    local programs not in the static DB (volunteer programs change too fast');
-    lines.push('    to keep statically catalogued)');
-    lines.push('  Module also includes: 3-pillar strategy generator, saved-programs tracking,');
-    lines.push('    hour-logging dashboard');
+    lines.push('    local programs in any city/state not in the static DB.');
+    lines.push('  Module also includes: 3-pillar strategy generator, saved programs, hour tracking.');
     lines.push('');
   }
 
-  // ── K12 ENRICHED SCHOOLS ──
+  // ── K12 ENRICHED SCHOOLS (dynamic — Beta phase) ──
   if (k12?.schools) {
     const arr = k12.schools || [];
     const byState = {};
@@ -196,7 +207,7 @@ async function _buildSummary() {
     lines.push('  When a parent asks about a specific school by name, you can reference our');
     lines.push('  enriched data IF it\'s in the DB. If not yet enriched, acknowledge the school');
     lines.push('  exists (NCES base) and offer strategic guidance based on the school\'s context.');
-    lines.push('  No dedicated sidebar tool yet — surface the data through chat directly.');
+    lines.push('  Module status: BETA — surfaced via the K-12 Schools sidebar tool (live as of today). Dedicated K-12 module shows enriched + raw data side-by-side.');
     lines.push('  WA coverage is strongest right now (Dan\'s family priority); TX/CA/NY/MI/MA');
     lines.push('  and other states being enriched on rolling basis.');
     lines.push('');
