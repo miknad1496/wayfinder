@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 900,
+    "totalCount": 907,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -39293,6 +39293,305 @@
       "description": "Best Buddies pairs students with intellectual + developmental disabilities (IDD) with peer 'buddies' for one-to-one friendships, structured activities, and community-building. Middle School Buddies (grades 6-8) + High School Buddies (9-12) operate as school clubs. Pairs build authentic friendships across difference. Strong inclusion + leadership signal \u2014 recognized by selective colleges. Schools start chapters via bestbuddies.org.",
       "url": "https://www.bestbuddies.org/programs/middle-schools/",
       "_source": "https://www.bestbuddies.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Foundation for Jewish Camp \u2014 One Happy Camper grant",
+      "provider": "Foundation for Jewish Camp",
+      "category": "non-traditional",
+      "subcategory": "faith-based",
+      "type": "summer",
+      "cost": {
+        "amount": 1000,
+        "type": "sliding-scale",
+        "display": "OHC grant: $1,000 for first-time campers; total camp ~$1,500-3,500/wk"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "150+ Jewish overnight camps in US + Canada",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 17
+      },
+      "deadline": "OHC grant applications open Nov-Feb for following summer",
+      "description": "Foundation for Jewish Camp's One Happy Camper grant gives $1,000 to first-time Jewish overnight campers, no income test required. 150+ partner camps span Reform, Conservative, Orthodox, Reconstructionist, Renewal, secular-Jewish, special-needs (Camp Ramah), and culinary themes. Search by camp at jewishcamp.org/find-a-camp. Need-based aid stacks on top of OHC grant.",
+      "url": "https://jewishcamp.org/one-happy-camper/",
+      "_source": "https://jewishcamp.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Catholic Heart Workcamp (CHWC)",
+      "provider": "Catholic Heart Workcamp",
+      "category": "service",
+      "subcategory": "faith-based",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$420-450/wk + travel; financial aid via parish + diocese"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "60+ US locations + 10+ international",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 18
+      },
+      "deadline": "Sessions June-August; book by Feb-March for popular sites",
+      "description": "Week-long Catholic service mission camps. Teams of teens travel to 60+ host cities (US + a few intl) and serve local communities \u2014 home repairs, eldercare, food bank work, ministry. Strong Catholic identity programming (daily Mass, prayer groups) but accepts non-Catholic siblings/friends. 6th graders accepted in some locations (junior camps). Powerful service + spiritual development combo.",
+      "url": "https://heartworkcamp.com",
+      "_source": "https://heartworkcamp.com/about",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Hispanic Heritage Foundation \u2014 Youth Awards + LOFT",
+      "provider": "Hispanic Heritage Foundation",
+      "category": "leadership",
+      "subcategory": "cultural",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for selected applicants; scholarships up to $5,000"
+      },
+      "selectivity": "selective",
+      "format": "hybrid",
+      "location": {
+        "city": "Online + national gatherings",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 13,
+        "ageMax": 18
+      },
+      "deadline": "Youth Awards open Sep-Dec; LOFT applications spring",
+      "description": "HHF Youth Awards: regional + national recognition for Hispanic high schoolers in 8 categories (STEM, business, healthcare, arts, etc.) with $1,000-$5,000 scholarships. LOFT (Latinos On Fast Track) is the year-round leadership pipeline for grades 8-12 with mentorship, college prep, and free national summit attendance. Applications opens fall of each school year. Strong cultural-identity + leadership combo for Latino youth.",
+      "url": "https://hispanicheritage.org/programs/youth-awards/",
+      "_source": "https://hispanicheritage.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Plum Village Mindfulness Family Retreats",
+      "provider": "Plum Village (Thich Nhat Hanh tradition)",
+      "category": "non-traditional",
+      "subcategory": "faith-based",
+      "type": "summer",
+      "cost": {
+        "amount": 300,
+        "type": "sliding-scale",
+        "display": "Family donation: ~$300-700/wk per family member; sliding scale; no one turned away for lack of funds"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Plum Village monasteries: France, Vermont (Blue Cliff), New York (Magnolia Grove), California (Deer Park)",
+        "state": "FR, VT, NY, CA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 6,
+        "ageMax": 18
+      },
+      "deadline": "Summer family retreats July-August; book by April",
+      "description": "Family mindfulness retreats at Plum Village monasteries (France headquarters + 3 US sites). Founded by Thich Nhat Hanh (Vietnamese Buddhist teacher). Kids' programs run parallel to adult retreats with their own age-banded mindfulness, walking meditation, and 'pebble meditation' for younger kids. Vegetarian meals. Strong intergenerational community-building. Sliding-scale fees, no one turned away.",
+      "url": "https://plumvillage.org/upcoming-retreats",
+      "_source": "https://plumvillage.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Friends General Conference (FGC) Quaker Family Camp",
+      "provider": "Friends General Conference",
+      "category": "non-traditional",
+      "subcategory": "faith-based",
+      "type": "summer",
+      "cost": {
+        "amount": 600,
+        "type": "sliding-scale",
+        "display": "~$500-900/wk per family member; sliding-scale 'Equalization' fund"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Annual gathering site rotates (recent: PA, OH, NY, MI)",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Annual Gathering early July; registration spring",
+      "description": "Annual Quaker Gathering: 5-day intergenerational camp at a college campus. Programs span workshops + worship-sharing + recreation + age-banded children's program (ages 3 through HS). Quaker community-driven, queer-affirming, peace-focused. Sliding-scale 'Equalization Fund' covers up to 100% for low-income families. Kids' program (Junior Gathering for grades K-9) runs parallel to adult workshops.",
+      "url": "https://www.fgcquaker.org/connect/gathering",
+      "_source": "https://www.fgcquaker.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Asian American Journalists Association (AAJA) youth programs",
+      "provider": "Asian American Journalists Association",
+      "category": "leadership",
+      "subcategory": "cultural",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for selected; covers travel + lodging for JCamp"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "Different US city each year",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 15,
+        "ageMax": 18
+      },
+      "deadline": "JCamp applications due February for August program",
+      "description": "AAJA's JCamp is a free 6-day journalism program for ~30 selected high school students from across the US, Canada, and beyond. AAJA covers travel + lodging for accepted students. Focus on multimedia journalism, AAPI representation in media, and career mentorship. Highly selective (~5% acceptance rate). One of the most prestigious journalism programs for AAPI teens. Note: HS focus, but worth knowing for parents planning ahead from 8th grade.",
+      "url": "https://www.aaja.org/programs-and-initiatives/jcamp",
+      "_source": "https://www.aaja.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Hispanic Scholarship Fund (HSF) Youth Leadership Institute",
+      "provider": "Hispanic Scholarship Fund",
+      "category": "leadership",
+      "subcategory": "cultural",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for selected scholars + scholarship pipeline ($500-$5,000)"
+      },
+      "selectivity": "selective",
+      "format": "hybrid",
+      "location": {
+        "city": "Online + regional summits in major US metros",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 13,
+        "ageMax": 18
+      },
+      "deadline": "Spring application; programs run year-round",
+      "description": "HSF Youth Leadership Institute: pipeline program for Hispanic/Latino youth (grades 7-12) with mentorship, leadership training, college prep workshops, and pathway to HSF scholarships ($500-$5K). Free for selected applicants. Regional summits in NYC, LA, Miami, Houston, Chicago, DC. Online programming year-round. Strong combination of cultural-identity + academic + leadership development.",
+      "url": "https://www.hsf.net/scholar-services/programs",
+      "_source": "https://www.hsf.net",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
