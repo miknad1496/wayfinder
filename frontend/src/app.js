@@ -4455,7 +4455,152 @@ function setupDavidCoach() {
     }
   });
 
+  // ── Draggable widget — pointer-event-based, works on mobile + desktop ──
+  _setupDavidDrag(widget, toggle);
+
   davidInitialized = true;
+}
+
+// Drag state
+const _DAVID_POS_KEY = 'wayfinder_david_position';
+const _DAVID_DRAG_THRESHOLD = 5; // px before movement counts as drag
+let _davidDragJustEnded = false;
+
+function _setupDavidDrag(widget, toggle) {
+  let dragging = false;
+  let startX = 0, startY = 0;
+  let widgetStartLeft = 0, widgetStartTop = 0;
+  let totalMovement = 0;
+  let pointerId = null;
+
+  // Click suppressor — if a drag just ended, eat the next click event
+  toggle.addEventListener('click', (e) => {
+    if (_davidDragJustEnded) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+      _davidDragJustEnded = false;
+    }
+  }, true); // capture phase so we beat the open-chat handler
+
+  toggle.addEventListener('pointerdown', (e) => {
+    if (e.button !== undefined && e.button !== 0) return; // left button / touch only
+    dragging = true;
+    pointerId = e.pointerId;
+    startX = e.clientX;
+    startY = e.clientY;
+    totalMovement = 0;
+    const rect = widget.getBoundingClientRect();
+    widgetStartLeft = rect.left;
+    widgetStartTop = rect.top;
+    try { toggle.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
+  });
+
+  toggle.addEventListener('pointermove', (e) => {
+    if (!dragging || e.pointerId !== pointerId) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    totalMovement = Math.max(totalMovement, Math.abs(dx) + Math.abs(dy));
+    // Once we've passed the threshold, take over positioning
+    if (totalMovement > _DAVID_DRAG_THRESHOLD) {
+      const newLeft = _clampToViewport(widgetStartLeft + dx, 'x', widget);
+      const newTop = _clampToViewport(widgetStartTop + dy, 'y', widget);
+      widget.style.left = newLeft + 'px';
+      widget.style.top = newTop + 'px';
+      widget.style.right = 'auto';
+      widget.style.bottom = 'auto';
+      widget.classList.add('david-dragging');
+      e.preventDefault();
+    }
+  });
+
+  function endDrag(e) {
+    if (!dragging) return;
+    if (e && e.pointerId !== undefined && e.pointerId !== pointerId) return;
+    dragging = false;
+    widget.classList.remove('david-dragging');
+    try { toggle.releasePointerCapture(pointerId); } catch (err) { /* */ }
+    pointerId = null;
+    if (totalMovement > _DAVID_DRAG_THRESHOLD) {
+      // Real drag — persist position, suppress the click
+      _davidDragJustEnded = true;
+      setTimeout(() => { _davidDragJustEnded = false; }, 100);
+      const rect = widget.getBoundingClientRect();
+      try {
+        localStorage.setItem(_DAVID_POS_KEY, JSON.stringify({
+          left: rect.left,
+          top: rect.top,
+          // store as ratios too so position adapts to viewport changes
+          leftRatio: rect.left / window.innerWidth,
+          topRatio: rect.top / window.innerHeight
+        }));
+      } catch (err) { /* localStorage may be unavailable */ }
+      _davidFlipChatPanel(widget);
+    }
+  }
+
+  toggle.addEventListener('pointerup', endDrag);
+  toggle.addEventListener('pointercancel', endDrag);
+
+  // Restore saved position on init
+  _davidRestorePosition(widget);
+  // Re-clamp on resize (e.g. orientation change on mobile)
+  window.addEventListener('resize', () => _davidRestorePosition(widget));
+}
+
+function _clampToViewport(value, axis, widget) {
+  const rect = widget.getBoundingClientRect();
+  const margin = 8; // keep at least 8px from edge
+  if (axis === 'x') {
+    const max = window.innerWidth - rect.width - margin;
+    return Math.max(margin, Math.min(value, max));
+  } else {
+    const max = window.innerHeight - rect.height - margin;
+    return Math.max(margin, Math.min(value, max));
+  }
+}
+
+function _davidRestorePosition(widget) {
+  try {
+    const raw = localStorage.getItem(_DAVID_POS_KEY);
+    if (!raw) return;
+    const pos = JSON.parse(raw);
+    // Use ratios if present (better for resize/orientation), else absolute
+    let left = pos.left, top = pos.top;
+    if (pos.leftRatio != null && pos.topRatio != null) {
+      left = pos.leftRatio * window.innerWidth;
+      top = pos.topRatio * window.innerHeight;
+    }
+    widget.style.left = _clampToViewport(left, 'x', widget) + 'px';
+    widget.style.top = _clampToViewport(top, 'y', widget) + 'px';
+    widget.style.right = 'auto';
+    widget.style.bottom = 'auto';
+    _davidFlipChatPanel(widget);
+  } catch (err) { /* ignore */ }
+}
+
+// Flip the chat panel anchor based on widget position so it stays on screen
+function _davidFlipChatPanel(widget) {
+  const chat = document.getElementById('davidChat');
+  if (!chat) return;
+  const rect = widget.getBoundingClientRect();
+  const chatHeight = 540; // approx
+  const chatWidth = 380;
+  // Vertical: if widget is in lower half, anchor chat above (default); else anchor below
+  if (rect.top < window.innerHeight / 2) {
+    chat.style.top = '72px';
+    chat.style.bottom = 'auto';
+  } else {
+    chat.style.bottom = '72px';
+    chat.style.top = 'auto';
+  }
+  // Horizontal: if widget is on right, anchor right (default); else left
+  if (rect.left + rect.width / 2 > window.innerWidth / 2) {
+    chat.style.right = '0';
+    chat.style.left = 'auto';
+  } else {
+    chat.style.left = '0';
+    chat.style.right = 'auto';
+  }
 }
 
 function showDavidWidget() {

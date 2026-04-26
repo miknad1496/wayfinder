@@ -4569,6 +4569,22 @@ html, body { overflow-x: hidden; }
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
 }
 
+/* Draggable David — cursor and touch handling */
+.david-toggle {
+  cursor: grab;
+  touch-action: none; /* allow pointer-drag on touch screens without scrolling */
+  user-select: none;
+}
+.david-widget.david-dragging .david-toggle {
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.david-widget.david-dragging {
+  transition: none !important;
+}
+
+
 .david-toggle-badge {
   font-size: 13px;
   font-weight: 600;
