@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T14:01:35.790Z",
-    "count": 150,
+    "lastUpdated": "2026-04-26T14:16:11.617Z",
+    "count": 156,
     "source": "NCES + verified web sources",
-    "note": "Run 23: +5 verified WA high — Federal Way Public Schools cluster (Decatur HS, Federal Way HS, Thomas Jefferson HS, Todd Beamer HS, Career Academy at Truman). Skipped 3: Employment Transition Program (51 special_ed, low-yield), FW Running Start Home School (enr 1), Gateway to College (enr 11).",
-    "totalSchools": 150,
+    "note": "Run 24: +6 WA high (Fed Way + Ferndale + Fife + Finley + Franklin Pierce). Queue offset 210 -> 218. 2 sub-50 alt skips.",
+    "totalSchools": 156,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 5,
+    "lastRunAdded": 6,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 23: +5 verified WA high — Federal Way Public Schools cluster (Decatur HS, Federal Way HS, Thomas Jefferson HS, Todd Beamer HS, Career Academy at Truman). Skipped 3: Employment Transition Program (51 special_ed, low-yield), FW Running Start Home School (enr 1), Gateway to College (enr 11).",
-    "totalVerified": 150,
+    "lastRunNote": "Run 24: +6 verified WA high (Federal Way Open Doors, TAF@Saghalie, Ferndale HS, Fife HS, River View HS Finley, Franklin Pierce HS). Offsets 210-217, 2 alt skips (Ferndale Re-Engagement enr=43, Fife Open Doors enr=29).",
+    "totalVerified": 156,
     "totalEnriched": 88,
     "lastRun": 22,
     "lastEnriched": "2026-04-26",
@@ -6337,6 +6337,218 @@
         "https://www.niche.com/k12/career-academy-at-truman-high-school-federal-way-wa/",
         "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/career-academy-at-truman-high-school-20878",
         "https://www.ajactraining.org/programs/manufacturing-academy/truman/"
+      ]
+    },
+    {
+      "ncessch": "530282003479",
+      "name": "Open Doors Youth Reengagement (1418) — Federal Way",
+      "district": "Federal Way School District",
+      "city": "Federal Way",
+      "state": "WA",
+      "zip": "98003",
+      "phone": "(253)945-4590",
+      "website": "https://opendoors.fwps.org/",
+      "schoolLevel": 3,
+      "schoolType": "alternative",
+      "principal": "Lynn Herink",
+      "enrollment": {
+        "total": 147,
+        "source": "NCES 2024-25 / Niche"
+      },
+      "demographics": {
+        "minorityEnrollment": 85,
+        "economicallyDisadvantaged": 84
+      },
+      "notablePrograms": [
+        "Open Doors Youth Reengagement (WAC 392-700) — ages 16-21",
+        "1:1 weekly meetings with reengagement specialists",
+        "Personalized/competency-based learning",
+        "Located at Truman Campus alongside Career Academy at Truman"
+      ],
+      "admission": "Open enrollment for disconnected/dropout youth ages 16-21 in Federal Way",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://opendoors.fwps.org/",
+        "https://opendoors.fwps.org/staff",
+        "https://opendoors.fwps.org/about-us/school-profile",
+        "https://ospi.k12.wa.us/sites/default/files/2023-12/federal_way_truman_campus_profile.pdf",
+        "https://www.greatschools.org/washington/federal-way/7322-Open-Doors-Youth-Reengagement-1418/"
+      ]
+    },
+    {
+      "ncessch": "530282003610",
+      "name": "Technology Access Foundation Academy at Saghalie (TAF@Saghalie)",
+      "district": "Federal Way School District",
+      "city": "Federal Way",
+      "state": "WA",
+      "zip": "98023",
+      "phone": "(253)945-5000",
+      "website": "https://tafatsaghalie.fwps.org/",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "principal": "Christina Spencer",
+      "assistantPrincipal": "Alanna McCorkle",
+      "directorOfTaf": "Essence Russ",
+      "enrollment": {
+        "total": 537,
+        "source": "Niche / TAF 2024-25"
+      },
+      "demographics": {
+        "minorityEnrollment": 82,
+        "economicallyDisadvantaged": 76
+      },
+      "notablePrograms": [
+        "STEMbyTAF curriculum (Project-Based STEM, grades 6-12)",
+        "Co-managed by Federal Way Public Schools and Technology Access Foundation",
+        "Project-based learning emphasizing equity in STEM",
+        "Open enrollment via FWPS Choice Enrollment Program (no entry tests)"
+      ],
+      "magnetProgram": true,
+      "admission": "FWPS Choice Enrollment; no entry tests; partnership-managed STEM neighborhood school",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://tafatsaghalie.fwps.org/",
+        "https://tafatsaghalie.fwps.org/about-us/school-profile",
+        "https://techaccess.org/tafsaghalie/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/federal-way-school-district/technology-access-foundation-academy-at-saghalie-201677"
+      ]
+    },
+    {
+      "ncessch": "530285000460",
+      "name": "Ferndale High School",
+      "district": "Ferndale School District",
+      "city": "Ferndale",
+      "state": "WA",
+      "zip": "98248",
+      "phone": "(360)383-9240",
+      "website": "https://ferndalehigh.ferndalesd.org/",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "principal": "Ravinder Dhillon",
+      "enrollment": {
+        "total": 1323,
+        "source": "NCES 2024-25"
+      },
+      "graduationRate": 84,
+      "apParticipationRate": 18,
+      "notablePrograms": [
+        "Advanced Placement",
+        "Dual credit / Running Start",
+        "Brand-new building (opened 2023)",
+        "Mascot: Golden Eagles"
+      ],
+      "principalNote": "WASA 2025 Howard M. Cobel Scholarship for Under-Represented Educational Leaders recipient",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ferndalehigh.ferndalesd.org/",
+        "https://ferndalehigh.ferndalesd.org/our-schools/principals-message",
+        "https://www.ferndalesd.org/about/district-news/news-details/~board/district-wide-news/post/fhs-principal-ravinder-dhillon-wins-statewide-award",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/ferndale-school-district/ferndale-high-school-20879",
+        "https://www.cascadiadaily.com/2023/jan/04/ferndale-students-begin-new-year-in-a-new-building/"
+      ]
+    },
+    {
+      "ncessch": "530288000465",
+      "name": "Fife High School",
+      "district": "Fife School District",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98424",
+      "phone": "(253)517-1100",
+      "website": "https://fhs.fifeschools.com/",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "principal": "Paige Carroll",
+      "enrollment": {
+        "total": 879,
+        "source": "NCES 2024-25"
+      },
+      "graduationRate": 92,
+      "apParticipationRate": 15,
+      "notablePrograms": [
+        "Advanced Placement (~7-8 AP classes)",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented program",
+        "Mascot: Trojans (royal blue & gold)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://fhs.fifeschools.com/",
+        "https://fhs.fifeschools.com/our-school/administration",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/fife-school-district/fife-high-school-20880",
+        "https://www.niche.com/k12/fife-high-school-tacoma-wa/",
+        "https://en.wikipedia.org/wiki/Fife_High_School"
+      ]
+    },
+    {
+      "ncessch": "530291000469",
+      "name": "River View High School",
+      "district": "Finley School District",
+      "city": "Kennewick",
+      "state": "WA",
+      "zip": "99337",
+      "phone": "(509)582-2158",
+      "website": "https://rvhs.finleysd.org/",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "principal": "Chris Davis",
+      "enrollment": {
+        "total": 340,
+        "source": "Niche / RVHS 2024-25"
+      },
+      "notablePrograms": [
+        "Sole HS in Finley SD",
+        "Mascot: Panthers"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://rvhs.finleysd.org/",
+        "https://rvhs.finleysd.org/about_us",
+        "https://rvhs.finleysd.org/staff__directory",
+        "https://www.niche.com/k12/river-view-high-school-kennewick-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/finley-school-district/river-view-high-school-20883"
+      ]
+    },
+    {
+      "ncessch": "530294000475",
+      "name": "Franklin Pierce High School",
+      "district": "Franklin Pierce School District",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98445",
+      "phone": "(253)298-3805",
+      "website": "https://franklinpiercehighschool.fpschools.org/",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "principal": "Brixey Marzano",
+      "principalEmail": "bmarzano@fpschools.org",
+      "enrollment": {
+        "total": 1141,
+        "source": "NCES 2024-25"
+      },
+      "graduationRate": 87,
+      "apParticipationRate": 40,
+      "demographics": {
+        "minorityEnrollment": 74,
+        "economicallyDisadvantaged": 65
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Mascot: Cardinals"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://franklinpiercehighschool.fpschools.org/",
+        "https://franklinpiercehighschool.fpschools.org/about-us/contact-info",
+        "https://franklinpiercehighschool.fpschools.org/about-us/message-from-the-principal",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/franklin-pierce-school-district/franklin-pierce-high-school-20884",
+        "https://www.niche.com/k12/franklin-pierce-high-school-tacoma-wa/"
       ]
     }
   ]

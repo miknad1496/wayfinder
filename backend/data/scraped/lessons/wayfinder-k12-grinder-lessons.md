@@ -506,3 +506,41 @@
 | 2026-04-26 | 12    | 5        | 3       | Bremerton/Brewster/Bridgeport/Burlington-Edison.                                                       |
 | 2026-04-26 | 11    | 6        | 2       | Bethel/Blaine/Bremerton SD cluster.                                                                    |
 | 2026-04-25 | 10    | 6        | 2       | Bellingham/Bethel district cluster.                                                                    |
+
+---
+
+## RUN 24 NOTES (2026-04-26) — appended
+
+### EFFECTIVE PATTERNS (new this run)
+- **FWPS subdomain pattern continues to deliver** beyond Run 23: `tafatsaghalie.fwps.org` yielded Principal + Assistant Principal + Director-of-TAF in a single search snippet. Same `<school>.fwps.org/staff` template used by all FWPS schools — including the partnership/magnet TAF@Saghalie campus.
+- **STEM partnership / co-managed schools (TAF@Saghalie) have a 3-role leadership structure**: school principal (FWPS hire) + AP + Director (the partner org's appointee). Schema accommodation: record `principal`, `assistantPrincipal`, and `directorOfTaf` (or generalize to `partnerDirector`) when present.
+- **Same-campus colocation pattern**: Open Doors Youth Reengagement 1418 (NCES 530282003479) and Career Academy at Truman (NCES 530282003654, Run 23) both operate at 31455 28th Ave S, Federal Way under principal **Lynn Herink**. Two distinct NCES records, same physical campus, same principal. Worth a future schema field `colocatedWith: [ncessch]` so the frontend can display "campus partners" — both serve disconnected youth via different pathways (Big Picture Learning vs Open Doors WAC 392-700).
+- **Ferndale `ferndalehigh.ferndalesd.org`** publishes a "Principal's Message" subpage that surfaces in WebSearch as a standalone result containing the principal name reliably; the district news subdomain also publishes principal awards (Dhillon's WASA 2025 Cobel Scholarship), giving a second corroborating source within the district domain.
+
+### FAILED PATTERNS (new this run)
+- Don't skip `Open Doors` programs by default just because they're `schoolType: alternative` — when enrollment is meaningfully ≥50 (Federal Way's was 147), they have full Open Doors WAC 392-700 program profiles on `ospi.k12.wa.us`, public staff pages, and demographics. Treat them like reengagement vocational programs (not <50 placeholder alts). New rule: `schoolType: alternative` AND name contains `Open Doors` AND `enrollment ≥ 100` → process; else apply the existing <50 skip.
+
+### SOURCE-SPECIFIC NOTES
+- High-yield template for **Open Doors Federal Way style reengagement programs**: `"[Program]" "Federal Way" "Truman" director coordinator reengagement` — surfaces both the district-side staff page AND the OSPI program profile PDF, giving demographics + program model + leadership name in two clicks.
+- High-yield template for **STEM partnership / magnet schools**: `"[School]" principal director [year] [district] leadership` — TAF@Saghalie surfaced all three leadership roles in one call.
+
+### CALIBRATION SUGGESTION
+- Run 24 yielded 6/8 (75%) — clean comprehensive-HS band as Run 22 predicted. Combined with Runs 22 (8/8) and 23 (5/8), the WA-high queue from offset 194 onward has averaged 6.3/8. **Recommend bumping batch_size to 10 for next run** while the queue remains in the comprehensive-HS Federal Way / Ferndale / Fife / Finley / Franklin Pierce band. The earlier Run 22 recommendation has now been validated by two more runs.
+
+### DATA QUALITY FLAGS
+- **Lynn Herink leads two colocated NCES schools** (Open Doors 1418 + Career Academy at Truman) at the Truman Campus. Future runs that hit either record should not double-bill — note the colocation rather than treating as a duplicate-principal data anomaly.
+
+### RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 24    | 6        | 2       | WA high offsets 210-217 — Federal Way Open Doors (Lynn Herink, also leads Career Academy at Truman per Run 23 — colocated programs), TAF@Saghalie STEM magnet (Christina Spencer + Director Essence Russ, partner-org STEM model), Ferndale HS (Ravinder Dhillon, WASA 2025 awardee), Fife HS (Paige Carroll, Trojans), River View HS Finley (Chris Davis), Franklin Pierce HS (Brixey Marzano, 40% AP). Skipped 2 sub-50 alt: Ferndale Re-Engagement (43), Fife Open Doors (29). All-WebSearch run, ~5 min wall clock. |
+| 2026-04-26 | 23    | 5        | 3       | WA high offsets 202-209 — Federal Way SD cluster.                                                      |
+| 2026-04-26 | 22    | 8        | 0       | WA high offsets 194-201 — Evergreen SD Clark County.                                                   |
+| 2026-04-26 | 20    | 6        | 2       | WA high offsets 177-184 — Edmonds SD + Ellensburg/Elma/Entiat band.                                    |
+| 2026-04-26 | 19    | 6        | 2       | Eastmont/Eatonville/Edmonds-SD cluster (offsets 169-176).                                              |
+| 2026-04-26 | 18    | 8        | 6       | Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley (offsets 155-168).         |
+| 2026-04-26 | 17    | 8        | 10      | Lakewood/Colfax/College Place/Burbank/Colville/Concrete band (offsets 137-154).                        |
+| 2026-04-26 | 16    | 8        | 7       | Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band (offsets 120-136).                       |
+| 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane).                                                                |
+| 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD).                                             |
