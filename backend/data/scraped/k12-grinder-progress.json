@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T11:36:49.969148Z",
-  "totalRuns": 14,
-  "totalEnriched": 85,
-  "totalSkipped": 27,
-  "notes": "Run 14: enriched 8 WA high (Cashmere, Castle Rock, Central Kitsap, Olympic, Klahowya, Central Valley, Mica Peak, University). 0 skipped \u2014 all 8 had real data. Two clean district clusters: Central Kitsap SD (3) + Central Valley SD (3). Caught Mike Hittle hallucination via direct page fetch \u2014 actual current CVHS principal is Katie Louie. Queue offset 104 -> 112.",
+  "lastRun": "2026-04-26T11:49:33.320988Z",
+  "totalRuns": 15,
+  "totalEnriched": 91,
+  "totalSkipped": 29,
+  "notes": "Run 15: enriched 6 WA high (SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline HS, Centralia HS, Green Hill Academic). Skipped 2 (School to Life enr=33 special_ed, Futurus enr=47 alt). Queue offset 112 -> 120.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 112,
+      "offset": 120,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 112 of 649; enriched 85 total"
+      "note": "raw NCES offset 120 of 649; enriched 91 total"
     },
     {
       "state": "WA",

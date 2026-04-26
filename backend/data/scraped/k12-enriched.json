@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T11:36:38Z",
-    "count": 85,
+    "lastUpdated": "2026-04-26T11:49:33Z",
+    "count": 91,
     "source": "NCES + verified web sources",
-    "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
-    "totalSchools": 85,
+    "note": "Run 15: +6 verified WA high (CVSD cluster: SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline + Centralia HS + Green Hill juvenile-rehab academic school, offsets 112-119)",
+    "totalSchools": 91,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 8,
+    "lastRunAdded": 6,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 14: +8 verified WA high (Cashmere + Castle Rock + Central Kitsap SD cluster + Central Valley SD cluster, offsets 104-111)",
-    "totalVerified": 85,
+    "lastRunNote": "Run 15: +6 verified WA high (CVSD cluster: SVT Skills Center, CVSD Open Doors, STEM Academy at SVT, Ridgeline + Centralia HS + Green Hill juvenile-rehab academic school, offsets 112-119)",
+    "totalVerified": 91,
     "totalEnriched": 77,
-    "lastRun": 13
+    "lastRun": 15
   },
   "schools": [
     {
@@ -3706,6 +3706,246 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/university-high-school-20779",
         "https://www.niche.com/k12/university-high-school-spokane-valley-wa/",
         "https://www.greatschools.org/washington/spokane-valley/306-University-High-School/"
+      ]
+    },
+    {
+      "ncessch": "530111003387",
+      "name": "Spokane Valley Tech Skills Center",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99206",
+      "district": "Central Valley School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "vocational",
+      "schoolType": "vocational",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(509)228-5600",
+      "website": "https://www.spokanevalleytech.org/",
+      "principal": "Amanda St Pierre",
+      "enrollment": 12,
+      "enrollmentNotes": "NCES enrollment of 12 reflects per-program FTE-adjusted snapshot for the Skills Center designation; the SVT/Skills Center campus serves 100s of CTE students from multiple Spokane-area districts. Treat as multi-district vocational center, not a low-enrollment school.",
+      "address": "115 S University Rd, Spokane Valley, WA 99206",
+      "notablePrograms": [
+        "Career & Technical Education (CTE) skill center programs",
+        "Multi-district enrollment from Central Valley + partner districts",
+        "Project-based learning emphasizing 21st-century workforce skills",
+        "Sophomore CTE prep electives feeding into junior/senior Skills Center courses"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.spokanevalleytech.org/",
+        "https://www.spokanevalleytech.org/apps/pages/about",
+        "https://www.spokanevalleytech.org/apps/staff/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530111003387"
+      ]
+    },
+    {
+      "ncessch": "530111003437",
+      "name": "CVSD Open Doors Programs",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99216",
+      "district": "Central Valley School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "schoolType": "reentry",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "website": "https://www.cvsd.org/apps/pages/OpenDoors",
+      "enrollment": 77,
+      "enrollmentNotes": "Open Doors is WA's reentry/recovery diploma program (RCW 28A.175.100), serving disengaged youth ages 16-21 across a multi-district consortium. CVSD is a participating district; the largest of three CVSD Open Doors offerings is the Graduation Alliance partnership.",
+      "notablePrograms": [
+        "WA Open Doors high school diploma + GED pathway",
+        "Graduation Alliance online/blended diploma program (largest CVSD Open Doors program)",
+        "CVVL (Central Valley Virtual Learning) Open Doors track for ages 16-21",
+        "Consortium with Cheney, Colville, Mead, Spokane, West Valley, etc., plus Spokane Falls CC and Northeast WA ESD 101"
+      ],
+      "outcomes": "60 CVSD students earned high school diplomas through Open Doors in 2023; 5 earned GEDs.",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cvsd.org/apps/pages/OpenDoors",
+        "https://ospi.k12.wa.us/sites/default/files/2023-12/central_valley_school_district_graduation_alliance_profile.pdf",
+        "https://www.niche.com/k12/cvsd-open-doors-programs-spokane-valley-wa/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5301110&ID=530111003437",
+        "https://cvvl.cvsd.org/apps/pages/HS"
+      ]
+    },
+    {
+      "ncessch": "530111003657",
+      "name": "Stem Academy at SVT",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99206",
+      "district": "Central Valley School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": true,
+      "magnetProgram": true,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(509)558-6500",
+      "website": "https://www.spokanevalleytech.org/",
+      "principal": "Amanda St Pierre",
+      "principalNotes": "Same site/principal as the co-located Spokane Valley Tech Skills Center; STEM Academy and Skills Center share the SVT campus and administration.",
+      "enrollment": 193,
+      "studentTeacherRatio": "16:1",
+      "address": "115 S University Rd, Spokane Valley, WA 99206",
+      "testScores": {
+        "mathProficient": "58.33%",
+        "readingProficient": "87.5%",
+        "notes": "SBAC 2024-25; ELA significantly above WA state average."
+      },
+      "demographics": {
+        "white": "91%",
+        "twoOrMore": "4%",
+        "hispanic": "2%",
+        "asian": "2%",
+        "americanIndian": "1%"
+      },
+      "notablePrograms": [
+        "STEM-integrated curriculum (LA + social studies woven into STEM context)",
+        "Established 2015-16 (formerly known as Spokane Valley Tech)",
+        "Co-located with SVT Skills Center for CTE pathway access",
+        "Project-based learning"
+      ],
+      "rating": {
+        "source": "U.S. News",
+        "value": "21st of 438 WA high schools",
+        "notes": "Strong academics for a small magnet STEM program."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.spokanevalleytech.org/apps/pages/index.jsp?uREC_ID=1237948&type=d&pREC_ID=1467316",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/stem-academy-at-svt-408767",
+        "https://www.niche.com/k12/stem-academy-at-svt-spokane-valley-wa/",
+        "https://www.schooldigger.com/go/WA/schools/0111003657/school.aspx"
+      ]
+    },
+    {
+      "ncessch": "530111003781",
+      "name": "Ridgeline High School",
+      "city": "Liberty Lake",
+      "state": "WA",
+      "zip": "99019",
+      "district": "Central Valley School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "website": "https://rhs.cvsd.org/",
+      "principal": "Jesse Hardt",
+      "principalNotes": "Founding principal; Ridgeline opened fall 2021 as the first new comprehensive high school in the Spokane region in over 20 years.",
+      "enrollment": 1538,
+      "apParticipationRate": "40%",
+      "address": "20150 E Country Vista Dr, Liberty Lake, WA 99019",
+      "notablePrograms": [
+        "Comprehensive 9-12 high school",
+        "Advanced Placement (40% participation)",
+        "CTE pathways",
+        "Athletics (Falcons)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://rhs.cvsd.org/",
+        "https://rhs.cvsd.org/apps/pages/index.jsp?uREC_ID=1755917&type=d&pREC_ID=1937375",
+        "https://rhs.cvsd.org/apps/staff/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/ridgeline-high-school-410719",
+        "https://www.niche.com/k12/ridgeline-high-school-liberty-lake-wa/"
+      ]
+    },
+    {
+      "ncessch": "530114000206",
+      "name": "Centralia High School",
+      "city": "Centralia",
+      "state": "WA",
+      "zip": "98531",
+      "district": "Centralia School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": true,
+      "locale": "town",
+      "website": "https://chs.centraliaschooldistrict.org/",
+      "principal": "Scot Embrey",
+      "principalNotes": "Previously superintendent of Cosmopolis School District; confirmed via CHS staff directory and 2024-25 cellphone-policy school-board reporting.",
+      "enrollment": 986,
+      "apParticipationRate": "11%",
+      "address": "813 Eshom Rd, Centralia, WA 98531",
+      "demographics": {
+        "minorityPercent": "49%",
+        "economicallyDisadvantaged": "72%"
+      },
+      "notablePrograms": [
+        "Advanced Placement (11% participation)",
+        "College in the High School (Centralia College dual credit)",
+        "CTE pathways",
+        "Only comprehensive HS in Centralia SD"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chs.centraliaschooldistrict.org/",
+        "https://chs.centraliaschooldistrict.org/apps/pages/index.jsp?uREC_ID=3720971&type=d&pREC_ID=2428527",
+        "https://chs.centraliaschooldistrict.org/apps/staff/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/centralia-school-district/centralia-high-school-20782",
+        "https://www.chronline.com/stories/centralia-school-district-to-crack-down-on-cellphones-in-high-school,385487"
+      ]
+    },
+    {
+      "ncessch": "530117000213",
+      "name": "Green Hill Academic School",
+      "city": "Chehalis",
+      "state": "WA",
+      "zip": "98532",
+      "district": "Chehalis School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "schoolType": "juvenile_rehabilitation",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "phone": "(360)740-3400",
+      "website": "https://dcyf.wa.gov/services/juvenile-rehabilitation/green-hill",
+      "principal": "Harold Wright Jr",
+      "principalNotes": "Wright is Superintendent of Green Hill School (the WA DCYF juvenile rehabilitation facility); the academic program is operated by Chehalis School District inside the facility.",
+      "enrollment": 107,
+      "studentTeacherRatio": "8:1",
+      "address": "375 SW 11th St, Chehalis, WA 98532",
+      "facilityNotes": "Green Hill is Washington's largest secure juvenile rehabilitation facility, holding youth and young adults ages 17-25. Target population: no more than 150 residents. Education is delivered by Chehalis SD; vocational training also offered.",
+      "notablePrograms": [
+        "High school diploma program (Chehalis SD-operated)",
+        "GED preparation",
+        "Vocational/CTE programs",
+        "Wraparound rehabilitation services through WA DCYF Juvenile Rehabilitation"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://dcyf.wa.gov/services/juvenile-rehabilitation/green-hill",
+        "https://www.dcyf.wa.gov/sites/default/files/pdf/GHSYouthHandbook.pdf",
+        "https://en.wikipedia.org/wiki/Green_Hill_School_(Chehalis,_Washington)",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/chehalis-school-district/green-hill-academic-school-153714",
+        "https://www.niche.com/k12/green-hill-academic-school-chehalis-wa/"
       ]
     }
   ]
