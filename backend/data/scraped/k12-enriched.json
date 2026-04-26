@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26",
-    "count": 55,
+    "lastUpdated": "2026-04-26T11:36:38Z",
+    "count": 85,
     "source": "NCES + verified web sources",
     "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
-    "totalSchools": 72,
-    "lastUpdate": "2026-04-25",
-    "lastRunAdded": 6,
+    "totalSchools": 85,
+    "lastUpdate": "2026-04-26",
+    "lastRunAdded": 8,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 11: +6 verified WA high (Bethel + Blaine + Bremerton SD cluster, offsets 80-87)",
-    "totalVerified": 72,
+    "lastRunNote": "Run 14: +8 verified WA high (Cashmere + Castle Rock + Central Kitsap SD cluster + Central Valley SD cluster, offsets 104-111)",
+    "totalVerified": 85,
     "totalEnriched": 77,
     "lastRun": 13
   },
@@ -1718,7 +1718,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program — growth and excellence"
+        "2020 WA School Recognition Program \u2014 growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2535,7 +2535,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 — district's oldest HS",
+        "Founded 1952 \u2014 district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2891,7 +2891,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2941,7 +2941,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3131,7 +3131,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers — 4A)",
+        "Athletics (Papermakers \u2014 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3290,7 +3290,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3303,7 +3303,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3363,6 +3363,350 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/cascade-school-district/cascade-high-school-20767"
       ],
       "principalNotes": "James Swanson named principal beginning 2024-25 school year. Annika Bibby (formerly Asst Director of SpEd at Wenatchee SD) is Assistant Principal on reduced schedule for 2024-25."
+    },
+    {
+      "ncessch": "530096000168",
+      "name": "Cashmere High School",
+      "city": "Cashmere",
+      "state": "WA",
+      "zip": "98815",
+      "district": "CASHMERE SCHOOL DISTRICT",
+      "level": "high",
+      "phone": "(509)782-2914",
+      "latitude": 47.513,
+      "longitude": -120.4791,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "grades": "9-12",
+      "website": "https://chs.cashmere.wednet.edu/",
+      "principal": "Tony Boyle",
+      "enrollment": 527,
+      "apCourses": 1,
+      "graduationRate": "92.1%",
+      "demographics": {},
+      "rating": {
+        "source": "PublicSchoolReview",
+        "value": "Top 30% for 2025"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "CTE pathways",
+        "Athletics (Bulldogs)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cashmere.wednet.edu/domain/334",
+        "https://chs.cashmere.wednet.edu/meet-the-staff/cashmere-high-schools-school-administrators",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cashmere-school-district/cashmere-high-school-20768",
+        "https://www.publicschoolreview.com/cashmere-high-school-profile",
+        "https://www.niche.com/k12/cashmere-high-school-cashmere-wa/"
+      ]
+    },
+    {
+      "ncessch": "530099000172",
+      "name": "Castle Rock High School",
+      "city": "CASTLE ROCK",
+      "state": "WA",
+      "zip": "98611",
+      "district": "Castle Rock School District",
+      "level": "high",
+      "phone": "(360)501-2930",
+      "latitude": 46.282336,
+      "longitude": -122.917566,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "grades": "9-12",
+      "website": "https://hs.crschools.org/",
+      "principal": "James Kiefer",
+      "principalNotes": "35 years in public education (22 as HS math teacher, 13 as principal)",
+      "enrollment": 422,
+      "apParticipationRate": "12%",
+      "graduationRate": "80%",
+      "demographics": {},
+      "notablePrograms": [
+        "Advanced Placement",
+        "Athletics (Rockets)",
+        "Rocket Virtual Academy"
+      ],
+      "rating": {
+        "source": "PublicSchoolReview",
+        "value": "Bottom 50% for 2025"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.crschools.org/hs/about/principals_corner/",
+        "https://hs.crschools.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/castle-rock-school-district/castle-rock-high-school-20769",
+        "https://www.niche.com/k12/castle-rock-high-school-castle-rock-wa/",
+        "https://www.greatschools.org/washington/castle-rock/262-Castle-Rock-High-School/"
+      ]
+    },
+    {
+      "ncessch": "530108000177",
+      "name": "Central Kitsap High School",
+      "city": "SILVERDALE",
+      "state": "WA",
+      "zip": "98383",
+      "district": "Central Kitsap School District",
+      "level": "high",
+      "phone": "(360)662-2400",
+      "latitude": 47.653864,
+      "longitude": -122.700125,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "grades": "9-12",
+      "website": "https://ckhigh.ckschools.org/",
+      "principal": "Alex Chertok",
+      "principalNotes": "Effective 9/8/25",
+      "enrollment": 1601,
+      "studentTeacherRatio": "23:1",
+      "apParticipationRate": "34%",
+      "demographics": {},
+      "rating": {
+        "source": "US News",
+        "value": "Ranked 68th in Washington"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Athletics (Cougars)",
+        "CTE / vocational"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ckhigh.ckschools.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-kitsap-school-district/central-kitsap-high-school-20771",
+        "https://www.niche.com/k12/central-kitsap-high-school-silverdale-wa/",
+        "https://en.wikipedia.org/wiki/Central_Kitsap_High_School"
+      ]
+    },
+    {
+      "ncessch": "530108001753",
+      "name": "Olympic High School",
+      "city": "BREMERTON",
+      "state": "WA",
+      "zip": "98311",
+      "district": "Central Kitsap School District",
+      "level": "high",
+      "phone": "(360)662-2700",
+      "latitude": 47.6257,
+      "longitude": -122.6651,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "grades": "9-12",
+      "address": "7077 Stampede Blvd, Bremerton, WA 98311",
+      "website": "https://olympic.ckschools.org/",
+      "principal": "Scott Wilson",
+      "assistantPrincipals": [
+        "Elizabeth Forbes",
+        "Alexys Hau"
+      ],
+      "enrollment": 1159,
+      "apParticipationRate": "27%",
+      "graduationRate": "85%",
+      "demographics": {
+        "minorityEnrollment": "49%",
+        "economicallyDisadvantaged": "43%"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Athletics (Trojans)",
+        "CTE pathways"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://olympic.ckschools.org/about-olympic",
+        "https://olympic.ckschools.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-kitsap-school-district/olympic-high-school-20773",
+        "https://www.niche.com/k12/olympic-high-school-bremerton-wa/"
+      ]
+    },
+    {
+      "ncessch": "530108002524",
+      "name": "Klahowya Secondary",
+      "city": "SILVERDALE",
+      "state": "WA",
+      "zip": "98383",
+      "district": "Central Kitsap School District",
+      "level": "high",
+      "phone": "(360)662-4000",
+      "latitude": 47.6287,
+      "longitude": -122.7542,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "grades": "6-12",
+      "website": "https://klahowya.ckschools.org/",
+      "principal": "Meghan Rubman",
+      "assistantPrincipal": "Brian Covelli",
+      "enrollment": 977,
+      "studentTeacherRatio": "20:1",
+      "apParticipationRate": "41%",
+      "schoolModel": "Combined secondary (grades 6-12), established 1997",
+      "demographics": {},
+      "notablePrograms": [
+        "Advanced Placement",
+        "Combined middle/high model",
+        "Athletics (Eagles)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://klahowya.ckschools.org/",
+        "https://klahowya.ckschools.org/about/about_klahowya",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-kitsap-school-district/klahowya-secondary-20774",
+        "https://en.wikipedia.org/wiki/Klahowya_Secondary_School"
+      ]
+    },
+    {
+      "ncessch": "530111000191",
+      "name": "Central Valley High School",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99037",
+      "district": "Central Valley School District",
+      "level": "high",
+      "phone": "(509)558-5100",
+      "latitude": 47.6492,
+      "longitude": -117.1934,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "grades": "9-12",
+      "address": "821 S Sullivan Rd, Spokane Valley, WA 99037",
+      "website": "https://cvhs.cvsd.org/",
+      "principal": "Katie Louie",
+      "assistantPrincipals": [
+        "Robin Barnhart (Athletics & Activities)",
+        "Shannon McGowan",
+        "Jacquie Monks"
+      ],
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
+      "enrollment": 1380,
+      "studentTeacherRatio": "22:1",
+      "apParticipationRate": "30%",
+      "testScores": {
+        "mathProficient": "32%",
+        "readingProficient": "63%"
+      },
+      "demographics": {},
+      "notablePrograms": [
+        "Advanced Placement",
+        "AA degree dual-enrollment (on-campus)",
+        "Athletics (Bears)",
+        "CTE"
+      ],
+      "rating": {
+        "source": "US News",
+        "value": "Ranked 92nd in Washington"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://cvhs.cvsd.org/apps/pages/index.jsp?uREC_ID=2589878&type=d&pREC_ID=staff",
+        "https://cvhs.cvsd.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/central-valley-high-school-20777",
+        "https://www.niche.com/k12/central-valley-high-school-spokane-valley-wa/"
+      ]
+    },
+    {
+      "ncessch": "530111000202",
+      "name": "Mica Peak High School",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99037",
+      "district": "Central Valley School District",
+      "level": "high",
+      "phone": "(509)558-5950",
+      "latitude": 47.658481,
+      "longitude": -117.201206,
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "grades": "9-12",
+      "website": "https://mphs.cvsd.org/",
+      "principal": "Starla Fey",
+      "enrollment": 112,
+      "studentTeacherRatio": "8:1",
+      "demographics": {
+        "economicallyDisadvantaged": "66%"
+      },
+      "schoolModel": "Alternative high school within Central Valley SD; small-cohort, individualized learning",
+      "notablePrograms": [
+        "Alternative / non-traditional pathway",
+        "Small student-teacher ratio"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://mphs.cvsd.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/mica-peak-high-school-20778",
+        "https://www.niche.com/k12/mica-peak-high-school-spokane-valley-wa/",
+        "https://www.facebook.com/MicaPeakCVSD/"
+      ]
+    },
+    {
+      "ncessch": "530111000204",
+      "name": "University High School",
+      "city": "Spokane Valley",
+      "state": "WA",
+      "zip": "99216",
+      "district": "Central Valley School District",
+      "level": "high",
+      "phone": "(509)558-6040",
+      "latitude": 47.6267,
+      "longitude": -117.237,
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "grades": "9-12",
+      "address": "12420 E 32nd Ave, Spokane Valley, WA",
+      "website": "https://uhs.cvsd.org/",
+      "principal": "Daryl Hart",
+      "enrollment": 1410,
+      "apParticipationRate": "23%",
+      "graduationRate": "87%",
+      "demographics": {},
+      "notablePrograms": [
+        "Advanced Placement",
+        "Athletics (Titans)",
+        "CTE"
+      ],
+      "rating": {
+        "source": "PublicSchoolReview",
+        "value": "Top 50% for 2026"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://uhs.cvsd.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/central-valley-school-district/university-high-school-20779",
+        "https://www.niche.com/k12/university-high-school-spokane-valley-wa/",
+        "https://www.greatschools.org/washington/spokane-valley/306-University-High-School/"
+      ]
     }
   ]
 }

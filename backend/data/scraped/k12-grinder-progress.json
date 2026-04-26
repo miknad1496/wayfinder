@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T11:13:57.457690Z",
-  "totalRuns": 13,
-  "totalEnriched": 77,
+  "lastRun": "2026-04-26T11:36:49.969148Z",
+  "totalRuns": 14,
+  "totalEnriched": 85,
   "totalSkipped": 27,
-  "notes": "Run 13: enriched 5 WA high (Camas HS, Hayes Freedom HS, Discovery HS, Neah Bay Jr/Sr HS, Cascade HS - Leavenworth). Skipped 3 (Open Doors Mt Vernon enr=9, Camas SD Open Doors enr=6, Kodiak Virtual Academy enr=7 — all <50). Queue offset 96 -> 104.",
+  "notes": "Run 14: enriched 8 WA high (Cashmere, Castle Rock, Central Kitsap, Olympic, Klahowya, Central Valley, Mica Peak, University). 0 skipped \u2014 all 8 had real data. Two clean district clusters: Central Kitsap SD (3) + Central Valley SD (3). Caught Mike Hittle hallucination via direct page fetch \u2014 actual current CVHS principal is Katie Louie. Queue offset 104 -> 112.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 104,
+      "offset": 112,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 104 of 649; enriched 77 total"
+      "note": "raw NCES offset 112 of 649; enriched 85 total"
     },
     {
       "state": "WA",
