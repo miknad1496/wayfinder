@@ -2,9 +2,7 @@
   "metadata": {
     "audience": "K-12 parents",
     "lastUpdated": "2026-04-26",
-    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention.",
-    "lastFieldNoteUpdate": "2026-04-26",
-    "fieldNoteCount": 6
+    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention."
   },
   "sections": [
     {
@@ -108,28 +106,24 @@
       "icon": "🔍",
       "items": [
         {
-          "label": "Tesla STEM (Redmond) — sibling priority does NOT apply",
-          "detail": "Unique among LWSD choice schools, Tesla STEM's lottery is purely random — no sibling tiebreaker. As of 2026-04-24 the 2026-27 9th-grade waitlist is at #241 (spots still moving), but 10th-grade waitlist is at #256 with zero openings. If your number is called you have only 24 hours to reply by email or you lose the seat."
+          "label": "Bellevue High School — IB Diploma is at Interlake, not Bellevue HS",
+          "detail": "Within Bellevue School District, Bellevue HS is an AP + College-in-the-High-School pathway only; the IB Diploma Program is offered ONLY at Interlake HS. Parents specifically wanting IB must apply via the BSD Choice Schools window — for the 2026-27 cycle this ran Dec 15, 2025 9:00am to Jan 16, 2026 4:30pm, with waitlist applications opening Jan 22, 2026. (verified 2026-04-26)"
         },
         {
-          "label": "Garfield (Seattle) — HC pathway seat is NOT automatic",
-          "detail": "Garfield is one of three 2026-27 Highly Capable pathway HSs (with Lincoln and West Seattle). HC-identified students get a guaranteed Garfield seat ONLY if they submit a School Choice Form during Open Enrollment by March 31, 2026 — guarantee is conditional on the form. Waitlists dissolve May 31, 2026."
+          "label": "Newport Senior High School — dual-language program is K-12 continuation, not 9th-grade entry",
+          "detail": "Newport's Spanish Immersion and Mandarin Dual Language programs are the high school terminus of a 12-year K-12 continuation pathway in BSD — students typically must have started in elementary grades. Incoming 9th graders without that history cannot enter the dual-language track at the high-school level. Newport is also AP-saturated: 27 AP courses, 93% of students take 1+ AP class, 90% of AP exams score 3+. (verified 2026-04-26)"
         },
         {
-          "label": "Roosevelt Jazz (Seattle) — June audition + 0-period commitment",
-          "detail": "The famous Roosevelt Jazz ensembles place by audition in June for the FOLLOWING school year — miss that and you wait a full year. Vocal Jazz students must double-enroll in a concert ensemble (usually Concert Choir) AND attend 0-period every school day — significant early-morning load parents often don't anticipate."
+          "label": "Tesla STEM High School — pure lottery, public waitlist call numbers, residency must precede deadline",
+          "detail": "For the 2026-27 cycle, Tesla STEM application window was Nov 1 — Dec 1, 2025; lottery ran Jan 9, 2026; notifications Jan 16; acceptances due Jan 30. As of 2026-04-26 the next-called waitlist numbers are #237 (9th grade) and #242 (10th grade) — parents can compare their lottery number to gauge realistic odds. No GPA or test prereq, but families MUST establish LWSD district residency by the Dec 1 application deadline to be eligible — late movers get nothing."
         },
         {
-          "label": "Newport HS (Bellevue) — Spanish Dual Language goes elsewhere",
-          "detail": "Common parent confusion: Newport hosts BSD's Mandarin Dual Language continuation (~100 K spots/yr via Tillicum MS) and the Spanish Immersion (ISA) cohort, but Spanish DUAL LANGUAGE students are routed to Sammamish HS via Highland MS — not Newport. Newport is also officially 'Closed' enrollment, so non-area transfer requires meeting specific criteria."
+          "label": "Roosevelt High School — Jazz Band 1 auditions happen in JUNE of the preceding school year",
+          "detail": "Roosevelt's elite Jazz Band 1 (regular Essentially Ellington competitor in NYC) auditions occur in June BEFORE the student starts at Roosevelt — incoming 9th graders must audition before fall enrollment. Summer jazz camps and ongoing private instruction are 'highly recommended' (effectively expected). The 6-ensemble tier (Jazz Bands 1-4 + Vocal Jazz 1 & 2) means non-Band-1 students still have placement options. Seattle Public Schools does NOT fund most of the program — the Roosevelt Jazz Boosters fund nearly all events; expect dues + fundraising asks. (verified 2026-04-26)"
         },
         {
-          "label": "Bellevue HS — AP Seminar is the 10th-grade English class",
-          "detail": "BHS embeds AP Capstone into the standard sophomore curriculum: AP Seminar is offered as the 10th-grade English course (ENA_501), so kids get AP Capstone exposure without choosing a separate elective. Running Start at Bellevue College covers tuition up to 15 credits/quarter only — families pay class fees, books, late fees, and full tuition on overage credits (Fall 2026 deadline Aug 31)."
-        },
-        {
-          "label": "Live grinder discoveries appear here",
-          "detail": "When the K12 enrichment grinder uncovers a non-obvious parent insight while researching schools (principal-led program changes, magnet program quirks, hidden transfer paths, rating quirks, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top."
+          "label": "Garfield High School — HCC pathway school, ~25% of every grade is Highly Capable",
+          "detail": "For 2026-27, Garfield is one of three SPS Highly Capable Pathway high schools (with Lincoln and West Seattle) — HCC-eligible families anywhere in the city can route to Garfield regardless of attendance area. About 25% of each grade level at Garfield is from the HCC program, meaning the academic-pace baseline is materially elevated. Garfield offers 18 AP + 9 honors courses, and Jazz Ensemble I tours Europe regularly (Montreux Jazz Festival, North Sea Jazz Festival, IAJE). (verified 2026-04-26)"
         }
       ]
     }
