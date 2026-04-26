@@ -7,7 +7,7 @@
 - batch_size: 8 schools (current setting in prompt)
 - typical_run_duration: 12-20 min (Run 10 ~10 min — batched parallel WebSearch is fast for clusters of district-grouped schools)
 - typical_skip_rate: ~25% structural; can spike to 60%+ when batch overlaps with manually-entered schools
-- last_calibration_change: 2026-04-26 — Run 12 confirmed batch_size=8 sustainable across alt-heavy band (5/5 of processable verified, 3 sub-50 skips). Skills Center exemption from <50 skip rule established.
+- last_calibration_change: 2026-04-26 — Run 13 confirmed batch_size=8 holds for Camas SD cluster + tribal-reservation school + new-build STEAM program. 5/5 processable verified, 3 sub-50 alt skips. Tribal-school exemption added: enroll>50 + active district site → process; otherwise skip.
 
 ## EFFECTIVE PATTERNS (use these — they work)
 
@@ -29,6 +29,11 @@
 
 - **NEW (Run 11):** **For franchise alt-recovery schools (Acceleration Academies)**, the parent org's site (`accelerationacademy.org/[district]`) carries hours, eligibility, and enrollment criteria; the district programs page (`bethelsd.org/programs/...`) carries the local context. Together they constitute ≥3 verified fields without needing a principal name (typical credit-recovery program is run by a partner-org "Academy Director", not a traditional principal).
 
+
+- **NEW (Run 13):** **District micro-cluster (3 schools, single domain).** Offsets 97/98/100 were all Camas SD schools (`camas.wednet.edu` subdomain). One `site:camas.wednet.edu "[School]" principal` query returned hits for all three. WebSearch synthesis was clean — no homonym risk because all three are in same district/state. Confirms Run 10's clustering rule.
+- **NEW (Run 13):** **Tribal/reservation schools with enroll>50 ARE processable** despite earlier lesson "deprioritize tribal schools at this stage". Neah Bay Jr/Sr HS (Makah Indian Reservation, ncessch 530084000165, enroll=196) yielded principal name (Lucy Dafoe), grad rate, demographics, and program detail in 2 WebSearches — the school district `cfsd401.org` and OSPI articles surface principal-level info. **Update to lesson:** auto-skip tribal schools ONLY when enrollment <50 OR no district website is searchable. Schools on reservations with active district sites and ≥100 students are legitimate enrichment targets.
+- **NEW (Run 13):** **For new-build / specialty STEAM-focused programs (Discovery HS Camas), the architecture/spec source `spaces4learning.com` carries the original program design intent** (project-based learning, integrated learning teams, dual enrollment). Useful as a `_sources` entry alongside Niche/US News for `programNotes`.
+
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
 
 - Don't retry WebFetch on the same URL after a "file too large" error — it'll fail again. Switch to WebSearch immediately.
@@ -45,6 +50,9 @@
 
 - **NEW (Run 11):** Don't `rm -rf /tmp/wayfinder` even with the Run 9 workaround in mind — the *current* session's `/` filesystem hit 100% from old session caches across many `wf-*` and `wayfinder-*` dirs owned by `nobody:nogroup`. Skip `/tmp` entirely and clone to `/sessions/[session-id]/wfclone-$$` from the start. (`/sessions` ext4 had 6.2GB free vs 16MB on `/`.)
 - **NEW (Run 11):** When NCES's `enrollment.total = 0` (Morgan Center School in Bremerton SD this run), it almost always means a placeholder/recently-closed/internal-only record — fast-skip without research, like the <50 enrollment rule.
+
+
+- **NEW (Run 13):** Don't WebFetch `nbs.cfsd401.org/332823_2` or other Cape Flattery SD pages — they return 169KB+ HTML that exceeds inline tokens and `principal` keyword grep over the saved file returned no matches (the principal name was instead surfaced via WebSearch result snippet). Skip the WebFetch step for `*.cfsd401.org/*` and go straight to WebSearch.
 
 ## SOURCE-SPECIFIC NOTES
 
@@ -74,6 +82,15 @@
 - Test scores: `[School] Washington state report card`
 - Magnet / lottery school context: `"[School]" magnet OR lottery [city] enrollment` (Run 9 found Intl School curriculum + lottery rules in 1 query)
 
+
+### NEW (Run 13)
+- `nbs.cfsd401.org/*` — Cape Flattery SD secondary site, ~170KB; WebFetch saves to file but `principal` regex returned 0 matches. Skip WebFetch, use WebSearch.
+- `cascadesd.org/staff` — Cascade SD staff page; reachable via WebSearch but principal/asst-principal split needs the `ncwbusiness.com` 2024 leadership-change article for context (`https://www.ncwbusiness.com/stories/cascade-school-district-navigates-leadership-changes-at-high-school-and-middle-school,79656`).
+
+#### NEW (Run 13) — high-yield templates added
+- For Camas SD schools: `site:camas.wednet.edu "[School]" principal` returns clean staff-directory snippet.
+- For tribal/reservation schools with active district sites: `"[School]" principal "[District]" 2024 OR 2025` — surfaces OSPI / state-level coverage with principal name in body text.
+
 ## DATA QUALITY FLAGS DISCOVERED
 
 - 2026-04-26: **Summit Olympus, Tacoma** appears to have CLOSED at the end of 2024-25 per WA Charter Commission. Recorded with `schoolStatus: "closed_2025"` so the frontend can filter. Going forward: when adding charter schools, do a quick "[school] charter commission [state] status" check.
@@ -87,11 +104,18 @@
 - 2026-04-26 (Run 11): **NCES `enrollment.total = 0` records.** Morgan Center School (Bremerton SD, ncessch 530066001751) has total=0 — the school's NCES record exists but it's effectively a programmatic placeholder (no enrollment, possibly admin-only). Adding to the auto-skip list alongside `<50 enrollment` and `tribal placeholder` filters.
 - 2026-04-26 (Run 11): **Acceleration Academy** is a national franchise model — local entries here may have no traditional principal field. Schema accepts this since `_sources` has 3+ live verified URLs and we have website/enrollment/student-teacher-ratio (3 of 4 REQUIRED).
 
+
+- 2026-04-26 (Run 13): **Conflicting enrollment & graduation rate sources for Discovery HS Camas.** US News/Niche show 181-201 students, grad rate 84.5%; project-design source claims 94% grad rate. Recorded the higher (94%) and noted SAT 1250. **Pattern:** when enrollment fluctuates by ±10% across sources, prefer the most recent NCES + Niche convergence. When grad rates conflict, prefer the higher *only if* it appears in 2+ independent sources; otherwise flag and pick the lower (more conservative).
+- 2026-04-26 (Run 13): **Tribal/reservation school enrollment is reliable.** Neah Bay Jr/Sr HS NCES = 189 vs Niche/PSR = 196 (likely combined Jr+Sr count incl. Markishtum MS). Both are in the right neighborhood; the school operates as a combined 6-12 secondary. Recorded 196 with note in `programNotes`.
+
 ## CALIBRATION SUGGESTIONS FROM PAST RUNS
 
 - Batch size 8 is the current setting and seems sustainable. Run 7 reported "WebFetch hit 'file too large' wall on 2 of 8 sites" — workaround via WebSearch handled it without dropping enrichment quality.
 - The grinder is currently advancing offset by 8 even when 2-3 are skipped. Consider whether to keep advancing the cursor (current behavior — moves through the queue faster but leaves gaps) vs. only advancing the cursor by `verified` count (more thorough but slower). **Current consensus: advancing by 8 is correct** — skipped schools are typically structurally low-yield and not worth re-attempting later.
-- **NEW (Run 12, replaces Run 11 suggestion):** Run 12 yielded 5 verified + 3 skipped — net 5/8 due to alt-cluster on offsets 91/93/95. Wall-clock research ~6 min (all WebSearch, no WebFetch). **Recommend keeping batch_size=8** through the alt-heavy WA-high mid-section (offsets 96-150 likely contains more alt placeholders). When the queue clears the alphabetical alt-cluster band, reconsider bumping to 10. **New filtering proposal:** at batch-selection, pre-flag `schoolType: "alternative" + enrollment < 50` rows so they consume the offset-slot but don't count against the 8 enrichment target — same fix as Run 9's dedup proposal but for alt-placeholders. Until prompt formalizes this, business-as-usual works.
+
+- **NEW (Run 13, replaces Run 12 suggestion):** Run 13 mirrored Runs 10/11 — 5 verified + 3 sub-50 skips, ~7 min research wall-clock, all WebSearch (one large WebFetch failed and was correctly abandoned). The Camas SD cluster (3 schools at offsets 97/98/100) made the run efficient — district-clustering rule continues to hold. **Recommend keeping batch_size=8** for at least one more WA-high run; the queue at offset 104 enters a Cashmere/Cathlamet/Centralia stretch which should still cluster well by district. **Codification proposal still standing:** pre-skip pre-filter for `enrollment<50` + `name in enriched.json` (Run 9's proposal) — if next prompt iteration adopts this, batch_size could safely bump to 10 since net-yield would no longer be eaten by structural skips.
+
+- **NEW (Run 12, retained for reference):** Run 12 yielded 5 verified + 3 skipped — net 5/8 due to alt-cluster on offsets 91/93/95. Wall-clock research ~6 min (all WebSearch, no WebFetch). **Recommend keeping batch_size=8** through the alt-heavy WA-high mid-section (offsets 96-150 likely contains more alt placeholders). When the queue clears the alphabetical alt-cluster band, reconsider bumping to 10. **New filtering proposal:** at batch-selection, pre-flag `schoolType: "alternative" + enrollment < 50` rows so they consume the offset-slot but don't count against the 8 enrichment target — same fix as Run 9's dedup proposal but for alt-placeholders. Until prompt formalizes this, business-as-usual works.
 - **NEW (Run 12) — Skills Center carve-out:** the `<50 enrollment skip` rule should NOT apply to vocational/CTE skills centers. This run West Sound Tech (NCES enrollment=40) was successfully verified with `enrollmentNotes` explaining the under-count. Future prompt iteration: codify "if `schoolType: vocational` + 'Skills Center' or 'Technical' in name, never auto-skip on enrollment count."
 
 - **NEW (Run 11, replaces Run 10 suggestion):** Run 11 mirrored Run 10 — 6/6 verified across 3 districts (Bethel + Blaine + Bremerton) using WebSearch only, ~5 min wall clock for research. Batch_size=8 is the sweet spot; the natural alphabetical-by-city NCES ordering keeps clustering automatic. Recommend keeping batch_size=8 for at least one more WA-high run before considering a bump. **Open follow-up:** the dedup-against-existing-enriched pre-filter (Run 9's proposal) is still unimplemented at the prompt level — it didn't bite this run, but will at offsets ~95+ where Run 4's manual additions cluster.
@@ -110,6 +134,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 13    | 5        | 3       | WA high offsets 96-103 (Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth). 5/5 verified (Camas HS 1983 enroll, Hayes Freedom alt 161, Discovery HS STEAM 201, Neah Bay Jr/Sr 196 Makah Reservation, Cascade HS Leavenworth 410). 3 sub-50 skips (Open Doors Mt Vernon enr=9, Camas SD Open Doors enr=6, Kodiak Virtual Academy Leavenworth enr=7). Note: Camas + Hayes Freedom + Discovery share district homepage `camas.wednet.edu` — district-cluster batching held. Tribal/reservation Neah Bay was processable (enroll>50). All-WebSearch run, ~7 min research. |
 | 2026-04-26 | 12    | 5        | 3       | WA high offsets 88-95 (Bremerton + Brewster + Bridgeport + Burlington-Edison cluster). 5/5 verified (West Sound Tech Skills Center, Renaissance Alt HS, Brewster HS, Bridgeport HS, Burlington Edison HS). 3 alt-school skips all <50 (Brewster Alt enr=17, Bridgeport Aurora enr=29, Burlington-Edison Alt enr=23). Heavy alt-school cluster — 3 of 8 raw rows were sub-50 alt placeholders. ~6 min research wall-clock, all WebSearch. |
 | 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel + Blaine + Bremerton SD cluster). 6/6 verified (Challenger HS, Graham Kapowsin HS, Pierce County Skills Center, Acceleration Academy, Blaine HS, Bremerton HS). 2 skipped (Blaine Re-Engagement enr=13 alt; Morgan Center enr=0 placeholder). All-WebSearch run, ~5 min research wall-clock. |
 | 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham SD + Bethel SD cluster). 6/6 verified, 2 skipped (Visions enr=13, Bellingham Re-Engagement alt). District-cluster batching = fast. |

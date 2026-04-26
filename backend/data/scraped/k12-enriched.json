@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T10:54:26Z",
+    "lastUpdated": "2026-04-26",
     "count": 55,
     "source": "NCES + verified web sources",
     "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
@@ -9,7 +9,9 @@
     "lastRunAdded": 6,
     "lastRunReplaced": 0,
     "lastRunNote": "Run 11: +6 verified WA high (Bethel + Blaine + Bremerton SD cluster, offsets 80-87)",
-    "totalVerified": 72
+    "totalVerified": 72,
+    "totalEnriched": 77,
+    "lastRun": 13
   },
   "schools": [
     {
@@ -1716,7 +1718,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program \u2014 growth and excellence"
+        "2020 WA School Recognition Program — growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2533,7 +2535,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 \u2014 district's oldest HS",
+        "Founded 1952 — district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2889,7 +2891,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2939,7 +2941,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3098,6 +3100,269 @@
         "https://www.publicschoolreview.com/burlington-edison-high-school-profile"
       ],
       "principalNotes": "Started July 1, 2023, replacing Jeff Baines. EdD in Superintendency from WSU Tri-Cities."
+    },
+    {
+      "ncessch": "530081003152",
+      "name": "Camas High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5750",
+      "latitude": 45.6123,
+      "longitude": -122.3986,
+      "website": "https://www.camas.wednet.edu/schools/chs/",
+      "principal": "Kelly O'Rourke",
+      "enrollment": 1983,
+      "studentTeacherRatio": "22:1",
+      "apParticipationRate": "53%",
+      "graduationRate": "95%",
+      "testScores": {
+        "mathProficient": "62%",
+        "readingProficient": "91%"
+      },
+      "address": "26900 SE 15th St, Camas, WA 98607",
+      "notablePrograms": [
+        "Advanced Placement (53% participation)",
+        "Athletics (Papermakers — 4A)",
+        "Performing arts",
+        "CTE pathways"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "A",
+        "notes": "#29 Best Public HS in Washington (Niche); Top 10% nationally (Public School Review 2025-26)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/schools/chs/basics/staff-directory/",
+        "https://www.camas.wednet.edu/page/camas-high-school",
+        "https://www.niche.com/k12/camas-high-school-camas-wa/academics/",
+        "https://www.publicschoolreview.com/camas-high-school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/camas-high-school-20763"
+      ],
+      "principalNotes": "Kelly O'Rourke, contact ext. 71111 (360-833-5750)."
+    },
+    {
+      "ncessch": "530081003200",
+      "name": "Hayes Freedom High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5602",
+      "latitude": 45.592653,
+      "longitude": -122.401196,
+      "website": "https://schools.camas.wednet.edu/hayesfreedom/",
+      "principal": "Amy Holmes",
+      "enrollment": 161,
+      "studentTeacherRatio": "18:1",
+      "graduationRate": "90%",
+      "testScores": {
+        "mathProficient": "25%",
+        "readingProficient": "65%"
+      },
+      "address": "1919 NE Ione St, Camas, WA 98607",
+      "notablePrograms": [
+        "Alternative high school option (small school, individualized support)",
+        "Personalized credit recovery / flexible scheduling"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B-",
+        "notes": "Above-average alternative high school within Camas SD"
+      },
+      "admission": "Open enrollment within Camas SD; alternative pathway",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/page/hayes-freedom-high-school",
+        "https://schools.camas.wednet.edu/hayesfreedom/about-3/principal/",
+        "https://www.niche.com/k12/hayes-freedom-high-school-camas-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/hayes-freedom-high-school-20764"
+      ]
+    },
+    {
+      "ncessch": "530081003662",
+      "name": "Discovery High School",
+      "city": "Camas",
+      "state": "WA",
+      "zip": "98607",
+      "district": "Camas School District",
+      "level": "high",
+      "grades": "",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)833-5790",
+      "latitude": 45.594008,
+      "longitude": -122.462125,
+      "website": "https://camas.wednet.edu/schools/dhs/",
+      "principal": "Dr. Dan Huld",
+      "enrollment": 201,
+      "studentTeacherRatio": "15:1",
+      "apParticipationRate": "46%",
+      "graduationRate": "94%",
+      "testScores": {
+        "mathProficient": "45%",
+        "readingProficient": "75%",
+        "averageSAT": 1250,
+        "averageGPA": 3.43
+      },
+      "address": "Camas, WA 98607",
+      "notablePrograms": [
+        "STEAM-focused project-based learning",
+        "Industry accreditation pathways",
+        "Dual enrollment",
+        "Collaborative integrated learning teams",
+        "Advanced Placement (46% participation)"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B+",
+        "notes": "Top 20% in WA (Public School Review 2026); ranked 13/438 WA high schools per US News-derived synthesis"
+      },
+      "admission": "Open enrollment within Camas SD; small project-based program (cap ~200)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.camas.wednet.edu/schools-resources/high-schools/discovery-high-school/",
+        "https://www.niche.com/k12/discovery-high-school-camas-wa/academics/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/camas-school-district/discovery-high-school-410715",
+        "https://www.publicschoolreview.com/discovery-high-school-profile/98607",
+        "https://spaces4learning.com/articles/2021/10/01/discovery.aspx"
+      ],
+      "programNotes": "New ground-up STEAM/project-based facility opened in Camas SD; integrates real-world industry partnerships, lab work, and dual enrollment."
+    },
+    {
+      "ncessch": "530084000165",
+      "name": "Neah Bay Junior/ Senior High School",
+      "city": "Neah Bay",
+      "state": "WA",
+      "zip": "98357",
+      "district": "Cape Flattery School District",
+      "level": "high",
+      "grades": "",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(360)645-2221",
+      "latitude": 48.3632,
+      "longitude": -124.6224,
+      "website": "https://nbs.cfsd401.org/",
+      "principal": "Lucy Dafoe",
+      "enrollment": 196,
+      "studentTeacherRatio": "13:1",
+      "graduationRate": "80%",
+      "testScores": {
+        "mathProficient": "12%",
+        "readingProficient": "32%"
+      },
+      "demographics": {
+        "minorityPercent": 99,
+        "economicallyDisadvantagedPercent": 84
+      },
+      "address": "3560 Deer Street, Neah Bay, WA 98357",
+      "notablePrograms": [
+        "Tribal/cultural curriculum partnership with Makah Tribe",
+        "Environmental literacy (OSPI-recognized)",
+        "Combined Junior/Senior secondary model (grades 6-12) with Markishtum Middle School"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "C",
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+      },
+      "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cfsd401.org/our-schools/neah-bay-schools",
+        "https://nbs.cfsd401.org/",
+        "https://www.niche.com/k12/neah-bay-junior-senior-high-school-neah-bay-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cape-flattery-school-district/neah-bay-junior-senior-high-school-20766",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
+        "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
+      ],
+      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
+    },
+    {
+      "ncessch": "530095001935",
+      "name": "Cascade High School",
+      "city": "Leavenworth",
+      "state": "WA",
+      "zip": "98826",
+      "district": "Cascade School District",
+      "level": "high",
+      "grades": "",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "phone": "(509)548-5277",
+      "latitude": 47.6018,
+      "longitude": -120.6545,
+      "website": "https://www.cascadesd.org/cascadehs",
+      "principal": "James Swanson",
+      "assistantPrincipal": "Annika Bibby",
+      "enrollment": 410,
+      "studentTeacherRatio": "20:1",
+      "graduationRate": "95%",
+      "testScores": {
+        "mathProficient": "47%",
+        "readingProficient": "77%",
+        "averageSAT": 1170,
+        "averageACT": 29
+      },
+      "demographics": {
+        "minorityPercent": 36,
+        "economicallyDisadvantagedPercent": 50
+      },
+      "address": "10190 Chumstick Hwy, Leavenworth, WA 98826",
+      "notablePrograms": [
+        "Advanced Placement",
+        "Gifted & Talented program",
+        "Athletics (Kodiaks)",
+        "CTE / outdoor education leveraging Cascades location"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B",
+        "greatSchoolsRating": "7/10",
+        "notes": "Top 20% in WA (combined math/reading proficiency); Top 20% Public School Review 2025-26"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cascadesd.org/cascadehs",
+        "https://www.cascadesd.org/staff",
+        "https://www.ncwbusiness.com/stories/cascade-school-district-navigates-leadership-changes-at-high-school-and-middle-school,79656",
+        "https://www.niche.com/k12/cascade-high-school-leavenworth-wa/academics/",
+        "https://www.publicschoolreview.com/cascade-high-school-profile/98826",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cascade-school-district/cascade-high-school-20767"
+      ],
+      "principalNotes": "James Swanson named principal beginning 2024-25 school year. Annika Bibby (formerly Asst Director of SpEd at Wenatchee SD) is Assistant Principal on reduced schedule for 2024-25."
     }
   ]
 }

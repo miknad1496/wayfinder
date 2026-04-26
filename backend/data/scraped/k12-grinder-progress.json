@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T10:54:26.651119Z",
-  "totalRuns": 12,
-  "totalEnriched": 72,
-  "totalSkipped": 24,
-  "notes": "Run 12: enriched 5 WA high (West Sound Tech Skills Center, Renaissance Alt HS, Brewster HS, Bridgeport HS, Burlington Edison HS). Skipped 3 (Brewster Alt enr=17, Bridgeport Aurora enr=29, Burlington-Edison Alt enr=23 \u2014 all <50). Queue offset 88 -> 96.",
+  "lastRun": "2026-04-26T11:13:57.457690Z",
+  "totalRuns": 13,
+  "totalEnriched": 77,
+  "totalSkipped": 27,
+  "notes": "Run 13: enriched 5 WA high (Camas HS, Hayes Freedom HS, Discovery HS, Neah Bay Jr/Sr HS, Cascade HS - Leavenworth). Skipped 3 (Open Doors Mt Vernon enr=9, Camas SD Open Doors enr=6, Kodiak Virtual Academy enr=7 — all <50). Queue offset 96 -> 104.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 96,
+      "offset": 104,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 96 of 649; enriched 72 total"
+      "note": "raw NCES offset 104 of 649; enriched 77 total"
     },
     {
       "state": "WA",
