@@ -1,16 +1,59 @@
 {
-  "lastRun": "2026-04-25T23:30:00Z",
-  "totalRuns": 1,
-  "totalEnriched": 8,
+  "lastRun": "2026-04-26T03:34:57Z",
+  "totalRuns": 2,
+  "totalEnriched": 16,
   "totalSkipped": 0,
-  "notes": "Run 1 (bootstrap): The expected raw NCES dump at backend/data/scraped/k12-national/{STATE}_{level}.json did not exist. This run bootstrapped 8 verified WA high schools via direct manual web research (WebSearch on US News, Niche, Wikipedia, school websites, school profile PDFs, NCES public school search). Future runs should populate the raw NCES dump so the queue offset logic can be used as designed. Until then, future runs should keep manually researching priority WA/TX/CA/NY/MI schools.",
+  "notes": "Run 2: continued manual research of priority WA Seattle-metro high schools (raw NCES dump at backend/data/scraped/k12-national/ still does not exist). Added Mercer Island, Eastlake, Mount Si, Tahoma, Interlake, Redmond, Inglemoor, Ballard. Bringing WA high total to 16. Future runs should populate the raw NCES dump or continue manual.",
   "queue": [
-    {"state":"WA","level":"high","offset":8,"total":null,"status":"in_progress","note":"bootstrapped 8 schools manually; offset is count enriched, not NCES file index"},
-    {"state":"WA","level":"middle","offset":0,"total":null,"status":"pending"},
-    {"state":"WA","level":"elementary","offset":0,"total":null,"status":"pending"},
-    {"state":"TX","level":"high","offset":0,"total":null,"status":"pending"},
-    {"state":"CA","level":"high","offset":0,"total":null,"status":"pending"},
-    {"state":"NY","level":"high","offset":0,"total":null,"status":"pending"},
-    {"state":"MI","level":"high","offset":0,"total":null,"status":"pending"}
+    {
+      "state": "WA",
+      "level": "high",
+      "offset": 16,
+      "total": null,
+      "status": "in_progress",
+      "note": "manual research mode (raw NCES dump still missing); offset = cumulative count enriched"
+    },
+    {
+      "state": "WA",
+      "level": "middle",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    },
+    {
+      "state": "WA",
+      "level": "elementary",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    },
+    {
+      "state": "TX",
+      "level": "high",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    },
+    {
+      "state": "CA",
+      "level": "high",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    },
+    {
+      "state": "NY",
+      "level": "high",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    },
+    {
+      "state": "MI",
+      "level": "high",
+      "offset": 0,
+      "total": null,
+      "status": "pending"
+    }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-25T23:30:00Z",
-    "count": 8,
-    "source": "NCES + verified web sources (US News, Niche, school websites, Wikipedia, NCES Public School Search, school profile PDFs)",
+    "lastUpdated": "2026-04-26T03:34:57Z",
+    "count": 16,
+    "source": "NCES + verified web sources",
     "note": "Bootstrapped run 1: raw NCES dump not yet present at backend/data/scraped/k12-national/. Schools enriched via direct manual web research."
   },
   "schools": [
@@ -53,7 +53,10 @@
         "minorityTotalPct": 78,
         "freeReducedLunch": 16
       },
-      "notablePrograms": ["Advanced Placement (27 courses)", "93% of students take 1+ AP classes"],
+      "notablePrograms": [
+        "Advanced Placement (27 courses)",
+        "93% of students take 1+ AP classes"
+      ],
       "rating": {
         "source": "us_news",
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/newport-senior-high-school-20734"
@@ -79,7 +82,11 @@
       "principal": "Amie Karkainen",
       "enrollment": 605,
       "magnetProgram": true,
-      "notablePrograms": ["STEM magnet (lottery admission)", "Project-based learning", "Industry mentorships"],
+      "notablePrograms": [
+        "STEM magnet (lottery admission)",
+        "Project-based learning",
+        "Industry mentorships"
+      ],
       "rating": {
         "source": "us_news",
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/nikola-tesla-stem-high-school-146690"
@@ -135,7 +142,11 @@
         "minorityTotalPct": 64,
         "freeReducedLunch": 39
       },
-      "notablePrograms": ["Designated school for Highly Capable / academically highly gifted students", "AP Studio Art", "Calculus-based AP Physics"],
+      "notablePrograms": [
+        "Designated school for Highly Capable / academically highly gifted students",
+        "AP Studio Art",
+        "Calculus-based AP Physics"
+      ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
       "_sources": [
@@ -163,7 +174,9 @@
         "minorityTotalPct": 54,
         "freeReducedLunch": 15
       },
-      "notablePrograms": ["Wide AP catalog: AP Bio, Calc AB/BC, Chem, CompSci, Eng Lang, Env Sci, Euro Hist, Physics, Psych, Spanish Lang, Stats, US Gov"],
+      "notablePrograms": [
+        "Wide AP catalog: AP Bio, Calc AB/BC, Chem, CompSci, Eng Lang, Env Sci, Euro Hist, Physics, Psych, Spanish Lang, Stats, US Gov"
+      ],
       "rating": {
         "source": "us_news",
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/issaquah-high-school-20920"
@@ -199,7 +212,12 @@
         "minorityTotalPct": 62,
         "freeReducedLunch": 8
       },
-      "notablePrograms": ["IB Diploma and IB Career-related Programme open to all juniors/seniors", "AP Calc AB", "AP Statistics", "AP CompSci Principles"],
+      "notablePrograms": [
+        "IB Diploma and IB Career-related Programme open to all juniors/seniors",
+        "AP Calc AB",
+        "AP Statistics",
+        "AP CompSci Principles"
+      ],
       "rating": {
         "source": "us_news",
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/skyline-high-school-20925"
@@ -231,7 +249,12 @@
         "minorityTotalPct": 48,
         "freeReducedLunch": 15
       },
-      "notablePrograms": ["Honors track", "AP courses", "University of Washington in the High School (dual credit)", "CTE Dual Credit"],
+      "notablePrograms": [
+        "Honors track",
+        "AP courses",
+        "University of Washington in the High School (dual credit)",
+        "CTE Dual Credit"
+      ],
       "rating": {
         "source": "us_news",
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/lake-washington-high-school-20955"
@@ -243,6 +266,237 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/lake-washington-high-school-20955",
         "https://www.publicschoolreview.com/lake-washington-high-school-profile",
         "https://en.wikipedia.org/wiki/Lake_Washington_High_School"
+      ]
+    },
+    {
+      "ncessch": "530498000761",
+      "name": "Mercer Island High School",
+      "city": "Mercer Island",
+      "state": "WA",
+      "district": "Mercer Island School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://mihs.mercerislandschools.org/",
+      "principal": "Nick Wold",
+      "enrollment": 1465,
+      "studentTeacherRatio": 19.63,
+      "teachingStaffFTE": 75.63,
+      "established": 1955,
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://mihs.mercerislandschools.org/",
+        "https://en.wikipedia.org/wiki/Mercer_Island_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530498000761",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/mercer-island-school-district/mercer-island-high-school-20995"
+      ]
+    },
+    {
+      "ncessch": "530423001141",
+      "name": "Eastlake High School",
+      "city": "Sammamish",
+      "state": "WA",
+      "district": "Lake Washington School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://ehs.lwsd.org/",
+      "principal": "Todd Apple",
+      "enrollment": 2367,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/eastlake-high-school-20957"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://ehs.lwsd.org/",
+        "https://ehs.lwsd.org/about-us",
+        "https://en.wikipedia.org/wiki/Eastlake_High_School_(Sammamish,_Washington)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5304230&ID=530423001141",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/eastlake-high-school-20957"
+      ]
+    },
+    {
+      "ncessch": "530804001330",
+      "name": "Mount Si High School",
+      "city": "Snoqualmie",
+      "state": "WA",
+      "district": "Snoqualmie Valley School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://mshs.svsd410.org/",
+      "principal": "Vernie Newell",
+      "enrollment": 2172,
+      "studentTeacherRatio": 21.54,
+      "apCourses": 27,
+      "notablePrograms": [
+        "Project Lead The Way",
+        "Running Start"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/snoqualmie-valley-school-district/mount-si-high-school-21186"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://mshs.svsd410.org/",
+        "https://en.wikipedia.org/wiki/Mount_Si_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530804001330",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/snoqualmie-valley-school-district/mount-si-high-school-21186",
+        "https://www.niche.com/k12/mount-si-high-school-snoqualmie-wa/"
+      ]
+    },
+    {
+      "ncessch": "530876001519",
+      "name": "Tahoma Senior High School",
+      "city": "Maple Valley",
+      "state": "WA",
+      "district": "Tahoma School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://tahomahighschool.tahomasd.us/",
+      "principal": "Judy Beliveau",
+      "enrollment": 2890,
+      "studentTeacherRatio": 23.1,
+      "established": 1927,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/tahoma-school-district/tahoma-senior-high-school-21236"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://tahomahighschool.tahomasd.us/",
+        "https://en.wikipedia.org/wiki/Tahoma_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530876001519",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/tahoma-school-district/tahoma-senior-high-school-21236"
+      ]
+    },
+    {
+      "ncessch": "530039000072",
+      "name": "Interlake Senior High School",
+      "city": "Bellevue",
+      "state": "WA",
+      "district": "Bellevue School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://bsd405.org/interlake/",
+      "principal": "Bret Cochrun",
+      "enrollment": 1604,
+      "studentTeacherRatio": 19.5,
+      "teachingStaffFTE": 82.26,
+      "established": 1967,
+      "ibProgram": true,
+      "notablePrograms": [
+        "IB Diploma Programme (since 1997)",
+        "Advanced Learning Program"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/interlake-senior-high-school-20733"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://bsd405.org/interlake/",
+        "https://bsd405.org/interlake/about/ib/",
+        "https://en.wikipedia.org/wiki/Interlake_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300390&ID=530039000072",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/interlake-senior-high-school-20733",
+        "https://www.ibo.org/en/school/000844"
+      ]
+    },
+    {
+      "ncessch": "530423000679",
+      "name": "Redmond High School",
+      "city": "Redmond",
+      "state": "WA",
+      "district": "Lake Washington School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://rhs.lwsd.org/",
+      "principal": "Jill VanderVeer",
+      "enrollment": 2275,
+      "studentTeacherRatio": 21.25,
+      "teachingStaffFTE": 107.04,
+      "established": 1964,
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/redmond-high-school-20956"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://rhs.lwsd.org/",
+        "https://en.wikipedia.org/wiki/Redmond_High_School_(Washington)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5304230&SchoolPageNum=4&ID=530423000679",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/redmond-high-school-20956"
+      ]
+    },
+    {
+      "ncessch": "530591000884",
+      "name": "Inglemoor High School",
+      "city": "Kenmore",
+      "state": "WA",
+      "district": "Northshore School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://inglemoor.nsd.org/",
+      "principal": "Adam Desautels",
+      "enrollment": 1463,
+      "studentTeacherRatio": 16.6,
+      "teachingStaffFTE": 89,
+      "established": 1965,
+      "ibProgram": true,
+      "notablePrograms": [
+        "International Baccalaureate Diploma (since 1997)",
+        "22 IB classes"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/northshore-school-district/inglemoor-high-school-21051"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://inglemoor.nsd.org/",
+        "https://inglemoor.nsd.org/academics/ib",
+        "https://en.wikipedia.org/wiki/Inglemoor_High_School",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/northshore-school-district/inglemoor-high-school-21051",
+        "https://www.schooldigger.com/go/WA/schools/0591000884/school.aspx"
+      ]
+    },
+    {
+      "ncessch": "530771001138",
+      "name": "Ballard High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://ballardhs.seattleschools.org/",
+      "principal": "Abigail Hunt",
+      "enrollment": 1645,
+      "studentTeacherRatio": 22.94,
+      "teachingStaffFTE": 71.7,
+      "established": 1909,
+      "notablePrograms": [
+        "Health, Medical & Biotech Pathway",
+        "Maritime Academy"
+      ],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/ballard-high-school-21145"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://ballardhs.seattleschools.org/",
+        "https://ballardhs.seattleschools.org/academics/biotech-program/",
+        "https://en.wikipedia.org/wiki/Ballard_High_School_(Seattle)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5307710&ID=530771001138",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/ballard-high-school-21145"
       ]
     }
   ]
