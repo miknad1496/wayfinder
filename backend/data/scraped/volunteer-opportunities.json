@@ -2,22 +2,25 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 107,
+    "totalCount": 112,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
     "sources": [
       "826 National",
+      "826LA",
       "AARP Foundation Tax-Aide",
       "AFSP",
       "AmeriCorps",
       "American Red Cross",
+      "Aquarium of the Pacific",
       "Audubon Society",
       "BSA / GSUSA",
       "Best Buddies International",
       "Big Brothers Big Sisters",
       "Boys & Girls Clubs",
       "CERT (FEMA)",
+      "Children's Hospital Los Angeles (CHLA)",
       "Columbia Springs",
       "Crisis Text Line",
       "Earthwatch",
@@ -33,6 +36,8 @@
       "Key Club International",
       "KidVantage (Eastside Baby Corner)",
       "LifeWire",
+      "Los Angeles Public Library",
+      "Los Angeles Regional Food Bank",
       "Make-A-Wish",
       "Mary Bridge Children's Hospital (MultiCare)",
       "Mobius Discovery Center",
@@ -3227,6 +3232,163 @@
       "_unverifiedFields": [
         "ageMin"
       ]
+    },
+    {
+      "name": "Los Angeles Regional Food Bank Volunteer",
+      "organization": "Los Angeles Regional Food Bank",
+      "description": "LA's largest hunger-relief organization, distributing food to over 600 partner agencies across LA County. Volunteers sort and pack food at the Commerce or Glendale warehouses, work pantry-side at the Mobile Food Pantry, and assist with food drives. All volunteers must register online \u2014 no walk-ins. Founded in 1973; 50+ years of operation.",
+      "scope": "state",
+      "states": [
+        "CA"
+      ],
+      "subregion": "Los Angeles County",
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food sorting",
+        "warehouse logistics",
+        "pantry distribution",
+        "teamwork"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit lafoodbank.org/volunteer/, create a Cervis volunteer account, and reserve a shift at one of the warehouse or pantry locations.",
+      "_source": "https://www.lafoodbank.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "826LA Volunteer Tutor (Writing & Homework Help)",
+      "organization": "826LA",
+      "description": "826LA is the LA chapter of the 826 National writing-and-tutoring nonprofit, supporting students ages 6-18 with creative writing, college applications, and homework help. Programs run at Echo Park and Mar Vista centers and in-school sites. Volunteer roles include After-School Tutoring, Field Trips, In-Schools / Writers' Rooms, College Access workshops, Bookmaking, and summer camp. High school student volunteers (16+) are welcomed for After-School Tutoring and summer camp. No teaching experience required; orientation + Live Scan background check provided free.",
+      "scope": "state",
+      "states": [
+        "CA"
+      ],
+      "subregion": "Los Angeles (Echo Park / Mar Vista)",
+      "categories": [
+        "education",
+        "mentorship",
+        "arts"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "one-on-one tutoring",
+        "creative writing coaching",
+        "patience",
+        "youth mentorship"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit 826la.org/volunteer (or 826la.org/youth-volunteer for high schoolers) and complete the volunteer interest form. Attend an orientation; complete free Live Scan fingerprinting at an 826LA center.",
+      "_source": "https://www.826la.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "CHLA High School Summer Volunteer Program",
+      "organization": "Children's Hospital Los Angeles (CHLA)",
+      "description": "Highly competitive 7-week summer volunteer program for high schoolers ages 15-17 at Children's Hospital Los Angeles. Volunteers complete 112 service hours over the program (16 hrs/wk in four blocks, Monday-Thursday 9am-5pm). Roles include patient/family/staff support across hospital units. Program runs June 22 - August 6, 2026. Application requires two references, virtual interview with parent/guardian, health screening, full immunizations, and TB clearance.",
+      "scope": "state",
+      "states": [
+        "CA"
+      ],
+      "subregion": "Los Angeles (East Hollywood)",
+      "categories": [
+        "health"
+      ],
+      "ageMin": 15,
+      "ageMax": 17,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "clinical exposure",
+        "patient interaction",
+        "professionalism",
+        "healthcare environment"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply during the open application period at chla.org/volunteering-hospital/high-school-summer-volunteer-program. Have two reference contacts ready (name + email). Contact volunteers@chla.usc.edu with questions.",
+      "_source": "https://www.chla.org/volunteering-hospital/high-school-summer-volunteer-program",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Aquarium of the Pacific VolunTEEN Program",
+      "organization": "Aquarium of the Pacific",
+      "description": "Long Beach aquarium's structured 80-hour youth volunteer program. Open to ages 14-16 with at least a 2.5 GPA. Selected participants are scheduled 8 hours/week for 10 weeks at interactive guest-engagement stations across the galleries, after receiving training on marine life, the Pacific Ocean, and exhibit interpretation skills. Offered three times per year. Application requires essay, letter of recommendation, and interview. Aquarium has separate volunteer tracks: Adult (18+), Youth (11-18 / VolunTEEN 14-16), Family (kids 9+), Group.",
+      "scope": "state",
+      "states": [
+        "CA"
+      ],
+      "subregion": "Long Beach / South LA County",
+      "categories": [
+        "environment",
+        "animals",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 16,
+      "timeCommitment": "intensive",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "marine science communication",
+        "public speaking",
+        "guest engagement",
+        "exhibit interpretation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit aquariumofpacific.org/get_involved/volunteer_opportunities/youth_11_18 for VolunTEEN application details. Submit application + typed essay + one letter of recommendation; participate in interview.",
+      "_source": "https://www.aquariumofpacific.org/get_involved/volunteer_opportunities/youth_11_18",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Los Angeles Public Library Teen Volunteer / Teen Council / Teens Leading Change",
+      "organization": "Los Angeles Public Library",
+      "description": "LAPL's tiered teen volunteer ecosystem across 73 branch libraries. Three pathways: (1) Teen Volunteer (ages 14-19, branch-based, earns community service hours); (2) Teen Council (ages 11-19, advise on purchases, plan programs, write reviews and Teen Blog articles); (3) Teens Leading Change / TLC (ages 14-19, 9th-12th grade, civic action projects with mini-grants up to $5,000). All require parent/guardian-signed Teen Volunteer Waiver Form and Teen Volunteer Intake Form.",
+      "scope": "state",
+      "states": [
+        "CA"
+      ],
+      "subregion": "Los Angeles County",
+      "categories": [
+        "education",
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 11,
+      "ageMax": 19,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civic engagement",
+        "leadership",
+        "library operations",
+        "writing and reviewing",
+        "project planning"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit lapl.org/teens/volunteer and select your local branch. Complete the Teen Volunteer Intake Form and have a parent/guardian sign the Teen Volunteer Waiver. Contact Volunteer Engagement (213) 228-7490 with questions.",
+      "_source": "https://www.lapl.org/teens/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
     }
   ]
 }
