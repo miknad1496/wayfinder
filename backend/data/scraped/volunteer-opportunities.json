@@ -2,9 +2,9 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 80,
+    "totalCount": 84,
     "_verified": "partial",
-    "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design — they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
+    "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
     "sources": [
       "AmeriCorps",
@@ -39,7 +39,11 @@
       "NPS Volunteers-In-Parks",
       "CERT (FEMA)",
       "NCASA",
-      "UN Volunteers Online"
+      "UN Volunteers Online",
+      "Hopelink",
+      "Seattle Aquarium",
+      "KCLS",
+      "Washington Trails Association"
     ],
     "categories": {
       "health": "Health & Medical",
@@ -87,7 +91,7 @@
         "professionalism"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Search \"{your hospital name} junior volunteer program\" — most hospitals have an online application opening February-April. Background check, TB test, and orientation required.",
+      "howToStart": "Search \"{your hospital name} junior volunteer program\" \u2014 most hospitals have an online application opening February-April. Background check, TB test, and orientation required.",
       "_source": "https://www.aamc.org/cim/explore-options/aspiring-docs/community-clinical-experiences",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -146,7 +150,7 @@
         "event management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "Find your state chapter at specialolympics.org. School-based Unified Champion Schools programs are the easiest entry — talk to your school athletics director.",
+      "howToStart": "Find your state chapter at specialolympics.org. School-based Unified Champion Schools programs are the easiest entry \u2014 talk to your school athletics director.",
       "_source": "https://www.specialolympics.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -426,7 +430,7 @@
         "public-facing service"
       ],
       "collegeAppValue": "high",
-      "howToStart": "volunteer.gov is the official portal — search by location and skill. SCA (thesca.org) runs residential summer programs for youth.",
+      "howToStart": "volunteer.gov is the official portal \u2014 search by location and skill. SCA (thesca.org) runs residential summer programs for youth.",
       "_source": "https://www.nps.gov/getinvolved/volunteer.htm",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -434,7 +438,7 @@
     {
       "name": "Sierra Club Local Outings & Conservation",
       "organization": "Sierra Club",
-      "description": "Local chapters (60+ across the country) run volunteer days: trail building, restoration projects, advocacy training, conservation education. Some chapters have ICO (Inspiring Connections Outdoors) — leading youth on outdoor experiences.",
+      "description": "Local chapters (60+ across the country) run volunteer days: trail building, restoration projects, advocacy training, conservation education. Some chapters have ICO (Inspiring Connections Outdoors) \u2014 leading youth on outdoor experiences.",
       "scope": "national",
       "states": [
         "all"
@@ -539,7 +543,7 @@
         "international fieldwork"
       ],
       "collegeAppValue": "high",
-      "howToStart": "earthwatch.org/expeditions/teen — apply 6-8 months in advance. Need-based scholarships available.",
+      "howToStart": "earthwatch.org/expeditions/teen \u2014 apply 6-8 months in advance. Need-based scholarships available.",
       "_source": "https://earthwatch.org/expeditions/teen",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -568,7 +572,7 @@
         "land management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "thesca.org — High School Crew applications open November for summer programs. Highly competitive at flagship parks; less so at lesser-known sites.",
+      "howToStart": "thesca.org \u2014 High School Crew applications open November for summer programs. Highly competitive at flagship parks; less so at lesser-known sites.",
       "_source": "https://www.thesca.org/serve/high-school-conservation-crews",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -596,7 +600,7 @@
         "adoption counseling"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Search \"[your city] humane society volunteer\" — orientation typically required. Younger volunteers often start with cat socialization or laundry/cleaning before moving to dog walking.",
+      "howToStart": "Search \"[your city] humane society volunteer\" \u2014 orientation typically required. Younger volunteers often start with cat socialization or laundry/cleaning before moving to dog walking.",
       "_source": "https://www.humanesociety.org/take-action/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -657,7 +661,7 @@
         "adoption counseling"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "bestfriends.org/get-involved — local chapter or sanctuary stays available.",
+      "howToStart": "bestfriends.org/get-involved \u2014 local chapter or sanctuary stays available.",
       "_source": "https://bestfriends.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -685,7 +689,7 @@
         "team coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "feedingamerica.org/find-your-local-foodbank — every food bank has a volunteer page. Many run weekly Saturday morning sort events.",
+      "howToStart": "feedingamerica.org/find-your-local-foodbank \u2014 every food bank has a volunteer page. Many run weekly Saturday morning sort events.",
       "_source": "https://www.feedingamerica.org/take-action/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -714,7 +718,7 @@
         "community-building"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Search \"[your city] soup kitchen volunteer\" — Salvation Army, Catholic Charities, and local churches typically operate them.",
+      "howToStart": "Search \"[your city] soup kitchen volunteer\" \u2014 Salvation Army, Catholic Charities, and local churches typically operate them.",
       "_source": "https://www.salvationarmyusa.org/usn/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -743,7 +747,7 @@
         "reliability"
       ],
       "collegeAppValue": "high",
-      "howToStart": "mealsonwheelsamerica.org — find local provider. School-based MoW clubs exist in some areas; check your guidance office.",
+      "howToStart": "mealsonwheelsamerica.org \u2014 find local provider. School-based MoW clubs exist in some areas; check your guidance office.",
       "_source": "https://www.mealsonwheelsamerica.org/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -801,7 +805,7 @@
         "team-building"
       ],
       "collegeAppValue": "high",
-      "howToStart": "habitat.org/volunteer — find local affiliate. Build sites need 16+; ReStore takes 14+. Group days easy to organize for clubs/sports teams.",
+      "howToStart": "habitat.org/volunteer \u2014 find local affiliate. Build sites need 16+; ReStore takes 14+. Group days easy to organize for clubs/sports teams.",
       "_source": "https://www.habitat.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -830,7 +834,7 @@
         "holiday event coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "salvationarmyusa.org — find local Corps. Bell-ringing November-December is the easiest entry; they'll take any willing volunteer.",
+      "howToStart": "salvationarmyusa.org \u2014 find local Corps. Bell-ringing November-December is the easiest entry; they'll take any willing volunteer.",
       "_source": "https://www.salvationarmyusa.org/usn/ways-to-give/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -915,7 +919,7 @@
         "intergenerational communication"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "aarp.org/volunteer — Tax-Aide season runs January-April; training in November-December.",
+      "howToStart": "aarp.org/volunteer \u2014 Tax-Aide season runs January-April; training in November-December.",
       "_source": "https://www.aarp.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -944,7 +948,7 @@
         "peer support principles"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nami.org/find-your-local-nami — Ending the Silence is school-based and trains teen presenters.",
+      "howToStart": "nami.org/find-your-local-nami \u2014 Ending the Silence is school-based and trains teen presenters.",
       "_source": "https://www.nami.org/get-involved/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -972,7 +976,7 @@
         "letter-writing"
       ],
       "collegeAppValue": "low",
-      "howToStart": "lettersagainstisolation.com — sign up, get assigned a senior, mail a letter. No background check needed.",
+      "howToStart": "lettersagainstisolation.com \u2014 sign up, get assigned a senior, mail a letter. No background check needed.",
       "_source": "https://www.lettersagainstisolation.com/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -980,7 +984,7 @@
     {
       "name": "Color a Smile",
       "organization": "Color a Smile",
-      "description": "Color drawings/cards that get distributed to seniors, deployed military, and others who need cheering up. Lowest-barrier remote service — works for elementary kids through adults. Good entry point for service-shy younger teens.",
+      "description": "Color drawings/cards that get distributed to seniors, deployed military, and others who need cheering up. Lowest-barrier remote service \u2014 works for elementary kids through adults. Good entry point for service-shy younger teens.",
       "scope": "national",
       "states": [
         "all"
@@ -999,7 +1003,7 @@
         "consistency"
       ],
       "collegeAppValue": "low",
-      "howToStart": "colorasmile.org — download printable templates, color, mail to their PO box.",
+      "howToStart": "colorasmile.org \u2014 download printable templates, color, mail to their PO box.",
       "_source": "https://www.colorasmile.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1027,7 +1031,7 @@
         "event planning"
       ],
       "collegeAppValue": "high",
-      "howToStart": "bestbuddies.org — check if your school has a chapter; if not, you can start one with their school onboarding kit.",
+      "howToStart": "bestbuddies.org \u2014 check if your school has a chapter; if not, you can start one with their school onboarding kit.",
       "_source": "https://www.bestbuddies.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1091,7 +1095,7 @@
       "_verifiedDate": "2026-04-25"
     },
     {
-      "name": "Court Appointed Special Advocate (CASA) — Limited Teen Roles",
+      "name": "Court Appointed Special Advocate (CASA) \u2014 Limited Teen Roles",
       "organization": "National CASA Association",
       "description": "Trained volunteers advocate for abused/neglected children in court. Most CASA roles require 21+, but several state CASA programs have Teen Advocates or Mentors for older youth in foster care (typically 18+ with training).",
       "scope": "national",
@@ -1114,7 +1118,7 @@
         "advocacy"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nationalcasagal.org/find-a-program — for high schoolers, ask your local CASA about Teen Advocate or admin support roles.",
+      "howToStart": "nationalcasagal.org/find-a-program \u2014 for high schoolers, ask your local CASA about Teen Advocate or admin support roles.",
       "_source": "https://nationalcasagal.org/become-a-volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1227,7 +1231,7 @@
         "campaign organization"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "unicefusa.org/teens — start a UNICEF Club at your school or join an existing one.",
+      "howToStart": "unicefusa.org/teens \u2014 start a UNICEF Club at your school or join an existing one.",
       "_source": "https://www.unicefusa.org/teens",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1255,7 +1259,7 @@
         "project management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "translatorswithoutborders.org/volunteer — application requires language proof and 18+. Some sister orgs accept younger translators.",
+      "howToStart": "translatorswithoutborders.org/volunteer \u2014 application requires language proof and 18+. Some sister orgs accept younger translators.",
       "_source": "https://translatorswithoutborders.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1285,7 +1289,7 @@
         "radio communication"
       ],
       "collegeAppValue": "high",
-      "howToStart": "ready.gov/cert — find local CERT program through your city's emergency management office.",
+      "howToStart": "ready.gov/cert \u2014 find local CERT program through your city's emergency management office.",
       "_source": "https://www.ready.gov/cert",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1315,7 +1319,7 @@
         "public speaking"
       ],
       "collegeAppValue": "high",
-      "howToStart": "keyclub.org — check if your school has a chapter, or ask the office about chartering one.",
+      "howToStart": "keyclub.org \u2014 check if your school has a chapter, or ask the office about chartering one.",
       "_source": "https://www.keyclub.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1344,7 +1348,7 @@
         "project management"
       ],
       "collegeAppValue": "high",
-      "howToStart": "rotary.org/interact — find your local Rotary Club via their site; they sponsor school chapters.",
+      "howToStart": "rotary.org/interact \u2014 find your local Rotary Club via their site; they sponsor school chapters.",
       "_source": "https://www.rotary.org/en/get-involved/interact-clubs",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1400,7 +1404,7 @@
         "medical setting professionalism"
       ],
       "collegeAppValue": "high",
-      "howToStart": "seattlechildrens.org/about/volunteering — applications open March-April for fall. Background check + immunization records.",
+      "howToStart": "seattlechildrens.org/about/volunteering \u2014 applications open March-April for fall. Background check + immunization records.",
       "_source": "https://www.seattlechildrens.org/about/volunteering/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1427,7 +1431,7 @@
         "volunteer coordination"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "northwestharvest.org — sign up for Saturday morning sort shifts in Kent or partner pantries throughout WA.",
+      "howToStart": "northwestharvest.org \u2014 sign up for Saturday morning sort shifts in Kent or partner pantries throughout WA.",
       "_source": "https://www.northwestharvest.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1455,7 +1459,7 @@
         "shelter operations"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "marysplaceseattle.org/volunteer — group-friendly shifts at multiple locations.",
+      "howToStart": "marysplaceseattle.org/volunteer \u2014 group-friendly shifts at multiple locations.",
       "_source": "https://www.marysplaceseattle.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1484,7 +1488,7 @@
         "conservation messaging"
       ],
       "collegeAppValue": "high",
-      "howToStart": "zoo.org/teens — Junior Zookeeper applications open January for summer.",
+      "howToStart": "zoo.org/teens \u2014 Junior Zookeeper applications open January for summer.",
       "_source": "https://www.zoo.org/get-involved/volunteer/youth-volunteer-opportunities",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1541,7 +1545,7 @@
         "tutoring"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "bgca.org/find-a-club — local club volunteer coordinator handles application.",
+      "howToStart": "bgca.org/find-a-club \u2014 local club volunteer coordinator handles application.",
       "_source": "https://www.bgca.org/get-involved/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1569,7 +1573,7 @@
         "fundraising"
       ],
       "collegeAppValue": "high",
-      "howToStart": "wish.org — contact local chapter; teen-appropriate roles vary by chapter.",
+      "howToStart": "wish.org \u2014 contact local chapter; teen-appropriate roles vary by chapter.",
       "_source": "https://wish.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1599,7 +1603,7 @@
         "presence"
       ],
       "collegeAppValue": "high",
-      "howToStart": "nhpco.org find a hospice — apply to local hospice; expect 30 hours of training and background check.",
+      "howToStart": "nhpco.org find a hospice \u2014 apply to local hospice; expect 30 hours of training and background check.",
       "_source": "https://www.nhpco.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1627,7 +1631,7 @@
         "customer service"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "habitat.org/restores — find local ReStore.",
+      "howToStart": "habitat.org/restores \u2014 find local ReStore.",
       "_source": "https://www.habitat.org/restores",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1655,7 +1659,7 @@
         "team leadership"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "cancer.org/involved — search Relay For Life by zip code or start a school team.",
+      "howToStart": "cancer.org/involved \u2014 search Relay For Life by zip code or start a school team.",
       "_source": "https://www.cancer.org/involved/volunteer.html",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1682,14 +1686,14 @@
         "event fundraising"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "heart.org/volunteer — local affiliate has youth/school programs.",
+      "howToStart": "heart.org/volunteer \u2014 local affiliate has youth/school programs.",
       "_source": "https://www.heart.org/en/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
     },
     {
       "name": "Doctors Without Borders Student Ambassador",
-      "organization": "Médecins Sans Frontières (MSF) USA",
+      "organization": "M\u00e9decins Sans Fronti\u00e8res (MSF) USA",
       "description": "Student-led MSF Student Coalition chapters at 50+ universities, with high school feeder events. Awareness campaigns, fundraising, advocacy on global health crises. Strong med-school pipeline signal.",
       "scope": "national",
       "states": [
@@ -1711,7 +1715,7 @@
         "event organizing"
       ],
       "collegeAppValue": "high",
-      "howToStart": "doctorswithoutborders.org/get-involved — student coalition resources for school chapters.",
+      "howToStart": "doctorswithoutborders.org/get-involved \u2014 student coalition resources for school chapters.",
       "_source": "https://www.doctorswithoutborders.org/get-involved/student-coalition",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1739,7 +1743,7 @@
         "holiday season stamina"
       ],
       "collegeAppValue": "low",
-      "howToStart": "registertoring.com — sign up for 2-hour shifts at a local store November-December.",
+      "howToStart": "registertoring.com \u2014 sign up for 2-hour shifts at a local store November-December.",
       "_source": "https://www.registertoring.com/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1769,7 +1773,7 @@
         "calm presence"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "tdi-dog.org or petpartners.org — evaluation requires several months of training.",
+      "howToStart": "tdi-dog.org or petpartners.org \u2014 evaluation requires several months of training.",
       "_source": "https://www.petpartners.org/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1798,7 +1802,7 @@
         "team-building"
       ],
       "collegeAppValue": "high",
-      "howToStart": "habitat.org/volunteer/travel-build/global-village — applications 4-6 months in advance.",
+      "howToStart": "habitat.org/volunteer/travel-build/global-village \u2014 applications 4-6 months in advance.",
       "_source": "https://www.habitat.org/volunteer/travel-build/global-village",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1856,7 +1860,7 @@
         "career counseling support"
       ],
       "collegeAppValue": "low",
-      "howToStart": "goodwill.org/locator — local Goodwill volunteer coordinator.",
+      "howToStart": "goodwill.org/locator \u2014 local Goodwill volunteer coordinator.",
       "_source": "https://www.goodwill.org/get-involved/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1883,7 +1887,7 @@
         "community service"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "County elections office — apply 6-8 weeks before election day.",
+      "howToStart": "County elections office \u2014 apply 6-8 weeks before election day.",
       "_source": "https://www.eac.gov/voters/national-poll-worker-recruitment-day",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1911,7 +1915,7 @@
         "tech support basics"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "Ask at your library reference desk — most have ongoing digital literacy programs needing volunteers.",
+      "howToStart": "Ask at your library reference desk \u2014 most have ongoing digital literacy programs needing volunteers.",
       "_source": "https://www.ala.org/yalsa/get-involved/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1940,7 +1944,7 @@
         "entrepreneurial mindset"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "ja.org/volunteer — match with local school based on your background.",
+      "howToStart": "ja.org/volunteer \u2014 match with local school based on your background.",
       "_source": "https://www.juniorachievement.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1968,7 +1972,7 @@
         "distribution logistics"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "rif.org — get the book drive starter kit and organize at your school.",
+      "howToStart": "rif.org \u2014 get the book drive starter kit and organize at your school.",
       "_source": "https://www.rif.org/take-action",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -1996,7 +2000,7 @@
         "distribution day logistics"
       ],
       "collegeAppValue": "low",
-      "howToStart": "operationwarm.org — partner with a local school or shelter for distribution.",
+      "howToStart": "operationwarm.org \u2014 partner with a local school or shelter for distribution.",
       "_source": "https://www.operationwarm.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2085,7 +2089,7 @@
         "community outreach"
       ],
       "collegeAppValue": "medium",
-      "howToStart": "afsp.org/walks — find walk near you, sign up to volunteer.",
+      "howToStart": "afsp.org/walks \u2014 find walk near you, sign up to volunteer.",
       "_source": "https://afsp.org/get-involved/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2114,7 +2118,7 @@
         "financial literacy"
       ],
       "collegeAppValue": "high",
-      "howToStart": "aarpfoundation.org/taxaide — November-December training for January-April season.",
+      "howToStart": "aarpfoundation.org/taxaide \u2014 November-December training for January-April season.",
       "_source": "https://www.aarpfoundation.org/our-programs/tax-aide-foundation",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2173,7 +2177,7 @@
         "team coordination"
       ],
       "collegeAppValue": "high",
-      "howToStart": "americorps.gov/serve — applications 3-6 months ahead of service year start.",
+      "howToStart": "americorps.gov/serve \u2014 applications 3-6 months ahead of service year start.",
       "_source": "https://www.americorps.gov/serve",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2200,7 +2204,7 @@
         "remote collaboration"
       ],
       "collegeAppValue": "high",
-      "howToStart": "onlinevolunteering.org/en — must be 18+ and create a profile.",
+      "howToStart": "onlinevolunteering.org/en \u2014 must be 18+ and create a profile.",
       "_source": "https://www.onlinevolunteering.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-25"
@@ -2294,7 +2298,7 @@
       "_verifiedDate": "2026-04-26"
     },
     {
-      "name": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+      "name": "Seattle Humane \u2014 Humane Teen Club & High School Service Shifts",
       "organization": "Seattle Humane",
       "description": "Two volunteer pathways for teens at Seattle Humane (Bellevue, WA). The Humane Teen Club (ages 13-17) meets two Saturdays per month during the school year to learn shelter operations and animal-welfare topics; graduates are eligible for select volunteer roles including summer opportunities. High School Service Shifts let students entering grades 9-12 earn community-service hours by washing food/water bowls, cleaning transfer crates, and packing pet food.",
       "scope": "state",
@@ -2325,7 +2329,7 @@
     {
       "name": "EarthCorps Volunteer Restoration Events",
       "organization": "EarthCorps",
-      "description": "EarthCorps runs habitat-restoration volunteer events year-round across the Salish Sea region — Seattle, Burien, Tukwila, Tacoma, and Everett — engaging roughly 10,000 youth and community volunteers per year. Tasks include removing invasive English Ivy and Himalayan Blackberry, planting native trees and shrubs, and spreading mulch. Open to all ages; volunteers under 14 must be accompanied by an adult.",
+      "description": "EarthCorps runs habitat-restoration volunteer events year-round across the Salish Sea region \u2014 Seattle, Burien, Tukwila, Tacoma, and Everett \u2014 engaging roughly 10,000 youth and community volunteers per year. Tasks include removing invasive English Ivy and Himalayan Blackberry, planting native trees and shrubs, and spreading mulch. Open to all ages; volunteers under 14 must be accompanied by an adult.",
       "scope": "state",
       "states": [
         "WA"
@@ -2352,7 +2356,7 @@
       "_verifiedDate": "2026-04-26"
     },
     {
-      "name": "Treehouse for Kids — Volunteer & Treehouse Store",
+      "name": "Treehouse for Kids \u2014 Volunteer & Treehouse Store",
       "organization": "Treehouse",
       "description": "Treehouse (founded 1988) is the only Washington nonprofit focused exclusively on the educational, material, and financial needs of youth in foster care, serving more than 7,000 youth across the state each year. Volunteer roles include sorting donations and assisting at the Treehouse Store in Seattle (which provides free clothing and school supplies to foster youth) and supporting events. Shifts are open to youth age 12 and older; volunteers age 16+ can volunteer on their own.",
       "scope": "state",
@@ -2378,6 +2382,125 @@
       "collegeAppValue": "high",
       "howToStart": "Sign up via treehouseforkids.org/take-action/volunteer or email volunteer@treehouseforkids.org to be added to the waitlist. Treehouse Store is at 2100 24th Ave S, Seattle.",
       "_source": "https://www.treehouseforkids.org/take-action/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Hopelink Volunteer (Eastside / North & East King County)",
+      "organization": "Hopelink",
+      "description": "Largest non-profit in north and east King County since 1971, operating food markets, weekly community dinners, gleaning, food rescue, and home delivery for low-income clients across Bellevue, Kirkland, Redmond, Shoreline and Sno-Valley. In 2025 over 2,000 volunteers donated 61,730 hours. Volunteer roles include warehouse sorting, market shopping support, weekly Avondale Park dinners, gleaning at local farms, and home delivery.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness",
+        "seniors"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food security operations",
+        "logistics",
+        "community outreach",
+        "client service"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit the online volunteer application at hopelink.org/ways-to-help/volunteer/, complete a Washington State Patrol background check, then attend a virtual New Volunteer Orientation. Minimum age 16; some roles 18+. Group volunteering also available.",
+      "_source": "https://www.hopelink.org/ways-to-help/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Seattle Aquarium Youth Ocean Advocates (YOA)",
+      "organization": "Seattle Aquarium",
+      "description": "Teen volunteer and advocacy program running continuously since 1994, with over 2,500 alumni and ~140 active teen volunteers from across the Puget Sound region. Two tiers: YOA Tides (newsletter + monthly digital meet-ups, open to any high school-aged person) and YOA Currents (hands-on interpreters at the Aquarium with access to behind-the-scenes trainings, marine science classes, and policy advocacy including Olympia Lobby Day for plastics legislation).",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "environment",
+        "education",
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "monthly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "marine science literacy",
+        "public interpretation",
+        "advocacy and lobbying",
+        "environmental policy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit interest form at seattleaquarium.org/act-for-the-ocean/volunteer/youth-ocean-advocates/. Summer cohort interest opens in January; school-year cohort opens in May. Applicants must be in grades 9-12 (high school, Running Start, GED, or homeschool). Attend an info session, then complete an application and interview. Currents tier requires a minimum of 8 volunteer activities (3-5 hours each).",
+      "_source": "https://www.seattleaquarium.org/act-for-the-ocean/volunteer/youth-ocean-advocates/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "KCLS Teen Volunteer Program (TVP) & Teen Advisory Boards",
+      "organization": "King County Library System",
+      "description": "Teen-led KCLS program operating since June 2020 across King County's library network (50+ branches including Bellevue, Redmond, Issaquah, Kent, Auburn, Federal Way). The Teen Volunteer Program empowers teens to plan, create, and lead online and in-branch events and workshops for kids, teens, and families \u2014 earning community service hours and leadership experience. Teen Advisory Boards meet regularly with a librarian facilitator to co-design library programming. Branch-level teen volunteer roles are available at most KCLS locations.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "education",
+        "leadership",
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "program design",
+        "event planning",
+        "peer leadership",
+        "community engagement"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Fill out the TVP Interest Form at kcls.org/news/teen-volunteer-program-tvp/ or contact a teen services librarian at any branch. Teen Advisory Boards are also available at most branches. Most Teen Advisory Boards are open to high schoolers; some accept middle schoolers. Volunteers logging 10+ hours in 6 months may request reference letters.",
+      "_source": "https://kcls.org/news/teen-volunteer-program-tvp/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Washington Trails Association Volunteer Trail Work Parties",
+      "organization": "Washington Trails Association (WTA)",
+      "description": "Largest state-based hiking advocacy and trail-stewardship organization in the U.S., founded in 1966. WTA's volunteer trail crews log 100,000+ hours per year repairing and maintaining hundreds of miles of public trails across Washington \u2014 Mount Rainier, North Cascades, Olympic peninsula, Issaquah Alps, Tiger Mountain, Capitol Forest, and dozens more. Single-day work parties, week-long Backcountry Response Teams, and Youth Volunteer Vacations.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "environment"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "trail construction & maintenance",
+        "outdoor leadership",
+        "environmental stewardship",
+        "physical labor / tool use"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Browse and register for a work party at wta.org/volunteer. Volunteers must be 10+; under 14 must be accompanied by a registered adult, and all under-18 volunteers must be signed in by a parent or guardian. Wear sturdy closed-toe shoes and long pants \u2014 bring your own lunch. WTA provides tools, training, and a free day-use pass.",
+      "_source": "https://www.wta.org/get-involved/volunteer/questions",
       "_verified": true,
       "_verifiedDate": "2026-04-26"
     }
