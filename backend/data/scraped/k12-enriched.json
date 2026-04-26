@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T03:34:57Z",
-    "count": 16,
+    "lastUpdated": "2026-04-26T03:45:06.089Z",
+    "count": 24,
     "source": "NCES + verified web sources",
     "note": "Bootstrapped run 1: raw NCES dump not yet present at backend/data/scraped/k12-national/. Schools enriched via direct manual web research."
   },
@@ -498,6 +498,438 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5307710&ID=530771001138",
         "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/ballard-high-school-21145"
       ]
+    },
+    {
+      "ncessch": "530771001262",
+      "name": "West Seattle High School",
+      "state": "WA",
+      "city": "Seattle",
+      "level": "high",
+      "address": {
+        "street": "3000 California Ave SW",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98116-3302"
+      },
+      "county": "King County",
+      "locale": "City, Large",
+      "district": "Seattle School District No. 1",
+      "districtNcesId": "5307710",
+      "phone": "(206) 252-8800",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://westseattlehs.seattleschools.org",
+      "principal": "Brian Vance",
+      "enrollment": 1479,
+      "studentTeacherRatio": 22.58,
+      "teachersFte": 65.49,
+      "enrollmentByGrade": {
+        "9": 365,
+        "10": 377,
+        "11": 362,
+        "12": 375
+      },
+      "enrollmentByGender": {
+        "male": 812,
+        "female": 650
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 8,
+        "asian": 63,
+        "black": 68,
+        "hispanic": 183,
+        "white": 946,
+        "nativeHawaiianPacificIslander": 5,
+        "twoOrMoreRaces": 189,
+        "freeLunchEligible": 220,
+        "reducedPriceLunchEligible": 52,
+        "freeReducedLunchTotal": 272
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530771001262",
+        "https://westseattlehs.seattleschools.org/"
+      ]
+    },
+    {
+      "ncessch": "530771001168",
+      "name": "Franklin High School",
+      "state": "WA",
+      "city": "Seattle",
+      "level": "high",
+      "address": {
+        "street": "3013 S Mt Baker Blvd",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98144-6139"
+      },
+      "county": "King County",
+      "locale": "City, Large",
+      "district": "Seattle School District No. 1",
+      "districtNcesId": "5307710",
+      "phone": "(206) 252-6150",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://franklinhs.seattleschools.org",
+      "principal": "Jennifer Wiley",
+      "enrollment": 1277,
+      "studentTeacherRatio": 19.62,
+      "teachersFte": 65.1,
+      "enrollmentByGrade": {
+        "9": 288,
+        "10": 300,
+        "11": 287,
+        "12": 402
+      },
+      "enrollmentByGender": {
+        "male": 639,
+        "female": 629
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 3,
+        "asian": 310,
+        "black": 336,
+        "hispanic": 308,
+        "white": 205,
+        "nativeHawaiianPacificIslander": 9,
+        "twoOrMoreRaces": 97,
+        "freeLunchEligible": 588,
+        "reducedPriceLunchEligible": 143,
+        "freeReducedLunchTotal": 731
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530771001168",
+        "https://franklinhs.seattleschools.org/"
+      ]
+    },
+    {
+      "ncessch": "530771003719",
+      "name": "Lincoln High School",
+      "state": "WA",
+      "city": "Seattle",
+      "level": "high",
+      "address": {
+        "street": "4400 Interlake Ave N",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98103-7519"
+      },
+      "county": "King County",
+      "locale": "City, Large",
+      "district": "Seattle School District No. 1",
+      "districtNcesId": "5307710",
+      "phone": "(206) 413-2500",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://lincolnhs.seattleschools.org",
+      "principal": "Corey Eichner",
+      "enrollment": 1770,
+      "studentTeacherRatio": 23.2,
+      "teachersFte": 76.3,
+      "enrollmentByGrade": {
+        "9": 427,
+        "10": 448,
+        "11": 483,
+        "12": 412
+      },
+      "enrollmentByGender": {
+        "male": 988,
+        "female": 744
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 4,
+        "asian": 199,
+        "black": 57,
+        "hispanic": 176,
+        "white": 1010,
+        "nativeHawaiianPacificIslander": 3,
+        "twoOrMoreRaces": 283,
+        "freeLunchEligible": 159,
+        "reducedPriceLunchEligible": 46,
+        "freeReducedLunchTotal": 205
+      },
+      "notablePrograms": [
+        "Project-Based Learning"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530771003719",
+        "https://lincolnhs.seattleschools.org/"
+      ]
+    },
+    {
+      "ncessch": "530771001222",
+      "name": "Nathan Hale High School",
+      "state": "WA",
+      "city": "Seattle",
+      "level": "high",
+      "address": {
+        "street": "10750 30th Ave NE",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98125-7937"
+      },
+      "county": "King County",
+      "locale": "City, Large",
+      "district": "Seattle School District No. 1",
+      "districtNcesId": "5307710",
+      "phone": "(206) 252-3680",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://halehs.seattleschools.org",
+      "principal": "Jolene Grimes Edwards",
+      "enrollment": 1052,
+      "studentTeacherRatio": 20.19,
+      "teachersFte": 52.1,
+      "enrollmentByGrade": {
+        "9": 218,
+        "10": 267,
+        "11": 291,
+        "12": 276
+      },
+      "enrollmentByGender": {
+        "male": 549,
+        "female": 472
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 10,
+        "asian": 99,
+        "black": 122,
+        "hispanic": 195,
+        "white": 472,
+        "nativeHawaiianPacificIslander": 7,
+        "twoOrMoreRaces": 116,
+        "freeLunchEligible": 344,
+        "reducedPriceLunchEligible": 64,
+        "freeReducedLunchTotal": 408
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530771001222",
+        "https://halehs.seattleschools.org/"
+      ]
+    },
+    {
+      "ncessch": "530591000876",
+      "name": "Bothell High School",
+      "state": "WA",
+      "city": "Bothell",
+      "level": "high",
+      "address": {
+        "street": "9130 NE 180th St",
+        "city": "Bothell",
+        "state": "WA",
+        "zip": "98011-3360"
+      },
+      "county": "King County",
+      "locale": "Suburban, Large",
+      "district": "Northshore School District",
+      "districtNcesId": "5305910",
+      "phone": "(425) 408-7000",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://bothell.nsd.org",
+      "enrollment": 1740,
+      "studentTeacherRatio": 20.11,
+      "teachersFte": 86.51,
+      "enrollmentByGrade": {
+        "9": 452,
+        "10": 423,
+        "11": 450,
+        "12": 415
+      },
+      "enrollmentByGender": {
+        "male": 928,
+        "female": 800
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 1,
+        "asian": 304,
+        "black": 51,
+        "hispanic": 260,
+        "white": 892,
+        "nativeHawaiianPacificIslander": 8,
+        "twoOrMoreRaces": 212,
+        "freeLunchEligible": 283,
+        "reducedPriceLunchEligible": 122,
+        "freeReducedLunchTotal": 405
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5305910&ID=530591000876"
+      ],
+      "_notes": "Principal field omitted; leadership in transition during 2024-25/2025-26 (multiple changes reported), cannot verify from a single authoritative fetched page."
+    },
+    {
+      "ncessch": "530591003617",
+      "name": "North Creek High School",
+      "state": "WA",
+      "city": "Bothell",
+      "level": "high",
+      "address": {
+        "street": "3613 191st Pl SE",
+        "city": "Bothell",
+        "state": "WA",
+        "zip": "98012"
+      },
+      "county": "Snohomish County",
+      "locale": "Suburban, Large",
+      "district": "Northshore School District",
+      "districtNcesId": "5305910",
+      "phone": "(425) 408-8800",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://northcreek.nsd.org",
+      "enrollment": 1910,
+      "studentTeacherRatio": 21.97,
+      "teachersFte": 86.93,
+      "enrollmentByGrade": {
+        "9": 489,
+        "10": 511,
+        "11": 490,
+        "12": 420
+      },
+      "enrollmentByGender": {
+        "male": 948,
+        "female": 952
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 1,
+        "asian": 890,
+        "black": 61,
+        "hispanic": 229,
+        "white": 563,
+        "nativeHawaiianPacificIslander": 5,
+        "twoOrMoreRaces": 151,
+        "freeLunchEligible": 267,
+        "reducedPriceLunchEligible": 117,
+        "freeReducedLunchTotal": 384
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530591003617"
+      ],
+      "_notes": "Principal field omitted; public reporting indicates leadership transition during 2025, cannot pin to one verifiable page."
+    },
+    {
+      "ncessch": "530591001994",
+      "name": "Woodinville High School",
+      "state": "WA",
+      "city": "Woodinville",
+      "level": "high",
+      "address": {
+        "street": "19819 136th Ave NE",
+        "city": "Woodinville",
+        "state": "WA",
+        "zip": "98072-8775"
+      },
+      "county": "King County",
+      "locale": "Suburban, Large",
+      "district": "Northshore School District",
+      "districtNcesId": "5305910",
+      "phone": "(425) 408-7400",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://woodinville.nsd.org",
+      "principal": "Kurt Criscione",
+      "enrollment": 1662,
+      "studentTeacherRatio": 21.83,
+      "teachersFte": 76.13,
+      "enrollmentByGrade": {
+        "9": 407,
+        "10": 415,
+        "11": 413,
+        "12": 427
+      },
+      "enrollmentByGender": {
+        "male": 872,
+        "female": 781
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 1,
+        "asian": 218,
+        "black": 25,
+        "hispanic": 198,
+        "white": 1052,
+        "nativeHawaiianPacificIslander": 3,
+        "twoOrMoreRaces": 156,
+        "freeLunchEligible": 169,
+        "reducedPriceLunchEligible": 74,
+        "freeReducedLunchTotal": 243
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530591001994",
+        "https://resources.finalsite.net/images/v1726678087/nsdorg/s7n2clucjdfu4uzrwvdb/WHSSchoolProfileSchool2024-2025.pdf"
+      ]
+    },
+    {
+      "ncessch": "530267001726",
+      "name": "Henry M. Jackson High School",
+      "state": "WA",
+      "city": "Mill Creek",
+      "level": "high",
+      "address": {
+        "street": "1508 136th St SE",
+        "city": "Mill Creek",
+        "state": "WA",
+        "zip": "98012-5310"
+      },
+      "county": "Snohomish County",
+      "locale": "Suburban, Large",
+      "district": "Everett School District",
+      "districtNcesId": "5302670",
+      "phone": "(425) 385-7000",
+      "type": "Regular school",
+      "charter": false,
+      "gradeSpan": "9-12",
+      "website": "https://jacksonhs.everettsd.org",
+      "enrollment": 2148,
+      "studentTeacherRatio": 23.88,
+      "teachersFte": 89.94,
+      "enrollmentByGrade": {
+        "9": 562,
+        "10": 545,
+        "11": 541,
+        "12": 500
+      },
+      "enrollmentByGender": {
+        "male": 1091,
+        "female": 1048
+      },
+      "demographics": {
+        "americanIndianAlaskaNative": 5,
+        "asian": 680,
+        "black": 80,
+        "hispanic": 314,
+        "white": 835,
+        "nativeHawaiianPacificIslander": 9,
+        "twoOrMoreRaces": 216,
+        "freeLunchEligible": 409,
+        "reducedPriceLunchEligible": 139,
+        "freeReducedLunchTotal": 548
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5302670&ID=530267001726"
+      ],
+      "_notes": "Principal field omitted; the everettsd.org/domain/2251 principals-message page returned 404 this run, no other authoritative page was fetched."
     }
   ]
 }

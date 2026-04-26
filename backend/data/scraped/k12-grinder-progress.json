@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-04-26T03:34:57Z",
-  "totalRuns": 2,
-  "totalEnriched": 16,
+  "lastRun": "2026-04-26T03:45:06.089Z",
+  "totalRuns": 3,
+  "totalEnriched": 24,
   "totalSkipped": 0,
-  "notes": "Run 2: continued manual research of priority WA Seattle-metro high schools (raw NCES dump at backend/data/scraped/k12-national/ still does not exist). Added Mercer Island, Eastlake, Mount Si, Tahoma, Interlake, Redmond, Inglemoor, Ballard. Bringing WA high total to 16. Future runs should populate the raw NCES dump or continue manual.",
+  "notes": "Run 3: enriched 8 more WA high schools (W Seattle, Franklin, Lincoln, Nathan Hale, Bothell, North Creek, Woodinville, Henry M. Jackson). All NCES CCD 2024-25 base data verified from directly-fetched detail pages. Cumulative WA high enriched: 24.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 16,
+      "offset": 24,
       "total": null,
       "status": "in_progress",
       "note": "manual research mode (raw NCES dump still missing); offset = cumulative count enriched"
