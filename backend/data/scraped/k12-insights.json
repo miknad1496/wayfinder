@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "audience": "K-12 parents",
+    "lastUpdated": "2026-04-26",
+    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention."
+  },
+  "sections": [
+    {
+      "id": "district-mechanics",
+      "title": "District mechanics most parents don't know",
+      "icon": "🏫",
+      "items": [
+        { "label": "Within-district transfer windows are short", "detail": "Most public districts have a fixed transfer-request window in winter (Jan-Feb typically). After that, switching schools mid-year requires hardship documentation. Plan ahead if your kid's assigned school isn't a fit." },
+        { "label": "Magnet/option-school lottery odds vary by sibling priority", "detail": "Bellevue's Spanish Immersion at Stevenson and Lake Washington's Mandarin programs both heavily favor sibling preference. First-child-in-family entry can be 5-15% acceptance; sibling backfill rate is 80%+. If you have multiple kids, getting the first one in is the high-leverage move." },
+        { "label": "Principal turnover affects program continuity", "detail": "AP/IB programs often shrink or expand based on the principal's priorities. Check the school's most recent 3 years of AP course offerings on the state report card — declining lists are a yellow flag, regardless of the school's overall reputation." }
+      ]
+    },
+    {
+      "id": "ap-ib-realities",
+      "title": "AP / IB scheduling realities",
+      "icon": "📚",
+      "items": [
+        { "label": "AP course count != AP access", "detail": "A school with 18 AP courses listed often has only 8-10 actually offered in any given year (insufficient enrollment cancels sections). Ask the counseling office: 'How many AP sections actually ran last year and which?' That's the real number." },
+        { "label": "AP weighting depends on school policy, not transcript", "detail": "GPA boost for APs varies by school — some weight all APs equally, others only weight 'core' APs. UC GPA recalculation only weights up to 8 semesters of AP/honors. Ask before assuming a 5.0 boost on every AP." },
+        { "label": "IB Diploma programs require sustained 11-12 commitment", "detail": "IB Diploma can't be partial — you commit junior year and finish senior year. Switching out mid-program means losing IB credit but staying for the courses. Worth confirming the school has a robust IB advising track." }
+      ]
+    },
+    {
+      "id": "out-of-district-paths",
+      "title": "Out-of-district + private school transfer paths",
+      "icon": "🚪",
+      "items": [
+        { "label": "Choice transfer + tuition options exist for non-resident families", "detail": "Most WA districts accept choice transfers from out-of-district families, sometimes with tuition. Bellevue, Lake Washington, and Mercer Island all run modest-tuition non-resident programs that bypass residential requirements. Apply by Feb 1 typically." },
+        { "label": "Top private schools' financial aid is more generous than published", "detail": "Lakeside, Bush, and Seattle Academy all publish 'avg aid award' numbers but the reality is often higher for families under $200K household income. Apply even if the sticker shock seems extreme — actual cost can be 30-60% of list." },
+        { "label": "Public school open enrollment wave 2 (May-June)", "detail": "Districts often open a second enrollment wave for late-decided families after the main March deadline. Check the district website in mid-May — fewer parents apply, popular programs sometimes have spots." }
+      ]
+    },
+    {
+      "id": "specialty-programs-access",
+      "title": "Specialty program access tricks",
+      "icon": "🎯",
+      "items": [
+        { "label": "STEM magnet entry timing varies by district", "detail": "Tesla STEM HS (Lake Washington) requires application from 8th grade fall — most parents discover it too late. Bellevue's Big Picture (project-based learning) entry is by lottery from any 8th grader in the district." },
+        { "label": "Highly Capable / Hi-Cap programs have non-obvious entry ramps", "detail": "Most WA districts assess Hi-Cap eligibility via cognitive testing in 1st-3rd grade. If your kid wasn't tested then, request testing at any grade level — the family request is sufficient. Don't wait for the school to flag the kid." },
+        { "label": "Running Start at WA community colleges", "detail": "11th-12th graders can take community college classes free during the school day, earning HS + college credit simultaneously. State-funded. Application happens in 10th grade spring. Worth knowing for ambitious students who max out HS courses early." }
+      ]
+    },
+    {
+      "id": "data-quality-flags",
+      "title": "Data quality flags — context for school ratings",
+      "icon": "⚠️",
+      "items": [
+        { "label": "US News ranking != actual school quality", "detail": "US News K-12 rankings heavily weight AP participation rate + AP exam pass rate. Schools with lower-income demographics often rank lower despite excellent teaching, simply because fewer students take APs. Use the rank as one signal, not the signal." },
+        { "label": "Niche.com ratings include parent reviews", "detail": "Niche reviews skew toward parents motivated to leave a review — usually either very happy or very unhappy. Read the full text, not just the star rating." },
+        { "label": "Title I status doesn't mean low quality", "detail": "Title I is a federal funding designation for schools serving lower-income students. Many Title I schools have excellent teaching, smaller class sizes (due to funding), and additional support staff. Don't filter them out reflexively." }
+      ]
+    },
+    {
+      "id": "field-notes",
+      "title": "From the field — fresh insider notes (auto-discovered)",
+      "icon": "🔍",
+      "items": [
+        { "label": "Live grinder discoveries appear here", "detail": "When the K12 enrichment grinder uncovers a non-obvious parent insight while researching schools (principal-led program changes, magnet program quirks, hidden transfer paths, rating quirks, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top." }
+      ]
+    }
+  ]
+}

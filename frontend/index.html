@@ -1464,6 +1464,7 @@
             <button id="volunteerTabStrategy" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Build My Strategy</button>
             <button id="volunteerTabDiscover" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Discover Local</button>
             <button id="volunteerTabMyService" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">My Service</button>
+            <button id="volunteerTabInsights" class="tool-tab" style="padding:10px 16px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Insights</button>
           </div>
 
           <!-- BROWSE PANEL -->
@@ -1581,6 +1582,12 @@
             </div>
           </div>
 
+          <!-- INSIGHTS PANEL -->
+          <div id="volunteerInsightsPanel" style="display:none;">
+            <p class="form-subtitle" style="margin:8px 0 14px;">Insider volunteer insights — what AOs really look for, hidden leadership pathways, scholarship-linked service, what NOT to do.</p>
+            <div id="volunteerInsightsContent"><p style="color:#94a3b8;padding:12px;">Loading...</p></div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1594,26 +1601,37 @@
           <p class="form-subtitle">Search public + private K-12 schools nationwide. Enriched detail (principal, enrollment, AP/IB, ratings) is strongest in WA right now — expanding state-by-state. All 50 states show real schools.</p>
         </div>
 
-        <div class="tool-filters" id="k12Filters">
-          <select id="k12State" class="tool-filter-select"></select>
-          <select id="k12Level" class="tool-filter-select">
-            <option value="high">High School</option>
-            <option value="middle">Middle School</option>
-            <option value="elementary">Elementary</option>
-          </select>
-          <input type="text" id="k12District" class="tool-filter-input" placeholder="District (optional)" />
-          <select id="k12Filter" class="tool-filter-select">
-            <option value="">No extra filter</option>
-            <option value="hasAP">Has AP courses</option>
-            <option value="ibProgram">Has IB program</option>
-            <option value="magnetProgram">Magnet/STEM school</option>
-            <option value="enrichedOnly">Enriched data only</option>
-          </select>
-          <input type="text" id="k12Search" class="tool-filter-search" placeholder="Search school name / city">
-          <button id="k12SearchBtn" class="form-btn form-btn-sm">Search</button>
+        <div class="tool-tabs" style="display:flex;gap:4px;margin-bottom:14px;border-bottom:1px solid #e5e7eb;">
+          <button id="k12TabBrowse" class="k12-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid #2563eb;color:#1e3a8a;font-weight:600;cursor:pointer;">Browse Schools</button>
+          <button id="k12TabInsights" class="k12-tab" style="padding:10px 14px;border:0;background:none;border-bottom:2px solid transparent;color:#59636e;font-weight:600;cursor:pointer;">Insights & Hacks</button>
         </div>
 
-        <div id="k12Results" class="tool-results"></div>
+        <div id="k12BrowsePanel">
+          <div class="tool-filters" id="k12Filters">
+            <select id="k12State" class="tool-filter-select"></select>
+            <select id="k12Level" class="tool-filter-select">
+              <option value="high">High School</option>
+              <option value="middle">Middle School</option>
+              <option value="elementary">Elementary</option>
+            </select>
+            <input type="text" id="k12District" class="tool-filter-input" placeholder="District (optional)" />
+            <select id="k12Filter" class="tool-filter-select">
+              <option value="">No extra filter</option>
+              <option value="hasAP">Has AP courses</option>
+              <option value="ibProgram">Has IB program</option>
+              <option value="magnetProgram">Magnet/STEM school</option>
+              <option value="enrichedOnly">Enriched data only</option>
+            </select>
+            <input type="text" id="k12Search" class="tool-filter-search" placeholder="Search school name / city">
+            <button id="k12SearchBtn" class="form-btn form-btn-sm">Search</button>
+          </div>
+          <div id="k12Results" class="tool-results"></div>
+        </div>
+
+        <div id="k12InsightsPanel" style="display:none;">
+          <p class="form-subtitle" style="margin:8px 0 14px;">Insider K-12 insights — district mechanics, magnet/IB access tricks, AP scheduling realities, transfer paths, and ratings context.</p>
+          <div id="k12InsightsContent"><p style="color:#94a3b8;padding:12px;">Loading...</p></div>
+        </div>
       </div>
     </div>
 

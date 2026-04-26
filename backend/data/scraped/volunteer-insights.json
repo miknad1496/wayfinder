@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "audience": "High school students + parents planning service hours",
+    "lastUpdated": "2026-04-26",
+    "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance."
+  },
+  "sections": [
+    {
+      "id": "what-ao-looks-for",
+      "title": "What admissions officers actually look for in service",
+      "icon": "🎯",
+      "items": [
+        { "label": "Sustained > sporadic, by a lot", "detail": "AOs at HYPSM-tier schools have repeatedly published that 200 hours at one organization beats 200 hours across 5 organizations. Demonstrates commitment, growth, and depth of impact. Pick one or two and stay 3-4 years." },
+        { "label": "Leadership growth beats hour count", "detail": "Moving from volunteer → committee member → coordinator → board liaison over 4 years tells a story. 500 hours of unchanged volunteer role tells a different story. Story matters more than count." },
+        { "label": "Don't pad the activity list", "detail": "Common App allows 10 activities. AOs see padded lists and discount the depth of every entry. Better to list 5 substantive activities than 10 light ones." }
+      ]
+    },
+    {
+      "id": "hidden-leadership-paths",
+      "title": "Hidden leadership pathways",
+      "icon": "🪜",
+      "items": [
+        { "label": "CIT pipeline at major camps", "detail": "YMCA, Camp Fire, BGCA all have Counselor-In-Training programs for ages 13-15. Free or discounted attendance + leadership training. Apply year before turning 14. Often leads to paid junior counselor role at 16-17 — a strong work + leadership signal." },
+        { "label": "Hospital 'Junior Volunteer Leadership Council'", "detail": "Most major hospitals' Junior Volunteer programs have an internal leadership track — student board, peer mentor program, etc. Self-nominate after 6 months as regular volunteer. Way fewer applicants than the regular junior volunteer pool." },
+        { "label": "Local nonprofit board student seat", "detail": "Many small-to-mid nonprofits have a 'student member' seat on their board, often unfilled. Email the executive director directly with a brief proposal. Boards under 15 members often welcome the youth perspective." }
+      ]
+    },
+    {
+      "id": "scholarship-linked-service",
+      "title": "Scholarship-linked service (real money)",
+      "icon": "💰",
+      "items": [
+        { "label": "Bonner Scholars Program", "detail": "60+ colleges offer the Bonner Scholarship — full or partial tuition in exchange for service commitment during college. Apply during senior-year college applications. Demonstrates pre-college service commitment is the eligibility differentiator." },
+        { "label": "Coca-Cola Scholars Foundation", "detail": "150 students/year, $20K each. Service is one of three pillars (leadership + academics + service). Application opens August of senior year. Sustained multi-year service is the differentiator vs episodic." },
+        { "label": "AmeriCorps Education Award", "detail": "Year-long full-time service after HS = ~$7K toward college. Stack with Pell Grant + state aid. City Year (year-long teaching support) is the highest-prestige program in the network." }
+      ]
+    },
+    {
+      "id": "voluntourism-warnings",
+      "title": "What NOT to do (voluntourism + checkbox traps)",
+      "icon": "🚫",
+      "items": [
+        { "label": "International 'mission trip' service is heavily discounted by AOs", "detail": "Two weeks building a school in another country reads as expensive tourism. AOs explicitly devalue these unless the family has a sustained connection to the community. If you must do international service, do it through year-round partnership orgs that serve via virtual mentorship + occasional in-person visits, not 1-2 week trips." },
+        { "label": "'Service hour' graduation requirements don't impress", "detail": "Most HS districts require 40-100 service hours to graduate. Meeting this minimum is invisible. Doubling it without a clear story is also invisible. Triple it AND have growth + impact and now you have something." },
+        { "label": "Avoid 'starting your own nonprofit' unless you really mean it", "detail": "AOs have seen 50,000 student-founded nonprofits. The ones that move the needle have real 501(c)(3) status, sustained 3+ year operating history, audited finances, and measurable impact. Most student nonprofits don't meet this bar — and AOs can tell from the application." }
+      ]
+    },
+    {
+      "id": "field-notes",
+      "title": "From the field — fresh insider notes (auto-discovered)",
+      "icon": "🔍",
+      "items": [
+        { "label": "Live grinder discoveries appear here", "detail": "When the volunteer grinder uncovers a non-obvious insight while researching new programs (hidden leadership tracks, scholarship pathways, registration quirks, age-flexibility, real time commitment vs. stated, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top." }
+      ]
+    }
+  ]
+}

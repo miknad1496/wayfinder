@@ -4907,6 +4907,7 @@ async function _volInit() {
   $('volunteerTabStrategy').addEventListener('click', () => _volSetTab('Strategy'));
   $('volunteerTabDiscover').addEventListener('click', () => _volSetTab('Discover'));
   $('volunteerTabMyService').addEventListener('click', () => { _volSetTab('MyService'); loadMyService(); });
+  $('volunteerTabInsights').addEventListener('click', () => { _volSetTab('Insights'); loadVolunteerInsights(); });
 
   // Strategy + Discover buttons
   $('volStrGenerate').addEventListener('click', runVolunteerStrategy);
@@ -4914,7 +4915,7 @@ async function _volInit() {
 }
 
 function _volSetTab(name) {
-  for (const t of ['Browse', 'Strategy', 'Discover', 'MyService']) {
+  for (const t of ['Browse', 'Strategy', 'Discover', 'MyService', 'Insights']) {
     const tab = $('volunteerTab' + t);
     const panel = $('volunteer' + t + 'Panel');
     if (t === name) {
@@ -5285,7 +5286,46 @@ async function openK12() {
   $('k12Modal').style.display = 'flex';
   _modalOpened('k12Modal');
   if (!_k12StatesLoaded) await _initK12();
+  // Tab listeners (one-time)
+  if (!$('k12TabBrowse').dataset.bound) {
+    $('k12TabBrowse').dataset.bound = '1';
+    $('k12TabBrowse').addEventListener('click', () => _k12SetTab('Browse'));
+    $('k12TabInsights').addEventListener('click', () => { _k12SetTab('Insights'); loadK12Insights(); });
+  }
+  _k12SetTab('Browse');
   searchK12();
+}
+
+function _k12SetTab(name) {
+  for (const t of ['Browse','Insights']) {
+    const tab = document.getElementById('k12Tab' + t);
+    const panel = document.getElementById('k12' + t + 'Panel');
+    if (t === name) {
+      tab.style.borderBottom = '2px solid #2563eb';
+      tab.style.color = '#1e3a8a';
+      if (panel) panel.style.display = '';
+    } else {
+      tab.style.borderBottom = '2px solid transparent';
+      tab.style.color = '#59636e';
+      if (panel) panel.style.display = 'none';
+    }
+  }
+}
+
+async function loadK12Insights() {
+  const c = $('k12InsightsContent');
+  if (c.dataset.loaded === 'yes') return;
+  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/k12/insights`);
+    const data = await res.json();
+    const sections = data.sections || [];
+    if (!sections.length) { c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Insights not yet loaded.</p>'; return; }
+    c.innerHTML = sections.map(_scInsightSectionHtml).join('');
+    c.dataset.loaded = 'yes';
+  } catch (e) {
+    c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
+  }
 }
 
 async function _initK12() {
@@ -5672,3 +5712,19 @@ document.addEventListener('click', (e) => {
   popup.style.left = Math.max(8, Math.min(window.innerWidth - 340, r.left + window.scrollX)) + 'px';
   popup.style.top = (r.bottom + window.scrollY + 6) + 'px';
 });
+
+async function loadVolunteerInsights() {
+  const c = document.getElementById('volunteerInsightsContent');
+  if (c.dataset.loaded === 'yes') return;
+  c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Loading...</p>';
+  try {
+    const res = await fetch(`${API_BASE}/volunteer/insights`);
+    const data = await res.json();
+    const sections = data.sections || [];
+    if (!sections.length) { c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Insights not yet loaded.</p>'; return; }
+    c.innerHTML = sections.map(_scInsightSectionHtml).join('');
+    c.dataset.loaded = 'yes';
+  } catch (e) {
+    c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
+  }
+}

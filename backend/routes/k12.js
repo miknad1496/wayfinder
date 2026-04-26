@@ -245,4 +245,19 @@ router.get('/zip/:zip', async (req, res) => {
   });
 });
 
+
+
+// GET /api/k12/insights — curated parent-facing K-12 insights (static + grinder-augmented)
+let _k12InsightsCache = null;
+router.get('/insights', (req, res) => {
+  if (_k12InsightsCache) return res.json(_k12InsightsCache);
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(SCRAPED, 'k12-insights.json'), 'utf8'));
+    _k12InsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
+    res.json(_k12InsightsCache);
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to load K12 insights: ' + e.message });
+  }
+});
+
 export default router;

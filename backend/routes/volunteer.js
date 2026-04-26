@@ -481,4 +481,20 @@ router.delete('/hours', async (req, res) => {
   }
 });
 
+
+
+// GET /api/volunteer/insights — curated insider volunteer insights
+let _volInsightsCache = null;
+router.get('/insights', (req, res) => {
+  if (_volInsightsCache) return res.json(_volInsightsCache);
+  try {
+    const insightsPath = path.join(__dirname, '..', 'data', 'scraped', 'volunteer-insights.json');
+    const data = JSON.parse(fs.readFileSync(insightsPath, 'utf8'));
+    _volInsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
+    res.json(_volInsightsCache);
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to load volunteer insights: ' + e.message });
+  }
+});
+
 export default router;
