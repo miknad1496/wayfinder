@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T04:13:16.010Z",
-    "count": 32,
+    "lastUpdated": "2026-04-26T04:43:25.918765Z",
+    "count": 35,
     "source": "NCES + verified web sources",
     "note": "Run 4: +8 WA high schools (Ingraham, Cleveland STEM, Chief Sealth, Rainier Beach, Juanita, Hazen, Kentridge, Edmonds-Woodway). Manual research mode (raw NCES dump still missing)."
   },
@@ -1172,6 +1172,177 @@
         "https://www.ibo.org/en/school/000874",
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5302400&SchoolPageNum=2&ID=530240002673",
         "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/edmonds-woodway-high-school-20842"
+      ]
+    },
+    {
+      "ncessch": "530015000016",
+      "name": "Anacortes High School",
+      "district": "Anacortes School District",
+      "city": "Anacortes",
+      "state": "WA",
+      "zip": "98221",
+      "latitude": 48.507401,
+      "longitude": -122.622583,
+      "phone": "(360)503-1300",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "enrollment": {
+        "total": 766,
+        "year": "2024-25"
+      },
+      "demographics": {
+        "white": 75,
+        "hispanic": 12,
+        "multiracial": 7,
+        "asian": 3,
+        "black": 2,
+        "americanIndian": 1,
+        "minorityTotal": 25,
+        "economicallyDisadvantaged": 27
+      },
+      "freeReducedLunch": 217,
+      "website": "https://www.asd103.org/ahs",
+      "principal": "Jon Ronngren",
+      "studentTeacherRatio": 20.0,
+      "apCourses": 9,
+      "ibProgram": false,
+      "magnetProgram": false,
+      "graduationRate": 98,
+      "rating": {
+        "source": "us_news",
+        "score": "Top 20%",
+        "scale": "WA #18",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/anacortes-school-district/anacortes-high-school-20711"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://www.asd103.org/ahs",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/anacortes-school-district/anacortes-high-school-20711",
+        "https://www.niche.com/k12/anacortes-high-school-anacortes-wa/",
+        "https://www.schooldigger.com/go/WA/schools/0015000016/school.aspx",
+        "https://www.publicschoolreview.com/anacortes-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530024000023",
+      "name": "Arlington High School",
+      "district": "Arlington School District",
+      "city": "Arlington",
+      "state": "WA",
+      "zip": "98223",
+      "latitude": 48.1662,
+      "longitude": -122.115,
+      "phone": "(360)618-6300",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "enrollment": {
+        "total": 1622,
+        "year": "2024-25"
+      },
+      "demographics": {
+        "minorityTotal": 30,
+        "freeReducedLunchPct": 38,
+        "freeLunchEligible": 617
+      },
+      "freeReducedLunch": 593,
+      "website": "https://ahs.asd.wednet.edu/",
+      "principal": null,
+      "studentTeacherRatio": 22.07,
+      "apCourses": 26,
+      "apParticipationRate": 11,
+      "ibProgram": false,
+      "magnetProgram": false,
+      "notablePrograms": [
+        "Advanced Placement (26 courses)",
+        "Project Lead The Way (PLTW)",
+        "Gifted & Talented"
+      ],
+      "graduationRate": 91,
+      "mathProficiency": 34,
+      "readingProficiency": 74,
+      "rating": {
+        "source": "us_news",
+        "score": "Top 50%",
+        "scale": "WA",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/arlington-school-district/arlington-high-school-20714"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://ahs.asd.wednet.edu/",
+        "https://www.asd.wednet.edu/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/arlington-school-district/arlington-high-school-20714",
+        "https://www.niche.com/k12/arlington-high-school-arlington-wa/",
+        "https://www.niche.com/k12/arlington-high-school-arlington-wa/academics/",
+        "https://www.schooldigger.com/go/WA/schools/0024000023/school.aspx",
+        "https://www.publicschoolreview.com/arlington-high-school-profile/98223"
+      ]
+    },
+    {
+      "ncessch": "530028000028",
+      "name": "Asotin Jr Sr High",
+      "district": "Asotin-Anatone School District",
+      "city": "ASOTIN",
+      "state": "WA",
+      "zip": "99402",
+      "latitude": 46.3402,
+      "longitude": -117.0518,
+      "phone": "(509)243-4151",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "enrollment": {
+        "total": 306,
+        "year": "2024-25",
+        "grades": "6-12"
+      },
+      "demographics": {
+        "white": 87,
+        "multiracial": 7,
+        "hispanic": 4,
+        "americanIndian": 1,
+        "asian": 1,
+        "minorityTotal": 13,
+        "economicallyDisadvantaged": 37.4
+      },
+      "freeReducedLunch": 108,
+      "website": "https://www.aasd.wednet.edu/33276_3",
+      "districtWebsite": "https://www.aasd.wednet.edu/",
+      "principal": null,
+      "studentTeacherRatio": 16.0,
+      "teachersFTE": 19,
+      "ibProgram": false,
+      "magnetProgram": false,
+      "graduationRate": 90,
+      "mathProficiency": 37,
+      "readingProficiency": 62,
+      "rating": {
+        "source": "us_news",
+        "score": "Top 50%",
+        "scale": "WA",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/asotin-anatone-school-district/asotin-junior-senior-high-school-20717"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://www.aasd.wednet.edu/",
+        "https://www.aasd.wednet.edu/33276_3",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/asotin-anatone-school-district/asotin-junior-senior-high-school-20717",
+        "https://www.niche.com/k12/asotin-junior-senior-high-school-asotin-wa/",
+        "https://www.publicschoolreview.com/asotin-jr-sr-high-school-profile",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300280&ID=530028000028"
       ]
     }
   ]
