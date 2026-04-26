@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T04:43:25.918765Z",
-  "totalRuns": 5,
-  "totalEnriched": 35,
-  "totalSkipped": 5,
-  "notes": "Run 5: enriched 3 WA high schools (Anacortes, Arlington, Asotin Jr Sr). Skipped 5 alternative/very-small schools at offsets 33,34,36,37,39. Advanced WA high offset 32 -> 40 (raw NCES dump now available, 649 total). Note: prior runs (1-4) used manual research mode without raw NCES \u2014 totalEnriched 'offset' is actually a cumulative count not raw-file index. Using raw-file offset starting this run.",
+  "lastRun": "2026-04-26T05:11:27Z",
+  "totalRuns": 6,
+  "totalEnriched": 39,
+  "totalSkipped": 9,
+  "notes": "Run 6: enriched 4 WA high (Auburn Senior, Auburn Riverside, Auburn Mountainview, WSSB). Skipped 4 alternative/specialty programs (Opportunity Project, LWIT Tech Academy, Open Doors, Youth Academy). Advanced WA high offset 40 -> 48.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 40,
+      "offset": 48,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset (40 of 649); prior 32 manual entries already in enriched.json"
+      "note": "raw NCES offset (48 of 649); prior 32 manual entries already in enriched.json"
     },
     {
       "state": "WA",

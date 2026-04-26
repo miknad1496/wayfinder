@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T04:43:25.918765Z",
-    "count": 35,
+    "lastUpdated": "2026-04-26T05:11:27Z",
+    "count": 39,
     "source": "NCES + verified web sources",
     "note": "Run 4: +8 WA high schools (Ingraham, Cleveland STEM, Chief Sealth, Rainier Beach, Juanita, Hazen, Kentridge, Edmonds-Woodway). Manual research mode (raw NCES dump still missing)."
   },
@@ -1343,6 +1343,183 @@
         "https://www.niche.com/k12/asotin-junior-senior-high-school-asotin-wa/",
         "https://www.publicschoolreview.com/asotin-jr-sr-high-school-profile",
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300280&ID=530028000028"
+      ]
+    },
+    {
+      "ncessch": "530030000032",
+      "name": "Auburn Senior High School",
+      "district": "Auburn School District",
+      "city": "AUBURN",
+      "state": "WA",
+      "zip": "98002",
+      "latitude": 47.309284,
+      "longitude": -122.220159,
+      "phone": "(253)931-4880",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 1935,
+      "demographics": {
+        "hispanic": 38.9,
+        "white": 23.9,
+        "asian": 9.8,
+        "black": 9.3,
+        "multiracial": 8.3,
+        "pacificIslander": 7.7,
+        "americanIndian": 2.1,
+        "minorityTotal": 76,
+        "freeReducedLunch": 65
+      },
+      "freeReducedLunch": 1232,
+      "website": "https://auburnhigh.auburn.wednet.edu/",
+      "principal": "Jon Aarstad",
+      "studentTeacherRatio": 19.0,
+      "apCourses": 12,
+      "apParticipation": 27,
+      "graduationRate": 79,
+      "mathProficiency": 18,
+      "readingProficiency": 51,
+      "scienceProficiency": 34,
+      "rating": {
+        "source": "us_news",
+        "rank_state": 214,
+        "rank_national": 11805,
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-senior-high-school-20719"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-senior-high-school-20719"
+      ]
+    },
+    {
+      "ncessch": "530030002445",
+      "name": "Auburn Riverside High School",
+      "district": "Auburn School District",
+      "city": "AUBURN",
+      "state": "WA",
+      "zip": "98092",
+      "latitude": 47.2678,
+      "longitude": -122.2222,
+      "phone": "(253)804-5154",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "enrollment": 1884,
+      "demographics": {
+        "white": 33.7,
+        "hispanic": 33.2,
+        "asian": 12.8,
+        "multiracial": 8.8,
+        "black": 6.2,
+        "pacificIslander": 4.5,
+        "americanIndian": 0.8,
+        "minorityTotal": 66,
+        "freeReducedLunch": 50
+      },
+      "freeReducedLunch": 961,
+      "website": "https://auburnriverside.auburn.wednet.edu/",
+      "principal": "Janalyn McKeehan",
+      "studentTeacherRatio": 21.0,
+      "apParticipation": 36,
+      "graduationRate": 92,
+      "mathProficiency": 26,
+      "readingProficiency": 60,
+      "scienceProficiency": 51,
+      "rating": {
+        "source": "us_news",
+        "rank_state": 120,
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-riverside-high-school-20720"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-riverside-high-school-20720"
+      ]
+    },
+    {
+      "ncessch": "530030002978",
+      "name": "Auburn Mountainview High School",
+      "district": "Auburn School District",
+      "city": "Auburn",
+      "state": "WA",
+      "zip": "98092",
+      "latitude": 47.341998,
+      "longitude": -122.171795,
+      "phone": "(253)804-4539",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 1611,
+      "demographics": {
+        "white": 36.1,
+        "hispanic": 27.0,
+        "asian": 16.6,
+        "black": 9.6,
+        "multiracial": 7.3,
+        "pacificIslander": 3.2,
+        "americanIndian": 0.2,
+        "minorityTotal": 64,
+        "freeReducedLunch": 60
+      },
+      "freeReducedLunch": 989,
+      "website": "https://auburnmountainview.auburn.wednet.edu/",
+      "principal": "Terri Herren",
+      "studentTeacherRatio": 20.0,
+      "apParticipation": 40,
+      "graduationRate": 90,
+      "mathProficiency": 25,
+      "readingProficiency": 62,
+      "scienceProficiency": 45,
+      "rating": {
+        "source": "us_news",
+        "rank_state": 96,
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-mountainview-high-school-20722"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.usnews.com/education/best-high-schools/washington/districts/auburn-school-district/auburn-mountainview-high-school-20722"
+      ]
+    },
+    {
+      "ncessch": "530031802385",
+      "name": "Washington State School for the Blind",
+      "district": "Office of the Governor (Sch for Blind)",
+      "city": "Vancouver",
+      "state": "WA",
+      "zip": "98661",
+      "latitude": 45.6307,
+      "longitude": -122.6476,
+      "phone": "(360)696-6321",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 58,
+      "demographics": {},
+      "freeReducedLunch": 21,
+      "website": "https://www.wssb.wa.gov/",
+      "principal": "Pam Parker (Interim Superintendent, 2025-26)",
+      "notablePrograms": [
+        "Specialized residential program for blind, low-vision, and deaf-blind students grades K-12; statewide outreach services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.wssb.wa.gov/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530031802385"
       ]
     }
   ]
