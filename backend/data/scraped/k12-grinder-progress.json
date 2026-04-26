@@ -1,0 +1,16 @@
+{
+  "lastRun": "2026-04-25T23:30:00Z",
+  "totalRuns": 1,
+  "totalEnriched": 8,
+  "totalSkipped": 0,
+  "notes": "Run 1 (bootstrap): The expected raw NCES dump at backend/data/scraped/k12-national/{STATE}_{level}.json did not exist. This run bootstrapped 8 verified WA high schools via direct manual web research (WebSearch on US News, Niche, Wikipedia, school websites, school profile PDFs, NCES public school search). Future runs should populate the raw NCES dump so the queue offset logic can be used as designed. Until then, future runs should keep manually researching priority WA/TX/CA/NY/MI schools.",
+  "queue": [
+    {"state":"WA","level":"high","offset":8,"total":null,"status":"in_progress","note":"bootstrapped 8 schools manually; offset is count enriched, not NCES file index"},
+    {"state":"WA","level":"middle","offset":0,"total":null,"status":"pending"},
+    {"state":"WA","level":"elementary","offset":0,"total":null,"status":"pending"},
+    {"state":"TX","level":"high","offset":0,"total":null,"status":"pending"},
+    {"state":"CA","level":"high","offset":0,"total":null,"status":"pending"},
+    {"state":"NY","level":"high","offset":0,"total":null,"status":"pending"},
+    {"state":"MI","level":"high","offset":0,"total":null,"status":"pending"}
+  ]
+}

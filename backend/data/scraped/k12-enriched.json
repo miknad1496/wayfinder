@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-04-25T23:30:00Z",
+    "count": 8,
+    "source": "NCES + verified web sources (US News, Niche, school websites, Wikipedia, NCES Public School Search, school profile PDFs)",
+    "note": "Bootstrapped run 1: raw NCES dump not yet present at backend/data/scraped/k12-national/. Schools enriched via direct manual web research."
+  },
+  "schools": [
+    {
+      "ncessch": "530039000060",
+      "name": "Bellevue High School",
+      "city": "Bellevue",
+      "state": "WA",
+      "district": "Bellevue School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://bellevuehigh.bsd405.org/",
+      "principal": "Dr. Victor J. Anderson",
+      "enrollment": 1632,
+      "demographics": {
+        "note": "See US News and Public School Review profile for breakdown"
+      },
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/bellevue-high-school-20732"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://bellevuehigh.bsd405.org/",
+        "https://www.publicschoolreview.com/bellevue-high-school-profile/98004",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/bellevue-high-school-20732",
+        "https://en.wikipedia.org/wiki/Bellevue_High_School_(Bellevue,_Washington)"
+      ]
+    },
+    {
+      "ncessch": "530039000078",
+      "name": "Newport Senior High School",
+      "city": "Bellevue",
+      "state": "WA",
+      "district": "Bellevue School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://newporthigh.bsd405.org/",
+      "principal": "Dion Yahoudy",
+      "enrollment": 1844,
+      "studentTeacherRatio": 21,
+      "apCourses": 27,
+      "demographics": {
+        "asian": 60.9,
+        "white": 19.1,
+        "multiracial": 10.4,
+        "minorityTotalPct": 78,
+        "freeReducedLunch": 16
+      },
+      "notablePrograms": ["Advanced Placement (27 courses)", "93% of students take 1+ AP classes"],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/newport-senior-high-school-20734"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://newporthigh.bsd405.org/counseling/grad-class-school-profile",
+        "https://resources.finalsite.net/images/v1729024621/bsd405org/fnnlqfeguwr4tuvagovd/2025-NHS-School-Profile.pdf",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/newport-senior-high-school-20734",
+        "https://en.wikipedia.org/wiki/Newport_High_School_(Bellevue,_Washington)"
+      ]
+    },
+    {
+      "ncessch": "530423003432",
+      "name": "Nikola Tesla STEM High School",
+      "city": "Redmond",
+      "state": "WA",
+      "district": "Lake Washington School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://teslastem.lwsd.org/",
+      "principal": "Amie Karkainen",
+      "enrollment": 605,
+      "magnetProgram": true,
+      "notablePrograms": ["STEM magnet (lottery admission)", "Project-based learning", "Industry mentorships"],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/nikola-tesla-stem-high-school-146690"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530423003432",
+        "https://resources.finalsite.net/images/v1761598177/lwsdorg/atyaaiymtcw6kpa2okok/TeslaSTEMSchoolProfile25-26FINAL_1.pdf",
+        "https://en.wikipedia.org/wiki/Tesla_STEM_High_School",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/nikola-tesla-stem-high-school-146690"
+      ]
+    },
+    {
+      "ncessch": "530771001239",
+      "name": "Roosevelt High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://roosevelths.seattleschools.org/",
+      "enrollment": 1528,
+      "demographics": {
+        "white": 62.6,
+        "multiracial": 14.3,
+        "hispanic": 8.5,
+        "asian": 7.5,
+        "black": 5.7,
+        "freeReducedLunch": 14.3,
+        "specialEducation": 11.5
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://roosevelths.seattleschools.org/about/",
+        "https://www.seattleschools.org/wp-content/uploads/sites/83/2025/09/RHS-Profile-ADA.pdf",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&ID=530771001239",
+        "https://en.wikipedia.org/wiki/Roosevelt_High_School_(Washington)"
+      ]
+    },
+    {
+      "ncessch": "530771001171",
+      "name": "Garfield High School",
+      "city": "Seattle",
+      "state": "WA",
+      "district": "Seattle Public Schools",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://garfieldhs.seattleschools.org/",
+      "enrollment": 1641,
+      "demographics": {
+        "minorityTotalPct": 64,
+        "freeReducedLunch": 39
+      },
+      "notablePrograms": ["Designated school for Highly Capable / academically highly gifted students", "AP Studio Art", "Calculus-based AP Physics"],
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://garfieldhs.seattleschools.org/",
+        "https://garfieldhs.seattleschools.org/resources/school-counseling/garfield-profile/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5307710&SchoolPageNum=2&ID=530771001171",
+        "https://en.wikipedia.org/wiki/Garfield_High_School_(Seattle)",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/seattle-public-schools/garfield-high-school-21149"
+      ]
+    },
+    {
+      "ncessch": "530375000574",
+      "name": "Issaquah High School",
+      "city": "Issaquah",
+      "state": "WA",
+      "district": "Issaquah School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://issaquahhigh.isd411.org/",
+      "enrollment": 2419,
+      "demographics": {
+        "white": 45.6,
+        "asian": 30,
+        "hispanic": 10.9,
+        "minorityTotalPct": 54,
+        "freeReducedLunch": 15
+      },
+      "notablePrograms": ["Wide AP catalog: AP Bio, Calc AB/BC, Chem, CompSci, Eng Lang, Env Sci, Euro Hist, Physics, Psych, Spanish Lang, Stats, US Gov"],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/issaquah-high-school-20920"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://issaquahhigh.isd411.org/our-school/school-profile",
+        "https://issaquahhigh.isd411.org/academics/annual-school-report",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/issaquah-high-school-20920",
+        "https://en.wikipedia.org/wiki/Issaquah_High_School"
+      ]
+    },
+    {
+      "ncessch": "530375002567",
+      "name": "Skyline High School",
+      "city": "Sammamish",
+      "state": "WA",
+      "district": "Issaquah School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://skyline.isd411.org/",
+      "principal": "Lisa Hechtman",
+      "enrollment": 2193,
+      "ibProgram": true,
+      "graduationRate": 98,
+      "demographics": {
+        "asian": 42,
+        "white": 38,
+        "multiracial": 10,
+        "hispanic": 8,
+        "black": 2,
+        "minorityTotalPct": 62,
+        "freeReducedLunch": 8
+      },
+      "notablePrograms": ["IB Diploma and IB Career-related Programme open to all juniors/seniors", "AP Calc AB", "AP Statistics", "AP CompSci Principles"],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/skyline-high-school-20925"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://skyline.isd411.org/our-school/school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/issaquah-school-district/skyline-high-school-20925",
+        "https://www.publicschoolreview.com/skyline-high-school-profile/98075",
+        "https://en.wikipedia.org/wiki/Skyline_High_School_(Washington)"
+      ]
+    },
+    {
+      "ncessch": "530423000674",
+      "name": "Lake Washington High School",
+      "city": "Kirkland",
+      "state": "WA",
+      "district": "Lake Washington School District",
+      "level": "high",
+      "grades": "9-12",
+      "website": "https://lwhs.lwsd.org/",
+      "enrollment": 2037,
+      "studentTeacherRatio": 21,
+      "demographics": {
+        "white": 49.9,
+        "asian": 24.3,
+        "hispanic": 12.3,
+        "minorityTotalPct": 48,
+        "freeReducedLunch": 15
+      },
+      "notablePrograms": ["Honors track", "AP courses", "University of Washington in the High School (dual credit)", "CTE Dual Credit"],
+      "rating": {
+        "source": "us_news",
+        "url": "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/lake-washington-high-school-20955"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-25",
+      "_sources": [
+        "https://lwhs.lwsd.org/about-us/school-profile",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-washington-school-district/lake-washington-high-school-20955",
+        "https://www.publicschoolreview.com/lake-washington-high-school-profile",
+        "https://en.wikipedia.org/wiki/Lake_Washington_High_School"
+      ]
+    }
+  ]
+}
