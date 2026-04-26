@@ -1,41 +1,380 @@
 {
-  "_meta": {
-    "purpose": "Hard-to-find, parent-facing insights on summer camps and enrichment programs — captured opportunistically during ESMS grinder runs.",
-    "createdBy": "wayfinder-esms-grinder",
-    "createdDate": "2026-04-26",
-    "schema": "sections[] each with id, title, items[] of {label, detail}",
+  "metadata": {
+    "audience": "K-8 parents",
     "lastUpdated": "2026-04-26",
-    "totalFieldNotes": 6
+    "purpose": "Real, genuine, thoughtful insights/hacks/strategies for parents planning summer + year-round enrichment for elementary and middle school kids.",
+    "insightCount": 74
   },
   "sections": [
     {
-      "id": "field-notes",
-      "title": "Field Notes — Hidden details from K-8 summer camp research",
-      "description": "Specific, actionable parent-facing insights surfaced during program verification. Most recent at top. Capped at 30 items.",
+      "id": "registration-windows",
+      "title": "Registration window cheat sheet — when to actually book",
+      "icon": "📅",
       "items": [
         {
-          "label": "Curious Cardinals — Pricing only revealed after intake call",
-          "detail": "Curious Cardinals (curiouscardinals.com) does not publish pricing on its public site; tier costs are disclosed only after a 30-minute parent intake call. They do offer a 2-week 100% money-back guarantee, so committing then exiting if it doesn't fit is low risk (added 2026-04-26)."
+          "label": "December–January",
+          "detail": "Member registration opens at top-tier museum/zoo camps in major metros (Pacific Science Center, Woodland Park Zoo, Burke Museum, Seattle Children's Theatre). Premium camps fill in days. If you're not yet a member, the membership pays for itself just from earlier access."
         },
         {
-          "label": "Connected Camps — $12/session club tier is the underused value",
-          "detail": "Most parents only see the $65-$140 weeklong Minecraft camp tier on connectedcamps.com, but the $12-per-session 'Summer Clubs' tier provides ongoing 60-90 min mentored Minecraft/Roblox sessions for ages 8-17 — a cheap way to sustain interest year-round after summer camp ends (added 2026-04-26)."
+          "label": "February (Early Bird windows)",
+          "detail": "Camp Galileo Early Bird discount typically expires Feb 28 ($50/wk savings). YMCA Camp Orkila + Camp Sealth registration windows open this month — overnight camps. Multi-week discounts often stack with Early Bird."
         },
         {
-          "label": "Code Ninjas — Stack AM + PM half-days into full-day with supervised lunch",
-          "detail": "Code Ninjas franchises run AM camps 8:30am-12pm and PM camps 12:30pm-4pm; families can register for both at the same location and most centers will supervise the lunch gap, effectively converting two half-day registrations into a full working-parent day (added 2026-04-26)."
+          "label": "March (general public registration)",
+          "detail": "Most Seattle-metro institution camps open general (non-member) registration. Point Defiance Zoo & Aquarium typically opens early-mid March. Most popular sessions fill within 2-3 weeks."
         },
         {
-          "label": "AoPS Academy Virtual — Placement test required and is itself a free diagnostic",
-          "detail": "AoPS Academy Virtual Campus summer camps require a placement test before enrollment. The test is free and is one of the better short math diagnostics available — even families who don't enroll can use the result to calibrate their child's actual math level vs. school grade (added 2026-04-26)."
+          "label": "April–May (last call + scholarship windows)",
+          "detail": "Most popular sessions full. Off-the-radar specialty camps still have space. Scholarship application windows often close mid-May — check each org. Many districts publish their summer enrichment lists in April."
         },
         {
-          "label": "Brain Chase — Early-bird $199 for full 5-week summer program",
-          "detail": "Brain Chase's full 5-week Summer Treasure Hunt (~4 hrs/wk academic challenges) is $199 at early-bird pricing; price increases as June 15, 2026 start date approaches. Cheapest comparable structured online enrichment program found this run (added 2026-04-26)."
+          "label": "June (late game + cancellations)",
+          "detail": "Some camps add late sessions if demand exists. Cancellation lists at premium camps move quickly — call directly, don't just check website. Parks dept rec camps almost always have space."
+        }
+      ]
+    },
+    {
+      "id": "scholarship-cheats",
+      "title": "Scholarship cheat sheet — generous aid most parents don't ask about",
+      "icon": "💰",
+      "items": [
+        {
+          "label": "YMCA — sliding scale Price A / Price B",
+          "detail": "All Y branches use a sliding-scale cost structure. You self-select based on household income. No documentation required at registration. Some Ys offer additional financial assistance beyond Price B — ask the membership desk directly. Camp Orkila and other residential Ys have the same structure."
         },
         {
-          "label": "Outschool — Class quality is per-teacher, not platform-wide",
-          "detail": "Outschool is a marketplace of independent teachers; quality varies dramatically by individual listing. Always read individual teacher reviews and check Outschool's verified-teacher badge before enrolling. Mini-group cap is 12 students per session — anything significantly above that is a red flag (added 2026-04-26)."
+          "label": "Pacific Science Center — needs-based scholarships up to 100%",
+          "detail": "Application opens early February (well before general registration). Scholarship windows are SEPARATE from regular registration — apply to both. Bring tax return + proof of income. 100% scholarships exist; partial more common."
+        },
+        {
+          "label": "Woodland Park Zoo — scholarships up to 100% in 20% increments",
+          "detail": "Tiered based on income. Application is short. They publish the income brackets — check the FAQ. Apply once per year, valid for all WPZ camps that summer."
+        },
+        {
+          "label": "Camp Sealth (Camp Fire CPS) — Camperships",
+          "detail": "Need-based aid called 'Camperships'. Apply 4-6 weeks before session. Particularly generous for 'first-time camper' families. Foster, kinship, and EBT/WIC families get expedited review."
+        },
+        {
+          "label": "Point Defiance Zoo — Pierce County resident aid",
+          "detail": "Special scholarship pool for Pierce County residents on EBT/WIC/foster/kinship. Smaller pool but high acceptance rate if eligible."
+        },
+        {
+          "label": "Camp Galileo — financial aid + multi-week sibling discounts",
+          "detail": "Up to 75% aid for qualifying families. Multi-week + multi-sibling discounts stack with aid. Apply early — pool is smaller than the museum/zoo programs."
+        },
+        {
+          "label": "School district summer programs — often free or near-free",
+          "detail": "Most districts run summer enrichment using federal Title I funds. Eligibility may be income-tested or open to all district kids. Check your district's website starting in March. Often the BEST kept secret in the local market."
+        }
+      ]
+    },
+    {
+      "id": "nationwide-remote",
+      "title": "Nationwide & remote programs — equally available to ANY family",
+      "icon": "🌎",
+      "items": [
+        {
+          "label": "iD Tech (online + in-person at universities)",
+          "detail": "Coding, game dev, robotics, AI. Online courses for ages 7-19 (live instructor, small groups). In-person held at 50+ university campuses nationwide. Pricing high but financial aid available. Best-known brand in tech ed for kids."
+        },
+        {
+          "label": "Camp Galileo (CA + WA expansion + virtual)",
+          "detail": "Also offers Galileo Online — interactive virtual camps for ages 5-12. Project-based, not video lectures. Lower cost than in-person."
+        },
+        {
+          "label": "Camp Invention (National Inventors Hall of Fame)",
+          "detail": "Run at thousands of host elementary schools nationwide each summer. STEM + creativity, ages K-6. Pricing modest. Search by zip on their website to find a host school near you."
+        },
+        {
+          "label": "Khan Academy Kids + Camps",
+          "detail": "Free K-2 app year-round. Some library systems run Khan-aligned summer programs. Cheapest meaningful enrichment option for early elementary."
+        },
+        {
+          "label": "Outschool — small-group online classes (K-12)",
+          "detail": "Marketplace of online classes from independent teachers. Subjects from D&D club to coding to creative writing. Per-class pricing, often $10-30/session. Great for kids with niche interests not served by local options."
+        },
+        {
+          "label": "MIT Beaver Works Summer Institute (online + Cambridge)",
+          "detail": "Free for accepted students. Targeted at rising 10th-12th but worth knowing about for 7th-8th graders to plan toward."
+        },
+        {
+          "label": "AoPS (Art of Problem Solving) Online Math",
+          "detail": "Math classes from Beast Academy (grades 2-5) through advanced HS competition prep. Online or self-paced. The serious math kid pipeline."
+        },
+        {
+          "label": "DigiPen Open World Summer Workshops (online + Redmond)",
+          "detail": "Game design, animation, programming. Ages 5-12 + teen tracks. Strong instruction quality."
+        },
+        {
+          "label": "MOOC platforms — Coursera, edX, Khan Academy",
+          "detail": "Free university-level content available to motivated middle schoolers. Especially good for kids who finish their grade-level curriculum early."
+        },
+        {
+          "label": "Connections Academy + K12 — full virtual public school",
+          "detail": "Free in many states. Year-round option not just summer. Worth considering for kids whose schools aren't a fit, or families with travel flexibility."
+        }
+      ]
+    },
+    {
+      "id": "sleepaway-readiness",
+      "title": "Sleepaway readiness — is your kid actually ready?",
+      "icon": "🏕️",
+      "items": [
+        {
+          "label": "Green-light signals (start considering 3-5 day sessions)",
+          "detail": "Has done overnights at friends' or relatives' houses without getting homesick. Asks about sleepaway camp themselves. Can dress, brush teeth, and manage basic hygiene independently. Comfortable being out of contact with parents for 24+ hours."
+        },
+        {
+          "label": "Yellow-light signals (try a shorter program first)",
+          "detail": "Has had overnight successes but also some homesick episodes. Wants to go but parents are anxious. Manages most independence but needs reminders. Try a 2-3 day camp through the local Y or church first."
+        },
+        {
+          "label": "Red-light signals (wait a year)",
+          "detail": "Has anxiety about overnights at relatives'. Has not asked about sleepaway. Struggles with morning routines independently. Nighttime fears or bedwetting still active. Don't push it. Plenty of strong day-camp options through age 12."
+        },
+        {
+          "label": "What sleepaway camps actually teach",
+          "detail": "Independence in low-stakes context. Conflict resolution with peers (forced proximity surfaces it). Self-advocacy with adults outside parents. Managing physical fatigue + recovery. Comfort with discomfort (weather, basic accommodations). These compound across years."
+        },
+        {
+          "label": "First-timer success patterns",
+          "detail": "Pre-write a few letters together (kids love getting mail). Pre-decide on a comfort item that's not too precious to lose. Talk through what a hard moment might look like + what the kid would do. Don't promise an early pickup — that signals 'this might fail' and erodes confidence."
+        }
+      ]
+    },
+    {
+      "id": "budget-framework",
+      "title": "Budget framework — getting maximum value across the summer",
+      "icon": "💵",
+      "items": [
+        {
+          "label": "The 60/30/10 frame (a starting heuristic)",
+          "detail": "If you have a fixed summer budget: spend ~60% on a recurring 'anchor' — typically the YMCA / parks dept day camp 3-4 weeks running ($150-300/wk subsidized). Spend ~30% on 1-2 specialty experiences ($400-600 each — the museum camp, the coding camp, the zoo camp). Reserve ~10% for the wildcard — the niche experience the kid asked for, or a weekend mini-camp."
+        },
+        {
+          "label": "Multi-summer planning (K-8 arc)",
+          "detail": "K-2: low-stakes exposure across many areas. Cheap day camps + lots of unstructured time. 3-5: discover sustained interests. Add specialty camps in 1-2 areas of demonstrated interest. 6-8: deepen + try sleepaway. Multi-week intensives or residential programs in the area of strongest interest."
+        },
+        {
+          "label": "When premium IS worth it",
+          "detail": "When the program creates an experience the kid couldn't replicate at home (boats, horses, theatrical production with peers, 24/7 immersion). When the instructor is genuinely expert (you can tell from the bio + curriculum). When the kid has earned a 'next level' moment after years at lower tiers."
+        },
+        {
+          "label": "When premium is NOT worth it",
+          "detail": "When you're paying for the campus brand more than the curriculum. When the kid would happily attend a comparable cheaper option. When you're stretching the family budget. When the kid is reluctantly attending."
+        },
+        {
+          "label": "Free + cheap that's actually great",
+          "detail": "Public library summer reading programs (often have weekly events + prizes). Parks dept rec camps. School district summer enrichment (often free with district enrollment). Free museum/library passes (many libraries lend museum passes). Junior ranger badges at national parks ($0)."
+        }
+      ]
+    },
+    {
+      "id": "common-mistakes",
+      "title": "Common parent mistakes (K-8 specifically)",
+      "icon": "⚠️",
+      "items": [
+        {
+          "label": "Over-stacking specialty camps",
+          "detail": "8 weeks of different 'enrichment' burns kids out. Mix in unstructured time. The downtime is when interests actually consolidate."
+        },
+        {
+          "label": "Treating it like college admissions",
+          "detail": "K-8 summers don't appear in college applications. Picking based on 'what looks good' backfires — kids sense the inauthenticity and disengage."
+        },
+        {
+          "label": "Skipping the kid's preferences",
+          "detail": "Kids who choose what to attend are happier, more engaged, more likely to develop sustained interests. Even a 6-year-old can rank options."
+        },
+        {
+          "label": "Assuming free=bad and expensive=good",
+          "detail": "Parks dept day camps are often excellent. Premium camps are sometimes just well-marketed."
+        },
+        {
+          "label": "Not asking about scholarships",
+          "detail": "Most reputable orgs have 50-80% aid available; rarely advertised. Email the camp director directly — application is often shorter than expected."
+        },
+        {
+          "label": "Sleepaway too early",
+          "detail": "Pushing a 6-year-old into a week-long overnight because the parent went themselves at that age. Different kid, different generation. Honor the readiness signals."
+        },
+        {
+          "label": "Single-track specialization too early",
+          "detail": "A kid who does only soccer camps every summer K-8 won't necessarily play in HS. Variety in K-5 → emerging interest in 6-8 → specialization in 9-12 is the healthier arc."
+        }
+      ]
+    },
+    {
+      "id": "out-of-the-box",
+      "title": "Out-of-the-box hacks most parents miss",
+      "icon": "💡",
+      "items": [
+        {
+          "label": "Trade with a friend's family for week-long swap",
+          "detail": "Two families with similar-aged kids each take one week of the other family's kid. Effectively 'free childcare' for a week, kids get the friend-immersion they love, and both families get a week of fewer mouths to feed. Works best ages 7+."
+        },
+        {
+          "label": "Volunteer-as-CIT (Counselor In Training) at age 12-14",
+          "detail": "Many camps need junior counselors. Tweens get free or discounted attendance + leadership experience. Apply early — these slots fill faster than camper slots. YMCA, Camp Fire, BGCA all have CIT pipelines."
+        },
+        {
+          "label": "Subscribe to a museum at the right tier",
+          "detail": "Not all memberships are equal. Look for the tier that includes 'priority camp registration' — usually $150-200 family-tier upgrade. Pays for itself just from earlier access to popular camps."
+        },
+        {
+          "label": "ACA accreditation is a real signal",
+          "detail": "American Camp Association accreditation means health/safety/staff-ratio standards verified annually. Not a fancy badge — actually means something. Free filter at acacamps.org/find-a-camp."
+        },
+        {
+          "label": "University youth programs — often hidden gems",
+          "detail": "UW Robinson Center, DigiPen Open World, Stanford EPGY (now Compass), Northwestern Center for Talent Development. Often more substantive than for-profit camps. Check your local research university."
+        },
+        {
+          "label": "City parks dept after-school + summer = often the best deal",
+          "detail": "Seattle Parks, Bellevue Parks, Tacoma Metro Parks all run summer day camps for $20-50/day. Quality varies by site, not by department. Visit a site mid-program to assess."
+        },
+        {
+          "label": "The 'kid needs a break' permission slip",
+          "detail": "If the kid hasn't had unstructured outdoor time in months, schedule 1-2 unprogrammed weeks. Sounds counterintuitive but kids who get 'permission' to be bored often emerge with new self-directed interests. The opposite of camp."
+        },
+        {
+          "label": "Sibling camps at the same site = parent sanity",
+          "detail": "Big multi-program sites (YMCA, large day camps) can take siblings of different ages at once. One drop-off, one pickup, one schedule. Massive parental QoL upgrade vs juggling 3 different camps in 3 locations."
+        },
+        {
+          "label": "International summer = often cheaper than US specialty camps",
+          "detail": "Language immersion programs in Mexico/Costa Rica/Spain for ages 8-14 can run $1500-3000 for 2 weeks INCLUDING flights. Compare to a $700/week US specialty camp. Best for kids with at least basic Spanish/French foundation."
+        },
+        {
+          "label": "Theater + arts intensives often have surprise scholarships",
+          "detail": "Most regional theaters with kids' programs (Seattle Children's Theatre, ACT Theatre, etc.) have under-applied-for scholarship pools. Even a no-pretense email asking about aid often surfaces options not on the website."
+        }
+      ]
+    },
+    {
+      "id": "field-notes",
+      "title": "From the field — fresh insider notes (auto-discovered)",
+      "icon": "🔍",
+      "items": [
+        {
+          "label": "AAUW Tech Trek — $50 covers a $1,000+ residential STEM week",
+          "detail": "AAUW Tech Trek (rising 8th-grade girls) is fully sponsored by AAUW donations — families pay only a nominal $50 fee + transportation, when the actual program cost runs $1,000+. Branches often waive even the $50 for families in need. Path is teacher/counselor nomination, NOT direct application — talk to your kid's 7th-grade STEM teacher in winter."
+        },
+        {
+          "label": "NSBE SEEK — open to all students, fully free, but selective",
+          "detail": "Despite NSBE's name, SEEK 2026 (rising 4th-6th) is open to ALL students with demonstrated STEM interest — not Black-only. It's free with shipped materials. Selection is competitive (income, attendance, prior participation factor in). Register early via seek.nsbe.org; rolling admission until program starts."
+        },
+        {
+          "label": "Black Girls CODE — most participants pay $0 via sponsorship",
+          "detail": "Black Girls CODE's 2026 Summer Camp 'She Won't Just Play the Game. She'll Build It' runs in 10 US cities + 2 virtual sessions. Most participants pay nothing — corporate sponsorship covers tuition. Open to all girls 10-17 (Black girls prioritized but not exclusive). Apply at wearebgc.org/summer-camp; competitive due to high demand."
+        },
+        {
+          "label": "Northwestern CTD Solstice — no district nomination required",
+          "detail": "Common misconception: parents assume Northwestern CTD requires gifted-program district nomination. It does NOT. Eligibility is established directly via test scores or teacher recommendation through CTD's own application — open to any rising 4th-6th grader meeting the bar. Don't wait on the district."
+        },
+        {
+          "label": "Math Beasts Camp — placement is by readiness not strict grade",
+          "detail": "AoPS Academy's Math Beasts Camp 2-5 align to fall grade by default, but placement is fluid. A kid finishing 2nd grade who's ready for harder material can be placed in Camp 3 — email the registrar before locking in. Distinct product from Beast Academy Online (self-paced curriculum)."
+        },
+        {
+          "label": "CodeWizardsHQ — money-back guarantee does NOT cover summer camps",
+          "detail": "CodeWizardsHQ promotes a 100% money-back guarantee for four sessions of their year-round structured tracks. The guarantee does NOT apply to summer camps — refund policy is much stricter. Read the fine print before booking summer-only sessions."
+        },
+        {
+          "label": "Juni Learning — 2-week free trial is the smart entry point",
+          "detail": "Juni Learning's monthly fees run $140-$450+ depending on cadence/subject — but the 2-week free trial includes actual classes (often via placement or intro course). Use the trial to verify instructor fit before committing; their model is 1:1 so chemistry with the teacher matters more than at small-group competitors."
+        },
+        {
+          "label": "iCode + Snapology + Bricks 4 Kidz — franchise quality varies by owner",
+          "detail": "iCode (244+ US locations), Snapology, and Bricks 4 Kidz all operate as franchises — curriculum is national but day-to-day quality, pricing, and instructor training depend on the local owner. Read Yelp + Google reviews specifically for the location you're considering, not the brand. Many partner with local parks & rec departments which can subsidize tuition for in-district residents."
+        },
+        {
+          "label": "Create & Learn — free intro classes are real teaching sessions",
+          "detail": "Create & Learn's free intro classes are full 50-minute live small-group lessons (3-5 students), not sales calls. Use them to test the small-group format before paying. They claim <5% of teacher applicants accepted — verifiable in instructor bios that list university and prior teaching experience."
+        },
+        {
+          "label": "Codingal — STEM.org accreditation matters for 529/employer reimbursement",
+          "detail": "Codingal is STEM.org-accredited (most independent online instructors are not). For families using a 529 education savings plan or seeking a credential-friendly receipt for employer reimbursement, accreditation matters. Free trial class available before committing to a paid camp."
+        },
+        {
+          "label": "Bricks 4 Kidz 2026 — choose-your-own-adventure model is a real upgrade",
+          "detail": "Bricks 4 Kidz rolled out 'choose your own adventure' camps in 2026 — every camper picks from hundreds of model plans (motorized models, classic sculptures, mosaics, programmable robots) instead of following the same plan as the room. Worth checking if your kid hated last year's prescriptive build sequence."
+        },
+        {
+          "label": "iCode 2026 season — May 26 to Aug 7 is the full window",
+          "detail": "iCode's 2026 summer camp lineup runs May 26 through August 7 — wider than most STEM franchises that compress into June-July. If you want shoulder-week coverage (post-school in May or pre-school in August) when other camps are closed, iCode is one of few options at this scale."
+        },
+        {
+          "label": "AISES National Conference travel scholarships",
+          "detail": "AISES (American Indian Science & Engineering Society) National Conference is the largest annual gathering of Indigenous STEM professionals + students. AISES offers travel scholarships covering airfare + lodging for Native youth attendees. Apply via AISES Pre-College student membership (free for tribal-enrolled + descendants)."
+        },
+        {
+          "label": "Native Like Water — Patagonia-funded, ~30-40 youth/cohort",
+          "detail": "Native Like Water (Indigenous ocean/coastal program for youth) is funded by Patagonia + other corporate donors so completely free for accepted youth. Selective — ~30-40 youth per summer cohort. Applications Feb-March. Strong combination of cultural identity + outdoor skills + ocean conservation."
+        },
+        {
+          "label": "Camp Brave Trails — scholarship pool covers ~50% of campers",
+          "detail": "Camp Brave Trails (LGBTQ+ youth) has a robust sliding-scale + scholarship pool that covers approximately 50% of campers each summer. Apply for aid at registration. CA + MD locations. Trained queer + trans staff. Strong community for kids who may not be out at home."
+        },
+        {
+          "label": "Family Equality Family Week — 1,800+ LGBTQ+ family members",
+          "detail": "Family Week in Provincetown MA each August is the largest annual gathering of LGBTQ+ parents + their kids in North America (1,800+ attendees). Age-banded children's programming (Tots through Teens) runs parallel to parent workshops. Scholarship + travel-grant pool available for low-income families."
+        },
+        {
+          "label": "Interlochen — financial aid covers ~40% of campers (up to 100%)",
+          "detail": "Interlochen Arts Camp's need-based financial aid covers up to 100% of tuition for about 40% of campers each year. Apply by January with FAFSA-style documentation. Highly competitive auditions for performing arts; portfolio review for visual arts. Junior Division (grades 3-6) is the K-8-friendly entry point."
+        },
+        {
+          "label": "USA Junior Olympic pipeline — start at local club, not nationals",
+          "detail": "Junior Olympic pipelines for Olympic sports (USATF, USA Swimming, USA Gymnastics, etc.) START at the local club level, not at qualifying meets. Find your sport's local club via the NGB website. Most clubs have sliding-scale dues + meet-fee assistance for under-resourced families."
+        },
+        {
+          "label": "Special Olympics Unified Champion Schools — 100% free for schools",
+          "detail": "Unified Champion Schools is FREE for participating K-12 schools — Special Olympics covers all curriculum, coaching subsidies, and event support. 7,500+ US schools participate. Schools that achieve 'National Banner' status get serious recognition. Inclusive Youth Leadership track is a strong leadership credential for kids who participate as Unified Partners (without disabilities)."
+        },
+        {
+          "label": "Camp Korey + SeriousFun camps — 100% free including travel",
+          "detail": "Camp Korey (Carnation WA, part of SeriousFun Network founded by Paul Newman) serves kids with serious medical conditions FREE including travel, meals, and 24/7 medical care. Disease-specific weeks (cancer week, kidney week, etc.) — kids meet others with their condition. Apply via your kid's specialist 4-6 months before session. There are ~30 SeriousFun camps globally — find one for your condition."
+        },
+        {
+          "label": "Friendship Circle — buddies are HS volunteers, free for families",
+          "detail": "Friendship Circle is FREE for special-needs families. Buddies (HS volunteers) commit to weekly home visits + monthly group events. 100+ chapters globally. Founded by Chabad-Lubavitch but explicitly open to all faiths/none. Strong combo: disability-inclusion for the special-needs kid + community-service credential for the HS buddy."
+        },
+        {
+          "label": "Easterseals — sibling-inclusive at many affiliates",
+          "detail": "Many Easterseals affiliates accept 'typically-developing' siblings of kids with disabilities at the same camp — important for families that want all kids in one place during summer. Ask affiliate directly. Sliding-scale fees + scholarship pool covers most need-based requests."
+        },
+        {
+          "label": "AHRC NY — OPWDD waiver funds most NY camps",
+          "detail": "For NY residents, the Office for People with Developmental Disabilities (OPWDD) waiver covers most disability-focused camp costs at AHRC + many other providers. Application is through the kid's care manager. If your kid has a developmental disability diagnosis but isn't in OPWDD yet, the application takes ~3-6 months. Worth starting now even if you don't need camp this summer."
+        },
+        {
+          "label": "Autism Society local affiliate is the best starting point",
+          "detail": "For autism-specific camps, START with your state Autism Society affiliate. They maintain vetted directories including autism-specific camps, inclusive camps with trained staff, and family camps. They also know which Medicaid HCBS waivers can fund camp in your state — more important than the camp choice itself for many families."
+        },
+        {
+          "label": "Sierra Club ICO — gear + transport + food all free",
+          "detail": "Sierra Club Inspiring Connections Outdoors covers EVERYTHING: gear (boots, jackets, packs, sleeping bags), transportation, food, leader fees. 100% free for participating kids. 50+ chapters in major US cities partner with BGCA, YMCA, and schools to reach under-resourced families. The hidden secret is the Sierra Club volunteers fundraise for the gear pool — there's nothing else like this."
+        },
+        {
+          "label": "NPS Every Kid Outdoors — pass admits whole family in one car",
+          "detail": "Every Kid Outdoors free 4th-grade pass admits the 4th grader + 3 adults + ALL minor siblings traveling in a single vehicle. So a family of 6 (2 parents + 4 kids one of whom is in 4th grade) gets in completely free. Valid Sep 1 - Aug 31 of 4th grade year. Get the pass at everykidoutdoors.gov by completing a short activity. Strategically plan a national-park family vacation that year."
+        },
+        {
+          "label": "NWF Eco-Schools USA — Bronze/Silver/Green Flag school certifications",
+          "detail": "NWF Eco-Schools awards schools Bronze, Silver, and Green Flag certifications based on student-led environmental projects (energy/water/waste audits, schoolyard habitat, climate action). Free curriculum + tools. Schools that achieve Green Flag get serious recognition + use it in admissions/marketing. Kids who lead Eco-Schools projects get strong leadership-track credential."
+        },
+        {
+          "label": "Audubon Great Backyard Bird Count — 4 days in February, family-accessible",
+          "detail": "GBBC is the easier on-ramp than Christmas Bird Count: 4 days in mid-February, can be done from your backyard or a park, family-friendly, contributes real data to global ornithology research. Great way to introduce kids to citizen science. Free Audubon app for entry."
+        },
+        {
+          "label": "NOAA Planet Stewards funds student-led projects up to $5K",
+          "detail": "NOAA Planet Stewards Education Project provides project funding up to $5,000 for K-12 educator-led student environmental projects. Schoolyard rain gardens, weather stations, beach cleanups with data collection — past funded examples. Educator applies on behalf of students. Application due September each year."
+        },
+        {
+          "label": "Outdoor Afro chapter trips are completely free",
+          "detail": "Outdoor Afro chapter trips (60+ US cities) are 100% free for participants — including gear, transport, and food where applicable. Mission focuses on Black connections in nature. Open to participants of all backgrounds. Strong combo with NPS Junior Ranger + Sierra Club ICO for kids who want sustained outdoor community."
         }
       ]
     }

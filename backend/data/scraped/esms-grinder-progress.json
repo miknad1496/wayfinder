@@ -1,13 +1,20 @@
 {
-  "lastRun": "2026-04-26T19:35:58Z",
-  "totalRuns": 3,
-  "totalAdded": 17,
+  "lastRun": "2026-04-26T19:28:11.410Z",
+  "totalRuns": 9,
+  "totalAdded": 46,
   "queue": [
     {
-      "focus": "WA",
+      "focus": "nationwide-remote",
       "target": 30,
       "current": 11,
       "status": "in_progress",
+      "lastBatchDate": "2026-04-26"
+    },
+    {
+      "focus": "WA",
+      "target": 30,
+      "current": 16,
+      "status": "concluded",
       "metros": [
         "Seattle",
         "Bellevue",
@@ -21,8 +28,12 @@
         "Bellevue",
         "Vashon",
         "Orcas Island",
-        "Tacoma"
-      ]
+        "Tacoma",
+        "Bellingham",
+        "Bainbridge Island",
+        "Vancouver"
+      ],
+      "note": "Concluded by Dan directive on 2026-04-26."
     },
     {
       "focus": "CA",
@@ -85,7 +96,7 @@
     {
       "focus": "national-anchors",
       "target": 25,
-      "current": 6,
+      "current": 24,
       "status": "in_progress",
       "themes": [
         "YMCA / Camp Fire / BGCA national programs",
@@ -98,13 +109,55 @@
         "national religious/scout summer camps"
       ],
       "themesUsed": [
-        "Online enrichment marketplaces",
-        "Online K-8 STEM coding camps",
-        "National coding franchise",
-        "Online competitive math",
-        "Online 1:1 mentorship"
+        "Outschool nationwide remote",
+        "Beast Academy Online (AoPS K-5 math)",
+        "Curious Cardinals 1:1 mentorship",
+        "Synthesis Tutor (AI K-5 math)",
+        "Brain Chase Summer Treasure Hunt",
+        "Northwestern CTD (gifted PreK–grade 8)",
+        "Mathnasium nationwide tutoring",
+        "Code Ninjas nationwide STEM camps",
+        "CodaKid online coding",
+        "STEM franchises (Mad Science, EFK, Play-Well)",
+        "NSBE SEEK",
+        "Math Beasts Camp / AoPS",
+        "Northwestern CTD Solstice",
+        "CodeWizardsHQ",
+        "Black Girls CODE",
+        "AAUW Tech Trek"
       ],
-      "lastFocus": "online/national K-8 (Outschool, Brain Chase, Connected Camps, Code Ninjas, AoPS Academy Virtual, Curious Cardinals)"
+      "anchorsAdded": [
+        "Mathnasium",
+        "Code Ninjas",
+        "CodaKid",
+        "NSBE SEEK",
+        "Math Beasts Camp",
+        "Northwestern CTD Solstice",
+        "CodeWizardsHQ",
+        "Black Girls CODE",
+        "AAUW Tech Trek"
+      ]
     }
-  ]
+  ],
+  "plan": {
+    "asOf": "2026-04-26",
+    "directive": "Dan directive 2026-04-26: WA concluded. Next iterations work top 10 per major state/metro progressively for basic coverage.",
+    "nextStateOrder": [
+      "CA (Bay Area, LA, San Diego, Sacramento)",
+      "NY (NYC, Long Island, Westchester)",
+      "TX (Houston, Austin, Dallas, San Antonio)",
+      "MA (Boston, Cambridge, Worcester)",
+      "MI (Detroit, Ann Arbor, Grand Rapids)",
+      "IL (Chicago metro)",
+      "PA (Philadelphia, Pittsburgh)",
+      "GA (Atlanta metro)",
+      "FL (Miami, Orlando, Tampa)",
+      "CO (Denver, Boulder)",
+      "OR (Portland)",
+      "DC metro (DC, MD, VA)"
+    ],
+    "perStateTarget": 10,
+    "cadence": "1 state-batch per run, then rotate to next state. Mix nationwide/remote in opportunistically when high-value.",
+    "remainingPriorityFocus": "Major metros first — large metro areas before secondary cities. Nationwide/remote programs still welcome opportunistically when they fill genuine gaps."
+  }
 }
