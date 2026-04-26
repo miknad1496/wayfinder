@@ -356,3 +356,58 @@
 | 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel/Blaine/Bremerton). All-WebSearch run, district clustering held. |
 | 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham/Bethel district cluster). |
 | 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced; /tmp full + fuse mount traps discovered. |
+
+## RUN 19 (2026-04-26) — Eastmont/Eatonville/Edmonds-SD band (offsets 169-176)
+
+### Outcome
+- Verified: 6 (Eastmont Senior High, Eatonville HS, Scriber Lake HS [alt-choice], Lynnwood HS, Meadowdale HS, Mountlake Terrace HS [STEM magnet])
+- Skipped: 2 (Easton Secondary enr=0 placeholder; ESD New Beginnings [Eatonville SD] enr=40 alt)
+- Wall-clock: ~10 min — mix of WebSearch + 4 large-file `about` page fetches with python regex parsing
+
+### EFFECTIVE PATTERNS (added)
+- **Edmonds SD `*.edmonds.wednet.edu/about` pages all carry `Principal: <Name>` in plain text** (Lynnwood, Meadowdale, Mountlake Terrace, Scriber Lake all confirmed this pattern). Pages exceed inline token cap (60-90KB) but the saved-fetch-file + python regex `[Pp]rincipal[^A-Za-z].{0,300}` extracts cleanly. Same pattern works for assistant principals — 3-4 staff names per fetch in one pass. Net: 4 schools verified in 4 fetches (1 per school), all single-source-of-truth from school's own site.
+- **Eatonville's Finalsite `principals-message` page carries the principal name + photo as plain text + image alt-text** (Amy Sturdivant). Page is ~80KB but inline-fetchable. Pattern: `[district].wednet.edu/[school-code]/about-us/principals-message` is a reliable single-source for small WA districts using Finalsite — bypass the staff-directory pages entirely.
+- **eastmont206.org/ehs/people staff page is large (~270KB)** but `Del Enders` shows up cleanly via regex on the saved-fetch file under both `>Email Del Enders` and the principal block. Confirmed Del Enders hire from May 2024 Wenatchee World article.
+
+### FAILED PATTERNS (added)
+- **`site:edmonds.wednet.edu` WebSearch returned only general district hits** — no specific principal names per school surfaced in snippets. Going direct to school subdomain `*.edmonds.wednet.edu/about` was much faster. Lesson: for districts with subdomain-per-school sites, skip the district-level site: search and go straight to subdomain about pages.
+- **`mhs.edmonds.wednet.edu/about` and `mths.edmonds.wednet.edu/about` both exceed the inline token cap (74KB and 87KB)** — but they SAVE TO FILE and the saved file is parseable with the python regex pattern. Pattern is now: try inline fetch, on token-exceed go straight to the saved file path under `mnt/.claude/projects/.../tool-results/`.
+
+### SOURCE-SPECIFIC NOTES (added)
+- `*.edmonds.wednet.edu/about` — all four high-school subdomain about-pages tested in Run 19 follow the same template: `Principal: <Name>` followed by `Assistant Principal: <Name>` rows. Reliable single-source.
+- `eatonville.wednet.edu/ehs/about-us/principals-message` — Finalsite-template principal-letter page; inline-fetchable (~80KB); image alt-text + signed letter both name the principal.
+- `eastmont206.org/ehs/people` — large staff directory page (~270KB), saves to file, parseable via regex; includes principal email format.
+- `lynnwoodtimes.com/2024/09/05/principals/` — Edmonds SD's "11 new principals" article from 2024; useful for cross-checking Edmonds SD admin transitions, though most current data was on the school's own about page.
+- `wenatcheeworld.com` — high-yield Wenatchee/East Wenatchee news source for Eastmont SD admin transitions.
+
+### DATA QUALITY FLAGS
+- **Mountlake Terrace HS leadership transition**: Crosby Carpenter was principal in March 2024 (per My Edmonds News board meeting article); David Friedle is current principal (per mths.edmonds.wednet.edu/about). Recorded Friedle with note in `principalNotes`.
+- **Scriber Lake HS Dan Falk is INTERIM** — flagged with `principalStatus: "interim"`. Future grinder runs should re-check.
+- **Lynnwood HS principal verification**: name is "Jesse Goodsky" with email-prefix `skyj@edmonds.wednet.edu` — uncommon spelling, confirmed via direct fetch (no WebSearch result mentioned the name). Single-source but the source IS the school's own about page, so confidence is high.
+- **Eatonville HS image filename hints at prior posting**: Amy Sturdivant's photo URL contains `Weyerhaeuser_Elementary` — implies she was previously at the elementary school in the same district. Not a quality issue, just an interesting district-internal-mobility data point.
+- **Eastmont enrollment grades 10-12**: Eastmont serves only grades 10-12 (1562 students) — sophomore-and-up campus. Sister school Eastmont Junior High likely handles 9th grade. NCES schoolLevel=3 (high) is correct but `grades` field set to "10-12" not "9-12".
+
+### CALIBRATION SUGGESTIONS
+- **6 verified + 2 skipped = net 6/8 batch**. Slightly below ideal (8/8) but right at the typical 25% skip rate. Recommend keeping batch_size=8 for next 1-2 runs while the queue traverses the Edmonds/Ellensburg/Enumclaw band — these are mostly clean comprehensive HS districts but with the usual 1-2 alt placeholders interleaved per district.
+- **Dedup pre-filter is now demonstrably necessary**: progress.json was stale at offset 96 (showed Run 12 state) but actual enriched.json was already at Run 18 (offset 169). Required reading the actual enriched.json + progress.json fresh-clone-side-by-side to discover the drift. Run 16 lessons mentioned the same issue. Codification: next prompt iteration MUST add a step "before selecting batch, derive next-offset from `enriched.json` length-based proxy AND cross-check progress.json — use the higher offset as authoritative".
+- **Stale `/tmp/wayfinder` clone trap (re-confirmed)**: this run hit the Run 11 lesson — old `/tmp/wayfinder` from prior session was owned by `nobody:nogroup`, and that stale clone had Run 12-state data that was 7 runs out of date. The fresh `/sessions/jolly-loving-feynman/wfclone-$$` clone had the correct current state. **Always clone fresh on `/sessions/[session-id]/` first thing**, never trust an existing `/tmp/wayfinder`.
+
+### OPEN QUESTIONS / TODO
+- Should `principalStatus` be added as a first-class schema field? Run 16 (Tim Berndt CERHS interim), Run 19 (Dan Falk Scriber Lake interim), Run 18 (Becky Cays Coupeville acting) all have interim/acting flags — making it a first-class field would let the frontend filter "schools with permanent leadership" if useful.
+- Edmonds SD has 4 high schools all on the same Finalsite template — a one-time scraper to pull `Principal:` from each `*.edmonds.wednet.edu/about` page might be more efficient than the per-grinder-run pattern. Worth proposing if Edmonds-style multi-school subdomain districts cluster again.
+- Eastmont's 10-12 grade structure suggests a `feederSchool` field for sophomore-and-up campuses — would help college-search UX understand the actual entry grade.
+
+### RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 19    | 6        | 2       | Eastmont/Eatonville/Edmonds-SD cluster (offsets 169-176). All 4 Edmonds SD HS verified via subdomain `about` pages: Lynnwood/Meadowdale/Mountlake Terrace + Scriber Lake choice. STEM magnet flag added for Mountlake Terrace. Caught 7-run progress.json drift from stale /tmp clone — re-cloned fresh on /sessions. ~10 min wall-clock. |
+| 2026-04-26 | 18    | 8        | 6       | Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley (offsets 155-168).         |
+| 2026-04-26 | 17    | 8        | 10      | Lakewood/Colfax/College Place/Burbank/Colville/Concrete band (offsets 137-154).                        |
+| 2026-04-26 | 16    | 8        | 7       | Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band (offsets 120-136).                       |
+| 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane). Edge-case heavy.                                               |
+| 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD). Caught Hittle/CVHS hallucination.           |
+| 2026-04-26 | 13    | 5        | 3       | Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth.                                           |
+| 2026-04-26 | 12    | 5        | 3       | Bremerton/Brewster/Bridgeport/Burlington-Edison.                                                       |
+| 2026-04-26 | 11    | 6        | 2       | Bethel/Blaine/Bremerton SD cluster.                                                                    |
+| 2026-04-25 | 10    | 6        | 2       | Bellingham/Bethel district cluster.                                                                    |

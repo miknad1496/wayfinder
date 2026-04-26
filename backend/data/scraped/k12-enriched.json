@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26",
-    "count": 104,
+    "lastUpdated": "2026-04-26T13:03:54Z",
+    "count": 126,
     "source": "NCES + verified web sources",
-    "note": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
-    "totalSchools": 104,
+    "note": "Run 19: enriched 6 WA HS spanning Eastmont SD + Eatonville SD + Edmonds SD cluster (Scriber Lake choice + Lynnwood + Meadowdale + Mountlake Terrace). 2 skipped (Easton Secondary enr=0 placeholder; Eatonville ESD New Beginnings enr=40 alt). Queue offset 169 -> 177.",
+    "totalSchools": 126,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 8,
+    "lastRunAdded": 6,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 16: +8 verified WA high (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum-Roslyn band, offsets 120-136). Schools: W F West HS, Chelan HS, Cheney HS, Three Springs HS, Jenkins Jr/Sr, Chimacum Jr/Sr, Charles Francis Adams (Clarkston), Cle Elum-Roslyn HS. 7 alt-placeholder/<50 skips: Lewis Juv Det (10), Lewis Jail (0), Lewis Alt (45), Chelan Innovation (15), Cheney Open Doors (9), Chewelah Open Doors (27), Open Doors Reengagement (0).",
-    "totalVerified": 96,
+    "lastRunNote": "Run 19: +6 verified WA HS (Eastmont/Eatonville/Scriber Lake/Lynnwood/Meadowdale/Mountlake Terrace), offsets 169-176. 2 skipped (Easton Secondary enr=0 placeholder, ESD New Beginnings enr=40 alt).",
+    "totalVerified": 126,
     "totalEnriched": 77,
-    "lastRun": 15,
+    "lastRun": 19,
     "lastEnriched": "2026-04-26",
-    "totalEntries": 112,
-    "verifiedCount": 112,
-    "totalCount": 120,
-    "lastUpdateNote": "Run 18: +8 WA HS (Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley)"
+    "totalEntries": 126,
+    "verifiedCount": 126,
+    "totalCount": 126,
+    "lastUpdateNote": "Run 19: +6 WA HS Eastmont/Eatonville/Edmonds-SD cluster (Scriber Lake/Lynnwood/Meadowdale/Mountlake Terrace)"
   },
   "schools": [
     {
@@ -4991,6 +4991,298 @@
         "https://www.usnews.com/education/best-high-schools/washington/districts/east-valley-school-district/east-valley-high-school-20828",
         "https://www.publicschoolreview.com/east-valley-high-school-profile"
       ]
+    },
+    {
+      "ncessch": "530231000318",
+      "name": "Eastmont Senior High School",
+      "city": "East Wenatchee",
+      "state": "WA",
+      "zip": "98802",
+      "district": "Eastmont School District",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "town",
+      "phone": "(509)884-7169",
+      "latitude": 47.4143,
+      "longitude": -120.2842,
+      "address": "955 3rd Street NE, East Wenatchee, WA 98802",
+      "website": "https://www.eastmont206.org/ehs",
+      "principal": "Del Enders",
+      "enrollment": 1562,
+      "apCourses": 10,
+      "apParticipationRate": "12%",
+      "demographics": {
+        "minorityPercent": "53%",
+        "economicallyDisadvantagedPercent": "63%"
+      },
+      "athletics": {
+        "mascot": "Wildcats"
+      },
+      "districtSuperintendent": "Becky Berg",
+      "rating": {
+        "source": "US News + Niche",
+        "notes": "Mid-tier WA comprehensive high school; serves grades 10-12 with feeder sophomore campus"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.eastmont206.org/ehs",
+        "https://www.eastmont206.org/ehs/people",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/eastmont-school-district/eastmont-senior-high-school-20830",
+        "https://www.niche.com/k12/eastmont-senior-high-school-east-wenatchee-wa/",
+        "https://www.wenatcheeworld.com/education/eastmont-hires-new-high-school-principal/article_f85840a0-14a0-11ef-ae47-8344bce0f770.html"
+      ],
+      "principalNotes": "Del Enders hired May 2024 from Salem, OR (per Wenatchee World). Confirmed on eastmont206.org/ehs/people staff directory."
+    },
+    {
+      "ncessch": "530237000327",
+      "name": "Eatonville High School",
+      "city": "Eatonville",
+      "state": "WA",
+      "zip": "98328",
+      "district": "Eatonville School District #404",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(360)879-1200",
+      "latitude": 46.8612,
+      "longitude": -122.2675,
+      "address": "302 Mashell Ave N, PO Box 699, Eatonville, WA 98328",
+      "website": "https://www.eatonville.wednet.edu/ehs",
+      "principal": "Amy Sturdivant",
+      "enrollment": 560,
+      "apParticipationRate": "15%",
+      "graduationRate": "95%",
+      "athletics": {
+        "mascot": "Cruisers"
+      },
+      "notablePrograms": [
+        "College in the High School (CIHS) dual enrollment",
+        "Career & Technical Education (CTE)",
+        "STEM courses",
+        "Aquatics / pool program"
+      ],
+      "rating": {
+        "source": "Niche / Public School Review",
+        "notes": "Bottom 50% statewide 2025 per PSR; consistently 91-96% grad rate over recent years"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.eatonville.wednet.edu/ehs",
+        "https://www.eatonville.wednet.edu/ehs/about-us/principals-message",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/eatonville-school-district/eatonville-high-school-20835",
+        "https://www.niche.com/k12/eatonville-high-school-eatonville-wa/",
+        "https://www.publicschoolreview.com/eatonville-high-school-profile"
+      ],
+      "principalNotes": "Confirmed via direct fetch of eatonville.wednet.edu/ehs/about-us/principals-message (page-published 2025-10-03; image alt-text + welcome letter signed by Amy Sturdivant for 2025-26 school year)."
+    },
+    {
+      "ncessch": "530240000338",
+      "name": "Scriber Lake High School",
+      "city": "Edmonds",
+      "state": "WA",
+      "zip": "98026",
+      "district": "Edmonds School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(425)431-7270",
+      "latitude": 47.8169,
+      "longitude": -122.2983,
+      "address": "23200 100th Ave W, Edmonds, WA 98026",
+      "website": "https://slhs.edmonds.wednet.edu/",
+      "principal": "Dan Falk",
+      "principalStatus": "interim",
+      "enrollment": 197,
+      "schoolModel": "alternative-choice",
+      "demographics": {
+        "minorityPercent": "40%",
+        "economicallyDisadvantagedPercent": "65%"
+      },
+      "notablePrograms": [
+        "Edmonds SD's only school of choice",
+        "Smaller alternative learning environment",
+        "Personalized / project-based instruction"
+      ],
+      "rating": {
+        "source": "Niche / GreatSchools",
+        "notes": "Alternative high school of choice; smaller cohort with higher-need student profile"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://slhs.edmonds.wednet.edu/",
+        "https://slhs.edmonds.wednet.edu/about",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/scriber-lake-high-school-20836",
+        "https://www.niche.com/k12/scriber-lake-high-school-edmonds-wa/",
+        "https://www.greatschools.org/washington/edmonds/483-Scriber-Lake-High-School/"
+      ],
+      "principalNotes": "Dan Falk listed as 'Interim Principal' on slhs.edmonds.wednet.edu/about. Re-check at next grinder pass for permanent appointment."
+    },
+    {
+      "ncessch": "530240000346",
+      "name": "Lynnwood High School",
+      "city": "Bothell",
+      "state": "WA",
+      "zip": "98012",
+      "district": "Edmonds School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(425)431-7400",
+      "latitude": 47.8408,
+      "longitude": -122.2295,
+      "website": "https://lhs.edmonds.wednet.edu/",
+      "principal": "Jesse Goodsky",
+      "assistantPrincipals": [
+        "Deann Anguiano",
+        "Peter Schurke",
+        "Carla Carrizosa"
+      ],
+      "enrollment": 1375,
+      "apParticipationRate": "23%",
+      "demographics": {
+        "minorityPercent": "65%",
+        "economicallyDisadvantagedPercent": "54%"
+      },
+      "notablePrograms": [
+        "STEAM (Science, Technology, Engineering, Arts, Math) - district-wide STEAM hub",
+        "Advanced Placement",
+        "Career & Technical Education"
+      ],
+      "rating": {
+        "source": "US News",
+        "notes": "Comprehensive neighborhood high school in Edmonds SD; STEAM courses available to all students"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://lhs.edmonds.wednet.edu/",
+        "https://lhs.edmonds.wednet.edu/about",
+        "https://lhs.edmonds.wednet.edu/directory",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/lynnwood-high-school-20837",
+        "https://en.wikipedia.org/wiki/Lynnwood_High_School"
+      ],
+      "principalNotes": "Jesse Goodsky confirmed via direct fetch of lhs.edmonds.wednet.edu/about (Principal label + email skyj@edmonds.wednet.edu)."
+    },
+    {
+      "ncessch": "530240000352",
+      "name": "Meadowdale High School",
+      "city": "Lynnwood",
+      "state": "WA",
+      "zip": "98037",
+      "district": "Edmonds School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(425)431-7800",
+      "latitude": 47.8386,
+      "longitude": -122.3266,
+      "website": "https://mhs.edmonds.wednet.edu/",
+      "principal": "Kim Whitworth",
+      "assistantPrincipals": [
+        "Kimberly Dreier",
+        "Jordan Young"
+      ],
+      "enrollment": 1450,
+      "apParticipationRate": "22%",
+      "graduationRate": "92%",
+      "athletics": {
+        "mascot": "Mavericks"
+      },
+      "notablePrograms": [
+        "Advanced Placement",
+        "Career & Technical Education",
+        "Highest graduation rate in Edmonds SD"
+      ],
+      "rating": {
+        "source": "Public School Review",
+        "value": "Top 30% 2026",
+        "notes": "Edmonds SD's strongest grad-rate performer"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://mhs.edmonds.wednet.edu/",
+        "https://mhs.edmonds.wednet.edu/about",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/meadowdale-high-school-20839",
+        "https://www.niche.com/k12/meadowdale-high-school-lynnwood-wa/",
+        "https://www.publicschoolreview.com/meadowdale-high-school-profile/98037"
+      ],
+      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about \u2014 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
+    },
+    {
+      "ncessch": "530240000356",
+      "name": "Mountlake Terrace High School",
+      "city": "Mountlake Terrace",
+      "state": "WA",
+      "zip": "98043",
+      "district": "Edmonds School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": true,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(425)431-7600",
+      "latitude": 47.7831,
+      "longitude": -122.3074,
+      "address": "21801 44th Avenue W, Mountlake Terrace, WA 98043",
+      "website": "https://mths.edmonds.wednet.edu/",
+      "principal": "David Friedle",
+      "assistantPrincipals": [
+        "Peggy Aguilar (Interim)",
+        "Rosemarie Burke"
+      ],
+      "enrollment": 1350,
+      "apParticipationRate": "35%",
+      "athletics": {
+        "mascot": "Hawks"
+      },
+      "magnetProgram": "STEM Magnet (district-wide STEM hub for Edmonds SD)",
+      "notablePrograms": [
+        "STEM Magnet Program (district-wide)",
+        "Wide variety of Advanced Placement courses",
+        "Career & Technical Education",
+        "Visual & Performing Arts",
+        "Hawkeye student newspaper (award-winning)"
+      ],
+      "rating": {
+        "source": "US News",
+        "notes": "Higher AP participation (35%) than Edmonds SD peers; STEM magnet draws students district-wide"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://mths.edmonds.wednet.edu/",
+        "https://mths.edmonds.wednet.edu/about",
+        "https://mths.edmonds.wednet.edu/counseling/academics",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/edmonds-school-district/mountlake-terrace-high-school-20840",
+        "https://en.wikipedia.org/wiki/Mountlake_Terrace_High_School"
+      ],
+      "principalNotes": "David Friedle confirmed via direct fetch of mths.edmonds.wednet.edu/about. Crosby Carpenter held the role earlier (per March 2024 My Edmonds News article); leadership transition occurred after that."
     }
   ]
 }

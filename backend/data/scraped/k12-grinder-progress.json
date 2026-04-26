@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T12:43:00Z",
-  "totalRuns": 18,
-  "totalEnriched": 115,
-  "totalSkipped": 52,
-  "notes": "Run 18: enriched 8 WA HS in Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley SDs. Spans offsets 155-168. 6 sub-50 / placeholder skips (Island Juvenile Det 2, Island Cty Corrections 0, Open Den 48-57 borderline alt name change to 'Coupeville Open Academy', Ferry Cty Open Doors 33, Lincoln Cty Tech 0 placeholder, Dayton SD Alt 3). Coupeville HS: 3 principals in transition (Berard on leave Mar 2026; Becky Cays acting). Creston Jr-Sr HS shares cooperative principal Teresa Chrisman with Wilbur HS. Dayton Guin Joyce remained as Secondary Principal after losing super search to Wheatley. Queue offset 155 -> 169.",
+  "lastRun": "2026-04-26T13:04:09Z",
+  "totalRuns": 19,
+  "totalEnriched": 121,
+  "totalSkipped": 54,
+  "notes": "Run 19: enriched 6 WA HS \u2014 Eastmont SD (Eastmont Senior 1562 / Del Enders), Eatonville SD (Eatonville HS 560 / Amy Sturdivant), Edmonds SD cluster (Scriber Lake choice 197 / Dan Falk interim, Lynnwood 1375 / Jesse Goodsky, Meadowdale 1450 / Kim Whitworth, Mountlake Terrace STEM-magnet 1350 / David Friedle). Skipped 2 (Easton Secondary enr=0 placeholder, ESD New Beginnings enr=40 alt). Wall-clock ~10 min, mostly WebSearch + 4 successful Finalsite about-page fetches via large-file python regex. Queue offset 169 -> 177.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 169,
+      "offset": 177,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 169 of 649; 115 cumulative grinder count"
+      "note": "raw NCES offset 177 of 649; 121 cumulative grinder count"
     },
     {
       "state": "WA",
