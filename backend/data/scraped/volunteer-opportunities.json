@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 94,
+    "totalCount": 99,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -2801,6 +2801,154 @@
       "collegeAppValue": "high",
       "howToStart": "Apply via the volunteer form at lifewire.org/get-involved/volunteer/. Volunteers under 18 must be supervised by a parent or guardian and may not be eligible for all opportunities. LifeWire offers at least one 20-hour DV 101 training per year for advocacy roles.",
       "_source": "https://www.lifewire.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Share Vancouver Volunteer (Hot Meals, Backpack, Shelter, Garden)",
+      "organization": "Share Vancouver",
+      "description": "Vancouver WA's largest hunger-relief and homelessness-services nonprofit, founded 1979. Operates the Share House emergency shelter system, Hot Meals daily community dining, Backpack Program (food bags for students/families weekly during the school year), Talkin' Trash environmental advocacy, Care for Share fundraisers, and the Share Garden/produce program. Volunteer roles span kitchen prep, meal serving, dishwashing, food sorting/packing, garden maintenance, donation processing, and community events.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food service",
+        "meal preparation",
+        "logistics",
+        "community organizing",
+        "gardening"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Create a profile at sharevancouver.org/volunteer and complete the volunteer application + background check. Volunteers must be at least 16 to volunteer independently; under-16 must be accompanied by an adult. Some programs (Hot Meals at Share House) are Ages 18+ or group-only; the Backpack and Garden programs accept Ages 12+ as part of a 5-10 person group.",
+      "_source": "https://sharevancouver.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Clark County TeenTalk Peer Volunteer Program",
+      "organization": "Clark County TeenTalk (Clark County Community Services)",
+      "description": "Teen-to-teen confidential support program in Clark County, WA. TeenTalkers answer calls, texts, and emails from peers facing issues like family conflict, depression, anxiety, school stress, identity, abuse, and crisis. Volunteers complete a structured 32-hour pre-service training (active listening, suicide-risk basics, community resources, role plays) before being paired with adult mentor coordinators on the line. Hybrid: in-person and Zoom shifts available. Hours count toward senior project and community service credit.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis",
+        "leadership"
+      ],
+      "ageMin": 15,
+      "ageMax": 19,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "active listening",
+        "crisis de-escalation",
+        "empathy",
+        "peer counseling",
+        "community resources knowledge"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via the Google Form linked at ccteentalk.clark.wa.gov/get-involved-teens.html. Eligible: youth ages 15-19 living in Clark County. Commit to 32 hours of pre-service training plus one supervised 3-hour shift per week. Contact program coordinator at 564-397-5199.",
+      "_source": "https://ccteentalk.clark.wa.gov/get-involved-teens.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Capitol Land Trust Stewardship Work Parties",
+      "organization": "Capitol Land Trust",
+      "description": "Tumwater-based regional land trust conserving wildlife habitat, working farms/forests, and shorelines across Thurston, Mason, Lewis, Grays Harbor, and Pacific counties. Stewardship work parties run year-round at conserved preserves and easements (Bayshore, Stephens, Black River, Darlin Creek, and many more). Activities include planting native trees and shrubs, mulching, removing invasive species like Scotch broom and Himalayan blackberry, trail maintenance, and debris cleanup. K-12 outdoor programs and Salmon Docent / Trail Steward roles also available.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "habitat restoration",
+        "native-plant identification",
+        "trail building",
+        "ecological monitoring",
+        "outdoor leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "RSVP to upcoming work parties at capitollandtrust.org/get-involved/stewardship-work-parties/ or subscribe to The Heron newsletter. Minors under 16 must be accompanied by an adult and have a Minor Waiver Release form signed by a parent or guardian. Contact stewardship@capitollandtrust.org with questions.",
+      "_source": "https://capitollandtrust.org/get-involved/stewardship-work-parties/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "City of Vancouver Urban Forestry / Friends of Trees Tree Planting",
+      "organization": "City of Vancouver Urban Forestry (with Friends of Trees)",
+      "description": "Vancouver WA's official urban tree-canopy program, run by City Public Works in partnership with Friends of Trees (1+ million native trees and plants put in the ground across Portland-Vancouver since 1989). Tree planting season runs October through April with neighborhood plantings nearly every weekend; Friends of Trees provides gloves, tools, and on-site training, and neighborhood volunteers host a community potluck after each planting. Year-round Stewardship Saturdays focus on watering, mulching, and weeding established trees.",
+      "scope": "state",
+      "states": [
+        "WA",
+        "OR"
+      ],
+      "categories": [
+        "environment"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "urban forestry",
+        "native-plant identification",
+        "tree care",
+        "neighborhood organizing"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Sign up for individual planting events at friendsoftrees.org or via the City of Vancouver Urban Forestry events calendar. Youth 15 and under must volunteer with a parent or guardian; youth 16+ may volunteer independently with a parent-signed youth waiver form. For Vancouver planting questions, email AdelaM@friendsoftrees.org or call 360-487-8308.",
+      "_source": "https://www.cityofvancouver.us/government/department/public-works/urban-forestry/urban-forestry-volunteer-events-and-workshops/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26"
+    },
+    {
+      "name": "Thurston County Food Bank Volunteer (Olympia, Lacey, Tumwater)",
+      "organization": "Thurston County Food Bank (TCFB)",
+      "description": "South Sound's largest hunger-relief organization, serving Thurston County since 1972. Operates the Olympia Food Pantry, Lacey Food Pantry + Farm Stand, Tumwater Warehouse, Mobile Food Bank, Food Rescue, agricultural programs, and Backpack Program for school-age kids. Volunteer roles include client-services pantry shifts (greeting clients, packing food orders, restocking), warehouse sort/repack, farm stand setup, food rescue driving, and special events. M-F daytime shifts plus the 2nd Wednesday of each month evening shift in Lacey and select Saturday Farm Stand mornings.",
+      "scope": "state",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food sorting/packing",
+        "client service",
+        "warehouse logistics",
+        "community engagement"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Complete the online volunteer application at tcfb.org/volunteer/volunteer-basics/ then sign up for shifts via the VolunteerLocal portal. Youth ages 12+ may volunteer without parental supervision; under 12 must be accompanied by an adult; under 18 require a parent/guardian signature on the application. Court-referred community service accepted.",
+      "_source": "https://tcfb.org/volunteer/volunteer-basics/",
       "_verified": true,
       "_verifiedDate": "2026-04-26"
     }

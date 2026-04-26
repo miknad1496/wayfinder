@@ -4,10 +4,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries (run 4 again completed 5-of-5 verified, 0 skipped — sustain at 5)
-- typical_run_duration: ~15-20 min for 5 entries (most time in HTML extraction from Squarespace/WordPress sites)
-- typical_skip_rate: 0-1 of 5 candidates
-- last_calibration_change: 2026-04-26 — run 3 (raised from 4 → 5); run 4 confirms 5 is sustainable for Eastside cluster
+- batch_size: 5 entries (run 5 again completed 5-of-5 verified, 0 skipped — sustain at 5)
+- typical_run_duration: ~15-20 min for 5 entries (most time in HTML extraction from large WordPress / Webflow sites)
+- typical_skip_rate: 0-1 of 5 candidates in final batch (in run 5 also dropped 2 candidates earlier in research — see Failed Patterns)
+- last_calibration_change: 2026-04-26 — run 3 (raised from 4 → 5); runs 4 + 5 confirm 5 is sustainable for metro clusters
 
 
 ## EFFECTIVE PATTERNS
@@ -27,6 +27,9 @@
 - **NEW (run 4):** When direct `web_fetch` redirects are cancelled (LifeWire) or the page is JS-rendered (Jubilee REACH on Squarespace), fall back to `curl -sL --max-redirs 5 -A "Mozilla/5.0"` from bash for the canonical org URL. This recovered LifeWire's age-min text where the internal tool failed. Pattern: `curl -sL -A "Mozilla/5.0" URL -o /tmp/page.html` then `python3` HTML-strip + regex-grep. The 404 footer of an org's site often reveals the real volunteer-page slug (LifeWire 404 footer linked to `/get-involved/volunteer/`).
 - **NEW (run 4):** KCLS BiblioCommons curated lists (Adult Bellevue Volunteering Resources, Teen Bellevue Volunteering Resources at `kcls.bibliocommons.com/v2/list/display/2311538779/...`) are useful corroborating sources — librarian-vetted, often include explicit age-min annotations alongside official URLs. Treat as a starting filter for orgs to research, then verify on the org's own canonical page.
 - **NEW (run 4):** For Eastside (Bellevue/Sammamish/Issaquah/Kirkland) cluster, the `/volunteer` slug is consistent across the strongest candidates (Renewal Food Bank, Sophia Way, KidVantage, EFS, LifeWire). Pre-fetch all 5 in parallel-ish first; only research more if 2+ skip.
+- **NEW (run 5):** Vancouver WA + Olympia (SW WA) cluster works well together as a "South of I-5" run — both metros have municipal partner orgs (City of Vancouver Urban Forestry + Friends of Trees, Clark County TeenTalk under Community Services) and regional coalitions (Thurston County Food Bank, Capitol Land Trust). Search formula `"[city/county]" volunteer age teen` consistently surfaced explicit age tiers for hunger and environment orgs.
+- **NEW (run 5):** Public-private tree-planting partnerships (City Urban Forestry + Friends of Trees) are excellent verified entries — sustained for decades, year-round Saturday calendar, explicit youth waiver language. Equivalent search for any new metro: `"[city]" "urban forestry" volunteer tree planting age`.
+- **NEW (run 5):** County-government peer-support youth lines (Clark County TeenTalk under Community Services) appear under `[county-program-name].[county].wa.gov`. They publish explicit age windows because they are statutorily required to. Search formula: `"[county]" teen talk OR teen line peer volunteer`.
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
 - Programs that look national but are actually defunct local chapters (verify the chapter is still active by looking for events in the last 6 months)
@@ -38,6 +41,9 @@
 - **NEW (run 4):** Bellevue Botanical Garden currently has NO ongoing teen volunteer slots — only annual Scout Day in spring. Skip until they revive a teen-corps. Pattern: confirm "currently does not have opportunities for teen volunteers" before listing.
 - **NEW (run 4):** Imagine Housing Bellevue volunteer page omits explicit age min — only states background check + orientation requirements. Per the Squarespace/WordPress skip rule, do NOT guess. Skip until the page is updated or contact yields a number.
 - **NEW (run 4):** Jubilee REACH (Bellevue Lake Hills) is a strong-fit org (2000+ volunteers, after-school sports across 7 middle schools, KidREACH tutoring, ESL, Camp Jubilee) but the Squarespace `/volunteer` and `/get-involved-volunteer-individual` pages do NOT publish an explicit age min. WA state law requires background checks for under-16 volunteers with unsupervised child contact, which the org acknowledges, but no minimum is on the public page. SKIPPED per "no guessing" rule. Re-check next quarter for an updated FAQ — meanwhile a contact-email verification approach could unlock this entry.
+- **NEW (run 5):** Olympia Free Clinic (TOFC) requires volunteers to be 18+ — too old for most college-prep teen audience. Skip for the teen-focused DB; could be re-added later if the DB ever splits adult-only volunteering into its own bucket.
+- **NEW (run 5):** Senior Services for South Sound (Olympia) volunteer page lists per-program shift details but does NOT publish a minimum age. Many roles look adult-coded (Food Handlers permit, RN cert, computer-skills reception). Per the no-guessing rule, SKIPPED. A contact-email verification approach (volunteer manager Theresa Ziniewicz) could unlock the kitchen / lobby ambassador roles for teens.
+- **NEW (run 5):** YWCA Clark County (Vancouver DV/SA) volunteer FAQ requires application + screening + interview + background check + 40-hour SafeChoice training for direct-service roles, but the age minimum is NOT on the public page. Search results suggest 18+ for SafeChoice but the org's own page is silent. SKIPPED — re-check via volunteer-coordinator email next quarter.
 ## SOURCE-SPECIFIC NOTES
 
 - `wta.org/get-involved/volunteer/questions` — comprehensive FAQ with explicit age policy (10+, <14 with adult, <18 parent sign-in). Reliable single-fetch verification.
@@ -57,12 +63,19 @@
 - `eastsidefriendsofseniors.org/volunteer` — Wix site, clean text. Explicit "All volunteers must be 16+ and drivers 21+" + 2-5 hr/mo for 6 months minimum commitment.
 - `lifewire.org/get-involved/volunteer/` — internal web_fetch returns "Redirect was cancelled" (cookie/CSRF challenge); recovered the canonical slug from the LifeWire 404 page footer, then bash `curl -sL -A "Mozilla/5.0"` succeeded. Page lists role types (Stewardship Ambassador, Event Assistant, Social Media Strategist, In-Kind Donations) and age policy: "Volunteers under the age of 18 must be supervised by a parent or guardian and may not be eligible for all opportunities." 20-hour DV 101 training is the gateway to advocacy roles.
 - `kcls.bibliocommons.com/v2/list/display/2311538779/2325333629` (Adult Bellevue Volunteering Resources) and `.../2316615229` (Teen Bellevue Volunteering Resources) — librarian-curated with annotation notes that often surface age policies before fetching the org's own page.
+- `sharevancouver.org/volunteer/` — WordPress (Yoast SEO). Clean fetch via internal web_fetch; explicit age policy in FAQ ("at least 16 to volunteer independently; under 16 with adult"). Per-program age tiers also surface on the activity-detail pages (Hot Meals 18+, Backpack/Garden 12+ in groups). Volunteer profile system requires application + background check.
+- `ccteentalk.clark.wa.gov/get-involved-teens.html` — Clark County Community Services Webflow site. Explicit "Teens (15-19)" navigation tier; volunteer Google Form linked. Application + 32-hr training + 3-hr supervised shifts/week. Hours count toward senior project + community service.
+- `capitollandtrust.org/get-involved/stewardship-work-parties/` — WordPress; lots of preserve names in nav. Explicit age policy from search results: "Minors under 16 must be accompanied by an adult and have both pages of the Minor Waiver Release form filled out." Multi-county footprint (Thurston, Mason, Lewis, Grays Harbor, Pacific). Tumwater HQ.
+- `cityofvancouver.us/government/department/public-works/urban-forestry/urban-forestry-volunteer-events-and-workshops/` — municipal Urban Forestry partner page directing to Friends of Trees. Explicit policy: youth 15 and under with parent/guardian; youth 16+ independent with parent-signed youth waiver. Tree-planting season Oct-April with weekend events. Vancouver-specific contact: AdelaM@friendsoftrees.org / 360-487-8308.
+- `tcfb.org/volunteer/volunteer-basics/` — WordPress (Avada theme). Explicit age tiers: 12+ may volunteer independently, under 12 with adult, under 18 needs parent signature on application. Court-referred community service accepted. 4 locations across Olympia/Lacey/Tumwater. VolunteerLocal portal for shift sign-up.
 ## DATA QUALITY FLAGS DISCOVERED
 
 - Hopelink, KCLS, Seattle Aquarium YOA, WTA, PDZA, TRM, Greentrike, Mobius are all "scope": "state" rather than "national" — but their reach is regional (Puget Sound or all-WA), not single-city. Confirmed appropriate per the existing schema.
 - Second Harvest Inland Northwest is the first DB entry with a multi-state `states` array (`["WA", "ID"]`) — confirmed appropriate; the route filter handles arrays.
 - **NEW (run 4):** LifeWire reports "40 years of service" in 2026 (founded 1986 as Eastside Domestic Violence Program, rebranded LifeWire). When a description references program age in years, anchor it to founding year not "40 years" so it doesn't go stale.
 - **NEW (run 4):** KidVantage was previously "Eastside Baby Corner" — older inbound links and aggregator listings still use the old name. The DB entry name includes "(formerly Eastside Baby Corner)" for searchability.
+- **NEW (run 5):** City of Vancouver Urban Forestry / Friends of Trees is the second multi-state DB entry (`states: ["WA","OR"]`) — the program coordinates plantings on both sides of the Columbia River. Confirmed appropriate; route filter handles the array.
+- **NEW (run 5):** Clark County TeenTalk is the first DB entry where `ageMax` is set tightly (15-19) — by program design. Most other entries use `ageMax: 99` as the open-ended sentinel. The frontend filter should treat narrow age windows as a stronger match for teen users.
 ## CALIBRATION SUGGESTIONS FROM PAST RUNS
 
 - Run 2 added 4 verified WA entries (skipped 1) — runtime well within budget.
@@ -73,6 +86,9 @@
 - **Run 4 added 5 verified Eastside entries (skipped 0 from final batch; 3 deferred earlier in research — Bellevue Botanical Garden, Imagine Housing, Jubilee REACH — all due to undocumented age min). Cluster-by-metro Eastside approach worked: 4 of 5 are within ~10 miles of one another. Recommend STAY at 5 next run.**
 - After 4 runs WA queue is at 19/30. ~2 more WA-focused runs to complete the queue. Suggested run-5 target: Vancouver WA (Share Vancouver, Innovative Services NW, Clark County Volunteer Connections) and Olympia (Senior Services for South Sound, Olympia Free Clinic, Capital Land Trust). Cluster on Vancouver first — closer to a single-metro cluster than mixed.
 - **NEW pattern:** when a candidate is solid programmatically but lacks a published age min on its volunteer page, log it as DEFERRED in the lessons file rather than just skipping silently — a future run with an email-contact step can unlock these (Jubilee REACH especially — 2000+ vols is too valuable to leave out long-term).
+- **Run 5 added 5 verified Vancouver/Olympia entries (skipped 0 from final batch; 3 dropped during research — Olympia Free Clinic 18+, Senior Services for South Sound no published age min, YWCA Clark County no published age min).** South-of-I-5 cluster (Vancouver + Olympia + Tumwater) worked: Share Vancouver, Clark County TeenTalk, Capitol Land Trust, City of Vancouver Urban Forestry, Thurston County Food Bank — all explicit ages, all sustained programs. Recommend STAY at 5 next run.
+- After 5 runs WA queue is at 24/30. ~1-2 more WA-focused runs to complete (current+remaining = 6). **Suggested run-6 target:** finish out remaining WA gaps. Strong candidates left: YWCA Spokane (run 4 noted), Catholic Charities Eastern WA, Spokane Riverkeeper, Vanessa Behan Crisis Nursery (Spokane); Innovative Services NW (Vancouver) via VolunteerMatch verification; Children's Home Society of WA; Peninsula Light Co-op Senior Services (Tacoma); Mary Bridge Children's Hospital teen volunteer (Tacoma). Cluster recommendation: 3 Spokane + 2 Tacoma to round out non-Seattle metros.
+- **NEW (run 5):** When the metro target is small (Vancouver only ~2-3 strong-fit orgs survive the age-policy filter), pair it with a neighboring metro in the same trip (Olympia/Tumwater) instead of forcing a single-metro batch. Combined "South-of-I-5" cluster yielded 5/5 with diverse categories (hunger, mental_health, environment, environment, hunger).
 ## OPEN QUESTIONS / TODO FOR FUTURE RUNS
 
 - For state-priority entries (WA target 30): cluster by metro for efficiency? Doing all Seattle entries before moving to Tacoma may compound source familiarity. **Run 3 confirmed cluster-by-metro is faster.**
@@ -92,3 +108,4 @@
 | 2026-04-26 | 2 | 4 | 1 | WA (Eastside + Seattle + state) | Hopelink, Seattle Aquarium YOA, KCLS TVP, WTA. Ballard Food Bank skipped — couldn't confirm age min. |
 | 2026-04-26 | 3 | 5 | 0 | WA (Tacoma + Spokane) | Point Defiance Zoo Youth Volunteers, Tacoma Rescue Mission, Second Harvest Inland Northwest, Greentrike Children's Museum of Tacoma, Mobius Discovery Center Spokane. EFN (Tacoma) candidate dropped — `/get-involved/volunteer/` 404s; replaced with Mobius. |
 | 2026-04-26 | 4 | 5 | 0 | WA (Bellevue/Eastside cluster) | Renewal Food Bank, The Sophia Way, KidVantage (Eastside Baby Corner), Eastside Friends of Seniors, LifeWire. Deferred (no published age min): Jubilee REACH, Imagine Housing, Bellevue Botanical Garden (no current teen slots). |
+| 2026-04-26 | 5 | 5 | 0 | WA (Vancouver + Olympia / South-of-I-5) | Share Vancouver, Clark County TeenTalk, Capitol Land Trust, City of Vancouver Urban Forestry / Friends of Trees, Thurston County Food Bank. Dropped during research: Olympia Free Clinic (18+ only), Senior Services for South Sound (no published age), YWCA Clark County (no published age). |
