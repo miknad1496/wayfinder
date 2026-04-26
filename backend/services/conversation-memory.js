@@ -24,7 +24,7 @@
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { redactPII } from './pii-redactor.js';
+import { redactPII, redactKnownName } from './pii-redactor.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -124,12 +124,21 @@ export async function captureConversationMemory(params) {
     await ensureDirs();
 
     // PII redaction — sanitize before persistence (real-time LLM call already happened with raw text).
-    const _r1 = redactPII(userMessage);
-    const _r2 = redactPII(response);
-    const userMessageRedacted = _r1.text;
-    const responseRedacted = _r2.text;
-    const piiCounts = (_r1.redactedCount + _r2.redactedCount) > 0
-      ? { count: _r1.redactedCount + _r2.redactedCount, types: Array.from(new Set([..._r1.types, ..._r2.types])) }
+    // Two passes: (1) regex catches contextual PII patterns, (2) known-name scrub catches
+    // model-generated salutations using the user's profile name. The model knows the user's name
+    // from session context, so its greetings ("Welcome, Emma!") slip past the regex which only
+    // matches names introduced by the user themselves.
+    const knownName = sessionContext?.userName || null;
+    const _r1a = redactPII(userMessage);
+    const _r1b = knownName ? redactKnownName(_r1a.text, knownName) : { text: _r1a.text, redactedCount: 0, types: [] };
+    const _r2a = redactPII(response);
+    const _r2b = knownName ? redactKnownName(_r2a.text, knownName) : { text: _r2a.text, redactedCount: 0, types: [] };
+    const userMessageRedacted = _r1b.text;
+    const responseRedacted = _r2b.text;
+    const totalRedactions = _r1a.redactedCount + _r1b.redactedCount + _r2a.redactedCount + _r2b.redactedCount;
+    const allTypes = new Set([..._r1a.types, ..._r1b.types, ..._r2a.types, ..._r2b.types]);
+    const piiCounts = totalRedactions > 0
+      ? { count: totalRedactions, types: Array.from(allTypes) }
       : null;
 
     const topics = extractTopics(userMessage + ' ' + response);
@@ -194,12 +203,18 @@ export async function captureTrainingPair(params) {
     await ensureDirs();
 
     // PII redaction — sanitize before training-pair persistence
-    const _tr1 = redactPII(userMessage);
-    const _tr2 = redactPII(response);
-    const userMessageRedacted = _tr1.text;
-    const responseRedacted = _tr2.text;
-    const piiCounts = (_tr1.redactedCount + _tr2.redactedCount) > 0
-      ? { count: _tr1.redactedCount + _tr2.redactedCount, types: Array.from(new Set([..._tr1.types, ..._tr2.types])) }
+    // Two passes: regex + known-name scrub (catches model salutations using profile name)
+    const knownName = sessionContext?.userName || null;
+    const _tr1a = redactPII(userMessage);
+    const _tr1b = knownName ? redactKnownName(_tr1a.text, knownName) : { text: _tr1a.text, redactedCount: 0, types: [] };
+    const _tr2a = redactPII(response);
+    const _tr2b = knownName ? redactKnownName(_tr2a.text, knownName) : { text: _tr2a.text, redactedCount: 0, types: [] };
+    const userMessageRedacted = _tr1b.text;
+    const responseRedacted = _tr2b.text;
+    const totalRedactions = _tr1a.redactedCount + _tr1b.redactedCount + _tr2a.redactedCount + _tr2b.redactedCount;
+    const allTypes = new Set([..._tr1a.types, ..._tr1b.types, ..._tr2a.types, ..._tr2b.types]);
+    const piiCounts = totalRedactions > 0
+      ? { count: totalRedactions, types: Array.from(allTypes) }
       : null;
 
     const systemPrompt = 'You are Wayfinder, an expert advisor on college admissions and career planning. Be warm, direct, and data-informed. Sound like a trusted human advisor.';

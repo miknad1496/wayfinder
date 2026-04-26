@@ -160,4 +160,55 @@ export function redactEntry(entry) {
   return entry;
 }
 
+
+
+/**
+ * Literal-match scrub of known user-identifying names.
+ * Used to catch the LLM's own salutations ("Welcome to Wayfinder, Emma!")
+ * which the contextual regex patterns can't see — the model knows the user's
+ * name from the session profile, not from the message text.
+ *
+ * @param {string} text
+ * @param {string|string[]} names — full name string or array of name parts
+ * @returns {{ text, redactedCount, types }}
+ */
+export function redactKnownName(text, names) {
+  if (!text || typeof text !== 'string' || !names) {
+    return { text: text || '', redactedCount: 0, types: [] };
+  }
+  // Normalize input into an ordered list: full name first (longest match), then parts.
+  const list = [];
+  if (typeof names === 'string') {
+    const trimmed = names.trim();
+    if (trimmed) {
+      list.push(trimmed); // full name (e.g., "Emma Chen")
+      const parts = trimmed.split(/\s+/).filter(p => p.length >= 4);
+      list.push(...parts);
+    }
+  } else if (Array.isArray(names)) {
+    for (const n of names) {
+      if (typeof n === 'string' && n.trim()) {
+        const t = n.trim();
+        list.push(t);
+        if (t.includes(' ')) {
+          for (const part of t.split(/\s+/)) if (part.length >= 4) list.push(part);
+        }
+      }
+    }
+  }
+  // Dedupe, sort by length desc (replace longest first to avoid partial overwrites)
+  const unique = Array.from(new Set(list)).sort((a, b) => b.length - a.length);
+
+  let out = text;
+  let count = 0;
+  for (const name of unique) {
+    if (name.length < 2) continue;
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\b${escaped}\\b`, 'gi');
+    let didReplace = false;
+    out = out.replace(re, () => { count++; didReplace = true; return '[NAME]'; });
+  }
+  return { text: out, redactedCount: count, types: count > 0 ? ['known_name'] : [] };
+}
+
 export const _patterns = PATTERNS; // exposed for tests
