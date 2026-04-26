@@ -246,3 +246,58 @@ Future grinder runs should expand into:
 - Native American/Indigenous youth programs
 - Religious-affiliated camps (Christian, Jewish, Muslim, Buddhist) with
   clear non-coercive participation policies
+
+
+## AD-HOC HARVEST RUNS — ROUNDS 4-7 (2026-04-26)
+
+Per Dan: '3-4 properly sized/targeted incremental grinds'.
+
+ROUND 4 — Faith-based + cultural identity (7):
+- Foundation for Jewish Camp One Happy Camper grant
+- Catholic Heart Workcamp
+- Hispanic Heritage Foundation Youth Awards + LOFT
+- Plum Village Mindfulness Family Retreats
+- FGC Quaker Family Camp
+- AAJA youth programs
+- Hispanic Scholarship Fund Youth Leadership Institute
+
+ROUND 5 — Conservation + outdoors (7):
+- Sierra Club ICO
+- NWF Eco-Schools USA
+- NPS Every Kid Outdoors (free 4th-grade pass)
+- Audubon for Kids
+- NOAA Planet Stewards (\$5K project funding)
+- Outdoor Afro
+- Earthwatch Family Expeditions
+
+ROUND 6 — Disability-inclusive (6):
+- Special Olympics Unified Champion Schools
+- Easterseals
+- Camp Korey (SeriousFun)
+- Friendship Circle
+- AHRC NY
+- Autism Society local affiliate network
+
+ROUND 7 — Indigenous + LGBTQ+ + arts + sports (6):
+- AISES Pre-College
+- Native Like Water
+- Camp Brave Trails
+- Family Equality Family Week
+- Interlochen Arts Camp Junior Programs
+- USA Junior Olympic pipeline (multi-NGB)
+
+CUMULATIVE TOTALS (across all 7 ad-hoc rounds):
+- Programs added: 66 (rounds 1-7)
+- Field-note insights: 64 captured
+- Geographic coverage: nationwide + 4 international (CISV, Concordia,
+  EF, WWOOF, Plum Village France) + Earthwatch field sites worldwide
+- Categories: STEM, arts, leadership, service, non-traditional,
+  faith-based, cultural-identity, disability-inclusive, conservation,
+  sports, performing arts, robotics, math, language immersion
+
+NEXT GRINDER PRIORITY ZONES (handed off to /15-min cron grinder):
+- Major-metro day-camp deepening (Boston, Chicago, Phoenix, Atlanta,
+  DC metro, Houston, Denver, Detroit)
+- WA/CA/NY metro local-program coverage
+- Religious-school summer programs (parochial schools)
+- Suburban day-camp networks (KE Camps, Kids in the Game, Harlem RBI)

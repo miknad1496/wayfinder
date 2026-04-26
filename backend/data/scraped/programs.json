@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 920,
+    "totalCount": 926,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -40167,6 +40167,271 @@
       "description": "Autism Society of America's 75+ state + local affiliates maintain summer-camp directories specifically vetted for autistic kids. Resources include: (a) autism-specific camps (full immersion), (b) inclusive camps (mainstream camps with autism-trained staff), (c) family camps. Most state affiliates also know which Medicaid HCBS waivers can fund camp + respite care in their state. Best starting point for parents new to autism camp landscape.",
       "url": "https://autismsociety.org/affiliate-network/",
       "_source": "https://autismsociety.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "American Indian Science & Engineering Society (AISES) Pre-College",
+      "provider": "AISES",
+      "category": "stem",
+      "subcategory": "cultural",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Most programs FREE for Native youth; AISES National Conference travel scholarships available"
+      },
+      "selectivity": "open",
+      "format": "hybrid",
+      "location": {
+        "city": "Online + 200+ AISES collegiate chapters + Tribal college network",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 18
+      },
+      "deadline": "Year-round; National Conference fall",
+      "description": "AISES is the leading professional society for Native American/Indigenous people in STEM. Pre-college programs include: Online tutoring + mentorship matching with Native STEM professionals, summer 'Lighting the Pathway' college prep, and access to the AISES National Conference (largest gathering of Indigenous STEM professionals + students annually). Pipeline to AISES college scholarships ($1K-$10K). Open to enrolled tribal members, descendants, and Alaska Natives + Native Hawaiians.",
+      "url": "https://www.aises.org/programs/pre-college",
+      "_source": "https://www.aises.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Native Like Water (Indigenous youth ocean conservation)",
+      "provider": "Native Like Water",
+      "category": "non-traditional",
+      "subcategory": "cultural",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for accepted Indigenous youth (donations from Patagonia + others fund operations)"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "California coast \u2014 Pala, Camp Pendleton area + ocean expeditions",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 13,
+        "ageMax": 18
+      },
+      "deadline": "Summer programs apply Feb-March",
+      "description": "Native Like Water connects Indigenous youth (Native American, Pacific Islander, Native Hawaiian, Maori, Aboriginal) with ocean + coastal cultural practices. Summer immersion programs include surfing, paddling, free-diving, marine biology, and traditional Indigenous coastal ecological knowledge. 100% free for accepted youth \u2014 funded by Patagonia + private donors. Highly selective (~30-40 youth per cohort). One of the strongest cultural-identity + outdoor programs for Indigenous youth in the western US.",
+      "url": "https://nativelikewater.org",
+      "_source": "https://nativelikewater.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "specific 2026 program dates"
+      ]
+    },
+    {
+      "name": "Camp Brave Trails (LGBTQ+ youth + family)",
+      "provider": "Brave Trails",
+      "category": "non-traditional",
+      "subcategory": "identity-affirming",
+      "type": "summer",
+      "cost": {
+        "amount": 1500,
+        "type": "sliding-scale",
+        "display": "~$1,400-1,800/wk; sliding-scale + scholarship pool covers ~50% of campers"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "California (LA-area mountains) + Maryland",
+        "state": "CA, MD"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 12,
+        "ageMax": 18
+      },
+      "deadline": "Sessions June-August; book by April",
+      "description": "Camp Brave Trails is the leading summer camp for LGBTQ+ youth ages 12-18. Sessions in California (Angeles National Forest) + Maryland. Affirming community for queer + trans + nonbinary teens with traditional summer-camp activities (hiking, swimming, ropes course, arts) plus identity-supportive programming. Trained queer + trans staff. Sliding scale + scholarship pool covers ~50% of campers. Strong combination of fun + community for kids who may not be out at home.",
+      "url": "https://www.bravetrails.org",
+      "_source": "https://www.bravetrails.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Family Equality Council Family Week",
+      "provider": "Family Equality",
+      "category": "non-traditional",
+      "subcategory": "identity-affirming",
+      "type": "summer",
+      "cost": {
+        "amount": 1500,
+        "type": "paid",
+        "display": "Family registration ~$1,200-1,800; scholarship pool covers ~30% of attending families"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Provincetown, MA",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Annual gathering early August; register Jan-March",
+      "description": "Family Equality's Family Week is the largest annual gathering of LGBTQ+ parents + their kids in North America. 1,800+ family members attend each year in Provincetown MA. Programming spans age-banded kids' activities (Tots, Kids, Tweens, Teens), parent workshops, beach time, and community-building. Strong intergenerational queer-family experience \u2014 many kids report it as their highlight of the year. Scholarship + travel-grant pools available.",
+      "url": "https://www.familyequality.org/family-week/",
+      "_source": "https://www.familyequality.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Interlochen Arts Camp Junior Programs",
+      "provider": "Interlochen Center for the Arts",
+      "category": "arts",
+      "subcategory": "performing-arts",
+      "type": "summer",
+      "cost": {
+        "amount": 3500,
+        "type": "paid",
+        "display": "Junior Division (grades 3-6): ~$3,500-5,500/2 weeks; need-based aid covers 30-100% for ~40% of campers"
+      },
+      "selectivity": "selective",
+      "format": "in-person",
+      "location": {
+        "city": "Interlochen, MI",
+        "state": "MI"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 18
+      },
+      "deadline": "Apply Nov-Jan; auditions Feb for performing-arts tracks",
+      "description": "Interlochen is the most prestigious performing-arts summer camp in the US. Junior Division (grades 3-6) + Intermediate Division (7-9) + High School Division. Tracks: classical music, jazz, dance, theatre, creative writing, film, visual arts. Selective (auditions for performing arts; portfolio for visual). Strong need-based financial aid covers up to 100% \u2014 about 40% of campers receive aid. Located on a 1,200-acre campus in Northern Michigan.",
+      "url": "https://www.interlochen.org/camp",
+      "_source": "https://www.interlochen.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "USA Junior Olympic \u2014 multi-sport developmental pipeline",
+      "provider": "USA Track & Field + USA Swimming + USA Gymnastics + sport-specific NGBs",
+      "category": "non-traditional",
+      "subcategory": "sports",
+      "type": "year-round",
+      "cost": {
+        "amount": 150,
+        "type": "sliding-scale",
+        "display": "Club registration varies; USATF youth membership ~$30-50/yr; meets ~$15-50 each; many clubs have aid"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Local USATF/USA Swimming/USA Gymnastics clubs nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 7,
+        "ageMax": 18
+      },
+      "deadline": "Year-round club enrollment; Junior Olympic championships summer",
+      "description": "Each Olympic-sport National Governing Body (USATF, USA Swimming, USA Gymnastics, USA Wrestling, etc.) operates a Junior Olympic developmental pipeline from local clubs through state, regional, and national championships. Best entry to organized competitive sport for kids beyond rec leagues. Each NGB has its own age divisions, qualifying standards, and scholarship pools. Find local clubs via the NGB website (e.g., usatf.org/youth-clubs).",
+      "url": "https://www.usatf.org/youth/programs",
+      "_source": "https://www.teamusa.org",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
