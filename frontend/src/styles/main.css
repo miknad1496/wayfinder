@@ -5096,3 +5096,136 @@ html, body { overflow-x: hidden; }
 .sc-cal-month-tab { padding:8px 16px; border:1px solid #cfdcef; background:#fff; color:#1e3a8a; border-radius:18px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.15s; }
 .sc-cal-month-tab.active { background:#2563eb; color:#fff; border-color:#2563eb; }
 .sc-cal-month-tab:hover:not(.active) { background:#f0f9ff; }
+
+
+/* === WAYFINDER REVAMP V2: MOBILE FIXES (2026-04-26) === */
+/* Override desktop-only modal sizing on mobile so new modules (Summer Camps,
+   Volunteer, K-12 Schools) and the existing tool modals render correctly on
+   phones. Loaded last so it wins specificity. */
+@media (max-width: 767px) {
+  .modal-tool-list,
+  .modal-finaid-wide,
+  .modal-essays,
+  .modal-timeline,
+  #summerCampsModal .modal,
+  #summerCampsModal .modal-content,
+  #volunteerModal .modal,
+  #volunteerModal .modal-content,
+  #k12Modal .modal,
+  #k12Modal .modal-content,
+  #k8Modal .modal,
+  #k8Modal .modal-content {
+    min-width: 0 !important;
+    width: 95vw !important;
+    max-width: 95vw !important;
+    margin: 8px auto !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Modal scrolls instead of clipping */
+  .modal,
+  .modal-tool-list,
+  .modal-content {
+    max-height: 92vh !important;
+    overflow-y: auto !important;
+  }
+
+  /* 3-month side-by-side calendar collapses to single column */
+  .summer-calendar-grid,
+  .calendar-3month,
+  .calendar-months,
+  .month-grid-row,
+  .three-month-grid,
+  [data-calendar-grid] {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+  .calendar-month,
+  .month-card,
+  .calendar-month-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stats banner stacks vertically */
+  .stats-banner,
+  .summer-stats,
+  .module-stats,
+  .header-stats,
+  .modal-stats-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .stats-banner > *,
+  .summer-stats > *,
+  .module-stats > *,
+  .header-stats > *,
+  .modal-stats-row > * {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Filter rows wrap two-up */
+  .filter-row,
+  .modal-filters,
+  .filters-row,
+  .module-filters {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .filter-row > select,
+  .filter-row > input,
+  .modal-filters > select,
+  .modal-filters > input,
+  .filters-row > select,
+  .filters-row > input,
+  .module-filters > select,
+  .module-filters > input {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Tool / program / camp / school / volunteer cards full width */
+  .tool-card,
+  .program-card,
+  .camp-card,
+  .school-card,
+  .volunteer-card,
+  .k12-school-card,
+  .summer-camp-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Tab bars wrap and become horizontally scrollable */
+  .tab-bar,
+  .modal-tabs,
+  .summer-tabs,
+  .volunteer-tabs,
+  .tabs-row {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-bar .tab-btn,
+  .modal-tabs .tab-btn,
+  .summer-tabs .tab-btn,
+  .volunteer-tabs .tab-btn {
+    flex-shrink: 0 !important;
+  }
+
+  /* Buttons inside modals don't overflow */
+  .modal button,
+  .modal .btn-primary,
+  .modal .primary {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+}

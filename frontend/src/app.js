@@ -4639,6 +4639,10 @@ function detectCurrentPage() {
   if ($('programsModal')?.style.display === 'flex') return 'programs';
   if ($('timelineModal')?.style.display === 'flex') return 'timeline';
   if ($('demographicsModal')?.style.display === 'flex') return 'demographics';
+  /* === WAYFINDER REVAMP V2: DAVID CONTEXT FOR NEW MODULES === */
+  if ($('summerCampsModal')?.style.display === 'flex') return 'summerCamps';
+  if ($('volunteerModal')?.style.display === 'flex') return 'volunteer';
+  if ($('k12Modal')?.style.display === 'flex') return 'k12';
   return 'main-chat';
 }
 
@@ -4752,6 +4756,62 @@ function getActiveToolContext() {
   // ── Demographics ──
   } else if ($('demographicsModal')?.style.display === 'flex') {
     ctx.activeTool = 'Demographics & Admissions Data';
+  }
+
+  
+  // ── New modules (Summer Camps / Volunteer / K-12) — fallback if not handled above ──
+  if (!ctx.activeTool) {
+    if ($('summerCampsModal')?.style.display === 'flex') {
+      ctx.activeTool = 'Summer Camps Planner';
+      const tabBtn = document.querySelector('#summerCampsModal .tab-btn.active, #summerCampsModal [data-tab].active, #summerCampsModal button.active');
+      if (tabBtn) ctx.activeTab = (tabBtn.dataset?.tab || tabBtn.textContent || '').trim();
+      const sParts = [];
+      const sg = $('scGrade')?.value || $('summerCampGrade')?.value || $('summerGrade')?.value; if (sg) sParts.push('grade:' + sg);
+      const ss = $('scState')?.value || $('summerCampState')?.value || $('summerState')?.value; if (ss) sParts.push('state:' + ss);
+      const scity = $('scCity')?.value || $('summerCampCity')?.value || $('summerCity')?.value; if (scity) sParts.push('city:' + scity);
+      const sc = $('scCategory')?.value || $('summerCampCategory')?.value; if (sc) sParts.push(sc);
+      const sf = $('scFormat')?.value || $('summerCampFormat')?.value; if (sf) sParts.push(sf);
+      const sb = $('scBudget')?.value || $('summerCampBudget')?.value; if (sb) sParts.push('budget:' + sb);
+      if (sParts.length) ctx.activeFilters = sParts.join(', ');
+      const cal = document.querySelectorAll('#summerCampsModal .calendar-event, #summerCampsModal .week-block, #summerCampsModal [data-camp-week]').length;
+      if (cal) ctx.calendarEventCount = cal;
+      const costEl = document.querySelector('#summerCampsModal .total-cost, #summerCampsModal [data-total-cost], #summerCampsModal .summer-total-cost');
+      if (costEl) ctx.estimatedTotalCost = (costEl.textContent || '').trim();
+      const rc = document.querySelectorAll('#summerCampsModal .tool-card, #summerCampsModal .program-card, #summerCampsModal .camp-card').length;
+      if (rc) ctx.resultCount = rc;
+    } else if ($('volunteerModal')?.style.display === 'flex') {
+      ctx.activeTool = 'Volunteer Opportunities';
+      const tabBtn = document.querySelector('#volunteerModal .tab-btn.active, #volunteerModal [data-tab].active, #volunteerModal button.active');
+      if (tabBtn) ctx.activeTab = (tabBtn.dataset?.tab || tabBtn.textContent || '').trim();
+      const vParts = [];
+      const vc = $('volunteerCategory')?.value || $('volCategory')?.value; if (vc) vParts.push(vc);
+      const vs = $('volunteerState')?.value || $('volState')?.value; if (vs) vParts.push('state:' + vs);
+      const va = $('volunteerAge')?.value || $('volAge')?.value; if (va) vParts.push('age:' + va);
+      const vt = $('volunteerTime')?.value || $('volTime')?.value; if (vt) vParts.push('time:' + vt);
+      const vf = $('volunteerFormat')?.value || $('volFormat')?.value; if (vf) vParts.push(vf);
+      const vq = $('volunteerSearch')?.value || $('volSearch')?.value; if (vq) vParts.push('q:' + vq);
+      if (vParts.length) ctx.activeFilters = vParts.join(', ');
+      const saved = document.querySelectorAll('#volunteerModal .saved-program, #volunteerModal [data-saved="1"]').length;
+      if (saved) ctx.savedProgramCount = saved;
+      const hoursEl = document.querySelector('#volunteerModal .total-hours, #volunteerModal [data-total-hours]');
+      if (hoursEl) ctx.totalHoursLogged = (hoursEl.textContent || '').trim();
+      const rc = document.querySelectorAll('#volunteerModal .tool-card, #volunteerModal .volunteer-card').length;
+      if (rc) ctx.resultCount = rc;
+    } else if ($('k12Modal')?.style.display === 'flex') {
+      ctx.activeTool = 'K-12 Schools Database';
+      const kParts = [];
+      const ks = $('k12State')?.value; if (ks) kParts.push('state:' + ks);
+      const kl = $('k12Level')?.value; if (kl) kParts.push('level:' + kl);
+      const kq = $('k12Query')?.value || $('k12Search')?.value || $('k12Q')?.value; if (kq) kParts.push('q:' + kq);
+      const kd = $('k12District')?.value; if (kd) kParts.push('district:' + kd);
+      if ($('k12HasAP')?.checked) kParts.push('AP');
+      if ($('k12IB')?.checked) kParts.push('IB');
+      if ($('k12Magnet')?.checked) kParts.push('magnet');
+      const kr = $('k12MinRating')?.value; if (kr) kParts.push('rating>=' + kr);
+      if (kParts.length) ctx.activeFilters = kParts.join(', ');
+      const rc = document.querySelectorAll('#k12Modal .tool-card, #k12Modal .school-card').length;
+      if (rc) ctx.resultCount = rc;
+    }
   }
 
   return Object.keys(ctx).length > 0 ? ctx : null;
@@ -6293,3 +6353,135 @@ function scAddProgramToCalendar(name, cost) {
     document.getElementById('scCalEventCost').value = cost || '';
   }, 100);
 }
+
+
+/* === WAYFINDER REVAMP V2: BUILD MY SUMMER LOADING STATE === */
+(function(){
+  // Lightweight loading overlay + fetch wrapper for the K-8 Summer planner.
+  // The /api/summer-camps/plan call hits the SLM which can cold-start for
+  // 10-30s. Without visible feedback, mobile users assume the button is dead
+  // and abandon. This adds a full-screen overlay + bounded 45s timeout +
+  // disables the active "Build my summer" button while in flight.
+  if (typeof window === 'undefined') return;
+
+  const OVERLAY_ID = 'wf-build-summer-overlay';
+  const STYLE_ID   = 'wf-build-summer-style';
+
+  function ensureStyle() {
+    if (document.getElementById(STYLE_ID)) return;
+    const s = document.createElement('style');
+    s.id = STYLE_ID;
+    s.textContent = '@keyframes wf-spin{to{transform:rotate(360deg)}}';
+    document.head.appendChild(s);
+  }
+  function ensureOverlay() {
+    let el = document.getElementById(OVERLAY_ID);
+    if (el) return el;
+    ensureStyle();
+    el = document.createElement('div');
+    el.id = OVERLAY_ID;
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
+    el.setAttribute('aria-hidden', 'true');
+    el.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'inset:0',
+      'background:rgba(0,0,0,0.6)',
+      'z-index:99999',
+      'align-items:center',
+      'justify-content:center',
+      'flex-direction:column',
+      'color:#fff',
+      'font-family:system-ui,-apple-system,sans-serif',
+      'padding:20px',
+      'text-align:center'
+    ].join(';');
+    el.innerHTML = '<div style="width:48px;height:48px;border:4px solid rgba(255,255,255,0.25);border-top-color:#fff;border-radius:50%;animation:wf-spin 1s linear infinite;"></div>' +
+      '<div id="wf-build-summer-msg" style="margin-top:16px;font-size:15px;font-weight:500;max-width:320px;">Building your summer plan…</div>' +
+      '<div id="wf-build-summer-sub" style="margin-top:6px;font-size:12px;opacity:0.85;max-width:320px;">This usually takes 10–30 seconds while the AI warms up.</div>';
+    if (document.body) document.body.appendChild(el);
+    else document.addEventListener('DOMContentLoaded', () => document.body.appendChild(el), { once: true });
+    return el;
+  }
+  function showOverlay(msg, sub) {
+    const o = ensureOverlay();
+    if (msg) { const m = o.querySelector('#wf-build-summer-msg'); if (m) m.textContent = msg; }
+    if (sub) { const s = o.querySelector('#wf-build-summer-sub'); if (s) s.textContent = sub; }
+    o.style.display = 'flex';
+    o.setAttribute('aria-hidden', 'false');
+  }
+  function hideOverlay() {
+    const o = document.getElementById(OVERLAY_ID);
+    if (o) { o.style.display = 'none'; o.setAttribute('aria-hidden', 'true'); }
+  }
+
+  const _wfDisabled = [];
+  function disableBuildButtons() {
+    const sel = [
+      'button#buildSummerBtn',
+      'button#buildMySummerBtn',
+      'button.build-summer-btn',
+      'button[data-action="build-summer"]',
+      '#summerCampsModal button.btn-primary',
+      '#summerCampsModal button.primary'
+    ].join(',');
+    document.querySelectorAll(sel).forEach(b => {
+      if (b.disabled) return;
+      b.disabled = true;
+      b.dataset._wfPrevText = b.textContent;
+      if ((b.textContent || '').toLowerCase().includes('build')) b.textContent = 'Building…';
+      _wfDisabled.push(b);
+    });
+  }
+  function reenableBuildButtons() {
+    while (_wfDisabled.length) {
+      const b = _wfDisabled.pop();
+      try {
+        b.disabled = false;
+        if (b.dataset._wfPrevText) { b.textContent = b.dataset._wfPrevText; delete b.dataset._wfPrevText; }
+      } catch (e) { /* ignore */ }
+    }
+  }
+
+  if (window._wfBuildSummerWrapped) return;
+  window._wfBuildSummerWrapped = true;
+  const _origFetch = window.fetch.bind(window);
+  window.fetch = async function(input, init) {
+    let url = '';
+    try { url = typeof input === 'string' ? input : (input && input.url) || ''; } catch (e) {}
+    const isBuildSummer = typeof url === 'string' && url.indexOf('/api/summer-camps/plan') !== -1;
+    if (!isBuildSummer) return _origFetch(input, init);
+
+    showOverlay('Building your summer plan…', 'This usually takes 10–30 seconds while the AI warms up.');
+    disableBuildButtons();
+
+    const ac = new AbortController();
+    const opts = Object.assign({}, init || {});
+    if (!opts.signal) opts.signal = ac.signal;
+    let timedOut = false;
+    const t1 = setTimeout(() => {
+      showOverlay('Still working…', 'AI worker may be cold-starting. Hang on, or close this and retry in a minute.');
+    }, 20000);
+    const t2 = setTimeout(() => {
+      timedOut = true;
+      try { ac.abort(); } catch (e) {}
+    }, 45000);
+
+    try {
+      const res = await _origFetch(input, opts);
+      clearTimeout(t1); clearTimeout(t2);
+      setTimeout(() => { hideOverlay(); reenableBuildButtons(); }, 200);
+      return res;
+    } catch (err) {
+      clearTimeout(t1); clearTimeout(t2);
+      if (timedOut) {
+        showOverlay('Plan generation timed out (45s).', 'The AI worker is cold-starting. Please try again in about a minute.');
+      } else {
+        showOverlay('Plan generation failed.', (err && err.message) ? String(err.message).slice(0, 200) : 'Unknown error. Please try again.');
+      }
+      setTimeout(() => { hideOverlay(); reenableBuildButtons(); }, 4500);
+      throw err;
+    }
+  };
+})();
