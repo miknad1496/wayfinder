@@ -1,8 +1,8 @@
 {
   "approach": "top-50-per-state-by-enrollment",
-  "lastRun": "2026-04-26T15:30:00.000Z",
-  "totalRuns": 27,
-  "totalEnriched": 174,
+  "lastRun": "2026-04-26T15:38:00.000Z",
+  "totalRuns": 28,
+  "totalEnriched": 182,
   "totalSkipped": 70,
   "migratedFrom": "march-through-every-offset",
   "migratedAt": "2026-04-26T15:08:56.976Z",
@@ -19,7 +19,7 @@
       "state": "TX",
       "level": "high",
       "target": 50,
-      "current": 8,
+      "current": 16,
       "status": "in_progress"
     },
     {

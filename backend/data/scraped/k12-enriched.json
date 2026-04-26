@@ -1,21 +1,21 @@
 {
   "metadata": {
     "lastUpdated": "2026-04-26",
-    "count": 161,
+    "count": 169,
     "source": "NCES + verified web sources",
-    "note": "Run 26: +5 WA high (Grandview HS, Granger HS, Granite Falls HS, Crossroads HS, Granite Falls Open Doors). Skipped 3 sub-50 alt placeholders (Contract Learning Center enr=33, Step to College Open Doors enr=6, Harrington HS enr=43). Queue offset 226 -> 234.",
-    "totalSchools": 174,
+    "note": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 \u2014 Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
+    "totalSchools": 182,
     "lastUpdate": "2026-04-26",
     "lastRunAdded": 8,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 26: +5 verified WA high (Grandview + Granger + Granite Falls SD cluster, offsets 226-233)",
-    "totalVerified": 166,
-    "totalEnriched": 88,
-    "lastRun": 22,
+    "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 \u2014 Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
+    "totalVerified": 174,
+    "totalEnriched": 96,
+    "lastRun": 27,
     "lastEnriched": "2026-04-26",
-    "totalEntries": 145,
-    "verifiedCount": 145,
-    "totalCount": 145,
+    "totalEntries": 182,
+    "verifiedCount": 153,
+    "totalCount": 182,
     "lastUpdateNote": "Run 22: +8 verified WA HS Evergreen SD Clark County cluster"
   },
   "schools": [
@@ -7378,6 +7378,357 @@
         "https://schools.texastribune.org/districts/alief-isd/elsik-high-school/",
         "https://en.wikipedia.org/wiki/Alief_Elsik_High_School",
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=480783000103"
+      ]
+    },
+    {
+      "ncessch": "481653001415",
+      "name": "Deer Park High School",
+      "city": "Deer Park",
+      "state": "TX",
+      "zip": "77536",
+      "district": "Deer Park ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://sc.dpisd.org/",
+      "principal": "Kirk Taylor",
+      "principalNote": "Kirk Taylor is principal of the South Campus (grades 10-12); the school is split across three campuses: North Campus (grade 9), South Campus (10-12), and Wolters Campus (alternative). NCES record rolls these up. Associate Principal Amy Zavesky; multiple Assistant Principals.",
+      "enrollment": 4026,
+      "schoolType": "comprehensive",
+      "phone": "(832) 668-7200",
+      "apParticipationPercent": "35%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 35% participation rate",
+        "Multi-campus model: 9th Grade North Campus + 10-12 South Campus",
+        "Wolters Alternative Campus for non-traditional pathways",
+        "Deer Park Deer athletics (UIL 6A)"
+      ],
+      "rating": {
+        "source": "U.S. News / Niche / Texas Tribune",
+        "notes": "Largest HS in Deer Park ISD; serves Deer Park community in Harris County; suburban Houston. Mascot: Deer."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://sc.dpisd.org/apps/staff/",
+        "https://www.dpisd.org/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/deer-park-independent-school-district/deer-park-high-school-18953",
+        "https://schools.texastribune.org/districts/deer-park-isd/deer-park-high-school/",
+        "https://en.wikipedia.org/wiki/Deer_Park_High_School_(Texas)",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481653001415"
+      ]
+    },
+    {
+      "ncessch": "481800001589",
+      "name": "Permian High School",
+      "city": "Odessa",
+      "state": "TX",
+      "zip": "79762",
+      "district": "Ector County ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://phs.ectorcountyisd.org/",
+      "principal": "Delesa Styles",
+      "principalNote": "Delesa Styles serves as principal; Mr. Richard Ontiveroz is Associate Principal of Operations. Permian is famous as the school featured in 'Friday Night Lights' (book/film/TV). Athletic teams known as the Panthers; rallying cry 'Mojo'.",
+      "enrollment": 3978,
+      "schoolType": "comprehensive",
+      "phone": "(432) 456-0039",
+      "apParticipationPercent": "31%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 31% participation",
+        "Permian 'Mojo' Panthers football \u2014 featured in 'Friday Night Lights' by Buzz Bissinger",
+        "Career & Technical Education (CTE) pathways",
+        "Title I-eligible school serving 61% economically disadvantaged students"
+      ],
+      "demographics": {
+        "minorityPercent": "81%",
+        "economicallyDisadvantagedPercent": "61%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune / Public School Review",
+        "notes": "1 of 7 high schools in Ector County ISD; address 1800 East 42nd St., Odessa. Serves diverse student population in West Texas oil-belt community."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://phs.ectorcountyisd.org/our-school/permian-admin/permian",
+        "https://phs.ectorcountyisd.org/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/ector-county-independent-school-district/permian-high-school-19000",
+        "https://schools.texastribune.org/districts/ector-county-isd/permian-high-school/",
+        "https://en.wikipedia.org/wiki/Permian_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481800001589"
+      ]
+    },
+    {
+      "ncessch": "481521001028",
+      "name": "Coppell High School",
+      "city": "Coppell",
+      "state": "TX",
+      "zip": "75019",
+      "district": "Coppell ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://www.coppellisd.com/o/chs",
+      "principal": "Laura Springer",
+      "principalNote": "Laura Springer is the long-tenured CHS principal; recipient of the 2024 TMEA Distinguished Administrator Award. Athletic teams: Cowboys / Cowgirls.",
+      "enrollment": 3955,
+      "schoolType": "comprehensive",
+      "phone": "(214) 496-6100",
+      "apParticipationPercent": "77%",
+      "graduationRate": "99%",
+      "studentTeacherRatio": "15:1",
+      "ibProgram": true,
+      "notablePrograms": [
+        "International Baccalaureate (IB) Diploma Programme",
+        "Advanced Placement (AP) \u2014 77% participation rate (very high)",
+        "Career & Technical Education (CTE) pathways",
+        "Coppell Cowboys/Cowgirls athletics (UIL 6A)",
+        "Top-ranked Texas Music Education program"
+      ],
+      "testScores": {
+        "mathProficient": "78%",
+        "readingProficient": "87%"
+      },
+      "rating": {
+        "source": "Niche / U.S. News",
+        "notes": "Niche Grade A+; ranked #4 Best Public High School in Dallas-Fort Worth area; 99% 4-year graduation rate."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.coppellisd.com/o/chs/page/principal",
+        "https://www.coppellisd.com/o/austin/article/1624609",
+        "https://www.niche.com/k12/coppell-high-school-coppell-tx/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/coppell-independent-school-district/coppell-high-school-18860",
+        "https://en.wikipedia.org/wiki/Coppell_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481521001028"
+      ]
+    },
+    {
+      "ncessch": "480783000104",
+      "name": "Hastings High School",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77072",
+      "district": "Alief ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://hastings.aliefisd.net/",
+      "principal": "Lynette Miller",
+      "principalNote": "Lynette Miller is Coordinating Principal; she has served Alief ISD for 27+ years. NCES enrollment includes Hastings 9th Grade Center. Multi-campus model similar to Elsik (sister school in same district).",
+      "enrollment": 3930,
+      "schoolType": "comprehensive",
+      "phone": "(281) 498-8110",
+      "apParticipationPercent": "36%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 36% participation rate",
+        "Career & Technical Education (CTE) pathways",
+        "Multi-campus model: Hastings 9th Grade Center + main 10-12 campus",
+        "Hastings Knights athletics (UIL 6A)",
+        "AVID college-readiness program"
+      ],
+      "demographics": {
+        "minorityPercent": "96%",
+        "economicallyDisadvantagedPercent": "83%"
+      },
+      "rating": {
+        "source": "U.S. News / Niche / Texas Tribune",
+        "notes": "Highly diverse student body; serves SW Houston/Alief community; sister to Elsik HS. 1 of 2 main HS in Alief ISD."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.aliefisd.net/o/hhs/page/administrator-directory",
+        "https://hastings.aliefisd.net/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/alief-independent-school-district/hastings-high-school-18559",
+        "https://schools.texastribune.org/districts/alief-isd/hastings-high-school/",
+        "https://en.wikipedia.org/wiki/Alief_Hastings_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=480783000104"
+      ]
+    },
+    {
+      "ncessch": "482574013407",
+      "name": "Klein Cain High School",
+      "city": "Klein",
+      "state": "TX",
+      "zip": "77070",
+      "district": "Klein ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://kleincain.kleinisd.net/",
+      "principal": "Lauren Marti",
+      "principalNote": "Lauren Marti is principal; named 2025 Klein ISD Secondary Principal of the Year. School opened August 2017 \u2014 newest of the five Klein ISD high schools. Athletic teams: Hurricanes.",
+      "enrollment": 3902,
+      "schoolType": "comprehensive",
+      "phone": "(832) 249-4000",
+      "apParticipationPercent": "35%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 35% participation rate, open enrollment",
+        "Career & Technical Education (CTE) pathways",
+        "Klein Cain Hurricanes athletics (UIL 6A)",
+        "Klein Prep academic support program"
+      ],
+      "rating": {
+        "source": "U.S. News / Niche / Klein ISD",
+        "notes": "Newest of five Klein ISD high schools (opened 2017); modern facilities; serves NW Harris County suburbs of Houston."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.kleinisd.net/news/post/~board/news/post/lauren-marti-named-2025-secondary-principal-of-the-year",
+        "https://kleincain.kleinisd.net/",
+        "https://en.wikipedia.org/wiki/Klein_Cain_High_School",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/klein-independent-school-district/klein-cain-high-school-201615",
+        "https://schools.texastribune.org/districts/klein-isd/klein-cain-high-school/",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=482574013407"
+      ]
+    },
+    {
+      "ncessch": "481800001587",
+      "name": "Odessa High School",
+      "city": "Odessa",
+      "state": "TX",
+      "zip": "79763",
+      "district": "Ector County ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://ohs.ectorcountyisd.org/",
+      "principal": "Mauricio Marquez",
+      "principalNote": "Mauricio Marquez is principal; Associate Principal for Operations Tony Parris; Associate Principal for C&I Rachel Baxter. Sister school to Permian HS (Run 27 same-district pair). Athletic teams: Bronchos (note unique spelling).",
+      "enrollment": 3874,
+      "schoolType": "comprehensive",
+      "phone": "(432) 456-0029",
+      "apParticipationPercent": "33%",
+      "graduationRate": "78.7%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program \u2014 33% participation rate",
+        "Career & Technical Education (CTE) pathways",
+        "Odessa 'Bronchos' athletics (UIL 6A) \u2014 unique mascot spelling",
+        "Sister-school rivalry with Permian HS"
+      ],
+      "demographics": {
+        "economicallyDisadvantagedPercent": "68%"
+      },
+      "rating": {
+        "source": "U.S. News / Texas Tribune / SchoolDigger",
+        "notes": "1 of 7 high schools in Ector County ISD; oldest of the two main Ector County HS; serves West Texas oil-belt community."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://ohs.ectorcountyisd.org/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/ector-county-independent-school-district/odessa-high-school-18999",
+        "https://schools.texastribune.org/districts/ector-county-isd/odessa-high-school/",
+        "https://en.wikipedia.org/wiki/Odessa_High_School_(Texas)",
+        "https://www.schooldigger.com/go/TX/schools/1800001587/school.aspx",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=481800001587"
+      ]
+    },
+    {
+      "ncessch": "483432003821",
+      "name": "Dobie High School",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77089",
+      "district": "Pasadena ISD",
+      "level": "high",
+      "grades": "10-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://dobie.pasadenaisd.org/",
+      "principal": "Carey Sink",
+      "principalNote": "Carey Sink is principal at J. Frank Dobie High School (csink@pasadenaisd.org). NCES enrollment includes Dobie 9 (separate 9th Grade Center). Founded 1968, named after Texas writer J. Frank Dobie. Largest school in Pasadena ISD.",
+      "enrollment": 3870,
+      "schoolType": "comprehensive",
+      "phone": "(713) 740-0370",
+      "studentTeacherRatio": "16:1",
+      "notablePrograms": [
+        "Advanced Placement (AP) program",
+        "Career & Technical Education (CTE) pathways",
+        "Multi-campus model: Dobie 9 + main 10-12 campus",
+        "Dobie Longhorns athletics (UIL 6A)",
+        "Dual Credit with San Jacinto College"
+      ],
+      "rating": {
+        "source": "U.S. News / Texas Tribune / Wikipedia",
+        "notes": "Largest school in Pasadena ISD (3,870 students + 245 teachers). Named after Pulitzer-finalist Texas folklore writer J. Frank Dobie."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://dobie.pasadenaisd.org/administration/principals___staff",
+        "https://dobie.pasadenaisd.org/",
+        "https://schools.texastribune.org/districts/pasadena-isd/dobie-high-school/",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/pasadena-independent-school-district/dobie-high-school-19677",
+        "https://en.wikipedia.org/wiki/Dobie_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=483432003821"
+      ]
+    },
+    {
+      "ncessch": "482391010753",
+      "name": "Atascocita High School",
+      "city": "Humble",
+      "state": "TX",
+      "zip": "77346",
+      "district": "Humble ISD",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "website": "https://www.humbleisd.net/ahs",
+      "principal": "Will Falker",
+      "principalNote": "Will Falker is principal (Will.Falker@humbleisd.net, 281-641-7502); previously served as Associate Principal at AHS where he received the Texas School Counselor Association's Rhosine Fleming Award for Campus Administrator of the Year. Athletic teams: Eagles.",
+      "enrollment": 3829,
+      "schoolType": "comprehensive",
+      "phone": "(281) 641-7500",
+      "graduationRate": "92.6%",
+      "notablePrograms": [
+        "Advanced Placement (AP) program",
+        "Career & Technical Education (CTE) pathways",
+        "Atascocita Eagles athletics (UIL 6A) \u2014 strong football program",
+        "AVID college-readiness program",
+        "Dual Credit with Lone Star College"
+      ],
+      "rating": {
+        "source": "U.S. News / Texas Tribune / Wikipedia",
+        "notes": "Largest high school in Humble ISD by enrollment since opening; 92.6% Class of 2023 4-year graduation rate. Locale 'rural' per NCES but suburban in practice."
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.humbleisd.net/o/ahs/staff",
+        "https://www.humbleisd.net/ahs",
+        "https://www.usnews.com/education/best-high-schools/texas/districts/humble-independent-school-district/atascocita-high-school-19289",
+        "https://schools.texastribune.org/districts/humble-isd/atascocita-high-school/",
+        "https://en.wikipedia.org/wiki/Atascocita_High_School",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=482391010753"
       ]
     }
   ]

@@ -621,3 +621,51 @@
 - **Lake Roosevelt** has TWO records in NCES: Lake Roosevelt Jr/Sr HS (530313000496, regular, enr=364) ENRICHED HERE, and Lake Roosevelt Alternative School (530313001234ish — offset 225, enr=30) skipped as <50 alt. Same district, same principal pool likely (Natalie Kontos covers Jr/Sr HS); future run hitting the alt record should treat as principal-paired co-located per Run 15 paired-handling lesson.
 
 ### RUN HISTORY UPDATE
+
+## RUN 27 NOTES (2026-04-26) — appended
+
+### NEW EFFECTIVE PATTERNS
+- **Top-by-enrollment + comprehensive HS = clean 8/8 run.** Run 27 hit the TX top-by-enrollment band (offsets 9-16, all 3,800+ enrollment) and yielded 8/8 verified, 0 skipped — fastest TX run yet (~5 min wall-clock). When the queue has been seeded with major comprehensive HS, the per-school search-template-pattern works first try because every result has a robust online presence (Wikipedia, US News, Texas Tribune, district staff page, Niche).
+- **Texas Tribune Schools Explorer (`schools.texastribune.org/districts/<ISD>/<school>/`) is the single best Texas-school metadata source.** Returns enrollment, AP rate, grad rate, demographics, and economic disadvantage % in one consistent template. Should be the first fetch for any TX school.
+- **`<school>.<district>.org` pattern in TX**: confirmed reliable across Pasadena ISD (`dobie.pasadenaisd.org`), Klein ISD (`kleincain.kleinisd.net`), Alief ISD (`hastings.aliefisd.net`), Ector County ISD (`phs.ectorcountyisd.org`, `ohs.ectorcountyisd.org`), Deer Park ISD (`sc.dpisd.org`). Single subdomain → school-specific staff page on Finalsite or Apptegy template.
+- **District + school name disambiguation**: many TX schools share names with non-TX schools (e.g. "Deer Park HS" exists in TX, MI, NY, OH). Always include `"<district> ISD"` or city + state in search query.
+- **Multi-campus enrollment quirk**: Hastings, Dobie, Deer Park all have separate 9th Grade Centers but NCES rolls all grades into the main HS record. Resulting enrollment (3,800-4,000) reflects 9-12 totals even though main campus only houses 10-12.
+
+### FAILED PATTERNS (avoided)
+- **Don't trust `/tmp/wayfinder` (Run 11/20/22/25 lesson).** Confirmed AGAIN: initial clone to `/tmp/wayfinder` succeeded but returned `nobody:nogroup` ownership and `dubious ownership` git error. Re-cloned to `/sessions/zen-youthful-allen/wf-run27/` cleanly. Cost: ~30 seconds. **The `rm -rf /tmp/wayfinder` boilerplate in the task prompt does not reliably remove the stale clone — always clone fresh to `/sessions/[session-id]/`.**
+
+### SOURCE-SPECIFIC NOTES
+- `phs.ectorcountyisd.org/our-school/permian-admin/permian` — robust principal+admin staff template; Permian's "Mojo" branding deeply embedded throughout the site (worth flagging for college-search UX).
+- `coppellisd.com/o/chs/page/principal` — minimal page but principal name is clearly stated; LinkedIn profile cross-references confirm tenure.
+- `kleinisd.net/news/post/~board/news/post/lauren-marti-named-2025-secondary-principal-of-the-year` — district news post → confirms principal AND district recognition in single fetch.
+- `dobie.pasadenaisd.org/administration/principals___staff` — note the triple-underscore in URL (Apptegy template artifact).
+- `humbleisd.net/o/ahs/staff` — Apptegy template, principal name + email cleanly listed.
+
+### DATA QUALITY FLAGS
+- **Permian HS — "Friday Night Lights" school**: future UX should consider a `notableForFilm` or `culturalSignificance` field. The Mojo Panthers / Buzz Bissinger book / TV series connection is a major draw for transfers and tourist visits, and is genuinely useful college-app context.
+- **Coppell HS — IB + 99% grad rate is exceptional**: this is one of the highest-graduation public HS in Texas. Should be flagged as a "top-tier public" for the rating field.
+- **Atascocita HS NCES locale = "rural"** but the school is clearly in the suburban Lake Houston / Atascocita NE Houston metro band. NCES locale field should be treated as advisory only — verify with district context.
+- **Odessa Bronchos** — note the unusual mascot spelling ("Bronchos" with an H, not "Broncos"). Should NOT be auto-corrected by future NLP/spell-check passes.
+
+### CALIBRATION SUGGESTIONS for next run
+- **Recommend keeping batch_size=8** for next TX run — top-by-enrollment cluster offsets 17-24 will likely all be 3,500+ comprehensive HS (large suburban Houston/Dallas/Austin districts). Continue same per-school search template.
+- **Consider bumping to 10 for Run 29 IF Run 28 also yields 8/8.** TX top-50 has plenty of large comprehensive HS to keep the 100% verification rate going.
+
+### OPEN QUESTIONS / TODO
+- Should `notableForFilm` / `culturalSignificance` be a first-class field? (Permian Mojo, Beverly Hills HS 90210, etc.)
+- Should NCES "locale" be cross-validated with US Census tract data? Multiple suburban schools mis-tagged as rural.
+
+### RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 27    | 8        | 0       | TX high top-by-enrollment offsets 9-16. 8/8 clean: Deer Park HS (Kirk Taylor, multi-campus 4026), Permian HS (Delesa Styles, FNL/Mojo, 31% AP), Coppell HS (Laura Springer, IB+77% AP+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 KISD SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink, named after Texas writer), Atascocita HS Humble (Will Falker, Eagles, 92.6% grad). All-WebSearch run, ~5 min wall-clock. Confirmed `<school>.<district>.org` + Texas Tribune Schools Explorer template patterns. Stale-clone trap caught early — fresh clone to /sessions/zen-youthful-allen/wf-run27. |
+| 2026-04-26 | 26    | 5        | 3       | WA high offsets 226-233 (Grandview SD + Granger SD + Granite Falls SD cluster).                        |
+| 2026-04-26 | 25    | 5        | 3       | WA high offsets 218-225 — Tacoma/Spokane band, Freeman HS principal unverifiable.                      |
+| 2026-04-26 | 24    | 6        | 2       | WA high offsets 210-217 — FW Open Doors + TAF@Saghalie + Ferndale/Fife/Finley/Franklin Pierce.         |
+| 2026-04-26 | 23    | 5        | 3       | WA high offsets 202-209 — Federal Way SD cluster.                                                      |
+| 2026-04-26 | 22    | 8        | 0       | WA high offsets 194-201 — Evergreen SD Clark County. (Previous 8/8 record.)                            |
+| 2026-04-26 | 20    | 6        | 2       | WA high offsets 177-184 — Edmonds SD + Ellensburg/Elma/Entiat band.                                    |
+| 2026-04-26 | 19    | 6        | 2       | Eastmont/Eatonville/Edmonds-SD cluster (offsets 169-176).                                              |
+| 2026-04-26 | 18    | 8        | 6       | Coupeville/Creston/Cusick/Darrington/Davenport/Dayton/Deer Park/East Valley (offsets 155-168).         |
+| 2026-04-26 | 17    | 8        | 10      | Lakewood/Colfax/College Place/Burbank/Colville/Concrete band (offsets 137-154).                        |
