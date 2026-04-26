@@ -24,6 +24,7 @@
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { redactPII } from './pii-redactor.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -122,6 +123,15 @@ export async function captureConversationMemory(params) {
   try {
     await ensureDirs();
 
+    // PII redaction — sanitize before persistence (real-time LLM call already happened with raw text).
+    const _r1 = redactPII(userMessage);
+    const _r2 = redactPII(response);
+    const userMessageRedacted = _r1.text;
+    const responseRedacted = _r2.text;
+    const piiCounts = (_r1.redactedCount + _r2.redactedCount) > 0
+      ? { count: _r1.redactedCount + _r2.redactedCount, types: Array.from(new Set([..._r1.types, ..._r2.types])) }
+      : null;
+
     const topics = extractTopics(userMessage + ' ' + response);
     const domain = detectDomain(userMessage);
     // Sanitize userType: cap length and strip control chars to prevent training data pollution
@@ -138,8 +148,9 @@ export async function captureConversationMemory(params) {
       topics,
       mode,
       scopeLabel,
-      query: userMessage.trim(),
-      response: response.trim().slice(0, 2000), // Cap response length for RAG
+      query: userMessageRedacted.trim(),
+      response: responseRedacted.trim().slice(0, 2000), // Cap response length for RAG (PII-redacted)
+      piiRedacted: piiCounts,
       // Note: userName intentionally excluded to prevent PII leaking into RAG context
     };
 
@@ -182,13 +193,22 @@ export async function captureTrainingPair(params) {
   try {
     await ensureDirs();
 
+    // PII redaction — sanitize before training-pair persistence
+    const _tr1 = redactPII(userMessage);
+    const _tr2 = redactPII(response);
+    const userMessageRedacted = _tr1.text;
+    const responseRedacted = _tr2.text;
+    const piiCounts = (_tr1.redactedCount + _tr2.redactedCount) > 0
+      ? { count: _tr1.redactedCount + _tr2.redactedCount, types: Array.from(new Set([..._tr1.types, ..._tr2.types])) }
+      : null;
+
     const systemPrompt = 'You are Wayfinder, an expert advisor on college admissions and career planning. Be warm, direct, and data-informed. Sound like a trusted human advisor.';
 
     const trainingEntry = {
       messages: [
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: userMessage.trim() },
-        { role: 'assistant', content: response.trim() },
+        { role: 'user', content: userMessageRedacted.trim() },
+        { role: 'assistant', content: responseRedacted.trim() },
       ],
       metadata: {
         timestamp: new Date().toISOString(),
@@ -199,6 +219,7 @@ export async function captureTrainingPair(params) {
           : 'unknown',
         scopeLabel,
         quality: qualitySignal || 'unrated',
+        piiRedacted: piiCounts,
       }
     };
 
