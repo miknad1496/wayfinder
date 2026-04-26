@@ -5715,46 +5715,118 @@ function _scSaveCalEvents(events) {
 }
 
 function _scScheduleCanvasHtml() {
-  const year = new Date().getFullYear();
-  const months = [
-    { idx: 5, name: 'June', year, days: 30 },
-    { idx: 6, name: 'July', year, days: 31 },
-    { idx: 7, name: 'August', year, days: 31 },
-  ];
+  // Month focus state — defaults to current month if Jun/Jul/Aug, else June
+  let focusMonth = 5; // 0-indexed, June default
+  const today = new Date();
+  if (today.getMonth() >= 5 && today.getMonth() <= 7) focusMonth = today.getMonth();
+  // Read overrides from sessionStorage so the focus persists within session
+  try { const saved = parseInt(sessionStorage.getItem('wf_sc_cal_focus_month'),10); if (!isNaN(saved) && saved>=5&&saved<=7) focusMonth = saved; } catch {}
 
-  // Build week-grid HTML for each month
-  const monthHtml = months.map(m => {
-    const firstDay = new Date(m.year, m.idx, 1).getDay();
+  let events = [];
+  try { events = JSON.parse(localStorage.getItem('wf_sc_cal_events') || '[]'); } catch {}
+  const year = new Date().getFullYear();
+  const colors = ['#3b82f6','#16a34a','#f59e0b','#a855f7','#ef4444','#0d9488'];
+
+  function monthName(m) { return ['January','February','March','April','May','June','July','August','September','October','November','December'][m]; }
+  function _esc(t) { return String(t || '').replace(/[<>&"\']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"\'":'&#39;'}[c])); }
+
+  // Build the focused month grid
+  function monthGrid(m, large) {
+    const first = new Date(year, m, 1);
+    const lastDay = new Date(year, m+1, 0).getDate();
+    const startDow = first.getDay(); // 0=Sun
     const cells = [];
-    for (let i = 0; i < firstDay; i++) cells.push('<div></div>');
-    for (let d = 1; d <= m.days; d++) {
-      const dateStr = `${m.year}-${String(m.idx+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      cells.push(`<button class="sc-cal-day" data-date="${dateStr}" style="aspect-ratio:1;border:1px solid #e5e7eb;background:#fff;cursor:pointer;font-size:11px;color:#475569;border-radius:4px;padding:0;display:flex;align-items:flex-start;justify-content:flex-start;padding:4px;position:relative;" title="Click to add an event starting ${dateStr}">${d}</button>`);
+    // Pad start
+    for (let i = 0; i < startDow; i++) cells.push({ empty: true });
+    for (let d = 1; d <= lastDay; d++) {
+      const dateStr = `${year}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const dayEvents = events.filter(ev => ev.startDate <= dateStr && (ev.endDate || ev.startDate) >= dateStr);
+      cells.push({ date: d, dateStr, events: dayEvents });
     }
+    while (cells.length % 7 !== 0) cells.push({ empty: true });
+    const cellSize = large ? '78px' : '32px';
+    const fontSize = large ? '13px' : '10px';
+    const gridHtml = cells.map(c => {
+      if (c.empty) return `<div style="background:#f8fafc;border-radius:4px;height:${cellSize};"></div>`;
+      const eventBars = c.events.slice(0, large ? 3 : 1).map(ev => {
+        const color = colors[(events.indexOf(ev)) % colors.length];
+        return `<div data-event-id="${_esc(ev.id || '')}" class="sc-cal-event" style="background:${color};color:#fff;font-size:${large?'10px':'8px'};padding:1px 4px;border-radius:3px;margin:1px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;line-height:1.3;">${_esc(ev.name||'event')}</div>`;
+      }).join('');
+      const more = c.events.length > (large?3:1) ? `<div style="font-size:${large?'9px':'7px'};color:#94a3b8;">+${c.events.length - (large?3:1)}</div>` : '';
+      return `<div class="sc-cal-day" data-date="${c.dateStr}" style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;height:${cellSize};padding:${large?'4px':'1px'} ${large?'5px':'2px'};cursor:pointer;display:flex;flex-direction:column;font-size:${fontSize};color:#1f2328;overflow:hidden;transition:background 0.1s;" onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='#fff'">
+        <div style="font-weight:600;text-align:${large?'left':'center'};">${c.date}</div>
+        <div style="flex:1;overflow:hidden;">${eventBars}${more}</div>
+      </div>`;
+    }).join('');
+    const dowHeader = ['S','M','T','W','T','F','S'].map(d => `<div style="font-size:11px;color:#64748b;text-align:center;font-weight:600;padding:4px 0;">${d}</div>`).join('');
     return `
-      <div style="flex:1;min-width:240px;">
-        <h4 style="margin:0 0 8px;font-size:13px;color:#1f2328;text-align:center;">${m.name} ${m.year}</h4>
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font-size:10px;color:#94a3b8;text-align:center;margin-bottom:4px;font-weight:600;">
-          <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;" data-month="${m.idx}">${cells.join('')}</div>
+      <div style="margin-bottom:${large?'14px':'10px'};">
+        <div style="text-align:center;font-weight:700;font-size:${large?'15px':'13px'};color:#1e3a8a;margin-bottom:6px;">${monthName(m)} ${year}</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;">${dowHeader}${gridHtml}</div>
       </div>
     `;
-  }).join('');
+  }
+
+  const monthTabs = [5,6,7].map(m => `<button class="sc-cal-month-tab${m===focusMonth?' active':''}" data-month="${m}">${monthName(m)}</button>`).join('');
+
+  // Event list
+  const eventList = events.length ? events.map(ev => {
+    const color = colors[(events.indexOf(ev)) % colors.length];
+    const dateRange = ev.endDate && ev.endDate !== ev.startDate ? `${ev.startDate} → ${ev.endDate}` : ev.startDate;
+    return `
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid #f1f5f9;">
+        <div style="width:8px;height:32px;background:${color};border-radius:2px;flex-shrink:0;"></div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:600;color:#1f2328;">${_esc(ev.name)}</div>
+          <div style="font-size:11px;color:#64748b;">${dateRange}${ev.cost?' · ' + _esc(ev.cost):''}${ev.notes?' · ' + _esc(String(ev.notes).slice(0,50)):''}</div>
+        </div>
+        <button class="sc-cal-edit" data-event-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #cfdcef;background:#fff;color:#2563eb;border-radius:12px;cursor:pointer;">Edit</button>
+        <button class="sc-cal-remove" data-event-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #fecaca;background:#fff;color:#dc2626;border-radius:12px;cursor:pointer;">×</button>
+      </div>
+    `;
+  }).join('') : '<p style="color:#94a3b8;padding:20px;text-align:center;font-size:13px;">No events yet. Click any day above to add one or use Browse Camps to drop programs in.</p>';
 
   return `
     <div style="background:linear-gradient(135deg,#fff,#fdf4ff);border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:4px;">
-        <h3 style="margin:0;font-size:15px;color:#1f2328;">🗓️ Your Summer Planner — visual calendar (June-August)</h3>
-        <div style="display:flex;gap:6px;">
-          <button id="scCalAddBtn" style="font-size:12px;padding:6px 12px;border:1px solid #2563eb;background:#dbeafe;color:#1e40af;border-radius:14px;cursor:pointer;font-weight:600;">+ Add event</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+        <h3 style="margin:0;font-size:15px;color:#1f2328;">🗓️ Visual Calendar (June–August ${year})</h3>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <button id="scCalAddBtn" style="font-size:12px;padding:6px 12px;border:0;background:#2563eb;color:#fff;border-radius:14px;cursor:pointer;font-weight:600;">+ Add event</button>
           <button id="scCalClearBtn" style="font-size:12px;padding:6px 12px;border:1px solid #cfdcef;background:#fff;color:#64748b;border-radius:14px;cursor:pointer;">Clear all</button>
         </div>
       </div>
-      <p style="margin:0 0 12px;font-size:12px;color:#59636e;">Click any day to add an event. Click an event bar to edit/delete. Multi-day events span automatically. Add programs from the Browse Camps tab with the green + button.</p>
-      <div id="scCalGrid" style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px;">${monthHtml}</div>
-      <div id="scCalEventList" style="margin-top:14px;border-top:1px solid #e5e7eb;padding-top:10px;"></div>
-      <div id="scCalForm" style="display:none;background:#f8fafc;border:1px solid #cfdcef;border-radius:8px;padding:14px;margin-top:14px;"></div>
+      <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;">${monthTabs}</div>
+      ${monthGrid(focusMonth, true)}
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+        ${[5,6,7].filter(m => m !== focusMonth).map(m => monthGrid(m, false)).join('')}
+      </div>
+      <div style="margin-top:14px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;">
+        <div style="padding:8px 12px;font-size:12px;font-weight:600;color:#475569;border-bottom:1px solid #e5e7eb;background:#f8fafc;border-radius:8px 8px 0 0;">Your events (${events.length})</div>
+        ${eventList}
+      </div>
+      <div id="scCalForm" style="display:none;margin-top:14px;background:#fff;border:1px solid #cfdcef;border-radius:8px;padding:14px;">
+        <h4 style="margin:0 0 10px;font-size:13px;color:#1e3a8a;font-weight:700;">Add / edit event</h4>
+        <input type="hidden" id="scCalEventId" value="">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <input type="text" id="scCalEventName" placeholder="Event name" style="padding:8px 10px;border:1px solid #e5e7eb;border-radius:4px;font-size:13px;font-family:inherit;">
+          <input type="text" id="scCalEventCost" placeholder="Cost (e.g. $400)" style="padding:8px 10px;border:1px solid #e5e7eb;border-radius:4px;font-size:13px;font-family:inherit;">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <label style="font-size:11px;color:#64748b;">Start date</label>
+            <input type="date" id="scCalEventStart" style="width:100%;padding:8px 10px;border:1px solid #e5e7eb;border-radius:4px;font-size:13px;font-family:inherit;">
+          </div>
+          <div>
+            <label style="font-size:11px;color:#64748b;">End date</label>
+            <input type="date" id="scCalEventEnd" style="width:100%;padding:8px 10px;border:1px solid #e5e7eb;border-radius:4px;font-size:13px;font-family:inherit;">
+          </div>
+        </div>
+        <input type="text" id="scCalEventNotes" placeholder="Notes (optional)" style="width:100%;padding:8px 10px;border:1px solid #e5e7eb;border-radius:4px;font-size:13px;font-family:inherit;margin-bottom:10px;">
+        <div style="display:flex;gap:8px;">
+          <button id="scCalEventSave" style="flex:1;padding:8px;background:#16a34a;color:#fff;border:0;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px;">Save event</button>
+          <button id="scCalEventCancel" style="padding:8px 16px;background:#fff;color:#64748b;border:1px solid #cfdcef;border-radius:4px;cursor:pointer;font-size:13px;">Cancel</button>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -6165,4 +6237,49 @@ async function loadVolunteerInsights() {
   } catch (e) {
     c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
   }
+}
+
+function _scOpenEventForm(eventId, prefilledDate) {
+  const form = document.getElementById('scCalForm');
+  if (!form) return;
+  let events = []; try { events = JSON.parse(localStorage.getItem('wf_sc_cal_events') || '[]'); } catch {}
+  const ev = eventId ? events.find(e => e.id === eventId) : null;
+  document.getElementById('scCalEventId').value = ev?.id || '';
+  document.getElementById('scCalEventName').value = ev?.name || '';
+  document.getElementById('scCalEventCost').value = ev?.cost || '';
+  document.getElementById('scCalEventStart').value = ev?.startDate || prefilledDate || '';
+  document.getElementById('scCalEventEnd').value = ev?.endDate || prefilledDate || '';
+  document.getElementById('scCalEventNotes').value = ev?.notes || '';
+  form.style.display = 'block';
+  form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function _scSaveEvent() {
+  const id = document.getElementById('scCalEventId').value || ('ev_' + Date.now() + '_' + Math.random().toString(36).slice(2,7));
+  const name = document.getElementById('scCalEventName').value.trim();
+  if (!name) { alert('Event name is required.'); return; }
+  const startDate = document.getElementById('scCalEventStart').value;
+  if (!startDate) { alert('Start date is required.'); return; }
+  const endDate = document.getElementById('scCalEventEnd').value || startDate;
+  const cost = document.getElementById('scCalEventCost').value.trim();
+  const notes = document.getElementById('scCalEventNotes').value.trim();
+  let events = []; try { events = JSON.parse(localStorage.getItem('wf_sc_cal_events') || '[]'); } catch {}
+  const idx = events.findIndex(e => e.id === id);
+  const newEv = { id, name, startDate, endDate, cost, notes };
+  if (idx >= 0) events[idx] = newEv; else events.push(newEv);
+  localStorage.setItem('wf_sc_cal_events', JSON.stringify(events));
+  if (typeof _scUpdatePlannerStats === 'function' && document.getElementById('scPlannerStatEvents')) _scUpdatePlannerStats();
+  document.getElementById('scCalForm').style.display = 'none';
+  renderSCPlanner();
+}
+
+// Hook for Browse Camps "+ Add to calendar" button
+function scAddProgramToCalendar(name, cost) {
+  _scSetTab('Planner');
+  renderSCPlanner();
+  setTimeout(() => {
+    _scOpenEventForm();
+    document.getElementById('scCalEventName').value = name || '';
+    document.getElementById('scCalEventCost').value = cost || '';
+  }, 100);
 }
