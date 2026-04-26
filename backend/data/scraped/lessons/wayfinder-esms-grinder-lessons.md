@@ -424,3 +424,38 @@ Per-state target: 10 verified K-8 programs. Cadence: 1 state-batch per run, rota
 - Filesystem permission woes in /sessions/.../mnt/outputs prevent some `git` operations: `cp -r` of a clone induces mode-changes; `.git/index.lock` can be stuck and unremovable. WORKAROUND: use `GIT_INDEX_FILE=/tmp/git-index` env var for index ops, run `git config core.fileMode false`, work via `read-tree FETCH_HEAD` + plumbing.
 - Direct cloning into `/sessions/.../mnt/outputs/<name>` fails with `bad config line 1` if the same path was previously cp'd. Use a fresh path or rsync instead of cp.
 - When research target is hot (nationwide/online programs are everyone's "low-hanging fruit"), expect dupes. Pivot toward narrower geographic targets that fewer parallel grinders are working on.
+
+
+
+## RUN 12 — CA INITIAL BATCH (Bay Area + LA + San Diego anchors)
+
+### Outcome
+- DB was at 945 after run 11; after this run total = 950 (+5).
+- All 5 high-quality CA anchors (4 high / 1 medium): Steve & Kate's Camp (Bay Area + LA), Lawrence Hall of Science (UC Berkeley), CAMP at The Tech Interactive (San Jose, md cost), California Science Center (LA), Birch Aquarium / Scripps (San Diego). 0 skips, 0 dedup hits.
+- 5 net-new field-note insights captured (Steve & Kate's auto-refund passes; Lawrence Hall 2-week sessions vs 1-week peers; CSC half+afternoon flexible scheduling; Birch quiet Scripps scholarships; The Tech IMAX + after-hours bundled).
+- Field-notes section was already at 30 cap from prior runs; new items prepended and oldest dropped (5 dropped to fit 5 new).
+
+### What worked
+- **Pivot to CA** per Dan's plan directive (WA concluded; cadence=1 state per run, CA first). Confirmed plan via progress.json before research.
+- **Pre-research dedup check** caught 0 collisions on 5 candidates — CA museum/science-center camps weren't yet in DB (only Bay Area Camp Galileo + Burke + Pacific Science Center on the WA side). Plenty of room in CA.
+- **Search-snippet pricing** consistently captured tuition + member-vs-public-presale dates without needing full HTML fetches. The CA museum/science-center sites typically post tuition cleanly in search snippets.
+- **Recovery from /tmp permission failures**: discovered $HOME/work/ is the correct writable + git-friendly clone location. /sessions/.../mnt/outputs has weird mount restrictions (locked .git/index.lock unrecoverable; cp -r induces mass mode changes). Future runs should clone direct to $HOME/work/wf, NOT /tmp or /sessions/.../mnt/outputs.
+
+### Calibration
+- 5/run on a fresh state where DB has light coverage works well. Could push to 6 next CA run if Bay Area/LA/SD are tapped out and we move to Sacramento or Inland Empire (smaller pool — risk of skips).
+- **Mandatory pre-flight steps** going forward:
+  1. `git clone <token-url> $HOME/work/wf-<runID>` (NOT /tmp; NOT /sessions/.../mnt/outputs)
+  2. Inspect existing-DB names + the latest progress.json plan section BEFORE picking research candidates
+  3. After research, RE-DEDUP since other runs may have landed in parallel
+
+### Source notes (CA run 12)
+- **Steve & Kate's Camp**: PreK–7 ages 4–13. Day Pass model: $114/day at 15+ pass tier. 15+ Bay Area sites + multiple LA sites. Unused passes auto-refund. URL: steveandkatescamp.com/fees/
+- **Lawrence Hall of Science**: UC Berkeley public science center. Grades 1–6. $625–$950/wk. 2-WEEK sessions (rare). Member presale before general (Jan 2 2026). Financial aid open.
+- **CAMP at The Tech Interactive**: San Jose, rising 3rd–6th. 8 weekly sessions June 15–Aug 7. Tuition NOT on landing page — medium confidence with `_unverifiedFields: ["cost","scholarshipAid"]`. New format replacing prior Galileo-at-The-Tech partnership.
+- **California Science Center**: LA Exposition Park. Pre-K through 8. Member presale Feb 18–24 closes BEFORE general. Half + afternoon classes combine to make full day (flexible scheduling). $225 half / $450 full per week (member); extended care $110-$120/wk.
+- **Birch Aquarium**: La Jolla / Scripps / UCSD. K-8+ (extends to grade 9 via Surfing Into Science). $250–$600/wk. Needs-based scholarships not advertised — email birchaquariumprogram@ucsd.edu.
+
+### Open questions
+- Should we add a top-level `presaleWindow` or `memberOnlyRegistrationOpens` field? Multiple CA museums (CSC, Lawrence Hall, Birch) all gate first-tier access via membership presale, then open to public. Currently noted in description + deadline — could be a structured filter.
+- Most CA anchors have undisclosed scholarship policies that require email follow-up. Worth a "scholarshipDisclosed" boolean to rank programs by transparency for parents on tight budgets.
+
