@@ -171,3 +171,33 @@ WA + every other state equally. Future grinder runs should continue
 expanding this national-anchor coverage before going deeper into local
 metros.
 | 2026-04-26 | 7 | 3 (0hi/3md) | 3 (Outschool, Beast Academy, Mathnasium — already added by run 6 / ad-hoc) | National STEM franchises | Mad Science, Engineering For Kids, Play-Well TEKnologies (all md cost — varies by franchise/host). Recovered from a clobber-rebase incident; learned NEVER to push from a stale base clone — always pull-rebase first. Captured 3 net-new field-note insights. |
+
+
+## AD-HOC HARVEST RUN ROUND 2 — 2026-04-26
+
+Per Dan: 'do another non-duped iteration to add to this national data adder feed.'
+
+Added 13 more national/remote programs (no duplicates with round 1):
+- Boys & Girls Clubs of America (4500+ clubs, $20-30/yr membership)
+- YMCA Youth Programs (Open Doors 100% scholarship)
+- Scholastic Summer Reading Challenge (free K-6 literacy)
+- Google CS First (free K-8 coding curriculum, 8 themed clubs)
+- Microsoft DigiGirlz Day (free middle school girls STEM events)
+- Carnegie Hall Link Up (free K-3 music with 90+ partner orchestras)
+- PJ Library (free monthly Jewish-themed books, all faiths welcome)
+- Nat Geo Kids + Slingshot Challenge ($10K youth climate-action prize)
+- PBS Kids Summer Learning (free preschool through grade 3)
+- Civil Air Patrol Cadet Program (USAF auxiliary, ages 12-18)
+- Junior Master Gardener (USDA Coop Extension partnered)
+- Destination Imagination (creative problem-solving K-12)
+- National History Day (research competition grades 6-12)
+
+13 new field-note insights captured to summer-camp-insights.json.
+
+Total ad-hoc national/remote programs added: 26 (round 1: 13 + round 2: 13).
+The grinder will dedup these (matched on name+provider lowercase) on its
+next regular run. Future grinder runs should expand to:
+- More museum networks (AMNH, Field Museum, Exploratorium, Adler Planetarium)
+- More tech corps programs (Apple Camp at Apple Store, Tynker, ScratchJr)
+- Faith-based + cultural programs (Hispanic Heritage Foundation, etc.)
+- Disability-inclusive programs (Autism camps, deaf/HoH summer programs)

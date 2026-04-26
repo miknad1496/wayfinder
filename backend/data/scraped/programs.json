@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 873,
+    "totalCount": 886,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -54,7 +54,7 @@
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
-    "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online→online, Remote→remote, all others→in-person."
+    "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online\u2192online, Remote\u2192remote, all others\u2192in-person."
   },
   "programs": [
     {
@@ -641,7 +641,7 @@
       "_source": "https://www.washington.edu/omad/washington-mesa/college-prep-program/"
     },
     {
-      "name": "Destination Science Summer Camps — Seattle",
+      "name": "Destination Science Summer Camps \u2014 Seattle",
       "provider": "Destination Science",
       "category": "stem",
       "subcategory": "science",
@@ -734,7 +734,7 @@
       "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents"
     },
     {
-      "name": "Camp Invention — Texas Locations",
+      "name": "Camp Invention \u2014 Texas Locations",
       "provider": "National Inventors Hall of Fame",
       "category": "stem",
       "subcategory": "invention",
@@ -923,7 +923,7 @@
       "_source": "https://www.txgcp.org/stem-camps-across-tx"
     },
     {
-      "name": "Governor's Summer Merit Program — Texas",
+      "name": "Governor's Summer Merit Program \u2014 Texas",
       "provider": "State of Texas",
       "category": "stem",
       "subcategory": "careers",
@@ -3216,7 +3216,7 @@
       "_source": "https://tapiacenter.rice.edu/tapia-stem-camps"
     },
     {
-      "name": "Columbia SHAPE — Summer High School Academic Program for Engineers",
+      "name": "Columbia SHAPE \u2014 Summer High School Academic Program for Engineers",
       "provider": "Columbia University",
       "category": "stem",
       "subcategory": "engineering",
@@ -3668,7 +3668,7 @@
       ],
       "duration": "6 weeks",
       "region": "Northeast",
-      "advisorNote": "MITES is one of the most prestigious pathways for underrepresented students in STEM—admission demonstrates exceptional potential and commitment. Colleges view this program as a strong signal of both academic excellence and diversity contribution.",
+      "advisorNote": "MITES is one of the most prestigious pathways for underrepresented students in STEM\u2014admission demonstrates exceptional potential and commitment. Colleges view this program as a strong signal of both academic excellence and diversity contribution.",
       "format": "in-person"
     },
     {
@@ -3712,7 +3712,7 @@
       ],
       "duration": "8 weeks",
       "region": "West Coast",
-      "advisorNote": "SIMR provides genuine research experience that directly strengthens STEM college applications—especially valuable if you choose a project you can discuss in detail during interviews. The research credential carries weight with top universities.",
+      "advisorNote": "SIMR provides genuine research experience that directly strengthens STEM college applications\u2014especially valuable if you choose a project you can discuss in detail during interviews. The research credential carries weight with top universities.",
       "format": "in-person"
     },
     {
@@ -3758,7 +3758,7 @@
       ],
       "duration": "4 weeks",
       "region": "Northeast",
-      "advisorNote": "RSI's global reputation and rigorous curriculum make it exceptionally valuable for STEM applications. Colleges recognize the program's selectivity—admission itself becomes a talking point in your application narrative.",
+      "advisorNote": "RSI's global reputation and rigorous curriculum make it exceptionally valuable for STEM applications. Colleges recognize the program's selectivity\u2014admission itself becomes a talking point in your application narrative.",
       "format": "in-person"
     },
     {
@@ -3845,7 +3845,7 @@
       ],
       "duration": "6 weeks",
       "region": "Northeast",
-      "advisorNote": "PROMYS is the go-to program for students serious about advanced mathematics—colleges view it as strong evidence of mathematical maturity. Ideal if you're considering math, physics, or computer science at selective universities.",
+      "advisorNote": "PROMYS is the go-to program for students serious about advanced mathematics\u2014colleges view it as strong evidence of mathematical maturity. Ideal if you're considering math, physics, or computer science at selective universities.",
       "format": "in-person"
     },
     {
@@ -4062,7 +4062,7 @@
       ],
       "duration": "9 weeks",
       "region": "South",
-      "advisorNote": "The Clark Program offers substantial research experience with publication potential—a major advantage for pre-med and life sciences students. The one-on-one mentorship and original research contribution strengthen medical school and graduate school applications significantly.",
+      "advisorNote": "The Clark Program offers substantial research experience with publication potential\u2014a major advantage for pre-med and life sciences students. The one-on-one mentorship and original research contribution strengthen medical school and graduate school applications significantly.",
       "format": "in-person"
     },
     {
@@ -4106,7 +4106,7 @@
       ],
       "duration": "4-8 weeks",
       "region": "Northeast",
-      "advisorNote": "Harvard Summer School provides institutional access and a college transcript—useful for demonstrating ability to handle college coursework. However, admissions committees typically view this differently than more selective, competitive summer programs.",
+      "advisorNote": "Harvard Summer School provides institutional access and a college transcript\u2014useful for demonstrating ability to handle college coursework. However, admissions committees typically view this differently than more selective, competitive summer programs.",
       "format": "in-person"
     },
     {
@@ -4149,7 +4149,7 @@
       ],
       "duration": "2 weeks",
       "region": "Northeast",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -4404,7 +4404,7 @@
       ],
       "duration": "1 weekend",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4445,7 +4445,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4487,7 +4487,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -4529,7 +4529,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4615,7 +4615,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4914,7 +4914,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -4957,7 +4957,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5810,7 +5810,7 @@
       ],
       "duration": "1 semester",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5852,7 +5852,7 @@
       ],
       "duration": "1 semester or 2 weeks",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -5896,7 +5896,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6199,7 +6199,7 @@
       ],
       "duration": "1-3 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6373,7 +6373,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6418,7 +6418,7 @@
       ],
       "duration": "2-3 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6855,7 +6855,7 @@
       ],
       "duration": "Year-round",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6943,7 +6943,7 @@
       ],
       "duration": "2 days",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -6989,7 +6989,7 @@
       ],
       "duration": "2 weeks",
       "region": "West Coast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -7295,7 +7295,7 @@
       ],
       "duration": "10 weeks",
       "region": "Northeast",
-      "advisorNote": "Arise is NYU's selective pathway for underrepresented engineers—strong signal of engineering commitment and potential. Colleges value programs targeting diversity in engineering as they address important equity goals.",
+      "advisorNote": "Arise is NYU's selective pathway for underrepresented engineers\u2014strong signal of engineering commitment and potential. Colleges value programs targeting diversity in engineering as they address important equity goals.",
       "format": "in-person"
     },
     {
@@ -7650,7 +7650,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "USSYP is an extremely selective honor (only 104 students nationwide)—simply being selected carries significant prestige on college applications. Strong signal for students interested in policy, law, government, or public service.",
+      "advisorNote": "USSYP is an extremely selective honor (only 104 students nationwide)\u2014simply being selected carries significant prestige on college applications. Strong signal for students interested in policy, law, government, or public service.",
       "format": "in-person"
     },
     {
@@ -7693,7 +7693,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others—colleges value students who take on substantial roles. Use this to show your unique contributions.",
+      "advisorNote": "Leadership programs demonstrate initiative and ability to influence others\u2014colleges value students who take on substantial roles. Use this to show your unique contributions.",
       "format": "in-person"
     },
     {
@@ -8536,7 +8536,7 @@
       ],
       "duration": "2-3 weeks",
       "region": "West",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -8578,7 +8578,7 @@
       ],
       "duration": "2-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -9711,7 +9711,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11694,7 +11694,7 @@
       ],
       "duration": "1 week",
       "region": "Northeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11737,7 +11737,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "Southeast",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -11779,7 +11779,7 @@
       ],
       "duration": "1 week",
       "region": "Midwest",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -12771,7 +12771,7 @@
       ],
       "duration": "8-10 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -12942,7 +12942,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -13025,7 +13025,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14098,7 +14098,7 @@
       ],
       "duration": "4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14140,7 +14140,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14182,7 +14182,7 @@
       ],
       "duration": "3-4 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14264,7 +14264,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14306,7 +14306,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14347,7 +14347,7 @@
       ],
       "duration": "1 week",
       "region": "International",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14513,7 +14513,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -14556,7 +14556,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15319,7 +15319,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15567,7 +15567,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15650,7 +15650,7 @@
       ],
       "duration": "8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15693,7 +15693,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15780,7 +15780,7 @@
       ],
       "duration": "1-2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15824,7 +15824,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15867,7 +15867,7 @@
       ],
       "duration": "2 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -15953,7 +15953,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -16037,7 +16037,7 @@
       ],
       "duration": "1 week",
       "region": "National",
-      "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
+      "advisorNote": "Leadership involvement shows initiative and character\u2014colleges value students who step up. Highlight your specific contributions and growth.",
       "format": "in-person"
     },
     {
@@ -24272,7 +24272,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24315,7 +24315,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24358,7 +24358,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24401,7 +24401,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24444,7 +24444,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24487,7 +24487,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. AFS Intercultural Programs shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24530,7 +24530,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24573,7 +24573,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24616,7 +24616,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24659,7 +24659,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24702,7 +24702,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24745,7 +24745,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Rotary Youth Exchange shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24788,7 +24788,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24831,7 +24831,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24874,7 +24874,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24917,7 +24917,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -24960,7 +24960,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25003,7 +25003,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. NSLI-Y (National Security Language Initiative) shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25046,7 +25046,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25089,7 +25089,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25132,7 +25132,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25175,7 +25175,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25218,7 +25218,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25261,7 +25261,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. CIEE Study Abroad shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25304,7 +25304,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25347,7 +25347,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25390,7 +25390,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25433,7 +25433,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25476,7 +25476,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25519,7 +25519,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Global Citizen Year shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25562,7 +25562,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25605,7 +25605,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25648,7 +25648,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25691,7 +25691,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25734,7 +25734,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25777,7 +25777,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Thinking Beyond Borders shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25820,7 +25820,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25863,7 +25863,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25906,7 +25906,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25949,7 +25949,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -25992,7 +25992,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26035,7 +26035,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Amigos de las Americas shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26078,7 +26078,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26121,7 +26121,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26164,7 +26164,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26207,7 +26207,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26250,7 +26250,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -26293,7 +26293,7 @@
       ],
       "duration": "6-8 weeks",
       "region": "International",
-      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone—valuable for any major.",
+      "advisorNote": "International experience demonstrates maturity and adaptability. Cross-Cultural Solutions shows colleges that you're curious about the world and can thrive outside your comfort zone\u2014valuable for any major.",
       "format": "in-person"
     },
     {
@@ -35380,7 +35380,7 @@
       "format": "in-person"
     },
     {
-      "name": "Destination Science Camps — Seattle",
+      "name": "Destination Science Camps \u2014 Seattle",
       "provider": "Destination Science",
       "category": "stem",
       "subcategory": "science",
@@ -35462,7 +35462,7 @@
       "_source": "https://www.idtech.com/locations/washington-summer-camps/uw-seattle"
     },
     {
-      "name": "Camp Tech Revolution — Seattle",
+      "name": "Camp Tech Revolution \u2014 Seattle",
       "provider": "Camp Tech Revolution",
       "category": "stem",
       "subcategory": "technology",
@@ -35681,7 +35681,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session — see registration page"
+        "display": "Varies by session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -35704,7 +35704,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — sessions fill spring",
+      "deadline": "Rolling \u2014 sessions fill spring",
       "description": "Weeklong summer camps at KidsQuest Children's Museum in downtown Bellevue for ages 4-10. Themes change weekly and include exploratory STEAM, art, fashion, and storytelling. Children must be the listed age at the time camp begins. Note: 2026 per-session pricing not posted on landing page; confirm directly with the museum's Education Department (education@kidsquestmuseum.org).",
       "url": "https://www.kidsquestmuseum.org/programs/summer-camp/",
       "tags": [
@@ -35724,7 +35724,7 @@
       ],
       "subregion": "Eastside",
       "ages": "4-10",
-      "dates": "Summer 2026 — weekly sessions June through August",
+      "dates": "Summer 2026 \u2014 weekly sessions June through August",
       "scholarshipAid": "Not advertised on landing page",
       "registrationUrl": "https://www.kidsquestmuseum.org/programs/summer-camp/",
       "howToStart": "Browse weekly themes and register at kidsquestmuseum.org/programs/summer-camp; popular sessions fill in spring.",
@@ -35769,7 +35769,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling until full — register early",
+      "deadline": "Rolling until full \u2014 register early",
       "description": "Pay-what-you-can creative classes for ages 10-15 taught by professional teaching artists at Coyote Central's Central District studios. Mediums include welding, woodworking, fashion design, culinary, bike-building, and visual art across roughly 20-21 hours of instruction per course, culminating in a student-designed project. Sliding-scale pricing keeps the program accessible across income levels.",
       "url": "https://coyotecentral.org/programs",
       "tags": [
@@ -35790,7 +35790,7 @@
       "subregion": "Seattle",
       "ages": "10-15",
       "dates": "8 weeks of summer programming, late June through August 2026",
-      "scholarshipAid": "Available — pay-what-you-can sliding scale",
+      "scholarshipAid": "Available \u2014 pay-what-you-can sliding scale",
       "registrationUrl": "https://coyotecentral.org/register-for-classes",
       "howToStart": "Register at coyotecentral.org/register-for-classes; email programs@coyotecentral.org or call (206) 323-7276 for sliding-scale and scholarship questions.",
       "confidence": "high",
@@ -35851,7 +35851,7 @@
       "subregion": "Seattle",
       "ages": "6-12",
       "dates": "Multiple sessions summer 2026 (e.g., Aug 17, 2026)",
-      "scholarshipAid": "Burke offers financial assistance — see Education Financial Assistance page",
+      "scholarshipAid": "Burke offers financial assistance \u2014 see Education Financial Assistance page",
       "registrationUrl": "https://www.burkemuseum.org/education/families-and-youth/camps",
       "howToStart": "Register on the Burke camps page; member discount applies (~10% off).",
       "confidence": "high",
@@ -35869,7 +35869,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Sliding scale — Price A (full) / Price B (subsidized); $50 deposit; financial assistance available"
+        "display": "Sliding scale \u2014 Price A (full) / Price B (subsidized); $50 deposit; financial assistance available"
       },
       "selectivity": "open",
       "admissionsImpact": "medium",
@@ -35918,7 +35918,7 @@
       "subregion": "San Juan Islands",
       "ages": "8-17",
       "dates": "Sessions late June through late August 2026 (e.g., Session 2A Jul 13-24, Session 6A Aug 10-21)",
-      "scholarshipAid": "Available — sliding scale + need-based financial assistance",
+      "scholarshipAid": "Available \u2014 sliding scale + need-based financial assistance",
       "registrationUrl": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp",
       "howToStart": "Registration opens Feb 4, 2026 at 6 a.m.; create account at seattleymca.org and apply for financial assistance separately if needed.",
       "confidence": "high",
@@ -35936,7 +35936,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session — see registration page"
+        "display": "Varies by session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -35966,7 +35966,7 @@
         ]
       },
       "deadline": "Rolling until full",
-      "description": "Camp Fire-operated overnight and day camp on Vashon Island, ACA-accredited. Programs for youth of all genders ages 5-17 in 8 summer sessions ranging 4-13 days. Classic activities include archery, swimming, arts & crafts, boating, fishing, hikes, marine touch tanks, outdoor cooking, songs, and theme meals. Need-based financial assistance is available — apply early as funds are limited. Note: 2026 per-session pricing not surfaced on landing page; check the registration page or call (206) 463-3174.",
+      "description": "Camp Fire-operated overnight and day camp on Vashon Island, ACA-accredited. Programs for youth of all genders ages 5-17 in 8 summer sessions ranging 4-13 days. Classic activities include archery, swimming, arts & crafts, boating, fishing, hikes, marine touch tanks, outdoor cooking, songs, and theme meals. Need-based financial assistance is available \u2014 apply early as funds are limited. Note: 2026 per-session pricing not surfaced on landing page; check the registration page or call (206) 463-3174.",
       "url": "https://campfireseattle.org/camp-sealth-overnight-camp/",
       "tags": [
         "outdoor",
@@ -35986,7 +35986,7 @@
       "subregion": "Puget Sound",
       "ages": "5-17",
       "dates": "8 sessions, late June through end of August 2026",
-      "scholarshipAid": "Available — need-based, limited funds; apply early",
+      "scholarshipAid": "Available \u2014 need-based, limited funds; apply early",
       "registrationUrl": "https://campfireseattle.org/camp-sealth-overnight-camp/",
       "howToStart": "Browse sessions and register at campfireseattle.org; financial assistance application is separate. Phone (206) 463-3174.",
       "confidence": "medium",
@@ -36008,7 +36008,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by age tier and session — see registration page"
+        "display": "Varies by age tier and session \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36034,8 +36034,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — popular sessions fill in spring",
-      "description": "Themed day camps for kids ages 4–13 at Woodland Park Zoo in Seattle. Camps are tiered by age with developmentally appropriate, NGSS-aligned curricula focused on animals, ecosystems and biology — campers get hands-on activities and zoo encounters. Preschool through kindergarten attend two- or three-day camps; first grade and up attend four- and five-day camps. Partial and full scholarships available in 20% increments up to 100% for families with financial barriers.",
+      "deadline": "Rolling \u2014 popular sessions fill in spring",
+      "description": "Themed day camps for kids ages 4\u201313 at Woodland Park Zoo in Seattle. Camps are tiered by age with developmentally appropriate, NGSS-aligned curricula focused on animals, ecosystems and biology \u2014 campers get hands-on activities and zoo encounters. Preschool through kindergarten attend two- or three-day camps; first grade and up attend four- and five-day camps. Partial and full scholarships available in 20% increments up to 100% for families with financial barriers.",
       "url": "https://zoo.org/camps/",
       "tags": [
         "summer-camp",
@@ -36055,8 +36055,8 @@
       ],
       "subregion": "Seattle",
       "ages": "4-13",
-      "dates": "Summer 2026 — multiple sessions across the season",
-      "scholarshipAid": "Available — partial and full (up to 100%) for qualifying families",
+      "dates": "Summer 2026 \u2014 multiple sessions across the season",
+      "scholarshipAid": "Available \u2014 partial and full (up to 100%) for qualifying families",
       "registrationUrl": "https://zoo.org/camps/",
       "howToStart": "Register at zoo.org/camps; popular sessions fill in spring. Apply for scholarships during registration.",
       "confidence": "high",
@@ -36098,8 +36098,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — registration is open",
-      "description": "The Seattle Aquarium's Marine Summer Camp serves children ages 6–12 at the Aquarium on Pier 59. Campers explore Puget Sound marine life through guided behind-the-scenes activities, exhibit time, hands-on labs and group play. Camp groups are placed by age tier so curricula match developmental stage. Before and after care available 8:30–9:15am and 4–4:45pm for an additional fee. A limited number of needs-based scholarships are offered. Note: per-session tuition not posted on the public landing page; confirm directly via registration@seattleaquarium.org.",
+      "deadline": "Rolling \u2014 registration is open",
+      "description": "The Seattle Aquarium's Marine Summer Camp serves children ages 6\u201312 at the Aquarium on Pier 59. Campers explore Puget Sound marine life through guided behind-the-scenes activities, exhibit time, hands-on labs and group play. Camp groups are placed by age tier so curricula match developmental stage. Before and after care available 8:30\u20139:15am and 4\u20134:45pm for an additional fee. A limited number of needs-based scholarships are offered. Note: per-session tuition not posted on the public landing page; confirm directly via registration@seattleaquarium.org.",
       "url": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
       "tags": [
         "summer-camp",
@@ -36118,8 +36118,8 @@
       ],
       "subregion": "Seattle",
       "ages": "6-12",
-      "dates": "Summer 2026 — multiple weeklong sessions",
-      "scholarshipAid": "Available — limited number of needs-based scholarships",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
+      "scholarshipAid": "Available \u2014 limited number of needs-based scholarships",
       "registrationUrl": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
       "howToStart": "Register at seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp; email registration@seattleaquarium.org for tuition specifics or scholarship application.",
       "confidence": "medium",
@@ -36141,7 +36141,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by camp — see 2026 Summer Digital Course Catalog"
+        "display": "Varies by camp \u2014 see 2026 Summer Digital Course Catalog"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36167,8 +36167,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — registration via SCT website",
-      "description": "The Adrienne Dillard-Coons Drama School at Seattle Children's Theatre runs summer day camps for ages 3.5–18 at SCT's Seattle Center campus. Offerings include Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte and pratfalls), adventure-themed and art-focused drama. Camps build acting and storytelling skills in age-banded groups, with a focus on exploration over performance for the youngest tiers. Note: 2026 per-camp dates and tuition not surfaced on landing page; consult the 2026 Summer Digital Course Catalog or email dramaschool@sct.org.",
+      "deadline": "Rolling \u2014 registration via SCT website",
+      "description": "The Adrienne Dillard-Coons Drama School at Seattle Children's Theatre runs summer day camps for ages 3.5\u201318 at SCT's Seattle Center campus. Offerings include Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte and pratfalls), adventure-themed and art-focused drama. Camps build acting and storytelling skills in age-banded groups, with a focus on exploration over performance for the youngest tiers. Note: 2026 per-camp dates and tuition not surfaced on landing page; consult the 2026 Summer Digital Course Catalog or email dramaschool@sct.org.",
       "url": "https://www.sct.org/education-programs/camps-classes-sct/",
       "tags": [
         "summer-camp",
@@ -36187,7 +36187,7 @@
       ],
       "subregion": "Seattle",
       "ages": "3.5-18",
-      "dates": "Summer 2026 — multiple weeklong sessions",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
       "scholarshipAid": "See SCT financial aid page",
       "registrationUrl": "https://www.sct.org/education-programs/class-finder/",
       "howToStart": "Browse offerings via the Class Finder at sct.org/education-programs/class-finder; contact dramaschool@sct.org for catalog and tuition details.",
@@ -36233,8 +36233,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — early-bird ends Feb 28, 2026",
-      "description": "Camp Galileo Bellevue is a multi-week summer day camp for rising K–5th graders blending STEAM project rotations, outdoor games and classic camp activities. Campers cycle through three rotations daily (engineering challenges, art studios, and active outdoor play) at a 9am–3pm schedule with optional extended care. Galileo Learning operates a national network of camps with consistent, design-thinking-based curriculum and trained staff. Early-bird enrollment by February 28 saves $50/week and provides priority friend placement; multi-week pricing reduces the per-week rate after week one.",
+      "deadline": "Rolling \u2014 early-bird ends Feb 28, 2026",
+      "description": "Camp Galileo Bellevue is a multi-week summer day camp for rising K\u20135th graders blending STEAM project rotations, outdoor games and classic camp activities. Campers cycle through three rotations daily (engineering challenges, art studios, and active outdoor play) at a 9am\u20133pm schedule with optional extended care. Galileo Learning operates a national network of camps with consistent, design-thinking-based curriculum and trained staff. Early-bird enrollment by February 28 saves $50/week and provides priority friend placement; multi-week pricing reduces the per-week rate after week one.",
       "url": "https://galileo-camps.com/our-camps/locations/bellevue/",
       "tags": [
         "summer-camp",
@@ -36254,7 +36254,7 @@
       ],
       "subregion": "Eastside",
       "ages": "5-11",
-      "dates": "Summer 2026 — multiple weeklong sessions, 9am–3pm",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions, 9am\u20133pm",
       "scholarshipAid": "See Galileo financial assistance program",
       "registrationUrl": "https://galileo-camps.com/our-camps/locations/bellevue/",
       "howToStart": "Enroll at galileo-camps.com/our-camps/locations/bellevue; lock in Early Bird pricing by Feb 28, 2026.",
@@ -36300,8 +36300,8 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — register via musiccenternw.org",
-      "description": "Music Center of the Northwest in north Seattle runs summer music camps for young children including Rhythm Kids® and a Music Together® summer camp (currently scheduled July 20–24, 12:30–4:00 pm, $295 tuition). The Center's mission is that music education should be accessible regardless of financial means, so a variety of tuition discounts and scholarships are offered to make programs more affordable. Music Together classes use songs, rhythm, rhymes, movement and instrument play to introduce basic musical concepts; families also receive a Music Together songbook and CD/app access.",
+      "deadline": "Rolling \u2014 register via musiccenternw.org",
+      "description": "Music Center of the Northwest in north Seattle runs summer music camps for young children including Rhythm Kids\u00ae and a Music Together\u00ae summer camp (currently scheduled July 20\u201324, 12:30\u20134:00 pm, $295 tuition). The Center's mission is that music education should be accessible regardless of financial means, so a variety of tuition discounts and scholarships are offered to make programs more affordable. Music Together classes use songs, rhythm, rhymes, movement and instrument play to introduce basic musical concepts; families also receive a Music Together songbook and CD/app access.",
       "url": "https://www.musiccenternw.org/musictogether",
       "tags": [
         "summer-camp",
@@ -36320,8 +36320,8 @@
       ],
       "subregion": "Seattle",
       "ages": "3-12",
-      "dates": "Music Together summer camp: July 20–24, 2026; other sessions throughout summer",
-      "scholarshipAid": "Available — tuition discounts and scholarships offered",
+      "dates": "Music Together summer camp: July 20\u201324, 2026; other sessions throughout summer",
+      "scholarshipAid": "Available \u2014 tuition discounts and scholarships offered",
       "registrationUrl": "https://www.musiccenternw.org/musictogether",
       "howToStart": "Browse and register at musiccenternw.org/musictogether or call (206) 526-8443.",
       "confidence": "high",
@@ -36340,7 +36340,7 @@
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by age tier — see registration page"
+        "display": "Varies by age tier \u2014 see registration page"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36367,7 +36367,7 @@
         ]
       },
       "deadline": "Member registration opened March 10, 2026; general March 12, 2026",
-      "description": "Point Defiance Zoo & Aquarium summer camps in Tacoma deliver lively, age-tiered programs about animals, ecosystem exploration, crafts and group games — with a focus on fostering empathy and respect for wildlife. Camps cover ages from preschool/Little Explorers through teen Zoo Camp (14–17), with elementary and middle-school tiers running across the summer. The Zoo offers needs-based scholarships for Pierce County residents whose parent/guardian is enrolled in EBT/Washington Quest, WIC, or who are foster/kinship caregivers.",
+      "description": "Point Defiance Zoo & Aquarium summer camps in Tacoma deliver lively, age-tiered programs about animals, ecosystem exploration, crafts and group games \u2014 with a focus on fostering empathy and respect for wildlife. Camps cover ages from preschool/Little Explorers through teen Zoo Camp (14\u201317), with elementary and middle-school tiers running across the summer. The Zoo offers needs-based scholarships for Pierce County residents whose parent/guardian is enrolled in EBT/Washington Quest, WIC, or who are foster/kinship caregivers.",
       "url": "https://www.pdza.org/summer-camps/",
       "tags": [
         "summer-camp",
@@ -36386,8 +36386,8 @@
       ],
       "subregion": "South Puget Sound",
       "ages": "4-13 (elementary/middle tiers)",
-      "dates": "Summer 2026 — multiple weeklong sessions",
-      "scholarshipAid": "Available — needs-based for Pierce County residents on EBT/WIC/foster/kinship",
+      "dates": "Summer 2026 \u2014 multiple weeklong sessions",
+      "scholarshipAid": "Available \u2014 needs-based for Pierce County residents on EBT/WIC/foster/kinship",
       "registrationUrl": "https://www.pdza.org/summer-camps/",
       "howToStart": "Register at pdza.org/summer-camps; scholarship applicants must reside in Pierce County and meet program enrollment criteria.",
       "confidence": "high",
@@ -36432,7 +36432,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — sessions fill spring",
+      "deadline": "Rolling \u2014 sessions fill spring",
       "description": "Whatcom Family YMCA in Bellingham operates a slate of weeklong summer day camps for kids entering Pre-K through 10th grade in fall 2026. Tracks include Minis Camp (ages 3-5), Back to School Camp (1st-5th), Discovery Camp (1st-5th), Outdoor Day Camp (2nd-5th), Sports Camps (1st-5th and 4th-7th tracks), and Trail Blazers Running Camps (elementary 2nd-5th and middle school 6th-8th). YMCA financial assistance is available. Note: 2026 per-session pricing varies by track; confirm with the registrar at registrar@whatcomymca.org or 360-255-0585.",
       "url": "https://www.whatcomymca.org/camps-summer-programs",
       "tags": [
@@ -36453,8 +36453,8 @@
       ],
       "subregion": "Whatcom County",
       "ages": "3-14",
-      "dates": "Summer 2026 — multi-week sessions June through August",
-      "scholarshipAid": "Available — YMCA financial assistance / sliding scale",
+      "dates": "Summer 2026 \u2014 multi-week sessions June through August",
+      "scholarshipAid": "Available \u2014 YMCA financial assistance / sliding scale",
       "registrationUrl": "https://www.whatcomymca.org/camps-summer-programs",
       "howToStart": "Browse camp tracks at whatcomymca.org/camps-summer-programs and register online; contact registrar@whatcomymca.org for financial assistance.",
       "confidence": "medium",
@@ -36504,7 +36504,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — register at musicworksnw.org/summer-camps",
+      "deadline": "Rolling \u2014 register at musicworksnw.org/summer-camps",
       "description": "Bellevue's nonprofit community music school offers age-banded weeklong summer camps for ages 4-16 in summer 2026. Tracks: ages 4-6 and 6-9 (June 22-26, $530), ages 8-12 (June 29-July 1, $330), and ages 12-16 (June 22-26, $530). Daily 9:30am-3:30pm. Curriculum emphasizes singing, instrument exploration, songwriting, and musical games culminating in a Friday performance. Music Works Northwest is inclusive of neurodivergent students and offers tuition assistance.",
       "url": "https://www.musicworksnw.org/summer-camps",
       "tags": [
@@ -36526,7 +36526,7 @@
       "subregion": "Eastside",
       "ages": "4-16",
       "dates": "June 22-26 and June 29-July 1, 2026; 9:30am-3:30pm",
-      "scholarshipAid": "Available — tuition assistance for qualifying families",
+      "scholarshipAid": "Available \u2014 tuition assistance for qualifying families",
       "registrationUrl": "https://www.musicworksnw.org/summer-camps",
       "howToStart": "Pick an age track at musicworksnw.org/summer-camps and register; contact the school for tuition assistance.",
       "confidence": "high",
@@ -36592,8 +36592,8 @@
       ],
       "subregion": "Kitsap / Bainbridge",
       "ages": "4-14",
-      "dates": "Summer 2026 — multi-week schedule on registration page",
-      "scholarshipAid": "Limited — 2026 financial assistance fully allocated; waitlist form available",
+      "dates": "Summer 2026 \u2014 multi-week schedule on registration page",
+      "scholarshipAid": "Limited \u2014 2026 financial assistance fully allocated; waitlist form available",
       "registrationUrl": "https://islandwood.org/outdoor-summer-day-camps-2026/",
       "howToStart": "Browse weekly camp themes at islandwood.org/outdoor-summer-day-camps-2026 and register early; financial assistance waitlist form on the same page.",
       "confidence": "medium",
@@ -36640,7 +36640,7 @@
           "WA"
         ]
       },
-      "deadline": "Rolling — register at kidimu.org/camps; sessions fill spring",
+      "deadline": "Rolling \u2014 register at kidimu.org/camps; sessions fill spring",
       "description": "Kids Discovery Museum on Bainbridge Island offers four-hour half-day summer camps (9am-12pm or 12pm-3pm) for ages 3-12 in summer 2026. Campers are grouped by age into developmentally appropriate cohorts and participate in Cross-Age Buddy Groups across the week. Sample 2026 camp: Dino Discovery Lab (Stomp, Chomp & Fossil Fun) June 15-19. Pricing: $350/half-day session for non-members, $325 for members; optional early drop-off (8am) or late pick-up (4pm) at $20/hour.",
       "url": "https://kidimu.org/camps/",
       "tags": [
@@ -36661,7 +36661,7 @@
       ],
       "subregion": "Kitsap / Bainbridge",
       "ages": "3-12",
-      "dates": "Summer 2026 — weekly half-day sessions June through August",
+      "dates": "Summer 2026 \u2014 weekly half-day sessions June through August",
       "scholarshipAid": "Not advertised on landing page",
       "registrationUrl": "https://kidimu.org/camps/",
       "howToStart": "Pick a half-day weekly session at kidimu.org/camps and register online; member discount applies.",
@@ -36722,8 +36722,8 @@
       ],
       "subregion": "Clark County / Vancouver",
       "ages": "6-10",
-      "dates": "Summer 2026 — May through August; registration opens April 15, 2026",
-      "scholarshipAid": "Available — Everybody Plays! scholarship covers 50% of tuition for eligible families",
+      "dates": "Summer 2026 \u2014 May through August; registration opens April 15, 2026",
+      "scholarshipAid": "Available \u2014 Everybody Plays! scholarship covers 50% of tuition for eligible families",
       "registrationUrl": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/",
       "howToStart": "Register starting April 15 (residents) or April 16 (non-residents) at cityofvancouver.us; Everybody Plays! scholarship auto-applies for eligible households.",
       "confidence": "high",
@@ -36741,7 +36741,7 @@
       "cost": {
         "amount": 36,
         "type": "paid",
-        "display": "$5–$36 per group class; $10–$94 per week self-paced; new 2026 membership tiers $60–$600/month for 1–10 group classes/week"
+        "display": "$5\u2013$36 per group class; $10\u2013$94 per week self-paced; new 2026 membership tiers $60\u2013$600/month for 1\u201310 group classes/week"
       },
       "selectivity": "open",
       "format": "remote",
@@ -36769,8 +36769,8 @@
           "all"
         ]
       },
-      "deadline": "Rolling — most summer camps run weeks of June 15 – August 22, 2026",
-      "description": "Marketplace for live, small-group (typically up to 12 students) and 1:1 Zoom-based summer camps and mini-camps for ages 3–18. Topics span Minecraft math, Lego clubs, creative writing, coding, art, science, world languages, and test prep. Strong K–8 catalog with weekly themed camps as short as 5 days. Outschool moved to a credit-based membership model in 2026 alongside its long-running pay-per-class option, so families with multiple kids or weekly camp use can lock in lower per-class rates by subscribing.",
+      "deadline": "Rolling \u2014 most summer camps run weeks of June 15 \u2013 August 22, 2026",
+      "description": "Marketplace for live, small-group (typically up to 12 students) and 1:1 Zoom-based summer camps and mini-camps for ages 3\u201318. Topics span Minecraft math, Lego clubs, creative writing, coding, art, science, world languages, and test prep. Strong K\u20138 catalog with weekly themed camps as short as 5 days. Outschool moved to a credit-based membership model in 2026 alongside its long-running pay-per-class option, so families with multiple kids or weekly camp use can lock in lower per-class rates by subscribing.",
       "url": "https://outschool.com/online-classes/summer-camps",
       "registrationUrl": "https://outschool.com/online-classes/summer-camps",
       "scholarshipAid": "Outschool Cares scholarship program (need-based, application required); per-class providers occasionally offer their own scholarships; ESA / state-funded education savings accounts accepted in participating states (AZ, etc.)",
@@ -36790,7 +36790,7 @@
       "cost": {
         "amount": 99,
         "type": "paid",
-        "display": "$99.99/year per student (covers grades 1–5); $16/month month-to-month; sibling Yearly $64.99/year (requires active Bundle); Bundle (printed books for one level + 1-yr subscription) ~$160; 10% group discount for 5+ subscriptions"
+        "display": "$99.99/year per student (covers grades 1\u20135); $16/month month-to-month; sibling Yearly $64.99/year (requires active Bundle); Bundle (printed books for one level + 1-yr subscription) ~$160; 10% group discount for 5+ subscriptions"
       },
       "selectivity": "open",
       "format": "remote",
@@ -36810,8 +36810,8 @@
           "all"
         ]
       },
-      "deadline": "Year-round enrollment — runs continuously; ideal as a summer enrichment supplement or full-year curriculum",
-      "description": "Self-paced advanced elementary math curriculum from Art of Problem Solving, covering grades 1–5 with the same problem-solving DNA that powers AoPS's MathCounts/AMC pipeline. One subscription gives a single learner access to all five grade levels — kids working ahead are not paywalled by their official grade. Includes adaptive practice, video instruction, and game-style 'Beast Island' progression. AoPS positions Beast Academy as the on-ramp to its 6+ grade Online School and Beast Live Online classes.",
+      "deadline": "Year-round enrollment \u2014 runs continuously; ideal as a summer enrichment supplement or full-year curriculum",
+      "description": "Self-paced advanced elementary math curriculum from Art of Problem Solving, covering grades 1\u20135 with the same problem-solving DNA that powers AoPS's MathCounts/AMC pipeline. One subscription gives a single learner access to all five grade levels \u2014 kids working ahead are not paywalled by their official grade. Includes adaptive practice, video instruction, and game-style 'Beast Island' progression. AoPS positions Beast Academy as the on-ramp to its 6+ grade Online School and Beast Live Online classes.",
       "url": "https://beastacademy.com/online",
       "registrationUrl": "https://beastacademy.com/online/enroll",
       "scholarshipAid": "ClassWallet ESA participating states; some homeschool co-ops bundle at group discount; no formal need-based scholarship listed at the curriculum level",
@@ -36859,12 +36859,12 @@
           "all"
         ]
       },
-      "deadline": "Rolling; new mentor matches typically within 1–2 weeks of intake",
-      "description": "Personalized 1:1 mentorship that pairs K–12 students with college and grad-student mentors from top universities for academic tutoring, executive function coaching, and passion-project mentorship. For 4th grade and under (and learners with learning differences), 30-minute sessions are recommended initially. Two main tracks: Academic Mentorship (subject mastery + study skills) and Passion Project Mentorship (a multi-month deliverable a younger student can show off, e.g., a kid-run podcast or a coded game).",
+      "deadline": "Rolling; new mentor matches typically within 1\u20132 weeks of intake",
+      "description": "Personalized 1:1 mentorship that pairs K\u201312 students with college and grad-student mentors from top universities for academic tutoring, executive function coaching, and passion-project mentorship. For 4th grade and under (and learners with learning differences), 30-minute sessions are recommended initially. Two main tracks: Academic Mentorship (subject mastery + study skills) and Passion Project Mentorship (a multi-month deliverable a younger student can show off, e.g., a kid-run podcast or a coded game).",
       "url": "https://www.curiouscardinals.com/",
       "registrationUrl": "https://www.curiouscardinals.com/pricing",
       "scholarshipAid": "Limited need-based mentor matching available on request; contact admissions team. No public scholarship page.",
-      "howToStart": "Submit intake form on curiouscardinals.com, complete a free consultation call, get matched with 1–2 mentor candidates within ~1 week.",
+      "howToStart": "Submit intake form on curiouscardinals.com, complete a free consultation call, get matched with 1\u20132 mentor candidates within ~1 week.",
       "_source": "https://www.curiouscardinals.com/pricing",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -36880,7 +36880,7 @@
       "cost": {
         "amount": 20,
         "type": "paid",
-        "display": "$20/month or $99/year (Tutor solo plan, ages 5–11, one student); $240/year ($8.25/mo equiv) plan supports up to 7 student profiles per parent account; Synthesis Teams (live group classes, ages 8–14) is $95/month. 7-day free trial."
+        "display": "$20/month or $99/year (Tutor solo plan, ages 5\u201311, one student); $240/year ($8.25/mo equiv) plan supports up to 7 student profiles per parent account; Synthesis Teams (live group classes, ages 8\u201314) is $95/month. 7-day free trial."
       },
       "selectivity": "open",
       "format": "remote",
@@ -36902,7 +36902,7 @@
         ]
       },
       "deadline": "Year-round; enroll any time",
-      "description": "AI-powered K–5 math tutor (ages 5–11) that uses voice + spatial reasoning to teach the full elementary curriculum aligned with US standards: counting, addition/subtraction, multiplication/division, fractions, algebraic thinking. Co-founded by ex-SpaceX/Ad Astra educators. Synthesis also operates Synthesis Teams, a separate live online group experience for ages 8–14 focused on collaborative problem-solving. Particularly strong as a daily 20–30 min summer review or stretch supplement.",
+      "description": "AI-powered K\u20135 math tutor (ages 5\u201311) that uses voice + spatial reasoning to teach the full elementary curriculum aligned with US standards: counting, addition/subtraction, multiplication/division, fractions, algebraic thinking. Co-founded by ex-SpaceX/Ad Astra educators. Synthesis also operates Synthesis Teams, a separate live online group experience for ages 8\u201314 focused on collaborative problem-solving. Particularly strong as a daily 20\u201330 min summer review or stretch supplement.",
       "url": "https://www.synthesis.com/tutor",
       "registrationUrl": "https://www.synthesis.com/tutor",
       "scholarshipAid": "No formal need-based scholarship publicly listed; gift-of-Synthesis program lets sponsors donate plans; 7-day free trial",
@@ -36944,8 +36944,8 @@
           "all"
         ]
       },
-      "deadline": "Program starts June 15, 2026 — register before to secure early-bird $199 pricing",
-      "description": "5-week gamified online summer learning program for kids ages 6–16 (designed for grades 2–8). Roughly 4 hours/week of academic challenges in math, reading, writing, and electives, all wrapped in a global treasure-hunt narrative — the first student to solve the buried-treasure mystery wins a prize trip to dig up the gold. Choose-your-own electives let advanced kids stretch and reluctant learners pick passion-aligned tracks. Self-paced, anywhere, anytime.",
+      "deadline": "Program starts June 15, 2026 \u2014 register before to secure early-bird $199 pricing",
+      "description": "5-week gamified online summer learning program for kids ages 6\u201316 (designed for grades 2\u20138). Roughly 4 hours/week of academic challenges in math, reading, writing, and electives, all wrapped in a global treasure-hunt narrative \u2014 the first student to solve the buried-treasure mystery wins a prize trip to dig up the gold. Choose-your-own electives let advanced kids stretch and reluctant learners pick passion-aligned tracks. Self-paced, anywhere, anytime.",
       "url": "https://brainchase.com/upcoming-programs/",
       "registrationUrl": "https://brainchase.com/summer-2026-brain-chase-registration/",
       "scholarshipAid": "Limited scholarship spots available on request; family/sibling discounts; school group rates",
@@ -36990,12 +36990,12 @@
           "all"
         ]
       },
-      "deadline": "Summer 2026 sessions run June 29 – August 7, 2026; registration opens early winter, popular sessions fill before spring",
-      "description": "Northwestern University's gifted education arm runs week-long, half-day and all-day academic enrichment courses for advanced learners PreK–grade 8 across two eligibility tiers: Amber (open enrollment for PreK–grade 2) and Emerald (testing/portfolio-based eligibility for grades 3–8). Topics span advanced math, science, writing, history, debate, robotics, and creative arts at a faster, deeper pace than typical school. CTD has been operating since 1982 and is one of the four major US gifted summer ecosystems alongside JHU CTY, Duke TIP-successors, and Davidson.",
+      "deadline": "Summer 2026 sessions run June 29 \u2013 August 7, 2026; registration opens early winter, popular sessions fill before spring",
+      "description": "Northwestern University's gifted education arm runs week-long, half-day and all-day academic enrichment courses for advanced learners PreK\u2013grade 8 across two eligibility tiers: Amber (open enrollment for PreK\u2013grade 2) and Emerald (testing/portfolio-based eligibility for grades 3\u20138). Topics span advanced math, science, writing, history, debate, robotics, and creative arts at a faster, deeper pace than typical school. CTD has been operating since 1982 and is one of the four major US gifted summer ecosystems alongside JHU CTY, Duke TIP-successors, and Davidson.",
       "url": "https://www.ctd.northwestern.edu/summer-programs",
       "registrationUrl": "https://www.ctd.northwestern.edu/1-week-academic-day-camps-summer",
       "scholarshipAid": "Need-based financial aid for most CTD programs; Jack Kent Cooke Foundation partnership for low-income high-ability students; multiple scholarship options listed on the financial aid page",
-      "howToStart": "For PreK–grade 2 (Amber): apply directly online — open enrollment. For grades 3–8 (Emerald): submit eligibility documentation (test scores or portfolio) with the program application. Forms at ctd.northwestern.edu/eligibility.",
+      "howToStart": "For PreK\u2013grade 2 (Amber): apply directly online \u2014 open enrollment. For grades 3\u20138 (Emerald): submit eligibility documentation (test scores or portfolio) with the program application. Forms at ctd.northwestern.edu/eligibility.",
       "_source": "https://www.ctd.northwestern.edu/summer-programs",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -37011,7 +37011,7 @@
       "cost": {
         "amount": 269,
         "type": "paid",
-        "display": "Elementary 8x1hr $269; Middle school 8x1hr $299; longer sessions and unlimited packages also available. Plus $49–$99 first-time enrollment fee."
+        "display": "Elementary 8x1hr $269; Middle school 8x1hr $299; longer sessions and unlimited packages also available. Plus $49\u2013$99 first-time enrollment fee."
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -37034,8 +37034,8 @@
         ],
         "states": []
       },
-      "deadline": "Rolling — sessions begin June 2026",
-      "description": "Nationwide math learning-center franchise (1,000+ centers in the US/Canada) offering structured summer programs for K–8: a placement assessment, customized session plan, and small-group + 1:1 tutoring at the local center. Summer pack tiers cover 8 sessions, 8 longer sessions, or 'unlimited' bundles. Pricing varies by location and grade level; middle-school sessions cost slightly more than elementary. Search the local center for exact rates — the chain publishes per-center summer landing pages.",
+      "deadline": "Rolling \u2014 sessions begin June 2026",
+      "description": "Nationwide math learning-center franchise (1,000+ centers in the US/Canada) offering structured summer programs for K\u20138: a placement assessment, customized session plan, and small-group + 1:1 tutoring at the local center. Summer pack tiers cover 8 sessions, 8 longer sessions, or 'unlimited' bundles. Pricing varies by location and grade level; middle-school sessions cost slightly more than elementary. Search the local center for exact rates \u2014 the chain publishes per-center summer landing pages.",
       "url": "https://www.mathnasium.com/summer-math-programs",
       "tags": [
         "summer-camp",
@@ -37048,12 +37048,12 @@
         "middle-school",
         "franchise"
       ],
-      "duration": "Typically 8 sessions over 4–8 weeks; unlimited packages available",
+      "duration": "Typically 8 sessions over 4\u20138 weeks; unlimited packages available",
       "region": "Nationwide",
       "scope": "national",
       "states": [],
       "ages": "5-14",
-      "dates": "Summer 2026 — June through August",
+      "dates": "Summer 2026 \u2014 June through August",
       "scholarshipAid": "Not centrally advertised; some centers offer multi-child discounts and sibling rates",
       "registrationUrl": "https://www.mathnasium.com/locations",
       "howToStart": "Use the locations finder to pick the nearest center, request a free assessment, then choose a summer package tier.",
@@ -37072,7 +37072,7 @@
       "cost": {
         "amount": 199,
         "type": "paid",
-        "display": "$199/week typical; Unlimited Pass covers up to 9 weeks Mon–Fri June 1–July 31, 2026 (~$16/hr equivalent at full attendance)"
+        "display": "$199/week typical; Unlimited Pass covers up to 9 weeks Mon\u2013Fri June 1\u2013July 31, 2026 (~$16/hr equivalent at full attendance)"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -37095,8 +37095,8 @@
         ],
         "states": []
       },
-      "deadline": "Rolling — register through local center; popular weeks fill spring 2026",
-      "description": "Nationwide coding-camp franchise with 400+ centers serving ages 5–14. Themed week-long camps include Robotics (Spike Essential), Minecraft modding (Java Edition + MCreator), Roblox studio, app development, AI, cybersecurity, and YouTube content creation. Camps run June through August at half-day (9am–noon or 1pm–4pm) or full-day formats. The all-summer 'Unlimited Pass' provides Mon–Fri 9am–3:30pm access from June 1 to July 31, 2026 with biweekly payment plans available for purchases over $1,000.",
+      "deadline": "Rolling \u2014 register through local center; popular weeks fill spring 2026",
+      "description": "Nationwide coding-camp franchise with 400+ centers serving ages 5\u201314. Themed week-long camps include Robotics (Spike Essential), Minecraft modding (Java Edition + MCreator), Roblox studio, app development, AI, cybersecurity, and YouTube content creation. Camps run June through August at half-day (9am\u2013noon or 1pm\u20134pm) or full-day formats. The all-summer 'Unlimited Pass' provides Mon\u2013Fri 9am\u20133:30pm access from June 1 to July 31, 2026 with biweekly payment plans available for purchases over $1,000.",
       "url": "https://www.codeninjas.com/camps",
       "tags": [
         "summer-camp",
@@ -37117,7 +37117,7 @@
       "scope": "national",
       "states": [],
       "ages": "5-14",
-      "dates": "June 1–August 2026 (Unlimited Pass through July 31)",
+      "dates": "June 1\u2013August 2026 (Unlimited Pass through July 31)",
       "scholarshipAid": "Not centrally advertised; biweekly payment plans available for packages >$1,000",
       "registrationUrl": "https://www.codeninjas.com/camps",
       "howToStart": "Find a local center via codeninjas.com/camps; pick weekly themes or buy the Unlimited Pass for the full summer.",
@@ -37158,8 +37158,8 @@
         ],
         "states": []
       },
-      "deadline": "Rolling — virtual camps launched continually; subscriptions renewable monthly",
-      "description": "Online coding platform for kids ages 8–16. Three formats: (1) self-paced course library with 24/7 help desk for $29/month, (2) week-long Virtual Camps for $299 covering AI, Python, game development, and Roblox/Minecraft modding, (3) 1:1 private tutoring from instructors at top US universities at $249/month for four 50-minute sessions. Younger campers (8–11) start with block-based platforms like Scratch; older kids (12–16) move to Python and JavaScript. Strong fit for K-8 students who want guided online coding without the in-person commute.",
+      "deadline": "Rolling \u2014 virtual camps launched continually; subscriptions renewable monthly",
+      "description": "Online coding platform for kids ages 8\u201316. Three formats: (1) self-paced course library with 24/7 help desk for $29/month, (2) week-long Virtual Camps for $299 covering AI, Python, game development, and Roblox/Minecraft modding, (3) 1:1 private tutoring from instructors at top US universities at $249/month for four 50-minute sessions. Younger campers (8\u201311) start with block-based platforms like Scratch; older kids (12\u201316) move to Python and JavaScript. Strong fit for K-8 students who want guided online coding without the in-person commute.",
       "url": "https://codakid.com/camps/",
       "tags": [
         "summer-camp",
@@ -37191,7 +37191,7 @@
       "_source": "https://codakid.com/camps/"
     },
     {
-      "name": "Tynker — K-12 Self-Paced Coding Platform",
+      "name": "Tynker \u2014 K-12 Self-Paced Coding Platform",
       "provider": "Tynker (CodeHS)",
       "category": "stem",
       "type": "year-round",
@@ -37223,7 +37223,7 @@
         ]
       },
       "deadline": "2026-09-01",
-      "description": "Tynker is the #1 K-12 creative coding platform — used by 1 in 3 U.S. K-8 schools, 150,000 schools globally, and 100M+ kids worldwide. Self-paced gamified courses for ages 5-18 covering block coding (Tynker Jr for pre-readers age 5-7), Minecraft modding, Python, JavaScript, web design, and AI/data science. Quarterly ($54), Yearly ($180), and Lifetime plans all include up to 3 children per family. 30-day money-back guarantee. Full access to Tynker self-paced web platform plus all Tynker iPad apps (Tynker Jr, Tynker, Mod Creator). Strong fit for K-8 students who want to learn at their own pace year-round, especially good for siblings sharing a plan.",
+      "description": "Tynker is the #1 K-12 creative coding platform \u2014 used by 1 in 3 U.S. K-8 schools, 150,000 schools globally, and 100M+ kids worldwide. Self-paced gamified courses for ages 5-18 covering block coding (Tynker Jr for pre-readers age 5-7), Minecraft modding, Python, JavaScript, web design, and AI/data science. Quarterly ($54), Yearly ($180), and Lifetime plans all include up to 3 children per family. 30-day money-back guarantee. Full access to Tynker self-paced web platform plus all Tynker iPad apps (Tynker Jr, Tynker, Mod Creator). Strong fit for K-8 students who want to learn at their own pace year-round, especially good for siblings sharing a plan.",
       "url": "https://www.tynker.com/parents/",
       "_source": "https://www.tynker.com/parents/pricing/",
       "_verified": true,
@@ -37233,17 +37233,17 @@
       "scope": "national",
       "scholarshipAid": "No formal scholarship program publicly listed; 30-day money-back guarantee on all plans serves as a low-risk trial",
       "registrationUrl": "https://www.tynker.com/parents/pricing/",
-      "howToStart": "Start a Free Tynker account at tynker.com/parents — explore Hour of Code activities and free starter games before subscribing. Try the Quarterly plan ($54) first if uncertain; both Quarterly and Yearly include the full self-paced library."
+      "howToStart": "Start a Free Tynker account at tynker.com/parents \u2014 explore Hour of Code activities and free starter games before subscribing. Try the Quarterly plan ($54) first if uncertain; both Quarterly and Yearly include the full self-paced library."
     },
     {
-      "name": "Connected Camps — Online Minecraft & Roblox Clubs",
+      "name": "Connected Camps \u2014 Online Minecraft & Roblox Clubs",
       "provider": "Connected Camps",
       "category": "stem",
       "type": "year-round",
       "cost": {
         "amount": 0,
         "type": "paid",
-        "display": "Sold per session/week via Outschool; typical pricing varies — Free Kid Club Minecraft Server is separate and 100% free"
+        "display": "Sold per session/week via Outschool; typical pricing varies \u2014 Free Kid Club Minecraft Server is separate and 100% free"
       },
       "selectivity": "open",
       "format": "remote",
@@ -37265,7 +37265,7 @@
         ]
       },
       "deadline": "2026-08-31",
-      "description": "Online learning programs run year-round for tech-savvy kids ages 8-13: Minecraft Builder's Club (design + build), Minecraft Survival Club, Girls' Builder's Club, Girls' Survival Club, Roblox Gaming Club, Overwatch Club (ages 9-14), and Smash Ultimate Club. Clubs meet weekly for 90 minutes via expert coach moderation, on Outschool's platform. Compatible with PC, Mac, tablets, phones, Chromebooks, Switch, Xbox, and PS4/PS5. Co-founded by Connie Yowell and U.C. Irvine professor Mimi Ito; designed to convert 'screen time' into structured learning of problem-solving, teamwork, and design. NOTE: pricing is per Outschool listing and varies by club — consult outschool.com Connected Camps storefront. Connected Camps also runs a separate FREE Kid Club Minecraft Server (moderated public sandbox) for kids without subscriptions.",
+      "description": "Online learning programs run year-round for tech-savvy kids ages 8-13: Minecraft Builder's Club (design + build), Minecraft Survival Club, Girls' Builder's Club, Girls' Survival Club, Roblox Gaming Club, Overwatch Club (ages 9-14), and Smash Ultimate Club. Clubs meet weekly for 90 minutes via expert coach moderation, on Outschool's platform. Compatible with PC, Mac, tablets, phones, Chromebooks, Switch, Xbox, and PS4/PS5. Co-founded by Connie Yowell and U.C. Irvine professor Mimi Ito; designed to convert 'screen time' into structured learning of problem-solving, teamwork, and design. NOTE: pricing is per Outschool listing and varies by club \u2014 consult outschool.com Connected Camps storefront. Connected Camps also runs a separate FREE Kid Club Minecraft Server (moderated public sandbox) for kids without subscriptions.",
       "url": "https://connectedcamps.com/summer-clubs",
       "_source": "https://connectedcamps.com/summer-clubs",
       "_verified": true,
@@ -37281,14 +37281,14 @@
       "howToStart": "Browse Connected Camps storefront on Outschool to see live pricing and current cohort availability, OR join the FREE Kid Club Minecraft Server first to test fit before subscribing."
     },
     {
-      "name": "Khan Academy Kids — Free Early Learning App (Ages 2-8)",
+      "name": "Khan Academy Kids \u2014 Free Early Learning App (Ages 2-8)",
       "provider": "Khan Academy",
       "category": "non-traditional",
       "type": "year-round",
       "cost": {
         "amount": 0,
         "type": "free",
-        "display": "100% free — no ads, no subscriptions, no in-app purchases"
+        "display": "100% free \u2014 no ads, no subscriptions, no in-app purchases"
       },
       "selectivity": "open",
       "format": "remote",
@@ -37315,9 +37315,9 @@
       "_addedBy": "esms-grinder",
       "confidence": "high",
       "scope": "national",
-      "scholarshipAid": "100% free — no scholarship needed; no paid tier exists",
+      "scholarshipAid": "100% free \u2014 no scholarship needed; no paid tier exists",
       "registrationUrl": "https://www.khanacademy.org/kids",
-      "howToStart": "Download the Khan Academy Kids app (App Store, Google Play, or Amazon Appstore) — no account required to start, but creating a parent account unlocks per-child progress tracking and a Library mode."
+      "howToStart": "Download the Khan Academy Kids app (App Store, Google Play, or Amazon Appstore) \u2014 no account required to start, but creating a parent account unlocks per-child progress tracking and a Library mode."
     },
     {
       "name": "NASA Kids' Club & K-8 STEM Resources",
@@ -37327,7 +37327,7 @@
       "cost": {
         "amount": 0,
         "type": "free",
-        "display": "100% free — federal government educational resource"
+        "display": "100% free \u2014 federal government educational resource"
       },
       "selectivity": "open",
       "format": "remote",
@@ -37352,7 +37352,7 @@
         ]
       },
       "deadline": "2026-12-31",
-      "description": "NASA's official free K-8 STEM portal. Hands-on activities, games, videos, and stories — kids can launch rockets, build a Moon Habitat, explore the Solar System, and solve space-themed puzzles. Content organized by grade band (K-4, 5-8, 9-12) with separate hub pages per band. Includes the NASA EXPRESS newsletter (workshops, contests, student challenges, science experiments), STEM Multimedia library, and 'NASA at Home' family activity packets. Spanish-language sub-portal (Sistema Solar) available. Strong fit for elementary/middle school enrichment, especially for science fair prep, summer STEM exposure, and supplementing classroom curriculum. Not a structured 'camp' but a curated portal to thousands of NASA-published activities, lesson plans, and challenges — many designed for self-led or parent-guided use at home.",
+      "description": "NASA's official free K-8 STEM portal. Hands-on activities, games, videos, and stories \u2014 kids can launch rockets, build a Moon Habitat, explore the Solar System, and solve space-themed puzzles. Content organized by grade band (K-4, 5-8, 9-12) with separate hub pages per band. Includes the NASA EXPRESS newsletter (workshops, contests, student challenges, science experiments), STEM Multimedia library, and 'NASA at Home' family activity packets. Spanish-language sub-portal (Sistema Solar) available. Strong fit for elementary/middle school enrichment, especially for science fair prep, summer STEM exposure, and supplementing classroom curriculum. Not a structured 'camp' but a curated portal to thousands of NASA-published activities, lesson plans, and challenges \u2014 many designed for self-led or parent-guided use at home.",
       "url": "https://www.nasa.gov/learning-resources/nasa-kids-club/",
       "_source": "https://www.nasa.gov/learning-resources/nasa-kids-club/",
       "_verified": true,
@@ -37360,12 +37360,12 @@
       "_addedBy": "esms-grinder",
       "confidence": "high",
       "scope": "national",
-      "scholarshipAid": "100% free — no application required",
+      "scholarshipAid": "100% free \u2014 no application required",
       "registrationUrl": "https://www.nasa.gov/learning-resources/for-kids-and-students/",
-      "howToStart": "Visit nasa.gov/learning-resources/nasa-kids-club/ — no signup required. Subscribe to the NASA EXPRESS newsletter (free) for weekly student-challenges, contests, and seasonal hands-on activities targeted to your child's grade band."
+      "howToStart": "Visit nasa.gov/learning-resources/nasa-kids-club/ \u2014 no signup required. Subscribe to the NASA EXPRESS newsletter (free) for weekly student-challenges, contests, and seasonal hands-on activities targeted to your child's grade band."
     },
     {
-      "name": "CodeCombat — Game-Based Coding (Python & JavaScript)",
+      "name": "CodeCombat \u2014 Game-Based Coding (Python & JavaScript)",
       "provider": "CodeCombat",
       "category": "stem",
       "type": "year-round",
@@ -37406,10 +37406,10 @@
       "scope": "national",
       "scholarshipAid": "Not publicly advertised; first chapter free serves as no-risk trial",
       "registrationUrl": "https://codecombat.com/play",
-      "howToStart": "Create a free CodeCombat account at codecombat.com — kids can play through Chapter 1 (Kithgard Dungeon) at zero cost. Decide on premium based on engagement level after the free chapter; classroom teachers can also sign students up for Ozaria's free first unit."
+      "howToStart": "Create a free CodeCombat account at codecombat.com \u2014 kids can play through Chapter 1 (Kithgard Dungeon) at zero cost. Decide on premium based on engagement level after the free chapter; classroom teachers can also sign students up for Ozaria's free first unit."
     },
     {
-      "name": "Russian School of Mathematics (RSM) Online — Summer & Year-Round",
+      "name": "Russian School of Mathematics (RSM) Online \u2014 Summer & Year-Round",
       "provider": "Russian School of Mathematics",
       "category": "stem",
       "type": "year-round",
@@ -37451,12 +37451,12 @@
         "scholarshipAid"
       ],
       "scope": "national",
-      "scholarshipAid": "Not publicly advertised on landing pages; some local branches offer financial aid — call the local branch director directly to ask",
+      "scholarshipAid": "Not publicly advertised on landing pages; some local branches offer financial aid \u2014 call the local branch director directly to ask",
       "registrationUrl": "https://www.mathschool.com/rsm-online-math-program",
-      "howToStart": "Submit the tuition-request form on mathschool.com to get the PDF with grade-specific pricing for your region/track. Schedule a placement test (free) — RSM uses results to assign the right level rather than relying on grade alone, so a strong 5th grader may place into the 6th-grade curriculum."
+      "howToStart": "Submit the tuition-request form on mathschool.com to get the PDF with grade-specific pricing for your region/track. Schedule a placement test (free) \u2014 RSM uses results to assign the right level rather than relying on grade alone, so a strong 5th grader may place into the 6th-grade curriculum."
     },
     {
-      "name": "Camp Invention 2026 — Spark",
+      "name": "Camp Invention 2026 \u2014 Spark",
       "provider": "National Inventors Hall of Fame",
       "category": "stem",
       "subcategory": "invention",
@@ -37741,7 +37741,7 @@
       "confidence": "high"
     },
     {
-      "name": "Outschool — small-group online classes",
+      "name": "Outschool \u2014 small-group online classes",
       "provider": "Outschool",
       "category": "non-traditional",
       "subcategory": "academic",
@@ -37860,7 +37860,7 @@
         "ageMax": 18
       },
       "deadline": "None; year-round self-paced",
-      "description": "Khan Academy Kids is the free K-2 app (iOS, Android, web) covering reading, math, social-emotional learning. Khan Academy proper covers grade 3+ math, science, history, computing, economics, and AP test prep — entirely free. Ad-free, no subscription. Pairs well with district summer 'don't lose progress' assignments. Khan teacher tools allow parents to assign + track progress. Quietly the highest-leverage free K-12 academic resource on the internet.",
+      "description": "Khan Academy Kids is the free K-2 app (iOS, Android, web) covering reading, math, social-emotional learning. Khan Academy proper covers grade 3+ math, science, history, computing, economics, and AP test prep \u2014 entirely free. Ad-free, no subscription. Pairs well with district summer 'don't lose progress' assignments. Khan teacher tools allow parents to assign + track progress. Quietly the highest-leverage free K-12 academic resource on the internet.",
       "url": "https://www.khanacademy.org",
       "_source": "https://www.khanacademy.org/about",
       "_verified": true,
@@ -38005,13 +38005,13 @@
       "cost": {
         "amount": 200,
         "type": "paid",
-        "display": "Varies by franchise — typical week-long camps ~$200–$400 (half-day) or $350–$600 (full-day)"
+        "display": "Varies by franchise \u2014 typical week-long camps ~$200\u2013$400 (half-day) or $350\u2013$600 (full-day)"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
       "format": "in-person",
       "location": {
-        "city": "Multiple — 100+ franchises across US/Canada",
+        "city": "Multiple \u2014 100+ franchises across US/Canada",
         "state": "Multiple"
       },
       "eligibility": {
@@ -38029,7 +38029,7 @@
         ]
       },
       "deadline": "2026-08-31",
-      "description": "Mad Science is a science enrichment franchise (operating since 1985) running themed weekly summer day camps for kids ages 4–12. Themes rotate weekly: Secret Agent Lab, Robot Academy, Digging Dinos, NASA Camp, Science of Slime, Inventors Camp, and more. Camps are typically half- or full-day at host sites (community centers, schools, parks-and-rec, hosting partners), with branded experiments and take-home science kits. 100+ franchise territories operate across the US and Canada — coverage varies by metro.",
+      "description": "Mad Science is a science enrichment franchise (operating since 1985) running themed weekly summer day camps for kids ages 4\u201312. Themes rotate weekly: Secret Agent Lab, Robot Academy, Digging Dinos, NASA Camp, Science of Slime, Inventors Camp, and more. Camps are typically half- or full-day at host sites (community centers, schools, parks-and-rec, hosting partners), with branded experiments and take-home science kits. 100+ franchise territories operate across the US and Canada \u2014 coverage varies by metro.",
       "url": "https://www.madscience.org/parents-camps",
       "registrationUrl": "https://www.madscience.org/find-a-location",
       "tags": [
@@ -38041,11 +38041,11 @@
         "themed-weekly",
         "franchise"
       ],
-      "duration": "Weekly day camps — 1 week each",
+      "duration": "Weekly day camps \u2014 1 week each",
       "region": "Nationwide (US + Canada)",
       "scope": "national",
-      "dates": "June–August 2026 (varies by franchise; registration typically opens Feb–Mar)",
-      "scholarshipAid": "Varies by franchise — some host-site partnerships (parks-and-rec) offer subsidized pricing; ask the local franchise about sliding scale",
+      "dates": "June\u2013August 2026 (varies by franchise; registration typically opens Feb\u2013Mar)",
+      "scholarshipAid": "Varies by franchise \u2014 some host-site partnerships (parks-and-rec) offer subsidized pricing; ask the local franchise about sliding scale",
       "howToStart": "Use the franchise locator at madscience.org/find-a-location, then register through the local franchise site or host-partner portal.",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -38066,13 +38066,13 @@
       "cost": {
         "amount": 250,
         "type": "paid",
-        "display": "Varies by franchise — typical week-long camps ~$250–$450 (half-day) or $400–$700 (full-day)"
+        "display": "Varies by franchise \u2014 typical week-long camps ~$250\u2013$450 (half-day) or $400\u2013$700 (full-day)"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
       "format": "in-person",
       "location": {
-        "city": "Multiple — franchises across US/Canada",
+        "city": "Multiple \u2014 franchises across US/Canada",
         "state": "Multiple"
       },
       "eligibility": {
@@ -38092,7 +38092,7 @@
         ]
       },
       "deadline": "2026-08-31",
-      "description": "Engineering For Kids is a STEM-focused enrichment franchise running hands-on engineering camps for ages 4–14. Camp categories include Aerospace, Chemical, Civil, Electrical, Environmental, Forensics, Industrial, Marine, Mechanical, and Mechatronics engineering, plus robotics and coding. Camps are typically half- or full-day weekly sessions at school, community-center, or franchise locations. 2026 nationwide registration opened March 1, 2026 — locations sell out quickly in popular metros.",
+      "description": "Engineering For Kids is a STEM-focused enrichment franchise running hands-on engineering camps for ages 4\u201314. Camp categories include Aerospace, Chemical, Civil, Electrical, Environmental, Forensics, Industrial, Marine, Mechanical, and Mechatronics engineering, plus robotics and coding. Camps are typically half- or full-day weekly sessions at school, community-center, or franchise locations. 2026 nationwide registration opened March 1, 2026 \u2014 locations sell out quickly in popular metros.",
       "url": "https://www.engineeringforkids.com/programs/summer-camps/",
       "registrationUrl": "https://www.engineeringforkids.com/find-a-location/",
       "tags": [
@@ -38105,11 +38105,11 @@
         "franchise",
         "robotics"
       ],
-      "duration": "Weekly day camps — 1 week each",
+      "duration": "Weekly day camps \u2014 1 week each",
       "region": "Nationwide (US + Canada)",
       "scope": "national",
-      "dates": "June–August 2026 (national registration opened Mar 1, 2026)",
-      "scholarshipAid": "Varies by franchise — some locations partner with host parks-and-rec for subsidized pricing; no central scholarship fund",
+      "dates": "June\u2013August 2026 (national registration opened Mar 1, 2026)",
+      "scholarshipAid": "Varies by franchise \u2014 some locations partner with host parks-and-rec for subsidized pricing; no central scholarship fund",
       "howToStart": "Locate your closest EFK at engineeringforkids.com/find-a-location, then register through the local franchise booking page.",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -38122,7 +38122,7 @@
       ]
     },
     {
-      "name": "Play-Well TEKnologies LEGO® Engineering Summer Camps",
+      "name": "Play-Well TEKnologies LEGO\u00ae Engineering Summer Camps",
       "provider": "Play-Well TEKnologies",
       "category": "stem",
       "subcategory": "engineering enrichment",
@@ -38130,13 +38130,13 @@
       "cost": {
         "amount": 250,
         "type": "paid",
-        "display": "Varies by host site — typical week-long camps ~$250–$425 (half-day, M–F)"
+        "display": "Varies by host site \u2014 typical week-long camps ~$250\u2013$425 (half-day, M\u2013F)"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
       "format": "in-person",
       "location": {
-        "city": "Multiple — host sites across 40+ states",
+        "city": "Multiple \u2014 host sites across 40+ states",
         "state": "Multiple"
       },
       "eligibility": {
@@ -38155,7 +38155,7 @@
         ]
       },
       "deadline": "2026-08-31",
-      "description": "Play-Well TEKnologies (founded 1997) runs LEGO®-based engineering summer camps for ages 5–14, with curriculum designed by engineers. Themed weekly camps include Pokémon Engineering, Dinosaur Engineering, Minecraft, Star Wars Engineering, and general engineering & robotics. Camps run as half-day or full-day weekly sessions hosted at parks-and-rec, libraries, schools, museums, and community centers across 40+ states. Registration is typically through the host site, not Play-Well directly.",
+      "description": "Play-Well TEKnologies (founded 1997) runs LEGO\u00ae-based engineering summer camps for ages 5\u201314, with curriculum designed by engineers. Themed weekly camps include Pok\u00e9mon Engineering, Dinosaur Engineering, Minecraft, Star Wars Engineering, and general engineering & robotics. Camps run as half-day or full-day weekly sessions hosted at parks-and-rec, libraries, schools, museums, and community centers across 40+ states. Registration is typically through the host site, not Play-Well directly.",
       "url": "https://www.play-well.org/camps.php",
       "registrationUrl": "https://schedule.play-well.org/class",
       "tags": [
@@ -38167,11 +38167,11 @@
         "k-7",
         "themed-weekly"
       ],
-      "duration": "Weekly day camps — 1 week each",
+      "duration": "Weekly day camps \u2014 1 week each",
       "region": "Nationwide (40+ states)",
       "scope": "national",
-      "dates": "June–August 2026 (varies by host site; many open Feb–Mar)",
-      "scholarshipAid": "Varies by host site — some parks-and-rec partners offer income-based subsidies; ask host directly",
+      "dates": "June\u2013August 2026 (varies by host site; many open Feb\u2013Mar)",
+      "scholarshipAid": "Varies by host site \u2014 some parks-and-rec partners offer income-based subsidies; ask host directly",
       "howToStart": "Search by zip at schedule.play-well.org to find a camp near you; register through the host (not Play-Well) for those camps.",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -38182,6 +38182,544 @@
         "cost (varies by host site)",
         "exact session dates"
       ]
+    },
+    {
+      "name": "Boys & Girls Clubs of America (local club)",
+      "provider": "Boys & Girls Clubs of America",
+      "category": "non-traditional",
+      "subcategory": "after-school",
+      "type": "year-round",
+      "cost": {
+        "amount": 25,
+        "type": "sliding-scale",
+        "display": "$20-30/year typical membership at most clubs; many clubs FREE for low-income; sliding-scale + scholarship for activities"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "4,500+ clubs nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 5,
+        "ageMax": 18
+      },
+      "deadline": "Year-round enrollment",
+      "description": "BGCA operates 4,500+ local Clubs serving 4M+ kids annually. Annual membership is $20-30 in most clubs and grants access to after-school, summer, weekend programs covering academics, arts, sports, leadership, STEM, and college prep. Many clubs operate as virtual childcare for working parents. The 'Triple Play' health program, 'Money Matters' financial literacy, and 'Be Great' college prep are nationally consistent.",
+      "url": "https://www.bgca.org/about-us/find-a-club",
+      "_source": "https://www.bgca.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "YMCA Youth Programs (local Y umbrella)",
+      "provider": "YMCA of the USA",
+      "category": "non-traditional",
+      "subcategory": "after-school",
+      "type": "year-round",
+      "cost": {
+        "amount": 50,
+        "type": "sliding-scale",
+        "display": "Annual membership ~$300-700/family with sliding scale (Open Doors); many programs free for members; non-member day camps $150-300/wk"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "2,700+ Ys nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Year-round; summer camp registration opens Jan-Feb",
+      "description": "Y-USA umbrella covers 2,700+ local YMCA branches across the US. Programs include after-school (Y-CAP), day camps, residential camps (e.g., Camp Orkila, Camp Cheerio), youth sports leagues, swim lessons, and Achievers leadership pipeline. The Open Doors financial assistance program covers 100% of membership for qualifying families.",
+      "url": "https://www.ymca.org/what-we-do/youth-development",
+      "_source": "https://www.ymca.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Scholastic Summer Reading Challenge",
+      "provider": "Scholastic",
+      "category": "non-traditional",
+      "subcategory": "literacy",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online + libraries",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Annual program runs May-September",
+      "description": "Free annual summer reading program from Scholastic. Kids log reading minutes, unlock weekly streaks + earn rewards. Curated book lists by grade level. Teacher dashboards available; parent-led use also fully supported. Pairs naturally with public library summer reading clubs. The 'Read-A-Palooza' track adds challenges for advanced readers grades 4-6.",
+      "url": "https://www.scholastic.com/site/summer.html",
+      "_source": "https://www.scholastic.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Google CS First",
+      "provider": "Google for Education",
+      "category": "stem",
+      "subcategory": "coding",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free curriculum + Scratch-based projects"
+      },
+      "selectivity": "open",
+      "format": "hybrid",
+      "location": {
+        "city": "Online + classrooms nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 9,
+        "ageMax": 14
+      },
+      "deadline": "None; year-round self-paced",
+      "description": "Free Google-developed coding curriculum for grades 4-8 using Scratch. 8 themed clubs (Storytelling, Game Design, Music & Sound, Animation, Friends, Sports, Fashion & Design, Art) with 8 hour-long sessions each. Designed for clubs, classrooms, or self-led learning. No CS background required. Pairs well with Code.org Fundamentals as the next step up.",
+      "url": "https://csfirst.withgoogle.com",
+      "_source": "https://csfirst.withgoogle.com/c/cs-first/en/home.html",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Microsoft DigiGirlz Day",
+      "provider": "Microsoft Philanthropies",
+      "category": "stem",
+      "subcategory": "tech",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free including lunch + materials"
+      },
+      "selectivity": "moderate",
+      "format": "in-person",
+      "location": {
+        "city": "Microsoft offices in 30+ US locations + virtual",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 14
+      },
+      "deadline": "Events year-round; register 2-4 weeks before",
+      "description": "Free 1-day events at Microsoft offices specifically for middle school girls (and gender-expansive youth) interested in tech. Includes hands-on coding/AI/cybersecurity workshops, panels with women technologists, and tour of Microsoft campus. Most Microsoft offices host 2-4 events per year. Excellent peer-network building. Confidence: high registration windows are short \u2014 popular Seattle/Redmond events fill in days.",
+      "url": "https://www.microsoft.com/en-us/diversity/programs/digigirlz",
+      "_source": "https://www.microsoft.com/en-us/diversity/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "specific 2026 event dates"
+      ]
+    },
+    {
+      "name": "Carnegie Hall Link Up",
+      "provider": "Carnegie Hall Weill Music Institute",
+      "category": "arts",
+      "subcategory": "music",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free curriculum + concert participation; school partner only"
+      },
+      "selectivity": "moderate",
+      "format": "in-person",
+      "location": {
+        "city": "Carnegie Hall + 90+ partner orchestras nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "School-year program; partner orchestras enroll schools spring/summer",
+      "description": "Free K-3 music education program partnering with 90+ symphony orchestras across the US (e.g., Seattle Symphony, San Francisco Symphony, LA Phil, NY Phil). Full curriculum + culminating concert where students perform alongside the orchestra. Schools must enroll, but the program is free. Find your local partner orchestra at carnegiehall.org/link-up.",
+      "url": "https://www.carnegiehall.org/link-up",
+      "_source": "https://www.carnegiehall.org/Education/Programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "PJ Library \u2014 Free Jewish Children's Books",
+      "provider": "Harold Grinspoon Foundation",
+      "category": "non-traditional",
+      "subcategory": "literacy",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free monthly book subscription"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "US-wide mail-based",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 0,
+        "ageMax": 11
+      },
+      "deadline": "Year-round signup",
+      "description": "Free monthly Jewish-themed children's books mailed to participating families with kids ages 0-11. Funded by the Harold Grinspoon Foundation. No religious affiliation required. Books span picture books through middle-grade chapter books. Companion 'PJ Our Way' track for ages 9-12 lets kids choose their own books. Excellent literacy + cultural enrichment combo for any family interested in Jewish stories/values.",
+      "url": "https://pjlibrary.org",
+      "_source": "https://pjlibrary.org/about-pj-library",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "National Geographic Kids \u2014 free resources + Slingshot Challenge",
+      "provider": "National Geographic Society",
+      "category": "stem",
+      "subcategory": "science",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free online; Slingshot Challenge open to ages 13-18"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Slingshot Challenge submission ~mid-March annually",
+      "description": "Free Nat Geo Kids content covering science, geography, animals, and exploration: games, videos, articles, and Almanac series. The Slingshot Challenge invites kids 13-18 to submit 1-minute videos about climate-action ideas (winners get $10K and Nat Geo mentorship). Younger kids access curated explorer-led content + free educator resources. Great anchor for science-curious K-8 kids.",
+      "url": "https://kids.nationalgeographic.com",
+      "_source": "https://www.nationalgeographic.org/society/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "PBS Kids \u2014 summer learning + at-home activities",
+      "provider": "Public Broadcasting Service",
+      "category": "non-traditional",
+      "subcategory": "academic",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free streaming + activity guides"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online + broadcast",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 2,
+        "ageMax": 9
+      },
+      "deadline": "None",
+      "description": "Free educational PBS Kids programming (Daniel Tiger, Wild Kratts, Curious George, Molly of Denali, Xavier Riddle, etc.) plus at-home activity guides keyed to the shows. Summer learning curriculum from PBS LearningMedia for educators + parents. PBS Kids GO! older-track app for grades 1-3. Quietly the highest-leverage free preschool + early-elementary content available, ad-free.",
+      "url": "https://pbskids.org",
+      "_source": "https://pbskids.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Civil Air Patrol Cadet Program (CAP)",
+      "provider": "Civil Air Patrol (USAF Auxiliary)",
+      "category": "leadership",
+      "subcategory": "aerospace",
+      "type": "year-round",
+      "cost": {
+        "amount": 50,
+        "type": "paid",
+        "display": "Annual dues ~$45-55 + uniform; financial assistance available; encampment fees subsidized"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "1,500+ squadrons in all 52 wings",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 12,
+        "ageMax": 18
+      },
+      "deadline": "Year-round enrollment",
+      "description": "Civil Air Patrol Cadet Program is the auxiliary of the US Air Force open to ages 12-18. Cadets earn promotions through aerospace education, leadership, physical fitness, and character development modules. Free orientation rides in CAP aircraft. National encampments + activities (cybersecurity, drone, STEM tracks) heavily subsidized. Pipeline to USAF Academy + ROTC. 1,500+ local squadrons nationwide. Excellent leadership credential for kids interested in aviation/military pathways.",
+      "url": "https://www.gocivilairpatrol.com/programs/cadets",
+      "_source": "https://www.gocivilairpatrol.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Junior Master Gardener Program",
+      "provider": "International Junior Master Gardener (USDA Coop Extension)",
+      "category": "non-traditional",
+      "subcategory": "nature",
+      "type": "year-round",
+      "cost": {
+        "amount": 25,
+        "type": "paid",
+        "display": "Curriculum guides ~$25-40; Coop Extension-led groups often free"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Nationwide via Coop Extension + schools",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 14
+      },
+      "deadline": "Rolling enrollment",
+      "description": "Free curriculum-based youth gardening program partnered with USDA Cooperative Extension. Levels 1 (3rd-5th grade) and 2 (6th-8th grade) cover plant growth, ecology, food/fiber, soils, water, environmental horticulture. Kids earn certifications + lead service projects. Implemented through schools, after-school clubs, scouts, 4-H, or families. Excellent for the kid who likes nature + hands-on but isn't into structured camps.",
+      "url": "https://jmgkids.us",
+      "_source": "https://jmgkids.us/about/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Destination Imagination (DI)",
+      "provider": "Destination Imagination, Inc.",
+      "category": "stem",
+      "subcategory": "creative-problem-solving",
+      "type": "year-round",
+      "cost": {
+        "amount": 250,
+        "type": "paid",
+        "display": "Team registration ~$200-300 + materials; school-team subsidies common"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Nationwide tournaments via 38 state Affiliates + 30 countries",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Tournament registration Sep-Jan; finals March-May",
+      "description": "Team-based creative problem-solving competition. Teams of 2-7 kids tackle a 'Team Challenge' (technical/scientific/structural/improv/service-learning) over months \u2014 building solutions from scratch. State-level tournaments feed into Global Finals. K-2 division is non-competitive. Builds collaboration, project management, hands-on engineering, and presentation skills. Compares well with FLL but emphasizes creativity + theatrical presentation more than pure robotics.",
+      "url": "https://www.destinationimagination.org",
+      "_source": "https://www.destinationimagination.org/about/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "National History Day (NHD)",
+      "provider": "National History Day, Inc.",
+      "category": "non-traditional",
+      "subcategory": "humanities",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free for student participation in most district/state contests"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Nationwide via state affiliates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 18
+      },
+      "deadline": "District contests Feb-March; state April-May; nationals June",
+      "description": "Annual academic competition where students conduct original historical research on a chosen topic and present via paper, exhibit, performance, documentary, or website. Junior division (grades 6-8) and Senior division (9-12). District \u2192 state \u2192 national progression. Builds research, writing, critical analysis, and presentation skills. Nationals at U Maryland in June. Excellent humanities-track credential \u2014 comparable in middle school to FLL for STEM.",
+      "url": "https://www.nhd.org",
+      "_source": "https://www.nhd.org/about",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
     }
   ]
 }
