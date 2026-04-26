@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T11:58:43Z",
-    "count": 96,
+    "lastUpdated": "2026-04-26T12:10:00Z",
+    "count": 104,
     "source": "NCES + verified web sources",
     "note": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
-    "totalSchools": 96,
+    "totalSchools": 104,
     "lastUpdate": "2026-04-26",
-    "lastRunAdded": 5,
+    "lastRunAdded": 8,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 13: +5 verified WA high (Camas SD cluster: Camas HS / Hayes Freedom / Discovery HS; plus Cascade HS Leavenworth and Neah Bay Jr/Sr HS, offsets 96-103). 3 alt placeholder skips (Open Doors x2, Kodiak Virtual all <50).",
+    "lastRunNote": "Run 16: +8 verified WA high (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum-Roslyn band, offsets 120-136). Schools: W F West HS, Chelan HS, Cheney HS, Three Springs HS, Jenkins Jr/Sr, Chimacum Jr/Sr, Charles Francis Adams (Clarkston), Cle Elum-Roslyn HS. 7 alt-placeholder/<50 skips: Lewis Juv Det (10), Lewis Jail (0), Lewis Alt (45), Chelan Innovation (15), Cheney Open Doors (9), Chewelah Open Doors (27), Open Doors Reengagement (0).",
     "totalVerified": 96,
     "totalEnriched": 77,
     "lastRun": 15
@@ -4217,6 +4217,284 @@
         "https://www.niche.com/k12/cascade-high-school-leavenworth-wa/",
         "https://www.greatschools.org/washington/leavenworth/257-Cascade-High-School/",
         "https://www.publicschoolreview.com/cascade-high-school-profile/98826"
+      ]
+    },
+    {
+      "ncessch": "530117000217",
+      "name": "W F West High School",
+      "city": "Chehalis",
+      "state": "WA",
+      "district": "Chehalis School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "9-12",
+      "website": "https://wfw.chehalisschools.org/",
+      "principal": "Regina Carr",
+      "assistantPrincipals": [
+        "Donnie Bunker (Assistant Principal/CTE Director)",
+        "Tommy Elder (Assistant Principal/Athletic Director)",
+        "Christine Voelker (Assistant Principal)"
+      ],
+      "enrollment": 1027,
+      "studentTeacherRatio": "22:1",
+      "graduationRate": 95,
+      "apParticipationRate": 45,
+      "honorsCourses": 30,
+      "advancedCourses": 8,
+      "rating": {
+        "source": "Niche",
+        "grade": "above_average"
+      },
+      "testProficiency": {
+        "math": 35,
+        "reading": 69
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://wfw.chehalisschools.org/",
+        "https://wfw.chehalisschools.org/aboutwfw",
+        "https://chehalisschools.org/WFWPrincipal",
+        "https://www.chronline.com/stories/chehalis-school-district-selects-regina-carr-as-next-principal-of-wf-west-high-school,339442",
+        "https://www.niche.com/k12/wf-west-high-school-chehalis-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/chehalis-school-district/w-f-west-high-school-20784"
+      ]
+    },
+    {
+      "ncessch": "530120002058",
+      "name": "Chelan High School",
+      "city": "Chelan",
+      "state": "WA",
+      "district": "Lake Chelan School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "9-12",
+      "website": "https://www.chelanschools.org/chs/",
+      "principal": "Jamie Pancho",
+      "associatePrincipal": "Scott Grange (also CTE Director)",
+      "enrollment": 442,
+      "studentTeacherRatio": "17:1",
+      "graduationRate": 96.4,
+      "apParticipationRate": 30,
+      "demographics": {
+        "minorityPct": 58,
+        "economicallyDisadvantagedPct": 61
+      },
+      "testProficiency": {
+        "math": 42,
+        "reading": 72
+      },
+      "rating": {
+        "source": "PublicSchoolReview",
+        "rank": "Top 50% (2025-26)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.chelanschools.org/chs/",
+        "https://www.chelanschools.org/staff/",
+        "https://www.lakechelanmirror.com/stories/lake-chelan-principals-honored-for-dedication-to-students-and-staff,100355",
+        "https://www.niche.com/k12/chelan-high-school-chelan-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/lake-chelan-school-district/chelan-high-school-20786"
+      ]
+    },
+    {
+      "ncessch": "530123000223",
+      "name": "Cheney High School",
+      "city": "Cheney",
+      "state": "WA",
+      "district": "Cheney School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "9-12",
+      "website": "https://chs.cheneysd.org/",
+      "principal": "Brett Hale",
+      "assistantPrincipals": [
+        "Jeff Roberts",
+        "Coretta Hoffman (incoming)"
+      ],
+      "enrollment": 1488,
+      "studentTeacherRatio": "19:1",
+      "graduationRate": 92,
+      "apParticipationRate": 13,
+      "notablePrograms": [
+        "Advanced Placement",
+        "Project Lead The Way",
+        "Gifted & Talented"
+      ],
+      "testProficiency": {
+        "math": 29,
+        "reading": 55
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chs.cheneysd.org/",
+        "https://chs.cheneysd.org/about-us/principals-message",
+        "https://www.niche.com/k12/cheney-high-school-cheney-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cheney-school-district/cheney-high-school-20789",
+        "https://www.cheneyfreepress.com/story/2025/09/18/news/cheney-students-lag-in-college-prep/40369.html"
+      ]
+    },
+    {
+      "ncessch": "530123002684",
+      "name": "Three Springs High School",
+      "city": "Cheney",
+      "state": "WA",
+      "district": "Cheney School District",
+      "level": "high",
+      "schoolType": "alternative",
+      "grades": "9-12",
+      "website": "https://tshs.cheneysd.org/",
+      "principal": "Catheleen Scott",
+      "address": "12414 S. Andrus Road, Cheney, WA 99004",
+      "phone": "(509) 559-4587",
+      "enrollment": 91,
+      "studentTeacherRatio": "15:1",
+      "fullTimeTeachers": 6,
+      "programNotes": "Alternative high school in Cheney School District; serves students who may not thrive in traditional comprehensive HS environment. Project-based learning, self-directed learning, Summit curriculum.",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://tshs.cheneysd.org/",
+        "https://tshs.cheneysd.org/contact/our-staff",
+        "https://www.niche.com/k12/three-springs-high-school-cheney-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cheney-school-district/three-springs-high-school-20790"
+      ]
+    },
+    {
+      "ncessch": "530126000230",
+      "name": "Jenkins Junior/Senior High School",
+      "city": "Chewelah",
+      "state": "WA",
+      "district": "Chewelah School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "7-12",
+      "website": "https://jenkins.chewelah.k12.wa.us/",
+      "principal": "Shawn Anderson",
+      "address": "E. 702 Lincoln Ave, Chewelah, WA 99109",
+      "enrollment": 338,
+      "studentTeacherRatio": "17:1",
+      "graduationRate": 90,
+      "apParticipationRate": 22,
+      "demographics": {
+        "minorityPct": 21,
+        "economicallyDisadvantagedPct": 57
+      },
+      "testProficiency": {
+        "math": 27,
+        "reading": 57
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://jenkins.chewelah.k12.wa.us/",
+        "https://jenkins.chewelah.k12.wa.us/apps/staff/",
+        "https://www.niche.com/k12/jenkins-junior-senior-high-school-chewelah-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/chewelah-school-district/jenkins-junior-senior-high-school-20791"
+      ]
+    },
+    {
+      "ncessch": "530129000233",
+      "name": "Chimacum Junior/Senior High School",
+      "city": "Chimacum",
+      "state": "WA",
+      "district": "Chimacum School District 49",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "7-12",
+      "website": "https://cjshs.csd49.org/",
+      "principal": "Ryan Stevens",
+      "principalNotes": "Of Sequim; school principal since 2004; previously principal of Quileute Tribal School (since 2019); confirmed in role as of November 2025.",
+      "enrollment": 276,
+      "studentTeacherRatio": "16:1",
+      "graduationRate": 74.5,
+      "notablePrograms": [
+        "Advanced Placement",
+        "College in the High School",
+        "Honors",
+        "Marching Band (selected to represent WA in US 250th-birthday parade Jul 4, 2026)"
+      ],
+      "rating": {
+        "source": "Niche",
+        "grade": "B-"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://cjshs.csd49.org/",
+        "https://www.csd49.org/directory",
+        "https://ptleader.com/articles/education/new-principals-hired-for-chimacum-schools/",
+        "https://www.king5.com/article/news/local/high-school-band-represent-washington-state-in-nation-250th-birthday-parade/281-80e7658b-9129-46b1-9452-0f73ae0feb1b",
+        "https://www.niche.com/k12/chimacum-junior-senior-high-school-chimacum-wa/",
+        "https://www.usnews.com/education/k12/washington/chimacum-junior-senior-high-school-20794"
+      ]
+    },
+    {
+      "ncessch": "530132000234",
+      "name": "Charles Francis Adams High School",
+      "alternateName": "Clarkston High School",
+      "city": "Clarkston",
+      "state": "WA",
+      "district": "Clarkston School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "9-12",
+      "website": "https://chs.csdk12.org/",
+      "principal": "Doug LaMunyan",
+      "address": "401 Chestnut Street, Clarkston, WA 99403",
+      "phone": "(509) 758-5591",
+      "enrollment": 694,
+      "studentTeacherRatio": "19:1",
+      "graduationRate": 92,
+      "apParticipationRate": 20,
+      "testProficiency": {
+        "math": 22,
+        "reading": 67
+      },
+      "rating": {
+        "source": "PublicSchoolReview",
+        "rank": "Top 50% (2026)"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://chs.csdk12.org/",
+        "https://www.niche.com/k12/charles-francis-adams-high-school-clarkston-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/clarkston-school-district/charles-francis-adams-high-school-20796",
+        "https://www.publicschoolreview.com/charles-francis-adams-high-school-profile"
+      ]
+    },
+    {
+      "ncessch": "530135000240",
+      "name": "Cle Elum Roslyn High School",
+      "city": "Cle Elum",
+      "state": "WA",
+      "district": "Cle Elum-Roslyn School District",
+      "level": "high",
+      "schoolType": "regular",
+      "grades": "9-12",
+      "website": "https://www.cersd.org/o/cerhs",
+      "principal": "Tim Berndt",
+      "principalNotes": "Interim principal selected August 2024; previously held interim superintendent + principal roles in Easton SD and CERSD. Full-time search ongoing for 2025-26.",
+      "enrollment": 283,
+      "studentTeacherRatio": "18:1",
+      "graduationRate": "86-92",
+      "graduationRateNote": "Sources report 86.2% (Niche) to 92.3% (PSR)",
+      "demographics": {
+        "minorityPct": 14,
+        "economicallyDisadvantagedPct": 40
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.cersd.org/o/cerhs",
+        "https://www.cersd.org/o/cerhs/page/meet-the-principal",
+        "https://www.cersd.org/o/cerhs/article/1712841",
+        "https://www.dailyrecordnews.com/news/cle-elum-roslyn-high-school-welcomes-new-interim-principal/article_c9f4c220-60da-11ef-9e90-93e757f1f109.html",
+        "https://www.niche.com/k12/cle-elum-roslyn-high-school-cle-eum-wa/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/cle-elum-roslyn-school-district/cle-elum-roslyn-high-school-20800"
       ]
     }
   ]

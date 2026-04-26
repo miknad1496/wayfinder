@@ -178,3 +178,64 @@
 | 2026-04-26 | 6     | 8        | 0       | All 8 enriched; no issues                                                                              |
 | 2026-04-26 | 5     | 7        | 1       | One charter placeholder skipped                                                                        |
 | (earlier runs summarized in next compaction pass) | | | | |
+
+
+## RUN 16 (2026-04-26) — Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band (offsets 120-136)
+
+### Outcome
+- Verified: 8 (W F West HS, Chelan HS, Cheney HS, Three Springs HS [alt], Jenkins Jr/Sr, Chimacum Jr/Sr, Charles Francis Adams [Clarkston HS], Cle Elum-Roslyn HS)
+- Skipped: 7 (all <50 alt placeholders: Lewis Juv Det 10, Lewis Jail 0, Lewis Alt 45, Chelan Innovation 15, Cheney Open Doors 9, Chewelah Open Doors 27, Open Doors Reengagement 0)
+- Wall clock: ~10 min, all WebSearch except 1 small Finalsite staff page fetch (Three Springs)
+
+### EFFECTIVE PATTERNS (added)
+- **Catching up stale progress.json**: Runs 14 and 15 had committed enriched data (offsets 104-119) without updating `k12-grinder-progress.json` — the progress JSON still pointed to offset 104 even though those rows were already in `k12-enriched.json`. Always reconcile by name-checking candidates against `enriched.json` before treating progress offset as authoritative. This run dedup-prefiltered offsets 104-119 (all DUP) and started genuine work at offset 120. Lesson: **always run dedup pre-check, don't trust progress.json alone**.
+- **Three Springs / Catheleen Scott via Finalsite staff page**: tshs.cheneysd.org/contact/our-staff loaded inline (~83KB, under threshold) and the principal's name + photo + title were directly in the `<h3 class="fsFullName">` block. No grep gymnastics needed for sub-100KB Finalsite staff pages.
+- **Cross-state homonym disambiguation worked perfectly for "Ryan Stevens" Chimacum**: appended Sequim + Quileute + Chimacum + 2025 to the name-verification query and got 2 independent confirmations (ptleader Nov 2025 hire announcement + king5 Nov 2025 marching band article). Lesson: chain 2-3 disambiguators to defeat name-collision hallucinations.
+- **For interim/transitional principals (Tim Berndt at CERHS)**: cersd.org/article/1712841 hire announcement + dailyrecordnews byline gave 2 independent timestamps + biography. The school's own "meet-the-principal" page is too large to fetch but its existence + cross-confirms via two news sources is enough.
+- **District news archives (Daily Chronicle / Lake Chelan Mirror / Daily Record / Cheney Free Press / Port Townsend Leader)** consistently surface principal-transition announcements with quoted-name byline citations. For rural WA districts, local newspapers > district staff pages.
+
+### FAILED PATTERNS (added)
+- **`cersd.org/o/cerhs/page/meet-the-principal`** returned >1MB inline tokens — too large to parse. Skip and rely on the two news-article sources instead.
+- **`site:tshs.cheneysd.org` WebSearch returned no results** — but a direct WebFetch on the same URL worked. Don't rely on `site:` operator for low-traffic small-school subdomains; just fetch the URL directly when you know it.
+
+### SOURCE-SPECIFIC NOTES (added)
+- `cersd.org/o/cerhs/page/meet-the-principal` — too large (>1MB), use cersd.org/article/1712841 (the hire announcement article) instead for principal info.
+- `tshs.cheneysd.org/contact/our-staff` — clean Finalsite staff directory, ~83KB; principal at top in "Front Office Staff" section, parseable inline.
+- `chronline.com` (Daily Chronicle) — high-yield WA SW news source; principal-transition articles surface in search snippets without needing fetch.
+- `ptleader.com` (Port Townsend Leader) — high-yield Olympic Peninsula source; principal announcements + admin transitions for CSD49.
+- `dailyrecordnews.com` — high-yield Kittitas County source; CERSD admin announcements.
+- `cheneyfreepress.com` — high-yield Cheney/Eastern WA source; college-prep/curriculum coverage with principal context.
+
+### DATA QUALITY FLAGS
+- **Catheleen Scott / Three Springs** is listed as Principal in the Front Office Staff section, but the school is alternative — the title may be "Alternative Schools Principal" per generic district org chart. Recorded as "Principal" with school-type=alternative in entry to be safe.
+- **Tim Berndt is "interim"** at CERHS — flagged in `principalNotes` so future grinder runs know to re-check.
+- **Doug LaMunyan / Charles Francis Adams**: WebSearch synthesis was clean and corroborated by Niche + USNews + PSR for the school. Did not independently fetch CHS principal page (chs.csdk12.org). Single-source name risk; should re-verify if any future run has a discrepancy.
+- **Three Springs enrollment** sources show 91 (Niche), 116 (NCES alt-period), 88 (USNews) — recorded 91 (Niche, most recent). NCES `alternative` programs commonly have ±25% variance.
+- **Chimacum Jr/Sr enrollment** Niche shows 276 grades 7-12, NCES shows 258. The grades 7-12 vs 9-12 split likely accounts for the variance. Recorded 276.
+- **W F West graduation rate** Niche shows 95%, USNews/PSR show 97.6%. Recorded 95% (more conservative + Niche is most recent).
+
+### CALIBRATION SUGGESTIONS
+- **Reconciliation in progress.json**: bumped totalRuns 13 -> 16 to absorb runs 14+15 (which committed enriched data without bumping progress). This run is structurally Run 16 (chronologically the third grinder pass since the offset 104 cursor froze).
+- **Recommend keeping batch_size=8** for next 1-2 runs. Heavy alt-placeholder cluster expected at offsets 137-160 (per the queue: Clover Park area + Pacific Lutheran area + alphabetical CO-bands typically have alt-school density).
+- **Pre-dedup check is now mandatory** — bake it into the next prompt revision: before counting toward batch, name-check each candidate against `enriched.json`, advance past dups silently. If formalized, batch_size could safely bump to 10.
+- **Skill Center / juvenile rehab / Open Doors carve-outs from prior runs all held this run** — good signal that the schema is stable enough to allow batch_size 10 in the near future.
+
+### OPEN QUESTIONS / TODO
+- Should the inject pipeline normalize `enrollment` to a single most-recent NCES year + a `enrollmentRangeNote` for cases like Three Springs (88-116 range across sources)?
+- Should `principal` schema have a `principalStatus: permanent | interim | acting` field? Tim Berndt at CERHS would benefit from this.
+- The progress.json drift problem (runs 14+15 stale) suggests progress.json should be auto-derived from `k12-enriched.json` last-row offset rather than separately maintained, to prevent future stale-cursor bugs.
+
+## RUN HISTORY UPDATE (compact, recent 10 only)
+
+| Date       | Run # | Verified | Skipped | Notable                                                                                                |
+|------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 16    | 8        | 7       | WA high offsets 120-136 (Lewis/Chelan/Cheney/Chewelah/Chimacum/Clarkston/Cle Elum band). 8/8 verified incl. 1 alt (Three Springs); 7 alt-placeholder skips all <50. Caught up progress.json which had been stale at offset 104 since run 13 (runs 14+15 committed data without bumping cursor). Wall-clock ~10 min, mostly WebSearch + 1 Finalsite staff fetch. |
+| 2026-04-26 | 15    | 6        | 2       | WA high offsets 112-119 (CVSD Spokane). Edge-case heavy: SVT Skills Center + CVSD Open Doors + Green Hill juvenile-rehab academic — all enriched cleanly via prior carve-outs. |
+| 2026-04-26 | 14    | 8        | 0       | WA high offsets 104-111 (Cashmere/Castle Rock/CK SD/CVSD). 8/8 verified clean comprehensive band. Caught Hittle/CVHS hallucination via direct admin-page fetch (actual: Katie Louie). |
+| 2026-04-26 | 13    | 5        | 3       | WA high offsets 96-103 (Camas SD cluster + Neah Bay tribal + Cascade SD Leavenworth). Tribal-school carve-out applied. |
+| 2026-04-26 | 12    | 5        | 3       | WA high offsets 88-95 (Bremerton/Brewster/Bridgeport/Burlington-Edison). Alt-cluster band; Skills Center carve-out applied. |
+| 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel/Blaine/Bremerton). All-WebSearch run, district clustering held. |
+| 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham/Bethel district cluster). |
+| 2026-04-26 | 9     | 3        | 5       | Dup-with-manual-entries problem surfaced; /tmp full + fuse mount traps discovered. |
+| 2026-04-26 | 8     | 7        | 1       | Battle Ground / Prairie / Summit View / Lumen / Whatcom batch. |
+| 2026-04-26 | 7     | 6        | 2       | WebFetch failures + site:domain workaround. |
