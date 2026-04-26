@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "totalCount": 886,
+    "totalCount": 900,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -38716,6 +38716,583 @@
       "description": "Annual academic competition where students conduct original historical research on a chosen topic and present via paper, exhibit, performance, documentary, or website. Junior division (grades 6-8) and Senior division (9-12). District \u2192 state \u2192 national progression. Builds research, writing, critical analysis, and presentation skills. Nationals at U Maryland in June. Excellent humanities-track credential \u2014 comparable in middle school to FLL for STEM.",
       "url": "https://www.nhd.org",
       "_source": "https://www.nhd.org/about",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "CISV International \u2014 Village + Interchange + Step Up",
+      "provider": "CISV International (founded 1951, peace education non-profit)",
+      "category": "non-traditional",
+      "subcategory": "international",
+      "type": "summer",
+      "cost": {
+        "amount": 1200,
+        "type": "paid",
+        "display": "Village ~$2,500-3,500 + airfare; financial aid via national chapters; Interchange ~$1,500"
+      },
+      "selectivity": "moderate",
+      "format": "in-person",
+      "location": {
+        "city": "60+ countries (chapters in 30+ US cities)",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 18
+      },
+      "deadline": "Applications due Oct-Dec for following summer",
+      "description": "CISV International runs structured peace-education programs across 60+ countries since 1951. The Village (ages 11) is a 4-week residential program with kids from 12 countries learning collaboration through games + cultural activities. Interchange (ages 12-15) pairs delegations of 4-6 kids for reciprocal home stays. Step Up (ages 14-15) is a 3-week leadership-focused program. US national chapters (cisvusa.org) coordinate selection + delegation training. Strong financial aid pipeline. One of the most respected international peace-education programs for tweens.",
+      "url": "https://cisv.org/en/programmes/",
+      "_source": "https://cisvusa.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Concordia Language Villages",
+      "provider": "Concordia College Moorhead",
+      "category": "non-traditional",
+      "subcategory": "international",
+      "type": "summer",
+      "cost": {
+        "amount": 1500,
+        "type": "paid",
+        "display": "1-week ~$1,500; 2-week ~$2,400; 4-week credit ~$5,000+; need-based aid available"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Bemidji + multiple sites in Minnesota northwoods",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 7,
+        "ageMax": 18
+      },
+      "deadline": "Sessions June-August; popular weeks book by April",
+      "description": "Language immersion summer camps in 14+ languages (Spanish, French, German, Mandarin, Japanese, Russian, Arabic, Korean, Italian, Portuguese, Swedish, Norwegian, Finnish, Danish + occasional ASL/Hindi). Located on dedicated themed villages in Northern Minnesota. Kids live the language: signs, songs, meals, activities all in target language. Sessions 1, 2, or 4 weeks. The 4-week sessions can earn high school language credit. Need-based scholarships called 'Villager Aid' cover up to 100%.",
+      "url": "https://concordialanguagevillages.org",
+      "_source": "https://concordialanguagevillages.org/about",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "EF Language Travel Camps",
+      "provider": "EF Education First",
+      "category": "non-traditional",
+      "subcategory": "international",
+      "type": "summer",
+      "cost": {
+        "amount": 4500,
+        "type": "paid",
+        "display": "$3,500-7,000 for 2-3 weeks abroad incl. lodging; airfare extra; some scholarship via EF Educational Tours"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "London, Paris, Madrid, Barcelona, Munich, Tokyo + 50 cities",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 10,
+        "ageMax": 18
+      },
+      "deadline": "Sessions June-August; book by March for popular destinations",
+      "description": "EF runs language immersion summer camps in 50+ cities across Europe + Asia. Younger track (10-13) has structured group programs with chaperones; older track (14+) has more independence. Programs are 2-3 weeks: morning language classes + afternoon excursions + weekend cultural activities. Older sibling of EF's high-school NSLI-Y-style trips. Generally cheaper alternative to NSLI-Y (which is free but very selective). Reasonable middle-school international option.",
+      "url": "https://www.ef.com/wwen/lc/learn-language/",
+      "_source": "https://www.ef.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "specific 2026 K-8 minimum age (varies by destination)"
+      ]
+    },
+    {
+      "name": "WWOOF (World-Wide Opportunities on Organic Farms) Family Stays",
+      "provider": "WWOOF Federation",
+      "category": "non-traditional",
+      "subcategory": "international",
+      "type": "summer",
+      "cost": {
+        "amount": 50,
+        "type": "paid",
+        "display": "WWOOF host-country membership ~$30-60/yr; food + lodging FREE in exchange for help on farm; family pays only travel"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "12,000+ host farms in 130+ countries",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Year-round; arrange directly with hosts 1-3 months ahead",
+      "description": "Volunteer-on-organic-farms exchange. Family pays for membership in destination country's WWOOF chapter (~$30-60/yr) + travel; in return, host provides food + lodging in exchange for ~4-6 hours/day farm work (weeding, animal care, harvesting, building, etc.). 12,000+ host farms in 130+ countries. Many hosts welcome families with kids \u2014 often the kid-friendly hosts are flagged. Powerful immersive cultural + agricultural exposure. Best ages 8+ (kids who can contribute meaningfully). Not all host countries accept kids \u2014 verify country-by-country.",
+      "url": "https://wwoof.net",
+      "_source": "https://wwoof.net/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "MATHCOUNTS (middle school math competition)",
+      "provider": "MATHCOUNTS Foundation",
+      "category": "stem",
+      "subcategory": "math",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE for participating school teams; individual track also free"
+      },
+      "selectivity": "moderate",
+      "format": "in-person",
+      "location": {
+        "city": "All 50 states + DC + military overseas",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 14
+      },
+      "deadline": "Coaching September-January; chapter competitions February; nationals May",
+      "description": "The premier US middle school math competition since 1983. Teams of 4 from each school + individual students compete in chapter \u2192 state \u2192 national competition. Problems range from algebra/geometry/number theory/combinatorics. National finals at Walt Disney World every May. School registration is FREE (sponsored by Raytheon, Northrop Grumman, US DoD STEM, NSPE). Strong AoPS + Beast Academy integration for prep. Pipeline to AMC + Math Olympiad + RSI in HS.",
+      "url": "https://www.mathcounts.org",
+      "_source": "https://www.mathcounts.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "VEX IQ Challenge (elementary + middle school robotics)",
+      "provider": "REC Foundation / VEX Robotics",
+      "category": "stem",
+      "subcategory": "robotics",
+      "type": "year-round",
+      "cost": {
+        "amount": 1500,
+        "type": "paid",
+        "display": "VEX IQ kit ~$300-500 + team registration ~$100; school-team grants common via REC Foundation"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "70+ countries; 50,000+ teams worldwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 14
+      },
+      "deadline": "Season starts April; tournaments fall through spring; world championships May",
+      "description": "VEX IQ is the elementary + middle school division of VEX Robotics \u2014 kid-friendly snap-together robotics platform vs FIRST's LEGO Mindstorms. Annual game-based challenge; teams design + program robots to compete in skills + alliance matches. World championships May at Disney. Compares well with FIRST LEGO League \u2014 VEX is more focused on game strategy, FLL more on research-project + robot. Some kids do both. REC Foundation grants for new teams.",
+      "url": "https://www.recf.org/programs/vex-iq",
+      "_source": "https://www.vexrobotics.com/iq",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "eCYBERMISSION (US Army STEM competition)",
+      "provider": "US Army Educational Outreach Program",
+      "category": "stem",
+      "subcategory": "research-competition",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE; team prizes up to $9,000 in US Savings Bonds"
+      },
+      "selectivity": "open",
+      "format": "remote",
+      "location": {
+        "city": "Online; nationwide eligibility",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Registration opens August; project submission late February; finals June",
+      "description": "Free Army-sponsored STEM competition for grades 6-9. Teams of 3-4 students + a 'team advisor' (teacher or parent) tackle a community problem using STEM research. Each team submits a Mission Folder describing their work. State + regional + national winners. Top national prizes are $9,000 in savings bonds per team member. Strong second-tier alternative to MATHCOUNTS for kids more interested in applied research than competition math.",
+      "url": "https://www.ecybermission.com",
+      "_source": "https://www.usaeop.com/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Future City Competition (DiscoverE)",
+      "provider": "DiscoverE Foundation",
+      "category": "stem",
+      "subcategory": "engineering",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "Free participation; school + non-profit teams welcome"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "39 regional competitions across US + international",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 14
+      },
+      "deadline": "Project work fall; regional competitions Jan-Feb; finals Feb in DC",
+      "description": "Annual engineering competition for grades 6-8. Teams design a 'future city' addressing an annual real-world challenge (recent themes: thriving with climate change, future of waste, etc.). Submit a virtual city in SimCity, a 1500-word essay, a 25-square-foot scale model, and a 7-min presentation. Regional winners advance to national finals in DC each February. Free to enter. Strong fit for kids who like systems thinking + creative engineering across multiple disciplines.",
+      "url": "https://futurecity.org",
+      "_source": "https://discovere.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Science Olympiad Division B (middle school)",
+      "provider": "Science Olympiad",
+      "category": "stem",
+      "subcategory": "science-competition",
+      "type": "year-round",
+      "cost": {
+        "amount": 200,
+        "type": "paid",
+        "display": "Team registration ~$200/yr; school subsidies common"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "All 50 states",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "states": [
+          "all"
+        ]
+      },
+      "deadline": "Season starts September; regionals Feb-March; nationals May",
+      "description": "Team-based science competition for grades 6-9 (Division B). Teams of 15 compete in 23 events spanning biology, chemistry, physics, earth science, engineering, and 'study events' (Anatomy, Disease Detectives, etc.) + 'build events' (Air Trajectory, Bridge Building, etc.). Regional \u2192 state \u2192 national progression. Schools register teams. Strong combination of academic depth + engineering hands-on. Prep starts September; February is when the season heats up.",
+      "url": "https://www.soinc.org",
+      "_source": "https://www.soinc.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "American Museum of Natural History Discovery Squad + Children's Camps",
+      "provider": "American Museum of Natural History (AMNH)",
+      "category": "stem",
+      "subcategory": "museum",
+      "type": "summer",
+      "cost": {
+        "amount": 600,
+        "type": "paid",
+        "display": "1-week day camps ~$575-650; member discount 10%; needs-based aid via AMNH Education"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "New York City",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 6,
+        "ageMax": 13
+      },
+      "deadline": "Member registration February; general March-April",
+      "description": "AMNH runs week-long age-banded summer camps using the museum's collections + Hayden Planetarium + Discovery Room. Themes vary: paleontology, astrophysics, marine biology, natural history. Kids work with AMNH educators + sometimes scientists. Member registration opens 3 weeks before general \u2014 membership pays back via earlier access. East-coast equivalent of Pacific Science Center / Burke Museum camps.",
+      "url": "https://www.amnh.org/learn-teach/youth-and-family-programs",
+      "_source": "https://www.amnh.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Exploratorium Summer Camps",
+      "provider": "Exploratorium (San Francisco)",
+      "category": "stem",
+      "subcategory": "museum",
+      "type": "summer",
+      "cost": {
+        "amount": 700,
+        "type": "paid",
+        "display": "1-week ~$675-750; member discount; needs-based scholarships available"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 14
+      },
+      "deadline": "Member registration February; general March-April",
+      "description": "Exploratorium is one of the most influential science museums globally \u2014 pioneered the 'hands-on' museum model. Summer camps for ages 8-14 are tinkering- + maker-focused: kids build, take apart, hack, prototype using the museum's exhibits as starting points. Themes rotate (Tinker, Cardboard Engineering, Sound + Music, Light + Color). Bay Area's premier hands-on science camp.",
+      "url": "https://www.exploratorium.edu/visit/calendar/family-programs",
+      "_source": "https://www.exploratorium.edu/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Field Museum Summer Camps + Junior Curators",
+      "provider": "Field Museum of Natural History (Chicago)",
+      "category": "stem",
+      "subcategory": "museum",
+      "type": "summer",
+      "cost": {
+        "amount": 550,
+        "type": "paid",
+        "display": "1-week ~$425-575; member discount 10%; scholarship via Field Museum Education"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 5,
+        "ageMax": 13
+      },
+      "deadline": "Member registration January; general February-March",
+      "description": "Field Museum (Chicago, home of Sue the T-Rex) runs age-banded summer camps for grades K-8. Themes span paleontology, ancient civilizations (Egypt, Maya), animal kingdom, ecosystems. Junior Curators track for older kids includes behind-the-scenes lab visits. Strong Midwest equivalent to AMNH / Smithsonian camps.",
+      "url": "https://www.fieldmuseum.org/educators/educator-resources",
+      "_source": "https://www.fieldmuseum.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "specific 2026 dates and pricing \u2014 verify on field museum education page"
+      ]
+    },
+    {
+      "name": "Apple Camp at Apple Store (free)",
+      "provider": "Apple",
+      "category": "stem",
+      "subcategory": "tech",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free \u2014 including iPad use during sessions"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "300+ Apple Stores nationwide",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 8,
+        "ageMax": 12
+      },
+      "deadline": "Sessions July-August; sign up via Apple's Today at Apple in late June",
+      "description": "Free 90-minute Apple Camp sessions held at every Apple Store nationwide each summer. Topics rotate (animation with Keynote, sketch + animate with Procreate, music with GarageBand, video editing). Kids use Apple devices provided in-store; no purchase or device ownership required. Sessions are usually 3-day series (1 session per day). Sign up at apple.com/today/series. Often the easiest free creative-tech intro for elementary kids.",
+      "url": "https://www.apple.com/today/series",
+      "_source": "https://www.apple.com/today",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_addedBy": "esms-grinder-adhoc",
+      "confidence": "high"
+    },
+    {
+      "name": "Best Buddies International (school + community chapters)",
+      "provider": "Best Buddies International",
+      "category": "non-traditional",
+      "subcategory": "disability-inclusion",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% free for participating students"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Schools in all 50 states + 50+ countries",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "all"
+        ],
+        "ageMin": 11,
+        "ageMax": 18
+      },
+      "deadline": "Year-round; chapters form at start of school year",
+      "description": "Best Buddies pairs students with intellectual + developmental disabilities (IDD) with peer 'buddies' for one-to-one friendships, structured activities, and community-building. Middle School Buddies (grades 6-8) + High School Buddies (9-12) operate as school clubs. Pairs build authentic friendships across difference. Strong inclusion + leadership signal \u2014 recognized by selective colleges. Schools start chapters via bestbuddies.org.",
+      "url": "https://www.bestbuddies.org/programs/middle-schools/",
+      "_source": "https://www.bestbuddies.org/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",

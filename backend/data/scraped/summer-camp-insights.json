@@ -257,6 +257,58 @@
       "icon": "\ud83d\udd0d",
       "items": [
         {
+          "label": "CISV Village (age 11) is the bucket-list international peace camp",
+          "detail": "CISV has run since 1951 in 60+ countries. The Village (age 11 only \u2014 single shot per kid) brings together delegations of 4 kids each from 12 countries for 4 weeks. Costs ~$3K + airfare but national chapter scholarships heavily subsidize. Apply Oct-Dec the year before. One of the most respected international peace-education programs for tweens \u2014 hard to overstate the multicultural impact."
+        },
+        {
+          "label": "Concordia Language Villages \u2014 4-week sessions earn HS credit",
+          "detail": "4-week Credit Sessions at Concordia Language Villages (Bemidji MN) earn one year of high school language credit. Pricing scales with session length: 1-wk ~$1500 / 2-wk ~$2400 / 4-wk credit ~$5000. 'Villager Aid' covers up to 100% for need-based applicants \u2014 apply at registration."
+        },
+        {
+          "label": "WWOOF \u2014 verify if host accepts kids per-country",
+          "detail": "WWOOF (work-exchange on organic farms) is country-specific (WWOOF UK, WWOOF Italy, etc.). Family-friendly hosts vary by country \u2014 some never accept kids, others welcome them enthusiastically. Filter by 'family-friendly' in each country's host search before contacting. WWOOF USA exists too \u2014 domestic option."
+        },
+        {
+          "label": "MATHCOUNTS \u2014 totally free for participating schools",
+          "detail": "MATHCOUNTS school registration is 100% FREE because it's sponsored by Raytheon, Northrop Grumman, US DoD STEM, and NSPE. The materials, problems, and competition fees are all covered. If your kid's school doesn't participate, ask the math teacher to register at mathcounts.org/programs/competition-series."
+        },
+        {
+          "label": "VEX IQ \u2014 REC Foundation grants for new teams",
+          "detail": "REC Foundation provides STEM Equity Grants to new VEX IQ teams in underserved schools (covers full kit + registration). Existing teams can apply to REC Robotics Educational grants for kit replacement. Check recf.org/grants \u2014 most parents don't know free hardware exists."
+        },
+        {
+          "label": "eCYBERMISSION \u2014 $9K savings bonds per team member at nationals",
+          "detail": "Free Army-sponsored STEM competition pays $9,000 in US savings bonds PER team member at nationals (so a 4-person team wins $36,000). Stronger ROI than most competitions for the kid who likes applied research. Application is short; just need a parent or teacher as advisor."
+        },
+        {
+          "label": "Future City finals are in DC every February",
+          "detail": "Future City Competition national finals happen in Washington DC each February \u2014 winners get a Smithsonian visit + Engineers Week celebration. Free competition. Strong fit for kids who like systems thinking + interdisciplinary engineering. Often pairs well with school STEM electives."
+        },
+        {
+          "label": "AMNH camps \u2014 member registration opens 3 weeks before general",
+          "detail": "AMNH (NYC) summer camp member registration opens late January; general public March-April. Premium sessions sell out within 24 hours of opening. Family membership at AMNH ($175/yr) pays for itself just from earlier camp access \u2014 comparable to Pacific Science Center pattern."
+        },
+        {
+          "label": "Apple Camp \u2014 completely free 90-min sessions at every store",
+          "detail": "Apple Camp runs each summer at all 300+ Apple Stores. Fully free, no purchase required, kids use Apple-provided iPads during sessions. Sign up via apple.com/today/series in late June. 3-day series typical (animation, music, video). Easiest free creative-tech intro \u2014 and Apple Stores are everywhere."
+        },
+        {
+          "label": "Best Buddies \u2014 strong AO signal (inclusion track)",
+          "detail": "Best Buddies Middle School + High School chapters are recognized by admissions readers as authentic disability-inclusion engagement (vs. one-off charity events). Multi-year participation with documented friendship + chapter leadership reads strongly. Your school can charter a chapter for free at bestbuddies.org."
+        },
+        {
+          "label": "Field Museum \u2014 Junior Curators behind-the-scenes lab access",
+          "detail": "Field Museum's Junior Curators track (older kids) includes behind-the-scenes museum lab visits \u2014 meeting actual paleontologists + curators working on collections. Distinct experience vs. the regular age-banded camps. Members get priority registration."
+        },
+        {
+          "label": "Science Olympiad \u2014 23 events let any kid find their lane",
+          "detail": "Sci Oly Division B (grades 6-9) has 23 different events \u2014 anatomy, disease detectives, dynamic planet, engineering build events, Wright stuff (planes), bridge building, etc. Lots of room for different strengths within one team. Most kids do 2-3 events, not all 23. Schools register teams of 15."
+        },
+        {
+          "label": "EF Language Travel \u2014 group leaders + chaperones for ages 10-13",
+          "detail": "EF's younger language-travel programs (ages 10-13) include adult chaperones + group leaders the entire trip. More structure than the 14+ programs but still genuinely abroad. Good first-international experience for tweens whose parents aren't ready to send them solo. Pricier than Concordia but actually-abroad."
+        },
+        {
           "label": "BGCA \u2014 annual membership $20-30 covers everything",
           "detail": "Boys & Girls Clubs of America membership at most local Clubs is $20-30/year and grants kids access to ALL programming: after-school, summer day camp, sports leagues, arts, computer labs, tutoring. Many clubs waive entirely for low-income families. Way cheaper than the 'pay-per-camp' model \u2014 most parents underuse this."
         },
@@ -323,58 +375,6 @@
         {
           "label": "Camp Invention \u2014 early-bird code stack ($25 + $60 sibling)",
           "detail": "Camp Invention 2026 has FOUR stackable discount codes: CIFUN25 (by 3/31, $25 off), CIFUN20 (by 4/28, $20 off), SIBNAT30 ($60 off 2 campers), SIBNAT40 ($120+ off 3+ campers). Use the early code AND the sibling code together. Most parents only know about one."
-        },
-        {
-          "label": "4-H \u2014 your land-grant university runs it (find at 4-h.org/parents/find-your-4-h)",
-          "detail": "Every state's 4-H is run by the state's land-grant university (e.g., WSU Extension for WA, Cornell CCE for NY). Pricing varies wildly by state \u2014 Delaware sleepaway is ~$145, NY can be $400+. ALL have sliding-scale aid. Most parents don't know 4-H exists outside rural areas; it's actually nationwide and uses the local university for fee structure."
-        },
-        {
-          "label": "FIRST LEGO League \u2014 schools/libraries often host free teams",
-          "detail": "FLL Explore + FLL Challenge teams cost $110-275 per team (plus LEGO kit), but many schools, libraries, and community orgs sponsor teams that are FREE for participating kids. Search 'FIRST LEGO League [your city]' on firstinspires.org/team-event-search before paying for a private team."
-        },
-        {
-          "label": "Junior Achievement \u2014 totally free for school field trips (corporate-sponsored)",
-          "detail": "JA BizTown (grades 4-6) and JA Finance Park (grades 7-8) are FREE one-day immersive field trips because they're underwritten by corporate sponsors (Bank of America, JPMorgan, Capital One, Microsoft, etc.). If your school doesn't already do these, ask the principal \u2014 they cost the school nothing."
-        },
-        {
-          "label": "NPS Junior Ranger \u2014 collect badges across multiple parks",
-          "detail": "Kids who visit multiple NPS sites and complete each park's Junior Ranger booklet earn separate badges. Some families build a 'Junior Ranger passport' tracking dozens of badges across years. Free at all 400+ sites including national monuments, historic sites, and recreation areas \u2014 not just the famous parks. Online versions for sites you can't visit in person."
-        },
-        {
-          "label": "iD Tech \u2014 small-group ratio is real (max 5:1)",
-          "detail": "iD Tech Online's max 5:1 instructor ratio is enforced \u2014 it's the main differentiator from cheaper providers. Half-day sessions (~$499/wk) are often as effective as full-day. Apply for Campers' Choice scholarships if budget-constrained; they award meaningful aid most parents don't know exists."
-        },
-        {
-          "label": "Outschool \u2014 Outschool Foundation aid covers up to 100% of class cost",
-          "detail": "The Outschool Foundation provides need-based scholarships (up to 100% of class cost) for low-income families. Application is short. Many teachers also offer 'pay what you can' or free classes. Filter by 'Outschool Foundation eligible' or contact teachers directly."
-        },
-        {
-          "label": "AoPS \u2014 Beast Academy at $15/mo is the under-radar deal",
-          "detail": "Beast Academy Online subscription is just $15/mo for grades K-5 (math curriculum used by serious-math families). Equivalent in-person/private tutoring would run $200-500/mo. AoPS Academy in-person locations (Bellevue WA, 14 other metros) are the high-touch progression."
-        },
-        {
-          "label": "Khan Academy \u2014 assign-and-track via Khan teacher tools (free)",
-          "detail": "Khan Academy's teacher dashboard works for parents too \u2014 free, lets you assign units to your kid, see what they've completed, set custom mastery goals. Pairs perfectly with the district 'don't lose progress over summer' goal. Ad-free, no subscription, no upsells."
-        },
-        {
-          "label": "Smithsonian Affiliate Museums \u2014 200+ partners across all 50 states",
-          "detail": "Beyond the 21 Smithsonian museums in DC, there are 200+ Smithsonian Affiliate Museums nationwide that have access to Smithsonian curriculum + traveling exhibits. Pacific Science Center (Seattle) is one. Search affiliations.si.edu/affiliate-list to find local affiliates that often run summer camps using Smithsonian materials."
-        },
-        {
-          "label": "Code.org \u2014 used in 45% of US schools (your school may already have it)",
-          "detail": "Before paying for iD Tech or any coding camp, check if your kid's school district uses Code.org's free CS Fundamentals or CS Discoveries curriculum (45% of US schools do). Many districts have unused Code.org accounts already provisioned for every student. Ask the school's tech coordinator."
-        },
-        {
-          "label": "NASA STEM events \u2014 sign up for NASA EXPRESS newsletter (Thursday delivery)",
-          "detail": "NASA's K-12 STEM events (virtual + in-person) are announced through the NASA EXPRESS newsletter every Thursday. Most parents don't know this exists. Free events with NASA scientists fill within hours of announcement. Subscribe at nasa.gov/learning-resources to be first to register."
-        },
-        {
-          "label": "Tynker \u2014 all plans cover up to 3 children, including Lifetime",
-          "detail": "[2026-04-26] Tynker's Quarterly ($54), Yearly ($180), and Lifetime plans all include access for up to 3 children \u2014 meaning a 3-sibling family pays the same as a single-child household. Most parents miss this and buy multiple single-child accounts elsewhere."
-        },
-        {
-          "label": "Tynker \u2014 30-day money-back guarantee even on Lifetime plan",
-          "detail": "[2026-04-26] Tynker offers a 30-day money-back guarantee on ALL plans, including the Lifetime tier. If your child doesn't engage in the first month, request a refund via support@tynker.com. iPad-app purchases need to be cancelled through the Apple App Store, which is harder to refund \u2014 buy through tynker.com directly to keep the refund pathway open."
         }
       ]
     }

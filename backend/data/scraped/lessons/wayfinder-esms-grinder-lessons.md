@@ -201,3 +201,48 @@ next regular run. Future grinder runs should expand to:
 - More tech corps programs (Apple Camp at Apple Store, Tynker, ScratchJr)
 - Faith-based + cultural programs (Hispanic Heritage Foundation, etc.)
 - Disability-inclusive programs (Autism camps, deaf/HoH summer programs)
+
+
+## AD-HOC HARVEST RUN ROUND 3 — 2026-04-26
+
+Per Dan: 'do another ad hoc run on the national front. even some
+international if there are any obvious foreign large entities.'
+
+Added 14 more national + international K-8 programs:
+
+INTERNATIONAL (4):
+- CISV International (peace education, 60+ countries, age 11+)
+- Concordia Language Villages (14+ languages immersion, MN)
+- EF Language Travel Camps (50+ international cities, ages 10+)
+- WWOOF Family Stays (12,000 organic farms, 130 countries)
+
+US ACADEMIC COMPETITIONS (5):
+- MATHCOUNTS (free middle school math competition)
+- VEX IQ Challenge (elementary + middle robotics)
+- eCYBERMISSION (Army STEM, \$9K savings bonds prizes)
+- Future City Competition (engineering grades 6-8)
+- Science Olympiad Division B (grades 6-9)
+
+MAJOR MUSEUM CAMPS (3):
+- AMNH Discovery Squad + Children's Camps (NYC)
+- Exploratorium Summer Camps (SF)
+- Field Museum Summer Camps + Junior Curators (Chicago)
+
+CORPORATE / FREE (1):
+- Apple Camp at Apple Store (free 90-min, 300+ stores)
+
+DISABILITY-INCLUSION (1):
+- Best Buddies International (school chapters all 50 states + 50 countries)
+
+Total ad-hoc national/remote/international additions across 3 rounds:
+40 programs + 38 parent-facing field-note insights.
+
+Future grinder runs should expand into:
+- Faith-based + cultural (Jewish, Islamic, Hindu, secular humanist youth)
+- Disability-inclusive sports + arts (Special Olympics Unified, etc.)
+- Hispanic/Latino + Asian American cultural orgs (e.g., Hispanic Heritage
+  Foundation, Asian Pacific American Forum, AAJA)
+- Ecology/conservation field schools (Audubon, Sierra Club, NWF, NPCA)
+- Native American/Indigenous youth programs
+- Religious-affiliated camps (Christian, Jewish, Muslim, Buddhist) with
+  clear non-coercive participation policies
