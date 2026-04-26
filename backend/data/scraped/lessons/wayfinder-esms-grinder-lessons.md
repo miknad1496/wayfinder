@@ -126,3 +126,41 @@
 | 2026-04-26 | 4 | 6 (6hi/0md) | 0 | National-remote anchors (per Dan's nationwide priority directive) | Outschool, Beast Academy Online, Curious Cardinals, Synthesis Tutor, Brain Chase, Northwestern CTD. First batch outside WA — all high-confidence; 0 skips. National-anchors queue 6/25. Captured 6 field-note insights (CTD Amber open enrollment; BA sibling discount requires Bundle; Synthesis Tutor vs Teams; Brain Chase early-bird window; Curious Cardinals plan tiers; Outschool 2026 membership pivot). |
 | 2026-04-26 | 5 | 3 (3hi/0md) | 3 dedup (Outschool, Beast Academy Online, Brain Chase already added in run 4) | National-anchors continued — nationwide K-8 STEM/math/coding | Mathnasium (hi), Code Ninjas (hi), CodaKid (hi). Six original candidates collapsed to 3 after fetching remote and discovering Outschool/Beast Academy/Brain Chase landed in run 4. Captured 6 field-note insights focused on Mathnasium pricing/sibling discounts, Outschool ESA-fund eligibility + filter caveat, Code Ninjas Unlimited Pass effective rate, CodaKid free-trial trick. Pushed via GitHub REST API after local git tooling hit unrecoverable index/rebase locks on the sandbox mount. |
 | 2026-04-26 | 6 | 6 (3hi/3md) | 0 | National-remote anchors continued (per Dan's nationwide priority directive) | Tynker (hi), Connected Camps (md cost), Khan Academy Kids (hi free), NASA Kids' Club (hi free), CodeCombat (md cost), RSM Online (md cost). 0 dedup; loose hits on "Khan Academy" and "NASA" turned out to be different K-8 vs HS programs. Captured 8 field-note insights (Tynker family-plan trick, 30-day refund, Connected Camps free Kid Club server, Khan Academy Kids vs ABCmouse free, NASA Spanish portal, CodeCombat free Chapter 1, RSM tuition-by-form, RSM placement-test placement). National queue 15/25. |
+
+
+## AD-HOC HARVEST RUN — 2026-04-26 (Dan-initiated, manual)
+
+Per Dan's directive: 'do an ad-hoc grinder run targeting the low-hanging fruit national/remote programs that benefit any state'.
+
+Added 13 high-leverage national/remote K-8 programs:
+- Camp Invention 2026 (1500+ host elementary schools nationwide)
+- 4-H Cooperative Extension network (every state via land-grant universities)
+- FIRST LEGO League Explore (K-4 robotics) + FLL Challenge (4-8 robotics)
+- Junior Achievement BizTown + Finance Park (free, corporate-sponsored)
+- NPS Junior Ranger Program (free, all 400+ NPS sites)
+- iD Tech Online Camps (small-group remote coding)
+- Outschool (small-group online classes K-12, $10-30/session)
+- AoPS + Beast Academy (math enrichment, $15/mo subscription)
+- Khan Academy + Khan Academy Kids (100% free)
+- Smithsonian Learning Lab + Affiliate Museums (200+ partners nationwide)
+- Code.org (free CS curriculum, 45% of US schools)
+- NASA STEM Engagement Virtual Events (free, multiple NASA centers)
+
+Captured 12 parent-facing insights → summer-camp-insights.json field-notes:
+- Camp Invention discount-code stacking (4 codes stack)
+- 4-H pricing varies by land-grant university
+- FLL teams often free through schools/libraries
+- JA programs free for school field trips
+- NPS Junior Ranger badges across multiple parks
+- iD Tech Campers' Choice scholarships
+- Outschool Foundation 100% aid
+- AoPS Beast Academy $15/mo
+- Khan Academy parent dashboard
+- Smithsonian Affiliate Museums (200+ nationwide)
+- Code.org accounts often pre-provisioned at school
+- NASA EXPRESS newsletter for first-access to events
+
+This is the 'low-hanging fruit' batch Dan flagged — programs that benefit
+WA + every other state equally. Future grinder runs should continue
+expanding this national-anchor coverage before going deeper into local
+metros.

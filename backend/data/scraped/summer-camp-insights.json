@@ -8,70 +8,70 @@
   "sections": [
     {
       "id": "registration-windows",
-      "title": "Registration window cheat sheet — when to actually book",
-      "icon": "📅",
+      "title": "Registration window cheat sheet \u2014 when to actually book",
+      "icon": "\ud83d\udcc5",
       "items": [
         {
-          "label": "December–January",
+          "label": "December\u2013January",
           "detail": "Member registration opens at top-tier museum/zoo camps in major metros (Pacific Science Center, Woodland Park Zoo, Burke Museum, Seattle Children's Theatre). Premium camps fill in days. If you're not yet a member, the membership pays for itself just from earlier access."
         },
         {
           "label": "February (Early Bird windows)",
-          "detail": "Camp Galileo Early Bird discount typically expires Feb 28 ($50/wk savings). YMCA Camp Orkila + Camp Sealth registration windows open this month — overnight camps. Multi-week discounts often stack with Early Bird."
+          "detail": "Camp Galileo Early Bird discount typically expires Feb 28 ($50/wk savings). YMCA Camp Orkila + Camp Sealth registration windows open this month \u2014 overnight camps. Multi-week discounts often stack with Early Bird."
         },
         {
           "label": "March (general public registration)",
           "detail": "Most Seattle-metro institution camps open general (non-member) registration. Point Defiance Zoo & Aquarium typically opens early-mid March. Most popular sessions fill within 2-3 weeks."
         },
         {
-          "label": "April–May (last call + scholarship windows)",
-          "detail": "Most popular sessions full. Off-the-radar specialty camps still have space. Scholarship application windows often close mid-May — check each org. Many districts publish their summer enrichment lists in April."
+          "label": "April\u2013May (last call + scholarship windows)",
+          "detail": "Most popular sessions full. Off-the-radar specialty camps still have space. Scholarship application windows often close mid-May \u2014 check each org. Many districts publish their summer enrichment lists in April."
         },
         {
           "label": "June (late game + cancellations)",
-          "detail": "Some camps add late sessions if demand exists. Cancellation lists at premium camps move quickly — call directly, don't just check website. Parks dept rec camps almost always have space."
+          "detail": "Some camps add late sessions if demand exists. Cancellation lists at premium camps move quickly \u2014 call directly, don't just check website. Parks dept rec camps almost always have space."
         }
       ]
     },
     {
       "id": "scholarship-cheats",
-      "title": "Scholarship cheat sheet — generous aid most parents don't ask about",
-      "icon": "💰",
+      "title": "Scholarship cheat sheet \u2014 generous aid most parents don't ask about",
+      "icon": "\ud83d\udcb0",
       "items": [
         {
-          "label": "YMCA — sliding scale Price A / Price B",
-          "detail": "All Y branches use a sliding-scale cost structure. You self-select based on household income. No documentation required at registration. Some Ys offer additional financial assistance beyond Price B — ask the membership desk directly. Camp Orkila and other residential Ys have the same structure."
+          "label": "YMCA \u2014 sliding scale Price A / Price B",
+          "detail": "All Y branches use a sliding-scale cost structure. You self-select based on household income. No documentation required at registration. Some Ys offer additional financial assistance beyond Price B \u2014 ask the membership desk directly. Camp Orkila and other residential Ys have the same structure."
         },
         {
-          "label": "Pacific Science Center — needs-based scholarships up to 100%",
-          "detail": "Application opens early February (well before general registration). Scholarship windows are SEPARATE from regular registration — apply to both. Bring tax return + proof of income. 100% scholarships exist; partial more common."
+          "label": "Pacific Science Center \u2014 needs-based scholarships up to 100%",
+          "detail": "Application opens early February (well before general registration). Scholarship windows are SEPARATE from regular registration \u2014 apply to both. Bring tax return + proof of income. 100% scholarships exist; partial more common."
         },
         {
-          "label": "Woodland Park Zoo — scholarships up to 100% in 20% increments",
-          "detail": "Tiered based on income. Application is short. They publish the income brackets — check the FAQ. Apply once per year, valid for all WPZ camps that summer."
+          "label": "Woodland Park Zoo \u2014 scholarships up to 100% in 20% increments",
+          "detail": "Tiered based on income. Application is short. They publish the income brackets \u2014 check the FAQ. Apply once per year, valid for all WPZ camps that summer."
         },
         {
-          "label": "Camp Sealth (Camp Fire CPS) — Camperships",
+          "label": "Camp Sealth (Camp Fire CPS) \u2014 Camperships",
           "detail": "Need-based aid called 'Camperships'. Apply 4-6 weeks before session. Particularly generous for 'first-time camper' families. Foster, kinship, and EBT/WIC families get expedited review."
         },
         {
-          "label": "Point Defiance Zoo — Pierce County resident aid",
+          "label": "Point Defiance Zoo \u2014 Pierce County resident aid",
           "detail": "Special scholarship pool for Pierce County residents on EBT/WIC/foster/kinship. Smaller pool but high acceptance rate if eligible."
         },
         {
-          "label": "Camp Galileo — financial aid + multi-week sibling discounts",
-          "detail": "Up to 75% aid for qualifying families. Multi-week + multi-sibling discounts stack with aid. Apply early — pool is smaller than the museum/zoo programs."
+          "label": "Camp Galileo \u2014 financial aid + multi-week sibling discounts",
+          "detail": "Up to 75% aid for qualifying families. Multi-week + multi-sibling discounts stack with aid. Apply early \u2014 pool is smaller than the museum/zoo programs."
         },
         {
-          "label": "School district summer programs — often free or near-free",
+          "label": "School district summer programs \u2014 often free or near-free",
           "detail": "Most districts run summer enrichment using federal Title I funds. Eligibility may be income-tested or open to all district kids. Check your district's website starting in March. Often the BEST kept secret in the local market."
         }
       ]
     },
     {
       "id": "nationwide-remote",
-      "title": "Nationwide & remote programs — equally available to ANY family",
-      "icon": "🌎",
+      "title": "Nationwide & remote programs \u2014 equally available to ANY family",
+      "icon": "\ud83c\udf0e",
       "items": [
         {
           "label": "iD Tech (online + in-person at universities)",
@@ -79,7 +79,7 @@
         },
         {
           "label": "Camp Galileo (CA + WA expansion + virtual)",
-          "detail": "Also offers Galileo Online — interactive virtual camps for ages 5-12. Project-based, not video lectures. Lower cost than in-person."
+          "detail": "Also offers Galileo Online \u2014 interactive virtual camps for ages 5-12. Project-based, not video lectures. Lower cost than in-person."
         },
         {
           "label": "Camp Invention (National Inventors Hall of Fame)",
@@ -90,7 +90,7 @@
           "detail": "Free K-2 app year-round. Some library systems run Khan-aligned summer programs. Cheapest meaningful enrichment option for early elementary."
         },
         {
-          "label": "Outschool — small-group online classes (K-12)",
+          "label": "Outschool \u2014 small-group online classes (K-12)",
           "detail": "Marketplace of online classes from independent teachers. Subjects from D&D club to coding to creative writing. Per-class pricing, often $10-30/session. Great for kids with niche interests not served by local options."
         },
         {
@@ -106,19 +106,19 @@
           "detail": "Game design, animation, programming. Ages 5-12 + teen tracks. Strong instruction quality."
         },
         {
-          "label": "MOOC platforms — Coursera, edX, Khan Academy",
+          "label": "MOOC platforms \u2014 Coursera, edX, Khan Academy",
           "detail": "Free university-level content available to motivated middle schoolers. Especially good for kids who finish their grade-level curriculum early."
         },
         {
-          "label": "Connections Academy + K12 — full virtual public school",
+          "label": "Connections Academy + K12 \u2014 full virtual public school",
           "detail": "Free in many states. Year-round option not just summer. Worth considering for kids whose schools aren't a fit, or families with travel flexibility."
         }
       ]
     },
     {
       "id": "sleepaway-readiness",
-      "title": "Sleepaway readiness — is your kid actually ready?",
-      "icon": "🏕️",
+      "title": "Sleepaway readiness \u2014 is your kid actually ready?",
+      "icon": "\ud83c\udfd5\ufe0f",
       "items": [
         {
           "label": "Green-light signals (start considering 3-5 day sessions)",
@@ -138,18 +138,18 @@
         },
         {
           "label": "First-timer success patterns",
-          "detail": "Pre-write a few letters together (kids love getting mail). Pre-decide on a comfort item that's not too precious to lose. Talk through what a hard moment might look like + what the kid would do. Don't promise an early pickup — that signals 'this might fail' and erodes confidence."
+          "detail": "Pre-write a few letters together (kids love getting mail). Pre-decide on a comfort item that's not too precious to lose. Talk through what a hard moment might look like + what the kid would do. Don't promise an early pickup \u2014 that signals 'this might fail' and erodes confidence."
         }
       ]
     },
     {
       "id": "budget-framework",
-      "title": "Budget framework — getting maximum value across the summer",
-      "icon": "💵",
+      "title": "Budget framework \u2014 getting maximum value across the summer",
+      "icon": "\ud83d\udcb5",
       "items": [
         {
           "label": "The 60/30/10 frame (a starting heuristic)",
-          "detail": "If you have a fixed summer budget: spend ~60% on a recurring 'anchor' — typically the YMCA / parks dept day camp 3-4 weeks running ($150-300/wk subsidized). Spend ~30% on 1-2 specialty experiences ($400-600 each — the museum camp, the coding camp, the zoo camp). Reserve ~10% for the wildcard — the niche experience the kid asked for, or a weekend mini-camp."
+          "detail": "If you have a fixed summer budget: spend ~60% on a recurring 'anchor' \u2014 typically the YMCA / parks dept day camp 3-4 weeks running ($150-300/wk subsidized). Spend ~30% on 1-2 specialty experiences ($400-600 each \u2014 the museum camp, the coding camp, the zoo camp). Reserve ~10% for the wildcard \u2014 the niche experience the kid asked for, or a weekend mini-camp."
         },
         {
           "label": "Multi-summer planning (K-8 arc)",
@@ -172,7 +172,7 @@
     {
       "id": "common-mistakes",
       "title": "Common parent mistakes (K-8 specifically)",
-      "icon": "⚠️",
+      "icon": "\u26a0\ufe0f",
       "items": [
         {
           "label": "Over-stacking specialty camps",
@@ -180,7 +180,7 @@
         },
         {
           "label": "Treating it like college admissions",
-          "detail": "K-8 summers don't appear in college applications. Picking based on 'what looks good' backfires — kids sense the inauthenticity and disengage."
+          "detail": "K-8 summers don't appear in college applications. Picking based on 'what looks good' backfires \u2014 kids sense the inauthenticity and disengage."
         },
         {
           "label": "Skipping the kid's preferences",
@@ -192,7 +192,7 @@
         },
         {
           "label": "Not asking about scholarships",
-          "detail": "Most reputable orgs have 50-80% aid available; rarely advertised. Email the camp director directly — application is often shorter than expected."
+          "detail": "Most reputable orgs have 50-80% aid available; rarely advertised. Email the camp director directly \u2014 application is often shorter than expected."
         },
         {
           "label": "Sleepaway too early",
@@ -200,14 +200,14 @@
         },
         {
           "label": "Single-track specialization too early",
-          "detail": "A kid who does only soccer camps every summer K-8 won't necessarily play in HS. Variety in K-5 → emerging interest in 6-8 → specialization in 9-12 is the healthier arc."
+          "detail": "A kid who does only soccer camps every summer K-8 won't necessarily play in HS. Variety in K-5 \u2192 emerging interest in 6-8 \u2192 specialization in 9-12 is the healthier arc."
         }
       ]
     },
     {
       "id": "out-of-the-box",
       "title": "Out-of-the-box hacks most parents miss",
-      "icon": "💡",
+      "icon": "\ud83d\udca1",
       "items": [
         {
           "label": "Trade with a friend's family for week-long swap",
@@ -215,18 +215,18 @@
         },
         {
           "label": "Volunteer-as-CIT (Counselor In Training) at age 12-14",
-          "detail": "Many camps need junior counselors. Tweens get free or discounted attendance + leadership experience. Apply early — these slots fill faster than camper slots. YMCA, Camp Fire, BGCA all have CIT pipelines."
+          "detail": "Many camps need junior counselors. Tweens get free or discounted attendance + leadership experience. Apply early \u2014 these slots fill faster than camper slots. YMCA, Camp Fire, BGCA all have CIT pipelines."
         },
         {
           "label": "Subscribe to a museum at the right tier",
-          "detail": "Not all memberships are equal. Look for the tier that includes 'priority camp registration' — usually $150-200 family-tier upgrade. Pays for itself just from earlier access to popular camps."
+          "detail": "Not all memberships are equal. Look for the tier that includes 'priority camp registration' \u2014 usually $150-200 family-tier upgrade. Pays for itself just from earlier access to popular camps."
         },
         {
           "label": "ACA accreditation is a real signal",
-          "detail": "American Camp Association accreditation means health/safety/staff-ratio standards verified annually. Not a fancy badge — actually means something. Free filter at acacamps.org/find-a-camp."
+          "detail": "American Camp Association accreditation means health/safety/staff-ratio standards verified annually. Not a fancy badge \u2014 actually means something. Free filter at acacamps.org/find-a-camp."
         },
         {
-          "label": "University youth programs — often hidden gems",
+          "label": "University youth programs \u2014 often hidden gems",
           "detail": "UW Robinson Center, DigiPen Open World, Stanford EPGY (now Compass), Northwestern Center for Talent Development. Often more substantive than for-profit camps. Check your local research university."
         },
         {
@@ -253,108 +253,128 @@
     },
     {
       "id": "field-notes",
-      "title": "From the field — fresh insider notes (auto-discovered)",
-      "icon": "🔍",
+      "title": "From the field \u2014 fresh insider notes (auto-discovered)",
+      "icon": "\ud83d\udd0d",
       "items": [
         {
-          "label": "Tynker — all plans cover up to 3 children, including Lifetime",
-          "detail": "[2026-04-26] Tynker's Quarterly ($54), Yearly ($180), and Lifetime plans all include access for up to 3 children — meaning a 3-sibling family pays the same as a single-child household. Most parents miss this and buy multiple single-child accounts elsewhere."
+          "label": "Camp Invention \u2014 early-bird code stack ($25 + $60 sibling)",
+          "detail": "Camp Invention 2026 has FOUR stackable discount codes: CIFUN25 (by 3/31, $25 off), CIFUN20 (by 4/28, $20 off), SIBNAT30 ($60 off 2 campers), SIBNAT40 ($120+ off 3+ campers). Use the early code AND the sibling code together. Most parents only know about one."
         },
         {
-          "label": "Tynker — 30-day money-back guarantee even on Lifetime plan",
-          "detail": "[2026-04-26] Tynker offers a 30-day money-back guarantee on ALL plans, including the Lifetime tier. If your child doesn't engage in the first month, request a refund via support@tynker.com. iPad-app purchases need to be cancelled through the Apple App Store, which is harder to refund — buy through tynker.com directly to keep the refund pathway open."
+          "label": "4-H \u2014 your land-grant university runs it (find at 4-h.org/parents/find-your-4-h)",
+          "detail": "Every state's 4-H is run by the state's land-grant university (e.g., WSU Extension for WA, Cornell CCE for NY). Pricing varies wildly by state \u2014 Delaware sleepaway is ~$145, NY can be $400+. ALL have sliding-scale aid. Most parents don't know 4-H exists outside rural areas; it's actually nationwide and uses the local university for fee structure."
         },
         {
-          "label": "Connected Camps — free Kid Club Minecraft Server is separate from paid clubs",
-          "detail": "[2026-04-26] Connected Camps runs a separate FREE moderated Kid Club Minecraft server kids can join without a subscription — useful for testing whether your child engages with their model before paying for clubs. Paid clubs are sold via Outschool storefront (typically $20-$30/session), not direct on connectedcamps.com."
+          "label": "FIRST LEGO League \u2014 schools/libraries often host free teams",
+          "detail": "FLL Explore + FLL Challenge teams cost $110-275 per team (plus LEGO kit), but many schools, libraries, and community orgs sponsor teams that are FREE for participating kids. Search 'FIRST LEGO League [your city]' on firstinspires.org/team-event-search before paying for a private team."
         },
         {
-          "label": "Khan Academy Kids — fully free Stanford GSE-built app with no ads ever",
+          "label": "Junior Achievement \u2014 totally free for school field trips (corporate-sponsored)",
+          "detail": "JA BizTown (grades 4-6) and JA Finance Park (grades 7-8) are FREE one-day immersive field trips because they're underwritten by corporate sponsors (Bank of America, JPMorgan, Capital One, Microsoft, etc.). If your school doesn't already do these, ask the principal \u2014 they cost the school nothing."
+        },
+        {
+          "label": "NPS Junior Ranger \u2014 collect badges across multiple parks",
+          "detail": "Kids who visit multiple NPS sites and complete each park's Junior Ranger booklet earn separate badges. Some families build a 'Junior Ranger passport' tracking dozens of badges across years. Free at all 400+ sites including national monuments, historic sites, and recreation areas \u2014 not just the famous parks. Online versions for sites you can't visit in person."
+        },
+        {
+          "label": "iD Tech \u2014 small-group ratio is real (max 5:1)",
+          "detail": "iD Tech Online's max 5:1 instructor ratio is enforced \u2014 it's the main differentiator from cheaper providers. Half-day sessions (~$499/wk) are often as effective as full-day. Apply for Campers' Choice scholarships if budget-constrained; they award meaningful aid most parents don't know exists."
+        },
+        {
+          "label": "Outschool \u2014 Outschool Foundation aid covers up to 100% of class cost",
+          "detail": "The Outschool Foundation provides need-based scholarships (up to 100% of class cost) for low-income families. Application is short. Many teachers also offer 'pay what you can' or free classes. Filter by 'Outschool Foundation eligible' or contact teachers directly."
+        },
+        {
+          "label": "AoPS \u2014 Beast Academy at $15/mo is the under-radar deal",
+          "detail": "Beast Academy Online subscription is just $15/mo for grades K-5 (math curriculum used by serious-math families). Equivalent in-person/private tutoring would run $200-500/mo. AoPS Academy in-person locations (Bellevue WA, 14 other metros) are the high-touch progression."
+        },
+        {
+          "label": "Khan Academy \u2014 assign-and-track via Khan teacher tools (free)",
+          "detail": "Khan Academy's teacher dashboard works for parents too \u2014 free, lets you assign units to your kid, see what they've completed, set custom mastery goals. Pairs perfectly with the district 'don't lose progress over summer' goal. Ad-free, no subscription, no upsells."
+        },
+        {
+          "label": "Smithsonian Affiliate Museums \u2014 200+ partners across all 50 states",
+          "detail": "Beyond the 21 Smithsonian museums in DC, there are 200+ Smithsonian Affiliate Museums nationwide that have access to Smithsonian curriculum + traveling exhibits. Pacific Science Center (Seattle) is one. Search affiliations.si.edu/affiliate-list to find local affiliates that often run summer camps using Smithsonian materials."
+        },
+        {
+          "label": "Code.org \u2014 used in 45% of US schools (your school may already have it)",
+          "detail": "Before paying for iD Tech or any coding camp, check if your kid's school district uses Code.org's free CS Fundamentals or CS Discoveries curriculum (45% of US schools do). Many districts have unused Code.org accounts already provisioned for every student. Ask the school's tech coordinator."
+        },
+        {
+          "label": "NASA STEM events \u2014 sign up for NASA EXPRESS newsletter (Thursday delivery)",
+          "detail": "NASA's K-12 STEM events (virtual + in-person) are announced through the NASA EXPRESS newsletter every Thursday. Most parents don't know this exists. Free events with NASA scientists fill within hours of announcement. Subscribe at nasa.gov/learning-resources to be first to register."
+        },
+        {
+          "label": "Tynker \u2014 all plans cover up to 3 children, including Lifetime",
+          "detail": "[2026-04-26] Tynker's Quarterly ($54), Yearly ($180), and Lifetime plans all include access for up to 3 children \u2014 meaning a 3-sibling family pays the same as a single-child household. Most parents miss this and buy multiple single-child accounts elsewhere."
+        },
+        {
+          "label": "Tynker \u2014 30-day money-back guarantee even on Lifetime plan",
+          "detail": "[2026-04-26] Tynker offers a 30-day money-back guarantee on ALL plans, including the Lifetime tier. If your child doesn't engage in the first month, request a refund via support@tynker.com. iPad-app purchases need to be cancelled through the Apple App Store, which is harder to refund \u2014 buy through tynker.com directly to keep the refund pathway open."
+        },
+        {
+          "label": "Connected Camps \u2014 free Kid Club Minecraft Server is separate from paid clubs",
+          "detail": "[2026-04-26] Connected Camps runs a separate FREE moderated Kid Club Minecraft server kids can join without a subscription \u2014 useful for testing whether your child engages with their model before paying for clubs. Paid clubs are sold via Outschool storefront (typically $20-$30/session), not direct on connectedcamps.com."
+        },
+        {
+          "label": "Khan Academy Kids \u2014 fully free Stanford GSE-built app with no ads ever",
           "detail": "[2026-04-26] Khan Academy Kids (separate product from Khan Academy proper) is 100% free for ages 2-8, no ads, no in-app purchases, no premium tier. Built in partnership with Stanford Graduate School of Education. COPPA-compliant. Many parents pay $10-15/mo for ABCmouse without realizing Khan Academy Kids covers similar ground for free."
         },
         {
-          "label": "NASA Kids' Club — has Spanish-language Sistema Solar sub-portal",
+          "label": "NASA Kids' Club \u2014 has Spanish-language Sistema Solar sub-portal",
           "detail": "[2026-04-26] NASA's K-8 STEM portal includes a Spanish-language version (Sistema Solar) at the same site. For bilingual families or Spanish-immersion students, this is a legitimately rare free Spanish STEM resource. Subscribe to the NASA EXPRESS newsletter to get weekly student challenges + contest announcements."
         },
         {
-          "label": "CodeCombat — Chapter 1 entirely free for any student",
-          "detail": "[2026-04-26] CodeCombat's Kithgard Dungeon (Chapter 1) is fully free for any home or classroom user — that's enough content (typically 5-10 hours of play) to determine whether the game-based Python/JavaScript model fits your kid before subscribing. Premium home subscriptions typically run $10-$40/month range."
+          "label": "CodeCombat \u2014 Chapter 1 entirely free for any student",
+          "detail": "[2026-04-26] CodeCombat's Kithgard Dungeon (Chapter 1) is fully free for any home or classroom user \u2014 that's enough content (typically 5-10 hours of play) to determine whether the game-based Python/JavaScript model fits your kid before subscribing. Premium home subscriptions typically run $10-$40/month range."
         },
         {
-          "label": "RSM — tuition only available by form submission",
-          "detail": "[2026-04-26] Russian School of Mathematics doesn't post tuition on its public schedule pages — you submit a tuition-request form to receive a per-grade PDF. Cited range is $41-$110/lesson depending on grade and program. Local branch directors sometimes have financial aid that's not posted online, so call directly if cost is a concern."
+          "label": "RSM \u2014 tuition only available by form submission",
+          "detail": "[2026-04-26] Russian School of Mathematics doesn't post tuition on its public schedule pages \u2014 you submit a tuition-request form to receive a per-grade PDF. Cited range is $41-$110/lesson depending on grade and program. Local branch directors sometimes have financial aid that's not posted online, so call directly if cost is a concern."
         },
         {
-          "label": "RSM — placement test (free) decides level, not your kid's school grade",
+          "label": "RSM \u2014 placement test (free) decides level, not your kid's school grade",
           "detail": "[2026-04-26] RSM places students by placement test, not by current school grade. A strong 5th grader frequently places into the 6th-grade curriculum, which means the year-after-year tuition trajectory and competition opportunities both shift up. Take the placement test before deciding on enrollment so you understand which curriculum tier your child actually starts in."
         },
         {
-          "label": "Mathnasium summer pricing — middle-school costs $30 more than elementary (8 sessions)",
-          "detail": "[2026-04-26] Mathnasium's summer 8x1hr pack is $269 for elementary but $299 for middle-schoolers — small but consistent. Bigger gotcha: a $49–$99 enrollment fee on top for first-time families that's separate from the package price. Returning students skip the fee. Confirm at the local center because per-location pricing can vary."
+          "label": "Mathnasium summer pricing \u2014 middle-school costs $30 more than elementary (8 sessions)",
+          "detail": "[2026-04-26] Mathnasium's summer 8x1hr pack is $269 for elementary but $299 for middle-schoolers \u2014 small but consistent. Bigger gotcha: a $49\u2013$99 enrollment fee on top for first-time families that's separate from the package price. Returning students skip the fee. Confirm at the local center because per-location pricing can vary."
         },
         {
-          "label": "Mathnasium — ask local centers about sibling discounts not on the website",
-          "detail": "[2026-04-26] National Mathnasium pages don't advertise scholarships, but individual centers regularly offer multi-child discounts and limited financial-aid seats. Always ask the center director directly — these aren't on the corporate site."
+          "label": "Mathnasium \u2014 ask local centers about sibling discounts not on the website",
+          "detail": "[2026-04-26] National Mathnasium pages don't advertise scholarships, but individual centers regularly offer multi-child discounts and limited financial-aid seats. Always ask the center director directly \u2014 these aren't on the corporate site."
         },
         {
-          "label": "Outschool — ESA funds in AZ/FL/AR can pay 100% of tuition",
-          "detail": "[2026-04-26] Outschool accepts state Education Savings Account funds as full payment in eligible states (Arizona, Florida, Arkansas, etc.). The /esa landing page lists state-specific eligibility. Many parents miss this entirely and pay out-of-pocket — if your state has an ESA program, your kid may attend a $100+ camp for free."
+          "label": "Outschool \u2014 ESA funds in AZ/FL/AR can pay 100% of tuition",
+          "detail": "[2026-04-26] Outschool accepts state Education Savings Account funds as full payment in eligible states (Arizona, Florida, Arkansas, etc.). The /esa landing page lists state-specific eligibility. Many parents miss this entirely and pay out-of-pocket \u2014 if your state has an ESA program, your kid may attend a $100+ camp for free."
         },
         {
-          "label": "Outschool — 'summer camp' filter is narrower than '/camps' filter",
+          "label": "Outschool \u2014 'summer camp' filter is narrower than '/camps' filter",
           "detail": "[2026-04-26] /online-classes/summer-camps surfaces multi-session camp-style listings. /online-classes/camps is broader and includes shorter one-off classes mistakenly tagged 'camp.' Use /summer-camps for true cohort-style programs; otherwise you'll wade through single-session classes labeled as camps."
         },
         {
-          "label": "Code Ninjas — Unlimited Pass effective rate is ~$16/hr if used 9 weeks",
-          "detail": "[2026-04-26] Code Ninjas markets per-week ($199) and Unlimited Pass options. Unlimited covers Mon–Fri 9am–3:30pm from June 1 to July 31, 2026 — that's ~282 hours of coverage. At full attendance the effective rate is ~$16/hr, cheaper than per-week pricing if you're sending your child for 4+ weeks. Biweekly payment plans available for purchases over $1,000."
+          "label": "Code Ninjas \u2014 Unlimited Pass effective rate is ~$16/hr if used 9 weeks",
+          "detail": "[2026-04-26] Code Ninjas markets per-week ($199) and Unlimited Pass options. Unlimited covers Mon\u2013Fri 9am\u20133:30pm from June 1 to July 31, 2026 \u2014 that's ~282 hours of coverage. At full attendance the effective rate is ~$16/hr, cheaper than per-week pricing if you're sending your child for 4+ weeks. Biweekly payment plans available for purchases over $1,000."
         },
         {
-          "label": "CodaKid — 14-day free trial on self-paced before paying for a $299 camp",
-          "detail": "[2026-04-26] CodaKid offers a 14-day free trial on self-paced courses + a complimentary first 1:1 session. Use the free trial first to see if your kid actually engages — if they finish 2 self-paced courses in 14 days the $29/mo subscription is a better deal than the $299 Virtual Camp week. Many parents buy the camp first and discover their kid would've been just as happy on self-paced."
+          "label": "CodaKid \u2014 14-day free trial on self-paced before paying for a $299 camp",
+          "detail": "[2026-04-26] CodaKid offers a 14-day free trial on self-paced courses + a complimentary first 1:1 session. Use the free trial first to see if your kid actually engages \u2014 if they finish 2 self-paced courses in 14 days the $29/mo subscription is a better deal than the $299 Virtual Camp week. Many parents buy the camp first and discover their kid would've been just as happy on self-paced."
         },
         {
-          "label": "Pacific Science Center — scholarship applicants MUST NOT register on CampDoc",
-          "detail": "Counter-intuitive parent gotcha: families applying for the Access to Science Pipeline full-scholarship (covers registration, lunch, afternoon care + free annual Access Membership) must NOT register their kid on CampDoc while waiting. The 2026 timeline runs scholarship app open Feb 6, due Mar 13, decisions Apr 3 — and registering disqualifies you. Members get an exclusive early-reg link Feb 2; public reg opens Feb 9 — so by the time April 3 scholarship results land, popular weeks are often full for non-recipients. (2026-04-26)"
+          "label": "Pacific Science Center \u2014 scholarship applicants MUST NOT register on CampDoc",
+          "detail": "Counter-intuitive parent gotcha: families applying for the Access to Science Pipeline full-scholarship (covers registration, lunch, afternoon care + free annual Access Membership) must NOT register their kid on CampDoc while waiting. The 2026 timeline runs scholarship app open Feb 6, due Mar 13, decisions Apr 3 \u2014 and registering disqualifies you. Members get an exclusive early-reg link Feb 2; public reg opens Feb 9 \u2014 so by the time April 3 scholarship results land, popular weeks are often full for non-recipients. (2026-04-26)"
         },
         {
-          "label": "Museum of Flight ACE — full-Campership window closes BEFORE registration opens",
-          "detail": "Tiered campership trap: full-aid Campership applications closed Feb 2, 2026 at 9am — 18 days BEFORE Member Early Reg (Feb 20) and 19 days before Public Reg (Feb 21). Parents who hear about ACE in late Feb or March can ONLY get partial aid ($100, $200, or $300), and partial requests are first-come during registration until funding runs out. Mark February 1 calendar reminder annually if you might need full aid. (2026-04-26)"
+          "label": "Museum of Flight ACE \u2014 full-Campership window closes BEFORE registration opens",
+          "detail": "Tiered campership trap: full-aid Campership applications closed Feb 2, 2026 at 9am \u2014 18 days BEFORE Member Early Reg (Feb 20) and 19 days before Public Reg (Feb 21). Parents who hear about ACE in late Feb or March can ONLY get partial aid ($100, $200, or $300), and partial requests are first-come during registration until funding runs out. Mark February 1 calendar reminder annually if you might need full aid. (2026-04-26)"
         },
         {
-          "label": "DigiPen Open World — 50% Public Servant Discount is the stacker most parents miss",
-          "detail": "Open World offers a 50% Public Servant Discount on summer workshops for dependents of healthcare workers, first responders, educators, and military or government employees — turns the $899 Explorer (ages 6-8) workshop into ~$450, or the $999 Adventurer (ages 9-13) into ~$500. Stacks with the $200/sibling flat-fee discount but typically NOT with the 20% EARLYBIRD code. Also: a 'Summer Seat Saver' lets families lock in a 20% discount before they've picked a workshop, useful when summer schedule isn't finalized. (2026-04-26)"
+          "label": "DigiPen Open World \u2014 50% Public Servant Discount is the stacker most parents miss",
+          "detail": "Open World offers a 50% Public Servant Discount on summer workshops for dependents of healthcare workers, first responders, educators, and military or government employees \u2014 turns the $899 Explorer (ages 6-8) workshop into ~$450, or the $999 Adventurer (ages 9-13) into ~$500. Stacks with the $200/sibling flat-fee discount but typically NOT with the 20% EARLYBIRD code. Also: a 'Summer Seat Saver' lets families lock in a 20% discount before they've picked a workshop, useful when summer schedule isn't finalized. (2026-04-26)"
         },
         {
-          "label": "Seattle MESA — teacher-nominated, parents cannot self-enroll their child",
-          "detail": "Important parent reality check: Seattle MESA (UW STEM enrichment for K-12) does NOT take direct parent applications. Students are selected through a process that involves teachers at participating schools and MESA personnel — so a parent must first ask their child's teacher whether the school is a MESA partner, and then ask the teacher to nominate. The flagship '9th Grade Bridge' is also more than a one-time summer camp: it's a three-part commitment (summer Algebra-1 prep + after-school tutoring during 9th grade + monthly Saturday Academy). (2026-04-26)"
-        },
-        {
-          "label": "UW Engineering Discovery Days — it's a 2-day spring event, not a summer camp",
-          "detail": "Often miscategorized: this is a free 2-day open-house April 30–May 1, 2026 (9am–1pm) on UW Seattle campus — oriented to grades 4-8, NOT a K-12 summer program. Registration is required and closes when capacity hits (waitlist after that), and 2026 reg is already closed as of late April. Parents driving in pay $8 to park in lot E-1 (Pay-by-Phone code 123182). For 2027, subscribe to the College of Engineering newsletter — registration historically opens in February. (2026-04-26)"
-        },
-        {
-          "label": "Northwestern CTD — Amber tier is open enrollment for PreK–grade 2",
-          "detail": "Many parents of young high-ability kids assume CTD requires testing. Amber tier (PreK–gr 2) is open enrollment — no eligibility docs needed. Emerald tier (gr 3–8) is the testing/portfolio gate. Saves a parent 3+ weeks of test scheduling if they catch this in time. (2026-04-26)"
-        },
-        {
-          "label": "Beast Academy — sibling discount only stacks WITH a Bundle, not solo subscription",
-          "detail": "Plain $99.99/yr subscription does NOT unlock sibling Yearly @ $64.99. The 35%-off second-kid rate requires an active Bundle (printed books + sub) on the parent account. Two-kid math families: buy the Bundle for kid 1, then add the discounted second-kid sub. (2026-04-26)"
-        },
-        {
-          "label": "Synthesis — Tutor and Teams are two separate products with very different prices",
-          "detail": "Synthesis Tutor (AI math, ages 5–11, solo) is $20/mo or $99/yr. Synthesis Teams (live group classes, ages 8–14, more discussion-based) is $95/mo. Parents looking for the well-known live cohort experience will land on the Tutor page first — confirm which product before pricing comparisons. (2026-04-26)"
-        },
-        {
-          "label": "Brain Chase — early registration locks in $199 vs ~$249 standard rate",
-          "detail": "5-week summer program kicks off June 15, 2026. Early-bird $199 closes when standard registration opens (typically late May). Family/sibling discounts stack on top. (2026-04-26)"
-        },
-        {
-          "label": "Curious Cardinals — 4-month plan is 15–20% cheaper than monthly, but both auto-bill",
-          "detail": "Sessions start at $95/hr but the actual rate depends on plan: 4-month commitment is the lowest, monthly higher, pay-as-you-go highest. Two-month minimum commitment regardless. 2-week money-back guarantee is the de-facto trial — use that window if mentor fit feels off. (2026-04-26)"
-        },
-        {
-          "label": "Outschool — 2026 pivoted to credit-based memberships ($60–$600/mo)",
-          "detail": "Pre-2026 pay-per-class model still exists but the new monthly membership ($60 = ~1 group class/wk, $600 = 10 group classes/wk) prices out as cheaper than à la carte for active families. ESA dollars (AZ and other participating states) accepted on either model. (2026-04-26)"
+          "label": "Seattle MESA \u2014 teacher-nominated, parents cannot self-enroll their child",
+          "detail": "Important parent reality check: Seattle MESA (UW STEM enrichment for K-12) does NOT take direct parent applications. Students are selected through a process that involves teachers at participating schools and MESA personnel \u2014 so a parent must first ask their child's teacher whether the school is a MESA partner, and then ask the teacher to nominate. The flagship '9th Grade Bridge' is also more than a one-time summer camp: it's a three-part commitment (summer Algebra-1 prep + after-school tutoring during 9th grade + monthly Saturday Academy). (2026-04-26)"
         }
       ]
     }
