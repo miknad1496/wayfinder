@@ -311,4 +311,174 @@ Output as JSON: { "programs": [...] }. ONLY return JSON. Be honest if you're unc
   }
 });
 
+
+
+// ─── V2: Per-user saved programs + hour tracking ────────────────
+// Storage shape on the user object:
+//   user.savedVolunteerPrograms = [{ programName, savedAt, source: 'curated'|'discovered' }]
+//   user.volunteerHours         = [{ id, programName, date, hours, notes, loggedAt }]
+
+import { promises as fsPromises } from 'fs';
+import { randomBytes } from 'crypto';
+
+async function _resolveUser(req, res) {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) { res.status(401).json({ error: 'Not authenticated' }); return null; }
+  const user = await verifyToken(token).catch(() => null);
+  if (!user) { res.status(401).json({ error: 'Invalid token' }); return null; }
+  return user;
+}
+
+async function _readUserFile(email) {
+  const { default: pathMod } = await import('path');
+  const usersDir = pathMod.join(__dirname, '..', 'data', 'users');
+  const safe = email.toLowerCase().replace(/[^a-z0-9]/g, '_');
+  const filePath = pathMod.join(usersDir, `${safe}.json`);
+  const raw = await fsPromises.readFile(filePath, 'utf8');
+  // Decrypt fields if encryption is on
+  const { decryptUserFields } = await import('../services/crypto.js');
+  return { user: decryptUserFields(JSON.parse(raw)), filePath };
+}
+
+async function _writeUserFile(filePath, user) {
+  // Re-encrypt + atomic write using the same helper that auth.js uses.
+  // Easiest: spawn the same logic — clone, encrypt sensitive fields, write to .tmp then rename.
+  const { encryptUserFields } = await import('../services/crypto.js');
+  const clone = JSON.parse(JSON.stringify(user));
+  const toWrite = encryptUserFields(clone);
+  const tmp = filePath + '.tmp';
+  await fsPromises.writeFile(tmp, JSON.stringify(toWrite, null, 2));
+  await fsPromises.rename(tmp, filePath);
+}
+
+// POST /api/volunteer/save  { programName, source? }
+router.post('/save', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  const { programName, source = 'curated' } = req.body || {};
+  if (!programName || typeof programName !== 'string') return res.status(400).json({ error: 'programName required' });
+  try {
+    const { user, filePath } = await _readUserFile(u.email);
+    if (!Array.isArray(user.savedVolunteerPrograms)) user.savedVolunteerPrograms = [];
+    if (user.savedVolunteerPrograms.find(p => p.programName === programName)) {
+      return res.json({ success: true, alreadySaved: true, count: user.savedVolunteerPrograms.length });
+    }
+    if (user.savedVolunteerPrograms.length >= 50) return res.status(400).json({ error: 'Saved-programs cap reached (50). Unsave one first.' });
+    user.savedVolunteerPrograms.push({
+      programName: programName.slice(0, 200),
+      source: ['curated','discovered'].includes(source) ? source : 'curated',
+      savedAt: new Date().toISOString()
+    });
+    await _writeUserFile(filePath, user);
+    res.json({ success: true, count: user.savedVolunteerPrograms.length });
+  } catch (e) {
+    console.error('[volunteer/save] error:', e.message);
+    res.status(500).json({ error: 'Save failed' });
+  }
+});
+
+// DELETE /api/volunteer/save  body: { programName }
+router.delete('/save', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  const { programName } = req.body || {};
+  if (!programName) return res.status(400).json({ error: 'programName required' });
+  try {
+    const { user, filePath } = await _readUserFile(u.email);
+    const before = (user.savedVolunteerPrograms || []).length;
+    user.savedVolunteerPrograms = (user.savedVolunteerPrograms || []).filter(p => p.programName !== programName);
+    await _writeUserFile(filePath, user);
+    res.json({ success: true, removed: before - user.savedVolunteerPrograms.length, count: user.savedVolunteerPrograms.length });
+  } catch (e) {
+    console.error('[volunteer/save DELETE] error:', e.message);
+    res.status(500).json({ error: 'Unsave failed' });
+  }
+});
+
+// GET /api/volunteer/saved
+router.get('/saved', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  try {
+    const { user } = await _readUserFile(u.email);
+    const saved = user.savedVolunteerPrograms || [];
+    // Hydrate curated entries with full program data
+    const db = loadDB();
+    const lookup = new Map(db.opportunities.map(o => [o.name, o]));
+    const hydrated = saved.map(s => ({
+      ...s,
+      program: lookup.get(s.programName) || null
+    }));
+    res.json({ count: saved.length, saved: hydrated });
+  } catch (e) {
+    console.error('[volunteer/saved] error:', e.message);
+    res.status(500).json({ error: 'Load failed' });
+  }
+});
+
+// POST /api/volunteer/hours  { programName, date (YYYY-MM-DD), hours, notes? }
+router.post('/hours', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  const { programName, date, hours, notes = '' } = req.body || {};
+  if (!programName || !date || hours == null) return res.status(400).json({ error: 'programName, date, hours required' });
+  const hrs = Number(hours);
+  if (!isFinite(hrs) || hrs < 0 || hrs > 100) return res.status(400).json({ error: 'hours must be 0-100' });
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return res.status(400).json({ error: 'date must be YYYY-MM-DD' });
+  try {
+    const { user, filePath } = await _readUserFile(u.email);
+    if (!Array.isArray(user.volunteerHours)) user.volunteerHours = [];
+    if (user.volunteerHours.length >= 1000) return res.status(400).json({ error: 'Hour-log cap reached (1000 entries).' });
+    const id = 'vh_' + randomBytes(6).toString('hex');
+    const entry = {
+      id, programName: programName.slice(0, 200),
+      date, hours: hrs,
+      notes: String(notes).slice(0, 500),
+      loggedAt: new Date().toISOString()
+    };
+    user.volunteerHours.push(entry);
+    await _writeUserFile(filePath, user);
+    const total = user.volunteerHours.reduce((s, h) => s + (h.hours || 0), 0);
+    res.json({ success: true, entry, totalHours: total });
+  } catch (e) {
+    console.error('[volunteer/hours POST] error:', e.message);
+    res.status(500).json({ error: 'Log failed' });
+  }
+});
+
+// GET /api/volunteer/hours
+router.get('/hours', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  try {
+    const { user } = await _readUserFile(u.email);
+    const entries = (user.volunteerHours || []).sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+    const totalHours = entries.reduce((s, h) => s + (h.hours || 0), 0);
+    // Per-program rollup
+    const byProgram = {};
+    for (const e of entries) {
+      const pn = e.programName || 'Other';
+      if (!byProgram[pn]) byProgram[pn] = { hours: 0, count: 0 };
+      byProgram[pn].hours += e.hours || 0;
+      byProgram[pn].count++;
+    }
+    res.json({ count: entries.length, totalHours, byProgram, entries });
+  } catch (e) {
+    console.error('[volunteer/hours GET] error:', e.message);
+    res.status(500).json({ error: 'Load failed' });
+  }
+});
+
+// DELETE /api/volunteer/hours  body: { id }
+router.delete('/hours', async (req, res) => {
+  const u = await _resolveUser(req, res); if (!u) return;
+  const { id } = req.body || {};
+  if (!id) return res.status(400).json({ error: 'id required' });
+  try {
+    const { user, filePath } = await _readUserFile(u.email);
+    const before = (user.volunteerHours || []).length;
+    user.volunteerHours = (user.volunteerHours || []).filter(e => e.id !== id);
+    await _writeUserFile(filePath, user);
+    res.json({ success: true, removed: before - user.volunteerHours.length });
+  } catch (e) {
+    console.error('[volunteer/hours DELETE] error:', e.message);
+    res.status(500).json({ error: 'Delete failed' });
+  }
+});
+
 export default router;

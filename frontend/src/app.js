@@ -4756,6 +4756,7 @@ async function _volInit() {
   $('volunteerTabBrowse').addEventListener('click', () => _volSetTab('Browse'));
   $('volunteerTabStrategy').addEventListener('click', () => _volSetTab('Strategy'));
   $('volunteerTabDiscover').addEventListener('click', () => _volSetTab('Discover'));
+  $('volunteerTabMyService').addEventListener('click', () => { _volSetTab('MyService'); loadMyService(); });
 
   // Strategy + Discover buttons
   $('volStrGenerate').addEventListener('click', runVolunteerStrategy);
@@ -4763,7 +4764,7 @@ async function _volInit() {
 }
 
 function _volSetTab(name) {
-  for (const t of ['Browse', 'Strategy', 'Discover']) {
+  for (const t of ['Browse', 'Strategy', 'Discover', 'MyService']) {
     const tab = $('volunteerTab' + t);
     const panel = $('volunteer' + t + 'Panel');
     if (t === name) {
@@ -4838,10 +4839,187 @@ function _volCardHtml(o) {
       ${skills ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Skills:</strong> ${_esc(skills)}</p>` : ''}
       <p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Time:</strong> ${time} &middot; <strong>Eligibility:</strong> ${age} &middot; <strong>Scope:</strong> ${o.scope || 'national'}</p>
       ${o.howToStart ? `<p style="margin:8px 0 4px;font-size:12px;color:#0969da;background:#f6f8fa;padding:8px 10px;border-radius:6px;"><strong>How to start:</strong> ${_esc(o.howToStart)}</p>` : ''}
-      ${o._source ? `<a href="${_esc(o._source)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Official page →</a>` : ''}
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+        ${o._source ? `<a href="${_esc(o._source)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Official page →</a>` : '<span></span>'}
+        <button class="vol-save-btn" data-program="${_esc(o.name)}" style="font-size:12px;padding:4px 10px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:14px;cursor:pointer;">♡ Save</button>
+      </div>
     </div>
   `;
 }
+
+// Delegated click handler for save buttons (works for both browse + strategy results)
+document.addEventListener('click', async (e) => {
+  if (!e.target.classList?.contains('vol-save-btn')) return;
+  const program = e.target.dataset.program;
+  if (!program) return;
+  const token = localStorage.getItem('wayfinder_token') || sessionStorage.getItem('wayfinder_token');
+  if (!token) { alert('Sign in to save volunteer programs.'); return; }
+  e.target.disabled = true;
+  e.target.textContent = 'Saving...';
+  try {
+    const res = await fetch(`${API_BASE}/volunteer/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify({ programName: program })
+    });
+    const data = await res.json();
+    if (data.success) {
+      e.target.textContent = data.alreadySaved ? '✓ Already saved' : '✓ Saved';
+      e.target.style.background = '#ddf4ff';
+    } else {
+      e.target.textContent = '♡ Save';
+      e.target.disabled = false;
+      alert(data.error || 'Save failed');
+    }
+  } catch (err) {
+    e.target.textContent = '♡ Save';
+    e.target.disabled = false;
+    alert('Save failed: ' + err.message);
+  }
+});
+
+// MY SERVICE PANEL — saved programs + hours dashboard
+async function loadMyService() {
+  const token = localStorage.getItem('wayfinder_token') || sessionStorage.getItem('wayfinder_token');
+  const c = $('volMyServiceContent');
+  if (!token) { c.innerHTML = '<p style="color:#94a3b8;text-align:center;padding:32px;">Sign in to track saved programs and log volunteer hours.</p>'; return; }
+  c.innerHTML = '<p style="color:#94a3b8;">Loading...</p>';
+  try {
+    const headers = { 'Authorization': `Bearer ${token}` };
+    const [savedRes, hoursRes] = await Promise.all([
+      fetch(`${API_BASE}/volunteer/saved`, { headers }).then(r => r.json()),
+      fetch(`${API_BASE}/volunteer/hours`, { headers }).then(r => r.json())
+    ]);
+    renderMyService(savedRes, hoursRes);
+  } catch (e) {
+    c.innerHTML = `<p style="color:#cf222e;">Load failed: ${e.message}</p>`;
+  }
+}
+
+function renderMyService(savedData, hoursData) {
+  const saved = savedData.saved || [];
+  const totalHours = hoursData.totalHours || 0;
+  const byProgram = hoursData.byProgram || {};
+  const entries = hoursData.entries || [];
+
+  const totalsHtml = `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px;">
+      <div style="background:#ddf4ff;padding:14px 16px;border-radius:8px;text-align:center;">
+        <div style="font-size:24px;font-weight:600;color:#0a3069;">${totalHours}</div>
+        <div style="font-size:12px;color:#0a3069;">Total hours logged</div>
+      </div>
+      <div style="background:#f0fff4;padding:14px 16px;border-radius:8px;text-align:center;">
+        <div style="font-size:24px;font-weight:600;color:#15803d;">${saved.length}</div>
+        <div style="font-size:12px;color:#15803d;">Programs saved</div>
+      </div>
+      <div style="background:#fff8c5;padding:14px 16px;border-radius:8px;text-align:center;">
+        <div style="font-size:24px;font-weight:600;color:#854d0e;">${Object.keys(byProgram).length}</div>
+        <div style="font-size:12px;color:#854d0e;">Active programs</div>
+      </div>
+    </div>
+  `;
+
+  const savedHtml = saved.length === 0
+    ? '<p style="color:#94a3b8;font-style:italic;padding:8px 0;">No saved programs yet. Heart a program from the Browse tab to add it here.</p>'
+    : saved.map(s => {
+        const p = s.program;
+        const pn = s.programName;
+        const hoursForProgram = byProgram[pn]?.hours || 0;
+        return `
+          <div style="border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#fff;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+              <div style="flex:1;">
+                <h4 style="margin:0 0 2px;font-size:14px;color:#1f2328;">${_esc(pn)}</h4>
+                <p style="margin:0;font-size:12px;color:#59636e;">${_esc(p?.organization || s.source || '')} &middot; ${hoursForProgram} hours logged</p>
+              </div>
+              <div style="display:flex;gap:6px;">
+                <button class="vol-log-btn" data-program="${_esc(pn)}" style="font-size:11px;padding:4px 10px;border:1px solid #2563eb;background:#fff;color:#2563eb;border-radius:12px;cursor:pointer;">+ Log hours</button>
+                <button class="vol-unsave-btn" data-program="${_esc(pn)}" style="font-size:11px;padding:4px 10px;border:1px solid #cfdcef;background:#fff;color:#cf222e;border-radius:12px;cursor:pointer;">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+  const entriesHtml = entries.length === 0
+    ? '<p style="color:#94a3b8;font-style:italic;padding:8px 0;">No hours logged yet.</p>'
+    : `<table style="width:100%;border-collapse:collapse;font-size:13px;"><thead><tr style="border-bottom:1px solid #e5e7eb;color:#59636e;font-weight:600;">
+        <th style="text-align:left;padding:6px 8px;">Date</th>
+        <th style="text-align:left;padding:6px 8px;">Program</th>
+        <th style="text-align:right;padding:6px 8px;">Hours</th>
+        <th style="text-align:left;padding:6px 8px;">Notes</th>
+        <th style="padding:6px 8px;"></th>
+      </tr></thead><tbody>
+        ${entries.slice(0, 50).map(e => `
+          <tr style="border-bottom:1px solid #f1f5f9;">
+            <td style="padding:6px 8px;color:#475569;">${_esc(e.date)}</td>
+            <td style="padding:6px 8px;color:#1f2328;">${_esc(e.programName)}</td>
+            <td style="padding:6px 8px;text-align:right;font-weight:600;color:#1e3a8a;">${e.hours}</td>
+            <td style="padding:6px 8px;color:#64748b;">${_esc((e.notes || '').slice(0, 60))}</td>
+            <td style="padding:6px 8px;text-align:right;"><button class="vol-del-hour-btn" data-id="${_esc(e.id)}" style="font-size:11px;color:#cf222e;background:none;border:0;cursor:pointer;">×</button></td>
+          </tr>`).join('')}
+        ${entries.length > 50 ? `<tr><td colspan="5" style="padding:8px;text-align:center;color:#94a3b8;font-style:italic;">+ ${entries.length - 50} older entries</td></tr>` : ''}
+      </tbody></table>`;
+
+  $('volMyServiceContent').innerHTML = `
+    ${totalsHtml}
+    <h3 style="font-size:14px;color:#1f2328;margin:16px 0 8px;">Saved programs</h3>
+    ${savedHtml}
+    <h3 style="font-size:14px;color:#1f2328;margin:24px 0 8px;">Hours log</h3>
+    ${entriesHtml}
+  `;
+}
+
+// Delegated handlers for log / unsave / delete buttons
+document.addEventListener('click', async (e) => {
+  const target = e.target;
+  const token = localStorage.getItem('wayfinder_token') || sessionStorage.getItem('wayfinder_token');
+  if (!token) return;
+  const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` };
+
+  if (target.classList?.contains('vol-log-btn')) {
+    const program = target.dataset.program;
+    const date = prompt('Date of service (YYYY-MM-DD):', new Date().toISOString().slice(0,10));
+    if (!date) return;
+    const hours = prompt('Hours (decimal OK, e.g. 2.5):', '2');
+    if (!hours) return;
+    const notes = prompt('Brief notes (optional):', '') || '';
+    try {
+      const res = await fetch(`${API_BASE}/volunteer/hours`, {
+        method: 'POST', headers,
+        body: JSON.stringify({ programName: program, date, hours: parseFloat(hours), notes })
+      });
+      const data = await res.json();
+      if (data.success) loadMyService(); else alert(data.error || 'Log failed');
+    } catch (err) { alert('Log failed: ' + err.message); }
+  }
+
+  if (target.classList?.contains('vol-unsave-btn')) {
+    const program = target.dataset.program;
+    if (!confirm(`Remove "${program}" from saved programs?`)) return;
+    try {
+      const res = await fetch(`${API_BASE}/volunteer/save`, {
+        method: 'DELETE', headers,
+        body: JSON.stringify({ programName: program })
+      });
+      const data = await res.json();
+      if (data.success) loadMyService(); else alert(data.error || 'Remove failed');
+    } catch (err) { alert('Remove failed: ' + err.message); }
+  }
+
+  if (target.classList?.contains('vol-del-hour-btn')) {
+    const id = target.dataset.id;
+    if (!confirm('Delete this hour entry?')) return;
+    try {
+      const res = await fetch(`${API_BASE}/volunteer/hours`, {
+        method: 'DELETE', headers,
+        body: JSON.stringify({ id })
+      });
+      const data = await res.json();
+      if (data.success) loadMyService(); else alert(data.error || 'Delete failed');
+    } catch (err) { alert('Delete failed: ' + err.message); }
+  }
+});
 
 function _esc(s) { return String(s || '').replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c])); }
 
