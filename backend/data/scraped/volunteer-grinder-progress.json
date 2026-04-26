@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T14:55:00+00:00",
-  "totalRuns": 17,
-  "totalAdded": 82,
+  "lastRun": "2026-04-26T15:25:00+00:00",
+  "totalRuns": 18,
+  "totalAdded": 87,
   "queue": [
     {
       "focus": "WA",
@@ -56,8 +56,8 @@
     {
       "focus": "MI",
       "target": 10,
-      "current": 0,
-      "status": "pending",
+      "current": 5,
+      "status": "in_progress",
       "metros": [
         "Detroit",
         "Ann Arbor",

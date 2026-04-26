@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 157,
+    "totalCount": 162,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -39,15 +39,18 @@
       "Crisis Text Line",
       "Dallas Public Library",
       "Dallas Zoo",
+      "Detroit Zoological Society (Detroit Zoo)",
       "Earthwatch",
       "Eastside Friends of Seniors",
       "Food Bank For New York City",
+      "Forgotten Harvest",
       "Fort Vancouver Regional Libraries",
       "Friends of the Urban Forest",
       "GLIDE",
       "Greater Boston Food Bank",
       "Greentrike (Children's Museum of Tacoma)",
       "Habitat for Humanity",
+      "Henry Ford Health (Henry Ford Hospital - Detroit)",
       "Hopelink",
       "Hospital junior volunteer programs (national survey)",
       "Humane Society for Southwest Washington",
@@ -62,6 +65,7 @@
       "MSPCA-Angell",
       "Make-A-Wish",
       "Mary Bridge Children's Hospital (MultiCare)",
+      "Michigan Humane",
       "Mobius Discovery Center",
       "Museum of Science Boston",
       "NAMI",
@@ -96,6 +100,7 @@
       "Sierra Club",
       "Special Olympics",
       "Tacoma Rescue Mission",
+      "The Greening of Detroit",
       "The Olympia Free Clinic",
       "The Sophia Way",
       "Thinkery",
@@ -4863,6 +4868,166 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"
+    },
+    {
+      "name": "Forgotten Harvest Volunteer (Distribution Center / Pop-Up Pantries / Farm Team)",
+      "organization": "Forgotten Harvest (Detroit / Oak Park / Fenton MI)",
+      "description": "Detroit-area food rescue nonprofit (founded 1990) that recovers and redistributes surplus food across Wayne, Oakland, and Macomb counties. Tiered teen-friendly volunteer roles include Distribution Center repacking and warehouse work (10+, under-18 must be accompanied by a parent or guardian), Pop-Up Pantry food distribution events at host sites (12+), Farm Team work at Forgotten Harvest Farms in Fenton (14+, planting/weeding/harvesting on a 92-acre regenerative farm), Harvest Heroes peer-advocate volunteers (14+ outside the warehouse), and 18+ Site Monitor / Long-Term volunteer track. Court-Ordered Community Service is accepted only at the Eight Mile warehouse. Online registration required via Galaxy Digital portal.",
+      "scope": "state",
+      "states": [
+        "MI"
+      ],
+      "subregion": "Detroit Metro",
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 10,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food sorting & repacking",
+        "warehouse logistics",
+        "community advocacy",
+        "agricultural fieldwork"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Register online at forgottenharvest.galaxydigital.com or via the volunteer page at forgottenharvest.org/volunteer-3/. Choose a shift at the Distribution Center (10+), a Pop-Up Pantry event (12+), a Farm Team day in Fenton (14+), or apply for the Harvest Heroes / Site Monitor / Long-Term roles (14-18+). All under-18 volunteers must be accompanied by a parent or guardian. For group registration email volunteer@forgottenharvest.org.",
+      "_source": "https://www.forgottenharvest.org/volunteer-3/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Detroit Zoo Volunteen (Zoo Corps + Summer Zoo Corps + Counselor-In-Training)",
+      "organization": "Detroit Zoological Society (Royal Oak / Huntington Woods MI)",
+      "description": "Detroit Zoo's umbrella teen volunteer program for ages 14-17, run by the Detroit Zoological Society's Education department. Three tracks: Zoo Corps (year-round leadership + science communication, members are trained to facilitate hands-on activities exploring science, environmental stewardship, humane education, and animal information across the 125-acre Royal Oak campus), Summer Zoo Corps (summer-only cohort), and Counselor-In-Training (CIT, ages 15-17 supporting Summer Safari Camp by guiding youth groups, supervising craft projects, and interacting with guests). The Detroit Zoological Society also operates Belle Isle Aquarium and Belle Isle Nature Center. Applications for the 2026 CIT cohort opened in March 2026.",
+      "scope": "state",
+      "states": [
+        "MI"
+      ],
+      "subregion": "Detroit Metro",
+      "categories": [
+        "animals",
+        "education",
+        "environment"
+      ],
+      "ageMin": 14,
+      "ageMax": 17,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "science communication",
+        "guest interpretation",
+        "environmental stewardship",
+        "leadership",
+        "humane education"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit detroitzoo.org/volunteer-opportunity/volunteen/ for current track openings. Email volunteer@detroitzoo.org or call 248-541-5717 ext. 3802. Zoo Corps is year-round; Summer Zoo Corps and CIT applications open seasonally (typically March for summer cohorts). All three tracks are unpaid and structured around education-department mentorship.",
+      "_source": "https://detroitzoo.org/volunteer-opportunity/volunteen/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "The Greening of Detroit Volunteer (Tree Plantings + Green Corps Youth Program)",
+      "organization": "The Greening of Detroit",
+      "description": "Detroit-based urban forestry nonprofit (founded 1989) that has planted 177,000+ trees across Detroit, Hamtramck, and Highland Park. Two main pathways for teens: (1) general Volunteer Tree Plantings on Thursdays and Saturdays in spring (March-May) and fall (September-November), 9am-1pm at parks, schools, and neighborhoods across Detroit \u2014 open to individuals and groups, with a streamlined online registration; (2) Green Corps, an 8-week paid summer youth employment program for high school students ages 14-18 who maintain hundreds of trees and green spaces around Metro Detroit. Note: ageMin for the general tree planting events is not explicitly published on the volunteer page; Green Corps Youth Program is explicit at 14-18. Confirm directly with the organization for younger volunteers at general planting events.",
+      "scope": "state",
+      "states": [
+        "MI"
+      ],
+      "subregion": "Detroit Metro",
+      "categories": [
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "urban forestry",
+        "tree planting & care",
+        "environmental stewardship",
+        "team leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Register for an upcoming tree planting at greeningofdetroit.com/volunteer (Thursdays and Saturdays, March-May and September-November). For the paid Green Corps Youth Program (ages 14-18, 8-week summer employment), apply via the Workforce Development > Green Corps page at greeningofdetroit.com. Email info@greeningofdetroit.com or call 313-237-8733 with questions. Note: general planting events do not publish an explicit minimum age \u2014 confirm with the org for younger participants.",
+      "_source": "https://www.greeningofdetroit.com/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "ageMin"
+      ]
+    },
+    {
+      "name": "Michigan Humane Volunteer (Recurring + One-Time + Group)",
+      "organization": "Michigan Humane (Detroit / Westland / Sterling Heights / Rochester Hills / Howell)",
+      "description": "Michigan's largest animal-welfare nonprofit (founded 1877), operating Adoption Centers in Detroit, Westland, and Sterling Heights (Petco) plus Veterinary Centers in Detroit, Rochester Hills, and Westland. Two volunteer tracks: (1) Recurring volunteer roles for ages 18+ (4-month commitment minimum, 2-hour shift once per week, working directly with animals); (2) One-Time volunteer events open to ages 14-18 with a parent or guardian accompanying for the full shift, plus group volunteer days for school clubs / scout troops / corporate teams. Short-term volunteers do not work directly with animals (Dog Day Getaway and Straw Bagging are common one-time offerings). Adult chaperones accompanying youth must be 25+.",
+      "scope": "state",
+      "states": [
+        "MI"
+      ],
+      "subregion": "Detroit Metro",
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal care",
+        "shelter operations",
+        "team coordination",
+        "humane advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Browse upcoming one-time events at michiganhumane.org/one-time-volunteering/ \u2014 register for a Dog Day Getaway or Straw Bagging shift at Detroit, Westland, or Sterling Heights. For recurring roles (18+, 4-month commitment) email volunteerdepartment@michiganhumane.org. Teens 14-17 must volunteer with a parent or guardian; adult chaperones must be 25 or older.",
+      "_source": "https://www.michiganhumane.org/one-time-volunteering/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Henry Ford Hospital Detroit Volunteer (Year-Round Adult + Summer High School)",
+      "organization": "Henry Ford Health (Detroit MI)",
+      "description": "Volunteer program at Henry Ford Hospital, Henry Ford Health's flagship academic medical center on West Grand Boulevard in Detroit. Year-round roles (18+, minimum 4 hours/week) include patient companion / way-finding / gift shop / spiritual support / Gift of Music / Transplant Living Community (TLC) peer support / Hospice / Observation-Shadow. The hospital also runs a Summer High School Volunteer Program (parallel to the Henry Ford West Bloomfield 16-17 summer program and the Henry Ford Jackson Hospital Summer Youth Program for current high school students who have completed at least their freshman year) and a Henry Ford Cancer - Detroit High School Volunteer Program. Note: the Detroit summer-program age minimum is not published explicitly on the volunteer page; the Henry Ford system summer youth programs at sister sites use 16+ (West Bloomfield) and post-freshman HS (Jackson) \u2014 confirm directly with the Detroit Volunteer Services team.",
+      "scope": "state",
+      "states": [
+        "MI"
+      ],
+      "subregion": "Detroit Metro",
+      "categories": [
+        "health"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "patient interaction",
+        "hospital operations",
+        "healthcare exposure",
+        "communication"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at henryford.com/locations/henry-ford-hospital/volunteer/apply-request. Year-round adult roles require 18+ and 4 hours/week; the Summer High School Volunteer Program and Henry Ford Cancer - Detroit High School Volunteer Program admit current high school students. Contact Volunteer Services at the Detroit campus to confirm age eligibility for the summer programs (the Detroit page does not publish the explicit minimum). Application portal: vsyslive.hfhs.org.",
+      "_source": "https://www.henryford.com/locations/henry-ford-hospital/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "ageMin"
+      ]
     }
   ]
 }
