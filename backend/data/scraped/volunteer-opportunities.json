@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 112,
+    "totalCount": 117,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -26,6 +26,8 @@
       "Earthwatch",
       "Eastside Friends of Seniors",
       "Fort Vancouver Regional Libraries",
+      "Friends of the Urban Forest",
+      "GLIDE",
       "Greentrike (Children's Museum of Tacoma)",
       "Habitat for Humanity",
       "Hopelink",
@@ -48,11 +50,14 @@
       "Operation Warm",
       "PATH International",
       "Point Defiance Zoo & Aquarium",
+      "Project Open Hand",
       "Reading Partners",
       "Renewal Food Bank",
       "Rotary Interact",
       "SCA",
       "Salvation Army",
+      "San Francisco Public Library",
+      "San Francisco-Marin Food Bank",
       "Seattle Aquarium",
       "Second Harvest Inland Northwest",
       "Senior Services for South Sound",
@@ -3386,6 +3391,162 @@
       "collegeAppValue": "high",
       "howToStart": "Visit lapl.org/teens/volunteer and select your local branch. Complete the Teen Volunteer Intake Form and have a parent/guardian sign the Teen Volunteer Waiver. Contact Volunteer Engagement (213) 228-7490 with questions.",
       "_source": "https://www.lapl.org/teens/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "GLIDE Volunteer Program",
+      "organization": "GLIDE",
+      "description": "GLIDE in San Francisco's Tenderloin has run the Daily Free Meals program and other community services since 1963. Individual and group volunteers serve breakfast, lunch, dinner, holiday meals, and assist with the Welcome Center, Family/Youth/Childcare programs, and Walk-In Center. Open to youth age 9 and up; under-18 volunteers must submit a Minor Waiver signed by a parent/guardian before each shift.",
+      "scope": "local",
+      "states": [
+        "CA"
+      ],
+      "subregion": "San Francisco",
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 9,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food service",
+        "community engagement",
+        "compassion in action"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Sign up via GLIDE volunteer calendar; under-18s download Minor Waiver and bring signed copy to Room 102A or email volteam@glide.org. Contact: (415) 674-6081.",
+      "_source": "https://www.glide.org/volunteer-faq/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Project Open Hand Individual Volunteer",
+      "organization": "Project Open Hand",
+      "description": "Project Open Hand has delivered 'meals with love' to seniors and people facing serious illness in San Francisco and Oakland since 1985. Individual volunteers make a 3-month commitment to a weekly shift (or 40 hours per semester for students) \u2014 Kitchen meal assembly, Grocery Center sort/pack/distribute, Delivery (walk or drive), or Meal Site hosting. Minimum age is 15, and volunteers need a TB test within the last year.",
+      "scope": "local",
+      "states": [
+        "CA"
+      ],
+      "subregion": "San Francisco / Oakland",
+      "categories": [
+        "hunger",
+        "seniors",
+        "health"
+      ],
+      "ageMin": 15,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food service",
+        "logistics",
+        "client communication",
+        "delivery driving (18+)"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit Volunteer Inquiry Form at openhand.org; volunteer coordinator will follow up. SF: 730 Polk St / (415) 447-2300. Oakland: 1921 San Pablo Ave / (510) 622-0221. TB test required.",
+      "_source": "https://www.openhand.org/volunteer/individual-volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "San Francisco-Marin Food Bank Volunteer",
+      "organization": "San Francisco-Marin Food Bank",
+      "description": "Founded in 1987, the SF-Marin Food Bank distributes food to ~53,000 households a week through 270+ pantries plus home delivery. Volunteer roles include warehouse repack/sort, pop-up community market shifts (Greeter, Translator, Stocker, Co-Shopper, Loading Runner, Floater), and grocery delivery. Volunteers must be 11+; minors must be accompanied by an adult. Group ratios: 1 chaperone per 5 middle schoolers / per 10 high schoolers. Drivers must be 18+ but riders can be any age.",
+      "scope": "local",
+      "states": [
+        "CA"
+      ],
+      "subregion": "San Francisco / Marin",
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 11,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "food distribution",
+        "customer service",
+        "translation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Create account at volunteer.sfmfoodbank.org and sign up for a shift. Teen group bookings: volunteer@sfmfoodbank.org / (415) 282-1900 ext 244.",
+      "_source": "https://www.sfmfoodbank.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "San Francisco Public Library Teen Volunteer Corps / YELL / YAB",
+      "organization": "San Francisco Public Library",
+      "description": "SFPL operates a tiered teen-volunteer pathway across the Main Library and 27 branches: (1) Teen Volunteer Corps for ages 13-18 (event support, summer reading, branch programming); (2) Youth Engaged in Library Leadership (YELL) \u2014 paid summer workforce-development program for older teens with weekly commitment; (3) Youth Advisory Board (YAB) \u2014 paid 10-hour/week leadership program for SF 11th-12th graders during the school year, focused on advocacy, facilitation and shaping teen library services. Applications for paid programs open in March.",
+      "scope": "local",
+      "states": [
+        "CA"
+      ],
+      "subregion": "San Francisco",
+      "categories": [
+        "education",
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 13,
+      "ageMax": 18,
+      "timeCommitment": "varies",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "library programming",
+        "literacy support",
+        "leadership",
+        "facilitation",
+        "advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via sfpl.org/teens/volunteer-job-opportunities; YAB and YELL open annually in March. Branch-level Teen Volunteer Corps signups happen at individual branches.",
+      "_source": "https://sfpl.org/teens/volunteer-job-opportunities",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Friends of the Urban Forest Tree Planting & Care",
+      "organization": "Friends of the Urban Forest",
+      "description": "Founded 1981, FUF has planted more than 60,000 street trees \u2014 about half of San Francisco's street tree canopy. Year-round Saturday volunteer events: Street Tree Planting, Tree Care & Watering, and Sidewalk Garden installations. Volunteer requirements: ages 16-18 need a parent/guardian-signed waiver emailed to volunteers@fuf.net in advance; ages 12-15 must be accompanied by a parent or legal guardian (1 adult per child, no group chaperones). Excellent fit for environmental stewardship and college-app environmental-impact narrative.",
+      "scope": "local",
+      "states": [
+        "CA"
+      ],
+      "subregion": "San Francisco",
+      "categories": [
+        "environment",
+        "civic"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "urban forestry",
+        "tree planting",
+        "tree care",
+        "community organizing"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Browse Saturday calendar at friendsoftheurbanforest.org/volunteer-opportunities; email volunteers@fuf.net with signed under-18 waiver before attending.",
+      "_source": "https://www.friendsoftheurbanforest.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"
