@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 831,
+    "totalCount": 837,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -49,7 +49,7 @@
     ],
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
-    "lastUpdated": "2026-04-26T15:30:10.318Z",
+    "lastUpdated": "2026-04-26",
     "totalPrograms": 831,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
@@ -35997,6 +35997,404 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_source": "https://campfireseattle.org/camp-sealth-overnight-camp/"
+    },
+    {
+      "name": "Woodland Park Zoo Summer Day Camps",
+      "provider": "Woodland Park Zoo",
+      "organization": "Woodland Park Zoo",
+      "category": "academic-enrichment",
+      "subcategory": "wildlife-conservation",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by age tier and session — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — popular sessions fill in spring",
+      "description": "Themed day camps for kids ages 4–13 at Woodland Park Zoo in Seattle. Camps are tiered by age with developmentally appropriate, NGSS-aligned curricula focused on animals, ecosystems and biology — campers get hands-on activities and zoo encounters. Preschool through kindergarten attend two- or three-day camps; first grade and up attend four- and five-day camps. Partial and full scholarships available in 20% increments up to 100% for families with financial barriers.",
+      "url": "https://zoo.org/camps/",
+      "tags": [
+        "summer-camp",
+        "stem",
+        "zoo",
+        "wildlife",
+        "conservation",
+        "seattle",
+        "elementary",
+        "middle-school"
+      ],
+      "duration": "2-5 days per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "4-13",
+      "dates": "Summer 2026 — multiple sessions across the season",
+      "scholarshipAid": "Available — partial and full (up to 100%) for qualifying families",
+      "registrationUrl": "https://zoo.org/camps/",
+      "howToStart": "Register at zoo.org/camps; popular sessions fill in spring. Apply for scholarships during registration.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.zoo.org/education/camps/info"
+    },
+    {
+      "name": "Seattle Aquarium Marine Summer Camp",
+      "provider": "Seattle Aquarium",
+      "organization": "Seattle Aquarium",
+      "category": "academic-enrichment",
+      "subcategory": "marine-science",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "See registration page (members get 10% off)"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — registration is open",
+      "description": "The Seattle Aquarium's Marine Summer Camp serves children ages 6–12 at the Aquarium on Pier 59. Campers explore Puget Sound marine life through guided behind-the-scenes activities, exhibit time, hands-on labs and group play. Camp groups are placed by age tier so curricula match developmental stage. Before and after care available 8:30–9:15am and 4–4:45pm for an additional fee. A limited number of needs-based scholarships are offered. Note: per-session tuition not posted on the public landing page; confirm directly via registration@seattleaquarium.org.",
+      "url": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
+      "tags": [
+        "summer-camp",
+        "marine-science",
+        "stem",
+        "aquarium",
+        "seattle",
+        "elementary",
+        "middle-school"
+      ],
+      "duration": "Weeklong sessions",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "6-12",
+      "dates": "Summer 2026 — multiple weeklong sessions",
+      "scholarshipAid": "Available — limited number of needs-based scholarships",
+      "registrationUrl": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
+      "howToStart": "Register at seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp; email registration@seattleaquarium.org for tuition specifics or scholarship application.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/"
+    },
+    {
+      "name": "Seattle Children's Theatre Drama School Summer Camps",
+      "provider": "Seattle Children's Theatre",
+      "organization": "Seattle Children's Theatre (SCT)",
+      "category": "arts",
+      "subcategory": "theater",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by camp — see 2026 Summer Digital Course Catalog"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — registration via SCT website",
+      "description": "The Adrienne Dillard-Coons Drama School at Seattle Children's Theatre runs summer day camps for ages 3.5–18 at SCT's Seattle Center campus. Offerings include Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte and pratfalls), adventure-themed and art-focused drama. Camps build acting and storytelling skills in age-banded groups, with a focus on exploration over performance for the youngest tiers. Note: 2026 per-camp dates and tuition not surfaced on landing page; consult the 2026 Summer Digital Course Catalog or email dramaschool@sct.org.",
+      "url": "https://www.sct.org/education-programs/camps-classes-sct/",
+      "tags": [
+        "summer-camp",
+        "arts",
+        "theater",
+        "drama",
+        "seattle",
+        "elementary",
+        "middle-school"
+      ],
+      "duration": "Weeklong sessions (most camps)",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "3.5-18",
+      "dates": "Summer 2026 — multiple weeklong sessions",
+      "scholarshipAid": "See SCT financial aid page",
+      "registrationUrl": "https://www.sct.org/education-programs/class-finder/",
+      "howToStart": "Browse offerings via the Class Finder at sct.org/education-programs/class-finder; contact dramaschool@sct.org for catalog and tuition details.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "dates"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.sct.org/education-programs/camps-classes-sct/"
+    },
+    {
+      "name": "Camp Galileo Bellevue (STEAM Day Camp)",
+      "provider": "Galileo Learning",
+      "organization": "Galileo Learning (Camp Galileo)",
+      "category": "STEM",
+      "subcategory": "STEAM",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "See registration page; Early Bird (by Feb 28) saves $50/wk and multi-week saves $25/wk after first"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — early-bird ends Feb 28, 2026",
+      "description": "Camp Galileo Bellevue is a multi-week summer day camp for rising K–5th graders blending STEAM project rotations, outdoor games and classic camp activities. Campers cycle through three rotations daily (engineering challenges, art studios, and active outdoor play) at a 9am–3pm schedule with optional extended care. Galileo Learning operates a national network of camps with consistent, design-thinking-based curriculum and trained staff. Early-bird enrollment by February 28 saves $50/week and provides priority friend placement; multi-week pricing reduces the per-week rate after week one.",
+      "url": "https://galileo-camps.com/our-camps/locations/bellevue/",
+      "tags": [
+        "summer-camp",
+        "stem",
+        "steam",
+        "engineering",
+        "art",
+        "bellevue",
+        "eastside",
+        "elementary"
+      ],
+      "duration": "Weekly sessions across the summer",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Eastside",
+      "ages": "5-11",
+      "dates": "Summer 2026 — multiple weeklong sessions, 9am–3pm",
+      "scholarshipAid": "See Galileo financial assistance program",
+      "registrationUrl": "https://galileo-camps.com/our-camps/locations/bellevue/",
+      "howToStart": "Enroll at galileo-camps.com/our-camps/locations/bellevue; lock in Early Bird pricing by Feb 28, 2026.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://galileo-camps.com/our-camps/locations/bellevue/"
+    },
+    {
+      "name": "Music Center of the Northwest Summer Music Camps",
+      "provider": "Music Center of the Northwest",
+      "organization": "Music Center of the Northwest",
+      "category": "arts",
+      "subcategory": "music",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "$295 (Music Together summer camp); other camps vary"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — register via musiccenternw.org",
+      "description": "Music Center of the Northwest in north Seattle runs summer music camps for young children including Rhythm Kids® and a Music Together® summer camp (currently scheduled July 20–24, 12:30–4:00 pm, $295 tuition). The Center's mission is that music education should be accessible regardless of financial means, so a variety of tuition discounts and scholarships are offered to make programs more affordable. Music Together classes use songs, rhythm, rhymes, movement and instrument play to introduce basic musical concepts; families also receive a Music Together songbook and CD/app access.",
+      "url": "https://www.musiccenternw.org/musictogether",
+      "tags": [
+        "summer-camp",
+        "arts",
+        "music",
+        "rhythm",
+        "seattle",
+        "elementary",
+        "early-childhood"
+      ],
+      "duration": "Weeklong sessions",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "3-12",
+      "dates": "Music Together summer camp: July 20–24, 2026; other sessions throughout summer",
+      "scholarshipAid": "Available — tuition discounts and scholarships offered",
+      "registrationUrl": "https://www.musiccenternw.org/musictogether",
+      "howToStart": "Browse and register at musiccenternw.org/musictogether or call (206) 526-8443.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.musiccenternw.org/musictogether"
+    },
+    {
+      "name": "Point Defiance Zoo & Aquarium Summer Camps",
+      "provider": "Point Defiance Zoo & Aquarium",
+      "organization": "Point Defiance Zoo & Aquarium (Metro Parks Tacoma)",
+      "category": "academic-enrichment",
+      "subcategory": "wildlife-conservation",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by age tier — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Tacoma",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Member registration opened March 10, 2026; general March 12, 2026",
+      "description": "Point Defiance Zoo & Aquarium summer camps in Tacoma deliver lively, age-tiered programs about animals, ecosystem exploration, crafts and group games — with a focus on fostering empathy and respect for wildlife. Camps cover ages from preschool/Little Explorers through teen Zoo Camp (14–17), with elementary and middle-school tiers running across the summer. The Zoo offers needs-based scholarships for Pierce County residents whose parent/guardian is enrolled in EBT/Washington Quest, WIC, or who are foster/kinship caregivers.",
+      "url": "https://www.pdza.org/summer-camps/",
+      "tags": [
+        "summer-camp",
+        "stem",
+        "zoo",
+        "wildlife",
+        "tacoma",
+        "elementary",
+        "middle-school"
+      ],
+      "duration": "Weeklong sessions",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "South Puget Sound",
+      "ages": "4-13 (elementary/middle tiers)",
+      "dates": "Summer 2026 — multiple weeklong sessions",
+      "scholarshipAid": "Available — needs-based for Pierce County residents on EBT/WIC/foster/kinship",
+      "registrationUrl": "https://www.pdza.org/summer-camps/",
+      "howToStart": "Register at pdza.org/summer-camps; scholarship applicants must reside in Pierce County and meet program enrollment criteria.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.pdza.org/summer-camps/"
     }
   ]
 }
