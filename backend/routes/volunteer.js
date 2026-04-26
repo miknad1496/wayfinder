@@ -18,9 +18,25 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 import { verifyToken, canAccess } from '../services/auth.js';
+
+const GH_RAW = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend';
+
+function _fetchUrlSync(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, { headers: { 'User-Agent': 'wayfinder-vol' } }, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) return resolve(_fetchUrlSync(res.headers.location));
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
+      const chunks = [];
+      res.on('data', c => chunks.push(c));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,21 +52,33 @@ function getClaude() {
 }
 
 let cache = null;
-function loadDB() {
+async function loadDB() {
   if (cache) return cache;
   try {
     cache = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    return cache;
   } catch (e) {
-    console.error('[volunteer] failed to load DB:', e.message);
-    cache = { metadata: {}, opportunities: [] };
+    if (e.code !== 'ENOENT') console.error('[volunteer] disk read failed:', e.message);
   }
-  return cache;
+  // Lazy-fetch from GitHub raw
+  try {
+    console.log('[volunteer] lazy-fetching volunteer-opportunities.json from GitHub raw');
+    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/volunteer-opportunities.json`);
+    fs.mkdirSync(path.dirname(DATA_PATH), { recursive: true });
+    fs.writeFileSync(DATA_PATH, buf);
+    cache = JSON.parse(buf.toString('utf8'));
+    return cache;
+  } catch (err) {
+    console.error('[volunteer] lazy-fetch failed:', err.message);
+    cache = { metadata: {}, opportunities: [] };
+    return cache;
+  }
 }
 
 // ─── GET /api/volunteer/categories ─────────────────────────────
 
-router.get('/categories', (req, res) => {
-  const db = loadDB();
+router.get('/categories', async (req, res) => {
+  const db = await loadDB();
   res.json({
     categories: db.metadata?.categories || {},
     totalOpportunities: db.opportunities.length
@@ -59,8 +87,8 @@ router.get('/categories', (req, res) => {
 
 // ─── GET /api/volunteer/search ─────────────────────────────────
 
-router.get('/search', (req, res) => {
-  const db = loadDB();
+router.get('/search', async (req, res) => {
+  const db = await loadDB();
   const { state, category, ageMin, timeCommitment, format, q, scope, collegeAppValue } = req.query;
 
   let results = db.opportunities;
@@ -114,8 +142,8 @@ router.get('/search', (req, res) => {
 // Generates a structured plan-of-attack from user inputs, drawing from
 // the curated DB. No external API calls — pure rule-based assembly.
 
-router.post('/strategy', (req, res) => {
-  const db = loadDB();
+router.post('/strategy', async (req, res) => {
+  const db = await loadDB();
   const {
     grade = 10,             // 9 | 10 | 11 | 12
     state = 'all',
@@ -400,7 +428,7 @@ router.get('/saved', async (req, res) => {
     const { user } = await _readUserFile(u.email);
     const saved = user.savedVolunteerPrograms || [];
     // Hydrate curated entries with full program data
-    const db = loadDB();
+    const db = await loadDB();
     const lookup = new Map(db.opportunities.map(o => [o.name, o]));
     const hydrated = saved.map(s => ({
       ...s,
@@ -483,17 +511,28 @@ router.delete('/hours', async (req, res) => {
 
 
 
-// GET /api/volunteer/insights — curated insider volunteer insights
+// GET /api/volunteer/insights — curated insider volunteer insights (lazy-fetch fallback)
 let _volInsightsCache = null;
-router.get('/insights', (req, res) => {
+router.get('/insights', async (req, res) => {
   if (_volInsightsCache) return res.json(_volInsightsCache);
+  const insightsPath = path.join(__dirname, '..', 'data', 'scraped', 'volunteer-insights.json');
   try {
-    const insightsPath = path.join(__dirname, '..', 'data', 'scraped', 'volunteer-insights.json');
     const data = JSON.parse(fs.readFileSync(insightsPath, 'utf8'));
     _volInsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
-    res.json(_volInsightsCache);
+    return res.json(_volInsightsCache);
   } catch (e) {
-    res.status(500).json({ error: 'Failed to load volunteer insights: ' + e.message });
+    if (e.code !== 'ENOENT') console.error('[volunteer/insights] disk error:', e.message);
+  }
+  try {
+    console.log('[volunteer/insights] lazy-fetching from GitHub raw');
+    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/volunteer-insights.json`);
+    fs.mkdirSync(path.dirname(insightsPath), { recursive: true });
+    fs.writeFileSync(insightsPath, buf);
+    const data = JSON.parse(buf.toString('utf8'));
+    _volInsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
+    res.json(_volInsightsCache);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load volunteer insights: ' + err.message });
   }
 });
 

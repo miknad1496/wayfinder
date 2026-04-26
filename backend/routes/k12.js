@@ -247,16 +247,28 @@ router.get('/zip/:zip', async (req, res) => {
 
 
 
-// GET /api/k12/insights — curated parent-facing K-12 insights (static + grinder-augmented)
+// GET /api/k12/insights — curated parent-facing K-12 insights (lazy-fetch fallback)
 let _k12InsightsCache = null;
-router.get('/insights', (req, res) => {
+router.get('/insights', async (req, res) => {
   if (_k12InsightsCache) return res.json(_k12InsightsCache);
+  const insightsPath = path.join(SCRAPED, 'k12-insights.json');
   try {
-    const data = JSON.parse(fs.readFileSync(path.join(SCRAPED, 'k12-insights.json'), 'utf8'));
+    const data = JSON.parse(fs.readFileSync(insightsPath, 'utf8'));
+    _k12InsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
+    return res.json(_k12InsightsCache);
+  } catch (e) {
+    if (e.code !== 'ENOENT') console.error('[k12/insights] disk error:', e.message);
+  }
+  try {
+    console.log('[k12/insights] lazy-fetching from GitHub raw');
+    const buf = await _fetchUrl(`${GH_RAW}/data/scraped/k12-insights.json`);
+    fs.mkdirSync(SCRAPED, { recursive: true });
+    fs.writeFileSync(insightsPath, buf);
+    const data = JSON.parse(buf.toString('utf8'));
     _k12InsightsCache = { sections: data.sections || [], metadata: data.metadata || {} };
     res.json(_k12InsightsCache);
-  } catch (e) {
-    res.status(500).json({ error: 'Failed to load K12 insights: ' + e.message });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load K12 insights: ' + err.message });
   }
 });
 

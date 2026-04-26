@@ -13,9 +13,25 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 import { chatSLM, isSLMAvailable } from '../services/slm.js';
+
+const GH_RAW = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend';
+
+function _fetchUrlSync(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, { headers: { 'User-Agent': 'wayfinder-sc' } }, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) return resolve(_fetchUrlSync(res.headers.location));
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
+      const chunks = [];
+      res.on('data', c => chunks.push(c));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,20 +48,31 @@ function getClaude() {
 }
 
 let insightsCache = null;
-function loadInsights() {
+async function loadInsights() {
   if (insightsCache) return insightsCache;
   try {
     insightsCache = JSON.parse(fs.readFileSync(INSIGHTS_PATH, 'utf8'));
+    return insightsCache;
   } catch (e) {
-    console.error('[summer-camps] failed to load insights:', e.message);
-    insightsCache = { sections: [] };
+    if (e.code !== 'ENOENT') console.error('[summer-camps] disk error:', e.message);
   }
-  return insightsCache;
+  try {
+    console.log('[summer-camps/insights] lazy-fetching from GitHub raw');
+    const buf = await _fetchUrlSync(`${GH_RAW}/data/scraped/summer-camp-insights.json`);
+    fs.mkdirSync(path.dirname(INSIGHTS_PATH), { recursive: true });
+    fs.writeFileSync(INSIGHTS_PATH, buf);
+    insightsCache = JSON.parse(buf.toString('utf8'));
+    return insightsCache;
+  } catch (err) {
+    console.error('[summer-camps] lazy-fetch failed:', err.message);
+    insightsCache = { sections: [] };
+    return insightsCache;
+  }
 }
 
-// GET /api/summer-camps/insights — returns curated static content (no LLM cost)
-router.get('/insights', (req, res) => {
-  const data = loadInsights();
+// GET /api/summer-camps/insights — curated static content + lazy-fetch fallback
+router.get('/insights', async (req, res) => {
+  const data = await loadInsights();
   res.json({
     sections: data.sections || [],
     metadata: data.metadata || {},

@@ -5414,7 +5414,10 @@ function _k12CardHtml(s) {
   const enrollment = s.enrollment ? `${s.enrollment.toLocaleString()} students` : '';
   const ratio = s.studentTeacherRatio ? ` &middot; ${s.studentTeacherRatio}:1 ratio` : '';
   const principal = s.principal ? ` &middot; Principal: ${_esc(s.principal)}` : '';
-  const programs = (s.notablePrograms || []).slice(0,4).join(' · ');
+  // Defensive: notablePrograms can be string, array, or missing
+  let programs = '';
+  if (Array.isArray(s.notablePrograms)) programs = s.notablePrograms.slice(0,4).join(' · ');
+  else if (typeof s.notablePrograms === 'string') programs = s.notablePrograms.slice(0, 200);
   const phone = s.phone ? ` &middot; ${_esc(s.phone)}` : '';
   return `
     <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
@@ -5579,11 +5582,56 @@ async function loadSCInsights() {
     const data = await res.json();
     const sections = data.sections || [];
     if (!sections.length) { c.innerHTML = '<p style="color:#94a3b8;padding:12px;">Insights not yet loaded.</p>'; return; }
-    c.innerHTML = sections.map(_scInsightSectionHtml).join('');
+    c.innerHTML = _scTimelineHtml() + sections.map(_scInsightSectionHtml).join('');
     c.dataset.loaded = 'yes';
   } catch (e) {
     c.innerHTML = `<p style="color:#cf222e;padding:12px;">Failed to load insights: ${e.message}</p>`;
   }
+}
+
+// Visual registration timeline — horizontal bar showing key K-8 summer-camp milestones
+function _scTimelineHtml() {
+  const months = [
+    { label: 'Dec', detail: 'Member registration opens at top museums/zoos. Premium camps fill in days.', heat: 3 },
+    { label: 'Jan', detail: 'Member-window peak. Sleepaway camp registration opens (YMCA, Camp Fire).', heat: 5 },
+    { label: 'Feb', detail: 'Early Bird discount windows close (Camp Galileo etc.). Multi-week discounts stack.', heat: 5 },
+    { label: 'Mar', detail: 'General public registration opens at most Seattle-metro institution camps.', heat: 5 },
+    { label: 'Apr', detail: 'Most popular sessions full. Off-the-radar camps still open. Scholarship windows close mid-May.', heat: 4 },
+    { label: 'May', detail: 'Last-call registration. Many scholarships still being awarded. District lists publish.', heat: 3 },
+    { label: 'Jun', detail: 'Camp season begins. Cancellation lists move fast — call directly. Late sessions open.', heat: 2 },
+    { label: 'Jul', detail: 'Mid-summer. Some camps add late August sessions if demand exists.', heat: 1 },
+    { label: 'Aug', detail: 'Late-summer + back-to-school enrichment registration opens for fall.', heat: 1 },
+  ];
+  const bars = months.map(m => {
+    const intensity = Math.round(m.heat * 30 + 60); // 60-210 range for blue intensity
+    const bg = `rgb(${255-intensity}, ${255-intensity*0.4}, ${255-intensity*0.05})`;
+    return `
+      <div class="sc-timeline-month" data-detail="${_esc(m.detail)}" style="flex:1;text-align:center;padding:10px 4px;border-right:1px solid #e5e7eb;background:${bg};cursor:pointer;font-size:12px;font-weight:600;color:#1e3a8a;transition:transform 0.1s;" onmouseover="this.style.transform='scale(1.05)';this.style.zIndex=2;" onmouseout="this.style.transform='';this.style.zIndex='';">
+        ${m.label}
+      </div>`;
+  }).join('');
+  return `
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">📅 K-8 Summer Camp Calendar — when things actually happen</h3>
+      <p style="margin:0 0 10px;font-size:12px;color:#59636e;">Hover any month for the key registration / scholarship action that month.</p>
+      <div style="display:flex;border:1px solid #cfdcef;border-radius:6px;overflow:hidden;">${bars}</div>
+      <div id="scTimelineDetail" style="margin-top:10px;font-size:13px;color:#334155;min-height:40px;padding:10px 12px;background:#f6f8fa;border-radius:6px;">
+        <em>Hover a month to see the action.</em>
+      </div>
+    </div>
+    <script>
+      (function(){
+        document.querySelectorAll('.sc-timeline-month').forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            document.getElementById('scTimelineDetail').innerHTML = '<strong>' + el.textContent.trim() + ':</strong> ' + el.dataset.detail;
+          });
+          el.addEventListener('click', () => {
+            document.getElementById('scTimelineDetail').innerHTML = '<strong>' + el.textContent.trim() + ':</strong> ' + el.dataset.detail;
+          });
+        });
+      })();
+    </script>
+  `;
 }
 
 function _scInsightSectionHtml(sec) {
