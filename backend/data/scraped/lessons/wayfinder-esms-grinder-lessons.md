@@ -31,7 +31,7 @@
 - **Cloudflare-protected sites** (KidsQuest is one) block curl + WebFetch. Workaround: triangulate via search-result snippets + ACA listings + the org's social media.
 - **Squarespace sites** (Coyote Central) load content via JS — raw curl returns boilerplate. Same workaround.
 - **Heavy WordPress with React/JS-rendered content** (zoo.org/education/camps/info) — curl returns mostly stylesheet boilerplate. Search snippet captured the scholarship FAQ; that was sufficient to confirm scholarship-aid policy.
-- **Re-cloning into /tmp**: the cloned tree is owned by `nobody:nogroup` and not writable by `great-brave-faraday`. Workaround: copy the tree into `/sessions/.../mnt/outputs/wayfinder-esms` (writable), do the edits + commit there, push from that copy. Add this as a permanent step.
+- **Re-cloning into /tmp**: the cloned tree is owned by `nobody:nogroup` and not writable by current sandbox user. Old workaround was to copy into `/sessions/.../mnt/outputs/wayfinder-esms`, but `cp -r` preserves nobody ownership for `.git/index` and confuses git (run 3 hit `.git/index.lock: Operation not permitted`). NEW workaround (run 3 confirmed working): clone DIRECTLY into `$HOME/wf-esms` — that path is writable by current user, `git clone` produces correctly-owned `.git` internals, no copy step needed. Use this from now on.
 - **Existing-DB collisions**: Pacific Science Center already had two entries from a pre-grinder data refresh. Dedup matched on `name+provider/organization` lowercase — caught it before adding a third. Always run the dedup loop, not just trust new candidates.
 - Watch for:
   - Pay-only camps with no scholarship aid — note the cost transparently, don't filter out
