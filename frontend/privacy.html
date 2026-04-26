@@ -462,10 +462,22 @@
                 </ul>
 
                 <h3>Data Encryption</h3>
-                <p>We protect your data in multiple ways:</p>
+                <p>We protect your data in multiple layers:</p>
                 <ul>
-                    <li><strong>In Transit:</strong> All data transmitted between your device and our servers is encrypted using SSL/TLS protocols (HTTPS)</li>
-                    <li><strong>At Rest:</strong> Passwords are hashed using bcrypt. Sensitive data stored on our servers benefits from infrastructure-level encryption provided by our hosting provider (Render). We are continuously working to enhance at-rest encryption for all stored data as the platform evolves.</li>
+                    <li><strong>In Transit:</strong> All traffic between your device and wayfinderai.org is encrypted with TLS (HTTPS), using a certificate auto-managed by Render and renewed continuously.</li>
+                    <li><strong>At Rest &mdash; Disk Layer:</strong> Our hosting provider, Render, encrypts the underlying persistent disk with industry-standard block-level encryption.</li>
+                    <li><strong>At Rest &mdash; Application Layer:</strong> Sensitive personal fields on user accounts (your name, school, interests, profile, freeform notes) are additionally encrypted at the application layer with AES-256-GCM (authenticated encryption with random per-record IVs) using a key held only by the running service. Even if the underlying file contents were exposed, those fields would remain opaque ciphertext.</li>
+                    <li><strong>Passwords:</strong> Hashed with bcrypt at 12 rounds. Never stored, logged, or transmitted in any recoverable form. Even our administrators cannot recover your password &mdash; we can only reset it.</li>
+                    <li><strong>Backups:</strong> Daily encrypted snapshots are retained for 7 days and then automatically deleted.</li>
+                </ul>
+
+                <h3>Privacy by Design &mdash; Conversation Capture</h3>
+                <p>Your conversations with David, our AI advisor, are persisted to support continuity and to make the system smarter for everyone over time. To protect your privacy at the source:</p>
+                <ul>
+                    <li><strong>PII redaction at write time:</strong> Before any conversation is written to disk, it passes through a deterministic redactor that scrubs personally identifying information &mdash; emails, phone numbers, K-12 school names, addresses, SSN-like patterns, and contextual mentions of family members' names.</li>
+                    <li><strong>Salutation scrub:</strong> Any mention of your profile name in the AI's responses (e.g. greetings) is also scrubbed before persistence.</li>
+                    <li><strong>Weekly automated audit:</strong> A scheduled audit re-reviews recent captures using a separate review pass, catching anything the deterministic redactor missed and patching it in place.</li>
+                    <li><strong>What is not redacted:</strong> Public entities like college names (Stanford, MIT), companies, courses (AP Calculus, SAT), and broad geographic regions stay intact &mdash; they are the topics of conversation, not personal identifiers.</li>
                 </ul>
 
                 <h3>Conversation Data</h3>
@@ -483,11 +495,13 @@
                 <h3>Security Measures</h3>
                 <p>We implement multiple security measures to protect your information:</p>
                 <ul>
-                    <li>Regular security audits and penetration testing</li>
-                    <li>Firewalls and intrusion detection systems</li>
-                    <li>Access controls limiting who can view your data</li>
-                    <li>Regular software updates and security patches</li>
-                    <li>Employee training on data protection and privacy</li>
+                    <li><strong>Daily automated security audits</strong> &mdash; rotating focus areas (auth, data integrity, code quality, performance, UX, API surface). Findings logged to AUDIT_LOG.md, fixes auto-committed.</li>
+                    <li><strong>Daily holistic system audit</strong> &mdash; independent review of the entire codebase looking for vulnerabilities, regressions, or weaknesses.</li>
+                    <li><strong>Input injection filter (SS-01)</strong> &mdash; every user message passes through a regex + keyword filter before reaching any model. Known prompt injection patterns are blocked with a hardcoded refusal &mdash; the model never sees them.</li>
+                    <li><strong>Scope classifier (SS-04)</strong> &mdash; out-of-scope queries (medical, legal, financial product advice) get a hardcoded refusal with zero AI generation, eliminating both cost and the risk of off-topic responses.</li>
+                    <li><strong>Rate limiting</strong> &mdash; per-user and per-IP caps to prevent abuse, with a hard daily ceiling on anonymous traffic.</li>
+                    <li><strong>Admin access</strong> &mdash; restricted to a small allowlist, gated by token authentication and a separate internal-task token for scheduled automation.</li>
+                    <li><strong>Atomic file writes</strong> &mdash; all data writes use temp-file-then-rename to prevent corruption from concurrent or interrupted writes.</li>
                 </ul>
             </section>
 
@@ -875,7 +889,7 @@
                     <p>Thank you for using Wayfinder to plan your career journey.</p>
                 </div>
                 <div class="last-updated">
-                    Last Updated: March 2026
+                    Last Updated: April 25, 2026
                 </div>
             </footer>
         </div>
