@@ -1,58 +1,368 @@
 {
-  "lastRun": "2026-04-26T14:51:18.994Z",
+  "approach": "top-50-per-state-by-enrollment",
+  "lastRun": "2026-04-26T15:08:56.976Z",
   "totalRuns": 26,
   "totalEnriched": 166,
   "totalSkipped": 70,
-  "notes": "Run 26: enriched 5 WA HS (offsets 226-233). New: Grandview HS (Derek Anderson), Granger HS (principal pending), Granite Falls HS (John Kniseley II), Crossroads HS (Bridgette Perrigoue), Granite Falls Open Doors. Skipped 3 sub-50 (Contract Learning Center 33, Step to College Open Doors 6, Harrington HS 43). Queue offset 226 -> 234.",
+  "migratedFrom": "march-through-every-offset",
+  "migratedAt": "2026-04-26T15:08:56.976Z",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 234,
-      "total": 649,
-      "status": "in_progress",
-      "note": "raw NCES offset 234 of 649; 166 cumulative grinder count"
-    },
-    {
-      "state": "WA",
-      "level": "middle",
-      "offset": 0,
-      "total": null,
-      "status": "pending"
-    },
-    {
-      "state": "WA",
-      "level": "elementary",
-      "offset": 0,
-      "total": null,
-      "status": "pending"
+      "target": 50,
+      "current": 166,
+      "status": "complete",
+      "note": "Marked complete by Dan directive 2026-04-26 — 166 enriched well past 50 target"
     },
     {
       "state": "TX",
       "level": "high",
-      "offset": 0,
-      "total": null,
-      "status": "pending"
+      "target": 50,
+      "current": 0,
+      "status": "in_progress"
     },
     {
       "state": "CA",
       "level": "high",
-      "offset": 0,
-      "total": null,
+      "target": 50,
+      "current": 0,
       "status": "pending"
     },
     {
       "state": "NY",
       "level": "high",
-      "offset": 0,
-      "total": null,
+      "target": 50,
+      "current": 0,
       "status": "pending"
     },
     {
       "state": "MI",
       "level": "high",
-      "offset": 0,
-      "total": null,
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "FL",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NJ",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "VA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "IL",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "PA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NC",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "GA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "OH",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "AZ",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "CO",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MD",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "OR",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "CT",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "IN",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "AL",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "AK",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "AR",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "DE",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "DC",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "HI",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "ID",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "IA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "KS",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "KY",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "LA",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "ME",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MN",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MS",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MO",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "MT",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NE",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NV",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NH",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "NM",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "ND",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "OK",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "RI",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "SC",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "SD",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "TN",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "UT",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "VT",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "WV",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "WI",
+      "level": "high",
+      "target": 50,
+      "current": 0,
+      "status": "pending"
+    },
+    {
+      "state": "WY",
+      "level": "high",
+      "target": 50,
+      "current": 0,
       "status": "pending"
     }
   ]
