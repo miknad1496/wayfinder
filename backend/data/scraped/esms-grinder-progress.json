@@ -1,108 +1,27 @@
 {
-  "lastRun": "2026-04-26T16:54:29Z",
-  "totalRuns": 4,
-  "totalAdded": 18,
+  "lastRun": "2026-04-26T17:05:00Z",
+  "totalRuns": 3,
+  "totalAdded": 16,
   "queue": [
-    {
-      "focus": "WA",
-      "target": 30,
-      "current": 18,
-      "status": "in_progress",
-      "metros": [
-        "Seattle",
-        "Bellevue",
-        "Eastside",
-        "Tacoma",
-        "Spokane",
-        "Vancouver"
-      ],
-      "metrosUsed": [
-        "Bainbridge Island",
-        "Bellevue",
-        "Bellingham",
-        "Olympia",
-        "Orcas Island",
-        "Seattle",
-        "Tacoma",
-        "Vancouver",
-        "Vashon",
-        "Everett",
-        "Stanwood"
-      ]
-    },
-    {
-      "focus": "CA",
-      "target": 20,
-      "current": 0,
-      "status": "pending",
-      "metros": [
-        "Bay Area",
-        "Los Angeles",
-        "San Diego",
-        "Sacramento"
-      ]
-    },
-    {
-      "focus": "TX",
-      "target": 15,
-      "current": 0,
-      "status": "pending",
-      "metros": [
-        "Houston",
-        "Austin",
-        "Dallas",
-        "San Antonio"
-      ]
-    },
-    {
-      "focus": "NY",
-      "target": 15,
-      "current": 0,
-      "status": "pending",
-      "metros": [
-        "NYC",
-        "Long Island",
-        "Westchester",
-        "Buffalo"
-      ]
-    },
-    {
-      "focus": "MI",
-      "target": 10,
-      "current": 0,
-      "status": "pending",
-      "metros": [
-        "Detroit Metro",
-        "Ann Arbor",
-        "Grand Rapids"
-      ]
-    },
-    {
-      "focus": "MA",
-      "target": 10,
-      "current": 0,
-      "status": "pending",
-      "metros": [
-        "Boston",
-        "Cambridge",
-        "Worcester"
-      ]
-    },
-    {
-      "focus": "national-anchors",
-      "target": 25,
-      "current": 0,
-      "status": "pending",
-      "themes": [
-        "YMCA / Camp Fire / BGCA national programs",
-        "iD Tech university circuit",
-        "Camp Invention national network",
-        "Galileo Learning expansion sites",
-        "JHU CTY / Northwestern CTD / Duke TIP-equivalents",
-        "national arts/music/theater intensive networks",
-        "STEM Olympiad summer training programs",
-        "national religious/scout summer camps"
-      ]
-    }
+    {"focus": "WA", "target": 30, "current": 16, "status": "in_progress",
+     "metros": ["Seattle", "Bellevue", "Eastside", "Tacoma", "Spokane", "Vancouver"],
+     "metrosUsed": ["Seattle", "Bellevue", "Vashon", "Orcas Island", "Tacoma", "Bellingham", "Olympia", "Bainbridge Island"]},
+    {"focus": "CA", "target": 20, "current": 0, "status": "pending",
+     "metros": ["Bay Area", "Los Angeles", "San Diego", "Sacramento"]},
+    {"focus": "TX", "target": 15, "current": 0, "status": "pending",
+     "metros": ["Houston", "Austin", "Dallas", "San Antonio"]},
+    {"focus": "NY", "target": 15, "current": 0, "status": "pending",
+     "metros": ["NYC", "Long Island", "Westchester", "Buffalo"]},
+    {"focus": "MI", "target": 10, "current": 0, "status": "pending",
+     "metros": ["Detroit Metro", "Ann Arbor", "Grand Rapids"]},
+    {"focus": "MA", "target": 10, "current": 0, "status": "pending",
+     "metros": ["Boston", "Cambridge", "Worcester"]},
+    {"focus": "national-anchors", "target": 25, "current": 0, "status": "pending",
+     "themes": ["YMCA / Camp Fire / BGCA national programs", "iD Tech university circuit",
+                "Camp Invention national network", "Galileo Learning expansion sites",
+                "JHU CTY / Northwestern CTD / Duke TIP-equivalents",
+                "national arts/music/theater intensive networks",
+                "STEM Olympiad summer training programs",
+                "national religious/scout summer camps"]}
   ]
 }

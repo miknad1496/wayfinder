@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 844,
+    "totalCount": 842,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -50,7 +50,7 @@
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
     "lastUpdated": "2026-04-26",
-    "totalPrograms": 842,
+    "totalPrograms": 831,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
@@ -36397,15 +36397,145 @@
       "_source": "https://www.pdza.org/summer-camps/"
     },
     {
+      "name": "Whatcom Family YMCA Discovery Camp",
+      "provider": "Whatcom Family YMCA",
+      "category": "academic-enrichment",
+      "subcategory": "themed-day-camp",
+      "type": "summer",
+      "cost": {
+        "amount": 355,
+        "type": "paid",
+        "display": "$355/week (Y member) | $405/week (community); $25 deposit per week"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellingham",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Registration opened Feb 2, 2026; sessions fill spring",
+      "description": "Weeklong themed day camps for youth entering grades 1-5 in Fall 2026, run by the Whatcom Family YMCA in Bellingham. Ten weekly themes from June 15 through August 21, 2026, including Extreme Earth, Grossology, Ocean Odyssey, Maker Mania, Weather Wizards, Space Explorers, Arctic Adventures, Secret Agents Academy, Glow Lab, and Art Attack Studio. Tuition $355/week for Y members or $405/week community, with a $25 non-refundable deposit per week. The Y provides financial assistance and a sliding fee schedule; families request aid via the online form and staff respond within 3-5 business days.",
+      "url": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
+      "tags": [
+        "summer-camp",
+        "ymca",
+        "stem",
+        "themed",
+        "bellingham",
+        "whatcom",
+        "elementary",
+        "sliding-scale"
+      ],
+      "duration": "1 week per session, 10 sessions total",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Bellingham/Whatcom",
+      "ages": "6-11",
+      "dates": "June 15 - August 21, 2026 (weekly sessions)",
+      "scholarshipAid": "Available \u2014 financial assistance and sliding fee schedule via Whatcom Y form",
+      "registrationUrl": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
+      "howToStart": "Register at whatcomymca.org/camps-summer-programs/Discovery-Camp. Email registrar@whatcomymca.org or call (360) 255-0585. Financial aid request form linked on page.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp"
+    },
+    {
+      "name": "Music Works Northwest Summer Music Camps",
+      "provider": "Music Works Northwest",
+      "category": "arts",
+      "subcategory": "music",
+      "type": "summer",
+      "cost": {
+        "amount": 330,
+        "type": "paid",
+        "display": "$330-$530 per session depending on length and program"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling \u2014 sessions fill spring",
+      "description": "Summer music camps at Music Works Northwest in Bellevue for ages 4-16, including Gotta Sing! Voice Camp (ages 4-6), a musical-theater camp for ages 6-9, I Love Music Camp themed weeks, and Electronic Music Creation using Reason software (ages 12-16). Sessions run 9:30am-3:30pm with tuition ranging from $330 (3-day) to $530 (full week). Music Works Northwest welcomes students of all abilities including neurodivergent learners; families needing accommodations are asked to inform staff before registration.",
+      "url": "https://www.musicworksnw.org/summer-camps",
+      "tags": [
+        "summer-camp",
+        "music",
+        "voice",
+        "theater",
+        "electronic-music",
+        "bellevue",
+        "eastside",
+        "arts",
+        "neurodivergent-friendly"
+      ],
+      "duration": "3-5 days per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Eastside",
+      "ages": "4-16",
+      "dates": "June 22-26, 2026 ($530, full week); June 29-July 1, 2026 ($330, 3-day); additional sessions through summer",
+      "scholarshipAid": "Tuition assistance available \u2014 see registration page",
+      "registrationUrl": "https://www.musicworksnw.org/summer-camps",
+      "howToStart": "Register at musicworksnw.org/summer-camps. Notify staff before registering if accommodations are needed.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.musicworksnw.org/summer-camps"
+    },
+    {
       "name": "Hands On Children's Museum Summer Camps",
       "provider": "Hands On Children's Museum",
       "category": "academic-enrichment",
-      "subcategory": "play-based-learning",
+      "subcategory": "stem-discovery",
       "type": "summer",
       "cost": {
         "amount": null,
         "type": "paid",
-        "display": "Varies by session \u2014 non-refundable deposit $25 (half-day) or $50 (full-day) per session"
+        "display": "Varies \u2014 $25 non-refundable per half-day, $50 per full-day camp deposit; remaining tuition refundable 2+ weeks prior"
       },
       "selectivity": "open",
       "admissionsImpact": "low",
@@ -36427,34 +36557,35 @@
           "WA"
         ]
       },
-      "deadline": "Rolling \u2014 early registration recommended",
-      "description": "Weeklong half-day and full-day summer camps at Hands On Children's Museum in Olympia for ages 3-9, with a Counselor in Training program for ages 10-13. Themes include art, nature, science, and cooking. Note: 2026 per-session tuition not published on the landing page; confirm directly with reservations@hocm.org or (360) 956-0818 ext. 103.",
+      "deadline": "Rolling \u2014 registration confirms with full payment; required forms due 2 weeks before camp",
+      "description": "Half-day and full-day summer camps at the Hands On Children's Museum on the Olympia waterfront for ages 3-9 (5-year-olds must have completed kindergarten). Hands-on STEAM and discovery programming through the museum's exhibits and waterfront trail. Note: 2026 per-session tuition is not posted on the landing page \u2014 call (360) 956-0818 ext. 103 or email reservations@hocm.org for current pricing and session list. $25 non-refundable per half-day spot / $50 per full-day spot at registration.",
       "url": "https://www.hocm.org/events-programs/camps/summer-camps-2026/",
       "tags": [
         "summer-camp",
-        "stem",
-        "arts",
-        "play-based",
+        "children-museum",
+        "steam",
         "olympia",
-        "elementary",
-        "thurston-county"
+        "thurston",
+        "early-childhood",
+        "elementary"
       ],
-      "duration": "1 week per session",
+      "duration": "Half-day or full-day weekly sessions",
       "region": "Pacific Northwest",
       "scope": "local",
       "states": [
         "WA"
       ],
-      "subregion": "South Sound / Olympia",
-      "ages": "3-13",
-      "dates": "Summer 2026 \u2014 weekly sessions June through August",
-      "scholarshipAid": "Not advertised on landing page",
+      "subregion": "Olympia/Thurston",
+      "ages": "3-9",
+      "dates": "Summer 2026 \u2014 sessions throughout June, July, August",
+      "scholarshipAid": "Not specified on landing page \u2014 inquire with reservations@hocm.org",
       "registrationUrl": "https://www.hocm.org/events-programs/camps/summer-camps-2026/",
-      "howToStart": "Visit hocm.org/events-programs/camps/summer-camps-2026 to browse weekly themes; contact reservations@hocm.org for tuition rates.",
+      "howToStart": "Call (360) 956-0818 ext. 103 or email reservations@hocm.org. Full payment required to register; required forms due 2 weeks before camp.",
       "confidence": "medium",
       "_unverifiedFields": [
         "cost",
-        "scholarshipAid"
+        "scholarshipAid",
+        "specific dates"
       ],
       "_addedBy": "esms-grinder",
       "_verified": true,
@@ -36462,148 +36593,18 @@
       "_source": "https://www.hocm.org/events-programs/camps/summer-camps-2026/"
     },
     {
-      "name": "Whatcom Family YMCA Discovery Day Camp",
-      "provider": "Whatcom Family YMCA",
-      "category": "academic-enrichment",
-      "subcategory": "outdoor-stem",
-      "type": "summer",
-      "cost": {
-        "amount": null,
-        "type": "paid",
-        "display": "Member and non-member rates; sliding fee schedule available; $25/week deposit at registration"
-      },
-      "selectivity": "open",
-      "admissionsImpact": "low",
-      "format": "in-person",
-      "location": {
-        "city": "Bellingham",
-        "state": "WA"
-      },
-      "eligibility": {
-        "grades": [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
-        ],
-        "states": [
-          "WA"
-        ]
-      },
-      "deadline": "Rolling \u2014 payments drafted Monday two weeks before each session",
-      "description": "Weeklong summer day camp at the Whatcom Family YMCA in Bellingham for kids entering 1st-5th grade in fall 2026. Sister programs include Outdoor Day Camp (entering 2nd-5th, transported to Gordon Carter Conservation Site), Sports & Swim Camp, and Back to School Camp. Programming runs 9am-4pm with 7:30am-9am and 4pm-6pm extended care. Sliding fee schedule and approved childcare subsidies (state and local assistance) are accepted. Note: 2026 weekly tuition rates not on landing page; confirm with registrar@whatcomymca.org or (360) 255-0585.",
-      "url": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
-      "tags": [
-        "summer-camp",
-        "ymca",
-        "outdoor",
-        "stem",
-        "arts",
-        "bellingham",
-        "elementary",
-        "whatcom-county",
-        "scholarship-aid"
-      ],
-      "duration": "1 week per session, multiple sessions June 15 - August 28, 2026",
-      "region": "Pacific Northwest",
-      "scope": "local",
-      "states": [
-        "WA"
-      ],
-      "subregion": "Bellingham / Whatcom County",
-      "ages": "6-11",
-      "dates": "11 weekly sessions, June 15 - August 28, 2026",
-      "scholarshipAid": "Available \u2014 sliding fee schedule + state/local childcare subsidies accepted",
-      "registrationUrl": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp",
-      "howToStart": "Visit whatcomymca.org/camps-summer-programs/Discovery-Camp to register; contact registrar@whatcomymca.org for tuition specifics.",
-      "confidence": "medium",
-      "_unverifiedFields": [
-        "cost"
-      ],
-      "_addedBy": "esms-grinder",
-      "_verified": true,
-      "_verifiedDate": "2026-04-26",
-      "_source": "https://www.whatcomymca.org/camps-summer-programs/Discovery-Camp"
-    },
-    {
-      "name": "Music Works Northwest Summer Music Camps",
-      "provider": "Music Works Northwest",
-      "category": "arts",
-      "subcategory": "music",
-      "type": "summer",
-      "cost": {
-        "amount": 530,
-        "type": "paid",
-        "display": "$330-$530 per camp depending on length"
-      },
-      "selectivity": "open",
-      "admissionsImpact": "low",
-      "format": "in-person",
-      "location": {
-        "city": "Bellevue",
-        "state": "WA"
-      },
-      "eligibility": {
-        "grades": [
-          "Pre-K",
-          "K",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
-        ],
-        "states": [
-          "WA"
-        ]
-      },
-      "deadline": "Rolling \u2014 sessions fill spring",
-      "description": "Music camps at Music Works Northwest, a 60-year nonprofit community music school in Bellevue. 2026 offerings include Creative Keyboards Piano Camp (ages 4-6, June 29-July 1), I Love Music Camp (ages 6-10, July 6-10), Gotta Sing! Voice Camp (ages 4-6, July 6-10), and Pop Star Camp (ages 4-6, July 13-17), among others. Weekly camps run 9:30am-3:30pm and end with a Friday performance for family. Welcomes neurodivergent students. Tuition discounts and scholarships available.",
-      "url": "https://www.musicworksnw.org/summer-camps",
-      "tags": [
-        "summer-camp",
-        "music",
-        "voice",
-        "piano",
-        "performance",
-        "arts",
-        "bellevue",
-        "eastside",
-        "elementary",
-        "neurodivergent-friendly"
-      ],
-      "duration": "3-5 days per session",
-      "region": "Pacific Northwest",
-      "scope": "local",
-      "states": [
-        "WA"
-      ],
-      "subregion": "Eastside",
-      "ages": "4-10",
-      "dates": "Sessions across June, July 2026",
-      "scholarshipAid": "Available \u2014 tuition discounts and scholarships",
-      "registrationUrl": "https://www.musicworksnw.org/summer-camps",
-      "howToStart": "Browse 2026 camp lineup at musicworksnw.org/summer-camps and register online; ask about tuition discounts when applying.",
-      "confidence": "high",
-      "_addedBy": "esms-grinder",
-      "_verified": true,
-      "_verifiedDate": "2026-04-26",
-      "_source": "https://www.musicworksnw.org/summer-camps"
-    },
-    {
       "name": "IslandWood Outdoor Summer Day Camps",
       "provider": "IslandWood",
-      "category": "outdoor-environmental",
-      "subcategory": "nature-science",
+      "category": "outdoor",
+      "subcategory": "environmental-education",
       "type": "summer",
       "cost": {
-        "amount": null,
+        "amount": 346,
         "type": "paid",
-        "display": "Per-session tuition + $100 processing fee per camp; see registration page"
+        "display": "$346 (Garden Explorers Pre-K/K, half-day) to ~$474+ (full-day, 1st-8th grade); $100 non-refundable processing fee; aftercare $25/day"
       },
       "selectivity": "open",
-      "admissionsImpact": "low",
+      "admissionsImpact": "medium",
       "format": "in-person",
       "location": {
         "city": "Bainbridge Island",
@@ -36618,24 +36619,89 @@
           "3",
           "4",
           "5",
-          "6"
+          "6",
+          "7",
+          "8"
         ],
         "states": [
           "WA"
         ]
       },
-      "deadline": "Rolling \u2014 sessions fill spring",
-      "description": "Outdoor day camps on IslandWood's 255-acre Bainbridge Island campus and at the Brightwater Education Center in Woodinville. Full-day camps (9:00am-3:30pm) for campers entering 1st-6th grade; half-day camps (9:00am-12:00pm) for entering Pre-K and Kindergarten. Camp lineup includes marine science, cooking, art, Outdoor Adventures, and Wilderness Survival Skills. Sessions run from the last week of June through the first week of August (Mon-Fri; Friday July 3 closure). Note: 2026 financial-assistance funds have been fully allocated; per-session tuition not in search snippets \u2014 see registration page.",
+      "deadline": "Rolling \u2014 financial assistance funds for summer 2026 currently exhausted; waitlist available if more funds free up",
+      "description": "Outdoor summer day camps on IslandWood's 255-acre Bainbridge Island campus. Half-day camps for Pre-K and Kindergarten (Garden Explorers, $346) and full-day camps for grades 1-8 covering marine science, building/engineering (Builder's Quest, $474 for 1st-2nd), cooking, and art. Processing fee $100 per camp non-refundable. Aftercare available at $25/day with afternoon snack. Financial assistance: 2026 funds are currently fully allocated, but IslandWood holds spots for financial-aid families and will reach out if more funds become available; submit interest via the financial assistance form.",
       "url": "https://islandwood.org/outdoor-summer-day-camps-2026/",
       "tags": [
         "summer-camp",
         "outdoor",
+        "environmental",
         "nature",
-        "science",
-        "marine",
-        "wilderness",
-        "bainbridge-island",
-        "kitsap",
+        "marine-science",
+        "bainbridge",
+        "elementary",
+        "middle-school"
+      ],
+      "duration": "Weeklong half-day or full-day sessions",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Bainbridge Island/Kitsap",
+      "ages": "4-13",
+      "dates": "Summer 2026 \u2014 multiple weekly sessions",
+      "scholarshipAid": "Limited \u2014 2026 funds currently fully allocated; waitlist via financial assistance form",
+      "registrationUrl": "https://islandwood.org/outdoor-summer-day-camps-2026/",
+      "howToStart": "Register at islandwood.org/outdoor-summer-day-camps-2026. If financial assistance is needed, fill the linked form for the waitlist. Call 206-855-4300 with questions.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/"
+    },
+    {
+      "name": "Bellevue Youth Symphony Orchestra Summer Music Camps",
+      "provider": "Bellevue Youth Symphony Orchestra",
+      "category": "arts",
+      "subcategory": "music-performance",
+      "type": "summer",
+      "cost": {
+        "amount": 550,
+        "type": "paid",
+        "display": "Summer Strings $550 | Summer Symphony $600 | Summer Music Institute (advanced) varies \u2014 tuition includes daily snack, T-shirt, water bottle, music folder"
+      },
+      "selectivity": "moderate",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Registration closes May 31, 2026 (currently waitlist-only for some sessions)",
+      "description": "Summer string and symphony camps from Bellevue Youth Symphony Orchestra (BYSO) for elementary and middle school instrumentalists. Summer Strings (July 6-10, 2026) for grades 1-6 / ages 6-11 with at least one school year on a string instrument: $550. Summer Symphony (July 13-17, 2026) for grades 4-8 / ages 10-14 playing strings, woodwinds, brass, or percussion in a school band/orchestra and able to read music: $600. A separate Summer Music Institute is offered for ages 14+. Camps run Mon-Fri 9am-3pm with culminating final-day concerts. Financial aid is available and BYSO commits to meeting 100% of all requested tuition assistance.",
+      "url": "https://www.byso.org/2026-summer-music/",
+      "tags": [
+        "summer-camp",
+        "music",
+        "orchestra",
+        "strings",
+        "band",
+        "bellevue",
+        "eastside",
         "elementary",
         "middle-school"
       ],
@@ -36645,216 +36711,17 @@
       "states": [
         "WA"
       ],
-      "subregion": "Kitsap / Bainbridge",
-      "ages": "4-12",
-      "dates": "Last week of June through first week of August 2026",
-      "scholarshipAid": "Not available for 2026 \u2014 funds exhausted",
-      "registrationUrl": "https://islandwood.org/outdoor-summer-day-camps-2026/",
-      "howToStart": "Register at islandwood.org/outdoor-summer-day-camps-2026; contact info@islandwood.org or (206) 855-4300 for tuition.",
-      "confidence": "medium",
-      "_unverifiedFields": [
-        "cost"
-      ],
-      "_addedBy": "esms-grinder",
-      "_verified": true,
-      "_verifiedDate": "2026-04-26",
-      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/"
-    },
-    {
-      "name": "GeoGirls Mount St. Helens Geology & Tech Camp",
-      "provider": "Mount St. Helens Institute",
-      "category": "stem",
-      "subcategory": "earth-science",
-      "type": "summer",
-      "cost": {
-        "amount": 0,
-        "type": "free",
-        "display": "Free \u2014 fully donor-funded"
-      },
-      "selectivity": "competitive",
-      "admissionsImpact": "medium",
-      "format": "in-person",
-      "location": {
-        "city": "Vancouver",
-        "state": "WA"
-      },
-      "eligibility": {
-        "grades": [
-          "7",
-          "8"
-        ],
-        "states": [
-          "WA",
-          "OR"
-        ],
-        "gender": "girls (cis and transgender)"
-      },
-      "deadline": "Applications open January each year \u2014 2026 cycle CLOSED, applications for 2027 open January 2027",
-      "description": "Free 5-day overnight geology and technology field camp at Mount St. Helens for girls (cis and transgender) graduating from 7th and 8th grade in Washington and Oregon. Campers explore volcano science, geologic hazards, and ecology with USGS scientists, Mount St. Helens Institute educators, and university researchers. 2026 dates: Aug 3-7. Pickup/drop-off at the Cascades Volcano Observatory in Vancouver, WA. Applications require a Teacher Recommendation Form; selection is based on interest in science, social/financial need, and program fit. Recurring annually since 2015.",
-      "url": "https://www.mshinstitute.org/geogirls",
-      "tags": [
-        "summer-camp",
-        "stem",
-        "geology",
-        "earth-science",
-        "volcano",
-        "girls-only",
-        "vancouver-wa",
-        "free",
-        "middle-school",
-        "competitive"
-      ],
-      "duration": "5 days residential",
-      "region": "Pacific Northwest",
-      "scope": "regional",
-      "states": [
-        "WA",
-        "OR"
-      ],
-      "subregion": "Southwest WA / Portland Metro",
-      "ages": "12-14 (entering 8th-9th grade)",
-      "dates": "August 3-7, 2026",
-      "scholarshipAid": "N/A \u2014 program is fully free",
-      "registrationUrl": "https://www.mshinstitute.org/learn/for-parents/geogirls/geogirl-apply.html",
-      "howToStart": "Watch mshinstitute.org/geogirls for January application opening; complete student application + Teacher Recommendation Form. Contact learn@mshinstitute.org with questions.",
+      "subregion": "Eastside",
+      "ages": "6-14 (ES/MS-relevant tracks); separate SMI for 14+",
+      "dates": "Summer Strings July 6-10, 2026 | Summer Symphony July 13-17, 2026 | SMI July 20-24, 2026",
+      "scholarshipAid": "Available \u2014 BYSO commits to meeting 100% of all requested tuition assistance",
+      "registrationUrl": "https://www.byso.org/2026-summer-music/",
+      "howToStart": "Register at byso.org/2026-summer-music. Email campdirector@byso.org with questions or musicdirector@byso.org for camp-fit advice. Tuition assistance via BYSO's Charlotte Field Scholarship.",
       "confidence": "high",
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.mshinstitute.org/geogirls"
-    },
-    {
-      "name": "Imagine Children's Museum Summer Camps",
-      "provider": "Imagine Children's Museum",
-      "organization": "Imagine Children's Museum",
-      "category": "academic-enrichment",
-      "subcategory": "stem-arts-children",
-      "type": "summer",
-      "cost": {
-        "amount": null,
-        "type": "paid",
-        "display": "Varies \u2014 see registration page (Extended Play available for full-day camps)"
-      },
-      "selectivity": "open",
-      "admissionsImpact": "low",
-      "format": "in-person",
-      "location": {
-        "city": "Everett",
-        "state": "WA"
-      },
-      "eligibility": {
-        "grades": [
-          "Pre-K",
-          "K",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7"
-        ],
-        "states": [
-          "WA"
-        ]
-      },
-      "ages": "4-12",
-      "dates": "10 weeks of camps starting week of June 22, 2026 through August 24, 2026",
-      "deadline": "Rolling weekly registration",
-      "scope": "local",
-      "states": [
-        "WA"
-      ],
-      "subregion": "Snohomish County",
-      "scholarshipAid": "Not advertised on landing page \u2014 contact education@imaginecm.org",
-      "description": "Imagine Children's Museum in Everett offers 10 weeks of themed summer camps with three age tiers: Preschool (ages 4-5, half-day 9 AM-12 PM), Elementary (ages 6-8, full-day 9 AM-3 PM), and Tweens (ages 9-12, full-day 9 AM-3 PM). Camps run Monday-Friday at the museum or Evergreen Arboretum and span themes from pirate adventures and engineering to nature, robotics, and makerspace work. Optional Extended Play extends drop-off/pickup hours for full-day campers. Note: per-camp tuition not published on the landing page; confirm directly with the organization.",
-      "registrationUrl": "https://www.imaginecm.org/summer-camps/",
-      "url": "https://www.imaginecm.org/summer-camps/",
-      "howToStart": "Register at imaginecm.org/summer-camps. Email education@imaginecm.org for age exceptions or pricing details.",
-      "tags": [
-        "summer-camp",
-        "children",
-        "museum",
-        "stem",
-        "arts",
-        "everett",
-        "wa"
-      ],
-      "_source": "https://www.imaginecm.org/summer-camps/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-26",
-      "confidence": "medium",
-      "_unverifiedFields": [
-        "cost",
-        "scholarshipAid"
-      ],
-      "_addedBy": "esms-grinder"
-    },
-    {
-      "name": "Camp Killoqua Day Camp & Resident Camp",
-      "provider": "Camp Fire Snohomish County",
-      "organization": "Camp Fire Snohomish County (Camp Killoqua)",
-      "category": "academic-enrichment",
-      "subcategory": "outdoor-residential",
-      "type": "summer",
-      "cost": {
-        "amount": null,
-        "type": "paid",
-        "display": "Varies by session \u2014 see registration page; financial assistance first-come, first-served"
-      },
-      "selectivity": "open",
-      "admissionsImpact": "low",
-      "format": "in-person",
-      "location": {
-        "city": "Stanwood",
-        "state": "WA"
-      },
-      "eligibility": {
-        "grades": [
-          "Pre-K",
-          "K",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8"
-        ],
-        "states": [
-          "WA"
-        ]
-      },
-      "ages": "3-14",
-      "dates": "Multiple weekly day-camp sessions and overnight sessions through summer 2026",
-      "deadline": "Rolling registration; financial assistance first-come first-served",
-      "scope": "regional",
-      "states": [
-        "WA"
-      ],
-      "subregion": "Snohomish County / Stanwood",
-      "scholarshipAid": "Available \u2014 first come, first served basis",
-      "description": "Camp Killoqua is the 185-acre summer camp owned and operated by Camp Fire Snohomish County in Stanwood, WA (15207 E Lake Goodwin Rd). Day Camp runs grades K-8 (9 AM-4 PM, with extended hours 7:30-9:00 AM and 4:00-5:30 PM), with Preschool Day Camp (ages 3-5, 9 AM-12 PM) offered in select sessions. Overnight Resident Camp serves grades 4-8. Bus transportation available for day camp (not preschool). The CIT 1 leadership program serves campers entering 11th grade in fall 2026. Long-running Camp Fire affiliate camp. Note: per-session tuition not published on the landing page; confirm directly with the organization.",
-      "registrationUrl": "https://campkilloqua.org/programs/",
-      "url": "https://campkilloqua.org/",
-      "howToStart": "Register at campkilloqua.org/registration-information or call (360) 652-6250. Apply for financial assistance early.",
-      "tags": [
-        "summer-camp",
-        "camp-fire",
-        "outdoor",
-        "residential",
-        "stanwood",
-        "wa"
-      ],
-      "_source": "https://campkilloqua.org/programs/",
-      "_verified": true,
-      "_verifiedDate": "2026-04-26",
-      "confidence": "medium",
-      "_unverifiedFields": [
-        "cost"
-      ],
-      "_addedBy": "esms-grinder"
+      "_source": "https://www.byso.org/2026-summer-music/"
     }
   ]
 }
