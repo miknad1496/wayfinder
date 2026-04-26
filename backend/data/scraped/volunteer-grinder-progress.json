@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-04-26T14:44:45+00:00",
-  "totalRuns": 16,
-  "totalAdded": 77,
+  "lastRun": "2026-04-26T14:55:00+00:00",
+  "totalRuns": 17,
+  "totalAdded": 82,
   "queue": [
     {
       "focus": "WA",
@@ -67,8 +67,8 @@
     {
       "focus": "MA",
       "target": 8,
-      "current": 3,
-      "status": "in_progress",
+      "current": 8,
+      "status": "complete",
       "metros": [
         "Boston",
         "Cambridge",

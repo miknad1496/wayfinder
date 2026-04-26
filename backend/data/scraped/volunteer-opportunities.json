@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-26",
-    "totalCount": 152,
+    "totalCount": 157,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design \u2014 they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -23,6 +23,7 @@
       "Best Buddies International",
       "Big Brothers Big Sisters",
       "Birch Aquarium at Scripps",
+      "Boston Public Library",
       "Boys & Girls Clubs",
       "Brooklyn Botanic Garden",
       "Brooklyn Public Library",
@@ -32,7 +33,9 @@
       "Central Texas Food Bank",
       "Children's Hospital Los Angeles (CHLA)",
       "City Harvest",
+      "Coalition for the Homeless (NYC)",
       "Columbia Springs",
+      "Cradles to Crayons",
       "Crisis Text Line",
       "Dallas Public Library",
       "Dallas Zoo",
@@ -42,6 +45,7 @@
       "Fort Vancouver Regional Libraries",
       "Friends of the Urban Forest",
       "GLIDE",
+      "Greater Boston Food Bank",
       "Greentrike (Children's Museum of Tacoma)",
       "Habitat for Humanity",
       "Hopelink",
@@ -55,19 +59,24 @@
       "LifeWire",
       "Los Angeles Public Library",
       "Los Angeles Regional Food Bank",
+      "MSPCA-Angell",
       "Make-A-Wish",
       "Mary Bridge Children's Hospital (MultiCare)",
       "Mobius Discovery Center",
+      "Museum of Science Boston",
       "NAMI",
       "NCASA",
       "NHPCO",
       "NPS Volunteers-In-Parks",
+      "New England Aquarium",
       "New York Botanical Garden",
+      "New York Cares",
       "New York Public Library",
       "North Texas Food Bank",
       "Operation Warm",
       "PATH International",
       "Perot Museum of Nature and Science",
+      "Pine Street Inn",
       "Point Defiance Zoo & Aquarium",
       "Project Open Hand",
       "Queens Public Library",
@@ -96,11 +105,7 @@
       "Wildlife Conservation Society (Bronx Zoo / Discovery Guide)",
       "YMCA",
       "YWCA Clark County",
-      "Coalition for the Homeless (NYC)",
-      "New York Cares",
-      "Greater Boston Food Bank",
-      "Zoo New England",
-      "MSPCA-Angell"
+      "Zoo New England"
     ],
     "categories": {
       "health": "Health & Medical",
@@ -4695,6 +4700,166 @@
       "collegeAppValue": "high",
       "howToStart": "Boston: visit mspca.org/animal_care/frequently-asked-questions-boston-mspca-volunteer-program/ to apply (16+; MA Youth Work Permit for 16-17). Nevins Farm Junior Volunteer (11-15): apply via mspca.org/adoption-centers/nevins-farm-adoption-center/humane-education-programs-at-nevins-farm/junior-volunteer-program/.",
       "_source": "https://www.mspca.org/animal_care/frequently-asked-questions-boston-mspca-volunteer-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Boston Public Library Teen Volunteer Program",
+      "organization": "Boston Public Library (BPL)",
+      "description": "Boston Public Library's flagship teen volunteer program, open to teens in grades 9-12 across 10 BPL sites (Central Library Teen Central + Children's Library, Brighton, Codman Square, Connolly, Grove Hall, Hyde Park, Mattapan, Roslindale, Shaw-Roxbury, West Roxbury). Teens learn customer service and library systems while assisting branch programs. The program runs year-round in fall (September-December) and spring (January-June), with optional skill-building Monday Zoom workshops (book review writing, BiblioCommons, etc.). Develops job-readiness skills.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Boston",
+      "categories": [
+        "education",
+        "leadership",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "customer service",
+        "library systems literacy",
+        "program facilitation",
+        "communication"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at bpl.org/teen-volunteer-program/. Open to all teens in grades 9-12. Volunteer for one semester (fall, spring, or summer) or year-round across 10 BPL sites. Contact Agneris Lopez at volunteer@bpl.org or 617.859.2304.",
+      "_source": "https://www.bpl.org/teen-volunteer-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Museum of Science, Boston \u2014 Youth Volunteers + Classic Volunteers",
+      "organization": "Museum of Science, Boston (MOS)",
+      "description": "Two-tier volunteer program at one of the largest science museums in the U.S. (Boston's Charles River campus, 700+ exhibits). Youth Volunteers are high-school-age (14-19) and assist exhibit floor educators, public programs, and Live Animal Care Center support. Classic Volunteers are 18+ and commit to a 4-month department-aligned tour (planetarium operations, exhibit interpretation, special events, IMAX theater, member services). Separate paid Summer Youth Internship program for 14-19-year-olds runs 7 weeks with weekly professional-development workshops and department projects.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Boston",
+      "categories": [
+        "education",
+        "leadership",
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "STEM communication",
+        "public-facing interpretation",
+        "specimen and animal handling",
+        "guest experience",
+        "professional skills"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at mos.org/careers/volunteer. Youth Volunteers track is for ages 14-19 in high school; Classic Volunteers track is 18+ and requires a 4-month department commitment. The 7-week paid Summer Youth Internship (ages 14-19) is a separate competitive pathway with professional development workshops.",
+      "_source": "https://www.mos.org/careers/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "New England Aquarium Volunteer + Live Blue Ambassadors",
+      "organization": "New England Aquarium (NEAq)",
+      "description": "Boston Central Wharf aquarium with 58,000+ volunteer hours per year supporting Aquarium operations and ocean-conservation education. General volunteer roles (Visitor Education / Exploration Station / behind-the-scenes department support) are 16+, with most positions requiring 18+. The Live Blue Ambassadors program is a teen-focused robust field-and-community-based conservation program with hands-on shoreline cleanups and education at local environmental sites. The separate paid Summer Teen Internship (ages 14+, Boston/Cambridge/suburbs residents) runs alongside.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Boston",
+      "categories": [
+        "environment",
+        "animals",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "marine science communication",
+        "shoreline ecology",
+        "guest interpretation",
+        "conservation field work"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply on rolling basis at neaq.org/engage/join-our-team/volunteer/. General volunteer minimum is 16 (most positions 18+). Live Blue Ambassadors is the teen track. The paid Summer Teen Internship is the entry path for ages 14-15. Contact volunteer@neaq.org with questions.",
+      "_source": "https://www.neaq.org/volunteering-at-the-aquarium-faq/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Pine Street Inn Volunteer (Boston Homeless Services)",
+      "organization": "Pine Street Inn",
+      "description": "Largest homeless-services provider in New England (founded 1969), operating emergency shelters, permanent supportive housing, and the iStreet Outreach van across Greater Boston. In-person volunteer roles include serving meals at Men's Inn / Women's Inn / Long Island Shelter, kitchen prep, donation sorting, and the Innbassador public-speaking corps. Remote volunteer opportunities (donation drives, advocacy, fundraiser support) are available with broader age accessibility.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Boston",
+      "categories": [
+        "homelessness",
+        "hunger"
+      ],
+      "ageMin": 18,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "meal-service operations",
+        "trauma-informed engagement",
+        "advocacy communications",
+        "donation logistics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Sign up at pinestreetinn.org/get-involved/volunteer/. In-person volunteers must be 18+. Remote volunteer opportunities (donation drives, advocacy, Innbassador-style public speaking, fundraiser support) accept younger volunteers. Contact Volunteer Department at 617.892.9184 or volunteer@pinestreetinn.org.",
+      "_source": "https://www.pinestreetinn.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "confidence": "high"
+    },
+    {
+      "name": "Cradles to Crayons Boston (Giving Factory + Teen Leadership Corps)",
+      "organization": "Cradles to Crayons (Boston / Newton)",
+      "description": "Boston-area nonprofit (Giving Factory warehouse in Newton, MA) providing essential clothing, books, and school supplies to children living in poverty. Year-round volunteer roles include Giving Factory shifts (sorting, inspecting, packaging KidPacks), Mobile Pop-Up Shops, donation drives, and the Teen Leadership Corps (TLC) for middle and high school students. Family-friendly: ages 5+ welcome with adult, and entire families volunteer side-by-side. Group volunteer pre-registration is available for school clubs / scout troops / corporate teams.",
+      "scope": "state",
+      "states": [
+        "MA"
+      ],
+      "subregion": "Boston",
+      "categories": [
+        "homelessness",
+        "hunger",
+        "education"
+      ],
+      "ageMin": 5,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "warehouse logistics",
+        "donation sorting",
+        "team coordination",
+        "service-learning leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Sign up for Giving Factory shifts at cradlestocrayons.org/boston/take-action/volunteer/. Minimum age is 5; volunteers under 18 must have an adult present for the entire shift. Middle and high school students can join the Teen Leadership Corps for deeper service-learning engagement; group pre-registration is available for school/scout/corporate teams.",
+      "_source": "https://www.cradlestocrayons.org/boston/take-action/volunteer/",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"

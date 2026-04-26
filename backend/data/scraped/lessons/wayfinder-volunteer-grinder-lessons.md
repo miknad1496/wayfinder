@@ -15,11 +15,10 @@
 
 ## CURRENT CALIBRATION (latest accepted values)
 
-- batch_size: 5 entries (run 13 again completed 5-of-5 verified, 0 skipped — sustain at 5)
-- typical_run_duration: ~15-20 min for 5 entries (longer when canonical /volunteer URL 404s — fall back to /support-us/volunteer/ways-to-volunteer/ pattern as seen with SPCA of Texas)
-- typical_skip_rate: 0-1 of 5 candidates
-- last_calibration_change: 2026-04-26 — run 13 confirms 5 is sustainable for the institutional-anchors recipe across 3 TX metros and CA queue
-
+- batch_size: 5 entries (run 17 confirms 5/5 sustainable for Boston anchors as well — recipe portable across 8 metros / 5 states)
+- typical_run_duration: ~15-20 min for 5 entries; faster when /dev/shm is the workspace and big-CMS sites are search-snippet-verifiable
+- typical_skip_rate: 0 of 5 final-batch when "5 institutional anchors" recipe is followed in major metros
+- last_calibration_change: 2026-04-26 — run 17 (no change; sustain at 5)
 
 ## EFFECTIVE PATTERNS
 
@@ -334,3 +333,28 @@
 - Stay at batch_size 5.
 
 | 2026-04-26 | 16 | 5 | 0 | NY close + MA start (Boston anchors) | Coalition for the Homeless GCFP (medium — ageMin unverified), New York Cares Youth-Friendly (aggregator HIGH), Greater Boston Food Bank, Zoo New England (ZooTeen + Teen Ambassador + Keeper Aide), MSPCA-Angell (Boston + Nevins Farm Junior). NY → 12/12 COMPLETE. MA → 3/8. |
+
+## RUN 17 NOTES (2026-04-26 — MA queue COMPLETE, Boston depth)
+
+- Added 5 HIGH-confidence Boston entries to complete MA queue: Boston Public Library Teen Volunteer Program (grades 9-12 across 10 sites, year-round fall+spring with Monday Zoom workshops), Museum of Science Boston (Youth 14-19 + Classic 18+ tiers; separate paid 7-week Summer Youth Internship), New England Aquarium (16+ general / 18+ most positions / 14+ Summer Teen + Live Blue Ambassadors teen track), Pine Street Inn (18+ in-person; remote opportunities younger), Cradles to Crayons Boston (5+ with adult, Teen Leadership Corps for middle+HS, Giving Factory in Newton).
+- All 5 HIGH confidence — Boston anchor recipe held cleanly. The "5 institutional anchors v3" recipe (library teen vols + science museum + aquarium + homeless shelter + family-friendly distribution warehouse) yielded 5/5 with 0 mid-research drops.
+- Mid-research drops: 0. Boston Children's Museum was the planned 5th but search produced nothing useful on age policy — Cradles to Crayons substituted (and is arguably a stronger fit because it has explicit family + teen-specific tracks).
+- **MA queue → 8/8 COMPLETE.** Pivot to MI queue (Detroit / Ann Arbor / Grand Rapids) next run.
+- Stale-clone issue (cont'd from runs 10/15/16): the scheduled-task prompt's lessons file was 12 runs out of date (showed run 4 as latest; actual was run 16). Ran `git pull --rebase` after detecting that the queue had advanced significantly. Pivoted batch from planned WA Vancouver/Olympia cluster to MA Boston after detecting completion of WA queue mid-flight.
+- Disk-space recovery: `/tmp` was at 100% from prior session debris (multiple 132M wayfinder clones owned by `nobody`). Worked around by cloning to `/dev/shm/wf-grind` (2GB tmpfs, plenty of space, fresh user-owned). Future runs should use `/dev/shm/` directly when `/tmp` is contested.
+
+### Source-specific run-17 notes
+- `bpl.org/teen-volunteer-program/` — clean curl, ~7KB extracted text. Single-page program description with all 10 site names, semester structure (fall/spring/summer), Monday Zoom workshop schedule, contact (Agneris Lopez, volunteer@bpl.org, 617.859.2304). Apply via embedded "Apply to Volunteer" link.
+- `mos.org/careers/volunteer` — clean curl, ~8KB. Two-tier program clearly labeled (Classic 18+ / Youth 14-19). Separate Summer Youth Internship at /teaching-stem/youth-programs is the paid 7-week program. The "/volunteer-opportunities" sub-page enumerates current openings with department-level role descriptions.
+- `neaq.org/volunteering-at-the-aquarium-faq/` — clean curl. FAQ format, single source for all age tiers (16+ general, 18+ most positions, 14+ Summer Teen Internship). Live Blue Ambassadors landing pages exist but the FAQ is the canonical age-policy source. Volunteer portal at serve.neaq.org for specific role applications (Exploration Station Volunteer, Visitor Education Volunteer).
+- `pinestreetinn.org/get-involved/volunteer/` — direct curl returns thin ~5KB shell (likely WordPress with content loaded via JS); search-snippet excerpts confirm 18+ in-person policy. Innbassador public-speaking corps is at /get-involved/volunteer/innbassadors.
+- `cradlestocrayons.org/boston/take-action/volunteer/` — clean curl, ~5KB. Explicit 5+ family-friendly minimum with adult-required-for-under-18 caveat. Teen Leadership Corps is at /take-action/volunteer/giving-corps/. Group Pre-Register form at /boston/group-pre-register/. Giving Factory in Newton MA is the in-person warehouse.
+
+### Calibration notes from run 17
+- Boston followed the LA/SF/SD/Houston/Austin/Dallas/NYC pattern — 5/5 high-confidence on first pass with the institutional-anchors recipe. The recipe is now confirmed across **8 metros and 5 states** (LA, SF, SD, Houston, Austin/Dallas, NYC, Boston). It's now reliable enough to be the default first-batch strategy for any new state queue.
+- The "5 institutional anchors" recipe is flexible: the original (Food Bank + Zoo + Library + Children's/Science Museum + SPCA/Humane) can substitute (Library + Science Museum + Aquarium + Homeless Shelter + Family Distribution Warehouse) when one anchor is thin in a given metro. The variant for run 17 was "library + science museum + aquarium + shelter + clothing/distribution".
+- Stay at batch_size 5.
+- **Run 18 target: MI queue first run — Detroit cluster.** Suggested candidates per the institutional-anchors recipe: Forgotten Harvest (Detroit's regional food bank), Detroit Zoo Adopt-a-Volunteer (Royal Oak/Huntington Woods — also operates Belle Isle Aquarium), Detroit Public Library teen volunteer, Michigan Science Center / The Henry Ford Teen Volunteer Program, Michigan Humane Society Detroit. Or substitute with Gleaners Community Food Bank if Forgotten Harvest age policy is unclear.
+- After Detroit, MI queue likely needs 1-2 more runs covering Ann Arbor (Ann Arbor District Library, Hands-On Ann Arbor, U-M Mott Children's Hospital teen volunteers, Leslie Science & Nature Center) and Grand Rapids (Feeding America West Michigan, John Ball Zoo, Grand Rapids Public Library, Grand Rapids Children's Museum).
+
+| 2026-04-26 | 17 | 5 | 0 | MA (Boston depth — 5 institutional anchors v3) | BPL Teen Volunteer (grades 9-12 × 10 sites), Museum of Science Boston Youth+Classic (14-19/18+), New England Aquarium (16+/18+/14+ Summer Teen + Live Blue Ambassadors), Pine Street Inn (18+ in-person), Cradles to Crayons Boston (5+ family-friendly + TLC). All HIGH confidence. MA queue → 8/8 COMPLETE. |
