@@ -1,7 +1,7 @@
 {
   "metadata": {
     "lastScraped": "2026-04-05",
-    "totalCount": 826,
+    "totalCount": 831,
     "sources": [
       "MIT MITES",
       "Stanford University",
@@ -49,8 +49,8 @@
     ],
     "_verified": "partial",
     "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
-    "lastUpdated": "2026-04-23T15:34:34.651Z",
-    "totalPrograms": 826,
+    "lastUpdated": "2026-04-26T15:30:10.318Z",
+    "totalPrograms": 831,
     "verifiedCount": 82,
     "lastHealthCheck": "2026-04-06T14:45:01.557Z",
     "healthCheckAction": "Removed 1 dupes, 0 invalid",
@@ -35671,6 +35671,332 @@
       "_verified": true,
       "_verifiedDate": "2026-04-04",
       "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle"
+    },
+    {
+      "name": "KidsQuest Children's Museum Summer Camps",
+      "provider": "KidsQuest Children's Museum",
+      "category": "academic-enrichment",
+      "subcategory": "play-based-learning",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by session — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Bellevue",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling — sessions fill spring",
+      "description": "Weeklong summer camps at KidsQuest Children's Museum in downtown Bellevue for ages 4-10. Themes change weekly and include exploratory STEAM, art, fashion, and storytelling. Children must be the listed age at the time camp begins. Note: 2026 per-session pricing not posted on landing page; confirm directly with the museum's Education Department (education@kidsquestmuseum.org).",
+      "url": "https://www.kidsquestmuseum.org/programs/summer-camp/",
+      "tags": [
+        "summer-camp",
+        "stem",
+        "arts",
+        "play-based",
+        "bellevue",
+        "elementary",
+        "eastside"
+      ],
+      "duration": "1 week per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Eastside",
+      "ages": "4-10",
+      "dates": "Summer 2026 — weekly sessions June through August",
+      "scholarshipAid": "Not advertised on landing page",
+      "registrationUrl": "https://www.kidsquestmuseum.org/programs/summer-camp/",
+      "howToStart": "Browse weekly themes and register at kidsquestmuseum.org/programs/summer-camp; popular sessions fill in spring.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost",
+        "scholarshipAid"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.kidsquestmuseum.org/programs/summer-camp/"
+    },
+    {
+      "name": "Studio Coyote Summer Workshops",
+      "provider": "Coyote Central",
+      "category": "arts",
+      "subcategory": "creative-arts-mentorship",
+      "type": "summer",
+      "cost": {
+        "amount": 400,
+        "type": "paid",
+        "display": "$400 standard / $450 culinary, wood, welding (pay-what-you-can sliding scale)"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling until full — register early",
+      "description": "Pay-what-you-can creative classes for ages 10-15 taught by professional teaching artists at Coyote Central's Central District studios. Mediums include welding, woodworking, fashion design, culinary, bike-building, and visual art across roughly 20-21 hours of instruction per course, culminating in a student-designed project. Sliding-scale pricing keeps the program accessible across income levels.",
+      "url": "https://coyotecentral.org/programs",
+      "tags": [
+        "arts",
+        "summer-workshops",
+        "mentorship",
+        "seattle",
+        "middle-school",
+        "sliding-scale",
+        "central-district"
+      ],
+      "duration": "1 week (~20 hours) per workshop",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "10-15",
+      "dates": "8 weeks of summer programming, late June through August 2026",
+      "scholarshipAid": "Available — pay-what-you-can sliding scale",
+      "registrationUrl": "https://coyotecentral.org/register-for-classes",
+      "howToStart": "Register at coyotecentral.org/register-for-classes; email programs@coyotecentral.org or call (206) 323-7276 for sliding-scale and scholarship questions.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://coyotecentral.org/programs"
+    },
+    {
+      "name": "Burke Museum Summer Camps (Dino Trackers & Paleo Discovery)",
+      "provider": "Burke Museum of Natural History and Culture (UW)",
+      "category": "stem",
+      "subcategory": "paleontology-natural-history",
+      "type": "summer",
+      "cost": {
+        "amount": 100,
+        "type": "paid",
+        "display": "$100/day session ($90 Burke members) plus optional $30 aftercare"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Seattle",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling until full",
+      "description": "Single-day summer camps at the Burke Museum on the UW Seattle campus. Dino Trackers serves grades 1-3 (2026/27 school year) with hands-on activities exploring Suciasaurus, Washington's only dinosaur fossil. Paleo Discovery serves grades 4-6 with a closer look at Burke paleontology collections including fossils, dig pits, and Burke educator-led investigations. Held 8:45 a.m.-2:30 p.m. with optional aftercare to 4 p.m.",
+      "url": "https://www.burkemuseum.org/education/families-and-youth/camps",
+      "tags": [
+        "stem",
+        "paleontology",
+        "museum",
+        "seattle",
+        "elementary",
+        "middle-school",
+        "uw"
+      ],
+      "duration": "1 day per session",
+      "region": "Pacific Northwest",
+      "scope": "local",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Seattle",
+      "ages": "6-12",
+      "dates": "Multiple sessions summer 2026 (e.g., Aug 17, 2026)",
+      "scholarshipAid": "Burke offers financial assistance — see Education Financial Assistance page",
+      "registrationUrl": "https://www.burkemuseum.org/education/families-and-youth/camps",
+      "howToStart": "Register on the Burke camps page; member discount applies (~10% off).",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.burkemuseum.org/education/families-and-youth/camps"
+    },
+    {
+      "name": "YMCA Camp Orkila Overnight Summer Camp",
+      "provider": "YMCA of Greater Seattle",
+      "category": "outdoor",
+      "subcategory": "residential-camp",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Sliding scale — Price A (full) / Price B (subsidized); $50 deposit; financial assistance available"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "medium",
+      "format": "in-person",
+      "location": {
+        "city": "Eastsound",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Registration opens February 4, 2026 at 6 a.m.; sessions fill quickly",
+      "description": "Residential overnight camp on the northwest tip of Orcas Island, operating since 1906. Programs for kids and teens entering grades 3-12 in sessions of 7-28 days, grouped by grade and gender identity in fully-enclosed cabins. Activities include archery, boating, climbing wall, zipline, challenge course, marine science, arts & crafts, and traditional camp programs. Sliding-scale pricing (Price A/B) plus need-based financial assistance keep camp accessible.",
+      "url": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp",
+      "tags": [
+        "outdoor",
+        "residential",
+        "ymca",
+        "orcas-island",
+        "summer-camp",
+        "wa",
+        "elementary",
+        "middle-school",
+        "high-school"
+      ],
+      "duration": "7-28 days per session",
+      "region": "Pacific Northwest",
+      "scope": "regional",
+      "states": [
+        "WA"
+      ],
+      "subregion": "San Juan Islands",
+      "ages": "8-17",
+      "dates": "Sessions late June through late August 2026 (e.g., Session 2A Jul 13-24, Session 6A Aug 10-21)",
+      "scholarshipAid": "Available — sliding scale + need-based financial assistance",
+      "registrationUrl": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp",
+      "howToStart": "Registration opens Feb 4, 2026 at 6 a.m.; create account at seattleymca.org and apply for financial assistance separately if needed.",
+      "confidence": "high",
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp"
+    },
+    {
+      "name": "Camp Sealth Overnight & Day Camp",
+      "provider": "Camp Fire Central Puget Sound",
+      "category": "outdoor",
+      "subcategory": "residential-camp",
+      "type": "summer",
+      "cost": {
+        "amount": null,
+        "type": "paid",
+        "display": "Varies by session — see registration page"
+      },
+      "selectivity": "open",
+      "admissionsImpact": "low",
+      "format": "in-person",
+      "location": {
+        "city": "Vashon",
+        "state": "WA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "states": [
+          "WA"
+        ]
+      },
+      "deadline": "Rolling until full",
+      "description": "Camp Fire-operated overnight and day camp on Vashon Island, ACA-accredited. Programs for youth of all genders ages 5-17 in 8 summer sessions ranging 4-13 days. Classic activities include archery, swimming, arts & crafts, boating, fishing, hikes, marine touch tanks, outdoor cooking, songs, and theme meals. Need-based financial assistance is available — apply early as funds are limited. Note: 2026 per-session pricing not surfaced on landing page; check the registration page or call (206) 463-3174.",
+      "url": "https://campfireseattle.org/camp-sealth-overnight-camp/",
+      "tags": [
+        "outdoor",
+        "residential",
+        "day-camp",
+        "camp-fire",
+        "vashon-island",
+        "summer-camp",
+        "aca-accredited"
+      ],
+      "duration": "4-13 days per session",
+      "region": "Pacific Northwest",
+      "scope": "regional",
+      "states": [
+        "WA"
+      ],
+      "subregion": "Puget Sound",
+      "ages": "5-17",
+      "dates": "8 sessions, late June through end of August 2026",
+      "scholarshipAid": "Available — need-based, limited funds; apply early",
+      "registrationUrl": "https://campfireseattle.org/camp-sealth-overnight-camp/",
+      "howToStart": "Browse sessions and register at campfireseattle.org; financial assistance application is separate. Phone (206) 463-3174.",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "cost"
+      ],
+      "_addedBy": "esms-grinder",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_source": "https://campfireseattle.org/camp-sealth-overnight-camp/"
     }
   ]
 }
