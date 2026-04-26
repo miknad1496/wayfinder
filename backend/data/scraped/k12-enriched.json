@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26T06:13:10.056Z",
-    "count": 52,
+    "lastUpdated": "2026-04-26T06:37:41.237Z",
+    "count": 55,
     "source": "NCES + verified web sources",
-    "note": "Run 4: +8 WA high schools (Ingraham, Cleveland STEM, Chief Sealth, Rainier Beach, Juanita, Hazen, Kentridge, Edmonds-Woodway). Manual research mode (raw NCES dump still missing)."
+    "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72."
   },
   "schools": [
     {
@@ -2145,6 +2145,184 @@
         "https://phs.battlegroundps.org/o/phs/page/administrative-team",
         "https://www.usnews.com/education/best-high-schools/washington/districts/battle-ground-school-district/prairie-high-school-20728",
         "https://www.niche.com/k12/prairie-high-school-brush-prairie-wa/"
+      ]
+    },
+    {
+      "ncessch": "530039000085",
+      "name": "Sammamish Senior High",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98005",
+      "latitude": 47.608,
+      "longitude": -122.1523,
+      "phone": "(425)456-7600",
+      "schoolLevel": 3,
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 1275,
+      "demographics": {
+        "minorityPct": 67,
+        "economicallyDisadvantagedPct": 41
+      },
+      "freeReducedLunch": 494,
+      "website": "https://sammamishhigh.bsd405.org/",
+      "principal": "Drew Thomas",
+      "principalTitle": "Interim Principal",
+      "principalAsOf": "2025-08",
+      "gradesServed": "9-12",
+      "studentTeacherRatio": null,
+      "apCourses": 23,
+      "apOffered": true,
+      "apParticipationPct": 64,
+      "ibProgram": false,
+      "magnetProgram": false,
+      "notablePrograms": [
+        "Advanced Placement (23 AP courses, 64% participation)",
+        "Project-based learning (Schools That Can / Sammamish redesign initiative)",
+        "Athletics (Redhawks), music, and theater"
+      ],
+      "graduationRate": null,
+      "graduationRateRange": null,
+      "rating": {
+        "source": "US News",
+        "nationalRank": 1935,
+        "stateRank": 35,
+        "scale": "national"
+      },
+      "note": null,
+      "ceo": null,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://bsd405.org/sammamish/about/staff/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/sammamish-senior-high-school-20736",
+        "https://www.niche.com/k12/sammamish-high-school-bellevue-wa/",
+        "https://en.wikipedia.org/wiki/Sammamish_High_School"
+      ]
+    },
+    {
+      "ncessch": "530039003149",
+      "name": "International School",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98005",
+      "latitude": 47.6041,
+      "longitude": -122.1703,
+      "phone": "(425)456-6500",
+      "schoolLevel": 3,
+      "schoolType": "alternative",
+      "charter": false,
+      "magnet": true,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 600,
+      "demographics": {
+        "asianPct": 60,
+        "whitePct": 23,
+        "twoOrMorePct": 9,
+        "hispanicPct": 6,
+        "blackPct": 2
+      },
+      "freeReducedLunch": 50,
+      "website": "https://international.bsd405.org/",
+      "principal": "Russell White",
+      "principalTitle": "Principal",
+      "principalAsOf": "2024-09",
+      "gradesServed": "6-12",
+      "studentTeacherRatio": null,
+      "apCourses": null,
+      "apOffered": true,
+      "apParticipationPct": null,
+      "ibProgram": false,
+      "magnetProgram": true,
+      "notablePrograms": [
+        "Public magnet school (lottery admission, 6-12)",
+        "7x7 curriculum: 7 core subjects (English, Math, Science, Social Studies, PE, Fine Arts, French) for 7 years",
+        "French immersion focus, Francophone literature/history pathway",
+        "2004 Blue Ribbon National School of Excellence",
+        "Consistently top-ranked WA high school (US News #2 in WA, #65 nationally - 2024)"
+      ],
+      "graduationRate": null,
+      "graduationRateRange": null,
+      "rating": {
+        "source": "US News",
+        "nationalRank": 65,
+        "stateRank": 2,
+        "scale": "national"
+      },
+      "admission": "Lottery - open to BSD residents in 5th grade for 6th-grade entry; sibling priority",
+      "note": null,
+      "ceo": null,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://international.bsd405.org/our-school/staff",
+        "https://en.wikipedia.org/wiki/International_School_(Bellevue,_Washington)",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/international-school-20739",
+        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300390&ID=530039003149",
+        "https://nationalblueribbonschools.ed.gov/awardwinners/winning/19wa104pu_international_school.html/"
+      ]
+    },
+    {
+      "ncessch": "530039003354",
+      "name": "Bellevue Big Picture School",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98007",
+      "latitude": 47.5921,
+      "longitude": -122.1418,
+      "phone": "(425)456-7800",
+      "schoolLevel": 3,
+      "schoolType": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "enrollment": 382,
+      "demographics": {},
+      "freeReducedLunch": 75,
+      "website": "https://bellevuebigpicture.bsd405.org/",
+      "principal": "Bethany Spinler",
+      "principalTitle": "Principal",
+      "principalAsOf": "2024-09",
+      "gradesServed": "6-12",
+      "studentTeacherRatio": 24,
+      "apCourses": null,
+      "apOffered": false,
+      "apParticipationPct": null,
+      "ibProgram": false,
+      "magnetProgram": false,
+      "notablePrograms": [
+        "Big Picture Learning model - personalized, project-based, no traditional classes/tests",
+        "Internship-based learning (LTI: Learning Through Interest/Internship)",
+        "Choice school in BSD (lottery admission, 6-12, ~75 seats per grade)",
+        "Math: 56% proficient; Reading: 66% proficient (Niche, 2024)"
+      ],
+      "graduationRate": null,
+      "graduationRateRange": null,
+      "rating": {
+        "source": "US News",
+        "nationalRank": 3803,
+        "stateRank": null,
+        "scale": "national"
+      },
+      "admission": "Lottery - applications mid-Dec to mid-Jan, ~75 6th-grade seats",
+      "note": null,
+      "ceo": null,
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://bellevuebigpicture.bsd405.org/our-school/staff",
+        "https://bsd405.org/bigpicture/about/apply/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/bellevue-big-picture-school-146593",
+        "https://www.niche.com/k12/bellevue-big-picture-school-bellevue-wa/",
+        "https://www.publicschoolreview.com/bellevue-big-picture-school-profile"
       ]
     }
   ]
