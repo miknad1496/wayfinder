@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-04-26T06:59:09.153269Z",
-  "totalRuns": 11,
-  "totalEnriched": 67,
-  "totalSkipped": 21,
-  "notes": "Run 11: enriched 6 WA high (Challenger HS, Graham Kapowsin HS, Pierce County Skills Center, Acceleration Academy, Blaine HS, Bremerton HS). Skipped 2 (Blaine Re-Engagement enr=13 alt; Morgan Center enr=0 placeholder). Queue offset 80 -> 88.",
+  "lastRun": "2026-04-26T10:54:26.651119Z",
+  "totalRuns": 12,
+  "totalEnriched": 72,
+  "totalSkipped": 24,
+  "notes": "Run 12: enriched 5 WA high (West Sound Tech Skills Center, Renaissance Alt HS, Brewster HS, Bridgeport HS, Burlington Edison HS). Skipped 3 (Brewster Alt enr=17, Bridgeport Aurora enr=29, Burlington-Edison Alt enr=23 \u2014 all <50). Queue offset 88 -> 96.",
   "queue": [
     {
       "state": "WA",
       "level": "high",
-      "offset": 88,
+      "offset": 96,
       "total": 649,
       "status": "in_progress",
-      "note": "raw NCES offset 88 of 649; enriched 67 total"
+      "note": "raw NCES offset 96 of 649; enriched 72 total"
     },
     {
       "state": "WA",

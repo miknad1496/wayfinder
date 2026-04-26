@@ -7,7 +7,7 @@
 - batch_size: 8 schools (current setting in prompt)
 - typical_run_duration: 12-20 min (Run 10 ~10 min — batched parallel WebSearch is fast for clusters of district-grouped schools)
 - typical_skip_rate: ~25% structural; can spike to 60%+ when batch overlaps with manually-entered schools
-- last_calibration_change: 2026-04-26 — Run 11 confirmed batch_size=8 sustainable; Bethel/Blaine/Bremerton district cluster verified 6/6 in ~5 WebSearches
+- last_calibration_change: 2026-04-26 — Run 12 confirmed batch_size=8 sustainable across alt-heavy band (5/5 of processable verified, 3 sub-50 skips). Skills Center exemption from <50 skip rule established.
 
 ## EFFECTIVE PATTERNS (use these — they work)
 
@@ -23,6 +23,10 @@
 - **NEW (Run 10):** **Niche.com k12 pages return clean snippets for AP enrollment %, AP pass %, student-teacher ratio, demographics in WebSearch results** without needing to fetch the full page. Standard query: `"[School]" [city] enrollment AP courses graduation rate`.
 
 - **NEW (Run 11):** **For CTE/Skills Centers**, use `"[Skills Center]" director programs CTE` rather than `"[School]" principal` — the role title is "Director", and the programs query also surfaces the program list in a single search snippet (e.g. PCSC's 17 CTE pathways).
+
+- **NEW (Run 12):** **Cross-state homonym trap** — Brewster, WA HS and Brewster, NY HS share the name + "Bears" mascot. The first WebSearch synthesis hallucinated NY's "Nichole Horler" as the WA principal. **Lesson:** for any common school name (Brewster, Lincoln, Roosevelt, Madison, Washington, etc.), include county/region disambiguator in the query (`Okanogan` for Brewster WA), and verify the result city/state before recording.
+- **NEW (Run 12):** **NCES `enrollment.total` for Skills Centers is structurally low (typically <50)** — the 8-40 figure is a snapshot of teacher-FTE-adjusted headcount, not the true cohort. WST shows 8-40 NCES; PCSC (Run 11) showed 279. Both are real, fully-staffed multi-district CTE centers. **Treat skills/CTE centers as a separate enrichment class:** process them despite low NCES enrollment, but record `enrollmentNotes` explaining the under-count. Rule: if `schoolType: "vocational"` AND name contains "Skills Center"/"Technical"/"CTE", override the <50 skip rule.
+
 - **NEW (Run 11):** **For franchise alt-recovery schools (Acceleration Academies)**, the parent org's site (`accelerationacademy.org/[district]`) carries hours, eligibility, and enrollment criteria; the district programs page (`bethelsd.org/programs/...`) carries the local context. Together they constitute ≥3 verified fields without needing a principal name (typical credit-recovery program is run by a partner-org "Academy Director", not a traditional principal).
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS (don't repeat)
@@ -34,6 +38,10 @@
 - **NEW (Run 9):** Don't `cat <<HEREDOC` write large JSON to `/tmp/` — `/tmp` is a tiny tmpfs (100% full from prior session caches) and the write silently fails with "No space left on device". Write to `/sessions/nifty-confident-bardeen/` instead (~6GB free). Same trap for git clone — clone target must be on `/sessions`, not `/tmp` or `/var/tmp`.
 - **NEW (Run 9):** Don't `rm -rf /tmp/wayfinder` — old clones from prior sessions are owned by `nobody:nogroup` and the current user can't unlink them. Use a fresh clone path under `/sessions/nifty-confident-bardeen/wfclone-$$` instead.
 - **NEW (Run 9):** Don't clone into `/sessions/.../mnt/outputs/` — that mount is fuse-virtiofs and git's atomic ops fail with `unable to unlink '.git/config.lock': Operation not permitted`. The native `/sessions/` ext4 mount works fine.
+
+
+- **NEW (Run 12):** Don't trust the LLM-generated synthesis paragraph at the bottom of WebSearch results without checking the underlying snippet/URL. Twice this run the synthesis claimed names ("Mark Mayfield", "Nichole Horler") that weren't in any quoted snippet — the model fabricated/cross-contaminated. **Always verify the name via a follow-up `"School" "Name" principal` query** before recording, OR drop the field if uncertain.
+- **NEW (Run 12):** Don't include the principal field if you can't independently verify the person via at least one fetched URL or unambiguous snippet quote — better to leave principal blank than record a hallucinated name.
 
 - **NEW (Run 11):** Don't `rm -rf /tmp/wayfinder` even with the Run 9 workaround in mind — the *current* session's `/` filesystem hit 100% from old session caches across many `wf-*` and `wayfinder-*` dirs owned by `nobody:nogroup`. Skip `/tmp` entirely and clone to `/sessions/[session-id]/wfclone-$$` from the start. (`/sessions` ext4 had 6.2GB free vs 16MB on `/`.)
 - **NEW (Run 11):** When NCES's `enrollment.total = 0` (Morgan Center School in Bremerton SD this run), it almost always means a placeholder/recently-closed/internal-only record — fast-skip without research, like the <50 enrollment rule.
@@ -50,6 +58,11 @@
 - BSD405 school profile PDFs (`resources.finalsite.net/.../*Profile*.pdf`) — 230KB-560KB; binary PDF, low yield from inline grep
 
 ### High-yield search query templates
+
+#### NEW (Run 12) — high-yield templates added
+- For small rural WA districts, the district homepage (`brewsterbears.org`, `bridgeport.wednet.edu`) typically has a "School Name" subpage with principal + accreditation in body content; even when the homepage is too large, the subpage URL `[district].wednet.edu/page/home-hs` is parseable and surfaces principal name reliably.
+- Cross-state homonym disambiguation: `"School Name" [county or region] [state] principal` (e.g. `"Brewster High School" Okanogan Washington principal`) avoids NY/MA/etc. cross-contamination.
+
 #### NEW (Run 11) — high-yield templates added
 - CTE / Skills Centers: `"[Skills Center name]" director programs CTE` — returns director + program list in one snippet.
 - Recovery / alt-academy franchises: combine `"[School]" [district]` (general) + `"[School]" [city] niche student teacher ratio` (Niche stats) for full coverage in 2 searches.
@@ -67,6 +80,10 @@
 - 2026-04-26: NCES placeholders for "Renton Technical HS" (5 students) and "Ella Baker HS" (Open Doors reentry, 88 students) — confirm enrollment >50 before spending an enrichment slot on a school.
 - 2026-04-26 (Run 9): **Duplicate-with-manual-entries problem.** Bellevue HS, Interlake, and Newport were already in `enriched.json` (manual entries from Run 4) but the NCES queue at offset 65-67 hit them again, wasting 3/8 slots. Future runs should run a `name-in-existing-enriched` pre-filter before counting toward batch size, OR the next prompt iteration should pre-skip dups and pull from the next NCES rows to maintain net-8 enrichments.
 
+
+- 2026-04-26 (Run 12): **Heavy alt-school cluster around offsets 91/93/95.** WA HS NCES rows are interleaved: regular HS at even offsets, alternative/reentry placeholder at the next odd offset. This means a sequential 8-row batch can lose 3-4 slots to <50 skips when the queue lands on an alt-cluster band. Future bumps to batch_size 10 should assume effective net-yield of 5-7, not 8-10.
+- 2026-04-26 (Run 12): **Skills Centers consistently show suppressed NCES enrollment (8-40)** despite being real multi-district CTE programs serving 100s+ students. Specific to `schoolType: "vocational"` + named "Skills Center"/"Technical Skills". Rule: do NOT skip these despite <50 NCES.
+
 - 2026-04-26 (Run 11): **NCES `enrollment.total = 0` records.** Morgan Center School (Bremerton SD, ncessch 530066001751) has total=0 — the school's NCES record exists but it's effectively a programmatic placeholder (no enrollment, possibly admin-only). Adding to the auto-skip list alongside `<50 enrollment` and `tribal placeholder` filters.
 - 2026-04-26 (Run 11): **Acceleration Academy** is a national franchise model — local entries here may have no traditional principal field. Schema accepts this since `_sources` has 3+ live verified URLs and we have website/enrollment/student-teacher-ratio (3 of 4 REQUIRED).
 
@@ -74,6 +91,9 @@
 
 - Batch size 8 is the current setting and seems sustainable. Run 7 reported "WebFetch hit 'file too large' wall on 2 of 8 sites" — workaround via WebSearch handled it without dropping enrichment quality.
 - The grinder is currently advancing offset by 8 even when 2-3 are skipped. Consider whether to keep advancing the cursor (current behavior — moves through the queue faster but leaves gaps) vs. only advancing the cursor by `verified` count (more thorough but slower). **Current consensus: advancing by 8 is correct** — skipped schools are typically structurally low-yield and not worth re-attempting later.
+- **NEW (Run 12, replaces Run 11 suggestion):** Run 12 yielded 5 verified + 3 skipped — net 5/8 due to alt-cluster on offsets 91/93/95. Wall-clock research ~6 min (all WebSearch, no WebFetch). **Recommend keeping batch_size=8** through the alt-heavy WA-high mid-section (offsets 96-150 likely contains more alt placeholders). When the queue clears the alphabetical alt-cluster band, reconsider bumping to 10. **New filtering proposal:** at batch-selection, pre-flag `schoolType: "alternative" + enrollment < 50` rows so they consume the offset-slot but don't count against the 8 enrichment target — same fix as Run 9's dedup proposal but for alt-placeholders. Until prompt formalizes this, business-as-usual works.
+- **NEW (Run 12) — Skills Center carve-out:** the `<50 enrollment skip` rule should NOT apply to vocational/CTE skills centers. This run West Sound Tech (NCES enrollment=40) was successfully verified with `enrollmentNotes` explaining the under-count. Future prompt iteration: codify "if `schoolType: vocational` + 'Skills Center' or 'Technical' in name, never auto-skip on enrollment count."
+
 - **NEW (Run 11, replaces Run 10 suggestion):** Run 11 mirrored Run 10 — 6/6 verified across 3 districts (Bethel + Blaine + Bremerton) using WebSearch only, ~5 min wall clock for research. Batch_size=8 is the sweet spot; the natural alphabetical-by-city NCES ordering keeps clustering automatic. Recommend keeping batch_size=8 for at least one more WA-high run before considering a bump. **Open follow-up:** the dedup-against-existing-enriched pre-filter (Run 9's proposal) is still unimplemented at the prompt level — it didn't bite this run, but will at offsets ~95+ where Run 4's manual additions cluster.
 
 - **NEW (Run 10, retained):** Run 10 hit a clean district-cluster (Bellingham SD + Bethel SD) and verified 6/6 with no dups in ~10 min. Validates that **clustering by district** is the right batch-selection heuristic when the queue allows it. Strong recommendation for next prompt iteration: when `findRaw`/batch-selection returns a sequential window, look ahead for district groupings and prefer 6-8 schools across 1-3 districts over 8 schools spread across 8 districts. Until prompt formalizes this, the natural NCES alphabetical-by-city ordering already groups districts well, so business-as-usual works.
@@ -90,6 +110,7 @@
 
 | Date       | Run # | Verified | Skipped | Notable                                                                                                |
 |------------|-------|----------|---------|--------------------------------------------------------------------------------------------------------|
+| 2026-04-26 | 12    | 5        | 3       | WA high offsets 88-95 (Bremerton + Brewster + Bridgeport + Burlington-Edison cluster). 5/5 verified (West Sound Tech Skills Center, Renaissance Alt HS, Brewster HS, Bridgeport HS, Burlington Edison HS). 3 alt-school skips all <50 (Brewster Alt enr=17, Bridgeport Aurora enr=29, Burlington-Edison Alt enr=23). Heavy alt-school cluster — 3 of 8 raw rows were sub-50 alt placeholders. ~6 min research wall-clock, all WebSearch. |
 | 2026-04-26 | 11    | 6        | 2       | WA high offsets 80-87 (Bethel + Blaine + Bremerton SD cluster). 6/6 verified (Challenger HS, Graham Kapowsin HS, Pierce County Skills Center, Acceleration Academy, Blaine HS, Bremerton HS). 2 skipped (Blaine Re-Engagement enr=13 alt; Morgan Center enr=0 placeholder). All-WebSearch run, ~5 min research wall-clock. |
 | 2026-04-25 | 10    | 6        | 2       | WA high offsets 72-79 (Bellingham SD + Bethel SD cluster). 6/6 verified, 2 skipped (Visions enr=13, Bellingham Re-Engagement alt). District-cluster batching = fast. |
 | 2026-04-26 | 9     | 3        | 5       | 3/5 skips were dups w/ manual entries (Bellevue HS, Interlake, Newport); 2 alt-program <50 skips. Discovered fuse mount + /tmp full traps. |

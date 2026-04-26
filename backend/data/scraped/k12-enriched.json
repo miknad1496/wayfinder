@@ -1,14 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-26",
+    "lastUpdated": "2026-04-26T10:54:26Z",
     "count": 55,
     "source": "NCES + verified web sources",
     "note": "Run 9: +3 WA high schools (Sammamish Senior, International School magnet, Bellevue Big Picture). Skipped 5 in batch (1 alt <50: Daybreak Youth Services; 3 dups: Bellevue HS, Interlake, Newport; 1 reentry <50: Career Education Options). Queue offset 64 -> 72.",
-    "totalSchools": 67,
+    "totalSchools": 72,
     "lastUpdate": "2026-04-25",
     "lastRunAdded": 6,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 11: +6 verified WA high (Bethel + Blaine + Bremerton SD cluster, offsets 80-87)"
+    "lastRunNote": "Run 11: +6 verified WA high (Bethel + Blaine + Bremerton SD cluster, offsets 80-87)",
+    "totalVerified": 72
   },
   "schools": [
     {
@@ -2866,6 +2867,237 @@
         "https://www.niche.com/k12/bremerton-high-school-bremerton-wa/",
         "https://www.usnews.com/education/best-high-schools/washington/districts/bremerton-school-district/bremerton-high-school-20755"
       ]
+    },
+    {
+      "ncessch": "530066002081",
+      "name": "West Sound Technical Skills Center",
+      "city": "Bremerton",
+      "state": "WA",
+      "zip": "98312",
+      "district": "Bremerton School District",
+      "level": "high",
+      "grades": "11-12 (ages 16-21)",
+      "type": "vocational",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)473-0550",
+      "latitude": 47.564941,
+      "longitude": -122.669376,
+      "website": "https://www.westsoundtech.org/",
+      "principal": "Shani Watkins",
+      "principalTitle": "Director",
+      "enrollment": 40,
+      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "schoolType": "vocational",
+      "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
+      "notablePrograms": [
+        "3D Animation & Gaming",
+        "Automotive Technology",
+        "Collision Repair Technology",
+        "Construction Careers",
+        "Cosmetology",
+        "Criminal Justice",
+        "Culinary Arts",
+        "Esthetics",
+        "Professional Medical Careers",
+        "HVAC",
+        "Fire Science",
+        "Welding",
+        "Year-Long Satellite Maritime Operations Program at Port Townsend"
+      ],
+      "address": "101 National Avenue North, Bremerton, WA 98312",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.westsoundtech.org/",
+        "https://www.westsoundtech.org/staff",
+        "https://www.nkschools.org/programs-and-services/middle-high-school-programs/west-sound-technical-skills-center",
+        "https://www.kitsapeda.org/workforce/workforce-programs/p/item/2122/west-sound-technical-skills-center"
+      ]
+    },
+    {
+      "ncessch": "530066002573",
+      "name": "Renaissance Alternative High School",
+      "city": "Bremerton",
+      "state": "WA",
+      "zip": "98312",
+      "district": "Bremerton School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "alternative",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "city",
+      "phone": "(360)473-1080",
+      "latitude": 47.564379,
+      "longitude": -122.661367,
+      "website": "https://rhs.bremertonschools.org/",
+      "enrollment": 102,
+      "studentTeacherRatio": "15:1",
+      "schoolType": "alternative",
+      "notablePrograms": [
+        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
+        "Standards-Based Grading model",
+        "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
+        "Foreign language requirement available for 4-year university path"
+      ],
+      "rating": {
+        "source": "Niche / US News",
+        "notes": "Bottom 50% Public School Review 2025-26"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://rhs.bremertonschools.org/",
+        "https://rhs.bremertonschools.org/30062_2",
+        "https://www.niche.com/k12/renaissance-alternative-high-school-bremerton-wa/",
+        "https://www.bremertonschools.org/ale"
+      ]
+    },
+    {
+      "ncessch": "530069000149",
+      "name": "Brewster High School",
+      "city": "Brewster",
+      "state": "WA",
+      "zip": "98812",
+      "district": "Brewster School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(509)689-3449",
+      "latitude": 48.093937,
+      "longitude": -119.787653,
+      "website": "https://www.brewsterbears.org/",
+      "enrollment": 331,
+      "graduationRate": "90-94%",
+      "demographics": {
+        "minorityEnrollment": "87%",
+        "hispanic": "85%",
+        "white": "13%",
+        "americanIndian": "1%"
+      },
+      "notablePrograms": [
+        "Activities and Athletics (Brewster Bears)",
+        "CTE pathways"
+      ],
+      "rating": {
+        "source": "US News + Niche",
+        "notes": "Bottom 50% Public School Review 2025-26"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.brewsterbears.org/",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/brewster-school-district/brewster-high-school-20758",
+        "https://www.publicschoolreview.com/brewster-high-school-profile/98812",
+        "https://www.niche.com/k12/brewster-high-school-brewster-wa/"
+      ]
+    },
+    {
+      "ncessch": "530072000151",
+      "name": "Bridgeport High School",
+      "city": "Bridgeport",
+      "state": "WA",
+      "zip": "98813",
+      "district": "Bridgeport School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "rural",
+      "phone": "(509)686-8770",
+      "latitude": 48.0068,
+      "longitude": -119.6759,
+      "website": "https://www.bridgeport.wednet.edu/page/home-hs",
+      "principal": "Tamra Jackson",
+      "enrollment": 223,
+      "apParticipationRate": "70%",
+      "demographics": {
+        "minorityEnrollment": "95%",
+        "economicallyDisadvantaged": "98%"
+      },
+      "notablePrograms": [
+        "Advanced Placement (70% participation)",
+        "Gifted & Talented program",
+        "NWAC (Northwest Accreditation Commission) accredited"
+      ],
+      "rating": {
+        "source": "US News + Niche",
+        "notes": "Bottom 50% Public School Review 2025"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.bridgeport.wednet.edu/page/home-hs",
+        "https://www.bridgeport.wednet.edu/article/339811",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/bridgeport-school-district/bridgeport-high-school-20759",
+        "https://www.publicschoolreview.com/bridgeport-high-school-profile/98813",
+        "https://www.wvc.edu/about/board-of-trustees/tamra-jackson.html"
+      ],
+      "principalNotes": "Principal since 2009. 32-yr English teacher. Awards: 2014-16 America Achieves National Fellow, 2015 WA Ag Educators Admin of Year."
+    },
+    {
+      "ncessch": "530078000155",
+      "name": "Burlington Edison High School",
+      "city": "Burlington",
+      "state": "WA",
+      "zip": "98233",
+      "district": "Burlington-Edison School District",
+      "level": "high",
+      "grades": "9-12",
+      "type": "regular",
+      "charter": false,
+      "magnet": false,
+      "titleI": false,
+      "locale": "suburb",
+      "phone": "(360)757-4074",
+      "latitude": 48.477778,
+      "longitude": -122.337499,
+      "website": "https://www.be.wednet.edu/",
+      "principal": "Alejandro Vergara",
+      "enrollment": 1091,
+      "studentTeacherRatio": "19:1",
+      "apParticipationRate": "33%",
+      "graduationRate": "87%",
+      "testScores": {
+        "mathProficient": "28%",
+        "readingProficient": "54%",
+        "averageSAT": 1200,
+        "averageACT": 28,
+        "averageGPA": 3.43
+      },
+      "address": "301 N Burlington Blvd, Burlington, WA 98233",
+      "notablePrograms": [
+        "Advanced Placement",
+        "CTE pathways",
+        "Athletics (multiple sports)"
+      ],
+      "rating": {
+        "source": "Niche",
+        "value": "B",
+        "greatSchoolsRating": "5/10",
+        "notes": "Bottom 50% Public School Review 2025"
+      },
+      "serviceArea": "Communities of Burlington, Bow, Edison, and Alger",
+      "_verified": true,
+      "_verifiedDate": "2026-04-26",
+      "_sources": [
+        "https://www.be.wednet.edu/article/1092764",
+        "https://www.be.wednet.edu/o/behs/staff?page_no=2",
+        "https://www.usnews.com/education/best-high-schools/washington/districts/burlington-edison-school-district/burlington-edison-high-school-20761",
+        "https://www.niche.com/k12/burlington-edison-high-school-burlington-wa/",
+        "https://www.publicschoolreview.com/burlington-edison-high-school-profile"
+      ],
+      "principalNotes": "Started July 1, 2023, replacing Jeff Baines. EdD in Superintendency from WSU Tri-Cities."
     }
   ]
 }
