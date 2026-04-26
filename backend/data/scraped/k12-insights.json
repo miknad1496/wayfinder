@@ -2,7 +2,9 @@
   "metadata": {
     "audience": "K-12 parents",
     "lastUpdated": "2026-04-26",
-    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention."
+    "purpose": "Insider K-12 school insights — district nuances, magnet/IB access tricks, AP scheduling realities, principal turnover patterns, transfer paths, things admissions tours don't mention.",
+    "lastFieldNotesUpdate": "2026-04-26",
+    "fieldNotesCount": 8
   },
   "sections": [
     {
@@ -106,44 +108,36 @@
       "icon": "🔍",
       "items": [
         {
-          "label": "Bellevue HS — Wolverine Guard 100-hour service award",
-          "detail": "Bellevue HS recognizes graduates with 100+ documented community service hours via the Wolverine Guard (WG) award, distinct from district graduation requirements. Worth aiming for if your student is service-oriented — it's a transcript line item colleges notice (verified 2026-04-26 via BHS counseling pages)."
+          "label": "Bellevue HS — Automotive CTE: 4 ASE certs + 15 college credits",
+          "detail": "Bellevue High's award-winning automotive technology program runs in a state-of-the-art shop unique to BHS; Auto Tech 1 prepares students for up to four ASE certifications and Auto Tech 2 adds job-shadowing at local dealerships plus up to 15 college credits. Open to all BSD students via the WANIC network — a non-obvious career-credential pathway for kids not on the AP track (verified 2026-04-26)."
         },
         {
-          "label": "Bellevue HS — Naviance ends 2025-26 for grades below senior",
-          "detail": "Per BSD, only the Class of 2026 (current seniors) uses Naviance for college planning in 2025-26; grades 6-11 are on SchooLinks. Parents asking about Naviance access for sophomores/juniors will get blocked — the right platform is SchooLinks (verified 2026-04-26)."
+          "label": "Bellevue HS — Running Start scheduling gotcha",
+          "detail": "BSD covers Bellevue College tuition up to the state max of 21 credits/quarter for Running Start, but BHS does not allow Running Start scheduling to make a student late to or leave early from a BHS class. Parents picking BC sections must coordinate around BHS bell schedule — many start-of-day BC sections are off-limits in practice (verified 2026-04-26)."
         },
         {
-          "label": "Newport HS — 90% AP score-3+ rate across 2,706 exams",
-          "detail": "Newport HS posts an extraordinary 90% pass rate (score 3+) across 2,706 AP exams from 1,151 students tested, with 84% AP participation. This is well above WA state averages and a meaningful signal of AP-instruction quality, not just course availability (verified 2026-04-26 via Newport profile)."
+          "label": "Newport HS — 93% AP enrollment + K-12 Spanish/Mandarin Dual Language pipeline",
+          "detail": "Newport offers 27 AP courses with 93% of students taking at least one AP class; it also hosts the high-school portion of BSD's 12-year Spanish Immersion and Mandarin Dual Language programs — meaning families who enroll a child in immersion in elementary have a verified 12-year continuous pipeline ending at Newport. Also offers CISCO Networking Academy for CCNA-exam prep (verified 2026-04-26)."
         },
         {
-          "label": "Newport HS — AVID program partnered with UW consultants",
-          "detail": "Newport HS runs AVID specifically for first-generation-to-college students with curriculum support from University of Washington consultants — non-trivial because AVID quality varies wildly by school. Newport's UW partnership is a real differentiator for striver-track families (verified 2026-04-26)."
+          "label": "Tesla STEM (Redmond) — Class of 2030 already full; waitlists carry forward year-over-year",
+          "detail": "Tesla STEM is lottery-only and admits ~150 9th graders; for 2026-27 the Class of 2030 is full with the waitlist already past number 237, and 10th grade has zero openings (waitlist past 242). Critical parent insight: LWSD waitlist numbers persist across years — a 9th-grade applicant's number carries into 10th, 11th, 12th — so applying early even if you miss the lottery improves later-grade odds (verified 2026-04-26)."
         },
         {
-          "label": "Tesla STEM — Application window Nov 1 to Dec 1 only",
-          "detail": "Tesla STEM admission applications open Nov 1 and close Dec 1 each year via the LWSD ParentSquare portal; the lottery runs in early January (Jan 9 for 2026-27 cycle), with acceptances due Jan 30. Parents who discover Tesla STEM in spring of 8th grade have already missed the window (verified 2026-04-26)."
+          "label": "Roosevelt HS (Seattle) — UW credit on-campus via College in the High School",
+          "detail": "Roosevelt students can earn University of Washington credit AT Roosevelt for reduced tuition through UW's College in the High School program — same UW curriculum, texts, tests, and grading scales — no Running Start commute required. Separately: Roosevelt Jazz operating expenses are largely funded by parent boosters, not SPS, so dues plus fundraising are part of the program cost (verified 2026-04-26)."
         },
         {
-          "label": "Tesla STEM — Waitlist moves slowly (#237 still uncalled)",
-          "detail": "As of the 2026-27 cycle, Tesla STEM's 9th grade waitlist next-up number is 237 and has not yet been called — meaning 9th-grade waitlist almost never moves. Don't bank on a waitlist offer; treat lottery rejection as a final answer and apply elsewhere (verified 2026-04-26 via LWSD lottery info)."
+          "label": "Garfield HS (Seattle) — 'Honors for All' default-tracks every 9th grader",
+          "detail": "Since 2017, every Garfield freshman is automatically placed in Honors English and Honors World History (no opt-out) with built-in support; equity-driven design means parents do NOT need to advocate to get a 9th grader into honors-track humanities — it's the floor, not a ceiling. Garfield offers 21 APs and 10 honors with a 49% AP participation rate (verified 2026-04-26)."
         },
         {
-          "label": "Tesla STEM — Locked 4-year CS pathway sequence",
-          "detail": "Tesla STEM's CS pathway is a fixed 4-year sequence: AP CS Principles (9th) → AP CSA (10th) → Data Structures (11th) → Advanced Projects in Java (12th). Students who haven't done coding by 8th grade can struggle starting cold in 9th. Worth pre-prep if your kid plans the CS path (verified 2026-04-26)."
+          "label": "Garfield HS — Jazz program is among the top high school jazz programs in the U.S.",
+          "detail": "Garfield Jazz has been selected an Essentially Ellington Lincoln Center finalist 15+ times since 1999 and won first place four times (2003, 2004, 2009, 2010); tied with Roosevelt for most national wins in the festival's history. Selection is by audition; a serious player at Garfield is competing for a national-elite seat, not a recreational chair (verified 2026-04-26)."
         },
         {
-          "label": "Roosevelt HS — Universal AP enrollment for 10th and 11/12 ELA",
-          "detail": "Roosevelt HS auto-enrolls ALL 10th graders in AP Human Geography and ALL 11th-or-12th-grade students in AP Lang — not opt-in. Even reluctant test-takers will end up sitting at least 2 AP exams. Plan and budget for those fees (verified 2026-04-26 via RHS academics page)."
-        },
-        {
-          "label": "Roosevelt HS — Jazz Band 1 has won Essentially Ellington 4x since 1999",
-          "detail": "Roosevelt's Jazz Band 1 (dir. Hannah Mowry) has placed first four times at Lincoln Center's Essentially Ellington High School Jazz competition since 1999, most recently 2019 — among the nation's top high-school jazz programs. Audition spots are competitive; serious jazz students should audition early in 9th (verified 2026-04-26)."
-        },
-        {
-          "label": "Garfield HS — Highly Capable cohort split across 3 schools since 2019-20",
-          "detail": "Garfield is no longer the single HCC destination — since 2019-20, Seattle Public Schools split HC pathways into north (Lincoln HS), central/southeast (Garfield), and southwest (West Seattle). HC-identified students are only guaranteed Garfield if they live in its boundary; otherwise pathway depends on address (verified 2026-04-26 via Garfield PTSA info)."
+          "label": "Live grinder discoveries appear here",
+          "detail": "When the K12 enrichment grinder uncovers a non-obvious parent insight while researching schools (principal-led program changes, magnet program quirks, hidden transfer paths, rating quirks, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top."
         }
       ]
     }

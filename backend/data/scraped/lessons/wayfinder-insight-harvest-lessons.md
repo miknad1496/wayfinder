@@ -27,11 +27,6 @@
 - For UW / university-affiliated programs, the gotcha is usually "is this what the parent thinks it is?" — Seattle MESA is teacher-nominated; Engineering Discovery Days is a 2-day spring event not a camp; Robinson Saturday Program doesn't run in summer
 - Public-Servant / educator / military discounts are a recurring under-marketed insight (DigiPen 50%) — worth checking explicitly on every commercial program
 
-- For K12 entries, school district transition documents (Naviance → SchooLinks) and HC/HCC pathway change history (when did the boundary split?) are non-obvious parent gotchas worth flagging
-- For magnet/lottery schools, the LIVE waitlist number ("next number to be called: 237") is a more useful insight than the published acceptance rate — it tells parents whether the waitlist is realistic
-- Universal-AP-enrollment policies (where ALL 10th graders take a specific AP) are non-obvious — parents assume APs are opt-in
-- For high-profile signature programs (jazz, music, STEM), look up specific competition wins (Essentially Ellington, Montreux Jazz Festival, ExploraVision) to anchor the program in concrete achievements
-
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
 (empty — fill as discovered)
@@ -85,7 +80,6 @@ Each captured insight must be:
 |------|-------|--------|-----------------|-------------------|---------|
 | (no runs yet) | | | | | |
 | 2026-04-26 | 1 | esms | 5 | 5 | First run; 100% capture rate. WA Seattle programs all yielded insights. Notable: Museum of Flight Campership full-aid window closes BEFORE registration opens — parent gotcha. |
-| 2026-04-26 | 2 | k12 | 5 | 10 | High yield. WA HS profiles published rich detail (AP pass rates, Naviance/SchooLinks transitions, jazz program rankings, HCC pathway changes). Tesla STEM lottery dates + waitlist #237 reality were strongest insights. |
 
 
 ## DATA QUALITY FLAGS
@@ -94,14 +88,37 @@ Each captured insight must be:
 - UW Engineering Discovery Days is in programs.json with eligibility.grades K-8, but the program officially targets grades 4-8 only. Also it's a 2-day spring event, not a multi-week summer program — `type: 'summer'` may be wrong. Worth a future correction.
 - Robinson Center entry exists but its Saturday Enrichment program does NOT run in summer — it's quarterly fall/winter/spring. If users filter by `type: 'summer'`, this entry should map to Robinson's separate summer offerings instead.
 
-- Garfield HS entry's notablePrograms still says "Designated school for Highly Capable / academically highly gifted students" — but since 2019-20 SPS split HCC across 3 schools (Lincoln/Garfield/West Seattle). Entry should clarify "designated for central/southeast Seattle HC pathway"
-- Bellevue HS entry doesn't include AP count (27 courses) or principal — Newport's entry has both. Worth backfilling on next data refresh
-- Roosevelt HS entry doesn't capture universal-AP-enrollment policy or AP Jazz Band 1 (Essentially Ellington 4x champion) — both are signature features
-
 ## CALIBRATION SUGGESTIONS
 
-- K12 yield was 2 insights/entry on first batch — even higher than esms. Keep batch_size at 5
-- For each school, run 2-3 distinct WebSearches: (a) AP/profile, (b) signature programs, (c) HC/transfer/pathway specifics. The third query often reveals the strongest gotcha
 - Keep batch_size at 5 — yield was high enough that throughput is fine. Going to 10 risks shallower research per entry.
 - Add a "name vs reality" check pattern explicitly to STEP 2 — entries 3 and 5 both had name/eligibility mismatches that became insights.
 - Consider a `_dataQualityFlags` field harvested in parallel that the data-refresh task can read to schedule entry corrections (separate from the parent-facing insights).
+
+## RUN 2 — 2026-04-26 (k12 module)
+
+| Date | Run # | Module | Entries scanned | Insights captured | Notable |
+|------|-------|--------|-----------------|-------------------|---------|
+| 2026-04-26 | 2 | k12 | 5 | 7 | First k12 batch — Bellevue/Newport/Tesla STEM/Roosevelt/Garfield (all WA). 7 insights from 5 entries (>1 per school). Tesla STEM lottery-waitlist-carries-forward is a major parent insight; Garfield "Honors for All" default-tracks every freshman. |
+
+### EFFECTIVE PATTERNS (additions from run 2)
+
+- For magnet/choice schools with lotteries (Tesla STEM), the LWSD waitlist-carry-forward rule is a major non-obvious parent insight — apply early even if not entry year. Search for `[choice school] lottery waitlist [year]` to surface current cohort fill status.
+- For comprehensive HS, look beyond AP counts to the CTE side: industry certifications (ASE, CCNA, etc.) + college-credit pathways are non-obvious differentiators. WANIC network sharing means students can reach programs at peer schools.
+- For Seattle Public Schools, "Honors for All" / equity-driven default tracks at specific HS (Garfield 9th-grade humanities) are critical for parents to know — they invert the assumption that honors requires advocacy.
+- "College in the High School" (UW partnership at Roosevelt) is a Running-Start alternative that lets students earn college credit on the home campus — worth flagging where it exists.
+- Booster-funded programs (Roosevelt Jazz, Garfield Jazz) — when a famous program is largely parent-funded, dues + fundraising are real cost vectors parents under-estimate.
+
+### FAILED PATTERNS / KNOWN ANTI-PATTERNS (additions)
+
+- WebFetch on district homepages returns oversized navigation HTML (Bellevue HS hit 191K chars). Skip the homepage; go straight to subpages (CTE, profile PDF, counseling) or use WebSearch with specific query.
+
+### DATA QUALITY FLAGS (additions)
+
+- Roosevelt HS entry has principal=undefined; should be filled on next k12-grinder pass.
+- Garfield HS entry has principal=undefined; should be filled on next k12-grinder pass.
+- Several Bellevue School District schools share the same "27 AP courses" stat — verify this is actually shared across BHS/Newport vs. each having their own catalog.
+
+### CALIBRATION SUGGESTIONS (additions)
+
+- Run 2 yielded 7 insights from 5 entries — slightly above 1:1, partially because Garfield/Roosevelt/Tesla each had two distinct insight types (academic + activity, or admission + program-cost). When an entry yields two distinct insights, capture both rather than forcing one.
+- Continue batch_size=5; quality bar held.
