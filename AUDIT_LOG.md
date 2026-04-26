@@ -1132,3 +1132,25 @@ Full audit of all 15 route files (5,773 lines) plus server.js route mounting. Fo
 - scholarships.json: ✅ 1043 entries, 80 verified, metadata matches.
 - programs.json: ✅ 826 entries, metadata matches.
 - Frontend syntax: ✅ `node -c frontend/src/app.js` passed.
+
+## 2026-04-26: 1 Real Bug Fix — Essay Review Pipeline Audit
+
+### Areas Checked
+Deep audit of the essay review pipeline: `backend/routes/essays.js` (398 lines), `backend/services/essay-reviewer.js` (661 lines), credit functions in `auth.js`, `input_filter.js`, frontend `renderEssayReview()` (~280 lines). Verified the rate-limiter wiring (`expensiveLimiter` 3/min on POST /review). Cross-referenced CLAUDE.md's "Known Gaps" list against code.
+
+### Fixes Applied
+1. **essays.js — credit-refund-without-deduction** (HIGH severity) — Outer `catch (err)` block in POST `/review` called `refundEssayCredit(token)` unconditionally on any thrown error. A Pro/Elite-tier user POSTing `{"essayText": {}}` would crash on `essayText.trim()`, hit the catch, and be refunded a credit that was never deducted — yielding unlimited free credits. Fixed by:
+   - Adding `if (typeof essayText !== 'string') return 400` guard before `.trim()`.
+   - Tracking `let creditDeducted = false` set to `true` only after `useEssayCredit` succeeds, and gating the catch-block refund on `creditDeducted === true`.
+
+### Informational Findings
+- `/history` and `/drafts` scan ALL review files in REVIEWS_DIR every request (O(N) total, not O(M_per_user)). Worth indexing per-user when volume justifies it.
+- `checkInjection` runs on full essay body — may false-positive on rare meta-reflective content, by design ("false positives preferred over false negatives in v1").
+- CLAUDE.md essay-module "Known Gaps" list is partially stale (refund logic, structure-as-JSON-string, history UI are all already resolved in code). Doc refresh recommended to Dan.
+
+### Data Integrity
+- Internships: ✅ 1606 entries, 981 verified — metadata matches.
+- Scholarships: ✅ 1043 entries, 80 verified — metadata matches.
+- Programs: ✅ 826 entries, 82 verified — metadata matches.
+- Volunteer: ✅ 89 entries.
+- All JS syntax checks passed (frontend + server + essays route).

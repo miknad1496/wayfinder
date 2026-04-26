@@ -136,6 +136,13 @@ router.get('/credits', async (req, res) => {
 
 // ─── POST /api/essays/review ───────────────────────────────────
 router.post('/review', async (req, res) => {
+  // ER-AUDIT-1 (2026-04-26): track whether a credit was actually deducted.
+  // The outer catch block previously called refundEssayCredit unconditionally
+  // when an exception was thrown, even if the failure happened BEFORE
+  // useEssayCredit ran (e.g., from a pre-validation TypeError on bad input).
+  // That gifted users a credit they never paid for. We now only refund if
+  // creditDeducted === true.
+  let creditDeducted = false;
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
     const user = await verifyToken(token);
@@ -149,6 +156,14 @@ router.post('/review', async (req, res) => {
     }
 
     const { essayText, essayType, targetSchool, prompt } = req.body;
+
+    // ER-AUDIT-1: Reject non-string essayText explicitly. Without this guard,
+    // an object/number payload caused essayText.trim() to throw a TypeError
+    // that bubbled to the outer catch and previously triggered an unwarranted
+    // credit refund (see creditDeducted flag).
+    if (typeof essayText !== 'string') {
+      return res.status(400).json({ error: 'Essay must be provided as text.' });
+    }
 
     if (!essayText || essayText.trim().length < 50) {
       return res.status(400).json({ error: 'Essay must be at least 50 characters.' });
@@ -186,6 +201,9 @@ router.post('/review', async (req, res) => {
         _requiresPurchase: true
       });
     }
+    // ER-AUDIT-1: from this point onward, a credit has been deducted —
+    // any later failure must refund.
+    creditDeducted = true;
 
     // Run the review
     const result = await reviewEssay(essayText, essayType, targetSchool, prompt);
@@ -242,23 +260,29 @@ router.post('/review', async (req, res) => {
     });
   } catch (err) {
     console.error('Essay review error:', err);
-    // Try to refund the credit even if something went wrong
-    try {
-      const tok = req.headers.authorization?.replace('Bearer ', '');
-      if (tok) {
-        const refund = await refundEssayCredit(tok);
-        return res.status(500).json({
-          error: 'Internal server error. Your credit has been refunded.',
-          creditsRemaining: refund.remaining
-        });
+    // ER-AUDIT-1: Only refund if a credit was actually deducted. Previously
+    // this block refunded unconditionally on any thrown error, which gifted
+    // users a free credit when the throw happened before useEssayCredit
+    // (e.g., bad request body causing a TypeError in validation).
+    if (creditDeducted) {
+      try {
+        const tok = req.headers.authorization?.replace('Bearer ', '');
+        if (tok) {
+          const refund = await refundEssayCredit(tok);
+          return res.status(500).json({
+            error: 'Internal server error. Your credit has been refunded.',
+            creditsRemaining: refund.remaining
+          });
+        }
+      } catch (refundErr) {
+        console.error('Failed to refund credit after error:', refundErr);
       }
-    } catch (refundErr) {
-      console.error('Failed to refund credit after error:', refundErr);
+      return res.status(500).json({
+        error: 'Internal server error. Please contact support if credit was not refunded.',
+        supportNote: 'Credit refund may have failed'
+      });
     }
-    return res.status(500).json({
-      error: 'Internal server error. Please contact support if credit was not refunded.',
-      supportNote: 'Credit refund may have failed'
-    });
+    return res.status(500).json({ error: 'Internal server error.' });
   }
 });
 
