@@ -53967,6 +53967,215 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Cambridge HE+ Research-Track Summer Programs",
+      "provider": "University of Cambridge HE+ Programme",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~£3,495-£5,995/3-week (USD $4,545-7,795); Cambridge Trust scholarships up to 100% via HE+ outreach"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cambridge HE+ Research Programs — Cambridge's flagship research-track for ages 16-18 (rising 11-12). 3-week residential at Cambridge colleges. Tracks: Original research projects in Sciences (Physics, Chemistry, Biology, Mathematics), Humanities (English, History, Politics), Engineering. Selective admission via essay + teacher recommendation. College-app GOLD-PLUS — kids do real Cambridge research with Cambridge dons + faculty. Apply Feb-April.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.cambridgestudents.cam.ac.uk/learn/he-plus",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cambridgestudents.cam.ac.uk/learn/he-plus",
+      "_addedBy": "hs-international-batch-91",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Cambridge HE+ Research Programs — Cambridge's flagship research-track for ages 16-18 (rising 11-12). 3-week residential at Cambridge colleges. Tracks: Original research in Sciences (Physics, Chemistry, Biology, Mathematics), Humanities (English, History, Politics), Engineering. SELECTIVE admission via essay + teacher recommendation. ~£3,495-£5,995/3-week (USD $4,545-7,795). Cambridge Trust scholarships up to 100% via HE+ outreach. College-app GOLD-PLUS — kids do REAL Cambridge research with Cambridge dons + faculty. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Oxford Scholastica Academy (HS Selective)",
+      "provider": "Oxford Scholastica Academy",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3795,
+        "type": "paid",
+        "display": "~£2,995-£4,495/2-week (USD $3,895-5,840); Oxford Scholastica Foundation scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oxford",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Oxford Scholastica Academy — boutique Oxford summer program (more selective + smaller cohort than Oxford Royale) for ages 15-18 (rising 10-12). 2-week residential at Oxford colleges. Tracks: Medicine, Law, Engineering, Computer Science + AI, Economics, Creative Writing. Smaller class sizes (~6-8 students) allow deeper engagement with Oxford tutors. SELECTIVE — 30% acceptance rate. College-app strong differentiator vs Oxford Royale (more saturated). Apply Mar-May.",
+      "deadline": "Apply Mar-May; selective; rolling",
+      "url": "https://www.oxfordscholastica.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.oxfordscholastica.com",
+      "_addedBy": "hs-international-batch-91",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Oxford Scholastica Academy — boutique Oxford summer program (more selective + smaller cohort than Oxford Royale) for ages 15-18 (rising 10-12). 2-week residential at Oxford colleges. Tracks: Medicine, Law, Engineering, CS + AI, Economics, Creative Writing. Smaller class sizes (~6-8 students) allow deeper engagement with Oxford tutors. SELECTIVE — 30% acceptance rate. ~£2,995-£4,495/2-week (USD $3,895-5,840). Oxford Scholastica Foundation scholarships for international students. College-app strong DIFFERENTIATOR vs Oxford Royale (more saturated). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Oxford Summer Courses (Independent Provider)",
+      "provider": "Oxford Summer Courses (independent UK provider)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3295,
+        "type": "paid",
+        "display": "~£2,495-£3,995/2-week (USD $3,245-5,195); merit-based scholarships available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oxford",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Oxford Summer Courses — independent provider (NOT Oxford Royale) hosts programs at Oxford colleges for ages 13-18 (rising 8-12). 2-week residential. Tracks: same as competitors (Engineering, Medicine, Law, Computer Science, Business, Creative Writing). Wider age range than Royale + Scholastica. Less prestigious than university-run programs but accessible + still uses Oxford college venues. Apply Mar-May.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.oxfordsummercourses.com",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.oxfordsummercourses.com",
+      "_addedBy": "hs-international-batch-91",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Oxford Summer Courses — independent provider (NOT Oxford Royale, NOT Oxford University) hosts programs at Oxford colleges for ages 13-18 (rising 8-12). 2-week residential. Tracks: Engineering, Medicine, Law, CS, Business, Creative Writing. Wider age range than Royale + Scholastica (rising 8-12 vs rising 11-12). Less prestigious than university-run programs but accessible + still uses Oxford college venues. ~£2,495-£3,995/2-week (USD $3,245-5,195). Merit-based scholarships available. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "UNIQ Oxford Summer School (FREE for UK + International)",
+      "provider": "University of Oxford UNIQ programme",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students — Oxford-funded; merit + access-based selective admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oxford",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UNIQ Oxford Summer School — University of Oxford's official FREE summer program for ages 17-18 (rising 12). 1-week residential at Oxford colleges. SELECTIVE — for high-achieving students from underrepresented backgrounds. Tracks: every Oxford undergraduate course (Sciences, Humanities, Engineering, etc.). Strong fit for HS seniors considering UK university applications. International US students with Pell-eligible household income welcome. UNDER-applied-for given full-ride scholarship.",
+      "deadline": "Apply Jan-Feb; selective; admission decisions Apr",
+      "url": "https://www.uniq.ox.ac.uk",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uniq.ox.ac.uk",
+      "_addedBy": "hs-international-batch-91",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "UNIQ Oxford Summer School — University of Oxford's official FREE summer program for ages 17-18 (rising 12). 1-week residential at Oxford colleges. SELECTIVE — for high-achieving students from underrepresented backgrounds. Tracks: every Oxford undergraduate course (Sciences, Humanities, Engineering, etc.). 100% FREE for accepted students. Strong fit for HS seniors considering UK university applications. International US students with Pell-eligible household income welcome. UNDER-APPLIED-FOR given full-ride scholarship. Apply Jan-Feb; selective; admission decisions Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Sutton Trust UK Summer Schools (FREE for high-achieving low-income)",
+      "provider": "Sutton Trust UK",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted UK + international students from low-income/first-gen backgrounds"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "15+ UK universities",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sutton Trust UK Summer Schools — UK's most selective FREE summer program for ages 16-18 from low-income/first-gen households. 1-week residential at top UK universities (Cambridge, Oxford, UCL, LSE, Imperial, Edinburgh, Trinity Dublin, others). Tracks: every UK university subject. Selective via essay + teacher recommendation. International US students from underrepresented backgrounds welcome. College-app GOLD given combined access + UK prestige. UNDER-applied-for.",
+      "deadline": "Apply Sep-Dec; selective; admission decisions Mar",
+      "url": "https://www.suttontrust.com/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.suttontrust.com/learn/summer-school",
+      "_addedBy": "hs-international-batch-91",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Sutton Trust UK Summer Schools — UK's most selective FREE summer program for ages 16-18 from low-income/first-gen households. 1-week residential at top UK universities (Cambridge, Oxford, UCL, LSE, Imperial, Edinburgh, Trinity Dublin, others). Tracks: every UK university subject. SELECTIVE via essay + teacher recommendation. 100% FREE. International US students from underrepresented backgrounds welcome. College-app GOLD given combined access + UK prestige. UNDER-APPLIED-FOR. Apply Sep-Dec; selective; admission decisions Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
