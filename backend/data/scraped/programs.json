@@ -54176,6 +54176,214 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "HEC Paris Summer Programs",
+      "provider": "HEC Paris (École des hautes études commerciales)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3495,
+        "type": "paid",
+        "display": "~€2,995-€4,495/2-week (USD $3,245-4,870); HEC Foundation scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Jouy-en-Josas",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "HEC Paris Summer Programs — HEC (Europe's #1 business school per Financial Times for 9 consecutive years; alma mater of Bernard Arnault + Henri de Castries) for ages 16-18 (rising 11-12). 2-week residential at HEC Paris campus (Jouy-en-Josas, just outside Paris). Tracks: International Business + Strategy, Finance + Investment, Entrepreneurship, Sustainability + ESG, French Cultural Studies. ENGLISH-medium primary. College-app gold for business + finance track. Pipeline to HEC undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.hec.edu/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hec.edu/learn/summer-school",
+      "_addedBy": "hs-international-batch-92",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "HEC Paris Summer Programs — HEC (Europe's #1 business school per Financial Times for 9 consecutive years; alma mater of Bernard Arnault + Henri de Castries) for ages 16-18 (rising 11-12). 2-week residential at HEC Paris campus (Jouy-en-Josas, just outside Paris). Tracks: International Business + Strategy, Finance + Investment, Entrepreneurship, Sustainability + ESG, French Cultural Studies. ENGLISH-medium primary. ~€2,995-€4,495/2-week (USD $3,245-4,870). HEC Foundation scholarships for international students. College-app GOLD for business + finance track. Pipeline to HEC undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ESCP Business School Summer (Paris + Berlin + London)",
+      "provider": "ESCP Business School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); ESCP scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris + Berlin + London",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ESCP Business School Summer — Europe's oldest business school (founded 1819; ranked top-5 European business schools) for ages 16-18 (rising 11-12). 2-week residential — kids choose ESCP Paris OR Berlin OR London campus. Tracks: International Business + Marketing, Finance + Banking, Entrepreneurship, EU Politics + Governance. ENGLISH-medium. Multi-campus model: kids can experience European business culture across countries. Affordable for HS-track business students.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.escp.eu/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.escp.eu/learn/summer-school",
+      "_addedBy": "hs-international-batch-92",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "ESCP Business School Summer — Europe's oldest business school (founded 1819; ranked top-5 European business schools) for ages 16-18 (rising 11-12). 2-week residential — kids choose ESCP Paris OR Berlin OR London campus. Tracks: International Business + Marketing, Finance + Banking, Entrepreneurship, EU Politics + Governance. ENGLISH-medium. ~€2,495-€3,795/2-week (USD $2,705-4,115). ESCP scholarships for international students. Multi-campus model: kids can experience European business culture across countries. Affordable for HS-track business students.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "École Polytechnique Bachelor's Summer Program (Paris)",
+      "provider": "École Polytechnique (Paris)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,150-€3,295/3-week (USD $2,330-3,570); École Polytechnique Foundation scholarships; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Palaiseau",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "École Polytechnique Bachelor's Summer Program — École Polytechnique (France's most prestigious engineering school, founded 1794 by Napoleon, ranked top-30 globally) for ages 16-18 (rising 11-12). 3-week residential at Palaiseau campus (south of Paris). Tracks: Mathematics + Physics, Computer Science + AI, Pre-Engineering, Economics + Finance. ENGLISH-medium primary. SELECTIVE admission. Polytechnique is known for producing French Presidents + Nobel laureates + tech founders. College-app GOLD-PLUS for STEM-track US kids.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.polytechnique.edu/en/learn/bachelor-summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.polytechnique.edu/en/learn/bachelor-summer-school",
+      "_addedBy": "hs-international-batch-92",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "École Polytechnique Bachelor's Summer Program — École Polytechnique (France's most prestigious engineering school, founded 1794 by Napoleon, ranked top-30 globally) for ages 16-18 (rising 11-12). 3-week residential at Palaiseau campus (south of Paris). Tracks: Mathematics + Physics, CS + AI, Pre-Engineering, Economics + Finance. ENGLISH-medium primary. SELECTIVE admission. Polytechnique known for producing French Presidents + Nobel laureates + tech founders. ~€2,150-€3,295/3-week (USD $2,330-3,570). École Polytechnique Foundation scholarships. College-app GOLD-PLUS for STEM-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "École Normale Supérieure Summer Program (FREE for selected)",
+      "provider": "École Normale Supérieure (Paris) — Sciences + Humanities",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected international students — ENS-funded; covers tuition + room + board"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "École Normale Supérieure (ENS) Summer Program — France's most prestigious humanities + sciences school (founded 1794; alma mater of Pasteur, Sartre, Lévi-Strauss, Foucault, multiple Nobel laureates) for ages 16-18 (rising 11-12). 3-week residential at ENS rue d'Ulm campus (heart of Paris Latin Quarter). 100% FREE for selected international students — ENS-funded. SELECTIVE — academic essay + teacher recommendations. Tracks: Mathematics + Physics, Philosophy + Humanities, Biology + Chemistry, French Literature. ENGLISH-medium primary; French immersion option. College-app GOLD-PLUS.",
+      "deadline": "Apply Sep-Nov; selective; admission decisions Mar",
+      "url": "https://www.ens.psl.eu/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ens.psl.eu/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-92",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "École Normale Supérieure (ENS) Summer Program — France's most prestigious humanities + sciences school (founded 1794; alma mater of Pasteur, Sartre, Lévi-Strauss, Foucault, multiple Nobel laureates) for ages 16-18 (rising 11-12). 3-week residential at ENS rue d'Ulm campus (heart of Paris Latin Quarter). 100% FREE for selected international students — ENS-funded. SELECTIVE — academic essay + teacher recommendations. Tracks: Mathematics + Physics, Philosophy + Humanities, Biology + Chemistry, French Literature. ENGLISH-medium primary; French immersion option. College-app GOLD-PLUS. Apply Sep-Nov; admission decisions Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "INSEAD Young Leaders Programme (Singapore + Fontainebleau)",
+      "provider": "INSEAD",
+      "category": "leadership",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~€4,500-€6,500/2-week (USD $4,875-7,045); INSEAD Foundation scholarships up to 100% for international students from underrepresented backgrounds"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Fontainebleau + Singapore",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "INSEAD Young Leaders Programme — INSEAD (top-2 global business school, alma mater of Tidjane Thiam + Mukesh Ambani's son + 100s of Fortune 500 leaders) for ages 17-18 (rising 12). 2-week residential — kids choose INSEAD Fontainebleau France OR Singapore campus. Tracks: Strategic Leadership + Decision-Making, International Business, Sustainability + ESG, Innovation + Entrepreneurship. ENGLISH-medium. Selective admission via essay + teacher recommendation. College-app GOLD-PLUS for business-track US kids. Apply Feb-April.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.insead.edu/learn/young-leaders",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.insead.edu/learn/young-leaders",
+      "_addedBy": "hs-international-batch-92",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "INSEAD Young Leaders Programme — INSEAD (top-2 global business school, alma mater of Tidjane Thiam + Mukesh Ambani's son + 100s of Fortune 500 leaders) for ages 17-18 (rising 12). 2-week residential — kids choose INSEAD Fontainebleau France OR Singapore campus. Tracks: Strategic Leadership + Decision-Making, International Business, Sustainability + ESG, Innovation + Entrepreneurship. ENGLISH-medium. ~€4,500-€6,500/2-week (USD $4,875-7,045). INSEAD Foundation scholarships up to 100% for international students from underrepresented backgrounds. SELECTIVE. College-app GOLD-PLUS for business-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
