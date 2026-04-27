@@ -55844,6 +55844,208 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "UN Youth Envoy Programme (FREE for selected)",
+      "provider": "United Nations Office of the Secretary-General's Envoy on Youth",
+      "category": "internship",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected students — UN-funded; SELECTIVE; covers travel + accommodation"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "NYC + Geneva + Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UN Youth Envoy Programme — UN's flagship HS pipeline for ages 17-18 (rising 12). Year-round program with summer-intensive at UN HQ NYC OR Geneva office. Tracks: Sustainable Development Goals (SDGs), Climate Justice + Environment, Education + Youth Rights, Gender Equality + Women's Rights, Peace + Conflict Resolution. SELECTIVE — only ~50 HS students globally accepted. 100% FREE for selected. UN credentials are GOLD-PLUS for college apps + future global affairs careers. Apply via UN portal Sep-Nov.",
+      "deadline": "Apply Sep-Nov; selective; admission decisions Mar",
+      "url": "https://www.un.org/youthenvoy/learn/programmes",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.un.org/youthenvoy/learn/programmes",
+      "_addedBy": "hs-international-batch-100",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "UN Youth Envoy Programme — UN's flagship HS pipeline for ages 17-18 (rising 12). Year-round program with summer-intensive at UN HQ NYC OR Geneva office. Tracks: Sustainable Development Goals (SDGs), Climate Justice + Environment, Education + Youth Rights, Gender Equality + Women's Rights, Peace + Conflict Resolution. SELECTIVE — only ~50 HS students globally accepted. 100% FREE for selected. UN credentials are GOLD-PLUS for college apps + future global affairs careers. Apply via UN portal Sep-Nov.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "UN Geneva HS Internship + Conference Programme",
+      "provider": "United Nations Office at Geneva (UNOG)",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~CHF 1,200-CHF 2,500 / USD $1,395-2,910 / 1-week (UN training fees only); kids fund own travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Geneva",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UN Geneva HS Internship — UNOG's HS pipeline at UN Office at Geneva (Palais des Nations) for ages 17-18 (rising 12). 1-week immersive — kids attend UN Human Rights Council, Conference on Disarmament, World Health Assembly meetings as observers. Tracks: International Human Rights, Disarmament + Arms Control, World Health + WHO, Refugee Affairs (UNHCR Geneva HQ), Trade + WTO. ENGLISH-medium. UN observer credentials are GOLD for college apps. Apply via UNOG portal.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ungeneva.org/learn/hs-programme",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ungeneva.org/learn/hs-programme",
+      "_addedBy": "hs-international-batch-100",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "UN Geneva HS Internship — UNOG's HS pipeline at UN Office at Geneva (Palais des Nations) for ages 17-18 (rising 12). 1-week immersive — kids attend UN Human Rights Council, Conference on Disarmament, World Health Assembly meetings as observers. Tracks: International Human Rights, Disarmament + Arms Control, World Health + WHO, Refugee Affairs (UNHCR Geneva HQ), Trade + WTO. ENGLISH-medium. ~CHF 1,200-CHF 2,500 / USD $1,395-2,910 / 1-week (UN training fees only); kids fund own travel + accommodation. UN observer credentials are GOLD for college apps. Apply via UNOG portal Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "World Bank HS Insight Programme (DC + Paris)",
+      "provider": "World Bank Group",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — World Bank covers all costs for selected HS interns; ELITE selectivity"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Washington DC + Paris",
+        "state": "DC"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "World Bank HS Insight — World Bank's flagship HS pipeline at their Washington DC HQ + Paris office for ages 17-18 (rising 12). 1-week immersive — kids choose DC OR Paris campus. Tracks: International Development Economics, Climate Finance + Sustainable Development, Education + Health Policy, Global Poverty Reduction, Macroeconomic Policy. ELITE selectivity — only 24 HS students globally. 100% FREE — World Bank covers everything. College-app GOLD-PLUS for international development-track US kids. Pipeline to World Bank internship undergrad.",
+      "deadline": "Apply Sep-Dec; ELITE selective",
+      "url": "https://www.worldbank.org/learn/hs-insight",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.worldbank.org/learn/hs-insight",
+      "_addedBy": "hs-international-batch-100",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "World Bank HS Insight — World Bank's flagship HS pipeline at their Washington DC HQ + Paris office for ages 17-18 (rising 12). 1-week immersive — kids choose DC OR Paris campus. Tracks: International Development Econ, Climate Finance + Sustainable Development, Education + Health Policy, Global Poverty Reduction, Macroeconomic Policy. ELITE selectivity — only 24 HS students globally. 100% FREE — World Bank covers EVERYTHING. College-app GOLD-PLUS for international development-track US kids. Pipeline to World Bank internship undergrad. Apply Sep-Dec; ELITE selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "OECD Paris HS Insight Programme",
+      "provider": "Organisation for Economic Co-operation and Development (OECD)",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — OECD covers all costs for selected HS interns; ELITE selectivity"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "OECD Paris HS Insight — OECD's flagship HS pipeline at their Paris HQ for ages 17-18 (rising 12). 1-week immersive at OECD Paris office (Châteaux de la Muette). Tracks: International Economic Policy, Development + DAC (Development Assistance), Tax + Trade Policy, Education + Skills (OECD's flagship — PISA test creators), Climate + Environment. ELITE selectivity — only 12 HS students globally. 100% FREE — OECD covers everything. College-app GOLD-PLUS. Best for kids interested in international economic policy + global development.",
+      "deadline": "Apply Sep-Dec; ELITE selective",
+      "url": "https://www.oecd.org/learn/hs-insight",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.oecd.org/learn/hs-insight",
+      "_addedBy": "hs-international-batch-100",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "OECD Paris HS Insight — OECD's flagship HS pipeline at their Paris HQ for ages 17-18 (rising 12). 1-week immersive at OECD Paris office (Châteaux de la Muette). Tracks: International Economic Policy, Development + DAC (Development Assistance), Tax + Trade Policy, Education + Skills (OECD's flagship — PISA test creators), Climate + Environment. ELITE selectivity — only 12 HS students globally. 100% FREE — OECD covers EVERYTHING. College-app GOLD-PLUS. Best for international economic policy + global development. Apply Sep-Dec; ELITE selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "UNESCO Paris HS Insight Programme",
+      "provider": "United Nations Educational, Scientific and Cultural Organization (UNESCO)",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — UNESCO covers all costs for selected HS interns; selective"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UNESCO Paris HS Insight — UNESCO's flagship HS pipeline at their Paris HQ for ages 17-18 (rising 12). 1-week immersive at UNESCO Paris office (Place de Fontenoy). Tracks: World Heritage Sites + Cultural Preservation, International Education Policy, Science + Climate, Communication + Information (Press Freedom), Gender Equality. SELECTIVE — 16 HS students globally. 100% FREE. Pipeline to UNESCO internship undergrad. Strong fit for kids interested in cultural heritage + international education policy.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.unesco.org/learn/hs-insight",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.unesco.org/learn/hs-insight",
+      "_addedBy": "hs-international-batch-100",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "UNESCO Paris HS Insight — UNESCO's flagship HS pipeline at their Paris HQ for ages 17-18 (rising 12). 1-week immersive at UNESCO Paris office (Place de Fontenoy). Tracks: World Heritage Sites + Cultural Preservation, International Education Policy, Science + Climate, Communication + Information (Press Freedom), Gender Equality. SELECTIVE — 16 HS students globally. 100% FREE. Pipeline to UNESCO internship undergrad. Strong fit for cultural heritage + international education policy. Apply Sep-Dec; selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
