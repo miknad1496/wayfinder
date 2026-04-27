@@ -2402,7 +2402,16 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
-      "_source": "https://www.lakesideschool.org/summer/leep"
+      "_source": "https://www.lakesideschool.org/summer/leep",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "FREE 4-week summer enrichment program at Lakeside School. For current 5th + 8th graders in Seattle Public Schools entering 6th or 9th grade. Includes classes, sports, outdoor activities, trips, field days. Free daily bus transportation included. Existing deadline May 1. Typical mid-July 4-week run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Washington Aerospace Scholars (WAS)",
@@ -35790,7 +35799,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.kidsquestmuseum.org/programs/summer-camp/"
+      "_source": "https://www.kidsquestmuseum.org/programs/summer-camp/",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Weeklong themed camps at downtown Bellevue museum, ages 4-10. Themes change weekly: STEAM, art, fashion, storytelling. Children must be the listed age at time of camp. Sessions fill spring. Specific 2026 weekly dates not surfaced via WebSearch — see kidsquestmuseum.org/programs/summer-camp/.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Studio Coyote Summer Workshops",
@@ -36574,7 +36592,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.whatcomymca.org/camps-summer-programs"
+      "_source": "https://www.whatcomymca.org/camps-summer-programs",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Bellingham YMCA weeklong day camps for Pre-K through 10th grade entering fall 2026. Tracks: Minis Camp (ages 3-5), Back to School Camp (1st-5th), Discovery Camp (1st-5th), Outdoor + others. YMCA financial assistance + sliding-scale Price A/B available. Sessions fill spring.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Music Works Northwest Summer Music Camps",
@@ -36746,7 +36773,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/"
+      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "255-acre learning center on Bainbridge Island. Full-day 9am-3:30pm for grades 1-8; half-day 9am-12pm for Pre-K + Kindergarten. Cancellation by Apr 3 for full refund less $100 processing fee; by Jun 5 for 50% refund. $100 non-refundable processing fee per camp.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "KiDiMu Summer Camps (Kids Discovery Museum)",
@@ -36811,7 +36847,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://kidimu.org/camps/"
+      "_source": "https://kidimu.org/camps/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Bainbridge Island kids' museum. 4-hour half-day camps (9am-12pm OR 12pm-3pm) for ages 3-12. $350 / $325 member per half-day session; $20/hr early/late care. Cross-Age Buddy Group structure (groups by age). Sessions fill spring. See kidimu.org/camps for specific weekly dates.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "City of Vancouver Parks & Recreation Summer Day Camps",
@@ -36872,7 +36917,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/"
+      "_source": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-04-15",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Vancouver WA weeklong summer day camps for ages 6-10 (grades 1-5) at Marshall Community Center (1009 E. McLoughlin Blvd) + Firstenburg Community Center (700 NE 136th Ave). 8am drop-off. Registration opens Apr 15 (residents) / Apr 16 (non-residents). $220 resident / $275 non-resident per session. Everybody Plays! scholarship covers 50% for eligible families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Outschool Online Summer Camps",
