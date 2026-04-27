@@ -35597,7 +35597,17 @@
       "url": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle"
+      "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Weekly tech camps Jun 15 – Aug 21, 2026. Tracks: Robotics, Coding, Game Design, Minecraft, Roblox, AI, 3D Printing, YouTube Content Creation, Filmmaking, Digital Art, Spy Tech, STEM & Medicine. ~$500/wk. Grades 1-8.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Launch Learning Summer Program",
@@ -35764,7 +35774,17 @@
       "url": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle"
+      "_source": "https://www.parentmap.com/article/science-stem-tech-camps-kids-seattle",
+      "scheduleConfidence": "inferred",
+      "registrationOpens": "2026-02-09",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "PacSci's Camps for Curious Minds at multiple Greater Seattle locations (Bellevue + others). Themes: Playground Physics, Mech Makers, Enviro-Engineering, Dissection Lab. Members early reg Feb 2; general public Feb 9. Pay due in full by May 1. Full scholarships available. Same camp brand as Seattle locations entry — see that for full details.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "KidsQuest Children's Museum Summer Camps",
@@ -37327,7 +37347,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Summer 2026 sessions Jun 29 – Aug 7, 2026 in Evanston + Chicago South Loop. Week-long half-day or all-day academic enrichment courses for advanced learners PreK-grade 8. Two eligibility tiers: Amber (open enrollment PreK-grade 2) and Emerald (testing/portfolio req'd grade 3+). Tuition starts $395 per 1-week half-day; longer 3-week residential and full-day camps cost more. Need-based aid + Jack Kent Cooke Foundation partnership. Registration opens early winter; popular sessions fill before spring.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Mathnasium Summer Math Programs",
@@ -38321,7 +38351,14 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Free year-round CS curriculum + tools (donor-funded). Hour of Code annual event happens in early December (reaching 100M+ kids globally). Year-round CS Fundamentals (K-5 drag-block) and CS Discoveries (real Python, grade 6+). Used in 45% of US schools. Self-paced; no enrollment window.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "NASA STEM Engagement Virtual Events (Glenn + Marshall + IV&V)",
@@ -38363,7 +38400,14 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "on-demand",
+      "scheduleNotes": "100% free virtual STEM events for K-12 by NASA centers (Glenn/Cleveland, Marshall/Huntsville, IV&V/WV). Each event 1-2 hrs: scientist presentations, missions, Q&A. Event-specific registration windows open ~2 months before event date. Subscribe to NASA EXPRESS newsletter for current listings. Year-round event calendar; no fixed summer schedule.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Mad Science Summer Camps",
@@ -38725,7 +38769,14 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% free Google-developed coding curriculum for grades 4-8 using Scratch. 8 themed clubs (Storytelling, Game Design, Music & Sound, Animation, Friends, Sports, Fashion & Design, Art) with 8 hour-long sessions each. Year-round self-paced. Designed for school clubs, classrooms, or families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Microsoft DigiGirlz Day",
@@ -38893,7 +38944,14 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% free Nat Geo Kids content (games, videos, articles, Almanac series). Slingshot Challenge (climate-action 1-min videos, ages 13-18) submission window ~mid-March annually — winners get $10K. Year-round self-paced.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "PBS Kids — summer learning + at-home activities",
@@ -41555,7 +41613,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "12-week virtual summer engineering camp around hands-on Build Boxes shipped weekly. Mark Rober videos accompany each box. Sign up before summer to start with Week 1; weekly boxes ship throughout. $329.40 for full 12-week ($27.45/wk equivalent); auto-rolls into month-to-month $27.45/mo after. Ages 8-12. Rolling registration.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Generation Genius — K-8 Online Science Videos & Lessons",
@@ -41603,7 +41671,14 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "paidSubscriptionPrice"
-      ]
+      ],
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Curriculum-aligned K-8 online science (117+ videos, 100% NGSS coverage). 14-day free trial (no credit card); paid family/teacher subscriptions. Each video paired with full lesson plans, hands-on activities, vocabulary, reading materials, quizzes. Year-round self-paced. Subscription month-to-month or annual.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Mystery Science — K-5 Elementary Science (Free Trial Through June 30, 2026)",
@@ -41648,7 +41723,14 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "paidSubscriptionPrice"
-      ]
+      ],
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Open-and-go elementary science lessons used in 50%+ of US elementary schools each month. Free trial currently extended through June 30, 2026 with select units, mini-lessons, and hands-on activities. Each Mystery starts with a relatable question + video story + hands-on activity. Year-round; paid memberships after free trial.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Maker Camp by Make: (Free Online Summer Maker Program)",
