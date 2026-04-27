@@ -37096,16 +37096,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-15",
-        "latestEnd": "2026-07-17"
-      },
-      "sessionPattern": "single-session",
-      "scheduleNotes": "5-week gamified online summer learning, June 15 – July 17, 2026. Roughly 4 hrs/wk academic challenges (math, reading, writing, electives) wrapped in a global treasure-hunt narrative — first solver of final puzzle wins a real-world buried prize. Async pacing; travel-friendly. Early registration $199 / standard $249. Sibling discounts. Best fit grades 2-8.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Northwestern CTD Academic Day Camps & Enrichment",
@@ -37685,7 +37676,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Operates summer day + residential camps in EVERY US state through Cooperative Extension at land-grant universities. $145-300/wk typical, sliding scale + scholarship widely available. Activities: outdoor skills, agriculture, STEM, robotics, equine, aquatics, ropes courses, animal sciences. Most state programs open registration Jan-Feb. Find your state at 4-h.org/parents/find-your-4-h.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "FIRST LEGO League Explore (FLL Explore)",
@@ -38464,7 +38464,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-05-01",
+        "latestEnd": "2026-09-30"
+      },
+      "sessionPattern": "on-demand",
+      "scheduleNotes": "100% FREE annual summer reading program. Kids log reading minutes, unlock weekly streaks, earn rewards. Curated book lists by grade level. Teacher dashboards + parent-led use both supported. Pairs naturally with public library summer reading. Runs May-September annually.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Google CS First",
@@ -38924,7 +38933,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Structured peace-education programs across 60+ countries. Village (age 11) is a 4-week residential program with kids from 12 countries. Interchange (ages 12-15) is a hosted family exchange. Step Up (age 14-15) is a 3-week leadership program. Applications due Oct-Dec for following summer — VERY long lead time. ~$2,500-3,500 + airfare for Village; ~$1,500 for Interchange. Financial aid via national chapters.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Concordia Language Villages",
@@ -38966,7 +38984,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Language immersion summer camps in 14+ languages (Spanish, French, German, Mandarin, Japanese, Russian, Arabic, Korean, Italian, Portuguese, Swedish, Norwegian, Finnish, Danish + occasional ASL/Hindi). Located on dedicated themed villages in MN northwoods. 1-week ~$1,500; 2-week ~$2,400; 4-week credit ~$5,000+. Need-based aid available. Popular weeks book by April.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "EF Language Travel Camps",
@@ -39503,7 +39530,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "$1,000 grant for first-time Jewish overnight campers — NO income test required. 150+ partner camps span Reform, Conservative, Orthodox, Reconstructionist, Renewal, secular-Jewish, special-needs Jewish camps in US + Canada. Total camp cost ~$1,500-3,500/wk. OHC grant applications open Nov-Feb for following summer. Underused — many eligible families don't know it's grant-not-loan.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Catholic Heart Workcamp (CHWC)",
@@ -39632,7 +39668,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-01",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Family mindfulness retreats July-August at Plum Village monasteries: France HQ + Vermont (Blue Cliff) + New York (Magnolia Grove) + California (Deer Park). Founded by Thich Nhat Hanh. Kids' programs run parallel to adult retreats with age-banded mindfulness, walking meditation, art. Family donation: ~$300-700/wk per person. Sliding scale; no one turned away for lack of funds. Book by April.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Friends General Conference (FGC) Quaker Family Camp",
@@ -39679,7 +39724,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-01",
+        "latestEnd": "2026-07-12"
+      },
+      "sessionPattern": "single-week",
+      "scheduleNotes": "Annual Quaker Gathering: 5-day intergenerational camp at a college campus (rotates: PA, OH, NY, MI). Workshops + worship-sharing + recreation + age-banded children's program (ages 3 through HS). Quaker community-driven, queer-affirming, peace-focused. ~$500-900/wk per person; sliding-scale 'Equalization' fund. Annual Gathering early July; registration spring.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Asian American Journalists Association (AAJA) youth programs",
@@ -39881,13 +39935,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE pass — admits 4th grader + 3 adults + all minor siblings to all 400+ NPS sites + US Forest Service + US Fish & Wildlife sites + US Army Corps lands. Pass valid Sept 1 – Aug 31 of 4th grade year (so the calendar year your kid is in 4th grade Fall semester). Get pass at everykidoutdoors.gov.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Audubon for Kids — citizen science + Junior Birder",
@@ -39972,13 +40020,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE curriculum + project funding up to $5,000 for educator-led student projects (typical $500-2,500). K-12 climate / oceans / weather. Free monthly virtual seminars. Project funding applications due September each year. Past projects: schoolyard rain gardens, climate-action campaigns, NOAA-data analysis.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Outdoor Afro Youth + Family Programs",
@@ -40024,13 +40066,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE chapter-led trips. 60+ city chapters run free hikes, camping, paddling, fishing, climbing, family events. Founded by Rue Mapp; celebrates Black connections + leadership in nature. Chapter-coordinated year-round trips. Find a chapter at outdoorafro.com.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Earthwatch Kids + Family Expeditions",
@@ -40119,13 +40155,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "100% FREE for participating schools. K-12 inclusive sports + leadership + whole-school engagement. Three components: (1) Unified Sports — students with + without intellectual disabilities play together; (2) Inclusive Youth Leadership; (3) Whole-School Engagement. 7,500+ schools nationwide. Year-round school enrollment.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Easter Seals Camps + Inclusive Recreation",
@@ -40171,7 +40201,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-01",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "70+ Easterseals affiliates nationwide run summer camps explicitly designed for kids with disabilities — autism, cerebral palsy, intellectual disability, physical disability, sensory processing. Day camps ~$200-500/wk; residential ~$700-1,200/wk. Sliding scale + scholarships heavy. Member registration Jan-Feb; general March-April.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp Korey (chronic illness camp, WA)",
@@ -40218,16 +40258,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-15",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "single-week",
-      "scheduleNotes": "Carnation, WA. 100% FREE — including travel, meals, medical care. SeriousFun Network (founded by Paul Newman). Disease-specific weeks (cancer week, blood disorders week, neurological conditions week, etc.). Apply 4-6 months before session. Medical staff on-site. Existing waitlist common — apply early.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Friendship Circle (special needs + peer-buddy program)",
@@ -40273,13 +40304,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "100% FREE. Pairs kids/teens with special needs (autism, IDD, physical disabilities) with typical-peer 'buddies' for weekly home visits + monthly group events + summer programs. Buddies are HS volunteers. 100+ chapters in US, Canada, UK, Israel, France, Brazil, Mexico. Year-round enrollment.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "AHRC Camps + Recreation",
@@ -40500,7 +40525,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Leading summer camp for LGBTQ+ youth ages 12-18. Sessions in California (Angeles National Forest) + Maryland. Affirming community for queer + trans + nonbinary teens with traditional summer-camp activities (hiking, swimming, arts) + identity-affirming programming. ~$1,400-1,800/wk; sliding-scale + scholarship pool covers ~50% of campers. Book by April.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Family Equality Council Family Week",
@@ -40547,7 +40581,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-08-02",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "single-week",
+      "scheduleNotes": "Largest annual gathering of LGBTQ+ parents + kids in North America: 1,800+ family members in Provincetown MA. Age-banded kids' activities (Tots, Kids, Tweens, Teens). Family registration ~$1,200-1,800; scholarship pool covers ~30% of attending families. Annual gathering early August; register Jan-March.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Interlochen Arts Camp Junior Programs",
@@ -40646,13 +40689,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Each Olympic-sport NGB (USATF, USA Swimming, USA Gymnastics, USA Wrestling, etc.) operates a Junior Olympic developmental pipeline from local clubs through state, regional, and national championships. USATF youth membership ~$30-50/yr; meets ~$15-50 each; many clubs have aid. Year-round club enrollment; Junior Olympic championships in summer.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Juni Learning 1:1 Online Summer Coding & Math",
@@ -41265,13 +41302,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "100% FREE — no fee, no credit card to register. Virtual summer-learning destination from National Center for Families Learning. Built around STEM + literacy 'Wonders' boosted by hands-on Maker experiments. Themed editions (current: music, with six tracks). Rolling enrollment year-round. Hidden gem for budget-conscious + homeschool families.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Camp CrunchLabs (12-Week Summer Build Box Subscription, Mark Rober)",
@@ -41507,13 +41538,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Long-running animated online learning. Tim and Moby host short topical videos with quizzes, vocabulary, games for grades 3-8 (BrainPOP) + K-3 (BrainPOP Jr.). Topics: science, math, social studies, English, arts & music, engineering. Family $129/yr (Grades 3-8); +$30/yr or $159/yr combo to add BrainPOP Jr. Monthly ~$30/mo. 30-day free trial requires CC + auto-converts.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Synthesis Teams — Online Problem-Solving Cohort",
