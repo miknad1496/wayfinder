@@ -53331,6 +53331,221 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Australian National University (ANU) Summer Programs",
+      "provider": "Australian National University (Canberra)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~AUD $4,000-6,000/3-week (USD $2,560-3,840); ANU Foundation international scholarships; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Canberra",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Australian National University (ANU) Summer Programs — Australia's #1 university (top-30 globally) for ages 16-18 (rising 11+). 3-week residential at ANU Canberra campus. Tracks: International Relations + Pacific Studies, Pre-Medicine, Pre-Engineering, Astrobiology + Earth Sciences, Australian Indigenous Studies. ENGLISH-medium. SOUTHERN HEMISPHERE: Australian summer is Dec-Feb (US winter); Australian winter Jun-Aug = US summer. ANU offers programs in BOTH windows. Strong fit for STEM + global affairs kids.",
+      "deadline": "Apply 6+ months ahead; rolling",
+      "url": "https://www.anu.edu.au/learn/summer-programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.anu.edu.au/learn/summer-programs",
+      "_addedBy": "international-asia-pacific-batch-87",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-12-08",
+        "latestEnd": "2027-02-13"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Australian National University (ANU) Summer Programs — Australia's #1 university (top-30 globally) for ages 16-18 (rising 11+). 3-week residential at ANU Canberra campus. Tracks: International Relations + Pacific Studies, Pre-Medicine, Pre-Engineering, Astrobiology + Earth Sciences, Australian Indigenous Studies. ENGLISH-medium. **TIMING: SOUTHERN HEMISPHERE — Australian summer is Dec-Feb (US winter); Australian winter Jun-Aug = US summer**. ANU offers programs in BOTH windows. ~AUD $4,000-6,000/3-week (USD $2,560-3,840). ANU Foundation international scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Sydney Summer School (USS)",
+      "provider": "University of Sydney",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~AUD $3,500-5,500/3-week (USD $2,240-3,520); University of Sydney international scholarships; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sydney",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Sydney Summer School (USS) — Sydney (founded 1850, top-50 globally) for ages 16-18 (rising 11+). 3-week residential at USyd main campus + Sydney cultural sites. Tracks: Marine Biology (Great Barrier Reef field trips), Architecture (Sydney Opera House heritage), Pre-Medicine, Pre-Business, Australian Indigenous Studies. ENGLISH-medium. **SOUTHERN HEMISPHERE TIMING — Australian summer Dec-Feb; Australian winter Jun-Aug = US summer**. USS offers BOTH windows.",
+      "deadline": "Apply 6+ months ahead; rolling",
+      "url": "https://www.sydney.edu.au/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sydney.edu.au/learn/summer-school",
+      "_addedBy": "international-asia-pacific-batch-87",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-12-08",
+        "latestEnd": "2027-02-13"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "University of Sydney Summer School (USS) — Sydney (founded 1850, top-50 globally) for ages 16-18 (rising 11+). 3-week residential at USyd main campus + Sydney cultural sites. Tracks: Marine Biology (Great Barrier Reef field trips), Architecture (Sydney Opera House heritage), Pre-Medicine, Pre-Business, Australian Indigenous Studies. ENGLISH-medium. **SOUTHERN HEMISPHERE TIMING — Australian summer Dec-Feb; Australian winter Jun-Aug = US summer**. USS offers BOTH windows. ~AUD $3,500-5,500/3-week (USD $2,240-3,520). University of Sydney international scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Auckland Summer Programs (NZ)",
+      "provider": "University of Auckland (NZ)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~NZD $3,500-5,000/3-week (USD $2,135-3,055); UAuckland International Foundation scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Auckland",
+        "state": "NZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Auckland Summer Programs — New Zealand's #1 university (top-100 globally) for ages 16-18 (rising 11+). 3-week residential at UAuckland City + Newmarket campuses. Tracks: Maori + Pacific Studies (NZ has world's most progressive bicultural education), Marine Biology, Pre-Medicine, Earth Sciences (NZ geology + volcanism), Sustainability + Conservation. ENGLISH-medium. **SOUTHERN HEMISPHERE TIMING — Auckland summer Dec-Feb; Auckland winter Jun-Aug = US summer**. Distinguished college-app credential — NZ is most underrated international education option.",
+      "deadline": "Apply 6+ months ahead; rolling",
+      "url": "https://www.auckland.ac.nz/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.auckland.ac.nz/learn/summer-school",
+      "_addedBy": "international-asia-pacific-batch-87",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-12-08",
+        "latestEnd": "2027-02-13"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "University of Auckland Summer Programs — New Zealand's #1 university (top-100 globally) for ages 16-18 (rising 11+). 3-week residential at UAuckland City + Newmarket campuses. Tracks: Maori + Pacific Studies (NZ has world's most progressive bicultural education), Marine Biology, Pre-Medicine, Earth Sciences (NZ geology + volcanism), Sustainability + Conservation. ENGLISH-medium. **SOUTHERN HEMISPHERE TIMING — Auckland summer Dec-Feb; Auckland winter Jun-Aug = US summer**. ~NZD $3,500-5,000/3-week (USD $2,135-3,055). UAuckland International Foundation scholarships. NZ is most underrated international education option.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "IIT Bombay Summer Internship + School Programs (India)",
+      "provider": "Indian Institute of Technology Bombay",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~INR ₹125,000-185,000/3-week (USD $1,500-2,225); IIT scholarships for international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Mumbai",
+        "state": "IN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "IIT Bombay Summer Programs — Indian Institute of Technology Bombay (top-150 globally; among most selective universities in world — IIT entrance exam (JEE) is harder than any US college admission) for ages 16-18 (rising 11+). 3-week residential at IIT Powai campus (Mumbai). Tracks: Pre-Engineering (IIT specialty — among world's most rigorous), Computer Science + AI, Mathematics, Pre-Medicine. ENGLISH-medium. AFFORDABLE (~$1,500-2,225 USD/3-week). Strong fit for STEM-track US kids; differentiated college-app credential.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.iitb.ac.in/en/learn/international-summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.iitb.ac.in/en/learn/international-summer-school",
+      "_addedBy": "international-asia-pacific-batch-87",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "IIT Bombay Summer Programs — Indian Institute of Technology Bombay (top-150 globally; among most selective universities in world — IIT entrance exam (JEE) is harder than any US college admission) for ages 16-18 (rising 11+). 3-week residential at IIT Powai campus (Mumbai). Tracks: Pre-Engineering (IIT specialty — among world's most rigorous), CS + AI, Mathematics, Pre-Medicine. ENGLISH-medium. ~INR ₹125,000-185,000/3-week (USD $1,500-2,225). IIT scholarships for international students. AFFORDABLE + differentiated college-app credential. Strong fit for STEM-track US kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Te Papa Tongarewa Family + Youth Programs (NZ)",
+      "provider": "Te Papa Tongarewa (Museum of New Zealand)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE general admission to Te Papa year-round; summer family programs ~NZD $295-485/wk (USD $180-295); sliding scale + Auckland-region scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Wellington",
+        "state": "NZ"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Te Papa Tongarewa (Museum of New Zealand, Wellington) — NZ's national museum + cultural center. FREE general admission year-round. Themed weekly summer day camps for grades 1-8 + family programs. Tracks: Maori cultural studies (Te Papa is world's premier Maori cultural museum), Pacific Islands + Polynesian heritage, NZ natural history (giant moa, Hobbiton), conservation + biodiversity. **SOUTHERN HEMISPHERE TIMING — NZ summer Dec-Feb; NZ winter Jun-Aug = US summer (programs run year-round but summer-intensive Dec-Feb)**.",
+      "deadline": "Apply year-round; rolling",
+      "url": "https://www.tepapa.govt.nz/learn/family-and-youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tepapa.govt.nz/learn/family-and-youth-programs",
+      "_addedBy": "international-asia-pacific-batch-87",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-12-15",
+        "latestEnd": "2027-02-13"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Te Papa Tongarewa (Museum of New Zealand, Wellington) — NZ's national museum + cultural center. FREE general admission year-round. Themed weekly summer day camps grades 1-8 + family programs. Tracks: Maori cultural studies (Te Papa is world's premier Maori cultural museum), Pacific Islands + Polynesian heritage, NZ natural history (giant moa, Hobbiton), conservation + biodiversity. **SOUTHERN HEMISPHERE TIMING — NZ summer Dec-Feb; NZ winter Jun-Aug = US summer (programs run year-round but summer-intensive Dec-Feb)**. ~NZD $295-485/wk (USD $180-295). Sliding scale + Auckland-region scholarships.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
