@@ -48087,6 +48087,213 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Schoolhouse.world (Free 1:1 + Group Tutoring by Sal Khan)",
+      "provider": "Schoolhouse.world (501c3 nonprofit)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — donor-funded; volunteer-led peer tutoring; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Schoolhouse.world — founded 2020 by Sal Khan (Khan Academy founder) — FREE peer-led 1:1 + small-group tutoring + clubs for grades 6-12. Subjects: math (Pre-Algebra → Calc BC), AP test prep, SAT/ACT prep, English/writing, CS, world languages, college-app coaching. Volunteer tutors are college students + accomplished HS+ students vetted by Schoolhouse. Live group sessions or 1:1. Year-round, no income test. Underused gem.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://schoolhouse.world",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://schoolhouse.world",
+      "_addedBy": "differentiated-online-batch-62",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Schoolhouse.world — founded 2020 by Sal Khan (Khan Academy founder) — 100% FREE peer-led 1:1 + small-group tutoring + clubs for grades 6-12. Subjects: math (Pre-Algebra → Calc BC), AP test prep, SAT/ACT prep, English/writing, CS, world languages, college-app coaching. Volunteer tutors are college students + accomplished HS+ students, vetted by Schoolhouse. Live group sessions or 1:1. Year-round, no income test. UNDERUSED gem — many parents don't know this exists.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Brilliant for Kids (Math + Science Active Learning)",
+      "provider": "Brilliant.org",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 15,
+        "type": "paid",
+        "display": "$15-25/mo subscription; family plan ~$50/yr; 14-day free trial; need-based aid via Brilliant Foundation"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Brilliant.org — interactive math + science + CS courses focused on PROBLEM-SOLVING (not passive video watching). Tracks for K-8: Math Visualization (geometry, algebraic thinking), Science of Everyday Things, Logic Puzzles + Strategy Games, Computer Science Fundamentals (algorithms, data structures basics). Strong fit for kids who get bored with passive curriculum. Self-paced, year-round.",
+      "deadline": "Year-round; sign up anytime",
+      "url": "https://brilliant.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://brilliant.org",
+      "_addedBy": "differentiated-online-batch-62",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Brilliant.org — interactive math + science + CS courses focused on PROBLEM-SOLVING (not passive video watching). K-8 tracks: Math Visualization (geometry, algebraic thinking), Science of Everyday Things, Logic Puzzles + Strategy Games, CS Fundamentals (algorithms, data structures basics). Strong fit for kids bored with passive curriculum. ~$15-25/mo subscription; family plan ~$50/yr; 14-day free trial; need-based aid via Brilliant Foundation. Self-paced, year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Mosa Mack Science (online STEM with mystery storylines)",
+      "provider": "Mosa Mack Science",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE for individual families with 30+ days trial; classroom + family subscriptions $99-249/yr; need-based aid for Title I families"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Mosa Mack Science — story-driven NGSS-aligned online curriculum for grades 3-8. 'Mosa Mack' is a fictional middle-school detective who solves mysteries using science (e.g., why Mt St Helens erupted, why dinosaurs went extinct). Each unit is a multi-day mystery with hands-on experiments + design challenges. Strong fit for kids who like narrative + investigation over rote memorization.",
+      "deadline": "Year-round; rolling subscription",
+      "url": "https://mosamack.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://mosamack.com",
+      "_addedBy": "differentiated-online-batch-62",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Mosa Mack Science — story-driven NGSS-aligned online curriculum grades 3-8. 'Mosa Mack' is a fictional middle-school detective who solves mysteries using science (Mt St Helens eruption, dinosaur extinction, etc.). Each unit = multi-day mystery with hands-on experiments + design challenges. FREE 30+ day trial; family subscriptions $99-249/yr; need-based aid for Title I families. Year-round. Strong fit for kids who like narrative + investigation over rote memorization.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "DIY.org Maker Subscription + Skill Patches",
+      "provider": "DIY.org",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 15,
+        "type": "paid",
+        "display": "$15/mo or $145/yr family subscription; 7-day free trial; classroom group rates"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "DIY.org — online maker community for grades 3-8 (ages 7-13). Kids earn 'skill patches' by completing projects in 100+ subject areas: woodworking, coding, robotics, art, animation, photography, parkour + freerunning, podcasting, fashion design, gardening. Kids upload videos/photos showing their work. Active, supportive community of maker peers. Strong fit for kids who like building + sharing.",
+      "deadline": "Year-round; sign up anytime",
+      "url": "https://diy.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://diy.org",
+      "_addedBy": "differentiated-online-batch-62",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "DIY.org — online maker community grades 3-8 (ages 7-13). Kids earn 'skill patches' by completing projects in 100+ subject areas: woodworking, coding, robotics, art, animation, photography, parkour + freerunning, podcasting, fashion design, gardening. Kids upload videos/photos showing work. Active maker peer community. ~$15/mo or $145/yr family subscription; 7-day free trial; classroom group rates. Year-round. Strong fit for kids who like building + sharing.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Wonder Workshop (Dash + Cue + Dot Coding Robots)",
+      "provider": "Wonder Workshop",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 150,
+        "type": "paid",
+        "display": "$150-280 robot purchase (one-time); FREE Wonder Workshop curriculum + Class Connect classes; Wonder League competitions free; school subscriptions vary"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "Online + at-home with robot",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Wonder Workshop — coding robots (Dash, Cue, Dot) for K-5 with online curriculum + global Wonder League robotics competition. Robots cost $150-280 one-time; FREE online Wonder Workshop curriculum + Class Connect virtual classes. Apps include Blockly (Scratch-style), Wonder, JavaScript editor for older kids. Wonder League holds annual competitions with multi-stage challenges (Sep-Jan). Strong fit for tactile/physical learners who want to see code in real motion.",
+      "deadline": "Year-round; Wonder League competition annual Sep-Jan",
+      "url": "https://www.makewonder.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.makewonder.com",
+      "_addedBy": "differentiated-online-batch-62",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Wonder Workshop — coding robots (Dash, Cue, Dot) for K-5 with online curriculum + global Wonder League robotics competition. Robots $150-280 one-time. FREE Wonder Workshop curriculum + Class Connect virtual classes. Apps: Blockly (Scratch-style), Wonder, JavaScript for older kids. Wonder League annual competition Sep-Jan, multi-stage challenges. Strong fit for tactile learners who want to see code in real motion. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
