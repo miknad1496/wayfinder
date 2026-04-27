@@ -53546,6 +53546,234 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "iEARN (International Education and Resource Network)",
+      "provider": "iEARN-USA / iEARN International",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — iEARN is donor-funded; participates in 145+ countries; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "iEARN — International Education and Resource Network. 100% FREE virtual classroom exchange program connecting 50,000+ schools in 145+ countries. K-12 students collaborate on projects with peers globally: world languages, sustainability, social justice, science, environmental projects. Year-round + summer-intensive options. Strong fit for kids interested in cross-cultural collaboration. UNDER-known by US families. Apply via school iEARN coordinator OR directly via iEARN-USA.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://iearn.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://iearn.org",
+      "_addedBy": "international-virtual-batch-88",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "iEARN — International Education and Resource Network. 100% FREE virtual classroom exchange connecting 50,000+ schools in 145+ countries. K-12 students collaborate on projects with peers globally: world languages, sustainability, social justice, science, environmental projects. Year-round + summer-intensive options. Strong fit for kids interested in cross-cultural collaboration. UNDER-KNOWN by US families. Apply via school iEARN coordinator OR directly via iEARN-USA.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Empatico (Free K-8 Video Classroom Exchange)",
+      "provider": "Empatico (KIND Snacks Foundation)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — KIND Snacks Foundation-funded for K-8 globally; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Empatico — KIND Snacks Foundation-funded virtual classroom exchange for K-8 (ages 6-13). 100% FREE. Live video sessions where US classrooms connect with classrooms globally for 30-45 min lessons. Pre-built curriculum (Holidays Around the World, Communities + Local Experts, Wildlife Conservation, Geography). K-8 SPECIFIC — most virtual exchange programs are HS-focused. Strong fit for elementary teachers + parents wanting global perspective.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://empatico.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://empatico.org",
+      "_addedBy": "international-virtual-batch-88",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Empatico — KIND Snacks Foundation-funded virtual classroom exchange for K-8 (ages 6-13). 100% FREE. Live video sessions connecting US classrooms with peer classrooms globally for 30-45 min lessons. Pre-built curriculum (Holidays Around the World, Communities + Local Experts, Wildlife Conservation, Geography). K-8 SPECIFIC — most virtual exchange programs are HS-focused. Year-round; rolling enrollment. Strong fit for elementary teachers + parents wanting global perspective.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Belouga Global Classroom Exchange",
+      "provider": "Belouga",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Belouga is donor + foundation-funded for K-12 globally"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      },
+      "description": "Belouga — global classroom video exchange platform for grades 3-11. 100% FREE for K-12 students globally. Connects US classrooms with classrooms in 100+ countries via 30-min weekly video chats. Topics aligned with US curriculum standards (NGSS science, ELA Common Core, social studies). Includes virtual field trips to museums + historic sites. Year-round + summer-intensive. Strong fit for kids interested in cross-cultural friendships + accent acquisition.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://belouga.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://belouga.org",
+      "_addedBy": "international-virtual-batch-88",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Belouga — global classroom video exchange platform for grades 3-11. 100% FREE for K-12 students globally. Connects US classrooms with classrooms in 100+ countries via 30-min weekly video chats. Topics aligned with US curriculum standards (NGSS science, ELA Common Core, social studies). Includes virtual field trips to museums + historic sites. Year-round + summer-intensive. Strong fit for cross-cultural friendships + accent acquisition.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ePals Global Schoolhouse Exchange",
+      "provider": "ePals",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for K-12 — donor-funded; partner-school programs"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ePals — global classroom + pen pal exchange for K-12. 100% FREE. Connects 5M+ students in 200+ countries. Tracks: classroom-to-classroom video exchanges, individual pen pal pairings, virtual cultural exchange (peer-to-peer language acquisition), Project-based learning (Wildlife Detectives, Energy Around the World). Year-round + summer-intensive. ePals is older than iEARN + Belouga + Empatico — most established platform with longest track record.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.epals.com",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.epals.com",
+      "_addedBy": "international-virtual-batch-88",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "ePals — global classroom + pen pal exchange for K-12. 100% FREE. Connects 5M+ students in 200+ countries. Tracks: classroom-to-classroom video exchanges, individual pen pal pairings, virtual cultural exchange (peer-to-peer language acquisition), Project-based learning (Wildlife Detectives, Energy Around the World). Year-round + summer-intensive. ePals is older than iEARN/Belouga/Empatico — most established platform with longest track record.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Pen Pal World (Free Global Pen Pal for K-12)",
+      "provider": "Pen Pal World / International Pen Pal",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for individual K-12 pen pals globally; sliding scale for premium curated matches"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Pen Pal World + International Pen Pal — 100% FREE pen pal matching for K-12 globally. Kids ages 8-18 paired with peers in 100+ countries based on shared interests + age + language goals. Online platform OR traditional letters. Strong fit for kids who like writing + foreign-language acquisition. UNDER-utilized in digital era but offers powerful written communication + language acquisition. Year-round; instant matching.",
+      "deadline": "Year-round; instant matching",
+      "url": "https://www.penpalworld.com",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.penpalworld.com",
+      "_addedBy": "international-virtual-batch-88",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Pen Pal World + International Pen Pal — 100% FREE pen pal matching for K-12 globally. Kids ages 8-18 paired with peers in 100+ countries based on shared interests + age + language goals. Online platform OR traditional letters. Strong fit for kids who like writing + foreign-language acquisition. UNDER-UTILIZED in digital era but offers powerful written communication + language acquisition. Year-round; instant matching.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
