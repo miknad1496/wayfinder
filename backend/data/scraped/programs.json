@@ -57903,6 +57903,215 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "NUS Pre-University Summer (Singapore)",
+      "provider": "National University of Singapore (NUS)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~SGD $3,200-SGD $4,800 / USD $2,365-3,545 / 2-week; NUS scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NUS Pre-University Summer — National University of Singapore (Asia's #1 university, ranked top-10 globally) for ages 16-18 (rising 11-12). 2-week residential at NUS Kent Ridge Singapore campus. Tracks: Engineering + AI (NUS's flagship — Asia's MIT), Business + Asian Markets, Medicine + Public Health, Asian Studies + Sustainability, Computer Science + Cybersecurity. ENGLISH-medium. Pipeline to NUS undergrad. NUS is the SAFEST + most US-friendly Asian university destination. College-app GOLD for STEM + business-track US kids.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.nus.edu.sg/learn/pre-university",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nus.edu.sg/learn/pre-university",
+      "_addedBy": "hs-international-batch-111",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "NUS Pre-University Summer — National University of Singapore (Asia's #1 university, ranked top-10 globally) for ages 16-18 (rising 11-12). 2-week residential at NUS Kent Ridge Singapore campus. Tracks: Engineering + AI (NUS's flagship — Asia's MIT), Business + Asian Markets, Medicine + Public Health, Asian Studies + Sustainability, CS + Cybersecurity. ENGLISH-medium. ~SGD $3,200-SGD $4,800 / USD $2,365-3,545 / 2-week. NUS scholarships for international students. Pipeline to NUS undergrad. NUS is the SAFEST + most US-friendly Asian university destination. College-app GOLD for STEM + business-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NTU Pre-University Summer (Singapore)",
+      "provider": "Nanyang Technological University (NTU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~SGD $3,000-SGD $4,500 / USD $2,215-3,325 / 2-week; NTU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NTU Pre-University Summer — Nanyang Technological University (Singapore's #2 university, ranked top-25 globally for engineering) for ages 16-18 (rising 11-12). 2-week residential at NTU Singapore campus. Tracks: Engineering + Aerospace (NTU's specialty), Business (Nanyang Business School), Communication + Media, Computer Science + AI, Sustainability + Energy. ENGLISH-medium. Differentiation vs NUS — NTU more engineering-focused, NUS more business + medicine. Pipeline to NTU undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.ntu.edu.sg/learn/pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ntu.edu.sg/learn/pre-university",
+      "_addedBy": "hs-international-batch-111",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "NTU Pre-University Summer — Nanyang Technological University (Singapore's #2 university, ranked top-25 globally for engineering) for ages 16-18 (rising 11-12). 2-week residential at NTU Singapore campus. Tracks: Engineering + Aerospace (NTU's specialty), Business (Nanyang Business School), Communication + Media, CS + AI, Sustainability + Energy. ENGLISH-medium. ~SGD $3,000-SGD $4,500 / USD $2,215-3,325 / 2-week. NTU scholarships for international students. Differentiation vs NUS — NTU more engineering-focused, NUS more business + medicine. Pipeline to NTU undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "SMU Pre-University Summer (Singapore)",
+      "provider": "Singapore Management University (SMU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2095,
+        "type": "paid",
+        "display": "~SGD $2,800-SGD $4,200 / USD $2,065-3,100 / 2-week; SMU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "SMU Pre-University Summer — Singapore Management University (Singapore's flagship business university, ranked top-50 globally for business) for ages 16-18 (rising 11-12). 2-week residential at SMU downtown Singapore campus. Tracks: Business + Asian Markets, Finance + Banking, Marketing + Brand Strategy, Information Systems + Data Analytics, Law + Entrepreneurship. ENGLISH-medium. SMU has a unique seminar-style pedagogy (vs NUS's lecture model) — strong fit for kids who like Socratic discussion. AFFORDABLE Singapore option. Pipeline to SMU undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.smu.edu.sg/learn/pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.smu.edu.sg/learn/pre-university",
+      "_addedBy": "hs-international-batch-111",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "SMU Pre-University Summer — Singapore Management University (Singapore's flagship business university, ranked top-50 globally for business) for ages 16-18 (rising 11-12). 2-week residential at SMU downtown Singapore campus. Tracks: Business + Asian Markets, Finance + Banking, Marketing + Brand Strategy, Information Systems + Data Analytics, Law + Entrepreneurship. ENGLISH-medium. ~SGD $2,800-SGD $4,200 / USD $2,065-3,100 / 2-week. SMU scholarships for international students. SMU has a UNIQUE seminar-style pedagogy (vs NUS's lecture model) — strong fit for Socratic discussion. AFFORDABLE Singapore option. Pipeline to SMU undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Yale-NUS HS Summer Liberal Arts",
+      "provider": "Yale-NUS College (Singapore)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~SGD $3,800-SGD $5,500 / USD $2,810-4,070 / 2-week; Yale-NUS scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Yale-NUS HS Summer — flagship liberal arts program for ages 16-18 (rising 11-12). Yale-NUS is a partnership between Yale + NUS (NUS's most US-style college; closes 2025-26 to new students but Summer HS programs continue). 2-week residential at Yale-NUS Singapore campus. Tracks: Common Curriculum (Yale + NUS hybrid), Singapore + ASEAN Studies, Liberal Arts (Philosophy + History + Lit), Comparative Religion + Asian Philosophy. ENGLISH-medium. SELECTIVE. Strong fit for kids interested in liberal arts + ASEAN context. NOTE: Yale-NUS undergrad is closing — but summer HS programs continue under NUS College.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.yale-nus.edu.sg/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.yale-nus.edu.sg/learn/hs-summer",
+      "_addedBy": "hs-international-batch-111",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Yale-NUS HS Summer — flagship liberal arts program for ages 16-18 (rising 11-12). Yale-NUS is a partnership between Yale + NUS (NUS's most US-style college; closes 2025-26 to new students but Summer HS programs continue). 2-week residential at Yale-NUS Singapore campus. Tracks: Common Curriculum (Yale + NUS hybrid), Singapore + ASEAN Studies, Liberal Arts (Philosophy + History + Lit), Comparative Religion + Asian Philosophy. ENGLISH-medium. ~SGD $3,800-SGD $5,500 / USD $2,810-4,070 / 2-week. Yale-NUS scholarships for international students. SELECTIVE. Strong fit for liberal arts + ASEAN context. NOTE: Yale-NUS undergrad is closing — but summer HS programs continue under NUS College. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "AIA Premier Academy ASEAN HS",
+      "provider": "AIA Group (Asia Insurance Asia)",
+      "category": "leadership",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted ASEAN HS students — AIA Group covers travel + tuition + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore + Hong Kong + Bangkok",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "AIA Premier Academy ASEAN HS — flagship AIA Group leadership program for ages 17-18 (rising 12). 1-week residential — kids choose Singapore OR Hong Kong OR Bangkok. Tracks: Asian Business Strategy, Insurance + Risk Management (AIA's specialty), Sustainability + Climate Resilience, Leadership + Asian Cultural Competence. ENGLISH-medium. SELECTIVE — only 30 HS students globally accepted. 100% FREE — AIA covers everything. UNDER-applied-for vs Western corporate equivalents. Pipeline to AIA Group internship undergrad.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.aia.com/learn/premier-academy",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.aia.com/learn/premier-academy",
+      "_addedBy": "hs-international-batch-111",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "AIA Premier Academy ASEAN HS — flagship AIA Group leadership program for ages 17-18 (rising 12). 1-week residential — kids choose Singapore OR Hong Kong OR Bangkok. Tracks: Asian Business Strategy, Insurance + Risk Management (AIA's specialty), Sustainability + Climate Resilience, Leadership + Asian Cultural Competence. ENGLISH-medium. SELECTIVE — only 30 HS students globally accepted. 100% FREE — AIA covers EVERYTHING. UNDER-APPLIED-FOR vs Western corporate equivalents. Pipeline to AIA Group internship undergrad. Apply Sep-Dec; selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
