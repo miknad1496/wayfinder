@@ -168,6 +168,24 @@ export async function validateInvite(code) {
 
   const cleanCode = code.toUpperCase().trim();
 
+  /* === REVAMP V2: LAUNCH-INVITE-CODE === */
+  // Check the universal launch code FIRST — set via LAUNCH_INVITE_CODE env var.
+  // If matched, accept any email (no recipientEmail lock) with no expiration.
+  // Multi-use; tracks redemptions in _launch_redemptions.jsonl via redeemInvite().
+  const launchCode = (process.env.LAUNCH_INVITE_CODE || '').toUpperCase().trim();
+  if (launchCode && cleanCode === launchCode) {
+    return {
+      valid: true,
+      isLaunchCode: true,
+      invite: {
+        code: cleanCode,
+        recipientEmail: null,           // any email accepted
+        inviterName: 'Wayfinder Launch',
+        expiresAt: null,                 // perpetual
+      }
+    };
+  }
+
   try {
     const raw = await fs.readFile(join(INVITES_DIR, `${cleanCode}.json`), 'utf-8');
     const invite = JSON.parse(raw);
@@ -202,6 +220,27 @@ export async function redeemInvite(code, userId, userEmail, userName) {
   await ensureInvitesDir();
 
   const cleanCode = code.toUpperCase().trim();
+
+  /* === REVAMP V2: LAUNCH-INVITE-CODE redemption tracking === */
+  const launchCode = (process.env.LAUNCH_INVITE_CODE || '').toUpperCase().trim();
+  if (launchCode && cleanCode === launchCode) {
+    // Append to launch-redemptions log instead of modifying a per-recipient file.
+    try {
+      const logPath = join(INVITES_DIR, '_launch_redemptions.jsonl');
+      const entry = JSON.stringify({
+        redeemedAt: new Date().toISOString(),
+        userId,
+        userEmail: (userEmail || '').toLowerCase().trim(),
+        userName: userName || null,
+        code: cleanCode,
+      }) + '\n';
+      await fs.appendFile(logPath, entry);
+    } catch (e) {
+      // Best-effort logging; don't block signup if log write fails.
+      console.warn('[invites] launch-code redemption log failed:', e.message);
+    }
+    return { success: true, isLaunchCode: true };
+  }
 
   try {
     const filePath = join(INVITES_DIR, `${cleanCode}.json`);
