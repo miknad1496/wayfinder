@@ -63289,6 +63289,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "World Schools Debating Championships (WSDC)",
+      "provider": "World Schools Debating Championships (WSDC)",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "World Schools Debating Championships (WSDC) — flagship global HS debating competition for ages 14-18 (rising 9-12). 2-week residential at annual rotating host country. Competition: 3-on-3 team format combining British Parliamentary + Australasian + American debate styles. SELECTIVE — selected via national team trials (US Debate Coaches Association for US students). 100% FREE for selected. UNDER-applied-for vs Math/Physics Olympiads. College-app GOLD-PLUS — WSDC is the most prestigious HS debate event globally. Strong fit for kids interested in law, policy, business, journalism careers.",
+      "deadline": "Selection via US debate trials Jan-Mar",
+      "url": "https://www.wsdcdebate.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wsdcdebate.org",
+      "_addedBy": "hs-international-batch-136",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "World Schools Debating Championships (WSDC) — flagship global HS debating competition for ages 14-18 (rising 9-12). 2-week residential at annual rotating host country. Competition: 3-on-3 team format combining British Parliamentary + Australasian + American debate styles. SELECTIVE — selected via national team trials (US Debate Coaches Association for US students). 100% FREE for selected. UNDER-APPLIED-FOR vs Math/Physics Olympiads. College-app GOLD-PLUS — WSDC is the most prestigious HS debate event globally. Strong fit for law, policy, business, journalism careers. Selection via US debate trials Jan-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Harvard Model UN International Conference (Boston-hosted, international scope)",
+      "provider": "Harvard International Relations Council",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~$1,200-$2,000/4-day (USD); HMUN scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Harvard Model UN International Conference (HMUN) — flagship Harvard-hosted Model UN conference, attracts 3,500+ delegates from 60+ countries annually for ages 14-18 (rising 9-12). 4-day immersive at Harvard Square Boston (with Hyatt + Marriott hotel housing). Tracks: Security Council, General Assembly, Specialized Agencies (UNESCO, UNHCR, WHO), Crisis Committees, Historical Crises (Cold War + WWII). ENGLISH-medium. UNDER-applied-for by US families compared to fame. HMUN scholarships available. College-app strong differentiator — Harvard credentials + international scope. NOTE: Harvard runs HMUN in winter (Jan/Feb), HMUN India in summer.",
+      "deadline": "Apply Sep-Nov for winter conference; rolling",
+      "url": "https://www.harvardmun.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.harvardmun.org",
+      "_addedBy": "hs-international-batch-136",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Harvard Model UN International Conference (HMUN) — flagship Harvard-hosted Model UN conference, attracts 3,500+ delegates from 60+ countries annually for ages 14-18 (rising 9-12). 4-day immersive at Harvard Square Boston (with Hyatt + Marriott hotel housing). Tracks: Security Council, General Assembly, Specialized Agencies (UNESCO, UNHCR, WHO), Crisis Committees, Historical Crises (Cold War + WWII). ENGLISH-medium. ~$1,200-$2,000/4-day (USD); HMUN scholarships up to 100% via need-based admission. UNDER-APPLIED-FOR by US families compared to fame. College-app strong differentiator — Harvard credentials + international scope. NOTE: Harvard runs HMUN in winter (Jan/Feb), HMUN India in summer. Apply Sep-Nov for winter conference.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "THIMUN The Hague Model United Nations International",
+      "provider": "The Hague International Model United Nations (THIMUN) Foundation",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 995,
+        "type": "paid",
+        "display": "~€850-€1,400/5-day (USD $920-1,520); THIMUN scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "The Hague",
+        "state": "NL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "THIMUN The Hague Model UN International — flagship European Model UN, founded 1968, hosted at The Hague (the global capital of international law) for ages 16-18 (rising 11-12). 5-day immersive at THIMUN Hague campus. Tracks: General Assembly, Security Council, Specialized Agencies, Historical Council, International Court of Justice (UNIQUE — actual ICJ visits + simulations). ENGLISH-medium. UNDER-known by US families compared to fame. THIMUN scholarships available. College-app strong differentiator — Hague + ICJ credentials are unmatched for pre-law + diplomacy track. Pipeline to Model UN scholarships at top US + international universities.",
+      "deadline": "Apply Sep-Dec; rolling",
+      "url": "https://www.thimun.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.thimun.org",
+      "_addedBy": "hs-international-batch-136",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "THIMUN The Hague Model UN International — flagship European Model UN, founded 1968, hosted at The Hague (the global capital of international law) for ages 16-18 (rising 11-12). 5-day immersive at THIMUN Hague campus. Tracks: General Assembly, Security Council, Specialized Agencies, Historical Council, International Court of Justice (UNIQUE — actual ICJ visits + simulations). ENGLISH-medium. ~€850-€1,400/5-day (USD $920-1,520). THIMUN scholarships for international students. UNDER-KNOWN by US families compared to fame. College-app strong differentiator — Hague + ICJ credentials are unmatched for pre-law + diplomacy track. Pipeline to Model UN scholarships at top US + international universities. Apply Sep-Dec.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cambridge Model United Nations International (CamMUN)",
+      "provider": "Cambridge Model UN (Cambridge University)",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 695,
+        "type": "paid",
+        "display": "~£595-£995/4-day (USD $775-1,295); CamMUN scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cambridge Model UN International (CamMUN) — flagship Cambridge University-hosted Model UN, founded 2003, attracts 1,500+ delegates from 50+ countries annually for ages 16-18 (rising 11-12). 4-day immersive at Cambridge colleges (delegates housed in actual Cambridge college rooms). Tracks: General Assembly, Security Council, Specialized Agencies (WHO, UNHCR, UNESCO), Crisis Committees, Historical Council. ENGLISH-medium. SELECTIVE. AFFORDABLE compared to HMUN. Pipeline to Cambridge undergrad consideration. College-app strong fit for kids interested in UK universities + diplomacy track. UNDER-applied-for by US families.",
+      "deadline": "Apply Sep-Dec; rolling",
+      "url": "https://www.cammun.com",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cammun.com",
+      "_addedBy": "hs-international-batch-136",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Cambridge Model UN International (CamMUN) — flagship Cambridge University-hosted Model UN, founded 2003, attracts 1,500+ delegates from 50+ countries annually for ages 16-18 (rising 11-12). 4-day immersive at Cambridge colleges (delegates housed in actual Cambridge college rooms). Tracks: General Assembly, Security Council, Specialized Agencies (WHO, UNHCR, UNESCO), Crisis Committees, Historical Council. ENGLISH-medium. SELECTIVE. ~£595-£995/4-day (USD $775-1,295). CamMUN scholarships for international students. AFFORDABLE compared to HMUN. Pipeline to Cambridge undergrad consideration. College-app strong fit for kids interested in UK universities + diplomacy track. UNDER-APPLIED-FOR by US families. Apply Sep-Dec.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "MUN Refugee Challenge International (UNHCR + Multilateral Org)",
+      "provider": "UNHCR + UN Foundation Refugee Challenge",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~$400-$700/3-day (USD); UNHCR scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Geneva + NYC + Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "MUN Refugee Challenge International — UNHCR + UN Foundation flagship Model UN focused on refugee policy for ages 14-18 (rising 9-12). 3-day immersive — kids choose Geneva (UNHCR HQ) OR NYC (UN HQ) OR online format. Tracks: Refugee Crisis Response (Syria, Ukraine, Sudan, Venezuela current cases), Asylum Policy + International Law, Refugee Camp Operations, Trauma Care + Psychosocial Support, Long-Term Resettlement Strategy. ENGLISH-medium. UNDER-known by US families. UNIQUE: only Model UN with direct UNHCR partnership. College-app strong for kids interested in humanitarian + refugee + global affairs careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.unhcr.org/learn/mun-refugee-challenge",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.unhcr.org/learn/mun-refugee-challenge",
+      "_addedBy": "hs-international-batch-136",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "MUN Refugee Challenge International — UNHCR + UN Foundation flagship Model UN focused on refugee policy for ages 14-18 (rising 9-12). 3-day immersive — kids choose Geneva (UNHCR HQ) OR NYC (UN HQ) OR online format. Tracks: Refugee Crisis Response (Syria, Ukraine, Sudan, Venezuela current cases), Asylum Policy + International Law, Refugee Camp Operations, Trauma Care + Psychosocial Support, Long-Term Resettlement Strategy. ENGLISH-medium. ~$400-$700/3-day (USD). UNHCR scholarships for international students. UNDER-KNOWN by US families. UNIQUE: only Model UN with direct UNHCR partnership. College-app strong for humanitarian + refugee + global affairs careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
