@@ -48742,6 +48742,243 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Canadian Museum of Nature Summer Camps",
+      "provider": "Canadian Museum of Nature (Ottawa)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-365/wk (~USD $215-270); CMN member discount; sliding scale + Ottawa-resident scholarships; international US families welcome with passport"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ottawa",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canadian Museum of Nature (downtown Ottawa, in iconic 1912 Victoria Memorial Museum Building) themed weekly summer day camps for grades K-8. Tracks: Dinosaur Gallery (Tyrannosaurus, Hadrosaur), Birds + Mammals + Fossil galleries, Earth Gallery (geology), water galleries (Arctic + Pacific), Butterfly + Insect Encounter. Mon-Fri 9am-3:30pm with extended care. WA/US families: combine with Parliament Hill + Rideau Canal visit.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://nature.ca/en/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://nature.ca/en/learn/camps/",
+      "_addedBy": "canada-deep-batch-65",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Canadian Museum of Nature (downtown Ottawa, iconic 1912 Victoria Memorial Museum Building) themed summer camps grades K-8. Tracks: Dinosaur Gallery (Tyrannosaurus, Hadrosaur), Birds + Mammals + Fossil galleries, Earth Gallery (geology), water galleries (Arctic + Pacific), Butterfly + Insect Encounter. Mon-Fri 9am-3:30pm + extended care. ~CAD $295-365/wk (~USD $215-270). CMN member discount + sliding scale + Ottawa-resident scholarships. International US families welcome with passport — combine with Parliament Hill + Rideau Canal visit.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Canada Science and Technology Museum Camps (Ingenium)",
+      "provider": "Ingenium / Canada Science and Technology Museum (Ottawa)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); Ingenium member discount + 3-museum bundle deals; sliding scale + Ottawa-resident need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ottawa",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canada Science and Technology Museum (St-Laurent, Ottawa — re-opened 2017 after major renovation) themed weekly summer day camps for grades 1-8. Tracks: ZOOOM Children's Innovation Zone, Steam: A World in Motion (locomotives + transport), Sound by Design, Wearable Tech + Engineering, Crazy Kitchen + Light Hall. Mon-Fri 9am-3:30pm. Part of Ingenium's 3-museum complex (also covers Aviation + Space + Agricultural museums).",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://ingeniumcanada.org/scitech/learn/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ingeniumcanada.org/scitech/learn/camps",
+      "_addedBy": "canada-deep-batch-65",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Canada Science and Technology Museum (St-Laurent Ottawa — re-opened 2017 after major renovation) themed summer camps grades 1-8. Tracks: ZOOOM Children's Innovation Zone, Steam: A World in Motion (locomotives + transport), Sound by Design, Wearable Tech + Engineering, Crazy Kitchen + Light Hall. Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). Ingenium member discount + 3-museum bundle deals (covers Aviation + Space + Agricultural museums) + sliding scale + Ottawa-resident need-based aid. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "National Gallery of Canada Family + Youth Programs",
+      "provider": "National Gallery of Canada (Ottawa)",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE general admission to NGC year-round (Thursdays for Canadians); FREE family Sundays; summer camps ~CAD $245-325/wk (~USD $180-240); NGC member discount"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ottawa",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "National Gallery of Canada (Sussex Drive, Ottawa — iconic glass-and-granite building near Parliament Hill) family + youth programs year-round. FREE family Sundays. Summer camps for grades K-8: Tracks: Indigenous Art (Maman by Louise Bourgeois iconic spider), Group of Seven landscapes, Italian Renaissance + European Masters, Modern + Contemporary, photography + sculpture studios. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.gallery.ca/learn/programs-for-children-and-families",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.gallery.ca/learn/programs-for-children-and-families",
+      "_addedBy": "canada-deep-batch-65",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "National Gallery of Canada (Sussex Drive Ottawa — iconic glass-and-granite building near Parliament Hill) family + youth programs year-round. FREE general admission year-round (Thursdays for Canadians) + FREE family Sundays. Summer camps grades K-8: Indigenous Art (iconic Maman spider by Louise Bourgeois), Group of Seven landscapes, Italian Renaissance + European Masters, Modern + Contemporary, photography + sculpture studios. ~CAD $245-325/wk (~USD $180-240). NGC member discount. Mon-Fri 9am-3:30pm. Member reg Feb; general March.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Canada Aviation and Space Museum Camps",
+      "provider": "Ingenium / Canada Aviation and Space Museum (Ottawa)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); Ingenium member discount + 3-museum bundle deals; sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ottawa",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canada Aviation and Space Museum (Rockcliffe, NE Ottawa — at historic Rockcliffe Airport) themed weekly summer day camps for grades 1-8. Tracks: Aviation History (Avro Arrow + Lancaster + early bush planes), Space Exploration (Canadarm + Canadian Space Agency artifacts), Aerospace Engineering challenges, IMAX. Mon-Fri 9am-3:30pm. Strong fit for kids who love planes/space. Part of Ingenium 3-museum complex.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://ingeniumcanada.org/aviation/learn/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ingeniumcanada.org/aviation/learn/camps",
+      "_addedBy": "canada-deep-batch-65",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Canada Aviation and Space Museum (Rockcliffe NE Ottawa — at historic Rockcliffe Airport) themed summer camps grades 1-8. Tracks: Aviation History (Avro Arrow + Lancaster + early bush planes), Space Exploration (Canadarm + Canadian Space Agency artifacts), Aerospace Engineering challenges, IMAX. Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). Ingenium member discount + 3-museum bundle deals + sliding scale. Strong fit for kids who love planes/space. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Canadian Museum of History Family Programs (Gatineau QC)",
+      "provider": "Canadian Museum of History (Gatineau QC, near Ottawa)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "~CAD $245-325/wk (~USD $180-240); CMH member discount; FREE Thursday evenings; sliding scale via CMH Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Gatineau",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canadian Museum of History (Gatineau QC, just across the Ottawa River from Parliament Hill — most-visited museum in Canada) themed weekly summer day camps for grades 1-8. Tracks: Indigenous Peoples + First Nations galleries, Canada Hall (history through interactive recreations), Children's Museum (immersive worlds), Personalities Hall, Special Exhibitions. Free Thursday evenings. Bilingual programming. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.historymuseum.ca/learn/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.historymuseum.ca/learn/programs/summer-camps/",
+      "_addedBy": "canada-deep-batch-65",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Canadian Museum of History (Gatineau QC, just across Ottawa River from Parliament Hill — MOST-VISITED museum in Canada) themed summer camps grades 1-8. Tracks: Indigenous Peoples + First Nations galleries, Canada Hall (history through interactive recreations), Children's Museum (immersive worlds), Personalities Hall, Special Exhibitions. Bilingual programming (English + French). Mon-Fri 9am-3:30pm. ~CAD $245-325/wk (~USD $180-240). CMH member discount + FREE Thursday evenings + sliding scale via CMH Education. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
