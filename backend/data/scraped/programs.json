@@ -57074,6 +57074,211 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Global Citizen Year (Bridge Year Program)",
+      "provider": "Global Citizen Year",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 15000,
+        "type": "paid",
+        "display": "~$15,000-$30,000/year (USD); GCY scholarships up to 100% via need-blind admission; covers travel + tuition + housing + insurance"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Brazil + Senegal + India + Ecuador",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "12"
+        ]
+      },
+      "description": "Global Citizen Year — flagship gap-year/bridge-year program for ages 17-18 (post-HS senior, pre-college). 8-month residential — kids choose Brazil OR Senegal OR India OR Ecuador. Tracks: Sustainability + Climate Justice, Public Health + Community Development, Education + Youth Empowerment, Economic Development. ENGLISH-medium with local language immersion. NEED-BLIND ADMISSION — GCY scholarships up to 100% for low-income families. Pipeline directly to college admission with international gap-year experience. Strong fit for kids ready to defer college 1 year for transformative international service.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.globalcitizenyear.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.globalcitizenyear.org",
+      "_addedBy": "hs-international-batch-106",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Global Citizen Year — flagship gap-year/bridge-year program for ages 17-18 (post-HS senior, pre-college). 8-month residential — kids choose Brazil OR Senegal OR India OR Ecuador. Tracks: Sustainability + Climate Justice, Public Health + Community Development, Education + Youth Empowerment, Economic Development. ENGLISH-medium with local language immersion. NEED-BLIND ADMISSION — GCY scholarships up to 100% for low-income families. ~$15,000-$30,000/year (USD); covers travel + tuition + housing + insurance. Pipeline directly to college admission with international gap-year experience. Strong fit for kids ready to defer college 1 year for transformative international service. Apply Sep-Dec.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Operation Groundswell (HS Service Learning)",
+      "provider": "Operation Groundswell",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~$4,500-$6,500/4-week (USD); OG scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambodia + Guatemala + Tanzania + Peru + Vietnam",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Operation Groundswell HS — flagship summer service-learning program for ages 16-18 (rising 11-12). 4-week residential — kids choose Cambodia OR Guatemala OR Tanzania OR Peru OR Vietnam. Tracks: Sustainability + Conservation (Cambodia), Public Health + Community Health (Guatemala), Conservation + Wildlife (Tanzania safari), Indigenous Cultural Preservation (Peru), Sustainable Agriculture (Vietnam). ENGLISH-medium with local language exposure. NOT 'voluntourism' — OG focuses on cultural learning + sustainable engagement vs unskilled work. UNDER-known by US families. College-app strong differentiator.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.operationgroundswell.org/learn/hs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.operationgroundswell.org/learn/hs",
+      "_addedBy": "hs-international-batch-106",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Operation Groundswell HS — flagship summer service-learning program for ages 16-18 (rising 11-12). 4-week residential — kids choose Cambodia OR Guatemala OR Tanzania OR Peru OR Vietnam. Tracks: Sustainability + Conservation (Cambodia), Public Health + Community Health (Guatemala), Conservation + Wildlife (Tanzania safari), Indigenous Cultural Preservation (Peru), Sustainable Agriculture (Vietnam). ENGLISH-medium with local language exposure. NOT 'voluntourism' — OG focuses on cultural learning + sustainable engagement vs unskilled work. ~$4,500-$6,500/4-week (USD); OG scholarships up to 100% via need-based admission. UNDER-KNOWN by US families. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "EARTH University Costa Rica HS Sustainability Programme",
+      "provider": "EARTH University (Universidad EARTH)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~$2,000-$3,200/2-week (USD); EARTH scholarships for international students; Spanish + English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Limón Province",
+        "state": "CR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "EARTH University Costa Rica HS Sustainability — EARTH (Costa Rica's flagship sustainability + tropical agriculture university, ranked top global sustainability university by Times Higher Education) for ages 16-18 (rising 11-12). 2-week residential at EARTH Limón campus (in Costa Rican rainforest). Tracks: Sustainable Agriculture + Tropical Agroforestry, Climate-Smart Farming, Carbon Sequestration + Reforestation, Indigenous Costa Rican Knowledge Systems. ENGLISH + SPANISH-medium. EARTH undergrad is 100% sustainability-focused. AFFORDABLE Latin American sustainability option. Pipeline to EARTH undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.earth.ac.cr/learn/hs-sustainability",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.earth.ac.cr/learn/hs-sustainability",
+      "_addedBy": "hs-international-batch-106",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "EARTH University Costa Rica HS Sustainability — EARTH (Costa Rica's flagship sustainability + tropical agriculture university, ranked top global sustainability university by Times Higher Education) for ages 16-18 (rising 11-12). 2-week residential at EARTH Limón campus (in Costa Rican rainforest). Tracks: Sustainable Agriculture + Tropical Agroforestry, Climate-Smart Farming, Carbon Sequestration + Reforestation, Indigenous Costa Rican Knowledge Systems. ENGLISH + SPANISH-medium. EARTH undergrad is 100% sustainability-focused. ~$2,000-$3,200/2-week (USD). EARTH scholarships for international students. AFFORDABLE Latin American sustainability option. Pipeline to EARTH undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Where There Be Dragons HS Programs (China + Mongolia + Bolivia)",
+      "provider": "Where There Be Dragons",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~$4,500-$6,800/3-week (USD); WTBD scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Yunnan + Mongolia + Bolivia + Senegal + Indonesia",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Where There Be Dragons HS — flagship cross-cultural immersion program for ages 16-18 (rising 11-12). 3-week residential — kids choose Yunnan China OR Mongolia OR Bolivia OR Senegal OR Indonesia. Tracks: Cross-Cultural Immersion + Local Homestay, Indigenous Knowledge Systems, Sustainable Development, Buddhist Philosophy (Yunnan + Mongolia), Andean Studies (Bolivia). ENGLISH-medium with intensive local language. WTBD focuses on AUTHENTIC cultural immersion vs voluntourism. UNDER-known by US families. College-app strong differentiator. Apply Mar-May.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.wheretheresbedragons.com/learn/hs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wheretheresbedragons.com/learn/hs",
+      "_addedBy": "hs-international-batch-106",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Where There Be Dragons HS — flagship cross-cultural immersion program for ages 16-18 (rising 11-12). 3-week residential — kids choose Yunnan China OR Mongolia OR Bolivia OR Senegal OR Indonesia. Tracks: Cross-Cultural Immersion + Local Homestay, Indigenous Knowledge Systems, Sustainable Development, Buddhist Philosophy (Yunnan + Mongolia), Andean Studies (Bolivia). ENGLISH-medium with intensive local language. WTBD focuses on AUTHENTIC cultural immersion vs voluntourism. ~$4,500-$6,800/3-week (USD); WTBD scholarships up to 100% via need-based admission. UNDER-KNOWN by US families. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "SEA Semester High Sea HS Programs (Caribbean + Pacific)",
+      "provider": "Sea Education Association (SEA)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 5995,
+        "type": "paid",
+        "display": "~$5,500-$7,500/4-week (USD); SEA scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Caribbean + Pacific Ocean",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "SEA Semester High Sea HS — flagship oceanographic research at sea program for ages 16-18 (rising 11-12). 4-week residential — kids sail tall ships across Caribbean OR Pacific Ocean as crew + researchers. Tracks: Oceanographic Research, Marine Conservation + Fisheries, Climate Change + Sea Level Rise, Coral Reef Ecology, Cetacean (whale + dolphin) Research, Maritime History. SEA combines real research with sailing seamanship. UNDER-known by US families. College-app strong differentiator — sailing tall ships across the Caribbean is unmatched experience. Apply Mar-May.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.sea.edu/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sea.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-106",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "SEA Semester High Sea HS — flagship oceanographic research at sea program for ages 16-18 (rising 11-12). 4-week residential — kids sail tall ships across Caribbean OR Pacific Ocean as crew + researchers. Tracks: Oceanographic Research, Marine Conservation + Fisheries, Climate Change + Sea Level Rise, Coral Reef Ecology, Cetacean (whale + dolphin) Research, Maritime History. SEA combines real research with sailing seamanship. ~$5,500-$7,500/4-week (USD); SEA scholarships up to 100% via need-based admission. UNDER-KNOWN by US families. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
