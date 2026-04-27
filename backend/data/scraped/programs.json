@@ -51595,6 +51595,240 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Goethe-Institut Online (Free German for K-12)",
+      "provider": "Goethe-Institut (Germany)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE Goethe-Institut Junior Online courses for ages 8-15; paid intensive courses ~€295-695; need-based scholarships"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Goethe-Institut — Germany's official cultural institute (159 institutes in 98 countries). Goethe Junior Online: FREE German-language learning for ages 8-15. Tracks: Beginner German (A1) → Intermediate (B2), Cultural Programs (German history, music, film), German for Travelers, Goethe-Zertifikat exam preparation (recognized by German universities). Excellent for US heritage German families + students considering German universities (free tuition for German speakers). Year-round.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.goethe.de/learn/online-learning/junior",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.goethe.de/learn/online-learning/junior",
+      "_addedBy": "international-language-batch-79",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Goethe-Institut — Germany's official cultural institute (159 institutes in 98 countries). Goethe Junior Online: FREE German-language learning ages 8-15. Tracks: Beginner German (A1) → Intermediate (B2), Cultural Programs (German history, music, film), German for Travelers, Goethe-Zertifikat exam prep (recognized by German universities). Excellent for US heritage German families + students considering German universities (FREE tuition for German speakers — bilingual German is the gateway). Year-round. ~€295-695 for paid intensive courses.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Alliance Française Online (French K-12)",
+      "provider": "Alliance Française (Paris-based, global network)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~$295-995/course; Alliance Française Foundation need-based scholarships; some FREE community programs"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Alliance Française — France's global cultural network (817 chapters in 132 countries). Online K-12 French courses: Tracks: French for Kids (ages 6-12, immersive games + stories), French for Teens (13-17), DELF/DALF certification preparation (French diploma recognized by French + Quebec universities). 50+ US Alliance Française locations also offer in-person programs. Year-round + summer-intensive. Strong fit for kids preparing for French university OR Canadian Quebec admission.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.alliancefr.org/learn/online-french-classes",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.alliancefr.org/learn/online-french-classes",
+      "_addedBy": "international-language-batch-79",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Alliance Française — France's global cultural network (817 chapters in 132 countries). Online K-12 French courses. Tracks: French for Kids (ages 6-12, immersive games + stories), French for Teens (13-17), DELF/DALF certification prep (recognized by French + Quebec universities). 50+ US Alliance Française locations also offer in-person programs. Year-round + summer-intensive. ~$295-995/course; Alliance Française Foundation need-based scholarships; some FREE community programs. Strong fit for kids preparing for French university OR Canadian Quebec admission.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Instituto Cervantes Online (Free + Paid Spanish K-12)",
+      "provider": "Instituto Cervantes (Spain)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE community Spanish content; paid live classes ~€195-495/course; SIELE/DELE exam prep available"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Instituto Cervantes — Spain's official cultural network (88 institutes in 45 countries). Online K-12 Spanish: Tracks: Spanish for Kids (Pinocchio + Don Quijote stories adapted for young learners), Spanish for Teens (telenovelas + literature), DELE certification (international Spanish proficiency exam — recognized by Spanish + Latin American universities). FREE community programs (cultural events, film screenings). Year-round.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.cervantes.es/learn/online-spanish",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cervantes.es/learn/online-spanish",
+      "_addedBy": "international-language-batch-79",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Instituto Cervantes — Spain's official cultural network (88 institutes in 45 countries). Online K-12 Spanish. Tracks: Spanish for Kids (Pinocchio + Don Quijote stories adapted for young learners), Spanish for Teens (telenovelas + literature), DELE certification (international Spanish proficiency exam — recognized by Spanish + Latin American universities). FREE community programs (cultural events, film screenings). Paid live classes ~€195-495/course. SIELE/DELE exam prep available. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Italian Cultural Institute Online (Italian K-12)",
+      "provider": "Istituto Italiano di Cultura (Italy global network)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$195-595/course; sliding scale + cultural-heritage scholarships for Italian-American families"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Italian Cultural Institute — Italy's global cultural network (89 institutes worldwide; 7 in US). Online K-12 Italian + culture programs. Tracks: Italian for Kids (Pinocchio originals, Italian operas adapted for young learners), Italian for Teens (Renaissance art + literature, contemporary Italian cinema), CELI exam preparation. Strong cultural cachet for Italian-American heritage families + kids interested in Italian culinary, art, design, opera, fashion. Year-round.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.iicit.org/learn/online-italian-courses",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.iicit.org/learn/online-italian-courses",
+      "_addedBy": "international-language-batch-79",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Italian Cultural Institute — Italy's global cultural network (89 institutes worldwide; 7 in US — NYC, Chicago, LA, San Francisco, Boston, DC, Miami). Online K-12 Italian + culture programs. Tracks: Italian for Kids (Pinocchio originals, Italian operas adapted), Italian for Teens (Renaissance art + literature, contemporary Italian cinema), CELI exam preparation. Strong cultural cachet for Italian-American heritage families + kids interested in Italian culinary, art, design, opera, fashion. ~$195-595/course; sliding scale + cultural-heritage scholarships for Italian-American families. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Sejong Institute Online (Free Korean K-12, K-Pop angle)",
+      "provider": "Sejong Institute (Korean Cultural Center, ROK)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE Sejong King's Course — Republic of Korea government-funded; TOPIK exam prep available"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sejong Institute (Korean Cultural Center) — 100% FREE Korean-language education for K-12 globally. Republic of Korea-funded. Tracks: Beginner Korean (Hangul mastery), Intermediate Korean (drama-based learning + K-Pop song analysis), TOPIK certification (international Korean exam — recognized by Korean universities), Korean Cultural Studies (history, food, music). 200+ Sejong Institute branches globally (10+ in US). UNDER-USED — most parents don't realize this is FREE. Year-round.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.sejonghakdang.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sejonghakdang.org",
+      "_addedBy": "international-language-batch-79",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Sejong Institute (Korean Cultural Center) — 100% FREE Korean-language education for K-12 globally. Republic of Korea-funded. Tracks: Beginner Korean (Hangul mastery), Intermediate Korean (drama-based learning + K-Pop song analysis — appeals to teen learners), TOPIK certification (recognized by Korean universities), Korean Cultural Studies (history, food, music). 200+ Sejong Institute branches globally (10+ in US — NYC, LA, DC, Chicago, Honolulu, Atlanta). UNDER-USED — most parents don't realize this is FREE. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
