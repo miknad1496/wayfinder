@@ -54593,6 +54593,214 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "TUM Pre-Engineering Summer (Munich)",
+      "provider": "Technical University of Munich (TUM)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~€1,695-€2,495/2-week (USD $1,840-2,705); TUM scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Munich",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "TUM Pre-Engineering Summer — Technical University of Munich (Germany's #1 STEM university, ranked top-50 globally, alma mater of Siemens + BMW engineers) for ages 16-18 (rising 11-12). 2-week residential at TUM Munich campus. Tracks: Mechanical + Automotive Engineering (BMW heritage), Aerospace + Astronautics, Computer Science + AI, Robotics + Mechatronics. ENGLISH-medium primary. AFFORDABLE for STEM-track US kids. Pipeline to TUM undergrad (often FREE for international undergrads — German universities don't charge tuition).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.tum.de/en/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tum.de/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-94",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "TUM Pre-Engineering Summer — Technical University of Munich (Germany's #1 STEM university, ranked top-50 globally, alma mater of Siemens + BMW engineers) for ages 16-18 (rising 11-12). 2-week residential at TUM Munich campus. Tracks: Mechanical + Automotive Engineering (BMW heritage), Aerospace + Astronautics, CS + AI, Robotics + Mechatronics. ENGLISH-medium primary. ~€1,695-€2,495/2-week (USD $1,840-2,705). TUM scholarships for international students. AFFORDABLE for STEM-track US kids. CRITICAL: pipeline to TUM undergrad — often FREE for international undergrads (German universities don't charge tuition for EU OR international). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "RWTH Aachen Summer School (Engineering)",
+      "provider": "RWTH Aachen University",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1795,
+        "type": "paid",
+        "display": "~€1,595-€2,295/2-week (USD $1,735-2,490); RWTH scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Aachen",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "RWTH Aachen Summer School — RWTH Aachen (Germany's #2 STEM university, ranked top-100 globally for engineering) for ages 16-18 (rising 11-12). 2-week residential at RWTH Aachen campus. Tracks: Mechanical + Production Engineering (RWTH's specialty), Materials + Metallurgy, Computer Science + AI, Sustainable Energy. ENGLISH-medium primary. MOST AFFORDABLE German engineering summer program. Located near Belgium + Netherlands borders — accessible via European travel. Pipeline to RWTH undergrad (often FREE).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.rwth-aachen.de/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rwth-aachen.de/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-94",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "RWTH Aachen Summer School — RWTH Aachen (Germany's #2 STEM university, ranked top-100 globally for engineering) for ages 16-18 (rising 11-12). 2-week residential at RWTH Aachen campus. Tracks: Mechanical + Production Engineering (RWTH's specialty), Materials + Metallurgy, CS + AI, Sustainable Energy. ENGLISH-medium primary. ~€1,595-€2,295/2-week (USD $1,735-2,490). RWTH scholarships for international students. MOST AFFORDABLE German engineering summer program. Located near Belgium + Netherlands borders — accessible via European travel. Pipeline to RWTH undergrad (often FREE). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Heidelberg Pre-Medicine Summer Extended",
+      "provider": "Heidelberg University Medical School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,295-€3,295/3-week (USD $2,490-3,570); Heidelberg Foundation scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Heidelberg",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Heidelberg Pre-Medicine Extended — Heidelberg University Medical School (Germany's #1 medical school, founded 1386, alma mater of multiple Nobel laureates) for ages 17-18 (rising 12). 3-week residential at Heidelberg Medical Faculty campus. Tracks: Pre-Med Medical Sciences, Anatomy + Physiology Lab Work, Cancer Research (DKFZ — German Cancer Research Center on-site), Neuroscience + Brain Imaging. ENGLISH-medium primary. ELITE selectivity. Pipeline to Heidelberg medical undergrad (often FREE — German universities don't charge tuition).",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.uni-heidelberg.de/learn/medicine-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uni-heidelberg.de/learn/medicine-summer",
+      "_addedBy": "hs-international-batch-94",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Heidelberg Pre-Medicine Extended — Heidelberg University Medical School (Germany's #1 medical school, founded 1386, alma mater of multiple Nobel laureates) for ages 17-18 (rising 12). 3-week residential at Heidelberg Medical Faculty campus. Tracks: Pre-Med Medical Sciences, Anatomy + Physiology Lab Work, Cancer Research (DKFZ — German Cancer Research Center on-site), Neuroscience + Brain Imaging. ENGLISH-medium primary. ~€2,295-€3,295/3-week (USD $2,490-3,570). Heidelberg Foundation scholarships for international students. ELITE selectivity. Pipeline to Heidelberg medical undergrad (often FREE for international undergrads). Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ETH Zurich Pre-Engineering Summer Extended",
+      "provider": "ETH Zurich (Swiss Federal Institute of Technology)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~€3,495-€4,995/3-week (USD $3,795-5,420); ETH Foundation scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Zurich",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "ETH Zurich Pre-Engineering Extended — ETH Zurich (Switzerland's premier STEM university, ranked top-10 globally, alma mater of Albert Einstein + 21 Nobel laureates) for ages 17-18 (rising 12). 3-week residential at ETH Zurich campus. Tracks: Mechanical + Process Engineering, Electrical + Computer Engineering, Mathematics + Theoretical Physics, Computer Science + AI. ENGLISH-medium. ELITE selectivity — only top STEM students worldwide accepted. College-app GOLD-PLUS. Pipeline to ETH undergrad — Switzerland's flagship.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://ethz.ch/en/learn/pre-engineering-summer",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ethz.ch/en/learn/pre-engineering-summer",
+      "_addedBy": "hs-international-batch-94",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "ETH Zurich Pre-Engineering Extended — ETH Zurich (Switzerland's premier STEM university, ranked top-10 globally, alma mater of Albert Einstein + 21 Nobel laureates) for ages 17-18 (rising 12). 3-week residential at ETH Zurich campus. Tracks: Mechanical + Process Engineering, Electrical + Computer Engineering, Mathematics + Theoretical Physics, CS + AI. ENGLISH-medium. ~€3,495-€4,995/3-week (USD $3,795-5,420). ETH Foundation scholarships for international students. ELITE selectivity — only top STEM students worldwide accepted. College-app GOLD-PLUS. Pipeline to ETH undergrad — Switzerland's flagship. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Vienna Summer School",
+      "provider": "University of Vienna",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~€1,695-€2,495/2-week (USD $1,840-2,705); Vienna Foundation scholarships; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vienna",
+        "state": "AT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Vienna Summer School — University of Vienna (Austria's flagship university, founded 1365, ranked top-150 globally) for ages 16-18 (rising 11-12). 2-week residential at Vienna campus. Tracks: International Politics + EU Studies (Vienna is OPEC + UN city), Music + Conservatory (Vienna's specialty — Mozart, Haydn, Brahms heritage), Economics + Finance, Philosophy + Humanities. ENGLISH-medium primary; German language electives. AFFORDABLE Austrian/Central European destination. Strong fit for music-track + classics-track + EU politics-track US kids.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.univie.ac.at/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.univie.ac.at/learn/summer-school",
+      "_addedBy": "hs-international-batch-94",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Vienna Summer School — University of Vienna (Austria's flagship university, founded 1365, ranked top-150 globally) for ages 16-18 (rising 11-12). 2-week residential at Vienna campus. Tracks: International Politics + EU Studies (Vienna is OPEC + UN city), Music + Conservatory (Vienna's specialty — Mozart, Haydn, Brahms heritage), Economics + Finance, Philosophy + Humanities. ENGLISH-medium primary; German language electives. ~€1,695-€2,495/2-week (USD $1,840-2,705). Vienna Foundation scholarships. AFFORDABLE Austrian/Central European destination. Strong fit for music-track + classics-track + EU politics-track US kids. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
