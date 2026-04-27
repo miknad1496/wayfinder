@@ -36087,7 +36087,16 @@
       "url": "https://www.engr.washington.edu/k12",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.engr.washington.edu/k12"
+      "_source": "https://www.engr.washington.edu/k12",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "UW College of Engineering K-12 outreach umbrella covering: Engineering Discovery Days (annual free 2-day public event ~Jan-Feb), Math Academy (HS girls), Engineering Academy for Youth (rising HS), Math Hour Olympiad (free competition), and select summer day camps for grades 5-9 (engineering exploration). Most outreach FREE; selective summer camps ~$250-500/wk with financial aid. Apply via engr.washington.edu/outreach. Targets: kids exploring engineering + underrepresented students.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "PacSci Camps for Curious Minds (Multiple Locations)",
@@ -38227,7 +38236,7 @@
       "scheduleConfidence": "verified",
       "summerWindow": null,
       "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Browser-based game where kids learn Python or JavaScript by typing real code commands to control characters in a fantasy RPG. Grades 4-12. Free tier covers ~80 levels (Computer Science 1); subscription $9.99/mo or $99/yr unlocks 200+ levels (CS 2-6). Strong for visual + game-loving learners; less abstract than typical coding platforms. CodeCombat AI League hosts annual coding competitions. Year-round; play anytime. codecombat.com.",
+      "scheduleNotes": "Re-confirming year-round status (caught in batch 40 already; this is idempotent confirmation). Browser-based RPG that teaches Python or JavaScript by typing real code. Grades 4-12. Free tier ~80 levels (CS 1); subscription $9.99/mo or $99/yr unlocks 200+ levels (CS 2-6). Year-round; play anytime. codecombat.com.",
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-27"
     },
@@ -40176,7 +40185,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Science Olympiad Division B is the middle school (grades 6-9) tier of the national Science Olympiad competition. Teams of 15 students compete in 23 events spanning all sciences (anatomy, chemistry, ecology, engineering design, forensics, math, physics, etc.). 2026-27 season: school enrolls fall; regional Jan-Feb 2027; state March 2027; nationals May 2027. Team registration ~$60-100; individual events ~$10-20; school + Title I subsidies common. Heavy time commitment (1-2 hrs/wk + intensive prep before competitions) — pairs well with kids who like deep dives + team coordination. soinc.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "American Museum of Natural History Discovery Squad + Children's Camps",
@@ -40219,7 +40234,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "AMNH Children's Camps in NYC for grades 1-8 + Discovery Squad for younger learners. Week-long age-banded camps using AMNH's collections + Hayden Planetarium + Discovery Room. Themes: paleontology (Sue + AMNH dinosaur fossils), astrophysics (Hayden show), marine biology, anthropology + cultures. 1-week ~$575-650; member discount 10%; needs-based aid via AMNH Education. Member registration February; general March-April. Camps Mon-Fri 9am-3pm. Find info at amnh.org/learn-teach/youth-and-family-programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Exploratorium Summer Camps",
@@ -40260,7 +40284,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "The Exploratorium (San Francisco's iconic hands-on science museum on Pier 15) summer camps for grades K-8. Weekly themed camps: Tinkering Studio (engineering + design), Sound (audio physics), Light (optics), Living Systems (biology). Mon-Fri 9am-3pm. ~$525-625/wk; Exploratorium member discount; need-based aid for SF residents. Member reg opens January, general public February-March; sessions sell out spring. exploratorium.edu/education/camps-classes.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Field Museum Summer Camps + Junior Curators",
@@ -41370,7 +41403,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "AHRC NYC + AHRC NY State day + residential camps for kids + adults with intellectual + developmental disabilities. Multiple sites in NY: Camp Anchor (Long Island), Camp Hunter (Catskills), AHRC's Manhattan day program. Trained staff + therapeutic recreation + adapted programming. Sliding scale; many funded via NY State OPWDD waivers (free for eligible families). 4-8 week sessions Jun-Aug. Apply Jan-Mar for priority. ahrcnyc.org/services/recreation OR ahrcnystate.org. Excellent fit for special-needs kids whose typical day camps don't accommodate.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Autism Society Resource Network — local camps + summer programs",
