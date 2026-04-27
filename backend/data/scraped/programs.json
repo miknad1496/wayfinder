@@ -62462,6 +62462,213 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "School for Field Studies Caribbean + Australia HS Marine Programs",
+      "provider": "School for Field Studies (SFS)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~$4,500-$6,500/4-week (USD); SFS scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Turks + Caicos / Australia / Costa Rica",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "School for Field Studies HS Marine Programs — SFS (Boston-based field-research institute, founded 1980, partners with US universities) for ages 17-18 (rising 12). 4-week residential — kids choose Turks + Caicos OR Australian Great Barrier Reef OR Costa Rica Pacific. Tracks: Marine Conservation + Ocean Ecology, Coral Reef Research (live diving + research), Marine Wildlife (sharks + sea turtles + manta rays), Climate Change + Sea Level Rise, Sustainable Fisheries. ENGLISH-medium. SELECTIVE. Pipeline to SFS undergrad-affiliated programs at US universities. UNDER-applied-for. College-app GOLD for marine-track US kids — actual field research with peer-reviewed publications.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.fieldstudies.org/learn/hs-marine",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fieldstudies.org/learn/hs-marine",
+      "_addedBy": "hs-international-batch-132",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "School for Field Studies HS Marine Programs — SFS (Boston-based field-research institute, founded 1980, partners with US universities) for ages 17-18 (rising 12). 4-week residential — kids choose Turks + Caicos OR Australian Great Barrier Reef OR Costa Rica Pacific. Tracks: Marine Conservation + Ocean Ecology, Coral Reef Research (live diving + research), Marine Wildlife (sharks + sea turtles + manta rays), Climate Change + Sea Level Rise, Sustainable Fisheries. ENGLISH-medium. SELECTIVE. ~$4,500-$6,500/4-week (USD); SFS scholarships up to 100% via need-based admission. Pipeline to SFS undergrad-affiliated programs at US universities. UNDER-APPLIED-FOR. College-app GOLD for marine-track US kids — actual field research with peer-reviewed publications. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Bermuda Institute of Ocean Sciences HS Summer Programs",
+      "provider": "Bermuda Institute of Ocean Sciences (BIOS)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~$3,500-$5,000/3-week (USD); BIOS scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "St. George's",
+        "state": "BM"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Bermuda Institute of Ocean Sciences HS Summer — BIOS (founded 1903, ranked top-10 US ocean research stations, located on Bermuda's St. George's island) for ages 17-18 (rising 12). 3-week residential at BIOS Bermuda campus. Tracks: Atlantic Ocean Research (BIOS leads BATS — Bermuda Atlantic Time Series, one of world's longest oceanographic datasets), Coral Reef Research, Climate Change + Ocean Acidification, Marine Biodiversity, SCUBA + Research Diving. ENGLISH-medium. SELECTIVE. Pipeline to BIOS-affiliated graduate programs. UNDER-known by US families. College-app GOLD for marine-track US kids.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://www.bios.edu/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.bios.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-132",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Bermuda Institute of Ocean Sciences HS Summer — BIOS (founded 1903, ranked top-10 US ocean research stations, located on Bermuda's St. George's island) for ages 17-18 (rising 12). 3-week residential at BIOS Bermuda campus. Tracks: Atlantic Ocean Research (BIOS leads BATS — Bermuda Atlantic Time Series, one of world's longest oceanographic datasets), Coral Reef Research, Climate Change + Ocean Acidification, Marine Biodiversity, SCUBA + Research Diving. ENGLISH-medium. SELECTIVE. ~$3,500-$5,000/3-week (USD); BIOS scholarships up to 100% via need-based admission. Pipeline to BIOS-affiliated graduate programs. UNDER-KNOWN by US families. College-app GOLD for marine-track US kids. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Galápagos Conservancy HS Field Programs",
+      "provider": "Galápagos Conservancy",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~$4,500-$6,500/3-week (USD); Galápagos Conservancy scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Galápagos Islands",
+        "state": "EC"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Galápagos Conservancy HS Field Programs — Galápagos Conservancy (US-based nonprofit working with Charles Darwin Foundation + Galápagos National Park) for ages 16-18 (rising 11-12). 3-week residential across multiple Galápagos islands (Santa Cruz + Isabela + San Cristóbal). Tracks: Darwin's Legacy + Evolutionary Biology (where Darwin's theory of evolution originated), Endemic Galápagos Species (giant tortoises, marine iguanas, blue-footed boobies), Marine Iguana + Galápagos Penguin Research, Conservation + Anti-Poaching, Sustainable Tourism + Indigenous Studies. ENGLISH + SPANISH-medium. UNDER-known by US families. College-app GOLD for biology + conservation-track US kids — Galápagos credentials are extremely rare.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.galapagos.org/learn/hs-field",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.galapagos.org/learn/hs-field",
+      "_addedBy": "hs-international-batch-132",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Galápagos Conservancy HS Field Programs — Galápagos Conservancy (US-based nonprofit working with Charles Darwin Foundation + Galápagos National Park) for ages 16-18 (rising 11-12). 3-week residential across multiple Galápagos islands (Santa Cruz + Isabela + San Cristóbal). Tracks: Darwin's Legacy + Evolutionary Biology (where Darwin's theory of evolution originated), Endemic Galápagos Species (giant tortoises, marine iguanas, blue-footed boobies), Marine Iguana + Galápagos Penguin Research, Conservation + Anti-Poaching, Sustainable Tourism + Indigenous Studies. ENGLISH + SPANISH-medium. ~$4,500-$6,500/3-week (USD). Galápagos Conservancy scholarships for international students. UNDER-KNOWN by US families. College-app GOLD for biology + conservation-track US kids — Galápagos credentials are extremely rare. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Coral Cay Conservation HS Marine Expeditions",
+      "provider": "Coral Cay Conservation",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 2995,
+        "type": "paid",
+        "display": "~$2,500-$3,800/4-week (USD); CCC scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Philippines + Maldives + Cambodia",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Coral Cay Conservation HS Marine Expeditions — CCC (UK-based marine conservation NGO, founded 1986, hosts coral reef + marine protected area research) for ages 17-18 (rising 12). 4-week residential expedition — kids choose Philippines (Cebu + Negros) OR Maldives OR Cambodia (Koh Rong). Tracks: Coral Reef Research + Restoration, Marine Protected Area Management, SCUBA Diving + PADI Open Water + Advanced certification (CCC includes diving certification), Marine Wildlife (sharks + manta rays + dolphins), Sustainable Fisheries. ENGLISH-medium. AFFORDABLE marine option vs SFS. Pipeline to UK marine biology undergrads + diving careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.coralcay.org/learn/hs-expeditions",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.coralcay.org/learn/hs-expeditions",
+      "_addedBy": "hs-international-batch-132",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Coral Cay Conservation HS Marine Expeditions — CCC (UK-based marine conservation NGO, founded 1986, hosts coral reef + marine protected area research) for ages 17-18 (rising 12). 4-week residential expedition — kids choose Philippines (Cebu + Negros) OR Maldives OR Cambodia (Koh Rong). Tracks: Coral Reef Research + Restoration, Marine Protected Area Management, SCUBA Diving + PADI Open Water + Advanced certification (CCC includes diving certification), Marine Wildlife (sharks + manta rays + dolphins), Sustainable Fisheries. ENGLISH-medium. ~$2,500-$3,800/4-week (USD). CCC scholarships for international students. AFFORDABLE marine option vs SFS. Pipeline to UK marine biology undergrads + diving careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Lighthouse Foundation Iceland Marine HS",
+      "provider": "Lighthouse Foundation Iceland",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 3495,
+        "type": "paid",
+        "display": "~$3,000-$4,500/3-week (USD); Lighthouse scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Reykjavik + Vestmannaeyjar",
+        "state": "IS"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Lighthouse Foundation Iceland Marine HS — Lighthouse Foundation Iceland (Iceland's premier marine conservation NGO, founded 2000, partner with University of Iceland Marine Research Institute) for ages 16-18 (rising 11-12). 3-week residential at Reykjavik + Vestmannaeyjar (Westman Islands volcanic archipelago). Tracks: North Atlantic Marine Research, Cetacean (whale) Research (Iceland is world's #1 whale-watching destination — humpbacks, blue whales, orcas), Volcanic + Geothermal Marine Geology, Sustainable Fisheries (Iceland's economy depends on cod), Northern Lights Photography. ENGLISH-medium. UNDER-known by US families. College-app strong differentiator — Iceland marine credentials are rare.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.lighthouse-foundation.is/learn/hs-marine",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lighthouse-foundation.is/learn/hs-marine",
+      "_addedBy": "hs-international-batch-132",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Lighthouse Foundation Iceland Marine HS — Lighthouse Foundation Iceland (Iceland's premier marine conservation NGO, founded 2000, partner with University of Iceland Marine Research Institute) for ages 16-18 (rising 11-12). 3-week residential at Reykjavik + Vestmannaeyjar (Westman Islands volcanic archipelago). Tracks: North Atlantic Marine Research, Cetacean (whale) Research (Iceland is world's #1 whale-watching destination — humpbacks, blue whales, orcas), Volcanic + Geothermal Marine Geology, Sustainable Fisheries (Iceland's economy depends on cod), Northern Lights Photography. ENGLISH-medium. ~$3,000-$4,500/3-week (USD). Lighthouse scholarships for international students. UNDER-KNOWN by US families. College-app strong differentiator — Iceland marine credentials are rare. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
