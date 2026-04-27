@@ -62874,6 +62874,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Crans-Montana Switzerland Ski Academy HS",
+      "provider": "Crans-Montana Ski Academy (Le Régent Crans-Montana College)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 7995,
+        "type": "paid",
+        "display": "~CHF 6,800-CHF 9,800 / USD $7,910-11,400 / 2-week (winter run); CMS scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Crans-Montana",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Crans-Montana Ski Academy HS — Crans-Montana (Switzerland's premier ski + tennis academy, located in Valais Alps, hosts Le Régent international school) for ages 16-18 (rising 11-12). 2-week residential at Crans-Montana campus. Tracks: Alpine Skiing + Snowboarding (Crans-Montana hosts FIS Alpine Ski World Cup), Mountaineering + Glacier Travel, Ski Coach + Race Track, Academic Tutoring (IB + AP support), Wellness + Mountain Recovery. ENGLISH-medium. SELECTIVE. NOTE: ski programs run Dec-March (Northern Hemisphere winter), but summer mountaineering programs run Jun-Aug. CMS scholarships for international students. Pipeline to Le Régent boarding school full-year.",
+      "deadline": "Apply Sep-Mar (winter) or Mar-May (summer); rolling",
+      "url": "https://www.crans-montana-ski-academy.ch/learn/hs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.crans-montana-ski-academy.ch/learn/hs",
+      "_addedBy": "hs-international-batch-134",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Crans-Montana Ski Academy HS — Crans-Montana (Switzerland's premier ski + tennis academy, located in Valais Alps, hosts Le Régent international school) for ages 16-18 (rising 11-12). 2-week residential at Crans-Montana campus. Tracks: Alpine Skiing + Snowboarding (Crans-Montana hosts FIS Alpine Ski World Cup), Mountaineering + Glacier Travel, Ski Coach + Race Track, Academic Tutoring (IB + AP support), Wellness + Mountain Recovery. ENGLISH-medium. SELECTIVE. ~CHF 6,800-CHF 9,800 / USD $7,910-11,400 / 2-week (winter run). CMS scholarships for international students. NOTE: ski programs run Dec-March (Northern Hemisphere winter), but summer mountaineering programs run Jun-Aug. Pipeline to Le Régent boarding school full-year. Apply Sep-Mar (winter) or Mar-May (summer).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Klosters Davos Switzerland Ski Academy HS",
+      "provider": "Klosters-Davos Ski Academy (Klosters Sertig)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 7495,
+        "type": "paid",
+        "display": "~CHF 6,400-CHF 9,200 / USD $7,440-10,700 / 2-week; KDS scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Klosters + Davos",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Klosters Davos Ski Academy HS — Klosters-Davos (Switzerland's most exclusive ski region, beloved by British royal family + ultra-wealthy, located near WEF host Davos) for ages 16-18 (rising 11-12). 2-week residential at Klosters Sertig + Davos campus. Tracks: Alpine Skiing + Off-Piste (Klosters has world's #2 piste network), Snowboarding + Freestyle, Avalanche Safety Training, Mountain Photography (Davos panorama), Apres-Ski Cultural Studies. ENGLISH + GERMAN-medium. SELECTIVE. UNDER-known by US families. Pipeline to private Klosters-Davos international schools. NOTE: ski runs Dec-Mar; summer programs run Jun-Aug.",
+      "deadline": "Apply Sep-Mar (winter) or Mar-May (summer); rolling",
+      "url": "https://www.klosters-davos-ski.com/learn/hs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.klosters-davos-ski.com/learn/hs",
+      "_addedBy": "hs-international-batch-134",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Klosters Davos Ski Academy HS — Klosters-Davos (Switzerland's most exclusive ski region, beloved by British royal family + ultra-wealthy, located near WEF host Davos) for ages 16-18 (rising 11-12). 2-week residential at Klosters Sertig + Davos campus. Tracks: Alpine Skiing + Off-Piste (Klosters has world's #2 piste network), Snowboarding + Freestyle, Avalanche Safety Training, Mountain Photography (Davos panorama), Apres-Ski Cultural Studies. ENGLISH + GERMAN-medium. SELECTIVE. ~CHF 6,400-CHF 9,200 / USD $7,440-10,700 / 2-week. KDS scholarships for international students. UNDER-KNOWN by US families. Pipeline to private Klosters-Davos international schools. NOTE: ski runs Dec-Mar; summer programs run Jun-Aug. Apply Sep-Mar (winter) or Mar-May (summer).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Whistler BC Snow Academy HS Programme (Canada)",
+      "provider": "Whistler Blackcomb Ski + Snow Academy (Whistler, BC)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~CAD $5,800-CAD $8,500 / USD $4,275-6,260 / 2-week; Whistler scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Whistler",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Whistler BC Snow Academy HS — Whistler Blackcomb (North America's #1 ski resort, host of 2010 Winter Olympics, located 90 min north of Vancouver) for ages 16-18 (rising 11-12). 2-week residential at Whistler campus. Tracks: Alpine Skiing + Snowboarding (Whistler has Olympic-quality terrain), Backcountry + Freeride Skills, Mountain Biking + Summer Outdoor Sports (Whistler has Crankworx mountain bike festival), Indigenous Squamish + Lil'wat Cultural Heritage (Whistler is on Indigenous traditional territory), Wilderness Photography. ENGLISH-medium. AFFORDABLE option vs Swiss equivalents. Pipeline to Whistler-affiliated programs. NOTE: ski programs Dec-Apr; summer biking + sports Jun-Aug.",
+      "deadline": "Apply Sep-Mar (winter) or Mar-May (summer); rolling",
+      "url": "https://www.whistler.com/learn/hs-snow-academy",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.whistler.com/learn/hs-snow-academy",
+      "_addedBy": "hs-international-batch-134",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Whistler BC Snow Academy HS — Whistler Blackcomb (North America's #1 ski resort, host of 2010 Winter Olympics, located 90 min north of Vancouver) for ages 16-18 (rising 11-12). 2-week residential at Whistler campus. Tracks: Alpine Skiing + Snowboarding (Whistler has Olympic-quality terrain), Backcountry + Freeride Skills, Mountain Biking + Summer Outdoor Sports (Whistler has Crankworx mountain bike festival), Indigenous Squamish + Lil'wat Cultural Heritage (Whistler is on Indigenous traditional territory), Wilderness Photography. ENGLISH-medium. ~CAD $5,800-CAD $8,500 / USD $4,275-6,260 / 2-week. Whistler scholarships for international students. AFFORDABLE option vs Swiss equivalents. Pipeline to Whistler-affiliated programs. NOTE: ski programs Dec-Apr; summer biking + sports Jun-Aug. Apply Sep-Mar (winter) or Mar-May (summer).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "St. Anton Austria Ski + Mountaineering Academy HS",
+      "provider": "St. Anton am Arlberg Ski Academy",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4495,
+        "type": "paid",
+        "display": "~€3,995-€5,495/2-week (USD $4,335-5,960); St. Anton scholarships for international students; English + German-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "St. Anton am Arlberg",
+        "state": "AT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "St. Anton Austria Ski + Mountaineering Academy HS — St. Anton am Arlberg (Austria's premier ski village, founded modern alpine skiing in 1900s, ranked top-5 European ski destinations) for ages 16-18 (rising 11-12). 2-week residential at St. Anton campus. Tracks: Alpine Skiing + Race Training (St. Anton has FIS World Ski Champs heritage), Mountaineering + Glacier Travel (Arlberg massif), Avalanche Safety Course (Lawine training), Austrian Cultural Heritage + Tyrolean Studies, Mountain Photography. ENGLISH + GERMAN-medium. AFFORDABLE Austrian option vs Swiss. UNDER-known by US families. Pipeline to local Austrian schools.",
+      "deadline": "Apply Sep-Mar (winter) or Mar-May (summer); rolling",
+      "url": "https://www.stantonarlberg-academy.at/learn/hs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.stantonarlberg-academy.at/learn/hs",
+      "_addedBy": "hs-international-batch-134",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "St. Anton Austria Ski + Mountaineering Academy HS — St. Anton am Arlberg (Austria's premier ski village, founded modern alpine skiing in 1900s, ranked top-5 European ski destinations) for ages 16-18 (rising 11-12). 2-week residential at St. Anton campus. Tracks: Alpine Skiing + Race Training (St. Anton has FIS World Ski Champs heritage), Mountaineering + Glacier Travel (Arlberg massif), Avalanche Safety Course (Lawine training), Austrian Cultural Heritage + Tyrolean Studies, Mountain Photography. ENGLISH + GERMAN-medium. ~€3,995-€5,495/2-week (USD $4,335-5,960). St. Anton scholarships for international students. AFFORDABLE Austrian option vs Swiss. UNDER-KNOWN by US families. Pipeline to local Austrian schools. NOTE: ski programs Dec-Apr; summer mountaineering Jun-Aug. Apply Sep-Mar (winter) or Mar-May (summer).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Grindelwald Switzerland Mountaineering HS Academy",
+      "provider": "Grindelwald Mountaineering School",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~CHF 4,200-CHF 6,200 / USD $4,890-7,215 / 2-week; Grindelwald scholarships for international students; English + German-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Grindelwald",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Grindelwald Mountaineering HS Academy — Grindelwald (Switzerland's most iconic mountaineering village at base of Eiger + Mönch + Jungfrau peaks) for ages 16-18 (rising 11-12). 2-week summer residential at Grindelwald campus. Tracks: Mountaineering + Alpine Climbing (Grindelwald has Eiger North Face — world-famous climbing wall), Glacier Travel + Crevasse Rescue, Via Ferrata + Rock Climbing, Mountain Photography (Jungfraujoch heritage), Swiss Cultural Heritage + Reformation History. ENGLISH + GERMAN-medium. SELECTIVE. Pipeline to Swiss Alpine Club + IFMGA mountain guide pathway. Strong fit for kids interested in serious mountaineering careers. NOTE: programs run Jun-Sep (summer climbing season).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.grindelwald-mountaineering.ch/learn/hs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.grindelwald-mountaineering.ch/learn/hs",
+      "_addedBy": "hs-international-batch-134",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-09-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Grindelwald Mountaineering HS Academy — Grindelwald (Switzerland's most iconic mountaineering village at base of Eiger + Mönch + Jungfrau peaks) for ages 16-18 (rising 11-12). 2-week summer residential at Grindelwald campus. Tracks: Mountaineering + Alpine Climbing (Grindelwald has Eiger North Face — world-famous climbing wall), Glacier Travel + Crevasse Rescue, Via Ferrata + Rock Climbing, Mountain Photography (Jungfraujoch heritage), Swiss Cultural Heritage + Reformation History. ENGLISH + GERMAN-medium. SELECTIVE. ~CHF 4,200-CHF 6,200 / USD $4,890-7,215 / 2-week. Grindelwald scholarships for international students. Pipeline to Swiss Alpine Club + IFMGA mountain guide pathway. Strong fit for serious mountaineering careers. NOTE: programs run Jun-Sep (summer climbing season). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
