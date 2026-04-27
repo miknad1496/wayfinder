@@ -43899,6 +43899,246 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Adler Planetarium Summer Camps",
+      "provider": "Adler Planetarium",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~$450-545/wk; member discount 10%; need-based aid via Adler Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Adler Planetarium (Museum Campus, Chicago) summer day camps for grades K-8. Themes: astronomy, space exploration, rocketry, sky shows in dome theater, telescope-making. Some weeks include behind-the-scenes access to research collections. Mon-Fri full-day options.",
+      "deadline": "Member reg early Feb; general Mar-Apr 2026",
+      "url": "https://www.adlerplanetarium.org/explore/summer-camp/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.adlerplanetarium.org/explore/summer-camp/",
+      "_addedBy": "state-expansion-batch-44",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Adler Planetarium (Museum Campus Chicago) day camps K-8. Themes: astronomy, space exploration, rocketry, dome theater shows, telescope-making. Some weeks include research collections access. Mon-Fri full-day. ~$450-545/wk. Member discount 10%; need-based aid via Adler Education. Member reg early Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Shedd Aquarium Summer Camps + High School Marine Biology",
+      "provider": "Shedd Aquarium",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 510,
+        "type": "paid",
+        "display": "~$465-575/wk for K-8 day camps; member discount 10%; financial aid via Shedd Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Shedd Aquarium (Museum Campus, Chicago) themed weekly day camps for grades K-8. Curriculum focuses on marine biology, conservation, animal training, ocean ecosystems. Behind-the-scenes feeding sessions, husbandry observation, dive team Q&A. Mon-Fri 9am-4pm. Member registration February; general March-April.",
+      "deadline": "Member Feb; general March-April",
+      "url": "https://www.sheddaquarium.org/learn/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sheddaquarium.org/learn/camps",
+      "_addedBy": "state-expansion-batch-44",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Shedd Aquarium (Museum Campus Chicago) themed weekly day camps K-8. Marine biology, conservation, animal training, ocean ecosystems. Behind-the-scenes feeding + husbandry + dive team Q&A. Mon-Fri 9am-4pm. ~$465-575/wk. 10% member discount + need-based aid via Shedd Education. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Lincoln Park Zoo Summer Camps + Family Programs",
+      "provider": "Lincoln Park Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE general admission to zoo + park year-round; summer camps ~$385-465/wk; member discount; sliding scale + Aim for Excellence scholarships for Chicago Public Schools families"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Chicago",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "Lincoln Park Zoo (one of last free major zoos in US) day camps for ages 4-12. Themed weekly tracks: animal behavior, conservation, paleontology, ecology, wild Chicago (urban wildlife). Mon-Fri half-day or full-day. Aim for Excellence scholarships available for Chicago Public Schools families.",
+      "deadline": "Member reg early Feb; general March",
+      "url": "https://www.lpzoo.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lpzoo.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-44",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Lincoln Park Zoo (one of last free major US zoos) day camps ages 4-12. Themed weekly tracks: animal behavior, conservation, paleontology, ecology, wild Chicago. Mon-Fri half-day or full-day. ~$385-465/wk. Member discount + sliding scale + Aim for Excellence scholarships for Chicago Public Schools families. Member reg early Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Chicago Botanic Garden Camp CBG",
+      "provider": "Chicago Botanic Garden",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 420,
+        "type": "paid",
+        "display": "~$385-475/wk; member discount 10%; sliding scale via CBG Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Glencoe (north suburban Chicago)",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Chicago Botanic Garden (Glencoe IL) Camp CBG summer day camps ages 3-14. Tracks: nature exploration, botany + plant science, gardening + harvest, art outside, ecology + wetlands, junior naturalist training. Mon-Fri half-day or full-day. Beautiful 385-acre campus with prairies, woodlands, Japanese garden, edible garden. Member registration February; general March.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.chicagobotanic.org/education/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.chicagobotanic.org/education/camps",
+      "_addedBy": "state-expansion-batch-44",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Chicago Botanic Garden (Glencoe IL) Camp CBG ages 3-14. 385-acre campus with prairies, woodlands, Japanese garden, edible garden. Tracks: nature exploration, botany, gardening + harvest, art outside, ecology, junior naturalist. Mon-Fri half-day or full-day. ~$385-475/wk. 10% member discount + sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Brookfield Zoo Summer Camps",
+      "provider": "Brookfield Zoo (Chicago Zoological Society)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 420,
+        "type": "paid",
+        "display": "~$385-475/wk; member discount 10%; financial aid via CZS Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Brookfield (west suburban Chicago)",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Brookfield Zoo (Chicago Zoological Society, west suburbs) summer day camps for grades K-8. Animal behavior, conservation career exploration, behind-the-scenes feedings + training. 235-acre zoo. Themed weeks for younger (K-3) + older (4-8) campers. Mon-Fri 9am-4pm. Lunch + snacks provided.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.czs.org/Brookfield-Zoo/Education/Camp-Adventure",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.czs.org/Brookfield-Zoo/Education/Camp-Adventure",
+      "_addedBy": "state-expansion-batch-44",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Brookfield Zoo (Chicago Zoological Society west suburbs) day camps K-8. 235-acre zoo. Animal behavior, conservation career exploration, behind-the-scenes feedings + training. Themed weeks split K-3 + 4-8. Mon-Fri 9am-4pm + lunch/snacks. ~$385-475/wk. 10% member discount + need-based aid via CZS Education. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
