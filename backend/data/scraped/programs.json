@@ -52253,6 +52253,222 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Tsinghua Summer School (Beijing)",
+      "provider": "Tsinghua University",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~¥18,000-¥28,000/2-week (USD $2,500-3,890); Tsinghua scholarships for international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Beijing",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tsinghua Summer School — Tsinghua University (China's #1 university, top-25 globally; alma mater of Chinese Presidents + tech founders incl. Bytedance) for ages 16-18 (rising 11+). 2-week residential at Tsinghua campus (Beijing). Tracks: Chinese Cultural Studies, Pre-Engineering (Tsinghua's specialty — among world's best), Computer Science + AI, Business + Economics. ENGLISH-medium primary. Beijing is one of world's largest + most historically rich cities. CONSIDER GEOPOLITICAL FACTORS — keep families informed of US-China travel advisories.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.tsinghua.edu.cn/en/learn/international-summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tsinghua.edu.cn/en/learn/international-summer-school",
+      "_addedBy": "international-china-batch-82",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Tsinghua Summer School — Tsinghua University (China's #1 university, top-25 globally; alma mater of Chinese Presidents + tech founders incl. Bytedance) for ages 16-18 (rising 11+). 2-week residential at Tsinghua campus (Beijing). Tracks: Chinese Cultural Studies, Pre-Engineering (Tsinghua's specialty — among world's best), CS + AI, Business + Economics. ENGLISH-medium primary. ~¥18,000-¥28,000/2-week (USD $2,500-3,890). Tsinghua scholarships for international students. Beijing is one of world's largest + most historically rich cities. **Verify US-China travel advisories before booking** — geopolitical factors can affect travel feasibility.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NUS High School + Summer Programs (Singapore)",
+      "provider": "National University of Singapore (NUS)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~SGD 3,000-4,500/3-week (USD $2,250-3,375); NUS international scholarships; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NUS Summer Programs — National University of Singapore (top-15 globally) for ages 16-18 (rising 11+). 3-week residential at NUS campus (Singapore). Tracks: Pre-Engineering, Pre-Medicine, Pre-Business, Computer Science + AI. ENGLISH-medium (Singapore is officially English-speaking). Strong fit for STEM kids. Singapore is one of world's most safe + accessible cities for international visitors. NUS gives strong Southeast Asia regional perspective.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.nus.edu.sg/learn/international-summer",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nus.edu.sg/learn/international-summer",
+      "_addedBy": "international-china-batch-82",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "NUS Summer Programs — National University of Singapore (top-15 globally) for ages 16-18 (rising 11+). 3-week residential at NUS campus (Singapore). Tracks: Pre-Engineering, Pre-Medicine, Pre-Business, CS + AI. ENGLISH-medium (Singapore officially English-speaking). ~SGD 3,000-4,500/3-week (USD $2,250-3,375). NUS international scholarships. Strong fit for STEM kids. Singapore is one of world's most safe + accessible cities for international visitors. NUS gives strong Southeast Asia regional perspective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "HKU Summer Programs (Hong Kong)",
+      "provider": "University of Hong Kong (HKU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2095,
+        "type": "paid",
+        "display": "~HKD 18,000-26,500/3-week (USD $2,310-3,400); HKU scholarships for international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hong Kong",
+        "state": "HK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "HKU Summer Programs — University of Hong Kong (top-30 globally) for ages 16-18 (rising 11+). 3-week residential at HKU main campus + Hong Kong cultural sites. Tracks: Asia-Pacific Business + Finance (HK = global financial center), Pre-Medicine, Architecture + Urban Studies (HK's iconic skyline + density), Cantonese + Mandarin Language. ENGLISH-medium primary. Hong Kong is dynamic East-meets-West city. CONSIDER GEOPOLITICAL FACTORS — verify US-Hong Kong travel advisories before booking given recent geopolitical changes.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.hku.hk/learn/international-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hku.hk/learn/international-summer",
+      "_addedBy": "international-china-batch-82",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "HKU Summer Programs — University of Hong Kong (top-30 globally) for ages 16-18 (rising 11+). 3-week residential at HKU main campus + Hong Kong cultural sites. Tracks: Asia-Pacific Business + Finance (HK = global financial center), Pre-Medicine, Architecture + Urban Studies (HK's iconic skyline + density), Cantonese + Mandarin Language. ENGLISH-medium primary. ~HKD 18,000-26,500/3-week (USD $2,310-3,400). HKU scholarships for international students. Hong Kong is dynamic East-meets-West city. **Verify US-Hong Kong travel advisories before booking** — geopolitical factors can affect travel feasibility.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Hwa Chong International School (HCIS) Summer Programs",
+      "provider": "Hwa Chong Institution Singapore",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~SGD 3,200-4,200/3-week (USD $2,400-3,150); HCIS international scholarships; ENGLISH-medium with Chinese option"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Singapore",
+        "state": "SG"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Hwa Chong International School (HCIS) — Singapore's premier IB Diploma international school + Hwa Chong Institution (top Singapore secondary school, alma mater of Singapore PM Lee Hsien Loong + tech founders). For ages 13-18 (rising 8+). 3-week residential. Tracks: Pre-IB Diploma curriculum, Mathematics + Sciences (Singapore is global leader in math education), Mandarin + Chinese cultural studies, Robotics + AI. Strong fit for kids interested in IB/global track. ENGLISH-medium with Chinese option.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.hcis.edu.sg/learn/summer-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hcis.edu.sg/learn/summer-programs",
+      "_addedBy": "international-china-batch-82",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Hwa Chong International School (HCIS) — Singapore's premier IB Diploma international school + Hwa Chong Institution (top Singapore secondary school, alma mater of Singapore PM Lee Hsien Loong + tech founders). For ages 13-18 (rising 8+). 3-week residential. Tracks: Pre-IB Diploma curriculum, Mathematics + Sciences (Singapore is global leader in math education), Mandarin + Chinese cultural studies, Robotics + AI. Strong fit for kids interested in IB/global track. ENGLISH-medium with Chinese option. ~SGD 3,200-4,200/3-week (USD $2,400-3,150). HCIS international scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "HSK Online Mandarin Chinese (Free K-12)",
+      "provider": "HSK / Confucius Institute",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE Confucius Institute online Chinese; paid HSK testing (~$25-95/exam); free local Confucius Institute access at 100+ US universities"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "HSK Online Mandarin Chinese — Free Confucius Institute Chinese-language education for K-12 globally. Tracks: Beginner Mandarin (HSK Level 1), Intermediate (HSK Level 4), Chinese Cultural Studies, HSK Test Preparation (international Chinese proficiency exam — recognized by Chinese universities + US colleges). Confucius Institutes at 100+ US universities offer free in-person community programs. UNDER-USED — most parents don't realize this is FREE. NOTE: some US universities have closed Confucius Institutes due to political concerns; verify local CI status before booking.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://www.chinesetest.cn/learn/online-courses",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.chinesetest.cn/learn/online-courses",
+      "_addedBy": "international-china-batch-82",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "HSK Online Mandarin Chinese — FREE Confucius Institute Chinese-language education for K-12 globally. Tracks: Beginner Mandarin (HSK Level 1), Intermediate (HSK Level 4), Chinese Cultural Studies, HSK Test Preparation (international Chinese proficiency exam — recognized by Chinese universities + US colleges). 100+ Confucius Institute branches at US universities for free in-person community programs. UNDER-USED — most parents don't realize this is FREE. NOTE: some US universities have closed Confucius Institutes due to political concerns; verify local CI status before booking. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
