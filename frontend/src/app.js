@@ -6952,3 +6952,192 @@ document.addEventListener('click', function(e) {
   }
 })();
 
+
+/* === REVAMP V2: INTERNSHIPS BUILD MY ROADMAP UI === */
+// "Build My Internship Roadmap" form + handler for the Internships modal.
+// Two-call architecture (plan + calibration). Tier-aware. Paid/unpaid sensitive.
+(function _wfInitInternshipsStrategy() {
+  if (typeof document === 'undefined') return;
+
+  const ROADMAP_HTML = `
+    <div id="intRoadmapForm" style="display:none;background:linear-gradient(135deg,#fff,#f0fdf4);border:1px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+      <h3 style="margin:0 0 10px;font-size:15px;color:#166534;">🎯 Build My Internship Roadmap</h3>
+      <p style="margin:0 0 12px;font-size:12px;color:#475569;">Tell us about the student. We'll suggest 3-4 internships matched to their grade + field, with 2026 deadline status + paid/unpaid + tier honesty.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px;">
+        <select id="intRoadGrade" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="9">9th grade (rising 10)</option>
+          <option value="10">10th grade (rising 11)</option>
+          <option value="11" selected>11th grade (rising 12)</option>
+          <option value="12">12th grade</option>
+        </select>
+        <input type="text" id="intRoadGpa" placeholder="GPA (optional)" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+        <input type="text" id="intRoadSat" placeholder="SAT/ACT (optional)" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+        <select id="intRoadField" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="">Field of interest...</option>
+          <option value="cs">Computer Science / SWE</option>
+          <option value="bio">Biology / Biotech</option>
+          <option value="medicine">Medicine / Pre-med</option>
+          <option value="engineering">Engineering</option>
+          <option value="finance">Finance / Business</option>
+          <option value="research">General research / academia</option>
+          <option value="journalism">Journalism / Writing</option>
+          <option value="policy">Policy / Government</option>
+          <option value="arts">Arts / Creative</option>
+          <option value="environmental">Environmental / Climate</option>
+          <option value="social-impact">Social impact / Nonprofit</option>
+          <option value="undecided">Still exploring</option>
+        </select>
+        <select id="intRoadGeo" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="local">Local / no relocate</option>
+          <option value="regional">Regional (4hr drive)</option>
+          <option value="national" selected>National + relocate OK</option>
+          <option value="international">International OK</option>
+        </select>
+        <select id="intRoadPaid" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="either" selected>Paid or unpaid OK</option>
+          <option value="paid-only">PAID only</option>
+          <option value="unpaid-ok">Unpaid OK if good experience</option>
+        </select>
+        <select id="intRoadTime" style="padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="full-summer" selected>Full summer (6-10 weeks)</option>
+          <option value="partial">Partial summer (2-4 weeks)</option>
+          <option value="school-year">School year (after-school)</option>
+        </select>
+      </div>
+      <input type="text" id="intRoadCareer" placeholder="Career interest in plain words (e.g. 'pre-med + global health', 'CS+ML research', 'investigative journalism')" style="width:100%;padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:8px;box-sizing:border-box;">
+      <textarea id="intRoadExp" rows="2" placeholder="Current experience (clubs, prior internships, projects, jobs)" style="width:100%;padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:8px;box-sizing:border-box;"></textarea>
+      <input type="text" id="intRoadIdentity" placeholder="Optional — first-gen, low-income, underrepresented, etc. (helps surface targeted programs)" style="width:100%;padding:8px 10px;border:1px solid #bbf7d0;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button id="intRoadBuildBtn" style="flex:1;min-width:160px;padding:10px 16px;border:0;background:#166534;color:#fff;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Build my roadmap 🎯</button>
+        <button id="intRoadCancelBtn" style="padding:10px 14px;border:1px solid #bbf7d0;background:#fff;color:#64748b;border-radius:6px;cursor:pointer;font-size:13px;">Cancel</button>
+      </div>
+      <div id="intRoadResult" style="margin-top:14px;"></div>
+    </div>
+  `;
+
+  const TOGGLE_BTN_HTML = `<button id="intOpenRoadmapBtn" type="button" style="margin-bottom:12px;padding:10px 16px;background:linear-gradient(135deg,#166534,#22c55e);color:#fff;border:0;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;box-shadow:0 1px 3px rgba(22,101,52,0.25);">🎯 Build My Internship Roadmap</button>`;
+
+  function ensureInjected() {
+    const modal = document.getElementById('internshipsModal');
+    if (!modal) return false;
+    if (document.getElementById('intRoadmapForm')) return true;
+    const filters = modal.querySelector('#internshipsFilters');
+    if (!filters || !filters.parentNode) return false;
+    const wrap = document.createElement('div');
+    wrap.innerHTML = TOGGLE_BTN_HTML + ROADMAP_HTML;
+    while (wrap.firstChild) filters.parentNode.insertBefore(wrap.firstChild, filters);
+    return true;
+  }
+
+  function renderRoadmapResult(data) {
+    const result = document.getElementById('intRoadResult');
+    if (!result) return;
+    const p = (data && data.plan) || {};
+    const tierBadge = (t) => {
+      const tier = String(t || '').trim();
+      const colors = { '1': ['#fee2e2', '#991b1b'], '2': ['#fef3c7', '#92400e'], '3': ['#dbeafe', '#1e40af'], '4': ['#f1f5f9', '#475569'] };
+      const c = colors[tier] || colors['4'];
+      return tier ? `<span style="background:${c[0]};color:${c[1]};padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Tier ${tier}</span>` : '';
+    };
+    const paidBadge = (paid) => {
+      if (paid === true) return `<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">PAID</span>`;
+      if (paid === false) return `<span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">unpaid</span>`;
+      return '';
+    };
+    const diversifying = (p.diversifyingRecommendations || []).map(r => `
+      <div style="border-left:3px solid #16a34a;padding:10px 14px;margin-bottom:8px;background:#fff;border-radius:0 6px 6px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+          <div style="font-weight:600;font-size:13px;color:#166534;">${_esc(r.name || '')}</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;">${tierBadge(r.tier)}${paidBadge(r.paid)}</div>
+        </div>
+        <p style="margin:4px 0 6px;font-size:12.5px;color:#334155;line-height:1.45;">${_esc(r.rationale || '')}</p>
+        ${r.deadline ? `<p style="margin:4px 0 0;font-size:11px;color:#64748b;"><strong>Deadline:</strong> ${_esc(r.deadline)}</p>` : ''}
+      </div>
+    `).join('');
+    const watchOuts = (p.watchOuts || []).map(w => `<li style="font-size:12.5px;color:#854d0e;margin-bottom:4px;">${_esc(w)}</li>`).join('');
+    const deadlineAlerts = (p.deadlineAlerts || []).map(d => `<li style="font-size:12.5px;color:#9f1239;margin-bottom:4px;">${_esc(d)}</li>`).join('');
+    result.innerHTML = `
+      <div style="background:#dcfce7;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #16a34a;">
+        <p style="margin:0;font-size:13px;color:#166534;"><strong>Roadmap summary:</strong> ${_esc(p.summary || '')}</p>
+      </div>
+      ${data.calibrationInsight ? `
+        <div style="background:#fef3c7;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #d97706;">
+          <p style="margin:0 0 4px;font-size:11px;color:#92400e;font-weight:600;">📍 2026 calibration for THIS student</p>
+          <p style="margin:0;font-size:12.5px;color:#854d0e;line-height:1.5;">${_esc(data.calibrationInsight)}</p>
+        </div>` : ''}
+      ${p.differentiationThesis ? `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <h4 style="margin:0 0 4px;font-size:13px;color:#166534;">🎯 Differentiation thesis</h4>
+          <p style="margin:0;font-size:12.5px;color:#334155;line-height:1.5;">${_esc(p.differentiationThesis)}</p>
+        </div>` : ''}
+      ${p.anchorRecommendation ? `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+            <h4 style="margin:0;font-size:13px;color:#166534;">⚓ Anchor opportunity — ${_esc(p.anchorRecommendation.name || '')}</h4>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;">${tierBadge(p.anchorRecommendation.tier)}${paidBadge(p.anchorRecommendation.paid)}</div>
+          </div>
+          <p style="margin:4px 0 6px;font-size:12.5px;color:#334155;line-height:1.45;">${_esc(p.anchorRecommendation.rationale || '')}</p>
+          ${p.anchorRecommendation.deadline ? `<p style="margin:4px 0 0;font-size:11px;color:#64748b;"><strong>Deadline:</strong> ${_esc(p.anchorRecommendation.deadline)}</p>` : ''}
+        </div>` : ''}
+      ${diversifying ? `<h4 style="margin:12px 0 6px;font-size:13px;color:#1f2328;">🎯 Diversifying picks</h4>${diversifying}` : ''}
+      ${deadlineAlerts ? `<div style="margin-top:12px;background:#fff1f2;padding:10px 12px;border-radius:6px;border-left:3px solid #be123c;"><h4 style="margin:0 0 6px;font-size:12.5px;color:#9f1239;">⏰ Deadline alerts</h4><ul style="margin:0;padding-left:20px;">${deadlineAlerts}</ul></div>` : ''}
+      ${p.narrativeNote ? `<p style="margin:10px 0;font-size:12.5px;color:#15803d;background:#f0fff4;padding:10px 12px;border-radius:6px;border-left:3px solid #22c55e;line-height:1.5;"><strong>📝 Narrative note:</strong> ${_esc(p.narrativeNote)}</p>` : ''}
+      ${watchOuts ? `<div style="margin-top:12px;"><h4 style="margin:0 0 4px;font-size:12.5px;color:#854d0e;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
+      ${p.nextStep ? `<div style="margin-top:12px;background:#166534;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
+      <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated roadmap — verify deadlines + paid/unpaid directly.')}</p>
+    `;
+  }
+
+  async function buildRoadmap() {
+    const result = document.getElementById('intRoadResult');
+    if (!result) return;
+    const grade = document.getElementById('intRoadGrade')?.value || '11';
+    const gpa = document.getElementById('intRoadGpa')?.value?.trim();
+    const satScore = document.getElementById('intRoadSat')?.value?.trim();
+    const targetField = document.getElementById('intRoadField')?.value || '';
+    const geographicFlexibility = document.getElementById('intRoadGeo')?.value || 'national';
+    const paidPreference = document.getElementById('intRoadPaid')?.value || 'either';
+    const timeAvailable = document.getElementById('intRoadTime')?.value || 'full-summer';
+    const careerInterest = document.getElementById('intRoadCareer')?.value?.trim();
+    const currentExperience = document.getElementById('intRoadExp')?.value?.trim();
+    const identityContext = document.getElementById('intRoadIdentity')?.value?.trim();
+    result.innerHTML = '<p style="color:#94a3b8;padding:12px;">🎯 Building your roadmap... (10-30 sec — AI is warming up)</p>';
+    try {
+      const res = await fetch(`${API_BASE}/internships/strategy`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+        body: JSON.stringify({ grade, gpa, satScore, targetField, careerInterest, geographicFlexibility, paidPreference, timeAvailable, currentExperience, identityContext }),
+      });
+      const data = await res.json();
+      if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
+      renderRoadmapResult(data);
+    } catch (e) {
+      result.innerHTML = `<p style="color:#cf222e;padding:12px;">Roadmap failed: ${_esc(e.message)}</p>`;
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target) return;
+    if (e.target.closest && e.target.closest('[data-tool="internships"], #internshipsBtn, #sidebarInternships, .tool-button, .sidebar-tool-btn')) {
+      setTimeout(ensureInjected, 100);
+    }
+    if (e.target.id === 'intOpenRoadmapBtn') {
+      ensureInjected();
+      const form = document.getElementById('intRoadmapForm');
+      if (form) form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+    if (e.target.id === 'intRoadCancelBtn') {
+      const form = document.getElementById('intRoadmapForm');
+      if (form) form.style.display = 'none';
+    }
+    if (e.target.id === 'intRoadBuildBtn') {
+      buildRoadmap();
+    }
+  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureInjected);
+  } else {
+    setTimeout(ensureInjected, 200);
+  }
+})();
+
