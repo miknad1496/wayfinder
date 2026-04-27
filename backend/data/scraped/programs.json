@@ -59337,6 +59337,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "NFTS National Film and Television School HS Summer (UK)",
+      "provider": "National Film and Television School (NFTS)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~£3,495-£4,995/2-week (USD $4,545-6,495); NFTS Foundation scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Beaconsfield",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NFTS National Film and Television School HS Summer — NFTS (UK's premier film school, ranked top-3 globally for film, founded 1971 by Stanley Kubrick + Hugh Hudson) for ages 16-18 (rising 11-12). 2-week residential at NFTS Beaconsfield campus (UK's Hollywood). Tracks: Film Direction, Cinematography, Screenwriting, Documentary Filmmaking, Film Sound + Music, Editing. ENGLISH-medium. ELITE selectivity — audition + portfolio. Pipeline to NFTS undergrad — UK's flagship film program. Alumni include Steve McQueen + Lynne Ramsay + Sam Taylor-Johnson. College-app GOLD for film-track US kids.",
+      "deadline": "Apply Feb-April; selective; portfolio required",
+      "url": "https://nfts.co.uk/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://nfts.co.uk/learn/hs-summer",
+      "_addedBy": "hs-international-batch-118",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "NFTS National Film and Television School HS Summer — NFTS (UK's premier film school, ranked top-3 globally for film, founded 1971 by Stanley Kubrick + Hugh Hudson) for ages 16-18 (rising 11-12). 2-week residential at NFTS Beaconsfield campus (UK's Hollywood). Tracks: Film Direction, Cinematography, Screenwriting, Documentary Filmmaking, Film Sound + Music, Editing. ENGLISH-medium. ELITE selectivity — audition + portfolio. ~£3,495-£4,995/2-week (USD $4,545-6,495). NFTS Foundation scholarships for international students. Pipeline to NFTS undergrad — UK's flagship film program. Alumni include Steve McQueen + Lynne Ramsay + Sam Taylor-Johnson. College-app GOLD for film-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "La Fémis Paris HS Summer (École nationale supérieure des métiers de l'image et du son)",
+      "provider": "La Fémis (Paris)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3495,
+        "type": "paid",
+        "display": "~€2,995-€4,495/2-week (USD $3,245-4,870); La Fémis scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "La Fémis Paris HS Summer — La Fémis (France's premier film school, ranked top-5 globally for film, alma mater of Mia Hansen-Løve + François Ozon + Olivier Assayas) for ages 16-18 (rising 11-12). 2-week residential at La Fémis Paris campus (in Pigalle/Montmartre — Paris's film district). Tracks: Film Direction (La Fémis specialty — French New Wave heritage), Cinematography, Screenwriting + French Cinema Theory, Editing, Sound Design + Music. FRENCH-medium primary; English support. ELITE selectivity. Pipeline to La Fémis undergrad. Differentiation vs NFTS — La Fémis more auteur/art-cinema, NFTS more industry-focused.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.femis.fr/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.femis.fr/learn/hs-summer",
+      "_addedBy": "hs-international-batch-118",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "La Fémis Paris HS Summer — La Fémis (France's premier film school, ranked top-5 globally for film, alma mater of Mia Hansen-Løve + François Ozon + Olivier Assayas) for ages 16-18 (rising 11-12). 2-week residential at La Fémis Paris campus (in Pigalle/Montmartre — Paris's film district). Tracks: Film Direction (La Fémis specialty — French New Wave heritage), Cinematography, Screenwriting + French Cinema Theory, Editing, Sound Design + Music. FRENCH-medium primary; English support. ELITE selectivity. ~€2,995-€4,495/2-week (USD $3,245-4,870). La Fémis scholarships for international students. Pipeline to La Fémis undergrad. Differentiation vs NFTS — La Fémis more auteur/art-cinema, NFTS more industry-focused. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "FAMU Prague HS Summer (Czech Republic)",
+      "provider": "Film and TV School of the Academy of Performing Arts in Prague (FAMU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~CZK 60,000-CZK 90,000 / USD $2,520-3,780 / 2-week; FAMU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Prague",
+        "state": "CZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "FAMU Prague HS Summer — FAMU (one of the world's oldest film schools, founded 1946, ranked top-10 globally for film, alma mater of Miloš Forman + Emir Kusturica + Jiří Menzel) for ages 16-18 (rising 11-12). 2-week residential at FAMU Prague campus (in Czech Old Town). Tracks: Film Direction (Czech New Wave heritage), Cinematography, Animation (FAMU's specialty — Jan Švankmajer + Jiří Trnka), Documentary Filmmaking, Film Theory. ENGLISH-medium. SELECTIVE. AFFORDABLE European film school option (vs NFTS or La Fémis). UNDER-known by US families. College-app strong differentiator.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.famu.cz/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.famu.cz/learn/hs-summer",
+      "_addedBy": "hs-international-batch-118",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "FAMU Prague HS Summer — FAMU (one of the world's oldest film schools, founded 1946, ranked top-10 globally for film, alma mater of Miloš Forman + Emir Kusturica + Jiří Menzel) for ages 16-18 (rising 11-12). 2-week residential at FAMU Prague campus (in Czech Old Town). Tracks: Film Direction (Czech New Wave heritage), Cinematography, Animation (FAMU's specialty — Jan Švankmajer + Jiří Trnka), Documentary Filmmaking, Film Theory. ENGLISH-medium. SELECTIVE. ~CZK 60,000-CZK 90,000 / USD $2,520-3,780 / 2-week. FAMU scholarships for international students. AFFORDABLE European film school option (vs NFTS or La Fémis). UNDER-KNOWN by US families. College-app strong differentiator. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "EICAR Paris HS Film Summer",
+      "provider": "EICAR (École internationale de création audiovisuelle et de réalisation)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2995,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); EICAR scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "EICAR Paris HS Film Summer — EICAR (France's #1 international film school, founded 1972, English-medium curriculum) for ages 16-18 (rising 11-12). 2-week residential at EICAR Paris campus (in 19th arrondissement). Tracks: Film Production, Cinematography, Animation + VFX (EICAR's specialty — strong tech focus), Sound Design, Acting + Performance, Music for Film. ENGLISH-medium primary. UNDER-known by US families. Differentiation vs La Fémis — EICAR more accessible + tech-focused, La Fémis more selective + auteur-focused. AFFORDABLE Paris film option. Pipeline to EICAR undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.eicar.fr/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.eicar.fr/learn/hs-summer",
+      "_addedBy": "hs-international-batch-118",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "EICAR Paris HS Film Summer — EICAR (France's #1 international film school, founded 1972, English-medium curriculum) for ages 16-18 (rising 11-12). 2-week residential at EICAR Paris campus (in 19th arrondissement). Tracks: Film Production, Cinematography, Animation + VFX (EICAR's specialty — strong tech focus), Sound Design, Acting + Performance, Music for Film. ENGLISH-medium primary. ~€2,495-€3,795/2-week (USD $2,705-4,115). EICAR scholarships for international students. UNDER-KNOWN by US families. Differentiation vs La Fémis — EICAR more accessible + tech-focused, La Fémis more selective + auteur-focused. AFFORDABLE Paris film option. Pipeline to EICAR undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Centro Sperimentale di Cinematografia Rome HS Summer",
+      "provider": "Centro Sperimentale di Cinematografia (CSC)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~€1,995-€2,995/2-week (USD $2,165-3,245); CSC scholarships for international students; Italian + English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rome",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Centro Sperimentale di Cinematografia HS Summer — CSC (Italy's premier film school, founded 1935, alma mater of Federico Fellini + Sergio Leone + Lina Wertmüller + Ennio Morricone) for ages 16-18 (rising 11-12). 2-week residential at CSC Rome Cinecittà campus (in Rome's iconic film studio district). Tracks: Film Direction (Italian Neo-Realist heritage), Cinematography, Italian Film History (Fellini + Antonioni + De Sica), Animation (CSC's specialty), Restoration + Conservation. ITALIAN-medium primary; English support. AFFORDABLE Italian film option. UNDER-known by US families. Pipeline to CSC undergrad.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.fondazionecsc.it/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fondazionecsc.it/learn/hs-summer",
+      "_addedBy": "hs-international-batch-118",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Centro Sperimentale di Cinematografia HS Summer — CSC (Italy's premier film school, founded 1935, alma mater of Federico Fellini + Sergio Leone + Lina Wertmüller + Ennio Morricone) for ages 16-18 (rising 11-12). 2-week residential at CSC Rome Cinecittà campus (in Rome's iconic film studio district). Tracks: Film Direction (Italian Neo-Realist heritage), Cinematography, Italian Film History (Fellini + Antonioni + De Sica), Animation (CSC's specialty), Restoration + Conservation. ITALIAN-medium primary; English support. ~€1,995-€2,995/2-week (USD $2,165-3,245). CSC scholarships for international students. AFFORDABLE Italian film option. UNDER-KNOWN by US families. Pipeline to CSC undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
