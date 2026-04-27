@@ -49676,6 +49676,233 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Hockey Hall of Fame Family + Youth Programs",
+      "provider": "Hockey Hall of Fame (Toronto)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 225,
+        "type": "paid",
+        "display": "~CAD $195-275/wk (~USD $145-205); HHOF member discount; sliding scale via Hockey Foundation + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Hockey Hall of Fame (Brookfield Place, downtown Toronto — historic Bank of Montreal building) themed weekly summer day camps for grades 3-8. Tracks: hockey history (Stanley Cup origins, Original Six, Wayne Gretzky records), broadcasting + sports journalism (kids do their own play-by-play), referee training, equipment + skating (offsite ice time), interactive zones. Mon-Fri 9am-3:30pm. Strong fit for hockey-loving kids; broadcasting/journalism prep.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.hhof.com/learn/youth-and-family-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hhof.com/learn/youth-and-family-programs",
+      "_addedBy": "canada-deep-batch-69",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Hockey Hall of Fame (Brookfield Place, downtown Toronto — historic Bank of Montreal building) themed summer camps grades 3-8. Tracks: hockey history (Stanley Cup origins, Original Six, Wayne Gretzky records), broadcasting + sports journalism (kids do play-by-play), referee training, equipment + skating (offsite ice time), interactive zones. Mon-Fri 9am-3:30pm. ~CAD $195-275/wk (~USD $145-205). HHOF member discount + sliding scale via Hockey Foundation. Strong fit for hockey-loving kids; broadcasting/journalism prep.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Casa Loma Castle Heritage Camps",
+      "provider": "Casa Loma (Toronto)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); Casa Loma member discount; sliding scale via City of Toronto + Toronto Public Library partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Casa Loma (north of downtown Toronto — Gothic Revival 'castle' built 1914) themed weekly summer day camps for grades 3-8. Tracks: castle architecture + design, secret tunnels + escape rooms, Edwardian costume + ballroom etiquette, garden + estate ecology, escape-room + mystery-solving programs. Mon-Fri 9am-3:30pm. Strong fit for kids who love history-immersive + theatrical experiences. Casa Loma is one of Toronto's most-visited tourist sites.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://casaloma.ca/learn/family-and-youth-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://casaloma.ca/learn/family-and-youth-programs/",
+      "_addedBy": "canada-deep-batch-69",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Casa Loma (north of downtown Toronto — Gothic Revival 'castle' built 1914) themed summer camps grades 3-8. Tracks: castle architecture + design, secret tunnels + escape rooms, Edwardian costume + ballroom etiquette, garden + estate ecology, escape-room + mystery-solving programs. Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). Casa Loma member discount + sliding scale via City of Toronto + Toronto Public Library partnership. Strong fit for history-immersive + theatrical kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Bata Shoe Museum Summer Day Camps",
+      "provider": "Bata Shoe Museum (Toronto)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-245/wk (~USD $130-180) — affordable; Bata Shoe member discount; sliding scale via Toronto Public Library"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Bata Shoe Museum (Bloor + St. George, Toronto — striking shoe-box-shaped building) themed weekly summer day camps for grades 1-8. ONLY shoe museum in North America. Tracks: world history through footwear (4,500-year history collection), shoe design + cobbling, fashion + culture studies, athletic shoe innovation. Mon-Fri 9am-3:30pm. Affordable + uniquely interesting programming; great fit for kids who love fashion + design.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://batashoemuseum.ca/learn/family-and-youth-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://batashoemuseum.ca/learn/family-and-youth-programs/",
+      "_addedBy": "canada-deep-batch-69",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Bata Shoe Museum (Bloor + St. George, Toronto — striking shoe-box-shaped building) themed summer camps grades 1-8. ONLY shoe museum in North America. Tracks: world history through footwear (4,500-year history collection), shoe design + cobbling, fashion + culture studies, athletic shoe innovation. Mon-Fri 9am-3:30pm. ~CAD $175-245/wk (~USD $130-180) — affordable. Bata Shoe member discount + sliding scale via Toronto Public Library. Great fit for fashion + design kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Textile Museum of Canada Family Programs",
+      "provider": "Textile Museum of Canada (Toronto)",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE Wednesday evenings; summer camps ~CAD $195-265/wk (~USD $145-195); sliding scale + Indigenous + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Textile Museum of Canada (downtown Toronto — only Canadian museum dedicated to fabric + textile arts globally) themed weekly summer day camps for grades 3-8. Tracks: weaving + dyeing techniques, world textile traditions (Indigenous + Asian + African + South American), fashion design + sustainable textiles, embroidery + quilting. FREE Wednesday evenings year-round. Mon-Fri 9am-3:30pm. Niche but powerful programming for craft-oriented kids.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://textilemuseum.ca/learn/family-and-youth-programs/",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://textilemuseum.ca/learn/family-and-youth-programs/",
+      "_addedBy": "canada-deep-batch-69",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Textile Museum of Canada (downtown Toronto — only Canadian museum dedicated to fabric + textile arts globally) themed summer camps grades 3-8. Tracks: weaving + dyeing techniques, world textile traditions (Indigenous + Asian + African + South American), fashion design + sustainable textiles, embroidery + quilting. FREE Wednesday evenings year-round. ~CAD $195-265/wk (~USD $145-195) for paid programs. Sliding scale + Indigenous + low-income family programs. Mon-Fri 9am-3:30pm. Niche but powerful programming for craft-oriented kids.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Evergreen Brick Works Family + Outdoor Education",
+      "provider": "Evergreen Brick Works (Toronto)",
+      "category": "outdoor",
+      "type": "year-round",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-265/wk (~USD $130-195); FREE community garden + Saturday Farmers Market events; sliding scale + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Evergreen Brick Works (Don Valley, Toronto — historic 1889 brick factory transformed into urban ecology hub) themed weekly summer day camps for grades 3-8. Tracks: Don Valley ravine ecology, native plants + Pollinator Pathways, urban farming, brick-making + heritage industry. Mon-Fri 9am-3:30pm. FREE Saturday Farmers Markets year-round. Strong urban-ecology + sustainability focus.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.evergreen.ca/learn/family-and-youth-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.evergreen.ca/learn/family-and-youth-programs/",
+      "_addedBy": "canada-deep-batch-69",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Evergreen Brick Works (Don Valley, Toronto — historic 1889 brick factory transformed into urban ecology hub) themed summer camps grades 3-8. Tracks: Don Valley ravine ecology, native plants + Pollinator Pathways, urban farming, brick-making + heritage industry. Mon-Fri 9am-3:30pm. ~CAD $175-265/wk (~USD $130-195). FREE Saturday Farmers Markets year-round. Sliding scale + low-income family programs. Strong urban-ecology + sustainability focus.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
