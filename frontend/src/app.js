@@ -6895,7 +6895,13 @@ document.addEventListener('click', function(e) {
       ${watchOuts ? `<div style="margin-top:12px;"><h4 style="margin:0 0 4px;font-size:12.5px;color:#854d0e;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
       ${p.nextStep ? `<div style="margin-top:12px;background:#1e3a8a;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
       <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated strategy — verify program deadlines + details directly.')}</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #e5e7eb;padding-top:10px;">
+        <button class="prg-plan-print-btn" type="button" style="padding:7px 12px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:6px;cursor:pointer;font-size:12px;">🖨 Print</button>
+        <button class="prg-plan-email-btn" type="button" style="padding:7px 12px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:6px;cursor:pointer;font-size:12px;">✉ Email to me</button>
+        <button class="prg-plan-copy-btn" type="button" style="padding:7px 12px;border:1px solid #cfdcef;background:#fff;color:#1e3a8a;border-radius:6px;cursor:pointer;font-size:12px;">📋 Copy</button>
+      </div>
     `;
+    window._prgLastPlanData = data;
   }
 
   async function buildStrategy() {
@@ -7085,7 +7091,13 @@ document.addEventListener('click', function(e) {
       ${watchOuts ? `<div style="margin-top:12px;"><h4 style="margin:0 0 4px;font-size:12.5px;color:#854d0e;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
       ${p.nextStep ? `<div style="margin-top:12px;background:#166534;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
       <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated roadmap — verify deadlines + paid/unpaid directly.')}</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #e5e7eb;padding-top:10px;">
+        <button class="int-road-print-btn" type="button" style="padding:7px 12px;border:1px solid #bbf7d0;background:#fff;color:#166534;border-radius:6px;cursor:pointer;font-size:12px;">🖨 Print</button>
+        <button class="int-road-email-btn" type="button" style="padding:7px 12px;border:1px solid #bbf7d0;background:#fff;color:#166534;border-radius:6px;cursor:pointer;font-size:12px;">✉ Email to me</button>
+        <button class="int-road-copy-btn" type="button" style="padding:7px 12px;border:1px solid #bbf7d0;background:#fff;color:#166534;border-radius:6px;cursor:pointer;font-size:12px;">📋 Copy</button>
+      </div>
     `;
+    window._intLastRoadmapData = data;
   }
 
   async function buildRoadmap() {
@@ -7281,7 +7293,13 @@ document.addEventListener('click', function(e) {
       ${watchOuts ? `<div style="margin-top:12px;background:#fff1f2;padding:10px 12px;border-radius:6px;border-left:3px solid #be123c;"><h4 style="margin:0 0 6px;font-size:12.5px;color:#9f1239;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
       ${p.nextStep ? `<div style="margin-top:12px;background:#854d0e;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
       <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated stack — verify each scholarship deadline + eligibility directly.')}</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #e5e7eb;padding-top:10px;">
+        <button class="sch-stack-print-btn" type="button" style="padding:7px 12px;border:1px solid #fef08a;background:#fff;color:#854d0e;border-radius:6px;cursor:pointer;font-size:12px;">🖨 Print</button>
+        <button class="sch-stack-email-btn" type="button" style="padding:7px 12px;border:1px solid #fef08a;background:#fff;color:#854d0e;border-radius:6px;cursor:pointer;font-size:12px;">✉ Email to me</button>
+        <button class="sch-stack-copy-btn" type="button" style="padding:7px 12px;border:1px solid #fef08a;background:#fff;color:#854d0e;border-radius:6px;cursor:pointer;font-size:12px;">📋 Copy</button>
+      </div>
     `;
+    window._schLastStackData = data;
   }
 
   async function buildStack() {
@@ -7337,4 +7355,246 @@ document.addEventListener('click', function(e) {
     setTimeout(ensureInjected, 200);
   }
 })();
+
+
+/* === REVAMP V2: STRATEGY EXPORTS (PRG/INT/SCH) === */
+// Plain-text serializers + Print/Email/Copy event delegation for the
+// strategy results in Programs, Internships, and Scholarships modules.
+// Mirrors the K-8 _scPlanToPlainText pattern (already live).
+
+function _prgPlanToPlainText(data) {
+  const p = (data && data.plan) || {};
+  const out = [];
+  out.push('YOUR COLLEGE-APP STRATEGY — Wayfinder Programs');
+  out.push('================================================');
+  out.push('');
+  if (p.summary) out.push('SUMMARY: ' + p.summary);
+  if (data && data.calibrationInsight) {
+    out.push('');
+    out.push('2026 CALIBRATION:');
+    out.push(data.calibrationInsight);
+  }
+  if (p.differentiationThesis) {
+    out.push('');
+    out.push('DIFFERENTIATION THESIS: ' + p.differentiationThesis);
+  }
+  if (p.anchorRecommendation) {
+    const a = p.anchorRecommendation;
+    out.push('');
+    out.push('ANCHOR — ' + (a.name || '') + ' (Tier ' + (a.tier || '?') + ')');
+    if (a.rationale) out.push(a.rationale);
+    if (a.deadline) out.push('Deadline: ' + a.deadline);
+  }
+  if (Array.isArray(p.diversifyingRecommendations) && p.diversifyingRecommendations.length) {
+    out.push('');
+    out.push('DIVERSIFYING PICKS:');
+    for (const r of p.diversifyingRecommendations) {
+      out.push('');
+      out.push('• ' + (r.name || '') + ' (Tier ' + (r.tier || '?') + ')');
+      if (r.rationale) out.push('  ' + r.rationale);
+      if (r.deadline) out.push('  Deadline: ' + r.deadline);
+    }
+  }
+  if (p.narrativeNote) {
+    out.push('');
+    out.push('NARRATIVE NOTE: ' + p.narrativeNote);
+  }
+  if (Array.isArray(p.watchOuts) && p.watchOuts.length) {
+    out.push('');
+    out.push('WATCH OUT FOR:');
+    for (const w of p.watchOuts) out.push('• ' + w);
+  }
+  if (p.nextStep) {
+    out.push('');
+    out.push('NEXT STEP: ' + p.nextStep);
+  }
+  out.push('');
+  out.push('---');
+  out.push('Generated by Wayfinder · wayfinderai.org');
+  if (data && data.disclaimer) {
+    out.push('');
+    out.push(data.disclaimer);
+  }
+  return out.join('\n');
+}
+
+function _intRoadmapToPlainText(data) {
+  const p = (data && data.plan) || {};
+  const out = [];
+  out.push('YOUR INTERNSHIP ROADMAP — Wayfinder Internships');
+  out.push('=================================================');
+  out.push('');
+  if (p.summary) out.push('SUMMARY: ' + p.summary);
+  if (data && data.calibrationInsight) {
+    out.push('');
+    out.push('2026 CALIBRATION:');
+    out.push(data.calibrationInsight);
+  }
+  if (p.differentiationThesis) {
+    out.push('');
+    out.push('DIFFERENTIATION THESIS: ' + p.differentiationThesis);
+  }
+  if (p.anchorRecommendation) {
+    const a = p.anchorRecommendation;
+    out.push('');
+    out.push('ANCHOR — ' + (a.name || '') + ' (Tier ' + (a.tier || '?') + (a.paid === true ? ', PAID' : a.paid === false ? ', unpaid' : '') + ')');
+    if (a.rationale) out.push(a.rationale);
+    if (a.deadline) out.push('Deadline: ' + a.deadline);
+  }
+  if (Array.isArray(p.diversifyingRecommendations) && p.diversifyingRecommendations.length) {
+    out.push('');
+    out.push('DIVERSIFYING PICKS:');
+    for (const r of p.diversifyingRecommendations) {
+      out.push('');
+      out.push('• ' + (r.name || '') + ' (Tier ' + (r.tier || '?') + (r.paid === true ? ', PAID' : r.paid === false ? ', unpaid' : '') + ')');
+      if (r.rationale) out.push('  ' + r.rationale);
+      if (r.deadline) out.push('  Deadline: ' + r.deadline);
+    }
+  }
+  if (Array.isArray(p.deadlineAlerts) && p.deadlineAlerts.length) {
+    out.push('');
+    out.push('DEADLINE ALERTS:');
+    for (const d of p.deadlineAlerts) out.push('• ' + d);
+  }
+  if (p.narrativeNote) {
+    out.push('');
+    out.push('NARRATIVE NOTE: ' + p.narrativeNote);
+  }
+  if (Array.isArray(p.watchOuts) && p.watchOuts.length) {
+    out.push('');
+    out.push('WATCH OUT FOR:');
+    for (const w of p.watchOuts) out.push('• ' + w);
+  }
+  if (p.nextStep) {
+    out.push('');
+    out.push('NEXT STEP: ' + p.nextStep);
+  }
+  out.push('');
+  out.push('---');
+  out.push('Generated by Wayfinder · wayfinderai.org');
+  if (data && data.disclaimer) {
+    out.push('');
+    out.push(data.disclaimer);
+  }
+  return out.join('\n');
+}
+
+function _schStackToPlainText(data) {
+  const p = (data && data.plan) || {};
+  const out = [];
+  out.push('YOUR SCHOLARSHIP STACK — Wayfinder Scholarships');
+  out.push('=================================================');
+  out.push('');
+  if (p.summary) out.push('SUMMARY: ' + p.summary);
+  if (data && data.calibrationInsight) {
+    out.push('');
+    out.push('2026 CALIBRATION:');
+    out.push(data.calibrationInsight);
+  }
+  if (p.differentiationThesis) {
+    out.push('');
+    out.push('DIFFERENTIATION THESIS: ' + p.differentiationThesis);
+  }
+  if (p.anchorRecommendation) {
+    const a = p.anchorRecommendation;
+    out.push('');
+    out.push('ANCHOR — ' + (a.name || '') + ' (' + (a.tier || '?') + ')');
+    if (a.rationale) out.push(a.rationale);
+    if (a.deadline) out.push('Deadline: ' + a.deadline);
+    if (a.amount) out.push('Amount: ' + a.amount);
+    if (a.format) out.push('Format: ' + a.format);
+  }
+  if (Array.isArray(p.diversifyingRecommendations) && p.diversifyingRecommendations.length) {
+    out.push('');
+    out.push('DIVERSIFYING PICKS:');
+    for (const r of p.diversifyingRecommendations) {
+      out.push('');
+      out.push('• ' + (r.name || '') + ' (' + (r.tier || '?') + ')');
+      if (r.rationale) out.push('  ' + r.rationale);
+      if (r.deadline) out.push('  Deadline: ' + r.deadline);
+      if (r.amount) out.push('  Amount: ' + r.amount);
+      if (r.format) out.push('  Format: ' + r.format);
+    }
+  }
+  if (p.stackingNote) {
+    out.push('');
+    out.push('STACKING NOTE: ' + p.stackingNote);
+  }
+  if (Array.isArray(p.watchOuts) && p.watchOuts.length) {
+    out.push('');
+    out.push('WATCH OUT FOR:');
+    for (const w of p.watchOuts) out.push('• ' + w);
+  }
+  if (p.nextStep) {
+    out.push('');
+    out.push('NEXT STEP: ' + p.nextStep);
+  }
+  out.push('');
+  out.push('---');
+  out.push('Generated by Wayfinder · wayfinderai.org');
+  if (data && data.disclaimer) {
+    out.push('');
+    out.push(data.disclaimer);
+  }
+  return out.join('\n');
+}
+
+document.addEventListener('click', function(e) {
+  const target = e.target;
+  if (!target || !target.classList) return;
+
+  // Map of button class → { dataKey, serializer, subject }
+  const dispatch = [
+    { cls: 'prg-plan',   key: '_prgLastPlanData',     fn: _prgPlanToPlainText,    subject: 'My Wayfinder College-App Strategy' },
+    { cls: 'int-road',   key: '_intLastRoadmapData',  fn: _intRoadmapToPlainText, subject: 'My Wayfinder Internship Roadmap' },
+    { cls: 'sch-stack',  key: '_schLastStackData',    fn: _schStackToPlainText,   subject: 'My Wayfinder Scholarship Stack' },
+  ];
+
+  for (const d of dispatch) {
+    if (target.classList.contains(d.cls + '-print-btn')) {
+      try { window.print(); } catch (err) { console.warn('print failed', err); }
+      return;
+    }
+    if (target.classList.contains(d.cls + '-email-btn')) {
+      const data = window[d.key];
+      if (!data) { alert('No data to email yet — generate the result first.'); return; }
+      const body = d.fn(data);
+      const MAX = 1900;
+      let safe = body;
+      if (safe.length > MAX) safe = safe.slice(0, MAX) + '\n\n[truncated — see Wayfinder for full output]';
+      window.location.href = 'mailto:?subject=' + encodeURIComponent(d.subject) + '&body=' + encodeURIComponent(safe);
+      return;
+    }
+    if (target.classList.contains(d.cls + '-copy-btn')) {
+      const data = window[d.key];
+      if (!data) { alert('No data to copy yet — generate the result first.'); return; }
+      const text = d.fn(data);
+      const showCopied = () => {
+        const orig = target.textContent;
+        target.textContent = '✓ Copied!';
+        setTimeout(() => { target.textContent = orig; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(showCopied).catch(err => {
+          console.warn('clipboard write failed', err);
+          alert('Copy failed — your browser blocked clipboard access. Try Email instead.');
+        });
+      } else {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.cssText = 'position:fixed;left:-9999px;top:0;';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          showCopied();
+        } catch (err) {
+          alert('Copy not supported in this browser. Try Email instead.');
+        }
+      }
+      return;
+    }
+  }
+});
 
