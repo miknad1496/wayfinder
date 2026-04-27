@@ -47173,6 +47173,238 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "UBC Geering Up Engineering Outreach Camps",
+      "provider": "UBC Faculty of Applied Science (Geering Up)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-365/wk (~USD $215-270); UBC employee + alumni discount; need-based aid via Geering Up scholarships; underrepresented + Indigenous youth priority"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "UBC Geering Up (since 1992) hands-on engineering + science camps for grades 1-12 at UBC Vancouver + Okanagan + Kelowna campuses + outreach across BC. K-8 tracks: Engineering Explorers (build challenges), STEM Studio, Computer Science (Python, Scratch), Bioengineering Lab. Diversity-focused: programs for girls + Indigenous youth + low-income BC families. Mon-Fri full-day at UBC.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://geeringup.apsc.ubc.ca/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://geeringup.apsc.ubc.ca/programs/summer-camps/",
+      "_addedBy": "international-expansion-batch-58",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "UBC Geering Up (since 1992) hands-on engineering + science camps grades 1-12 at UBC Vancouver + Okanagan + Kelowna + BC outreach. K-8 tracks: Engineering Explorers (build challenges), STEM Studio, CS (Python, Scratch), Bioengineering Lab. Diversity-focused: programs for girls + Indigenous youth + low-income BC families. Mon-Fri full-day. ~CAD $295-365/wk (~USD $215-270). UBC employee + alumni discount + need-based aid; underrepresented + Indigenous youth priority.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Burnaby Village Museum Summer Day Camps",
+      "provider": "Burnaby Village Museum (Greater Vancouver)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 225,
+        "type": "paid",
+        "display": "~CAD $195-275/wk (~USD $145-205) — affordable; Burnaby resident discount + sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Burnaby",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Burnaby Village Museum (Burnaby BC, 25 min from downtown Vancouver) — historic 1920s Heritage Village immersive experience — themed weekly summer day camps for grades 1-8. Tracks: Time Travellers (1920s village living history), Heritage Crafts (blacksmithing, weaving), Carousel + Vintage Toys, Indigenous + Settler History. Mon-Fri 9am-3:30pm. Strong fit for kids who love history immersion. Free general admission to village year-round.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.burnabyvillagemuseum.ca/programs/summer-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.burnabyvillagemuseum.ca/programs/summer-camps/",
+      "_addedBy": "international-expansion-batch-58",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Burnaby Village Museum (Burnaby BC, 25 min from downtown Vancouver) — historic 1920s Heritage Village immersive experience — themed summer camps grades 1-8. Tracks: Time Travellers (1920s village living history), Heritage Crafts (blacksmithing, weaving), Carousel + Vintage Toys, Indigenous + Settler History. Mon-Fri 9am-3:30pm. ~CAD $195-275/wk (~USD $145-205) — affordable. Burnaby resident discount + sliding scale. FREE general admission to village year-round. Strong fit for history-loving kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Maplewood Farm Children's Programs (North Vancouver)",
+      "provider": "Maplewood Farm (District of North Vancouver)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 185,
+        "type": "paid",
+        "display": "~CAD $165-225/wk (~USD $125-170) — among most affordable; District of North Van resident discount; sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "North Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Maplewood Farm (North Vancouver — operated by District of North Vancouver) — small-farm immersion programs for ages 4-10. Tracks: Farm Hands (chores + animal care — chickens, sheep, goats, ponies), Garden + Harvest, Insect Investigators, Dairy Discoveries (cow milking demonstrations). Mon-Fri 9am-3:30pm. WA families: easy drive from Seattle. Free zoo + petting farm general admission year-round.",
+      "deadline": "Resident registration early Feb; non-resident later Feb",
+      "url": "https://maplewoodfarm.bc.ca/programs/summer-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://maplewoodfarm.bc.ca/programs/summer-camps/",
+      "_addedBy": "international-expansion-batch-58",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Maplewood Farm (North Vancouver — operated by District of North Van) — small-farm immersion programs ages 4-10. Tracks: Farm Hands (chores + animal care — chickens, sheep, goats, ponies), Garden + Harvest, Insect Investigators, Dairy Discoveries (cow milking demos). Mon-Fri 9am-3:30pm. ~CAD $165-225/wk (~USD $125-170) — among most affordable. District of N Van resident discount + sliding scale. WA families: easy drive from Seattle. Free general petting-farm admission year-round.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Whistler Adventure Camps (multi-week wilderness)",
+      "provider": "Whistler Adventure School + Whistler Olympic Park",
+      "category": "outdoor",
+      "type": "summer",
+      "cost": {
+        "amount": 1250,
+        "type": "paid",
+        "display": "~CAD $895-1,500/wk for day camps; multi-week wilderness CAD $2,500-4,500; need-based aid via Whistler Foundation; international US families welcome"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Whistler",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Whistler (world-renowned ski resort + summer adventure base, 90-min from Vancouver) summer wilderness adventure camps for grades 3-8. Tracks: Mountain Biking (downhill + XC at Whistler Bike Park), River Rafting (Cheakamus River), Rock Climbing + Mountaineering, Wilderness First Aid, Indigenous Cultural Programs (Squamish + Lil'wat First Nations). Day camps + 1-2 week wilderness expeditions. WA families: 5-hour drive from Seattle (no Vancouver traffic).",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.whistleradventure.com/youth-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.whistleradventure.com/youth-camps/",
+      "_addedBy": "international-expansion-batch-58",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Whistler (world-renowned ski resort + summer adventure base, 90-min from Vancouver) wilderness adventure camps grades 3-8. Tracks: Mountain Biking (downhill + XC at Whistler Bike Park), River Rafting (Cheakamus River), Rock Climbing + Mountaineering, Wilderness First Aid, Indigenous Cultural Programs (Squamish + Lil'wat First Nations). Day camps + 1-2 wk wilderness expeditions. ~CAD $895-1,500/wk day; ~CAD $2,500-4,500 multi-week. Need-based aid via Whistler Foundation. WA families: 5-hour drive from Seattle (no Vancouver traffic). International US families welcome.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Museum of Vancouver Summer Day Camps",
+      "provider": "Museum of Vancouver (MOV)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 265,
+        "type": "paid",
+        "display": "~CAD $235-305/wk (~USD $175-225); MOV member discount; sliding scale via MOV Education + Vancouver-resident scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Museum of Vancouver (Vanier Park, Kits Beach — Vancouver's largest civic museum) themed weekly summer day camps for grades 1-8. Tracks: Vancouver History (1880s-present, indigenous + colonial + Chinese-Canadian + Japanese-Canadian heritage), 1950s + 1960s + 1970s decade-immersion, Indigenous Storytelling, Storytelling + Theatre. Mon-Fri 9am-3:30pm. Cluster with HR MacMillan Space Centre + Vancouver Maritime Museum.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://museumofvancouver.ca/programs/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://museumofvancouver.ca/programs/summer-camps",
+      "_addedBy": "international-expansion-batch-58",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Museum of Vancouver (Vanier Park, Kits Beach — Vancouver's largest civic museum) themed summer camps grades 1-8. Tracks: Vancouver History (1880s-present, Indigenous + Colonial + Chinese-Canadian + Japanese-Canadian heritage), 1950s/60s/70s decade-immersion, Indigenous Storytelling, Theatre. Mon-Fri 9am-3:30pm. ~CAD $235-305/wk (~USD $175-225). MOV member discount + sliding scale + Vancouver-resident scholarships. Cluster with HR MacMillan Space Centre + Vancouver Maritime Museum.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
