@@ -60582,6 +60582,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "FPT University Vietnam HS Pre-University (Hanoi + Ho Chi Minh City)",
+      "provider": "FPT University (Vietnam)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~VND 28,000,000-VND 42,000,000 / USD $1,140-1,710 / 2-week; FPT scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hanoi + Ho Chi Minh City",
+        "state": "VN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "FPT University Vietnam HS Pre-University — FPT (Vietnam's #1 IT-focused private university, ranked top-1000 globally, founded 2006 by FPT Corporation Vietnam's largest IT company) for ages 16-18 (rising 11-12). 2-week residential — kids choose Hanoi OR Ho Chi Minh City campus. Tracks: Computer Science + AI (FPT specialty — Vietnam tech outsourcing pipeline), Business + Vietnamese Markets, Vietnamese Language Immersion, Southeast Asian Studies. ENGLISH-medium primary; Vietnamese electives. EXTREMELY AFFORDABLE Asian destination. UNDER-known by US families. Pipeline to FPT undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.fpt.edu.vn/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fpt.edu.vn/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-123",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "FPT University Vietnam HS Pre-University — FPT (Vietnam's #1 IT-focused private university, ranked top-1000 globally, founded 2006 by FPT Corporation Vietnam's largest IT company) for ages 16-18 (rising 11-12). 2-week residential — kids choose Hanoi OR Ho Chi Minh City campus. Tracks: CS + AI (FPT specialty — Vietnam tech outsourcing pipeline), Business + Vietnamese Markets, Vietnamese Language Immersion, Southeast Asian Studies. ENGLISH-medium primary; Vietnamese electives. ~VND 28,000,000-VND 42,000,000 / USD $1,140-1,710 / 2-week. FPT scholarships for international students. EXTREMELY AFFORDABLE Asian destination. UNDER-KNOWN by US families. Pipeline to FPT undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Chulalongkorn University Thailand HS Pre-University",
+      "provider": "Chulalongkorn University (Bangkok)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~THB 35,000-THB 52,000 / USD $1,000-1,490 / 2-week; Chula scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bangkok",
+        "state": "TH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Chulalongkorn University Thailand HS Pre-University — Chula (Thailand's #1 university, ranked top-300 globally, founded 1917 by King Vajiravudh, alma mater of Thai PMs + royal family) for ages 16-18 (rising 11-12). 2-week residential at Chula Bangkok campus. Tracks: Southeast Asian Studies (Chula's specialty — ASEAN politics + Buddhist studies), Thai Cultural Studies + Thai Language Immersion, Public Health + Tropical Medicine, Architecture + Bangkok Cityscape, Business + Thai Markets. ENGLISH-medium primary; Thai electives. AFFORDABLE Southeast Asian destination. UNDER-known by US families. Pipeline to Chula undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.chula.ac.th/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.chula.ac.th/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-123",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Chulalongkorn University Thailand HS Pre-University — Chula (Thailand's #1 university, ranked top-300 globally, founded 1917 by King Vajiravudh, alma mater of Thai PMs + royal family) for ages 16-18 (rising 11-12). 2-week residential at Chula Bangkok campus. Tracks: Southeast Asian Studies (Chula's specialty — ASEAN politics + Buddhist studies), Thai Cultural Studies + Thai Language Immersion, Public Health + Tropical Medicine, Architecture + Bangkok Cityscape, Business + Thai Markets. ENGLISH-medium primary; Thai electives. ~THB 35,000-THB 52,000 / USD $1,000-1,490 / 2-week. Chula scholarships for international students. AFFORDABLE Southeast Asian destination. UNDER-KNOWN by US families. Pipeline to Chula undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Ateneo de Manila HS Pre-University (Philippines)",
+      "provider": "Ateneo de Manila University",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1395,
+        "type": "paid",
+        "display": "~PHP 65,000-PHP 95,000 / USD $1,170-1,710 / 2-week; Ateneo scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Quezon City, Manila",
+        "state": "PH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Ateneo de Manila HS Pre-University — Ateneo (Philippines' #1 private Jesuit university, ranked top-300 globally, founded 1859, alma mater of Filipino Presidents + business leaders) for ages 16-18 (rising 11-12). 2-week residential at Ateneo Quezon City campus. Tracks: Philippine + Southeast Asian Studies, Public Policy + Filipino Politics, English Literature + Filipino Writing (Philippines is English-medium per Constitution), Business + Asian Markets, Theology + Jesuit Education. ENGLISH-medium (Philippines is officially English-language). AFFORDABLE option. UNDER-known by US families. Pipeline to Ateneo undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ateneo.edu/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ateneo.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-123",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-04-15",
+        "latestEnd": "2026-06-15"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Ateneo de Manila HS Pre-University — Ateneo (Philippines' #1 private Jesuit university, ranked top-300 globally, founded 1859, alma mater of Filipino Presidents + business leaders) for ages 16-18 (rising 11-12). 2-week residential at Ateneo Quezon City campus. Tracks: Philippine + Southeast Asian Studies, Public Policy + Filipino Politics, English Literature + Filipino Writing (Philippines is English-medium per Constitution), Business + Asian Markets, Theology + Jesuit Education. ENGLISH-medium (Philippines is officially English-language). ~PHP 65,000-PHP 95,000 / USD $1,170-1,710 / 2-week. Ateneo scholarships for international students. AFFORDABLE option. UNDER-KNOWN by US families. NOTE: Philippines summer is Apr-Jun (different from US July-Aug). Pipeline to Ateneo undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Universitas Indonesia HS Pre-University (Jakarta)",
+      "provider": "Universitas Indonesia (UI)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1195,
+        "type": "paid",
+        "display": "~IDR 16,500,000-IDR 24,500,000 / USD $1,000-1,485 / 2-week; UI scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Depok, Jakarta",
+        "state": "ID"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Universitas Indonesia HS Pre-University — UI (Indonesia's #1 university, ranked top-300 globally, founded 1849, alma mater of Indonesian Presidents + business leaders) for ages 16-18 (rising 11-12). 2-week residential at UI Depok campus near Jakarta. Tracks: Bahasa Indonesia Language Immersion, Indonesian + Southeast Asian Studies, Marine Biology (Indonesia has world's #1 marine biodiversity — Coral Triangle), Public Health + Tropical Medicine, Business + Asian Markets. ENGLISH + INDONESIAN-medium. AFFORDABLE option. UNDER-known by US families. Pipeline to UI undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ui.ac.id/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ui.ac.id/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-123",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Universitas Indonesia HS Pre-University — UI (Indonesia's #1 university, ranked top-300 globally, founded 1849, alma mater of Indonesian Presidents + business leaders) for ages 16-18 (rising 11-12). 2-week residential at UI Depok campus near Jakarta. Tracks: Bahasa Indonesia Language Immersion, Indonesian + Southeast Asian Studies, Marine Biology (Indonesia has world's #1 marine biodiversity — Coral Triangle), Public Health + Tropical Medicine, Business + Asian Markets. ENGLISH + INDONESIAN-medium. ~IDR 16,500,000-IDR 24,500,000 / USD $1,000-1,485 / 2-week. UI scholarships for international students. AFFORDABLE option. UNDER-KNOWN by US families. Pipeline to UI undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Universiti Malaya HS Pre-University (Kuala Lumpur)",
+      "provider": "Universiti Malaya (UM)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~MYR 5,500-MYR 8,000 / USD $1,235-1,795 / 2-week; UM scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Kuala Lumpur",
+        "state": "MY"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Universiti Malaya HS Pre-University — UM (Malaysia's #1 university, ranked top-100 Asian university, founded 1949) for ages 16-18 (rising 11-12). 2-week residential at UM Kuala Lumpur campus. Tracks: Southeast Asian + Islamic Studies, Malay + Tamil + Mandarin Multilingual Studies, Tropical Marine Biology (Malacca Straits + Sabah + Sarawak Borneo access), Business + Asian Markets, Public Health. ENGLISH + MALAY-medium. AFFORDABLE option. UNDER-known by US families. Pipeline to UM undergrad. Strong fit for kids interested in tropical Southeast Asia + Malay-Chinese-Tamil multilingual context.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.um.edu.my/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.um.edu.my/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-123",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Universiti Malaya HS Pre-University — UM (Malaysia's #1 university, ranked top-100 Asian university, founded 1949) for ages 16-18 (rising 11-12). 2-week residential at UM Kuala Lumpur campus. Tracks: Southeast Asian + Islamic Studies, Malay + Tamil + Mandarin Multilingual Studies, Tropical Marine Biology (Malacca Straits + Sabah + Sarawak Borneo access), Business + Asian Markets, Public Health. ENGLISH + MALAY-medium. ~MYR 5,500-MYR 8,000 / USD $1,235-1,795 / 2-week. UM scholarships for international students. AFFORDABLE option. UNDER-KNOWN by US families. Pipeline to UM undergrad. Strong fit for tropical Southeast Asia + Malay-Chinese-Tamil multilingual context. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
