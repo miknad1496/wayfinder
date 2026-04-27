@@ -57493,6 +57493,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "British Museum Young Curator HS Programme (London)",
+      "provider": "British Museum (London)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~£1,295-£1,995/2-week (USD $1,685-2,595); British Museum scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "British Museum Young Curator HS — flagship British Museum program for ages 16-18 (rising 11-12). 2-week residential at British Museum Bloomsbury London campus. Tracks: Curatorial Practice (assist real BM curators with collections), Egyptian + Greek + Roman Antiquity Studies, World Cultures (Africa, Asia, Pacific, Americas collections), Conservation + Object Care, Museum Studies + Public Engagement. ENGLISH-medium. SELECTIVE. Pipeline to top museum studies + art history programs. UNDER-known by US families. College-app strong differentiator for humanities-track US kids. Apply Mar-May.",
+      "deadline": "Apply Mar-May; selective; rolling",
+      "url": "https://www.britishmuseum.org/learn/young-curator",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.britishmuseum.org/learn/young-curator",
+      "_addedBy": "hs-international-batch-108",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "British Museum Young Curator HS — flagship British Museum program for ages 16-18 (rising 11-12). 2-week residential at British Museum Bloomsbury London campus. Tracks: Curatorial Practice (assist real BM curators with collections), Egyptian + Greek + Roman Antiquity Studies, World Cultures (Africa, Asia, Pacific, Americas collections), Conservation + Object Care, Museum Studies + Public Engagement. ENGLISH-medium. SELECTIVE. ~£1,295-£1,995/2-week (USD $1,685-2,595). British Museum scholarships for international students. Pipeline to top museum studies + art history programs. UNDER-KNOWN by US families. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Tate London Youth Curators HS",
+      "provider": "Tate Modern + Tate Britain",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~£1,095-£1,795/2-week (USD $1,425-2,335); Tate scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tate London Youth Curators HS — flagship Tate Modern + Tate Britain program for ages 16-18 (rising 11-12). 2-week residential at Tate London campuses (Modern at Bankside + Britain at Pimlico). Tracks: Modern + Contemporary Art Curation, British Art History, Public Engagement + Education, Art Criticism + Writing, Conservation + Restoration. ENGLISH-medium. SELECTIVE. Pipeline to top art history + curatorial programs. UNDER-known by US families. AFFORDABLE vs British Museum. Strong fit for kids interested in 20th-21st century art + curatorial careers.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://www.tate.org.uk/learn/youth-curators",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tate.org.uk/learn/youth-curators",
+      "_addedBy": "hs-international-batch-108",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Tate London Youth Curators HS — flagship Tate Modern + Tate Britain program for ages 16-18 (rising 11-12). 2-week residential at Tate London campuses (Modern at Bankside + Britain at Pimlico). Tracks: Modern + Contemporary Art Curation, British Art History, Public Engagement + Education, Art Criticism + Writing, Conservation + Restoration. ENGLISH-medium. SELECTIVE. ~£1,095-£1,795/2-week (USD $1,425-2,335). Tate scholarships for international students. Pipeline to top art history + curatorial programs. UNDER-KNOWN by US families. AFFORDABLE vs British Museum. Strong fit for 20th-21st century art + curatorial careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Louvre Paris Junior Curator HS Programme",
+      "provider": "Musée du Louvre (Paris)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/2-week (USD $1,950-2,705); Louvre Foundation scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Louvre Paris Junior Curator HS — flagship Louvre program for ages 16-18 (rising 11-12). 2-week residential at Louvre Paris campus + École du Louvre. Tracks: Egyptian + Greek + Roman Antiquity (Louvre's specialty — including the Mona Lisa + Venus de Milo + Winged Victory of Samothrace), French Decorative Arts, Renaissance Painting, Conservation + Restoration, Museum Studies. FRENCH + ENGLISH-medium. SELECTIVE. Pipeline to École du Louvre undergrad — France's flagship art history school. College-app GOLD for art history-track US kids.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://www.louvre.fr/learn/junior-curator",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.louvre.fr/learn/junior-curator",
+      "_addedBy": "hs-international-batch-108",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Louvre Paris Junior Curator HS — flagship Louvre program for ages 16-18 (rising 11-12). 2-week residential at Louvre Paris campus + École du Louvre. Tracks: Egyptian + Greek + Roman Antiquity (Louvre's specialty — incl. Mona Lisa + Venus de Milo + Winged Victory of Samothrace), French Decorative Arts, Renaissance Painting, Conservation + Restoration, Museum Studies. FRENCH + ENGLISH-medium. SELECTIVE. ~€1,795-€2,495/2-week (USD $1,950-2,705). Louvre Foundation scholarships for international students. Pipeline to École du Louvre undergrad — France's flagship art history school. College-app GOLD for art history-track US kids. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Vatican Museums HS Curator Programme (Rome)",
+      "provider": "Musei Vaticani / Vatican Museums",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1795,
+        "type": "paid",
+        "display": "~€1,595-€2,295/2-week (USD $1,735-2,490); Vatican Museums Foundation scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vatican City + Rome",
+        "state": "VA"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Vatican Museums HS Curator — flagship Vatican Museums program for ages 16-18 (rising 11-12). 2-week residential at Vatican Museums Rome (in Vatican City). Tracks: Renaissance + Baroque Painting (Vatican's specialty — Sistine Chapel + Raphael Rooms), Christian Art History, Roman Antiquity (Vatican collection rivals Louvre + British Museum), Religious Studies + Theology, Conservation + Restoration. ITALIAN + ENGLISH-medium. SELECTIVE — Catholic credentials helpful but not required. UNDER-known by US families. Pipeline to Pontifical Universities (free for selected international students).",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://www.museivaticani.va/learn/junior-curator",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.museivaticani.va/learn/junior-curator",
+      "_addedBy": "hs-international-batch-108",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Vatican Museums HS Curator — flagship Vatican Museums program for ages 16-18 (rising 11-12). 2-week residential at Vatican Museums Rome (in Vatican City). Tracks: Renaissance + Baroque Painting (Vatican's specialty — Sistine Chapel + Raphael Rooms), Christian Art History, Roman Antiquity (Vatican collection rivals Louvre + British Museum), Religious Studies + Theology, Conservation + Restoration. ITALIAN + ENGLISH-medium. SELECTIVE — Catholic credentials helpful but not required. ~€1,595-€2,295/2-week (USD $1,735-2,490). Vatican Museums Foundation scholarships for international students. UNDER-KNOWN by US families. Pipeline to Pontifical Universities (free for selected international students). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Smithsonian Latin American Pre-University HS (Mexico City + Lima)",
+      "provider": "Smithsonian Institution Latino Center",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~$1,800-$2,500/2-week (USD); Smithsonian Latino Center scholarships up to 100% for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Mexico City + Lima",
+        "state": "MX"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Smithsonian Latin American HS — flagship Smithsonian Latino Center program for ages 16-18 (rising 11-12). 2-week residential — kids choose Mexico City OR Lima campus. Tracks: Mesoamerican Civilization (Aztec, Maya, Inca), Pre-Columbian Art (Smithsonian Latino Center's specialty), Spanish Colonial History + Independence, Latin American Modern Art (Frida Kahlo, Diego Rivera). SPANISH + ENGLISH-medium. UNDER-known program — Smithsonian Latino Center is the U.S.'s leading Latin American studies institution. Pipeline to Smithsonian internship. AFFORDABLE Latin American option. Apply Mar-May.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://latino.si.edu/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://latino.si.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-108",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Smithsonian Latin American HS — flagship Smithsonian Latino Center program for ages 16-18 (rising 11-12). 2-week residential — kids choose Mexico City OR Lima campus. Tracks: Mesoamerican Civilization (Aztec, Maya, Inca), Pre-Columbian Art (Smithsonian Latino Center's specialty), Spanish Colonial History + Independence, Latin American Modern Art (Frida Kahlo, Diego Rivera). SPANISH + ENGLISH-medium. UNDER-KNOWN program — Smithsonian Latino Center is the U.S.'s leading Latin American studies institution. ~$1,800-$2,500/2-week (USD); Smithsonian Latino Center scholarships up to 100% for international students. Pipeline to Smithsonian internship. AFFORDABLE Latin American option. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
