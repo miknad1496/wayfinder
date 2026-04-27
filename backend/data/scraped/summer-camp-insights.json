@@ -377,6 +377,110 @@
           "detail": "Juni Learning's monthly fees run $140-$450+ depending on cadence/subject — but the 2-week free trial includes actual classes (often via placement or intro course). Use the trial to verify instructor fit before committing; their model is 1:1 so chemistry with the teacher matters more than at small-group competitors."
         }
       ]
+    },
+    {
+      "id": "regional-summer-windows-2026",
+      "title": "Regional summer camp windows (2026)",
+      "icon": "🌎",
+      "_aiContext": true,
+      "items": [
+        {
+          "label": "Seattle metro / Pacific Northwest",
+          "detail": "Most camps run Jun 22 – Aug 28, 2026, Mon-Fri weekly. Week of Jun 29 - Jul 3 often runs 4-day (Mon-Thu) due to Jul 4 weekend. Some camps also run 4-day week of Jun 15 due to Juneteenth (Fri Jun 19)."
+        },
+        {
+          "label": "Bay Area / SoCal",
+          "detail": "Jun 15 – Aug 7, 2026. Schools out earlier than Pacific NW so summer programming starts/ends 1 week earlier. Examples: Lawrence Hall (Berkeley), CAMP at The Tech Interactive (San Jose), California Science Center (LA), Birch Aquarium (La Jolla) all run Jun 15 – Aug 7."
+        },
+        {
+          "label": "Chicago / Midwest",
+          "detail": "Jun 29 – Aug 7, 2026 typical. Northwestern CTD (Evanston + Chicago South Loop) is the canonical anchor."
+        },
+        {
+          "label": "NYC",
+          "detail": "Late June through late August. AMNH typical Jul 6 – Aug 21. Member registration February; general March-April."
+        },
+        {
+          "label": "Year-round / online programs",
+          "detail": "No summer window — Khan, Beast Academy, Synthesis, Code.org, Mystery Science (free trial through Jun 30, 2026), Generation Genius, Khan, NASA STEM virtual, Nat Geo Kids. Treat sessionPattern as 'year-round-classes' and don't gate on summer dates."
+        },
+        {
+          "label": "Single-day / event-based",
+          "detail": "Burke Museum (Dino Trackers Jul 13 confirmed; rest of program runs through summer). Apple Camp at Apple Stores Jul-Aug. UW Engineering Discovery Days is an annual 2-day spring event — not a summer program."
+        }
+      ]
+    },
+    {
+      "id": "registration-timing-anchors-2026",
+      "title": "Major Seattle / WA + select national camp reg timing (2026 confirmed)",
+      "icon": "📅",
+      "_aiContext": true,
+      "items": [
+        {
+          "label": "YMCA Camp Orkila (overnight, Orcas Island)",
+          "detail": "Registration opens Feb 4, 2026 at 6 a.m. Sessions 7-28 days, grades 3-12. Sliding scale (Price A/B); $50 deposit; financial assistance. Fills in days — set a calendar reminder."
+        },
+        {
+          "label": "Pacific Science Center Camps for Curious Minds",
+          "detail": "Member early reg Feb 2; general public Feb 9. Scholarship apps open Feb 6 (separate from regular registration — apply to BOTH). Pay due in full by May 1 or balance auto-charged. 100+ themed weekly camps PreK-8 across 6 metro locations + new Bothell, Kenmore, Salish Sea."
+        },
+        {
+          "label": "Museum of Flight ACE (Aerospace Camp Experience)",
+          "detail": "Member early reg Feb 20 11am PT, general public Feb 21 10am PT. K-9th grade. By April many K-3 sessions are at capacity (waitlist mode). Campership Program offers $100/$200/$300 financial aid. Contact ACE@museumofflight.org."
+        },
+        {
+          "label": "Camp Galileo Bellevue (STEAM Day Camp)",
+          "detail": "Currently enrolling for Summer 2026. Early-Bird ends Feb 28 ($50/wk savings); rolling registration after. Multi-week + multi-sibling discounts stack. 9am-3pm M-F, optional extended care 8-9am + 3-6pm. Up to 75% need-based aid available."
+        },
+        {
+          "label": "Point Defiance Zoo & Aquarium (Tacoma)",
+          "detail": "Member registration Mar 10 8am, general public Mar 12 8am. Combined zoo + aquarium campus camps for ages PreK-8. Pierce County resident scholarship pool for EBT/WIC/foster/kinship families."
+        },
+        {
+          "label": "Lawrence Hall of Science (UC Berkeley)",
+          "detail": "Member registration opened late 2025; general public Jan 2, 2026 — earlier than most CA camps. 2-week sessions ($625-950/wk) instead of 1-week — better content depth but longer parent commit. Financial aid available."
+        },
+        {
+          "label": "California Science Center (LA Exposition Park)",
+          "detail": "Member presale Feb 18-24, 2026; general enrollment after Feb 24. Mix-and-match morning + afternoon classes for full-day flexibility. Member: $225 half-day / $450 full-day. Extended care +$110-120/wk; member rate saves $10/wk."
+        }
+      ]
+    },
+    {
+      "id": "pricing-tiers-k8-2026",
+      "title": "Pricing tiers for K-8 enrichment (2026 reference)",
+      "icon": "💵",
+      "_aiContext": true,
+      "items": [
+        {
+          "label": "Free / fully-subsidized",
+          "detail": "PSC scholarships (up to 100%, application opens Feb 6), SPS Expanded Learning, NSBE SEEK (3-week virtual), Black Girls CODE Summer Camp (most participants pay $0), CYC SF, LA's BEST, Audubon Junior Birder, Khan Academy, Code.org, Camp Wonderopolis (NCFL-funded). Many YMCAs use sliding scale 'Price A/Price B' self-selected by household income."
+        },
+        {
+          "label": "Low ($200-300/wk)",
+          "detail": "Camp Invention $245-295 with promo codes (CIFUN25 by 3/31, CIFUN20 by 4/28). CodeWizardsHQ $200-300 1-week themed online. Camp CrunchLabs $329 for 12-week summer Build Box subscription (~$27/wk). Most municipal parks dept day camps $150-300/wk subsidized."
+        },
+        {
+          "label": "Mid ($400-600/wk)",
+          "detail": "Destination Science $400. Camp Galileo Bellevue (varies, typical $500/wk). Camp Tech Revolution $500. Music Works NW $530. Birch Aquarium $250-600 range. Northwestern CTD half-day starts $395."
+        },
+        {
+          "label": "Premium ($600-1100/wk)",
+          "detail": "Lawrence Hall $625-950/wk (2-week sessions). AMNH Discovery Squad $575-650. Exploratorium $675-750. Field Museum $425-575 (1-week). iD Tech UW Seattle from $1099/wk. Lavner UW from $799/wk."
+        },
+        {
+          "label": "Specialty / residential ($2000+)",
+          "detail": "Earthwatch Family Expeditions $2000-3500/wk + airfare (need-based aid via Ignite Awards covers up to 100%). iD Tech Academy 2-week overnight $4999+. Interlochen Junior $3500-5500/2-wk (need-based aid covers 30-100% for ~40% of campers). NYLF Pathways residential $1500."
+        },
+        {
+          "label": "Single-day specialty",
+          "detail": "Burke Museum $90-100/day ($90 members; +$30 optional aftercare). Many museum 'mini-camp' options $50-150/day. Apple Camp at Apple Stores 100% free 90-min sessions Jul-Aug."
+        },
+        {
+          "label": "Hidden cost-leverage patterns parents should know",
+          "detail": "(1) Member early-access at major museums = the highest-leverage piece — membership often pays for itself just from earlier access to popular camps. (2) Multi-week + sibling discounts often stack with Early Bird. (3) Scholarship windows often close mid-May — apply early. (4) Free school-district summer enrichment is often the best-kept secret in any local market — check district website starting March. (5) Steve & Kate's Camp auto-refunds unused day passes after summer (Bay Area + LA only). (6) AAUW Tech Trek runs $50 fee for what's normally a $1000+ residential STEM week (rising 8th-grade girls; teacher nomination)."
+        }
+      ]
     }
   ],
   "_meta": {
