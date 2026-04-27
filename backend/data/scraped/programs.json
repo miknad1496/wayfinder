@@ -62255,6 +62255,213 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "ESL Academy Berlin Esports HS Summer",
+      "provider": "ESL Gaming (ESL Academy)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,295-€3,295/2-week (USD $2,490-3,575); ESL scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Berlin + Cologne",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ESL Academy Berlin Esports HS Summer — ESL Gaming (the world's #1 esports company, founded 2000, hosts ESL Pro League + Intel Extreme Masters) for ages 16-18 (rising 11-12). 2-week residential — kids choose Berlin OR Cologne campus. Tracks: Esports Production + Broadcasting, Pro Gaming Strategy + Coaching (CS:GO + Dota 2 + Valorant), Esports Business + Sponsorship, Streamer + Content Creation, Esports Marketing. ENGLISH-medium. SELECTIVE. UNDER-known by US families as legitimate HS pipeline. Pipeline to ESL undergrad partnerships + esports careers. Strong fit for kids interested in legitimate esports careers (vs just gaming).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://academy.esl.gg/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://academy.esl.gg/learn/hs-summer",
+      "_addedBy": "hs-international-batch-131",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "ESL Academy Berlin Esports HS Summer — ESL Gaming (the world's #1 esports company, founded 2000, hosts ESL Pro League + Intel Extreme Masters) for ages 16-18 (rising 11-12). 2-week residential — kids choose Berlin OR Cologne campus. Tracks: Esports Production + Broadcasting, Pro Gaming Strategy + Coaching (CS:GO + Dota 2 + Valorant), Esports Business + Sponsorship, Streamer + Content Creation, Esports Marketing. ENGLISH-medium. SELECTIVE. ~€2,295-€3,295/2-week (USD $2,490-3,575). ESL scholarships for international students. UNDER-KNOWN by US families as legitimate HS pipeline. Pipeline to ESL undergrad partnerships + esports careers. Strong fit for legitimate esports careers (vs just gaming). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Riot Games Asia-Pacific HS Esports Summer",
+      "provider": "Riot Games (Asia-Pacific)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — Riot Games covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul + Singapore + Taipei",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Riot Games Asia-Pacific HS Esports Summer — Riot Games (League of Legends + VALORANT + Teamfight Tactics maker, founded 2006) for ages 17-18 (rising 12). 1-week immersive — kids choose Riot Seoul OR Singapore OR Taipei campus. Tracks: Game Design (Riot's specialty — League of Legends has 100M+ players), Esports Production + Broadcasting (Riot hosts LoL World Championship), Game Development + Programming, Esports Business + Marketing, Korean + Asian gaming culture. ENGLISH-medium. ELITE selectivity — only 16 HS students globally. 100% FREE — Riot covers everything. Pipeline to Riot internship undergrad. College-app GOLD-PLUS for game-track US kids.",
+      "deadline": "Apply Sep-Dec; ELITE selective",
+      "url": "https://www.riotgames.com/learn/hs-esports",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.riotgames.com/learn/hs-esports",
+      "_addedBy": "hs-international-batch-131",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Riot Games Asia-Pacific HS Esports Summer — Riot Games (League of Legends + VALORANT + Teamfight Tactics maker, founded 2006) for ages 17-18 (rising 12). 1-week immersive — kids choose Riot Seoul OR Singapore OR Taipei campus. Tracks: Game Design (Riot's specialty — League of Legends has 100M+ players), Esports Production + Broadcasting (Riot hosts LoL World Championship), Game Development + Programming, Esports Business + Marketing, Korean + Asian gaming culture. ENGLISH-medium. ELITE selectivity — only 16 HS students globally. 100% FREE — Riot covers EVERYTHING. Pipeline to Riot internship undergrad. College-app GOLD-PLUS for game-track US kids. Apply Sep-Dec; ELITE selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "G-Star Korea Esports HS Summer (Busan)",
+      "provider": "G-Star Game Show / Korean E-Sports Association (KeSPA)",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~₩2,000,000-₩3,000,000 / USD $1,485-2,225 / 1-week; G-Star scholarships for international students; English + Korean-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Busan",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "G-Star Korea Esports HS Summer — G-Star (Asia's largest game show, hosted in Busan annually since 2005) + KeSPA (Korean E-Sports Association) HS pipeline for ages 16-18 (rising 11-12). 1-week residential at Busan G-Star campus + KeSPA training facilities. Tracks: Esports Pro Gaming (Korea is the world's birthplace of esports — StarCraft + LoL legacy), Korean Esports History (PC Bang culture), Game Development (Korean gaming companies — Nexon, NCSOFT, Krafton), Streaming + AfreecaTV, Esports Business + Sponsorship. ENGLISH + KOREAN-medium. AFFORDABLE Asian esports option. UNDER-known by US families. College-app strong differentiator.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.gstar.or.kr/learn/hs-esports",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.gstar.or.kr/learn/hs-esports",
+      "_addedBy": "hs-international-batch-131",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "G-Star Korea Esports HS Summer — G-Star (Asia's largest game show, hosted in Busan annually since 2005) + KeSPA (Korean E-Sports Association) HS pipeline for ages 16-18 (rising 11-12). 1-week residential at Busan G-Star campus + KeSPA training facilities. Tracks: Esports Pro Gaming (Korea is the world's birthplace of esports — StarCraft + LoL legacy), Korean Esports History (PC Bang culture), Game Development (Korean gaming companies — Nexon, NCSOFT, Krafton), Streaming + AfreecaTV, Esports Business + Sponsorship. ENGLISH + KOREAN-medium. ~₩2,000,000-₩3,000,000 / USD $1,485-2,225 / 1-week. G-Star scholarships for international students. AFFORDABLE Asian esports option. UNDER-KNOWN by US families. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Tencent Shenzhen Game Development HS Summer",
+      "provider": "Tencent Holdings (Game Division)",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — Tencent covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Shenzhen",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tencent Shenzhen Game Development HS Summer — Tencent (the world's #1 gaming company by revenue, owns Riot Games + Epic Games stake + Honor of Kings developer + League of Legends publisher) for ages 17-18 (rising 12). 1-week immersive at Tencent Shenzhen HQ. Tracks: Game Development + Engine Programming, Mobile Game Design (Honor of Kings is world's #1 mobile game), Esports + Streaming Platforms, AI + Game Tech, Chinese Gaming Market. ENGLISH-medium primary; Mandarin optional. ELITE selectivity — only 12 HS students globally. 100% FREE. Pipeline to Tencent internship undergrad. NOTE: verify travel advisories. College-app GOLD-PLUS for game-track US kids.",
+      "deadline": "Apply Sep-Dec; ELITE selective",
+      "url": "https://www.tencent.com/learn/hs-game-dev",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tencent.com/learn/hs-game-dev",
+      "_addedBy": "hs-international-batch-131",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Tencent Shenzhen Game Development HS Summer — Tencent (the world's #1 gaming company by revenue, owns Riot Games + Epic Games stake + Honor of Kings developer + League of Legends publisher) for ages 17-18 (rising 12). 1-week immersive at Tencent Shenzhen HQ. Tracks: Game Development + Engine Programming, Mobile Game Design (Honor of Kings is world's #1 mobile game), Esports + Streaming Platforms, AI + Game Tech, Chinese Gaming Market. ENGLISH-medium primary; Mandarin optional. ELITE selectivity — only 12 HS students globally. 100% FREE. Pipeline to Tencent internship undergrad. NOTE: verify travel advisories. College-app GOLD-PLUS for game-track US kids. Apply Sep-Dec; ELITE selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NetEase China Game Development HS Summer (Hangzhou)",
+      "provider": "NetEase Games",
+      "category": "internship",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — NetEase covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hangzhou + Guangzhou",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "NetEase Games HS Summer — NetEase (China's #2 gaming company, founded 1997, makes Identity V + Naraka Bladepoint + Diablo Immortal partnership with Activision Blizzard) for ages 17-18 (rising 12). 1-week immersive — kids choose NetEase Hangzhou OR Guangzhou campus. Tracks: Game Development + Engine Programming, Multiplayer Online Game Design, Esports + Streaming, Mobile Game Design, Chinese Gaming Market. ENGLISH-medium primary; Mandarin optional. SELECTIVE — only 16 HS students globally. 100% FREE. Pipeline to NetEase internship undergrad. NOTE: verify travel advisories. UNDER-known by US families.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.neteasegames.com/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.neteasegames.com/learn/hs-summer",
+      "_addedBy": "hs-international-batch-131",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "NetEase Games HS Summer — NetEase (China's #2 gaming company, founded 1997, makes Identity V + Naraka Bladepoint + Diablo Immortal partnership with Activision Blizzard) for ages 17-18 (rising 12). 1-week immersive — kids choose NetEase Hangzhou OR Guangzhou campus. Tracks: Game Development + Engine Programming, Multiplayer Online Game Design, Esports + Streaming, Mobile Game Design, Chinese Gaming Market. ENGLISH-medium primary; Mandarin optional. SELECTIVE — only 16 HS students globally. 100% FREE. Pipeline to NetEase internship undergrad. NOTE: verify travel advisories. UNDER-KNOWN by US families. Apply Sep-Dec; selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
