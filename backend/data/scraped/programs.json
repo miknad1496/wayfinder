@@ -292,7 +292,16 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://seattlemesa.org/"
+      "_source": "https://seattlemesa.org/",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-07-24"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "FREE year-round STEM enrichment for grades 6-12. After-school tutoring + statewide STEM competitions + mentorship. Plus a 3-week summer math scholars program for incoming 9th graders. Emphasis on traditionally underrepresented students. UW partner. Apply at seattlemesa.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "UW Engineering Discovery Days",
@@ -38911,7 +38920,13 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "specific 2026 event dates"
-      ]
+      ],
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "single-day",
+      "scheduleNotes": "100% FREE 1-day events at Microsoft offices nationwide (incl. Redmond WA HQ) for middle school girls + gender-expansive youth. Hands-on coding/AI/cybersecurity workshops, panels with women technologists, campus tour. Lunch + materials included. Year-round events; register 2-4 weeks before. Subscribe to Microsoft education updates for new event announcements.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Carnegie Hall Link Up",
@@ -39138,7 +39153,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "USAF Auxiliary cadet program ages 12-18. 1,500+ squadrons in all 52 wings (incl. WA). Cadets earn promotions through aerospace ed, leadership, physical fitness, character modules. FREE orientation rides in CAP aircraft + free flight academies for advanced cadets. Annual dues ~$45-55 + uniform; financial assistance available; encampment fees subsidized. Year-round enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Junior Master Gardener Program",
@@ -40015,7 +40036,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE for selected applicants. Youth Awards: regional + national recognition for Hispanic high schoolers in 8 categories (STEM, business, healthcare, arts, etc.) with $1,000-$5,000 scholarships. LOFT (Latinos On Fast Track) is the year-round leadership pipeline. Applications open Sep-Dec for Youth Awards; LOFT applications spring.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Plum Village Mindfulness Family Retreats",
@@ -40206,7 +40233,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE for selected scholars. Pipeline program for Hispanic/Latino youth (grades 7-12): mentorship, leadership training, college prep workshops, pathway to HSF scholarships ($500-$5K). Online + regional summits in major US metros. Spring application; programs run year-round. hsf.net.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Sierra Club Inspiring Connections Outdoors (ICO)",
