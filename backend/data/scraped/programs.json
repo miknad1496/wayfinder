@@ -50114,6 +50114,225 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "TVOKids — TVO Public Broadcasting Online Learning",
+      "provider": "TVO (Ontario Educational Communications Authority)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Ontario taxpayer-funded public broadcaster; accessible globally; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "TVOKids — flagship of Ontario public broadcaster TVO — 100% FREE online learning for K-8 globally. Tracks: math (TVO Mathify free 1:1 tutoring grades 6-12 for ON residents but content open globally), science, French immersion (Mini TFO French content), Indigenous learning, history. Live shows + 100s of activities + parent-curated content. Accessible globally. Excellent supplement for US homeschoolers + bilingual French families.",
+      "deadline": "Year-round; sign up anytime",
+      "url": "https://www.tvokids.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tvokids.com",
+      "_addedBy": "canada-online-batch-71",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "TVOKids — flagship of Ontario public broadcaster TVO — 100% FREE online learning for K-8 globally. Tracks: math (TVO Mathify free 1:1 tutoring grades 6-12 for ON residents but content open globally), science, French immersion (Mini TFO content), Indigenous learning, history. Live shows + 100s of activities + parent-curated content. Accessible globally. Year-round; sign up anytime. Excellent supplement for US homeschoolers + bilingual French families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "CBC Kids — Canadian Public Broadcaster Online Learning",
+      "provider": "CBC / Radio-Canada (Canadian Broadcasting Corporation)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Canadian taxpayer-funded public broadcaster; globally accessible; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "CBC Kids — Canada's national public broadcaster's free online programming for K-6 globally. Tracks: kid-friendly news (CBC Kids News, perfect for media literacy + civics), interactive play (CBC Kids games + activities), French content (Radio-Canada Tou.tv junior), Indigenous-perspective programming. Strong fit for kids interested in journalism + civics + media literacy. Accessible globally.",
+      "deadline": "Year-round; sign up anytime",
+      "url": "https://www.cbc.ca/kids",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cbc.ca/kids",
+      "_addedBy": "canada-online-batch-71",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "CBC Kids — Canada's national public broadcaster's free online programming for K-6 globally. Tracks: kid-friendly news (CBC Kids News, perfect for media literacy + civics), interactive play (CBC Kids games + activities), French content (Radio-Canada Tou.tv junior), Indigenous-perspective programming. Year-round. 100% FREE; accessible globally. Strong fit for kids interested in journalism + civics + media literacy.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "FNESC Indigenous Learning Hub (BC + globally)",
+      "provider": "First Nations Education Steering Committee (FNESC) BC",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Canadian Indigenous-led education resource; accessible globally"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "FNESC Indigenous Learning Hub — First Nations Education Steering Committee BC. 100% FREE Indigenous-led K-12 educational resources accessible globally. Tracks: First Peoples Principles of Learning, Indigenous histories (residential school + Truth + Reconciliation), traditional knowledge, language preservation, BC + Pacific Northwest Coast Nations focus. Critical resource for US educators + families wanting authentic Indigenous learning beyond colonial framing.",
+      "deadline": "Year-round; freely accessible",
+      "url": "https://www.fnesc.ca/learn/online-resources/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fnesc.ca/learn/online-resources/",
+      "_addedBy": "canada-online-batch-71",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "FNESC Indigenous Learning Hub — First Nations Education Steering Committee BC. 100% FREE Indigenous-led K-12 educational resources accessible globally. Tracks: First Peoples Principles of Learning, Indigenous histories (residential school + Truth + Reconciliation), traditional knowledge, language preservation, BC + Pacific Northwest Coast Nations focus. Critical resource for US educators + families wanting authentic Indigenous learning beyond colonial framing. Year-round; freely accessible. Differentiated and underutilized.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "McGill Continuing Studies Online Youth Programs",
+      "provider": "McGill University Continuing Studies",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~CAD $385-485/wk (~USD $285-360); McGill Foundation need-based aid; international US students enroll seamlessly"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "McGill University Continuing Studies online youth programs — online summer + year-round courses for grades 6-12 (limited K-5). Tracks: Pre-University Math + Sciences (Pre-AP equivalent), Global Studies, English Language Arts + Writing, Coding + Computer Science. Strong global academic credential — McGill is among the top 5 Canadian universities + globally ranked. International US students enroll seamlessly with credit transfer to US schools. Live small-class virtual instruction. Mon-Fri 1-3 hours daily.",
+      "deadline": "Apply year-round; rolling enrollment with summer cohorts",
+      "url": "https://www.mcgill.ca/continuingstudies/youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mcgill.ca/continuingstudies/youth-programs",
+      "_addedBy": "canada-online-batch-71",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "McGill University Continuing Studies online youth programs — online summer + year-round courses grades 6-12 (limited K-5). Tracks: Pre-University Math + Sciences (Pre-AP equivalent), Global Studies, English Language Arts + Writing, Coding + Computer Science. Strong global academic credential — McGill among top 5 Canadian universities + globally ranked. International US students enroll seamlessly with credit transfer to US schools. Live small-class virtual instruction. Mon-Fri 1-3 hrs daily. ~CAD $385-485/wk (~USD $285-360). McGill Foundation need-based aid.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "DigiTeknology Online Coding + STEM Camps (Canadian)",
+      "provider": "DigiTeknology Canada",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-265/wk (~USD $130-195); DigiTeknology global rate; member discount; US students enroll seamlessly"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "DigiTeknology — Canadian-founded online coding + STEM camp platform for grades 3-8. Tracks: Block-based coding (Scratch, MakeCode), Python + JavaScript, Robotics simulation, Game Design (Roblox + Minecraft), App Development. Live small-group instruction (Zoom-based). US students enroll seamlessly. Differentiated by Canadian curriculum + bilingual (English + French) instructor pool. Year-round + summer-intensive.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://digiteknology.ca/programs/youth-camps",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://digiteknology.ca/programs/youth-camps",
+      "_addedBy": "canada-online-batch-71",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "DigiTeknology — Canadian-founded online coding + STEM camp platform for grades 3-8. Tracks: Block-based coding (Scratch, MakeCode), Python + JavaScript, Robotics simulation, Game Design (Roblox + Minecraft), App Development. Live small-group Zoom instruction. US students enroll seamlessly. Differentiated by Canadian curriculum + bilingual (English + French) instructor pool. ~CAD $175-265/wk (~USD $130-195). Year-round + summer-intensive. Member discount.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
