@@ -50756,6 +50756,211 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Math Kangaroo Canada (Concours Mathématique Kangourou)",
+      "provider": "Math Kangaroo Canada",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 18,
+        "type": "paid",
+        "display": "~CAD $20 standard registration; FREE for low-income via Math Kangaroo Canada Foundation; bilingual (English + French)"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "Local Math Kangaroo Centres + online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Math Kangaroo Canada (Concours Mathématique Kangourou) — Canadian division of the international Math Kangaroo competition. Open to grades 1-12 in Canada + select US locations. Test administered the third Thursday of March (Mar 19, 2026 for current cycle). FREE for low-income via Math Kangaroo Canada Foundation. Strong fit for math-loving kids who enjoy puzzles + word problems. Bilingual programming (English + French).",
+      "deadline": "Late registration closes Feb 1; contest March 19, 2026",
+      "url": "https://mathkangaroo.ca",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://mathkangaroo.ca",
+      "_addedBy": "cross-border-batch-74",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Math Kangaroo Canada (Concours Mathématique Kangourou) — Canadian division of international Math Kangaroo competition. Open to grades 1-12 in Canada + select US locations. Test administered third Thursday of March (Mar 19, 2026 for current cycle). ~CAD $20 standard registration; FREE for low-income via Math Kangaroo Canada Foundation. Bilingual programming (English + French). Strong fit for math-loving kids who enjoy puzzles + word problems. Late registration closes Feb 1.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Skills Canada National Competition + Try-A-Trade",
+      "provider": "Skills/Compétences Canada",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for K-12 participants — Skills Canada is federally funded; bilingual (English + French)"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Online + Canadian provincial competitions",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Skills Canada — federal organization promoting trades + technology careers. K-8 access via Try-A-Trade events (free hands-on demos at provincial competitions: carpentry, plumbing, electrical, automotive, baking, hairdressing) + Skills Canada National Competition (annual May). 6,000+ K-12 youth participate annually. Strong fit for kids interested in trades + technical careers — under-applied + perfect path for kids who don't fit traditional academic mold. Provincial chapters host year-round events.",
+      "deadline": "Year-round provincial events; National Competition May",
+      "url": "https://skillscompetencescanada.com/learn/try-a-trade-events",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://skillscompetencescanada.com/learn/try-a-trade-events",
+      "_addedBy": "cross-border-batch-74",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Skills Canada — federal organization promoting trades + technology careers. K-8 access via Try-A-Trade events (FREE hands-on demos at provincial competitions: carpentry, plumbing, electrical, automotive, baking, hairdressing) + Skills Canada National Competition (annual May). 6,000+ K-12 youth participate annually. Strong fit for kids interested in trades + technical careers — UNDER-APPLIED + perfect path for kids who don't fit traditional academic mold. Bilingual (English + French). Provincial chapters host year-round events.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "DECA Canada Junior Programs (Entrepreneurship + Marketing K-8)",
+      "provider": "DECA Canada",
+      "category": "leadership",
+      "type": "year-round",
+      "cost": {
+        "amount": 35,
+        "type": "paid",
+        "display": "~CAD $35-65/yr DECA membership; competition fees vary; sliding scale for low-income; bilingual"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "Online + Canadian provincial chapters",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "DECA Canada — Canadian division of international DECA (Distributive Education Clubs of America). Junior programs for grades 6-8: entrepreneurship case studies, marketing + retail role-playing, finance + business career exploration. Provincial competitions Mar; National Conference April. Strong fit for kids interested in business + entrepreneurship. Bilingual (English + French). DECA experience translates to US DECA chapters when families relocate.",
+      "deadline": "Apply via local DECA chapter (Sep-Oct typically)",
+      "url": "https://decacanada.ca/learn/junior-deca-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://decacanada.ca/learn/junior-deca-programs",
+      "_addedBy": "cross-border-batch-74",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "DECA Canada — Canadian division of international DECA (Distributive Education Clubs of America). Junior programs grades 6-8: entrepreneurship case studies, marketing + retail role-playing, finance + business career exploration. Provincial competitions Mar; National Conference April. ~CAD $35-65/yr membership; competition fees vary; sliding scale for low-income. Bilingual (English + French). DECA experience translates to US DECA chapters when families relocate. Strong fit for business + entrepreneurship kids.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Encounters with Canada / Canada Rendez-vous",
+      "provider": "Historica Canada (formerly Encounters with Canada)",
+      "category": "leadership",
+      "type": "year-round",
+      "cost": {
+        "amount": 695,
+        "type": "paid",
+        "display": "~CAD $625-1,295/wk includes accommodation + meals + activities; sliding scale via Historica Canada Foundation; provincial subsidies available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ottawa",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8"
+        ]
+      },
+      "description": "Encounters with Canada / Canada Rendez-vous — Historica Canada's flagship national youth program. Week-long residential programs in Ottawa for ages 14-17 (gateway program eligible at grade 7-8 with parent letter) — Canadian + select US students. Tracks: Politics + Citizenship, Science + Technology, Arts + Culture, Environment, Indigenous Reconciliation. National Capital backdrop (Parliament Hill, Supreme Court visits). Bilingual immersion. International US students enroll seamlessly. Strong fit for civically-engaged middle schoolers.",
+      "deadline": "Apply via Historica Canada portal year-round; rolling admissions",
+      "url": "https://encounters-rencontres.ca",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://encounters-rencontres.ca",
+      "_addedBy": "cross-border-batch-74",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Encounters with Canada / Canada Rendez-vous — Historica Canada's flagship national youth program. Week-long residential programs in Ottawa for ages 14-17 (gateway program eligible at grade 7-8 with parent letter). Canadian + select US students. Tracks: Politics + Citizenship, Science + Technology, Arts + Culture, Environment, Indigenous Reconciliation. National Capital backdrop (Parliament Hill, Supreme Court visits). Bilingual immersion. International US students enroll seamlessly. ~CAD $625-1,295/wk includes accommodation + meals + activities. Sliding scale via Historica Canada Foundation; provincial subsidies available. Strong fit for civically-engaged middle schoolers.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Canadian Geographic Education + Royal Canadian Geographical Society",
+      "provider": "Canadian Geographic Education / RCGS",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for educators + students globally — RCGS-funded; international US students welcome"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canadian Geographic Education / Royal Canadian Geographical Society (RCGS) — 100% FREE educational resources accessible globally. Tracks: Giant Floor Maps program (free kits to schools — kids interactively explore Canadian + global geography), Canadian Geographic Kids! magazine, Atlas of Canadian Indigenous Peoples (powerful Indigenous-focused atlas), Energy IQ (energy literacy), Geographic Adventures podcast for kids. Strong fit for geography + culture + Indigenous-history-focused kids.",
+      "deadline": "Year-round; freely accessible",
+      "url": "https://cangeo.ca/learn/education",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://cangeo.ca/learn/education",
+      "_addedBy": "cross-border-batch-74",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Canadian Geographic Education / Royal Canadian Geographical Society (RCGS) — 100% FREE educational resources globally. Tracks: Giant Floor Maps program (free kits to schools — kids interactively explore Canadian + global geography), Canadian Geographic Kids! magazine, Atlas of Canadian Indigenous Peoples (powerful Indigenous-focused atlas), Energy IQ (energy literacy), Geographic Adventures podcast for kids. International US students welcome. Year-round; freely accessible. Strong fit for geography + culture + Indigenous-history-focused kids.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
