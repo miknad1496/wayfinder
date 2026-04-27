@@ -74,6 +74,61 @@ async function getCalibrationContext() {
   }
 }
 
+/* === REVAMP V2: PLAN TWO-CALL (strict-JSON + free-text calibration) === */
+// Shared SLM-or-Haiku call helper. Used by /plan (twice — once for the JSON plan,
+// once for the free-text calibration insight). Each call independently falls
+// through to Haiku if the SLM is unavailable or errors out.
+async function _summerLLMCall({ systemPrompt, userPrompt, slmMaxTokens, haikuMaxTokens }) {
+  let response;
+  let mode = 'slm';
+  if (isSLMAvailable()) {
+    try {
+      response = await chatSLM([
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+      ], { maxTokens: slmMaxTokens });
+    } catch (slmErr) {
+      console.warn('[summer-camps] SLM failed, falling back to Haiku:', slmErr.message);
+      response = null;
+    }
+  }
+  if (!response) {
+    mode = 'haiku';
+    const claude = getClaude();
+    if (!claude) throw new Error('LLM not configured');
+    const r = await claude.messages.create({
+      model: process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001',
+      max_tokens: haikuMaxTokens,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+    });
+    response = { text: r.content?.[0]?.text || '', tokensUsed: (r.usage?.input_tokens || 0) + (r.usage?.output_tokens || 0) };
+  }
+  return { ...response, mode };
+}
+
+// Hardened JSON extractor: strip markdown fences, then scan for the first
+// balanced { ... } block (correctly handling strings + escaped quotes).
+function _firstBalancedJson(text) {
+  if (!text) return null;
+  let cleaned = String(text).trim();
+  const fenceMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+  if (fenceMatch) cleaned = fenceMatch[1];
+  const start = cleaned.indexOf('{');
+  if (start < 0) return null;
+  let depth = 0, inString = false, escape = false;
+  for (let i = start; i < cleaned.length; i++) {
+    const ch = cleaned[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (ch === '{') depth++;
+    else if (ch === '}') { depth--; if (depth === 0) return cleaned.slice(start, i + 1); }
+  }
+  return null;
+}
+
 
 // GET /api/summer-camps/browse — K-8 program browse (public, no auth required)
 // Filters programs.json to K-8 entries with safe public fields.
@@ -174,9 +229,9 @@ router.post('/plan', async (req, res) => {
 
   if (!grade) return res.status(400).json({ error: 'grade required' });
 
-  // Load fresh calibration sections from insights file (`_aiContext: true`) so
-  // the planner gets the latest 2026 regional windows, registration timing, and
-  // pricing-tier intelligence without code changes.
+  // Load calibration sections — used by the SECOND parallel call below to
+  // produce a free-text "2026 calibration for THIS family" insight. Kept off
+  // the strict-JSON plan call's system prompt so JSON output stays clean.
   const calibrationContext = await getCalibrationContext();
 
   // Build SLM prompt with K-8-specific calibration
@@ -199,8 +254,6 @@ CALIBRATION FOR K-8 PLANNING:
 - Sleepaway camp is age-appropriate starting age 7-8 for shorter sessions, 9-10 for longer. Don't push it on younger kids.
 - Wayfinder's database has a growing curated list (especially WA + nationwide remote). Reference it confidently. For specific named programs, be conservative — suggest categories the user can filter for in the Programs sidebar tool with grade filter set to elementary/middle.
 - Use the 60/30/10 frame: ~60% recurring anchor (Y day camp / parks dept), ~30% specialty experiences (1-2 museum/zoo/coding camps), ~10% wildcard (the niche experience).
-
-${calibrationContext}
 
 Your output must be a JSON object:
 {
@@ -226,47 +279,54 @@ ONLY return JSON. No preamble, no markdown.`;
 
 Be specific to THIS family. Consider their budget honestly. Mention scholarship pathways if budget is low or they specifically asked.`;
 
-  // Try SLM first (cheap), fallback to Haiku
-  try {
-    let response;
-    let mode = 'slm';
-    if (isSLMAvailable()) {
-      try {
-        response = await chatSLM([
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt }
-        ], { maxTokens: 1200 });
-      } catch (slmErr) {
-        console.warn('[summer-camps/plan] SLM failed, falling back to Haiku:', slmErr.message);
-        response = null;
-      }
-    }
-    if (!response) {
-      mode = 'haiku';
-      const claude = getClaude();
-      if (!claude) return res.status(503).json({ error: 'Plan service unavailable (LLM not configured)' });
-      const r = await claude.messages.create({
-        model: process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001',
-        max_tokens: 1500,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: userPrompt }],
-      });
-      response = { text: r.content?.[0]?.text || '{}', tokensUsed: (r.usage?.input_tokens || 0) + (r.usage?.output_tokens || 0) };
-    }
+  // /* === REVAMP V2: PLAN TWO-CALL (strict-JSON + free-text calibration) === */
+  // Two parallel LLM calls: strict-JSON plan + free-text calibration insight.
+  // Calibration runs on a SEPARATE call so the plan call's prompt stays clean
+  // (long system prompts have empirically caused JSON output to break). Both
+  // calls run via Promise.allSettled so a calibration failure doesn't kill the
+  // plan response.
+  const calibrationSystemPrompt = `You are Wayfinder. A parent is using the K-8 Summer Camps planner. Use the curated 2026 calibration data below to write 3-5 tight sentences of family-specific calibration insight: cite specific dates, dollar figures, and named programs from the calibration where relevant. Focus on what THIS family should do RIGHT NOW given current registration windows + their region + their budget. NO generic advice — be concrete and 2026-specific.
 
-    // Parse JSON
-    let parsed = {};
+${calibrationContext}
+
+Output: 3-5 sentences of plain text. No headers, no bullet lists, no JSON, no preamble. Just the substance.`;
+
+  try {
+    const [planRes, calRes] = await Promise.allSettled([
+      _summerLLMCall({ systemPrompt, userPrompt, slmMaxTokens: 1200, haikuMaxTokens: 1500 }),
+      _summerLLMCall({ systemPrompt: calibrationSystemPrompt, userPrompt, slmMaxTokens: 500, haikuMaxTokens: 600 }),
+    ]);
+
+    if (planRes.status !== 'fulfilled') {
+      console.error('[summer-camps/plan] plan call failed:', planRes.reason?.message);
+      return res.status(502).json({ error: 'Plan generation failed: ' + (planRes.reason?.message || 'unknown') });
+    }
+    const planResponse = planRes.value;
+    const calResponse = calRes.status === 'fulfilled' ? calRes.value : null;
+    if (!calResponse) console.warn('[summer-camps/plan] calibration call failed (proceeding without it):', calRes.reason?.message);
+
+    // Parse the plan as JSON (hardened: strip markdown fences, balanced brace scan)
+    let plan = {};
     try {
-      const m = response.text.match(/\{[\s\S]*\}/);
-      parsed = m ? JSON.parse(m[0]) : {};
+      const candidate = _firstBalancedJson(planResponse.text);
+      plan = candidate ? JSON.parse(candidate) : {};
     } catch (e) {
+      console.warn('[summer-camps/plan] JSON parse failed; raw response head:', String(planResponse.text || '').slice(0, 300));
       return res.status(502).json({ error: 'Plan generation returned unparseable response. Try again.' });
     }
 
+    // Calibration is plain text — trim and cap to 1200 chars defensive
+    let calibrationInsight = '';
+    if (calResponse?.text) calibrationInsight = String(calResponse.text).trim().slice(0, 1200);
+
+    const totalTokens = (planResponse.tokensUsed || 0) + (calResponse?.tokensUsed || 0);
+
     res.json({
-      plan: parsed,
-      mode,
-      tokensUsed: response.tokensUsed || 0,
+      plan,
+      calibrationInsight,
+      mode: planResponse.mode,
+      calibrationMode: calResponse?.mode || null,
+      tokensUsed: totalTokens,
       disclaimer: 'AI-generated plan. Verify program details + scholarship application windows directly with each org. Use the Programs sidebar tool with grade filter set to elementary/middle to browse the full curated database.',
     });
   } catch (err) {

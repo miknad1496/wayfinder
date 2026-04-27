@@ -6323,6 +6323,11 @@ function renderSCPlan(data) {
     <div style="background:#ddf4ff;padding:14px 16px;border-radius:8px;margin-bottom:14px;border-left:3px solid #0969da;">
       <p style="margin:0;font-size:14px;color:#0a3069;"><strong>Plan summary:</strong> ${_esc(p.summary || '')}</p>
     </div>
+    ${data.calibrationInsight ? `
+      <div / === REVAMP V2: PLAN CALIBRATION-INSIGHT CALLOUT === / style="background:#fef3c7;padding:14px 16px;border-radius:8px;margin-bottom:14px;border-left:3px solid #d97706;">
+        <p style="margin:0 0 4px;font-size:12px;color:#92400e;font-weight:600;">📍 2026 calibration for YOUR family</p>
+        <p style="margin:0;font-size:13px;color:#854d0e;line-height:1.5;">${_esc(data.calibrationInsight)}</p>
+      </div>` : ''}
     ${p.anchorRecommendation ? `
       <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;">
         <h4 style="margin:0 0 6px;font-size:14px;color:#1e3a8a;">⚓ Anchor commitment — ${_esc(p.anchorRecommendation.type || '')}</h4>
