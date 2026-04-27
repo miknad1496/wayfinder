@@ -806,7 +806,16 @@
       "region": "South",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents"
+      "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Rice University R-STEM (Houston, TX) summer day camp for grades 3-8 combining STEM with sports + PE. Themed weekly sessions: physics of basketball, biomechanics of running, etc. Held at Rice campus. Mon-Fri full-day. ~$400-700/wk; need-based aid via Rice's R-STEM scholarship pool. Specific 2026 weekly dates not surfaced via WebSearch — typical Jun 15 – Jul 31 window. Apply at rstem.rice.edu/programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp Invention — Texas Locations",
@@ -854,7 +863,16 @@
       "region": "South",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.invent.org/programs/camp-invention"
+      "_source": "https://www.invent.org/programs/camp-invention",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Host-school-dependent: Camp Invention runs at multiple Texas elementary + middle schools each summer (Leander ISD, Frisco ISD, Round Rock ISD, Plano ISD, others). Each host school sets its own week. Same Spark + Illuminate + Inventicate themes as national. ~$285+ per week. Promo codes: CIFUN25 by 3/31 ($25 off), CIFUN20 by 4/28 ($20 off); SIBNAT30 sibling ($60 off 2nd) / SIBNAT40 ($120+ off 3rd+). Find local host at invent.org/camp.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Rice Bio Academies",
@@ -903,7 +921,16 @@
       "region": "South",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents"
+      "_source": "https://research.rice.edu/rstem/programs/k-12-students-parents",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Rice University R-STEM intensive biology summer academy for grades 6-12. 1-3 week sessions; lab-heavy curriculum (genetics, microbiology, ecology, anatomy). Held at Rice University Houston, TX. ~$1,500-3,500 per session; need-based aid via R-STEM scholarship pool. Typical Jun 15 – Jul 31 window. Apply at rstem.rice.edu/programs/bio-academies.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Houston PREP (Prefreshman Enrichment Program)",
@@ -952,7 +979,16 @@
       "region": "South",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://generalacademic.com/summer-opportunities-for-houston-high-school-students/"
+      "_source": "https://generalacademic.com/summer-opportunities-for-houston-high-school-students/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-07-17"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE 7-week summer math + science enrichment for grades 7-9 underrepresented in STEM (low-income, first-gen, racial/ethnic minorities). University of Houston campus. Multi-summer commitment (kids return summer-after-summer). Mon-Fri 8am-3pm. Math + science + computer science + engineering + tech. Free lunch + snacks + transportation in some districts. Apply Mar-Apr. Full info: houstonprep.uh.edu.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Girls Inc. Dallas Eureka! STEM Program",
@@ -995,7 +1031,16 @@
       "region": "South",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.txgcp.org/stem-camps-across-tx"
+      "_source": "https://www.txgcp.org/stem-camps-across-tx",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE 5-year STEM commitment for girls grades 8-12. Eureka! is a national Girls Inc. program. Year-round + intensive 4-5 week summer component (Jun-Jul typically). College + career exposure, hands-on STEM, internships at higher grades, college prep. Selective entry; apply during 7th grade for 8th-grade start. Kids commit to multi-summer program. Free incl. transportation. dallas.girlsinc.org/eureka.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Governor's Summer Merit Program — Texas",
