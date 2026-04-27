@@ -60792,6 +60792,213 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "KAUST Saudi Arabia HS Summer Camp (FREE)",
+      "provider": "King Abdullah University of Science and Technology (KAUST)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — KAUST covers all costs incl. travel + accommodation + research stipend"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Thuwal, Jeddah",
+        "state": "SA"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "KAUST Saudi Arabia HS Summer Camp — KAUST (Saudi Arabia's flagship STEM research university, ranked top-100 globally, founded 2009 by King Abdullah, located on Red Sea coast) for ages 17-18 (rising 12). 4-week residential at KAUST Thuwal campus. Tracks: Marine Biology + Red Sea Coral Reef Research (KAUST's specialty), AI + Computer Science, Sustainable Energy + Solar (KAUST has world's largest solar park nearby), Bioengineering, Materials Science. ENGLISH-medium. ELITE selectivity — only 30 HS students globally. 100% FREE — KAUST covers EVERYTHING incl. research stipend. UNDER-applied-for given Saudi Arabia perception. Pipeline to KAUST graduate. College-app GOLD-PLUS.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.kaust.edu.sa/learn/hs-summer-camp",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kaust.edu.sa/learn/hs-summer-camp",
+      "_addedBy": "hs-international-batch-124",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "KAUST Saudi Arabia HS Summer Camp — KAUST (Saudi Arabia's flagship STEM research university, ranked top-100 globally, founded 2009 by King Abdullah, located on Red Sea coast) for ages 17-18 (rising 12). 4-week residential at KAUST Thuwal campus. Tracks: Marine Biology + Red Sea Coral Reef Research (KAUST's specialty), AI + CS, Sustainable Energy + Solar (KAUST has world's largest solar park nearby), Bioengineering, Materials Science. ENGLISH-medium. ELITE selectivity — only 30 HS students globally. 100% FREE — KAUST covers EVERYTHING incl. research stipend. UNDER-APPLIED-FOR given Saudi Arabia perception. Pipeline to KAUST graduate. College-app GOLD-PLUS. Apply Sep-Dec; selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NYU Abu Dhabi HS Pre-University (FREE for accepted undergrad)",
+      "provider": "New York University Abu Dhabi (NYUAD)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~$2,200-$3,200/2-week (USD); NYUAD scholarships up to 100% via need-based admission for HS Pre-University; FREE 4-year tuition for accepted undergrad"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Abu Dhabi, Saadiyat Island",
+        "state": "AE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NYU Abu Dhabi HS Pre-University — NYUAD (NYU's Abu Dhabi liberal arts campus, ranked top-50 most selective globally) for ages 16-18 (rising 11-12). 2-week residential at NYUAD Saadiyat Island campus. Tracks: International Liberal Arts (NYUAD's specialty — Yale-NUS-style integrated curriculum), Middle East Studies + Arab Civilization, Sustainable Engineering + UAE Renewable Vision, Arabic Language Immersion, Marine + Desert Sciences. ENGLISH-medium. SELECTIVE. CRITICAL: NYUAD undergrad is NEED-BLIND + FREE tuition for accepted students globally — one of the most generous financial-aid options. HS Pre-University is the pipeline. College-app GOLD-PLUS.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://nyuad.nyu.edu/learn/hs-pre-university",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://nyuad.nyu.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-124",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "NYU Abu Dhabi HS Pre-University — NYUAD (NYU's Abu Dhabi liberal arts campus, ranked top-50 most selective globally) for ages 16-18 (rising 11-12). 2-week residential at NYUAD Saadiyat Island campus. Tracks: International Liberal Arts (NYUAD's specialty — Yale-NUS-style integrated curriculum), Middle East Studies + Arab Civilization, Sustainable Engineering + UAE Renewable Vision, Arabic Language Immersion, Marine + Desert Sciences. ENGLISH-medium. SELECTIVE. ~$2,200-$3,200/2-week (USD); NYUAD scholarships up to 100% via need-based admission. CRITICAL: NYUAD undergrad is NEED-BLIND + FREE tuition for accepted students globally — one of the most generous financial-aid options. HS Pre-University is the pipeline. College-app GOLD-PLUS. Apply Mar-May; selective.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cornell-Doha Qatar Foundation HS Pre-University",
+      "provider": "Weill Cornell Medicine - Qatar (Qatar Foundation Education City)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~$1,800-$2,800/2-week (USD); Qatar Foundation scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Doha",
+        "state": "QA"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cornell-Doha Qatar Foundation HS Pre-University — Weill Cornell Medicine - Qatar (Cornell's flagship Doha medical campus at Qatar Foundation's Education City) for ages 17-18 (rising 12). 2-week residential at Cornell-Doha campus. Tracks: Pre-Med Foundation Sciences (Cornell-quality faculty), Middle East Public Health, Tropical Medicine + Desert-adapted Health, Arab Cultural Studies + Arabic Immersion. ENGLISH-medium. CRITICAL: Qatar Foundation Education City has 6 US-partner branch campuses (Cornell, Northwestern, Carnegie Mellon, Georgetown, Texas A&M, Virginia Commonwealth) all offering reduced-tuition undergrad. UNDER-applied-for. Pipeline to Cornell-Doha undergrad.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://qatar-weill.cornell.edu/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://qatar-weill.cornell.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-124",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Cornell-Doha Qatar Foundation HS Pre-University — Weill Cornell Medicine - Qatar (Cornell's flagship Doha medical campus at Qatar Foundation's Education City) for ages 17-18 (rising 12). 2-week residential at Cornell-Doha campus. Tracks: Pre-Med Foundation Sciences (Cornell-quality faculty), Middle East Public Health, Tropical Medicine + Desert-adapted Health, Arab Cultural Studies + Arabic Immersion. ENGLISH-medium. ~$1,800-$2,800/2-week (USD); Qatar Foundation scholarships up to 100% via need-based admission. CRITICAL: Qatar Foundation Education City has 6 US-partner branch campuses (Cornell, Northwestern, Carnegie Mellon, Georgetown, Texas A&M, Virginia Commonwealth) all offering reduced-tuition undergrad. UNDER-APPLIED-FOR. Pipeline to Cornell-Doha undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Texas A&M Qatar HS Pre-University (Engineering)",
+      "provider": "Texas A&M University at Qatar",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~$1,700-$2,600/2-week (USD); Qatar Foundation scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Doha",
+        "state": "QA"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Texas A&M Qatar HS Pre-University Engineering — Texas A&M's Qatar campus at Qatar Foundation Education City (offering Texas A&M engineering degrees in Doha) for ages 17-18 (rising 12). 2-week residential at TAMUQ Doha campus. Tracks: Petroleum + Chemical Engineering (Qatar's specialty — world's largest LNG exporter), Mechanical + Electrical Engineering, Sustainability + Carbon Capture, Arab Engineering Heritage. ENGLISH-medium. CRITICAL: TAMUQ undergrad costs ~$28,000/year vs $58,000 at Texas A&M College Station — significant savings PLUS Qatar Foundation scholarships available. Pipeline to TAMUQ undergrad. UNDER-applied-for.",
+      "deadline": "Apply Mar-May; selective",
+      "url": "https://www.qatar.tamu.edu/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.qatar.tamu.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-124",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Texas A&M Qatar HS Pre-University Engineering — Texas A&M's Qatar campus at Qatar Foundation Education City (offering Texas A&M engineering degrees in Doha) for ages 17-18 (rising 12). 2-week residential at TAMUQ Doha campus. Tracks: Petroleum + Chemical Engineering (Qatar's specialty — world's largest LNG exporter), Mechanical + Electrical Engineering, Sustainability + Carbon Capture, Arab Engineering Heritage. ENGLISH-medium. ~$1,700-$2,600/2-week (USD); Qatar Foundation scholarships up to 100% via need-based admission. CRITICAL: TAMUQ undergrad costs ~$28,000/year vs $58,000 at Texas A&M College Station — significant savings PLUS Qatar Foundation scholarships available. Pipeline to TAMUQ undergrad. UNDER-APPLIED-FOR. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "American University of Sharjah HS Pre-University",
+      "provider": "American University of Sharjah (AUS)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1795,
+        "type": "paid",
+        "display": "~AED 6,800-AED 10,200 / USD $1,850-2,775 / 2-week; AUS scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sharjah",
+        "state": "AE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "American University of Sharjah HS Pre-University — AUS (UAE's #2 American-style university, ranked top-500 globally, founded 1997 by Sheikh Sultan) for ages 16-18 (rising 11-12). 2-week residential at AUS Sharjah campus. Tracks: International Business + Gulf Markets, Engineering + Construction (UAE construction boom), Architecture + Islamic Design, Arabic Language Immersion, Middle East Studies. ENGLISH-medium. AFFORDABLE Gulf option vs AUB or NYUAD. UNDER-known by US families. Pipeline to AUS undergrad. Sharjah is more conservative than Dubai — strong fit for kids interested in traditional Gulf Islamic culture.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.aus.edu/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.aus.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-124",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "American University of Sharjah HS Pre-University — AUS (UAE's #2 American-style university, ranked top-500 globally, founded 1997 by Sheikh Sultan) for ages 16-18 (rising 11-12). 2-week residential at AUS Sharjah campus. Tracks: International Business + Gulf Markets, Engineering + Construction (UAE construction boom), Architecture + Islamic Design, Arabic Language Immersion, Middle East Studies. ENGLISH-medium. ~AED 6,800-AED 10,200 / USD $1,850-2,775 / 2-week. AUS scholarships for international students. AFFORDABLE Gulf option vs AUB or NYUAD. UNDER-KNOWN by US families. Pipeline to AUS undergrad. Sharjah is more conservative than Dubai — strong fit for kids interested in traditional Gulf Islamic culture. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
