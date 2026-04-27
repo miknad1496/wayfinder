@@ -107,7 +107,17 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://pacificsciencecenter.org/education/camps/"
+      "_source": "https://pacificsciencecenter.org/education/camps/",
+      "scheduleConfidence": "inferred",
+      "registrationOpens": "2026-02-09",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Members early reg Feb 2, general public Feb 9. Scholarship apps open Feb 6. Pay due in full by May 1. 100+ themed weekly camps PreK-8 across 6 Seattle metro locations + new Bothell, Kenmore, Salish Sea Elementary. Camp days 9am-4pm; PreK morning/afternoon split.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Museum of Flight ACE (Aerospace Camp Experience)",
@@ -160,7 +170,17 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.museumofflight.org/ace"
+      "_source": "https://www.museumofflight.org/ace",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-21",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Member early reg Feb 20 11am PT, general public Feb 21 10am PT. Many K-3 camps already at capacity (waitlist). 1-week full-day sessions, K-9th grade. Campership Program: $100/$200/$300 financial aid available. Contact ACE@museumofflight.org / 206-716-0820.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "DigiPen Open World Summer Workshops (Ages 5-12)",
@@ -211,7 +231,17 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://discoveropenworld.com/"
+      "_source": "https://discoveropenworld.com/",
+      "scheduleConfidence": "inferred",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "9am-4pm workshops at DigiPen Redmond campus, ages 5-9 / 10-12 / 13-18 tracks. STEAM (game design, programming, robotics, art, animation). Register via Open World CampInTouch portal at discoveropenworld.com/redmond/. 2026 schedule available on site; specific session weeks not summarized in search results.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Seattle MESA (Mathematics, Engineering, Science Achievement)",
@@ -36353,7 +36383,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://galileo-camps.com/our-camps/locations/bellevue/"
+      "_source": "https://galileo-camps.com/our-camps/locations/bellevue/",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-01-01",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Currently enrolling for Summer 2026. 9am-3pm M-F, optional extended care 8-9am + 3-6pm. Week of June 15 and June 29 are 4-day weeks (Juneteenth Jun 19 + Independence Day Jul 4 closed). Rising K-5 do 3 daily rotations (engineering, art, outdoor); 6-8th do single weeklong project. Early-bird ends Feb 28 saves $50/wk; multi-week saves $25/wk after first.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Music Center of the Northwest Summer Music Camps",
@@ -37635,7 +37675,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Host-school-dependent: 1500+ elementary schools nationwide each set their own week. Examples seen: Leander ISD TX week of Jun 8 + Jul 13; InfoAge NJ Jul 6-10 (Spark) + Jul 13-17 (Illuminate); River Valley MA Jun 29 - Jul 3. 9am-3:30pm typical. Pricing from $285 (~$9/hr); pay plans up to 8 weeks before start. Promo: CIFUN25 by 3/31 ($25 off), CIFUN20 by 4/28 ($20 off); siblings SIBNAT30 ($60 off 2nd) / SIBNAT40 ($120+ off 3rd+).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "4-H Summer Camp (state Cooperative Extension network)",
