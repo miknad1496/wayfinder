@@ -37933,7 +37933,13 @@
       "scope": "national",
       "scholarshipAid": "100% free — no application required",
       "registrationUrl": "https://www.nasa.gov/learning-resources/for-kids-and-students/",
-      "howToStart": "Visit nasa.gov/learning-resources/nasa-kids-club/ — no signup required. Subscribe to the NASA EXPRESS newsletter (free) for weekly student-challenges, contests, and seasonal hands-on activities targeted to your child's grade band."
+      "howToStart": "Visit nasa.gov/learning-resources/nasa-kids-club/ — no signup required. Subscribe to the NASA EXPRESS newsletter (free) for weekly student-challenges, contests, and seasonal hands-on activities targeted to your child's grade band.",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE official NASA K-8 STEM portal. Hands-on activities, games, videos, stories — kids launch rockets, build a Moon Habitat, explore the Solar System, solve space-themed puzzles. Content organized by grade band (K-4, 5-8, 9-12). Year-round self-paced; no enrollment window. Excellent supplement for any STEM-curious kid; great for homeschool. nasa.gov/learning-resources/nasa-kids-club.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "CodeCombat — Game-Based Coding (Python & JavaScript)",
@@ -38730,7 +38736,16 @@
       "_unverifiedFields": [
         "cost (varies by franchise)",
         "exact session dates"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Mad Science is a science enrichment franchise (since 1985) running themed weekly summer day camps for kids ages 4-12. Themes rotate weekly: Secret Agent Lab, Robot Academy, Digging Dinos, NASA Camp, Science of Slime, Inventors Camp. ~$200-400 (half-day) / $350-600 (full-day) per week. 100+ franchises across US/Canada. Existing deadline Aug 31 covers later sessions; popular early-summer weeks fill spring. Find local franchise at madscience.org/parents-camps.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Engineering For Kids Summer Camps",
@@ -41742,7 +41757,16 @@
       "scholarshipAid": "Free intro classes are de-facto access route. Some bundles + sibling discounts; check site at registration.",
       "registrationUrl": "https://www.create-learn.us/",
       "howToStart": "Sign up at create-learn.us — try a free intro class first, then build a roster from per-class catalog.",
-      "dates": "Year-round + dedicated summer schedule"
+      "dates": "Year-round + dedicated summer schedule",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Live online small-group (3-5 students) coding, AI, STEM classes for grades K-12. Featured by Minecraft Education, Code.org, Meta, Roblox Education. Selective instructor pool (<5% of teacher applicants accepted). Free intro classes are real teaching, not sales pitches — good way to test fit. Per-class ~$30/hr; weekly tracks $80-180. Existing deadline Aug 31. Year-round + summer-intensive; rolling registration at create-learn.us.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Codingal Online Summer Coding Camp for Kids & Teens",
@@ -42455,7 +42479,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Once-a-week online enrichment cohort grown out of the SpaceX Ad Astra school. Kids ages 8-14 collaborate in small teams to solve open-ended, complex problems in 60-min sessions. Builds creative problem-solving, decision-making under uncertainty. $95/month membership for weekly Teams cohort. Rolling enrollment — join any week. Selective interview/admit (not first-come). Apply at synthesis.com/teams.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Steve & Kate's Camp (Bay Area & LA)",
@@ -43140,7 +43170,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://melscience.com/US-en/"
+      "_source": "https://melscience.com/US-en/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Monthly hands-on STEM kits with companion app-based AR/VR lessons. Three lines for K-8: MEL Kids (STEM, ages 5-9+, $29.90/mo), MEL Physics (ages 8+, $39.90/mo), MEL Chemistry (ages 10-14+, $39.90/mo). Each kit includes all materials + safety gear + adult supervision guidance. Annual plan saves ~33%. Year-round; start any month, cancel anytime. Mailed to home; ships nationwide. Strong fit for kids who like building / want hands-on between school terms. melscience.com/US-en.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "ChessKid.com — Online Chess for Kids (Free + Gold)",
