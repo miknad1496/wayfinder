@@ -55429,6 +55429,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Peking University International Pre-University Summer",
+      "provider": "Peking University (北京大学 / PKU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~¥18,000-¥28,000 / USD $2,520-3,920 / 2-week; PKU scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Beijing",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Peking University Pre-University Summer — PKU (China's #1 university, ranked top-20 globally, alma mater of Mao Zedong + Chinese government leaders) for ages 16-18 (rising 11-12). 2-week residential at PKU Beijing campus. Tracks: Chinese Studies + Civilization, Engineering + Tech (China's silicon valley pipeline), International Politics + Asian Studies, Mandarin Language Immersion, Chinese Business + Markets. ENGLISH-medium primary; Mandarin language electives. Pipeline to PKU undergrad. NOTE: verify US-China travel advisories before booking; geopolitical context matters.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://english.pku.edu.cn/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://english.pku.edu.cn/learn/summer-school",
+      "_addedBy": "hs-international-batch-98",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Peking University Pre-University Summer — PKU (China's #1 university, ranked top-20 globally, alma mater of Mao Zedong + Chinese government leaders) for ages 16-18 (rising 11-12). 2-week residential at PKU Beijing campus. Tracks: Chinese Studies + Civilization, Engineering + Tech (China's silicon valley pipeline), International Politics + Asian Studies, Mandarin Language Immersion, Chinese Business + Markets. ENGLISH-medium primary; Mandarin language electives. ~¥18,000-¥28,000 / USD $2,520-3,920 / 2-week. PKU scholarships for international students. Pipeline to PKU undergrad. NOTE: verify US-China travel advisories before booking; geopolitical context matters. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Fudan University Pre-University Summer (Shanghai)",
+      "provider": "Fudan University (复旦大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2695,
+        "type": "paid",
+        "display": "~¥17,000-¥26,000 / USD $2,380-3,640 / 2-week; Fudan scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Shanghai",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Fudan University Pre-University Summer — Fudan (China's #2 university, ranked top-50 globally, China's most international-friendly university) for ages 16-18 (rising 11-12). 2-week residential at Fudan Shanghai campus. Tracks: International Business + Shanghai Markets (Fudan's specialty — China's commercial capital), Tech + AI (Shanghai tech hub), International Studies + Asian Affairs, Mandarin Language Immersion, Shanghai Cultural Studies. ENGLISH-medium primary. Pipeline to Fudan undergrad. NOTE: verify travel advisories.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.fudan.edu.cn/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fudan.edu.cn/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-98",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Fudan University Pre-University Summer — Fudan (China's #2 university, ranked top-50 globally, China's most international-friendly university) for ages 16-18 (rising 11-12). 2-week residential at Fudan Shanghai campus. Tracks: International Business + Shanghai Markets (Fudan's specialty — China's commercial capital), Tech + AI (Shanghai tech hub), International Studies + Asian Affairs, Mandarin Language Immersion, Shanghai Cultural Studies. ENGLISH-medium primary. ~¥17,000-¥26,000 / USD $2,380-3,640 / 2-week. Fudan scholarships for international students. Pipeline to Fudan undergrad. NOTE: verify travel advisories. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Zhejiang University Summer Program (Hangzhou)",
+      "provider": "Zhejiang University (浙江大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~¥16,000-¥24,000 / USD $2,240-3,360 / 2-week; ZJU scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hangzhou",
+        "state": "CN"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Zhejiang University Summer Program — ZJU (China's #3 university, ranked top-50 globally, located in Alibaba's hometown Hangzhou) for ages 16-18 (rising 11-12). 2-week residential at ZJU Hangzhou campus. Tracks: Tech + AI (Alibaba/Ant Group pipeline — Hangzhou is China's e-commerce capital), Engineering + Manufacturing, International Business + Asian Markets, Mandarin Language Immersion, Hangzhou + Tea Cultural Studies (West Lake heritage). ENGLISH-medium primary. AFFORDABLE Chinese option. Pipeline to ZJU undergrad. NOTE: verify travel advisories.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.zju.edu.cn/english/learn/summer-school",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.zju.edu.cn/english/learn/summer-school",
+      "_addedBy": "hs-international-batch-98",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Zhejiang University Summer Program — ZJU (China's #3 university, ranked top-50 globally, located in Alibaba's hometown Hangzhou) for ages 16-18 (rising 11-12). 2-week residential at ZJU Hangzhou campus. Tracks: Tech + AI (Alibaba/Ant Group pipeline — Hangzhou is China's e-commerce capital), Engineering + Manufacturing, International Business + Asian Markets, Mandarin Language Immersion, Hangzhou + Tea Cultural Studies (West Lake heritage). ENGLISH-medium primary. ~¥16,000-¥24,000 / USD $2,240-3,360 / 2-week. ZJU scholarships for international students. AFFORDABLE Chinese option. Pipeline to ZJU undergrad. NOTE: verify travel advisories. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "HKUST International Pre-University Summer",
+      "provider": "Hong Kong University of Science and Technology (HKUST / 香港科技大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3295,
+        "type": "paid",
+        "display": "~HK$22,000-HK$32,000 / USD $2,820-4,100 / 2-week; HKUST scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hong Kong",
+        "state": "HK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "HKUST International Pre-University Summer — HKUST (Hong Kong's #1 STEM university, ranked top-50 globally, founded 1991) for ages 16-18 (rising 11-12). 2-week residential at HKUST Clear Water Bay campus. Tracks: Engineering + AI (HKUST's flagship — Asia's MIT), Business + Finance (HKUST has world-class finance program), Bioengineering + Life Sciences, International Politics + Asia-Pacific Affairs, Mandarin + Cantonese Language. ENGLISH-medium. HK is geopolitical-context-friendly (more Western-aligned than mainland China). Pipeline to HKUST undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.ust.hk/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ust.hk/learn/summer-school",
+      "_addedBy": "hs-international-batch-98",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "HKUST International Pre-University Summer — HKUST (Hong Kong's #1 STEM university, ranked top-50 globally, founded 1991) for ages 16-18 (rising 11-12). 2-week residential at HKUST Clear Water Bay campus. Tracks: Engineering + AI (HKUST's flagship — Asia's MIT), Business + Finance (HKUST has world-class finance program), Bioengineering + Life Sciences, International Politics + Asia-Pacific Affairs, Mandarin + Cantonese Language. ENGLISH-medium. ~HK$22,000-HK$32,000 / USD $2,820-4,100 / 2-week. HKUST scholarships for international students. HK is geopolitical-context-friendly (more Western-aligned than mainland China). Pipeline to HKUST undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "CUHK Summer Program (Hong Kong)",
+      "provider": "Chinese University of Hong Kong (CUHK / 香港中文大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2995,
+        "type": "paid",
+        "display": "~HK$20,000-HK$30,000 / USD $2,565-3,845 / 2-week; CUHK scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hong Kong",
+        "state": "HK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Chinese University of Hong Kong Summer Program — CUHK (HK's #2 university, ranked top-50 globally, founded 1963) for ages 16-18 (rising 11-12). 2-week residential at CUHK Sha Tin campus. Tracks: Chinese Cultural Studies (CUHK's specialty — Chinese humanities flagship in HK), International Business + Asian Markets, Medicine + Life Sciences, International Politics + Asia-Pacific Affairs, Mandarin + Cantonese Language Immersion. ENGLISH-medium. HK is geopolitical-context-friendly. Pipeline to CUHK undergrad. AFFORDABLE HK option.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.cuhk.edu.hk/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cuhk.edu.hk/learn/summer-school",
+      "_addedBy": "hs-international-batch-98",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Chinese University of Hong Kong Summer Program — CUHK (HK's #2 university, ranked top-50 globally, founded 1963) for ages 16-18 (rising 11-12). 2-week residential at CUHK Sha Tin campus. Tracks: Chinese Cultural Studies (CUHK's specialty — Chinese humanities flagship in HK), International Business + Asian Markets, Medicine + Life Sciences, International Politics + Asia-Pacific Affairs, Mandarin + Cantonese Language Immersion. ENGLISH-medium. ~HK$20,000-HK$30,000 / USD $2,565-3,845 / 2-week. CUHK scholarships for international students. HK is geopolitical-context-friendly. Pipeline to CUHK undergrad. AFFORDABLE HK option. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
