@@ -53115,6 +53115,222 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "American University of Beirut (AUB) Summer Programs",
+      "provider": "American University of Beirut (Lebanon)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~USD $2,200-3,500/3-week; AUB international scholarships available; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Beirut",
+        "state": "LB"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "American University of Beirut (AUB) Summer Programs — Lebanon's premier US-curriculum university (founded 1866) for ages 16-18 (rising 11+). 3-week residential at AUB campus (West Beirut). Tracks: Pre-Medicine, Engineering, Architecture + Urban Studies (Beirut's stunning Mediterranean architecture), Arabic Language + Middle East Studies, Pre-Business. ENGLISH-medium primary. CONSIDER GEOPOLITICAL FACTORS — verify US-Lebanon travel advisories. Beirut has been historically Mediterranean cultural capital but situation can change.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.aub.edu.lb/learn/summer-school",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.aub.edu.lb/learn/summer-school",
+      "_addedBy": "international-me-africa-batch-86",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "American University of Beirut (AUB) Summer Programs — Lebanon's premier US-curriculum university (founded 1866) for ages 16-18 (rising 11+). 3-week residential at AUB campus (West Beirut). Tracks: Pre-Medicine, Engineering, Architecture + Urban Studies (Beirut's stunning Mediterranean architecture), Arabic Language + Middle East Studies, Pre-Business. ENGLISH-medium primary. ~USD $2,200-3,500/3-week. AUB international scholarships available. **Verify US-Lebanon travel advisories before booking** — Beirut historically Mediterranean cultural capital but situation can change.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Zayed University UAE Summer Programs",
+      "provider": "Zayed University (United Arab Emirates)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~AED 8,000-12,000/3-week (USD $2,180-3,270); Zayed scholarships for international students; ENGLISH-medium primary; Arabic instruction option"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Abu Dhabi + Dubai",
+        "state": "AE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Zayed University Summer Programs — UAE's flagship federal university for ages 16-18 (rising 11+). 3-week residential between Abu Dhabi + Dubai campuses. Tracks: Pre-Business + Finance (UAE's growing financial center), Pre-Medicine, Engineering, Arabic Language + Middle East Cultural Studies, Sustainable Cities (Masdar City visit). ENGLISH-medium primary. Strong fit for kids interested in MENA region OR international business. UAE is most accessible Middle Eastern destination for US visitors.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.zu.ac.ae/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.zu.ac.ae/learn/summer-school",
+      "_addedBy": "international-me-africa-batch-86",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Zayed University Summer Programs — UAE's flagship federal university for ages 16-18 (rising 11+). 3-week residential between Abu Dhabi + Dubai campuses. Tracks: Pre-Business + Finance (UAE's growing financial center), Pre-Medicine, Engineering, Arabic Language + Middle East Cultural Studies, Sustainable Cities (Masdar City visit). ENGLISH-medium primary. ~AED 8,000-12,000/3-week (USD $2,180-3,270). Zayed scholarships for international students. UAE is most accessible Middle Eastern destination for US visitors.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Africa Code Week (Free Continent-Wide K-12 Coding)",
+      "provider": "SAP / Africa Code Week",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for K-12 participants — SAP-funded continent-wide; international US students welcome via online programs"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "38 African countries + online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Africa Code Week — SAP-funded coding initiative for K-12 across all 38 African countries. 100% FREE programs for ages 8-18. Tracks: Scratch + Block-based coding for K-5, Python + JavaScript for HS, mobile app development. International US students welcome via online programs. UNDER-known by US families with African heritage OR families wanting authentic global youth-tech connection. Annual coding week in Oct PLUS year-round programs.",
+      "deadline": "Year-round; rolling enrollment",
+      "url": "https://africacodeweek.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://africacodeweek.org",
+      "_addedBy": "international-me-africa-batch-86",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Africa Code Week — SAP-funded coding initiative for K-12 across all 38 African countries. 100% FREE programs for ages 8-18. Tracks: Scratch + Block-based coding for K-5, Python + JavaScript for HS, mobile app development. International US students welcome via online programs. UNDER-KNOWN by US families with African heritage OR families wanting authentic global youth-tech connection. Annual coding week in Oct PLUS year-round programs.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Yad Vashem International School (Israel)",
+      "provider": "Yad Vashem International School for Holocaust Studies",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted educators + students via Yad Vashem International School scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Jerusalem",
+        "state": "IL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Yad Vashem International School for Holocaust Studies (Jerusalem) — world's preeminent center for Holocaust education. Summer programs for ages 16-18 (rising 11+). 1-2 week residential at Yad Vashem campus + Jerusalem cultural sites. Tracks: Holocaust History + Education, Israeli Society + Politics, Survivor Testimony Documentation. 100% FREE for accepted students via Yad Vashem scholarships. CONSIDER GEOPOLITICAL FACTORS — verify US-Israel travel advisories. Powerful programming for Jewish heritage families OR civic-engaged kids studying genocide prevention.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.yadvashem.org/learn/international-school-for-holocaust-studies",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.yadvashem.org/learn/international-school-for-holocaust-studies",
+      "_addedBy": "international-me-africa-batch-86",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Yad Vashem International School for Holocaust Studies (Jerusalem) — world's preeminent center for Holocaust education. Summer programs for ages 16-18 (rising 11+). 1-2 week residential at Yad Vashem campus + Jerusalem cultural sites. Tracks: Holocaust History + Education, Israeli Society + Politics, Survivor Testimony Documentation. 100% FREE for accepted students via Yad Vashem scholarships. **Verify US-Israel travel advisories before booking** — geopolitical situation can affect travel feasibility. Powerful programming for Jewish heritage families OR civic-engaged kids studying genocide prevention.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Maker's Asylum India Summer Programs (Mumbai)",
+      "provider": "Maker's Asylum India",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~INR ₹100,000-150,000/3-week (USD $1,200-1,800); Maker's Asylum scholarships for international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Mumbai",
+        "state": "IN"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Maker's Asylum India — Mumbai-based open-source maker community for ages 13-18 (rising 9+). 3-week residential at Mumbai maker space. Tracks: Robotics + IoT, 3D Printing + Manufacturing, Sustainability + Circular Design (Mumbai's pollution + water-scarcity solutions), Indian Cultural Studies + Hindi Language. ENGLISH-medium primary; Hindi instruction option. UNDER-known opportunity for STEM-track US kids interested in global development + maker culture in emerging markets. India is world's 5th largest economy.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://makersasylum.com/learn/summer-international",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://makersasylum.com/learn/summer-international",
+      "_addedBy": "international-me-africa-batch-86",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Maker's Asylum India — Mumbai-based open-source maker community for ages 13-18 (rising 9+). 3-week residential at Mumbai maker space. Tracks: Robotics + IoT, 3D Printing + Manufacturing, Sustainability + Circular Design (Mumbai's pollution + water-scarcity solutions), Indian Cultural Studies + Hindi Language. ENGLISH-medium primary; Hindi instruction option. ~INR ₹100,000-150,000/3-week (USD $1,200-1,800). Maker's Asylum scholarships for international students. UNDER-KNOWN opportunity for STEM-track US kids interested in global development + maker culture in emerging markets.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
