@@ -89,3 +89,62 @@ The remaining items in the gap list are still valid (deep brain files now ARE in
 
 ## Files Changed
 - `backend/routes/essays.js` — Added typeof-string guard on essayText; added `creditDeducted` flag tracking; gated catch-block refund on `creditDeducted === true`.
+
+---
+
+## 2026-04-27 — Frontend UX Audit (deep)
+
+**Focus area**: Frontend UX (per the lessons file: "Frontend UX has not yet been audited at depth — schedule it next").
+
+**Scope**: `frontend/index.html` (HTML structure, ARIA, modal hygiene), `frontend/src/app.js` (XSS surfaces, stale ID references, escape consistency), `frontend/src/styles/main.css` (mobile breakpoints).
+
+### Methodology
+1. Static structural pass on `index.html` — counted opening vs. closing tags for all major containers (`div`, `section`, `header`, `footer`, `form`, `button`, etc.) — **all balanced**.
+2. ID-reference cross-check: extracted every `$('id')` call from `app.js` (343 references), compared against every `id="..."` attribute in `index.html` (389 IDs). Surfaced 36 references that don't resolve statically — triaged into "dynamically created at runtime" vs. "stale rename".
+3. ARIA / label cross-check: every `label[for="X"]` resolves to an existing `id="X"`. All `aria-labelledby` / `aria-describedby` / `aria-controls` targets resolve.
+4. XSS surface scan: 149 `innerHTML =` assignments. Spot-checked dynamic interpolations for missing `escapeHtml()` / `_esc()`.
+5. Mobile responsiveness: 18 `@media` blocks; verified 768px breakpoint covers sidebar, modals, welcome screen, messages, topbar; 767px breakpoint covers tool modals (.modal-tool-list, summer camps, volunteer, k12); 600px / 480px / 500px / 400px finer-grain tweaks present.
+
+### Issues Found
+
+| # | Severity | File | Issue | Status |
+|---|----------|------|-------|--------|
+| FUX-1 | HIGH | `frontend/src/app.js` — `getActiveToolContext()` line ~4715 | Essay branch is dead. Gate `$('essaysModal')` is null (renamed `essayView` at line 484). Field IDs `essayType`/`essayTargetSchool`/`essayText` are now `evEssayType`/`evTargetSchool`/`evEssayText`. Score selector `.essay-score-value` is now `.essay-score-num`. Result: David's chat receives no per-tool context whenever the user is on the essay page. `currentPage = 'essays'` is correctly set by `detectCurrentPage()` (which has the OR with `essayView`), but every essay-specific field — type, target school, prompt, word count, score — was dropped. | FIXED |
+| FUX-2 | LOW | `frontend/src/app.js` — same function, internships branch line ~4733 | Read `$('internshipPaid')` — element doesn't exist. The Internships filter dropdown was renamed `internshipCost` (with values 'paid' / 'unpaid'). Code at line 3776-3777 already uses `internshipCost` for the search call, but the David-context capture wasn't updated. Result: paid/unpaid filter never appeared in active-filter context attached to David. | FIXED |
+| FUX-3 | LOW | `frontend/src/app.js` — same function, K-8 fallback block lines ~4771–4776 | Fallback chain `$('scState') \|\| $('summerCampState') \|\| $('summerState')` always returned undefined. Actual K-8 browse filter IDs are `scBrowseState`, `scBrowseGrade`, `scBrowseCategory`, `scBrowseFormat`, `scBrowseCost`, plus `scBrowseRegion` / `scBrowseAppStatus` / `scBrowseStartWindow`. Result: Summer Camps (K-8) context was effectively empty in David context. | FIXED |
+| FUX-4 | INFO | `frontend/src/app.js` — multiple `innerHTML` assignments | Inconsistent escaping: a few error-display paths use `_esc(data.error)` correctly (lines 5320, 5455, 6324, 6953, 7151, 7354), but several sibling lines still interpolate `${e.message}` directly (lines 5033, 5124, 5273, 5399, 5460, 5616, 5713, 6327, 6481). For network/fetch failures `Error.message` is browser-controlled string — practical risk is low, but the inconsistency invites a regression if a future error message ever flows from a server-side string. | NOT FIXED — informational |
+| FUX-5 | INFO | `frontend/index.html` — Google Fonts link (line 129) | `&display=swap` is parsed as a malformed entity by strict HTML5 parsers (one parser warning). Browsers handle it fine; cosmetic only. Could escape as `&amp;display=swap` to silence the parser. | NOT FIXED — cosmetic |
+| FUX-6 | INFO | `frontend/src/app.js` — `welcomeJoinLink` reference line ~1797 | Dead reference: `$('welcomeJoinLink')` returns null because the welcome screen "join with invite" link was removed/renamed. Code is guarded with `if (joinLink)` so no error. Suggest cleanup when the welcome flow is next touched. | NOT FIXED — dead code |
+| FUX-7 | INFO | `frontend/src/app.js` — multi-id fallback chains for K-8 | Several legacy IDs (`scState`, `scCategory`, `summerCampState`, `summerState`, etc.) appear ONLY in `getActiveToolContext()` fallback chains — they don't exist anywhere else in the codebase. After patch FUX-3, these legacy entries are dead. Recommend deleting on next pass once the new IDs prove stable. | NOT FIXED — defer cleanup |
+
+### Fix Details
+
+**FUX-1 + FUX-2 + FUX-3 — patch in `frontend/src/app.js` `getActiveToolContext()`:**
+
+Marker: `REVAMP V2: ESSAY CONTEXT FIX PATCH30` / `REVAMP V2: PATCH30`.
+
+1. **Essay branch:** gate now matches either `essaysModal` (legacy) OR `essayView` (current). Field reads use the `ev*` IDs first, falling back to the legacy IDs. Added `essayPromptPreview` (first 240 chars of the prompt) since the prompt picker is a major part of the new UX. Score selector is now `.essay-score-num, .essay-score-value` (current first, legacy second).
+2. **Internships branch:** added `$('internshipCost')` as the primary read (with `internshipPaid` legacy fallback), plus `internshipFormat` and `internshipRegion` since both are now first-class filters.
+3. **K-8 fallback block:** prepended `scBrowse*` IDs to every fallback chain; added explicit captures for `scBrowseRegion` (USA / International), `scBrowseAppStatus` (deadline filter), and `scBrowseStartWindow` (date filter) — all introduced in patches 23/26 but missing from David context.
+
+### Validation
+- `node -c frontend/src/app.js` — PASS
+- `node -c backend/server.js` — PASS
+- `python3 html5lib parse frontend/index.html` — 1 cosmetic entity warning (FUX-5), no structural errors
+- ID cross-check post-patch: all critical David-context paths now resolve to a valid DOM ID for the live UX.
+
+### Positive Observations
+1. Helmet CSP + sanitized `escapeHtml` (line 1644) + `formatDavidReply()` (line 4896) — David's reply text is escaped before any markdown markers are applied. XSS-safe path even with model-controlled output.
+2. `detectCurrentPage()` already had the `essayView` OR fallback — only `getActiveToolContext()` was stale. The split between page detection and context extraction limits the blast radius of these renames.
+3. Mobile CSS coverage is comprehensive — 18 media queries, with a global-overflow reset at 768px and tool-modal-specific rules at 767px. No horizontal-overflow risk on small viewports.
+4. ARIA hygiene clean — every `label[for]` and `aria-*` reference resolves to an existing ID.
+5. No duplicate IDs in `index.html` (400 unique IDs).
+6. `sanitizeUrl()` prevents `javascript:` / `data:` injection in dynamically-rendered links.
+
+### Files Changed
+- `frontend/src/app.js` — 3 patches inside `getActiveToolContext()`. ~12 lines added, 6 lines modified. No behavior change for the chat pipeline; David context extraction now correctly captures essay / internships / K-8 state.
+
+### Recommended Next Audit Targets
+- Re-audit Auth & Access Control (~2026-05-03 per prior calibration).
+- API Surface monthly cadence (covered 2026-04-25).
+- Open question: ID-reference drift like FUX-1/2/3 happens whenever the HTML is renamed. Worth a once-a-week static check — could be a tiny pre-push linter script (`grep $('X')` in app.js → confirm exists in index.html). Cheap to write, prevents recurrence.

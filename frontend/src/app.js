@@ -4711,26 +4711,30 @@ function getActiveToolContext() {
       if (gs) ctx.activeFilters = 'State: ' + gs;
     }
 
-  // ── Essays ──
-  } else if ($('essaysModal')?.style.display === 'flex') {
+  // ── Essays ── (REVAMP V2: ESSAY CONTEXT FIX PATCH30 — essaysModal renamed to essayView; field IDs ev*; score class essay-score-num)
+  } else if ($('essaysModal')?.style.display === 'flex' || $('essayView')?.style.display === 'flex') {
     ctx.activeTool = 'Essay Reviewer';
-    const essayType = $('essayType')?.value;
-    const school = $('essayTargetSchool')?.value;
-    const text = $('essayText')?.value;
+    const essayType = $('evEssayType')?.value || $('essayType')?.value;
+    const school   = $('evTargetSchool')?.value || $('essayTargetSchool')?.value;
+    const text     = $('evEssayText')?.value || $('essayText')?.value;
+    const prompt   = $('evPrompt')?.value;
     if (essayType) ctx.essayType = essayType;
     if (school) ctx.essaySchool = school;
+    if (prompt) ctx.essayPromptPreview = prompt.slice(0, 240);
     if (text) ctx.essayWordCount = text.trim().split(/\s+/).filter(Boolean).length;
     // Check if results are showing
-    const scoreEl = document.querySelector('.essay-score-value');
+    const scoreEl = document.querySelector('.essay-score-num, .essay-score-value');
     if (scoreEl) ctx.essayScore = scoreEl.textContent.trim();
 
-  // ── Internships ──
+  // ── Internships ── (REVAMP V2: PATCH30 — internshipPaid filter renamed internshipCost)
   } else if ($('internshipsModal')?.style.display === 'flex') {
     ctx.activeTool = 'Internships Database';
     const parts = [];
     const f = $('internshipField')?.value; if (f) parts.push(f);
     const s = $('internshipState')?.value; if (s) parts.push(s);
-    const p = $('internshipPaid')?.value; if (p) parts.push(p);
+    const p = $('internshipCost')?.value || $('internshipPaid')?.value; if (p) parts.push(p);
+    const fmt = $('internshipFormat')?.value; if (fmt) parts.push(fmt);
+    const reg = $('internshipRegion')?.value; if (reg) parts.push('region:' + reg);
     if (parts.length) ctx.activeFilters = parts.join(', ');
 
   // ── Scholarships ──
@@ -4768,12 +4772,16 @@ function getActiveToolContext() {
       const tabBtn = document.querySelector('#summerCampsModal .tab-btn.active, #summerCampsModal [data-tab].active, #summerCampsModal button.active');
       if (tabBtn) ctx.activeTab = (tabBtn.dataset?.tab || tabBtn.textContent || '').trim();
       const sParts = [];
-      const sg = $('scGrade')?.value || $('summerCampGrade')?.value || $('summerGrade')?.value; if (sg) sParts.push('grade:' + sg);
-      const ss = $('scState')?.value || $('summerCampState')?.value || $('summerState')?.value; if (ss) sParts.push('state:' + ss);
+      // REVAMP V2: PATCH30 — actual K-8 filter IDs are scBrowse*; legacy IDs kept as fallback
+      const sg = $('scBrowseGrade')?.value || $('scGrade')?.value || $('summerCampGrade')?.value || $('summerGrade')?.value; if (sg) sParts.push('grade:' + sg);
+      const ss = $('scBrowseState')?.value || $('scState')?.value || $('summerCampState')?.value || $('summerState')?.value; if (ss) sParts.push('state:' + ss);
       const scity = $('scCity')?.value || $('summerCampCity')?.value || $('summerCity')?.value; if (scity) sParts.push('city:' + scity);
-      const sc = $('scCategory')?.value || $('summerCampCategory')?.value; if (sc) sParts.push(sc);
-      const sf = $('scFormat')?.value || $('summerCampFormat')?.value; if (sf) sParts.push(sf);
-      const sb = $('scBudget')?.value || $('summerCampBudget')?.value; if (sb) sParts.push('budget:' + sb);
+      const sc = $('scBrowseCategory')?.value || $('scCategory')?.value || $('summerCampCategory')?.value; if (sc) sParts.push(sc);
+      const sf = $('scBrowseFormat')?.value || $('scFormat')?.value || $('summerCampFormat')?.value; if (sf) sParts.push(sf);
+      const sb = $('scBrowseCost')?.value || $('scBudget')?.value || $('summerCampBudget')?.value; if (sb) sParts.push('cost:' + sb);
+      const sr = $('scBrowseRegion')?.value; if (sr) sParts.push('region:' + sr);
+      const sas = $('scBrowseAppStatus')?.value; if (sas) sParts.push('appStatus:' + sas);
+      const ssw = $('scBrowseStartWindow')?.value; if (ssw) sParts.push('startWindow:' + ssw);
       if (sParts.length) ctx.activeFilters = sParts.join(', ');
       const cal = document.querySelectorAll('#summerCampsModal .calendar-event, #summerCampsModal .week-block, #summerCampsModal [data-camp-week]').length;
       if (cal) ctx.calendarEventCount = cal;

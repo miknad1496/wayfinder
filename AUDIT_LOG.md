@@ -1180,3 +1180,24 @@ Deep audit of the essay review pipeline: `backend/routes/essays.js` (398 lines),
 
 ### Estimated Impact
 The Stripe idempotency bug had been live for an unknown duration. Every Render redeploy reset the in-memory Set, so any Stripe webhook redelivery (transient failures, retries, or even Stripe's normal "redeliver" debug operations) within the post-redeploy window would re-credit credit-pack purchases. Hard to quantify without webhook logs but worth grepping for `addEssayCredits` audit entries in production data to see if any user got double-credited.
+---
+
+## 2026-04-27 — Frontend UX (Full System Audit)
+
+**Focus**: Frontend UX (HTML structure, DOM-ID drift, XSS surfaces, mobile responsiveness).
+
+### Issues Found
+
+| # | Severity | Issue | Status |
+|---|----------|-------|--------|
+| FUX-1 | HIGH | `app.js getActiveToolContext()` essay branch — gates on `$('essaysModal')` (renamed `essayView`) and reads stale field IDs `essayType`/`essayTargetSchool`/`essayText` (renamed `evEssayType`/`evTargetSchool`/`evEssayText`). Score selector `.essay-score-value` is now `.essay-score-num`. David context for essay page was empty. | FIXED |
+| FUX-2 | LOW | Internships context read `$('internshipPaid')` — renamed `internshipCost`. Paid/unpaid filter never appeared in David context. | FIXED |
+| FUX-3 | LOW | K-8 (Summer Camps) context read `scState`/`scGrade`/`scCategory`/`scFormat`/`scBudget` etc. — actual IDs are `scBrowseState` / `scBrowseGrade` / etc. K-8 context never attached. Also missing `scBrowseRegion`, `scBrowseAppStatus`, `scBrowseStartWindow` (introduced patches 23/26). | FIXED |
+
+### Fix Applied
+Single targeted patch to `frontend/src/app.js` `getActiveToolContext()` — `REVAMP V2: ESSAY CONTEXT FIX PATCH30` / `REVAMP V2: PATCH30`. ~12 lines added, 6 modified. No behavior change for chat pipeline. Validated `node -c`.
+
+### Lessons Captured
+- `?.value` fallback chains hide rename drift — flagged as audit anti-pattern.
+- `getActiveToolContext()` should be on a re-check list whenever an HTML rename ships.
+- Recommended a pre-push linter to catch ID-drift at commit time (cost ~30 lines of Node).
