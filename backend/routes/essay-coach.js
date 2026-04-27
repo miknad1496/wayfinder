@@ -13,6 +13,8 @@
  */
 
 import { Router } from 'express';
+/* === REVAMP V2: TIER-GATES DAVID COACH === */
+import { isFreeUser, tierAwareDavidPromptPrefix } from '../services/tier-gates.js';
 import { loadJsonFresh } from '../services/data-loader.js';
 import Anthropic from '@anthropic-ai/sdk';
 import { promises as fs } from 'fs';
@@ -415,6 +417,9 @@ Always be helpful, warm, and action-oriented. End responses with a clear next st
 
 // ─── POST /api/coach/chat ────────────────────────────────────
 router.post('/chat', async (req, res) => {
+  /* === TIER-GATES David tier-aware prompt === */
+  const _isFreeDavid = await isFreeUser(req);
+  const _davidTierPrefix = tierAwareDavidPromptPrefix(_isFreeDavid);
   try {
     // Auth check — David requires login
     const token = req.headers.authorization?.replace('Bearer ', '');
@@ -618,7 +623,7 @@ router.post('/chat', async (req, res) => {
       response = await client.messages.create({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 500,
-        system: systemPrompt,
+        system: (_davidTierPrefix + systemPrompt),
         messages
       }, { signal: controller.signal });
     } finally {

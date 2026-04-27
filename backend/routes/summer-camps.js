@@ -18,6 +18,8 @@ import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 import { chatSLM, isSLMAvailable } from '../services/slm.js';
 import { loadJsonFresh } from '../services/data-loader.js';
+/* === REVAMP V2: TIER-GATES K-8 ROUTES === */
+import { isFreeUser, checkAndConsumeQuota, abridgeBrowseFields, abridgeK8Plan, truncateAskResponse, filterInsightsForTier } from '../services/tier-gates.js';
 
 const GH_RAW = 'https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend';
 
@@ -199,15 +201,28 @@ router.get('/browse', async (req, res) => {
     _scheduleVerifiedDate: p._scheduleVerifiedDate || null,
   }));
 
-  res.json({ count: arr.length, returned: safe.length, results: safe });
+  /* === TIER-GATES /browse === */
+  const isFree = await isFreeUser(req);
+  const teasedResults = isFree ? safe.map(item => abridgeBrowseFields(item, true)) : safe;
+  res.json({
+    count: arr.length,
+    returned: teasedResults.length,
+    results: teasedResults,
+    _tier: isFree ? 'free' : 'pro',
+    _upgradeHint: isFree ? 'Free tier shows broad summer window + truncated notes. Pro unlocks full session weeks + reg dates + scholarship details.' : null,
+  });
 });
 
 // GET /api/summer-camps/insights — curated static content + lazy-fetch fallback
 router.get('/insights', async (req, res) => {
   const data = await loadInsights();
+  /* === TIER-GATES /insights === */
+  const isFree = await isFreeUser(req);
+  const sections = filterInsightsForTier(data.sections || [], isFree);
   res.json({
-    sections: data.sections || [],
+    sections,
     metadata: data.metadata || {},
+    _tier: isFree ? 'free' : 'pro',
   });
 });
 
@@ -228,6 +243,19 @@ router.post('/plan', async (req, res) => {
   } = req.body || {};
 
   if (!grade) return res.status(400).json({ error: 'grade required' });
+
+  /* === TIER-GATES /plan quota === */
+  const isFree = await isFreeUser(req);
+  if (isFree) {
+    const q = await checkAndConsumeQuota(req, 'k8plan');
+    if (!q.allowed) {
+      return res.status(q.reason === 'auth-required' ? 401 : 429).json({
+        error: q.message,
+        reason: q.reason,
+        upgradeUrl: '/pricing',
+      });
+    }
+  }
 
   // Load calibration sections — used by the SECOND parallel call below to
   // produce a free-text "2026 calibration for THIS family" insight. Kept off
@@ -321,9 +349,14 @@ Output: 3-5 sentences of plain text. No headers, no bullet lists, no JSON, no pr
 
     const totalTokens = (planResponse.tokensUsed || 0) + (calResponse?.tokensUsed || 0);
 
+    /* === TIER-GATES /plan abridge output === */
+    const _abridged = abridgeK8Plan(plan, calibrationInsight, isFree);
+
     res.json({
-      plan,
-      calibrationInsight,
+      plan: _abridged.plan,
+      calibrationInsight: _abridged.calibrationInsight,
+      _tier: isFree ? 'free' : 'pro',
+      _upgradeMessage: _abridged.plan && _abridged.plan._upgradeMessage ? _abridged.plan._upgradeMessage : null,
       mode: planResponse.mode,
       calibrationMode: calResponse?.mode || null,
       tokensUsed: totalTokens,
@@ -341,6 +374,19 @@ router.post('/ask', async (req, res) => {
   const { question, grade = '', city = '', state = '' } = req.body || {};
   if (!question || String(question).trim().length < 5) {
     return res.status(400).json({ error: 'question required (at least 5 chars)' });
+  }
+
+  /* === TIER-GATES /ask quota === */
+  const isFreeAsk = await isFreeUser(req);
+  if (isFreeAsk) {
+    const q = await checkAndConsumeQuota(req, 'k8ask');
+    if (!q.allowed) {
+      return res.status(q.reason === 'auth-required' ? 401 : 429).json({
+        error: q.message,
+        reason: q.reason,
+        upgradeUrl: '/pricing',
+      });
+    }
   }
 
   // Load fresh calibration sections (same source as /plan).
@@ -394,10 +440,13 @@ Answer the question directly. No preamble. No "great question!". Just the substa
       response = { text: r.content?.[0]?.text || '', tokensUsed: (r.usage?.input_tokens || 0) + (r.usage?.output_tokens || 0) };
     }
 
+    /* === TIER-GATES /ask truncate === */
+    const finalAnswer = truncateAskResponse(response.text, isFreeAsk);
     res.json({
-      answer: response.text,
+      answer: finalAnswer,
       mode,
       tokensUsed: response.tokensUsed || 0,
+      _tier: isFreeAsk ? 'free' : 'pro',
     });
   } catch (err) {
     console.error('[summer-camps/ask] error:', err.message);
