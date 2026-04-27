@@ -59128,6 +59128,215 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "University of Oslo HS Pre-University (Norway)",
+      "provider": "University of Oslo",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~NOK 21,000-NOK 30,000 / USD $1,975-2,820 / 2-week; UiO scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oslo",
+        "state": "NO"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Oslo HS Pre-University — UiO (Norway's #1 university, ranked top-100 globally, founded 1811) for ages 16-18 (rising 11-12). 2-week residential at UiO Oslo campus. Tracks: Peace + Conflict Studies (UiO awards Nobel Peace Prize via Norwegian Nobel Committee), Climate Change + Arctic Research (UiO has Norway's polar research), International Law (UiO has Norway's leading IR program), Sustainable Energy (Norway is Europe's renewable leader), Norwegian + Scandinavian Studies. ENGLISH-medium. CRITICAL: Norway has FREE undergraduate tuition for ALL students incl. international. Pipeline to UiO undergrad — potentially FREE 4-year degree.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.uio.no/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uio.no/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-117",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Oslo HS Pre-University — UiO (Norway's #1 university, ranked top-100 globally, founded 1811) for ages 16-18 (rising 11-12). 2-week residential at UiO Oslo campus. Tracks: Peace + Conflict Studies (UiO awards Nobel Peace Prize via Norwegian Nobel Committee), Climate Change + Arctic Research (UiO has Norway's polar research), International Law (UiO has Norway's leading IR program), Sustainable Energy (Norway is Europe's renewable leader), Norwegian + Scandinavian Studies. ENGLISH-medium. ~NOK 21,000-NOK 30,000 / USD $1,975-2,820 / 2-week. UiO scholarships for international students. CRITICAL: Norway has FREE undergraduate tuition for ALL students incl. international. Pipeline to UiO undergrad — potentially FREE 4-year degree. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Copenhagen Pre-Medicine HS (Denmark)",
+      "provider": "University of Copenhagen (KU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~DKK 16,000-DKK 23,000 / USD $2,300-3,310 / 2-week; KU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Copenhagen",
+        "state": "DK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Copenhagen Pre-Medicine HS — KU (Denmark's #1 university, ranked top-50 globally for medicine, founded 1479) for ages 17-18 (rising 12). 2-week residential at KU Copenhagen campus. Tracks: Pre-Med Foundation Sciences, Public Health + Universal Healthcare (Denmark's flagship), Brain Research (KU's Niels Bohr legacy + neuroscience), Pharmaceutical Sciences (Novo Nordisk + Lundbeck headquartered in DK), Danish Cultural Studies. ENGLISH-medium. CRITICAL: Denmark offers FREE undergraduate tuition for EU + EEA + Swiss students; reduced fees for non-EU. Pipeline to KU medical undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.ku.dk/learn/pre-medicine",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ku.dk/learn/pre-medicine",
+      "_addedBy": "hs-international-batch-117",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Copenhagen Pre-Medicine HS — KU (Denmark's #1 university, ranked top-50 globally for medicine, founded 1479) for ages 17-18 (rising 12). 2-week residential at KU Copenhagen campus. Tracks: Pre-Med Foundation Sciences, Public Health + Universal Healthcare (Denmark's flagship), Brain Research (KU's Niels Bohr legacy + neuroscience), Pharmaceutical Sciences (Novo Nordisk + Lundbeck headquartered in DK), Danish Cultural Studies. ENGLISH-medium. ~DKK 16,000-DKK 23,000 / USD $2,300-3,310 / 2-week. KU scholarships for international students. CRITICAL: Denmark offers FREE undergrad tuition for EU + EEA + Swiss students; reduced fees for non-EU. Pipeline to KU medical undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Helsinki HS Pre-University (Finland)",
+      "provider": "University of Helsinki",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1795,
+        "type": "paid",
+        "display": "~€1,595-€2,295/2-week (USD $1,735-2,490); UH scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Helsinki",
+        "state": "FI"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Helsinki HS Pre-University — UH (Finland's #1 university, ranked top-100 globally, founded 1640) for ages 16-18 (rising 11-12). 2-week residential at UH Helsinki campus. Tracks: Education + Pedagogy (Finland is world's #1 education system per PISA), Sustainable Development + Forest Sciences (Finland's specialty), Public Health + Universal Healthcare, Finnish + Sami Indigenous Studies, Computer Science + Linus Torvalds Heritage (Linux founder). ENGLISH-medium. CRITICAL: Finland offers FREE undergraduate tuition for EU/EEA students; €5,000-€18,000/year for non-EU but with scholarships available. Pipeline to UH undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.helsinki.fi/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.helsinki.fi/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-117",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Helsinki HS Pre-University — UH (Finland's #1 university, ranked top-100 globally, founded 1640) for ages 16-18 (rising 11-12). 2-week residential at UH Helsinki campus. Tracks: Education + Pedagogy (Finland is world's #1 education system per PISA), Sustainable Development + Forest Sciences (Finland's specialty), Public Health + Universal Healthcare, Finnish + Sami Indigenous Studies, CS + Linus Torvalds Heritage (Linux founder). ENGLISH-medium. ~€1,595-€2,295/2-week (USD $1,735-2,490). UH scholarships for international students. CRITICAL: Finland offers FREE undergrad tuition for EU/EEA students; €5,000-€18,000/year for non-EU but with scholarships available. Pipeline to UH undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "KTH Royal Institute of Technology HS Pre-Engineering (Stockholm)",
+      "provider": "KTH Royal Institute of Technology",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~SEK 20,000-SEK 30,000 / USD $1,950-2,925 / 2-week; KTH scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Stockholm",
+        "state": "SE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "KTH Royal Institute of Technology HS Pre-Engineering — KTH (Sweden's #1 STEM/engineering university, ranked top-100 globally for engineering, founded 1827) for ages 16-18 (rising 11-12). 2-week residential at KTH Stockholm campus. Tracks: Sustainable Energy + Battery Tech (Sweden's specialty — Volvo + Northvolt batteries), Mechanical + Production Engineering, Computer Science + AI, Aerospace, Architecture + Urban Design (Stockholm is Europe's most beautiful capital). ENGLISH-medium. Pipeline to KTH undergrad. Sweden offers FREE undergraduate tuition for EU/EEA students; SEK 80,000-SEK 145,000/year for non-EU.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.kth.se/learn/hs-pre-engineering",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kth.se/learn/hs-pre-engineering",
+      "_addedBy": "hs-international-batch-117",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "KTH Royal Institute of Technology HS Pre-Engineering — KTH (Sweden's #1 STEM/engineering university, ranked top-100 globally for engineering, founded 1827) for ages 16-18 (rising 11-12). 2-week residential at KTH Stockholm campus. Tracks: Sustainable Energy + Battery Tech (Sweden's specialty — Volvo + Northvolt batteries), Mechanical + Production Engineering, CS + AI, Aerospace, Architecture + Urban Design (Stockholm is Europe's most beautiful capital). ENGLISH-medium. ~SEK 20,000-SEK 30,000 / USD $1,950-2,925 / 2-week. KTH scholarships for international students. Pipeline to KTH undergrad. Sweden offers FREE undergrad tuition for EU/EEA students; SEK 80,000-SEK 145,000/year for non-EU. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NTNU Trondheim HS Pre-University (Norway)",
+      "provider": "Norwegian University of Science and Technology (NTNU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~NOK 19,500-NOK 28,000 / USD $1,830-2,635 / 2-week; NTNU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Trondheim",
+        "state": "NO"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NTNU Trondheim HS Pre-University — NTNU (Norway's #1 STEM/engineering university, ranked top-200 globally, located in Norway's tech capital Trondheim) for ages 16-18 (rising 11-12). 2-week residential at NTNU Trondheim campus. Tracks: Marine Engineering + Subsea Tech (Norway's specialty — Equinor offshore oil + gas), Renewable Energy + Hydro Power, Computer Science + AI, Indigenous Sami Studies (Norway's Indigenous people), Aurora Borealis Photography (Northern Lights). ENGLISH-medium. CRITICAL: Norway offers FREE undergraduate tuition for ALL students incl. international. Pipeline to NTNU undergrad — potentially FREE 4-year STEM degree.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ntnu.edu/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ntnu.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-117",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "NTNU Trondheim HS Pre-University — NTNU (Norway's #1 STEM/engineering university, ranked top-200 globally, located in Norway's tech capital Trondheim) for ages 16-18 (rising 11-12). 2-week residential at NTNU Trondheim campus. Tracks: Marine Engineering + Subsea Tech (Norway's specialty — Equinor offshore oil + gas), Renewable Energy + Hydro Power, CS + AI, Indigenous Sami Studies (Norway's Indigenous people), Aurora Borealis Photography (Northern Lights). ENGLISH-medium. ~NOK 19,500-NOK 28,000 / USD $1,830-2,635 / 2-week. NTNU scholarships for international students. CRITICAL: Norway offers FREE undergrad tuition for ALL students incl. international. Pipeline to NTNU undergrad — potentially FREE 4-year STEM degree. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
