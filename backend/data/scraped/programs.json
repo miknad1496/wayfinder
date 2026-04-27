@@ -59547,6 +59547,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Le Cordon Bleu Paris HS Summer",
+      "provider": "Le Cordon Bleu (Paris)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~€3,495-€4,995/2-week (USD $3,795-5,420); Le Cordon Bleu scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Le Cordon Bleu Paris HS Summer — Le Cordon Bleu (the world's #1 culinary school, founded 1895, taught Julia Child + Ina Garten + numerous celebrity chefs) for ages 16-18 (rising 11-12). 2-week residential at Le Cordon Bleu Paris campus (15th arrondissement). Tracks: French Pastry (Le Cordon Bleu's specialty), French Cuisine + Cordon Bleu Diploma Foundation, Wine + Sommelier Studies (French regions), Patisserie + Boulangerie. ENGLISH-medium. UNDER-known by US families as HS option. Pipeline to Le Cordon Bleu Diploma de Cuisine undergrad. College-app strong differentiator for kids interested in culinary careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.cordonbleu.edu/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cordonbleu.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-119",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Le Cordon Bleu Paris HS Summer — Le Cordon Bleu (the world's #1 culinary school, founded 1895, taught Julia Child + Ina Garten + numerous celebrity chefs) for ages 16-18 (rising 11-12). 2-week residential at Le Cordon Bleu Paris campus (15th arrondissement). Tracks: French Pastry (Le Cordon Bleu's specialty), French Cuisine + Cordon Bleu Diploma Foundation, Wine + Sommelier Studies (French regions), Patisserie + Boulangerie. ENGLISH-medium. ~€3,495-€4,995/2-week (USD $3,795-5,420). Le Cordon Bleu scholarships for international students. UNDER-KNOWN by US families as HS option. Pipeline to Le Cordon Bleu Diploma de Cuisine undergrad. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ALMA Italy HS Culinary Summer (Parma)",
+      "provider": "ALMA (La Scuola Internazionale di Cucina Italiana)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2995,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); ALMA scholarships for international students; English + Italian-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Parma",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ALMA Italy HS Culinary Summer — ALMA (Italy's flagship Italian culinary school, founded by Gualtiero Marchesi — the chef who introduced Italian fine dining to the world) for ages 16-18 (rising 11-12). 2-week residential at ALMA Colorno Parma campus. Tracks: Italian Pasta + Risotto (ALMA's specialty — Parma is Parmigiano-Reggiano + Prosciutto di Parma heartland), Italian Cuisine Foundations, Italian Wine + Pairing (Emilia-Romagna wines), Pizza + Bread Making, Gelato + Patisserie Italiana. ENGLISH + ITALIAN-medium. UNDER-known by US families. AFFORDABLE Italian culinary option. Pipeline to ALMA undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.almacuoco.com/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.almacuoco.com/learn/hs-summer",
+      "_addedBy": "hs-international-batch-119",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "ALMA Italy HS Culinary Summer — ALMA (Italy's flagship Italian culinary school, founded by Gualtiero Marchesi — the chef who introduced Italian fine dining to the world) for ages 16-18 (rising 11-12). 2-week residential at ALMA Colorno Parma campus. Tracks: Italian Pasta + Risotto (ALMA's specialty — Parma is Parmigiano-Reggiano + Prosciutto di Parma heartland), Italian Cuisine Foundations, Italian Wine + Pairing (Emilia-Romagna wines), Pizza + Bread Making, Gelato + Patisserie Italiana. ENGLISH + ITALIAN-medium. ~€2,495-€3,795/2-week (USD $2,705-4,115). ALMA scholarships for international students. UNDER-KNOWN by US families. AFFORDABLE Italian culinary option. Pipeline to ALMA undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "École hôtelière de Lausanne HS Summer (Switzerland)",
+      "provider": "École hôtelière de Lausanne (EHL)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 4495,
+        "type": "paid",
+        "display": "~CHF 3,800-CHF 5,500 / USD $4,420-6,400 / 2-week; EHL scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Lausanne",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "École hôtelière de Lausanne HS Summer — EHL (the world's #1 hospitality school, founded 1893, ranked top hospitality school globally for 30+ years) for ages 16-18 (rising 11-12). 2-week residential at EHL Lausanne campus (overlooking Lake Geneva). Tracks: Hotel Management + Operations (EHL's specialty), Luxury Hospitality + Service Excellence, F&B Management, Event Management, Swiss Cuisine + Wine. ENGLISH-medium. ELITE selectivity. Pipeline to EHL undergrad — the gold standard for hospitality industry. Alumni include CEOs of Four Seasons + Hyatt + Mandarin Oriental. College-app GOLD-PLUS for hospitality-track US kids.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.ehl.edu/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ehl.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-119",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "École hôtelière de Lausanne HS Summer — EHL (the world's #1 hospitality school, founded 1893, ranked top hospitality school globally for 30+ years) for ages 16-18 (rising 11-12). 2-week residential at EHL Lausanne campus (overlooking Lake Geneva). Tracks: Hotel Management + Operations (EHL's specialty), Luxury Hospitality + Service Excellence, F&B Management, Event Management, Swiss Cuisine + Wine. ENGLISH-medium. ELITE selectivity. ~CHF 3,800-CHF 5,500 / USD $4,420-6,400 / 2-week. EHL scholarships for international students. Pipeline to EHL undergrad — the gold standard for hospitality industry. Alumni include CEOs of Four Seasons + Hyatt + Mandarin Oriental. College-app GOLD-PLUS for hospitality-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Glion Institute Switzerland HS Summer",
+      "provider": "Glion Institute of Higher Education",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~CHF 3,400-CHF 4,800 / USD $3,955-5,580 / 2-week; Glion scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bulle + London",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Glion Institute Switzerland HS Summer — Glion (top-3 hospitality school globally, founded 1962, behind only EHL) for ages 16-18 (rising 11-12). 2-week residential — kids choose Glion Bulle Switzerland OR Glion London campus. Tracks: International Hospitality, Real Estate + Finance for Hospitality, Marketing + Brand Management, Luxury Brand Strategy. ENGLISH-medium. SELECTIVE. Differentiation vs EHL — Glion has stronger luxury brand focus. Pipeline to Glion undergrad. Strong fit for kids interested in international hospitality + luxury careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.glion.edu/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.glion.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-119",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Glion Institute Switzerland HS Summer — Glion (top-3 hospitality school globally, founded 1962, behind only EHL) for ages 16-18 (rising 11-12). 2-week residential — kids choose Glion Bulle Switzerland OR Glion London campus. Tracks: International Hospitality, Real Estate + Finance for Hospitality, Marketing + Brand Management, Luxury Brand Strategy. ENGLISH-medium. SELECTIVE. ~CHF 3,400-CHF 4,800 / USD $3,955-5,580 / 2-week. Glion scholarships for international students. Differentiation vs EHL — Glion has stronger luxury brand focus. Pipeline to Glion undergrad. Strong fit for international hospitality + luxury careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Les Roches Switzerland HS Summer",
+      "provider": "Les Roches Global Hospitality Education",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3795,
+        "type": "paid",
+        "display": "~CHF 3,200-CHF 4,600 / USD $3,725-5,350 / 2-week; Les Roches scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Crans-Montana",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Les Roches Switzerland HS Summer — Les Roches (top-5 hospitality school globally, located in luxury Swiss ski resort Crans-Montana) for ages 16-18 (rising 11-12). 2-week residential at Les Roches Crans-Montana campus. Tracks: Hospitality Management, Luxury Resort + Spa Management, Wellness + Spa Industry, Asian Hospitality (Les Roches has Marbella Spain + Shanghai China campuses), Sports + Recreation Management. ENGLISH-medium. AFFORDABLE Swiss hospitality option. Differentiation vs EHL/Glion — Les Roches has unique resort + ski focus given Crans-Montana location. Pipeline to Les Roches undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.lesroches.edu/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lesroches.edu/learn/hs-summer",
+      "_addedBy": "hs-international-batch-119",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Les Roches Switzerland HS Summer — Les Roches (top-5 hospitality school globally, located in luxury Swiss ski resort Crans-Montana) for ages 16-18 (rising 11-12). 2-week residential at Les Roches Crans-Montana campus. Tracks: Hospitality Management, Luxury Resort + Spa Management, Wellness + Spa Industry, Asian Hospitality (Les Roches has Marbella Spain + Shanghai China campuses), Sports + Recreation Management. ENGLISH-medium. ~CHF 3,200-CHF 4,600 / USD $3,725-5,350 / 2-week. Les Roches scholarships for international students. AFFORDABLE Swiss hospitality option. Differentiation vs EHL/Glion — Les Roches has unique resort + ski focus given Crans-Montana location. Pipeline to Les Roches undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
