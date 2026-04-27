@@ -42,6 +42,19 @@ const INSIGHTS_PATH = path.join(__dirname, '..', 'data', 'scraped', 'summer-camp
 
 const router = express.Router();
 
+// REVAMP V2: K8 REGION FILTER PATCH26 — US state codes for region filter (matches patch25 set)
+const _US_STATES = new Set([
+  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS',
+  'KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY',
+  'NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV',
+  'WI','WY','DC','PR','VI','GU','AS','MP','ALL'
+]);
+function _isUSStateK8(code) {
+  if (!code) return false;
+  return _US_STATES.has(String(code).toUpperCase());
+}
+
+
 let claudeClient = null;
 function getClaude() {
   if (claudeClient) return claudeClient;
@@ -155,7 +168,13 @@ router.get('/browse', async (req, res) => {
   });
 
   /* === REVAMP V2: K-8 DATE FILTERS === */
-  const { grade, category, state, format, cost, search, appStatus, startWindow } = req.query;
+  const { grade, category, state, format, cost, search, appStatus, startWindow, region } = req.query;
+  // REVAMP V2: K8 REGION FILTER PATCH26
+  if (region === 'us') {
+    arr = arr.filter(p => _isUSStateK8(p.location?.state));
+  } else if (region === 'international') {
+    arr = arr.filter(p => p.location?.state && !_isUSStateK8(p.location.state));
+  }
   if (grade === 'elementary') {
     arr = arr.filter(p => (p.eligibility?.grades || []).map(String).some(g => ES.includes(g)));
   } else if (grade === 'middle') {

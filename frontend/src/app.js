@@ -5593,6 +5593,7 @@ async function searchSCBrowse() {
   const q = document.getElementById('scBrowseSearch').value.trim();
   if (grade) params.set('grade', grade);
   if (cat) params.set('category', cat);
+  const region = document.getElementById('scBrowseRegion')?.value || ''; if (region) params.set('region', region); /* REVAMP V2: K8 REGION FILTER PATCH26 */
   if (state) params.set('state', state);
   if (fmt) params.set('format', fmt);
   if (cost === 'free') params.set('cost', 'free');
