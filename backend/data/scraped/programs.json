@@ -37765,7 +37765,13 @@
       "scope": "national",
       "scholarshipAid": "Outschool Cares scholarship program may apply (Connected Camps lists on Outschool); state Education Savings Account funds (AZ/FL/AR) usable through Outschool",
       "registrationUrl": "https://outschool.com/teachers/Connected-Camps",
-      "howToStart": "Browse Connected Camps storefront on Outschool to see live pricing and current cohort availability, OR join the FREE Kid Club Minecraft Server first to test fit before subscribing."
+      "howToStart": "Browse Connected Camps storefront on Outschool to see live pricing and current cohort availability, OR join the FREE Kid Club Minecraft Server first to test fit before subscribing.",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Year-round online learning programs for tech-savvy kids ages 8-13: Minecraft Builder's Club + Survival Club, Girls' versions, Roblox Gaming Club, Overwatch Club (ages 9-14), Smash Bros Club. Sold per session/week via Outschool — typical $20-40/session, weekly tracks $80-150. Free Kid Club Minecraft Server is 100% free, separate. Year-round enrollment with new sessions starting weekly.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Khan Academy Kids — Free Early Learning App (Ages 2-8)",
@@ -38365,7 +38371,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Beast Academy = K-5 problem-solving math (online sub or print books). AoPS Online = grade 5+ structured courses, MATHCOUNTS + AMC prep. AoPS Academy = in-person at 15 US metros (Bay Area, Seattle Eastside, NYC, LA, Chicago, DC, Boston, etc.). Pricing: Beast ~$15/mo or $99/yr; AoPS Online courses ~$300-600/term; AoPS Academy summer intensives ~$400-700/wk. Rolling year-round; summer intensives book by April. Selective MATHCOUNTS Mathletes track for top scorers.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Khan Academy + Khan Academy Kids (free)",
@@ -39609,7 +39624,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE premier US middle school math competition since 1983. Teams of 4 from each school + individual students compete chapter → state → national. Algebra/geometry/number theory/combinatorics problems. National finals: 224 students compete for $20K Raytheon scholarship + Lockheed Martin gold medals. Schedule: Coaching Sep-Jan; chapter competitions February; state March; nationals May. Coaches need MATHCOUNTS School Handbook. Apply at mathcounts.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "VEX IQ Challenge (elementary + middle school robotics)",
@@ -41499,7 +41520,16 @@
       "scholarshipAid": "Not posted at corporate level — many franchises partner with parks & rec departments that subsidize tuition for residents.",
       "registrationUrl": "https://www.bricks4kidz.com/find-a-location/",
       "howToStart": "Find local franchise via bricks4kidz.com Locations, register directly with the franchise or check parks-and-rec catalog.",
-      "dates": "Summer schedule varies by franchise"
+      "dates": "Summer schedule varies by franchise",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "LEGO building day camps for ages 5-14 — engineering, architecture, robotics, coding, video game design, stop-motion. Half-day options 9am-noon or 1pm-4pm Mon-Fri. NEW for 2026: 'choose your own adventure' lets each camper pick a daily LEGO challenge. ~$200-300/wk by location. 200+ franchise locations nationwide; book through local site (find at bricks4kidz.com). Existing deadline Aug 15 covers later sessions; popular early-summer weeks fill spring.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Create & Learn Online Summer Coding & STEM Classes",
@@ -42766,7 +42796,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.moems.org/pages/about-the-program"
+      "_source": "https://www.moems.org/pages/about-the-program",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "5 monthly problem-solving contests Nov-Mar for Elementary (grades 4-6) + Middle School (6-8) divisions. Up to 35 students per team. Schools, homeschool co-ops, or after-school programs enroll teams; not individual sign-up. Cumulative scoring across 5 contests; top 2% receive Gold Pin awards. 2026-27 enrollment opens May 2026; contests Nov 2026 – March 2027. ~$120/team enrollment fee covers all 5 contests + materials. Apply at moems.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "KiwiCo Subscription Crates (Hands-On STEM/Art Kits, Ages 5-16+)",
