@@ -348,7 +348,13 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.engr.washington.edu/k12"
+      "_source": "https://www.engr.washington.edu/k12",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "single-day",
+      "scheduleNotes": "FREE annual one-day open-house event at UW College of Engineering — typically late January / early February. Hands-on demonstrations across all engineering departments (aerospace, bioengineering, chemical, civil, electrical, computer, industrial, materials, mechanical). Free + open to public; thousands of visitors. Great fit for K-8 kids exploring engineering interest. Subscribe to UW Engineering newsletter for next-year date announcement (typically posted Sep-Oct). engr.washington.edu.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "UW Engineering Academy",
@@ -577,7 +583,13 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://robinsoncenter.uw.edu/"
+      "_source": "https://robinsoncenter.uw.edu/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "School-year Saturday classes at UW for academically-talented K-8 students (not a summer program). 8-week sessions Fall + Winter + Spring. Subjects vary: math, science, writing, engineering, social studies, arts. Eligibility: standardized testing (CogAT, MAP, etc.) at or above 95th percentile typically required. ~$300-450 per 8-week session; financial aid available. Apply via Robinson Center 1-2 months before session start. depts.washington.edu/cscy/programs.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "UW Youth & Teen Programs",
@@ -627,7 +639,16 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
+      "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "UW umbrella for summer + year-round youth programming across multiple campus departments. Summer offerings include sports camps (UW Husky Camps), academic enrichment (Robinson Center Summer Stretch), engineering (Engineering Academy for Youth), music/arts (UW School of Music summer programs). Typical summer window late Jun – mid-Aug. Pricing varies by program (sports $300-700/wk, academic $500-2,500/wk). Some programs offer financial aid; check individual program pages. depts.washington.edu/youth.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Washington MESA College Prep Program",
@@ -677,7 +698,13 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.washington.edu/omad/washington-mesa/college-prep-program/"
+      "_source": "https://www.washington.edu/omad/washington-mesa/college-prep-program/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE multi-year STEM enrichment + college prep pipeline for underrepresented students (low-income, first-generation, racial/ethnic minorities) in WA. Grades 6-12. After-school + Saturday + summer programming: math/science tutoring, statewide STEM competitions, college visits, mentorship. UW Office of Minority Affairs partner program. Year-round enrollment via local MESA chapter at school. Apply at mesa.washington.edu.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Destination Science Summer Camps — Seattle",
@@ -2192,7 +2219,16 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/departments/expanded-learning/"
+      "_source": "https://www.seattleschools.org/departments/expanded-learning/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE 6-week summer enrichment for SPS students who are at or below 60th percentile in reading or math. Mon-Fri, full-day. Includes academic enrichment + STEAM + recreation + breakfast/lunch. Held at multiple SPS schools — kids attend their home school's site. Existing deadline May 1; sometimes extends rolling into June if seats remain. Check seattleschools.org/expanded-learning. Typical mid-July through mid-August; some schools start late June. Targeted at students who would benefit most from summer learning continuity.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Seattle University AI for Equity Pre-College Program",
