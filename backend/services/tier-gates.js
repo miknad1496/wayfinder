@@ -5,7 +5,68 @@
 
 import { verifyToken } from './auth.js';
 
-const usageMap = new Map(); // userKey → { k8PlanMonth, k8PlanCount, k8AskDay, k8AskCount }
+/* === REVAMP V2: QUOTA PERSISTENT STORAGE === */
+// Persistent quota tracker — backs free-tier monthly + daily quotas with a
+// JSON file so counters survive Render redeploys. Replaces the in-memory
+// Map from patch19. Atomic writes (tmp + rename) and per-user locks keep
+// concurrent calls correct.
+
+import { promises as _fsP } from 'fs';
+import { join as _join, dirname as _dirname } from 'path';
+import { fileURLToPath as _fileURLToPath } from 'url';
+
+const __qFilename = _fileURLToPath(import.meta.url);
+const __qDirname = _dirname(__qFilename);
+const QUOTA_FILE = _join(__qDirname, '..', 'data', 'users', '_quota-tracker.json');
+
+let _quotaCache = null;          // in-memory mirror; loaded lazily
+let _quotaLoaded = false;
+const _quotaLocks = new Map();   // per-userKey serialization
+
+async function _ensureQuotaLoaded() {
+  if (_quotaLoaded) return;
+  try {
+    const raw = await _fsP.readFile(QUOTA_FILE, 'utf-8');
+    _quotaCache = JSON.parse(raw);
+    if (!_quotaCache || typeof _quotaCache !== 'object') _quotaCache = {};
+  } catch (e) {
+    if (e && e.code !== 'ENOENT') {
+      console.warn('[tier-gates] quota file read failed (initializing empty):', e.message);
+    }
+    _quotaCache = {};
+  }
+  _quotaLoaded = true;
+}
+
+async function _persistQuotaCache() {
+  if (!_quotaCache) return;
+  const tmp = QUOTA_FILE + '.tmp';
+  try {
+    await _fsP.mkdir(_dirname(QUOTA_FILE), { recursive: true });
+    await _fsP.writeFile(tmp, JSON.stringify(_quotaCache, null, 2));
+    await _fsP.rename(tmp, QUOTA_FILE);
+  } catch (e) {
+    // Fail-open: if persistence fails, we already updated _quotaCache in memory
+    // so the request succeeds. Next persist attempt will retry.
+    console.warn('[tier-gates] quota persist failed (continuing):', e.message);
+  }
+}
+
+async function _withQuotaLock(userKey, fn) {
+  const prev = _quotaLocks.get(userKey) || Promise.resolve();
+  let release;
+  const next = new Promise(r => { release = r; });
+  _quotaLocks.set(userKey, prev.then(() => next));
+  await prev;
+  try {
+    return await fn();
+  } finally {
+    release();
+    if (_quotaLocks.get(userKey) === prev.then(() => next)) {
+      _quotaLocks.delete(userKey);
+    }
+  }
+}
 
 const FREE_LIMITS = {
   k8PlansPerMonth: 1,
@@ -54,40 +115,46 @@ export async function checkAndConsumeQuota(req, kind) {
   }
 
   const userKey = user.id || user.email;
-  let entry = usageMap.get(userKey);
-  if (!entry) { entry = {}; usageMap.set(userKey, entry); }
+  await _ensureQuotaLoaded();
 
-  const now = new Date();
-  const monthKey = now.toISOString().slice(0, 7);
-  const dayKey = now.toISOString().slice(0, 10);
+  return _withQuotaLock(userKey, async () => {
+    let entry = _quotaCache[userKey];
+    if (!entry) { entry = {}; _quotaCache[userKey] = entry; }
 
-  if (kind === 'k8plan') {
-    if (entry.k8PlanMonth !== monthKey) { entry.k8PlanMonth = monthKey; entry.k8PlanCount = 0; }
-    if (entry.k8PlanCount >= FREE_LIMITS.k8PlansPerMonth) {
-      return {
-        allowed: false,
-        reason: 'monthly-quota',
-        message: 'You\'ve used your 1 free plan this month. Upgrade to Pro ($25/mo) for unlimited plans + full output (calibration insight, all specialty picks, scholarship guidance).',
-        remaining: 0,
-      };
+    const now = new Date();
+    const monthKey = now.toISOString().slice(0, 7);
+    const dayKey = now.toISOString().slice(0, 10);
+
+    if (kind === 'k8plan') {
+      if (entry.k8PlanMonth !== monthKey) { entry.k8PlanMonth = monthKey; entry.k8PlanCount = 0; }
+      if (entry.k8PlanCount >= FREE_LIMITS.k8PlansPerMonth) {
+        return {
+          allowed: false,
+          reason: 'monthly-quota',
+          message: 'You\'ve used your 1 free plan this month. Upgrade to Pro ($25/mo) for unlimited plans + full output (calibration insight, all specialty picks, scholarship guidance).',
+          remaining: 0,
+        };
+      }
+      entry.k8PlanCount++;
+      await _persistQuotaCache();
+      return { allowed: true, remaining: FREE_LIMITS.k8PlansPerMonth - entry.k8PlanCount };
     }
-    entry.k8PlanCount++;
-    return { allowed: true, remaining: FREE_LIMITS.k8PlansPerMonth - entry.k8PlanCount };
-  }
-  if (kind === 'k8ask') {
-    if (entry.k8AskDay !== dayKey) { entry.k8AskDay = dayKey; entry.k8AskCount = 0; }
-    if (entry.k8AskCount >= FREE_LIMITS.k8AsksPerDay) {
-      return {
-        allowed: false,
-        reason: 'daily-quota',
-        message: 'You\'ve used your 3 free questions today. Upgrade to Pro for unlimited Q&A + longer responses (250-400 words).',
-        remaining: 0,
-      };
+    if (kind === 'k8ask') {
+      if (entry.k8AskDay !== dayKey) { entry.k8AskDay = dayKey; entry.k8AskCount = 0; }
+      if (entry.k8AskCount >= FREE_LIMITS.k8AsksPerDay) {
+        return {
+          allowed: false,
+          reason: 'daily-quota',
+          message: 'You\'ve used your 3 free questions today. Upgrade to Pro for unlimited Q&A + longer responses (250-400 words).',
+          remaining: 0,
+        };
+      }
+      entry.k8AskCount++;
+      await _persistQuotaCache();
+      return { allowed: true, remaining: FREE_LIMITS.k8AsksPerDay - entry.k8AskCount };
     }
-    entry.k8AskCount++;
-    return { allowed: true, remaining: FREE_LIMITS.k8AsksPerDay - entry.k8AskCount };
-  }
-  return { allowed: true };
+    return { allowed: true };
+  });
 }
 
 /** Strip session-level fields + truncate scheduleNotes for free users (browse cards). */
