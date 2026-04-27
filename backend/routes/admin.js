@@ -1057,11 +1057,55 @@ router.all('/grinder-write', async (req, res) => {
       parents: [baseCommitSha],
     });
 
-    // 9. Update branch ref
-    await gh('PATCH', '/repos/' + owner + '/' + repoName + '/git/refs/heads/' + branch, {
-      sha: newCommit.sha,
-      force: false,
-    });
+    // REVAMP V2: GRINDER-WRITE NO-FORCE-PUSH PATCH27
+    // 9. Update branch ref — explicit fetch so we can capture HTTP 422 (non-fast-forward
+    //    = race detected: branch tip moved between our getRef and our PATCH). On 422
+    //    we surface 409 Conflict with retriable=true so submit-nourishment retries
+    //    the whole batch with a fresh base. We also do a POST-WRITE VERIFY to detect
+    //    any case where PATCH appeared to succeed but the tip is not actually our
+    //    newCommit.sha (defensive — covers any GitHub eventual-consistency edge case).
+    const _refUpdateResp = await fetch(
+      'https://api.github.com/repos/' + owner + '/' + repoName + '/git/refs/heads/' + branch,
+      {
+        method: 'PATCH',
+        headers: { ...ghHeaders, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sha: newCommit.sha, force: false }),
+      }
+    );
+    if (!_refUpdateResp.ok) {
+      const _errText = await _refUpdateResp.text();
+      console.error('[grinder-write] PATCH ref ' + _refUpdateResp.status + ': ' + _errText.slice(0, 300));
+      if (_refUpdateResp.status === 422) {
+        return res.status(409).json({
+          error: 'Race conflict: branch tip moved between getRef and PATCH (non-fast-forward). Retry with fresh base.',
+          retriable: true,
+          baseSha: baseCommitSha,
+          attemptedNewSha: newCommit.sha,
+        });
+      }
+      return res.status(_refUpdateResp.status).json({
+        error: 'PATCH ref failed: ' + _errText.slice(0, 300),
+      });
+    }
+    // Post-write verify: re-read the ref and confirm we are the tip. If a
+    // competing writer landed in the milliseconds between our PATCH succeeding
+    // and this verify, surface as 409 (and don't claim success).
+    try {
+      const _verifyRef = await gh('GET', '/repos/' + owner + '/' + repoName + '/git/ref/heads/' + branch);
+      if (_verifyRef.object.sha !== newCommit.sha) {
+        console.error('[grinder-write] post-write verify mismatch: ref is ' + _verifyRef.object.sha + ', expected ' + newCommit.sha);
+        return res.status(409).json({
+          error: 'Race conflict: post-write verify shows tip moved to ' + _verifyRef.object.sha + ' (we set ' + newCommit.sha + '). Retry.',
+          retriable: true,
+          observedTip: _verifyRef.object.sha,
+          attemptedNewSha: newCommit.sha,
+        });
+      }
+    } catch (_verifyErr) {
+      // Verify failure is NOT fatal — the PATCH already succeeded. Just log
+      // and continue. (If the next caller does grinder-write, it'll see fresh state.)
+      console.warn('[grinder-write] post-write verify error (non-fatal): ' + _verifyErr.message);
+    }
 
     res.json({
       ok: true,
