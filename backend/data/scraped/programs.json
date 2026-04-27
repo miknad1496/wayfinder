@@ -44139,6 +44139,240 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Children's Museum of Atlanta Summer Programs",
+      "provider": "Children's Museum of Atlanta",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "$275-375/wk; member discount 10%; sliding scale via Museums for All ($1 entry for SNAP/EBT)"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Children's Museum of Atlanta (downtown, near Centennial Olympic Park) summer day programs for ages 3-9. Themes rotate weekly: water play + bubble lab, theater + storytelling, world cultures, construction zone, art studios. Half-day or full-day. Mon-Fri sessions June-August.",
+      "deadline": "Rolling — register at childrensmuseumatlanta.org",
+      "url": "https://childrensmuseumatlanta.org/programs/summer/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://childrensmuseumatlanta.org/programs/summer/",
+      "_addedBy": "state-expansion-batch-45",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Children's Museum of Atlanta (downtown, near Centennial Olympic Park) summer day programs ages 3-9. Themed weeks: water play + bubble lab, theater, world cultures, construction zone, art studios. Half-day or full-day. Mon-Fri Jun-Aug. ~$275-375/wk. 10% member discount + Museums for All ($1 entry for SNAP/EBT families).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Fernbank Museum + Forest Summer Camps",
+      "provider": "Fernbank Museum of Natural History",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$375-485/wk; member discount 10%; need-based aid via Fernbank Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Fernbank Museum of Natural History (Atlanta) themed weekly day camps for grades K-8. Themes: paleontology (giant dinosaur exhibit), Georgia ecosystems, forest exploration in 75-acre Fernbank Forest (one of last old-growth forests in metro Atlanta), insects + animals, archaeology. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.fernbankmuseum.org/learn/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fernbankmuseum.org/learn/summer-camps/",
+      "_addedBy": "state-expansion-batch-45",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Fernbank Museum of Natural History (Atlanta) themed day camps K-8. Themes: paleontology (giant dinosaur exhibit), Georgia ecosystems, 75-acre Fernbank Forest (old-growth), insects + animals, archaeology. Mon-Fri 9am-3:30pm. ~$375-485/wk. 10% member discount + need-based aid via Fernbank Education. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Marbles Kids Museum Summer Programs",
+      "provider": "Marbles Kids Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "$265-325/wk; member discount 10%; sliding scale + reduced-rate scholarship for Wake County low-income families"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Raleigh",
+        "state": "NC"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Marbles Kids Museum (downtown Raleigh) themed weekly summer programs for ages 3-10. Themes: BrickLab construction, art studios, theater + storytelling, world cultures, science lab. Half-day morning + afternoon options. Mon-Fri June-August. Strong Wake County community ties; sliding-scale scholarships available.",
+      "deadline": "Rolling — register at marbleskidsmuseum.org",
+      "url": "https://marbleskidsmuseum.org/calendar/summer-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://marbleskidsmuseum.org/calendar/summer-programs/",
+      "_addedBy": "state-expansion-batch-45",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Marbles Kids Museum (downtown Raleigh NC) themed summer programs ages 3-10. Themes: BrickLab construction, art studios, theater + storytelling, world cultures, science lab. Half-day morning OR afternoon options. Mon-Fri Jun-Aug. ~$265-325/wk. 10% member discount + sliding scale + Wake County low-income scholarship pool. Rolling registration.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Center for Puppetry Arts Camps + Family Programs",
+      "provider": "Center for Puppetry Arts (Atlanta)",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "$295-395/wk; member discount 10%; need-based aid via Center Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Atlanta",
+        "state": "GA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Center for Puppetry Arts (Atlanta — largest puppet-arts non-profit in US, home of Jim Henson Collection) themed weekly summer camps for grades K-8. Tracks: puppet building (rod, hand, shadow, marionette), puppet performance + voicing, story construction. Mon-Fri 9am-3pm. Performance for families on Friday afternoon.",
+      "deadline": "Member reg early Feb; general March",
+      "url": "https://puppet.org/visit/programs-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://puppet.org/visit/programs-camps/",
+      "_addedBy": "state-expansion-batch-45",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Center for Puppetry Arts (Atlanta — largest puppet-arts nonprofit in US, home of Jim Henson Collection) themed summer camps K-8. Tracks: puppet building (rod, hand, shadow, marionette), puppet performance + voicing, story construction. Mon-Fri 9am-3pm with Friday family performance. ~$295-395/wk. 10% member discount + need-based aid via Center Education. Member reg early Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "National Children's Museum Summer Programs",
+      "provider": "National Children's Museum (Washington DC)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "$275-375/wk; member discount 10%; sliding scale for DC residents + Title I families"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "National Children's Museum (downtown DC near Federal Triangle) themed summer programs for ages 3-10. Tracks: STEAM exploration, civic engagement (close to Smithsonian + Capitol), data + design, art + nature, world cultures. Half-day or full-day Mon-Fri. Strong DC community partnerships; sliding-scale + Title I scholarship pool.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://nationalchildrensmuseum.org/programs/summer-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://nationalchildrensmuseum.org/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-45",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "National Children's Museum (downtown DC near Federal Triangle) summer programs ages 3-10. Tracks: STEAM exploration, civic engagement, data + design, art + nature, world cultures. Half-day or full-day Mon-Fri. ~$275-375/wk. 10% member discount + sliding scale for DC residents + Title I families. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
