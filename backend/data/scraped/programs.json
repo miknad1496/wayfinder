@@ -51172,6 +51172,214 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "BBC Bitesize (Free K-12 Curriculum)",
+      "provider": "BBC (British Broadcasting Corporation)",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — UK taxpayer-funded BBC; accessible globally; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "BBC Bitesize — UK's flagship free educational content for K-12 globally. Tracks: Maths, Science, English (UK + American spelling), History (UK + global), Geography, Languages (Spanish, French, German, Italian + more), Coding (Bitesize Daily). Accessible globally — US homeschoolers + classrooms supplement curriculum with high-quality BBC content. Strong British perspective on world affairs + history.",
+      "deadline": "Year-round; freely accessible",
+      "url": "https://www.bbc.co.uk/bitesize",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.bbc.co.uk/bitesize",
+      "_addedBy": "international-uk-online-batch-77",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "BBC Bitesize — UK's flagship FREE educational content for K-12 globally. Tracks: Maths, Science, English (UK + American spelling), History (UK + global), Geography, Languages (Spanish, French, German, Italian + more), Coding (Bitesize Daily). Accessible globally — US homeschoolers + classrooms supplement curriculum with high-quality BBC content. Strong British perspective on world affairs + history. Year-round; freely accessible.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cambridge International Online Programs",
+      "provider": "Cambridge University Press + Assessment",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~£250-£995/course (USD $325-1,295); Cambridge Trust scholarships available"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cambridge International Online Programs — University of Cambridge's online courses for ages 13-18 globally. Tracks: Cambridge IGCSE prep (international qualification recognized by US universities), Cambridge AS + A-level prep (HS-level pre-university), Cambridge Pre-U preparation. Strong fit for US students considering UK universities OR international schools. Asynchronous + synchronous options. Year-round.",
+      "deadline": "Year-round enrollment",
+      "url": "https://www.cambridgeinternational.org/programmes-and-qualifications/online-learning/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cambridgeinternational.org/programmes-and-qualifications/online-learning/",
+      "_addedBy": "international-uk-online-batch-77",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Cambridge International Online Programs — University of Cambridge's online courses for ages 13-18 globally. Tracks: Cambridge IGCSE prep (international qualification recognized by US universities), Cambridge AS + A-level prep (HS-level pre-university), Cambridge Pre-U preparation. Strong fit for US students considering UK universities OR international schools. Asynchronous + synchronous options. ~£250-£995/course (USD $325-1,295). Cambridge Trust scholarships available. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Oxford Royale Online Programs",
+      "provider": "Oxford Royale (UK)",
+      "category": "pre-college",
+      "type": "year-round",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~£1,295-£2,495/2-week course (USD $1,685-3,245); merit-based Oxford Royale Foundation scholarships"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Oxford Royale Online — virtual version of Oxford Royale's in-person summer programs for ages 13-18. Live small-group instruction with Oxford-trained tutors. Tracks: Engineering, Business, Medicine, Law, Computer Science, Creative Writing, Politics. More accessible than in-person ($1,685-3,245 USD vs $4,495-8,995). Year-round + summer-intensive options. Less prestigious credential than in-person but still Oxford-affiliated.",
+      "deadline": "Apply year-round; summer cohorts Mar-May",
+      "url": "https://www.oxford-royale.com/online-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.oxford-royale.com/online-programs/",
+      "_addedBy": "international-uk-online-batch-77",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Oxford Royale Online — virtual version of Oxford Royale's in-person summer programs for ages 13-18. Live small-group instruction with Oxford-trained tutors. Tracks: Engineering, Business, Medicine, Law, Computer Science, Creative Writing, Politics. More accessible than in-person (~£1,295-£2,495/2-week, USD $1,685-3,245 vs $4,495-8,995 in-person). Year-round + summer-intensive options. Less prestigious credential than in-person but still Oxford-affiliated. Apply year-round; summer cohorts Mar-May.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Trinity College Dublin Online Summer Programs",
+      "provider": "Trinity College Dublin (Ireland)",
+      "category": "pre-college",
+      "type": "year-round",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,750-€2,995/2-week (USD $1,895-3,245); Trinity Pre-University Scholarships for international students"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Trinity College Dublin Online Summer Programs — Ireland's most prestigious university (founded 1592, alma mater of Oscar Wilde + Samuel Beckett) offers virtual programs for ages 15-18. Tracks: Literature + Creative Writing, Politics + International Relations, Sciences, Computer Science, Pre-Medicine. Affordable vs UK options. Year-round + summer-intensive. Trinity is highly respected globally; English-medium instruction; cultural cachet for US students interested in Irish heritage.",
+      "deadline": "Apply year-round; summer cohorts Mar-May",
+      "url": "https://www.tcd.ie/learn/online-pre-university-courses",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tcd.ie/learn/online-pre-university-courses",
+      "_addedBy": "international-uk-online-batch-77",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Trinity College Dublin Online Summer Programs — Ireland's most prestigious university (founded 1592, alma mater of Oscar Wilde + Samuel Beckett) offers virtual programs for ages 15-18. Tracks: Literature + Creative Writing, Politics + International Relations, Sciences, Computer Science, Pre-Medicine. Affordable vs UK options. Year-round + summer-intensive. Trinity highly respected globally; English-medium; cultural cachet for US students interested in Irish heritage. ~€1,750-€2,995/2-week (USD $1,895-3,245). Trinity Pre-University Scholarships for international students.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Imperial College London Insight Programs (Free for HS-level)",
+      "provider": "Imperial College London",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students — Imperial Outreach Foundation; selective admission"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "London + online",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11"
+        ]
+      },
+      "description": "Imperial College London Insight Programs — UK's leading STEM-focused university (Top-10 globally in engineering + medicine) offers FREE pre-university programs for ages 14-17 (rising 10-11). Tracks: Imperial Insight Engineering (5-day residential or virtual), Imperial Insight Medicine (selective for HS premed), Imperial Maths Insight. International US students with passport welcome — selective admission via Imperial Outreach Foundation. College-app gold for selective US universities.",
+      "deadline": "Apply Feb-March; selective; cohort decisions May",
+      "url": "https://www.imperial.ac.uk/learn/insight-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.imperial.ac.uk/learn/insight-programs/",
+      "_addedBy": "international-uk-online-batch-77",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Imperial College London Insight Programs — UK's leading STEM-focused university (Top-10 globally in engineering + medicine) offers FREE pre-university programs for ages 14-17 (rising 10-11). Tracks: Imperial Insight Engineering (5-day residential or virtual), Imperial Insight Medicine (selective for HS premed), Imperial Maths Insight. International US students with passport welcome — SELECTIVE admission via Imperial Outreach Foundation. 100% FREE. College-app gold for selective US universities. Apply Feb-March; cohort decisions May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
