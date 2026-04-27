@@ -17,7 +17,7 @@ import { fileURLToPath } from 'url';
 import { verifyToken, canAccess } from '../services/auth.js';
 /* === REVAMP V2: INTERNSHIPS-STRATEGY IMPORTS === */
 import Anthropic from '@anthropic-ai/sdk';
-import { chatSLM, isSLMAvailable } from '../services/slm-client.js';
+import { chatSLM, isSLMAvailable } from '../services/slm.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
