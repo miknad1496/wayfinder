@@ -49212,6 +49212,238 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Discovery Centre Halifax Summer Camps",
+      "provider": "Discovery Centre (Halifax NS)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); Discovery Centre member discount; sliding scale via DC Education + HRSB partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Halifax",
+        "state": "NS"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Discovery Centre (Halifax — opened 2017, on the Halifax Waterfront) themed weekly summer day camps for grades 1-8. Tracks: Innovation Lab (engineering + design), Energy + Environment, Body Lab (anatomy + medical), Just Imagine (younger kids interactive), Rooftop Garden + Bee Hives. Mon-Fri 9am-3:30pm. WA/US families: Halifax is reachable via direct flights from Boston + Newark + Toronto + Iceland — surprisingly accessible.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://discoverycentre.ns.ca/learn/programs/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://discoverycentre.ns.ca/learn/programs/summer-camps",
+      "_addedBy": "canada-deep-batch-67",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Discovery Centre (Halifax — opened 2017, Halifax Waterfront) themed summer camps grades 1-8. Tracks: Innovation Lab (engineering + design), Energy + Environment, Body Lab (anatomy + medical), Just Imagine (younger kids interactive), Rooftop Garden + Bee Hives. Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). DC member discount + sliding scale via DC Education + HRSB partnership. US families: Halifax has direct flights from Boston + Newark + Toronto + Iceland — surprisingly accessible.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Nova Scotia Museum of Natural History Summer Camps",
+      "provider": "Nova Scotia Museum of Natural History (Halifax)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-245/wk (~USD $130-180) — affordable; FREE general admission Wed evenings; sliding scale + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Halifax",
+        "state": "NS"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "NS Museum of Natural History (Halifax — west of Halifax Citadel) themed weekly summer day camps for grades K-8. Tracks: Maritime Mi'kmaw culture + history, Atlantic Ocean ecology, paleontology (Joggins Fossil Cliffs UNESCO sites), Atlantic Canada wildlife, geology + geography. Mon-Fri 9am-3:30pm. Free Wednesday evening admission; very affordable summer programs.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://naturalhistory.novascotia.ca/learn/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://naturalhistory.novascotia.ca/learn/summer-camps",
+      "_addedBy": "canada-deep-batch-67",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "NS Museum of Natural History (Halifax — west of Halifax Citadel) themed summer camps grades K-8. Tracks: Maritime Mi'kmaw culture + history, Atlantic Ocean ecology, paleontology (Joggins Fossil Cliffs UNESCO sites), Atlantic Canada wildlife, geology + geography. Mon-Fri 9am-3:30pm. ~CAD $175-245/wk (~USD $130-180) — affordable. FREE general admission Wed evenings. Sliding scale + low-income family programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Confederation Centre Family Programs (Charlottetown PEI)",
+      "provider": "Confederation Centre of the Arts (Charlottetown PEI)",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 225,
+        "type": "paid",
+        "display": "~CAD $195-285/wk (~USD $145-215); Centre member discount; FREE outdoor stage shows summer; sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Charlottetown",
+        "state": "PE"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Confederation Centre of the Arts (Charlottetown PEI — birthplace of Canada, where Confederation talks happened 1864) themed weekly summer day camps for grades 1-8. Tracks: Anne of Green Gables musical + theater workshops (longest-running musical in North America), PEI history + folklore, art studios + galleries, lobster fishery + maritime culture. Mon-Fri 9am-3:30pm. Strong fit for kids who love musical theater + history.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://confederationcentre.com/learn/youth-and-family-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://confederationcentre.com/learn/youth-and-family-programs/",
+      "_addedBy": "canada-deep-batch-67",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Confederation Centre of the Arts (Charlottetown PEI — birthplace of Canada, where Confederation talks happened 1864) themed summer camps grades 1-8. Tracks: Anne of Green Gables musical + theater workshops (longest-running musical in North America), PEI history + folklore, art studios + galleries, lobster fishery + maritime culture. Mon-Fri 9am-3:30pm. ~CAD $195-285/wk (~USD $145-215). Centre member discount + FREE outdoor stage shows summer + sliding scale. Strong fit for musical theater + history kids. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Canadian Museum of Immigration at Pier 21 Family Programs",
+      "provider": "Canadian Museum of Immigration at Pier 21 (Halifax)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 225,
+        "type": "paid",
+        "display": "~CAD $195-285/wk (~USD $145-215); Pier 21 member discount; sliding scale + Halifax-region scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Halifax",
+        "state": "NS"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Canadian Museum of Immigration at Pier 21 (Halifax Waterfront — historic Pier 21 where 1.5 million immigrants entered Canada 1928-1971) themed weekly summer day camps for grades 3-8. Tracks: Family genealogy research, Pier 21 historical re-enactments, immigration storytelling + theater, Canadian First Peoples + immigrant history, geography + world cultures. Powerful programming for kids reflecting on identity + heritage. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://pier21.ca/learn/youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://pier21.ca/learn/youth-programs",
+      "_addedBy": "canada-deep-batch-67",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Canadian Museum of Immigration at Pier 21 (Halifax Waterfront — historic Pier 21 where 1.5 million immigrants entered Canada 1928-1971) themed summer camps grades 3-8. Tracks: Family genealogy research, Pier 21 historical re-enactments, immigration storytelling + theater, Canadian First Peoples + immigrant history, geography + world cultures. Powerful programming for kids reflecting on identity + heritage. Mon-Fri 9am-3:30pm. ~CAD $195-285/wk (~USD $145-215). Pier 21 member discount + sliding scale + Halifax-region scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Lunenburg Fisheries Museum + Bluenose Family Programs",
+      "provider": "Fisheries Museum of the Atlantic (Lunenburg NS)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 175,
+        "type": "paid",
+        "display": "~CAD $155-225/wk (~USD $115-170) — among most affordable; family member discount + Lunenburg-resident free admission Sundays"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Lunenburg",
+        "state": "NS"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Fisheries Museum of the Atlantic (Lunenburg NS — UNESCO World Heritage Old Town, home of legendary Bluenose schooner) themed weekly summer day camps for grades 3-8. Tracks: schooner sailing + maritime navigation, Atlantic fisheries history (cod fishery, lobster fishery), boat-building demonstrations, Bluenose II tours + family sailing days. Mon-Fri 9am-3:30pm. Stunning UNESCO setting. Affordable.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://fisheriesmuseum.novascotia.ca/learn/family-camps",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://fisheriesmuseum.novascotia.ca/learn/family-camps",
+      "_addedBy": "canada-deep-batch-67",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Fisheries Museum of the Atlantic (Lunenburg NS — UNESCO World Heritage Old Town, home of legendary Bluenose schooner) themed summer camps grades 3-8. Tracks: schooner sailing + maritime navigation, Atlantic fisheries history (cod fishery, lobster fishery), boat-building demonstrations, Bluenose II tours + family sailing days. Mon-Fri 9am-3:30pm. ~CAD $155-225/wk (~USD $115-170) — among most affordable. Family member discount + Lunenburg-resident free admission Sundays. Stunning UNESCO setting.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
