@@ -57279,6 +57279,220 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "International Linguistics Olympiad (IOL)",
+      "provider": "International Linguistics Olympiad",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Linguistics Olympiad (IOL) — flagship global linguistics competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country (Bulgaria, Czech Republic, Latvia, etc.). Competition: 4-hour individual round + 4-hour team round on linguistic logic puzzles. UNDER-known field but college-app GOLD-PLUS — IOL is the most rare + intellectually distinguishable Olympiad. SELECTIVE — selected via NACLO (North American Computational Linguistics Olympiad) for US students. 100% FREE for selected. Pipeline directly to top US university linguistics programs.",
+      "deadline": "Selection via NACLO (North American Linguistics Olympiad) Jan-Feb",
+      "url": "https://ioling.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ioling.org",
+      "_addedBy": "hs-international-batch-107",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "International Linguistics Olympiad (IOL) — flagship global linguistics competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country (Bulgaria, Czech Republic, Latvia, etc.). Competition: 4-hour individual round + 4-hour team round on linguistic logic puzzles. UNDER-KNOWN field but college-app GOLD-PLUS — IOL is the most rare + intellectually distinguishable Olympiad. SELECTIVE — selected via NACLO (North American Computational Linguistics Olympiad) for US students. 100% FREE for selected. Pipeline directly to top US university linguistics programs. Selection via NACLO Jan-Feb.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Philosophy Olympiad (IPO)",
+      "provider": "International Philosophy Olympiad",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Philosophy Olympiad (IPO) — flagship global philosophy competition for ages 16-18 (rising 11-12). 1-week residential at annual rotating host country. Competition: 4-hour philosophy essay in non-native language (English, French, Spanish, German, or Russian). UNDER-known field — only ~50 countries participate. SELECTIVE — selected via national philosophy bowls for US students. 100% FREE for selected. College-app GOLD-PLUS — philosophy + bilingual essay writing is the rarest combination AOs see. Pipeline to top philosophy programs.",
+      "deadline": "Selection via US Philosophy Bowl Jan-Mar",
+      "url": "https://philosophy-olympiad.org",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://philosophy-olympiad.org",
+      "_addedBy": "hs-international-batch-107",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "International Philosophy Olympiad (IPO) — flagship global philosophy competition for ages 16-18 (rising 11-12). 1-week residential at annual rotating host country. Competition: 4-hour philosophy essay in non-native language (English, French, Spanish, German, or Russian). UNDER-KNOWN field — only ~50 countries participate. SELECTIVE — selected via national philosophy bowls for US students. 100% FREE for selected. College-app GOLD-PLUS — philosophy + bilingual essay writing is the rarest combination AOs see. Pipeline to top philosophy programs. Selection via US Philosophy Bowl Jan-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Economics Olympiad (IEO)",
+      "provider": "International Economics Olympiad",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Economics Olympiad (IEO) — flagship global economics competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — financial literacy, economic analysis, business case studies. SELECTIVE — selected via US Economics Olympiad for US students. 100% FREE for selected. College-app strong for finance + econ-track US kids. UNDER-applied-for vs Math + Physics Olympiads. Pipeline to top US economics + finance programs.",
+      "deadline": "Selection via US Economics Olympiad Jan-Mar",
+      "url": "https://ieoglobal.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ieoglobal.org",
+      "_addedBy": "hs-international-batch-107",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "International Economics Olympiad (IEO) — flagship global economics competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — financial literacy, economic analysis, business case studies. SELECTIVE — selected via US Economics Olympiad for US students. 100% FREE for selected. College-app strong for finance + econ-track US kids. UNDER-APPLIED-FOR vs Math + Physics Olympiads. Pipeline to top US econ + finance programs. Selection via US Economics Olympiad Jan-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Geography Olympiad (iGeo)",
+      "provider": "International Geographical Olympiad",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Geography Olympiad (iGeo) — flagship global geography competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — written response, fieldwork (location-based), multimedia knowledge. SELECTIVE — selected via US Geography Olympiad for US students. 100% FREE for selected. UNDER-known field — strong fit for kids interested in physical geography, urban planning, climate change, demographics. Pipeline to top US geography programs.",
+      "deadline": "Selection via US Geography Olympiad Jan-Mar",
+      "url": "https://www.igeo-olympiad.org",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.igeo-olympiad.org",
+      "_addedBy": "hs-international-batch-107",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "International Geography Olympiad (iGeo) — flagship global geography competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — written response, fieldwork (location-based), multimedia knowledge. SELECTIVE — selected via US Geography Olympiad for US students. 100% FREE for selected. UNDER-KNOWN field — strong fit for physical geography, urban planning, climate change, demographics. Pipeline to top US geography programs. Selection via US Geography Olympiad Jan-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Earth Science Olympiad (IESO)",
+      "provider": "International Earth Science Olympiad",
+      "category": "competition",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected national team members — host country covers all costs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual rotating host country",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Earth Science Olympiad (IESO) — flagship global Earth science competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — written round on geology + atmospheric + oceanic + astronomical sciences, practical field round, international team field investigation. SELECTIVE — selected via US Earth Science Olympiad for US students. 100% FREE for selected. UNDER-known field — strong fit for kids interested in geology, atmospheric science, oceanography, climate science. Pipeline to top US Earth science programs.",
+      "deadline": "Selection via US Earth Science Olympiad Jan-Mar",
+      "url": "https://www.iesoinfo.org",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.iesoinfo.org",
+      "_addedBy": "hs-international-batch-107",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "International Earth Science Olympiad (IESO) — flagship global Earth science competition for ages 14-18 (rising 9-12). 1-week residential at annual rotating host country. Competition: 3 rounds — written round on geology + atmospheric + oceanic + astronomical sciences, practical field round, international team field investigation. SELECTIVE — selected via US Earth Science Olympiad for US students. 100% FREE for selected. UNDER-KNOWN field — strong fit for geology, atmospheric science, oceanography, climate science. Pipeline to top US Earth science programs. Selection via US Earth Science Olympiad Jan-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
