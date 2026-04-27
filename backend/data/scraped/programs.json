@@ -6780,7 +6780,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "STEM programs demonstrate commitment to your major. Be ready to discuss specific technical skills or concepts you mastered.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Art of Problem Solving (AoPS) summer in-person + online intensives for grades 5-12 mathy kids. Online courses: Intro Algebra, Intro Counting, Intro Number Theory, MATHCOUNTS/AMC prep ($300-600/term, ~6 weeks). AoPS Academy in-person summer camps (15 metros: Bay Area, NYC, Boston, DC, Seattle Eastside, Chicago, etc.) ~$400-700/wk. Sessions begin mid-Jun, run through late Aug. Selective MATHCOUNTS Mathletes track for top scorers. Apply at aopsacademy.org or art-of-problem-solving.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Yale Young Writers Workshop",
@@ -9577,7 +9586,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "STEM programs demonstrate commitment to your major. Be ready to discuss specific technical skills or concepts you mastered.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "AoPS umbrella entry — same provider as Art of Problem Solving Summer Camps. Online courses + AoPS Academy in-person camps in 15 US metros. Strong fit for math-competition-bound kids; Beast Academy K-5 → AoPS Online 5+ → AoPS Academy summer is the canonical pipeline. Pricing: online courses $300-600/term, in-person camps ~$400-700/wk. Selective tracks require placement testing. Sessions Jun-Aug. art-of-problem-solving.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Major League Hacking (MLH) Summer Programs",
@@ -10435,7 +10453,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "STEM programs demonstrate commitment to your major. Be ready to discuss specific technical skills or concepts you mastered.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "iD Tech runs in-person summer tech camps at 50+ US universities (Stanford, MIT, UW, UCLA, NYU, Caltech, Princeton, Carnegie Mellon, Berkeley, others). 1-2 week sessions ages 7-17. Tracks: coding (Python, JavaScript, C#), game design (Roblox, Minecraft modding, Unity), AI/ML, cybersecurity, robotics. ~$1,099-1,500/wk day; $1,800-3,500/wk overnight. Day for younger / overnight for ages 13+. Most popular sessions sell out by April; book early. idtech.com/locations.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NextGen Bootcamp",
@@ -41388,7 +41415,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "AISES Pre-College pipeline for Native American + Alaska Native + Native Hawaiian + Pacific Islander students grades 5-12. FREE annual National Conference (Sep-Oct, varies city). Year-round STEM programming, summer research opportunities for HS, college scholarships ($1,000-$10,000), career mentorship. K-8 students benefit most from AISES Junior Membership ($25/yr — many tribal nations + community orgs cover) which gets them into the conference + Sequoyah Fellowship pipeline. apply at aises.org/students.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Native Like Water (Indigenous youth ocean conservation)",
@@ -42092,7 +42125,16 @@
       "scope": "national",
       "scholarshipAid": "AoPS offers limited need-based scholarships for AoPS Academy and AoPS Online courses; apply via aopsacademy.org/policies/financial-aid.",
       "registrationUrl": "https://virtual.aopsacademy.org/courses/catalog/summer",
-      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026)."
+      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026).",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Math Beasts Camp = the K-5 in-person summer + live-online camp version of Beast Academy. AoPS Academy in-person (15 metros) hosts Math Beasts as week-long day camps for grades 1-5; Beast Academy Live runs the online version. Themed weekly camps: Logic + Puzzles, Number Detectives, Geometry Adventures. ~$400-650/wk in-person, ~$200-300/wk online. Mon-Fri 9am-3pm typical for in-person. Year-round Beast Academy continues separately. Apply at beastacademy.com/summer or aopsacademy.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Northwestern CTD Solstice Online Summer Program (Grades 4-6)",
