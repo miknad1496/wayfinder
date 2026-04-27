@@ -23,6 +23,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const router = Router();
 
+// REVAMP V2: REGION FILTER PATCH25 — US state codes for region filter
+const _US_STATES = new Set([
+  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS',
+  'KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY',
+  'NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV',
+  'WI','WY','DC','PR','VI','GU','AS','MP','ALL'
+]);
+function _isUSState(code) {
+  if (!code) return false;
+  return _US_STATES.has(String(code).toUpperCase());
+}
+
+
 // Cache internships data
 let internshipsCache = null;
 let cacheTimestamp = 0;
@@ -104,7 +117,13 @@ router.get('/search', async (req, res) => {
     let results = [...data.internships];
 
     // Apply filters
-    const { state, field, major, paid, type, level, format, q } = req.query;
+    const { state, field, major, paid, type, level, format, q, region } = req.query;
+    // REVAMP V2: REGION FILTER PATCH25
+    if (region === 'us') {
+      results = results.filter(i => _isUSState(i.location?.state));
+    } else if (region === 'international') {
+      results = results.filter(i => i.location?.state && !_isUSState(i.location.state));
+    }
     if (level === 'high-school') results = results.filter(i => i.tags?.includes('high-school'));
     if (level === 'college') results = results.filter(i => !i.tags?.includes('high-school'));
     if (state) results = results.filter(i => i.location?.state?.toUpperCase() === state.toUpperCase());

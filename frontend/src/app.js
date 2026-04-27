@@ -3770,6 +3770,7 @@ async function searchInternships() {
 
   const params = new URLSearchParams();
   if ($('internshipLevel')?.value) params.set('level', $('internshipLevel').value);
+  if ($('internshipRegion')?.value) params.set('region', $('internshipRegion').value); /* REVAMP V2: REGION FILTER PATCH25 */
   if ($('internshipState')?.value) params.set('state', $('internshipState').value);
   if ($('internshipField')?.value) params.set('field', $('internshipField').value);
   if ($('internshipCost')?.value === 'paid') params.set('paid', 'true');
@@ -3863,6 +3864,7 @@ async function searchPrograms() {
 
   const params = new URLSearchParams();
   if ($('programCategory')?.value) params.set('category', $('programCategory').value);
+  if ($('programRegion')?.value) params.set('region', $('programRegion').value); /* REVAMP V2: REGION FILTER PATCH25 */
   if ($('programState')?.value) params.set('state', $('programState').value);
   if ($('programGrade')?.value) params.set('grade', $('programGrade').value);
   if ($('programCost')?.value) params.set('cost', $('programCost').value);

@@ -24,6 +24,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const router = Router();
 
+// REVAMP V2: REGION FILTER PATCH25 — US state codes for region filter
+const _US_STATES = new Set([
+  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS',
+  'KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY',
+  'NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV',
+  'WI','WY','DC','PR','VI','GU','AS','MP','ALL'
+]);
+function _isUSState(code) {
+  if (!code) return false;
+  return _US_STATES.has(String(code).toUpperCase());
+}
+
+
 let programsCache = null;
 let cacheTimestamp = 0;
 const CACHE_TTL = 30 * 60 * 1000;
@@ -98,7 +111,13 @@ router.get('/search', async (req, res) => {
 
     let results = [...data.programs];
 
-    const { category, state, cost, grade, selectivity, format, q } = req.query;
+    const { category, state, cost, grade, selectivity, format, q, region } = req.query;
+    // REVAMP V2: REGION FILTER PATCH25
+    if (region === 'us') {
+      results = results.filter(p => _isUSState(p.location?.state));
+    } else if (region === 'international') {
+      results = results.filter(p => p.location?.state && !_isUSState(p.location.state));
+    }
     if (category) results = results.filter(p => p.category === category || p.subcategory === category);
     if (state) results = results.filter(p => p.location?.state === state.toUpperCase() || p.eligibility?.states?.includes('all'));
     if (cost === 'free') results = results.filter(p => p.cost?.amount === 0 || p.cost?.type === 'free');
