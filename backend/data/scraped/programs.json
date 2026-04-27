@@ -46460,6 +46460,244 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Saint Louis Science Center Summer Camps",
+      "provider": "Saint Louis Science Center",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE general admission year-round (huge equity advantage); summer camps ~$245-345/wk; member discount 10%; sliding scale + St Louis Public Schools partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saint Louis",
+        "state": "MO"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Saint Louis Science Center (Forest Park) themed weekly summer day camps for grades K-8. FREE general admission to museum year-round (huge equity advantage — third-most-visited free attraction in US). Tracks: Dinos + paleontology, OMNIMAX + planetarium, Tinkering, GROW gallery (sustainability), Boeing Hall of Discovery. Mon-Fri 9am-3:30pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.slsc.org/learn/programs-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.slsc.org/learn/programs-camps",
+      "_addedBy": "state-expansion-batch-55",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Saint Louis Science Center (Forest Park) themed summer camps grades K-8. FREE general admission to museum year-round (huge equity advantage — third-most-visited free attraction in US). Tracks: Dinos + paleontology, OMNIMAX + planetarium, Tinkering, GROW gallery (sustainability), Boeing Hall of Discovery. Mon-Fri 9am-3:30pm + extended care. ~$245-345/wk. 10% member discount + sliding scale + St Louis Public Schools scholarship partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Magic House Summer Camps + Family Programs",
+      "provider": "The Magic House (Saint Louis Children's Museum)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "~$245-325/wk; member discount 10%; Museums for All ($1 entry SNAP/EBT) + St Louis-region sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Kirkwood",
+        "state": "MO"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "The Magic House (Kirkwood, west St Louis suburb) — one of the highest-attended children's museums in the US — themed weekly summer camps for ages 3-10. Tracks: Children's Village (community-roles play), Kid TV (broadcasting), Plant the Seed (gardens + nutrition), Creation Studio (art), Bubble Lab. Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.magichouse.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.magichouse.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-55",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "The Magic House (Kirkwood, west St Louis suburb — one of highest-attended children's museums in US) themed summer camps ages 3-10. Tracks: Children's Village (community-roles play), Kid TV (broadcasting), Plant the Seed (gardens + nutrition), Creation Studio (art), Bubble Lab. Half-day or full-day Mon-Fri. ~$245-325/wk. 10% member discount + Museums for All ($1 SNAP/EBT) + St Louis-region sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Science City at Union Station Summer Programs",
+      "provider": "Science City at Union Station (Kansas City)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 265,
+        "type": "paid",
+        "display": "~$235-315/wk; member discount 10%; sliding scale + KCMO Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Kansas City",
+        "state": "MO"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Science City at Union Station (downtown Kansas City — historic Union Station) themed weekly summer day camps for grades K-8. Tracks: Speed Track (vehicles), Genetics Lab, Cyber Cyber Hacker (CS + cybersecurity), Engineering Edge, Planetarium, Energy Center. Mon-Fri 9am-3:30pm. Located inside historic 1914 train station with cool architecture.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.sciencecity.com/programs/camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sciencecity.com/programs/camps",
+      "_addedBy": "state-expansion-batch-55",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Science City at Union Station (downtown Kansas City — historic 1914 train station) themed summer camps grades K-8. Tracks: Speed Track (vehicles), Genetics Lab, Cyber Cyber Hacker (CS + cybersecurity), Engineering Edge, Planetarium, Energy Center. Mon-Fri 9am-3:30pm. ~$235-315/wk. 10% member discount + sliding scale + KCMO Schools partnership. Member reg Feb; general March. Cool architecture inside historic Union Station.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Saint Louis Zoo Summer Camps + Family Programs",
+      "provider": "Saint Louis Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE general admission to zoo year-round; summer camps ~$245-345/wk; member discount 10%; sliding scale + St Louis Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saint Louis",
+        "state": "MO"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Saint Louis Zoo (Forest Park) — one of the most-respected zoos in the US — themed weekly summer day camps for grades K-8. FREE general admission year-round (huge equity advantage). Tracks: Sea Lion Sound, River's Edge (hippos, rhinos), Penguin & Puffin Coast, animal husbandry + zookeeping, conservation. Mon-Fri 9am-3:30pm with extended care.",
+      "deadline": "Member reg Jan-Feb; general March",
+      "url": "https://stlzoo.org/education/programs/zooschool/summercamps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://stlzoo.org/education/programs/zooschool/summercamps",
+      "_addedBy": "state-expansion-batch-55",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Saint Louis Zoo (Forest Park — one of most-respected zoos in US) themed summer camps grades K-8. FREE general admission year-round (huge equity advantage). Tracks: Sea Lion Sound, River's Edge (hippos, rhinos), Penguin & Puffin Coast, husbandry + zookeeping, conservation. Mon-Fri 9am-3:30pm + extended care. ~$245-345/wk. 10% member discount + sliding scale + St Louis Public Schools partnership. Member reg Jan-Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Kansas City Zoo Summer Camps",
+      "provider": "Kansas City Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$255-335/wk; member discount 10%; need-based aid via KC Zoo Education + KCMO Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Kansas City",
+        "state": "MO"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Kansas City Zoo (Swope Park) themed weekly summer day camps for grades K-8. Tracks: African Plains (lions, giraffes), Polar Bear Passage, Tropics + Jungle, Australia + Outback, paleontology + dinosaur fossils. Mon-Fri 9am-3:30pm with extended care. 202-acre campus.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.kansascityzoo.org/learn-and-explore/zoo-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kansascityzoo.org/learn-and-explore/zoo-camps/",
+      "_addedBy": "state-expansion-batch-55",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Kansas City Zoo (Swope Park, 202-acre campus) themed summer camps grades K-8. Tracks: African Plains (lions, giraffes), Polar Bear Passage, Tropics + Jungle, Australia + Outback, paleontology + dinosaur fossils. Mon-Fri 9am-3:30pm + extended care. ~$255-335/wk. 10% member discount + need-based aid via KC Zoo Education + KCMO Schools partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
