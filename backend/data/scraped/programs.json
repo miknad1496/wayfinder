@@ -44373,6 +44373,240 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "UC Berkeley ATDP (Academic Talent Development Program) Elementary Division",
+      "provider": "UC Berkeley Graduate School of Education",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1200,
+        "type": "paid",
+        "display": "~$995-1,295/2-week course; need-based aid covers 30-100% via ATDP Equity Fund (priority for Title I families); CA-resident sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Berkeley",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "UC Berkeley ATDP (since 1981) — academically-talented elementary + secondary summer program at UC Berkeley campus. Elementary Division (grades 1-6) + Secondary Division (grades 7-12). 2-week or 4-week sessions covering math, writing, science, technology, world cultures, leadership. Audit OR letter-grade options. Bring-your-own-lunch.",
+      "deadline": "Apply Mar-Apr; rolling waitlist after",
+      "url": "https://atdp.berkeley.edu",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://atdp.berkeley.edu",
+      "_addedBy": "state-expansion-batch-46",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "UC Berkeley ATDP (since 1981) for academically-talented students. Elementary Division grades 1-6 + Secondary Division grades 7-12. 2-week sessions $995-1,295; 4-week ~$1,800-2,500. ATDP Equity Fund covers 30-100% need-based (priority for Title I families). Apply Mar-Apr. Audit OR letter-grade options. Bring-your-own-lunch. UC Berkeley campus.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Children's Discovery Museum of San Jose Summer Camps",
+      "provider": "Children's Discovery Museum of San Jose",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 380,
+        "type": "paid",
+        "display": "~$340-425/wk; member discount 10%; sliding scale via Museums for All ($3 entry for SNAP/EBT)"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "San Jose",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Children's Discovery Museum (downtown San Jose, near Plaza de Cesar Chavez) themed weekly summer camps for ages 4-10. Tracks: Innovation Lab (engineering, design challenges), Art & Music Studio, Bay Area Habitats (ecology), Cultural Connections (world cultures via permanent exhibits), Movement & Play. Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.cdm.org/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cdm.org/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-46",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Children's Discovery Museum (downtown San Jose) themed summer camps ages 4-10. Tracks: Innovation Lab, Art & Music Studio, Bay Area Habitats, Cultural Connections, Movement & Play. Half-day or full-day Mon-Fri. ~$340-425/wk. 10% member discount + Museums for All ($3 entry for SNAP/EBT). Member reg Feb; general March. Sessions sell out spring.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Bay Area Discovery Museum Summer Camps",
+      "provider": "Bay Area Discovery Museum (Sausalito)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 485,
+        "type": "paid",
+        "display": "~$425-545/wk; member discount 15%; need-based aid via BADM Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sausalito",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Bay Area Discovery Museum (Sausalito, just north of Golden Gate Bridge) summer day camps for ages 3-10. Stunning bayfront 7.5-acre campus. Themed weekly tracks: Bay Ecology + Marine Biology (with marine ecology field trips), Art Studios, Theater + Storytelling, Engineering + Tinkering. Outdoor + indoor mix. Mon-Fri half-day or full-day.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://baykidsmuseum.org/explore-summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://baykidsmuseum.org/explore-summer-camps/",
+      "_addedBy": "state-expansion-batch-46",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Bay Area Discovery Museum (Sausalito, north of Golden Gate Bridge — stunning bayfront 7.5-acre campus) summer day camps ages 3-10. Themed weekly tracks: Bay Ecology + Marine Biology (with field trips), Art Studios, Theater + Storytelling, Engineering + Tinkering. Outdoor + indoor mix. Mon-Fri half-day or full-day. ~$425-545/wk. 15% member discount + need-based aid via BADM Education. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "CuriOdyssey Discovery Center Summer Camps",
+      "provider": "CuriOdyssey at Coyote Point (San Mateo)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$385-485/wk; member discount 10%; sliding scale via San Mateo County financial aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "San Mateo",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "CuriOdyssey at Coyote Point Park (San Mateo) summer day camps for ages 4-12. Combination of hands-on science exhibits + zoo with non-releasable native California wildlife. Themed weekly tracks: animal behavior + zookeeping, physics + tinkering, ecology + nature exploration. Outdoor habitat tours + indoor science labs.",
+      "deadline": "Member reg Jan-Feb; general March",
+      "url": "https://curiodyssey.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://curiodyssey.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-46",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "CuriOdyssey at Coyote Point Park (San Mateo) summer camps ages 4-12. Combo science museum + zoo with non-releasable native CA wildlife. Themed tracks: animal behavior + zookeeping, physics + tinkering, ecology + nature. Outdoor habitat tours + indoor labs. Mon-Fri 9am-3:30pm. ~$385-485/wk. 10% member discount + sliding scale via San Mateo County financial aid. Member reg Jan-Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Asian Art Museum SF Family Programs + Summer Camps",
+      "provider": "Asian Art Museum (San Francisco)",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "$295-385/wk for camps; FREE family programs every weekend; sliding scale via Museums for All"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "San Francisco",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Asian Art Museum (San Francisco Civic Center) themed weekly summer camps for grades K-8. Tracks: traditional Asian art studios (Chinese brush painting, Japanese origami + ceramics, Korean folk arts, Indian rangoli + miniature painting), storytelling + theater rooted in Asian myths, world heritage exploration via permanent collection. Free weekend family programs for non-camp attendees year-round.",
+      "deadline": "Member reg early Feb; general March",
+      "url": "https://asianart.org/learn/youth-and-family/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://asianart.org/learn/youth-and-family/",
+      "_addedBy": "state-expansion-batch-46",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Asian Art Museum (SF Civic Center) themed summer camps grades K-8. Tracks: Chinese brush painting, Japanese origami + ceramics, Korean folk arts, Indian rangoli + miniature painting, Asian myth storytelling + theater, world heritage via permanent collection. ~$295-385/wk. FREE weekend family programs year-round. Sliding scale via Museums for All. Member reg early Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
