@@ -48979,6 +48979,239 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Musée de la civilisation Summer Camps (Quebec City)",
+      "provider": "Musée de la civilisation (Vieux-Québec)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); MCQ member discount; sliding scale via MCQ Education + bilingual immersion option"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Québec City",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Musée de la civilisation (Old Port, Vieux-Québec — heart of UNESCO World Heritage walled city) themed weekly summer day camps for grades 1-8. Tracks: Quebec history + Indigenous First Nations + colonial era, World cultures + religions, Sciences + technology, special exhibitions. PRIMARILY FRENCH-language programming with English-speaking staff for international families. French-immersion experience option. Mon-Fri 9am-3:30pm. World-class museum in a stunning historic setting.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.mcq.org/en/learn/programs/summer-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mcq.org/en/learn/programs/summer-camps",
+      "_addedBy": "canada-deep-batch-66",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Musée de la civilisation (Old Port, Vieux-Québec — heart of UNESCO World Heritage walled city) themed summer camps grades 1-8. Tracks: Quebec history + Indigenous First Nations + colonial era, World cultures + religions, Sciences + technology, special exhibitions. PRIMARILY FRENCH-language programming (with English-speaking staff for international families) — perfect French-immersion option. Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). MCQ member discount + sliding scale via MCQ Education. World-class museum in stunning historic setting. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Aquarium du Québec Summer Day Camps",
+      "provider": "Aquarium du Québec (Société des établissements de plein air du Québec)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "~CAD $245-325/wk (~USD $180-240); SÉPAQ member discount + Quebec resident discount; sliding scale via Société pour la nature"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Québec City",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Aquarium du Québec (Sainte-Foy, west of downtown Quebec City — operated by SÉPAQ) themed weekly summer day camps for grades K-8. Tracks: Marine biology (Pacific + Atlantic + Arctic ocean exhibits), polar bears + harbor seals (one of few aquariums with both), bird ecology (Coral Reef immersive), conservation programs. Bilingual programming. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.sepaq.com/aquarium/learn/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sepaq.com/aquarium/learn/summer-camps",
+      "_addedBy": "canada-deep-batch-66",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Aquarium du Québec (Sainte-Foy, west of downtown Quebec City — operated by SÉPAQ Quebec parks system) themed summer camps grades K-8. Tracks: Marine biology (Pacific + Atlantic + Arctic ocean exhibits), polar bears + harbor seals (one of few aquariums with both), bird ecology (Coral Reef immersive), conservation programs. Bilingual programming. Mon-Fri 9am-3:30pm. ~CAD $245-325/wk (~USD $180-240). SÉPAQ member discount + Quebec resident discount + sliding scale via Société pour la nature. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Parc des Plaines d'Abraham + Citadelle Quebec Heritage Camps",
+      "provider": "Commission des champs de bataille nationaux (Quebec City)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-225/wk (~USD $130-170) — affordable; FREE general access to Plaines year-round; bilingual programming"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Québec City",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Plaines d'Abraham + Citadelle de Québec (Old Quebec UNESCO site) heritage camps for grades 3-8. Tracks: Battle of Quebec + 1759 history (re-enactments + interpretation), Citadelle (active military fort + ceremonial guard), Indigenous First Nations history, French colonial heritage. PRIMARILY FRENCH-language; English-speaking staff available. WALK between Old Quebec sites — great combined-trip experience for US families. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.ccbn-nbc.gc.ca/en/learn/family-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ccbn-nbc.gc.ca/en/learn/family-camps/",
+      "_addedBy": "canada-deep-batch-66",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Plaines d'Abraham + Citadelle de Québec (Old Quebec UNESCO site) heritage camps grades 3-8. Tracks: Battle of Quebec + 1759 history (re-enactments + interpretation), Citadelle (active military fort + ceremonial guard), Indigenous First Nations history, French colonial heritage. PRIMARILY FRENCH-language; English-speaking staff available — perfect French-immersion option. WALK between Old Quebec sites — great combined-trip for US families. ~CAD $175-225/wk (~USD $130-170). FREE general access to Plaines year-round. Mon-Fri 9am-3:30pm.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Place des Arts Family Programs (Montreal)",
+      "provider": "Place des Arts (Montréal)",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE outdoor festival programs Jul-Aug (Festival Montréal en lumière + Jazz Festival Family Days); summer camps ~CAD $295-385/wk (~USD $215-285)"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Montréal",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Place des Arts (downtown Montreal — Canada's largest performing arts complex) family + youth programs year-round. FREE outdoor festival programs Jul-Aug (Festival Montréal en lumière + Jazz Festival Family Days bring world-class free programming). Summer camps for grades K-8: Tracks: Symphony orchestra (OSM Place des Arts resident), opera, ballet (Les Grands Ballets Canadiens), theatre, mariachi + world music. Mon-Fri 9am-3:30pm. Bilingual.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://placedesarts.com/en/family-and-youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://placedesarts.com/en/family-and-youth-programs",
+      "_addedBy": "canada-deep-batch-66",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Place des Arts (downtown Montreal — Canada's largest performing arts complex) year-round family + youth programs. FREE outdoor festival programs Jul-Aug: Festival Montréal en lumière + Jazz Festival Family Days bring world-class free programming. Summer camps grades K-8: Symphony orchestra (OSM Place des Arts resident), opera, ballet (Les Grands Ballets Canadiens), theatre, mariachi + world music. Mon-Fri 9am-3:30pm. ~CAD $295-385/wk (~USD $215-285) for paid camps. Bilingual.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "TOHU Circus Arts Camps (Montreal)",
+      "provider": "TOHU — Cité des arts du cirque (Montréal)",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-375/wk (~USD $220-280); TOHU member discount; sliding scale + Montreal-resident scholarships; bilingual"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Montréal",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "TOHU Circus Arts (Saint-Michel, Montreal — Cirque du Soleil's home complex with 1,800-seat circular theater) themed weekly summer day camps for grades 3-8. Tracks: Acrobatics + Aerial Skills (silk + trapeze), Clowning + Physical Theatre, Juggling + Object Manipulation, Acro-Yoga + flexibility, Stage Lighting + Production. Strong physical-arts education in iconic Montreal neighborhood. Mon-Fri 9am-3:30pm. Bilingual programming.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://tohu.ca/en/programs/youth-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://tohu.ca/en/programs/youth-camps/",
+      "_addedBy": "canada-deep-batch-66",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "TOHU Circus Arts (Saint-Michel, Montreal — Cirque du Soleil's home complex with 1,800-seat circular theater) themed summer camps grades 3-8. Tracks: Acrobatics + Aerial Skills (silk + trapeze), Clowning + Physical Theatre, Juggling + Object Manipulation, Acro-Yoga + flexibility, Stage Lighting + Production. Strong physical-arts education. Mon-Fri 9am-3:30pm. ~CAD $295-375/wk (~USD $220-280). TOHU member discount + sliding scale + Montreal-resident scholarships. Bilingual.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
