@@ -46698,6 +46698,245 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Discovery World Summer Camps",
+      "provider": "Discovery World (Milwaukee)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-385/wk; member discount 10%; need-based aid via Discovery World Education + Milwaukee Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Discovery World (Pier Wisconsin on Lake Michigan, downtown Milwaukee) themed weekly summer day camps for grades K-8. Tracks: Aquatarium + Reiman Aquarium (Great Lakes ecology), Cosmosphere + planetarium, Innovation Station (engineering + tinker), Storm Theater (atmospheric science), Sailing School (real instruction in Discovery World's two schooners). Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.discoveryworld.org/learn/youth-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.discoveryworld.org/learn/youth-camps/",
+      "_addedBy": "state-expansion-batch-56",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Discovery World (Pier Wisconsin on Lake Michigan, downtown Milwaukee) themed summer camps grades K-8. Tracks: Aquatarium + Reiman Aquarium (Great Lakes ecology), Cosmosphere + planetarium, Innovation Station (engineering + tinker), Storm Theater (atmospheric science), Sailing School (real instruction in DW's two schooners). Mon-Fri 9am-3:30pm. ~$295-385/wk. 10% member discount + need-based aid via DW Education + MPS partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Milwaukee Public Museum Summer Camps",
+      "provider": "Milwaukee Public Museum",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$255-335/wk; member discount 10%; sliding scale via MPM Education + MPS partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Milwaukee",
+        "state": "WI"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Milwaukee Public Museum (downtown Milwaukee) themed weekly summer day camps for grades K-8. Tracks: Streets of Old Milwaukee (history), Rainforest (immersive walkthrough), Daniel M Soref Planetarium, dinosaur halls, indigenous + world cultures, butterfly garden. Mon-Fri 9am-3:30pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.mpm.edu/learn/summer-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mpm.edu/learn/summer-camps",
+      "_addedBy": "state-expansion-batch-56",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Milwaukee Public Museum (downtown Milwaukee) themed summer camps grades K-8. Tracks: Streets of Old Milwaukee (history), Rainforest (immersive walkthrough), Daniel M Soref Planetarium, dinosaur halls, indigenous + world cultures, butterfly garden. Mon-Fri 9am-3:30pm + extended care. ~$255-335/wk. 10% member discount + sliding scale via MPM Education + MPS partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Madison Children's Museum Summer Camps",
+      "provider": "Madison Children's Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "~$245-325/wk; member discount 10%; Museums for All ($1 entry SNAP/EBT) + Dane County sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Madison",
+        "state": "WI"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Madison Children's Museum (Capitol Square, downtown Madison) themed weekly summer camps for ages 3-10. Tracks: Wildernest (toddler nature play), Possibleopolis (engineering + maker), Art Studio, Rooftop Ramble (outdoor garden + chickens), Log Cabin (Wisconsin frontier history). Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://madisonchildrensmuseum.org/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://madisonchildrensmuseum.org/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-56",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Madison Children's Museum (Capitol Square, downtown Madison) themed summer camps ages 3-10. Tracks: Wildernest (toddler nature play), Possibleopolis (engineering + maker), Art Studio, Rooftop Ramble (outdoor garden + chickens), Log Cabin (Wisconsin frontier history). Half-day or full-day Mon-Fri. ~$245-325/wk. 10% member discount + Museums for All ($1 SNAP/EBT) + Dane County sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Children's Museum of Indianapolis Summer Camps (largest in world)",
+      "provider": "Children's Museum of Indianapolis",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 15%; Museums for All ($1 entry SNAP/EBT) + IPS partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Indianapolis",
+        "state": "IN"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Children's Museum of Indianapolis (Mid-North Indy) — LARGEST children's museum in the world (472,000 sq ft, 5 floors) — themed weekly summer day camps for ages 3-13. Tracks: Dinosphere (largest dino exhibit), Sports Legends Experience (12-acre outdoor sports complex), Beyond Spaceship Earth, Take Me There immersive cultures, Power of Children (history of activism). Mon-Fri half-day or full-day.",
+      "deadline": "Member reg Jan-Feb; general March",
+      "url": "https://www.childrensmuseum.org/learn/programs/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.childrensmuseum.org/learn/programs/camps",
+      "_addedBy": "state-expansion-batch-56",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Children's Museum of Indianapolis (Mid-North Indy) — LARGEST children's museum in the world (472,000 sq ft, 5 floors) — themed summer camps ages 3-13. Tracks: Dinosphere (largest dino exhibit), Sports Legends Experience (12-acre outdoor sports complex), Beyond Spaceship Earth, Take Me There immersive cultures, Power of Children (history of activism). Mon-Fri half-day or full-day. ~$295-395/wk. 15% member discount + Museums for All ($1 SNAP/EBT) + IPS scholarship partnership. Member reg Jan-Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Indianapolis Zoo Summer Camps",
+      "provider": "Indianapolis Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$255-335/wk; member discount 10%; need-based aid via Indy Zoo Education + IPS partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Indianapolis",
+        "state": "IN"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Indianapolis Zoo (White River State Park, downtown Indy) themed weekly summer day camps for grades K-8. Tracks: International Orangutan Center (largest in world), African Plains, Marine Mammal programs (dolphin demonstrations), penguins + flamingos. Indy Zoo + nearby White River Gardens (botanical garden + butterfly Conservatory). Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.indianapoliszoo.com/learn/youth-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.indianapoliszoo.com/learn/youth-programs/",
+      "_addedBy": "state-expansion-batch-56",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Indianapolis Zoo (White River State Park downtown Indy) themed summer camps grades K-8. Tracks: International Orangutan Center (largest in world), African Plains, Marine Mammal programs (dolphin demos), penguins + flamingos. Includes White River Gardens (botanical garden + butterfly Conservatory). Mon-Fri 9am-3:30pm. ~$255-335/wk. 10% member discount + need-based aid via Indy Zoo Education + IPS partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
