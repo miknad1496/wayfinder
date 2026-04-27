@@ -43667,6 +43667,238 @@
       "scheduleNotes": "FREE curriculum-aligned math game for grades 1-8, used by 50M+ students. Adventure RPG format (kids battle monsters by answering math problems) covers 45,000+ questions aligned with state standards. Free version covers all educational content; optional Level Up $9.95/mo or $74.95/yr unlocks cosmetic features. Ultimate $14.95/mo or $99.95/yr adds leaderboards. Year-round; sign up anytime. Strong fit for kids who resist traditional drill apps but love games. prodigygame.com.",
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-27"
+    },
+    {
+      "name": "Museum of Science Boston Summer Camps",
+      "provider": "Museum of Science (Boston)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 540,
+        "type": "paid",
+        "display": "~$425-625/wk; member discount 10%; need-based aid via MOS Education Foundation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "MOS Boston (Science Park) hosts week-long themed STEM day camps for ages 5-13. Themes: engineering challenges, robotics + coding, life sciences, space + planetarium, electricity + magnetism. Mon-Fri 9am-3:30pm; before/after care available. Member registration February; general March-April.",
+      "deadline": "Member reg Feb; general Mar-Apr 2026",
+      "url": "https://www.mos.org/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mos.org/camps",
+      "_addedBy": "state-expansion-batch-43",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Themed weekly day camps at MOS Boston Science Park. Engineering, robotics, life sciences, space/planetarium, electricity tracks. ~$425-625/wk; 10% member discount; need-based aid via MOS Education Foundation. Mon-Fri 9am-3:30pm + extended care. Member reg opens Feb; general Mar-Apr — popular weeks fill spring.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Boston Children's Museum Summer Programs",
+      "provider": "Boston Children's Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 350,
+        "type": "paid",
+        "display": "$300-450/wk half-day or $400-600/wk full-day; sliding scale via Museums for All ($1 entry for SNAP/EBT families); member discount"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Boston Children's Museum (Fort Point) summer programs for ages 3-10. Half-day morning + afternoon options + full-day Discovery Day Camp. Themes: art studios, water + bubbles play, theater, world cultures (Japanese House gallery), construction zone. Mon-Fri sessions June-August.",
+      "deadline": "Rolling — register at bostonchildrensmuseum.org",
+      "url": "https://bostonchildrensmuseum.org/explore-the-museum/educational-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://bostonchildrensmuseum.org/explore-the-museum/educational-programs/",
+      "_addedBy": "state-expansion-batch-43",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Boston Children's Museum (Fort Point waterfront) summer programs ages 3-10. Half-day or full-day options. Themed weeks: art studios, theater, world cultures, construction zone, water play. $300-600/wk. Museums for All program: $1 entry for SNAP/EBT families. Member discount + need-based aid. Rolling registration; popular weeks fill May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "MIT Museum Beautiful Mind Summer Camps",
+      "provider": "MIT Museum",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 485,
+        "type": "paid",
+        "display": "~$485/wk; need-based aid available via MIT Museum Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "MIT Museum's Beautiful Mind summer day camps for grades 3-8. Hands-on engineering, AI + robotics labs, holography, kinetic sculpture. Held at MIT Museum's Kendall Square location with field trips to MIT campus labs. Small groups (10-12 per session). Mon-Fri 9am-4pm.",
+      "deadline": "Member reg early Feb; general March-April",
+      "url": "https://mitmuseum.mit.edu/programs/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://mitmuseum.mit.edu/programs/summer-camps",
+      "_addedBy": "state-expansion-batch-43",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "MIT Museum's Beautiful Mind day camps grades 3-8 at Kendall Square Cambridge. Themes: engineering, AI + robotics, holography, kinetic sculpture. MIT campus lab field trips. Small groups 10-12. Mon-Fri 9am-4pm. Need-based aid via MIT Museum Education. Member reg early Feb; general Mar-Apr. Sessions sell out spring.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Boston Symphony Orchestra Youth Concerts + Summer Music Programs",
+      "provider": "Boston Symphony Orchestra",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "Free Youth Concerts (rsvp required); Tanglewood Music Center summer programs $1,500-3,500/2 weeks (need-based aid); BSO Family Concerts $20-45 ticket"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Boston + Tanglewood (Lenox)",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "BSO Youth Concerts at Symphony Hall (free, by reservation, K-8 schools + families). Family Concerts ($20-45). Tanglewood Music Center summer programs (Lenox, MA) for serious young musicians ages 12+ — competitive admission, financial aid available. Year-round + summer.",
+      "deadline": "Tanglewood applications Feb-March; Family Concerts rolling",
+      "url": "https://www.bso.org/education/youth-family-programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.bso.org/education/youth-family-programs",
+      "_addedBy": "state-expansion-batch-43",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "BSO Youth Concerts at Symphony Hall Boston — FREE by reservation, K-8 schools + families. Family Concerts $20-45 ticket. Tanglewood Music Center (Lenox MA) summer programs for serious young musicians ages 12+ — selective admission, $1,500-3,500/2 weeks, need-based aid. Year-round school programming + summer Tanglewood. Apply Tanglewood Feb-Mar.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Franklin Park Zoo + Stone Zoo Summer Camps",
+      "provider": "Zoo New England",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 480,
+        "type": "paid",
+        "display": "~$425-525/wk; member discount 10%; sliding scale + scholarships for Boston public school students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Boston",
+        "state": "MA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Zoo New England (operates Franklin Park Zoo + Stone Zoo) summer day camps for ages 5-12. Themes: zookeeping, conservation, animal behavior, ecology, paleontology. Behind-the-scenes animal encounters + zoo exploration. Mon-Fri 9am-3:30pm; extended care available. Member registration February; general March.",
+      "deadline": "Member reg Feb; general March-May",
+      "url": "https://www.zoonewengland.org/learn/programs/summer-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.zoonewengland.org/learn/programs/summer-camps",
+      "_addedBy": "state-expansion-batch-43",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Zoo New England runs day camps at Franklin Park Zoo (Boston) + Stone Zoo (Stoneham). Ages 5-12. Themes: zookeeping, conservation, animal behavior, ecology, paleontology. Behind-the-scenes encounters. Mon-Fri 9am-3:30pm + extended care. ~$425-525/wk. 10% member discount + sliding scale + scholarships for Boston public school students. Member reg Feb; general Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
