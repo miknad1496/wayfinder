@@ -5181,6 +5181,307 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "confidence": "high"
+    },
+    {
+      "name": "League of Women Voters Youth Volunteer",
+      "organization": "League of Women Voters",
+      "description": "Volunteer with local LWV chapters in voter registration drives, candidate forums, ballot information distribution, and youth civic education. Open to ages 14+ (some chapters allow 16+ as full members). Excellent for kids interested in civic engagement, public policy, and pre-law tracks. Year-round availability with peak activity around elections.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "voter registration",
+        "civic education",
+        "public speaking",
+        "nonpartisan facilitation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit lwv.org and find your local chapter via zip code. Most chapters welcome HS volunteers for voter registration drives + youth civic education programs. Apply Aug-Oct for election-year activity peak.",
+      "_source": "https://www.lwv.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Generation Citizen Action Civics",
+      "organization": "Generation Citizen",
+      "description": "Generation Citizen runs an action civics program in 100+ HS classrooms across NYC, Boston, San Francisco, Providence, Oklahoma. Students identify local issue + advocate for change with local officials. Volunteer roles include classroom co-teacher, mentor, and chapter leader for HS students who've completed the program. Excellent pre-law + public policy pipeline.",
+      "scope": "regional",
+      "states": [
+        "NY",
+        "MA",
+        "CA",
+        "RI",
+        "OK"
+      ],
+      "categories": [
+        "civic",
+        "education",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "action civics",
+        "local government engagement",
+        "advocacy",
+        "public speaking"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit generationcitizen.org/get-involved. HS students who completed GC curriculum can apply to be Civics Action Mentors for younger cohorts. Apply Aug-Sep for school year programming.",
+      "_source": "https://generationcitizen.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Common Cause Voter Engagement",
+      "organization": "Common Cause",
+      "description": "Common Cause is one of America's oldest nonpartisan good-government organizations (founded 1970). HS volunteer roles include voter registration outreach, redistricting advocacy support, voting rights education, and election protection (poll monitoring at age 18+). 35+ state chapters with active student programs.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "voter outreach",
+        "redistricting analysis",
+        "election protection",
+        "nonpartisan advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit commoncause.org/take-action and select your state chapter. HS volunteer roles available year-round, with election-year peaks Aug-Nov.",
+      "_source": "https://www.commoncause.org/take-action/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Local Community Theater Volunteer (national network)",
+      "organization": "American Association of Community Theatre (AACT)",
+      "description": "AACT serves 7,000+ community theaters nationally. Volunteer roles for HS students 14+: ushering, set construction, costume design, lighting + sound assistance, stage management, props, marketing, fundraising. Most local theaters welcome HS volunteers and provide hands-on technical training. Excellent for theater + arts-track students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "stage management",
+        "set design",
+        "lighting",
+        "sound",
+        "theater production"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit aact.org and use the theater locator to find theaters in your area. Email volunteer coordinator OR show up to open auditions/work calls. Most welcome teens with interest + enthusiasm.",
+      "_source": "https://aact.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "NPR Member Station Youth Volunteer",
+      "organization": "NPR Member Stations (national network)",
+      "description": "600+ NPR member stations welcome HS volunteers age 16+ for tasks like phone bank during pledge drives, station event support, transcription, social media outreach, and youth advisory boards. Excellent for journalism + media-track students. Some stations run formal high school journalism programs (KQED Youth Voices, WBUR Field Notes, etc.).",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "arts",
+        "civic"
+      ],
+      "ageMin": 16,
+      "ageMax": 18,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "radio journalism",
+        "interview techniques",
+        "audio editing",
+        "public radio operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Find your local NPR member station at npr.org/stations and email their volunteer coordinator. Larger stations (KQED, WBUR, WNYC) have formal HS journalism programs — apply early (Sep-Dec).",
+      "_source": "https://www.npr.org/about-npr/179876898/volunteering-and-internships",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Mikva Challenge Youth Civic Action",
+      "organization": "Mikva Challenge",
+      "description": "Mikva Challenge runs civic action programs in Chicago, DC, LA, NYC, Cleveland, San Francisco. HS students 14+ participate in election-cycle internships, issue-to-action projects, and policy fellowships. Pipeline to high-quality civic engagement roles + Mikva Alumni Network. Strong fit for kids interested in elected office or public policy careers.",
+      "scope": "regional",
+      "states": [
+        "IL",
+        "DC",
+        "CA",
+        "NY",
+        "OH"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "policy advocacy",
+        "electoral organizing",
+        "issue-to-action",
+        "civic leadership"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit mikvachallenge.org/get-involved and apply for a fellowship in your city. Chicago + DC are flagship; programs available in 6 cities. Apply Aug-Oct for school year, Mar-May for summer.",
+      "_source": "https://www.mikvachallenge.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "American Civil Liberties Union (ACLU) Student Member",
+      "organization": "ACLU",
+      "description": "ACLU has 50+ state affiliates with student volunteer programs. HS roles include rights education outreach, civil liberties advocacy at school, voter registration drives, and First Amendment + Fourth Amendment student journalism support. Strong fit for pre-law + journalism students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civil liberties education",
+        "constitutional law basics",
+        "advocacy",
+        "First Amendment + Fourth Amendment"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit aclu.org and select your state affiliate. Most welcome HS volunteers for rights education + outreach. Some state ACLUs run formal Youth Advisory Boards — apply Sep-Dec for school year programs.",
+      "_source": "https://www.aclu.org/take-action",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Local NAACP Youth Council",
+      "organization": "NAACP",
+      "description": "NAACP has 1,200+ youth + college chapters nationally. HS-aged students (12-18) join Youth Councils for civil rights advocacy, voter education, criminal justice reform support, and community organizing. Pipeline to NAACP National Youth + College Division leadership conferences. Strong fit for civil rights + pre-law track.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civil rights advocacy",
+        "community organizing",
+        "voter education",
+        "criminal justice reform"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit naacp.org/find-your-local-branch and contact your local NAACP branch about Youth Council. School-affiliated and community Youth Councils available. Apply Aug-Oct for school year programming.",
+      "_source": "https://naacp.org/youth-college",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Junior State of America (JSA)",
+      "organization": "Junior State of America",
+      "description": "JSA is a nonpartisan student-run civic engagement organization with 800+ HS chapters across the US. HS students lead chapters, organize debate tournaments, attend regional + national conventions, and engage in policy advocacy. Pipeline to JSA Summer Schools (Princeton + Stanford + Georgetown campus programs). Strong fit for debate + politics + pre-law students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "debate",
+        "political analysis",
+        "public speaking",
+        "constitutional law",
+        "parliamentary procedure"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit jsa.org/find-a-chapter to see if your school has a chapter (or start one). Apply Aug-Oct for school year. JSA Summer Schools at Princeton/Stanford/Georgetown have separate Mar-Apr application.",
+      "_source": "https://www.jsa.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Young Americans for Liberty (YAL) Chapter",
+      "organization": "Young Americans for Liberty",
+      "description": "YAL is a libertarian youth organization with 800+ chapters at HS and college levels. HS roles include chapter founding + leadership, policy education, voter outreach, and YAL National Convention attendance. Strong fit for libertarian-leaning + small-government conservative students. Pipeline to YAL Mises Institute fellowships + Cato Institute internships.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "civic",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "libertarian policy",
+        "chapter leadership",
+        "voter outreach",
+        "constitutional originalism"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit yaliberty.org/start-a-chapter to start one or yaliberty.org/find-a-chapter to join existing. Apply Aug-Oct for school year activity.",
+      "_source": "https://www.yaliberty.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
     }
   ]
 }
