@@ -37533,7 +37533,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.mathnasium.com/summer-math-programs"
+      "_source": "https://www.mathnasium.com/summer-math-programs",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Nationwide math learning-center franchise — 1,000+ centers in US/Canada. Year-round + summer programs. Personalized: placement assessment, customized session plan, small-group + 1:1 tutoring. Summer pack tiers: 8x1hr Elementary $269; Middle school $299; longer + unlimited packages also available. Plus $49-99 first-time enrollment fee. Sessions begin June 2026; enrollment year-round, summer-track typically starts after Memorial Day.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Code Ninjas Summer Coding & STEM Camps",
@@ -37597,7 +37603,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.codeninjas.com/camps"
+      "_source": "https://www.codeninjas.com/camps",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Nationwide coding-camp franchise — 400+ centers serving ages 5-14. Themed week-long camps: Robotics (Spike Essential), Minecraft modding (Java + MCreator), Roblox Studio, app dev, AI, cybersecurity, YouTube content. $199/wk typical. Unlimited Pass covers up to 9 weeks Mon-Fri Jun 1 – Jul 31, 2026 (~$16/hr equivalent at full attendance). Register through local center; popular weeks fill spring 2026.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "CodaKid Online Coding Camps & Subscription",
@@ -37925,7 +37940,16 @@
       "scope": "national",
       "scholarshipAid": "Not publicly advertised on landing pages; some local branches offer financial aid — call the local branch director directly to ask",
       "registrationUrl": "https://www.mathschool.com/rsm-online-math-program",
-      "howToStart": "Submit the tuition-request form on mathschool.com to get the PDF with grade-specific pricing for your region/track. Schedule a placement test (free) — RSM uses results to assign the right level rather than relying on grade alone, so a strong 5th grader may place into the 6th-grade curriculum."
+      "howToStart": "Submit the tuition-request form on mathschool.com to get the PDF with grade-specific pricing for your region/track. Schedule a placement test (free) — RSM uses results to assign the right level rather than relying on grade alone, so a strong 5th grader may place into the 6th-grade curriculum.",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-06"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Online + 60+ U.S. branch math school grades 2-12. 2026 summer schedule explicitly Jun 29 – Aug 6 with 6-week and 3-week tracks: math reinforcement, math prep, contest math (AMC 8/10), Math Olympiad. Year-round school-year program continues separately. Reported pricing $41-110/lesson; exact tuition only via tuition-request form. HQ Newton, MA.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp Invention 2026 — Spark",
@@ -39663,7 +39687,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE Army-sponsored STEM competition for grades 6-9. Teams of 3-4 students + a 'team advisor' (teacher or parent) tackle a community problem using STEM research. Mission Folder submission. State + regional + national prize tiers. Team prizes up to $9,000 in US Savings Bonds. Schedule: Registration opens August; project submission late February; finals June. Apply at ecybermission.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Future City Competition (DiscoverE)",
@@ -39869,7 +39899,16 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "specific 2026 dates and pricing — verify on field museum education page"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Field Museum (Chicago, home of Sue the T-Rex) age-banded summer camps for grades K-8. Themes: paleontology, ancient civilizations (Egypt, Maya), animal kingdom, ecosystems. Junior Curators track for older kids includes behind-the-scenes collections access. 1-week ~$425-575; member discount 10%; scholarship via Field Museum Education. Member registration January; general February-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Apple Camp at Apple Store (free)",
