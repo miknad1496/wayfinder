@@ -45278,6 +45278,241 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Minnesota Children's Museum Summer Camps",
+      "provider": "Minnesota Children's Museum (Saint Paul)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~$285-365/wk; member discount 10%; sliding scale via Museums for All ($1 entry for SNAP/EBT) + Saint Paul Public Schools partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saint Paul",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Minnesota Children's Museum (downtown Saint Paul, near Lowertown Light Rail) themed weekly summer camps for ages 3-10. Tracks: Sprouts (toddler-focused), Studio (art + music), Forces at Play (physics + engineering), Tip Top Terrace outdoor summer rooftop tracks. Half-day or full-day Mon-Fri. Strong fit for Twin Cities families.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://mcm.org/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://mcm.org/learn/camps/",
+      "_addedBy": "state-expansion-batch-50",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Minnesota Children's Museum (downtown Saint Paul, near Lowertown Light Rail) themed summer camps ages 3-10. Tracks: Sprouts (toddler-focused), Studio (art + music), Forces at Play (physics + engineering), Tip Top Terrace outdoor summer rooftop tracks. Half-day or full-day Mon-Fri. ~$285-365/wk. 10% member discount + Museums for All ($1 entry for SNAP/EBT) + Saint Paul Public Schools scholarship partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Como Park Zoo & Conservatory Summer Camps",
+      "provider": "Como Park Zoo & Conservatory (Saint Paul)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$265-345/wk; FREE general zoo admission year-round (donation suggested); Como Friends member discount + need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saint Paul",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "Como Park Zoo & Conservatory (Saint Paul) themed summer day camps for grades K-6. FREE admission to the zoo + Marjorie McNeely Conservatory year-round (donation requested). Tracks: animal behavior, conservation, ecology, plant science (Conservatory rainforest gardens). Mon-Fri 9am-3pm with extended care. One of the most family-accessible zoo programs in the country given free admission base.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://comozooconservatory.org/learn/youth-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://comozooconservatory.org/learn/youth-programs/",
+      "_addedBy": "state-expansion-batch-50",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Como Park Zoo & Conservatory (Saint Paul) themed summer camps grades K-6. Zoo + Marjorie McNeely Conservatory: FREE general admission year-round (donation requested). Tracks: animal behavior, conservation, ecology, plant science (rainforest gardens). Mon-Fri 9am-3pm + extended care. ~$265-345/wk. Como Friends member discount + need-based aid. Member reg Feb; general Mar-Apr. One of most family-accessible zoo programs given free admission base.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Bell Museum Summer Programs",
+      "provider": "Bell Museum (University of Minnesota)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 355,
+        "type": "paid",
+        "display": "~$315-385/wk; UMN community + member discount; sliding scale via Bell Education + Title I scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saint Paul",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Bell Museum (UMN Saint Paul campus, opened 2018) themed weekly summer camps for grades 1-8. State of Minnesota's official natural history museum + planetarium. Tracks: planetarium (Whitney + Elizabeth MacMillan Auditorium), Minnesota habitats + dioramas, ecology + biodiversity, paleontology. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://bellmuseum.umn.edu/learn/youth-and-family-programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://bellmuseum.umn.edu/learn/youth-and-family-programs",
+      "_addedBy": "state-expansion-batch-50",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Bell Museum (UMN Saint Paul campus, opened 2018) themed summer camps grades 1-8. Minnesota's official natural history museum + planetarium. Tracks: planetarium (Whitney + Elizabeth MacMillan Auditorium), Minnesota habitats + dioramas, ecology + biodiversity, paleontology. Mon-Fri 9am-3:30pm. ~$315-385/wk. UMN community + member discount + sliding scale via Bell Education + Title I scholarship pool. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Walker Art Center Family + Youth Programs",
+      "provider": "Walker Art Center (Minneapolis)",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE Free First Saturdays + community days; ~$295-385/wk for summer camps; Walker member discount + need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Minneapolis",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Walker Art Center (Lowry Hill, Minneapolis) family + youth programs year-round. Free First Saturdays (monthly community day, free admission + family activities). Summer camps for grades K-8 with tracks in contemporary art, performance + film, design + architecture, sound + music. Strong contemporary-art curatorial DNA from Walker's permanent collection.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://walkerart.org/programs/youth-and-families",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://walkerart.org/programs/youth-and-families",
+      "_addedBy": "state-expansion-batch-50",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Walker Art Center (Lowry Hill Minneapolis) year-round family + youth programs. FREE Free First Saturdays (monthly community day). Summer camps grades K-8 — tracks: contemporary art, performance + film, design + architecture, sound + music. ~$295-385/wk camps; FREE community days. Walker member discount + need-based aid. Member reg Feb; general March.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Mill City Museum + Family Programs",
+      "provider": "Minnesota Historical Society / Mill City Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "~$245-325/wk; MNHS member discount + Free Saturday programs ages 5-12 sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Minneapolis",
+        "state": "MN"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Mill City Museum (Minneapolis riverfront, in the historic Washburn A Mill ruin) themed weekly summer camps for grades K-8. Tracks: Minnesota history (Mississippi River industrial heritage), Mill processes (flour milling demonstrations), Native American history, Minnesota Public Radio production tour, weekend tours of Stone Arch Bridge. Mon-Fri half-day or full-day. Free Saturday programs.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.mnhs.org/millcity/learn/youth",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mnhs.org/millcity/learn/youth",
+      "_addedBy": "state-expansion-batch-50",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Mill City Museum (Minneapolis riverfront, in historic Washburn A Mill ruin) themed summer camps K-8. Tracks: Minnesota history (Mississippi industrial heritage), Mill processes (flour milling demos), Native American history, MN Public Radio production tour, Stone Arch Bridge weekend tours. Mon-Fri half-day or full-day. ~$245-325/wk. MNHS member discount + FREE Saturday programs ages 5-12 with sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
