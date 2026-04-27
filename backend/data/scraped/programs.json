@@ -52469,6 +52469,228 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Tecnológico de Monterrey Summer Programs",
+      "provider": "Tecnológico de Monterrey (Mexico)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~MXN $25,000-45,000/3-week (USD $1,470-2,650); ITESM scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Monterrey",
+        "state": "MX"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tecnológico de Monterrey (ITESM) Summer Programs — Mexico's top private university (top-150 globally) for ages 16-18 (rising 11+). 3-week residential at Monterrey campus (NE Mexico) OR Mexico City campus. Tracks: Pre-Engineering, Pre-Medicine, Business + Entrepreneurship (ITESM is alma mater of Mexico's tech founders), Spanish Language Immersion, Latin American Studies. ENGLISH-medium primary; Spanish immersion intensive. Affordable + great for STEM-track Spanish-bilingual kids.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://tec.mx/en/learn/summer-school-international",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://tec.mx/en/learn/summer-school-international",
+      "_addedBy": "international-latam-batch-83",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Tecnológico de Monterrey (ITESM) Summer Programs — Mexico's top private university (top-150 globally) for ages 16-18 (rising 11+). 3-week residential at Monterrey campus (NE Mexico) OR Mexico City campus. Tracks: Pre-Engineering, Pre-Medicine, Business + Entrepreneurship (ITESM alma mater of Mexico's tech founders), Spanish Language Immersion, Latin American Studies. ENGLISH-medium primary; Spanish immersion intensive. ~MXN $25,000-45,000/3-week (USD $1,470-2,650). ITESM scholarships for international students. AFFORDABLE + great for STEM-track Spanish-bilingual kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Spanish Immersion in Oaxaca + Mexico City Programs",
+      "provider": "Becari Language School Oaxaca / Frida Language Center Mexico City",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~MXN $18,000-28,000/2-week (USD $1,060-1,650); homestay families included; sliding scale for low-income"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oaxaca + Mexico City",
+        "state": "MX"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Spanish Immersion in Oaxaca + Mexico City — multiple US-friendly Spanish language schools for K-12. Tracks: Beginner-Advanced Spanish, Mexican Culture (cuisine, art, indigenous heritage), Day Trips (Monte Albán archaeology, Frida Kahlo museum). Homestay with Mexican families included. 2-week intensive ~$1,060-1,650 USD — extraordinarily affordable + powerful Spanish acquisition. Strong cultural understanding. Multiple US-curated programs at Becari (Oaxaca) + Frida (Mexico City) + Don Quijote (multiple cities).",
+      "deadline": "Apply year-round; rolling",
+      "url": "https://www.becari.com.mx OR https://www.donquijote.org/spanish-courses-mexico/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.becari.com.mx",
+      "_addedBy": "international-latam-batch-83",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Spanish Immersion in Oaxaca + Mexico City — multiple US-friendly Spanish language schools for K-12. Tracks: Beginner-Advanced Spanish, Mexican Culture (cuisine, art, indigenous heritage), Day Trips (Monte Albán archaeology, Frida Kahlo museum). Homestay with Mexican families included. ~MXN $18,000-28,000/2-week (USD $1,060-1,650) — extraordinarily affordable + powerful Spanish acquisition. Strong cultural understanding. Multiple US-curated programs at Becari (Oaxaca) + Frida (Mexico City) + Don Quijote (multiple cities). Apply year-round; rolling.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Spanish Immersion Mérida + Yucatán (Maya Heritage)",
+      "provider": "Habla Yucatán Spanish Schools",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 1095,
+        "type": "paid",
+        "display": "~MXN $15,000-25,000/2-week (USD $880-1,470); homestay with local Maya-descendant families; affordable"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Mérida",
+        "state": "MX"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Spanish Immersion in Mérida + Yucatán — multiple language schools for K-12 Spanish + Maya cultural immersion. Mérida (capital of Yucatán) safest major city in Mexico + cultural capital. Tracks: Spanish, Maya cultural studies (kids visit Chichén Itzá, Uxmal, Cobá UNESCO sites), Yucatecan cuisine, cenote diving. Homestay with Maya-descendant families. Vastly under-applied-for + provides authentic Indigenous learning unavailable in US programs. EXTRAORDINARILY affordable.",
+      "deadline": "Apply year-round; rolling",
+      "url": "https://www.hablayucatan.com",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hablayucatan.com",
+      "_addedBy": "international-latam-batch-83",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Spanish Immersion in Mérida + Yucatán — multiple language schools for K-12 Spanish + Maya cultural immersion. Mérida (capital of Yucatán) safest major city in Mexico + cultural capital. Tracks: Spanish, Maya cultural studies (kids visit Chichén Itzá, Uxmal, Cobá UNESCO sites), Yucatecan cuisine, cenote diving. Homestay with Maya-descendant families. ~MXN $15,000-25,000/2-week (USD $880-1,470). Vastly under-applied-for + provides authentic Indigenous learning unavailable in US programs. EXTRAORDINARILY affordable. Apply year-round.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Portuguese Immersion in Salvador + Rio (Brazil)",
+      "provider": "IBEU / Casa do Caminho Brazilian Language Schools",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~BRL R$8,000-14,000/2-week (USD $1,490-2,615); homestay with Brazilian families; sliding scale + cultural-heritage scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Salvador + Rio de Janeiro",
+        "state": "BR"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Portuguese Immersion in Salvador + Rio (Brazil) — IBEU + Casa do Caminho language schools for ages 13-18. 2-week residential with homestay. Tracks: Brazilian Portuguese (different from Continental Portuguese), African-Brazilian heritage (Salvador's Pelourinho UNESCO site is heart of African diaspora in Americas), Carnival + samba culture, Amazon ecology day trips. Underutilized opportunity — Brazil is 5th-largest country, Portuguese is 9th-most-spoken language globally.",
+      "deadline": "Apply year-round; rolling",
+      "url": "https://www.ibeu.org.br/learn/portuguese-immersion-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ibeu.org.br/learn/portuguese-immersion-summer",
+      "_addedBy": "international-latam-batch-83",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Portuguese Immersion in Salvador + Rio (Brazil) — IBEU + Casa do Caminho language schools for ages 13-18. 2-week residential with homestay. Tracks: Brazilian Portuguese (different from Continental Portuguese), African-Brazilian heritage (Salvador's Pelourinho UNESCO site is heart of African diaspora in Americas), Carnival + samba culture, Amazon ecology day trips. ~BRL R$8,000-14,000/2-week (USD $1,490-2,615). Homestay + sliding scale + cultural-heritage scholarships. UNDER-utilized — Brazil is 5th-largest country, Portuguese is 9th-most-spoken language globally. Apply year-round.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Patagonia Outdoor Adventure Programs (Chile + Argentina)",
+      "provider": "NOLS Patagonia / Outward Bound South America",
+      "category": "outdoor",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~USD $3,500-7,500/2-3 week wilderness expedition; NOLS + Outward Bound need-based aid; insurance + travel separate"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Patagonia",
+        "state": "CL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NOLS Patagonia / Outward Bound South America — wilderness leadership + outdoor education in Chilean + Argentine Patagonia for ages 13-18. 2-3 week expeditions: trekking Torres del Paine National Park, sea kayaking Beagle Channel, mountaineering. Spanish acquisition through expedition team. Distinguished college-app credential — Patagonia is most distinctive wilderness destination on Earth. Need-based aid via NOLS Foundation + Outward Bound Scholarship Fund.",
+      "deadline": "Apply Sep-Mar (US summer = Patagonia winter; Patagonia summer Dec-Mar)",
+      "url": "https://www.nols.edu/learn/patagonia-courses",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nols.edu/learn/patagonia-courses",
+      "_addedBy": "international-latam-batch-83",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-12-08",
+        "latestEnd": "2027-03-15"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "NOLS Patagonia / Outward Bound South America — wilderness leadership + outdoor education in Chilean + Argentine Patagonia for ages 13-18. 2-3 week expeditions: trekking Torres del Paine National Park, sea kayaking Beagle Channel, mountaineering. Spanish acquisition through expedition team. ~USD $3,500-7,500/2-3 week wilderness expedition. NOLS + Outward Bound need-based aid. Insurance + travel separate. **TIMING NOTE: Patagonia is Southern Hemisphere — their summer is Dec-Mar (US winter). Apply 6+ months ahead. Distinguished college-app credential — Patagonia is most distinctive wilderness destination on Earth.**",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
