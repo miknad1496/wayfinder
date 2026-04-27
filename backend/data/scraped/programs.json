@@ -45989,6 +45989,240 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Maryland Science Center Summer Camps",
+      "provider": "Maryland Science Center (Baltimore Inner Harbor)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 355,
+        "type": "paid",
+        "display": "~$315-395/wk; member discount 10%; need-based aid via MdSC Education + Baltimore City Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Baltimore",
+        "state": "MD"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Maryland Science Center (Baltimore Inner Harbor) themed weekly summer camps for grades K-8. Tracks: Dinosaurs + paleontology (Dinosaur Mysteries exhibit), Davis Planetarium, Engineering Lab + 3D Printing, Energy + Climate Lab, Body Link (anatomy), IMAX shows. Mon-Fri 9am-4pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.mdsci.org/learn/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mdsci.org/learn/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-53",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Maryland Science Center (Baltimore Inner Harbor) themed summer camps grades K-8. Tracks: Dinosaurs + paleontology (Dinosaur Mysteries exhibit), Davis Planetarium, Engineering Lab + 3D Printing, Energy + Climate Lab, Body Link (anatomy), IMAX shows. Mon-Fri 9am-4pm + extended care. ~$315-395/wk. 10% member discount + need-based aid via MdSC Education + Baltimore City Public Schools partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "National Air and Space Museum Family Days + Summer Programs",
+      "provider": "Smithsonian National Air and Space Museum (DC)",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE general admission to both NASM locations year-round (timed-entry passes required); summer camps via partner orgs $295-485/wk"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Washington",
+        "state": "DC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Smithsonian National Air and Space Museum has TWO locations: National Mall in DC + Steven F. Udvar-Hazy Center in Chantilly VA (Space Shuttle Discovery, SR-71 Blackbird). FREE timed-entry tickets year-round. Family Days (monthly free events with hands-on activities). Summer camps run via partner orgs at NASM facilities — search 'NASM summer camp' on Smithsonian Education for current options.",
+      "deadline": "FREE timed-entry tickets — book 6 weeks ahead for Mall; Udvar-Hazy walk-in OK",
+      "url": "https://airandspace.si.edu/visit/programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://airandspace.si.edu/visit/programs",
+      "_addedBy": "state-expansion-batch-53",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Smithsonian National Air and Space Museum has TWO locations: National Mall DC + Steven F. Udvar-Hazy Center Chantilly VA (Space Shuttle Discovery, SR-71 Blackbird). FREE timed-entry tickets year-round. Family Days = monthly free hands-on events. Summer camps run via partner orgs at NASM facilities — search 'NASM summer camp' on Smithsonian Education for current options. Book Mall timed-entry 6 weeks ahead; Udvar-Hazy walk-in usually OK.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Maryland Zoo Summer Camps + Family Programs",
+      "provider": "Maryland Zoo in Baltimore",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-385/wk; member discount 15%; need-based aid via Maryland Zoo Education + Baltimore-resident scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Baltimore",
+        "state": "MD"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Maryland Zoo (Druid Hill Park, Baltimore — third-oldest zoo in US, founded 1876) themed weekly summer day camps for grades K-8. Tracks: Polar Bear Watch (live polar bears + Arctic ecology), Penguin Coast (large African Penguin colony), African Journey (lions, giraffes), animal husbandry + zookeeping, Maryland Wilderness (native MD habitats). Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.marylandzoo.org/learn/camp/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.marylandzoo.org/learn/camp/",
+      "_addedBy": "state-expansion-batch-53",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Maryland Zoo (Druid Hill Park Baltimore — third-oldest zoo in US, founded 1876) themed summer camps grades K-8. Tracks: Polar Bear Watch (live polar bears + Arctic ecology), Penguin Coast (large African Penguin colony), African Journey (lions, giraffes), zookeeping + husbandry, Maryland Wilderness (native habitats). Mon-Fri 9am-3:30pm. ~$295-385/wk. 15% member discount + need-based aid via MD Zoo Education + Baltimore-resident scholarship pool. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Science Museum of Virginia Camps",
+      "provider": "Science Museum of Virginia (Richmond)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$255-345/wk; member discount 10%; sliding scale via SMV Education + Richmond Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Richmond",
+        "state": "VA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Science Museum of Virginia (Broad Street Station — historic 1919 train station, Richmond) themed weekly summer day camps for grades 1-8. Tracks: Speed (vehicles + physics), BodyLab (anatomy), Earth (geology + Virginia ecosystems), Light (optics + photography), Engineering Garage (build + tinker). Mon-Fri 9am-4pm with extended care. Stunning historic building with Dome 76-foot diameter.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://smv.org/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://smv.org/learn/camps/",
+      "_addedBy": "state-expansion-batch-53",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Science Museum of Virginia (Broad Street Station — historic 1919 train station, Richmond) themed summer camps grades 1-8. Tracks: Speed (vehicles + physics), BodyLab (anatomy), Earth (geology + VA ecosystems), Light (optics + photography), Engineering Garage (build + tinker). Stunning Dome 76-ft diameter. Mon-Fri 9am-4pm + extended care. ~$255-345/wk. 10% member discount + sliding scale via SMV Education + Richmond Public Schools partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Children's Museum of Richmond Summer Camps",
+      "provider": "Children's Museum of Richmond",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 245,
+        "type": "paid",
+        "display": "~$215-285/wk; member discount 10%; Museums for All ($1 entry SNAP/EBT) + Richmond-region sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Richmond",
+        "state": "VA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Children's Museum of Richmond (downtown Richmond — central campus + Short Pump satellite + Chesterfield Wonderworks satellite) themed weekly summer camps for ages 3-10. Tracks: Art Studio (visual arts + sculpture), How It Works (engineering for little kids), Wonderscope (science exploration), Imagination Station (storytelling + theater). Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.cmorkids.org/programs/summer-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cmorkids.org/programs/summer-camps",
+      "_addedBy": "state-expansion-batch-53",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Children's Museum of Richmond (downtown Richmond + Short Pump satellite + Chesterfield Wonderworks satellite) themed summer camps ages 3-10. Tracks: Art Studio (visual arts + sculpture), How It Works (engineering), Wonderscope (science exploration), Imagination Station (storytelling + theater). Half-day or full-day Mon-Fri. ~$215-285/wk. 10% member discount + Museums for All ($1 SNAP/EBT) + Richmond-region sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
