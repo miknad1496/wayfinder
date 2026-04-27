@@ -46937,6 +46937,242 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Science World Summer Camps (Vancouver BC)",
+      "provider": "Science World (TELUS World of Science)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~CAD $325-385/wk (~USD $240-285); Science World member discount; sliding scale + Vancouver-resident scholarships; international US families welcome with passport"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Science World (iconic geodesic dome on False Creek, downtown Vancouver) themed weekly summer day camps for grades K-8. Tracks: Maker Studio, Body Lab, Search the Galaxy (planetarium), Living Things (biology), Physics in Action. WA families: 3-hour drive from Seattle (no traffic). Border crossing requires passport for kids — use NEXUS or arrive early. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg early Feb; general March-April",
+      "url": "https://www.scienceworld.ca/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.scienceworld.ca/learn/camps/",
+      "_addedBy": "international-expansion-batch-57",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Science World (iconic geodesic dome on False Creek, downtown Vancouver) themed summer camps grades K-8. Tracks: Maker Studio, Body Lab, Search the Galaxy (planetarium), Living Things (biology), Physics in Action. WA families: 3-hour drive from Seattle (no traffic). Border crossing requires passport for kids — use NEXUS or arrive early. BC schools start mid-Sep so summer runs longer (Jul-late Aug). Mon-Fri 9am-3:30pm. ~CAD $325-385/wk (~USD $240-285). Member discount + sliding scale + Vancouver-resident scholarships. International US families welcome.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Vancouver Aquarium AquaCamps",
+      "provider": "Vancouver Aquarium (Ocean Wise)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~CAD $395-485/wk (~USD $290-360); member discount + sliding scale + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Vancouver Aquarium (Stanley Park) AquaCamps themed weekly summer day camps for grades K-8. World-renowned aquarium — Pacific Northwest marine life focus, Treasures of the BC Coast exhibit, otters + jellyfish, Discovery Coast (intertidal). WA families: 3-hour drive from Seattle, combine with Stanley Park visit. Border crossing requires passport. Mon-Fri 9am-3:30pm with extended care.",
+      "deadline": "Member reg early Feb; general March",
+      "url": "https://www.vanaqua.org/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.vanaqua.org/learn/camps/",
+      "_addedBy": "international-expansion-batch-57",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Vancouver Aquarium (Stanley Park) AquaCamps grades K-8. World-renowned aquarium — Pacific Northwest marine life focus, Treasures of the BC Coast, otters + jellyfish, Discovery Coast (intertidal). WA families: 3-hour drive from Seattle, combine with Stanley Park visit. Border crossing requires passport for kids. Mon-Fri 9am-3:30pm + extended care. ~CAD $395-485/wk (~USD $290-360). Member discount + sliding scale + low-income family programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "HR MacMillan Space Centre Astronomy Camps",
+      "provider": "HR MacMillan Space Centre (Vancouver BC)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-365/wk (~USD $215-270); member discount + sliding scale; Vancouver-resident need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "HR MacMillan Space Centre (Vanier Park, Kits Beach Vancouver) themed weekly summer day camps for grades 1-8. Tracks: Astronomers Ltd (planetarium shows), Mars Mission, Cosmic Voyage (deep space), Rocket Engineering, Coding for Cosmos. Mon-Fri 9am-3:30pm. WA families: easy drive from Seattle; museum cluster includes Vancouver Maritime Museum + Museum of Vancouver next door for full day combo.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.spacecentre.ca/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.spacecentre.ca/programs/camps/",
+      "_addedBy": "international-expansion-batch-57",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "HR MacMillan Space Centre (Vanier Park, Kits Beach Vancouver) themed summer camps grades 1-8. Tracks: Astronomers Ltd (planetarium shows), Mars Mission, Cosmic Voyage (deep space), Rocket Engineering, Coding for Cosmos. Mon-Fri 9am-3:30pm. ~CAD $295-365/wk (~USD $215-270). Member discount + sliding scale + Vancouver-resident need-based aid. WA families: easy drive from Seattle; museum cluster includes Vancouver Maritime Museum + Museum of Vancouver next door for full day combo.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Beaty Biodiversity Museum Discovery Days (UBC)",
+      "provider": "Beaty Biodiversity Museum (University of British Columbia)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-235/wk (~USD $130-175) — among most affordable Canadian camps; UBC community + member discount + sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Beaty Biodiversity Museum (UBC Point Grey campus, Vancouver) themed weekly summer day camps for grades 1-8. Tracks: home of the 26-meter blue whale skeleton (largest in Canada). Curriculum: biodiversity research, taxonomy + collections, Pacific Northwest ecology, marine biology, ornithology. UBC researchers lead some sessions. Mon-Fri 9am-3:30pm. Highly affordable for Canadian + US families.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://beatymuseum.ubc.ca/learn/camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://beatymuseum.ubc.ca/learn/camps/",
+      "_addedBy": "international-expansion-batch-57",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Beaty Biodiversity Museum (UBC Point Grey campus, Vancouver) themed summer camps grades 1-8. Home of 26-meter blue whale skeleton (largest in Canada). Curriculum: biodiversity research, taxonomy + collections, Pacific Northwest ecology, marine biology, ornithology. UBC researchers lead some sessions. Mon-Fri 9am-3:30pm. ~CAD $175-235/wk (~USD $130-175) — among most affordable Canadian camps. UBC community + member discount + sliding scale.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Capilano Suspension Bridge Family Programs",
+      "provider": "Capilano Suspension Bridge Park (North Vancouver)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "paid",
+        "display": "Park admission CAD ~$67/adult, $33/youth, $25/child year-round; FREE for BC residents on certain weekends; family + multi-day passes available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "North Vancouver",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Capilano Suspension Bridge Park (North Vancouver, 20-min drive from downtown Vancouver) — iconic 137m suspension bridge over Capilano River canyon, plus Treetops Adventure (7 mini-bridges among Douglas Firs), Cliffwalk (cantilevered platforms), historic First Nations totems, family programs year-round. WA families: 3.5-hour drive from Seattle; combine with Vancouver museums. Outdoor + nature focus.",
+      "deadline": "Year-round; book online for guaranteed entry",
+      "url": "https://www.capbridge.com/family/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.capbridge.com/family/",
+      "_addedBy": "international-expansion-batch-57",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Capilano Suspension Bridge Park (North Vancouver, 20-min drive from downtown Vancouver) — iconic 137m suspension bridge over Capilano River canyon, plus Treetops Adventure (7 mini-bridges among Douglas Firs), Cliffwalk (cantilevered platforms), historic First Nations totems. Year-round family programs. WA families: 3.5-hour drive from Seattle; combine with Vancouver museums. Outdoor + nature focus. Park admission CAD ~$67/adult, $33/youth, $25/child. FREE for BC residents certain weekends.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
