@@ -54384,6 +54384,215 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Bocconi BIEM HS Track Summer Program",
+      "provider": "Università Bocconi (Milan)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); Bocconi Foundation scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Milan",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Bocconi BIEM HS Track — Bocconi (Italy's #1 business + economics school; ranked top-10 European business schools) for ages 16-18 (rising 11-12). 2-week residential at Bocconi Milan campus. Tracks: International Business + Economics, Finance + Banking, Management + Strategy, Marketing + Digital, Italian Cultural Studies. ENGLISH-medium primary. Pipeline to Bocconi BIEM (Bachelor in International Economics + Management) undergrad. College-app strong differentiator for finance + econ-track US kids.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.unibocconi.it/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.unibocconi.it/learn/summer-school",
+      "_addedBy": "hs-international-batch-93",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Bocconi BIEM HS Track — Bocconi (Italy's #1 business + economics school; ranked top-10 European) for ages 16-18 (rising 11-12). 2-week residential at Bocconi Milan campus. Tracks: International Business + Econ, Finance + Banking, Management + Strategy, Marketing + Digital, Italian Cultural Studies. ENGLISH-medium primary. ~€2,495-€3,795/2-week (USD $2,705-4,115). Bocconi Foundation scholarships for international students. Pipeline to Bocconi BIEM undergrad. College-app strong differentiator for finance + econ-track US kids. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "LUISS Summer School (Rome)",
+      "provider": "LUISS Guido Carli University (Rome)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,150-€3,295/2-week (USD $2,330-3,570); LUISS scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rome",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "LUISS Summer School — LUISS Guido Carli (Italy's #1 social sciences + law university, ranked top-15 European business schools) for ages 16-18 (rising 11-12). 2-week residential at LUISS Rome campus. Tracks: International Politics + Diplomacy, Business + Finance, Law + Justice, Communication + Media. ENGLISH-medium primary. Strategic for kids interested in international relations + EU politics + Vatican geopolitics. Pipeline to LUISS undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.luiss.edu/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.luiss.edu/learn/summer-school",
+      "_addedBy": "hs-international-batch-93",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "LUISS Summer School — LUISS Guido Carli (Italy's #1 social sciences + law university, ranked top-15 European business schools) for ages 16-18 (rising 11-12). 2-week residential at LUISS Rome campus. Tracks: International Politics + Diplomacy, Business + Finance, Law + Justice, Communication + Media. ENGLISH-medium primary. ~€2,150-€3,295/2-week (USD $2,330-3,570). LUISS scholarships for international students. Strategic for kids interested in international relations + EU politics + Vatican geopolitics. Pipeline to LUISS undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Politecnico di Torino Summer (Engineering)",
+      "provider": "Politecnico di Torino",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~€1,995-€2,995/2-week (USD $2,165-3,245); Polito scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Torino",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Politecnico di Torino Summer — Italy's premier engineering university (ranked top-50 globally for engineering, alma mater of FIAT + Ferrari engineers) for ages 16-18 (rising 11-12). 2-week residential at Politecnico Torino campus. Tracks: Mechanical + Automotive Engineering (FIAT/Ferrari heritage), Aerospace + Astronautics, Architecture + Design, Computer Science + AI. ENGLISH-medium primary. Affordable for STEM-track US kids. Strong fit for car/aerospace enthusiasts.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.polito.it/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.polito.it/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-93",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Politecnico di Torino Summer — Italy's premier engineering university (ranked top-50 globally for engineering, alma mater of FIAT + Ferrari engineers) for ages 16-18 (rising 11-12). 2-week residential at Politecnico Torino campus. Tracks: Mechanical + Automotive Engineering (FIAT/Ferrari heritage), Aerospace + Astronautics, Architecture + Design, CS + AI. ENGLISH-medium primary. ~€1,995-€2,995/2-week (USD $2,165-3,245). Polito scholarships for international students. AFFORDABLE for STEM-track US kids. Strong fit for car/aerospace enthusiasts. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Sapienza Università di Roma Summer School",
+      "provider": "Sapienza Università di Roma",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/2-week (USD $1,950-2,705); Sapienza scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rome",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sapienza Università di Roma Summer School — Sapienza (Europe's largest university, founded 1303, ranked top-150 globally) for ages 16-18 (rising 11-12). 2-week residential at Sapienza Rome campus. Tracks: Classics + Roman History (the BEST place in the world for this), Archaeology + Art History, Architecture + Design, Medicine + Life Sciences, Economics + International Business. ENGLISH-medium primary; Italian language electives. MOST AFFORDABLE Italian summer program. Unmatched for kids interested in Roman classics + archaeology.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.uniroma1.it/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uniroma1.it/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-93",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Sapienza Università di Roma Summer School — Sapienza (Europe's largest university, founded 1303, ranked top-150 globally) for ages 16-18 (rising 11-12). 2-week residential at Sapienza Rome campus. Tracks: Classics + Roman History (THE BEST place globally), Archaeology + Art History, Architecture + Design, Medicine + Life Sciences, Economics + International Business. ENGLISH-medium primary; Italian language electives. ~€1,795-€2,495/2-week (USD $1,950-2,705). Sapienza scholarships for international students. MOST AFFORDABLE Italian summer program. UNMATCHED for kids interested in Roman classics + archaeology. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ESSEC Pre-MBA Italy + France",
+      "provider": "ESSEC Business School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3295,
+        "type": "paid",
+        "display": "~€2,895-€3,995/2-week (USD $3,140-4,335); ESSEC Foundation scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cergy + Singapore + Rabat",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "ESSEC Pre-MBA — ESSEC Business School (top-5 European business schools, ranked top-10 globally for finance) for ages 17-18 (rising 12). 2-week residential — kids choose ESSEC Cergy France OR Singapore campus OR Rabat Morocco. Tracks: International Business, Luxury + Hospitality Management (ESSEC's specialty — alma mater of LVMH + Kering execs), Finance + Banking, Asia-Pacific Business (Singapore campus), Africa + Middle East Business (Rabat campus). ENGLISH-medium. Multi-campus exposure to global business culture. College-app strong for business-track US kids.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.essec.edu/en/learn/pre-mba",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.essec.edu/en/learn/pre-mba",
+      "_addedBy": "hs-international-batch-93",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "ESSEC Pre-MBA — ESSEC Business School (top-5 European business schools, ranked top-10 globally for finance) for ages 17-18 (rising 12). 2-week residential — kids choose ESSEC Cergy France OR Singapore campus OR Rabat Morocco. Tracks: International Business, Luxury + Hospitality Management (ESSEC's specialty — alma mater of LVMH + Kering execs), Finance + Banking, Asia-Pacific Business, Africa + Middle East Business. ENGLISH-medium. ~€2,895-€3,995/2-week (USD $3,140-4,335). ESSEC Foundation scholarships for international students. Multi-campus exposure to global business culture. College-app strong for business-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
