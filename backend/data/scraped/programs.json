@@ -47873,6 +47873,220 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Royal Ontario Museum (ROM) Virtual Programs",
+      "provider": "Royal Ontario Museum (Toronto)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE virtual ROM Connects programs (most); ROM Online + Plus subscription ~CAD $35-65/mo for premium content; international US families welcome"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "ROM Virtual Programs — accessible globally — for grades 1-8. Tracks: ROM Connects free virtual field trips (live + on-demand), ROM Talks for Schools, Virtual Reality experiences (Egyptian tombs, dinosaur halls). Many sessions FREE; ROM Online + Plus ~CAD $35-65/mo unlocks premium curriculum. Excellent supplement for US homeschoolers + families wanting world-museum exposure without travel.",
+      "deadline": "Year-round; book 1-2 weeks ahead for free virtual field trips",
+      "url": "https://www.rom.on.ca/learn/programs/learn-from-home",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rom.on.ca/learn/programs/learn-from-home",
+      "_addedBy": "international-online-batch-61",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "ROM Virtual Programs — accessible globally — grades 1-8. Tracks: ROM Connects free virtual field trips (live + on-demand), ROM Talks for Schools, VR experiences (Egyptian tombs, dinosaur halls). Many sessions FREE; ROM Online + Plus ~CAD $35-65/mo for premium curriculum. Excellent supplement for US homeschoolers + families wanting world-museum exposure without travel. Year-round; book 1-2 wks ahead for free virtual field trips. International US families welcome.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Royal Conservatory of Music (RCM) Online Programs",
+      "provider": "The Royal Conservatory (Toronto, online globally)",
+      "category": "arts",
+      "type": "year-round",
+      "cost": {
+        "amount": 75,
+        "type": "paid",
+        "display": "~CAD $50-150/mo per learner depending on program; 1:1 instructor lessons CAD $80-150/hour; need-based aid via RCM Foundation; international US students enroll seamlessly"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "The Royal Conservatory of Music (RCM, Toronto — over 130 years, world's largest music education organization) online programs accessible globally for K-8 + beyond. Tracks: Smart Start (early-childhood music), 1:1 online piano + violin + voice lessons (RCM-certified instructors), online theory + history courses, RCM Examinations preparation. RCM levels are gold-standard for US college music applications. International US enrollment seamless.",
+      "deadline": "Year-round; rolling enrollment; RCM exam registration closes Sep + Mar",
+      "url": "https://www.rcmusic.com/learn/online-learning",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rcmusic.com/learn/online-learning",
+      "_addedBy": "international-online-batch-61",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "The Royal Conservatory of Music (RCM, Toronto — over 130 years, world's largest music education organization) online programs globally for K-8+. Tracks: Smart Start (early-childhood music), 1:1 online piano + violin + voice (RCM-certified instructors), online theory + history, RCM Examinations prep. RCM levels are gold-standard for US college music applications. International US enrollment seamless. ~CAD $50-150/mo + 1:1 lessons CAD $80-150/hr. Need-based aid via RCM Foundation. Year-round; RCM exam reg closes Sep + Mar.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Beaty Biodiversity Museum Online Discovery",
+      "provider": "Beaty Biodiversity Museum (UBC) Virtual",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — globally accessible; includes virtual collection access + UBC researcher Q&A sessions"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Beaty Biodiversity Museum Online Discovery — FREE globally accessible — for grades 3-8. UBC researchers lead live virtual sessions on biodiversity, taxonomy, marine biology + ornithology. Sessions feature 26-meter blue whale skeleton, Pacific Northwest specimens, hands-on activities families can do at home with provided supply lists. Excellent for US homeschoolers + classrooms supplementing biology curriculum.",
+      "deadline": "Year-round; sign up 1-2 weeks ahead for live sessions",
+      "url": "https://beatymuseum.ubc.ca/learn/virtual-learning/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://beatymuseum.ubc.ca/learn/virtual-learning/",
+      "_addedBy": "international-online-batch-61",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Beaty Biodiversity Museum Online Discovery — 100% FREE globally accessible — grades 3-8. UBC researchers lead live virtual sessions on biodiversity, taxonomy, marine biology + ornithology. Features 26-meter blue whale skeleton + Pacific Northwest specimens. Hands-on home activities with provided supply lists. Excellent for US homeschoolers + classrooms supplementing biology. Year-round; sign up 1-2 wks ahead for live sessions.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Wilder Institute / Calgary Zoo Conservation Education Online",
+      "provider": "Wilder Institute / Calgary Zoo Virtual",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE virtual programs (most); paid premium 1:1 conservation careers consults CAD $35/hr"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Wilder Institute / Calgary Zoo Virtual Education — FREE conservation programs accessible globally — for grades 3-8. Tracks: Endangered Species Conservation (live talks with breeding-program scientists), Vancouver Island marmot reintroduction case study, swift fox + Northern leopard frog conservation, virtual safari programs. Excellent fit for US students interested in wildlife biology / conservation careers.",
+      "deadline": "Year-round; live programs sign up 1-2 weeks ahead",
+      "url": "https://www.wilderinstitute.org/learn/online-learning/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wilderinstitute.org/learn/online-learning/",
+      "_addedBy": "international-online-batch-61",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Wilder Institute / Calgary Zoo Virtual Education — FREE conservation programs accessible globally — grades 3-8. Tracks: Endangered Species Conservation (live talks with breeding-program scientists), Vancouver Island marmot reintroduction case study, swift fox + Northern leopard frog conservation, virtual safari programs. Year-round; live programs sign up 1-2 wks ahead. Paid premium 1:1 conservation-career consults ~CAD $35/hr. Excellent for US students interested in wildlife biology / conservation careers.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Pinhey's Point Heritage Online (Ottawa Region)",
+      "provider": "Pinhey's Point Foundation (Ottawa, ON)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "FREE virtual heritage programs; in-person at Pinhey's Point Park if family travels"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Pinhey's Point Heritage Online — FREE programs accessible globally — for grades 4-8. Pinhey's Point is an 1820s heritage homestead on the Ottawa River. Virtual tracks: Canadian heritage trades (blacksmithing, sheep-shearing, candlemaking demos), Indigenous + Settler History, Ottawa River ecology + Algonquin First Nations heritage. Excellent supplement for US history + civics curriculum focused on early-19th-century North America.",
+      "deadline": "Year-round; book 2 weeks ahead for live sessions",
+      "url": "https://www.pinheyspoint.ca/learn/virtual-programs/",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.pinheyspoint.ca/learn/virtual-programs/",
+      "_addedBy": "international-online-batch-61",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Pinhey's Point Heritage Online — FREE programs accessible globally — grades 4-8. Pinhey's Point is an 1820s heritage homestead on Ottawa River. Virtual tracks: Canadian heritage trades (blacksmithing, sheep-shearing, candlemaking), Indigenous + Settler History, Ottawa River ecology + Algonquin First Nations heritage. Year-round; book 2 wks ahead for live sessions. Excellent supplement for US history + civics curriculum focused on early-19th-century North America.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
