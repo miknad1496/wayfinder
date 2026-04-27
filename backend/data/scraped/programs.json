@@ -35733,7 +35733,16 @@
       "url": "https://launchlearning.org/summer/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://launchlearning.org/summer/"
+      "_source": "https://launchlearning.org/summer/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE / heavily subsidized 8-10 weeks of expanded learning for children ages 3-12 at select Launch sites across Seattle + Renton WA. Full day 8am-6pm. STEM-enriched programming — academic enrichment, arts, outdoor activities, field trips. Targeted at low-income working families; sliding-scale fees, many scholarships fully cover. Existing deadline May 15. Apply at launchlearning.org/summer.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Lavner Camps at University of Washington",
@@ -38162,7 +38171,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FLL Challenge = grade 4-8 robotics + research competition. Teams of up to 10 build autonomous LEGO robots, conduct research project on annual theme, compete at qualifying tournaments through state championships. Combines engineering, programming, public speaking. Season opens August; team registration through district/regional. Tournaments fall through winter; State Championships Feb-March; World Festival April. Team registration ~$225-275 + EV3/SPIKE Prime kit; school-team subsidies via REC Foundation grants. Apply at firstinspires.org/robotics/fll/challenge.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Junior Achievement (JA) BizTown + JA Finance Park",
@@ -40003,7 +40018,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "single-day",
+      "scheduleNotes": "FREE 90-minute Apple Camp sessions held at every Apple Store nationwide each summer. Topics rotate: animation with Keynote, sketch + animate with Procreate, music with GarageBand, video editing with iMovie. Kids use in-store iPad/Mac. Multiple session times per day. 2026 sessions typically late Jul - mid Aug. Sign-up via Apple's Today at Apple in late June; popular slots fill within hours of release. Find via apple.com/today/series, search by Zip code.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Best Buddies International (school + community chapters)",
@@ -40581,7 +40605,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE National Audubon Society youth bird-focused citizen science. Christmas Bird Count for Kids (Dec 14 - Jan 5); Great Backyard Bird Count (4 days mid-Feb, family-friendly); Junior Birder programs at 500+ local Audubon chapters + nature centers. Audubon Adventures classroom curriculum ~$50 for educators; everything else free. Find local chapter at audubon.org/chapters.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NOAA Planet Stewards Education Project",
@@ -40725,7 +40755,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Family Expeditions: parents + kids join real scientists on conservation field research. 8-12 day trips to global field sites — sea turtles Costa Rica, lemurs Madagascar, climate change Iceland, Caribbean reefs Bahamas, mammals Kenya. Kids ages 8-15 with parent. ~$2,000-3,500/wk + airfare. Need-based Ignite Awards cover up to 100% for accepted families. Year-round trips; book 6-8 months ahead. Most family-popular slots run summer.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Special Olympics Unified Champion Schools",
