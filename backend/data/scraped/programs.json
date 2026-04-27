@@ -2964,7 +2964,16 @@
       "region": "Mid-Atlantic / National",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
-      "_source": "https://cty.jhu.edu/programs/on-campus"
+      "_source": "https://cty.jhu.edu/programs/on-campus",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Two 3-week residential sessions across 9 US college campuses (Roanoke College VA, Saratoga Springs NY, Bristol RI, Easton MA, Carlisle PA, Lancaster PA, Saint Mary's CA, etc.). STEM, humanities, writing, debate, engineering tracks. Application requires CTY testing eligibility. Existing deadline May 11; rolling waitlist after. $3,149-$7,501 incl. room+board; need-based aid available (~30% of campers receive aid).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Stanford Pre-Collegiate Summer Institutes",
@@ -3011,7 +3020,16 @@
       "region": "National (virtual)",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
-      "_source": "https://summerinstitutes.spcs.stanford.edu/"
+      "_source": "https://summerinstitutes.spcs.stanford.edu/",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "Two-week intensive online courses taught by Stanford instructors. 75+ subjects: CS, Engineering, Business, Creative Writing, Philosophy, Math. Daily synchronous classes, ungraded. ~$3,200 per 2-week session; financial aid available. Existing app deadline Mar 15. Specific 2026 weekly slots not surfaced in WebSearch — typical Jun 21 – Aug 7 window inferred from 2025 pattern.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "LaunchX Online Entrepreneurship Program",
@@ -6512,7 +6530,16 @@
       "duration": "2-3 weeks",
       "region": "National",
       "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Umbrella for CTY summer (residential + commuter + online). 2-3 week sessions. STEM, humanities, leadership courses. Eligibility: CTY testing required (SCAT, STB, or equivalent). $3,000-4,500. Existing app deadline Mar 15 priority round / May 11 rolling. Heavy waitlists for popular subjects (Cryptography, Investigations in Engineering); apply early.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Art of Problem Solving Summer Camps",
@@ -7305,7 +7332,13 @@
       "duration": "Flexible",
       "region": "National",
       "advisorNote": "Emphasize specific skills you developed and how this experience shaped your perspective on your chosen field.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Year-round online courses for CTY-eligible gifted students (grades K-12). Self-paced individual + small-group synchronous. STEM + humanities + writing + foreign languages. CTY testing required for eligibility. $1,500-2,500 per course; 3-12 month enrollment windows; rolling start dates. Existing deadline May 1 is the Summer 2026 cohort cutoff; year-round applies to other terms.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Bridge Year Program (Princeton)",
@@ -40020,7 +40053,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-14",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Week-long Catholic service mission camps. Teams of teens travel to 60+ US host cities + 10+ international and serve local communities — home repairs, eldercare, food bank work, ministry. Daily Mass, prayer, group reflection. ~$420-450/wk + travel; financial aid via parish + diocese. Most popular weeks (June + early July) book by February; later July/August often have openings into spring. Adult chaperones required (1:6 ratio).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Hispanic Heritage Foundation — Youth Awards + LOFT",
