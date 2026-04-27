@@ -56460,6 +56460,211 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Sciences Po Paris Pre-Law HS Programme",
+      "provider": "Sciences Po (Institut d'études politiques de Paris)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); Sciences Po scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sciences Po Paris Pre-Law — Sciences Po (Europe's #1 political science + international affairs school, ranked top-5 globally for political science, alma mater of French Presidents Macron + Hollande + Sarkozy) for ages 17-18 (rising 12). 2-week residential at Sciences Po Paris campus. Tracks: International Law + Diplomacy, Public International Law, EU Law + Brexit, Comparative Constitutional Law, French Cultural Studies. ENGLISH-medium primary; French electives. SELECTIVE. Pipeline to Sciences Po undergrad. College-app GOLD for pre-law + diplomacy-track US kids.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.sciencespo.fr/learn/pre-law",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sciencespo.fr/learn/pre-law",
+      "_addedBy": "hs-international-batch-103",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Sciences Po Paris Pre-Law — Sciences Po (Europe's #1 political science + international affairs school, ranked top-5 globally for political science, alma mater of French Presidents Macron + Hollande + Sarkozy) for ages 17-18 (rising 12). 2-week residential at Sciences Po Paris campus. Tracks: International Law + Diplomacy, Public International Law, EU Law + Brexit, Comparative Constitutional Law, French Cultural Studies. ENGLISH-medium primary; French electives. SELECTIVE. ~€2,495-€3,795/2-week (USD $2,705-4,115). Sciences Po scholarships for international students. Pipeline to Sciences Po undergrad. College-app GOLD for pre-law + diplomacy-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "The Hague Youth Forum (International Law)",
+      "provider": "The Hague Academy of International Law / International Court of Justice",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/1-week (USD $1,950-2,705); Hague Youth Foundation scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "The Hague",
+        "state": "NL"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "The Hague Youth Forum — flagship international law program for ages 17-18 (rising 12) at The Hague (the global capital of international law — home to ICJ, ICC, Permanent Court of Arbitration). 1-week immersive at The Hague Academy. Tracks: International Court of Justice (ICJ) Cases, International Criminal Court Tribunals, Genocide + Human Rights Law, International Trade + Treaty Law, Refugee + Asylum Law. ENGLISH-medium. UN observer credentials. Pipeline to The Hague Academy undergraduate. College-app GOLD-PLUS for international law + diplomacy-track US kids.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.haguelaw.org/learn/youth-forum",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.haguelaw.org/learn/youth-forum",
+      "_addedBy": "hs-international-batch-103",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "The Hague Youth Forum — flagship international law program for ages 17-18 (rising 12) at The Hague (the global capital of international law — home to ICJ, ICC, Permanent Court of Arbitration). 1-week immersive at The Hague Academy. Tracks: International Court of Justice (ICJ) Cases, International Criminal Court Tribunals, Genocide + Human Rights Law, International Trade + Treaty Law, Refugee + Asylum Law. ENGLISH-medium. ~€1,795-€2,495/1-week (USD $1,950-2,705). Hague Youth Foundation scholarships for international students. UN observer credentials. Pipeline to The Hague Academy undergraduate. College-app GOLD-PLUS for international law + diplomacy. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cambridge Law Summer Programme (HS Pre-Law)",
+      "provider": "University of Cambridge Faculty of Law",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3795,
+        "type": "paid",
+        "display": "~£3,295-£4,995/2-week (USD $4,285-6,495); Cambridge Law scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cambridge Law Summer — Cambridge Faculty of Law (UK's #1 law school, ranked top-3 globally, alma mater of multiple UK Supreme Court Justices) for ages 17-18 (rising 12). 2-week residential at Cambridge colleges. Tracks: English Common Law + Constitutional Law, International Law + Brexit, Criminal Law + Tort Law, Roman Law (Cambridge's specialty), Legal Method + Mooting (Cambridge moot court tradition). ENGLISH-medium. ELITE selectivity. Pipeline to Cambridge Law undergrad. College-app GOLD-PLUS for pre-law US kids.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.law.cam.ac.uk/learn/summer-programme",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.law.cam.ac.uk/learn/summer-programme",
+      "_addedBy": "hs-international-batch-103",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Cambridge Law Summer — Cambridge Faculty of Law (UK's #1 law school, ranked top-3 globally, alma mater of multiple UK Supreme Court Justices) for ages 17-18 (rising 12). 2-week residential at Cambridge colleges. Tracks: English Common Law + Constitutional Law, International Law + Brexit, Criminal Law + Tort Law, Roman Law (Cambridge's specialty), Legal Method + Mooting (Cambridge moot court tradition). ENGLISH-medium. ELITE selectivity. ~£3,295-£4,995/2-week (USD $4,285-6,495). Cambridge Law scholarships for international students. Pipeline to Cambridge Law undergrad. College-app GOLD-PLUS for pre-law US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Oxford Law Pre-University HS Programme",
+      "provider": "University of Oxford Faculty of Law",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~£3,495-£5,295/2-week (USD $4,545-6,885); Oxford Law scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oxford",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Oxford Law Pre-University — Oxford Faculty of Law (UK's #2 law school after Cambridge, ranked top-5 globally) for ages 17-18 (rising 12). 2-week residential at Oxford colleges. Tracks: English Common Law + Constitutional Law, International Public Law, EU Law + Trade Law, Criminal Law + Human Rights, Jurisprudence + Legal Philosophy. ENGLISH-medium. ELITE selectivity. Pipeline to Oxford Law undergrad. Differentiation vs Cambridge — Oxford is more philosophy-focused; Cambridge more procedural.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.law.ox.ac.uk/learn/pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.law.ox.ac.uk/learn/pre-university",
+      "_addedBy": "hs-international-batch-103",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Oxford Law Pre-University — Oxford Faculty of Law (UK's #2 law school after Cambridge, ranked top-5 globally) for ages 17-18 (rising 12). 2-week residential at Oxford colleges. Tracks: English Common Law + Constitutional Law, International Public Law, EU Law + Trade Law, Criminal Law + Human Rights, Jurisprudence + Legal Philosophy. ENGLISH-medium. ELITE selectivity. ~£3,495-£5,295/2-week (USD $4,545-6,885). Oxford Law scholarships for international students. Pipeline to Oxford Law undergrad. Differentiation vs Cambridge — Oxford is more philosophy-focused; Cambridge more procedural. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "LSE Pre-Law HS Summer (London)",
+      "provider": "London School of Economics and Political Science (LSE)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3495,
+        "type": "paid",
+        "display": "~£2,995-£4,495/2-week (USD $3,895-5,840); LSE scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "LSE Pre-Law HS Summer — LSE (UK's premier social sciences + law school, ranked top-10 globally for law, located in legal heart of London) for ages 17-18 (rising 12). 2-week residential at LSE Houghton Street campus. Tracks: International Public Law, Trade Law + Economics (LSE's specialty — interdisciplinary law + economics), Human Rights Law, Comparative Law (UK + EU + US), Mooting + Legal Practice. ENGLISH-medium. SELECTIVE. Pipeline to LSE Law undergrad. AFFORDABLE vs Oxbridge with similar prestige. College-app GOLD for pre-law US kids.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.lse.ac.uk/learn/pre-law",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lse.ac.uk/learn/pre-law",
+      "_addedBy": "hs-international-batch-103",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "LSE Pre-Law HS Summer — LSE (UK's premier social sciences + law school, ranked top-10 globally for law, located in legal heart of London) for ages 17-18 (rising 12). 2-week residential at LSE Houghton Street campus. Tracks: International Public Law, Trade Law + Economics (LSE's specialty — interdisciplinary law + econ), Human Rights Law, Comparative Law (UK + EU + US), Mooting + Legal Practice. ENGLISH-medium. SELECTIVE. ~£2,995-£4,495/2-week (USD $3,895-5,840). LSE scholarships for international students. Pipeline to LSE Law undergrad. AFFORDABLE vs Oxbridge with similar prestige. College-app GOLD for pre-law US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
