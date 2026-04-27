@@ -47640,6 +47640,239 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Montreal Science Centre Summer Camps",
+      "provider": "Montréal Science Centre (Old Port)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-365/wk (~USD $215-270); MSC member discount; sliding scale via MSC Education + Montreal Public Library partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Montréal",
+        "state": "QC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Montréal Science Centre (Old Port — King Edward Pier on St Lawrence River) themed weekly summer day camps for grades K-8. Tracks: Innovation Workshop (engineering + design), Body Lab (anatomy + medical science), Earth Sciences + Climate, IMAX Telus Theatre. Bilingual programming (English + French). Mon-Fri 9am-3:30pm. International US families welcome with passport.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.montrealsciencecentre.com/learn/programs/camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.montrealsciencecentre.com/learn/programs/camps",
+      "_addedBy": "international-expansion-batch-60",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Montréal Science Centre (Old Port — King Edward Pier on St Lawrence River) themed summer camps grades K-8. Tracks: Innovation Workshop (engineering + design), Body Lab (anatomy + medical science), Earth Sciences + Climate, IMAX Telus Theatre. Bilingual programming (English + French) — French-immersion option. Mon-Fri 9am-3:30pm. ~CAD $295-365/wk (~USD $215-270). MSC member discount + sliding scale via MSC Education + Montreal Public Library partnership. International US families welcome.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "TELUS Spark Camps (Calgary)",
+      "provider": "TELUS Spark — Calgary Science Centre",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~CAD $315-395/wk (~USD $235-290); Spark member discount; sliding scale + Calgary Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Calgary",
+        "state": "AB"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "TELUS Spark — Calgary Science Centre (NE Calgary) themed weekly summer day camps for grades K-8. Tracks: Maker Studio, Brainasium (cognitive games), Earth + Sky (planetarium + dome theater), Discovery Park (outdoor science playground), HD Theatre + 3D printing. Mon-Fri 9am-4pm. International US families welcome with passport.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.sparkscience.ca/learn/camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sparkscience.ca/learn/camps/",
+      "_addedBy": "international-expansion-batch-60",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "TELUS Spark — Calgary Science Centre (NE Calgary) themed summer camps grades K-8. Tracks: Maker Studio, Brainasium (cognitive games), Earth + Sky (planetarium + dome theater), Discovery Park (outdoor science playground), HD Theatre + 3D printing. Mon-Fri 9am-4pm. ~CAD $315-395/wk (~USD $235-290). Spark member discount + sliding scale + Calgary Public Schools partnership. International US families welcome.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "TELUS World of Science Edmonton Camps",
+      "provider": "TELUS World of Science Edmonton",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-335/wk (~USD $195-250); TELUS World member discount; sliding scale + Edmonton Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Edmonton",
+        "state": "AB"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "TELUS World of Science Edmonton (NW Edmonton) themed weekly summer day camps for grades 1-8. Tracks: Margaret Zeidler Star Theatre (planetarium), Aerospace + Aviation, Health Gallery, Forensics Lab, IMAX. Mon-Fri 9am-3:30pm. International US families welcome with passport.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://telusworldofscienceedmonton.ca/learn/programs/camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://telusworldofscienceedmonton.ca/learn/programs/camps/",
+      "_addedBy": "international-expansion-batch-60",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "TELUS World of Science Edmonton (NW Edmonton) themed summer camps grades 1-8. Tracks: Margaret Zeidler Star Theatre (planetarium), Aerospace + Aviation, Health Gallery, Forensics Lab, IMAX. Mon-Fri 9am-3:30pm. ~CAD $265-335/wk (~USD $195-250). TELUS World member discount + sliding scale + Edmonton Public Schools partnership. International US families welcome.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Calgary Zoo Summer Day Camps",
+      "provider": "Calgary Zoo (Wilder Institute)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-335/wk (~USD $195-250); zoo member discount; sliding scale + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Calgary",
+        "state": "AB"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Calgary Zoo (St George's Island, Bow River — recently rebranded as Wilder Institute / Calgary Zoo) themed weekly summer day camps for grades K-8. Tracks: Eurasia (snow leopards + red pandas), Canadian Wilds (Rocky Mountain ecosystem — bison, wolverines), African Savannah, Penguin Plunge. World-leading conservation breeding programs (Vancouver Island marmot, swift fox). Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.wilderinstitute.org/calgary-zoo/learn/youth-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wilderinstitute.org/calgary-zoo/learn/youth-programs/",
+      "_addedBy": "international-expansion-batch-60",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Calgary Zoo (St George's Island, Bow River — recently rebranded as Wilder Institute / Calgary Zoo) themed summer camps grades K-8. Tracks: Eurasia (snow leopards + red pandas), Canadian Wilds (Rocky Mountain ecosystem — bison, wolverines), African Savannah, Penguin Plunge. World-leading conservation breeding programs (Vancouver Island marmot, swift fox). Mon-Fri 9am-3:30pm. ~CAD $265-335/wk (~USD $195-250). Zoo member discount + sliding scale + low-income family programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Stratford Festival Drama School Summer Programs",
+      "provider": "Stratford Festival of Canada",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 625,
+        "type": "paid",
+        "display": "~CAD $595-895/wk (~USD $440-660) for performance camps; Festival member + youth-conservatory financial aid; high-talent scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Stratford",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Stratford Festival of Canada (Stratford ON, 2-hour drive from Toronto + Detroit) Drama School summer programs for grades 6+. Stratford is one of the largest classical theatre festivals in the world (over 1M attendees annually). Tracks: Acting Workshop (Shakespeare focus), Stage Production (lighting, costumes, set), Musical Theatre, Voice + Movement. Sessions include Festival performance attendance. Selective audition. Strong fit for serious theater-track kids.",
+      "deadline": "Audition application Feb; rolling waitlist",
+      "url": "https://www.stratfordfestival.ca/About-Us/Education/Camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.stratfordfestival.ca/About-Us/Education/Camps",
+      "_addedBy": "international-expansion-batch-60",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Stratford Festival of Canada (Stratford ON, 2-hour drive from Toronto + Detroit) Drama School summer programs grades 6+. Stratford is one of largest classical theatre festivals in world (over 1M attendees annually). Tracks: Acting Workshop (Shakespeare focus), Stage Production (lighting, costumes, set), Musical Theatre, Voice + Movement. Sessions include Festival performance attendance. SELECTIVE AUDITION. ~CAD $595-895/wk (~USD $440-660). Festival member + youth-conservatory financial aid; high-talent scholarships. Strong fit for serious theater-track kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
