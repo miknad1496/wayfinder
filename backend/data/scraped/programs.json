@@ -45751,6 +45751,244 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Franklin Institute Camp Days + Family Programs",
+      "provider": "The Franklin Institute (Philadelphia)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$385-485/wk; member discount 10%; need-based aid via Franklin Education + Philly Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "The Franklin Institute (downtown Philly, Logan Square) themed weekly summer day camps for grades 1-8. Tracks: Franklin's Workshop (engineering + electricity — homage to Ben Franklin), SportsZone (physics of sports), Train Factory + Giant Heart (anatomy + machines), Holt Planetarium (astronomy), Brain Lab (neuroscience). Mon-Fri full-day with extended care.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://www.fi.edu/learn/programs-and-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fi.edu/learn/programs-and-camps",
+      "_addedBy": "state-expansion-batch-52",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "The Franklin Institute (downtown Philly, Logan Square) themed summer camps grades 1-8. Tracks: Franklin's Workshop (engineering + electricity — Ben Franklin homage), SportsZone (physics of sports), Train Factory + Giant Heart (anatomy + machines), Holt Planetarium (astronomy), Brain Lab (neuroscience). Mon-Fri full-day + extended care. ~$385-485/wk. 10% member discount + need-based aid via Franklin Education + Philly Public Schools partnership. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Please Touch Museum Summer Programs",
+      "provider": "Please Touch Museum (Philadelphia)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-385/wk; member discount 10%; Museums for All ($1 entry for SNAP/EBT) + Philly Public Schools scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Please Touch Museum (Memorial Hall in West Fairmount Park, Philly — one of the original buildings of the 1876 Centennial Exhibition) themed weekly summer camps for ages 3-10. Tracks: Wonderland (Alice in Wonderland-themed interactive), Roadside Attractions (vehicles + transportation), River Adventures (waterplay), City Capers (urban play). Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.pleasetouchmuseum.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.pleasetouchmuseum.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-52",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Please Touch Museum (Memorial Hall in West Fairmount Park Philly — one of original buildings of 1876 Centennial Exhibition) themed summer camps ages 3-10. Tracks: Wonderland (Alice in Wonderland-themed interactive), Roadside Attractions (vehicles + transportation), River Adventures (waterplay), City Capers (urban play). Half-day or full-day Mon-Fri. ~$295-385/wk. 10% member discount + Museums for All ($1 SNAP/EBT) + Philly Public Schools scholarship pool. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Academy of Natural Sciences of Drexel University Summer Camps",
+      "provider": "Academy of Natural Sciences of Drexel University",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 395,
+        "type": "paid",
+        "display": "~$345-445/wk; member discount 10%; Drexel community discount + sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Philadelphia",
+        "state": "PA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Academy of Natural Sciences (Logan Square, downtown Philly — oldest natural history museum in the Americas, founded 1812) themed summer camps for grades K-8. Tracks: Dinosaur Hall (large dino exhibit), Live Animal Center, paleontology dig, ecology + biodiversity, butterfly garden. Affiliated with Drexel University since 2011. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://ansp.org/visit/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ansp.org/visit/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-52",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Academy of Natural Sciences (Logan Square downtown Philly — oldest natural history museum in the Americas, founded 1812) summer camps grades K-8. Tracks: Dinosaur Hall (large dino exhibit), Live Animal Center, paleontology dig, ecology + biodiversity, butterfly garden. Affiliated with Drexel since 2011. Mon-Fri 9am-3:30pm. ~$345-445/wk. 10% member discount + Drexel community discount + sliding scale. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Carnegie Museums Summer Camps (Pittsburgh)",
+      "provider": "Carnegie Museums of Pittsburgh",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$365-485/wk; Carnegie Museums member discount 15%; need-based aid via Carnegie Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Pittsburgh",
+        "state": "PA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Carnegie Museums of Pittsburgh (Oakland neighborhood) summer camps spanning four institutions: Natural History (Lucy + giant dinosaurs), Art (Van Gogh + Warhol-related programming), Science Center (interactive STEM exhibits), Andy Warhol Museum (visual art). Themed weekly tracks. Mon-Fri 9am-4pm. Single-museum or cross-museum tracks. Among the most prestigious museum camp networks in the US.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://carnegiemuseums.org/learn-and-discover/youth-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://carnegiemuseums.org/learn-and-discover/youth-camps/",
+      "_addedBy": "state-expansion-batch-52",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Carnegie Museums of Pittsburgh (Oakland) summer camps across 4 institutions: Natural History (Lucy + giant dinosaurs), Art (Van Gogh + Warhol-related), Science Center (interactive STEM), Andy Warhol Museum (visual art). Themed weekly tracks K-8 — single-museum or cross-museum. Mon-Fri 9am-4pm. ~$365-485/wk. 15% member discount + need-based aid via Carnegie Education. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Phipps Conservatory Summer Camps",
+      "provider": "Phipps Conservatory and Botanical Gardens (Pittsburgh)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-385/wk; member discount 10%; sliding scale + Pittsburgh Public Schools partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Pittsburgh",
+        "state": "PA"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Phipps Conservatory (Schenley Park, Pittsburgh — historic 14-room glasshouse from 1893 + 23 outdoor gardens) themed summer day camps for ages 3-13. Tracks: Discovery Garden (toddler track), Botanical Art, Junior Gardener (kids grow + harvest), Plant + Pollinator science, Outdoor Adventure. Mon-Fri half-day or full-day. Strong sustainability programming.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.phipps.conservatory.org/learn/youth-and-family-programs/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.phipps.conservatory.org/learn/youth-and-family-programs/",
+      "_addedBy": "state-expansion-batch-52",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Phipps Conservatory (Schenley Park Pittsburgh — historic 14-room glasshouse from 1893 + 23 outdoor gardens) themed summer camps ages 3-13. Tracks: Discovery Garden (toddler), Botanical Art, Junior Gardener (kids grow + harvest), Plant + Pollinator science, Outdoor Adventure. Mon-Fri half-day or full-day. ~$295-385/wk. 10% member discount + sliding scale + Pittsburgh Public Schools scholarship partnership. Strong sustainability programming. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
