@@ -5837,6 +5837,21 @@ function _scScholarshipCountdownHtml() {
 
 // ─── 5. SUMMER PLANNER CALENDAR — real visual day-grid with multi-day events ───
 const SC_CAL_KEY = 'wf_sc_cal_events';
+
+// REVAMP V2: CALENDAR POLISH PATCH30 — stable per-event color (no index-based flipping)
+function _scStableColorIdx(ev, paletteLen) {
+  // Prefer colorName if user set it in the form
+  if (ev && ev.colorName) {
+    // Map colorName back to palette index by name match (caller decides palette)
+    return ev.colorName;
+  }
+  // Else hash the id (or name fallback) for a stable index
+  const key = String((ev && (ev.id || ev.name)) || '');
+  let h = 5381;
+  for (let i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) | 0;
+  return Math.abs(h) % paletteLen;
+}
+
 const SC_CAL_COLORS = [
   { bg: '#dbeafe', border: '#2563eb', text: '#1e3a8a', name: 'Blue' },
   { bg: '#dcfce7', border: '#16a34a', text: '#15803d', name: 'Green' },
@@ -5887,9 +5902,32 @@ function _scScheduleCanvasHtml() {
     const fontSize = large ? '13px' : '10px';
     const gridHtml = cells.map(c => {
       if (c.empty) return `<div style="background:#f8fafc;border-radius:4px;height:${cellSize};"></div>`;
+      // REVAMP V2: CALENDAR POLISH PATCH30 #2 + #3 — stable-color + start-day-only chip with spanning bar
       const eventBars = c.events.slice(0, large ? 3 : 1).map(ev => {
-        const color = colors[(events.indexOf(ev)) % colors.length];
-        return `<div data-event-id="${_esc(ev.id || '')}" class="sc-cal-event" style="background:${color};color:#fff;font-size:${large?'10px':'8px'};padding:1px 4px;border-radius:3px;margin:1px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;line-height:1.3;">${_esc(ev.name||'event')}</div>`;
+        // Stable color: respect colorName if set, else hash ev.id
+        let color;
+        if (ev.colorName) {
+          const palette = SC_CAL_COLORS.find(p => p.name === ev.colorName);
+          color = palette ? palette.border : colors[0];
+        } else {
+          // Hash ev.id (fallback: name) for a stable palette index
+          const key = String(ev.id || ev.name || '');
+          let h = 5381;
+          for (let i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) | 0;
+          color = colors[Math.abs(h) % colors.length];
+        }
+        // Detect: is this the START day of the event?
+        const isStart = (ev.startDate === c.dateStr);
+        const isSpan  = ((ev.endDate || ev.startDate) !== ev.startDate);
+        if (isStart) {
+          // Start day: full chip with event name. If multi-day, hint with arrow.
+          const arrow = isSpan ? ' →' : '';
+          return `<div data-event-id="${_esc(ev.id || '')}" class="sc-cal-event" style="background:${color};color:#fff;font-size:${large?'10px':'8px'};padding:1px 4px;border-radius:3px;margin:1px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;line-height:1.3;">${_esc(ev.name||'event')}${arrow}</div>`;
+        } else {
+          // Continuation day (within span): thin colored bar, NO text — like
+          // Google Calendar's multi-day spanning bar. Tooltip shows event name.
+          return `<div data-event-id="${_esc(ev.id || '')}" class="sc-cal-event sc-cal-event-span" title="${_esc(ev.name||'event')}" style="background:${color};height:${large?'4px':'3px'};border-radius:2px;margin:2px 0;cursor:pointer;"></div>`;
+        }
       }).join('');
       const more = c.events.length > (large?3:1) ? `<div style="font-size:${large?'9px':'7px'};color:#94a3b8;">+${c.events.length - (large?3:1)}</div>` : '';
       return `<div class="sc-cal-day" data-date="${c.dateStr}" style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;height:${cellSize};padding:${large?'4px':'1px'} ${large?'5px':'2px'};cursor:pointer;display:flex;flex-direction:column;font-size:${fontSize};color:#1f2328;overflow:hidden;transition:background 0.1s;" onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='#fff'">
@@ -5911,7 +5949,17 @@ function _scScheduleCanvasHtml() {
   // Event list
   /* === REVAMP V2: SC-CAL EDIT/X CLASS-FIX === */
   const eventList = events.length ? events.map(ev => {
-    const color = colors[(events.indexOf(ev)) % colors.length];
+    /* REVAMP V2: CALENDAR POLISH PATCH30 #2 — stable color in event list too */
+    let color;
+    if (ev.colorName) {
+      const palette = SC_CAL_COLORS.find(p => p.name === ev.colorName);
+      color = palette ? palette.border : colors[0];
+    } else {
+      const key = String(ev.id || ev.name || '');
+      let h = 5381;
+      for (let i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) | 0;
+      color = colors[Math.abs(h) % colors.length];
+    }
     const dateRange = ev.endDate && ev.endDate !== ev.startDate ? `${ev.startDate} → ${ev.endDate}` : ev.startDate;
     return `
       <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid #f1f5f9;">
@@ -6067,7 +6115,11 @@ function _scShowCalForm(prefill = {}) {
     });
     _scSaveCalEvents(events);
     form.style.display = 'none';
-    _scRenderCalEvents();
+    /* REVAMP V2: CALENDAR POLISH PATCH30 #1 — re-render the FULL calendar grid (chips are baked into
+       _scScheduleCanvasHtml's static HTML at render time, so the soft
+       _scRenderCalEvents only updates backgrounds, not chip overlays). */
+    if (typeof renderSCPlanner === 'function') renderSCPlanner();
+    else _scRenderCalEvents();
   });
   document.getElementById('scCalEvCancel').addEventListener('click', () => { form.style.display = 'none'; });
 }
