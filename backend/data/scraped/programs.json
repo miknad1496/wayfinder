@@ -3027,7 +3027,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
-      "_source": "https://www.interlochen.org/art-summer-camp"
+      "_source": "https://www.interlochen.org/art-summer-camp",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-09"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Premier US summer arts program in Interlochen, MI. 1-6 week residential sessions: music, visual arts, dance, theatre, creative writing. Existing deadline Apr 15; rolling waitlist after. ~$2,050-$10,350; 85% of applicants received financial aid. Estimated typical late June - early August window.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Boston University Tanglewood Institute (BUTI) Young Artists",
@@ -9842,7 +9851,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "Emphasize specific skills you developed and how this experience shaped your perspective on your chosen field.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Theater intensives + camps for young performers. Acting, voice, movement instruction. $500-$1,500 per program. Multiple locations. Existing deadline May 15. Specific 2026 dates not surfaced via WebSearch.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Cornish College Summer@Cornish",
@@ -35797,7 +35815,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://coyotecentral.org/programs"
+      "_source": "https://coyotecentral.org/programs",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Pay-what-you-can creative classes ages 10-15 at Central District studios. Welding, woodworking, fashion, culinary, bike-building, visual art. ~$400 standard / $450 specialty (sliding scale). Rolling registration; popular sessions fill early.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Burke Museum Summer Camps (Dino Trackers & Paleo Discovery)",
@@ -35925,7 +35952,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp"
+      "_source": "https://www.seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-04",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Residential overnight camp on northwest tip of Orcas Island, operating since 1906. Sessions 7-28 days for grades 3-12, grouped by grade + gender identity in cabins. Registration opens Feb 4, 2026 at 6 a.m. — sessions fill quickly. Sliding scale (Price A full / Price B subsidized); $50 deposit; financial assistance available.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Camp Sealth Overnight & Day Camp",
@@ -35996,7 +36033,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://campfireseattle.org/camp-sealth-overnight-camp/"
+      "_source": "https://campfireseattle.org/camp-sealth-overnight-camp/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "ACA-accredited overnight + day camp on Vashon Island. 8 summer sessions ranging 4-13 days, late June through end August. Programs for youth all genders ages 5-17. Activities: archery, swimming, arts & crafts, boating, fishing, horseback. Rolling registration; sessions fill. Phone (206) 463-3174.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Woodland Park Zoo Summer Day Camps",
@@ -36199,7 +36245,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.sct.org/education-programs/camps-classes-sct/"
+      "_source": "https://www.sct.org/education-programs/camps-classes-sct/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Adrienne Dillard-Coons Drama School at SCT Seattle Center campus. Day camps ages 3.5-18. Tracks: Creative Drama Camps (voice, body, imagination), Comedy Camp (Commedia dell'arte), and more. See 2026 Summer Digital Course Catalog at sct.org/education-programs/camps-classes-sct/ for specific weekly dates + tuition. Rolling registration.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Camp Galileo Bellevue (STEAM Day Camp)",
@@ -36328,7 +36383,26 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.musiccenternw.org/musictogether"
+      "_source": "https://www.musiccenternw.org/musictogether",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-20",
+        "latestEnd": "2026-07-24"
+      },
+      "sessionPattern": "single-week",
+      "sessions": [
+        {
+          "label": "Music Together summer camp",
+          "startDate": "2026-07-20",
+          "endDate": "2026-07-24",
+          "cost": 295,
+          "ages": "young children",
+          "notes": "12:30-4:00 pm"
+        }
+      ],
+      "scheduleNotes": "North Seattle music school. Music Together® summer camp scheduled July 20-24, 12:30-4pm, $295. Other Rhythm Kids® camps may run; check musiccenternw.org. Rolling registration.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Point Defiance Zoo & Aquarium Summer Camps",
@@ -36533,7 +36607,39 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.musicworksnw.org/summer-camps"
+      "_source": "https://www.musicworksnw.org/summer-camps",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-07-01"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [
+        {
+          "label": "Ages 4-6 / 6-9",
+          "startDate": "2026-06-22",
+          "endDate": "2026-06-26",
+          "cost": 530,
+          "ages": "4-9"
+        },
+        {
+          "label": "Ages 8-12 (3-day mini)",
+          "startDate": "2026-06-29",
+          "endDate": "2026-07-01",
+          "cost": 330,
+          "ages": "8-12"
+        },
+        {
+          "label": "Ages 12-16",
+          "startDate": "2026-06-22",
+          "endDate": "2026-06-26",
+          "cost": 530,
+          "ages": "12-16"
+        }
+      ],
+      "scheduleNotes": "Bellevue community music school. Three age-banded weeklong tracks summer 2026 (or 3-day for 8-12). Daily 9:30am-?. Rolling registration via musicworksnw.org/summer-camps.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "IslandWood Outdoor Summer Day Camps",
@@ -38424,7 +38530,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Free K-3 (sometimes through grade 5) music education program partnering with 90+ symphony orchestras nationwide (Seattle Symphony, San Francisco Symphony, LA Phil, NY Phil). Full curriculum + culminating concert where students perform alongside the orchestra. Partner orchestras enroll schools spring/summer for next school year.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "PJ Library — Free Jewish Children's Books",
@@ -39125,17 +39237,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "window",
-      "registrationOpens": "2026-02-01",
-      "summerWindow": {
-        "earliestStart": "2026-06-29",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Week-long age-banded summer camps using AMNH collections + Hayden Planetarium + Discovery Room. Themes: paleontology, astrophysics, marine biology, natural history. Member registration February; general March-April. ~$575-650/wk. 10% member discount. Need-based aid via AMNH Education.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "Exploratorium Summer Camps",
@@ -39176,17 +39278,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "window",
-      "registrationOpens": "2026-02-01",
-      "summerWindow": {
-        "earliestStart": "2026-06-15",
-        "latestEnd": "2026-08-14"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Tinkering- + maker-focused 1-week camps for ages 8-14. Build, take apart, hack, prototype using museum exhibits as inspiration. Member registration February; general March-April. ~$675-750/wk. Member discount + need-based scholarships.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "Field Museum Summer Camps + Junior Curators",
@@ -39274,16 +39366,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-07-01",
-        "latestEnd": "2026-08-31"
-      },
-      "sessionPattern": "single-day",
-      "scheduleNotes": "Free 90-minute sessions at every Apple Store nationwide each summer. Rotating topics (Keynote animation, Procreate sketch, GarageBand music, video editing). Apple devices provided in-store. Sessions July-August; sign up via Apple's Today at Apple in late June. Ages roughly 8-12.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "Best Buddies International (school + community chapters)",
@@ -39789,13 +39872,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE youth bird-focused citizen science. Christmas Bird Count for Kids Dec 14 - Jan 5; Great Backyard Bird Count Feb (family-friendly); Junior Birder programs at 500+ local Audubon chapters + nature centers year-round. Audubon Adventures K-12 curriculum ~$50 for educators.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "NOAA Planet Stewards Education Project",
@@ -39927,13 +40004,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "on-demand",
-      "scheduleNotes": "Family expeditions year-round to global field sites (Costa Rica turtles, Madagascar lemurs, Iceland climate, Caribbean reefs). 8-12 day trips. Book 6-8 months ahead. ~$2,000-3,500/wk + airfare. Need-based aid via Ignite Awards (up to 100%). Real conservation field research with scientists.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "Special Olympics Unified Champion Schools",
@@ -40431,7 +40502,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-09"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "Interlochen Junior Division (grades 3-6) + Intermediate (7-9). Tracks: classical music, jazz, dance, theatre, creative writing, film, visual arts. ~$3,500-5,500/2 weeks. Need-based aid covers 30-100% for ~40% of campers. Apply Nov-Jan; auditions Feb for performing-arts tracks. Estimated typical late June - early August.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "USA Junior Olympic — multi-sport developmental pipeline",
@@ -40824,16 +40904,7 @@
       "scope": "national",
       "scholarshipAid": "Program is fully free — no tuition, no fees, materials shipped at no cost to family.",
       "registrationUrl": "https://form.jotform.com/252825002616147",
-      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free.",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-07-31"
-      },
-      "sessionPattern": "single-session",
-      "scheduleNotes": "FREE 3-week virtual-only summer engineering program for students rising into 4th-6th grade. Rolling admissions for 2026. Hands-on engineering challenges. Fully sponsored by NSBE corporate partners. Specific 2026 program dates not surfaced via WebSearch.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free."
     },
     {
       "name": "Math Beasts Camp (AoPS Academy / Beast Academy Live)",
@@ -40879,16 +40950,7 @@
       "scope": "national",
       "scholarshipAid": "AoPS offers limited need-based scholarships for AoPS Academy and AoPS Online courses; apply via aopsacademy.org/policies/financial-aid.",
       "registrationUrl": "https://virtual.aopsacademy.org/courses/catalog/summer",
-      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026).",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-15",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "biweekly",
-      "scheduleNotes": "Online live courses: Math Beasts Camps 2/3/4/5 using Beast Academy curriculum. Each camp 2-week or 4-week format, 1.5 hrs/day. Existing deadline May 31. Tuition not posted publicly until spring (typical $400-900 for 2-4 weeks).",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026)."
     },
     {
       "name": "Northwestern CTD Solstice Online Summer Program (Grades 4-6)",
@@ -40932,16 +40994,7 @@
       "scope": "national",
       "scholarshipAid": "CTD offers need-based financial aid; eligibility based on family income. Aid applications open with summer registration.",
       "registrationUrl": "https://www.ctd.northwestern.edu/summer-programs",
-      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required.",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-29",
-        "latestEnd": "2026-08-07"
-      },
-      "sessionPattern": "biweekly",
-      "scheduleNotes": "2-week online courses for academically-talented rising 4th-6th graders. Math, science, writing, technology, leadership, service-learning. Existing deadline May 15. ~$1,000-1,400 per 2-wk course. Financial aid available. Same window as CTD's in-person Evanston/Chicago program.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required."
     },
     {
       "name": "CodeWizardsHQ Summer Coding Camps",
@@ -40988,16 +41041,7 @@
       "scope": "national",
       "scholarshipAid": "Limited promo discounts (early-bird, multi-camp); no central need-based scholarship program. Multi-pay plans available.",
       "registrationUrl": "https://www.codewizardshq.com/summer/",
-      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required.",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-01",
-        "latestEnd": "2026-08-31"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Live online small-group coding camps ages 8-18. Summer formats: 1-week themed (Roblox, Minecraft, AI/ML, Web Dev, Python) ~$200-300; 3-week accelerated tracks $500-900. Rolling sessions June, July, August.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required."
     },
     {
       "name": "Black Girls CODE Summer Camp 2026",
@@ -41042,32 +41086,7 @@
       "scope": "national",
       "scholarshipAid": "Programs are heavily subsidized — most participants pay $0 thanks to corporate sponsorship. Apply early; selective due to high demand.",
       "registrationUrl": "https://www.wearebgc.org/summer-camp",
-      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive.",
-      "scheduleConfidence": "verified",
-      "summerWindow": {
-        "earliestStart": "2026-07-07",
-        "latestEnd": "2026-08-06"
-      },
-      "sessionPattern": "single-week",
-      "sessions": [
-        {
-          "label": "Virtual Camp 1",
-          "startDate": "2026-07-07",
-          "endDate": "2026-07-09",
-          "cost": 0,
-          "ages": "rising 5th-12th"
-        },
-        {
-          "label": "Virtual Camp 2",
-          "startDate": "2026-08-04",
-          "endDate": "2026-08-06",
-          "cost": 0,
-          "ages": "rising 5th-12th"
-        }
-      ],
-      "scheduleNotes": "2026 Summer Camp series 'Game Design: She Won't Just Play the Game. She'll Build It.' 10 in-person US cities + 2 virtual sessions. Heavily subsidized — most participants pay $0. Existing deadline Jun 1. Girls ages 10-17 (rising 5th-12th).",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive."
     },
     {
       "name": "AAUW Tech Trek STEM Camp for Girls",
