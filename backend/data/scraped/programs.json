@@ -37096,7 +37096,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-17"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "5-week gamified online summer learning, June 15 – July 17, 2026. Roughly 4 hrs/wk academic challenges (math, reading, writing, electives) wrapped in a global treasure-hunt narrative — first solver of final puzzle wins a real-world buried prize. Async pacing; travel-friendly. Early registration $199 / standard $249. Sibling discounts. Best fit grades 2-8.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Northwestern CTD Academic Day Camps & Enrichment",
@@ -37844,13 +37853,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE — visit any of 400+ NPS sites, pick up a Junior Ranger booklet at the visitor center, complete age-appropriate activities, get sworn in + earn a badge. Some park entrance fees may apply. No registration; year-round.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "iD Tech Online Camps",
@@ -37936,13 +37939,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "100,000+ small-group online classes from independent expert teachers. Subjects: D&D clubs, creative writing, Python coding, advanced math, languages, art studios. Per-class pricing ~$10-30/session; many free trials; financial aid via Outschool Foundation. Year-round; classes start weekly. (Quality is per-teacher — sort by reviews.)",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Art of Problem Solving (AoPS) + Beast Academy",
@@ -38068,13 +38065,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Free online K-12 curriculum + 1M+ digital resources from 21 Smithsonian museums. 200+ Smithsonian Affiliate Museums in all 50 states (e.g., Pacific Science Center, Field Museum) often run summer camps $200-500/wk; financial aid available. Affiliate camp registration opens Jan-March.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Code.org Hour of Code + Code.org After School",
@@ -38391,13 +38382,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "4,500+ local Clubs serving 4M+ kids annually. Annual membership $20-30 in most clubs grants access to after-school, summer, weekend programs (academics, arts, sports, leadership, STEM, college prep). Many clubs FREE for low-income families. Sliding-scale + scholarship for activities. Year-round.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "YMCA Youth Programs (local Y umbrella)",
@@ -38439,13 +38424,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "2,700+ local YMCA branches nationwide. Programs: after-school (Y-CAP), day camps, residential camps (Camp Orkila, Camp Cheerio), youth sports leagues, swim lessons, Achievers leadership pipeline. Annual family membership ~$300-700 with sliding-scale (Open Doors); many programs free for members; non-member day camps $150-300/wk. Summer camp registration opens Jan-Feb.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Scholastic Summer Reading Challenge",
@@ -38651,13 +38630,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE monthly Jewish-themed children's books mailed to families with kids ages 0-11. Funded by Harold Grinspoon Foundation. No religious affiliation required. Picture books through middle-grade chapter books. Year-round signup at pjlibrary.org.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "National Geographic Kids — free resources + Slingshot Challenge",
@@ -38739,13 +38712,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "100% FREE streaming + activity guides. Daniel Tiger, Wild Kratts, Curious George, Molly of Denali, Xavier Riddle. PBS LearningMedia for educators + parents. Year-round.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Civil Air Patrol Cadet Program (CAP)",
@@ -38827,13 +38794,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Free curriculum-based youth gardening program partnered with USDA Cooperative Extension. Levels 1 (3rd-5th grade) + 2 (6th-8th grade) cover plant growth, ecology, food/fiber, soils, water, environmental horticulture. Curriculum guides $25-40; Coop Extension-led groups often free. Rolling enrollment.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Destination Imagination (DI)",
@@ -38921,13 +38882,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Annual academic competition: original historical research presented via paper, exhibit, performance, documentary, or website. Junior division (grades 6-8) + Senior division (9-12). District contests Feb-March; state April-May; nationals June. Free for student participation in most district/state contests.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "CISV International — Village + Interchange + Step Up",
@@ -39504,13 +39459,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Pairs students with intellectual + developmental disabilities (IDD) with peer 'buddies' for one-to-one friendships, structured activities, community-building. Middle School Buddies (grades 6-8) + High School Buddies (9-12). Schools in all 50 states + 50+ countries. 100% free. Chapters form at start of school year.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "Foundation for Jewish Camp — One Happy Camper grant",
@@ -39854,13 +39803,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE for participating youth — Sierra Club volunteers fund all gear + transportation. Connects under-resourced urban youth with the outdoors via free guided trips: hikes, camping, kayaking, snowshoeing, backpacking. Volunteer-led; 50+ city chapters. Year-round trips, chapter-coordinated.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "National Wildlife Federation Eco-Schools USA",
@@ -39902,13 +39845,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "FREE for participating schools (curriculum + certification). School-based environmental sustainability program — kids audit their school's environmental footprint (energy, water, waste, biodiversity, schoolyard habitat) + lead improvement projects. 7 'pathways' (climate, energy, water, biodiversity, etc.). Year-round school enrollment.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "confidence": "high"
     },
     {
       "name": "NPS Every Kid Outdoors (free 4th grade pass)",
@@ -39944,7 +39881,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE pass — admits 4th grader + 3 adults + all minor siblings to all 400+ NPS sites + US Forest Service + US Fish & Wildlife sites + US Army Corps lands. Pass valid Sept 1 – Aug 31 of 4th grade year (so the calendar year your kid is in 4th grade Fall semester). Get pass at everykidoutdoors.gov.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Audubon for Kids — citizen science + Junior Birder",
@@ -40029,7 +39972,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE curriculum + project funding up to $5,000 for educator-led student projects (typical $500-2,500). K-12 climate / oceans / weather. Free monthly virtual seminars. Project funding applications due September each year. Past projects: schoolyard rain gardens, climate-action campaigns, NOAA-data analysis.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Outdoor Afro Youth + Family Programs",
@@ -40075,7 +40024,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE chapter-led trips. 60+ city chapters run free hikes, camping, paddling, fishing, climbing, family events. Founded by Rue Mapp; celebrates Black connections + leadership in nature. Chapter-coordinated year-round trips. Find a chapter at outdoorafro.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Earthwatch Kids + Family Expeditions",
@@ -40164,7 +40119,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE for participating schools. K-12 inclusive sports + leadership + whole-school engagement. Three components: (1) Unified Sports — students with + without intellectual disabilities play together; (2) Inclusive Youth Leadership; (3) Whole-School Engagement. 7,500+ schools nationwide. Year-round school enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Easter Seals Camps + Inclusive Recreation",
@@ -40257,7 +40218,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "single-week",
+      "scheduleNotes": "Carnation, WA. 100% FREE — including travel, meals, medical care. SeriousFun Network (founded by Paul Newman). Disease-specific weeks (cancer week, blood disorders week, neurological conditions week, etc.). Apply 4-6 months before session. Medical staff on-site. Existing waitlist common — apply early.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Friendship Circle (special needs + peer-buddy program)",
@@ -40303,7 +40273,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE. Pairs kids/teens with special needs (autism, IDD, physical disabilities) with typical-peer 'buddies' for weekly home visits + monthly group events + summer programs. Buddies are HS volunteers. 100+ chapters in US, Canada, UK, Israel, France, Brazil, Mexico. Year-round enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "AHRC Camps + Recreation",
@@ -40670,7 +40646,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Each Olympic-sport NGB (USATF, USA Swimming, USA Gymnastics, USA Wrestling, etc.) operates a Junior Olympic developmental pipeline from local clubs through state, regional, and national championships. USATF youth membership ~$30-50/yr; meets ~$15-50 each; many clubs have aid. Year-round club enrollment; Junior Olympic championships in summer.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Juni Learning 1:1 Online Summer Coding & Math",
@@ -41283,7 +41265,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE — no fee, no credit card to register. Virtual summer-learning destination from National Center for Families Learning. Built around STEM + literacy 'Wonders' boosted by hands-on Maker experiments. Themed editions (current: music, with six tracks). Rolling enrollment year-round. Hidden gem for budget-conscious + homeschool families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp CrunchLabs (12-Week Summer Build Box Subscription, Mark Rober)",
@@ -41519,7 +41507,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Long-running animated online learning. Tim and Moby host short topical videos with quizzes, vocabulary, games for grades 3-8 (BrainPOP) + K-3 (BrainPOP Jr.). Topics: science, math, social studies, English, arts & music, engineering. Family $129/yr (Grades 3-8); +$30/yr or $159/yr combo to add BrainPOP Jr. Monthly ~$30/mo. 30-day free trial requires CC + auto-converts.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Synthesis Teams — Online Problem-Solving Cohort",
