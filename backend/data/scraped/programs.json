@@ -1177,7 +1177,16 @@
       "region": "West",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://k12programs.universityofcalifornia.edu/programs/programs.html"
+      "_source": "https://k12programs.universityofcalifornia.edu/programs/programs.html",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-05",
+        "latestEnd": "2026-08-01"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Prestigious FREE 4-week residential summer program at 6 UC campuses (Davis, Irvine, LA, Merced, San Diego, Santa Cruz). State-funded for CA residents (~$700 housing/meals fee, often waived); non-CA residents pay $5,000+. Cohort sizes 25-35 per cluster. Faculty-led research clusters: bioengineering, astrophysics, computer science, environmental science, etc. Application: deadline Feb 28 (NOW PASSED for summer 2026); next cycle opens Nov 2026 for summer 2027. Eligibility: rising 8-12th graders, GPA 3.5+, recommendation. Apply at k12programs.universityofcalifornia.edu/programs.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "SAGE (Science Accelerating Girls' Engagement in STEM)",
@@ -1674,7 +1683,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://annarbordetroit.kidsoutandabout.com/content/summer-camps-ann-arbor-detroit-metro-area"
+      "_source": "https://annarbordetroit.kidsoutandabout.com/content/summer-camps-ann-arbor-detroit-metro-area",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Hands-on science day camps at Ann Arbor Hands-On Museum (MI). K-8 students explore robotics, forensics, flight, dissection, ecology. ~$350/wk. Existing deadline Jun 1. Member discount + scholarship via museum education department. Mon-Fri 9am-3:30pm typical.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Henry Ford Summer Camps",
@@ -13063,7 +13081,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "STEM programs demonstrate commitment to your major. Be ready to discuss specific technical skills or concepts you mastered.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "FIRST Robotics summer camps, separate from the school-year FLL Challenge season. Build + program robots, solve engineering challenges. ~$500-1,500/wk (residential vs day, location varies). Existing deadline Jun 1. Multiple US host sites — find via firstinspires.org. Often run by local FIRST teams as fundraisers; quality varies. Verify supervisor credentials before booking.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Chess Championship Summer Intensive",
@@ -35784,7 +35811,16 @@
       "url": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/"
+      "_source": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "STEM summer camps hosted at University of Washington Seattle campus. Courses: coding, robotics, game design, Minecraft, Roblox, science. Ages 5-14. ~$799/wk + sibling discount. Existing deadline Jun 1. Day camps Mon-Fri. Specific 2026 weekly dates posted at lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "UW K-12 Engineering Outreach Programs",
@@ -41522,7 +41558,16 @@
       "scholarshipAid": "Not posted at corporate level — varies by franchise. Some locations offer multi-week + sibling discounts; ask center directly.",
       "registrationUrl": "https://icodeschool.com/",
       "howToStart": "Use Find a Location on icodeschool.com, then register through the local franchise.",
-      "dates": "May 26 - Aug 7, 2026"
+      "dates": "May 26 - Aug 7, 2026",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "National network of STEM/coding day camps for ages 6-18 (range varies by location). Themes: game design, drone programming, VEX robotics, 3D printing, Minecraft modding, AI, YouTube creation. Day camps Mon-Fri 9am-4pm. ~$400-700/wk full-day, varies by location. Existing deadline Aug 7. Multiple US locations — find at icodeschool.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Snapology LEGO STEAM Summer Camps (National)",
