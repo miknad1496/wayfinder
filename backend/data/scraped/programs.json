@@ -44844,6 +44844,242 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Perot Museum Camp Discovery",
+      "provider": "Perot Museum of Nature and Science (Dallas)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$385-485/wk; member discount 10%; need-based aid via Perot Education + Title I scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Dallas",
+        "state": "TX"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Perot Museum (Victory Park, downtown Dallas) themed summer day camps for grades 1-8. Tracks: Dinosaur + Paleontology lab, Engineering + Robotics, Health + Human Body, Earth Sciences + Energy, Computer Science + AI. Mon-Fri 9am-4pm; before/after care available. Stunning award-winning building with 5 floors of exhibits.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://www.perotmuseum.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.perotmuseum.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-48",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Perot Museum (Victory Park downtown Dallas) Camp Discovery grades 1-8. Tracks: Dinosaur + Paleontology, Engineering + Robotics, Health + Human Body, Earth Sciences + Energy, CS + AI. Mon-Fri 9am-4pm + extended care. ~$385-485/wk. 10% member discount + need-based aid via Perot Education + Title I scholarship pool. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Houston Museum of Natural Science Xploration Camps",
+      "provider": "Houston Museum of Natural Science (HMNS)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 395,
+        "type": "paid",
+        "display": "~$345-445/wk; member discount 15%; need-based aid via HMNS Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Houston",
+        "state": "TX"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "HMNS (Hermann Park, Houston Museum District) Xploration summer camps for grades K-8. Tracks: Dinosaur excavation (HMNS has one of largest dinosaur halls in US), Hall of Ancient Egypt + archaeology, Earth Forum (geology + minerals), Cockrell Butterfly Center (entomology), Burke Baker Planetarium (astronomy). Mon-Fri full-day with behind-the-scenes access.",
+      "deadline": "Member reg Jan; general March",
+      "url": "https://www.hmns.org/programs/xploration-station-summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.hmns.org/programs/xploration-station-summer-camps/",
+      "_addedBy": "state-expansion-batch-48",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "HMNS (Hermann Park, Houston Museum District) Xploration Camps K-8. Tracks: Dinosaur excavation (one of largest dinosaur halls in US), Hall of Ancient Egypt + archaeology, Earth Forum (geology), Cockrell Butterfly Center (entomology), Burke Baker Planetarium (astronomy). Mon-Fri full-day + behind-the-scenes access. ~$345-445/wk. 15% member discount + need-based aid via HMNS Education. Member reg Jan; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Witte Museum Summer Camps + Outdoor Education",
+      "provider": "Witte Museum (San Antonio)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 10%; sliding scale via Witte Education + SA-resident scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "San Antonio",
+        "state": "TX"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Witte Museum (Brackenridge Park, San Antonio) themed weekly summer camps for grades K-8. Tracks: Texas natural history + paleontology, Indigenous cultures + archaeology, ranching + cowboy heritage, ecology + south Texas habitats. Outdoor education in 18-acre campus including HEB Body Adventure (interactive health center) + outdoor archaeology dig.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.wittemuseum.org/learn/witte-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wittemuseum.org/learn/witte-camps/",
+      "_addedBy": "state-expansion-batch-48",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Witte Museum (Brackenridge Park San Antonio) themed summer camps K-8. Tracks: Texas natural history + paleontology, Indigenous cultures + archaeology, ranching + cowboy heritage, ecology + south Texas habitats. 18-acre campus + outdoor archaeology dig + HEB Body Adventure interactive health center. ~$295-395/wk. 10% member discount + sliding scale via Witte Education + SA-resident scholarship pool. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Don Harrington Discovery Center Summer Camps",
+      "provider": "Don Harrington Discovery Center (Amarillo)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 215,
+        "type": "paid",
+        "display": "~$185-265/wk; member discount 10%; sliding scale + Texas Panhandle resident scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Amarillo",
+        "state": "TX"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "Don Harrington Discovery Center (Amarillo, Texas Panhandle) themed weekly summer camps for ages 4-12. Tracks: Wonder Lab (general STEAM), Outdoor Discovery (Texas Panhandle ecology), Space Theater Adventures (planetarium), Engineering Build, Art + Science Studios. Mon-Fri half-day or full-day. Strong fit for Texas Panhandle families with limited camp options nearby.",
+      "deadline": "Member reg Feb; general March-May",
+      "url": "https://www.dhdc.org/learn/summer-camps/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.dhdc.org/learn/summer-camps/",
+      "_addedBy": "state-expansion-batch-48",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Don Harrington Discovery Center (Amarillo, Texas Panhandle) themed summer camps ages 4-12. Tracks: Wonder Lab (general STEAM), Outdoor Discovery (Panhandle ecology), Space Theater Adventures (planetarium), Engineering Build, Art + Science Studios. Mon-Fri half-day or full-day. ~$185-265/wk. 10% member discount + sliding scale + Texas Panhandle resident scholarships. Member reg Feb; general Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Thinkery Summer Camps + Family Programs",
+      "provider": "Thinkery (Austin)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$385-485/wk; member discount 15%; sliding scale via Thinkery Education + Austin ISD partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Austin",
+        "state": "TX"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Thinkery (East Austin, Mueller community) themed weekly summer camps for ages 3-10. Maker-focused: BrickLab construction, Innovator's Workshop (engineering challenges), Kitchen Lab (cooking science), Spark Shop (electronics + circuits), Art Studios. Outdoor 'Backyard' learning space + community garden. Mon-Fri half-day or full-day.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://thinkeryaustin.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://thinkeryaustin.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-48",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Thinkery (East Austin, Mueller community) themed summer camps ages 3-10. Maker-focused tracks: BrickLab construction, Innovator's Workshop (engineering), Kitchen Lab (cooking science), Spark Shop (electronics + circuits), Art Studios. Outdoor Backyard learning space + community garden. Mon-Fri half-day or full-day. ~$385-485/wk. 15% member discount + sliding scale via Thinkery Education + Austin ISD scholarship partnership. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
