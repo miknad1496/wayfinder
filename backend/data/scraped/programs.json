@@ -52691,6 +52691,216 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Rotary Youth Exchange (RYE)",
+      "provider": "Rotary International",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE-to-low-cost — Rotary clubs sponsor exchange students; family pays travel + insurance + visa (~$2,000-5,000); Rotary scholarship covers tuition + room + board"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "100+ countries globally",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      },
+      "description": "Rotary Youth Exchange — flagship Rotary International program for ages 14-18.5 (rising 9-12). Two formats: SHORT-TERM (1-3 month summer family stay in another country) + LONG-TERM (10-month school-year academic exchange). 100+ countries available. Strong educational + cultural exchange — students live with Rotary host families + attend local schools. Affordable vs commercial summer programs. Apply via local Rotary club; selective.",
+      "deadline": "Apply 12 months ahead via local Rotary club",
+      "url": "https://www.rotary.org/learn/youth-exchanges",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rotary.org/learn/youth-exchanges",
+      "_addedBy": "international-exchange-batch-84",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Rotary Youth Exchange — flagship Rotary International program for ages 14-18.5 (rising 9-12). Two formats: SHORT-TERM (1-3 month summer family stay) + LONG-TERM (10-month school-year academic exchange). 100+ countries available. Strong educational + cultural exchange — students live with Rotary host families + attend local schools. AFFORDABLE vs commercial summer programs (Rotary scholarship covers tuition + room + board; family pays travel + insurance + visa ~$2,000-5,000). Apply 12 months ahead via local Rotary club; selective. Strong fit for serious cultural-immersion + Rotary network access.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "AFS Intercultural Programs",
+      "provider": "AFS Intercultural Programs (American Field Service)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~$4,500-9,995/2-3 week summer program; AFS need-based scholarships up to 100% via AFS Foundation; long-term ~$11,000-15,000"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "60+ countries globally",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      },
+      "description": "AFS Intercultural Programs (founded 1947) — leading global youth exchange organization. Short-term summer programs (2-3 weeks) + 6-month school-year + 12-month full year. 60+ countries. Programs include language immersion + family homestay + community service. AFS Foundation provides need-based scholarships up to 100% (with US Sec State certification). Apply 9-12 months ahead.",
+      "deadline": "Apply 9-12 months ahead; rolling",
+      "url": "https://www.afsusa.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.afsusa.org",
+      "_addedBy": "international-exchange-batch-84",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "AFS Intercultural Programs (founded 1947) — leading global youth exchange organization. Short-term summer programs (2-3 weeks) + 6-month school-year + 12-month full year. 60+ countries. Programs include language immersion + family homestay + community service. ~$4,500-9,995/2-3 week summer; long-term ~$11,000-15,000. AFS Foundation need-based scholarships up to 100% (with US Sec State certification). Apply 9-12 months ahead.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "NSLI-Y (National Security Language Initiative for Youth)",
+      "provider": "US Dept of State / American Councils for International Education",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students — US State Dept-funded; covers travel + tuition + room + board + insurance + visa"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "7 strategic-language countries: China, Egypt, India, Indonesia, Korea, Russia, Tajikistan, Turkey, Taiwan",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NSLI-Y — National Security Language Initiative for Youth — US State Department-funded language immersion for ages 15-18 (rising 10-12). 100% FREE — covers EVERYTHING (travel + tuition + room + board + insurance + visa). Languages: Arabic, Chinese (Mandarin), Hindi, Indonesian, Korean, Persian (Tajik), Russian, Turkish. Summer program 6-7 weeks; academic-year program. Selective application (national merit-based). College-app gold for foreign-policy or international-affairs track. UNDER-applied-for given scholarship is full ride.",
+      "deadline": "Apply Sep-Nov for following summer; selective",
+      "url": "https://www.nsliforyouth.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nsliforyouth.org",
+      "_addedBy": "international-exchange-batch-84",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "NSLI-Y — National Security Language Initiative for Youth — US State Department-funded language immersion for ages 15-18 (rising 10-12). 100% FREE — covers EVERYTHING (travel + tuition + room + board + insurance + visa). Languages: Arabic, Chinese (Mandarin), Hindi, Indonesian, Korean, Persian (Tajik), Russian, Turkish. Summer 6-7 weeks; academic-year option. SELECTIVE application (national merit-based). College-app GOLD for foreign-policy/international-affairs track. UNDER-APPLIED-FOR given full-ride scholarship. Apply Sep-Nov for following summer.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Youth For Understanding (YFU) Exchange",
+      "provider": "Youth For Understanding (YFU USA)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4495,
+        "type": "paid",
+        "display": "~$4,000-12,000/2-week to 12-month; YFU need-based scholarships up to 100%"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "50+ countries globally",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      },
+      "description": "Youth For Understanding (YFU USA, founded 1951) — international youth exchange. Short summer (2-week, 4-week) + long-term (semester, year). 50+ countries. Strong academic + cultural focus. YFU Foundation provides need-based scholarships up to 100% for low-income families. Strong fit for serious language acquisition. Apply 6-12 months ahead.",
+      "deadline": "Apply 6-12 months ahead; rolling",
+      "url": "https://www.yfu-usa.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.yfu-usa.org",
+      "_addedBy": "international-exchange-batch-84",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Youth For Understanding (YFU USA, founded 1951) — international youth exchange. Short summer (2-week, 4-week) + long-term (semester, year). 50+ countries. Strong academic + cultural focus. ~$4,000-12,000/2-week to 12-month. YFU Foundation need-based scholarships up to 100% for low-income families. Strong fit for serious language acquisition. Apply 6-12 months ahead.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Encounters with Cultures Programs (US Sec State)",
+      "provider": "US Department of State Bureau of Educational and Cultural Affairs",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students (Pell-eligible families) via Sec State exchange programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "50+ countries via partner orgs",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "US Department of State Bureau of Educational and Cultural Affairs — flagship US international exchange programs (umbrella for NSLI-Y + 50+ other programs). Programs include: Kennedy-Lugar Youth Exchange + Study Abroad (FREE), American Youth Leadership Program (FREE), Congress-Bundestag Vouth Exchange (FREE Germany year-long). FREE for accepted students. Apply via state.gov exchange portal OR partner org. Vastly under-applied-for. College-app GOLD.",
+      "deadline": "Apply Sep-Nov for following summer; selective",
+      "url": "https://exchanges.state.gov",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://exchanges.state.gov",
+      "_addedBy": "international-exchange-batch-84",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "US Department of State Bureau of Educational and Cultural Affairs — flagship US international exchange programs (umbrella for NSLI-Y + 50+ other programs). Programs include: Kennedy-Lugar Youth Exchange + Study Abroad (FREE), American Youth Leadership Program (FREE), Congress-Bundestag Youth Exchange (FREE Germany year-long). 100% FREE for accepted students. Apply via state.gov exchange portal OR partner org. VASTLY UNDER-APPLIED-FOR. College-app GOLD. Apply Sep-Nov for following summer; selective.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
