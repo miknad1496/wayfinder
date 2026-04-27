@@ -677,6 +677,46 @@
           "detail": "NSBE SEEK applications spring 2027 — FOLLOW THE INSTAGRAM NOW for early-access alerts. Microsoft DigiGirlz announce events Sep-Oct. JHU CTY Talent Search registration open. Common App for HS kids. Plan back from summer 2027 deadlines now (most Tier 1 programs accept apps in Dec)."
         }
       ]
+    },
+    {
+      "id": "equity-funding-landscape-2026",
+      "title": "Equity-focused funding landscape — under-applied aid sources",
+      "icon": "💰",
+      "_aiContext": true,
+      "items": [
+        {
+          "label": "The aid landscape parents miss most",
+          "detail": "For K-8 camps, most parents apply ONLY to the camp's own scholarship if they apply at all. They miss: (1) state-administered child-care subsidies (CCDF program), (2) employer-paid dependent-care FSA dollars ($5,000/yr per family), (3) school-district summer-enrichment vouchers (esp. Title I schools), (4) church/synagogue/mosque diaconate funds for member families, (5) regional United Way summer scholarship pools, (6) community foundation grant pools (Seattle Foundation, Pacific Northwest Foundation, etc.). Some camps have a 'first-time camper' aid bucket SEPARATE from need-based — apply to BOTH."
+        },
+        {
+          "label": "WA-specific funding to never miss",
+          "detail": "(1) Pacific Science Center scholarship up to 100% — apply to the SCHOLARSHIP separately from regular reg (Feb 6 window). (2) Woodland Park Zoo aid up to 100% in 20% increments based on income tier — most don't realize the income breakpoints. (3) Camp Sealth Camperships — extra-generous for first-time + foster/kinship/EBT/WIC families. (4) Camp Galileo up to 75% need-based. (5) Pierce County resident scholarship at Point Defiance Zoo. (6) Vancouver WA 'Everybody Plays!' covers 50% per session. ALL are first-come, scholarship pools fill spring. Email camp directors AFTER stated deadlines — flexibility often exceeds posted policy."
+        },
+        {
+          "label": "Free K-8 programs that ALWAYS exist",
+          "detail": "NPS Every Kid Outdoors (4th-grade pass — admits 4th grader + 3 adults + minor siblings to all 400+ NPS sites + USFS + USFWS + Army Corps). Khan Academy (free K-12 full curriculum). Khan Academy Kids (free K-2 app). Code.org Hour of Code + CS Fundamentals. Google CS First (Scratch curriculum). NASA Kids' Club + STEM Engagement Virtual Events (free events year-round). Smithsonian Learning Lab (1M+ free digital resources). Outdoor Afro chapter trips (free). Sierra Club ICO trips (free, transit + gear covered). PJ Library (free Jewish-themed children's books mailed monthly). Carnegie Hall Link Up (free K-3 music education through partner orchestras). FREE forever, no income test."
+        },
+        {
+          "label": "Demographic-targeted funding (apply to ALL you qualify for)",
+          "detail": "BLACK: Black Girls CODE Summer Camp (free for accepted), NSBE SEEK (free virtual K-6), Outdoor Afro chapters (free), various Black Greek Letter Org youth programs. HISPANIC/LATINO: Hispanic Heritage Foundation Youth Awards (HS), HSF Youth Leadership Institute (grades 7-12). NATIVE: Native Like Water (free for accepted Indigenous youth — California ocean immersion). LGBTQ+: Camp Brave Trails (LGBTQ+ youth, sliding scale + scholarship). DISABLED/CHRONIC ILLNESS: Camp Korey WA (100% FREE incl. travel + medical care for kids w/ serious medical conditions — SeriousFun Children's Network), Friendship Circle (free buddy program, special needs). FOSTER/KINSHIP: state-specific foster youth scholarship pools, ChildSafe / United Friends of the Children (CA). LOW-INCOME: state CCDF subsidies, USDA Summer Food Service Program (free meals at participating camps), Salvation Army Camp Arnold (sliding scale)."
+        },
+        {
+          "label": "Application strategies for need-based aid",
+          "detail": "(1) Apply EARLY — most pools fill January-February even if camps say rolling. (2) Apply to multiple — most aid is non-overlapping (camp aid + employer FSA + community foundation grant can stack). (3) Provide a 1-page family financial statement even when not required — gives reviewers the context they need. (4) Mention CHILD's interest in scholarship apps, not just family financial need — many funders weight 'kid would benefit + grow' alongside need. (5) Re-apply after rejection — some pools have second-round reviews when initial allocations don't all distribute."
+        },
+        {
+          "label": "Underutilized federal + state programs",
+          "detail": "Dependent Care FSA: $5,000/yr/family pre-tax, can be used for K-12 summer day camps (NOT overnight) where the parent-care-while-working test is met. Many parents leave this on the table. Child & Dependent Care Tax Credit: 20-35% credit on first $3,000 of dependent care expenses (per child, max $6,000 for 2+) — works alongside FSA. State-specific: WA has a state CCDF called 'Working Connections Child Care' that subsidizes day camps for families ≤200% poverty line. Other states: CA Alternative Payment Program, NY Child Care Subsidy, IL Child Care Assistance Program."
+        },
+        {
+          "label": "What 'application-fee scholarships' really are",
+          "detail": "WATCH OUT: scholarship 'matching' services (FastWeb, Scholarship Owl) sometimes hide fee-required scholarships. Real FREE scholarships never charge an application fee. Real foundations + nonprofits + corporations don't either. Anything charging $25-100 to 'apply' is a scam OR a vanity-press pseudo-scholarship that's worth pennies. Stick to: state college board scholarships, school district aid, nonprofit foundations, corporate (Bank of America, Google, Microsoft, Coca-Cola Scholars), professional society scholarships (NSBE, SHPE, AISES), community foundations."
+        },
+        {
+          "label": "For Pro/Elite Wayfinder users — how to use the Scholarships module + this calibration together",
+          "detail": "Filter Scholarships by scope=state and amount=under1k or 1k-5k FIRST — these have the SMALLEST applicant pools and biggest effort:reward ratio. The 'application-only' format scholarships are MOST competitive (everyone applies) — take an essay/portfolio scholarship over an application-only scholarship if your kid has the work product. Demographic eligibility filters in the Scholarships module surface programs you might not know to look for. Cross-reference winners with the Equity-Focused Funding Landscape (this section) to find programs that stack — e.g., a Hispanic Scholarship Fund award + employer FSA + camp's own need-based aid can fully cover a $3,000 summer."
+        }
+      ]
     }
   ],
   "_meta": {
