@@ -56665,6 +56665,207 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Korea Foundation Korean Language Scholarship (HS)",
+      "provider": "Korea Foundation (한국국제교류재단)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Korea Foundation covers all costs incl. tuition + travel + housing for selected HS students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Korea Foundation Korean Language Scholarship — flagship Korean government program for ages 16-18 (rising 11-12) interested in Korean language + Korean Studies. 4-6 week residential at SNU OR Yonsei University Seoul. Tracks: Intensive Korean Language (TOPIK preparation), Korean Cultural Studies + K-Wave, Korean Politics + History, Korean Cuisine + Lifestyle. 100% FREE — Korea Foundation covers everything. SELECTIVE — only 50 HS students globally. UNDER-applied-for vs NSLI-Y given lower visibility. Apply via Korea Foundation portal Sep-Dec.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.kf.or.kr/learn/scholarship",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kf.or.kr/learn/scholarship",
+      "_addedBy": "hs-international-batch-104",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Korea Foundation Korean Language Scholarship — flagship Korean government program for ages 16-18 (rising 11-12) interested in Korean language + Korean Studies. 4-6 week residential at SNU OR Yonsei University Seoul. Tracks: Intensive Korean Language (TOPIK preparation), Korean Cultural Studies + K-Wave, Korean Politics + History, Korean Cuisine + Lifestyle. 100% FREE — Korea Foundation covers EVERYTHING (tuition + travel + housing). SELECTIVE — only 50 HS students globally. UNDER-APPLIED-FOR vs NSLI-Y given lower visibility. Apply via Korea Foundation portal Sep-Dec.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "MEXT Japan Government Scholarship (HS Pre-University)",
+      "provider": "Japan Ministry of Education (MEXT 文部科学省)",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — MEXT covers tuition + travel + monthly stipend (~¥117,000/month, USD $775/month)"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Various Japanese universities",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "MEXT Japan Government Scholarship — flagship Japanese government scholarship for ages 17-18 (rising 12) going to undergraduate at Japanese universities. Year-round program — 1 year preparation + 4-year undergraduate. Tracks: every Japanese university subject. 100% FREE for selected — MEXT covers tuition + travel + monthly stipend (~¥117,000/month, USD $775/month). SELECTIVE — only 250 students globally accepted. Pipeline directly to undergraduate at Japanese universities. UNDER-applied-for vs Korean equivalents given visibility. College-app GOLD-PLUS.",
+      "deadline": "Apply Apr-Jun for following year; selective",
+      "url": "https://www.mext.go.jp/learn/scholarship",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mext.go.jp/learn/scholarship",
+      "_addedBy": "hs-international-batch-104",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "MEXT Japan Government Scholarship — flagship Japanese government scholarship for ages 17-18 (rising 12) going to undergraduate at Japanese universities. Year-round program — 1 year preparation + 4-year undergraduate. Tracks: every Japanese university subject. 100% FREE for selected — MEXT covers tuition + travel + monthly stipend (~¥117,000/month, USD $775/month). SELECTIVE — only 250 students globally accepted. Pipeline directly to undergrad at Japanese universities. UNDER-APPLIED-FOR vs Korean equivalents given visibility. College-app GOLD-PLUS. Apply Apr-Jun for following year.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Erasmus+ Youth Exchange (EU + Beyond)",
+      "provider": "European Commission Erasmus+ Programme",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students — Erasmus+ covers travel + tuition + accommodation across EU + 30+ partner countries"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "30+ EU + partner countries",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Erasmus+ Youth Exchange — flagship European Commission program for ages 16-18 (rising 11-12). Year-round + summer-intensive options across 30+ EU countries + 30+ partner countries (incl. UK + Norway + Switzerland + Iceland + Liechtenstein). Tracks: Youth Exchange (cultural + leadership), European Solidarity Corps (volunteer service), European Voluntary Service. 100% FREE for accepted students — Erasmus+ covers travel + tuition + accommodation. UNDER-applied-for by US students. Strong fit for kids interested in European culture + EU studies. College-app GOLD given EU credentials.",
+      "deadline": "Apply Mar-May; rolling; varies by partner country",
+      "url": "https://erasmus-plus.ec.europa.eu/learn/youth-exchange",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://erasmus-plus.ec.europa.eu/learn/youth-exchange",
+      "_addedBy": "hs-international-batch-104",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Erasmus+ Youth Exchange — flagship European Commission program for ages 16-18 (rising 11-12). Year-round + summer-intensive options across 30+ EU countries + 30+ partner countries (incl. UK + Norway + Switzerland + Iceland + Liechtenstein). Tracks: Youth Exchange (cultural + leadership), European Solidarity Corps (volunteer service), European Voluntary Service. 100% FREE for accepted students — Erasmus+ covers travel + tuition + accommodation. UNDER-APPLIED-FOR by US students. Strong fit for European culture + EU studies. College-app GOLD given EU credentials. Apply Mar-May; varies by partner country.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "DAAD Germany Pre-University Programme (FREE)",
+      "provider": "DAAD (Deutscher Akademischer Austauschdienst)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted students — DAAD covers all costs incl. travel + tuition + housing"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Germany",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "DAAD Germany Pre-University Programme — flagship German government scholarship for ages 17-18 (rising 12). Summer-intensive 4-week residential at TUM OR Charité OR Heidelberg OR RWTH. Tracks: Pre-University in Engineering, Medicine, Sciences, Business, Languages. 100% FREE for accepted students — DAAD covers all costs incl. travel + tuition + housing. SELECTIVE — only 100 HS students globally accepted. UNDER-applied-for vs UK competitors. Pipeline to German universities (often FREE for international undergrads — German universities don't charge tuition).",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.daad.de/learn/pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.daad.de/learn/pre-university",
+      "_addedBy": "hs-international-batch-104",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "DAAD Germany Pre-University Programme — flagship German government scholarship for ages 17-18 (rising 12). Summer-intensive 4-week residential at TUM OR Charité OR Heidelberg OR RWTH. Tracks: Pre-University in Engineering, Medicine, Sciences, Business, Languages. 100% FREE for accepted students — DAAD covers all costs incl. travel + tuition + housing. SELECTIVE — only 100 HS students globally accepted. UNDER-APPLIED-FOR vs UK competitors. Pipeline to German universities (often FREE for international undergrads — German universities don't charge tuition). Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Chevening Junior Programme (UK Pre-University)",
+      "provider": "UK Foreign + Commonwealth Office (Chevening)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted — Chevening covers all costs incl. travel + tuition + housing"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "UK",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Chevening Junior Programme — UK Foreign Office's flagship pre-university scholarship for ages 17-18 (rising 12). Summer-intensive 2-3 week residential at Oxford OR Cambridge OR LSE OR Imperial. Tracks: Diplomacy + International Relations, Engineering + Tech, Medicine, Business + Finance, Arts + Humanities. 100% FREE for accepted students — Chevening covers all costs. SELECTIVE — only 100 HS students globally. NOTE: Chevening is technically a UK postgraduate scholarship, but Junior Programme is the K-12 equivalent — UNDER-applied-for vs Sutton Trust + UNIQ.",
+      "deadline": "Apply Sep-Dec; selective",
+      "url": "https://www.chevening.org/learn/junior",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.chevening.org/learn/junior",
+      "_addedBy": "hs-international-batch-104",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Chevening Junior Programme — UK Foreign Office's flagship pre-university scholarship for ages 17-18 (rising 12). Summer-intensive 2-3 week residential at Oxford OR Cambridge OR LSE OR Imperial. Tracks: Diplomacy + International Relations, Engineering + Tech, Medicine, Business + Finance, Arts + Humanities. 100% FREE for accepted students — Chevening covers all costs. SELECTIVE — only 100 HS students globally. NOTE: Chevening is technically a UK postgraduate scholarship, but Junior Programme is the K-12 equivalent — UNDER-APPLIED-FOR vs Sutton Trust + UNIQ. Apply Sep-Dec.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
