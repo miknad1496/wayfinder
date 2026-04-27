@@ -61629,6 +61629,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Le Rosey Switzerland Summer Camp HS",
+      "provider": "Institut Le Rosey",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 12995,
+        "type": "paid",
+        "display": "~CHF 11,000-CHF 16,000 / USD $12,800-18,600 / 5-week; Le Rosey scholarships for international students; English + French-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rolle (winter Gstaad)",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Le Rosey Summer Camp HS — Le Rosey (the world's most expensive boarding school, founded 1880, alma mater of Aga Khan IV + King Albert II of Belgium + Shah of Iran heir + Rothschild scions) for ages 16-18 (rising 11-12). 5-week residential at Le Rosey Rolle campus on Lake Geneva (winter campus in Gstaad ski resort). Tracks: Academic Tutoring + Bilingual French/English, Sailing on Lake Geneva, Equestrian + Polo, Skiing + Alpine Sports, Languages + Cultural Diplomacy. ENGLISH + FRENCH-medium. SCHOLARSHIPS available. UNDER-known by US families. Pipeline to Le Rosey full boarding (one of world's most exclusive). College-app strong differentiator.",
+      "deadline": "Apply Sep-Mar; rolling",
+      "url": "https://www.rosey.ch/learn/summer-camp",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rosey.ch/learn/summer-camp",
+      "_addedBy": "hs-international-batch-128",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Le Rosey Summer Camp HS — Le Rosey (the world's most expensive boarding school, founded 1880, alma mater of Aga Khan IV + King Albert II of Belgium + Shah of Iran heir + Rothschild scions) for ages 16-18 (rising 11-12). 5-week residential at Le Rosey Rolle campus on Lake Geneva (winter campus in Gstaad ski resort). Tracks: Academic Tutoring + Bilingual French/English, Sailing on Lake Geneva, Equestrian + Polo, Skiing + Alpine Sports, Languages + Cultural Diplomacy. ENGLISH + FRENCH-medium. ~CHF 11,000-CHF 16,000 / USD $12,800-18,600 / 5-week. Le Rosey scholarships for international students. UNDER-KNOWN by US families. Pipeline to Le Rosey full boarding (one of world's most exclusive). College-app strong differentiator. Apply Sep-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Aiglon College Switzerland Summer School HS",
+      "provider": "Aiglon College",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 7995,
+        "type": "paid",
+        "display": "~CHF 6,800-CHF 9,800 / USD $7,910-11,400 / 3-week; Aiglon scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Villars-sur-Ollon",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Aiglon College Summer School HS — Aiglon (founded 1949, ranked top-3 Swiss boarding schools, alma mater of Yusuf Islam/Cat Stevens + multiple royals + Tom Doyle CEO of Mintel) for ages 16-18 (rising 11-12). 3-week residential at Aiglon Villars-sur-Ollon Swiss Alps campus. Tracks: Academic Tutoring (UK A-level + IB prep), Mountain Skills + Alpine Hiking, Sports (Aiglon has Olympic-quality skiing), Service Learning + Outdoor Leadership, Languages. ENGLISH-medium primarily; French/Spanish/German electives. SELECTIVE. Aiglon scholarships up to 100% via need-based admission. Pipeline to Aiglon full boarding.",
+      "deadline": "Apply Sep-April; rolling",
+      "url": "https://www.aiglon.ch/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.aiglon.ch/learn/summer-school",
+      "_addedBy": "hs-international-batch-128",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Aiglon College Summer School HS — Aiglon (founded 1949, ranked top-3 Swiss boarding schools, alma mater of Yusuf Islam/Cat Stevens + multiple royals + Tom Doyle CEO of Mintel) for ages 16-18 (rising 11-12). 3-week residential at Aiglon Villars-sur-Ollon Swiss Alps campus. Tracks: Academic Tutoring (UK A-level + IB prep), Mountain Skills + Alpine Hiking, Sports (Aiglon has Olympic-quality skiing), Service Learning + Outdoor Leadership, Languages. ENGLISH-medium primarily; French/Spanish/German electives. SELECTIVE. ~CHF 6,800-CHF 9,800 / USD $7,910-11,400 / 3-week. Aiglon scholarships up to 100% via need-based admission. Pipeline to Aiglon full boarding. Apply Sep-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Institut auf dem Rosenberg HS Summer (St. Gallen)",
+      "provider": "Institut auf dem Rosenberg",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 9995,
+        "type": "paid",
+        "display": "~CHF 8,500-CHF 12,500 / USD $9,900-14,545 / 4-week; Rosenberg scholarships for international students; English + German-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "St. Gallen",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Institut auf dem Rosenberg HS Summer — Rosenberg (founded 1889 in Eastern Switzerland St. Gallen, ranked top-5 Swiss boarding schools) for ages 16-18 (rising 11-12). 4-week residential at Rosenberg St. Gallen campus. Tracks: Academic Tutoring (IB + A-level + Abitur), Innovation + Tech (Rosenberg has unique 'Talents Pool' tech/AI program), Diplomatic Studies + International Affairs, Visual Arts + Design, Riding + Equestrian. ENGLISH + GERMAN-medium. SELECTIVE. Rosenberg has long alumni list of European business + political leaders. Pipeline to Rosenberg full boarding.",
+      "deadline": "Apply Sep-April; rolling",
+      "url": "https://www.instrosenberg.ch/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.instrosenberg.ch/learn/hs-summer",
+      "_addedBy": "hs-international-batch-128",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Institut auf dem Rosenberg HS Summer — Rosenberg (founded 1889 in Eastern Switzerland St. Gallen, ranked top-5 Swiss boarding schools) for ages 16-18 (rising 11-12). 4-week residential at Rosenberg St. Gallen campus. Tracks: Academic Tutoring (IB + A-level + Abitur), Innovation + Tech (Rosenberg has unique 'Talents Pool' tech/AI program), Diplomatic Studies + International Affairs, Visual Arts + Design, Riding + Equestrian. ENGLISH + GERMAN-medium. SELECTIVE. ~CHF 8,500-CHF 12,500 / USD $9,900-14,545 / 4-week. Rosenberg scholarships for international students. Rosenberg has long alumni list of European business + political leaders. Pipeline to Rosenberg full boarding. Apply Sep-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Collège du Léman Geneva HS Summer",
+      "provider": "Collège du Léman",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~CHF 4,200-CHF 6,200 / USD $4,890-7,215 / 3-week; CDL scholarships for international students; English + French-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Versoix, Geneva",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Collège du Léman Geneva HS Summer — CDL (founded 1960, located on Lake Geneva, ranked top-10 Swiss boarding schools) for ages 16-18 (rising 11-12). 3-week residential at CDL Versoix Geneva campus. Tracks: Academic Tutoring (IB + AP + French Bac prep), Multilingual Studies (Geneva is UN city — students from 100+ countries), International Diplomacy (UN Geneva visits), Sailing on Lake Geneva + Watersports, Skiing + Alpine Sports. ENGLISH + FRENCH-medium. SELECTIVE. AFFORDABLE Swiss boarding option vs Le Rosey. Pipeline to CDL full boarding. Strong fit for kids interested in international diplomacy + multilingual studies.",
+      "deadline": "Apply Sep-April; rolling",
+      "url": "https://www.cdl.ch/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cdl.ch/learn/hs-summer",
+      "_addedBy": "hs-international-batch-128",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Collège du Léman Geneva HS Summer — CDL (founded 1960, located on Lake Geneva, ranked top-10 Swiss boarding schools) for ages 16-18 (rising 11-12). 3-week residential at CDL Versoix Geneva campus. Tracks: Academic Tutoring (IB + AP + French Bac prep), Multilingual Studies (Geneva is UN city — students from 100+ countries), International Diplomacy (UN Geneva visits), Sailing on Lake Geneva + Watersports, Skiing + Alpine Sports. ENGLISH + FRENCH-medium. SELECTIVE. ~CHF 4,200-CHF 6,200 / USD $4,890-7,215 / 3-week. CDL scholarships for international students. AFFORDABLE Swiss boarding option vs Le Rosey. Pipeline to CDL full boarding. Strong fit for international diplomacy + multilingual studies. Apply Sep-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Lyceum Alpinum Zuoz HS Summer (Engadin Valley)",
+      "provider": "Lyceum Alpinum Zuoz",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 5995,
+        "type": "paid",
+        "display": "~CHF 5,200-CHF 7,500 / USD $6,050-8,725 / 3-week; Lyceum Alpinum scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Zuoz, Engadin Valley",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Lyceum Alpinum Zuoz HS Summer — Lyceum Alpinum (founded 1904, ranked top-7 Swiss boarding schools, located in Engadin Valley near St. Moritz) for ages 16-18 (rising 11-12). 3-week residential at Lyceum Alpinum Zuoz campus. Tracks: Academic Tutoring (IB + Swiss Matura + UK A-Level), Alpine Skiing + Mountaineering (St. Moritz adjacent), Equestrian + Riding, Languages (German + Italian + Romansh — local Swiss languages), Tennis + Sports. ENGLISH + GERMAN-medium. SELECTIVE. Pipeline to Lyceum Alpinum full boarding. Strong fit for kids interested in Alpine sports + multilingual Swiss culture. UNDER-known by US families.",
+      "deadline": "Apply Sep-April; rolling",
+      "url": "https://www.lyceum-alpinum.ch/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lyceum-alpinum.ch/learn/hs-summer",
+      "_addedBy": "hs-international-batch-128",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Lyceum Alpinum Zuoz HS Summer — Lyceum Alpinum (founded 1904, ranked top-7 Swiss boarding schools, located in Engadin Valley near St. Moritz) for ages 16-18 (rising 11-12). 3-week residential at Lyceum Alpinum Zuoz campus. Tracks: Academic Tutoring (IB + Swiss Matura + UK A-Level), Alpine Skiing + Mountaineering (St. Moritz adjacent), Equestrian + Riding, Languages (German + Italian + Romansh — local Swiss languages), Tennis + Sports. ENGLISH + GERMAN-medium. SELECTIVE. ~CHF 5,200-CHF 7,500 / USD $6,050-8,725 / 3-week. Lyceum Alpinum scholarships for international students. Pipeline to Lyceum Alpinum full boarding. Strong fit for Alpine sports + multilingual Swiss culture. UNDER-KNOWN by US families. Apply Sep-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
