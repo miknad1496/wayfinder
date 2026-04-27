@@ -5610,9 +5610,59 @@ async function searchSCBrowse() {
 }
 
 function _scProgramCardHtml(p) {
+  /* === REVAMP V2: SCHEDULE CONFIDENCE CARD + HANDLER === */
   const cost = p.cost?.display || (p.cost?.type === 'free' ? 'Free' : (p.cost?.amount ? '$' + p.cost.amount : ''));
   const loc = p.location?.city ? `${p.location.city}${p.location.state ? ', ' + p.location.state : ''}` : (p.location?.state || '');
   const grades = (p.grades || p.eligibility?.grades || []).filter(g => ['K','1','2','3','4','5','6','7','8','Pre-K'].includes(String(g))).join(', ');
+
+  // === Confidence-tiered schedule display ===
+  const tier = p.scheduleConfidence || 'unknown';
+  const tBadges = {
+    verified: { bg:'#dcfce7', color:'#15803d', label:'✓ Verified sessions' },
+    window:   { bg:'#dbeafe', color:'#1e40af', label:'◉ Window confirmed' },
+    inferred: { bg:'#fef3c7', color:'#92400e', label:'≈ Estimated' },
+    unknown:  { bg:'#f1f5f9', color:'#64748b', label:'· Dates not collected' },
+  };
+  const tb = tBadges[tier] || tBadges.unknown;
+  const tierBadge = `<span title="${_esc(p._scheduleSource || tier)}" style="background:${tb.bg};color:${tb.color};padding:2px 8px;border-radius:10px;font-size:11px;">${tb.label}</span>`;
+
+  const _fmtDate = (d) => {
+    if (!d) return '';
+    const m = String(d).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return d;
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[parseInt(m[2],10)-1] + ' ' + parseInt(m[3],10);
+  };
+
+  let runs = '';
+  if (tier === 'verified' && Array.isArray(p.sessions) && p.sessions.length) {
+    const first = p.sessions[0]; const last = p.sessions[p.sessions.length-1];
+    runs = `${p.sessions.length} session${p.sessions.length===1?'':'s'}: ${_fmtDate(first.startDate)} – ${_fmtDate(last.endDate || last.startDate)}`;
+  } else if (p.summerWindow?.earliestStart && p.summerWindow?.latestEnd) {
+    runs = `Runs: ${_fmtDate(p.summerWindow.earliestStart)} – ${_fmtDate(p.summerWindow.latestEnd)}`;
+    if (p.sessionPattern) runs += ` · ${_esc(p.sessionPattern)}`;
+    if (tier === 'inferred') runs += ' <span style="color:#92400e;">(estimated)</span>';
+  } else if (tier === 'unknown') {
+    runs = '<span style="color:#94a3b8;">Visit program site to confirm dates</span>';
+  }
+
+  const regParts = [];
+  if (p.registrationOpens) regParts.push('Reg opens ' + _fmtDate(p.registrationOpens));
+  if (p.deadline) regParts.push('Deadline ' + _fmtDate(p.deadline));
+  const regLine = regParts.join(' · ');
+
+  // Stash schedule on button so add-to-cal can prefill smartly
+  const _schedMini = (p.summerWindow || (Array.isArray(p.sessions) && p.sessions.length)) ? {
+    tier,
+    earliestStart: p.summerWindow?.earliestStart || p.sessions?.[0]?.startDate,
+    latestEnd: p.summerWindow?.latestEnd || p.sessions?.[p.sessions.length-1]?.endDate || p.sessions?.[0]?.endDate,
+    pattern: p.sessionPattern,
+    note: p.scheduleNotes,
+    registrationOpens: p.registrationOpens,
+    deadline: p.deadline,
+  } : null;
+  const schedAttr = _schedMini ? encodeURIComponent(JSON.stringify(_schedMini)) : '';
+
   return `
     <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
@@ -5620,13 +5670,16 @@ function _scProgramCardHtml(p) {
         <div style="display:flex;gap:6px;flex-wrap:wrap;">
           ${cost ? `<span style="background:#fef3c7;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(cost)}</span>` : ''}
           ${p.format ? `<span style="background:#f0fff4;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(p.format)}</span>` : ''}
+          ${tierBadge}
         </div>
       </div>
       <p style="margin:0 0 6px;font-size:12px;color:#59636e;">${_esc(p.provider || p.organization || '')}${loc ? ' &middot; ' + _esc(loc) : ''}${grades ? ' &middot; Grades: ' + _esc(grades) : ''}</p>
+      ${runs ? `<p style="margin:0 0 4px;font-size:12px;color:#475569;">🗓️ ${runs}</p>` : ''}
+      ${regLine ? `<p style="margin:0 0 6px;font-size:12px;color:#64748b;">${_esc(regLine)}</p>` : ''}
       <p style="margin:0 0 6px;font-size:13px;color:#334155;">${_esc((p.description || '').slice(0, 220))}${(p.description||'').length>220?'...':''}</p>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:8px;">
         ${p.url ? `<a href="${_esc(p.url)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">Program page →</a>` : '<span></span>'}
-        <button class="sc-add-to-cal-btn" data-name="${_esc(p.name || '')}" data-provider="${_esc(p.provider || p.organization || '')}" data-cost="${_esc(cost || '')}" style="font-size:12px;padding:5px 12px;border:1px solid #16a34a;background:#dcfce7;color:#15803d;border-radius:14px;cursor:pointer;font-weight:600;">+ Add to calendar</button>
+        <button class="sc-add-to-cal-btn" data-name="${_esc(p.name || '')}" data-provider="${_esc(p.provider || p.organization || '')}" data-cost="${_esc(cost || '')}" data-schedule="${schedAttr}" style="font-size:12px;padding:5px 12px;border:1px solid #16a34a;background:#dcfce7;color:#15803d;border-radius:14px;cursor:pointer;font-weight:600;">+ Add to calendar</button>
       </div>
     </div>
   `;
@@ -5840,6 +5893,7 @@ function _scScheduleCanvasHtml() {
   const monthTabs = [5,6,7].map(m => `<button class="sc-cal-month-tab${m===focusMonth?' active':''}" data-month="${m}">${monthName(m)}</button>`).join('');
 
   // Event list
+  /* === REVAMP V2: SC-CAL EDIT/X CLASS-FIX === */
   const eventList = events.length ? events.map(ev => {
     const color = colors[(events.indexOf(ev)) % colors.length];
     const dateRange = ev.endDate && ev.endDate !== ev.startDate ? `${ev.startDate} → ${ev.endDate}` : ev.startDate;
@@ -5850,8 +5904,8 @@ function _scScheduleCanvasHtml() {
           <div style="font-size:13px;font-weight:600;color:#1f2328;">${_esc(ev.name)}</div>
           <div style="font-size:11px;color:#64748b;">${dateRange}${ev.cost?' · ' + _esc(ev.cost):''}${ev.notes?' · ' + _esc(String(ev.notes).slice(0,50)):''}</div>
         </div>
-        <button class="sc-cal-edit" data-event-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #cfdcef;background:#fff;color:#2563eb;border-radius:12px;cursor:pointer;">Edit</button>
-        <button class="sc-cal-remove" data-event-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #fecaca;background:#fff;color:#dc2626;border-radius:12px;cursor:pointer;">×</button>
+        <button class="sc-cal-edit-btn" data-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #cfdcef;background:#fff;color:#2563eb;border-radius:12px;cursor:pointer;">Edit</button>
+        <button class="sc-cal-del-btn" data-id="${_esc(ev.id||'')}" style="font-size:11px;padding:3px 8px;border:1px solid #fecaca;background:#fff;color:#dc2626;border-radius:12px;cursor:pointer;">×</button>
       </div>
     `;
   }).join('') : '<p style="color:#94a3b8;padding:20px;text-align:center;font-size:13px;">No events yet. Click any day above to add one or use Browse Camps to drop programs in.</p>';
@@ -6132,16 +6186,34 @@ document.addEventListener('click', (e) => {
     _scRenderCalEvents();
   }
   if (e.target.classList?.contains('sc-add-to-cal-btn')) {
-    // From Browse tab card — switch to Insights tab and prefill the form
+    // From Browse tab card — switch to Insights tab and prefill the form (schedule-aware)
     const name = e.target.dataset.name;
     const cost = e.target.dataset.cost;
+    let _sched = null;
+    try {
+      const raw = e.target.dataset.schedule;
+      if (raw) _sched = JSON.parse(decodeURIComponent(raw));
+    } catch (err) { _sched = null; }
+    const _prefill = { name, cost };
+    if (_sched?.earliestStart) _prefill.startDate = _sched.earliestStart;
+    if (_sched?.latestEnd && _sched.latestEnd !== _sched.earliestStart) _prefill.endDate = _sched.latestEnd;
+    if (_sched) {
+      const noteParts = [];
+      if (_sched.pattern) noteParts.push(_sched.pattern);
+      if (_sched.note) noteParts.push(_sched.note);
+      if (_sched.registrationOpens) noteParts.push('reg opens ' + _sched.registrationOpens);
+      if (_sched.deadline) noteParts.push('deadline ' + _sched.deadline);
+      if (_sched.tier === 'inferred') noteParts.push('(estimated — verify with program)');
+      else if (_sched.tier === 'window') noteParts.push('(verify exact session dates with program)');
+      if (noteParts.length) _prefill.notes = noteParts.join(' · ');
+    }
     _scSetTab('Insights');
     // If insights not yet loaded, load then prefill; else just prefill
     setTimeout(() => {
       if (document.getElementById('scInsightsContent').dataset.loaded !== 'yes') {
-        loadSCInsights().then(() => setTimeout(() => _scShowCalForm({ name, cost }), 200));
+        loadSCInsights().then(() => setTimeout(() => _scShowCalForm(_prefill), 200));
       } else {
-        _scShowCalForm({ name, cost });
+        _scShowCalForm(_prefill);
         // Scroll the form into view
         document.getElementById('scCalForm')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }

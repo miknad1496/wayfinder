@@ -113,6 +113,15 @@ router.get('/browse', async (req, res) => {
     deadline: p.deadline,
     url: p.url || p.registrationUrl,
     confidence: p.confidence,
+    /* === REVAMP V2: SCHEDULING FIELDS === */
+    scheduleConfidence: p.scheduleConfidence || 'unknown',
+    registrationOpens: p.registrationOpens || null,
+    summerWindow: p.summerWindow || null,
+    sessionPattern: p.sessionPattern || null,
+    sessions: Array.isArray(p.sessions) ? p.sessions : [],
+    scheduleNotes: p.scheduleNotes || null,
+    _scheduleSource: p._scheduleSource || null,
+    _scheduleVerifiedDate: p._scheduleVerifiedDate || null,
   }));
 
   res.json({ count: arr.length, returned: safe.length, results: safe });

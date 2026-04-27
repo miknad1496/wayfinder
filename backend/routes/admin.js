@@ -978,6 +978,43 @@ router.all('/grinder-write', async (req, res) => {
           fileContents[p] = String(op.text || '') + (fileContents[p] || '');
           break;
         }
+        /* === REVAMP V2: UPDATE-ARRAY-ITEMS OP === */
+        case 'update-array-items': {
+          // op: { op:"update-array-items", path:".json", key:"programs",
+          //       updates:[ { match:{name:"...",provider:"..."}, set:{...fields...}, unset?:[...] } ] }
+          // Matches strings case/whitespace-insensitively, other types strictly.
+          // Soft-skips items that don't match (returned in updateReports).
+          if (!isJson(p)) return res.status(400).json({ error: 'update-array-items requires .json: ' + p });
+          const data = dataObjects[p];
+          const arr = getNested(data, op.key);
+          if (!Array.isArray(arr)) return res.status(400).json({ error: 'update-array-items: key did not resolve to array: ' + op.key });
+          const updates = Array.isArray(op.updates) ? op.updates : [];
+          const notFound = [];
+          let updated = 0;
+          for (const u of updates) {
+            if (!u.match || typeof u.match !== 'object') { notFound.push({ match: u.match, reason: 'invalid match' }); continue; }
+            const idx = arr.findIndex(item => {
+              if (!item || typeof item !== 'object') return false;
+              for (const k of Object.keys(u.match)) {
+                const expected = u.match[k];
+                const actual = item[k];
+                if (typeof expected === 'string' && typeof actual === 'string') {
+                  if (expected.trim().toLowerCase() !== actual.trim().toLowerCase()) return false;
+                } else if (actual !== expected) {
+                  return false;
+                }
+              }
+              return true;
+            });
+            if (idx < 0) { notFound.push({ match: u.match, reason: 'not found' }); continue; }
+            if (u.set && typeof u.set === 'object') Object.assign(arr[idx], u.set);
+            if (Array.isArray(u.unset)) for (const f of u.unset) delete arr[idx][f];
+            updated++;
+          }
+          if (!Array.isArray(req._updateReports)) req._updateReports = [];
+          req._updateReports.push({ path: p, key: op.key, updated, notFoundCount: notFound.length, notFound: notFound.slice(0, 20) });
+          break;
+        }
         default:
           return res.status(400).json({ error: 'Unknown op: ' + op.op });
       }
@@ -1025,6 +1062,7 @@ router.all('/grinder-write', async (req, res) => {
       commit: newCommit.sha,
       commitUrl: 'https://github.com/' + owner + '/' + repoName + '/commit/' + newCommit.sha,
       pathsTouched: Object.keys(fileContents),
+      updateReports: (req._updateReports && req._updateReports.length) ? req._updateReports : undefined,
     });
   } catch (err) {
     console.error('[grinder-write]', err);
