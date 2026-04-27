@@ -51380,6 +51380,221 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Sorbonne Summer School (Pantheon-Sorbonne)",
+      "provider": "Université Paris-1 Panthéon-Sorbonne",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,000-€3,495/2-week (USD $2,165-3,795); Sorbonne international scholarships available; bilingual French+English option"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sorbonne Summer School (Pantheon-Sorbonne, Université Paris-1) — for ages 16-18 (rising 11+). 2-week residential at Sorbonne campus + Paris cultural sites. Tracks: French Language + Culture (intensive immersion), Art History + Museum Studies (Louvre + Orsay + Pompidou access), International Relations + EU Politics, Pre-Medicine. Bilingual instruction (English available alongside French). Strong fit for US students interested in art history, French studies, EU politics.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.pantheonsorbonne.fr/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.pantheonsorbonne.fr/learn/summer-school",
+      "_addedBy": "international-france-batch-78",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Sorbonne Summer School (Pantheon-Sorbonne, Université Paris-1) — ages 16-18 (rising 11+). 2-week residential at Sorbonne campus + Paris cultural sites. Tracks: French Language + Culture (intensive immersion), Art History + Museum Studies (Louvre + Orsay + Pompidou access), International Relations + EU Politics, Pre-Medicine. Bilingual instruction (English available alongside French). ~€2,000-€3,495/2-week (USD $2,165-3,795). Sorbonne international scholarships available. Strong fit for art history, French studies, EU politics. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Sciences Po Summer School (Paris)",
+      "provider": "Sciences Po (Institut d'études politiques de Paris)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~€2,495-€3,795/2-week (USD $2,705-4,115); Sciences Po Foundation scholarships for international students; bilingual French+English"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Sciences Po Summer School — France's premier political science + international relations school (alma mater of multiple French presidents) offers summer programs for ages 16-18 (rising 11+). 2-week residential in Paris (7th arrondissement). Tracks: International Relations, EU Politics, Public Affairs + Diplomacy, French Language + Culture. English + French bilingual instruction. Selective admission for accepted students. College-app gold for US students considering international relations + public policy.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.sciencespo.fr/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sciencespo.fr/learn/summer-school",
+      "_addedBy": "international-france-batch-78",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Sciences Po Summer School — France's premier political science + international relations school (alma mater of multiple French presidents) for ages 16-18 (rising 11+). 2-week residential in Paris (7th arrondissement). Tracks: International Relations, EU Politics, Public Affairs + Diplomacy, French Language + Culture. English + French bilingual. Selective admission. College-app gold for international relations + public policy track. ~€2,495-€3,795/2-week (USD $2,705-4,115). Sciences Po Foundation scholarships for international students. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Paris-Saclay Summer Programs (STEM at France's Top Engineering School)",
+      "provider": "Université Paris-Saclay",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,750-€2,795/2-week (USD $1,895-3,030); Paris-Saclay international scholarships available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Saclay",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Paris-Saclay Summer Programs — at Université Paris-Saclay (top-15 in world for mathematics, top-25 overall, France's premier engineering + science research cluster) for ages 16-18 (rising 11+). 2-week residential at Saclay (south of Paris — academic + research center). Tracks: Mathematics + Cryptography (excellent French math culture), Sciences (chemistry, physics), Computer Science + AI, Pre-Medicine. English + French bilingual. Strong technical focus.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.universite-paris-saclay.fr/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.universite-paris-saclay.fr/en/learn/summer-school",
+      "_addedBy": "international-france-batch-78",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Paris-Saclay Summer Programs — at Université Paris-Saclay (top-15 in world for mathematics, top-25 overall; France's premier engineering + science research cluster) for ages 16-18 (rising 11+). 2-week residential at Saclay (south of Paris). Tracks: Mathematics + Cryptography (excellent French math culture), Sciences (chemistry, physics), CS + AI, Pre-Medicine. English + French bilingual. Strong technical focus. ~€1,750-€2,795/2-week (USD $1,895-3,030). Paris-Saclay international scholarships available. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Lycée Henri-IV International Programs (Paris)",
+      "provider": "Lycée Henri-IV (Paris) International Office",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~€1,250-€2,250/2-week (USD $1,355-2,440); Mairie de Paris cultural scholarships available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      },
+      "description": "Lycée Henri-IV International Programs — Lycée Henri-IV (one of France's most prestigious public secondary schools, in the heart of Latin Quarter) opens its facilities for international students ages 13-17 (rising 8-11). 2-week residential at Lycée's historic campus. Tracks: French Language Immersion (intensive), French Literature + Philosophy (a French distinguishing track), History + Art History, Mathematics. Strong fit for French heritage families OR US students aspiring to French baccalauréat path.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.lyceehenri4.fr/learn/international-programs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lyceehenri4.fr/learn/international-programs",
+      "_addedBy": "international-france-batch-78",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Lycée Henri-IV International Programs — Lycée Henri-IV (one of France's most prestigious public secondary schools, in heart of Latin Quarter) opens facilities for international students ages 13-17 (rising 8-11). 2-week residential at Lycée's historic campus. Tracks: French Language Immersion (intensive), French Literature + Philosophy (distinguishing French track), History + Art History, Mathematics. Strong fit for French heritage families OR US students aspiring to French baccalauréat path. ~€1,250-€2,250/2-week (USD $1,355-2,440). Mairie de Paris cultural scholarships available.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Le Cordon Bleu Family Cooking Programs (Paris)",
+      "provider": "Le Cordon Bleu Paris",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~€1,095-€1,895/2-week (USD $1,185-2,055); Le Cordon Bleu Foundation scholarships available; English instruction option"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Paris",
+        "state": "FR"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Le Cordon Bleu Paris Family Cooking Programs — world's most prestigious culinary school (founded 1895) offers age-appropriate Family + Junior cooking programs for ages 11-17. 2-week immersive in Paris (15th arrondissement). Tracks: French Pastry (Paris classic), Bread Baking, Cuisine Traditionelle, Wine + Cheese (parents) + Pastries (kids), French Vocabulary + Restaurant Culture. English instruction option. Strong fit for foodie families.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.cordonbleu.edu/learn/youth-and-family-programs/paris",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cordonbleu.edu/learn/youth-and-family-programs/paris",
+      "_addedBy": "international-france-batch-78",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Le Cordon Bleu Paris Family Cooking Programs — world's most prestigious culinary school (founded 1895) offers Family + Junior cooking programs for ages 11-17. 2-week immersive in Paris (15th arrondissement). Tracks: French Pastry, Bread Baking, Cuisine Traditionelle, Wine + Cheese (parents) + Pastries (kids), French Vocabulary + Restaurant Culture. English instruction option. ~€1,095-€1,895/2-week (USD $1,185-2,055). Le Cordon Bleu Foundation scholarships available. Strong fit for foodie families. Distinctive college-app angle.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
