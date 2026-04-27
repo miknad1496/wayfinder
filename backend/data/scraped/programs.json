@@ -1012,7 +1012,16 @@
       "region": "West",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://lasbest.org/programs/summer/"
+      "_source": "https://lasbest.org/programs/summer/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Free full-day summer enrichment at select LAUSD elementary schools. STEAM, field trips, recreation. Several weeks in June and July. Existing deadline May 15.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Club SciKidz Silicon Valley",
@@ -1062,7 +1071,16 @@
       "region": "West",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://siliconvalley.clubscikidz.com/"
+      "_source": "https://siliconvalley.clubscikidz.com/",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Hands-on STEM summer camps in San Jose / Silicon Valley with experiments + interactive projects. ~$400/wk. Existing deadline Jun 1. Specific 2026 weekly dates not surfaced.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "COSMOS (CA State Summer School for Math & Science)",
@@ -1252,7 +1270,16 @@
       "region": "West",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.cycsf.org/summer-programs/"
+      "_source": "https://www.cycsf.org/summer-programs/",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Free SF summer program with weekly field trips, hands-on age-appropriate curriculum (literacy, math, STEAM, recreation). Existing deadline May 15. Specific 2026 weekly dates not surfaced.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Summer Rising 2026",
@@ -1940,7 +1967,16 @@
       "region": "National",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.invent.org/programs/camp-invention"
+      "_source": "https://www.invent.org/programs/camp-invention",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Generic Camp Invention nationwide listing — host-school-dependent dates (1,500+ schools). See Camp Invention 2026 Spark entry for specific 2026 theme + promo codes. ~$275/wk. Curriculum by National Inventors Hall of Fame. K-6.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "NYLF Pathways to STEM (Elementary)",
@@ -37758,7 +37794,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "on-demand",
+      "scheduleNotes": "Free school-arranged field trips throughout school year + summer programs at some affiliates. JA BizTown (grades 4-6, 1-day mock economy) + JA Finance Park (grades 7-8, personal finance). Corporate-sponsored. Year-round, varies by local affiliate.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "National Park Service Junior Ranger Program",
@@ -41351,7 +41393,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Free 6-week online (and DIY in-person) summer camp from Make: Magazine. 200+ step-by-step project library (coding, electronics, fabrication, paper, textile crafts, STEAM). Free to register; physical project supplies vary. Can be run anytime by family or community group.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "BrainPOP & BrainPOP Jr. — K-8 Animated Online Learning",
@@ -41571,7 +41622,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://lawrencehallofscience.org/visitors/summer-camps/"
+      "_source": "https://lawrencehallofscience.org/visitors/summer-camps/",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-01-02",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "UC Berkeley's public science center. Distinct 2-week session format (most other camps are 1-week). Hands-on building, experimentation, discovery for grades 1-6. $625-950/wk. Member registration opened late 2025; general public Jan 2, 2026. Financial aid available.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "CAMP at The Tech Interactive (San Jose)",
@@ -41637,7 +41698,58 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.thetech.org/education/camp/"
+      "_source": "https://www.thetech.org/education/camp/",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [
+        {
+          "label": "Session 1",
+          "startDate": "2026-06-15",
+          "endDate": "2026-06-19"
+        },
+        {
+          "label": "Session 2",
+          "startDate": "2026-06-22",
+          "endDate": "2026-06-26"
+        },
+        {
+          "label": "Session 3",
+          "startDate": "2026-06-29",
+          "endDate": "2026-07-02"
+        },
+        {
+          "label": "Session 4",
+          "startDate": "2026-07-06",
+          "endDate": "2026-07-10"
+        },
+        {
+          "label": "Session 5",
+          "startDate": "2026-07-13",
+          "endDate": "2026-07-17"
+        },
+        {
+          "label": "Session 6",
+          "startDate": "2026-07-20",
+          "endDate": "2026-07-24"
+        },
+        {
+          "label": "Session 7",
+          "startDate": "2026-07-27",
+          "endDate": "2026-07-31"
+        },
+        {
+          "label": "Session 8",
+          "startDate": "2026-08-03",
+          "endDate": "2026-08-07"
+        }
+      ],
+      "scheduleNotes": "8 one-week STEM camp sessions in downtown San Jose, June 15 – August 7, 2026. Split: 'Gizmos' rising 3rd/4th, 'Gadgets' rising 5th/6th. Daily 9am-4pm + optional 4-6pm extended care. Member + multi-week discounts available.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "California Science Center Hands-On Science Camp (LA)",
@@ -41705,7 +41817,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://californiasciencecenter.org/programs/summer-camp"
+      "_source": "https://californiasciencecenter.org/programs/summer-camp",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-25",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "LA Exposition Park. Jun 15 – Aug 7, 2026. 25+ classes Pre-K through 8th grade. Morning, afternoon, or full-day. Combine morning + afternoon for extended day. Member: $225 half-day / $450 full-day/wk. Extended care +$110-120/wk. Member presale Feb 18–24; general enrollment after Feb 24.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Birch Aquarium Summer Camps (Scripps / UC San Diego)",
@@ -41773,7 +41895,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://aquarium.ucsd.edu/learn/camps/summer-camps"
+      "_source": "https://aquarium.ucsd.edu/learn/camps/summer-camps",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Marine-science day camps at Scripps / UC San Diego (La Jolla). Ages 4-13. Grade-banded: Ocean Explorers (grades 2-3, $365 full-day), Shark Encounters (grades 4-6, $255 half-day). Sessions Jun 15 – Aug 8, 2026 (most Jun 15 – Aug 7; some Jun 16 – Aug 8). $250-$600/wk range. Member discounts + scholarships.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Math Kangaroo USA — International Math Contest (Grades 1-12)",
