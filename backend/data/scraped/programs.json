@@ -38131,7 +38131,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "K-4 introduction to FIRST robotics ecosystem. Small teams (2-6 kids) build motorized LEGO models around an annual challenge theme, present at season-end Festival. Builds engineering thinking + presentation. Schedule: Season opens August, teams form May-July, qualifying events winter, Festivals April. Team registration ~$110-160 + LEGO kit costs (~$200-300). Many schools/libraries host free teams. Apply at firstinspires.org/robotics/fll/explore.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "FIRST LEGO League Challenge",
@@ -38746,7 +38752,16 @@
       "_unverifiedFields": [
         "cost (varies by franchise)",
         "exact session dates"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "STEM-focused enrichment franchise — hands-on engineering camps for ages 4-14. Camp categories: Aerospace, Chemical, Civil, Electrical, Environmental, Forensics, Industrial, Marine, Mechanical, Mechatronics. Half-day ~$250-450, full-day $400-700/wk. Franchise-by-location pricing varies. Existing deadline Aug 31; popular weeks fill spring. Find local franchise at engineeringforkids.com/programs/summer-camps.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Play-Well TEKnologies LEGO® Engineering Summer Camps",
@@ -38808,7 +38823,16 @@
       "_unverifiedFields": [
         "cost (varies by host site)",
         "exact session dates"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "LEGO-based engineering summer camps for ages 5-14, curriculum designed by engineers. Themed weekly camps: Pokémon Engineering, Dinosaur Engineering, Minecraft, Star Wars Engineering, Adventures in STEM. Half-day Mon-Fri ~$250-425, varies by host site. 40+ states. Existing deadline Aug 31; many host sites fill by April. Find local at play-well.org/camps.php.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Boys & Girls Clubs of America (local club)",
@@ -39719,7 +39743,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "VEX IQ = elementary + middle school division of VEX Robotics. Snap-together robotics platform (vs FIRST LEGO Mindstorms). Annual game-based challenge; teams design + program robots, compete in skills + alliance matches. 50,000+ teams in 70+ countries. Schedule: Season starts April; tournaments fall through spring; world championships May. VEX IQ kit ~$300-500 + team registration ~$100; school-team grants common via REC Foundation. Apply at recf.org/programs/vex-iq.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "eCYBERMISSION (US Army STEM competition)",
@@ -41542,7 +41572,16 @@
       "scholarshipAid": "Varies by franchise; some accept Discovery Center memberships that bundle camps.",
       "registrationUrl": "https://www.snapology.com/locations/",
       "howToStart": "Use snapology.com Locations finder, contact local Discovery Center for camp dates and registration.",
-      "dates": "Summer schedule varies by location, typically June through August"
+      "dates": "Summer schedule varies by location, typically June through August",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Hands-on LEGO + K'NEX + tech STEAM day camps for ages 4-14. Year-round programs in schools, community centers, Snapology Discovery Centers. Themes: robotics, coding, video game design, magic + engineering, 3D printing. Typical week ~$250-400, varies by location. Existing deadline Aug 15. Snapology Discovery Centers in 70+ US cities — find at snapology.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Bricks 4 Kidz LEGO Summer Camps (National)",
