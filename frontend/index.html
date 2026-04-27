@@ -131,6 +131,44 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
+  <!-- REVAMP V2: WHATS NEW BANNER PATCH29 -->
+  <div id="wfWhatsNewBanner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#1e3a8a,#2563eb);color:#fff;padding:10px 16px 10px 20px;font-family:-apple-system,system-ui,sans-serif;font-size:13px;line-height:1.5;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px;">
+      <span style="background:rgba(255,255,255,0.18);padding:3px 9px;border-radius:11px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;flex-shrink:0;">NEW</span>
+      <span style="flex:1;min-width:0;">
+        <strong style="margin-right:6px;">K-8 Summer Camps + Volunteer modules are now GA.</strong>
+        <span style="opacity:0.92;">Plus a new International filter on Programs, Internships &amp; K-8 — surface 200+ Oxford/Cambridge/HEC/Bocconi/IIT/Tsinghua-tier programs with one toggle.</span>
+      </span>
+      <button id="wfWhatsNewDismiss" type="button" aria-label="Dismiss" style="background:rgba(255,255,255,0.18);border:none;color:#fff;padding:5px 11px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.28)'" onmouseout="this.style.background='rgba(255,255,255,0.18)'">Got it ×</button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      // REVAMP V2: WHATS NEW BANNER PATCH29
+      // Show banner once per user. Bump the version key when we want returning
+      // users to see a NEW announcement.
+      var WHATS_NEW_VERSION = 'v2026-04-27-k8-volunteer-ga';
+      try {
+        var dismissed = localStorage.getItem('wfWhatsNewDismissed');
+        if (dismissed === WHATS_NEW_VERSION) return;
+        var banner = document.getElementById('wfWhatsNewBanner');
+        if (!banner) return;
+        // Push body content down by banner height so it doesn't overlap nav
+        document.body.style.paddingTop = '46px';
+        banner.style.display = 'block';
+        var dismissBtn = document.getElementById('wfWhatsNewDismiss');
+        if (dismissBtn) {
+          dismissBtn.addEventListener('click', function() {
+            try { localStorage.setItem('wfWhatsNewDismissed', WHATS_NEW_VERSION); } catch (_) {}
+            banner.style.display = 'none';
+            document.body.style.paddingTop = '';
+          });
+        }
+      } catch (_) { /* localStorage may be blocked — fail open (don't show) */ }
+    })();
+  </script>
+  <!-- end REVAMP V2: WHATS NEW BANNER PATCH29 -->
+
   <noscript>
     <div style="font-family:sans-serif;max-width:700px;margin:40px auto;padding:0 20px;">
       <h1>Wayfinder — College Admissions Intelligence</h1>
