@@ -37356,7 +37356,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-07-17"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "5-week gamified online summer learning, June 15 – July 17, 2026. Roughly 4 hrs/wk academic challenges (math, reading, writing, electives) wrapped in a global treasure-hunt narrative — first solver of final puzzle wins a real-world buried prize. Async pacing; travel-friendly. Early registration $199 / standard $249. Sibling discounts. Best fit grades 2-8.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Northwestern CTD Academic Day Camps & Enrichment",
@@ -40332,7 +40341,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE pass — admits 4th grader + 3 adults + all minor siblings to all 400+ NPS sites + US Forest Service + US Fish & Wildlife sites + US Army Corps lands. Pass valid Sept 1 – Aug 31 of 4th grade year (so the calendar year your kid is in 4th grade Fall semester). Get pass at everykidoutdoors.gov.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Audubon for Kids — citizen science + Junior Birder",
@@ -40417,7 +40432,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE curriculum + project funding up to $5,000 for educator-led student projects (typical $500-2,500). K-12 climate / oceans / weather. Free monthly virtual seminars. Project funding applications due September each year. Past projects: schoolyard rain gardens, climate-action campaigns, NOAA-data analysis.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Outdoor Afro Youth + Family Programs",
@@ -40463,7 +40484,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE chapter-led trips. 60+ city chapters run free hikes, camping, paddling, fishing, climbing, family events. Founded by Rue Mapp; celebrates Black connections + leadership in nature. Chapter-coordinated year-round trips. Find a chapter at outdoorafro.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Earthwatch Kids + Family Expeditions",
@@ -40552,7 +40579,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE for participating schools. K-12 inclusive sports + leadership + whole-school engagement. Three components: (1) Unified Sports — students with + without intellectual disabilities play together; (2) Inclusive Youth Leadership; (3) Whole-School Engagement. 7,500+ schools nationwide. Year-round school enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Easter Seals Camps + Inclusive Recreation",
@@ -40655,7 +40688,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "single-week",
+      "scheduleNotes": "Carnation, WA. 100% FREE — including travel, meals, medical care. SeriousFun Network (founded by Paul Newman). Disease-specific weeks (cancer week, blood disorders week, neurological conditions week, etc.). Apply 4-6 months before session. Medical staff on-site. Existing waitlist common — apply early.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Friendship Circle (special needs + peer-buddy program)",
@@ -40701,7 +40743,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE. Pairs kids/teens with special needs (autism, IDD, physical disabilities) with typical-peer 'buddies' for weekly home visits + monthly group events + summer programs. Buddies are HS volunteers. 100+ chapters in US, Canada, UK, Israel, France, Brazil, Mexico. Year-round enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "AHRC Camps + Recreation",
@@ -41086,7 +41134,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Each Olympic-sport NGB (USATF, USA Swimming, USA Gymnastics, USA Wrestling, etc.) operates a Junior Olympic developmental pipeline from local clubs through state, regional, and national championships. USATF youth membership ~$30-50/yr; meets ~$15-50 each; many clubs have aid. Year-round club enrollment; Junior Olympic championships in summer.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Juni Learning 1:1 Online Summer Coding & Math",
@@ -41699,7 +41753,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE — no fee, no credit card to register. Virtual summer-learning destination from National Center for Families Learning. Built around STEM + literacy 'Wonders' boosted by hands-on Maker experiments. Themed editions (current: music, with six tracks). Rolling enrollment year-round. Hidden gem for budget-conscious + homeschool families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp CrunchLabs (12-Week Summer Build Box Subscription, Mark Rober)",
@@ -41959,7 +42019,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Long-running animated online learning. Tim and Moby host short topical videos with quizzes, vocabulary, games for grades 3-8 (BrainPOP) + K-3 (BrainPOP Jr.). Topics: science, math, social studies, English, arts & music, engineering. Family $129/yr (Grades 3-8); +$30/yr or $159/yr combo to add BrainPOP Jr. Monthly ~$30/mo. 30-day free trial requires CC + auto-converts.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Synthesis Teams — Online Problem-Solving Cohort",
