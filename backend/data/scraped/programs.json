@@ -46223,6 +46223,243 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Phillip and Patricia Frost Museum of Science Camp Frost",
+      "provider": "Frost Science Museum (Miami)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~$425-575/wk; member discount 15%; need-based aid via Frost Education + Miami-Dade Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Miami",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Frost Science Museum (Museum Park, downtown Miami — opened 2017, on Biscayne Bay) themed weekly summer day camps for grades K-8. Tracks: Aquarium (live marine life + 500K-gallon tank), Vista Tank (open-air shark + ray viewing), Frost Planetarium, Solar System Hall, Innovation Center (engineering). Mon-Fri 9am-4pm with extended care. Stunning Bay views.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://www.frostscience.org/learn/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.frostscience.org/learn/programs/camps/",
+      "_addedBy": "state-expansion-batch-54",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Frost Science Museum (Museum Park, downtown Miami — opened 2017, on Biscayne Bay) themed summer camps grades K-8. Tracks: Aquarium (500K-gallon tank), Vista Tank (open-air shark + ray viewing), Frost Planetarium, Solar System Hall, Innovation Center. Mon-Fri 9am-4pm + extended care. Stunning Bay views. ~$425-575/wk. 15% member discount + need-based aid via Frost Education + Miami-Dade Public Schools partnership. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Museum of Science and Industry (MOSI) Tampa Camps",
+      "provider": "Museum of Science and Industry (MOSI Tampa)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 10%; need-based aid via MOSI Education + Hillsborough Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "MOSI Tampa (north of downtown, near University of South Florida) themed weekly summer day camps for grades K-8. Tracks: Connectus (reduced campus post-renovation), STEM Café (engineering challenges), Idea Zone (maker space), Body Worlds-style anatomy programs, planetarium. Mon-Fri 9am-3:30pm. Smaller scale than pre-renovation but strong programming.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://mosi.org/learn-explore/programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://mosi.org/learn-explore/programs/",
+      "_addedBy": "state-expansion-batch-54",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "MOSI Tampa (north of downtown, near USF) themed summer camps grades K-8. Tracks: Connectus, STEM Café (engineering challenges), Idea Zone (maker space), anatomy programs, planetarium. Mon-Fri 9am-3:30pm. ~$295-395/wk. 10% member discount + need-based aid via MOSI Education + Hillsborough Public Schools partnership. Member reg Feb; general March. Smaller scale than pre-renovation but strong programming.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Orlando Science Center Camps",
+      "provider": "Orlando Science Center",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~$285-365/wk; member discount 10%; sliding scale via OSC Education + OCPS partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Orlando",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Orlando Science Center (Loch Haven Park, north of downtown Orlando) themed weekly summer day camps for grades K-8. Tracks: Dr. Phillips CineDome (planetarium), KidsTown (younger kids), DinoDigs (paleontology), Hive (engineering + design), Wildlife (live animals), Crosby Observatory (astronomy nights). Mon-Fri 9am-4pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.osc.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.osc.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-54",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Orlando Science Center (Loch Haven Park, north of downtown Orlando) themed summer camps grades K-8. Tracks: Dr. Phillips CineDome (planetarium), KidsTown (younger), DinoDigs (paleontology), Hive (engineering + design), Wildlife (live animals), Crosby Observatory (astronomy nights). Mon-Fri 9am-4pm + extended care. ~$285-365/wk. 10% member discount + sliding scale via OSC Education + OCPS partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Camp KSC at Kennedy Space Center",
+      "provider": "Kennedy Space Center Visitor Complex",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "$495-695/wk day camps; ~$895-1,495/2-3 day Camp KSC overnight; KSC member discount; need-based aid via Astronaut Memorial Foundation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Merritt Island",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Camp KSC at Kennedy Space Center Visitor Complex (Merritt Island FL — actual NASA launch site) for grades 3-8. Day camps + 2-3 day overnight programs. Activities: meet astronauts, simulator training, rocket-building, behind-the-scenes launchpad tours, Astronaut Hall of Fame. Includes IMAX movies + visit Atlantis Space Shuttle exhibit. Premium pricing reflects authentic NASA experience.",
+      "deadline": "Member reg Jan; general Feb-March; popular sessions sell out by April",
+      "url": "https://www.kennedyspacecenter.com/camps/camp-ksc",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kennedyspacecenter.com/camps/camp-ksc",
+      "_addedBy": "state-expansion-batch-54",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Camp KSC at Kennedy Space Center Visitor Complex (Merritt Island FL — actual NASA launch site) grades 3-8. Day camps + 2-3 day overnight programs. Activities: meet astronauts, simulator training, rocket-building, behind-the-scenes launchpad tours, Astronaut Hall of Fame. IMAX + Atlantis Space Shuttle exhibit. ~$495-695/wk day; ~$895-1,495/2-3 day overnight. KSC member discount + need-based aid via Astronaut Memorial Foundation. Member reg Jan; general Feb-March; popular sessions sell out by April. Premium pricing reflects authentic NASA experience.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Florida Aquarium Marine Adventures Camps",
+      "provider": "The Florida Aquarium (Tampa)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 10%; need-based aid via FL Aquarium Education + Hillsborough scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tampa",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "The Florida Aquarium (Tampa Channelside District) Marine Adventures themed weekly summer day camps for grades K-8. Tracks: Coral Reef Conservation, Sea Turtle Rescue (live rescue rehabilitation), Wetlands ecology (Florida ecosystems), Sharks + Rays, Penguin Promenade. Behind-the-scenes feedings + dive program access for older kids. Mon-Fri 9am-3:30pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.flaquarium.org/programs/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.flaquarium.org/programs/camps",
+      "_addedBy": "state-expansion-batch-54",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "The Florida Aquarium (Tampa Channelside District) Marine Adventures summer camps grades K-8. Tracks: Coral Reef Conservation, Sea Turtle Rescue (live rehabilitation), Wetlands ecology (FL ecosystems), Sharks + Rays, Penguin Promenade. Behind-the-scenes feedings + dive access for older kids. Mon-Fri 9am-3:30pm + extended care. ~$295-395/wk. 10% member discount + need-based aid via FL Aquarium Education + Hillsborough scholarship pool. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
