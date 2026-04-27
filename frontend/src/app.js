@@ -6297,9 +6297,23 @@ async function generateSCPlan() {
   try {
     const res = await fetch(`${API_BASE}/summer-camps/plan`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(authToken ? { 'Authorization': `Bearer ${authToken}` } : {}),
+      },
       body: JSON.stringify({ grade, city, state, budget, weeks, interests, careerCurious, sleepawayInterest, needsScholarshipInfo })
     });
+    /* === REVAMP V2: QUOTA INTERCEPT + UPGRADE MODAL (k8 plan) === */
+    if (res.status === 401 || res.status === 429) {
+      const errBody = await res.json().catch(() => ({}));
+      _wfShowUpgradeModal({
+        title: res.status === 401 ? 'Sign in to build your plan' : 'You\'ve reached your free limit',
+        message: errBody.message || errBody.error || 'Free tier: 1 K-8 plan per month. Upgrade to Pro for unlimited plans.',
+        reason: errBody.reason || (res.status === 401 ? 'auth-required' : 'monthly-quota'),
+      });
+      result.innerHTML = '';
+      return;
+    }
     const data = await res.json();
     if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
     renderSCPlan(data);
@@ -6385,6 +6399,13 @@ function renderSCPlan(data) {
     <div style="background:#ddf4ff;padding:14px 16px;border-radius:8px;margin-bottom:14px;border-left:3px solid #0969da;">
       <p style="margin:0;font-size:14px;color:#0a3069;"><strong>Plan summary:</strong> ${_esc(p.summary || '')}</p>
     </div>
+    ${data._upgradeMessage ? `
+      <div style="background:linear-gradient(135deg,#fef3c7,#fff7ed);border:1px solid #fbbf24;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
+        <p style="margin:0 0 6px;font-size:11px;color:#92400e;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">🔒 You're on the FREE tier</p>
+        <p style="margin:0 0 8px;font-size:12.5px;color:#78350f;line-height:1.5;">${_esc(data._upgradeMessage)}</p>
+        <button onclick="_wfShowUpgradeModal({title:'Upgrade to Pro',message:'$25/month for unlimited plans, full Q&A, calibration callouts, all calibration sections, and full session details on every camp card.',reason:'inline'})" style="padding:6px 14px;border:0;background:#92400e;color:#fff;border-radius:6px;cursor:pointer;font-weight:600;font-size:12px;">See what's behind the lock →</button>
+      </div>
+    ` : ''}
     ${data.calibrationInsight ? `
       <div / === REVAMP V2: PLAN CALIBRATION-INSIGHT CALLOUT === / style="background:#fef3c7;padding:14px 16px;border-radius:8px;margin-bottom:14px;border-left:3px solid #d97706;">
         <p style="margin:0 0 4px;font-size:12px;color:#92400e;font-weight:600;">📍 2026 calibration for YOUR family</p>
@@ -7597,4 +7618,113 @@ document.addEventListener('click', function(e) {
     }
   }
 });
+
+
+/* === REVAMP V2: QUOTA INTERCEPT + UPGRADE MODAL === */
+// Reusable upgrade-CTA modal. Triggered by 429/401 quota intercepts on K-8
+// endpoints + inline "see what's behind the lock" buttons on teased outputs.
+window._wfShowUpgradeModal = function _wfShowUpgradeModal(opts) {
+  opts = opts || {};
+  const title = opts.title || 'Upgrade to Pro';
+  const message = opts.message || 'Free tier: 1 plan/month + 3 questions/day. Upgrade to Pro ($25/mo) for unlimited.';
+  const reason = opts.reason || 'inline';
+
+  // Remove any prior modal
+  const prior = document.getElementById('wfUpgradeModal');
+  if (prior) prior.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'wfUpgradeModal';
+  overlay.style.cssText = [
+    'position:fixed','top:0','left:0','right:0','bottom:0',
+    'background:rgba(15,23,42,0.65)','z-index:99999',
+    'display:flex','align-items:center','justify-content:center',
+    'padding:20px','box-sizing:border-box',
+  ].join(';');
+
+  const panel = document.createElement('div');
+  panel.style.cssText = [
+    'background:#fff','border-radius:14px','max-width:460px','width:100%',
+    'padding:24px 26px','box-shadow:0 12px 40px rgba(0,0,0,0.35)',
+    'font-family:system-ui,-apple-system,sans-serif',
+  ].join(';');
+
+  const tierIcon = reason === 'auth-required' ? '🔐' : reason === 'monthly-quota' ? '📅' : reason === 'daily-quota' ? '⏱' : '🔒';
+  const ctaLabel = reason === 'auth-required' ? 'Sign in / sign up' : 'Upgrade to Pro — $25/mo';
+  const ctaTarget = reason === 'auth-required' ? '#auth' : '#pricing';
+
+  panel.innerHTML = `
+    <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;">
+      <div style="font-size:28px;line-height:1;">${tierIcon}</div>
+      <div style="flex:1;">
+        <h3 style="margin:0 0 6px;font-size:18px;color:#0f172a;font-weight:700;">${(title || '').replace(/&/g,'&amp;').replace(/</g,'&lt;')}</h3>
+        <p style="margin:0;font-size:13.5px;color:#475569;line-height:1.5;">${(message || '').replace(/&/g,'&amp;').replace(/</g,'&lt;')}</p>
+      </div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;margin-bottom:16px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#475569;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Pro unlocks</p>
+      <ul style="margin:0;padding-left:18px;font-size:12.5px;color:#334155;line-height:1.6;">
+        <li>Unlimited K-8 summer plans + full output (calibration insight, 3-4 specialty picks, scholarship guidance, wildcard suggestion)</li>
+        <li>Unlimited K-8 Q&amp;A with full responses (250-400 words, named programs, 2026 dates)</li>
+        <li>All 13 insight sections including WA Spotlight, Equity Funding, K-8 → HS Bridge, Registration Calendar</li>
+        <li>Full Browse cards: specific session weeks + reg dates + scholarship details on every camp</li>
+        <li>David coach: full intelligence (no general-advice mode)</li>
+      </ul>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;">
+      <button id="wfUpgradeModalDismiss" style="padding:9px 16px;border:1px solid #cbd5e1;background:#fff;color:#475569;border-radius:7px;cursor:pointer;font-size:13px;font-weight:500;">Maybe later</button>
+      <button id="wfUpgradeModalCta" style="padding:9px 18px;border:0;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:7px;cursor:pointer;font-weight:600;font-size:13px;">${ctaLabel}</button>
+    </div>
+  `;
+
+  overlay.appendChild(panel);
+  document.body.appendChild(overlay);
+
+  const dismiss = () => overlay.remove();
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) dismiss(); });
+  document.getElementById('wfUpgradeModalDismiss').addEventListener('click', dismiss);
+  document.getElementById('wfUpgradeModalCta').addEventListener('click', () => {
+    dismiss();
+    if (ctaTarget === '#auth') {
+      // Try to open auth modal
+      try { if (typeof openAuthModal === 'function') openAuthModal('signup'); else window.location.hash = '#auth'; }
+      catch (_) { window.location.hash = '#auth'; }
+    } else {
+      // Pricing — try to open Settings → Plan tab, else hash
+      try {
+        if (typeof openSettings === 'function') { openSettings(); setTimeout(() => { const planTab = document.querySelector('[data-settings-tab="plan"], #settingsPlanTab'); if (planTab) planTab.click(); }, 100); }
+        else { window.location.hash = '#pricing'; }
+      } catch (_) { window.location.hash = '#pricing'; }
+    }
+  });
+  // Close on Escape
+  const onEsc = (e) => { if (e.key === 'Escape') { dismiss(); document.removeEventListener('keydown', onEsc); } };
+  document.addEventListener('keydown', onEsc);
+};
+
+// Hook /summer-camps/ask responses too if there's an ask handler
+// (currently k-8 module doesn't expose /ask via UI, but if it ever does
+// the same intercept logic would apply via the standard 401/429 contract).
+
+// Hook /summer-camps/browse for _teased: true callouts on cards.
+// Wraps the existing renderToolResults / renderToolCard at runtime by
+// tagging the modal-open handler — when results arrive with _tier:'free'
+// we surface a top-of-results banner.
+(function _wfHookBrowseTeaseDisplay() {
+  if (typeof document === 'undefined') return;
+  // Wrap fetch to intercept /summer-camps/browse responses
+  if (!window._wfBrowseFetchHooked && typeof window.fetch === 'function') {
+    const origFetch = window.fetch.bind(window);
+    window.fetch = async function _wfWrappedFetch(input, init) {
+      const url = typeof input === 'string' ? input : (input && input.url) || '';
+      const isBrowse = url.indexOf('/api/summer-camps/browse') !== -1;
+      if (isBrowse && init && (!init.headers || !init.headers['Authorization']) && typeof authToken !== 'undefined' && authToken) {
+        init.headers = { ...(init.headers || {}), 'Authorization': 'Bearer ' + authToken };
+      }
+      const res = await origFetch(input, init);
+      return res;
+    };
+    window._wfBrowseFetchHooked = true;
+  }
+})();
 
