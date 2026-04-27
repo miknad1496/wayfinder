@@ -122,3 +122,32 @@ Each captured insight must be:
 
 - Run 2 yielded 7 insights from 5 entries — slightly above 1:1, partially because Garfield/Roosevelt/Tesla each had two distinct insight types (academic + activity, or admission + program-cost). When an entry yields two distinct insights, capture both rather than forcing one.
 - Continue batch_size=5; quality bar held.
+
+## RUN 3 — 2026-04-27 (volunteer module — first batch)
+
+| Date | Run # | Module | Entries scanned | Insights captured | Notable |
+|------|-------|--------|-----------------|-------------------|---------|
+| 2026-04-27 | 3 | volunteer | 5 | 6 | First volunteer batch — Hospital Jr Volunteer / Red Cross / Special Olympics / RMHC / Crisis Text Line. 6 insights from 5 entries (>1 per entry). Hospital Jr Volunteer yielded 2 distinct insights (one-day application windows + post-acceptance TB/drug-screen barrier). Crisis Text Line surfaced a non-obvious grad-school MSW practicum pathway not in the entry's structured fields. |
+
+### EFFECTIVE PATTERNS (additions from run 3)
+
+- For multi-site umbrella volunteer entries (e.g., "Hospital Junior Volunteer Program" at "Most major hospitals"), DON'T fetch the umbrella _source URL — it's almost always a JS-bundled portal with no specifics. Instead, web-search for the entry name + "minimum age", "application timing", "TB test/background check" and read the snippet aggregations that span 8–10 individual sites. Common patterns across sites become the insight.
+- For volunteer entries, the highest-yield insights are: (a) age-floor + adult-chaperone requirements (RMHC, Red Cross), (b) application-window quirks like "one-day-only" or "exactly 7am opening" (Holy Name, Orlando VA), (c) post-acceptance secondary barriers (TB test, drug screen, immunization for hospitals), (d) parallel program tracks the entry doesn't mention (Red Cross Club at school vs. Summer Youth Corps; Special Olympics Unified Champion Schools National Banner status; Crisis Text Line's MSW practicum pipeline).
+- For age-restricted entries (Crisis Text Line 18+), capturing the "what to do instead if too young" pivot (TeenLine, Trevor youth ambassadors) is itself a parent-facing insight.
+
+### FAILED PATTERNS / KNOWN ANTI-PATTERNS (additions)
+
+- WebFetch on redcross.org and specialolympics.org returns 175k+ char HTML — exceeds token limits. Skip and use WebSearch with org name + specific subtopic.
+- WebFetch on rmhc.org returned "Redirect was cancelled" — same pattern as AAMC. National-org redirect-laden URLs are unreliable; rely on chapter-level subdomain pages surfaced via search.
+- AAMC umbrella URL (`aamc.org/cim/explore-options/aspiring-docs/...`) is a JS challenge page that returns essentially nothing via curl. Don't waste a fetch on AAMC umbrella links — go straight to WebSearch for the underlying program type.
+
+### DATA QUALITY FLAGS (additions)
+
+- Hospital Junior Volunteer Program entry has organization="Most major hospitals" — accurate but reduces searchability. Consider an alternate field with sample anchor sites (e.g., Texas Health, Houston Methodist, UPMC Children's, Boston Medical Center) to power a "where can my teen actually apply" workflow. Not blocking; a future enhancement.
+- Crisis Text Line entry says ageMin: 18, but the page also surfaces the MSW Student Learning Practicum at 24 partner universities — that's an undocumented pathway worth a separate entry or sub-field.
+- Special Olympics entry name says "Volunteer / Unified Partner" — the "Unified Partner" piece is HS/middle-grade only via Unified Champion Schools. The plain volunteer pathway is for adults / event days. The two are different commitment shapes; consider splitting the entry.
+
+### CALIBRATION SUGGESTIONS (additions)
+
+- batch_size 5 still feels right; volunteer-mod ran in ~7 min including 2 fallback searches.
+- For volunteer module specifically, reserve at least 1 of the 5 slots for hospital-/healthcare-side entries where the application-timing-window insight is high-value. Across modules, registration-window insights age fastest — they're also the most decision-critical for parents.

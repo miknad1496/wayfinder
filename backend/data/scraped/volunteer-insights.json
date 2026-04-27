@@ -10,9 +10,18 @@
       "title": "What admissions officers actually look for in service",
       "icon": "🎯",
       "items": [
-        { "label": "Sustained > sporadic, by a lot", "detail": "AOs at HYPSM-tier schools have repeatedly published that 200 hours at one organization beats 200 hours across 5 organizations. Demonstrates commitment, growth, and depth of impact. Pick one or two and stay 3-4 years." },
-        { "label": "Leadership growth beats hour count", "detail": "Moving from volunteer → committee member → coordinator → board liaison over 4 years tells a story. 500 hours of unchanged volunteer role tells a different story. Story matters more than count." },
-        { "label": "Don't pad the activity list", "detail": "Common App allows 10 activities. AOs see padded lists and discount the depth of every entry. Better to list 5 substantive activities than 10 light ones." }
+        {
+          "label": "Sustained > sporadic, by a lot",
+          "detail": "AOs at HYPSM-tier schools have repeatedly published that 200 hours at one organization beats 200 hours across 5 organizations. Demonstrates commitment, growth, and depth of impact. Pick one or two and stay 3-4 years."
+        },
+        {
+          "label": "Leadership growth beats hour count",
+          "detail": "Moving from volunteer → committee member → coordinator → board liaison over 4 years tells a story. 500 hours of unchanged volunteer role tells a different story. Story matters more than count."
+        },
+        {
+          "label": "Don't pad the activity list",
+          "detail": "Common App allows 10 activities. AOs see padded lists and discount the depth of every entry. Better to list 5 substantive activities than 10 light ones."
+        }
       ]
     },
     {
@@ -20,9 +29,18 @@
       "title": "Hidden leadership pathways",
       "icon": "🪜",
       "items": [
-        { "label": "CIT pipeline at major camps", "detail": "YMCA, Camp Fire, BGCA all have Counselor-In-Training programs for ages 13-15. Free or discounted attendance + leadership training. Apply year before turning 14. Often leads to paid junior counselor role at 16-17 — a strong work + leadership signal." },
-        { "label": "Hospital 'Junior Volunteer Leadership Council'", "detail": "Most major hospitals' Junior Volunteer programs have an internal leadership track — student board, peer mentor program, etc. Self-nominate after 6 months as regular volunteer. Way fewer applicants than the regular junior volunteer pool." },
-        { "label": "Local nonprofit board student seat", "detail": "Many small-to-mid nonprofits have a 'student member' seat on their board, often unfilled. Email the executive director directly with a brief proposal. Boards under 15 members often welcome the youth perspective." }
+        {
+          "label": "CIT pipeline at major camps",
+          "detail": "YMCA, Camp Fire, BGCA all have Counselor-In-Training programs for ages 13-15. Free or discounted attendance + leadership training. Apply year before turning 14. Often leads to paid junior counselor role at 16-17 — a strong work + leadership signal."
+        },
+        {
+          "label": "Hospital 'Junior Volunteer Leadership Council'",
+          "detail": "Most major hospitals' Junior Volunteer programs have an internal leadership track — student board, peer mentor program, etc. Self-nominate after 6 months as regular volunteer. Way fewer applicants than the regular junior volunteer pool."
+        },
+        {
+          "label": "Local nonprofit board student seat",
+          "detail": "Many small-to-mid nonprofits have a 'student member' seat on their board, often unfilled. Email the executive director directly with a brief proposal. Boards under 15 members often welcome the youth perspective."
+        }
       ]
     },
     {
@@ -30,9 +48,18 @@
       "title": "Scholarship-linked service (real money)",
       "icon": "💰",
       "items": [
-        { "label": "Bonner Scholars Program", "detail": "60+ colleges offer the Bonner Scholarship — full or partial tuition in exchange for service commitment during college. Apply during senior-year college applications. Demonstrates pre-college service commitment is the eligibility differentiator." },
-        { "label": "Coca-Cola Scholars Foundation", "detail": "150 students/year, $20K each. Service is one of three pillars (leadership + academics + service). Application opens August of senior year. Sustained multi-year service is the differentiator vs episodic." },
-        { "label": "AmeriCorps Education Award", "detail": "Year-long full-time service after HS = ~$7K toward college. Stack with Pell Grant + state aid. City Year (year-long teaching support) is the highest-prestige program in the network." }
+        {
+          "label": "Bonner Scholars Program",
+          "detail": "60+ colleges offer the Bonner Scholarship — full or partial tuition in exchange for service commitment during college. Apply during senior-year college applications. Demonstrates pre-college service commitment is the eligibility differentiator."
+        },
+        {
+          "label": "Coca-Cola Scholars Foundation",
+          "detail": "150 students/year, $20K each. Service is one of three pillars (leadership + academics + service). Application opens August of senior year. Sustained multi-year service is the differentiator vs episodic."
+        },
+        {
+          "label": "AmeriCorps Education Award",
+          "detail": "Year-long full-time service after HS = ~$7K toward college. Stack with Pell Grant + state aid. City Year (year-long teaching support) is the highest-prestige program in the network."
+        }
       ]
     },
     {
@@ -40,9 +67,18 @@
       "title": "What NOT to do (voluntourism + checkbox traps)",
       "icon": "🚫",
       "items": [
-        { "label": "International 'mission trip' service is heavily discounted by AOs", "detail": "Two weeks building a school in another country reads as expensive tourism. AOs explicitly devalue these unless the family has a sustained connection to the community. If you must do international service, do it through year-round partnership orgs that serve via virtual mentorship + occasional in-person visits, not 1-2 week trips." },
-        { "label": "'Service hour' graduation requirements don't impress", "detail": "Most HS districts require 40-100 service hours to graduate. Meeting this minimum is invisible. Doubling it without a clear story is also invisible. Triple it AND have growth + impact and now you have something." },
-        { "label": "Avoid 'starting your own nonprofit' unless you really mean it", "detail": "AOs have seen 50,000 student-founded nonprofits. The ones that move the needle have real 501(c)(3) status, sustained 3+ year operating history, audited finances, and measurable impact. Most student nonprofits don't meet this bar — and AOs can tell from the application." }
+        {
+          "label": "International 'mission trip' service is heavily discounted by AOs",
+          "detail": "Two weeks building a school in another country reads as expensive tourism. AOs explicitly devalue these unless the family has a sustained connection to the community. If you must do international service, do it through year-round partnership orgs that serve via virtual mentorship + occasional in-person visits, not 1-2 week trips."
+        },
+        {
+          "label": "'Service hour' graduation requirements don't impress",
+          "detail": "Most HS districts require 40-100 service hours to graduate. Meeting this minimum is invisible. Doubling it without a clear story is also invisible. Triple it AND have growth + impact and now you have something."
+        },
+        {
+          "label": "Avoid 'starting your own nonprofit' unless you really mean it",
+          "detail": "AOs have seen 50,000 student-founded nonprofits. The ones that move the needle have real 501(c)(3) status, sustained 3+ year operating history, audited finances, and measurable impact. Most student nonprofits don't meet this bar — and AOs can tell from the application."
+        }
       ]
     },
     {
@@ -50,7 +86,30 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
-        { "label": "Live grinder discoveries appear here", "detail": "When the volunteer grinder uncovers a non-obvious insight while researching new programs (hidden leadership tracks, scholarship pathways, registration quirks, age-flexibility, real time commitment vs. stated, etc.), it appends a fresh entry below. Auto-deduplicated. Most recent runs at top." }
+        {
+          "label": "Hospital Junior Volunteer (multi-site) — application windows are tight + sometimes one-day-only",
+          "detail": "For 2026: Orlando VA accepts ALL applications on a single day (Wed Apr 15, 2026); Holy Name Medical Center opens at exactly 7:00 a.m. on Tue May 5, 2026; Texas Health Alliance window is Jan 13–Mar 2; Houston Methodist West runs Feb 1–27. Parents who treat this as a 'when does summer start' search miss the slot. Calendar the open day, not the program start."
+        },
+        {
+          "label": "Hospital Junior Volunteer (multi-site) — acceptance is followed by a 2nd hurdle (TB test + drug screen + immunizations)",
+          "detail": "Once selected, Texas Health, University Health (San Antonio), Houston Methodist, Atrium Health, UPMC Children's, and Medical City McKinney all require a criminal background check, urine drug screen, TB skin test (some require 2 PPD readings or a QuantiFERON Gold blood test), immunization review, sometimes a flu shot. Hospitals cover the cost but the lead-time can push the actual start date 2–3 weeks past the acceptance letter — front-load this before summer."
+        },
+        {
+          "label": "American Red Cross — Summer Youth Corps is a structured 11-week cohort, not drop-in volunteering",
+          "detail": "Distinct from the generic 'become a volunteer' page: Summer Youth Corps requires 11 shifts across 11 weeks (one shift/week), age 13+, parent/guardian consent, and the volunteer Connection intake. Separately, a school-based Red Cross Club is a leadership/scholarship pathway — the school files a Club Constitution with the regional chapter and registers all members through Volunteer Connection. Two different commitments; they stack but aren't substitutes."
+        },
+        {
+          "label": "Special Olympics Unified Champion Schools — National Banner Recognition is a formal multi-year credential, not a participation badge",
+          "detail": "Schools that sustain 10 standards (Unified Sports + Inclusive Youth Leadership + Whole School Engagement) across consecutive years earn National Banner Recognition Status. A student who launches/leads their HS's Unified Champion Schools effort earns a uniquely named credential AOs recognize — meaningfully stronger than 'volunteered at Special Olympics events.' Each year requires re-submitting a Commitment to Inclusion form via the state chapter (e.g., Special Olympics Washington)."
+        },
+        {
+          "label": "Ronald McDonald House — meal-program is the only teen entry point, and it requires an adult chaperone",
+          "detail": "Most individual volunteer roles are 18+ (Boston Harbor, Fort Worth chapters). The meal program opens at age 16 but requires a 1:2 adult-to-teen ratio at the Seattle chapter and a 21+ adult team leader at Charlotte; Southwest Virginia requires under-18s to be parent/guardian-accompanied in the kitchen. Practical implication for parents: a teen can't 'just sign up' — at least one adult has to commit alongside. Plan the cohort, not just the teen."
+        },
+        {
+          "label": "Crisis Text Line — strict 18+ + US SSN, but offers a unique grad-school practicum-credit pathway at 24 universities",
+          "detail": "Hard 18+ requirement plus US Social Security Number (for background check) excludes high schoolers entirely — for under-18 mental-health crisis volunteering, look at TeenLine, Trevor Project youth ambassadors, or local TeenLink instead. For college-bound students pursuing social work, the Student Learning Practicum partners with 24 grad schools (Columbia SSW, NYU Silver, Rutgers SSW, Loyola Chicago, Hawaii Pacific, U Denver psychology, etc.) — practicum hours count toward the MSW 200–600-hour graduation requirement, completed remotely. Worth flagging to a senior choosing schools."
+        }
       ]
     }
   ]
