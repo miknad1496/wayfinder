@@ -1460,7 +1460,16 @@
       "region": "Northeast",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.schools.nyc.gov/enrollment/summer-rising"
+      "_source": "https://www.schools.nyc.gov/enrollment/summer-rising",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE 6-week summer enrichment for ALL NYC public school students K-8 entering grades 1-9 in fall 2026. Mon-Fri, full-day (8am-6pm at most sites). Joint NYC Public Schools + DYCD program. Academic morning + recreation + arts + STEM + field trips afternoon. Free breakfast + lunch + snack. NYC residents only. Apply via the SchoolMessenger portal or directly through your child's school. Demand exceeds supply at popular sites — apply EARLY (window typically Mar-Apr). 2025 ran late June through early August; 2026 expected similar. schools.nyc.gov/summer.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "STEM Matters NYC Enrichment Programs",
@@ -1515,7 +1524,16 @@
       "region": "Northeast",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://growingupnyc.cityofnewyork.us/programs/stem-matters-nyc-enrichment-programs/"
+      "_source": "https://growingupnyc.cityofnewyork.us/programs/stem-matters-nyc-enrichment-programs/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "FREE STEM summer programs for NYC public school students K-12 in partnership with NYC museums + cultural institutions (American Museum of Natural History, NY Hall of Science, Central Park Zoo, NY Botanical Garden, Brooklyn Museum, Wave Hill, Cold Spring Harbor Lab). 1-3 week sessions at partner sites. Selective application — apply via NYC DOE portal or your school's STEM coordinator. Application typically March-April. Free transit MetroCards + lunch provided. Specific 2026 weekly slots vary by partner site.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Cooper Union Summer STEM 2026",
@@ -1704,7 +1722,16 @@
       "region": "Northeast",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://newyorkedge.org/programs/summer-camp/"
+      "_source": "https://newyorkedge.org/programs/summer-camp/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "NY Edge is the largest after-school + summer camp nonprofit in NYC. 6-8 week summer programs at 100+ NYC public schools (Bronx, Brooklyn, Manhattan, Queens, SI). Academic + STEAM + sports + arts + dance. FREE for NYCHA residents + qualifying families; sliding scale otherwise. Sites fill rapidly — apply by mid-May. Some sites operate 5 days, others 4. Lunch + snacks provided. nyedge.org/summer-camp.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Ann Arbor Hands-On Museum Summer Camps",
@@ -2012,7 +2039,16 @@
       "region": "National",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-explore-stem"
+      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-explore-stem",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "National Youth Leadership Forum Explore STEM is a pre-college MS career-exploration program for grades 6-8. 1-week residential at major university campuses (Boston, Bay Area, NYC, etc.). Behind-the-scenes labs, panels with STEM professionals, hands-on engineering challenges. ~$2,500-3,500 per week + travel. Existing deadline May 15. Selective admission with HS counselor / teacher recommendation. envisionexperience.com/explore-stem.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NSLC (National Student Leadership Conference)",
@@ -2157,7 +2193,16 @@
       "region": "National",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-pathways-to-stem"
+      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-pathways-to-stem",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "NYLF Pathways to STEM = elementary version (grades 3-5) of NYLF Explore STEM. 1-week day program at university campuses or hotel-based learning sites. Hands-on STEAM experiences, light career exposure, age-appropriate engineering challenges. ~$1,500-2,500 per week + travel. Existing deadline May 15. Less selective than middle-school version; primarily for families wanting early exposure. envisionexperience.com/pathways-stem.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Washington STEM Network Programs",
