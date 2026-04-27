@@ -5264,3 +5264,232 @@ html, body { overflow-x: hidden; }
   @page { margin: 0.5in; }
 }
 
+/* === REVAMP V2: MOBILE TIGHTENING (K-8 + tool modules) === */
+/* Late-April 2026: parents on mobile reported the K-8 module felt
+   "wobbly" — inconsistent heights, generous padding, action bars wrapping
+   awkwardly. This block tightens it. Also touches Programs / Internships
+   / Scholarships where similar issues exist. Desktop is untouched. */
+@media (max-width: 767px) {
+
+  /* ──────────────────────────────────────────────────────────
+     K-8 Summer Camps modal — the showcase module
+  ────────────────────────────────────────────────────────── */
+  #summerCampsModal .modal,
+  #summerCampsModal .modal-content {
+    padding: 10px 12px !important;
+  }
+  #summerCampsModal h2 { font-size: 17px !important; line-height: 1.25 !important; }
+  #summerCampsModal h3 { font-size: 14px !important; }
+  #summerCampsModal h4 { font-size: 13px !important; line-height: 1.3 !important; }
+  #summerCampsModal .form-subtitle,
+  #summerCampsModal .modal-subtitle {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Tab bar — keep nowrap + horizontally scrollable so no awkward wrap */
+  #summerCampsModal .tab-bar,
+  #summerCampsModal .modal-tabs,
+  #summerCampsModal .tabs-row,
+  .summer-tabs,
+  .sc-tabs {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 0 !important;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+  #summerCampsModal .tab-btn,
+  .sc-tabs button,
+  .summer-tabs button {
+    flex-shrink: 0 !important;
+    padding: 8px 11px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Filter row — consistent heights kill the wobble */
+  #summerCampsModal select,
+  #summerCampsModal input[type="text"],
+  #summerCampsModal input[type="search"],
+  #summerCampsModal input[type="number"],
+  #summerCampsModal input[type="email"],
+  #summerCampsModal input[type="date"] {
+    height: 36px !important;
+    box-sizing: border-box !important;
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    line-height: 1.2 !important;
+  }
+  #summerCampsModal .filter-row,
+  #summerCampsModal .modal-filters,
+  #summerCampsModal .filters-row {
+    gap: 6px !important;
+    padding: 8px 0 !important;
+  }
+  #summerCampsModal label {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Help-tooltip (?) icon — smaller on mobile, less visual bounce */
+  .wf-help-btn {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 10px !important;
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+  }
+
+  /* Cards — tighter padding, more readable on small screens */
+  #summerCampsModal .tool-card,
+  #summerCampsModal .program-card,
+  #summerCampsModal .camp-card {
+    padding: 11px 13px !important;
+    margin-bottom: 8px !important;
+    font-size: 13px !important;
+  }
+  #summerCampsModal .tool-card h4 {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+  }
+  #summerCampsModal .tool-card p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 4px !important;
+  }
+  /* Card badges — slightly smaller, no wrap drama */
+  #summerCampsModal .tool-card span[style*="border-radius:10px"] {
+    font-size: 10.5px !important;
+    padding: 1px 7px !important;
+  }
+  /* "+ Add to calendar" button on cards */
+  #summerCampsModal .sc-add-to-cal-btn {
+    font-size: 11.5px !important;
+    padding: 5px 10px !important;
+  }
+
+  /* Plan output (Build My Summer) */
+  #scPlanResult { padding: 0 !important; }
+  #scPlanResult > div {
+    padding: 11px 13px !important;
+    margin-bottom: 9px !important;
+    border-radius: 7px !important;
+  }
+  #scPlanResult h4 {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+  }
+  #scPlanResult p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+  /* The amber calibration insight callout — tighter typography */
+  #scPlanResult > div[style*="background:#fef3c7"] {
+    padding: 11px 13px !important;
+  }
+  #scPlanResult > div[style*="background:#fef3c7"] p:last-child {
+    line-height: 1.5 !important;
+    font-size: 12.5px !important;
+  }
+  /* Plan action bar — buttons stack vertically and full-width on mobile */
+  .sc-plan-action-bar {
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding-top: 10px !important;
+    margin-top: 12px !important;
+  }
+  .sc-plan-action-bar button {
+    width: 100% !important;
+    font-size: 12.5px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box;
+  }
+
+  /* "Plan My Summer" form — tighter spacing */
+  #scPlanForm input,
+  #scPlanForm select,
+  #scPlanForm textarea,
+  #summerCampsModal #scPlanForm input,
+  #summerCampsModal #scPlanForm select {
+    height: auto !important;
+    min-height: 36px !important;
+    font-size: 13px !important;
+  }
+  #scPlanForm textarea {
+    min-height: 60px !important;
+    font-size: 12.5px !important;
+  }
+  #scPlanForm button[type="submit"],
+  #buildSummerBtn,
+  #buildMySummerBtn {
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+  }
+
+  /* Calendar — single-month grid on mobile (already in patch1, reinforce) */
+  #summerCampsModal .calendar-month {
+    margin-bottom: 10px !important;
+  }
+  #summerCampsModal .calendar-day {
+    font-size: 11px !important;
+  }
+
+  /* ──────────────────────────────────────────────────────────
+     Lighter polish for Programs / Internships / Scholarships
+  ────────────────────────────────────────────────────────── */
+  #programsModal .tool-card,
+  #internshipsModal .tool-card,
+  #scholarshipsModal .tool-card {
+    padding: 11px 13px !important;
+    margin-bottom: 8px !important;
+    font-size: 13px !important;
+  }
+  #programsModal .tool-card h4,
+  #internshipsModal .tool-card h4,
+  #scholarshipsModal .tool-card h4 {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
+  }
+  #programsModal select,
+  #internshipsModal select,
+  #scholarshipsModal select,
+  #programsModal input[type="text"],
+  #internshipsModal input[type="text"],
+  #scholarshipsModal input[type="text"] {
+    height: 36px !important;
+    box-sizing: border-box !important;
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+  #programsModal .tool-filters,
+  #internshipsModal .tool-filters,
+  #scholarshipsModal .tool-filters {
+    gap: 6px !important;
+  }
+
+  /* Modal headers across all tool modals */
+  .modal-tool-list h2,
+  .modal-tool-list .tool-header h2 {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+  }
+  .modal-tool-list .form-subtitle {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Don't let any inline-style background:#xxx callouts overflow on small screens */
+  .modal-tool-list div[style*="background:"],
+  .modal-tool-list div[style*="background-color"] {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
