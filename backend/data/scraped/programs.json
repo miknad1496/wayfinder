@@ -44607,6 +44607,243 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "New York Hall of Science Summer Camps",
+      "provider": "New York Hall of Science (NYSCI)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~$435-585/wk; NYC public school discount + member discount; sliding scale via NYSCI Education + need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Queens",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "NYSCI (Corona Park, Queens) themed weekly summer camps for grades 1-8. Tracks: Maker Space (engineering + design), Coding + Robotics, Bio + Chem labs, Physics of Sports, Space + Aviation. NYC's largest hands-on science museum. Mon-Fri 9am-4pm with extended care. NYC's premier hands-on science setting.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://nysci.org/learn/programs-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://nysci.org/learn/programs-camps/",
+      "_addedBy": "state-expansion-batch-47",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "NYSCI (Corona Park, Queens) themed summer camps grades 1-8. Tracks: Maker Space, Coding + Robotics, Bio + Chem labs, Physics of Sports, Space + Aviation. Mon-Fri 9am-4pm + extended care. ~$435-585/wk. NYC public school discount + member discount + sliding scale via NYSCI Education. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Brooklyn Children's Museum Summer Camps + Family Programs",
+      "provider": "Brooklyn Children's Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 350,
+        "type": "paid",
+        "display": "~$295-395/wk; Museums for All ($1 entry for SNAP/EBT); NYCHA + DOE family discounts"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Brooklyn",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Brooklyn Children's Museum (Crown Heights — first children's museum in the US, founded 1899) themed weekly summer camps for ages 3-10. Tracks: World Brooklyn (cultures of Brooklyn neighborhoods), Music Studio, Garden Lab, Animal Care + zoology, Storytelling + Theater. Half-day or full-day Mon-Fri.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.brooklynkids.org/visit/programs/summer-camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.brooklynkids.org/visit/programs/summer-camps/",
+      "_addedBy": "state-expansion-batch-47",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Brooklyn Children's Museum (Crown Heights — first children's museum in US, founded 1899) themed summer camps ages 3-10. Tracks: World Brooklyn (Brooklyn neighborhoods cultures), Music Studio, Garden Lab, Animal Care + zoology, Storytelling + Theater. Half-day or full-day Mon-Fri. ~$295-395/wk. Museums for All ($1 entry for SNAP/EBT) + NYCHA + DOE family discounts. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Bronx Zoo Junior Summer Programs (Wildlife Conservation Society)",
+      "provider": "Wildlife Conservation Society / Bronx Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 545,
+        "type": "paid",
+        "display": "~$485-625/wk; member discount 15%; need-based aid via WCS Education + Bronx-resident scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bronx",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Bronx Zoo (largest urban zoo in US — 265 acres, 6,000+ animals) summer day camps for grades K-8. Wildlife Conservation Society (WCS) curriculum: animal behavior, conservation, ecology, paleontology, marine biology (Bronx Zoo Aquatic House). Behind-the-scenes feedings + zookeeper Q&A. Mon-Fri 9am-4pm.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://bronxzoo.com/education/youth-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://bronxzoo.com/education/youth-camps",
+      "_addedBy": "state-expansion-batch-47",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Bronx Zoo (largest urban zoo in US — 265 acres, 6,000+ animals) WCS summer day camps K-8. Curriculum: animal behavior, conservation, ecology, paleontology, marine biology (Bronx Zoo Aquatic House). Behind-the-scenes feedings + zookeeper Q&A. Mon-Fri 9am-4pm. ~$485-625/wk. 15% member discount + need-based aid via WCS Education + Bronx-resident scholarship pool. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Wave Hill Family Art Workshops + Summer Camps",
+      "provider": "Wave Hill Public Garden + Cultural Center",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "$285-365/wk for camps; FREE/PWYC family workshops + drop-in days; need-based aid for Bronx residents + NYC Title I families"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bronx",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Wave Hill (28-acre public garden + cultural center on the Hudson, Riverdale Bronx) themed summer day camps for ages 4-12. Tracks: Garden Art (botanical illustration, painting outdoors), Forest Theater + Storytelling, Nature Photography + Sculpting (with natural materials), Birding + Wildlife Observation. Stunning gardens + Hudson River views.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.wavehill.org/programs/youth-and-family-programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.wavehill.org/programs/youth-and-family-programs",
+      "_addedBy": "state-expansion-batch-47",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Wave Hill (28-acre public garden + cultural center on Hudson, Riverdale Bronx) summer day camps ages 4-12. Tracks: Garden Art (botanical illustration, painting outdoors), Forest Theater + Storytelling, Nature Photography + Sculpting w/ natural materials, Birding + Wildlife Observation. ~$285-365/wk. FREE/PWYC family workshops + drop-in days. Need-based aid for Bronx residents + NYC Title I families. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Central Park Zoo + WCS Park Programs",
+      "provider": "Wildlife Conservation Society / Central Park Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 485,
+        "type": "paid",
+        "display": "~$425-545/wk; member discount 15%; need-based aid via WCS Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Manhattan",
+        "state": "NY"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "Central Park Zoo (Manhattan, 64th + 5th Ave) WCS summer day camps for ages 4-11. Smaller-scale than Bronx Zoo but more accessible Manhattan location. Themed weekly tracks: Tropic Zone (Amazon rainforest), Polar Circle (sea lions, penguins, snow leopards), Garden of Animal Wonders. Behind-the-scenes Q&A + feeding observations.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://centralparkzoo.com/education/youth-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://centralparkzoo.com/education/youth-camps",
+      "_addedBy": "state-expansion-batch-47",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Central Park Zoo (Manhattan 64th + 5th Ave) WCS summer day camps ages 4-11. Smaller-scale than Bronx Zoo but more accessible Manhattan. Themed weekly tracks: Tropic Zone (Amazon rainforest), Polar Circle (sea lions, penguins, snow leopards), Garden of Animal Wonders. Behind-the-scenes Q&A + feedings. Mon-Fri 9am-3pm. ~$425-545/wk. 15% member discount + need-based aid via WCS Education. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
