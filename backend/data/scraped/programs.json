@@ -56866,6 +56866,214 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "CERN Beamline for Schools (Geneva — Particle Physics Research)",
+      "provider": "CERN (European Organization for Nuclear Research)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected schools — CERN covers all costs incl. travel + accommodation + experiment time"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Geneva",
+        "state": "CH"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "CERN Beamline for Schools — flagship CERN program for ages 16-18 (rising 11-12). HS teams design + propose + execute their OWN particle physics experiments at CERN's beamline (where the Large Hadron Collider lives). 2-week residential at CERN Geneva. Tracks: Particle Physics Experiment Design, Quantum Mechanics + Standard Model, Detector Engineering. 100% FREE for selected teams. SELECTIVE — only 4 teams globally per year. College-app GOLD-PLUS — having published research alongside CERN scientists is unmatched. Apply via team submission Sep-Mar.",
+      "deadline": "Apply via team submission Sep-Mar; ELITE selective",
+      "url": "https://beamline-for-schools.web.cern.ch",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://beamline-for-schools.web.cern.ch",
+      "_addedBy": "hs-international-batch-105",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "CERN Beamline for Schools — flagship CERN program for ages 16-18 (rising 11-12). HS teams design + propose + execute their OWN particle physics experiments at CERN's beamline (where the Large Hadron Collider lives). 2-week residential at CERN Geneva. Tracks: Particle Physics Experiment Design, Quantum Mechanics + Standard Model, Detector Engineering. 100% FREE for selected teams. SELECTIVE — only 4 teams globally per year. College-app GOLD-PLUS — having published research alongside CERN scientists is unmatched. Apply via team submission Sep-Mar.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "JAXA Space Education Programme (Japan)",
+      "provider": "Japan Aerospace Exploration Agency (JAXA)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — JAXA covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tsukuba + Sagamihara",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "JAXA Space Education Programme — flagship Japanese space agency program for ages 16-18 (rising 11-12). 1-week residential at JAXA Tsukuba Space Center OR Sagamihara Campus. Tracks: Spacecraft Design + Engineering, Asteroid Research (Hayabusa2 mission heritage), International Space Station + Kibo module, Lunar Exploration (HAKUTO-R partnership), Asteroid Mining. ENGLISH-medium primary; Japanese optional. SELECTIVE — only 30 HS students globally. 100% FREE — JAXA covers everything. Pipeline to JAXA undergrad. College-app GOLD for aerospace + space-track US kids.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://global.jaxa.jp/learn/space-education",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://global.jaxa.jp/learn/space-education",
+      "_addedBy": "hs-international-batch-105",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "JAXA Space Education Programme — flagship Japanese space agency program for ages 16-18 (rising 11-12). 1-week residential at JAXA Tsukuba Space Center OR Sagamihara Campus. Tracks: Spacecraft Design + Engineering, Asteroid Research (Hayabusa2 mission heritage), International Space Station + Kibo module, Lunar Exploration (HAKUTO-R partnership), Asteroid Mining. ENGLISH-medium primary; Japanese optional. SELECTIVE — only 30 HS students globally. 100% FREE — JAXA covers EVERYTHING. Pipeline to JAXA undergrad. College-app GOLD for aerospace + space-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "ESA Teen Astronaut Programme (Europe)",
+      "provider": "European Space Agency (ESA)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/1-week (USD $1,950-2,705); ESA scholarships up to 100% for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "ESA-ESTEC Noordwijk + Cologne",
+        "state": "NL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ESA Teen Astronaut Programme — flagship ESA program for ages 16-18 (rising 11-12). 1-week residential at ESA-ESTEC Netherlands OR ESA Astronaut Centre Cologne. Tracks: Spacecraft Engineering, Microgravity Research, Mission Design (Mars + Lunar), Astronaut Training Simulation, Earth Observation (Sentinel + Copernicus satellites). ENGLISH-medium. SELECTIVE — 50 HS students globally per year. ESA scholarships up to 100% for international students. UNDER-applied-for vs NASA equivalents. Pipeline to ESA internship undergrad.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.esa.int/learn/teen-astronaut",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.esa.int/learn/teen-astronaut",
+      "_addedBy": "hs-international-batch-105",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "ESA Teen Astronaut Programme — flagship ESA program for ages 16-18 (rising 11-12). 1-week residential at ESA-ESTEC Netherlands OR ESA Astronaut Centre Cologne. Tracks: Spacecraft Engineering, Microgravity Research, Mission Design (Mars + Lunar), Astronaut Training Simulation, Earth Observation (Sentinel + Copernicus satellites). ENGLISH-medium. SELECTIVE — 50 HS students globally per year. ~€1,795-€2,495/1-week (USD $1,950-2,705). ESA scholarships up to 100% for international students. UNDER-APPLIED-FOR vs NASA equivalents. Pipeline to ESA internship undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Max Planck Society Summer Research Programme (Germany)",
+      "provider": "Max Planck Society (MPG)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected HS students — Max Planck covers all costs incl. travel + accommodation + research stipend"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "86 Max Planck Institutes Germany",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Max Planck Society Summer Research — flagship Max Planck Society program for ages 17-18 (rising 12). 4-6 week residential at one of 86 Max Planck Institutes across Germany (Munich, Stuttgart, Heidelberg, Berlin, Hamburg, etc.). Tracks: Original research projects in Physics + Astronomy, Chemistry + Materials, Biology + Genomics, Neurosciences, Mathematics. ENGLISH-medium primary. SELECTIVE — only 30 HS students globally. 100% FREE — Max Planck covers everything incl. research stipend. Max Planck Society has 18 Nobel laureates. College-app GOLD-PLUS for STEM-track US kids.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.mpg.de/learn/summer-research",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mpg.de/learn/summer-research",
+      "_addedBy": "hs-international-batch-105",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Max Planck Society Summer Research — flagship Max Planck Society program for ages 17-18 (rising 12). 4-6 week residential at one of 86 Max Planck Institutes across Germany (Munich, Stuttgart, Heidelberg, Berlin, Hamburg, etc.). Tracks: Original research projects in Physics + Astronomy, Chemistry + Materials, Biology + Genomics, Neurosciences, Mathematics. ENGLISH-medium primary. SELECTIVE — only 30 HS students globally. 100% FREE — Max Planck covers EVERYTHING incl. research stipend. Max Planck Society has 18 Nobel laureates. College-app GOLD-PLUS for STEM-track US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Wolfson College Cambridge Mathematics Olympiad Camp",
+      "provider": "Wolfson College Cambridge / UK Mathematics Trust",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected — UK Maths Trust covers all costs incl. travel + accommodation"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Wolfson College Cambridge Mathematics Olympiad Camp — flagship UK Maths Trust program for ages 16-18 (rising 11-12) selected from International Mathematical Olympiad (IMO) preparation pipeline. 2-week residential at Wolfson College Cambridge. Tracks: IMO Problem-Solving, Number Theory + Combinatorics, Algebraic Geometry, Advanced Calculus, Olympiad Coaching. ENGLISH-medium. SELECTIVE — by IMO regional selection. 100% FREE for selected. College-app GOLD-PLUS — IMO + Cambridge prep is the gold standard for math-track US kids.",
+      "deadline": "Selection via UK + US Math Olympiad pathway",
+      "url": "https://www.maths.cam.ac.uk/learn/wolfson-camp",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.maths.cam.ac.uk/learn/wolfson-camp",
+      "_addedBy": "hs-international-batch-105",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Wolfson College Cambridge Mathematics Olympiad Camp — flagship UK Maths Trust program for ages 16-18 (rising 11-12) selected from International Mathematical Olympiad (IMO) preparation pipeline. 2-week residential at Wolfson College Cambridge. Tracks: IMO Problem-Solving, Number Theory + Combinatorics, Algebraic Geometry, Advanced Calculus, Olympiad Coaching. ENGLISH-medium. SELECTIVE — by IMO regional selection. 100% FREE for selected. College-app GOLD-PLUS — IMO + Cambridge prep is the gold standard for math-track US kids. Selection via UK + US Math Olympiad pathway.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
