@@ -45513,6 +45513,244 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "COSI Camp In + Summer Camps",
+      "provider": "COSI (Center of Science and Industry — Columbus)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk for day camps; COSI Camp-In overnight ~$65-95/person/night; member discount 15%; sliding scale via COSI Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Columbus",
+        "state": "OH"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "COSI (downtown Columbus) themed weekly summer day camps for grades K-8. PLUS the famous COSI Camp-In: overnight programs (Friday evening through Saturday morning) where families/groups sleep in the museum among exhibits + dinosaur hall. Day camp tracks: Engineering + Design, Animal Adventures, Space Camp (with planetarium), Forensics, Earth Science. Mon-Fri 9am-4pm.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://cosi.org/learn/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://cosi.org/learn/programs/camps/",
+      "_addedBy": "state-expansion-batch-51",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "COSI (downtown Columbus) themed summer day camps grades K-8. PLUS famous COSI Camp-In: overnight programs (Fri evening - Sat morning) sleeping in museum among exhibits + dinosaur hall. Day camp tracks: Engineering + Design, Animal Adventures, Space Camp (planetarium), Forensics, Earth Science. Mon-Fri 9am-4pm. ~$295-395/wk day; ~$65-95/person/night Camp-In. 15% member discount + sliding scale via COSI Education. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cleveland Museum of Natural History Summer Camps",
+      "provider": "Cleveland Museum of Natural History (CMNH)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 395,
+        "type": "paid",
+        "display": "~$345-445/wk; member discount 10%; need-based aid via CMNH Education + Cleveland Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cleveland",
+        "state": "OH"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "CMNH (University Circle, Cleveland) themed weekly summer day camps for grades K-8. Tracks: Lucy the Australopithecus + paleoanthropology, Stark Foundation Wildlife Center (live animals), Shafran Planetarium (astronomy), polar regions + climate science. Mon-Fri 9am-4pm with extended care. CMNH is one of the most prestigious natural history museums in the US (home of Lucy fossils replica + original 'Hap' the polar bear).",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.cmnh.org/programs/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cmnh.org/programs/camps",
+      "_addedBy": "state-expansion-batch-51",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "CMNH (University Circle Cleveland) themed summer camps grades K-8. Tracks: Lucy the Australopithecus + paleoanthropology, Stark Foundation Wildlife Center (live animals), Shafran Planetarium (astronomy), polar regions + climate science. Mon-Fri 9am-4pm + extended care. ~$345-445/wk. 10% member discount + need-based aid via CMNH Education + Cleveland Public Schools partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cincinnati Children's Museum + Family Programs",
+      "provider": "Cincinnati Museum Center (Union Terminal) — Children's Museum",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~$265-345/wk; member discount 10%; Museums for All ($1 entry for SNAP/EBT) + Cincinnati Public Schools scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cincinnati",
+        "state": "OH"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "description": "Cincinnati Children's Museum (housed in iconic Union Terminal Art Deco landmark, Cincinnati Museum Center campus) themed summer camps for ages 3-10. Tracks: Energy Zone (climbing + movement), The Woods (forest exploration), Kids' Town (community-roles play), Animal Discovery, Storytelling Studio. Mon-Fri half-day or full-day.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.cincymuseum.org/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cincymuseum.org/learn/camps/",
+      "_addedBy": "state-expansion-batch-51",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Cincinnati Children's Museum (housed in iconic Union Terminal Art Deco landmark, Cincinnati Museum Center campus) themed summer camps ages 3-10. Tracks: Energy Zone (climbing + movement), The Woods (forest exploration), Kids' Town (community-roles play), Animal Discovery, Storytelling Studio. Mon-Fri half-day or full-day. ~$265-345/wk. 10% member discount + Museums for All ($1 SNAP/EBT) + Cincinnati Public Schools scholarship pool. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cleveland Metroparks Zoo Summer Camps",
+      "provider": "Cleveland Metroparks Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 315,
+        "type": "paid",
+        "display": "~$285-365/wk; member discount 10%; Cleveland Metroparks community + need-based aid + Cleveland Public Schools partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cleveland",
+        "state": "OH"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Cleveland Metroparks Zoo (over 3,000 animals, large primate house, Wolf Wilderness) themed weekly summer camps for grades K-8. Tracks: zookeeping + animal behavior, conservation + endangered species, ecology + Lake Erie habitats, bird programs + raptor encounters. Mon-Fri 9am-3:30pm with extended care. Strong access to RainForest building.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.clevelandmetroparks.com/zoo/learn/programs/summer-zoo-camp",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.clevelandmetroparks.com/zoo/learn/programs/summer-zoo-camp",
+      "_addedBy": "state-expansion-batch-51",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Cleveland Metroparks Zoo (3,000+ animals, large primate house, Wolf Wilderness, RainForest building) themed summer camps grades K-8. Tracks: zookeeping + animal behavior, conservation + endangered species, ecology + Lake Erie habitats, bird + raptor programs. Mon-Fri 9am-3:30pm + extended care. ~$285-365/wk. 10% member discount + Cleveland Metroparks community + need-based aid + Cleveland Public Schools partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Newport Aquarium WAVE Camps + Family Programs",
+      "provider": "Newport Aquarium (Cincinnati metro)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 10%; need-based aid via Newport Education + Northern KY/Cincinnati Title I partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Newport",
+        "state": "KY"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Newport Aquarium (Newport, KY — across the Ohio River from downtown Cincinnati, part of Greater Cincinnati metro) WAVE summer camps for grades K-8. Tracks: marine biology + ocean conservation, sharks + ray encounters, Amazon ecosystem (Newport's Amazon Adventure), penguin programs. Mon-Fri 9am-3:30pm. Includes the iconic Shark Bridge (acrylic walkway over shark tank).",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.newportaquarium.com/Things-To-Do/Education/Camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.newportaquarium.com/Things-To-Do/Education/Camps",
+      "_addedBy": "state-expansion-batch-51",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Newport Aquarium (Newport KY — across Ohio River from downtown Cincinnati, Greater Cincinnati metro) WAVE summer camps grades K-8. Tracks: marine biology + ocean conservation, sharks + ray encounters, Amazon ecosystem (Amazon Adventure exhibit), penguin programs. Includes iconic Shark Bridge (acrylic walkway over shark tank). Mon-Fri 9am-3:30pm. ~$295-395/wk. 10% member discount + need-based aid via Newport Education + Northern KY/Cincinnati Title I partnership. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
