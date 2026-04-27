@@ -10692,7 +10692,16 @@
       "duration": "1-2 weeks",
       "region": "Southeast",
       "advisorNote": "Emphasize specific skills you developed and how this experience shaped your perspective on your chosen field.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Belmont University (Nashville, TN) summer camps for ages 5-18: sports, STEM, theater, music, art. State-of-the-art facilities — natural fit for music-focused kids given Belmont's music program reputation. ~$500-2,500 varies by track + duration. Existing deadline Jun 1. Specific 2026 weekly dates not surfaced via WebSearch — typical Jun 15 – Aug 7 window inferred. Verify at belmont.edu.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Washington University Summer Programs",
@@ -42554,7 +42563,16 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://steveandkatescamp.com/fees/"
+      "_source": "https://steveandkatescamp.com/fees/",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Long-running multi-activity day camp for kids entering PreK-7th grade (ages 4-13). 15+ Bay Area sites: SF Potrero Hill, Cathedral Hill, Emeryville, Fremont, Pleasanton, Walnut Creek, Corte Madera, Petaluma + LA sites. Innovative Day Pass model: $114/day at 15+ pass rate, full Summer Pass available, unused passes auto-refunded — extremely flexible for unpredictable family schedules. No fixed weekly enrollment commitment. Rolling registration. Open kids choose from many studios (sewing, coding, baking, sports, arts) all day with no scheduled class. Strong fit for kids who get bored with rigid camp structures. steveandkatescamp.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Lawrence Hall of Science Summer Camps (UC Berkeley)",
