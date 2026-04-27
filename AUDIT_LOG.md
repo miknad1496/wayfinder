@@ -1154,3 +1154,29 @@ Deep audit of the essay review pipeline: `backend/routes/essays.js` (398 lines),
 - Programs: ✅ 826 entries, 82 verified — metadata matches.
 - Volunteer: ✅ 89 entries.
 - All JS syntax checks passed (frontend + server + essays route).
+
+## 2026-04-27 Nightly Audit — 2 Real Bugs Fixed
+
+**Focus Areas**: Cost & Resource Leaks (mandatory) + Backend Runtime + Data Integrity
+
+### Fixes Applied
+
+1. **stripe.js — broken idempotency persistence** (HIGH severity, real money) — `routes/stripe.js` imports `import { promises as fs } from 'fs'` (alias `fs`) but the code referenced an undefined `fsPromises` for both startup load (`fsPromises.readFile`) and `markEventProcessed` persistence (`fsPromises.appendFile`). Effect: on boot, no processed-event IDs were loaded — caught by the broad catch. More critically, `markEventProcessed` threw a synchronous TypeError that was swallowed by the unawaited fire-and-forget call site; **no event ID was ever persisted to disk**. After every Render redeploy the in-memory Set was empty, so any Stripe redelivered `checkout.session.completed` event would re-process and call `addEssayCredits()` AGAIN — **double-credits a pack purchase**. Fix: `s/fsPromises\./fs./g` (3 sites). Verified by re-booting the server — the `[stripe] idempotency load failed: fsPromises is not defined` error is gone.
+
+2. **programs.json — 5 exact duplicates from international HS batches** — same name + provider + state pairs (Samsung Korea, Tesla Berlin, ARM UK, Sony Tokyo, TSMC Taiwan), each appearing twice. Dedupe ran with verified-priority logic: kept verified copy when applicable, newer `_verifiedDate` as tiebreaker. 1415 → 1410. Boot health check now reports clean for all three modules.
+
+3. **Metadata count drift** — `programs.json.metadata.totalCount` was stuck at 956 (real array length 1415 → 1410 after dedup). `volunteer-opportunities.json.metadata.totalCount` was stuck at 167 (real array length 247). Both updated to match actual length, with `lastVerified: 2026-04-27`.
+
+### Verifications
+- SLM keep-alive: ✅ pings still do NOT update `lastWarmAt` (lines 781-784 confirm).
+- Anonymous chat cap: ✅ disk-persisted, atomic writes, 5/day per IP, MAX_TRACKED_IPS=50000.
+- Rate limiter: ✅ `effectiveMax = auth?.user ? 30 : 5` at chat.js:310.
+- setInterval audit: ✅ all 5 intervals (user-backup, scheduler, scraper-scheduler, slm keep-alive, frontend advisorPollTimer) have proper cleanup or are server-lifetime.
+- Frontend syntax: ✅ `node -c frontend/src/app.js` passed.
+- All backend route + service syntax: ✅ all pass `node -c`.
+- Server boot: ✅ clean — no errors, all data health checks green.
+- Region filter (patches 25/26): ✅ `_isUSState` helper present in both `programs.js` and `internships.js`, `searchPrograms`/`searchInternships`/`searchSCBrowse` all wire `region` into URLSearchParams.
+- Spot-check verified `_source` URLs: 3 each from internships/scholarships/programs/volunteer — all real, no hallucinations.
+
+### Estimated Impact
+The Stripe idempotency bug had been live for an unknown duration. Every Render redeploy reset the in-memory Set, so any Stripe webhook redelivery (transient failures, retries, or even Stripe's normal "redeliver" debug operations) within the post-redeploy window would re-credit credit-pack purchases. Hard to quantify without webhook logs but worth grepping for `addEssayCredits` audit entries in production data to see if any user got double-credited.
