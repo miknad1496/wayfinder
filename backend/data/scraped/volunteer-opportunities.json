@@ -6076,6 +6076,298 @@
       "_source": "https://www.habitat.org/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Meals on Wheels America Volunteer",
+      "organization": "Meals on Wheels America",
+      "description": "Meals on Wheels America has 5,000+ local programs delivering meals to homebound seniors. HS volunteer roles include food packing, delivery driver assistant (for parent-teen pairs), Friendly Visitor companionship calls, and Meals on Wheels Pet Loaf program. Strong fit for kids interested in senior care + community service.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "seniors",
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "meal preparation + packaging",
+        "route delivery",
+        "senior interaction",
+        "food safety basics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit mealsonwheelsamerica.org/find-meals to find your local program. Most local Meals on Wheels welcome HS volunteers (under 16 typically requires parent/guardian). Year-round availability.",
+      "_source": "https://www.mealsonwheelsamerica.org/take-action/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Feeding America Network Volunteer",
+      "organization": "Feeding America",
+      "description": "Feeding America operates 200+ food banks + 60,000+ partner agencies nationally. HS volunteer roles include food bank sorting + packing, Backpack Program (weekend meals for kids), Mobile Pantry distribution, and Hunger Action Month (Sep) campaigns. Strong fit for kids interested in food justice + public health.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food bank operations",
+        "mobile pantry distribution",
+        "food safety",
+        "community outreach"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit feedingamerica.org/find-your-local-foodbank. Most local food banks welcome HS volunteers — younger kids often need parent/guardian. Apply year-round.",
+      "_source": "https://www.feedingamerica.org/take-action/ways-to-give-help/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Food Recovery Network Student Chapter",
+      "organization": "Food Recovery Network",
+      "description": "Food Recovery Network is the largest student-led nonprofit fighting food waste + hunger nationally. 230+ college chapters + growing HS chapter network. HS volunteer roles include school-based food recovery program founding, dining hall + cafeteria food rescue, and food donation logistics. Strong fit for kids interested in environmental sustainability + food justice.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food rescue logistics",
+        "food waste reduction",
+        "cafeteria operations",
+        "sustainability advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit foodrecoverynetwork.org/start-a-chapter. Apply Aug-Oct to start a chapter at your HS for school year programming.",
+      "_source": "https://www.foodrecoverynetwork.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "World Central Kitchen Disaster Relief Volunteer",
+      "organization": "World Central Kitchen (WCK)",
+      "description": "WCK (founded by Chef José Andrés) provides meals during disasters globally. HS volunteer roles vary based on operations — typically food packing, fundraising, social media advocacy. Direct disaster-zone deployment requires 18+. WCK Chefs for America HS-friendly events available year-round. Strong fit for kids interested in culinary + disaster relief careers.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "disaster"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "disaster meal operations",
+        "emergency food logistics",
+        "culinary basics",
+        "fundraising"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit wck.org/get-involved. Direct disaster deployment 18+. HS-aged volunteer roles include fundraising + Chefs for America events. Year-round.",
+      "_source": "https://wck.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Family Promise Affiliate Volunteer",
+      "organization": "Family Promise",
+      "description": "Family Promise has 200+ affiliates nationally helping families experiencing homelessness through congregation-based shelters + transitional services. HS volunteer roles include Day Center activity coordination with kids in shelter, donation drive organizing, school supplies distribution, and after-school tutoring at affiliate sites. Strong fit for kids interested in homelessness advocacy + social work.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "homelessness",
+        "faith",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "homelessness response",
+        "child support in transitional housing",
+        "tutoring",
+        "faith-based service coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit familypromise.org/find-an-affiliate. Most affiliates welcome HS volunteers — congregation-based affiliates often easier entry point. Year-round.",
+      "_source": "https://familypromise.org/find-an-affiliate/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Loaves & Fishes Network Volunteer",
+      "organization": "Loaves & Fishes (multiple regional networks)",
+      "description": "Loaves & Fishes operates 150+ regional food + meal programs nationally (Northern California, Sacramento, Annapolis MD, Naples FL, etc.). HS volunteer roles include daily meal service prep + serving, food pantry sorting, garden + farm-to-table program support, and special events. Strong fit for kids interested in hunger + food systems.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "meal service operations",
+        "food pantry sorting",
+        "food safety",
+        "community engagement"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search 'Loaves and Fishes [your city]' to find your regional Loaves & Fishes. Most welcome HS volunteers + younger kids with parent/guardian. Year-round.",
+      "_source": "https://www.loavesandfishes.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Project Bread Walk for Hunger Volunteer (Boston)",
+      "organization": "Project Bread",
+      "description": "Project Bread is Boston's leading anti-hunger nonprofit (founded 1969). HS volunteer roles include Walk for Hunger (annual May event with 8,000+ walkers), FoodSource Hotline support (18+), school-based hunger awareness campaigns, and Tackle Hunger NFL partnership events. Strong fit for Boston-area kids interested in food justice.",
+      "scope": "regional",
+      "states": [
+        "MA"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "walkathon event coordination",
+        "hunger advocacy",
+        "Massachusetts food policy",
+        "Tackle Hunger campaign"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit projectbread.org/get-involved. Walk for Hunger registration opens Jan-Apr; year-round volunteer opportunities at Boston HQ.",
+      "_source": "https://www.projectbread.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Wednesday's Child Adoption Awareness Volunteer",
+      "organization": "Wednesday's Child (regional/local programs)",
+      "description": "Wednesday's Child is a national TV news segment (since 1981) featuring children awaiting adoption. Local volunteer roles include adoption awareness fundraising, foster + adoption family support, post-adoption transition services, and respite care for foster families. HS-aged volunteers can support school-based foster care awareness campaigns. Strong fit for kids interested in social work + child welfare.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mentorship",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "foster care awareness",
+        "adoption advocacy",
+        "family support",
+        "child welfare basics"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Search 'Wednesday's Child [your state]' to find your regional program. Most affiliated with state child welfare offices. Year-round.",
+      "_source": "https://www.wednesdayschild.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "DC Central Kitchen Junior Volunteer",
+      "organization": "DC Central Kitchen",
+      "description": "DC Central Kitchen is the nation's first community kitchen (founded 1989) producing 5,000+ meals daily for shelters + schools. HS volunteer roles include daily meal prep + cooking with chefs (14+ requires guardian; 16+ unaccompanied), Healthy Corners corner store food distribution, and Culinary Job Training program support. Strong fit for kids interested in culinary + food justice careers.",
+      "scope": "regional",
+      "states": [
+        "DC",
+        "VA",
+        "MD"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "culinary basics",
+        "meal prep at scale",
+        "food safety",
+        "community kitchen operations"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit dccentralkitchen.org/volunteer. Year-round availability with peak holiday season (Nov-Dec).",
+      "_source": "https://dccentralkitchen.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "FareStart Junior Volunteer (Seattle)",
+      "organization": "FareStart",
+      "description": "FareStart is Seattle's flagship culinary job training nonprofit (since 1992) for adults transitioning out of homelessness. HS volunteer roles include 2nd Saturday community meal service, Catalyst Kitchens youth programs, food packing for shelter partner agencies. Strong fit for Seattle-area kids interested in culinary careers + homelessness advocacy.",
+      "scope": "regional",
+      "states": [
+        "WA"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "culinary basics",
+        "2nd Saturday meal service",
+        "catering operations",
+        "Seattle homelessness response"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit farestart.org/get-involved. 2nd Saturday community meal service open year-round. Apply via online portal.",
+      "_source": "https://www.farestart.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
     }
   ]
 }
