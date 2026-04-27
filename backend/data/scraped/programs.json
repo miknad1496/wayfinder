@@ -50961,6 +50961,217 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Oxford Royale Academy Summer Programs",
+      "provider": "Oxford Royale (UK)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 4495,
+        "type": "paid",
+        "display": "~£3,495-£6,995/2-week (~USD $4,495-8,995); merit-based scholarships available; international US students welcome with passport"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Oxford",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Oxford Royale Academy — most-recognized US-friendly Oxford summer program for ages 13-18 (rising grade 8 and up). 2-week residential at Oxford colleges (Lady Margaret Hall, St Catherine's). Tracks: Engineering, Business, Medicine, Law, Computer Science, English Literature, Politics. College-app gold for US students. Need passport. ~£3,495-£6,995 for 2 weeks (USD $4,495-8,995). Apply Mar-May for summer cohort.",
+      "deadline": "Apply Mar-May; rolling waitlist",
+      "url": "https://www.oxford-royale.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.oxford-royale.com",
+      "_addedBy": "international-uk-batch-76",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Oxford Royale Academy — most-recognized US-friendly Oxford summer program for ages 13-18 (rising grade 8 and up). 2-week residential at Oxford colleges (Lady Margaret Hall, St Catherine's). Tracks: Engineering, Business, Medicine, Law, Computer Science, English Literature, Politics. College-app gold for US students — Oxford brand carries weight. Need passport. ~£3,495-£6,995/2-week (USD $4,495-8,995). Merit-based scholarships available. Apply Mar-May for summer cohort; rolling waitlist after.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Cambridge International Summer School (CISS)",
+      "provider": "University of Cambridge International Summer Programs",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~£2,995-£5,495/2-week (~USD $3,895-7,095); Cambridge Trust scholarships for select international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Cambridge",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Cambridge International Summer School — University of Cambridge's flagship summer program for ages 16-18 (rising 11+). 2-week residential at Cambridge colleges. Tracks: Sciences, Engineering, Medicine, Humanities, Politics. Smaller cohort than Oxford Royale; faculty taught by Cambridge dons. College-app gold for US students considering UK universities + selective US schools. Apply Feb-April.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.cambridge.org/learn/cambridge-international-summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cambridge.org/learn/cambridge-international-summer-school",
+      "_addedBy": "international-uk-batch-76",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Cambridge International Summer School — University of Cambridge's flagship summer program for ages 16-18 (rising 11+). 2-week residential at Cambridge colleges. Tracks: Sciences, Engineering, Medicine, Humanities, Politics. Smaller cohort than Oxford Royale; faculty taught by Cambridge dons. College-app gold for US students considering UK universities + selective US schools. ~£2,995-£5,495/2-week (USD $3,895-7,095). Cambridge Trust scholarships for select international students. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "King's College London Pre-University Summer School",
+      "provider": "King's College London",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~£2,495-£3,495/2-week (~USD $3,245-4,545); KCL international scholarships available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "King's College London Pre-University Summer School — for ages 16-18 (rising 11+). 2-week residential in London (Strand campus). Tracks: International Relations, Law, Business + Finance, Medicine, Computer Science, Politics. Strong urban setting (heart of London) vs Oxford/Cambridge collegiate. KCL is one of UK's top-ranked universities for medicine + law. Apply Feb-April.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.kcl.ac.uk/study/pre-university-summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kcl.ac.uk/study/pre-university-summer-school",
+      "_addedBy": "international-uk-batch-76",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "King's College London Pre-University Summer School — ages 16-18 (rising 11+). 2-week residential in London (Strand campus). Tracks: International Relations, Law, Business + Finance, Medicine, Computer Science, Politics. Strong urban setting (heart of London) vs Oxford/Cambridge collegiate. KCL among UK's top-ranked universities for medicine + law. ~£2,495-£3,495/2-week (USD $3,245-4,545). KCL international scholarships available. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "UCL (University College London) Summer School",
+      "provider": "UCL — University College London",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3295,
+        "type": "paid",
+        "display": "~£2,795-£3,795/3-week (~USD $3,595-4,895); UCL international scholarships available"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UCL Summer School — University College London's pre-university program for ages 16-18 (rising 11+). 3-week residential in central London (Bloomsbury campus). Tracks: Architecture + Urban Studies, Engineering, Mathematics, Humanities, Computer Science. UCL is consistently top-10 globally; access to British Museum + UCL collections + central London cultural assets. Apply Mar-May.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ucl.ac.uk/study/learn-summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ucl.ac.uk/study/learn-summer-school",
+      "_addedBy": "international-uk-batch-76",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "UCL Summer School — University College London's pre-university program for ages 16-18 (rising 11+). 3-week residential in central London (Bloomsbury campus). Tracks: Architecture + Urban Studies, Engineering, Mathematics, Humanities, Computer Science. UCL consistently top-10 globally; access to British Museum + UCL collections + central London cultural assets. ~£2,795-£3,795/3-week (USD $3,595-4,895). UCL international scholarships available. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Eton College Summer School (UK historical school)",
+      "provider": "Eton College / Eton Summer School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~£3,995-£5,995/2-week (~USD $5,145-7,755); Eton Summer Foundation scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Windsor",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Eton College Summer School — Eton (founded 1440 by Henry VI) opens its historic campus for international ages 15-18 (rising 10+) summer programs. 2-week residential at Eton (Windsor, just outside London). Tracks: English + Creative Writing (Eton's signature strength), Mathematics, History, Politics, Music. Distinctive UK boarding-school experience + access to Eton's libraries + historic chapel. ~24 boys + 24 girls per cohort. Apply Feb-April.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.etoncollege.com/learn/summer-school/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.etoncollege.com/learn/summer-school/",
+      "_addedBy": "international-uk-batch-76",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Eton College Summer School — Eton (founded 1440 by Henry VI) opens its historic campus for international ages 15-18 (rising 10+) summer programs. 2-week residential at Eton (Windsor, just outside London). Tracks: English + Creative Writing (Eton's signature strength), Mathematics, History, Politics, Music. Distinctive UK boarding-school experience + access to Eton's libraries + historic chapel. ~24 boys + 24 girls per cohort. ~£3,995-£5,995/2-week (USD $5,145-7,755). Eton Summer Foundation scholarships for international students. SELECTIVE; apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
