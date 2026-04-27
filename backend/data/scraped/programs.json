@@ -47405,6 +47405,241 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Royal Ontario Museum (ROM) Summer Club",
+      "provider": "Royal Ontario Museum (Toronto)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~CAD $385-475/wk (~USD $285-350); ROM member discount; sliding scale via ROM Education + TDSB partnership"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Royal Ontario Museum (Toronto, near University of Toronto) — one of the largest museums in North America — themed weekly summer day camps for grades 1-8. Tracks: dinosaurs + paleontology, ancient Egypt + mummies, Indigenous + Canadian First Peoples cultures, world cultures, biodiversity gallery. Mon-Fri 9am-4pm with extended care. International US families welcome with passport.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.rom.on.ca/learn/programs/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.rom.on.ca/learn/programs/camps",
+      "_addedBy": "international-expansion-batch-59",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Royal Ontario Museum (Toronto, near U of T) — one of largest museums in North America — themed summer camps grades 1-8. Tracks: dinosaurs + paleontology, ancient Egypt + mummies, Indigenous + Canadian First Peoples cultures, world cultures, biodiversity gallery. Mon-Fri 9am-4pm + extended care. ~CAD $385-475/wk (~USD $285-350). ROM member discount + sliding scale via ROM Education + TDSB partnership. International US families welcome with passport.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Ontario Science Centre Summer Camps",
+      "provider": "Ontario Science Centre (Toronto)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~CAD $315-395/wk (~USD $235-290); OSC member discount; sliding scale via OSC Education"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Ontario Science Centre (Don Mills, north Toronto) themed weekly summer day camps for grades K-8. Tracks: Innovation Hub (engineering + design), Body Worlds-style anatomy, Energy + Climate, Communications, OMNIMAX. Mon-Fri 9am-4pm. Note: OSC's Don Mills location currently being renovated/relocated 2024-2026 — check current programming venue at OntarioScienceCentre.ca. International US families welcome.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.ontariosciencecentre.ca/learn/programs/camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ontariosciencecentre.ca/learn/programs/camps",
+      "_addedBy": "international-expansion-batch-59",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Ontario Science Centre (Don Mills, north Toronto) themed summer camps grades K-8. Tracks: Innovation Hub (engineering + design), Body Worlds-style anatomy, Energy + Climate, Communications, OMNIMAX. Mon-Fri 9am-4pm. ~CAD $315-395/wk (~USD $235-290). OSC member discount + sliding scale. NOTE: OSC's Don Mills location currently being renovated/relocated 2024-2026 — verify current programming venue at OntarioScienceCentre.ca before booking. International US families welcome with passport.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Toronto Zoo Summer Camps",
+      "provider": "Toronto Zoo",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 325,
+        "type": "paid",
+        "display": "~CAD $295-365/wk (~USD $215-270); zoo member discount; sliding scale + low-income family programs"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Toronto Zoo (Rouge National Urban Park, east Toronto — largest zoo in Canada at 287 hectares + 5,000 animals) themed weekly summer day camps for grades K-8. Tracks: Tundra Trek (polar bears + Arctic wolves), African Savanna (lions, giraffes), Indomalaya (tigers, orangutans), Australasia (kangaroos), Discovery Zone (kid-friendly hands-on). Mon-Fri 9am-4pm with extended care.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.torontozoo.com/camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.torontozoo.com/camps",
+      "_addedBy": "international-expansion-batch-59",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Toronto Zoo (Rouge National Urban Park, east Toronto — largest zoo in Canada at 287 hectares + 5,000 animals) themed summer camps grades K-8. Tracks: Tundra Trek (polar bears + Arctic wolves), African Savanna (lions, giraffes), Indomalaya (tigers, orangutans), Australasia (kangaroos), Discovery Zone (hands-on). Mon-Fri 9am-4pm + extended care. ~CAD $295-365/wk (~USD $215-270). Zoo member discount + sliding scale + low-income family programs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Aga Khan Museum Summer Day Camps",
+      "provider": "Aga Khan Museum (Toronto)",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); AKM member discount; sliding scale + Aga Khan Foundation Canada need-based aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Aga Khan Museum (north Toronto, near Don Mills + DVP) themed weekly summer day camps for grades 1-8. Only museum in North America dedicated to Islamic art + heritage + civilization. Tracks: Calligraphy + Manuscript Illumination, Islamic Geometric Pattern + Tile-making, World Music (oud, qanun, sitar), Persian + Mughal + Andalusian heritage, Garden Stories (the spectacular Aga Khan Park). Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Feb; general March-April",
+      "url": "https://www.agakhanmuseum.org/programs/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.agakhanmuseum.org/programs/summer-camps",
+      "_addedBy": "international-expansion-batch-59",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Aga Khan Museum (north Toronto, near Don Mills + DVP) themed summer camps grades 1-8. ONLY museum in North America dedicated to Islamic art + heritage + civilization. Tracks: Calligraphy + Manuscript Illumination, Islamic Geometric Pattern + Tile-making, World Music (oud, qanun, sitar), Persian + Mughal + Andalusian heritage, Garden Stories (spectacular Aga Khan Park). Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). AKM member discount + sliding scale + Aga Khan Foundation Canada need-based aid.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "TIFF Kids International Film Festival + Summer Film Camps",
+      "provider": "Toronto International Film Festival (TIFF) — Kids Programming",
+      "category": "arts",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~CAD $395-485/wk (~USD $290-360); TIFF member discount + Toronto Public Library partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Toronto",
+        "state": "ON"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "TIFF Bell Lightbox (downtown Toronto) summer film + storytelling camps for grades 3-8. Tracks: Filmmaking 101 (kids write/shoot/edit short films using TIFF gear), Animation Studio (stop-motion + 2D), Film Criticism + History, Acting + Performance for Camera. Camps culminate in TIFF Lightbox premiere screening for families. World-class film-arts education. Mon-Fri 9am-4pm.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://www.tiff.net/learn/youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tiff.net/learn/youth-programs",
+      "_addedBy": "international-expansion-batch-59",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "TIFF Bell Lightbox (downtown Toronto) summer film + storytelling camps grades 3-8. Tracks: Filmmaking 101 (kids write/shoot/edit short films using TIFF gear), Animation Studio (stop-motion + 2D), Film Criticism + History, Acting + Performance for Camera. Camps culminate in TIFF Lightbox premiere screening for families. World-class film-arts education. Mon-Fri 9am-4pm. ~CAD $395-485/wk (~USD $290-360). TIFF member discount + Toronto Public Library partnership scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
