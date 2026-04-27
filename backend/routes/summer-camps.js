@@ -54,6 +54,26 @@ async function loadInsights() {
   return data || { sections: [] };
 }
 
+/* === REVAMP V2: _aiContext CALIBRATION INJECTION === */
+// Returns a formatted text block of all insights sections marked `_aiContext: true`.
+// Loaded fresh per request (5-min TTL inside loadJsonFresh). Adding a new section
+// or item to the insights file with this flag updates AI behavior on next request,
+// no code change required.
+async function getCalibrationContext() {
+  try {
+    const data = await loadInsights();
+    const aiSections = (data.sections || []).filter(s => s && s._aiContext === true);
+    if (!aiSections.length) return '';
+    const blocks = aiSections.map(sec => {
+      const items = (sec.items || []).map(i => `  • ${i.label}: ${i.detail}`).join('\n');
+      return `\n[${sec.title || sec.id}]\n${items}`;
+    }).join('\n');
+    return `\n\n=== CURRENT 2026 CALIBRATION (live from curated insights, refreshed per request) ===${blocks}\n=== /CALIBRATION ===\n`;
+  } catch (e) {
+    return '';
+  }
+}
+
 
 // GET /api/summer-camps/browse — K-8 program browse (public, no auth required)
 // Filters programs.json to K-8 entries with safe public fields.
@@ -154,6 +174,11 @@ router.post('/plan', async (req, res) => {
 
   if (!grade) return res.status(400).json({ error: 'grade required' });
 
+  // Load fresh calibration sections from insights file (`_aiContext: true`) so
+  // the planner gets the latest 2026 regional windows, registration timing, and
+  // pricing-tier intelligence without code changes.
+  const calibrationContext = await getCalibrationContext();
+
   // Build SLM prompt with K-8-specific calibration
   const interestList = Array.isArray(interests) && interests.length > 0
     ? interests.join(', ') : 'mixed';
@@ -174,6 +199,8 @@ CALIBRATION FOR K-8 PLANNING:
 - Sleepaway camp is age-appropriate starting age 7-8 for shorter sessions, 9-10 for longer. Don't push it on younger kids.
 - Wayfinder's database has a growing curated list (especially WA + nationwide remote). Reference it confidently. For specific named programs, be conservative — suggest categories the user can filter for in the Programs sidebar tool with grade filter set to elementary/middle.
 - Use the 60/30/10 frame: ~60% recurring anchor (Y day camp / parks dept), ~30% specialty experiences (1-2 museum/zoo/coding camps), ~10% wildcard (the niche experience).
+
+${calibrationContext}
 
 Your output must be a JSON object:
 {
@@ -256,6 +283,9 @@ router.post('/ask', async (req, res) => {
     return res.status(400).json({ error: 'question required (at least 5 chars)' });
   }
 
+  // Load fresh calibration sections (same source as /plan).
+  const calibrationContext = await getCalibrationContext();
+
   const ctxLines = [];
   if (grade) ctxLines.push(`Grade: ${grade}`);
   if (city || state) ctxLines.push(`Location: ${city}${city && state ? ', ' : ''}${state}`);
@@ -272,6 +302,8 @@ CALIBRATION:
 - Tell them: "Use the Programs sidebar tool with grade filter set to elementary or middle to see the full filterable list."
 - Keep responses practical, concise (200-400 words), warm but direct.
 - For cost-sensitive families, ALWAYS mention scholarship availability + library/parks dept options.
+
+${calibrationContext}
 
 Answer the question directly. No preamble. No "great question!". Just the substance.`;
 

@@ -13,6 +13,7 @@
  */
 
 import { Router } from 'express';
+import { loadJsonFresh } from '../services/data-loader.js';
 import Anthropic from '@anthropic-ai/sdk';
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
@@ -70,7 +71,30 @@ async function loadOpportunityIntel() {
  * Pull the right slice of opportunity intelligence based on what the user
  * is currently looking at. Returns a compact text block for Haiku injection.
  */
-function getRelevantIntel(toolContext, intel) {
+/* === REVAMP V2: DAVID SUMMER-CAMPS CALIBRATION === */
+// Loads sections from summer-camp-insights.json marked `_aiContext: true` and
+// formats them as a context block for David. Same source as the /plan and /ask
+// endpoints — single source of truth for K-8 / summer calibration.
+async function getSummerCampCalibration() {
+  try {
+    const path = await import('path');
+    const url = await import('url');
+    const __filename = url.fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const data = await loadJsonFresh('data/scraped/summer-camp-insights.json', path.join(__dirname, '..'));
+    const aiSections = (data?.sections || []).filter(s => s && s._aiContext === true);
+    if (!aiSections.length) return '';
+    const blocks = aiSections.map(sec => {
+      const items = (sec.items || []).map(i => `  • ${i.label}: ${i.detail}`).join('\n');
+      return `\n[${sec.title || sec.id}]\n${items}`;
+    }).join('\n');
+    return `\n\nSUMMER CAMP / K-8 CALIBRATION (current 2026 data — use when relevant):${blocks}`;
+  } catch (e) {
+    return '';
+  }
+}
+
+async function getRelevantIntel(toolContext, intel) {
   if (!intel || !toolContext?.activeTool) return '';
 
   const tool = toolContext.activeTool.toLowerCase();
@@ -170,6 +194,12 @@ function getRelevantIntel(toolContext, intel) {
     if (fa) {
       parts.push(`FINANCIAL AID INTEL:\n${fa.fafsaHacks?.timing || ''}\n${fa.fafsaHacks?.assetProtection || ''}\n${fa.negotiationTactics?.appealProcess || ''}`);
     }
+  }
+
+  // ── Summer Camps / K-8 / Volunteer / K-12 — load shared insights calibration ──
+  if (tool.includes('summer camp') || tool.includes('k-8') || tool.includes('volunteer') || tool.includes('k-12')) {
+    const calibration = await getSummerCampCalibration();
+    if (calibration) parts.push(calibration);
   }
 
   if (parts.length === 0) return '';
@@ -545,7 +575,7 @@ router.post('/chat', async (req, res) => {
 
       // Inject opportunity intelligence relevant to what the user is browsing
       if (intel) {
-        const intelBlock = getRelevantIntel(toolContext, intel);
+        const intelBlock = await getRelevantIntel(toolContext, intel);
         if (intelBlock) ctxBlock += intelBlock;
       }
 
