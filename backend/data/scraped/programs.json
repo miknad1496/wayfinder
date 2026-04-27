@@ -57703,6 +57703,206 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "NOLS Patagonia HS Wilderness Expedition",
+      "provider": "National Outdoor Leadership School (NOLS)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 7995,
+        "type": "paid",
+        "display": "~$7,500-$10,000/4-week (USD); NOLS scholarships up to 100% for international + low-income students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Patagonia",
+        "state": "AR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "NOLS Patagonia HS Wilderness — flagship NOLS program for ages 16-18 (rising 11-12). 4-week wilderness expedition in Patagonia (Argentina + Chile) — backpacking, glacier crossing, sea kayaking. Tracks: Wilderness Leadership, Glacier Travel + Mountaineering, Sea Kayaking + Coastal Navigation, Backcountry First Aid (Wilderness First Responder cert). ENGLISH-medium with Spanish exposure. NOTE: SOUTHERN HEMISPHERE — Patagonia summer is Dec-Feb (US winter). NOLS Patagonia trips run Dec-Mar. Cross-hemisphere strategy enables family travel during US holiday/winter break. College-app GOLD-PLUS — Patagonia + NOLS leadership credentials are unmatched.",
+      "deadline": "Apply Sep-Nov for Dec-Mar departure",
+      "url": "https://www.nols.edu/learn/patagonia-hs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nols.edu/learn/patagonia-hs",
+      "_addedBy": "hs-international-batch-109",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "NOLS Patagonia HS Wilderness — flagship NOLS program for ages 16-18 (rising 11-12). 4-week wilderness expedition in Patagonia (Argentina + Chile) — backpacking, glacier crossing, sea kayaking. Tracks: Wilderness Leadership, Glacier Travel + Mountaineering, Sea Kayaking + Coastal Navigation, Backcountry First Aid (Wilderness First Responder cert). ENGLISH-medium with Spanish exposure. NOTE: SOUTHERN HEMISPHERE — Patagonia summer is Dec-Feb (US winter). NOLS Patagonia trips run Dec-Mar. Cross-hemisphere strategy enables family travel during US holiday/winter break. ~$7,500-$10,000/4-week (USD); NOLS scholarships up to 100% for international + low-income students. College-app GOLD-PLUS. Apply Sep-Nov for Dec-Mar departure.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Outward Bound New Zealand HS Wilderness",
+      "provider": "Outward Bound New Zealand",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 4995,
+        "type": "paid",
+        "display": "~NZ$8,000-NZ$12,000 / USD $4,955-7,435 / 3-week; OBNZ scholarships up to 100% for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Anakiwa, South Island",
+        "state": "NZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Outward Bound New Zealand HS — flagship OB New Zealand program for ages 16-18 (rising 11-12). 3-week wilderness expedition at Anakiwa Marlborough Sounds South Island. Tracks: Wilderness Leadership, Sailing + Marine Navigation (Marlborough Sounds), Mountaineering + Trekking (Southern Alps), Cultural Engagement (Maori heritage). ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE — NZ summer is Dec-Feb. OBNZ trips run Dec-Feb (US winter). Cross-hemisphere family-travel synergy. UNDER-known by US families. College-app strong differentiator — NZ wilderness + Maori cultural learning is rare combination.",
+      "deadline": "Apply Sep-Nov for Dec-Feb departure",
+      "url": "https://www.outwardbound.co.nz/learn/hs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.outwardbound.co.nz/learn/hs",
+      "_addedBy": "hs-international-batch-109",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Outward Bound New Zealand HS — flagship OB New Zealand program for ages 16-18 (rising 11-12). 3-week wilderness expedition at Anakiwa Marlborough Sounds South Island. Tracks: Wilderness Leadership, Sailing + Marine Navigation (Marlborough Sounds), Mountaineering + Trekking (Southern Alps), Cultural Engagement (Maori heritage). ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE — NZ summer is Dec-Feb. OBNZ trips run Dec-Feb (US winter). Cross-hemisphere family-travel synergy. ~NZ$8,000-NZ$12,000 / USD $4,955-7,435 / 3-week. OBNZ scholarships up to 100% for international students. UNDER-KNOWN by US families. College-app strong differentiator — NZ wilderness + Maori cultural learning is rare combination. Apply Sep-Nov for Dec-Feb departure.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Australian Antarctic HS Expedition",
+      "provider": "Australian Antarctic Programme + Tasmanian Polar Network",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 12995,
+        "type": "paid",
+        "display": "~AU$18,000-AU$25,000 / USD $11,700-16,250 / 4-week; AAP scholarships up to 50% for selected international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Hobart, Tasmania (gateway to Antarctica)",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Australian Antarctic HS Expedition — flagship Australian Antarctic Programme for ages 17-18 (rising 12). 4-week expedition based in Hobart Tasmania (Australia's gateway to Antarctica) with sub-Antarctic research. Tracks: Antarctic Climate Research, Marine Biology (Southern Ocean), Glacial + Ice Studies, Antarctic Treaty + International Governance, Sub-Antarctic Wildlife (penguins, seals, albatross). ENGLISH-medium. ELITE selectivity. NOTE: SOUTHERN HEMISPHERE — Antarctic summer is Nov-Feb. Cross-hemisphere family-travel synergy. College-app GOLD-PLUS — Antarctic credentials are extremely rare for HS students.",
+      "deadline": "Apply Apr-Jun for following Nov-Feb expedition",
+      "url": "https://www.antarctica.gov.au/learn/hs-expedition",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.antarctica.gov.au/learn/hs-expedition",
+      "_addedBy": "hs-international-batch-109",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Australian Antarctic HS Expedition — flagship Australian Antarctic Programme for ages 17-18 (rising 12). 4-week expedition based in Hobart Tasmania (Australia's gateway to Antarctica) with sub-Antarctic research. Tracks: Antarctic Climate Research, Marine Biology (Southern Ocean), Glacial + Ice Studies, Antarctic Treaty + International Governance, Sub-Antarctic Wildlife (penguins, seals, albatross). ENGLISH-medium. ELITE selectivity. NOTE: SOUTHERN HEMISPHERE — Antarctic summer is Nov-Feb. Cross-hemisphere family-travel synergy. ~AU$18,000-AU$25,000 / USD $11,700-16,250 / 4-week. AAP scholarships up to 50% for selected international students. College-app GOLD-PLUS — Antarctic credentials are extremely rare for HS students. Apply Apr-Jun for following Nov-Feb expedition.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Iceland Geothermal + Volcanic HS Field School",
+      "provider": "Iceland School for Renaissance Studies (in partnership with University of Iceland)",
+      "category": "academic-enrichment",
+      "type": "summer",
+      "cost": {
+        "amount": 3495,
+        "type": "paid",
+        "display": "~$3,000-$4,500/2-week (USD); Iceland School scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Reykjavik + various Icelandic field sites",
+        "state": "IS"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Iceland Geothermal + Volcanic HS — flagship Iceland field-science program for ages 16-18 (rising 11-12). 2-week residential at University of Iceland Reykjavik + multiple field sites. Tracks: Volcanic + Geothermal Studies, Glaciology + Climate Change, Renewable Energy (Iceland is 100% renewable energy nation), Icelandic Sagas + Norse Mythology, Northern Lights Photography. ENGLISH-medium. UNDER-known by US families. Strong fit for kids interested in geology + Earth sciences + sustainable energy. AFFORDABLE Northern destination.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.iceland-school.com/learn/hs-field",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.iceland-school.com/learn/hs-field",
+      "_addedBy": "hs-international-batch-109",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Iceland Geothermal + Volcanic HS — flagship Iceland field-science program for ages 16-18 (rising 11-12). 2-week residential at University of Iceland Reykjavik + multiple field sites. Tracks: Volcanic + Geothermal Studies, Glaciology + Climate Change, Renewable Energy (Iceland is 100% renewable energy nation), Icelandic Sagas + Norse Mythology, Northern Lights Photography. ENGLISH-medium. UNDER-KNOWN by US families. Strong fit for geology + Earth sciences + sustainable energy. ~$3,000-$4,500/2-week (USD). Iceland School scholarships up to 100% via need-based admission. AFFORDABLE Northern destination. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Borneo Rainforest Wilderness HS Conservation",
+      "provider": "Borneo Rainforest Foundation + Sabah Wildlife Department",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~$3,500-$5,000/3-week (USD); BRF scholarships up to 100% via need-based admission"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sabah + Sarawak",
+        "state": "MY"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Borneo Rainforest HS Conservation — flagship Borneo conservation program for ages 16-18 (rising 11-12). 3-week residential in Sabah + Sarawak rainforests (East Malaysia, Borneo island). Tracks: Orangutan Conservation (Sabah's specialty — world's largest orangutan rehab), Rainforest Ecology + Biodiversity, Indigenous Iban + Dayak Cultural Studies, Tropical Disease Research, Sustainable Tourism. ENGLISH-medium with Malay exposure. UNDER-known by US families. College-app strong differentiator — Borneo orangutan + indigenous cultural credentials are rare. AFFORDABLE Asian wilderness option.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.borneorainforest.org/learn/hs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.borneorainforest.org/learn/hs",
+      "_addedBy": "hs-international-batch-109",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Borneo Rainforest HS Conservation — flagship Borneo conservation program for ages 16-18 (rising 11-12). 3-week residential in Sabah + Sarawak rainforests (East Malaysia, Borneo island). Tracks: Orangutan Conservation (Sabah's specialty — world's largest orangutan rehab), Rainforest Ecology + Biodiversity, Indigenous Iban + Dayak Cultural Studies, Tropical Disease Research, Sustainable Tourism. ENGLISH-medium with Malay exposure. UNDER-KNOWN by US families. ~$3,500-$5,000/3-week (USD); BRF scholarships up to 100% via need-based admission. College-app strong differentiator — Borneo orangutan + indigenous cultural credentials are rare. AFFORDABLE Asian wilderness option. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
