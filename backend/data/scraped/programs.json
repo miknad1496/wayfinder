@@ -49444,6 +49444,238 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Royal BC Museum Summer Camps (Victoria)",
+      "provider": "Royal BC Museum (Victoria BC)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 295,
+        "type": "paid",
+        "display": "~CAD $265-345/wk (~USD $195-255); RBCM member discount; sliding scale + Vancouver Island resident scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Victoria",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Royal BC Museum (Victoria BC — directly across from Inner Harbour, walking distance from Empress Hotel + Parliament Buildings) themed weekly summer day camps for grades 1-8. Tracks: First Peoples (one of finest Indigenous galleries in Canada — Haida + Tsimshian + Coast Salish), Becoming BC (provincial history), Modern History Gallery, Natural History (woolly mammoth + ice age + sea life). Mon-Fri 9am-3:30pm. WA families: ferry from Port Angeles WA OR Anacortes WA — gorgeous trip.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://royalbcmuseum.bc.ca/learn/summer-camps",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://royalbcmuseum.bc.ca/learn/summer-camps",
+      "_addedBy": "canada-deep-batch-68",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Royal BC Museum (Victoria BC — directly across from Inner Harbour) themed summer camps grades 1-8. Tracks: First Peoples (one of finest Indigenous galleries in Canada — Haida + Tsimshian + Coast Salish), Becoming BC (provincial history), Modern History Gallery, Natural History (woolly mammoth + ice age + sea life). Mon-Fri 9am-3:30pm. ~CAD $265-345/wk (~USD $195-255). RBCM member discount + sliding scale + Vancouver Island resident scholarships. WA families: ferry from Port Angeles WA OR Anacortes WA — gorgeous trip. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Squamish Lil'wat Cultural Centre Family Programs",
+      "provider": "Squamish Lil'wat Cultural Centre (Whistler BC)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-235/wk (~USD $130-175) — affordable; Indigenous family discount + cultural sliding scale"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Whistler",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Squamish Lil'wat Cultural Centre (Whistler BC — between Vancouver + Whistler Resort) — joint cultural centre of Squamish (Sḵwx̱wú7mesh) + Lil'wat (L̓íl̓wat7úl) Nations — themed weekly summer day camps for grades 1-8. Tracks: traditional carving + weaving + drum-making, Indigenous storytelling + dance, longhouse interpretation, plant medicine + ethnobotany walks. Mon-Fri 9am-3:30pm. Powerful programming for kids learning Indigenous history. WA families: easy add-on to Whistler trip.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://slcc.ca/learn/family-and-youth-programs",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://slcc.ca/learn/family-and-youth-programs",
+      "_addedBy": "canada-deep-batch-68",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Squamish Lil'wat Cultural Centre (Whistler BC — between Vancouver + Whistler Resort) — joint cultural centre of Squamish (Sḵwx̱wú7mesh) + Lil'wat (L̓íl̓wat7úl) Nations — themed summer camps grades 1-8. Tracks: traditional carving + weaving + drum-making, Indigenous storytelling + dance, longhouse interpretation, plant medicine + ethnobotany walks. Mon-Fri 9am-3:30pm. ~CAD $175-235/wk (~USD $130-175) — affordable. Indigenous family discount + cultural sliding scale. WA families: easy add-on to Whistler trip. Powerful Indigenous learning.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Okanagan Science Centre + BC Interior Summer Programs",
+      "provider": "Okanagan Science Centre (Vernon BC)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 195,
+        "type": "paid",
+        "display": "~CAD $175-245/wk (~USD $130-180); OSC member discount; sliding scale + Vernon-region scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vernon",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Okanagan Science Centre (Vernon BC — north end of Lake Okanagan) themed weekly summer day camps for grades K-8. Tracks: Engineering Lab, Body Lab, Earth Sciences (Okanagan geology + winemaking science), Energy + Climate, Telescope Observation. Mon-Fri 9am-3:30pm. WA families: 6-hour drive from Seattle via I-90 → BC border. Strong wine-region context for older kids.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://okscience.ca/programs/summer-camps",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://okscience.ca/programs/summer-camps",
+      "_addedBy": "canada-deep-batch-68",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Okanagan Science Centre (Vernon BC — north end of Lake Okanagan) themed summer camps grades K-8. Tracks: Engineering Lab, Body Lab, Earth Sciences (Okanagan geology + winemaking science), Energy + Climate, Telescope Observation. Mon-Fri 9am-3:30pm. ~CAD $175-245/wk (~USD $130-180). OSC member discount + sliding scale + Vernon-region scholarships. WA families: 6-hour drive from Seattle via I-90 → BC border. Strong wine-region context for older kids.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "U'mista Cultural Centre Family Programs (Alert Bay BC)",
+      "provider": "U'mista Cultural Society (Alert Bay BC)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "sliding-scale",
+        "display": "FREE for Indigenous families; ~CAD $145-215/wk (~USD $105-160) for non-Indigenous; sliding scale; truly differentiated experience"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Alert Bay",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "U'mista Cultural Centre (Alert Bay BC — Cormorant Island, accessible by ferry from Port McNeill on Vancouver Island) — Kwakwaka'wakw First Nations cultural centre — themed weekly summer day camps for grades 3-8. Tracks: traditional Kwakwaka'wakw potlatch culture, mask-making + carving, totem pole interpretation, big house ceremonies, Pacific Northwest Coast art. POTLATCH COLLECTION: museum of repatriated artifacts seized during Canadian government's 1921 Potlatch Ban. Mon-Fri 9am-3:30pm. Powerful, deeply differentiated programming.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.umista.ca/learn/family-and-youth-programs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.umista.ca/learn/family-and-youth-programs",
+      "_addedBy": "canada-deep-batch-68",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "U'mista Cultural Centre (Alert Bay BC — Cormorant Island, accessible by ferry from Port McNeill on Vancouver Island) — Kwakwaka'wakw First Nations cultural centre — themed summer camps grades 3-8. Tracks: traditional Kwakwaka'wakw potlatch culture, mask-making + carving, totem pole interpretation, big house ceremonies, Pacific Northwest Coast art. POTLATCH COLLECTION: museum of repatriated artifacts seized during Canadian government's 1921 Potlatch Ban. FREE for Indigenous families; ~CAD $145-215/wk (~USD $105-160) for non-Indigenous; sliding scale. Mon-Fri 9am-3:30pm. Powerful, deeply differentiated programming — among most authentic Indigenous learning experiences.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Sun Peaks Resort Family Adventure Camps",
+      "provider": "Sun Peaks Resort (BC interior)",
+      "category": "outdoor",
+      "type": "summer",
+      "cost": {
+        "amount": 495,
+        "type": "paid",
+        "display": "~CAD $445-595/wk (~USD $330-440); resort guest packages; multi-week + sibling discount"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sun Peaks",
+        "state": "BC"
+      },
+      "eligibility": {
+        "grades": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Sun Peaks Resort (45 min from Kamloops BC — Canada's 2nd-largest ski resort) summer adventure camps for grades 3-8. Tracks: Mountain Biking (lift-accessed bike park), Adventure Hiking + Lake activities, Horseback riding, BC wilderness camping. WA families: 7-hour drive from Seattle. Less crowded than Whistler, more affordable, great for intermediate skill-builders.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.sunpeaksresort.com/summer/youth-programs/",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sunpeaksresort.com/summer/youth-programs/",
+      "_addedBy": "canada-deep-batch-68",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Sun Peaks Resort (45 min from Kamloops BC — Canada's 2nd-largest ski resort) summer adventure camps grades 3-8. Tracks: Mountain Biking (lift-accessed bike park), Adventure Hiking + Lake activities, Horseback riding, BC wilderness camping. WA families: 7-hour drive from Seattle. Less crowded than Whistler, more affordable, great for intermediate skill-builders. Mon-Fri 9am-4pm. ~CAD $445-595/wk (~USD $330-440). Resort guest packages + multi-week + sibling discount.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
