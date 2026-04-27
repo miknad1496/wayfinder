@@ -50542,6 +50542,220 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "NYT Learning Network (free K-12 daily content)",
+      "provider": "The New York Times",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — The Learning Network is free for all K-12 students + educators globally"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "NYT Learning Network — 100% FREE NYT-curated K-12 educational resources accessible globally. Tracks: Lesson plans (NYT articles → classroom-ready content), Student Opinion + Picture Prompts (writing exercises), STEM in the News, Daily 4-min weekly news quiz, contests (Editorial, Op-Ed, Personal Narrative). Strong fit for kids interested in journalism, writing, current events. Excellent prep for HS Common App essay writing. Year-round.",
+      "deadline": "Year-round; freely accessible",
+      "url": "https://www.nytimes.com/section/learning",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.nytimes.com/section/learning",
+      "_addedBy": "us-national-corporate-batch-73",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "NYT Learning Network — 100% FREE NYT-curated K-12 educational resources accessible globally. Tracks: Lesson plans (NYT articles → classroom-ready content), Student Opinion + Picture Prompts (writing exercises), STEM in the News, Daily 4-min weekly news quiz, contests (Editorial, Op-Ed, Personal Narrative — kids can submit and get published). Strong fit for journalism + writing + current-events kids. Excellent prep for HS Common App essay writing. Year-round; freely accessible.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Time for Kids Online Subscription + Curriculum",
+      "provider": "Time USA / Time Magazine",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 40,
+        "type": "paid",
+        "display": "$40-99/yr family or class subscription; FREE Time for Kids Library access for many topics; school subscriptions free for Title I"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "Multiple"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "Time for Kids — Time Magazine's K-6 weekly news + content magazine. Tracks: Time for Kids Magazine (weekly grade-leveled news), Vocab Wars + Build Your Vocabulary games, Critical Thinking Polls, Behind the Story (journalism craft for kids). $40-99/yr for family/class subscription; many features free. Strong fit for early-elementary kids learning to read + interpret news. Excellent civic literacy foundation.",
+      "deadline": "Year-round; rolling subscription",
+      "url": "https://www.timeforkids.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.timeforkids.com",
+      "_addedBy": "us-national-corporate-batch-73",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Time for Kids — Time Magazine's K-6 weekly news + content magazine. Tracks: Time for Kids Magazine (weekly grade-leveled news), Vocab Wars + Build Your Vocabulary games, Critical Thinking Polls, Behind the Story (journalism craft). $40-99/yr family/class subscription; many features free; school subscriptions free for Title I schools. Year-round. Strong fit for early-elementary kids learning to read + interpret news. Civic literacy foundation.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Smithsonian Distance Learning (free national)",
+      "provider": "Smithsonian Institution",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — Smithsonian Distance Learning offers virtual programs nationwide; donor-funded"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Smithsonian Distance Learning — 100% FREE virtual programs for K-12 nationwide + globally. Tracks: SI Spark!Lab Live (live-streamed maker programs), Smithsonian Learning Lab (1M+ digital resources), Skype-A-Scientist programs, Air + Space + Natural History + Anthropology + Art live virtual field trips. 21 Smithsonian museums collaborate. Schedule grade-specific programs in advance via Smithsonian Education portal.",
+      "deadline": "Year-round; book live programs 1-2 weeks ahead",
+      "url": "https://learninglab.si.edu",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://learninglab.si.edu",
+      "_addedBy": "us-national-corporate-batch-73",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "Smithsonian Distance Learning — 100% FREE virtual programs for K-12 nationwide + globally. Tracks: SI Spark!Lab Live (live-streamed maker programs), Smithsonian Learning Lab (1M+ digital resources), Skype-A-Scientist programs, Air + Space + Natural History + Anthropology + Art live virtual field trips. 21 Smithsonian museums collaborate. Schedule grade-specific programs in advance via Smithsonian Education portal. Year-round; book live programs 1-2 wks ahead.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "JetBlue Foundation Soar With Reading + Beyond Books Camps",
+      "provider": "JetBlue Foundation",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — JetBlue Foundation has distributed $4M+ in books + literacy programs to underserved kids"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Online + select 50+ US cities",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      "description": "JetBlue Foundation Soar With Reading — distributes FREE books to underserved kids ages 0-12 (Pre-K through grade 6) at 50+ US cities annually. Vending machines installed in low-income communities containing free books. Kids can take a book any time. Plus virtual storytime, author visits, summer reading camps. Vastly under-known program — most parents in target communities don't realize it exists. Apply via local JetBlue Foundation partner OR check Soar With Reading map.",
+      "deadline": "Year-round; book vending machines available continuously",
+      "url": "https://www.jetblueforgood.com/learn/soar-with-reading",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.jetblueforgood.com/learn/soar-with-reading",
+      "_addedBy": "us-national-corporate-batch-73",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "JetBlue Foundation Soar With Reading — distributes FREE books to underserved kids ages 0-12 (Pre-K through grade 6) at 50+ US cities annually. Vending machines installed in low-income communities containing free books. Kids can take a book any time. Plus virtual storytime, author visits, summer reading camps. VASTLY UNDER-KNOWN program — most parents in target communities don't realize it exists. Apply via local JetBlue Foundation partner OR check Soar With Reading map. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "AT&T The Achievery (free K-12 video learning)",
+      "provider": "AT&T / Warner Bros. Discovery / The Achievery",
+      "category": "academic-enrichment",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — AT&T-funded K-12 video-based learning platform; no income test"
+      },
+      "format": "remote",
+      "location": {
+        "city": "Online",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "AT&T The Achievery — 100% FREE K-12 video-based learning platform launched 2022. Partners with major Hollywood studios (Warner Bros, HBO, NASA, Sesame Workshop) to create grade-leveled educational videos. Tracks: Math + Science + ELA + Social Studies + Computer Science + Career Exploration. Easy 5-15 minute videos with related lessons + activities. Strong fit for screen-positive kids who learn best through visual media. Year-round.",
+      "deadline": "Year-round; sign up anytime",
+      "url": "https://achievery.com",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://achievery.com",
+      "_addedBy": "us-national-corporate-batch-73",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "AT&T The Achievery — 100% FREE K-12 video-based learning platform launched 2022. Partners with major Hollywood studios (Warner Bros, HBO, NASA, Sesame Workshop) to create grade-leveled educational videos. Tracks: Math + Science + ELA + Social Studies + CS + Career Exploration. Easy 5-15 minute videos with related lessons + activities. Strong fit for screen-positive kids who learn best through visual media. Year-round; sign up anytime.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
