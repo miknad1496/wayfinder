@@ -61839,6 +61839,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "BIMM Music Institute London + Berlin + Manchester HS Summer",
+      "provider": "BIMM (British and Irish Modern Music Institute)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~£2,295-£3,295/2-week (USD $2,985-4,285); BIMM scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London + Berlin + Manchester + Brighton",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "BIMM HS Summer — BIMM (Europe's #1 modern music college, ranked top-5 globally for contemporary music, alma mater of George Ezra + Tom Odell + The 1975 + James Bay) for ages 16-18 (rising 11-12). 2-week residential — kids choose BIMM London OR Berlin OR Manchester OR Brighton campus. Tracks: Songwriting + Performance, Music Production + Audio Engineering, Music Business + Industry, DJ + Electronic Music (Berlin specialty), Music Marketing + Social Media. ENGLISH-medium. Pipeline to BIMM undergrad. Differentiation vs LIPA — BIMM more contemporary/pop, LIPA more theatrical. Strong fit for kids interested in pop/rock/electronic careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.bimm.ac.uk/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.bimm.ac.uk/learn/hs-summer",
+      "_addedBy": "hs-international-batch-129",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "BIMM HS Summer — BIMM (Europe's #1 modern music college, ranked top-5 globally for contemporary music, alma mater of George Ezra + Tom Odell + The 1975 + James Bay) for ages 16-18 (rising 11-12). 2-week residential — kids choose BIMM London OR Berlin OR Manchester OR Brighton campus. Tracks: Songwriting + Performance, Music Production + Audio Engineering, Music Business + Industry, DJ + Electronic Music (Berlin specialty), Music Marketing + Social Media. ENGLISH-medium. ~£2,295-£3,295/2-week (USD $2,985-4,285). BIMM scholarships for international students. Pipeline to BIMM undergrad. Differentiation vs LIPA — BIMM more contemporary/pop, LIPA more theatrical. Strong fit for kids interested in pop/rock/electronic careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "LIPA Modern Music HS Summer (Liverpool — McCartney's school)",
+      "provider": "Liverpool Institute for Performing Arts (LIPA)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2795,
+        "type": "paid",
+        "display": "~£2,295-£3,495/2-week (USD $2,985-4,545); LIPA scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Liverpool",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "LIPA Modern Music HS Summer — LIPA (founded 1996 by Sir Paul McCartney in Beatles' alma mater school building, ranked top-10 UK contemporary music) for ages 16-18 (rising 11-12). 2-week residential at LIPA Liverpool campus. Tracks: Songwriting + McCartney's Songwriting Method (LIPA's specialty — Sir Paul still visits + teaches occasionally), Music Production + Audio Tech, Live Sound Engineering, Music Theatre + West End Music, Beatles + Liverpool Music Heritage. ENGLISH-medium. SELECTIVE — audition required. Pipeline to LIPA undergrad. UNIQUE Beatles + McCartney pedagogy lineage. College-app strong differentiator.",
+      "deadline": "Apply Mar-May; selective; audition required",
+      "url": "https://www.lipa.ac.uk/learn/modern-music-hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.lipa.ac.uk/learn/modern-music-hs-summer",
+      "_addedBy": "hs-international-batch-129",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "LIPA Modern Music HS Summer — LIPA (founded 1996 by Sir Paul McCartney in Beatles' alma mater school building, ranked top-10 UK contemporary music) for ages 16-18 (rising 11-12). 2-week residential at LIPA Liverpool campus. Tracks: Songwriting + McCartney's Songwriting Method (LIPA's specialty — Sir Paul still visits + teaches occasionally), Music Production + Audio Tech, Live Sound Engineering, Music Theatre + West End Music, Beatles + Liverpool Music Heritage. ENGLISH-medium. SELECTIVE — audition required. ~£2,295-£3,495/2-week (USD $2,985-4,545). LIPA scholarships for international students. Pipeline to LIPA undergrad. UNIQUE Beatles + McCartney pedagogy lineage. College-app strong differentiator. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "SAE Institute International HS Music Production Summer",
+      "provider": "SAE Institute (50+ campuses globally)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~$1,800-$2,800/2-week (USD); SAE scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "50+ global cities incl. London + Berlin + Sydney + NYC",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "SAE Institute International HS Music Production Summer — SAE (the world's largest creative media school, 50+ campuses across 27 countries, founded 1976) for ages 16-18 (rising 11-12). 2-week residential — kids choose any SAE campus globally (London, Berlin, Sydney, NYC, Singapore, Auckland, Madrid, Geneva, Mexico City, more). Tracks: Music Production (SAE specialty — Pro Tools certification), Audio Engineering, Live Sound, Electronic Music + DJing, Music Business. ENGLISH-medium. AFFORDABLE option. UNIQUE: kids can choose ANY SAE campus globally — extreme flexibility. Pipeline to SAE undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.sae.edu/learn/hs-music-production",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sae.edu/learn/hs-music-production",
+      "_addedBy": "hs-international-batch-129",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "SAE Institute International HS Music Production Summer — SAE (the world's largest creative media school, 50+ campuses across 27 countries, founded 1976) for ages 16-18 (rising 11-12). 2-week residential — kids choose any SAE campus globally (London, Berlin, Sydney, NYC, Singapore, Auckland, Madrid, Geneva, Mexico City, more). Tracks: Music Production (SAE specialty — Pro Tools certification), Audio Engineering, Live Sound, Electronic Music + DJing, Music Business. ENGLISH-medium. ~$1,800-$2,800/2-week (USD). SAE scholarships for international students. AFFORDABLE option. UNIQUE: kids can choose ANY SAE campus globally — extreme flexibility. Pipeline to SAE undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Point Blank Music School London HS Production Summer",
+      "provider": "Point Blank Music School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~£1,995-£2,995/2-week (USD $2,595-3,895); Point Blank scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London (additional campuses LA + Mumbai + Online)",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Point Blank Music School London HS Production Summer — Point Blank (UK's #1 electronic music + production school, founded 1994, alma mater of Patrick Topping + Jess Glynne + Goldie associates) for ages 16-18 (rising 11-12). 2-week residential at Point Blank London Hoxton campus. Tracks: Electronic Music Production (Point Blank specialty — Ableton Live + Logic Pro mastery), DJing + Mixing, Music Business, Sound Design + Synthesis, Mastering Engineering. ENGLISH-medium. AFFORDABLE option vs BIMM. Strong fit for kids interested in electronic/dance music + producer careers. Pipeline to Point Blank undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.pointblankmusicschool.com/learn/hs-production",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.pointblankmusicschool.com/learn/hs-production",
+      "_addedBy": "hs-international-batch-129",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Point Blank Music School London HS Production Summer — Point Blank (UK's #1 electronic music + production school, founded 1994, alma mater of Patrick Topping + Jess Glynne + Goldie associates) for ages 16-18 (rising 11-12). 2-week residential at Point Blank London Hoxton campus. Tracks: Electronic Music Production (Point Blank specialty — Ableton Live + Logic Pro mastery), DJing + Mixing, Music Business, Sound Design + Synthesis, Mastering Engineering. ENGLISH-medium. ~£1,995-£2,995/2-week (USD $2,595-3,895). Point Blank scholarships for international students. AFFORDABLE option vs BIMM. Strong fit for electronic/dance music + producer careers. Pipeline to Point Blank undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Codarts Rotterdam HS Music Summer (Netherlands)",
+      "provider": "Codarts University of the Arts",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/2-week (USD $1,950-2,705); Codarts scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rotterdam",
+        "state": "NL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Codarts Rotterdam HS Music Summer — Codarts (Netherlands' premier performing arts university, ranked top-50 globally for jazz + circus arts, founded 2000) for ages 16-18 (rising 11-12). 2-week residential at Codarts Rotterdam campus. Tracks: Jazz + Improvisation (Codarts specialty — Netherlands has Europe's most respected jazz program), Pop + Indie Music, Latin Music + World Music (Codarts has unique world music focus), Music Theatre, Circus Arts (Codarts is one of Europe's only circus arts universities). ENGLISH-medium. AFFORDABLE Dutch option. UNDER-known by US families. Pipeline to Codarts undergrad. Strong fit for kids interested in jazz + world music careers.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.codarts.nl/learn/hs-music-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.codarts.nl/learn/hs-music-summer",
+      "_addedBy": "hs-international-batch-129",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Codarts Rotterdam HS Music Summer — Codarts (Netherlands' premier performing arts university, ranked top-50 globally for jazz + circus arts, founded 2000) for ages 16-18 (rising 11-12). 2-week residential at Codarts Rotterdam campus. Tracks: Jazz + Improvisation (Codarts specialty — Netherlands has Europe's most respected jazz program), Pop + Indie Music, Latin Music + World Music (Codarts has unique world music focus), Music Theatre, Circus Arts (Codarts is one of Europe's only circus arts universities). ENGLISH-medium. ~€1,795-€2,495/2-week (USD $1,950-2,705). Codarts scholarships for international students. AFFORDABLE Dutch option. UNDER-KNOWN by US families. Pipeline to Codarts undergrad. Strong fit for jazz + world music careers. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
