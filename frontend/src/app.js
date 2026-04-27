@@ -6784,3 +6784,171 @@ document.addEventListener('click', function(e) {
   });
 })();
 
+
+/* === REVAMP V2: PROGRAMS BUILD MY STRATEGY UI === */
+// "Build My College-App Strategy" form + handler for the Programs modal.
+// Injects a button + collapsible form at the top of the modal on first open,
+// then submits to /api/programs/strategy and renders structured plan +
+// calibration callout in the results area.
+(function _wfInitProgramsStrategy() {
+  if (typeof document === 'undefined') return;
+
+  const STRATEGY_HTML = `
+    <div id="prgStrategyForm" style="display:none;background:linear-gradient(135deg,#fff,#f0f9ff);border:1px solid #cfdcef;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+      <h3 style="margin:0 0 10px;font-size:15px;color:#1e3a8a;">✨ Build My College-App Strategy</h3>
+      <p style="margin:0 0 12px;font-size:12px;color:#475569;">Tell us about the student. We'll suggest 2-3 high-impact programs + a narrative angle, calibrated to 2026 deadlines + tiers.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px;">
+        <select id="prgStratGrade" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="9">9th grade</option>
+          <option value="10">10th grade</option>
+          <option value="11" selected>11th grade</option>
+          <option value="12">12th grade</option>
+        </select>
+        <input type="text" id="prgStratGpa" placeholder="GPA (optional)" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+        <input type="text" id="prgStratSat" placeholder="SAT/ACT (optional)" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+        <select id="prgStratTier" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="reach">Reach schools (Top-25)</option>
+          <option value="mix" selected>Mix of reach + match</option>
+          <option value="match">Match schools (top-100)</option>
+          <option value="safety">Safety + state flagships</option>
+        </select>
+        <select id="prgStratBudget" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="free">FREE programs only</option>
+          <option value="low">&lt;$2,000 total</option>
+          <option value="mid" selected>$2,000–5,000 total</option>
+          <option value="high">$5,000+ OK</option>
+          <option value="flexible">Flexible</option>
+        </select>
+        <input type="text" id="prgStratLocation" placeholder="State / metro (e.g. WA, Seattle)" style="padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;">
+      </div>
+      <input type="text" id="prgStratMajor" placeholder="Intended major / passion area (e.g. CS + math, marine biology, business)" style="width:100%;padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:8px;box-sizing:border-box;">
+      <textarea id="prgStratEcs" rows="2" placeholder="Current commitments / ECs (clubs, sports, volunteering, jobs, ongoing projects)" style="width:100%;padding:8px 10px;border:1px solid #cfdcef;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button id="prgStratBuildBtn" style="flex:1;min-width:160px;padding:10px 16px;border:0;background:#1e40af;color:#fff;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Build my strategy ✨</button>
+        <button id="prgStratCancelBtn" style="padding:10px 14px;border:1px solid #cfdcef;background:#fff;color:#64748b;border-radius:6px;cursor:pointer;font-size:13px;">Cancel</button>
+      </div>
+      <div id="prgStratResult" style="margin-top:14px;"></div>
+    </div>
+  `;
+
+  const TOGGLE_BTN_HTML = `<button id="prgOpenStrategyBtn" type="button" style="margin-bottom:12px;padding:10px 16px;background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border:0;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;box-shadow:0 1px 3px rgba(30,64,175,0.25);">✨ Build My College-App Strategy</button>`;
+
+  function ensureInjected() {
+    const modal = document.getElementById('programsModal');
+    if (!modal) return false;
+    if (document.getElementById('prgStrategyForm')) return true;
+    const filters = modal.querySelector('#programsFilters');
+    if (!filters || !filters.parentNode) return false;
+    // Insert toggle button + form BEFORE filters
+    const wrap = document.createElement('div');
+    wrap.innerHTML = TOGGLE_BTN_HTML + STRATEGY_HTML;
+    while (wrap.firstChild) filters.parentNode.insertBefore(wrap.firstChild, filters);
+    return true;
+  }
+
+  function renderStrategyResult(data) {
+    const result = document.getElementById('prgStratResult');
+    if (!result) return;
+    const p = (data && data.plan) || {};
+    const tierBadge = (t) => {
+      const tier = String(t || '').trim();
+      const colors = { '1': ['#fee2e2', '#991b1b'], '2': ['#fef3c7', '#92400e'], '3': ['#dbeafe', '#1e40af'], '4': ['#f1f5f9', '#475569'] };
+      const c = colors[tier] || colors['4'];
+      return tier ? `<span style="background:${c[0]};color:${c[1]};padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Tier ${tier}</span>` : '';
+    };
+    const diversifying = (p.diversifyingRecommendations || []).map(r => `
+      <div style="border-left:3px solid #2563eb;padding:10px 14px;margin-bottom:8px;background:#fff;border-radius:0 6px 6px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;">
+          <div style="font-weight:600;font-size:13px;color:#1e3a8a;">${_esc(r.name || '')}</div>
+          ${tierBadge(r.tier)}
+        </div>
+        <p style="margin:4px 0 6px;font-size:12.5px;color:#334155;line-height:1.45;">${_esc(r.rationale || '')}</p>
+        ${r.deadline ? `<p style="margin:4px 0 0;font-size:11px;color:#64748b;"><strong>Deadline:</strong> ${_esc(r.deadline)}</p>` : ''}
+      </div>
+    `).join('');
+    const watchOuts = (p.watchOuts || []).map(w => `<li style="font-size:12.5px;color:#854d0e;margin-bottom:4px;">${_esc(w)}</li>`).join('');
+    result.innerHTML = `
+      <div style="background:#ddf4ff;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #0969da;">
+        <p style="margin:0;font-size:13px;color:#0a3069;"><strong>Strategy summary:</strong> ${_esc(p.summary || '')}</p>
+      </div>
+      ${data.calibrationInsight ? `
+        <div style="background:#fef3c7;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #d97706;">
+          <p style="margin:0 0 4px;font-size:11px;color:#92400e;font-weight:600;">📍 2026 calibration for THIS student</p>
+          <p style="margin:0;font-size:12.5px;color:#854d0e;line-height:1.5;">${_esc(data.calibrationInsight)}</p>
+        </div>` : ''}
+      ${p.differentiationThesis ? `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <h4 style="margin:0 0 4px;font-size:13px;color:#1e3a8a;">🎯 Differentiation thesis</h4>
+          <p style="margin:0;font-size:12.5px;color:#334155;line-height:1.5;">${_esc(p.differentiationThesis)}</p>
+        </div>` : ''}
+      ${p.anchorRecommendation ? `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;">
+            <h4 style="margin:0;font-size:13px;color:#1e3a8a;">⚓ Anchor commitment — ${_esc(p.anchorRecommendation.name || '')}</h4>
+            ${tierBadge(p.anchorRecommendation.tier)}
+          </div>
+          <p style="margin:4px 0 6px;font-size:12.5px;color:#334155;line-height:1.45;">${_esc(p.anchorRecommendation.rationale || '')}</p>
+          ${p.anchorRecommendation.deadline ? `<p style="margin:4px 0 0;font-size:11px;color:#64748b;"><strong>Deadline:</strong> ${_esc(p.anchorRecommendation.deadline)}</p>` : ''}
+        </div>` : ''}
+      ${diversifying ? `<h4 style="margin:12px 0 6px;font-size:13px;color:#1f2328;">🎯 Diversifying picks</h4>${diversifying}` : ''}
+      ${p.narrativeNote ? `<p style="margin:10px 0;font-size:12.5px;color:#15803d;background:#f0fff4;padding:10px 12px;border-radius:6px;border-left:3px solid #22c55e;line-height:1.5;"><strong>📝 Narrative note:</strong> ${_esc(p.narrativeNote)}</p>` : ''}
+      ${watchOuts ? `<div style="margin-top:12px;"><h4 style="margin:0 0 4px;font-size:12.5px;color:#854d0e;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
+      ${p.nextStep ? `<div style="margin-top:12px;background:#1e3a8a;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
+      <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated strategy — verify program deadlines + details directly.')}</p>
+    `;
+  }
+
+  async function buildStrategy() {
+    const result = document.getElementById('prgStratResult');
+    if (!result) return;
+    const grade = document.getElementById('prgStratGrade')?.value || '11';
+    const gpa = document.getElementById('prgStratGpa')?.value?.trim();
+    const satScore = document.getElementById('prgStratSat')?.value?.trim();
+    const targetTier = document.getElementById('prgStratTier')?.value || 'mix';
+    const budget = document.getElementById('prgStratBudget')?.value || 'mid';
+    const location = document.getElementById('prgStratLocation')?.value?.trim();
+    const intendedMajor = document.getElementById('prgStratMajor')?.value?.trim();
+    const currentECs = document.getElementById('prgStratEcs')?.value?.trim();
+    result.innerHTML = '<p style="color:#94a3b8;padding:12px;">✨ Building your strategy... (10-30 sec — AI is warming up)</p>';
+    try {
+      const res = await fetch(`${API_BASE}/programs/strategy`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+        body: JSON.stringify({ grade, gpa, satScore, targetTier, budget, location, intendedMajor, currentECs }),
+      });
+      const data = await res.json();
+      if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
+      renderStrategyResult(data);
+    } catch (e) {
+      result.innerHTML = `<p style="color:#cf222e;padding:12px;">Strategy failed: ${_esc(e.message)}</p>`;
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target) return;
+    // Re-attempt injection any time programs modal might have rendered
+    if (e.target.closest && e.target.closest('[data-tool="programs"], #programsBtn, .tool-button, .sidebar-tool-btn')) {
+      setTimeout(ensureInjected, 100);
+    }
+    if (e.target.id === 'prgOpenStrategyBtn') {
+      ensureInjected();
+      const form = document.getElementById('prgStrategyForm');
+      if (form) form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+    if (e.target.id === 'prgStratCancelBtn') {
+      const form = document.getElementById('prgStrategyForm');
+      if (form) form.style.display = 'none';
+    }
+    if (e.target.id === 'prgStratBuildBtn') {
+      buildStrategy();
+    }
+  });
+  // Also attempt injection on DOMContentLoaded for cases where the modal's
+  // filters are already in DOM at page-load.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureInjected);
+  } else {
+    setTimeout(ensureInjected, 200);
+  }
+})();
+
