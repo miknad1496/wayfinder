@@ -1839,7 +1839,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.metroparent.com/parenting/camps/steam-summer-camps-metro-detroit/"
+      "_source": "https://www.metroparent.com/parenting/camps/steam-summer-camps-metro-detroit/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "The Henry Ford Museum (Dearborn, MI) — themed summer day camps for grades K-8. Themes leverage the museum's collections: industrial history, transportation engineering, innovation challenges (Edison, Ford, Wright), agricultural innovation (Greenfield Village). 1-week sessions Mon-Fri 9am-4pm. ~$300-500/wk; member discount 10-15%; need-based aid via museum education foundation. Sessions fill spring; member registration opens earlier than general public. thehenryford.org/education/summer-camps.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Michigan Science Center Summer Camps",
@@ -1890,7 +1899,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.oaklandcountymoms.com/academic-stem-summer-camps-metro-detroit-94612/"
+      "_source": "https://www.oaklandcountymoms.com/academic-stem-summer-camps-metro-detroit-94612/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Michigan Science Center (Detroit) STEM-focused weekly day camps for grades K-8. Themes: chemistry experiments, robotics + coding, space science, life sciences. Mon-Fri 9am-4pm; before/after care available. ~$275-425/wk; member discount; need-based aid available. Sessions fill spring; popular weeks (early July, mid-Aug) sell out by April. mi-sci.org/summer-camps.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Michigan Tech Summer Youth Programs",
@@ -1939,7 +1957,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.mtu.edu/syp/"
+      "_source": "https://www.mtu.edu/syp/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-21",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Michigan Tech (Houghton, MI — Upper Peninsula) summer programs for grades 6-11. Tracks include 1-week Discovery (grade 6-8) + 1-week Explorations (grade 9-11) + 2-week Technology Foundations (grade 9-12). Residential or commuter options. ~$800-2,500 per week residential; $400-1,500 commuter. Need-based aid + diversity scholarships. Selective admission for older tracks. Apply by May 1 for priority round. youthprograms.mtu.edu.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "EMU Engage K-12 Camp Programs",
@@ -1995,7 +2022,16 @@
       "region": "Midwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.emich.edu/engage/academic/k-1-camp/index.php"
+      "_source": "https://www.emich.edu/engage/academic/k-1-camp/index.php",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Eastern Michigan University (Ypsilanti, MI) hosts dozens of summer day + residential camps for K-12 across multiple departments: STEM (engineering, computer science, math), arts (theater, music, visual), sports, leadership. Day camp pricing typically $250-500/wk; residential $700-1,500/wk. Some camps faculty-led; others run by external partners using EMU facilities. emich.edu/engage/k-12-camps.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NYLF Explore STEM (Middle School)",
@@ -2258,7 +2294,13 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://washingtonstem.org/"
+      "_source": "https://washingtonstem.org/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Washington STEM is a statewide nonprofit advocacy + funder organization, NOT a direct K-12 program. Funds 10 regional STEM Networks (Seattle, Eastside, Tacoma-Pierce, Spokane, Olympic, etc.) that coordinate STEM enrichment programs at participating schools + community orgs. For families: find your regional Network via washingtonstem.org/networks to access local programs (often free or sliding scale). Year-round; partner orgs run their own enrollments. Strong fit for educators + community-org leads looking for partnerships, not directly enrollment-facing for individual families.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Seattle Public Schools Expanded Learning Summer",
