@@ -48294,6 +48294,243 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Camp Sunshine (Maine, families with seriously ill children)",
+      "provider": "Camp Sunshine (Casco, Maine)",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted families — no income test; covers travel + lodging + meals + medical care"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Casco",
+        "state": "ME"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Camp Sunshine (Casco, Maine — on Sebago Lake) — 100% FREE for families of children with life-threatening illnesses (cancer, kidney disease, heart conditions, brain tumors, and more). Diagnosis-specific weekly sessions (e.g., one week for pediatric cancer families, another for kidney disease). Whole-family programs (parents + siblings + patient all attend). Founded 1984; serves 300+ families annually. Application requires medical referral.",
+      "deadline": "Apply year-round via medical referral; sessions throughout year",
+      "url": "https://www.campsunshine.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.campsunshine.org",
+      "_addedBy": "specialty-batch-63",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Camp Sunshine (Casco, Maine — on Sebago Lake) — 100% FREE for families of children with life-threatening illnesses (cancer, kidney disease, heart conditions, brain tumors, etc.). Diagnosis-specific weekly sessions. WHOLE-FAMILY programs (parents + siblings + patient all attend). Covers travel + lodging + meals + medical care. Founded 1984; serves 300+ families annually. Apply year-round via medical referral. Weekly sessions throughout year, summer is busy.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Camp Twin Lakes (Georgia, kids with serious illness/disability)",
+      "provider": "Camp Twin Lakes",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted campers — no income test; partner-org-funded model"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Rutledge",
+        "state": "GA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Camp Twin Lakes (Rutledge GA + Winder GA + Will-A-Way at Atlanta) — 100% FREE for kids with serious illnesses (cancer, hemophilia, cystic fibrosis, sickle cell, type 1 diabetes, autism, more). Partners with 60+ medical/disability nonprofits to host disease-specific or condition-specific weeks. Full medical staff on-site. SeriousFun Children's Network member (Paul Newman's camp network). Application via partner org typically.",
+      "deadline": "Apply via partner org Jan-March for summer",
+      "url": "https://www.camptwinlakes.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.camptwinlakes.org",
+      "_addedBy": "specialty-batch-63",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Camp Twin Lakes (Rutledge GA + Winder GA + Will-A-Way at Atlanta) — 100% FREE for kids with serious illnesses (cancer, hemophilia, cystic fibrosis, sickle cell, type 1 diabetes, autism, more). Partners with 60+ medical/disability nonprofits to host disease-specific or condition-specific weeks. Full medical staff on-site. SeriousFun Children's Network member (Paul Newman's camp network). Apply via partner org Jan-March for summer.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Hole in the Wall Gang Camp (Connecticut, Paul Newman's flagship)",
+      "provider": "The Hole in the Wall Gang Camp",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted campers — no income test; donor-funded; Paul Newman's flagship SeriousFun camp"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Ashford",
+        "state": "CT"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "The Hole in the Wall Gang Camp (Ashford CT, founded 1988 by Paul Newman) — 100% FREE for kids with serious illnesses + their families. Disease-specific summer sessions (cancer, sickle cell, hemophilia, etc.) + Family Weekends + Hospital Outreach Programs. 300+ acres in northeastern CT. Founding member of SeriousFun Children's Network (Newman's global network of 30+ camps). Full medical staff. Application via partner hospital/org.",
+      "deadline": "Apply year-round via partner hospital/medical org",
+      "url": "https://www.holeinthewallgang.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.holeinthewallgang.org",
+      "_addedBy": "specialty-batch-63",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "The Hole in the Wall Gang Camp (Ashford CT, founded 1988 by Paul Newman) — 100% FREE for kids with serious illnesses + their families. Disease-specific summer sessions (cancer, sickle cell, hemophilia, etc.) + Family Weekends + Hospital Outreach Programs. 300+ acres NE CT. FOUNDING member of SeriousFun Children's Network (Newman's global network of 30+ camps). Full medical staff. Apply year-round via partner hospital/medical org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Camp Boggy Creek (Florida, kids with chronic illness)",
+      "provider": "Camp Boggy Creek",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted campers — no income test; SeriousFun Children's Network member"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Eustis",
+        "state": "FL"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Camp Boggy Creek (Eustis FL, founded 1996 by Paul Newman + General Norman Schwarzkopf) — 100% FREE for kids with chronic + life-threatening illnesses + their families. Disease-specific weeks + Family Retreat Weekends. 232-acre campus in central Florida. SeriousFun Children's Network member. Full medical staff. Apply via partner medical institution. Florida Hospital Foundation a major partner.",
+      "deadline": "Apply year-round via partner medical institution",
+      "url": "https://www.boggycreek.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.boggycreek.org",
+      "_addedBy": "specialty-batch-63",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Camp Boggy Creek (Eustis FL, founded 1996 by Paul Newman + General Norman Schwarzkopf) — 100% FREE for kids with chronic + life-threatening illnesses + their families. Disease-specific weeks + Family Retreat Weekends. 232-acre campus central Florida. SeriousFun Children's Network member. Full medical staff. Apply year-round via partner medical institution. Florida Hospital Foundation major partner.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Roundup River Ranch (Colorado, kids with serious illness)",
+      "provider": "Roundup River Ranch",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for accepted campers — no income test; SeriousFun Children's Network member"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Gypsum",
+        "state": "CO"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Roundup River Ranch (Gypsum CO, near Beaver Creek + Vail — Rocky Mountains setting at 6,200 ft elevation) — 100% FREE for kids with serious illnesses (cancer, blood disorders, neurological, immune deficiency, more). Disease-specific weekly summer sessions + Family Weekends + School Year Programs. 70-acre ranch + Eagle River. SeriousFun Children's Network member. Full medical staff. Apply via partner hospital.",
+      "deadline": "Apply year-round via partner hospital/medical org",
+      "url": "https://www.roundupriverranch.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.roundupriverranch.org",
+      "_addedBy": "specialty-batch-63",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Roundup River Ranch (Gypsum CO, near Beaver Creek + Vail — Rocky Mountains setting at 6,200 ft elevation) — 100% FREE for kids with serious illnesses (cancer, blood disorders, neurological, immune deficiency, more). Disease-specific weekly summer sessions + Family Weekends + School Year Programs. 70-acre ranch + Eagle River. SeriousFun Children's Network member. Full medical staff. Apply year-round via partner hospital/medical org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
