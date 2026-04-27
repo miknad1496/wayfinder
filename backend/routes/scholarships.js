@@ -14,6 +14,9 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken, canAccess } from '../services/auth.js';
+/* === REVAMP V2: SCHOLARSHIPS-STRATEGY IMPORTS === */
+import Anthropic from '@anthropic-ai/sdk';
+import { chatSLM, isSLMAvailable } from '../services/slm.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -195,6 +198,242 @@ router.get('/stats', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/* === REVAMP V2: SCHOLARSHIPS-STRATEGY === */
+let _claudeClientScholarships = null;
+function _getClaudeSchol() {
+  if (_claudeClientScholarships) return _claudeClientScholarships;
+  if (!process.env.ANTHROPIC_API_KEY) return null;
+  _claudeClientScholarships = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  return _claudeClientScholarships;
+}
+
+async function _scholLLMCall({ systemPrompt, userPrompt, slmMaxTokens, haikuMaxTokens }) {
+  let response;
+  let mode = 'slm';
+  if (isSLMAvailable()) {
+    try {
+      response = await chatSLM([
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+      ], { maxTokens: slmMaxTokens });
+    } catch (e) {
+      console.warn('[scholarships/strategy] SLM failed, falling back to Haiku:', e.message);
+      response = null;
+    }
+  }
+  if (!response) {
+    mode = 'haiku';
+    const claude = _getClaudeSchol();
+    if (!claude) throw new Error('LLM not configured');
+    const r = await claude.messages.create({
+      model: process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001',
+      max_tokens: haikuMaxTokens,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+    });
+    response = { text: r.content?.[0]?.text || '', tokensUsed: (r.usage?.input_tokens || 0) + (r.usage?.output_tokens || 0) };
+  }
+  return { ...response, mode };
+}
+
+function _firstBalancedJsonSchol(text) {
+  if (!text) return null;
+  let cleaned = String(text).trim();
+  const fenceMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+  if (fenceMatch) cleaned = fenceMatch[1];
+  const start = cleaned.indexOf('{');
+  if (start < 0) return null;
+  let depth = 0, inString = false, escape = false;
+  for (let i = start; i < cleaned.length; i++) {
+    const ch = cleaned[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (ch === '{') depth++;
+    else if (ch === '}') { depth--; if (depth === 0) return cleaned.slice(start, i + 1); }
+  }
+  return null;
+}
+
+const _SCHOL_2026_INTEL = `
+=== 2026 SCHOLARSHIP LANDSCAPE INTEL ===
+
+[STRATEGY FUNDAMENTALS]
+- State + regional pools have SMALLEST applicant counts → BEST effort:reward ratio. Always apply to every state/regional one you qualify for.
+- Application format = applicant filter. Essay / portfolio / video apps have HIGH effort threshold = LOWER competition. "Application-only" (no extra creative work) is MOST competitive — everyone applies easily.
+- Sub-$1K scholarships are the easiest absolute wins (low applicant counts).
+- $1K-5K is the sweet spot for effort:reward ratio.
+- $20K+ are highly competitive — apply but don't bet your strategy on them.
+- Most aid is NON-OVERLAPPING. Apply to every kind of pool: federal, state, employer, demographic, merit, community foundation.
+
+[DEMOGRAPHIC-TARGETED FUNDING TIERS (apply to ALL you qualify for)]
+- BIPOC / Black: Coca-Cola Scholars, UNCF, Jackie Robinson Foundation, Ron Brown Scholars, Gates Millennium (closed but successor programs continue)
+- Hispanic/Latino: HSF (Hispanic Scholarship Fund), HHF Youth Awards, AABE (American Association of Blacks in Energy + variations), Cafe Bustelo Latino Scholarships
+- AAPI: APIA Scholars, Korean American Scholarship Foundation, Sikh American Scholarship, Vietnamese American Scholarship
+- Native: AISES (American Indian Science & Engineering Society), Native Forward Scholars Fund, Cobell, Truman D. Picard
+- LGBTQ+: Point Foundation, Pride Foundation, PFLAG (some chapters offer)
+- Disabled: AAHD Frederick J. Krause Scholarship, NFB (National Federation of the Blind), AG Bell College Scholarship, Microsoft Disability Scholarship
+- Foster / Kinship: Foster Care to Success, Casey Family Scholars, Ready to Succeed, state-specific foster scholarship programs
+- First-gen: I'm First!, ScholarMatch, QuestBridge Scholars (rising 11+; National College Match round)
+- Low-income (income-tested): Coca-Cola, Jack Kent Cooke Foundation Young Scholars, Posse Foundation
+- Military: Marine Corps Scholarship Foundation, AMVETS, Pat Tillman Foundation (HS dependents)
+- Religious: Knights of Columbus, B'nai B'rith, Catholic Knights, BCSF (Buddhist), specific denominational scholarships
+
+[FORMAT-SPECIFIC STRATEGY]
+- ESSAY scholarships: invest 1 strong essay; tweak per prompt. Coca-Cola Scholars, Elks MVS, Davidson Fellows.
+- VIDEO/PORTFOLIO: requires technical skill — fewer applicants. NCAC Cheryl Frasier Memorial, AXA Achievement, James W. Foley Legacy, Adobe Creativity.
+- ESSAY+ESSAY+ESSAY (multiple essay prompts): seriously high effort, very low competition. Cooke Foundation, Cargill, Stockholm Junior Water Prize.
+- APPLICATION-ONLY: easy to apply, MOST competitive. Stick to local/state versions where applicant pool is smaller (your school district, your county foundation).
+
+[HOW TO PRIORITIZE]
+1. State-restricted scholarships (your state) — apply to ALL eligible
+2. Regional/county/local scholarships — apply to ALL eligible
+3. Demographic-targeted (NATIONAL) for any/all categories you qualify
+4. State financial aid programs (Cal Grant, NY TAP, Texas Grant, WA College Grant) — required FAFSA + state form
+5. Employer parental scholarships (your parents' employers — ALWAYS ASK)
+6. Faith-based scholarships through your community
+7. Merit-only (national high-bar) — Coca-Cola, Cooke, Davidson, Regeneron — these are bonus shots, not strategy
+
+[2026 DEADLINE PATTERNS]
+- Fall (Sep-Dec): national big-name applications open + close. Coca-Cola Scholars, QuestBridge College Match, Posse, Gates.
+- Winter (Jan-Feb): state grant deadlines (Cal Grant Mar 2 priority, etc.), demographic scholarships peak.
+- Spring (Mar-May): regional + community foundation pools, smaller dollar amounts but high hit rate.
+- Summer (Jun-Aug): post-decision scholarships open after college acceptance — your accepted college's financial aid office is your best resource here.
+
+[WATCHOUTS]
+- Scholarship "matching" services charging fees (FastWeb is FREE; Scholarship Owl free; College Confidential free) — anything wanting to charge you to FIND scholarships is suspect.
+- Application-fee scholarships ("send $25 to apply for our $5,000 scholarship") = SCAM. Real foundations don't charge.
+- "Scholarship guaranteed" outfits ("we'll find you scholarships you're guaranteed to win") = SCAM.
+- Scholarship lottery/sweepstakes = NOT scholarships.
+- Verify legitimacy via state financial aid office or college access nonprofit (Access First, Scholarship America, Posse) before applying.
+
+[STACKING PRINCIPLE]
+- Cooke Foundation Young Scholars + employer FSA + state CCDF + camp's own need-based aid CAN stack to fully cover a $3K summer.
+- College acceptance + state grant + Pell Grant + private scholarship + work-study CAN stack to cover full COA.
+- AOs only see external scholarships if you self-report to your college's financial aid office. Some colleges reduce institutional aid $-for-$ when you bring outside scholarships ("scholarship displacement"). Check your college's policy BEFORE applying for big-dollar national scholarships if you're already receiving institutional need-based aid.
+=== /2026 INTEL ===
+`;
+
+router.post('/strategy', async (req, res) => {
+  try {
+    const {
+      grade = '11',
+      gpa = '',
+      satScore = '',
+      intendedMajor = '',
+      state = '',
+      demographics = [],            // ['first-gen', 'low-income', 'bipoc', 'lgbtq', 'disabled', etc.]
+      faithCommunity = '',          // optional: 'catholic', 'jewish', 'muslim', 'buddhist', etc.
+      strengthFormat = 'essay',     // 'essay' | 'portfolio' | 'video' | 'application-only' | 'mixed'
+      timePerWeek = '5-10',         // '<5' | '5-10' | '10-20' | '20+'
+      targetAwardSize = 'mixed',    // 'small' (<$1k) | 'medium' ($1-5k) | 'large' ($5-20k) | 'big' ($20k+) | 'mixed'
+      currentSituation = '',        // free-text — special situations (asylum status, parent unemployed, etc.)
+      familyIncomeContext = '',     // optional, voluntary
+    } = req.body || {};
+
+    if (!grade) return res.status(400).json({ error: 'grade required' });
+
+    const demoList = Array.isArray(demographics) && demographics.length ? demographics.join(', ') : 'none specified';
+    const formatDesc = strengthFormat === 'essay' ? 'strong writer — essay scholarships preferred'
+      : strengthFormat === 'portfolio' ? 'portfolio-builder — visual/coding/creative work to show'
+      : strengthFormat === 'video' ? 'video-storyteller — comfortable on camera'
+      : strengthFormat === 'application-only' ? 'application-only (highest competition)'
+      : 'mixed strengths';
+    const sizeDesc = targetAwardSize === 'small' ? 'sub-$1K (highest hit rate; easiest)'
+      : targetAwardSize === 'medium' ? '$1-5K (sweet spot for effort:reward)'
+      : targetAwardSize === 'large' ? '$5-20K (need to be selective and high-quality)'
+      : targetAwardSize === 'big' ? '$20K+ (most competitive; bonus shots only)'
+      : 'mixed across all sizes';
+
+    const planSystemPrompt = `You are Wayfinder. A high school student / parent is using the Scholarships module to ask "what scholarships should we target this year for max ROI on time spent?"
+
+CALIBRATION FOR HS SCHOLARSHIP STRATEGY:
+- Honor the student's actual eligibility — NEVER suggest scholarships they don't qualify for.
+- Tier picks honestly: state/regional pools have BIG hit rates; national merit awards are bonus shots, not strategy.
+- ALWAYS surface demographic-targeted scholarships if any apply (first-gen, low-income, BIPOC, LGBTQ+, disabled, foster, military, faith) — don't shy away from these to be "neutral"; they're real money the student is leaving on the table if they don't apply.
+- Match scholarships to STRENGTHS (essay-writer → essay scholarships; portfolio-builder → portfolio scholarships).
+- Recommend 5-8 specific scholarships across tiers (state/regional/national/demographic).
+- Include 1-2 employer-parental scholarship reminders ("ask your parents' employer + their union, if applicable").
+- DON'T recommend application-fee scholarships; if any sound suspicious to you, FLAG in watchouts.
+- For 11th grade: focus on senior-year applications; for 9th-10th: emphasize habit-building (apply to small local ones now to practice).
+
+Your output must be a JSON object:
+{
+  "summary": "1-2 sentence framing of the scholarship strategy for THIS student",
+  "differentiationThesis": "what makes this student's scholarship app distinctive",
+  "anchorRecommendation": { "tier": "state|regional|national|demographic", "name": "...", "rationale": "...", "deadline": "...", "amount": "...", "format": "essay|video|portfolio|application-only" },
+  "diversifyingRecommendations": [
+    { "tier": "state|regional|national|demographic", "name": "...", "rationale": "why this fits THIS student", "deadline": "...", "amount": "...", "format": "essay|video|portfolio|application-only" }
+  ],
+  "stackingNote": "how these scholarships combine + interact with FAFSA/college aid",
+  "watchOuts": ["1-2 specific things to avoid (scams, displacement, etc.)"],
+  "nextStep": "concrete first action this week"
+}
+
+ONLY return JSON. No preamble, no markdown.`;
+
+    const calibrationSystemPrompt = `You are Wayfinder. A high school student is building a scholarship strategy. Use the curated 2026 scholarship landscape below to write 3-5 tight sentences of student-specific calibration: cite specific scholarship names that match their profile, note application format strategies, and the ONE most important next move. NO generic advice — be 2026-specific and concrete.
+
+${_SCHOL_2026_INTEL}
+
+Output: 3-5 sentences of plain text. No headers, no bullet lists, no JSON, no preamble.`;
+
+    const userPrompt = `Build a scholarship strategy for:
+- Current grade: ${grade}
+- GPA: ${gpa || 'unspecified'}
+- SAT/ACT: ${satScore || 'unspecified'}
+- Intended major: ${intendedMajor || 'unspecified'}
+- State: ${state || 'unspecified'}
+- Demographics (voluntarily shared): ${demoList}
+- Faith/community: ${faithCommunity || 'none specified'}
+- Strength format: ${formatDesc}
+- Time per week: ${timePerWeek} hrs
+- Target award size: ${sizeDesc}
+- Special situation: ${currentSituation || 'none specified'}
+- Family income context: ${familyIncomeContext || 'not specified'}
+
+What 5-8 scholarships should they target? Calibrate honestly.`;
+
+    const [planRes, calRes] = await Promise.allSettled([
+      _scholLLMCall({ systemPrompt: planSystemPrompt, userPrompt, slmMaxTokens: 1400, haikuMaxTokens: 1700 }),
+      _scholLLMCall({ systemPrompt: calibrationSystemPrompt, userPrompt, slmMaxTokens: 500, haikuMaxTokens: 600 }),
+    ]);
+
+    if (planRes.status !== 'fulfilled') {
+      console.error('[scholarships/strategy] plan call failed:', planRes.reason?.message);
+      return res.status(502).json({ error: 'Strategy generation failed: ' + (planRes.reason?.message || 'unknown') });
+    }
+    const planResponse = planRes.value;
+    const calResponse = calRes.status === 'fulfilled' ? calRes.value : null;
+    if (!calResponse) console.warn('[scholarships/strategy] calibration call failed (proceeding):', calRes.reason?.message);
+
+    let plan = {};
+    try {
+      const candidate = _firstBalancedJsonSchol(planResponse.text);
+      plan = candidate ? JSON.parse(candidate) : {};
+    } catch (e) {
+      console.warn('[scholarships/strategy] JSON parse failed; raw head:', String(planResponse.text || '').slice(0, 300));
+      return res.status(502).json({ error: 'Strategy generation returned unparseable response. Try again.' });
+    }
+
+    let calibrationInsight = '';
+    if (calResponse?.text) calibrationInsight = String(calResponse.text).trim().slice(0, 1200);
+
+    res.json({
+      plan,
+      calibrationInsight,
+      mode: planResponse.mode,
+      calibrationMode: calResponse?.mode || null,
+      tokensUsed: (planResponse.tokensUsed || 0) + (calResponse?.tokensUsed || 0),
+      disclaimer: 'AI-generated scholarship strategy. Verify each scholarship deadline + eligibility directly. Use the Scholarships filter (scope=state) to surface state pools you may have missed.',
+    });
+  } catch (err) {
+    console.error('[scholarships/strategy] error:', err.message);
+    res.status(500).json({ error: 'Strategy generation failed: ' + err.message });
   }
 });
 

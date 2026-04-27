@@ -7141,3 +7141,200 @@ document.addEventListener('click', function(e) {
   }
 })();
 
+
+/* === REVAMP V2: SCHOLARSHIPS BUILD MY STACK UI === */
+// "Build My Scholarship Stack" form + handler for the Scholarships modal.
+// Two-call architecture (plan + calibration). Demographic-eligibility aware.
+(function _wfInitScholarshipsStrategy() {
+  if (typeof document === 'undefined') return;
+
+  const STACK_HTML = `
+    <div id="schStrategyForm" style="display:none;background:linear-gradient(135deg,#fff,#fefce8);border:1px solid #fef08a;border-radius:10px;padding:14px 16px;margin-bottom:14px;">
+      <h3 style="margin:0 0 10px;font-size:15px;color:#854d0e;">💰 Build My Scholarship Stack</h3>
+      <p style="margin:0 0 12px;font-size:12px;color:#475569;">Tell us about the student. We'll build a stack of 5-8 scholarships matched to their grade, eligibility, strengths, and target award size — calibrated to 2026 deadlines.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:10px;">
+        <select id="schStratGrade" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="9">9th grade</option>
+          <option value="10">10th grade</option>
+          <option value="11" selected>11th grade</option>
+          <option value="12">12th grade</option>
+        </select>
+        <input type="text" id="schStratGpa" placeholder="GPA (optional)" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+        <input type="text" id="schStratSat" placeholder="SAT/ACT (optional)" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+        <input type="text" id="schStratState" placeholder="State (e.g. WA)" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+        <select id="schStratFormat" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="essay">Essay-strong writer</option>
+          <option value="portfolio">Portfolio (art, code, creative)</option>
+          <option value="video">Video / on-camera</option>
+          <option value="application-only">Application-only (basic info)</option>
+          <option value="mixed" selected>Mixed strengths</option>
+        </select>
+        <select id="schStratSize" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="small">&lt;$1K (easiest hits)</option>
+          <option value="medium" selected>$1-5K (sweet spot)</option>
+          <option value="large">$5-20K (selective)</option>
+          <option value="big">$20K+ (long shots)</option>
+          <option value="mixed">Mixed across all sizes</option>
+        </select>
+        <select id="schStratTime" style="padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;">
+          <option value="<5">&lt;5 hrs/wk</option>
+          <option value="5-10" selected>5-10 hrs/wk</option>
+          <option value="10-20">10-20 hrs/wk</option>
+          <option value="20+">20+ hrs/wk</option>
+        </select>
+      </div>
+      <input type="text" id="schStratMajor" placeholder="Intended major / passion area" style="width:100%;padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:8px;box-sizing:border-box;">
+      <div style="margin-bottom:8px;">
+        <p style="margin:0 0 4px;font-size:11px;color:#854d0e;font-weight:600;">Demographic eligibility (optional, helps us surface targeted scholarships):</p>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="first-gen" style="margin-right:4px;">First-gen</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="low-income" style="margin-right:4px;">Low-income</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="bipoc" style="margin-right:4px;">BIPOC</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="hispanic" style="margin-right:4px;">Hispanic/Latino</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="aapi" style="margin-right:4px;">AAPI</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="native" style="margin-right:4px;">Native</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="lgbtq" style="margin-right:4px;">LGBTQ+</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="disabled" style="margin-right:4px;">Disabled</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="foster" style="margin-right:4px;">Foster/kinship</label>
+          <label style="font-size:11px;cursor:pointer;padding:4px 8px;border:1px solid #fef08a;border-radius:6px;background:#fff;"><input type="checkbox" class="schStratDemo" value="military" style="margin-right:4px;">Military family</label>
+        </div>
+      </div>
+      <input type="text" id="schStratFaith" placeholder="Faith community (optional, e.g. Catholic, Jewish)" style="width:100%;padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:8px;box-sizing:border-box;">
+      <textarea id="schStratSituation" rows="2" placeholder="Special situation (e.g., parent unemployed, immigration status, recent loss) — helps surface emergency + ad hoc funds" style="width:100%;padding:8px 10px;border:1px solid #fef08a;border-radius:6px;font-size:13px;font-family:inherit;margin-bottom:10px;box-sizing:border-box;"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button id="schStratBuildBtn" style="flex:1;min-width:160px;padding:10px 16px;border:0;background:#854d0e;color:#fff;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;">Build my stack 💰</button>
+        <button id="schStratCancelBtn" style="padding:10px 14px;border:1px solid #fef08a;background:#fff;color:#64748b;border-radius:6px;cursor:pointer;font-size:13px;">Cancel</button>
+      </div>
+      <div id="schStratResult" style="margin-top:14px;"></div>
+    </div>
+  `;
+
+  const TOGGLE_BTN_HTML = `<button id="schOpenStrategyBtn" type="button" style="margin-bottom:12px;padding:10px 16px;background:linear-gradient(135deg,#854d0e,#eab308);color:#fff;border:0;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;box-shadow:0 1px 3px rgba(133,77,14,0.25);">💰 Build My Scholarship Stack</button>`;
+
+  function ensureInjected() {
+    const modal = document.getElementById('scholarshipsModal');
+    if (!modal) return false;
+    if (document.getElementById('schStrategyForm')) return true;
+    const filters = modal.querySelector('#scholarshipsFilters');
+    if (!filters || !filters.parentNode) return false;
+    const wrap = document.createElement('div');
+    wrap.innerHTML = TOGGLE_BTN_HTML + STACK_HTML;
+    while (wrap.firstChild) filters.parentNode.insertBefore(wrap.firstChild, filters);
+    return true;
+  }
+
+  function renderStackResult(data) {
+    const result = document.getElementById('schStratResult');
+    if (!result) return;
+    const p = (data && data.plan) || {};
+    const tierBadge = (t) => {
+      const tier = String(t || '').trim().toLowerCase();
+      const colors = {
+        'state': ['#dcfce7', '#166534'],
+        'regional': ['#fef3c7', '#92400e'],
+        'national': ['#dbeafe', '#1e40af'],
+        'demographic': ['#fce7f3', '#9d174d']
+      };
+      const c = colors[tier] || ['#f1f5f9', '#475569'];
+      return tier ? `<span style="background:${c[0]};color:${c[1]};padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;text-transform:capitalize;">${tier}</span>` : '';
+    };
+    const formatBadge = (f) => {
+      if (!f) return '';
+      const formatLabels = { 'essay': 'Essay', 'video': 'Video', 'portfolio': 'Portfolio', 'application-only': 'App-only' };
+      return `<span style="background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;font-size:11px;">${_esc(formatLabels[f] || f)}</span>`;
+    };
+    const renderItem = (r) => `
+      <div style="border-left:3px solid #eab308;padding:10px 14px;margin-bottom:8px;background:#fff;border-radius:0 6px 6px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px;flex-wrap:wrap;">
+          <div style="font-weight:600;font-size:13px;color:#854d0e;">${_esc(r.name || '')}</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;">${tierBadge(r.tier)}${formatBadge(r.format)}</div>
+        </div>
+        <p style="margin:4px 0 6px;font-size:12.5px;color:#334155;line-height:1.45;">${_esc(r.rationale || '')}</p>
+        <div style="display:flex;gap:12px;font-size:11px;color:#64748b;flex-wrap:wrap;">
+          ${r.deadline ? `<span><strong>Deadline:</strong> ${_esc(r.deadline)}</span>` : ''}
+          ${r.amount ? `<span><strong>Amount:</strong> ${_esc(r.amount)}</span>` : ''}
+        </div>
+      </div>
+    `;
+    const diversifying = (p.diversifyingRecommendations || []).map(renderItem).join('');
+    const watchOuts = (p.watchOuts || []).map(w => `<li style="font-size:12.5px;color:#9f1239;margin-bottom:4px;">${_esc(w)}</li>`).join('');
+    result.innerHTML = `
+      <div style="background:#fefce8;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #eab308;">
+        <p style="margin:0;font-size:13px;color:#854d0e;"><strong>Stack summary:</strong> ${_esc(p.summary || '')}</p>
+      </div>
+      ${data.calibrationInsight ? `
+        <div style="background:#fef3c7;padding:12px 14px;border-radius:8px;margin-bottom:12px;border-left:3px solid #d97706;">
+          <p style="margin:0 0 4px;font-size:11px;color:#92400e;font-weight:600;">📍 2026 calibration for THIS student</p>
+          <p style="margin:0;font-size:12.5px;color:#854d0e;line-height:1.5;">${_esc(data.calibrationInsight)}</p>
+        </div>` : ''}
+      ${p.differentiationThesis ? `
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:12px 14px;margin-bottom:10px;">
+          <h4 style="margin:0 0 4px;font-size:13px;color:#854d0e;">🎯 Differentiation thesis</h4>
+          <p style="margin:0;font-size:12.5px;color:#334155;line-height:1.5;">${_esc(p.differentiationThesis)}</p>
+        </div>` : ''}
+      ${p.anchorRecommendation ? `
+        <h4 style="margin:12px 0 6px;font-size:13px;color:#1f2328;">⚓ Anchor scholarship</h4>
+        ${renderItem(p.anchorRecommendation)}
+      ` : ''}
+      ${diversifying ? `<h4 style="margin:12px 0 6px;font-size:13px;color:#1f2328;">🎯 Diversifying picks</h4>${diversifying}` : ''}
+      ${p.stackingNote ? `<p style="margin:10px 0;font-size:12.5px;color:#15803d;background:#f0fff4;padding:10px 12px;border-radius:6px;border-left:3px solid #22c55e;line-height:1.5;"><strong>📝 Stacking note:</strong> ${_esc(p.stackingNote)}</p>` : ''}
+      ${watchOuts ? `<div style="margin-top:12px;background:#fff1f2;padding:10px 12px;border-radius:6px;border-left:3px solid #be123c;"><h4 style="margin:0 0 6px;font-size:12.5px;color:#9f1239;">⚠ Watch out for</h4><ul style="margin:0;padding-left:20px;">${watchOuts}</ul></div>` : ''}
+      ${p.nextStep ? `<div style="margin-top:12px;background:#854d0e;color:#fff;padding:10px 12px;border-radius:8px;"><strong>👉 Next step:</strong> ${_esc(p.nextStep)}</div>` : ''}
+      <p style="font-size:11px;color:#94a3b8;margin-top:10px;font-style:italic;">${_esc(data.disclaimer || 'AI-generated stack — verify each scholarship deadline + eligibility directly.')}</p>
+    `;
+  }
+
+  async function buildStack() {
+    const result = document.getElementById('schStratResult');
+    if (!result) return;
+    const grade = document.getElementById('schStratGrade')?.value || '11';
+    const gpa = document.getElementById('schStratGpa')?.value?.trim();
+    const satScore = document.getElementById('schStratSat')?.value?.trim();
+    const state = document.getElementById('schStratState')?.value?.trim();
+    const strengthFormat = document.getElementById('schStratFormat')?.value || 'mixed';
+    const targetAwardSize = document.getElementById('schStratSize')?.value || 'mixed';
+    const timePerWeek = document.getElementById('schStratTime')?.value || '5-10';
+    const intendedMajor = document.getElementById('schStratMajor')?.value?.trim();
+    const faithCommunity = document.getElementById('schStratFaith')?.value?.trim();
+    const currentSituation = document.getElementById('schStratSituation')?.value?.trim();
+    const demographics = Array.from(document.querySelectorAll('.schStratDemo:checked')).map(c => c.value);
+    result.innerHTML = '<p style="color:#94a3b8;padding:12px;">💰 Building your scholarship stack... (10-30 sec — AI is matching specifics)</p>';
+    try {
+      const res = await fetch(`${API_BASE}/scholarships/strategy`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+        body: JSON.stringify({ grade, gpa, satScore, state, intendedMajor, demographics, faithCommunity, strengthFormat, timePerWeek, targetAwardSize, currentSituation }),
+      });
+      const data = await res.json();
+      if (data.error) { result.innerHTML = `<p style="color:#cf222e;padding:12px;">${_esc(data.error)}</p>`; return; }
+      renderStackResult(data);
+    } catch (e) {
+      result.innerHTML = `<p style="color:#cf222e;padding:12px;">Stack build failed: ${_esc(e.message)}</p>`;
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target) return;
+    if (e.target.closest && e.target.closest('[data-tool="scholarships"], #scholarshipsBtn, #sidebarScholarships, .tool-button, .sidebar-tool-btn')) {
+      setTimeout(ensureInjected, 100);
+    }
+    if (e.target.id === 'schOpenStrategyBtn') {
+      ensureInjected();
+      const form = document.getElementById('schStrategyForm');
+      if (form) form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+    if (e.target.id === 'schStratCancelBtn') {
+      const form = document.getElementById('schStrategyForm');
+      if (form) form.style.display = 'none';
+    }
+    if (e.target.id === 'schStratBuildBtn') {
+      buildStack();
+    }
+  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureInjected);
+  } else {
+    setTimeout(ensureInjected, 200);
+  }
+})();
+
