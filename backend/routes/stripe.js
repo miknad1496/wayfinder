@@ -46,7 +46,7 @@ const IDEMPOTENCY_FILE = join(__dirname, '..', 'data', 'webhook-idempotency.json
 
 (async function loadIdempotencyFromDisk() {
   try {
-    const raw = await fsPromises.readFile(IDEMPOTENCY_FILE, 'utf8');
+    const raw = await fs.readFile(IDEMPOTENCY_FILE, 'utf8');
     let count = 0;
     for (const line of raw.split('\n')) {
       const t = line.trim();
@@ -70,7 +70,7 @@ async function markEventProcessed(eventId) {
     }
   }
   // Persist (fire-and-forget, never block webhook handling)
-  fsPromises.appendFile(IDEMPOTENCY_FILE, eventId + '\n').catch(err => {
+  fs.appendFile(IDEMPOTENCY_FILE, eventId + '\n').catch(err => {
     console.error('[stripe] idempotency persist failed:', err.message);
   });
 }
