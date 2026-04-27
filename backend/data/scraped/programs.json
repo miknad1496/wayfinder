@@ -42452,7 +42452,17 @@
       "scope": "national",
       "scholarshipAid": "Fully sponsored — $50 nominal family fee is the only cost, and many AAUW branches waive even that for families in need.",
       "registrationUrl": "https://www.aauw.org/resources/programs/tech-trek/",
-      "howToStart": "Talk to your daughter's 7th-grade math/science teacher about nomination. Then apply through your local AAUW branch — nominations typically due late winter for summer camp."
+      "howToStart": "Talk to your daughter's 7th-grade math/science teacher about nomination. Then apply through your local AAUW branch — nominations typically due late winter for summer camp.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "AAUW Tech Trek = FREE 1-week residential summer camp for rising 8th-grade girls (grades 7→8) at 14+ U.S. university campus sites (UC Davis, San Marcos, Whittier, Stanford, etc.). Hands-on STEM curriculum: engineering, computer science, biology, math. Selective application — local AAUW chapters nominate from public middle schools. Apply through your local AAUW branch (find at aauw.org/resources/programs/tech-trek/). Application typically Jan-Mar; sessions run mid-Jun – early Aug. Heavy emphasis on underrepresented + low-income girls.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     },
     {
       "name": "Camp Wonderopolis (Free Online Summer Learning)",
@@ -45077,6 +45087,194 @@
       "sessionPattern": "weekly",
       "sessions": [],
       "scheduleNotes": "Thinkery (East Austin, Mueller community) themed summer camps ages 3-10. Maker-focused tracks: BrickLab construction, Innovator's Workshop (engineering), Kitchen Lab (cooking science), Spark Shop (electronics + circuits), Art Studios. Outdoor Backyard learning space + community garden. Mon-Fri half-day or full-day. ~$385-485/wk. 15% member discount + sliding scale via Thinkery Education + Austin ISD scholarship partnership. Member reg Feb; general Mar-Apr.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Denver Museum of Nature & Science Camps",
+      "provider": "Denver Museum of Nature & Science (DMNS)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "~$385-485/wk; member discount 15%; need-based aid via DMNS Education + Title I scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "DMNS (City Park, Denver) themed weekly summer camps for grades K-8. Tracks: Dinosaurs + Paleontology (DMNS has 7 mounted dinosaur skeletons), Egyptian + Indigenous cultures (mummies + Plains Indians collection), Gates Planetarium (astronomy), Wildlife Halls (Colorado ecosystems), Discovery Zone hands-on labs. Mon-Fri 9am-3:30pm.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://www.dmns.org/learn/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.dmns.org/learn/camps/",
+      "_addedBy": "state-expansion-batch-49",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "DMNS (City Park Denver) themed summer camps K-8. Tracks: Dinosaurs + Paleontology (7 mounted dinosaur skeletons), Egyptian + Indigenous cultures (mummies + Plains Indians collection), Gates Planetarium astronomy, Wildlife Halls (CO ecosystems), Discovery Zone hands-on labs. Mon-Fri 9am-3:30pm. ~$385-485/wk. 15% member discount + need-based aid via DMNS Education + Title I scholarship pool. Member reg Jan; general Feb-March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Children's Museum of Denver Marsico Campus Summer Camps",
+      "provider": "Children's Museum of Denver",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 345,
+        "type": "paid",
+        "display": "~$295-395/wk; member discount 10%; Museums for All ($1 entry for SNAP/EBT) + Denver Public Schools partnership scholarships"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Denver",
+        "state": "CO"
+      },
+      "eligibility": {
+        "grades": [
+          "Pre-K",
+          "K",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "description": "Children's Museum of Denver (Marsico Campus, Centennial Park near downtown) themed weekly summer camps for ages 3-9. Tracks: Joy Park (outdoor climbing + water play), Adventure Forest, Box Canyon (engineering with cardboard + recycled materials), Bubbles Studio, Art Studios + Theater. Half-day or full-day Mon-Fri. Outdoor focus appropriate for high-altitude weather.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.mychildsmuseum.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.mychildsmuseum.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-49",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Children's Museum of Denver (Marsico Campus, Centennial Park near downtown) themed summer camps ages 3-9. Tracks: Joy Park (outdoor climbing + water play), Adventure Forest, Box Canyon (cardboard + recycled engineering), Bubbles Studio, Art Studios + Theater. Half-day or full-day Mon-Fri. ~$295-395/wk. 10% member discount + Museums for All ($1 entry for SNAP/EBT) + Denver Public Schools partnership scholarships. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Arizona Science Center Camps + Family Programs",
+      "provider": "Arizona Science Center (Phoenix)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 355,
+        "type": "paid",
+        "display": "~$315-395/wk; member discount 10%; sliding scale + Phoenix-resident scholarship pool"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Phoenix",
+        "state": "AZ"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "Arizona Science Center (Heritage & Science Park, downtown Phoenix) themed weekly summer camps for grades 1-8. Tracks: Forces & Motion lab, CREATE Maker Space, Body Depot (anatomy), Get Charged Up (electricity), Solarville (solar engineering — Arizona-relevant), Paleontology Lab (Arizona dino fossils). Mon-Fri 9am-3:30pm with extended care. Strong indoor focus appropriate for AZ summer heat.",
+      "deadline": "Member reg Feb; general March",
+      "url": "https://www.azscience.org/programs/camps/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.azscience.org/programs/camps/",
+      "_addedBy": "state-expansion-batch-49",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "Arizona Science Center (Heritage & Science Park, downtown Phoenix) themed summer camps grades 1-8. Tracks: Forces & Motion lab, CREATE Maker Space, Body Depot (anatomy), Get Charged Up (electricity), Solarville (solar engineering — AZ-relevant), Paleontology Lab (AZ dino fossils). Mon-Fri 9am-3:30pm + extended care. ~$315-395/wk. 10% member discount + sliding scale + Phoenix-resident scholarship pool. Indoor-focused — appropriate for AZ summer heat. Member reg Feb; general March.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "OMSI Camps + Outdoor School",
+      "provider": "OMSI (Oregon Museum of Science and Industry)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 485,
+        "type": "paid",
+        "display": "~$425-585/wk for day camps; OMSI Outdoor School residential ~$695-1,200/week + financial aid"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Portland",
+        "state": "OR"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      "description": "OMSI (Portland east side) themed weekly summer day camps for grades K-8. Tracks: Earth Science (PNW geology), Marine Biology (Coast Field Station), Engineering + Robotics, Astrobiology + Mars Lab, Forensics. PLUS OMSI Outdoor School residential programs at Hancock Field Station (central OR high desert) for grades 4-8. Outdoor School is one of the premier residential outdoor STEM camps on the West Coast.",
+      "deadline": "Member reg Jan; general Feb-March",
+      "url": "https://omsi.edu/visit/learn/camps-classes/",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://omsi.edu/visit/learn/camps-classes/",
+      "_addedBy": "state-expansion-batch-49",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [],
+      "scheduleNotes": "OMSI (Portland east side) themed summer day camps K-8. Tracks: Earth Science (PNW geology), Marine Biology (Coast Field Station), Engineering + Robotics, Astrobiology + Mars Lab, Forensics. PLUS OMSI Outdoor School residential at Hancock Field Station (central OR high desert) grades 4-8 — premier West Coast residential outdoor STEM camp. ~$425-585/wk day; ~$695-1,200/wk residential. Financial aid available. Member reg Jan; general Feb-March.",
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
