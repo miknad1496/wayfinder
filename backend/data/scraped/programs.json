@@ -37996,7 +37996,13 @@
       "scope": "national",
       "scholarshipAid": "No formal scholarship program publicly listed; 30-day money-back guarantee on all plans serves as a low-risk trial",
       "registrationUrl": "https://www.tynker.com/parents/pricing/",
-      "howToStart": "Start a Free Tynker account at tynker.com/parents — explore Hour of Code activities and free starter games before subscribing. Try the Quarterly plan ($54) first if uncertain; both Quarterly and Yearly include the full self-paced library."
+      "howToStart": "Start a Free Tynker account at tynker.com/parents — explore Hour of Code activities and free starter games before subscribing. Try the Quarterly plan ($54) first if uncertain; both Quarterly and Yearly include the full self-paced library.",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Self-paced online coding platform for K-12 students, owned by CodeHS. Game-based learning progression: drag-block (K-3) → Python + JavaScript (4-8) → real apps + AP CS Principles (9+). 100M+ kids globally. Free trial; family plan ~$20/mo or $130/yr; school plans separate. Strong fit for kids who like Minecraft, Roblox — both have Tynker integrations. Year-round; start any day. Mobile + iPad + web. tynker.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Connected Camps — Online Minecraft & Roblox Clubs",
@@ -38187,7 +38193,13 @@
       "scope": "national",
       "scholarshipAid": "Not publicly advertised; first chapter free serves as no-risk trial",
       "registrationUrl": "https://codecombat.com/play",
-      "howToStart": "Create a free CodeCombat account at codecombat.com — kids can play through Chapter 1 (Kithgard Dungeon) at zero cost. Decide on premium based on engagement level after the free chapter; classroom teachers can also sign students up for Ozaria's free first unit."
+      "howToStart": "Create a free CodeCombat account at codecombat.com — kids can play through Chapter 1 (Kithgard Dungeon) at zero cost. Decide on premium based on engagement level after the free chapter; classroom teachers can also sign students up for Ozaria's free first unit.",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Browser-based game where kids learn Python or JavaScript by typing real code commands to control characters in a fantasy RPG. Grades 4-12. Free tier covers ~80 levels (Computer Science 1); subscription $9.99/mo or $99/yr unlocks 200+ levels (CS 2-6). Strong for visual + game-loving learners; less abstract than typical coding platforms. CodeCombat AI League hosts annual coding competitions. Year-round; play anytime. codecombat.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Russian School of Mathematics (RSM) Online — Summer & Year-Round",
@@ -41735,7 +41747,13 @@
       "scholarshipAid": "No formal scholarships posted; 2-week free trial allows test-drive before commitment.",
       "registrationUrl": "https://junilearning.com/",
       "howToStart": "Visit junilearning.com, schedule a free placement/intro session, then choose subject + cadence.",
-      "dates": "Year-round 1:1 + dedicated summer academies"
+      "dates": "Year-round 1:1 + dedicated summer academies",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "1:1 online private tutoring for kids ages 7-18 in coding (Python, JavaScript, Java, web dev) + math (Singapore Math, contest math, AMC prep) + reading + writing. Stanford-trained instructors; small program, vetted teachers. ~$300-450/month for weekly 50-min sessions. Year-round + summer; flexible scheduling. Strong fit for families who want consistent personal attention vs group classes. Free trial session. junilearning.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "iCode Summer STEM & Coding Camps (National)",
@@ -42029,7 +42047,16 @@
       "scholarshipAid": "Free trial class available; periodic discount campaigns advertised on site.",
       "registrationUrl": "https://www.codingal.com/en-us/kids-teens-coding-camps/summer/",
       "howToStart": "Sign up at codingal.com, take free trial class, then enroll in matching grade-band camp.",
-      "dates": "Summer 2026 themed weeks throughout June-August"
+      "dates": "Summer 2026 themed weeks throughout June-August",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Live online small-group (1-2-on-1) coding classes for kids ages 6-18. Tracks: Scratch, Python, JavaScript, web dev, AI, ML, Minecraft modding. Indian-origin platform with global reach. Pricing: trial free; ongoing ~$20-30 per 50-min session. 1:1 plans starting ~$50/session. Summer intensive tracks Jun 8 – Aug 31, 2026, 2-4 week packages. Year-round otherwise. codingal.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NSBE SEEK (Summer Engineering Experience for Kids)",
@@ -42234,7 +42261,16 @@
       "scope": "national",
       "scholarshipAid": "Limited promo discounts (early-bird, multi-camp); no central need-based scholarship program. Multi-pay plans available.",
       "registrationUrl": "https://www.codewizardshq.com/summer/",
-      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required."
+      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required.",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Live online small-group coding camps for grades 1-12 (ages 6-18). Tracks: drag-block (Scratch) → Python + JavaScript → web dev (HTML/CSS) → modding (Minecraft, Roblox). 1-week intensive day camps Mon-Fri ~9-12 + ongoing weekly classes. ~$295-400 per week. Summer 2026 schedule Jun 15 – Aug 21. Smaller cohort sizes than Outschool — typically 4-6 students per teacher. codewizardshq.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Black Girls CODE Summer Camp 2026",
