@@ -37882,7 +37882,13 @@
       "scope": "national",
       "scholarshipAid": "100% free — no scholarship needed; no paid tier exists",
       "registrationUrl": "https://www.khanacademy.org/kids",
-      "howToStart": "Download the Khan Academy Kids app (App Store, Google Play, or Amazon Appstore) — no account required to start, but creating a parent account unlocks per-child progress tracking and a Library mode."
+      "howToStart": "Download the Khan Academy Kids app (App Store, Google Play, or Amazon Appstore) — no account required to start, but creating a parent account unlocks per-child progress tracking and a Library mode.",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE — no ads, no subscriptions, no in-app purchases. Educational app for children ages 2-8 (PreK through grade 2). 5,000+ activities + books across reading/phonics, math, social-emotional learning, creative play. Built in partnership with Stanford Graduate School of Education. Aligned with Common Core + state standards. Year-round, self-paced. Available on iOS, Android, web at khanacademy.org/kids. Existing 'deadline' field is not real — app is always available.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NASA Kids' Club & K-8 STEM Resources",
@@ -41929,7 +41935,16 @@
       "scope": "national",
       "scholarshipAid": "CTD offers need-based financial aid; eligibility based on family income. Aid applications open with summer registration.",
       "registrationUrl": "https://www.ctd.northwestern.edu/summer-programs",
-      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required."
+      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "Northwestern CTD Solstice Online Summer for academically-talented rising 4th-6th graders. Fast-paced 2-week course format (online). Topics: math, science, writing, technology, leadership, service-learning. Eligibility: CTD testing OR portfolio. ~$1,000-$1,400 per 2-week course; financial aid via Jack Kent Cooke Foundation partnership. Existing deadline May 15. Specific 2026 weekly slots not surfaced via WebSearch — typical late-June / July / early-August window.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "CodeWizardsHQ Summer Coding Camps",
@@ -42021,7 +42036,28 @@
       "scope": "national",
       "scholarshipAid": "Programs are heavily subsidized — most participants pay $0 thanks to corporate sponsorship. Apply early; selective due to high demand.",
       "registrationUrl": "https://www.wearebgc.org/summer-camp",
-      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive."
+      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive.",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [
+        {
+          "label": "Virtual Camp 1",
+          "startDate": "2026-07-07",
+          "endDate": "2026-07-09"
+        },
+        {
+          "label": "Virtual Camp 2",
+          "startDate": "2026-08-04",
+          "endDate": "2026-08-06"
+        }
+      ],
+      "scheduleNotes": "FREE / heavily subsidized — most participants pay $0 via sponsorship; nominal materials/transit fee may apply at some sites. 2026 series 'Game Design: She Won't Just Play the Game. She'll Build It' runs in 10 US cities (Atlanta, Chicago, Detroit, LA, NYC, Raleigh-Durham, Puerto Rico + 3 others) plus 2 virtual sessions: Virtual Camp 1 Jul 7-9, Virtual Camp 2 Aug 4-6. Girls ages 10-17 (rising 5th-12th). Existing deadline Jun 1. Apply at wearebgc.org/summer-camp.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "AAUW Tech Trek STEM Camp for Girls",
@@ -42897,7 +42933,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://mathkangaroo.org/mks/registration/"
+      "_source": "https://mathkangaroo.org/mks/registration/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "International annual math competition founded in France 1991, now serving 95+ countries + 6M+ students. Grades 1-12 register through school or local Math Kangaroo center. Test administered the third Thursday of March (Mar 19, 2026 for current cycle). $18 standard registration Sep 15 - Dec 31; $35 late Jan 1 - Feb 1, 2026. Top scorers receive medals + certificates; school-team Gold Pin awards. Multi-choice format, 24 problems, 75 min. Apply at mathkangaroo.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Math Olympiads for Elementary and Middle Schools (MOEMS)",
@@ -43163,7 +43205,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.chesskid.com/membership"
+      "_source": "https://www.chesskid.com/membership",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Kids' chess platform built by Chess.com — 10M+ kids, ages 5-13. FREE tier: unlimited live + slow games, basic puzzles, FunMaster Mike video series. Gold $49/yr: 800+ lessons, computer-vs-computer puzzles, longer video library, advanced opponent levels. Year-round; sign up anytime at chesskid.com. Excellent supplement for MathCounts/AMC kids since chess + competition math share pattern-recognition skills.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Prodigy Math Game (Free K-8 Adaptive Math)",
