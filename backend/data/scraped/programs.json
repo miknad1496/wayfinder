@@ -60999,6 +60999,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Charles University Prague HS Pre-University",
+      "provider": "Charles University (Univerzita Karlova)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1395,
+        "type": "paid",
+        "display": "~CZK 32,000-CZK 48,000 / USD $1,345-2,015 / 2-week; CUNI scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Prague",
+        "state": "CZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Charles University Prague HS Pre-University — Charles U (Central Europe's oldest university, founded 1348 by Holy Roman Emperor Charles IV, ranked top-300 globally) for ages 16-18 (rising 11-12). 2-week residential at Charles U Prague Old Town campus. Tracks: Central European Studies + Habsburg History, Czech + Slavic Languages, Sciences (Charles U has Czech Republic's premier medical + science programs), Cold War + Velvet Revolution Studies, Architecture + Bohemian Heritage. ENGLISH-medium primary; Czech electives. AFFORDABLE Central European option. UNDER-known by US families. Pipeline to Charles U undergrad — English-medium tracks available.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.cuni.cz/en/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.cuni.cz/en/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-125",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Charles University Prague HS Pre-University — Charles U (Central Europe's oldest university, founded 1348 by Holy Roman Emperor Charles IV, ranked top-300 globally) for ages 16-18 (rising 11-12). 2-week residential at Charles U Prague Old Town campus. Tracks: Central European Studies + Habsburg History, Czech + Slavic Languages, Sciences (Charles U has Czech Republic's premier medical + science programs), Cold War + Velvet Revolution Studies, Architecture + Bohemian Heritage. ENGLISH-medium primary; Czech electives. ~CZK 32,000-CZK 48,000 / USD $1,345-2,015 / 2-week. CUNI scholarships for international students. AFFORDABLE Central European option. UNDER-KNOWN by US families. Pipeline to Charles U undergrad — English-medium tracks available. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Warsaw HS Pre-University",
+      "provider": "University of Warsaw (Uniwersytet Warszawski)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~PLN 5,200-PLN 7,800 / USD $1,300-1,950 / 2-week; UW scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Warsaw",
+        "state": "PL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Warsaw HS Pre-University — UW (Poland's #1 university, ranked top-300 globally, founded 1816, alma mater of multiple Polish PMs + Nobel laureates Czesław Miłosz + Wisława Szymborska) for ages 16-18 (rising 11-12). 2-week residential at UW Warsaw Old Town campus. Tracks: Polish + Eastern European Studies, Holocaust + WWII History (UW has world-leading Holocaust research), Slavic Languages, Computer Science + Polish Tech (Allegro + CD Projekt heritage), Solidarity Movement + Cold War Studies. ENGLISH-medium primary; Polish electives. AFFORDABLE option. UNDER-known by US families. Pipeline to UW undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://en.uw.edu.pl/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://en.uw.edu.pl/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-125",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Warsaw HS Pre-University — UW (Poland's #1 university, ranked top-300 globally, founded 1816, alma mater of multiple Polish PMs + Nobel laureates Czesław Miłosz + Wisława Szymborska) for ages 16-18 (rising 11-12). 2-week residential at UW Warsaw Old Town campus. Tracks: Polish + Eastern European Studies, Holocaust + WWII History (UW has world-leading Holocaust research), Slavic Languages, CS + Polish Tech (Allegro + CD Projekt heritage), Solidarity Movement + Cold War Studies. ENGLISH-medium primary; Polish electives. ~PLN 5,200-PLN 7,800 / USD $1,300-1,950 / 2-week. UW scholarships for international students. AFFORDABLE option. UNDER-KNOWN by US families. Pipeline to UW undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Central European University HS Pre-University (Vienna + Budapest)",
+      "provider": "Central European University (CEU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~€1,795-€2,495/2-week (USD $1,950-2,705); CEU scholarships up to 100% via need-based; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Vienna + Budapest",
+        "state": "AT"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Central European University HS Pre-University — CEU (founded 1991 by George Soros to serve post-Soviet Central + Eastern Europe; ranked top-100 social sciences globally; HQ moved from Budapest to Vienna 2019 due to Hungarian government pressure) for ages 16-18 (rising 11-12). 2-week residential — kids choose Vienna OR Budapest campus. Tracks: International Relations + Cold War + Post-Soviet Studies, Political Science + Democracy Studies (CEU's flagship), Economics + Business, Public Policy, Jewish Studies + Holocaust History. ENGLISH-medium. SELECTIVE. CEU scholarships up to 100%. Pipeline to CEU undergrad. UNDER-applied-for despite high prestige.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.ceu.edu/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ceu.edu/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-125",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Central European University HS Pre-University — CEU (founded 1991 by George Soros to serve post-Soviet Central + Eastern Europe; ranked top-100 social sciences globally; HQ moved from Budapest to Vienna 2019 due to Hungarian government pressure) for ages 16-18 (rising 11-12). 2-week residential — kids choose Vienna OR Budapest campus. Tracks: International Relations + Cold War + Post-Soviet Studies, Political Science + Democracy Studies (CEU's flagship), Economics + Business, Public Policy, Jewish Studies + Holocaust History. ENGLISH-medium. SELECTIVE. ~€1,795-€2,495/2-week (USD $1,950-2,705). CEU scholarships up to 100%. Pipeline to CEU undergrad. UNDER-APPLIED-FOR despite high prestige. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Tartu Estonia HS Pre-University",
+      "provider": "University of Tartu (Estonia)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~€1,095-€1,795/2-week (USD $1,200-1,975); UT scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tartu",
+        "state": "EE"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Tartu Estonia HS Pre-University — UT (Estonia's #1 university, ranked top-300 globally, founded 1632 by Swedish King Gustav II Adolf) for ages 16-18 (rising 11-12). 2-week residential at UT Tartu campus. Tracks: Digital Society + e-Estonia (Estonia is the world's most digitally-advanced government — pioneered e-residency, online voting, blockchain), Computer Science + Cybersecurity (Estonia is NATO's cyber defense hub post-2007 cyberattacks), Estonian + Baltic Studies, Genomics + Biobank Research (UT has world's #1 genomic biobank), Forest + Sustainable Sciences. ENGLISH-medium. AFFORDABLE option. UNDER-known by US families. Estonia offers FREE undergraduate tuition for EU students; reduced for non-EU. Pipeline to UT undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.ut.ee/en/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ut.ee/en/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-125",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Tartu Estonia HS Pre-University — UT (Estonia's #1 university, ranked top-300 globally, founded 1632 by Swedish King Gustav II Adolf) for ages 16-18 (rising 11-12). 2-week residential at UT Tartu campus. Tracks: Digital Society + e-Estonia (Estonia is the world's most digitally-advanced government — pioneered e-residency, online voting, blockchain), CS + Cybersecurity (Estonia is NATO's cyber defense hub post-2007 cyberattacks), Estonian + Baltic Studies, Genomics + Biobank Research (UT has world's #1 genomic biobank), Forest + Sustainable Sciences. ENGLISH-medium. ~€1,095-€1,795/2-week (USD $1,200-1,975). UT scholarships for international students. AFFORDABLE option. UNDER-KNOWN by US families. Estonia offers FREE undergrad tuition for EU students; reduced for non-EU. Pipeline to UT undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Belgrade Serbia HS Pre-University",
+      "provider": "University of Belgrade (Univerzitet u Beogradu)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 995,
+        "type": "paid",
+        "display": "~RSD 95,000-RSD 145,000 / USD $880-1,345 / 2-week; UB scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Belgrade",
+        "state": "RS"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Belgrade HS Pre-University — UB (Serbia's #1 university, ranked top-500 globally, founded 1808, alma mater of Nikola Tesla + Mihajlo Pupin) for ages 16-18 (rising 11-12). 2-week residential at UB Belgrade campus. Tracks: Serbian + Balkan Studies (UB's specialty — Yugoslav post-conflict + EU accession), Tesla Engineering Heritage (UB has Tesla's preserved laboratory), Sciences (UB has Serbia's premier physics + math programs), Eastern Orthodox Theology + Architecture, Tito + Yugoslav History. ENGLISH-medium primary; Serbian electives. EXTREMELY AFFORDABLE option. UNDER-known by US families. Pipeline to UB undergrad.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.bg.ac.rs/en/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.bg.ac.rs/en/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-125",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Belgrade HS Pre-University — UB (Serbia's #1 university, ranked top-500 globally, founded 1808, alma mater of Nikola Tesla + Mihajlo Pupin) for ages 16-18 (rising 11-12). 2-week residential at UB Belgrade campus. Tracks: Serbian + Balkan Studies (UB's specialty — Yugoslav post-conflict + EU accession), Tesla Engineering Heritage (UB has Tesla's preserved laboratory), Sciences (UB has Serbia's premier physics + math programs), Eastern Orthodox Theology + Architecture, Tito + Yugoslav History. ENGLISH-medium primary; Serbian electives. ~RSD 95,000-RSD 145,000 / USD $880-1,345 / 2-week. UB scholarships for international students. EXTREMELY AFFORDABLE option. UNDER-KNOWN by US families. Pipeline to UB undergrad. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
