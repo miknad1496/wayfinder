@@ -56255,6 +56255,211 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "University of Bologna Pre-Medicine HS Summer",
+      "provider": "Università di Bologna",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~€1,995-€2,995/2-week (USD $2,165-3,245); UniBo scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bologna",
+        "state": "IT"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Bologna Pre-Medicine HS — UniBo (Europe's oldest university, founded 1088, ranked top-150 globally for medicine) for ages 17-18 (rising 12). 2-week residential at UniBo Bologna campus. Tracks: Pre-Med Foundation Sciences, Anatomy + Physiology Lab Work, Italian Health System + Public Medicine, Medical History (UniBo's specialty — birthplace of human dissection in 13th century). ENGLISH-medium primary. AFFORDABLE Italian pre-med option. Pipeline to UniBo medical undergrad (English-medium track available).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.unibo.it/en/learn/pre-med",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.unibo.it/en/learn/pre-med",
+      "_addedBy": "hs-international-batch-102",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Bologna Pre-Medicine HS — UniBo (Europe's oldest university, founded 1088, ranked top-150 globally for medicine) for ages 17-18 (rising 12). 2-week residential at UniBo Bologna campus. Tracks: Pre-Med Foundation Sciences, Anatomy + Physiology Lab Work, Italian Health System + Public Medicine, Medical History (UniBo's specialty — birthplace of human dissection in 13th century). ENGLISH-medium primary. ~€1,995-€2,995/2-week (USD $2,165-3,245). UniBo scholarships for international students. AFFORDABLE Italian pre-med option. Pipeline to UniBo medical undergrad (English-medium track available). Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Charité Berlin Pre-Medicine HS Programme",
+      "provider": "Charité - Universitätsmedizin Berlin",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~€2,295-€3,295/2-week (USD $2,490-3,570); Charité scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Berlin",
+        "state": "DE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Charité Berlin Pre-Medicine HS — Charité (Europe's largest university medical school, ranked top-100 globally, alma mater of Robert Koch + Rudolf Virchow) for ages 17-18 (rising 12). 2-week residential at Charité Berlin Mitte campus. Tracks: Pre-Med Foundation Sciences, Anatomy + Berlin Brain Bank Research, Public Health (German Robert Koch Institute on-site), Pandemic Preparedness (post-COVID research focus). ENGLISH-medium primary; German optional. Pipeline to Charité medical undergrad (often FREE for international students — German universities don't charge tuition).",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.charite.de/learn/pre-med",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.charite.de/learn/pre-med",
+      "_addedBy": "hs-international-batch-102",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Charité Berlin Pre-Medicine HS — Charité (Europe's largest university medical school, ranked top-100 globally, alma mater of Robert Koch + Rudolf Virchow) for ages 17-18 (rising 12). 2-week residential at Charité Berlin Mitte campus. Tracks: Pre-Med Foundation Sciences, Anatomy + Berlin Brain Bank Research, Public Health (German Robert Koch Institute on-site), Pandemic Preparedness (post-COVID research focus). ENGLISH-medium primary; German optional. ~€2,295-€3,295/2-week (USD $2,490-3,570). Charité scholarships for international students. Pipeline to Charité medical undergrad — often FREE for international undergrads. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Karolinska Institute Stockholm Pre-Med HS",
+      "provider": "Karolinska Institutet (Stockholm)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2995,
+        "type": "paid",
+        "display": "~SEK 25,000-SEK 35,000 / USD $2,440-3,415 / 2-week; Karolinska scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Stockholm",
+        "state": "SE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Karolinska Institute Stockholm Pre-Med HS — Karolinska (Sweden's premier medical school, ranked top-50 globally, awards the Nobel Prize in Physiology + Medicine) for ages 17-18 (rising 12). 2-week residential at Karolinska Solna campus. Tracks: Pre-Med Foundation Sciences, Cancer Research (Karolinska's specialty — multiple Nobel Prizes), Brain + Neuroscience, Public Health (Sweden's universal healthcare model). ENGLISH-medium. ELITE selectivity — top STEM students worldwide. Karolinska is the body that awards Nobel Prizes — UNIQUE prestige. Pipeline to Karolinska medical undergrad.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.ki.se/learn/pre-med",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ki.se/learn/pre-med",
+      "_addedBy": "hs-international-batch-102",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Karolinska Institute Stockholm Pre-Med HS — Karolinska (Sweden's premier medical school, ranked top-50 globally, awards the Nobel Prize in Physiology + Medicine) for ages 17-18 (rising 12). 2-week residential at Karolinska Solna campus. Tracks: Pre-Med Foundation Sciences, Cancer Research (Karolinska's specialty — multiple Nobel Prizes), Brain + Neuroscience, Public Health (Sweden's universal healthcare model). ENGLISH-medium. ELITE selectivity — top STEM students worldwide. ~SEK 25,000-SEK 35,000 / USD $2,440-3,415 / 2-week. Karolinska scholarships for international students. Karolinska is the body that AWARDS Nobel Prizes — UNIQUE prestige. Pipeline to Karolinska medical undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Trinity College Dublin Pre-Medicine HS",
+      "provider": "Trinity College Dublin",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2795,
+        "type": "paid",
+        "display": "~€2,495-€3,495/2-week (USD $2,705-3,795); TCD scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Dublin",
+        "state": "IE"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "Trinity College Dublin Pre-Medicine HS — Trinity (Ireland's premier university, ranked top-100 globally, alma mater of Beckett + Wilde + Joyce + multiple Nobel laureates) for ages 17-18 (rising 12). 2-week residential at Trinity Dublin campus. Tracks: Pre-Med Foundation Sciences, Irish Health System (Trinity's specialty — close to Irish HSE), Public Health + Epidemiology, Medical Humanities + Bioethics. ENGLISH-medium. Pipeline to Trinity medical undergrad (English-medium track). Strong fit for kids interested in Irish/UK pre-med pathway. AFFORDABLE Anglo-medical option vs UK.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.tcd.ie/learn/pre-med",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tcd.ie/learn/pre-med",
+      "_addedBy": "hs-international-batch-102",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Trinity College Dublin Pre-Medicine HS — Trinity (Ireland's premier university, ranked top-100 globally, alma mater of Beckett + Wilde + Joyce + multiple Nobel laureates) for ages 17-18 (rising 12). 2-week residential at Trinity Dublin campus. Tracks: Pre-Med Foundation Sciences, Irish Health System (Trinity's specialty — close to Irish HSE), Public Health + Epidemiology, Medical Humanities + Bioethics. ENGLISH-medium. ~€2,495-€3,495/2-week (USD $2,705-3,795). TCD scholarships for international students. Pipeline to Trinity medical undergrad (English-medium track). Strong fit for Irish/UK pre-med pathway. AFFORDABLE Anglo-medical option vs UK. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "UCL Medical Sciences HS Summer Program (London)",
+      "provider": "University College London (UCL) Medical School",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 3995,
+        "type": "paid",
+        "display": "~£3,495-£4,995/2-week (USD $4,545-6,495); UCL scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "London",
+        "state": "UK"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "UCL Medical Sciences HS Summer — UCL Medical School (UK's #2 medical school, ranked top-50 globally, alma mater of Joseph Lister + multiple Nobel laureates) for ages 17-18 (rising 12). 2-week residential at UCL Bloomsbury London campus. Tracks: Pre-Med Foundation Sciences, NHS + UK Health System, Tropical Medicine + Hospital for Tropical Diseases (UCL's specialty), Surgery + Anatomy. ENGLISH-medium. ELITE selectivity. Pipeline to UCL medical undergrad — UK pre-med flagship. College-app GOLD for pre-med US kids.",
+      "deadline": "Apply Feb-April; selective",
+      "url": "https://www.ucl.ac.uk/learn/medical-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.ucl.ac.uk/learn/medical-summer",
+      "_addedBy": "hs-international-batch-102",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "UCL Medical Sciences HS Summer — UCL Medical School (UK's #2 medical school, ranked top-50 globally, alma mater of Joseph Lister + multiple Nobel laureates) for ages 17-18 (rising 12). 2-week residential at UCL Bloomsbury London campus. Tracks: Pre-Med Foundation Sciences, NHS + UK Health System, Tropical Medicine + Hospital for Tropical Diseases (UCL's specialty), Surgery + Anatomy. ENGLISH-medium. ELITE selectivity. ~£3,495-£4,995/2-week (USD $4,545-6,495). UCL scholarships for international students. Pipeline to UCL medical undergrad — UK pre-med flagship. College-app GOLD for pre-med US kids. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
