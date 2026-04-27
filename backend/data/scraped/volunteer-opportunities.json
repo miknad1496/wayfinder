@@ -5482,6 +5482,301 @@
       "_source": "https://www.yaliberty.org",
       "_verified": true,
       "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "NAMI Walks Volunteer + NAMI on Campus HS",
+      "provider": "National Alliance on Mental Illness (NAMI)",
+      "organization": "National Alliance on Mental Illness (NAMI)",
+      "description": "NAMI has 600+ state + local affiliates with active HS volunteer programs. HS roles include NAMI Walks event coordination, NAMI on Campus HS chapter founding, mental health education outreach, and Stigma Free advocacy. Excellent for kids interested in psychology, social work, or pre-med psychiatry careers. Year-round availability with peak NAMI Walks May-Oct.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "health",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health advocacy",
+        "stigma reduction",
+        "Mental Health First Aid (over 16)",
+        "fundraising",
+        "peer support basics"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit nami.org/find-your-local-nami and contact your local affiliate. NAMI on Campus HS chapters can be started at most schools — see nami.org/oncampus. Apply Aug-Oct for school year.",
+      "_source": "https://www.nami.org/Get-Involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "JED Foundation Student Mental Health Volunteer",
+      "organization": "JED Foundation",
+      "description": "JED Foundation focuses on emotional health + suicide prevention for teens + young adults. HS volunteer roles include JED+ Comprehensive Mental Health Education campaigns at school, peer-to-peer Set To Go transition program, Mental Health Resource Center outreach, and #SeizeTheAwkward campaign ambassadorship. Strong fit for psychology-track students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "health"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health awareness",
+        "suicide prevention basics",
+        "peer mentorship",
+        "public health communication"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit jedfoundation.org/get-involved and apply to be a JED+ ambassador or Set To Go peer leader. Year-round availability.",
+      "_source": "https://jedfoundation.org/get-involved/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Active Minds Student Chapter",
+      "organization": "Active Minds",
+      "description": "Active Minds has 800+ student-led chapters across HS + colleges nationally. HS chapter members lead mental health awareness events, peer-to-peer support training, suicide prevention campaigns, and Speaker Series participation. Strong fit for psychology + public health + social work-track students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health peer support",
+        "V-A-R (Validate-Appreciate-Refer)",
+        "stigma reduction",
+        "event organizing"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit activeminds.org/start-chapter to found a chapter at your school OR find existing at activeminds.org/find-a-chapter. Apply Aug-Oct for school year.",
+      "_source": "https://www.activeminds.org",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "To Write Love On Her Arms (TWLOHA) Chapter",
+      "organization": "To Write Love On Her Arms",
+      "description": "TWLOHA focuses on hope + help for those struggling with depression, addiction, self-injury, suicide. HS volunteer roles include UChapter founding, World Suicide Prevention Day events, Heavy + Light campaign ambassadorship, and peer-to-peer hope outreach. Strong cultural fit for music + arts-oriented students (TWLOHA founded via music industry).",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "arts"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health storytelling",
+        "peer hope outreach",
+        "crisis communication basics",
+        "creative campaign design"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit twloha.com/uchapters to start a UChapter at your HS. Year-round availability with peak World Suicide Prevention Day Sep 10 + Mental Health Awareness Month May.",
+      "_source": "https://twloha.com/uchapters/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "The Trevor Project Volunteer (LGBTQ Youth Crisis)",
+      "organization": "The Trevor Project",
+      "description": "The Trevor Project provides crisis intervention + suicide prevention services to LGBTQ youth (under 25). Volunteer roles include digital crisis counselor (must be 18+, formal training), TrevorSpace community moderator (16+), peer-to-peer outreach, fundraising, and student advocacy. Strong fit for LGBTQ+ allies + future mental health professionals.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis",
+        "leadership"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "LGBTQ+ youth advocacy",
+        "crisis communication",
+        "TrevorSpace moderation",
+        "online community management"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit thetrevorproject.org/volunteer. Most direct crisis counselor roles require age 18+, but TrevorSpace moderator + ally outreach available at 16+. Year-round application.",
+      "_source": "https://www.thetrevorproject.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "RAINN (Rape, Abuse + Incest National Network) Volunteer",
+      "organization": "RAINN",
+      "description": "RAINN operates the National Sexual Assault Hotline. Volunteer roles for those 18+ include hotline support, RAINN Speakers Bureau (Survivor Storytellers), and online chat moderation. HS-aged students (16+) can volunteer with school-based prevention education campaigns + RAINN Day campus advocacy. Strong fit for pre-med, pre-law, social work students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "sexual assault prevention",
+        "hotline communication (18+)",
+        "trauma-informed care basics",
+        "Title IX awareness"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit rainn.org/volunteer-rainn. Hotline + chat counselor roles require 18+ + 50-hour training. HS-aged students can volunteer with prevention education campaigns + RAINN Day school activities.",
+      "_source": "https://www.rainn.org/volunteer-rainn",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Mental Health America (MHA) Affiliate Volunteer",
+      "organization": "Mental Health America",
+      "description": "MHA has 200+ state + local affiliates nationwide. HS volunteer roles include mental health screening event support, May Mental Health Awareness Month campaigns, peer-to-peer outreach education, and MHA's Back-To-School Toolkit distribution. Strong fit for kids considering psychology or psychiatry careers.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "health"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health screening",
+        "public health outreach",
+        "peer education",
+        "stigma reduction"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit mhanational.org/find-affiliate and contact your local MHA affiliate. Year-round availability with peak May (Mental Health Awareness Month). Apply Aug-Oct for school year.",
+      "_source": "https://www.mhanational.org/find-affiliate",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Boys Town National Hotline Support",
+      "organization": "Boys Town",
+      "description": "Boys Town operates a National Hotline (1-800-448-3000). Direct hotline counselor roles require 18+, but HS volunteer roles available include Boys Town Saving Lives Volunteer Drive coordination, Behind the Scenes administrative + event support, and Save the Date fundraising. Strong fit for pre-med + social work-track students.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis",
+        "mentorship"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "youth crisis basics",
+        "fundraising",
+        "hotline operations awareness",
+        "child welfare"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit boystown.org/volunteer. Year-round availability with peak holiday season (Nov-Dec) + spring (April).",
+      "_source": "https://www.boystown.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Crisis Text Line Counselor (18+)",
+      "organization": "Crisis Text Line",
+      "description": "Crisis Text Line provides 24/7 text-based crisis intervention. Direct counselor roles require 18+ + 30 hours training (typically college students + adults). HS-aged students 14-17 can volunteer with Crisis Text Line ambassador programs at school + summer ambassador programs. Strong fit for kids planning psychology + clinical mental health careers — pipeline to formal counselor role at 18+.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "crisis"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "remote",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "crisis communication",
+        "Crisis Text Line ambassador",
+        "de-escalation basics",
+        "youth peer support"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit crisistextline.org/become-a-volunteer. Direct counselor role at 18+. Ambassador role at 14+ — see ambassador.crisistextline.org. Year-round application.",
+      "_source": "https://www.crisistextline.org/become-a-volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Bring Change to Mind HS Chapter",
+      "organization": "Bring Change to Mind",
+      "description": "Bring Change to Mind (founded by actress Glenn Close) runs HS-specific chapters (formerly U Bring Change 2 Mind) at 400+ high schools nationally. HS chapter members lead mental health awareness campaigns, anti-stigma classroom education, and peer-to-peer mental health support. Strong fit for kids interested in psychology + advocacy careers.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "mental_health",
+        "leadership"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "mental health peer education",
+        "anti-stigma campaign design",
+        "peer support",
+        "destigmatization advocacy"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit bringchange2mind.org/learn/high-school-program to start a chapter at your HS. Apply Aug-Oct for school year programming.",
+      "_source": "https://bringchange2mind.org/learn/high-school-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
     }
   ]
 }
