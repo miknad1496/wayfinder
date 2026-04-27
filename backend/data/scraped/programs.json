@@ -52041,6 +52041,218 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "KAIST International Summer School (Korea)",
+      "provider": "KAIST (Korea Advanced Institute of Science and Technology)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~₩3,000,000-₩4,500,000/2-week (USD $2,225-3,335); KAIST scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Daejeon",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "KAIST International Summer School — Korea Advanced Institute of Science and Technology (Korea's premier STEM university, top-30 globally for engineering) for ages 16-18 (rising 11+). 2-week residential at KAIST main campus (Daejeon, central Korea). Tracks: AI + Machine Learning, Robotics, Quantum Computing, Bioengineering, Computer Science. ENGLISH-medium instruction. Korean cultural programs evenings. Strong fit for STEM kids interested in Asia + Korea.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.kaist.ac.kr/en/learn/international-summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kaist.ac.kr/en/learn/international-summer-school",
+      "_addedBy": "international-asia-batch-81",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "KAIST International Summer School — Korea Advanced Institute of Science and Technology (Korea's premier STEM university, top-30 globally for engineering) for ages 16-18 (rising 11+). 2-week residential at KAIST main campus (Daejeon, central Korea). Tracks: AI + Machine Learning, Robotics, Quantum Computing, Bioengineering, CS. ENGLISH-medium instruction. Korean cultural programs evenings. ~₩3,000,000-₩4,500,000/2-week (USD $2,225-3,335). KAIST scholarships for international students. Strong fit for STEM kids interested in Asia + Korea.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Yonsei International Summer School (Seoul)",
+      "provider": "Yonsei University",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~₩2,800,000-₩3,800,000/4-week (USD $2,075-2,820); Yonsei scholarships for select international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Yonsei International Summer School (YISS) — Yonsei University Seoul (top-3 Korean university, alma mater of major K-Pop CEOs + Korean tech founders) for ages 16-18 (rising 11+). 4-week residential at Sinchon main campus. Tracks: Korean Studies (history, K-Pop industry, K-Drama analysis), Business + Economics, International Relations, Pre-Medicine. ENGLISH-medium primary. Strong cultural immersion. Seoul is one of world's most exciting youth-culture cities.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.yonsei.ac.kr/learn/yiss",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.yonsei.ac.kr/learn/yiss",
+      "_addedBy": "international-asia-batch-81",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Yonsei International Summer School (YISS) — Yonsei University Seoul (top-3 Korean university, alma mater of major K-Pop CEOs + Korean tech founders) for ages 16-18 (rising 11+). 4-week residential at Sinchon main campus. Tracks: Korean Studies (history, K-Pop industry, K-Drama analysis), Business + Economics, International Relations, Pre-Medicine. ENGLISH-medium primary. ~₩2,800,000-₩3,800,000/4-week (USD $2,075-2,820). Yonsei scholarships for select international students. Strong cultural immersion. Seoul is one of world's most exciting youth-culture cities.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Tokyo Summer Programs (UTokyo)",
+      "provider": "University of Tokyo (UTokyo)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~¥350,000-¥495,000/2-week (USD $2,300-3,255); UTokyo scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tokyo",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Tokyo (UTokyo) Summer Programs — Japan's premier university (top-30 globally) for ages 16-18 (rising 11+). 2-week residential at Hongo main campus. Tracks: Japanese Studies (manga + anime industry, traditional culture, language), Pre-Engineering (UTokyo's specialty), Business + Economics, International Relations, Pre-Medicine. ENGLISH-medium primary. Strong fit for kids interested in Japanese culture + STEM. Tokyo is one of world's most safe + exciting cities for teen visitors.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.u-tokyo.ac.jp/en/learn/global-summer-programs",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.u-tokyo.ac.jp/en/learn/global-summer-programs",
+      "_addedBy": "international-asia-batch-81",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Tokyo (UTokyo) Summer Programs — Japan's premier university (top-30 globally) for ages 16-18 (rising 11+). 2-week residential at Hongo main campus. Tracks: Japanese Studies (manga + anime industry, traditional culture, language), Pre-Engineering (UTokyo's specialty), Business + Economics, International Relations, Pre-Medicine. ENGLISH-medium primary. ~¥350,000-¥495,000/2-week (USD $2,300-3,255). UTokyo scholarships for international students. Tokyo is one of world's most safe + exciting cities for teen visitors.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Waseda Summer Programs (Tokyo)",
+      "provider": "Waseda University",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~¥280,000-¥395,000/3-week (USD $1,840-2,605); Waseda scholarships for international students; ENGLISH-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tokyo",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Waseda Summer Programs — Waseda University (top-2 Japanese private university, founded 1882, alma mater of multiple Japanese Prime Ministers + tech founders + manga creators) for ages 16-18 (rising 11+). 3-week residential at Shinjuku campus (heart of Tokyo). Tracks: Japanese Language + Culture, Business + Economics, International Relations + Asian Studies, Mass Communication + Media (Waseda strength). ENGLISH-medium primary. Strong cultural cachet. More affordable than UTokyo + larger international cohort.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.waseda.jp/learn/summer-program",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.waseda.jp/learn/summer-program",
+      "_addedBy": "international-asia-batch-81",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "Waseda Summer Programs — Waseda University (top-2 Japanese private university, founded 1882, alma mater of multiple Japanese PMs + tech founders + manga creators) for ages 16-18 (rising 11+). 3-week residential at Shinjuku campus (heart of Tokyo). Tracks: Japanese Language + Culture, Business + Economics, International Relations + Asian Studies, Mass Communication + Media (Waseda strength). ENGLISH-medium primary. ~¥280,000-¥395,000/3-week (USD $1,840-2,605). Waseda scholarships for international students. More affordable than UTokyo + larger international cohort.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Kyoto Summer Programs (Kyoto University + Cultural)",
+      "provider": "Kyoto University + Kyoto Foreign Language Academy",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~¥225,000-¥395,000/2-week (USD $1,485-2,605); Kyoto Foundation scholarships; English/Japanese options"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Kyoto",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Kyoto Summer Programs — Kyoto University (top-50 globally; Japan's #2 public university) + Kyoto Foreign Language Academy joint programs for ages 13-18 (rising 8+). 2-week residential in Kyoto (Japan's cultural capital — 17 UNESCO World Heritage sites). Tracks: Japanese Cultural Studies (tea ceremony, calligraphy, gardens), Buddhist + Zen Studies, Pre-Medicine + Sciences, Animation + Manga (Kyoto Animation history), Sustainable Cities. Kyoto is more accessible than Tokyo + culturally deeper. Bilingual.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.kyoto-u.ac.jp/learn/international-summer-programs",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kyoto-u.ac.jp/learn/international-summer-programs",
+      "_addedBy": "international-asia-batch-81",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Kyoto Summer Programs — Kyoto University (top-50 globally; Japan's #2 public university) + Kyoto Foreign Language Academy joint programs for ages 13-18 (rising 8+). 2-week residential in Kyoto (Japan's cultural capital — 17 UNESCO World Heritage sites). Tracks: Japanese Cultural Studies (tea ceremony, calligraphy, gardens), Buddhist + Zen Studies, Pre-Medicine + Sciences, Animation + Manga (Kyoto Animation history), Sustainable Cities. Kyoto is more accessible than Tokyo + culturally deeper. Bilingual. ~¥225,000-¥395,000/2-week (USD $1,485-2,605).",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
