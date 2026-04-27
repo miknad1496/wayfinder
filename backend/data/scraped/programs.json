@@ -309,13 +309,7 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.engr.washington.edu/k12",
-      "scheduleConfidence": "window",
-      "summerWindow": null,
-      "sessionPattern": "single-day",
-      "scheduleNotes": "Annual 2-day spring event, grades 4-8, ~10,000 visitors. UW engineering students/faculty share hands-on activities. Typically late April or early May. NOT a summer program — year-round event series. See engr.washington.edu/k12.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://www.engr.washington.edu/k12"
     },
     {
       "name": "UW Engineering Academy",
@@ -693,16 +687,7 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://destinationscience.org/seattle-science-camps/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Week-long themed STEM camps across Seattle area, ~$400/wk. Multiple 2026 themes available. Hands-on science projects for elementary (K-6).",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://destinationscience.org/seattle-science-camps/"
     },
     {
       "name": "Rice University STEM-Letics Academy",
@@ -1998,16 +1983,7 @@
       "region": "National",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-pathways-to-stem",
-      "scheduleConfidence": "inferred",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-07"
-      },
-      "sessionPattern": "single-week",
-      "scheduleNotes": "Residential STEM experience for grades 3-5. Hands-on experiments, team challenges, college campus exploration. Multiple campuses nationwide. ~$1,500. Existing deadline May 15. Specific 2026 weekly campus dates not surfaced.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://www.envisionexperience.com/explore-our-programs/national-youth-leadership-forum-pathways-to-stem"
     },
     {
       "name": "Washington STEM Network Programs",
@@ -2063,13 +2039,7 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://washingtonstem.org/",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Statewide WA nonprofit. Regional STEM networks coordinate local programs, resources, career-connected learning K-12. Free. Year-round; varies by region.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://washingtonstem.org/"
     },
     {
       "name": "Seattle Public Schools Expanded Learning Summer",
@@ -2120,16 +2090,7 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.seattleschools.org/departments/expanded-learning/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-29",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Free full-day SPS summer program with academic support + enrichment 5 days/week. Priority for students scoring below 60th percentile in Math/Reading. Existing deadline May 1. Typical Jun-Aug window after SPS school year ends late June.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://www.seattleschools.org/departments/expanded-learning/"
     },
     {
       "name": "Seattle University AI for Equity Pre-College Program",
@@ -35455,16 +35416,7 @@
       "url": "https://destinationscience.org/seattle-science-camps/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://destinationscience.org/seattle-science-camps/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Hands-on science camps at multiple King County locations (Bellevue, Bothell, Mercer Island). Weekly themed camps for ages 5-11. ~$400/wk.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://destinationscience.org/seattle-science-camps/"
     },
     {
       "name": "iD Tech Camps at UW Seattle",
@@ -35590,16 +35542,7 @@
       "url": "https://launchlearning.org/summer/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://launchlearning.org/summer/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-28"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "8-10 weeks expanded learning ages 3-12 at select Launch sites across Seattle and Renton. Full day 8am-6pm. Free or low-cost STEM-enriched programming. Existing deadline May 15.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://launchlearning.org/summer/"
     },
     {
       "name": "Lavner Camps at University of Washington",
@@ -35641,16 +35584,7 @@
       "url": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/",
-      "scheduleConfidence": "inferred",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-28"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "STEM summer camps at UW campus, ages 5-14. Coding, robotics, game design, Minecraft, Roblox, science. From $799/wk. Specific 2026 weekly dates not surfaced via WebSearch.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://www.lavnercampsandprograms.com/location/seattle-wa-summer-camps-tech-camps-uw/"
     },
     {
       "name": "UW K-12 Engineering Outreach Programs",
@@ -35695,13 +35629,7 @@
       "url": "https://www.engr.washington.edu/k12",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://www.engr.washington.edu/k12",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Multiple free K-12 engineering programs run by UW College of Engineering year-round: workshops, camps, outreach events. See engr.washington.edu/k12 for current calendar.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "_source": "https://www.engr.washington.edu/k12"
     },
     {
       "name": "PacSci Camps for Curious Minds (Multiple Locations)",
@@ -37894,13 +37822,7 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high",
-      "scheduleConfidence": "verified",
-      "summerWindow": null,
-      "sessionPattern": "year-round-classes",
-      "scheduleNotes": "Beast Academy K-5 problem-solving math (online sub or print books). AoPS Online grade 5+ enrichment + MATHCOUNTS/AMC competition prep. AoPS Academy in 15 metros offers in-person camps. Beast Academy ~$15/mo subscription; AoPS courses ~$300-600/term; AoPS Academy ~$400-700/wk for in-person. Rolling year-round; summer intensives book by April.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-26"
+      "confidence": "high"
     },
     {
       "name": "Khan Academy + Khan Academy Kids (free)",
@@ -39203,7 +39125,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-01",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Week-long age-banded summer camps using AMNH collections + Hayden Planetarium + Discovery Room. Themes: paleontology, astrophysics, marine biology, natural history. Member registration February; general March-April. ~$575-650/wk. 10% member discount. Need-based aid via AMNH Education.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Exploratorium Summer Camps",
@@ -39244,7 +39176,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": "2026-02-01",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Tinkering- + maker-focused 1-week camps for ages 8-14. Build, take apart, hack, prototype using museum exhibits as inspiration. Member registration February; general March-April. ~$675-750/wk. Member discount + need-based scholarships.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Field Museum Summer Camps + Junior Curators",
@@ -39332,7 +39274,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-01",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "single-day",
+      "scheduleNotes": "Free 90-minute sessions at every Apple Store nationwide each summer. Rotating topics (Keynote animation, Procreate sketch, GarageBand music, video editing). Apple devices provided in-store. Sessions July-August; sign up via Apple's Today at Apple in late June. Ages roughly 8-12.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Best Buddies International (school + community chapters)",
@@ -39838,7 +39789,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE youth bird-focused citizen science. Christmas Bird Count for Kids Dec 14 - Jan 5; Great Backyard Bird Count Feb (family-friendly); Junior Birder programs at 500+ local Audubon chapters + nature centers year-round. Audubon Adventures K-12 curriculum ~$50 for educators.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "NOAA Planet Stewards Education Project",
@@ -39970,7 +39927,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "on-demand",
+      "scheduleNotes": "Family expeditions year-round to global field sites (Costa Rica turtles, Madagascar lemurs, Iceland climate, Caribbean reefs). 8-12 day trips. Book 6-8 months ahead. ~$2,000-3,500/wk + airfare. Need-based aid via Ignite Awards (up to 100%). Real conservation field research with scientists.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Special Olympics Unified Champion Schools",
@@ -40861,7 +40824,16 @@
       "scope": "national",
       "scholarshipAid": "Program is fully free — no tuition, no fees, materials shipped at no cost to family.",
       "registrationUrl": "https://form.jotform.com/252825002616147",
-      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free."
+      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "single-session",
+      "scheduleNotes": "FREE 3-week virtual-only summer engineering program for students rising into 4th-6th grade. Rolling admissions for 2026. Hands-on engineering challenges. Fully sponsored by NSBE corporate partners. Specific 2026 program dates not surfaced via WebSearch.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Math Beasts Camp (AoPS Academy / Beast Academy Live)",
@@ -40907,7 +40879,16 @@
       "scope": "national",
       "scholarshipAid": "AoPS offers limited need-based scholarships for AoPS Academy and AoPS Online courses; apply via aopsacademy.org/policies/financial-aid.",
       "registrationUrl": "https://virtual.aopsacademy.org/courses/catalog/summer",
-      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026)."
+      "howToStart": "Create free AoPS account, browse Math Beasts Camp 2-5 by upcoming-fall grade, enroll once 2026 schedule is posted (released in spring 2026).",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "Online live courses: Math Beasts Camps 2/3/4/5 using Beast Academy curriculum. Each camp 2-week or 4-week format, 1.5 hrs/day. Existing deadline May 31. Tuition not posted publicly until spring (typical $400-900 for 2-4 weeks).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Northwestern CTD Solstice Online Summer Program (Grades 4-6)",
@@ -40951,7 +40932,16 @@
       "scope": "national",
       "scholarshipAid": "CTD offers need-based financial aid; eligibility based on family income. Aid applications open with summer registration.",
       "registrationUrl": "https://www.ctd.northwestern.edu/summer-programs",
-      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required."
+      "howToStart": "Submit eligibility application (test scores or teacher recommendation), review course catalog, apply by spring deadline. No district nomination required.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-29",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "biweekly",
+      "scheduleNotes": "2-week online courses for academically-talented rising 4th-6th graders. Math, science, writing, technology, leadership, service-learning. Existing deadline May 15. ~$1,000-1,400 per 2-wk course. Financial aid available. Same window as CTD's in-person Evanston/Chicago program.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "CodeWizardsHQ Summer Coding Camps",
@@ -40998,7 +40988,16 @@
       "scope": "national",
       "scholarshipAid": "Limited promo discounts (early-bird, multi-camp); no central need-based scholarship program. Multi-pay plans available.",
       "registrationUrl": "https://www.codewizardshq.com/summer/",
-      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required."
+      "howToStart": "Browse 1-week vs 3-week tracks at codewizardshq.com/summer, schedule a free intro consult, enroll. Beginners welcome — no prior coding required.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-01",
+        "latestEnd": "2026-08-31"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Live online small-group coding camps ages 8-18. Summer formats: 1-week themed (Roblox, Minecraft, AI/ML, Web Dev, Python) ~$200-300; 3-week accelerated tracks $500-900. Rolling sessions June, July, August.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Black Girls CODE Summer Camp 2026",
@@ -41043,7 +41042,32 @@
       "scope": "national",
       "scholarshipAid": "Programs are heavily subsidized — most participants pay $0 thanks to corporate sponsorship. Apply early; selective due to high demand.",
       "registrationUrl": "https://www.wearebgc.org/summer-camp",
-      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive."
+      "howToStart": "Apply at wearebgc.org/summer-camp; choose in-person city or virtual session. Sponsorship determines fee tier — most pay nothing. Apply early — competitive.",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-07",
+        "latestEnd": "2026-08-06"
+      },
+      "sessionPattern": "single-week",
+      "sessions": [
+        {
+          "label": "Virtual Camp 1",
+          "startDate": "2026-07-07",
+          "endDate": "2026-07-09",
+          "cost": 0,
+          "ages": "rising 5th-12th"
+        },
+        {
+          "label": "Virtual Camp 2",
+          "startDate": "2026-08-04",
+          "endDate": "2026-08-06",
+          "cost": 0,
+          "ages": "rising 5th-12th"
+        }
+      ],
+      "scheduleNotes": "2026 Summer Camp series 'Game Design: She Won't Just Play the Game. She'll Build It.' 10 in-person US cities + 2 virtual sessions. Heavily subsidized — most participants pay $0. Existing deadline Jun 1. Girls ages 10-17 (rising 5th-12th).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "AAUW Tech Trek STEM Camp for Girls",
