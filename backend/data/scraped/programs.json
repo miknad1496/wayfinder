@@ -35951,7 +35951,26 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.burkemuseum.org/education/families-and-youth/camps"
+      "_source": "https://www.burkemuseum.org/education/families-and-youth/camps",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "single-day",
+      "sessions": [
+        {
+          "label": "Dino Trackers — single day (grades 1-3)",
+          "startDate": "2026-07-13",
+          "endDate": "2026-07-13",
+          "cost": 100,
+          "ages": "grades 1-3"
+        }
+      ],
+      "scheduleNotes": "Single-day camps at UW Seattle's Burke Museum. Dino Trackers Mon Jul 13 confirmed (grades 1-3, 9am-3:30pm, check-in 8:45-9:15am). Paleo Discovery (grades 4-6) and other Fossil Detectives sessions exist; full schedule on burkemuseum.org/education/families-and-youth/camps. $100/day ($90 Burke members) + optional $30 aftercare. Rolling registration.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "YMCA Camp Orkila Overnight Summer Camp",
@@ -36175,7 +36194,79 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.zoo.org/education/camps/info"
+      "_source": "https://www.zoo.org/education/camps/info",
+      "scheduleConfidence": "verified",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "sessions": [
+        {
+          "label": "Session 1",
+          "startDate": "2026-06-22",
+          "endDate": "2026-06-26",
+          "cost": 585
+        },
+        {
+          "label": "Session 2 (4-day, Jul 4 holiday week)",
+          "startDate": "2026-06-29",
+          "endDate": "2026-07-02",
+          "cost": 585
+        },
+        {
+          "label": "Session 3",
+          "startDate": "2026-07-06",
+          "endDate": "2026-07-10",
+          "cost": 585
+        },
+        {
+          "label": "Session 4",
+          "startDate": "2026-07-13",
+          "endDate": "2026-07-17",
+          "cost": 585
+        },
+        {
+          "label": "Session 5",
+          "startDate": "2026-07-20",
+          "endDate": "2026-07-24",
+          "cost": 585
+        },
+        {
+          "label": "Session 6",
+          "startDate": "2026-07-27",
+          "endDate": "2026-07-31",
+          "cost": 585
+        },
+        {
+          "label": "Session 7",
+          "startDate": "2026-08-03",
+          "endDate": "2026-08-07",
+          "cost": 585
+        },
+        {
+          "label": "Session 8",
+          "startDate": "2026-08-10",
+          "endDate": "2026-08-14",
+          "cost": 585
+        },
+        {
+          "label": "Session 9",
+          "startDate": "2026-08-17",
+          "endDate": "2026-08-21",
+          "cost": 585
+        },
+        {
+          "label": "Session 10",
+          "startDate": "2026-08-24",
+          "endDate": "2026-08-28",
+          "cost": 585
+        }
+      ],
+      "scheduleNotes": "Themed weekly day camps for ages 4-13, NGSS-aligned curriculum. Most sessions $585; one shorter mid-July variant exists at $350 (per WebSearch — verify on registration page). Registration open; sold-out sessions take waitlist. Member discount + scholarships for eligible families. Session 2 (week of June 29) is 4-day due to July 4 holiday adjustment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Seattle Aquarium Marine Summer Camp",
@@ -36241,7 +36332,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/"
+      "_source": "https://www.seattleaquarium.org/explore-the-aquarium/programs/marine-summer-camp/",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "5-day weekly sessions June 22 – August 28, 2026 at Pier 59. Most camps 9:30am-4pm; Micro-biologists track (ages 4-5) is half-day 9:30am-12:30pm only. Before-care 8:30-9:15am, after-care 4-4:45pm (extra fee). Members 10% discount + early access via CampDoc. Need-based scholarships available for WA residents. Contact registration@seattleaquarium.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Seattle Children's Theatre Drama School Summer Camps",
@@ -36544,7 +36645,17 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.pdza.org/summer-camps/"
+      "_source": "https://www.pdza.org/summer-camps/",
+      "scheduleConfidence": "inferred",
+      "registrationOpens": "2026-03-12",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Tacoma zoo + aquarium combined campus camps. Member registration opened Mar 10 8am, general public Mar 12 8am. Age-tiered (preschool through grade 8). Session-by-session dates not surfaced via WebSearch — see pdza.org/summer-camps for full schedule. Estimated typical Jun 22 – Aug 28 window from peer Tacoma/Seattle camps.",
+      "_scheduleSource": "inferred-similar-program",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Whatcom Family YMCA Summer Day Camps",
@@ -36961,7 +37072,17 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "registrationOpens": null,
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-22"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Marketplace of live small-group (typically up to 12 students) Zoom-based summer camps + 1:1 sessions for ages 3-18. Most camps run weeks of June 15 – August 22, 2026. Topics span Minecraft math, Lego clubs, creative writing, coding, art, science, world languages, test prep. Pricing $5-36/group class; $10-94/week self-paced; new 2026 membership tiers $60-600/month for 1-10 group classes/week. Rolling registration, individual classes have their own start dates.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-26"
     },
     {
       "name": "Beast Academy Online (AoPS Elementary Math)",
