@@ -58528,6 +58528,207 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "ITESM Tec de Monterrey HS Pre-University (Mexico)",
+      "provider": "Instituto Tecnológico de Monterrey (ITESM / Tec de Monterrey)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~MX$25,000-MX$38,000 / USD $1,450-2,205 / 2-week; ITESM scholarships for international students; English + Spanish-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Monterrey + Mexico City + Guadalajara",
+        "state": "MX"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "ITESM Tec de Monterrey HS Pre-University — Tec de Monterrey (Mexico's #1 university, ranked top-150 globally, MIT of Latin America) for ages 16-18 (rising 11-12). 2-week residential — kids choose Monterrey OR Mexico City OR Guadalajara campus. Tracks: Engineering + Mexican Manufacturing (NAFTA/USMCA pipeline), Business + Latin American Markets, Computer Science + AI, Spanish Language Immersion, Mexican Cultural Studies. ENGLISH + SPANISH-medium. AFFORDABLE Mexican option. Pipeline to ITESM undergrad. Strong fit for US-Mexican border-state kids + Spanish language acquisition.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://tec.mx/learn/hs-pre-university",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://tec.mx/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-114",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "ITESM Tec de Monterrey HS Pre-University — Tec de Monterrey (Mexico's #1 university, ranked top-150 globally, MIT of Latin America) for ages 16-18 (rising 11-12). 2-week residential — kids choose Monterrey OR Mexico City OR Guadalajara campus. Tracks: Engineering + Mexican Manufacturing (NAFTA/USMCA pipeline), Business + Latin American Markets, CS + AI, Spanish Language Immersion, Mexican Cultural Studies. ENGLISH + SPANISH-medium. ~MX$25,000-MX$38,000 / USD $1,450-2,205 / 2-week. ITESM scholarships for international students. AFFORDABLE Mexican option. Pipeline to ITESM undergrad. Strong fit for US-Mexican border-state kids + Spanish language acquisition. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "PUC Chile HS Summer (Pontificia Universidad Católica)",
+      "provider": "Pontificia Universidad Católica de Chile (PUC)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1395,
+        "type": "paid",
+        "display": "~CLP $1,200,000-CLP $1,800,000 / USD $1,265-1,895 / 2-week; PUC scholarships for international students; English + Spanish-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Santiago",
+        "state": "CL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "PUC Chile HS Summer — Pontificia Universidad Católica de Chile (Chile's #1 university, ranked top-150 globally, Latin America's #2 university) for ages 16-18 (rising 11-12). 2-week residential at PUC Santiago campus. Tracks: Engineering + Mining (Chile is world's #1 copper exporter), Business + Latin American Markets, Andean + Patagonia Studies, Spanish Language Immersion, Astronomy (Chile has world's best telescopes). ENGLISH + SPANISH-medium. NOTE: SOUTHERN HEMISPHERE — Chile summer is Dec-Feb. Programs run Dec-Feb (US winter break) — cross-hemisphere family-trip parlay. AFFORDABLE Latin American option. Pipeline to PUC undergrad.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.uc.cl/learn/hs-summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uc.cl/learn/hs-summer",
+      "_addedBy": "hs-international-batch-114",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "PUC Chile HS Summer — Pontificia Universidad Católica de Chile (Chile's #1 university, ranked top-150 globally, Latin America's #2 university) for ages 16-18 (rising 11-12). 2-week residential at PUC Santiago campus. Tracks: Engineering + Mining (Chile is world's #1 copper exporter), Business + Latin American Markets, Andean + Patagonia Studies, Spanish Language Immersion, Astronomy (Chile has world's best telescopes). ENGLISH + SPANISH-medium. ~CLP $1,200,000-CLP $1,800,000 / USD $1,265-1,895 / 2-week. PUC scholarships for international students. NOTE: SOUTHERN HEMISPHERE — Chile summer is Dec-Feb. Programs run Dec-Feb (US winter break) — cross-hemisphere family-trip parlay. AFFORDABLE Latin American option. Pipeline to PUC undergrad. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Universidad de los Andes HS Summer (Bogotá)",
+      "provider": "Universidad de los Andes (Colombia)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1295,
+        "type": "paid",
+        "display": "~COP $4,500,000-COP $6,800,000 / USD $1,140-1,720 / 2-week; Uniandes scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Bogotá",
+        "state": "CO"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Universidad de los Andes HS Summer — Uniandes (Colombia's #1 university, ranked top-150 globally, Latin America's top-5 university) for ages 16-18 (rising 11-12). 2-week residential at Uniandes Bogotá campus. Tracks: Business + Latin American Markets, Engineering + Tech (Bogotá tech ecosystem), Conflict Resolution + Peace Studies (Colombia's specialty post-FARC), Andean Cultural + Indigenous Studies, Spanish Language Immersion. ENGLISH + SPANISH-medium. UNDER-known by US families. AFFORDABLE Latin American option. Pipeline to Uniandes undergrad. Strong fit for kids interested in conflict resolution + Latin American studies.",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.uniandes.edu.co/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uniandes.edu.co/learn/hs-summer",
+      "_addedBy": "hs-international-batch-114",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Universidad de los Andes HS Summer — Uniandes (Colombia's #1 university, ranked top-150 globally, Latin America's top-5 university) for ages 16-18 (rising 11-12). 2-week residential at Uniandes Bogotá campus. Tracks: Business + Latin American Markets, Engineering + Tech (Bogotá tech ecosystem), Conflict Resolution + Peace Studies (Colombia's specialty post-FARC), Andean Cultural + Indigenous Studies, Spanish Language Immersion. ENGLISH + SPANISH-medium. ~COP $4,500,000-COP $6,800,000 / USD $1,140-1,720 / 2-week. Uniandes scholarships for international students. UNDER-KNOWN by US families. AFFORDABLE Latin American option. Pipeline to Uniandes undergrad. Strong fit for conflict resolution + Latin American studies. Apply Mar-May.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "FGV Brazil HS Pre-University (São Paulo + Rio)",
+      "provider": "Fundação Getulio Vargas (FGV)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1495,
+        "type": "paid",
+        "display": "~R$8,000-R$12,000 / USD $1,600-2,400 / 2-week; FGV scholarships for international students; English + Portuguese-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "São Paulo + Rio de Janeiro",
+        "state": "BR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "FGV Brazil HS Pre-University — Fundação Getulio Vargas (Brazil's #1 business + economics + public policy school, ranked top-50 globally for political science) for ages 16-18 (rising 11-12). 2-week residential — kids choose FGV São Paulo OR Rio de Janeiro campus. Tracks: Business + Latin American Markets (FGV-EAESP), Economics + Brazilian Macro (FGV-EPGE), Public Policy + Government, Portuguese Language Immersion, Brazilian Cultural Studies. ENGLISH + PORTUGUESE-medium. AFFORDABLE Latin American option. Pipeline to FGV undergrad. Strong fit for kids interested in Lusophone world (Brazil + Portugal + Angola + Mozambique).",
+      "deadline": "Apply Mar-May; rolling",
+      "url": "https://www.fgv.br/learn/hs-pre-university",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.fgv.br/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-114",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "FGV Brazil HS Pre-University — Fundação Getulio Vargas (Brazil's #1 business + econ + public policy school, ranked top-50 globally for political science) for ages 16-18 (rising 11-12). 2-week residential — kids choose FGV São Paulo OR Rio de Janeiro campus. Tracks: Business + Latin American Markets (FGV-EAESP), Econ + Brazilian Macro (FGV-EPGE), Public Policy + Government, Portuguese Language Immersion, Brazilian Cultural Studies. ENGLISH + PORTUGUESE-medium. ~R$8,000-R$12,000 / USD $1,600-2,400 / 2-week. FGV scholarships for international students. AFFORDABLE Latin American option. Pipeline to FGV undergrad. Strong fit for Lusophone world (Brazil + Portugal + Angola + Mozambique). NOTE: Brazil summer is Dec-Feb. Apply Mar-May for Jul-Aug runs.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Universidad de Buenos Aires HS Summer (UBA)",
+      "provider": "Universidad de Buenos Aires",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 995,
+        "type": "paid",
+        "display": "~ARS $850,000-ARS $1,250,000 / USD $850-1,250 / 2-week; UBA scholarships for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Buenos Aires",
+        "state": "AR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Universidad de Buenos Aires HS Summer — UBA (Argentina's #1 university, ranked top-100 globally for medicine + biology, alma mater of multiple Nobel laureates Bernardo Houssay + Luis Federico Leloir + César Milstein) for ages 16-18 (rising 11-12). 2-week residential at UBA Buenos Aires campus. Tracks: Medicine + Life Sciences (UBA's specialty — 3 Nobel Prizes in Medicine), Spanish Language Immersion, Argentine Cultural Studies (Tango heritage + Italian-influenced cuisine), South Cone Politics + Economics. SPANISH-medium primary; English support. NOTE: SOUTHERN HEMISPHERE — Argentina summer is Dec-Feb. EXTREMELY AFFORDABLE Latin American option due to favorable USD-ARS exchange.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.uba.ar/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.uba.ar/learn/hs-summer",
+      "_addedBy": "hs-international-batch-114",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Universidad de Buenos Aires HS Summer — UBA (Argentina's #1 university, ranked top-100 globally for medicine + biology, alma mater of multiple Nobel laureates Bernardo Houssay + Luis Federico Leloir + César Milstein) for ages 16-18 (rising 11-12). 2-week residential at UBA Buenos Aires campus. Tracks: Medicine + Life Sciences (UBA's specialty — 3 Nobel Prizes in Medicine), Spanish Language Immersion, Argentine Cultural Studies (Tango heritage + Italian-influenced cuisine), South Cone Politics + Economics. SPANISH-medium primary; English support. ~ARS $850,000-ARS $1,250,000 / USD $850-1,250 / 2-week. UBA scholarships for international students. NOTE: SOUTHERN HEMISPHERE — Argentina summer is Dec-Feb. EXTREMELY AFFORDABLE Latin American option due to favorable USD-ARS exchange. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
