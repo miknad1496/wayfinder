@@ -26,6 +26,15 @@ router.use(async (req, res, next) => {
       return next();
     }
 
+    /* === REVAMP V2: QUERY-PARAM TOKEN FALLBACK === */
+    // Query-param token fallback (for tools that can't set custom headers like
+    // workspace web_fetch GET). Same secret as the x-task-token header.
+    const qToken = req.query?.token;
+    if (qToken && process.env.INTERNAL_TASK_TOKEN && qToken === process.env.INTERNAL_TASK_TOKEN) {
+      req.adminUser = { email: 'internal-task', isAdmin: true, _taskAuth: true };
+      return next();
+    }
+
     const token = req.headers.authorization?.replace('Bearer ', '');
     if (!token) {
       return res.status(401).json({ error: 'Admin authentication required' });
