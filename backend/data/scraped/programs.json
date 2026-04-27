@@ -10675,7 +10675,16 @@
       "duration": "1-2 weeks",
       "region": "National",
       "advisorNote": "Emphasize specific skills you developed and how this experience shaped your perspective on your chosen field.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Christian-faith-based residential basketball + volleyball camps for kids ages 8-18. NBC = Northwest Basketball Camps but operates 100+ camp sessions across 30+ US states + Canada. Day + overnight options. Strong skill-building + Christian programming (devotionals, prayer, Bible study). ~$500-1,200/wk. Multi-summer alumni track. Sessions late Jun – mid-Aug. Apply early; popular WA + ID + OR sites fill spring. nbccamps.com.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Raritan Headwaters Summer Academy",
@@ -13241,7 +13250,16 @@
       "duration": "1 week",
       "region": "Southeast",
       "advisorNote": "STEM programs demonstrate commitment to your major. Be ready to discuss specific technical skills or concepts you mastered.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-08",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Iconic Space Camp at U.S. Space & Rocket Center, Huntsville AL. 6-day residential or day programs for grades 4-12. Tracks: Space Camp (grades 4-6), Aviation Challenge (grades 4-6), Space Academy (grades 7-12), Aviation Challenge Mach III (grades 9-12), Robotics Camp. Mission simulators, IMAX, alumni roster includes Drew Bledsoe, Anthony Edwards, Jonathan Banks, NASA astronauts. ~$1,395-1,599 / 6-day session; financial aid via Space Camp Foundation. Sessions sell out spring. spacecamp.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "FLL (FIRST Lego League) Summer Camp",
@@ -37591,7 +37609,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Stanford-founded 1:1 mentorship for kids grades 5-12 — pair with college student / recent grad in their field of interest (CS, biology, business, journalism, music, etc.). Weekly 60-min sessions. ~$160-220/session, package discounts. Free intro session. Targets: kids who want a real adult sounding board for projects + research, not standardized academic tutoring. Year-round; rolling enrollment. curiouscardinals.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Synthesis Tutor (AI Math)",
@@ -37951,7 +37975,13 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://codakid.com/camps/"
+      "_source": "https://codakid.com/camps/",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Self-paced + live online coding for kids ages 7-15. Game-based curriculum (Minecraft, Roblox, mobile apps, web dev) using REAL Java + Python + JavaScript (not just drag-block). Free trial; subscription $25-30/mo or $250/yr; private 1:1 sessions ~$30/30-min. Year-round; start any day. Strong fit for kids who already love Minecraft + want to build mods. codakid.com.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Tynker — K-12 Self-Paced Coding Platform",
@@ -40103,7 +40133,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Free annual engineering competition for grades 6-8. Teams design a 'future city' addressing an annual real-world challenge (recent themes: thriving with climate change, future of waste). Submit virtual city in SimCity, 1500-word essay, 7-min presentation. 39 regional competitions Jan-Feb; finals Feb in DC. Free participation; school + non-profit teams welcome. Schedule: Project work fall (start Aug-Oct); regional comp Jan-Feb 2027 cycle for current school year work; finals Feb 2027 in DC. Apply at futurecity.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Science Olympiad Division B (middle school)",
