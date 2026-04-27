@@ -11840,7 +11840,16 @@
       "duration": "1-2 weeks",
       "region": "Southeast",
       "advisorNote": "Leadership involvement shows initiative and character—colleges value students who step up. Highlight your specific contributions and growth.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "inferred",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "In-person summer sessions at UNC Chapel Hill, NC. Day + overnight programs for all levels of debate experience. Build leadership through workshops + team challenges + mentoring. $2,000-$4,000. Existing deadline May 15. Specific 2026 weekly dates not surfaced via WebSearch.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Minnesota Urban Debate League Summer Camp",
@@ -39447,7 +39456,16 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "specific 2026 K-8 minimum age (varies by destination)"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Language immersion summer abroad in 50+ cities (London, Paris, Madrid, Barcelona, Munich, Tokyo + more). Younger track ages 10-13 has structured group + chaperones; older 14+ more independent. 2-3 week programs: morning language classes + afternoon cultural activities + weekend excursions. $3,500-7,000 + airfare. Some scholarship via EF Educational Tours. Book by March for popular destinations.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "WWOOF (World-Wide Opportunities on Organic Farms) Family Stays",
@@ -39490,7 +39508,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "on-demand",
+      "scheduleNotes": "Year-round volunteer-on-organic-farms exchange. Pay only ~$30-60/yr WWOOF country membership + travel; host provides food + lodging in exchange for ~4-6 hrs/day farm work (weeding, animal care, harvesting). 12,000+ host farms in 130+ countries. Arrange directly with hosts 1-3 months ahead. Excellent option for families wanting deep cultural immersion at a fraction of EF/Concordia cost.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "MATHCOUNTS (middle school math competition)",
@@ -40875,7 +40899,16 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-15",
+        "latestEnd": "2026-08-28"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Autism Society's 75+ state + local affiliates maintain summer-camp directories vetted for autistic kids. Resources: (a) autism-specific camps full immersion, (b) inclusive camps mainstream with autism-aware staff, (c) state-funded respite programs, (d) Medicaid waiver-funded options. Affiliate-specific dates + costs. Find your state at autismsociety.org/affiliate-network.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "American Indian Science & Engineering Society (AISES) Pre-College",
@@ -40961,7 +40994,16 @@
       "confidence": "medium",
       "_unverifiedFields": [
         "specific 2026 program dates"
-      ]
+      ],
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE for accepted Indigenous youth (Native American, Pacific Islander, Native Hawaiian, Maori, Aboriginal). California coast — Pala, Camp Pendleton + ocean expeditions. Surfing, paddling, free-diving, marine biology, ancestral ocean practices. Patagonia + other partner-funded operations. Summer programs apply Feb-March. Open to grades 7-8+ (rising HS).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Camp Brave Trails (LGBTQ+ youth + family)",
