@@ -870,7 +870,13 @@ router.all('/grinder-write', async (req, res) => {
     const baseCommit = await gh('GET', '/repos/' + owner + '/' + repoName + '/git/commits/' + baseCommitSha);
     const baseTreeSha = baseCommit.tree.sha;
 
-    // 2. Fetch current content for each path touched
+    /* === REVAMP V2: GRINDER-WRITE READ-AT-COMMIT-SHA === */
+    // 2. Fetch current content for each path touched.
+    //    IMPORTANT: pin the read to the *commit SHA* (immutable), not the
+    //    branch ref. GitHub's contents API at ?ref=<branch> is eventually
+    //    consistent — when two writes land within ~30s, the second one can
+    //    read stale content and silently revert the first. Reading at the
+    //    commit SHA we just resolved from the ref guarantees a consistent read.
     const pathsToTouch = new Set();
     for (const op of operations) if (op.path) pathsToTouch.add(op.path);
 
@@ -878,7 +884,7 @@ router.all('/grinder-write', async (req, res) => {
     for (const p of pathsToTouch) {
       try {
         const enc = p.split('/').map(encodeURIComponent).join('/');
-        const f = await gh('GET', '/repos/' + owner + '/' + repoName + '/contents/' + enc + '?ref=' + encodeURIComponent(branch));
+        const f = await gh('GET', '/repos/' + owner + '/' + repoName + '/contents/' + enc + '?ref=' + encodeURIComponent(baseCommitSha));
         if (f.encoding === 'base64' && f.content) {
           fileContents[p] = Buffer.from(String(f.content).replace(/\n/g, ''), 'base64').toString('utf8');
         } else if (f.download_url) {
