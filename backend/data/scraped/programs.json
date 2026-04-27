@@ -2402,16 +2402,7 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-05",
-      "_source": "https://www.lakesideschool.org/summer/leep",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-07-06",
-        "latestEnd": "2026-07-31"
-      },
-      "sessionPattern": "single-session",
-      "scheduleNotes": "FREE 4-week summer enrichment program at Lakeside School. For current 5th + 8th graders in Seattle Public Schools entering 6th or 9th grade. Includes classes, sports, outdoor activities, trips, field days. Free daily bus transportation included. Existing deadline May 1. Typical mid-July 4-week run.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://www.lakesideschool.org/summer/leep"
     },
     {
       "name": "Washington Aerospace Scholars (WAS)",
@@ -35799,16 +35790,7 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.kidsquestmuseum.org/programs/summer-camp/",
-      "scheduleConfidence": "inferred",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Weeklong themed camps at downtown Bellevue museum, ages 4-10. Themes change weekly: STEAM, art, fashion, storytelling. Children must be the listed age at time of camp. Sessions fill spring. Specific 2026 weekly dates not surfaced via WebSearch — see kidsquestmuseum.org/programs/summer-camp/.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://www.kidsquestmuseum.org/programs/summer-camp/"
     },
     {
       "name": "Studio Coyote Summer Workshops",
@@ -36592,16 +36574,7 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.whatcomymca.org/camps-summer-programs",
-      "scheduleConfidence": "inferred",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-28"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Bellingham YMCA weeklong day camps for Pre-K through 10th grade entering fall 2026. Tracks: Minis Camp (ages 3-5), Back to School Camp (1st-5th), Discovery Camp (1st-5th), Outdoor + others. YMCA financial assistance + sliding-scale Price A/B available. Sessions fill spring.",
-      "_scheduleSource": "inferred-2025-pattern",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://www.whatcomymca.org/camps-summer-programs"
     },
     {
       "name": "Music Works Northwest Summer Music Camps",
@@ -36773,16 +36746,7 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "255-acre learning center on Bainbridge Island. Full-day 9am-3:30pm for grades 1-8; half-day 9am-12pm for Pre-K + Kindergarten. Cancellation by Apr 3 for full refund less $100 processing fee; by Jun 5 for 50% refund. $100 non-refundable processing fee per camp.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://islandwood.org/outdoor-summer-day-camps-2026/"
     },
     {
       "name": "KiDiMu Summer Camps (Kids Discovery Museum)",
@@ -36847,16 +36811,7 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://kidimu.org/camps/",
-      "scheduleConfidence": "window",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-21"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Bainbridge Island kids' museum. 4-hour half-day camps (9am-12pm OR 12pm-3pm) for ages 3-12. $350 / $325 member per half-day session; $20/hr early/late care. Cross-Age Buddy Group structure (groups by age). Sessions fill spring. See kidimu.org/camps for specific weekly dates.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://kidimu.org/camps/"
     },
     {
       "name": "City of Vancouver Parks & Recreation Summer Day Camps",
@@ -36917,17 +36872,7 @@
       "_addedBy": "esms-grinder",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
-      "_source": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/",
-      "scheduleConfidence": "window",
-      "registrationOpens": "2026-04-15",
-      "summerWindow": {
-        "earliestStart": "2026-06-22",
-        "latestEnd": "2026-08-28"
-      },
-      "sessionPattern": "weekly",
-      "scheduleNotes": "Vancouver WA weeklong summer day camps for ages 6-10 (grades 1-5) at Marshall Community Center (1009 E. McLoughlin Blvd) + Firstenburg Community Center (700 NE 136th Ave). 8am drop-off. Registration opens Apr 15 (residents) / Apr 16 (non-residents). $220 resident / $275 non-resident per session. Everybody Plays! scholarship covers 50% for eligible families.",
-      "_scheduleSource": "site-published",
-      "_scheduleVerifiedDate": "2026-04-27"
+      "_source": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/"
     },
     {
       "name": "Outschool Online Summer Camps",
@@ -37899,7 +37844,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE — visit any of 400+ NPS sites, pick up a Junior Ranger booklet at the visitor center, complete age-appropriate activities, get sworn in + earn a badge. Some park entrance fees may apply. No registration; year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "iD Tech Online Camps",
@@ -37985,7 +37936,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100,000+ small-group online classes from independent expert teachers. Subjects: D&D clubs, creative writing, Python coding, advanced math, languages, art studios. Per-class pricing ~$10-30/session; many free trials; financial aid via Outschool Foundation. Year-round; classes start weekly. (Quality is per-teacher — sort by reviews.)",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Art of Problem Solving (AoPS) + Beast Academy",
@@ -38111,7 +38068,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Free online K-12 curriculum + 1M+ digital resources from 21 Smithsonian museums. 200+ Smithsonian Affiliate Museums in all 50 states (e.g., Pacific Science Center, Field Museum) often run summer camps $200-500/wk; financial aid available. Affiliate camp registration opens Jan-March.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Code.org Hour of Code + Code.org After School",
@@ -38428,7 +38391,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "4,500+ local Clubs serving 4M+ kids annually. Annual membership $20-30 in most clubs grants access to after-school, summer, weekend programs (academics, arts, sports, leadership, STEM, college prep). Many clubs FREE for low-income families. Sliding-scale + scholarship for activities. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "YMCA Youth Programs (local Y umbrella)",
@@ -38470,7 +38439,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "2,700+ local YMCA branches nationwide. Programs: after-school (Y-CAP), day camps, residential camps (Camp Orkila, Camp Cheerio), youth sports leagues, swim lessons, Achievers leadership pipeline. Annual family membership ~$300-700 with sliding-scale (Open Doors); many programs free for members; non-member day camps $150-300/wk. Summer camp registration opens Jan-Feb.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Scholastic Summer Reading Challenge",
@@ -38676,7 +38651,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE monthly Jewish-themed children's books mailed to families with kids ages 0-11. Funded by Harold Grinspoon Foundation. No religious affiliation required. Picture books through middle-grade chapter books. Year-round signup at pjlibrary.org.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "National Geographic Kids — free resources + Slingshot Challenge",
@@ -38758,7 +38739,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "100% FREE streaming + activity guides. Daniel Tiger, Wild Kratts, Curious George, Molly of Denali, Xavier Riddle. PBS LearningMedia for educators + parents. Year-round.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Civil Air Patrol Cadet Program (CAP)",
@@ -38840,7 +38827,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Free curriculum-based youth gardening program partnered with USDA Cooperative Extension. Levels 1 (3rd-5th grade) + 2 (6th-8th grade) cover plant growth, ecology, food/fiber, soils, water, environmental horticulture. Curriculum guides $25-40; Coop Extension-led groups often free. Rolling enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Destination Imagination (DI)",
@@ -38928,7 +38921,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Annual academic competition: original historical research presented via paper, exhibit, performance, documentary, or website. Junior division (grades 6-8) + Senior division (9-12). District contests Feb-March; state April-May; nationals June. Free for student participation in most district/state contests.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "CISV International — Village + Interchange + Step Up",
@@ -39505,7 +39504,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Pairs students with intellectual + developmental disabilities (IDD) with peer 'buddies' for one-to-one friendships, structured activities, community-building. Middle School Buddies (grades 6-8) + High School Buddies (9-12). Schools in all 50 states + 50+ countries. 100% free. Chapters form at start of school year.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Foundation for Jewish Camp — One Happy Camper grant",
@@ -39849,7 +39854,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE for participating youth — Sierra Club volunteers fund all gear + transportation. Connects under-resourced urban youth with the outdoors via free guided trips: hikes, camping, kayaking, snowshoeing, backpacking. Volunteer-led; 50+ city chapters. Year-round trips, chapter-coordinated.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "National Wildlife Federation Eco-Schools USA",
@@ -39891,7 +39902,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "FREE for participating schools (curriculum + certification). School-based environmental sustainability program — kids audit their school's environmental footprint (energy, water, waste, biodiversity, schoolyard habitat) + lead improvement projects. 7 'pathways' (climate, energy, water, biodiversity, etc.). Year-round school enrollment.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "NPS Every Kid Outdoors (free 4th grade pass)",
