@@ -7247,6 +7247,292 @@
       "_source": "https://pflag.org/find-a-chapter/",
       "_verified": true,
       "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Feeding South Florida (Miami + Broward + Palm Beach)",
+      "organization": "Feeding South Florida",
+      "description": "Feeding South Florida is the largest food bank in Florida (covers Miami-Dade, Broward, Palm Beach, Monroe). HS volunteer roles include warehouse food sorting, Mobile Pantry distribution, Backpack Program (weekend kid meals), and BAGS Mealbox holiday distribution. Year-round with peak holiday season Nov-Dec.",
+      "scope": "regional",
+      "states": [
+        "FL"
+      ],
+      "categories": [
+        "hunger",
+        "homelessness"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food bank operations",
+        "Mobile Pantry distribution",
+        "Backpack Program",
+        "disaster food response"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit feedingsouthflorida.org/get-involved. Year-round availability. Apply via online portal.",
+      "_source": "https://feedingsouthflorida.org/get-involved/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Atlanta Community Food Bank Volunteer",
+      "organization": "Atlanta Community Food Bank",
+      "description": "Atlanta Community Food Bank serves 29 counties in Georgia + parts of Alabama. HS volunteer roles include warehouse food sorting (12+), MarketShare community grocery, Kids in Need backpack distribution, and Atlanta-area food drive coordination. Year-round with strong school + community partnership.",
+      "scope": "regional",
+      "states": [
+        "GA"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food bank sorting",
+        "MarketShare grocery operations",
+        "Kids in Need backpack",
+        "food drive coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit acfb.org/get-involved/volunteer. Year-round availability. Apply via online portal.",
+      "_source": "https://acfb.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "NC Conservation Council Junior Volunteer",
+      "organization": "North Carolina Conservation Council",
+      "description": "North Carolina Conservation Council protects NC natural resources + advocates for conservation policy. HS volunteer roles include forestry restoration days, Outer Banks beach cleanup, Wild Carolina youth ambassador, and conservation advocacy at NC General Assembly. Strong fit for NC kids interested in environmental science + policy careers.",
+      "scope": "regional",
+      "states": [
+        "NC"
+      ],
+      "categories": [
+        "environment",
+        "civic"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "NC forestry",
+        "Outer Banks coastal conservation",
+        "Wild Carolina advocacy",
+        "NC environmental policy"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit ncconservation.org/get-involved. Year-round campaign volunteer roles. Apply via online portal.",
+      "_source": "https://ncconservation.org/get-involved",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Arizona Humane Society Junior Volunteer",
+      "organization": "Arizona Humane Society",
+      "description": "Arizona Humane Society is one of Arizona's largest animal welfare orgs (Phoenix, Tucson, Mesa). HS volunteer roles include shelter dog socialization, cat adoption events, Tortoise + Chelonia Conservation, and Senior Pet matching. Strong fit for AZ kids interested in animal welfare + veterinary careers.",
+      "scope": "regional",
+      "states": [
+        "AZ"
+      ],
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal handling",
+        "shelter dog socialization",
+        "Tortoise + Chelonia conservation",
+        "Senior Pet matching"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit azhumane.org/volunteer. Year-round availability. Apply via online portal — under 16 typically with parent/guardian.",
+      "_source": "https://www.azhumane.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Colorado Outdoor Volunteer Connection",
+      "organization": "Volunteers for Outdoor Colorado (VOC)",
+      "description": "VOC is Colorado's largest outdoor volunteer org. HS volunteer roles include 14er trail restoration, Rocky Mountain National Park preservation, Colorado Trails Day events, and youth-led conservation crew programs. Strong fit for CO kids interested in environmental fieldwork + park ranger careers.",
+      "scope": "regional",
+      "states": [
+        "CO"
+      ],
+      "categories": [
+        "environment",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "trail restoration",
+        "14er stewardship",
+        "Rocky Mountain conservation",
+        "outdoor crew leadership"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit voc.org/volunteer. Year-round availability with peak summer (Jun-Sep). Apply via online portal.",
+      "_source": "https://www.voc.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Cincinnati Children's Hospital + Akron Children's Hospital Junior Volunteer (Ohio)",
+      "organization": "Cincinnati Children's Hospital + Akron Children's Hospital",
+      "description": "Both Cincinnati Children's + Akron Children's hospitals run robust junior volunteer programs for HS students 14-18. Roles include playroom support, family lounge assistance, gift shop staffing, way-finding, and waiting room hospitality. Strong fit for OH kids interested in pediatrics + pre-med careers.",
+      "scope": "regional",
+      "states": [
+        "OH"
+      ],
+      "categories": [
+        "health",
+        "seniors"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "pediatric patient interaction",
+        "HIPAA awareness",
+        "hospital operations",
+        "child life support"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Cincinnati Children's: cincinnatichildrens.org/volunteer. Akron Children's: akronchildrens.org/volunteer. Apply Feb-Apr for summer programs.",
+      "_source": "https://www.cincinnatichildrens.org/about/career/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Children's Hospital of Philadelphia (CHOP) Junior Volunteer",
+      "organization": "Children's Hospital of Philadelphia",
+      "description": "CHOP is Pennsylvania's #1 pediatric hospital. HS volunteer roles include playroom support, family resource center, gift shop, transport assistance, and way-finding. Highly competitive — 50-100 hours/year minimum. Strong fit for PA kids interested in pediatrics + pre-med careers.",
+      "scope": "regional",
+      "states": [
+        "PA"
+      ],
+      "categories": [
+        "health"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "pediatric patient interaction",
+        "HIPAA awareness",
+        "hospital operations",
+        "CHOP-specific protocols"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit chop.edu/volunteer. Apply Feb-Apr for summer programs. Background check + immunization records required.",
+      "_source": "https://www.chop.edu/volunteer-opportunities",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Second Harvest Heartland Twin Cities (Minnesota)",
+      "organization": "Second Harvest Heartland",
+      "description": "Second Harvest Heartland is one of the largest food banks in the Upper Midwest (Minnesota, North + South Dakota, parts of Wisconsin). HS volunteer roles include warehouse food sorting, Backpack Program, Mobile Food Shelf distribution, and Hunger Action Month (Sep) coordination. Strong fit for MN kids interested in food justice.",
+      "scope": "regional",
+      "states": [
+        "MN"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food bank sorting",
+        "Backpack Program",
+        "Mobile Food Shelf",
+        "Hunger Action Month"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit 2harvest.org/volunteer. Year-round availability. Apply via online portal.",
+      "_source": "https://www.2harvest.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Oregon Food Bank Network",
+      "organization": "Oregon Food Bank",
+      "description": "Oregon Food Bank serves 22 regional food banks across Oregon + Clark County WA. HS volunteer roles include warehouse food sorting, Repack events (sorting bulk into family-size), Mobile Pantry distribution, and Hunger to Health Coalition advocacy. Strong fit for OR kids interested in food justice + public health careers.",
+      "scope": "regional",
+      "states": [
+        "OR",
+        "WA"
+      ],
+      "categories": [
+        "hunger"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food bank sorting",
+        "Repack event operations",
+        "Mobile Pantry distribution",
+        "Hunger to Health Coalition"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit oregonfoodbank.org/volunteer. Year-round availability. Apply via online portal.",
+      "_source": "https://www.oregonfoodbank.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "American Heart Association School Programs + Walk",
+      "organization": "American Heart Association",
+      "description": "AHA runs HS volunteer programs nationally. HS roles include Kids Heart Challenge + American Heart Challenge school fundraising, Heart Walk event coordination, AHA School Site Coordinator, and CPR/AED instructor (with AHA training). Strong fit for kids interested in cardiology + emergency medicine + nursing careers.",
+      "scope": "national",
+      "states": [
+        "all"
+      ],
+      "categories": [
+        "health",
+        "leadership"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "CPR + AED training",
+        "Heart Walk coordination",
+        "Kids Heart Challenge",
+        "AHA School Site"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Visit heart.org/volunteer. Year-round availability with peak Heart Walk events Spring/Fall. Apply via online portal.",
+      "_source": "https://www.heart.org/en/get-involved/ways-to-give/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28"
     }
   ]
 }
