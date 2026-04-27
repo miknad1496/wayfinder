@@ -6180,13 +6180,16 @@ document.addEventListener('click', (e) => {
     if (ev) _scShowCalForm(ev);
   }
   if (e.target.classList?.contains('sc-cal-del-btn')) {
+    /* === REVAMP V2: CALENDAR BUG BUNDLE PATCH24 — full re-render after delete === */
     const id = e.target.dataset.id;
     if (!confirm('Remove this event?')) return;
     _scSaveCalEvents(_scLoadCalEvents().filter(x => x.id !== id));
-    _scRenderCalEvents();
+    if (typeof renderSCPlanner === 'function') renderSCPlanner();
+    else _scRenderCalEvents();
   }
+  /* === REVAMP V2: CALENDAR BUG BUNDLE PATCH24 — fix 'Add to calendar' routing === */
   if (e.target.classList?.contains('sc-add-to-cal-btn')) {
-    // From Browse tab card — switch to Insights tab and prefill the form (schedule-aware)
+    // From Browse tab card — switch to Calendar (Planner) tab and prefill the form (schedule-aware)
     const name = e.target.dataset.name;
     const cost = e.target.dataset.cost;
     let _sched = null;
@@ -6207,17 +6210,12 @@ document.addEventListener('click', (e) => {
       else if (_sched.tier === 'window') noteParts.push('(verify exact session dates with program)');
       if (noteParts.length) _prefill.notes = noteParts.join(' · ');
     }
-    _scSetTab('Insights');
-    // If insights not yet loaded, load then prefill; else just prefill
+    _scSetTab('Planner');
+    if (typeof renderSCPlanner === 'function') renderSCPlanner();
     setTimeout(() => {
-      if (document.getElementById('scInsightsContent').dataset.loaded !== 'yes') {
-        loadSCInsights().then(() => setTimeout(() => _scShowCalForm(_prefill), 200));
-      } else {
-        _scShowCalForm(_prefill);
-        // Scroll the form into view
-        document.getElementById('scCalForm')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 50);
+      _scShowCalForm(_prefill);
+      document.getElementById('scCalForm')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 120);
   }
 });
 
@@ -6244,7 +6242,7 @@ function _scTimelineHtml() {
   }).join('');
   return `
     <div style="background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
-      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">📅 K-8 Summer Camp Calendar — when things actually happen</h3>
+      <h3 style="margin:0 0 4px;font-size:15px;color:#1f2328;">📅 Registration &amp; Action Calendar — what to do each month</h3>
       <p style="margin:0 0 10px;font-size:12px;color:#59636e;">Hover any month for the key registration / scholarship action that month.</p>
       <div style="display:flex;border:1px solid #cfdcef;border-radius:6px;overflow:hidden;">${bars}</div>
       <div id="scTimelineDetail" style="margin-top:10px;font-size:13px;color:#334155;min-height:40px;padding:10px 12px;background:#f6f8fa;border-radius:6px;">
