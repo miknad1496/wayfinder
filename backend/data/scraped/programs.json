@@ -55219,6 +55219,216 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Tokyo Institute of Technology Pre-Engineering Summer",
+      "provider": "Tokyo Institute of Technology (Tokyo Tech / 東京工業大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~¥280,000-¥420,000 / USD $1,840-2,765 / 2-week; Tokyo Tech scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tokyo",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tokyo Institute of Technology Pre-Engineering — Tokyo Tech (Japan's #1 STEM university, ranked top-100 globally for engineering, alma mater of Honda + Toyota engineers) for ages 16-18 (rising 11-12). 2-week residential at Tokyo Tech Ookayama campus. Tracks: Mechanical + Robotics (Honda heritage), Aerospace + Astronautics (JAXA pipeline), Computer Science + AI, Materials Science (Sony semiconductor heritage). ENGLISH-medium primary; Japanese language electives. Pipeline to Tokyo Tech undergrad. STEM-track US kids strong fit.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.titech.ac.jp/english/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.titech.ac.jp/english/learn/summer-school",
+      "_addedBy": "hs-international-batch-97",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Tokyo Institute of Technology Pre-Engineering — Tokyo Tech (Japan's #1 STEM university, ranked top-100 globally for engineering, alma mater of Honda + Toyota engineers) for ages 16-18 (rising 11-12). 2-week residential at Tokyo Tech Ookayama campus. Tracks: Mechanical + Robotics (Honda heritage), Aerospace + Astronautics (JAXA pipeline), CS + AI, Materials Science (Sony semiconductor heritage). ENGLISH-medium primary; Japanese language electives. ~¥280,000-¥420,000 / USD $1,840-2,765 / 2-week. Tokyo Tech scholarships for international students. Pipeline to Tokyo Tech undergrad. STEM-track US kids strong fit. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Tohoku University Summer Program (Sendai)",
+      "provider": "Tohoku University (東北大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~¥240,000-¥360,000 / USD $1,580-2,375 / 2-week; Tohoku scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sendai",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Tohoku University Summer Program — Tohoku University (Japan's #3 university, ranked top-100 globally, founded 1907, located in earthquake/tsunami research hub Sendai) for ages 16-18 (rising 11-12). 2-week residential at Tohoku Sendai campus. Tracks: Disaster Resilience + Earthquake Engineering (post-2011 Fukushima research), Materials Science (Tohoku's specialty), Marine Sciences (Pacific coast), Japanese Cultural Studies (samurai heritage). ENGLISH-medium primary. AFFORDABLE Japanese option. Pipeline to Tohoku undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.tohoku.ac.jp/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.tohoku.ac.jp/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-97",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Tohoku University Summer Program — Tohoku University (Japan's #3 university, ranked top-100 globally, founded 1907, located in earthquake/tsunami research hub Sendai) for ages 16-18 (rising 11-12). 2-week residential at Tohoku Sendai campus. Tracks: Disaster Resilience + Earthquake Engineering (post-2011 Fukushima research), Materials Science (Tohoku's specialty), Marine Sciences (Pacific coast), Japanese Cultural Studies (samurai heritage). ENGLISH-medium primary. ~¥240,000-¥360,000 / USD $1,580-2,375 / 2-week. Tohoku scholarships for international students. AFFORDABLE Japanese option. Pipeline to Tohoku undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Hokkaido University Summer Program (Sapporo)",
+      "provider": "Hokkaido University (北海道大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1895,
+        "type": "paid",
+        "display": "~¥220,000-¥340,000 / USD $1,455-2,245 / 2-week; Hokkaido scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sapporo",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Hokkaido University Summer Program — Hokkaido University (Japan's northernmost top university, ranked top-150 globally, founded 1876) for ages 16-18 (rising 11-12). 2-week residential at Hokkaido Sapporo campus. Tracks: Agriculture + Food Sciences (Hokkaido is Japan's farming heartland), Marine Biology (Sea of Japan + Pacific access), Cold Climate Engineering, Indigenous Ainu Studies (Japan's only Indigenous-people studies program). ENGLISH-medium primary. AFFORDABLE northern Japan destination. UNDER-known by US families. Strong fit for biology + Indigenous studies.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.global.hokudai.ac.jp/learn/summer",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.global.hokudai.ac.jp/learn/summer",
+      "_addedBy": "hs-international-batch-97",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Hokkaido University Summer Program — Hokkaido University (Japan's northernmost top university, ranked top-150 globally, founded 1876) for ages 16-18 (rising 11-12). 2-week residential at Hokkaido Sapporo campus. Tracks: Agriculture + Food Sciences (Hokkaido is Japan's farming heartland), Marine Biology (Sea of Japan + Pacific access), Cold Climate Engineering, Indigenous Ainu Studies (Japan's ONLY Indigenous-people studies program). ENGLISH-medium primary. ~¥220,000-¥340,000 / USD $1,455-2,245 / 2-week. Hokkaido scholarships for international students. AFFORDABLE northern Japan destination. UNDER-KNOWN by US families. Strong fit for biology + Indigenous studies. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Osaka University Pre-University Summer",
+      "provider": "Osaka University (大阪大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~¥240,000-¥360,000 / USD $1,580-2,375 / 2-week; Osaka U scholarships for international students; English-medium primary"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Osaka",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Osaka University Pre-University Summer — Osaka U (Japan's #4 university, ranked top-100 globally, founded 1931) for ages 16-18 (rising 11-12). 2-week residential at Osaka Suita campus. Tracks: Bioengineering + Pharmacy (Osaka's specialty — Japan's pharmaceutical hub), Mechanical + Manufacturing Engineering (Osaka manufacturing heartland), International Business (Osaka is Japan's commercial city), Japanese Foodways + Kansai Cultural Studies. ENGLISH-medium primary. AFFORDABLE Kansai region option (cheaper than Tokyo). Pipeline to Osaka U undergrad.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.osaka-u.ac.jp/en/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.osaka-u.ac.jp/en/learn/summer-school",
+      "_addedBy": "hs-international-batch-97",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Osaka University Pre-University Summer — Osaka U (Japan's #4 university, ranked top-100 globally, founded 1931) for ages 16-18 (rising 11-12). 2-week residential at Osaka Suita campus. Tracks: Bioengineering + Pharmacy (Osaka's specialty — Japan's pharmaceutical hub), Mechanical + Manufacturing Engineering (Osaka manufacturing heartland), International Business (Osaka is Japan's commercial city), Japanese Foodways + Kansai Cultural Studies. ENGLISH-medium primary. ~¥240,000-¥360,000 / USD $1,580-2,375 / 2-week. Osaka U scholarships for international students. AFFORDABLE Kansai region option (cheaper than Tokyo). Pipeline to Osaka U undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Waseda Pre-University HS Summer (Tokyo)",
+      "provider": "Waseda University (早稲田大学)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~¥300,000-¥450,000 / USD $1,980-2,970 / 2-week; Waseda scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Tokyo",
+        "state": "JP"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Waseda Pre-University HS Summer — Waseda University (Japan's top private university, ranked top-200 globally, founded 1882, alma mater of Japanese Prime Ministers) for ages 16-18 (rising 11-12). 2-week residential at Waseda Tokyo campus. Tracks: International Liberal Arts (Waseda's English-medium SILS undergraduate program — most US-friendly Japanese option), International Politics + Asian Studies, Media + Journalism, Business + Finance, Japanese Language Immersion. ENGLISH-medium. Waseda has Japan's largest international student community. Pipeline to Waseda SILS undergrad — most US-friendly Japanese university.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://www.waseda.jp/inst/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.waseda.jp/inst/learn/summer-school",
+      "_addedBy": "hs-international-batch-97",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Waseda Pre-University HS Summer — Waseda University (Japan's top private university, ranked top-200 globally, founded 1882, alma mater of Japanese Prime Ministers) for ages 16-18 (rising 11-12). 2-week residential at Waseda Tokyo campus. Tracks: International Liberal Arts (Waseda's English-medium SILS undergrad program — most US-friendly Japanese option), International Politics + Asian Studies, Media + Journalism, Business + Finance, Japanese Language Immersion. ENGLISH-medium. ~¥300,000-¥450,000 / USD $1,980-2,970 / 2-week. Waseda scholarships for international students. Waseda has Japan's LARGEST international student community. Pipeline to Waseda SILS undergrad — most US-friendly Japanese university. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
