@@ -55011,6 +55011,214 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Seoul National University Pre-University Summer",
+      "provider": "Seoul National University (서울대학교)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~₩3,000,000-₩4,500,000 / USD $2,225-3,335 / 2-week; SNU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Seoul National University Pre-University Summer — SNU (Korea's #1 university, ranked top-30 globally, alma mater of Ban Ki-moon + Korean Presidents) for ages 16-18 (rising 11-12). 2-week residential at SNU Gwanak campus Seoul. Tracks: Korean Studies + Hallyu (K-Wave) Cultural Studies, Engineering + Tech (SNU's specialty — Samsung pipeline), Business + Economics, Korean Language Immersion, K-Pop + Entertainment Industry. ENGLISH-medium primary; Korean language electives. Pipeline to SNU undergrad — Korea's flagship.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://en.snu.ac.kr/learn/summer-school",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://en.snu.ac.kr/learn/summer-school",
+      "_addedBy": "hs-international-batch-96",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Seoul National University Pre-University Summer — SNU (Korea's #1 university, ranked top-30 globally, alma mater of Ban Ki-moon + Korean Presidents) for ages 16-18 (rising 11-12). 2-week residential at SNU Gwanak campus Seoul. Tracks: Korean Studies + Hallyu (K-Wave) Cultural Studies, Engineering + Tech (SNU's specialty — Samsung pipeline), Business + Econ, Korean Language Immersion, K-Pop + Entertainment Industry. ENGLISH-medium primary; Korean language electives. ~₩3,000,000-₩4,500,000 / USD $2,225-3,335 / 2-week. SNU scholarships for international students. Pipeline to SNU undergrad — Korea's flagship. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Korea University International Summer School",
+      "provider": "Korea University (고려대학교)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~₩2,800,000-₩4,000,000 / USD $2,075-2,965 / 2-week; KU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Korea University Summer School — Korea University (Korea's top private university, ranked top-100 globally, founded 1905) for ages 16-18 (rising 11-12). 2-week residential at KU Anam campus Seoul. Tracks: International Business + Asian Markets, K-Pop Entertainment Business, Korean Wave (Hallyu) Studies, International Relations + Korean Politics, Korean Language Immersion. ENGLISH-medium primary; Korean language electives. KU has stronger Korean cultural depth than SNU. Pipeline to KU undergrad. AFFORDABLE Korean option.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://international.korea.ac.kr/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://international.korea.ac.kr/learn/summer-school",
+      "_addedBy": "hs-international-batch-96",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Korea University Summer School — Korea University (Korea's top private university, ranked top-100 globally, founded 1905) for ages 16-18 (rising 11-12). 2-week residential at KU Anam campus Seoul. Tracks: International Business + Asian Markets, K-Pop Entertainment Business, Korean Wave (Hallyu) Studies, International Relations + Korean Politics, Korean Language Immersion. ENGLISH-medium primary; Korean language electives. ~₩2,800,000-₩4,000,000 / USD $2,075-2,965 / 2-week. KU scholarships for international students. KU has stronger Korean cultural depth than SNU. Pipeline to KU undergrad. AFFORDABLE Korean option. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "POSTECH Pre-Engineering Summer (Pohang)",
+      "provider": "POSTECH (Pohang University of Science and Technology)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2895,
+        "type": "paid",
+        "display": "~₩3,500,000-₩5,000,000 / USD $2,595-3,705 / 3-week; POSTECH Foundation scholarships up to 100% for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Pohang",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "POSTECH Pre-Engineering Summer — POSTECH (Korea's premier STEM/engineering university, ranked top-100 globally for engineering, founded 1986 by POSCO steel) for ages 17-18 (rising 12). 3-week residential at POSTECH Pohang campus. Tracks: Mechanical + Materials Engineering (POSCO heritage), Computer Science + AI, Mathematics + Theoretical Physics, Chemical + Bio Engineering. ENGLISH-medium primary. ELITE selectivity — POSTECH is Korea's MIT. POSTECH Foundation scholarships up to 100% for international students. Pipeline to POSTECH undergrad.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.postech.ac.kr/learn/pre-engineering",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.postech.ac.kr/learn/pre-engineering",
+      "_addedBy": "hs-international-batch-96",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "POSTECH Pre-Engineering Summer — POSTECH (Korea's premier STEM/engineering university, ranked top-100 globally for engineering, founded 1986 by POSCO steel) for ages 17-18 (rising 12). 3-week residential at POSTECH Pohang campus. Tracks: Mechanical + Materials Engineering (POSCO heritage), CS + AI, Math + Theoretical Physics, Chemical + Bio Engineering. ENGLISH-medium primary. ELITE selectivity — POSTECH is Korea's MIT. ~₩3,500,000-₩5,000,000 / USD $2,595-3,705 / 3-week. POSTECH Foundation scholarships up to 100% for international students. Pipeline to POSTECH undergrad. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Yonsei International HS Summer",
+      "provider": "Yonsei University (연세대학교)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~₩3,000,000-₩4,500,000 / USD $2,225-3,335 / 2-week; Yonsei scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Seoul",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Yonsei International HS Summer — Yonsei (Korea's top international-focused private university, ranked top-100 globally) for ages 16-18 (rising 11-12). 2-week residential at Yonsei Sinchon Seoul campus. Tracks: Underwood International College Studies (Yonsei's English-medium undergraduate program), International Studies + Pacific Affairs, Business + Korean Markets, K-Pop + Entertainment Studies, Korean Language. ENGLISH-medium. Yonsei has Korea's largest international student community. Pipeline to Yonsei UIC undergrad — most US-friendly Korean university option.",
+      "deadline": "Apply Feb-April; rolling",
+      "url": "https://uic.yonsei.ac.kr/learn/summer-school",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://uic.yonsei.ac.kr/learn/summer-school",
+      "_addedBy": "hs-international-batch-96",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Yonsei International HS Summer — Yonsei (Korea's top international-focused private university, ranked top-100 globally) for ages 16-18 (rising 11-12). 2-week residential at Yonsei Sinchon Seoul campus. Tracks: Underwood International College Studies (Yonsei's English-medium undergrad program), International Studies + Pacific Affairs, Business + Korean Markets, K-Pop + Entertainment Studies, Korean Language. ENGLISH-medium. ~₩3,000,000-₩4,500,000 / USD $2,225-3,335 / 2-week. Yonsei scholarships for international students. Yonsei has Korea's LARGEST international student community. Pipeline to Yonsei UIC undergrad — most US-friendly Korean university option. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "KAIST Pre-Engineering Summer (Daejeon)",
+      "provider": "KAIST (Korea Advanced Institute of Science and Technology)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2795,
+        "type": "paid",
+        "display": "~₩3,200,000-₩4,800,000 / USD $2,375-3,560 / 3-week; KAIST Foundation scholarships up to 100% for international students"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Daejeon",
+        "state": "KR"
+      },
+      "eligibility": {
+        "grades": [
+          "11",
+          "12"
+        ]
+      },
+      "description": "KAIST Pre-Engineering Summer — KAIST (Korea's premier STEM/engineering institute, ranked top-50 globally for engineering, founded 1971) for ages 17-18 (rising 12). 3-week residential at KAIST Daejeon campus. Tracks: AI + Robotics (KAIST's flagship — Korea's autonomous vehicle research hub), Computer Science + Cybersecurity, Bio + Brain Engineering (Korea's Brain Project), Aerospace + Spacecraft Systems. ENGLISH-medium primary. SELECTIVE. KAIST Foundation scholarships up to 100% for international students. KAIST is Korea's most globally-recognized engineering school.",
+      "deadline": "Apply Feb-April; selective; rolling",
+      "url": "https://www.kaist.ac.kr/learn/pre-engineering",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.kaist.ac.kr/learn/pre-engineering",
+      "_addedBy": "hs-international-batch-96",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-13",
+        "latestEnd": "2026-08-14"
+      },
+      "sessionPattern": "multi-week",
+      "sessions": [],
+      "scheduleNotes": "KAIST Pre-Engineering Summer — KAIST (Korea's premier STEM/engineering institute, ranked top-50 globally for engineering, founded 1971) for ages 17-18 (rising 12). 3-week residential at KAIST Daejeon campus. Tracks: AI + Robotics (KAIST's flagship — Korea's autonomous vehicle research hub), CS + Cybersecurity, Bio + Brain Engineering (Korea's Brain Project), Aerospace + Spacecraft Systems. ENGLISH-medium primary. SELECTIVE. ~₩3,200,000-₩4,800,000 / USD $2,375-3,560 / 3-week. KAIST Foundation scholarships up to 100% for international students. KAIST is Korea's most globally-recognized engineering school. Apply Feb-April.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
