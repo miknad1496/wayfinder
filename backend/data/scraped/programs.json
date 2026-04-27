@@ -58933,6 +58933,201 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "University of Sydney HS Pre-University",
+      "provider": "University of Sydney",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2495,
+        "type": "paid",
+        "display": "~AU$3,800-AU$5,500 / USD $2,470-3,575 / 2-week; USyd scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Sydney",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Sydney HS Pre-University — USyd (Australia's #1 university, ranked top-50 globally, founded 1850 — Australia's oldest) for ages 16-18 (rising 11-12). 2-week residential at USyd Camperdown campus. Tracks: Engineering + AI, Business + Asia-Pacific Markets, Marine Biology (Sydney Harbour + Great Barrier Reef adjacent), Indigenous Australian Studies, English Literature. ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE — Australia summer is Dec-Feb. Cross-hemisphere family-trip parlay. Pipeline to USyd undergrad. College-app strong fit for kids who want Pacific-Asia-Pacific exposure.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.sydney.edu.au/learn/hs-pre-university",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.sydney.edu.au/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-116",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Sydney HS Pre-University — USyd (Australia's #1 university, ranked top-50 globally, founded 1850 — Australia's oldest) for ages 16-18 (rising 11-12). 2-week residential at USyd Camperdown campus. Tracks: Engineering + AI, Business + Asia-Pacific Markets, Marine Biology (Sydney Harbour + Great Barrier Reef adjacent), Indigenous Australian Studies, English Literature. ENGLISH-medium. ~AU$3,800-AU$5,500 / USD $2,470-3,575 / 2-week. USyd scholarships for international students. NOTE: SOUTHERN HEMISPHERE — Australia summer is Dec-Feb. Cross-hemisphere family-trip parlay. Pipeline to USyd undergrad. College-app strong fit for Pacific-Asia-Pacific exposure. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "Australian National University HS Pre-University (Canberra)",
+      "provider": "Australian National University (ANU)",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2295,
+        "type": "paid",
+        "display": "~AU$3,500-AU$5,000 / USD $2,275-3,250 / 2-week; ANU scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Canberra",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "Australian National University HS Pre-University — ANU (Australia's research flagship, ranked top-50 globally, located in Australia's capital Canberra) for ages 16-18 (rising 11-12). 2-week residential at ANU Canberra campus. Tracks: International Relations + Asia-Pacific Studies (ANU is Australia's foreign policy think tank), Climate Change + Sustainability, Astronomy + Astrophysics (Mt. Stromlo Observatory), Defense + Strategic Studies (ANU is Australian govt's defense academic partner), Indigenous Australian Studies. ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE Dec-Feb. Pipeline to ANU undergrad.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.anu.edu.au/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.anu.edu.au/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-116",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "Australian National University HS Pre-University — ANU (Australia's research flagship, ranked top-50 globally, located in Australia's capital Canberra) for ages 16-18 (rising 11-12). 2-week residential at ANU Canberra campus. Tracks: International Relations + Asia-Pacific Studies (ANU is Australia's foreign policy think tank), Climate Change + Sustainability, Astronomy + Astrophysics (Mt. Stromlo Observatory), Defense + Strategic Studies (ANU is Australian govt's defense academic partner), Indigenous Australian Studies. ENGLISH-medium. ~AU$3,500-AU$5,000 / USD $2,275-3,250 / 2-week. ANU scholarships for international students. NOTE: SOUTHERN HEMISPHERE Dec-Feb. Pipeline to ANU undergrad. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Melbourne HS Pre-University",
+      "provider": "University of Melbourne",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 2395,
+        "type": "paid",
+        "display": "~AU$3,600-AU$5,200 / USD $2,340-3,380 / 2-week; UMelb scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Melbourne",
+        "state": "AU"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Melbourne HS Pre-University — UMelb (Australia's #2 university, ranked top-50 globally, located in Australia's cultural capital) for ages 16-18 (rising 11-12). 2-week residential at UMelb Parkville campus. Tracks: Medicine + Public Health (UMelb has Australia's #1 medical school), Performing Arts + Music (Melbourne is Australia's arts capital), Architecture + Design, Business + Marketing, Australian Wildlife Conservation. ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE Dec-Feb. Differentiation vs USyd (Sydney is more business + tech; Melbourne more arts + medicine). Pipeline to UMelb undergrad.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.unimelb.edu.au/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.unimelb.edu.au/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-116",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Melbourne HS Pre-University — UMelb (Australia's #2 university, ranked top-50 globally, located in Australia's cultural capital) for ages 16-18 (rising 11-12). 2-week residential at UMelb Parkville campus. Tracks: Medicine + Public Health (UMelb has Australia's #1 medical school), Performing Arts + Music (Melbourne is Australia's arts capital), Architecture + Design, Business + Marketing, Australian Wildlife Conservation. ENGLISH-medium. ~AU$3,600-AU$5,200 / USD $2,340-3,380 / 2-week. UMelb scholarships for international students. NOTE: SOUTHERN HEMISPHERE Dec-Feb. Differentiation vs USyd (Sydney is more business + tech; Melbourne more arts + medicine). Pipeline to UMelb undergrad. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Auckland HS Pre-University (NZ)",
+      "provider": "University of Auckland",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1995,
+        "type": "paid",
+        "display": "~NZ$3,200-NZ$4,800 / USD $1,985-2,975 / 2-week; UoA scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Auckland",
+        "state": "NZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Auckland HS Pre-University — UoA (NZ's #1 university, ranked top-100 globally, NZ's largest) for ages 16-18 (rising 11-12). 2-week residential at UoA Auckland campus. Tracks: Marine Biology + Pacific Ocean Studies (NZ's specialty — surrounded by ocean), Maori Cultural Studies + Te Reo Maori Language Immersion (UNIQUE to NZ), Engineering + Tech, Business + Pacific-Asia Markets, Conservation + Native Wildlife (Kiwi + Kakapo). ENGLISH-medium with Te Reo Maori. NOTE: SOUTHERN HEMISPHERE — NZ summer is Dec-Feb. UNDER-known by US families. Pipeline to UoA undergrad. College-app strong differentiator — Maori cultural learning is rare.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.auckland.ac.nz/learn/hs-pre-university",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.auckland.ac.nz/learn/hs-pre-university",
+      "_addedBy": "hs-international-batch-116",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Auckland HS Pre-University — UoA (NZ's #1 university, ranked top-100 globally, NZ's largest) for ages 16-18 (rising 11-12). 2-week residential at UoA Auckland campus. Tracks: Marine Biology + Pacific Ocean Studies (NZ's specialty — surrounded by ocean), Maori Cultural Studies + Te Reo Maori Language Immersion (UNIQUE to NZ), Engineering + Tech, Business + Pacific-Asia Markets, Conservation + Native Wildlife (Kiwi + Kakapo). ENGLISH-medium with Te Reo Maori. ~NZ$3,200-NZ$4,800 / USD $1,985-2,975 / 2-week. UoA scholarships for international students. NOTE: SOUTHERN HEMISPHERE — NZ summer is Dec-Feb. UNDER-KNOWN by US families. Pipeline to UoA undergrad. College-app strong differentiator — Maori cultural learning is rare. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "University of Otago HS Summer (Dunedin, NZ)",
+      "provider": "University of Otago",
+      "category": "pre-college",
+      "type": "summer",
+      "cost": {
+        "amount": 1795,
+        "type": "paid",
+        "display": "~NZ$2,800-NZ$4,200 / USD $1,735-2,605 / 2-week; UoO scholarships for international students; English-medium"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Dunedin",
+        "state": "NZ"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "University of Otago HS Summer — UoO (NZ's #2 university, ranked top-200 globally, NZ's oldest founded 1869, located in South Island Scottish heritage town Dunedin) for ages 16-18 (rising 11-12). 2-week residential at UoO Dunedin campus. Tracks: Medicine + Pharmacy (UoO has NZ's #1 medical school), Marine + Antarctic Sciences (UoO is gateway to Antarctica research), Public Health (UoO leads NZ public health), Maori + Pacific Studies, Photography + Film. ENGLISH-medium. NOTE: SOUTHERN HEMISPHERE — Dec-Feb. AFFORDABLE NZ option. UNDER-known by US families. Pipeline to UoO undergrad. Strong fit for kids interested in Antarctic-adjacent research.",
+      "deadline": "Apply Sep-Nov for Dec-Feb run",
+      "url": "https://www.otago.ac.nz/learn/hs-summer",
+      "confidence": "low",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.otago.ac.nz/learn/hs-summer",
+      "_addedBy": "hs-international-batch-116",
+      "scheduleConfidence": "window",
+      "summerWindow": null,
+      "sessionPattern": "biweekly",
+      "sessions": [],
+      "scheduleNotes": "University of Otago HS Summer — UoO (NZ's #2 university, ranked top-200 globally, NZ's oldest founded 1869, located in South Island Scottish heritage town Dunedin) for ages 16-18 (rising 11-12). 2-week residential at UoO Dunedin campus. Tracks: Medicine + Pharmacy (UoO has NZ's #1 medical school), Marine + Antarctic Sciences (UoO is gateway to Antarctica research), Public Health (UoO leads NZ public health), Maori + Pacific Studies, Photography + Film. ENGLISH-medium. ~NZ$2,800-NZ$4,200 / USD $1,735-2,605 / 2-week. UoO scholarships for international students. NOTE: SOUTHERN HEMISPHERE — Dec-Feb. AFFORDABLE NZ option. UNDER-KNOWN by US families. Pipeline to UoO undergrad. Strong fit for Antarctic-adjacent research. Apply Sep-Nov for Dec-Feb run.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
