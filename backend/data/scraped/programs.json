@@ -726,7 +726,16 @@
       "region": "Pacific Northwest",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://destinationscience.org/seattle-science-camps/"
+      "_source": "https://destinationscience.org/seattle-science-camps/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Week-long in-person STEM camps across Seattle area. Multiple 2026 themes (Slime Time, Robotic Innovators, Animal Vet Adventures, Outer Space Voyagers + more). Hands-on experiments, ages 5-11. ~$400/wk; sibling discount + multi-week discount available. Existing deadline Jun 1; sessions Mon-Fri 9am-3:30pm with optional extended care. Multiple King County locations. Verify specific weeks at destinationscience.org/seattle-science-camps/.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Rice University STEM-Letics Academy",
@@ -9924,7 +9933,16 @@
       "duration": "2 weeks",
       "region": "Northeast",
       "advisorNote": "Emphasize specific skills you developed and how this experience shaped your perspective on your chosen field.",
-      "format": "in-person"
+      "format": "in-person",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-08-07"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "Long Island, NY summer arts academy. Theater, music, dance, visual arts courses. Grades 7-12 (also serves middle schoolers). Develop artistic skills through intensive instruction, collaborate with peer artists, create showcase work. ~$1,000-2,000 tuition. Existing deadline May 1. 4-5 week residential or commuter intensives in Commack, NY. Audition required for performing-arts tracks.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "MacTheatre Summer Programs",
@@ -35560,7 +35578,16 @@
       "url": "https://destinationscience.org/seattle-science-camps/",
       "_verified": true,
       "_verifiedDate": "2026-04-04",
-      "_source": "https://destinationscience.org/seattle-science-camps/"
+      "_source": "https://destinationscience.org/seattle-science-camps/",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "weekly",
+      "scheduleNotes": "Hands-on science day camps at Bellevue, Bothell, Mercer Island. Week-long themed camps with experiments + STEM activities, ages 5-11. ~$400/wk + sibling discount. Existing deadline Jun 1. Mon-Fri 9am-3:30pm; popular Bellevue/Mercer Island weeks fill by April. Verify specific weeks at destinationscience.org/seattle-science-camps/.",
+      "_scheduleSource": "inferred-2025-pattern",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "iD Tech Camps at UW Seattle",
@@ -39333,7 +39360,13 @@
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_addedBy": "esms-grinder-adhoc",
-      "confidence": "high"
+      "confidence": "high",
+      "scheduleConfidence": "verified",
+      "summerWindow": null,
+      "sessionPattern": "year-round-classes",
+      "scheduleNotes": "Team-based creative problem-solving competition. Teams of 2-7 kids tackle a 'Team Challenge' (technical/scientific/structural/improv/service-learning) over months — building solutions from scratch. State-level tournaments feed Global Finals (May, Kansas City). 38 state Affiliates + 30 countries. Schedule: Tournament registration Sep-Jan; state tournaments Feb-April; Global Finals end of May. Team registration ~$200-300 + materials; school-team subsidies common.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "National History Day (NHD)",
@@ -41674,7 +41707,16 @@
       "scope": "national",
       "scholarshipAid": "Program is fully free — no tuition, no fees, materials shipped at no cost to family.",
       "registrationUrl": "https://form.jotform.com/252825002616147",
-      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free."
+      "howToStart": "Submit the 2026 Virtual NSBE SEEK Parent/Student Registration form via seek.nsbe.org. Apply early — selection is rolling and competitive even though program is free.",
+      "scheduleConfidence": "window",
+      "summerWindow": {
+        "earliestStart": "2026-06-22",
+        "latestEnd": "2026-07-31"
+      },
+      "sessionPattern": "multi-week",
+      "scheduleNotes": "FREE 3-week summer engineering program for students rising 4th-6th grade. For 2026 program is VIRTUAL-ONLY with rolling admissions. Students complete hands-on engineering challenges: building bridges, vehicles, marble runs. Targeted at Black + underrepresented youth but open to all. Materials shipped to home. Existing deadline rolling spring 2026; sessions Jun-Jul. Apply at nsbe.org/program/nsbe-seek.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-27"
     },
     {
       "name": "Math Beasts Camp (AoPS Academy / Beast Academy Live)",
