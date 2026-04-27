@@ -5585,12 +5585,17 @@ async function searchSCBrowse() {
   const state = document.getElementById('scBrowseState').value;
   const fmt = document.getElementById('scBrowseFormat').value;
   const cost = document.getElementById('scBrowseCost').value;
+  /* === REVAMP V2: K-8 DATE FILTERS === */
+  const appStatus = document.getElementById('scBrowseAppStatus')?.value || '';
+  const startWin = document.getElementById('scBrowseStartWindow')?.value || '';
   const q = document.getElementById('scBrowseSearch').value.trim();
   if (grade) params.set('grade', grade);
   if (cat) params.set('category', cat);
   if (state) params.set('state', state);
   if (fmt) params.set('format', fmt);
   if (cost === 'free') params.set('cost', 'free');
+  if (appStatus) params.set('appStatus', appStatus);
+  if (startWin) params.set('startWindow', startWin);
   if (q) params.set('search', q);
 
   const c = document.getElementById('scBrowseResults');

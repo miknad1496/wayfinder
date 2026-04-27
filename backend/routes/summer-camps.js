@@ -154,7 +154,8 @@ router.get('/browse', async (req, res) => {
     return hasK8 && !allHS;
   });
 
-  const { grade, category, state, format, cost, search } = req.query;
+  /* === REVAMP V2: K-8 DATE FILTERS === */
+  const { grade, category, state, format, cost, search, appStatus, startWindow } = req.query;
   if (grade === 'elementary') {
     arr = arr.filter(p => (p.eligibility?.grades || []).map(String).some(g => ES.includes(g)));
   } else if (grade === 'middle') {
@@ -166,6 +167,59 @@ router.get('/browse', async (req, res) => {
                                    || (p.eligibility?.states || []).includes('all'));
   if (format) arr = arr.filter(p => (p.format || '').toLowerCase() === String(format).toLowerCase());
   if (cost === 'free') arr = arr.filter(p => (p.cost?.type || '').toLowerCase() === 'free' || p.cost?.amount === 0);
+  /* === REVAMP V2: K-8 DATE FILTERS — application status + start window === */
+  if (appStatus) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const fortnight = new Date(today.getTime() + 14 * 24 * 60 * 60 * 1000);
+    const parseDeadline = (str) => {
+      if (!str) return null;
+      const s = String(str).trim();
+      if (/rolling|year-round|ongoing|open enrollment/i.test(s)) return 'rolling';
+      const m = s.match(/(\d{4}-\d{2}-\d{2})/);
+      if (m) {
+        const d = new Date(m[1]);
+        if (!isNaN(d.getTime())) return d;
+      }
+      // Loose month-name parse (e.g. "May 1", "Jun 15 2026")
+      const m2 = s.match(/(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(\d{1,2})(?:[ ,]+(\d{4}))?/i);
+      if (m2) {
+        const yr = m2[3] ? parseInt(m2[3], 10) : today.getFullYear();
+        const d = new Date(`${m2[1]} ${m2[2]} ${yr}`);
+        if (!isNaN(d.getTime())) return d;
+      }
+      return null; // unparseable
+    };
+    arr = arr.filter(p => {
+      const parsed = parseDeadline(p.deadline);
+      if (appStatus === 'open') {
+        // Open = rolling OR future deadline OR unparseable (be lenient — better to show than hide)
+        return parsed === 'rolling' || parsed === null || (parsed instanceof Date && parsed >= today);
+      }
+      if (appStatus === 'closing-soon') {
+        return parsed instanceof Date && parsed >= today && parsed <= fortnight;
+      }
+      if (appStatus === 'passed') {
+        return parsed instanceof Date && parsed < today;
+      }
+      return true;
+    });
+  }
+  if (startWindow) {
+    arr = arr.filter(p => {
+      const win = p.summerWindow;
+      const sessPattern = (p.sessionPattern || '').toLowerCase();
+      if (startWindow === 'year-round') {
+        return sessPattern.includes('year-round') || (p.type || '').toLowerCase() === 'year-round';
+      }
+      if (!win || !win.earliestStart) return false;
+      const startMonth = parseInt(String(win.earliestStart).slice(5, 7), 10);
+      if (startWindow === 'early') return startMonth === 6;
+      if (startWindow === 'mid')   return startMonth === 7;
+      if (startWindow === 'late')  return startMonth === 8;
+      return true;
+    });
+  }
   if (search && String(search).trim().length >= 2) {
     const term = String(search).trim().toLowerCase();
     arr = arr.filter(p =>

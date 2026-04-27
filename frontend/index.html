@@ -1681,6 +1681,20 @@
               <option value="">Any Cost</option>
               <option value="free">Free Only</option>
             </select>
+            <!-- REVAMP V2: K-8 DATE FILTERS -->
+            <select id="scBrowseAppStatus" class="tool-filter-select" title="Filter by application deadline status">
+              <option value="">Any Deadline</option>
+              <option value="open" selected>Still Open</option>
+              <option value="closing-soon">Closing Soon (≤14 days)</option>
+              <option value="passed">Passed Deadline</option>
+            </select>
+            <select id="scBrowseStartWindow" class="tool-filter-select" title="Filter by when the program runs">
+              <option value="">Any Start Window</option>
+              <option value="early">Early Summer (June)</option>
+              <option value="mid">Mid Summer (July)</option>
+              <option value="late">Late Summer (August)</option>
+              <option value="year-round">Year-Round Programs</option>
+            </select>
             <input type="text" id="scBrowseSearch" class="tool-filter-search" placeholder="Search camps...">
             <button id="scBrowseSearchBtn" class="form-btn form-btn-sm">Search</button>
           </div>
