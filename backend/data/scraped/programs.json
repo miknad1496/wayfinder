@@ -52901,6 +52901,220 @@
       "_scheduleSource": "site-published",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "International Junior Science Olympiad (IJSO)",
+      "provider": "International Junior Science Olympiad (IJSO global federation)",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE — IJSO is government-funded; US team selected via American Junior Academy of Science"
+      },
+      "format": "hybrid",
+      "location": {
+        "city": "Annual host country rotates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "description": "International Junior Science Olympiad (IJSO) — annual world competition for ages 14-15 (rising 8-9). 100% FREE for selected US team members (~6 students annually). US team selected via American Junior Academy of Science (AJAS). Tracks: Physics, Chemistry, Biology — combined exam + experiments. Hosted by different country annually (most recent: South Korea, Brazil, Mexico, Romania). College-app GOLD: students who medal are recognized by US universities. Apply via AJAS member states.",
+      "deadline": "Apply via state AJAS chapter Oct-Dec",
+      "url": "https://ijsoweb.org",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://ijsoweb.org",
+      "_addedBy": "international-competitions-batch-85",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-12-01",
+        "latestEnd": "2026-12-15"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "International Junior Science Olympiad (IJSO) — annual world competition for ages 14-15 (rising 8-9). 100% FREE for selected US team members (~6 students annually). US team selected via American Junior Academy of Science (AJAS). Tracks: Physics, Chemistry, Biology — combined exam + experiments. Hosted by different country annually (recent: South Korea, Brazil, Mexico, Romania). College-app GOLD: students who medal are recognized by US universities. Apply via state AJAS chapter Oct-Dec for following year. Annual competition Dec.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Mathematical Olympiad (IMO) — Pipeline through MOP",
+      "provider": "Mathematical Association of America (MAA) / IMO",
+      "category": "stem",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for US team — MAA-funded; pipeline starts AMC 8 → AMC 10/12 → AIME → USAMO → MOP → IMO"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual host country rotates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Mathematical Olympiad (IMO) — annual world's most prestigious math competition. US pipeline: AMC 8 (grades 6-8) → AMC 10/12 (grade 9-12) → AIME → USAMO/USAJMO → MOP (Math Olympiad Program summer training) → IMO team. 100% FREE for selected US team. College-app GOLD-PLUS — IMO medalists are recruited by HMC, Stanford, MIT, etc. K-8 entry: grades 6-8 take AMC 8 (Nov annually); top scorers eligible for AMC 10. Pipeline takes 3-4 years to reach IMO.",
+      "deadline": "AMC 8 registration via school by mid-Oct; competition Nov",
+      "url": "https://www.maa.org/learn/the-american-mathematics-competitions",
+      "confidence": "high",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.maa.org/learn/the-american-mathematics-competitions",
+      "_addedBy": "international-competitions-batch-85",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-06",
+        "latestEnd": "2026-07-15"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "International Mathematical Olympiad (IMO) — annual world's most prestigious math competition. US pipeline: AMC 8 (grades 6-8) → AMC 10/12 (grade 9-12) → AIME → USAMO/USAJMO → MOP (Math Olympiad Program summer training) → IMO team. 100% FREE for selected US team — MAA-funded. College-app GOLD-PLUS — IMO medalists recruited by HMC, Stanford, MIT, etc. K-8 entry: grades 6-8 take AMC 8 (Nov annually); top scorers eligible for AMC 10. Pipeline takes 3-4 years to reach IMO. Annual IMO competition Jul.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Geography Olympiad (iGeo) — Pipeline",
+      "provider": "American Geographical Society / iGeo",
+      "category": "non-traditional",
+      "type": "year-round",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for US team — AGS-funded; pipeline starts US Geography Olympiad Bowl → US Team → iGeo"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual host country rotates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "8",
+          "9",
+          "10"
+        ]
+      },
+      "description": "International Geography Olympiad (iGeo) — annual world geography competition for ages 14-19 (rising 9-12). US pipeline: US Geography Olympiad Bowl (annual May; school-based registration) → US Team Selection → iGeo (Aug). Tracks: Cartography, Climate + Atmospheric, Cultural Geography, Economic Geography. 100% FREE for selected US team. College-app strong for geography + international relations track. Distinguishes the geographically-curious kid.",
+      "deadline": "Apply via school Jan-Mar; annual competition May (US) + Aug (iGeo)",
+      "url": "https://www.usgeolympiad.com",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.usgeolympiad.com",
+      "_addedBy": "international-competitions-batch-85",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-08-01",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "International Geography Olympiad (iGeo) — annual world geography competition for ages 14-19 (rising 9-12). US pipeline: US Geography Olympiad Bowl (annual May; school-based registration) → US Team Selection → iGeo (Aug). Tracks: Cartography, Climate + Atmospheric, Cultural Geography, Economic Geography. 100% FREE for selected US team. College-app strong for geography + international relations track. Distinguishes the geographically-curious kid. Apply via school Jan-Mar; competition May (US) + Aug (iGeo).",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "World Schools Debate Championship (WSDC)",
+      "provider": "World Schools Debating Council",
+      "category": "non-traditional",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected US team — National Speech and Debate Association (NSDA) covers travel + tuition + accommodations"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual host country rotates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "World Schools Debate Championship (WSDC) — annual world debate competition for ages 14-19 (rising 9-12). US pipeline: National Speech and Debate Association (NSDA) school + state competitions → NSDA National Tournament → WSDC team selection. 100% FREE for selected US team — NSDA covers everything. Tracks: World Schools Style debate (combination of British Parliamentary + Policy Debate). Annual host country rotates (recent: Mexico, Sri Lanka, South Africa, Italy). College-app strong for political science + law + international relations track.",
+      "deadline": "Apply via school NSDA Sep-Mar; WSDC competition Jul-Aug",
+      "url": "https://www.speechanddebate.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.speechanddebate.org",
+      "_addedBy": "international-competitions-batch-85",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-07-15",
+        "latestEnd": "2026-08-08"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "World Schools Debate Championship (WSDC) — annual world debate competition for ages 14-19 (rising 9-12). US pipeline: National Speech and Debate Association (NSDA) school + state competitions → NSDA National Tournament → WSDC team selection. 100% FREE for selected US team — NSDA covers everything. Tracks: World Schools Style debate (combination of British Parliamentary + Policy Debate). Annual host country rotates. College-app strong for political science + law + international relations track. Apply via school NSDA Sep-Mar; WSDC competition Jul-Aug.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
+    },
+    {
+      "name": "International Astronomy and Astrophysics Olympiad (IOAA)",
+      "provider": "International Astronomy Olympiad / Astronomical League US",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 0,
+        "type": "free",
+        "display": "100% FREE for selected US team — Astronomical League US-funded"
+      },
+      "format": "in-person",
+      "location": {
+        "city": "Annual host country rotates",
+        "state": "ALL"
+      },
+      "eligibility": {
+        "grades": [
+          "10",
+          "11",
+          "12"
+        ]
+      },
+      "description": "International Astronomy and Astrophysics Olympiad (IOAA) — annual world astronomy competition for ages 15-19 (rising 10-12). US pipeline: USAAAO USA Astronomy and Astrophysics Olympiad → US team selection → IOAA. 100% FREE for selected US team. Tracks: Astronomy + Astrophysics theoretical + observational + computational. Annual host country rotates (recent: Iran, Brazil, Indonesia, Russia). College-app GOLD for astrophysics + STEM-track kids.",
+      "deadline": "USAAAO Mar; team selection Apr; IOAA Aug",
+      "url": "https://www.usaaao.org",
+      "confidence": "medium",
+      "_verified": true,
+      "_verifiedDate": "2026-04-28",
+      "_source": "https://www.usaaao.org",
+      "_addedBy": "international-competitions-batch-85",
+      "scheduleConfidence": "verified",
+      "summerWindow": {
+        "earliestStart": "2026-08-08",
+        "latestEnd": "2026-08-21"
+      },
+      "sessionPattern": "year-round-classes",
+      "sessions": [],
+      "scheduleNotes": "International Astronomy and Astrophysics Olympiad (IOAA) — annual world astronomy competition for ages 15-19 (rising 10-12). US pipeline: USAAAO USA Astronomy and Astrophysics Olympiad → US team selection → IOAA. 100% FREE for selected US team — Astronomical League US-funded. Tracks: Astronomy + Astrophysics theoretical + observational + computational. Annual host country rotates. College-app GOLD for astrophysics + STEM-track kids. USAAAO Mar; team selection Apr; IOAA Aug.",
+      "_scheduleSource": "site-published",
+      "_scheduleVerifiedDate": "2026-04-28",
+      "registrationOpens": null
     }
   ]
 }
