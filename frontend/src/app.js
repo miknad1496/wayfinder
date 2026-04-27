@@ -6687,3 +6687,100 @@ document.addEventListener('click', function(e) {
   }
 });
 
+
+/* === REVAMP V2: TOOL FILTER TOOLTIPS (Internships/Programs/Scholarships) === */
+// Inject (?) help tooltips next to each filter on Internships, Programs, and
+// Scholarships modules. Uses the existing .wf-help-btn popup system.
+(function _wfInitToolTooltips() {
+  if (typeof document === 'undefined') return;
+
+  const TOOLTIP_MAP = {
+    // Internships
+    internshipLevel:    'High School = open to 9-12th graders (rare and competitive — e.g., RSI MIT, SSP). College = undergraduate level. Some "College" programs accept rising seniors with strong portfolios.',
+    internshipState:    'State of program location for in-person internships. Many residential programs provide housing + meals — don\'t auto-skip out-of-state if you\'re open to relocation. Use the Format filter if you can\'t relocate.',
+    internshipField:    'STEM has the most volume; arts/government/healthcare are smaller pools but less competitive. Pick where genuine interest is — interviews go better when the topic resonates.',
+    internshipCost:     'Paid = stipend or hourly ($1,500-5,000 typical for 6-8 weeks). Unpaid = often academic/research with course credit + recommendation letters. Don\'t auto-skip unpaid — the brand + reference can outweigh the stipend.',
+    internshipFormat:   'In-person builds the strongest references + relationships. Remote opens national options without travel/housing costs. Hybrid is rare for HS-level.',
+    internshipSearch:   'Search by program name, organization, keyword, or topic (e.g. "NASA", "cancer", "Wall Street", "writing").',
+
+    // Programs
+    programCategory:    'STEM enrichment is the largest category. Academic-gifted = TIP/CTY-style accelerated. Arts/leadership/service have fewer programs but stronger differentiation if your kid is non-STEM.',
+    programState:       'Filter to a state where you live or could relocate. Flagship programs (TIP, CTY, COSMOS) have multiple campuses — pick the closest one if travel is a factor.',
+    programGrade:       'Elementary K-5, Middle 6-8, High 9-12. Some programs span multiple bands — try a narrower filter first, then widen if results are sparse.',
+    programFormat:      'In-person has the strongest peer + faculty network effect. Remote/hybrid opens national options without travel/housing. Faculty references are strongest from in-person.',
+    programCost:        'Free = scholarship-funded or government-funded (e.g. NSBE SEEK, COSMOS). Paid programs run $200-3,500/wk depending on residential vs day. Many "paid" programs have generous need-based aid — apply even if sticker price seems out of reach.',
+    programSelectivity: 'Open = anyone can register. Moderate = application or referral. Selective = competitive admit (TIP, CTY, SUMaC, Mathcamp, MITES). Elite-selective = single-digit admit rates (RSI, SSP).',
+    programSearch:      'Search by program name, host institution, or topic.',
+
+    // Scholarships
+    scholarshipScope:    'National = open to anyone in the US. State = restricted to your state — apply if eligible, far less competition. Regional/local = the easiest to win in absolute terms because the applicant pool is small. Always apply to multiple state + regional ones.',
+    scholarshipCategory: 'Need-based has the largest pools but requires income docs. Merit-based is the most competitive. Demographic categories (first-gen, minority, etc.) are eligibility filters, not "preferences" — apply to every one your kid qualifies for.',
+    scholarshipState:    'Filter to your state for state-restricted scholarships. National scholarships ignore this filter.',
+    scholarshipAmount:   'Sub-$1K scholarships are easiest (low applicant counts). $1K-5K is the sweet spot for effort:reward ratio. $20K+ are highly competitive — apply but don\'t bet your strategy on them.',
+    scholarshipFormat:   'Application format. Essay / portfolio / video have HIGHER applicant burden = LOWER competition. Application-only (no extra creative work) is the most competitive — everyone can apply easily.',
+    scholarshipSearch:   'Search by scholarship name, sponsor organization, or topic (e.g. "essay", "STEM", "first-gen").',
+  };
+
+  function attachOne(elementId, helpText) {
+    const el = document.getElementById(elementId);
+    if (!el || !el.parentNode) return;
+    // Avoid double-attach
+    const next = el.nextElementSibling;
+    if (next && next.classList && next.classList.contains('wf-tooltip-icon-' + elementId)) return;
+    const icon = document.createElement('span');
+    icon.className = 'wf-help-btn wf-tooltip-icon-' + elementId;
+    icon.dataset.help = helpText;
+    icon.textContent = '?';
+    icon.setAttribute('aria-label', 'Filter help: ' + elementId);
+    icon.style.cssText = [
+      'display:inline-flex',
+      'align-items:center',
+      'justify-content:center',
+      'width:18px',
+      'height:18px',
+      'border-radius:50%',
+      'background:#dbeafe',
+      'color:#1e40af',
+      'font-size:11px',
+      'font-weight:700',
+      'cursor:pointer',
+      'margin-left:4px',
+      'margin-right:4px',
+      'flex-shrink:0',
+      'border:1px solid #bfdbfe',
+      'user-select:none',
+      'vertical-align:middle',
+    ].join(';');
+    // Insert immediately after the filter element
+    if (el.nextSibling) el.parentNode.insertBefore(icon, el.nextSibling);
+    else el.parentNode.appendChild(icon);
+  }
+
+  function attachAll() {
+    let attached = 0;
+    for (const id in TOOLTIP_MAP) {
+      if (document.getElementById(id)) {
+        attachOne(id, TOOLTIP_MAP[id]);
+        attached++;
+      }
+    }
+    if (attached) console.debug('[wf] attached ' + attached + ' filter tooltips');
+  }
+
+  // Attach on DOMContentLoaded; also retry on each modal open since some
+  // modals may render filters lazily (defensive).
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachAll);
+  } else {
+    attachAll();
+  }
+  // Re-run on each "tool button" click — opens the modal which may have
+  // re-rendered filters. Cheap defensive idempotent re-attach.
+  document.addEventListener('click', function(e) {
+    if (!e.target || !e.target.closest) return;
+    if (e.target.closest('.tool-button, .sidebar-tool-btn, [data-tool]')) {
+      setTimeout(attachAll, 100);
+    }
+  });
+})();
+
