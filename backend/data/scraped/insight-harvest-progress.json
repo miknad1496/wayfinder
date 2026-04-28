@@ -1,15 +1,20 @@
 {
-  "lastRun": "2026-04-27T23:52:03.699Z",
-  "totalRuns": 3,
-  "totalInsightsCaptured": 18,
+  "lastRun": "2026-04-28T00:45:00.000Z",
+  "totalRuns": 4,
+  "totalInsightsCaptured": 27,
   "currentModule": "esms",
+  "phase": "WA K-8",
+  "nextRunPlan": "WA K-8 still has ~28 unharvested entries (31 candidates - 3 just done). Keep WA K-8 phase for ~5 more runs to drain it before pivoting to WA HS. CATEGORY PATTERNS noticed: (1) all three 2026 fetches surfaced cancellation/refund policy as the most parent-actionable hidden cost — consider creating a dedicated 'cancellation-cliffs' field-notes section once we have 6-8 of these. (2) Major WA programs all have hard early-spring deadlines (Lakeside LEEP May 1, iD Tech March 1, UW Youth & Teen rolls but hot courses gone by late Jan) — these would benefit from a consolidated 'WA spring-deadline calendar' section. (3) Discount stacking is consistently overlooked by parents — sibling/referral/early-bird/multi-week often combine and most parents pay full price.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
       "museum of flight ace (aerospace camp experience)__museum of flight",
       "digipen open world summer workshops (ages 5-12)__digipen institute of technology",
       "seattle mesa (mathematics, engineering, science achievement)__university of washington / seattle mesa",
-      "uw engineering discovery days__university of washington college of engineering"
+      "uw engineering discovery days__university of washington college of engineering",
+      "lakeside educational enrichment program (leep)__lakeside school",
+      "uw youth & teen programs__university of washington",
+      "id tech camps at uw seattle__id tech"
     ],
     "k12": [
       "530039000060",

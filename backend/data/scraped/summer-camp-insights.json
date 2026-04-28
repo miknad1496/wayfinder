@@ -257,6 +257,87 @@
       "icon": "🔍",
       "items": [
         {
+          "label": "Lakeside LEEP — 2026 dates locked + cohort sizes",
+          "detail": "Lakeside Educational Enrichment Program (LEEP) 2026 runs July 6 - July 31, Mon-Fri 9am-3pm. Total cohort is 90 students: 50 rising 6th graders + 40 rising 9th graders, with 1-to-18 student-to-teacher ratio and a counselor in every classroom. Free 4-week summer enrichment for current 5th + 8th graders in Seattle Public Schools. Includes light breakfast + full lunch daily, free First Student bus transportation, and all classroom supplies. (Source: lakesideschool.org/summer/leep, harvested 2026-04-27.)",
+          "category": "fit-tip",
+          "sourceProvider": "Lakeside School",
+          "sourceName": "Lakeside Educational Enrichment Program (LEEP)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.lakesideschool.org/summer/leep"
+        },
+        {
+          "label": "Lakeside LEEP — apply via Ravenna, Apr 1 / May 1 / June 1 calendar",
+          "detail": "LEEP application opens April 1, closes May 1, decisions notified May 1, enrollment due June 1 — all via ravenna-hub.com (search 'LEEP' in the School Directory). A complete app needs 5 forms: Family Info, Student Statement, Parent/Guardian Statement, Current School Grades release, and a Behavior/Attendance form from the current school. Late applications case-by-case via LEEP@lakesideschool.org. The 2026-2027 Lakeside admissions cycle is closed — LEEP is a separate process from Lakeside main admissions and is FREE.",
+          "category": "registration-tip",
+          "sourceProvider": "Lakeside School",
+          "sourceName": "Lakeside Educational Enrichment Program (LEEP)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.lakesideschool.org/summer/leep"
+        },
+        {
+          "label": "Lakeside LEEP — full attendance required, plan 15-90 min bus rides",
+          "detail": "Accepted LEEP students are EXPECTED to attend the full 4 weeks — known schedule conflicts (family vacations, other camps, summer travel) mean LEEP is not the right fit, per the program. Bus rides add 15-90 minutes each way depending on stop location and Seattle traffic — bus stops are at SPS schools, community centers, and libraries. 92% of 2025 LEEP cohort identified as students of color, 61% qualified for free/reduced lunch, 36 spoke a second language at home — community is intentionally diverse. Voluntary parent contributions accepted but never required.",
+          "category": "fit-tip",
+          "sourceProvider": "Lakeside School",
+          "sourceName": "Lakeside Educational Enrichment Program (LEEP)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.lakesideschool.org/summer/leep"
+        },
+        {
+          "label": "UW Youth & Teen — 4 two-week sessions, half-day stacking unlocks full-day childcare",
+          "detail": "UW Youth & Teen Programs 2026 runs as 4 two-week sessions (Jun 29-Jul 10, Jul 13-Jul 24, Jul 27-Aug 7, Aug 10-Aug 21). Each course is HALF-DAY: 9am-12pm (slot 'A') OR 1pm-4pm (slot 'B'). Stack one A + one B course in the same week to make a full day on UW Seattle campus — different course in each slot. Grade buckets are entering 4-5, 6-8, and 9-12 (no K-3). Many courses also offered Online via Zoom as an alternate format.",
+          "category": "registration-tip",
+          "sourceProvider": "University of Washington",
+          "sourceName": "UW Youth & Teen Programs",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
+        },
+        {
+          "label": "UW Youth & Teen — Online courses still Open when UW Seattle is Waitlist",
+          "detail": "As of late April 2026, ~30-40% of UW Seattle in-person courses are already on Waitlist for the early sessions (Jun 29 + Jul 13) — but the SAME-NAMED Online (Zoom) sections are typically still Open. If your child is location-flexible, switching from UW Seattle to Online for the first two sessions gets them in. Hot courses currently waitlist: 3D Design & CAD Modeling, Architectural Studies, Intro to AI & Machine Learning, Mission to Mars, DIY Electronics (1A), Mechanics of Writing for HS. Late summer sessions (Jul 27 + Aug 10) still have wider in-person availability.",
+          "category": "fit-tip",
+          "sourceProvider": "University of Washington",
+          "sourceName": "UW Youth & Teen Programs",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
+        },
+        {
+          "label": "UW Youth & Teen — early-summer hot courses to register at first 2027 opening",
+          "detail": "By April 27, 2026 the following UW Youth & Teen courses are already Waitlisted for week 1 (Jun 29 start): 3D Design & CAD (gr 4-5 + 6-8), Architectural Studies, Intro to AI & ML (both slots), DIY Electronics (1A morning), Hello World CS/Robotics/AI Literacy (1A), HS Entrepreneurship Startup Lab, Inside the Courthouse only the morning slot, and Innovation Lab Robotics & Coding for Kids. If any of these are priorities for your child for 2027, calendar the moment registration opens (typically late January / early February for the new summer) — they sell out fastest by far. Mathematical/data viz courses + most online sections still have room well into April.",
+          "category": "registration-tip",
+          "sourceProvider": "University of Washington",
+          "sourceName": "UW Youth & Teen Programs",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.youth-teen.uw.edu/programs/summer-2026-courses"
+        },
+        {
+          "label": "iD Tech UW Seattle — March 1 is the cancellation cliff",
+          "detail": "iD Tech's refund policy has a hard cliff at March 1: cancel BEFORE March 1 = full refund of all amounts paid. Cancel after March 1 but 28+ days before your session = refund minus a $250 per-week cancellation charge. Within 28 days of the session start = NO refund at all. Free unlimited course/week changes (no fees) are also locked out at the 28-day mark. If you're booking a $1,149/wk K-8 day camp or a $4,999 Teen Academy, plan your final commitment around Feb to keep full optionality.",
+          "category": "hidden-cost",
+          "sourceProvider": "iD Tech",
+          "sourceName": "iD Tech Camps at UW Seattle",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.idtech.com/locations/washington-summer-camps/uw-seattle"
+        },
+        {
+          "label": "iD Tech UW Seattle — auto-stack $50 course/sibling + $25 referral discounts",
+          "detail": "iD Tech automatically applies $50 off for each ADDITIONAL course or sibling beyond your first registration (no code needed — applied at checkout). Separately, after you register you receive a Refer-a-Friend code good for 10 friends; you and the referred family each get $25 credit. Two kids × 2 weeks each = $150 in stacked savings most parents miss. Payment plans start at $375 down with monthly installments — useful for families spreading the $1,149+/wk day camp cost.",
+          "category": "scholarship",
+          "sourceProvider": "iD Tech",
+          "sourceName": "iD Tech Camps at UW Seattle",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.idtech.com/locations/washington-summer-camps/uw-seattle"
+        },
+        {
+          "label": "iD Tech Teen Academy — 2-week portfolio is the real college-app ROI",
+          "detail": "The 2-week iD Tech Teen Academy at UW (ages 13-18, $4,999+, overnight only) ends with a portfolio project + iD Tech diploma + transcript explicitly designed for college apps, internships, and resumes — that's the differentiator vs the 1-week camps. Teens also get more autonomy, dorm life, optional weekend stays (supervised but not instruction-focused), Pike Place + Space Needle + MoPOP excursions, and Friday Family Showcase to present their final project. If you're paying premium for a high schooler, the portfolio is the durable artifact — for K-8 the day camp at $1,149/wk hits a different ROI (skill exposure, not portfolio).",
+          "category": "fit-tip",
+          "sourceProvider": "iD Tech",
+          "sourceName": "iD Tech Camps at UW Seattle",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.idtech.com/locations/washington-summer-camps/uw-seattle"
+        },
+        {
           "label": "Aquarium of the Pacific — 2026 sessions sell out same day",
           "detail": "All five 2026 Aquarium of the Pacific summer camp tracks (Fish Fry, Sea Squirts, Ocean Adventure, Junior Biologist, Coastal Explorer) were SOLD OUT within ~24 hours of public registration (March 12, 2026). Members register one day earlier (March 11) — calendar that date for 2027."
         },
