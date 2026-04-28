@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T03:28:14Z",
-  "totalRuns": 9,
-  "totalInsightsCaptured": 54,
+  "lastRun": "2026-04-28T03:47:59.173Z",
+  "totalRuns": 10,
+  "totalInsightsCaptured": 57,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 esms harvest: SPS Expanded Learning + Camp Sealth + KiDiMu added (cross-Sound geographic spread + free-tier + scholarship + paid). 16 esms WA -> 19. PATTERN: financial-aid deadlines for WA overnight + multi-week camps consistently fall in DEC-FEB of the prior year (Camp Sealth Dec 31, Camp Orkila early-bird typically Jan, Camp Korey applications open in fall) — next run could batch-write ONE umbrella insight for 'WA overnight camp scholarship calendar — apply 5-9 months early' under registration-windows or scholarship-cheats sections instead of one-by-one. ALSO: KiDiMu pricing math (member vs non-member) is a category pattern — most museum camps in WA (PacSci, KidsQuest, Burke, Museum of Flight) follow same model and the membership-pays-for-itself math could be a cross-cutting insight in pricing-tiers-k8-2026 section. Remaining ~13 unharvested WA K-8 with usable URLs: Destination Science Seattle, Launch Learning, UW K-12 Engineering Outreach, Music Center NW, Point Defiance Zoo (Tacoma — fills Tacoma gap), Whatcom Family YMCA (Bellingham — north WA gap), KiDiMu DONE, Vancouver WA Parks & Rec (SW WA gap), Camp Korey (chronic-illness-specific — high parent value). DATA QUALITY FLAGS: zoo.org/education/camps/info redirected and failed fetch — log 'zoo.org camps info path requires alt URL discovery (try zoo.org/camps/summer)'. CF-blocked list unchanged: islandwood.org, galileo-camps.com, seattleaquarium.org, wpenginepowered hosts. Pivot proposal: after 2-3 more WA K-8 runs to clear the high-value remainder, switch phase to 'TX K-8' or 'CA K-8' since WA is approaching saturation.",
+  "nextRunPlan": "WA K-8 esms harvest: Pt Defiance Zoo (Tacoma — entire 2026 season SOLD OUT, biggest insight: book Mar 10/12 the moment registration opens for 2027), Whatcom Family YMCA (Bellingham — 11-week season + rare 'Kinders on Their Way' transition camp), Camp Korey (Mt Vernon — ASD/ADHD-as-primary disqualifier is the most-missed eligibility gate). 19 esms WA -> 22. PATTERN-LEVEL OPPORTUNITY: ALL three Tacoma-area / north-WA gap programs we've now hit confirm the WA SUMMER REGISTRATION CALENDAR pivots on EARLY MARCH for the most popular zoo/museum camps (PacSci Feb 4 member / Feb 11 general, KidsQuest member-first, Burke similar, PDZA Mar 10 member / Mar 12 general — all sold out within 4-6 weeks). Next run could batch-write ONE umbrella insight for 'WA Zoo & Aquarium camp registration calendar — early March deadlines, expect 6-week sellout' under registration-windows or scholarship-cheats sections instead of one-by-one. SECOND PATTERN: 'eligibility surprise' (parents apply, denied for non-obvious reason) — Camp Korey's ASD/ADHD-primary exclusion, PDZA scholarship's Pierce-County-and-EBT/WIC-only restriction, SPS Expanded Learning's 60th-percentile MAP cutoff — could be a NEW dedicated 'eligibility-surprises' section parents would actually click. Remaining ~10 unharvested WA K-8 with usable URLs: Destination Science Seattle, Launch Learning, UW K-12 Engineering Outreach, Music Center NW, Music Works NW (Renton/East-side gap), Vancouver WA Parks & Rec (SW WA gap), Coyote Central Studio Coyote (arts/teen pre-loaded), KidsQuest. CF-blocked still: islandwood.org, galileo-camps.com, seattleaquarium.org. Pivot proposal: clear 2-3 more WA K-8 high-value entries, then either (a) batch-write the umbrella insights described above OR (b) switch phase to 'TX K-8' or 'CA K-8' since WA approaching 70%+ saturation.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -25,7 +25,10 @@
       "music works northwest summer music camps__music works northwest",
       "seattle public schools expanded learning summer__seattle public schools",
       "camp sealth overnight & day camp__camp fire central puget sound",
-      "kidimu summer camps (kids discovery museum)__kids discovery museum (kidimu)"
+      "kidimu summer camps (kids discovery museum)__kids discovery museum (kidimu)",
+      "point defiance zoo & aquarium summer camps__point defiance zoo & aquarium",
+      "whatcom family ymca summer day camps__whatcom family ymca",
+      "camp korey (chronic illness camp, wa)__camp korey (seriousfun children's network)"
     ],
     "k12": [
       "530039000060",
