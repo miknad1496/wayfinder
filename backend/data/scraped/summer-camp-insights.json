@@ -3,7 +3,8 @@
     "audience": "K-8 parents",
     "lastUpdated": "2026-04-28",
     "purpose": "Real, genuine, thoughtful insights/hacks/strategies for parents planning summer + year-round enrichment for elementary and middle school kids.",
-    "insightCount": 227
+    "insightCount": 227,
+    "lastHarvestRun": "2026-04-28T00:00:00.000Z"
   },
   "sections": [
     {
@@ -256,6 +257,33 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "label": "City of Vancouver WA Parks & Rec — registration deadline is 9 a.m. Thursday before each camp week, ALL waitlists wipe July 6, aftercare exists ONLY at Marshall Camp",
+          "detail": "Five concrete pieces of intel from the official 2026 Vancouver WA Parks & Rec recreation-camps page (covers Marshall Youth Day Camp, Fircrest Youth Day Camp, Access to Recreation Camp): (1) HARD REGISTRATION DEADLINE — registration closes at 9 a.m. on Thursday the week prior to the start of each camp week. Parents who think 'I can sign up Friday before' will be locked out. (2) WAITLIST RESET — every camp waitlist is cleared on July 6, 2026, and you can rejoin starting July 7. If your kid is buried at #20 on a popular week's waitlist, that resets — re-add yourself July 7 to climb back to a meaningful spot. (3) AFTERCARE IS NOT UNIVERSAL — aftercare (4:30-5:30 p.m.) runs ONLY at Marshall Camp for an additional fee. Fircrest, Access to Rec, and the other sites are 8 a.m. drop-off / 4:30 p.m. pick-up hard-stop. Working parents needing later pick-up MUST pick Marshall. (4) PAYMENT PLAN AVAILABLE — 15% down at registration; remaining balance auto-charged each Friday starting May 8 with final payment due 2 weeks before camp start. Plan only available for Marshall, Fircrest, and Access to Recreation Camp. Failed-payment processing fee = $5 per week. (5) EVERYBODY PLAYS! SCHOLARSHIP HAS A CITY-LIMITS GAP — the 50% tuition scholarship requires primary address WITHIN Vancouver city limits. Families in Hazel Dell, Salmon Creek, Felida, or Camas (just outside city limits) DON'T qualify even though they're a 5-min drive away — important for parents who think 'we live in Vancouver' but actually live in unincorporated Clark County. Refund deadline = 4 weeks before camp start. ePACT participant form must be completed before attending. (Source: cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/, harvested 2026-04-28.)",
+          "category": "registration-tip",
+          "sourceProvider": "City of Vancouver Parks, Recreation & Cultural Services",
+          "sourceName": "City of Vancouver Parks & Recreation Summer Day Camps",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://www.cityofvancouver.us/government/department/parks-recreation-and-cultural-services/recreation-activities/recreation-camps/"
+        },
+        {
+          "label": "Music Center of the Northwest (Greenwood/N Seattle) — Summer Term Music Together is $85 for 4 weeks (cheapest legit early-childhood music in N Seattle), but sibling discount is PHONE-ONLY",
+          "detail": "Three pieces of intel from musiccenternw.org/musictogether for parents of birth-to-age-6 kids in N Seattle/Greenwood (901 N 96th St): (1) SUMMER TERM IS A STEAL — Summer 2026 Music Together (mixed-ages, birth to 5) runs July 13-Aug 7, four 45-min sessions, $85 total ($70 for siblings) including the songbook + music download code. That works out to ~$21/class — a fraction of Bellevue Music Together (~$240+) or PEPS-style mommy-and-me classes. Times: Mon 9:30am or 5:30pm, Tue 9:30/10:30am or 5:30pm, Fri 9:30am. Spring Term comp is $260 for 9 weeks. (2) SIBLING DISCOUNT REQUIRES A PHONE CALL — the $190 (spring) / $70 (summer) sibling rate cannot be done online. You must call (206) 526-8443 to register a second kid. Parents who self-checkout for both online get charged the full rate twice. (3) HARD-LINE REFUND POLICY ON THE RHYTHM KIDS CAMP — the July 20-24 Rhythm Kids Summer Camp ($295, ages 4-6, 12:30-4 pm with 30-min care windows on either side) refunds 100% only if you withdraw on or before June 1, 2026. June 2-30 = 50% refund, and ZERO refund on/after July 1. Kids must also be fully potty trained — non-negotiable. Class withdrawals follow a separate rule (full refund 1 week+ before, 50% before second class, none after; $15 drop fee on workshops). Tuition assistance available — covers one class OR 30-min lesson, but only one award per applicant. (Source: musiccenternw.org/musictogether, harvested 2026-04-28.)",
+          "category": "hidden-cost",
+          "sourceProvider": "Music Center of the Northwest",
+          "sourceName": "Music Center of the Northwest Summer Music Camps",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://www.musiccenternw.org/musictogether"
+        },
+        {
+          "label": "Washington MESA College Prep — most parents miss the 'Summer Math Scholars' bridge for incoming 9th graders + the Boeing/Weyerhaeuser scholarships up to $2,500",
+          "detail": "Three under-marketed assets in the FREE Washington MESA College Prep Program (UW Office of Minority Affairs partnership, 6th-12th grade, low-income / first-gen / racial-ethnic-minority eligibility): (1) SUMMER MATH SCHOLARS — a 3-week summer program designed specifically for incoming 9th graders to enter HS placed ABOVE their current grade level in math. Most parents searching for 'summer math camp' for rising-9th never find this because it's buried under 'College Prep Program' rather than marketed as a summer offering. Real impact: a kid who finishes 8th-grade Algebra 1 can land in Geometry-or-higher freshman year, which compounds into Calc-by-junior year — a hugely valuable college-app signal. (2) BOEING + WEYERHAEUSER SCHOLARSHIPS UP TO $2,500 EACH — both named industry scholarships are reserved for MESA students. Most families don't know these exist, let alone that you can apply only by being a MESA participant. Two named-corp scholarships from PNW industry giants is a stronger college-app narrative than a generic 'community service award.' (3) MESA DAY PIPELINE = COLLEGE-APP-READY COMPETITION TRACK — every MESA Day flows: 6 WA regional competitions (math + science + engineering challenges) -> State competition -> ONE team per challenge represents WA at the National USA-MESA Engineering Design Competition. Parents looking for an 'authentic' STEM extracurricular that produces tangible quantifiable results (regional/state/national placements) should know this exists for FREE inside MESA without any of the $1500 USACO-camp / $3000 robotics-club costs. Year-round enrollment via the local MESA chapter at the participating school — check washington.edu/omad/washington-mesa for which WA schools have a chapter (heavily concentrated in Title-I-served districts). (Source: washington.edu/omad/washington-mesa/college-prep-program, harvested 2026-04-28.)",
+          "category": "scholarship",
+          "sourceProvider": "University of Washington Office of Minority Affairs",
+          "sourceName": "Washington MESA College Prep Program",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://www.washington.edu/omad/washington-mesa/college-prep-program/"
+        },
         {
           "label": "Destination Science Seattle — 7 King County sites confirmed for 2026, but Extended Care lives at ONLY 3 (Bellevue/BASIS, Bothell, Mercer Island)",
           "detail": "Three concrete pieces of intel that flip how you should pick a site for Destination Science 2026 (ages 5-11, Seattle area): (1) FULL 2026 SITE MAP just dropped — 7 locations: St Lukes Lutheran Church (Bellevue), BASIS Independent School (Bellevue), Eastside Christian School (Bellevue), First Lutheran Church (Bothell), Blakely Hall (Issaquah Highlands), Snoqualmie Springs School (Issaquah), and Northwest Yeshiva High School (Mercer Island). The Issaquah Highlands and Snoqualmie sites are NEW relative to most Seattle camp databases — eastside families east of I-405 finally get a closer option than driving to Bellevue. (2) EXTENDED CARE = ONLY 3 SITES. The official site explicitly limits before/after care to Bellevue (BASIS), Bothell, and Mercer Island. If you need 8am drop-off or 5pm+ pickup, you CANNOT pick the St Lukes, Eastside Christian, Blakely Hall, Snoqualmie Springs, or NW Yeshiva sites — they're 9am-3pm hard. Working-parent families should default to BASIS Bellevue or Bothell First Lutheran. (3) THEMES are SINGLE-WEEK, NOT ROTATING. The 2026 themes are Movie Maker STEM Lab Camp, Robot Olympic Challenge Camp, and Jedi Engineering Camp — each runs as a standalone week. A kid who wants variety needs to book multiple weeks (each themed differently). The site also advertises a 'Flexible Cancellation Policy' (worth confirming the exact terms by phone before depositing). (Source: destinationscience.org/seattle-science-camps, harvested 2026-04-27.)",
@@ -1236,5 +1264,5 @@
     "lastUpdated": "2026-04-26",
     "totalFieldNotes": 30
   },
-  "lastUpdated": "2026-04-27"
+  "lastUpdated": "2026-04-28"
 }
