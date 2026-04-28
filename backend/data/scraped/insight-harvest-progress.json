@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T01:20:00.000Z",
-  "totalRuns": 5,
-  "totalInsightsCaptured": 36,
+  "lastRun": "2026-04-28T01:47:07.811Z",
+  "totalRuns": 6,
+  "totalInsightsCaptured": 39,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 still has ~25 unharvested entries (28 candidates - 3 just done: Robinson Center Saturday, KidsQuest, Burke). STRONG CATEGORY PATTERN observed across runs 4 + 5: refund/cancellation policy is consistently the most parent-actionable insight (6/9 of run 5's insights touched refund cliffs, financial aid availability, or hidden non-refundable fees). PROPOSE for next run: write a CATEGORY-LEVEL umbrella insight comparing the refund policies across the 'WA museum cluster' (Burke = zero refunds, KidsQuest = refunds-till-May-22 + $50 fee, Robinson Center = 14-day refund cliff, PacSci = sliding-scale, Lakeside LEEP = free so N/A). ALSO observed: financial aid coverage varies wildly by museum (Burke 50%, Robinson Center 100% for F/R lunch families, KidsQuest scholarship spots already full). Next 3 candidates in priority order: Studio Coyote Summer Workshops (Coyote Central \u2014 Capitol Hill arts), YMCA Camp Orkila Overnight (sleepaway readiness signal), Lavner Camps at UW (national-chain comparison). After that, consider creating a dedicated 'wa-refund-cliffs-2026' field-notes section to consolidate the refund pattern.",
+  "nextRunPlan": "Run 6 captured 3 useful insights from 2 entries (YMCA Camp Orkila x2 + Lavner UW x1) — Studio Coyote (Coyote Central) was the planned 3rd but coyotecentral.org returns redirect-cancelled errors via web_fetch; SKIPPED, not marked harvested. Action for future fetcher work: Coyote Central, Camp Sealth detail pages, and Camp Fire financial-assistance page (404'd) all need an alternate fetch path or direct URL list. WA K-8 unharvested count: now ~23 (was 25). PATTERN observed in run 6: working-parent gotchas dominate insights — Lavner core 9-3 hours-with-paid-aftercare was most actionable; Camp Orkila one-FA-per-summer was a quiet but big constraint that DB didn't capture; Camp Orkila 3-tier (not 2-tier) sliding scale is a common-knowledge correction. PROPOSED next-run priority order: (1) Camp Sealth detail/program pages (try campfireseattle.org/summer-camp/ instead of /camp-sealth-overnight-camp/), (2) Woodland Park Zoo Summer Day Camps (zoo.org/education/camps/info — likely well-populated like PacSci), (3) Seattle Aquarium Marine Summer Camp (seattleaquarium.org/.../marine-summer-camp). After that, switch to building the umbrella 'WA refund cliff' insight as a NEW field-notes item summarizing the cross-program pattern (Burke=zero refunds, KidsQuest=May-22+$50fee, Robinson=14-day, PacSci=sliding, LEEP=free/NA, now Camp Orkila=$50 deposit even with 100% FA + one-FA-per-summer cap).",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -17,7 +17,9 @@
       "id tech camps at uw seattle__id tech",
       "robinson center saturday enrichment program__uw robinson center for young scholars",
       "kidsquest children's museum summer camps__kidsquest children's museum",
-      "burke museum summer camps (dino trackers & paleo discovery)__burke museum of natural history and culture (uw)"
+      "burke museum summer camps (dino trackers & paleo discovery)__burke museum of natural history and culture (uw)",
+      "ymca camp orkila overnight summer camp__ymca of greater seattle",
+      "lavner camps at university of washington__lavner education"
     ],
     "k12": [
       "530039000060",
