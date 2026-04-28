@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T00:45:00.000Z",
-  "totalRuns": 4,
-  "totalInsightsCaptured": 27,
+  "lastRun": "2026-04-28T01:20:00.000Z",
+  "totalRuns": 5,
+  "totalInsightsCaptured": 36,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 still has ~28 unharvested entries (31 candidates - 3 just done). Keep WA K-8 phase for ~5 more runs to drain it before pivoting to WA HS. CATEGORY PATTERNS noticed: (1) all three 2026 fetches surfaced cancellation/refund policy as the most parent-actionable hidden cost — consider creating a dedicated 'cancellation-cliffs' field-notes section once we have 6-8 of these. (2) Major WA programs all have hard early-spring deadlines (Lakeside LEEP May 1, iD Tech March 1, UW Youth & Teen rolls but hot courses gone by late Jan) — these would benefit from a consolidated 'WA spring-deadline calendar' section. (3) Discount stacking is consistently overlooked by parents — sibling/referral/early-bird/multi-week often combine and most parents pay full price.",
+  "nextRunPlan": "WA K-8 still has ~25 unharvested entries (28 candidates - 3 just done: Robinson Center Saturday, KidsQuest, Burke). STRONG CATEGORY PATTERN observed across runs 4 + 5: refund/cancellation policy is consistently the most parent-actionable insight (6/9 of run 5's insights touched refund cliffs, financial aid availability, or hidden non-refundable fees). PROPOSE for next run: write a CATEGORY-LEVEL umbrella insight comparing the refund policies across the 'WA museum cluster' (Burke = zero refunds, KidsQuest = refunds-till-May-22 + $50 fee, Robinson Center = 14-day refund cliff, PacSci = sliding-scale, Lakeside LEEP = free so N/A). ALSO observed: financial aid coverage varies wildly by museum (Burke 50%, Robinson Center 100% for F/R lunch families, KidsQuest scholarship spots already full). Next 3 candidates in priority order: Studio Coyote Summer Workshops (Coyote Central \u2014 Capitol Hill arts), YMCA Camp Orkila Overnight (sleepaway readiness signal), Lavner Camps at UW (national-chain comparison). After that, consider creating a dedicated 'wa-refund-cliffs-2026' field-notes section to consolidate the refund pattern.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -14,7 +14,10 @@
       "uw engineering discovery days__university of washington college of engineering",
       "lakeside educational enrichment program (leep)__lakeside school",
       "uw youth & teen programs__university of washington",
-      "id tech camps at uw seattle__id tech"
+      "id tech camps at uw seattle__id tech",
+      "robinson center saturday enrichment program__uw robinson center for young scholars",
+      "kidsquest children's museum summer camps__kidsquest children's museum",
+      "burke museum summer camps (dino trackers & paleo discovery)__burke museum of natural history and culture (uw)"
     ],
     "k12": [
       "530039000060",
