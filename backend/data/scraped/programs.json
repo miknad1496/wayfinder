@@ -1,61 +1,7 @@
 {
   "metadata": {
-    "lastScraped": "2026-04-26",
-    "totalCount": 1410,
-    "sources": [
-      "MIT MITES",
-      "Stanford University",
-      "Yale University",
-      "Columbia University",
-      "Harvard University",
-      "Princeton University",
-      "University of Pennsylvania",
-      "Brown University",
-      "Cornell University",
-      "Duke University",
-      "Northwestern University",
-      "UCLA",
-      "UC Berkeley",
-      "Caltech",
-      "Boston University",
-      "Northeastern University",
-      "Carnegie Mellon University",
-      "American Legion (Boys & Girls State)",
-      "Rotary International",
-      "Various Science Olympiad organizers",
-      "Major League Hacking",
-      "Peace Corps",
-      "AmeriCorps",
-      "Council on International Educational Exchange",
-      "NSF Research Programs",
-      "NIH Internship Program",
-      "NASTE (National Association of Summer STEM Training Experiences)",
-      "NSF (National Science Foundation)",
-      "NASA",
-      "NOAA",
-      "DOE",
-      "Howard Hughes Medical Institute",
-      "Cold Spring Harbor Laboratory",
-      "Boys & Girls State Association",
-      "International Education Forum",
-      "Google Summer of Code",
-      "Microsoft",
-      "Outward Bound",
-      "Ashoka",
-      "Global Citizen Year",
-      "AFS International",
-      "City Year",
-      "Habitat for Humanity"
-    ],
-    "_verified": "partial",
-    "_verificationNotes": "Data integrity enforced on 2026-04-23. 82 verified, 744 non-verified, 71 dupes removed.",
-    "lastUpdated": "2026-04-26",
-    "totalPrograms": 956,
-    "verifiedCount": 93,
-    "lastHealthCheck": "2026-04-06T14:45:01.557Z",
-    "healthCheckAction": "Removed 1 dupes, 0 invalid",
-    "_formatBackfillNotes": "Backfilled format for 744 entries based on location.state. Online→online, Remote→remote, all others→in-person.",
-    "lastVerified": "2026-04-27"
+    "lastScraped": "2026-04-27",
+    "totalCount": 1416
   },
   "programs": [
     {
@@ -63295,6 +63241,244 @@
       "_scheduleSource": "inferred-2025-pattern",
       "_scheduleVerifiedDate": "2026-04-28",
       "registrationOpens": null
+    },
+    {
+      "name": "Aquarium of the Pacific Summer Camps (Long Beach)",
+      "provider": "Aquarium of the Pacific",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 275,
+        "type": "paid",
+        "display": "$275/$250 member per week (ages 7-12); other tracks vary"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Long Beach",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-03-12",
+      "description": "Five age-tiered marine-science day camps at Southern California's largest public aquarium: Fish Fry (3-4yo with adult), Sea Squirts (5-6), Ocean Adventure (7-9), Junior Biologist (10-12), and the new Coastal Explorer (10-12, includes a whale-watch cruise). Animal interactions, behind-the-scenes tours, conservation curriculum, crafts, and games. Member presale began March 11, 2026; general March 12; all 2026 sessions sell out — waitlist available. Cost cited is for ages 7-12 sessions ($275 / $250 member); younger and older tracks have different fees. Tuition assistance is not publicly advertised — email education@lbaop.org for need-based options.",
+      "url": "https://www.aquariumofpacific.org/education/camps",
+      "_source": "https://www.aquariumofpacific.org/education/camps",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Adventures in Nature Day Camp (NHM Los Angeles)",
+      "provider": "Natural History Museums of Los Angeles County",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 400,
+        "type": "paid",
+        "display": "$400 / $360 member per week; +$75/wk afternoon extended care 3-5pm"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-08-07",
+      "description": "Six themed weekly day-camp sessions at NHM's Exposition Park campus (June 29 - Aug 7, 2026): Insect Investigators, Raptor Rangers, Pod Patrol (whales), Nocturnal Neighbors, Paleo Tales, and Museum Makers. One additional week typically held at La Brea Tar Pits. Three decades of operating history; campers use NHM's research collections (4.5 billion years of life on Earth) as a jumping-off point. Designed for grades K-5 with low staff-to-child ratio and developmentally-appropriate, age-tiered activities. Optional afternoon extended care (3-5pm) at $75/week. Major support from LADWP keeps tuition stable. Email info@nhm.org with questions.",
+      "url": "https://nhm.org/adventures-nature",
+      "_source": "https://nhm.org/adventures-nature",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Fleet Science Center STEM Camps (San Diego)",
+      "provider": "Reuben H. Fleet Science Center",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 425,
+        "type": "paid",
+        "display": "$425 / $350 member per week (full-day grades 1-8); $225 / $200 member per half-day TK-K week; 4-day weeks $340/$280 (full) or $180/$160 (half)"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "San Diego",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-08-19",
+      "description": "Weekly STEM day-camp series at Balboa Park's Fleet Science Center (June 1 - Aug 19, 2026), with grade-banded themes for TK-K, grades 1-2, 3-4, 5-6, and 6-8. Topics span chemistry, robotics, paleontology, aviation, deep-sea biology, special-effects engineering, and inventor-track maker projects (Spy Academy, Inventors in Wonderland, Movie Magic, STEM Adventures with Inspiring Women, etc.). Full-day camps run 9am-4pm; half-day TK-K camps 9am-12pm. Members pay $350/week (full) or $200 (half); general $425/$225. Spring + summer registration open; waitlist available. STEM camp volunteer track for older teens. Contact education coordinator with questions.",
+      "url": "https://www.fleetscience.org/events/camps",
+      "_source": "https://www.fleetscience.org/events/camps",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Camp Discovery (Discovery Cube OC + LA)",
+      "provider": "Discovery Cube Orange County / Discovery Cube Los Angeles",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 445,
+        "type": "paid",
+        "display": "Full-day: $400-$445 non-member / $365-$410 member per week. Early pick-up (9am-2pm): $285-$315 non-member / $265-$290 member"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Santa Ana / Sylmar",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-07-31",
+      "description": "Week-long STEM day camps at both Discovery Cube campuses — Orange County (Santa Ana) and Los Angeles (Sylmar) — Monday-Friday 9am-4pm with an optional 2pm early pick-up for K-2 campers. Grades K-5. Themed weeks include Wild Wilderness (K-2 ecology), Busy Bots (K-2 coding/robotics), STEAM Studio (3-5 maker), Robo-Lab (3-5 robotics), and more. Pricing varies by camp track ($365-$445 non-member full-day) but every camp is published. Some sessions sell out by April; waitlist by phone (714) 542-2823 or customerservice@discoverycube.org. Both campuses run identical curriculum.",
+      "url": "https://www.discoverycube.org/camp/",
+      "_source": "https://www.discoverycube.org/camp/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Camp Curiosity (SMUD MOSAC, Sacramento)",
+      "provider": "SMUD Museum of Science and Curiosity (MOSAC)",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 435,
+        "type": "paid",
+        "display": "$275 / $255 member per K half-day week (9am-12pm); $435 / $415 member per 1st-6th grade full-day week (9am-4pm); $545 / $525 member per 5th-8th Design Lab specialty week"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "K",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-04-03",
+      "description": "Week-long science camps at Sacramento's downtown SMUD MOSAC riverfront campus for rising K-8 graders. Five focus areas — Space, Engineering, Nature, Science, Energy — with three pricing tiers based on age and length. Kindergarten Camps run half-day mornings ($275/$255 member). Grades 1-6 Standard Camps run full-day 9am-4pm ($435/$415 member). Grades 5-8 Design Lab Specialty Camps are deeper-dive maker tracks ($545/$525 member). Member registration opens by grade band March 18-20, 2026; general registration April 1-3, 2026 at 9am. Family Duo membership tier or above required for member discount + early access. Address: 400 Jibboom Street.",
+      "url": "https://visitmosac.org/learn/camps/",
+      "_source": "https://visitmosac.org/learn/camps/",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
+    },
+    {
+      "name": "Science at the Seashore (Cabrillo Marine Aquarium, San Pedro)",
+      "provider": "Cabrillo Marine Aquarium / City of LA Recreation & Parks",
+      "category": "stem",
+      "type": "summer",
+      "cost": {
+        "amount": 85,
+        "type": "paid",
+        "display": "$26/$24 Friends member (Tales 2-day, ages 3-5); $85/$77 Friends member (4-day grades 1-8 sessions, t-shirt included)"
+      },
+      "selectivity": "open",
+      "format": "in-person",
+      "location": {
+        "city": "San Pedro",
+        "state": "CA"
+      },
+      "eligibility": {
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "states": [
+          "CA"
+        ]
+      },
+      "deadline": "2026-03-16",
+      "description": "City-subsidized marine-science summer camp at LA's harbor-front Cabrillo Marine Aquarium (3720 Stephen M. White Dr, San Pedro). Age-tiered tracks: Tales Between the Tides (ages 3-5, 2-day) at $26/$24 Friends member; Galloping Snails (entering grades 1-2, 4-day, 9am-12pm), Crab Shells (entering 3-4), Ichthyology (entering 5-6 — fish anatomy + dissection), and Coastal Research (entering 7-8) all at $85/$77 Friends member with t-shirt included. Programs use the aquarium, classroom lab, and adjacent Coastal Park. Friends-of-CMA member registration opens March 2, 2026; non-members March 16. The pricing here is dramatically below comparable LA-area marine programs because CMA is operated by LA City Recreation & Parks. Phone (310) 548-7562.",
+      "url": "https://cma.recreation.parks.lacity.gov/programs/public-programs",
+      "_source": "https://cma.recreation.parks.lacity.gov/programs/public-programs",
+      "_verified": true,
+      "_verifiedDate": "2026-04-27",
+      "_addedBy": "esms-grinder",
+      "confidence": "high"
     }
   ]
 }
