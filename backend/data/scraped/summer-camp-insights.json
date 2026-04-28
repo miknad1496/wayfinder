@@ -257,6 +257,33 @@
       "icon": "🔍",
       "items": [
         {
+          "label": "SPS Expanded Learning Summer — 20:2 ratio + WAITLIST + Parent Appeal + ESY runs SEPARATE program",
+          "detail": "Four things parents miss about Seattle Public Schools' free K-8 summer program: (1) Class size is locked at 20:2 student-to-adult ratio (10:1) — a tighter ratio than most paid camps, which is why the program is so effective for kids who got bumped down to <60th percentile MAP/DIBELS. (2) There IS a Summer Learning WAITLIST — when the May 1 deadline passes and a school's seats are full, your kid can still get on the waitlist (link in the SPS Expanded Learning sidebar) and seats open up regularly through June. (3) The 'Summer Learning Parent Appeal' is a real lever — if your child was assessed as ABOVE the 60th percentile but you have evidence summer slide is a risk (e.g., your kid bombed a recent unit, IEP/504 not yet active, recent move), you can formally appeal placement. (4) ESY (Extended School Year) is run by a SEPARATE department (Special Education, not Expanded Learning) — IEP families get a different application path, breakfast/lunch included, NO 60th-percentile cutoff. Don't confuse the two enrollments. (Source: seattleschools.org/departments/expanded-learning, harvested 2026-04-27.)",
+          "category": "registration-tip",
+          "sourceProvider": "Seattle Public Schools",
+          "sourceName": "Seattle Public Schools Expanded Learning Summer",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.seattleschools.org/departments/expanded-learning/"
+        },
+        {
+          "label": "Camp Sealth — Dec 31 financial-aid deadline, Feb 27 = waitlist-only, plus a SEPARATE Equity Action Fund (EAF) for families of color",
+          "detail": "Two huge intel pieces our DB doesn't surface for Camp Sealth on Vashon Island (overnight + day camp): (1) Financial-Assistance has a HARD-EARLY ladder: apply by Dec 31 of the prior year for guaranteed funding (notification by Jan 24); the Feb 27 'second deadline' is officially the cutoff but as of late April 2026 ALL FUNDING IS ALLOCATED and applications go straight to a waitlist. The financial-aid math: 'apply at registration' is too late — you have to flag financial assistance four months before camp. For 2027 camp, calendar a reminder for Dec 1, 2026. (2) The EQUITY ACTION FUND (EAF) is a SEPARATE pool from regular financial assistance, specifically for youth and families of color, providing low-or-no-cost camp access. EAF is funded from general donations + the Financial Assistance Fund, NOT the same money as need-based financial aid — meaning a family of color can apply for BOTH pools. Apply via Financial Assistance section at registration; not all program sessions support EAF (the funding option appears in registration before payment). Community Day Camps (Greater Seattle) financial-aid deadline is later: April 17. (Source: campfireseattle.org/how-to-register/financial-assistance/ + /equity-action-fund/, harvested 2026-04-27.)",
+          "category": "scholarship",
+          "sourceProvider": "Camp Fire Central Puget Sound",
+          "sourceName": "Camp Sealth Overnight & Day Camp",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://campfireseattle.org/how-to-register/financial-assistance/"
+        },
+        {
+          "label": "KiDiMu (Bainbridge Island) — membership pays for itself in ~2 weeks of camp + live '% full' indicator + $20/hr add-on for early/late care",
+          "detail": "Three concrete data points for Kids Discovery Museum summer camp (Bainbridge Island, ages 3-12, 9am-3pm M-F): (1) PRICING MATH: $525/wk non-member vs $472.50/wk member ($52.50/wk savings) — KiDiMu Family Memberships run roughly $100-140, so ONE week of camp + a few visits already pays back the membership; if you're sending kid for 2+ weeks, become a member first. (2) The website shows a LIVE '% full' indicator for each weekly session (e.g., 'Dino Discovery Lab June 15-19: 55% full' as of late April) — parents can see real-time fill rates and prioritize the more popular weeks first instead of registering chronologically. (3) Before-care (8am drop-off) and after-care (4pm pickup) are NOT bundled — they cost an additional $20/hr add-on. Two hours of extended care = $200/wk on top of the camp fee. The Friday 'Family Celebration' showcase format means parent attendance is built into the model (good for working parents who can take a Friday afternoon off, less good for those who can't). Potty-trained requirement applies to ALL ages 3-12, not just the PreK starters. (Source: kidimu.org/camps, harvested 2026-04-27.)",
+          "category": "hidden-cost",
+          "sourceProvider": "Kids Discovery Museum (KiDiMu)",
+          "sourceName": "KiDiMu Summer Camps",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://kidimu.org/camps/"
+        },
+        {
           "label": "Coyote Central (Studio Coyote) — every class is pay-what-works-for-you + CRE8 immersion needs 5th-grade application for a 3-year 6-8th grade commitment",
           "detail": "Two things our DB doesn't surface for Coyote Central in the Central District: (1) ALL Studio Coyote youth classes (weekend, school break, AND summer weeklong sessions for ages 10-15) are PAY-WHAT-WORKS-FOR-YOU — there is no published price ladder. The family declares what they can afford at registration. This is the actual operating model, not a discount or scholarship pool — meaning families on tight budgets shouldn't 'save it for the kid who needs it more.' Just declare the number that's true for you. (2) The CRE8 Immersion Program is a 3-YEAR commitment for 6th-8th graders that you APPLY TO IN 5TH GRADE — students gather weekly across all three middle-school years to dive into multiple mediums, design public art, and build individual showcases. If your family wants this for a future 6th-grader, calendar a reminder for the application window when they're in 5th grade. After age 15, alumni can join the Youth Advisory Board (paid stipends + Public Art commissions in Seattle parks/businesses for those 12+ chosen from the Studio Coyote roster). (Source: coyotecentral.org/programs, harvested 2026-04-27.)",
           "category": "scholarship",
@@ -1155,5 +1182,5 @@
     "lastUpdated": "2026-04-26",
     "totalFieldNotes": 30
   },
-  "lastUpdated": "2026-04-26"
+  "lastUpdated": "2026-04-28T03:28:14Z"
 }

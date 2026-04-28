@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T02:51:00.954Z",
-  "totalRuns": 8,
-  "totalInsightsCaptured": 51,
+  "lastRun": "2026-04-28T03:28:14Z",
+  "totalRuns": 9,
+  "totalInsightsCaptured": 54,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 esms harvest: Coyote Central + SCT + Music Works NW added (Bellevue/Central District arts cluster). 13 esms WA harvested -> 16. Remaining ~20 high-value WA K-8 entries: Camp Sealth (overnight, financial-assistance page 404'd from /financial-assistance/ slug — needs alt URL discovery), IslandWood (CF-blocked wpenginepowered host), Galileo Camps Bellevue (CF-blocked), Seattle Aquarium Marine Camp (CF-blocked, wpenginepowered), Woodland Park Zoo Day Camps, SPS Expanded Learning Summer (free K-8 enrichment for sub-60th-percentile kids — high-value insight target). PATTERN: WA arts/music camps consistently bury 'payment plans available to all' policy 2-3 clicks deep — next run could batch a category-level 'WA arts camps payment-plan availability' insight. ALSO: Music Works NW + SCT both gate special tracks (electronic music, neurodivergent support) on PRE-registration contact — emerging pattern 'must email/call BEFORE registering' worth a category-level call-out. CF-block list growing — log a data-quality flag for these 4 wpenginepowered hosts.",
+  "nextRunPlan": "WA K-8 esms harvest: SPS Expanded Learning + Camp Sealth + KiDiMu added (cross-Sound geographic spread + free-tier + scholarship + paid). 16 esms WA -> 19. PATTERN: financial-aid deadlines for WA overnight + multi-week camps consistently fall in DEC-FEB of the prior year (Camp Sealth Dec 31, Camp Orkila early-bird typically Jan, Camp Korey applications open in fall) — next run could batch-write ONE umbrella insight for 'WA overnight camp scholarship calendar — apply 5-9 months early' under registration-windows or scholarship-cheats sections instead of one-by-one. ALSO: KiDiMu pricing math (member vs non-member) is a category pattern — most museum camps in WA (PacSci, KidsQuest, Burke, Museum of Flight) follow same model and the membership-pays-for-itself math could be a cross-cutting insight in pricing-tiers-k8-2026 section. Remaining ~13 unharvested WA K-8 with usable URLs: Destination Science Seattle, Launch Learning, UW K-12 Engineering Outreach, Music Center NW, Point Defiance Zoo (Tacoma — fills Tacoma gap), Whatcom Family YMCA (Bellingham — north WA gap), KiDiMu DONE, Vancouver WA Parks & Rec (SW WA gap), Camp Korey (chronic-illness-specific — high parent value). DATA QUALITY FLAGS: zoo.org/education/camps/info redirected and failed fetch — log 'zoo.org camps info path requires alt URL discovery (try zoo.org/camps/summer)'. CF-blocked list unchanged: islandwood.org, galileo-camps.com, seattleaquarium.org, wpenginepowered hosts. Pivot proposal: after 2-3 more WA K-8 runs to clear the high-value remainder, switch phase to 'TX K-8' or 'CA K-8' since WA is approaching saturation.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -22,7 +22,10 @@
       "lavner camps at university of washington__lavner education",
       "studio coyote summer workshops__coyote central",
       "seattle children's theatre drama school summer camps__seattle children's theatre",
-      "music works northwest summer music camps__music works northwest"
+      "music works northwest summer music camps__music works northwest",
+      "seattle public schools expanded learning summer__seattle public schools",
+      "camp sealth overnight & day camp__camp fire central puget sound",
+      "kidimu summer camps (kids discovery museum)__kids discovery museum (kidimu)"
     ],
     "k12": [
       "530039000060",
