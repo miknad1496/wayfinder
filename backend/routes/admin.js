@@ -932,6 +932,18 @@ router.all('/grinder-write', async (req, res) => {
       return cur;
     }
 
+    // REVAMP V2: VALIDATION GATE PATCH32 — capture pre-mutation array counts for diff-sanity check
+    const _v32_preCounts = {};
+    const _v32_TRACKED_KEYS = ['programs', 'internships', 'scholarships', 'opportunities'];
+    for (const _v32_p of Object.keys(dataObjects)) {
+      const _v32_data = dataObjects[_v32_p];
+      for (const _v32_k of _v32_TRACKED_KEYS) {
+        if (Array.isArray(_v32_data && _v32_data[_v32_k])) {
+          _v32_preCounts[_v32_p + ':' + _v32_k] = _v32_data[_v32_k].length;
+        }
+      }
+    }
+
     // 4. Apply operations
     for (const op of operations) {
       const p = op.path;
@@ -1023,6 +1035,115 @@ router.all('/grinder-write', async (req, res) => {
         }
         default:
           return res.status(400).json({ error: 'Unknown op: ' + op.op });
+      }
+    }
+
+    // REVAMP V2: VALIDATION GATE PATCH32 — VALIDATION GATE: refuse catastrophic writes BEFORE they land
+    {
+      const issues = [];
+
+      // (a) Per-call quota: refuse if total appended entries via append-array > 50
+      const QUOTA_PER_CALL = 50;
+      let totalAppended = 0;
+      for (const op of operations) {
+        if (op.op === 'append-array' && Array.isArray(op.items)) totalAppended += op.items.length;
+      }
+      if (totalAppended > QUOTA_PER_CALL) {
+        issues.push('Per-call quota exceeded: ' + totalAppended + ' entries (limit ' + QUOTA_PER_CALL + '). Split into smaller batches.');
+      }
+
+      // (b) Diff sanity: refuse >2% shrinkage in any tracked array
+      const SHRINK_THRESHOLD = 0.98;
+      for (const p of Object.keys(dataObjects)) {
+        const data = dataObjects[p];
+        for (const k of _v32_TRACKED_KEYS) {
+          const before = _v32_preCounts[p + ':' + k];
+          if (typeof before !== 'number') continue;
+          const after = Array.isArray(data && data[k]) ? data[k].length : 0;
+          if (after < before * SHRINK_THRESHOLD) {
+            const dropPct = ((before - after) / before * 100).toFixed(1);
+            issues.push('Diff sanity FAIL on ' + p + '.' + k + ': ' + before + ' -> ' + after + ' entries (' + dropPct + '% drop). Refusing to commit. If intentional, split into multiple smaller commits or contact admin.');
+          }
+        }
+      }
+
+      // (c) Schema validation on appended entries
+      const VALID_STATE = /^[A-Z]{2}$|^ALL$/;
+      const VALID_DATE = /^\d{4}-\d{2}-\d{2}$/;
+      const VALID_URL = /^https?:\/\//i;
+      for (const op of operations) {
+        if (op.op !== 'append-array' || !Array.isArray(op.items)) continue;
+        for (let idx = 0; idx < op.items.length; idx++) {
+          const item = op.items[idx];
+          const tag = (op.path || '?') + '.' + (op.key || '?') + '[+' + idx + ']';
+          if (!item || typeof item !== 'object') {
+            issues.push(tag + ': not a valid object');
+            continue;
+          }
+          if (!item.name || typeof item.name !== 'string' || !item.name.trim()) {
+            issues.push(tag + ': missing or empty "name" field');
+          }
+          // Provider OR organization (different modules use different keys)
+          if (!item.provider && !item.organization) {
+            issues.push(tag + ': missing "provider" or "organization" field');
+          }
+          // _source MUST be a real URL (the patch24 era data-quality rule)
+          if (!item._source || typeof item._source !== 'string' || !VALID_URL.test(item._source)) {
+            issues.push(tag + ': missing or invalid _source URL (must start with http:// or https://)');
+          }
+          if (item._verifiedDate && !VALID_DATE.test(String(item._verifiedDate))) {
+            issues.push(tag + ': _verifiedDate must be YYYY-MM-DD format, got "' + item._verifiedDate + '"');
+          }
+          // State code (if present) must be 2 letters or 'ALL'
+          const stateCode = (item.location && item.location.state) || item.state;
+          if (stateCode && !VALID_STATE.test(String(stateCode).toUpperCase())) {
+            issues.push(tag + ': invalid state code "' + stateCode + '" (must be 2-letter uppercase or "ALL")');
+          }
+        }
+      }
+
+      // (d) Duplicate detection: appended entries against existing + within batch
+      // (Ops have already mutated dataObjects, so existing arrays now contain the
+      // appended entries at the END. We slice off the appended portion to recover
+      // the pre-append set for comparison.)
+      for (const op of operations) {
+        if (op.op !== 'append-array' || !Array.isArray(op.items) || !op.path || !op.path.endsWith('.json')) continue;
+        const data = dataObjects[op.path];
+        if (!data) continue;
+        const arr = Array.isArray(data[op.key]) ? data[op.key] : null;
+        if (!arr) continue;
+        const appendedCount = op.items.length;
+        const existingBefore = arr.slice(0, arr.length - appendedCount);
+        const keyOf = (e) => {
+          const n = (e && e.name ? String(e.name) : '').trim().toLowerCase();
+          const p = (e && (e.provider || e.organization) ? String(e.provider || e.organization) : '').trim().toLowerCase();
+          return n + '|' + p;
+        };
+        const existingKeys = new Set(existingBefore.map(keyOf));
+        const seenInBatch = new Set();
+        op.items.forEach((item, idx) => {
+          if (!item || !item.name) return; // schema check above will catch
+          const tag = (op.path || '?') + '.' + (op.key || '?') + '[+' + idx + ']';
+          const k = keyOf(item);
+          if (existingKeys.has(k)) {
+            issues.push(tag + ': duplicate of existing entry "' + item.name + '" by "' + (item.provider || item.organization || '?') + '". Use update-array-items to modify, or change name/provider to differentiate.');
+          }
+          if (seenInBatch.has(k)) {
+            issues.push(tag + ': duplicate within this batch (same name+provider as another item in the same call)');
+          }
+          seenInBatch.add(k);
+        });
+      }
+
+      if (issues.length > 0) {
+        console.warn('[grinder-write VALIDATION GATE PATCH32] rejected with ' + issues.length + ' issue(s):');
+        for (const i of issues) console.warn('  - ' + i);
+        return res.status(422).json({
+          error: 'Validation gate rejected this write — ' + issues.length + ' issue(s) found. See "issues" array for details.',
+          rejectedBy: 'PATCH32',
+          issues,
+          retriable: false,
+        });
       }
     }
 
