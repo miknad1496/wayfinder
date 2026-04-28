@@ -1,9 +1,9 @@
 {
   "metadata": {
     "audience": "K-8 parents",
-    "lastUpdated": "2026-04-27",
+    "lastUpdated": "2026-04-28",
     "purpose": "Real, genuine, thoughtful insights/hacks/strategies for parents planning summer + year-round enrichment for elementary and middle school kids.",
-    "insightCount": 80
+    "insightCount": 227
   },
   "sections": [
     {
@@ -256,6 +256,33 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "label": "Destination Science Seattle — 7 King County sites confirmed for 2026, but Extended Care lives at ONLY 3 (Bellevue/BASIS, Bothell, Mercer Island)",
+          "detail": "Three concrete pieces of intel that flip how you should pick a site for Destination Science 2026 (ages 5-11, Seattle area): (1) FULL 2026 SITE MAP just dropped — 7 locations: St Lukes Lutheran Church (Bellevue), BASIS Independent School (Bellevue), Eastside Christian School (Bellevue), First Lutheran Church (Bothell), Blakely Hall (Issaquah Highlands), Snoqualmie Springs School (Issaquah), and Northwest Yeshiva High School (Mercer Island). The Issaquah Highlands and Snoqualmie sites are NEW relative to most Seattle camp databases — eastside families east of I-405 finally get a closer option than driving to Bellevue. (2) EXTENDED CARE = ONLY 3 SITES. The official site explicitly limits before/after care to Bellevue (BASIS), Bothell, and Mercer Island. If you need 8am drop-off or 5pm+ pickup, you CANNOT pick the St Lukes, Eastside Christian, Blakely Hall, Snoqualmie Springs, or NW Yeshiva sites — they're 9am-3pm hard. Working-parent families should default to BASIS Bellevue or Bothell First Lutheran. (3) THEMES are SINGLE-WEEK, NOT ROTATING. The 2026 themes are Movie Maker STEM Lab Camp, Robot Olympic Challenge Camp, and Jedi Engineering Camp — each runs as a standalone week. A kid who wants variety needs to book multiple weeks (each themed differently). The site also advertises a 'Flexible Cancellation Policy' (worth confirming the exact terms by phone before depositing). (Source: destinationscience.org/seattle-science-camps, harvested 2026-04-27.)",
+          "category": "registration-tip",
+          "sourceProvider": "Destination Science",
+          "sourceName": "Destination Science Summer Camps — Seattle",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://destinationscience.org/seattle-science-camps/"
+        },
+        {
+          "label": "Launch Learning — NOT free in 2026 ($303-$505/wk Seattle, $256-$320/wk Renton); 10% discount expires May 1; Renton opens 6:00am for early-shift parents",
+          "detail": "Four corrections + insights for Launch Learning Summer 2026 — many existing parent guides (including ours pre-harvest) call this program 'free / heavily subsidized,' but the official 2026 tuition page contradicts that: (1) PRICING IS REAL: Seattle School-Age Wks 3-9 = $505/wk (Beacon Hill/Highland Park/Kimball/Madrona). Renton (Cascade Vista) Wks 3-8 = $320/wk. That's a $185/wk gap (37% cheaper at Renton) — for SE King County families willing to commute, the 8-week savings is ~$1,480. Preschool: Seattle Miller Annex full-day = $2,215/mo, Renton Cascade Vista 5-day full-day preschool = $1,750/mo. (2) 10% ALL-SUMMER-WEEKS DISCOUNT (school-age only) — register your child for ALL summer weeks by MAY 1 to lock in the discount. Forfeit it after May 1 even if you book the same total number of weeks. (3) RENTON CASCADE VISTA OPENS AT 6:00 AM and runs to 6:30 PM (Mon-Fri), uniquely accommodating swing-shift / very-early-shift parents — Seattle sites are 8am-6pm only. For families where one parent starts at 7am, this is the only Seattle-metro option that doesn't require a separate before-care patch. (4) HIDDEN DEAL — 'SPS Summer Learning Aftercare' (Highland Park + Kimball ONLY, 4pm-6pm) is $445 TOTAL for the full 5-week stretch (June 29-July 31), but ONLY for kids enrolled in Seattle Public Schools' free Summer Learning program. That works out to ~$22/day — by far the cheapest school-age option in the city, designed for parents who use the free SPS morning program then need afternoon coverage. Registration opens March 18 (passed for 2026); first day of camp is June 23. New families MUST email enrollment@launchlearning.org first; returning families self-serve. (Source: launchlearning.org/summer/, harvested 2026-04-27.)",
+          "category": "hidden-cost",
+          "sourceProvider": "Launch Learning",
+          "sourceName": "Launch Learning Summer Program",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://launchlearning.org/summer/"
+        },
+        {
+          "label": "UW K-12 Engineering Outreach — most 'free' UW programs are HS-only; for K-8 the entry points are Discovery Days (4th-8th, 10,000 visitors) + Engineering Ambassadors school visits",
+          "detail": "Three filters K-8 parents should apply when navigating UW College of Engineering's 'K-12' programs page (the umbrella covers very different age targets that all say 'K-12'): (1) ENGINEERING DISCOVERY DAYS is the marquee K-8 entry point — FREE 2-day spring event on UW campus, ~10,000 visitors annually, explicitly 4th-8th GRADE oriented (NOT K-12 broadly despite the umbrella name). Hands-on activities run by UW engineering students/faculty. Watch the engr.washington.edu calendar in Jan-Feb for the date drop. Best for: a kid who's STEM-curious but hasn't committed; one full afternoon of free exploration with no application. (2) MOST OTHER 'FREE' UW PROGRAMS ARE HS-ONLY. Engineering Academy (5-day summer camp) = HS only. Changemakers in Computing (CIC) = rising juniors/seniors only. Center for Neurotechnology Young Scholars = HS. DO-IT Scholars = HS with disabilities. Parents of K-8 kids who try to apply waste the slot — not eligible. The K-8 path is Discovery Days + the SEPARATE 'UW Summer Youth Programs' umbrella (full-day camps + half-day short courses, paid, broader age range). (3) HIDDEN GEM — ENGINEERING AMBASSADORS. Free service where UW engineering undergrads come to YOUR K-12 SCHOOL to do in-classroom presentations and hands-on activities. Most parents and teachers don't know it exists. Bring it to your PTA: an EA visit costs the school $0, gives kids real-engineer role models, and works especially well for under-resourced or rural districts that don't have a tech corridor in commute distance. Email request via engr.washington.edu/k12 → Engineering Ambassadors. Bonus: HCDE-led K-12 Outreach Workshops specifically target underrepresented and resource-constrained Seattle-area schools — ask your school's principal or district equity office to opt in. (Source: engr.washington.edu/k12, harvested 2026-04-27.)",
+          "category": "fit-tip",
+          "sourceProvider": "University of Washington College of Engineering",
+          "sourceName": "UW K-12 Engineering Outreach Programs",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.engr.washington.edu/k12"
+        },
         {
           "label": "Point Defiance Zoo (Tacoma) — ENTIRE 2026 season SOLD OUT (sold out by mid-Apr); new 2026 queueing system penalizes any closed-tab; Eco Explorers (8th-11th) limited to 2 weeks all summer",
           "detail": "Three time-critical pieces of intel for parents eyeing PDZA summer camp (the Tacoma camp option that fills the south-Sound gap most Seattle databases miss): (1) AS OF LATE APRIL 2026 EVERY SESSION IS SOLD OUT — Tiny Turtles (PreK), Little Lemurs (post-K), Animal Investigators (1st-2nd), Budding Biologists (1st-2nd), Wild Explorers (3rd-4th), Science Explorers (5th-7th), AND Eco Explorers (8th-11th). Member registration opened Mar 10 8am, general Mar 12 8am — and the entire summer was gone in ~6 weeks. Only path now is the per-child waitlist form (one form per child). For 2027, calendar Mar 1 to confirm Pierce County zoo membership status and Mar 9 to be at the keyboard at 7:55am. (2) NEW 2026 VIRTUAL QUEUE SYSTEM penalizes you for closing the tab: 'If you close your order before finishing, you'll be moved to the back of the queue.' For multi-kid families: 'complete all registrations in the same order' — same single browser session, do NOT open a second tab. (3) ECO EXPLORERS (entering 8th-11th grade) is the rarest tier — only TWO 4-day weeks all summer (July 7-10 and August 4-7) at $415 member / $455 non-member. If your tween/teen is interested in zookeeping or marine biology, this is the highest-competition tier in the program; the Eco track also has classroom learning built in (closer to a credit-bearing pre-vet/biology offering than typical 'fun camp'). Pricing reference for 2027 budgeting: 5-day grades 1-4 $450-485 member / $495-530 non-member; 4-day grades 5-11 $415 / $455. (Source: pdza.org/summer-camps, harvested 2026-04-27.)",

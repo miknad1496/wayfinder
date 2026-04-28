@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T03:47:59.173Z",
-  "totalRuns": 10,
-  "totalInsightsCaptured": 57,
+  "lastRun": "2026-04-28T04:19:54.000Z",
+  "totalRuns": 11,
+  "totalInsightsCaptured": 60,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 esms harvest: Pt Defiance Zoo (Tacoma — entire 2026 season SOLD OUT, biggest insight: book Mar 10/12 the moment registration opens for 2027), Whatcom Family YMCA (Bellingham — 11-week season + rare 'Kinders on Their Way' transition camp), Camp Korey (Mt Vernon — ASD/ADHD-as-primary disqualifier is the most-missed eligibility gate). 19 esms WA -> 22. PATTERN-LEVEL OPPORTUNITY: ALL three Tacoma-area / north-WA gap programs we've now hit confirm the WA SUMMER REGISTRATION CALENDAR pivots on EARLY MARCH for the most popular zoo/museum camps (PacSci Feb 4 member / Feb 11 general, KidsQuest member-first, Burke similar, PDZA Mar 10 member / Mar 12 general — all sold out within 4-6 weeks). Next run could batch-write ONE umbrella insight for 'WA Zoo & Aquarium camp registration calendar — early March deadlines, expect 6-week sellout' under registration-windows or scholarship-cheats sections instead of one-by-one. SECOND PATTERN: 'eligibility surprise' (parents apply, denied for non-obvious reason) — Camp Korey's ASD/ADHD-primary exclusion, PDZA scholarship's Pierce-County-and-EBT/WIC-only restriction, SPS Expanded Learning's 60th-percentile MAP cutoff — could be a NEW dedicated 'eligibility-surprises' section parents would actually click. Remaining ~10 unharvested WA K-8 with usable URLs: Destination Science Seattle, Launch Learning, UW K-12 Engineering Outreach, Music Center NW, Music Works NW (Renton/East-side gap), Vancouver WA Parks & Rec (SW WA gap), Coyote Central Studio Coyote (arts/teen pre-loaded), KidsQuest. CF-blocked still: islandwood.org, galileo-camps.com, seattleaquarium.org. Pivot proposal: clear 2-3 more WA K-8 high-value entries, then either (a) batch-write the umbrella insights described above OR (b) switch phase to 'TX K-8' or 'CA K-8' since WA approaching 70%+ saturation.",
+  "nextRunPlan": "WA K-8 esms harvest: 3 high-value entries cleared this run (Destination Science Seattle + Launch Learning + UW K-12 Engineering Outreach). 22 esms WA -> 25. CRITICAL DATA-CORRECTION PATTERN: Launch Learning's existing scheduleNotes incorrectly said 'FREE / heavily subsidized' — actual 2026 tuition is $256-$505/wk. Suggest a NEXT-RUN audit pass over WA K-8 entries flagged as 'FREE' in scheduleNotes to verify against live pricing — likely false-free entries hiding in the DB. WORKING REMAINING WA K-8 with usable URLs: Camp Tech Revolution (parentmap article URL), Music Center NW (musictogether subpage), City of Vancouver WA Parks & Rec (SW WA gap — high priority since SW WA is underserved in our DB), Washington MESA College Prep, Washington STEM Network. Galileo, IslandWood, Seattle Aquarium, Woodland Park Zoo (zoo.org/education/camps/info broken — try zoo.org/learn/summer-camp/) all CF/redirect-blocked. PATTERN OPPORTUNITIES for next umbrella write: (a) UW College of Engineering K-12 / UW Summer Youth Programs / Robinson Center all have 'looks like one umbrella, actually 5 separate programs with very different age targets' structure — could write ONE umbrella insight 'UW K-8 navigation map: which UW program is actually for which age' under wa-spotlight-2026 instead of one-by-one. (b) The Renton-vs-Seattle pricing gap pattern (Launch Learning Cascade Vista 37% cheaper than Seattle sites) likely repeats for YMCA, Boys & Girls Clubs, and other multi-site providers — could write ONE umbrella insight 'cross-King-County pricing arbitrage: the same provider often costs $100+/wk less in Renton/Kent/Auburn vs Seattle proper.' STRATEGIC PIVOT PROPOSAL: WA K-8 is now ~70-75% saturated. After 1-2 more WA runs (esp. Vancouver WA + Music Center NW for SW + N-Seattle gaps), pivot to TX K-8 (currently 0 entries harvested) or volunteer module (only 8 entries harvested out of 247).",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -28,7 +28,10 @@
       "kidimu summer camps (kids discovery museum)__kids discovery museum (kidimu)",
       "point defiance zoo & aquarium summer camps__point defiance zoo & aquarium",
       "whatcom family ymca summer day camps__whatcom family ymca",
-      "camp korey (chronic illness camp, wa)__camp korey (seriousfun children's network)"
+      "camp korey (chronic illness camp, wa)__camp korey (seriousfun children's network)",
+      "destination science summer camps — seattle__destination science",
+      "launch learning summer program__launch learning",
+      "uw k-12 engineering outreach programs__university of washington college of engineering"
     ],
     "k12": [
       "530039000060",
