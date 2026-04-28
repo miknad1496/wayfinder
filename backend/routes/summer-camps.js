@@ -311,6 +311,7 @@ router.post('/plan', async (req, res) => {
     weeks = 4,
     interests = [],     // ['stem','arts','sports','nature','music','coding','reading'...]
     careerCurious = '', // freeform, optional
+    travelPlans = '', // REVAMP V2: TIER BADGES + TRAVEL PATCH31 — vacation/travel parlay context
     sleepawayInterest = false,
     needsScholarshipInfo = false,
   } = req.body || {};
@@ -355,6 +356,7 @@ CALIBRATION FOR K-8 PLANNING:
 - Sleepaway camp is age-appropriate starting age 7-8 for shorter sessions, 9-10 for longer. Don't push it on younger kids.
 - Wayfinder's database has a growing curated list (especially WA + nationwide remote). Reference it confidently. For specific named programs, be conservative — suggest categories the user can filter for in the Programs sidebar tool with grade filter set to elementary/middle.
 - Use the 60/30/10 frame: ~60% recurring anchor (Y day camp / parks dept), ~30% specialty experiences (1-2 museum/zoo/coding camps), ~10% wildcard (the niche experience).
+- REVAMP V2: TIER BADGES + TRAVEL PATCH31 — FAMILY-TRIP-PARLAY: If the family mentions vacation/travel plans, treat that destination as a planning ASSET, not a constraint. Suggest local programs at the destination (e.g., a Roman archaeology kid-camp in Rome during their Italy trip), AND schedule home-city camps around the travel weeks. The trip doubles as enrichment. This is one of Wayfinder's most distinctive insights — kids return with a story, parents pay for one trip not two.
 
 Your output must be a JSON object:
 {
@@ -376,7 +378,7 @@ ONLY return JSON. No preamble, no markdown.`;
 - Location: ${locationDesc}
 - Budget: ${budgetDesc}
 - Available weeks for camps: ${weeks}
-- Interests: ${interestList}${careerCurious ? `\n- Curious about: ${careerCurious}` : ''}${sleepawayInterest ? `\n- Open to sleepaway: yes` : ''}${needsScholarshipInfo ? `\n- Needs scholarship/aid information` : ''}
+- Interests: ${interestList}${careerCurious ? `\n- Curious about: ${careerCurious}` : ''}${travelPlans ? `\n- Family vacation/travel this summer: ${travelPlans} (consider FAMILY-TRIP-PARLAY: programs at the travel destination, plus scheduling local camps around the trip)` : ''}${sleepawayInterest ? `\n- Open to sleepaway: yes` : ''}${needsScholarshipInfo ? `\n- Needs scholarship/aid information` : ''}
 
 Be specific to THIS family. Consider their budget honestly. Mention scholarship pathways if budget is low or they specifically asked.`;
 

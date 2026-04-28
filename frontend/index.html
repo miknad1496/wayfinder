@@ -252,12 +252,12 @@
         <button id="sidebarSummerCamps" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 22h16L12 2z"/><path d="M9 14h6"/></svg>
           <span>Summer Camps (K-8)</span>
-          <!-- REVAMP V2: BETA OFF K8 + VOLUNTEER PATCH28: BETA badge removed (K-8 GA) -->
+          <span class="tool-badge consultant"><!-- REVAMP V2: TIER BADGES + TRAVEL PATCH31 -->Consultant</span>
         </button>
         <button id="sidebarVolunteer" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span>Volunteer</span>
-          <!-- REVAMP V2: BETA OFF K8 + VOLUNTEER PATCH28: BETA badge removed (Volunteer GA at 247 entries) -->
+          <span class="tool-badge consultant"><!-- REVAMP V2: TIER BADGES + TRAVEL PATCH31 -->Consultant</span>
         </button>
         <button id="sidebarK12" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
@@ -1812,6 +1812,7 @@
             <label style="font-size:13px;color:#475569;"><input type="checkbox" id="scPlanScholarship"> Need scholarship/aid info</label>
           </div>
           <textarea id="scPlanCareerCurious" rows="2" placeholder="Anything specific your kid is curious about? (e.g. wants to try coding, asks about marine biology)" style="width:100%;margin-bottom:10px;font-family:inherit;font-size:13px;padding:10px 12px;border:1px solid #cfdcef;border-radius:6px;line-height:1.5;color:#1f2328;"></textarea>
+          <textarea id="scPlanTravel" rows="2" placeholder="Family vacation or travel plans this summer? (e.g. 'Italy 2 weeks in July, grandparents in NYC late August') — Wayfinder will plan around them AND look for camps at your destination so the trip doubles as enrichment" style="width:100%;margin-bottom:10px;font-family:inherit;font-size:13px;padding:10px 12px;border:1px solid #cfdcef;border-radius:6px;line-height:1.5;color:#1f2328;" title="REVAMP V2: TIER BADGES + TRAVEL PATCH31 — travel/vacation parlay question"></textarea>
           <button id="scPlanGenerate" class="form-btn" style="width:100%;padding:12px;font-size:14px;">Build My Summer Plan ✨</button>
           <div id="scPlanResult" style="margin-top:18px;"></div>
         </div>

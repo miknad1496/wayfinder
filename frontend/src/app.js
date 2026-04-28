@@ -6356,6 +6356,7 @@ async function generateSCPlan() {
   const sleepawayInterest = document.getElementById('scPlanSleepaway').checked;
   const needsScholarshipInfo = document.getElementById('scPlanScholarship').checked;
   const careerCurious = document.getElementById('scPlanCareerCurious').value.trim();
+  const travelPlans = (document.getElementById('scPlanTravel')?.value || '').trim(); /* REVAMP V2: TIER BADGES + TRAVEL PATCH31 */
   const interests = Array.from(_scSelectedInterests);
 
   const result = document.getElementById('scPlanResult');
@@ -6367,7 +6368,7 @@ async function generateSCPlan() {
         'Content-Type': 'application/json',
         ...(authToken ? { 'Authorization': `Bearer ${authToken}` } : {}),
       },
-      body: JSON.stringify({ grade, city, state, budget, weeks, interests, careerCurious, sleepawayInterest, needsScholarshipInfo })
+      body: JSON.stringify({ grade, city, state, budget, weeks, interests, careerCurious, travelPlans, sleepawayInterest, needsScholarshipInfo }) /* REVAMP V2: TIER BADGES + TRAVEL PATCH31 — travelPlans added */
     });
     /* === REVAMP V2: QUOTA INTERCEPT + UPGRADE MODAL (k8 plan) === */
     if (res.status === 401 || res.status === 429) {
