@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T05:17:46.862Z",
-  "totalRuns": 13,
-  "totalInsightsCaptured": 66,
+  "lastRun": "2026-04-28T05:49:53.511Z",
+  "totalRuns": 14,
+  "totalInsightsCaptured": 71,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 ESMs effectively COMPLETE this run: Camp Galileo Bellevue + IslandWood + Seattle Aquarium harvested. 28 -> 31 esms harvested. WA K-8 saturation now ~85% (only Woodland Park Zoo + Camp Tech Revolution data-quality fix remaining among the originally listed candidates). PATTERN OPPORTUNITY surfaced this run: ALL THREE harvested camps revealed a 'before-care/after-care fee structure trap' where the bundled weekly extended-care fee adds 30-40% to base tuition. Across Galileo ($90/wk both 4-day), Aquarium ($200/wk both), Burke (~$150/wk before-care), Pacific Science Center (~$135/wk before+after), Coyote Central (no extended care), and KidsQuest (limited extended care) — there's an OPPORTUNITY to write a single umbrella insight 'WA K-8 extended-care fee comparison 2026' under wa-spotlight-2026 that helps parents pick camps based on their actual work-day window not the headline tuition. Recommend NEXT RUN do exactly that umbrella insight (no entry-level harvest), titled something like 'before-care/after-care true-cost comparison across N Seattle / Eastside K-8 day camps'. STRATEGIC PIVOT for the run after umbrella: per the prior run's plan, pivot to volunteer module (only 8/247 entries harvested — biggest coverage gap by ratio) before starting TX K-8. Volunteer entries with _source URLs are easier to harvest because the URLs are typically large national-org pages with stable info. Recommend volunteer phase next, starting with WA-state-served volunteer entries (ones flagged WA in location.state) then national orgs with WA chapters. SERVICE STATUS: Render production STILL 503 from wayfinder*.onrender.com (consistent with previous run). Wrote via direct GitHub Git Data API following the patch14 read-at-commit-SHA pattern; grinder-write endpoint not available today.",
+  "nextRunPlan": "WA K-8 still has ~28 unharvested entries with verified _source. Next-best targets: Robinson Center Saturday Enrichment (homepage gave navigation only — fetch /programs-for-students/saturday-enrichment/ directly with 12s timeout), Washington MESA College Prep (rich UMA scholarship intel likely), Camp Tech Revolution + iD Tech UW Seattle (Aggregator parentmap.com URLs — find their canonical .com URLs first). Pattern noticed across LEEP + KidsQuest + UW Youth: refund/cancellation deadlines are HIGH-VALUE intel parents miss — consider a dedicated 'refund-deadlines' section in summer-camp-insights.json after 2-3 more runs accumulate enough data points.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -56,5 +56,17 @@
       "hopelink volunteer (eastside / north & east king county)__hopelink",
       "eastside friends of seniors volunteer__eastside friends of seniors (efs)"
     ]
-  }
+  },
+  "lastRunPhase": "WA K-8",
+  "dataQualityFlags": [
+    {
+      "id": "aggregator-urls-2026-04-27",
+      "flaggedDate": "2026-04-27",
+      "description": "WA K-8 entries with _source pointing to parentmap.com aggregator listings rather than canonical provider sites. Replace with the operator URL during a future cleanup pass.",
+      "affectedEntries": [
+        "Camp Tech Revolution — Seattle (Camp Tech Revolution)",
+        "PacSci Camps for Curious Minds (Multiple Locations) (Pacific Science Center)"
+      ]
+    }
+  ]
 }
