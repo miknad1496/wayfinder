@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T05:49:53.511Z",
-  "totalRuns": 14,
-  "totalInsightsCaptured": 71,
+  "lastRun": "2026-04-28T06:20:28.580Z",
+  "totalRuns": 15,
+  "totalInsightsCaptured": 74,
   "currentModule": "esms",
-  "phase": "WA K-8",
-  "nextRunPlan": "WA K-8 still has ~28 unharvested entries with verified _source. Next-best targets: Robinson Center Saturday Enrichment (homepage gave navigation only — fetch /programs-for-students/saturday-enrichment/ directly with 12s timeout), Washington MESA College Prep (rich UMA scholarship intel likely), Camp Tech Revolution + iD Tech UW Seattle (Aggregator parentmap.com URLs — find their canonical .com URLs first). Pattern noticed across LEEP + KidsQuest + UW Youth: refund/cancellation deadlines are HIGH-VALUE intel parents miss — consider a dedicated 'refund-deadlines' section in summer-camp-insights.json after 2-3 more runs accumulate enough data points.",
+  "phase": "WA HS",
+  "nextRunPlan": "WA HS phase initiated this run (3 entries: WAS / UW STEP / SU AI for Equity). 22 WA HS-only unharvested entries remain with verified _source URLs — strong queue. PATTERN OBSERVED ACROSS ALL 3: 'true cost vs headline cost' is consistently mis-tagged in our DB. WAS lists $1,850 but Phase 1 is free for everyone; UW STEP's $200 hides a NON-REFUNDABLE clause; Seattle U AI for Equity is in our DB as 'Free' when actual cost is $1,500. RECOMMEND DEDICATED PASS: build a 'WA HS pre-college true-cost decoder' umbrella insight under wa-spotlight-2026 OR create a new 'pre-college-true-cost' section. Items that should populate: (a) WAS = free-to-try if you can do Phase-1-only, $1,850-or-aid if you make Phase 2; (b) UW STEP = $200 sticker, FRL waiver pathway hidden in app, non-refundable; (c) SU AI for Equity = $1,500 listed as free in our DB (data-quality fix needed); (d) UW Engineering Academy / DigiPen WANIC / Cornish / Seattle U Business Institute / Lakeside Summer Institute likely have similar scholarship-buried-in-app patterns. DATA QUALITY URGENT: Seattle U AI for Equity 'Free' tag is misleading prospective free-program-seekers — flagged in dataQualityFlags as 'su-ai4equity-cost-mismatch-2026-04-28'. NEXT-NEXT RUN should run update-array-items op on programs.json to correct cost field (described in the flag). Other WA HS targets ranked for next harvest: UW Engineering Academy (likely has cohort size + selection criteria intel), WAS Phase 2 specific FAQ PDF (acceptance-rate data), DigiPen WANIC Summer (high-school-credit articulation details). STRATEGIC NOTE: This run uses direct GitHub Git Data API following patch14 read-at-commit-SHA + patch27 spirit (no force-push, post-write verify). Volunteer module remains the biggest coverage gap by ratio (8/247) — schedule a volunteer phase after the next 1-2 WA HS runs.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -37,7 +37,10 @@
       "washington mesa college prep program__university of washington office of minority affairs",
       "camp galileo bellevue (steam day camp)__galileo learning",
       "islandwood outdoor summer day camps__islandwood",
-      "seattle aquarium marine summer camp__seattle aquarium"
+      "seattle aquarium marine summer camp__seattle aquarium",
+      "washington aerospace scholars (was)__museum of flight & nasa",
+      "uw step (students exploring pharmacy)__university of washington school of pharmacy",
+      "seattle university ai for equity pre-college program__seattle university"
     ],
     "k12": [
       "530039000060",
@@ -57,7 +60,7 @@
       "eastside friends of seniors volunteer__eastside friends of seniors (efs)"
     ]
   },
-  "lastRunPhase": "WA K-8",
+  "lastRunPhase": "WA HS",
   "dataQualityFlags": [
     {
       "id": "aggregator-urls-2026-04-27",
@@ -66,6 +69,14 @@
       "affectedEntries": [
         "Camp Tech Revolution — Seattle (Camp Tech Revolution)",
         "PacSci Camps for Curious Minds (Multiple Locations) (Pacific Science Center)"
+      ]
+    },
+    {
+      "id": "su-ai4equity-cost-mismatch-2026-04-28",
+      "flaggedDate": "2026-04-28",
+      "description": "programs.json entry 'Seattle University AI for Equity Pre-College Program' lists cost.display as 'Free (merit scholarships available)' and cost.amount as 0. Actual page lists Cost of Attendance $1,500 + $50 nonrefundable deposit (scholarships available, not a free program). FIX: update-array-items op on programs.json — set cost = { amount:1500, type:'paid', display:'$1,500 + $50 nonrefundable deposit (scholarships available)' } matched by name+provider.",
+      "affectedEntries": [
+        "Seattle University AI for Equity Pre-College Program (Seattle University)"
       ]
     }
   ]

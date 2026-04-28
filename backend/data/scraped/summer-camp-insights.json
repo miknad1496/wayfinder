@@ -258,6 +258,33 @@
       "icon": "🔍",
       "items": [
         {
+          "label": "Washington Aerospace Scholars (WAS) — Phase 1 is FREE & open to all WA juniors; the $1,850 fee only applies to Phase 2 acceptees, with 50% deposit due AFTER acceptance and up to 100% tuition assistance for government-aid families",
+          "detail": "WAS is the rare WA STEM program where the front door is genuinely free and selection is performance-based, not application-based. (1) PHASE 1 = a 5-month asynchronous UW college course (Nov-Mar) — 8 lessons + final project on aerospace + NASA space exploration — with NO COST. Optional 5 University of Washington science credits cost $255 ON TOP, but Credit Tuition Assistance covers up to 100% for families on government assistance programs (apply in December BEFORE registering for credit). (2) PHASE 2 = 6-day summer residency at Museum of Flight in July or August. Acceptance is performance-based on Phase 1 work — not a separate application essay. The $1,850 residency fee covers room, board, supplies. CRITICAL CASH-FLOW DETAIL: only a 50% DEPOSIT is due AFTER you've been notified of acceptance — so families don't gamble $1,850 upfront. Residency Tuition Assistance (up to 100%) opens in March alongside acceptance invitations. (3) Graduates get access to $250,000 worth of exclusive scholarships PLUS Connections Club membership — a 2,000+ alumni network at Boeing/Microsoft/SpaceX/Facebook/NASA. (4) Phase 1 application closed for 2025-26; next cycle opens fall 2026. Sub-juniors can submit a Program Interest Form to be notified. (5) Next info night: Thursday, May 28, 6-7pm via Zoom — register at jotform.com/museumofflight/WASinfonight. Contact WAS@museumofflight.org / 206-768-7214. Heads-up parents: only WA STATE high school juniors are eligible for Phase 1. Source: museumofflight.org/WAS, harvested 2026-04-28.",
+          "category": "scholarship",
+          "sourceProvider": "Museum of Flight & NASA",
+          "sourceName": "Washington Aerospace Scholars (WAS)",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://www.museumofflight.org/WAS"
+        },
+        {
+          "label": "UW STEP (Students Exploring Pharmacy) — $200 fee is NON-REFUNDABLE at acceptance, free/reduced-lunch families get partial-or-full waiver, and recommender link arrives 5-7 business days AFTER you submit",
+          "detail": "UW School of Pharmacy's STEP is a 4-day immersion (Mon Jul 13 - Thu Jul 16, 2026) for grades 9-12 with priority to rising juniors and seniors — but four under-published facts that change the application game: (1) THE $200 FEE IS NON-REFUNDABLE AND DUE AT ACCEPTANCE CONFIRMATION — once you accept, you cannot back out without forfeiting. Includes all activities, materials, daily lunch. Plan for the full $200 the day you accept. (2) FREE/REDUCED-PRICE SCHOOL LUNCH STUDENTS QUALIFY FOR A SCHOLARSHIP — partial OR full waiver of the $200 fee plus daily lunch. The scholarship pathway is implicit in the application — flag it in your personal statement so the admissions team can match aid to your file. (3) RECOMMENDER LINK TIMING: your recommender (teacher, counselor, advisor, or supervisor) gets the email link 5-7 BUSINESS DAYS AFTER you submit the application form — so warn them BEFORE you submit so they can watch for it during finals/AP-testing season when teacher inboxes get buried. Only ONE recommendation is required. (4) PERSONAL STATEMENT IS 250 WORDS MAX, single prompt — 'What sparked your interest in pharmacy, healthcare, or related fields, and what do you hope to learn... Please include any personal or lived experiences that may have shaped your interests.' The 'lived experiences' clause is the differentiator — first-gen healthcare interest, family member in pharmacy, watching a relative manage chronic conditions all are signal-rich; generic 'I want to help people' answers are forgettable. (5) DEADLINE: April 30, 2026; notifications early June. (6) Disability accommodations need 10-day advance notice via UW DSO at 206-543-6450 / dso@uw.edu. Apply: sop.washington.edu/pharmd/admissions/step-summer-program/. Contact: uwpharmd@uw.edu / 206-543-6100. Source harvested 2026-04-28.",
+          "category": "registration-tip",
+          "sourceProvider": "University of Washington School of Pharmacy",
+          "sourceName": "UW STEP (Students Exploring Pharmacy)",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://sop.washington.edu/pharmd/admissions/step-summer-program/"
+        },
+        {
+          "label": "Seattle U AI for Equity — DATA-CORRECTION: actual cost is $1,500 (NOT 'free' as our entry says), $50 nonrefundable deposit, includes residency. 2 college credits awarded; 2026 priority deadline was April 25",
+          "detail": "FYI for parents and an internal data note: the Wayfinder entry currently lists this program as 'Free (merit scholarships available)' — the official Seattle University page lists Cost of Attendance as $1,500 with a $50 nonrefundable deposit applied toward tuition. Scholarships ARE available (the application is built into the program application — no separate form). What parents actually get for $1,500: (1) RESIDENTIAL — 6 days/5 nights overnight on the Seattle U campus (Sun Jul 12 - Fri Jul 17, 2026), so cost includes housing + dining + curricular excursions + co-curricular activities. (2) 2 COLLEGE CREDITS upon completion — courses taught by SU faculty (Nathan Colaner / Business Analytics, Brooke Gialopsos / Criminal Justice, Amin Riazi). (3) UNIQUE NICHE — most pre-college AI camps focus on coding or generic ML. AI for Equity sits at the intersection of artificial intelligence + criminal justice + ethics — bias in algorithmic risk assessment, predictive policing, machine learning fairness. For students drafting essays around law, public policy, or ethics-focused tech, this program is a much sharper differentiator than a generic AI camp. (4) APPLICATION TIMELINE: Priority Deadline was April 25, 2026; Notification Date begins May 8, 2026. Late applications may still be considered while space allows — contact precollege@seattleu.edu / 206-296-5841 (Aly Cotte, Asst Director of Pre-College Programs). NEXT RUN should fix the 'cost.display' field on this entry from 'Free (merit scholarships available)' to '$1,500 ($50 nonrefundable deposit; scholarships available)' via update-array-items. Source: seattleu.edu/pre-college-summer-programs/ai-for-equity/, harvested 2026-04-28.",
+          "category": "hidden-cost",
+          "sourceProvider": "Seattle University",
+          "sourceName": "Seattle University AI for Equity Pre-College Program",
+          "harvestedDate": "2026-04-28",
+          "_source": "https://www.seattleu.edu/pre-college-summer-programs/ai-for-equity/"
+        },
+        {
           "label": "Lakeside School — Lakeside Educational Enrichment Program (LEEP)",
           "detail": "LEEP 2026 admissions decisions release in Ravenna on May 1 — exactly when the application closes. Applications open Feb 1 each year. Total cohort is only 90 students (50 rising 6th + 40 rising 9th); 2025 had ~92% students of color and 61% qualified for free/reduced lunch — selection actively prioritizes Seattle Public School students from underrepresented backgrounds. Required application pieces include separate parent and student response forms in Ravenna, a current-school academic reference (give the teacher 1+ week notice), an OPTIONAL personal reference from a coach/counselor/mentor (skipping it is a missed differentiator — fill it), and a printed Records Request Form physically given to the current school. Apply only if you can commit to ALL 4 weeks (July 6–31 M–F 9am–3pm) — partial attendance is auto-disqualifying.",
           "sourceProvider": "Lakeside School",
@@ -1334,7 +1361,8 @@
   ],
   "_meta": {
     "lastUpdated": "2026-04-26",
-    "totalFieldNotes": 30
+    "totalFieldNotes": 30,
+    "lastHarvest": "2026-04-28"
   },
   "lastUpdated": "2026-04-28"
 }
