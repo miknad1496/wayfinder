@@ -151,3 +151,35 @@ Each captured insight must be:
 
 - batch_size 5 still feels right; volunteer-mod ran in ~7 min including 2 fallback searches.
 - For volunteer module specifically, reserve at least 1 of the 5 slots for hospital-/healthcare-side entries where the application-timing-window insight is high-value. Across modules, registration-window insights age fastest — they're also the most decision-critical for parents.
+
+
+## RUN 3 — 2026-04-27 (volunteer module — first batch)
+
+| Date | Run # | Module | Entries scanned | Insights captured | Notable |
+|------|-------|--------|-----------------|-------------------|---------|
+| 2026-04-27 | 3 | volunteer | 3 | 9 | First volunteer batch — WA-focus (WTA, Hopelink, EFS). 3:1 insight ratio. WTA dress-code-enforcement and 21+ driver cutoff at EFS were highest-signal. |
+
+### EFFECTIVE PATTERNS (additions from run 3)
+
+- Pages ending in /faq, /questions, /how-to-volunteer yield 3+ insights per entry. Marketing landing pages (/volunteer, /get-involved) yield 0-1.
+- Age cutoffs that DIFFER between roles (EFS: drivers 21+, others 16+) are major fit-tips parents miss. Always check for split-age requirements.
+- "Hidden costs" go both ways: WTA gives FREE parking passes (reverse-hidden — a perk parents don't know about). Worth flagging as both directions.
+- Background-check + orientation lead time (Hopelink: 1+ week) is a critical path constraint that locks out same-week service-hour scrambles.
+- Group-volunteer slot scarcity in Q4 (Oct-Dec) is consistent across multiple WA orgs — worth a category-level umbrella insight in a future run.
+
+### FAILED PATTERNS / KNOWN ANTI-PATTERNS (additions)
+
+- Cloudflare/WP-Engine blocks: EarthCorps, Seattle Humane, Seattle Aquarium YOA, KidVantage, PDZA all hosted on wpenginepowered.com or behind Cloudflare bot protection — curl returns "Just a moment..." or "Attention Required". Skip OR fall back to WebSearch snippet harvesting; do NOT fabricate from prior knowledge.
+- KCLS TVP page is dated 2020 — explicit "post is over 2 years old" banner. Not a valid current source. Page redirect needed; logged as data-quality flag.
+- Seattle Children's volunteering URL 404s (https://www.seattlechildrens.org/about/volunteering/). Entry _source needs updating. Logged as data-quality flag.
+
+### DATA QUALITY FLAGS (additions)
+
+- Seattle Children's Hospital Junior Volunteer entry: _source 404. Need to find current URL (likely /classes-community/volunteering/ or /careers/volunteer/).
+- KCLS Teen Volunteer Program entry: _source points to a 2020 blog post. Find current TVP landing page (likely under kcls.org/services/teens/).
+- EarthCorps + Seattle Humane Youth + Seattle Aquarium YOA + KidVantage + Point Defiance Zoo: Cloudflare/WPE blocks our fetcher. Mark as "alt-source needed" and harvest via WebSearch in future runs.
+
+### CALIBRATION SUGGESTIONS (additions)
+
+- 3 entries × 3 insights = 9 insights/run is a sweet spot for the volunteer module — quality bar held; no fabrication. Stick with 3 per run when each entry is a deep-FAQ source.
+- For Cloudflare-blocked sources, use the WebSearch SERP-snippet path proven on esms run 1 (Pacific Science Center / Museum of Flight) — those snippets often contain the FAQ accordion content.

@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T01:47:07.811Z",
-  "totalRuns": 6,
-  "totalInsightsCaptured": 39,
+  "lastRun": "2026-04-28T02:19:41.965Z",
+  "totalRuns": 7,
+  "totalInsightsCaptured": 48,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "Run 6 captured 3 useful insights from 2 entries (YMCA Camp Orkila x2 + Lavner UW x1) — Studio Coyote (Coyote Central) was the planned 3rd but coyotecentral.org returns redirect-cancelled errors via web_fetch; SKIPPED, not marked harvested. Action for future fetcher work: Coyote Central, Camp Sealth detail pages, and Camp Fire financial-assistance page (404'd) all need an alternate fetch path or direct URL list. WA K-8 unharvested count: now ~23 (was 25). PATTERN observed in run 6: working-parent gotchas dominate insights — Lavner core 9-3 hours-with-paid-aftercare was most actionable; Camp Orkila one-FA-per-summer was a quiet but big constraint that DB didn't capture; Camp Orkila 3-tier (not 2-tier) sliding scale is a common-knowledge correction. PROPOSED next-run priority order: (1) Camp Sealth detail/program pages (try campfireseattle.org/summer-camp/ instead of /camp-sealth-overnight-camp/), (2) Woodland Park Zoo Summer Day Camps (zoo.org/education/camps/info — likely well-populated like PacSci), (3) Seattle Aquarium Marine Summer Camp (seattleaquarium.org/.../marine-summer-camp). After that, switch to building the umbrella 'WA refund cliff' insight as a NEW field-notes item summarizing the cross-program pattern (Burke=zero refunds, KidsQuest=May-22+$50fee, Robinson=14-day, PacSci=sliding, LEEP=free/NA, now Camp Orkila=$50 deposit even with 100% FA + one-FA-per-summer cap).",
+  "nextRunPlan": "Rotate back to esms (K-8) module — WA still has 7+ unharvested high-value programs (e.g., DigiPen Academy summer workshops, Bellevue Youth Theatre summer camps, Seattle Public Library summer learning, KCLS Summer Reading + maker camps). Pattern noticed: WA volunteer pages with FAQ accordions (WTA, Hopelink) yield 3 insights per entry vs 1-2 from marketing-style pages (FareStart, NW Harvest home). For run 4, prefer entries whose _source URL ends in /faq, /questions, or /how-to-volunteer over generic landing pages. Also: 4 WA volunteer URLs were Cloudflare-blocked this run (EarthCorps, Seattle Aquarium YOA, Seattle Humane youth, KidVantage, PDZA) — all wpenginepowered.com hosts. Future runs should fall back to WebSearch snippet harvesting for those, or queue them as a \"needs alt-source\" data-quality flag.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -33,7 +33,10 @@
       "american red cross volunteer__american red cross",
       "special olympics volunteer / unified partner__special olympics",
       "ronald mcdonald house charities volunteer__rmhc",
-      "crisis text line__crisis text line"
+      "crisis text line__crisis text line",
+      "washington trails association volunteer trail work parties__washington trails association (wta)",
+      "hopelink volunteer (eastside / north & east king county)__hopelink",
+      "eastside friends of seniors volunteer__eastside friends of seniors (efs)"
     ]
   }
 }

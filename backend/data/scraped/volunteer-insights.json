@@ -1,8 +1,9 @@
 {
   "metadata": {
     "audience": "High school students + parents planning service hours",
-    "lastUpdated": "2026-04-26",
-    "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance."
+    "lastUpdated": "2026-04-27",
+    "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
+    "fieldNotesCount": 15
   },
   "sections": [
     {
@@ -86,6 +87,87 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "label": "Washington Trails Association — 48-hour signup cliff is hard, but email opens a back door",
+          "detail": "WTA work parties are auto-removed from the public schedule 48 hours before start time, even if half-empty — there's no on-page \"sign up anyway\" button. Inside that window, email volunteer@wta.org directly: crew leaders can sometimes squeeze one more if tools and lunch counts permit. Outside the email path, you're locked out. Plan teen weekend trail days the Wednesday before, not the Friday of. (verified 2026-04-27)",
+          "category": "registration-tip",
+          "sourceProvider": "Washington Trails Association (WTA)",
+          "sourceName": "Washington Trails Association Volunteer Trail Work Parties",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.wta.org/get-involved/volunteer/questions"
+        },
+        {
+          "label": "WTA — Free trailhead day pass + free annual Discover Pass at 5+ days/yr",
+          "detail": "WTA hands every work-party volunteer a free Discover-Pass-equivalent day pass at the trailhead — that alone covers the $11.50 day-use parking fee and offsets gas. Volunteer 5+ days in a calendar year and you earn a free annual Discover Pass ($30 value). For a teen building service hours over a summer, that's roughly $50-$70 in family parking costs back in your pocket — never marketed up-front. (verified 2026-04-27)",
+          "category": "hidden-cost",
+          "sourceProvider": "Washington Trails Association (WTA)",
+          "sourceName": "Washington Trails Association Volunteer Trail Work Parties",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.wta.org/get-involved/volunteer/questions"
+        },
+        {
+          "label": "WTA — Dress code is enforced, not requested. Sneakers = sent home.",
+          "detail": "Long pants and sturdy CLOSED-TOE shoes are mandatory at the trailhead — crew leaders WILL turn volunteers away in shorts, leggings, or athletic sneakers without sturdy soles. The slot you signed up for is just lost. For sawyer crews (the prestige track for repeat teen volunteers), fully LEATHER boots are required, not just any closed-toe — plus long loose-fit pants (not athletic tights) and side-shielded eye protection. Plan a $60-$80 boot purchase if a teen wants to advance to saw work. (verified 2026-04-27)",
+          "category": "fit-tip",
+          "sourceProvider": "Washington Trails Association (WTA)",
+          "sourceName": "Washington Trails Association Volunteer Trail Work Parties",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.wta.org/get-involved/volunteer/questions"
+        },
+        {
+          "label": "Hopelink — 1-week background check is on the critical path; can't volunteer same week",
+          "detail": "Every Hopelink volunteer 16+ must pass a Washington State Patrol background check BEFORE attending the required virtual New Volunteer Orientation. Processing takes up to a week, then orientation is invite-only on a fixed schedule. Net: you cannot decide on a Sunday to volunteer next Saturday. Apply 2-3 weeks before any service-hours deadline. (verified 2026-04-27)",
+          "category": "registration-tip",
+          "sourceProvider": "Hopelink",
+          "sourceName": "Hopelink Volunteer (Eastside / North & East King County)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.hopelink.org/ways-to-help/volunteer/"
+        },
+        {
+          "label": "Hopelink — Most shifts are M-Th business hours; only a handful work for high-schoolers in school",
+          "detail": "Stated openly on the page: \"Most of our volunteer opportunities occur Monday through Thursday during regular business hours.\" The teen-feasible exceptions are narrow — Wednesday evening Avondale Park dinners (group prep + serve a meal for ~50 residents), and Friday afternoon Kirkland Warehouse sorting. Otherwise, school-break weeks are when teens can sustain weekly hours. Plan summer + winter break service-hour blocks accordingly. (verified 2026-04-27)",
+          "category": "fit-tip",
+          "sourceProvider": "Hopelink",
+          "sourceName": "Hopelink Volunteer (Eastside / North & East King County)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.hopelink.org/ways-to-help/volunteer/"
+        },
+        {
+          "label": "Hopelink — Holiday-season group slots fill 4 MONTHS out; lock Q4 by July",
+          "detail": "Hopelink books group volunteer slots up to 16 weeks (4 months) in advance — and explicitly flags Oct-Dec as \"more popular times\" that fill far ahead. NHS chapters, scout troops, youth groups, faith-community service teams targeting Thanksgiving/December service should email VolunteerWithUs@hopelink.org by mid-July at the latest. Group sizes are 5-15 (all members 16+). After September, expect 'no holiday-season availability' replies. (verified 2026-04-27)",
+          "category": "registration-tip",
+          "sourceProvider": "Hopelink",
+          "sourceName": "Hopelink Volunteer (Eastside / North & East King County)",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.hopelink.org/ways-to-help/volunteer/"
+        },
+        {
+          "label": "Eastside Friends of Seniors — Drivers must be 21+; high-schoolers locked out of the most-needed role",
+          "detail": "EFS's biggest unmet need is volunteer drivers (medical appointments, grocery, essential services), but the published age cutoff is 21+ for drivers — high schoolers are excluded from this track entirely. Non-driving roles open at 16. The under-promoted teen-friendly slot: 'Specialized Support' — web design, IT/tablet/phone troubleshooting for seniors, fundraising, admin tasks. STEM-track teens have a near-untapped pathway here that AOs read as both service AND skill-application. (verified 2026-04-27)",
+          "category": "fit-tip",
+          "sourceProvider": "Eastside Friends of Seniors (EFS)",
+          "sourceName": "Eastside Friends of Seniors Volunteer",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.eastsidefriendsofseniors.org/volunteer"
+        },
+        {
+          "label": "EFS — Minimum 6-month commitment + 2-5 hrs/month: this is relationship volunteering, not one-off shifts",
+          "detail": "EFS requires a minimum of 2-5 hours/month for AT LEAST 6 months — designed to build a sustained relationship with one senior, not service-hour drop-ins. One-off-shift seekers chasing quick NHS hours will be turned away or redirected. Upside for college apps: same senior across 6+ months reads as authentic depth on Common App's activity description, vs. a transactional 'pulled some weeds once' line. Pitch this to families looking for ESSAY-quality service, not hour-quantity service. (verified 2026-04-27)",
+          "category": "fit-tip",
+          "sourceProvider": "Eastside Friends of Seniors (EFS)",
+          "sourceName": "Eastside Friends of Seniors Volunteer",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.eastsidefriendsofseniors.org/volunteer"
+        },
+        {
+          "label": "EFS — Companionship can be done OVER THE PHONE: a real path for non-driving teens & rural Eastside",
+          "detail": "EFS lists companionship as in-person OR phone-based — which most parents miss because the page leads with transportation visuals. Phone companionship + remote IT/tech help means a 16-year-old without a license, a kid out in Snoqualmie Valley with no easy Bellevue/Redmond commute, or a teen with mobility limits can still build a 6-month relationship with a senior. Non-obvious workaround for the driver-21+ cliff. (verified 2026-04-27)",
+          "category": "other",
+          "sourceProvider": "Eastside Friends of Seniors (EFS)",
+          "sourceName": "Eastside Friends of Seniors Volunteer",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.eastsidefriendsofseniors.org/volunteer"
+        },
         {
           "label": "Hospital Junior Volunteer (multi-site) — application windows are tight + sometimes one-day-only",
           "detail": "For 2026: Orlando VA accepts ALL applications on a single day (Wed Apr 15, 2026); Holy Name Medical Center opens at exactly 7:00 a.m. on Tue May 5, 2026; Texas Health Alliance window is Jan 13–Mar 2; Houston Methodist West runs Feb 1–27. Parents who treat this as a 'when does summer start' search miss the slot. Calendar the open day, not the program start."
