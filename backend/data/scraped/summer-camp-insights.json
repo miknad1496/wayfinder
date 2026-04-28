@@ -3,7 +3,7 @@
     "audience": "K-8 parents",
     "lastUpdated": "2026-04-27",
     "purpose": "Real, genuine, thoughtful insights/hacks/strategies for parents planning summer + year-round enrichment for elementary and middle school kids.",
-    "insightCount": 77
+    "insightCount": 80
   },
   "sections": [
     {
@@ -256,6 +256,33 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "label": "Coyote Central (Studio Coyote) — every class is pay-what-works-for-you + CRE8 immersion needs 5th-grade application for a 3-year 6-8th grade commitment",
+          "detail": "Two things our DB doesn't surface for Coyote Central in the Central District: (1) ALL Studio Coyote youth classes (weekend, school break, AND summer weeklong sessions for ages 10-15) are PAY-WHAT-WORKS-FOR-YOU — there is no published price ladder. The family declares what they can afford at registration. This is the actual operating model, not a discount or scholarship pool — meaning families on tight budgets shouldn't 'save it for the kid who needs it more.' Just declare the number that's true for you. (2) The CRE8 Immersion Program is a 3-YEAR commitment for 6th-8th graders that you APPLY TO IN 5TH GRADE — students gather weekly across all three middle-school years to dive into multiple mediums, design public art, and build individual showcases. If your family wants this for a future 6th-grader, calendar a reminder for the application window when they're in 5th grade. After age 15, alumni can join the Youth Advisory Board (paid stipends + Public Art commissions in Seattle parks/businesses for those 12+ chosen from the Studio Coyote roster). (Source: coyotecentral.org/programs, harvested 2026-04-27.)",
+          "category": "scholarship",
+          "sourceProvider": "Coyote Central",
+          "sourceName": "Studio Coyote Summer Workshops",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://coyotecentral.org/programs"
+        },
+        {
+          "label": "Seattle Children's Theatre Drama School — payment plans (2-4 installments) are available to ALL families, but the 20% non-refundable reg fee is BAKED INTO tuition (not extra)",
+          "detail": "Three under-the-radar SCT Drama School policies parents should know before registering for summer camps: (1) PAYMENT PLANS are available to EVERY family (not just need-based) — tuition can be split into 2, 3, or 4 equal installments. This is not advertised; you have to email dramaschool@sct.org or call 206.859.4079 to set it up. (2) A non-refundable registration fee equal to 20% OF TUITION is INCLUDED in the total cost (it is NOT an extra add-on). If you cancel, you forfeit 20% of what you paid — plan accordingly. (3) Tuition is NOT prorated for missed days — illness, scheduling conflicts, behavior removal all forfeit the full session. So if your kid has an ER visit mid-week, no refund. Online camp registration closes at 5:00 PM the BUSINESS DAY before camp starts — for last-minute summer signup, call ahead and wait for confirmation before drop-off. SCT also offers Blue Star military and veteran discounts in addition to need-based scholarships. Age bands: 3.5-5, 6-11, 12-18 — early-childhood (3.5+) is rare for theater camps. (Source: sct.org/education-programs/camps-classes-sct, harvested 2026-04-27.)",
+          "category": "hidden-cost",
+          "sourceProvider": "Seattle Children's Theatre",
+          "sourceName": "Seattle Children's Theatre Drama School Summer Camps",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.sct.org/education-programs/camps-classes-sct/"
+        },
+        {
+          "label": "Music Works NW (Bellevue) — $530/wk for 5-day, $330 for 3-day holiday-shortened weeks; explicit neurodivergent accommodations BUT must request BEFORE registration",
+          "detail": "Three concrete facts on Music Works Northwest summer camps in Bellevue (ages 4-16, June 22 - August 28, 2026 = 10 weeks): (1) Standard pricing is $530/wk for 5-day camps (Mon-Fri 9:30am-3:30pm) and ~$330 for 3-day camps in weeks shortened by holidays (e.g., Week 2 June 29-July 1 around the July 4 break — same day-rate, just 3 days instead of 5). For families navigating childcare around the July 4 week, the 3-day camp is meaningful price relief vs holding the full week open. (2) Neurodiversity-inclusive support: Music Works explicitly welcomes neurodivergent campers AND has staff with neurodivergence-inclusive practice training — but you MUST request accommodation BEFORE registering (call 425-644-0988 or email registration@musicworksnw.org), so they can plan staffing. After-the-fact requests can't always be filled. (3) The Electronic Music Composition Camp (ages 12-16) requires INSTRUCTOR PERMISSION to register — contact fclarkgrogan@gmail.com BEFORE attempting to enroll, or your registration will be rejected. (Source: musicworksnw.org/summer-camps, harvested 2026-04-27.)",
+          "category": "fit-tip",
+          "sourceProvider": "Music Works Northwest",
+          "sourceName": "Music Works Northwest Summer Music Camps",
+          "harvestedDate": "2026-04-27",
+          "_source": "https://www.musicworksnw.org/summer-camps"
+        },
         {
           "label": "YMCA Camp Orkila — three-tier sliding scale (not two), $50 deposit even with 100% scholarship, one-FA-award-per-summer cap",
           "detail": "Important corrections to common assumptions about Camp Orkila pricing: (1) The sliding scale is THREE tiers — Price A (full), Price B (partially sponsored), AND Price C (most accessible rate, supported by donors). Most parent guides list only A/B. If full price is a stretch, ask explicitly about Price C at registration. (2) Even if you receive a 100% financial assistance award, a $50 deposit is still required to confirm your reservation — the FA covers tuition only, not the hold. (3) The Y will only fund ONE financial-assistance reservation per participant per summer — if you want multiple weeks for one camper, you'll pay full freight (or chosen tier) for weeks 2+. For families with siblings: each child is a separate participant so each can get one FA-discounted week. Plan strategically: pick the highest-priority week for the FA spot. (Source: seattleymca.org/programs/camp-and-outdoor-leadership/camp-orkila/overnight-camp, harvested 2026-04-27.)",

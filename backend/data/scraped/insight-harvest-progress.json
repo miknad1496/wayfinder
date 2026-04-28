@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T02:19:41.965Z",
-  "totalRuns": 7,
-  "totalInsightsCaptured": 48,
+  "lastRun": "2026-04-28T02:51:00.954Z",
+  "totalRuns": 8,
+  "totalInsightsCaptured": 51,
   "currentModule": "esms",
   "phase": "WA K-8",
-  "nextRunPlan": "Rotate back to esms (K-8) module — WA still has 7+ unharvested high-value programs (e.g., DigiPen Academy summer workshops, Bellevue Youth Theatre summer camps, Seattle Public Library summer learning, KCLS Summer Reading + maker camps). Pattern noticed: WA volunteer pages with FAQ accordions (WTA, Hopelink) yield 3 insights per entry vs 1-2 from marketing-style pages (FareStart, NW Harvest home). For run 4, prefer entries whose _source URL ends in /faq, /questions, or /how-to-volunteer over generic landing pages. Also: 4 WA volunteer URLs were Cloudflare-blocked this run (EarthCorps, Seattle Aquarium YOA, Seattle Humane youth, KidVantage, PDZA) — all wpenginepowered.com hosts. Future runs should fall back to WebSearch snippet harvesting for those, or queue them as a \"needs alt-source\" data-quality flag.",
+  "nextRunPlan": "WA K-8 esms harvest: Coyote Central + SCT + Music Works NW added (Bellevue/Central District arts cluster). 13 esms WA harvested -> 16. Remaining ~20 high-value WA K-8 entries: Camp Sealth (overnight, financial-assistance page 404'd from /financial-assistance/ slug — needs alt URL discovery), IslandWood (CF-blocked wpenginepowered host), Galileo Camps Bellevue (CF-blocked), Seattle Aquarium Marine Camp (CF-blocked, wpenginepowered), Woodland Park Zoo Day Camps, SPS Expanded Learning Summer (free K-8 enrichment for sub-60th-percentile kids — high-value insight target). PATTERN: WA arts/music camps consistently bury 'payment plans available to all' policy 2-3 clicks deep — next run could batch a category-level 'WA arts camps payment-plan availability' insight. ALSO: Music Works NW + SCT both gate special tracks (electronic music, neurodivergent support) on PRE-registration contact — emerging pattern 'must email/call BEFORE registering' worth a category-level call-out. CF-block list growing — log a data-quality flag for these 4 wpenginepowered hosts.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -19,7 +19,10 @@
       "kidsquest children's museum summer camps__kidsquest children's museum",
       "burke museum summer camps (dino trackers & paleo discovery)__burke museum of natural history and culture (uw)",
       "ymca camp orkila overnight summer camp__ymca of greater seattle",
-      "lavner camps at university of washington__lavner education"
+      "lavner camps at university of washington__lavner education",
+      "studio coyote summer workshops__coyote central",
+      "seattle children's theatre drama school summer camps__seattle children's theatre",
+      "music works northwest summer music camps__music works northwest"
     ],
     "k12": [
       "530039000060",
