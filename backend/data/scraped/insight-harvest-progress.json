@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-30T18:51:35.632Z",
-  "totalRuns": 19,
-  "totalInsightsCaptured": 86,
-  "currentModule": "esms",
+  "lastRun": "2026-04-30T20:08:00Z",
+  "totalRuns": 20,
+  "totalInsightsCaptured": 95,
+  "currentModule": "volunteer",
   "phase": "volunteer",
-  "nextRunPlan": "PIVOT TO VOLUNTEER MODULE next run (per prior strategic guidance and current ratios). Volunteer harvested 8/247 = 3.2% — by far the lowest coverage. WA-HS now at 46/~58 = 79% (after this run). K-8 at ~40/80 = 50%. Volunteer is the laggard with the most upside per harvest. THIS RUN'S PATTERNS: (1) Three more DATA-QUALITY FLAGS surfaced — bringing the running tally to 8 (was 6). The pattern of WA-HS programs.json entries having stale or wrong fields continues to dominate; this is now well past the threshold where a dedicated cleanup run via apply-changes-NN.bat would be high-leverage. SPECIFIC FLAGS: UW Y&T Engineering Challenges grades mis-tagged 9-12 (should be 6-8 OR re-pointed to the HS course), DigiPen Pre-College tuition $1K+ low ($2K vs $2,995-$3,195 actual), Cornish program now branded 'Cornish College of the Arts at Seattle University' post-merger. (2) HIDDEN-TUITION-CREDIT pattern emerging — DigiPen offers full pre-college tuition refunded as a freshman tuition credit if the student matriculates to DigiPen within 3 years. Worth investigating whether other in-state pre-college programs (UW STEP, Seattle U Albers, Cornish, Lakeside) have similar 'matriculation discount' programs — could become a category-level umbrella insight 'pre-college programs that effectively self-fund if your kid attends'. (3) PORTFOLIO-FRIDAYS at Cornish suggests a sub-pattern worth exploring: which pre-college art/film programs explicitly bake in college-app portfolio prep into the curriculum (Cornish Fridays = portfolio; UW Painting maybe; Pratt? RISD pre-college?). NEXT RUN PRIORITIES (volunteer phase): (a) Best Friends Animal Society — large national program with state-by-state opportunities; (b) Habitat for Humanity Youth Programs — age cutoffs are notoriously confusing (16 to swing a hammer, 14 for some non-construction roles, varies by affiliate); (c) IRC (International Rescue Committee) Volunteer — refugee resettlement work has age-18 minimums for most direct-client roles, age-16 for some logistics roles, useful clarity for HS service-hours hunters. STRUCTURAL PROPOSAL: after 1-2 volunteer runs, consider rolling up accumulated WA-HS data corrections (now 8 flags) into a single update-array-items batch via apply-changes-NN.bat — this is well past the ~6-flag cleanup threshold and is starting to make Wayfinder's WA-HS surface materially less trustworthy than the rest. UMBRELLA INSIGHT OPPORTUNITY: 'Pre-college programs that go on transcript' (DigiPen Pre-College + Museum of Flight Aero Explorations + UW Summer Sessions courses + UW Engineering Academy + likely Cornish credit-bearing tracks) — worth a single batch-write umbrella in wa-spotlight-2026 explaining the 'enrichment vs transcript' divide, with DigiPen's 100%-tuition-refund-on-matriculation as the headline parent-value sweetener for one of those entries.",
+  "nextRunPlan": "STAY ON VOLUNTEER PHASE next run — only 11/247 = 4.5% harvested even after this run. THIS RUN'S PATTERNS: (1) TWO new data-quality flags pushed (Best Friends URL 404, IRC _source pointing at /take-action advocacy page rather than /volunteer portal). DataQualityFlags now stand at ~10 — well past the threshold for a dedicated cleanup batch via apply-changes-NN.bat using update-array-items. (2) UMBRELLA INSIGHT OPPORTUNITY: most large national orgs (Habitat, IRC, Best Friends-when-page-is-fixed, Audubon, Red Cross) all redirect parents to LOCAL AFFILIATE/CHAPTER lookup — age policies, BG-check fees, and orientation cadence vary by 2+ years and $25–50 between affiliates. Worth a single umbrella field-note explaining 'national-brand volunteer programs are 1,000+ independent affiliates wearing one logo — always call local before driving' that supersedes one-by-one capture for the next ~5 national orgs. (3) HIDDEN BG-CHECK FEE PATTERN: IRC asks volunteers to donate to fund the BG check; this is unusual but may not be unique — worth probing on Hopelink, IRC, Mary's Place, FareStart, Tacoma Rescue Mission, NAMI to see if it's a category-level pattern (refugee/recovery/shelter orgs all running thin on overhead). NEXT RUN PRIORITIES: (a) Mary's Place (Family Shelters, WA) — Seattle WA, scheduleNotes likely thin; (b) Seattle Aquarium Youth Ocean Advocates (YOA) — already in our DB; verify capacity/cohort/selectivity; (c) Tacoma Rescue Mission Volunteer (Kitchen, Mentoring, High Impact). All three are WA, fit Dan's geographic priority. STRUCTURAL PROPOSAL: after 3-4 more volunteer runs, the volunteer module will be at ~7-8% which is still low — consider raising volunteer batch_size from 3 to 5 if quality holds; the IRC + Habitat captures yielded clean 3-of-3 quality so capacity exists. RACE-AWARE NOTE: this run had to fall back to direct git push because INTERNAL_TASK_TOKEN was not in the scheduled-task env — flag for ops follow-up so future runs can use grinder-write as the spec intends.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -69,10 +69,13 @@
       "crisis text line__crisis text line",
       "washington trails association volunteer trail work parties__washington trails association (wta)",
       "hopelink volunteer (eastside / north & east king county)__hopelink",
-      "eastside friends of seniors volunteer__eastside friends of seniors (efs)"
+      "eastside friends of seniors volunteer__eastside friends of seniors (efs)",
+      "habitat for humanity (build sites + restore)__none",
+      "international rescue committee (irc) youth volunteer__none",
+      "seattle humane — humane teen club & high school service shifts__none"
     ]
   },
-  "lastRunPhase": "WA HS",
+  "lastRunPhase": "volunteer",
   "dataQualityFlags": [
     {
       "id": "aggregator-urls-2026-04-27",
@@ -139,6 +142,23 @@
       "description": "'DigiPen Academy Pre-College Summer Programs' (DigiPen Institute of Technology) shows cost.amount=2000 with display '~$2,000 (early bird discount available)'. Actual page lists tuition $2,995 to $3,195 per program (varies by track). Wayfinder is UNDER by $1,000-$1,200 — parents reading the entry will be ambushed at registration. FIX: update-array-items op on programs.json — set cost = { amount: 2995, type:'paid', display:'$2,995-$3,195/program (varies by track; full tuition credited toward DigiPen Institute freshman tuition if student matriculates within 3 years)' }. Also add eligibility note: minimum age 16 + entering junior/senior year + (Game Programming track only) Algebra 2 completed.",
       "affectedEntries": [
         "DigiPen Academy Pre-College Summer Programs (DigiPen Institute of Technology)"
+      ]
+    },
+    {
+      "id": "best-friends-source-404-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "volunteer-opportunities.json entries 'Best Friends Animal Society (Local Chapters + Sanctuary)' and 'Best Friends Animal Society Volunteer' both list _source as https://bestfriends.org/get-involved/volunteer — that URL now returns 404 (Best Friends reorganized their site in 2024). The /how-you-can-help/volunteer and /sanctuary/volunteer-our-sanctuary alternates also 404. FIX: cleanup pass should locate the new canonical volunteer landing page (likely under bestfriends.org/get-involved or bestfriends.org/how-you-can-help) and update both entries' _source. Until then, the Utah sanctuary teen-volunteer-trip claim in scheduleNotes can't be verified via the listed URL.",
+      "affectedEntries": [
+        "Best Friends Animal Society (Local Chapters + Sanctuary)",
+        "Best Friends Animal Society Volunteer"
+      ]
+    },
+    {
+      "id": "irc-source-take-action-vs-volunteer-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "volunteer-opportunities.json entry 'International Rescue Committee (IRC) Youth Volunteer' lists _source as https://www.rescue.org/take-action — that URL is the IRC's ADVOCACY page (urging Congressional action on refugee policy, Sudan, asylum-seeker protections), not the volunteer portal. The correct canonical URL with the actual searchable volunteer openings is https://www.rescue.org/volunteer (currently surfaces ~69 city-specific openings with real 'Available until' deadlines). FIX: update-array-items op on volunteer-opportunities.json — set _source = 'https://www.rescue.org/volunteer' matched by name.",
+      "affectedEntries": [
+        "International Rescue Committee (IRC) Youth Volunteer"
       ]
     }
   ]

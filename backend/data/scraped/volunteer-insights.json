@@ -1,9 +1,10 @@
 {
   "metadata": {
     "audience": "High school students + parents planning service hours",
-    "lastUpdated": "2026-04-27",
+    "lastUpdated": "2026-04-30",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
-    "fieldNotesCount": 15
+    "fieldNotesCount": 24,
+    "lastHarvestRun": "2026-04-30T20:08:00Z"
   },
   "sections": [
     {
@@ -87,6 +88,78 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Habitat for Humanity International",
+          "sourceName": "Habitat for Humanity (Build Sites + ReStore)",
+          "insight": "Habitat's Youth Programs span ages 5–40 — there are structured tracks for every age, not just teens. Most parents miss this. Campus chapters can be founded at HIGH SCHOOL or college level (student-initiated; partner with the local affiliate). Starting/leading a Habitat Campus Chapter is a high-leverage college-app leadership pathway distinct from showing up to occasional build days — the chapter handles its own fundraising, awareness events, and build coordination.",
+          "category": "hidden-leadership-paths",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.habitat.org/volunteer/near-you/youth-programs"
+        },
+        {
+          "sourceProvider": "Habitat for Humanity International",
+          "sourceName": "Habitat for Humanity (Build Sites + ReStore)",
+          "insight": "The 16+ build-site rule and 14+ ReStore rule are HABITAT INTERNATIONAL guidance, not a hard floor — every one of the 1,400+ US affiliates sets its own actual age policy, insurance carrier, and waiver requirements. Always call your local affiliate before driving to a build day; ages and supervision rules can vary by 2+ years between adjacent affiliates (e.g., one county may allow 14-year-olds with a parent on supervised tasks while the next county over requires 18+). Find your local affiliate at habitat.org/volunteer/near-you.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.habitat.org/volunteer/near-you/youth-programs"
+        },
+        {
+          "sourceProvider": "Habitat for Humanity International",
+          "sourceName": "Habitat for Humanity (Build Sites + ReStore)",
+          "insight": "Collegiate Challenge is Habitat's alternative-school-break pathway for college students (year-round, week-long service builds across the US). HS students can preview by joining a parent's affiliate or a faith/community group's local build, then frame service as a multi-year arc on the Common App — 'started building locally in 9th grade with my church group → led campus chapter as senior → committed to Collegiate Challenge in college.' This kind of cumulative through-line beats one-off heavy-hour weeks for showing real depth.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.habitat.org/volunteer/near-you/youth-programs"
+        },
+        {
+          "sourceProvider": "International Rescue Committee",
+          "sourceName": "International Rescue Committee (IRC) Youth Volunteer",
+          "insight": "IRC's volunteer portal at rescue.org/volunteer (NOT the /take-action page in our DB) lists ~69 LIVE openings searchable by US city and role. Many are HS-relevant: Sacramento REP Youth Mentoring (after-school for HS-age refugees, available through Aug 30, 2026), Wichita ReConnect (mentor refugee youth ages 15–24 in social/civic/educational/career activities, through Jul 31, 2026), Oakland Youth Program Tutor (virtual or in-person homework help for refugee/immigrant K-12 students, ongoing). Real 'Available until' dates surface real openings — not a generic interest form.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.rescue.org/volunteer"
+        },
+        {
+          "sourceProvider": "International Rescue Committee",
+          "sourceName": "International Rescue Committee (IRC) Youth Volunteer",
+          "insight": "Application process has an unusual cost step most parents don't expect: search → apply → orientation → IRC staff INTERVIEW → DONATE TO BACKGROUND CHECK FUND → complete background check. The donation funds the BG check itself (~$25–50 typical). Plan for that line item or ask the local office about hardship waivers up front — staff don't always volunteer that waivers exist unless you ask. Budget roughly 4–6 weeks from initial application to first volunteer shift, longer if multiple waitlists.",
+          "category": "hidden-cost",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.rescue.org/volunteer"
+        },
+        {
+          "sourceProvider": "International Rescue Committee",
+          "sourceName": "International Rescue Committee (IRC) Youth Volunteer",
+          "insight": "Most public-facing IRC roles (esp. tutoring, mentoring, ESL conversation partners) are listed only at the city level — Sacramento, Atlanta, Phoenix, Seattle, San Diego, Tucson, Wichita etc. There is NO national 'IRC volunteer' track; you have to pick the office closest to you and apply through THAT city's listings. If your nearest IRC office is far away, the Oakland Youth Program Tutor role explicitly accepts virtual volunteers — that's the only way to volunteer with IRC if you're not in one of their 28 US cities.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.rescue.org/volunteer"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "Three concurrent youth tracks — Humane Teen Club (school-year, ages 13–17, structured curriculum that PREPARES kids for future volunteer roles), High School Service Shifts (rising 9th–12th graders, drop-in service hours doing essential shelter tasks), and Teen Spring Break Workshops (3 hours of community service per workshop). The Teen Club is the feeder pipeline — kids who do HTC get priority for paid/structured volunteer roles in subsequent years, so starting in 8th–9th grade with HTC is the high-leverage long-game.",
+          "category": "hidden-leadership-paths",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "'Earn Service Hours at Home' is an under-marketed track — kids can fundraise OR donate to Oogie's Ohana Pet Food Bank at Seattle Humane and get community-service-hour documentation. Useful for kids whose schedules can't accommodate in-shelter shifts (sports seasons, transportation barriers, immunocompromised siblings). Combine with NHS or church food-drive obligations to double-count hours where allowed.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "Phone intake works and is fastest: (425) 373-5385 option 2, M–F, gets you straight to the Education Services team. This is materially faster than the Volunteer email, particularly in late winter/early spring when summer Day Camp registration windows open. As of 2026 spring, registration was already open for Kids Day Camp + Teen Day Camp — call to confirm waitlist status before checking the website (popular Bellevue weeks fill in <2 weeks of opening).",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
         {
           "label": "Washington Trails Association — 48-hour signup cliff is hard, but email opens a back door",
           "detail": "WTA work parties are auto-removed from the public schedule 48 hours before start time, even if half-empty — there's no on-page \"sign up anyway\" button. Inside that window, email volunteer@wta.org directly: crew leaders can sometimes squeeze one more if tools and lunch counts permit. Outside the email path, you're locked out. Plan teen weekend trail days the Wednesday before, not the Friday of. (verified 2026-04-27)",
