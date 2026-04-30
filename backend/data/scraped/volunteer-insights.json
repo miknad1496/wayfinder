@@ -1,12 +1,13 @@
 {
   "metadata": {
     "audience": "High school students + parents planning service hours",
-    "lastUpdated": "2026-04-30",
+    "lastUpdated": "2026-04-30T21:49:05Z",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
     "fieldNotesCount": 43,
     "lastHarvestRun": "2026-04-30T20:55:40.181Z",
     "lastFieldNoteHarvest": "2026-04-30",
-    "totalFieldNotes": 51
+    "totalFieldNotes": 51,
+    "fieldNotesTotal": 60
   },
   "sections": [
     {
@@ -90,6 +91,78 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Greentrike (Children's Museum of Tacoma + JBLM)",
+          "sourceName": "Greentrike / Children's Museum of Tacoma Volunteer",
+          "insight": "TEEN ONBOARDING IS A 4-6 WEEK PIPELINE, NOT A WALK-IN. Required order: (1) submit Volunteer Contact + Application Form on greentrike.org/about/volunteer; (2) wait for a volunteer lead to email you the handbook and (for 14-17 yr olds) the parent/guardian permission form — the form is NOT downloadable upfront, so don't try to grab it; (3) attend an Interview & Orientation meeting; (4) clear background check + COVID-19 prevention protocols; (5) THEN sign up for a shift. If your teen wants to be a Program Assistant for summer camps or Play to Learn (shifts: half-hour before + after each program), apply by mid-May at the latest to clear the pipeline before camp season. Specific contact: Jen McDonald, jmcdonald@greentrike.org.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://greentrike.org/about/volunteer"
+        },
+        {
+          "sourceProvider": "Greentrike (Children's Museum of Tacoma + JBLM)",
+          "sourceName": "Greentrike / Children's Museum of Tacoma Volunteer",
+          "insight": "JBLM SITE = ENTIRELY SEPARATE TRACK. The Children's Museum at JBLM (2275 Liggett Ave, Joint Base Lewis-McChord) requires volunteers to ALSO register with the military's VMIS system at myarmyonesource.com — separate registration on top of Greentrike's Volunteer Contact Form. Plan: if your family is not military-connected and doesn't already have base access, choose the Tacoma site (1501 Pacific Ave, Suite 202) instead to skip VMIS entirely. The two sites share volunteer roles but onboarding paths do NOT cross-credit.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://greentrike.org/about/volunteer"
+        },
+        {
+          "sourceProvider": "Greentrike (Children's Museum of Tacoma + JBLM)",
+          "sourceName": "Greentrike / Children's Museum of Tacoma Volunteer",
+          "insight": "SKILLS-BUILD INTERN ROLE FOR HS/COLLEGE STUDENTS — the Communications & Marketing Volunteer Intern position is explicitly aimed at students focused on graphic design, copywriting, marketing, or communications. Output is real portfolio material (museum-event collateral, county-wide program graphics) — distinct from generic floor-volunteer hours. Apply via the same Volunteer Contact Form but specify role interest in the comment field; Jen McDonald (jmcdonald@greentrike.org) confirms current openings. Strong fit for a teen building a creative/marketing-focused college app.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://greentrike.org/about/volunteer"
+        },
+        {
+          "sourceProvider": "Mobius Discovery Center",
+          "sourceName": "Mobius Discovery Center Volunteer (Spokane)",
+          "insight": "CENTER IS TEMPORARILY CLOSED + VOLUNTEER APPLICATIONS PAUSED (as of April 2026). The mobiusdiscoverycenter.org site banner reads 'Temporarily Closed' and the volunteer page explicitly states 'Our next round of volunteer opportunities will open in November.' If you submit the Volunteer Application now, you'll be queued and contacted in November. Eastern WA families wanting Spokane-area youth-museum volunteer hours BEFORE November should pivot to Spark Central, Spokane Public Library teen advisory boards, or Riverfront Park event volunteering instead.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://mobiusdiscoverycenter.org/join/volunteer/"
+        },
+        {
+          "sourceProvider": "Mobius Discovery Center",
+          "sourceName": "Mobius Discovery Center Volunteer (Spokane)",
+          "insight": "AGE FLOOR HAS A YOUNGER-SIBLING LOOPHOLE that's atypical for WA museums. Headline minimum is 16, BUT children 15 and under may volunteer if accompanied by an adult 18+. This is more permissive than the broader WA museum-cluster default (most require 14+ to volunteer alone, no parent-accompaniment path). Useful for parent + younger-sibling team service projects, especially since shifts include simple art-supply prep (e.g., punching paper flowers) that's age-appropriate for elementary-age helpers paired with a parent.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://mobiusdiscoverycenter.org/join/volunteer/"
+        },
+        {
+          "sourceProvider": "Mobius Discovery Center",
+          "sourceName": "Mobius Discovery Center Volunteer (Spokane)",
+          "insight": "OFFSITE SHIFT PATH AT ELEMENTARY SCHOOLS — Mobius shifts may occur at the museum (331 N Post St, downtown Spokane) AND/OR at elementary schools across the Spokane area for outreach programming. If you're outside walking distance of downtown but live near a Spokane Public Schools site, ask Volunteer Manager Alina Morrisey (amorrisey@mobiusspokane.org) which schools host outreach shifts — can save a 20-30 min commute. Especially relevant for north-Spokane and Spokane Valley families.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://mobiusdiscoverycenter.org/join/volunteer/"
+        },
+        {
+          "sourceProvider": "The Sophia Way",
+          "sourceName": "The Sophia Way Volunteer (Bellevue / Eastside Women's Shelters)",
+          "insight": "DEDICATED HS LEADERSHIP TRACK = YOUTH ENGAGEMENT COMMITTEE. This is an explicit pathway for high schoolers to take ownership of donation drives, Community Brunches, and fundraising events — NOT just floor-volunteer hours. Meets the 4th Monday of every month online from 6-7pm, so it works around school + sports + commute (no Bellevue/Kirkland transport needed for the meeting itself). Strong college-app material: leadership of measurable outcomes (donation drives, fundraising results) with a documented monthly cadence. Apply via volunteer@sophiaway.org.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://sophiaway.org/volunteer/"
+        },
+        {
+          "sourceProvider": "The Sophia Way",
+          "sourceName": "The Sophia Way Volunteer (Bellevue / Eastside Women's Shelters)",
+          "insight": "SHELTER-ASSISTANT ROLE HAS THREE GATES, NOT JUST AN AGE FLOOR: (a) volunteers must IDENTIFY AS WOMEN (this is a women's shelter, kitchen-area role); (b) 18+ to serve alone, ages 13-17 with parent/guardian; (c) HIDDEN COST — a current Washington food worker card is REQUIRED before any kitchen shift (~$10, foodworkercard.wa.gov, online course ~1 hour, valid 2-3 years). Get the card BEFORE signing up to avoid being turned away day-of. Lunch shifts: 10am-1pm; dinner shifts: 5:45pm-8pm. Two locations: Sophia's Place (Bellevue) + Helen's Place (Kirkland).",
+          "category": "hidden-cost",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://sophiaway.org/volunteer/"
+        },
+        {
+          "sourceProvider": "The Sophia Way",
+          "sourceName": "The Sophia Way Volunteer (Bellevue / Eastside Women's Shelters)",
+          "insight": "REMOTE-FROM-HOME PATH FOR FAMILIES WHO CAN'T COMMIT TO ONSITE SHIFTS — 'Prepare a Hot Meal' is fully offsite, can be one-time or recurring, and meals can be delivered HOT or FROZEN (frozen drop-off means you don't have to time delivery to a meal-service window). Tagged on the site as 'one of our greatest needs.' Capacity per dropoff: Sophia's Place serves lunch for 30 / dinner for 21 daily; Helen's Place serves lunch + dinner for 40 daily. Great fit for a family with younger kids who can cook together but can't commit to a recurring shelter shift. No physical requirements, no food worker card required for cook-and-deliver (only for in-shelter kitchen).",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://sophiaway.org/volunteer/"
+        },
         {
           "sourceProvider": "Treehouse",
           "sourceName": "Treehouse for Kids — Volunteer & Treehouse Store",
