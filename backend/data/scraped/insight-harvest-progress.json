@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-28T06:20:28.580Z",
-  "totalRuns": 15,
-  "totalInsightsCaptured": 74,
+  "lastRun": "2026-04-30T16:54:50.628Z",
+  "totalRuns": 16,
+  "totalInsightsCaptured": 77,
   "currentModule": "esms",
   "phase": "WA HS",
-  "nextRunPlan": "WA HS phase initiated this run (3 entries: WAS / UW STEP / SU AI for Equity). 22 WA HS-only unharvested entries remain with verified _source URLs — strong queue. PATTERN OBSERVED ACROSS ALL 3: 'true cost vs headline cost' is consistently mis-tagged in our DB. WAS lists $1,850 but Phase 1 is free for everyone; UW STEP's $200 hides a NON-REFUNDABLE clause; Seattle U AI for Equity is in our DB as 'Free' when actual cost is $1,500. RECOMMEND DEDICATED PASS: build a 'WA HS pre-college true-cost decoder' umbrella insight under wa-spotlight-2026 OR create a new 'pre-college-true-cost' section. Items that should populate: (a) WAS = free-to-try if you can do Phase-1-only, $1,850-or-aid if you make Phase 2; (b) UW STEP = $200 sticker, FRL waiver pathway hidden in app, non-refundable; (c) SU AI for Equity = $1,500 listed as free in our DB (data-quality fix needed); (d) UW Engineering Academy / DigiPen WANIC / Cornish / Seattle U Business Institute / Lakeside Summer Institute likely have similar scholarship-buried-in-app patterns. DATA QUALITY URGENT: Seattle U AI for Equity 'Free' tag is misleading prospective free-program-seekers — flagged in dataQualityFlags as 'su-ai4equity-cost-mismatch-2026-04-28'. NEXT-NEXT RUN should run update-array-items op on programs.json to correct cost field (described in the flag). Other WA HS targets ranked for next harvest: UW Engineering Academy (likely has cohort size + selection criteria intel), WAS Phase 2 specific FAQ PDF (acceptance-rate data), DigiPen WANIC Summer (high-school-credit articulation details). STRATEGIC NOTE: This run uses direct GitHub Git Data API following patch14 read-at-commit-SHA + patch27 spirit (no force-push, post-write verify). Volunteer module remains the biggest coverage gap by ratio (8/247) — schedule a volunteer phase after the next 1-2 WA HS runs.",
+  "nextRunPlan": "WA HS phase continues: 16 verified WA-HS-only entries unharvested. PATTERN OBSERVED THIS RUN: 'application is closed for THIS year, next cycle in March' is the dominant gotcha — WA HS pre-college programs (UW Engineering Academy, DigiPen WANIC, Lakeside Summer Institute) all enforce hard deadlines that already passed for 2026. Parents browsing Wayfinder mid-summer 2026 will be misled if our entries don't telegraph 'application closed — apply March 2027' clearly. RECOMMENDATION FOR NEXT RUN: harvest ACAP Seattle Residency Week + UW STEP follow-up + UW Center for Neurotechnology YSP-REACH (next 3 high-priority WA-HS), but also queue a DEDICATED PASS to add a 'closed-for-2026 / next-window-2027' umbrella insight to wa-spotlight-2026 section so the parent learns this pattern at module level rather than per-program. SECONDARY DATA-QUALITY FLAG opened: Lakeside Summer Institute lists 'financial aid available' but for 2026 aid is exhausted — flag id 'lakeside-2026-aid-exhausted' for next-cycle update-array-items. ELIGIBILITY-GATING FLAG: DigiPen WANIC is restricted to 7 specific Eastside districts (out-of-consortium STRICTLY excluded with no exceptions) — Wayfinder's location field shows 'WA' which is misleadingly broad; consider adding a districtRestriction field on programs, or adding an eligibility-warning string to the 7 entries that share this WANIC consortium gate. Volunteer module remains worst by ratio (8/247 harvested) — schedule one volunteer phase after 1-2 more WA HS runs.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -40,7 +40,10 @@
       "seattle aquarium marine summer camp__seattle aquarium",
       "washington aerospace scholars (was)__museum of flight & nasa",
       "uw step (students exploring pharmacy)__university of washington school of pharmacy",
-      "seattle university ai for equity pre-college program__seattle university"
+      "seattle university ai for equity pre-college program__seattle university",
+      "uw engineering academy__university of washington college of engineering",
+      "digipen wanic summer programs__digipen institute of technology / wanic",
+      "lakeside summer institute: ai & machine learning__lakeside school"
     ],
     "k12": [
       "530039000060",
@@ -77,6 +80,23 @@
       "description": "programs.json entry 'Seattle University AI for Equity Pre-College Program' lists cost.display as 'Free (merit scholarships available)' and cost.amount as 0. Actual page lists Cost of Attendance $1,500 + $50 nonrefundable deposit (scholarships available, not a free program). FIX: update-array-items op on programs.json — set cost = { amount:1500, type:'paid', display:'$1,500 + $50 nonrefundable deposit (scholarships available)' } matched by name+provider.",
       "affectedEntries": [
         "Seattle University AI for Equity Pre-College Program (Seattle University)"
+      ]
+    },
+    {
+      "id": "lakeside-2026-aid-exhausted",
+      "flaggedDate": "2026-04-30",
+      "description": "Lakeside Summer Institute HS courses page explicitly states 'Financial aid funds for Summer 2026 are no longer available. We are unable to consider new financial aid applications at this time.' Wayfinder entries currently say 'financial aid available' — misleading for parents browsing in May-Aug 2026. FIX: update-array-items op on programs.json — set cost.aidStatus='2026: exhausted; 2027 cycle reopens with new pool' or append warning to scheduleNotes. Affects all Lakeside Summer Institute course entries (AI & ML + Science + others).",
+      "affectedEntries": [
+        "Lakeside Summer Institute: AI & Machine Learning (Lakeside School)",
+        "Lakeside Summer Institute: Science Courses (Lakeside School)"
+      ]
+    },
+    {
+      "id": "digipen-wanic-eligibility-narrow-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "DigiPen WANIC Summer Programs is open ONLY to students in 7 Northeast King County districts (Bellevue, Issaquah, Lake Washington, Mercer Island, Northshore, Riverview, Snoqualmie Valley). Programs.json entry shows location.state='WA' which implies all-WA eligibility — misleading. Out-of-consortium families (Seattle SPS, Shoreline, Highline, Federal Way, etc.) are STRICTLY excluded with 'no exceptions'. FIX: add eligibility.districtRestriction field or prepend a warning to scheduleNotes flagging the consortium-only restriction.",
+      "affectedEntries": [
+        "DigiPen WANIC Summer Programs (DigiPen Institute of Technology / WANIC)"
       ]
     }
   ]
