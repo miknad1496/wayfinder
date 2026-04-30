@@ -3,8 +3,8 @@
     "audience": "High school students + parents planning service hours",
     "lastUpdated": "2026-04-30",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
-    "fieldNotesCount": 36,
-    "lastHarvestRun": "2026-04-30T20:18:00.353Z",
+    "fieldNotesCount": 43,
+    "lastHarvestRun": "2026-04-30T20:55:40.181Z",
     "lastFieldNoteHarvest": "2026-04-30"
   },
   "sections": [
@@ -89,6 +89,62 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "FareStart",
+          "sourceName": "FareStart Volunteer (Kitchen, Events, Job-Skills Support)",
+          "insight": "FareStart actually runs THREE distinct volunteer tracks — Community & School Meals (kitchen prep + meal-pack for school nutrition partners), Event Staffing & Administration (galas, fundraisers, Guest Chef Night, office tasks), and Food Resourcing & Distribution (gleaning fresh produce from partner farms + outdoor distribution to underserved neighborhoods). Pick by your teen's skill match: kitchen-curious → Community Meals; social/extroverted → Event Staffing; outdoor/logistics-minded → Food Resourcing. Wayfinder's current description collapses these into 'kitchen support' which under-sells the Food Resourcing farm-to-table track that develops genuine supply-chain operations skill.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.farestart.org/volunteer/"
+        },
+        {
+          "sourceProvider": "FareStart",
+          "sourceName": "FareStart Volunteer (Kitchen, Events, Job-Skills Support)",
+          "insight": "Capacity reality check from FareStart's own 2023 stats: 640 volunteers logged 5,778 hours across 1,447 individual shifts — averaging only ~9 hours / 2.3 shifts per volunteer per year. FareStart treats volunteers as occasional helpers, NOT a recurring weekly commitment. For teens needing 100+ sustained hours for college apps, pair FareStart with an anchor org (hospital JV, library teen council) rather than expecting depth-of-impact here. Conversely it's an ideal LOW-COMMITMENT first-time service experience for kids unsure they want a yearlong commitment, or for racking up incremental hours during senior-year crunch.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.farestart.org/volunteer/"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "Seattle Humane runs a SEPARATE parent mailing list that gets PRIORITY UPDATES + EARLY REGISTRATION NOTICES before each public registration window opens — sign up at seattlehumane.org/get-involved/youth-school-programs (scroll to 'Stay informed' form). This is the single biggest overlooked Seattle volunteer hack: Summer Camp 2026 ($695/week, M-Th 8:30am-3:30pm, both Kids Day Camp and Teen Day Camp tracks) and Spring Break Workshops fill via this priority list FIRST, public registration second. Joining the list before the public announcement is the difference between getting in and being waitlisted.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "Two unpublicized FAST-TRACK service-hour paths beyond the year-long Humane Teen Club: (1) Teen Spring Break Workshops earn THREE hours of community service in a single one-off workshop session (animal-themed lesson + behind-the-scenes shelter tour + furry-friend interaction); (2) 'Earn Service Hours at Home' lets teens log hours by donating, fundraising, or supporting Oogie's Ohana Pet Food Bank without ever entering the Bellevue shelter. Useful for teens who need quick documented hours for HS graduation requirements, or who can't commit to the recurring every-other-Saturday Teen Club schedule. Direct intake line for youth programs is (425) 373-5385 option 2 — separate from the main Seattle Humane line.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
+        {
+          "sourceProvider": "Seattle Humane",
+          "sourceName": "Seattle Humane — Humane Teen Club & High School Service Shifts",
+          "insight": "Equity hack for low-income family schools: Seattle Humane is now actively sponsoring FREE humane-education programming for Title 1 schools — teachers at qualifying schools can email EducationServices@seattlehumane.org to bring a humane educator to the classroom or schedule a sponsored field trip at zero cost. Most other youth animal-welfare programs charge for school visits. Worth flagging for school counselors at Title 1 schools across King County who may not realize the option exists.",
+          "category": "scholarship",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattlehumane.org/get-involved/youth-school-programs/"
+        },
+        {
+          "sourceProvider": "King County Library System",
+          "sourceName": "KCLS Teen Volunteer Program (TVP) & Teen Advisory Boards",
+          "insight": "TVP was BORN remote (founded June 2020 over Zoom during pandemic library closures) and remains virtual-first by design — teens countywide can join WITHOUT being tied to a specific branch. This matters most for teens in more remote KCLS service areas (Maple Valley, Snoqualmie, Vashon Island, Skykomish, Carnation) who can't reliably get to a branch on weekday afternoons. Teen Advisory Boards are still branch-anchored (need to physically attend meetings at one specific library), but TVP itself has no geographic gating within King County. Direct librarian contact for TVP applications: Rochelle Brown, rochellb@kcls.org.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://kcls.org/news/teen-volunteer-program-tvp/"
+        },
+        {
+          "sourceProvider": "King County Library System",
+          "sourceName": "KCLS Teen Volunteer Program (TVP) & Teen Advisory Boards",
+          "insight": "TVP teens DESIGN and co-produce the workshops other teens attend — examples from prior cohorts include 'College Essays that Work', 'College Scholarships: Secrets to Success', a STEM Career Panel, 'Engineering Around the House: Paper Bridge Challenge', and a 'Teen Creative Society' arts series. This means a TVP teen can stack hours TWO ways simultaneously: hours for designing/leading a workshop AS organizer, PLUS hours for attending peer-led TVP workshops as participant. Most volunteer programs don't permit this dual-counting. Internal TVP-only workshops also exist on Resumes, LinkedIn, and Communication Skills — bonus pre-college soft-skill training built into the role.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://kcls.org/news/teen-volunteer-program-tvp/"
+        },
         {
           "sourceProvider": "Seattle Children's Hospital",
           "sourceName": "Seattle Children's Hospital Junior Volunteer",
