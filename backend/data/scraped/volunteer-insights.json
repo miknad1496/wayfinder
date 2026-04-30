@@ -3,8 +3,9 @@
     "audience": "High school students + parents planning service hours",
     "lastUpdated": "2026-04-30",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
-    "fieldNotesCount": 24,
-    "lastHarvestRun": "2026-04-30T20:08:00Z"
+    "fieldNotesCount": 30,
+    "lastHarvestRun": "2026-04-30T20:08:00Z",
+    "lastFieldNoteHarvest": "2026-04-30"
   },
   "sections": [
     {
@@ -88,6 +89,54 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Mary's Place Seattle",
+          "sourceName": "Mary's Place (Family Shelters, WA)",
+          "insight": "Mary's Place runs a structured high-school youth track called the Youth Action Program (YAP) — but it is INVISIBLE from the public /get-involved/volunteer landing page. That page only surfaces 'Volunteer Login' + 'New Volunteer Application' + a corporate-groups CTA; nothing names YAP. Parents only find YAP by stumbling onto blog posts (e.g. /blog/tag/youth+action+program). Real path for high-schoolers in Seattle: email volunteer@marysplaceseattle.org and ask specifically about YAP, OR follow the youth-action-program blog tag for the next cohort announcement, rather than filling out the generic 'New Volunteer Application' which routes to adult/corporate placements.",
+          "category": "hidden-leadership-paths",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.marysplaceseattle.org/get-involved/volunteer"
+        },
+        {
+          "sourceProvider": "Mary's Place Seattle",
+          "sourceName": "Mary's Place (Family Shelters, WA)",
+          "insight": "YAP volunteers commit to a recurring weekly slot (e.g. every Wednesday afternoon) at the Allen Family Center — located just off the Mt. Baker light rail station — supporting donation-room organization and staff. The program ALSO includes a structured book club (current cycle is reading 'Homelessness is a Housing Problem' by Gregg Colburn & Clayton Aldern). For college applications, this is the rare placement that pairs sustained hands-on service with a peer-discussion / advocacy-literacy component — counts as both 'service' and 'intellectual engagement', distinct from one-off donation drives.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.marysplaceseattle.org/blog/youth-in-action-ruby-shares-her-yap-experience"
+        },
+        {
+          "sourceProvider": "Seattle Aquarium",
+          "sourceName": "Seattle Aquarium Youth Ocean Advocates (YOA)",
+          "insight": "YOA is THREE separate programs, not one — parents and students routinely conflate them. (1) TIDES = lowest barrier; any high-schooler joins via interest form; receives monthly newsletter + monthly digital meetups + quarterly Seattle-area events; minimal college-app weight. (2) CURRENTS = the actual hands-on Aquarium volunteer track (interpret to the public, behind-the-scenes trainings, field activities); selective application + interview + 5 mandatory training dates (~20 hours). (3) BREAKERS = invitation-only project teams reserved for experienced Currents who've already proven themselves; this is the strongest college-app credential because it pairs students with conservation professionals on intensive focused projects. Strategy: aim for Currents in 9th/10th grade, then earn a Breakers slot for 11th/12th — don't waste a senior-year app slot on Tides.",
+          "category": "hidden-leadership-paths",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattleaquarium.org/act-for-the-ocean/volunteer/youth-ocean-advocates/"
+        },
+        {
+          "sourceProvider": "Seattle Aquarium",
+          "sourceName": "Seattle Aquarium Youth Ocean Advocates (YOA)",
+          "insight": "DEADLINE TRAP: as of late April 2026, the Summer 2026 YOA Currents interest form is ALREADY CLOSED — the window was January (interest opens) → March (mandatory online infosession) → April (application + decisions). The next entry point is the SCHOOL-YEAR session: interest form opens MAY 2026 (this month or next), September infosessions, October application + interview, November trainings, January 2027 first shifts. Action item for parents: bookmark the YOA page TODAY and check weekly in May. The infosession is mandatory before you can even receive the application — missing it kills the cycle. Email YOA@seattleaquarium.org to request notification when the form opens.",
+          "category": "deadline",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.seattleaquarium.org/act-for-the-ocean/volunteer/youth-ocean-advocates/"
+        },
+        {
+          "sourceProvider": "Tacoma Rescue Mission",
+          "sourceName": "Tacoma Rescue Mission Volunteer (Kitchen, Mentoring, High Impact)",
+          "insight": "TRM has a separate 'High Impact Volunteer' tier most parents miss because the standard volunteerhub.com signup never mentions it. High Impact roles (Mentoring clients, Tutoring Youth or Adults, assisting Case Workers, Search & Rescue, front-desk shift) require an interview AND a 6-month minimum commitment — application is at trm.org/highimpact, NOT through the regular Volunteer Hub calendar. THIS is the college-app-grade tier for sustained-service narrative; kitchen shifts (3-hour blocks at 6-9am / 11am-2pm / 3-6pm) are valuable but read as drop-in service. For seniors building a 'depth over breadth' story, apply to High Impact as soon as 9th/10th grade.",
+          "category": "hidden-leadership-paths",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.trm.org/volunteer-faq/"
+        },
+        {
+          "sourceProvider": "Tacoma Rescue Mission",
+          "sourceName": "Tacoma Rescue Mission Volunteer (Kitchen, Mentoring, High Impact)",
+          "insight": "AGE-FLOOR + LOGISTICS GOTCHAS at TRM that ambush families day-of: (1) Min age is 8 with adult, but Donation Center + Litter Pick Up are HARD 18+ regardless of waiver (safety rule, not guidance) — a 14-year-old waiver-holder will be turned away at the door for these two roles. (2) ALL minors require a completed Youth Waiver on file BEFORE the shift, not at check-in. (3) Account approval through rescue-mission.volunteerhub.com takes up to 5 business days — don't sign up for next-Saturday's shift on Wednesday and assume it will go through. (4) Dress code is enforced: closed-toed shoes + long pants required (no shorts, no sandals); they provide hairnets/gloves/aprons for kitchen but not the basic clothing. (5) On-site parking is genuinely limited — they explicitly encourage carpooling, plan accordingly.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.trm.org/volunteer-faq/"
+        },
         {
           "sourceProvider": "Habitat for Humanity International",
           "sourceName": "Habitat for Humanity (Build Sites + ReStore)",
