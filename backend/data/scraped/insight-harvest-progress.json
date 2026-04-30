@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-30T19:48:10Z",
-  "totalRuns": 21,
-  "totalInsightsCaptured": 101,
+  "lastRun": "2026-04-30T20:18:00.354Z",
+  "totalRuns": 22,
+  "totalInsightsCaptured": 107,
   "currentModule": "volunteer",
   "phase": "volunteer",
-  "nextRunPlan": "STAY ON VOLUNTEER PHASE — only 14/247 = 5.7% harvested. THIS RUN'S 3 captures (Mary's Place YAP, Seattle Aquarium YOA, Tacoma Rescue Mission) all yielded 2 high-quality insights each, validating that WA volunteer entries are dense enough for batch_size=3 to keep yielding 6 strong items per run. PATTERNS NOTICED: (1) HIDDEN-PROGRAM-ON-PUBLIC-PAGE pattern is universal — Mary's Place YAP is invisible from /volunteer, and TRM's 'High Impact' tier is invisible from the standard signup. Likely the SAME pattern exists at: Seattle Children's Hospital Junior Volunteer (already in DB), Northwest Harvest, Hopelink, NAMI WA. Worth one umbrella field-note: 'most large WA non-profits hide their flagship youth-leadership track behind a generic /volunteer landing page; always email and ask specifically'. (2) APPLICATION-WINDOW-ALREADY-CLOSED is a recurring user-burn — YOA's summer 2026 window is shut and the next entry is May. Wayfinder should consider a 'next-window' field on volunteer entries (and surface 'CURRENTLY CLOSED — next window opens X' in cards). Flag for product/data: open a follow-up to add scheduleNotes-level next-window strings to time-bounded volunteer entries. (3) AGE-FLOOR-EXCEPTIONS pattern — TRM's general 8+ rule has hard 18+ carve-outs (Donation Center, Litter). YAP requires high school enrollment. Mary's Place YAP is age-gated despite no public posting. Worth a per-entry 'ageFloorByRole' enrichment, not just a single 'minAge' field. NEXT-RUN PRIORITIES (still WA-first, in scheduleNotes-thin order): (a) 'Seattle Children's Hospital Junior Volunteer Program' — large flagship hospital JV, likely competitive + hidden tracks; (b) 'Hopelink Volunteer (Eastside / North & East King County)' — already harvested but only thin notes; reread for Eastside-specific cohort intel; (c) 'Northwest Harvest Volunteer' (food-bank tier; not yet harvested if present; if absent, advance to NAMI WA Walks or Treehouse for Foster Youth). DATA-QUALITY FLAGS now ~10 — schedule a dedicated cleanup batch via apply-changes-NN.bat using update-array-items + the YSP-REACH/UW-MSE/UW-Y&T/DigiPen-tuition/Best-Friends-404/IRC-source-take-action flags. RACE-AWARE NOTE: INTERNAL_TASK_TOKEN still not in scheduled-task env, so this run again fell back to direct git push — single-writer + small commit kept the race window minimal but ops should add the token to the scheduled-task env so future runs can use grinder-write as the spec intends.",
+  "nextRunPlan": "STAY ON VOLUNTEER PHASE — 17/247 = 6.9% harvested. THIS RUN'S 3 captures (Seattle Children's Hospital JVP, Northwest Harvest Volunteer, Woodland Park Zoo Teen Ambassador) each yielded 2 high-value insights — keep batch_size=3 since WA flagship volunteer programs are still dense. PATTERNS NOTICED: (1) STALE-PROGRAM-NAME pattern — Wayfinder's volunteer-opportunities.json still uses old program names that have rebranded: 'Junior Zookeeper / Teen Volunteer' is now Teen Ambassador Volunteer Program (TAVP), and 'ZooCorps' no longer exists as a distinct sibling program. Likely the SAME stale-name pattern exists at: Seattle Aquarium (already harvested as YOA, also rebranded), Pacific Science Center Discovery Corps, and probably KidsQuest/Burke teen programs. Worth scanning every WA museum/zoo/aquarium volunteer entry for old-name vs current-name drift — flag DQ. (2) MULTI-CYCLE-APP-WINDOWS pattern — Seattle Children's runs THREE app windows per year (Mar/Jul/Nov), each with its own 6-month service-window lock-in. Wayfinder's howToStart says only 'March-April for fall' which is materially wrong. The same multi-cycle pattern likely exists at Swedish Hospital, Virginia Mason, UW Medical Center, EvergreenHealth, MultiCare Mary Bridge — every major hospital's JV program. Worth a per-hospital re-harvest pass + an umbrella field-note 'major hospital JV apps run on TRIPLE cycles, not annual'. (3) MICRO-CAPACITY pattern — Northwest Harvest's Auburn warehouse takes only 4 volunteers/wk total. Capacity numbers are critical info parents can't find without calling, and they're missing from Wayfinder. Worth adding a 'capacity' or 'spotsPerShift' field on volunteer entries during the next data-quality cleanup. NEW DATA-QUALITY FLAGS THIS RUN: (a) NW Harvest entry says 'Kent SODO warehouse' — outdated, current Seattle-area location is Auburn (Kent reference is wrong); (b) NW Harvest ageMin=10, actually 9; (c) WPZ entry name still 'Junior Zookeeper / Teen Volunteer', actual program is 'Teen Ambassador Volunteer Program (TAVP)' — also description still mentions 'ZooCorps' which no longer exists; (d) Seattle Children's howToStart says 'March-April for fall', actually three cycles Mar/Jul/Nov each binding to a distinct 6-mo window; (e) WPZ stipend description is generic 'paid stipend competitive', actually a flat \u0000/summer. NEXT-RUN PRIORITIES (still WA-first): (a) FareStart Volunteer (kitchen/events/job-skills, untouched flagship) — likely has shift-type detail not in scheduleNotes; (b) Pacific Science Center Discovery Corps (note: _source points to careers page, may be wrong URL — DQ flag if so); (c) Seattle Humane Teen Club (existing scheduleNotes thin; check teen-specific cohort schedule); fallback: KCLS Teen Volunteer Program (system-wide library teen track, large network). RACE-AWARE NOTE: INTERNAL_TASK_TOKEN still not in scheduled-task env, so this run again fell back to direct git push pattern — single small commit, no concurrent writers expected at :08. Recommend ops add the token to enable grinder-write.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -75,7 +75,10 @@
       "seattle humane — humane teen club & high school service shifts__none",
       "mary's place (family shelters, wa)__none",
       "seattle aquarium youth ocean advocates (yoa)__none",
-      "tacoma rescue mission volunteer (kitchen, mentoring, high impact)__none"
+      "tacoma rescue mission volunteer (kitchen, mentoring, high impact)__none",
+      "seattle children's hospital junior volunteer__seattle children's hospital",
+      "northwest harvest volunteer__northwest harvest",
+      "woodland park zoo junior zookeeper / teen volunteer__woodland park zoo"
     ]
   },
   "lastRunPhase": "volunteer",
@@ -162,6 +165,30 @@
       "description": "volunteer-opportunities.json entry 'International Rescue Committee (IRC) Youth Volunteer' lists _source as https://www.rescue.org/take-action — that URL is the IRC's ADVOCACY page (urging Congressional action on refugee policy, Sudan, asylum-seeker protections), not the volunteer portal. The correct canonical URL with the actual searchable volunteer openings is https://www.rescue.org/volunteer (currently surfaces ~69 city-specific openings with real 'Available until' deadlines). FIX: update-array-items op on volunteer-opportunities.json — set _source = 'https://www.rescue.org/volunteer' matched by name.",
       "affectedEntries": [
         "International Rescue Committee (IRC) Youth Volunteer"
+      ]
+    },
+    {
+      "id": "nw-harvest-kent-sodo-stale-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "volunteer-opportunities.json 'Northwest Harvest Volunteer' description references 'Kent SODO warehouse' but the current Seattle-area distribution warehouse is in AUBURN (2820 B St NW, Suite 109). 'SODO' refers separately to the SODO Community Market (a retail-grocery operation, different volunteer track). Also ageMin=10 should be 9 (3rd grade). FIX: update-array-items op on volunteer-opportunities.json — set description to mention Auburn distribution + Yakima/SODO + ageMin=9.",
+      "affectedEntries": [
+        "Northwest Harvest Volunteer (Northwest Harvest)"
+      ]
+    },
+    {
+      "id": "wpz-program-name-stale-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "volunteer-opportunities.json 'Woodland Park Zoo Junior Zookeeper / Teen Volunteer' uses two stale program names. The active program is 'Teen Ambassador Volunteer Program (TAVP)' — 'Junior Zookeeper' is gone and 'ZooCorps' (referenced in description) is gone too. Also stipend is described as generic 'paid stipend competitive' but the actual amount is a flat \u0000 for the summer. FIX: update-array-items op on volunteer-opportunities.json — rename to 'Woodland Park Zoo Teen Ambassador Volunteer Program', update description to remove ZooCorps/ZooU references, update _source to https://zoo.org/volunteer/teen/ (current /get-involved/volunteer/youth-volunteer-opportunities path may also be stale).",
+      "affectedEntries": [
+        "Woodland Park Zoo Junior Zookeeper / Teen Volunteer (Woodland Park Zoo)"
+      ]
+    },
+    {
+      "id": "sch-jvp-cycle-info-stale-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "volunteer-opportunities.json 'Seattle Children's Hospital Junior Volunteer' howToStart says 'applications open March-April for fall'. Actual program runs THREE distinct application cycles per year (March, July, November), each locking the volunteer into a different 6-month service window. Also _source URL https://www.seattlechildrens.org/about/volunteering/ now 404s — the canonical page redirected to /giving/volunteer/, and the actual application portal is at https://seattlechildrens.vsyslive.com/. FIX: update-array-items op on volunteer-opportunities.json — replace howToStart with multi-cycle text, update _source to https://seattlechildrens.vsyslive.com/.",
+      "affectedEntries": [
+        "Seattle Children's Hospital Junior Volunteer (Seattle Children's Hospital)"
       ]
     }
   ]

@@ -3,8 +3,8 @@
     "audience": "High school students + parents planning service hours",
     "lastUpdated": "2026-04-30",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
-    "fieldNotesCount": 30,
-    "lastHarvestRun": "2026-04-30T20:08:00Z",
+    "fieldNotesCount": 36,
+    "lastHarvestRun": "2026-04-30T20:18:00.353Z",
     "lastFieldNoteHarvest": "2026-04-30"
   },
   "sections": [
@@ -89,6 +89,54 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Seattle Children's Hospital",
+          "sourceName": "Seattle Children's Hospital Junior Volunteer",
+          "insight": "Applications open THREE TIMES per year — March, July, AND November — not just spring as commonly assumed. But each cycle locks the volunteer into a fixed 6-month commitment window: March cycle = April-Nov, July cycle = Aug-Mar, November cycle = Jan-Aug. The next opening is noon PT Thursday July 16, 2026 (currently CLOSED). Apply in the cycle whose service window matches your teen's actual availability — if a March applicant can't honor April-Nov they'll be deferred. Free on-site parking is included once placed.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://seattlechildrens.vsyslive.com/"
+        },
+        {
+          "sourceProvider": "Seattle Children's Hospital",
+          "sourceName": "Seattle Children's Hospital Junior Volunteer",
+          "insight": "Three commonly assumed-but-FALSE expectations to verify before your teen applies: (1) NO summer-only volunteering — the FAQ explicitly says 'Not at this time' to summer-only availability, so don't pitch this as a summer-break activity; (2) NO baby cuddling positions; (3) NO medical shadowing — that's a separate Medical Observership program at /healthcare-professionals/education/medical-observations-job-shadowing/. Practical: nearly all shifts are weekdays Mon-Fri, starting between 9am and 2pm — teens with school-year afternoon sports/jobs will struggle to find a workable shift. Most placements are at the main 4800 Sand Point Way NE hospital; limited slots also at North Clinic (Everett), South Clinic (Federal Way), and Bellevue Clinic & Surgery Center.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://seattlechildrens.vsyslive.com/"
+        },
+        {
+          "sourceProvider": "Northwest Harvest",
+          "sourceName": "Northwest Harvest Volunteer",
+          "insight": "Wayfinder's 'Kent SODO warehouse' description is dated. The Seattle-area distribution warehouse is now in AUBURN (2820 B St NW, Suite 109), and accepts only 4 volunteers per week, Mondays 10am-noon ONLY (weekend shifts on hold) — books out fast. For more capacity, drive to YAKIMA (Tue/Wed/Thu 10am-12pm AND 1-3pm + Fri 10am-12pm) or sign up separately for the SODO Community Market (a different retail-grocery operation, max 2 shifts/week on different days, no drop-ins). Spokane warehouse is currently on hold for individual volunteers, group inquiries only.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.northwestharvest.org/get-involved/volunteer/regional-warehouses/"
+        },
+        {
+          "sourceProvider": "Northwest Harvest",
+          "sourceName": "Northwest Harvest Volunteer",
+          "insight": "Minimum age is 9 (3rd grade), not 10 as currently listed in Wayfinder. Ages 9-15 require a parent or guardian to volunteer alongside; 16-17 can volunteer solo with a parental permission form on file. Hard logistics rules at every location: closed-toe shoes mandatory year-round (warehouse setting, expect to get dirty), max 40 people per shift (counted with supervisors for groups), no drop-ins (must schedule 24+ hours in advance), and the Auburn warehouse lacks an accessible restroom. Court-ordered community service hours: case-by-case only, not guaranteed. Application-to-first-shift turnaround is ~10 business days.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.northwestharvest.org/get-involved/volunteer/regional-warehouses/"
+        },
+        {
+          "sourceProvider": "Woodland Park Zoo",
+          "sourceName": "Woodland Park Zoo Junior Zookeeper / Teen Volunteer",
+          "insight": "The program rebranded to 'Teen Ambassador Volunteer Program (TAVP)' — 'Junior Zookeeper' and 'ZooCorps' (still listed in Wayfinder description) no longer exist as distinct programs. Only 15 teens accepted per cohort. 2026 applications CLOSED Friday March 27 at 5pm PST (interviews mid-April, decisions early May), so the next window for HS-only applicants is March 2027. Eligibility: rising 10th-12th graders entering Fall of the program year — current 9th graders are excluded. Stipend is a flat $300 for the summer (intended to cover transit, lunches, closed-toe shoes), NOT the variable 'paid stipend' currently described.",
+          "category": "deadline",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://zoo.org/volunteer/teen/"
+        },
+        {
+          "sourceProvider": "Woodland Park Zoo",
+          "sourceName": "Woodland Park Zoo Junior Zookeeper / Teen Volunteer",
+          "insight": "Buried in the program calendar: in addition to the 20-hour minimum of self-scheduled volunteer shifts (June 29 – Sept 6), accepted teens MUST attend (1) an all-day orientation Friday June 26 8:30am-4:30pm and (2) at least 7 of 10 weekly cohort meetings, all on Wednesdays 3:30-6:30pm (Jul 1 through Aug 26, with a final celebration Sept 2 8:30-11:30am). Teens with conflicting Wed-evening commitments (sports practice, after-school jobs, music lessons) cannot complete the program — vet the Wednesday calendar before applying. Major accessibility win not advertised in summary copy: Canopy Neurodiversity Foundation (CNF) partners with WPZ to provide application + interview + ongoing coaching support specifically for ADHD and autism-identifying teens. Contact teenambassadors@zoo.org for CNF support before applying.",
+          "category": "hidden-cost",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://zoo.org/volunteer/teen/"
+        },
         {
           "sourceProvider": "Mary's Place Seattle",
           "sourceName": "Mary's Place (Family Shelters, WA)",
