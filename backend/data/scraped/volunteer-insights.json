@@ -5,7 +5,8 @@
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
     "fieldNotesCount": 43,
     "lastHarvestRun": "2026-04-30T20:55:40.181Z",
-    "lastFieldNoteHarvest": "2026-04-30"
+    "lastFieldNoteHarvest": "2026-04-30",
+    "totalFieldNotes": 51
   },
   "sections": [
     {
@@ -89,6 +90,70 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Treehouse",
+          "sourceName": "Treehouse for Kids — Volunteer & Treehouse Store",
+          "insight": "ONGOING ROLES ARE AT CAPACITY (as of April 2026). The official volunteer page openly states: 'We are currently at capacity for all ongoing roles in the Treehouse Store, so we are not onboarding additional volunteers at this time.' If your teen wants to start NOW: skip the ongoing-role waitlist and book a one-time individual shift via the Treehouse Store calendar (labeled 'Holiday Helper', 'Individuals', 'Families', 'Friends', or 'Treehouse Admin Support'). Email volunteer@treehouseforkids.org to be added to the ongoing-role waitlist for whenever capacity reopens.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.treehouseforkids.org/take-action/volunteer/"
+        },
+        {
+          "sourceProvider": "Treehouse",
+          "sourceName": "Treehouse for Kids — Volunteer & Treehouse Store",
+          "insight": "AGE FLOORS VARY BY SHIFT TYPE — read each calendar listing. (1) Group shifts: 12+, with a 5:1 student-to-adult ratio for middle schoolers; under 18 needs a guardian-signed waiver. (2) One-time individual shifts: 10+, 12+, or 16+ depending on the SPECIFIC shift (some allow a 10-year-old with parent, others 12+, others 16+); under 16 needs 1:1 adult chaperone. (3) Ongoing roles: 12+ (with adult) or 16+ (alone). Tell parents: don't assume the 12+ floor — check the exact shift's calendar listing.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.treehouseforkids.org/take-action/volunteer/"
+        },
+        {
+          "sourceProvider": "Treehouse",
+          "sourceName": "Treehouse for Kids — Volunteer & Treehouse Store",
+          "insight": "GROUP SHIFTS = GREAT FIT FOR YOUTH-GROUP / SCOUT / SERVICE-CLUB ONE-DAY PROJECTS. Capacity 5-15 volunteers, mostly Tue-Sat 10am-4pm at the Treehouse Store (2100 24th Ave S, Seattle 98144). Limited evenings. Email volunteer@treehouseforkids.org with desired date range; scheduling is flexible week-to-week. Tasks: sort/process incoming donations, fulfill online orders, tag clothing, prep store for shopping days. Useful when a service-hour deadline is approaching and ongoing roles are full.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://www.treehouseforkids.org/take-action/volunteer/"
+        },
+        {
+          "sourceProvider": "Second Harvest Inland Northwest",
+          "sourceName": "Second Harvest Inland Northwest Volunteer (Sort, Pack, Teaching Kitchen)",
+          "insight": "AGE POLICY IS STRICTER THAN IT SOUNDS: minors UNDER 14 must stay WITH the parent/chaperone IN THE ASSIGNED WORK AREA — they cannot wander to other stations or work alongside peer volunteers. NO children under 9, period. Practical impact: a 10-year-old + parent get assigned together as a parent-child team, not as parallel independent workers. Teen-only sign-up starts at 14. For some events the minimum age is even higher — always check the event description on the calendar before driving over.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://2-harvest.org/volunteer/"
+        },
+        {
+          "sourceProvider": "Second Harvest Inland Northwest",
+          "sourceName": "Second Harvest Inland Northwest Volunteer (Sort, Pack, Teaching Kitchen)",
+          "insight": "TWO FACILITIES, THREE PHONE LINES — call the right one. Spokane Volunteer Center: (509) 252-6252 for sort/pack shifts and food-drive driver program (no commercial license needed). The Kitchen (Spokane teaching-kitchen program for hands-on cooking): separate (509) 534-6678 line. Tri-Cities (Pasco) facility uses a different intake. Calling the wrong number is the #1 reason families say 'they never got back to me.' Drivers + Kitchen are distinct programs with their own onboarding — useful for teens with a culinary interest (Kitchen) or a license + truck (food-drive driver).",
+          "category": "registration-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://2-harvest.org/volunteer/"
+        },
+        {
+          "sourceProvider": "Reading Partners",
+          "sourceName": "Reading Partners",
+          "insight": "2025-26 SCHOOL-YEAR RECRUITMENT IS CLOSED (as of late April 2026). Reading Partners is now accepting applications for the 2026-27 school year (sessions begin around September). High-school students hoping to start hours in May/June need to either commit to fall 2026 OR pivot to a different literacy-tutoring program for spring/summer hours. Apply NOW for fall — earliest applicants typically get the most flexible school placements.",
+          "category": "deadline",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://readingpartners.org/volunteer-in-seattle/"
+        },
+        {
+          "sourceProvider": "Reading Partners",
+          "sourceName": "Reading Partners",
+          "insight": "TUTORING WINDOW IS AFTER-SCHOOL, IN-PERSON, AT TITLE 1 ELEMENTARIES. Sessions run Mon-Fri 2:30-4:00pm (some midday 12:00-3:00 slots), each tutor commits ~1 hour/week minimum, and you must reside in the Puget Sound region. Practical implications: (a) high-school students need an early-release day or AP-light schedule; (b) homeschoolers can use the noon slot; (c) college students with 2pm class blocks can't fit; (d) add 30-60 min round-trip drive/transit time to the partner elementary. Required: pass a background check + complete tutor orientation BEFORE first session. Curriculum and ongoing coaching provided.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://readingpartners.org/volunteer-in-seattle/"
+        },
+        {
+          "sourceProvider": "Reading Partners",
+          "sourceName": "Reading Partners",
+          "insight": "WA FOOTPRINT IS PUGET SOUND ONLY. Reading Partners' Wayfinder entry lists WA among 10+ states, but the WA presence is exclusively Puget Sound K-4 elementary schools. Spokane, Tri-Cities, Vancouver, Yakima, and Bellingham families need a different literacy-tutoring channel — try Communities In Schools chapters, local public-library tutor-volunteer programs, or Boys & Girls Club homework-help shifts. Don't assume statewide coverage from the entry.",
+          "category": "fit-tip",
+          "harvestedDate": "2026-04-30",
+          "_source": "https://readingpartners.org/volunteer-in-seattle/"
+        },
         {
           "sourceProvider": "FareStart",
           "sourceName": "FareStart Volunteer (Kitchen, Events, Job-Skills Support)",
