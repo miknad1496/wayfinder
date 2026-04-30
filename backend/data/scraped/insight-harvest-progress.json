@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-30T17:25:05.920Z",
-  "totalRuns": 17,
-  "totalInsightsCaptured": 80,
+  "lastRun": "2026-04-30T17:46:15.000Z",
+  "totalRuns": 18,
+  "totalInsightsCaptured": 83,
   "currentModule": "esms",
   "phase": "WA HS",
-  "nextRunPlan": "WA HS phase: ~27 entries still unharvested. THIS RUN'S PATTERNS: (1) Two of three entries surfaced MAJOR DATA-CORRECTIONS (UW CNT YSP-REACH cancelled for 2026, UW Materials Camp grade range 4x too wide) - confirms hypothesis that ~50% of WA-HS entries have stale or incorrect structured fields that the original ESMS grinder couldn't catch. (2) Eligibility-narrowing patterns continue: UW Eng Academy = Greater Seattle only; DigiPen WANIC = 7-district consortium; UW Materials Camp = sophomores-only-in-Greater-Seattle. ACAP Seattle Residency Week is the OPPOSITE - broadest WA-state eligibility we've seen for a free overnight residency, deserves a category-level umbrella in wa-spotlight-2026. NEXT RUN PRIORITIES: (a) UW Changemakers in Computing (3 near-duplicate entries - likely needs dedupe + 1 harvest); (b) UW Youth & Teen Programs (rich URL with full course catalog - high yield expected); (c) Robinson Center Saturday Enrichment (already flagged in lessons that 'Saturday' program doesn't run summer - verify and queue a programs.json correction). (d) Open a third WA HS data-correction batch via update-array-items: roll up cnt-suspended + mse-camp-grade + lakeside-aid-exhausted + wanic-eligibility + su-ai4equity-cost into one apply-changes-NN.bat patch - six accumulated flags is enough to justify a dedicated cleanup pass instead of waiting for the data-refresh task. STRUCTURAL PROPOSAL: consider creating a new field-notes sub-section called 'wa-hs-2026-data-corrections' that surfaces these fixes to parents IMMEDIATELY (visible in UI) while we wait on programs.json patches - better to over-disclose 'this entry's deadline may be stale, here's what we found 4/30/26' than let the misleading deadline stand for weeks. Volunteer module (8/247 harvested) remains the worst by ratio - schedule a volunteer batch after one more WA HS run to keep multi-module signal alive.",
+  "nextRunPlan": "WA HS phase: ~24 entries still unharvested after run 18. THIS RUN'S PATTERNS: (1) Two of three entries surfaced DATA-QUALITY FLAGS \u2014 SU SBI page self-contradicts on eligibility (header rising 10-12 vs. dates block 9-11), and Aero Explorations is mis-classified in Wayfinder as a 'CTE program' when the museum's own page explicitly says 'NOT a summer camp' and that participation is on transcript + impacts GPA. Confirms the WA-HS hypothesis from run 17: a meaningful share of WA-HS entries have either ambiguous or under-disclosed terms that the original ESMS grinder couldn't catch. (2) ELIGIBILITY-NARROWING continues to be the highest-yield insight category for WA HS \u2014 CiC is FAR narrower than Wayfinder shows (economically disadvantaged AND/OR first-gen, not 'any rising 11/12'); SU SBI rising 12 is likely auto-rejected; AE is WA-resident only because of PSSC public-school structure. (3) UNDERRATED PERK STACKS surface on entries with no other distinguishing features (AE \u2192 free Connections membership through age 19 + scholarship eligibility = bigger value than the 0.5 CTE credit). NEXT RUN PRIORITIES: (a) Cornish Summer@Cornish Art & Design Intensive (next in queue, expected to need cost clarification + portfolio-prep timing); (b) DigiPen Academy Pre-College Summer Programs (likely overlap with WANIC and standalone tracks \u2014 expect data-correction on the consolidated entry); (c) UW Youth & Teen Engineering Challenges (URL goes directly to summer-2026 catalog \u2014 high yield expected for specific course-level intel). STRUCTURAL PROPOSAL: at run 19 or 20, consider rolling up accumulated WA-HS data corrections (CiC eligibility, AE transcript impact, SBI grade ambiguity, WAS phase-1-free, UW STEP, UW Eng Academy district restriction, DigiPen WANIC consortium, Lakeside aid exhausted, UW Materials Camp sophomore-only, CNT YSP-REACH cancelled, ACAP Seattle overnight) into a single update-array-items batch via apply-changes-NN.bat \u2014 that's now 11+ accumulated flags, well past the 6-flag threshold that justifies a dedicated cleanup pass. STRATEGIC PIVOT PROPOSAL: after 1 more WA-HS run (to hit ~21 harvested out of ~58 = 36%), pivot one run to volunteer module (8/247 = 3% \u2014 by far the worst ratio, even after volunteer expansion to 247 entries). The K-8 corpus is at 40/~80 (50%) \u2014 well-served. Volunteer is the laggard. CATEGORY-LEVEL UMBRELLA OPPORTUNITY: 'WA HS pre-college summer programs that go on transcript' (AE + UW Summer Sessions courses + UW in the High School + likely DigiPen academy program + likely Cornish credit-bearing tracks) \u2014 worth a single batch-write umbrella insight in wa-spotlight-2026 explaining the difference between 'enrichment' (no transcript) vs 'CTE/college credit' (transcript + GPA impact) so parents understand the stakes BEFORE picking a program.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -29,7 +29,7 @@
       "point defiance zoo & aquarium summer camps__point defiance zoo & aquarium",
       "whatcom family ymca summer day camps__whatcom family ymca",
       "camp korey (chronic illness camp, wa)__camp korey (seriousfun children's network)",
-      "destination science summer camps — seattle__destination science",
+      "destination science summer camps \u2014 seattle__destination science",
       "launch learning summer program__launch learning",
       "uw k-12 engineering outreach programs__university of washington college of engineering",
       "city of vancouver parks & recreation summer day camps__city of vancouver parks, recreation & cultural services",
@@ -46,7 +46,10 @@
       "lakeside summer institute: ai & machine learning__lakeside school",
       "acap seattle residency week__accounting career awareness program seattle",
       "uw center for neurotechnology ysp-reach__university of washington center for neurotechnology",
-      "uw materials science camp for high schoolers__university of washington"
+      "uw materials science camp for high schoolers__university of washington",
+      "uw changemakers in computing (cic)__university of washington paul g. allen school",
+      "museum of flight aeronautical explorations__museum of flight",
+      "seattle university summer business institute__seattle university"
     ],
     "k12": [
       "530039000060",
@@ -73,14 +76,14 @@
       "flaggedDate": "2026-04-27",
       "description": "WA K-8 entries with _source pointing to parentmap.com aggregator listings rather than canonical provider sites. Replace with the operator URL during a future cleanup pass.",
       "affectedEntries": [
-        "Camp Tech Revolution — Seattle (Camp Tech Revolution)",
+        "Camp Tech Revolution \u2014 Seattle (Camp Tech Revolution)",
         "PacSci Camps for Curious Minds (Multiple Locations) (Pacific Science Center)"
       ]
     },
     {
       "id": "su-ai4equity-cost-mismatch-2026-04-28",
       "flaggedDate": "2026-04-28",
-      "description": "programs.json entry 'Seattle University AI for Equity Pre-College Program' lists cost.display as 'Free (merit scholarships available)' and cost.amount as 0. Actual page lists Cost of Attendance $1,500 + $50 nonrefundable deposit (scholarships available, not a free program). FIX: update-array-items op on programs.json — set cost = { amount:1500, type:'paid', display:'$1,500 + $50 nonrefundable deposit (scholarships available)' } matched by name+provider.",
+      "description": "programs.json entry 'Seattle University AI for Equity Pre-College Program' lists cost.display as 'Free (merit scholarships available)' and cost.amount as 0. Actual page lists Cost of Attendance $1,500 + $50 nonrefundable deposit (scholarships available, not a free program). FIX: update-array-items op on programs.json \u2014 set cost = { amount:1500, type:'paid', display:'$1,500 + $50 nonrefundable deposit (scholarships available)' } matched by name+provider.",
       "affectedEntries": [
         "Seattle University AI for Equity Pre-College Program (Seattle University)"
       ]
@@ -88,7 +91,7 @@
     {
       "id": "lakeside-2026-aid-exhausted",
       "flaggedDate": "2026-04-30",
-      "description": "Lakeside Summer Institute HS courses page explicitly states 'Financial aid funds for Summer 2026 are no longer available. We are unable to consider new financial aid applications at this time.' Wayfinder entries currently say 'financial aid available' — misleading for parents browsing in May-Aug 2026. FIX: update-array-items op on programs.json — set cost.aidStatus='2026: exhausted; 2027 cycle reopens with new pool' or append warning to scheduleNotes. Affects all Lakeside Summer Institute course entries (AI & ML + Science + others).",
+      "description": "Lakeside Summer Institute HS courses page explicitly states 'Financial aid funds for Summer 2026 are no longer available. We are unable to consider new financial aid applications at this time.' Wayfinder entries currently say 'financial aid available' \u2014 misleading for parents browsing in May-Aug 2026. FIX: update-array-items op on programs.json \u2014 set cost.aidStatus='2026: exhausted; 2027 cycle reopens with new pool' or append warning to scheduleNotes. Affects all Lakeside Summer Institute course entries (AI & ML + Science + others).",
       "affectedEntries": [
         "Lakeside Summer Institute: AI & Machine Learning (Lakeside School)",
         "Lakeside Summer Institute: Science Courses (Lakeside School)"
@@ -97,7 +100,7 @@
     {
       "id": "digipen-wanic-eligibility-narrow-2026-04-30",
       "flaggedDate": "2026-04-30",
-      "description": "DigiPen WANIC Summer Programs is open ONLY to students in 7 Northeast King County districts (Bellevue, Issaquah, Lake Washington, Mercer Island, Northshore, Riverview, Snoqualmie Valley). Programs.json entry shows location.state='WA' which implies all-WA eligibility — misleading. Out-of-consortium families (Seattle SPS, Shoreline, Highline, Federal Way, etc.) are STRICTLY excluded with 'no exceptions'. FIX: add eligibility.districtRestriction field or prepend a warning to scheduleNotes flagging the consortium-only restriction.",
+      "description": "DigiPen WANIC Summer Programs is open ONLY to students in 7 Northeast King County districts (Bellevue, Issaquah, Lake Washington, Mercer Island, Northshore, Riverview, Snoqualmie Valley). Programs.json entry shows location.state='WA' which implies all-WA eligibility \u2014 misleading. Out-of-consortium families (Seattle SPS, Shoreline, Highline, Federal Way, etc.) are STRICTLY excluded with 'no exceptions'. FIX: add eligibility.districtRestriction field or prepend a warning to scheduleNotes flagging the consortium-only restriction.",
       "affectedEntries": [
         "DigiPen WANIC Summer Programs (DigiPen Institute of Technology / WANIC)"
       ]
@@ -105,7 +108,7 @@
     {
       "id": "uw-cnt-ysp-reach-suspended-2026-04-30",
       "flaggedDate": "2026-04-30",
-      "description": "BOTH 'UW Center for Neurotechnology YSP-REACH' (UW Center for Neurotechnology) AND duplicate 'UW Center for Neurotechnology Summer Research (YSP-REACH)' (University of Washington) entries in programs.json show deadline=2026-05-01 but the source page (https://centerforneurotech.uw.edu/content/young-scholars-program) explicitly states 'Unfortunately, the YSP-REACH program will not be held during the summer of 2026.' Wayfinder is currently misleading parents. FIX OPTIONS: (a) update-array-items op to set deadline=null and prepend warning to scheduleNotes 'SUSPENDED for 2026 - next cycle pending; neurodiverse students may apply to UW CNT Neuroscience for Neurodiverse Learners summer program instead'; OR (b) remove both entries until 2027 cycle confirmed. Also: programs.json contains a duplicate (the two entries above are the same program with different naming) — dedupe needed.",
+      "description": "BOTH 'UW Center for Neurotechnology YSP-REACH' (UW Center for Neurotechnology) AND duplicate 'UW Center for Neurotechnology Summer Research (YSP-REACH)' (University of Washington) entries in programs.json show deadline=2026-05-01 but the source page (https://centerforneurotech.uw.edu/content/young-scholars-program) explicitly states 'Unfortunately, the YSP-REACH program will not be held during the summer of 2026.' Wayfinder is currently misleading parents. FIX OPTIONS: (a) update-array-items op to set deadline=null and prepend warning to scheduleNotes 'SUSPENDED for 2026 - next cycle pending; neurodiverse students may apply to UW CNT Neuroscience for Neurodiverse Learners summer program instead'; OR (b) remove both entries until 2027 cycle confirmed. Also: programs.json contains a duplicate (the two entries above are the same program with different naming) \u2014 dedupe needed.",
       "affectedEntries": [
         "UW Center for Neurotechnology YSP-REACH (University of Washington Center for Neurotechnology)",
         "UW Center for Neurotechnology Summer Research (YSP-REACH) (University of Washington)"
@@ -114,7 +117,7 @@
     {
       "id": "uw-mse-camp-grades-too-broad-2026-04-30",
       "flaggedDate": "2026-04-30",
-      "description": "'UW Materials Science Camp for High Schoolers' (University of Washington) shows eligibility.grades=['9','10','11','12'] but the actual page states: 'Must be a sophomore (10th grade) during the current academic year' — i.e. ONLY rising juniors are eligible. Current 9th, 11th, and 12th graders are explicitly out. FIX: update-array-items op to set eligibility.grades=['10'] (interpreted as 'CURRENT 10th') and prepend a scheduleNotes warning 'Sophomores only - must be in 10th grade during application year'. Also flag eligibility geographic: 'must attend high school in the greater Seattle area' (not all-WA).",
+      "description": "'UW Materials Science Camp for High Schoolers' (University of Washington) shows eligibility.grades=['9','10','11','12'] but the actual page states: 'Must be a sophomore (10th grade) during the current academic year' \u2014 i.e. ONLY rising juniors are eligible. Current 9th, 11th, and 12th graders are explicitly out. FIX: update-array-items op to set eligibility.grades=['10'] (interpreted as 'CURRENT 10th') and prepend a scheduleNotes warning 'Sophomores only - must be in 10th grade during application year'. Also flag eligibility geographic: 'must attend high school in the greater Seattle area' (not all-WA).",
       "affectedEntries": [
         "UW Materials Science Camp for High Schoolers (University of Washington)"
       ]
