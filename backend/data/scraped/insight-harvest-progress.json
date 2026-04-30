@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-04-30T16:54:50.628Z",
-  "totalRuns": 16,
-  "totalInsightsCaptured": 77,
+  "lastRun": "2026-04-30T17:25:05.920Z",
+  "totalRuns": 17,
+  "totalInsightsCaptured": 80,
   "currentModule": "esms",
   "phase": "WA HS",
-  "nextRunPlan": "WA HS phase continues: 16 verified WA-HS-only entries unharvested. PATTERN OBSERVED THIS RUN: 'application is closed for THIS year, next cycle in March' is the dominant gotcha — WA HS pre-college programs (UW Engineering Academy, DigiPen WANIC, Lakeside Summer Institute) all enforce hard deadlines that already passed for 2026. Parents browsing Wayfinder mid-summer 2026 will be misled if our entries don't telegraph 'application closed — apply March 2027' clearly. RECOMMENDATION FOR NEXT RUN: harvest ACAP Seattle Residency Week + UW STEP follow-up + UW Center for Neurotechnology YSP-REACH (next 3 high-priority WA-HS), but also queue a DEDICATED PASS to add a 'closed-for-2026 / next-window-2027' umbrella insight to wa-spotlight-2026 section so the parent learns this pattern at module level rather than per-program. SECONDARY DATA-QUALITY FLAG opened: Lakeside Summer Institute lists 'financial aid available' but for 2026 aid is exhausted — flag id 'lakeside-2026-aid-exhausted' for next-cycle update-array-items. ELIGIBILITY-GATING FLAG: DigiPen WANIC is restricted to 7 specific Eastside districts (out-of-consortium STRICTLY excluded with no exceptions) — Wayfinder's location field shows 'WA' which is misleadingly broad; consider adding a districtRestriction field on programs, or adding an eligibility-warning string to the 7 entries that share this WANIC consortium gate. Volunteer module remains worst by ratio (8/247 harvested) — schedule one volunteer phase after 1-2 more WA HS runs.",
+  "nextRunPlan": "WA HS phase: ~27 entries still unharvested. THIS RUN'S PATTERNS: (1) Two of three entries surfaced MAJOR DATA-CORRECTIONS (UW CNT YSP-REACH cancelled for 2026, UW Materials Camp grade range 4x too wide) - confirms hypothesis that ~50% of WA-HS entries have stale or incorrect structured fields that the original ESMS grinder couldn't catch. (2) Eligibility-narrowing patterns continue: UW Eng Academy = Greater Seattle only; DigiPen WANIC = 7-district consortium; UW Materials Camp = sophomores-only-in-Greater-Seattle. ACAP Seattle Residency Week is the OPPOSITE - broadest WA-state eligibility we've seen for a free overnight residency, deserves a category-level umbrella in wa-spotlight-2026. NEXT RUN PRIORITIES: (a) UW Changemakers in Computing (3 near-duplicate entries - likely needs dedupe + 1 harvest); (b) UW Youth & Teen Programs (rich URL with full course catalog - high yield expected); (c) Robinson Center Saturday Enrichment (already flagged in lessons that 'Saturday' program doesn't run summer - verify and queue a programs.json correction). (d) Open a third WA HS data-correction batch via update-array-items: roll up cnt-suspended + mse-camp-grade + lakeside-aid-exhausted + wanic-eligibility + su-ai4equity-cost into one apply-changes-NN.bat patch - six accumulated flags is enough to justify a dedicated cleanup pass instead of waiting for the data-refresh task. STRUCTURAL PROPOSAL: consider creating a new field-notes sub-section called 'wa-hs-2026-data-corrections' that surfaces these fixes to parents IMMEDIATELY (visible in UI) while we wait on programs.json patches - better to over-disclose 'this entry's deadline may be stale, here's what we found 4/30/26' than let the misleading deadline stand for weeks. Volunteer module (8/247 harvested) remains the worst by ratio - schedule a volunteer batch after one more WA HS run to keep multi-module signal alive.",
   "harvestedKeys": {
     "esms": [
       "pacific science center camps for curious minds__pacific science center",
@@ -43,7 +43,10 @@
       "seattle university ai for equity pre-college program__seattle university",
       "uw engineering academy__university of washington college of engineering",
       "digipen wanic summer programs__digipen institute of technology / wanic",
-      "lakeside summer institute: ai & machine learning__lakeside school"
+      "lakeside summer institute: ai & machine learning__lakeside school",
+      "acap seattle residency week__accounting career awareness program seattle",
+      "uw center for neurotechnology ysp-reach__university of washington center for neurotechnology",
+      "uw materials science camp for high schoolers__university of washington"
     ],
     "k12": [
       "530039000060",
@@ -97,6 +100,23 @@
       "description": "DigiPen WANIC Summer Programs is open ONLY to students in 7 Northeast King County districts (Bellevue, Issaquah, Lake Washington, Mercer Island, Northshore, Riverview, Snoqualmie Valley). Programs.json entry shows location.state='WA' which implies all-WA eligibility — misleading. Out-of-consortium families (Seattle SPS, Shoreline, Highline, Federal Way, etc.) are STRICTLY excluded with 'no exceptions'. FIX: add eligibility.districtRestriction field or prepend a warning to scheduleNotes flagging the consortium-only restriction.",
       "affectedEntries": [
         "DigiPen WANIC Summer Programs (DigiPen Institute of Technology / WANIC)"
+      ]
+    },
+    {
+      "id": "uw-cnt-ysp-reach-suspended-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "BOTH 'UW Center for Neurotechnology YSP-REACH' (UW Center for Neurotechnology) AND duplicate 'UW Center for Neurotechnology Summer Research (YSP-REACH)' (University of Washington) entries in programs.json show deadline=2026-05-01 but the source page (https://centerforneurotech.uw.edu/content/young-scholars-program) explicitly states 'Unfortunately, the YSP-REACH program will not be held during the summer of 2026.' Wayfinder is currently misleading parents. FIX OPTIONS: (a) update-array-items op to set deadline=null and prepend warning to scheduleNotes 'SUSPENDED for 2026 - next cycle pending; neurodiverse students may apply to UW CNT Neuroscience for Neurodiverse Learners summer program instead'; OR (b) remove both entries until 2027 cycle confirmed. Also: programs.json contains a duplicate (the two entries above are the same program with different naming) — dedupe needed.",
+      "affectedEntries": [
+        "UW Center for Neurotechnology YSP-REACH (University of Washington Center for Neurotechnology)",
+        "UW Center for Neurotechnology Summer Research (YSP-REACH) (University of Washington)"
+      ]
+    },
+    {
+      "id": "uw-mse-camp-grades-too-broad-2026-04-30",
+      "flaggedDate": "2026-04-30",
+      "description": "'UW Materials Science Camp for High Schoolers' (University of Washington) shows eligibility.grades=['9','10','11','12'] but the actual page states: 'Must be a sophomore (10th grade) during the current academic year' — i.e. ONLY rising juniors are eligible. Current 9th, 11th, and 12th graders are explicitly out. FIX: update-array-items op to set eligibility.grades=['10'] (interpreted as 'CURRENT 10th') and prepend a scheduleNotes warning 'Sophomores only - must be in 10th grade during application year'. Also flag eligibility geographic: 'must attend high school in the greater Seattle area' (not all-WA).",
+      "affectedEntries": [
+        "UW Materials Science Camp for High Schoolers (University of Washington)"
       ]
     }
   ]
