@@ -393,7 +393,13 @@ router.post('/', async (req, res) => {
       // REVAMP V2: 35/36 BRIDGE PATCH38 — also trigger auto-promotion if curated-search.js
       // would fire on this query (broader signal than _isSpecificQuery alone).
       const _curatedWillFire = (() => { try { return _curatedSearchInternals.detectModules(message).length > 0; } catch { return false; } })();
-      if (isPaidTier && (_isSpecificQuery(message) || _curatedWillFire)) {
+      // REVAMP V2: AUTO-ENGINE DISABLE PATCH43 — auto-engine promotion DISABLED per Dan's instruction.
+      // The user must explicitly click the engine toggle to activate engine mode.
+      // The standard/SLM path now runs with full RAG + curated DB + frameworks +
+      // user-scoped memory (patches 35/37/39/40/41/42) and the engine-availability
+      // narrative (patch 39) nudges the user to engine mode when it would help.
+      // To re-enable: change the `false &&` below back to the original condition.
+      if (false && isPaidTier && (_isSpecificQuery(message) || _curatedWillFire)) {
         try {
           const promoteResult = await useEngine(auth.token);
           if (promoteResult.allowed) {
