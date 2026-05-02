@@ -5,6 +5,7 @@ import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } fr
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
+import { _internals as _curatedSearchInternals } from '../services/curated-search.js'; // REVAMP V2: 35/36 BRIDGE PATCH38
 import { verifyToken, linkSession, useEngine, getEngineUsage, checkTokenUsage, recordTokenUsage, checkMessageUsage, recordMessageUsage } from '../services/auth.js';
 import { createTelemetryEvent, logTelemetry } from '../services/telemetry.js';
 import { captureConversationMemory, captureTrainingPair } from '../services/conversation-memory.js';
@@ -389,7 +390,10 @@ router.post('/', async (req, res) => {
       const userPlan = String(auth.user.plan || 'free').toLowerCase();
       const isPaidTier = ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(userPlan)
         || auth.user.isAdmin || auth.user.isVIP;
-      if (isPaidTier && _isSpecificQuery(message)) {
+      // REVAMP V2: 35/36 BRIDGE PATCH38 — also trigger auto-promotion if curated-search.js
+      // would fire on this query (broader signal than _isSpecificQuery alone).
+      const _curatedWillFire = (() => { try { return _curatedSearchInternals.detectModules(message).length > 0; } catch { return false; } })();
+      if (isPaidTier && (_isSpecificQuery(message) || _curatedWillFire)) {
         try {
           const promoteResult = await useEngine(auth.token);
           if (promoteResult.allowed) {
