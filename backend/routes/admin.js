@@ -602,6 +602,117 @@ router.get('/user-activity', async (req, res) => {
 });
 
 
+// REVAMP V2: ADMIN USER-SESSIONS PATCH34 — retrieve a specific user's recent chat sessions for diagnostic review
+// GET /api/admin/user-sessions/:emailOrId?limit=10
+router.get('/user-sessions/:emailOrId', async (req, res) => {
+  try {
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const USERS_DIR = join(__dirname, '..', 'data', 'users');
+    const SESSIONS_DIR = join(__dirname, '..', 'data', 'sessions');
+
+    const raw = String(req.params.emailOrId || '').trim();
+    if (!raw) return res.status(400).json({ error: 'emailOrId is required' });
+    const limit = Math.min(50, Math.max(1, parseInt(req.query.limit, 10) || 10));
+
+    // Resolve user — try as email first (slug-normalized), then scan for id
+    const slug = raw.toLowerCase().replace(/[^a-z0-9]/g, '_');
+    let userFile = join(USERS_DIR, slug + '.json');
+    let user = null;
+    try {
+      const txt = await fs.readFile(userFile, 'utf-8');
+      user = decryptUserFields(JSON.parse(txt));
+    } catch {
+      // Fallback: scan all user files for a matching id or substring email match
+      const files = await fs.readdir(USERS_DIR).catch(() => []);
+      for (const f of files) {
+        if (!f.endsWith('.json')) continue;
+        try {
+          const txt = await fs.readFile(join(USERS_DIR, f), 'utf-8');
+          const u = decryptUserFields(JSON.parse(txt));
+          if (u.id === raw || (u.email && u.email.toLowerCase().includes(raw.toLowerCase()))) {
+            user = u;
+            userFile = join(USERS_DIR, f);
+            break;
+          }
+        } catch { /* skip unreadable */ }
+      }
+    }
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found by email or id: ' + raw });
+    }
+
+    const sessionIds = Array.isArray(user.sessionHistory) ? user.sessionHistory.slice() : [];
+    // Most recent first — sessionHistory is appended in chronological order
+    const recent = sessionIds.slice(-limit).reverse();
+
+    const sessions = [];
+    let missing = 0;
+    let totalMessages = 0;
+    let mostRecentAt = null;
+
+    for (const sid of recent) {
+      // Sanity check the id (mirror storage.js sanitization)
+      if (!/^[a-zA-Z0-9_-]+$/.test(sid) || sid.length > 128) { missing++; continue; }
+      const filePath = join(SESSIONS_DIR, sid + '.json');
+      try {
+        const txt = await fs.readFile(filePath, 'utf-8');
+        const session = JSON.parse(txt);
+        const msgCount = Array.isArray(session.history) ? session.history.length : 0;
+        totalMessages += msgCount;
+        const ts = session.lastUpdated || session.created;
+        if (ts && (!mostRecentAt || ts > mostRecentAt)) mostRecentAt = ts;
+        sessions.push({
+          id: session.id || sid,
+          created: session.created || null,
+          lastUpdated: session.lastUpdated || null,
+          messageCount: msgCount,
+          mode: session.mode || null,
+          context: session.context || {},
+          history: session.history || [],
+        });
+      } catch {
+        missing++;
+      }
+    }
+
+    res.json({
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name || '',
+        plan: user.plan || 'free',
+        userType: user.userType || 'student',
+        school: user.school || '',
+        createdAt: user.createdAt || null,
+        lastLogin: user.lastLogin || null,
+        engineUsesToday: user.engineUsesToday || 0,
+        messagesUsedToday: user.messagesUsedToday || 0,
+        messagesUsedMonth: user.messagesUsedMonth || 0,
+        profile: user.profile || {},
+        sessionCount: sessionIds.length,
+      },
+      sessions,
+      summary: {
+        totalSessions: sessionIds.length,
+        returnedSessions: sessions.length,
+        missingSessions: missing,
+        avgMessagesPerSession: sessions.length > 0 ? Math.round((totalMessages / sessions.length) * 10) / 10 : 0,
+        mostRecentAt,
+      },
+    });
+  } catch (err) {
+    console.error('user-sessions error:', err);
+    res.status(500).json({ error: 'Failed to load user sessions: ' + err.message });
+  }
+});
+
+
 // ─── PII Protection — backfill + audit endpoints (Apr 2026) ─────────
 
 import { redactPII } from '../services/pii-redactor.js';
