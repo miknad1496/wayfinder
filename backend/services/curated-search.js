@@ -63,6 +63,21 @@ const MODULE_KEYWORDS = {
   ],
 };
 
+// REVAMP V2: CURATED-SEARCH V2 PATCH44 — international intent detection. When true, US entries
+// get suppressed in scoring so non-US entries dominate.
+const INTL_SIGNALS = [
+  'international', 'abroad', 'overseas', 'out of country', 'out-of-country',
+  'study abroad', 'foreign', 'global program', 'in europe', 'in asia',
+  'in africa', 'in south america', 'in latin america', 'in oceania',
+  'in the uk', 'in england', 'in france', 'in germany', 'in italy',
+  'in spain', 'in china', 'in japan', 'in korea', 'in india', 'in singapore',
+  'in australia', 'in new zealand', 'in canada', 'in mexico', 'in brazil',
+];
+function detectInternational(query) {
+  const q = (query || '').toLowerCase();
+  return INTL_SIGNALS.some(sig => q.includes(sig));
+}
+
 function detectModules(query) {
   const q = (query || '').toLowerCase();
   const hits = [];
@@ -126,6 +141,10 @@ function extractGrade(query, profile = {}) {
   if (/\b(kindergarten|kinder)\b/.test(q)) return 'K';
   const m = q.match(/\b(\d{1,2})(st|nd|rd|th)?\s*-?\s*grade/);
   if (m) return String(parseInt(m[1], 10));
+  // REVAMP V2: CURATED-SEARCH V2 PATCH44 — rising college freshman / graduating senior / post-senior
+  // all map to grade=12 (still in the 12 bucket; their post-grad summer is
+  // typically eligible for 12-tagged programs + some pre-college programs).
+  if (/\b(rising college freshman|rising college frosh|incoming college|post[- ]senior|post[- ]high school|graduating senior|recently graduated|just graduated|college[- ]bound)\b/.test(q)) return '12';
   if (/\bsenior\b/.test(q)) return '12';
   if (/\bjunior\b/.test(q)) return '11';
   if (/\bsophomore\b/.test(q)) return '10';
@@ -162,7 +181,7 @@ function extractKeywords(query) {
 
 // ─── Scoring + selection ──────────────────────────────────────────
 
-function scoreEntry(entry, query, state, grade, keywords) {
+function scoreEntry(entry, query, state, grade, keywords, intl = false) { // REVAMP V2: CURATED-SEARCH V2 PATCH44
   let score = 0;
   // Different modules use different shapes for location:
   //   - programs/scholarships: entry.location?.state (object) or entry.state
@@ -174,7 +193,13 @@ function scoreEntry(entry, query, state, grade, keywords) {
     else if (/remote/i.test(entry.location)) entryState = 'ALL';
   }
 
-  if (state && entryState) {
+  // REVAMP V2: CURATED-SEARCH V2 PATCH44 — international intent: penalize US-coded entries so
+  // non-US (Oxford, Bocconi, NUS, etc.) dominate top-K results.
+  if (intl) {
+    const isUSEntry = entryState && /^(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY]|ALL)$/.test(entryState);
+    if (isUSEntry) score -= 10;
+    else if (entryState && !isUSEntry) score += 4; // boost non-US
+  } else if (state && entryState) {
     if (entryState === state) score += 5;
     else if (entryState === 'ALL') score += 1;
   } else if (entryState === 'ALL') {
@@ -204,7 +229,7 @@ function scoreEntry(entry, query, state, grade, keywords) {
   return score;
 }
 
-async function searchModule(module, query, state, grade, limit) {
+async function searchModule(module, query, state, grade, limit, intl = false) { // REVAMP V2: CURATED-SEARCH V2 PATCH44
   const fileMap = {
     programs: { file: 'programs.json', key: 'programs' },
     internships: { file: 'internships.json', key: 'internships' },
@@ -222,7 +247,7 @@ async function searchModule(module, query, state, grade, limit) {
 
   const keywords = extractKeywords(query);
   const scored = entries
-    .map(e => ({ entry: e, score: scoreEntry(e, query, state, grade, keywords) }))
+    .map(e => ({ entry: e, score: scoreEntry(e, query, state, grade, keywords, intl) })) // REVAMP V2: CURATED-SEARCH V2 PATCH44
     .filter(s => s.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
@@ -288,10 +313,11 @@ export async function searchCuratedEntries(query, sessionContext = {}, limit = 5
   const profile = sessionContext?.profile || {};
   const state = extractState(query, profile);
   const grade = extractGrade(query, profile);
+  const intl = detectInternational(query); // REVAMP V2: CURATED-SEARCH V2 PATCH44
 
   const blocks = [];
   for (const module of modules) {
-    const entries = await searchModule(module, query, state, grade, limit);
+    const entries = await searchModule(module, query, state, grade, limit, intl); // REVAMP V2: CURATED-SEARCH V2 PATCH44
     if (entries.length === 0) continue;
     const headerBits = [`--- ${MODULE_LABELS[module]} — top ${entries.length} matches`];
     if (state) headerBits.push(`(state: ${state})`);
@@ -311,8 +337,13 @@ export async function searchCuratedEntries(query, sessionContext = {}, limit = 5
     '═══════════════════════════════════════════',
     'RELEVANT CURATED ENTRIES (Wayfinder verified DB)',
     '═══════════════════════════════════════════',
-    "These are SPECIFIC programs/internships/scholarships from our verified database that match this query and the user's profile.",
-    'Reference them by NAME with deadlines and source URLs in your response. Do NOT invent or hallucinate other entries — only mention what is shown here. If the user wants more, point them to the sidebar tool for the full filterable list.',
+    "These are SPECIFIC programs/internships/scholarships/volunteer opportunities from our verified database that match this query and the user's profile. // REVAMP V2: CURATED-SEARCH V2 PATCH44",
+    'CRITICAL RESPONSE RULES:',
+    '1. NAME at least 2-3 of these entries by their actual name in your response. Cite the deadline and source URL where present.',
+    '2. Do NOT punt the user to the sidebar without naming entries first. Saying "click Programs in the sidebar" without naming any entries is a FAILURE — these entries WERE retrieved specifically for this question. Use them.',
+    '3. PASSED deadlines are still informative — do not auto-suppress them. Say "X program had a March deadline (closed for this cycle), worth bookmarking for next year" or "Y has rolling admission." Do not silently omit entries because a deadline is past.',
+    '4. After naming the relevant entries, you MAY suggest the sidebar for the full filterable list — but only as an AFTER-the-fact pointer, not a primary answer.',
+    '5. Do NOT invent or hallucinate other entries — only mention what is shown here. If the curated section appears thin or off-target, say so honestly ("the database doesn\'t have a strong match for this specific ask") and suggest more specific filters the user could try.',
     '',
     blocks.join('\n\n'),
     '═══════════════════════════════════════════',
