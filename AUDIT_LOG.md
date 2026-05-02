@@ -1201,3 +1201,32 @@ Single targeted patch to `frontend/src/app.js` `getActiveToolContext()` — `REV
 - `?.value` fallback chains hide rename drift — flagged as audit anti-pattern.
 - `getActiveToolContext()` should be on a re-check list whenever an HTML rename ships.
 - Recommended a pre-push linter to catch ID-drift at commit time (cost ~30 lines of Node).
+
+## 2026-05-02 Nightly Audit — Clean (1 Data Quality Flag Surfaced)
+
+**Focus Areas**: Cost & Resource Leaks (mandatory) + Backend Runtime + Data Integrity + Essay Pipeline spot-check.
+
+### Verifications (all clean)
+- **SLM keep-alive** (`backend/services/slm.js:760-787`): pings still do NOT update `lastWarmAt`. Comment-as-regression-detector still in place.
+- **Anonymous chat cap**: `checkAnonDailyLimit` gates unauthenticated requests with disk-persisted 5/day limit, MAX_TRACKED_IPS=50000.
+- **Rate limiter**: `effectiveMax = auth?.user ? 30 : 5` — anonymous users tighter cap, authed users 30/min.
+- **Claude model usage**: Haiku for cheap discover-local features (volunteer/internships/programs/scholarships/summer-camps), Sonnet/Opus default for chat/financial-aid, Opus for premium essay reviewer. No surprise opus calls in cheap routes.
+- **setInterval audit**: 4 backend intervals (`user-backup`, `scheduler`, `scraper-scheduler`, `slm keep-alive`) — all server-lifetime or have proper stop hooks.
+- **fsPromises regression** (Apr-27 bug): 3 valid uses confirmed (scope_classifier dynamic import, internships-scraper, volunteer.js — all properly bound). No regression.
+- **Stripe `markEventProcessed`** (was OPEN QUESTION): async function with `.catch(err => console.error(...))` on the fs.appendFile call — errors are caught, no unhandled-rejection risk. Safe to remove from open questions.
+- **Essay credit-deduction guard** (ER-AUDIT-1, Apr-26): `creditDeducted` boolean still set only after `useEssayCredit` succeeds; outer catch only refunds if `creditDeducted === true`. Intact.
+- **Essay route auth**: all premium endpoints (`/review`, `/credits`, `/history`, `/drafts`, `/review/:id`) call `verifyToken` + `canAccess(user, 'essay_reviewer')` (Pro/Elite only).
+- **Server boot**: clean — `internships: 1606 entries (981 verified)`, `scholarships: 1043 (80 verified)`, `programs: 1416 (672 verified)`, all data-health green, no async-IIFE errors.
+- **Metadata count drift**: ALL FOUR module files match (no drift). `internships=1606`, `scholarships=1043`, `programs=1416`, `volunteer=247`.
+- **JSON syntax**: all 4 data files parse cleanly.
+
+### Data Quality Flag (NEW — informational, deferred)
+**470 verified internships have bare-domain `_source` strings instead of full URLs** (e.g., `"seattlechildrens.org"` instead of `"https://www.seattlechildrens.org/research/..."`). All 470 have a separate proper `url` field with the full https URL — frontend rendering at `app.js:4331-4371` reads `item.url`, so user-facing links work fine. The bare-domain `_source` is hidden from rendering, only used as an internal citation reference.
+
+This violates CLAUDE.md rule 2 ("Every verified entry MUST have a real `_source` URL") in spirit but not in user impact. Likely introduced by the active `wayfinder-internship-grinder` task (208 of the 470 are state-grinder additions). Architectural fix: update grinder write logic to mirror the full `url` into `_source` when injecting. Out of nightly scope; flagging for Dan or for a one-time backfill via inject-script run.
+
+### Issues Fixed
+None — no production issues required a fix this run.
+
+### Recap
+Site posture is clean entering May. Cost surface stable, server boots clean, data integrity tight, essay pipeline + stripe idempotency both intact. The fsPromises regression check (added after the Apr-27 incident) and the `markEventProcessed`-has-catch resolution close out two follow-ups from prior nights.
