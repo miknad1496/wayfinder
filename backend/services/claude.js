@@ -669,6 +669,13 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // Wayfinder identity rules — prevent model from revealing it's Claude
   systemPrompt += WAYFINDER_IDENTITY_RULES;
 
+  // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39 — engine-availability narrative for non-engine path.
+  // When NOT on engine mode, the model gets a calibrated instruction to
+  // briefly mention engine mode availability when the query would benefit.
+  if (!useEngine) {
+    systemPrompt += "\n\n═══════════════════════════════════════════\nENGINE-MODE AWARENESS (CRITICAL — ACT ON THIS)\n═══════════════════════════════════════════\nYou are operating in Wayfinder's STANDARD tier. Wayfinder ENGINE MODE (premium toggle near the chat input) provides:\n  - Full Opus-class analysis\n  - Deeper RAG retrieval across the entire advisory database\n  - Per-school deep knowledge files (Stanford, MIT, etc.)\n  - Structured analysis frameworks (chance-me, school-fit, etc.)\n  - Richer curated-DB summaries and profile personalization\n\nWhen the user asks something that would genuinely benefit from engine mode — specific school strategy, comparing schools, deep ED/REA strategy, chance-me asks, complex what-if scenarios, multi-factor recommendations — mention engine mode at the END of your response in ONE short line. Example phrasings:\n  - \"For the full deep-dive — including school-specific intel — toggle Wayfinder Engine mode.\"\n  - \"Engine mode would give a richer, more strategy-grounded answer here.\"\n  - \"This is exactly what Engine mode is built for — try the toggle for a deeper analysis.\"\n\nRULES — calibrated, not spammy:\n  - DO NOT mention engine on simple greetings, factual lookups, or quick clarifications\n  - DO NOT mention engine on every message. Only when it would meaningfully help\n  - Keep the mention to ONE short sentence at the END. Never lead with it\n  - Phrase it as \"more depth available\" — the user already has access via the toggle\n═══════════════════════════════════════════";
+  }
+
   // ─── SS-04: SCOPE BOUNDARY INJECTION ────────────────────────
   // For adjacent queries (straddling education + out-of-scope domain),
   // inject a boundary instruction that tells the model to address only

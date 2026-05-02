@@ -23,6 +23,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext } from './knowledge.js';
+import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -388,10 +389,13 @@ export function routeDomain(query, scopeResult) {
 async function buildSLMMessages(history, userMessage, sessionContext, options = {}) {
   let systemPrompt = await loadSLMSystemPrompt();
 
-  // Retrieve RAG context based on domain routing
+  // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39 — bumped topK from 6 to 16. SLM is self-hosted on
+  // Render — no per-token API cost — so we let the intelligence layer
+  // (BM25 + entity boosts + category routing) pull MORE relevant chunks.
+  // Result: SLM gets the full RAG DB at its disposal.
   const domain = routeDomain(userMessage, options.scopeResult);
   const ragContext = await retrieveContext(userMessage, {
-    topK: 6,
+    topK: 16,
     domain,
     mode: 'standard',
   });
@@ -403,6 +407,23 @@ RETRIEVED KNOWLEDGE (use this to inform your response)
 ═══════════════════════════════════════════
 ${contextStr}`;
   }
+
+  // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39 — inject SPECIFIC curated DB entries (programs/
+  // internships/scholarships/volunteer) when query intent matches.
+  // Mirrors patch 35's claude.js injection so SLM users get actual
+  // entry names + deadlines + source URLs, not just RAG chunks.
+  try {
+    const curated = await searchCuratedEntries(userMessage, sessionContext, 8);
+    if (curated) {
+      systemPrompt += '\n' + curated;
+      console.log('[SLM CuratedSearch] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+  } catch (curatedErr) {
+    console.warn('[SLM CuratedSearch] failed (non-fatal):', curatedErr.message);
+  }
+
+  // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39 — engine-availability narrative.
+  systemPrompt += "\n\n═══════════════════════════════════════════\nENGINE-MODE AWARENESS (CRITICAL — ACT ON THIS)\n═══════════════════════════════════════════\nYou are operating in Wayfinder's STANDARD tier. Wayfinder ENGINE MODE (premium toggle near the chat input) provides:\n  - Full Opus-class analysis\n  - Deeper RAG retrieval across the entire advisory database\n  - Per-school deep knowledge files (Stanford, MIT, etc.)\n  - Structured analysis frameworks (chance-me, school-fit, etc.)\n  - Richer curated-DB summaries and profile personalization\n\nWhen the user asks something that would genuinely benefit from engine mode — specific school strategy, comparing schools, deep ED/REA strategy, chance-me asks, complex what-if scenarios, multi-factor recommendations — mention engine mode at the END of your response in ONE short line. Example phrasings:\n  - \"For the full deep-dive — including school-specific intel — toggle Wayfinder Engine mode.\"\n  - \"Engine mode would give a richer, more strategy-grounded answer here.\"\n  - \"This is exactly what Engine mode is built for — try the toggle for a deeper analysis.\"\n\nRULES — calibrated, not spammy:\n  - DO NOT mention engine on simple greetings, factual lookups, or quick clarifications\n  - DO NOT mention engine on every message. Only when it would meaningfully help\n  - Keep the mention to ONE short sentence at the END. Never lead with it\n  - Phrase it as \"more depth available\" — the user already has access via the toggle\n═══════════════════════════════════════════";
 
   // Inject boundary instruction for adjacent queries
   if (options.scopeLabel === 'adjacent') {
