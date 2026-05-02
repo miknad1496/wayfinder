@@ -36,6 +36,36 @@ router.get('/advisor-status', (req, res) => {
   });
 });
 
+// REVAMP V2: AUTO-ENGINE PROMOTION PATCH36 — query-specificity heuristic for auto-engine promotion.
+// Triggers engine mode (Opus + full RAG + curated DB) without manual toggle
+// when the query (a) names a known top-tier school, or (b) uses a request
+// verb against a curated module target, or (c) directly asks about
+// programs/internships/scholarships/volunteer (mirrors curated-search.js).
+const _SPECIFIC_SCHOOLS = [
+  'harvard','yale','princeton','stanford','mit','caltech','columbia',
+  'cornell','dartmouth','brown','duke','upenn','penn','northwestern',
+  'chicago','uchicago','berkeley','ucla','michigan','umich','virginia','uva',
+  'jhu','johns hopkins','rice','vanderbilt','notre dame','wash u','washu',
+  'emory','georgetown','cmu','carnegie mellon','nyu','bu ','boston university',
+  'tufts','wesleyan','amherst','williams','swarthmore','pomona','claremont',
+  'middlebury','bowdoin','colgate','hamilton','vassar','smith','wellesley',
+  'usc','unc','upitt','uwash','utexas','ut austin','georgia tech','gtech',
+  'olin','harvey mudd','reed','grinnell','haverford','barnard','wash u stl',
+];
+function _isSpecificQuery(q) {
+  if (!q || typeof q !== 'string') return false;
+  const lower = q.toLowerCase();
+  // School name match (top schools — Pro/Elite users likely asking about these)
+  if (_SPECIFIC_SCHOOLS.some(s => lower.includes(s))) return true;
+  // Request-verb + curated target
+  if (/(recommend|suggest|list|which|find me|name some|top \d|best \d).{1,40}(program|camp|internship|scholarship|school|college|university|major|class|course|essay)/.test(lower)) return true;
+  // Direct curated-module intent
+  if (/(internship|scholarship|volunteer|summer program|summer camp|pre-college|precollege)/.test(lower)) return true;
+  // Specific essay/app strategy verbs
+  if (/(my chances|chance me|admit rate|acceptance rate|how do i get into|will i get into|early decision|ed at |ed for |should i apply)/.test(lower)) return true;
+  return false;
+}
+
 // In-memory lock: prevents concurrent generation on the same session.
 // If a second request arrives while the first is mid-generation, return 409.
 const activeSessions = new Set();
@@ -349,6 +379,32 @@ router.post('/', async (req, res) => {
       return res.status(401).json({
         error: 'Please log in to use the Wayfinder Engine.'
       });
+    }
+
+    // REVAMP V2: AUTO-ENGINE PROMOTION PATCH36 — Smart auto-promotion to engine mode for paid users
+    // on specific queries. Avoids the 'I paid but it feels generic' UX miss.
+    // Only fires if user didn't already opt in (engineAllowed already true) and
+    // user is on a paid plan with quota remaining. Free-tier untouched.
+    if (!engineAllowed && auth?.token && auth?.user) {
+      const userPlan = String(auth.user.plan || 'free').toLowerCase();
+      const isPaidTier = ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(userPlan)
+        || auth.user.isAdmin || auth.user.isVIP;
+      if (isPaidTier && _isSpecificQuery(message)) {
+        try {
+          const promoteResult = await useEngine(auth.token);
+          if (promoteResult.allowed) {
+            engineAllowed = true;
+            engineRemaining = promoteResult.remaining;
+            tEvent.engine.allowed = true;
+            tEvent.engine.autoPromoted = true;
+            console.log('[AutoEngine] Promoted ' + userPlan + ' query to engine mode (specific query detected): "' + (message || '').slice(0, 60) + '..."');
+          } else {
+            console.log('[AutoEngine] Specific query detected but ' + userPlan + ' user out of engine quota — falling back to standard mode');
+          }
+        } catch (autoErr) {
+          console.warn('[AutoEngine] failed (non-fatal):', autoErr.message);
+        }
+      }
     }
 
     // Check daily + monthly message limits for authenticated users
