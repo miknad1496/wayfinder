@@ -6,7 +6,7 @@
 
 - frequency: every 6h
 - typical_run_duration: <60 sec
-- last_calibration_change: 2026-05-02 07:18 UTC — HEALTHY run, transient 502 on first probe documented. Push freshness 1 min, all enabled-recurring tasks on cadence. Single anomaly (daily-platform-audit possible slot skip) flagged for next run.
+- last_calibration_change: 2026-05-02 13:24 UTC — HEALTHY run, all 5 site probes 200 in 0.15-0.34s (no cold-start this time), push freshness 1.35h. daily-platform-audit prior open question RESOLVED — fired today at 07:19 UTC.
 
 ## EFFECTIVE PATTERNS
 
@@ -23,6 +23,7 @@
 
 - 2026-04-30 PM: 6-task stall (tax-brain/estate-brain/financial-brain/drift-monitor/insight-harvest/daily-snapshot) self-cleared between two consecutive watchdog runs (16:06 DEGRADED → 19:24 HEALTHY). Same pattern as the 2026-04-27 3-task stall. Window from "stall flagged" to "all recovered" was ~3h with no operator intervention recorded. Hypothesis: pending tool-approval drained naturally OR the host scheduler resumed after a transient queue backup. Either way, watchdog should not panic on the first DEGRADED report — wait one cycle to see if it self-clears before escalating.
 - Insight-harvest is NOT actually "self-limiting" yet — run 20 just landed (volunteer entries). The "self-limiting once all entries harvested" note in the task description is forward-looking; it has many entries left, so a healthy steady state is a fresh commit at each :08/:38 slot, not silence.
+- 2026-05-02 13:24: 5-consecutive-probe site check returned 200/0.15-0.34s every probe (no cold-start). Pattern reinforced: doing 5 probes (not 1) is what reliably distinguishes a real outage from a Render free-tier wake-up. Keep the multi-probe loop.
 
 ## FAILED PATTERNS
 
@@ -36,6 +37,7 @@
 ## DATA QUALITY FLAGS
 
 - 2026-04-26 19:27 UTC — sandbox `/` filesystem hit 100% used (9.6G/9.6G), with `36M` free. Stale clones from prior nobody-uid sessions (`/tmp/wfg2`, `/tmp/wf-fresh`, `/tmp/harvest*`, etc.) couldn't be removed by current user (Permission denied: not our uid). Worked around by cloning into `/sessions/clever-dazzling-cray/work/wf-watch` instead of `/tmp`. Future runs should default to a path under `/sessions/...` if `/tmp` is full or owned by an old uid.
+- 2026-05-02 13:24: insight-harvest is API-disabled and has not committed since 17ac465 at 06:50 UTC (~6.5h, ~12 missed 8/38 slots). Today the API enabled=false flag IS consistent with reality (unlike prior days where the flag lied). Either Dan disabled it deliberately after the morning batch, or it auto-disabled after a successful run. Not flagging UNHEALTHY — write pipeline is alive (drift-monitor + PII audit + audits + watchdog all committed in last 6h) — but worth re-checking whether harvest is meant to still be running.
 
 ## CALIBRATION SUGGESTIONS
 
@@ -49,7 +51,6 @@
 
 ## OPEN QUESTIONS
 
-- daily-platform-audit shows nextRunAt 2026-05-03T07:18 with lastRunAt 2026-05-01T07:19 — did today's 07:18 UTC slot skip, or is the scheduler about to fire it as the watchdog snapshot was taken? Re-check next run.
 - Why does insight-harvest show enabled=false in the list_scheduled_tasks API while clearly firing every ~30min and committing to git? Worth confirming whether this is an API bug, a deliberate manual trigger pattern, or something else.
 - Should the watchdog also do a TTFB / latency trend check (avg over 4 runs)?
 - Worth adding a check on `_verified` count growth in scholarships/internships JSON to detect a silent grinder regression where commits happen but no verified data is being added?
@@ -59,6 +60,7 @@
 
 (only ~30 days of history kept — older entries summarized)
 
+- 2026-05-02 13:24 UTC — HEALTHY. Site 200/0.15-0.34s on all 5 probes (no cold-start this time, contrast prior run). Frontend 200/0.18s. Last commit 1.35h ago (6fc08e2 "Drift monitor lessons update 2026-05-02"). Pipeline active in last 6h: drift-monitor (12:02), PII audit (11:04), insight-harvest morning batch (06:43→commit 06:50), nightly-audit (07:10), full-system-audit (07:08), watchdog prior run (07:18→commit 07:21). All daily brain tasks fired in 08:22-09:03 window. ii-scraper-watchdog hasn't fired today yet (cron 8:03 UTC, current 13:24, nextRun 15:03 — late but within cron×2). RESOLVED open question: daily-platform-audit DID fire today at 07:19 (prior run's slot-skip suspicion was wrong — task was just about to fire when watchdog snapshot was taken). NOTABLE: insight-harvest API enabled=false today and no harvest commits since 06:50; today the disabled flag matches behavior. Active pipeline is now drift-monitor + audits + brain tasks; insight-harvest may be paused (see DATA QUALITY FLAGS).
 - 2026-05-02 07:18 UTC — HEALTHY. Site initial 502/0.92s on first probe, recovered immediately: 5x retries all 200 with 0.26-0.50s latency (transient cold-start, not a real outage). Frontend 200/0.21s. Last commit ~1min ago (989b471 "Nightly audit 2026-05-02: cost+runtime+data+essay clean; flagged 470 bare-domain _source in internships"). All daily/monthly enabled tasks fired on schedule: nightly-audit (07:10), full-system-audit (07:08), daily-snapshot (06:56 UTC), monthly Penserra hardening tasks all fired 2026-05-01. Brain tasks (zakat/tax/estate/financial) on cadence with nextRunAt 2026-05-02 08:21-09:02. NOTABLE: daily-platform-audit lastRunAt is 2026-05-01T07:19 with nextRunAt 2026-05-03T07:18 — looks like today's 07:18 slot may have been skipped or is firing in-window right now (current time 07:18:35Z). Borderline but not yet stalled (cron×2 = 48h, currently ~24h drift). Insight-harvest shows enabled=false in API but lastRunAt 06:43 + 7 fresh harvest commits in the last day — task is clearly firing, data is flowing. Active grinder slate today: insight-harvest is the lone write workhorse.
 - 2026-04-26 13:24 UTC — HEALTHY. Site 200/0.36s, frontend 200, last commit 13min ago (6d8e2c6 Volunteer grinder run 11), all enabled tasks firing on schedule. Volunteer + K12 grinders both green.
 - 2026-04-26 19:27 UTC — HEALTHY. Site 200/0.35s, frontend 200, last commit 4min ago (b199540 "Harvest run 2: k12 — 5 entries scanned, 10 insights captured"). All enabled tasks on schedule. K12 + volunteer grinders now intentionally parked; ESMS grinder + insight-harvest are the new active write loop. Sandbox `/tmp` was at 100% with leftover dirs from prior uids — cloned into `/sessions/clever-dazzling-cray/work/` to work around.
