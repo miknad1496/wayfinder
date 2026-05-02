@@ -394,10 +394,14 @@ async function buildSLMMessages(history, userMessage, sessionContext, options = 
   // (BM25 + entity boosts + category routing) pull MORE relevant chunks.
   // Result: SLM gets the full RAG DB at its disposal.
   const domain = routeDomain(userMessage, options.scopeResult);
+  // REVAMP V2: SLM FULL BM25 PATCH40 — switched mode from 'standard' to 'engine' so SLM gets
+  // FULL BM25 retrieval over the entire advisory database (distilled +
+  // base + raw data + per-school files), with layer boosts and entity
+  // detection. Was previously bypassing BM25 entirely.
   const ragContext = await retrieveContext(userMessage, {
     topK: 16,
     domain,
-    mode: 'standard',
+    mode: 'engine',
   });
 
   if (ragContext && ragContext.chunks && ragContext.chunks.length > 0) {
