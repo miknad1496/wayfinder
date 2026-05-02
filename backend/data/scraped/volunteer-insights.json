@@ -1,13 +1,13 @@
 {
   "metadata": {
     "audience": "High school students + parents planning service hours",
-    "lastUpdated": "2026-04-30T21:49:05Z",
+    "lastUpdated": "2026-05-01T05:08:00Z",
     "purpose": "Insider volunteer insights — what AOs actually look for, hidden leadership pathways, scholarship-linked service, in-state vs national org access, the 'sustained vs sporadic' nuance.",
     "fieldNotesCount": 43,
     "lastHarvestRun": "2026-04-30T20:55:40.181Z",
-    "lastFieldNoteHarvest": "2026-04-30",
-    "totalFieldNotes": 51,
-    "fieldNotesTotal": 60
+    "lastFieldNoteHarvest": "2026-05-01",
+    "totalFieldNotes": 63,
+    "fieldNotesTotal": 63
   },
   "sections": [
     {
@@ -91,6 +91,30 @@
       "title": "From the field — fresh insider notes (auto-discovered)",
       "icon": "🔍",
       "items": [
+        {
+          "sourceProvider": "Renewal Food Bank",
+          "sourceName": "Renewal Food Bank Volunteer (Bellevue / East King County)",
+          "insight": "ROLE-SPECIFIC SHIFT WINDOWS + DRIVER REQUIREMENT NOT IN GENERIC HOWTO. Three operational shift types — they're NOT interchangeable: (1) Grocery Rescue Ride Along (volunteer rides with the staff van + helps load 18+ partner pickups/week): Mon 7am-3pm, Tue 7am-11am, Wed 7am-11am. (2) Shop the Dock Food Pickup (volunteer DRIVES THEIR OWN VEHICLE from Food Lifeline → Renewal in Bellevue): Tue 6:30am-11am only — needs a licensed driver with cargo capacity, so this is a parent-volunteer slot, NOT a teen slot. (3) Donation Drop-Off receiving on-site: Mon 9am-3pm, Tue 9am-6pm, Wed 9am-1pm. NOTE: No WA Food Worker Card requirement here (food bank sorts/packs sealed goods; the food-worker-card pattern from prior runs applies to MEAL-PREP shelter kitchens like FareStart/Mary's Place/Loaves & Fishes, NOT to food banks like Renewal/Northwest Harvest sort-pack). For a HS student: the only teen-eligible reliable shift is the Donation Drop-Off receiving window. Direct contact: development@renewalfoodbank.org or 425-736-8132.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-05-01",
+          "_source": "https://renewalfoodbank.org/volunteer"
+        },
+        {
+          "sourceProvider": "LifeWire",
+          "sourceName": "LifeWire Volunteer (Eastside Domestic Violence Services)",
+          "insight": "REALITY CHECK — DIRECT SURVIVOR WORK IS GATED, NOT OPEN. The /volunteer landing page explicitly states 'Direct service opportunities with survivors are very limited due to confidentiality and safety considerations.' The intake form bins applicants into ONLY 4 categories: (a) Individual, (b) Small Group 2-5, (c) Large Group >5, (d) Collection Drive for New Items — NOT direct-survivor-facing roles. The actual realistic roles for a teen/parent first-time applicant are: in-kind donation drives (diapers, baby supplies, birthday-party kits), social-media content/amplification, and event day-of support (e.g. World of Hope Gala). For a teen with serious interest in DV advocacy as a college-app angle, the gating credential is LifeWire's 40-hour Domestic Violence 101 Training (separate page from /volunteer) — but that opens to age 18+ only and runs at MOST once per year. Plan-ahead implication: start the DV101 application timing junior year if your teen is targeting this as their pillar. Crisis line for the public is 425-562-8840 (NOT a volunteer entry point).",
+          "category": "fit-tip",
+          "harvestedDate": "2026-05-01",
+          "_source": "https://www.lifewire.org/get-involved/volunteer/"
+        },
+        {
+          "sourceProvider": "KidVantage",
+          "sourceName": "KidVantage Volunteer (formerly Eastside Baby Corner)",
+          "insight": "LOWEST AGE-FLOOR IN THE WA VOLUNTEER CORPUS + WALK-UP CALENDAR (NO APPLICATION GATE). KidVantage accepts volunteers age 12+ (with the 12-13 cohort required to be 1:1 with an accompanying adult); compare to Mary's Place 14+, Hopelink 14+, Sophia Way Donation Center 10-15-with-parent, Greentrike 14+ orientation-required. Three hubs to choose from: Issaquah, Shoreline, Bremerton. There is NO application + orientation pipeline — it is pure self-serve calendar: 'Find a time on the calendar, sign up and show up!' This makes KidVantage the single fastest-onboarding WA youth-volunteer entry point, ideal for (a) middle-schoolers locked out of 14+ pipelines, (b) one-shot family service days, (c) trying out warehouse/sorting work before committing to a multi-week onboarding elsewhere. Tasks are physical (receive donations, sort, pack orders, repair bikes, move stock) — good for a kid who wants to DO rather than chat. Group lead: Eileen, 425-372-7532, eileenc@KidVantageNW.org. SIDE TIP NOT IN OUR ENTRY: KidVantage explicitly flags employer volunteer-hour matching — check the parent's HR for a 1:1 hour→$ match (common at MSFT, Amazon, Boeing, Costco), which converts the kid's service time into a real donation.",
+          "category": "registration-tip",
+          "harvestedDate": "2026-05-01",
+          "_source": "https://kidvantagenw.org/volunteer/"
+        },
         {
           "sourceProvider": "Greentrike (Children's Museum of Tacoma + JBLM)",
           "sourceName": "Greentrike / Children's Museum of Tacoma Volunteer",
