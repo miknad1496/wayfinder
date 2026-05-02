@@ -24,6 +24,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext } from './knowledge.js';
 import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39
+import { detectAnalysisFramework } from './analysis-frameworks.js'; // REVAMP V2: SLM FRAMEWORKS PATCH42
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -425,6 +426,20 @@ ${contextStr}`;
     }
   } catch (curatedErr) {
     console.warn('[SLM CuratedSearch] failed (non-fatal):', curatedErr.message);
+  }
+
+  // REVAMP V2: SLM FRAMEWORKS PATCH42 — Detect ANALYSIS_FRAMEWORK match (chance-me, school-fit,
+  // ROI, forward-comp, perception-vs-reality). When matched, prepend the
+  // structured framework prompt so SLM produces analytical output, not
+  // freeform. Mirrors the engine path in claude.js.
+  try {
+    const framework = detectAnalysisFramework(userMessage);
+    if (framework) {
+      systemPrompt += '\n\n' + framework.prompt;
+      console.log('[SLM Framework] activated: ' + framework.name + ' for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+  } catch (fwErr) {
+    console.warn('[SLM Framework] failed (non-fatal):', fwErr.message);
   }
 
   // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39 — engine-availability narrative.
