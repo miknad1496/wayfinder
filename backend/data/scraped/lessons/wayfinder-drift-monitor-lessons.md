@@ -4,7 +4,7 @@
 
 ## CURRENT CALIBRATION
 
-- frequency: daily 5am
+- frequency: daily 5am UTC (≈10pm PST/9pm PDT — adjacent to 12:08/12:09am PST audit restart window AND/OR overnight low-traffic window; 4-for-4 zero-volume runs)
 - baselines (current targets):
   - chat.rag_hit_rate: ≥0.80 (alert <0.65)
   - chat.refusal_rate: 0.05-0.15 (alert >0.30 or <0.01)
@@ -33,18 +33,18 @@
 - 2026-04-26 first run: zero-volume snapshot. `since` was only ~2min before the request.
 - 2026-04-27 second run: also zero-volume. `since` 17min before fetch.
 - 2026-04-30 third run: also zero-volume. `since` 11min before fetch (16:13:24Z, fetched 16:24:13Z). Confirms hypothesis: counters consistently zero at this scheduled-task time. The drift monitor in its current schedule is structurally unable to observe meaningful traffic.
-- Counter reset pattern across 3 runs: deltas of 2min, 17min, 11min between `since` and fetch — all sub-30min, all sub-volume threshold. **This task as currently scheduled produces NO useful signal.**
+- Counter reset pattern across 4 runs: deltas of 2min, 17min, 11min, 55min between `since` and fetch. The 55min delta on May 2 is the longest yet but still produced zero volume — this run was ~12:03 UTC = ~5am PDT (Sunday morning, lowest natural traffic window). **This task as currently scheduled produces NO useful signal.**
 
 ## CALIBRATION SUGGESTIONS
 
 - Initial baselines were estimated from typical LLM-app patterns — refine after 7-14 days of real data. Likely calibration: tighten upper bounds on latency, loosen RAG hit rate (real-world hit rate often 0.65-0.75 for niche queries).
-- **Reschedule recommendation (URGENT, 3-for-3 zero-volume confirms):** move drift monitor from 5am UTC to 04:00 UTC (= 9pm PST = peak high-schooler homework window) OR even better, run at a non-Render-restart-adjacent time like 16:00 UTC (= 9am PST). Current schedule is structurally adjacent to the 12:08am/12:09am audit tasks that zero counters.
+- **Reschedule recommendation (URGENT, 4-for-4 zero-volume confirms):** move drift monitor from 5am UTC to 04:00 UTC (= 9pm PST = peak high-schooler homework window) OR even better, run at a non-Render-restart-adjacent time like 16:00 UTC (= 9am PST). Current schedule is structurally adjacent to the 12:08am/12:09am audit tasks that zero counters.
 - Alternative: persist analytics counters to disk (file-backed like `_quota-tracker.json`) so they survive restart. This is a code change — flag for Dan, don't attempt.
 
 ## OPEN QUESTIONS
 
 - Should the drift monitor commit a daily snapshot to git so we can graph trends week over week?
-- **Confirmed:** nightly audit tasks (12:08am / 12:09am PST) ARE triggering restarts that zero analytics counters (3-for-3 evidence). Either (a) reschedule drift monitor to non-adjacent window, or (b) make analytics counters persistent.
+- **Confirmed:** nightly audit tasks (12:08am / 12:09am PST) ARE triggering restarts that zero analytics counters (4-for-4 evidence — May 2 run had 55min since-to-fetch gap but counters had still been zeroed earlier in the morning). Either (a) reschedule drift monitor to non-adjacent window, or (b) make analytics counters persistent.
 - Is there a way to query the analytics endpoint with a time range parameter rather than relying on the in-memory `since`?
 
 ## RUN HISTORY
@@ -54,3 +54,4 @@
 | 2026-04-26 | LOW SIGNAL | Counters fresh after Render redeploy; volume=0 across chat/essay/concierge; no threshold evaluation possible |
 | 2026-04-27 | LOW SIGNAL | Counter reset 17min before fetch (since=23:26:45Z); volume=0 across all 3 pipelines; second consecutive zero-volume run |
 | 2026-04-30 | LOW SIGNAL | Counter reset 11min before fetch (since=16:13:24Z); volume=0 across all 3 pipelines; third consecutive zero-volume run — pattern confirmed, schedule needs to move |
+| 2026-05-02 | LOW SIGNAL | Counter reset 55min before fetch (since=11:08:19Z, fetched=12:03:10Z); volume=0 across all 3 pipelines; FOURTH consecutive zero-volume run |
