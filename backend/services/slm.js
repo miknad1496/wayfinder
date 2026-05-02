@@ -402,6 +402,7 @@ async function buildSLMMessages(history, userMessage, sessionContext, options = 
     topK: 16,
     domain,
     mode: 'engine',
+    userId: sessionContext?.userId || null, // REVAMP V2: USER-SCOPED MEMORY PATCH41
   });
 
   if (ragContext && ragContext.chunks && ragContext.chunks.length > 0) {

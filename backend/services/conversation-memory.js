@@ -112,7 +112,7 @@ function detectDomain(text) {
  * @param {string} params.sessionId - Session identifier
  */
 export async function captureConversationMemory(params) {
-  const { userMessage, response, mode, scopeLabel, sessionContext, sessionId } = params;
+  const { userMessage, response, mode, scopeLabel, sessionContext, sessionId, userId } = params; // REVAMP V2: USER-SCOPED MEMORY PATCH41
 
   // Only capture substantive exchanges
   if (!userMessage || userMessage.trim().length < 20) return;
@@ -152,6 +152,7 @@ export async function captureConversationMemory(params) {
     const entry = {
       timestamp: new Date().toISOString(),
       sessionId,
+      userId: userId || sessionContext?.userId || null, // REVAMP V2: USER-SCOPED MEMORY PATCH41
       domain,
       userType,
       topics,
@@ -258,7 +259,8 @@ export async function captureTrainingPair(params) {
  * Returns an array of chunks compatible with the existing RAG format:
  *   { source, title, content, layer, score }
  */
-export async function getMemoryChunks(query, topK = 3) {
+export async function getMemoryChunks(query, topK = 3, opts = {}) { // REVAMP V2: USER-SCOPED MEMORY PATCH41
+  const _v41_userId = opts && opts.userId ? opts.userId : null;
   try {
     await ensureDirs();
     const files = await fs.readdir(MEMORY_DIR);
@@ -293,6 +295,9 @@ export async function getMemoryChunks(query, topK = 3) {
 
           // Domain match bonus
           if (entry.domain === queryDomain) score += 1;
+
+          // REVAMP V2: USER-SCOPED MEMORY PATCH41 — strong boost for entries from THIS user
+          if (_v41_userId && entry.userId && entry.userId === _v41_userId) score += 3;
 
           // Recency bonus (entries from today score higher)
           const entryDate = entry.timestamp?.slice(0, 10);

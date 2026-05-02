@@ -748,6 +748,7 @@ router.post('/', async (req, res) => {
       scopeLabel: scopeResult?.label || 'in_scope',
       sessionContext: session.context,
       sessionId,
+      userId: session.userId || auth?.user?.id || null, // REVAMP V2: USER-SCOPED MEMORY PATCH41
     };
     captureConversationMemory(memoryParams).catch(err => {
       console.error('[Background] Memory capture failed:', err.message);

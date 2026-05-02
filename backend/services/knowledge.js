@@ -2517,7 +2517,7 @@ async function buildBM25Index() {
  * @param {number} topK - Max chunks to return (overridden by query analysis)
  * @returns {Array} Scored, sorted chunks
  */
-export async function retrieveContextV2(query, topK = 6) {
+export async function retrieveContextV2(query, topK = 6, opts = {}) { // REVAMP V2: USER-SCOPED MEMORY PATCH41
   if (!query || query.trim().length === 0) return [];
 
   // Step 1: Analyze the query
@@ -2566,7 +2566,7 @@ export async function retrieveContextV2(query, topK = 6) {
 
   // Step 6: Blend in conversation memory chunks (past Q&A insights)
   try {
-    const memoryChunks = await getMemoryChunks(query, 2);
+    const memoryChunks = await getMemoryChunks(query, 2, { userId: opts && opts.userId ? opts.userId : null }); // REVAMP V2: USER-SCOPED MEMORY PATCH41
     if (memoryChunks.length > 0) {
       results.push(...memoryChunks);
       console.log(`  [BM25] Added ${memoryChunks.length} conversation memory chunks`);
@@ -2598,10 +2598,12 @@ export async function retrieveContext(query, optionsOrTopK = 6) {
   let domain = null;
   let mode = 'standard';
 
+  let _v41_userId = null; // REVAMP V2: USER-SCOPED MEMORY PATCH41
   if (typeof optionsOrTopK === 'object' && optionsOrTopK !== null) {
     topK = optionsOrTopK.topK || 6;
     domain = optionsOrTopK.domain || null;
     mode = optionsOrTopK.mode || 'standard';
+    _v41_userId = optionsOrTopK.userId || null;
   } else if (typeof optionsOrTopK === 'number') {
     topK = optionsOrTopK;
   }
@@ -2620,7 +2622,7 @@ export async function retrieveContext(query, optionsOrTopK = 6) {
 
       // Add conversation memory for SLM too — past insights improve all tiers
       try {
-        const memoryChunks = await getMemoryChunks(query, 2);
+        const memoryChunks = await getMemoryChunks(query, 2, { userId: _v41_userId }); // REVAMP V2: USER-SCOPED MEMORY PATCH41
         if (memoryChunks.length > 0) {
           chunks.push(...memoryChunks);
           console.log(`  [RAG-STD] Added ${memoryChunks.length} memory chunks for SLM`);
@@ -2633,7 +2635,7 @@ export async function retrieveContext(query, optionsOrTopK = 6) {
     }
 
     // For engine mode, use full BM25 retrieval
-    const results = await retrieveContextV2(query, topK);
+    const results = await retrieveContextV2(query, topK, { userId: _v41_userId }); // REVAMP V2: USER-SCOPED MEMORY PATCH41
     return { chunks: results, sources: results.map(r => r.source).filter(Boolean) };
   } catch (err) {
     console.error('[retrieveContext] Error, falling back to legacy:', err.message);
