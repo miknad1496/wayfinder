@@ -1592,6 +1592,27 @@ async function buildCategoryIndex() {
   } catch { /* OK */ }
   index._base = baseChunks;
 
+  // REVAMP V2: SCHOOLS DEEP KNOWLEDGE PATCH37 — auto-load per-school deep knowledge from schools/ subdir.
+  // Any *.md dropped there auto-discovers, weight 2.0, merged into admissions
+  // category. Lets the wayfinder-data-refresh task grind 50+ school files
+  // without code/config edits per school.
+  try {
+    const schoolsDir = join(PATHS.knowledgeBase, 'schools');
+    const schoolFiles = await fs.readdir(schoolsDir);
+    let schoolChunks = 0;
+    for (const file of schoolFiles.filter(f => f.endsWith('.md') && f !== 'README.md')) {
+      const chunks = await loadMarkdownFile(schoolsDir, file, 2.0);
+      for (const chunk of chunks) {
+        chunk.category = 'admissions';
+        chunk._school = file.replace(/^school-/, '').replace(/\.md$/, '');
+      }
+      if (Array.isArray(index.admissions)) index.admissions.push(...chunks);
+      schoolChunks += chunks.length;
+    }
+    if (schoolChunks > 0) console.log('  Schools deep knowledge: ' + schoolChunks + ' chunks from ' + schoolFiles.length + ' files');
+  } catch { /* schools dir doesn\'t exist yet — non-fatal */ }
+
+
   let totalChunks = 0;
   for (const [cat, chunks] of Object.entries(index)) {
     if (cat !== '_base') totalChunks += chunks.length;
