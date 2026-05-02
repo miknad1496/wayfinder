@@ -6,10 +6,12 @@
 
 - frequency: every 6h
 - typical_run_duration: <60 sec
-- last_calibration_change: 2026-04-30 19:24 UTC — FULL RECOVERY from the 6-task stall flagged 3h earlier. All previously frozen tasks (tax-brain 16:11, estate-brain 16:13, financial-brain 16:13, drift-monitor 16:20, insight-harvest 19:10, daily-snapshot 16:34 UTC) advanced their lastRunAt within ~30min of the 16:06 watchdog. Insight-harvest is committing again (HEAD 626d24b at 19:19 UTC, run 20, 3 volunteer entries). Confirms self-recovery pattern from 2026-04-27 — pauses clear without code changes.
+- last_calibration_change: 2026-05-02 07:18 UTC — HEALTHY run, transient 502 on first probe documented. Push freshness 1 min, all enabled-recurring tasks on cadence. Single anomaly (daily-platform-audit possible slot skip) flagged for next run.
 
 ## EFFECTIVE PATTERNS
 
+- 2026-05-02: First-probe 502 then immediate 200 on retries is the classic Render free-tier cold-start. NOT a real outage. Always retry 3-5x before flagging UNHEALTHY. Latency on retry was sub-500ms on every probe.
+- 2026-05-02: A task with `enabled=false` in the API response but `lastRunAt` 30min ago + matching fresh commits is a known scheduler-API data inconsistency (insight-harvest is doing this). Trust the commits + lastRunAt over the enabled flag when assessing whether work is happening.
 - 2026-04-30: brain-task family does NOT fail/recover as a unit. zakat-brain ran today (2026-04-30T16:01) while tax/estate/financial-brain are still frozen at 2026-04-28. Same skill template, same cron family — but only zakat woke up. Suggests the approval gate is per-task (per-skill-instance), not per-task-family. When investigating, treat each brain task as independent.
 - 3-task stall pattern (2026-04-27) recovered on its own without code changes — by 2026-04-28T01:25 UTC, drift-monitor (last 23:43) + insight-harvest (last 01:10) were both firing on schedule again, and esms-grinder ran once at 00:03 then was disabled. Strongly supports the tool-approval-gate hypothesis: the pause cleared once whatever approval was pending got handled, no code bug to fix.
 - After a stall-and-recover, check the enabled flag too — esms-grinder went enabled→disabled between the two watchdog runs. The watchdog should always re-snapshot enabled flags vs the prior run's snapshot, not just lastRunAt.
@@ -47,6 +49,8 @@
 
 ## OPEN QUESTIONS
 
+- daily-platform-audit shows nextRunAt 2026-05-03T07:18 with lastRunAt 2026-05-01T07:19 — did today's 07:18 UTC slot skip, or is the scheduler about to fire it as the watchdog snapshot was taken? Re-check next run.
+- Why does insight-harvest show enabled=false in the list_scheduled_tasks API while clearly firing every ~30min and committing to git? Worth confirming whether this is an API bug, a deliberate manual trigger pattern, or something else.
 - Should the watchdog also do a TTFB / latency trend check (avg over 4 runs)?
 - Worth adding a check on `_verified` count growth in scholarships/internships JSON to detect a silent grinder regression where commits happen but no verified data is being added?
 - Why did `k12-grinder-enable-11pm` apparently never fire (no `lastRunAt` field) while `volunteer-grinder-enable-1130pm` did? Both are now moot since the grinders are intentionally parked, but worth noting if similar one-time enables are scheduled in future.
@@ -55,6 +59,7 @@
 
 (only ~30 days of history kept — older entries summarized)
 
+- 2026-05-02 07:18 UTC — HEALTHY. Site initial 502/0.92s on first probe, recovered immediately: 5x retries all 200 with 0.26-0.50s latency (transient cold-start, not a real outage). Frontend 200/0.21s. Last commit ~1min ago (989b471 "Nightly audit 2026-05-02: cost+runtime+data+essay clean; flagged 470 bare-domain _source in internships"). All daily/monthly enabled tasks fired on schedule: nightly-audit (07:10), full-system-audit (07:08), daily-snapshot (06:56 UTC), monthly Penserra hardening tasks all fired 2026-05-01. Brain tasks (zakat/tax/estate/financial) on cadence with nextRunAt 2026-05-02 08:21-09:02. NOTABLE: daily-platform-audit lastRunAt is 2026-05-01T07:19 with nextRunAt 2026-05-03T07:18 — looks like today's 07:18 slot may have been skipped or is firing in-window right now (current time 07:18:35Z). Borderline but not yet stalled (cron×2 = 48h, currently ~24h drift). Insight-harvest shows enabled=false in API but lastRunAt 06:43 + 7 fresh harvest commits in the last day — task is clearly firing, data is flowing. Active grinder slate today: insight-harvest is the lone write workhorse.
 - 2026-04-26 13:24 UTC — HEALTHY. Site 200/0.36s, frontend 200, last commit 13min ago (6d8e2c6 Volunteer grinder run 11), all enabled tasks firing on schedule. Volunteer + K12 grinders both green.
 - 2026-04-26 19:27 UTC — HEALTHY. Site 200/0.35s, frontend 200, last commit 4min ago (b199540 "Harvest run 2: k12 — 5 entries scanned, 10 insights captured"). All enabled tasks on schedule. K12 + volunteer grinders now intentionally parked; ESMS grinder + insight-harvest are the new active write loop. Sandbox `/tmp` was at 100% with leftover dirs from prior uids — cloned into `/sessions/clever-dazzling-cray/work/` to work around.
 - 2026-04-27 23:24 UTC — DEGRADED. Site 200/0.51s, frontend 200, last commit 2min ago (c595328 "Full system audit (Frontend UX): fix David context extraction stale DOM IDs"). Audits + ii-scraper-watchdog firing fine. STALLED: `wayfinder-esms-grinder` lastRunAt 2026-04-26T23:30 (~24h ago, ~95 missed slots — cron 5,20,35,50); `wayfinder-insight-harvest` lastRunAt 2026-04-26T21:40 (~26h ago, ~52 missed slots — cron 8,38); `wayfinder-drift-monitor` lastRunAt 2026-04-26T12:02 (~35h ago, missed today's 05:03 UTC slot). All three are still enabled=true with fresh nextRunAt timestamps in the API, but their lastRunAt has not advanced — classic queued-but-not-executing pattern. Suggested next step: Dan hits "Run now" on esms-grinder + insight-harvest + drift-monitor to clear any stuck approval, or toggle enabled=false→true to flush stale queued runs.
