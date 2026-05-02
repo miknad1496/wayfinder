@@ -155,6 +155,7 @@ const CATEGORIES = {
       'admissions-adversity-landscape-intelligence.md',
       'admissions-diversity-school-profiling.md',
       'admissions-extracurricular-differentiation-strategy.md',
+      'admissions-financial-aid-strategy.md', // REVAMP V2: FINANCIAL AID DEEP PATCH45
       'synthesis-scorecard-earnings.md'],
     triggers: ['admissions', 'admission', 'acceptance', 'accepted', 'apply', 'application',
       'essay', 'sat', 'act', 'gpa', 'extracurricular', 'recommendation', 'early',
