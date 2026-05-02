@@ -36,8 +36,12 @@ router.post('/signup', async (req, res) => {
   try {
     const { email, password, name, userType, school, interests, consentGiven, inviteCode } = req.body;
 
+    // Defensive type narrowing — req.body fields can be any JSON value type
+    if (typeof email !== 'string' || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
     // Sanitize email: trim and lowercase
-    const sanitizedEmail = email ? email.toLowerCase().trim() : '';
+    const sanitizedEmail = email.toLowerCase().trim();
 
     if (!sanitizedEmail || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -87,8 +91,12 @@ router.post('/login', loginLimiter, async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // Defensive type narrowing — req.body fields can be any JSON value type
+    if (typeof email !== 'string' || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
     // Sanitize email: trim and lowercase
-    const sanitizedEmail = email ? email.toLowerCase().trim() : '';
+    const sanitizedEmail = email.toLowerCase().trim();
 
     if (!sanitizedEmail || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
@@ -111,7 +119,7 @@ router.post('/login', loginLimiter, async (req, res) => {
 router.post('/forgot-password', forgotPasswordLimiter, async (req, res) => {
   try {
     const { email } = req.body;
-    if (!email) return res.status(400).json({ error: 'Email is required' });
+    if (!email || typeof email !== 'string') return res.status(400).json({ error: 'Email is required' });
 
     const result = await requestPasswordReset(email);
 
@@ -132,7 +140,7 @@ router.post('/forgot-password', forgotPasswordLimiter, async (req, res) => {
 router.post('/reset-password', resetPasswordLimiter, async (req, res) => {
   try {
     const { email, code, newPassword } = req.body;
-    if (!email || !code || !newPassword) {
+    if (!email || !code || !newPassword || typeof email !== 'string' || typeof code !== 'string' || typeof newPassword !== 'string') {
       return res.status(400).json({ error: 'Email, code, and new password are required' });
     }
 
@@ -196,6 +204,7 @@ router.post('/consent', async (req, res) => {
 // GET /api/auth/sessions - Get user's past session IDs
 router.get('/sessions', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const sessions = await getUserSessions(token);
   res.json({ sessions });
 });
@@ -203,6 +212,7 @@ router.get('/sessions', async (req, res) => {
 // GET /api/auth/engine-usage - Get Wayfinder Engine usage for today
 router.get('/engine-usage', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const usage = await getEngineUsage(token);
   res.json(usage);
 });
@@ -210,6 +220,7 @@ router.get('/engine-usage', async (req, res) => {
 // GET /api/auth/token-usage - Get daily token usage
 router.get('/token-usage', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
   const usage = await checkTokenUsage(token);
   res.json(usage);
 });
@@ -361,7 +372,11 @@ router.post('/logout', async (req, res) => {
 // GET /api/auth/search - Search user's chats
 router.get('/search', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
-  const query = (req.query.q || '').trim();
+  if (!token) return res.status(401).json({ error: 'Not authenticated' });
+
+  // Defensive: req.query.q can be string, array, or object — coerce to string
+  const rawQ = req.query.q;
+  const query = (typeof rawQ === 'string' ? rawQ : '').trim();
 
   // Validate query length (max 200 chars)
   if (query.length > 200) {

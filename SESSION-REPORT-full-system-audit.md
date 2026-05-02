@@ -1,150 +1,101 @@
 # Full System Audit — Session Report
-**Date:** 2026-04-26
-**Focus Area:** Essay Review Pipeline — Claude integration, credit accounting, JSON parsing, refund logic, frontend rendering
+**Date:** 2026-05-02
+**Focus Area:** Auth & Access Control — JWT/token flow, tier enforcement, admin/VIP system, password storage, input validation, status-code consistency
 
 ## Run Summary
-Deep audit of the essay review pipeline: `backend/routes/essays.js` (398 lines), `backend/services/essay-reviewer.js` (661 lines), `backend/services/auth.js` credit functions, `backend/services/input_filter.js`, the front-end `renderEssayReview()` (~280 lines of UI logic), and the rate-limit + auth wiring in `server.js`. Verified data integrity (internships 1606/981 verified; scholarships 1043/80; programs 826/82; volunteer 89). All JS syntax checks pass. Found 1 real bug + 1 latent defensive gap, both fixed; documented 4 informational findings. Stale TODOs in CLAUDE.md cross-checked: most are already resolved in code.
+Deep audit of the auth surface: `backend/routes/auth.js` (375 lines), `backend/services/auth.js` (1661 lines), `backend/services/crypto.js` (155 lines), `backend/services/tier-gates.js` (260 lines), `backend/routes/admin.js` (auth middleware + VIP routes), and consumer routes that gate via `canAccess` / `verifyToken` (essays, internships, programs, scholarships, demographics, summer-camps, essay-coach, stripe). Also closed an open question from the prior audit by spot-checking `scope_classifier.js` and `curated-db-context.js` for stale frontend ID references.
+
+Found **1 HIGH-severity production bug** (paid users incorrectly treated as free in K-8 + David coach surfaces — fixed) and **5 LOW/INFO** findings, four of which were patched in safe one-line changes. All JS syntax checks pass; data integrity counts verified.
 
 ## Key Findings
 
-### ER-AUDIT-1 (HIGH severity, FIXED) — Catch block refunded credits that were never deducted
-**File:** `backend/routes/essays.js` — POST `/review` handler
+### AC-AUDIT-1 (HIGH severity, FIXED) — `tier-gates.js getUserFromReq` reads wrong return shape; all paid users treated as free
+**File:** `backend/services/tier-gates.js` lines 78–88
 **Status:** FIXED
 
-The outer `catch (err)` block in the review route called `refundEssayCredit(tok)` whenever an exception was thrown — but it didn't check whether a credit had actually been deducted yet. Two specific code paths could throw before `useEssayCredit` ran:
+`tier-gates.js` calls `verifyToken` from `services/auth.js`, which returns the sanitized user object directly (a flat object: `{ id, email, plan, isAdmin, ... }`). Every other consumer of `verifyToken` in the codebase (essays.js, internships.js, programs.js, scholarships.js, demographics.js, stripe.js, etc.) treats the return value as the user. **`tier-gates.js` was the outlier** — it accessed `result.user`, which was always `undefined`, so `getUserFromReq()` returned `null` for every authenticated request.
 
-1. **Non-string `essayText` from req.body.** `essayText.trim()` on a non-string (object, number, array) throws `TypeError: essayText.trim is not a function`. There was no `typeof essayText === 'string'` guard before the `.trim()` call.
-2. **Any future code change that adds operations between the auth check and `useEssayCredit`** — silently introduces the same gift-a-credit bug.
+**Cascade impact for paid users:**
 
-Reproduced the bug in isolation:
+1. `isFreeUser(req)` always returned `true` even for Pro/Elite users. Cascades into:
+   - **K-8 Browse (`/api/summer-camps/browse`)** — paid users got abridged browse fields meant only for free users; their `_tier` was tagged `'free'` and the upgrade tease was shown to them.
+   - **K-8 Insights (`/api/summer-camps/insights`)** — sections were filtered through `filterInsightsForTier(_, true)`, suppressing Pro-only content.
+   - **K-8 Plan (`/api/summer-camps/plan`)** — code path called `checkAndConsumeQuota` (see below), blocking the request entirely.
+   - **K-8 Ask (`/api/summer-camps/ask`)** — same.
+2. `checkAndConsumeQuota(req, kind)` always returned `{allowed: false, reason: 'auth-required', message: 'Sign in to use this feature...'}` for every request (since `getUserFromReq` returned null). Pro/Elite users were *blocked entirely* from K-8 plan generation and the K-8 free-text Ask feature with a "sign in" message — even though they were already signed in.
+3. `tierAwareDavidPromptPrefix(_isFreeDavid)` was always invoked with `_isFreeDavid = true` for every essay-coach request. Paid users got the free-tier David preamble (consultations capped at "general advice mode") despite paying.
+
+**Repro (verified):**
+```js
+// verifyToken returns: { id, email, plan: 'pro', isAdmin: false }   ← flat object
+// getUserFromReq did: return (result && result.user) || null        ← .user is undefined
+// → isFreeUser() returned TRUE for a Pro user.
 ```
-> essayText = { foo: 'bar' };
-> if (!essayText || essayText.trim().length < 50) { ... }
-TypeError: essayText.trim is not a function
-[catch handler then calls refundEssayCredit, gifting 1 credit per request]
-```
 
-A malicious authenticated Pro/Elite user could repeatedly POST `{"essayText": {}}` and accumulate unlimited credits — bypassing Stripe entirely. (Free-tier users hit the 403 `_requiresUpgrade` gate before reaching the buggy line, so the exposure is limited to paid users — but it's still a real defect.)
+I confirmed this in isolation with a 20-line Node script that mocks `verifyToken` with a Pro-tier user — `getUserFromReq` returned `null`, `isFreeUser` returned `true`. After the patch, `isFreeUser` returns `false` for Pro/Elite and `true` only for `plan === 'free'` or anonymous.
 
-**Fix:**
-1. Added explicit `typeof essayText !== 'string'` guard returning 400 before any `.trim()` call.
-2. Introduced a `creditDeducted` boolean (default `false`) at the top of the handler, set to `true` only after `useEssayCredit` returns `allowed: true`. The catch block now refunds **only when** `creditDeducted === true`. If a future code change adds operations after auth but before credit deduction, exceptions in those operations correctly skip the refund.
+**Fix:** changed `return (result && result.user) || null` → `return result || null` and added an explanatory comment block. One-line change. Marker: `REVAMP V2: TIER-GATES VERIFYTOKEN-RETURN-SHAPE FIX (audit 2026-05-02)`.
 
-Verified post-fix behavior with a unit-style simulation:
-- Object essayText → 400, no refund call (was: gift a credit)
-- Too-short essayText → 400, no refund call (unchanged)
-- Valid essayText, mid-flight throw → 500, refund call (unchanged)
+**Severity rationale:** This is a production-impact regression. K-8 Summer Camps went GA in patch 28, so paid families with K-8 children (Dan's daughter is the real end-user) were getting "sign in to use this feature" errors on K-8 Plan and K-8 Ask. David always used the free-tier preamble for everyone, undercutting the paid coaching experience. Both are user-visible breakages.
 
-### ER-AUDIT-2 (INFO, not fixed) — `/history` and `/drafts` scan all reviews on disk every request
-**File:** `backend/routes/essays.js` — lines ~285, ~340
+### AC-AUDIT-2 (LOW, FIXED) — Unauthenticated email-bearing endpoints crashed on non-string input
+**File:** `backend/routes/auth.js` POST `/forgot-password`, POST `/reset-password`, POST `/signup`, POST `/login`
+**Status:** FIXED
+
+Same input-validation gap pattern as ER-AUDIT-1 from 2026-04-26. Each endpoint reads `req.body.email` and immediately calls `.toLowerCase().trim()` (or, for signup/login, ternary-truthy passes through). If a client sent `{"email": {}}` or `{"email": []}`, the `.toLowerCase()` call threw `TypeError`, was caught by the outer `try`, and returned a 500. No exploit (didn't grant access or leak info), but ugly logs and inconsistent client experience.
+
+**Fix:** Added explicit `typeof email !== 'string'` (and corresponding password / code / newPassword guards on signup, login, reset-password) returning 400 before any string operation. Pattern matches the ER-AUDIT-1 lesson captured 2026-04-26.
+
+### AC-AUDIT-3 (LOW, FIXED) — Three unauth-token-tolerant endpoints lacked the early-401 guard pattern
+**File:** `backend/routes/auth.js` GET `/sessions`, GET `/engine-usage`, GET `/token-usage`, GET `/search`
+**Status:** FIXED
+
+Pattern flagged in lessons file 2026-04-25: `if (!token) return 401` is the standard early guard for token-required endpoints. These four endpoints called the underlying service with `undefined`, which returned safe defaults (empty array / zero usage). Not an info leak — but inconsistent with the rest of the auth route, makes legitimate clients (e.g., an expired-token user) silently see zero results instead of an actionable 401.
+
+**Fix:** Added `if (!token) return res.status(401).json({ error: 'Not authenticated' });` to all four. For `/search`, also added `typeof rawQ === 'string'` coercion since Express turns repeated `?q=a&q=b` into an array — `.trim()` on an array would have thrown.
+
+### AC-AUDIT-4 (INFO, not fixed) — Admin secret + internal-task-token comparisons are not timing-safe
+**File:** `backend/routes/auth.js` POST `/admin/secret-login`, POST `/admin/create`; `backend/routes/admin.js` middleware (lines 24, 34)
 **Status:** NOT FIXED — informational
 
-Both endpoints `fs.readdir` the entire `REVIEWS_DIR`, then `Promise.all` an `fs.readFile` over every JSON file before filtering by `userId`. With N total reviews across all users, every history fetch is O(N) wall-clock and opens N file descriptors concurrently. With unbounded growth this risks `EMFILE` / `ENFILE` and slow page loads.
+`secret !== process.env.ADMIN_SECRET` and `taskToken === process.env.INTERNAL_TASK_TOKEN` use `!==` / `===`, which short-circuit on first byte mismatch and leak length+prefix timing. Mitigated in practice by `adminLimiter` (5 req/min) and `authLimiter` (10/15min) — over a year an attacker gets ~2.6M attempts, far below brute-force range for a long random secret. Already noted in lessons file 2026-04-25. Recommend `crypto.timingSafeEqual` when convenient, but not urgent.
 
-Recommended (when this becomes hot): per-user index file (`REVIEWS_DIR/_index/{userId}.json`) listing review IDs + summary fields, written in the same atomic step as the review file. History fetches O(M_user) instead of O(N_total). Deferring until measurement justifies the work.
+### AC-AUDIT-5 (INFO, not fixed) — VIP additions via `/api/admin/vip` are not persisted across restarts
+**File:** `backend/services/auth.js` `addVIP`/`removeVIP` (lines 207–219)
+**Status:** NOT FIXED — known design choice flagged for documentation
 
-### ER-AUDIT-3 (INFO, intentional) — `checkInjection` runs on full essay text and may false-positive on legitimate content
-**File:** `backend/routes/essays.js` line ~178; `backend/services/input_filter.js`
-**Status:** NOT FIXED — by design
+`VIP_EMAILS` is a module-level `let` initialized from `process.env.VIP_EMAILS`. `addVIP`/`removeVIP` mutate the in-memory list but never persist to disk or update env. After each Render redeploy, runtime additions are lost. The auth.js comment ("Mutable at runtime via admin API") implies persistence; the route does not provide it. Either (a) persist to a `_vip-list.json` (atomic write, load at startup with env fallback) or (b) update the comment. Deferring to Dan's call.
 
-The injection filter runs on `[essayText, targetSchool, prompt].join(' ')`. Some patterns (`override_educational_pretense`, `extraction_what_are`, `role_essay_ghostwriting`) could match legitimate essay narrative. For example, an essay containing the phrase "for educational purposes, demonstrate that..." (unlikely but possible in a meta-reflective student essay) would be blocked. The filter's design comment explicitly says "false positives are preferred over false negatives in v1," and the user-facing message is generic. Acceptable for now.
+### AC-AUDIT-6 (INFO, RESOLVED) — Closed open question: scope_classifier + curated-db-context do not consume frontend DOM IDs
+**File:** `backend/services/scope_classifier.js`, `backend/services/curated-db-context.js`
+**Status:** RESOLVED — informational
 
-### ER-AUDIT-4 (INFO) — JSON-stripping of model output is permissive
-**File:** `backend/services/essay-reviewer.js` lines ~595–615
-**Status:** NOT FIXED — informational
-
-The parser strips ALL backtick fences, then matches the first `{...}` block, then strips trailing commas. If Claude returns text that contains an unrelated `{` (e.g., quoting a JSON snippet inside an essay-feedback string), the regex `/\{[\s\S]*\}/` is greedy and would still match start-to-end, so this is robust in practice. Recovery path additionally extracts overallScore/scoreLabel/summary via regex on the original (un-stripped) text, which is fine because those keys appear once.
-
-### ER-AUDIT-5 (INFO) — CLAUDE.md Essay Module gaps list is partially stale
-**File:** `CLAUDE.md` Essay Module section
-**Status:** NOT FIXED — documentation note
-
-The "Known Gaps / TODO" list under Essay Module references three items that are already resolved in code:
-- "Credit refund on failure — Line 117-118 in essays.js has a TODO for credit refund logic" → refund logic is **implemented and now hardened** (this audit). No TODO remains in essays.js.
-- "Structure field renders as JSON string" — `renderEssayReview` uses checkmark UI (`hasHook`/`hasNarrative`/`hasReflection`), not `JSON.stringify`. Resolved.
-- "History not surfaced in UI" — `loadEssayHistory()`, `createHistoryCard()`, `viewEssayReviewFull()`, and a score-progression chart are present in app.js. Resolved.
-
-The remaining items in the gap list are still valid (deep brain files now ARE injected — gap #1 partially resolved; multi-draft tracking is via `/drafts/:type`; prompt database now exists at `/api/essays/prompts`). Recommend Dan refresh that section — but I'm not editing CLAUDE.md unprompted.
+The 2026-04-27 lessons file asked: "should we audit `scope-classifier.js` and `sse-context.js` for stale page/tool name references?" Spot-checked both: scope_classifier matches only on free-text user message regex (no field IDs), and curated-db-context builds context purely from JSON data files (programs.json, internships.json, etc.) with no frontend ID references. Tool-context consumer in `essay-coach.js` already enforces a strict `ALLOWED_CTX_FIELDS` allowlist that matches what `getActiveToolContext()` sends post-PATCH30. Closing this open question as no-op.
 
 ## Positive Observations
-1. **Per-user credit lock** in `useEssayCredit`/`refundEssayCredit`/`addEssayCredits` (`withCreditLock`) prevents race conditions between concurrent reviews and Stripe webhook deposits. Solid concurrency design.
-2. **Atomic review writes** — `writeFile(tmpPath)` then `rename()`, with `.tmp` files filtered out by the `.endsWith('.json')` check on directory reads. Crash-safe.
-3. **Path traversal** — `sanitizeReviewId` allows only `[a-zA-Z0-9_-]{1,128}`, preventing escape from REVIEWS_DIR.
-4. **403 vs 401 vs 402 are correctly distinguished** — auth missing = 401, plan-tier insufficient = 403, no credits = 402.
-5. **Rate-limit layering** — `expensiveLimiter` (3/min) on POST `/review` protects Anthropic spend; `apiLimiter` (30/min) on the rest of `/api/essays` protects database reads.
-6. **Recovery path** — JSON parse failures attempt regex-based score/summary extraction so users still see *something* instead of opaque 500. Score is clamped to [1,10].
-7. **Score validation** — Route validates `Number.isFinite(overallScore) && 1 <= score <= 10` and refunds the credit if model returned garbage. Defensive.
-8. **Knowledge injection scales** — Both `essayBrainCache` and `deepKnowledgeCache` are loaded once and cached; per-request injection just slices and concatenates strings. No per-request disk I/O on the brain files.
-9. **`tokensUsed`** is recorded in analytics for cost tracking. `parseRecovered` flag is logged so operators can see if the model is producing malformed JSON.
-10. **Frontend XSS-safe** — Every dynamic value in `renderEssayReview` is wrapped in `escapeHtml()`. No `innerHTML` injections of model output.
+1. **Token model.** Opaque 32-byte random tokens (not JWTs) with server-side revocation via the in-memory token index. Server-side invalidation on logout is trivial. 30-day TTL with `tokenCreatedAt` checked on every verify. Index built once at startup, maintained on create/login/logout.
+2. **Password storage.** bcrypt cost 12, password strength validation (min 8 chars + ≥1 letter + ≥1 number), legacy SHA256 auto-migrate on login, no plaintext password ever logged.
+3. **Account lockout.** 5 failed attempts → 15-minute lockout. Auto-unlock on expiry. Successful login resets the counter. Clean.
+4. **Reset-code brute force defense.** 6-digit reset code with 15-min expiry AND 5-attempt cap (the code is invalidated after 5 wrong guesses, not just rate-limited). Stronger than the rate limiter alone.
+5. **PII encryption at rest.** AES-256-GCM via `crypto.js` for `name`/`school`/`interests`/`profile`/`settings.displayName`. Fail-open if `ENCRYPTION_KEY` is unset (with warning), so the system still boots in dev.
+6. **Per-user credit lock.** `withCreditLock` serializes credit ops per-user across `useEssayCredit`/`refundEssayCredit`/`addEssayCredits` (Stripe webhook). Prevents race between concurrent reviews and credit deposits.
+7. **Mass-assignment defense.** `updateProfile` allowlists fields; `__proto__`/`constructor`/`prototype` are explicitly filtered out before Object.assign. `updateSettings` does the same.
+8. **Account deletion cascade.** Deletes user file → unlinks session files → scrubs memory + training-capture JSONL entries → appends a hashed tombstone (no PII) for audit. Right level of detail for GDPR-style "right to erasure".
+9. **Admin middleware design.** `routes/admin.js` enforces 401 (no token) → 401 (invalid) → 403 (not admin) consistently, with `INTERNAL_TASK_TOKEN` fallback for scheduled tasks (env-gated to non-empty).
+10. **`canAccess` consolidation.** Plan-tier feature gates are centralized in one map (`FEATURE_ACCESS`) and one helper (`canAccess`), used uniformly across module routes (essays/internships/programs/scholarships). Admin/VIP shortcut is checked via `isAdmin`/`isVIP` inside the helper.
+11. **`sanitizeUser`.** No password / hash / salt / token / reset code is ever serialized to the client — even for admin endpoints.
+12. **Stripe customer index.** Same O(1) optimization as the token index, separately maintained on `updateUserPlan`. Webhook lookups stay fast as users grow.
 
-## Data Integrity Check
-- Internships: **1606 entries**, 981 verified — metadata matches ✓
-- Scholarships: **1043 entries**, 80 verified — metadata matches ✓
-- Programs: **826 entries**, 82 verified — metadata matches ✓
-- Volunteer: **89 entries** ✓
-- `node -c frontend/src/app.js` — PASS ✓
-- `node -c backend/server.js` — PASS ✓
-- `node -c backend/routes/essays.js` — PASS ✓
+## Verifications Run
+- `node --check` on all touched files (services/tier-gates.js, routes/auth.js, services/auth.js, routes/admin.js, routes/summer-camps.js, routes/essay-coach.js) — all pass.
+- Data integrity:
+  - internships: 1606 entries, 981 verified, metadata.totalCount matches.
+  - scholarships: 1043 entries, 80 verified, metadata.totalCount matches.
+  - programs: 1416 entries, 672 verified, metadata.totalCount matches.
+  - volunteer: 247 entries, 247 verified, metadata.totalCount matches.
+- TG-AUDIT-1 fix verified with isolated repro Node script: `isFreeUser` now returns `false` for Pro user, `true` for free / anonymous.
 
-## Files Changed
-- `backend/routes/essays.js` — Added typeof-string guard on essayText; added `creditDeducted` flag tracking; gated catch-block refund on `creditDeducted === true`.
+## Files Modified
+- `backend/services/tier-gates.js` — TG-AUDIT-1 fix (return shape) + comment block.
+- `backend/routes/auth.js` — AC-AUDIT-2 + AC-AUDIT-3 fixes (typeof guards on signup/login/forgot-password/reset-password; 401 early guards on /sessions, /engine-usage, /token-usage, /search; query-param coercion on /search).
 
----
-
-## 2026-04-27 — Frontend UX Audit (deep)
-
-**Focus area**: Frontend UX (per the lessons file: "Frontend UX has not yet been audited at depth — schedule it next").
-
-**Scope**: `frontend/index.html` (HTML structure, ARIA, modal hygiene), `frontend/src/app.js` (XSS surfaces, stale ID references, escape consistency), `frontend/src/styles/main.css` (mobile breakpoints).
-
-### Methodology
-1. Static structural pass on `index.html` — counted opening vs. closing tags for all major containers (`div`, `section`, `header`, `footer`, `form`, `button`, etc.) — **all balanced**.
-2. ID-reference cross-check: extracted every `$('id')` call from `app.js` (343 references), compared against every `id="..."` attribute in `index.html` (389 IDs). Surfaced 36 references that don't resolve statically — triaged into "dynamically created at runtime" vs. "stale rename".
-3. ARIA / label cross-check: every `label[for="X"]` resolves to an existing `id="X"`. All `aria-labelledby` / `aria-describedby` / `aria-controls` targets resolve.
-4. XSS surface scan: 149 `innerHTML =` assignments. Spot-checked dynamic interpolations for missing `escapeHtml()` / `_esc()`.
-5. Mobile responsiveness: 18 `@media` blocks; verified 768px breakpoint covers sidebar, modals, welcome screen, messages, topbar; 767px breakpoint covers tool modals (.modal-tool-list, summer camps, volunteer, k12); 600px / 480px / 500px / 400px finer-grain tweaks present.
-
-### Issues Found
-
-| # | Severity | File | Issue | Status |
-|---|----------|------|-------|--------|
-| FUX-1 | HIGH | `frontend/src/app.js` — `getActiveToolContext()` line ~4715 | Essay branch is dead. Gate `$('essaysModal')` is null (renamed `essayView` at line 484). Field IDs `essayType`/`essayTargetSchool`/`essayText` are now `evEssayType`/`evTargetSchool`/`evEssayText`. Score selector `.essay-score-value` is now `.essay-score-num`. Result: David's chat receives no per-tool context whenever the user is on the essay page. `currentPage = 'essays'` is correctly set by `detectCurrentPage()` (which has the OR with `essayView`), but every essay-specific field — type, target school, prompt, word count, score — was dropped. | FIXED |
-| FUX-2 | LOW | `frontend/src/app.js` — same function, internships branch line ~4733 | Read `$('internshipPaid')` — element doesn't exist. The Internships filter dropdown was renamed `internshipCost` (with values 'paid' / 'unpaid'). Code at line 3776-3777 already uses `internshipCost` for the search call, but the David-context capture wasn't updated. Result: paid/unpaid filter never appeared in active-filter context attached to David. | FIXED |
-| FUX-3 | LOW | `frontend/src/app.js` — same function, K-8 fallback block lines ~4771–4776 | Fallback chain `$('scState') \|\| $('summerCampState') \|\| $('summerState')` always returned undefined. Actual K-8 browse filter IDs are `scBrowseState`, `scBrowseGrade`, `scBrowseCategory`, `scBrowseFormat`, `scBrowseCost`, plus `scBrowseRegion` / `scBrowseAppStatus` / `scBrowseStartWindow`. Result: Summer Camps (K-8) context was effectively empty in David context. | FIXED |
-| FUX-4 | INFO | `frontend/src/app.js` — multiple `innerHTML` assignments | Inconsistent escaping: a few error-display paths use `_esc(data.error)` correctly (lines 5320, 5455, 6324, 6953, 7151, 7354), but several sibling lines still interpolate `${e.message}` directly (lines 5033, 5124, 5273, 5399, 5460, 5616, 5713, 6327, 6481). For network/fetch failures `Error.message` is browser-controlled string — practical risk is low, but the inconsistency invites a regression if a future error message ever flows from a server-side string. | NOT FIXED — informational |
-| FUX-5 | INFO | `frontend/index.html` — Google Fonts link (line 129) | `&display=swap` is parsed as a malformed entity by strict HTML5 parsers (one parser warning). Browsers handle it fine; cosmetic only. Could escape as `&amp;display=swap` to silence the parser. | NOT FIXED — cosmetic |
-| FUX-6 | INFO | `frontend/src/app.js` — `welcomeJoinLink` reference line ~1797 | Dead reference: `$('welcomeJoinLink')` returns null because the welcome screen "join with invite" link was removed/renamed. Code is guarded with `if (joinLink)` so no error. Suggest cleanup when the welcome flow is next touched. | NOT FIXED — dead code |
-| FUX-7 | INFO | `frontend/src/app.js` — multi-id fallback chains for K-8 | Several legacy IDs (`scState`, `scCategory`, `summerCampState`, `summerState`, etc.) appear ONLY in `getActiveToolContext()` fallback chains — they don't exist anywhere else in the codebase. After patch FUX-3, these legacy entries are dead. Recommend deleting on next pass once the new IDs prove stable. | NOT FIXED — defer cleanup |
-
-### Fix Details
-
-**FUX-1 + FUX-2 + FUX-3 — patch in `frontend/src/app.js` `getActiveToolContext()`:**
-
-Marker: `REVAMP V2: ESSAY CONTEXT FIX PATCH30` / `REVAMP V2: PATCH30`.
-
-1. **Essay branch:** gate now matches either `essaysModal` (legacy) OR `essayView` (current). Field reads use the `ev*` IDs first, falling back to the legacy IDs. Added `essayPromptPreview` (first 240 chars of the prompt) since the prompt picker is a major part of the new UX. Score selector is now `.essay-score-num, .essay-score-value` (current first, legacy second).
-2. **Internships branch:** added `$('internshipCost')` as the primary read (with `internshipPaid` legacy fallback), plus `internshipFormat` and `internshipRegion` since both are now first-class filters.
-3. **K-8 fallback block:** prepended `scBrowse*` IDs to every fallback chain; added explicit captures for `scBrowseRegion` (USA / International), `scBrowseAppStatus` (deadline filter), and `scBrowseStartWindow` (date filter) — all introduced in patches 23/26 but missing from David context.
-
-### Validation
-- `node -c frontend/src/app.js` — PASS
-- `node -c backend/server.js` — PASS
-- `python3 html5lib parse frontend/index.html` — 1 cosmetic entity warning (FUX-5), no structural errors
-- ID cross-check post-patch: all critical David-context paths now resolve to a valid DOM ID for the live UX.
-
-### Positive Observations
-1. Helmet CSP + sanitized `escapeHtml` (line 1644) + `formatDavidReply()` (line 4896) — David's reply text is escaped before any markdown markers are applied. XSS-safe path even with model-controlled output.
-2. `detectCurrentPage()` already had the `essayView` OR fallback — only `getActiveToolContext()` was stale. The split between page detection and context extraction limits the blast radius of these renames.
-3. Mobile CSS coverage is comprehensive — 18 media queries, with a global-overflow reset at 768px and tool-modal-specific rules at 767px. No horizontal-overflow risk on small viewports.
-4. ARIA hygiene clean — every `label[for]` and `aria-*` reference resolves to an existing ID.
-5. No duplicate IDs in `index.html` (400 unique IDs).
-6. `sanitizeUrl()` prevents `javascript:` / `data:` injection in dynamically-rendered links.
-
-### Files Changed
-- `frontend/src/app.js` — 3 patches inside `getActiveToolContext()`. ~12 lines added, 6 lines modified. No behavior change for the chat pipeline; David context extraction now correctly captures essay / internships / K-8 state.
-
-### Recommended Next Audit Targets
-- Re-audit Auth & Access Control (~2026-05-03 per prior calibration).
-- API Surface monthly cadence (covered 2026-04-25).
-- Open question: ID-reference drift like FUX-1/2/3 happens whenever the HTML is renamed. Worth a once-a-week static check — could be a tiny pre-push linter script (`grep $('X')` in app.js → confirm exists in index.html). Cheap to write, prevents recurrence.

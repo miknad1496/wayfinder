@@ -76,12 +76,19 @@ const FREE_LIMITS = {
 
 /** Pull the authenticated user from req.headers.authorization (Bearer JWT). */
 export async function getUserFromReq(req) {
+  /* === REVAMP V2: TIER-GATES VERIFYTOKEN-RETURN-SHAPE FIX (audit 2026-05-02) ===
+   * verifyToken (services/auth.js) returns the sanitized user object directly
+   * (e.g. { id, email, plan, isAdmin, ... }) — NOT { user: ... }. The previous
+   * code accessed result.user which was always undefined, so getUserFromReq
+   * always returned null for valid tokens. That made isFreeUser() return TRUE
+   * for every authenticated user, blocking K-8 plan/ask for paid users and
+   * forcing the free-tier David preamble for everyone. */
   const auth = (req && req.headers && req.headers.authorization) || '';
   const token = auth.startsWith('Bearer ') ? auth.slice(7) : null;
   if (!token) return null;
   try {
     const result = await verifyToken(token);
-    return (result && result.user) || null;
+    return result || null;
   } catch (_) {
     return null;
   }

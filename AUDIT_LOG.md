@@ -1230,3 +1230,32 @@ None — no production issues required a fix this run.
 
 ### Recap
 Site posture is clean entering May. Cost surface stable, server boots clean, data integrity tight, essay pipeline + stripe idempotency both intact. The fsPromises regression check (added after the Apr-27 incident) and the `markEventProcessed`-has-catch resolution close out two follow-ups from prior nights.
+
+## 2026-05-02 — Auth & Access Control (Full System Audit)
+
+**Focus**: Auth & Access Control — JWT/token model, tier enforcement, admin/VIP, password storage, input validation, status-code consistency. Also closed open question on scope_classifier + curated-db-context ID drift.
+
+### Issues Found
+
+| # | Severity | Issue | Status |
+|---|----------|-------|--------|
+| AC-AUDIT-1 | HIGH | `tier-gates.js getUserFromReq` accessed `result.user` but `verifyToken` returns the user object directly. Returned null for every authenticated request → `isFreeUser` = TRUE for everyone → paid users blocked from K-8 plan/ask, K-8 browse abridged, David coach always used free preamble. | FIXED |
+| AC-AUDIT-2 | LOW | signup/login/forgot-password/reset-password called `.toLowerCase().trim()` on req.body strings without typeof narrowing — non-string inputs threw TypeError caught by outer try → 500. | FIXED |
+| AC-AUDIT-3 | LOW | `/sessions`, `/engine-usage`, `/token-usage`, `/search` lacked the early-401 guard pattern; underlying services returned safe defaults but the missing guard is inconsistent with rest of the route. `/search` also vulnerable to repeated-query-param array → `.trim()` throw. | FIXED |
+| AC-AUDIT-4 | INFO | Admin secret + INTERNAL_TASK_TOKEN compared with `===`/`!==` (not timing-safe). Mitigated by adminLimiter (5/min). Already flagged 2026-04-25. | NOT FIXED — informational |
+| AC-AUDIT-5 | INFO | VIP additions via /api/admin/vip not persisted across Render restarts (in-memory only). | NOT FIXED — known design gap |
+| AC-AUDIT-6 | INFO | scope_classifier.js + curated-db-context.js do not consume frontend DOM IDs. Open question from 2026-04-27 lessons file resolved as no-op. | RESOLVED |
+
+### Fixes Applied
+1. **services/tier-gates.js** — `return (result && result.user) || null` → `return result || null` with explanatory comment block. One-line behavior change. Marker: `REVAMP V2: TIER-GATES VERIFYTOKEN-RETURN-SHAPE FIX (audit 2026-05-02)`.
+2. **routes/auth.js** — added explicit `typeof === 'string'` guards on email/password/code/newPassword in signup, login, forgot-password, reset-password.
+3. **routes/auth.js** — added `if (!token) return 401` early guards to /sessions, /engine-usage, /token-usage, /search.
+4. **routes/auth.js** — `/search` query-param coerced via `typeof rawQ === 'string'` before `.trim()`.
+
+### Verifications
+- `node --check` on all touched files: all pass.
+- Data integrity: internships 1606/981, scholarships 1043/80, programs 1416/672, volunteer 247/247 — metadata counts match array lengths.
+- TG-AUDIT-1 fix verified with isolated 20-line Node repro: `isFreeUser` returns FALSE for Pro user / TRUE for free + anonymous.
+
+### Estimated Impact
+TG-AUDIT-1 has been live since the K-8 GA cutover (patch 28). Paid families with K-8 children using K-8 Plan or K-8 Ask got "Sign in to use this feature" errors despite being authenticated, and paid users got the free-tier David preamble across the essay coach. Single-line fix restores the intended Pro/Elite experience. Worth checking with Dan whether anyone surfaced these as bug reports.
