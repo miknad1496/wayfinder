@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext, getLiteBrainContext } from './knowledge.js';
+import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: CURATED DB INJECTION PATCH35
 import { getCuratedDBContext, buildUserTierContext } from './curated-db-context.js';
 import { initOutputFilter, filterResponse as filterLeakage, invalidateOutputFilter } from './output_filter.js';
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
@@ -595,6 +596,22 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
     // STANDARD MODE: Route to career or admissions brain based on query (~50% token savings)
     contextStr = await getLiteBrainContext(userMessage);
     console.log(`[Standard Mode] Brain routed for: "${userMessage.slice(0, 60)}..."`);
+  }
+
+  // REVAMP V2: CURATED DB INJECTION PATCH35 — inject SPECIFIC curated DB entries (programs/internships/
+  // scholarships/volunteer) that match the query + user profile. Works in BOTH
+  // engine and standard mode so free-tier users also get specific answers
+  // instead of generic theory. Returns '' for off-topic queries (no false-positive
+  // token cost).
+  try {
+    const curated = await searchCuratedEntries(userMessage, sessionContext, useEngine ? 8 : 5);
+    if (curated) {
+      contextStr = (contextStr || '') + '\n' + curated;
+      const lineCount = curated.split('\n').length;
+      console.log('[CuratedSearch] injected ' + lineCount + ' lines for: "' + userMessage.slice(0, 60) + '..."');
+    }
+  } catch (curatedErr) {
+    console.warn('[CuratedSearch] failed (non-fatal):', curatedErr.message);
   }
 
   // Build system prompt with context
