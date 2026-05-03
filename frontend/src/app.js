@@ -604,7 +604,7 @@ function appendMessage(role, text, sources = [], mode = null) {
   let badgeHTML = '';
   if (role === 'assistant' && mode) {
     const modeLabels = { // REVAMP V2: PERSONA TIERS PATCH55 — distinct persona tiers
-      engine: 'Wayfinder Engine',
+      engine: 'Head Consultant', // REVAMP V2: HEAD CONSULTANT RENAME PATCH56
       haiku_intake: 'Welcome Desk',
       slm: 'Advisor',
       haiku_advisor: 'Advisor',
@@ -763,7 +763,7 @@ function setupEngineListeners() {
 
 function toggleEngine() {
   if (!authToken || !currentUser) {
-    alert('Please log in to use the Wayfinder Engine.');
+    alert('Please log in to use Head Consultant mode.'); // REVAMP V2: HEAD CONSULTANT RENAME PATCH56
     return;
   }
   if (engineRemaining <= 0 && !engineActive) {

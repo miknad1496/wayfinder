@@ -516,7 +516,9 @@ router.post('/', async (req, res) => {
         school: auth.user.school,
         interests: auth.user.interests,
         profile: auth.user.profile,
-        plan: auth.user.plan || 'free'
+        plan: auth.user.plan || 'free',
+        isAdmin: !!auth.user.isAdmin, // REVAMP V2: HEAD CONSULTANT RENAME PATCH56
+        isVIP: !!auth.user.isVIP,
       };
     }
 
