@@ -7897,6 +7897,9 @@ async function loadApGuides() {
       list.innerHTML = '<p style="color:#94a3b8; grid-column:1/-1;">No study guides available yet.</p>';
       return;
     }
+    // PATCH79: update heading subtitle with dynamic count
+    const countEl = document.getElementById('apGuidesCount');
+    if (countEl) countEl.textContent = guides.length;
     list.innerHTML = guides.map(g => {
       const url = API_BASE + '/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(authToken);
       const sizeKb = (g.size / 1024).toFixed(0);
@@ -7921,7 +7924,7 @@ async function submitApScoring() {
   const result = document.getElementById('apScoreResult');
   btn.disabled = true;
   btn.textContent = 'Scoring (this can take 30-60s)...';
-  if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Scoring your response — Claude Opus is reading the rubric...</div>';
+  if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Wayfinder is scoring your response — analyzing against the AP rubric...</div>';
   try {
     const r = await fetch(API_BASE + '/ap-coach/score', {
       method: 'POST',
@@ -8023,3 +8026,4 @@ function renderApScore(score) {
 // REVAMP V2: AP COACH JS HOTFIX PATCH76 — fixed getToken (4x) + double-/api/ (6x)
 
 // REVAMP V2: PATCH76 SYNTAX FIX PATCH77 — fixed 6 broken URL patterns from patch76
+// REVAMP V2: BRAND + COUNT FIX PATCH79 app.js — branding leak fixed + dynamic guide count wiring
