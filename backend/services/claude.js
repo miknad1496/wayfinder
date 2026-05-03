@@ -495,7 +495,7 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   if (useEngine) {
     // FULL ENGINE MODE: RAG retrieval — topK scales with conversation phase
     const topK = phase.phase >= 3 ? 8 : phase.phase >= 2 ? 6 : 4;
-    const ragResult = await retrieveContext(userMessage, { topK, userId: sessionContext?.userId || null }); // REVAMP V2: USER-SCOPED MEMORY PATCH41
+    const ragResult = await retrieveContext(userMessage, { topK, mode: 'engine', userId: sessionContext?.userId || null }); // REVAMP V2: ENGINE MODE BM25 DISPATCH FIX (audit 2026-05-03) — without mode:'engine' the knowledge.js retrieveContext defaulted to mode:'standard' and returned only the lite-brain chunk; engine users were paying for Opus but getting the lite-RAG experience. Patch 41 added userId but did not add mode:'engine'.
     // Support both new format ({ chunks, sources }) and legacy (flat array)
     relevantChunks = Array.isArray(ragResult) ? ragResult : (ragResult?.chunks || []);
     contextStr = formatContext(relevantChunks);

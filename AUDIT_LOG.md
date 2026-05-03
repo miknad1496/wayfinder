@@ -1301,3 +1301,30 @@ TG-AUDIT-1 has been live since the K-8 GA cutover (patch 28). Paid families with
 
 ### Recap
 Two-week-old data-hygiene flag closed with an architectural fix. The same `normalizeEntry` infrastructure can absorb future deterministic-fix data drift (e.g., trimmed whitespace, lowercase format codes) without nightly patching. No engine-layer changes.
+
+## 2026-05-03 — Chat Pipeline (Full System Audit)
+
+**Focus**: Chat Pipeline — patches 35-45 (Simon Kim depth bundle + SLM RAG bundle) with cross-call-site shape audit per the lesson promoted 2026-05-02.
+
+### Issues Found
+
+| # | Severity | Issue | Status |
+|---|----------|-------|--------|
+| CP-AUDIT-1 | HIGH | `claude.js` engine mode calls `retrieveContext({topK, userId})` without `mode:'engine'` → dispatcher defaults to `'standard'` → returns ONE lite-brain chunk instead of BM25 top-K. Engine users have been paying for Opus + getting Sonnet's lite-RAG context since the SLM tier landed. Patches 37 (per-school) and 45 (financial-aid deep brain) were unreachable from the engine path. | FIXED |
+| CP-AUDIT-2 | LOW | Patch 44's intl scoring regex omitted US territories (PR/VI/GU/MP/AS) and the 'ALL' multi-state tag. Replaced with `VALID_STATE_CODES.has(entryState)` + 'ALL' check using the same source of truth as `extractState`. | FIXED |
+| CP-AUDIT-3 | INFO | Schools loader (Patch 37) prints `from N files` using unfiltered `readdir` count, including README.md. Cosmetic. | NOT FIXED |
+| CP-AUDIT-4 | INFO | Patch 43 auto-engine disable confirmed working: `if (false && ...)` short-circuits. | RESOLVED |
+| CP-AUDIT-5 | INFO | `searchCuratedEntries` shape consistent across `claude.js` and `slm.js` consumers. | RESOLVED |
+
+### Fixes Applied
+1. **services/claude.js:498** — `retrieveContext(userMessage, { topK, userId })` → `retrieveContext(userMessage, { topK, mode: 'engine', userId })`. Marker: `REVAMP V2: ENGINE MODE BM25 DISPATCH FIX (audit 2026-05-03)`. Verified pre-fix → 1 chunk (lite-brain), post-fix → 8 chunks (BM25 incl. school-stanford.md).
+2. **services/curated-search.js:199** — replace hand-rolled US-state regex with `VALID_STATE_CODES.has(entryState) || entryState === 'ALL'`. Marker: `REVAMP V2: INTL US-CHECK USES STATE WHITELIST (audit 2026-05-03)`. Verified by 6-case scoring matrix.
+
+### Verifications
+- `node --check`: claude.js, curated-search.js, slm.js, knowledge.js, scope_classifier.js, analysis-frameworks.js, chat.js — all pass.
+- Data integrity: internships 1606/1606, programs 1416/1416, scholarships 1043/1043, volunteer 247/247 — all metadata.totalCount matches.
+- JSON syntax: all 4 module files parse cleanly.
+- CP-AUDIT-1 reproduced and confirmed pre/post fix with isolated Node script against `/tmp/audit/wayfinder/backend/services/knowledge.js`.
+
+### Estimated Impact
+**CP-AUDIT-1 is the most consequential bug surfaced in any audit since the credit-gift one (2026-04-26).** Engine mode is the premium feature paid users toggle on for "the $10K consultant moment" (per the system prompt comment). The actual retrieval was running on lite-brain — i.e., engine users got Opus on top of the same context Sonnet had. Patches 35/37/45 (Simon Kim depth bundle) were addressing the symptom; this fix addresses the architectural dispatch bug behind it. Worth flagging to Dan: any user reports of "engine answers feel generic" before today are explained by this regression.

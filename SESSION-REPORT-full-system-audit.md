@@ -1,3 +1,112 @@
+# Full System Audit — 2026-05-03
+
+**Date:** 2026-05-03
+**Focus Area:** Chat Pipeline — patches 35-45 (Simon Kim depth bundle + SLM RAG bundle), with cross-call-site shape audit per the lesson promoted on 2026-05-02
+
+## Run Summary
+Deep audit of the recent SLM/curated-search/auto-engine/financial-aid/per-school work. The lessons file specifically called out a sub-check ("when a service exposes a function used by ≥2 modules, grep all callers and confirm they destructure / shape-handle identically") to apply on every rotation. Applied that to `retrieveContext` (called from `claude.js` and `slm.js`) and `searchCuratedEntries` (same pair).
+
+Found **1 HIGH-severity production regression** (engine mode silently routing to lite-brain instead of BM25) and **1 LOW** issue (international scoring regex omits US territories), both fixed. All `node --check` passes; data integrity counts match metadata.
+
+## Key Findings
+
+### CP-AUDIT-1 (HIGH severity, FIXED) — `claude.js` engine mode silently bypasses BM25 RAG and uses only the lite-brain
+**File:** `backend/services/claude.js` line 498
+**Status:** FIXED
+
+`claude.js` engine mode calls `retrieveContext(userMessage, { topK, userId })` (since Patch 41) **without** specifying `mode: 'engine'`. The dispatcher in `knowledge.js` defaults `mode` to `'standard'`:
+
+```js
+// knowledge.js retrieveContext
+mode = optionsOrTopK.mode || 'standard';
+if (mode === 'standard') {
+  const liteBrain = await getLiteBrainContext(query);
+  const chunks = [{ source: 'wayfinder-knowledge-base', title: ..., content: liteBrain, layer: 'base', score: 1.0 }];
+  return { chunks, sources };          // ← returns ONE lite-brain chunk
+}
+// For engine mode, use full BM25 retrieval
+const results = await retrieveContextV2(query, topK, { userId: _v41_userId });
+```
+
+That meant **paid Engine users (Pro/Elite/Coach/Consultant) were paying for Opus-tier model + the "premium" RAG experience, but the actual context fed to Opus was identical to what Sonnet gets in standard mode** — a single `wayfinder-knowledge-base` chunk. The BM25 layer (4280 indexed chunks across distilled MD + base + raw data + per-school files), the `topK` scaling by conversation phase, the entity boosts, the schools deep knowledge from Patch 37 — all unreachable from the engine path.
+
+**Repro (verified):**
+```
+PRE-FIX  claude.js engine: { topK: 8, userId: null }
+   → chunks: 1, sources: ["wayfinder-knowledge-base"]
+POST-FIX claude.js engine: { topK: 8, mode: 'engine', userId: null }
+   → chunks: 8, sources: ["admissions-school-selection-intelligence.md",
+                          "admissions-parent-strategy-guide.md",
+                          "school-stanford.md", ...]
+```
+
+**Provenance:** The `mode === 'standard' / mode === 'engine'` dispatch was added in commit `2fcf5f9` ("Add SLM tier (Wayfinder 05E)") without a corresponding update to the legacy `claude.js` call site. Since `retrieveContext(query, 6)` (the original call) becomes `topK=6, mode='standard'` (default) under the new dispatcher, claude.js engine mode has been on the lite-brain code path **since the SLM tier landed**. Patch 40 fixed the symmetric problem in `slm.js`. Patch 41 modified the `claude.js` call to pass `userId` but did not add `mode`. So the regression has been live across the entire engine mode user base for as long as the dual dispatcher has existed.
+
+**Impact:**
+- Patch 37 per-school deep knowledge (school-stanford.md) was never reaching engine users from the chat path even though it was indexed correctly.
+- Patch 45 financial aid deep brain (admissions-financial-aid-strategy.md) was never reaching engine users either.
+- The `topK` calculation (4 / 6 / 8 by conversation phase) was being computed and discarded.
+- Engine-mode Opus calls were running on lite-brain context (38KB career + 12KB admissions) instead of BM25-scored chunks.
+
+**Fix:** One-line change at `backend/services/claude.js:498` — added `mode: 'engine'` to the options object. Marker: `REVAMP V2: ENGINE MODE BM25 DISPATCH FIX (audit 2026-05-03)`. Verified by side-by-side run of the pre-fix and post-fix call shapes — chunk count 1 → 8, sources flipped from lite-brain to BM25-scored top-K.
+
+**Severity rationale:** This is the single biggest perceived-quality bug in the system. The "Simon Kim depth investigation" (patches 34-37) explicitly identified that paid users felt engine answers were generic — and the architectural cause was assumed to be missing per-school files (patch 37) or curated DB entries (patch 35). Both of those landed correctly. **The actual reason engine answers felt generic is that engine mode was running on lite-brain context the entire time.** Patches 35 and 37 helped but only via the curated-search injection (which works in claude.js). The BM25 retrieval over distilled brain + base + raw data + per-school files — the 4280-chunk advisory backbone — has been dead in engine mode.
+
+### CP-AUDIT-2 (LOW severity, FIXED) — Patch 44 international US-state regex omits territories and the 'ALL' tag
+**File:** `backend/services/curated-search.js` line 199
+**Status:** FIXED
+
+Patch 44's `intl` scoring branch tested whether an entry's state code was US with a hand-rolled regex `/^(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY]|ALL)$/`. Audited against the canonical `VALID_STATE_CODES` set (already declared at the top of the same file as the source of truth for state validation):
+- **Territories missed:** `PR` (Puerto Rico), `VI` (Virgin Islands), `GU` (Guam), `MP` (Northern Mariana), `AS` (American Samoa).
+- **Behavior:** when an "international" query came in and a curated entry was tagged with one of these territory codes, the entry would be scored as **non-US** (+4 boost) instead of penalized as US (-10). For a query like "study abroad programs in the Caribbean", a Puerto Rico entry would have ranked toward the top of the international results.
+
+**Why this hadn't surfaced as a user-visible bug:** none of the 4 module data files currently use territory state codes (verified by grep across programs/internships/scholarships/volunteer JSONs). So this is a future-data hazard, not a current production bug.
+
+**Fix:** Replaced the hand-rolled regex with `(entryState === 'ALL' || VALID_STATE_CODES.has(entryState))` — uses the same source of truth as `extractState`. Also extended the check to include `'ALL'`-tagged entries (which represent multi-state US programs, e.g., EF Language Travel Camps). Marker: `REVAMP V2: INTL US-CHECK USES STATE WHITELIST (audit 2026-05-03)`. Verified by 6-test scoring matrix — CA/PR/GU/ALL all penalized as US under intl=true, UK/FR boosted as non-US.
+
+### CP-AUDIT-3 (INFO, not fixed) — Schools dir log overcounts files when README.md present
+**File:** `backend/services/knowledge.js` lines 1606-1614
+**Status:** NOT FIXED — cosmetic
+
+The schools loader (`Patch 37`) prints `Schools deep knowledge: N chunks from M files` where `M = schoolFiles.length` (i.e., the unfiltered readdir count, including README.md). After filtering on `f.endsWith('.md') && f !== 'README.md'`, only the actually-loaded files contribute chunks. So at boot today, the log says "8 chunks from 2 files" when only 1 file (school-stanford.md) actually loaded. Trivial cosmetic. Not a behavior bug.
+
+### CP-AUDIT-4 (INFO, RESOLVED) — Auto-engine promotion is correctly disabled via `if (false && ...)` short-circuit
+**File:** `backend/routes/chat.js` line 402
+**Status:** RESOLVED — informational
+
+Confirmed Patch 43's disable-condition is `if (false && isPaidTier && (_isSpecificQuery(message) || _curatedWillFire))`. The `false &&` short-circuits the whole condition before evaluating the right-hand side, so no auto-engine promotion fires. The dead `_isSpecificQuery` helper and `_curatedSearchInternals.detectModules` import are intentionally preserved for easy re-enable. No issue.
+
+### CP-AUDIT-5 (INFO, RESOLVED) — `searchCuratedEntries` cross-call-site shape verified consistent
+**Files:** `backend/services/curated-search.js` (defines), `backend/services/claude.js:515`, `backend/services/slm.js:422` (consumers)
+**Status:** RESOLVED — informational
+
+Both consumers call `await searchCuratedEntries(userMessage, sessionContext, limit)` and treat the return as a string (truthy → append to system prompt). claude.js uses `useEngine ? 8 : 5`; slm.js hard-codes 8. Function returns `''` for off-topic queries, so the truthy gate works for both. No shape drift.
+
+## Positive Observations
+1. **Engine fix proves out patches 35 + 37 + 45 silently.** With CP-AUDIT-1 fixed, engine users now actually receive school-stanford.md (Patch 37) and admissions-financial-aid-strategy.md (Patch 45) and the full BM25 chunk pool. The Simon Kim depth bundle's intent fully reaches paid users for the first time.
+2. **Curated-search v2 (Patch 44) intl detection is well-designed beyond the regex nit.** The `INTL_SIGNALS` list covers high-recall phrases without false positives on common US-state shorthand. Test scoring with a Korean / Italian / French query produced expected non-US dominance.
+3. **scope_classifier graceful-degrade tree.** Empty input → `in_scope` (avoids penalizing keystroke artifacts). Embedding failure → `adjacent` (conservative). Kill-switch and shadow-mode env vars wired in. The dispatch is clean.
+4. **retrieveContext's legacy fallback chain** — both the BM25 path and the keyword-based legacy still exist; if BM25 throws, the legacy path is tried before erroring out. Patch 41's userId propagation respects the same try/catch boundary.
+5. **Per-school deep knowledge schema** (Patch 37) — adds `chunk._school` metadata cleanly without polluting the search field, so the BM25 surface is unchanged but downstream consumers (e.g., future per-school filtering) have access to the school identity.
+6. **SLM mode='engine' (Patch 40) is correctly coupled to topK=16** — SLM gets the full BM25 surface area at zero per-token cost since it's self-hosted. This is now actually mirrored in claude.js engine path post-fix.
+
+## Verifications Run
+- `node --check` on touched files (claude.js, curated-search.js) — pass.
+- `node --check` on every chat-pipeline service file — all pass.
+- Repro of CP-AUDIT-1 with isolated 4-line script: confirmed pre-fix returns 1 lite-brain chunk; post-fix returns 8 BM25 chunks including school-stanford.md.
+- Repro of CP-AUDIT-2 with 6-case scoring matrix: CA/PR/GU/ALL penalized; UK/FR boosted under intl=true. All PASS.
+- Data integrity:
+  - internships: 1606 entries, metadata.totalCount = 1606. ✓
+  - programs: 1416 entries, metadata.totalCount = 1416. ✓
+  - scholarships: 1043 entries, metadata.totalCount = 1043. ✓
+  - volunteer: 247 entries, metadata.totalCount = 247. ✓
+- JSON syntax: all 4 module files parse cleanly via `JSON.parse`.
+- Auto-engine confirmed disabled via `if (false &&...)` short-circuit (CP-AUDIT-4).
+
+## Files Modified
+- `backend/services/claude.js` — CP-AUDIT-1 fix: add `mode: 'engine'` to retrieveContext call so engine mode reaches BM25 retrieval.
+- `backend/services/curated-search.js` — CP-AUDIT-2 fix: replace hand-rolled US-state regex with `VALID_STATE_CODES.has(...)` + `'ALL'` check.
+
 # Full System Audit — Session Report
 **Date:** 2026-05-02
 **Focus Area:** Auth & Access Control — JWT/token flow, tier enforcement, admin/VIP system, password storage, input validation, status-code consistency

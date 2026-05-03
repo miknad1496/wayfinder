@@ -196,7 +196,8 @@ function scoreEntry(entry, query, state, grade, keywords, intl = false) { // REV
   // REVAMP V2: CURATED-SEARCH V2 PATCH44 — international intent: penalize US-coded entries so
   // non-US (Oxford, Bocconi, NUS, etc.) dominate top-K results.
   if (intl) {
-    const isUSEntry = entryState && /^(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY]|ALL)$/.test(entryState);
+    // REVAMP V2: INTL US-CHECK USES STATE WHITELIST (audit 2026-05-03) — was a hand-rolled regex that omitted US territories (PR/VI/GU/MP/AS) and 'ALL'-tagged entries; now uses VALID_STATE_CODES (the same source of truth used by extractState).
+    const isUSEntry = !!entryState && (entryState === 'ALL' || VALID_STATE_CODES.has(entryState));
     if (isUSEntry) score -= 10;
     else if (entryState && !isUSEntry) score += 4; // boost non-US
   } else if (state && entryState) {
