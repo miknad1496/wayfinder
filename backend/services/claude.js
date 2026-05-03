@@ -431,28 +431,58 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   systemPrompt += buildProfileString(sessionContext);
   systemPrompt += WAYFINDER_IDENTITY_RULES;
 
-  // REVAMP V2: HAIKU ADVISOR INJECTIONS PATCH47 — wire all four intelligence injections into the Haiku
-  // Advisor fallback path. This is the path users hit when the SLM is cold
-  // (long-history sessions never warm the SLM via Welcome Desk). Without
-  // this, all our patches (35/42/46) silently no-op for these users.
-  try {
-    const curated = await searchCuratedEntries(userMessage, sessionContext, 5);
-    if (curated) {
-      systemPrompt += '\n' + curated;
-      console.log('[HAIKU-ADVISOR CuratedSearch] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+  // REVAMP V2: PERSONA TIERS PATCH55 — gate chatHaikuAdvisor injections by user tier.
+  // Free users get NERFED Haiku Assistant (lite brain only, no curated/
+  // critical-facts/frameworks). Paid users keep the full Haiku Advisor
+  // (curated + critical facts + frameworks + per-school) as a real
+  // SLM-cold fallback. Three distinct personas: Assistant (free Haiku) <
+  // Advisor (paid Haiku / SLM) < Engine (Opus).
+  const _v55_userPlan = String(sessionContext?.plan || sessionContext?.userPlan || 'free').toLowerCase();
+  const _v55_isPaid = ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(_v55_userPlan)
+    || sessionContext?.isAdmin || sessionContext?.isVIP;
+  const _v55_persona = _v55_isPaid ? 'advisor' : 'assistant';
+
+  // Persona system prompt — explicit role + capability framing
+  if (_v55_persona === 'assistant') {
+    systemPrompt += "\n\n═══════════════════════════════════════════\n" +
+      "YOU ARE: WAYFINDER ASSISTANT (free tier, basic helper)\n" +
+      "═══════════════════════════════════════════\n" +
+      "You are the lighter Wayfinder Assistant — quick, helpful, concise. You give general guidance using basic admissions/career theory but you do NOT have access to:\n" +
+      "  - Specific program/internship/scholarship listings (those live in Wayfinder Advisor)\n" +
+      "  - Per-school deep intel (Stanford/MIT/Yale/Penn/Caltech files — Advisor has those)\n" +
+      "  - Critical-facts cheat sheets (financial aid SAI/grandparent 529/loan caps — Advisor has those)\n" +
+      "  - Structured analysis frameworks (chance-me, ROI — Advisor + Engine have those)\n" +
+      "\nYour role is to give helpful but BRIEF general-direction answers (~150-300 words max). When the user asks something specific or complex, mention that the Wayfinder Advisor (their AI college coach) or Wayfinder Engine (deep-research mode) would give a much richer answer. Don't fake the depth you don't have.\n";
+  } else {
+    systemPrompt += "\n\n═══════════════════════════════════════════\n" +
+      "YOU ARE: WAYFINDER ADVISOR (paid tier, full coach via Haiku fallback)\n" +
+      "═══════════════════════════════════════════\n" +
+      "You are the Wayfinder Advisor — the user's full AI college coach. You have access to the curated database, school-specific intel, and structured frameworks. Use them. Reference specific programs by name with deadlines. Cite specific facts (SAI/grandparent 529/loan caps/test policies). Give detailed, calibrated advice. The user is on a paid plan and expects depth.\n";
+  }
+
+  // Tier-gated injections — paid only
+  if (_v55_isPaid) {
+    try {
+      const curated = await searchCuratedEntries(userMessage, sessionContext, 5);
+      if (curated) {
+        systemPrompt += '\n' + curated;
+        console.log('[HAIKU-ADVISOR CuratedSearch] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+      }
+      const _v55_facts = getCriticalFacts(userMessage);
+      if (_v55_facts) {
+        systemPrompt += _v55_facts;
+        console.log('[HAIKU-ADVISOR CriticalFacts] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+      }
+      const _v55_framework = detectAnalysisFramework(userMessage);
+      if (_v55_framework) {
+        systemPrompt += '\n\n' + _v55_framework.prompt;
+        console.log('[HAIKU-ADVISOR Framework] activated: ' + _v55_framework.name + ' for: "' + (userMessage || '').slice(0, 60) + '..."');
+      }
+    } catch (injErr) {
+      console.warn('[HAIKU-ADVISOR] injection failed (non-fatal):', injErr.message);
     }
-    const _v47_facts = getCriticalFacts(userMessage);
-    if (_v47_facts) {
-      systemPrompt += _v47_facts;
-      console.log('[HAIKU-ADVISOR CriticalFacts] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
-    }
-    const _v47_framework = detectAnalysisFramework(userMessage);
-    if (_v47_framework) {
-      systemPrompt += '\n\n' + _v47_framework.prompt;
-      console.log('[HAIKU-ADVISOR Framework] activated: ' + _v47_framework.name + ' for: "' + (userMessage || '').slice(0, 60) + '..."');
-    }
-  } catch (injErr) {
-    console.warn('[HAIKU-ADVISOR] injection failed (non-fatal):', injErr.message);
+  } else {
+    console.log('[HAIKU-ASSISTANT] free tier — skipping curated/critical-facts/framework injection');
   }
   // REVAMP V2: HAIKU ADVISOR INJECTIONS PATCH47 — engine-availability narrative
   systemPrompt += "\n\n═══════════════════════════════════════════\nENGINE-MODE AWARENESS (CRITICAL — ACT ON THIS)\n═══════════════════════════════════════════\nYou are operating in Wayfinder's STANDARD tier (Haiku Advisor fallback). Wayfinder ENGINE MODE (premium toggle near the chat input) provides:\n  - Full Opus-class analysis\n  - Deeper RAG retrieval across the entire advisory database\n  - Per-school deep knowledge files (Stanford, MIT, etc.)\n  - Structured analysis frameworks (chance-me, school-fit, etc.)\n  - Richer curated-DB summaries and profile personalization\n\nWhen the user asks something that would genuinely benefit from engine mode — specific school strategy, comparing schools, deep ED/REA strategy, chance-me asks, complex what-if scenarios, multi-factor recommendations — mention engine mode at the END of your response in ONE short line. Examples: \"For the full deep-dive — including school-specific intel — toggle Wayfinder Engine mode.\" / \"Engine mode would give a richer, more strategy-grounded answer here.\"\n\nRULES — calibrated, not spammy: DO NOT mention engine on simple greetings or quick clarifications. ONE short sentence at the END only. Phrase it as \"more depth available\" — the user already has access via the toggle.\n═══════════════════════════════════════════";
@@ -464,7 +494,7 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
 
   const response = await anthropic.messages.create({
     model: haikuModel,
-    max_tokens: 1024,
+    max_tokens: _v55_persona === 'assistant' ? 600 : 1024, // REVAMP V2: PERSONA TIERS PATCH55 — Assistant gets shorter responses
     system: systemPrompt,
     messages: sanitizeHistory([
       ...conversationHistory.slice(-10),
@@ -478,7 +508,7 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
 
   return {
     response: filteredText,
-    mode: 'haiku_advisor',
+    mode: _v55_persona === 'assistant' ? 'haiku_assistant' : 'haiku_advisor', // REVAMP V2: PERSONA TIERS PATCH55
     model: haikuModel,
     retrievedSources: [],
     usage: {

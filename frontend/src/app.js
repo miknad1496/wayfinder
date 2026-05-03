@@ -603,11 +603,12 @@ function appendMessage(role, text, sources = [], mode = null) {
   // Mode badge
   let badgeHTML = '';
   if (role === 'assistant' && mode) {
-    const modeLabels = {
+    const modeLabels = { // REVAMP V2: PERSONA TIERS PATCH55 — distinct persona tiers
       engine: 'Wayfinder Engine',
       haiku_intake: 'Welcome Desk',
       slm: 'Advisor',
       haiku_advisor: 'Advisor',
+      haiku_assistant: 'Assistant',
       haiku_standard: 'Standard',
       slm_quality_fallback: 'Advisor',
       slm_error_fallback: 'Advisor',
