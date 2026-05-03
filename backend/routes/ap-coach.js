@@ -263,18 +263,31 @@ router.get('/score/:id', async (req, res) => {
 
 // ─── REVAMP V2: AP COACH FRONTEND PATCH70 — Study guide download endpoints ───
 const GUIDES_DIR = join(__dirname, '..', 'data', 'ap-study-guides');
-const EXAM_TO_GUIDE = {
+const EXAM_TO_GUIDE = { // REVAMP V2: AP COACH LAYOUT + GUIDES PATCH78 EXAM_TO_GUIDE
+  'ap-art-history': { file: 'AP_Art_History_Universal_Study_Guide.docx', label: 'AP Art History' },
   'ap-biology': { file: 'AP_Biology_Universal_Study_Guide.docx', label: 'AP Biology' },
   'ap-calc-ab': { file: 'AP_Calculus_AB_Universal_Study_Guide.docx', label: 'AP Calculus AB' },
+  'ap-calc-bc': { file: 'AP_Calculus_BC_Universal_Study_Guide.docx', label: 'AP Calculus BC' },
   'ap-chemistry': { file: 'AP_Chemistry_Universal_Study_Guide.docx', label: 'AP Chemistry' },
+  'ap-csa': { file: 'AP_Computer_Science_A_Universal_Study_Guide.docx', label: 'AP Computer Science A' },
+  'ap-csp': { file: 'AP_Computer_Science_Principles_Universal_Study_Guide.docx', label: 'AP Computer Science Principles' },
   'ap-english-lang': { file: 'AP_English_Lang_Universal_Study_Guide.docx', label: 'AP English Language' },
   'ap-english-lit': { file: 'AP_English_Literature_Universal_Study_Guide.docx', label: 'AP English Literature' },
+  'ap-environmental-science': { file: 'AP_Environmental_Science_Universal_Study_Guide.docx', label: 'AP Environmental Science' },
+  'ap-european-history': { file: 'AP_European_History_Universal_Study_Guide.docx', label: 'AP European History' },
+  'ap-french': { file: 'AP_French_Language_Culture_Universal_Study_Guide.docx', label: 'AP French Language & Culture' },
   'ap-government': { file: 'AP_Government_Universal_Study_Guide.docx', label: 'AP Government' },
+  'ap-human-geography': { file: 'AP_Human_Geography_Universal_Study_Guide.docx', label: 'AP Human Geography' },
   'ap-macroeconomics': { file: 'AP_Macroeconomics_Universal_Study_Guide.docx', label: 'AP Macroeconomics' },
   'ap-microeconomics': { file: 'AP_Microeconomics_Universal_Study_Guide.docx', label: 'AP Microeconomics' },
+  'ap-music-theory': { file: 'AP_Music_Theory_Universal_Study_Guide.docx', label: 'AP Music Theory' },
   'ap-physics-1': { file: 'AP_Physics_1_Universal_Study_Guide.docx', label: 'AP Physics 1' },
+  'ap-physics-2': { file: 'AP_Physics_2_Universal_Study_Guide.docx', label: 'AP Physics 2' },
+  'ap-physics-c-em': { file: 'AP_Physics_C_EM_Universal_Study_Guide.docx', label: 'AP Physics C: E&M' },
+  'ap-physics-c-mech': { file: 'AP_Physics_C_Mechanics_Universal_Study_Guide.docx', label: 'AP Physics C: Mechanics' },
   'ap-precalculus': { file: 'AP_Precalculus_Universal_Study_Guide.docx', label: 'AP Precalculus' },
   'ap-psychology': { file: 'AP_Psychology_Universal_Study_Guide.docx', label: 'AP Psychology' },
+  'ap-spanish': { file: 'AP_Spanish_Language_Culture_Universal_Study_Guide.docx', label: 'AP Spanish Language & Culture' },
   'ap-statistics': { file: 'AP_Statistics_Universal_Study_Guide.docx', label: 'AP Statistics' },
   'ap-us-history': { file: 'AP_US_History_Universal_Study_Guide.docx', label: 'AP US History' },
   'ap-world-history': { file: 'AP_World_History_Universal_Study_Guide.docx', label: 'AP World History' },
