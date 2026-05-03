@@ -2,7 +2,7 @@
   "metadata": {
     "lastScraped": "2026-04-26",
     "lastVerified": "2026-04-27",
-    "totalCount": 247,
+    "totalCount": 260,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design — they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -131,7 +131,8 @@
       "crisis": "Crisis Intervention",
       "leadership": "Leadership & Service"
     },
-    "description": "Curated database of large, sustainable, recurring volunteer programs. The Wayfinder volunteer module also offers an on-demand \"discover local\" feature that uses live web search to find programs not in this DB."
+    "description": "Curated database of large, sustainable, recurring volunteer programs. The Wayfinder volunteer module also offers an on-demand \"discover local\" feature that uses live web search to find programs not in this DB.",
+    "lastUpdated": "2026-05-03"
   },
   "opportunities": [
     {
@@ -7533,6 +7534,434 @@
       "_source": "https://www.heart.org/en/get-involved/ways-to-give/volunteer",
       "_verified": true,
       "_verifiedDate": "2026-04-28"
+    },
+    {
+      "name": "Zoo Miami Conservation Teen Scientist",
+      "organization": "Zoo Miami / Zoo Miami Foundation",
+      "description": "Zoo Miami's flagship teen volunteer program for ages 14-18 in or entering high school. Volunteers train in zoo operations including kitchen prep of animal diets, the giraffe feeding platform, education stations, and guest interpretation. Strong fit for pre-vet, biology, conservation, and zoology pathways. Commitment: 15 days during summer + 2 days/month during school year. Selected by application; alumni cite it as one of the most prestigious teen programs in South Florida.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Miami-Dade / South Florida",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal husbandry basics",
+        "guest interpretation",
+        "public speaking",
+        "conservation messaging",
+        "zoo operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit zoomiami.org/volunteer and review the Conservation Teen Scientist application window (typically opens late winter for summer cohort). Application includes essay + recommendation. Selective.",
+      "_source": "https://www.zoomiami.org/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Jacksonville Zoo & Gardens ZooTeens",
+      "organization": "Jacksonville Zoo and Gardens",
+      "description": "ZooTeens is Jacksonville Zoo's flagship youth-development volunteer program for ages 14-18 currently completing high school. Roles include conservation stations, education camps, guest engagement, and behind-the-scenes animal-care support. Multi-year commitment encouraged; tiered advancement model. Annual NE Florida cohort intake. Junior volunteer roles available for ages 13-17 throughout the year for shorter-term involvement.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Jacksonville / Northeast Florida",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "conservation messaging",
+        "public speaking",
+        "animal-care basics",
+        "youth leadership",
+        "environmental education"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via jacksonvillezoo.org/teens. Application windows typically open in spring for summer cohort. Mandatory orientation + uniform fee.",
+      "_source": "https://www.jacksonvillezoo.org/teens",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "The Florida Aquarium Junior Camp Counselor",
+      "organization": "The Florida Aquarium",
+      "description": "Tampa-based aquarium's selective summer-only volunteer program for high schoolers ages 14-17. Junior Camp Counselors support summer marine-science day camps for younger students. Six-week commitment June 1 - July 31; minimum 40 hours over the summer. Excellent fit for marine biology, environmental science, and education-pathway students. Education Volunteer roles also available year-round for older teens.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Tampa / Tampa Bay",
+      "categories": [
+        "environment",
+        "education",
+        "animals"
+      ],
+      "ageMin": 14,
+      "ageMax": 17,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "marine science basics",
+        "youth instruction",
+        "camp counseling",
+        "aquatic conservation messaging"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at flaquarium.org/gift-give/volunteer/volunteer-opportunities/junior-camp-counselor-volunteer. Application typically opens January-March for summer term.",
+      "_source": "https://www.flaquarium.org/gift-give/volunteer/volunteer-opportunities/junior-camp-counselor-volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Nicklaus Children's Hospital Teen Volunteer",
+      "organization": "Nicklaus Children's Hospital",
+      "description": "South Florida's premier pediatric hospital teen volunteer program in Miami (3100 SW 62nd Ave). High school students fulfill 6-month / 80-hour minimum commitment, one 3-hour shift per week. Roles include patient family support, gift shop, way-finding, and clinic admin. Highly competitive — first-come/first-served until cohort capacity reached. Strong pre-med / pre-nursing track record. Required: immunization records (MMR, Varicella, Tdap, TB, flu), birth certificate, recent school report.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Miami-Dade / South Florida",
+      "categories": [
+        "health",
+        "seniors"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "patient family interaction",
+        "HIPAA awareness",
+        "hospital operations",
+        "professionalism",
+        "pediatric setting protocols"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit nicklauschildrens.org/about-us/volunteer-resources/teen-applicant. Complete online welcome orientation, then in-person interview at Volunteer Resources.",
+      "_source": "https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "AdventHealth Central Florida Volunteer Services",
+      "organization": "AdventHealth Central Florida (Florida Hospital network)",
+      "description": "Central Florida's largest hospital system runs structured volunteer programs across Orlando-area campuses (AdventHealth Orlando, Winter Park, Celebration, Apopka, Altamonte). Minimum age 16. Teen-and-college-student-focused programs include cuddler/family liaison, way-finding, gift shop, surgical waiting support, and outpatient clinic admin. Strong pipeline for pre-med / pre-nursing / health-admin tracks. AdventHealth Tampa runs a parallel program.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Orlando / Central Florida",
+      "categories": [
+        "health",
+        "seniors"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "hospital operations",
+        "family-support communication",
+        "HIPAA awareness",
+        "professionalism",
+        "team-based care environment"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via adventhealth.com/community-benefit/central-florida/volunteer. Background check, immunization records, and orientation required.",
+      "_source": "https://www.adventhealth.com/community-benefit/central-florida/volunteer",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Frameworks Teens In Action (TIA)",
+      "organization": "Frameworks of Tampa Bay",
+      "description": "Frameworks' flagship 10-month civic-engagement program for Hillsborough County high schoolers grades 9-12. Monthly leadership workshops paired with weekly volunteer placements at partner nonprofits. Teens earn up to 36 community-service hours that count toward Florida's Bright Futures Scholarship requirements. Program emphasizes social-emotional skills, equity, and applied civic engagement. Strong fit for civic-leadership / public-policy pathways.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Tampa / Hillsborough County",
+      "categories": [
+        "civic",
+        "leadership",
+        "mental_health",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "hybrid",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "civic engagement",
+        "leadership",
+        "social-emotional learning",
+        "community organizing",
+        "public speaking"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at myframeworks.org/teens-in-action. Annual application window typically opens late summer for fall cohort start.",
+      "_source": "https://myframeworks.org/teens-in-action/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Humane Society of Tampa Bay Junior Camp Counselor + Teen Volunteer",
+      "organization": "Humane Society of Tampa Bay",
+      "description": "Tampa Bay's largest no-kill animal welfare org. Two teen tracks: Junior Camp Counselor (14-15, completed 9th grade) supports summer animal-camp programming for younger kids; Teen Volunteer (16+) covers shelter operations, adoption support, dog walking, cat socialization. High school + college students can earn up to 40 volunteer hours/week during summer. Multi-month commitment encouraged.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Tampa / Tampa Bay",
+      "categories": [
+        "animals"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal handling",
+        "shelter operations",
+        "adoption counseling",
+        "camp counseling",
+        "customer service"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit humanesocietytampabay.org/how-to-help/volunteer for current application windows. Junior Camp Counselor applications typically open in spring for summer cohort.",
+      "_source": "https://humanesocietytampabay.org/how-to-help/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Habitat for Humanity Greater Orlando & Osceola County",
+      "organization": "Habitat for Humanity Greater Orlando & Osceola County",
+      "description": "Build-site volunteer program serving the Orlando / Osceola affordable-housing developments (Holden Heights and Parramore neighborhoods). Volunteers must be 16+ for build sites; some tasks restricted to 18+. No prior construction experience required — site supervisors provide on-the-job training. Tasks span wall raising, painting, cabinet installation, landscaping. Strong fit for community-development, civil-engineering, and architecture-pathway students. Group / Team Build options for school clubs.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Orlando / Osceola County / Central Florida",
+      "categories": [
+        "homelessness",
+        "civic"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "construction basics",
+        "teamwork",
+        "tool safety",
+        "community development",
+        "affordable-housing advocacy"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Sign up at habitatorlando.org/volunteer for individual or Team Build days. Closed-toe shoes required. Tools/safety gear provided.",
+      "_source": "https://habitatorlando.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Florida Oceanographic Society Teen Environmental Volunteer",
+      "organization": "Florida Oceanographic Society",
+      "description": "Stuart-based marine-science nonprofit (Treasure Coast). Teen track includes Exhibit Guide (interpretation at invertebrate touch tanks + Ocean EcoCenter) and Independent Beach Cleanup (flexible app-based scheduling). Exhibit Guide application requires 1-page essay on FL coastal ecosystems + 2 teacher recommendations including science teacher. Strong fit for marine-bio, environmental-science, and education pathways.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Stuart / Treasure Coast / Martin County",
+      "categories": [
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "marine science interpretation",
+        "public speaking",
+        "coastal ecology",
+        "scientific outreach",
+        "data collection"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit floridaocean.org/teen-environmental-opportunities to apply. Exhibit Guide is selective; Beach Cleanup is open enrollment via Clean Swell app.",
+      "_source": "https://www.floridaocean.org/teen-environmental-opportunities",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Sanibel-Captiva Conservation Foundation (SCCF) Volunteer",
+      "organization": "Sanibel-Captiva Conservation Foundation",
+      "description": "Sanibel & Captiva Islands' premier conservation foundation. Year-round opportunities include sea turtle nest monitoring, shorebird observation, oyster reef restoration, mangrove planting, beach stewardship, and native-species planting via the Coastal Watch program. Open to all ages; minors must be accompanied by a parent/guardian for fieldwork. Excellent fit for marine-bio, ecology, and wildlife-conservation students.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Sanibel / Captiva / Lee County / Southwest Florida",
+      "categories": [
+        "environment",
+        "animals"
+      ],
+      "ageMin": 12,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "sea turtle monitoring",
+        "shorebird ID",
+        "habitat restoration",
+        "field data collection",
+        "coastal ecology"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Browse opportunities at sccf.org/get-involved/volunteer-opportunities. Sea turtle monitoring season runs May-October; mangrove + oyster restoration year-round.",
+      "_source": "https://sccf.org/get-involved/volunteer-opportunities/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Coral Restoration Foundation (Key Largo)",
+      "organization": "Coral Restoration Foundation",
+      "description": "Key Largo-based nonprofit, the world's largest coral-reef restoration org. Land-based volunteer roles (greeting visitors, warehouse, building coral trees) open to teens; water-based Dive Team experiences require open-water certification (typically 15+, parental consent for minors). One-day and two-day Dive Team commitments available, plus longer-term monthly diving for certified volunteers. Iconic for marine-bio, oceanography, and coral-reef-research-track students.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Key Largo / Florida Keys / Monroe County",
+      "categories": [
+        "environment",
+        "animals"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "coral biology basics",
+        "reef restoration techniques",
+        "scuba operations (if certified)",
+        "scientific outreach",
+        "marine conservation"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at coralrestoration.org/volunteer. Land-based application is rolling; Dive Program requires Open Water cert + signed waiver. Lodging is on-volunteer.",
+      "_source": "https://coralrestoration.org/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "ageMin"
+      ]
+    },
+    {
+      "name": "Florida Holocaust Museum Volunteer",
+      "organization": "The Florida Holocaust Museum",
+      "description": "St. Petersburg-based museum (one of the three largest Holocaust museums in the U.S., ~220 active volunteers). Teen + adult volunteer roles span gallery docent, education program assistant, library/archives helper, and event support. Strong fit for history, social-justice, education, and museum-studies pathway students. Cohort training plus ongoing professional development.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "St. Petersburg / Tampa Bay / Pinellas County",
+      "categories": [
+        "education",
+        "civic",
+        "arts"
+      ],
+      "ageMin": 16,
+      "ageMax": 99,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "historical interpretation",
+        "public speaking",
+        "research/archival skills",
+        "civic education",
+        "museum operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Visit thefhm.org and navigate to Get Involved → Volunteer to start the application. Cohort training schedule published quarterly.",
+      "_source": "https://www.thefhm.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "medium",
+      "_unverifiedFields": [
+        "ageMin"
+      ]
+    },
+    {
+      "name": "Volunteer Florida AmeriCorps + Community Service",
+      "organization": "Volunteer Florida (Governor's Commission on Volunteerism and Community Service)",
+      "description": "Florida's statewide commission supporting AmeriCorps placements + community-service grant programs across all 67 counties. AmeriCorps Florida programs accept high school graduates 17+ for service-year terms (education, conservation, disaster response, public health). For high-school-age students, the commission's volunteer.volunteerflorida.org portal is the canonical search hub for vetted local opportunities. Strong civic-engagement and federal-service-pathway value.",
+      "scope": "state",
+      "states": [
+        "FL"
+      ],
+      "subregion": "Statewide",
+      "categories": [
+        "civic",
+        "leadership",
+        "disaster",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "hybrid",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civic engagement",
+        "AmeriCorps service skills",
+        "community organizing",
+        "public health basics",
+        "disaster response basics"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "For AmeriCorps placements (17+): apply via volunteerflorida.org/americorps. For volunteer search across all 67 counties: visit volunteer.volunteerflorida.org and filter by location/cause/age.",
+      "_source": "https://www.volunteerflorida.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-03",
+      "confidence": "high"
     }
   ]
 }

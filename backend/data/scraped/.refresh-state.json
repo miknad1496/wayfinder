@@ -1,0 +1,48 @@
+{
+  "lastRunISO": "2026-05-03T16:30:00Z",
+  "totalRuns": 1,
+  "phasesCompleted": [
+    "Bootstrap (state-file init)",
+    "FL volunteer expansion (1 -> 14)"
+  ],
+  "currentPhase": "FL volunteer expansion (closed)",
+  "nextRunPlan": "Focus GA volunteer expansion (currently 2 entries: Best Friends + Atlanta Community Food Bank). Pre-plan candidates: Atlanta Botanical Garden teen, Georgia Aquarium teen volunteer, Children's Healthcare of Atlanta junior volunteer, Atlanta Mission, Hands On Atlanta, Children's Museum of Atlanta, Atlanta History Center, Trees Atlanta, Captain Planet Foundation teen. Target 10-12 verified entries spanning Atlanta + Savannah + Athens metros. Verify each URL before adding.",
+  "gapMap": {
+    "VOLUNTEER_FL": "14 entries (was 1) — covered: Miami-Dade (Zoo Miami, Nicklaus, Feeding SF), Jacksonville, Tampa Bay (Florida Aquarium, Frameworks TIA, Humane Society, FHM), Orlando (AdventHealth, Habitat), Stuart, Sanibel, Key Largo, statewide (Volunteer Florida AmeriCorps). Categories: animals, environment, education, health, civic, mental_health, leadership, homelessness, arts, disaster, seniors, hunger.",
+    "VOLUNTEER_GA": "2 entries — UNDER-COVERED. Atlanta is the 9th-largest metro in US. NEXT TARGET (May 10).",
+    "VOLUNTEER_NC": "2 entries — UNDER-COVERED. Charlotte + Triangle. Target after GA.",
+    "VOLUNTEER_OH": "2 entries — UNDER-COVERED. Cleveland + Cincinnati + Columbus.",
+    "VOLUNTEER_AZ": "2 entries — UNDER-COVERED. Phoenix + Tucson.",
+    "VOLUNTEER_PA": "1 entry — CRITICALLY UNDER-COVERED. Philadelphia + Pittsburgh.",
+    "VOLUNTEER_VA": "1 entry — CRITICALLY UNDER-COVERED. NoVA + Richmond.",
+    "VOLUNTEER_NJ": "0 entries — CRITICAL ZERO. Newark + Princeton + Jersey Shore.",
+    "VOLUNTEER_OR": "2 entries — under-covered. Portland metro.",
+    "VOLUNTEER_MN": "3 entries — adequate baseline.",
+    "VOLUNTEER_IL": "3 entries — adequate baseline.",
+    "VOLUNTEER_WA": "40 entries — fully covered (priority state).",
+    "VOLUNTEER_CA": "22 entries — well covered.",
+    "VOLUNTEER_NY": "18 entries — well covered.",
+    "VOLUNTEER_TX": "18 entries — well covered.",
+    "VOLUNTEER_NATIONAL": "132 entries — saturated.",
+    "INTERNSHIPS_TX": "128 / 105 verified — well covered (CLAUDE.md was outdated).",
+    "INTERNSHIPS_CA": "339 / 152 verified — well covered.",
+    "INTERNSHIPS_WA": "112 / 86 verified — fully covered.",
+    "INTERNSHIPS_NY": "197 / 101 verified — well covered.",
+    "INTERNSHIPS_FL": "84 / 73 verified — well covered.",
+    "INTERNSHIPS_IN": "6 entries — under-covered (Indiana).",
+    "INTERNSHIPS_MO": "5 entries — under-covered (Missouri).",
+    "INTERNSHIPS_AR_AL_LA_MS_OK_KY_TN": "1-3 entries each — South Central / Bible Belt cluster under-covered.",
+    "SCHOLARSHIPS_LGBTQ": "1-2 entries — under-covered category.",
+    "SCHOLARSHIPS_DISABILITY": "~10 entries — under-covered.",
+    "SCHOLARSHIPS_VETERAN_MILITARY": "~10 entries — under-covered.",
+    "SCHOLARSHIPS_PERFORMING_ARTS": "~5 entries — under-covered.",
+    "SCHOLARSHIPS_STATE_FIELD_MISSING": "260 state-scope entries have no state field set — schema-quality gap, separate fix-pass needed.",
+    "PROGRAMS": "1416 entries — saturated for now.",
+    "_lastVerifyPass": "never — re-verify pass overdue. Schedule for ~run 8 (mid-summer 2026) once gap-fill phase quiets."
+  },
+  "discoveredCorrections": [
+    "CLAUDE.md says volunteer FL was 'covered post-batch 145' but only 1 FL entry existed in the corpus — the batch added Feeding South Florida only. Now corrected.",
+    "CLAUDE.md says internships TX:5 verified — actual is TX:105 verified. CLAUDE.md was authored mid-grinder run.",
+    "CLAUDE.md says scholarships 1035/68 — actual is 1043/80."
+  ]
+}
