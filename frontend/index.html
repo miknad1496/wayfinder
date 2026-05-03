@@ -234,6 +234,11 @@
           <span>Essay Reviewer</span>
           <span class="tool-badge">Add-on</span>
         </button>
+        <button id="sidebarApCoach" class="sidebar-footer-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>AP Coach</span>
+          <span class="tool-badge">Add-on</span>
+        </button>
         <button id="sidebarInternships" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           <span>Internships</span>
@@ -2466,5 +2471,103 @@
   </div>
 
   <script type="module" src="/src/app.js"></script>
-</body>
+<!-- AP Coach — Full Page Premium View — REVAMP V2: AP COACH FRONTEND PATCH70 -->
+      <section id="apCoachView" class="essay-view" style="display:none;">
+        <!-- AP Coach View Header -->
+        <div class="ev-header">
+          <div class="ev-header-left">
+            <button id="apBackBtn" class="ev-back-btn" title="Back to chat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              <span>Back</span>
+            </button>
+            <div class="ev-brand">
+              <h2 class="ev-title">AP Coach</h2>
+              <span class="ev-badge">Premium Add-on</span>
+            </div>
+          </div>
+          <div class="ev-header-right">
+            <div class="ev-credits" id="apCreditsBar">
+              <span id="apCreditsCount" class="ev-credits-count">0 scorings</span>
+              <button class="ev-credits-btn" id="apBuyMoreBtn">Buy Credits</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upgrade gate (free tier) -->
+        <div id="apUpgradeGate" class="ev-upgrade-gate" style="display:none; padding:48px; max-width:640px; margin:0 auto; text-align:center;">
+          <h2 style="margin-bottom:16px;">AP Coach — Pro / Elite Add-on</h2>
+          <p style="color:#475569; font-size:16px; line-height:1.6; margin-bottom:24px;">
+            Rubric-aware AI scoring on AP free-response questions across 10 exams + 14 FRQ types,
+            plus instant download access to all 14 universal AP study guides
+            (Bio, Calc AB, Chem, English Lang &amp; Lit, Gov, Macro/Micro, Physics 1, Precalc,
+            Psych, Stats, APUSH, World History).
+          </p>
+          <p style="color:#64748b; font-size:14px; margin-bottom:32px;">
+            Upgrade to Pro or Elite to unlock the AP Coach module. Credit packs available
+            once you've upgraded.
+          </p>
+          <a href="#pricing" class="ev-upgrade-btn" style="display:inline-block; padding:12px 32px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600;">View Plans</a>
+        </div>
+
+        <!-- Main panel (Pro/Elite) -->
+        <div id="apMainPanel" class="ev-panel active" style="display:block; padding:24px; max-width:1100px; margin:0 auto;">
+
+          <!-- Free study guide downloads -->
+          <section class="ap-guides-section" style="margin-bottom:32px;">
+            <h3 style="font-size:18px; margin-bottom:8px;">Universal AP Study Guides</h3>
+            <p style="color:#64748b; font-size:14px; margin-bottom:16px;">
+              All 14 guides included with your add-on. Universal tier badges ([4] floor, [5] stretch)
+              throughout — works whether you're targeting a 3, 4, or 5.
+            </p>
+            <div id="apGuidesList" class="ap-guides-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px;">
+              <!-- populated by loadApGuides() -->
+            </div>
+          </section>
+
+          <!-- FRQ Coach form -->
+          <section class="ap-frq-section">
+            <h3 style="font-size:18px; margin-bottom:8px;">FRQ Coach</h3>
+            <p style="color:#64748b; font-size:14px; margin-bottom:16px;">
+              Submit a free-response answer for rubric-aware AI scoring. Each scoring costs 1 credit.
+              Returns rubric points earned/missing, top 3 fixes, what a 5 would add, and phrases that score.
+            </p>
+
+            <div class="ev-input-card">
+              <div class="ev-field">
+                <label for="apExam">Exam</label>
+                <select id="apExam" class="ev-select"></select>
+              </div>
+
+              <div class="ev-field">
+                <label for="apFrqType">FRQ Type</label>
+                <select id="apFrqType" class="ev-select"></select>
+              </div>
+
+              <div class="ev-field">
+                <label for="apPromptInput">FRQ Prompt <span class="ev-optional">(optional)</span></label>
+                <textarea id="apPromptInput" class="ev-textarea" rows="3" maxlength="3000" placeholder="Paste the FRQ prompt here (recommended for best feedback)"></textarea>
+              </div>
+
+              <div class="ev-field">
+                <label for="apResponseInput">Your Response</label>
+                <textarea id="apResponseInput" class="ev-textarea" rows="14" maxlength="12000" placeholder="Paste your full FRQ response here (minimum 30 characters, max 12,000)"></textarea>
+                <div style="font-size:12px; color:#64748b; margin-top:4px;">
+                  <span id="apCharCount">0</span> / 12,000 characters
+                </div>
+              </div>
+
+              <button id="apSubmitBtn" class="ev-submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                Submit for Scoring (1 credit)
+              </button>
+              <p id="apSubmitMsg" class="ev-submit-msg" style="display:none;"></p>
+            </div>
+
+            <div id="apScoreResult" class="ev-review-result" style="margin-top:24px;"></div>
+          </section>
+        </div>
+      </section>
+      <!-- end AP Coach view PATCH70 -->
+
+  </body>
 </html>

@@ -7796,3 +7796,229 @@ window._wfShowUpgradeModal = function _wfShowUpgradeModal(opts) {
   }
 })();
 
+// ─── REVAMP V2: AP COACH FRONTEND PATCH70 — AP Coach view setup + handlers ───
+let apCoachInitialized = false;
+
+function openApCoach() {
+  if (typeof trackModuleActivity === 'function') trackModuleActivity('ap-coach', 'Opened AP Coach', null);
+  if (!currentUser) { if (typeof openAuthModal === 'function') openAuthModal('login'); return; }
+  if (typeof closeSidebarOnMobile === 'function') closeSidebarOnMobile();
+
+  const chatEl = document.querySelector('.chat-container');
+  if (chatEl) chatEl.style.display = 'none';
+  const evEl = document.getElementById('essayView');
+  if (evEl) evEl.style.display = 'none';
+  const apView = document.getElementById('apCoachView');
+  if (!apView) return;
+  apView.style.display = 'flex';
+  apView.style.flexDirection = 'column';
+
+  if (!apCoachInitialized) {
+    setupApCoachView();
+    apCoachInitialized = true;
+  }
+
+  const hasAccess = (typeof canAccess === 'function') ? canAccess('ap_coach') : false;
+  if (!hasAccess) {
+    document.getElementById('apMainPanel').style.display = 'none';
+    document.getElementById('apCreditsBar').style.display = 'none';
+    document.getElementById('apUpgradeGate').style.display = 'block';
+  } else {
+    document.getElementById('apUpgradeGate').style.display = 'none';
+    document.getElementById('apMainPanel').style.display = 'block';
+    document.getElementById('apCreditsBar').style.display = 'flex';
+    loadApCredits();
+    loadApExamsAndTypes();
+    loadApGuides();
+  }
+}
+
+function closeApCoach() {
+  const apView = document.getElementById('apCoachView');
+  if (apView) apView.style.display = 'none';
+  const chatEl = document.querySelector('.chat-container');
+  if (chatEl) chatEl.style.display = '';
+}
+
+function setupApCoachView() {
+  const back = document.getElementById('apBackBtn');
+  if (back) back.addEventListener('click', closeApCoach);
+  const submit = document.getElementById('apSubmitBtn');
+  if (submit) submit.addEventListener('click', submitApScoring);
+  const buy = document.getElementById('apBuyMoreBtn');
+  if (buy) buy.addEventListener('click', () => {
+    alert('AP Coach credit packs are coming soon via Stripe. For now, contact danielyungkim@hotmail.com to add credits.');
+  });
+  const respInput = document.getElementById('apResponseInput');
+  const charSpan = document.getElementById('apCharCount');
+  if (respInput && charSpan) {
+    respInput.addEventListener('input', () => {
+      charSpan.textContent = String(respInput.value.length);
+    });
+  }
+}
+
+async function loadApCredits() {
+  try {
+    const r = await fetch(API_BASE + '/api/ap-coach/credits', {
+      headers: { Authorization: 'Bearer ' + getToken() },
+    });
+    const data = await r.json();
+    const el = document.getElementById('apCreditsCount');
+    if (el) el.textContent = (data.remaining || 0) + ' scoring' + (data.remaining === 1 ? '' : 's');
+  } catch (e) { console.warn('[AP] Failed to load credits', e); }
+}
+
+async function loadApExamsAndTypes() {
+  try {
+    const [er, tr] = await Promise.all([
+      fetch(API_BASE + '/api/ap-coach/exams'),
+      fetch(API_BASE + '/api/ap-coach/frq-types'),
+    ]);
+    const exams = ((await er.json()).exams || []);
+    const types = ((await tr.json()).frqTypes || []);
+    const examEl = document.getElementById('apExam');
+    const typeEl = document.getElementById('apFrqType');
+    if (examEl) examEl.innerHTML = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
+    if (typeEl) typeEl.innerHTML = types.map(t => '<option value="' + t.key + '">' + t.label + '</option>').join('');
+  } catch (e) { console.warn('[AP] Failed to load exams/types', e); }
+}
+
+async function loadApGuides() {
+  try {
+    const r = await fetch(API_BASE + '/api/ap-coach/guides', {
+      headers: { Authorization: 'Bearer ' + getToken() },
+    });
+    const data = await r.json();
+    const list = document.getElementById('apGuidesList');
+    if (!list) return;
+    const guides = data.guides || [];
+    if (!guides.length) {
+      list.innerHTML = '<p style="color:#94a3b8; grid-column:1/-1;">No study guides available yet.</p>';
+      return;
+    }
+    list.innerHTML = guides.map(g => {
+      const url = API_BASE + '/api/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(getToken());
+      const sizeKb = (g.size / 1024).toFixed(0);
+      return '<a class="ap-guide-card" href="' + url + '" download style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; text-decoration:none; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
+        '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
+        '<div style="font-size:12px; color:#64748b;">' + sizeKb + ' KB · docx · download</div>' +
+        '</a>';
+    }).join('');
+  } catch (e) { console.warn('[AP] Failed to load guides', e); }
+}
+
+async function submitApScoring() {
+  const exam = document.getElementById('apExam').value;
+  const frqType = document.getElementById('apFrqType').value;
+  const prompt = document.getElementById('apPromptInput').value.trim();
+  const response = document.getElementById('apResponseInput').value.trim();
+  if (response.length < 30) {
+    alert('Your response must be at least 30 characters before scoring.');
+    return;
+  }
+  const btn = document.getElementById('apSubmitBtn');
+  const result = document.getElementById('apScoreResult');
+  btn.disabled = true;
+  btn.textContent = 'Scoring (this can take 30-60s)...';
+  if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Scoring your response — Claude Opus is reading the rubric...</div>';
+  try {
+    const r = await fetch(API_BASE + '/api/ap-coach/score', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + getToken() },
+      body: JSON.stringify({ exam: exam, frqType: frqType, prompt: prompt, response: response }),
+    });
+    const data = await r.json();
+    if (!r.ok) {
+      const msg = (data && data.error) ? data.error : 'Scoring failed';
+      result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + msg + '</div>';
+      return;
+    }
+    renderApScore(data.score);
+    loadApCredits();
+  } catch (e) {
+    result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">Network error: ' + e.message + '</div>';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Submit for Scoring (1 credit)';
+  }
+}
+
+function renderApScore(score) {
+  if (!score) return;
+  const earned = score.rubricPointsEarned || 0;
+  const total = score.rubricPointsTotal || 1;
+  const pct = Math.round((earned / total) * 100);
+  const color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#ea580c' : '#dc2626';
+  const html = [
+    '<div class="ap-score-card" style="background:white; border:1px solid #e2e8f0; border-radius:12px; padding:24px;">',
+    '  <div style="display:flex; align-items:center; gap:24px; margin-bottom:16px;">',
+    '    <div style="width:96px; height:96px; border-radius:50%; background:' + color + '; color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:700;">',
+    '      <div style="font-size:24px; line-height:1;">' + earned + '/' + total + '</div>',
+    '      <div style="font-size:11px; opacity:0.9; margin-top:2px;">' + pct + '%</div>',
+    '    </div>',
+    '    <div>',
+    '      <div style="font-size:18px; font-weight:600; color:#1e293b;">' + (score.scoreLabel || 'Scored') + '</div>',
+    '      <div style="font-size:14px; color:#475569; margin-top:4px;">Rubric points earned out of ' + total + ' available</div>',
+    '    </div>',
+    '  </div>',
+    score.summary ? '<p style="font-size:15px; color:#334155; line-height:1.6; margin-bottom:20px;">' + escapeHtml(score.summary) + '</p>' : '',
+    score.topThreeFixes && score.topThreeFixes.length ? (
+      '<h4 style="font-size:14px; text-transform:uppercase; color:#64748b; letter-spacing:0.05em; margin:20px 0 8px;">Top 3 Fixes</h4>' +
+      '<ol style="padding-left:20px; color:#1e293b;">' +
+      score.topThreeFixes.map(f =>
+        '<li style="margin-bottom:12px;"><strong>' + escapeHtml(f.fix || '') + '</strong>' +
+        (f.rubricImpact ? '<br><span style="font-size:13px; color:#64748b;"><em>Rubric impact:</em> ' + escapeHtml(f.rubricImpact) + '</span>' : '') +
+        (f.exampleRevision ? '<br><span style="font-size:13px; color:#475569;"><em>Example revision:</em> ' + escapeHtml(f.exampleRevision) + '</span>' : '') +
+        '</li>'
+      ).join('') +
+      '</ol>'
+    ) : '',
+    score.whatAFiveWouldAdd ? (
+      '<h4 style="font-size:14px; text-transform:uppercase; color:#64748b; letter-spacing:0.05em; margin:20px 0 8px;">What a 5 Would Add</h4>' +
+      '<p style="color:#1e293b; line-height:1.6;">' + escapeHtml(score.whatAFiveWouldAdd) + '</p>'
+    ) : '',
+    score.phrasesThatScore && score.phrasesThatScore.length ? (
+      '<h4 style="font-size:14px; text-transform:uppercase; color:#64748b; letter-spacing:0.05em; margin:20px 0 8px;">Phrases That Score</h4>' +
+      '<ul style="padding-left:20px; color:#1e293b;">' +
+      score.phrasesThatScore.map(p => '<li style="margin-bottom:6px;"><code style="background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px;">' + escapeHtml(p) + '</code></li>').join('') +
+      '</ul>'
+    ) : '',
+    score.rubricBreakdown && score.rubricBreakdown.length ? (
+      '<h4 style="font-size:14px; text-transform:uppercase; color:#64748b; letter-spacing:0.05em; margin:20px 0 8px;">Rubric Breakdown</h4>' +
+      '<ul style="padding-left:20px; color:#1e293b;">' +
+      score.rubricBreakdown.map(b =>
+        '<li style="margin-bottom:8px;">' +
+        (b.earned ? '<span style="color:#16a34a; font-weight:700;">✓</span> ' : '<span style="color:#dc2626; font-weight:700;">✗</span> ') +
+        '<strong>' + escapeHtml(b.criterion || '') + '</strong>: ' + escapeHtml(b.feedback || '') +
+        '</li>'
+      ).join('') +
+      '</ul>'
+    ) : '',
+    '</div>',
+  ].join('');
+  document.getElementById('apScoreResult').innerHTML = html;
+}
+
+function escapeHtml(s) {
+  if (typeof s !== 'string') return '';
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Wire sidebar button (deferred; runs once DOMContentLoaded fires or immediately if already past it)
+(function wireApCoachSidebar() {
+  const wire = function() {
+    const btn = document.getElementById('sidebarApCoach');
+    if (btn && !btn._apWired) {
+      btn._apWired = true;
+      btn.addEventListener('click', openApCoach);
+    }
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wire);
+  } else {
+    wire();
+  }
+})();
+// ─── END PATCH70 ───
+
