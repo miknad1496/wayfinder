@@ -8000,10 +8000,7 @@ function renderApScore(score) {
   document.getElementById('apScoreResult').innerHTML = html;
 }
 
-function escapeHtml(s) {
-  if (typeof s !== 'string') return '';
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
+// REVAMP V2: BUILD HOTFIX + HAIKU REBRAND PATCH75 — duplicate escapeHtml() removed; using the one defined earlier in app.js (line ~1645)
 
 // Wire sidebar button (deferred; runs once DOMContentLoaded fires or immediately if already past it)
 (function wireApCoachSidebar() {
