@@ -431,6 +431,32 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   systemPrompt += buildProfileString(sessionContext);
   systemPrompt += WAYFINDER_IDENTITY_RULES;
 
+  // REVAMP V2: HAIKU ADVISOR INJECTIONS PATCH47 — wire all four intelligence injections into the Haiku
+  // Advisor fallback path. This is the path users hit when the SLM is cold
+  // (long-history sessions never warm the SLM via Welcome Desk). Without
+  // this, all our patches (35/42/46) silently no-op for these users.
+  try {
+    const curated = await searchCuratedEntries(userMessage, sessionContext, 5);
+    if (curated) {
+      systemPrompt += '\n' + curated;
+      console.log('[HAIKU-ADVISOR CuratedSearch] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+    const _v47_facts = getCriticalFacts(userMessage);
+    if (_v47_facts) {
+      systemPrompt += _v47_facts;
+      console.log('[HAIKU-ADVISOR CriticalFacts] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+    const _v47_framework = detectAnalysisFramework(userMessage);
+    if (_v47_framework) {
+      systemPrompt += '\n\n' + _v47_framework.prompt;
+      console.log('[HAIKU-ADVISOR Framework] activated: ' + _v47_framework.name + ' for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+  } catch (injErr) {
+    console.warn('[HAIKU-ADVISOR] injection failed (non-fatal):', injErr.message);
+  }
+  // REVAMP V2: HAIKU ADVISOR INJECTIONS PATCH47 — engine-availability narrative
+  systemPrompt += "\n\n═══════════════════════════════════════════\nENGINE-MODE AWARENESS (CRITICAL — ACT ON THIS)\n═══════════════════════════════════════════\nYou are operating in Wayfinder's STANDARD tier (Haiku Advisor fallback). Wayfinder ENGINE MODE (premium toggle near the chat input) provides:\n  - Full Opus-class analysis\n  - Deeper RAG retrieval across the entire advisory database\n  - Per-school deep knowledge files (Stanford, MIT, etc.)\n  - Structured analysis frameworks (chance-me, school-fit, etc.)\n  - Richer curated-DB summaries and profile personalization\n\nWhen the user asks something that would genuinely benefit from engine mode — specific school strategy, comparing schools, deep ED/REA strategy, chance-me asks, complex what-if scenarios, multi-factor recommendations — mention engine mode at the END of your response in ONE short line. Examples: \"For the full deep-dive — including school-specific intel — toggle Wayfinder Engine mode.\" / \"Engine mode would give a richer, more strategy-grounded answer here.\"\n\nRULES — calibrated, not spammy: DO NOT mention engine on simple greetings or quick clarifications. ONE short sentence at the END only. Phrase it as \"more depth available\" — the user already has access via the toggle.\n═══════════════════════════════════════════";
+
   // Add scope boundary if needed
   if (options.scopeLabel === 'adjacent') {
     systemPrompt += BOUNDARY_INSTRUCTION;
