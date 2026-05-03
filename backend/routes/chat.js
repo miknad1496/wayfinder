@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat, chatHaikuIntake, chatHaikuAdvisor } from '../services/claude.js';
 import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
+import { runHeadConsultantSupplement, shouldRunHeadConsultantSupplement, formatHeadConsultantCombined } from '../services/head-consultant.js'; // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
@@ -399,7 +400,8 @@ router.post('/', async (req, res) => {
       // user-scoped memory (patches 35/37/39/40/41/42) and the engine-availability
       // narrative (patch 39) nudges the user to engine mode when it would help.
       // To re-enable: change the `false &&` below back to the original condition.
-      if (false && isPaidTier && (_isSpecificQuery(message) || _curatedWillFire)) {
+      // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74 — auto-promotion RE-ENABLED, but now triggers Head Consultant SUPPLEMENT (not Opus replacement)
+      if (isPaidTier && (_isSpecificQuery(message) || _curatedWillFire || shouldRunHeadConsultantSupplement(message))) {
         try {
           const promoteResult = await useEngine(auth.token);
           if (promoteResult.allowed) {
@@ -613,6 +615,33 @@ router.post('/', async (req, res) => {
               tEvent.generation.mode = 'slm';
               tEvent.generation.domain = slmResult.domain;
               console.log(`[ADVISOR] SLM response OK (${slmResult.domain}, ${slmResult.latency}ms)`);
+
+              // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74 — Head Consultant supplement on top of SLM response
+              if (engineAllowed && result && typeof result.text === 'string' && result.text.length > 100) {
+                try {
+                  // Build a compact RAG context snippet from what was injected into SLM
+                  const ragSnippet = (slmResult && slmResult.ragInjected) ? String(slmResult.ragInjected).slice(0, 8000) : '';
+                  const supplementResult = await runHeadConsultantSupplement(
+                    trimmedMsg,
+                    result.text,
+                    ragSnippet,
+                    { profile: session.context?.profile || null },
+                    {}
+                  );
+                  if (supplementResult.success && supplementResult.supplement) {
+                    result.text = formatHeadConsultantCombined(result.text, supplementResult.supplement);
+                    tEvent.generation.headConsultantSupplemented = true;
+                    tEvent.generation.headConsultantTokens = supplementResult.tokensUsed || 0;
+                    tEvent.generation.headConsultantLatencyMs = supplementResult.latencyMs || 0;
+                    console.log('[HEAD-CONSULTANT] Supplemented SLM response (' + (supplementResult.tokensUsed || 0) + ' tokens, ' + (supplementResult.latencyMs || 0) + 'ms)');
+                  } else {
+                    console.warn('[HEAD-CONSULTANT] Supplement skipped: ' + (supplementResult.error || 'unknown'));
+                  }
+                } catch (hcErr) {
+                  // Non-fatal — user still gets the SLM response without the supplement
+                  console.warn('[HEAD-CONSULTANT] Supplement failed (non-fatal): ' + hcErr.message);
+                }
+              }
             } else {
               // Quality gate failed → Haiku Advisor (real answers, not greeter)
               console.log(`[ADVISOR→HAIKU] SLM quality failed: ${slmResult.qualityCheck.reason}`);
