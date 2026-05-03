@@ -16,6 +16,7 @@ import inviteRoutes from './routes/invites.js';
 import demographicsRoutes from './routes/demographics.js';
 import timelineRoutes from './routes/timeline.js';
 import essayRoutes from './routes/essays.js';
+import apCoachRoutes from './routes/ap-coach.js'; // REVAMP V2: AP COACH ADD-ON PATCH67
 import internshipRoutes from './routes/internships.js';
 import scholarshipRoutes from './routes/scholarships.js';
 import programRoutes from './routes/programs.js';
@@ -183,6 +184,9 @@ app.use('/api/timeline', apiLimiter, timelineRoutes);
 // Essay: expensive limiter on POST /review only; normal limiter on GETs (credits, types, prompts, history)
 app.post('/api/essays/review', expensiveLimiter);
 app.use('/api/essays', apiLimiter, essayRoutes);
+// AP Coach: expensive limiter on POST /score only; normal limiter on GETs (REVAMP V2: AP COACH ADD-ON PATCH67)
+app.post('/api/ap-coach/score', expensiveLimiter);
+app.use('/api/ap-coach', apiLimiter, apCoachRoutes);
 app.use('/api/internships', apiLimiter, internshipRoutes);
 app.use('/api/scholarships', apiLimiter, scholarshipRoutes);
 app.use('/api/programs', apiLimiter, programRoutes);

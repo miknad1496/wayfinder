@@ -1,0 +1,237 @@
+/**
+ * AP Coach Service — REVAMP V2: AP COACH ADD-ON PATCH67
+ *
+ * Add-on service for Pro/Elite users. Each FRQ scoring costs 1 ap_coach credit.
+ * Mirror of essay-reviewer.js pattern, adapted for AP free-response questions.
+ *
+ * Knowledge sources loaded at startup + cached:
+ *   - backend/knowledge-base/ap-exams/_brain.md (master AP study guide brain file)
+ *   - backend/knowledge-base/ap-exams/ap-<exam>.md (per-exam strategic insights)
+ *
+ * For each request, the service:
+ *   1. Validates the exam is supported
+ *   2. Loads the per-exam knowledge file and the universal patterns from _brain.md
+ *   3. Builds a system prompt encoding the rubric for the FRQ type
+ *   4. Calls Claude Opus to score the response against the rubric
+ *   5. Returns structured JSON: rubric points earned/missing, what-a-5-adds, top 3 fixes,
+ *      phrases-that-score the student should adopt
+ */
+
+import Anthropic from '@anthropic-ai/sdk';
+import { promises as fs } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const client = new Anthropic();
+
+const SUPPORTED_EXAMS = {
+  'ap-chemistry':       { label: 'AP Chemistry', file: 'ap-chemistry.md' },
+  'ap-us-history':      { label: 'AP US History (APUSH)', file: 'ap-us-history.md' },
+  'ap-physics-1':       { label: 'AP Physics 1', file: 'ap-physics-1.md' },
+  'ap-government':      { label: 'AP Government & Politics', file: 'ap-government.md' },
+  'ap-english-lang':    { label: 'AP English Language', file: 'ap-english-lang.md' },
+  'ap-precalculus':     { label: 'AP Precalculus', file: 'ap-precalculus.md' },
+  'ap-macroeconomics':  { label: 'AP Macroeconomics', file: 'ap-macroeconomics.md' },
+  'ap-statistics':      { label: 'AP Statistics', file: 'ap-statistics.md' },
+  'ap-calc-bc':         { label: 'AP Calculus BC', file: 'ap-calc-bc.md' },
+  'other':              { label: 'Other AP Exam (general feedback)', file: null },
+};
+
+const FRQ_TYPES = {
+  'free-response':  'Free-Response Question (general)',
+  'dbq':            'Document-Based Question (APUSH/AP World)',
+  'leq':            'Long Essay Question (APUSH/AP World)',
+  'saq':            'Short Answer Question (APUSH/AP World)',
+  'argument':       'Argument Essay (AP Lang/AP Gov)',
+  'rhetorical':     'Rhetorical Analysis Essay (AP Lang)',
+  'synthesis':      'Synthesis Essay (AP Lang)',
+  'scotus-comp':    'SCOTUS Comparison FRQ (AP Gov)',
+  'concept-app':    'Concept Application FRQ (AP Gov)',
+  'quant-analysis': 'Quantitative Analysis FRQ (AP Gov)',
+  'inference':      'Inference FRQ (AP Stats)',
+  'investigative':  'Investigative Task (AP Stats long FRQ)',
+  'modeling':       'Modeling FRQ (AP Precalc/Stats/Macro)',
+  'other':          'Other FRQ Format',
+};
+
+// Knowledge cache
+let knowledgeCache = {
+  loaded: false,
+  brain: null,
+  perExam: {},
+};
+
+async function loadKnowledge() {
+  if (knowledgeCache.loaded) return knowledgeCache;
+  try {
+    const apDir = join(__dirname, '..', 'knowledge-base', 'ap-exams');
+    try {
+      knowledgeCache.brain = await fs.readFile(join(apDir, '_brain.md'), 'utf8');
+    } catch { knowledgeCache.brain = ''; }
+    for (const [examKey, cfg] of Object.entries(SUPPORTED_EXAMS)) {
+      if (!cfg.file) continue;
+      try {
+        knowledgeCache.perExam[examKey] = await fs.readFile(join(apDir, cfg.file), 'utf8');
+      } catch { knowledgeCache.perExam[examKey] = ''; }
+    }
+    knowledgeCache.loaded = true;
+    console.log('[ApCoach] Knowledge loaded — brain ' + (knowledgeCache.brain?.length || 0) + ' bytes, ' + Object.keys(knowledgeCache.perExam).filter(k => knowledgeCache.perExam[k]).length + ' per-exam files');
+  } catch (err) {
+    console.warn('[ApCoach] Knowledge load failed:', err.message);
+  }
+  return knowledgeCache;
+}
+
+// Pre-load at module init (non-blocking)
+loadKnowledge().catch(err => console.warn('[ApCoach] init load failed:', err.message));
+
+function buildKnowledgeInjection(exam) {
+  const cache = knowledgeCache;
+  const blocks = [];
+  // Per-exam strategic insights (highest priority — direct rubric + differentiator)
+  if (exam && cache.perExam[exam]) {
+    blocks.push('=== PER-EXAM STRATEGIC INSIGHTS ===\n' + cache.perExam[exam]);
+  }
+  // Universal patterns from brain file (sections 2 + 6 are most relevant)
+  if (cache.brain) {
+    // Pull the universal pedagogy patterns + per-exam table from brain file
+    const universalSection = cache.brain.match(/## 6\. CONTENT PATTERNS[\s\S]*?(?=\n## 7\.|\n---)/);
+    const pedagogySection = cache.brain.match(/## 9\. PEDAGOGY PRINCIPLES[\s\S]*?(?=\n## 10\.|\n---)/);
+    if (universalSection) blocks.push('=== UNIVERSAL CONTENT PATTERNS ===\n' + universalSection[0]);
+    if (pedagogySection) blocks.push('=== PEDAGOGY PRINCIPLES ===\n' + pedagogySection[0]);
+  }
+  return blocks.join('\n\n');
+}
+
+/**
+ * Score a free-response answer against the AP rubric for the given exam.
+ *
+ * @param {string} exam - one of SUPPORTED_EXAMS keys
+ * @param {string} frqType - one of FRQ_TYPES keys
+ * @param {string} prompt - the FRQ prompt the student responded to
+ * @param {string} response - the student's response
+ * @returns {Promise<{success: boolean, score?: object, error?: string, tokensUsed?: number}>}
+ */
+export async function scoreFrq(exam, frqType, prompt, response) {
+  const startTime = Date.now();
+  await loadKnowledge();
+
+  const examCfg = SUPPORTED_EXAMS[exam];
+  if (!examCfg) {
+    return { success: false, error: 'Unsupported exam: ' + exam };
+  }
+  if (!FRQ_TYPES[frqType]) {
+    return { success: false, error: 'Unsupported FRQ type: ' + frqType };
+  }
+
+  const knowledgeInjection = buildKnowledgeInjection(exam);
+
+  const systemPrompt = [
+    'You are an AP Score Coach for ' + examCfg.label + '. You score student responses to free-response questions against the official AP rubric and provide rubric-aware coaching feedback.',
+    '',
+    'You have access to Wayfinder\'s deep AP intelligence:',
+    '',
+    knowledgeInjection,
+    '',
+    '=== YOUR JOB ===',
+    'Given the FRQ type, prompt, and student response, return a structured JSON evaluation. Identify which rubric points were earned, which were missed, and what specifically would push the response from a 4-zone to a 5-zone (or 3 to 4, etc.). Use the per-exam differentiator (e.g., particulate-level reasoning for Chem, specificity for APUSH, commentary depth for Lang, chain of reasoning for Macro, STATE-PLAN-DO-CONCLUDE in context for Stats, the constitutional clause for Gov).',
+    '',
+    'You MUST return ONLY valid JSON in this exact shape (no markdown, no surrounding prose):',
+    '{',
+    '  "rubricPointsEarned": <number>,',
+    '  "rubricPointsTotal": <number>,',
+    '  "scoreLabel": "<one of: Below Floor | Floor | Mid | Strong | Exceptional>",',
+    '  "summary": "<2-3 sentence holistic assessment>",',
+    '  "rubricBreakdown": [',
+    '    { "criterion": "<name of rubric point>", "earned": <bool>, "evidence": "<specific quote or claim from response>", "feedback": "<what they got right OR what is missing>" }',
+    '  ],',
+    '  "topThreeFixes": [',
+    '    { "fix": "<specific actionable change>", "rubricImpact": "<which rubric point this earns>", "exampleRevision": "<concrete revision sentence>" }',
+    '  ],',
+    '  "whatAFiveWouldAdd": "<the specific differentiator move that pushes this to a 5: specificity, commentary depth, chain of reasoning, etc. — NAME the move and give a concrete example tied to this response>",',
+    '  "phrasesThatScore": [',
+    '    "<exact phrase the student should adopt verbatim, drawn from rubric-pleasing language for this exam>"',
+    '  ],',
+    '  "voiceFlag": "<empty string OR \'over-coached\' OR \'too-generic\' OR \'specific-and-strong\'>"',
+    '}',
+    '',
+    '=== SCORING DISCIPLINE ===',
+    '- Be honest and rubric-aware. Most student first drafts are 50-70% of max points.',
+    '- Specificity wins (APUSH/Lang/Gov). Generic claims with no names/dates/specifics earn 0.',
+    '- For physics/chem/precalc: showing symbolic algebra before numbers is the differentiator.',
+    '- For Stats: every conclusion must reference the SPECIFIC variable + population + units.',
+    '- For Macro: count chain-of-reasoning links explicitly.',
+    '- Quote actual phrases from the student response in "evidence" fields.',
+    '- Top three fixes must be ACTIONABLE — not "be more specific" but "name the specific Hull House example like Jane Addams in Chicago, 1889".',
+  ].join('\n');
+
+  const userPrompt = [
+    '=== EXAM ===',
+    examCfg.label,
+    '',
+    '=== FRQ TYPE ===',
+    FRQ_TYPES[frqType],
+    '',
+    '=== PROMPT ===',
+    prompt || '(no prompt provided — score on response merits alone)',
+    '',
+    '=== STUDENT RESPONSE ===',
+    response,
+    '=== END RESPONSE ===',
+    '',
+    'Score this response. Return ONLY the JSON object.',
+  ].join('\n');
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 90000);
+  let resp;
+  try {
+    resp = await client.messages.create({
+      model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-6',
+      max_tokens: 2500,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+    }, { signal: controller.signal });
+  } catch (err) {
+    return { success: false, error: 'AI request failed: ' + err.message };
+  } finally {
+    clearTimeout(timeout);
+  }
+
+  const text = resp.content?.[0]?.text || '';
+  const tokensUsed = (resp.usage?.input_tokens || 0) + (resp.usage?.output_tokens || 0);
+
+  // Parse JSON resilient to LLM quirks
+  const stripped = text.replace(/```(?:json)?\s*/gi, '').replace(/```/g, '');
+  const match = stripped.match(/\{[\s\S]*\}/);
+  if (!match) {
+    return { success: false, error: 'No JSON in model output' };
+  }
+  let jsonStr = match[0].replace(/,\s*([\]}])/g, '$1');
+  let parsed;
+  try {
+    parsed = JSON.parse(jsonStr);
+  } catch (err) {
+    return { success: false, error: 'JSON parse failed: ' + err.message };
+  }
+
+  // Validate score structure
+  if (typeof parsed.rubricPointsEarned !== 'number' || typeof parsed.rubricPointsTotal !== 'number') {
+    return { success: false, error: 'Invalid score structure (missing rubric points)' };
+  }
+  parsed.rubricPointsEarned = Math.max(0, Math.min(parsed.rubricPointsTotal, parsed.rubricPointsEarned));
+
+  const latencyMs = Date.now() - startTime;
+  return { success: true, score: parsed, tokensUsed, latencyMs };
+}
+
+export function getApExams() {
+  return Object.entries(SUPPORTED_EXAMS).map(([key, cfg]) => ({ key, label: cfg.label }));
+}
+
+export function getFrqTypes() {
+  return Object.entries(FRQ_TYPES).map(([key, label]) => ({ key, label }));
+}

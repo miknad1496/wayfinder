@@ -173,6 +173,7 @@ const FEATURE_ACCESS = {
   email_reminders:      ['pro', 'elite'],
   email_full_reminders: ['elite'],
   essay_reviewer:       ['pro', 'elite'],
+  ap_coach:             ['pro', 'elite'], // REVAMP V2: AP COACH ADD-ON PATCH67
 };
 
 export function getPlanLimits(plan) {
@@ -1742,6 +1743,79 @@ function sanitizeUser(user) {
       programsPreview: canAccess(plan, 'programs_preview'),
       emailReminders: canAccess(plan, 'email_reminders'),
       essayReviewer: canAccess(plan, 'essay_reviewer'),
+      apCoach: canAccess(plan, 'ap_coach'),
     }
   };
 }
+
+// ─── REVAMP V2: AP COACH ADD-ON PATCH67 — AP Coach credit functions (mirror of essay credits) ───
+export async function addApCredits(stripeCustomerId, quantity, pack, stripePaymentId) {
+  if (!stripeCustomerId || !quantity || quantity <= 0) {
+    return { error: 'Invalid parameters' };
+  }
+  try {
+    const filename = stripeCustomerIndex.get(stripeCustomerId);
+    if (!filename) return { error: 'User file not found' };
+    const filePath = join(USERS_DIR, filename);
+    const user = JSON.parse(await fs.readFile(filePath, 'utf8'));
+    const lockKey = user.id || user.email;
+    return await withCreditLock(lockKey, async () => {
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      freshData.apCoachRemaining = (freshData.apCoachRemaining || 0) + quantity;
+      if (!freshData.apCoachPurchased) freshData.apCoachPurchased = [];
+      freshData.apCoachPurchased.push({
+        pack,
+        quantity,
+        purchasedAt: new Date().toISOString(),
+        stripePaymentId,
+      });
+      await atomicWriteJSON(filePath, freshData);
+      return { success: true, remaining: freshData.apCoachRemaining };
+    });
+  } catch (err) {
+    return { error: 'Failed to add AP coach credits' };
+  }
+}
+
+export async function useApCredit(token) {
+  if (!token) return { allowed: false, remaining: 0 };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: false, remaining: 0 };
+    const { user, filePath } = resolved;
+    if (isAdmin(user.email) || isVIP(user.email)) {
+      return { allowed: true, remaining: 999 };
+    }
+    return await withCreditLock(user.id || user.email, async () => {
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      const remaining = freshData.apCoachRemaining || 0;
+      if (remaining <= 0) return { allowed: false, remaining: 0 };
+      freshData.apCoachRemaining = remaining - 1;
+      await atomicWriteJSON(filePath, freshData);
+      return { allowed: true, remaining: freshData.apCoachRemaining };
+    });
+  } catch {
+    return { allowed: false, remaining: 0 };
+  }
+}
+
+export async function refundApCredit(token) {
+  if (!token) return { success: false, remaining: 0 };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false, remaining: 0 };
+    const { user, filePath } = resolved;
+    if (isAdmin(user.email) || isVIP(user.email)) {
+      return { success: true, remaining: 999 };
+    }
+    return await withCreditLock(user.id || user.email, async () => {
+      const freshData = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      freshData.apCoachRemaining = (freshData.apCoachRemaining || 0) + 1;
+      await atomicWriteJSON(filePath, freshData);
+      return { success: true, remaining: freshData.apCoachRemaining };
+    });
+  } catch (err) {
+    return { success: false, remaining: 0 };
+  }
+}
+
