@@ -64,6 +64,38 @@ function canonicalKey(type, entry) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
+// NORMALIZE A SINGLE ENTRY — auto-fix common data-hygiene drift
+// ═══════════════════════════════════════════════════════════════════
+
+/**
+ * Mutates `entry` in place to fix data-hygiene issues that have a
+ * deterministic correct answer:
+ *
+ *   1. Bare-domain `_source` (e.g. "seattlechildrens.org") → mirror from
+ *      `url` if `url` starts with http(s)://. Per CLAUDE.md rule 2,
+ *      every verified entry MUST have a real `_source` URL.
+ *
+ * Returns true if the entry was mutated.
+ *
+ * Run BEFORE validateEntry so warnings reflect the normalized state.
+ */
+export function normalizeEntry(type, entry) {
+  if (!entry || typeof entry !== 'object') return false;
+  let mutated = false;
+
+  // Mirror url → _source when _source is bare (no http(s):// prefix)
+  if (entry._verified && typeof entry._source === 'string') {
+    const isFullUrl = /^https?:\/\//.test(entry._source);
+    if (!isFullUrl && typeof entry.url === 'string' && /^https?:\/\//.test(entry.url)) {
+      entry._source = entry.url;
+      mutated = true;
+    }
+  }
+
+  return mutated;
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // VALIDATE A SINGLE ENTRY
 // ═══════════════════════════════════════════════════════════════════
 
@@ -146,6 +178,9 @@ export function validateAndDedup(type, entries) {
   let dupCount = 0;
 
   for (const entry of entries) {
+    // Normalize first — auto-fix bare-domain _source by mirroring from url
+    normalizeEntry(type, entry);
+
     // Validate
     const validation = validateEntry(type, entry);
     if (!validation.valid) {

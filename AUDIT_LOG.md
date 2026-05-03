@@ -1259,3 +1259,45 @@ Site posture is clean entering May. Cost surface stable, server boots clean, dat
 
 ### Estimated Impact
 TG-AUDIT-1 has been live since the K-8 GA cutover (patch 28). Paid families with K-8 children using K-8 Plan or K-8 Ask got "Sign in to use this feature" errors despite being authenticated, and paid users got the free-tier David preamble across the essay coach. Single-line fix restores the intended Pro/Elite experience. Worth checking with Dan whether anyone surfaced these as bug reports.
+
+
+## 2026-05-03 Nightly Audit — Architectural Fix: bare-domain `_source` data hygiene
+
+**Focus Areas**: Cost & Resource Leaks (mandatory) + Backend Runtime + Data Integrity. Architectural fix shipped for the deferred `_source` data-hygiene flag from 2026-05-02.
+
+### Verifications (all clean)
+- **SLM keep-alive** (`backend/services/slm.js:791-820`): pings still do NOT update `lastWarmAt`. Comment-as-regression-detector intact at line 822-823.
+- **Anonymous chat cap**: `checkAnonDailyLimit` gates unauthenticated requests with disk-persisted 5/day limit, MAX_TRACKED_IPS=50000.
+- **Rate limiter**: `effectiveMax = auth?.user ? 30 : 5` — anonymous users tighter cap.
+- **Claude model usage**: opus only on premium essay reviewer; sonnet on financial-aid; haiku on all discover-local features. No surprise expensive calls.
+- **setInterval audit**: 4 backend intervals (`user-backup`, `scheduler`, `scraper-scheduler`, `slm keep-alive`) — all server-lifetime or have proper stop conditions.
+- **Server boot**: clean — `internships: 1606 (981 verified)`, `scholarships: 1043 (80 verified)`, `programs: 1416 (672 verified)`. No async-IIFE errors.
+- **Metadata count drift**: all 4 module files match (no drift). volunteer=247.
+- **JSON syntax**: all 4 data files parse cleanly.
+
+### Architectural Fix — `_source` Data Hygiene (deferred from 2026-05-02)
+
+**Issue (recap)**: 470 verified internships had bare-domain `_source` strings (e.g. `"seattlechildrens.org"`) instead of full URLs. Violates CLAUDE.md rule 2 ("Every verified entry MUST have a real `_source` URL"). Each had a proper `url` field with the matching full https URL — no user impact (frontend reads `.url`), but a canonical-citation rule violation that nightly patching couldn't sustain.
+
+**Fix shipped tonight (2 layers — runtime defense + one-time backfill)**:
+
+1. **`backend/services/data-integrity.js`** — added `normalizeEntry(type, entry)` exported function. Runs **before** `validateEntry` inside the `validateAndDedup` loop. Mutates the entry in place: when `_verified === true` AND `_source` is a string AND `_source` lacks `http(s)://` prefix AND `url` starts with `http(s)://` — mirror `entry._source = entry.url`. Returns `true` if mutated.
+
+   Effect: every future inject script run (and any future code path that goes through `validateAndDedup`) auto-fixes bare-domain `_source` from the entry's `url` field. The grinder-write endpoint (PATCH32 validation gate) already rejects bare-domain `_source` for new writes, so this is for the inject-verified-* path which doesn't go through PATCH32.
+
+2. **One-time backfill** — ran `normalizeEntry('internships', e)` over every entry in `backend/data/scraped/internships.json`. Result: **470 mutated, 0 still bare, 0 missing `_source`**. Server boot post-fix: clean, 1606 entries / 981 verified preserved.
+
+**Why not edit the source code in `inject-verified-internships.js` (19,853 lines, many bare `_source` literals)?** The runtime normalize covers it: re-running the inject script will pass the same source code through `validateAndDedup`, where each entry gets normalized before validation. The source code stays as-is; the canonical data file (`internships.json`) is what matters for production. Editing 19,853 lines of literals would be high-risk for a cosmetic improvement.
+
+### Verifications of the fix
+- `node --check backend/services/data-integrity.js` passes.
+- Pre-fix: 470 verified internships with bare-domain `_source`.
+- Post-fix: 0 bare-domain entries, 0 entries missing `_source`, all 981 verified internships have full https URLs.
+- Server boot post-fix: clean, internships count preserved (1606), data-health green.
+- Metadata: `lastNormalized: "2026-05-03"` stamped on internships.json.
+
+### Issues Found / Fixed
+- DATA-HYGIENE: 470 bare-domain `_source` entries in internships.json — FIXED via runtime defense (`normalizeEntry`) + one-time backfill.
+
+### Recap
+Two-week-old data-hygiene flag closed with an architectural fix. The same `normalizeEntry` infrastructure can absorb future deterministic-fix data drift (e.g., trimmed whitespace, lowercase format codes) without nightly patching. No engine-layer changes.

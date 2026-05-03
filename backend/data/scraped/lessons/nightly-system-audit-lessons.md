@@ -8,8 +8,10 @@
 - focus_areas (rotating): Cost & Resource Leaks (every night), then 1-2 of: Security, Data Integrity, API Surface, Code Quality, Auth, Essay Pipeline, Backend Runtime, Frontend & Build
 - last_calibration_change: 2026-04-27 — promote `Backend Runtime` to nightly priority alongside Cost; added "boot the server and grep for runtime warnings" as a high-yield move (caught the stripe `fsPromises` bug + 5 program duplicates that startup data-health check surfaces). Demote pure API-surface input-validation rotation: 4 fixes were applied 2026-04-25 and no new ones since — drop to weekly.
 - last_calibration_change: 2026-05-02 — runtime + data + cost have been clean for 5 consecutive runs. Keep all three nightly. Surfaced one data-hygiene drift (bare-domain `_source` in internship grinder writes) — would benefit from a one-time architectural fix vs. nightly patching.
+- last_calibration_change: 2026-05-03 — closed the bare-domain `_source` drift with an architectural fix in `data-integrity.js` (`normalizeEntry` runs before `validateEntry`). 470-entry one-time backfill applied. Going forward, deterministic-fix data drift (mirror `url` → `_source`, etc.) should be added to `normalizeEntry` rather than tracked in this file.
 
 ## EFFECTIVE PATTERNS
+- **NEW (2026-05-03)**: when a deferred data-hygiene flag is "auto-fixable from another field on the same entry," the right place to fix it is in `data-integrity.js normalizeEntry()` — runtime defense + one-time backfill via `validateAndDedup`, not a 19,853-line source-code edit. Pattern: extend `normalizeEntry` for any new deterministic-fix issue.
 - **NEW (2026-05-02)**: cross-checking `_source` URL hygiene against `url` rendering paths is high-yield — surfaced 470 internships with bare-domain `_source` (no user impact since `.url` is the rendered field, but violates the canonical-citation rule in CLAUDE.md). Pattern: `node -e "... !e._source.match(/^https?:\/\//)"` filter on each verified array.
 - **NEW (2026-05-02)**: re-checking flagged OPEN QUESTIONS against current code is worthwhile — tonight closed the stale `markEventProcessed` unhandled-rejection question (the .catch is already there; prior lesson was overstated).
 
@@ -27,7 +29,7 @@
 - Don't trust `node -c` alone for runtime correctness — it catches syntax but not undefined-symbol references like `fsPromises` (the reference was inside an async IIFE that gets called at module import time, so even a static lint catches it; but plain `node -c` does not). **Always boot the server.**
 
 ## DATA QUALITY FLAGS
-- **NEW (2026-05-02): bare-domain `_source` in 470 verified internships.** Grinder writes `_source: "seattlechildrens.org"` instead of the full URL. Frontend uses `.url` field for rendering so users are unaffected, but the `_source` field is the canonical citation per CLAUDE.md rule 2. Recommend updating the inject script + grinder write logic to mirror `url → _source` when `_source` is missing the protocol prefix. One-time backfill: `for e in arr: if e._source && !e._source.startsWith('http') && e.url?.startsWith('http'): e._source = e.url`.
+- **RESOLVED 2026-05-03 (was NEW 2026-05-02): bare-domain `_source` in 470 verified internships.** Closed via architectural fix in `data-integrity.js` (`normalizeEntry` mirrors `url` → `_source` when bare-domain detected on a verified entry) + one-time backfill (470 mutated, 0 still bare). Verified: server boots clean, all 981 verified internships now have full https `_source`.
 
 - **Metadata count drift across all data files** — every inject script SHOULD update `metadata.totalCount` from `array.length` and stamp `metadata.lastVerified` after successful write. Today the programs and volunteer files drifted significantly. Recommendation: add a single shared `syncMetadata(d, arrayKey)` helper in `data-integrity.js` and call it at the end of every inject script. Until then, nightly audit must keep running the count-fix.
 - **International HS programs duplicate-injection risk** — 5 exact duplicates landed in programs.json (Samsung KR, Tesla DE, ARM UK, Sony JP, TSMC TW) from international HS batches. Inject scripts apparently match by name within the file but not across batches that re-add the same name. Worth auditing the inject-verified-programs.js dedup logic.
@@ -40,6 +42,7 @@
 - **API Surface input-validation** — drop to weekly. Big sweep done 2026-04-25 covered all 15 routes; nothing new since.
 - **Essay Pipeline** — twice-weekly. Last fix 2026-04-26 (credit-refund-without-deduction), still warrants periodic re-check given premium-tier money flow.
 - **Data Integrity** — keep nightly via the boot-time data-health check; deeper spot-checks twice-weekly.
+- **NEW (2026-05-03)**: any future deterministic data-hygiene drift should go through `normalizeEntry` extension rather than nightly patches or per-script fixes. The pattern is now established.
 
 ## OPEN QUESTIONS
 
@@ -58,5 +61,6 @@
 | 2026-04-26 | essay pipeline deep | 1 | 1 | refund-without-deduction (HIGH, free credits exploit) |
 | 2026-04-27 | cost leaks, runtime, data | 3 | 3 | Stripe `fsPromises` undef (HIGH, double-credit risk) + 5 program dupes + 2 metadata drifts |
 | 2026-05-02 | cost, runtime, data, essay-pipeline | 1 (deferred) | 0 | clean — surfaced bare-domain `_source` data-hygiene drift in 470 internships |
+| 2026-05-03 | cost, runtime, data + arch fix | 1 | 1 | closed `_source` drift via `normalizeEntry` + 470-entry backfill |
 
 (see git log for "nightly audit" / "Full system audit" commits)
