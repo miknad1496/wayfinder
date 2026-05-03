@@ -7860,8 +7860,8 @@ function setupApCoachView() {
 
 async function loadApCredits() {
   try {
-    const r = await fetch(API_BASE + '/api/ap-coach/credits', {
-      headers: { Authorization: 'Bearer ' + getToken() },
+    const r = await fetch(API_BASE + a/ap-coach/credits', {
+      headers: { Authorization: 'Bearer ' + authToken },
     });
     const data = await r.json();
     const el = document.getElementById('apCreditsCount');
@@ -7872,8 +7872,8 @@ async function loadApCredits() {
 async function loadApExamsAndTypes() {
   try {
     const [er, tr] = await Promise.all([
-      fetch(API_BASE + '/api/ap-coach/exams'),
-      fetch(API_BASE + '/api/ap-coach/frq-types'),
+      fetch(API_BASE + a/ap-coach/exams'),
+      fetch(API_BASE + a/ap-coach/frq-types'),
     ]);
     const exams = ((await er.json()).exams || []);
     const types = ((await tr.json()).frqTypes || []);
@@ -7886,8 +7886,8 @@ async function loadApExamsAndTypes() {
 
 async function loadApGuides() {
   try {
-    const r = await fetch(API_BASE + '/api/ap-coach/guides', {
-      headers: { Authorization: 'Bearer ' + getToken() },
+    const r = await fetch(API_BASE + a/ap-coach/guides', {
+      headers: { Authorization: 'Bearer ' + authToken },
     });
     const data = await r.json();
     const list = document.getElementById('apGuidesList');
@@ -7898,7 +7898,7 @@ async function loadApGuides() {
       return;
     }
     list.innerHTML = guides.map(g => {
-      const url = API_BASE + '/api/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(getToken());
+      const url = API_BASE + a/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(authToken);
       const sizeKb = (g.size / 1024).toFixed(0);
       return '<a class="ap-guide-card" href="' + url + '" download style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; text-decoration:none; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
         '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
@@ -7923,9 +7923,9 @@ async function submitApScoring() {
   btn.textContent = 'Scoring (this can take 30-60s)...';
   if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Scoring your response — Claude Opus is reading the rubric...</div>';
   try {
-    const r = await fetch(API_BASE + '/api/ap-coach/score', {
+    const r = await fetch(API_BASE + a/ap-coach/score', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + getToken() },
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
       body: JSON.stringify({ exam: exam, frqType: frqType, prompt: prompt, response: response }),
     });
     const data = await r.json();
@@ -8019,3 +8019,5 @@ function renderApScore(score) {
 })();
 // ─── END PATCH70 ───
 
+
+// REVAMP V2: AP COACH JS HOTFIX PATCH76 — fixed getToken (4x) + double-/api/ (6x)
