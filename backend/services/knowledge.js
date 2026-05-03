@@ -1613,6 +1613,25 @@ async function buildCategoryIndex() {
     if (schoolChunks > 0) console.log('  Schools deep knowledge: ' + schoolChunks + ' chunks from ' + schoolFiles.length + ' files');
   } catch { /* schools dir doesn\'t exist yet — non-fatal */ }
 
+  // REVAMP V2: AP EXAMS PATCH58 — auto-load AP exam study guides from ap-exams/ subdir.
+  // Same pattern as schools/. Drop *.md study guides for any AP exam there.
+  // They merge into the education_decisions category for retrieval.
+  try {
+    const apDir = join(PATHS.knowledgeBase, 'ap-exams');
+    const apFiles = await fs.readdir(apDir);
+    let apChunks = 0;
+    for (const file of apFiles.filter(f => f.endsWith('.md') && f !== 'README.md')) {
+      const chunks = await loadMarkdownFile(apDir, file, 2.0);
+      for (const chunk of chunks) {
+        chunk.category = 'education_decisions';
+        chunk._apExam = file.replace(/^ap-/, '').replace(/\.md$/, '');
+      }
+      if (Array.isArray(index.education_decisions)) index.education_decisions.push(...chunks);
+      apChunks += chunks.length;
+    }
+    if (apChunks > 0) console.log('  AP exam study guides: ' + apChunks + ' chunks from ' + apFiles.length + ' files');
+  } catch { /* ap-exams dir doesn\'t exist yet — non-fatal */ }
+
 
   let totalChunks = 0;
   for (const [cat, chunks] of Object.entries(index)) {
