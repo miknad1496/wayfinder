@@ -557,6 +557,53 @@ router.get('/intelligence-analytics', (req, res) => {
 // ─── Per-User Token & API Activity ─────────────────────────
 
 // GET /api/admin/user-activity - Get per-user token/engine/message usage
+// REVAMP V2: SLM USAGE TRACKING PATCH54 — top-N users by SLM token consumption (per Dan request).
+router.get('/slm-usage', async (req, res) => {
+  try {
+    const { promises: fs } = await import('fs');
+    const { join, dirname } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    const USERS_DIR = join(__dirname, '..', 'data', 'users');
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || 25));
+    const today_str = new Date().toISOString().slice(0, 10);
+    const thisMonth_str = new Date().toISOString().slice(0, 7);
+
+    const userFiles = await fs.readdir(USERS_DIR).catch(() => []);
+    const users = await Promise.all(
+      userFiles.filter(f => f.endsWith('.json')).map(async f => {
+        try {
+          const raw = await fs.readFile(join(USERS_DIR, f), 'utf-8');
+          return decryptUserFields(JSON.parse(raw));
+        } catch { return null; }
+      })
+    );
+
+    const rows = users.filter(Boolean).map(u => ({
+      email: u.email,
+      name: u.name || '',
+      plan: u.plan || 'free',
+      slmTokensToday: (u.slmDayReset === today_str) ? (u.slmTokensToday || 0) : 0,
+      slmTokensMonth: (u.slmMonthReset === thisMonth_str) ? (u.slmTokensMonth || 0) : 0,
+      messagesUsedToday: (u.messageLastDayReset === today_str) ? (u.messagesUsedToday || 0) : 0,
+      lastLogin: u.lastLogin || null,
+    }))
+    .sort((a, b) => b.slmTokensMonth - a.slmTokensMonth)
+    .slice(0, limit);
+
+    const totals = {
+      slmTokensTodayAll: rows.reduce((s, r) => s + r.slmTokensToday, 0),
+      slmTokensMonthAll: rows.reduce((s, r) => s + r.slmTokensMonth, 0),
+      activeUsersToday: rows.filter(r => r.slmTokensToday > 0).length,
+    };
+    res.json({ totals, top: rows });
+  } catch (err) {
+    console.error('[admin/slm-usage] error:', err);
+    res.status(500).json({ error: 'Failed to load SLM usage: ' + err.message });
+  }
+});
+
 router.get('/user-activity', async (req, res) => {
   try {
     const { promises: fs } = await import('fs');

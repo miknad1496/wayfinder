@@ -24,6 +24,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext } from './knowledge.js';
 import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39
+import { useSLMTokens } from './auth.js'; // REVAMP V2: SLM USAGE TRACKING PATCH54
 import { getCriticalFacts } from './critical-facts-injector.js'; // REVAMP V2: CRITICAL-FACTS INJECTOR PATCH46
 import { detectAnalysisFramework } from './analysis-frameworks.js'; // REVAMP V2: SLM FRAMEWORKS PATCH42
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
@@ -665,6 +666,20 @@ export async function chatSLM(history, userMessage, sessionContext, options = {}
   const inputChars = messages.reduce((sum, m) => sum + m.content.length, 0);
   const estimatedInputTokens = Math.ceil(inputChars / 4);
   const estimatedOutputTokens = Math.ceil(rawResponse.length / 4);
+
+  // REVAMP V2: SLM USAGE TRACKING PATCH54 — track per-user SLM token consumption (self-hosted).
+  // If user is over their daily/monthly SLM cap, we still return the response
+  // (since we already consumed compute) but the NEXT call will be blocked.
+  // Caller can read sessionContext.token to debit.
+  const _v54_userToken = sessionContext?.token || null;
+  if (_v54_userToken) {
+    try {
+      const slmCheck = await useSLMTokens(_v54_userToken, estimatedInputTokens + estimatedOutputTokens);
+      if (!slmCheck.allowed) {
+        console.log('[SLM Cap] User over ' + slmCheck.reason + ' (' + slmCheck.plan + ' plan): ' + slmCheck.dayUsed + '/' + slmCheck.dayLimit + ' today');
+      }
+    } catch (e) { console.warn('[SLM Cap] tracking error (non-fatal):', e.message); }
+  }
 
   return {
     response: rawResponse,

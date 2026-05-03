@@ -148,10 +148,12 @@ let VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotm
   .split(',')
   .map(e => e.toLowerCase().trim())
   .filter(Boolean);
+// REVAMP V2: SLM USAGE TRACKING PATCH54 — added slmTokensPerDay/Month for self-hosted SLM compute caps.
+// Free: ~10 SLM messages/day at 5K avg = 50K. Pro: 4x. Elite: 20x.
 const PLAN_LIMITS = {
-  free:  { enginePerDay: 3,  dailyTokens: 25000,   monthlyTokens: null,      invites: 1,  messagesPerDay: 10, messagesPerMonth: 30  },
-  pro:   { enginePerDay: 10, dailyTokens: 150000,  monthlyTokens: 3000000,   invites: 5,  messagesPerDay: 20, messagesPerMonth: 60  },
-  elite: { enginePerDay: 20, dailyTokens: 300000,  monthlyTokens: 8000000,   invites: 10, messagesPerDay: 50, messagesPerMonth: 200 },
+  free:  { enginePerDay: 3,  dailyTokens: 25000,   monthlyTokens: null,      invites: 1,  messagesPerDay: 10, messagesPerMonth: 30,  slmTokensPerDay: 50000,   slmTokensPerMonth: 1000000  },
+  pro:   { enginePerDay: 10, dailyTokens: 150000,  monthlyTokens: 3000000,   invites: 5,  messagesPerDay: 20, messagesPerMonth: 60,  slmTokensPerDay: 250000,  slmTokensPerMonth: 5000000  },
+  elite: { enginePerDay: 20, dailyTokens: 300000,  monthlyTokens: 8000000,   invites: 10, messagesPerDay: 50, messagesPerMonth: 200, slmTokensPerDay: 1000000, slmTokensPerMonth: 25000000 },
 };
 
 // Feature access control
@@ -476,6 +478,11 @@ export async function createUser({ email, password, name, userType, school, inte
     tokenLastReset: new Date().toISOString().slice(0, 10),
     tokensUsedMonth: 0,
     tokenMonthReset: new Date().toISOString().slice(0, 7),  // YYYY-MM
+    // REVAMP V2: SLM USAGE TRACKING PATCH54 — SLM token tracking (self-hosted, separate from Anthropic API)
+    slmTokensToday: 0,
+    slmTokensMonth: 0,
+    slmDayReset: new Date().toISOString().slice(0, 10),
+    slmMonthReset: new Date().toISOString().slice(0, 7),
 
     // Essay reviewer credits (add-on purchase)
     essayReviewsRemaining: 0,
@@ -1214,6 +1221,85 @@ export async function checkTokenUsage(token) {
  * Record token usage for today.
  * Uses token index for O(1) lookup.
  */
+// REVAMP V2: SLM USAGE TRACKING PATCH54 — SLM token usage tracking + cap enforcement.
+// Returns { allowed, dayRemaining, dayLimit, monthRemaining, monthLimit }.
+// If !allowed, caller should fall back to non-SLM path.
+export async function useSLMTokens(token, tokensUsed) {
+  if (!token || !tokensUsed) return { allowed: true };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: true };
+    const { user, filePath } = resolved;
+    const today = new Date().toISOString().slice(0, 10);
+    const thisMonth = new Date().toISOString().slice(0, 7);
+    if (user.slmDayReset !== today) {
+      user.slmTokensToday = 0;
+      user.slmDayReset = today;
+    }
+    if (user.slmMonthReset !== thisMonth) {
+      user.slmTokensMonth = 0;
+      user.slmMonthReset = thisMonth;
+    }
+    const effectivePlan = (isAdmin(user.email) || isVIP(user.email)) ? 'elite' : (user.plan || 'free');
+    const limits = getPlanLimits(effectivePlan);
+    const dayLimit = limits.slmTokensPerDay || Infinity;
+    const monthLimit = limits.slmTokensPerMonth || Infinity;
+    const dayUsed = user.slmTokensToday || 0;
+    const monthUsed = user.slmTokensMonth || 0;
+    // Pre-emptive check: would this call put us over?
+    if (dayUsed + tokensUsed > dayLimit) {
+      return {
+        allowed: false,
+        reason: 'daily_slm_cap',
+        dayUsed, dayLimit, dayRemaining: Math.max(0, dayLimit - dayUsed),
+        monthUsed, monthLimit, monthRemaining: Math.max(0, monthLimit - monthUsed),
+        plan: effectivePlan,
+      };
+    }
+    if (monthUsed + tokensUsed > monthLimit) {
+      return {
+        allowed: false,
+        reason: 'monthly_slm_cap',
+        dayUsed, dayLimit, dayRemaining: Math.max(0, dayLimit - dayUsed),
+        monthUsed, monthLimit, monthRemaining: Math.max(0, monthLimit - monthUsed),
+        plan: effectivePlan,
+      };
+    }
+    user.slmTokensToday = dayUsed + tokensUsed;
+    user.slmTokensMonth = monthUsed + tokensUsed;
+    await atomicWriteJSON(filePath, user);
+    return {
+      allowed: true,
+      dayUsed: user.slmTokensToday, dayLimit, dayRemaining: Math.max(0, dayLimit - user.slmTokensToday),
+      monthUsed: user.slmTokensMonth, monthLimit, monthRemaining: Math.max(0, monthLimit - user.slmTokensMonth),
+      plan: effectivePlan,
+    };
+  } catch (err) {
+    console.warn('[useSLMTokens] error (non-fatal):', err.message);
+    return { allowed: true };  // fail-open so SLM keeps working
+  }
+}
+
+export async function getSLMUsage(token) {
+  if (!token) return null;
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return null;
+    const { user } = resolved;
+    const today = new Date().toISOString().slice(0, 10);
+    const thisMonth = new Date().toISOString().slice(0, 7);
+    const effectivePlan = (isAdmin(user.email) || isVIP(user.email)) ? 'elite' : (user.plan || 'free');
+    const limits = getPlanLimits(effectivePlan);
+    return {
+      plan: effectivePlan,
+      slmTokensToday: user.slmDayReset === today ? (user.slmTokensToday || 0) : 0,
+      slmTokensMonth: user.slmMonthReset === thisMonth ? (user.slmTokensMonth || 0) : 0,
+      dayLimit: limits.slmTokensPerDay || null,
+      monthLimit: limits.slmTokensPerMonth || null,
+    };
+  } catch { return null; }
+}
+
 export async function recordTokenUsage(token, tokensUsed) {
   if (!token || !tokensUsed) return;
 
