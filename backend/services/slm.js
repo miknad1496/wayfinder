@@ -24,6 +24,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext } from './knowledge.js';
 import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: SLM FULL RAG + NARRATIVE PATCH39
+import { getCriticalFacts } from './critical-facts-injector.js'; // REVAMP V2: CRITICAL-FACTS INJECTOR PATCH46
 import { detectAnalysisFramework } from './analysis-frameworks.js'; // REVAMP V2: SLM FRAMEWORKS PATCH42
 import { BOUNDARY_INSTRUCTION } from './scope_classifier.js';
 
@@ -423,6 +424,12 @@ ${contextStr}`;
     if (curated) {
       systemPrompt += '\n' + curated;
       console.log('[SLM CuratedSearch] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
+    }
+    // REVAMP V2: CRITICAL-FACTS INJECTOR PATCH46 — also inject critical-facts (financial aid, etc.) bypassing BM25
+    const _v46_facts = getCriticalFacts(userMessage);
+    if (_v46_facts) {
+      systemPrompt += _v46_facts;
+      console.log('[SLM CriticalFacts] injected for: "' + (userMessage || '').slice(0, 60) + '..."');
     }
   } catch (curatedErr) {
     console.warn('[SLM CuratedSearch] failed (non-fatal):', curatedErr.message);

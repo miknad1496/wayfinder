@@ -4,6 +4,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { retrieveContext, formatContext, getLiteBrainContext } from './knowledge.js';
 import { searchCuratedEntries } from './curated-search.js'; // REVAMP V2: CURATED DB INJECTION PATCH35
+import { getCriticalFacts } from './critical-facts-injector.js'; // REVAMP V2: CRITICAL-FACTS INJECTOR PATCH46
 import { ANALYSIS_FRAMEWORKS, detectAnalysisFramework } from './analysis-frameworks.js'; // REVAMP V2: SLM FRAMEWORKS PATCH42
 import { getCuratedDBContext, buildUserTierContext } from './curated-db-context.js';
 import { initOutputFilter, filterResponse as filterLeakage, invalidateOutputFilter } from './output_filter.js';
@@ -517,6 +518,12 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       contextStr = (contextStr || '') + '\n' + curated;
       const lineCount = curated.split('\n').length;
       console.log('[CuratedSearch] injected ' + lineCount + ' lines for: "' + userMessage.slice(0, 60) + '..."');
+    }
+    // REVAMP V2: CRITICAL-FACTS INJECTOR PATCH46 — also inject critical-facts (financial aid, etc.) bypassing BM25
+    const _v46_facts = getCriticalFacts(userMessage);
+    if (_v46_facts) {
+      contextStr = (contextStr || '') + _v46_facts;
+      console.log('[CriticalFacts] injected for: "' + userMessage.slice(0, 60) + '..."');
     }
   } catch (curatedErr) {
     console.warn('[CuratedSearch] failed (non-fatal):', curatedErr.message);
