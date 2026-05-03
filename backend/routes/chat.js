@@ -538,9 +538,11 @@ router.post('/', async (req, res) => {
     const hasHistory = session.history.length > 0;
     const exchangeCount = Math.floor(session.history.length / 2); // pairs of user+assistant
 
-    // SLM: use if warm or was recently warm AND scope allows it
-    const useSLM = !isFirstMessage && (slmIsWarm || (hasHistory && slmEverWarmed))
-      && shouldUseSLM(routingOptions);
+    // REVAMP V2: COLD-SLM BYPASS PATCH49 — only route to SLM when CURRENTLY warm. Was previously
+    // routing on slmEverWarmed (was-ever-warm) which made users pay 90s cold-start
+    // every quiet period. Now: cold SLM → fall to Haiku Advisor (instant, full intel
+    // via patch 47), and we warm SLM in background so next message hits warm.
+    const useSLM = !isFirstMessage && slmIsWarm && shouldUseSLM(routingOptions);
 
     // Welcome Desk: holds the conversation for up to 3 exchanges while SLM warms up.
     // Gathers useful context (grade level, interests, goals) so the advisor can
@@ -646,6 +648,14 @@ router.post('/', async (req, res) => {
           );
           tEvent.generation.mode = 'engine';
         } else if (useHaikuAdvisor) {
+          // REVAMP V2: COLD-SLM BYPASS PATCH49 — kick off SLM warm-up in BACKGROUND so the next
+          // message after this one hits the warm SLM. Non-fatal; logs only.
+          if (isSLMAvailable() && !slmIsWarm) {
+            warmUpSLM().catch(err => {
+              console.warn('[BG-WARM-UP] Background warm-up after Haiku Advisor failed: ' + err.message);
+            });
+            console.log('[BG-WARM-UP] SLM warm-up kicked in background — next chat should hit SLM');
+          }
           // ── Haiku Advisor: SLM not available but user needs real answers ──
           console.log(`[HAIKU-ADVISOR] SLM unavailable — giving real answers via Haiku+RAG`);
           try {
