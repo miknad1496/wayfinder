@@ -6,6 +6,7 @@ import rateLimit from 'express-rate-limit';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { config } from 'dotenv';
+import { warmUpSLM, getSLMWarmStatus, isSLMAvailable } from './services/slm.js'; // REVAMP V2: SLM AUTO-WARM PATCH48
 import chatRoutes from './routes/chat.js';
 import feedbackRoutes from './routes/feedback.js';
 import adminRoutes from './routes/admin.js';
@@ -272,6 +273,25 @@ async function start() {
       startScheduler();
       startScraperScheduler();
       startUserBackup();
+
+      // REVAMP V2: SLM AUTO-WARM PATCH48 — auto-warm the SLM right after startup so it's
+      // available for long-history users without waiting for Welcome Desk.
+      // Without this, every chat in an existing session falls through to
+      // the Haiku Advisor fallback path (which bypasses the SLM-only patches
+      // 39/40/42). 5-second delay so the server is fully responsive first.
+      if (isSLMAvailable()) {
+        setTimeout(() => {
+          console.log('[SLM Auto-Warm] Initiating background warm-up...');
+          warmUpSLM().then(() => {
+            const status = getSLMWarmStatus();
+            console.log('[SLM Auto-Warm] Warm-up complete: state=' + status.state + ', latency=' + (status.warmLatencyMs || 0) + 'ms');
+          }).catch(err => {
+            console.warn('[SLM Auto-Warm] Warm-up failed (non-fatal, will retry on first user message):', err.message);
+          });
+        }, 5000);
+      } else {
+        console.log('[SLM Auto-Warm] SLM_ENDPOINT not configured — skipping auto-warm');
+      }
     }
   });
 }
