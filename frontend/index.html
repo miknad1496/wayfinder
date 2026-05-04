@@ -242,6 +242,86 @@ input:focus, select:focus, textarea:focus {
 .splash-features li { transition: color 0.15s, transform 0.15s; }
 .splash-features li:hover { color: #1e3a8a; transform: translateX(2px); }
 </style>
+
+<style id="patch84-hotfix-style">
+/* REVAMP V2: AP EXAM COACH RENAME PATCH84 — AP Exam Coach header + tabs layout fix */
+
+/* AP view container — push content below the dark header bar */
+#apCoachView {
+  background: #f8fafc !important;
+}
+
+/* Dark header bar at top of AP view — make sure it does NOT overlap the tabs */
+#apCoachView .ev-header,
+#apCoachView .ap-header,
+.ap-coach-header {
+  position: relative !important;
+  z-index: 5 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Tab nav — clear separation from header, real size, full background */
+#apTabs, .ap-tabs {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0 !important;
+  background: white !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  margin: 0 0 22px 0 !important;
+  padding: 8px 16px 0 16px !important;
+  position: relative !important;
+  z-index: 4 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+  overflow: visible !important;
+  min-height: 48px !important;
+}
+
+.ap-tab-btn {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  padding: 12px 18px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: color 0.15s, border-color 0.15s, background 0.15s !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+.ap-tab-btn:hover { color: #1e3a8a !important; background: #f1f5f9 !important; }
+.ap-tab-btn.active {
+  color: #2563eb !important;
+  border-bottom-color: #2563eb !important;
+  font-weight: 600 !important;
+  background: white !important;
+}
+.ap-tab-panel { display: none; }
+.ap-tab-panel.active { display: block !important; }
+
+/* Subject bar — sits below tabs, not overlapping */
+#apActiveSubjectBar {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* AP view body — wrapper padding */
+#apCoachView .ev-body, #apCoachView .ap-body, .ap-view-body {
+  padding: 20px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #apTabs, .ap-tabs { padding: 4px 8px 0 8px !important; min-height: 42px !important; }
+  .ap-tab-btn { padding: 9px 12px !important; font-size: 13px !important; }
+  #apCoachView .ev-body, .ap-view-body { padding: 12px !important; }
+}
+</style>
 </head>
 <body>
   <!-- REVAMP V2: WHATS NEW BANNER PATCH29 -->
@@ -349,7 +429,7 @@ input:focus, select:focus, textarea:focus {
         </button>
         <button id="sidebarApCoach" class="sidebar-footer-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span>AP Coach</span>
+          <span>AP Exam Coach</span>
           <span class="tool-badge">Add-on</span>
         </button>
         <button id="sidebarInternships" class="sidebar-footer-btn">
@@ -2588,7 +2668,7 @@ input:focus, select:focus, textarea:focus {
               <span>Back</span>
             </button>
             <div class="ev-brand">
-              <h2 class="ev-title">AP Coach</h2>
+              <h2 class="ev-title">AP Exam Coach</h2>
               <span class="ev-badge">FULL STUDY MODULE</span>
             </div>
           </div>
@@ -2602,7 +2682,7 @@ input:focus, select:focus, textarea:focus {
 
         <!-- Upgrade gate (only shown for users who exhausted access on the active tab) -->
         <div id="apUpgradeGate" style="display:none; padding:48px; max-width:640px; margin:24px auto; text-align:center; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px;">
-          <h2 id="apUpgradeGateTitle" style="margin:0 0 12px; color:#1e293b;">Upgrade to keep using AP Coach</h2>
+          <h2 id="apUpgradeGateTitle" style="margin:0 0 12px; color:#1e293b;">Upgrade to keep using AP Exam Coach</h2>
           <p id="apUpgradeGateMsg" style="color:#64748b; font-size:15px; line-height:1.6; margin-bottom:24px;"></p>
           <a href="#pricing" class="ev-upgrade-btn" style="display:inline-block; padding:12px 32px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600;">View Plans</a>
         </div>
@@ -2817,3 +2897,5 @@ input:focus, select:focus, textarea:focus {
 </body>
 </html>
 <!-- REVAMP V2: BRAND + COUNT FIX PATCH79 index.html — heading made dynamic via #apGuidesCount span -->
+
+<!-- REVAMP V2: AP EXAM COACH RENAME PATCH84 -->

@@ -8293,3 +8293,5 @@ function renderApScore(score) {
 })();
 // ─── END PATCH82 AP COACH HOTFIX ───
 
+
+<!-- REVAMP V2: AP EXAM COACH RENAME PATCH84 -->
