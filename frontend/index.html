@@ -323,6 +323,11 @@ input:focus, select:focus, textarea:focus {
 }
 </style>
 
+<style id="patch93-scroll-lock">
+/* PATCH93 AP COACH SCROLL LOCK — prevent double-scrollbar when AP view open */
+body.ap-coach-open { overflow: hidden !important; }
+body.essay-coach-open { overflow: hidden !important; }
+</style>
 <style id="patch86-style">
 /* REVAMP V2: AP COACH TIGHTEN PATCH86 — tabs sticky + guides grid + polish */
 
@@ -680,8 +685,8 @@ input:focus, select:focus, textarea:focus {
     </div>
     <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(15,23,42,0.05);">
       <div style="font-size:24px; margin-bottom:6px;">🏆</div>
-      <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">4. Sharpen and submit</div>
-      <div style="color:#64748b; font-size:13px;">Essay reviewer with line-by-line coaching, FRQ scoring on the AP rubric, and final-pass refinement before you hit submit.</div>
+      <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">4. Score the rubric, not the prep book</div>
+      <div style="color:#64748b; font-size:13px;">Essay reviewer with line-by-line coaching. AP Exam Coach scores your FRQs on the actual College Board rubric and tells you exactly what a 5 would add.</div>
     </div>
   </div>
   <div style="text-align:center; margin-top:24px; color:#64748b; font-size:13px; font-style:italic;">
@@ -696,7 +701,7 @@ input:focus, select:focus, textarea:focus {
               </div>
               <div class="splash-feature">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
-                <span><strong>27 AP exam coaching modules</strong> &mdash; subject-aware Coach Chat, on-demand Tutor (custom teaching guides), rubric-aware FRQ scoring, and full universal study guides &mdash; every exam covered</span>
+                <span><strong>AP Exam Coach &mdash; every AP, every rubric, inside out.</strong> 27 exams, unit-by-unit brain files, the math behind a 5, the phrases that score. Coach Chat, on-demand Tutor, rubric-aware FRQ scoring, and universal study guides &mdash; calibrated against actual College Board rubrics, not generic prep books.</span>
               </div>
               <div class="splash-feature">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
@@ -2817,12 +2822,34 @@ input:focus, select:focus, textarea:focus {
 
           <!-- ══════ TAB: GAME PLAN ══════ -->
           <div class="ap-tab-panel active" data-tab-panel="game-plan">
-            <div id="apGamePlanWelcome" style="padding:24px; background:linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border:1px solid #e2e8f0; border-radius:12px; margin-bottom:24px;">
-              <h3 style="font-size:18px; margin:0 0 8px;">Your AP study companion</h3>
-              <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:12px;">
-                Tell us what AP exams you're taking and your target scores. We'll show countdowns, track your progress, and personalize Coach Chat + Tutor to your exam list.
+            <div id="apGamePlanWelcome" style="padding:28px 28px 24px 28px; background:linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border:1px solid #1e40af; border-radius:14px; margin-bottom:24px; color:#fff; box-shadow:0 8px 24px rgba(37,99,235,0.25);">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
+                <span style="background:rgba(255,255,255,0.2); padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">AP Exam Coach</span>
+                <span style="background:#fbbf24; color:#422006; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">✦ Full brain · 27 exams</span>
+              </div>
+              <h3 style="font-size:24px; margin:0 0 10px; font-weight:700; line-height:1.25;">Every AP exam, every rubric, inside out.</h3>
+              <p style="color:rgba(255,255,255,0.92); font-size:15px; line-height:1.65; margin:0 0 14px 0;">
+                Coach Chat, Tutor, FRQ Scoring, and universal Study Guides — all 27 exams, all unit-by-unit. The math behind a 5, the phrases that score, the traps that drop strong students to a 4. Calibrated against the actual College Board rubrics, not memorized from generic prep books.
               </p>
-              <p style="color:#64748b; font-size:13px; margin:0;">All optional — skip and use the tabs directly if you prefer.</p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-top:10px;">
+                <div style="background:rgba(255,255,255,0.1); padding:10px 12px; border-radius:8px;">
+                  <div style="font-size:11px; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">Coach Chat</div>
+                  <div style="font-size:13px; line-height:1.4;">Subject-aware Q&A grounded in per-unit brain files</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 12px; border-radius:8px;">
+                  <div style="font-size:11px; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">FRQ Scoring</div>
+                  <div style="font-size:13px; line-height:1.4;">Rubric points earned, top 3 fixes, what a 5 would add</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 12px; border-radius:8px;">
+                  <div style="font-size:11px; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">Tutor</div>
+                  <div style="font-size:13px; line-height:1.4;">Custom teaching guides, tier-tagged for your target score</div>
+                </div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 12px; border-radius:8px;">
+                  <div style="font-size:11px; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">Study Guides</div>
+                  <div style="font-size:13px; line-height:1.4;">Universal docx with [3]/[4]/[5] tier markers — every exam</div>
+                </div>
+              </div>
+              <p style="color:rgba(255,255,255,0.78); font-size:13px; margin:14px 0 0 0;">Pin your exams below for countdowns + personalized priorities, or skip and use the tabs directly.</p>
             </div>
 
             <div id="apOnboardingForm" class="ev-input-card">
@@ -3117,8 +3144,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .engine-badge::before { content:"✦"; font-size:11px; }
 </style>
 
-<!-- patch84 profile wizard modal — injected into index.html before
-</body>
+<!-- patch84 profile wizard modal -->
 <div id="profileWizardModal" class="modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.55); z-index:9000; align-items:center; justify-content:center;">
   <div class="modal-content" style="background:white; border-radius:12px; max-width:520px; width:92%; max-height:88vh; overflow-y:auto; padding:28px 28px 22px 28px; box-shadow:0 8px 28px rgba(15,23,42,0.18);">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
@@ -3134,7 +3160,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="pw-dot" data-step="4"></div>
     </div>
 
-     Step 1: Grade level -->
+    <!-- Step 1: Grade level -->
     <div class="pw-step" data-step="1" style="display:block;">
       <label style="display:block; font-weight:600; color:#0f172a; margin-bottom:8px;">What grade are you in (or going into)?</label>
       <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">

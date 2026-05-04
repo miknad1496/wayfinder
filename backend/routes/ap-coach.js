@@ -374,32 +374,40 @@ router.get('/guide/:exam', async (req, res) => {
     // but may not be present on the Render disk (binary assets sometimes
     // miss the deploy). Stream from raw.githubusercontent.com instead.
     const ghRawUrl = `https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/${encodeURIComponent(cfg.file)}`;
-    try {
-      const ghRes = await new Promise((resolve, reject) => {
-        const https = require('https');
-        const reqGh = https.get(ghRawUrl, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (r) => {
-          if (r.statusCode === 301 || r.statusCode === 302) {
-            // Follow one redirect
-            const loc = r.headers.location;
-            return resolve(new Promise((res2, rej2) => {
-              https.get(loc, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, res2).on('error', rej2);
-            }));
+    // PATCH93: recursive redirect handler — old code resolved a Promise<IncomingMessage>
+    // and tried to pipe() that Promise to res, which silently broke on every redirect.
+    // GitHub raw redirects to objects.githubusercontent.com so this hit every download.
+    function _ghFetch(url, depth) {
+      const https = require('https');
+      return new Promise((resolve, reject) => {
+        const r = https.get(url, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (resp) => {
+          if ((resp.statusCode === 301 || resp.statusCode === 302 || resp.statusCode === 307) && resp.headers.location) {
+            if (depth > 5) {
+              resp.resume();
+              return reject(new Error('GitHub raw too many redirects'));
+            }
+            resp.resume();
+            return _ghFetch(resp.headers.location, depth + 1).then(resolve, reject);
           }
-          if (r.statusCode !== 200) {
-            return reject(new Error(`GitHub raw HTTP ${r.statusCode}`));
+          if (resp.statusCode !== 200) {
+            resp.resume();
+            return reject(new Error(`GitHub raw HTTP ${resp.statusCode}`));
           }
-          resolve(r);
+          resolve(resp);
         });
-        reqGh.on('error', reject);
-        reqGh.setTimeout(15000, () => { reqGh.destroy(new Error('GitHub raw timeout')); });
+        r.on('error', reject);
+        r.setTimeout(20000, () => { r.destroy(new Error('GitHub raw timeout')); });
       });
+    }
+    try {
+      const ghRes = await _ghFetch(ghRawUrl, 0);
       res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
       res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
       ghRes.pipe(res);
       return;
     } catch (ghErr) {
       console.error('AP Coach GitHub-raw fallback failed for', exam, ':', ghErr.message);
-      return res.status(404).json({ error: 'Study guide currently unavailable. Email danielyungkim@hotmail.com.' });
+      return res.status(404).json({ error: `Study guide currently unavailable (${ghErr.message}). Email danielyungkim@hotmail.com.` });
     }
   } catch (err) {
     console.error('AP Coach guide download error:', err);

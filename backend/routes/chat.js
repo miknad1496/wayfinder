@@ -400,8 +400,10 @@ router.post('/', async (req, res) => {
       // user-scoped memory (patches 35/37/39/40/41/42) and the engine-availability
       // narrative (patch 39) nudges the user to engine mode when it would help.
       // To re-enable: change the `false &&` below back to the original condition.
-      // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74 — auto-promotion RE-ENABLED, but now triggers Head Consultant SUPPLEMENT (not Opus replacement)
-      if (isPaidTier && (_isSpecificQuery(message) || _curatedWillFire || shouldRunHeadConsultantSupplement(message))) {
+      // REVAMP V2: PATCH93 — auto-promotion DISABLED again per user feedback ('it automatically uses up my head consultant pulls even though i didn't even have it toggled').
+      // Keep RAG, curated DB, frameworks, and engine-availability narrative running on the SLM path so paid users still get depth without quota burn.
+      // To re-enable, change the `false &&` below back to the original condition.
+      if (false && isPaidTier && (_isSpecificQuery(message) || _curatedWillFire || shouldRunHeadConsultantSupplement(message))) {
         try {
           const promoteResult = await useEngine(auth.token);
           if (promoteResult.allowed) {

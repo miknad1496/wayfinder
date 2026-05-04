@@ -5492,7 +5492,16 @@ function _k12CardHtml(s) {
   const ratingHtml = s.rating?.score
     ? `<span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:10px;font-size:11px;">${s.rating.source || 'rating'}: ${s.rating.score}/${s.rating.scale || '10'}</span>`
     : '';
-  const enrollment = s.enrollment ? `${s.enrollment.toLocaleString()} students` : '';
+  // PATCH93: defensive — enrollment can be number, object, or missing
+  let _enrollNum = null;
+  if (typeof s.enrollment === 'number') _enrollNum = s.enrollment;
+  else if (s.enrollment && typeof s.enrollment === 'object') {
+    _enrollNum = s.enrollment.total ?? s.enrollment.totalEnrollment ?? s.enrollment.count ?? null;
+  } else if (typeof s.enrollment === 'string') {
+    const n = parseInt(s.enrollment.replace(/[^0-9]/g, ''), 10);
+    if (!isNaN(n)) _enrollNum = n;
+  }
+  const enrollment = _enrollNum != null ? `${_enrollNum.toLocaleString()} students` : '';
   const ratio = s.studentTeacherRatio ? ` &middot; ${s.studentTeacherRatio}:1 ratio` : '';
   const principal = s.principal ? ` &middot; Principal: ${_esc(s.principal)}` : '';
   // Defensive: notablePrograms can be string, array, or missing
@@ -7815,6 +7824,7 @@ function openApCoach() {
   if (!apView) return;
   apView.style.display = 'flex';
   apView.style.flexDirection = 'column';
+  document.body.classList.add('ap-coach-open'); // PATCH93: scroll lock
 
   if (!apCoachInitialized) {
     setupApCoachView();
@@ -7838,6 +7848,7 @@ function closeApCoach() {
   if (apView) apView.style.display = 'none';
   const chatEl = document.querySelector('.chat-container');
   if (chatEl) chatEl.style.display = '';
+  document.body.classList.remove('ap-coach-open'); // PATCH93: scroll unlock
 }
 
 function setupApCoachView() {
@@ -8010,14 +8021,13 @@ async function loadApGuides() {
         if (!resp.ok) {
           let msg = 'HTTP ' + resp.status;
           try { const j = await resp.json(); msg = j.error || msg; } catch (_) {}
-          if (resp.status === 404) {
-            alert('Study guide for ' + label + ' has not deployed to the server yet. Email danielyungkim@hotmail.com if this persists.');
-          } else if (resp.status === 401) {
+          // PATCH93: surface backend's actual error message rather than canned text
+          if (resp.status === 401) {
             alert('Session expired. Please log in again.');
           } else if (resp.status === 403) {
             alert('Coach or Consultant tier required to download study guides.');
           } else {
-            alert('Could not download ' + label + ': ' + msg);
+            alert('Could not download ' + label + ' — ' + msg);
           }
           return;
         }
@@ -8237,7 +8247,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics']; // PATCH91: + ap-calc-bc + ap-microeconomics // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab']; // PATCH93: + ap-calc-ab // PATCH91: + ap-calc-bc + ap-microeconomics // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
