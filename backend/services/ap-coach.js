@@ -208,7 +208,7 @@ export async function scoreFrq(exam, frqType, prompt, response) {
   let resp;
   try {
     resp = await client.messages.create({
-      model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-6',
+      model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-7',
       max_tokens: 2500,
       system: systemPrompt,
       messages: [{ role: 'user', content: userPrompt }],

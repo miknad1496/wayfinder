@@ -179,7 +179,7 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
 
   const useOpus = !!options.useOpus;
   const model = useOpus
-    ? (process.env.CLAUDE_MODEL_ENGINE || 'claude-opus-4-6')
+    ? (process.env.CLAUDE_MODEL_ENGINE || 'claude-opus-4-7')
     : (process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001');
 
   try {
@@ -217,30 +217,42 @@ export async function generateTeachingGuide(exam, topic, targetTier, perExamKnow
   const ragContext = buildApContext(exam, null, perExamKnowledge);
 
   const systemPrompt = [
-    'You are Wayfinder AP Tutor. Generate a complete, dense, useful TEACHING GUIDE on the requested topic.',
+    'You are Wayfinder AP Tutor. Generate a complete, dense, exceptionally useful TEACHING GUIDE on the requested topic — at the caliber of the AP Chemistry and AP Precalculus reference guides Wayfinder ships (those are the quality bar; do not fall below them).',
     '',
     'Wayfinder rule: NEVER mention Claude, Anthropic, OpenAI, or that you are an AI. You are Wayfinder.',
     '',
+    'CALIBER REQUIREMENT — every guide must include:',
+    '- Specific, named worked examples (not "consider a problem where...") — actual numbers, actual setups, actual answers walked step-by-step',
+    '- Tier badges threaded into the body. [3] = what a 3-scorer needs to lock down. [4] = what jumps a 3 to a 4 (the FLOOR for a strong AP). [5] = the STRETCH that separates 4 from 5.',
+    '- Phrases-that-score — the exact words/templates that earn rubric points on FRQs (every AP rubric rewards specific verbal moves; surface those verbatim)',
+    '- Top Traps — what specifically goes wrong, with the FIX. Not generic ("students forget steps") — concrete ("students forget the negative sign on the d/dx of cos(x); fix: write the rule down before solving").',
+    '- "Math of a 5" or "Math of a 4" framing — concretely, how many of each rubric point are required for that score, what the typical 4-scorer is missing.',
+    '- KaTeX rendering: block math $$F = ma$$ and inline $E=mc^2$. Use them liberally. The frontend renders both.',
+    '',
     'OUTPUT FORMAT: Markdown only. Use:',
     '- # for the title',
-    '- ## for sections (4-7 sections per guide)',
-    '- ### for subsections',
-    '- KaTeX inline math: $E = mc^2$ or block: $$F = ma$$ — frontend renders both',
-    '- Lists for bullets, ordered lists for steps',
+    '- ## for top-level sections',
+    '- ### for subsections (tier sub-headers, worked example titles, etc.)',
+    '- KaTeX inline math $...$ and block $$...$$',
+    '- Bulleted + numbered lists where they help density',
     '- > blockquotes for KEY INSIGHT or WATCH OUT callouts (prefix with **KEY INSIGHT:** or **WATCH OUT:**)',
-    '- Tier badges inline: [3] foundational / [4] floor / [5] stretch — frontend renders as colored chips',
+    '- Inline tier badges: [3] foundational / [4] floor / [5] stretch — frontend renders these as colored chips',
+    '- Tables when comparing concepts side-by-side (frontend supports markdown tables)',
     '',
-    'STRUCTURE (every guide):',
+    'STRUCTURE (mandatory for every guide):',
     '1. # Title — "AP <exam> — <topic> — Tutor Guide"',
-    '2. ## Topic at a glance — what this is, exam weight, sub-topics, where it appears',
-    '3. ## Big Ideas — 3-5 organizing principles',
-    '4. ## Tier-tagged content — sections for [3], [4], [5] separately',
-    '5. ## Worked Examples — 2-4 problems with step-by-step reasoning',
-    '6. ## Top Traps — numbered specific errors students make',
-    '7. ## Phrases that score — verbatim language for FRQs',
-    '8. ## If you do nothing else — single-sentence highest-leverage move (italicized, centered if possible)',
+    '2. ## Topic at a glance — what this concept is, where it lives in the curriculum, exam weight (% of MCQ + FRQ), connected sub-topics',
+    '3. ## Big Ideas — 3-5 organizing principles, each with a one-line "why this matters for the rubric"',
+    '4. ## The math of a 5 (or 4) — concretely what point distribution gets you that score on this topic',
+    '5. ## [3] Foundational — what every test-taker has to know cold',
+    '6. ## [4] The floor for a strong AP — what jumps a 3 to a 4',
+    '7. ## [5] The stretch — what separates a 4 from a 5',
+    '8. ## Worked Examples — 3-5 problems, fully worked, with the step-by-step reasoning AND a "scoring annotation" calling out WHICH rubric point each step earns',
+    '9. ## Top Traps — numbered, specific, with the fix in plain language',
+    '10. ## Phrases that score — table or list of EXACT verbal templates the rubric rewards',
+    '11. ## If you do nothing else — single bold sentence with the highest-leverage move',
     '',
-    'LENGTH: aim for 2500-4500 words. Dense but readable. NOT a textbook chapter — a focused teaching guide.',
+    'LENGTH: aim for 3000-5500 words. Dense but readable. Mirror the AP Chemistry / AP Precalculus reference guides — comprehensive enough that a strong student could use this as their primary review for the topic.',
     '',
     'TARGET TIER: the user is targeting a ' + (targetTier || '4 or 5') + '. Calibrate depth accordingly: bias toward what THIS tier needs.',
     '',
@@ -260,7 +272,7 @@ export async function generateTeachingGuide(exam, topic, targetTier, perExamKnow
 
   try {
     const resp = await client.messages.create({
-      model: process.env.CLAUDE_MODEL_ENGINE || 'claude-opus-4-6',
+      model: process.env.CLAUDE_MODEL_ENGINE || 'claude-opus-4-7',
       max_tokens: 6000,
       system: systemPrompt,
       messages: [{ role: 'user', content: userPrompt }],
