@@ -5484,26 +5484,226 @@ async function searchK12() {
 }
 
 function renderK12Results(data) {
-  const items = data.results || [];
+  let items = data.results || [];
+  // PATCH99: Apply Best-for client-side preset on top of server filters
+  const bestFor = (document.getElementById('k12BestFor') || {}).value;
+  if (bestFor) items = _k12ApplyBestFor(items, bestFor);
+  // Stash for compare modal data lookup
+  window._k12LastResults = items;
+
   const c = $('k12Results');
   if (!items.length) {
     c.innerHTML = '<p style="color:#94a3b8;padding:20px;text-align:center;">No matches. Try widening filters or selecting a different state/level.</p>';
+    _k12RenderCompareDrawer();
     return;
   }
   const stateFull = _k12FullStateNames[data.state] || data.state;
-  const header = `<p style="color:#59636e;font-size:13px;margin-bottom:12px;">${data.matched} of ${data.totalInState} ${data.level} schools in ${stateFull} match (${data.enrichedInResults} enriched).</p>`;
+  const presetLabel = bestFor ? ' · ' + (document.querySelector('#k12BestFor option[value="' + bestFor + '"]')?.textContent || '').replace(/^[^A-Za-z]+/, '').trim() : '';
+  const header = '<p style="color:#59636e;font-size:13px;margin-bottom:12px;">' + items.length + ' of ' + data.totalInState + ' ' + data.level + ' schools in ' + stateFull + ' match' + (data.enrichedInResults != null ? ' (' + data.enrichedInResults + ' enriched)' : '') + presetLabel + '.</p>';
   c.innerHTML = header + items.map(_k12CardHtml).join('');
+
+  // Wire compare checkboxes
+  c.querySelectorAll('.k12-compare-cb').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      const key = cb.getAttribute('data-key');
+      if (cb.checked) {
+        if (_k12ComparePicks.size >= 3) {
+          alert('You can compare up to 3 schools at a time. Uncheck one to add another.');
+          cb.checked = false;
+          return;
+        }
+        const rec = items.find(function(x) { return (x.ncessch || x.id || x.name) === key; });
+        if (rec) _k12ComparePicks.set(key, rec);
+      } else {
+        _k12ComparePicks.delete(key);
+      }
+      _k12RenderCompareDrawer();
+      // Update visual ring on this card without full re-render
+      const card = cb.closest('.tool-card');
+      if (card) {
+        if (cb.checked) {
+          card.style.border = '1px solid #2563eb';
+          card.style.boxShadow = '0 0 0 2px rgba(37,99,235,0.15)';
+        } else {
+          card.style.border = '1px solid #e5e7eb';
+          card.style.boxShadow = 'none';
+        }
+      }
+    });
+  });
+  _k12RenderCompareDrawer();
 }
 
+// PATCH99: client-side "Best for" filter presets
+function _k12ApplyBestFor(items, preset) {
+  switch (preset) {
+    case 'stem':
+      return items.filter(function(s) { return (s.apCourses || 0) >= 15 || s.magnetProgram; });
+    case 'ib':
+      return items.filter(function(s) { return s.ibProgram; });
+    case 'college':
+      return items.filter(function(s) { return parseFloat(s.graduationRate || 0) >= 95; });
+    case 'small':
+      return items.filter(function(s) { return typeof s.studentTeacherRatio === 'number' && s.studentTeacherRatio <= 16; });
+    case 'ranked':
+      return items.filter(function(s) { return s.rating && s.rating.score; });
+    default:
+      return items;
+  }
+}
+
+// PATCH99: render the sticky bottom compare drawer
+function _k12RenderCompareDrawer() {
+  const drawer = document.getElementById('k12CompareDrawer');
+  const picks = document.getElementById('k12ComparePicks');
+  if (!drawer || !picks) return;
+  if (_k12ComparePicks.size < 1) {
+    drawer.style.display = 'none';
+    return;
+  }
+  drawer.style.display = 'flex';
+  const names = Array.from(_k12ComparePicks.values()).map(function(s) { return _esc(s.name || 'Unnamed'); });
+  picks.innerHTML = '<strong>' + _k12ComparePicks.size + ' selected:</strong> ' + names.join(' · ') + (_k12ComparePicks.size < 2 ? ' <span style="color:#94a3b8;font-weight:400;">(pick at least 2 to compare)</span>' : '');
+  const openBtn = document.getElementById('k12CompareOpen');
+  if (openBtn) openBtn.disabled = _k12ComparePicks.size < 2;
+  if (openBtn) openBtn.style.opacity = _k12ComparePicks.size < 2 ? '0.5' : '1';
+  if (openBtn) openBtn.style.cursor = _k12ComparePicks.size < 2 ? 'not-allowed' : 'pointer';
+}
+
+// PATCH99: side-by-side compare overlay
+function _k12OpenCompareOverlay() {
+  const ov = document.getElementById('k12CompareOverlay');
+  const grid = document.getElementById('k12CompareGrid');
+  if (!ov || !grid) return;
+  const picks = Array.from(_k12ComparePicks.values());
+  if (picks.length < 2) return;
+
+  // Compute relative max for the visible result set
+  const all = window._k12LastResults || picks;
+  const maxAP = Math.max(1, ...all.map(function(s) { return s.apCourses || 0; }));
+  const maxGrad = 100;
+  const maxRatio = Math.max(20, ...all.map(function(s) { return typeof s.studentTeacherRatio === 'number' ? s.studentTeacherRatio : 0; }));
+
+  function bar(val, max, color) {
+    if (val == null || isNaN(val)) return '<span style="color:#94a3b8;font-size:12px;">—</span>';
+    const pct = Math.min(100, Math.max(0, (val / max) * 100));
+    return '<div style="background:#f1f5f9;border-radius:4px;height:8px;width:100%;margin:4px 0;"><div style="background:' + color + ';height:100%;width:' + pct + '%;border-radius:4px;"></div></div>';
+  }
+  function row(label, fn) {
+    return '<tr>' +
+      '<th style="text-align:left;padding:8px 6px;font-size:12px;color:#475569;font-weight:600;background:#f8fafc;border-bottom:1px solid #e2e8f0;">' + label + '</th>' +
+      picks.map(function(s) {
+        return '<td style="padding:8px 10px;font-size:13px;color:#0f172a;border-bottom:1px solid #e2e8f0;border-left:1px solid #e2e8f0;">' + fn(s) + '</td>';
+      }).join('') +
+      '</tr>';
+  }
+
+  let html = '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;">';
+  html += '<thead><tr><th style="padding:10px 6px;background:#f1f5f9;border-bottom:1px solid #e2e8f0;width:140px;"></th>' +
+    picks.map(function(s) {
+      return '<th style="padding:10px 12px;text-align:left;font-weight:700;color:#0f172a;background:#f1f5f9;border-bottom:1px solid #e2e8f0;border-left:1px solid #e2e8f0;font-size:14px;">' + _esc(s.name || '—') + '<div style="font-size:11px;color:#64748b;font-weight:500;margin-top:2px;">' + _esc(s.city || '') + ', ' + _esc(s.state || '') + '</div></th>';
+    }).join('') + '</tr></thead><tbody>';
+  html += row('District', function(s) { return _esc(s.district || '—'); });
+  html += row('Enrollment', function(s) {
+    let n = null;
+    if (typeof s.enrollment === 'number') n = s.enrollment;
+    else if (s.enrollment && typeof s.enrollment === 'object') n = s.enrollment.total ?? s.enrollment.totalEnrollment ?? null;
+    return n != null ? n.toLocaleString() : '—';
+  });
+  html += row('Student-teacher ratio', function(s) {
+    if (typeof s.studentTeacherRatio !== 'number') return '—';
+    const r = s.studentTeacherRatio;
+    const lbl = r <= 14 ? 'small' : r <= 20 ? 'medium' : 'large';
+    return r + ':1 <span style="color:#64748b;">(' + lbl + ')</span>' + bar(maxRatio - r, maxRatio, '#10b981');
+  });
+  html += row('Graduation rate', function(s) {
+    const g = parseFloat(s.graduationRate);
+    if (isNaN(g)) return '—';
+    return g + '%' + bar(g, maxGrad, g >= 95 ? '#10b981' : g >= 90 ? '#3b82f6' : g >= 85 ? '#facc15' : '#ef4444');
+  });
+  html += row('AP courses', function(s) {
+    const ap = s.apCourses || 0;
+    return ap + bar(ap, maxAP, '#3b82f6');
+  });
+  html += row('IB program', function(s) { return s.ibProgram ? '✓ Yes' : '—'; });
+  html += row('Magnet/STEM', function(s) { return s.magnetProgram ? '✓ Yes' : '—'; });
+  html += row('Public rating', function(s) { return s.rating?.score ? (s.rating.score + '/' + (s.rating.scale || '10')) : '—'; });
+  html += row('Principal', function(s) { return s.principal ? _esc(s.principal) : '—'; });
+  html += row('Website', function(s) {
+    return s.website ? '<a href="' + _esc(s.website) + '" target="_blank" rel="noopener" style="color:#0969da;">Visit →</a>' : '—';
+  });
+  html += '</tbody></table></div>';
+  grid.innerHTML = html;
+  ov.style.display = 'flex';
+}
+
+// PATCH99: wire drawer + overlay buttons once DOM is ready
+(function _wfWireK12Compare() {
+  if (typeof document === 'undefined') return;
+  function wire() {
+    const open = document.getElementById('k12CompareOpen');
+    const clear = document.getElementById('k12CompareClear');
+    const close = document.getElementById('k12CompareClose');
+    const ov = document.getElementById('k12CompareOverlay');
+    if (open && !open.__wfWired) {
+      open.__wfWired = true;
+      open.addEventListener('click', function() { _k12OpenCompareOverlay(); });
+    }
+    if (clear && !clear.__wfWired) {
+      clear.__wfWired = true;
+      clear.addEventListener('click', function() {
+        _k12ComparePicks.clear();
+        document.querySelectorAll('.k12-compare-cb').forEach(function(cb) { cb.checked = false; });
+        document.querySelectorAll('#k12Results .tool-card').forEach(function(card) {
+          card.style.border = '1px solid #e5e7eb';
+          card.style.boxShadow = 'none';
+        });
+        _k12RenderCompareDrawer();
+      });
+    }
+    if (close && !close.__wfWired) {
+      close.__wfWired = true;
+      close.addEventListener('click', function() { if (ov) ov.style.display = 'none'; });
+    }
+    if (ov && !ov.__wfWired) {
+      ov.__wfWired = true;
+      ov.addEventListener('click', function(ev) { if (ev.target === ov) ov.style.display = 'none'; });
+    }
+    // Wire Best-for filter to re-render existing results without re-fetching
+    const bestFor = document.getElementById('k12BestFor');
+    if (bestFor && !bestFor.__wfWired) {
+      bestFor.__wfWired = true;
+      bestFor.addEventListener('change', function() {
+        if (typeof searchK12 === 'function') searchK12();
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wire);
+  } else {
+    wire();
+  }
+  // Re-attach when modal becomes visible (in case markup is replaced later)
+  setInterval(wire, 1500);
+})();
+
+// PATCH99: store selected schools for compare across renders
+const _k12ComparePicks = new Map(); // ncessch -> school record
 function _k12CardHtml(s) {
   const enrichedBadge = s.enriched
-    ? '<span style="background:#ddf4ff;color:#0a3069;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">Enriched</span>'
-    : '<span style="background:#f1f5f9;color:#64748b;padding:2px 8px;border-radius:10px;font-size:11px;">NCES base only</span>';
-  const apBadge = s.apCourses ? `<span style="background:#fef3c7;color:#854d0e;padding:2px 8px;border-radius:10px;font-size:11px;">${s.apCourses} AP</span>` : '';
-  const ibBadge = s.ibProgram ? '<span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:10px;font-size:11px;">IB</span>' : '';
-  const magnetBadge = s.magnetProgram ? '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:10px;font-size:11px;">Magnet</span>' : '';
+    ? '<span style="background:#dcfce7;color:#14532d;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:700;">✓ Enriched</span>'
+    : '<span style="background:#f1f5f9;color:#64748b;padding:2px 8px;border-radius:10px;font-size:11px;">Base record</span>';
+  // PATCH99: tiered AP badge (deep / strong / some)
+  let apBadge = '';
+  if (s.apCourses) {
+    const ap = s.apCourses;
+    const tier = ap >= 15 ? { bg: '#dbeafe', fg: '#1e3a8a', label: 'AP-deep · ' } : ap >= 8 ? { bg: '#fef3c7', fg: '#854d0e', label: 'AP-strong · ' } : { bg: '#fef9c3', fg: '#a16207', label: '' };
+    apBadge = '<span style="background:' + tier.bg + ';color:' + tier.fg + ';padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;">📚 ' + tier.label + ap + ' AP</span>';
+  }
+  const ibBadge = s.ibProgram ? '<span style="background:#dcfce7;color:#15803d;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;">🌍 IB</span>' : '';
+  const magnetBadge = s.magnetProgram ? '<span style="background:#fce7f3;color:#9d174d;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;">🔬 Magnet</span>' : '';
   const ratingHtml = s.rating?.score
-    ? `<span style="background:#e0e7ff;color:#3730a3;padding:2px 8px;border-radius:10px;font-size:11px;">${s.rating.source || 'rating'}: ${s.rating.score}/${s.rating.scale || '10'}</span>`
+    ? '<span style="background:#e0e7ff;color:#3730a3;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;">⭐ ' + (s.rating.source || 'rating') + ': ' + s.rating.score + '/' + (s.rating.scale || '10') + '</span>'
     : '';
   // PATCH93: defensive — enrollment can be number, object, or missing
   let _enrollNum = null;
@@ -5522,24 +5722,54 @@ function _k12CardHtml(s) {
   if (Array.isArray(s.notablePrograms)) programs = s.notablePrograms.slice(0,4).join(' · ');
   else if (typeof s.notablePrograms === 'string') programs = s.notablePrograms.slice(0, 200);
   const phone = s.phone ? ` &middot; ${_esc(s.phone)}` : '';
+  // PATCH99: color-coded grad rate
+  let gradRateHtml = '';
+  if (s.graduationRate != null) {
+    const g = parseFloat(s.graduationRate);
+    if (!isNaN(g)) {
+      const t = g >= 95 ? { bg: '#dcfce7', fg: '#14532d', emo: '🟢' }
+              : g >= 90 ? { bg: '#dbeafe', fg: '#1e40af', emo: '🔵' }
+              : g >= 85 ? { bg: '#fef3c7', fg: '#854d0e', emo: '🟡' }
+              :           { bg: '#fee2e2', fg: '#991b1b', emo: '🔴' };
+      gradRateHtml = '<span style="display:inline-block;background:' + t.bg + ';color:' + t.fg + ';padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;margin-right:6px;">' + t.emo + ' ' + g + '% grad</span>';
+    }
+  }
+  // PATCH99: ratio badge
+  let ratioHtml = '';
+  if (typeof s.studentTeacherRatio === 'number') {
+    const r = s.studentTeacherRatio;
+    const t = r <= 14 ? { bg: '#dcfce7', fg: '#14532d', label: 'small' }
+            : r <= 20 ? { bg: '#e0e7ff', fg: '#3730a3', label: 'medium' }
+            :           { bg: '#fef9c3', fg: '#a16207', label: 'large' };
+    ratioHtml = '<span style="display:inline-block;background:' + t.bg + ';color:' + t.fg + ';padding:2px 9px;border-radius:10px;font-size:11px;font-weight:600;margin-right:6px;">👥 ' + r + ':1 (' + t.label + ')</span>';
+  }
+  const compareKey = s.ncessch || s.id || s.name;
+  const isCompared = _k12ComparePicks.has(compareKey);
   return `
-    <div class="tool-card" style="border:1px solid #e5e7eb;border-radius:8px;padding:14px 16px;margin-bottom:10px;background:#fff;">
+    <div class="tool-card" style="border:1px solid ${isCompared ? '#2563eb' : '#e5e7eb'};border-radius:10px;padding:14px 16px;margin-bottom:10px;background:#fff;${isCompared ? 'box-shadow:0 0 0 2px rgba(37,99,235,0.15);' : ''}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
-        <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(s.name || 'Unnamed school')}</h4>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">${enrichedBadge}${apBadge}${ibBadge}${magnetBadge}${ratingHtml}</div>
+        <div style="flex:1;min-width:0;">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" class="k12-compare-cb" data-key="${_esc(compareKey)}" ${isCompared ? 'checked' : ''} style="cursor:pointer;width:15px;height:15px;flex-shrink:0;">
+            <h4 style="margin:0;font-size:15px;color:#1f2328;">${_esc(s.name || 'Unnamed school')}</h4>
+          </label>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">${enrichedBadge}${apBadge}${ibBadge}${magnetBadge}${ratingHtml}</div>
       </div>
-      <p style="margin:2px 0 8px;font-size:12px;color:#59636e;">${_esc(s.district || '')} &middot; ${_esc(s.city || '')}, ${_esc(s.state || '')} ${_esc(s.zip || '')}${phone}</p>
-      ${enrollment || principal ? `<p style="margin:0 0 6px;font-size:13px;color:#334155;">${enrollment}${ratio}${principal}</p>` : ''}
-      ${programs ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Programs:</strong> ${_esc(programs)}</p>` : ''}
-      ${s.graduationRate ? `<p style="margin:6px 0 4px;font-size:12px;color:#59636e;"><strong>Graduation rate:</strong> ${s.graduationRate}%</p>` : ''}
-      <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+      <p style="margin:4px 0 8px 23px;font-size:12px;color:#59636e;">${_esc(s.district || '')} &middot; ${_esc(s.city || '')}, ${_esc(s.state || '')} ${_esc(s.zip || '')}${phone}</p>
+      <div style="margin:6px 0 6px 23px;display:flex;flex-wrap:wrap;align-items:center;">${gradRateHtml}${ratioHtml}${enrollment ? '<span style="font-size:12px;color:#475569;margin-right:6px;">' + enrollment + '</span>' : ''}${principal ? '<span style="font-size:12px;color:#475569;">' + principal.replace('&middot;','').trim() + '</span>' : ''}</div>
+      ${programs ? `<p style="margin:6px 0 4px 23px;font-size:12px;color:#475569;"><strong>Programs:</strong> ${_esc(programs)}</p>` : ''}
+      <div style="display:flex;gap:10px;margin:8px 0 0 23px;flex-wrap:wrap;">
         ${s.website ? `<a href="${_esc(s.website)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">School website →</a>` : ''}
         ${s.rating?.url ? `<a href="${_esc(s.rating.url)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">${_esc(s.rating.source || 'Rating')} profile →</a>` : ''}
       </div>
-      ${!s.enriched ? '<p style="margin:8px 0 0;font-size:11px;color:#94a3b8;font-style:italic;">Enriched data not yet collected for this school. Visit the website above for current details.</p>' : ''}
+      ${!s.enriched ? '<p style="margin:8px 0 0 23px;font-size:11px;color:#94a3b8;font-style:italic;">Base NCES record only. Detailed enrichment is coming for this school.</p>' : ''}
     </div>
   `;
 }
+
+// PATCH99: keep the picks state in a global so the renderK12Results can attach checkbox handlers each time.
+window._k12ComparePicks = _k12ComparePicks;
 
 // ─── SUMMER CAMPS (K-8) MODULE ─────────────────────────────────
 
