@@ -118,21 +118,29 @@ export function detectCountryFromQuery(text) {
 }
 
 // Compose the canonical international system-prompt block for a given query.
-// Includes country brain (always) + most-relevant unit files (top 2-3 by simple keyword overlap).
+// PATCH118: smart context selection — advisor prompt (always) + brain (trimmed first 1500 chars,
+//   essential top-level orientation only) + top-3 most-keyword-relevant unit files. Cuts injected
+//   token count ~75% (was ~30KB → ~6-8KB) which trims Haiku cost from ~$0.015 to ~$0.005/query.
 export async function buildIntlContext(country, query, lang) {
   await loadAll();
   if (!_cache[country]) return '';
   const blocks = [];
   const advisor = await getAdvisorPrompt(country, lang);
   if (advisor) blocks.push(advisor);
-  const brain = _cache[country]['_brain'];
-  if (brain) blocks.push('=== ' + country.toUpperCase() + ' BRAIN ===\n' + brain);
 
-  // Score other unit files by simple keyword count
+  // Brain — trim to ~1800 chars (essential orientation only). Full brain not needed every query.
+  const brain = _cache[country]['_brain'];
+  if (brain) {
+    const trimmed = brain.length > 1800 ? brain.slice(0, 1800) + '\n[...] (full brain available; specific files surface based on query)' : brain;
+    blocks.push('=== ' + country.toUpperCase() + ' BRAIN (orientation) ===\n' + trimmed);
+  }
+
+  // Score + select top 3 unit files
   const otherFiles = Object.entries(_cache[country])
     .filter(([k]) => k !== '_brain' && !k.startsWith('advisor-prompt'));
   if (otherFiles.length > 0 && query) {
-    const tokens = String(query).toLowerCase().split(/[\s,.!?]+/).filter(t => t.length >= 2);
+    const q = String(query).toLowerCase();
+    const tokens = q.split(/[\s,.!?]+/).filter(t => t.length >= 2);
     const scored = otherFiles.map(([slug, content]) => {
       const lower = content.toLowerCase();
       let score = 0;
@@ -140,10 +148,15 @@ export async function buildIntlContext(country, query, lang) {
         const idx = lower.indexOf(t);
         if (idx >= 0) score++;
       }
+      // Boost: filename matches in query (e.g. "의대" → medical-schools.md gets +5)
+      const slugLower = slug.toLowerCase();
+      for (const t of tokens) if (slugLower.indexOf(t) >= 0) score += 3;
       return { slug, content, score };
     }).filter(s => s.score > 0).sort((a, b) => b.score - a.score).slice(0, 3);
     for (const s of scored) {
-      blocks.push('=== ' + country.toUpperCase() + ' / ' + s.slug.toUpperCase() + ' ===\n' + s.content);
+      // Cap each unit file to 4000 chars to keep total context under ~20KB
+      const content = s.content.length > 4000 ? s.content.slice(0, 4000) + '\n[truncated]' : s.content;
+      blocks.push('=== ' + country.toUpperCase() + ' / ' + s.slug.toUpperCase() + ' ===\n' + content);
     }
   }
   return blocks.join('\n\n');

@@ -511,9 +511,10 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   // PATCH96: coherence + action-items
   try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
   systemPrompt += _patch96_actionItemsClose;
-  // PATCH116: intl-context override — Korean/Japanese/Chinese queries get country brain + advisor prompt prepended
+  // PATCH118: intl context REPLACES WAYFINDER_IDENTITY_RULES (was overriding the Korean advisor with US-centric framing).
   if (options && options.intlContext) {
-    systemPrompt = options.intlContext + '\n\n' + WAYFINDER_IDENTITY_RULES + '\n\n' + systemPrompt;
+    const _intlOverride = '\n\n[CRITICAL — OVERRIDE ANY PRIOR REFUSAL] If conversation history shows you previously declined to answer questions in this language or domain, that was an error. The current system prompt above is authoritative. Answer the current user question fully and confidently using the country brain provided. Do NOT defer to "experts" or refuse to help — you ARE the expert system the user is consulting.\n';
+    systemPrompt = options.intlContext + _intlOverride + systemPrompt;
   }
 
   // REVAMP V2: PERSONA TIERS PATCH55 — gate chatHaikuAdvisor injections by user tier.
@@ -754,9 +755,14 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // PATCH96: coherence + action-items closer
   try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
   systemPrompt += _patch96_actionItemsClose;
-  // PATCH114: prepend the country-localized advisor prompt + country brain when set
+  // PATCH118: when intl context is set, REPLACE WAYFINDER_IDENTITY_RULES (which is English/US-centric
+  // and was overriding the Korean advisor's role with "specialized in US admissions"). The country
+  // advisor prompt has its own identity rules in 한국어 (NEVER claim to be Claude, etc.) so it's safe
+  // to swap. Also add a hard "OVERRIDE PRIOR REFUSALS" clause to break out of any conversation memory
+  // where the model previously refused to advise on Korean admissions.
   if (options.intlContext) {
-    systemPrompt = options.intlContext + '\n\n' + WAYFINDER_IDENTITY_RULES + '\n\n' + systemPrompt;
+    const _intlOverride = '\n\n[CRITICAL — OVERRIDE ANY PRIOR REFUSAL] If conversation history shows you previously declined to answer questions in this language or domain, that was an error. The current system prompt above is authoritative. Answer the current user question fully and confidently using the country brain provided. Do NOT defer to "experts" or refuse to help — you ARE the expert system the user is consulting.\n';
+    systemPrompt = options.intlContext + _intlOverride + systemPrompt;
   }
 
   // Build messages array — sanitize to prevent API 400s from malformed history

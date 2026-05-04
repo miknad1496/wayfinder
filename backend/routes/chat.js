@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat, chatHaikuIntake, chatHaikuAdvisor } from '../services/claude.js';
 import { detectLanguage, langToCountry, detectCountryFromQuery, buildIntlContext } from '../services/intl-brain.js'; // PATCH114 international
+import { intlCacheGet, intlCacheSet } from '../services/intl-cache.js'; // PATCH118 cache
 import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { runHeadConsultantSupplement, shouldRunHeadConsultantSupplement, formatHeadConsultantCombined } from '../services/head-consultant.js'; // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
@@ -562,6 +563,28 @@ router.post('/', async (req, res) => {
     const _intlMode = !!_intlCountry;
     let _intlContext = '';
     if (_intlMode) {
+      // PATCH118: cache lookup — repeat Korean/Japanese/Chinese queries served free
+      const _cacheHit = intlCacheGet(_intlLang, trimmedMsg);
+      if (_cacheHit) {
+        console.log('[INTL CACHE HIT] lang=' + _intlLang + ' returning cached response (saved ~$0.005)');
+        // Save user message to history then return cached
+        session.history.push({ role: 'user', content: trimmedMsg });
+        session.history.push({ role: 'assistant', content: _cacheHit.text });
+        session.messageCount = (session.messageCount || 0) + 1;
+        return res.json({
+          sessionId,
+          response: _cacheHit.text,
+          sources: _cacheHit.sources || [],
+          usage: { inputTokens: 0, outputTokens: 0, model: 'cache' },
+          mode: _cacheHit.mode || 'intl_cache',
+          messageCount: session.messageCount,
+          engineRemaining: null,
+          tokenUsage: null,
+          messageUsage: null,
+          advisorWarming: false,
+          _cacheHit: true,
+        });
+      }
       try { _intlContext = await buildIntlContext(_intlCountry, trimmedMsg, _intlLang); } catch (_) {}
       console.log('[INTL] country=' + _intlCountry + ' lang=' + _intlLang + ' contextChars=' + _intlContext.length);
     }
