@@ -10,7 +10,7 @@
     "lastRunReplaced": 0,
     "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 — Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
     "totalVerified": 174,
-    "totalEnriched": 236,
+    "totalEnriched": 278,
     "lastRun": 27,
     "lastEnriched": "2026-04-26",
     "totalEntries": 182,
@@ -8930,6 +8930,991 @@
         "https://www.shorelineschools.org/einstein"
       ],
       "ncessch": "WF-WA-shoreline-school-district-einstein-middle-school"
+    },
+    {
+      "name": "Lincoln High School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97201",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme — Lincoln is one of two PPS IB schools",
+        "Robust AP catalog (15+ AP courses)",
+        "Strong feeder to UO Honors / Reed / OSU"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Consistently top-ranked OR public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/lincoln",
+        "https://www.pps.net/Page/2049"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-lincoln-high-school"
+    },
+    {
+      "name": "Cleveland High School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97202",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Renowned constitution team",
+        "Strong arts + Latin program"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/cleveland"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-cleveland-high-school"
+    },
+    {
+      "name": "Grant High School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97212",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Grant Magnet IB candidate / strong AP suite",
+        "NE Portland flagship"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/grant"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-grant-high-school"
+    },
+    {
+      "name": "Wilson High School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97219",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "SW Portland feeder pattern from Robert Gray MS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/wilson"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-wilson-high-school"
+    },
+    {
+      "name": "Beverly Cleary School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97212",
+      "level": "middle",
+      "grades": "K-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "K-8 unified program",
+        "PPS TAG (Talented + Gifted) services",
+        "Named after author (alumna)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/beverlycleary"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-beverly-cleary-school"
+    },
+    {
+      "name": "da Vinci Arts Middle School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97214",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Arts-focused magnet — application required",
+        "Visual arts, music, dance, theater integrated curriculum",
+        "Strong PPS arts magnet pipeline"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/davinci"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-da-vinci-arts-middle-school"
+    },
+    {
+      "name": "Robert Gray Middle School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97219",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Feeds Wilson HS",
+        "PPS TAG services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/robertgray"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-robert-gray-middle-school"
+    },
+    {
+      "name": "Mt Tabor Middle School",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97215",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "SE Portland feeder pattern",
+        "PPS TAG services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/mttabor"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-mt-tabor-middle-school"
+    },
+    {
+      "name": "Alameda Elementary",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97212",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "NE Portland — Grant feeder pattern",
+        "PPS TAG eligibility"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/alameda"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-alameda-elementary"
+    },
+    {
+      "name": "Ainsworth Elementary",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97201",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Lincoln HS feeder pattern",
+        "PPS TAG eligibility",
+        "SW Portland flagship ES"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/ainsworth"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-ainsworth-elementary"
+    },
+    {
+      "name": "Bridlemile Elementary",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97221",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/bridlemile"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-bridlemile-elementary"
+    },
+    {
+      "name": "Richmond Elementary",
+      "district": "Portland Public Schools",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97214",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Japanese Magnet Program — full Japanese immersion K-5",
+        "Highly competitive admit lottery"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pps.net/richmond"
+      ],
+      "ncessch": "WF-OR-portland-public-schools-richmond-elementary"
+    },
+    {
+      "name": "Sunset High School",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Strong AP catalog",
+        "Highly competitive academic profile per district publications"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier OR public high school per published rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/sunset"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-sunset-high-school"
+    },
+    {
+      "name": "Westview High School",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Robotics + science Olympiad track record",
+        "Cedar Mill / Bethany families"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/westview"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-westview-high-school"
+    },
+    {
+      "name": "Mountainside High School",
+      "district": "Beaverton School District",
+      "city": "Beaverton",
+      "state": "OR",
+      "zip": "97007",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Newer (2017) school, modern facilities",
+        "Strong STEM track and AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/mountainside"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-mountainside-high-school"
+    },
+    {
+      "name": "Stoller Middle School",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG (Talented and Gifted)",
+        "Feeds Sunset HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/stoller"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-stoller-middle-school"
+    },
+    {
+      "name": "Meadow Park Middle School",
+      "district": "Beaverton School District",
+      "city": "Beaverton",
+      "state": "OR",
+      "zip": "97005",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG",
+        "Diverse student body"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/meadowpark"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-meadow-park-middle-school"
+    },
+    {
+      "name": "Highland Park Middle School",
+      "district": "Beaverton School District",
+      "city": "Beaverton",
+      "state": "OR",
+      "zip": "97008",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG",
+        "Feeds Beaverton HS / Mountainside HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/highlandpark"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-highland-park-middle-school"
+    },
+    {
+      "name": "Cedar Park Middle School",
+      "district": "Beaverton School District",
+      "city": "Beaverton",
+      "state": "OR",
+      "zip": "97225",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG",
+        "Feeds Sunset HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/cedarpark"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-cedar-park-middle-school"
+    },
+    {
+      "name": "Bonny Slope Elementary",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG",
+        "High-performing per district publications"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/bonnyslope"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-bonny-slope-elementary"
+    },
+    {
+      "name": "Findley Elementary",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/findley"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-findley-elementary"
+    },
+    {
+      "name": "Jacob Wismer Elementary",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97229",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Beaverton TAG",
+        "Strong PTA-funded enrichment"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/jacobwismer"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-jacob-wismer-elementary"
+    },
+    {
+      "name": "Ridgewood Elementary",
+      "district": "Beaverton School District",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97225",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.beaverton.k12.or.us/ridgewood"
+      ],
+      "ncessch": "WF-OR-beaverton-school-district-ridgewood-elementary"
+    },
+    {
+      "name": "Lake Oswego High School",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97034",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog (15+ courses)",
+        "Affluent suburb — high college-going rate",
+        "Renowned music + arts program"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top OR public high school per public rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/lohs"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-lake-oswego-high-school"
+    },
+    {
+      "name": "Lakeridge High School",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97035",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Sister to Lake Oswego HS — equally rigorous"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/lakeridge"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-lakeridge-high-school"
+    },
+    {
+      "name": "Lake Oswego Junior High",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97034",
+      "level": "middle",
+      "grades": "7-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Feeds Lake Oswego HS",
+        "Strong music program",
+        "Talented and Gifted (TAG) services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/lojh"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-lake-oswego-junior-high"
+    },
+    {
+      "name": "Lakeridge Middle School",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97035",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Feeds Lakeridge HS",
+        "TAG services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/lakeridgems"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-lakeridge-middle-school"
+    },
+    {
+      "name": "Forest Hills Elementary",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97034",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Lake Oswego TAG",
+        "High parent-engagement community"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/foresthills"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-forest-hills-elementary"
+    },
+    {
+      "name": "Hallinan Elementary",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97034",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/hallinan"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-hallinan-elementary"
+    },
+    {
+      "name": "Oak Creek Elementary",
+      "district": "Lake Oswego School District",
+      "city": "Lake Oswego",
+      "state": "OR",
+      "zip": "97035",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.losdschools.org/oakcreek"
+      ],
+      "ncessch": "WF-OR-lake-oswego-school-district-oak-creek-elementary"
+    },
+    {
+      "name": "Liberty High School",
+      "district": "Hillsboro School District",
+      "city": "Hillsboro",
+      "state": "OR",
+      "zip": "97124",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Diverse student body",
+        "Tech corridor (Intel families)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hsd.k12.or.us/liberty"
+      ],
+      "ncessch": "WF-OR-hillsboro-school-district-liberty-high-school"
+    },
+    {
+      "name": "Glencoe High School",
+      "district": "Hillsboro School District",
+      "city": "Hillsboro",
+      "state": "OR",
+      "zip": "97124",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Strong AP + IB combined offering"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hsd.k12.or.us/glencoe"
+      ],
+      "ncessch": "WF-OR-hillsboro-school-district-glencoe-high-school"
+    },
+    {
+      "name": "Stoller Middle School (Hillsboro)",
+      "district": "Hillsboro School District",
+      "city": "Hillsboro",
+      "state": "OR",
+      "zip": "97124",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Hillsboro TAG"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hsd.k12.or.us"
+      ],
+      "ncessch": "WF-OR-hillsboro-school-district-stoller-middle-school-(hillsboro)"
+    },
+    {
+      "name": "West Linn High School",
+      "district": "West Linn-Wilsonville School District",
+      "city": "West Linn",
+      "state": "OR",
+      "zip": "97068",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Affluent suburb with high college-going rate",
+        "D1 athletics pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked OR public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://wlhs.wlwv.k12.or.us"
+      ],
+      "ncessch": "WF-OR-west-linn-wilsonville-school-dis-west-linn-high-school"
+    },
+    {
+      "name": "Wilsonville High School",
+      "district": "West Linn-Wilsonville School District",
+      "city": "Wilsonville",
+      "state": "OR",
+      "zip": "97070",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Regional STEM and arts track"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://whs.wlwv.k12.or.us"
+      ],
+      "ncessch": "WF-OR-west-linn-wilsonville-school-dis-wilsonville-high-school"
+    },
+    {
+      "name": "South Salem High School",
+      "district": "Salem-Keizer Public Schools",
+      "city": "Salem",
+      "state": "OR",
+      "zip": "97302",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "IB candidate / partial IB offerings"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://south.salkeiz.k12.or.us"
+      ],
+      "ncessch": "WF-OR-salem-keizer-public-schools-south-salem-high-school"
+    },
+    {
+      "name": "Sprague High School",
+      "district": "Salem-Keizer Public Schools",
+      "city": "Salem",
+      "state": "OR",
+      "zip": "97302",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Salem-area flagship"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://sprague.salkeiz.k12.or.us"
+      ],
+      "ncessch": "WF-OR-salem-keizer-public-schools-sprague-high-school"
+    },
+    {
+      "name": "South Eugene High School",
+      "district": "Eugene 4J School District",
+      "city": "Eugene",
+      "state": "OR",
+      "zip": "97401",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme — Eugene flagship IB school",
+        "Strong AP + IB combined",
+        "University of Oregon families"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier OR public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.4j.lane.edu/sehs"
+      ],
+      "ncessch": "WF-OR-eugene-4j-school-district-south-eugene-high-school"
+    },
+    {
+      "name": "Sheldon High School",
+      "district": "Eugene 4J School District",
+      "city": "Eugene",
+      "state": "OR",
+      "zip": "97401",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Robust athletics + academics balance"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.4j.lane.edu/sheldon"
+      ],
+      "ncessch": "WF-OR-eugene-4j-school-district-sheldon-high-school"
+    },
+    {
+      "name": "Roosevelt Middle School (Eugene)",
+      "district": "Eugene 4J School District",
+      "city": "Eugene",
+      "state": "OR",
+      "zip": "97405",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Middle Years Programme — feeds South Eugene IB DP"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.4j.lane.edu/roosevelt"
+      ],
+      "ncessch": "WF-OR-eugene-4j-school-district-roosevelt-middle-school-(eugene)"
+    },
+    {
+      "name": "Summit High School",
+      "district": "Bend-La Pine Schools",
+      "city": "Bend",
+      "state": "OR",
+      "zip": "97702",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "town",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "High college-going suburb",
+        "Outdoor / experiential education partnerships"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top OR public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://summit.bend.k12.or.us"
+      ],
+      "ncessch": "WF-OR-bend-la-pine-schools-summit-high-school"
+    },
+    {
+      "name": "Bend Senior High School",
+      "district": "Bend-La Pine Schools",
+      "city": "Bend",
+      "state": "OR",
+      "zip": "97701",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "town",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Bend flagship public HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bend.bend.k12.or.us"
+      ],
+      "ncessch": "WF-OR-bend-la-pine-schools-bend-senior-high-school"
     }
   ]
 }
