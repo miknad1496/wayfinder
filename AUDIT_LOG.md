@@ -1328,3 +1328,36 @@ Two-week-old data-hygiene flag closed with an architectural fix. The same `norma
 
 ### Estimated Impact
 **CP-AUDIT-1 is the most consequential bug surfaced in any audit since the credit-gift one (2026-04-26).** Engine mode is the premium feature paid users toggle on for "the $10K consultant moment" (per the system prompt comment). The actual retrieval was running on lite-brain — i.e., engine users got Opus on top of the same context Sonnet had. Patches 35/37/45 (Simon Kim depth bundle) were addressing the symptom; this fix addresses the architectural dispatch bug behind it. Worth flagging to Dan: any user reports of "engine answers feel generic" before today are explained by this regression.
+
+---
+
+## 2026-05-04 — Nightly Audit (Cost + Runtime + Data + Frontend)
+
+**Focus**: Cost & Resource Leaks (every-night), Backend Runtime, Data Integrity, Frontend syntax.
+
+### Result: CLEAN — no fixes needed.
+
+### Checks Performed
+
+1. **SLM keep-alive bug regression check** (`backend/services/slm.js:813-855`). Inline comment "Do NOT update lastWarmAt here — pings must not reset the idle timer" still present. The `MAX_IDLE` stop-condition still references `slmStatus.lastWarmAt` (only mutated by real `chatSLM()` calls at L662/768/785). No regression of the original `lastWarmAt`-update infinite-loop pattern.
+2. **Anonymous chat cap** (`backend/routes/chat.js:152-180`). `checkAnonDailyLimit(ip)` enforced at L325-333 before any Claude call — disk-persisted via `ANON_LIMITS_PATH`. Intact.
+3. **Rate limiter sanity** (`backend/server.js:95-135`). Five tiered limiters: `apiLimiter` 30/min, `chatLimiter` 15/min, `authLimiter` 10/15min, `adminLimiter` 5/min, `expensiveLimiter` 3/min. `expensiveLimiter` correctly applied to `/api/essays/review`, `/api/ap-coach/score`, `/api/financial-aid/my-strategy`, `/api/financial-aid/calculate-sai`. CORS locked to `wayfinderai.org` + `www.wayfinderai.org` in production (no wildcard).
+4. **Claude model defaults**. Sonnet for standard, Opus only on credit-gated/expensive-limited routes (essays/review, ap-coach/score, head-consultant supplement). Haiku on cheap discover-local routes. No unexpectedly expensive defaults.
+5. **setInterval audit**. Four total: `slm.js` (keep-alive, has stop logic), `user-backup.js` (has stopUserBackup + .unref()), `scheduler.js` (hourly reminders), `scraper-scheduler.js` (6h with stopScraperScheduler). All have proper teardown.
+6. **Premium route auth gating**. `/api/essays/review`, `/api/ap-coach/score`, `/api/financial-aid/my-strategy` all gate via `verifyToken` + `canAccess(user, feature)` returning 401/403 before calling Claude. Intact.
+7. **Backend runtime boot test** (`timeout 12 node ./server.js` with test env). Server boots clean to `🧭 Wayfinder API running on http://localhost:3999`. Data Health passes for all three modules:
+   - internships: 1606 entries (981 verified) — clean
+   - scholarships: 1043 entries (80 verified) — clean
+   - programs: 1416 entries (672 verified) — clean
+   - ApCoach knowledge: brain 41919 bytes, 9 per-exam files, 52 per-unit brains across 7 exams loaded.
+8. **Data integrity spot-check (script)**:
+   - All four modules: `metadata.totalCount === array.length` ✅
+   - Bare-domain `_source` count: 0 / 0 / 0 / 0 ✅ (the patch from 2026-05-03 normalize fix is holding)
+   - Verified entries missing `_source`: 0 / 0 / 0 / 0 ✅
+   - **Duplicates by official `canonicalKey()`**: 0 / 0 / 0 (no per-module dedup violations)
+   - Spot-checked 9 verified `_source` URLs across modules — all real, https, deep-link to actual program pages.
+9. **Frontend + backend syntax**. `node -c` on every file under `backend/routes/`, `backend/services/`, and `frontend/src/app.js` — all valid.
+10. **False-positive note**: an early scan flagged 10 internship "duplicates" using `(title|city)` as the key. Re-running with the official `canonicalKey()` (which uses `title|company` per the SCHEMAS in `data-integrity.js`) returned 0 duplicates. Logged in lessons file as a calibration note for future runs.
+
+### Estimated Impact
+None — the system is in a clean state across all probed surfaces. Last 3 nightly runs (5-02, 5-03, 5-04) have produced 1 architectural fix (5-03 normalize) + 0 issues today. The `_source` drift fix is paying off.
