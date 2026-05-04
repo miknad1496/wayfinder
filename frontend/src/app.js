@@ -8405,10 +8405,15 @@ async function loadApGuides() {
   if (countEl) countEl.textContent = String(guides.length);
   const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
   list.innerHTML = guides.map(function(g, i) {
-    const sizeKb = g.size ? (Math.round(g.size / 1024)) + ' KB · ' : '';
+    // PATCH132: derive size + extension from server response (which now reports
+    // PDF metadata when PDFs exist locally). Old version hardcoded 'docx' label.
+    const sizeStr = g.size
+      ? (g.size > 524288 ? (Math.round(g.size / 104857.6) / 10) + ' MB' : Math.round(g.size / 1024) + ' KB') + ' · '
+      : '';
+    const extLabel = (g.ext || (g.filename && g.filename.toLowerCase().endsWith('.pdf') ? 'pdf' : 'docx')).toUpperCase();
     return '<div class="ap-guide-card" data-exam="' + g.exam + '" data-label="' + g.label.replace(/"/g, '&quot;') + '" style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
       '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
-      '<div style="font-size:12px; color:#64748b;">' + sizeKb + 'docx · download</div>' +
+      '<div style="font-size:12px; color:#64748b;">' + sizeStr + extLabel + ' · download</div>' +
       '</div>';
   }).join('');
   // PATCH91: click handler that fetches first so we can surface a real error

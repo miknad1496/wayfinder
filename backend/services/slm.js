@@ -37,7 +37,15 @@ const __dirname = dirname(__filename);
 const SLM_ENDPOINT = process.env.SLM_ENDPOINT || null;
 const SLM_API_KEY = process.env.SLM_API_KEY || null;
 const SLM_MODEL_NAME = process.env.SLM_MODEL_NAME || 'wayfinder-04a';
-const SLM_MAX_TOKENS = parseInt(process.env.SLM_MAX_TOKENS || '1024', 10);
+// PATCH132: bumped from 1024 → 8192. The 1024 cap was the actual root cause of
+// Korean truncation Dan flagged repeatedly. Hangul averages 1.4-1.6 tokens/char,
+// so 1024 tokens = ~600 Korean chars, which is exactly where the structured
+// 교과/세특/창체/자율탐구/면접/이번 주 closer kept dying mid-sentence. Patch 124's
+// Haiku token bumps didn't help because the MAIN advisor path is SLM, not Haiku
+// (Haiku is only a quality-gate / error fallback per chat.js routing). 8192 is
+// the SLM output ceiling — pick that as the default and let responses run their
+// natural length. Render env var still overrides if set there.
+const SLM_MAX_TOKENS = parseInt(process.env.SLM_MAX_TOKENS || '8192', 10);
 const SLM_TEMPERATURE = parseFloat(process.env.SLM_TEMPERATURE || '0.7');
 const SLM_ENABLED = process.env.SLM_ENABLED === 'true';
 

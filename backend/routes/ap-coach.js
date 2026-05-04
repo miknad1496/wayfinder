@@ -365,15 +365,32 @@ router.get('/guides', async (req, res) => {
     }
     const guides = [];
     for (const [exam, cfg] of Object.entries(EXAM_TO_GUIDE)) {
+      // PATCH132: prefer PDF over DOCX in the listing (matches the download
+      // endpoint's PDF-preferred-over-DOCX logic from PATCH97). Without this,
+      // the frontend cards rendered "21 KB · docx" forever even after the
+      // 1.2 MB PDFs were committed in patch 130.
       let size = null;
-      try {
-        const stat = await fs.stat(join(GUIDES_DIR, cfg.file));
-        size = stat.size;
-      } catch {
-        // File missing on disk - still emit so frontend shows the card
-        // and the /guide/:exam handler will fall back to GitHub raw.
+      let filename = cfg.file;
+      let ext = 'docx';
+      if (cfg.pdfFile) {
+        try {
+          const stat = await fs.stat(join(GUIDES_DIR, cfg.pdfFile));
+          size = stat.size;
+          filename = cfg.pdfFile;
+          ext = 'pdf';
+        } catch { /* PDF missing locally — fall through to DOCX */ }
       }
-      guides.push({ exam, label: cfg.label, filename: cfg.file, size });
+      if (size === null) {
+        try {
+          const stat = await fs.stat(join(GUIDES_DIR, cfg.file));
+          size = stat.size;
+        } catch {
+          // Neither found locally — still emit so /guide/:exam can serve via
+          // GitHub raw fallback. Default to PDF metadata.
+          if (cfg.pdfFile) { filename = cfg.pdfFile; ext = 'pdf'; }
+        }
+      }
+      guides.push({ exam, label: cfg.label, filename, size, ext });
     }
     res.json({ guides });
   } catch (err) {
