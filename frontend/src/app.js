@@ -7821,10 +7821,13 @@ function openApCoach() {
     apCoachInitialized = true;
   }
 
-  // Always show the welcome panel + main panel; tier check determines whether form is enabled
-  document.getElementById('apWelcomePanel').style.display = 'block';
-  document.getElementById('apMainPanel').style.display = 'block';
-  document.getElementById('apUsageStatus').style.display = 'flex';
+  // PATCH90: null-guarded element refs — apWelcomePanel doesn't exist in DOM
+  const _wp = document.getElementById('apWelcomePanel');
+  if (_wp) _wp.style.display = 'block';
+  const _mp = document.getElementById('apMainPanel');
+  if (_mp) _mp.style.display = 'block';
+  const _us = document.getElementById('apUsageStatus');
+  if (_us) _us.style.display = 'flex';
   loadApUsage();
   loadApExamsAndTypes();
   loadApGuides();
@@ -7944,12 +7947,25 @@ async function loadApGuides() {
     { exam: 'ap-calc-ab', label: 'AP Calculus AB', size: 21000 },
     { exam: 'ap-calc-bc', label: 'AP Calculus BC', size: 23000 },
     { exam: 'ap-chemistry', label: 'AP Chemistry', size: 24000 },
+    { exam: 'ap-csa', label: 'AP Computer Science A', size: 22000 },
+    { exam: 'ap-csp', label: 'AP Computer Science Principles', size: 21000 },
     { exam: 'ap-english-lang', label: 'AP English Language', size: 22000 },
+    { exam: 'ap-english-lit', label: 'AP English Literature', size: 22000 },
+    { exam: 'ap-environmental-science', label: 'AP Environmental Science', size: 22000 },
+    { exam: 'ap-european-history', label: 'AP European History', size: 23000 },
+    { exam: 'ap-french-language', label: 'AP French Language & Culture', size: 21000 },
     { exam: 'ap-government', label: 'AP US Government & Politics', size: 23000 },
+    { exam: 'ap-human-geography', label: 'AP Human Geography', size: 22000 },
     { exam: 'ap-macroeconomics', label: 'AP Macroeconomics', size: 21000 },
+    { exam: 'ap-microeconomics', label: 'AP Microeconomics', size: 21000 },
+    { exam: 'ap-music-theory', label: 'AP Music Theory', size: 21000 },
     { exam: 'ap-physics-1', label: 'AP Physics 1', size: 24000 },
+    { exam: 'ap-physics-2', label: 'AP Physics 2', size: 22000 },
+    { exam: 'ap-physics-c-em', label: 'AP Physics C: E&M', size: 22000 },
+    { exam: 'ap-physics-c-mech', label: 'AP Physics C: Mechanics', size: 22000 },
     { exam: 'ap-precalculus', label: 'AP Precalculus', size: 22000 },
     { exam: 'ap-psychology', label: 'AP Psychology', size: 21000 },
+    { exam: 'ap-spanish-language', label: 'AP Spanish Language & Culture', size: 21000 },
     { exam: 'ap-statistics', label: 'AP Statistics', size: 22000 },
     { exam: 'ap-us-history', label: 'AP US History (APUSH)', size: 24000 },
     { exam: 'ap-world-history', label: 'AP World History', size: 23000 },
@@ -8470,21 +8486,31 @@ function renderApScore(score) {
     if (footerS) footerS.onclick = function(ev) { ev.preventDefault(); openSettings(); };
   }
 
-  // ---- Stripe checkout ----
+  // ---- Stripe checkout (PATCH90: hits real /api/stripe/create-checkout endpoint) ----
   async function startCheckout(tier) {
+    // Map UI tier names to Stripe plan IDs: coach -> pro, consultant -> elite
+    const PLAN_MAP = { coach: 'pro', consultant: 'elite', pro: 'pro', elite: 'elite' };
+    const plan = PLAN_MAP[tier] || tier;
+    const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
+    if (!tok) { alert('Please log in before upgrading.'); return; }
     try {
-      const r = await fetch(API_BASE + '/billing/checkout-session', {
+      const r = await fetch(API_BASE + '/stripe/create-checkout', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + (window.authToken || '') },
-        body: JSON.stringify({ tier: tier }),
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + tok },
+        body: JSON.stringify({ plan: plan }),
       });
       const d = await r.json();
       if (r.ok && d.url) {
         window.location.href = d.url;
-      } else if (d.contactEmail) {
-        alert('Billing not yet configured. Email ' + d.contactEmail + ' to upgrade for now.');
       } else {
-        alert('Could not start checkout: ' + (d.error || 'unknown'));
+        const msg = d.error || ('HTTP ' + r.status);
+        if (msg.indexOf('not configured') !== -1) {
+          alert('Billing is not yet configured. Email danielyungkim@hotmail.com to upgrade for now.');
+        } else if (r.status === 401) {
+          alert('Please log in again before upgrading.');
+        } else {
+          alert('Could not start checkout: ' + msg);
+        }
       }
     } catch (e) {
       alert('Checkout error: ' + e.message);
@@ -8586,3 +8612,16 @@ function renderApScore(score) {
   // Re-bind whenever the settings modal opens (button might re-render)
   setInterval(bind, 1500);
 })();
+
+
+// REVAMP V2: AP COACH WINDOW EXPOSURE PATCH90 — make AP Coach functions reachable from inline scripts
+if (typeof window !== 'undefined') {
+  if (typeof openApCoach === 'function') window.openApCoach = openApCoach;
+  if (typeof closeApCoach === 'function') window.closeApCoach = closeApCoach;
+  if (typeof loadApGuides === 'function') window.loadApGuides = loadApGuides;
+  if (typeof loadApUsage === 'function') window.loadApUsage = loadApUsage;
+  if (typeof loadApExamsAndTypes === 'function') window.loadApExamsAndTypes = loadApExamsAndTypes;
+  if (typeof submitApScoring === 'function') window.submitApScoring = submitApScoring;
+  if (typeof setupApCoachView === 'function') window.setupApCoachView = setupApCoachView;
+}
+// END PATCH90 WINDOW EXPOSURE
