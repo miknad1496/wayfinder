@@ -8469,9 +8469,28 @@ async function loadApGuides() {
         }
         const blob = await resp.blob();
         const blobUrl = URL.createObjectURL(blob);
+        // PATCH131: derive correct extension. Server sets Content-Disposition
+        // with the real filename (e.g. AP_Biology_..._FREE_PREVIEW.pdf for
+        // free-tier preview, AP_Biology_..._.pdf for paid full download, or
+        // .docx fallback). Honor it — old hardcode of .docx made the browser
+        // save PDF bytes under .docx, which silently appears to "do nothing"
+        // since the file won't open.
+        let downloadName = label.replace(/[^A-Za-z0-9]/g, '_') + '_Universal_Study_Guide';
+        const contentType = (resp.headers.get('Content-Type') || '').toLowerCase();
+        const cdHeader = resp.headers.get('Content-Disposition') || '';
+        const cdMatch = cdHeader.match(/filename\s*=\s*"?([^";]+)"?/i);
+        if (cdMatch && cdMatch[1]) {
+          downloadName = cdMatch[1];
+        } else if (contentType.indexOf('pdf') !== -1) {
+          downloadName += '.pdf';
+        } else if (contentType.indexOf('officedocument') !== -1 || contentType.indexOf('msword') !== -1) {
+          downloadName += '.docx';
+        } else {
+          downloadName += '.pdf';   // safer default now that PDFs are primary
+        }
         const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = label.replace(/[^A-Za-z0-9]/g, '_') + '_Universal_Study_Guide.docx';
+        a.download = downloadName;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
