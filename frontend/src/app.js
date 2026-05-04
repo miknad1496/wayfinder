@@ -8086,3 +8086,210 @@ function renderApScore(score) {
 
 // REVAMP V2: PATCH76 SYNTAX FIX PATCH77 — fixed 6 broken URL patterns from patch76
 // REVAMP V2: BRAND + COUNT FIX PATCH79 app.js — branding leak fixed + dynamic guide count wiring
+
+// REVAMP V2: SPLASH OVERHAUL PATCH82 app.js — neutralize invite-only gating
+(function neutralizeInviteGating() {
+  function ensureSignupFieldsVisible() {
+    const fields = document.getElementById("signupFields");
+    if (fields) fields.style.display = "block";
+    const inviteSection = document.getElementById("inviteCodeSection");
+    if (inviteSection) inviteSection.style.display = "none";
+    const inviteWelcome = document.getElementById("inviteWelcome");
+    if (inviteWelcome) inviteWelcome.style.display = "none";
+  }
+  // Run on load and any time signup form is shown
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ensureSignupFieldsVisible);
+  else ensureSignupFieldsVisible();
+  // Also hook into showSignup if it exists by polling once
+  const obs = new MutationObserver(function() {
+    const f = document.getElementById("signupForm");
+    if (f && f.style.display !== "none") ensureSignupFieldsVisible();
+  });
+  if (document.body) obs.observe(document.body, { attributes: true, subtree: true, attributeFilter: ["style"] });
+})();
+
+// ─── REVAMP V2: AP COACH HOTFIX PATCH82 — fix tabs + subject dropdown ───
+(function apCoachHotfix82() {
+  'use strict';
+
+  // Hardcoded fallback list of all 27 supported AP exams.
+  // Used if /api/ap-coach/exams fails or returns empty — ensures the dropdown is never blank.
+  const FALLBACK_EXAMS = [
+    { key: 'ap-art-history', label: 'AP Art History' },
+    { key: 'ap-biology', label: 'AP Biology' },
+    { key: 'ap-calc-ab', label: 'AP Calculus AB' },
+    { key: 'ap-calc-bc', label: 'AP Calculus BC' },
+    { key: 'ap-chemistry', label: 'AP Chemistry' },
+    { key: 'ap-csa', label: 'AP Computer Science A' },
+    { key: 'ap-csp', label: 'AP Computer Science Principles' },
+    { key: 'ap-english-lang', label: 'AP English Language' },
+    { key: 'ap-english-lit', label: 'AP English Literature' },
+    { key: 'ap-environmental-science', label: 'AP Environmental Science' },
+    { key: 'ap-european-history', label: 'AP European History' },
+    { key: 'ap-french', label: 'AP French Language & Culture' },
+    { key: 'ap-government', label: 'AP US Government & Politics' },
+    { key: 'ap-human-geography', label: 'AP Human Geography' },
+    { key: 'ap-macroeconomics', label: 'AP Macroeconomics' },
+    { key: 'ap-microeconomics', label: 'AP Microeconomics' },
+    { key: 'ap-music-theory', label: 'AP Music Theory' },
+    { key: 'ap-physics-1', label: 'AP Physics 1' },
+    { key: 'ap-physics-2', label: 'AP Physics 2' },
+    { key: 'ap-physics-c-em', label: 'AP Physics C: E&M' },
+    { key: 'ap-physics-c-mech', label: 'AP Physics C: Mechanics' },
+    { key: 'ap-precalculus', label: 'AP Precalculus' },
+    { key: 'ap-psychology', label: 'AP Psychology' },
+    { key: 'ap-spanish', label: 'AP Spanish Language & Culture' },
+    { key: 'ap-statistics', label: 'AP Statistics' },
+    { key: 'ap-us-history', label: 'AP US History (APUSH)' },
+    { key: 'ap-world-history', label: 'AP World History' },
+  ];
+
+  const FALLBACK_FRQ_TYPES = [
+    { key: 'free-response', label: 'Free-Response Question (general)' },
+    { key: 'dbq', label: 'Document-Based Question (APUSH/AP World)' },
+    { key: 'leq', label: 'Long Essay Question (APUSH/AP World)' },
+    { key: 'saq', label: 'Short Answer Question (APUSH/AP World)' },
+    { key: 'argument', label: 'Argument Essay (AP Lang/AP Gov)' },
+    { key: 'rhetorical', label: 'Rhetorical Analysis Essay (AP Lang)' },
+    { key: 'synthesis', label: 'Synthesis Essay (AP Lang)' },
+    { key: 'scotus-comp', label: 'SCOTUS Comparison FRQ (AP Gov)' },
+    { key: 'concept-app', label: 'Concept Application FRQ (AP Gov)' },
+    { key: 'quant-analysis', label: 'Quantitative Analysis FRQ (AP Gov)' },
+    { key: 'inference', label: 'Inference FRQ (AP Stats)' },
+    { key: 'investigative', label: 'Investigative Task (AP Stats long FRQ)' },
+    { key: 'modeling', label: 'Modeling FRQ (AP Precalc/Stats/Macro)' },
+    { key: 'other', label: 'Other FRQ Format' },
+  ];
+
+  const FULL_BRAIN_EXAMS = ['ap-chemistry'];
+
+  function _populateExamSelects(exams) {
+    const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
+    const examEl = document.getElementById('apExam');
+    const tutorExamEl = document.getElementById('apTutorExam');
+    const subjEl = document.getElementById('apActiveSubject');
+    const profileExamList = document.getElementById('apProfileExamList');
+    if (examEl) examEl.innerHTML = optionsHtml;
+    if (tutorExamEl) tutorExamEl.innerHTML = optionsHtml;
+    if (subjEl) {
+      subjEl.innerHTML = '<option value="">— pick to unlock Coach Chat, Tutor, FRQ Scoring —</option>' +
+        exams.filter(e => e.key !== 'other').map(e => {
+          const hasFullBrain = FULL_BRAIN_EXAMS.indexOf(e.key) >= 0;
+          return '<option value="' + e.key + '">' + e.label + (hasFullBrain ? ' ✓' : '') + '</option>';
+        }).join('');
+    }
+    if (profileExamList) {
+      profileExamList.innerHTML = exams.filter(e => e.key !== 'other').map(e =>
+        '<label style="display:flex; align-items:center; gap:6px; padding:6px 10px; background:white; border:1px solid #e2e8f0; border-radius:6px; font-size:13px; cursor:pointer;"><input type="checkbox" class="ap-profile-exam-cb" value="' + e.key + '"> ' + e.label + '</label>'
+      ).join('');
+    }
+    console.log('[AP Hotfix82] Populated ' + exams.length + ' exams across selects');
+  }
+
+  function _populateFrqTypes(types) {
+    const typeEl = document.getElementById('apFrqType');
+    if (typeEl) typeEl.innerHTML = types.map(t => '<option value="' + t.key + '">' + t.label + '</option>').join('');
+  }
+
+  // Robust loader: try API first, fall back to hardcoded list if API fails or returns empty
+  async function _robustLoadApExams() {
+    try {
+      const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) || '/api';
+      const [er, tr] = await Promise.all([
+        fetch(apiBase + '/ap-coach/exams').then(r => r.ok ? r.json() : Promise.reject(new Error('exams ' + r.status))),
+        fetch(apiBase + '/ap-coach/frq-types').then(r => r.ok ? r.json() : Promise.reject(new Error('frq-types ' + r.status))),
+      ]);
+      const exams = Array.isArray(er.exams) && er.exams.length > 0 ? er.exams : FALLBACK_EXAMS;
+      const types = Array.isArray(tr.frqTypes) && tr.frqTypes.length > 0 ? tr.frqTypes : FALLBACK_FRQ_TYPES;
+      _populateExamSelects(exams);
+      _populateFrqTypes(types);
+    } catch (err) {
+      console.warn('[AP Hotfix82] API failed, using hardcoded fallback:', err.message);
+      _populateExamSelects(FALLBACK_EXAMS);
+      _populateFrqTypes(FALLBACK_FRQ_TYPES);
+    }
+  }
+
+  // Robust tab switcher — uses inline display style with !important-equivalent strength
+  function _switchTab(tabName) {
+    const btns = document.querySelectorAll('.ap-tab-btn');
+    btns.forEach(b => {
+      const isActive = b.getAttribute('data-tab') === tabName;
+      b.classList.toggle('active', isActive);
+      // Force visible style on active tab button
+      if (isActive) {
+        b.style.color = '#2563eb';
+        b.style.borderBottom = '2px solid #2563eb';
+        b.style.fontWeight = '600';
+      } else {
+        b.style.color = '';
+        b.style.borderBottom = '';
+        b.style.fontWeight = '';
+      }
+    });
+    const panels = document.querySelectorAll('.ap-tab-panel');
+    panels.forEach(p => {
+      const isActive = p.getAttribute('data-tab-panel') === tabName;
+      p.style.display = isActive ? 'block' : 'none';
+      p.classList.toggle('active', isActive);
+    });
+    console.log('[AP Hotfix82] switched to tab:', tabName);
+  }
+
+  // Re-bind tab click handlers (idempotent — replaces any existing onclick by setting fresh property)
+  function _rebindTabs() {
+    const btns = document.querySelectorAll('.ap-tab-btn');
+    btns.forEach(b => {
+      const tab = b.getAttribute('data-tab');
+      // Use direct onclick assignment so we replace any prior handler cleanly
+      b.onclick = function(e) {
+        e.preventDefault();
+        _switchTab(tab);
+      };
+    });
+    console.log('[AP Hotfix82] rebound ' + btns.length + ' tab buttons');
+  }
+
+  // Hook into AP Coach view opening — observe display change on #apCoachView
+  function _initWhenViewOpens() {
+    const view = document.getElementById('apCoachView');
+    if (!view) {
+      // View not in DOM yet; retry shortly
+      setTimeout(_initWhenViewOpens, 500);
+      return;
+    }
+
+    function _runFixes() {
+      _rebindTabs();
+      _robustLoadApExams();
+      // Default to Game Plan tab
+      _switchTab('game-plan');
+    }
+
+    // Watch for the view being shown
+    const obs = new MutationObserver(function(muts) {
+      for (const m of muts) {
+        if (m.attributeName === 'style' && view.style.display && view.style.display !== 'none') {
+          // View is being shown — run fixes after a tiny delay so existing setup runs first
+          setTimeout(_runFixes, 100);
+        }
+      }
+    });
+    obs.observe(view, { attributes: true, attributeFilter: ['style'] });
+
+    // Also run immediately if view is already visible
+    if (view.style.display && view.style.display !== 'none') {
+      setTimeout(_runFixes, 100);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', _initWhenViewOpens);
+  } else {
+    _initWhenViewOpens();
+  }
+
+  console.log('[AP Hotfix82] Loaded — fallback exam list + robust tab binding active');
+})();
+// ─── END PATCH82 AP COACH HOTFIX ───
+
