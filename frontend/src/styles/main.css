@@ -5493,3 +5493,18 @@ html, body { overflow-x: hidden; }
   }
 }
 
+
+
+/* PATCH106 K-12 AI finder result list — keep bullets inside the panel */
+#k12AiResult ul, #k12AiResult ol {
+  margin: 8px 0 8px 20px;
+  padding: 0;
+  list-style-position: outside;
+}
+#k12AiResult li {
+  margin: 4px 0;
+  line-height: 1.55;
+}
+#k12AiResult p { margin: 6px 0; }
+#k12AiResult strong { color: #1e3a8a; }
+#k12AiResult { word-break: break-word; }

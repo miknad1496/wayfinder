@@ -553,8 +553,12 @@ router.post('/', async (req, res) => {
     // Welcome Desk: holds the conversation for up to 3 exchanges while SLM warms up.
     // Gathers useful context (grade level, interests, goals) so the advisor can
     // hit the ground running. Only exits when SLM is warm or exchange threshold hit.
+    // PATCH106: K-12 AI finder + any other module-internal asker passes
+    // bypassWelcomeDesk:true so they skip the "advisor warming up" persona and go
+    // straight to Haiku Advisor (full RAG, immediate answer).
     const WELCOME_DESK_MAX_EXCHANGES = 3;
-    const useWelcomeDesk = !useSLM && !engineAllowed
+    const _bypassWelcomeDesk = req.body && req.body.bypassWelcomeDesk === true;
+    const useWelcomeDesk = !_bypassWelcomeDesk && !useSLM && !engineAllowed
       && exchangeCount < WELCOME_DESK_MAX_EXCHANGES
       && scopeResult.label !== 'out_of_scope';
 

@@ -9149,18 +9149,25 @@ if (typeof window !== 'undefined') {
         const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
         const headers = { 'Content-Type': 'application/json' };
         if (tok) headers.Authorization = 'Bearer ' + tok;
+        // PATCH106: persist a dedicated K-12 finder sessionId so subsequent queries
+        // reuse warm context (and skip the Welcome Desk).
+        let k12SessId = '';
+        try { k12SessId = localStorage.getItem('wf_k12_finder_session_id') || ''; } catch (_) {}
         const r = await fetch(API_BASE + '/chat', {
           method: 'POST',
           headers: headers,
           body: JSON.stringify({
-            message: 'K-12 SCHOOL FINDER (parent question): ' + q + '\n\nUse Wayfinder K-12 module knowledge. Recommend 3-5 specific schools (by name + city/state) when possible. Briefly explain the rationale (50-100 words). End with: "Open the K-12 Schools tool to compare these side-by-side."',
+            message: 'K-12 SCHOOL FINDER (parent question): ' + q + '\n\nYou have access to the K-12 module knowledge (district profiles, AP courses, IB programs, magnet, demographics, ratings). Recommend 3-5 specific schools by name + city/state when possible. Briefly explain the rationale (50-100 words). End with: "Open the K-12 Schools tool to compare these side-by-side."',
             scope: 'k12',
-            sessionId: (window._wfSessionId || ''),
+            bypassWelcomeDesk: true,
+            sessionId: k12SessId,
           }),
         });
         const d = await r.json();
         // PATCH103: chat endpoint returns 'response' (not 'text'). Fall back to other field names defensively.
         const responseText = d.response || d.text || d.message || d.content;
+        // PATCH106: persist sessionId for follow-up K-12 queries
+        if (d.sessionId) { try { localStorage.setItem('wf_k12_finder_session_id', d.sessionId); } catch (_) {} }
         if (r.ok && responseText) {
           resultEl.innerHTML = renderMarkdown(responseText);
         } else if (r.status === 503 || (d.error && /warming|cold|unavailable/i.test(d.error))) {
