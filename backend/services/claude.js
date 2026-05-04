@@ -89,6 +89,55 @@ async function loadSystemPrompt() {
 // ─── Wayfinder Identity Rules ──────────────────────────────────
 // Injected into ALL advisor-facing prompts (Haiku Advisor, Sonnet, Opus)
 // to prevent the model from revealing it's Claude or undermining Wayfinder.
+
+// PATCH96: Conversation coherence summarizer
+// Builds a compact "USER CONTEXT FROM THIS CONVERSATION" block from the last
+// few user turns so the model carries forward concrete facts (income,
+// constraints, schools mentioned, target majors) rather than treating each
+// turn as standalone.
+function _patch96_summarizePriorTurns(history) {
+  if (!Array.isArray(history) || history.length === 0) return '';
+  const userTurns = history
+    .filter(m => m && m.role === 'user' && typeof m.content === 'string')
+    .slice(-6)
+    .map(m => m.content.trim())
+    .filter(Boolean);
+  if (userTurns.length === 0) return '';
+  const facts = [];
+  const joined = userTurns.join(' \n ').slice(0, 4000);
+  const incomeMatch = joined.match(/[$]\s*(\d{1,3})\s*[kK](?:\/yr|\/year| per year)?\b/);
+  if (incomeMatch) facts.push('household income: ~$' + incomeMatch[1] + 'K/yr');
+  const satMatch = joined.match(/\b(\d{4})\s*SAT\b/i);
+  if (satMatch) facts.push('SAT: ' + satMatch[1]);
+  const gpaMatch = joined.match(/\b(\d\.\d{1,2})\s*GPA\b/i);
+  if (gpaMatch) facts.push('GPA: ' + gpaMatch[1]);
+  const apMatch = joined.match(/\b(\d{1,2})\s*APs?\b/i);
+  if (apMatch) facts.push(apMatch[1] + ' APs');
+  const stateMatch = joined.match(/\b(WA|CA|TX|NY|MI|MD|FL|GA|NC|VA|MA|IL|OR|AZ|CO|OH|PA|MN|WI|NJ|CT|NH|VT|RI|ME|NV|UT|ID|MT|WY|ND|SD|NE|KS|OK|AR|LA|MS|AL|TN|KY|IN|IA|MO|HI|AK|DC|DE|WV|SC|NM)\s+(?:resident|state)\b/i);
+  if (stateMatch) facts.push('home state: ' + stateMatch[1].toUpperCase());
+  if (/\bfirst[ -]?gen\b/i.test(joined)) facts.push('first-gen status');
+  if (/\busamo\b/i.test(joined)) facts.push('USAMO qualifier');
+  const decisions = [];
+  const edM = joined.match(/\bED\s+(?:to\s+)?([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)?)/);
+  if (edM) decisions.push('considering ED to ' + edM[1].trim());
+  const reaM = joined.match(/\bREA\s+(?:to\s+)?([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)?)/);
+  if (reaM) decisions.push('considering REA to ' + reaM[1].trim());
+
+  let block = '\n\n___________________________________________\nUSER CONTEXT FROM THIS CONVERSATION (carry forward across turns)\n___________________________________________\n';
+  if (facts.length > 0) block += 'Established facts: ' + facts.join('; ') + '.\n';
+  if (decisions.length > 0) block += 'Active strategy decisions: ' + decisions.join('; ') + '.\n';
+  const lastUser = userTurns[userTurns.length - 1];
+  if (lastUser && lastUser.length < 300) {
+    block += 'Most recent user prompt: "' + lastUser.replace(/"/g, "'").slice(0, 280) + '"\n';
+  }
+  block += 'When the current question relates to any of the above, REFERENCE the prior context explicitly. Do not re-ask for facts already established. If a strategic decision was discussed (ED/REA/school list), connect the current answer to it.\n';
+  return block;
+}
+
+// PATCH96: Closer-with-action-items directive
+const _patch96_actionItemsClose = '\n\n___________________________________________\nCLOSE-OF-RESPONSE DIRECTIVE\n___________________________________________\nWhen the user is in execution mode (asked a strategic question, school list, ED/REA decision, chance-me, FRQ prep), END your response with 1-2 concrete next steps for THIS WEEK they can take immediately. Format as a tight bulleted **This week:** list - 1-2 items, each starting with an action verb, each tied to a specific deliverable (e.g. "Finish the Why X school essay rough draft" or "Run the Net Price Calculator on Cornell + Caltech and email me the numbers"). Skip the closer for: greetings, simple clarifications, factual lookups, or when 1-2 actionable steps are not obvious.\n___________________________________________';
+
+
 const WAYFINDER_IDENTITY_RULES = `
 
 [WAYFINDER IDENTITY — MANDATORY]
@@ -428,6 +477,9 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   systemPrompt += buildTemporalContext();
   systemPrompt += buildProfileString(sessionContext);
   systemPrompt += WAYFINDER_IDENTITY_RULES;
+  // PATCH96: coherence + action-items
+  try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
+  systemPrompt += _patch96_actionItemsClose;
 
   // REVAMP V2: PERSONA TIERS PATCH55 — gate chatHaikuAdvisor injections by user tier.
   // Free users get NERFED Haiku Assistant (lite brain only, no curated/
@@ -664,6 +716,9 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
     3: '\n\n[CONVERSATION PHASE: DEEP ANALYSIS — This conversation has earned depth. Provide comprehensive, structured responses (400-600+ words) with personalized analysis, specific data mapped to their profile, and strategic recommendations. Calibrate to their values orientation throughout. This is where Wayfinder\'s full intelligence shines.]'
   };
   systemPrompt += phaseGuidance[phase.phase] || '';
+  // PATCH96: coherence + action-items closer
+  try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
+  systemPrompt += _patch96_actionItemsClose;
 
   // Build messages array — sanitize to prevent API 400s from malformed history
   const messages = sanitizeHistory([

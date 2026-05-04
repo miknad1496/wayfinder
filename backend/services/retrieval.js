@@ -721,6 +721,15 @@ function analyzeQuery(query) {
       suggestedMaxTokens = 800;
   }
 
+  // PATCH96: school-specific queries get +3 topK headroom so the deep school
+  // file surfaces 5-7 chunks per response instead of 3-4. Caps at 12 to keep
+  // the prompt token budget under control. Each detected school adds 1 to
+  // topK on top of the base bump (so a 2-school comparison gets +4).
+  if (detectedSchools.length > 0) {
+    const _schoolBoost = Math.min(3 + Math.max(0, detectedSchools.length - 1), 6);
+    suggestedTopK = Math.min(suggestedTopK + _schoolBoost, 12);
+  }
+
   return {
     intent,
     domain,

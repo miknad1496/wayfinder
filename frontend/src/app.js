@@ -653,9 +653,22 @@ function appendMessage(role, text, sources = [], mode = null) {
   // Sources
   let sourcesHTML = '';
   if (sources && sources.length > 0) {
-    sourcesHTML = `<div class="sources">Sources: ${sources
-      .map(s => `<span>${escapeHtml((s.source || '').replace('.json', '').replace('.md', ''))}</span>`)
-      .join('')}</div>`;
+    // PATCH96: dedupe by normalized source name + cap at 4 highest-priority entries.
+    // Prior behavior surfaced 9+ sources including spurious matches (e.g. school-uw-seattle on a Cornell question).
+    const _seen = new Set();
+    const _dedup = [];
+    for (const s of sources) {
+      const key = String(s.source || '').replace(/\.(json|md)$/, '').trim();
+      if (!key || _seen.has(key)) continue;
+      _seen.add(key);
+      _dedup.push({ ...s, _displayKey: key });
+      if (_dedup.length >= 4) break;
+    }
+    if (_dedup.length > 0) {
+      sourcesHTML = `<div class="sources">Sources: ${_dedup
+        .map(s => `<span>${escapeHtml(s._displayKey)}</span>`)
+        .join('')}</div>`;
+    }
   }
 
   // Copy button (for assistant messages)
@@ -8247,7 +8260,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab', 'ap-world-history']; // PATCH95: + ap-world-history // PATCH93: + ap-calc-ab // PATCH91: + ap-calc-bc + ap-microeconomics // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab', 'ap-world-history', 'ap-physics-1']; // PATCH96: + ap-physics-1 // PATCH95: + ap-world-history // PATCH93: + ap-calc-ab // PATCH91: + ap-calc-bc + ap-microeconomics // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
