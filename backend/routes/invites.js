@@ -191,3 +191,17 @@ router.post('/admin', async (req, res) => {
 });
 
 export default router;
+
+// ─── REVAMP V2: AP COACH FULL MODULE PATCH81 invite-code — Reusable FRIENDS-COACH-1MONTH grants 30-day Coach trial ───
+import { redeemFriendsCoachCode as _redeemFriendsCoachCode } from '../services/auth.js';
+router.post('/redeem-friends-code', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (!token) return res.status(401).json({ error: 'Not authenticated' });
+    const code = (req.body && req.body.code) || '';
+    const result = await _redeemFriendsCoachCode(token, code);
+    if (!result.success) return res.status(400).json(result);
+    res.json(result);
+  } catch (err) { res.status(500).json({ error: 'Internal error' }); }
+});
+

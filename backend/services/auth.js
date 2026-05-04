@@ -1886,3 +1886,161 @@ export async function recordApCoachUsage(token) {
   }
 }
 
+
+// ─── REVAMP V2: AP COACH FULL MODULE PATCH81 auth — Family Consultant whitelist + AP Coach quotas + invite code ───
+const FAMILY_CONSULTANT_EMAILS = [
+  'mhrkim@yahoo.com',
+  'serenakimkimkim@gmail.com',
+  'benjaminkim042@gmail.com',
+  'elenakimjune@gmail.com',
+];
+
+export function isFamilyConsultant(email) {
+  if (!email) return false;
+  return FAMILY_CONSULTANT_EMAILS.includes(String(email).toLowerCase());
+}
+
+// Effective plan resolution — overrides stored plan for family Consultants AND
+// for users whose coach trial (granted by FRIENDS-COACH-1MONTH invite) is still active.
+export function getEffectivePlan(user) {
+  if (!user) return 'free';
+  const email = user.email ? String(user.email).toLowerCase() : '';
+  if (isAdmin(email) || isVIP(email)) return 'admin';
+  if (isFamilyConsultant(email)) return 'consultant';
+  // Coach trial check
+  if (user.coachTrialExpiresAt) {
+    const exp = new Date(user.coachTrialExpiresAt).getTime();
+    if (exp > Date.now()) return 'coach';
+  }
+  return String(user.plan || 'free').toLowerCase();
+}
+
+// Unified AP Coach usage check returning quotas across all 3 modes (Chat / FRQ / Tutor)
+export async function getApCoachUsageDetails(token) {
+  if (!token) return { tier: 'unauth' };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { tier: 'unauth' };
+    const { user } = resolved;
+    const tier = getEffectivePlan(user);
+    const now = new Date();
+    const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+
+    if (tier === 'admin' || tier === 'consultant') {
+      return { tier, unlimited: true, chatRemaining: 999, frqRemaining: 999, tutorRemaining: 999 };
+    }
+    if (tier === 'coach') {
+      const frqUsage = (user.apCoachMonthlyUsage && user.apCoachMonthlyUsage.month === currentMonth) ? (user.apCoachMonthlyUsage.count || 0) : 0;
+      const tutorUsage = (user.apTutorMonthlyUsage && user.apTutorMonthlyUsage.month === currentMonth) ? (user.apTutorMonthlyUsage.count || 0) : 0;
+      return { tier, unlimited: false,
+        chatRemaining: 999, // unlimited chat for paid tiers
+        frqRemaining: Math.max(0, 5 - frqUsage), frqCap: 5,
+        tutorRemaining: Math.max(0, 10 - tutorUsage), tutorCap: 10 };
+    }
+    // Free tier
+    const chatUsage = (user.apChatMonthlyUsage && user.apChatMonthlyUsage.month === currentMonth) ? (user.apChatMonthlyUsage.count || 0) : 0;
+    const trialUsed = !!user.apCoachLifetimeUsed;
+    return { tier: 'free', unlimited: false,
+      chatRemaining: Math.max(0, 5 - chatUsage), chatCap: 5,
+      frqTrialAvailable: !trialUsed,
+      frqRemaining: trialUsed ? 0 : 1,
+      tutorRemaining: 0, tutorCap: 0 }; // Free tier has zero Tutor access
+  } catch (err) {
+    return { tier: 'error' };
+  }
+}
+
+export async function recordApChatUsage(token) {
+  if (!token) return { success: false };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false };
+    const { user, filePath } = resolved;
+    const tier = getEffectivePlan(user);
+    if (tier === 'admin' || tier === 'consultant' || tier === 'coach') return { success: true, recorded: false };
+    return await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      const now = new Date();
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const usage = fresh.apChatMonthlyUsage || { month: currentMonth, count: 0 };
+      fresh.apChatMonthlyUsage = (usage.month === currentMonth) ? { month: currentMonth, count: (usage.count || 0) + 1 } : { month: currentMonth, count: 1 };
+      await atomicWriteJSON(filePath, fresh);
+      return { success: true, recorded: true };
+    });
+  } catch { return { success: false }; }
+}
+
+export async function recordApTutorUsage(token) {
+  if (!token) return { success: false };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false };
+    const { user, filePath } = resolved;
+    const tier = getEffectivePlan(user);
+    if (tier === 'admin' || tier === 'consultant') return { success: true, recorded: false };
+    if (tier === 'free') return { success: false, error: 'Tutor not available on free tier' };
+    return await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      const now = new Date();
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const usage = fresh.apTutorMonthlyUsage || { month: currentMonth, count: 0 };
+      fresh.apTutorMonthlyUsage = (usage.month === currentMonth) ? { month: currentMonth, count: (usage.count || 0) + 1 } : { month: currentMonth, count: 1 };
+      await atomicWriteJSON(filePath, fresh);
+      return { success: true, recorded: true };
+    });
+  } catch { return { success: false }; }
+}
+
+// AP profile (game plan onboarding)
+export async function getApProfile(token) {
+  if (!token) return null;
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return null;
+    return resolved.user.apProfile || null;
+  } catch { return null; }
+}
+
+export async function setApProfile(token, profile) {
+  if (!token) return { success: false };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false };
+    const { user, filePath } = resolved;
+    return await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      fresh.apProfile = {
+        exams: Array.isArray(profile.exams) ? profile.exams.slice(0, 27) : [],
+        defaultTargetScore: parseInt(profile.defaultTargetScore, 10) || 4,
+        hoursPerWeek: parseInt(profile.hoursPerWeek, 10) || 8,
+        targetScores: profile.targetScores || {},
+        updatedAt: new Date().toISOString(),
+      };
+      await atomicWriteJSON(filePath, fresh);
+      return { success: true, profile: fresh.apProfile };
+    });
+  } catch (err) { return { success: false, error: err.message }; }
+}
+
+// Reusable invite code: FRIENDS-COACH-1MONTH grants 30-day Coach trial
+export async function redeemFriendsCoachCode(token, code) {
+  if (!token || !code) return { success: false, error: 'token + code required' };
+  if (String(code).toUpperCase().trim() !== 'FRIENDS-COACH-1MONTH') return { success: false, error: 'Invalid code' };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false, error: 'Not authenticated' };
+    const { user, filePath } = resolved;
+    return await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      const now = Date.now();
+      // Extend trial if already active; otherwise set 30 days from now
+      const existing = fresh.coachTrialExpiresAt ? new Date(fresh.coachTrialExpiresAt).getTime() : 0;
+      const base = existing > now ? existing : now;
+      fresh.coachTrialExpiresAt = new Date(base + 30 * 24 * 60 * 60 * 1000).toISOString();
+      fresh.coachTrialSource = 'FRIENDS-COACH-1MONTH';
+      await atomicWriteJSON(filePath, fresh);
+      return { success: true, expiresAt: fresh.coachTrialExpiresAt };
+    });
+  } catch (err) { return { success: false, error: err.message }; }
+}
+

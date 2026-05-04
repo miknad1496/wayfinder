@@ -2473,7 +2473,6 @@
   <script type="module" src="/src/app.js"></script>
 <!-- AP Coach — Full Page Premium View — REVAMP V2: AP COACH FRONTEND PATCH70 -->
       <section id="apCoachView" class="essay-view" style="display:none; position:fixed; inset:0; z-index:1000; background:#fff; overflow-y:auto;">
-        <!-- Header -->
         <div class="ev-header">
           <div class="ev-header-left">
             <button id="apBackBtn" class="ev-back-btn" title="Back to chat">
@@ -2482,7 +2481,7 @@
             </button>
             <div class="ev-brand">
               <h2 class="ev-title">AP Coach</h2>
-              <span class="ev-badge">PREMIUM ADD-ON</span>
+              <span class="ev-badge">FULL STUDY MODULE</span>
             </div>
           </div>
           <div class="ev-header-right">
@@ -2493,115 +2492,217 @@
           </div>
         </div>
 
-        <!-- Welcome / How it works panel -->
-        <div id="apWelcomePanel" style="max-width:1100px; margin:24px auto 0; padding:24px; background:linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border:1px solid #e2e8f0; border-radius:12px;">
-          <h3 style="font-size:18px; margin:0 0 8px; color:#1e293b;">Your AP study companion</h3>
-          <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:16px;">
-            AP Coach gives you rubric-aware feedback on your free-response practice + access to all 27 universal AP study guides.
-            It's grounded in our curated AP intelligence — every score uses the actual rubric language AP graders use.
-          </p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:16px;">
-            <div style="padding:12px 16px; background:white; border:1px solid #e2e8f0; border-radius:8px;">
-              <div style="font-weight:600; color:#2563eb; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Step 1</div>
-              <div style="font-size:14px; color:#334155;">Pick your exam &amp; FRQ type</div>
-            </div>
-            <div style="padding:12px 16px; background:white; border:1px solid #e2e8f0; border-radius:8px;">
-              <div style="font-weight:600; color:#2563eb; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Step 2</div>
-              <div style="font-size:14px; color:#334155;">Paste the prompt + your response</div>
-            </div>
-            <div style="padding:12px 16px; background:white; border:1px solid #e2e8f0; border-radius:8px;">
-              <div style="font-weight:600; color:#2563eb; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Step 3</div>
-              <div style="font-size:14px; color:#334155;">Get rubric points + top fixes + phrases that score</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Upgrade gate (hidden by default; shown for free tier after lifetime trial used) -->
-        <div id="apUpgradeGate" class="ev-upgrade-gate" style="display:none; padding:48px; max-width:640px; margin:24px auto; text-align:center; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px;">
-          <div style="font-size:32px; margin-bottom:12px;">&#x1F3AF;</div>
-          <h2 style="margin:0 0 12px; color:#1e293b;">You've used your free AP Coach trial</h2>
-          <p style="color:#64748b; font-size:15px; line-height:1.6; margin-bottom:24px;">
-            Hope that scoring was useful. To keep practicing — unlimited FRQ scoring, all 27 study guides, on-the-fly subject coaching — upgrade to Coach (5 scorings/month) or Consultant (unlimited).
-          </p>
+        <!-- Upgrade gate (only shown for users who exhausted access on the active tab) -->
+        <div id="apUpgradeGate" style="display:none; padding:48px; max-width:640px; margin:24px auto; text-align:center; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px;">
+          <h2 id="apUpgradeGateTitle" style="margin:0 0 12px; color:#1e293b;">Upgrade to keep using AP Coach</h2>
+          <p id="apUpgradeGateMsg" style="color:#64748b; font-size:15px; line-height:1.6; margin-bottom:24px;"></p>
           <a href="#pricing" class="ev-upgrade-btn" style="display:inline-block; padding:12px 32px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; font-weight:600;">View Plans</a>
         </div>
 
-        <!-- Main panel -->
-        <div id="apMainPanel" class="ev-panel active" style="display:block; padding:24px; max-width:1100px; margin:0 auto;">
+        <!-- Tab nav -->
+        <nav id="apTabNav" style="display:flex; gap:0; border-bottom:1px solid #e2e8f0; padding:0 24px; max-width:1100px; margin:0 auto; overflow-x:auto;">
+          <button class="ap-tab-btn active" data-tab="game-plan">Game Plan</button>
+          <button class="ap-tab-btn" data-tab="coach-chat">Coach Chat</button>
+          <button class="ap-tab-btn" data-tab="frq-scoring">FRQ Scoring</button>
+          <button class="ap-tab-btn" data-tab="tutor">Tutor</button>
+          <button class="ap-tab-btn" data-tab="study-guides">Study Guides</button>
+        </nav>
 
-          <!-- Study guide downloads -->
-          <section class="ap-guides-section" style="margin-bottom:32px;">
-            <h3 style="font-size:18px; margin:0 0 6px; color:#1e293b;">Universal AP Study Guides</h3>
-            <p style="color:#64748b; font-size:14px; margin:0 0 16px;">
-              All <span id="apGuidesCount">your</span> guides included. Universal tier badges ([3] foundational / [4] floor / [5] stretch) throughout — works whether you're targeting a 3, 4, or 5.
-            </p>
-            <div id="apGuidesList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px;"></div>
-          </section>
+        <div id="apMainPanel" style="max-width:1100px; margin:0 auto; padding:24px;"><!-- Active subject bar — inserted at top of #apMainPanel by patch 81 -->
+          <div id="apSubjectBar" style="display:flex; align-items:center; gap:12px; padding:14px 18px; background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border:1px solid #bfdbfe; border-radius:10px; margin-bottom:24px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:#1e293b; font-size:14px;">Subject:</span>
+            <select id="apActiveSubject" class="ev-select" style="flex:1; min-width:240px; max-width:380px; padding:6px 10px; font-size:14px;">
+              <option value="">— pick to unlock Coach Chat, Tutor, FRQ Scoring —</option>
+            </select>
+            <span id="apSubjectBrainBadge" style="display:none; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;"></span>
+            <span id="apSubjectCountdown" style="display:none; padding:4px 10px; background:white; border:1px solid #e2e8f0; border-radius:6px; font-size:12px; color:#475569;"></span>
+          </div>
 
-          <!-- FRQ Coach -->
-          <section class="ap-frq-section">
-            <h3 style="font-size:18px; margin:0 0 6px; color:#1e293b;">FRQ Coach</h3>
-            <p style="color:#64748b; font-size:14px; margin:0 0 16px;">
-              Submit any free-response answer. Returns rubric points earned, top 3 fixes, what a 5 would add, phrases that score, and full rubric breakdown.
-            </p>
+          <!-- ══════ TAB: GAME PLAN ══════ -->
+          <div class="ap-tab-panel active" data-tab-panel="game-plan">
+            <div id="apGamePlanWelcome" style="padding:24px; background:linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border:1px solid #e2e8f0; border-radius:12px; margin-bottom:24px;">
+              <h3 style="font-size:18px; margin:0 0 8px;">Your AP study companion</h3>
+              <p style="color:#475569; font-size:15px; line-height:1.6; margin-bottom:12px;">
+                Tell us what AP exams you're taking and your target scores. We'll show countdowns, track your progress, and personalize Coach Chat + Tutor to your exam list.
+              </p>
+              <p style="color:#64748b; font-size:13px; margin:0;">All optional — skip and use the tabs directly if you prefer.</p>
+            </div>
+
+            <div id="apOnboardingForm" class="ev-input-card">
+              <h3 style="font-size:16px; margin:0 0 12px;">Quick setup (2 minutes, optional)</h3>
+              <div class="ev-field">
+                <label>Which AP exams are you taking? <span style="color:#94a3b8; font-weight:400; font-size:13px;">— select all that apply</span></label>
+                <div id="apProfileExamList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:8px; max-height:280px; overflow-y:auto; padding:12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px;"></div>
+              </div>
+              <div class="ev-field">
+                <label for="apProfileTargetScore">Target score (most exams)</label>
+                <select id="apProfileTargetScore" class="ev-select">
+                  <option value="3">3 — passing</option>
+                  <option value="4" selected>4 — strong</option>
+                  <option value="5">5 — mastery</option>
+                </select>
+              </div>
+              <div class="ev-field">
+                <label for="apProfileHours">How many hours per week can you study? <span style="color:#94a3b8; font-weight:400; font-size:13px;">— rough estimate</span></label>
+                <input type="number" id="apProfileHours" class="ev-input" min="1" max="40" value="8" placeholder="8">
+              </div>
+              <div style="display:flex; gap:12px; margin-top:8px;">
+                <button id="apProfileSaveBtn" class="ev-submit-btn">Save my plan</button>
+                <button id="apProfileSkipBtn" style="background:transparent; border:none; color:#64748b; font-size:14px; cursor:pointer; text-decoration:underline;">Skip for now</button>
+              </div>
+            </div>
+
+            <div id="apGamePlanDashboard" style="display:none;">
+              <h3 style="font-size:18px; margin:0 0 12px;">Your exam dashboard</h3>
+              <div id="apExamCountdownGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:12px; margin-bottom:24px;"></div>
+              <div style="padding:16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px;">
+                <h4 style="margin:0 0 8px; font-size:15px;">📋 Suggested next moves</h4>
+                <div id="apGamePlanSuggestions" style="color:#475569; font-size:14px; line-height:1.7;"></div>
+              </div>
+              <button id="apProfileEditBtn" style="margin-top:16px; background:transparent; border:1px solid #e2e8f0; padding:8px 16px; border-radius:6px; cursor:pointer; font-size:13px; color:#475569;">Edit my plan</button>
+            </div>
+          </div>
+
+          <!-- ══════ TAB: COACH CHAT ══════ -->
+          <div class="ap-tab-panel" data-tab-panel="coach-chat" style="display:none;">
+            <div style="margin-bottom:16px;">
+              <h3 style="font-size:18px; margin:0 0 6px;">Coach Chat — ask anything</h3>
+              <p style="color:#64748b; font-size:14px; margin:0;">
+                Free-form Q&amp;A grounded in our AP intelligence. Ask conceptual questions ("Explain VSEPR"), strategy questions ("3 weeks until APUSH — what should I prioritize?"), or get help reviewing tough topics. Free tier: 5 messages/month. Coach &amp; Consultant: unlimited.
+              </p>
+            </div>
+
+            <div id="apChatThread" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; min-height:300px; max-height:500px; overflow-y:auto; margin-bottom:16px;">
+              <div id="apChatEmptyState" style="text-align:center; color:#94a3b8; padding:48px 16px;">
+                <div style="font-size:32px; margin-bottom:8px;">💬</div>
+                <p style="margin:0; font-size:14px;">Ask your first question to get started.</p>
+              </div>
+            </div>
+
+            <div class="ev-input-card">
+              <textarea id="apChatInput" class="ev-textarea" rows="3" maxlength="2000" placeholder="Ask anything: 'Explain VSEPR for AP Chem' / 'I have 4 weeks until APUSH, what should I prioritize?' / 'How do I score the sophistication point on AP Lang?'"></textarea>
+              <button id="apChatSendBtn" class="ev-submit-btn" style="margin-top:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                Send
+              </button>
+              <div id="apChatStatus" style="font-size:12px; color:#64748b; margin-top:6px;"></div>
+            </div>
+          </div>
+
+          <!-- ══════ TAB: FRQ SCORING ══════ -->
+          <div class="ap-tab-panel" data-tab-panel="frq-scoring" style="display:none;">
+            <div style="margin-bottom:16px;">
+              <h3 style="font-size:18px; margin:0 0 6px;">FRQ Scoring</h3>
+              <p style="color:#64748b; font-size:14px; margin:0;">
+                Submit any free-response answer for rubric-aware scoring. Returns rubric points earned, top 3 fixes, what a 5 would add, phrases that score, and full rubric breakdown. Free: 1 lifetime trial. Coach: 5/month. Consultant: unlimited.
+              </p>
+            </div>
 
             <div class="ev-input-card">
               <div class="ev-field">
-                <label for="apExam">Exam <span style="color:#94a3b8; font-weight:400; font-size:13px;">— pick the AP exam your FRQ is from</span></label>
+                <label for="apExam">Exam</label>
                 <select id="apExam" class="ev-select"></select>
               </div>
-
               <div class="ev-field">
-                <label for="apFrqType">FRQ Type <span style="color:#94a3b8; font-weight:400; font-size:13px;">— different rubrics use different scoring</span></label>
+                <label for="apFrqType">FRQ Type</label>
                 <select id="apFrqType" class="ev-select"></select>
               </div>
-
               <div class="ev-field">
-                <label for="apPromptInput">FRQ Prompt <span class="ev-optional">(strongly recommended)</span></label>
-                <textarea id="apPromptInput" class="ev-textarea" rows="3" maxlength="3000" placeholder="Paste the actual FRQ prompt here. Without it, scoring is generic; with it, scoring is rubric-precise."></textarea>
+                <label for="apPromptInput">FRQ Prompt <span class="ev-optional">(strongly recommended for best feedback)</span></label>
+                <textarea id="apPromptInput" class="ev-textarea" rows="3" maxlength="3000" placeholder="Paste the actual FRQ prompt here."></textarea>
               </div>
-
               <div class="ev-field">
-                <label for="apResponseInput">Your Response <span style="color:#94a3b8; font-weight:400; font-size:13px;">— paste your FULL written answer, not a summary</span></label>
-                <textarea id="apResponseInput" class="ev-textarea" rows="14" maxlength="12000" placeholder="Paste your full FRQ response here (minimum 30 characters, max 12,000). Best results: paste a real practice FRQ, not a hypothetical."></textarea>
+                <label for="apResponseInput">Your Response</label>
+                <textarea id="apResponseInput" class="ev-textarea" rows="12" maxlength="12000" placeholder="Paste your full FRQ response here (min 30 chars, max 12,000)."></textarea>
                 <div style="font-size:12px; color:#64748b; margin-top:4px;">
                   <span id="apCharCount">0</span> / 12,000 characters
                 </div>
               </div>
-
               <button id="apSubmitBtn" class="ev-submit-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                 <span id="apSubmitBtnText">Submit for Scoring</span>
               </button>
-              <p id="apSubmitMsg" class="ev-submit-msg" style="display:none;"></p>
             </div>
-
-            <!-- Empty state -->
             <div id="apResultEmptyState" style="margin-top:24px; padding:32px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; text-align:center;">
-              <div style="font-size:32px; margin-bottom:8px;">&#x1F4DD;</div>
-              <h4 style="margin:0 0 6px; color:#475569; font-size:15px;">Your scoring breakdown will appear here</h4>
-              <p style="color:#94a3b8; font-size:13px; margin:0;">
-                You'll see rubric points earned, top 3 fixes, what a 5 would add, verbatim phrases that score, and full rubric breakdown.
+              <div style="font-size:32px; margin-bottom:8px;">📝</div>
+              <p style="color:#94a3b8; font-size:13px; margin:0;">Your scoring breakdown will appear here.</p>
+            </div>
+            <div id="apScoreResult" style="margin-top:24px;"></div>
+          </div>
+
+          <!-- ══════ TAB: TUTOR ══════ -->
+          <div class="ap-tab-panel" data-tab-panel="tutor" style="display:none;">
+            <div style="margin-bottom:16px;">
+              <h3 style="font-size:18px; margin:0 0 6px;">Tutor — custom teaching guides</h3>
+              <p style="color:#64748b; font-size:14px; margin:0;">
+                Generate a full teaching guide on any AP topic on demand — like the Polar Functions or Chem Unit 2 examples. Tier-tagged content, worked examples, formula boxes, top traps, phrases that score. Coach: 10 guides/month. Consultant: 20/month.
               </p>
             </div>
 
-            <div id="apScoreResult" class="ev-review-result" style="margin-top:24px;"></div>
+            <div id="apTutorTeaser" style="display:none; padding:48px 24px; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; text-align:center; margin-bottom:16px;">
+              <div style="font-size:40px; margin-bottom:12px;">🎓</div>
+              <h3 style="margin:0 0 8px;">Tutor mode is a Coach/Consultant feature</h3>
+              <p style="color:#64748b; margin:0 0 16px;">Generate full custom teaching guides on any AP topic — tier-tagged, worked examples, exam-rubric-aligned. Coach gets 10/month; Consultant 20/month.</p>
+              <a href="#pricing" style="display:inline-block; padding:10px 24px; background:#2563eb; color:white; border-radius:6px; text-decoration:none; font-weight:600;">View plans</a>
+            </div>
 
-            <!-- Pro tips -->
-            <section style="margin-top:32px; padding:20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px;">
-              <h4 style="margin:0 0 12px; font-size:15px; color:#1e293b;">&#x1F4A1; Get the most out of AP Coach</h4>
-              <ul style="margin:0; padding-left:20px; color:#475569; font-size:14px; line-height:1.8;">
-                <li><strong>Use real practice FRQs.</strong> Past College Board released FRQs are best — they reflect what graders see.</li>
-                <li><strong>Always paste the prompt.</strong> Without it, scoring is generic. With it, the coach grades against the actual rubric.</li>
-                <li><strong>Compare scores over time.</strong> Submit your first attempt, fix the issues, resubmit. The score progression is the learning.</li>
-                <li><strong>Adopt the "Phrases That Score" verbatim.</strong> AP graders reward predictable language — use it.</li>
-                <li><strong>Don't paraphrase the rubric back.</strong> "I will follow the rubric" doesn't earn points; specific evidence does.</li>
-              </ul>
-            </section>
-          </section>
+            <div id="apTutorForm" class="ev-input-card">
+              <div class="ev-field">
+                <label for="apTutorExam">Exam</label>
+                <select id="apTutorExam" class="ev-select"></select>
+              </div>
+              <div class="ev-field">
+                <label for="apTutorTopic">Topic <span style="color:#94a3b8; font-weight:400; font-size:13px;">— what you want a teaching guide on</span></label>
+                <input id="apTutorTopic" class="ev-input" placeholder="e.g., 'VSEPR and Lewis structures' / 'Polar functions' / 'Civil War causation' / 'STATE-PLAN-DO-CONCLUDE inference'">
+              </div>
+              <div class="ev-field">
+                <label for="apTutorTier">Target tier — calibrate depth for your goal</label>
+                <select id="apTutorTier" class="ev-select">
+                  <option value="3">3 — foundational</option>
+                  <option value="4" selected>4 — strong</option>
+                  <option value="5">5 — mastery</option>
+                </select>
+              </div>
+              <button id="apTutorGenerateBtn" class="ev-submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Generate teaching guide
+              </button>
+              <div id="apTutorStatus" style="font-size:12px; color:#64748b; margin-top:6px;"></div>
+            </div>
+
+            <div id="apTutorResult" style="margin-top:24px;"></div>
+          </div>
+
+          <!-- ══════ TAB: STUDY GUIDES ══════ -->
+          <div class="ap-tab-panel" data-tab-panel="study-guides" style="display:none;">
+            <div style="margin-bottom:16px;">
+              <h3 style="font-size:18px; margin:0 0 6px;">Universal AP Study Guides</h3>
+              <p style="color:#64748b; font-size:14px; margin:0;">
+                All <span id="apGuidesCount">your</span> guides included. Universal tier badges ([3] foundational / [4] floor / [5] stretch) — works whether you're targeting a 3, 4, or 5.
+              </p>
+            </div>
+            <div id="apGuidesList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px;"></div>
+          </div>
+
         </div>
       </section>
-      <!-- REVAMP V2: AP COACH PRICING REWORK PATCH80 apCoachView end -->
+      <style>
+        .ap-tab-btn { background:transparent; border:none; padding:14px 20px; cursor:pointer; font-size:14px; font-weight:500; color:#64748b; border-bottom:2px solid transparent; transition:all 0.15s; white-space:nowrap; }
+        .ap-tab-btn:hover { color:#334155; }
+        .ap-tab-btn.active { color:#2563eb; border-bottom-color:#2563eb; font-weight:600; }
+        .ap-tab-panel { display:none; }
+        .ap-tab-panel.active { display:block; }
+        .ap-chat-msg { margin-bottom:16px; }
+        .ap-chat-msg.user { text-align:right; }
+        .ap-chat-msg-bubble { display:inline-block; padding:10px 14px; border-radius:10px; max-width:80%; font-size:14px; line-height:1.6; text-align:left; }
+        .ap-chat-msg.user .ap-chat-msg-bubble { background:#2563eb; color:white; }
+        .ap-chat-msg.assistant .ap-chat-msg-bubble { background:white; border:1px solid #e2e8f0; color:#1e293b; }
+        .ap-tier-3, .ap-tier-4, .ap-tier-5 { display:inline-block; padding:1px 6px; border-radius:4px; font-size:11px; font-weight:700; margin:0 2px; vertical-align:middle; }
+        .ap-tier-3 { background:#cffafe; color:#155e75; }
+        .ap-tier-4 { background:#dcfce7; color:#166534; }
+        .ap-tier-5 { background:#fef9c3; color:#854d0e; }
+      </style>
+      <!-- REVAMP V2: AP COACH FULL MODULE PATCH81 apView end -->
 
   </body>
 </html>

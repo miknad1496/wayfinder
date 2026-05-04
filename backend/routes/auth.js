@@ -388,3 +388,5 @@ router.get('/search', async (req, res) => {
 });
 
 export default router;
+// REVAMP V2: AP COACH FULL MODULE PATCH81 invite-gate-off — note: no invite-required pattern found in auth.js to patch.
+//   If invite is enforced elsewhere (frontend, middleware, signup service), drop it manually.

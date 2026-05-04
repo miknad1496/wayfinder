@@ -27,17 +27,35 @@ const __dirname = dirname(__filename);
 
 const client = new Anthropic();
 
-const SUPPORTED_EXAMS = {
-  'ap-chemistry':       { label: 'AP Chemistry', file: 'ap-chemistry.md' },
-  'ap-us-history':      { label: 'AP US History (APUSH)', file: 'ap-us-history.md' },
-  'ap-physics-1':       { label: 'AP Physics 1', file: 'ap-physics-1.md' },
-  'ap-government':      { label: 'AP Government & Politics', file: 'ap-government.md' },
-  'ap-english-lang':    { label: 'AP English Language', file: 'ap-english-lang.md' },
-  'ap-precalculus':     { label: 'AP Precalculus', file: 'ap-precalculus.md' },
-  'ap-macroeconomics':  { label: 'AP Macroeconomics', file: 'ap-macroeconomics.md' },
-  'ap-statistics':      { label: 'AP Statistics', file: 'ap-statistics.md' },
-  'ap-calc-bc':         { label: 'AP Calculus BC', file: 'ap-calc-bc.md' },
-  'other':              { label: 'Other AP Exam (general feedback)', file: null },
+const SUPPORTED_EXAMS = { // REVAMP V2: AP COACH FULL MODULE PATCH81 SUPPORTED_EXAMS — expanded to 27
+  'ap-art-history':       { label: 'AP Art History', file: 'ap-art-history.md' },
+  'ap-biology':           { label: 'AP Biology', file: 'ap-biology.md' },
+  'ap-calc-ab':           { label: 'AP Calculus AB', file: 'ap-calc-ab.md' },
+  'ap-calc-bc':           { label: 'AP Calculus BC', file: 'ap-calc-bc.md' },
+  'ap-chemistry':         { label: 'AP Chemistry', file: 'ap-chemistry.md' },
+  'ap-csa':               { label: 'AP Computer Science A', file: 'ap-csa.md' },
+  'ap-csp':               { label: 'AP Computer Science Principles', file: 'ap-csp.md' },
+  'ap-english-lang':      { label: 'AP English Language', file: 'ap-english-lang.md' },
+  'ap-english-lit':       { label: 'AP English Literature', file: 'ap-english-lit.md' },
+  'ap-environmental-science': { label: 'AP Environmental Science', file: 'ap-environmental-science.md' },
+  'ap-european-history':  { label: 'AP European History', file: 'ap-european-history.md' },
+  'ap-french':            { label: 'AP French Language & Culture', file: 'ap-french.md' },
+  'ap-government':        { label: 'AP US Government & Politics', file: 'ap-government.md' },
+  'ap-human-geography':   { label: 'AP Human Geography', file: 'ap-human-geography.md' },
+  'ap-macroeconomics':    { label: 'AP Macroeconomics', file: 'ap-macroeconomics.md' },
+  'ap-microeconomics':    { label: 'AP Microeconomics', file: 'ap-microeconomics.md' },
+  'ap-music-theory':      { label: 'AP Music Theory', file: 'ap-music-theory.md' },
+  'ap-physics-1':         { label: 'AP Physics 1', file: 'ap-physics-1.md' },
+  'ap-physics-2':         { label: 'AP Physics 2', file: 'ap-physics-2.md' },
+  'ap-physics-c-em':      { label: 'AP Physics C: E&M', file: 'ap-physics-c-em.md' },
+  'ap-physics-c-mech':    { label: 'AP Physics C: Mechanics', file: 'ap-physics-c-mech.md' },
+  'ap-precalculus':       { label: 'AP Precalculus', file: 'ap-precalculus.md' },
+  'ap-psychology':        { label: 'AP Psychology', file: 'ap-psychology.md' },
+  'ap-spanish':           { label: 'AP Spanish Language & Culture', file: 'ap-spanish.md' },
+  'ap-statistics':        { label: 'AP Statistics', file: 'ap-statistics.md' },
+  'ap-us-history':        { label: 'AP US History (APUSH)', file: 'ap-us-history.md' },
+  'ap-world-history':     { label: 'AP World History', file: 'ap-world-history.md' },
+  'other':                { label: 'Other AP Exam (general feedback)', file: null },
 };
 
 const FRQ_TYPES = {

@@ -16,13 +16,16 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
-import { verifyToken, useApCredit, refundApCredit, canAccess, checkApCoachUsage, recordApCoachUsage } from '../services/auth.js'; // REVAMP V2: AP COACH PRICING REWORK PATCH80 routes
+import { verifyToken, useApCredit, refundApCredit, canAccess, getApCoachUsageDetails, recordApChatUsage, recordApTutorUsage, getApProfile, setApProfile, redeemFriendsCoachCode, isFamilyConsultant, getEffectivePlan, checkApCoachUsage, recordApCoachUsage } from '../services/auth.js'; // REVAMP V2: AP COACH PRICING REWORK PATCH80 routes
 import { checkInjection } from '../services/input_filter.js';
 import { scoreFrq, getApExams, getFrqTypes } from '../services/ap-coach.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const SCORES_DIR = join(__dirname, '..', 'data', 'ap-coach-scores');
+
+import { coachChat, generateTeachingGuide, getExamCountdown } from '../services/ap-coach-extras.js'; // REVAMP V2: AP COACH FULL MODULE PATCH81 routes
+import { fileURLToPath } from 'url';
 
 const router = Router();
 
@@ -365,5 +368,128 @@ router.get('/guide/:exam', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
+// ─── REVAMP V2: AP COACH FULL MODULE PATCH81 routes — new endpoints for full AP Coach module ───
+
+// Tier-aware usage info (replaces /credits + /usage with combined info)
+router.get('/usage', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (!token) return res.status(401).json({ error: 'Not authenticated' });
+    const usage = await getApCoachUsageDetails(token);
+    res.json(usage);
+  } catch (err) { console.error('AP usage err:', err); res.status(500).json({ error: 'Internal error' }); }
+});
+
+// AP exam schedule (public; no auth needed)
+let _apScheduleCache = null;
+router.get('/schedule', async (req, res) => {
+  try {
+    if (!_apScheduleCache) {
+      const fs = await import('fs/promises');
+      const { join: pjoin } = await import('path');
+      _apScheduleCache = JSON.parse(await fs.readFile(pjoin(__dirname, '..', 'data', 'ap-exam-schedule.json'), 'utf8'));
+    }
+    res.json(_apScheduleCache);
+  } catch (err) { res.status(500).json({ error: 'Schedule unavailable' }); }
+});
+
+// Coach Chat — free-form Q&A. SLM-primary; Opus on complex/Coach+ users
+router.post('/chat', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+
+    const usage = await getApCoachUsageDetails(token);
+    if (usage.tier === 'free' && usage.chatRemaining <= 0) {
+      return res.status(402).json({ error: 'Free tier monthly chat cap (5) reached. Upgrade to Coach (unlimited chat) or Consultant.', _requiresUpgrade: true });
+    }
+
+    const { message, exam, history } = req.body;
+    if (typeof message !== 'string' || message.trim().length < 2) return res.status(400).json({ error: 'message required' });
+    if (message.length > 2000) return res.status(400).json({ error: 'message too long' });
+
+    // Load per-exam knowledge cache from ap-coach.js — re-import to access internal cache
+    // Simpler: just pass the exam slug; coachChat() loads what it needs internally
+    const session = { history: Array.isArray(history) ? history : [] };
+    const useOpus = usage.tier !== 'free'; // paid tiers get Opus; free gets Haiku
+    const result = await coachChat(message, session, await _getPerExamKnowledge(), { useOpus, examHint: exam });
+    if (!result.success) return res.status(500).json({ error: result.error || 'Chat failed' });
+
+    if (usage.tier === 'free') await recordApChatUsage(token);
+    res.json({ text: result.text, scope: result.scope, tokensUsed: result.tokensUsed });
+  } catch (err) { console.error('AP chat err:', err); res.status(500).json({ error: 'Internal error' }); }
+});
+
+// Tutor — generate full teaching guide
+router.post('/tutor', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+
+    const usage = await getApCoachUsageDetails(token);
+    if (usage.tutorRemaining <= 0) {
+      const msg = usage.tier === 'free'
+        ? 'Tutor mode is a Coach/Consultant feature. Upgrade to generate custom teaching guides.'
+        : 'Monthly Tutor cap reached. Upgrade to Consultant for 20/month.';
+      return res.status(402).json({ error: msg, _requiresUpgrade: true });
+    }
+
+    const { exam, topic, targetTier } = req.body;
+    if (typeof exam !== 'string' || !exam) return res.status(400).json({ error: 'exam required' });
+    if (typeof topic !== 'string' || topic.trim().length < 3) return res.status(400).json({ error: 'topic required (at least 3 chars)' });
+    if (topic.length > 200) return res.status(400).json({ error: 'topic too long' });
+
+    const result = await generateTeachingGuide(exam, topic, targetTier || '4', await _getPerExamKnowledge());
+    if (!result.success) return res.status(500).json({ error: result.error || 'Generation failed' });
+
+    await recordApTutorUsage(token);
+    res.json({ markdown: result.markdown, wordCount: result.wordCount, tokensUsed: result.tokensUsed });
+  } catch (err) { console.error('AP tutor err:', err); res.status(500).json({ error: 'Internal error' }); }
+});
+
+// AP Profile (Game Plan onboarding)
+router.get('/profile', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (!token) return res.status(401).json({ error: 'Not authenticated' });
+    const profile = await getApProfile(token);
+    res.json({ profile });
+  } catch (err) { res.status(500).json({ error: 'Internal error' }); }
+});
+
+router.put('/profile', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (!token) return res.status(401).json({ error: 'Not authenticated' });
+    const result = await setApProfile(token, req.body || {});
+    if (!result.success) return res.status(400).json({ error: result.error || 'Save failed' });
+    res.json({ profile: result.profile });
+  } catch (err) { res.status(500).json({ error: 'Internal error' }); }
+});
+
+// Helper: read per-exam knowledge from ap-coach.js cache (uses dynamic import)
+let _perExamKnowledgeCache = null;
+async function _getPerExamKnowledge() {
+  if (_perExamKnowledgeCache) return _perExamKnowledgeCache;
+  try {
+    const fsp = await import('fs/promises');
+    const { join: pjoin } = await import('path');
+    const apDir = pjoin(__dirname, '..', 'knowledge-base', 'ap-exams');
+    const cache = {};
+    const files = await fsp.readdir(apDir);
+    for (const f of files) {
+      if (!f.endsWith('.md') || f.startsWith('_')) continue;
+      const slug = f.replace(/\.md$/, '');
+      cache['ap-' + slug.replace(/^ap-/, '')] = await fsp.readFile(pjoin(apDir, f), 'utf8');
+    }
+    _perExamKnowledgeCache = cache;
+    return cache;
+  } catch { return {}; }
+}
+
 
 export default router;
