@@ -149,11 +149,16 @@ let VIP_EMAILS = (process.env.VIP_EMAILS || 'mhrkim@yahoo.com,danielyungkim@hotm
   .map(e => e.toLowerCase().trim())
   .filter(Boolean);
 // REVAMP V2: SLM USAGE TRACKING PATCH54 — added slmTokensPerDay/Month for self-hosted SLM compute caps.
-// Free: ~10 SLM messages/day at 5K avg = 50K. Pro: 4x. Elite: 20x.
+// REVAMP V2: FREE TIER QUOTA BUMP PATCH124 — SLM is free for US/English queries, so the tight
+// free-tier caps were leaving real users hitting "out of tokens" too early. Since SLM costs us
+// nothing to run for English speakers, lift the lid: 10→30 messages/day, 30→200/month,
+// SLM tokens 50K→200K/day and 1M→4M/month. Engine quota stays at 3/day (Opus is real $).
+// Pro/Elite get a smaller bump in proportion. Free Korean (Haiku) is still bounded by
+// messagesPerDay so cost stays within ~$0.30/day per free user worst case.
 const PLAN_LIMITS = {
-  free:  { enginePerDay: 3,  dailyTokens: 25000,   monthlyTokens: null,      invites: 1,  messagesPerDay: 10, messagesPerMonth: 30,  slmTokensPerDay: 50000,   slmTokensPerMonth: 1000000  },
-  pro:   { enginePerDay: 10, dailyTokens: 150000,  monthlyTokens: 3000000,   invites: 5,  messagesPerDay: 20, messagesPerMonth: 60,  slmTokensPerDay: 250000,  slmTokensPerMonth: 5000000  },
-  elite: { enginePerDay: 20, dailyTokens: 300000,  monthlyTokens: 8000000,   invites: 10, messagesPerDay: 50, messagesPerMonth: 200, slmTokensPerDay: 1000000, slmTokensPerMonth: 25000000 },
+  free:  { enginePerDay: 3,  dailyTokens: 25000,   monthlyTokens: null,      invites: 1,  messagesPerDay: 30, messagesPerMonth: 200, slmTokensPerDay: 200000,  slmTokensPerMonth: 4000000  },
+  pro:   { enginePerDay: 10, dailyTokens: 150000,  monthlyTokens: 3000000,   invites: 5,  messagesPerDay: 60, messagesPerMonth: 500, slmTokensPerDay: 500000,  slmTokensPerMonth: 10000000 },
+  elite: { enginePerDay: 20, dailyTokens: 300000,  monthlyTokens: 8000000,   invites: 10, messagesPerDay: 150,messagesPerMonth: 2000,slmTokensPerDay: 2000000, slmTokensPerMonth: 50000000 },
 };
 
 // Feature access control

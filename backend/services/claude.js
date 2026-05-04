@@ -484,12 +484,17 @@ Warm, conversational, slightly casual. You are an assistant, not an oracle. Ligh
     process.env.CLAUDE_MODEL || 'claude-sonnet-4-6',
   ];
 
+  // REVAMP V2: INTAKE TOKEN BUMP PATCH124 — Korean welcome desk needs more room
+  // than English (Hangul averages 1.4-1.6 tokens per character vs English ~0.25/char),
+  // so 300 tokens truncates Korean intake replies. Bump intl to 600, keep English at 400.
+  const _patch124_intakeIntl = !!(options.intlContext || (options.intlLang && options.intlLang !== 'en'));
+  const _patch124_intakeMaxTokens = _patch124_intakeIntl ? 600 : 400;
   for (const model of modelsToTry) {
     try {
       console.log(`[HAIKU-INTAKE] Trying model: ${model}`);
       const response = await anthropic.messages.create({
         model,
-        max_tokens: 300,
+        max_tokens: _patch124_intakeMaxTokens, // REVAMP V2: INTAKE TOKEN BUMP PATCH124
         system: systemPrompt,
         messages: sanitizeHistory([
           // Only pass last 2 messages for minimal context — more history
@@ -627,9 +632,17 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
     systemPrompt += BOUNDARY_INSTRUCTION;
   }
 
+  // REVAMP V2: HAIKU TOKEN BUMP PATCH124 — bump from 1024 to 2500 so structured Korean
+  // responses (교과/세특/창체/자율탐구/면접/이번주 closer) don't truncate mid-sentence.
+  // Korean responses need ~1500-2500 tokens; intl mode gets the full 2500. English standard
+  // tier still gets a generous 2000. Assistant persona stays lean at 800.
+  const _patch124_isIntl = !!(options.intlContext || (options.intlLang && options.intlLang !== 'en'));
+  const _patch124_maxTokens = _v55_persona === 'assistant'
+    ? 800
+    : (_patch124_isIntl ? 2500 : 2000);
   const response = await anthropic.messages.create({
     model: haikuModel,
-    max_tokens: _v55_persona === 'assistant' ? 600 : 1024, // REVAMP V2: PERSONA TIERS PATCH55 — Assistant gets shorter responses
+    max_tokens: _patch124_maxTokens, // REVAMP V2: HAIKU TOKEN BUMP PATCH124
     system: systemPrompt,
     messages: sanitizeHistory([
       ...conversationHistory.slice(-10),
@@ -824,8 +837,14 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
     { role: 'user', content: userMessage }
   ]);
 
-  // Token budget scales with conversation phase — early = lean, deep = generous
-  const maxTokens = useEngine ? phase.suggestedMaxTokens : Math.min(phase.suggestedMaxTokens, 1500);
+  // Token budget scales with conversation phase — early = lean, deep = generous.
+  // REVAMP V2: STANDARD TOKEN BUMP PATCH124 — bump non-engine cap from 1500 to 2500
+  // so structured Korean responses (교과/세특/창체/자율탐구/면접/이번주) and longer
+  // English replies don't truncate. Engine path keeps suggestedMaxTokens as-is.
+  // Intl mode gets a slightly higher floor so phase-1 Korean doesn't cut off.
+  const _patch124_intlChat = !!(options.intlContext || (options.intlLang && options.intlLang !== 'en'));
+  const _patch124_baseCap = useEngine ? phase.suggestedMaxTokens : Math.min(phase.suggestedMaxTokens, 2500);
+  const maxTokens = _patch124_intlChat ? Math.max(_patch124_baseCap, 2000) : _patch124_baseCap;
 
   // ─── TOKEN COUNT ESTIMATION (prevent context overflow) ──────────────
   // Rough estimate: 1 token ≈ 4 chars (Claude uses byte-pair encoding, varies by content)
