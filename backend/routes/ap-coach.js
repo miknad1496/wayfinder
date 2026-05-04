@@ -327,12 +327,15 @@ router.get('/guides', async (req, res) => {
     }
     const guides = [];
     for (const [exam, cfg] of Object.entries(EXAM_TO_GUIDE)) {
+      let size = null;
       try {
         const stat = await fs.stat(join(GUIDES_DIR, cfg.file));
-        guides.push({ exam, label: cfg.label, filename: cfg.file, size: stat.size });
+        size = stat.size;
       } catch {
-        // File missing — skip silently
+        // File missing on disk - still emit so frontend shows the card
+        // and the /guide/:exam handler will fall back to GitHub raw.
       }
+      guides.push({ exam, label: cfg.label, filename: cfg.file, size });
     }
     res.json({ guides });
   } catch (err) {
@@ -355,14 +358,49 @@ router.get('/guide/:exam', async (req, res) => {
     const cfg = EXAM_TO_GUIDE[exam];
     if (!cfg) return res.status(404).json({ error: 'Unsupported exam' });
     const filePath = join(GUIDES_DIR, cfg.file);
+    let useLocal = false;
     try {
       await fs.access(filePath);
+      useLocal = true;
     } catch {
-      return res.status(404).json({ error: 'Study guide file not deployed yet' });
+      useLocal = false;
     }
-    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
-    res.sendFile(filePath);
+    if (useLocal) {
+      res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+      res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
+      return res.sendFile(filePath);
+    }
+    // PATCH92: GitHub-raw fallback - the docx files are committed in git
+    // but may not be present on the Render disk (binary assets sometimes
+    // miss the deploy). Stream from raw.githubusercontent.com instead.
+    const ghRawUrl = `https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/${encodeURIComponent(cfg.file)}`;
+    try {
+      const ghRes = await new Promise((resolve, reject) => {
+        const https = require('https');
+        const reqGh = https.get(ghRawUrl, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (r) => {
+          if (r.statusCode === 301 || r.statusCode === 302) {
+            // Follow one redirect
+            const loc = r.headers.location;
+            return resolve(new Promise((res2, rej2) => {
+              https.get(loc, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, res2).on('error', rej2);
+            }));
+          }
+          if (r.statusCode !== 200) {
+            return reject(new Error(`GitHub raw HTTP ${r.statusCode}`));
+          }
+          resolve(r);
+        });
+        reqGh.on('error', reject);
+        reqGh.setTimeout(15000, () => { reqGh.destroy(new Error('GitHub raw timeout')); });
+      });
+      res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+      res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
+      ghRes.pipe(res);
+      return;
+    } catch (ghErr) {
+      console.error('AP Coach GitHub-raw fallback failed for', exam, ':', ghErr.message);
+      return res.status(404).json({ error: 'Study guide currently unavailable. Email danielyungkim@hotmail.com.' });
+    }
   } catch (err) {
     console.error('AP Coach guide download error:', err);
     res.status(500).json({ error: 'Internal server error' });
