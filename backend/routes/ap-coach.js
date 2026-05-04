@@ -25,7 +25,7 @@ const __dirname = dirname(__filename);
 const SCORES_DIR = join(__dirname, '..', 'data', 'ap-coach-scores');
 
 import { coachChat, generateTeachingGuide, getExamCountdown } from '../services/ap-coach-extras.js'; // REVAMP V2: AP COACH FULL MODULE PATCH81 routes
-import { fileURLToPath } from 'url';
+// REVAMP V2: PATCH81 DUP-IMPORT HOTFIX PATCH82HF — duplicate fileURLToPath import removed (was crashing prod)
 
 const router = Router();
 
