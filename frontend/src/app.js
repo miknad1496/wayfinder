@@ -8184,7 +8184,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government']; // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics']; // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
