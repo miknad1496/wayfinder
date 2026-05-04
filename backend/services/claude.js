@@ -507,6 +507,10 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   // PATCH96: coherence + action-items
   try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
   systemPrompt += _patch96_actionItemsClose;
+  // PATCH116: intl-context override — Korean/Japanese/Chinese queries get country brain + advisor prompt prepended
+  if (options && options.intlContext) {
+    systemPrompt = options.intlContext + '\n\n' + WAYFINDER_IDENTITY_RULES + '\n\n' + systemPrompt;
+  }
 
   // REVAMP V2: PERSONA TIERS PATCH55 — gate chatHaikuAdvisor injections by user tier.
   // Free users get NERFED Haiku Assistant (lite brain only, no curated/

@@ -356,10 +356,23 @@ router.post('/', async (req, res) => {
 
     // Handle engine usage limits
     let engineAllowed = false;
+    // PATCH116: intl mode queries (Korean/Japanese/Chinese) route to Claude as a LANGUAGE
+    // requirement, not a premium upgrade. They must NOT count against the daily engine quota.
+    // We'll check this flag below to short-circuit the quota deduction.
     let engineRemaining = 0;
+    // PATCH116: detect language EARLY (before engine quota check) so intl mode skips quota deduction.
+    let _earlyIntlMode = false;
+    try {
+      const _msgForDetect = String(req.body && req.body.message || '').trim();
+      const _earlyLang = detectLanguage(_msgForDetect);
+      const _earlyLangPref = req.body && typeof req.body.langPref === 'string' ? req.body.langPref : null;
+      const _effLang = (_earlyLangPref && _earlyLangPref !== 'en' && _earlyLang === 'en') ? _earlyLangPref : _earlyLang;
+      _earlyIntlMode = !!langToCountry(_effLang) || !!detectCountryFromQuery(_msgForDetect);
+    } catch (_) {}
+
     tEvent.engine.requested = !!useWayfinderEngine;
 
-    if (useWayfinderEngine && auth?.token) {
+    if (useWayfinderEngine && auth?.token && !_earlyIntlMode) {
       const result = await useEngine(auth.token);
       if (!result.allowed) {
         tEvent.outcome.http_status = 429;
@@ -374,6 +387,11 @@ router.post('/', async (req, res) => {
       engineAllowed = true;
       engineRemaining = result.remaining;
       tEvent.engine.allowed = true;
+    } else if (useWayfinderEngine && _earlyIntlMode && auth?.token) {
+      // PATCH116: intl mode forces Claude regardless of engine toggle, but no quota burn
+      engineAllowed = true;
+      tEvent.engine.allowed = true;
+      tEvent.engine.intlBypassQuota = true;
     } else if (useWayfinderEngine && !auth?.token) {
       tEvent.outcome.http_status = 401;
       tEvent.outcome.error = 'engine_auth_required';
@@ -617,7 +635,7 @@ router.post('/', async (req, res) => {
           }
 
           try {
-            result = await chatHaikuIntake(trimmedMsg, session.context, session.history);
+            result = await chatHaikuIntake(trimmedMsg, session.context, session.history, { intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
             tEvent.generation.mode = 'haiku_intake';
             console.log(`[WELCOME-DESK] Response OK (SLM state: ${slmWarmStatus.state})`);
           } catch (haikuError) {
@@ -672,7 +690,7 @@ router.post('/', async (req, res) => {
               console.log(`[ADVISOR→HAIKU] SLM quality failed: ${slmResult.qualityCheck.reason}`);
               tEvent.generation.slm_escalation = slmResult.qualityCheck.reason;
               escalatedFromSLM = true;
-              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
               tEvent.generation.mode = 'haiku_advisor';
             }
           } catch (slmError) {
@@ -683,7 +701,7 @@ router.post('/', async (req, res) => {
             warmUpSLM().catch(() => {}); // Re-warm in background
 
             try {
-              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
               tEvent.generation.mode = 'haiku_advisor';
             } catch (haikuErr) {
               console.error(`[ADVISOR→HAIKU→CLAUDE] Both failed — last resort Sonnet`);
@@ -715,7 +733,7 @@ router.post('/', async (req, res) => {
           // ── Haiku Advisor: SLM not available but user needs real answers ──
           console.log(`[HAIKU-ADVISOR] SLM unavailable — giving real answers via Haiku+RAG`);
           try {
-            result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label });
+            result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
             tEvent.generation.mode = 'haiku_advisor';
           } catch (err) {
             console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
