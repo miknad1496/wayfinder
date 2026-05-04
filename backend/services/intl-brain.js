@@ -93,11 +93,26 @@ export async function getAdvisorPrompt(country, lang) {
 
 // Lightweight keyword-driven country detection for English queries that
 // reference Korea/Japan/China by name (e.g. "best schools in Seoul").
+// PATCH117: broadened to catch international-student English queries that benefit
+// from Korean context (need-aware, need-blind for international, full-pay strategy,
+// Korean family scenarios — even when written in English).
 export function detectCountryFromQuery(text) {
   if (!text) return null;
   const q = String(text).toLowerCase();
-  // Korean signals (English forms)
-  const koreaKw = ['seoul national', 'sky university', 'snu', 'kaist', 'postech', '수능', 'suneung', 'csat korea', '학종', 'hakjong', '정시', 'jeongsi', '서울대', '연세대', '고려대', '외고', '자사고', '과고', '영재고', '대치동', 'gangnam education', 'korean college admission', 'korea university admission', 'kmla', 'minjok', 'hafs'];
+  const koreaKw = [
+    // Direct Korean institution / system references
+    'seoul national', 'sky university', 'snu ', ' snu', 'kaist', 'postech', '수능', 'suneung',
+    'csat korea', '학종', 'hakjong', '정시', 'jeongsi', '서울대', '연세대', '고려대',
+    '외고', '자사고', '과고', '영재고', '대치동', 'gangnam education',
+    'korean college admission', 'korea university admission', 'korean university',
+    'kmla', 'minjok', 'hafs', 'daewon foreign', 'sangsan', 'hana academy',
+    'korean medical school', '의대 한국', 'korean ivy', 'korean sat',
+    // Korean family + US admissions context
+    'korean family', 'korean student us', 'korean applicant', 'korean parents',
+    'korean cultural identity', 'asian-american post-sffa korea',
+    'i am korean', 'student from korea', 'student in seoul',
+    'us admissions korea', 'us admissions from korea', 'korea to us college',
+  ];
   if (koreaKw.some(k => q.includes(k))) return 'korea';
   return null;
 }

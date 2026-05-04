@@ -424,7 +424,11 @@ Warm, conversational, slightly casual. You are an assistant, not an oracle. Ligh
   if (sessionContext.interests) contextNote += `Interests: ${sessionContext.interests}. `;
   if (sessionContext.profile) contextNote += `Profile: ${JSON.stringify(sessionContext.profile)}. `;
 
-  const systemPrompt = contextNote
+  // PATCH117: if intl context is provided (Korean/Japanese/Chinese query), prepend
+  // the localized advisor prompt so even Welcome Desk responds in the right language.
+  let _intlPrefix = '';
+  if (arguments[3] && arguments[3].intlContext) _intlPrefix = arguments[3].intlContext + '\n\n';
+  const systemPrompt = _intlPrefix + contextNote
     ? `${intakeSystemPrompt}\n\n[User context: ${contextNote.trim()}]`
     : intakeSystemPrompt;
 
