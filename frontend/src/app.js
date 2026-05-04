@@ -9081,8 +9081,12 @@ if (typeof window !== 'undefined') {
           }),
         });
         const d = await r.json();
-        if (r.ok && d.text) {
-          resultEl.innerHTML = renderMarkdown(d.text);
+        // PATCH103: chat endpoint returns 'response' (not 'text'). Fall back to other field names defensively.
+        const responseText = d.response || d.text || d.message || d.content;
+        if (r.ok && responseText) {
+          resultEl.innerHTML = renderMarkdown(responseText);
+        } else if (r.status === 503 || (d.error && /warming|cold|unavailable/i.test(d.error))) {
+          resultEl.innerHTML = '<span style="color:#a16207;">⏳ The Wayfinder Advisor is warming up — give it 30-60 seconds and try again. (This happens after periods of inactivity.)</span>';
         } else {
           resultEl.innerHTML = '<span style="color:#dc2626;">Could not get an answer: ' + _esc(d.error || ('HTTP ' + r.status)) + '</span>';
         }

@@ -757,7 +757,7 @@ html, body {
   color: var(--text);
   outline: none;
 }
-#userInput::placeholder { color: var(--text-light); }
+#userInput::placeholder { color: #94a3b8; opacity: 1; } /* PATCH103: darker than --text-light for readability */
 
 .send-btn {
   width: 34px; height: 34px;
