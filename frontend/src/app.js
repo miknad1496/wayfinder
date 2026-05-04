@@ -8161,7 +8161,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics']; // PATCH83: ap-stats brain files dropped
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government']; // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
@@ -8293,5 +8293,229 @@ function renderApScore(score) {
 })();
 // ─── END PATCH82 AP COACH HOTFIX ───
 
+// ============================================================================
+// REVAMP V2: PATCH84 BUNDLE — runtime block (cookie banner, profile wizard, settings, engine badge, upgrade flow)
+// ============================================================================
+(function patch84Runtime() {
+  'use strict';
 
-<!-- REVAMP V2: AP EXAM COACH RENAME PATCH84 -->
+  // ---- Cookie banner ----
+  function showCookieBanner() {
+    if (localStorage.getItem('wf_cookie_ack') === '1') return;
+    const el = document.getElementById('cookieBanner');
+    if (el) el.style.display = 'block';
+    const ack = document.getElementById('cookieAck');
+    if (ack) ack.addEventListener('click', function() {
+      localStorage.setItem('wf_cookie_ack', '1');
+      if (el) el.style.display = 'none';
+    });
+  }
+
+  // ---- Profile wizard ----
+  function openProfileWizard() {
+    const m = document.getElementById('profileWizardModal');
+    if (!m) return;
+    m.style.display = 'flex';
+    let step = 1;
+    const totalSteps = 4;
+    function show(s) {
+      step = Math.min(Math.max(s, 1), totalSteps);
+      document.querySelectorAll('#profileWizardModal .pw-step').forEach(function(el) {
+        el.style.display = (parseInt(el.getAttribute('data-step'), 10) === step) ? 'block' : 'none';
+      });
+      document.querySelectorAll('#profileWizardModal .pw-dot').forEach(function(el) {
+        el.classList.toggle('pw-dot-active', parseInt(el.getAttribute('data-step'), 10) <= step);
+      });
+      const back = document.getElementById('pwBack');
+      const next = document.getElementById('pwNext');
+      if (back) back.style.display = (step > 1) ? 'inline-block' : 'none';
+      if (next) next.textContent = (step === totalSteps) ? 'Save' : 'Next';
+    }
+    show(1);
+    const close = document.getElementById('pwClose');
+    const skip = document.getElementById('pwSkip');
+    const back = document.getElementById('pwBack');
+    const next = document.getElementById('pwNext');
+    function done() {
+      const data = {
+        grade: (document.querySelector('input[name="pwGrade"]:checked') || {}).value || '',
+        targetSchools: (document.getElementById('pwSchools') || {}).value || '',
+        apExams: (document.getElementById('pwAps') || {}).value || '',
+        careerInterest: (document.getElementById('pwCareer') || {}).value || '',
+        contextNotes: (document.getElementById('pwNotes') || {}).value || '',
+      };
+      localStorage.setItem('wf_profile_done', '1');
+      // Save to backend
+      try {
+        fetch(API_BASE + '/auth/profile', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + (window.authToken || '') },
+          body: JSON.stringify({ profile: data }),
+        });
+      } catch (e) {}
+      m.style.display = 'none';
+    }
+    if (close) close.onclick = function() { m.style.display = 'none'; };
+    if (skip) skip.onclick = function() { localStorage.setItem('wf_profile_skipped', '1'); m.style.display = 'none'; };
+    if (back) back.onclick = function() { show(step - 1); };
+    if (next) next.onclick = function() {
+      if (step === totalSteps) { done(); }
+      else { show(step + 1); }
+    };
+  }
+  window.openProfileWizard = openProfileWizard;
+
+  // Show wizard on first session if user is logged in and hasn't completed it
+  function maybeOpenWizard() {
+    if (!window.authToken) return;
+    if (localStorage.getItem('wf_profile_done') === '1') return;
+    if (localStorage.getItem('wf_profile_skipped') === '1') return;
+    setTimeout(openProfileWizard, 800);
+  }
+
+  // ---- Settings modal ----
+  function openSettings() {
+    const m = document.getElementById('settingsModal');
+    if (!m) return;
+    m.style.display = 'flex';
+    // Populate tier info
+    const tierInfo = document.getElementById('settingsTierInfo');
+    const upgradeBlock = document.getElementById('settingsUpgradeBlock');
+    if (tierInfo) {
+      const plan = (window.userInfo && window.userInfo.plan) || 'free';
+      const planLabel = { free: 'Free', coach: 'Coach', consultant: 'Consultant' }[plan] || plan;
+      tierInfo.innerHTML = '<strong>Current plan:</strong> ' + planLabel;
+      if (plan === 'free' || plan === 'coach') {
+        if (upgradeBlock) upgradeBlock.style.display = 'block';
+      }
+    }
+  }
+  window.openSettings = openSettings;
+
+  function bindSettings() {
+    const close = document.getElementById('settingsClose');
+    if (close) close.onclick = function() { document.getElementById('settingsModal').style.display = 'none'; };
+    const exp = document.getElementById('exportDataBtn');
+    if (exp) exp.onclick = function() {
+      window.location.href = API_BASE + '/account/export?_authBearer=' + encodeURIComponent(window.authToken || '');
+      // Note: route uses Authorization header. Use fetch to download instead.
+      fetch(API_BASE + '/account/export', { headers: { Authorization: 'Bearer ' + (window.authToken || '') } })
+        .then(function(r) { return r.blob(); })
+        .then(function(b) {
+          const url = URL.createObjectURL(b);
+          const a = document.createElement('a');
+          a.href = url; a.download = 'wayfinder-export.json';
+          document.body.appendChild(a); a.click(); document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        })
+        .catch(function(e) { alert('Export failed: ' + e.message); });
+    };
+    const del = document.getElementById('deleteAccountBtn');
+    if (del) del.onclick = function() {
+      const ok = confirm('Permanently delete your account? This cannot be undone.\n\nType DELETE in the next prompt to confirm.');
+      if (!ok) return;
+      const c = prompt('Type DELETE to confirm permanent account deletion:');
+      if (c !== 'DELETE') { alert('Cancelled (you did not type DELETE).'); return; }
+      fetch(API_BASE + '/auth/delete', {
+        method: 'DELETE',
+        headers: { Authorization: 'Bearer ' + (window.authToken || '') },
+      })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d && d.success) {
+            alert('Account deleted. Goodbye.');
+            localStorage.clear();
+            location.href = '/';
+          } else {
+            alert('Delete failed: ' + (d.error || 'unknown'));
+          }
+        })
+        .catch(function(e) { alert('Delete failed: ' + e.message); });
+    };
+    const editP = document.getElementById('reopenProfileWizard');
+    if (editP) editP.onclick = function() {
+      document.getElementById('settingsModal').style.display = 'none';
+      localStorage.removeItem('wf_profile_done');
+      localStorage.removeItem('wf_profile_skipped');
+      openProfileWizard();
+    };
+    const upgC = document.getElementById('upgradeCoachBtn');
+    if (upgC) upgC.onclick = function() { startCheckout('coach'); };
+    const upgX = document.getElementById('upgradeConsultantBtn');
+    if (upgX) upgX.onclick = function() { startCheckout('consultant'); };
+    const footerS = document.getElementById('footerSettingsLink');
+    if (footerS) footerS.onclick = function(ev) { ev.preventDefault(); openSettings(); };
+  }
+
+  // ---- Stripe checkout ----
+  async function startCheckout(tier) {
+    try {
+      const r = await fetch(API_BASE + '/billing/checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + (window.authToken || '') },
+        body: JSON.stringify({ tier: tier }),
+      });
+      const d = await r.json();
+      if (r.ok && d.url) {
+        window.location.href = d.url;
+      } else if (d.contactEmail) {
+        alert('Billing not yet configured. Email ' + d.contactEmail + ' to upgrade for now.');
+      } else {
+        alert('Could not start checkout: ' + (d.error || 'unknown'));
+      }
+    } catch (e) {
+      alert('Checkout error: ' + e.message);
+    }
+  }
+  window.startCheckout = startCheckout;
+
+  // ---- Upgrade modal ----
+  function openUpgradeModal(reason) {
+    const m = document.getElementById('upgradeRequiredModal');
+    if (!m) { alert(reason || 'Upgrade required.'); return; }
+    const body = document.getElementById('upgradeRequiredBody');
+    if (body && reason) body.textContent = reason;
+    m.style.display = 'flex';
+  }
+  window.openUpgradeModal = openUpgradeModal;
+
+  function bindUpgradeModal() {
+    const close = document.getElementById('upgradeRequiredClose');
+    if (close) close.onclick = function() { document.getElementById('upgradeRequiredModal').style.display = 'none'; };
+    const c = document.getElementById('upgradeRequiredCoach');
+    if (c) c.onclick = function() { startCheckout('coach'); };
+    const x = document.getElementById('upgradeRequiredConsultant');
+    if (x) x.onclick = function() { startCheckout('consultant'); };
+  }
+
+  // ---- Engine badge ----
+  // Adds a small "ENGINE" badge to chat messages where the response was Opus-supplemented.
+  // Looks for window._lastChatMeta.headConsultantSupplemented set by chat handler.
+  window.appendEngineBadge = function(msgEl) {
+    if (!msgEl) return;
+    if (msgEl.querySelector('.engine-badge')) return;
+    const meta = window._lastChatMeta || {};
+    if (meta.headConsultantSupplemented || meta.engineUsed) {
+      const b = document.createElement('span');
+      b.className = 'engine-badge';
+      b.title = 'Premium synthesis from the Head Consultant — included with your tier.';
+      b.textContent = 'Engine';
+      msgEl.appendChild(b);
+    }
+  };
+
+  // ---- Bind everything when DOM ready ----
+  function init() {
+    showCookieBanner();
+    bindSettings();
+    bindUpgradeModal();
+    maybeOpenWizard();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  console.log('[Patch84] runtime block initialized');
+})();
+// END REVAMP V2: PATCH84 BUNDLE

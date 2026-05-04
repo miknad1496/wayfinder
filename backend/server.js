@@ -28,6 +28,10 @@ import h1bRoutes from './routes/h1b.js';
 import volunteerRoutes from './routes/volunteer.js';
 import k12Routes from './routes/k12.js';
 import summerCampsRoutes from './routes/summer-camps.js';
+// PATCH84_ROUTES — account + billing
+import accountRouter from './routes/account.js';
+import billingRouter from './routes/billing.js';
+
 import { ensureDirectories } from './services/storage.js';
 import { ensureUsersDir, repairCorruptedUserFiles, buildTokenIndex } from './services/auth.js';
 import { ensureInvitesDir } from './services/invites.js';
@@ -202,6 +206,10 @@ app.use('/api/h1b', apiLimiter, h1bRoutes);
 app.use('/api/volunteer', apiLimiter, volunteerRoutes);
 app.use('/api/k12', apiLimiter, k12Routes);
 app.use('/api/summer-camps', apiLimiter, summerCampsRoutes);
+// PATCH84_ROUTES — mount account + billing
+try { app.use('/api/account', accountRouter); console.log('[boot] account routes mounted'); } catch (e) { console.error('[boot] failed to mount account routes:', e.message); }
+try { app.use('/api/billing', billingRouter); console.log('[boot] billing routes mounted'); } catch (e) { console.error('[boot] failed to mount billing routes:', e.message); }
+
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {

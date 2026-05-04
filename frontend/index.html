@@ -580,7 +580,33 @@ input:focus, select:focus, textarea:focus {
 
             <p class="splash-desc">A college admissions and AP coaching platform built for families who want answers grounded in real data &mdash; verified federal datasets, distilled admissions intelligence, and curated school + exam knowledge that goes deeper than generic chatbots.</p>
 
-            <div class="splash-features">
+            
+<section id="splashHowItWorks" style="max-width:980px; margin:36px auto; padding:0 20px;">
+  <h2 style="text-align:center; font-size:22px; color:#0f172a; margin:0 0 6px 0;">How Wayfinder works</h2>
+  <p style="text-align:center; color:#64748b; font-size:14px; margin:0 0 22px 0;">Three steps. No spreadsheets. No hand-holding required.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+    <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(15,23,42,0.05);">
+      <div style="font-size:24px; margin-bottom:6px;">📋</div>
+      <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">1. Tell us about you</div>
+      <div style="color:#64748b; font-size:13px;">Grade, target schools, AP exams, interests. Two minutes.</div>
+    </div>
+    <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(15,23,42,0.05);">
+      <div style="font-size:24px; margin-bottom:6px;">🎯</div>
+      <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">2. Get a real plan</div>
+      <div style="color:#64748b; font-size:13px;">Personalized school list, internships, scholarships, essay coaching, and AP prep — all in one place.</div>
+    </div>
+    <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(15,23,42,0.05);">
+      <div style="font-size:24px; margin-bottom:6px;">📈</div>
+      <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">3. Stay on track</div>
+      <div style="color:#64748b; font-size:13px;">Deadlines, application progress, FRQ scoring, and a tutor that adapts to where you actually are.</div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:24px; color:#64748b; font-size:13px; font-style:italic;">
+    "Wayfinder turned the chaos of college apps into a single morning checklist." — built for and tested by real students and families.
+  </div>
+</section>
+
+<div class="splash-features">
               <div class="splash-feature">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.5 5.5L8 13"/></svg>
                 <span><strong>92+ school deep files</strong> &mdash; admissions weights, recent essay shifts, post-SFFA shifts, demonstrated-interest tracking, aid posture &mdash; for top schools across Ivies, top publics, LACs, service academies, and specialty programs</span>
@@ -1838,7 +1864,7 @@ input:focus, select:focus, textarea:focus {
       <div class="modal modal-tool-list">
         <button class="modal-close" id="k12ModalClose" aria-label="Close">&times;</button>
         <div class="tool-header">
-          <h2>K-12 Schools <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-left:8px;vertical-align:middle;">BETA</span></h2>
+          <h2>K-12 Schools </h2>
           <p class="form-subtitle">Search public + private K-12 schools nationwide. Enriched detail (principal, enrollment, AP/IB, ratings) is strongest in WA right now — expanding state-by-state. All 50 states show real schools.</p>
         </div>
 
@@ -2894,6 +2920,162 @@ input:focus, select:focus, textarea:focus {
       <!-- REVAMP V2: AP COACH FULL MODULE PATCH81 apView end -->
 
   <!-- REVAMP V2: PATCH83 BUNDLE -->
+<!-- patch84 cookie banner + footer + settings panel — injected before </body> -->
+
+<!-- Cookie consent banner -->
+<div id="cookieBanner" style="display:none; position:fixed; bottom:16px; left:16px; right:16px; max-width:540px; margin:0 auto; background:#0f172a; color:white; padding:14px 18px; border-radius:12px; box-shadow:0 8px 28px rgba(15,23,42,0.35); z-index:8500; font-size:13px; line-height:1.5;">
+  <strong style="font-size:14px;">A note on data</strong>
+  <p style="margin:6px 0 10px 0; color:#cbd5e1;">Wayfinder uses essential cookies for sign-in only. We do not use ad-tracking cookies and we do not sell your data. By using the site you agree to our <a href="/privacy.html" style="color:#93c5fd;">Privacy Policy</a> and <a href="/terms.html" style="color:#93c5fd;">Terms</a>.</p>
+  <button id="cookieAck" style="padding:7px 14px; background:#2563eb; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:600;">Got it</button>
+</div>
+
+<!-- Footer (sticky bottom of page when scrolled) -->
+<footer id="wfFooter" style="text-align:center; padding:24px 16px; color:#64748b; font-size:13px; border-top:1px solid #e2e8f0; margin-top:48px;">
+  <div style="margin-bottom:6px;">
+    <a href="/privacy.html" style="color:#475569; margin:0 10px;">Privacy</a>
+    <a href="/terms.html" style="color:#475569; margin:0 10px;">Terms</a>
+    <a href="/forgot-password.html" style="color:#475569; margin:0 10px;">Forgot password</a>
+    <a href="#" id="footerSettingsLink" style="color:#475569; margin:0 10px;">Settings</a>
+  </div>
+  <div>© 2026 Wayfinder · Built for students and the families helping them get there</div>
+</footer>
+
+<!-- Settings modal -->
+<div id="settingsModal" class="modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.55); z-index:9100; align-items:center; justify-content:center;">
+  <div class="modal-content" style="background:white; border-radius:12px; max-width:560px; width:92%; max-height:88vh; overflow-y:auto; padding:28px; box-shadow:0 8px 28px rgba(15,23,42,0.18);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+      <h2 style="margin:0; font-size:20px;">Settings</h2>
+      <button id="settingsClose" style="background:none; border:none; font-size:22px; cursor:pointer; color:#94a3b8;">×</button>
+    </div>
+
+    <h3 style="font-size:15px; color:#1e3a8a; margin:20px 0 10px 0;">Subscription</h3>
+    <div id="settingsTierInfo" style="padding:12px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:14px;">
+      Loading…
+    </div>
+    <div id="settingsUpgradeBlock" style="margin-top:10px; display:none;">
+      <button id="upgradeCoachBtn" style="margin-right:8px; padding:9px 14px; background:linear-gradient(135deg,#2563eb 0%,#1e40af 100%); color:white; border:none; border-radius:6px; font-weight:600; cursor:pointer;">Upgrade to Coach — $19/mo</button>
+      <button id="upgradeConsultantBtn" style="padding:9px 14px; background:linear-gradient(135deg,#7c3aed 0%,#5b21b6 100%); color:white; border:none; border-radius:6px; font-weight:600; cursor:pointer;">Upgrade to Consultant — $49/mo</button>
+    </div>
+
+    <h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Your data</h3>
+    <p style="color:#64748b; font-size:13px; margin:0 0 10px 0;">Download everything Wayfinder holds about you, or permanently delete your account.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button id="exportDataBtn" style="padding:9px 14px; background:white; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; font-weight:500;">Export my data (JSON)</button>
+      <button id="deleteAccountBtn" style="padding:9px 14px; background:white; border:1px solid #fecaca; color:#991b1b; border-radius:6px; cursor:pointer; font-weight:500;">Delete my account</button>
+    </div>
+
+    <h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Profile</h3>
+    <p style="color:#64748b; font-size:13px; margin:0 0 10px 0;">Update what we know about you to keep advice well-targeted.</p>
+    <button id="reopenProfileWizard" style="padding:9px 14px; background:white; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; font-weight:500;">Edit profile</button>
+
+    <h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Legal</h3>
+    <div style="font-size:13px;">
+      <a href="/privacy.html" style="color:#2563eb; margin-right:14px;">Privacy Policy</a>
+      <a href="/terms.html" style="color:#2563eb;">Terms of Service</a>
+    </div>
+  </div>
+</div>
+
+<!-- Upgrade-required dialog (shown when free user hits feature limit) -->
+<div id="upgradeRequiredModal" class="modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.55); z-index:9200; align-items:center; justify-content:center;">
+  <div style="background:white; border-radius:12px; max-width:480px; width:92%; padding:28px; text-align:center;">
+    <div style="font-size:46px; margin-bottom:10px;">🚀</div>
+    <h2 id="upgradeRequiredTitle" style="margin:0 0 10px 0; font-size:20px;">Upgrade to keep going</h2>
+    <p id="upgradeRequiredBody" style="color:#475569; font-size:14px; margin:0 0 18px 0;">You've hit your Free plan limit. Upgrade to keep using this feature.</p>
+    <button id="upgradeRequiredCoach" style="margin:0 4px; padding:11px 18px; background:linear-gradient(135deg,#2563eb 0%,#1e40af 100%); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Coach — $19/mo</button>
+    <button id="upgradeRequiredConsultant" style="margin:0 4px; padding:11px 18px; background:linear-gradient(135deg,#7c3aed 0%,#5b21b6 100%); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Consultant — $49/mo</button>
+    <div style="margin-top:14px;">
+      <button id="upgradeRequiredClose" style="background:none; border:none; color:#64748b; cursor:pointer; text-decoration:underline; font-size:13px;">Maybe later</button>
+    </div>
+  </div>
+</div>
+
+<!-- Engine-promoted badge — appears on chat messages when Opus supplement was used -->
+<style>
+.engine-badge {
+  display:inline-flex; align-items:center; gap:4px;
+  background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);
+  color:#422006; font-size:10px; font-weight:700; padding:3px 8px;
+  border-radius:999px; letter-spacing:0.04em; text-transform:uppercase;
+  margin-left:8px; vertical-align:middle;
+  box-shadow:0 1px 2px rgba(245,158,11,0.3);
+}
+.engine-badge::before { content:"✦"; font-size:11px; }
+</style>
+
+<!-- patch84 profile wizard modal — injected into index.html before </body> -->
+<div id="profileWizardModal" class="modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(15,23,42,0.55); z-index:9000; align-items:center; justify-content:center;">
+  <div class="modal-content" style="background:white; border-radius:12px; max-width:520px; width:92%; max-height:88vh; overflow-y:auto; padding:28px 28px 22px 28px; box-shadow:0 8px 28px rgba(15,23,42,0.18);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+      <h2 style="margin:0; font-size:20px; color:#0f172a;">Welcome — let's personalize Wayfinder</h2>
+      <button id="pwClose" style="background:none; border:none; font-size:22px; cursor:pointer; color:#94a3b8;">×</button>
+    </div>
+    <p style="color:#64748b; font-size:14px; margin:0 0 18px 0;">Two minutes now = much sharper advice every chat going forward. You can update these anytime in Settings.</p>
+
+    <div id="pwStepIndicator" style="display:flex; gap:6px; margin-bottom:18px;">
+      <div class="pw-dot pw-dot-active" data-step="1"></div>
+      <div class="pw-dot" data-step="2"></div>
+      <div class="pw-dot" data-step="3"></div>
+      <div class="pw-dot" data-step="4"></div>
+    </div>
+
+    <!-- Step 1: Grade level -->
+    <div class="pw-step" data-step="1" style="display:block;">
+      <label style="display:block; font-weight:600; color:#0f172a; margin-bottom:8px;">What grade are you in (or going into)?</label>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="K-5"> Elementary (K–5)</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="6-8"> Middle (6–8)</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="9"> 9th grade</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="10"> 10th grade</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="11"> 11th grade</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="12"> 12th grade</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="college"> Already in college</label>
+        <label class="pw-choice"><input type="radio" name="pwGrade" value="parent"> I'm a parent</label>
+      </div>
+    </div>
+
+    <!-- Step 2: Target schools -->
+    <div class="pw-step" data-step="2" style="display:none;">
+      <label style="display:block; font-weight:600; color:#0f172a; margin-bottom:6px;">Top 3–5 schools you're considering</label>
+      <p style="color:#64748b; font-size:13px; margin:0 0 8px 0;">Type school names separated by commas. We'll use this to tailor advice and check fit.</p>
+      <textarea id="pwSchools" rows="3" maxlength="500" placeholder="Stanford, MIT, UW, Pomona, Whitman" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; resize:vertical;"></textarea>
+    </div>
+
+    <!-- Step 3: AP exams -->
+    <div class="pw-step" data-step="3" style="display:none;">
+      <label style="display:block; font-weight:600; color:#0f172a; margin-bottom:6px;">AP exams you're taking (or planning to)</label>
+      <p style="color:#64748b; font-size:13px; margin:0 0 8px 0;">Optional — skip if not applicable. Helps the AP Exam Coach surface relevant materials.</p>
+      <input type="text" id="pwAps" maxlength="300" placeholder="AP Chem, AP USH, AP Stats" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box;">
+    </div>
+
+    <!-- Step 4: Career / interests -->
+    <div class="pw-step" data-step="4" style="display:none;">
+      <label style="display:block; font-weight:600; color:#0f172a; margin-bottom:6px;">Career interest or major direction</label>
+      <p style="color:#64748b; font-size:13px; margin:0 0 8px 0;">A rough direction is fine — "still figuring it out" is a valid answer too.</p>
+      <input type="text" id="pwCareer" maxlength="200" placeholder="Computer science, pre-med, undecided liberal arts" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box;">
+      <label style="display:block; font-weight:600; color:#0f172a; margin:14px 0 6px 0;">Anything else important?</label>
+      <textarea id="pwNotes" rows="3" maxlength="600" placeholder="First-gen, recruited athlete, low-income, ESL, learning difference, etc. — anything that affects how we should advise you" style="width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; resize:vertical;"></textarea>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px; gap:8px;">
+      <button id="pwSkip" style="background:none; border:none; color:#64748b; cursor:pointer; font-size:13px; text-decoration:underline;">Skip for now</button>
+      <div style="display:flex; gap:8px;">
+        <button id="pwBack" style="display:none; padding:9px 16px; background:white; border:1px solid #cbd5e1; border-radius:8px; cursor:pointer; font-weight:500;">Back</button>
+        <button id="pwNext" style="padding:9px 18px; background:linear-gradient(135deg,#2563eb 0%,#1e40af 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600;">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.pw-dot { width:36px; height:6px; border-radius:3px; background:#e2e8f0; transition:background 0.2s; }
+.pw-dot.pw-dot-active { background:#2563eb; }
+.pw-choice { display:flex; align-items:center; gap:8px; padding:10px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; font-size:14px; transition:border-color 0.15s, background 0.15s; }
+.pw-choice:hover { border-color:#93c5fd; background:#f0f6ff; }
+.pw-choice input[type="radio"]:checked + span,
+.pw-choice:has(input:checked) { border-color:#2563eb; background:#dbeafe; }
+</style>
+
+<!-- REVAMP V2: PATCH84 BUNDLE -->
 </body>
 </html>
 <!-- REVAMP V2: BRAND + COUNT FIX PATCH79 index.html — heading made dynamic via #apGuidesCount span -->

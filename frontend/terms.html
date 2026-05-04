@@ -1,819 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Wayfinder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 24px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .header-content h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .header-content p {
-            color: #64748b;
-            font-size: 14px;
-        }
-
-        .back-link {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 8px 16px;
-            background-color: #eff6ff;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .back-link:hover {
-            background-color: #dbeafe;
-            color: #1d4ed8;
-        }
-
-        .table-of-contents {
-            background-color: #f1f5f9;
-            border-left: 4px solid #2563eb;
-            padding: 20px;
-            margin-bottom: 40px;
-            border-radius: 6px;
-        }
-
-        .table-of-contents h2 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #1e293b;
-        }
-
-        .table-of-contents ul {
-            list-style: none;
-        }
-
-        .table-of-contents li {
-            margin-bottom: 8px;
-        }
-
-        .table-of-contents a {
-            color: #2563eb;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .table-of-contents a:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
-        }
-
-        .content {
-            line-height: 1.8;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 16px;
-            padding-top: 32px;
-            scroll-margin-top: 20px;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-top: 20px;
-            margin-bottom: 12px;
-        }
-
-        p {
-            margin-bottom: 12px;
-            color: #475569;
-        }
-
-        ul, ol {
-            margin-left: 24px;
-            margin-bottom: 12px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: #475569;
-        }
-
-        strong {
-            color: #1e293b;
-            font-weight: 600;
-        }
-
-        .highlight {
-            background-color: #fef3c7;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .info-box {
-            background-color: #e0f2fe;
-            border-left: 4px solid #2563eb;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-
-        .info-box p {
-            margin: 0;
-            color: #0c4a6e;
-            font-size: 15px;
-        }
-
-        .warning-box {
-            background-color: #fef2f2;
-            border-left: 4px solid #dc2626;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-
-        .warning-box p {
-            margin: 0;
-            color: #7f1d1d;
-            font-size: 15px;
-        }
-
-        footer {
-            border-top: 2px solid #e2e8f0;
-            padding-top: 32px;
-            margin-top: 48px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 24px;
-        }
-
-        .footer-content h3 {
-            margin-top: 0;
-        }
-
-        .footer-content p {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .footer-content a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .footer-content a:hover {
-            text-decoration: underline;
-        }
-
-        .last-updated {
-            font-size: 12px;
-            color: #94a3b8;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .back-link {
-                margin-top: 16px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            h3 {
-                font-size: 16px;
-            }
-
-            .container {
-                padding: 24px 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Wayfinder</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.65; color: #0f172a; max-width: 760px; margin: 0 auto; padding: 32px 20px; background: #f8fafc; }
+    h1 { font-size: 28px; margin-bottom: 6px; }
+    h2 { font-size: 19px; margin-top: 32px; color: #1e3a8a; }
+    .meta { color: #64748b; font-size: 14px; margin-bottom: 24px; }
+    a { color: #2563eb; }
+    .nav { margin-bottom: 24px; font-size: 14px; }
+    .nav a { margin-right: 16px; }
+    .container { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 1px 3px rgba(15,23,42,0.06); }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>Terms of Service</h1>
-                <p>Wayfinder - AI Career Advisor Platform</p>
-            </div>
-            <a href="/" class="back-link">← Back to Wayfinder</a>
-        </header>
-
-        <div class="table-of-contents">
-            <h2>Table of Contents</h2>
-            <ul>
-                <li><a href="#acceptance-of-terms">Acceptance of Terms</a></li>
-                <li><a href="#description-of-service">Description of Service</a></li>
-                <li><a href="#account-registration">Account Registration</a></li>
-                <li><a href="#acceptable-use">Acceptable Use</a></li>
-                <li><a href="#subscription-plans">Subscription Plans & Payments</a></li>
-                <li><a href="#service-availability">Service Availability</a></li>
-                <li><a href="#intellectual-property">Intellectual Property</a></li>
-                <li><a href="#ai-disclaimer">AI Disclaimer</a></li>
-                <li><a href="#limitation-of-liability">Limitation of Liability</a></li>
-                <li><a href="#indemnification">Indemnification</a></li>
-                <li><a href="#dispute-resolution">Dispute Resolution</a></li>
-                <li><a href="#data-breach">Data Breach Notification</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-                <li><a href="#termination">Termination</a></li>
-                <li><a href="#survival-clause">Survival Clause</a></li>
-                <li><a href="#changes-to-terms">Changes to Terms</a></li>
-                <li><a href="#accessibility">Accessibility</a></li>
-                <li><a href="#force-majeure">Force Majeure</a></li>
-                <li><a href="#general-provisions">General Provisions</a></li>
-                <li><a href="#governing-law">Governing Law</a></li>
-                <li><a href="#contact">Contact Information</a></li>
-            </ul>
-        </div>
-
-        <div class="content">
-            <section id="introduction">
-                <p><strong>Welcome to Wayfinder.</strong> These Terms of Service ("Terms") govern your use of the Wayfinder platform (the "Service"), operated by Virtuous Capital Foundation, a 501(c)(3) nonprofit organization. By accessing and using Wayfinder, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our platform.</p>
-
-                <div class="info-box">
-                    <p><strong>Last Updated:</strong> March 2026. Please review these Terms periodically for updates. Your continued use of Wayfinder constitutes your acceptance of these Terms.</p>
-                </div>
-            </section>
-
-            <section id="acceptance-of-terms">
-                <h2>1. Acceptance of Terms</h2>
-
-                <p>By creating an account and using Wayfinder, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, including any policies referenced herein. If you are using Wayfinder on behalf of a minor under 13, you represent that you have parental consent and authority to agree to these Terms on their behalf.</p>
-
-                <p>These Terms apply to all users of Wayfinder, including those who visit our website but do not create an account. Your access to and use of Wayfinder is conditioned upon your acceptance of these Terms.</p>
-            </section>
-
-            <section id="description-of-service">
-                <h2>2. Description of Service</h2>
-
-                <h3>What Wayfinder Is</h3>
-                <p>Wayfinder is an AI-powered career advisor platform designed to provide personalized career guidance, educational planning advice, and career exploration resources to students and career changers ages 13 and older. The service leverages Wayfinder's proprietary AI engine to deliver conversational career guidance.</p>
-
-                <h3>Service Features</h3>
-                <p>Wayfinder provides the following services:</p>
-                <ul>
-                    <li>Personalized career assessments and recommendations</li>
-                    <li>AI-powered conversational career guidance</li>
-                    <li>Educational pathway planning</li>
-                    <li>Career research and exploration tools</li>
-                    <li>Goal-setting and progress tracking features</li>
-                </ul>
-
-                <h3>Important Disclaimer: Not Professional Counseling</h3>
-                <div class="warning-box">
-                    <p><strong>Critical Disclaimer:</strong> Wayfinder is an AI-powered information tool and should not be considered a substitute for professional career counseling, academic advising, mental health services, or financial advice. While Wayfinder aims to provide helpful guidance, AI-generated advice may not always be accurate or appropriate for your individual situation. You should always consult with qualified professionals (certified career counselors, academic advisors, financial advisors, or mental health professionals) before making important decisions about your education or career. Wayfinder and Virtuous Capital Foundation are not responsible for any decisions made based on advice provided through our platform.</p>
-                </div>
-
-                <h3>Information Accuracy</h3>
-                <p>While we strive to provide accurate and current information, career landscapes, educational programs, and industry requirements change constantly. Information provided through Wayfinder may not always be completely accurate, up-to-date, or applicable to your specific circumstances. You are responsible for verifying any important information with authoritative sources and qualified professionals before acting upon it.</p>
-            </section>
-
-            <section id="account-registration">
-                <h2>3. Account Registration</h2>
-
-                <h3>Eligibility and Age Requirements</h3>
-                <p>To use Wayfinder, you must be at least 13 years old. By creating an account, you confirm that:</p>
-                <ul>
-                    <li>You are at least 13 years of age</li>
-                    <li>You have the legal authority to enter into these Terms</li>
-                    <li>If you are under 18, you have parental or guardian consent to use Wayfinder</li>
-                    <li>You are not legally prohibited from using online services in your jurisdiction</li>
-                </ul>
-
-                <h3>Account Information</h3>
-                <p>When you create an account, you agree to:</p>
-                <ul>
-                    <li>Provide accurate, current, and complete information</li>
-                    <li>Update your information promptly if any details change</li>
-                    <li>Choose a secure password and not share it with others</li>
-                    <li>Not use offensive, threatening, or false information in your profile</li>
-                </ul>
-
-                <h3>Account Security</h3>
-                <p>You are responsible for maintaining the confidentiality of your account login credentials and password. You are fully responsible for all activities that occur under your account. You must immediately notify Wayfinder of any unauthorized access or security breach. Wayfinder is not liable for any losses resulting from unauthorized use of your account.</p>
-
-                <h3>Account Termination</h3>
-                <p>You may delete your account at any time through your account settings. When you delete your account, you will lose access to all conversations, saved recommendations, and data associated with your account.</p>
-            </section>
-
-            <section id="acceptable-use">
-                <h2>4. Acceptable Use</h2>
-
-                <h3>Prohibited Conduct</h3>
-                <p>You agree not to use Wayfinder in any manner that:</p>
-                <ul>
-                    <li><strong>Illegal Activities:</strong> Violates any law, regulation, or third-party rights, including intellectual property rights</li>
-                    <li><strong>Harmful Content:</strong> Contains threats, harassment, violence, hate speech, or discriminatory language toward individuals or groups</li>
-                    <li><strong>Abuse:</strong> Harasses, bullies, intimidates, or otherwise abuses other users or Wayfinder staff</li>
-                    <li><strong>Spam and Manipulation:</strong> Sends spam, scams, phishing attempts, or uses the service for unsolicited advertising</li>
-                    <li><strong>Unauthorized Access:</strong> Attempts to gain unauthorized access to Wayfinder's systems, data, or accounts</li>
-                    <li><strong>Reverse Engineering:</strong> Attempts to reverse engineer, decompile, or discover the underlying code or algorithms of Wayfinder</li>
-                    <li><strong>Scraping and Bots:</strong> Uses automated tools, bots, scraping software, or other mechanisms to access or extract data from Wayfinder without permission</li>
-                    <li><strong>Impersonation:</strong> Impersonates another person or entity, including Virtuous Capital Foundation staff or career professionals</li>
-                    <li><strong>Misinformation:</strong> Intentionally spreads false or misleading information through the platform</li>
-                    <li><strong>Copyright Violation:</strong> Uploads, shares, or distributes copyrighted content without proper authorization</li>
-                </ul>
-
-                <h3>Monitoring and Enforcement</h3>
-                <p>Wayfinder reserves the right to monitor user activity for compliance with these Terms. We may remove content, suspend accounts, or terminate access to users who violate these Terms. We are not obligated to notify you before taking such action, though we will attempt to do so when feasible.</p>
-
-                <h3>Rate Limiting and Fair Use</h3>
-                <p>To ensure fair access and platform stability, Wayfinder enforces rate limits on API usage:</p>
-                <ul>
-                    <li><strong>Automated Access Prohibited:</strong> You may not use bots, scripts, or automated tools to access Wayfinder without explicit written permission</li>
-                    <li><strong>Rate Limits by Plan:</strong> Each subscription tier includes specified rate limits on queries and API calls. These limits are enforced to provide equitable access to all users</li>
-                    <li><strong>Abuse Detection:</strong> Wayfinder monitors for unusual patterns of access, including rapid-fire requests, bulk data extraction attempts, or other activities that exceed normal usage</li>
-                    <li><strong>Enforcement:</strong> Users who exceed rate limits or engage in abusive access patterns may face temporary rate limiting, service suspension, or permanent termination of their account</li>
-                </ul>
-            </section>
-
-            <section id="subscription-plans">
-                <h2>5. Subscription Plans & Payments</h2>
-
-                <h3>Available Plans</h3>
-                <p>Wayfinder offers the following subscription tiers:</p>
-                <ul>
-                    <li><strong>Career Explorer (Free):</strong> $0/month - Basic career guidance, 3 Head Consultant queries/day, demographics preview, 1 invitation</li>
-                    <li><strong>Coach:</strong> $25/month - Full demographics, 20 Engine queries/day, admissions timeline, internships preview, scholarships & programs preview, decision date reminders, essay reviewer add-on, ED & EA holistic strategy, 5 invitations</li>
-                    <li><strong>Consultant:</strong> $50/month - All Coach features plus full internships/scholarships/programs databases, demographics comparison, 40 Engine queries/day, all reminder types, advanced ED & EA strategy, 10 invitations</li>
-                </ul>
-
-                <h3>Essay Review Credits</h3>
-                <p>In addition to subscription plans, Wayfinder offers consumption-based essay review credits as an add-on available for Coach and Consultant subscribers:</p>
-                <ul>
-                    <li>5 reviews for $10</li>
-                    <li>10 reviews for $15</li>
-                    <li>20 reviews for $20</li>
-                </ul>
-                <p>Essay review credits are non-refundable and do not expire while your account is active. Credits are one-time purchases and not recurring charges.</p>
-
-                <h3>Payment Processing</h3>
-                <p>All payments are processed securely by Stripe, our third-party payment processor. By providing payment information, you authorize Stripe to charge your payment method according to the plan you select. Your credit card information is not stored on Wayfinder's servers; payment processing is handled entirely by Stripe's secure systems.</p>
-
-                <h3>Billing and Auto-Renewal</h3>
-                <p>Paid subscriptions are billed on a monthly basis:</p>
-                <ul>
-                    <li>Your subscription will automatically renew each month on the anniversary of your purchase date</li>
-                    <li>You will be charged the current subscription price at the time of renewal</li>
-                    <li>Wayfinder reserves the right to change subscription prices with 30 days' notice</li>
-                    <li>You will receive a billing confirmation email after each charge</li>
-                </ul>
-
-                <h3>Cancellation</h3>
-                <p>You may cancel your subscription at any time through your account settings. Cancellation takes effect at the end of your current billing cycle. You will retain access to premium features through the end of your paid period; no refunds will be issued for the remainder of your current month.</p>
-
-                <h3>Refund Policy</h3>
-                <div class="info-box">
-                    <p><strong>No Refunds for Partial Months:</strong> Wayfinder does not issue refunds or credits for partial months of service, unused features, or early cancellation. If you cancel mid-month, your subscription will remain active until the end of your current billing period, and no refund will be issued for the unused portion of that month.</p>
-                    <p style="margin-top: 12px;"><strong>Essay Review Credits:</strong> Essay review credits are non-refundable once purchased.</p>
-                    <p style="margin-top: 12px;"><strong>Material Service Changes:</strong> If Wayfinder makes a material change to the Service that significantly reduces functionality, users may request a pro-rated refund within 14 days of the change.</p>
-                </div>
-
-                <h3>Failed Payments</h3>
-                <p>If a payment fails, Wayfinder will attempt to retry billing using the payment method on file. If payment ultimately fails, your account may be downgraded to the Free plan or suspended until payment is received. Repeated failed payments may result in account termination.</p>
-            </section>
-
-            <section id="service-availability">
-                <h2>5.1. Service Availability</h2>
-
-                <h3>Dependency on Third-Party Services</h3>
-                <p>Wayfinder relies on several third-party services to operate:</p>
-                <ul>
-                    <li><strong>Wayfinder AI Engine:</strong> Intelligent advisory processing and career guidance</li>
-                    <li><strong>Stripe:</strong> Payment processing and subscription management</li>
-                    <li><strong>Render:</strong> Infrastructure and hosting</li>
-                    <li><strong>Resend:</strong> Email delivery for notifications and reminders</li>
-                </ul>
-                <p>Service availability depends on the continued operation and reliability of these third-party providers.</p>
-
-                <h3>No Uptime Guarantee or SLA</h3>
-                <p>Wayfinder does not guarantee any specific level of service availability, uptime, or performance. We do not maintain a formal Service Level Agreement (SLA). The Service is provided on an "as-available" basis without guarantees of uninterrupted access.</p>
-
-                <h3>Service Interruptions</h3>
-                <p>Wayfinder may experience interruptions due to:</p>
-                <ul>
-                    <li>Scheduled maintenance and system updates</li>
-                    <li>Unscheduled maintenance necessary to address security issues or system failures</li>
-                    <li>Third-party service outages or failures beyond our control</li>
-                    <li>Network failures or infrastructure issues</li>
-                    <li>High traffic or resource constraints</li>
-                </ul>
-                <p>We will attempt to provide notice of scheduled maintenance, but emergency maintenance may occur without advance notice.</p>
-
-                <h3>Right to Modify or Discontinue</h3>
-                <p>Wayfinder reserves the right to:</p>
-                <ul>
-                    <li>Modify, suspend, or discontinue any feature or service at any time</li>
-                    <li>Change pricing, features, or functionality</li>
-                    <li>Impose usage limits or rate restrictions</li>
-                    <li>Discontinue the Service entirely</li>
-                </ul>
-                <p>While we will attempt to provide notice of material changes, we are not required to do so. Your continued use of Wayfinder constitutes acceptance of any modifications.</p>
-            </section>
-
-            <section id="intellectual-property">
-                <h2>6. Intellectual Property</h2>
-
-                <h3>Wayfinder's Intellectual Property</h3>
-                <p>Wayfinder, including all content, code, features, and design, is owned by Virtuous Capital Foundation or its licensors. You are granted a limited, non-exclusive, non-transferable license to access and use Wayfinder for personal, non-commercial purposes in accordance with these Terms. You do not own or have any right to the Wayfinder platform or its underlying technology.</p>
-                <p>Wayfinder's curated databases containing internship, scholarship, program, admissions, and demographic analysis data are proprietary and confidential. These databases represent significant research, curation, and investment by Virtuous Capital Foundation.</p>
-
-                <h3>User Content License</h3>
-                <p>Any content you create, upload, or provide to Wayfinder (including conversations, questions, profiles, and recommendations) remains your property. However, by submitting content to Wayfinder, you grant Wayfinder a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and distribute your content as necessary to provide and improve the Service. This includes using your conversation data to train and improve our AI models.</p>
-
-                <h3>Restrictions on Use</h3>
-                <p>You may not:</p>
-                <ul>
-                    <li>Copy, modify, or create derivative works of Wayfinder</li>
-                    <li>Reverse engineer or attempt to discover the underlying code or algorithms</li>
-                    <li>Remove or alter any copyright, trademark, or proprietary notices</li>
-                    <li>Use Wayfinder for any commercial purpose without written permission</li>
-                    <li>Sublicense or sell access to Wayfinder to third parties</li>
-                    <li>Reproduce, distribute, scrape, or create derivative works from Wayfinder's curated databases (internships, scholarships, programs, admissions data, demographic analysis)</li>
-                    <li>Access or use database content for any purpose other than personal career guidance and planning</li>
-                </ul>
-                <p>Database content is licensed for personal use only. Any unauthorized reproduction, distribution, or commercial use of database content is strictly prohibited and may result in legal action.</p>
-
-                <h3>Third-Party Content</h3>
-                <p>Wayfinder may contain links to or references to third-party websites, content, and services. Wayfinder is not responsible for the accuracy, legality, or content of third-party materials. Your use of third-party sites is governed by their own terms and policies.</p>
-            </section>
-
-            <section id="ai-disclaimer">
-                <h2>7. AI Disclaimer</h2>
-
-                <div class="warning-box">
-                    <p><strong>IMPORTANT - PLEASE READ CAREFULLY:</strong> This section contains critical information about the use of AI-generated content in Wayfinder.</p>
-                </div>
-
-                <h3>AI-Generated Content</h3>
-                <p>Wayfinder's guidance is generated by Wayfinder's AI engine, a proprietary RAG-architected advisory system. While Wayfinder is a sophisticated advisory platform, it is not a human career counselor. AI-generated content should be understood as:</p>
-                <ul>
-                    <li>Informational and educational in nature</li>
-                    <li>Based on patterns in training data, not professional expertise</li>
-                    <li>Subject to errors, hallucinations, and inaccuracies</li>
-                    <li>Not personalized to your specific circumstances, needs, or goals</li>
-                    <li>Not a substitute for professional human judgment and expertise</li>
-                </ul>
-
-                <h3>Limitations of AI Career Guidance</h3>
-                <p>You acknowledge and understand that:</p>
-                <ul>
-                    <li><strong>Not a Substitute for Professional Counseling:</strong> Wayfinder is not a substitute for consulting with certified career counselors, academic advisors, financial advisors, or mental health professionals. Important decisions about your education, career, and finances should only be made after consulting qualified human professionals.</li>
-                    <li><strong>Accuracy Not Guaranteed:</strong> AI-generated information may contain errors, outdated information, biases, or inappropriate suggestions. Information about specific careers, educational programs, and industry requirements may be inaccurate or no longer current.</li>
-                    <li><strong>Individual Circumstances:</strong> The AI cannot fully understand your unique situation, constraints, abilities, values, or priorities. What works for one person may not work for you.</li>
-                    <li><strong>No Accountability:</strong> The AI has no accountability for the consequences of its advice. Only human professionals bear responsibility for the advice they provide.</li>
-                    <li><strong>No Licensing or Credentials:</strong> The AI is not a licensed or credentialed career counselor, academic advisor, or financial advisor. It cannot provide the same quality of guidance as qualified professionals.</li>
-                </ul>
-
-                <h3>Your Responsibility</h3>
-                <p>You are solely responsible for:</p>
-                <ul>
-                    <li>Verifying any important information provided by Wayfinder with authoritative sources</li>
-                    <li>Consulting qualified professionals before making decisions based on Wayfinder's guidance</li>
-                    <li>Evaluating whether Wayfinder's suggestions are appropriate for your situation</li>
-                    <li>Understanding the limitations of AI-generated advice</li>
-                </ul>
-
-                <h3>Bias and Fairness</h3>
-                <p>AI systems can reflect biases present in their training data. Wayfinder's guidance may reflect gender, racial, socioeconomic, or other biases. While we work to mitigate these biases, we cannot eliminate them completely. You should be aware of potential biases when evaluating Wayfinder's suggestions.</p>
-
-                <h3>College Admissions Disclaimer</h3>
-                <p><strong>No Guarantee of Admission:</strong> Wayfinder does not guarantee admission to any college or university. Essay review scores are AI-generated assessments and are not predictive of actual admissions outcomes. Admissions decisions are made by human admissions officers and depend on many factors beyond essay quality.</p>
-                <p><strong>Timeline and Strategy Information:</strong> Timeline and strategy recommendations provided by Wayfinder are informational in nature and should not replace guidance from school counselors or admissions professionals. You should discuss any significant educational or college planning decisions with qualified school counselors and admissions advisors.</p>
-                <p><strong>Database Information Accuracy:</strong> Scholarship, internship, and program information may change without notice. Deadlines, eligibility requirements, and awards amounts are subject to change by the originating institutions. You are responsible for verifying current information directly with the originating institution before applying or committing to any program.</p>
-                <p><strong>ED/EA Strategy Guidance:</strong> Early Decision (ED) and Early Action (EA) strategy guidance provided by Wayfinder is informational only. ED and EA are binding or non-binding agreements with specific institutional policies. Before making any binding decision like Early Decision, you must fully understand the institutional policies and implications. Consult with school counselors and admissions professionals before committing to ED or EA.</p>
-
-                <h3>No Warranties</h3>
-                <p>Wayfinder makes no warranties that the information provided is accurate, complete, current, or suitable for your purposes. The Service is provided "as-is" without warranties of any kind, express or implied.</p>
-
-                <h3>Essay Review Disclaimer</h3>
-                <div class="warning-box">
-                    <p><strong>IMPORTANT - ESSAY REVIEW LIMITATION:</strong> Essay reviews provided through Wayfinder are AI-generated suggestions and recommendations. They are NOT professional editing services, writing coaching, or admissions consulting.</p>
-                </div>
-                <ul>
-                    <li><strong>Not Professional Editing:</strong> Essay reviews are generated by Wayfinder's AI engine and do not constitute professional writing, editing, or admissions consulting services</li>
-                    <li><strong>No Guarantee of Admission:</strong> Wayfinder makes no guarantee, representation, or warranty that following essay review suggestions will result in college admission, improved essay scores, or any specific outcome</li>
-                    <li><strong>No Liability for Admissions Outcomes:</strong> Wayfinder is not liable for admissions decisions, rejections, or outcomes of any kind based on essays reviewed through our service</li>
-                    <li><strong>Third-Party AI Processing:</strong> Essays are processed by Wayfinder's AI engine. By submitting essays for review, you acknowledge and consent to this AI processing</li>
-                    <li><strong>Data Privacy for Essays:</strong> Essay content is handled according to our Privacy Policy and Wayfinder's data practices. Please review our policy before submitting sensitive content</li>
-                    <li><strong>Human Review Recommended:</strong> We strongly recommend that you have your essays reviewed by human professionals, including teachers, counselors, or professional editors, before submission</li>
-                </ul>
-            </section>
-
-            <section id="limitation-of-liability">
-                <h2>8. Limitation of Liability</h2>
-
-                <h3>Disclaimer of Warranties</h3>
-                <p>TO THE FULLEST EXTENT PERMITTED BY LAW, WAYFINDER IS PROVIDED "AS-IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WAYFINDER DISCLAIMS ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-
-                <h3>Limitation of Damages</h3>
-                <p>UNDER NO CIRCUMSTANCES SHALL VIRTUOUS CAPITAL FOUNDATION, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM OR RELATED TO YOUR USE OF WAYFINDER, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, DATA, OPPORTUNITY, OR GOODWILL, EVEN IF WAYFINDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
-
-                <h3>Cap on Liability</h3>
-                <p>TO THE EXTENT PERMITTED BY LAW, VIRTUOUS CAPITAL FOUNDATION'S TOTAL LIABILITY FOR ALL CLAIMS ARISING FROM OR RELATED TO THESE TERMS SHALL NOT EXCEED THE AMOUNT YOU PAID FOR A WAYFINDER SUBSCRIPTION IN THE 12 MONTHS PRECEDING THE CLAIM, OR $100, WHICHEVER IS LESS. FOR USERS OF THE FREE PLAN, LIABILITY IS LIMITED TO $50.</p>
-
-                <h3>Assumption of Risk</h3>
-                <p>You acknowledge that your use of Wayfinder is at your own risk. You assume all risk and responsibility for any decisions made based on information provided by Wayfinder. Wayfinder is not responsible for any consequences of your reliance on AI-generated guidance.</p>
-
-                <h3>No Guarantee of Accuracy</h3>
-                <p>Wayfinder does not guarantee the accuracy, completeness, timeliness, or appropriateness of any information provided. You use Wayfinder with the understanding that important decisions should only be made after consulting qualified professionals.</p>
-            </section>
-
-            <section id="indemnification">
-                <h2>9. Indemnification</h2>
-
-                <p>You agree to indemnify, defend, and hold harmless Virtuous Capital Foundation, its officers, directors, employees, agents, and successors from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
-                <ul>
-                    <li>Your use of the Service</li>
-                    <li>Your violation of these Terms of Service</li>
-                    <li>Your reliance on information, guidance, assessments, or recommendations provided by Wayfinder</li>
-                    <li>Any content you submit, upload, or provide through the Service</li>
-                    <li>Decisions made based on essay reviews, timeline recommendations, strategy guidance, or other AI-generated analysis provided by Wayfinder</li>
-                    <li>Your use of data, information, or resources accessed through Wayfinder</li>
-                </ul>
-
-                <p>This indemnification obligation applies regardless of whether Wayfinder has been advised of the possibility of such damages and survives termination of your account or these Terms.</p>
-            </section>
-
-            <section id="dispute-resolution">
-                <h2>10. Dispute Resolution</h2>
-
-                <h3>Informal Resolution</h3>
-                <p>If you have a dispute with Wayfinder, you agree that you will first attempt to resolve the matter through good faith communication. Please contact Wayfinder at support@wayfinderai.org describing your dispute. Both parties will have 30 days to attempt to resolve the dispute amicably before pursuing formal proceedings.</p>
-
-                <h3>Binding Arbitration</h3>
-                <p>If the dispute cannot be resolved within 30 days, you agree that any claim, dispute, or controversy (including the interpretation, formation, breach, or enforcement of these Terms) shall be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules. The arbitration shall be conducted in Washington State. The arbitrator shall apply applicable substantive law and may award any relief that would be available in court under applicable law. Each party shall bear its own attorney's fees and costs, and the parties shall split the arbitrator's and AAA's fees equally.</p>
-
-                <h3>Class Action Waiver</h3>
-                <p>You agree that you may only bring claims in your individual capacity and not as a plaintiff or class member in any purported class or representative action or proceeding. The arbitrator cannot consolidate claims of multiple parties or engage in class arbitration.</p>
-
-                <h3>Small Claims Court Exception</h3>
-                <p>Notwithstanding the foregoing, either party may bring an individual claim in small claims court for claims under $10,000 if the claim qualifies for small claims court jurisdiction in the relevant jurisdiction.</p>
-            </section>
-
-            <section id="data-breach">
-                <h2>11. Data Breach Notification</h2>
-
-                <h3>Breach Notification Commitment</h3>
-                <p>In the event of a confirmed data breach that compromises the confidentiality, integrity, or security of personal information, Wayfinder is committed to notifying affected users promptly. We will notify you as soon as reasonably practical, but in no case later than 72 hours after confirming the breach.</p>
-
-                <h3>Notification Methods</h3>
-                <p>Breach notifications will be provided through multiple channels to ensure you receive the information:</p>
-                <ul>
-                    <li><strong>Email Notification:</strong> We will send a detailed notification email to the email address associated with your Wayfinder account</li>
-                    <li><strong>In-App Notice:</strong> If you are logged into Wayfinder when we discover a breach, you will see an urgent in-app notification</li>
-                    <li><strong>Website Notice:</strong> A notice may be posted on the Wayfinder website and social media channels</li>
-                </ul>
-
-                <h3>Breach Notification Content</h3>
-                <p>Breach notifications will include the following information, to the extent known:</p>
-                <ul>
-                    <li>Description of what happened and the nature of the security incident</li>
-                    <li>Identification of what types of personal information were affected (e.g., names, email addresses, passwords, etc.)</li>
-                    <li>Steps you should take to protect yourself (e.g., change your password, monitor your accounts)</li>
-                    <li>Mitigation measures we have taken or are taking to prevent future breaches</li>
-                    <li>Contact information for questions and assistance</li>
-                </ul>
-
-                <h3>Your Responsibility</h3>
-                <p>Upon notification of a breach, you should:</p>
-                <ul>
-                    <li>Change your Wayfinder password immediately</li>
-                    <li>Monitor your accounts and financial information for suspicious activity</li>
-                    <li>Contact Wayfinder at privacy@wayfinderai.org if you have questions or concerns</li>
-                    <li>Review the detailed information provided in the breach notification</li>
-                </ul>
-
-                <h3>Law Enforcement Cooperation</h3>
-                <p>If we are required by law enforcement or legal process to delay notification of a breach, we will cooperate with such requests. Once the legal hold is lifted, we will promptly notify affected users.</p>
-            </section>
-
-            <section id="privacy">
-                <h2>12. Privacy</h2>
-
-                <p>Your use of Wayfinder is also governed by our Privacy Policy, which is incorporated by reference into these Terms. Please review our Privacy Policy at <a href="/privacy">/privacy</a> to understand our practices regarding the collection, use, and protection of your personal information.</p>
-
-                <p>By using Wayfinder, you acknowledge that your conversations and profile information will be processed by Wayfinder's AI engine as part of the advisory service, as described in our Privacy Policy.</p>
-            </section>
-
-            <section id="termination">
-                <h2>13. Termination</h2>
-
-                <h3>Termination by You</h3>
-                <p>You may terminate your account at any time by logging into your account and selecting "Delete Account." When you delete your account, our cascade-deletion process runs immediately:</p>
-                <ul>
-                    <li>You immediately lose access to Wayfinder</li>
-                    <li>Your account file is deleted from the persistent store</li>
-                    <li>All conversation sessions linked to your account are deleted</li>
-                    <li>All memory chunks and training-pair records tied to those sessions are scrubbed from the learning system</li>
-                    <li>An anonymized tombstone (containing only a hashed user identifier and counts &mdash; no personal information) is appended for compliance audit purposes</li>
-                    <li>Within 7 days, the daily-snapshot rotation completes and your data is gone from backups too</li>
-                    <li>No refunds will be issued for any remaining subscription period</li>
-                </ul>
-                <p>Deletion is immediate and irreversible. There is no soft-delete or 30-day grace period.</p>
-
-                <h3>Termination by Wayfinder</h3>
-                <p>Wayfinder may terminate or suspend your account immediately and without notice if:</p>
-                <ul>
-                    <li>You violate these Terms of Service</li>
-                    <li>You engage in illegal activity or activity that threatens the security of Wayfinder</li>
-                    <li>You abuse the service or other users</li>
-                    <li>You fail to pay subscription charges and do not resolve the issue after notice</li>
-                    <li>We determine in our sole discretion that continuing your account is inappropriate</li>
-                </ul>
-
-                <h3>Effect of Termination</h3>
-                <p>Upon termination by Wayfinder or you:</p>
-                <ul>
-                    <li>Your right to use Wayfinder immediately ceases</li>
-                    <li>We may delete your account and all associated data</li>
-                    <li>No refunds will be issued</li>
-                    <li>You remain liable for any unpaid charges</li>
-                </ul>
-
-                <h3>Data After Termination</h3>
-                <p>After your account is terminated, we will delete your personal data according to our Privacy Policy. However, we may retain anonymized or aggregated data for research and improvement purposes.</p>
-            </section>
-
-            <section id="survival-clause">
-                <h2>14. Survival Clause</h2>
-
-                <h3>Survival of Terms Upon Termination</h3>
-                <p>Certain sections of these Terms of Service shall survive termination of your account or these Terms and shall continue to apply indefinitely:</p>
-                <ul>
-                    <li><strong>Limitation of Liability (Section 8):</strong> Your liability protections and limitations on damages continue after termination</li>
-                    <li><strong>Indemnification (Section 9):</strong> Your obligation to indemnify Wayfinder survives termination</li>
-                    <li><strong>Intellectual Property (Section 6):</strong> Wayfinder's intellectual property rights and your license restrictions survive termination</li>
-                    <li><strong>Dispute Resolution (Section 10):</strong> Binding arbitration and class action waiver apply to disputes arising before or after termination</li>
-                    <li><strong>Data Breach Notification (Section 11):</strong> Our obligations to notify you of breaches continue</li>
-                    <li><strong>Governing Law (Section 15):</strong> Washington State law governs these Terms after termination</li>
-                </ul>
-
-                <h3>Effect of Survival</h3>
-                <p>The survival of these provisions means that termination of your account does not relieve you or Wayfinder of obligations or liabilities that were incurred or accrued before termination. You remain bound by these provisions even after your account is deleted or access is terminated.</p>
-            </section>
-
-            <section id="changes-to-terms">
-                <h2>15. Changes to Terms</h2>
-
-                <h3>Right to Modify</h3>
-                <p>Wayfinder reserves the right to modify these Terms at any time. Changes will be effective 30 days after they are posted to the Wayfinder website. For material changes, we will attempt to notify you via email to your registered email address.</p>
-
-                <h3>Your Continued Use</h3>
-                <p>Your continued use of Wayfinder after changes become effective constitutes your acceptance of the updated Terms. If you do not agree with any changes, your only recourse is to discontinue use of Wayfinder and delete your account.</p>
-
-                <h3>Updates and Notifications</h3>
-                <p>Wayfinder may update these Terms to reflect:</p>
-                <ul>
-                    <li>Changes in our services or business practices</li>
-                    <li>New features or functionality</li>
-                    <li>Legal or regulatory requirements</li>
-                    <li>Industry best practices and standards</li>
-                </ul>
-            </section>
-
-            <section id="accessibility">
-                <h2>16. Accessibility</h2>
-
-                <h3>Commitment to Accessibility</h3>
-                <p>Virtuous Capital Foundation is committed to ensuring that Wayfinder is accessible to all users, including individuals with disabilities. We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at the AA level and to comply with applicable accessibility laws, including Section 508 of the Rehabilitation Act and Title III of the Americans with Disabilities Act (ADA).</p>
-
-                <h3>Accessibility Features</h3>
-                <p>We endeavor to provide:</p>
-                <ul>
-                    <li>Keyboard-navigable interface elements</li>
-                    <li>Screen reader compatibility for core platform features</li>
-                    <li>Sufficient color contrast for text and interactive elements</li>
-                    <li>Alternative text for meaningful images and icons</li>
-                    <li>Consistent and predictable navigation patterns</li>
-                </ul>
-
-                <h3>Reporting Accessibility Issues</h3>
-                <p>If you encounter an accessibility barrier or have difficulty using any part of Wayfinder, please contact us at <strong>accessibility@wayfinderai.org</strong> or <strong>support@wayfinderai.org</strong>. We take accessibility feedback seriously and will work to address reported issues promptly.</p>
-            </section>
-
-            <section id="force-majeure">
-                <h2>17. Force Majeure</h2>
-
-                <p>Wayfinder and Virtuous Capital Foundation shall not be liable for any failure or delay in performing obligations under these Terms caused by events beyond our reasonable control, including but not limited to: natural disasters, pandemics, epidemics, acts of God, war, terrorism, civil unrest, government actions or regulations, labor disputes, power failures, internet or telecommunications outages, cyberattacks, failures of third-party service providers (including Stripe, Render, or Resend), or any other cause beyond our reasonable control.</p>
-
-                <p>In the event of a force majeure event, the affected party's obligations shall be suspended for the duration of the event, and time for performance shall be extended accordingly. If the force majeure event continues for more than 90 days, either party may terminate these Terms by providing written notice to the other party.</p>
-            </section>
-
-            <section id="general-provisions">
-                <h2>18. General Provisions</h2>
-
-                <h3>Severability</h3>
-                <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable while preserving the original intent of the parties.</p>
-
-                <h3>Entire Agreement</h3>
-                <p>These Terms of Service, together with our Privacy Policy and any additional terms or policies referenced herein, constitute the entire agreement between you and Virtuous Capital Foundation regarding your use of Wayfinder. These Terms supersede all prior and contemporaneous agreements, proposals, and communications, whether written or oral, relating to the subject matter herein.</p>
-
-                <h3>Assignment</h3>
-                <p>You may not assign, transfer, or delegate your rights or obligations under these Terms without the prior written consent of Virtuous Capital Foundation. Wayfinder may assign its rights and obligations under these Terms without your consent, including in connection with a merger, acquisition, corporate restructuring, or sale of all or substantially all of its assets. Any attempted assignment in violation of this section shall be void.</p>
-
-                <h3>Waiver</h3>
-                <p>The failure of Wayfinder to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision. A waiver of any provision shall only be effective if it is in writing and signed by an authorized representative of Virtuous Capital Foundation. No waiver shall be deemed a continuing waiver or a waiver of any other provision.</p>
-
-                <h3>Notices</h3>
-                <p>All notices from Wayfinder to you may be delivered via email to the address associated with your account, by in-app notification, or by posting on the Wayfinder website. Notices from you to Wayfinder must be sent to support@wayfinderai.org. Notices shall be deemed received when sent via email (at the time of sending), when posted on the website (at the time of posting), or when displayed as an in-app notification.</p>
-
-                <h3>Headings</h3>
-                <p>Section headings in these Terms are for convenience only and shall not affect the interpretation or construction of any provision.</p>
-
-                <h3>Third-Party Beneficiaries</h3>
-                <p>These Terms do not create any third-party beneficiary rights. No person or entity other than you and Virtuous Capital Foundation shall have the right to enforce any provision of these Terms.</p>
-            </section>
-
-            <section id="governing-law">
-                <h2>19. Governing Law</h2>
-
-                <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Washington, without regard to its conflict of law principles.</p>
-
-                <p>Except for disputes resolved through arbitration (as described in Section 10) or small claims court, you agree that any legal action or proceeding arising under these Terms shall be exclusively subject to the jurisdiction of the state and federal courts located in Washington State.</p>
-            </section>
-
-            <section id="contact">
-                <h2>20. Contact Information</h2>
-
-                <p>If you have questions, concerns, or disputes regarding these Terms of Service, please contact us:</p>
-
-                <div class="info-box">
-                    <h3 style="margin-top: 0;">Virtuous Capital Foundation</h3>
-                    <p><strong>Email:</strong> support@wayfinderai.org</p>
-                    <p><strong>Website:</strong> wayfinderai.org</p>
-                    <p><strong>Privacy Inquiries:</strong> privacy@wayfinderai.org</p>
-                    <p><strong>Response Time:</strong> We aim to respond to all inquiries within 5 business days.</p>
-                </div>
-
-                <h3>Dispute Resolution</h3>
-                <p>If you have a dispute with Wayfinder, please contact us first at support@wayfinderai.org. We will attempt to resolve disputes amicably and in good faith.</p>
-
-                <h3>About Virtuous Capital Foundation</h3>
-                <p>Virtuous Capital Foundation is a 501(c)(3) nonprofit organization dedicated to supporting career planning and educational advancement for pre-college and college students. Our mission is to provide equitable access to high-quality career guidance powered by artificial intelligence.</p>
-
-                <h3>Powered by Wayfinder Engine</h3>
-                <p>Wayfinder is powered by our proprietary Wayfinder Engine, built with a commitment to providing safe, accurate, and equitable career guidance. Our platform uses advanced AI to deliver personalized advisory experiences that help students and career changers navigate their educational and professional paths with confidence.</p>
-            </section>
-
-            <footer>
-                <div class="footer-content">
-                    <h3>Your Acceptance</h3>
-                    <p>By using Wayfinder, you acknowledge that you have read and understood these Terms of Service and agree to be bound by them. Thank you for using Wayfinder to explore your career path.</p>
-                </div>
-                <div class="last-updated">
-                    Last Updated: April 25, 2026
-                </div>
-            </footer>
-        </div>
-    </div>
+  <div class="nav"><a href="/">&larr; Back to Wayfinder</a> <a href="/privacy.html">Privacy Policy</a></div>
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <div class="meta">Effective May 3, 2026</div>
+
+    <p>By using Wayfinder, you agree to these terms.</p>
+
+    <h2>1. What Wayfinder is</h2>
+    <p>Wayfinder is a college admissions advisory service that uses AI to help students and families navigate the college search, application, and decision process. We are not a guidance counselor, financial advisor, or attorney. Information we provide is for educational purposes and does not guarantee admission or financial outcomes.</p>
+
+    <h2>2. Account eligibility</h2>
+    <p>You must be 13 or older to use Wayfinder. If you are between 13 and 17, you must have a parent or legal guardian's permission. Parents are responsible for monitoring their child's use of the service.</p>
+
+    <h2>3. Account responsibilities</h2>
+    <ul>
+      <li>You are responsible for keeping your password secure.</li>
+      <li>One account per person. No sharing.</li>
+      <li>Provide accurate information at signup.</li>
+      <li>Notify us immediately of any unauthorized account access.</li>
+    </ul>
+
+    <h2>4. Acceptable use</h2>
+    <p>You may not:</p>
+    <ul>
+      <li>Use Wayfinder to harass, defame, or impersonate others.</li>
+      <li>Submit content that is illegal, infringing, or abusive.</li>
+      <li>Attempt to reverse-engineer, scrape, or overload the service.</li>
+      <li>Use Wayfinder to violate any law or third-party rights.</li>
+      <li>Submit other people's essays or work as your own without permission.</li>
+    </ul>
+
+    <h2>5. Subscription tiers</h2>
+    <ul>
+      <li><strong>Free</strong>: Limited usage (5 chat msgs / month, 1 FRQ scoring lifetime trial). No payment required.</li>
+      <li><strong>Coach</strong>: Unlimited chat, 5 FRQ scorings + 10 Tutor sessions / month. Monthly subscription.</li>
+      <li><strong>Consultant</strong>: Unlimited everything. Monthly subscription. Priority support.</li>
+    </ul>
+    <p>Subscriptions auto-renew until canceled. Cancel anytime from <em>Settings &rarr; Billing</em>. No refunds for partial months unless required by law.</p>
+
+    <h2>6. AI-generated advice — important disclaimers</h2>
+    <p>Wayfinder uses AI to generate personalized advice. AI can make mistakes. Always:</p>
+    <ul>
+      <li>Verify deadlines and requirements directly with the college admissions office.</li>
+      <li>Consult a licensed college counselor or advisor for major decisions.</li>
+      <li>Consult a financial advisor for financial aid strategy.</li>
+      <li>Treat essay feedback as one of many opinions — get human review too.</li>
+    </ul>
+    <p>We are not liable for admissions outcomes, financial decisions, or essay grades.</p>
+
+    <h2>7. Intellectual property</h2>
+    <p>You retain ownership of essays, FRQ responses, and other content you submit. You grant us a limited license to process and store this content to provide the service. We may use anonymized, aggregated data to improve the AI advisor (with your consent at signup).</p>
+
+    <h2>8. Termination</h2>
+    <p>You can delete your account anytime. We may suspend or terminate accounts that violate these terms. We will give reasonable notice except in cases of abuse or legal risk.</p>
+
+    <h2>9. Disclaimer of warranties</h2>
+    <p>Wayfinder is provided "as is" without warranties of any kind. We do not guarantee uninterrupted service, accuracy of AI advice, or specific outcomes.</p>
+
+    <h2>10. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, our liability for any claim arising from your use of Wayfinder is limited to the amount you paid us in the 12 months prior to the claim.</p>
+
+    <h2>11. Governing law</h2>
+    <p>These terms are governed by the laws of the State of Washington, USA. Disputes will be resolved in courts located in King County, Washington.</p>
+
+    <h2>12. Changes</h2>
+    <p>We may update these terms. Material changes will be communicated via email and in-app notice 30 days before taking effect.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions? Email <a href="mailto:danielyungkim@hotmail.com">danielyungkim@hotmail.com</a>.</p>
+  </div>
 </body>
 </html>
