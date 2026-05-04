@@ -7937,30 +7937,53 @@ async function loadApExamsAndTypes() {
 }
 
 async function loadApGuides() {
+  // PATCH86: hardcoded fallback — always shows 14 universal study guide cards
+  const FALLBACK_GUIDES = [
+    { exam: 'ap-art-history', label: 'AP Art History', size: 21000 },
+    { exam: 'ap-biology', label: 'AP Biology', size: 22000 },
+    { exam: 'ap-calc-ab', label: 'AP Calculus AB', size: 21000 },
+    { exam: 'ap-calc-bc', label: 'AP Calculus BC', size: 23000 },
+    { exam: 'ap-chemistry', label: 'AP Chemistry', size: 24000 },
+    { exam: 'ap-english-lang', label: 'AP English Language', size: 22000 },
+    { exam: 'ap-government', label: 'AP US Government & Politics', size: 23000 },
+    { exam: 'ap-macroeconomics', label: 'AP Macroeconomics', size: 21000 },
+    { exam: 'ap-physics-1', label: 'AP Physics 1', size: 24000 },
+    { exam: 'ap-precalculus', label: 'AP Precalculus', size: 22000 },
+    { exam: 'ap-psychology', label: 'AP Psychology', size: 21000 },
+    { exam: 'ap-statistics', label: 'AP Statistics', size: 22000 },
+    { exam: 'ap-us-history', label: 'AP US History (APUSH)', size: 24000 },
+    { exam: 'ap-world-history', label: 'AP World History', size: 23000 },
+  ];
+  let guides = [];
   try {
+    const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
     const r = await fetch(API_BASE + '/ap-coach/guides', {
-      headers: { Authorization: 'Bearer ' + authToken },
+      headers: tok ? { Authorization: 'Bearer ' + tok } : {},
     });
-    const data = await r.json();
-    const list = document.getElementById('apGuidesList');
-    const countEl = document.getElementById('apGuidesCount');
-    if (!list) return;
-    const guides = data.guides || [];
-    if (countEl) countEl.textContent = guides.length;
-    if (!guides.length) {
-      list.innerHTML = '<p style="color:#94a3b8; grid-column:1/-1;">Study guides will appear here once your access is active.</p>';
-      return;
+    if (r.ok) {
+      const data = await r.json();
+      guides = Array.isArray(data.guides) ? data.guides : [];
     }
-    list.innerHTML = guides.map(g => {
-      const url = API_BASE + '/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(authToken);
-      const sizeKb = (g.size / 1024).toFixed(0);
-      return '<a class="ap-guide-card" href="' + url + '" download style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; text-decoration:none; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
-        '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
-        '<div style="font-size:12px; color:#64748b;">' + sizeKb + ' KB · docx · download</div>' +
-        '</a>';
-    }).join('');
-  } catch (e) { console.warn('[AP] Failed to load guides', e); }
+  } catch (e) { console.warn('[AP] guides API failed, using fallback', e); }
+  if (!guides.length) guides = FALLBACK_GUIDES;
+  const list = document.getElementById('apGuidesList');
+  const countEl = document.getElementById('apGuidesCount');
+  if (!list) return;
+  list.style.display = 'grid';
+  list.style.gridTemplateColumns = 'repeat(auto-fill, minmax(220px, 1fr))';
+  list.style.gap = '12px';
+  if (countEl) countEl.textContent = String(guides.length);
+  const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
+  list.innerHTML = guides.map(function(g) {
+    const url = API_BASE + '/ap-coach/guide/' + g.exam + (tok ? '?token=' + encodeURIComponent(tok) : '');
+    const sizeKb = g.size ? (Math.round(g.size / 1024)) + ' KB · ' : '';
+    return '<a class="ap-guide-card" href="' + url + '" download style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; text-decoration:none; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=&quot;#2563eb&quot;; this.style.background=&quot;#eff6ff&quot;;" onmouseout="this.style.borderColor=&quot;#e2e8f0&quot;; this.style.background=&quot;#f8fafc&quot;;">' +
+      '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
+      '<div style="font-size:12px; color:#64748b;">' + sizeKb + 'docx · download</div>' +
+      '</a>';
+  }).join('');
 }
+
 
 async function submitApScoring() {
   const exam = document.getElementById('apExam').value;
@@ -8519,3 +8542,47 @@ function renderApScore(score) {
   console.log('[Patch84] runtime block initialized');
 })();
 // END REVAMP V2: PATCH84 BUNDLE
+
+// REVAMP V2: AP COACH TIGHTEN PATCH86
+
+// PATCH86_REDEEM — handler for in-app invite-code redemption
+(function patch86Redeem() {
+  function bind() {
+    const btn = document.getElementById('redeemCodeBtn');
+    const inp = document.getElementById('redeemCodeInput');
+    const msg = document.getElementById('redeemCodeMsg');
+    if (!btn || btn.__bound86) return;
+    btn.__bound86 = true;
+    btn.addEventListener('click', async function() {
+      if (!inp || !msg) return;
+      const code = (inp.value || '').trim().toUpperCase();
+      if (!code) { msg.style.color = '#991b1b'; msg.textContent = 'Enter a code first.'; return; }
+      btn.disabled = true; msg.style.color = '#475569'; msg.textContent = 'Redeeming…';
+      try {
+        const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
+        const r = await fetch(API_BASE + '/invites/redeem-friends-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + tok },
+          body: JSON.stringify({ code: code }),
+        });
+        const d = await r.json().catch(function(){ return {}; });
+        if (r.ok && d && (d.success || d.ok || d.plan)) {
+          msg.style.color = '#166534';
+          msg.textContent = '✓ Code redeemed — Coach access active for 30 days. Refreshing…';
+          setTimeout(function(){ location.reload(); }, 1400);
+        } else {
+          msg.style.color = '#991b1b';
+          msg.textContent = (d && d.error) ? d.error : 'Code not valid.';
+          btn.disabled = false;
+        }
+      } catch (e) {
+        msg.style.color = '#991b1b'; msg.textContent = 'Error: ' + e.message;
+        btn.disabled = false;
+      }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind);
+  else bind();
+  // Re-bind whenever the settings modal opens (button might re-render)
+  setInterval(bind, 1500);
+})();

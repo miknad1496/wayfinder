@@ -322,6 +322,84 @@ input:focus, select:focus, textarea:focus {
   #apCoachView .ev-body, .ap-view-body { padding: 12px !important; }
 }
 </style>
+
+<style id="patch86-style">
+/* REVAMP V2: AP COACH TIGHTEN PATCH86 — tabs sticky + guides grid + polish */
+
+/* Tabs stick to top of AP view while scrolling */
+#apTabs, .ap-tabs {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  background: white !important;
+  padding: 10px 16px 0 16px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0 !important;
+  margin: 0 !important;
+}
+
+.ap-tab-btn {
+  padding: 12px 18px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #475569 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: color 0.15s, border-color 0.15s, background 0.15s !important;
+}
+.ap-tab-btn:hover { color: #1e3a8a !important; background: #f1f5f9 !important; }
+.ap-tab-btn.active {
+  color: #2563eb !important;
+  border-bottom-color: #2563eb !important;
+  font-weight: 600 !important;
+}
+
+.ap-tab-panel { display: none !important; }
+.ap-tab-panel.active { display: block !important; }
+
+/* Subject bar — clearly its own card, sits below sticky tabs */
+#apActiveSubjectBar {
+  margin: 18px 16px 16px 16px !important;
+  padding: 14px 18px !important;
+  background: linear-gradient(180deg, #f0f6ff 0%, #e0eaff 100%) !important;
+  border: 1px solid #c7d6ff !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Guides grid — defensive */
+#apGuidesList {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 12px !important;
+  padding: 0 16px !important;
+}
+
+/* Body padding inside ev-body */
+.ev-body { padding-bottom: 40px !important; }
+
+/* AP view dark header should NOT be sticky (tabs are sticky instead) */
+#apCoachView .ev-header {
+  position: relative !important;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  #apTabs, .ap-tabs { padding: 6px 8px 0 8px !important; }
+  .ap-tab-btn { padding: 10px 12px !important; font-size: 13px !important; }
+  #apActiveSubjectBar { margin: 12px 8px !important; padding: 12px 14px !important; }
+  #apGuidesList { padding: 0 8px !important; grid-template-columns: 1fr !important; }
+}
+</style>
 </head>
 <body>
   <!-- REVAMP V2: WHATS NEW BANNER PATCH29 -->
@@ -2920,7 +2998,38 @@ input:focus, select:focus, textarea:focus {
       <!-- REVAMP V2: AP COACH FULL MODULE PATCH81 apView end -->
 
   <!-- REVAMP V2: PATCH83 BUNDLE -->
-<!-- patch84 cookie banner + footer + settings panel — injected before </body> -->
+<!-- patch84 cookie banner + footer + settings panel — injected before 
+<script id="patch86-tab-hook">
+// REVAMP V2: AP COACH TIGHTEN PATCH86 — ensure loadApGuides fires when Study Guides tab clicked
+document.addEventListener('DOMContentLoaded', function() {
+  function attachHook() {
+    document.querySelectorAll('.ap-tab-btn[data-tab="study-guides"]').forEach(function(b) {
+      if (b.__patch86Hooked) return;
+      b.__patch86Hooked = true;
+      b.addEventListener('click', function() {
+        if (typeof loadApGuides === 'function') {
+          setTimeout(function(){ try { loadApGuides(); } catch(e){} }, 50);
+        }
+      });
+    });
+  }
+  attachHook();
+  // Re-attach when AP view becomes visible (in case buttons get re-rendered)
+  const view = document.getElementById('apCoachView');
+  if (view) {
+    new MutationObserver(attachHook).observe(view, { childList: true, subtree: true });
+  }
+  // Also fire once on load if Study Guides is the active tab
+  setTimeout(function() {
+    if (typeof loadApGuides === 'function') {
+      try { loadApGuides(); } catch(e) {}
+    }
+  }, 1500);
+});
+</script>
+
+<!-- REVAMP V2: AP COACH TIGHTEN PATCH86 -->
+</body> -->
 
 <!-- Cookie consent banner -->
 <div id="cookieBanner" style="display:none; position:fixed; bottom:16px; left:16px; right:16px; max-width:540px; margin:0 auto; background:#0f172a; color:white; padding:14px 18px; border-radius:12px; box-shadow:0 8px 28px rgba(15,23,42,0.35); z-index:8500; font-size:13px; line-height:1.5;">
@@ -2964,7 +3073,7 @@ input:focus, select:focus, textarea:focus {
       <button id="deleteAccountBtn" style="padding:9px 14px; background:white; border:1px solid #fecaca; color:#991b1b; border-radius:6px; cursor:pointer; font-weight:500;">Delete my account</button>
     </div>
 
-    <h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Profile</h3>
+    <h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Have an invite code?</h3><p style="color:#64748b; font-size:13px; margin:0 0 10px 0;">Friends-of-Wayfinder code unlocks 1 month free Coach.</p><div id="redeemInviteBlock" style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;"><input id="redeemCodeInput" type="text" placeholder="FRIENDS-COACH-1MONTH" style="flex:1 1 220px; min-width:200px; padding:9px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px; box-sizing:border-box; text-transform:uppercase;"><button id="redeemCodeBtn" style="padding:9px 14px; background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%); color:#422006; border:none; border-radius:6px; cursor:pointer; font-weight:600;">Redeem</button></div><div id="redeemCodeMsg" style="margin-top:8px; font-size:13px;"></div><h3 style="font-size:15px; color:#1e3a8a; margin:24px 0 10px 0;">Profile</h3>
     <p style="color:#64748b; font-size:13px; margin:0 0 10px 0;">Update what we know about you to keep advice well-targeted.</p>
     <button id="reopenProfileWizard" style="padding:9px 14px; background:white; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; font-weight:500;">Edit profile</button>
 
