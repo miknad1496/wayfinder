@@ -429,9 +429,16 @@ router.get('/guide/:exam', async (req, res) => {
       const local = await _bestLocalGuideFile(cfg);
       if (local) {
         const raw = await fs.readFile(local.path);
-        const out = await generatePreview(raw, local.ext);
-        buf = out.buf;
-        ext = out.extension;
+        try {
+          const out = await generatePreview(raw, local.ext);
+          buf = out.buf;
+          ext = out.extension;
+        } catch (prevErr) {
+          if (prevErr && prevErr.code === 'PREVIEW_LIB_MISSING') {
+            return res.status(503).json({ error: 'Free preview is being deployed. Please try again in a few minutes, or upgrade to Coach/Consultant for full access.' });
+          }
+          throw prevErr;
+        }
       } else {
         // Local missing — fetch from GitHub (PDF first, fall back to DOCX)
         let raw = null;
@@ -450,9 +457,16 @@ router.get('/guide/:exam', async (req, res) => {
         if (!raw) {
           return res.status(404).json({ error: 'Study guide currently unavailable. Email danielyungkim@hotmail.com.' });
         }
-        const out = await generatePreview(raw, triedExt);
-        buf = out.buf;
-        ext = out.extension;
+        try {
+          const out = await generatePreview(raw, triedExt);
+          buf = out.buf;
+          ext = out.extension;
+        } catch (prevErr) {
+          if (prevErr && prevErr.code === 'PREVIEW_LIB_MISSING') {
+            return res.status(503).json({ error: 'Free preview is being deployed. Please try again in a few minutes, or upgrade to Coach/Consultant for full access.' });
+          }
+          throw prevErr;
+        }
       }
       const previewName = (cfg.label || exam).replace(/[^A-Za-z0-9]+/g, '_') + '_FREE_PREVIEW.' + ext;
       res.setHeader('Content-Type', ext === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');

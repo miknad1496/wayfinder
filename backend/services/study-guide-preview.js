@@ -1,19 +1,33 @@
-// PATCH97: study-guide preview generator.
-// Free tier downloads HALF of one study guide (their choosing); paid users
-// get the full file. Two preview paths: PDF (via pdf-lib, with fade gradient
-// on the last visible page) and DOCX fallback (paragraph-level truncation
-// via adm-zip on word/document.xml).
+// PATCH98: graceful degradation when pdf-lib/adm-zip aren't installed.
+// Imports are dynamic so missing deps don't crash server boot - the route
+// handler treats "preview module unavailable" as a 503 with an actionable
+// error message.
 
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
-import AdmZip from 'adm-zip';
+let _pdfLib = null;
+let _admZip = null;
+let _initOnce = null;
 
-/**
- * Generate a preview PDF: keep first ~50% pages, draw a white-to-transparent
- * fade gradient over the bottom 40% of the LAST included page so the cutoff
- * looks intentional / teases the rest. Add a small footer overlay nudging
- * the user to upgrade.
- */
+async function _ensureDeps() {
+  if (_pdfLib && _admZip) return { pdfLib: _pdfLib, AdmZip: _admZip };
+  if (_initOnce) return _initOnce;
+  _initOnce = (async () => {
+    try { _pdfLib = await import('pdf-lib'); }
+    catch (e) { console.warn('[study-guide-preview] pdf-lib unavailable:', e.message); }
+    try { const m = await import('adm-zip'); _admZip = m.default || m; }
+    catch (e) { console.warn('[study-guide-preview] adm-zip unavailable:', e.message); }
+    return { pdfLib: _pdfLib, AdmZip: _admZip };
+  })();
+  return _initOnce;
+}
+
 export async function previewFromPdf(srcBuffer) {
+  const { pdfLib } = await _ensureDeps();
+  if (!pdfLib) {
+    const err = new Error('preview library (pdf-lib) not installed');
+    err.code = 'PREVIEW_LIB_MISSING';
+    throw err;
+  }
+  const { PDFDocument, rgb, StandardFonts } = pdfLib;
   const src = await PDFDocument.load(srcBuffer);
   const pageCount = src.getPageCount();
   if (pageCount === 0) throw new Error('PDF has no pages');
@@ -24,38 +38,30 @@ export async function previewFromPdf(srcBuffer) {
   const copied = await out.copyPages(src, indices);
   for (const p of copied) out.addPage(p);
 
-  // Apply fade gradient to the LAST kept page
   const lastPage = out.getPages()[out.getPageCount() - 1];
   const { width, height } = lastPage.getSize();
-  // Fade gradient: simulate using ~20 thin horizontal strips with increasing opacity
   const stripCount = 24;
   const stripHeight = (height * 0.45) / stripCount;
-  const baseY = height * 0.0; // start at bottom
   for (let i = 0; i < stripCount; i++) {
-    // i=0 is most opaque (bottom); approaches 0 opacity at top of fade region
     const opacity = 1 - (i / stripCount) * 1.0;
     lastPage.drawRectangle({
       x: 0,
-      y: baseY + i * stripHeight,
+      y: i * stripHeight,
       width,
-      height: stripHeight + 0.5, // tiny overlap to avoid hairlines
+      height: stripHeight + 0.5,
       color: rgb(1, 1, 1),
       opacity,
     });
   }
 
-  // Footer overlay
   try {
     const font = await out.embedFont(StandardFonts.HelveticaBold);
     const footerText = 'Free preview — upgrade for the full guide';
     const fontSize = 12;
     const textWidth = font.widthOfTextAtSize(footerText, fontSize);
     lastPage.drawRectangle({
-      x: 0,
-      y: 0,
-      width,
-      height: 38,
-      color: rgb(0.12, 0.227, 0.541), // navy
+      x: 0, y: 0, width, height: 38,
+      color: rgb(0.12, 0.227, 0.541),
       opacity: 1,
     });
     lastPage.drawText(footerText, {
@@ -65,43 +71,34 @@ export async function previewFromPdf(srcBuffer) {
       font,
       color: rgb(1, 1, 1),
     });
-  } catch (footerErr) {
-    // Non-fatal; fade still applied
-  }
+  } catch (footerErr) {}
 
   return Buffer.from(await out.save());
 }
 
-/**
- * Generate a preview DOCX: keep first ~50% of <w:p> paragraphs, append a
- * "TO CONTINUE: upgrade to Coach or Consultant" notice paragraph.
- * This is the fallback for as long as a particular exam has only a .docx
- * committed (not a .pdf).
- */
-export function previewFromDocx(srcBuffer) {
+export async function previewFromDocx(srcBuffer) {
+  const { AdmZip } = await _ensureDeps();
+  if (!AdmZip) {
+    const err = new Error('preview library (adm-zip) not installed');
+    err.code = 'PREVIEW_LIB_MISSING';
+    throw err;
+  }
   const zip = new AdmZip(srcBuffer);
   const docEntry = zip.getEntry('word/document.xml');
   if (!docEntry) throw new Error('docx has no word/document.xml');
   const xml = docEntry.getData().toString('utf8');
 
-  // Split paragraphs while preserving text-section markers.
-  // Naive but workable: pull out the body content between <w:body> ... </w:body>,
-  // then split paragraphs by the closing </w:p>.
   const bodyOpenIdx = xml.indexOf('<w:body>');
   const bodyCloseIdx = xml.lastIndexOf('</w:body>');
-  if (bodyOpenIdx < 0 || bodyCloseIdx < 0 || bodyCloseIdx < bodyOpenIdx) {
-    return srcBuffer; // can't safely truncate; return original
-  }
+  if (bodyOpenIdx < 0 || bodyCloseIdx < 0 || bodyCloseIdx < bodyOpenIdx) return srcBuffer;
   const before = xml.slice(0, bodyOpenIdx + '<w:body>'.length);
   const body = xml.slice(bodyOpenIdx + '<w:body>'.length, bodyCloseIdx);
   const after = xml.slice(bodyCloseIdx);
 
-  // Split into paragraph chunks
   const paragraphs = body.split(/(?<=<\/w:p>)/);
   const keep = Math.max(1, Math.ceil(paragraphs.length * 0.5));
   const truncated = paragraphs.slice(0, keep).join('');
 
-  // Tease paragraph (uses minimal Word XML; avoids needing styles defined)
   const teaseXml = [
     '<w:p>',
     '<w:pPr><w:spacing w:before="240" w:after="120"/><w:jc w:val="center"/></w:pPr>',
@@ -122,10 +119,6 @@ export function previewFromDocx(srcBuffer) {
   return zip.toBuffer();
 }
 
-/**
- * Pick the right preview generator based on the file extension.
- * Returns { buf, contentType, extension } or throws.
- */
 export async function generatePreview(srcBuffer, extension) {
   const ext = (extension || '').toLowerCase().replace(/^\./, '');
   if (ext === 'pdf') {
@@ -133,7 +126,7 @@ export async function generatePreview(srcBuffer, extension) {
     return { buf, contentType: 'application/pdf', extension: 'pdf' };
   }
   if (ext === 'docx') {
-    const buf = previewFromDocx(srcBuffer);
+    const buf = await previewFromDocx(srcBuffer);
     return {
       buf,
       contentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
