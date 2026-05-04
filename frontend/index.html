@@ -646,14 +646,6 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
   function applyKoreanLabels() {
     if (typeof window === 'undefined' || window._wfLang !== 'ko') return;
     document.body.classList.add('wf-ko-mode');
-    // PATCH128 DIAG: surface localizer activity on body attrs + console so we
-    // can tell whether the function is even firing (vs. just selectors not
-    // matching). Read attrs in DevTools Inspector — they update each tick.
-    var _diagTick = (parseInt(document.body.getAttribute('data-ko-tick') || '0', 10) || 0) + 1;
-    document.body.setAttribute('data-ko-tick', String(_diagTick));
-    var _diagTranslated = 0;
-    var _diagSkipped = 0;
-    var _diagTotal = 0;
     // Walk the most relevant elements only — avoid mutating chat content
     const targets = document.querySelectorAll(
       // Auth modals
@@ -711,34 +703,15 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       '#scholarshipsHeroStrip div'
     );
     // PATCH126 HOTFIX: previous line closed querySelectorAll() — patch 125 was missing this )
-    _diagTotal = targets.length;
     targets.forEach(function(el) {
       // Replace direct text content if it matches a Korean key
       if (el.children.length === 0) {
         const t = (el.textContent || '').trim();
-        if (KO[t]) {
-          el.textContent = KO[t];
-          _diagTranslated++;
-        } else if (t) {
-          _diagSkipped++;
-        }
+        if (KO[t]) el.textContent = KO[t];
       }
       // Placeholder
       if (el.placeholder && KO[el.placeholder]) el.placeholder = KO[el.placeholder];
     });
-    // PATCH128 DIAG: dump per-tick stats to body attrs + a single console.warn
-    document.body.setAttribute('data-ko-targets', String(_diagTotal));
-    document.body.setAttribute('data-ko-translated', String(_diagTranslated));
-    document.body.setAttribute('data-ko-skipped', String(_diagSkipped));
-    document.body.setAttribute('data-ko-lang', String(window._wfLang || 'undef'));
-    if (_diagTick === 1 || _diagTick % 5 === 0) {
-      try {
-        console.warn('[ko-localizer]', {
-          tick: _diagTick, lang: window._wfLang,
-          targets: _diagTotal, translated: _diagTranslated, skippedEmpty: _diagSkipped
-        });
-      } catch (_) {}
-    }
   }
   function unapplyKoreanLabels() {
     document.body.classList.remove('wf-ko-mode');
@@ -758,24 +731,33 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
     // Initial apply if already ko
     if (window._wfLang === 'ko') applyKoreanLabels();
   }
-  // Re-apply when modals open (their content is dynamic)
-  if (typeof MutationObserver !== 'undefined') {
-    new MutationObserver(function() {
+  // PATCH129: ROOT-CAUSE FIX. This IIFE lives in <head>, so document.body is
+  // null when it first runs. The previous direct call to .observe(document.body, ...)
+  // threw "parameter 1 is not of type Node" — and that TypeError aborted the IIFE
+  // mid-setup, so EVERY subsequent setInterval (including patch 127's translation
+  // tick) was never registered. That's why the yellow KO banners worked (different
+  // script lower in body) but the modal localizer never ran ANY tick. Fix: defer
+  // all body-touching side effects to DOMContentLoaded.
+  function _bootKoLocalizer() {
+    if (typeof MutationObserver !== 'undefined' && document.body) {
+      new MutationObserver(function() {
+        if (window._wfLang === 'ko') applyKoreanLabels();
+      }).observe(document.body, { childList: true, subtree: true });
+    }
+    watchLang();
+    // Re-check every 1500ms in case pill is wired late
+    setInterval(watchLang, 1500);
+    // PATCH127 (re-stated): periodic tick covering modals which open via display
+    // toggle (no DOM mutation, so MutationObserver alone never re-fires).
+    setInterval(function() {
       if (window._wfLang === 'ko') applyKoreanLabels();
-    }).observe(document.body, { childList: true, subtree: true });
+    }, 1500);
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watchLang);
-  else watchLang();
-  // Re-check every 1500ms in case pill is wired late
-  setInterval(watchLang, 1500);
-  // PATCH127: also re-apply translations on a periodic tick. The MutationObserver
-  // only fires on childList changes, NOT on display:none -> block style toggles,
-  // which is how every modal opens. Without this tick, opening K-12 / Volunteer /
-  // Internships / Scholarships modals after initial page load left their content
-  // in English even when window._wfLang === 'ko'.
-  setInterval(function() {
-    if (window._wfLang === 'ko') applyKoreanLabels();
-  }, 1500);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', _bootKoLocalizer);
+  } else {
+    _bootKoLocalizer();
+  }
 })();
 </script>
 </head>
