@@ -16,7 +16,7 @@ import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
-import { verifyToken, useApCredit, refundApCredit, canAccess } from '../services/auth.js';
+import { verifyToken, useApCredit, refundApCredit, canAccess, checkApCoachUsage, recordApCoachUsage } from '../services/auth.js'; // REVAMP V2: AP COACH PRICING REWORK PATCH80 routes
 import { checkInjection } from '../services/input_filter.js';
 import { scoreFrq, getApExams, getFrqTypes } from '../services/ap-coach.js';
 
@@ -48,6 +48,19 @@ router.get('/frq-types', (req, res) => {
 });
 
 // ─── GET /api/ap-coach/credits ────────────────────────────────
+// REVAMP V2: AP COACH PRICING REWORK PATCH80 — new tier-aware /usage endpoint (mounted alongside legacy /credits)
+router.get('/usage', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const usage = await checkApCoachUsage(token);
+    if (usage.tier === 'unauth') return res.status(401).json({ error: 'Not authenticated' });
+    res.json(usage);
+  } catch (err) {
+    console.error('AP Coach usage error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 router.get('/credits', async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
@@ -111,15 +124,19 @@ router.post('/score', async (req, res) => {
     }
 
     // Deduct credit
-    const creditResult = await useApCredit(token);
-    if (!creditResult.allowed) {
+    // REVAMP V2: AP COACH PRICING REWORK PATCH80 — replaced credit-pack deduction with tier-aware usage check
+    const usage = await checkApCoachUsage(token);
+    if (!usage.allowed) {
       return res.status(402).json({
-        error: 'No AP Coach credits remaining. Purchase more to continue.',
+        error: 'You\'ve reached your AP Coach usage limit. Upgrade to Coach (5/month) or Consultant (unlimited) to keep practicing.',
+        tier: usage.tier,
+        trialUsed: usage.trialUsed,
         creditsRemaining: 0,
         _requiresPurchase: true,
       });
     }
-    creditDeducted = true;
+    creditDeducted = true; // legacy var; usage recorded post-success below
+    // REVAMP V2: AP COACH PRICING REWORK PATCH80 — record usage AFTER successful score (defer to post-success block)
 
     // Score the FRQ
     const result = await scoreFrq(exam, frqType, prompt || null, response);
@@ -162,6 +179,9 @@ router.post('/score', async (req, res) => {
     const tmpPath = path + '.tmp';
     await fs.writeFile(tmpPath, JSON.stringify(record, null, 2));
     await fs.rename(tmpPath, path);
+
+    // REVAMP V2: AP COACH PRICING REWORK PATCH80 — record usage on success (free tier marks lifetime; Coach increments month)
+    await recordApCoachUsage(token);
 
     res.json({
       id: scoreId,

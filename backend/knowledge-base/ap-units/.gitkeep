@@ -1,0 +1,4 @@
+# AP per-unit brain files live here.
+# Format: <exam-slug>/<unit-slug>.md (e.g. ap-chemistry/unit-2-bonding-vsepr.md)
+# Auto-discovered by backend/services/knowledge.js
+# Surfaces in chat when student mentions topics in this unit.

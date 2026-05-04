@@ -2796,3 +2796,55 @@ export async function getKnowledgeDB() {
   const db = await KnowledgeDB.getInstance();
   return db.isAvailable ? db : null;
 }
+
+
+// ─── REVAMP V2: AP COACH PRICING REWORK PATCH80 knowledge.js — Per-unit AP brain auto-discovery ───
+// Scans backend/knowledge-base/ap-units/ recursively and merges into the
+// education_decisions / ap_prep RAG bucket so when a student asks about
+// a specific unit ("VSEPR", "derivatives", "Hull House"), retrieval surfaces
+// the relevant per-unit brain file.
+//
+// File pattern: backend/knowledge-base/ap-units/<exam-slug>-<unit-slug>.md
+//   OR        : backend/knowledge-base/ap-units/<exam-slug>/<unit-slug>.md
+//
+// Each chunk gets metadata: { _apExam: '<exam-slug>', _apUnit: '<unit-slug>' }
+//
+// To grow: drop more .md files in ap-units/. They auto-load on next server boot
+// (or 10-min cache TTL refresh).
+export async function loadApUnitsBrains() {
+  try {
+    const apUnitsDir = path.join(__dirname, '..', 'knowledge-base', 'ap-units');
+    if (!fs.existsSync(apUnitsDir)) return [];
+    const chunks = [];
+    const entries = fs.readdirSync(apUnitsDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        // ap-units/<exam-slug>/<unit-slug>.md
+        const examSlug = entry.name;
+        const subdir = path.join(apUnitsDir, entry.name);
+        for (const sub of fs.readdirSync(subdir)) {
+          if (!sub.endsWith('.md')) continue;
+          const unitSlug = sub.replace(/\.md$/, '');
+          const content = fs.readFileSync(path.join(subdir, sub), 'utf8');
+          chunks.push({ source: examSlug + '/' + sub, content, _apExam: examSlug, _apUnit: unitSlug, weight: 2.0 });
+        }
+      } else if (entry.isFile() && entry.name.endsWith('.md') && !entry.name.startsWith('_')) {
+        // ap-units/<exam-slug>-<unit-slug>.md (flat layout)
+        const fname = entry.name.replace(/\.md$/, '');
+        const dashIdx = fname.indexOf('-unit-');
+        const examSlug = dashIdx > 0 ? fname.slice(0, dashIdx) : fname.split('-')[0];
+        const unitSlug = dashIdx > 0 ? fname.slice(dashIdx + 1) : fname;
+        const content = fs.readFileSync(path.join(apUnitsDir, entry.name), 'utf8');
+        chunks.push({ source: entry.name, content, _apExam: examSlug, _apUnit: unitSlug, weight: 2.0 });
+      }
+    }
+    if (chunks.length > 0) {
+      console.log('AP per-unit brains: ' + chunks.length + ' chunks loaded from ap-units/');
+    }
+    return chunks;
+  } catch (err) {
+    console.warn('[AP Units] Failed to load:', err.message);
+    return [];
+  }
+}
+

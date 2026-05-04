@@ -1819,3 +1819,70 @@ export async function refundApCredit(token) {
   }
 }
 
+
+// ─── REVAMP V2: AP COACH PRICING REWORK PATCH80 auth.js — Tier-aware AP Coach usage check ───
+// Replaces the credit-pack model. Returns { allowed, tier, remainingThisMonth, monthlyCap, trialUsed, unlimited }.
+// Free: 1 lifetime trial (apCoachLifetimeUsed boolean)
+// Coach: 5/month (apCoachMonthlyUsage = { month: 'YYYY-MM', count: N })
+// Consultant / Admin / VIP: unlimited
+export async function checkApCoachUsage(token) {
+  if (!token) return { allowed: false, tier: 'unauth', remainingThisMonth: 0, monthlyCap: 0, trialUsed: false, unlimited: false };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: false, tier: 'unauth', remainingThisMonth: 0, monthlyCap: 0, trialUsed: false, unlimited: false };
+    const { user } = resolved;
+    const plan = String(user.plan || 'free').toLowerCase();
+    const adminOrVIP = isAdmin(user.email) || isVIP(user.email);
+    if (adminOrVIP || plan === 'consultant') {
+      return { allowed: true, tier: adminOrVIP ? 'admin' : 'consultant', remainingThisMonth: 999, monthlyCap: 999, trialUsed: false, unlimited: true };
+    }
+    if (plan === 'coach') {
+      const now = new Date();
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const usage = user.apCoachMonthlyUsage || { month: currentMonth, count: 0 };
+      const count = (usage.month === currentMonth) ? (usage.count || 0) : 0;
+      const cap = 5;
+      return { allowed: count < cap, tier: 'coach', remainingThisMonth: Math.max(0, cap - count), monthlyCap: cap, trialUsed: false, unlimited: false };
+    }
+    // Free tier
+    const trialUsed = !!user.apCoachLifetimeUsed;
+    return { allowed: !trialUsed, tier: 'free', remainingThisMonth: trialUsed ? 0 : 1, monthlyCap: 1, trialUsed, unlimited: false };
+  } catch (err) {
+    return { allowed: false, tier: 'error', remainingThisMonth: 0, monthlyCap: 0, trialUsed: false, unlimited: false };
+  }
+}
+
+// Record an AP Coach usage event. Increments monthly count for Coach tier OR sets
+// lifetime trial flag for Free. No-op for unlimited tiers.
+export async function recordApCoachUsage(token) {
+  if (!token) return { success: false };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { success: false };
+    const { user, filePath } = resolved;
+    const plan = String(user.plan || 'free').toLowerCase();
+    if (isAdmin(user.email) || isVIP(user.email) || plan === 'consultant') {
+      return { success: true, recorded: false, tier: plan }; // unlimited tiers don't get tracked
+    }
+    return await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await fs.readFile(filePath, 'utf8'));
+      if (plan === 'coach') {
+        const now = new Date();
+        const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+        const usage = fresh.apCoachMonthlyUsage || { month: currentMonth, count: 0 };
+        if (usage.month !== currentMonth) {
+          fresh.apCoachMonthlyUsage = { month: currentMonth, count: 1 };
+        } else {
+          fresh.apCoachMonthlyUsage = { month: currentMonth, count: (usage.count || 0) + 1 };
+        }
+      } else {
+        fresh.apCoachLifetimeUsed = true;
+      }
+      await atomicWriteJSON(filePath, fresh);
+      return { success: true, recorded: true, tier: plan };
+    });
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+

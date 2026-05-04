@@ -7796,8 +7796,11 @@ window._wfShowUpgradeModal = function _wfShowUpgradeModal(opts) {
   }
 })();
 
-// ─── REVAMP V2: AP COACH FRONTEND PATCH70 — AP Coach view setup + handlers ───
+// REVAMP V2: AP COACH PRICING REWORK PATCH80 apHandlers
+
+// ─── REVAMP V2: AP COACH PRICING REWORK + UX PATCH80 — replaces patch70/76/77/79 AP Coach JS ───
 let apCoachInitialized = false;
+let apUsageCache = null; // cached tier/usage info from /api/ap-coach/usage
 
 function openApCoach() {
   if (typeof trackModuleActivity === 'function') trackModuleActivity('ap-coach', 'Opened AP Coach', null);
@@ -7818,19 +7821,13 @@ function openApCoach() {
     apCoachInitialized = true;
   }
 
-  const hasAccess = (typeof canAccess === 'function') ? canAccess('ap_coach') : false;
-  if (!hasAccess) {
-    document.getElementById('apMainPanel').style.display = 'none';
-    document.getElementById('apCreditsBar').style.display = 'none';
-    document.getElementById('apUpgradeGate').style.display = 'block';
-  } else {
-    document.getElementById('apUpgradeGate').style.display = 'none';
-    document.getElementById('apMainPanel').style.display = 'block';
-    document.getElementById('apCreditsBar').style.display = 'flex';
-    loadApCredits();
-    loadApExamsAndTypes();
-    loadApGuides();
-  }
+  // Always show the welcome panel + main panel; tier check determines whether form is enabled
+  document.getElementById('apWelcomePanel').style.display = 'block';
+  document.getElementById('apMainPanel').style.display = 'block';
+  document.getElementById('apUsageStatus').style.display = 'flex';
+  loadApUsage();
+  loadApExamsAndTypes();
+  loadApGuides();
 }
 
 function closeApCoach() {
@@ -7845,9 +7842,14 @@ function setupApCoachView() {
   if (back) back.addEventListener('click', closeApCoach);
   const submit = document.getElementById('apSubmitBtn');
   if (submit) submit.addEventListener('click', submitApScoring);
-  const buy = document.getElementById('apBuyMoreBtn');
-  if (buy) buy.addEventListener('click', () => {
-    alert('AP Coach credit packs are coming soon via Stripe. For now, contact danielyungkim@hotmail.com to add credits.');
+  const upgrade = document.getElementById('apUpgradeBtn');
+  if (upgrade) upgrade.addEventListener('click', () => {
+    closeApCoach();
+    if (typeof window.scrollTo === 'function') window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Try to navigate to pricing section if it exists
+    const pricingEl = document.querySelector('#pricing, .pricing-section');
+    if (pricingEl) pricingEl.scrollIntoView({ behavior: 'smooth' });
+    else alert('Upgrade to Coach (5 scorings/month) or Consultant (unlimited) to keep using AP Coach. Contact danielyungkim@hotmail.com or check the upgrade page.');
   });
   const respInput = document.getElementById('apResponseInput');
   const charSpan = document.getElementById('apCharCount');
@@ -7858,15 +7860,65 @@ function setupApCoachView() {
   }
 }
 
-async function loadApCredits() {
+async function loadApUsage() {
   try {
-    const r = await fetch(API_BASE + '/ap-coach/credits', {
+    const r = await fetch(API_BASE + '/ap-coach/usage', {
       headers: { Authorization: 'Bearer ' + authToken },
     });
     const data = await r.json();
-    const el = document.getElementById('apCreditsCount');
-    if (el) el.textContent = (data.remaining || 0) + ' scoring' + (data.remaining === 1 ? '' : 's');
-  } catch (e) { console.warn('[AP] Failed to load credits', e); }
+    apUsageCache = data;
+    renderApUsageStatus(data);
+  } catch (e) { console.warn('[AP] Failed to load usage', e); }
+}
+
+function renderApUsageStatus(data) {
+  const textEl = document.getElementById('apUsageText');
+  const upgradeBtn = document.getElementById('apUpgradeBtn');
+  const submitBtn = document.getElementById('apSubmitBtn');
+  const submitText = document.getElementById('apSubmitBtnText');
+  const upgradeGate = document.getElementById('apUpgradeGate');
+  const mainPanel = document.getElementById('apMainPanel');
+  const welcomePanel = document.getElementById('apWelcomePanel');
+  if (!textEl || !data) return;
+
+  // Tier-aware messaging
+  if (data.tier === 'consultant' || data.tier === 'admin' || data.tier === 'vip' || data.unlimited) {
+    textEl.textContent = 'Unlimited scorings · Consultant tier';
+    textEl.style.color = '#16a34a';
+    if (upgradeBtn) upgradeBtn.style.display = 'none';
+    if (submitText) submitText.textContent = 'Submit for Scoring';
+    if (upgradeGate) upgradeGate.style.display = 'none';
+    if (mainPanel) mainPanel.style.display = 'block';
+  } else if (data.tier === 'coach') {
+    textEl.textContent = (data.remainingThisMonth || 0) + ' of ' + (data.monthlyCap || 5) + ' scorings remaining this month';
+    textEl.style.color = data.remainingThisMonth > 0 ? '#16a34a' : '#dc2626';
+    if (upgradeBtn) upgradeBtn.style.display = data.remainingThisMonth > 0 ? 'none' : 'inline-block';
+    if (upgradeBtn) upgradeBtn.textContent = 'Upgrade to Consultant';
+    if (submitText) submitText.textContent = data.remainingThisMonth > 0 ? 'Submit for Scoring' : 'Monthly cap reached';
+    if (submitBtn) submitBtn.disabled = data.remainingThisMonth <= 0;
+    if (upgradeGate) upgradeGate.style.display = data.remainingThisMonth > 0 ? 'none' : 'block';
+    if (mainPanel) mainPanel.style.display = 'block';
+  } else {
+    // Free tier — 1 lifetime trial
+    if (data.trialUsed) {
+      textEl.textContent = 'Free trial used';
+      textEl.style.color = '#dc2626';
+      if (upgradeBtn) {
+        upgradeBtn.style.display = 'inline-block';
+        upgradeBtn.textContent = 'Upgrade';
+      }
+      if (upgradeGate) upgradeGate.style.display = 'block';
+      if (mainPanel) mainPanel.style.display = 'none';
+      if (welcomePanel) welcomePanel.style.display = 'none';
+    } else {
+      textEl.textContent = '1 free trial available — see what AP Coach does';
+      textEl.style.color = '#16a34a';
+      if (upgradeBtn) upgradeBtn.style.display = 'none';
+      if (submitText) submitText.textContent = 'Submit for Scoring (free trial)';
+      if (upgradeGate) upgradeGate.style.display = 'none';
+      if (mainPanel) mainPanel.style.display = 'block';
+    }
+  }
 }
 
 async function loadApExamsAndTypes() {
@@ -7891,15 +7943,14 @@ async function loadApGuides() {
     });
     const data = await r.json();
     const list = document.getElementById('apGuidesList');
+    const countEl = document.getElementById('apGuidesCount');
     if (!list) return;
     const guides = data.guides || [];
+    if (countEl) countEl.textContent = guides.length;
     if (!guides.length) {
-      list.innerHTML = '<p style="color:#94a3b8; grid-column:1/-1;">No study guides available yet.</p>';
+      list.innerHTML = '<p style="color:#94a3b8; grid-column:1/-1;">Study guides will appear here once your access is active.</p>';
       return;
     }
-    // PATCH79: update heading subtitle with dynamic count
-    const countEl = document.getElementById('apGuidesCount');
-    if (countEl) countEl.textContent = guides.length;
     list.innerHTML = guides.map(g => {
       const url = API_BASE + '/ap-coach/guide/' + g.exam + '?token=' + encodeURIComponent(authToken);
       const sizeKb = (g.size / 1024).toFixed(0);
@@ -7921,9 +7972,12 @@ async function submitApScoring() {
     return;
   }
   const btn = document.getElementById('apSubmitBtn');
+  const btnText = document.getElementById('apSubmitBtnText');
   const result = document.getElementById('apScoreResult');
+  const empty = document.getElementById('apResultEmptyState');
   btn.disabled = true;
-  btn.textContent = 'Scoring (this can take 30-60s)...';
+  if (btnText) btnText.textContent = 'Scoring (this can take 30-60s)...';
+  if (empty) empty.style.display = 'none';
   if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Wayfinder is scoring your response — analyzing against the AP rubric...</div>';
   try {
     const r = await fetch(API_BASE + '/ap-coach/score', {
@@ -7934,16 +7988,22 @@ async function submitApScoring() {
     const data = await r.json();
     if (!r.ok) {
       const msg = (data && data.error) ? data.error : 'Scoring failed';
-      result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + msg + '</div>';
+      // Special handling for upgrade-required
+      if (data && data._requiresUpgrade) {
+        result.innerHTML = '<div style="padding:24px; background:#fffbeb; border:1px solid #fcd34d; color:#78350f; border-radius:12px;"><strong>Free trial used.</strong><br><br>Hope that scoring was useful. To keep practicing, upgrade to Coach (5/month) or Consultant (unlimited).<br><br><a href="#pricing" style="color:#2563eb; font-weight:600;">View plans</a></div>';
+      } else {
+        result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + msg + '</div>';
+      }
+      loadApUsage();
       return;
     }
     renderApScore(data.score);
-    loadApCredits();
+    loadApUsage();
   } catch (e) {
-    result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">Network error: ' + e.message + '</div>';
+    if (result) result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">Network error: ' + e.message + '</div>';
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Submit for Scoring (1 credit)';
+    if (btnText) btnText.textContent = (apUsageCache && apUsageCache.tier === 'free' && !apUsageCache.trialUsed) ? 'Submit for Scoring (free trial)' : 'Submit for Scoring';
   }
 }
 
@@ -8003,9 +8063,7 @@ function renderApScore(score) {
   document.getElementById('apScoreResult').innerHTML = html;
 }
 
-// REVAMP V2: BUILD HOTFIX + HAIKU REBRAND PATCH75 — duplicate escapeHtml() removed; using the one defined earlier in app.js (line ~1645)
-
-// Wire sidebar button (deferred; runs once DOMContentLoaded fires or immediately if already past it)
+// Wire sidebar
 (function wireApCoachSidebar() {
   const wire = function() {
     const btn = document.getElementById('sidebarApCoach');
@@ -8020,7 +8078,8 @@ function renderApScore(score) {
     wire();
   }
 })();
-// ─── END PATCH70 ───
+// ─── END PATCH80 AP HANDLERS ───
+
 
 
 // REVAMP V2: AP COACH JS HOTFIX PATCH76 — fixed getToken (4x) + double-/api/ (6x)
