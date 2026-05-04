@@ -557,10 +557,43 @@ async function sendMessage() {
         }
       }
     } else {
-      // Fallback: non-streaming JSON response
+      // PATCH107: SLM/Haiku JSON path. Animate word-by-word for ChatGPT/Claude feel.
       data = await response.json();
       if (typingEl) typingEl.remove();
-      appendMessage('assistant', data.response, data.sources, data.mode);
+      const fullText = String(data.response || '');
+      assistantBubble = appendMessage('assistant', '', data.sources, data.mode);
+      const bodyEl = assistantBubble.querySelector('.message-body');
+      if (!bodyEl || fullText.length === 0) {
+        // Defensive fallback: just render the whole thing
+        if (bodyEl && fullText) bodyEl.innerHTML = renderMarkdown(fullText);
+      } else {
+        // Tokenize: keep markdown structure intact by splitting on whitespace boundaries
+        // (preserves words + punctuation but lets us reveal incrementally).
+        const tokens = fullText.match(/\S+\s*|\s+/g) || [fullText];
+        let revealed = 0;
+        let lastFrame = 0;
+        // ~28ms per token average ≈ 35-40 wpm read speed. Tunable via FAKE_STREAM_MS_PER_TOKEN.
+        const MS_PER_TOKEN = (window.FAKE_STREAM_MS_PER_TOKEN != null) ? window.FAKE_STREAM_MS_PER_TOKEN : 28;
+        // For very long answers, batch 2 tokens per frame to avoid taking 30+ seconds for a 600-word answer.
+        const BATCH = tokens.length > 250 ? 3 : tokens.length > 120 ? 2 : 1;
+        function step(now) {
+          if (revealed >= tokens.length) {
+            // Final pass: re-render to canonicalize (markdown re-parsed cleanly)
+            bodyEl.innerHTML = renderMarkdown(fullText);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+            return;
+          }
+          if (!lastFrame || (now - lastFrame) >= MS_PER_TOKEN) {
+            revealed = Math.min(tokens.length, revealed + BATCH);
+            const partial = tokens.slice(0, revealed).join('');
+            bodyEl.innerHTML = renderMarkdown(partial);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+            lastFrame = now;
+          }
+          requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
     }
 
     sessionId = data.sessionId || sessionId;

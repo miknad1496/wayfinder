@@ -3,20 +3,21 @@
     "lastUpdated": "2026-04-26",
     "count": 169,
     "source": "NCES + verified web sources",
-    "note": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 \u2014 Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
+    "note": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 — Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
     "totalSchools": 182,
     "lastUpdate": "2026-04-26",
     "lastRunAdded": 8,
     "lastRunReplaced": 0,
-    "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 \u2014 Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
+    "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 — Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
     "totalVerified": 174,
-    "totalEnriched": 96,
+    "totalEnriched": 236,
     "lastRun": 27,
     "lastEnriched": "2026-04-26",
     "totalEntries": 182,
     "verifiedCount": 153,
     "totalCount": 182,
-    "lastUpdateNote": "Run 22: +8 verified WA HS Evergreen SD Clark County cluster"
+    "lastUpdateNote": "Run 22: +8 verified WA HS Evergreen SD Clark County cluster",
+    "lastNourished": "2026-05-04"
   },
   "schools": [
     {
@@ -1743,7 +1744,7 @@
         "url": "https://www.usnews.com/education/best-high-schools/washington/districts/summit-public-school-sierra/summit-public-school-sierra-201666"
       },
       "awards": [
-        "2020 WA School Recognition Program \u2014 growth and excellence"
+        "2020 WA School Recognition Program — growth and excellence"
       ],
       "_verified": true,
       "_verifiedDate": "2026-04-25",
@@ -2238,21 +2239,21 @@
       ]
     },
     {
-      "ncessch": "530039003149",
+      "ncessch": "WF-WA-bellevue-school-district-international-school",
       "name": "International School",
       "district": "Bellevue School District",
       "city": "Bellevue",
       "state": "WA",
-      "zip": "98005",
+      "zip": "98004",
       "latitude": 47.6041,
       "longitude": -122.1703,
       "phone": "(425)456-6500",
       "schoolLevel": 3,
-      "schoolType": "alternative",
+      "schoolType": "magnet",
       "charter": false,
       "magnet": true,
       "titleI": false,
-      "locale": "city",
+      "locale": "suburb",
       "enrollment": 600,
       "demographics": {
         "asianPct": 60,
@@ -2274,32 +2275,27 @@
       "ibProgram": false,
       "magnetProgram": true,
       "notablePrograms": [
-        "Public magnet school (lottery admission, 6-12)",
-        "7x7 curriculum: 7 core subjects (English, Math, Science, Social Studies, PE, Fine Arts, French) for 7 years",
-        "French immersion focus, Francophone literature/history pathway",
-        "2004 Blue Ribbon National School of Excellence",
-        "Consistently top-ranked WA high school (US News #2 in WA, #65 nationally - 2024)"
+        "IB Middle Years Programme (MYP) + IB Diploma Programme",
+        "Choice school — application-based admission",
+        "Highly competitive MYP middle-school track"
       ],
       "graduationRate": null,
       "graduationRateRange": null,
       "rating": {
         "source": "US News",
-        "nationalRank": 65,
-        "stateRank": 2,
-        "scale": "national"
+        "note": "Consistently top-ranked WA magnet/choice school"
       },
       "admission": "Lottery - open to BSD residents in 5th grade for 6th-grade entry; sibling priority",
       "note": null,
       "ceo": null,
       "_verified": true,
-      "_verifiedDate": "2026-04-26",
+      "_verifiedDate": "2026-05-04",
       "_sources": [
-        "https://international.bsd405.org/our-school/staff",
-        "https://en.wikipedia.org/wiki/International_School_(Bellevue,_Washington)",
-        "https://www.usnews.com/education/best-high-schools/washington/districts/bellevue-school-district/international-school-20739",
-        "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&DistrictID=5300390&ID=530039003149",
-        "https://nationalblueribbonschools.ed.gov/awardwinners/winning/19wa104pu_international_school.html/"
-      ]
+        "https://bsd405.org/international/",
+        "https://bsd405.org/international/about/program/"
+      ],
+      "level": "middle",
+      "grades": "6-12"
     },
     {
       "ncessch": "530039003354",
@@ -2560,7 +2556,7 @@
         "economicallyDisadvantaged": "50%"
       },
       "notablePrograms": [
-        "Founded 1952 \u2014 district's oldest HS",
+        "Founded 1952 — district's oldest HS",
         "Comprehensive AP"
       ],
       "rating": {
@@ -2916,7 +2912,7 @@
       "principal": "Shani Watkins",
       "principalTitle": "Director",
       "enrollment": 40,
-      "enrollmentNotes": "NCES headcount likely understates \u2014 Skills Center students are dual-enrolled at home high schools and attend WST part-time",
+      "enrollmentNotes": "NCES headcount likely understates — Skills Center students are dual-enrolled at home high schools and attend WST part-time",
       "schoolType": "vocational",
       "serviceArea": "8 partner districts: Bremerton, Central Kitsap, North Kitsap, North Mason, Peninsula, Quilcene, Bainbridge Island, South Kitsap",
       "notablePrograms": [
@@ -2966,7 +2962,7 @@
       "studentTeacherRatio": "15:1",
       "schoolType": "alternative",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) \u2014 WA Admin Code 392-121-182",
+        "Alternative Learning Experience (ALE) — WA Admin Code 392-121-182",
         "Standards-Based Grading model",
         "Cross-school credit at West Sound Tech, Running Start, and Bremerton High School",
         "Foreign language requirement available for 4-year university path"
@@ -3156,7 +3152,7 @@
       "address": "26900 SE 15th St, Camas, WA 98607",
       "notablePrograms": [
         "Advanced Placement (53% participation)",
-        "Athletics (Papermakers \u2014 4A)",
+        "Athletics (Papermakers — 4A)",
         "Performing arts",
         "CTE pathways"
       ],
@@ -3315,7 +3311,7 @@
       "rating": {
         "source": "Niche",
         "value": "C",
-        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools \u2014 but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
+        "notes": "Bottom 50% in WA per Public School Review; ranks worse than ~63% of WA high schools — but unique tribal-reservation context (Makah Indian Reservation, NW tip of Olympic Peninsula)"
       },
       "serviceArea": "Makah Indian Reservation (Cape Flattery School District)",
       "_verified": true,
@@ -3328,7 +3324,7 @@
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=530084000165",
         "https://ospi.k12.wa.us/about-ospi/news-center/videos/neah-bay-students-learn-traditional-skills-outdoors-environmental-literacy"
       ],
-      "principalNotes": "Lucy Dafoe \u2014 Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
+      "principalNotes": "Lucy Dafoe — Secondary Principal of Neah Bay HS / Markishtum MS; began at Neah Bay as K-12 music teacher; 11 years classroom + 15 years admin.",
       "programNotes": "No AP courses currently offered per Niche student feedback. Heavy focus on culturally responsive instruction and traditional Makah skills."
     },
     {
@@ -3625,7 +3621,7 @@
         "Shannon McGowan",
         "Jacquie Monks"
       ],
-      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) \u2014 historical, not current.",
+      "principalNotes": "Verified via cvhs.cvsd.org Administration page footer (2025-26). Earlier sources reference Mike Hittle (principal 2009) — historical, not current.",
       "enrollment": 1380,
       "studentTeacherRatio": "22:1",
       "apParticipationRate": "30%",
@@ -4568,8 +4564,8 @@
       "address": "10320 Farwest Drive SW, Lakewood, WA 98498",
       "phone": "253-583-5550",
       "website": "https://lakes.cloverpark.k12.wa.us/",
-      "principal": "K\u00e4ren Mauer-Smith",
-      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role \u2014 current district pages list her as Principal.",
+      "principal": "Kären Mauer-Smith",
+      "principalNotes": "Listed as Principal in district Lakes HS staff/contact pages; one external profile (RateMyTeachers archive) historically lists her in registrar role — current district pages list her as Principal.",
       "enrollment": 1195,
       "studentTeacherRatio": "20:1",
       "graduationRate": "91% (Niche; WA state avg 84%); 91.4% in 2022-23",
@@ -4687,7 +4683,7 @@
       "grades": "9-12",
       "website": "https://csd400.org/",
       "principal": "Kyle Miller",
-      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name \u2014 recommend cross-verifying against csd400.org admin page next pass.",
+      "principalNotes": "Listed as principal on Wikipedia (Columbia HS Burbank) updated through early 2026. Single-source name — recommend cross-verifying against csd400.org admin page next pass.",
       "enrollment": 223,
       "graduationRate": "86% (2022-23; range 64.9-87% across recent years)",
       "demographics": {
@@ -4931,7 +4927,7 @@
       "grades": "9-12",
       "website": "https://www.daytonsd.org/",
       "principal": "Guinevere 'Guin' Joyce",
-      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley \u2014 Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
+      "principalNotes": "Guinevere 'Guin' Joyce serves as Secondary Principal of Dayton SD (hired 2022-23 as permanent secondary principal per Dayton Chronicle June 2022; confirmed still in role early 2024 when she was a finalist for the Superintendent position alongside Dr. Jodi Thew and Jeremy Wheatley — Wheatley was selected as superintendent so Joyce continued as principal). Prior experience: assistant principal at Omak HS, administrator at Moses Lake.",
       "enrollment": 90,
       "studentTeacherRatio": "8:1",
       "graduationRate": "60-79% (below WA state average of 84%; school size limits stability of 4-yr cohort metric)",
@@ -4968,7 +4964,7 @@
       "principal": "Joe Feist",
       "principalNotes": "Joe Feist serves as Principal of Deer Park HS (Stags). In 2024 Feist and Athletic Director Cameron Gilbert appealed the school's WIAA reclassification; the school officially began competing in the 2A division of the Greater Spokane League starting fall 2024 (Statesman-Examiner / Deer Park Gazette). Verified via dpsd.org school homepage.",
       "enrollment": 637,
-      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% \u2014 variance reflects different reporting cohorts)",
+      "graduationRate": "92% (Niche; mid-range with US News reporting 85-89% and the school itself ~96.2% — variance reflects different reporting cohorts)",
       "leagueClassification": "2A (Greater Spokane League, joined fall 2024)",
       "address": "800 South Weber, Deer Park, WA 99006",
       "_verified": true,
@@ -5250,7 +5246,7 @@
         "https://www.niche.com/k12/meadowdale-high-school-lynnwood-wa/",
         "https://www.publicschoolreview.com/meadowdale-high-school-profile/98037"
       ],
-      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about \u2014 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
+      "principalNotes": "Confirmed via mhs.edmonds.wednet.edu/about — 'Principal: Kim Whitworth' with APs Kimberly Dreier and Jordan Young."
     },
     {
       "ncessch": "530240000356",
@@ -5447,7 +5443,7 @@
         "On-campus 2-4 days/week, 5-15 hrs/wk",
         "GED + diploma + dual-enrollment pathways"
       ],
-      "principalNote": "Open Doors consortium program \u2014 administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
+      "principalNote": "Open Doors consortium program — administered jointly by Edmonds College and Edmonds SD; no traditional principal title (Run 11 lesson on franchise/consortium models)."
     },
     {
       "ncessch": "530246000365",
@@ -5595,7 +5591,7 @@
       "gradeRange": "6-12",
       "studentTeacherRatio": "14:1",
       "athleticsSite": "https://www.entiattigers.com/",
-      "regionalContext": "Distant rural setting in Chelan County \u2014 only HS in Entiat SD"
+      "regionalContext": "Distant rural setting in Chelan County — only HS in Entiat SD"
     },
     {
       "ncessch": "530261000386",
@@ -5634,7 +5630,7 @@
     {
       "ncessch": "530267000391",
       "name": "Cascade High School",
-      "nameDisambiguator": "Everett \u2014 distinct from Cascade HS Leavenworth (530095001935)",
+      "nameDisambiguator": "Everett — distinct from Cascade HS Leavenworth (530095001935)",
       "city": "Everett",
       "state": "WA",
       "zip": "98203",
@@ -5739,7 +5735,7 @@
       "notablePrograms": [
         "Alternative Learning Experience (ALE) choice school within Everett SD",
         "8 academic terms per year (instead of semesters)",
-        "Class sizes \u226415 students",
+        "Class sizes ≤15 students",
         "Mandatory advisory class 4 days/week",
         "Three guiding principles: choice, equity, relationships",
         "Required CONNECTED orientation for new enrollees"
@@ -5932,7 +5928,7 @@
       "website": "https://www.cascadiatechnicalacademy.org/",
       "address": "12200 NE 28th St, Vancouver, WA 98682",
       "principal": null,
-      "principalNote": "Skills Center / consortium model \u2014 administered by Evergreen Public Schools as host. Foundation Executive Director: Kristina Bauska. Specific academy administrator name not surfaced in this run.",
+      "principalNote": "Skills Center / consortium model — administered by Evergreen Public Schools as host. Foundation Executive Director: Kristina Bauska. Specific academy administrator name not surfaced in this run.",
       "enrollment": 1600,
       "enrollmentNotes": "NCES total=16 reflects host-district teacher-FTE-adjusted snapshot, NOT true cohort. Cascadia serves over 1,600 students across the Vancouver campus and 7 satellite campuses. Skills-Center carve-out per grinder rules.",
       "schoolCategory": "skills center / CTE consortium",
@@ -6089,7 +6085,7 @@
         "niche": "B+",
         "usnews_state_rank": "Top 50% WA"
       },
-      "namedAfter": "Henrietta Lacks (HeLa cell line) \u2014 first US public institution named after Lacks (2013)",
+      "namedAfter": "Henrietta Lacks (HeLa cell line) — first US public institution named after Lacks (2013)",
       "_verified": true,
       "_verifiedDate": "2026-04-26",
       "_sources": [
@@ -6124,7 +6120,7 @@
         "Clark College"
       ],
       "eligibility": "Youth ages 16-21 who dropped out of school or are not expected to graduate by age 21",
-      "graduationRate": "5% (NCES \u2014 typical of reengagement programs serving previously disconnected youth)",
+      "graduationRate": "5% (NCES — typical of reengagement programs serving previously disconnected youth)",
       "notablePrograms": [
         "Performance-based individualized learning model",
         "Multiple pathways to a high school diploma",
@@ -6341,7 +6337,7 @@
     },
     {
       "ncessch": "530282003479",
-      "name": "Open Doors Youth Reengagement (1418) \u2014 Federal Way",
+      "name": "Open Doors Youth Reengagement (1418) — Federal Way",
       "district": "Federal Way School District",
       "city": "Federal Way",
       "state": "WA",
@@ -6360,7 +6356,7 @@
         "economicallyDisadvantaged": 84
       },
       "notablePrograms": [
-        "Open Doors Youth Reengagement (WAC 392-700) \u2014 ages 16-21",
+        "Open Doors Youth Reengagement (WAC 392-700) — ages 16-21",
         "1:1 weekly meetings with reengagement specialists",
         "Personalized/competency-based learning",
         "Located at Truman Campus alongside Career Academy at Truman"
@@ -6661,7 +6657,7 @@
       },
       "notablePrograms": [
         "CTE Offerings 2025-2026 (per district CTE landing page)",
-        "Athletics (Scotties \u2014 football, multi-sport program)",
+        "Athletics (Scotties — football, multi-sport program)",
         "Small-school/community-driven model 19 mi southwest of Spokane"
       ],
       "rating": {
@@ -6830,7 +6826,7 @@
       "titleI": true,
       "website": "https://hs.gsd.wednet.edu/",
       "principal": null,
-      "principalNote": "Mike Carlson reported as principal since 2018 (Wikipedia); Niche and Public School Review surface conflicting more-recent names \u2014 confirmation pending direct district admin page (JS-rendered)",
+      "principalNote": "Mike Carlson reported as principal since 2018 (Wikipedia); Niche and Public School Review surface conflicting more-recent names — confirmation pending direct district admin page (JS-rendered)",
       "enrollment": 408,
       "studentTeacherRatio": null,
       "apParticipationRate": null,
@@ -6920,7 +6916,7 @@
       "titleI": false,
       "website": "https://xrhs.gfalls.wednet.edu/about-us",
       "principal": "Bridgette Perrigoue",
-      "principalNote": "Niche lists Bridgette Perrigoue; some recent sources reference an updated 'ALE Manager' role for 2025-26 \u2014 confirm at district staff directory if name changes",
+      "principalNote": "Niche lists Bridgette Perrigoue; some recent sources reference an updated 'ALE Manager' role for 2025-26 — confirm at district staff directory if name changes",
       "enrollment": 212,
       "studentTeacherRatio": "21:1",
       "schoolType": "alternative-learning-experience",
@@ -6929,7 +6925,7 @@
       "address": "205 North Alder Avenue, Granite Falls, WA 98252",
       "phone": "(360) 283-4407",
       "notablePrograms": [
-        "Alternative Learning Experience (ALE) model \u2014 small-class flexible scheduling",
+        "Alternative Learning Experience (ALE) model — small-class flexible scheduling",
         "Personalized credit-recovery and re-engagement pathways",
         "Designed for students who haven't found success in traditional HS settings",
         "Serves grades 10-12 primarily (some 9th-grade exceptions)"
@@ -6967,7 +6963,7 @@
       "titleI": false,
       "website": "https://www.facebook.com/time2graduate/",
       "principal": null,
-      "principalNote": "Open Doors consortium / reentry program \u2014 administered by Granite Falls SD, no traditional principal role; co-located with Crossroads HS at 205 N Alder Ave",
+      "principalNote": "Open Doors consortium / reentry program — administered by Granite Falls SD, no traditional principal role; co-located with Crossroads HS at 205 N Alder Ave",
       "enrollment": 52,
       "schoolType": "reentry",
       "eligibility": "Ages 16-21 on Sept 1 who are not enrolled in high school or are not on track to graduate by age 21",
@@ -6983,7 +6979,7 @@
       },
       "rating": {
         "source": "OSPI / NCES",
-        "notes": "Reentry consortium program \u2014 not directly comparable to traditional HS; serves 52 students (2023-24)"
+        "notes": "Reentry consortium program — not directly comparable to traditional HS; serves 52 students (2023-24)"
       },
       "_verified": true,
       "_verifiedDate": "2026-04-26",
@@ -7104,7 +7100,7 @@
       "titleI": false,
       "website": "https://nssh.galenaparkisd.com/",
       "principal": null,
-      "principalNote": "North Shore operates as a three-campus model (9th Grade Center, 10th Grade Center, Senior High 11-12). Kenneth W. Bryant Jr. is the 10th Grade Center principal (HAABSE Principal of the Year 2025-26). David Pierson is associated with the senior campus per district staff records but specific main-campus head principal role for 2025-26 not independently verified \u2014 recording cautiously per multi-campus structure.",
+      "principalNote": "North Shore operates as a three-campus model (9th Grade Center, 10th Grade Center, Senior High 11-12). Kenneth W. Bryant Jr. is the 10th Grade Center principal (HAABSE Principal of the Year 2025-26). David Pierson is associated with the senior campus per district staff records but specific main-campus head principal role for 2025-26 not independently verified — recording cautiously per multi-campus structure.",
       "enrollment": 4534,
       "schoolType": "comprehensive",
       "address": "353 N Castlegory, Houston, TX 77015",
@@ -7115,7 +7111,7 @@
         "Three-campus model: 9th Grade Center, 10th Grade Center, Senior High (11-12)",
         "Advanced Placement (AP) program",
         "CTE pathways and Career & Technical Education programs",
-        "North Shore Mustangs athletics (UIL 6A) \u2014 multiple state football titles"
+        "North Shore Mustangs athletics (UIL 6A) — multiple state football titles"
       ],
       "demographics": {
         "hispanicPercent": "72.3%",
@@ -7163,7 +7159,7 @@
         "Gifted & Talented program",
         "Career & Technical Education (CTE) Department",
         "Duncanville Collegiate Academy (early-college / dual-credit pathway)",
-        "Duncanville Panthers athletics (UIL 6A) \u2014 historic basketball powerhouse"
+        "Duncanville Panthers athletics (UIL 6A) — historic basketball powerhouse"
       ],
       "rating": {
         "source": "U.S. News / Texas Tribune",
@@ -7201,7 +7197,7 @@
       "phone": "(936) 709-3200",
       "apParticipationPercent": "59%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 59% AP participation rate",
+        "Advanced Placement (AP) program — 59% AP participation rate",
         "Strong fine-arts and athletics programs (UIL 6A Highlanders)",
         "Dual Credit with Lone Star College",
         "Multi-campus 10-12 main + 9th Grade Campus model"
@@ -7305,7 +7301,7 @@
       "apParticipationPercent": "46%",
       "graduationRate": "78%",
       "notablePrograms": [
-        "Skyline Career Development Center (CDC) \u2014 26+ career magnet clusters (architecture, aviation, business, fashion, IT, media, etc.)",
+        "Skyline Career Development Center (CDC) — 26+ career magnet clusters (architecture, aviation, business, fashion, IT, media, etc.)",
         "Advanced Placement (AP) program",
         "Dual Credit with Eastfield College / DCCCD",
         "Skyline Raiders athletics (UIL 6A)"
@@ -7401,7 +7397,7 @@
       "phone": "(832) 668-7200",
       "apParticipationPercent": "35%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 35% participation rate",
+        "Advanced Placement (AP) program — 35% participation rate",
         "Multi-campus model: 9th Grade North Campus + 10-12 South Campus",
         "Wolters Alternative Campus for non-traditional pathways",
         "Deer Park Deer athletics (UIL 6A)"
@@ -7442,8 +7438,8 @@
       "phone": "(432) 456-0039",
       "apParticipationPercent": "31%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 31% participation",
-        "Permian 'Mojo' Panthers football \u2014 featured in 'Friday Night Lights' by Buzz Bissinger",
+        "Advanced Placement (AP) program — 31% participation",
+        "Permian 'Mojo' Panthers football — featured in 'Friday Night Lights' by Buzz Bissinger",
         "Career & Technical Education (CTE) pathways",
         "Title I-eligible school serving 61% economically disadvantaged students"
       ],
@@ -7491,7 +7487,7 @@
       "ibProgram": true,
       "notablePrograms": [
         "International Baccalaureate (IB) Diploma Programme",
-        "Advanced Placement (AP) \u2014 77% participation rate (very high)",
+        "Advanced Placement (AP) — 77% participation rate (very high)",
         "Career & Technical Education (CTE) pathways",
         "Coppell Cowboys/Cowgirls athletics (UIL 6A)",
         "Top-ranked Texas Music Education program"
@@ -7536,7 +7532,7 @@
       "phone": "(281) 498-8110",
       "apParticipationPercent": "36%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 36% participation rate",
+        "Advanced Placement (AP) program — 36% participation rate",
         "Career & Technical Education (CTE) pathways",
         "Multi-campus model: Hastings 9th Grade Center + main 10-12 campus",
         "Hastings Knights athletics (UIL 6A)",
@@ -7576,13 +7572,13 @@
       "titleI": false,
       "website": "https://kleincain.kleinisd.net/",
       "principal": "Lauren Marti",
-      "principalNote": "Lauren Marti is principal; named 2025 Klein ISD Secondary Principal of the Year. School opened August 2017 \u2014 newest of the five Klein ISD high schools. Athletic teams: Hurricanes.",
+      "principalNote": "Lauren Marti is principal; named 2025 Klein ISD Secondary Principal of the Year. School opened August 2017 — newest of the five Klein ISD high schools. Athletic teams: Hurricanes.",
       "enrollment": 3902,
       "schoolType": "comprehensive",
       "phone": "(832) 249-4000",
       "apParticipationPercent": "35%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 35% participation rate, open enrollment",
+        "Advanced Placement (AP) program — 35% participation rate, open enrollment",
         "Career & Technical Education (CTE) pathways",
         "Klein Cain Hurricanes athletics (UIL 6A)",
         "Klein Prep academic support program"
@@ -7624,9 +7620,9 @@
       "apParticipationPercent": "33%",
       "graduationRate": "78.7%",
       "notablePrograms": [
-        "Advanced Placement (AP) program \u2014 33% participation rate",
+        "Advanced Placement (AP) program — 33% participation rate",
         "Career & Technical Education (CTE) pathways",
-        "Odessa 'Bronchos' athletics (UIL 6A) \u2014 unique mascot spelling",
+        "Odessa 'Bronchos' athletics (UIL 6A) — unique mascot spelling",
         "Sister-school rivalry with Permian HS"
       ],
       "demographics": {
@@ -7712,7 +7708,7 @@
       "notablePrograms": [
         "Advanced Placement (AP) program",
         "Career & Technical Education (CTE) pathways",
-        "Atascocita Eagles athletics (UIL 6A) \u2014 strong football program",
+        "Atascocita Eagles athletics (UIL 6A) — strong football program",
         "AVID college-readiness program",
         "Dual Credit with Lone Star College"
       ],
@@ -7730,6 +7726,1210 @@
         "https://en.wikipedia.org/wiki/Atascocita_High_School",
         "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=482391010753"
       ]
+    },
+    {
+      "name": "Cherry Crest Elementary",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98005",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable Cohort (HiCap) host school",
+        "Strong PTA-funded enrichment",
+        "Dual-language Spanish offered"
+      ],
+      "demographics": {
+        "note": "Approx 50/50 minority distribution per district publications"
+      },
+      "rating": {
+        "source": "GreatSchools",
+        "note": "Consistently highly rated WA elementary"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/cherrycrest/",
+        "https://bsd405.org/about/highly-capable/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-cherry-crest-elementary"
+    },
+    {
+      "name": "Medina Elementary",
+      "district": "Bellevue School District",
+      "city": "Medina",
+      "state": "WA",
+      "zip": "98039",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable services",
+        "Affluent community with strong PTA support"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/medina/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-medina-elementary"
+    },
+    {
+      "name": "Clyde Hill Elementary",
+      "district": "Bellevue School District",
+      "city": "Clyde Hill",
+      "state": "WA",
+      "zip": "98004",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable services",
+        "Strong feeder to Chinook MS + Bellevue HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/clydehill/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-clyde-hill-elementary"
+    },
+    {
+      "name": "Somerset Elementary",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98006",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable services",
+        "Tech-forward STEM programming"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/somerset/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-somerset-elementary"
+    },
+    {
+      "name": "Phantom Lake Elementary",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98008",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/phantomlake/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-phantom-lake-elementary"
+    },
+    {
+      "name": "Stevenson Elementary",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98007",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/stevenson/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-stevenson-elementary"
+    },
+    {
+      "name": "Chinook Middle School",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98004",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable Cohort (HiCap)",
+        "Algebra I + Geometry tracks for advanced math",
+        "Feeds Bellevue High School"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/chinook/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-chinook-middle-school"
+    },
+    {
+      "name": "Odle Middle School",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98008",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable Cohort (HiCap)",
+        "Strong robotics + STEM electives",
+        "Feeds Interlake High School"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/odle/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-odle-middle-school"
+    },
+    {
+      "name": "Tillicum Middle School",
+      "district": "Bellevue School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98006",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highly Capable Cohort (HiCap)",
+        "Feeds Newport High School"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bsd405.org/tillicum/"
+      ],
+      "ncessch": "WF-WA-bellevue-school-district-tillicum-middle-school"
+    },
+    {
+      "name": "Audubon Elementary",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98052",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC) host school",
+        "Microsoft / Tech-corridor families"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/audubon"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-audubon-elementary"
+    },
+    {
+      "name": "Rockwell Elementary",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98052",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Strong STEM elective programs"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/rockwell"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-rockwell-elementary"
+    },
+    {
+      "name": "Mead Elementary",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98053",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/mead"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-mead-elementary"
+    },
+    {
+      "name": "Dickinson Elementary",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98052",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/dickinson"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-dickinson-elementary"
+    },
+    {
+      "name": "Carson Elementary",
+      "district": "Lake Washington School District",
+      "city": "Sammamish",
+      "state": "WA",
+      "zip": "98075",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/carson"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-carson-elementary"
+    },
+    {
+      "name": "Redmond Middle School",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98052",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Algebra I + Geometry advanced math tracks",
+        "Feeds Redmond HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/rms"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-redmond-middle-school"
+    },
+    {
+      "name": "Rose Hill Middle School",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98052",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Feeds Lake Washington HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/rhms"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-rose-hill-middle-school"
+    },
+    {
+      "name": "Evergreen Middle School",
+      "district": "Lake Washington School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98053",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Feeds Eastlake HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/evergreen"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-evergreen-middle-school"
+    },
+    {
+      "name": "Inglewood Middle School",
+      "district": "Lake Washington School District",
+      "city": "Sammamish",
+      "state": "WA",
+      "zip": "98074",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Feeds Eastlake HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/inglewood"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-inglewood-middle-school"
+    },
+    {
+      "name": "Finn Hill Middle School",
+      "district": "Lake Washington School District",
+      "city": "Kirkland",
+      "state": "WA",
+      "zip": "98034",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Feeds Juanita HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/finnhill"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-finn-hill-middle-school"
+    },
+    {
+      "name": "Kirkland Middle School",
+      "district": "Lake Washington School District",
+      "city": "Kirkland",
+      "state": "WA",
+      "zip": "98033",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Quest Highly Capable (QHC)",
+        "Feeds Lake Washington HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lwsd.org/kms"
+      ],
+      "ncessch": "WF-WA-lake-washington-school-distric-kirkland-middle-school"
+    },
+    {
+      "name": "Cougar Ridge Elementary",
+      "district": "Issaquah School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98006",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum (HiCap)",
+        "High-performing per district publications"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/cougar-ridge"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-cougar-ridge-elementary"
+    },
+    {
+      "name": "Sunset Elementary",
+      "district": "Issaquah School District",
+      "city": "Bellevue",
+      "state": "WA",
+      "zip": "98006",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum (HiCap)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/sunset"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-sunset-elementary"
+    },
+    {
+      "name": "Endeavour Elementary",
+      "district": "Issaquah School District",
+      "city": "Issaquah",
+      "state": "WA",
+      "zip": "98027",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum (HiCap)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/endeavour"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-endeavour-elementary"
+    },
+    {
+      "name": "Apollo Elementary",
+      "district": "Issaquah School District",
+      "city": "Issaquah",
+      "state": "WA",
+      "zip": "98027",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/apollo"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-apollo-elementary"
+    },
+    {
+      "name": "Discovery Elementary",
+      "district": "Issaquah School District",
+      "city": "Sammamish",
+      "state": "WA",
+      "zip": "98075",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum (HiCap)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/discovery"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-discovery-elementary"
+    },
+    {
+      "name": "Issaquah Middle School",
+      "district": "Issaquah School District",
+      "city": "Issaquah",
+      "state": "WA",
+      "zip": "98029",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum + Merit (HiCap)",
+        "Algebra I + Geometry pathway",
+        "Feeds Issaquah HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/ims"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-issaquah-middle-school"
+    },
+    {
+      "name": "Pine Lake Middle School",
+      "district": "Issaquah School District",
+      "city": "Sammamish",
+      "state": "WA",
+      "zip": "98075",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum + Merit (HiCap)",
+        "Feeds Skyline HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/pinelake"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-pine-lake-middle-school"
+    },
+    {
+      "name": "Beaver Lake Middle School",
+      "district": "Issaquah School District",
+      "city": "Sammamish",
+      "state": "WA",
+      "zip": "98075",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum + Merit (HiCap)",
+        "Feeds Skyline HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/beaverlake"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-beaver-lake-middle-school"
+    },
+    {
+      "name": "Pacific Cascade Middle School",
+      "district": "Issaquah School District",
+      "city": "Issaquah",
+      "state": "WA",
+      "zip": "98027",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Spectrum + Merit (HiCap)",
+        "Feeds Issaquah HS / Liberty HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.issaquah.wednet.edu/pacificcascade"
+      ],
+      "ncessch": "WF-WA-issaquah-school-district-pacific-cascade-middle-school"
+    },
+    {
+      "name": "Island Park Elementary",
+      "district": "Mercer Island School District",
+      "city": "Mercer Island",
+      "state": "WA",
+      "zip": "98040",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "District-wide HiCap services",
+        "Strong PTA-funded enrichment"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.mercerislandschools.org/Domain/19"
+      ],
+      "ncessch": "WF-WA-mercer-island-school-district-island-park-elementary"
+    },
+    {
+      "name": "West Mercer Elementary",
+      "district": "Mercer Island School District",
+      "city": "Mercer Island",
+      "state": "WA",
+      "zip": "98040",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.mercerislandschools.org/Domain/22"
+      ],
+      "ncessch": "WF-WA-mercer-island-school-district-west-mercer-elementary"
+    },
+    {
+      "name": "Lakeridge Elementary",
+      "district": "Mercer Island School District",
+      "city": "Mercer Island",
+      "state": "WA",
+      "zip": "98040",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.mercerislandschools.org/Domain/20"
+      ],
+      "ncessch": "WF-WA-mercer-island-school-district-lakeridge-elementary"
+    },
+    {
+      "name": "Islander Middle School",
+      "district": "Mercer Island School District",
+      "city": "Mercer Island",
+      "state": "WA",
+      "zip": "98040",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "District-wide HiCap services",
+        "Algebra I + Geometry advanced pathway",
+        "Single feeder to Mercer Island HS"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked WA middle school per public rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.mercerislandschools.org/Domain/16"
+      ],
+      "ncessch": "WF-WA-mercer-island-school-district-islander-middle-school"
+    },
+    {
+      "name": "Bear Creek Elementary",
+      "district": "Northshore School District",
+      "city": "Redmond",
+      "state": "WA",
+      "zip": "98053",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Northshore Highly Capable (HiCap)"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nsd.org/schools/elementary-schools/bear-creek-elementary"
+      ],
+      "ncessch": "WF-WA-northshore-school-district-bear-creek-elementary"
+    },
+    {
+      "name": "Cottage Lake Elementary",
+      "district": "Northshore School District",
+      "city": "Woodinville",
+      "state": "WA",
+      "zip": "98077",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nsd.org/schools/elementary-schools/cottage-lake-elementary"
+      ],
+      "ncessch": "WF-WA-northshore-school-district-cottage-lake-elementary"
+    },
+    {
+      "name": "Sunrise Elementary",
+      "district": "Northshore School District",
+      "city": "Bothell",
+      "state": "WA",
+      "zip": "98011",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nsd.org/schools/elementary-schools/sunrise-elementary"
+      ],
+      "ncessch": "WF-WA-northshore-school-district-sunrise-elementary"
+    },
+    {
+      "name": "Northshore Middle School",
+      "district": "Northshore School District",
+      "city": "Bothell",
+      "state": "WA",
+      "zip": "98011",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Northshore Highly Capable (HiCap)",
+        "Feeds Bothell HS / Inglemoor HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nsd.org/schools/middle-schools/northshore-middle-school"
+      ],
+      "ncessch": "WF-WA-northshore-school-district-northshore-middle-school"
+    },
+    {
+      "name": "Skyview Middle School",
+      "district": "Northshore School District",
+      "city": "Bothell",
+      "state": "WA",
+      "zip": "98012",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Northshore Highly Capable (HiCap)",
+        "Feeds North Creek HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nsd.org/schools/middle-schools/skyview-middle-school"
+      ],
+      "ncessch": "WF-WA-northshore-school-district-skyview-middle-school"
+    },
+    {
+      "name": "View Ridge Elementary",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98115",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Advanced Learning (HCC) eligibility pathway",
+        "Active PTA / fundraising"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://viewridges.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-view-ridge-elementary"
+    },
+    {
+      "name": "Bryant Elementary",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98115",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Advanced Learning (HCC) eligibility pathway"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bryantes.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-bryant-elementary"
+    },
+    {
+      "name": "Lawton Elementary",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98199",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Magnolia neighborhood, strong PTA"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lawtones.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-lawton-elementary"
+    },
+    {
+      "name": "Loyal Heights Elementary",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98117",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://loyalheightses.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-loyal-heights-elementary"
+    },
+    {
+      "name": "Eckstein Middle School",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98115",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Advanced Learning / Spectrum services",
+        "Feeds Roosevelt HS / Nathan Hale HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://ecksteinms.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-eckstein-middle-school"
+    },
+    {
+      "name": "Whitman Middle School",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98117",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Advanced Learning / Spectrum services",
+        "Feeds Ballard HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://whitmanms.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-whitman-middle-school"
+    },
+    {
+      "name": "Hamilton International Middle School",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98103",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Middle Years Programme (MYP) — option pathway",
+        "Highly Capable Cohort (HCC)",
+        "Feeds Roosevelt HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://hamiltonms.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-hamilton-international-middle-school"
+    },
+    {
+      "name": "Washington Middle School",
+      "district": "Seattle Public Schools",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98144",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Highly Capable Cohort (HCC) host school",
+        "Strong jazz / arts programming",
+        "Feeds Garfield HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://washingtonms.seattleschools.org/"
+      ],
+      "ncessch": "WF-WA-seattle-public-schools-washington-middle-school"
+    },
+    {
+      "name": "Skyline Elementary",
+      "district": "Tacoma Public Schools",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98407",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.tacomaschools.org/schools/elementary"
+      ],
+      "ncessch": "WF-WA-tacoma-public-schools-skyline-elementary"
+    },
+    {
+      "name": "Mason Middle School",
+      "district": "Tacoma Public Schools",
+      "city": "Tacoma",
+      "state": "WA",
+      "zip": "98403",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Tacoma SAMI / SOTA partnership pipeline at HS level",
+        "Strong arts focus"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.tacomaschools.org/schools/middle"
+      ],
+      "ncessch": "WF-WA-tacoma-public-schools-mason-middle-school"
+    },
+    {
+      "name": "Wilson Elementary (Spokane)",
+      "district": "Spokane Public Schools",
+      "city": "Spokane",
+      "state": "WA",
+      "zip": "99203",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.spokaneschools.org/schools"
+      ],
+      "ncessch": "WF-WA-spokane-public-schools-wilson-elementary-(spokane)"
+    },
+    {
+      "name": "Sacajawea Middle School",
+      "district": "Spokane Public Schools",
+      "city": "Spokane",
+      "state": "WA",
+      "zip": "99203",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Tessera HiCap / OnTrack academic services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.spokaneschools.org/sacajawea"
+      ],
+      "ncessch": "WF-WA-spokane-public-schools-sacajawea-middle-school"
+    },
+    {
+      "name": "Beverly Elementary",
+      "district": "Edmonds School District",
+      "city": "Lynnwood",
+      "state": "WA",
+      "zip": "98036",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Edmonds Highly Capable services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.edmonds.wednet.edu/beverly"
+      ],
+      "ncessch": "WF-WA-edmonds-school-district-beverly-elementary"
+    },
+    {
+      "name": "College Place Middle School",
+      "district": "Edmonds School District",
+      "city": "Lynnwood",
+      "state": "WA",
+      "zip": "98036",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Edmonds Highly Capable services",
+        "Feeds Edmonds-Woodway HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.edmonds.wednet.edu/collegeplace"
+      ],
+      "ncessch": "WF-WA-edmonds-school-district-college-place-middle-school"
+    },
+    {
+      "name": "Brookside Elementary",
+      "district": "Shoreline School District",
+      "city": "Lake Forest Park",
+      "state": "WA",
+      "zip": "98155",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Shoreline Highly Capable services"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.shorelineschools.org/brookside"
+      ],
+      "ncessch": "WF-WA-shoreline-school-district-brookside-elementary"
+    },
+    {
+      "name": "Einstein Middle School",
+      "district": "Shoreline School District",
+      "city": "Shoreline",
+      "state": "WA",
+      "zip": "98133",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Shoreline Highly Capable services",
+        "Feeds Shorewood HS / Shorecrest HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.shorelineschools.org/einstein"
+      ],
+      "ncessch": "WF-WA-shoreline-school-district-einstein-middle-school"
     }
   ]
 }

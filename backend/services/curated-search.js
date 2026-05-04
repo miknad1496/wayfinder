@@ -61,6 +61,20 @@ const MODULE_KEYWORDS = {
     'volunteer', 'volunteering', 'community service', 'service hours',
     'nonprofit', 'service project', 'civic',
   ],
+  // PATCH108: K-12 school search awareness for the chat advisor
+  k12: [
+    'elementary school', 'middle school', 'k-12', 'k12', 'public school',
+    'private school', 'school district', 'district',
+    'feeder school', 'feeder pattern', 'gifted program', 'highly capable',
+    'hicap', 'spectrum', 'magnet school', 'ib program', 'dual language',
+    'school for my kid', 'school for my daughter', 'school for my son',
+    'best schools in', 'top schools in', 'schools near', 'school near',
+    'kindergarten', '1st grade', '2nd grade', '3rd grade', '4th grade', '5th grade',
+    '6th grade', '7th grade', '8th grade',
+    'bellevue school', 'lake washington school', 'issaquah school', 'mercer island school',
+    'seattle public school', 'northshore school', 'tacoma school', 'spokane school',
+    'edmonds school', 'shoreline school',
+  ],
 };
 
 // REVAMP V2: CURATED-SEARCH V2 PATCH44 — international intent detection. When true, US entries
@@ -182,6 +196,33 @@ function extractKeywords(query) {
 // ─── Scoring + selection ──────────────────────────────────────────
 
 function scoreEntry(entry, query, state, grade, keywords, intl = false) { // REVAMP V2: CURATED-SEARCH V2 PATCH44
+  // PATCH108: K-12 school scoring branch
+  if (entry && entry.district && (entry.level === 'elementary' || entry.level === 'middle' || entry.level === 'high')) {
+    let score = 0;
+    if (state && entry.state === state) score += 5;
+    if (grade) {
+      // Map grade to K-12 level: K-5 -> elementary, 6-8 -> middle, 9-12 -> high
+      const g = String(grade).toLowerCase();
+      const wantES = /\b(elem|kinder|k-5|k5|first|second|third|fourth|fifth|grade [1-5])\b/.test(g) || ['1','2','3','4','5','k'].indexOf(g) >= 0;
+      const wantMS = /\b(middle|6|7|8|grade [6-8])\b/.test(g) || ['6','7','8'].indexOf(g) >= 0;
+      const wantHS = /\b(high|9|10|11|12|junior|senior|grade 9|grade 10|grade 11|grade 12)\b/.test(g) || ['9','10','11','12'].indexOf(g) >= 0;
+      if ((wantES && entry.level === 'elementary') || (wantMS && entry.level === 'middle') || (wantHS && entry.level === 'high')) score += 4;
+    }
+    const q = String(query || '').toLowerCase();
+    const blob = (entry.name + ' ' + (entry.district || '') + ' ' + (entry.city || '') + ' ' + (Array.isArray(entry.notablePrograms) ? entry.notablePrograms.join(' ') : '')).toLowerCase();
+    for (const kw of keywords) {
+      if (kw && kw.length > 2 && blob.indexOf(kw) >= 0) score += 2;
+    }
+    // City + district hints in the raw query
+    if (entry.city && q.indexOf(entry.city.toLowerCase()) >= 0) score += 4;
+    if (entry.district && q.indexOf(entry.district.toLowerCase().split(' ')[0]) >= 0) score += 3;
+    // Quality boosts
+    if (entry._verified) score += 1;
+    if (entry.apCourses && entry.apCourses >= 15) score += 1;
+    if (entry.ibProgram) score += 1;
+    if (entry.magnetProgram || entry.magnet) score += 1;
+    return score;
+  }
   let score = 0;
   // Different modules use different shapes for location:
   //   - programs/scholarships: entry.location?.state (object) or entry.state
@@ -236,6 +277,8 @@ async function searchModule(module, query, state, grade, limit, intl = false) { 
     internships: { file: 'internships.json', key: 'internships' },
     scholarships: { file: 'scholarships.json', key: 'scholarships' },
     volunteer: { file: 'volunteer-opportunities.json', key: 'opportunities' },
+    // PATCH108: k12 enriched schools
+    k12: { file: 'k12-enriched.json', key: 'schools' },
   };
   const cfg = fileMap[module];
   if (!cfg) return [];
@@ -259,6 +302,31 @@ async function searchModule(module, query, state, grade, limit, intl = false) { 
 // ─── Formatting — keep it tight to control token cost ─────────────
 
 function formatEntry(entry, idx) {
+  // PATCH108: K-12 school records have a different shape
+  if (entry && entry.district && entry.level && (entry.level === 'elementary' || entry.level === 'middle' || entry.level === 'high')) {
+    const lines = [(idx+1) + '. ' + (entry.name || '?')];
+    const meta = [];
+    if (entry.district) meta.push('district: ' + entry.district);
+    if (entry.city) meta.push(entry.city + ', ' + (entry.state || ''));
+    if (entry.level) meta.push('level: ' + entry.level);
+    if (entry.grades) meta.push('grades: ' + entry.grades);
+    if (entry.apCourses) meta.push(entry.apCourses + ' AP courses');
+    if (entry.ibProgram) meta.push('IB');
+    if (entry.magnetProgram || entry.magnet) meta.push('magnet/STEM');
+    if (entry.graduationRate) meta.push('grad rate: ' + entry.graduationRate + '%');
+    if (typeof entry.studentTeacherRatio === 'number') meta.push(entry.studentTeacherRatio + ':1 ratio');
+    if (entry.rating && (entry.rating.nationalRank || entry.rating.stateRank)) {
+      const r = entry.rating;
+      meta.push((r.source || 'rating') + ': ' + (r.nationalRank ? '#' + r.nationalRank + ' nat' : '') + (r.stateRank ? (r.nationalRank ? ' / ' : '') + '#' + r.stateRank + ' state' : ''));
+    }
+    if (meta.length) lines.push('   ' + meta.join('  |  '));
+    if (Array.isArray(entry.notablePrograms) && entry.notablePrograms.length > 0) {
+      lines.push('   programs: ' + entry.notablePrograms.slice(0, 3).join(' · '));
+    }
+    if (entry.website) lines.push('   website: ' + entry.website);
+    else if (Array.isArray(entry._sources) && entry._sources[0]) lines.push('   source: ' + entry._sources[0]);
+    return lines.join('\n');
+  }
   const name = entry.name || entry.title || '?';
   const provider = entry.provider || entry.organization || entry.company;
   const lines = [`${idx + 1}. ${name}${provider ? ' (' + provider + ')' : ''}`];
@@ -298,6 +366,7 @@ const MODULE_LABELS = {
   internships: 'INTERNSHIPS',
   scholarships: 'SCHOLARSHIPS',
   volunteer: 'VOLUNTEER OPPORTUNITIES',
+  k12: 'K-12 SCHOOLS',
 };
 
 /**
