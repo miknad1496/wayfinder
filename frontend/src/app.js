@@ -8030,13 +8030,43 @@ async function loadApGuides() {
       if (!tok2) { alert('Please log in again to download study guides.'); return; }
       const url = API_BASE + '/ap-coach/guide/' + exam + '?token=' + encodeURIComponent(tok2);
       try {
-        const resp = await fetch(url, { headers: { Authorization: 'Bearer ' + tok2 } });
+        let resp = await fetch(url, { headers: { Authorization: 'Bearer ' + tok2 } });
+        // PATCH97: Free-tier preview confirmation flow.
+        // 402 + _requiresPreviewSelection -> ask user, then call preview-select, then re-fetch.
+        if (resp.status === 402) {
+          let body = {};
+          try { body = await resp.json(); } catch (_) {}
+          if (body && body._requiresPreviewSelection) {
+            const ok = confirm(
+              'Free preview: download HALF of ' + (body.label || label) + ' for free.\n\n' +
+              'You only get one free preview. After this, the other 26 guides require Coach or Consultant.\n\n' +
+              'Use your free preview on ' + (body.label || label) + '?'
+            );
+            if (!ok) return;
+            // Lock in the choice
+            const sel = await fetch(API_BASE + '/ap-coach/guide/preview-select', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + tok2 },
+              body: JSON.stringify({ exam: exam }),
+            });
+            if (!sel.ok) {
+              let m = 'HTTP ' + sel.status;
+              try { const sj = await sel.json(); m = sj.error || m; } catch (_) {}
+              alert('Could not confirm preview: ' + m);
+              return;
+            }
+            // Re-fetch with preview slot now set
+            resp = await fetch(url, { headers: { Authorization: 'Bearer ' + tok2 } });
+          }
+        }
         if (!resp.ok) {
           let msg = 'HTTP ' + resp.status;
-          try { const j = await resp.json(); msg = j.error || msg; } catch (_) {}
-          // PATCH93: surface backend's actual error message rather than canned text
+          let json = null;
+          try { json = await resp.json(); msg = json.error || msg; } catch (_) {}
           if (resp.status === 401) {
             alert('Session expired. Please log in again.');
+          } else if (resp.status === 403 && json && json._previewAlreadyUsed) {
+            alert(json.error);
           } else if (resp.status === 403) {
             alert('Coach or Consultant tier required to download study guides.');
           } else {

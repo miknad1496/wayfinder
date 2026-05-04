@@ -13,6 +13,8 @@
 
 import { Router } from 'express';
 import https from 'https';  // PATCH94: ESM has no require()
+import { generatePreview } from '../services/study-guide-preview.js'; // PATCH97
+import { findUserByToken, updateUserPlan } from '../services/auth.js'; // PATCH97
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -287,34 +289,69 @@ router.get('/score/:id', async (req, res) => {
 
 // ─── REVAMP V2: AP COACH FRONTEND PATCH70 — Study guide download endpoints ───
 const GUIDES_DIR = join(__dirname, '..', 'data', 'ap-study-guides');
+
+// PATCH97: pick the best available local file (PDF preferred, DOCX fallback)
+async function _bestLocalGuideFile(cfg) {
+  const pdfPath = cfg.pdfFile ? join(GUIDES_DIR, cfg.pdfFile) : null;
+  const docxPath = cfg.file ? join(GUIDES_DIR, cfg.file) : null;
+  if (pdfPath) {
+    try { await fs.access(pdfPath); return { path: pdfPath, ext: 'pdf', filename: cfg.pdfFile }; } catch {}
+  }
+  if (docxPath) {
+    try { await fs.access(docxPath); return { path: docxPath, ext: 'docx', filename: cfg.file }; } catch {}
+  }
+  return null;
+}
+
+// PATCH97: GitHub-raw recursive fetch (mirrors the helper used in the
+// download route so the preview path also has a remote fallback).
+function _ghFetchBuffer(url, depth) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (resp) => {
+      if ((resp.statusCode === 301 || resp.statusCode === 302 || resp.statusCode === 307) && resp.headers.location) {
+        if (depth > 5) { resp.resume(); return reject(new Error('too many redirects')); }
+        resp.resume();
+        return _ghFetchBuffer(resp.headers.location, depth + 1).then(resolve, reject);
+      }
+      if (resp.statusCode !== 200) { resp.resume(); return reject(new Error('GitHub raw HTTP ' + resp.statusCode)); }
+      const chunks = [];
+      resp.on('data', (c) => chunks.push(c));
+      resp.on('end', () => resolve(Buffer.concat(chunks)));
+      resp.on('error', reject);
+    });
+    req.on('error', reject);
+    req.setTimeout(20000, () => { req.destroy(new Error('GitHub raw timeout')); });
+  });
+}
+
 const EXAM_TO_GUIDE = { // REVAMP V2: AP COACH LAYOUT + GUIDES PATCH78 EXAM_TO_GUIDE
-  'ap-art-history': { file: 'AP_Art_History_Universal_Study_Guide.docx', label: 'AP Art History' },
-  'ap-biology': { file: 'AP_Biology_Universal_Study_Guide.docx', label: 'AP Biology' },
-  'ap-calc-ab': { file: 'AP_Calculus_AB_Universal_Study_Guide.docx', label: 'AP Calculus AB' },
-  'ap-calc-bc': { file: 'AP_Calculus_BC_Universal_Study_Guide.docx', label: 'AP Calculus BC' },
-  'ap-chemistry': { file: 'AP_Chemistry_Universal_Study_Guide.docx', label: 'AP Chemistry' },
-  'ap-csa': { file: 'AP_Computer_Science_A_Universal_Study_Guide.docx', label: 'AP Computer Science A' },
-  'ap-csp': { file: 'AP_Computer_Science_Principles_Universal_Study_Guide.docx', label: 'AP Computer Science Principles' },
-  'ap-english-lang': { file: 'AP_English_Lang_Universal_Study_Guide.docx', label: 'AP English Language' },
-  'ap-english-lit': { file: 'AP_English_Literature_Universal_Study_Guide.docx', label: 'AP English Literature' },
-  'ap-environmental-science': { file: 'AP_Environmental_Science_Universal_Study_Guide.docx', label: 'AP Environmental Science' },
-  'ap-european-history': { file: 'AP_European_History_Universal_Study_Guide.docx', label: 'AP European History' },
-  'ap-french': { file: 'AP_French_Language_Culture_Universal_Study_Guide.docx', label: 'AP French Language & Culture' },
-  'ap-government': { file: 'AP_Government_Universal_Study_Guide.docx', label: 'AP Government' },
-  'ap-human-geography': { file: 'AP_Human_Geography_Universal_Study_Guide.docx', label: 'AP Human Geography' },
-  'ap-macroeconomics': { file: 'AP_Macroeconomics_Universal_Study_Guide.docx', label: 'AP Macroeconomics' },
-  'ap-microeconomics': { file: 'AP_Microeconomics_Universal_Study_Guide.docx', label: 'AP Microeconomics' },
-  'ap-music-theory': { file: 'AP_Music_Theory_Universal_Study_Guide.docx', label: 'AP Music Theory' },
-  'ap-physics-1': { file: 'AP_Physics_1_Universal_Study_Guide.docx', label: 'AP Physics 1' },
-  'ap-physics-2': { file: 'AP_Physics_2_Universal_Study_Guide.docx', label: 'AP Physics 2' },
-  'ap-physics-c-em': { file: 'AP_Physics_C_EM_Universal_Study_Guide.docx', label: 'AP Physics C: E&M' },
-  'ap-physics-c-mech': { file: 'AP_Physics_C_Mechanics_Universal_Study_Guide.docx', label: 'AP Physics C: Mechanics' },
-  'ap-precalculus': { file: 'AP_Precalculus_Universal_Study_Guide.docx', label: 'AP Precalculus' },
-  'ap-psychology': { file: 'AP_Psychology_Universal_Study_Guide.docx', label: 'AP Psychology' },
-  'ap-spanish': { file: 'AP_Spanish_Language_Culture_Universal_Study_Guide.docx', label: 'AP Spanish Language & Culture' },
-  'ap-statistics': { file: 'AP_Statistics_Universal_Study_Guide.docx', label: 'AP Statistics' },
-  'ap-us-history': { file: 'AP_US_History_Universal_Study_Guide.docx', label: 'AP US History' },
-  'ap-world-history': { file: 'AP_World_History_Universal_Study_Guide.docx', label: 'AP World History' },
+  'ap-art-history': { file: 'AP_Art_History_Universal_Study_Guide.docx', pdfFile: 'AP_Art_History_Universal_Study_Guide.pdf', label: 'AP Art History' },
+  'ap-biology': { file: 'AP_Biology_Universal_Study_Guide.docx', pdfFile: 'AP_Biology_Universal_Study_Guide.pdf', label: 'AP Biology' },
+  'ap-calc-ab': { file: 'AP_Calculus_AB_Universal_Study_Guide.docx', pdfFile: 'AP_Calculus_AB_Universal_Study_Guide.pdf', label: 'AP Calculus AB' },
+  'ap-calc-bc': { file: 'AP_Calculus_BC_Universal_Study_Guide.docx', pdfFile: 'AP_Calculus_BC_Universal_Study_Guide.pdf', label: 'AP Calculus BC' },
+  'ap-chemistry': { file: 'AP_Chemistry_Universal_Study_Guide.docx', pdfFile: 'AP_Chemistry_Universal_Study_Guide.pdf', label: 'AP Chemistry' },
+  'ap-csa': { file: 'AP_Computer_Science_A_Universal_Study_Guide.docx', pdfFile: 'AP_Computer_Science_A_Universal_Study_Guide.pdf', label: 'AP Computer Science A' },
+  'ap-csp': { file: 'AP_Computer_Science_Principles_Universal_Study_Guide.docx', pdfFile: 'AP_Computer_Science_Principles_Universal_Study_Guide.pdf', label: 'AP Computer Science Principles' },
+  'ap-english-lang': { file: 'AP_English_Lang_Universal_Study_Guide.docx', pdfFile: 'AP_English_Lang_Universal_Study_Guide.pdf', label: 'AP English Language' },
+  'ap-english-lit': { file: 'AP_English_Literature_Universal_Study_Guide.docx', pdfFile: 'AP_English_Literature_Universal_Study_Guide.pdf', label: 'AP English Literature' },
+  'ap-environmental-science': { file: 'AP_Environmental_Science_Universal_Study_Guide.docx', pdfFile: 'AP_Environmental_Science_Universal_Study_Guide.pdf', label: 'AP Environmental Science' },
+  'ap-european-history': { file: 'AP_European_History_Universal_Study_Guide.docx', pdfFile: 'AP_European_History_Universal_Study_Guide.pdf', label: 'AP European History' },
+  'ap-french': { file: 'AP_French_Language_Culture_Universal_Study_Guide.docx', pdfFile: 'AP_French_Language_Culture_Universal_Study_Guide.pdf', label: 'AP French Language & Culture' },
+  'ap-government': { file: 'AP_Government_Universal_Study_Guide.docx', pdfFile: 'AP_Government_Universal_Study_Guide.pdf', label: 'AP Government' },
+  'ap-human-geography': { file: 'AP_Human_Geography_Universal_Study_Guide.docx', pdfFile: 'AP_Human_Geography_Universal_Study_Guide.pdf', label: 'AP Human Geography' },
+  'ap-macroeconomics': { file: 'AP_Macroeconomics_Universal_Study_Guide.docx', pdfFile: 'AP_Macroeconomics_Universal_Study_Guide.pdf', label: 'AP Macroeconomics' },
+  'ap-microeconomics': { file: 'AP_Microeconomics_Universal_Study_Guide.docx', pdfFile: 'AP_Microeconomics_Universal_Study_Guide.pdf', label: 'AP Microeconomics' },
+  'ap-music-theory': { file: 'AP_Music_Theory_Universal_Study_Guide.docx', pdfFile: 'AP_Music_Theory_Universal_Study_Guide.pdf', label: 'AP Music Theory' },
+  'ap-physics-1': { file: 'AP_Physics_1_Universal_Study_Guide.docx', pdfFile: 'AP_Physics_1_Universal_Study_Guide.pdf', label: 'AP Physics 1' },
+  'ap-physics-2': { file: 'AP_Physics_2_Universal_Study_Guide.docx', pdfFile: 'AP_Physics_2_Universal_Study_Guide.pdf', label: 'AP Physics 2' },
+  'ap-physics-c-em': { file: 'AP_Physics_C_EM_Universal_Study_Guide.docx', pdfFile: 'AP_Physics_C_EM_Universal_Study_Guide.pdf', label: 'AP Physics C: E&M' },
+  'ap-physics-c-mech': { file: 'AP_Physics_C_Mechanics_Universal_Study_Guide.docx', pdfFile: 'AP_Physics_C_Mechanics_Universal_Study_Guide.pdf', label: 'AP Physics C: Mechanics' },
+  'ap-precalculus': { file: 'AP_Precalculus_Universal_Study_Guide.docx', pdfFile: 'AP_Precalculus_Universal_Study_Guide.pdf', label: 'AP Precalculus' },
+  'ap-psychology': { file: 'AP_Psychology_Universal_Study_Guide.docx', pdfFile: 'AP_Psychology_Universal_Study_Guide.pdf', label: 'AP Psychology' },
+  'ap-spanish': { file: 'AP_Spanish_Language_Culture_Universal_Study_Guide.docx', pdfFile: 'AP_Spanish_Language_Culture_Universal_Study_Guide.pdf', label: 'AP Spanish Language & Culture' },
+  'ap-statistics': { file: 'AP_Statistics_Universal_Study_Guide.docx', pdfFile: 'AP_Statistics_Universal_Study_Guide.pdf', label: 'AP Statistics' },
+  'ap-us-history': { file: 'AP_US_History_Universal_Study_Guide.docx', pdfFile: 'AP_US_History_Universal_Study_Guide.pdf', label: 'AP US History' },
+  'ap-world-history': { file: 'AP_World_History_Universal_Study_Guide.docx', pdfFile: 'AP_World_History_Universal_Study_Guide.pdf', label: 'AP World History' },
 };
 
 // GET /api/ap-coach/guides — list available study guides
@@ -348,73 +385,153 @@ router.get('/guides', async (req, res) => {
 // GET /api/ap-coach/guide/:exam — download a study guide
 // Accepts token via header OR ?token= query (so users can click download links directly)
 router.get('/guide/:exam', async (req, res) => {
+  // PATCH97: Free tier downloads HALF of ONE study guide of their choosing.
+  //          Paid tiers (or admin/VIP) download the full file.
+  //          PDF preferred over DOCX when both committed locally.
   try {
     const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token;
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
-    if (!canAccess(user, 'ap_coach')) {
-      return res.status(403).json({ error: 'AP Coach add-on required' });
-    }
+
     const exam = req.params.exam;
     const cfg = EXAM_TO_GUIDE[exam];
     if (!cfg) return res.status(404).json({ error: 'Unsupported exam' });
-    const filePath = join(GUIDES_DIR, cfg.file);
-    let useLocal = false;
-    try {
-      await fs.access(filePath);
-      useLocal = true;
-    } catch {
-      useLocal = false;
-    }
-    if (useLocal) {
-      res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-      res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
-      return res.sendFile(filePath);
-    }
-    // PATCH92: GitHub-raw fallback - the docx files are committed in git
-    // but may not be present on the Render disk (binary assets sometimes
-    // miss the deploy). Stream from raw.githubusercontent.com instead.
-    const ghRawUrl = `https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/${encodeURIComponent(cfg.file)}`;
-    // PATCH93: recursive redirect handler — old code resolved a Promise<IncomingMessage>
-    // and tried to pipe() that Promise to res, which silently broke on every redirect.
-    // GitHub raw redirects to objects.githubusercontent.com so this hit every download.
-    function _ghFetch(url, depth) {
 
-      return new Promise((resolve, reject) => {
-        const r = https.get(url, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (resp) => {
-          if ((resp.statusCode === 301 || resp.statusCode === 302 || resp.statusCode === 307) && resp.headers.location) {
-            if (depth > 5) {
-              resp.resume();
-              return reject(new Error('GitHub raw too many redirects'));
-            }
-            resp.resume();
-            return _ghFetch(resp.headers.location, depth + 1).then(resolve, reject);
-          }
-          if (resp.statusCode !== 200) {
-            resp.resume();
-            return reject(new Error(`GitHub raw HTTP ${resp.statusCode}`));
-          }
-          resolve(resp);
+    // Resolve effective tier (admin/VIP bypass, paid tier flag)
+    const fullUser = await findUserByToken(token).catch(() => null);
+    const planRaw = (fullUser && fullUser.plan) || (user && user.plan) || 'free';
+    const isPaidOrPrivileged = (
+      ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(String(planRaw).toLowerCase())
+      || canAccess(user, 'ap_coach')
+    );
+
+    // Free tier: must have selected this exam as their preview slot
+    if (!isPaidOrPrivileged) {
+      const prev = (fullUser && fullUser.previewedExam) || null;
+      if (!prev) {
+        // First click: tell the frontend to ask for confirmation
+        return res.status(402).json({
+          _requiresPreviewSelection: true,
+          error: 'You can preview half of one guide for free. Confirm to use your free preview on ' + cfg.label + '.',
+          exam,
+          label: cfg.label,
         });
-        r.on('error', reject);
-        r.setTimeout(20000, () => { r.destroy(new Error('GitHub raw timeout')); });
-      });
+      }
+      if (prev !== exam) {
+        return res.status(403).json({
+          _previewAlreadyUsed: true,
+          previewedExam: prev,
+          error: 'You already used your free preview on ' + (EXAM_TO_GUIDE[prev]?.label || prev) + '. Upgrade to Coach or Consultant for full access to all 27 guides.',
+        });
+      }
+      // Generate preview and stream
+      let buf, ext;
+      const local = await _bestLocalGuideFile(cfg);
+      if (local) {
+        const raw = await fs.readFile(local.path);
+        const out = await generatePreview(raw, local.ext);
+        buf = out.buf;
+        ext = out.extension;
+      } else {
+        // Local missing — fetch from GitHub (PDF first, fall back to DOCX)
+        let raw = null;
+        let triedExt = 'pdf';
+        if (cfg.pdfFile) {
+          try {
+            raw = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.pdfFile), 0);
+          } catch {}
+        }
+        if (!raw && cfg.file) {
+          triedExt = 'docx';
+          try {
+            raw = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.file), 0);
+          } catch {}
+        }
+        if (!raw) {
+          return res.status(404).json({ error: 'Study guide currently unavailable. Email danielyungkim@hotmail.com.' });
+        }
+        const out = await generatePreview(raw, triedExt);
+        buf = out.buf;
+        ext = out.extension;
+      }
+      const previewName = (cfg.label || exam).replace(/[^A-Za-z0-9]+/g, '_') + '_FREE_PREVIEW.' + ext;
+      res.setHeader('Content-Type', ext === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+      res.setHeader('Content-Disposition', 'attachment; filename="' + previewName + '"');
+      return res.send(buf);
     }
-    try {
-      const ghRes = await _ghFetch(ghRawUrl, 0);
-      res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-      res.setHeader('Content-Disposition', `attachment; filename="${cfg.file}"`);
-      ghRes.pipe(res);
-      return;
-    } catch (ghErr) {
-      console.error('AP Coach GitHub-raw fallback failed for', exam, ':', ghErr.message);
-      return res.status(404).json({ error: `Study guide currently unavailable (${ghErr.message}). Email danielyungkim@hotmail.com.` });
+
+    // Paid path: prefer local PDF > local DOCX > GitHub raw (PDF, then DOCX)
+    const local = await _bestLocalGuideFile(cfg);
+    if (local) {
+      res.setHeader('Content-Type', local.ext === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+      res.setHeader('Content-Disposition', 'attachment; filename="' + local.filename + '"');
+      return res.sendFile(local.path);
     }
+    // GitHub fallback
+    if (cfg.pdfFile) {
+      try {
+        const buf = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.pdfFile), 0);
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename="' + cfg.pdfFile + '"');
+        return res.send(buf);
+      } catch {}
+    }
+    if (cfg.file) {
+      try {
+        const buf = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.file), 0);
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+        res.setHeader('Content-Disposition', 'attachment; filename="' + cfg.file + '"');
+        return res.send(buf);
+      } catch {}
+    }
+    return res.status(404).json({ error: 'Study guide currently unavailable. Email danielyungkim@hotmail.com.' });
   } catch (err) {
     console.error('AP Coach guide download error:', err);
-    res.status(500).json({ error: 'Internal server error' });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+// PATCH97: Free-tier "use my one preview slot" confirmation endpoint.
+// POST body: { exam: 'ap-chemistry' } -> stores user.previewedExam.
+// Idempotent: if already set to a different exam, returns 409 with the locked-in choice.
+router.post('/guide/preview-select', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token;
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+    const exam = (req.body && req.body.exam) || '';
+    const cfg = EXAM_TO_GUIDE[exam];
+    if (!cfg) return res.status(400).json({ error: 'Unsupported exam' });
+
+    const fullUser = await findUserByToken(token);
+    if (!fullUser) return res.status(404).json({ error: 'User not found' });
+
+    const planRaw = String(fullUser.plan || 'free').toLowerCase();
+    const isPaid = ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(planRaw)
+      || canAccess(user, 'ap_coach');
+    if (isPaid) {
+      // Paid users don't need preview slots — return success silently
+      return res.json({ ok: true, _alreadyFullAccess: true });
+    }
+
+    if (fullUser.previewedExam && fullUser.previewedExam !== exam) {
+      return res.status(409).json({
+        error: 'You already used your free preview on ' + (EXAM_TO_GUIDE[fullUser.previewedExam]?.label || fullUser.previewedExam) + '. Upgrade for full access.',
+        previewedExam: fullUser.previewedExam,
+      });
+    }
+    if (!fullUser.previewedExam) {
+      await updateUserPlan(token, { previewedExam: exam });
+    }
+    return res.json({ ok: true, previewedExam: exam });
+  } catch (err) {
+    console.error('AP Coach preview-select error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+// ─── REVAMP V2: AP COACH FULL MODULE PATCH81
 
 
 // ─── REVAMP V2: AP COACH FULL MODULE PATCH81 routes — new endpoints for full AP Coach module ───
