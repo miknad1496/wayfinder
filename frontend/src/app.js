@@ -8161,7 +8161,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry'];
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics']; // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
