@@ -1,17 +1,32 @@
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <!-- Outer ring — solid navy, clean edge -->
-  <circle cx="32" cy="32" r="30" fill="#1e3a8a"/>
-  <!-- Inner face — pure white, flat -->
-  <circle cx="32" cy="32" r="26" fill="#ffffff"/>
-  <!-- Cardinal tick marks — bold black, 4 directions -->
-  <rect x="31" y="9" width="2" height="6" rx="1" fill="#0f172a"/>
-  <rect x="31" y="49" width="2" height="6" rx="1" fill="#0f172a"/>
-  <rect x="9" y="31" width="6" height="2" rx="1" fill="#0f172a"/>
-  <rect x="49" y="31" width="6" height="2" rx="1" fill="#0f172a"/>
-  <!-- North needle — solid blue triangle, pointing up -->
-  <path d="M 32 14 L 39 34 L 32 30 L 25 34 Z" fill="#2563eb"/>
-  <!-- South needle — solid gray triangle, pointing down -->
-  <path d="M 32 50 L 25 30 L 32 34 L 39 30 Z" fill="#94a3b8"/>
-  <!-- Center dot — solid navy -->
-  <circle cx="32" cy="32" r="3" fill="#1e3a8a"/>
+  <!--
+    Wayfinder logo — Patch 91 refresh
+    Clean, balanced compass mark. Two tones (navy + cool grey),
+    geometric proportions, no gradients/shadows, scales cleanly to 16px favicon.
+  -->
+  <!-- Outer disc — solid navy, single color, premium -->
+  <circle cx="32" cy="32" r="29" fill="#1e3a8a"/>
+  <!-- Inner face — bright white face for contrast -->
+  <circle cx="32" cy="32" r="24" fill="#ffffff"/>
+  <!-- Subtle inner ring (creates the bezel feel without using gradients) -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Cardinal markers — short, balanced, only N + E + S + W (no diagonals so it stays clean) -->
+  <rect x="31" y="11" width="2" height="5" rx="1" fill="#0f172a"/>
+  <rect x="31" y="48" width="2" height="5" rx="1" fill="#0f172a"/>
+  <rect x="48" y="31" width="5" height="2" rx="1" fill="#0f172a"/>
+  <rect x="11" y="31" width="5" height="2" rx="1" fill="#0f172a"/>
+  <!--
+    Compass needle — single integrated diamond shape rather than two
+    floating triangles. The two halves share their center edge so the
+    needle reads as one geometric form.
+  -->
+  <!-- North half — solid blue, broader so it reads as the dominant pointer -->
+  <path d="M 32 14 L 36 32 L 32 32 Z" fill="#2563eb"/>
+  <path d="M 32 14 L 28 32 L 32 32 Z" fill="#3b82f6"/>
+  <!-- South half — cool slate, secondary -->
+  <path d="M 32 50 L 28 32 L 32 32 Z" fill="#64748b"/>
+  <path d="M 32 50 L 36 32 L 32 32 Z" fill="#94a3b8"/>
+  <!-- Center pivot — small, deliberate -->
+  <circle cx="32" cy="32" r="2.4" fill="#1e3a8a"/>
+  <circle cx="32" cy="32" r="1" fill="#ffffff"/>
 </svg>

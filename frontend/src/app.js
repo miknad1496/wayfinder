@@ -7953,7 +7953,7 @@ async function loadApGuides() {
     { exam: 'ap-english-lit', label: 'AP English Literature', size: 22000 },
     { exam: 'ap-environmental-science', label: 'AP Environmental Science', size: 22000 },
     { exam: 'ap-european-history', label: 'AP European History', size: 23000 },
-    { exam: 'ap-french-language', label: 'AP French Language & Culture', size: 21000 },
+    { exam: 'ap-french', label: 'AP French Language & Culture', size: 21000 },
     { exam: 'ap-government', label: 'AP US Government & Politics', size: 23000 },
     { exam: 'ap-human-geography', label: 'AP Human Geography', size: 22000 },
     { exam: 'ap-macroeconomics', label: 'AP Macroeconomics', size: 21000 },
@@ -7965,7 +7965,7 @@ async function loadApGuides() {
     { exam: 'ap-physics-c-mech', label: 'AP Physics C: Mechanics', size: 22000 },
     { exam: 'ap-precalculus', label: 'AP Precalculus', size: 22000 },
     { exam: 'ap-psychology', label: 'AP Psychology', size: 21000 },
-    { exam: 'ap-spanish-language', label: 'AP Spanish Language & Culture', size: 21000 },
+    { exam: 'ap-spanish', label: 'AP Spanish Language & Culture', size: 21000 },
     { exam: 'ap-statistics', label: 'AP Statistics', size: 22000 },
     { exam: 'ap-us-history', label: 'AP US History (APUSH)', size: 24000 },
     { exam: 'ap-world-history', label: 'AP World History', size: 23000 },
@@ -7990,14 +7990,51 @@ async function loadApGuides() {
   list.style.gap = '12px';
   if (countEl) countEl.textContent = String(guides.length);
   const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
-  list.innerHTML = guides.map(function(g) {
-    const url = API_BASE + '/ap-coach/guide/' + g.exam + (tok ? '?token=' + encodeURIComponent(tok) : '');
+  list.innerHTML = guides.map(function(g, i) {
     const sizeKb = g.size ? (Math.round(g.size / 1024)) + ' KB · ' : '';
-    return '<a class="ap-guide-card" href="' + url + '" download style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; text-decoration:none; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=&quot;#2563eb&quot;; this.style.background=&quot;#eff6ff&quot;;" onmouseout="this.style.borderColor=&quot;#e2e8f0&quot;; this.style.background=&quot;#f8fafc&quot;;">' +
+    return '<div class="ap-guide-card" data-exam="' + g.exam + '" data-label="' + g.label.replace(/"/g, '&quot;') + '" style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
       '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
       '<div style="font-size:12px; color:#64748b;">' + sizeKb + 'docx · download</div>' +
-      '</a>';
+      '</div>';
   }).join('');
+  // PATCH91: click handler that fetches first so we can surface a real error
+  list.querySelectorAll('.ap-guide-card').forEach(function(card) {
+    card.addEventListener('click', async function() {
+      const exam = card.getAttribute('data-exam');
+      const label = card.getAttribute('data-label');
+      const tok2 = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
+      if (!tok2) { alert('Please log in again to download study guides.'); return; }
+      const url = API_BASE + '/ap-coach/guide/' + exam + '?token=' + encodeURIComponent(tok2);
+      try {
+        const resp = await fetch(url, { headers: { Authorization: 'Bearer ' + tok2 } });
+        if (!resp.ok) {
+          let msg = 'HTTP ' + resp.status;
+          try { const j = await resp.json(); msg = j.error || msg; } catch (_) {}
+          if (resp.status === 404) {
+            alert('Study guide for ' + label + ' has not deployed to the server yet. Email danielyungkim@hotmail.com if this persists.');
+          } else if (resp.status === 401) {
+            alert('Session expired. Please log in again.');
+          } else if (resp.status === 403) {
+            alert('Coach or Consultant tier required to download study guides.');
+          } else {
+            alert('Could not download ' + label + ': ' + msg);
+          }
+          return;
+        }
+        const blob = await resp.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = label.replace(/[^A-Za-z0-9]/g, '_') + '_Universal_Study_Guide.docx';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() { URL.revokeObjectURL(blobUrl); }, 5000);
+      } catch (e) {
+        alert('Download error: ' + e.message);
+      }
+    });
+  });
 }
 
 
@@ -8200,7 +8237,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics']; // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics']; // PATCH91: + ap-calc-bc + ap-microeconomics // PATCH88: + ap-biology + ap-macroeconomics // PATCH84: + ap-government (5 units) // PATCH83: ap-stats brain files dropped
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
