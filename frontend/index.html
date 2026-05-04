@@ -3310,6 +3310,154 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(watch, 2000);
 })();
 </script>
+
+<!-- PATCH122: Korean error messages + warming UI + mobile responsive -->
+<style id="patch122-ko-ux">
+@media (max-width: 600px) {
+  /* Korean entry banner full-width on mobile */
+  #koreanEntryBanner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 14px; }
+  #koreanEntryBanner > div { font-size: 12px !important; }
+  #koreanEntryBtn { width: 100%; padding: 9px 14px !important; font-size: 13px !important; }
+  /* Module Korean banners — readable on small screens */
+  .wf-ko-banner { font-size: 12px !important; padding: 8px 11px !important; }
+  /* Language pill — make sure it doesn't overlap chat input on mobile */
+  #wfLangPill { top: 56px !important; right: 8px !important; font-size: 10px !important; }
+}
+
+/* Warming UI overlay for slow first Korean queries */
+#wfKoWarmingNotice {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 16px;
+  background: linear-gradient(135deg,#fef3c7 0%, #fde68a 100%);
+  border: 1px solid #facc15;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #854d0e;
+  max-width: 320px;
+  z-index: 9000;
+  box-shadow: 0 6px 18px rgba(202,138,4,0.18);
+  line-height: 1.5;
+}
+#wfKoWarmingNotice strong { color: #713f12; }
+#wfKoWarmingNotice .wf-ko-warming-pulse {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: #f59e0b;
+  border-radius: 50%;
+  animation: pulse 1.4s infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.6; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+</style>
+
+<div id="wfKoWarmingNotice">
+  <span class="wf-ko-warming-pulse"></span>
+  <strong>Wayfinder 어드바이저 응답 준비 중</strong><br>
+  보통 5-15초 소요됩니다. 한국어 답변을 위해 Claude API에 연결하고 있습니다. 잠시만 기다려 주세요.
+</div>
+
+<script id="patch122-ko-warming">
+(function() {
+  if (typeof document === 'undefined') return;
+  // Hook into chat send to show warming notice for Korean queries when latency > 3s
+  function init() {
+    const sendBtn = document.getElementById('sendBtn');
+    if (!sendBtn || sendBtn._wfKoWarmingHooked) return;
+    sendBtn._wfKoWarmingHooked = true;
+    sendBtn.addEventListener('click', function() {
+      if (window._wfLang !== 'ko') return;
+      const notice = document.getElementById('wfKoWarmingNotice');
+      if (!notice) return;
+      // Show after 3s if response not yet received
+      const showTimer = setTimeout(function() {
+        notice.style.display = 'block';
+      }, 3000);
+      // Hide on assistant message arrival or input clear
+      const hide = function() {
+        clearTimeout(showTimer);
+        notice.style.display = 'none';
+      };
+      // Watch for new assistant messages
+      const obs = new MutationObserver(function(mutations) {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.classList && (n.classList.contains('message-assistant') || n.querySelector?.('.message-assistant'))) {
+              hide();
+              obs.disconnect();
+              return;
+            }
+          }
+        }
+      });
+      const messagesEl = document.querySelector('.messages, #messages, [class*="messages"]');
+      if (messagesEl) obs.observe(messagesEl, { childList: true, subtree: true });
+      // Safety timeout — hide after 30s no matter what
+      setTimeout(hide, 30000);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  setInterval(init, 1500);
+})();
+
+// PATCH122: Korean error messages — translate alert() calls when 한국어 active
+(function() {
+  if (typeof window === 'undefined') return;
+  const KO_ERRORS = {
+    'Network error': '네트워크 오류 — 인터넷 연결을 확인하세요',
+    'Server error': '서버 오류 — 잠시 후 다시 시도하세요',
+    'Authentication failed': '인증 실패 — 다시 로그인하세요',
+    'Session expired': '세션 만료 — 다시 로그인하세요',
+    'Please log in': '로그인이 필요합니다',
+    'Internal server error': '서버 내부 오류 — 잠시 후 다시 시도하세요',
+    'Rate limit exceeded': '너무 많은 요청 — 잠시 후 다시 시도하세요',
+    'Could not download': '다운로드 실패',
+    'Checkout error': '결제 오류',
+    'Failed to load': '로딩 실패',
+    'Could not get an answer': '답변을 가져올 수 없습니다',
+  };
+  const origAlert = window.alert;
+  window.alert = function(msg) {
+    if (window._wfLang === 'ko' && typeof msg === 'string') {
+      for (const [en, ko] of Object.entries(KO_ERRORS)) {
+        if (msg.startsWith(en) || msg.indexOf(en) === 0) {
+          return origAlert(ko + (msg.length > en.length ? ': ' + msg.slice(en.length).replace(/^[\s—-]+/, '') : ''));
+        }
+      }
+    }
+    return origAlert(msg);
+  };
+})();
+</script>
+
+<script id="patch122-ko-footer-links">
+(function() {
+  if (typeof document === 'undefined') return;
+  function localizeFooter() {
+    if (window._wfLang !== 'ko') return;
+    const footer = document.getElementById('wfFooter');
+    if (!footer) return;
+    const links = footer.querySelectorAll('a');
+    links.forEach(function(a) {
+      const href = a.getAttribute('href') || '';
+      if (href === '/privacy.html') { a.textContent = '개인정보 처리방침'; a.setAttribute('href', '/privacy-ko.html'); }
+      else if (href === '/terms.html') { a.textContent = '이용약관'; a.setAttribute('href', '/terms-ko.html'); }
+      else if (href === '/forgot-password.html') { a.textContent = '비밀번호 찾기'; }
+      else if (href === '#' || a.id === 'footerSettingsLink') { a.textContent = '설정'; }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', localizeFooter);
+  else localizeFooter();
+  setInterval(localizeFooter, 2000);
+})();
+</script>
 </body>
 
 
@@ -3362,6 +3510,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!pill) return;
     let cur = 'en';
     try { cur = localStorage.getItem('wf_lang') || 'en'; } catch (_) {}
+    // PATCH122: ?lang=ko URL param overrides stored preference
+    try {
+      const url = new URL(window.location.href);
+      const langParam = url.searchParams.get('lang');
+      if (langParam === 'ko' || langParam === 'en' || langParam === 'ja' || langParam === 'zh') {
+        cur = langParam;
+        localStorage.setItem('wf_lang', cur);
+      }
+    } catch (_) {}
     function apply(lang) {
       cur = lang;
       try { localStorage.setItem('wf_lang', lang); } catch (_) {}
