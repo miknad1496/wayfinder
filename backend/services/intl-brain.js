@@ -23,12 +23,20 @@ async function loadAll() {
       if (!c.isDirectory() || c.name.startsWith('_')) continue;
       const country = c.name;
       _cache[country] = {};
-      const files = await fs.readdir(join(INTL_DIR, country));
-      for (const f of files) {
-        if (!f.endsWith('.md')) continue;
-        const slug = f.replace(/\.md$/, '');
-        _cache[country][slug] = await fs.readFile(join(INTL_DIR, country, f), 'utf8');
+      // PATCH115: recursive scan — sub-folders (universities/, high-schools/, strategies/) included.
+      async function walk(dir, prefix) {
+        const entries = await fs.readdir(dir, { withFileTypes: true });
+        for (const e of entries) {
+          const full = join(dir, e.name);
+          if (e.isDirectory()) {
+            await walk(full, prefix + e.name + '/');
+          } else if (e.isFile() && e.name.endsWith('.md')) {
+            const slug = prefix + e.name.replace(/\.md$/, '');
+            _cache[country][slug] = await fs.readFile(full, 'utf8');
+          }
+        }
       }
+      await walk(join(INTL_DIR, country), '');
     }
     console.log('[intl-brain] loaded', Object.keys(_cache).length, 'countries:', Object.keys(_cache).join(','));
   } catch (err) {
