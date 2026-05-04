@@ -646,6 +646,14 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
   function applyKoreanLabels() {
     if (typeof window === 'undefined' || window._wfLang !== 'ko') return;
     document.body.classList.add('wf-ko-mode');
+    // PATCH128 DIAG: surface localizer activity on body attrs + console so we
+    // can tell whether the function is even firing (vs. just selectors not
+    // matching). Read attrs in DevTools Inspector — they update each tick.
+    var _diagTick = (parseInt(document.body.getAttribute('data-ko-tick') || '0', 10) || 0) + 1;
+    document.body.setAttribute('data-ko-tick', String(_diagTick));
+    var _diagTranslated = 0;
+    var _diagSkipped = 0;
+    var _diagTotal = 0;
     // Walk the most relevant elements only — avoid mutating chat content
     const targets = document.querySelectorAll(
       // Auth modals
@@ -703,15 +711,34 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       '#scholarshipsHeroStrip div'
     );
     // PATCH126 HOTFIX: previous line closed querySelectorAll() — patch 125 was missing this )
+    _diagTotal = targets.length;
     targets.forEach(function(el) {
       // Replace direct text content if it matches a Korean key
       if (el.children.length === 0) {
         const t = (el.textContent || '').trim();
-        if (KO[t]) el.textContent = KO[t];
+        if (KO[t]) {
+          el.textContent = KO[t];
+          _diagTranslated++;
+        } else if (t) {
+          _diagSkipped++;
+        }
       }
       // Placeholder
       if (el.placeholder && KO[el.placeholder]) el.placeholder = KO[el.placeholder];
     });
+    // PATCH128 DIAG: dump per-tick stats to body attrs + a single console.warn
+    document.body.setAttribute('data-ko-targets', String(_diagTotal));
+    document.body.setAttribute('data-ko-translated', String(_diagTranslated));
+    document.body.setAttribute('data-ko-skipped', String(_diagSkipped));
+    document.body.setAttribute('data-ko-lang', String(window._wfLang || 'undef'));
+    if (_diagTick === 1 || _diagTick % 5 === 0) {
+      try {
+        console.warn('[ko-localizer]', {
+          tick: _diagTick, lang: window._wfLang,
+          targets: _diagTotal, translated: _diagTranslated, skippedEmpty: _diagSkipped
+        });
+      } catch (_) {}
+    }
   }
   function unapplyKoreanLabels() {
     document.body.classList.remove('wf-ko-mode');
