@@ -134,8 +134,32 @@ function _patch96_summarizePriorTurns(history) {
   return block;
 }
 
-// PATCH96: Closer-with-action-items directive
-const _patch96_actionItemsClose = '\n\n___________________________________________\nCLOSE-OF-RESPONSE DIRECTIVE\n___________________________________________\nWhen the user is in execution mode (asked a strategic question, school list, ED/REA decision, chance-me, FRQ prep), END your response with 1-2 concrete next steps for THIS WEEK they can take immediately. Format as a tight bulleted **This week:** list - 1-2 items, each starting with an action verb, each tied to a specific deliverable (e.g. "Finish the Why X school essay rough draft" or "Run the Net Price Calculator on Cornell + Caltech and email me the numbers"). Skip the closer for: greetings, simple clarifications, factual lookups, or when 1-2 actionable steps are not obvious.\n___________________________________________';
+// PATCH96: Closer-with-action-items directive  +  PATCH105: premise-check guard
+const _patch96_actionItemsClose = [
+  '',
+  '',
+  '___________________________________________',
+  'PREMISE-CHECK GUARD — read this before answering ANY strategy question naming a school + an application round',
+  '___________________________________________',
+  'Before strategizing about ED, REA, EA, SCEA, or any "early round" at a named school, FIRST verify the school actually offers that round. If the user asks about a round the school does not offer, CORRECT them in the FIRST sentence and pivot to what the school actually offers. Do not roll with the false premise.',
+  '',
+  'Quick reference (memorize):',
+  '- MIT: only EA (non-binding, non-restrictive). NO ED.',
+  '- Caltech: only REA. NO ED.',
+  '- Stanford: only REA (Restrictive EA). NO ED.',
+  '- Yale, Harvard, Princeton: only SCEA (Single-Choice EA). NO ED.',
+  '- Georgetown: only EA. NO ED.',
+  '- All UC + CSU: only RD (no early round at all).',
+  '- Cornell, Columbia, Penn, Dartmouth, Brown, Duke, Vanderbilt, Northwestern, NYU, JHU, USC, Rice, Wash U, Emory: ED + RD.',
+  '- Most LACs (Williams, Amherst, Pomona, Swarthmore, Bowdoin, Middlebury, Tufts, Wellesley): ED I + ED II.',
+  '- UVA, BC, Wake Forest: ED AND EA both.',
+  'If you are not sure about a particular school, say so explicitly rather than guess.',
+  '___________________________________________',
+  'CLOSE-OF-RESPONSE DIRECTIVE',
+  '___________________________________________',
+  'When the user is in execution mode (asked a strategic question, school list, ED/REA decision, chance-me, FRQ prep), END your response with 1-2 concrete next steps for THIS WEEK they can take immediately. Format as a tight bulleted **This week:** list - 1-2 items, each starting with an action verb, each tied to a specific deliverable (e.g. "Finish the Why X school essay rough draft" or "Run the Net Price Calculator on Cornell + Caltech and email me the numbers"). Skip the closer for: greetings, simple clarifications, factual lookups, or when 1-2 actionable steps are not obvious.',
+  '___________________________________________',
+].join('\n');
 
 
 const WAYFINDER_IDENTITY_RULES = `
