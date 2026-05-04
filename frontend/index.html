@@ -9,7 +9,11 @@
   <meta name="author" content="Wayfinder">
   <link rel="canonical" href="https://wayfinderai.org/">
   <link rel="alternate" hreflang="en" href="https://wayfinderai.org/">
+  <link rel="alternate" hreflang="ko" href="https://wayfinderai.org/?lang=ko">
   <link rel="alternate" hreflang="x-default" href="https://wayfinderai.org/">
+  <!-- PATCH126: Korean meta description for KakaoTalk + Naver shares -->
+  <meta name="description" lang="ko" content="한국 입시(SKY · 의대 · 외고/자사고 · 수능 · 학종)와 미국 명문대 입시를 한국어로 상담하는 AI 어드바이저. 27개 한국 입시 자료 + 92개 미국 학교 deep file 통합. 무료 시작.">
+  <meta property="og:locale:alternate" content="ko_KR">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#1e293b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -472,6 +476,96 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
     'Elementary': '초등학교',
     'District (optional)': '학군 (선택)',
     'Search school name / city': '학교명 / 도시 검색',
+
+    // PATCH126: Volunteer module — full coverage
+    'Volunteer Opportunities': '봉사 활동',
+    'Build your service story': '서비스 스토리 구축',
+    'BUILD YOUR SERVICE STORY': '서비스 스토리 구축',
+    'Curated programs + AI-powered local discovery to ground your college service narrative — not just hours, but a story admissions committees remember.': '엄선된 프로그램 + AI 기반 지역 검색으로 대학 입시용 봉사 내러티브를 단단하게. 단순한 시간 누적이 아니라 입학 사정관이 기억할 만한 스토리를 만듭니다.',
+    'Trying to turn 200 hours of scattered service into ONE coherent story for the activities list.': '여기저기 흩어진 200시간 봉사를 활동란에 들어갈 일관된 하나의 스토리로 정리할 때.',
+    'Looking for a sustained, recurring commitment (not a one-day clean-up) that stacks toward leadership by senior year.': '하루짜리 청소 봉사가 아니라 12학년에 리더십으로 이어지는 지속적·정기적 활동을 찾을 때.',
+    'Searching for opportunities in a small town or non-coastal city where curated lists are usually empty — use Discover Local for any zip code.': '엄선 데이터베이스가 비어 있는 소도시·내륙 지역의 기회를 찾을 때 — 어떤 zip code든 Discover Local 사용.',
+    'Building a service narrative that lines up with your intended major (pre-med → hospitals + free clinics; pre-law → legal aid + voter access; CS → Code.org + accessibility tutoring).': '희망 전공과 맞물리는 봉사 내러티브 구축 (의예과 → 병원·무료 진료소; 법학 → 법률 지원·투표권; CS → Code.org·접근성 튜터링).',
+    'Tracking hours and impact across multiple orgs so the Common App activities section practically writes itself.': '여러 단체의 시간·임팩트를 추적해 Common App 활동란을 자동에 가깝게 작성.',
+    'What "Build Strategy" gives you:': '"Build Strategy"가 제공하는 것:',
+    'Browse Programs': '프로그램 검색',
+    'Build My Strategy': '전략 구축',
+    'Discover Local': '지역 발굴',
+    'My Service': '내 봉사',
+    'Insights': '인사이트',
+    'Browse': '검색',
+    'Build Strategy': '전략 구축',
+    'Tell us about your situation and we\'ll build a tailored plan: an anchor commitment, project initiatives, and a stretch leadership track.': '상황을 알려주시면 맞춤 계획을 만듭니다 — 핵심 활동(앵커), 프로젝트 이니셔티브, 도전적 리더십 트랙.',
+    'Grade level': '학년',
+    'State': '주',
+    'Hours/week available': '주당 가용 시간',
+    'Goal': '목표',
+    'Career interest (optional, e.g. medicine, law, engineering)': '진로 관심 (선택, 예: 의학·법학·공학)',
+    'Causes you care about (multi-select; pick 1-4)': '관심 분야 (다중 선택, 1-4개)',
+    'Build My Strategy →': '전략 만들기 →',
+    'Health & Medical': '건강·의료',
+    'Education & Tutoring': '교육·튜터링',
+    'Environment & Conservation': '환경·보전',
+    'Animal Welfare': '동물 복지',
+    'Hunger & Food Security': '기아·식품 안전',
+    'Homelessness & Housing': '노숙·주거',
+    'Senior Care': '노인 돌봄',
+    'Mental Health': '정신 건강',
+    'Youth Mentorship': '청소년 멘토링',
+    'Disability Services': '장애인 서비스',
+    'Civic & Government': '시민·정부',
+    'Arts & Culture': '예술·문화',
+    'International & Global': '국제·글로벌',
+    'Religious & Faith-Based': '종교·신앙 기반',
+    'Disaster Relief': '재해 구호',
+    'Crisis Intervention': '위기 개입',
+    'Leadership & Service': '리더십·봉사',
+    '247+ curated, recurring programs.': '엄선된 정기 프로그램 247+개.',
+    'Anchor + projects + leadership.': '앵커 + 프로젝트 + 리더십.',
+    'Live AI search any city.': '어떤 도시든 실시간 AI 검색.',
+    'Track hours + impact.': '시간·임팩트 추적.',
+    'Service-narrative coaching.': '서비스 내러티브 코칭.',
+
+    // PATCH126: Internships intro panel — purple theme
+    'Internships Database': '인턴십 데이터베이스',
+    'Match skills to career': '진로에 기술 매칭',
+    'MATCH SKILLS TO CAREER': '진로에 기술 매칭',
+    'Curated internships for high school and college students — filtered by field, region, paid vs unpaid, and verified with real source URLs.': '고교생·대학생을 위한 엄선된 인턴십 — 분야·지역·유급/무급으로 필터링, 실제 source URL로 검증.',
+    'Looking for summer internships in your intended major (CS, bio research, finance, journalism, design, policy).': '희망 전공의 여름 인턴십을 찾을 때 (CS·생물 연구·금융·저널리즘·디자인·정책).',
+    'Trying to add ONE concrete, named internship to the activities list — not "shadowed at a clinic" but "Pediatric Research Intern, Children\'s Hospital."': '활동란에 "병원에서 shadowing" 대신 "Pediatric Research Intern, Children\'s Hospital" 같은 구체적·명명된 인턴십을 추가할 때.',
+    'Comparing remote vs in-person opportunities across multiple states or countries.': '여러 주·국가에서 원격 vs 대면 기회를 비교할 때.',
+    'Testing fit in a field before committing — a 6-week internship in finance tells you more than 50 articles.': '특정 분야 적합성을 테스트할 때 — 6주 금융 인턴십이 기사 50편보다 많은 것을 알려줍니다.',
+    'Building a multi-year arc (sophomore: shadowing → junior: first formal internship → senior: substantive project or publication).': '다년간 활동 흐름 구축 (10학년: shadowing → 11학년: 첫 공식 인턴십 → 12학년: 본격 프로젝트·발표).',
+    'Verified vs unverified:': '검증 vs 미검증:',
+    'Coverage today: 1,500+ entries, 233 verified. Strongest in WA (80), CA (132), NY, TX, MI. International + Remote columns expanding. Use the Region filter to narrow.': '현재 커버리지: 1,500+ 항목, 233개 검증. WA(80)·CA(132)·NY·TX·MI에서 가장 강함. International + Remote 확장 중. Region 필터로 좁히세요.',
+    'Match your major': '전공과 매칭',
+    'Filter by field — STEM, business, arts, research.': '분야별 필터 — STEM·비즈니스·예술·연구.',
+    'USA + International': '미국 + 국제',
+    'Region toggle — both coverage trees.': 'Region 토글 — 양쪽 커버리지 모두.',
+    'Verified entries': '검증된 항목',
+    '233 hand-checked with source URLs.': '233개를 source URL로 직접 확인.',
+
+    // PATCH126: Scholarships intro panel — rose theme
+    'Scholarships Database': '장학금 데이터베이스',
+    'Pay for college': '대학 등록금 지원',
+    'PAY FOR COLLEGE': '대학 등록금 지원',
+    '1,000+ scholarships filtered by scope, demographic, dollar amount, and application format — with deadline tracking and the strategic stack builder.': '범위·인구통계·금액·지원 형식으로 필터링되는 1,000+ 장학금 — 마감일 추적 및 전략적 스택 빌더 포함.',
+    'Trying to close the gap between sticker price and what your family can actually pay — the SAI calculator (Aid Planner) tells you the gap; this module fills it.': '학교 발표 등록금과 가족이 실제로 낼 수 있는 금액의 차이를 메우려 할 때 — SAI 계산기(Aid Planner)가 그 차이를 알려주고, 이 모듈이 그것을 채웁니다.',
+    'Building a stack of 8-15 scholarships across national, state, and regional scope rather than betting on one $50K full-ride.': '하나의 $50K 풀라이드에 베팅하기보다 전국·주·지역 범위에서 8-15개 장학금을 쌓을 때.',
+    'Looking for scholarships matched to specific traits (first-gen, Hispanic, women in STEM, military families, single parents) — Category filter narrows fast.': '특정 특성(1세대·히스패닉·STEM 여성·군인 가족·한부모)에 맞는 장학금을 찾을 때 — Category 필터로 빠르게 좁힘.',
+    'Filtering by what you actually want to write — essay vs video vs portfolio vs application-only — to avoid wasting weeks on formats you can\'t execute.': '실제로 쓸 수 있는 형식(에세이 vs 비디오 vs 포트폴리오 vs 지원서만)으로 필터링 — 실행 불가능한 형식에 몇 주를 낭비하지 않도록.',
+    'Building a senior-year application calendar with deadlines plotted alongside Common App + supplemental due dates.': 'Common App + supplemental 마감과 함께 12학년 지원 달력을 구축할 때.',
+    'Build My Scholarship Stack:': '내 장학금 스택 만들기:',
+    'Coverage today: 1,035 entries, 68 verified with real source URLs. National + state scope across 50 states + DC. Print, email, and copy export parity with Programs + Internships.': '현재 커버리지: 1,035개 항목, 68개가 실제 source URL로 검증됨. 50개 주 + DC 전국·주 범위. Print·email·copy 내보내기 — Programs + Internships와 동일.',
+    'Match your profile': '프로필과 매칭',
+    'Category + demographic filters narrow fast.': 'Category + 인구통계 필터로 빠르게 좁힘.',
+    'Deadline tracking': '마감일 추적',
+    'Plot alongside your Common App calendar.': 'Common App 달력과 함께 표시.',
+    'Format filter': '형식 필터',
+    'Essay / video / portfolio / app-only.': '에세이 · 비디오 · 포트폴리오 · 지원서만.',
+    'Build My Stack': '내 스택 만들기',
+    '3-tier strategic list generator.': '3단계 전략 리스트 생성기.',
+
     // Splash 4-step
     'How Wayfinder works': 'Wayfinder 작동 방식',
     'Four steps. No spreadsheets. No hand-holding required.': '4단계. 스프레드시트 없이, 손잡고 안내할 필요 없이.',
@@ -589,7 +683,24 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       '#financialAidModal .sai-mode-btn, ' +
       '#financialAidModal .grants-toggle-btn, ' +
       // PATCH125: Programs Strategy Tips (intel cards)
-      '.intel-tip-header span, .intel-tip-text, .intel-tip-list li, .intel-hacks summary'
+      '.intel-tip-header span, .intel-tip-text, .intel-tip-list li, .intel-hacks summary, ' +
+      // PATCH126: Volunteer module + Internships intro panel + Scholarships intro panel
+      '#volunteerModal h2, #volunteerModal .form-subtitle, #volunteerModal .modal-intro, ' +
+      '#volunteerWhyExplain summary span, #volunteerWhyExplain p, #volunteerWhyExplain li, #volunteerWhyExplain strong, ' +
+      '#volunteerHeroStrip div, ' +
+      '#volunteerModal .tool-tab, #volunteerModal label, ' +
+      '#volunteerModal .form-btn, ' +
+      '#volunteerModal select option[value="all"], #volunteerModal select option[value=""], ' +
+      '#volunteerModal input[placeholder], ' +
+      '#internshipsModal h2, #internshipsModal .form-subtitle, ' +
+      '#internshipsWhyExplain summary span, #internshipsWhyExplain p, #internshipsWhyExplain li, #internshipsWhyExplain strong, ' +
+      '#internshipsWhyExplain em, ' +
+      '#internshipsHeroStrip div, ' +
+      '#scholarshipsModal h2, #scholarshipsModal .form-subtitle, ' +
+      '#scholarshipsWhyExplain summary span, #scholarshipsWhyExplain p, #scholarshipsWhyExplain li, #scholarshipsWhyExplain strong, ' +
+      '#scholarshipsHeroStrip div'
+    );
+    // PATCH126 HOTFIX: previous line closed querySelectorAll() — patch 125 was missing this )
     targets.forEach(function(el) {
       // Replace direct text content if it matches a Korean key
       if (el.children.length === 0) {
@@ -799,9 +910,14 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
           </div>
         </div>
         <div class="topbar-right">
+          <!-- PATCH126: lang pill moved into topbar so it lines up with auth buttons -->
+          <div id="wfLangPill" title="Language / 언어">
+            <div class="wf-lang-opt active" data-lang="en">EN</div>
+            <div class="wf-lang-opt" data-lang="ko">한국어</div>
+          </div>
           <div id="topbarAuth" class="topbar-auth">
             <button id="topLoginBtn" class="topbar-btn">Log In</button>
-            <button id="topSignupBtn" class="topbar-btn topbar-btn-primary">Join with Invite</button>
+            <button id="topSignupBtn" class="topbar-btn topbar-btn-primary">Sign Up</button>
           </div>
           <div id="topbarUser" class="topbar-user" style="display:none;">
             <div id="topbarAvatar" class="topbar-avatar">D</div>
@@ -1776,8 +1892,47 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       <div class="modal modal-tool-list">
         <button class="modal-close" id="internshipsModalClose" aria-label="Close">&times;</button>
         <div class="tool-header">
-          <h2>Internships Database</h2>
-          <p class="form-subtitle">Curated internships for high school and college students</p>
+          <h2>Internships Database <span style="background:#a78bfa;color:#3b0764;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;vertical-align:middle;margin-left:6px;">Match skills to career</span></h2>
+          <p class="form-subtitle">Curated internships for high school and college students — filtered by field, region, paid vs unpaid, and verified with real source URLs.</p>
+        </div>
+
+        <!-- PATCH126: Internships intro panel — purple/lavender theme -->
+        <details id="internshipsWhyExplain" style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:10px;padding:10px 14px;margin:0 0 12px 0;">
+          <summary style="cursor:pointer;font-weight:600;color:#6b21a8;font-size:13px;list-style:none;display:flex;align-items:center;gap:8px;">
+            <span style="background:#a78bfa;color:#3b0764;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">?</span>
+            <span>When and why would I use this module?</span>
+            <span style="margin-left:auto;font-size:11px;color:#7e22ce;font-weight:500;">click to expand</span>
+          </summary>
+          <div style="margin-top:10px;font-size:13px;color:#475569;line-height:1.6;">
+            <p style="margin:0 0 8px;"><strong>Use this when you're:</strong></p>
+            <ul style="margin:0 0 10px 18px;padding:0;">
+              <li>Looking for summer internships in your intended major (CS, bio research, finance, journalism, design, policy).</li>
+              <li>Trying to add ONE concrete, named internship to the activities list — not "shadowed at a clinic" but "Pediatric Research Intern, Children's Hospital."</li>
+              <li>Comparing remote vs in-person opportunities across multiple states or countries.</li>
+              <li>Testing fit in a field before committing — a 6-week internship in finance tells you more than 50 articles.</li>
+              <li>Building a multi-year arc (sophomore: shadowing → junior: first formal internship → senior: substantive project or publication).</li>
+            </ul>
+            <p style="margin:0 0 8px;"><strong>Verified vs unverified:</strong> entries with the green <em>✓ verified</em> tag have real source URLs we hand-checked. Unverified entries are placeholders pending human research — useful for discovery, less reliable for application links.</p>
+            <p style="margin:0;"><strong>Coverage today:</strong> 1,500+ entries, 233 verified. Strongest in WA (80), CA (132), NY, TX, MI. International + Remote columns expanding. Use the Region filter to narrow.</p>
+          </div>
+        </details>
+
+        <div id="internshipsHeroStrip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:0 0 16px 0;">
+          <div style="background:linear-gradient(135deg,#faf5ff 0%,#f3e8ff 100%);border:1px solid #e9d5ff;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">🎯</div>
+            <div style="font-weight:700;font-size:12px;color:#6b21a8;">Match your major</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Filter by field — STEM, business, arts, research.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">🌍</div>
+            <div style="font-weight:700;font-size:12px;color:#1e3a8a;">USA + International</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Region toggle — both coverage trees.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#dcfce7 0%,#bbf7d0 100%);border:1px solid #86efac;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">✓</div>
+            <div style="font-weight:700;font-size:12px;color:#15803d;">Verified entries</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">233 hand-checked with source URLs.</div>
+          </div>
         </div>
 
         <!-- Filters -->
@@ -1861,8 +2016,52 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       <div class="modal modal-tool-list">
         <button class="modal-close" id="scholarshipsModalClose" aria-label="Close">&times;</button>
         <div class="tool-header">
-          <h2>Scholarships Database</h2>
-          <p class="form-subtitle">Curated scholarship opportunities with deadline tracking</p>
+          <h2>Scholarships Database <span style="background:#f43f5e;color:#4c0519;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;vertical-align:middle;margin-left:6px;">Pay for college</span></h2>
+          <p class="form-subtitle">1,000+ scholarships filtered by scope, demographic, dollar amount, and application format — with deadline tracking and the strategic stack builder.</p>
+        </div>
+
+        <!-- PATCH126: Scholarships intro panel — rose theme -->
+        <details id="scholarshipsWhyExplain" style="background:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:10px 14px;margin:0 0 12px 0;">
+          <summary style="cursor:pointer;font-weight:600;color:#9f1239;font-size:13px;list-style:none;display:flex;align-items:center;gap:8px;">
+            <span style="background:#f43f5e;color:#4c0519;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">?</span>
+            <span>When and why would I use this module?</span>
+            <span style="margin-left:auto;font-size:11px;color:#be123c;font-weight:500;">click to expand</span>
+          </summary>
+          <div style="margin-top:10px;font-size:13px;color:#475569;line-height:1.6;">
+            <p style="margin:0 0 8px;"><strong>Use this when you're:</strong></p>
+            <ul style="margin:0 0 10px 18px;padding:0;">
+              <li>Trying to close the gap between sticker price and what your family can actually pay — the SAI calculator (Aid Planner) tells you the gap; this module fills it.</li>
+              <li>Building a stack of 8-15 scholarships across national, state, and regional scope rather than betting on one $50K full-ride.</li>
+              <li>Looking for scholarships matched to specific traits (first-gen, Hispanic, women in STEM, military families, single parents) — Category filter narrows fast.</li>
+              <li>Filtering by what you actually want to write — essay vs video vs portfolio vs application-only — to avoid wasting weeks on formats you can't execute.</li>
+              <li>Building a senior-year application calendar with deadlines plotted alongside Common App + supplemental due dates.</li>
+            </ul>
+            <p style="margin:0 0 8px;"><strong>Build My Scholarship Stack:</strong> the strategic stack generator builds a 3-tier list — high-probability (regional, format-matched), match-tier (national, demographic-aligned), and reach (full-rides + named scholarships) — based on your profile.</p>
+            <p style="margin:0;"><strong>Coverage today:</strong> 1,035 entries, 68 verified with real source URLs. National + state scope across 50 states + DC. Print, email, and copy export parity with Programs + Internships.</p>
+          </div>
+        </details>
+
+        <div id="scholarshipsHeroStrip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:0 0 16px 0;">
+          <div style="background:linear-gradient(135deg,#fff1f2 0%,#ffe4e6 100%);border:1px solid #fecdd3;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">💰</div>
+            <div style="font-weight:700;font-size:12px;color:#9f1239;">Match your profile</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Category + demographic filters narrow fast.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1px solid #facc15;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">📅</div>
+            <div style="font-weight:700;font-size:12px;color:#854d0e;">Deadline tracking</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Plot alongside your Common App calendar.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">📚</div>
+            <div style="font-weight:700;font-size:12px;color:#1e3a8a;">Format filter</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">Essay / video / portfolio / app-only.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#dcfce7 0%,#bbf7d0 100%);border:1px solid #86efac;border-radius:10px;padding:10px 12px;">
+            <div style="font-size:18px;margin-bottom:2px;">🎯</div>
+            <div style="font-weight:700;font-size:12px;color:#15803d;">Build My Stack</div>
+            <div style="font-size:11px;color:#475569;line-height:1.35;">3-tier strategic list generator.</div>
+          </div>
         </div>
 
         <div class="tool-filters" id="scholarshipsFilters">
@@ -2068,10 +2267,61 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
     <div id="volunteerModal" class="modal-overlay" role="dialog" aria-modal="true" style="display:none;">
       <div class="modal modal-tool-list">
         <div class="modal-header">
-          <h2>Volunteer Opportunities</h2>
+          <h2>Volunteer Opportunities <span style="background:#fb923c;color:#7c2d12;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;vertical-align:middle;margin-left:6px;">Build your service story</span></h2>
           <button id="volunteerModalClose" class="modal-close" aria-label="Close">×</button>
         </div>
         <div class="modal-body">
+
+          <!-- PATCH126: Volunteer intro panel — orange/coral theme -->
+          <p class="form-subtitle" style="margin:0 0 10px 0;">Curated programs + AI-powered local discovery to ground your college service narrative — not just hours, but a story admissions committees remember.</p>
+
+          <details id="volunteerWhyExplain" style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:10px 14px;margin:0 0 12px 0;">
+            <summary style="cursor:pointer;font-weight:600;color:#9a3412;font-size:13px;list-style:none;display:flex;align-items:center;gap:8px;">
+              <span style="background:#fb923c;color:#7c2d12;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">?</span>
+              <span>When and why would I use this module?</span>
+              <span style="margin-left:auto;font-size:11px;color:#c2410c;font-weight:500;">click to expand</span>
+            </summary>
+            <div style="margin-top:10px;font-size:13px;color:#475569;line-height:1.6;">
+              <p style="margin:0 0 8px;"><strong>Use this when you're:</strong></p>
+              <ul style="margin:0 0 10px 18px;padding:0;">
+                <li>Trying to turn 200 hours of scattered service into ONE coherent story for the activities list.</li>
+                <li>Looking for a sustained, recurring commitment (not a one-day clean-up) that stacks toward leadership by senior year.</li>
+                <li>Searching for opportunities in a small town or non-coastal city where curated lists are usually empty — use <strong>Discover Local</strong> for any zip code.</li>
+                <li>Building a service narrative that lines up with your intended major (pre-med → hospitals + free clinics; pre-law → legal aid + voter access; CS → Code.org + accessibility tutoring).</li>
+                <li>Tracking hours and impact across multiple orgs so the Common App activities section practically writes itself.</li>
+              </ul>
+              <p style="margin:0 0 8px;"><strong>What "Build Strategy" gives you:</strong> a 3-pillar plan — anchor commitment (your headline activity), project initiatives (concrete deliverables admissions can picture), and a stretch leadership track (board, fundraising, advocacy).</p>
+              <p style="margin:0;"><strong>Coverage today:</strong> 247+ curated programs across 17 cause categories. National civic + arts + advocacy, mental health, environment, hunger, education, disability sports, LGBTQ+, refugee services. Densest in WA + major metros — Discover Local fills the rest.</p>
+            </div>
+          </details>
+
+          <div id="volunteerHeroStrip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:0 0 16px 0;">
+            <div style="background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%);border:1px solid #fed7aa;border-radius:10px;padding:10px 12px;">
+              <div style="font-size:18px;margin-bottom:2px;">🌐</div>
+              <div style="font-weight:700;font-size:12px;color:#9a3412;">Browse</div>
+              <div style="font-size:11px;color:#475569;line-height:1.35;">247+ curated, recurring programs.</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;">
+              <div style="font-size:18px;margin-bottom:2px;">🎯</div>
+              <div style="font-weight:700;font-size:12px;color:#1e3a8a;">Build Strategy</div>
+              <div style="font-size:11px;color:#475569;line-height:1.35;">Anchor + projects + leadership.</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:1px solid #facc15;border-radius:10px;padding:10px 12px;">
+              <div style="font-size:18px;margin-bottom:2px;">📍</div>
+              <div style="font-weight:700;font-size:12px;color:#854d0e;">Discover Local</div>
+              <div style="font-size:11px;color:#475569;line-height:1.35;">Live AI search any city.</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#dcfce7 0%,#bbf7d0 100%);border:1px solid #86efac;border-radius:10px;padding:10px 12px;">
+              <div style="font-size:18px;margin-bottom:2px;">📖</div>
+              <div style="font-weight:700;font-size:12px;color:#15803d;">My Service</div>
+              <div style="font-size:11px;color:#475569;line-height:1.35;">Track hours + impact.</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%);border:1px solid #f9a8d4;border-radius:10px;padding:10px 12px;">
+              <div style="font-size:18px;margin-bottom:2px;">💡</div>
+              <div style="font-weight:700;font-size:12px;color:#9d174d;">Insights</div>
+              <div style="font-size:11px;color:#475569;line-height:1.35;">Service-narrative coaching.</div>
+            </div>
+          </div>
 
           <!-- Tab nav -->
           <div class="tool-tabs" style="display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid #e5e7eb;">
@@ -3508,8 +3758,9 @@ document.addEventListener('DOMContentLoaded', function() {
   #koreanEntryBtn { width: 100%; padding: 9px 14px !important; font-size: 13px !important; }
   /* Module Korean banners — readable on small screens */
   .wf-ko-banner { font-size: 12px !important; padding: 8px 11px !important; }
-  /* Language pill — make sure it doesn't overlap chat input on mobile */
-  #wfLangPill { top: 56px !important; right: 8px !important; font-size: 10px !important; }
+  /* PATCH126: pill is in-topbar now, no fixed positioning */
+  #wfLangPill { font-size: 10px !important; height: 24px !important; }
+  #wfLangPill .wf-lang-opt { padding: 3px 7px !important; }
 }
 
 /* Warming UI overlay for slow first Korean queries */
@@ -3688,28 +3939,26 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(localize, 1500);
 })();
 </script>
-</body>
 
-
-<!-- PATCH114: language toggle pill (EN / 한국어) -->
+<!-- PATCH114: language toggle pill (EN / 한국어) — markup hoisted into topbar in patch 126; only style+script remain here -->
 <style id="patch114-lang-style">
+/* PATCH126: pill is now an inline child of .topbar-right (not fixed-floated) */
 #wfLangPill {
-  position: fixed;
-  top: 60px;
-  right: 14px;
-  z-index: 9500;
   display: flex;
   gap: 0;
   background: #fff;
   border: 1px solid #cbd5e1;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(15,23,42,0.08);
+  box-shadow: 0 1px 2px rgba(15,23,42,0.06);
   cursor: pointer;
   user-select: none;
+  align-self: center;
+  height: 28px;
 }
+#wfLangPill .wf-lang-opt { display: flex; align-items: center; }
 #wfLangPill .wf-lang-opt {
   padding: 5px 11px;
   color: #64748b;
@@ -3724,14 +3973,10 @@ document.addEventListener('DOMContentLoaded', function() {
   background: #f1f5f9;
 }
 @media (max-width: 600px) {
-  #wfLangPill { top: 56px; right: 8px; font-size: 10px; }
+  #wfLangPill { font-size: 11px; height: 26px; }
   #wfLangPill .wf-lang-opt { padding: 4px 9px; }
 }
 </style>
-<div id="wfLangPill" title="Language / 언어">
-  <div class="wf-lang-opt active" data-lang="en">EN</div>
-  <div class="wf-lang-opt" data-lang="ko">한국어</div>
-</div>
 <script>
 (function() {
   if (typeof document === 'undefined') return;
@@ -3741,12 +3986,33 @@ document.addEventListener('DOMContentLoaded', function() {
     let cur = 'en';
     try { cur = localStorage.getItem('wf_lang') || 'en'; } catch (_) {}
     // PATCH122: ?lang=ko URL param overrides stored preference
+    let urlOverride = false;
     try {
       const url = new URL(window.location.href);
       const langParam = url.searchParams.get('lang');
       if (langParam === 'ko' || langParam === 'en' || langParam === 'ja' || langParam === 'zh') {
         cur = langParam;
+        urlOverride = true;
         localStorage.setItem('wf_lang', cur);
+      }
+    } catch (_) {}
+    // PATCH126: Accept-Language auto-detect for first-time visitors.
+    // Only fires if (a) no stored preference, (b) no URL override, (c) browser
+    // language starts with ko-. Sets KO and remembers the auto-pick so we never
+    // surprise the user a second time. They can flip back via the EN pill.
+    try {
+      const stored = localStorage.getItem('wf_lang');
+      const autoPicked = localStorage.getItem('wf_lang_autopicked');
+      if (!stored && !urlOverride && !autoPicked) {
+        const langs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || 'en'];
+        const primary = (langs[0] || '').toLowerCase();
+        if (primary.indexOf('ko') === 0) {
+          cur = 'ko';
+          localStorage.setItem('wf_lang', 'ko');
+          localStorage.setItem('wf_lang_autopicked', '1');
+        }
       }
     } catch (_) {}
     function apply(lang) {
