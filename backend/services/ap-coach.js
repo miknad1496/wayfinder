@@ -55,6 +55,19 @@ const SUPPORTED_EXAMS = { // REVAMP V2: AP COACH FULL MODULE PATCH81 SUPPORTED_E
   'ap-statistics':        { label: 'AP Statistics', file: 'ap-statistics.md' },
   'ap-us-history':        { label: 'AP US History (APUSH)', file: 'ap-us-history.md' },
   'ap-world-history':     { label: 'AP World History', file: 'ap-world-history.md' },
+  // PATCH102: Capstones
+  'ap-research':          { label: 'AP Research (Capstone)', file: 'ap-research.md' },
+  'ap-seminar':           { label: 'AP Seminar (Capstone)', file: 'ap-seminar.md' },
+  // PATCH102: New exams added 2026-05
+  'ap-african-american-studies': { label: 'AP African American Studies', file: 'ap-african-american-studies.md' },
+  'ap-comparative-gov':   { label: 'AP Comparative Government & Politics', file: 'ap-comparative-gov.md' },
+  'ap-latin':             { label: 'AP Latin', file: 'ap-latin.md' },
+  // PATCH102: World languages
+  'ap-chinese-language':  { label: 'AP Chinese Language & Culture', file: 'ap-chinese-language.md' },
+  'ap-german-language':   { label: 'AP German Language & Culture', file: 'ap-german-language.md' },
+  'ap-italian-language':  { label: 'AP Italian Language & Culture', file: 'ap-italian-language.md' },
+  'ap-japanese-language': { label: 'AP Japanese Language & Culture', file: 'ap-japanese-language.md' },
+  'ap-spanish-lit':       { label: 'AP Spanish Literature & Culture', file: 'ap-spanish-lit.md' },
   'other':                { label: 'Other AP Exam (general feedback)', file: null },
 };
 

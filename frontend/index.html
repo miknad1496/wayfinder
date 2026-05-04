@@ -1956,6 +1956,27 @@ body.essay-coach-open { overflow: hidden !important; }
           <p class="form-subtitle">For parents researching public + private K-12 in any of 50 states. Compare grad rates, AP depth, ratings, magnets, and ratios — without reading 40 GreatSchools profiles.</p>
         </div>
 
+        <!-- PATCH102: Why use this module? expandable explainer -->
+        <details id="k12WhyExplain" style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:10px 14px;margin:0 0 12px 0;">
+          <summary style="cursor:pointer;font-weight:600;color:#854d0e;font-size:13px;list-style:none;display:flex;align-items:center;gap:8px;">
+            <span style="background:#fbbf24;color:#422006;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">?</span>
+            <span>When and why would I use this module?</span>
+            <span style="margin-left:auto;font-size:11px;color:#a16207;font-weight:500;">click to expand</span>
+          </summary>
+          <div style="margin-top:10px;font-size:13px;color:#475569;line-height:1.6;">
+            <p style="margin:0 0 8px;"><strong>Use this when you're:</strong></p>
+            <ul style="margin:0 0 10px 18px;padding:0;">
+              <li>Choosing between 2-3 high schools in your district and need an at-a-glance comparison.</li>
+              <li>Moving to a new city/state and need to research the public + magnet + private options before house-hunting.</li>
+              <li>Picking the elementary or middle school feeder pattern for your kid's neighborhood.</li>
+              <li>Building an AP-rich high school plan and need to know which schools actually offer 15+ APs vs the basic 5.</li>
+              <li>Comparing demographics, free-and-reduced-lunch %, or graduation rates between zoned schools.</li>
+            </ul>
+            <p style="margin:0 0 8px;"><strong>What "Enriched" means:</strong> beyond the basic NCES record (name, address), enriched cards have <em>principal name + start date, AP course count + participation %, IB/magnet flags, demographics %, graduation rate, US News rank, notable programs, and citation URLs</em>. Click any enriched card to expand the full profile.</p>
+            <p style="margin:0;"><strong>Coverage today:</strong> WA is strongest (160+ enriched). All 50 states show real schools from the NCES base. Enrichment is expanding state-by-state.</p>
+          </div>
+        </details>
+
         <!-- PATCH99: K-12 hero strip — clear value props in 3 visual chips -->
         <div id="k12HeroStrip" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:0 0 16px 0;">
           <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;">
@@ -1981,6 +2002,21 @@ body.essay-coach-open { overflow: hidden !important; }
         </div>
 
         <div id="k12BrowsePanel">
+          <!-- PATCH102: AI school finder — open-ended natural-language entry -->
+          <div id="k12AiPanel" style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin:0 0 14px 0;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:18px;">✨</span>
+              <strong style="color:#1e3a8a;font-size:14px;">Just help me find a school</strong>
+              <button class="wf-help-btn" data-help="Type what you're looking for in natural language — kid's grade level, your priorities, your zip or state, anything you'd tell a friend. Wayfinder analyzes the database with our AI and surfaces the best matches with a short rationale." style="background:#fbbf24;color:#422006;border:0;width:20px;height:20px;border-radius:50%;font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">?</button>
+              <span style="margin-left:auto;font-size:11px;color:#64748b;">Powered by Wayfinder AI</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <input type="text" id="k12AiQuery" placeholder="e.g. 'best public high schools for STEM in Bellevue WA' or '5th grader needs small classes near 98115'" style="flex:1;min-width:240px;padding:9px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;font-family:inherit;background:white;">
+              <button id="k12AiAskBtn" style="background:#2563eb;color:white;border:0;padding:9px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;">Ask Wayfinder</button>
+            </div>
+            <div id="k12AiResult" style="margin-top:10px;display:none;background:white;border:1px solid #e2e8f0;border-radius:8px;padding:12px;font-size:13px;line-height:1.6;color:#1e293b;"></div>
+          </div>
+
           <div class="tool-filters" id="k12Filters">
             <select id="k12State" class="tool-filter-select"></select>
             <select id="k12Level" class="tool-filter-select">
@@ -1988,7 +2024,7 @@ body.essay-coach-open { overflow: hidden !important; }
               <option value="middle">Middle School</option>
               <option value="elementary">Elementary</option>
             </select>
-            <input type="text" id="k12District" class="tool-filter-input" placeholder="District (optional)" />
+            <input type="text" id="k12District" class="tool-filter-input" placeholder="District (optional)" style="font-family:inherit;font-size:13px;color:#1f2937;" />
             <select id="k12Filter" class="tool-filter-select">
               <option value="">All schools</option>
               <option value="hasAP">Has AP courses</option>

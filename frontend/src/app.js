@@ -5745,6 +5745,49 @@ function _k12CardHtml(s) {
   }
   const compareKey = s.ncessch || s.id || s.name;
   const isCompared = _k12ComparePicks.has(compareKey);
+  // PATCH102: Build extended "expanded" panel with the full enriched payload
+  let expandedHtml = '';
+  if (s.enriched) {
+    const detailRows = [];
+    if (typeof s.apParticipationPct === 'number') detailRows.push(['AP participation', s.apParticipationPct + '% of students'].join('\u00a0'));
+    if (s.demographics && (s.demographics.minorityPct != null || s.demographics.economicallyDisadvantagedPct != null)) {
+      const dm = [];
+      if (s.demographics.minorityPct != null) dm.push(s.demographics.minorityPct + '% non-white');
+      if (s.demographics.economicallyDisadvantagedPct != null) dm.push(s.demographics.economicallyDisadvantagedPct + '% econ disadvantaged');
+      detailRows.push(['Demographics', dm.join(' \u00b7 ')]);
+    }
+    if (typeof s.freeReducedLunch === 'number') detailRows.push(['Free/reduced lunch', s.freeReducedLunch + ' students']);
+    if (s.gradesServed) detailRows.push(['Grades served', String(s.gradesServed)]);
+    if (s.locale) detailRows.push(['Locale', String(s.locale)]);
+    if (s.charter) detailRows.push(['Charter school', 'Yes']);
+    if (s.titleI) detailRows.push(['Title I', 'Yes (federal funding)']);
+    if (s.principalAsOf) detailRows.push(['Principal since', String(s.principalAsOf)]);
+    if (s.principalTitle) detailRows.push(['Principal title', String(s.principalTitle)]);
+    if (s.rating && (s.rating.nationalRank || s.rating.stateRank)) {
+      const ranks = [];
+      if (s.rating.nationalRank) ranks.push('#' + s.rating.nationalRank + ' nationally');
+      if (s.rating.stateRank) ranks.push('#' + s.rating.stateRank + ' in state');
+      detailRows.push([(s.rating.source || 'Rating'), ranks.join(' \u00b7 ')]);
+    }
+    if (s.note) detailRows.push(['Note', String(s.note)]);
+    if (s._verifiedDate) detailRows.push(['Verified', String(s._verifiedDate)]);
+
+    let fullPrograms = '';
+    if (Array.isArray(s.notablePrograms) && s.notablePrograms.length > 0) {
+      fullPrograms = '<div style="margin-top:10px;"><strong style="font-size:12px;color:#1e293b;">Notable programs (full list):</strong><ul style="margin:6px 0 0 18px;font-size:12px;color:#475569;line-height:1.7;">' + s.notablePrograms.map(function(p){return '<li>' + _esc(p) + '</li>';}).join('') + '</ul></div>';
+    }
+    let sourcesHtml = '';
+    if (Array.isArray(s._sources) && s._sources.length > 0) {
+      sourcesHtml = '<div style="margin-top:10px;"><strong style="font-size:12px;color:#1e293b;">Sources cited:</strong><div style="margin-top:4px;font-size:11px;color:#64748b;">' + s._sources.map(function(u){return '<a href="' + _esc(u) + '" target="_blank" rel="noopener" style="color:#0969da;display:block;margin:2px 0;word-break:break-all;">' + _esc(u) + '</a>';}).join('') + '</div></div>';
+    }
+    if (detailRows.length || fullPrograms || sourcesHtml) {
+      expandedHtml = '<details style="margin:10px 0 0 23px;border-top:1px dashed #e2e8f0;padding-top:8px;"><summary style="cursor:pointer;color:#2563eb;font-size:12px;font-weight:600;">▸ Show full enriched profile</summary><div style="padding-top:8px;">'
+        + (detailRows.length ? '<table style="width:100%;border-collapse:collapse;margin-bottom:6px;font-size:12px;">' + detailRows.map(function(r){return '<tr><td style="padding:3px 8px 3px 0;color:#64748b;width:160px;font-weight:500;">' + _esc(r[0]) + '</td><td style="padding:3px 0;color:#1e293b;">' + _esc(r[1]) + '</td></tr>';}).join('') + '</table>' : '')
+        + fullPrograms + sourcesHtml
+        + '</div></details>';
+    }
+  }
+
   return `
     <div class="tool-card" style="border:1px solid ${isCompared ? '#2563eb' : '#e5e7eb'};border-radius:10px;padding:14px 16px;margin-bottom:10px;background:#fff;${isCompared ? 'box-shadow:0 0 0 2px rgba(37,99,235,0.15);' : ''}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;">
@@ -5763,6 +5806,7 @@ function _k12CardHtml(s) {
         ${s.website ? `<a href="${_esc(s.website)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">School website →</a>` : ''}
         ${s.rating?.url ? `<a href="${_esc(s.rating.url)}" target="_blank" rel="noopener" style="font-size:12px;color:#0969da;">${_esc(s.rating.source || 'Rating')} profile →</a>` : ''}
       </div>
+      ${expandedHtml}
       ${!s.enriched ? '<p style="margin:8px 0 0 23px;font-size:11px;color:#94a3b8;font-style:italic;">Base NCES record only. Detailed enrichment is coming for this school.</p>' : ''}
     </div>
   `;
@@ -8501,6 +8545,19 @@ function renderApScore(score) {
     { key: 'ap-statistics', label: 'AP Statistics' },
     { key: 'ap-us-history', label: 'AP US History (APUSH)' },
     { key: 'ap-world-history', label: 'AP World History' },
+    // PATCH102: Capstones
+    { key: 'ap-research', label: 'AP Research (Capstone)' },
+    { key: 'ap-seminar', label: 'AP Seminar (Capstone)' },
+    // PATCH102: New exams
+    { key: 'ap-african-american-studies', label: 'AP African American Studies' },
+    { key: 'ap-comparative-gov', label: 'AP Comparative Government & Politics' },
+    { key: 'ap-latin', label: 'AP Latin' },
+    // PATCH102: World languages
+    { key: 'ap-chinese-language', label: 'AP Chinese Language & Culture' },
+    { key: 'ap-german-language', label: 'AP German Language & Culture' },
+    { key: 'ap-italian-language', label: 'AP Italian Language & Culture' },
+    { key: 'ap-japanese-language', label: 'AP Japanese Language & Culture' },
+    { key: 'ap-spanish-lit', label: 'AP Spanish Literature & Culture' },
   ];
 
   const FALLBACK_FRQ_TYPES = [
@@ -8520,7 +8577,18 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab', 'ap-world-history', 'ap-physics-1', 'ap-european-history', 'ap-psychology', 'ap-human-geography', 'ap-csp', 'ap-english-lit', 'ap-environmental-science', 'ap-csa', 'ap-physics-2', 'ap-physics-c-mech']; // PATCH100: +7 (human-geography, csp, english-lit, environmental-science, csa, physics-2, physics-c-mech) // PATCH98: + european-history + psychology
+  const FULL_BRAIN_EXAMS = [
+    'ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government',
+    'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab',
+    'ap-world-history', 'ap-physics-1', 'ap-european-history', 'ap-psychology',
+    'ap-human-geography', 'ap-csp', 'ap-english-lit', 'ap-environmental-science', 'ap-csa',
+    'ap-physics-2', 'ap-physics-c-mech',
+    // PATCH102: 16 more brain-wired exams
+    'ap-art-history', 'ap-french', 'ap-music-theory', 'ap-physics-c-em', 'ap-precalculus', 'ap-spanish',
+    'ap-african-american-studies', 'ap-comparative-gov', 'ap-latin',
+    'ap-chinese-language', 'ap-german-language', 'ap-italian-language', 'ap-japanese-language', 'ap-spanish-lit',
+    'ap-research', 'ap-seminar',
+  ]; // PATCH102: + 16 new (37 total)
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
@@ -8977,3 +9045,57 @@ if (typeof window !== 'undefined') {
   if (typeof setupApCoachView === 'function') window.setupApCoachView = setupApCoachView;
 }
 // END PATCH90 WINDOW EXPOSURE
+
+
+// PATCH102: K-12 AI school finder — hooks the natural-language input into /api/chat
+// with a focused system-prompt nudge so the response is K-12-grounded.
+(function _wfWireK12AiFinder() {
+  if (typeof document === 'undefined') return;
+  function wire() {
+    const btn = document.getElementById('k12AiAskBtn');
+    const input = document.getElementById('k12AiQuery');
+    const resultEl = document.getElementById('k12AiResult');
+    if (!btn || !input || !resultEl || btn.__wfWired) return;
+    btn.__wfWired = true;
+    async function ask() {
+      const q = (input.value || '').trim();
+      if (q.length < 6) {
+        resultEl.style.display = 'block';
+        resultEl.innerHTML = '<span style="color:#dc2626;">Add a few more details — what state, grade level, or what matters most to your kid.</span>';
+        return;
+      }
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = '<span style="color:#64748b;">Searching the K-12 database and reasoning...</span>';
+      btn.disabled = true; btn.style.opacity = '0.6';
+      try {
+        const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
+        const headers = { 'Content-Type': 'application/json' };
+        if (tok) headers.Authorization = 'Bearer ' + tok;
+        const r = await fetch(API_BASE + '/chat', {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify({
+            message: 'K-12 SCHOOL FINDER (parent question): ' + q + '\n\nUse Wayfinder K-12 module knowledge. Recommend 3-5 specific schools (by name + city/state) when possible. Briefly explain the rationale (50-100 words). End with: "Open the K-12 Schools tool to compare these side-by-side."',
+            scope: 'k12',
+            sessionId: (window._wfSessionId || ''),
+          }),
+        });
+        const d = await r.json();
+        if (r.ok && d.text) {
+          resultEl.innerHTML = renderMarkdown(d.text);
+        } else {
+          resultEl.innerHTML = '<span style="color:#dc2626;">Could not get an answer: ' + _esc(d.error || ('HTTP ' + r.status)) + '</span>';
+        }
+      } catch (e) {
+        resultEl.innerHTML = '<span style="color:#dc2626;">Network error: ' + _esc(e.message) + '</span>';
+      } finally {
+        btn.disabled = false; btn.style.opacity = '1';
+      }
+    }
+    btn.addEventListener('click', ask);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') ask(); });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', wire); }
+  else { wire(); }
+  setInterval(wire, 1500); // re-wire when modal markup is replaced
+})();
