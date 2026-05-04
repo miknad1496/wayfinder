@@ -405,6 +405,101 @@ body.essay-coach-open { overflow: hidden !important; }
   #apGuidesList { padding: 0 8px !important; grid-template-columns: 1fr !important; }
 }
 </style>
+
+<style id="patch121-ko-style">
+/* PATCH121: Korean-mode UI label swaps. Activated when html.lang='ko' or body has wf-ko class */
+body.wf-ko-mode #signupModal h2,
+body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+</style>
+<script id="patch121-ko-localizer">
+(function() {
+  if (typeof document === 'undefined') return;
+  // Korean labels for the most-visible UI strings
+  const KO = {
+    // Signup form
+    'Create your account': '계정 만들기',
+    'Free to start. No credit card. Upgrade anytime for Coach or Consultant tier.': '무료 시작. 신용카드 불필요. 언제든 Coach 또는 Consultant 등급으로 업그레이드 가능.',
+    'Name': '이름',
+    'Email': '이메일',
+    'Password': '비밀번호',
+    'I am a...': '저는...',
+    'College Student': '대학생',
+    'High School Student': '고등학생',
+    'Parent': '학부모',
+    'Counselor': '카운슬러',
+    'Other': '기타',
+    'Create Account': '계정 만들기',
+    'Already have an account?': '이미 계정이 있으신가요?',
+    'Log in': '로그인',
+    // Login form
+    'Welcome back': '다시 오신 것을 환영합니다',
+    'Log in to continue': '계속하려면 로그인하세요',
+    "Don't have an account?": '계정이 없으신가요?',
+    'Sign up': '가입하기',
+    // Sidebar (if in DOM)
+    'New chat': '새 채팅',
+    'Search': '검색',
+    'Today': '오늘',
+    'No conversations yet': '아직 대화가 없습니다',
+    // Common buttons
+    'Submit': '제출',
+    'Cancel': '취소',
+    'Save': '저장',
+    'Send': '전송',
+    'Settings': '설정',
+    'Upgrade': '업그레이드',
+  };
+  function applyKoreanLabels() {
+    if (typeof window === 'undefined' || window._wfLang !== 'ko') return;
+    document.body.classList.add('wf-ko-mode');
+    // Walk the most relevant elements only — avoid mutating chat content
+    const targets = document.querySelectorAll(
+      '#signupModal h2, #signupModal h3, #signupModal p, #signupModal label, #signupModal button, #signupModal a, ' +
+      '#loginModal h2, #loginModal h3, #loginModal p, #loginModal label, #loginModal button, #loginModal a, ' +
+      '#sidebarSearch, .sidebar-section-label, .empty-conversations-msg, ' +
+      '#signupType option, ' +
+      '.form-btn, .auth-btn-text, .splash-cta-primary, .splash-cta-secondary'
+    );
+    targets.forEach(function(el) {
+      // Replace direct text content if it matches a Korean key
+      if (el.children.length === 0) {
+        const t = (el.textContent || '').trim();
+        if (KO[t]) el.textContent = KO[t];
+      }
+      // Placeholder
+      if (el.placeholder && KO[el.placeholder]) el.placeholder = KO[el.placeholder];
+    });
+  }
+  function unapplyKoreanLabels() {
+    document.body.classList.remove('wf-ko-mode');
+    // (we don't reverse text changes — page reload handles that)
+  }
+  // Hook lang pill change
+  function watchLang() {
+    const pill = document.getElementById('wfLangPill');
+    if (!pill || pill._wfKoLocalizerWired) return;
+    pill._wfKoLocalizerWired = true;
+    pill.addEventListener('click', function() {
+      setTimeout(function() {
+        if (window._wfLang === 'ko') applyKoreanLabels();
+        else unapplyKoreanLabels();
+      }, 50);
+    });
+    // Initial apply if already ko
+    if (window._wfLang === 'ko') applyKoreanLabels();
+  }
+  // Re-apply when modals open (their content is dynamic)
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(function() {
+      if (window._wfLang === 'ko') applyKoreanLabels();
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watchLang);
+  else watchLang();
+  // Re-check every 1500ms in case pill is wired late
+  setInterval(watchLang, 1500);
+})();
+</script>
 </head>
 <body>
   <!-- REVAMP V2: WHATS NEW BANNER PATCH29 -->
@@ -664,6 +759,41 @@ body.essay-coach-open { overflow: hidden !important; }
             <p class="splash-desc">A college admissions and AP coaching platform built for families who want answers grounded in real data &mdash; verified federal datasets, distilled admissions intelligence, and curated school + exam knowledge that goes deeper than generic chatbots.</p>
 
             
+<!-- PATCH121: Korean entry banner — prominent at top of splash so 한국 사용자 immediately see Korean support -->
+<div id="koreanEntryBanner" style="max-width:980px; margin:0 auto 24px auto; padding:14px 20px; background:linear-gradient(135deg,#1e3a8a 0%, #2563eb 100%); border-radius:12px; color:#fff; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; box-shadow:0 6px 18px rgba(37,99,235,0.18);">
+  <div style="flex:1; min-width:240px;">
+    <div style="font-size:14px; font-weight:700; margin-bottom:2px;">🇰🇷 한국어 지원 — Korean Wayfinder Advisor</div>
+    <div style="font-size:13px; opacity:0.92; line-height:1.5;">한국 입시 (SKY · 의대 · 외고/자사고 · 수능 · 학종) + 미국 명문대 입시 모두 한국어로 상담 가능. 24개 한국 입시 자료 + 92개 미국 학교 deep file 통합.</div>
+  </div>
+  <button id="koreanEntryBtn" style="background:#fbbf24; color:#422006; padding:10px 18px; border:0; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; flex-shrink:0; white-space:nowrap;">한국어로 시작 →</button>
+</div>
+
+<script>
+(function() {
+  if (typeof document === 'undefined') return;
+  function init() {
+    const btn = document.getElementById('koreanEntryBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      // Set Korean preference + scroll to signup
+      try { localStorage.setItem('wf_lang', 'ko'); window._wfLang = 'ko'; } catch (_) {}
+      // Update language pill
+      document.querySelectorAll('#wfLangPill .wf-lang-opt').forEach(function(el) {
+        el.classList.toggle('active', el.getAttribute('data-lang') === 'ko');
+      });
+      // Update input placeholder (if user lands on chat after signup)
+      const ui = document.getElementById('userInput');
+      if (ui) ui.placeholder = '입시·진학·진로에 대해 무엇이든 물어보세요...';
+      // Open signup directly
+      const signupBtn = document.getElementById('splashSignUpBtn') || document.querySelector('[data-action="signup"]') || document.querySelector('.splash-cta-primary');
+      if (signupBtn) signupBtn.click();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
 <section id="splashHowItWorks" style="max-width:980px; margin:36px auto; padding:0 20px;">
   <h2 style="text-align:center; font-size:22px; color:#0f172a; margin:0 0 6px 0;">How Wayfinder works</h2>
   <p style="text-align:center; color:#64748b; font-size:14px; margin:0 0 22px 0;">Four steps. No spreadsheets. No hand-holding required.</p>
@@ -3144,6 +3274,42 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- REVAMP V2: AP COACH TIGHTEN PATCH86 -->
+
+<script id="patch121-ko-module-banners">
+(function() {
+  if (typeof document === 'undefined') return;
+  function applyBanners() {
+    if (typeof window === 'undefined' || window._wfLang !== 'ko') return;
+    const targets = [
+      { id: 'k12Modal', label: 'K-12 학교', note: '본 모듈은 미국 K-12 학교 데이터입니다. 한국 학교 정보는 채팅 어드바이저에게 한국어로 문의하세요.' },
+      { id: 'programsModal', label: '프로그램', note: '본 모듈은 미국 + 일부 국제 여름 프로그램입니다. 한국 내 프로그램은 채팅 어드바이저에게 문의하세요.' },
+      { id: 'internshipsModal', label: '인턴십', note: '본 모듈은 미국 위주 인턴십입니다. 한국 인턴십은 채팅 어드바이저에게 한국어로 문의하세요.' },
+      { id: 'scholarshipsModal', label: '장학금', note: '본 모듈은 미국 장학금 위주입니다. 한국 장학금/지역 장학재단은 채팅 어드바이저에게 문의하세요.' },
+    ];
+    for (const t of targets) {
+      const m = document.getElementById(t.id);
+      if (!m) continue;
+      if (m.querySelector('.wf-ko-banner')) continue;
+      const banner = document.createElement('div');
+      banner.className = 'wf-ko-banner';
+      banner.style.cssText = 'background:linear-gradient(135deg,#fef3c7 0%, #fde68a 100%); border:1px solid #facc15; border-radius:8px; padding:10px 14px; margin:0 0 12px 0; font-size:13px; color:#854d0e; line-height:1.55;';
+      banner.innerHTML = '<strong>🇰🇷 ' + t.label + ' — 한국어 안내:</strong> ' + t.note;
+      const header = m.querySelector('.tool-header');
+      if (header) header.parentNode.insertBefore(banner, header.nextSibling);
+      else if (m.firstElementChild) m.firstElementChild.insertBefore(banner, m.firstElementChild.firstChild);
+    }
+  }
+  function watch() {
+    if (window._wfLang === 'ko') applyBanners();
+  }
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(watch).observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch);
+  else watch();
+  setInterval(watch, 2000);
+})();
+</script>
 </body>
 
 
