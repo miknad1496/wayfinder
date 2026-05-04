@@ -5539,6 +5539,11 @@ async function _initK12() {
   // (even if /api/k12/states is slow/failing). Enriched counts are layered on top
   // when the API responds.
   sel.innerHTML = '';
+  // PATCH113: all-states option at top of dropdown
+  const allOpt = document.createElement('option');
+  allOpt.value = 'ALL';
+  allOpt.textContent = 'All states / regions';
+  sel.appendChild(allOpt);
   for (const st of Object.keys(_k12FullStateNames).sort()) {
     const opt = document.createElement('option');
     opt.value = st;
@@ -5571,7 +5576,9 @@ async function _initK12() {
 
 async function searchK12() {
   const params = new URLSearchParams();
-  params.set('state', $('k12State').value);
+  const _stateVal = $('k12State').value;
+  // PATCH113: 'ALL' bypasses state filter
+  if (_stateVal && _stateVal !== 'ALL') params.set('state', _stateVal);
   params.set('level', $('k12Level').value);
   const dist = $('k12District').value.trim();
   const q = $('k12Search').value.trim();

@@ -121,7 +121,47 @@ router.get('/states', async (req, res) => {
 router.get('/search', async (req, res) => {
   await loadEnriched();
   const { state, level = 'high', q, hasAP, ibProgram, magnetProgram, minRating, district, enrichedOnly } = req.query;
-  if (!state) return res.status(400).json({ error: 'state parameter required (e.g., WA, TX, CA)' });
+
+  // PATCH113: support 'ALL' state — return enriched schools across all states.
+  // We don't load NCES base records cross-state (would be 100k+ schools); we
+  // serve only the enriched layer for cross-state browsing.
+  if (!state || String(state).toUpperCase() === 'ALL') {
+    const lvl = String(level).toLowerCase();
+    if (!['high', 'middle', 'elementary'].includes(lvl)) {
+      return res.status(400).json({ error: 'level must be high | middle | elementary' });
+    }
+    let schools = (enrichedCache?.schools || []).filter(s => (s.level || '').toLowerCase() === lvl);
+    if (q && String(q).trim().length >= 2) {
+      const term = String(q).trim().toLowerCase();
+      schools = schools.filter(s =>
+        (s.name || '').toLowerCase().includes(term) ||
+        (s.district || '').toLowerCase().includes(term) ||
+        (s.city || '').toLowerCase().includes(term) ||
+        (s.state || '').toLowerCase().includes(term)
+      );
+    }
+    if (district) {
+      const d = String(district).toLowerCase();
+      schools = schools.filter(s => (s.district || '').toLowerCase().includes(d));
+    }
+    if (hasAP === 'true') schools = schools.filter(s => (s.apCourses || 0) > 0);
+    if (ibProgram === 'true') schools = schools.filter(s => s.ibProgram);
+    if (magnetProgram === 'true') schools = schools.filter(s => s.magnetProgram);
+    if (minRating) {
+      const min = Number(minRating);
+      schools = schools.filter(s => (s.rating?.score || 0) >= min);
+    }
+    schools = schools.map(s => ({ ...s, enriched: true }));
+    schools.sort((a, b) => (a.state + a.name).localeCompare(b.state + b.name));
+    return res.json({
+      state: 'ALL',
+      level: lvl,
+      totalInState: schools.length,
+      matched: schools.length,
+      enrichedInResults: schools.length,
+      results: schools.slice(0, 200),
+    });
+  }
 
   const stateUpper = String(state).toUpperCase();
   const lvl = String(level).toLowerCase();

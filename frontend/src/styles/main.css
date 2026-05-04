@@ -5508,3 +5508,14 @@ html, body { overflow-x: hidden; }
 #k12AiResult p { margin: 6px 0; }
 #k12AiResult strong { color: #1e3a8a; }
 #k12AiResult { word-break: break-word; }
+
+
+/* PATCH113 district input font — id-level specificity to win against any inherited rule */
+input#k12District,
+input#k12District::placeholder {
+  font-family: var(--font), 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  font-size: 13px !important;
+  color: #1f2937 !important;
+  letter-spacing: normal !important;
+}
+input#k12District::placeholder { color: #94a3b8 !important; opacity: 1 !important; }
