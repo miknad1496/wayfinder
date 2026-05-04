@@ -8520,7 +8520,7 @@ function renderApScore(score) {
     { key: 'other', label: 'Other FRQ Format' },
   ];
 
-  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab', 'ap-world-history', 'ap-physics-1', 'ap-european-history', 'ap-psychology']; // PATCH98: + ap-european-history + ap-psychology // PATCH96: + ap-physics-1 // PATCH95: + ap-world-history // PATCH93: + ap-calc-ab
+  const FULL_BRAIN_EXAMS = ['ap-chemistry', 'ap-us-history', 'ap-statistics', 'ap-english-language', 'ap-government', 'ap-biology', 'ap-macroeconomics', 'ap-calc-bc', 'ap-microeconomics', 'ap-calc-ab', 'ap-world-history', 'ap-physics-1', 'ap-european-history', 'ap-psychology', 'ap-human-geography', 'ap-csp', 'ap-english-lit', 'ap-environmental-science', 'ap-csa', 'ap-physics-2', 'ap-physics-c-mech']; // PATCH100: +7 (human-geography, csp, english-lit, environmental-science, csa, physics-2, physics-c-mech) // PATCH98: + european-history + psychology
 
   function _populateExamSelects(exams) {
     const optionsHtml = exams.map(e => '<option value="' + e.key + '">' + e.label + '</option>').join('');
