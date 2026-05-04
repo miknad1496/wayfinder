@@ -8661,6 +8661,38 @@ function renderApScore(score) {
 })();
 
 
+
+
+// PATCH94: when active subject changes, mirror the selection into the
+// FRQ Scoring + Tutor exam dropdowns so the user doesn't have to pick twice.
+(function _wfAutoMirrorActiveSubjectToExam() {
+  if (typeof document === 'undefined') return;
+  function attachMirror() {
+    const subj = document.getElementById('apActiveSubject');
+    if (!subj || subj.__wfMirrorWired) return;
+    subj.__wfMirrorWired = true;
+    function applyMirror() {
+      const v = subj.value;
+      if (!v) return;
+      ['apExam', 'apTutorExam'].forEach(function(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const opt = Array.from(el.options).find(function(o) { return o.value === v; });
+        if (opt) el.value = v;
+      });
+    }
+    subj.addEventListener('change', applyMirror);
+    // also fire once if the subject was preselected (from localStorage etc.)
+    if (subj.value) applyMirror();
+  }
+  attachMirror();
+  // Re-attach on AP view open in case dropdowns repopulate
+  const view = document.getElementById('apCoachView');
+  if (view) {
+    new MutationObserver(attachMirror).observe(view, { childList: true, subtree: true });
+  }
+})();
+
 // REVAMP V2: AP COACH WINDOW EXPOSURE PATCH90 — make AP Coach functions reachable from inline scripts
 if (typeof window !== 'undefined') {
   if (typeof openApCoach === 'function') window.openApCoach = openApCoach;

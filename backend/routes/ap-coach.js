@@ -12,6 +12,7 @@
  */
 
 import { Router } from 'express';
+import https from 'https';  // PATCH94: ESM has no require()
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -378,7 +379,7 @@ router.get('/guide/:exam', async (req, res) => {
     // and tried to pipe() that Promise to res, which silently broke on every redirect.
     // GitHub raw redirects to objects.githubusercontent.com so this hit every download.
     function _ghFetch(url, depth) {
-      const https = require('https');
+
       return new Promise((resolve, reject) => {
         const r = https.get(url, { headers: { 'User-Agent': 'wayfinder-ap-coach' } }, (resp) => {
           if ((resp.statusCode === 301 || resp.statusCode === 302 || resp.statusCode === 307) && resp.headers.location) {
