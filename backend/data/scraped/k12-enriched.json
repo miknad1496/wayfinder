@@ -10,7 +10,7 @@
     "lastRunReplaced": 0,
     "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 — Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
     "totalVerified": 174,
-    "totalEnriched": 278,
+    "totalEnriched": 350,
     "lastRun": 27,
     "lastEnriched": "2026-04-26",
     "totalEntries": 182,
@@ -9915,6 +9915,1754 @@
         "https://bend.bend.k12.or.us"
       ],
       "ncessch": "WF-OR-bend-la-pine-schools-bend-senior-high-school"
+    },
+    {
+      "name": "Lowell High School",
+      "district": "San Francisco Unified",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94132",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Selective public magnet — application + GPA-required",
+        "Top SFUSD outcomes; UC + Stanford pipeline",
+        "Strong AP suite (15+ courses)"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked CA public high school per public rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lowellhs.org/"
+      ],
+      "ncessch": "WF-CA-san-francisco-unified-lowell-high-school"
+    },
+    {
+      "name": "Galileo Academy of Science and Technology",
+      "district": "San Francisco Unified",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94109",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Magnet school — multiple academies (biotech, computer science, journalism, leadership)",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.galileoweb.org/"
+      ],
+      "ncessch": "WF-CA-san-francisco-unified-galileo-academy-of-science-and-technolog"
+    },
+    {
+      "name": "Mission High School",
+      "district": "San Francisco Unified",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94114",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Diverse student body",
+        "Strong arts and dual-language Spanish program"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sfusd.edu/school/mission-high-school"
+      ],
+      "ncessch": "WF-CA-san-francisco-unified-mission-high-school"
+    },
+    {
+      "name": "Lick-Wilmerding High School",
+      "district": "Lick-Wilmerding (independent)",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94112",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Independent private — not in SFUSD",
+        "Required tech/shop classes integrated with academics",
+        "Need-based aid up to full tuition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lwhs.org/"
+      ],
+      "ncessch": "WF-CA-lick-wilmerding-(independent)-lick-wilmerding-high-school"
+    },
+    {
+      "name": "Palo Alto High School",
+      "district": "Palo Alto Unified",
+      "city": "Palo Alto",
+      "state": "CA",
+      "zip": "94301",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog (20+ courses)",
+        "Renowned student journalism (Paly Voice)",
+        "Stanford-adjacent demographics, high college outcomes"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked CA public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://paly.pausd.org/"
+      ],
+      "ncessch": "WF-CA-palo-alto-unified-palo-alto-high-school"
+    },
+    {
+      "name": "Henry M. Gunn High School",
+      "district": "Palo Alto Unified",
+      "city": "Palo Alto",
+      "state": "CA",
+      "zip": "94306",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Sister to Paly with comparable rigor",
+        "Emphasis on student wellness post-2014 reforms"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://gunn.pausd.org/"
+      ],
+      "ncessch": "WF-CA-palo-alto-unified-henry-m.-gunn-high-school"
+    },
+    {
+      "name": "Mission San Jose High School",
+      "district": "Fremont Unified",
+      "city": "Fremont",
+      "state": "CA",
+      "zip": "94539",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Renowned for academic rigor + UC pipeline",
+        "Strong STEM + USAMO/AMC track record",
+        "Asian-American majority"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked CA public high school"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://msj.fremontunified.org/"
+      ],
+      "ncessch": "WF-CA-fremont-unified-mission-san-jose-high-school"
+    },
+    {
+      "name": "Lynbrook High School",
+      "district": "Fremont Union High",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95129",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top STEM track record",
+        "Strong AP catalog (25+ courses)",
+        "High UC + Ivy outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.fuhsd.org/lynbrook"
+      ],
+      "ncessch": "WF-CA-fremont-union-high-lynbrook-high-school"
+    },
+    {
+      "name": "Monta Vista High School",
+      "district": "Fremont Union High",
+      "city": "Cupertino",
+      "state": "CA",
+      "zip": "95014",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Apple-adjacent demographics",
+        "Highly competitive academic culture",
+        "Strong AP + research outcomes"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top CA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.fuhsd.org/montavista"
+      ],
+      "ncessch": "WF-CA-fremont-union-high-monta-vista-high-school"
+    },
+    {
+      "name": "Cupertino High School",
+      "district": "Fremont Union High",
+      "city": "Cupertino",
+      "state": "CA",
+      "zip": "95014",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "High UC outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.fuhsd.org/cupertino"
+      ],
+      "ncessch": "WF-CA-fremont-union-high-cupertino-high-school"
+    },
+    {
+      "name": "Saratoga High School",
+      "district": "Los Gatos-Saratoga Union",
+      "city": "Saratoga",
+      "state": "CA",
+      "zip": "95070",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top CA public HS",
+        "Strong AP + research outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lgsuhsd.org/saratoga"
+      ],
+      "ncessch": "WF-CA-los-gatos-saratoga-union-saratoga-high-school"
+    },
+    {
+      "name": "Berkeley High School",
+      "district": "Berkeley Unified",
+      "city": "Berkeley",
+      "state": "CA",
+      "zip": "94704",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Six small learning communities (academies)",
+        "Strong arts + civic engagement",
+        "UC Berkeley adjacency"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bhs.berkeleyschools.net/"
+      ],
+      "ncessch": "WF-CA-berkeley-unified-berkeley-high-school"
+    },
+    {
+      "name": "Mission San Jose Elementary",
+      "district": "Fremont Unified",
+      "city": "Fremont",
+      "state": "CA",
+      "zip": "94539",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Feeds Mission San Jose pipeline",
+        "High parent-engagement community"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://msje.fremontunified.org/"
+      ],
+      "ncessch": "WF-CA-fremont-unified-mission-san-jose-elementary"
+    },
+    {
+      "name": "Hoover Middle School (San Jose)",
+      "district": "San Jose Unified",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95126",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sjusd.org/hoover"
+      ],
+      "ncessch": "WF-CA-san-jose-unified-hoover-middle-school-(san-jose)"
+    },
+    {
+      "name": "Joaquin Miller Middle School",
+      "district": "Cupertino Union",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95129",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Feeds Lynbrook HS",
+        "Strong math acceleration pathway"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://jm.cusdk8.org/"
+      ],
+      "ncessch": "WF-CA-cupertino-union-joaquin-miller-middle-school"
+    },
+    {
+      "name": "Kennedy Middle School (Cupertino)",
+      "district": "Cupertino Union",
+      "city": "Cupertino",
+      "state": "CA",
+      "zip": "95014",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Feeds Monta Vista HS",
+        "Strong STEM acceleration"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://kennedy.cusdk8.org/"
+      ],
+      "ncessch": "WF-CA-cupertino-union-kennedy-middle-school-(cupertino)"
+    },
+    {
+      "name": "North Hollywood High School",
+      "district": "Los Angeles Unified",
+      "city": "North Hollywood",
+      "state": "CA",
+      "zip": "91601",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Highly Gifted Magnet (HGM) — application required",
+        "Renowned for high-achieving STEM students"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top LAUSD magnet"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lausd.org/Domain/3145",
+        "https://www.northhollywoodhs.org/"
+      ],
+      "ncessch": "WF-CA-los-angeles-unified-north-hollywood-high-school"
+    },
+    {
+      "name": "Los Angeles Center for Enriched Studies (LACES)",
+      "district": "Los Angeles Unified",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90019",
+      "level": "high",
+      "grades": "4-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "4-12 magnet — competitive admit",
+        "Strong gifted/honors track",
+        "Top LAUSD outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.laces.lausd.net/"
+      ],
+      "ncessch": "WF-CA-los-angeles-unified-los-angeles-center-for-enriched-studies-"
+    },
+    {
+      "name": "Granada Hills Charter High School",
+      "district": "Granada Hills Charter (LA)",
+      "city": "Granada Hills",
+      "state": "CA",
+      "zip": "91344",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "charter",
+      "charter": true,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Largest charter HS in CA",
+        "Strong AP + STEM programs",
+        "National Academic Decathlon champion track record"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top LA-area charter HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://granadahillscharter.org/"
+      ],
+      "ncessch": "WF-CA-granada-hills-charter-(la)-granada-hills-charter-high-school"
+    },
+    {
+      "name": "Beverly Hills High School",
+      "district": "Beverly Hills Unified",
+      "city": "Beverly Hills",
+      "state": "CA",
+      "zip": "90212",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Affluent suburb with strong PTA support",
+        "Strong AP + arts programs"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bhusd.org/Domain/12"
+      ],
+      "ncessch": "WF-CA-beverly-hills-unified-beverly-hills-high-school"
+    },
+    {
+      "name": "Santa Monica High School",
+      "district": "Santa Monica-Malibu Unified",
+      "city": "Santa Monica",
+      "state": "CA",
+      "zip": "90405",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Coastal community with high college-going rate"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.smmusd.org/samohi"
+      ],
+      "ncessch": "WF-CA-santa-monica-malibu-unified-santa-monica-high-school"
+    },
+    {
+      "name": "Arcadia High School",
+      "district": "Arcadia Unified",
+      "city": "Arcadia",
+      "state": "CA",
+      "zip": "91006",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top LA-area public HS",
+        "Asian-American majority",
+        "Strong UC + Ivy track record"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top CA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ausd.net/ahs"
+      ],
+      "ncessch": "WF-CA-arcadia-unified-arcadia-high-school"
+    },
+    {
+      "name": "San Marino High School",
+      "district": "San Marino Unified",
+      "city": "San Marino",
+      "state": "CA",
+      "zip": "91108",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Highest-rated CA public HS by various rankings",
+        "Strong AP + classical curriculum",
+        "Affluent feeder pattern"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top CA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.smusd.us/Domain/15"
+      ],
+      "ncessch": "WF-CA-san-marino-unified-san-marino-high-school"
+    },
+    {
+      "name": "Whitney High School (Cerritos)",
+      "district": "ABC Unified",
+      "city": "Cerritos",
+      "state": "CA",
+      "zip": "90703",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Application-required magnet (entry test in 6th grade)",
+        "7-12 unified",
+        "Top CA public per multiple rankings"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked CA public 7-12 magnet"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://whitneyhs.us/"
+      ],
+      "ncessch": "WF-CA-abc-unified-whitney-high-school-(cerritos)"
+    },
+    {
+      "name": "Walter Reed Middle School",
+      "district": "Los Angeles Unified",
+      "city": "North Hollywood",
+      "state": "CA",
+      "zip": "91607",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Math/Science Magnet center",
+        "Feeds North Hollywood HS HGM"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.walterreedms.com/"
+      ],
+      "ncessch": "WF-CA-los-angeles-unified-walter-reed-middle-school"
+    },
+    {
+      "name": "Beverly Vista K-8",
+      "district": "Beverly Hills Unified",
+      "city": "Beverly Hills",
+      "state": "CA",
+      "zip": "90211",
+      "level": "middle",
+      "grades": "K-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "K-8 unified",
+        "Strong PTA-funded enrichment"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bhusd.org/Domain/13"
+      ],
+      "ncessch": "WF-CA-beverly-hills-unified-beverly-vista-k-8"
+    },
+    {
+      "name": "Torrey Pines High School",
+      "district": "San Dieguito Union High",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92130",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "High UC + private outcomes",
+        "Affluent Carmel Valley/Del Mar feeder"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://tp.sduhsd.net/"
+      ],
+      "ncessch": "WF-CA-san-dieguito-union-high-torrey-pines-high-school"
+    },
+    {
+      "name": "Canyon Crest Academy",
+      "district": "San Dieguito Union High",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92130",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Conservatory-style arts + STEM tracks",
+        "Strong UC + arts conservatory pipeline"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://cca.sduhsd.net/"
+      ],
+      "ncessch": "WF-CA-san-dieguito-union-high-canyon-crest-academy"
+    },
+    {
+      "name": "Westview High School (San Diego)",
+      "district": "Poway Unified",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92129",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong STEM + AP catalog",
+        "Top Poway-area HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.powayusd.com/en-US/Schools/HS/WVHS"
+      ],
+      "ncessch": "WF-CA-poway-unified-westview-high-school-(san-diego)"
+    },
+    {
+      "name": "Del Norte High School",
+      "district": "Poway Unified",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92127",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "4S Ranch / Carmel Valley feeder"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.powayusd.com/en-US/Schools/HS/DNHS"
+      ],
+      "ncessch": "WF-CA-poway-unified-del-norte-high-school"
+    },
+    {
+      "name": "Mira Loma High School",
+      "district": "San Juan Unified",
+      "city": "Sacramento",
+      "state": "CA",
+      "zip": "95821",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Strong AP catalog",
+        "Top Sacramento-area public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sanjuan.edu/miraloma"
+      ],
+      "ncessch": "WF-CA-san-juan-unified-mira-loma-high-school"
+    },
+    {
+      "name": "Troy High School (Fullerton)",
+      "district": "Fullerton Joint Union High",
+      "city": "Fullerton",
+      "state": "CA",
+      "zip": "92831",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Troy Tech Magnet — application-required STEM track",
+        "Top Orange County public HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.troyhigh.com/"
+      ],
+      "ncessch": "WF-CA-fullerton-joint-union-high-troy-high-school-(fullerton)"
+    },
+    {
+      "name": "University High School (Irvine)",
+      "district": "Irvine Unified",
+      "city": "Irvine",
+      "state": "CA",
+      "zip": "92612",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Asian-American majority",
+        "Top OC public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://uhs.iusd.org/"
+      ],
+      "ncessch": "WF-CA-irvine-unified-university-high-school-(irvine)"
+    },
+    {
+      "name": "Stuyvesant High School",
+      "district": "NYC Department of Education",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10282",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Top NYC specialized HS — SHSAT-required admit",
+        "Renowned STEM + math team",
+        "USAMO + Intel STS pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked NY public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://stuy.enschool.org/",
+        "https://www.schools.nyc.gov/learning/programs/specialized-high-schools"
+      ],
+      "ncessch": "WF-NY-nyc-department-of-education-stuyvesant-high-school"
+    },
+    {
+      "name": "Bronx High School of Science",
+      "district": "NYC Department of Education",
+      "city": "Bronx",
+      "state": "NY",
+      "zip": "10468",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Specialized HS — SHSAT-required",
+        "8 Nobel laureates + 7 Pulitzer winners",
+        "Strong science + math research pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier NY public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bxscience.edu/"
+      ],
+      "ncessch": "WF-NY-nyc-department-of-education-bronx-high-school-of-science"
+    },
+    {
+      "name": "Brooklyn Technical High School",
+      "district": "NYC Department of Education",
+      "city": "Brooklyn",
+      "state": "NY",
+      "zip": "11217",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Specialized HS — SHSAT-required",
+        "Engineering + tech major-specialization tracks",
+        "~6000 students — largest specialized HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bths.edu/"
+      ],
+      "ncessch": "WF-NY-nyc-department-of-education-brooklyn-technical-high-school"
+    },
+    {
+      "name": "Hunter College High School",
+      "district": "CUNY (Hunter College)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10128",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Separate from NYC DOE — CUNY-administered",
+        "Application + entrance exam in 6th grade",
+        "7-12 unified",
+        "Tied to top US private prep schools in outcomes"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top public secondary in US per various rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hunterschools.org/hchs"
+      ],
+      "ncessch": "WF-NY-cuny-(hunter-college)-hunter-college-high-school"
+    },
+    {
+      "name": "LaGuardia High School (Performing Arts)",
+      "district": "NYC Department of Education",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10023",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Specialized HS — audition-based admit",
+        "Drama, dance, music, visual arts, vocal tracks",
+        "The \"Fame\" school"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.laguardiahs.org/"
+      ],
+      "ncessch": "WF-NY-nyc-department-of-education-laguardia-high-school-(performing-arts)"
+    },
+    {
+      "name": "Townsend Harris High School",
+      "district": "NYC Department of Education",
+      "city": "Flushing",
+      "state": "NY",
+      "zip": "11367",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Selective humanities-focused HS — separate admit (not SHSAT)",
+        "Required CUNY Queens College credits in junior/senior year",
+        "Top NY public outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.thhs.qc.edu/"
+      ],
+      "ncessch": "WF-NY-nyc-department-of-education-townsend-harris-high-school"
+    },
+    {
+      "name": "Great Neck North High School",
+      "district": "Great Neck UFSD",
+      "city": "Great Neck",
+      "state": "NY",
+      "zip": "11023",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top LI public HS",
+        "Strong AP catalog",
+        "High Ivy + selective placement"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.greatneck.k12.ny.us/Domain/16"
+      ],
+      "ncessch": "WF-NY-great-neck-ufsd-great-neck-north-high-school"
+    },
+    {
+      "name": "Roslyn High School",
+      "district": "Roslyn UFSD",
+      "city": "Roslyn Heights",
+      "state": "NY",
+      "zip": "11577",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top LI public outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.roslynschools.org/Domain/13"
+      ],
+      "ncessch": "WF-NY-roslyn-ufsd-roslyn-high-school"
+    },
+    {
+      "name": "Jericho Senior High School",
+      "district": "Jericho UFSD",
+      "city": "Jericho",
+      "state": "NY",
+      "zip": "11753",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top LI HS",
+        "Strong AP + research outcomes"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier NY public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.jerichoschools.org/o/jhs"
+      ],
+      "ncessch": "WF-NY-jericho-ufsd-jericho-senior-high-school"
+    },
+    {
+      "name": "Syosset High School",
+      "district": "Syosset Central School District",
+      "city": "Syosset",
+      "state": "NY",
+      "zip": "11791",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top LI public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.syossetschools.org/o/syosset-high"
+      ],
+      "ncessch": "WF-NY-syosset-central-school-district-syosset-high-school"
+    },
+    {
+      "name": "Manhasset High School",
+      "district": "Manhasset UFSD",
+      "city": "Manhasset",
+      "state": "NY",
+      "zip": "11030",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.manhassetschools.org/o/manhasset-secondary-school"
+      ],
+      "ncessch": "WF-NY-manhasset-ufsd-manhasset-high-school"
+    },
+    {
+      "name": "Scarsdale High School",
+      "district": "Scarsdale UFSD",
+      "city": "Scarsdale",
+      "state": "NY",
+      "zip": "10583",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "No AP courses — Advanced Topics curriculum (district-specific)",
+        "Top NY private-feeder profile despite public",
+        "Affluent suburb"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top NY public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.scarsdaleschools.org/scarsdale-high-school"
+      ],
+      "ncessch": "WF-NY-scarsdale-ufsd-scarsdale-high-school"
+    },
+    {
+      "name": "Bronxville High School",
+      "district": "Bronxville UFSD",
+      "city": "Bronxville",
+      "state": "NY",
+      "zip": "10708",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top Westchester public",
+        "Small (~600 students)",
+        "Strong AP + arts"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bronxvilleschool.org/"
+      ],
+      "ncessch": "WF-NY-bronxville-ufsd-bronxville-high-school"
+    },
+    {
+      "name": "Horace Greeley High School",
+      "district": "Chappaqua Central School District",
+      "city": "Chappaqua",
+      "state": "NY",
+      "zip": "10514",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top Westchester public",
+        "High Ivy + private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ccsd.ws/Domain/12"
+      ],
+      "ncessch": "WF-NY-chappaqua-central-school-distric-horace-greeley-high-school"
+    },
+    {
+      "name": "Rye High School",
+      "district": "Rye City School District",
+      "city": "Rye",
+      "state": "NY",
+      "zip": "10580",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ryeschools.org/o/ryehighschool"
+      ],
+      "ncessch": "WF-NY-rye-city-school-district-rye-high-school"
+    },
+    {
+      "name": "Mark Twain Intermediate School (IS 239)",
+      "district": "NYC DOE District 21",
+      "city": "Brooklyn",
+      "state": "NY",
+      "zip": "11223",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Talent-focused magnet — audition required",
+        "Tracks: math, science, computer, dance, drama, music, visual arts",
+        "Strong feeder to NYC specialized HSes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.is239.org/"
+      ],
+      "ncessch": "WF-NY-nyc-doe-district-21-mark-twain-intermediate-school-(is-239)"
+    },
+    {
+      "name": "Booker T. Washington Middle School (MS 54)",
+      "district": "NYC DOE District 3",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10025",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Upper West Side flagship public middle",
+        "Strong gifted/honors track"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ms54.com/"
+      ],
+      "ncessch": "WF-NY-nyc-doe-district-3-booker-t.-washington-middle-school-(ms-5"
+    },
+    {
+      "name": "PS 6 (Lillie Devereaux Blake)",
+      "district": "NYC DOE District 2",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10021",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Upper East Side flagship public ES",
+        "Strong PTA-funded programs"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ps6nyc.org/"
+      ],
+      "ncessch": "WF-NY-nyc-doe-district-2-ps-6-(lillie-devereaux-blake)"
+    },
+    {
+      "name": "PS 234 (Independence School)",
+      "district": "NYC DOE District 2",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10013",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "TriBeCa flagship public ES",
+        "Project-based learning"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ps234.org/"
+      ],
+      "ncessch": "WF-NY-nyc-doe-district-2-ps-234-(independence-school)"
+    },
+    {
+      "name": "NEST+m (New Explorations into Science Technology + Math)",
+      "district": "NYC DOE District 1",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10002",
+      "level": "middle",
+      "grades": "K-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "K-12 Gifted + Talented citywide magnet",
+        "Application-based admit",
+        "STEM-focused with strong outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.nestmk12.net/"
+      ],
+      "ncessch": "WF-NY-nyc-doe-district-1-nest+m-(new-explorations-into-science-te"
+    },
+    {
+      "name": "Plano West Senior High School",
+      "district": "Plano ISD",
+      "city": "Plano",
+      "state": "TX",
+      "zip": "75093",
+      "level": "high",
+      "grades": "11-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Senior HS only (11-12) — feeder pattern unique to Plano",
+        "Strong AP catalog",
+        "High UT + Texas A&M outcomes"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top TX public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pisd.edu/planowest"
+      ],
+      "ncessch": "WF-TX-plano-isd-plano-west-senior-high-school"
+    },
+    {
+      "name": "Plano East Senior High School",
+      "district": "Plano ISD",
+      "city": "Plano",
+      "state": "TX",
+      "zip": "75074",
+      "level": "high",
+      "grades": "11-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "11-12 senior HS",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pisd.edu/planoeast"
+      ],
+      "ncessch": "WF-TX-plano-isd-plano-east-senior-high-school"
+    },
+    {
+      "name": "Plano Senior High School",
+      "district": "Plano ISD",
+      "city": "Plano",
+      "state": "TX",
+      "zip": "75074",
+      "level": "high",
+      "grades": "11-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Original Plano senior HS",
+        "Strong AP suite"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pisd.edu/planosenior"
+      ],
+      "ncessch": "WF-TX-plano-isd-plano-senior-high-school"
+    },
+    {
+      "name": "Frisco High School",
+      "district": "Frisco ISD",
+      "city": "Frisco",
+      "state": "TX",
+      "zip": "75034",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Frisco ISD is one of fastest-growing TX districts",
+        "Strong AP + STEM programming"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://schools.friscoisd.org/highschool/frisco"
+      ],
+      "ncessch": "WF-TX-frisco-isd-frisco-high-school"
+    },
+    {
+      "name": "Liberty High School (Frisco)",
+      "district": "Frisco ISD",
+      "city": "Frisco",
+      "state": "TX",
+      "zip": "75035",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Frisco-area top performer"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://schools.friscoisd.org/highschool/liberty"
+      ],
+      "ncessch": "WF-TX-frisco-isd-liberty-high-school-(frisco)"
+    },
+    {
+      "name": "Highland Park High School (Dallas)",
+      "district": "Highland Park ISD",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75205",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top TX public HS",
+        "Affluent Park Cities suburb",
+        "Strong AP + UT/Stanford pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier TX public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hpisd.org/hphs"
+      ],
+      "ncessch": "WF-TX-highland-park-isd-highland-park-high-school-(dallas)"
+    },
+    {
+      "name": "Carroll Senior High School",
+      "district": "Carroll ISD",
+      "city": "Southlake",
+      "state": "TX",
+      "zip": "76092",
+      "level": "high",
+      "grades": "11-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "11-12 senior HS",
+        "Top TX public outcomes",
+        "Affluent Southlake suburb"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.southlakecarroll.edu/Domain/16"
+      ],
+      "ncessch": "WF-TX-carroll-isd-carroll-senior-high-school"
+    },
+    {
+      "name": "Carnegie Vanguard High School",
+      "district": "Houston ISD",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77019",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Gifted-and-talented magnet — application required",
+        "Top TX public HS per multiple rankings",
+        "Small cohort, strong AP"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked TX public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.houstonisd.org/carnegievanguard"
+      ],
+      "ncessch": "WF-TX-houston-isd-carnegie-vanguard-high-school"
+    },
+    {
+      "name": "DeBakey High School for Health Professions",
+      "district": "Houston ISD",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77030",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Pre-med magnet — application required",
+        "Texas Medical Center adjacent",
+        "Strong med + research pipeline"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.houstonisd.org/Domain/12152"
+      ],
+      "ncessch": "WF-TX-houston-isd-debakey-high-school-for-health-professio"
+    },
+    {
+      "name": "Bellaire High School",
+      "district": "Houston ISD",
+      "city": "Bellaire",
+      "state": "TX",
+      "zip": "77401",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong IB + AP",
+        "Diverse student body",
+        "Houston-area top performer"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.houstonisd.org/bellairehs"
+      ],
+      "ncessch": "WF-TX-houston-isd-bellaire-high-school"
+    },
+    {
+      "name": "Seven Lakes High School (Katy)",
+      "district": "Katy ISD",
+      "city": "Katy",
+      "state": "TX",
+      "zip": "77494",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top Katy ISD HS",
+        "Asian + diverse demographic mix"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.katyisd.org/sevenlakes"
+      ],
+      "ncessch": "WF-TX-katy-isd-seven-lakes-high-school-(katy)"
+    },
+    {
+      "name": "Cinco Ranch High School",
+      "district": "Katy ISD",
+      "city": "Katy",
+      "state": "TX",
+      "zip": "77450",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Top Katy ISD HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.katyisd.org/cincoranch"
+      ],
+      "ncessch": "WF-TX-katy-isd-cinco-ranch-high-school"
+    },
+    {
+      "name": "Cypress Ranch High School",
+      "district": "Cypress-Fairbanks ISD",
+      "city": "Cypress",
+      "state": "TX",
+      "zip": "77433",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top Cy-Fair HS",
+        "Strong AP"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.cfisd.net/en/schools/high-schools/cypress-ranch-hs/"
+      ],
+      "ncessch": "WF-TX-cypress-fairbanks-isd-cypress-ranch-high-school"
+    },
+    {
+      "name": "Liberal Arts and Science Academy (LASA)",
+      "district": "Austin ISD",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78723",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Magnet school — application required",
+        "Top TX public HS",
+        "Strong STEM + humanities + UT pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-tier TX public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.austinisd.org/schools/lasa"
+      ],
+      "ncessch": "WF-TX-austin-isd-liberal-arts-and-science-academy-(lasa)"
+    },
+    {
+      "name": "Westlake High School (Austin)",
+      "district": "Eanes ISD",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78746",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Affluent West Austin suburb",
+        "Strong AP catalog",
+        "Top TX public outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://westlake.eanesisd.net/"
+      ],
+      "ncessch": "WF-TX-eanes-isd-westlake-high-school-(austin)"
+    },
+    {
+      "name": "Round Rock High School",
+      "district": "Round Rock ISD",
+      "city": "Round Rock",
+      "state": "TX",
+      "zip": "78664",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Austin-metro feeder"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://schools.roundrockisd.org/rrhs"
+      ],
+      "ncessch": "WF-TX-round-rock-isd-round-rock-high-school"
+    },
+    {
+      "name": "Pearce Middle School (Austin)",
+      "district": "Austin ISD",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78753",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.austinisd.org/schools/pearce"
+      ],
+      "ncessch": "WF-TX-austin-isd-pearce-middle-school-(austin)"
+    },
+    {
+      "name": "Pershing Middle School (Houston)",
+      "district": "Houston ISD",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77025",
+      "level": "middle",
+      "grades": "6-8",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Vanguard Magnet for gifted students",
+        "Strong feeder to Bellaire HS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.houstonisd.org/pershing"
+      ],
+      "ncessch": "WF-TX-houston-isd-pershing-middle-school-(houston)"
+    },
+    {
+      "name": "Dawson Elementary (Plano)",
+      "district": "Plano ISD",
+      "city": "Plano",
+      "state": "TX",
+      "zip": "75093",
+      "level": "elementary",
+      "grades": "K-5",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.pisd.edu/dawson"
+      ],
+      "ncessch": "WF-TX-plano-isd-dawson-elementary-(plano)"
     }
   ]
 }

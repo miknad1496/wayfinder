@@ -8454,6 +8454,9 @@ async function loadApGuides() {
             alert(json.error);
           } else if (resp.status === 403) {
             alert('Coach or Consultant tier required to download study guides.');
+          } else if (resp.status === 429 && json && json._capReached) {
+            // PATCH110: friendly Coach-cap message
+            alert('Monthly Coach cap reached (2 downloads / month).\n\nUpgrade to Consultant for unlimited study guide downloads, or wait until next month.');
           } else {
             alert('Could not download ' + label + ' — ' + msg);
           }

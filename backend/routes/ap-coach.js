@@ -14,7 +14,7 @@
 import { Router } from 'express';
 import https from 'https';  // PATCH94: ESM has no require()
 import { generatePreview } from '../services/study-guide-preview.js'; // PATCH97
-import { findUserByToken, updateUserPlan } from '../services/auth.js'; // PATCH97
+import { findUserByToken, updateUserPlan, checkStudyGuideDownload, recordStudyGuideDownload } from '../services/auth.js'; // PATCH97 + PATCH110
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -474,11 +474,24 @@ router.get('/guide/:exam', async (req, res) => {
       return res.send(buf);
     }
 
+    // PATCH110: enforce monthly cap for Coach tier (2/mo). Consultant/admin/VIP unlimited.
+    const dlCheck = await checkStudyGuideDownload(token, exam);
+    if (!dlCheck.allowed) {
+      return res.status(429).json({
+        error: dlCheck.reason || 'Download limit reached.',
+        _capReached: true,
+        count: dlCheck.count,
+        cap: dlCheck.cap,
+        _requiresUpgrade: true,
+      });
+    }
+
     // Paid path: prefer local PDF > local DOCX > GitHub raw (PDF, then DOCX)
     const local = await _bestLocalGuideFile(cfg);
     if (local) {
       res.setHeader('Content-Type', local.ext === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
       res.setHeader('Content-Disposition', 'attachment; filename="' + local.filename + '"');
+      try { await recordStudyGuideDownload(token); } catch (_) {}
       return res.sendFile(local.path);
     }
     // GitHub fallback
@@ -487,6 +500,7 @@ router.get('/guide/:exam', async (req, res) => {
         const buf = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.pdfFile), 0);
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', 'attachment; filename="' + cfg.pdfFile + '"');
+        try { await recordStudyGuideDownload(token); } catch (_) {}
         return res.send(buf);
       } catch {}
     }
@@ -495,6 +509,7 @@ router.get('/guide/:exam', async (req, res) => {
         const buf = await _ghFetchBuffer('https://raw.githubusercontent.com/miknad1496/wayfinder/main/backend/data/ap-study-guides/' + encodeURIComponent(cfg.file), 0);
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
         res.setHeader('Content-Disposition', 'attachment; filename="' + cfg.file + '"');
+        try { await recordStudyGuideDownload(token); } catch (_) {}
         return res.send(buf);
       } catch {}
     }

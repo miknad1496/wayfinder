@@ -2044,3 +2044,68 @@ export async function redeemFriendsCoachCode(token, code) {
   } catch (err) { return { success: false, error: err.message }; }
 }
 
+
+
+// PATCH110: Monthly study-guide download limits.
+//   Coach tier: 2 downloads / calendar month.
+//   Consultant / admin / VIP / Elite / Pro (legacy): unlimited.
+//   Free tier: not gated here — preview path in routes/ap-coach.js handles it.
+export async function checkStudyGuideDownload(token) {
+  if (!token) return { allowed: false, reason: 'Not authenticated' };
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return { allowed: false, reason: 'User not found' };
+    const { user } = resolved;
+    const planRaw = String(user.plan || 'free').toLowerCase();
+    const isUnlimited = (
+      planRaw === 'consultant' || planRaw === 'elite' || planRaw === 'pro' || planRaw === 'admin'
+      || isAdmin(user.email) || isVIP(user.email)
+    );
+    if (isUnlimited) return { allowed: true, unlimited: true, count: null, cap: null };
+
+    if (planRaw === 'coach') {
+      const now = new Date();
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const usage = user.studyGuideMonthlyDLs || { month: currentMonth, count: 0 };
+      const count = (usage.month === currentMonth) ? (usage.count || 0) : 0;
+      const cap = 2;
+      return {
+        allowed: count < cap,
+        unlimited: false,
+        count,
+        cap,
+        reason: count >= cap ? 'Monthly Coach study-guide cap reached (2/mo). Upgrade to Consultant for unlimited downloads, or wait until next month.' : null,
+      };
+    }
+
+    return { allowed: false, reason: 'Full study-guide downloads require a Coach or Consultant subscription.' };
+  } catch (err) {
+    return { allowed: false, reason: 'Internal error' };
+  }
+}
+
+export async function recordStudyGuideDownload(token) {
+  if (!token) return;
+  try {
+    const resolved = await resolveUserByToken(token);
+    if (!resolved) return;
+    const { user, filePath } = resolved;
+    const planRaw = String(user.plan || 'free').toLowerCase();
+    if (planRaw !== 'coach') return; // only coach has a counter
+    await withCreditLock(user.id || user.email, async () => {
+      const fresh = JSON.parse(await (await import('fs')).promises.readFile(filePath, 'utf8'));
+      const now = new Date();
+      const currentMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      const usage = fresh.studyGuideMonthlyDLs || { month: currentMonth, count: 0 };
+      if (usage.month !== currentMonth) {
+        fresh.studyGuideMonthlyDLs = { month: currentMonth, count: 1 };
+      } else {
+        fresh.studyGuideMonthlyDLs = { month: currentMonth, count: (usage.count || 0) + 1 };
+      }
+      await atomicWriteJSON(filePath, fresh);
+    });
+  } catch (err) {
+    // non-fatal — never block download on tracking error
+  }
+}
+// END PATCH110
