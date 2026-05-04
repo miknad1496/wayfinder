@@ -50,19 +50,17 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: 'Password must be at least 8 characters' });
     }
 
-    // All signups require a valid invite code — no exceptions
-    if (!inviteCode) {
-      return res.status(400).json({ error: 'An invitation code is required to join Wayfinder.' });
-    }
-
-    const inviteCheck = await validateInvite(inviteCode);
-    if (inviteCheck.error) {
-      return res.status(400).json({ error: inviteCheck.error });
-    }
-
-    // If invite is email-locked, verify it matches
-    if (inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== sanitizedEmail) {
-      return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
+    // PATCH120: invitation code optional. If provided + valid, validate and redeem; otherwise free signup.
+    let _validatedInvite = null;
+    if (inviteCode) {
+      const inviteCheck = await validateInvite(inviteCode);
+      if (inviteCheck.error) {
+        return res.status(400).json({ error: inviteCheck.error });
+      }
+      if (inviteCheck.invite && inviteCheck.invite.recipientEmail && inviteCheck.invite.recipientEmail !== sanitizedEmail) {
+        return res.status(400).json({ error: 'This invitation was sent to a different email address.' });
+      }
+      _validatedInvite = inviteCheck.invite;
     }
 
     const result = await createUser({ email: sanitizedEmail, password, name, userType, school, interests });
@@ -71,8 +69,10 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ error: result.error });
     }
 
-    // Redeem the invite (pass name so inviter can see who joined)
-    await redeemInvite(inviteCode, result.user.id, email, name);
+    // PATCH120: only redeem if a valid invite was provided
+    if (_validatedInvite) {
+      try { await redeemInvite(inviteCode, result.user.id, email, name); } catch (_) { /* non-fatal */ }
+    }
 
     // If consent was given during signup, update the user record
     if (consentGiven && result.token) {

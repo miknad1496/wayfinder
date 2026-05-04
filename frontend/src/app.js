@@ -1568,12 +1568,8 @@ async function submitResetPassword() {
 }
 
 async function submitSignup() {
-  // Always require a validated invite code
-  if (!validatedInviteCode) {
-    showAuthError('signupError', 'Please enter a valid invitation code first.');
-    return;
-  }
-
+  // PATCH120: invitation code optional. Free signup. inviteCode kept as optional bonus
+  // (granters get tracking + invitee may get extras like 1-month Coach trial).
   const name = $('signupName').value.trim();
   const email = $('signupEmail').value.trim();
   const password = $('signupPassword').value;
@@ -1591,7 +1587,7 @@ async function submitSignup() {
       body: JSON.stringify({
         email, password, name, userType,
         consentGiven: consent,
-        inviteCode: validatedInviteCode
+        inviteCode: validatedInviteCode || null  // PATCH120: optional
       })
     });
     const data = await res.json();
