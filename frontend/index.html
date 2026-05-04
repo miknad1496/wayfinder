@@ -663,6 +663,8 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
       '.form-btn, .auth-btn-text, .splash-cta-primary, .splash-cta-secondary, ' +
       // K-12 explainer
       '#k12WhyExplain summary span, #k12WhyExplain p, #k12WhyExplain li, #k12WhyExplain strong, ' +
+      // PATCH127: K-12 hero chips were missing from this selector since patch 99
+      '#k12HeroStrip div, ' +
       // Module headings
       '#k12Modal h2, #k12Modal .form-subtitle, ' +
       '#k12TabBrowse, #k12TabInsights, ' +
@@ -739,6 +741,14 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
   else watchLang();
   // Re-check every 1500ms in case pill is wired late
   setInterval(watchLang, 1500);
+  // PATCH127: also re-apply translations on a periodic tick. The MutationObserver
+  // only fires on childList changes, NOT on display:none -> block style toggles,
+  // which is how every modal opens. Without this tick, opening K-12 / Volunteer /
+  // Internships / Scholarships modals after initial page load left their content
+  // in English even when window._wfLang === 'ko'.
+  setInterval(function() {
+    if (window._wfLang === 'ko') applyKoreanLabels();
+  }, 1500);
 })();
 </script>
 </head>
