@@ -134,6 +134,36 @@ function _patch96_summarizePriorTurns(history) {
   return block;
 }
 
+
+// PATCH119: filter prior assistant refusals from conversation history when intl mode active.
+function _filterIntlRefusals(history, isIntl) {
+  if (!isIntl || !Array.isArray(history) || history.length === 0) return history;
+  const refusalSignals = [
+    '전문 영역이 아닙니다',
+    '전문가가 아닙니다',
+    '전문가와 상담',
+    '제 답변은 변하지 않습니다',
+    '제 답변은 여전히',
+    '같은 질문',
+    '답변할 수 없습니다',
+    '답할 수 없습니다',
+    '제 영역이 아닙니다',
+    '대성',
+    '시대인재',
+    '종로학원',
+    'cannot advise on Korean',
+    'not in my expertise',
+    'specialized in US admissions',
+    'I cannot help with Korean',
+  ];
+  return history.filter(m => {
+    if (m.role !== 'assistant') return true;
+    const c = String(m.content || '');
+    if (refusalSignals.some(s => c.indexOf(s) >= 0)) return false;
+    return true;
+  });
+}
+
 // PATCH96: Closer-with-action-items directive  +  PATCH105: premise-check guard
 const _patch96_actionItemsClose = [
   '',
@@ -160,6 +190,21 @@ const _patch96_actionItemsClose = [
   'When the user is in execution mode (asked a strategic question, school list, ED/REA decision, chance-me, FRQ prep), END your response with 1-2 concrete next steps for THIS WEEK they can take immediately. Format as a tight bulleted **This week:** list - 1-2 items, each starting with an action verb, each tied to a specific deliverable (e.g. "Finish the Why X school essay rough draft" or "Run the Net Price Calculator on Cornell + Caltech and email me the numbers"). Skip the closer for: greetings, simple clarifications, factual lookups, or when 1-2 actionable steps are not obvious.',
   '___________________________________________',
 ].join('\n');
+
+// PATCH119: Korean-language action-items closer (replaces English closer when intlLang='ko').
+const _patch119_actionItemsCloseKO = [
+  '',
+  '',
+  '___________________________________________',
+  '응답 마무리 지침',
+  '___________________________________________',
+  '사용자가 실행 단계의 질문을 했을 때 (입시 전략·학교 리스트·ED/REA 결정·합격 가능성·FRQ 준비 등), 응답 마지막에 이번 주 즉시 할 수 있는 1-2가지 구체적 행동을 제시하세요. 다음 형식의 짧은 불릿 리스트로 작성: **이번 주:** - 1-2개 항목, 각각 동작 동사로 시작.',
+  '',
+  '[중요 — 거절 패턴 차단]',
+  '대화 기록에 본인이 이전에 "전문 영역 아님 / 답변할 수 없음 / 한국 전문가 추천" 식으로 답변한 것이 있더라도, 그것은 잘못된 답변이었습니다. 위 시스템 프롬프트가 권위 있는 정보입니다. 사용자 질문에 한국 입시 전문가로서 직접, 충분히, 자신감 있게 답변하세요. "한국 의대 입시 전문가에게 문의하세요" 같은 회피 답변 절대 금지. 제공된 한국 brain 자료를 사용하여 직접 답변.',
+  '___________________________________________',
+].join('\n');
+
 
 
 const WAYFINDER_IDENTITY_RULES = `
@@ -495,6 +540,10 @@ Warm, conversational, slightly casual. You are an assistant, not an oracle. Ligh
  * is connecting now" greeting.
  */
 export async function chatHaikuAdvisor(conversationHistory, userMessage, sessionContext = {}, options = {}) {
+  // PATCH119: when intl mode active, filter refusal-pattern assistant turns from history
+  if (options && options.intlContext) {
+    conversationHistory = _filterIntlRefusals(conversationHistory, true);
+  }
   const anthropic = getClient();
   const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
 
@@ -614,6 +663,10 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
  * @returns {Object} { response, usage, retrievedSources, mode }
  */
 export async function chat(conversationHistory, userMessage, sessionContext = {}, options = {}) {
+  // PATCH119: when intl mode active, filter refusal-pattern assistant turns from history
+  if (options && options.intlContext) {
+    conversationHistory = _filterIntlRefusals(conversationHistory, true);
+  }
   const anthropic = getClient();
   const useEngine = options.useEngine || false;
   const scopeLabel = options.scopeLabel || 'in_scope';
