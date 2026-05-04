@@ -46,6 +46,11 @@ const SLM_MODEL_NAME = process.env.SLM_MODEL_NAME || 'wayfinder-04a';
 // the SLM output ceiling — pick that as the default and let responses run their
 // natural length. Render env var still overrides if set there.
 const SLM_MAX_TOKENS = parseInt(process.env.SLM_MAX_TOKENS || '8192', 10);
+// PATCH133 DIAG: log the cap at module load so Render boot log shows EXACTLY
+// what value is in effect. If the response still truncates at ~1024 even though
+// this prints 8192, the cap is server-side on the SLM endpoint itself (RunPod /
+// vLLM max_new_tokens) — fix that in the SLM deployment config, not here.
+console.log(`[SLM-CONFIG] SLM_MAX_TOKENS at boot: ${SLM_MAX_TOKENS} (env=${process.env.SLM_MAX_TOKENS || 'unset'}, default=8192)`);
 const SLM_TEMPERATURE = parseFloat(process.env.SLM_TEMPERATURE || '0.7');
 const SLM_ENABLED = process.env.SLM_ENABLED === 'true';
 
@@ -550,6 +555,8 @@ async function callSLMEndpoint(messages) {
       stop: ['<|eot_id|>'],  // Llama 3.1 stop token
     };
   }
+  // PATCH133 DIAG: log what we're actually sending to the SLM endpoint
+  console.log(`[SLM-CALL] sending max_tokens=${SLM_MAX_TOKENS} to ${isRunPod ? 'RunPod' : 'OpenAI-compat'} endpoint`);
 
   // Timeout: 90s default to handle RunPod cold starts (~60-90s first request)
   // Warm requests complete in <2s, so this only matters for cold starts.
