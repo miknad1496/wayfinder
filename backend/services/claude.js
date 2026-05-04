@@ -754,17 +754,53 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
 
   // Call Claude
   try {
-    const response = await anthropic.messages.create({
-      model,
-      max_tokens: maxTokens,
-      system: systemPrompt,
-      messages
-    });
-
-    if (!response.content || response.content.length === 0 || !response.content[0].text) {
-      throw new Error('Claude returned empty or malformed response');
+    // PATCH104: streaming support. If options.onChunk is provided, use messages.stream()
+    // and emit each text delta. Still resolves with the full assembled response so
+    // telemetry, leak filter, and head consultant supplement still work.
+    let rawMessage = '';
+    let usageInfo = { input_tokens: 0, output_tokens: 0 };
+    if (typeof options.onChunk === 'function') {
+      const stream = anthropic.messages.stream({
+        model,
+        max_tokens: maxTokens,
+        system: systemPrompt,
+        messages,
+      });
+      for await (const event of stream) {
+        if (event.type === 'content_block_delta' && event.delta && event.delta.type === 'text_delta' && event.delta.text) {
+          rawMessage += event.delta.text;
+          try { options.onChunk(event.delta.text); } catch (chunkErr) { /* never let consumer break the stream */ }
+        } else if (event.type === 'message_delta' && event.usage) {
+          if (event.usage.output_tokens != null) usageInfo.output_tokens = event.usage.output_tokens;
+        } else if (event.type === 'message_start' && event.message && event.message.usage) {
+          if (event.message.usage.input_tokens != null) usageInfo.input_tokens = event.message.usage.input_tokens;
+          if (event.message.usage.output_tokens != null) usageInfo.output_tokens = event.message.usage.output_tokens;
+        }
+      }
+      const finalMsg = await stream.finalMessage();
+      if (finalMsg && finalMsg.usage) {
+        if (finalMsg.usage.input_tokens != null) usageInfo.input_tokens = finalMsg.usage.input_tokens;
+        if (finalMsg.usage.output_tokens != null) usageInfo.output_tokens = finalMsg.usage.output_tokens;
+      }
+      if (!rawMessage) {
+        // fallback to non-stream content if streaming yielded nothing
+        if (finalMsg && finalMsg.content && finalMsg.content[0] && finalMsg.content[0].text) {
+          rawMessage = finalMsg.content[0].text;
+        }
+      }
+    } else {
+      const response = await anthropic.messages.create({
+        model,
+        max_tokens: maxTokens,
+        system: systemPrompt,
+        messages
+      });
+      if (!response.content || response.content.length === 0 || !response.content[0].text) {
+        throw new Error('Claude returned empty or malformed response');
+      }
+      rawMessage = response.content[0].text;
+      usageInfo = response.usage || usageInfo;
     }
-    const rawMessage = response.content[0].text;
 
     // ─── SS-03: OUTPUT LEAKAGE FILTER ───────────────────────────
     // Scan every response for verbatim system prompt substrings.
@@ -782,8 +818,8 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
       phase: phase.phase,
       contextScore: phase.contextScore,
       usage: {
-        inputTokens: response.usage.input_tokens,
-        outputTokens: response.usage.output_tokens,
+        inputTokens: usageInfo.input_tokens || 0,
+        outputTokens: usageInfo.output_tokens || 0,
         model
       },
       retrievedSources: relevantChunks.map(c => ({

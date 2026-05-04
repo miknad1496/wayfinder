@@ -458,7 +458,8 @@ async function sendMessage() {
     const body = { message, sessionId };
     if (engineActive) body.useWayfinderEngine = true;
 
-    const response = await fetch(`${API_BASE}/chat`, {
+    // PATCH104: stream the response via SSE for ChatGPT/Claude-style gradual rendering.
+    const response = await fetch(`${API_BASE}/chat?stream=1`, {
       method: 'POST',
       headers,
       body: JSON.stringify(body)
@@ -467,7 +468,6 @@ async function sendMessage() {
     if (!response.ok) {
       const err = await response.json().catch(() => ({}));
       const error = new Error(err.error || `Server error (${response.status})`);
-      // Tag error type for friendly messaging
       if (response.status === 429) {
         error.errorType = err.upgradeReason === 'daily_messages' ? 'daily_message_limit'
           : err.upgradeReason === 'monthly_messages' ? 'monthly_message_limit'
@@ -478,25 +478,103 @@ async function sendMessage() {
       throw error;
     }
 
-    const data = await response.json();
+    const ctype = response.headers.get('content-type') || '';
+    let data = null;
+    let assistantBubble = null;
+    let accumulated = '';
+    if (ctype.indexOf('text/event-stream') !== -1) {
+      // SSE path: pop the typing indicator on first chunk and replace with a live bubble
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let currentEvent = 'message';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        // Parse SSE events (delimited by \n\n)
+        let idx;
+        while ((idx = buffer.indexOf('\n\n')) >= 0) {
+          const block = buffer.slice(0, idx);
+          buffer = buffer.slice(idx + 2);
+          if (!block.trim() || block.startsWith(': ')) continue; // heartbeat
+          let evtName = 'message';
+          let dataLine = '';
+          for (const line of block.split('\n')) {
+            if (line.startsWith('event: ')) evtName = line.slice(7).trim();
+            else if (line.startsWith('data: ')) dataLine += (dataLine ? '\n' : '') + line.slice(6);
+          }
+          if (!dataLine) continue;
+          let payload;
+          try { payload = JSON.parse(dataLine); } catch (parseErr) { continue; }
+          if (evtName === 'chunk' && typeof payload.text === 'string') {
+            if (!assistantBubble) {
+              if (typingEl) typingEl.remove();
+              assistantBubble = appendMessage('assistant', '', null, null);
+            }
+            accumulated += payload.text;
+            const bodyEl = assistantBubble.querySelector('.message-body');
+            if (bodyEl) bodyEl.innerHTML = renderMarkdown(accumulated);
+            // Auto-scroll to bottom as we stream
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+          } else if (evtName === 'replace' && typeof payload.text === 'string') {
+            // SS-03 leak filter swapped the response — replace the bubble entirely
+            accumulated = payload.text;
+            if (assistantBubble) {
+              const bodyEl = assistantBubble.querySelector('.message-body');
+              if (bodyEl) bodyEl.innerHTML = renderMarkdown(accumulated);
+            }
+          } else if (evtName === 'done') {
+            data = payload;
+          }
+        }
+      }
+      // Final pass after stream closes — if we never got 'done', fall back to whatever we accumulated
+      if (!data) data = { response: accumulated };
+      // Re-render with the canonical response (handles edge cases where last chunk was partial)
+      if (assistantBubble && data.response) {
+        const bodyEl = assistantBubble.querySelector('.message-body');
+        if (bodyEl) bodyEl.innerHTML = renderMarkdown(data.response);
+        // Attach sources if provided
+        if (data.sources && data.sources.length > 0) {
+          const sourcesHTML = (function() {
+            const _seen = new Set();
+            const _dedup = [];
+            for (const s of data.sources) {
+              const key = String(s.source || '').replace(/\.(json|md)$/, '').trim();
+              if (!key || _seen.has(key)) continue;
+              _seen.add(key);
+              _dedup.push(key);
+              if (_dedup.length >= 4) break;
+            }
+            return _dedup.length > 0 ? '<div class="sources">Sources: ' + _dedup.map(k => '<span>' + escapeHtml(k) + '</span>').join('') + '</div>' : '';
+          })();
+          if (sourcesHTML) {
+            const existingSrcs = assistantBubble.querySelector('.sources');
+            if (existingSrcs) existingSrcs.remove();
+            assistantBubble.querySelector('.message-body').insertAdjacentHTML('afterend', sourcesHTML);
+          }
+        }
+      }
+    } else {
+      // Fallback: non-streaming JSON response
+      data = await response.json();
+      if (typingEl) typingEl.remove();
+      appendMessage('assistant', data.response, data.sources, data.mode);
+    }
 
-    sessionId = data.sessionId;
-    currentChatId = data.sessionId;
-    localStorage.setItem('wayfinder_session', sessionId);
-    messageCount = data.messageCount;
+    sessionId = data.sessionId || sessionId;
+    currentChatId = data.sessionId || currentChatId;
+    if (sessionId) localStorage.setItem('wayfinder_session', sessionId);
+    if (typeof data.messageCount === 'number') messageCount = data.messageCount;
 
     if (data.engineRemaining !== null && data.engineRemaining !== undefined) {
       engineRemaining = data.engineRemaining;
       updateEngineUI();
     }
-
-    // Update message usage counter
     if (data.messageUsage) {
       updateMessageCounter(data.messageUsage);
     }
-
-    typingEl.remove();
-    appendMessage('assistant', data.response, data.sources, data.mode);
 
     // If advisor is warming up (Haiku intake + SLM waking), poll for readiness
     if (data.advisorWarming) {

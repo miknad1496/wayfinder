@@ -666,7 +666,7 @@ router.post('/', async (req, res) => {
               console.error(`[ADVISOR→HAIKU→CLAUDE] Both failed — last resort Sonnet`);
               result = await chat(
                 session.history, trimmedMsg, session.context,
-                { useEngine: false, scopeLabel: scopeResult.label }
+                { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
               );
               tEvent.generation.mode = 'claude_fallback';
             }
@@ -677,7 +677,7 @@ router.post('/', async (req, res) => {
             session.history,
             trimmedMsg,
             session.context,
-            { useEngine: true, scopeLabel: scopeResult.label }
+            { useEngine: true, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
           );
           tEvent.generation.mode = 'engine';
         } else if (useHaikuAdvisor) {
@@ -698,7 +698,7 @@ router.post('/', async (req, res) => {
             console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
             result = await chat(
               session.history, trimmedMsg, session.context,
-              { useEngine: false, scopeLabel: scopeResult.label }
+              { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
             );
             tEvent.generation.mode = 'claude_fallback';
           }
@@ -706,7 +706,7 @@ router.post('/', async (req, res) => {
           // ── Final fallback — Sonnet standard ──
           result = await chat(
             session.history, trimmedMsg, session.context,
-            { useEngine: false, scopeLabel: scopeResult.label }
+            { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
           );
           tEvent.generation.mode = 'standard';
         }
