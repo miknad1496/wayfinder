@@ -448,17 +448,80 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
     'Send': '전송',
     'Settings': '설정',
     'Upgrade': '업그레이드',
+    // PATCH123: K-12 module explainer + sidebar + module headings
+    'When and why would I use this module?': '이 모듈은 언제, 왜 사용하나요?',
+    'click to expand': '클릭하여 펼치기',
+    'Use this when you\'re:': '이런 경우에 사용하세요:',
+    'Choosing between 2-3 high schools in your district and need an at-a-glance comparison.': '같은 지역의 2-3개 고등학교 중 한눈에 비교하고 싶을 때.',
+    'Moving to a new city/state and need to research the public + magnet + private options before house-hunting.': '새 도시/주로 이사하면서 공립 + magnet + 사립 옵션을 미리 조사할 때.',
+    'Picking the elementary or middle school feeder pattern for your kid\'s neighborhood.': '자녀 동네의 초등/중학교 feeder 패턴을 선택할 때.',
+    'Building an AP-rich high school plan and need to know which schools actually offer 15+ APs vs the basic 5.': 'AP 깊이 있는 고등학교 계획 — 15+ AP 운영 학교 vs 기본 5개 학교 구분이 필요할 때.',
+    'Comparing demographics, free-and-reduced-lunch %, or graduation rates between zoned schools.': '구역 학교 간 인구 통계·무상급식 비율·졸업률을 비교할 때.',
+    'What "Enriched" means:': '"Enriched"의 의미:',
+    'Coverage today:': '현재 커버리지:',
+    // K-12 module title + filters
+    'K-12 Schools': 'K-12 학교',
+    'Pick the right school': '학교 선택',
+    'PICK THE RIGHT SCHOOL': '학교 선택',
+    'Browse Schools': '학교 검색',
+    'Insights & Hacks': '인사이트 + 팁',
+    'Search': '검색',
+    'All states / regions': '전체 주/지역',
+    'High School': '고등학교',
+    'Middle School': '중학교',
+    'Elementary': '초등학교',
+    'District (optional)': '학군 (선택)',
+    'Search school name / city': '학교명 / 도시 검색',
+    // Splash 4-step
+    'How Wayfinder works': 'Wayfinder 작동 방식',
+    'Four steps. No spreadsheets. No hand-holding required.': '4단계. 스프레드시트 없이, 손잡고 안내할 필요 없이.',
+    '1. Tell us about you': '1. 자기소개',
+    '2. Get a real plan': '2. 진짜 plan 받기',
+    '3. Stay on track': '3. 진도 관리',
+    '4. Score the rubric, not the prep book': '4. 채점 기준 점수, 학습서가 아닌',
+    'Grade, target schools, AP exams, interests. Two minutes.': '학년·목표 학교·AP·관심사. 2분.',
+    // Sidebar items
+    'Wayfinder Advisor': 'Wayfinder 어드바이저',
+    'AP Exam Coach': 'AP 시험 코치',
+    'Programs': '프로그램',
+    'Internships': '인턴십',
+    'Scholarships': '장학금',
+    'Volunteer': '봉사활동',
+    'Financial Aid': '재정지원',
+    'Essay Reviewer': '에세이 리뷰',
+    'K-12 Schools': 'K-12 학교',
+    // Common chat UI
+    'Ask about admissions, demographics, careers, salary data...': '입시·진학·진로에 대해 무엇이든 물어보세요...',
+    'Free preview — upgrade for the full guide': '무료 미리보기 · 전체 가이드는 업그레이드',
   };
   function applyKoreanLabels() {
     if (typeof window === 'undefined' || window._wfLang !== 'ko') return;
     document.body.classList.add('wf-ko-mode');
     // Walk the most relevant elements only — avoid mutating chat content
     const targets = document.querySelectorAll(
+      // Auth modals
       '#signupModal h2, #signupModal h3, #signupModal p, #signupModal label, #signupModal button, #signupModal a, ' +
       '#loginModal h2, #loginModal h3, #loginModal p, #loginModal label, #loginModal button, #loginModal a, ' +
+      // Profile wizard
+      '#profileWizardModal h2, #profileWizardModal h3, #profileWizardModal p, #profileWizardModal label, ' +
+      '#profileWizardModal button, #profileWizardModal .pw-choice, ' +
+      // Sidebar
       '#sidebarSearch, .sidebar-section-label, .empty-conversations-msg, ' +
+      '.sidebar-footer-btn span, ' +
+      // Form options
       '#signupType option, ' +
-      '.form-btn, .auth-btn-text, .splash-cta-primary, .splash-cta-secondary'
+      // Buttons + CTA
+      '.form-btn, .auth-btn-text, .splash-cta-primary, .splash-cta-secondary, ' +
+      // K-12 explainer
+      '#k12WhyExplain summary span, #k12WhyExplain p, #k12WhyExplain li, #k12WhyExplain strong, ' +
+      // Module headings
+      '#k12Modal h2, #k12Modal .form-subtitle, ' +
+      '#k12TabBrowse, #k12TabInsights, ' +
+      'select#k12Level option, ' +
+      'select#k12State option[value="ALL"], ' +
+      'input#k12District, input#k12Search, ' +
+      // Splash 4-step
+      '#splashHowItWorks h2, #splashHowItWorks p, #splashHowItWorks div[style*="font-weight:700"], #splashHowItWorks div[style*="font-size:13px"]'
     );
     targets.forEach(function(el) {
       // Replace direct text content if it matches a Korean key
@@ -762,7 +825,7 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
 <!-- PATCH121: Korean entry banner — prominent at top of splash so 한국 사용자 immediately see Korean support -->
 <div id="koreanEntryBanner" style="max-width:980px; margin:0 auto 24px auto; padding:14px 20px; background:linear-gradient(135deg,#1e3a8a 0%, #2563eb 100%); border-radius:12px; color:#fff; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; box-shadow:0 6px 18px rgba(37,99,235,0.18);">
   <div style="flex:1; min-width:240px;">
-    <div style="font-size:14px; font-weight:700; margin-bottom:2px;">🇰🇷 한국어 지원 — Korean Wayfinder Advisor</div>
+    <div style="font-size:14px; font-weight:700; margin-bottom:2px;">한국어 지원 · Korean Wayfinder Advisor</div>
     <div style="font-size:13px; opacity:0.92; line-height:1.5;">한국 입시 (SKY · 의대 · 외고/자사고 · 수능 · 학종) + 미국 명문대 입시 모두 한국어로 상담 가능. 24개 한국 입시 자료 + 92개 미국 학교 deep file 통합.</div>
   </div>
   <button id="koreanEntryBtn" style="background:#fbbf24; color:#422006; padding:10px 18px; border:0; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; flex-shrink:0; white-space:nowrap;">한국어로 시작 →</button>
@@ -3293,7 +3356,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const banner = document.createElement('div');
       banner.className = 'wf-ko-banner';
       banner.style.cssText = 'background:linear-gradient(135deg,#fef3c7 0%, #fde68a 100%); border:1px solid #facc15; border-radius:8px; padding:10px 14px; margin:0 0 12px 0; font-size:13px; color:#854d0e; line-height:1.55;';
-      banner.innerHTML = '<strong>🇰🇷 ' + t.label + ' — 한국어 안내:</strong> ' + t.note;
+      banner.innerHTML = '<strong>📘 ' + t.label + ' (한국어 안내):</strong> ' + t.note;
       const header = m.querySelector('.tool-header');
       if (header) header.parentNode.insertBefore(banner, header.nextSibling);
       else if (m.firstElementChild) m.firstElementChild.insertBefore(banner, m.firstElementChild.firstChild);
@@ -3456,6 +3519,48 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', localizeFooter);
   else localizeFooter();
   setInterval(localizeFooter, 2000);
+})();
+</script>
+
+<script id="patch123-profile-wizard-ko">
+(function() {
+  if (typeof document === 'undefined') return;
+  const PW_KO = {
+    "What grade are you in (or going into)?": "현재 학년은? (또는 진학 예정 학년)",
+    "Elementary (K-5)": "초등학교 (K-5)",
+    "Elementary (K–5)": "초등학교 (K-5)",
+    "Middle (6-8)": "중학교 (6-8)",
+    "Middle (6–8)": "중학교 (6-8)",
+    "9th grade": "9학년 (고1)",
+    "10th grade": "10학년 (고2)",
+    "11th grade": "11학년 (고3)",
+    "12th grade": "12학년 (졸업반)",
+    "Already in college": "이미 대학생",
+    "I'm a parent": "학부모입니다",
+    "Skip for now": "나중에 하기",
+    "Next": "다음",
+    "Back": "이전",
+    "Save": "저장",
+    "Welcome — let's personalize Wayfinder": "환영합니다 — Wayfinder를 개인화하겠습니다",
+    "Two minutes now = much sharper advice every chat going forward. You can update these anytime in Settings.": "지금 2분 = 앞으로 매 채팅에서 훨씬 정교한 조언. 설정에서 언제든 변경 가능.",
+    "What schools are on your radar?": "어떤 학교들을 고려 중이세요?",
+    "What AP exams are you taking?": "어떤 AP 시험을 보시나요?",
+    "What's your career interest?": "어떤 진로에 관심이 있으세요?",
+    "Save Profile": "프로필 저장",
+  };
+  function localize() {
+    if (window._wfLang !== 'ko') return;
+    const wiz = document.getElementById('profileWizardModal');
+    if (!wiz) return;
+    wiz.querySelectorAll('h2, h3, p, label, button, .pw-choice, span').forEach(function(el) {
+      if (el.children.length > 0) return;
+      const t = (el.textContent || '').trim();
+      if (PW_KO[t]) el.textContent = PW_KO[t];
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', localize);
+  else localize();
+  setInterval(localize, 1500);
 })();
 </script>
 </body>
