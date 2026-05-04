@@ -2646,9 +2646,14 @@
                 <label for="apTutorExam">Exam</label>
                 <select id="apTutorExam" class="ev-select"></select>
               </div>
-              <div class="ev-field">
-                <label for="apTutorTopic">Topic <span style="color:#94a3b8; font-weight:400; font-size:13px;">— what you want a teaching guide on</span></label>
-                <input id="apTutorTopic" class="ev-input" placeholder="e.g., 'VSEPR and Lewis structures' / 'Polar functions' / 'Civil War causation' / 'STATE-PLAN-DO-CONCLUDE inference'">
+              <div class="ev-field"><!-- REVAMP V2: SPLASH OVERHAUL PATCH82 tutor-textarea -->
+                <label for="apTutorTopic">What are you struggling with? <span style="color:#94a3b8; font-weight:400; font-size:13px;">— describe in your own words; the more detail the better</span></label>
+                <textarea id="apTutorTopic" class="ev-textarea" rows="5" maxlength="800" placeholder="Examples:
+• "My daughter is targeting a 5 on AP Chem and keeps mixing up Lewis structures vs VSEPR — can you walk through both with practice?"
+• "Polar functions confuse me — I get the basics but can't handle the parametric ones on the AP exam"
+• "For APUSH, I need help understanding how to use HIPP analysis on document-based questions"
+• "Stats — I know the formulas but my conclusions never sound right; show me the right phrasing""></textarea>
+                <div style="font-size:12px; color:#64748b; margin-top:4px;">Tip: include your target tier, what you've tried, and what specifically isn't clicking — Tutor builds a teaching guide tailored to that context.</div>
               </div>
               <div class="ev-field">
                 <label for="apTutorTier">Target tier — calibrate depth for your goal</label>

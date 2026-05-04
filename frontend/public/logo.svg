@@ -1,90 +1,85 @@
-<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
   <defs>
-    <!-- Premium polished steel body — multi-stop for depth -->
-    <linearGradient id="steel" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#e8edf3" />
-      <stop offset="22%" stop-color="#c4cfdc" />
-      <stop offset="40%" stop-color="#9aa9bc" />
-      <stop offset="55%" stop-color="#7a8a9e" />
-      <stop offset="72%" stop-color="#9aacc0" />
-      <stop offset="100%" stop-color="#536476" />
+    <!-- Polished steel face — crisp 5-stop gradient, no muddy mids -->
+    <linearGradient id="steel" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#f5f8fb" />
+      <stop offset="35%" stop-color="#c9d4e0" />
+      <stop offset="55%" stop-color="#8da0b5" />
+      <stop offset="80%" stop-color="#a8b9cc" />
+      <stop offset="100%" stop-color="#5a6e84" />
     </linearGradient>
 
-    <!-- Outer bezel — luxury watch-bezel chromatic edge -->
-    <linearGradient id="bezel" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#384858" />
-      <stop offset="18%" stop-color="#92a4b6" />
-      <stop offset="38%" stop-color="#5e7081" />
-      <stop offset="55%" stop-color="#aabccd" />
-      <stop offset="72%" stop-color="#4a5c6e" />
-      <stop offset="92%" stop-color="#728698" />
-      <stop offset="100%" stop-color="#2d3d4d" />
+    <!-- Bezel — sharp luxury watch chromatic ring -->
+    <linearGradient id="bezel" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#2c3a4c" />
+      <stop offset="22%" stop-color="#9eb3c8" />
+      <stop offset="48%" stop-color="#475a6e" />
+      <stop offset="72%" stop-color="#b6c8da" />
+      <stop offset="100%" stop-color="#1f2c3c" />
     </linearGradient>
 
-    <!-- Inner ring — subtle chromatic accent -->
-    <linearGradient id="innerRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3a4858" />
-      <stop offset="50%" stop-color="#7d90a3" />
-      <stop offset="100%" stop-color="#2c3a48" />
-    </linearGradient>
-
-    <!-- Brand blue needle — deeper saturation for premium feel -->
+    <!-- Brand blue needle — saturated, deeper -->
     <linearGradient id="blueNeedle" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#7eb6ff" />
-      <stop offset="40%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#1e40af" />
+      <stop offset="0%" stop-color="#93c5fd" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1e3a8a" />
     </linearGradient>
 
-    <!-- Specular highlight — sharper, more punch -->
-    <radialGradient id="shine" cx="32%" cy="26%" r="32%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92" />
-      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.35" />
+    <!-- Sharp specular highlight (no fuzz) -->
+    <radialGradient id="shine" cx="35%" cy="28%" r="22%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.20" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Secondary highlight — bottom-right subtle reflection -->
-    <radialGradient id="shine2" cx="72%" cy="78%" r="22%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Soft outer glow / drop-shadow for depth on dark backgrounds -->
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="0.6" />
-      <feOffset dx="0" dy="0.5" result="off" />
-      <feComponentTransfer><feFuncA type="linear" slope="0.4" /></feComponentTransfer>
+    <!-- Crisp drop-shadow -->
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.4" />
+      <feOffset dx="0" dy="0.4" result="off" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.55" /></feComponentTransfer>
       <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
   </defs>
 
   <g filter="url(#shadow)">
-    <!-- Outer bezel — luxury chromatic ring -->
+    <!-- Outer chromatic bezel ring -->
     <circle cx="20" cy="20" r="19" fill="url(#bezel)" />
-    <!-- Steel body -->
+    <!-- Inner shadow line for bezel depth -->
+    <circle cx="20" cy="20" r="17.6" fill="none" stroke="#1a2532" stroke-width="0.3" opacity="0.6" />
+    <!-- Polished steel face -->
     <circle cx="20" cy="20" r="17" fill="url(#steel)" />
-    <!-- Inner ring detail (precision instrument feel) -->
-    <circle cx="20" cy="20" r="14.5" fill="none" stroke="url(#innerRing)" stroke-width="0.45" opacity="0.85" />
-    <circle cx="20" cy="20" r="13" fill="none" stroke="#ffffff" stroke-width="0.25" opacity="0.4" />
+    <!-- Crisp inner ring (precision instrument) -->
+    <circle cx="20" cy="20" r="14.3" fill="none" stroke="#3a4858" stroke-width="0.4" opacity="0.55" />
+    <!-- Bright highlight ring -->
+    <circle cx="20" cy="20" r="13.6" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.5" />
 
-    <!-- Cardinal tick marks (compass precision) -->
-    <g stroke="#3a4858" stroke-width="0.5" opacity="0.7">
-      <line x1="20" y1="6.5" x2="20" y2="8.5" />
-      <line x1="20" y1="31.5" x2="20" y2="33.5" />
-      <line x1="6.5" y1="20" x2="8.5" y2="20" />
-      <line x1="31.5" y1="20" x2="33.5" y2="20" />
+    <!-- Cardinal tick marks — sharp, bold -->
+    <g stroke="#2a3645" stroke-width="0.7" stroke-linecap="round">
+      <line x1="20" y1="6.2" x2="20" y2="8.8" />
+      <line x1="20" y1="31.2" x2="20" y2="33.8" />
+      <line x1="6.2" y1="20" x2="8.8" y2="20" />
+      <line x1="31.2" y1="20" x2="33.8" y2="20" />
     </g>
 
-    <!-- North needle (blue, dominant) -->
-    <path d="M 20 8.5 L 22.4 19 L 20 20.5 L 17.6 19 Z" fill="url(#blueNeedle)" />
-    <!-- South needle (silver, subtle) -->
-    <path d="M 20 31.5 L 17.6 21 L 20 19.5 L 22.4 21 Z" fill="#536476" opacity="0.55" />
+    <!-- Diagonal minor ticks for premium feel -->
+    <g stroke="#5a6878" stroke-width="0.35" stroke-linecap="round" opacity="0.7">
+      <line x1="10.0" y1="10.0" x2="11.5" y2="11.5" />
+      <line x1="30.0" y1="10.0" x2="28.5" y2="11.5" />
+      <line x1="10.0" y1="30.0" x2="11.5" y2="28.5" />
+      <line x1="30.0" y1="30.0" x2="28.5" y2="28.5" />
+    </g>
 
-    <!-- Center pivot dot -->
-    <circle cx="20" cy="20" r="1.5" fill="#1e40af" />
-    <circle cx="20" cy="20" r="0.6" fill="#ffffff" opacity="0.7" />
+    <!-- North needle — sharp blue arrow, dominant -->
+    <path d="M 20 8.8 L 22.6 19.5 L 20 20.6 L 17.4 19.5 Z" fill="url(#blueNeedle)" stroke="#1e3a8a" stroke-width="0.15" />
+    <!-- South needle — silver counterweight -->
+    <path d="M 20 31.2 L 17.4 20.5 L 20 19.4 L 22.6 20.5 Z" fill="#5a6e84" stroke="#384858" stroke-width="0.15" opacity="0.75" />
 
-    <!-- Specular highlights last (on top) -->
+    <!-- Center pivot — crisp jewel -->
+    <circle cx="20" cy="20" r="1.8" fill="#1e3a8a" />
+    <circle cx="20" cy="20" r="1.2" fill="#3b82f6" />
+    <circle cx="19.6" cy="19.6" r="0.45" fill="#ffffff" opacity="0.85" />
+
+    <!-- Sharp specular highlight on top -->
     <circle cx="20" cy="20" r="17" fill="url(#shine)" />
-    <circle cx="20" cy="20" r="17" fill="url(#shine2)" />
   </g>
 </svg>
