@@ -10,7 +10,7 @@
     "lastRunReplaced": 0,
     "lastRunNote": "Run 27: +8 verified TX HS top-by-enrollment offsets 9-16 — Deer Park HS (Kirk Taylor), Permian HS (Delesa Styles, Mojo), Coppell HS (Laura Springer, IB+99% grad), Hastings HS Alief (Lynette Miller), Klein Cain HS (Lauren Marti, 2025 SecPrincipalOY), Odessa HS (Mauricio Marquez, Bronchos), Dobie HS Pasadena (Carey Sink), Atascocita HS Humble (Will Falker, 92.6% grad). 0 skipped.",
     "totalVerified": 174,
-    "totalEnriched": 350,
+    "totalEnriched": 443,
     "lastRun": 27,
     "lastEnriched": "2026-04-26",
     "totalEntries": 182,
@@ -11663,6 +11663,2219 @@
         "https://www.pisd.edu/dawson"
       ],
       "ncessch": "WF-TX-plano-isd-dawson-elementary-(plano)"
+    },
+    {
+      "name": "Boston Latin School",
+      "district": "Boston Public Schools",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02115",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Oldest public school in US (founded 1635)",
+        "Exam-required admit (ISEE)",
+        "7-12 unified — strong classics + AP curriculum"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked MA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bls.org/"
+      ],
+      "ncessch": "WF-MA-boston-public-schools-boston-latin-school"
+    },
+    {
+      "name": "Cambridge Rindge and Latin School",
+      "district": "Cambridge Public Schools",
+      "city": "Cambridge",
+      "state": "MA",
+      "zip": "02138",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Harvard + MIT-adjacent demographics",
+        "Diverse student body",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://crls.cpsd.us/"
+      ],
+      "ncessch": "WF-MA-cambridge-public-schools-cambridge-rindge-and-latin-school"
+    },
+    {
+      "name": "Newton North High School",
+      "district": "Newton Public Schools",
+      "city": "Newton",
+      "state": "MA",
+      "zip": "02460",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog (20+ courses)",
+        "Top MA suburban public",
+        "High Ivy + Boston-area private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www2.newton.k12.ma.us/nnhs"
+      ],
+      "ncessch": "WF-MA-newton-public-schools-newton-north-high-school"
+    },
+    {
+      "name": "Newton South High School",
+      "district": "Newton Public Schools",
+      "city": "Newton",
+      "state": "MA",
+      "zip": "02459",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Sister to Newton North — comparable rigor",
+        "Strong AP suite"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www2.newton.k12.ma.us/nshs"
+      ],
+      "ncessch": "WF-MA-newton-public-schools-newton-south-high-school"
+    },
+    {
+      "name": "Brookline High School",
+      "district": "Brookline Public Schools",
+      "city": "Brookline",
+      "state": "MA",
+      "zip": "02445",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP + diverse academic tracks",
+        "BU + BC adjacent demographics"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bhs.brookline.k12.ma.us/"
+      ],
+      "ncessch": "WF-MA-brookline-public-schools-brookline-high-school"
+    },
+    {
+      "name": "Lexington High School",
+      "district": "Lexington Public Schools",
+      "city": "Lexington",
+      "state": "MA",
+      "zip": "02421",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top MA public per multiple rankings",
+        "Strong USAMO/AMC + STEM track record",
+        "Affluent Boston suburb"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked MA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://lhs.lexingtonma.org/"
+      ],
+      "ncessch": "WF-MA-lexington-public-schools-lexington-high-school"
+    },
+    {
+      "name": "Wellesley High School",
+      "district": "Wellesley Public Schools",
+      "city": "Wellesley",
+      "state": "MA",
+      "zip": "02482",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.wellesleyps.org/whs"
+      ],
+      "ncessch": "WF-MA-wellesley-public-schools-wellesley-high-school"
+    },
+    {
+      "name": "Concord-Carlisle Regional High School",
+      "district": "Concord-Carlisle Regional",
+      "city": "Concord",
+      "state": "MA",
+      "zip": "01742",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top MA public per public rankings"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.concordpublicschools.net/cchs"
+      ],
+      "ncessch": "WF-MA-concord-carlisle-regional-concord-carlisle-regional-high-school"
+    },
+    {
+      "name": "Acton-Boxborough Regional High School",
+      "district": "Acton-Boxborough Regional",
+      "city": "Acton",
+      "state": "MA",
+      "zip": "01720",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top MA public",
+        "Strong STEM track record"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://abrhs.abschools.org/"
+      ],
+      "ncessch": "WF-MA-acton-boxborough-regional-acton-boxborough-regional-high-school"
+    },
+    {
+      "name": "Thomas Jefferson High School for Science and Technology",
+      "district": "Fairfax County Public Schools",
+      "city": "Alexandria",
+      "state": "VA",
+      "zip": "22312",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "#1 public HS in US per multiple rankings",
+        "Application-required STEM magnet — competitive admit",
+        "Math/CS Olympiad pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked US public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://tjhsst.fcps.edu/"
+      ],
+      "ncessch": "WF-VA-fairfax-county-public-schools-thomas-jefferson-high-school-for-science"
+    },
+    {
+      "name": "Langley High School",
+      "district": "Fairfax County Public Schools",
+      "city": "McLean",
+      "state": "VA",
+      "zip": "22101",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Affluent McLean suburb",
+        "High UVA + private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://langleyhs.fcps.edu/"
+      ],
+      "ncessch": "WF-VA-fairfax-county-public-schools-langley-high-school"
+    },
+    {
+      "name": "McLean High School",
+      "district": "Fairfax County Public Schools",
+      "city": "McLean",
+      "state": "VA",
+      "zip": "22101",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Diverse student body"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://mcleanhs.fcps.edu/"
+      ],
+      "ncessch": "WF-VA-fairfax-county-public-schools-mclean-high-school"
+    },
+    {
+      "name": "Madison High School (Vienna)",
+      "district": "Fairfax County Public Schools",
+      "city": "Vienna",
+      "state": "VA",
+      "zip": "22181",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://madisonhs.fcps.edu/"
+      ],
+      "ncessch": "WF-VA-fairfax-county-public-schools-madison-high-school-vienna-"
+    },
+    {
+      "name": "Walt Whitman High School",
+      "district": "Montgomery County Public Schools",
+      "city": "Bethesda",
+      "state": "MD",
+      "zip": "20817",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Affluent Bethesda suburb",
+        "Strong AP catalog",
+        "Top MD public per public rankings"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked MD public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.montgomeryschoolsmd.org/schools/whitmanhs/"
+      ],
+      "ncessch": "WF-MD-montgomery-county-public-schools-walt-whitman-high-school"
+    },
+    {
+      "name": "Walter Johnson High School",
+      "district": "Montgomery County Public Schools",
+      "city": "Bethesda",
+      "state": "MD",
+      "zip": "20814",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top MoCo public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.montgomeryschoolsmd.org/schools/walterjohnsonhs/"
+      ],
+      "ncessch": "WF-MD-montgomery-county-public-schools-walter-johnson-high-school"
+    },
+    {
+      "name": "Bethesda-Chevy Chase High School",
+      "district": "Montgomery County Public Schools",
+      "city": "Bethesda",
+      "state": "MD",
+      "zip": "20814",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "IB Diploma Programme"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.montgomeryschoolsmd.org/schools/bcchs/"
+      ],
+      "ncessch": "WF-MD-montgomery-county-public-schools-bethesda-chevy-chase-high-school"
+    },
+    {
+      "name": "Richard Montgomery High School",
+      "district": "Montgomery County Public Schools",
+      "city": "Rockville",
+      "state": "MD",
+      "zip": "20852",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "IB Diploma Programme — competitive county-wide IB magnet",
+        "Top MoCo public outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.montgomeryschoolsmd.org/schools/richardmontgomeryhs/"
+      ],
+      "ncessch": "WF-MD-montgomery-county-public-schools-richard-montgomery-high-school"
+    },
+    {
+      "name": "Montgomery Blair High School",
+      "district": "Montgomery County Public Schools",
+      "city": "Silver Spring",
+      "state": "MD",
+      "zip": "20901",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Math/Science/Computer Science Magnet — application required",
+        "USAMO + Intel STS pipeline",
+        "CS-research-strong"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.montgomeryschoolsmd.org/schools/blairhs/"
+      ],
+      "ncessch": "WF-MD-montgomery-county-public-schools-montgomery-blair-high-school"
+    },
+    {
+      "name": "Academies of Loudoun",
+      "district": "Loudoun County Public Schools",
+      "city": "Leesburg",
+      "state": "VA",
+      "zip": "20176",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Application-required STEM + medical magnet",
+        "Three academies: AET, ASOIT, AOS"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lcps.org/aol"
+      ],
+      "ncessch": "WF-VA-loudoun-county-public-schools-academies-of-loudoun"
+    },
+    {
+      "name": "Phillips Exeter Academy",
+      "district": "Phillips Exeter (independent boarding)",
+      "city": "Exeter",
+      "state": "NH",
+      "zip": "03833",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "town",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Harkness method (round table) seminar pedagogy",
+        "Need-blind admit + meets full need (Exeter Promise: free for families under $75K)"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked US private HS per multiple rankings"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.exeter.edu/"
+      ],
+      "ncessch": "WF-NH-phillips-exeter-independent-boar-phillips-exeter-academy"
+    },
+    {
+      "name": "Phillips Academy Andover",
+      "district": "Phillips Andover (independent boarding)",
+      "city": "Andover",
+      "state": "MA",
+      "zip": "01810",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Need-blind for US students, meets full need",
+        "Strong arts + STEM + athletics"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.andover.edu/"
+      ],
+      "ncessch": "WF-MA-phillips-andover-independent-boa-phillips-academy-andover"
+    },
+    {
+      "name": "Choate Rosemary Hall",
+      "district": "Choate (independent boarding)",
+      "city": "Wallingford",
+      "state": "CT",
+      "zip": "06492",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "town",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Strong international student community",
+        "Kennedy School of Government heritage"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.choate.edu/"
+      ],
+      "ncessch": "WF-CT-choate-independent-boarding--choate-rosemary-hall"
+    },
+    {
+      "name": "Deerfield Academy",
+      "district": "Deerfield (independent boarding)",
+      "city": "Deerfield",
+      "state": "MA",
+      "zip": "01342",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "rural",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Sit-down formal dining culture",
+        "Affordable need-based aid"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://deerfield.edu/"
+      ],
+      "ncessch": "WF-MA-deerfield-independent-boarding--deerfield-academy"
+    },
+    {
+      "name": "The Hotchkiss School",
+      "district": "Hotchkiss (independent boarding)",
+      "city": "Lakeville",
+      "state": "CT",
+      "zip": "06039",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "rural",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Yale-affiliated heritage",
+        "Strong arts + outdoor programs"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hotchkiss.org/"
+      ],
+      "ncessch": "WF-CT-hotchkiss-independent-boarding--the-hotchkiss-school"
+    },
+    {
+      "name": "The Lawrenceville School",
+      "district": "Lawrenceville (independent boarding)",
+      "city": "Lawrenceville",
+      "state": "NJ",
+      "zip": "08648",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top US boarding school",
+        "House system (similar to British boarding)",
+        "Princeton-adjacent"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lawrenceville.org/"
+      ],
+      "ncessch": "WF-NJ-lawrenceville-independent-boardi-the-lawrenceville-school"
+    },
+    {
+      "name": "Milton Academy",
+      "district": "Milton Academy (independent)",
+      "city": "Milton",
+      "state": "MA",
+      "zip": "02186",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "K-12 unified (here HS only)",
+        "Boston-area top private",
+        "Strong arts + athletics"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.milton.edu/"
+      ],
+      "ncessch": "WF-MA-milton-academy-independent--milton-academy"
+    },
+    {
+      "name": "Groton School",
+      "district": "Groton (independent boarding)",
+      "city": "Groton",
+      "state": "MA",
+      "zip": "01450",
+      "level": "high",
+      "grades": "8-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "rural",
+      "notablePrograms": [
+        "Small (~370 students)",
+        "FDR + multiple presidents alumni",
+        "Strong English pedagogy"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.groton.org/"
+      ],
+      "ncessch": "WF-MA-groton-independent-boarding--groton-school"
+    },
+    {
+      "name": "St. Pauls School (Concord NH)",
+      "district": "St Pauls (independent boarding)",
+      "city": "Concord",
+      "state": "NH",
+      "zip": "03301",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "rural",
+      "notablePrograms": [
+        "100% boarding (no day students)",
+        "Top US boarding school",
+        "Strong humanities tradition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sps.edu/"
+      ],
+      "ncessch": "WF-NH-st-pauls-independent-boarding--st-pauls-school-concord-nh-"
+    },
+    {
+      "name": "The Taft School",
+      "district": "Taft (independent boarding)",
+      "city": "Watertown",
+      "state": "CT",
+      "zip": "06795",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "town",
+      "notablePrograms": [
+        "Top US boarding school",
+        "Strong service-learning tradition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.taftschool.org/"
+      ],
+      "ncessch": "WF-CT-taft-independent-boarding--the-taft-school"
+    },
+    {
+      "name": "Loomis Chaffee School",
+      "district": "Loomis Chaffee (independent)",
+      "city": "Windsor",
+      "state": "CT",
+      "zip": "06095",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top US boarding/day hybrid",
+        "Strong global studies + STEM"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.loomischaffee.org/"
+      ],
+      "ncessch": "WF-CT-loomis-chaffee-independent--loomis-chaffee-school"
+    },
+    {
+      "name": "Hopkins School",
+      "district": "Hopkins (independent)",
+      "city": "New Haven",
+      "state": "CT",
+      "zip": "06515",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Yale-adjacent",
+        "7-12 unified",
+        "Strong classics + STEM"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hopkins.edu/"
+      ],
+      "ncessch": "WF-CT-hopkins-independent--hopkins-school"
+    },
+    {
+      "name": "Trinity School (NYC)",
+      "district": "Trinity School (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10024",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Top NYC private K-12",
+        "Highest college outcomes per Forbes/WSJ rankings",
+        "Selective admit + significant aid"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked US private HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.trinityschoolnyc.org/"
+      ],
+      "ncessch": "WF-NY-trinity-school-independent--trinity-school-nyc-"
+    },
+    {
+      "name": "Collegiate School (NYC)",
+      "district": "Collegiate (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10024",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-boys K-12",
+        "Oldest school in US (1628)",
+        "Top NYC private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.collegiateschool.org/"
+      ],
+      "ncessch": "WF-NY-collegiate-independent--collegiate-school-nyc-"
+    },
+    {
+      "name": "The Dalton School",
+      "district": "Dalton (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10128",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Progressive K-12",
+        "Dalton Plan pedagogy (project-based)",
+        "Top NYC private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.dalton.org/"
+      ],
+      "ncessch": "WF-NY-dalton-independent--the-dalton-school"
+    },
+    {
+      "name": "The Spence School",
+      "district": "Spence (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10128",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-girls K-12",
+        "Top NYC private — strong Ivy outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.spenceschool.org/"
+      ],
+      "ncessch": "WF-NY-spence-independent--the-spence-school"
+    },
+    {
+      "name": "The Brearley School",
+      "district": "Brearley (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10028",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-girls K-12",
+        "Top NYC private — Ivy + Stanford outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.brearley.org/"
+      ],
+      "ncessch": "WF-NY-brearley-independent--the-brearley-school"
+    },
+    {
+      "name": "Chapin School (NYC)",
+      "district": "Chapin (independent)",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10028",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-girls K-12",
+        "Top UES NYC private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.chapin.edu/"
+      ],
+      "ncessch": "WF-NY-chapin-independent--chapin-school-nyc-"
+    },
+    {
+      "name": "Riverdale Country School",
+      "district": "Riverdale (independent)",
+      "city": "Bronx",
+      "state": "NY",
+      "zip": "10471",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "PreK-12 unified",
+        "Bronx campus, top NYC private",
+        "Strong arts + athletics"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.riverdale.edu/"
+      ],
+      "ncessch": "WF-NY-riverdale-independent--riverdale-country-school"
+    },
+    {
+      "name": "Horace Mann School",
+      "district": "Horace Mann (independent)",
+      "city": "Bronx",
+      "state": "NY",
+      "zip": "10471",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "PreK-12 unified",
+        "Top NYC private — strong Ivy outcomes",
+        "Largest NYC indep school"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.horacemann.org/"
+      ],
+      "ncessch": "WF-NY-horace-mann-independent--horace-mann-school"
+    },
+    {
+      "name": "Ethical Culture Fieldston School",
+      "district": "Fieldston (independent)",
+      "city": "Bronx",
+      "state": "NY",
+      "zip": "10471",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Progressive PreK-12",
+        "Strong humanities + ethics curriculum"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ecfs.org/"
+      ],
+      "ncessch": "WF-NY-fieldston-independent--ethical-culture-fieldston-school"
+    },
+    {
+      "name": "Sidwell Friends School",
+      "district": "Sidwell Friends (independent)",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20016",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Quaker pedagogy",
+        "Obama daughters + many DC elite alumni",
+        "Strong service-learning"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked DC private HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sidwell.edu/"
+      ],
+      "ncessch": "WF-DC-sidwell-friends-independent--sidwell-friends-school"
+    },
+    {
+      "name": "St. Albans School",
+      "district": "St Albans (independent)",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20016",
+      "level": "high",
+      "grades": "4-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-boys 4-12",
+        "Episcopal heritage",
+        "National Cathedral campus"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.stalbansschool.org/"
+      ],
+      "ncessch": "WF-DC-st-albans-independent--st-albans-school"
+    },
+    {
+      "name": "National Cathedral School",
+      "district": "NCS (independent)",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20016",
+      "level": "high",
+      "grades": "4-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-girls 4-12",
+        "Episcopal heritage",
+        "National Cathedral campus"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ncs.cathedral.org/"
+      ],
+      "ncessch": "WF-DC-ncs-independent--national-cathedral-school"
+    },
+    {
+      "name": "Georgetown Day School",
+      "district": "GDS (independent)",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20016",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Progressive PreK-12",
+        "Strong arts + diversity tradition"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.gds.org/"
+      ],
+      "ncessch": "WF-DC-gds-independent--georgetown-day-school"
+    },
+    {
+      "name": "Holton-Arms School",
+      "district": "Holton-Arms (independent)",
+      "city": "Bethesda",
+      "state": "MD",
+      "zip": "20817",
+      "level": "high",
+      "grades": "3-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "All-girls 3-12",
+        "Strong DC-metro feeder"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.holton-arms.edu/"
+      ],
+      "ncessch": "WF-MD-holton-arms-independent--holton-arms-school"
+    },
+    {
+      "name": "The Harker School",
+      "district": "Harker (independent)",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95129",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "K-12 unified",
+        "Top Bay Area private — Stanford + UC + Ivy outcomes",
+        "Strong STEM + humanities"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked CA private HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.harker.org/"
+      ],
+      "ncessch": "WF-CA-harker-independent--the-harker-school"
+    },
+    {
+      "name": "Castilleja School",
+      "district": "Castilleja (independent)",
+      "city": "Palo Alto",
+      "state": "CA",
+      "zip": "94301",
+      "level": "high",
+      "grades": "6-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "All-girls 6-12",
+        "Stanford-adjacent",
+        "Strong STEM + leadership"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.castilleja.org/"
+      ],
+      "ncessch": "WF-CA-castilleja-independent--castilleja-school"
+    },
+    {
+      "name": "Menlo School",
+      "district": "Menlo School (independent)",
+      "city": "Atherton",
+      "state": "CA",
+      "zip": "94027",
+      "level": "high",
+      "grades": "6-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top Bay Area private",
+        "Strong arts + STEM"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.menloschool.org/"
+      ],
+      "ncessch": "WF-CA-menlo-school-independent--menlo-school"
+    },
+    {
+      "name": "Crystal Springs Uplands School",
+      "district": "Crystal Springs (independent)",
+      "city": "Hillsborough",
+      "state": "CA",
+      "zip": "94010",
+      "level": "high",
+      "grades": "6-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.csus.org/"
+      ],
+      "ncessch": "WF-CA-crystal-springs-independent--crystal-springs-uplands-school"
+    },
+    {
+      "name": "Sacred Heart Preparatory",
+      "district": "Sacred Heart Prep (independent)",
+      "city": "Atherton",
+      "state": "CA",
+      "zip": "94027",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Catholic heritage",
+        "Top Bay Area private outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.shschools.org/"
+      ],
+      "ncessch": "WF-CA-sacred-heart-prep-independent--sacred-heart-preparatory"
+    },
+    {
+      "name": "Harvard-Westlake School",
+      "district": "Harvard-Westlake (independent)",
+      "city": "Studio City",
+      "state": "CA",
+      "zip": "91604",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Top LA-area private",
+        "Strong arts + STEM + Ivy outcomes",
+        "7-12 across two campuses"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked LA private HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.hw.com/"
+      ],
+      "ncessch": "WF-CA-harvard-westlake-independent--harvard-westlake-school"
+    },
+    {
+      "name": "Marlborough School",
+      "district": "Marlborough (independent)",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90004",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "All-girls 7-12",
+        "Top LA private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.marlborough.org/"
+      ],
+      "ncessch": "WF-CA-marlborough-independent--marlborough-school"
+    },
+    {
+      "name": "The Bishops School",
+      "district": "Bishops School (independent)",
+      "city": "La Jolla",
+      "state": "CA",
+      "zip": "92037",
+      "level": "high",
+      "grades": "6-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Episcopal 6-12",
+        "Top San Diego private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bishops.com/"
+      ],
+      "ncessch": "WF-CA-bishops-school-independent--the-bishops-school"
+    },
+    {
+      "name": "Crossroads School for Arts and Sciences",
+      "district": "Crossroads (independent)",
+      "city": "Santa Monica",
+      "state": "CA",
+      "zip": "90404",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Progressive K-12",
+        "Strong arts integration",
+        "Hollywood-adjacent demographics"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.xrds.org/"
+      ],
+      "ncessch": "WF-CA-crossroads-independent--crossroads-school-for-arts-and-sciences"
+    },
+    {
+      "name": "Polytechnic School",
+      "district": "Polytechnic (independent)",
+      "city": "Pasadena",
+      "state": "CA",
+      "zip": "91106",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Caltech-adjacent",
+        "Top LA-area private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.polytechnic.org/"
+      ],
+      "ncessch": "WF-CA-polytechnic-independent--polytechnic-school"
+    },
+    {
+      "name": "University of Chicago Laboratory Schools",
+      "district": "UChicago Lab Schools (independent)",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60637",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "UChicago-affiliated PreK-12",
+        "Founded by John Dewey",
+        "Top Midwest private"
+      ],
+      "rating": {
+        "source": "Niche",
+        "note": "Top-ranked IL private HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ucls.uchicago.edu/"
+      ],
+      "ncessch": "WF-IL-uchicago-lab-schools-independent-university-of-chicago-laboratory-schools"
+    },
+    {
+      "name": "Cranbrook Schools",
+      "district": "Cranbrook (independent boarding)",
+      "city": "Bloomfield Hills",
+      "state": "MI",
+      "zip": "48303",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "PreK-12 with boarding option",
+        "Top Midwest private — UMich + Ivy outcomes",
+        "Strong arts + science"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://schools.cranbrook.edu/"
+      ],
+      "ncessch": "WF-MI-cranbrook-independent-boarding--cranbrook-schools"
+    },
+    {
+      "name": "Lake Forest Academy",
+      "district": "Lake Forest Academy (independent boarding)",
+      "city": "Lake Forest",
+      "state": "IL",
+      "zip": "60045",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lfanet.org/"
+      ],
+      "ncessch": "WF-IL-lake-forest-academy-independent--lake-forest-academy"
+    },
+    {
+      "name": "Greenhills School",
+      "district": "Greenhills (independent)",
+      "city": "Ann Arbor",
+      "state": "MI",
+      "zip": "48105",
+      "level": "high",
+      "grades": "6-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "UMich-adjacent",
+        "Top Ann Arbor private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.greenhillsschool.org/"
+      ],
+      "ncessch": "WF-MI-greenhills-independent--greenhills-school"
+    },
+    {
+      "name": "Walter Payton College Prep",
+      "district": "Chicago Public Schools",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60610",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "CPS selective enrollment HS — application required",
+        "Top CPS outcomes",
+        "Strong USAMO + research pipeline"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked IL public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://payton.cps.edu/"
+      ],
+      "ncessch": "WF-IL-chicago-public-schools-walter-payton-college-prep"
+    },
+    {
+      "name": "Northside College Prep",
+      "district": "Chicago Public Schools",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60625",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "CPS selective enrollment",
+        "Top IL public per multiple rankings"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://northsideprep.org/"
+      ],
+      "ncessch": "WF-IL-chicago-public-schools-northside-college-prep"
+    },
+    {
+      "name": "Whitney M. Young Magnet High School",
+      "district": "Chicago Public Schools",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60607",
+      "level": "high",
+      "grades": "7-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "CPS magnet 7-12",
+        "Michelle Obama alma mater",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.wyoung.org/"
+      ],
+      "ncessch": "WF-IL-chicago-public-schools-whitney-m-young-magnet-high-school"
+    },
+    {
+      "name": "Lane Tech College Prep",
+      "district": "Chicago Public Schools",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60618",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "CPS selective — large (4000+ students)",
+        "Strong AP suite + IB Diploma",
+        "Engineering + tech tracks"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lanetech.org/"
+      ],
+      "ncessch": "WF-IL-chicago-public-schools-lane-tech-college-prep"
+    },
+    {
+      "name": "Adlai E. Stevenson High School",
+      "district": "Stevenson HSD 125",
+      "city": "Lincolnshire",
+      "state": "IL",
+      "zip": "60069",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top IL suburban public",
+        "Strong AP catalog + comprehensive activities"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked IL public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.d125.org/"
+      ],
+      "ncessch": "WF-IL-stevenson-hsd-125-adlai-e-stevenson-high-school"
+    },
+    {
+      "name": "New Trier Township High School",
+      "district": "New Trier Township HSD 203",
+      "city": "Winnetka",
+      "state": "IL",
+      "zip": "60093",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Affluent North Shore Chicago suburb",
+        "Strong AP catalog",
+        "High Ivy outcomes"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.newtrier.k12.il.us/"
+      ],
+      "ncessch": "WF-IL-new-trier-township-hsd-203-new-trier-township-high-school"
+    },
+    {
+      "name": "Glenbrook North High School",
+      "district": "Glenbrook HSD 225",
+      "city": "Northbrook",
+      "state": "IL",
+      "zip": "60062",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://gbn.glenbrook225.org/"
+      ],
+      "ncessch": "WF-IL-glenbrook-hsd-225-glenbrook-north-high-school"
+    },
+    {
+      "name": "Hinsdale Central High School",
+      "district": "Hinsdale Township HSD 86",
+      "city": "Hinsdale",
+      "state": "IL",
+      "zip": "60521",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Top IL public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://central.hinsdale86.org/"
+      ],
+      "ncessch": "WF-IL-hinsdale-township-hsd-86-hinsdale-central-high-school"
+    },
+    {
+      "name": "Naperville North High School",
+      "district": "Naperville CUSD 203",
+      "city": "Naperville",
+      "state": "IL",
+      "zip": "60563",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://nnhs.naperville203.org/"
+      ],
+      "ncessch": "WF-IL-naperville-cusd-203-naperville-north-high-school"
+    },
+    {
+      "name": "Walton High School",
+      "district": "Cobb County Schools",
+      "city": "Marietta",
+      "state": "GA",
+      "zip": "30062",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top GA public per multiple rankings",
+        "Strong AP catalog",
+        "East Cobb affluent suburb"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked GA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.cobbk12.org/walton"
+      ],
+      "ncessch": "WF-GA-cobb-county-schools-walton-high-school"
+    },
+    {
+      "name": "Northview High School",
+      "district": "Fulton County Schools",
+      "city": "Johns Creek",
+      "state": "GA",
+      "zip": "30097",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP suite",
+        "Top Fulton County public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://school.fultonschools.org/hs/northview"
+      ],
+      "ncessch": "WF-GA-fulton-county-schools-northview-high-school"
+    },
+    {
+      "name": "Lambert High School",
+      "district": "Forsyth County Schools",
+      "city": "Suwanee",
+      "state": "GA",
+      "zip": "30024",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top GA public",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.forsyth.k12.ga.us/lambert"
+      ],
+      "ncessch": "WF-GA-forsyth-county-schools-lambert-high-school"
+    },
+    {
+      "name": "The Lovett School",
+      "district": "Lovett (independent)",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30327",
+      "level": "high",
+      "grades": "K-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Top Atlanta private K-12"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lovett.org/"
+      ],
+      "ncessch": "WF-GA-lovett-independent--the-lovett-school"
+    },
+    {
+      "name": "Westminster Schools (Atlanta)",
+      "district": "Westminster (independent)",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30327",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "PreK-12 unified",
+        "Top Atlanta private"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.westminster.net/"
+      ],
+      "ncessch": "WF-GA-westminster-independent--westminster-schools-atlanta-"
+    },
+    {
+      "name": "Pine View School (Sarasota)",
+      "district": "Sarasota County Schools",
+      "city": "Osprey",
+      "state": "FL",
+      "zip": "34229",
+      "level": "high",
+      "grades": "2-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "town",
+      "notablePrograms": [
+        "Public school for the gifted — IQ + achievement admit criteria",
+        "2-12 unified",
+        "Top FL public per multiple rankings"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked FL public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.sarasotacountyschools.net/pineview"
+      ],
+      "ncessch": "WF-FL-sarasota-county-schools-pine-view-school-sarasota-"
+    },
+    {
+      "name": "Suncoast Community High School",
+      "district": "Palm Beach County Schools",
+      "city": "Riviera Beach",
+      "state": "FL",
+      "zip": "33404",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "Magnet HS — choice/application",
+        "IB DP + multiple AP tracks",
+        "Strong UCF + UF pipeline"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.palmbeachschools.org/suncoast"
+      ],
+      "ncessch": "WF-FL-palm-beach-county-schools-suncoast-community-high-school"
+    },
+    {
+      "name": "Stanton College Preparatory School",
+      "district": "Duval County Public Schools",
+      "city": "Jacksonville",
+      "state": "FL",
+      "zip": "32202",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "magnet",
+      "charter": false,
+      "magnet": true,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Magnet HS — application required"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://stanton.duvalschools.org/"
+      ],
+      "ncessch": "WF-FL-duval-county-public-schools-stanton-college-preparatory-school"
+    },
+    {
+      "name": "American Heritage School (Plantation)",
+      "district": "American Heritage (independent)",
+      "city": "Plantation",
+      "state": "FL",
+      "zip": "33324",
+      "level": "high",
+      "grades": "PreK-12",
+      "schoolType": "private",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top FL private PreK-12",
+        "Strong USAMO + STEM track record",
+        "~28 AP courses"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.ahschool.com/"
+      ],
+      "ncessch": "WF-FL-american-heritage-independent--american-heritage-school-plantation-"
+    },
+    {
+      "name": "Edina High School",
+      "district": "Edina Public Schools",
+      "city": "Edina",
+      "state": "MN",
+      "zip": "55436",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top MN public per multiple rankings",
+        "Affluent Twin Cities suburb",
+        "Strong AP catalog"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked MN public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.edinaschools.org/ehs"
+      ],
+      "ncessch": "WF-MN-edina-public-schools-edina-high-school"
+    },
+    {
+      "name": "Wayzata High School",
+      "district": "Wayzata Public Schools",
+      "city": "Plymouth",
+      "state": "MN",
+      "zip": "55446",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top MN public",
+        "Strong AP suite"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://wayzata.k12.mn.us/whs"
+      ],
+      "ncessch": "WF-MN-wayzata-public-schools-wayzata-high-school"
+    },
+    {
+      "name": "Cherry Creek High School",
+      "district": "Cherry Creek School District",
+      "city": "Greenwood Village",
+      "state": "CO",
+      "zip": "80111",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top CO public",
+        "Strong AP catalog",
+        "Affluent Denver-metro suburb"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked CO public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.cherrycreekschools.org/cchs"
+      ],
+      "ncessch": "WF-CO-cherry-creek-school-district-cherry-creek-high-school"
+    },
+    {
+      "name": "Boulder High School",
+      "district": "Boulder Valley School District",
+      "city": "Boulder",
+      "state": "CO",
+      "zip": "80302",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "CU Boulder-adjacent",
+        "IB Diploma Programme"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://bhs.bvsd.org/"
+      ],
+      "ncessch": "WF-CO-boulder-valley-school-district-boulder-high-school"
+    },
+    {
+      "name": "Fairview High School",
+      "district": "Boulder Valley School District",
+      "city": "Boulder",
+      "state": "CO",
+      "zip": "80305",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "IB Diploma Programme",
+        "Strong AP catalog",
+        "Top CO public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://fhs.bvsd.org/"
+      ],
+      "ncessch": "WF-CO-boulder-valley-school-district-fairview-high-school"
+    },
+    {
+      "name": "BASIS Scottsdale",
+      "district": "BASIS Charter Schools",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "zip": "85251",
+      "level": "high",
+      "grades": "5-12",
+      "schoolType": "charter",
+      "charter": true,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "BASIS charter — 5-12 unified",
+        "AP-heavy curriculum (16+ APs required)",
+        "Top AZ public per multiple rankings"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked US public HS by some metrics"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://enrollbasis.com/scottsdale/"
+      ],
+      "ncessch": "WF-AZ-basis-charter-schools-basis-scottsdale"
+    },
+    {
+      "name": "Chaparral High School (Scottsdale)",
+      "district": "Scottsdale Unified",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "zip": "85258",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.susd.org/chaparral"
+      ],
+      "ncessch": "WF-AZ-scottsdale-unified-chaparral-high-school-scottsdale-"
+    },
+    {
+      "name": "Pioneer High School (Ann Arbor)",
+      "district": "Ann Arbor Public Schools",
+      "city": "Ann Arbor",
+      "state": "MI",
+      "zip": "48103",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "UMich-adjacent",
+        "Strong AP catalog",
+        "Top MI public"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.a2schools.org/pioneer"
+      ],
+      "ncessch": "WF-MI-ann-arbor-public-schools-pioneer-high-school-ann-arbor-"
+    },
+    {
+      "name": "Skyline High School (Ann Arbor)",
+      "district": "Ann Arbor Public Schools",
+      "city": "Ann Arbor",
+      "state": "MI",
+      "zip": "48103",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "city",
+      "notablePrograms": [
+        "Strong AP catalog",
+        "Magnet-style sub-programs"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.a2schools.org/skyline"
+      ],
+      "ncessch": "WF-MI-ann-arbor-public-schools-skyline-high-school-ann-arbor-"
+    },
+    {
+      "name": "Troy High School (MI)",
+      "district": "Troy School District",
+      "city": "Troy",
+      "state": "MI",
+      "zip": "48083",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top MI public per public rankings",
+        "Strong AP catalog"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.troy.k12.mi.us/troyhighschool"
+      ],
+      "ncessch": "WF-MI-troy-school-district-troy-high-school-mi-"
+    },
+    {
+      "name": "Northville High School",
+      "district": "Northville Public Schools",
+      "city": "Northville",
+      "state": "MI",
+      "zip": "48168",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.northvilleschools.org/nhs"
+      ],
+      "ncessch": "WF-MI-northville-public-schools-northville-high-school"
+    },
+    {
+      "name": "Bloomfield Hills High School",
+      "district": "Bloomfield Hills Schools",
+      "city": "Bloomfield Hills",
+      "state": "MI",
+      "zip": "48304",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.bloomfield.org/bhhs"
+      ],
+      "ncessch": "WF-MI-bloomfield-hills-schools-bloomfield-hills-high-school"
+    },
+    {
+      "name": "Lower Merion High School",
+      "district": "Lower Merion School District",
+      "city": "Ardmore",
+      "state": "PA",
+      "zip": "19003",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Top PA public per public rankings",
+        "Affluent Main Line suburb",
+        "Strong AP catalog"
+      ],
+      "rating": {
+        "source": "US News",
+        "note": "Top-ranked PA public HS"
+      },
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.lmsd.org/lmhs"
+      ],
+      "ncessch": "WF-PA-lower-merion-school-district-lower-merion-high-school"
+    },
+    {
+      "name": "Conestoga High School",
+      "district": "Tredyffrin/Easttown School District",
+      "city": "Berwyn",
+      "state": "PA",
+      "zip": "19312",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "notablePrograms": [
+        "Strong AP catalog (25+ courses)",
+        "Top PA public",
+        "Main Line suburb"
+      ],
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.tesd.net/conestoga"
+      ],
+      "ncessch": "WF-PA-tredyffrin-easttown-school-distr-conestoga-high-school"
+    },
+    {
+      "name": "Radnor High School",
+      "district": "Radnor Township School District",
+      "city": "Radnor",
+      "state": "PA",
+      "zip": "19087",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.rtsd.org/radnor-high-school"
+      ],
+      "ncessch": "WF-PA-radnor-township-school-district-radnor-high-school"
+    },
+    {
+      "name": "Central Bucks West High School",
+      "district": "Central Bucks School District",
+      "city": "Doylestown",
+      "state": "PA",
+      "zip": "18901",
+      "level": "high",
+      "grades": "9-12",
+      "schoolType": "regular",
+      "charter": false,
+      "magnet": false,
+      "locale": "suburb",
+      "_verified": true,
+      "_verifiedDate": "2026-05-04",
+      "_sources": [
+        "https://www.cbsd.org/Domain/9"
+      ],
+      "ncessch": "WF-PA-central-bucks-school-district-central-bucks-west-high-school"
     }
   ]
 }
