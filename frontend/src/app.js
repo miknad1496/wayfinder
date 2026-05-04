@@ -457,6 +457,8 @@ async function sendMessage() {
 
     const body = { message, sessionId };
     if (engineActive) body.useWayfinderEngine = true;
+    // PATCH114: explicit language preference from header pill
+    try { if (window._wfLang) body.langPref = window._wfLang; } catch (_) {}
 
     // PATCH104: stream the response via SSE for ChatGPT/Claude-style gradual rendering.
     const response = await fetch(`${API_BASE}/chat?stream=1`, {

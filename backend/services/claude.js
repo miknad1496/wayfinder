@@ -746,6 +746,10 @@ export async function chat(conversationHistory, userMessage, sessionContext = {}
   // PATCH96: coherence + action-items closer
   try { systemPrompt += _patch96_summarizePriorTurns(conversationHistory); } catch (_) {}
   systemPrompt += _patch96_actionItemsClose;
+  // PATCH114: prepend the country-localized advisor prompt + country brain when set
+  if (options.intlContext) {
+    systemPrompt = options.intlContext + '\n\n' + WAYFINDER_IDENTITY_RULES + '\n\n' + systemPrompt;
+  }
 
   // Build messages array — sanitize to prevent API 400s from malformed history
   const messages = sanitizeHistory([

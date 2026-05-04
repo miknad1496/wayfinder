@@ -3146,6 +3146,82 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- REVAMP V2: AP COACH TIGHTEN PATCH86 -->
 </body>
 
+
+<!-- PATCH114: language toggle pill (EN / 한국어) -->
+<style id="patch114-lang-style">
+#wfLangPill {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 9500;
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15,23,42,0.08);
+  cursor: pointer;
+  user-select: none;
+}
+#wfLangPill .wf-lang-opt {
+  padding: 5px 11px;
+  color: #64748b;
+  background: #fff;
+  transition: background 0.15s, color 0.15s;
+}
+#wfLangPill .wf-lang-opt.active {
+  background: #1e3a8a;
+  color: #fff;
+}
+#wfLangPill .wf-lang-opt:hover:not(.active) {
+  background: #f1f5f9;
+}
+@media (max-width: 600px) {
+  #wfLangPill { top: 10px; right: 8px; font-size: 10px; }
+  #wfLangPill .wf-lang-opt { padding: 4px 9px; }
+}
+</style>
+<div id="wfLangPill" title="Language / 언어">
+  <div class="wf-lang-opt active" data-lang="en">EN</div>
+  <div class="wf-lang-opt" data-lang="ko">한국어</div>
+</div>
+<script>
+(function() {
+  if (typeof document === 'undefined') return;
+  function init() {
+    const pill = document.getElementById('wfLangPill');
+    if (!pill) return;
+    let cur = 'en';
+    try { cur = localStorage.getItem('wf_lang') || 'en'; } catch (_) {}
+    function apply(lang) {
+      cur = lang;
+      try { localStorage.setItem('wf_lang', lang); } catch (_) {}
+      window._wfLang = lang;
+      pill.querySelectorAll('.wf-lang-opt').forEach(function(el) {
+        el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+      });
+      // Update placeholders if Korean
+      const ui = document.getElementById('userInput');
+      if (ui) {
+        ui.placeholder = lang === 'ko'
+          ? '입시·진학·진로에 대해 무엇이든 물어보세요...'
+          : 'Ask about admissions, demographics, careers, salary data...';
+      }
+    }
+    apply(cur);
+    pill.addEventListener('click', function(ev) {
+      const el = ev.target.closest('.wf-lang-opt');
+      if (!el) return;
+      apply(el.getAttribute('data-lang'));
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <!-- Cookie consent banner -->
 <div id="cookieBanner" style="display:none; position:fixed; bottom:16px; left:16px; right:16px; max-width:540px; margin:0 auto; background:#0f172a; color:white; padding:14px 18px; border-radius:12px; box-shadow:0 8px 28px rgba(15,23,42,0.35); z-index:8500; font-size:13px; line-height:1.5;">
   <strong style="font-size:14px;">A note on data</strong>

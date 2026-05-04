@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { chat, chatHaikuIntake, chatHaikuAdvisor } from '../services/claude.js';
+import { detectLanguage, langToCountry, detectCountryFromQuery, buildIntlContext } from '../services/intl-brain.js'; // PATCH114 international
 import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { runHeadConsultantSupplement, shouldRunHeadConsultantSupplement, formatHeadConsultantCombined } from '../services/head-consultant.js'; // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
@@ -531,6 +532,22 @@ router.post('/', async (req, res) => {
     // SLM warm at any point: SLM Advisor takes over
     // Messages 4+ (SLM still not warm): Haiku Advisor fallback (real answers)
     // Engine mode: Claude Sonnet/Opus (premium)
+    // PATCH114: International language + country detection.
+    // - Hangul/Katakana/Hiragana/Hanzi → switch advisor language and skip SLM (English-only model).
+    // - English query that mentions Korean university/HS terms → still inject Korea brain into context.
+    // - Frontend langPref override (header pill) — user explicitly chose 한국어 even with English text.
+    let _intlLang = detectLanguage(trimmedMsg);
+    const _langPref = req.body && typeof req.body.langPref === 'string' ? req.body.langPref : null;
+    if (_langPref && _langPref !== 'en' && _intlLang === 'en') _intlLang = _langPref; // honor explicit pref
+    let _intlCountry = langToCountry(_intlLang);
+    if (!_intlCountry) _intlCountry = detectCountryFromQuery(trimmedMsg);
+    const _intlMode = !!_intlCountry;
+    let _intlContext = '';
+    if (_intlMode) {
+      try { _intlContext = await buildIntlContext(_intlCountry, trimmedMsg, _intlLang); } catch (_) {}
+      console.log('[INTL] country=' + _intlCountry + ' lang=' + _intlLang + ' contextChars=' + _intlContext.length);
+    }
+
     const isFirstMessage = session.history.length === 0 && !engineAllowed;
     const slmWarmStatus = getSLMWarmStatus();
     const slmIsWarm = slmWarmStatus.state === 'warm';
@@ -548,7 +565,8 @@ router.post('/', async (req, res) => {
     // routing on slmEverWarmed (was-ever-warm) which made users pay 90s cold-start
     // every quiet period. Now: cold SLM → fall to Haiku Advisor (instant, full intel
     // via patch 47), and we warm SLM in background so next message hits warm.
-    const useSLM = !isFirstMessage && slmIsWarm && shouldUseSLM(routingOptions);
+    // PATCH114: skip SLM for non-English queries — SLM is English-trained.
+    const useSLM = !_intlMode && !isFirstMessage && slmIsWarm && shouldUseSLM(routingOptions);
 
     // Welcome Desk: holds the conversation for up to 3 exchanges while SLM warms up.
     // Gathers useful context (grade level, interests, goals) so the advisor can
@@ -557,7 +575,8 @@ router.post('/', async (req, res) => {
     // bypassWelcomeDesk:true so they skip the "advisor warming up" persona and go
     // straight to Haiku Advisor (full RAG, immediate answer).
     const WELCOME_DESK_MAX_EXCHANGES = 3;
-    const _bypassWelcomeDesk = req.body && req.body.bypassWelcomeDesk === true;
+    // PATCH114: also bypass Welcome Desk for intl queries (the welcome persona is English-only).
+    const _bypassWelcomeDesk = (req.body && req.body.bypassWelcomeDesk === true) || _intlMode;
     const useWelcomeDesk = !_bypassWelcomeDesk && !useSLM && !engineAllowed
       && exchangeCount < WELCOME_DESK_MAX_EXCHANGES
       && scopeResult.label !== 'out_of_scope';
@@ -670,7 +689,7 @@ router.post('/', async (req, res) => {
               console.error(`[ADVISOR→HAIKU→CLAUDE] Both failed — last resort Sonnet`);
               result = await chat(
                 session.history, trimmedMsg, session.context,
-                { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
+                { intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
               );
               tEvent.generation.mode = 'claude_fallback';
             }
@@ -681,7 +700,7 @@ router.post('/', async (req, res) => {
             session.history,
             trimmedMsg,
             session.context,
-            { useEngine: true, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
+            { intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, useEngine: true, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
           );
           tEvent.generation.mode = 'engine';
         } else if (useHaikuAdvisor) {
@@ -702,7 +721,7 @@ router.post('/', async (req, res) => {
             console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
             result = await chat(
               session.history, trimmedMsg, session.context,
-              { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
+              { intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
             );
             tEvent.generation.mode = 'claude_fallback';
           }
@@ -710,7 +729,7 @@ router.post('/', async (req, res) => {
           // ── Final fallback — Sonnet standard ──
           result = await chat(
             session.history, trimmedMsg, session.context,
-            { useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
+            { intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, useEngine: false, scopeLabel: scopeResult.label, onChunk: _streamWriter ? (text) => _streamWriter('chunk', { text }) : null }
           );
           tEvent.generation.mode = 'standard';
         }
