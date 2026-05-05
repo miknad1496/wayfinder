@@ -4053,7 +4053,20 @@ document.addEventListener('DOMContentLoaded', function() {
     pill.addEventListener('click', function(ev) {
       const el = ev.target.closest('.wf-lang-opt');
       if (!el) return;
-      apply(el.getAttribute('data-lang'));
+      const newLang = el.getAttribute('data-lang');
+      // PATCH139: switching languages mid-session leaves a mix of EN + KO
+      // strings on screen — applyKoreanLabels handles new content but already-
+      // rendered DOM nodes that were captured pre-toggle stay in the prior
+      // language. Cleanest fix: persist the choice and reload. Cheap, instant
+      // visual consistency. Avoids reload only if click is on the already-
+      // active option (no-op).
+      if (newLang === cur) return;
+      try { localStorage.setItem('wf_lang', newLang); } catch (_) {}
+      apply(newLang);
+      // Reload to repaint everything (chat history, modal contents, sidebar)
+      // in the new language. Tiny delay to let the active-pill style render
+      // first so the reload feels intentional.
+      setTimeout(function() { window.location.reload(); }, 80);
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
