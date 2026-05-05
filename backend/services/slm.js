@@ -107,6 +107,11 @@ export function invalidateSLMPromptCache() {
  * Check if the SLM is available and enabled.
  */
 export function isSLMAvailable() {
+  // PATCH153: kill switch. Set SLM_DISABLED=true on Render to route everything
+  // to Haiku Advisor (and Engine when toggled). Use while wayfinder-05e is being
+  // retrained from scratch — current model echoes brain-file frontmatter and
+  // emits EOS at premature positions due to training-data contamination.
+  if (String(process.env.SLM_DISABLED || '').toLowerCase() === 'true') return false;
   return SLM_ENABLED && !!SLM_ENDPOINT;
 }
 
