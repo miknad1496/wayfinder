@@ -666,8 +666,22 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
   const { response: filteredText } = filterLeakage(text);
   console.log(`[HAIKU-ADVISOR] ${haikuModel} — ${response.usage?.input_tokens}in/${response.usage?.output_tokens}out`);
 
+  // PATCH137: append a clear tier footer so free users know they're on Assistant
+  // mode, not the full Advisor + Head Consultant stack. Without this, Dan
+  // pointed out that the persona distinction is too subtle — a user who misses
+  // the small "Assistant" tag in the UI assumes they're getting the real deal
+  // and has no reason to upgrade.
+  let _patch137_finalText = filteredText;
+  if (_v55_persona === 'assistant') {
+    const isKorean = !!(options.intlContext || (options.intlLang && options.intlLang === 'ko'));
+    const footer = isKorean
+      ? '\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎓 **Wayfinder Assistant 모드** — 최선을 다해 답변드립니다. Coach 또는 Consultant로 업그레이드하면 **Wayfinder Advisor (SLM)** + **Head Consultant 모드**를 사용할 수 있습니다 — 학교별 deep file, 구조화된 분석 프레임워크, 더 깊은 RAG 검색.'
+      : '\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎓 **Wayfinder Assistant** — doing my best on this one. The full **Wayfinder Advisor (SLM)** + **Head Consultant mode** brings school-specific deep files, structured analysis frameworks, and richer DB retrieval. Upgrade unlocks all of it.';
+    _patch137_finalText = filteredText + footer;
+  }
+
   return {
-    response: filteredText,
+    response: _patch137_finalText,
     mode: _v55_persona === 'assistant' ? 'haiku_assistant' : 'haiku_advisor', // REVAMP V2: PERSONA TIERS PATCH55
     model: haikuModel,
     retrievedSources: [],

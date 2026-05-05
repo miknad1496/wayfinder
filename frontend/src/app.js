@@ -8385,6 +8385,8 @@ async function loadApGuides() {
     { exam: 'ap-world-history', label: 'AP World History', size: 23000 },
   ];
   let guides = [];
+  let _userPreviewedExam = null;
+  let _userIsPaid = false;
   try {
     const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
     const r = await fetch(API_BASE + '/ap-coach/guides', {
@@ -8393,6 +8395,9 @@ async function loadApGuides() {
     if (r.ok) {
       const data = await r.json();
       guides = Array.isArray(data.guides) ? data.guides : [];
+      // PATCH137: server now returns the user's preview slot state
+      _userPreviewedExam = data.previewedExam || null;
+      _userIsPaid = !!data.isPaidOrPrivileged;
     }
   } catch (e) { console.warn('[AP] guides API failed, using fallback', e); }
   if (!guides.length) guides = FALLBACK_GUIDES;
@@ -8405,15 +8410,30 @@ async function loadApGuides() {
   if (countEl) countEl.textContent = String(guides.length);
   const tok = (typeof authToken !== 'undefined' && authToken) ? authToken : (window.authToken || '');
   list.innerHTML = guides.map(function(g, i) {
-    // PATCH132: derive size + extension from server response (which now reports
-    // PDF metadata when PDFs exist locally). Old version hardcoded 'docx' label.
+    // PATCH132: derive size + extension from server response.
     const sizeStr = g.size
       ? (g.size > 524288 ? (Math.round(g.size / 104857.6) / 10) + ' MB' : Math.round(g.size / 1024) + ' KB') + ' · '
       : '';
     const extLabel = (g.ext || (g.filename && g.filename.toLowerCase().endsWith('.pdf') ? 'pdf' : 'docx')).toUpperCase();
-    return '<div class="ap-guide-card" data-exam="' + g.exam + '" data-label="' + g.label.replace(/"/g, '&quot;') + '" style="display:block; padding:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; color:#1e293b; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\'; this.style.background=\'#eff6ff\';" onmouseout="this.style.borderColor=\'#e2e8f0\'; this.style.background=\'#f8fafc\';">' +
+    // PATCH137: visual state — locked / available-as-preview / locked-out for free users.
+    const isThisUserSlot = !_userIsPaid && _userPreviewedExam === g.exam;
+    const isLockedOut    = !_userIsPaid && _userPreviewedExam && _userPreviewedExam !== g.exam;
+    let cardBg = '#f8fafc', cardBorder = '#e2e8f0', cardOpacity = '1';
+    let badge = '';
+    let actionLabel = sizeStr + extLabel + ' · download';
+    if (isThisUserSlot) {
+      cardBg = '#ecfdf5'; cardBorder = '#86efac';
+      badge = '<div style="display:inline-block; background:#22c55e; color:white; font-size:10px; font-weight:700; padding:2px 7px; border-radius:99px; margin-bottom:4px;">✓ YOUR FREE PREVIEW</div>';
+      actionLabel = sizeStr + extLabel + ' · download preview';
+    } else if (isLockedOut) {
+      cardBg = '#f8fafc'; cardBorder = '#e2e8f0'; cardOpacity = '0.55';
+      badge = '<div style="display:inline-block; background:#cbd5e1; color:#334155; font-size:10px; font-weight:700; padding:2px 7px; border-radius:99px; margin-bottom:4px;">🔒 COACH / CONSULTANT</div>';
+      actionLabel = sizeStr + extLabel + ' · upgrade to unlock';
+    }
+    return '<div class="ap-guide-card" data-exam="' + g.exam + '" data-label="' + g.label.replace(/"/g, '&quot;') + '" style="display:block; padding:14px; background:' + cardBg + '; border:1px solid ' + cardBorder + '; border-radius:8px; cursor:pointer; color:#1e293b; opacity:' + cardOpacity + '; transition:all 0.15s;" onmouseover="this.style.borderColor=\'#2563eb\';" onmouseout="this.style.borderColor=\'' + cardBorder + '\';">' +
+      badge +
       '<div style="font-weight:600; font-size:14px; margin-bottom:4px;">' + g.label + '</div>' +
-      '<div style="font-size:12px; color:#64748b;">' + sizeStr + extLabel + ' · download</div>' +
+      '<div style="font-size:12px; color:#64748b;">' + actionLabel + '</div>' +
       '</div>';
   }).join('');
   // PATCH91: click handler that fetches first so we can surface a real error

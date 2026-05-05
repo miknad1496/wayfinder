@@ -393,7 +393,22 @@ router.get('/guides', async (req, res) => {
       }
       guides.push({ exam, label: cfg.label, filename, size, ext });
     }
-    res.json({ guides });
+    // PATCH137: tell the frontend the user's tier + which exam they've already
+    // claimed as their free preview. Frontend uses this to badge the locked card
+    // and gray out / mark the others as upgrade-only. Without this the cards
+    // all look identical, leaving free users guessing which one is theirs.
+    const fullUser = await findUserByToken(req.headers.authorization?.replace('Bearer ', ''));
+    const planRaw = String((fullUser && fullUser.plan) || 'free').toLowerCase();
+    const isPaidOrPrivileged = (
+      ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(planRaw)
+      || canAccess(user, 'ap_coach')
+    );
+    res.json({
+      guides,
+      tier: planRaw,
+      isPaidOrPrivileged,
+      previewedExam: (fullUser && fullUser.previewedExam) || null,
+    });
   } catch (err) {
     console.error('AP Coach guides list error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -413,10 +428,6 @@ router.get('/guide/:exam', async (req, res) => {
 
     const exam = req.params.exam;
     const cfg = EXAM_TO_GUIDE[exam];
-    // PATCH136 DIAG: log every download attempt so we can see why free-tier
-    // downloads silently fail. Each line shows: exam + plan + previewedExam +
-    // path-decision (paid/preview/already-used). Remove once confirmed working.
-    console.log(`[AP-DL-START] exam=${exam} email=${user.email} plan=${user.plan || 'free'}`);
     if (!cfg) return res.status(404).json({ error: 'Unsupported exam' });
 
     // Resolve effective tier (admin/VIP bypass, paid tier flag)
@@ -547,6 +558,25 @@ router.get('/guide/:exam', async (req, res) => {
 // PATCH97: Free-tier "use my one preview slot" confirmation endpoint.
 // POST body: { exam: 'ap-chemistry' } -> stores user.previewedExam.
 // Idempotent: if already set to a different exam, returns 409 with the locked-in choice.
+// PATCH137: self-reset endpoint so Dan (or any user) can clear their own
+// previewedExam slot for testing or remorse purposes. POST with no body.
+// (Could be exploited by a free user to repeatedly preview different guides —
+// that's intentionally allowed for now; if abuse becomes a problem, gate
+// behind a 24h cooldown later.)
+router.post('/guide/preview-reset', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token;
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+    await updateUserPlan(token, { previewedExam: null });
+    console.log(`[AP-PREVIEW-RESET] email=${user.email}`);
+    return res.json({ ok: true, resetEmail: user.email });
+  } catch (err) {
+    console.error('AP Coach preview-reset error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 router.post('/guide/preview-select', async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token;
