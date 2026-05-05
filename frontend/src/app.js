@@ -653,6 +653,9 @@ function pollAdvisorStatus() {
   // Clear any existing poll
   if (advisorPollTimer) clearInterval(advisorPollTimer);
 
+  // PATCH149: show "Advisor warming" pill immediately when polling starts
+  setAdvisorPill('warming');
+
   let attempts = 0;
   const maxAttempts = 40; // 40 × 3s = 120s max polling
 
@@ -661,6 +664,7 @@ function pollAdvisorStatus() {
     if (attempts > maxAttempts) {
       clearInterval(advisorPollTimer);
       advisorPollTimer = null;
+      setAdvisorPill('hidden');  // PATCH149: clear pill if SLM never warmed
       return;
     }
 
@@ -672,6 +676,7 @@ function pollAdvisorStatus() {
       if (status.ready) {
         clearInterval(advisorPollTimer);
         advisorPollTimer = null;
+        setAdvisorPill('ready');  // PATCH149: green pill when SLM warm
         showAdvisorReadyNotification();
       }
     } catch {
@@ -679,6 +684,50 @@ function pollAdvisorStatus() {
     }
   }, 3000);
 }
+
+// PATCH149: persistent advisor-status pill above the chat input.
+// User no longer has to guess when the Wayfinder Advisor (SLM) is ready
+// — the pill is always visible during welcome-desk warming and switches
+// to green when SLM is warm. Auto-hides after 8 seconds in 'ready' state
+// or when user sends another message (whichever first).
+function setAdvisorPill(state) {
+  const pill = document.getElementById('advisorStatusPill');
+  const dot = document.getElementById('advisorStatusDot');
+  const text = document.getElementById('advisorStatusText');
+  if (!pill || !dot || !text) return;
+
+  if (state === 'warming') {
+    pill.style.display = 'flex';
+    pill.style.background = '#fef3c7';
+    pill.style.border = '1px solid #fde68a';
+    pill.style.color = '#854d0e';
+    dot.style.background = '#f59e0b';
+    dot.style.animation = 'wfPulse 1.4s infinite';
+    text.textContent = 'Welcome Desk active — Wayfinder Advisor warming up (~30-60s). You can ask follow-ups now; deeper analysis kicks in once the dot turns green.';
+  } else if (state === 'ready') {
+    pill.style.display = 'flex';
+    pill.style.background = '#dcfce7';
+    pill.style.border = '1px solid #86efac';
+    pill.style.color = '#15803d';
+    dot.style.background = '#22c55e';
+    dot.style.animation = 'none';
+    text.textContent = 'Wayfinder Advisor is ready — ask your real question now to connect directly.';
+    // Auto-hide after 12s so it doesn't clutter the input forever
+    setTimeout(() => { if (text.textContent.indexOf('ready') !== -1) setAdvisorPill('hidden'); }, 12000);
+  } else {
+    pill.style.display = 'none';
+    dot.style.animation = 'none';
+  }
+}
+
+// Inject the pulse keyframe once (the pill's inline styles can't define @keyframes)
+(function injectPillStyles() {
+  if (document.getElementById('wfPillKeyframes')) return;
+  const s = document.createElement('style');
+  s.id = 'wfPillKeyframes';
+  s.textContent = '@keyframes wfPulse { 0%,80%,100%{opacity:0.4;transform:scale(0.8);} 40%{opacity:1;transform:scale(1.2);} }';
+  document.head.appendChild(s);
+})();
 
 function showAdvisorReadyNotification() {
   // Don't show if user has already moved past the first exchange

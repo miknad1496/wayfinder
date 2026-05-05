@@ -1170,6 +1170,11 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
             <span id="engineModelBadge" class="engine-model-badge" style="display:none;">PRO</span>
             <span class="engine-hint">Deep analysis with full knowledge base</span>
           </div>
+          <!-- PATCH149: persistent advisor-status pill — sits above the input so user always sees current state -->
+          <div id="advisorStatusPill" style="display:none; padding:7px 12px; margin:0 0 8px 0; border-radius:8px; font-size:12px; font-weight:600; display:none; align-items:center; gap:8px; transition:all 0.3s;">
+            <span id="advisorStatusDot" style="width:8px; height:8px; border-radius:50%; flex-shrink:0;"></span>
+            <span id="advisorStatusText"></span>
+          </div>
           <div class="input-wrapper">
             <textarea
               id="userInput"
