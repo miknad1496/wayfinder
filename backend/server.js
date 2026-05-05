@@ -215,15 +215,24 @@ if (process.env.NODE_ENV === 'production') {
   // Serve built frontend
   app.use(express.static(join(__dirname, '..', 'frontend', 'dist')));
 
-  // Legal pages
-  app.get('/privacy', (req, res) => {
+  // Legal pages — both extensionless AND .html paths must work
+  // (PATCH143: prior to this, /privacy.html / /terms.html / /forgot-password.html
+  //  fell into the app.get('*') catchall and served the SPA splash page instead
+  //  of the actual page. Footer links use the .html paths so they were ALL broken
+  //  for production users — couldn't reach the privacy policy, couldn't reach
+  //  the terms, and most damaging, locked-out users couldn't reach the
+  //  forgot-password reset form. Adding explicit routes for both forms here.)
+  app.get(['/privacy', '/privacy.html'], (req, res) => {
     res.sendFile(join(__dirname, '..', 'frontend', 'privacy.html'));
   });
-  app.get('/terms', (req, res) => {
+  app.get(['/terms', '/terms.html'], (req, res) => {
     res.sendFile(join(__dirname, '..', 'frontend', 'terms.html'));
   });
-  app.get('/why', (req, res) => {
+  app.get(['/why', '/why.html'], (req, res) => {
     res.sendFile(join(__dirname, '..', 'frontend', 'why.html'));
+  });
+  app.get(['/forgot-password', '/forgot-password.html'], (req, res) => {
+    res.sendFile(join(__dirname, '..', 'frontend', 'forgot-password.html'));
   });
 
   // Admin dashboard (standalone HTML, not part of the SPA)

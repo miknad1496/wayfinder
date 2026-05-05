@@ -31,8 +31,20 @@ const loginLimiter = rateLimit({
   message: { error: 'Too many login attempts. Please try again in 15 minutes.' }
 });
 
-// POST /api/auth/signup — invite code always required
-router.post('/signup', async (req, res) => {
+// PATCH143: signup limiter — was missing entirely. Without this, an attacker
+// could spam-create thousands of free accounts (each one bcrypt-hashes a password
+// at BCRYPT_ROUNDS — meaningful CPU + disk cost). Tighter than login limiter
+// since legitimate users only sign up once per IP.
+const signupLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 8,                    // 8 signups per hour per IP — generous for shared-IP families
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many signup attempts from this network. Please try again in an hour.' }
+});
+
+// POST /api/auth/signup — invite code optional (patch 120 dropped the gate)
+router.post('/signup', signupLimiter, async (req, res) => {
   try {
     const { email, password, name, userType, school, interests, consentGiven, inviteCode } = req.body;
 

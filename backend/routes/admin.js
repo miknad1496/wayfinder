@@ -1435,10 +1435,10 @@ router.post('/morning-pulse', async (req, res) => {
       lastError: null,
     };
 
-    // 1. Site uptime ping
+    // 1. Site uptime ping (PATCH143: was /api/me which is 404; correct path is /api/health)
     try {
-      const r = await fetch('https://wayfinderai.org/api/me', { method: 'GET', signal: AbortSignal.timeout(8000) });
-      stats.site.status = (r.status === 200 || r.status === 401) ? 'UP' : 'DEGRADED';
+      const r = await fetch('https://wayfinderai.org/api/health', { method: 'GET', signal: AbortSignal.timeout(8000) });
+      stats.site.status = r.status === 200 ? 'UP' : 'DEGRADED';
       stats.site.httpStatus = r.status;
     } catch (e) {
       stats.site.status = 'DOWN';
