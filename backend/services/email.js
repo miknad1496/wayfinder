@@ -343,3 +343,17 @@ export async function sendEssayReviewReady(recipientEmail, userName, essayType, 
     text: `Your ${essayType} review is ready. Score: ${score}/10. View feedback at https://wayfinderai.org`
   });
 }
+
+// ─── PATCH140: Admin daily-pulse report ─────────────────────────────────
+// Sends the admin's daily ops digest. Recipient hardcoded to Dan; if you
+// want to add other admins, append to the To: list. Plain text fallback
+// included so it renders cleanly in any client (Hotmail, mobile previews).
+export async function sendAdminDailyPulse(subject, html, text) {
+  const recipient = process.env.ADMIN_REPORT_EMAIL || 'danielyungkim@hotmail.com';
+  return sendEmail({
+    to: recipient,
+    subject: subject || 'Wayfinder daily pulse',
+    html,
+    text: text || subject || '',
+  });
+}

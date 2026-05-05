@@ -10,6 +10,13 @@ import { getRoutingStats } from '../services/telemetry.js';
 import { getRoutingLog } from './chat.js';
 import { verifyToken, isAdmin as checkIsAdmin, getVIPList, addVIP, removeVIP } from '../services/auth.js';
 import { getIntelligenceAnalytics } from '../services/intelligence-analytics.js';
+import { sendAdminDailyPulse } from '../services/email.js'; // PATCH140
+import { promises as _fsP140 } from 'fs';
+import { join as _join140, dirname as _dirname140 } from 'path';
+import { fileURLToPath as _fu140 } from 'url';
+const _DIR140 = _dirname140(_fu140(import.meta.url));
+const _USERS_DIR140 = _join140(_DIR140, '..', 'data', 'users');
+const _SESSIONS_DIR140 = _join140(_DIR140, '..', 'data', 'sessions');
 
 const router = Router();
 
@@ -1396,6 +1403,189 @@ router.all('/grinder-write', async (req, res) => {
   } catch (err) {
     console.error('[grinder-write]', err);
     res.status(500).json({ error: err.message });
+  }
+});
+
+// ─── PATCH140: Daily morning pulse — admin email digest ───────────────────
+// POST /api/admin/morning-pulse
+// Gathers stats from last 24h, builds an HTML report, emails Dan, returns
+// the JSON summary. Designed to be called once daily by the wayfinder-morning-
+// pulse Cowork task (which adds a snapshot tag after this endpoint succeeds).
+//
+// Auth: admin token OR x-task-token header (same as other admin endpoints).
+router.post('/morning-pulse', async (req, res) => {
+  try {
+    const _t0 = Date.now();
+    const dryRun = !!(req.query.dryRun || (req.body && req.body.dryRun));
+
+    // ── Gather stats in parallel where possible ──
+    const stats = {
+      generatedAt: new Date().toISOString(),
+      site: { url: 'https://wayfinderai.org', status: 'unknown' },
+      deploy: { latestSha: null, latestSubject: null, ageHours: null },
+      users: { total: 0, free: 0, pro: 0, elite: 0, coach: 0, consultant: 0, admin: 0 },
+      newSignups24h: 0,
+      activity: { totalChats24h: 0, intlChats24h: 0, activeSessions24h: 0 },
+      generation: { slm: 0, haiku_advisor: 0, haiku_assistant: 0, engine: 0, fallback: 0 },
+      quality: { refusals24h: 0, avgLatencyMs: null },
+      ap: { studyGuideDownloads24h: 0 },
+      essays: { reviews24h: 0 },
+      cost: { estHaikuTokens24h: 0, estOpusTokens24h: 0, estSlmTokens24h: 0 },
+      anomalies: [],
+      lastError: null,
+    };
+
+    // 1. Site uptime ping
+    try {
+      const r = await fetch('https://wayfinderai.org/api/me', { method: 'GET', signal: AbortSignal.timeout(8000) });
+      stats.site.status = (r.status === 200 || r.status === 401) ? 'UP' : 'DEGRADED';
+      stats.site.httpStatus = r.status;
+    } catch (e) {
+      stats.site.status = 'DOWN';
+      stats.site.error = e.message;
+      stats.anomalies.push('Site uptime check failed: ' + e.message);
+    }
+
+    // 2. Deploy state — read latest commit from local git history (the running
+    //    process is on the deployed commit, so HEAD = production)
+    try {
+      const { execSync } = await import('child_process');
+      const sha = execSync('git rev-parse --short HEAD', { cwd: '/opt/render/project/src', encoding: 'utf8' }).trim();
+      const subject = execSync('git log -1 --format=%s HEAD', { cwd: '/opt/render/project/src', encoding: 'utf8' }).trim();
+      const dateIso = execSync('git log -1 --format=%cI HEAD', { cwd: '/opt/render/project/src', encoding: 'utf8' }).trim();
+      stats.deploy.latestSha = sha;
+      stats.deploy.latestSubject = subject.slice(0, 120);
+      stats.deploy.ageHours = Math.round((Date.now() - new Date(dateIso).getTime()) / 3600000);
+    } catch (e) {
+      stats.deploy.error = e.message;
+    }
+
+    // 3. User counts + 24h new signups
+    try {
+      const files = await _fsP140.readdir(_USERS_DIR140);
+      const cutoff = Date.now() - 86400000;
+      for (const f of files.filter(x => x.endsWith('.json'))) {
+        try {
+          const raw = await _fsP140.readFile(_join140(_USERS_DIR140, f), 'utf8');
+          const u = JSON.parse(raw);
+          stats.users.total++;
+          const plan = String(u.plan || 'free').toLowerCase();
+          if (stats.users[plan] !== undefined) stats.users[plan]++;
+          if (u.createdAt && new Date(u.createdAt).getTime() >= cutoff) stats.newSignups24h++;
+        } catch (_) {}
+      }
+    } catch (e) { stats.anomalies.push('User scan failed: ' + e.message); }
+
+    // 4. 24h activity from sessions
+    try {
+      const files = await _fsP140.readdir(_SESSIONS_DIR140).catch(() => []);
+      const cutoff = Date.now() - 86400000;
+      const activeUserIds = new Set();
+      for (const f of files.filter(x => x.endsWith('.json'))) {
+        try {
+          const raw = await _fsP140.readFile(_join140(_SESSIONS_DIR140, f), 'utf8');
+          const s = JSON.parse(raw);
+          if (!s.history || !Array.isArray(s.history)) continue;
+          let sessionTouched24h = false;
+          for (const m of s.history) {
+            const ts = m.timestamp ? new Date(m.timestamp).getTime() : 0;
+            if (ts >= cutoff) {
+              if (m.role === 'user') {
+                stats.activity.totalChats24h++;
+                if (m.content && /[ㄱ-힝]/.test(m.content)) stats.activity.intlChats24h++;
+              }
+              sessionTouched24h = true;
+            }
+          }
+          if (sessionTouched24h && s.userId) activeUserIds.add(s.userId);
+        } catch (_) {}
+      }
+      stats.activity.activeSessions24h = activeUserIds.size;
+    } catch (e) { stats.anomalies.push('Session scan failed: ' + e.message); }
+
+    // 5. Routing breakdown (last 24h) from getRoutingStats if available
+    try {
+      const rs = getRoutingStats();
+      if (rs && rs.modes) {
+        Object.keys(stats.generation).forEach(k => { stats.generation[k] = rs.modes[k] || 0; });
+      }
+    } catch (e) { /* non-fatal */ }
+
+    // 6. Build HTML report
+    const fmtNum = (n) => (typeof n === 'number') ? n.toLocaleString() : String(n);
+    const _intlPct = stats.activity.totalChats24h > 0
+      ? Math.round((stats.activity.intlChats24h / stats.activity.totalChats24h) * 100)
+      : 0;
+    const _siteColor = stats.site.status === 'UP' ? '#22c55e' : (stats.site.status === 'DEGRADED' ? '#f59e0b' : '#ef4444');
+    const _anomaliesHtml = stats.anomalies.length === 0
+      ? '<div style="color:#22c55e;">✓ none</div>'
+      : '<ul style="margin:0; padding-left:18px;">' + stats.anomalies.map(a => '<li style="color:#b91c1c;">' + a + '</li>').join('') + '</ul>';
+
+    const dateLocal = new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+
+    const html = `
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; max-width:640px; margin:0 auto; color:#0f172a;">
+  <h2 style="margin:0 0 4px 0;">Wayfinder daily pulse</h2>
+  <p style="color:#64748b; margin:0 0 18px 0; font-size:13px;">${dateLocal}</p>
+
+  <div style="background:#f8fafc; border-left:4px solid ${_siteColor}; padding:12px 14px; margin-bottom:14px; border-radius:6px;">
+    <div style="font-weight:700;">Site: <span style="color:${_siteColor};">${stats.site.status}</span> ${stats.site.httpStatus ? '(HTTP ' + stats.site.httpStatus + ')' : ''}</div>
+    <div style="font-size:13px; color:#475569; margin-top:3px;">Deploy: <code>${stats.deploy.latestSha || 'unknown'}</code> · ${stats.deploy.ageHours !== null ? stats.deploy.ageHours + 'h ago' : '?'}<br>${stats.deploy.latestSubject ? '<em style="color:#64748b;">' + stats.deploy.latestSubject + '</em>' : ''}</div>
+  </div>
+
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:14px;">
+    <tr style="background:#f1f5f9;"><th colspan="2" style="text-align:left; padding:8px 12px;">Activity (24h)</th></tr>
+    <tr><td style="padding:6px 12px;">Total chats</td><td style="padding:6px 12px; text-align:right; font-weight:600;">${fmtNum(stats.activity.totalChats24h)}</td></tr>
+    <tr><td style="padding:6px 12px;">— Korean</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.activity.intlChats24h)} <span style="color:#64748b;">(${_intlPct}%)</span></td></tr>
+    <tr><td style="padding:6px 12px;">Active users</td><td style="padding:6px 12px; text-align:right; font-weight:600;">${fmtNum(stats.activity.activeSessions24h)}</td></tr>
+    <tr><td style="padding:6px 12px;">New signups</td><td style="padding:6px 12px; text-align:right; font-weight:600;">${fmtNum(stats.newSignups24h)}</td></tr>
+  </table>
+
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:14px;">
+    <tr style="background:#f1f5f9;"><th colspan="2" style="text-align:left; padding:8px 12px;">Total users by tier</th></tr>
+    <tr><td style="padding:6px 12px;">Total</td><td style="padding:6px 12px; text-align:right; font-weight:600;">${fmtNum(stats.users.total)}</td></tr>
+    <tr><td style="padding:6px 12px;">Free</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.users.free)}</td></tr>
+    <tr><td style="padding:6px 12px;">Pro / Coach</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.users.pro + stats.users.coach)}</td></tr>
+    <tr><td style="padding:6px 12px;">Elite / Consultant</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.users.elite + stats.users.consultant)}</td></tr>
+    <tr><td style="padding:6px 12px;">Admin</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.users.admin)}</td></tr>
+  </table>
+
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:14px;">
+    <tr style="background:#f1f5f9;"><th colspan="2" style="text-align:left; padding:8px 12px;">Generation breakdown</th></tr>
+    <tr><td style="padding:6px 12px;">SLM (free, primary)</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.generation.slm)}</td></tr>
+    <tr><td style="padding:6px 12px;">Haiku Advisor (paid Korean)</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.generation.haiku_advisor)}</td></tr>
+    <tr><td style="padding:6px 12px;">Haiku Assistant (free Korean)</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.generation.haiku_assistant)}</td></tr>
+    <tr><td style="padding:6px 12px;">Engine (Opus)</td><td style="padding:6px 12px; text-align:right;">${fmtNum(stats.generation.engine)}</td></tr>
+  </table>
+
+  <div style="background:#fffbeb; border:1px solid #fde68a; padding:10px 14px; margin-bottom:14px; border-radius:6px;">
+    <div style="font-weight:700; margin-bottom:6px;">Anomalies / things to know</div>
+    ${_anomaliesHtml}
+  </div>
+
+  <p style="color:#94a3b8; font-size:12px; text-align:center; margin-top:24px;">Generated in ${Date.now() - _t0}ms · <a href="https://wayfinderai.org/admin-dashboard.html" style="color:#64748b;">admin dashboard</a></p>
+</div>`;
+
+    const subject = `Wayfinder ${dateLocal} — ${fmtNum(stats.activity.totalChats24h)} chats · ${fmtNum(stats.newSignups24h)} new · Site ${stats.site.status}`;
+
+    const text = `Wayfinder daily pulse — ${dateLocal}\n\nSite: ${stats.site.status}\nDeploy: ${stats.deploy.latestSha} (${stats.deploy.ageHours}h ago)\n\nActivity 24h: ${stats.activity.totalChats24h} chats (${stats.activity.intlChats24h} Korean, ${_intlPct}%), ${stats.activity.activeSessions24h} active users, ${stats.newSignups24h} new signups\n\nTotal users: ${stats.users.total} (free ${stats.users.free}, pro ${stats.users.pro}, elite ${stats.users.elite}, coach ${stats.users.coach}, consultant ${stats.users.consultant}, admin ${stats.users.admin})\n\nAnomalies: ${stats.anomalies.length === 0 ? 'none' : stats.anomalies.join('; ')}`;
+
+    // 7. Send email (skip if dryRun for testing)
+    let emailResult = { sent: false, dryRun };
+    if (!dryRun) {
+      try {
+        emailResult = await sendAdminDailyPulse(subject, html, text);
+        emailResult.sent = !!(emailResult && (emailResult.success !== false));
+      } catch (e) {
+        emailResult.error = e.message;
+        stats.anomalies.push('Email send failed: ' + e.message);
+      }
+    }
+
+    res.json({ ok: true, stats, subject, emailResult, durationMs: Date.now() - _t0 });
+  } catch (err) {
+    console.error('[morning-pulse]', err);
+    res.status(500).json({ error: err.message, stack: err.stack && err.stack.split('\n').slice(0, 3).join(' | ') });
   }
 });
 
