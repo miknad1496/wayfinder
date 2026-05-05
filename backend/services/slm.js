@@ -608,19 +608,26 @@ async function callSLMEndpoint(messages) {
     //   RAW_OPENAI_OUTPUT=true:  { output: { choices: [{ message: { content: "..." } }] } }
     //   Default vLLM worker:     { output: { choices: [{ tokens: ["..."] }] } }
     //   Legacy/simple:           { output: "text" }
-    if (data.output?.choices?.[0]?.message?.content) {
-      return data.output.choices[0].message.content;
+    //   PATCH152: vLLM v2.14.0+ wraps in array: { output: [{ choices: [{ tokens: [...] }] }] }
+    //
+    // Normalize the array-wrapped form first by unwrapping output[0], then run
+    // the same shape detection. Defensive: doesn't mutate `data`, uses a local.
+    const outRaw = data.output;
+    const out = Array.isArray(outRaw) ? outRaw[0] : outRaw;
+
+    if (out?.choices?.[0]?.message?.content) {
+      return out.choices[0].message.content;
     }
-    if (data.output?.choices?.[0]?.tokens) {
+    if (out?.choices?.[0]?.tokens) {
       // vLLM worker returns tokens array — join if multiple, take first if single
-      const tokens = data.output.choices[0].tokens;
+      const tokens = out.choices[0].tokens;
       return Array.isArray(tokens) ? tokens.join('') : String(tokens);
     }
-    if (data.output?.choices?.[0]?.text) {
-      return data.output.choices[0].text;
+    if (out?.choices?.[0]?.text) {
+      return out.choices[0].text;
     }
-    if (typeof data.output === 'string') {
-      return data.output;
+    if (typeof outRaw === 'string') {
+      return outRaw;
     }
     // Last resort: try to extract any text from the response
     console.error('[SLM] Unexpected RunPod response structure:', JSON.stringify(data).slice(0, 500));
