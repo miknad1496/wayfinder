@@ -1632,6 +1632,34 @@ async function buildCategoryIndex() {
     if (apChunks > 0) console.log('  AP exam study guides: ' + apChunks + ' chunks from ' + apFiles.length + ' files');
   } catch { /* ap-exams dir doesn\'t exist yet — non-fatal */ }
 
+  // REVAMP V2: EXEMPLAR AUTO-LOAD PATCH151 — patch 150 dropped 43 exemplar-*.md
+  // files into distilled/ but the category loop above only loads files explicitly
+  // listed in CATEGORIES. Exemplars sit on disk doing nothing without this loader.
+  // Same pattern as schools/ and ap-exams/: per-file try/catch so one bad file
+  // doesn't kill the index build. Tagged with chunk._exemplar for later
+  // identification. Merged into the admissions bucket so chat queries about
+  // strategy/essays/aid/etc surface them via existing RAG.
+  try {
+    const distilledFiles = await fs.readdir(distilledDir);
+    let exemplarChunks = 0;
+    let exemplarFiles = 0;
+    for (const file of distilledFiles.filter(f => f.startsWith('exemplar-') && f.endsWith('.md'))) {
+      try {
+        const chunks = await loadMarkdownFile(distilledDir, file, 2.0);
+        for (const chunk of chunks) {
+          chunk.category = 'admissions';
+          chunk._exemplar = file.replace(/^exemplar-/, '').replace(/\.md$/, '');
+        }
+        if (Array.isArray(index.admissions)) index.admissions.push(...chunks);
+        exemplarChunks += chunks.length;
+        exemplarFiles++;
+      } catch (exErr) {
+        console.warn('[KB] exemplar load skipped for ' + file + ': ' + exErr.message);
+      }
+    }
+    if (exemplarChunks > 0) console.log('  Exemplar synthesis layer: ' + exemplarChunks + ' chunks from ' + exemplarFiles + ' files');
+  } catch { /* distilled dir scan failed — non-fatal */ }
+
   // PATCH147 (hardened in PATCH148): AP per-unit brains. Per-file try/catch
   // so one bad file doesn't kill the whole index build (which would 500 every
   // chat request). Logs entry + exit so boot logs show whether the block ran.

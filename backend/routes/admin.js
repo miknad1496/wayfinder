@@ -11,6 +11,7 @@ import { getRoutingLog } from './chat.js';
 import { verifyToken, isAdmin as checkIsAdmin, getVIPList, addVIP, removeVIP } from '../services/auth.js';
 import { getIntelligenceAnalytics } from '../services/intelligence-analytics.js';
 import { sendAdminDailyPulse } from '../services/email.js'; // PATCH140
+import { getHealthSnapshot as getRouterHealth } from '../services/router.js'; // REVAMP V2: ROUTER HEALTH PATCH151
 import { promises as _fsP140 } from 'fs';
 import { join as _join140, dirname as _dirname140 } from 'path';
 import { fileURLToPath as _fu140 } from 'url';
@@ -1617,6 +1618,19 @@ router.post('/morning-pulse', async (req, res) => {
   } catch (err) {
     console.error('[morning-pulse]', err);
     res.status(500).json({ error: err.message, stack: err.stack && err.stack.split('\n').slice(0, 3).join(' | ') });
+  }
+});
+
+// REVAMP V2: ROUTER HEALTH PATCH151 — observability endpoint for the patch 151
+// query router. Returns classifier/cache/quota/breaker status + anomaly list.
+// Read-only, side-effect-free. Safe to call frequently (status pages, monitoring).
+router.get('/router-health', async (req, res) => {
+  try {
+    const snapshot = await getRouterHealth();
+    res.json(snapshot);
+  } catch (err) {
+    console.error('[router-health]', err);
+    res.status(500).json({ error: err.message });
   }
 });
 

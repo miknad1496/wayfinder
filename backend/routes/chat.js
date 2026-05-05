@@ -5,6 +5,7 @@ import { detectLanguage, langToCountry, detectCountryFromQuery, buildIntlContext
 import { intlCacheGet, intlCacheSet } from '../services/intl-cache.js'; // PATCH118 cache
 import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { runHeadConsultantSupplement, shouldRunHeadConsultantSupplement, formatHeadConsultantCombined } from '../services/head-consultant.js'; // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74
+import { evaluate as routerEvaluate, commitSupplementUse, releaseSupplementUse } from '../services/router.js'; // REVAMP V2: ROUTER ORCHESTRATOR PATCH151
 import { buildIntlSlmBrief } from '../services/intl-slm-enrichment.js'; // PATCH138: SLM research brief for intl queries
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
@@ -442,6 +443,43 @@ router.post('/', async (req, res) => {
       }
     }
 
+    // REVAMP V2: ROUTER ORCHESTRATOR PATCH151 — smart router that decides whether
+    // to fire a Head Consultant supplement (Opus on top of SLM) for THIS query.
+    // Independently-failing modules + circuit breaker + feature flag. If the router
+    // is disabled (default) or fails internally, this block is a no-op and chat.js
+    // behaves exactly as it did pre-patch-151. NEVER throws to caller.
+    //
+    // Activate by setting Render env: ROUTER_ENABLED=true
+    let _routerDecision = null;
+    let _routerReservationId = null;
+    let _routerUserIdForCommit = null;
+    try {
+      const _routerUserId = (auth && auth.user && (auth.user.id || auth.user.email)) || null;
+      _routerDecision = await routerEvaluate(
+        String(req.body && req.body.message || ''),
+        _routerUserId ? { id: _routerUserId, plan: (auth.user.plan || 'free'), isAdmin: !!auth.user.isAdmin, isVIP: !!auth.user.isVIP } : null,
+        { engineAlreadyAllowed: engineAllowed, useHaikuTiebreak: false }
+      );
+      if (_routerDecision && _routerDecision.enabled) {
+        tEvent.engine.routerEnabled = true;
+        tEvent.engine.routerRoute = _routerDecision.route;
+        tEvent.engine.routerCacheHit = !!_routerDecision.cacheHit;
+        tEvent.engine.routerReason = _routerDecision.reason;
+        if (_routerDecision.supplementAllowed && !engineAllowed) {
+          engineAllowed = true;
+          tEvent.engine.allowed = true;
+          tEvent.engine.routerPromoted = true;
+          _routerReservationId = _routerDecision.reservationId;
+          _routerUserIdForCommit = _routerUserId;
+          console.log('[Router] Promoted ' + (auth.user.plan || 'free') + ' query to supplement (' + _routerDecision.reason + '): "' + (req.body.message || '').slice(0, 60) + '..."');
+        }
+      }
+    } catch (routerErr) {
+      // Hard fail-open: any router crash leaves engineAllowed unchanged.
+      console.warn('[Router] evaluate threw (non-fatal): ' + routerErr.message);
+      _routerDecision = null;
+    }
+
     // Check daily + monthly message limits for authenticated users
     if (auth?.token) {
       const msgUsage = await checkMessageUsage(auth.token);
@@ -725,12 +763,24 @@ router.post('/', async (req, res) => {
                     tEvent.generation.headConsultantTokens = supplementResult.tokensUsed || 0;
                     tEvent.generation.headConsultantLatencyMs = supplementResult.latencyMs || 0;
                     console.log('[HEAD-CONSULTANT] Supplemented SLM response (' + (supplementResult.tokensUsed || 0) + ' tokens, ' + (supplementResult.latencyMs || 0) + 'ms)');
+                    // PATCH151: commit router reservation on successful Opus fire
+                    if (_routerReservationId && _routerUserIdForCommit) {
+                      commitSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] commit failed (non-fatal): ' + e.message));
+                    }
                   } else {
                     console.warn('[HEAD-CONSULTANT] Supplement skipped: ' + (supplementResult.error || 'unknown'));
+                    // PATCH151: release router reservation when supplement skipped (no Opus consumed)
+                    if (_routerReservationId && _routerUserIdForCommit) {
+                      releaseSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] release failed (non-fatal): ' + e.message));
+                    }
                   }
                 } catch (hcErr) {
                   // Non-fatal — user still gets the SLM response without the supplement
                   console.warn('[HEAD-CONSULTANT] Supplement failed (non-fatal): ' + hcErr.message);
+                  // PATCH151: release router reservation on Opus error (also trips circuit breaker)
+                  if (_routerReservationId && _routerUserIdForCommit) {
+                    releaseSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] release failed (non-fatal): ' + e.message));
+                  }
                 }
               }
             } else {
@@ -803,9 +853,19 @@ router.post('/', async (req, res) => {
                   tEvent.generation.headConsultantSupplemented = true;
                   tEvent.generation.headConsultantTokens = supplementResult.tokensUsed || 0;
                   console.log('[HEAD-CONSULTANT-INTL] Supplemented Haiku-intl response (' + (supplementResult.tokensUsed || 0) + ' tokens)');
+                  // PATCH151: commit router reservation on successful Opus fire (intl path)
+                  if (_routerReservationId && _routerUserIdForCommit) {
+                    commitSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] commit-intl failed (non-fatal): ' + e.message));
+                  }
+                } else if (_routerReservationId && _routerUserIdForCommit) {
+                  releaseSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] release-intl failed (non-fatal): ' + e.message));
                 }
               } catch (hcIntlErr) {
                 console.warn('[HEAD-CONSULTANT-INTL] Supplement failed (non-fatal): ' + hcIntlErr.message);
+                // PATCH151: release router reservation on Opus error
+                if (_routerReservationId && _routerUserIdForCommit) {
+                  releaseSupplementUse(_routerUserIdForCommit, _routerReservationId).catch(e => console.warn('[Router] release-intl failed (non-fatal): ' + e.message));
+                }
               }
             }
           } catch (err) {
