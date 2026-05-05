@@ -424,7 +424,15 @@ function detectConversationPhase(conversationHistory, sessionContext) {
  *
  * Returns the same shape as chat() for drop-in compatibility.
  */
-export async function chatHaikuIntake(userMessage, sessionContext = {}, conversationHistory = []) {
+export async function chatHaikuIntake(userMessage, sessionContext = {}, conversationHistory = [], options = {}) {
+  // PATCH148 FIX: added `options = {}` parameter. Patch 124 referenced
+  // options.intlContext + options.intlLang at line 490 without adding the
+  // parameter to the signature. Function threw "options is not defined"
+  // on every welcome-desk call since patch 124 deploy. Bug went unnoticed
+  // because most callers route around welcome desk (Korean → bypass via
+  // _intlMode, returning users → useSLM, engine-toggle-on users → engine
+  // path direct). Only new English users on first-message-without-toggle
+  // hit the bug — Dan caught it in patch 147 testing.
   const anthropic = getClient();
   const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
 

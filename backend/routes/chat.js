@@ -984,7 +984,15 @@ router.post('/', async (req, res) => {
 
   } catch (err) {
     if (lockedSessionId) activeSessions.delete(lockedSessionId);
-    console.error('Chat error:', err);
+    // PATCH148: amplified error logging — was just `console.error('Chat error:', err)` which
+    // prints the message but not the stack. Adding explicit stack + sub-fields so the next
+    // 500 gives us a precise breadcrumb (which file + which line + which call).
+    console.error('[CHAT-ERROR]', err && err.message ? err.message : String(err));
+    if (err && err.stack) {
+      console.error('[CHAT-ERROR-STACK]', err.stack.split('\n').slice(0, 8).join(' | '));
+    }
+    if (err && err.code) console.error('[CHAT-ERROR-CODE]', err.code);
+    if (err && err.cause) console.error('[CHAT-ERROR-CAUSE]', String(err.cause).slice(0, 500));
     tEvent.outcome.http_status = 500;
     tEvent.outcome.error = err.message || 'unknown';
     tEvent.latency.total_ms = Math.round((performance.now() - t0) * 100) / 100;

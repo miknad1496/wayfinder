@@ -1632,50 +1632,70 @@ async function buildCategoryIndex() {
     if (apChunks > 0) console.log('  AP exam study guides: ' + apChunks + ' chunks from ' + apFiles.length + ' files');
   } catch { /* ap-exams dir doesn\'t exist yet — non-fatal */ }
 
-  // PATCH147: AP per-unit brains (ap-units/<exam>/<unit>.md) — 220+ files
-  // across 37 exams as of patch 88. Previously these were ONLY loaded by
-  // ap-coach-extras.js loadApBrains() into the AP Coach module's apUnitsCache,
-  // never entering the main RAG index. So a chat user asking "explain AP
-  // Chemistry equilibrium" got the high-level ap-exams guide but missed the
-  // unit-level deep content. Adding here so they surface in SLM + Engine RAG.
-  // Recursive scan: ap-units/<exam-slug>/<unit-slug>.md OR ap-units/<exam-slug>-<unit-slug>.md
+  // PATCH147 (hardened in PATCH148): AP per-unit brains. Per-file try/catch
+  // so one bad file doesn't kill the whole index build (which would 500 every
+  // chat request). Logs entry + exit so boot logs show whether the block ran.
+  console.log('[KB] ap-units scan starting...');
   try {
     const apUnitsDir = join(PATHS.knowledgeBase, 'ap-units');
     let apUnitChunks = 0;
     let apUnitFiles = 0;
-    const examDirs = await fs.readdir(apUnitsDir, { withFileTypes: true });
+    let apUnitErrors = 0;
+    let examDirs = [];
+    try {
+      examDirs = await fs.readdir(apUnitsDir, { withFileTypes: true });
+    } catch (readErr) {
+      console.log('[KB] ap-units dir not present — skipping (' + readErr.message + ')');
+      examDirs = [];
+    }
     for (const ent of examDirs) {
-      if (ent.isDirectory()) {
-        // ap-units/<exam-slug>/<unit-slug>.md
-        const examSlug = ent.name;
-        const examPath = join(apUnitsDir, examSlug);
-        const unitFiles = await fs.readdir(examPath);
-        for (const uf of unitFiles.filter(f => f.endsWith('.md') && f !== 'README.md')) {
-          const chunks = await loadMarkdownFile(examPath, uf, 1.8);  // boost slightly less than schools (2.0)
-          for (const chunk of chunks) {
-            chunk.category = 'education_decisions';
-            chunk._apExam = examSlug;
-            chunk._apUnit = uf.replace(/\.md$/, '');
+      try {
+        if (ent.isDirectory()) {
+          const examSlug = ent.name;
+          const examPath = join(apUnitsDir, examSlug);
+          let unitFiles = [];
+          try { unitFiles = await fs.readdir(examPath); } catch { continue; }
+          for (const uf of unitFiles.filter(f => f.endsWith('.md') && f !== 'README.md')) {
+            try {
+              const chunks = await loadMarkdownFile(examPath, uf, 1.8);
+              for (const chunk of chunks) {
+                chunk.category = 'education_decisions';
+                chunk._apExam = examSlug;
+                chunk._apUnit = uf.replace(/\.md$/, '');
+              }
+              if (Array.isArray(index.education_decisions)) index.education_decisions.push(...chunks);
+              apUnitChunks += chunks.length;
+              apUnitFiles++;
+            } catch (fileErr) {
+              apUnitErrors++;
+              console.warn('[KB] ap-units file failed: ' + examSlug + '/' + uf + ' — ' + fileErr.message);
+            }
           }
-          if (Array.isArray(index.education_decisions)) index.education_decisions.push(...chunks);
-          apUnitChunks += chunks.length;
-          apUnitFiles++;
+        } else if (ent.isFile() && ent.name.endsWith('.md') && ent.name !== 'README.md') {
+          try {
+            const chunks = await loadMarkdownFile(apUnitsDir, ent.name, 1.8);
+            const m = ent.name.replace(/\.md$/, '').match(/^(ap-[a-z-]+?)-(.+)$/);
+            for (const chunk of chunks) {
+              chunk.category = 'education_decisions';
+              if (m) { chunk._apExam = m[1]; chunk._apUnit = m[2]; }
+            }
+            if (Array.isArray(index.education_decisions)) index.education_decisions.push(...chunks);
+            apUnitChunks += chunks.length;
+            apUnitFiles++;
+          } catch (fileErr) {
+            apUnitErrors++;
+            console.warn('[KB] ap-units flat file failed: ' + ent.name + ' — ' + fileErr.message);
+          }
         }
-      } else if (ent.isFile() && ent.name.endsWith('.md') && ent.name !== 'README.md') {
-        // Flat: ap-units/<exam-slug>-<unit-slug>.md
-        const chunks = await loadMarkdownFile(apUnitsDir, ent.name, 1.8);
-        const m = ent.name.replace(/\.md$/, '').match(/^(ap-[a-z-]+?)-(.+)$/);
-        for (const chunk of chunks) {
-          chunk.category = 'education_decisions';
-          if (m) { chunk._apExam = m[1]; chunk._apUnit = m[2]; }
-        }
-        if (Array.isArray(index.education_decisions)) index.education_decisions.push(...chunks);
-        apUnitChunks += chunks.length;
-        apUnitFiles++;
+      } catch (entErr) {
+        apUnitErrors++;
+        console.warn('[KB] ap-units entry failed: ' + (ent.name || '?') + ' — ' + entErr.message);
       }
     }
-    if (apUnitChunks > 0) console.log('  AP per-unit brains: ' + apUnitChunks + ' chunks from ' + apUnitFiles + ' files');
-  } catch { /* ap-units dir doesn't exist yet — non-fatal */ }
+    console.log('[KB] ap-units scan done: ' + apUnitChunks + ' chunks from ' + apUnitFiles + ' files (' + apUnitErrors + ' file errors swallowed)');
+  } catch (outerErr) {
+    console.warn('[KB] ap-units scan outer failure (non-fatal): ' + outerErr.message);
+  }
 
   let totalChunks = 0;
   for (const [cat, chunks] of Object.entries(index)) {
