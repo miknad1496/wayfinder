@@ -360,9 +360,10 @@ router.get('/guides', async (req, res) => {
     const token = req.headers.authorization?.replace('Bearer ', '');
     const user = await verifyToken(token);
     if (!user) return res.status(401).json({ error: 'Not authenticated' });
-    if (!canAccess(user, 'ap_coach')) {
-      return res.status(403).json({ error: 'AP Coach add-on required', _requiresUpgrade: true });
-    }
+    // PATCH135: free users CAN see the listing (they need it to pick their one
+    // free preview). The /guide/:exam endpoint enforces the preview-slot rule —
+    // listing should not 403. Previously this 403 forced frontend to use
+    // FALLBACK_GUIDES with no ext field → all cards rendered as 'docx'.
     const guides = [];
     for (const [exam, cfg] of Object.entries(EXAM_TO_GUIDE)) {
       // PATCH132: prefer PDF over DOCX in the listing (matches the download

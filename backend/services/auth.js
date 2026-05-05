@@ -1465,6 +1465,13 @@ export async function updateUserPlan(token, fields) {
     }
     if (fields.stripeSubscriptionId !== undefined) user.stripeSubscriptionId = fields.stripeSubscriptionId;
     if (fields.planExpiresAt !== undefined) user.planExpiresAt = fields.planExpiresAt;
+    // PATCH135: persist previewedExam so AP study guide free-tier preview slot
+    // actually sticks. Previously updateUserPlan silently ignored this field,
+    // which meant POST /guide/preview-select returned 200 but didn't save the
+    // exam choice — re-fetch GET /guide/:exam still returned 402 → frontend
+    // showed "Could not download" alert. That looked like "OK button does nothing."
+    if (fields.previewedExam !== undefined) user.previewedExam = fields.previewedExam;
+    if (fields.coachTrialExpiresAt !== undefined) user.coachTrialExpiresAt = fields.coachTrialExpiresAt;
 
     await atomicWriteJSON(filePath, user);
     return { success: true, user: sanitizeUser(user) };
