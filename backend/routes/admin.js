@@ -1446,6 +1446,37 @@ router.post('/morning-pulse', async (req, res) => {
       stats.anomalies.push('Site uptime check failed: ' + e.message);
     }
 
+    // PATCH144: live route smoke test — for each critical user-facing path,
+    // verify the response signature matches expectations. Catches the patch
+    // 143 bug class IN PRODUCTION (status checks see 200 but the catchall
+    // is serving wrong content). If any check fails, it lands in the
+    // anomalies block of the daily email digest so Dan sees it within 24h.
+    const routeChecks = [
+      { path: '/privacy.html', mustInclude: 'Privacy', maxBytes: 80000, name: 'Privacy Policy page' },
+      { path: '/terms.html', mustInclude: 'Terms', maxBytes: 80000, name: 'Terms of Service page' },
+      { path: '/forgot-password.html', mustInclude: 'reset', maxBytes: 80000, name: 'Forgot-password reset form' },
+      { path: '/admin-dashboard.html', mustInclude: 'admin', maxBytes: 200000, name: 'Admin dashboard' },
+    ];
+    for (const rc of routeChecks) {
+      try {
+        const r = await fetch('https://wayfinderai.org' + rc.path, { signal: AbortSignal.timeout(6000) });
+        if (r.status !== 200) {
+          stats.anomalies.push(`${rc.name} (${rc.path}) returned HTTP ${r.status} — broken link.`);
+          continue;
+        }
+        const body = await r.text();
+        if (body.length > rc.maxBytes) {
+          stats.anomalies.push(`${rc.name} (${rc.path}) returned ${body.length} bytes (expected <${rc.maxBytes}). Likely SPA catchall serving wrong content.`);
+          continue;
+        }
+        if (rc.mustInclude && !body.toLowerCase().includes(rc.mustInclude.toLowerCase())) {
+          stats.anomalies.push(`${rc.name} (${rc.path}) returned 200 but missing expected content "${rc.mustInclude}".`);
+        }
+      } catch (e) {
+        stats.anomalies.push(`Route smoke test failed for ${rc.path}: ${e.message}`);
+      }
+    }
+
     // 2. Deploy state — read latest commit from local git history (the running
     //    process is on the deployed commit, so HEAD = production)
     try {
