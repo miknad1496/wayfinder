@@ -16,7 +16,7 @@
   - concierge.avg_latency: <8000ms
   - concierge.avg_response_length: ≥300 chars
 - low-signal guard: skip threshold alerts when chat.totalQueries < 100 OR essay.totalReviews < 20 OR concierge.totalMessages < 50 OR (now - since) < 30min
-- last_calibration_change: 2026-04-26 — initial baselines (estimated, not yet validated; 6-for-6 zero-volume runs, no real data to calibrate against)
+- last_calibration_change: 2026-04-26 — initial baselines (estimated, not yet validated; 7-for-7 zero-volume runs, no real data to calibrate against)
 
 ## EFFECTIVE PATTERNS
 
@@ -41,7 +41,7 @@
 ## CALIBRATION SUGGESTIONS
 
 - Initial baselines were estimated from typical LLM-app patterns — refine after 7-14 days of real data. Likely calibration: tighten upper bounds on latency, loosen RAG hit rate (real-world hit rate often 0.65-0.75 for niche queries).
-- **Reschedule recommendation (URGENT, 6-for-6 zero-volume confirms):** move drift monitor from 5am UTC to 04:00 UTC (= 9pm PST = peak high-schooler homework window) OR even better, run at a non-Render-restart-adjacent time like 16:00 UTC (= 9am PST). Current schedule is structurally adjacent to the 12:08am/12:09am audit tasks that zero counters.
+- **Reschedule recommendation (CRITICAL, 7-for-7 zero-volume confirms):** move drift monitor from 5am UTC to 04:00 UTC (= 9pm PST = peak high-schooler homework window) OR even better, run at a non-Render-restart-adjacent time like 16:00 UTC (= 9am PST). Current schedule is structurally adjacent to the 12:08am/12:09am audit tasks that zero counters.
 - Alternative: persist analytics counters to disk (file-backed like `_quota-tracker.json`) so they survive restart. This is a code change — flag for Dan, don't attempt.
 
 ## OPEN QUESTIONS
@@ -61,3 +61,4 @@
 | 2026-05-02 | LOW SIGNAL | Counter reset 55min before fetch (since=11:08:19Z, fetched=12:03:10Z); volume=0 across all 3 pipelines; FOURTH consecutive zero-volume run |
 | 2026-05-03 | LOW SIGNAL | since=2026-05-02T11:08:19Z (UNCHANGED from prior run, ~25h elapsed, no restart); volume=0 across all 3 pipelines; FIFTH consecutive zero-volume run — flips the diagnosis: not just restart-adjacency, the site genuinely has near-zero traffic in observed windows |
 | 2026-05-04 | LOW SIGNAL | since=2026-05-04T07:48:39Z (~4h15m before fetch — counter reset overnight after May 3 25h-stable window); volume=0 across all 3 pipelines; SIXTH consecutive zero-volume run — restart cadence has resumed, suggests a Render redeploy occurred between May 3 ~12:00 UTC and May 4 ~07:48 UTC |
+| 2026-05-05 | LOW SIGNAL | since=2026-05-05T07:28:12Z (~4h35m before fetch — counter reset overnight again, similar to May 4); volume=0 across all 3 pipelines; SEVENTH consecutive zero-volume run — restart-then-low-traffic pattern repeating, schedule move is now critical |
