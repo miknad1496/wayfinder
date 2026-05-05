@@ -632,14 +632,26 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
     systemPrompt += BOUNDARY_INSTRUCTION;
   }
 
-  // REVAMP V2: HAIKU TOKEN BUMP PATCH124 — bump from 1024 to 2500 so structured Korean
-  // responses (교과/세특/창체/자율탐구/면접/이번주 closer) don't truncate mid-sentence.
-  // Korean responses need ~1500-2500 tokens; intl mode gets the full 2500. English standard
-  // tier still gets a generous 2000. Assistant persona stays lean at 800.
+  // REVAMP V2: HAIKU TOKEN UNCAP PATCH134 — generous caps regardless of tier.
+  //
+  // History of why this section was wrong:
+  //   PATCH124 capped 'assistant' persona (free users) at 800 tokens. But for
+  //   Korean / intl queries, SLM is SKIPPED (patch 114 — SLM is English-only),
+  //   so chatHaikuAdvisor is the MAIN path for Korean, not a fallback. With
+  //   persona='assistant', free-tier Korean users hit 800 max_tokens =
+  //   ~500 Korean chars (Hangul = 1.4-1.6 tokens/char). Korean structured
+  //   responses (교과/세특/창체/자율탐구/면접/이번 주) need 1500-2500+ tokens to
+  //   complete, so they truncated mid-word every time. Admin/paid users got
+  //   2500 ('advisor' persona, intl path) and looked fine — making the bug
+  //   invisible until Dan tested as a free user.
+  //
+  // Fix: give every persona × language combination enough headroom to finish
+  // a structured response. Haiku is cheap (~$5/M output tokens), so even at
+  // 4096 max with 30 free msgs/day per user, cost is ~$0.06/user/day.
   const _patch124_isIntl = !!(options.intlContext || (options.intlLang && options.intlLang !== 'en'));
-  const _patch124_maxTokens = _v55_persona === 'assistant'
-    ? 800
-    : (_patch124_isIntl ? 2500 : 2000);
+  const _patch124_maxTokens = _patch124_isIntl
+    ? 4096                                                  // Korean / intl — both tiers get full room
+    : (_v55_persona === 'assistant' ? 2500 : 4096);         // English: free=2500, paid=4096
   const response = await anthropic.messages.create({
     model: haikuModel,
     max_tokens: _patch124_maxTokens, // REVAMP V2: HAIKU TOKEN BUMP PATCH124
