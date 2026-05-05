@@ -705,20 +705,22 @@ router.post('/', async (req, res) => {
               tEvent.generation.domain = slmResult.domain;
               console.log(`[ADVISOR] SLM response OK (${slmResult.domain}, ${slmResult.latency}ms)`);
 
-              // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74 — Head Consultant supplement on top of SLM response
-              if (engineAllowed && result && typeof result.text === 'string' && result.text.length > 100) {
+              // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74 — Head Consultant supplement on top of SLM response.
+              // PATCH147: previously checked result.text (always undefined since SLM/Haiku return result.response),
+              // so this entire supplement block was a silent no-op for 70+ patches. Switched to result.response.
+              if (engineAllowed && result && typeof result.response === 'string' && result.response.length > 100) {
                 try {
                   // Build a compact RAG context snippet from what was injected into SLM
                   const ragSnippet = (slmResult && slmResult.ragInjected) ? String(slmResult.ragInjected).slice(0, 8000) : '';
                   const supplementResult = await runHeadConsultantSupplement(
                     trimmedMsg,
-                    result.text,
+                    result.response,
                     ragSnippet,
                     { profile: session.context?.profile || null },
                     {}
                   );
                   if (supplementResult.success && supplementResult.supplement) {
-                    result.text = formatHeadConsultantCombined(result.text, supplementResult.supplement);
+                    result.response = formatHeadConsultantCombined(result.response, supplementResult.supplement);
                     tEvent.generation.headConsultantSupplemented = true;
                     tEvent.generation.headConsultantTokens = supplementResult.tokensUsed || 0;
                     tEvent.generation.headConsultantLatencyMs = supplementResult.latencyMs || 0;
@@ -781,6 +783,31 @@ router.post('/', async (req, res) => {
           try {
             result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, slmBrief: _intlSlmBrief });
             tEvent.generation.mode = 'haiku_advisor';
+            // PATCH147: Head Consultant supplement for paid intl queries on the Haiku path.
+            // Without this, paid Korean users with engine toggle get only Haiku response — no
+            // Opus depth layered on top. The English SLM path has had HC since patch 74
+            // (though broken until patch 147 fixed the .text→.response field name); now
+            // extending to the Korean Haiku path so paid Korean experience matches paid English.
+            if (engineAllowed && _intlMode && result && typeof result.response === 'string' && result.response.length > 100) {
+              try {
+                const ragSnippet = _intlSlmBrief ? String(_intlSlmBrief).slice(0, 8000) : '';
+                const supplementResult = await runHeadConsultantSupplement(
+                  trimmedMsg,
+                  result.response,
+                  ragSnippet,
+                  { profile: session.context?.profile || null, intlLang: _intlLang, intlCountry: _intlCountry },
+                  {}
+                );
+                if (supplementResult.success && supplementResult.supplement) {
+                  result.response = formatHeadConsultantCombined(result.response, supplementResult.supplement);
+                  tEvent.generation.headConsultantSupplemented = true;
+                  tEvent.generation.headConsultantTokens = supplementResult.tokensUsed || 0;
+                  console.log('[HEAD-CONSULTANT-INTL] Supplemented Haiku-intl response (' + (supplementResult.tokensUsed || 0) + ' tokens)');
+                }
+              } catch (hcIntlErr) {
+                console.warn('[HEAD-CONSULTANT-INTL] Supplement failed (non-fatal): ' + hcIntlErr.message);
+              }
+            }
           } catch (err) {
             console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
             result = await chat(
