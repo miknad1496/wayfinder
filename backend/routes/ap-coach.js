@@ -413,6 +413,10 @@ router.get('/guide/:exam', async (req, res) => {
 
     const exam = req.params.exam;
     const cfg = EXAM_TO_GUIDE[exam];
+    // PATCH136 DIAG: log every download attempt so we can see why free-tier
+    // downloads silently fail. Each line shows: exam + plan + previewedExam +
+    // path-decision (paid/preview/already-used). Remove once confirmed working.
+    console.log(`[AP-DL-START] exam=${exam} email=${user.email} plan=${user.plan || 'free'}`);
     if (!cfg) return res.status(404).json({ error: 'Unsupported exam' });
 
     // Resolve effective tier (admin/VIP bypass, paid tier flag)
@@ -426,7 +430,9 @@ router.get('/guide/:exam', async (req, res) => {
     // Free tier: must have selected this exam as their preview slot
     if (!isPaidOrPrivileged) {
       const prev = (fullUser && fullUser.previewedExam) || null;
+      console.log(`[AP-DL-FREE] exam=${exam} previewedExam=${prev || 'null'} plan=${planRaw}`);
       if (!prev) {
+        console.log(`[AP-DL-FREE] returning 402 _requiresPreviewSelection`);
         // First click: tell the frontend to ask for confirmation
         return res.status(402).json({
           _requiresPreviewSelection: true,
@@ -552,6 +558,8 @@ router.post('/guide/preview-select', async (req, res) => {
 
     const fullUser = await findUserByToken(token);
     if (!fullUser) return res.status(404).json({ error: 'User not found' });
+    // PATCH136 DIAG: log preview-select attempts to verify previewedExam persists
+    console.log(`[AP-PREVIEW-SELECT] email=${user.email} exam=${exam} currentPreviewedExam=${fullUser.previewedExam || 'null'} plan=${fullUser.plan || 'free'}`);
 
     const planRaw = String(fullUser.plan || 'free').toLowerCase();
     const isPaid = ['pro', 'elite', 'consultant', 'coach', 'admin'].includes(planRaw)
