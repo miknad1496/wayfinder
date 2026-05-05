@@ -57,7 +57,11 @@ export async function buildTokenIndex() {
       try {
         const raw = await fs.readFile(join(USERS_DIR, file), 'utf-8');
         const user = decryptUserFields(JSON.parse(raw));
-        if (user.token) {
+        // Only index ACTIVE tokens — skip expired ones to bound cache growth.
+        // Expired tokens that get queried will still be slow-path-resolved and
+        // rejected by verifyToken (isTokenExpired check). Skipping them at boot
+        // prevents indefinite accumulation across long-lived processes.
+        if (user.token && !isTokenExpired(user.tokenCreatedAt)) {
           tokenIndex.set(user.token, file);
         }
         if (user.stripeCustomerId) {

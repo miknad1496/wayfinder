@@ -1361,3 +1361,41 @@ Two-week-old data-hygiene flag closed with an architectural fix. The same `norma
 
 ### Estimated Impact
 None — the system is in a clean state across all probed surfaces. Last 3 nightly runs (5-02, 5-03, 5-04) have produced 1 architectural fix (5-03 normalize) + 0 issues today. The `_source` drift fix is paying off.
+
+---
+
+## 2026-05-05 — Nightly Audit (Cost + Runtime + Data + Auth deep-dive)
+
+**Focus**: Cost & Resource Leaks (every-night), Backend Runtime (every-night), Data Integrity (every-night), `verifyToken` token-cache TTL semantics (deep-dive from 2026-05-04 OPEN QUESTION).
+
+### Result: 1 LOW-severity fix — `tokenIndex` unbounded growth via expired tokens. Patched.
+
+### Checks Performed
+
+1. **SLM keep-alive bug regression check** (`backend/services/slm.js:828-866`). Inline comment "Do NOT update lastWarmAt here — pings must not reset the idle timer" still present. No regression of the `lastWarmAt`-update infinite-loop pattern.
+2. **Anonymous chat cap** (`backend/routes/chat.js:155-180, 326-340`). `checkAnonDailyLimit(ip)` enforced before any Claude call — disk-persisted. Intact.
+3. **Rate limiter sanity** (`backend/routes/chat.js:83-116, 343-348`). `RATE_LIMIT_MAX_REQUESTS=30`, anonymous capped at 5/min via `effectiveMax`. Intact.
+4. **Claude model defaults**. Routes use Haiku for cheap ops (discover-local, scholarships search), Opus only on credit-gated essay/AP coach + head-consultant supplement. Sonnet for standard chat. No unexpectedly expensive defaults.
+5. **setInterval audit (4 total)**: `slm.js` keep-alive (has stop logic + idle cutoff), `user-backup.js` (has stopUserBackup + .unref()), `scheduler.js` (hourly reminders, expected), `scraper-scheduler.js` (6h interval with stopScraperScheduler). All bounded.
+6. **Backend runtime boot test** (`timeout 15 node ./server.js` with test env). Server boots clean. Data Health all three modules pass:
+   - internships: 1606 entries (981 verified) — clean
+   - scholarships: 1043 entries (80 verified) — clean
+   - programs: 1416 entries (672 verified) — clean
+   - ApCoach knowledge: brain 41919 bytes, 9 per-exam files, 220 per-unit brains across 37 exams.
+7. **Data integrity script-pass**:
+   - All four modules: `metadata.totalCount === array.length` ✅ (1606 / 1043 / 1416 / 260)
+   - Duplicates by official `canonicalKey()` (3 modules) — 0 / 0 / 0
+   - Volunteer module (no schema in `data-integrity.js`) — hand-rolled `(name|organization)` key — 0 dupes
+   - Bare-domain `_source` for **internships/scholarships/programs**: holding clean (the `normalizeEntry` fix from 2026-05-03 is doing its job)
+   - **Volunteer module flag**: 26/260 verified entries have bare-domain `_source` (e.g., `https://www.communitygarden.org/`). Many of these are legitimate single-purpose orgs where the homepage IS the program page — not necessarily a violation. Flagged as DEFERRED (see Lessons → DATA QUALITY FLAGS).
+8. **`verifyToken` token-cache TTL deep audit** (DEEP-DIVE from 2026-05-04 OPEN QUESTION):
+   - **Finding (LOW)**: `tokenIndex = new Map()` in `auth.js:37` is unbounded. The cache is lazily evicted only when a stale token is accessed (`verifyToken` → `isTokenExpired` → `tokenIndex.delete`). On `buildTokenIndex` (boot), every non-null token is added regardless of age, so a long-lived process accumulates expired-token cruft for tokens that are never queried again.
+   - **Memory profile**: each entry ≈ 100-200 bytes (token UUID-string + filename). At 10K stale tokens, ≈ 1-2 MB. At 100K, ≈ 10-20 MB. Real but slow leak — only matters in high-user, low-restart deployments.
+   - **Fix applied**: in `buildTokenIndex`, skip entries where `isTokenExpired(user.tokenCreatedAt) === true`. The slow-path scan (`resolveUserByToken` lines 105-123) still works for the rare case where an expired token is queried — `verifyToken` rejects it after the scan, same end behavior, just with bounded baseline memory. One-line guard, no semantic change to verifyToken/loginUser/logoutUser flows.
+   - **Verified**: `node -c` passes; `timeout 12 node ./server.js` boots clean with the patch (`Token index built: 0 active tokens, 0 Stripe customers` — same output, since this dev clone has no users).
+
+### Files Changed
+- `backend/services/auth.js` — added `!isTokenExpired(user.tokenCreatedAt)` guard in `buildTokenIndex` to bound in-memory token-cache growth.
+
+### Estimated Daily Impact
+Negligible at current user counts. Important for future-proofing as user base grows. No user-facing behavior change.
