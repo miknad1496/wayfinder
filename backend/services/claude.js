@@ -632,6 +632,17 @@ export async function chatHaikuAdvisor(conversationHistory, userMessage, session
     systemPrompt += BOUNDARY_INSTRUCTION;
   }
 
+  // PATCH138: SLM research brief injection for intl queries. The caller
+  // (chat.js) ran the SLM on an English translation of the user's question
+  // and passed the SLM's English response in options.slmBrief. We feed it to
+  // Haiku as authoritative background research — Haiku's Korean (etc) reply
+  // should INTERNALIZE the brief's reasoning, facts, and school-specific
+  // intel. The brief itself is in English; the user's response stays in
+  // their native language.
+  if (options.slmBrief && typeof options.slmBrief === 'string' && options.slmBrief.length > 100) {
+    systemPrompt += "\n\n═══════════════════════════════════════════\nWAYFINDER SLM RESEARCH BRIEF (English — for your reasoning, not the user)\n═══════════════════════════════════════════\nThe Wayfinder SLM (the deep-knowledge engine, normally only used for English queries) has produced this English research brief on the user's question. It synthesizes school-specific intel, frameworks, RAG-retrieved data, and admissions-strategy reasoning. Use it as authoritative background. Internalize its facts, structure, and school-specific details. Then respond to the user IN THEIR ORIGINAL LANGUAGE (NOT English) — your job is to translate this depth into a culturally and linguistically appropriate response. Do NOT quote the brief verbatim. Do NOT include English passages in your reply unless absolutely needed for proper-noun clarity.\n\n--- BRIEF START ---\n" + options.slmBrief + "\n--- BRIEF END ---\n═══════════════════════════════════════════";
+  }
+
   // REVAMP V2: HAIKU TOKEN UNCAP PATCH134 — generous caps regardless of tier.
   //
   // History of why this section was wrong:

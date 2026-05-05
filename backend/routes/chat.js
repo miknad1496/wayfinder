@@ -5,6 +5,7 @@ import { detectLanguage, langToCountry, detectCountryFromQuery, buildIntlContext
 import { intlCacheGet, intlCacheSet } from '../services/intl-cache.js'; // PATCH118 cache
 import { chatSLM, shouldUseSLM, isSLMAvailable, warmUpSLM, getSLMWarmStatus } from '../services/slm.js';
 import { runHeadConsultantSupplement, shouldRunHeadConsultantSupplement, formatHeadConsultantCombined } from '../services/head-consultant.js'; // REVAMP V2: HEAD CONSULTANT SUPPLEMENT PATCH74
+import { buildIntlSlmBrief } from '../services/intl-slm-enrichment.js'; // PATCH138: SLM research brief for intl queries
 import { checkInjection, getInjectionRefusal } from '../services/input_filter.js';
 import { classifyScope, getScopeRefusal } from '../services/scope_classifier.js';
 import { saveSession, loadSession } from '../services/storage.js';
@@ -589,6 +590,28 @@ router.post('/', async (req, res) => {
       console.log('[INTL] country=' + _intlCountry + ' lang=' + _intlLang + ' contextChars=' + _intlContext.length);
     }
 
+    // PATCH138: SLM enrichment for intl queries. Korean (etc) skips SLM by
+    // design (patch 114 — SLM is English-trained). But the SLM's deep
+    // knowledge layer (school files, AP brain, curated DB, RAG retrieval) is
+    // exactly what makes responses feel "expert." This side-loop translates
+    // the question to English, runs SLM, and passes the English research brief
+    // to chatHaikuAdvisor as system context — Haiku then writes the Korean
+    // response internalizing the SLM intel. Free + paid both get this.
+    let _intlSlmBrief = null;
+    if (_intlMode && trimmedMsg) {
+      try {
+        const enrich = await buildIntlSlmBrief(trimmedMsg, session.context, {});
+        if (enrich && enrich.brief) {
+          _intlSlmBrief = enrich.brief;
+          console.log('[INTL-SLM-ENRICH] brief OK (' + enrich.briefLen + ' chars from English: "' + enrich.englishIntent.slice(0, 60) + '...")');
+        } else {
+          console.log('[INTL-SLM-ENRICH] no brief — proceeding with Haiku-only path');
+        }
+      } catch (e) {
+        console.warn('[INTL-SLM-ENRICH] failed (non-fatal):', e.message);
+      }
+    }
+
     const isFirstMessage = session.history.length === 0 && !engineAllowed;
     const slmWarmStatus = getSLMWarmStatus();
     const slmIsWarm = slmWarmStatus.state === 'warm';
@@ -713,7 +736,7 @@ router.post('/', async (req, res) => {
               console.log(`[ADVISOR→HAIKU] SLM quality failed: ${slmResult.qualityCheck.reason}`);
               tEvent.generation.slm_escalation = slmResult.qualityCheck.reason;
               escalatedFromSLM = true;
-              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, slmBrief: _intlSlmBrief });
               tEvent.generation.mode = 'haiku_advisor';
             }
           } catch (slmError) {
@@ -724,7 +747,7 @@ router.post('/', async (req, res) => {
             warmUpSLM().catch(() => {}); // Re-warm in background
 
             try {
-              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
+              result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, slmBrief: _intlSlmBrief });
               tEvent.generation.mode = 'haiku_advisor';
             } catch (haikuErr) {
               console.error(`[ADVISOR→HAIKU→CLAUDE] Both failed — last resort Sonnet`);
@@ -756,7 +779,7 @@ router.post('/', async (req, res) => {
           // ── Haiku Advisor: SLM not available but user needs real answers ──
           console.log(`[HAIKU-ADVISOR] SLM unavailable — giving real answers via Haiku+RAG`);
           try {
-            result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry });
+            result = await chatHaikuAdvisor(session.history, trimmedMsg, session.context, { scopeLabel: scopeResult.label, intlContext: _intlContext, intlLang: _intlLang, intlCountry: _intlCountry, slmBrief: _intlSlmBrief });
             tEvent.generation.mode = 'haiku_advisor';
           } catch (err) {
             console.error(`[HAIKU-ADVISOR→CLAUDE] Haiku failed — last resort Sonnet`);
