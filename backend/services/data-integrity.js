@@ -75,6 +75,11 @@ function canonicalKey(type, entry) {
  *      `url` if `url` starts with http(s)://. Per CLAUDE.md rule 2,
  *      every verified entry MUST have a real `_source` URL.
  *
+ *   2. Homepage-only `_source` (full URL with empty path) when `url` is
+ *      a deeper page on the same host → mirror `url` into `_source`.
+ *      Surfaced 2026-05-06 audit: 40 program entries had _source pointing
+ *      to a homepage while url already pointed to the specific program page.
+ *
  * Returns true if the entry was mutated.
  *
  * Run BEFORE validateEntry so warnings reflect the normalized state.
@@ -83,12 +88,28 @@ export function normalizeEntry(type, entry) {
   if (!entry || typeof entry !== 'object') return false;
   let mutated = false;
 
-  // Mirror url → _source when _source is bare (no http(s):// prefix)
+  // Rule 1: Mirror url → _source when _source is bare (no http(s):// prefix)
   if (entry._verified && typeof entry._source === 'string') {
     const isFullUrl = /^https?:\/\//.test(entry._source);
     if (!isFullUrl && typeof entry.url === 'string' && /^https?:\/\//.test(entry.url)) {
       entry._source = entry.url;
       mutated = true;
+    }
+  }
+
+  // Rule 2: Promote homepage _source to deeper url on same host
+  if (entry._verified && typeof entry._source === 'string' && typeof entry.url === 'string') {
+    if (/^https?:\/\//.test(entry._source) && /^https?:\/\//.test(entry.url) && entry._source !== entry.url) {
+      try {
+        const srcU = new URL(entry._source);
+        const urlU = new URL(entry.url);
+        const srcIsHomepage = (srcU.pathname === '' || srcU.pathname === '/') && !srcU.search && !srcU.hash;
+        const urlIsDeeper = (urlU.pathname && urlU.pathname.length > 1) || urlU.search || urlU.hash;
+        if (srcIsHomepage && urlIsDeeper && srcU.host === urlU.host) {
+          entry._source = entry.url;
+          mutated = true;
+        }
+      } catch { /* malformed URL — leave as-is */ }
     }
   }
 

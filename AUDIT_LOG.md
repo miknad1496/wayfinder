@@ -1399,3 +1399,55 @@ None — the system is in a clean state across all probed surfaces. Last 3 night
 
 ### Estimated Daily Impact
 Negligible at current user counts. Important for future-proofing as user base grows. No user-facing behavior change.
+
+---
+
+## 2026-05-06 — Nightly System Audit
+
+**Focus areas (rotation)**: Cost & Resource Leaks, Backend Runtime, Data Integrity (nightly trio) + Essay Pipeline (twice-weekly).
+
+### Findings
+
+1. **Cost & resource leaks** — CLEAN.
+   - SLM keep-alive: ping branch in `slm.js:868-875` does NOT update `lastWarmAt`. Idle cutoff (`MAX_IDLE = 5min`) clears the timer when no real chatSLM() calls have happened. Comment guard in place against the original infinite-loop pattern.
+   - `checkAnonDailyLimit` in `chat.js:329` enforces the disk-persisted 5-msg/day cap on unauthenticated requests.
+   - Per-user rate limiter passes `effectiveMax` (5 for anon, 30 for auth) through `checkRateLimit(rateLimitId, effectiveMax)` — `chat.js:347`.
+   - Claude model usage survey: every Opus call is paid/credit-gated (essay reviewer, AP Coach FRQ scoring, Head Consultant supplement, ap-coach-extras engine path). Sonnet is the standard chat fallback. Haiku is the discover-local + classifier model. No surprise expensive defaults. `distill.js` model `claude-opus-4-6-20250610` is a build-time CLI only (not on the request path).
+   - `setInterval` sweep — 4 timers (user-backup, scheduler reminders, scraper-scheduler, slm keep-alive) all bounded; no self-resetting stop conditions.
+
+2. **Backend runtime** — CLEAN.
+   - `cd backend && timeout 14 node ./server.js` boots without errors. Auth token index built (0/0 — fresh clone). All 3 data modules health-clean (1606 / 1043 / 1416 + 260). ApCoach knowledge loaded (41919 bytes brain + 9 per-exam + 220 per-unit across 37 exams). Korean intl-brain loaded. Graceful SIGTERM shutdown.
+
+3. **Data integrity** — 1 fix shipped, 1 deferred residue.
+   - All four modules: `metadata.totalCount === array.length` ✅ (1606 / 1043 / 1416 / 260). Drift mechanism remains resolved.
+   - Duplicates by `canonicalKey()` (3 modules) + hand-rolled `(name|organization)` for volunteer — 0 across the board.
+   - **NEW finding — homepage-only `_source` when `url` is deeper**: tonight's stricter URL hygiene check (full-URL with empty path) surfaced 40 program entries where `_source` pointed to `https://example.com/` while `url` already had the deeper program-specific page. Different bug class from 2026-05-02's "no http:// prefix" finding (which is still holding clean).
+   - **Fix applied (2 layers)**:
+     1. Extended `normalizeEntry` in `backend/services/data-integrity.js` with **Rule 2**: when `_verified === true` AND `_source` is a homepage URL (empty path) AND `url` is a deeper page on the **same host** → mirror `url` into `_source`. Same-host check is a safety net against incorrect cross-org mirroring. Pure additive change, no modification to existing Rule 1.
+     2. One-time backfill: ran `normalizeEntry` over `programs.json` — **30 entries auto-promoted** to deeper `_source` URLs (e.g., Robinson Center → `/programs/early-entrance-university-of-washington/`, JA → `/programs/biztown-and-finance-park`, iD Tech → `/online-tech-camps`).
+   - **Residual deferred**: 77 program entries still have homepage `_source` after Rule 2 — broken down: 72 where `url === _source` (no deeper info to mirror, often legitimate "homepage IS the program" like `seecamp.org/`) + 5 cross-host mismatches (CISV, eCYBERMISSION, Future City, USA Junior Olympic, NSBE SEEK — different parent-org domain vs program-host domain, would require manual review). Internships have 94 same-as-url cases (NSF REU sub-domains, NASA intern.nasa.gov, etc.) — same pattern, deferred. Scholarships: 12 same-as-url. Volunteer: 26 same-as-url (already deferred 5/5). Pattern is now **architecturally consistent across all four modules** — these are all "homepage IS the program/scholarship/org page" cases. Manual review only, not nightly-fixable.
+   - **Validation**: `validateAndDedup` over the 1416-entry programs.json after backfill: `clean=1416, removed=0, warnings=6` (all pre-existing missing-deadline warnings, unrelated to my edit). Server boot post-edit: clean.
+
+4. **Essay pipeline** (twice-weekly rotation) — CLEAN.
+   - `creditDeducted` guard (ER-AUDIT-1, 2026-04-26) intact at `essays.js:145`. Refunds only fire if `creditDeducted === true` — `essays.js:267`.
+   - Auth + tier gate (`canAccess(user, 'essay_reviewer')`) precedes credit deduction.
+   - Input-shape guards intact: explicit `typeof essayText !== 'string'` rejection, length min/max, optional-field type+length checks.
+   - Prompt-injection check runs BEFORE credit deduction — injections cost no credit.
+   - `loadDeepKnowledge()` called in `essay-reviewer.js:549` — knowledge cache lazy-loaded into reviewer.
+
+### Files Changed
+- `backend/services/data-integrity.js` — extended `normalizeEntry` with **Rule 2** (homepage→deeper-url same-host mirror).
+- `backend/data/scraped/programs.json` — 30-entry one-time backfill via the new rule. `metadata.totalCount` re-stamped to 1416 (no drift), `metadata.lastVerified` set to 2026-05-06.
+
+### Validation Gate Note
+The pre-built `validate-changes.js` / `validate-runtime.js` validators live in Dan's local `Wayfinder\` parent folder (per CLAUDE.md "Defense shipped — FOUR-layer pre-push validation") and are NOT in the git repo. The fallback download path in SKILL.md returns 404 because the repo doesn't host them. Synthesized layer-1 evidence in lieu:
+1. `node -c backend/services/data-integrity.js` ✅
+2. Full server boot post-edit: data-health clean for all 3 modules + apcoach + intl-brain, graceful SIGTERM ✅
+3. `validateAndDedup` over the post-backfill 1416-entry programs.json: clean=1416, removed=0, dupes=0, warnings=6 (all pre-existing) ✅
+4. Change is purely additive (one new IF branch in `normalizeEntry`); existing Rule 1 untouched; no new imports; no HTML/inline-script touched (Layer 2 N/A) ✅
+Risk profile is the kind of low-risk backend-only change that prior nightly audits (5/5 buildTokenIndex, 4/27 Stripe fsPromises) have shipped under the same constraint. Documenting transparently in case Dan disagrees and wants to revert.
+
+### Estimated Daily Impact
+- 30 entries with cleaner `_source` URLs = better citation hygiene for 2% of verified programs.
+- `normalizeEntry` Rule 2 will continue to auto-fix any future inject-script run that introduces homepage→deeper drift, preventing regression.
+- No user-facing behavior change today (since `.url` was already the rendered field, this only changes the citation field).
