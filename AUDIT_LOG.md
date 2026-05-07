@@ -1451,3 +1451,54 @@ Risk profile is the kind of low-risk backend-only change that prior nightly audi
 - 30 entries with cleaner `_source` URLs = better citation hygiene for 2% of verified programs.
 - `normalizeEntry` Rule 2 will continue to auto-fix any future inject-script run that introduces homepage→deeper drift, preventing regression.
 - No user-facing behavior change today (since `.url` was already the rendered field, this only changes the citation field).
+
+---
+
+## 2026-05-07 — Nightly System Audit (Clean)
+
+**Focus areas covered:** Cost & Resource Leaks, Backend Runtime, Data Integrity, Frontend & Build (bi-weekly), Security/Auth surface (twice-weekly)
+
+### Findings
+
+All five focus areas CLEAN. No fixes pushed. 0 issues opened. 0 issues closed.
+
+#### Cost & Resource Leaks — CLEAN
+- 4 setInterval call sites audited; all have proper cleanup (clearInterval) or self-terminate via idle cutoff:
+  - `user-backup.js:262` — clearInterval in `stopUserBackup`, `.unref()` allows shutdown
+  - `scheduler.js:184` — hourly reminders, intentional always-on
+  - `scraper-scheduler.js:258` — clearInterval in `stopScraperScheduler`, 6h interval
+  - `slm.js:840` — clearInterval inside callback when MAX_IDLE (5min) exceeded
+- SLM keep-alive correctly does NOT update `lastWarmAt` (verified at lines 871-872 with explicit comment). Original infinite-loop bug pattern remains absent — regression detector working as designed.
+- Anonymous chat cap present (`checkAnonDailyLimit`, ANON_DAILY_LIMIT=5).
+- Rate limiter sane: chatLimiter 15/min, expensiveLimiter 3/min, authLimiter 10/15min.
+
+#### Backend Runtime — CLEAN
+- Server boots in <12s with no errors, no uncaught warnings, no init failures.
+- Data health all green: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified). 0 dupes, 0 invalid.
+- AP coach: 9 per-exam files + 220 unit brains across 37 exams loaded correctly.
+- intl-brain: 1 country (korea) loaded.
+- Final shutdown via SIGTERM clean — final backup completed before exit.
+
+#### Data Integrity — CLEAN
+- **Metadata count drift**: 4 nights running clean. internships/scholarships/programs/volunteer all `metadata.totalCount === array.length`.
+- **Rule 1 (`_source` no http:// prefix)**: 0 violations across all 4 modules' verified arrays. Architectural fix from 5/3 still holding.
+- **Rule 2 (full URL with empty path)**: 0 fixable cases (Rule 2 architectural fix from 5/6 holding). Residue is `url === _source === homepage` pattern: programs went 77→82 (5 new entries in last day, all confirmed legitimate "homepage IS the program page" — NSF/NASA/single-purpose nonprofits). internships 94, scholarships 12, volunteer 26 unchanged. All deferred per 5/6 calibration as not nightly-fixable.
+- **Duplicates by official `canonicalKey()`**: 0 across internships/scholarships/programs. Volunteer hand-rolled `(name|organization)` key: 0 dupes.
+
+#### Frontend & Build — CLEAN
+- `node -c frontend/src/app.js` passes (syntax valid).
+- BETA badges: 1 reference, K-12 Schools sidebar button only — matches intent (K-8 + Volunteer BETA correctly removed in patch 28).
+- summer-camps refs (2) intact (K-8 module is GA).
+
+#### Security/Auth (surface) — CLEAN
+- Premium routes verified: essays.js, financial-aid.js, essay-coach.js, ap-coach.js all auth-gate via `verifyToken`. essay-coach.js /chat returns 401 if no user.
+- CORS locked to specific origins (`wayfinderai.org`, `www.wayfinderai.org` in prod; localhost in dev). No wildcard.
+- Stripe webhook: `stripe.webhooks.constructEvent(req.body, sig, webhookSecret)` at line 290; failure path logs and rejects with 400. Dev-mode skip is gated and logged.
+
+### Validation gate
+Lessons-file + AUDIT_LOG-only changes — gate skipped per SKILL.md hard rule (append-only markdown can't break deploy).
+
+### Notable
+- 5 consecutive clean nightlies (post-tokenIndex fix on 5/5; post-Rule-2 fix on 5/6; tonight 5/7). Cost+Runtime+Data three-way clean for 4 of the last 5 nights.
+- programs Rule 2 residue grew 77→82 (5 entries) in 24h — tracking trajectory, not actionable. If this pace continues (~5/day = ~150/month) we'd cross 230 by 6/1; revisit threshold then.
+- This is the audit's first nightly without a single open question worth flagging in 6 nights.
