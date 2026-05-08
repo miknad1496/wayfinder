@@ -1502,3 +1502,53 @@ Lessons-file + AUDIT_LOG-only changes — gate skipped per SKILL.md hard rule (a
 - 5 consecutive clean nightlies (post-tokenIndex fix on 5/5; post-Rule-2 fix on 5/6; tonight 5/7). Cost+Runtime+Data three-way clean for 4 of the last 5 nights.
 - programs Rule 2 residue grew 77→82 (5 entries) in 24h — tracking trajectory, not actionable. If this pace continues (~5/day = ~150/month) we'd cross 230 by 6/1; revisit threshold then.
 - This is the audit's first nightly without a single open question worth flagging in 6 nights.
+
+## 2026-05-08 — Cost + Runtime + Data + Auth-surface + Essay-pipeline (CLEAN)
+
+**Focus Areas**: cost & resource leaks, backend runtime, data integrity, security/auth surface, essay pipeline credit ledger
+
+### Findings
+**No issues found. No fixes pushed. Six consecutive clean nightlies (5/3, 5/4, 5/5, 5/6, 5/7, 5/8).**
+
+#### Cost & Resource Leaks — CLEAN
+- 4 setInterval call sites verified bounded (user-backup, scheduler, scraper-scheduler, slm keep-alive); all match prior audit references.
+- SLM keep-alive at slm.js:840 still has explicit `Do NOT update lastWarmAt here` guard at lines 871-872. Original infinite-loop pattern remains absent.
+- Anonymous chat cap present (`checkAnonDailyLimit`, ANON_DAILY_LIMIT=5) at chat.js:124.
+- Rate limiters sane: chatLimiter 15/min, expensiveLimiter 3/min, authLimiter 10/15min, signupLimiter 8/hour (patch 143), loginLimiter 20/15min.
+- Claude model usage: Haiku for cheap intake (internships/programs/scholarships/volunteer/summer-camps discover), Sonnet/Opus only for premium reviews (essays, ap-coach, financial-aid). No unexpected escalations.
+
+#### Backend Runtime — CLEAN
+- `cd backend && timeout 12 node ./server.js` boots in <12s with no errors, no uncaught warnings.
+- Data health all green: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified). 0 dupes, 0 invalid.
+- AP coach: 9 per-exam + 220 unit brains across 37 exams loaded.
+- intl-brain: 1 country (korea) loaded.
+- SIGTERM shutdown clean — final user-backup completed before exit.
+
+#### Data Integrity — CLEAN
+- **Metadata count drift**: 5+ nights running clean. internships/scholarships/programs/volunteer all `metadata.totalCount === array.length`.
+- **Rule 1 (`_source` no http:// prefix)**: 0 violations across all 4 modules' verified arrays.
+- **Rule 2 (full URL with empty path) — fixable bucket**: 0. Architectural fix from 5/6 still holding.
+- **Rule 2 residue**: programs `sameUrl` (homepage IS program page) bucket went 82→76 (−6 from 5/7) — but `diffHost` bucket grew 0→5 (parent-org homepage `_source` with program at a different domain — CISV, eCYBERMISSION, Future City, USA Junior Olympic, NSBE SEEK). Net: 82 → 81 across both buckets. NOT architecturally fixable for the diffHost subset since the URL hosts differ; deferred to manual review like sameUrl. Trajectory still benign.
+- **internships sameUrl**: 94 (unchanged). **scholarships**: 12 (unchanged). **volunteer**: 26 entries with homepage `_source` but no `.url` field, so they don't surface in either Rule-2 bucket.
+- **Duplicates by official `canonicalKey()`**: 0 across internships/scholarships/programs.
+
+#### Security/Auth (surface) — CLEAN
+- Premium routes verified: essays.js (6 verifyToken refs), financial-aid.js (8), essay-coach.js (2), ap-coach.js (11) all auth-gate.
+- CORS locked to specific origins; no wildcard fallback. Verified at server.js:140-142.
+- Stripe webhook: `stripe.webhooks.constructEvent` at routes/stripe.js:290 with secret check at 285.
+- Token index 5/5 fix still in place: `buildTokenIndex` filters expired tokens at boot via `!isTokenExpired(user.tokenCreatedAt)` (auth.js:64).
+
+#### Essay Pipeline — CLEAN
+- `creditDeducted` flag guard intact (essays.js:145, 206, 267) — refunds only fire if a credit was actually deducted, preventing free-credit gifting on pre-deduction throws.
+- `useEssayCredit / refundEssayCredit / addEssayCredits` all auth-locked per-user.
+
+#### Stripe duplicate-event guard — CLEAN
+- `markEventProcessed(event.id)` claim-immediately pattern at routes/stripe.js:313 still in place (5/2 close holding).
+
+### Validation gate
+Lessons-file + AUDIT_LOG-only changes — gate skipped per SKILL.md hard rule (append-only markdown can't break deploy).
+
+### Notable
+- 6 consecutive clean nightlies. Cost+Runtime+Data three-way clean for 5 of the last 6 nights.
+- Programs Rule-2 residue redistributed: sameUrl 82→76 but diffHost 0→5 (net 82→81). The 5 diffHost cases are entries where `_source` cites the parent organization (USAEOP, DiscoverE, TeamUSA) while `url` points to the program's own domain (ecybermission.com, futurecity.org, usatf.org/youth/...). These are arguably citing the right authority — flagging for awareness, not action. If the residue keeps growing in this bucket, the data-refresh prompt could be tuned to prefer the program-specific domain as `_source` when both are available.
+- Volunteer module's 26 homepage-`_source` entries continue to lack a `.url` field entirely, so the architectural Rule-2 mirror has nothing to mirror from. This is the structural reason they can't be auto-fixed.
