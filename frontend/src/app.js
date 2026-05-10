@@ -8418,9 +8418,9 @@ async function _handleApAttachmentInput(ev) {
     if (previewEl) previewEl.innerHTML = '';
     return;
   }
-  if (files.length > 5) {
+  if (files.length > 15) {
     if (errEl) {
-      errEl.textContent = 'Up to 5 files per submission. Please reselect.';
+      errEl.textContent = 'Up to 15 files per submission. Please reselect.';
       errEl.style.display = 'block';
     }
     input.value = '';

@@ -69,6 +69,36 @@ async function loadApUnitsCacheOnce() {
 // Pre-load at module init
 loadApUnitsCacheOnce().catch(() => {});
 
+// PATCH156 - format the user's saved Game Plan profile (exams, target score,
+// hours/week) into a system-prompt block so the LLM can reason about their
+// goal + study load. Returns empty string if no profile is set.
+function _formatUserProfile(profile) {
+  if (!profile || typeof profile !== 'object') return '';
+  const lines = ['USER PROFILE (Wayfinder Game Plan):'];
+  if (Array.isArray(profile.exams) && profile.exams.length > 0) {
+    const labels = profile.exams.slice(0, 12).map(slug => {
+      if (typeof slug !== 'string') return null;
+      return slug.replace(/^ap-/, 'AP ').replace(/-/g, ' ');
+    }).filter(Boolean);
+    if (labels.length > 0) lines.push('- Targeting: ' + labels.join(', '));
+  }
+  if (profile.defaultTargetScore != null) {
+    const ts = parseInt(profile.defaultTargetScore, 10);
+    if (Number.isFinite(ts) && ts >= 1 && ts <= 5) lines.push('- Default target score: ' + ts);
+  }
+  if (profile.hoursPerWeek != null) {
+    const hrs = parseInt(profile.hoursPerWeek, 10);
+    if (Number.isFinite(hrs) && hrs > 0 && hrs <= 80) lines.push('- Study time: ' + hrs + ' hrs/week');
+  }
+  if (lines.length === 1) return ''; // no useful fields
+  lines.push('');
+  lines.push('Use this profile to calibrate your advice. If they ask a generic question,');
+  lines.push('default to whichever exam in their list seems most relevant. Reference their');
+  lines.push('target score when discussing tier-tagged advice.');
+  lines.push('');
+  return lines.join('\n');
+}
+
 /**
  * Detect which AP exam (and optionally which unit) a free-form query is about.
  * Returns { exam, unit } or { exam: null, unit: null } if not detectable.
@@ -139,7 +169,15 @@ function buildApContext(exam, unit, perExamKnowledge) {
  * @param {string} message - the user's chat message
  * @param {object} session - { history: [...], context: {...} }
  * @param {object} perExamKnowledge - the loaded ap-exams/*.md cache from ap-coach.js
- * @param {object} options - { useOpus: boolean }
+ * @param {object} options - { useOpus?: boolean, examHint?: string, userProfile?: object }
+ *   - examHint: AP exam slug from the UI dropdown (e.g. 'ap-english-lang'). Takes
+ *     precedence over keyword-detection from the message text. PATCH156 fix:
+ *     previously this option was accepted but ignored, so even when the user
+ *     picked AP English Language in the Subject dropdown, a generic question
+ *     ("what should I cram for tomorrow's test?") fell back to keyword detection
+ *     which returned null, leaving the LLM with no exam context.
+ *   - userProfile: the user's apProfile (exams[], defaultTargetScore, hoursPerWeek)
+ *     so chat answers can reference their goal score + study load.
  */
 export async function coachChat(message, session, perExamKnowledge, options = {}) {
   const startTime = Date.now();
@@ -148,8 +186,23 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
   }
 
   await loadApUnitsCacheOnce();
-  const scope = detectTopicScope(message);
-  const ragContext = buildApContext(scope.exam, scope.unit, perExamKnowledge);
+  // PATCH156: prefer the explicit examHint from the UI dropdown over fragile
+  // keyword detection. Only fall back to detectTopicScope when no hint is set.
+  const detected = detectTopicScope(message);
+  const hint = (typeof options.examHint === 'string' && options.examHint.trim())
+    ? options.examHint.trim().toLowerCase()
+    : null;
+  const examForContext = (hint && perExamKnowledge && perExamKnowledge[hint])
+    ? hint
+    : detected.exam;
+  const ragContext = buildApContext(examForContext, detected.unit, perExamKnowledge);
+  const examLabelHint = examForContext
+    ? examForContext.replace(/^ap-/, 'AP ').replace(/-/g, ' ').toUpperCase()
+    : null;
+
+  // PATCH156: surface the user's saved Game Plan (exams + target score + hours/week)
+  // so chat answers can reason about their goal and time budget.
+  const profileBlock = _formatUserProfile(options.userProfile);
 
   const systemPrompt = [
     'You are Wayfinder AP Coach — a strategic, conversational AP study companion.',
@@ -158,6 +211,11 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
     '',
     'You help students with ANY AP-related question: concept explanations, strategy advice, study planning, FRQ technique, "I have X weeks until exam Y, what should I prioritize," "explain VSEPR," "compare these two answer approaches," etc. Conversational and warm — not bureaucratic.',
     '',
+    examLabelHint
+      ? 'CURRENT SUBJECT IN FOCUS: the user has selected ' + examLabelHint + ' in the Subject dropdown. Treat all of their questions as referring to that exam unless they explicitly switch context. Do NOT ask "which AP exam?" — they already told you.'
+      : 'CURRENT SUBJECT IN FOCUS: the user has not picked a Subject yet — if their question is exam-specific and ambiguous, ask once which exam they mean.',
+    '',
+    profileBlock,
     'GROUNDING:',
     '- You have access to Wayfinder\'s curated AP intelligence below (per-exam knowledge files and per-unit brains where authored). PREFER this content over your training-data prior when grounding answers.',
     '- If the user asks about an exam/unit not covered, give your best general AP guidance and note that we have deeper coverage on commonly-tested exams.',
@@ -169,8 +227,8 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
     '- End with a concrete next-step recommendation when possible.',
     '',
     'CONTEXT FROM WAYFINDER\'S CURATED INTELLIGENCE:',
-    ragContext || '(no specific exam detected — answer with general AP guidance)',
-  ].join('\n');
+    ragContext || '(no specific exam knowledge loaded — answer with general AP guidance)',
+  ].filter(Boolean).join('\n');
 
   // Build conversation messages
   const recentHistory = (session?.history || []).slice(-8);
@@ -207,7 +265,7 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
  * @param {string} targetTier - '3' | '4' | '5' (focus tier)
  * @param {object} perExamKnowledge - cache from ap-coach.js
  */
-export async function generateTeachingGuide(exam, topic, targetTier, perExamKnowledge) {
+export async function generateTeachingGuide(exam, topic, targetTier, perExamKnowledge, userProfile) {
   const startTime = Date.now();
   if (!exam || !topic) {
     return { success: false, error: 'exam + topic required' };
@@ -215,6 +273,8 @@ export async function generateTeachingGuide(exam, topic, targetTier, perExamKnow
 
   await loadApUnitsCacheOnce();
   const ragContext = buildApContext(exam, null, perExamKnowledge);
+  // PATCH156: surface the user's Game Plan profile in the tutor system prompt too
+  const profileBlock = _formatUserProfile(userProfile);
 
   const systemPrompt = [
     'You are Wayfinder AP Tutor. Generate a complete, dense, exceptionally useful TEACHING GUIDE on the requested topic — at the caliber of the AP Chemistry and AP Precalculus reference guides Wayfinder ships (those are the quality bar; do not fall below them).',
@@ -256,11 +316,12 @@ export async function generateTeachingGuide(exam, topic, targetTier, perExamKnow
     '',
     'TARGET TIER: the user is targeting a ' + (targetTier || '4 or 5') + '. Calibrate depth accordingly: bias toward what THIS tier needs.',
     '',
+    profileBlock,
     'GROUNDING: prefer Wayfinder\'s curated content below over your training-data prior.',
     '',
     'CONTEXT:',
     ragContext || '(no specific exam knowledge file — use general AP intelligence)',
-  ].join('\n');
+  ].filter(Boolean).join('\n');
 
   const userPrompt = [
     'EXAM: ' + exam,

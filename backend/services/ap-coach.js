@@ -160,7 +160,7 @@ function buildKnowledgeInjection(exam) {
  *          { kind:'text',     mediaType:'text/plain', text:'<raw>', name?:string }
  * @returns {Promise<{success: boolean, score?: object, error?: string, tokensUsed?: number}>}
  */
-export async function scoreFrq(exam, frqType, prompt, response, attachments) {
+export async function scoreFrq(exam, frqType, prompt, response, attachments, userProfile) {
   const startTime = Date.now();
   await loadKnowledge();
 
@@ -175,7 +175,7 @@ export async function scoreFrq(exam, frqType, prompt, response, attachments) {
   const knowledgeInjection = buildKnowledgeInjection(exam);
 
   const systemPrompt = [
-    'You are an AP Score Coach for ' + examCfg.label + '. You score student responses to free-response questions against the official AP rubric and provide rubric-aware coaching feedback.',
+    (_profileLines ? _profileLines + '\n\n' : '') + 'You are an AP Score Coach for ' + examCfg.label + '. You score student responses to free-response questions against the official AP rubric and provide rubric-aware coaching feedback.',
     '',
     'You have access to Wayfinder\'s deep AP intelligence:',
     '',
@@ -217,7 +217,21 @@ export async function scoreFrq(exam, frqType, prompt, response, attachments) {
   // so reference material (images / PDFs / text snippets) can sit between
   // PROMPT and STUDENT RESPONSE in the content array. Claude sees:
   // prompt context -> attachments -> student response.
-  const userPromptHead = [
+    // PATCH156: include user's saved Game Plan in the scoring system context
+  let _profileLines = '';
+  if (userProfile && typeof userProfile === 'object') {
+    const _bits = [];
+    if (Array.isArray(userProfile.exams) && userProfile.exams.length > 0) {
+      _bits.push('targeting ' + userProfile.exams.slice(0, 12).map(s => (s || '').replace(/^ap-/, 'AP ').replace(/-/g, ' ')).filter(Boolean).join(', '));
+    }
+    const _ts = parseInt(userProfile.defaultTargetScore, 10);
+    if (Number.isFinite(_ts) && _ts >= 1 && _ts <= 5) _bits.push('default target score ' + _ts);
+    const _hrs = parseInt(userProfile.hoursPerWeek, 10);
+    if (Number.isFinite(_hrs) && _hrs > 0 && _hrs <= 80) _bits.push(_hrs + ' hrs/week');
+    if (_bits.length > 0) _profileLines = '\n=== USER GAME PLAN ===\n' + _bits.join(' | ');
+  }
+
+const userPromptHead = [
     '=== EXAM ===',
     examCfg.label,
     '',

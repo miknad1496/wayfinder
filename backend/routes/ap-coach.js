@@ -86,12 +86,12 @@ router.get('/credits', async (req, res) => {
 });
 
 // ─── POST /api/ap-coach/score ─────────────────────────────────
-// REVAMP V2: PATCH154 AP ATTACHMENTS - per-route 35mb JSON limit so the body
-// can carry up to 5 base64-encoded reference attachments (images / PDFs up to
-// ~5MB raw each = ~6.7MB base64, plus JSON overhead). Server-wide limit is
+// REVAMP V2: PATCH154 AP ATTACHMENTS - per-route 80mb JSON limit so the body
+// can carry up to 15 base64-encoded reference attachments (images / PDFs up to
+// ~5MB raw each, ~6.7MB base64; PATCH156 bumped 5 -> 15 per user request).
 // 100kb, which would 413 the moment a student attaches a textbook photo.
 // Override applies only to this route.
-router.post('/score', expressJson({ limit: '35mb' }), async (req, res) => {
+router.post('/score', expressJson({ limit: '80mb' }), async (req, res) => {
   let creditDeducted = false;
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
@@ -128,7 +128,7 @@ router.post('/score', expressJson({ limit: '35mb' }), async (req, res) => {
     }
 
     // REVAMP V2: PATCH154 AP ATTACHMENTS - validate optional attachments array.
-    // Up to 5 attachments per submission. Each attachment is one of:
+    // Up to 15 attachments per submission. Each attachment is one of:
     //   - kind:'image'    - JPEG/PNG/GIF/WebP, base64 in `data`, max ~5MB raw
     //   - kind:'document' - PDF, base64 in `data`, max ~5MB raw
     //   - kind:'text'     - any text-like file (.txt/.md/.csv/source code), raw text in `text`,
@@ -138,8 +138,8 @@ router.post('/score', expressJson({ limit: '35mb' }), async (req, res) => {
       if (!Array.isArray(attachments)) {
         return res.status(400).json({ error: 'attachments must be an array.' });
       }
-      if (attachments.length > 5) {
-        return res.status(400).json({ error: 'At most 5 attachments per submission.' });
+      if (attachments.length > 15) {
+        return res.status(400).json({ error: 'At most 15 attachments per submission.' });
       }
       const IMAGE_MEDIA = new Set(['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
       const B64_RE = /^[A-Za-z0-9+/=]+$/;
@@ -222,7 +222,9 @@ router.post('/score', expressJson({ limit: '35mb' }), async (req, res) => {
     // REVAMP V2: AP COACH PRICING REWORK PATCH80 — record usage AFTER successful score (defer to post-success block)
 
     // Score the FRQ (PATCH154: pass attachments through - images / PDFs / text snippets)
-    const result = await scoreFrq(exam, frqType, prompt || null, response, safeAttachments);
+    // PATCH156: include user's saved Game Plan profile in scoring context
+    const _userProfileS = await getApProfile(token).catch(() => null);
+    const result = await scoreFrq(exam, frqType, prompt || null, response, safeAttachments, _userProfileS);
 
     if (!result.success) {
       const refund = await refundApCredit(token);
@@ -767,7 +769,9 @@ router.post('/chat', async (req, res) => {
     // Simpler: just pass the exam slug; coachChat() loads what it needs internally
     const session = { history: Array.isArray(history) ? history : [] };
     const useOpus = usage.tier !== 'free'; // paid tiers get Opus; free gets Haiku
-    const result = await coachChat(message, session, await _getPerExamKnowledge(), { useOpus, examHint: exam });
+    // PATCH156: thread the user's saved Game Plan profile into chat context
+    const _userProfile = await getApProfile(token).catch(() => null);
+    const result = await coachChat(message, session, await _getPerExamKnowledge(), { useOpus, examHint: exam, userProfile: _userProfile });
     if (!result.success) return res.status(500).json({ error: result.error || 'Chat failed' });
 
     if (usage.tier === 'free') await recordApChatUsage(token);
@@ -795,7 +799,9 @@ router.post('/tutor', async (req, res) => {
     if (typeof topic !== 'string' || topic.trim().length < 3) return res.status(400).json({ error: 'topic required (at least 3 chars)' });
     if (topic.length > 200) return res.status(400).json({ error: 'topic too long' });
 
-    const result = await generateTeachingGuide(exam, topic, targetTier || '4', await _getPerExamKnowledge());
+    // PATCH156: thread the user's saved Game Plan profile into tutor context
+    const _userProfileT = await getApProfile(token).catch(() => null);
+    const result = await generateTeachingGuide(exam, topic, targetTier || '4', await _getPerExamKnowledge(), _userProfileT);
     if (!result.success) return res.status(500).json({ error: result.error || 'Generation failed' });
 
     await recordApTutorUsage(token);
