@@ -1,8 +1,8 @@
 {
   "metadata": {
     "lastScraped": "2026-04-26",
-    "lastVerified": "2026-04-27",
-    "totalCount": 260,
+    "lastVerified": "2026-05-10",
+    "totalCount": 275,
     "_verified": "partial",
     "_verificationNotes": "75 curated entries focused on large, sustainable, recurring volunteer programs with national or chapter-based footprints. Each entry has a real _source URL. Local/ephemeral programs are NOT in this DB by design — they are surfaced via the on-demand /api/volunteer/discover-local endpoint.",
     "dataYear": "2026",
@@ -7961,6 +7961,499 @@
       "_source": "https://www.volunteerflorida.org/",
       "_verified": true,
       "_verifiedDate": "2026-05-03",
+      "confidence": "high"
+    },
+    {
+      "name": "Atlanta Botanical Garden SPEAK Volunteers",
+      "organization": "Atlanta Botanical Garden",
+      "description": "Atlanta Botanical Garden's Students Promoting Environmental Awareness & Knowledge (SPEAK) program engages high school volunteers (16+) to educate Garden visitors about combating climate change through sustainable gardening practices. Selected SPEAK volunteers staff interactive carts/stations on Sustainable Gardening, Gardening for Native Wildlife, and Growing Your Own Food. 50-hour summer commitment June 2 - July 24, including a mandatory 6-hour training day on May 30. Group interview required (Mar 21 or Mar 28). Rolling info sessions in January and February. Strong fit for environmental science, climate, and education-pathway students. Sister Summer High School Internship program targets Title I schools.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Midtown / Piedmont Park",
+      "categories": [
+        "environment",
+        "education"
+      ],
+      "ageMin": 16,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "climate-change communication",
+        "sustainable gardening basics",
+        "public speaking",
+        "visitor engagement",
+        "native plant ecology"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Application open December - March 1. Apply at atlantabg.org/volunteer/speak-volunteers. Non-relative adult recommendation form also due March 1. Selected applicants invited to 2-hour group interviews March 21 or March 28.",
+      "_source": "https://atlantabg.org/volunteer/speak-volunteers/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Georgia Aquarium Beginner Environmental Leadership Program (Teen Volunteers)",
+      "organization": "Georgia Aquarium",
+      "description": "Georgia Aquarium's teen volunteer track (ages 15-17 at time of application) for students passionate about aquatic ecosystems and visitor engagement. Teens commit through a Fall session (onboarding starts in July) and complete a mandatory 3-hour group interview with team-building activities before acceptance. Volunteers serve in 30+ departments across the largest aquarium in the Western Hemisphere. $45 administrative fee for accepted teens (covers training materials/badge); financial assistance available. Strong fit for marine biology, conservation, environmental science, and zoology pathways. NOT a substitute for school-mandated service hours.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Downtown / Pemberton Place",
+      "categories": [
+        "environment",
+        "animals",
+        "education"
+      ],
+      "ageMin": 15,
+      "ageMax": 17,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "aquatic conservation messaging",
+        "visitor interpretation",
+        "public speaking",
+        "marine science basics",
+        "animal welfare basics"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit interest form via Contact Us at georgiaaquarium.org/volunteer-programs. If selected, attend mandatory 3-hour group interview. Acceptance notifications within 2 weeks. Fall session info sessions begin in July.",
+      "_source": "https://www.georgiaaquarium.org/booking/beginner-environmental-leadership-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Hands On Atlanta Volunteer Network",
+      "organization": "Hands On Atlanta",
+      "description": "Atlanta's largest volunteer hub since 1989, connecting 42,000+ volunteers with 500+ community-based agencies and schools across metro Atlanta. Free, fully online portal lets families, teens, and individuals filter by cause, age, time, and family-friendly status. Specifically tagged 'teen-only' opportunities exist alongside family-team projects (park beautification, community-garden builds, food pantry sorting). Best entry-point for any new GA volunteer who doesn't yet have a single anchor org. Many partner orgs have teen minimum-age waivers when serving via Hands On Atlanta.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Metro Atlanta / 5-county",
+      "categories": [
+        "civic",
+        "leadership",
+        "education",
+        "environment",
+        "homelessness",
+        "hunger",
+        "animals"
+      ],
+      "ageMin": 13,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "community service navigation",
+        "volunteer coordination",
+        "civic engagement"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Create a free profile at volunteer.handsonatlanta.org. Filter by 'teens only' or 'family friendly'. Sign up directly for opportunities; many require no orientation.",
+      "_source": "https://www.handsonatlanta.org/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Trees Atlanta Junior Intern + Youth Tree Team",
+      "organization": "Trees Atlanta",
+      "description": "Atlanta's flagship urban-forestry nonprofit offers two distinct teen tracks: (1) Junior Intern Program — middle/high schoolers volunteer two weeks of summer day camp (7 hrs/day, 7:45 AM - 3:45 PM) supporting younger campers, with leadership development and college/career prep components; (2) Youth Tree Team — paid summer employment for high schoolers focused on community forestry, landscape design, horticulture, and arboriculture. Year-round TreeKeeper certification track also available (Saturdays late July - September) for teens who complete 24 leadership hours. Strong fit for environmental-science, forestry, urban-planning, and landscape-architecture pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / BeltLine / citywide",
+      "categories": [
+        "environment",
+        "leadership",
+        "education"
+      ],
+      "ageMin": 12,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "urban forestry",
+        "tree identification",
+        "horticulture basics",
+        "youth leadership",
+        "arboriculture"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Junior Intern + Youth Tree Team apps typically open spring; details at treesatlanta.org/programs/youth-tree-team and treesatlanta.org/camp. TreeKeeper training register at treesatlanta.org/treekeeper.",
+      "_source": "https://www.treesatlanta.org/programs/youth-tree-team/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Children's Healthcare of Atlanta VolunTEEN Program",
+      "organization": "Children's Healthcare of Atlanta (CHOA)",
+      "description": "Pediatric-hospital teen volunteer program (15-18) at one of the nation's top children's healthcare systems. 8-week summer commitment in June-July; volunteers work at least one 3-hour shift per week, missing no more than two days. Pre-volunteering: proof of immunity, mandatory training, and (for 18+) criminal background check. Roles include playroom assistant, family resource desk, gift shop, surgery waiting room support. Companion programs: Explorer Program (career-shadowing for HS students; no patient interaction), Young Friends (philanthropy intro for grades K-8), Youth Advisory Council (current/former patients 13-17). High-leverage credential for pre-med, nursing, child-life, and public-health pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Egleston / Scottish Rite / Hughes Spalding",
+      "categories": [
+        "health",
+        "education"
+      ],
+      "ageMin": 15,
+      "ageMax": 18,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "pediatric healthcare exposure",
+        "family communication",
+        "infection-control basics",
+        "service in clinical setting",
+        "team operations"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Application opens early winter for summer cohort. Apply at choa.org/donors-and-volunteers/volunteer/teen-volunteers. Must be 15+ by May 31 of the program year.",
+      "_source": "https://www.choa.org/donors-and-volunteers/volunteer/teen-volunteers",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Atlanta History Center Youth Ambassador Program",
+      "organization": "Atlanta History Center",
+      "description": "Year-long (May-March) education-through-service program for grades 9-12 (ages 15-19). Youth Ambassadors lead public programming, expand historical knowledge, and engage Atlanta's youth communities. Companion track: Junior Interpreters (give scripted tours in the Historic Houses, prep an Artifact Talk for the March Symposium, attend monthly meetings starting in August). Summer Camp Ambassador track (rising 11th-12th, age 15-18) commits two camps totaling 50 service hours. Excellent fit for history, museum-studies, archives, public-history, and journalism pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Buckhead",
+      "categories": [
+        "civic",
+        "education",
+        "arts"
+      ],
+      "ageMin": 15,
+      "ageMax": 19,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "historical interpretation",
+        "public speaking",
+        "museum operations",
+        "archival research basics",
+        "scripted tour delivery"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply via the volunteer portal at atlantahistorycenter.com/support/volunteer. Annual application window typically opens late winter for May start.",
+      "_source": "https://www.atlantahistorycenter.com/support/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "High Museum of Art Teen Leadership Council",
+      "organization": "High Museum of Art",
+      "description": "Year-round PAID teen team at the Southeast's leading art museum. 15 high-schoolers selected per cohort to develop workplace skills, build career-path awareness, plan two annual Teen Takeovers, and assist with public programming with behind-the-scenes museum access. Year-long commitment with summer intensive working on special projects. Applications open Feb 1, close midnight Mar 1; status notifications by May 1. Stronger fit than typical museum docent roles for arts-administration, curatorial, and creative-leadership pathways. Companion College Internship for rising juniors+.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Midtown / Woodruff Arts Center",
+      "categories": [
+        "arts",
+        "leadership",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 18,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "museum operations",
+        "arts programming",
+        "event planning",
+        "creative leadership",
+        "professional workplace skills"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at high.org/teen-team during the Feb 1 - Mar 1 window. Email HMATeenPrograms@high.org with questions.",
+      "_source": "https://high.org/teen-team/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "National Center for Civil and Human Rights Youth Programs",
+      "organization": "National Center for Civil and Human Rights",
+      "description": "Atlanta's downtown civil-rights museum runs three intersecting youth tracks: (1) You(th) Belong — monthly LGBTQ+ youth gathering for ages 13-25 across Metro Atlanta, blending art, dialogue, peer-led advocacy, and mentorship; (2) Youth Advisory Council (middle + HS) and Youth Steering Committee (18-25) — shape program direction with youth voice at center; (3) Advocacy Academy — civic-engagement training for students, advocates, and nonprofit leaders. General volunteer roles open at 16+ (under-16 must be accompanied). High-leverage signal for social-justice, public-policy, history, and pre-law pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Downtown / Pemberton Place",
+      "categories": [
+        "civic",
+        "leadership",
+        "advocacy",
+        "education"
+      ],
+      "ageMin": 13,
+      "ageMax": 25,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "civic engagement",
+        "advocacy",
+        "facilitation",
+        "social-justice frameworks",
+        "public dialogue"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Volunteer interest form via Hands On Atlanta partner page; You(th) Belong + Advocacy Academy registration via civilandhumanrights.org. General museum 678-999-8990.",
+      "_source": "https://www.civilandhumanrights.org/lgbtqia-youth/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "medium"
+    },
+    {
+      "name": "Tybee Island Marine Science Center Volunteers",
+      "organization": "Tybee Island Marine Science Center",
+      "description": "Coastal-Georgia marine-science nonprofit on Tybee Island (Savannah metro). Volunteers assist marine educators in classroom, beach, and marsh sessions; staff Coastal Georgia Gallery touch-tank and exhibits; lead community-outreach displays on sea turtles, whales, sharks, and jellies. Sea turtle nest monitoring (May-Oct) is a marquee field opportunity for committed volunteers. Strongest non-Atlanta GA volunteer pathway for marine-biology, oceanography, and environmental-science students. Located at 37 Meddin Dr, Tybee Island.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Tybee Island / Savannah / Coastal Georgia",
+      "categories": [
+        "environment",
+        "animals",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "marine science basics",
+        "touch-tank interpretation",
+        "sea-turtle nest monitoring",
+        "outreach education",
+        "coastal ecology"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Submit volunteer-with-us form at tybeemarinescience.org/volunteer-with-us. Center 912-786-5917. Sea turtle program requires separate application.",
+      "_source": "https://tybeemarinescience.org/volunteer-with-us/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Atlanta Mission Volunteer (Homeless Services)",
+      "organization": "Atlanta Mission",
+      "description": "Largest, longest-running provider of homeless services in metro Atlanta (since 1938). Volunteers 13+ may serve at campuses (Shepherd's Inn, My Sister's House, Fuqua Hall, Atlanta Day Shelter for Women and Children, The Potter's House); kitchen-meal-service requires age 16+. Roles: dining/food service, child care, vocational support, thrift-store assistance, donation-drive organizing, kit-building, special events, spiritual services. 1:4 adult-to-youth ratio; under-18 must be accompanied. Background check required for any role serving children. Faith-based but accepts volunteers of all backgrounds.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Metro Atlanta / 5-county",
+      "categories": [
+        "homelessness",
+        "hunger",
+        "civic"
+      ],
+      "ageMin": 13,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "homeless-services exposure",
+        "food service",
+        "trauma-informed engagement",
+        "donation logistics",
+        "community organizing"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Create profile at atlantamission.org/get-involved/volunteer. Background check required for child-serving roles. Under-18 must be accompanied by an adult chaperone.",
+      "_source": "https://atlantamission.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Fernbank Museum Youth Interpreters (FYI Program)",
+      "organization": "Fernbank Museum of Natural History",
+      "description": "Year-round teen volunteer program (ages 13-17) at Atlanta's natural-history museum. 1-year commitment minimum, 45 service hours minimum, runs June 1 - May 31. FYI volunteers staff interpretive carts on biology, archaeology, paleontology, ecology; assist with summer camps, Discovery Days, animal-care backstage support, and special exhibits. In 2024 cohort: 120 teens contributed alongside 280 adults for 16,000 collective hours. One of the strongest sustained-commitment teen science volunteer pathways in the Southeast — excellent fit for biology, paleontology, archaeology, geology, and museum-education students.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Druid Hills / Decatur edge",
+      "categories": [
+        "education",
+        "environment",
+        "animals"
+      ],
+      "ageMin": 13,
+      "ageMax": 17,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "natural-history interpretation",
+        "public speaking",
+        "live-animal care basics",
+        "museum operations",
+        "scientific outreach"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at fernbankmuseum.org/support/volunteer/fyi-volunteers. Email FYI@FernbankMuseum.org or call 404-929-6360 for the current application window.",
+      "_source": "https://fernbankmuseum.org/support/volunteer/fyi-volunteers/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "MedShare Atlanta (Global Medical Supply Recovery)",
+      "organization": "MedShare",
+      "description": "Decatur-based global health nonprofit that recovers surplus medical supplies/equipment from US hospitals and ships them to underserved healthcare facilities worldwide. Youth volunteers ages 10-17 sort and sterilize supplies during scheduled shifts (Wed/Fri 9am-12pm; Thu/Sat 9am-12pm and 1pm-4pm). 10-13 must be accompanied by a parent/guardian; 14+ may volunteer independently with signed Parent Permission Form. Excellent low-barrier entry point for global-health, public-health, biomedical, and pre-med pathways. Located at 3240 Clifton Springs Road, Decatur.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Decatur / DeKalb County",
+      "categories": [
+        "health",
+        "civic"
+      ],
+      "ageMin": 10,
+      "ageMax": 17,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "medical supply identification",
+        "global health logistics",
+        "warehouse operations",
+        "service-team coordination"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Register a shift at medshare.org/volunteer/atlanta. Bring signed Parent Permission Form (under-18). Closed-toe shoes required.",
+      "_source": "https://www.medshare.org/volunteer/atlanta/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Sandy Creek Nature Center Naturalist Assistant Program (NAP)",
+      "organization": "Sandy Creek Nature Center / Athens-Clarke County Leisure Services",
+      "description": "Athens, GA-based nature-center teen volunteer program (NAP). Selective track for committed teens — minimum 60 service hours/year, monthly meetings, written contributions to NAP newsletter, and helping train new NAP volunteers. Volunteers staff special events (Snake Day, herpetology talks), interpret live reptiles/amphibians/aquariums in the Education & Visitor Center, and lead trail walks across the 225-acre wetland-and-woodland property. Tightest non-Atlanta sustained teen volunteer commitment in north Georgia. Excellent for students aiming at UGA, environmental-science, herpetology, and field-biology pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Athens / Clarke County",
+      "categories": [
+        "environment",
+        "animals",
+        "education"
+      ],
+      "ageMin": 13,
+      "ageMax": 18,
+      "timeCommitment": "monthly",
+      "format": "in-person",
+      "sustainability": "medium",
+      "skillsBuilt": [
+        "natural-history interpretation",
+        "herpetology basics",
+        "trail leadership",
+        "nature writing",
+        "peer training"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Inquire at the Education & Visitor Center, 706-613-3615. Program info via accgov.com/sandycreeknaturecenter. Cohort applications typically open winter.",
+      "_source": "https://www.accgov.com/sandycreeknaturecenter",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Open Hand Atlanta (Meal Packing + Delivery)",
+      "organization": "Open Hand Atlanta",
+      "description": "One of the nation's largest community-based providers of medically-tailored home-delivered meals — packs and delivers nearly 5,000 meals/day to medically-fragile, senior, and chronic-disease patients across metro Atlanta. Family volunteers welcome ages 9+ for general meal-pack shifts; Client Meal Packing requires age 16+. 1 adult per 3 minor volunteers chaperone ratio. Year-round high-availability shifts make this an unusually low-barrier entry point. Strong fit for nutrition, public-health, gerontology, and food-insecurity pathways. Companion roles: meal-delivery routes, Market Basket grocery packing, culinary assistance, loading dock.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Metro Atlanta / Northeast Atlanta",
+      "categories": [
+        "hunger",
+        "health",
+        "seniors"
+      ],
+      "ageMin": 9,
+      "ageMax": 99,
+      "timeCommitment": "flexible",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "food-safety basics",
+        "nutrition logistics",
+        "warehouse operations",
+        "team service"
+      ],
+      "collegeAppValue": "medium",
+      "howToStart": "Sign up at openhandatlanta.volunteerhub.com. Family/group orientation videos online. Meal-Pack shifts run weekday mornings + select Saturdays.",
+      "_source": "https://www.openhandatlanta.org/get-involved/volunteer/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
+      "confidence": "high"
+    },
+    {
+      "name": "Zoo Atlanta Volunteen Program",
+      "organization": "Zoo Atlanta",
+      "description": "Atlanta's premier urban zoo runs a structured Volunteen program for ages 14-17 (must be enrolled in HS for the following school year, age 14+ by June 1). Annual cohort with required training week (June 1-5, 2026). $30 orientation fee covers name badge, uniform T-shirt, and access card; scholarships available. Volunteens develop advocacy, empathy, animal-knowledge, and public-engagement skills via service across the Zoo's exhibits and education programs. Application requires self-written application + essay (no parental help) and one non-relative recommendation letter. Strong fit for biology, zoology, conservation-policy, and environmental-education pathways.",
+      "scope": "state",
+      "states": [
+        "GA"
+      ],
+      "subregion": "Atlanta / Grant Park",
+      "categories": [
+        "animals",
+        "environment",
+        "education"
+      ],
+      "ageMin": 14,
+      "ageMax": 17,
+      "timeCommitment": "weekly",
+      "format": "in-person",
+      "sustainability": "large",
+      "skillsBuilt": [
+        "animal advocacy messaging",
+        "visitor engagement",
+        "conservation interpretation",
+        "public speaking",
+        "service-team coordination"
+      ],
+      "collegeAppValue": "high",
+      "howToStart": "Apply at zooatlanta.org/program/volunteen-program. Self-written application + essay + non-relative recommendation. Email teenvolunteer@zooatlanta.org with questions.",
+      "_source": "https://zooatlanta.org/program/volunteen-program/",
+      "_verified": true,
+      "_verifiedDate": "2026-05-10",
       "confidence": "high"
     }
   ]
