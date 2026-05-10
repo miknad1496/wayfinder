@@ -152,6 +152,14 @@ app.use(cors({
 }));
 // Stripe webhook needs raw body for signature verification
 app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
+// PATCH161 AP SCORE LIMIT - AP Coach FRQ scoring accepts up to 80mb because
+// students attach textbook page photos, PDF chapters, and reference snippets.
+// MUST mount BEFORE the global 100kb json parser below: body-parser uses the
+// first middleware that runs, and the global parser would otherwise reject
+// any attachment-bearing FRQ submission with PayloadTooLargeError -> generic
+// 'Internal server error' (which is exactly what we hit from patch 154
+// through patch 160 before Dan's son's screenshot pinpointed it).
+app.use('/api/ap-coach/score', express.json({ limit: '80mb' }));
 // Strict request size validation: 100KB for non-webhook routes
 app.use(express.json({ limit: '100kb' }));
 
@@ -258,11 +266,23 @@ app.use('/api/*', (req, res) => {
 });
 
 // Error handler
+// PATCH161: include err.type + err.name in the response so payload-too-large
+// (the patch 154-160 misadventure) and other middleware errors are immediately
+// identifiable to whoever's looking at the failing request, not opaque
+// "Internal server error". err.message is still gated by NODE_ENV so prod
+// doesn't leak stack details from genuinely internal exceptions.
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err);
-  res.status(500).json({
-    error: 'Internal server error',
-    message: process.env.NODE_ENV === 'development' ? err.message : undefined
+  const status = err && (err.status || err.statusCode) ? (err.status || err.statusCode) : 500;
+  const friendly =
+    (err && err.type === 'entity.too.large')
+      ? 'Request payload too large for this endpoint.'
+      : 'Internal server error';
+  res.status(status).json({
+    error: friendly,
+    type: (err && err.type) || (err && err.name) || undefined,
+    limit: (err && err.type === 'entity.too.large') ? (err.limit || null) : undefined,
+    message: process.env.NODE_ENV === 'development' ? (err && err.message) : undefined,
   });
 });
 
