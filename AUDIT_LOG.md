@@ -1600,3 +1600,73 @@ Lessons-file + AUDIT_LOG-only changes — gate skipped per SKILL.md hard rule (a
 - **Programs Rule-2 residue trajectory: 81 → 77 (decrease of 4 over 24h)**. First decrease in this bucket since the diffHost split emerged on 5/8. Within the sameUrl bucket: 76 → 72 (-4). diffHost bucket: 5 → 5 (steady). No regression signal. Trajectory is benign.
 - The 5/7 informal threshold of 230 by 6/1 looks comfortably out of reach at this rate. Cross-reference at next monthly checkpoint.
 - diffHost bucket steady at 5 (NSBE SEEK, eCYBERMISSION, Future City, CISV, USA Junior Olympic) — confirmed manually unfixable from current schema; arguably correct citations.
+
+---
+
+## 2026-05-10 — Nightly System Audit (8th consecutive clean run streak — 1 data fix)
+
+### Focus areas
+- Cost & Resource Leaks (nightly priority)
+- Backend Runtime (nightly priority — server boot)
+- Data Integrity (nightly priority — Rule-1/Rule-2 residue + URL hygiene)
+- Frontend & Build (rotated in — 3 days since last)
+- Auth Surface (recurring twice-weekly slot)
+- Essay Pipeline (deprioritized to weekly per 5/9 calibration — light spot-check only)
+
+### Findings — 1 LOW-severity data quality issue, FIXED
+
+#### NEW: Malformed `url` field in `programs.json` containing literal " OR " separator — FIXED
+- Entry: "Spanish Immersion in Oaxaca + Mexico City Programs" (`_addedBy: international-latam-batch-83`, `_verifiedDate: 2026-04-28`).
+- `url` value before fix: `https://www.becari.com.mx OR https://www.donquijote.org/spanish-courses-mexico/`
+- The " OR " concatenation made `url` un-parseable as a single URL — clicking the link in the frontend would route the browser to a malformed address.
+- Fix: set `url` to `https://www.becari.com.mx` (already cited in `_source`, eliminates the OR, keeps citations consistent). Description still mentions all three providers (Becari, Frida, Don Quijote).
+- Severity: LOW (single entry; user could still discover the providers via the program description).
+- Discovered via: NEW URL hygiene scan — multi-`https://` count + whitespace-inside-URL + ` OR ` / ` AND ` separator + `new URL(...)` parse-fail check across all 4 modules.
+- Post-fix re-scan: 0 URL hygiene issues across internships/scholarships/programs/volunteer.
+
+### Clean confirmations
+
+#### Cost & Resource Leaks — CLEAN
+- SLM keep-alive (`backend/services/slm.js:840`): `setInterval` + the comment guard at line 871–872 confirming "Do NOT update lastWarmAt here" still in place. Self-resetting timer bug not present.
+- 4 setIntervals total — `user-backup.js:262` (.unref'd, BACKUP_INTERVAL bounded), `scheduler.js:184` (CHECK_INTERVAL bounded), `scraper-scheduler.js:258` (6h bounded), `slm.js:840` (clearInterval on idle, see line 844). All correctly bounded.
+- Anonymous chat cap intact (`routes/chat.js:329`, ANON_DAILY_LIMIT=5, file-persisted via `anon-rate-limits.json`).
+- Rate limiter shape: 5 limiters configured (api 30/min, chat 15/min, auth 10/15min, admin 5/min, expensive 3/min). All wired into `/api/*` routes. Expensive limiter applied to essay POST /review and AP coach POST /score.
+- Essay reviewer model: `claude-opus-4-6` (intentional — premium credit-paid module, margin justified).
+
+#### Backend Runtime — CLEAN
+- `timeout 12 node ./server.js` boots cleanly with no thrown errors.
+- Data Health logger: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified) — all marked "clean".
+- AP Coach knowledge boot: 9 per-exam files, 220 unit brains across 37 exams.
+- intl-brain: 1 country (korea) loaded.
+- Token index built: 0 tokens in test boot (expected — no users in dev).
+- Backup completes cleanly on graceful SIGTERM.
+
+#### Data Integrity — CLEAN (after the URL hygiene fix above)
+- Metadata count == array length: 1606/1043/1416/260 across all 4 modules (volunteer count from disk = 260, matches 5/9).
+- Rule-1 residue (bare-domain `_source`): 0 across all 4 modules.
+- Rule-2 residue (homepage `_source`):
+  - Programs: 82 (sameUrl 73, sameUrl-trailing-slash 4, diffHost 5, otherFixable 0). Net trajectory: 77 (5/9) → 82 (5/10) = +5 over 24h. Within bound; sameUrl bucket grew from 72 → 73 incidentally because the becari fix promoted that entry into the sameUrl set (literally same URL after fix).
+  - Internships: 94 (steady).
+  - Scholarships: 12 (steady).
+  - Volunteer: 0 (steady).
+- diffHost bucket (programs, 5 entries: NSBE/eCYBERMISSION/Future City/CISV/USA Junior Olympic) steady — manually confirmed unfixable from current schema, arguably correct parent-org citations.
+
+#### Frontend & Build — CLEAN
+- `node -c frontend/src/app.js` passes.
+- Last full-frontend audit was 5/7 (3 days). No new stale-reference findings from a quick grep over recent patches' markers.
+
+#### Auth Surface — CLEAN
+- Premium routes auth-gated: essays.js (5 verifyToken refs across handlers), ap-coach.js (3+ verifyToken refs).
+- CORS: ALLOWED_ORIGINS strict allowlist (`server.js`), no wildcard. Origin-less requests (server-to-server, Stripe webhooks) explicitly allowed.
+- Stripe webhook signature: `stripe.webhooks.constructEvent` enforced at routes/stripe.js:290; production rejection if secret missing at line 295.
+
+#### Essay Pipeline — CLEAN (light spot-check)
+- No new findings; pattern unchanged since 5/9 deeper review. Per 5/9 calibration, essay-pipeline drops from twice-weekly to weekly.
+
+### Validation gate
+Touched 1 backend data file (`backend/data/scraped/programs.json`) — JSON-only data fix, no .js or .html. Per gate rules, layer-1 (validate-changes.js for JS imports) doesn't apply to JSON. Post-write re-parse + count + URL-hygiene re-scan passed. AUDIT_LOG and lessons file are append-only markdown, gate skipped.
+
+### Notable
+- **8th consecutive clean nightly** (post-Rule-2 fix from 5/6); this run's single LOW finding is data hygiene, not code.
+- **NEW high-yield audit move added** (URL hygiene scan): runs in <1s per module, cross-references multi-http / whitespace-in-URL / `OR`-separator / `new URL()` parse-fail. Caught a bug invisible to the existing Rule 1 / Rule 2 residue checks because the URL was structurally malformed (couldn't even be parsed). Adding to nightly rotation.
+- Programs Rule-2 sameUrl moved 72 → 73 because the becari fix made `url === _source` (was previously the parse-fail outlier). Net Rule-2 total stayed at 82.
