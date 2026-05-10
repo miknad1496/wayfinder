@@ -174,6 +174,27 @@ export async function scoreFrq(exam, frqType, prompt, response, attachments, use
 
   const knowledgeInjection = buildKnowledgeInjection(exam);
 
+  // PATCH158-fix: include user's saved Game Plan in scoring system context.
+  // HOISTED to top of fn because the systemPrompt array (built below)
+  // references _profileLines; placing the declaration after the array hit a
+  // temporal-dead-zone ReferenceError, which the outer catch surfaced as a
+  // generic 'Internal server error' on every FRQ score call. Same class as
+  // patch 124 (undeclared options ref). node --check can't see it because
+  // the JS is syntactically valid; only runtime execution surfaces TDZ.
+  let _profileLines = '';
+  if (userProfile && typeof userProfile === 'object') {
+    const _bits = [];
+    if (Array.isArray(userProfile.exams) && userProfile.exams.length > 0) {
+      _bits.push('targeting ' + userProfile.exams.slice(0, 12).map(s => (s || '').replace(/^ap-/, 'AP ').replace(/-/g, ' ')).filter(Boolean).join(', '));
+    }
+    const _ts = parseInt(userProfile.defaultTargetScore, 10);
+    if (Number.isFinite(_ts) && _ts >= 1 && _ts <= 5) _bits.push('default target score ' + _ts);
+    const _hrs = parseInt(userProfile.hoursPerWeek, 10);
+    if (Number.isFinite(_hrs) && _hrs > 0 && _hrs <= 80) _bits.push(_hrs + ' hrs/week');
+    if (_bits.length > 0) _profileLines = '\n=== USER GAME PLAN ===\n' + _bits.join(' | ');
+  }
+
+
   const systemPrompt = [
     (_profileLines ? _profileLines + '\n\n' : '') + 'You are an AP Score Coach for ' + examCfg.label + '. You score student responses to free-response questions against the official AP rubric and provide rubric-aware coaching feedback.',
     '',
@@ -217,21 +238,7 @@ export async function scoreFrq(exam, frqType, prompt, response, attachments, use
   // so reference material (images / PDFs / text snippets) can sit between
   // PROMPT and STUDENT RESPONSE in the content array. Claude sees:
   // prompt context -> attachments -> student response.
-    // PATCH156: include user's saved Game Plan in the scoring system context
-  let _profileLines = '';
-  if (userProfile && typeof userProfile === 'object') {
-    const _bits = [];
-    if (Array.isArray(userProfile.exams) && userProfile.exams.length > 0) {
-      _bits.push('targeting ' + userProfile.exams.slice(0, 12).map(s => (s || '').replace(/^ap-/, 'AP ').replace(/-/g, ' ')).filter(Boolean).join(', '));
-    }
-    const _ts = parseInt(userProfile.defaultTargetScore, 10);
-    if (Number.isFinite(_ts) && _ts >= 1 && _ts <= 5) _bits.push('default target score ' + _ts);
-    const _hrs = parseInt(userProfile.hoursPerWeek, 10);
-    if (Number.isFinite(_hrs) && _hrs > 0 && _hrs <= 80) _bits.push(_hrs + ' hrs/week');
-    if (_bits.length > 0) _profileLines = '\n=== USER GAME PLAN ===\n' + _bits.join(' | ');
-  }
-
-const userPromptHead = [
+  const userPromptHead = [
     '=== EXAM ===',
     examCfg.label,
     '',
