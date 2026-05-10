@@ -8977,11 +8977,19 @@ async function submitApScoring() {
     const data = await r.json();
     if (!r.ok) {
       const msg = (data && data.error) ? data.error : 'Scoring failed';
+      // PATCH160 AP SCORE DIAGNOSTIC: render details + stack when the backend
+      // surfaces them, so we stop seeing opaque 'internal server error' messages.
+      const detailsHtml = (data && data.details && data.details !== 'unknown')
+        ? '<div style="margin-top:10px; padding:10px; background:rgba(0,0,0,0.05); border-radius:6px; font-size:12px; color:#7f1d1d;"><strong>Details:</strong> ' + escapeHtml(String(data.details)) + (data.errorName ? ' (' + escapeHtml(String(data.errorName)) + ')' : '') + '</div>'
+        : '';
+      const stackHtml = (data && data.stack)
+        ? '<details style="margin-top:8px;"><summary style="font-size:11px; color:#7f1d1d; cursor:pointer;">stack</summary><pre style="font-size:11px; color:#64748b; white-space:pre-wrap; overflow-x:auto; padding:8px; background:rgba(0,0,0,0.04); border-radius:4px; margin-top:4px;">' + escapeHtml(String(data.stack)) + '</pre></details>'
+        : '';
       // Special handling for upgrade-required
       if (data && data._requiresUpgrade) {
         result.innerHTML = '<div style="padding:24px; background:#fffbeb; border:1px solid #fcd34d; color:#78350f; border-radius:12px;"><strong>Free trial used.</strong><br><br>Hope that scoring was useful. To keep practicing, upgrade to Coach (5/month) or Consultant (unlimited).<br><br><a href="#pricing" style="color:#2563eb; font-weight:600;">View plans</a></div>';
       } else {
-        result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + msg + '</div>';
+        result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + escapeHtml(msg) + detailsHtml + stackHtml + '</div>';
       }
       loadApUsage();
       return;

@@ -301,7 +301,18 @@ router.post('/score', expressJson({ limit: '80mb' }), async (req, res) => {
       tokensUsed: result.tokensUsed,
     });
   } catch (err) {
+    // REVAMP V2: PATCH160 AP SCORE DIAGNOSTIC - surface the real exception
+    // message + first 4 stack lines to the client. Without this we were guessing
+    // at the cause of 'internal server error' on every attachment-bearing FRQ
+    // submission. Frontend renders details + stack so users (Dan testing for his
+    // son) immediately see what's actually failing.
     console.error('AP Coach score error:', err);
+    if (err && err.stack) console.error('AP Coach score error stack:', err.stack);
+    const _errMsg = (err && err.message) ? String(err.message).slice(0, 500) : 'unknown';
+    const _errStack = (err && err.stack)
+      ? err.stack.split('\n').slice(0, 5).map(l => l.trim()).join(' | ').slice(0, 1000)
+      : '';
+    const _errName = (err && err.name) ? String(err.name).slice(0, 60) : '';
     if (creditDeducted) {
       try {
         const tok = req.headers.authorization?.replace('Bearer ', '');
@@ -309,6 +320,9 @@ router.post('/score', expressJson({ limit: '80mb' }), async (req, res) => {
           const refund = await refundApCredit(tok);
           return res.status(500).json({
             error: 'Internal server error. Your credit has been refunded.',
+            details: _errMsg,
+            errorName: _errName,
+            stack: _errStack,
             creditsRemaining: refund.remaining,
           });
         }
@@ -317,9 +331,17 @@ router.post('/score', expressJson({ limit: '80mb' }), async (req, res) => {
       }
       return res.status(500).json({
         error: 'Internal server error. Please contact support if credit was not refunded.',
+        details: _errMsg,
+        errorName: _errName,
+        stack: _errStack,
       });
     }
-    return res.status(500).json({ error: 'Internal server error.' });
+    return res.status(500).json({
+      error: 'Internal server error.',
+      details: _errMsg,
+      errorName: _errName,
+      stack: _errStack,
+    });
   }
 });
 
