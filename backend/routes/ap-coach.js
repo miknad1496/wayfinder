@@ -797,7 +797,7 @@ router.post('/tutor', async (req, res) => {
     const { exam, topic, targetTier } = req.body;
     if (typeof exam !== 'string' || !exam) return res.status(400).json({ error: 'exam required' });
     if (typeof topic !== 'string' || topic.trim().length < 3) return res.status(400).json({ error: 'topic required (at least 3 chars)' });
-    if (topic.length > 200) return res.status(400).json({ error: 'topic too long' });
+    if (topic.length > 800) return res.status(400).json({ error: 'topic too long (max 800 chars).' }); // PATCH157: was 200, but HTML textarea allows 800 and encourages detail
 
     // PATCH156: thread the user's saved Game Plan profile into tutor context
     const _userProfileT = await getApProfile(token).catch(() => null);
