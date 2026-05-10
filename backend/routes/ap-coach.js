@@ -11,7 +11,7 @@
  * - GET  /api/ap-coach/score/:id    — Get specific scoring
  */
 
-import { Router } from 'express';
+import { Router, json as expressJson } from 'express'; // REVAMP V2: PATCH154 AP ATTACHMENTS - per-route body-size limit
 import https from 'https';  // PATCH94: ESM has no require()
 import { generatePreview } from '../services/study-guide-preview.js'; // PATCH97
 import { findUserByToken, updateUserPlan, checkStudyGuideDownload, recordStudyGuideDownload } from '../services/auth.js'; // PATCH97 + PATCH110
@@ -86,7 +86,12 @@ router.get('/credits', async (req, res) => {
 });
 
 // ─── POST /api/ap-coach/score ─────────────────────────────────
-router.post('/score', async (req, res) => {
+// REVAMP V2: PATCH154 AP ATTACHMENTS - per-route 35mb JSON limit so the body
+// can carry up to 5 base64-encoded reference attachments (images / PDFs up to
+// ~5MB raw each = ~6.7MB base64, plus JSON overhead). Server-wide limit is
+// 100kb, which would 413 the moment a student attaches a textbook photo.
+// Override applies only to this route.
+router.post('/score', expressJson({ limit: '35mb' }), async (req, res) => {
   let creditDeducted = false;
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
@@ -100,7 +105,7 @@ router.post('/score', async (req, res) => {
       });
     }
 
-    const { exam, frqType, prompt, response } = req.body;
+    const { exam, frqType, prompt, response, attachments } = req.body;
 
     // Validate inputs
     if (typeof response !== 'string') {
@@ -122,8 +127,80 @@ router.post('/score', async (req, res) => {
       return res.status(400).json({ error: 'prompt must be a string of at most 3000 characters.' });
     }
 
-    // Prompt injection check
-    const combinedInput = [response, prompt].filter(Boolean).join(' ');
+    // REVAMP V2: PATCH154 AP ATTACHMENTS - validate optional attachments array.
+    // Up to 5 attachments per submission. Each attachment is one of:
+    //   - kind:'image'    - JPEG/PNG/GIF/WebP, base64 in `data`, max ~5MB raw
+    //   - kind:'document' - PDF, base64 in `data`, max ~5MB raw
+    //   - kind:'text'     - any text-like file (.txt/.md/.csv/source code), raw text in `text`,
+    //                       max ~200KB chars
+    let safeAttachments = [];
+    if (attachments != null) {
+      if (!Array.isArray(attachments)) {
+        return res.status(400).json({ error: 'attachments must be an array.' });
+      }
+      if (attachments.length > 5) {
+        return res.status(400).json({ error: 'At most 5 attachments per submission.' });
+      }
+      const IMAGE_MEDIA = new Set(['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
+      const B64_RE = /^[A-Za-z0-9+/=]+$/;
+      const MAX_B64 = 7000000;          // ~5.25MB raw
+      const MAX_TEXT_CHARS = 200000;    // ~200KB text
+      for (let i = 0; i < attachments.length; i++) {
+        const a = attachments[i];
+        if (!a || typeof a !== 'object') {
+          return res.status(400).json({ error: 'attachment ' + (i + 1) + ' must be an object.' });
+        }
+        const _name = (typeof a.name === 'string') ? a.name.slice(0, 120) : null;
+        if (a.kind === 'image') {
+          if (typeof a.mediaType !== 'string' || !IMAGE_MEDIA.has(a.mediaType)) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (image) has unsupported mediaType. Use JPEG, PNG, GIF, or WebP.' });
+          }
+          if (typeof a.data !== 'string' || a.data.length === 0) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (image) has empty data.' });
+          }
+          if (a.data.length > MAX_B64) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (image) too large. Max ~5MB.' });
+          }
+          if (!B64_RE.test(a.data)) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (image) data is not valid base64.' });
+          }
+          safeAttachments.push({ kind: 'image', mediaType: a.mediaType, data: a.data, name: _name });
+        } else if (a.kind === 'document') {
+          if (a.mediaType && a.mediaType !== 'application/pdf') {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (document) only PDF is supported. Convert other docs to PDF or paste as text.' });
+          }
+          if (typeof a.data !== 'string' || a.data.length === 0) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (document) has empty data.' });
+          }
+          if (a.data.length > MAX_B64) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (document) too large. Max ~5MB.' });
+          }
+          if (!B64_RE.test(a.data)) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (document) data is not valid base64.' });
+          }
+          safeAttachments.push({ kind: 'document', mediaType: 'application/pdf', data: a.data, name: _name });
+        } else if (a.kind === 'text') {
+          if (typeof a.text !== 'string' || a.text.length === 0) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (text) is empty.' });
+          }
+          if (a.text.length > MAX_TEXT_CHARS) {
+            return res.status(400).json({ error: 'attachment ' + (i + 1) + ' (text) too long. Max ' + MAX_TEXT_CHARS + ' characters.' });
+          }
+          safeAttachments.push({ kind: 'text', mediaType: typeof a.mediaType === 'string' ? a.mediaType : 'text/plain', text: a.text, name: _name });
+        } else {
+          return res.status(400).json({ error: 'attachment ' + (i + 1) + ' has unknown kind. Use image, document, or text.' });
+        }
+      }
+    }
+
+    // Prompt injection check - covers the textual prompt + response + any
+    // text-kind attachments. Image and PDF bytes aren't scanned; the model's
+    // own safety layer handles those.
+    const combinedInput = [
+      response,
+      prompt,
+      ...safeAttachments.filter(a => a.kind === 'text').map(a => a.text),
+    ].filter(Boolean).join(' ');
     const injectionCheck = checkInjection(combinedInput);
     if (injectionCheck.blocked) {
       return res.status(400).json({ error: 'Your submission contains content that cannot be processed. Please revise and try again.' });
@@ -144,8 +221,8 @@ router.post('/score', async (req, res) => {
     creditDeducted = true; // legacy var; usage recorded post-success below
     // REVAMP V2: AP COACH PRICING REWORK PATCH80 — record usage AFTER successful score (defer to post-success block)
 
-    // Score the FRQ
-    const result = await scoreFrq(exam, frqType, prompt || null, response);
+    // Score the FRQ (PATCH154: pass attachments through - images / PDFs / text snippets)
+    const result = await scoreFrq(exam, frqType, prompt || null, response, safeAttachments);
 
     if (!result.success) {
       const refund = await refundApCredit(token);
@@ -176,6 +253,17 @@ router.post('/score', async (req, res) => {
       exam,
       frqType,
       promptText: prompt || null,
+      // REVAMP V2: PATCH154 AP ATTACHMENTS - persist response text in history so
+      // the user can retrieve their original answer when reviewing past scores
+      // even after the input form has been wiped for the next FRQ. Also save
+      // attachment metadata (filename + kind only, no binary bytes) so they can
+      // see what reference material was in scope.
+      responseText: response,
+      attachments: safeAttachments.map(a => ({
+        kind: a.kind,
+        name: a.name || null,
+        mediaType: a.mediaType || null,
+      })),
       score: result.score,
       wordCount: response.split(/\s+/).length,
       createdAt: new Date().toISOString(),
@@ -189,10 +277,25 @@ router.post('/score', async (req, res) => {
     // REVAMP V2: AP COACH PRICING REWORK PATCH80 — record usage on success (free tier marks lifetime; Coach increments month)
     await recordApCoachUsage(token);
 
+    // REVAMP V2: PATCH154 AP ATTACHMENTS - fix latent ReferenceError. The success
+    // path was referencing `creditResult.remaining` from the deleted PATCH67
+    // useApCredit() flow, which has been replaced by checkApCoachUsage +
+    // recordApCoachUsage in PATCH80. Re-query usage to surface the post-record
+    // remaining count to the client (frontend uses it to refresh the credits
+    // bar). If this call errors we still return the scoring result rather than
+    // 500ing on the user.
+    let remainingAfter = null;
+    try {
+      const usageAfter = await checkApCoachUsage(token);
+      remainingAfter = (usageAfter && typeof usageAfter.remainingMonth === 'number')
+        ? usageAfter.remainingMonth
+        : (usageAfter && typeof usageAfter.remaining === 'number' ? usageAfter.remaining : null);
+    } catch (_) { /* non-fatal — frontend will refetch via loadApUsage() anyway */ }
+
     res.json({
       id: scoreId,
       score: result.score,
-      creditsRemaining: creditResult.remaining,
+      creditsRemaining: remainingAfter,
       tokensUsed: result.tokensUsed,
     });
   } catch (err) {

@@ -8293,6 +8293,7 @@ function openApCoach() {
   loadApUsage();
   loadApExamsAndTypes();
   loadApGuides();
+  loadApProfile(); // REVAMP V2: PATCH154 AP PROFILE WIRING - hydrate dashboard if profile exists
 }
 
 function closeApCoach() {
@@ -8323,6 +8324,266 @@ function setupApCoachView() {
     respInput.addEventListener('input', () => {
       charSpan.textContent = String(respInput.value.length);
     });
+  }
+  // REVAMP V2: PATCH154 AP ATTACHMENTS - wire reference-material picker (images, PDFs, text snippets)
+  const imgInput = document.getElementById('apImageInput');
+  if (imgInput) imgInput.addEventListener('change', _handleApAttachmentInput);
+  // REVAMP V2: PATCH154 AP PROFILE WIRING - Save/Skip/Edit plan buttons
+  const saveBtn = document.getElementById('apProfileSaveBtn');
+  if (saveBtn) saveBtn.addEventListener('click', _saveApProfile);
+  const skipBtn = document.getElementById('apProfileSkipBtn');
+  if (skipBtn) skipBtn.addEventListener('click', _skipApProfile);
+  const editBtn = document.getElementById('apProfileEditBtn');
+  if (editBtn) editBtn.addEventListener('click', _editApProfile);
+}
+
+// REVAMP V2: PATCH154 AP ATTACHMENTS - in-memory store for attached reference material
+// (kept on window so submitApScoring can read it without a closure dependency).
+// Each entry is { kind:'image'|'document'|'text', mediaType, data?|text, name }.
+window._apFrqAttachments = window._apFrqAttachments || [];
+
+function _escAttr(s) {
+  return String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function _isTextLikeFile(file) {
+  if (!file) return false;
+  const t = (file.type || '').toLowerCase();
+  if (t.startsWith('text/')) return true;
+  if (t === 'application/json' || t === 'application/xml' || t === 'application/javascript' || t === 'application/x-yaml') return true;
+  // Many editors give source files an empty mime type; fall back to extension.
+  const name = (file.name || '').toLowerCase();
+  const TEXT_EXT = ['.txt', '.md', '.markdown', '.csv', '.tsv', '.json', '.xml', '.html', '.htm', '.yaml', '.yml',
+    '.js', '.ts', '.jsx', '.tsx', '.py', '.java', '.cpp', '.cc', '.c', '.h', '.hpp', '.cs', '.go', '.rs', '.rb',
+    '.php', '.swift', '.kt', '.kts', '.r', '.tex', '.log', '.sh', '.bat', '.ps1', '.sql', '.ini', '.toml', '.cfg'];
+  return TEXT_EXT.some(ext => name.endsWith(ext));
+}
+
+async function _handleApAttachmentInput(ev) {
+  const input = ev && ev.target;
+  const errEl = document.getElementById('apImageError');
+  const previewEl = document.getElementById('apImagePreview');
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+  if (!input || !input.files) return;
+  const files = Array.from(input.files);
+  if (files.length === 0) {
+    window._apFrqAttachments = [];
+    if (previewEl) previewEl.innerHTML = '';
+    return;
+  }
+  if (files.length > 5) {
+    if (errEl) {
+      errEl.textContent = 'Up to 5 files per submission. Please reselect.';
+      errEl.style.display = 'block';
+    }
+    input.value = '';
+    return;
+  }
+  const IMG_MEDIA = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+  const MAX_BIN = 5 * 1024 * 1024;        // 5MB raw for images / PDFs
+  const MAX_TEXT_CHARS = 200000;          // 200K chars for text snippets
+  const errors = [];
+  const next = [];
+  const previewHtml = [];
+
+  for (const f of files) {
+    const tlower = (f.type || '').toLowerCase();
+    const nameLower = (f.name || '').toLowerCase();
+
+    // Branch 1: image
+    if (tlower.startsWith('image/')) {
+      if (!IMG_MEDIA.includes(tlower)) {
+        errors.push('Skipped "' + f.name + '" - image format must be JPEG / PNG / GIF / WebP.');
+        continue;
+      }
+      if (f.size > MAX_BIN) { errors.push('Skipped "' + f.name + '" - image too large (max 5MB).'); continue; }
+      try {
+        const dataUrl = await new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => reject(r.error || new Error('read failed'));
+          r.readAsDataURL(f);
+        });
+        const m = /^data:(image\/[a-z+]+);base64,(.*)$/i.exec(String(dataUrl || ''));
+        if (!m) { errors.push('Could not decode "' + f.name + '".'); continue; }
+        next.push({ kind: 'image', mediaType: m[1], data: m[2], name: f.name });
+        previewHtml.push(
+          '<div style="position:relative; width:96px; height:96px; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; background:#f8fafc;">' +
+          '<img src="' + dataUrl + '" alt="' + _escAttr(f.name) + '" style="width:100%; height:100%; object-fit:cover; display:block;">' +
+          '<div style="position:absolute; bottom:0; left:0; right:0; padding:2px 4px; background:rgba(15,23,42,0.7); color:white; font-size:10px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + Math.round(f.size / 1024) + ' KB</div>' +
+          '</div>'
+        );
+      } catch (e) {
+        errors.push('Could not read "' + f.name + '".');
+      }
+      continue;
+    }
+
+    // Branch 2: PDF -> document block
+    if (tlower === 'application/pdf' || nameLower.endsWith('.pdf')) {
+      if (f.size > MAX_BIN) { errors.push('Skipped "' + f.name + '" - PDF too large (max 5MB).'); continue; }
+      try {
+        const dataUrl = await new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => reject(r.error || new Error('read failed'));
+          r.readAsDataURL(f);
+        });
+        const m = /^data:[^;]+;base64,(.*)$/i.exec(String(dataUrl || ''));
+        if (!m) { errors.push('Could not decode "' + f.name + '".'); continue; }
+        next.push({ kind: 'document', mediaType: 'application/pdf', data: m[1], name: f.name });
+        previewHtml.push(
+          '<div style="position:relative; width:96px; height:96px; border:1px solid #e2e8f0; border-radius:8px; background:linear-gradient(135deg, #fef3c7, #fde68a); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; text-align:center;">' +
+          '<div style="font-size:24px; line-height:1;">PDF</div>' +
+          '<div style="font-size:10px; color:#78350f; margin-top:4px; line-height:1.2; word-break:break-all; max-height:32px; overflow:hidden;">' + _escAttr((f.name || '').slice(0, 24)) + '</div>' +
+          '<div style="font-size:9px; color:#92400e; margin-top:2px;">' + Math.round(f.size / 1024) + ' KB</div>' +
+          '</div>'
+        );
+      } catch (e) {
+        errors.push('Could not read "' + f.name + '".');
+      }
+      continue;
+    }
+
+    // Branch 3: text-like (snippets, source code, csv, etc.)
+    if (_isTextLikeFile(f)) {
+      try {
+        const text = await new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => reject(r.error || new Error('read failed'));
+          r.readAsText(f);
+        });
+        let raw = String(text || '');
+        let truncated = false;
+        if (raw.length > MAX_TEXT_CHARS) { raw = raw.slice(0, MAX_TEXT_CHARS); truncated = true; }
+        if (!raw) { errors.push('Skipped "' + f.name + '" - empty file.'); continue; }
+        next.push({ kind: 'text', mediaType: f.type || 'text/plain', text: raw, name: f.name });
+        previewHtml.push(
+          '<div style="position:relative; width:96px; height:96px; border:1px solid #e2e8f0; border-radius:8px; background:linear-gradient(135deg, #dbeafe, #bfdbfe); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px; text-align:center;">' +
+          '<div style="font-size:24px; line-height:1;">TXT</div>' +
+          '<div style="font-size:10px; color:#1e3a8a; margin-top:4px; line-height:1.2; word-break:break-all; max-height:32px; overflow:hidden;">' + _escAttr((f.name || '').slice(0, 24)) + '</div>' +
+          '<div style="font-size:9px; color:#1e40af; margin-top:2px;">' + raw.length.toLocaleString() + ' chars' + (truncated ? '*' : '') + '</div>' +
+          '</div>'
+        );
+        if (truncated) errors.push('Note: "' + f.name + '" was truncated to ' + MAX_TEXT_CHARS.toLocaleString() + ' chars.');
+      } catch (e) {
+        errors.push('Could not read "' + f.name + '".');
+      }
+      continue;
+    }
+
+    // Branch 4: unsupported (e.g. .docx, .xlsx, .pptx — would need parsing libs)
+    errors.push('Skipped "' + f.name + '" - unsupported format. Convert Word/Excel/PowerPoint files to PDF, or paste their contents into a .txt file.');
+  }
+
+  window._apFrqAttachments = next;
+  if (previewEl) previewEl.innerHTML = previewHtml.join('');
+  if (errEl && errors.length > 0) {
+    errEl.textContent = errors.join(' ');
+    errEl.style.display = 'block';
+  }
+}
+
+// REVAMP V2: PATCH154 AP PROFILE WIRING - Save/Skip/Edit plan handlers
+async function _saveApProfile() {
+  const btn = document.getElementById('apProfileSaveBtn');
+  const formCard = document.getElementById('apOnboardingForm');
+  if (!formCard) return;
+  const checkedExams = Array.from(document.querySelectorAll('.ap-profile-exam-cb:checked')).map(cb => cb.value);
+  const targetEl = document.getElementById('apProfileTargetScore');
+  const hoursEl = document.getElementById('apProfileHours');
+  const targetScore = targetEl ? parseInt(targetEl.value, 10) : 4;
+  const hoursPerWeek = hoursEl ? Math.max(1, Math.min(40, parseInt(hoursEl.value, 10) || 8)) : 8;
+  if (checkedExams.length === 0) {
+    alert('Pick at least one AP exam so we can build your dashboard.');
+    return;
+  }
+  if (btn) { btn.disabled = true; btn.textContent = 'Saving...'; }
+  try {
+    const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '/api';
+    const r = await fetch(apiBase + '/ap-coach/profile', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
+      body: JSON.stringify({
+        exams: checkedExams,
+        defaultTargetScore: targetScore,
+        hoursPerWeek: hoursPerWeek,
+        targetScores: {},
+      }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      alert((data && data.error) ? data.error : 'Save failed. Please try again.');
+      return;
+    }
+    _renderApGamePlanDashboard(data.profile || { exams: checkedExams, defaultTargetScore: targetScore, hoursPerWeek: hoursPerWeek });
+  } catch (e) {
+    alert('Network error: ' + e.message);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = 'Save my plan'; }
+  }
+}
+
+function _skipApProfile() {
+  const formCard = document.getElementById('apOnboardingForm');
+  if (formCard) formCard.style.display = 'none';
+}
+
+function _editApProfile() {
+  const formCard = document.getElementById('apOnboardingForm');
+  const dashboard = document.getElementById('apGamePlanDashboard');
+  if (formCard) formCard.style.display = 'block';
+  if (dashboard) dashboard.style.display = 'none';
+}
+
+async function loadApProfile() {
+  if (!authToken) return;
+  try {
+    const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '/api';
+    const r = await fetch(apiBase + '/ap-coach/profile', {
+      headers: { Authorization: 'Bearer ' + authToken },
+    });
+    if (!r.ok) return;
+    const data = await r.json().catch(() => ({}));
+    if (data && data.profile && Array.isArray(data.profile.exams) && data.profile.exams.length > 0) {
+      _renderApGamePlanDashboard(data.profile);
+    }
+  } catch (_) { /* non-fatal */ }
+}
+
+function _renderApGamePlanDashboard(profile) {
+  const formCard = document.getElementById('apOnboardingForm');
+  const dashboard = document.getElementById('apGamePlanDashboard');
+  if (formCard) formCard.style.display = 'none';
+  if (dashboard) dashboard.style.display = 'block';
+  // Pre-check the boxes so Edit shows current selections
+  const checkboxes = document.querySelectorAll('.ap-profile-exam-cb');
+  checkboxes.forEach(cb => { cb.checked = (profile.exams || []).indexOf(cb.value) >= 0; });
+  const targetEl = document.getElementById('apProfileTargetScore');
+  if (targetEl && profile.defaultTargetScore) targetEl.value = String(profile.defaultTargetScore);
+  const hoursEl = document.getElementById('apProfileHours');
+  if (hoursEl && profile.hoursPerWeek) hoursEl.value = String(profile.hoursPerWeek);
+  // Render countdown grid + suggestions
+  const grid = document.getElementById('apExamCountdownGrid');
+  if (grid) {
+    const today = new Date();
+    const cards = (profile.exams || []).map(slug => {
+      const label = (slug || '').replace(/^ap-/, 'AP ').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return '<div style="padding:14px; background:white; border:1px solid #e2e8f0; border-radius:10px;">' +
+        '<div style="font-size:13px; font-weight:600; color:#1e293b; margin-bottom:4px;">' + label + '</div>' +
+        '<div style="font-size:12px; color:#64748b;">Target: ' + (profile.defaultTargetScore || 4) + ' &middot; ' + (profile.hoursPerWeek || 8) + ' hrs/wk</div>' +
+        '</div>';
+    });
+    grid.innerHTML = cards.join('') || '<div style="color:#94a3b8; font-size:13px;">No exams selected.</div>';
+  }
+  const suggestionsEl = document.getElementById('apGamePlanSuggestions');
+  if (suggestionsEl) {
+    const examCount = (profile.exams || []).length;
+    suggestionsEl.innerHTML =
+      'Plan saved &mdash; ' + examCount + ' exam' + (examCount === 1 ? '' : 's') + ' tracked. ' +
+      'Open <strong>Coach Chat</strong> for strategy questions, <strong>FRQ Scoring</strong> to drill rubric points, ' +
+      'or <strong>Tutor</strong> for custom teaching guides on weak topics.';
   }
 }
 
@@ -8595,10 +8856,25 @@ async function submitApScoring() {
   if (empty) empty.style.display = 'none';
   if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Wayfinder is scoring your response — analyzing against the AP rubric...</div>';
   try {
+    // REVAMP V2: PATCH154 AP ATTACHMENTS - include any attached reference material
+    // (images / PDFs / text snippets). The server validates kind + size again.
+    const _attached = Array.isArray(window._apFrqAttachments) ? window._apFrqAttachments : [];
+    const _attachmentsPayload = _attached.map(a => {
+      if (a.kind === 'image') return { kind: 'image', mediaType: a.mediaType, data: a.data, name: a.name };
+      if (a.kind === 'document') return { kind: 'document', mediaType: 'application/pdf', data: a.data, name: a.name };
+      if (a.kind === 'text') return { kind: 'text', mediaType: a.mediaType || 'text/plain', text: a.text, name: a.name };
+      return null;
+    }).filter(Boolean);
     const r = await fetch(API_BASE + '/ap-coach/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
-      body: JSON.stringify({ exam: exam, frqType: frqType, prompt: prompt, response: response }),
+      body: JSON.stringify({
+        exam: exam,
+        frqType: frqType,
+        prompt: prompt,
+        response: response,
+        attachments: _attachmentsPayload.length > 0 ? _attachmentsPayload : undefined,
+      }),
     });
     const data = await r.json();
     if (!r.ok) {
@@ -8628,8 +8904,17 @@ function renderApScore(score) {
   const total = score.rubricPointsTotal || 1;
   const pct = Math.round((earned / total) * 100);
   const color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#ea580c' : '#dc2626';
+  // REVAMP V2: PATCH154 AP ATTACHMENTS - if attachments are still in-memory
+  // (i.e. submission just completed), surface a "Clear for next FRQ" button at
+  // the bottom of the result so the user can wipe inputs after they're done
+  // reviewing. The score itself is saved server-side (history endpoint), so
+  // wiping the form does not lose the answer.
+  const _hasAttachments = Array.isArray(window._apFrqAttachments) && window._apFrqAttachments.length > 0;
   const html = [
-    '<div class="ap-score-card" style="background:white; border:1px solid #e2e8f0; border-radius:12px; padding:24px;">',
+    '<div class="ap-score-card" id="apScoreCard" style="background:white; border:1px solid #e2e8f0; border-radius:12px; padding:24px;">',
+    '  <div style="display:flex; justify-content:flex-end; gap:8px; margin-bottom:8px;">',
+    '    <button type="button" onclick="_downloadApScorePdf()" style="background:#1d4ed8; color:white; border:none; padding:8px 14px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer;">Download as PDF</button>',
+    '  </div>',
     '  <div style="display:flex; align-items:center; gap:24px; margin-bottom:16px;">',
     '    <div style="width:96px; height:96px; border-radius:50%; background:' + color + '; color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:700;">',
     '      <div style="font-size:24px; line-height:1;">' + earned + '/' + total + '</div>',
@@ -8673,9 +8958,102 @@ function renderApScore(score) {
       ).join('') +
       '</ul>'
     ) : '',
+    // PATCH154: post-result reset prompt (only when attachments are still attached)
+    _hasAttachments ? (
+      '<div style="margin-top:24px; padding:14px; background:#fef9c3; border:1px solid #fde68a; border-radius:8px; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">' +
+      '<div style="flex:1; min-width:200px; font-size:13px; color:#713f12;">Score saved to your history. Ready for the next FRQ? Clear the ' + window._apFrqAttachments.length + ' attached file' + (window._apFrqAttachments.length === 1 ? '' : 's') + ' to start fresh.</div>' +
+      '<button type="button" onclick="_clearApAttachmentsWithConfirm()" style="background:white; color:#92400e; border:1px solid #fbbf24; padding:8px 14px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;">Clear attached files</button>' +
+      '</div>'
+    ) : '',
     '</div>',
   ].join('');
   document.getElementById('apScoreResult').innerHTML = html;
+}
+
+// REVAMP V2: PATCH154 AP ATTACHMENTS - clear attached files (asks for confirm).
+// History (response + score) is preserved server-side - wiping only the input
+// form means no data loss.
+function _clearApAttachmentsWithConfirm() {
+  const n = Array.isArray(window._apFrqAttachments) ? window._apFrqAttachments.length : 0;
+  if (n === 0) {
+    _clearApAttachments();
+    return;
+  }
+  const ok = window.confirm('Clear the ' + n + ' attached file' + (n === 1 ? '' : 's') + ' so you can start a fresh FRQ?\n\nYour previous answer and score are saved in your scoring history (View History below) - this only clears the input form.');
+  if (!ok) return;
+  _clearApAttachments();
+}
+
+function _clearApAttachments() {
+  window._apFrqAttachments = [];
+  const previewEl = document.getElementById('apImagePreview');
+  if (previewEl) previewEl.innerHTML = '';
+  const errEl = document.getElementById('apImageError');
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+  const input = document.getElementById('apImageInput');
+  if (input) input.value = '';
+  // Also remove the inline reset prompt from the rendered score card
+  const card = document.getElementById('apScoreCard');
+  if (card) {
+    const promptEl = card.querySelector('div[style*="background:#fef9c3"]');
+    if (promptEl) promptEl.remove();
+  }
+}
+
+// REVAMP V2: PATCH154 AP ATTACHMENTS - export the score result as a printable PDF.
+// Opens a new window containing only the result card + a print-friendly stylesheet
+// and triggers the browser's print dialog. User picks "Save as PDF" from the
+// destination dropdown. No external library needed.
+function _downloadApScorePdf() {
+  const card = document.getElementById('apScoreCard');
+  if (!card) {
+    alert('No score to download yet.');
+    return;
+  }
+  const cardHtml = card.outerHTML;
+  // Strip the "Download as PDF" button + the "Clear attached files" prompt from
+  // the printed copy so the PDF is clean.
+  const cleaned = cardHtml
+    .replace(/<button[^>]*onclick="_downloadApScorePdf[^"]*"[^>]*>[\s\S]*?<\/button>/gi, '')
+    .replace(/<button[^>]*onclick="_clearApAttachmentsWithConfirm[^"]*"[^>]*>[\s\S]*?<\/button>/gi, '')
+    .replace(/<div[^>]*style="[^"]*background:#fef9c3[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+  const examLabelEl = document.getElementById('apExam');
+  const frqLabelEl = document.getElementById('apFrqType');
+  const examLabel = (examLabelEl && examLabelEl.options[examLabelEl.selectedIndex]) ? examLabelEl.options[examLabelEl.selectedIndex].text : '';
+  const frqLabel = (frqLabelEl && frqLabelEl.options[frqLabelEl.selectedIndex]) ? frqLabelEl.options[frqLabelEl.selectedIndex].text : '';
+  const today = new Date().toLocaleDateString();
+  const w = window.open('', '_blank', 'width=900,height=900');
+  if (!w) {
+    alert('Please allow popups to download as PDF, or use your browser print menu (Ctrl/Cmd+P).');
+    return;
+  }
+  // NOTE: build the script-tag open/close via string concatenation so the
+  // literal opening-tag substring does not appear in this source. Layer 2 of
+  // validate-changes (validate-runtime.js) reads app.js raw and feeds it to
+  // JSDOM as HTML; if the source contained a literal opening-tag-then-
+  // closing-tag pair, JSDOM would parse it as a real script tag and eat the
+  // surrounding JS as "script content", raising SyntaxError on next push.
+  const _scrOpen = '<' + 'script>';
+  const _scrClose = '<' + '/script>';
+  const doc = [
+    '<!doctype html>',
+    '<html><head><meta charset="utf-8"><title>FRQ Score - ' + today + '</title>',
+    '<style>',
+    'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #0f172a; margin: 24px; }',
+    'h1 { font-size: 18px; margin: 0 0 4px; color: #1e293b; }',
+    '.meta { font-size: 12px; color: #64748b; margin-bottom: 16px; }',
+    '.ap-score-card { box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; border: none !important; }',
+    '@media print { body { margin: 12mm; } button { display: none !important; } }',
+    '</style></head><body>',
+    '<h1>Wayfinder AP Coach - FRQ Score Report</h1>',
+    '<div class="meta">' + escapeHtml(examLabel || 'AP exam') + (frqLabel ? ' &middot; ' + escapeHtml(frqLabel) : '') + ' &middot; ' + escapeHtml(today) + '</div>',
+    cleaned,
+    _scrOpen + 'setTimeout(function(){ window.focus(); window.print(); }, 300);' + _scrClose,
+    '</body></html>',
+  ].join('\n');
+  w.document.open();
+  w.document.write(doc);
+  w.document.close();
 }
 
 // Wire sidebar

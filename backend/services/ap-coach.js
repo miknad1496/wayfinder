@@ -140,13 +140,27 @@ function buildKnowledgeInjection(exam) {
 /**
  * Score a free-response answer against the AP rubric for the given exam.
  *
+ * REVAMP V2: PATCH154 AP ATTACHMENTS - now accepts an optional attachments array
+ * so students can attach reference material from any source: photos of paper
+ * textbook passages (image/*), full PDF chapters (application/pdf), or text
+ * snippets (.txt / .md / .csv / source code / pasted notes). Each attachment is
+ * routed to the correct Claude content block type:
+ *   - kind:'image' -> image block (vision)
+ *   - kind:'document' -> document block (native PDF understanding)
+ *   - kind:'text' -> inline text block bracketed with the filename
+ *
  * @param {string} exam - one of SUPPORTED_EXAMS keys
  * @param {string} frqType - one of FRQ_TYPES keys
  * @param {string} prompt - the FRQ prompt the student responded to
  * @param {string} response - the student's response
+ * @param {Array<object>} [attachments] - optional array of reference attachments.
+ *        Each attachment shape:
+ *          { kind:'image',    mediaType:'image/jpeg', data:'<base64>', name?:string }
+ *          { kind:'document', mediaType:'application/pdf', data:'<base64>', name?:string }
+ *          { kind:'text',     mediaType:'text/plain', text:'<raw>', name?:string }
  * @returns {Promise<{success: boolean, score?: object, error?: string, tokensUsed?: number}>}
  */
-export async function scoreFrq(exam, frqType, prompt, response) {
+export async function scoreFrq(exam, frqType, prompt, response, attachments) {
   const startTime = Date.now();
   await loadKnowledge();
 
@@ -199,7 +213,11 @@ export async function scoreFrq(exam, frqType, prompt, response) {
     '- Top three fixes must be ACTIONABLE — not "be more specific" but "name the specific Hull House example like Jane Addams in Chicago, 1889".',
   ].join('\n');
 
-  const userPrompt = [
+  // REVAMP V2: PATCH154 AP ATTACHMENTS - split user prompt into pre/post halves
+  // so reference material (images / PDFs / text snippets) can sit between
+  // PROMPT and STUDENT RESPONSE in the content array. Claude sees:
+  // prompt context -> attachments -> student response.
+  const userPromptHead = [
     '=== EXAM ===',
     examCfg.label,
     '',
@@ -208,6 +226,9 @@ export async function scoreFrq(exam, frqType, prompt, response) {
     '',
     '=== PROMPT ===',
     prompt || '(no prompt provided — score on response merits alone)',
+  ].join('\n');
+
+  const userPromptTail = [
     '',
     '=== STUDENT RESPONSE ===',
     response,
@@ -215,6 +236,38 @@ export async function scoreFrq(exam, frqType, prompt, response) {
     '',
     'Score this response. Return ONLY the JSON object.',
   ].join('\n');
+
+  // Build content: text head + (optional) attachment blocks + text tail
+  const valid = Array.isArray(attachments)
+    ? attachments.filter(a => a && typeof a === 'object' && (a.kind === 'image' || a.kind === 'document' || a.kind === 'text'))
+    : [];
+  let userContent;
+  if (valid.length > 0) {
+    userContent = [{ type: 'text', text: userPromptHead + '\n\n=== REFERENCE MATERIAL (paper textbook passages, charts, question stems, snippets, stimulus material the student is responding to) ===' }];
+    for (const a of valid) {
+      const _name = (typeof a.name === 'string' && a.name) ? a.name.slice(0, 120) : null;
+      if (a.kind === 'image' && typeof a.mediaType === 'string' && typeof a.data === 'string' && a.data) {
+        if (_name) userContent.push({ type: 'text', text: '[' + _name + ']' });
+        userContent.push({
+          type: 'image',
+          source: { type: 'base64', media_type: a.mediaType, data: a.data },
+        });
+      } else if (a.kind === 'document' && typeof a.data === 'string' && a.data) {
+        if (_name) userContent.push({ type: 'text', text: '[' + _name + ']' });
+        userContent.push({
+          type: 'document',
+          source: { type: 'base64', media_type: 'application/pdf', data: a.data },
+        });
+      } else if (a.kind === 'text' && typeof a.text === 'string' && a.text) {
+        const label = _name ? '[' + _name + ']' : '[reference snippet]';
+        userContent.push({ type: 'text', text: label + '\n' + a.text + '\n[end of ' + (_name || 'snippet') + ']' });
+      }
+    }
+    userContent.push({ type: 'text', text: userPromptTail });
+  } else {
+    // No attachments - keep behavior identical to pre-patch154 (single text block)
+    userContent = userPromptHead + userPromptTail;
+  }
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 90000);
@@ -224,7 +277,7 @@ export async function scoreFrq(exam, frqType, prompt, response) {
       model: process.env.CLAUDE_MODEL_ENGINE || process.env.CLAUDE_MODEL || 'claude-opus-4-7',
       max_tokens: 2500,
       system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }],
+      messages: [{ role: 'user', content: userContent }],
     }, { signal: controller.signal });
   } catch (err) {
     return { success: false, error: 'AI request failed: ' + err.message };

@@ -3610,6 +3610,16 @@ body.wf-ko-mode #loginModal h2 { font-family: 'Inter', -apple-system, system-ui,
                 <label for="apPromptInput">FRQ Prompt <span class="ev-optional">(strongly recommended for best feedback)</span></label>
                 <textarea id="apPromptInput" class="ev-textarea" rows="3" maxlength="3000" placeholder="Paste the actual FRQ prompt here."></textarea>
               </div>
+              <!-- REVAMP V2: PATCH154 AP ATTACHMENTS - reference material (images / PDFs / text snippets) -->
+              <div class="ev-field">
+                <label for="apImageInput">Reference material <span class="ev-optional">(optional - up to 5 files, e.g. textbook page photos, PDF chapters, pasted snippets)</span></label>
+                <input type="file" id="apImageInput" accept="image/*,application/pdf,text/*,.txt,.md,.markdown,.csv,.tsv,.json,.xml,.html,.htm,.js,.ts,.jsx,.tsx,.py,.java,.cpp,.c,.h,.cs,.go,.rs,.rb,.php,.swift,.kt,.r,.tex,.log" multiple style="display:block; padding:8px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; font-size:13px; width:100%;">
+                <div id="apImageHint" style="font-size:12px; color:#64748b; margin-top:4px;">
+                  Studying off a paper book? Snap a pic of the passage / chart / question stem. Working off a digital chapter? Drop the PDF. Have a snippet? Drag it in. The AI absorbs everything as context for scoring. Max 5 files: images (JPEG/PNG/GIF/WebP) up to ~5MB, PDFs up to ~5MB, text snippets up to 200K chars.
+                </div>
+                <div id="apImagePreview" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;"></div>
+                <div id="apImageError" style="display:none; font-size:13px; color:#dc2626; margin-top:6px;"></div>
+              </div>
               <div class="ev-field">
                 <label for="apResponseInput">Your Response</label>
                 <textarea id="apResponseInput" class="ev-textarea" rows="12" maxlength="12000" placeholder="Paste your full FRQ response here (min 30 chars, max 12,000)."></textarea>
