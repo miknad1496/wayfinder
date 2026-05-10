@@ -1,22 +1,23 @@
 {
-  "lastRunISO": "2026-05-03T16:30:00Z",
-  "totalRuns": 1,
+  "lastRunISO": "2026-05-10T16:30:00Z",
+  "totalRuns": 2,
   "phasesCompleted": [
     "Bootstrap (state-file init)",
-    "FL volunteer expansion (1 -> 14)"
+    "FL volunteer expansion (1 -> 14)",
+    "GA volunteer expansion (3 -> 18)"
   ],
-  "currentPhase": "FL volunteer expansion (closed)",
-  "nextRunPlan": "Focus GA volunteer expansion (currently 2 entries: Best Friends + Atlanta Community Food Bank). Pre-plan candidates: Atlanta Botanical Garden teen, Georgia Aquarium teen volunteer, Children's Healthcare of Atlanta junior volunteer, Atlanta Mission, Hands On Atlanta, Children's Museum of Atlanta, Atlanta History Center, Trees Atlanta, Captain Planet Foundation teen. Target 10-12 verified entries spanning Atlanta + Savannah + Athens metros. Verify each URL before adding.",
+  "currentPhase": "GA volunteer expansion (closed)",
+  "nextRunPlan": "Focus NC volunteer expansion (currently 2 entries — Charlotte + Triangle severely under-covered for the 9th-largest US state by population). Pre-plan candidates: Discovery Place Charlotte teen volunteer, NC Zoo (Asheboro) volunteer, Carolina Tiger Rescue (Pittsboro), NC Museum of Natural Sciences (Raleigh) youth, NC Museum of Art (Raleigh), Duke Lemur Center, NC Aquarium (Pine Knoll Shores or Fort Fisher), Levine Children's Hospital (Charlotte) volunTEEN, Crisis Assistance Ministry (Charlotte), Habitat for Humanity Charlotte, Loaves & Fishes (Charlotte food pantry), Asheville Humane Society teen, Western NC Nature Center (Asheville), Inter-Faith Food Shuttle (Triangle). Target 12-15 verified entries spanning Charlotte + Triangle (Raleigh-Durham-CH) + Asheville/WNC + Coastal. Verify each URL before adding. After NC, sequence: OH (5/24), AZ (5/31), PA (6/7), VA (6/14), NJ (6/21 — critical zero) — 6-week volunteer-coverage rotation that brings every under-covered state to 10+ entries before the mid-summer re-verify pass.",
   "gapMap": {
-    "VOLUNTEER_FL": "14 entries (was 1) — covered: Miami-Dade (Zoo Miami, Nicklaus, Feeding SF), Jacksonville, Tampa Bay (Florida Aquarium, Frameworks TIA, Humane Society, FHM), Orlando (AdventHealth, Habitat), Stuart, Sanibel, Key Largo, statewide (Volunteer Florida AmeriCorps). Categories: animals, environment, education, health, civic, mental_health, leadership, homelessness, arts, disaster, seniors, hunger.",
-    "VOLUNTEER_GA": "2 entries — UNDER-COVERED. Atlanta is the 9th-largest metro in US. NEXT TARGET (May 10).",
-    "VOLUNTEER_NC": "2 entries — UNDER-COVERED. Charlotte + Triangle. Target after GA.",
-    "VOLUNTEER_OH": "2 entries — UNDER-COVERED. Cleveland + Cincinnati + Columbus.",
-    "VOLUNTEER_AZ": "2 entries — UNDER-COVERED. Phoenix + Tucson.",
-    "VOLUNTEER_PA": "1 entry — CRITICALLY UNDER-COVERED. Philadelphia + Pittsburgh.",
-    "VOLUNTEER_VA": "1 entry — CRITICALLY UNDER-COVERED. NoVA + Richmond.",
-    "VOLUNTEER_NJ": "0 entries — CRITICAL ZERO. Newark + Princeton + Jersey Shore.",
-    "VOLUNTEER_OR": "2 entries — under-covered. Portland metro.",
+    "VOLUNTEER_FL": "14 entries — covered.",
+    "VOLUNTEER_GA": "18 entries (was 3) — closed 2026-05-10. Atlanta cluster: Atlanta Botanical Garden SPEAK, Georgia Aquarium teen, Hands On Atlanta, Trees Atlanta youth, CHOA VolunTEEN, Atlanta History Center Youth Ambassador, High Museum Teen Leadership Council, NCCHR Youth, Atlanta Mission, Fernbank FYI, MedShare Decatur, Open Hand Atlanta, Zoo Atlanta Volunteen, plus prior Atlanta Community Food Bank + Best Friends + First Book + Learning Ally. Coastal: Tybee Island Marine Science Center. Athens: Sandy Creek Nature Center NAP. Categories: animals, environment, education, civic, leadership, health, homelessness, hunger, arts, advocacy.",
+    "VOLUNTEER_NC": "2 entries — UNDER-COVERED. NEXT TARGET (May 17, 2026). 9th-largest US state. Charlotte + Triangle metros under-covered.",
+    "VOLUNTEER_OH": "2 entries — UNDER-COVERED. After NC.",
+    "VOLUNTEER_AZ": "2 entries — UNDER-COVERED. After OH.",
+    "VOLUNTEER_PA": "1 entry — CRITICALLY UNDER-COVERED.",
+    "VOLUNTEER_VA": "1 entry — CRITICALLY UNDER-COVERED.",
+    "VOLUNTEER_NJ": "0 entries — CRITICAL ZERO.",
+    "VOLUNTEER_OR": "2 entries — under-covered.",
     "VOLUNTEER_MN": "3 entries — adequate baseline.",
     "VOLUNTEER_IL": "3 entries — adequate baseline.",
     "VOLUNTEER_WA": "40 entries — fully covered (priority state).",
@@ -24,7 +25,7 @@
     "VOLUNTEER_NY": "18 entries — well covered.",
     "VOLUNTEER_TX": "18 entries — well covered.",
     "VOLUNTEER_NATIONAL": "132 entries — saturated.",
-    "INTERNSHIPS_TX": "128 / 105 verified — well covered (CLAUDE.md was outdated).",
+    "INTERNSHIPS_TX": "128 / 105 verified — well covered.",
     "INTERNSHIPS_CA": "339 / 152 verified — well covered.",
     "INTERNSHIPS_WA": "112 / 86 verified — fully covered.",
     "INTERNSHIPS_NY": "197 / 101 verified — well covered.",
@@ -38,11 +39,12 @@
     "SCHOLARSHIPS_PERFORMING_ARTS": "~5 entries — under-covered.",
     "SCHOLARSHIPS_STATE_FIELD_MISSING": "260 state-scope entries have no state field set — schema-quality gap, separate fix-pass needed.",
     "PROGRAMS": "1416 entries — saturated for now.",
-    "_lastVerifyPass": "never — re-verify pass overdue. Schedule for ~run 8 (mid-summer 2026) once gap-fill phase quiets."
+    "_lastVerifyPass": "never — re-verify pass overdue. Schedule for ~run 8 (mid-July 2026) once volunteer gap-fill rotation completes."
   },
   "discoveredCorrections": [
-    "CLAUDE.md says volunteer FL was 'covered post-batch 145' but only 1 FL entry existed in the corpus — the batch added Feeding South Florida only. Now corrected.",
-    "CLAUDE.md says internships TX:5 verified — actual is TX:105 verified. CLAUDE.md was authored mid-grinder run.",
-    "CLAUDE.md says scholarships 1035/68 — actual is 1043/80."
+    "CLAUDE.md says volunteer FL was 'covered post-batch 145' but only 1 FL entry existed in the corpus — corrected by run 1.",
+    "CLAUDE.md says internships TX:5 verified — actual is TX:105 verified.",
+    "CLAUDE.md says scholarships 1035/68 — actual is 1043/80.",
+    "Run 2 (2026-05-10): GA volunteer corpus was 3, not the '0 entries' implied in CLAUDE.md (Best Friends national + Atlanta Community Food Bank + First Book national tagged GA). Net add 15."
   ]
 }
