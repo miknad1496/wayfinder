@@ -8406,6 +8406,60 @@ function _isTextLikeFile(file) {
   return TEXT_EXT.some(ext => name.endsWith(ext));
 }
 
+// REVAMP V2: PATCH158 AP IMAGE DOWNSCALE - phone photos are 3-5MB each.
+// Uploading 9 of them at full size produces a ~60MB JSON payload to
+// Anthropic, which rejects requests over ~32MB and bubbles back as an
+// internal server error. We downscale every image client-side via canvas
+// to max 1600px longest side + JPEG q0.85 BEFORE base64 encoding. A
+// typical 4MB phone photo of a textbook page comes out at ~400-700KB,
+// visually identical for text/diagrams, and 9 such images = ~5-7MB total.
+// Well within both our 80mb express limit and Anthropic's request cap.
+async function _downscaleImage(file, maxDim, quality) {
+  maxDim = maxDim || 1600;
+  quality = (typeof quality === 'number') ? quality : 0.85;
+  return await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(reader.error || new Error('read failed'));
+    reader.onload = (ev) => {
+      const img = new Image();
+      img.onerror = () => reject(new Error('image decode failed'));
+      img.onload = () => {
+        let w = img.naturalWidth || img.width;
+        let h = img.naturalHeight || img.height;
+        const longest = Math.max(w, h);
+        if (longest > maxDim) {
+          const ratio = maxDim / longest;
+          w = Math.round(w * ratio);
+          h = Math.round(h * ratio);
+        }
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          // Prefer JPEG output for max compression; alpha images (PNG with
+          // transparency) lose transparency but for textbook photos that's fine.
+          canvas.toBlob((blob) => {
+            if (!blob) return reject(new Error('toBlob returned null'));
+            const r2 = new FileReader();
+            r2.onerror = () => reject(r2.error || new Error('encode failed'));
+            r2.onload = (ev2) => {
+              const url = String(ev2.target.result || '');
+              const mm = /^data:(image\/[a-z+]+);base64,(.*)$/i.exec(url);
+              if (!mm) return reject(new Error('bad data url'));
+              resolve({ dataUrl: url, mediaType: mm[1], data: mm[2], size: blob.size, w: w, h: h });
+            };
+            r2.readAsDataURL(blob);
+          }, 'image/jpeg', quality);
+        } catch (e) { reject(e); }
+      };
+      img.src = String(ev.target.result || '');
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 async function _handleApAttachmentInput(ev) {
   const input = ev && ev.target;
   const errEl = document.getElementById('apImageError');
@@ -8437,7 +8491,7 @@ async function _handleApAttachmentInput(ev) {
     const tlower = (f.type || '').toLowerCase();
     const nameLower = (f.name || '').toLowerCase();
 
-    // Branch 1: image
+    // Branch 1: image - PATCH158 downscale via canvas before encoding
     if (tlower.startsWith('image/')) {
       if (!IMG_MEDIA.includes(tlower)) {
         errors.push('Skipped "' + f.name + '" - image format must be JPEG / PNG / GIF / WebP.');
@@ -8445,23 +8499,20 @@ async function _handleApAttachmentInput(ev) {
       }
       if (f.size > MAX_BIN) { errors.push('Skipped "' + f.name + '" - image too large (max 5MB).'); continue; }
       try {
-        const dataUrl = await new Promise((resolve, reject) => {
-          const r = new FileReader();
-          r.onload = () => resolve(r.result);
-          r.onerror = () => reject(r.error || new Error('read failed'));
-          r.readAsDataURL(f);
-        });
-        const m = /^data:(image\/[a-z+]+);base64,(.*)$/i.exec(String(dataUrl || ''));
-        if (!m) { errors.push('Could not decode "' + f.name + '".'); continue; }
-        next.push({ kind: 'image', mediaType: m[1], data: m[2], name: f.name });
+        const ds = await _downscaleImage(f, 1600, 0.85);
+        // After downscale all images become image/jpeg regardless of input type
+        next.push({ kind: 'image', mediaType: ds.mediaType, data: ds.data, name: f.name });
+        const sizeKB = Math.round(ds.size / 1024);
+        const originalKB = Math.round(f.size / 1024);
+        const sizeLabel = (sizeKB < originalKB) ? (sizeKB + ' KB (was ' + originalKB + ')') : (sizeKB + ' KB');
         previewHtml.push(
           '<div style="position:relative; width:96px; height:96px; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; background:#f8fafc;">' +
-          '<img src="' + dataUrl + '" alt="' + _escAttr(f.name) + '" style="width:100%; height:100%; object-fit:cover; display:block;">' +
-          '<div style="position:absolute; bottom:0; left:0; right:0; padding:2px 4px; background:rgba(15,23,42,0.7); color:white; font-size:10px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + Math.round(f.size / 1024) + ' KB</div>' +
+          '<img src="' + ds.dataUrl + '" alt="' + _escAttr(f.name) + '" style="width:100%; height:100%; object-fit:cover; display:block;">' +
+          '<div style="position:absolute; bottom:0; left:0; right:0; padding:2px 4px; background:rgba(15,23,42,0.75); color:white; font-size:10px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + sizeLabel + '</div>' +
           '</div>'
         );
       } catch (e) {
-        errors.push('Could not read "' + f.name + '".');
+        errors.push('Could not process "' + f.name + '": ' + (e && e.message ? e.message : 'unknown'));
       }
       continue;
     }
