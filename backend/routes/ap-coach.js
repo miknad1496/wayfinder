@@ -21,7 +21,7 @@ import { fileURLToPath } from 'url';
 import { randomBytes } from 'crypto';
 import { verifyToken, useApCredit, refundApCredit, canAccess, getApCoachUsageDetails, recordApChatUsage, recordApTutorUsage, getApProfile, setApProfile, redeemFriendsCoachCode, isFamilyConsultant, getEffectivePlan, checkApCoachUsage, recordApCoachUsage } from '../services/auth.js'; // REVAMP V2: AP COACH PRICING REWORK PATCH80 routes
 import { checkInjection } from '../services/input_filter.js';
-import { scoreFrq, getApExams, getFrqTypes } from '../services/ap-coach.js';
+import { scoreFrq, getApExams, getFrqTypes, spellcheckText } from '../services/ap-coach.js'; // PATCH155 AP SPELLCHECK
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -843,5 +843,26 @@ async function _getPerExamKnowledge() {
   } catch { return {}; }
 }
 
+
+// REVAMP V2: PATCH155 AP SPELLCHECK - cheap Haiku-backed spellcheck for the FRQ
+// response textarea. NOT credit-deducted (it is a UX nicety, not a coach action).
+// Auth required so we do not let unauthenticated traffic hammer Haiku.
+router.post('/spellcheck', expressJson({ limit: '200kb' }), async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const user = await verifyToken(token);
+    if (!user) return res.status(401).json({ error: 'Not authenticated' });
+    const { text } = req.body || {};
+    if (typeof text !== 'string') return res.status(400).json({ error: 'text must be a string.' });
+    if (text.trim().length < 2) return res.status(400).json({ error: 'Type something first.' });
+    if (text.length > 14000) return res.status(400).json({ error: 'Text too long (max 14,000 chars).' });
+    const result = await spellcheckText(text);
+    if (!result.success) return res.status(500).json({ error: result.error || 'Spellcheck failed.' });
+    res.json({ correctedText: result.correctedText, corrections: result.corrections, count: result.count });
+  } catch (err) {
+    console.error('AP Coach spellcheck error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 export default router;

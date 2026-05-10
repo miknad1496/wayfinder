@@ -319,3 +319,73 @@ export function getApExams() {
 export function getFrqTypes() {
   return Object.entries(FRQ_TYPES).map(([key, label]) => ({ key, label }));
 }
+
+// REVAMP V2: PATCH155 AP SPELLCHECK - cheap Haiku-backed spellcheck for FRQ responses.
+// SCOPE: spelling + capitalization ONLY. NOT grammar, NOT style, NOT punctuation.
+// Keeps the user voice fully intact. Returns the corrected text + a count of changes.
+export async function spellcheckText(text) {
+  if (typeof text !== 'string' || text.trim().length === 0) {
+    return { success: false, error: 'Empty text.' };
+  }
+  if (text.length > 14000) {
+    return { success: false, error: 'Text too long for spellcheck (max 14k chars).' };
+  }
+  const haikuModel = process.env.CLAUDE_MODEL_HAIKU || 'claude-haiku-4-5-20251001';
+  const systemPrompt = [
+    'You are a SPELLING + CAPITALIZATION corrector. Your ONLY job is to fix:',
+    '  1. Misspelled words (typos, transpositions, missing/extra letters).',
+    '  2. Wrong capitalization (proper nouns lowercased, sentence-starts lowercased,',
+    '     all-caps mid-sentence words that should not be).',
+    '',
+    'YOU MUST NOT:',
+    '  - Fix grammar (subject-verb agreement, tense, articles, prepositions).',
+    '  - Reword anything for style or clarity.',
+    '  - Change punctuation (commas, semicolons, dashes, ellipses).',
+    '  - Reformat paragraphs, line breaks, or whitespace.',
+    '  - Substitute synonyms.',
+    '  - Expand contractions or change tone.',
+    '',
+    'Preserve every line break, indent, and punctuation mark exactly. Touch ONLY misspelled',
+    'words and capitalization errors. Domain terms specific to AP exams (VSEPR, FRQ, APUSH,',
+    'SCOTUS, etc.) are correctly spelled - do NOT "correct" them.',
+    '',
+    'Return ONLY a JSON object with this exact shape, no markdown fences, no prose:',
+    '{',
+    '  "correctedText": "<full text with spelling+capitalization fixes applied>",',
+    '  "corrections": [',
+    '    { "from": "<original misspelled token>", "to": "<corrected token>" }',
+    '  ]',
+    '}',
+    '',
+    'If there are NO spelling/capitalization errors, return the input as correctedText with an empty corrections array.',
+  ].join('\n');
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  let resp;
+  try {
+    resp = await client.messages.create({
+      model: haikuModel,
+      max_tokens: Math.min(4000, Math.ceil(text.length / 2) + 600),
+      system: systemPrompt,
+      messages: [{ role: 'user', content: 'TEXT TO CHECK:\n' + text }],
+    }, { signal: controller.signal });
+  } catch (err) {
+    return { success: false, error: 'Spellcheck request failed: ' + err.message };
+  } finally {
+    clearTimeout(timeout);
+  }
+  const out = resp.content?.[0]?.text || '';
+  const stripped = out.replace(/```(?:json)?\s*/gi, '').replace(/```/g, '');
+  const match = stripped.match(/\{[\s\S]*\}/);
+  if (!match) return { success: false, error: 'No JSON in spellcheck output.' };
+  let parsed;
+  try { parsed = JSON.parse(match[0].replace(/,\s*([\]}])/g, '$1')); }
+  catch (e) { return { success: false, error: 'Spellcheck JSON parse failed: ' + e.message }; }
+  if (typeof parsed.correctedText !== 'string') {
+    return { success: false, error: 'Spellcheck response missing correctedText.' };
+  }
+  const corrections = Array.isArray(parsed.corrections) ? parsed.corrections.filter(c =>
+    c && typeof c.from === 'string' && typeof c.to === 'string' && c.from !== c.to
+  ) : [];
+  return { success: true, correctedText: parsed.correctedText, corrections, count: corrections.length };
+}

@@ -8328,6 +8328,34 @@ function setupApCoachView() {
   // REVAMP V2: PATCH154 AP ATTACHMENTS - wire reference-material picker (images, PDFs, text snippets)
   const imgInput = document.getElementById('apImageInput');
   if (imgInput) imgInput.addEventListener('change', _handleApAttachmentInput);
+  // REVAMP V2: PATCH155 AP DROPZONE - wire drag/drop on the wrapper around the picker
+  const dropZone = document.getElementById('apDropZone');
+  if (dropZone && !dropZone.__wfDropWired) {
+    dropZone.__wfDropWired = true;
+    const _setActive = (on) => {
+      dropZone.style.borderColor = on ? '#2563eb' : '#cbd5e1';
+      dropZone.style.background = on ? '#eff6ff' : '#f8fafc';
+    };
+    ['dragenter', 'dragover'].forEach(ev => {
+      dropZone.addEventListener(ev, (e) => { e.preventDefault(); e.stopPropagation(); _setActive(true); });
+    });
+    ['dragleave', 'dragend'].forEach(ev => {
+      dropZone.addEventListener(ev, (e) => { e.preventDefault(); e.stopPropagation(); _setActive(false); });
+    });
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      _setActive(false);
+      const files = (e.dataTransfer && e.dataTransfer.files) ? e.dataTransfer.files : null;
+      if (!files || files.length === 0) return;
+      // Reuse the picker pipeline by calling the handler directly with a
+      // synthetic event whose target.files matches what an <input type="file">
+      // change event would have. Skipping the input element entirely avoids
+      // the FileList-is-readonly issue (you can't assign to input.files in
+      // most browsers without a DataTransfer dance).
+      _handleApAttachmentInput({ target: { files: files } });
+    });
+  }
   // REVAMP V2: PATCH154 AP PROFILE WIRING - Save/Skip/Edit plan buttons
   const saveBtn = document.getElementById('apProfileSaveBtn');
   if (saveBtn) saveBtn.addEventListener('click', _saveApProfile);
@@ -8335,6 +8363,25 @@ function setupApCoachView() {
   if (skipBtn) skipBtn.addEventListener('click', _skipApProfile);
   const editBtn = document.getElementById('apProfileEditBtn');
   if (editBtn) editBtn.addEventListener('click', _editApProfile);
+  // REVAMP V2: PATCH155 AP CHAT WIRING - Coach Chat send button + Enter-to-send
+  const chatBtn = document.getElementById('apChatSendBtn');
+  if (chatBtn) chatBtn.addEventListener('click', submitApChat);
+  const chatInput = document.getElementById('apChatInput');
+  if (chatInput) {
+    chatInput.addEventListener('keydown', (e) => {
+      // Enter sends; Shift+Enter inserts newline
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        submitApChat();
+      }
+    });
+  }
+  // REVAMP V2: PATCH155 AP TUTOR WIRING - Tutor generate button
+  const tutorBtn = document.getElementById('apTutorGenerateBtn');
+  if (tutorBtn) tutorBtn.addEventListener('click', submitApTutor);
+  // REVAMP V2: PATCH155 AP SPELLCHECK - check spelling button on FRQ response
+  const spellBtn = document.getElementById('apSpellcheckBtn');
+  if (spellBtn) spellBtn.addEventListener('click', submitApSpellcheck);
 }
 
 // REVAMP V2: PATCH154 AP ATTACHMENTS - in-memory store for attached reference material
@@ -9054,6 +9101,215 @@ function _downloadApScorePdf() {
   w.document.open();
   w.document.write(doc);
   w.document.close();
+}
+
+// REVAMP V2: PATCH155 AP CHAT WIRING - in-memory chat history (per session, cleared on view close)
+window._apChatHistory = window._apChatHistory || [];
+
+function _apChatRender() {
+  const thread = document.getElementById('apChatThread');
+  if (!thread) return;
+  const empty = document.getElementById('apChatEmptyState');
+  if (empty) empty.style.display = (window._apChatHistory.length === 0) ? 'block' : 'none';
+  const messages = window._apChatHistory.map((m) => {
+    if (m.role === 'user') {
+      return '<div style="margin-bottom:14px; display:flex; justify-content:flex-end;">' +
+        '<div style="max-width:85%; background:#2563eb; color:white; padding:10px 14px; border-radius:14px 14px 4px 14px; font-size:14px; line-height:1.5; white-space:pre-wrap;">' +
+        escapeHtml(m.content) + '</div></div>';
+    }
+    // assistant: render markdown if available, else fall back to escaped text
+    const body = (typeof renderMarkdown === 'function')
+      ? renderMarkdown(m.content)
+      : escapeHtml(m.content).replace(/\n/g, '<br>');
+    return '<div style="margin-bottom:14px; display:flex; justify-content:flex-start;">' +
+      '<div style="max-width:90%; background:white; color:#0f172a; padding:12px 16px; border:1px solid #e2e8f0; border-radius:14px 14px 14px 4px; font-size:14px; line-height:1.6;">' +
+      body + '</div></div>';
+  }).join('');
+  // Keep empty-state div if present, append messages after it
+  const existingEmpty = thread.querySelector('#apChatEmptyState');
+  thread.innerHTML = (existingEmpty ? existingEmpty.outerHTML : '') + messages;
+  thread.scrollTop = thread.scrollHeight;
+}
+
+async function submitApChat() {
+  const input = document.getElementById('apChatInput');
+  const btn = document.getElementById('apChatSendBtn');
+  const status = document.getElementById('apChatStatus');
+  if (!input) return;
+  const message = (input.value || '').trim();
+  if (message.length < 2) {
+    if (status) status.textContent = 'Type a question first.';
+    return;
+  }
+  // Choose exam hint: prefer apActiveSubject, fall back to apExam
+  const subjEl = document.getElementById('apActiveSubject');
+  const examEl = document.getElementById('apExam');
+  const examHint = (subjEl && subjEl.value) || (examEl && examEl.value) || '';
+
+  window._apChatHistory.push({ role: 'user', content: message });
+  _apChatRender();
+  input.value = '';
+  if (btn) btn.disabled = true;
+  if (status) status.textContent = 'Coach thinking...';
+
+  try {
+    const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '/api';
+    const r = await fetch(apiBase + '/ap-coach/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
+      body: JSON.stringify({
+        message: message,
+        exam: examHint || undefined,
+        // Keep history bounded so payload stays small (last 10 turns)
+        history: window._apChatHistory.slice(-20),
+      }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      const errMsg = (data && data.error) ? data.error : 'Chat failed (HTTP ' + r.status + ')';
+      window._apChatHistory.push({ role: 'assistant', content: 'Sorry - ' + errMsg + (data && data._requiresUpgrade ? '\n\n[Upgrade to Coach or Consultant for unlimited chat.]' : '') });
+    } else {
+      const text = (data && (data.text || data.response || data.message || data.markdown)) || '(empty response)';
+      window._apChatHistory.push({ role: 'assistant', content: text });
+    }
+  } catch (e) {
+    window._apChatHistory.push({ role: 'assistant', content: 'Network error: ' + e.message });
+  } finally {
+    if (btn) btn.disabled = false;
+    if (status) status.textContent = '';
+    _apChatRender();
+    if (typeof loadApUsage === 'function') loadApUsage();
+  }
+}
+
+async function submitApTutor() {
+  const examEl = document.getElementById('apTutorExam');
+  const topicEl = document.getElementById('apTutorTopic');
+  const tierEl = document.getElementById('apTutorTier');
+  const btn = document.getElementById('apTutorGenerateBtn');
+  const status = document.getElementById('apTutorStatus');
+  const result = document.getElementById('apTutorResult');
+  if (!examEl || !topicEl) return;
+  const exam = examEl.value;
+  const topic = (topicEl.value || '').trim();
+  const targetTier = (tierEl && tierEl.value) ? tierEl.value : '4';
+  if (!exam) { if (status) status.textContent = 'Pick an AP exam first.'; return; }
+  if (topic.length < 3) { if (status) status.textContent = 'Describe what you are struggling with (at least a few words).'; return; }
+
+  if (btn) btn.disabled = true;
+  if (status) status.textContent = 'Generating teaching guide (this can take 30-60s)...';
+  if (result) result.innerHTML = '<div style="padding:24px; text-align:center; color:#64748b;">Wayfinder is building your teaching guide...</div>';
+
+  try {
+    const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '/api';
+    const r = await fetch(apiBase + '/ap-coach/tutor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
+      body: JSON.stringify({ exam: exam, topic: topic, targetTier: targetTier }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      const errMsg = (data && data.error) ? data.error : 'Generation failed (HTTP ' + r.status + ')';
+      if (result) {
+        result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">' + escapeHtml(errMsg) +
+          (data && data._requiresUpgrade ? '<br><br><a href="#pricing" style="color:#2563eb; font-weight:600;">View plans</a>' : '') +
+          '</div>';
+      }
+      return;
+    }
+    const md = (data && data.markdown) ? data.markdown : '';
+    if (!md) {
+      if (result) result.innerHTML = '<div style="padding:16px; background:#fef9c3; color:#713f12; border-radius:8px;">No content returned. Try rewording the topic.</div>';
+      return;
+    }
+    const wc = data.wordCount ? ('<div style="font-size:12px; color:#64748b; margin-bottom:8px;">' + data.wordCount + ' words</div>') : '';
+    const body = (typeof renderMarkdown === 'function') ? renderMarkdown(md) : escapeHtml(md).replace(/\n/g, '<br>');
+    if (result) {
+      result.innerHTML =
+        '<div class="ap-tutor-card" style="background:white; border:1px solid #e2e8f0; border-radius:12px; padding:24px; line-height:1.7;">' +
+        wc + body +
+        '</div>';
+    }
+  } catch (e) {
+    if (result) result.innerHTML = '<div style="padding:16px; background:#fee2e2; color:#991b1b; border-radius:8px;">Network error: ' + escapeHtml(e.message) + '</div>';
+  } finally {
+    if (btn) btn.disabled = false;
+    if (status) status.textContent = '';
+    if (typeof loadApUsage === 'function') loadApUsage();
+  }
+}
+
+// REVAMP V2: PATCH155 AP SPELLCHECK - check spelling on the FRQ response.
+// Calls /api/ap-coach/spellcheck (Haiku-backed, NOT credit-deducted), shows the
+// number of corrections found, and lets the user Apply/Dismiss them with one
+// click. Browser shows the dotted red underlines as the user types via the
+// textarea spellcheck="true" attribute; this button is the "fix all" companion.
+async function submitApSpellcheck() {
+  const ta = document.getElementById('apResponseInput');
+  const btn = document.getElementById('apSpellcheckBtn');
+  const out = document.getElementById('apSpellcheckResult');
+  if (!ta || !out) return;
+  const text = (ta.value || '').trim();
+  if (text.length < 2) {
+    out.style.display = 'block';
+    out.innerHTML = '<div style="padding:10px 12px; background:#fef9c3; color:#713f12; border:1px solid #fde68a; border-radius:6px; font-size:13px;">Type your response first, then check spelling.</div>';
+    return;
+  }
+  if (btn) { btn.disabled = true; btn.textContent = 'Checking...'; }
+  out.style.display = 'block';
+  out.innerHTML = '<div style="padding:10px 12px; background:#eff6ff; color:#1e3a8a; border:1px solid #bfdbfe; border-radius:6px; font-size:13px;">Scanning your response for spelling and capitalization...</div>';
+  try {
+    const apiBase = (typeof API_BASE !== 'undefined' && API_BASE) ? API_BASE : '/api';
+    const r = await fetch(apiBase + '/ap-coach/spellcheck', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + authToken },
+      body: JSON.stringify({ text: ta.value })
+    });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      out.innerHTML = '<div style="padding:10px 12px; background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; border-radius:6px; font-size:13px;">' + escapeHtml((data && data.error) || ('HTTP ' + r.status)) + '</div>';
+      return;
+    }
+    const corrections = Array.isArray(data.corrections) ? data.corrections : [];
+    if (corrections.length === 0) {
+      out.innerHTML = '<div style="padding:10px 12px; background:#f0fdf4; color:#166534; border:1px solid #86efac; border-radius:6px; font-size:13px;"><strong>All clear.</strong> No spelling or capitalization issues found.</div>';
+      return;
+    }
+    // Stash the corrected text on the result element for the apply handler
+    out.dataset.correctedText = data.correctedText || '';
+    const list = corrections.slice(0, 30).map(c =>
+      '<li style="margin-bottom:4px;"><span style="color:#dc2626; text-decoration:line-through;">' + escapeHtml(c.from) + '</span> &rarr; <span style="color:#16a34a; font-weight:600;">' + escapeHtml(c.to) + '</span></li>'
+    ).join('');
+    const more = corrections.length > 30 ? '<li style="color:#64748b; font-size:12px;">...and ' + (corrections.length - 30) + ' more</li>' : '';
+    out.innerHTML =
+      '<div style="padding:14px; background:#fff7ed; color:#7c2d12; border:1px solid #fdba74; border-radius:8px; font-size:13px;">' +
+        '<div style="font-weight:600; margin-bottom:8px;">Found ' + corrections.length + ' spelling/capitalization issue' + (corrections.length === 1 ? '' : 's') + '. Grammar and style are left alone.</div>' +
+        '<ul style="margin:0 0 12px 18px; padding:0;">' + list + more + '</ul>' +
+        '<div style="display:flex; gap:8px;">' +
+          '<button type="button" id="apSpellcheckApply" style="background:#16a34a; color:white; border:none; padding:6px 14px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer;">Apply all fixes</button>' +
+          '<button type="button" id="apSpellcheckDismiss" style="background:white; color:#475569; border:1px solid #cbd5e1; padding:6px 14px; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer;">Keep original</button>' +
+        '</div>' +
+      '</div>';
+    const applyBtn = document.getElementById('apSpellcheckApply');
+    if (applyBtn) applyBtn.addEventListener('click', () => {
+      const corrected = out.dataset.correctedText || '';
+      if (corrected && ta) {
+        ta.value = corrected;
+        const charSpan = document.getElementById('apCharCount');
+        if (charSpan) charSpan.textContent = String(corrected.length);
+      }
+      out.innerHTML = '<div style="padding:10px 12px; background:#f0fdf4; color:#166534; border:1px solid #86efac; border-radius:6px; font-size:13px;"><strong>Applied.</strong> ' + corrections.length + ' fix' + (corrections.length === 1 ? '' : 'es') + ' merged into your response.</div>';
+    });
+    const dismissBtn = document.getElementById('apSpellcheckDismiss');
+    if (dismissBtn) dismissBtn.addEventListener('click', () => {
+      out.style.display = 'none';
+      out.innerHTML = '';
+    });
+  } catch (e) {
+    out.innerHTML = '<div style="padding:10px 12px; background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; border-radius:6px; font-size:13px;">Network error: ' + escapeHtml(e.message) + '</div>';
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = 'Check spelling'; }
+  }
 }
 
 // Wire sidebar
