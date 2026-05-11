@@ -27,6 +27,53 @@ const __dirname = dirname(__filename);
 
 const client = new Anthropic();
 
+// PATCH162 AP PDF TEXT EXTRACT - lazy-load pdf-parse so PDF attachments to
+// scoreFrq become text snippets (5x cheaper tokens, sidesteps Anthropic 32mb
+// per-request cap, faster). Failures degrade gracefully:
+//   - pdf-parse not installed -> _pdfParse = false, returns null -> caller
+//     falls back to a document content block (Claude's native PDF vision).
+//   - PDF is scanned (no embedded text, <50 chars extracted) -> returns null
+//     -> caller falls back to document block.
+//   - PDF is encrypted / corrupted -> caught, returns null -> caller falls
+//     back to document block.
+let _pdfParse = null;
+async function _loadPdfParse() {
+  if (_pdfParse !== null) return _pdfParse;
+  try {
+    const mod = await import('pdf-parse');
+    _pdfParse = mod.default || mod;
+    console.log('[ApCoach] pdf-parse loaded for PDF text extraction');
+  } catch (e) {
+    _pdfParse = false;
+    console.warn('[ApCoach] pdf-parse not available (npm install pending?):', e.message);
+  }
+  return _pdfParse;
+}
+
+async function tryExtractPdfText(base64Data, nameForLog) {
+  const parser = await _loadPdfParse();
+  if (!parser) return null;
+  try {
+    const buf = Buffer.from(base64Data, 'base64');
+    // max:50 caps page count to keep extraction bounded; most FRQ reference
+    // PDFs are a few pages.
+    const result = await parser(buf, { max: 50 });
+    const text = String((result && result.text) || '').trim();
+    if (text.length < 50) {
+      console.log('[ApCoach] PDF "' + (nameForLog || 'unnamed') + '" extracted only ' + text.length + ' chars (likely scanned) -- falling back to vision');
+      return null;
+    }
+    // Cap at 200K chars to keep token budget sane even for long PDFs
+    const capped = text.slice(0, 200000);
+    console.log('[ApCoach] PDF "' + (nameForLog || 'unnamed') + '" -> ' + capped.length + ' chars text');
+    return capped;
+  } catch (e) {
+    console.warn('[ApCoach] PDF text extraction failed for "' + (nameForLog || 'unnamed') + '":', e.message);
+    return null;
+  }
+}
+
+
 const SUPPORTED_EXAMS = { // REVAMP V2: AP COACH FULL MODULE PATCH81 SUPPORTED_EXAMS — expanded to 27
   'ap-art-history':       { label: 'AP Art History', file: 'ap-art-history.md' },
   'ap-biology':           { label: 'AP Biology', file: 'ap-biology.md' },
@@ -274,11 +321,20 @@ export async function scoreFrq(exam, frqType, prompt, response, attachments, use
           source: { type: 'base64', media_type: a.mediaType, data: a.data },
         });
       } else if (a.kind === 'document' && typeof a.data === 'string' && a.data) {
-        if (_name) userContent.push({ type: 'text', text: '[' + _name + ']' });
-        userContent.push({
-          type: 'document',
-          source: { type: 'base64', media_type: 'application/pdf', data: a.data },
-        });
+        // PATCH162: try server-side text extraction first. Cuts tokens ~5x
+        // and avoids size limits entirely. Scanned PDFs fall back to vision.
+        const _extracted = await tryExtractPdfText(a.data, _name);
+        if (_extracted) {
+          const _label = _name ? ('[' + _name + ' -- extracted PDF text]') : '[PDF reference -- extracted text]';
+          userContent.push({ type: 'text', text: _label + '\n' + _extracted + '\n[end of ' + (_name || 'PDF') + ']' });
+        } else {
+          // Scanned PDF / extraction failed / pdf-parse missing -- send as native PDF block
+          if (_name) userContent.push({ type: 'text', text: '[' + _name + ']' });
+          userContent.push({
+            type: 'document',
+            source: { type: 'base64', media_type: 'application/pdf', data: a.data },
+          });
+        }
       } else if (a.kind === 'text' && typeof a.text === 'string' && a.text) {
         const label = _name ? '[' + _name + ']' : '[reference snippet]';
         userContent.push({ type: 'text', text: label + '\n' + a.text + '\n[end of ' + (_name || 'snippet') + ']' });
