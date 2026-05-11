@@ -1670,3 +1670,41 @@ Touched 1 backend data file (`backend/data/scraped/programs.json`) — JSON-only
 - **8th consecutive clean nightly** (post-Rule-2 fix from 5/6); this run's single LOW finding is data hygiene, not code.
 - **NEW high-yield audit move added** (URL hygiene scan): runs in <1s per module, cross-references multi-http / whitespace-in-URL / `OR`-separator / `new URL()` parse-fail. Caught a bug invisible to the existing Rule 1 / Rule 2 residue checks because the URL was structurally malformed (couldn't even be parsed). Adding to nightly rotation.
 - Programs Rule-2 sameUrl moved 72 → 73 because the becari fix made `url === _source` (was previously the parse-fail outlier). Net Rule-2 total stayed at 82.
+
+---
+
+## 2026-05-11 — Nightly audit (cost, runtime, data, frontend, auth-surface)
+
+### Status: CLEAN — 9th consecutive clean nightly
+
+### Areas covered
+- Cost & resource leaks
+- Backend runtime (server boot + data-health)
+- Data integrity (URL hygiene + Rule 1/2 residue + metadata sync)
+- Frontend & Build (app.js syntax + sidebar/David refs intact)
+- Auth surface (premium routes, CORS, Stripe sig)
+
+### Findings
+- **Cost**: SLM keep-alive correctly avoids updating `lastWarmAt` on pings (slm.js:871-872). Anon daily limit gated via `checkAnonDailyLimit` (chat.js:329). Rate limiter passes tighter `5/min` for unauthed users (chat.js:347). 4 setIntervals enumerated (slm.js:840 bounded by MAX_IDLE, scheduler.js:184 + scraper-scheduler.js:258 + user-backup.js:262 all production daemons with clearInterval paths; frontend app.js:662/5852/9906/10016 polling timers bounded by element-presence). NO LEAKS.
+- **Runtime**: `timeout 12 node ./server.js` with dev env boots clean. Data-health logs: `internships: 1606 entries (981 verified) — clean / scholarships: 1043 (80) clean / programs: 1416 (672) clean`. ApCoach loads 9 per-exam + 220-unit brain. intl-brain loads korea. SIGTERM graceful shutdown.
+- **Data**:
+  - Metadata sync: 1606/1043/1416/275, all match array.length. OK.
+  - URL hygiene scan (multi-https / whitespace / OR-separator / parse-fail): **0 violations** across all 4 modules. The new 5/10 scan continues to be clean.
+  - Rule 1 (bare-domain `_source` on verified): **0** across all 4 modules.
+  - Rule 2 residue:
+    - programs: sameUrl 72→73 (+1, expected data-refresh creep), diffHost 5 (steady), **NEW** trailingSlash sub-bucket 4 (PBS Kids / WWOOF / MATHCOUNTS / Science Olympiad — `_source` has `/`, `url` doesn't; functionally identical homepage citations)
+    - internships: sameUrl 94 (steady)
+    - scholarships: sameUrl 12 (steady)
+    - volunteer: rule2_other 27 (was 26, +1 — homepage-only `_source` with no `url` field; expected, data-refresh added 1 volunteer entry)
+  - Net Rule-2 trajectory benign; programs residue 81→82 over 24h, still comfortably under the 230-by-6/1 informal threshold.
+- **Frontend**: `node -c frontend/src/app.js` clean.
+- **Auth**: Essays, ap-coach, financial-aid all gate via `verifyToken` (5+ entry points each verified). CORS locked to ALLOWED_ORIGINS (server.js:142 with no wildcard fallback). Stripe webhook constructs event with signature in prod (`stripe.js:290`).
+
+### Fixes applied
+None. No code changes pushed. Lessons + AUDIT_LOG only.
+
+### Notable
+- **9th consecutive clean nightly**.
+- **New observation (programs trailing-slash sub-bucket)**: 4 entries (PBS Kids, WWOOF, MATHCOUNTS, Science Olympiad) where `_source` ends in `/` and `url` doesn't. String compare treats them as different, but they're functionally the same homepage citation. Cosmetic — sameUrl-equivalent for advisory purposes. Could be normalized in `normalizeEntry` by stripping trailing slash before equality check (~2 lines), but deferred — not user-impacting, not nightly-fixable territory.
+- Volunteer "no `url` field at all" pattern continues at +1/day (26→27). Still tracking with the 2026-05-05 DATA QUALITY FLAG.
+- Calibration well-tuned; no rotation changes needed.
