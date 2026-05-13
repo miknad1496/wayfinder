@@ -245,10 +245,12 @@ router.post('/discover-local', async (req, res) => {
     return res.status(503).json({ error: 'Discover-local is unavailable (LLM not configured).' });
   }
 
-  // Optional auth — non-logged-in users can still use this with a hard cap
+  // 2026-05-13 nightly-audit fix: require auth. The previous "optional auth with a hard cap" pattern had no actual daily cap,
+  // exposing Haiku calls to unauthenticated abuse (apiLimiter is per-minute-IP only; ~$432/day per IP worst case).
   const token = req.headers.authorization?.replace('Bearer ', '');
-  let user = null;
-  if (token) user = await verifyToken(token).catch(() => null);
+  if (!token) return res.status(401).json({ error: 'Sign in to use Discover Local — keeps costs sustainable.' });
+  const user = await verifyToken(token).catch(() => null);
+  if (!user) return res.status(401).json({ error: 'Invalid or expired session — sign in again to use Discover Local.' });
 
   const {
     state = '',

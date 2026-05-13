@@ -1736,3 +1736,31 @@ None. No code changes pushed. Lessons + AUDIT_LOG only.
 - **programs Rule-2 unchanged from yesterday**: sameUrl 73 (was 73), diffHost 5 (was 5), trailingSlash 4 (was 4). No new creep.
 - **volunteer rule2_other unchanged at 27**: bucket counts entries where `_source` is a full-URL homepage but `url` field is absent / non-http. Same population as 2026-05-11.
 - Calibration well-tuned; no rotation changes needed for tonight.
+
+## 2026-05-13 — Nightly audit (cost+runtime+data+auth-surface+API-input-validation)
+**Status**: ONE FIX — backend/routes/volunteer.js /discover-local now requires auth (was unauthenticated; ~$432/day per IP worst-case Haiku abuse).
+
+### Areas covered (per 2026-05-12 calibration: cost+runtime+data nightly, API surface promoted back to twice-weekly after ~3-week dormancy, auth-surface twice-weekly slot)
+- **Cost & resource leaks**: SLM keep-alive `lastWarmAt` bug — confirmed NOT regressed (slm.js:871-872 comment + stop condition at 842 hold). Anonymous chat cap (`checkAnonDailyLimit`) invoked at chat.js:329. Per-user rate limiter: auth 30/min, anon 5/min (chat.js:347). 4 backend setIntervals (user-backup, scheduler, scraper-scheduler, slm keep-alive) — all bounded.
+- **Backend runtime**: Server boots clean in 12s. Data-health: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified). AP coach knowledge: brain 41919 bytes + 9 per-exam + 220 per-unit brains across 37 exams. intl-brain loaded korea. No uncaught rejections, no init errors.
+- **Data integrity**: All 4 modules — metadata.totalCount === array.length. Rule 1 (bare-domain `_source`): 0 across all modules. Rule 2 buckets:
+  - internships: sameUrl=94 (back from yesterday's reported 99 — confirms 5/12's scan-logic-divergence hypothesis), diffHost=0, trailingSlash=0
+  - scholarships: sameUrl=12 steady, diffHost=0, trailingSlash=0
+  - programs: sameUrl=77 (was 73 last night, +4), diffHost=5 steady, trailingSlash=0 (was 4 — folded into sameUrl by Node URL pathname normalization where `https://x/` → `/` matches `https://x` → `/`). Net 82=82 STEADY.
+  - volunteer: noUrl=27 steady (rule2_other equivalent — `_source` is homepage, `url` absent).
+  URL hygiene scan (multi-https / OR-separator / whitespace / parse-fail): 0 violations across all four modules.
+- **Auth surface**: essays/ap-coach/financial-aid premium routes — `verifyToken` returning 401 on null. CORS via ALLOWED_ORIGINS callback (no wildcard). Stripe webhook: production-mode signature check at stripe.js:289 + explicit reject if STRIPE_WEBHOOK_SECRET missing.
+- **API surface input-validation deep sweep** (last full sweep 2026-04-25, ~3 weeks dormant): Walked all 22 route files. Most routes have clean validation patterns (typeof checks, Array.isArray guards, status 400 on malformed, length caps). One real finding (see Fixes).
+
+### Fixes applied
+- **volunteer.js POST /discover-local**: was unauthenticated despite code comment claiming "non-logged-in users can still use this with a hard cap". apiLimiter provides 30/min/IP but NO daily cap. Each call burns ~2500 max_tokens of Haiku (~$0.01/call). Worst-case single-IP daily burn: 30 × 60 × 24 × $0.01 ≈ $432/day. Botnet exploit could 10x that. Fix: 4-line patch — require auth, return 401 on missing/invalid token. apiLimiter (30/min/IP) + JWT-validated identity now suffices. Severity: MEDIUM (theoretical exploit; no known abuse; closes a "promise vs reality" gap that was inviting accidental discovery).
+
+### Validation gate (per task spec)
+- Validators (`/tmp/validate-changes.js`, `/tmp/validate-runtime.js`) NOT in repo at the documented raw URL — 4th nightly to hit this (OPEN QUESTION since 2026-05-06). Synthesized equivalent: Layer 1 = `node --check backend/routes/volunteer.js` (PASS); Layer 2 = full server boot smoke test post-fix (clean, all 3 data-health entries pass). Backend-only change, no HTML touched → Layer 2 (JSDOM) not strictly required anyway.
+
+### Notable
+- **First non-clean nightly in 10 nights** (last fix was 5/10's malformed-URL in programs.json).
+- The /discover-local optional-auth pattern dates back to volunteer module launch (batches 138-145, April 2026). Prior nightly audits' "Auth surface" rotation focused on premium routes (essays/ap-coach/financial-aid) and didn't reach volunteer until tonight's API-surface deep sweep slot picked it up.
+- This validates the 2026-05-12 calibration call to "promote API surface input-validation back to twice-weekly" — exactly the move that surfaced this. ~3 weeks of dormancy + a route added during that window = real find.
+- Programs Rule-2 sub-buckets re-bucketed tonight purely due to URL parser normalization (Node `new URL('x/').pathname === new URL('x').pathname === '/'`). Net residue 82=82 STEADY night-over-night.
+- internships sameUrl 94 (back from 99) is internal-consistent: tonight's scan uses identical Node URL parser logic; the 99 was almost certainly transient query-string-inclusion in an earlier scan.
