@@ -1708,3 +1708,31 @@ None. No code changes pushed. Lessons + AUDIT_LOG only.
 - **New observation (programs trailing-slash sub-bucket)**: 4 entries (PBS Kids, WWOOF, MATHCOUNTS, Science Olympiad) where `_source` ends in `/` and `url` doesn't. String compare treats them as different, but they're functionally the same homepage citation. Cosmetic — sameUrl-equivalent for advisory purposes. Could be normalized in `normalizeEntry` by stripping trailing slash before equality check (~2 lines), but deferred — not user-impacting, not nightly-fixable territory.
 - Volunteer "no `url` field at all" pattern continues at +1/day (26→27). Still tracking with the 2026-05-05 DATA QUALITY FLAG.
 - Calibration well-tuned; no rotation changes needed.
+
+---
+
+## 2026-05-12 — Clean — 10th consecutive
+
+Focus: Cost & Resource Leaks, Backend Runtime, Data Integrity, Frontend, Auth Surface.
+
+### Areas checked
+- **Cost & resource leaks**: SLM keep-alive `lastWarmAt` bug — confirmed NOT regressed. Pings still gated with explicit "Do NOT update lastWarmAt here" comment at slm.js:871-872. Stop condition at 842 fires when idle. Anonymous chat cap: `checkAnonDailyLimit` invoked at chat.js:329. Per-user rate limiter: authenticated 30/min, anonymous 5/min (chat.js:347). 4 setIntervals total backend (user-backup, scheduler, scraper-scheduler, slm keep-alive) — all bounded or intentional daemon. Expensive-route rate limiter on essays/ap-coach/financial-aid SAI endpoints.
+- **Backend runtime**: Server boots clean in 12s. Data-health pass: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified). intl-brain loaded 1 country (korea). AP coach knowledge: brain 41919 bytes + 9 per-exam files + 220 per-unit brains across 37 exams. No uncaught rejections, no init errors.
+- **Data integrity**: All 4 modules — `metadata.totalCount === array.length`. Rule 1 (bare-domain `_source`): 0 across all modules. Rule 2 buckets:
+  - internships: sameUrl=99 (was 94 — see Notable), diffHost=0, trailingSlash=0, other=0
+  - scholarships: sameUrl=12 steady, diffHost=0, trailingSlash=0, other=0
+  - programs: sameUrl=73 (was 73 last night — steady), diffHost=5 steady, trailingSlash=4 steady, other=0
+  - volunteer: sameUrl=0, diffHost=0, trailingSlash=0, other=27 (was 27 last night — steady)
+  URL hygiene scan (multi-https / OR-separator / whitespace / parse-fail): 0 violations across all four modules.
+- **Frontend & build**: `node -c frontend/src/app.js` clean. Inline `<script>` blocks in `<head>`: 3 total, 0 with risky `document.body` references outside `DOMContentLoaded` guard. Route cross-reference: 3 internal `*.html` links in index.html (privacy / terms / forgot-password) — all resolve to a real frontend file AND a real server route.
+- **Auth surface**: Essays, ap-coach, financial-aid all gate via `verifyToken` returning 401 on null. CORS allowlist via ALLOWED_ORIGINS callback (no wildcard fallback). Stripe webhook returns 500 in production if `STRIPE_WEBHOOK_SECRET` missing — won't silently accept unsigned events.
+
+### Fixes applied
+None. No code changes pushed. Lessons + AUDIT_LOG only.
+
+### Notable
+- **10th consecutive clean nightly**.
+- **internships Rule-2 sameUrl reported 99 vs last documented 94** (run history 2026-05-09). Investigation: top recent entries are April-dated (4/9, 4/12, 4/23) — NOT new data-refresh adds since 5/9. Likely scan-logic delta between nights (the empty-pathname matcher I'm using tonight may also count `pathname === "/"` with trailing-slash; previous scans may have excluded query-only paths like `https://www.dallasbar.org/?pg=...` where pathname is `/`). Net 99 is well below 230 informal threshold. Flagging for cross-check in future audits.
+- **programs Rule-2 unchanged from yesterday**: sameUrl 73 (was 73), diffHost 5 (was 5), trailingSlash 4 (was 4). No new creep.
+- **volunteer rule2_other unchanged at 27**: bucket counts entries where `_source` is a full-URL homepage but `url` field is absent / non-http. Same population as 2026-05-11.
+- Calibration well-tuned; no rotation changes needed for tonight.
