@@ -250,7 +250,10 @@ export async function coachChat(message, session, perExamKnowledge, options = {}
     const text = (resp.content?.[0]?.text || '').trim();
     const tokensUsed = (resp.usage?.input_tokens || 0) + (resp.usage?.output_tokens || 0);
     const latencyMs = Date.now() - startTime;
-    return { success: true, text, tokensUsed, latencyMs, scope, model };
+    // PATCH164: was 'scope' (undeclared since patch 156 renamed it to 'detected').
+    // Caused coachChat to return success:false with error 'scope is not defined'
+    // on every Coach Chat call. Same TDZ/undef class as patch 159.
+    return { success: true, text, tokensUsed, latencyMs, scope: detected, model };
   } catch (err) {
     return { success: false, error: err.message };
   }
