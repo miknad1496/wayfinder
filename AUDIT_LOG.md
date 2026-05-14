@@ -1764,3 +1764,32 @@ None. No code changes pushed. Lessons + AUDIT_LOG only.
 - This validates the 2026-05-12 calibration call to "promote API surface input-validation back to twice-weekly" — exactly the move that surfaced this. ~3 weeks of dormancy + a route added during that window = real find.
 - Programs Rule-2 sub-buckets re-bucketed tonight purely due to URL parser normalization (Node `new URL('x/').pathname === new URL('x').pathname === '/'`). Net residue 82=82 STEADY night-over-night.
 - internships sameUrl 94 (back from 99) is internal-consistent: tonight's scan uses identical Node URL parser logic; the 99 was almost certainly transient query-string-inclusion in an earlier scan.
+
+## 2026-05-14 — Nightly audit (cost+runtime+data+auth-surface+frontend)
+**Status**: CLEAN — no findings, no code changes pushed. Lessons + AUDIT_LOG only.
+
+### Areas covered (per 2026-05-13 calibration: API-surface promoted to twice-weekly was just exercised; tonight rotates in frontend & build instead)
+- **Cost & resource leaks**: SLM keep-alive `lastWarmAt` bug — confirmed NOT regressed (slm.js:871-872 comment + stop condition at 842 hold; 689/795/812 are the legitimate update sites). Anonymous chat cap (`checkAnonDailyLimit`) invoked at chat.js:329. Per-user rate limiter via `checkRateLimit(identifier, maxRequests)` at chat.js:86 — auth 30/min, anon 5/min. 4 backend setIntervals (user-backup, scheduler, scraper-scheduler, slm keep-alive) — all bounded or intentional daemon. `expensiveLimiter` mounted on essays/review, ap-coach/score, financial-aid/my-strategy, financial-aid/calculate-sai (server.js:195-207).
+- **Backend runtime**: Server boots clean in <12s with test env. Data-health: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified). AP coach knowledge: brain 41919 bytes + 9 per-exam files + 220 per-unit brains across 37 exams. intl-brain loaded korea. No uncaught rejections, no init errors. Graceful SIGTERM shutdown + final backup completed.
+- **Data integrity**: All 4 modules — metadata.totalCount === array.length (1606/1043/1416/275). Rule 1 (bare-domain `_source`): 0 across all modules. Rule 2 buckets:
+  - internships: sameUrl=94 (steady from 5/13), diffHost=0, trailingSlash=0
+  - scholarships: sameUrl=12 steady, diffHost=0, trailingSlash=0
+  - programs: sameUrl=77 (steady from 5/13), diffHost=5 steady, trailingSlash=0 (folded), other=0 — net 82=82 STEADY
+  - volunteer: sameUrl=0, diffHost=0, noUrl=27 steady (rule2_other equivalent)
+  URL hygiene scan (multi-https / OR-separator / whitespace / parse-fail): 0 violations across all four modules.
+- **Auth surface**: essays/ap-coach/financial-aid/admin premium routes — `verifyToken` returning 401 on null user. volunteer.js /discover-local now properly gates with 401 (5/13 fix holding at lines 251-253). CORS via ALLOWED_ORIGINS allowlist callback (no wildcard). Stripe webhook: production-mode signature check at stripe.js:289 + explicit 500 reject if STRIPE_WEBHOOK_SECRET missing (line 296). Idempotency mark-before-process at line 313.
+- **Frontend & build**: `node -c frontend/src/app.js` PASS. 3 inline `<script>` blocks in `<head>` — 0 with risky `document.body` references outside DOMContentLoaded guard. Route cross-reference: `/privacy.html`, `/terms.html`, `/forgot-password.html` — all 3 have files in `frontend/` AND explicit server.js routes (no catchall-wrong-content trap).
+
+### Fixes applied
+None. No code changes pushed.
+
+### Validation gate
+- Validators (`/tmp/validate-changes.js`, `/tmp/validate-runtime.js`) NOT in repo at documented raw URL — 5th nightly to hit this (OPEN QUESTION since 2026-05-06; not blocking since no code changes tonight).
+- Lessons + AUDIT_LOG only — append-only markdown, exempt from the validation gate per task spec.
+
+### Notable
+- **11th clean nightly out of last 12** (only 5/13 had a fix).
+- Programs Rule-2 net residue 82 STEADY for 3 nights running (5/12, 5/13, 5/14). 230-by-6/1 informal threshold comfortably out of reach.
+- No commits to backend/routes/ since last night's audit-fix commit — nothing new to inspect on API surface.
+- The 24h delta confirms tonight's calibration call to rotate in frontend & build instead of re-running API surface deep sweep — there was nothing to find on the API side.
+- Tonight's run validates the broader calibration: 3-way nightly (cost+runtime+data) + one rotating slot keeps finding issues at a healthy rate (1 find in last 12 nights — the 5/13 MEDIUM /discover-local fix) without ever hitting too-many-false-positives.
