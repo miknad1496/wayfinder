@@ -1793,3 +1793,47 @@ None. No code changes pushed.
 - No commits to backend/routes/ since last night's audit-fix commit — nothing new to inspect on API surface.
 - The 24h delta confirms tonight's calibration call to rotate in frontend & build instead of re-running API surface deep sweep — there was nothing to find on the API side.
 - Tonight's run validates the broader calibration: 3-way nightly (cost+runtime+data) + one rotating slot keeps finding issues at a healthy rate (1 find in last 12 nights — the 5/13 MEDIUM /discover-local fix) without ever hitting too-many-false-positives.
+
+
+---
+
+## 2026-05-15 — Nightly audit (LOW fix)
+
+### Areas covered (rotating slot: AP Coach module — patches 162/163/164 hot in last week, follows 5/14 "freshly-changed module audit" calibration)
+- **Cost & resource leaks**: SLM keep-alive `lastWarmAt` bug — confirmed NOT regressed (slm.js:842 stop condition + 871-872 comment block hold; 689/795/812 are legitimate update sites). Anonymous chat cap (`checkAnonDailyLimit`) invoked at chat.js:329; MAX_TRACKED_IPS=50000 ceiling holds. 4 backend setIntervals (user-backup with `.unref()` + stop hook, scheduler hourly daemon, scraper-scheduler 6h daemon, slm keep-alive with idle-cutoff self-clear at 842) — all bounded or intentional daemon. `expensiveLimiter` (3/min/IP) mounted on essays/review, ap-coach/score, financial-aid/my-strategy, financial-aid/calculate-sai. Essay reviewer model defaults to claude-opus-4-6 via `CLAUDE_MODEL_ENGINE || CLAUDE_MODEL`; AP coach scorer same pattern with claude-opus-4-7 default; AP chat path uses claude-haiku-4-5-20251001 (cheap). All defaults aligned with documented monetization (paid features only).
+- **Backend runtime**: Server boots clean in <12s with test env (pre-fix AND post-fix). Data-health: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified), volunteer 275. AP coach knowledge: brain 41919 bytes + 9 per-exam files + 220 per-unit brains across 37 exams. intl-brain loaded korea. No uncaught rejections, no init errors. Graceful SIGTERM shutdown + final backup completed.
+- **Data integrity**: All 4 modules — metadata.totalCount === array.length (1606/1043/1416/275). Rule 1 (bare-domain `_source`): 0 across all modules. Rule 2 buckets:
+  - internships: sameUrl=94 steady (4 nights running), diffHost=0
+  - scholarships: sameUrl=12 steady, diffHost=0
+  - programs: sameUrl=77 steady, diffHost=5 steady — net 82=82=82=82 STEADY for 4 consecutive nights (5/12, 5/13, 5/14, 5/15)
+  - volunteer: sameUrl=0, diffHost=0, noUrl=27 steady (rule2_other)
+  URL hygiene scan (multi-https / OR-separator / whitespace / parse-fail): 0 violations across all four modules. Duplicate scan via `canonicalKey()` (internships/scholarships/programs) + hand-rolled `(name|organization)` (volunteer): 0 dupes across all four. Spot-check of 3 random verified entries per module: all `_source` URLs resolve to substantive program pages, no homepage citations among the spot-checked entries.
+- **AP Coach module (rotating slot — HIGH-leverage given patches 161-164 last week)**: full route file audit (`backend/routes/ap-coach.js`, 1100+ lines). Found one shadowed-route bug, fixed. Details below.
+
+### Fixes applied
+**Fix #1 (LOW — dead code, no user-facing impact) — duplicate `router.get('/usage')`**
+
+`backend/routes/ap-coach.js` registered `router.get('/usage', ...)` TWICE:
+- **Line 58 (PATCH80, 2026-05-03)**: handler that calls `checkApCoachUsage(token)` returning `{ allowed, tier, remainingThisMonth, monthlyCap, trialUsed, unlimited }`.
+- **Line 752 (PATCH81, 2026-05-03, same day)**: handler that calls `getApCoachUsageDetails(token)` returning the unified chat/frq/tutor schema `{ tier, unlimited, chatRemaining, frqRemaining, tutorRemaining, chatCap, frqCap, tutorCap, frqTrialAvailable }`.
+
+Express matches the first-registered route. The PATCH81 handler at line 752 was unreachable dead code. PATCH81's commit message said "(replaces /credits + /usage with combined info)" but never removed the legacy handler — exactly the **"rename-half" anti-pattern** named in ARCHITECTURE.md (patch 165, the docs commit from this morning).
+
+Frontend impact analysis: `frontend/src/app.js`'s `loadApUsage()` calls `/api/ap-coach/usage` and `renderApUsageStatus()` reads `data.tier`, `data.remainingThisMonth`, `data.monthlyCap`, `data.trialUsed`, `data.unlimited` — all PATCH80 schema fields. Zero references in frontend to `chatRemaining` / `tutorRemaining` / `frqRemaining`. So the LEGACY handler is what the frontend actually wants; the PATCH81 handler was dead code that wouldn't have rendered correctly even if it were the one Express picked. Behavior-preserving fix: delete the dead PATCH81 block, keep the legacy handler. `getApCoachUsageDetails` stays imported (cheap) so a future frontend migration can flip to it. Marker `REVAMP V2: AP COACH DEDUP /usage NIGHTLY 2026-05-15`.
+
+**Why this survived from 2026-05-03 to tonight (12 days, ~85 patches)**: nothing currently calls the dead route, frontend gets the shape it expects from the legacy handler, no runtime exception thrown. Pure silent dead code. Caught by a 5-line shell sort/uniq over `router.get('/...')` registrations — adding that to the EFFECTIVE PATTERNS list.
+
+### Validation gate
+- Validators (`/tmp/validate-changes.js`, `/tmp/validate-runtime.js`) NOT in repo at documented raw URL — 6th nightly to hit this (still open since 2026-05-06).
+- Synthesized equivalent evidence for backend-only change:
+  - **Layer 1 (node -c)**: PASS on patched `backend/routes/ap-coach.js`.
+  - **Layer 5 (backend boot smoke)**: PASS — server boots in <12s, AP coach knowledge loads, no init errors, graceful shutdown.
+  - **Layer 6 (ESLint no-undef / no-use-before-define)**: PASS — `npx eslint --config <inline>` on patched file: 0 errors. Catches the patch-159 TDZ / patch-148 missing-arg class statically.
+  - Layer 2/3 not applicable: backend-only change, no HTML / inline scripts / route-xref affected.
+
+### Notable
+- **12th find in last 13 nights** (still healthy density — 5/13 MEDIUM volunteer cap, tonight LOW AP-coach dead code).
+- **5/14 rotation-calibration validated**: "freshly-changed module audit" caught a real shadow-route bug. The hot module in the last 7 days (AP Coach: patches 154/155/156/157/158/159/160/161/162/163/164) had accumulated a routing dup from the PATCH80→PATCH81 same-day rapid iteration that no prior nightly had flagged.
+- **5/13 anti-pattern banned in ARCHITECTURE.md (patch 165 yesterday) seen in the wild today**: "rename-half" — adding a new function/route alongside the old one and forgetting to remove the old one. Patch 165 named it; tonight found another instance. Pattern: any `_replaces_` or `_supersedes_` comment in code is a tripwire for this.
+- Programs Rule-2 net residue 82 STEADY for 4 nights running (5/12, 5/13, 5/14, 5/15). 230-by-6/1 informal threshold safely out of reach (+0/day current trajectory).
+- AP Coach module overall: all premium endpoints (`/score`, `/chat`, `/tutor`, `/spellcheck`, `/profile`, `/credits`, `/history`, `/score/:id`, `/guides`, `/guide/:exam`, `/guide/preview-reset`, `/guide/preview-select`) properly gate with `verifyToken` 401 on null. `/exams` and `/frq-types` are open but return only static metadata (no model call) — fine. `/schedule` is intentionally public per its inline comment.

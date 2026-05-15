@@ -748,15 +748,11 @@ router.post('/guide/preview-select', async (req, res) => {
 
 // ─── REVAMP V2: AP COACH FULL MODULE PATCH81 routes — new endpoints for full AP Coach module ───
 
-// Tier-aware usage info (replaces /credits + /usage with combined info)
-router.get('/usage', async (req, res) => {
-  try {
-    const token = req.headers.authorization?.replace('Bearer ', '');
-    if (!token) return res.status(401).json({ error: 'Not authenticated' });
-    const usage = await getApCoachUsageDetails(token);
-    res.json(usage);
-  } catch (err) { console.error('AP usage err:', err); res.status(500).json({ error: 'Internal error' }); }
-});
+// REVAMP V2: AP COACH DEDUP /usage NIGHTLY 2026-05-15 -- removed PATCH81's second
+// router.get('/usage'). Was unreachable: Express matches the PATCH80 handler at line ~58 first.
+// Frontend (loadApUsage) reads the PATCH80 schema (tier/remainingThisMonth/monthlyCap/trialUsed/unlimited)
+// which checkApCoachUsage still returns, so behavior is unchanged. getApCoachUsageDetails kept in
+// import list -- ready for a future frontend migration to the unified chat/frq/tutor schema.
 
 // AP exam schedule (public; no auth needed)
 let _apScheduleCache = null;
