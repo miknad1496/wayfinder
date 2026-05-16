@@ -1837,3 +1837,65 @@ Frontend impact analysis: `frontend/src/app.js`'s `loadApUsage()` calls `/api/ap
 - **5/13 anti-pattern banned in ARCHITECTURE.md (patch 165 yesterday) seen in the wild today**: "rename-half" — adding a new function/route alongside the old one and forgetting to remove the old one. Patch 165 named it; tonight found another instance. Pattern: any `_replaces_` or `_supersedes_` comment in code is a tripwire for this.
 - Programs Rule-2 net residue 82 STEADY for 4 nights running (5/12, 5/13, 5/14, 5/15). 230-by-6/1 informal threshold safely out of reach (+0/day current trajectory).
 - AP Coach module overall: all premium endpoints (`/score`, `/chat`, `/tutor`, `/spellcheck`, `/profile`, `/credits`, `/history`, `/score/:id`, `/guides`, `/guide/:exam`, `/guide/preview-reset`, `/guide/preview-select`) properly gate with `verifyToken` 401 on null. `/exams` and `/frq-types` are open but return only static metadata (no model call) — fine. `/schedule` is intentionally public per its inline comment.
+
+
+---
+
+## 2026-05-16 Nightly Audit — CLEAN
+
+### Focus
+- Cost & resource leaks (nightly)
+- Backend runtime boot (nightly)
+- Data integrity (nightly)
+- Essay pipeline (rotated in — last find 4/26, 20 nights dormant)
+- Frontend & freshly-changed app.js (5 commits in last 7 days)
+
+### Findings
+**None.** 12th clean nightly in last 14 (5/13 + 5/15 had fixes).
+
+### Detail
+
+**Cost & resource leaks** — clean.
+- SLM keep-alive (slm.js:840-871) does NOT update `lastWarmAt` on ping (line 871 inline comment confirms the discipline; idle bound at line 842).
+- Anonymous chat cap (`checkAnonDailyLimit`, routes/chat.js:329) enforced before any Claude call.
+- 4 backend setIntervals — all bounded or intentional daemon: `user-backup` (clearable), `scheduler` (hourly reminder daemon, intentional), `scraper-scheduler` (clearable), `slm` keep-alive (self-stops via MAX_IDLE bound, line 842).
+- Rate limits sane: `apiLimiter` 30/min, `chatLimiter` 15/min, `authLimiter` 10/15min, `adminLimiter` 5/min, `expensiveLimiter` 3/min (essays + AP score + financial-aid). CORS allowlist locked (no wildcard).
+- Claude model defaults: Haiku in 9 routes (volunteer, programs, summer-camps, scholarships, internships, etc.), Opus only behind credit gates (essay reviewer, AP score, head-consultant supplement). No surprise opus usage.
+
+**Backend runtime boot** — clean.
+- `timeout 12 node ./server.js` with test env: clean boot, no thrown errors.
+- Data-health: internships 1606 (981 verified), scholarships 1043 (80 verified), programs 1416 (672 verified) — all `clean`.
+- AP coach knowledge loaded: brain 41919 bytes, 9 per-exam files, 220 per-unit brains across 37 exams.
+- intl-brain: 1 country (korea) loaded.
+
+**Data integrity** — clean.
+- Metadata count parity: OK across all 4 modules (no drift).
+- Rule-1 (bare-domain `_source`): 0 violations all modules — `normalizeEntry` 5/3 fix still holding.
+- Rule-2 residue: programs sameUrl=77, diffHost=5 (net 82 **STEADY for 5 consecutive nights** 5/12-5/16); internships sameUrl=94 STEADY; scholarships sameUrl=12 STEADY; volunteer=0 (no `url` field, tracked separately as `noUrl` bucket in prior nights).
+- URL hygiene scan (multi-https / OR-separator / whitespace / parse-fail): 0 violations all modules.
+- 230-by-6/1 informal threshold for programs Rule-2 residue: safely out of reach (+0/day current trajectory).
+
+**Essay pipeline** — clean (rotated in after 20 nights dormant).
+- All 7 endpoints (`/credits`, `/types`, `/prompts`, `/review`, `/history`, `/drafts/:type`, `/review/:id`) require `verifyToken` → 401 on null (verified at lines 111, 148, 293, 345, 394).
+- `canAccess(user, 'essay_reviewer')` gates both `/credits` and `/review`.
+- **4/26 fix holding**: `creditDeducted` flag pattern intact in `/review` handler — refund only fires when `creditDeducted === true` (line 130 outer catch), preventing the unwarranted-refund bug class.
+- Deep knowledge inject (`loadDeepKnowledge` + `buildKnowledgeInjection`) still wired at essay-reviewer.js lines 111, 192, 549, 552. All 16 essay-deep files in `backend/knowledge-base/distilled/essay-deep/` still present.
+
+**Frontend & app.js freshly-changed** — clean.
+- `node -c frontend/src/app.js` PASS.
+- Last 5 app.js commits (patches 154, 155, 156, 158, 160) all AP Coach iteration. Yesterday's 5/15 audit deep-swept this module and fixed the `/usage` dup. No NEW commits to `frontend/src/app.js` since (the 394fe6b audit-fix only touched `backend/routes/ap-coach.js`).
+- Head-script body trap scan: 3 inline head `<script>` blocks — 2 with zero body-touching tokens, 1 with `document.body` references but properly DOMContentLoaded-deferred (`_boot()` pattern from the 2026-05-04 patch 129 fix).
+- Layer-3 route xref: 3 internal HTML links (forgot-password.html, privacy.html, terms.html) — all resolve to a file on disk AND a server route in server.js. No catchall-wrong-content trap.
+- Shadowed-route scan across 5 hot route files (ap-coach, essays, volunteer, chat, financial-aid): 0 duplicates — yesterday's `/usage` fix holding, no new dups introduced.
+- 5/13 fix verification: `/api/volunteer/discover-local` still requires auth (lines 250-253) — 2026-05-13 fix-comment present, returns 401 on missing/invalid token.
+- 5/15 fix verification: `/api/ap-coach/usage` registered exactly once at line 58 (PATCH80 schema). PATCH81 dead block removed cleanly.
+- Patch 155 new `/api/ap-coach/spellcheck`: properly auth-gated (lines 877-878), text length capped at 14,000 chars (line 882). Comment-promise matches runtime enforcement.
+
+### Validation gate
+- Markdown-only commit (AUDIT_LOG.md + lessons file). Layers 1-6 not required per gate's append-only exemption.
+
+### Notable
+- **5/14 rotation-calibration continues to perform**: "freshly-changed area + zero new commits since last sweep = move slot elsewhere" — tonight rotated essay-pipeline in (20 nights dormant) instead of re-sweeping AP Coach (already deep-swept yesterday).
+- **20-night-dormant essay-pipeline rotation** found nothing — confirms the 4/26 `creditDeducted` flag fix is permanent. Calibration: keep essay-pipeline at weekly-to-twice-weekly rotation; the post-4/26 architectural fix made the previous high-risk surface low-risk.
+- **Programs Rule-2 net residue 82 STEADY for 5 consecutive nights** (5/12-5/16) — `normalizeEntry` Rule-1+Rule-2 architecture continues to absorb new verified entries from `wayfinder-data-refresh` task without producing new residue. Holding firm.
+- AP Coach module post-yesterday's audit: clean. The shadowed-route scan added to nightly EFFECTIVE PATTERNS yesterday is now permanent (zero-cost, catches a real bug class).
