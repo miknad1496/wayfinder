@@ -24,12 +24,16 @@
 - **2026-05-09:** "Mercer Island" appeared 3 times this run — once in a parent comparing 3 districts ("Compare Bellevue HS, Mercer Island HS, and Newport HS"), once as a recommendation in a Korean parent's school-discovery query, and once in a school-finder assistant response listing it among options. All three were TOPIC mentions, not user-identifier mentions. Held to the false-negative-bias rule and did NOT redact. The earlier instinct ("WA family — Mercer Island feels personal") would have over-redacted three legitimate informational discussions of a public-school district.
 - **2026-05-09:** Sentence-starter words like "Competitive," "Yes," "However," "First," "Also," matched a naive `^[A-Z][a-z]{2,15},\s` leading-vocative pattern. They are NOT first names. Auditor must always cross-check leading-vocative matches against (a) known user names, (b) school/company names ("Caltech, Harvard, Emory" all matched but are universities). Calibration: only flag leading-vocatives that match a confirmed username for the session.
 
+- **2026-05-16:** Saw a clear case of OVER-redaction (not the audit's concern but worth logging): `memory-2026-05-15.jsonl:0` response contained `Welcome to [NAME]! ... Your [NAME] Advisor is getting ready` — the upstream regex appears to have redacted the product name "Wayfinder" as if it were a user's first name. Not a PII leak (over-redaction, not under-redaction), so no patch posted per false-negative bias. But the regex team should whitelist the product name. Pattern: `redactKnownName` is binding "Wayfinder" to the user's name slot incorrectly — likely because some welcome-desk flow seeded `userName` to "Wayfinder" or the redactor's name-detection misidentified the product in the assistant opener.
+
 ## DATA QUALITY FLAGS
 
 - **2026-05-02:** Recurring assistant pattern: opening a high-effort reply with `<FirstName>, I want to be direct/honest/clear` style. Recommend regex team add a leading-vocative pattern: `^([A-Z][a-z]{2,15}),\s` checked against the session's known username before the response is persisted. Sample size: 1 leak this run, but pattern is template-y enough to recur.
 
 - **2026-05-09:** This run found 1 K-12-school-as-identifier leak. Recommend regex team add a pattern to `redactPII`: `\b(?:my (?:son|daughter|kid|child) (?:is|attends|goes to|is a \d{1,2}\w*\s+grader at)|I (?:attend|go to|study at|am at)) (the )?([A-Z][\w'\s\-]{2,40}?)(?=[,.\s])` — capture group 2 should be redacted to `[SCHOOL]` IF and ONLY IF it matches a known K-12 school name list (Lakeside, Bush, Overlake, Eastside Prep, University Prep, Annie Wright, Charles Wright, Forest Ridge, Bishop Blanchet, Holy Names, Bellevue, Newport, Interlake, Mercer Island, Issaquah, Skyline, Eastlake, Inglemoor, Roosevelt, Garfield, Ingraham, Ballard). Whitelist approach prevents over-redaction of universities and generic words. Sample size: 1 leak this run, but the pattern is straightforward enough to justify proactive coverage rather than wait for repeat instances.
 - **2026-05-09:** Volume jumped 14× over last week — 154 entries vs. 11 prior week. Real product traffic, not redactor degradation. With higher volume, the cap-of-200 may bind on a future run; flag if next 2 runs exceed 180.
+
+- **2026-05-16:** Product name "Wayfinder" being redacted as `[NAME]` in welcome-desk assistant responses. Recommend regex team explicitly exclude product/brand names from the `redactKnownName` second-pass. Suggested patch: add a hard whitelist `PRODUCT_NAMES = ['Wayfinder']` and skip these tokens before applying the known-name redaction. Sample size: 1 instance this run (out of 5 total entries), but the boilerplate welcome message is high-traffic so the pattern likely affects many real entries that simply weren't sampled.
 
 ## CALIBRATION SUGGESTIONS
 
@@ -41,6 +45,9 @@
 - **2026-05-09 — proposed redactor enhancement (preferred over the leading-vocative scrub from 2026-05-02):** add K-12-school-as-personal-identifier scrub to `redactKnownName`. Trigger: text contains `my (son|daughter|kid|child)` AND a known K-12 school name from the WA state schools whitelist within the same paragraph. Action: redact the school name to `[SCHOOL]`. Also retroactively scrub the assistant response of the same school name once intake binds it (similar to how user-name retroactive scrub works post-2026-04-26).
 - **2026-05-09 — leading-vocative regex must be username-gated.** Naive pattern matched 8 false positives this run (sentence starters + university names). Only meaningful as a vocative when the captured word equals a confirmed username for the session.
 
+- **2026-05-16:** Volume dropped sharply: 154 entries last week → 5 entries this week. Possible causes: (a) genuine low-traffic week (mid-month Saturday), (b) memory writer regression, (c) capture pipeline degradation (entries written elsewhere or dropped). Recommend morning-pulse audit cross-check chat counts vs. memory-write counts. If chat traffic stayed flat but memory dropped, that's a redactor/writer bug, not low traffic.
+- **2026-05-16 — keep 7-day window.** The 5-entry sample is far under the 200 cap; widening to 14 days would not improve signal because entries are uniformly boilerplate welcome-desk intake. The problem is volume / pipeline (see above), not window size.
+
 ## OPEN QUESTIONS
 
 - Worth tracking PII-leakage rate over time? Trend would tell us if redactor is improving or degrading.
@@ -49,6 +56,9 @@
 - **2026-05-09:** Mercer Island appeared three separate times in school-finder contexts. None were user-identifying, but the volume hints at a future need to distinguish neighborhood-as-residence ("we live on Mercer Island") from neighborhood-as-school-shopping-criterion ("is Mercer Island HS good?"). Worth tracking whether residence-style usage shows up in future runs.
 - **2026-05-09:** Should the redactor whitelist be living-document — pulled from `backend/knowledge-base/schools/`'s K-12 entries — rather than hardcoded? Would auto-grow with the schools-deep-files batches. Trade-off: dependency on K-12 deep-file expansion, currently still BETA per CLAUDE.md.
 
+- **2026-05-16:** Did chat traffic actually drop 30× this week or did the memory writer skip writes? Cross-checking morning-pulse's chat counts against memory file growth for the same window would settle it. If chat counts held but memory dropped, the redactor or writer has a silent skip path that needs fixing.
+- **2026-05-16:** Is the "Wayfinder→[NAME]" over-redaction localized to the welcome-desk concierge flow or does it affect main chat? All 5 sampled entries this run were welcome-desk style intake, so the sample doesn't disambiguate.
+
 ## RUN HISTORY
 
 | Date | Entries Fetched | Patches Applied | Notable |
@@ -56,3 +66,4 @@
 | 2026-04-26 | (first manual run) | 0 (no entries) | endpoint reachable, no in-flight data to audit |
 | 2026-05-02 | 11 (6 mem + 5 train) | 2 (HTTP 200) | Caught first-name "Dan" in assistant openers — leading-vocative pattern missed by redactKnownName. Held back on redacting role/family-context combinations per false-negative-bias rule. |
 | 2026-05-09 | 154 (81 mem + 73 train) | 2 (HTTP 200) | Caught K-12-school-as-user-identifier leak: "My son is a 9th grader at Lakeside in Seattle" — Lakeside redacted to [SCHOOL] in both query and assistant echo (3 occurrences). Held back on Mercer Island mentions (topic comparison, not user identifier). |
+| 2026-05-16 | 5 (3 mem + 2 train) | 0 | All entries were boilerplate parent-intake welcome-desk exchanges — no PII to catch. Noted over-redaction (product name "Wayfinder" → "[NAME]") for regex-team follow-up. Volume dropped 30× from last week (154 → 5); flagged for morning-pulse cross-check on whether chat traffic actually dropped or memory writer is skipping. |
