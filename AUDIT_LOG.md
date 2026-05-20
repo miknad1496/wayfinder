@@ -1899,3 +1899,41 @@ Frontend impact analysis: `frontend/src/app.js`'s `loadApUsage()` calls `/api/ap
 - **20-night-dormant essay-pipeline rotation** found nothing — confirms the 4/26 `creditDeducted` flag fix is permanent. Calibration: keep essay-pipeline at weekly-to-twice-weekly rotation; the post-4/26 architectural fix made the previous high-risk surface low-risk.
 - **Programs Rule-2 net residue 82 STEADY for 5 consecutive nights** (5/12-5/16) — `normalizeEntry` Rule-1+Rule-2 architecture continues to absorb new verified entries from `wayfinder-data-refresh` task without producing new residue. Holding firm.
 - AP Coach module post-yesterday's audit: clean. The shadowed-route scan added to nightly EFFECTIVE PATTERNS yesterday is now permanent (zero-cost, catches a real bug class).
+
+## 2026-05-20 — Nightly audit: CLEAN
+Focus areas: cost & resource leaks, backend runtime, data integrity, security & auth surface, rotated extras (shadowed-route + head-script body-trap).
+
+### Cost & Resource Leaks — CLEAN
+- SLM keep-alive (`slm.js` 840-880): ping does NOT update `lastWarmAt` (lines 871-872 comment + verified); `MAX_IDLE` 5-min stop condition clears the interval. No infinite-ping loop.
+- setInterval audit: 4 backend timers — user-backup (unref'd + stop fn), scheduler (hourly daemon), scraper-scheduler (6h, stop fn), slm keep-alive (self-stopping). All bounded/intentional.
+- Anon chat cap: `checkAnonDailyLimit` present, `ANON_DAILY_LIMIT=5`/day, disk-persisted, enforced at chat.js:329.
+- Rate limiters: 5 limiters all carry explicit `max` (api 30, chat 15, auth 10/15min, admin 5, expensive 3). CORS allowlisted, no wildcard.
+- Model costs: Opus used only on credit-gated surfaces (essay-reviewer, ap-coach, head-consultant supplement); standard chat = Sonnet; curated-DB routes = Haiku. Appropriate.
+
+### Backend Runtime — CLEAN
+- Server boots clean on test env. Data-health: internships 1606 (981 verified), scholarships 1043 (80), programs 1416 (672) — all "clean". AP Coach knowledge + 220 per-unit brains + intl-brain loaded. No uncaught rejections.
+
+### Data Integrity — CLEAN
+- Rule-1 (bare-domain `_source`): 0 across all 4 modules.
+- Rule-2 residue: programs net 82 STEADY (sameUrl 77 + diffHost 5) — 6th consecutive steady night (5/12-5/20). internships sameUrl 99 — newest entries April-dated (4/23, 4/12, 4/9): confirmed scan-logic divergence vs the 94 variant, NOT data drift. scholarships 12, volunteer 27 — steady.
+- URL hygiene scan (multi-https / whitespace / OR-AND-slash separators / parse-fail): 0 across all modules.
+- Metadata counts == array lengths: 1606 / 1043 / 1416 / 275. No drift.
+
+### Security & Auth surface — CLEAN
+- Premium routes auth-gated: essays (8 auth refs), ap-coach (17), financial-aid (14).
+- Stripe webhook signature: enforced — production without `STRIPE_WEBHOOK_SECRET` rejects 500 + audit-logs; sig-fail rejects 400. Dev-only skip path.
+- Shadowed-route scan (5 hot route files: ap-coach, essay-coach, essays, chat, volunteer): 0 duplicate (method,path) pairs.
+- Head inline `<script>` body-trap scan: 3 scripts — 2 pure-definition, 1 DOM-touching but DCL-deferred. All safe.
+- frontend `app.js` syntax: OK.
+
+### Recent-fix re-verification (rolling 14-day)
+- 5/13 fix: `/api/volunteer/discover-local` still requires auth — 401 on missing/invalid token, fix-comment intact.
+- 5/15 fix: `/api/ap-coach/usage` registered exactly once (line 58); PATCH81 dead block stays removed (line 752 is comment only).
+
+### Validation gate
+- Markdown-only commit (AUDIT_LOG.md + lessons file). No code files touched. Layers 1-6 not required per the gate's append-only exemption.
+
+### Notable
+- 13th clean nightly in last 15 (fixes only on 5/13 + 5/15).
+- Programs Rule-2 net residue 82 STEADY for 6 consecutive nights — `normalizeEntry` architecture continues absorbing `wayfinder-data-refresh` additions without leaking new residue.
+- No commits to `backend/routes/` since 5/15 audit fix — per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"), did NOT re-deep-sweep API surface; rotated security & auth surface in instead (last exercised 5/14).
