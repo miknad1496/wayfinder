@@ -1937,3 +1937,43 @@ Focus areas: cost & resource leaks, backend runtime, data integrity, security & 
 - 13th clean nightly in last 15 (fixes only on 5/13 + 5/15).
 - Programs Rule-2 net residue 82 STEADY for 6 consecutive nights — `normalizeEntry` architecture continues absorbing `wayfinder-data-refresh` additions without leaking new residue.
 - No commits to `backend/routes/` since 5/15 audit fix — per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"), did NOT re-deep-sweep API surface; rotated security & auth surface in instead (last exercised 5/14).
+
+## 2026-05-25 — Nightly audit: CLEAN
+Focus areas: cost & resource leaks, backend runtime, data integrity, frontend & build (rotated slot), recent-fix re-verification.
+
+### Cost & Resource Leaks — CLEAN
+- SLM keep-alive (`slm.js` 832-885): ping callback explicitly does NOT update `lastWarmAt` (lines 871-872 comment + verified); `MAX_IDLE` stop condition (line 842) clears the interval when idle. No infinite-ping loop.
+- setInterval audit: 4 backend timers — user-backup (clearInterval @279), scraper-scheduler (clearInterval @268), slm keep-alive (self-stopping clearInterval @844), scheduler (hourly reminder daemon, intentional, no self-resetting interval). All bounded/intentional.
+- Anon chat cap: `checkAnonDailyLimit` present, `ANON_DAILY_LIMIT=5`/day, disk-persisted (`anon-rate-limits.json`, atomic tmp-rename), enforced at chat.js:329.
+- Rate limiter sanity: chat.js `checkRateLimit` takes `maxRequests`; anon users get tighter limit — `effectiveMax = auth?.user ? 30 : 5` (chat.js:346). 5 server-level limiters all carry explicit config.
+- Model costs: Opus used only on credit-gated surfaces (essay-reviewer, ap-coach scoring, head-consultant supplement); standard chat = Sonnet; curated-DB discover routes (internships/programs/scholarships/volunteer/summer-camps) = Haiku. Appropriate.
+
+### Backend Runtime — CLEAN
+- Server boots clean on test env. Data-health: internships 1606 (981 verified), scholarships 1043 (80), programs 1416 (672) — all "clean". AP Coach knowledge (41919-byte brain, 9 per-exam files, 220 per-unit brains across 37 exams) + intl-brain (korea) loaded. No uncaught rejections; graceful SIGTERM shutdown.
+
+### Data Integrity — CLEAN
+- All 4 module JSON files parse OK.
+- Metadata counts == array lengths: internships 1606 / scholarships 1043 / programs 1416 / volunteer 275. No drift.
+- Rule-1 (bare-domain `_source`): 0 across all 4 modules.
+- Rule-2 residue: programs net 82 STEADY (sameUrl 77 + diffHost 5) — 7th consecutive steady night (5/12-5/25, spanning the audit gap). internships sameUrl 99 (stable vs 5/20). scholarships 12, volunteer noUrl 27 — all steady.
+- URL hygiene scan (multi-https / whitespace / OR-AND-slash separators / parse-fail): 0 across all modules.
+- Verified `_source` spot-check (5 random per module, 20 total): all resolve to plausible program-specific URLs (Seattle Children's RTP, CDFA internships, NYU CS4CS, Gates Scholarship, Bezos Scholars, etc.). No hallucinated URLs.
+
+### Frontend & Build (rotated slot) — CLEAN
+- `frontend/src/app.js` syntax: OK (`node -c`).
+- Head inline `<script>` body-trap scan: 3 scripts — 2 pure-definition, 1 DOM-touching but DCL-deferred. All safe (no `MutationObserver.observe(null)` class risk).
+- Shadowed-route scan (5 hot route files: chat, ap-coach, essays, essay-coach, volunteer): 0 duplicate (method,path) pairs.
+- Premium routes auth-gated: essays (11 auth refs), ap-coach (27), financial-aid (16). CORS allowlist-based (`ALLOWED_ORIGINS.includes`), no wildcard.
+
+### Recent-fix re-verification (rolling 14-day)
+- 5/13 fix: `/api/volunteer/discover-local` still requires auth — 401 on missing token (line 251) + 401 on invalid token (line 253). Holding.
+- 5/15 fix: `/api/ap-coach/usage` registered exactly once (line 58); PATCH81 dead block stays removed (line 752 is explanatory comment only). Holding.
+
+### Validation gate
+- Markdown-only commit (AUDIT_LOG.md + lessons file). No code files touched. Layers 1-6 not required per the gate's append-only exemption.
+
+### Notable
+- 14th clean nightly in last 16 (fixes only on 5/13 + 5/15).
+- **Audit-gap observation**: ZERO commits to the repo since the 5/20 nightly audit. The nightly-system-audit task produced no commits on 5/21-5/24 (either disabled, did not fire, or failed silently — a clean run still commits the AUDIT_LOG/lessons markdown). Additionally `wayfinder-data-refresh` (scheduled Sun 9:03am; 5/24 was a Sunday) produced no data commit. Flagged for Dan — see lessons OPEN QUESTIONS. Not code-actionable from a nightly audit.
+- Programs Rule-2 net residue 82 STEADY across the 5-night audit gap (5/20 → 5/25) — `normalizeEntry` architecture holding; and with no data-refresh commits in the window, the steady count is expected.
+- Per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"): security & auth was deep-swept 5/20 with zero new commits since, so rotated Frontend & Build into tonight's slot instead.
