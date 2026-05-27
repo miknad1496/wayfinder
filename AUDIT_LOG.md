@@ -1977,3 +1977,62 @@ Focus areas: cost & resource leaks, backend runtime, data integrity, frontend & 
 - **Audit-gap observation**: ZERO commits to the repo since the 5/20 nightly audit. The nightly-system-audit task produced no commits on 5/21-5/24 (either disabled, did not fire, or failed silently — a clean run still commits the AUDIT_LOG/lessons markdown). Additionally `wayfinder-data-refresh` (scheduled Sun 9:03am; 5/24 was a Sunday) produced no data commit. Flagged for Dan — see lessons OPEN QUESTIONS. Not code-actionable from a nightly audit.
 - Programs Rule-2 net residue 82 STEADY across the 5-night audit gap (5/20 → 5/25) — `normalizeEntry` architecture holding; and with no data-refresh commits in the window, the steady count is expected.
 - Per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"): security & auth was deep-swept 5/20 with zero new commits since, so rotated Frontend & Build into tonight's slot instead.
+
+---
+
+## 2026-05-27 — Nightly audit
+
+**Focus**: Cost & resource leaks · Backend runtime · Data integrity · API surface input-validation (rotated in) · Recent-fix re-verification
+
+**Outcome**: CLEAN — 15th clean nightly in last 17 (fixes only 5/13 + 5/15). No code changes pushed.
+
+### Cost & resource leaks
+- SLM keep-alive ping discipline intact (`backend/services/slm.js:871-872` confirms ping does NOT update `lastWarmAt`; the idle-stop branch at line 842 still fires correctly on the 10min cutoff).
+- Anon daily chat cap: `ANON_DAILY_LIMIT=5` (chat.js:124), enforced via `checkAnonDailyLimit` (line 156, called at 329).
+- Rate-limiter sanity: chat.js uses `effectiveMax = auth?.user ? RATE_LIMIT_MAX_REQUESTS : 5` (line 346) — anon gets the tighter limit, parameter is passed explicitly.
+- Backend `setInterval` audit (4 timers): `user-backup.js:262` (backupTimer, bounded), `scheduler.js:184` (recurring sweep), `scraper-scheduler.js:258` (schedulerInterval, bounded), `slm.js:840` (keepAliveTimer with 10min idle cutoff at line 842). All bounded or intentional daemons.
+
+### Backend runtime smoke
+- `cd backend && timeout 12 node ./server.js` with audit env: clean startup. Auth token index built (0 active tokens in this isolated env). All 4 data-health checks PASS:
+  - internships: 1606 entries (981 verified)
+  - scholarships: 1043 entries (80 verified)
+  - programs: 1416 entries (672 verified)
+  - ApCoach loaded (brain 41919 bytes, 9 per-exam files); per-unit brains 220 across 37 exams; intl-brain 1 country (korea).
+- No uncaught errors, no service-init failures during the 12-second window.
+
+### Data integrity scans
+- Rule-1 (bare-domain `_source`): 0 across all 4 modules. The 5/3 `normalizeEntry` mirror is holding.
+- Rule-2 (homepage-only `_source`) net residue:
+  - internships: sameUrl=94 diffHost=0 deeperUrl=0
+  - scholarships: sameUrl=12 diffHost=0 deeperUrl=0
+  - programs: sameUrl=77 diffHost=5 deeperUrl=0 (net 82 — **STEADY for 9 consecutive nights**: 5/12, 5/13, 5/14, 5/15, 5/16, 5/20, 5/25, 5/27)
+  - volunteer: sameUrl=27 diffHost=0
+- URL hygiene scan (multi-https / OR-separator / parse-fail): 0 across all 4 modules. The 5/10 scan is holding.
+- Metadata `totalCount` matches array length on all 4 modules.
+- 20 verified `_source` spot-checks (5/module): all resolve to real program/scholarship/internship pages with actual paths or canonical homepages — no fabricated URLs.
+
+### API surface (rotated in — last deep sweep 5/13; ap-coach.js is only route file touched since)
+- Walked the ap-coach.js route registrations (17 distinct method+path pairs):
+  - `/exams`, `/frq-types`: public list endpoints (safe to be public — static catalog).
+  - `/schedule` (line 759): reads `ap-exam-schedule.json` from disk, no LLM call, no per-user data — safe public.
+  - `/usage` (line 58): checks `checkApCoachUsage(token)`, returns 401 if `tier === 'unauth'` (line 62). Gated.
+  - All credit/data-bearing GETs (`/credits`, `/history`, `/score/:id`, `/guides`, `/guide/:exam`, `/profile`): `await verifyToken(token)` + 401 path.
+  - All LLM-calling POSTs (`/score`, `/chat`, `/tutor`, `/spellcheck`, `/guide/preview-reset`, `/guide/preview-select`): `verifyToken` + 401 + length caps.
+  - `/spellcheck` (line 874, patch 155): auth-gated (line 877-878), 200kb body limit, length cap 14000 chars (line 882). Comment-promise cross-check confirms enforcement.
+  - `/profile` PUT (line 840): explicit `if (!token) return 401`, then `setApProfile` handles invalid-token internally.
+- Shadowed-route scan (5 hot files: chat, ap-coach, essays, admin, volunteer): 0 duplicates.
+- Cross-module spot-check: essays.js — 5 verifyToken calls covering all 5 user-data routes (`/credits`, `/review`, `/history`, `/drafts/:essayType`, `/review/:id`); `/prompts` and `/types` are public catalog endpoints (safe).
+- CORS: allowlist-based via `ALLOWED_ORIGINS.includes(origin)`, no wildcard, credentials enabled.
+- Stripe webhook: `STRIPE_WEBHOOK_SECRET` required in production; explicit rejection + audit log on missing secret (stripe.js:295-296).
+
+### Recent-fix re-verification (rolling 14-day)
+- 5/13 volunteer `/discover-local` auth gate: still requires auth (line 251: 401 on missing token, line 253: 401 on invalid token). Comment preserved at line 248-249. Holding.
+- 5/15 ap-coach `/usage` dedup: exactly one `router.get('/usage'` registration at line 58 (PATCH80 schema). Line 752 is the explanatory comment about the removed PATCH81 dup. Holding.
+
+### Validation gate
+- Markdown-only commit (AUDIT_LOG.md + lessons file). No code files touched. Layers 1-6 not required per the append-only-markdown exemption.
+
+### Notable
+- 15th clean nightly in last 17. Repo static again — only the 5/25 audit commit between 5/20 and tonight; **3 days no other commits**, including no wayfinder-data-refresh on 5/24 (Sun). The 5/25 OPEN QUESTION about scheduled-task health remains active. Two consecutive Sundays now (5/24 + the prior weekly slot) without a data-refresh commit suggests the task is either disabled or silently failing.
+- Per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"): frontend & build was last night's slot with no new commits since → moved to API surface (last deep sweep 5/13). API surface confirmed clean — ap-coach was the only changed route file and its new/touched handlers all gate correctly.
+- Programs Rule-2 STEADY net 82 across 9 nights (5/12 → 5/27) is the longest steady streak since the diffHost bucket emerged 5/8. Architecture is firmly absorbing data-refresh additions without leaking new residue. (With this audit-gap period, of course no new entries were being added at all.)
