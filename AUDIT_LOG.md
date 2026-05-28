@@ -2036,3 +2036,56 @@ Focus areas: cost & resource leaks, backend runtime, data integrity, frontend & 
 - 15th clean nightly in last 17. Repo static again — only the 5/25 audit commit between 5/20 and tonight; **3 days no other commits**, including no wayfinder-data-refresh on 5/24 (Sun). The 5/25 OPEN QUESTION about scheduled-task health remains active. Two consecutive Sundays now (5/24 + the prior weekly slot) without a data-refresh commit suggests the task is either disabled or silently failing.
 - Per the 5/14 calibration ("freshly-swept area + zero new commits = move slot elsewhere"): frontend & build was last night's slot with no new commits since → moved to API surface (last deep sweep 5/13). API surface confirmed clean — ap-coach was the only changed route file and its new/touched handlers all gate correctly.
 - Programs Rule-2 STEADY net 82 across 9 nights (5/12 → 5/27) is the longest steady streak since the diffHost bucket emerged 5/8. Architecture is firmly absorbing data-refresh additions without leaking new residue. (With this audit-gap period, of course no new entries were being added at all.)
+
+## 2026-05-28 — Nightly audit (Dan)
+
+### Focus
+Cost & Resource Leaks · Backend Runtime · Data Integrity · Security & Auth Surface (rotated in tonight, 8 nights dormant since 5/20)
+
+### Cost & resource leaks
+- SLM keep-alive `lastWarmAt` discipline: intact. `backend/services/slm.js` line 871-872 retains explicit comment "Do NOT update lastWarmAt here — pings must not reset the idle timer or keep-alive runs forever." Ping path verified clean.
+- setInterval inventory: 4 backend timers (scheduler.js:184 hourly reminder check, slm.js:840 keep-alive with MAX_IDLE auto-stop, scraper-scheduler.js:258, user-backup.js:262 periodic backup with `backupTimer.unref()` so it doesn't block shutdown). All bounded or intentional daemons. No self-resetting timers.
+- Anonymous chat cap: `ANON_DAILY_LIMIT = 5` (chat.js:124), `checkAnonDailyLimit(ip)` invoked before any LLM call (chat.js:329). Disk-persisted in `backend/data/anon-rate-limits.json`.
+- Per-user rate limiter: `effectiveMax = auth?.user ? RATE_LIMIT_MAX_REQUESTS : 5` (chat.js:346) — anonymous users tighter than authenticated.
+- Claude model usage: essay-reviewer (Opus, paid premium), ap-coach `/score` (Opus, paid premium), ap-coach `/spellcheck` (Haiku, paid auth), head-consultant (Opus, paid+engine). All defaults align with paid-tier-only access.
+
+### Backend runtime
+- Disk constraint: could NOT boot the server tonight. `/sessions` filesystem at 99-100% capacity (ENOSPC `mkdir` on `backend/data/sessions` during boot). Workspace had to drop node_modules + .git after install to keep working. Compensated with static checks (JSON parse, counts, Rule-1/Rule-2/URL-hygiene); these cover the same data-health surface the boot would expose. Repo is essentially static — last 5/27 boot ran clean and no commits since, so runtime drift risk is minimal.
+- JSON parse + count validation: all 4 modules parse cleanly. `metadata.totalCount` matches `array.length` across the board: internships 1606, scholarships 1043, programs 1416, volunteer 275.
+
+### Data integrity
+- Rule-1 (bare-domain `_source`): 0 across all 4 modules (4th consecutive clean nightly post-architectural fix on 5/3).
+- Rule-2 residue:
+  - programs: net 82 (sameUrl 77 + diffHost 5) — STEADY 10 consecutive nights running (5/12 → 5/28). Longest steady streak since the diffHost bucket emerged 5/8. Architectural normalize fix continues holding.
+  - internships: sameUrl 99 (scan-logic baseline confirmed 5/12 — all recent entries April-dated).
+  - scholarships: sameUrl 12 (steady).
+  - volunteer: noUrl 27 (steady; entries have no `url` field, only `_source`).
+- URL hygiene: 0 violations across all modules.
+- 20 verified `_source` spot-checks (5 per module) — all real third-party URLs pointing at canonical program pages. No hallucinated URLs detected.
+
+### Security & auth surface deep-sweep (rotated in tonight)
+- **Premium routes auth check** (essays.js, financial-aid.js, essay-coach.js, ap-coach.js):
+  - essays.js: 6 verifyToken sites — `/credits`, `/review`, `/history`, `/drafts/:essayType`, `/review/:id` all auth-gated. `/prompts` + `/types` are static catalog endpoints (safe public).
+  - financial-aid.js: 8 verifyToken sites — `/schools`, `/search`, `/state-grants`, `/strategies`, `/estimate`, `/calculate-sai`, `/my-strategy` all auth-gated. `/stats` public-by-design (returns aggregate counts; no LLM, no per-user data, no DB mutation — passes public-route justification check from 5/27 pattern).
+  - essay-coach.js: 2 verifyToken sites — `/chat` auth-gated.
+  - ap-coach.js: 12 verifyToken sites — all LLM-calling POSTs (`/score`, `/chat`, `/tutor`, `/spellcheck`) and all user-data routes (`/credits`, `/usage`, `/history`, `/score/:id`, `/guides`, `/guide/:exam`, `/profile` GET+PUT, `/guide/preview-reset`, `/guide/preview-select`) gated. `/exams`, `/frq-types`, `/schedule` are static-catalog public-by-design.
+- **Comment-promise vs runtime cross-check** (5/13 pattern): grepped for `cap|limit|throttle` comments in routes — only matches are explanatory comments backed by real code (PATCH154 80mb body limit, PATCH110 monthly cap for Coach tier, anon IP tracking cap on chat.js:174). No phantom-cap comments.
+- **Shadowed-route scan** across 8 hot route files (chat.js, auth.js, essays.js, ap-coach.js, volunteer.js, financial-aid.js, admin.js, stripe.js): 0 dups everywhere.
+- **CORS**: allowlist-based (`ALLOWED_ORIGINS.includes(origin)`), no wildcard, credentials enabled. Production allowlist is `wayfinderai.org` + `www.wayfinderai.org` only.
+- **Stripe webhook signature**: enforced in production (stripe.js:295-296) — returns 500 + audit log if `STRIPE_WEBHOOK_SECRET` is missing.
+- **Head-script body-trap scan** (patch 121 pattern): 3 inline scripts in `<head>` — 2 trivial (no body touches) + 1 DOMContentLoaded-deferred. All safe.
+- **Layer-3 route xref** (patch 143 pattern): 3 internal `/X.html` links (privacy, terms, forgot-password) all resolve to (a) files on disk + (b) explicit `app.get(['/X', '/X.html'], ...)` server routes. No catchall-wrong-content trap.
+
+### Recent-fix re-verification (rolling 14-day)
+- 5/13 volunteer `/discover-local` auth gate: still requires auth (lines 250-254 of volunteer.js; 401 on missing or invalid token). Explanatory comment preserved at lines 248-249. Holding.
+- 5/15 ap-coach `/usage` dedup: exactly one `router.get('/usage'` registration at line 58 (PATCH80 schema). Lines 752-756 are the explanatory comment about the removed PATCH81 dup. Holding.
+
+### Validation gate
+- Markdown-only commit (AUDIT_LOG.md + lessons file). No code files touched. Layers 1-6 not required per the append-only-markdown exemption.
+
+### Notable
+- **16th clean nightly in last 18.** Three-way nightly trio (cost + runtime + data) + rotating security/auth slot all clean.
+- Security & auth surface deep-sweep rotated in per the 5/20 → 8 nights dormant trigger. Zero defects. Per the 5/27 NEW pattern ("focus area finds zero defects on 2-week dormant cycle → push cycle to 3 weeks rather than weekly"), security & auth can safely move to a 3-week cadence: next sweep around 6/18 unless new auth-related commits land.
+- Disk-space constraint surfaced tonight — workspace `/sessions` at 99-100%. Boot-server smoke skipped (ENOSPC during `mkdir backend/data/sessions`). Static checks compensated. **Flag for Dan**: nightly-task workspace may need housekeeping if this recurs across multiple nights.
+- The 5/24 OPEN QUESTION about scheduled-task health (data-refresh + nightly-audit gap) — the nightly-audit task IS running (5/25, 5/27, tonight = 3 of last 4 nights). The 5/26 slot was missed. **wayfinder-data-refresh has now missed TWO Sunday slots (5/24 + the prior weekly cadence)** — should be 5/31 next; if that fires it'll confirm a transient stoppage vs persistent failure. Worth Dan-checking the Cowork Scheduled dashboard.
+- Programs Rule-2 STEADY net 82 across 10 nights (5/12 → 5/28). Architecture firmly absorbing data-refresh additions without leaking new residue. With audit-gap period reducing data churn, no new entries have been added — STEADY is the expected reading.
