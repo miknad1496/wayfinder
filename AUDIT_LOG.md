@@ -2089,3 +2089,45 @@ Cost & Resource Leaks · Backend Runtime · Data Integrity · Security & Auth Su
 - Disk-space constraint surfaced tonight — workspace `/sessions` at 99-100%. Boot-server smoke skipped (ENOSPC during `mkdir backend/data/sessions`). Static checks compensated. **Flag for Dan**: nightly-task workspace may need housekeeping if this recurs across multiple nights.
 - The 5/24 OPEN QUESTION about scheduled-task health (data-refresh + nightly-audit gap) — the nightly-audit task IS running (5/25, 5/27, tonight = 3 of last 4 nights). The 5/26 slot was missed. **wayfinder-data-refresh has now missed TWO Sunday slots (5/24 + the prior weekly cadence)** — should be 5/31 next; if that fires it'll confirm a transient stoppage vs persistent failure. Worth Dan-checking the Cowork Scheduled dashboard.
 - Programs Rule-2 STEADY net 82 across 10 nights (5/12 → 5/28). Architecture firmly absorbing data-refresh additions without leaking new residue. With audit-gap period reducing data churn, no new entries have been added — STEADY is the expected reading.
+
+## 2026-05-29 — Nightly System Audit (CLEAN — 17 of last 19)
+
+**Focus areas tonight**: Cost & Resource Leaks, Backend Runtime (static-only — ENOSPC recurred), Data Integrity, Essay Pipeline (rotation slot — 33 nights dormant since 4/26).
+
+**Findings**: 0 defects.
+
+**Cost panel**:
+- SLM keep-alive ping discipline intact at slm.js:871-872 (explicit "Do NOT update lastWarmAt here" comment + no .lastWarmAt assignment in keep-alive callback). Idle timer cannot be reset by the ping itself.
+- 4 backend `setInterval` declarations — keepAliveTimer (slm.js:840, bounded by MAX_IDLE check), scraper-scheduler (intentional daemon), scheduler.js (intentional daemon), user-backup backupTimer. All accounted-for.
+- Anon chat daily cap: `checkAnonDailyLimit(ip)` declared chat.js:156, invoked chat.js:329.
+- Rate limiter discipline: `effectiveMax = auth?.user ? 30 : 5` at chat.js:346. 5 rate limiters across auth/stripe/chat all carry explicit max.
+
+**Runtime panel (static-only, ENOSPC second consecutive night)**:
+- /sessions at 100% used (5/28 + 5/29 both hit). Boot smoke skipped per 5/28 EFFECTIVE PATTERN (workspace ENOSPC compensation). Static panel compensates.
+- JSON parse + metadata-vs-array: 1606/1043/1416/275 — match across all 4 modules.
+
+**Data panel**:
+- Rule-1 (bare-domain `_source`): 0 across all 4 modules.
+- Programs Rule-2: net residue 82 STEADY for 11 consecutive nights (5/12 → 5/29). Tonight's scan bucketed as sameUrl=73 + diffHost=5 + r2_other=4. The r2_other=4 are the SAME PBS Kids / WWOOF / MATHCOUNTS / Science Olympiad trailing-slash entries from the 5/11 lessons (string equality fails because src has trailing `/` and url doesn't; both fields point to the same homepage; cosmetic). Functionally the steady-state residue.
+- Internships sameUrl 99, scholarships 12, volunteer noUrl 27. URL hygiene 0 all modules. 20 random `_source` spot-checks — all real, no hallucinations.
+
+**Essay-pipeline rotation slot (33 days dormant since 4/26 credit-refund fix)**:
+- 7 routes in essays.js. Auth gates intact: `verifyToken` at lines 111, 148, 293, 345, 394 (all user-data routes). Public routes `/prompts` (essays.js:49) + `/types` (essays.js:103) return static catalog only — pass public-by-design justification.
+- The 4/26 `creditDeducted` flag pattern HOLDING: declared essays.js:145, set true at essays.js:206 immediately after `useEssayCredit`, outer catch block essays.js:261-285 only triggers refund if `if (creditDeducted)` at line 268. Pre-deduction TypeErrors no longer gift free credits. Pattern is intact for ~33 nights.
+
+**Cross-cutting checks**:
+- Shadowed-route scan across 6 hot route files (essays, ap-coach, volunteer, chat, financial-aid, stripe): 0 duplicate (method, path) pairs.
+- CORS allowlist locked at server.js:142 — explicit ALLOWED_ORIGINS check, no wildcard.
+- Stripe webhook sig enforced in prod (stripe.js:289-295): rejects with audit log if STRIPE_WEBHOOK_SECRET unset.
+- Head-script body-trap: patch121 KO localizer uses `_bootKoLocalizer` deferred to DOMContentLoaded (index.html:324-342). Other 11 head scripts also DOM-safe.
+- Layer-3 route xref: 3 internal /*.html links (forgot-password, privacy, terms) all map to server routes via `app.get(['/x', '/x.html'], …)` array form at server.js:233-242.
+
+**Re-verified prior fixes** (5/16 EFFECTIVE PATTERN: rolling 14-day cross-check):
+- 5/15 ap-coach `/usage` dedup: lone `router.get('/usage')` at ap-coach.js:58 + commented stub at line 752 noting removal. Holding.
+- 5/13 volunteer `/discover-local` auth: verifyToken at volunteer.js:252 with 401 on missing/invalid. Holding.
+
+**Trends worth Dan's attention**:
+- ENOSPC at /sessions is now RECURRING (5/28 + 5/29 both hit 100%). Promoting from "outlier" (5/28 OPEN QUESTION) to "TREND". The 5/28 OPEN QUESTION about /sessions usage is resolved as YES, the workspace is filling across runs — likely the `/tmp/wayfinder` clone or `npm install` cache is being persisted. Worth one of: (a) explicit cleanup in the task setup step, (b) larger workspace allocation, (c) Dan inspecting the scheduled-task mount config.
+- wayfinder-data-refresh: 5/31 (next Sunday) remains the decisive slot per 5/28 calibration. Today is 5/29 (Friday) — not yet evaluable. No new data commits since 5/20 from any source.
+
+**Aborted push?** No. No source files were modified — only lessons file + AUDIT_LOG.md (append-only markdown).
