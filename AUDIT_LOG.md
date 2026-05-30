@@ -2131,3 +2131,22 @@ Cost & Resource Leaks · Backend Runtime · Data Integrity · Security & Auth Su
 - wayfinder-data-refresh: 5/31 (next Sunday) remains the decisive slot per 5/28 calibration. Today is 5/29 (Friday) — not yet evaluable. No new data commits since 5/20 from any source.
 
 **Aborted push?** No. No source files were modified — only lessons file + AUDIT_LOG.md (append-only markdown).
+
+---
+
+## 2026-05-30 — Nightly audit (cost + runtime[static-only] + data + frontend & build)
+
+**Result: CLEAN — 18th clean nightly in last 20** (fixes only 5/13 + 5/15).
+
+**Focus areas covered**:
+- **Cost & resource leaks**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872 comment + verified); stop condition at slm.js:842 self-terminates after 5min idle. 4 backend setIntervals (user-backup w/ `.unref()`, scheduler hourly, scraper-scheduler 6h, slm keepalive 90s) all fixed-interval intentional daemons — no self-reset bug. Anon daily cap 5/day (chat.js:124). effectiveMax 30 auth / 5 anon (chat.js:346). Rate limiter carries explicit `maxRequests` param.
+- **Runtime (static-only)**: ENOSPC — `/sessions` at 100% used / 0 avail, 3rd CONSECUTIVE night (5/28+5/29+5/30). Skipped boot smoke per the ENOSPC SOP; static panel compensated (~85% signal).
+- **Data integrity**: counts 1606/1043/1416/275, metadata === array length all 4 modules. Rule-1 zero all modules. URL hygiene zero all modules. Programs Rule-2 net 82 STEADY (sameUrl 77 + diffHost 5) — 12th consecutive steady night (5/12 → 5/30). Internships sameUrl 94 (href-equality scan, consistent with 5/13/5/14 — the 99 readings were scan-logic divergence). Scholarships 12, volunteer other 27. 20 `_source` spot-checks all real domains (Seattle Children's, NYU, Scripps, Gates, C-SPAN, Carnegie Hall, NUS, AAMC, AHA, Aquarium of the Pacific).
+- **Frontend & build** (rotated in; last 5/25, repo static w/ zero new route commits since 5/13): app.js syntax OK. 3 head `<script>` blocks body-trap-safe (2 trivial + patch121 DCL-deferred). Shadowed-route scan 0 dups across 6 hot route files (chat/ap-coach/volunteer/essays/financial-aid/admin). Layer-3 route xref: 3 internal *.html links (forgot-password/privacy/terms) all resolve to file on disk.
+- **Recent-fix re-verify**: 5/13 volunteer `/discover-local` auth gate intact (verifyToken + 401 at volunteer.js:250-253). 5/15 ap-coach `/usage` dedup intact (lone handler at line 58, dead PATCH81 block gone). Both holding.
+
+**Trends worth Dan's attention**:
+- **ENOSPC now 3 nights running** (5/28+5/29+5/30 all 100%). No longer a trend candidate — it is a sustained condition. Needs a Dan-level fix: workspace cleanup in the scheduled-task setup step, or a larger `/sessions` allocation. Static panel is reliably compensating but boot-smoke signal (service-init runtime errors, data-health logger) is being skipped every night now.
+- **wayfinder-data-refresh: 5/31 (tomorrow, Sunday) is the decisive slot.** It missed 5/24. If 5/31 also produces no data commit, the task is confirmed silently dead and violates the Failure-visibility rule. Worth Dan checking the Cowork Scheduled dashboard.
+
+**Aborted push?** No. No source files modified — only lessons file + AUDIT_LOG.md (append-only markdown, validation-gate exempt).
