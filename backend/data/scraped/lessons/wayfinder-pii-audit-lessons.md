@@ -34,6 +34,7 @@
 - **2026-05-09:** Volume jumped 14× over last week — 154 entries vs. 11 prior week. Real product traffic, not redactor degradation. With higher volume, the cap-of-200 may bind on a future run; flag if next 2 runs exceed 180.
 
 - **2026-05-16:** Product name "Wayfinder" being redacted as `[NAME]` in welcome-desk assistant responses. Recommend regex team explicitly exclude product/brand names from the `redactKnownName` second-pass. Suggested patch: add a hard whitelist `PRODUCT_NAMES = ['Wayfinder']` and skip these tokens before applying the known-name redaction. Sample size: 1 instance this run (out of 5 total entries), but the boilerplate welcome message is high-traffic so the pattern likely affects many real entries that simply weren't sampled.
+- **2026-05-30:** Third consecutive low-volume run (154 -> 5 -> 2 over three weeks). Only 1 unique exchange this run (the memory and training entries are the same welcome-desk intake). The 05-16 OPEN QUESTION — did chat traffic actually fall or is the memory writer silently skipping writes — is now a STANDING data-quality flag, not a one-off. Two weeks of near-zero captures while the product is live strongly suggests a capture/writer issue rather than genuine traffic. Strongly recommend a morning-pulse cross-check of 7-day chat counts vs. memory-write counts before next run.
 
 ## CALIBRATION SUGGESTIONS
 
@@ -47,6 +48,7 @@
 
 - **2026-05-16:** Volume dropped sharply: 154 entries last week → 5 entries this week. Possible causes: (a) genuine low-traffic week (mid-month Saturday), (b) memory writer regression, (c) capture pipeline degradation (entries written elsewhere or dropped). Recommend morning-pulse audit cross-check chat counts vs. memory-write counts. If chat traffic stayed flat but memory dropped, that's a redactor/writer bug, not low traffic.
 - **2026-05-16 — keep 7-day window.** The 5-entry sample is far under the 200 cap; widening to 14 days would not improve signal because entries are uniformly boilerplate welcome-desk intake. The problem is volume / pipeline (see above), not window size.
+- **2026-05-30:** Keep 7-day window — widening would not help while the writer is the suspected bottleneck (more days x near-zero writes = still near-zero). The fix is upstream (confirm captures are being written), not the audit window. Also: no audit ran on 2026-05-23 (gap). If runs keep slipping, the 7-day window will leave permanent blind spots between runs; consider widening to match the actual inter-run gap (e.g. 14 days) ONLY after the writer-volume question is resolved, so a real backlog isn't missed.
 
 ## OPEN QUESTIONS
 
@@ -58,6 +60,7 @@
 
 - **2026-05-16:** Did chat traffic actually drop 30× this week or did the memory writer skip writes? Cross-checking morning-pulse's chat counts against memory file growth for the same window would settle it. If chat counts held but memory dropped, the redactor or writer has a silent skip path that needs fixing.
 - **2026-05-16:** Is the "Wayfinder→[NAME]" over-redaction localized to the welcome-desk concierge flow or does it affect main chat? All 5 sampled entries this run were welcome-desk style intake, so the sample doesn't disambiguate.
+- **2026-05-30:** Now two+ weeks of suspiciously low capture volume (5 then 2). Is `memory-recent` only surfacing welcome-desk/concierge intake and missing main-chat captures entirely? Every low-volume sample for three runs has been intake-style. Worth confirming whether main-chat sessions are written to a different shard/file that this endpoint's day-window query isn't picking up.
 
 ## RUN HISTORY
 
@@ -67,3 +70,4 @@
 | 2026-05-02 | 11 (6 mem + 5 train) | 2 (HTTP 200) | Caught first-name "Dan" in assistant openers — leading-vocative pattern missed by redactKnownName. Held back on redacting role/family-context combinations per false-negative-bias rule. |
 | 2026-05-09 | 154 (81 mem + 73 train) | 2 (HTTP 200) | Caught K-12-school-as-user-identifier leak: "My son is a 9th grader at Lakeside in Seattle" — Lakeside redacted to [SCHOOL] in both query and assistant echo (3 occurrences). Held back on Mercer Island mentions (topic comparison, not user identifier). |
 | 2026-05-16 | 5 (3 mem + 2 train) | 0 | All entries were boilerplate parent-intake welcome-desk exchanges — no PII to catch. Noted over-redaction (product name "Wayfinder" → "[NAME]") for regex-team follow-up. Volume dropped 30× from last week (154 → 5); flagged for morning-pulse cross-check on whether chat traffic actually dropped or memory writer is skipping. |
+| 2026-05-30 | 2 (1 mem + 1 train) | 0 | Both entries were the SAME boilerplate parent-intake welcome-desk exchange (generic "my child" query + David's calibration-question reply). No names, schools, towns, phones, or identifiers present. Nothing to redact. Note: no run on record for 2026-05-23 (week skipped); this run still only sees a 7-day window so 05-17..05-23 captures, if any, were not re-examined. Volume remains very low (2) — continues the 154->5->2 downtrend; pipeline/volume question from 05-16 still open. |
