@@ -209,3 +209,22 @@
 
 ## NEW OPEN QUESTION (2026-06-01)
 - **wayfinder-data-refresh: re-enable or retire?** Now confirmed dead (2 consecutive missed Sundays). Two paths for Dan: (a) it was intentionally paused (corpus is saturated; CLAUDE.md notes data modules at diminishing returns) -- if so, formally disable it in the Cowork dashboard so future audits stop flagging it; or (b) it errored/got skipped silently -- if so, check the run logs for the failure and re-enable. Either way the current state (enabled-but-not-firing, or disabled-but-audit-still-expecting-it) is the ambiguous middle that keeps generating these flags. A decision either way closes the loop. Control signal that the scheduler is otherwise healthy: pii-audit (Sat 4:04am) committed 5/30; nightly-audit fires nightly.
+
+## NEW EFFECTIVE PATTERN (2026-06-02) -- ENOSPC boot-smoke workaround
+- **The 6-night boot-smoke blackout is solved.** /sessions has been 100% full (0 avail) since 5/28, blocking `npm install` because npm writes cache + logs to `/sessions/.../.npm`. But the cloned repo lives on `/` (sda1, ~1.3G free). Redirect npm OFF the full mount and boot smoke runs normally again:
+  ```bash
+  export TMPDIR=/tmp
+  npm install --no-audit --no-fund --omit=dev --cache /tmp/npmcache   # installs to ./node_modules on / , cache on /
+  timeout 15 env NODE_ENV=development CLAUDE_API_KEY=sk-test JWT_SECRET=testsecret PORT=3099 node backend/server.js
+  ```
+  Tonight this restored the FULL data-health logger pass (the single highest-yield runtime check) after 5 nights of static-only compensation. **Use this every night ENOSPC persists -- do NOT fall back to static-only first.** The static panel is ~85% signal; boot smoke is the only thing that catches async-IIFE service-init errors + the data-health duplicate/invalid counts. The underlying /sessions disk pressure is still a Dan-level infra fix, but it no longer gates the audit.
+
+- last_calibration_change: 2026-06-02 -- 21st clean nightly in last 23 (fixes only 5/13 + 5/15). MAJOR: recovered full boot-smoke capability via the npm-cache-redirect workaround above (ENOSPC had forced static-only since 5/28). Boot ran clean -- all services init, data-health all-clean, no undefined-ref/async-IIFE errors. Programs Rule-2 net 82 STEADY for 15 consecutive nights (5/12->6/2) -- normalizeEntry architecture continues absorbing data-refresh additions with zero new residue; demote to weekly tracking (raw count is stable, only sub-bucket migration would matter). Cost/data/cross-cutting all clean. Calibration well-tuned. The wayfinder-data-refresh task remains the only open non-infra concern (silently dead, 2 missed Sundays) -- it is a scheduled-task-health issue Dan must resolve from the Cowork dashboard, not nightly-fixable from inside the audit.
+
+## RUN HISTORY (recent rows -- compact to 14 max)
+
+| 2026-05-29 | cost, runtime[static], data, essay-pipeline | 0 | 0 | CLEAN 17th/19. Essay-pipeline 33 nights dormant; creditDeducted holding. Rule-2 net 82 STEADY 11. ENOSPC 2 nights. |
+| 2026-05-30 | cost, runtime[static], data, frontend&build | 0 | 0 | CLEAN 18th/20. Rule-2 net 82 STEADY 12. ENOSPC 3rd night -> sustained. |
+| 2026-05-31 | cost, runtime[static], data, cross-cutting | 0 | 0 | CLEAN 19th/21. Rule-2 net 82 STEADY 13. ENOSPC 4th night. data-refresh 5/31 slot decisive. |
+| 2026-06-01 | cost, runtime[static], data, cross-cutting | 0 | 0 | CLEAN 20th/22. Rule-2 net 82 STEADY 14. ENOSPC 5th night. ESCALATION: data-refresh silently dead (missed 5/24+5/31). |
+| 2026-06-02 | cost, runtime[FULL BOOT], data, cross-cutting | 0 | 0 | CLEAN 21st/23. **Boot smoke RESTORED via npm-cache-redirect ENOSPC workaround** -- data-health all-clean (1606/1043/1416), all services init, graceful shutdown. Rule-2 net 82 STEADY 15. CORS/Stripe-sig/premium-auth/shadowed-routes all clean. 5/13+5/15 fixes holding. data-refresh still dead (next slot 6/7). |
