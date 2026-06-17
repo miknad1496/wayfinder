@@ -6,7 +6,8 @@
 
 - frequency: weekly Saturday 4am
 - batch_size: up to 200 entries per run
-- last_calibration_change: 2026-04-26 — initial setup
+- last_calibration_change: 2026-06-17 — widened this run's fetch window to days=21 to recover the 6/4-6/16 scheduler-blackout backlog (missed 6/6 + 6/13 runs; last successful run 5/30). Default window stays 7; see STANDING WIDENING under CALIBRATION SUGGESTIONS.
+- prior_calibration_change: 2026-04-26 — initial setup
 
 ## EFFECTIVE PATTERNS
 
@@ -15,6 +16,9 @@
 - **2026-05-02:** First-name-as-direct-address leak in assistant openers — assistant began a long reply with "Dan, I want to be direct:..." and `redactKnownName` did not catch it. The matching pattern is `<FirstName>,` at start of paragraph (often after the word "**" markdown or right after a newline). The `[NAME]`-redaction WAS applied successfully on the same user's later session ("Welcome to Wayfinder, [NAME]!" in memory-2026-04-29) — suggests the known-name pass requires the user to be re-identified per session, and missed sessions on a different memory shard.
 
 - **2026-05-09:** K-12 school name as the user's own child's school — caught in `memory-2026-05-03.jsonl:3` and `training-2026-05.jsonl:12`. Lead-in pattern: "My son is a 9th grader at Lakeside in Seattle" → assistant response then echoed "Lakeside" twice in summary callbacks ("9th grader / Lakeside / robotics conversation" and "Your son's grade (9th, Lakeside, got it)"). The lead-in user phrasing is the only place a regex needs to bind — once captured at intake, downstream assistant echoes can be redacted by the same `redactKnownName` second-pass mechanism that handles user names.
+
+
+- **2026-06-17:** Leading-vocative redaction is now WORKING. The exact pattern that leaked "Dan, I want to be direct" on 2026-05-02 is correctly redacted this run: "[NAME], I want to be straight with you" (MEM#7/TRAIN#2), "[NAME], this is exactly the kind..." (MEM#9/TRAIN#4), "[NAME], I'm going to be honest with you" (MEM#11/TRAIN#6), plus "Hey [NAME] — welcome back" and "Welcome to Wayfinder, [NAME]!". Mechanical scan: 11 [NAME] tokens present, 0 leaked first names, 0 emails, 0 phone patterns. Net: redactor healthy — no name leaks at all this run. Either the regex-team leading-vocative scrub shipped or the known-name second-pass now binds at paragraph start.
 
 ## FAILED PATTERNS / KNOWN ANTI-PATTERNS
 
@@ -26,6 +30,11 @@
 
 - **2026-05-16:** Saw a clear case of OVER-redaction (not the audit's concern but worth logging): `memory-2026-05-15.jsonl:0` response contained `Welcome to [NAME]! ... Your [NAME] Advisor is getting ready` — the upstream regex appears to have redacted the product name "Wayfinder" as if it were a user's first name. Not a PII leak (over-redaction, not under-redaction), so no patch posted per false-negative bias. But the regex team should whitelist the product name. Pattern: `redactKnownName` is binding "Wayfinder" to the user's name slot incorrectly — likely because some welcome-desk flow seeded `userName` to "Wayfinder" or the redactor's name-detection misidentified the product in the assistant opener.
 
+
+- **2026-06-17:** Near-miss HELD CORRECTLY — "Penabur Gading Serpong" (an Indonesian international school) appeared in the user query "What about penabur gading serpong for hs selection" and was echoed ~4x in the assistant reply. Did NOT redact. The Grade-8 student is evaluating it as a PROSPECTIVE high school ("for hs selection"); their CURRENT school was described only generically ("a bilingual education school ... junior highschool") with no name. This is the topic/selection pattern (cf. "Lakeside vs Bush?" / Mercer Island 2026-05-09) NOT an attendance statement ("I'm a 9th grader AT Lakeside" — the case that WAS redacted 2026-05-09). The assistant even hedged "if you're already there OR considering it." Redacting would have destroyed a legitimate school-selection discussion. False-negative bias upheld.
+- **2026-06-17:** Grades / test scores ("83 math, 61 physics, 88 english, 80 biology, 93 christian education") are NOT PII — academic-performance data, not tied to a name or to any identifier (no phone/email/SSN shape). Repeated by the assistant but never adjacent to an un-redacted name. Held.
+- **2026-06-17:** Parents' professions ("father is an anesthesiologist, mom an immunology/allergy doctor"), age "14", country "Indonesia", bare metro "Jakarta", and universities (NUS, Duke-NUS, Universiti Malaya, Taylor's, Monash Malaysia) — all generic demography / public institutions / bare-major-metro. None names a person, own-school, neighborhood/street, or contact. Held per established anti-patterns. The COMBINATION is mildly identifying but follows the 2026-05-02 precedent: mild combinatorial identifiability is not a redaction trigger absent a name/own-school/location/contact.
+
 ## DATA QUALITY FLAGS
 
 - **2026-05-02:** Recurring assistant pattern: opening a high-effort reply with `<FirstName>, I want to be direct/honest/clear` style. Recommend regex team add a leading-vocative pattern: `^([A-Z][a-z]{2,15}),\s` checked against the session's known username before the response is persisted. Sample size: 1 leak this run, but pattern is template-y enough to recur.
@@ -35,6 +44,12 @@
 
 - **2026-05-16:** Product name "Wayfinder" being redacted as `[NAME]` in welcome-desk assistant responses. Recommend regex team explicitly exclude product/brand names from the `redactKnownName` second-pass. Suggested patch: add a hard whitelist `PRODUCT_NAMES = ['Wayfinder']` and skip these tokens before applying the known-name redaction. Sample size: 1 instance this run (out of 5 total entries), but the boilerplate welcome message is high-traffic so the pattern likely affects many real entries that simply weren't sampled.
 - **2026-05-30:** Third consecutive low-volume run (154 -> 5 -> 2 over three weeks). Only 1 unique exchange this run (the memory and training entries are the same welcome-desk intake). The 05-16 OPEN QUESTION — did chat traffic actually fall or is the memory writer silently skipping writes — is now a STANDING data-quality flag, not a one-off. Two weeks of near-zero captures while the product is live strongly suggests a capture/writer issue rather than genuine traffic. Strongly recommend a morning-pulse cross-check of 7-day chat counts vs. memory-write counts before next run.
+
+
+- **2026-06-17:** Scheduler blackout 6/4-6/16 (per nightly-audit commit fd71506) silenced this task on 6/6 and 6/13; last successful pii-audit was 5/30. Widened this run to days=21 to recover the backlog. The recovered gap (5/31-6/9) held only 3 entries, all dated 6/9 — confirms genuinely low capture volume, not a stale-window artifact.
+- **2026-06-17:** Over-redaction from 5/16 ("Wayfinder" -> "[NAME]") did NOT recur. This run "Wayfinder" stays intact as the product name in every welcome-desk opener while only the user's actual first name is "[NAME]". Either the product-name whitelist shipped or the 5/16 instance was session-specific. Recommend the regex team confirm a `PRODUCT_NAMES = ['Wayfinder']` skip is live in `redactKnownName`.
+- **2026-06-17:** ALL 25 entries are concierge / "Wayfinder Assistant" lighter-version captures (every multi-paragraph reply carries the "Wayfinder Assistant — doing my best on this one" upsell footer). Zero full-Advisor (SLM) / Head-Consultant captures again — the 5th consecutive run with only concierge-tier intake. Reinforces the standing 5/30 flag that memory-recent may only surface concierge intake and miss main-chat / Advisor sessions (different shard or writer path).
+- **2026-06-17:** International-school-as-identifier coverage gap. The 2026-05-09 own-school whitelist is WA-K12-only (Lakeside/Bush/Overlake/...). If a future user states ATTENDANCE at a non-US school ("I'm a 10th grader at Penabur Gading Serpong"), no whitelist entry would bind it and the attendance leak would slip. This run was topic/selection so no leak occurred, but flagging proactively: the own-school scrub should key off attendance verbs + a school-like proper-noun phrase ("(attend|go to|study at|am a Nth grader at) <Proper Noun>") rather than a fixed regional whitelist, so it generalizes to international schools.
 
 ## CALIBRATION SUGGESTIONS
 
@@ -50,6 +65,10 @@
 - **2026-05-16 — keep 7-day window.** The 5-entry sample is far under the 200 cap; widening to 14 days would not improve signal because entries are uniformly boilerplate welcome-desk intake. The problem is volume / pipeline (see above), not window size.
 - **2026-05-30:** Keep 7-day window — widening would not help while the writer is the suspected bottleneck (more days x near-zero writes = still near-zero). The fix is upstream (confirm captures are being written), not the audit window. Also: no audit ran on 2026-05-23 (gap). If runs keep slipping, the 7-day window will leave permanent blind spots between runs; consider widening to match the actual inter-run gap (e.g. 14 days) ONLY after the writer-volume question is resolved, so a real backlog isn't missed.
 
+
+- **2026-06-17 — STANDING WIDENING now justified.** The 5/30 note proposed widening only after the writer-volume question resolved. It hasn't resolved, but a real 13-night blackout just proved the blind-spot risk is concrete: 2 runs were missed and a 7-day window would have permanently lost 5/31-6/9. Recommendation for future runs: when a run detects it follows a gap (a missed-run note in nightly-audit/morning-pulse, OR simply >9 days since the last RUN HISTORY row), auto-widen `days` to (days_since_last_run + 3), capped by the 200-entry limit. This run applied exactly that (days=21) and still fetched only 25 entries.
+- **2026-06-17 — 200-entry cap nowhere near binding** (25 entries at days=21). Keep the cap as-is; do NOT shrink the window for low-traffic reasons — the binding constraint is missed runs, not over-fetching. Shrinking would only deepen blind spots after the next slip.
+
 ## OPEN QUESTIONS
 
 - Worth tracking PII-leakage rate over time? Trend would tell us if redactor is improving or degrading.
@@ -62,6 +81,10 @@
 - **2026-05-16:** Is the "Wayfinder→[NAME]" over-redaction localized to the welcome-desk concierge flow or does it affect main chat? All 5 sampled entries this run were welcome-desk style intake, so the sample doesn't disambiguate.
 - **2026-05-30:** Now two+ weeks of suspiciously low capture volume (5 then 2). Is `memory-recent` only surfacing welcome-desk/concierge intake and missing main-chat captures entirely? Every low-volume sample for three runs has been intake-style. Worth confirming whether main-chat sessions are written to a different shard/file that this endpoint's day-window query isn't picking up.
 
+
+- **2026-06-17:** Is main-chat / full-Advisor traffic captured anywhere this endpoint can see? Five consecutive runs (incl. this one) surfaced ONLY concierge "Wayfinder Assistant" intake. Either (a) paid/Advisor usage is genuinely near-zero, or (b) Advisor/SLM turns write to a shard `memory-recent` doesn't query. A morning-pulse cross-check of the generation-breakdown (SLM/Haiku/Engine counts) vs. `memory-recent` counts for the same window would settle it: if SLM/Engine counts are non-zero but never appear here, there is a capture blind spot.
+- **2026-06-17:** Did the leading-vocative fix (5/02) and the Wayfinder-whitelist fix (5/16) actually ship to `redactPII`/`redactKnownName`, or is their absence this run luck-of-the-sample? Both prior issues are cleanly absent. A one-line confirmation from whoever owns the redactor would let us close those two standing data-quality flags.
+
 ## RUN HISTORY
 
 | Date | Entries Fetched | Patches Applied | Notable |
@@ -71,3 +94,4 @@
 | 2026-05-09 | 154 (81 mem + 73 train) | 2 (HTTP 200) | Caught K-12-school-as-user-identifier leak: "My son is a 9th grader at Lakeside in Seattle" — Lakeside redacted to [SCHOOL] in both query and assistant echo (3 occurrences). Held back on Mercer Island mentions (topic comparison, not user identifier). |
 | 2026-05-16 | 5 (3 mem + 2 train) | 0 | All entries were boilerplate parent-intake welcome-desk exchanges — no PII to catch. Noted over-redaction (product name "Wayfinder" → "[NAME]") for regex-team follow-up. Volume dropped 30× from last week (154 → 5); flagged for morning-pulse cross-check on whether chat traffic actually dropped or memory writer is skipping. |
 | 2026-05-30 | 2 (1 mem + 1 train) | 0 | Both entries were the SAME boilerplate parent-intake welcome-desk exchange (generic "my child" query + David's calibration-question reply). No names, schools, towns, phones, or identifiers present. Nothing to redact. Note: no run on record for 2026-05-23 (week skipped); this run still only sees a 7-day window so 05-17..05-23 captures, if any, were not re-examined. Volume remains very low (2) — continues the 154->5->2 downtrend; pipeline/volume question from 05-16 still open. |
+| 2026-06-17 | 25 (15 mem + 10 train; days=21, widened for blackout backlog) | 0 | First run after the 13-night scheduler blackout (missed 6/6 + 6/13; last run 5/30). Content was one Indonesian Grade-8 med-aspirant session + welcome-desk intakes. Redactor healthy: leading-vocative leak (5/02) now FIXED — "[NAME], I want to be straight" correctly redacted; Wayfinder over-redaction (5/16) absent; 0 leaked names/emails/phones on mechanical scan. HELD "Penabur Gading Serpong" (prospective-HS topic mention, not own-school attendance). 0 PII leaks found, 0 patches posted. |
