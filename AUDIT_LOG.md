@@ -2213,3 +2213,90 @@ Cost & Resource Leaks · Backend Runtime · Data Integrity · Security & Auth Su
   Security & auth (deep-sweep, due tonight per 5/28 cadence): premium routes auth-gated (essays 6 / ap-coach 12 / financial-aid 8 / essay-coach 2 verifyToken sites); CORS function-allowlist rejects unknown origins, ALLOWED_ORIGINS is a restricted prod(wayfinderai.org+www)/dev(localhost) list, no wildcard (server.js:138-150); Stripe webhook sig enforced via constructEvent w/ explicit prod-reject (stripe.js:289-296); 0 shadowed routes across 6 hot files (chat/ap-coach/essays/financial-aid/volunteer/stripe); 3 head <script> blocks body-trap-safe (patch129 MutationObserver is `&& document.body`-guarded AND DCL-deferred); Layer-3 route xref 3/3 internal *.html links (privacy/terms/forgot-password) resolve to file + server route. Re-verified 5/13 volunteer /discover-local auth gate (volunteer.js:251-253) + 5/15 ap-coach /usage dedup (single handler @58, line 752 comment-only) -- both holding.
 
 **Aborted push?** N/A -- no code files modified. The data finding is escalated for a Dan-level decision, NOT auto-patched (reasoning above). Pushing AUDIT_LOG.md + lessons file only (append-only markdown, validation-gate exempt).
+
+## 2026-07-14 — nightly-system-audit — **NOT CLEAN: 1 HIGH data finding (ESCALATED, not auto-fixed) + 1 HIGH scheduler escalation**
+
+Focus: cost & resource leaks | backend runtime (FULL BOOT) | data integrity (deep — fabricated-`_source` fingerprint EXTENDED to all 4 modules + NEW DNS-resolution scan) | cross-cutting/security confirm.
+
+### HIGH — 37 `_verified:true` entries point at hostnames that DO NOT EXIST (NXDOMAIN)
+New scan this run: resolve every hostname referenced by `url`/`_source` across all four modules' verified arrays (1,634 distinct hosts; DNS only, no content fetch). **37 verified entries reference 37 hostnames with no DNS record at all.** A domain that does not resolve cannot have been verified against a live page — `_verified: true` is factually false on every one of these.
+
+Breakdown: **programs 26 · internships 9 · volunteer 2** (scholarships: 0 — clean).
+
+Two failure shapes, both present:
+- **Hallucinated domain, real program.** e.g. `www.wheretheresbedragons.com` (real org is `wheretherebedragons.com` — spurious "s"); `ysp.fsu.edu` (real is `ysp.osta.fsu.edu`); `www.junachievement.org` (real is `norcal.ja.org`). WebSearch-confirmed all three.
+- **Hallucinated domain AND hallucinated program.** The `hs-international-batch-*` family again (`www.crans-montana-ski-academy.ch`, `www.klosters-davos-ski.com`, `www.iceland-school.com`, `www.cathayaviationacademy.com`, …) — same batch family as the 2026-06-18 finding, now with the domain itself fabricated, not just the path.
+
+This is the **same root cause as the 6/18 finding, one layer deeper.** 6/18 found ~225 program entries with real hosts + machine-templated paths (`/learn/hs-summer` on 32 distinct hosts). Tonight's DNS scan finds the subset where the generator invented the host too. Rule-1 / Rule-2 / URL-hygiene / shared-path fingerprint ALL miss this class: the URLs are structurally perfect, they simply point nowhere.
+
+NOT auto-remediated, per the 6/18 precedent and CLAUDE.md Rule 1 (no-agent, manual one-by-one data verification) + Rule 2 (every verified entry needs a real `_source`): de-verifying or deleting 37 student-facing curated rows is a destructive bulk mutation of Dan's daughter's data at midnight, and the sanctioned write path is the grinder-write single-writer pipeline. Surfacing it conclusively is the nightly's job; picking the remediation is Dan's.
+
+**Recommended remediation (Dan):**
+1. Interim (cheap, reversible, non-destructive): bulk-set `_verified: false` on these 37 — they lose the verified badge and drop out of verified-only injection, rows survive for later research.
+2. Real fix: re-source one-by-one (WebSearch → real URL where the program exists; delete where it does not). ~10 of the 37 are real programs with a wrong URL and are cheap to repair; the `hs-international-batch-*` ski/aviation/field-school cluster is likely fabricated end-to-end.
+3. Architectural: add a DNS-resolution check to inject-script validation — **no entry may be written with `_verified: true` if its `_source` host does not resolve.** This is a mechanical, zero-judgment gate that would have blocked all 37 at write time. Pairs with the 6/18 recommendation (shared-path-across-N-hosts fingerprint at write time).
+
+Reproduce: resolve4/resolve6/resolveCname each `new URL(e.url).hostname` over the verified arrays, retries=3 timeout=6s against 8.8.8.8/1.1.1.1/9.9.9.9, and split ENOTFOUND (actionable) from ETIMEOUT/ESERVFAIL/ENODATA (inconclusive — a naive single-try scan produced 4 false positives: aiims.edu, iitb.ac.in, technion.ac.il, zu.ac.ae all resolve fine on retry).
+
+Full list:
+| module | title | url (NXDOMAIN) | _addedBy | _verifiedDate |
+|---|---|---|---|---|
+| internships | Junior Achievement of Northern California | https://www.junachievement.org/programs | (none) | 2026-04-08 |
+| internships | The School of The New York Times Career Discov | https://www.nytimes.edu/ | (none) | 2026-04-09 |
+| internships | UT Austin Longhorn Center for Academic Equity  | https://lcae.utexas.edu/ | (none) | 2026-04-09 |
+| internships | Jazz at Lincoln Center Summer Jazz Academy | https://academy.jazz.org/summer-jazz-academy | (none) | 2026-04-09 |
+| internships | Manufacturing Connect | https://www.manufacturingrenaissance.org/ | (none) | 2026-04-09 |
+| internships | Young Scholars Program (YSP) | https://ysp.fsu.edu/ | (none) | 2026-04-09 |
+| internships | Upward Bound Math-Science | https://ubms.sdes.ucf.edu/ | (none) | 2026-04-09 |
+| internships | University of Pennsylvania Management and Tech | https://mt-summer.seas.upenn.edu/ | (none) | 2026-04-09 |
+| internships | Minnesota Institute for Talented Youth (MITY)  | https://www.mityprograms.org/eym/ | (none) | 2026-04-09 |
+| programs | Camp Wonderopolis (Free Online Summer Learning | https://camp.wonderopolis.org/ | esms-grinder | 2026-04-26 |
+| programs | Children's Museum of Richmond Summer Camps | https://www.cmorkids.org/programs/summer-camps | state-expansion-batch-53 | 2026-04-28 |
+| programs | DigiTeknology Online Coding + STEM Camps (Cana | https://digiteknology.ca/programs/youth-camps | canada-online-batch-71 | 2026-04-28 |
+| programs | JetBlue Foundation Soar With Reading + Beyond  | https://www.jetblueforgood.com/learn/soar-with-reading | us-national-corporate-batch-73 | 2026-04-28 |
+| programs | DECA Canada Junior Programs (Entrepreneurship  | https://decacanada.ca/learn/junior-deca-programs | cross-border-batch-74 | 2026-04-28 |
+| programs | Lycée Henri-IV International Programs (Paris) | https://www.lyceehenri4.fr/learn/international-programs | international-france-batch-78 | 2026-04-28 |
+| programs | Spanish Immersion Mérida + Yucatán (Maya Herit | https://www.hablayucatan.com | international-latam-batch-83 | 2026-04-28 |
+| programs | International Geography Olympiad (iGeo) — Pipe | https://www.usgeolympiad.com | international-competitions-batch-85 | 2026-04-28 |
+| programs | Korea University International Summer School | https://international.korea.ac.kr/learn/summer-school | hs-international-batch-96 | 2026-04-28 |
+| programs | The Hague Youth Forum (International Law) | https://www.haguelaw.org/learn/youth-forum | hs-international-batch-103 | 2026-04-28 |
+| programs | Operation Groundswell (HS Service Learning) | https://www.operationgroundswell.org/learn/hs | hs-international-batch-106 | 2026-04-28 |
+| programs | Where There Be Dragons HS Programs (China + Mo | https://www.wheretheresbedragons.com/learn/hs | hs-international-batch-106 | 2026-04-28 |
+| programs | International Economics Olympiad (IEO) | https://ieoglobal.org | hs-international-batch-107 | 2026-04-28 |
+| programs | International Geography Olympiad (iGeo) | https://www.igeo-olympiad.org | hs-international-batch-107 | 2026-04-28 |
+| programs | International Earth Science Olympiad (IESO) | https://www.iesoinfo.org | hs-international-batch-107 | 2026-04-28 |
+| programs | Iceland Geothermal + Volcanic HS Field School | https://www.iceland-school.com/learn/hs-field | hs-international-batch-109 | 2026-04-28 |
+| programs | Borneo Rainforest Wilderness HS Conservation | https://www.borneorainforest.org/learn/hs | hs-international-batch-109 | 2026-04-28 |
+| programs | IsraelTech Innovation HS Programme (Tel Aviv) | https://www.israeltech-foundation.org/learn/hs | hs-international-batch-112 | 2026-04-28 |
+| programs | ALMA Italy HS Culinary Summer (Parma) | https://www.almacuoco.com/learn/hs-summer | hs-international-batch-119 | 2026-04-28 |
+| programs | Cathay Pacific Aviation Academy HS Pilot Found | https://www.cathayaviationacademy.com/learn/hs-pilot | hs-international-batch-130 | 2026-04-28 |
+| programs | ESL Academy Berlin Esports HS Summer | https://academy.esl.gg/learn/hs-summer | hs-international-batch-131 | 2026-04-28 |
+| programs | Lighthouse Foundation Iceland Marine HS | https://www.lighthouse-foundation.is/learn/hs-marine | hs-international-batch-132 | 2026-04-28 |
+| programs | Crans-Montana Switzerland Ski Academy HS | https://www.crans-montana-ski-academy.ch/learn/hs | hs-international-batch-134 | 2026-04-28 |
+| programs | Klosters Davos Switzerland Ski Academy HS | https://www.klosters-davos-ski.com/learn/hs | hs-international-batch-134 | 2026-04-28 |
+| programs | St. Anton Austria Ski + Mountaineering Academy | https://www.stantonarlberg-academy.at/learn/hs | hs-international-batch-134 | 2026-04-28 |
+| programs | Grindelwald Switzerland Mountaineering HS Acad | https://www.grindelwald-mountaineering.ch/learn/hs | hs-international-batch-134 | 2026-04-28 |
+| volunteer | Local Synagogue/Church/Mosque/Temple Service P | undefined | (none) | 2026-04-25 |
+| volunteer | Community Bike Repair Coop | undefined | (none) | 2026-04-25 |
+
+
+Inconclusive, NOT counted in the 37 (excluded deliberately): `empatico.org`, `seap.asee.org` (ENODATA), `jacentralflorida.org` (ESERVFAIL), `www.rockedu.rockefeller.edu` (www-prefix NXDOMAIN but apex `rockedu.rockefeller.edu` resolves → cosmetic, real program).
+
+### Carried, still unremediated — 6/18 finding: ~221 program entries / 25 shared templated paths
+Re-confirmed unchanged tonight (no data commits landed since 6/18): `/learn/hs-summer` 32 hosts · `/learn/hs-pre-university` 26 · `/learn/summer-school` 23 · `/programs/camps` 13 · `/learn/hs-insight` 12. Still `_verified:true`. Still awaiting a Dan decision.
+
+**Fingerprint scan EXTENDED to the other 3 modules tonight** (the 6/18 open question): scholarships 3 paths/12 entries and internships 11 paths/70 entries — but these are mostly the **generic-path coincidence class** the 6/18 lesson warned about (`/volunteer` on 15 real museum/zoo hosts, `/programs` on 11, `/scholarships` on 5 — all plausible real CMS paths). The genuinely suspicious internships sub-bucket is `/learn/teens` (7 entries, 6 hosts) — same `/learn/<audience>` generator shape as the programs set; McNay Art Museum's real Teen Art Guide page is `/teen-art-guide/`, not `/learn/teens/` (WebSearch-confirmed; the DB path 404s). Volunteer: 0 fingerprint hits — clean.
+
+### HIGH — scheduler stopped AGAIN: nightly-audit silent 6/19 → 7/13 (25 nights)
+On clone, HEAD was `4714d13` (pii-audit, 7/13). The last nightly-audit commit is `4168de2` (6/18). **A clean nightly still commits markdown, so 25 missing commits = 25 missing runs, not 25 silent-clean runs.** This is the SECOND blackout (the first was 6/4–6/16, 13 nights, logged 6/17).
+
+Differential diagnosis this time: **pii-audit DID commit on 7/13**, so the scheduler runner is alive — the failure is NOT environment-wide as it was in June. It is specific to `nightly-system-audit` (and `wayfinder-data-refresh`, dead since 5/24 — now ~11 consecutive missed Sundays). Dan: check the Cowork Scheduled dashboard for whether `nightly-system-audit` is enabled and whether the 6/19–7/13 runs errored. Cross-check whether the 6am `wayfinder-morning-pulse` email kept arriving through the window (third signal).
+
+### CLEAN — everything else
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872, the comment-guard is intact); keep-alive self-terminates on 10min idle (:842-845); 4 backend `setInterval`s all bounded/intentional-daemon; anon daily cap 5/day (chat.js:124/156); `effectiveMax` 30 auth / 5 anon (chat.js:346).
+- **Runtime**: FULL BOOT clean, natively (ENOSPC stayed cleared — /sessions 63%, no npm-cache-redirect workaround needed). All services init, no async-IIFE/undefined-ref errors. Data-health: internships 1606 (981v), scholarships 1043 (80v), programs 1416 (672v) — all "clean". ApCoach 220 units / 37 exams, intl-brain korea loaded. Graceful shutdown OK.
+- **Data (standard panel)**: metadata.totalCount === array.length on all 4 modules (1606/1043/1416/275). Rule-1 (bare-domain `_source`): 0 all modules. URL hygiene (multi-https / separator / parse-fail): 0 all modules. Programs Rule-2 net **82 STEADY** (sameUrl 77 + diffHost 5) — unchanged since 5/12, as expected with zero data commits.
+- **Security / cross-cutting**: 0 shadowed (method,path) route dups across 6 hot route files. CORS is a function-based allowlist, no wildcard. Stripe webhook signature enforced with an explicit production-reject (stripe.js:295). Premium routes auth-gated (essays 6 / ap-coach 12 / financial-aid 8 verifyToken sites). `frontend/src/app.js` syntax OK.
+- **Recent-fix regression check**: 5/13 volunteer `/discover-local` auth gate holding (volunteer.js:248). 5/15 ap-coach `/usage` dedup holding (0 dups).
+
+**Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
