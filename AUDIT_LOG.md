@@ -2300,3 +2300,31 @@ Differential diagnosis this time: **pii-audit DID commit on 7/13**, so the sched
 - **Recent-fix regression check**: 5/13 volunteer `/discover-local` auth gate holding (volunteer.js:248). 5/15 ap-coach `/usage` dedup holding (0 dups).
 
 **Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+---
+
+## 2026-07-15 — nightly-system-audit — **NOT CLEAN (carried): 2 HIGH data escalations stand, 0 NEW defects**
+
+**Focus**: Cost & resource leaks · Backend runtime (full boot) · Data integrity (standard panel + fingerprint re-confirm + targeted DNS re-resolve) · Security/auth surface + recent-fix regression check.
+
+**Headline**: No new code defects tonight. The two carried data escalations (7/14's 37 NXDOMAIN verified hosts; 6/18's ~221 templated-path program entries) remain open and **provably unchanged** — `git log --since=2026-07-14 -- backend/data/scraped/` shows the only commit touching that tree is the 7/14 audit's own markdown; the curated JSONs are bit-identical, so both findings carry as-is. Nothing to re-escalate as new; both still await Dan's remediation choice.
+
+### Scheduler — RECOVERY SIGNAL (partial answer to the 7/14 open question)
+`nightly-system-audit` fired 7/14 AND tonight 7/15 = **2 consecutive nights** after the 25-night blackout (6/19→7/13). The task is demonstrably running again. Root cause of the 25-night silence is still unknown (Dan's dashboard call), but the "is it dead?" question is now "no — recovered." Remaining watch item: `wayfinder-data-refresh` still dead since 5/24 (now ~11 missed Sundays; next slot Sun 7/19). If 7/19 produces no data commit, data-refresh is the lone still-broken task and should be repaired-or-retired — it is also the natural owner of the 6/18 + 7/14 fabrication cleanup.
+
+### Carried escalation #1 — 37 NXDOMAIN `_verified:true` hosts (from 7/14), UNCHANGED
+Data git-identical, so the population is the same 37 (programs 26 · internships 9 · volunteer 2). Fresh **targeted DNS re-resolve** tonight on a 7-host representative sample (correct config: `Resolver{timeout:6000,tries:3}`, servers 8.8.8.8/1.1.1.1/9.9.9.9) — all 7 still **NXDOMAIN**: `www.junachievement.org`, `ysp.fsu.edu`, `www.wheretheresbedragons.com`, `www.crans-montana-ski-academy.ch`, `www.cathayaviationacademy.com`, `www.iceland-school.com`, `www.klosters-davos-ski.com`. Live controls resolved (harvard.edu ✓; the real `wheretherebedragons.com` ✓ — confirming the spurious-"s" hallucination tell; `empatico.org` = ENODATA, correctly in the excluded-inconclusive bucket). Finding stands. Recommended arch fix unchanged: write-time DNS-resolution gate rejecting `_verified:true` when the `_source` host does not resolve.
+
+### Carried escalation #2 — ~221 templated-path program entries (from 6/18), UNCHANGED
+Fingerprint core cluster re-confirmed identical: `/learn/hs-summer`[32 hosts] · `/learn/hs-pre-university`[26] · `/learn/summer-school`[23]. Still `_verified:true`. The two arch fixes pair into one gate: reject `_verified:true` at write time when `_source` host does not resolve OR its path is shared across ≥3 unrelated hosts.
+
+### CLEAN — everything else (no new defects)
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872 comment-guard intact); keep-alive self-terminates at 5min idle (:842-845, MAX_IDLE=300000, PING_INTERVAL=90s). 4 backend `setInterval`s all bounded/daemon (user-backup unref+clear, scraper-scheduler clear, slm self-terminate, scheduler.js single hourly reminder daemon — no self-reset). Anon daily cap 5/day disk-persisted atomic (chat.js:124/156). Rate limiters tiered: chat 15/min, expensive 3/min, admin 5/min, auth 10/15min. Opus only on credit/quota-gated paths (essay, ap-coach score, head-consultant supplement) behind expensiveLimiter; Haiku on discover paths; Sonnet standard chat. No expensive model on an ungated path.
+- **Runtime**: FULL BOOT clean, natively (disk 72%, no ENOSPC / no npm-cache-redirect workaround needed). All services init, no async-IIFE / undefined-ref errors. Data-health: internships 1606 (981v), scholarships 1043 (80v), programs 1416 (672v) — all "clean". ApCoach 220 units / 37 exams, intl-brain korea loaded. Graceful SIGTERM shutdown + final backup OK.
+- **Data (standard panel)**: metadata.totalCount === array.length on all 4 modules (1606/1043/1416/275, drift 0). Rule-1 bare-domain `_source`: 0 all modules. URL hygiene (multi-https / separator / parse-fail): 0 all modules. Programs Rule-2 net **82 STEADY** (sameUrl 77 + diffHost 5) — unchanged since 5/12. Internships Rule-2 counted 99 tonight vs a cached script's 94 = the documented 5/12 scan-logic delta (`pathname==='/'` entries that also carry a `?query=`; the top entries are April-dated → data steady, scan diverged), NOT a data change.
+- **Security / cross-cutting** (rotated focus): 0 shadowed (method,path) route dups on ap-coach.js. CORS function-based allowlist, no wildcard. Stripe webhook signature enforced with explicit production-reject (stripe.js:294-297) + TOCTOU-safe idempotency. Premium routes auth-gated & enforced (essays / ap-coach / financial-aid; `/api/coach`→essay-coach.js `/chat` returns 401 on `!user` at :426-429).
+- **Recent-fix regression check**: 5/13 volunteer `/discover-local` auth gate holding (volunteer.js:248-253, returns 401 for missing/invalid token). 5/15 ap-coach `/usage` dedup holding (0 dups).
+
+**Meta-lesson applied twice tonight** (interrogate a surprising count before believing it): (1) a grep for auth on `/discover-local` returned empty → read the handler → the gate is present, just past the grep window; (2) "`coach.js` 0 auth refs" → the file is `essay-coach.js`, not `coach.js` — a path artifact, not a security gap. Both were non-findings once interrogated.
+
+**Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
