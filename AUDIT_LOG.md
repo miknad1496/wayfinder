@@ -2328,3 +2328,42 @@ Fingerprint core cluster re-confirmed identical: `/learn/hs-summer`[32 hosts] ·
 **Meta-lesson applied twice tonight** (interrogate a surprising count before believing it): (1) a grep for auth on `/discover-local` returned empty → read the handler → the gate is present, just past the grep window; (2) "`coach.js` 0 auth refs" → the file is `essay-coach.js`, not `coach.js` — a path artifact, not a security gap. Both were non-findings once interrogated.
 
 **Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+## 2026-07-19 — nightly-system-audit — **NOT CLEAN (carried): 2 HIGH data escalations stand, 0 NEW code/data defects — plus a scheduler-health correction + new blackout**
+
+Focus: cost & resource leaks | backend runtime (FULL BOOT) | data integrity (git-identity confirm + targeted DNS re-sample) | cross-cutting/security light + recent-fix regression | scheduler health deep-dive.
+
+### NEW — Scheduler blackout #3: nightly-audit silent 7/16–7/18 (3 nights); this time pii-audit ALSO missed its slot
+On clone, HEAD was still `38183de` (the 7/15 audit's own commit) — zero commits landed from ANY task in the 4 days since. nightly-audit's own cadence (daily ~12:09am) means 7/16, 7/17, and 7/18 all produced no commit; tonight (7/19) is the recovery. Third blackout episode in ~7 weeks, and the pattern alternates rather than simply improving:
+- Blackout A (6/4→6/16, 13 nights): **environment-wide** — all 3 auto-push tasks silent.
+- Blackout B (6/19→7/13, 25 nights): **task-specific** — pii-audit kept firing (7/13 commit) while nightly-audit alone was dark.
+- Blackout C (7/16→7/18, 3 nights, tonight): **environment-wide again** — pii-audit's Sat 7/18 4:04am slot also produced no commit; its last commit is still 7/13. That slot has unambiguously passed (7/18 4:04am PDT = 7/18 11:04 UTC, well before this run), so it's a confirmed miss, not a pending one. Two tasks going dark over the identical window points to environment/scheduler-level, not Wayfinder-task-level.
+
+Each episode has been shorter than the last (13 → 25 → 3 nights is not monotonic, but 25 → 3 is a big improvement) — still, 3 episodes in 7 weeks is recurring behavior. The 7/14-proposed dead-man's-switch gets stronger with each recurrence: **morning-pulse should assert HEAD carries a nightly-audit commit dated within the last 48h and surface its absence in the daily email.** That's a change to a different task, out of scope for tonight to implement — re-flagging as the single highest-leverage item in the queue.
+
+### CORRECTION — `wayfinder-data-refresh` has been dead since the missed **5/17** Sunday, not 5/24
+The lessons file and ~15 AUDIT_LOG entries since 5/25 have stated "dead since 5/24." Tonight I traced the actual commit history instead of carrying the standing claim forward unchecked: the LAST successful data-refresh commit is `9c5354c`, dated **2026-05-10** ("Data refresh state 2026-05-10: run 2 complete... Next plan: NC (2026-05-17)"). No commit touching `backend/data/scraped/` exists after that date. So the first missed Sunday was **5/17**, not 5/24 — the task has now missed **5/17, 5/24, 5/31, 6/7, 6/14, 6/21, 6/28, 7/5, 7/12 (9 confirmed Sundays)**, with 7/19 pending as a possible 10th. Doesn't change the recommended remediation, but corrects the duration (≈10 weeks silent, not ≈8).
+
+Today's 7/19 slot (9:03am PDT) has NOT yet occurred at audit time (this run is ~00:10 PDT) — cannot resolve tonight, same as every prior Sunday-eve audit. Next nightly run is the decisive check.
+
+### Carried escalation #1 — 37 NXDOMAIN `_verified:true` hosts (from 7/14), UNCHANGED
+Git-identical since 7/14 (zero commits to `backend/data/scraped/`). Fresh targeted re-resolve on an 8-host sample (`Resolver{timeout:6000,tries:3}`, servers 8.8.8.8/1.1.1.1/9.9.9.9): all 8 still NXDOMAIN — `www.wheretheresbedragons.com`, `ysp.fsu.edu`, `www.junachievement.org`, `www.crans-montana-ski-academy.ch`, `www.cathayaviationacademy.com`, `lcae.utexas.edu`, `faithactionnetwork.org`, `thinktank.bikeleague.org`. Live controls resolved correctly (`wheretherebedragons.com` ✓, `ysp.osta.fsu.edu` ✓, `harvard.edu` ✓, `google.com` ✓). Finding stands.
+
+Small precision note: the 7/14 reproduction table shows `url` as literally `"undefined"` for 2 volunteer entries — that's a report-column artifact (those 2 entries only carry `_source`, no separate `url` field), not a data bug. Confirmed tonight both `_source` values (`faithactionnetwork.org`, `thinktank.bikeleague.org`) are genuinely NXDOMAIN, so their inclusion in the 37 is correct either way.
+
+### Carried escalation #2 — ~221–225 templated-path program entries (from 6/18), UNCHANGED
+Confirmed via git-identity (no data commits since 5/10) rather than re-running the full fingerprint scan — nothing could have changed. Still `_verified:true`, still awaiting a Dan decision between the two paired architectural fixes (DNS-resolution gate + shared-path-fingerprint gate at write time).
+
+### CLEAN — everything else (no new defects)
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872, comment-guard intact); idle self-terminate condition reads `lastWarmAt` only, unaffected by pings. 4 backend `setInterval`s, all bounded/daemon (user-backup.js:262, scheduler.js:184, scraper-scheduler.js:258, slm.js:840) — same 4 as every prior night. Anon daily cap `ANON_DAILY_LIMIT=5` disk-persisted (chat.js:124-183). Rate limiting tiered: `effectiveMax` 30 authenticated / 5 anonymous (chat.js:346-347).
+- **Runtime**: FULL BOOT clean, natively (disk 63% used / 3.6G avail on both `/` and `/sessions` — no ENOSPC, no workaround needed). `npm i` (143 packages) + `timeout 15 node server.js`: all services init (account routes, storage dirs, token index, data sync, ApCoach 220 units/37 exams, intl-brain korea), data-health all "clean" (internships 1606/981v, scholarships 1043/80v, programs 1416/672v), graceful SIGTERM shutdown + final backup. Zero async-IIFE / undefined-ref errors.
+- **Data (standard panel)**: metadata.totalCount === array.length on all 4 modules (internships 1606, scholarships 1043, programs 1416, volunteer 275 under the `opportunities` key — canonical key used correctly). Rule-1 (bare-domain `_source`): 0 all modules. URL hygiene (multi-proto / separator / parse-fail): 0 all modules. Programs Rule-2 net **82 STEADY** (sameUrl 77 + diffHost 5) — unchanged since 5/12 (10+ weeks). Internships sameUrl 99 (known 5/12 scan-logic-delta baseline, not drift). Scholarships 12, volunteer 27 — both steady.
+- **Cross-cutting**: 0 shadowed (method,path) route dups across 6 hot files (ap-coach, essays, volunteer, chat, financial-aid, programs). CORS is a function-based allowlist (server.js:138-151), no wildcard. Stripe webhook signature check present with explicit prod-reject on missing secret (stripe.js:285-295). 3 head-inline `<script>` blocks (patch121-ko-localizer + 2 trivial JSON-LD) all body-trap-safe — `document.body` touches are either inside function declarations not called until later, or behind the PATCH129 `document.body &&` guard (index.html:740-743). Layer-3 route xref: 3/3 internal `*.html` links (`/privacy.html`, `/terms.html`, `/forgot-password.html`) resolve to matching `app.get([...])` routes.
+- **Recent-fix regression check**: 5/13 volunteer `/discover-local` auth gate holding (volunteer.js:242-253, 401 on missing/invalid token). 5/15 ap-coach `/usage` dedup holding (single live handler at line 58; line 752 is now an explanatory comment, not a route).
+
+### Attempted, inconclusive — morning-pulse email cross-check
+Tried to corroborate the scheduler-health signal by searching connected mail for Wayfinder/morning-pulse digest emails. The only mail account reachable from this environment is unrelated to Dan or Wayfinder (a vacation-rental business inbox) — not useful as a signal either way. Dropping this as a nightly-audit move; it isn't accessible from inside the sandbox. If Dan wants the dead-man's-switch cross-check, it has to live inside the morning-pulse task itself (which can check its own send history), not here.
+
+**Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+---
