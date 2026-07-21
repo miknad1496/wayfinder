@@ -2367,3 +2367,29 @@ Tried to corroborate the scheduler-health signal by searching connected mail for
 **Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
 
 ---
+
+## 2026-07-21 — nightly-system-audit — **NOT CLEAN (carried): 2 HIGH data escalations stand, 0 NEW code/data defects — plus scheduler blackout #4 confirmed**
+
+Focus: cost & resource leaks | backend runtime (FULL BOOT) | data integrity (git-identity confirm) | cross-cutting/security light + recent-fix regression | scheduler health.
+
+### NEW — Scheduler blackout #4: nightly-audit missed 7/20 (1 night)
+On clone, HEAD was `9f8af3e` (7/19's own commit). Zero commits landed 7/20 — a single missed night, recovered tonight (7/21). Shorter than blackout C (3 nights, 7/16-7/18) and much shorter than blackouts A (13) and B (25). Pattern of shrinking-but-recurring gaps continues. Not investigating further tonight beyond noting it — the dead-man's-switch recommendation (morning-pulse asserting a nightly-audit commit within 48h) from 7/14 stands as the single highest-leverage fix and is still unimplemented (out of scope for this task).
+
+### `wayfinder-data-refresh` — still dead; 7/19 Sunday slot now confirmed missed (10th)
+Last successful data-refresh commit remains `9c5354c` (2026-05-10). The 7/19 9:03am PDT slot flagged as "pending" in the last two audits has now definitively passed (today is 7/21) with no corresponding commit — confirmed missed. Running tally: 5/17, 5/24, 5/31, 6/7, 6/14, 6/21, 6/28, 7/5, 7/12, 7/19 = **10 confirmed missed Sundays** (~10 weeks silent). Next decisive checkpoint: 7/26.
+
+### Carried escalation #1 — 37 NXDOMAIN `_verified:true` hosts (from 7/14), UNCHANGED
+Git-identical since 7/14 (zero commits to `backend/data/scraped/` — confirmed via `git log -1 -- backend/data/scraped/` returning the 7/19 markdown-only commit, not a data commit). No re-resolve needed tonight since nothing could have changed; finding stands as-is pending Dan's remediation decision.
+
+### Carried escalation #2 — ~221–225 templated-path program entries (from 6/18), UNCHANGED
+Same git-identity reasoning — no data commits since 5/10, so the 6/18 fingerprint result is still current. Both escalations remain queued for the write-time gate (DNS-resolution + shared-path-fingerprint) recommended 7/14.
+
+### CLEAN — everything else (no new defects)
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872 comment-guard intact, only real `chatSLM()` calls at lines 689/795/812 update it). 4 backend `setInterval`s, all bounded/daemon (user-backup.js:262, scheduler.js:184, scraper-scheduler.js:258, slm.js:840) — same 4 as every prior night. Anon daily cap `ANON_DAILY_LIMIT=5` disk-persisted (chat.js:124-183). Rate limiting tiered: `effectiveMax` 30 authenticated / 5 anonymous (chat.js:346-347).
+- **Runtime**: FULL BOOT clean, natively. `npm i` + `timeout 15 node server.js`: all services init (account routes, storage dirs, token index, data sync, ApCoach 220 units/37 exams, intl-brain korea), data-health all "clean" (internships 1606/981v, scholarships 1043/80v, programs 1416/672v), graceful SIGTERM shutdown + final backup. Zero async-IIFE / undefined-ref errors.
+- **Cross-cutting**: 0 shadowed (method,path) route dups across 6 hot files (ap-coach, essays, volunteer, chat, financial-aid, programs). CORS is a function-based allowlist (server.js:138-151), no wildcard. Stripe webhook signature check present with explicit prod-reject on missing secret (stripe.js:285-295).
+- **Recent-fix regression check**: 5/13 volunteer `/discover-local` auth gate and 5/15 ap-coach `/usage` dedup both still holding (unchanged code, confirmed via same grep patterns as prior nights).
+
+**Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+---
