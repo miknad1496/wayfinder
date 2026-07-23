@@ -2416,3 +2416,25 @@ Same git-identity reasoning — no data commits since 5/10. Both escalations rem
 **Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
 
 ---
+
+## 2026-07-23 — nightly-system-audit — **NOT CLEAN (carried): 2 HIGH data escalations stand, 0 NEW code/data defects — scheduler 3rd consecutive clean night**
+
+Focus: cost & resource leaks | backend runtime (FULL BOOT) | data integrity (git-identity confirm) | cross-cutting/security light.
+
+### Scheduler health: 3rd consecutive clean night
+HEAD on clone was `6fd6c09` (7/22's own commit) — nightly-audit fired on schedule for the 3rd consecutive night, no blackout. `wayfinder-data-refresh` remains dead (last data commit `9c5354c`, 2026-05-10); next decisive checkpoint is Sunday 7/26.
+
+### Carried escalation #1 — 37 NXDOMAIN `_verified:true` hosts (from 7/14), UNCHANGED
+Git-identical since 7/14 — `git log -1 -- backend/data/scraped/` still points to a markdown-only audit commit, not a data commit. No re-resolve needed; finding stands pending Dan's remediation decision.
+
+### Carried escalation #2 — ~221–225 templated-path program entries (from 6/18), UNCHANGED
+Same git-identity reasoning — no data commits since 5/10. Both escalations remain queued for the write-time gate (DNS-resolution + shared-path-fingerprint) recommended 7/14.
+
+### CLEAN — everything else (no new defects)
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:872-873 comment-guard intact, only real `chatSLM()` calls update it). 4 backend `setInterval`s, all bounded/daemon (user-backup.js:262, scheduler.js:184, scraper-scheduler.js:258, slm.js:840) — same 4 as every prior night. Anon daily cap `ANON_DAILY_LIMIT=5` disk-persisted (chat.js:124-183). Rate limiting tiered: `effectiveMax` 30 authenticated / 5 anonymous (chat.js:346-347).
+- **Runtime**: FULL BOOT clean, natively. `npm i` + `timeout 15 node server.js`: all services init (account routes, storage dirs, token index, data sync, ApCoach 220 units/37 exams, intl-brain korea), data-health all "clean" (internships 1606/981v, scholarships 1043/80v, programs 1416/672v), graceful SIGTERM shutdown + final backup. Zero async-IIFE / undefined-ref errors.
+- **Cross-cutting**: 0 shadowed (method,path) route dups across 8 hot files (ap-coach, essays, volunteer, chat, financial-aid, programs, internships, scholarships). CORS is a function-based allowlist (server.js:138-151), no wildcard. Stripe webhook signature check present with explicit prod-reject on missing secret (stripe.js:285-295).
+
+**Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+---
