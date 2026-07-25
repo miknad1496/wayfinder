@@ -2438,3 +2438,21 @@ Same git-identity reasoning — no data commits since 5/10. Both escalations rem
 **Validation gate**: not applicable — this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
 
 ---
+
+## 2026-07-25 Nightly audit
+**NOT CLEAN (carried)** -- 0 NEW code/data defects. Focus: cost, runtime[FULL BOOT], data[git-identity confirm], cross-cutting, scheduler-health.
+
+Both standing HIGH data escalations unchanged (git-identical to 7/14 and 6/18 respectively, zero commits to backend/data/scraped/ since 5/10):
+- 37 `_verified:true` entries with NXDOMAIN hostnames (programs 26 / internships 9 / volunteer 2) -- escalated 7/14
+- ~221 templated-`_source`-path program entries (`hs-international-batch-*` family) -- escalated 6/18
+Both still pending Dan-level remediation decision (bulk `_verified:false` interim + write-time DNS/shared-path gate recommended).
+
+Cost panel: SLM lastWarmAt discipline intact (slm.js:871-872 comment confirms pings never touch lastWarmAt; keepalive self-terminates via MAX_IDLE check at 842). 4 setIntervals found (user-backup.js:262, scheduler.js:184, scraper-scheduler.js:258, slm.js:840) -- all previously verified bounded/daemon, unchanged. Anon daily cap present (checkAnonDailyLimit). Rate tiers: authenticated RATE_LIMIT_MAX_REQUESTS vs 5/min anonymous (chat.js:346-347).
+
+Runtime: full native boot clean. Data-health: internships 1606 (981v), scholarships 1043 (80v), programs 1416 (672v) -- all match expected counts, no drift. ApCoach + intl-brain loaded without error. Disk 66% used, no ENOSPC.
+
+Sandbox note (not a code finding): initial clone this run landed with root-owned/unwritable files (`nobody:nogroup`, 644, unwritable even to touch) -- a transient sandbox filesystem glitch, not a repo or Wayfinder issue. Re-cloning to a fresh path resolved it immediately. Also saw a one-off EACCES on the seed-data->data copy for user-backup.json during boot smoke in the first (bad-permission) clone; not reproduced after re-clone, not logging as a Wayfinder defect.
+
+Scheduler health: nightly-audit fired 7/21 through 7/25 (5 consecutive nights) -- healthy streak. pii-audit last commit 7/13 -- has now missed Saturday slots 7/18 AND 7/25 (today), 2 consecutive misses after being the "control task" that stayed alive through the 6/19-7/13 blackout. data-refresh last real commit 5/10 (named 5/17 as next target) -- now 10 confirmed missed Sundays (5/17 through 7/19), decisive next checkpoint is tomorrow 7/26.
+
+No code changes this run -- markdown-only commit, validation gate N/A.
