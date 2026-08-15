@@ -6,7 +6,8 @@
 
 - frequency: weekly Saturday 4am
 - batch_size: up to 200 entries per run
-- last_calibration_change: 2026-07-13 — applied the STANDING WIDENING rule: 26 days since last run (6/17), so fetched days=29. Discovered the endpoint HARD-CAPS `days` at 30 (`Math.min(parseInt(days),30)` in admin.js:855) — the auto-widen rule has a hard ceiling and silently clamps past 30. Default window stays 7.
+- last_calibration_change: 2026-08-15 -- no change. Gap since last run was only 4 days (8/11 -> 8/15), so the standing-widening rule (`days = min(days_since_last_run + 3, 30)`) yields 7; default window used as-is. Confirmed days=30 also returns 0, so the empty result is not a window artifact.
+- prior_calibration_change: 2026-07-13 — applied the STANDING WIDENING rule: 26 days since last run (6/17), so fetched days=29. Discovered the endpoint HARD-CAPS `days` at 30 (`Math.min(parseInt(days),30)` in admin.js:855) — the auto-widen rule has a hard ceiling and silently clamps past 30. Default window stays 7.
 - prior_calibration_change: 2026-06-17 — widened to days=21 to recover the 6/4-6/16 scheduler-blackout backlog. Default window stays 7; see STANDING WIDENING under CALIBRATION SUGGESTIONS.
 - prior_calibration_change: 2026-04-26 — initial setup
 
@@ -20,6 +21,8 @@
 
 
 - **2026-06-17:** Leading-vocative redaction is now WORKING. The exact pattern that leaked "Dan, I want to be direct" on 2026-05-02 is correctly redacted this run: "[NAME], I want to be straight with you" (MEM#7/TRAIN#2), "[NAME], this is exactly the kind..." (MEM#9/TRAIN#4), "[NAME], I'm going to be honest with you" (MEM#11/TRAIN#6), plus "Hey [NAME] — welcome back" and "Welcome to Wayfinder, [NAME]!". Mechanical scan: 11 [NAME] tokens present, 0 leaked first names, 0 emails, 0 phone patterns. Net: redactor healthy — no name leaks at all this run. Either the regex-team leading-vocative scrub shipped or the known-name second-pass now binds at paragraph start.
+
+- **2026-08-15:** No PII patterns observed -- zero entries in window (days=7 and days=30 both empty). Nothing to add. Redactor health remains untested since 2026-06-17 (now ~9 weeks stale); the 6/17 finding (leading-vocative scrub WORKING, Wayfinder over-redaction absent) is still the most recent evidence.
 
 - **2026-07-13:** No PII patterns observed — zero entries in window. Nothing to add. The redactor's health could not be re-tested this run (no sample); the 2026-06-17 finding (leading-vocative scrub WORKING, Wayfinder over-redaction absent) remains the most recent evidence and is now 4 weeks stale.
 
@@ -64,6 +67,10 @@
 - **2026-07-13 — diagnostic caveat for future runs:** requesting days=40/60/90 returns the same result as days=30 because of the silent clamp. Do NOT read "days=90 also returns 0" as independent evidence of anything — it is the same 30-day query. I nearly misread this as evidence that previously-returned entries had been deleted.
 - **2026-07-13 — schedule slip: ~3-4 missed runs.** Last RUN HISTORY row is 2026-06-17; task is scheduled Sat 4:04am, so 6/20, 6/27, 7/4 and 7/11 should all have fired. None are on record. This run fired Monday 7/13. Combined with the 6/4-6/16 blackout, the scheduler has now missed ~6 of the last ~10 scheduled runs. Worth a look at the scheduled-task health independent of this audit.
 
+- **2026-08-15 -- the store has not grown in 33 days.** `memory-stats` returns **198 memory entries / 22 files, 137 training pairs / 3 files** -- byte-identical to the 2026-07-13 and 2026-08-11 readings. Combined with `activeToday/ThisWeek/ThisMonth = 0`, this is a third independent confirmation of the 7/13 conclusion: zero captures because zero chats, not a writer fault. Two consecutive stat-identical runs also mean nothing is being silently pruned or rotated out of the store.
+- **2026-08-15 -- one new signup, still zero activity.** `totalUsers` 22 -> 23 since 8/11 (plan split now 21 free / 0 pro / 1 elite; lifetime 58 sessions / 246 messages, all unchanged). A signup without a session is consistent with the standing product-level observation from 7/13 and is NOT re-flagged as a PII/pipeline concern.
+- **2026-08-15 -- run cadence recovered.** 4-day gap (8/11 -> 8/15) vs. the 29-day and 26-day gaps before it. The 30-day-cap cliff flagged on 7/13 is not in play this run, but the recommendation stands: raise the `memory-recent` cap to 90 or add `?since=YYYY-MM-DD`, because the cadence has been unreliable enough that a >30-day slip is a live risk.
+
 ## CALIBRATION SUGGESTIONS
 
 - 200 entries per run is generous. If a run consistently completes with >100 entries already-audited (skipped), consider reducing the days window from 7 to 3-4.
@@ -86,6 +93,9 @@
 - **2026-07-13 — do not shrink the window, and do not treat 0 entries as a reason to change cadence.** With `activeThisMonth: 0`, a smaller window changes nothing and a larger window changes nothing. The audit is correctly finding nothing because there is nothing. Hold the 7-day default + standing-widening rule and let the audit idle cheaply until traffic returns.
 - **2026-07-13 — the useful next signal is a traffic tripwire, not a redactor change.** The redactor has been clean for 2 consecutive runs with a sample and this run has no sample at all. The thing actually worth watching is whether captures RESUME. Suggest next run's first action stays the same (`memory-stats` + `stats` cross-check before the audit proper) — it took ~60s and answered a question that had been open for 5 weeks.
 
+- **2026-08-15 -- hold everything; the audit is correctly idling.** Third consecutive zero-entry run. Window size is irrelevant while `activeThisMonth = 0` (verified: days=30 returns 0 too), so do not widen, do not shrink, do not change cadence. Keep the 7-day default plus the standing-widening rule and let this run cheaply until traffic returns.
+- **2026-08-15 -- keep the 60-second diagnostic as the first action.** `memory-stats` + `stats` before the audit proper cost ~60s again and produced the only new information this run (store unchanged in 33 days, +1 user, still 0 active). It is the traffic tripwire; retain it as step 0.5 for every future run.
+
 ## OPEN QUESTIONS
 
 - Worth tracking PII-leakage rate over time? Trend would tell us if redactor is improving or degrading.
@@ -106,6 +116,8 @@
 - **2026-07-13 — NEW:** Wayfinder has 23 users, 0 active this month, and 21/23 on free tier. That is a product question, not a PII question, and explicitly out of this task's scope — but it is the root cause of every "low volume" flag in this file since 5/16, so it is recorded here once and will not be re-flagged each week. This auditor will keep idling correctly regardless.
 - **2026-07-13:** Still unconfirmed (carried forward, low priority — no sample to test against): did the leading-vocative fix (5/02) and the Wayfinder-product-name whitelist (5/16) actually ship to `redactPII`/`redactKnownName`, or was their absence on 6/17 luck-of-the-sample? Cannot be settled without live captures. Re-test on the first run after traffic resumes.
 
+- **2026-08-15:** Carried forward unchanged, still untestable without live captures: did the leading-vocative fix (5/02) and the Wayfinder-product-name whitelist (5/16) actually ship to `redactPII` / `redactKnownName`? Nine weeks since the last run with a sample. Re-test on the first run that shows captures. No other open questions -- the volume question stayed resolved (ANSWERED-NO) for a third run.
+
 ## RUN HISTORY
 
 | Date | Entries Fetched | Patches Applied | Notable |
@@ -119,3 +131,4 @@
 | 2026-07-13 | 0 (days=29, widened for the 26-day run gap) | 0 | **No entries to audit — and the 5-week-old volume question is now RESOLVED.** Store is intact (`memory-stats`: 198 memory entries / 22 files, 137 training pairs / 3 files) but `memory-recent` returns 0 in-window, and `/admin/stats` shows `activeToday/ThisWeek/**ThisMonth** = 0`. So: zero captures because zero chats — the memory writer and redactor are NOT broken. Closes the standing 5/16-6/17 "is the writer silently skipping?" flag as ANSWERED-NO. New finding: `memory-recent` hard-caps `days` at 30, so a run gap >30 days would make the backlog permanently unauditable — this run's gap was 26 days, 4 days from that cliff. Scheduler has missed ~3-4 Saturday runs since 6/17. |
 
 | 2026-08-11 | 0 (days=30) | 0 | **No entries to audit — continued zero-activity period.** Product status unchanged from 7/13: 22 users, 0 active this month, 21 free / 0 pro / 1 elite. The 29-day run gap is within the scheduler's 30-day hard-cap for `memory-recent` lookback, so no backlog became unreachable. The monthly silence continues. Redactor and memory writer remain untested (no live samples). Standing recommendation from 7/13 holds: re-run this diagnostic cross-check (memory-stats + stats) on the first future run that shows captures. |
+| 2026-08-15 | 0 (days=7; days=30 also 0) | 0 | **Third consecutive zero-entry run -- nothing to audit.** Cross-check confirms the store is intact and *unchanged in 33 days*: `memory-stats` 198 memory entries / 22 files + 137 training pairs / 3 files, byte-identical to 7/13 and 8/11. `/admin/stats`: 23 users (+1 since 8/11), 21 free / 0 pro / 1 elite, `activeToday/ThisWeek/ThisMonth = 0`, 58 sessions / 246 messages lifetime. Confirms 7/13's ANSWERED-NO on the writer-skip question for the third time. Run cadence recovered (4-day gap vs. 29 and 26 prior), so no backlog approached the 30-day `memory-recent` cliff. Redactor health untested since 6/17. 0 PII leaks found, 0 patches posted. |
