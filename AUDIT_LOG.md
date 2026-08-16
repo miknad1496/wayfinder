@@ -2487,3 +2487,58 @@ Re-derived from source: 120 verified programs share the exact `/learn/hs*` templ
 - **Cross-cutting**: 0 shadowed (method,path) route dups across 8 hot files. CORS allowlist function, no wildcard fallback (server.js:143-146). Stripe webhook sig enforced with prod-reject (stripe.js:290-295). 5/13 volunteer auth gate + 5/15 ap-coach /usage dedup both still holding.
 
 **Validation gate**: N/A -- this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
+
+---
+
+## 2026-08-16 -- Nightly audit: NOT CLEAN (2 carried) | 0 new code/data defects | 1 NEW ROOT-CAUSE FINDING (scheduler)
+
+**Focus**: scheduler health [DIRECT MCP read + NEW cron-consistency test] · cost & resource leaks · backend runtime [FULL BOOT] · data integrity [git-identity + targeted DNS resample] · cross-cutting security · lessons-file compaction (housekeeping flag carried since 7/19).
+
+### NEW FINDING (HIGH, diagnostic) -- the "scheduler blackouts" are host-availability gaps + catch-up drains, NOT task faults
+
+Six blackout episodes have now been logged (6/4-6/16, 6/19-7/13, 7/16-7/18, 7/20, and tonight's **20-night gap 7/27-8/15**, the 2nd longest). Every prior run concluded "root cause is Dan's dashboard to diagnose." Tonight the `scheduled-tasks` MCP was reachable, and applying a **new cron-vs-lastRunAt consistency test** to its output settles the mechanism.
+
+**Evidence 1 -- burst clustering.** Nine tasks with nine DIFFERENT cron slots all last-ran inside a 4m19s window on Sat 2026-08-15, in three sub-second clusters:
+
+| cluster (UTC) | tasks | own cron slot | how late |
+|---|---|---|---|
+| 17:41:08 | daily-platform-audit, wayfinder-pii-audit | 12:19am daily / 4:04am Sat | +10h22m / +6h37m |
+| 17:43:27 | zakat-brain, tax-brain, estate-brain | 1:21 / 1:33 / 1:49am daily | +9h20m / +9h08m / +8h52m |
+| 17:45:27 | financial-brain, wayfinder-morning-pulse, travelers-savings-autofill | 2:03 / 6:04 / 4:31am daily | +8h42m / +4h41m / +6h14m |
+
+`jitterSeconds` is 0-567 across these tasks and cannot produce multi-hour offsets, nor make nine independent crons converge on one 4-minute window. This is a **serialized queue drain**, not nine coincidental on-time runs.
+
+**Evidence 2 -- structurally impossible slot.** `wayfinder-data-refresh` has cron `0 9 * * 0` (**Sunday only**) and `lastRunAt` = 2026-08-11, a **Tuesday**. A Sunday-only task cannot legitimately run on a Tuesday. That is an independent second drain event (8/11).
+
+**Evidence 3 -- schedules themselves are healthy.** Every `nextRunAt` is correctly computed for the proper cron slot, and every affected task is `enabled: true`. So the scheduler's *definition* state is fine; only its *execution* is being deferred.
+
+**Conclusion**: the host (machine / Cowork app) is unavailable through the scheduled windows, and on return the scheduler drains overdue tasks in a burst. This explains every observed feature of the blackout series -- variable length (however long the host is down), the "environment-wide" episodes, and the apparently "task-specific" ones (a drain fires ONE catch-up instance per task, so a task that commits every run leaves a visible gap while a task that only commits when it has output does not).
+
+**Residual asymmetry (the part still open).** The 8/15 drain fired `daily-platform-audit` (daily, 12:19am) but NOT `nightly-system-audit` (daily, 12:09am) -- both enabled, both daily, ten minutes apart. Strongest candidate is CLAUDE.md's own documented failure mode, Hard-Earned Scheduled Task Lesson #4: *"Tool approvals persist per-task -- if the first run needs permission prompts, all subsequent runs pause too."*
+
+**Concrete asks for Dan** (neither is code-fixable from inside a nightly):
+1. Hit **"Run now"** on `nightly-system-audit` once to clear any pending tool-approval prompt, then confirm it fires unattended 3 consecutive nights.
+2. If the machine is simply asleep at 12:09am, move the slot to a time it is reliably awake -- that alone would end the blackout series.
+3. Build the **dead-man's-switch** (now proposed on 7/14, 7/15, 7/19, 7/21 and unbuilt): morning-pulse asserts HEAD carries a nightly-audit commit within 48h and flags absence in the daily email. It would have capped all six episodes at <=1 day of undetected silence.
+
+*(Observation only, no action taken per CLAUDE.md rule 6: the four Penserra `*-data-hardening` tasks are monthly on day 1 and show `lastRunAt` 2026-06-01 with `nextRunAt` 2026-09-01 -- consistent with the same host-availability mechanism, since a monthly task whose single slot lands on an unavailable day is skipped rather than drained. Flagged for Dan's awareness; Penserra was not touched.)*
+
+### Carried escalation #1 -- NXDOMAIN hosts on `_verified:true` entries (from 7/14, sharpened 7/26): STANDS
+Curated JSONs are git-identical (last data commit 5/10), so per the 7/15 pattern this was confirmed by targeted resample rather than a full re-sweep. Resolver: `Resolver({timeout:6000,tries:3})` over 8.8.8.8/1.1.1.1/9.9.9.9, `resolve4 -> resolve6 -> resolveCname`, bucketed by `err.code`.
+- Sampled apex-dead: `www.wheretheresbedragons.com` NXDOMAIN, `nytimes.edu` NXDOMAIN, `www.junachievement.org` NXDOMAIN, `skiacademyaspen.com` NXDOMAIN.
+- **`aviationcampsofamerica.com` flipped LIVE** (was in the 7/26 apex-dead 28). Either a late registration or a further transient -- re-derive the apex-dead count on the next full sweep; the confident core is now <=27 pending that.
+- Live controls all resolved (harvard.edu, stanford.edu, nytimes.com, and the real `wheretherebedragons.com`), proving the NXDOMAINs are real and not a broken resolver. The typosquat pairs remain the cleanest single proof: the fabricated host is dead while the real one is live.
+
+### Carried escalation #2 -- templated-path program entries (from 6/18): UNCHANGED, git-identical
+No data commits since 5/10; nothing can have changed. Recommended remediation is unchanged and still the highest-leverage fix: a **write-time gate** rejecting `_verified: true` when the `_source` host does not resolve OR its pathname is shared byte-identically across >=3 unrelated hosts. Closes both escalations permanently; without it the next batch run re-introduces the class.
+
+### CLEAN -- everything else (0 new defects)
+- **Cost**: SLM keep-alive ping does NOT touch `lastWarmAt` (slm.js:871-872 comment-guard; self-terminates via MAX_IDLE at 842-845). 4 backend setIntervals -- 3 with clearInterval (user-backup 262/279 + `.unref()`, scraper-scheduler 258/268, slm 840/844) + 1 intentional hourly daemon (scheduler.js:184, local reminder check, no API cost). Anon daily cap `ANON_DAILY_LIMIT=5`, disk-persisted and enforced (chat.js:329 -> 429). Rate tiers: `effectiveMax` 30 auth / 5 anon (chat.js:346); limiters api 30/min, chat 15/min, auth 10/15min, admin 5/min, expensive 3/min. Opus confined to gated paths (essay-reviewer, ap-coach, head-consultant supplement). **Interrogated and cleared**: `intelligence-analytics.js` opus references at lines 43/122 are label defaults for aggregate keys (`model: model || '...'`) -- the file makes zero API calls. Not a leak.
+- **Runtime**: FULL native boot clean (143 pkgs, `node server.js`). Data-health: internships 1606 (981v), scholarships 1043 (80v), programs 1416 (672v) -- all "clean". ApCoach brain 41,919 bytes + 9 per-exam + 220 units/37 exams; intl-brain(korea) init OK. Graceful SIGTERM + final backup. Disk 64%, no ENOSPC.
+- **Data panel**: metadata drift 0 across all 4 modules (1606/1043/1416/275). Rule-1 (bare-domain `_source`) 0 all. URL-hygiene (malformed) 0 all. Programs Rule-2 net **82 STEADY** (sameUrl 77 + diffHost 5) -- unchanged since 5/12; internships 94, scholarships 12, volunteer 27.
+- **Cross-cutting**: 0 shadowed (method,path) route dups across 10 hot route files. CORS allowlist function, no wildcard fallback. Stripe webhook sig enforced with explicit prod-reject (stripe.js:290-295). Premium routes gated (essays 8 / ap-coach 17 / financial-aid 14 auth refs). 5/13 volunteer `/discover-local` auth gate re-verified by **reading the full handler** (volunteer.js:242+, 401 on missing and on invalid token) per the 7/15 failed-pattern rule; 5/15 ap-coach `/usage` dedup holding.
+
+### Housekeeping -- lessons file compacted (flag carried since 7/19, deferred again 7/26)
+`nightly-system-audit-lessons.md` rebuilt: **112,750 -> 32,228 bytes**, RUN HISTORY **41 rows across 16 append-blocks -> a single 13-row table** (policy cap 14) plus a condensed archive summary for 4/25-5/31. All dated `NEW EFFECTIVE PATTERN` / `FAILED PATTERN` / `DATA QUALITY FLAG` / `OPEN QUESTION` blocks were merged into their canonical sections and de-duplicated. Verified post-write: 28 key content anchors all still present, 7 canonical sections each present exactly once, no pattern/flag/question dropped.
+
+**Validation gate**: N/A -- this commit touches only append-only markdown (AUDIT_LOG.md + lessons file). No code files modified.
